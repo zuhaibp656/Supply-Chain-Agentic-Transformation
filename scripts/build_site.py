@@ -549,13 +549,13 @@ def build_html() -> str:
       animation: pulseNode 2.6s ease-in-out infinite;
     }
 
-    /* Protective radial vignette that keeps the central hero text column 100% clear of canvas lines */
+    /* Feathered radial vignette that keeps the central hero text column legible while letting background animations flow seamlessly */
     .hero-vignette {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 43% 48% at 50% 48%, rgba(2, 4, 8, 0.94) 0%, rgba(2, 4, 8, 0.78) 58%, rgba(4, 6, 10, 0.25) 100%),
-        linear-gradient(180deg, rgba(2, 4, 8, 0.45) 0%, rgba(2, 4, 8, 0.12) 50%, rgba(4, 6, 10, 0.92) 100%);
+        radial-gradient(ellipse 32% 38% at 50% 48%, rgba(2, 4, 8, 0.86) 0%, rgba(2, 4, 8, 0.48) 54%, rgba(2, 4, 8, 0.0) 100%),
+        linear-gradient(180deg, rgba(2, 4, 8, 0.28) 0%, rgba(2, 4, 8, 0.04) 50%, rgba(4, 6, 10, 0.85) 100%);
       pointer-events: none;
       z-index: 3;
     }
@@ -802,29 +802,30 @@ def build_html() -> str:
       overflow: hidden;
     }
 
-    /* Dedicated, Clearly Visible Supply Chain Animation Stage Inside Each Vertical Card */
+    /* Dedicated, Clearly Visible & Seamless Supply Chain Animation Stage Inside Each Vertical Card */
     .dept-anim-stage {
       position: relative;
-      width: 100%;
-      height: 132px;
-      border-radius: 15px;
-      background: radial-gradient(ellipse at 50% 50%, rgba(16, 28, 52, 0.92) 0%, rgba(5, 9, 18, 0.98) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      width: calc(100% + 16px);
+      margin: 0 -8px;
+      height: 156px;
+      border-radius: 18px;
+      background: radial-gradient(ellipse 84% 78% at 50% 50%, rgba(20, 36, 68, 0.58) 0%, rgba(8, 13, 24, 0.0) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      padding: 8px 14px;
+      padding: 6px 10px 26px;
       transition: all 0.36s var(--ease-spring);
-      box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.65);
     }
 
     .dept-anim-stage svg.dept-stage-svg {
       width: 100%;
       height: 100%;
-      max-height: 116px;
-      opacity: 0.88;
-      filter: brightness(1.06) saturate(1.12);
+      max-height: 144px;
+      opacity: 0.92;
+      transform: scale(1.06);
+      filter: brightness(1.1) saturate(1.16);
       transition: transform 0.42s var(--ease-spring), opacity 0.32s ease, filter 0.32s ease;
     }
 
@@ -852,7 +853,7 @@ def build_html() -> str:
       font-size: 12px;
       font-weight: 700;
       color: #f1f5f9;
-      background: rgba(6, 10, 20, 0.82);
+      background: rgba(6, 10, 20, 0.78);
       border: 1px solid rgba(255, 255, 255, 0.12);
       padding: 4px 10px;
       border-radius: 999px;
@@ -863,18 +864,17 @@ def build_html() -> str:
     .dept-node:hover .dept-anim-stage,
     .dept-node.active .dept-anim-stage,
     .vc-entry-card:hover .dept-anim-stage {
-      border-color: var(--dept-accent, var(--vc-accent, #00d2ff));
-      background: radial-gradient(ellipse at 50% 50%, rgba(24, 42, 76, 0.96) 0%, rgba(7, 13, 26, 0.99) 100%);
-      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.55), 0 0 22px rgba(0, 210, 255, 0.16), inset 0 0 18px rgba(0, 210, 255, 0.08);
-      transform: scale(1.015);
+      border-color: rgba(0, 210, 255, 0.28);
+      background: radial-gradient(ellipse 88% 82% at 50% 50%, rgba(28, 52, 94, 0.74) 0%, rgba(7, 13, 26, 0.0) 100%);
+      transform: scale(1.02);
     }
 
     .dept-node:hover .dept-anim-stage svg.dept-stage-svg,
     .dept-node.active .dept-anim-stage svg.dept-stage-svg,
     .vc-entry-card:hover .dept-anim-stage svg.dept-stage-svg {
       opacity: 1;
-      transform: scale(1.05);
-      filter: brightness(1.28) saturate(1.25) drop-shadow(0 0 10px rgba(0, 210, 255, 0.28));
+      transform: scale(1.12);
+      filter: brightness(1.3) saturate(1.28) drop-shadow(0 0 12px rgba(0, 210, 255, 0.32));
     }
 
     .dept-node:hover .dept-anim-badge,
@@ -973,13 +973,15 @@ def build_html() -> str:
 
     .showcase-bg-sc-watermark {
       position: absolute;
-      right: -20px;
-      bottom: -20px;
-      width: 260px;
-      height: 180px;
-      opacity: 0.12;
+      right: -28px;
+      bottom: -24px;
+      width: 440px;
+      height: 290px;
+      opacity: 0.22;
       pointer-events: none;
       z-index: 1;
+      -webkit-mask-image: radial-gradient(ellipse 75% 75% at 65% 65%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 82%);
+      mask-image: radial-gradient(ellipse 75% 75% at 65% 65%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 82%);
     }
 
     .showcase-header {
@@ -1293,15 +1295,15 @@ def build_html() -> str:
     /* Subtle non-competing watermark placement in headers */
     .persona-header-sc-watermark {
       position: absolute;
-      right: 230px;
-      bottom: -20px;
-      width: 280px;
-      height: 185px;
-      opacity: 0.22;
+      right: 180px;
+      bottom: -24px;
+      width: 400px;
+      height: 255px;
+      opacity: 0.28;
       pointer-events: none;
       z-index: 1;
-      -webkit-mask-image: radial-gradient(circle at 60% 60%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 78%);
-      mask-image: radial-gradient(circle at 60% 60%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 78%);
+      -webkit-mask-image: radial-gradient(ellipse 75% 75% at 60% 60%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 84%);
+      mask-image: radial-gradient(ellipse 75% 75% at 60% 60%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 84%);
     }
 
     /* 4-Layer Agentic Reference Architecture Strip on Agent & Value Chain Pages */
@@ -5750,7 +5752,9 @@ def build_html() -> str:
 
     /* =========================================================================
        60FPS HERO SUPPLY CHAIN CANVAS:
-       3D ISOMETRIC CONVEYOR BELT + MOVING BOXES + MULTI-CORRIDOR FLEET ROUTES
+       LARGE, SEAMLESSLY CONNECTED END-TO-END SUPPLY CHAIN TAPESTRY
+       (DEMAND WAVE + 3D WMS CONVEYOR & AS/RS RACK + TIER-N FACTORY + MULTI-MODAL HUB
+        LINKED BY CONTINUOUS CROSS-CANVAS AMBIENT TELEMETRY STREAMS)
        ========================================================================= */
     function initHeroSupplyChainCanvas() {
       const canvas = document.getElementById('heroSupplyChainCanvas');
@@ -5770,8 +5774,10 @@ def build_html() -> str:
       resize();
       window.addEventListener('resize', resize);
 
-      // Helper to draw a clean 3D isometric box at screen (cx, cy) without overlapping text
-      function drawIsoBox(cx, cy, lx, ly, hz, topCol, leftCol, rightCol, strokeCol) {
+      // Helper to draw a clean 3D isometric box at screen (cx, cy)
+      function drawIsoBox(cx, cy, lx, ly, hz, topCol, leftCol, rightCol, strokeCol, alpha = 1) {
+        ctx.save();
+        ctx.globalAlpha = alpha;
         const isoX = (u, v) => cx + (u - v) * 0.866;
         const isoY = (u, v, z) => cy + (u + v) * 0.5 - z;
 
@@ -5785,7 +5791,7 @@ def build_html() -> str:
         ctx.fillStyle = topCol;
         ctx.fill();
         ctx.strokeStyle = strokeCol;
-        ctx.lineWidth = 1.1;
+        ctx.lineWidth = 1.25;
         ctx.stroke();
 
         // Left-front face (u from 0..lx, v=ly)
@@ -5809,106 +5815,291 @@ def build_html() -> str:
         ctx.fillStyle = rightCol;
         ctx.fill();
         ctx.stroke();
+        ctx.restore();
+      }
+
+      // Helper to evaluate cubic Bezier point at u in [0,1]
+      function bezierPt(u, x0, y0, x1, y1, x2, y2, x3, y3) {
+        const inv = 1 - u;
+        return {
+          x: inv*inv*inv*x0 + 3*inv*inv*u*x1 + 3*inv*u*u*x2 + u*u*u*x3,
+          y: inv*inv*inv*y0 + 3*inv*inv*u*y1 + 3*inv*u*u*y2 + u*u*u*y3
+        };
       }
 
       const boxes = [
-        { offset: 0.00, col: ['#38bdf8', '#0284c7', '#0369a1'], stroke: '#bae6fd', h: 24 },
-        { offset: 0.20, col: ['#34d399', '#059669', '#047857'], stroke: '#a7f3d0', h: 28 },
-        { offset: 0.40, col: ['#fbbf24', '#d97706', '#b45309'], stroke: '#fde68a', h: 22 },
-        { offset: 0.60, col: ['#c084fc', '#9333ea', '#7e22ce'], stroke: '#e9d5ff', h: 26 },
-        { offset: 0.80, col: ['#60a5fa', '#2563eb', '#1d4ed8'], stroke: '#bfdbfe', h: 24 }
+        { offset: 0.00, col: ['#38bdf8', '#0284c7', '#0369a1'], stroke: '#bae6fd', h: 32 },
+        { offset: 0.14, col: ['#34d399', '#059669', '#047857'], stroke: '#a7f3d0', h: 36 },
+        { offset: 0.28, col: ['#fbbf24', '#d97706', '#b45309'], stroke: '#fde68a', h: 28 },
+        { offset: 0.43, col: ['#c084fc', '#9333ea', '#7e22ce'], stroke: '#e9d5ff', h: 34 },
+        { offset: 0.57, col: ['#60a5fa', '#2563eb', '#1d4ed8'], stroke: '#bfdbfe', h: 30 },
+        { offset: 0.72, col: ['#2dd4bf', '#0d9488', '#0f766e'], stroke: '#99f6e4', h: 35 },
+        { offset: 0.86, col: ['#f472b6', '#db2777', '#be185d'], stroke: '#fbcfe8', h: 29 }
       ];
 
       function renderFrame(now) {
         const t = now * 0.001;
         ctx.clearRect(0, 0, w, h);
 
-        // 1. Subtle Isometric Supply Chain Grid
-        ctx.strokeStyle = 'rgba(0, 210, 255, 0.04)';
+        // 1. Continuous Isometric Supply Chain Perspective Grid (softly breathing)
+        ctx.strokeStyle = 'rgba(0, 210, 255, 0.05)';
         ctx.lineWidth = 1;
-        const step = 76;
-        for (let x = -h; x < w + h; x += step) {
+        const step = 84;
+        const gridShift = (t * 12) % step;
+        for (let x = -h + gridShift; x < w + h; x += step) {
           ctx.beginPath();
           ctx.moveTo(x, 0);
-          ctx.lineTo(x + h * 0.85, h);
+          ctx.lineTo(x + h * 0.866, h);
           ctx.stroke();
           ctx.beginPath();
           ctx.moveTo(x, 0);
-          ctx.lineTo(x - h * 0.85, h);
+          ctx.lineTo(x - h * 0.866, h);
           ctx.stroke();
         }
 
-        // Strict outer-gutter bounds so center Hero text column (0.24w .. 0.76w) is 100% clear
-        const leftSpan = Math.min(280, w * 0.21);
+        // Key anchor coordinates across the full viewport
+        const leftSpan = Math.min(480, w * 0.30);
+        const waveStartX = w * 0.015;
+        const waveEndX = waveStartX + leftSpan;
+        const waveBaseY = h * 0.23;
 
-        // 2. TOP-LEFT WING: Probabilistic Demand Sensing Wave (P10 / P50 / P90 Fan)
+        const convStartX = w * 0.018;
+        const convStartY = h * 0.49;
+        const convLen = Math.min(450, w * 0.285);
+        const dirX = 0.866;
+        const dirY = 0.5;
+        const perpX = -0.866 * 46;
+        const perpY = 0.5 * 46;
+        const convEndX = convStartX + convLen * dirX;
+        const convEndY = convStartY + convLen * dirY;
+
+        const tierHubX = w * 0.83;
+        const tierHubY = h * 0.21;
+
+        const hubX = w * 0.84;
+        const hubY = h * 0.57;
+        const spanR = Math.min(210, w * 0.155);
+
+        // 2. SEAMLESS CROSS-CANVAS AMBIENT SUPPLY CHAIN STREAMS (Connecting Left & Right Wings)
+        const ambientStreams = [
+          // Top stream: Demand Sensing Wave -> Tier-N Supplier & Factory Constellation
+          {
+            x0: waveEndX - 30, y0: waveBaseY,
+            x1: w * 0.42, y1: h * 0.06,
+            x2: w * 0.62, y2: h * 0.08,
+            x3: tierHubX - 70, y3: tierHubY - 12,
+            col: 'rgba(16, 185, 129, 0.22)',
+            pulseCol: '#34d399',
+            speed: 0.11,
+            phase: 0.0
+          },
+          // Upper-mid stream: Demand Sensing -> Multi-Modal Global Hub
+          {
+            x0: waveEndX - 10, y0: waveBaseY + 18,
+            x1: w * 0.45, y1: h * 0.18,
+            x2: w * 0.64, y2: h * 0.32,
+            x3: hubX, y3: hubY,
+            col: 'rgba(0, 210, 255, 0.18)',
+            pulseCol: '#00d2ff',
+            speed: 0.09,
+            phase: 0.35
+          },
+          // Lower stream: 3D WMS Conveyor Outbound -> Multi-Modal Global Hub
+          {
+            x0: convEndX, y0: convEndY,
+            x1: w * 0.44, y1: h * 0.89,
+            x2: w * 0.65, y2: h * 0.86,
+            x3: hubX, y3: hubY,
+            col: 'rgba(0, 210, 255, 0.24)',
+            pulseCol: '#38bdf8',
+            speed: 0.12,
+            phase: 0.2
+          },
+          // Bottom reverse-logistics / circularity stream: Multi-Modal Hub -> 3D WMS Inbound
+          {
+            x0: hubX - spanR * 0.75, y0: hubY + 195,
+            x1: w * 0.58, y1: h * 0.96,
+            x2: w * 0.34, y2: h * 0.92,
+            x3: convStartX + 40, y3: convStartY + 30,
+            col: 'rgba(161, 66, 244, 0.20)',
+            pulseCol: '#c084fc',
+            speed: 0.08,
+            phase: 0.65
+          }
+        ];
+
         ctx.save();
+        ambientStreams.forEach(s => {
+          // Soft outer glow ribbon
+          ctx.beginPath();
+          ctx.moveTo(s.x0, s.y0);
+          ctx.bezierCurveTo(s.x1, s.y1, s.x2, s.y2, s.x3, s.y3);
+          ctx.strokeStyle = s.col;
+          ctx.lineWidth = 4.5;
+          ctx.stroke();
+
+          // Dashed core telemetry line
+          ctx.beginPath();
+          ctx.moveTo(s.x0, s.y0);
+          ctx.bezierCurveTo(s.x1, s.y1, s.x2, s.y2, s.x3, s.y3);
+          ctx.strokeStyle = s.col;
+          ctx.setLineDash([6, 8]);
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+          ctx.setLineDash([]);
+
+          // 3 flowing telemetry packets per cross-canvas stream
+          [0, 0.33, 0.66].forEach(offset => {
+            const u = (t * s.speed + s.phase + offset) % 1;
+            const pt = bezierPt(u, s.x0, s.y0, s.x1, s.y1, s.x2, s.y2, s.x3, s.y3);
+            ctx.beginPath();
+            ctx.arc(pt.x, pt.y, 6, 0, Math.PI * 2);
+            ctx.fillStyle = s.pulseCol + '28';
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(pt.x, pt.y, 2.6, 0, Math.PI * 2);
+            ctx.fillStyle = s.pulseCol;
+            ctx.fill();
+          });
+        });
+        ctx.restore();
+
+        // 3. TOP-LEFT WING: Enlarged Probabilistic Demand Sensing Wave (P10 / P50 / P90 Fan)
+        ctx.save();
+        // Outer P10-P90 fan band
         ctx.beginPath();
-        for (let i = 0; i <= 40; i++) {
-          const px = (w * 0.02) + i * (leftSpan / 40);
-          const py = h * 0.22 + Math.sin(i * 0.26 - t * 2.0) * 20 + Math.cos(i * 0.12 + t) * 8 - 16;
+        for (let i = 0; i <= 56; i++) {
+          const px = waveStartX + i * (leftSpan / 56);
+          const env = 24 + (i / 56) * 20;
+          const py = waveBaseY + Math.sin(i * 0.21 - t * 2.0) * 32 + Math.cos(i * 0.11 + t) * 14 - env;
           if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
         }
-        for (let i = 40; i >= 0; i--) {
-          const px = (w * 0.02) + i * (leftSpan / 40);
-          const py = h * 0.22 + Math.sin(i * 0.26 - t * 2.0) * 20 + Math.cos(i * 0.12 + t) * 8 + 16;
+        for (let i = 56; i >= 0; i--) {
+          const px = waveStartX + i * (leftSpan / 56);
+          const env = 24 + (i / 56) * 20;
+          const py = waveBaseY + Math.sin(i * 0.21 - t * 2.0) * 32 + Math.cos(i * 0.11 + t) * 14 + env;
           ctx.lineTo(px, py);
         }
         ctx.closePath();
-        ctx.fillStyle = 'rgba(16, 185, 129, 0.09)';
+        const fanGrad = ctx.createLinearGradient(waveStartX, waveBaseY - 60, waveEndX, waveBaseY + 60);
+        fanGrad.addColorStop(0, 'rgba(16, 185, 129, 0.04)');
+        fanGrad.addColorStop(0.5, 'rgba(16, 185, 129, 0.16)');
+        fanGrad.addColorStop(1, 'rgba(0, 210, 255, 0.08)');
+        ctx.fillStyle = fanGrad;
         ctx.fill();
 
+        // Secondary harmonic wave (P90 upper bound)
         ctx.beginPath();
-        for (let i = 0; i <= 40; i++) {
-          const px = (w * 0.02) + i * (leftSpan / 40);
-          const py = h * 0.22 + Math.sin(i * 0.26 - t * 2.0) * 20 + Math.cos(i * 0.12 + t) * 8;
+        for (let i = 0; i <= 56; i++) {
+          const px = waveStartX + i * (leftSpan / 56);
+          const py = waveBaseY + Math.sin(i * 0.21 - t * 2.0) * 32 + Math.cos(i * 0.11 + t) * 14 - 22;
           if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
         }
-        ctx.strokeStyle = 'rgba(16, 185, 129, 0.62)';
+        ctx.strokeStyle = 'rgba(52, 211, 153, 0.28)';
+        ctx.setLineDash([4, 6]);
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Primary P50 TimesFM Demand Wave
+        ctx.beginPath();
+        for (let i = 0; i <= 56; i++) {
+          const px = waveStartX + i * (leftSpan / 56);
+          const py = waveBaseY + Math.sin(i * 0.21 - t * 2.0) * 32 + Math.cos(i * 0.11 + t) * 14;
+          if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+        }
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.78)';
+        ctx.lineWidth = 3.0;
+        ctx.stroke();
+
+        // Moving demand sensing pulse dots along wave
+        [0, 19, 38].forEach(offset => {
+          const waveIdx = ((t * 11 + offset) % 56);
+          const wPx = waveStartX + waveIdx * (leftSpan / 56);
+          const wPy = waveBaseY + Math.sin(waveIdx * 0.21 - t * 2.0) * 32 + Math.cos(waveIdx * 0.11 + t) * 14;
+          ctx.beginPath();
+          ctx.arc(wPx, wPy, 11, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(52, 211, 153, 0.20)';
+          ctx.fill();
+          ctx.beginPath();
+          ctx.arc(wPx, wPy, 5, 0, Math.PI * 2);
+          ctx.fillStyle = '#34d399';
+          ctx.fill();
+        });
+
+        ctx.fillStyle = 'rgba(52, 211, 153, 0.86)';
+        ctx.font = '700 11px "Google Sans", sans-serif';
+        ctx.fillText('DEMAND SENSING · P10 / P50 / P90', waveStartX + 4, waveBaseY - 68);
+        ctx.restore();
+
+        // 4. BOTTOM-LEFT WING: Enlarged 3D Isometric WMS Conveyor + AS/RS Automated Racking
+        ctx.save();
+        // Background 3D Isometric AS/RS High-Bay Rack Structure above the belt
+        const rackBaseX = convStartX + 70;
+        const rackBaseY = convStartY - 26;
+        ctx.strokeStyle = 'rgba(0, 210, 255, 0.22)';
+        ctx.lineWidth = 1.3;
+        for (let bay = 0; bay <= 4; bay++) {
+          const bx = rackBaseX + bay * 62 * dirX;
+          const by = rackBaseY + bay * 62 * dirY;
+          ctx.beginPath();
+          ctx.moveTo(bx, by);
+          ctx.lineTo(bx, by - 92);
+          ctx.stroke();
+          if (bay < 4) {
+            [28, 58, 88].forEach((shelfZ, sIdx) => {
+              ctx.beginPath();
+              ctx.moveTo(bx, by - shelfZ);
+              ctx.lineTo(bx + 62 * dirX, by + 62 * dirY - shelfZ);
+              ctx.stroke();
+              // Subtle stowed pallet on shelf
+              if ((bay + sIdx) % 2 === 0) {
+                drawIsoBox(
+                  bx + 14 * dirX,
+                  by + 14 * dirY - shelfZ,
+                  20, 16, 16,
+                  'rgba(56, 189, 248, 0.28)',
+                  'rgba(2, 132, 199, 0.28)',
+                  'rgba(3, 105, 161, 0.28)',
+                  'rgba(186, 230, 253, 0.35)',
+                  0.72
+                );
+              }
+            });
+          }
+        }
+
+        // 3D Conveyor Deck Side Depth Skirt
+        ctx.beginPath();
+        ctx.moveTo(convStartX + perpX, convStartY + perpY);
+        ctx.lineTo(convEndX + perpX, convEndY + perpY);
+        ctx.lineTo(convEndX + perpX, convEndY + perpY + 14);
+        ctx.lineTo(convStartX + perpX, convStartY + perpY + 14);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(8, 15, 28, 0.90)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(0, 210, 255, 0.42)';
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+
+        // Main 3D Isometric Conveyor Surface
+        ctx.beginPath();
+        ctx.moveTo(convStartX, convStartY);
+        ctx.lineTo(convEndX, convEndY);
+        ctx.lineTo(convEndX + perpX, convEndY + perpY);
+        ctx.lineTo(convStartX + perpX, convStartY + perpY);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(14, 24, 42, 0.86)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(0, 210, 255, 0.62)';
         ctx.lineWidth = 2.2;
         ctx.stroke();
 
-        // Moving demand sensing pulse dot along wave
-        const waveIdx = ((t * 10) % 40);
-        const wPx = (w * 0.02) + waveIdx * (leftSpan / 40);
-        const wPy = h * 0.22 + Math.sin(waveIdx * 0.26 - t * 2.0) * 20 + Math.cos(waveIdx * 0.12 + t) * 8;
-        ctx.beginPath();
-        ctx.arc(wPx, wPy, 4.5, 0, Math.PI * 2);
-        ctx.fillStyle = '#34d399';
-        ctx.fill();
-
-        ctx.fillStyle = 'rgba(52, 211, 153, 0.82)';
-        ctx.font = '700 10px "Google Sans", sans-serif';
-        ctx.fillText('DEMAND SENSING · P10 / P50 / P90', w * 0.02, h * 0.15);
-        ctx.restore();
-
-        // 3. BOTTOM-LEFT WING: 3D Isometric Conveyor Belt + Moving Cargo Boxes + Scanner Arch
-        const convStartX = w * 0.025;
-        const convStartY = h * 0.54;
-        const convLen = Math.min(270, w * 0.20);
-        const dirX = 0.866;
-        const dirY = 0.5;
-        const perpX = -0.866 * 32;
-        const perpY = 0.5 * 32;
-
-        ctx.save();
-        ctx.beginPath();
-        ctx.moveTo(convStartX, convStartY);
-        ctx.lineTo(convStartX + convLen * dirX, convStartY + convLen * dirY);
-        ctx.lineTo(convStartX + convLen * dirX + perpX, convStartY + convLen * dirY + perpY);
-        ctx.lineTo(convStartX + perpX, convStartY + perpY);
-        ctx.closePath();
-        ctx.fillStyle = 'rgba(14, 24, 42, 0.82)';
-        ctx.fill();
-        ctx.strokeStyle = 'rgba(0, 210, 255, 0.52)';
-        ctx.lineWidth = 1.8;
-        ctx.stroke();
-
         // Animated conveyor rollers
-        const rollerShift = (t * 42) % 22;
-        ctx.strokeStyle = 'rgba(0, 210, 255, 0.26)';
-        ctx.lineWidth = 1.2;
-        for (let d = rollerShift; d < convLen; d += 22) {
+        const rollerShift = (t * 52) % 24;
+        ctx.strokeStyle = 'rgba(0, 210, 255, 0.30)';
+        ctx.lineWidth = 1.35;
+        for (let d = rollerShift; d < convLen; d += 24) {
           const rx = convStartX + d * dirX;
           const ry = convStartY + d * dirY;
           ctx.beginPath();
@@ -5917,142 +6108,215 @@ def build_html() -> str:
           ctx.stroke();
         }
 
-        ctx.fillStyle = 'rgba(56, 189, 248, 0.82)';
-        ctx.font = '700 10px "Google Sans", sans-serif';
-        ctx.fillText('3D WMS CONVEYOR & SLOTTING', convStartX, convStartY - 18);
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.88)';
+        ctx.font = '700 11px "Google Sans", sans-serif';
+        ctx.fillText('3D WMS CONVEYOR & AS/RS SLOTTING', convStartX, convStartY - 38);
 
-        // Draw moving 3D cargo boxes sorted back-to-front along the conveyor
+        // Draw moving 3D cargo boxes sorted back-to-front along the enlarged conveyor
         const activeBoxes = boxes.map(b => {
-          const prog = (b.offset + t * 0.12) % 1;
+          const prog = (b.offset + t * 0.11) % 1;
           return { ...b, prog };
         }).sort((a, b) => a.prog - b.prog);
 
         activeBoxes.forEach(b => {
-          const dist = b.prog * (convLen - 36);
-          const bx = convStartX + dist * dirX - 12;
-          const by = convStartY + dist * dirY + 4;
-          drawIsoBox(bx, by, 22, 20, b.h, b.col[0], b.col[1], b.col[2], b.stroke);
+          const dist = b.prog * (convLen - 42);
+          const bx = convStartX + dist * dirX - 18;
+          const by = convStartY + dist * dirY + 6;
+          drawIsoBox(bx, by, 30, 26, b.h, b.col[0], b.col[1], b.col[2], b.stroke);
 
-          if (Math.abs(b.prog - 0.52) < 0.06) {
+          if (Math.abs(b.prog - 0.36) < 0.05 || Math.abs(b.prog - 0.72) < 0.05) {
             ctx.save();
             ctx.beginPath();
-            ctx.arc(bx, by - 10, 24, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 210, 255, 0.18)';
+            ctx.arc(bx, by - 14, 34, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(0, 210, 255, 0.22)';
             ctx.fill();
             ctx.restore();
           }
         });
 
-        // 3D RFID / Laser Scanner Gate Arch over the midpoint of the conveyor
-        const gateDist = convLen * 0.52;
-        const gx1 = convStartX + gateDist * dirX;
-        const gy1 = convStartY + gateDist * dirY;
-        const gx2 = gx1 + perpX;
-        const gy2 = gy1 + perpY;
-        ctx.strokeStyle = 'rgba(0, 210, 255, 0.82)';
-        ctx.lineWidth = 2.2;
-        ctx.beginPath();
-        ctx.moveTo(gx1, gy1);
-        ctx.lineTo(gx1, gy1 - 48);
-        ctx.lineTo(gx2, gy2 - 48);
-        ctx.lineTo(gx2, gy2);
-        ctx.stroke();
+        // Dual 3D RFID / Vision Scanner Gate Arches over the conveyor
+        [0.36, 0.72].forEach((gateRatio, gIdx) => {
+          const gateDist = convLen * gateRatio;
+          const gx1 = convStartX + gateDist * dirX;
+          const gy1 = convStartY + gateDist * dirY;
+          const gx2 = gx1 + perpX;
+          const gy2 = gy1 + perpY;
+          const archH = 64;
+          const archCol = gIdx === 0 ? 'rgba(0, 210, 255, 0.86)' : 'rgba(52, 211, 153, 0.82)';
+          const planeCol = gIdx === 0 ? 'rgba(0, 210, 255, 0.14)' : 'rgba(52, 211, 153, 0.13)';
 
-        ctx.fillStyle = 'rgba(0, 210, 255, 0.12)';
-        ctx.beginPath();
-        ctx.moveTo(gx1, gy1 - 48);
-        ctx.lineTo(gx2, gy2 - 48);
-        ctx.lineTo(gx2, gy2);
-        ctx.lineTo(gx1, gy1);
-        ctx.closePath();
-        ctx.fill();
+          ctx.strokeStyle = archCol;
+          ctx.lineWidth = 2.5;
+          ctx.beginPath();
+          ctx.moveTo(gx1, gy1);
+          ctx.lineTo(gx1, gy1 - archH);
+          ctx.lineTo(gx2, gy2 - archH);
+          ctx.lineTo(gx2, gy2);
+          ctx.stroke();
+
+          ctx.fillStyle = planeCol;
+          ctx.beginPath();
+          ctx.moveTo(gx1, gy1 - archH);
+          ctx.lineTo(gx2, gy2 - archH);
+          ctx.lineTo(gx2, gy2);
+          ctx.lineTo(gx1, gy1);
+          ctx.closePath();
+          ctx.fill();
+        });
         ctx.restore();
 
-        // 4. RIGHT WING: Multi-Modal Global Transit & Fleet Network (Ocean Ship, Air Cargo, Rail, Road Fleet)
-        const hubX = w * 0.86;
-        const hubY = h * 0.48;
-        const spanR = Math.min(115, w * 0.09);
+        // 5. TOP-RIGHT WING: Tier-N Supplier & Smart Factory OEE Constellation
+        ctx.save();
+        const tierNodes = [
+          { x: tierHubX - 115, y: tierHubY - 42, label: 'TIER-3 RAW', col: '#a142f4', r: 7 },
+          { x: tierHubX - 35,  y: tierHubY - 62, label: 'TIER-2 FAB', col: '#00d2ff', r: 8 },
+          { x: tierHubX + 68,  y: tierHubY - 34, label: 'TIER-1 SUB', col: '#34d399', r: 8 },
+          { x: tierHubX,       y: tierHubY + 18, label: 'SMART PLANT · OEE 94%', col: '#fbbf24', r: 12 }
+        ];
+        const tierLinks = [
+          [0, 1], [1, 2], [0, 3], [1, 3], [2, 3]
+        ];
+        tierLinks.forEach(([i, j], lIdx) => {
+          const n1 = tierNodes[i], n2 = tierNodes[j];
+          ctx.beginPath();
+          ctx.moveTo(n1.x, n1.y);
+          ctx.lineTo(n2.x, n2.y);
+          ctx.strokeStyle = 'rgba(0, 210, 255, 0.28)';
+          ctx.lineWidth = 1.8;
+          ctx.stroke();
 
-        [44, 86, 128].forEach(rad => {
+          const u = (t * 0.28 + lIdx * 0.21) % 1;
+          const px = n1.x + (n2.x - n1.x) * u;
+          const py = n1.y + (n2.y - n1.y) * u;
+          ctx.beginPath();
+          ctx.arc(px, py, 3.2, 0, Math.PI * 2);
+          ctx.fillStyle = n2.col;
+          ctx.fill();
+        });
+
+        // Stream connecting Smart Plant down into Multi-Modal Hub
+        ctx.beginPath();
+        ctx.moveTo(tierNodes[3].x, tierNodes[3].y);
+        ctx.bezierCurveTo(tierHubX + 28, (tierHubY + hubY) * 0.45, hubX - 24, (tierHubY + hubY) * 0.65, hubX, hubY);
+        ctx.strokeStyle = 'rgba(251, 191, 36, 0.32)';
+        ctx.setLineDash([5, 6]);
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        tierNodes.forEach((n, idx) => {
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r + 8 + Math.sin(t * 2.5 + idx) * 3, 0, Math.PI * 2);
+          ctx.strokeStyle = n.col + '44';
+          ctx.lineWidth = 1.4;
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+          ctx.fillStyle = '#081020';
+          ctx.fill();
+          ctx.strokeStyle = n.col;
+          ctx.lineWidth = 2.4;
+          ctx.stroke();
+
+          ctx.fillStyle = n.col;
+          ctx.font = '700 9.5px "Google Sans", sans-serif';
+          ctx.fillText(n.label, Math.min(w - 135, n.x - 28), n.y - n.r - 8);
+        });
+        ctx.restore();
+
+        // 6. MID/BOTTOM-RIGHT WING: Enlarged Multi-Modal Global Transit & Fleet Network
+        [64, 122, 182, 240].forEach((rad, rIdx) => {
           ctx.beginPath();
           ctx.arc(hubX, hubY, rad, 0, Math.PI * 2);
-          ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
-          ctx.setLineDash([4, 5]);
-          ctx.lineWidth = 1;
+          ctx.strokeStyle = rIdx % 2 === 0 ? 'rgba(0, 210, 255, 0.08)' : 'rgba(255, 255, 255, 0.05)';
+          ctx.setLineDash([5, 7]);
+          ctx.lineWidth = 1.2;
           ctx.stroke();
         });
         ctx.setLineDash([]);
 
         const corridors = [
-          { name: 'OCEAN AIS · FEU', col: '#00d2ff', cpx1: hubX - 24, cpy1: hubY - 75, cpx2: hubX - 55, cpy2: hubY - 135, ex: hubX - spanR * 0.85, ey: hubY - 175, speed: 0.16, phase: 0.1 },
-          { name: 'AIR CARGO · 3D ULD', col: '#a142f4', cpx1: hubX + 32, cpy1: hubY - 55, cpx2: hubX + 68, cpy2: hubY - 110, ex: Math.min(w - 42, hubX + spanR * 0.9), ey: hubY - 145, speed: 0.25, phase: 0.45 },
-          { name: 'RAIL COFC · RAMP', col: '#10b981', cpx1: hubX - 28, cpy1: hubY + 65, cpx2: hubX - 58, cpy2: hubY + 130, ex: hubX - spanR * 0.8, ey: hubY + 180, speed: 0.19, phase: 0.7 },
-          { name: 'MAPS ROAD · 3D LIFO', col: '#ff8c00', cpx1: hubX + 35, cpy1: hubY + 58, cpx2: hubX + 72, cpy2: hubY + 115, ex: Math.min(w - 42, hubX + spanR * 0.9), ey: hubY + 155, speed: 0.22, phase: 0.3 }
+          { name: 'OCEAN AIS · FEU', col: '#00d2ff', cpx1: hubX - 48, cpy1: hubY - 95, cpx2: hubX - 115, cpy2: hubY - 175, ex: hubX - spanR * 0.95, ey: hubY - 225, speed: 0.16, phase: 0.1 },
+          { name: 'AIR CARGO · 3D ULD', col: '#a142f4', cpx1: hubX + 46, cpy1: hubY - 82, cpx2: hubX + 95, cpy2: hubY - 155, ex: Math.min(w - 36, hubX + spanR * 0.85), ey: hubY - 195, speed: 0.25, phase: 0.45 },
+          { name: 'RAIL COFC · RAMP', col: '#10b981', cpx1: hubX - 52, cpy1: hubY + 88, cpx2: hubX - 118, cpy2: hubY + 165, ex: hubX - spanR * 0.90, ey: hubY + 215, speed: 0.19, phase: 0.7 },
+          { name: 'MAPS ROAD · 3D LIFO', col: '#ff8c00', cpx1: hubX + 48, cpy1: hubY + 78, cpx2: hubX + 98, cpy2: hubY + 148, ex: Math.min(w - 36, hubX + spanR * 0.85), ey: hubY + 190, speed: 0.22, phase: 0.3 }
         ];
 
         corridors.forEach(c => {
+          // Soft corridor aura
+          ctx.beginPath();
+          ctx.moveTo(hubX, hubY);
+          ctx.bezierCurveTo(c.cpx1, c.cpy1, c.cpx2, c.cpy2, c.ex, c.ey);
+          ctx.strokeStyle = c.col + '33';
+          ctx.lineWidth = 6.5;
+          ctx.stroke();
+
+          // Crisp corridor route line
           ctx.beginPath();
           ctx.moveTo(hubX, hubY);
           ctx.bezierCurveTo(c.cpx1, c.cpy1, c.cpx2, c.cpy2, c.ex, c.ey);
           ctx.strokeStyle = c.col;
-          ctx.lineWidth = 2.2;
+          ctx.lineWidth = 2.6;
           ctx.stroke();
 
           ctx.beginPath();
-          ctx.arc(c.ex, c.ey, 5, 0, Math.PI * 2);
+          ctx.arc(c.ex, c.ey, 7, 0, Math.PI * 2);
           ctx.fillStyle = '#070b14';
           ctx.fill();
           ctx.strokeStyle = c.col;
-          ctx.lineWidth = 2;
+          ctx.lineWidth = 2.4;
           ctx.stroke();
 
-          // Clamp label X so it never intrudes left of 0.76w or clips right of (w - 128)
-          const labelX = Math.max(w * 0.76, Math.min(w - 130, c.ex - 42));
-          const labelY = c.ey < hubY ? c.ey - 10 : c.ey + 18;
+          const labelX = Math.max(w * 0.70, Math.min(w - 138, c.ex - 44));
+          const labelY = c.ey < hubY ? c.ey - 12 : c.ey + 22;
           ctx.fillStyle = c.col;
-          ctx.font = '700 9.5px "Google Sans", sans-serif';
+          ctx.font = '700 10.5px "Google Sans", sans-serif';
           ctx.fillText(c.name, labelX, labelY);
 
           // Moving Multi-Modal Carrier along Bezier curve
           const u = (t * c.speed + c.phase) % 1;
-          const inv = 1 - u;
-          const tx = inv*inv*inv*hubX + 3*inv*inv*u*c.cpx1 + 3*inv*u*u*c.cpx2 + u*u*u*c.ex;
-          const ty = inv*inv*inv*hubY + 3*inv*inv*u*c.cpy1 + 3*inv*u*u*c.cpy2 + u*u*u*c.ey;
+          const pt = bezierPt(u, hubX, hubY, c.cpx1, c.cpy1, c.cpx2, c.cpy2, c.ex, c.ey);
 
           ctx.beginPath();
-          ctx.arc(tx, ty, 9, 0, Math.PI * 2);
+          ctx.arc(pt.x, pt.y, 14, 0, Math.PI * 2);
           ctx.fillStyle = c.col + '33';
           ctx.fill();
 
           ctx.fillStyle = '#080d18';
           ctx.strokeStyle = c.col;
-          ctx.lineWidth = 1.6;
+          ctx.lineWidth = 1.9;
           ctx.beginPath();
-          ctx.roundRect(tx - 10, ty - 6, 20, 12, 3.5);
+          ctx.roundRect(pt.x - 13, pt.y - 8, 26, 16, 4.5);
           ctx.fill();
           ctx.stroke();
 
           ctx.fillStyle = c.col;
-          ctx.fillRect(tx - 7, ty - 3.5, 9, 7);
+          ctx.fillRect(pt.x - 9, pt.y - 4.5, 12, 9);
         });
 
-        // Central Multi-Modal Hub Node
+        // Central Multi-Modal Hub Node (Enlarged)
         ctx.beginPath();
-        ctx.arc(hubX, hubY, 14, 0, Math.PI * 2);
+        ctx.arc(hubX, hubY, 28, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0, 210, 255, 0.14)';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(hubX, hubY, 18, 0, Math.PI * 2);
         ctx.fillStyle = '#081020';
         ctx.fill();
         ctx.strokeStyle = '#00d2ff';
-        ctx.lineWidth = 2.8;
+        ctx.lineWidth = 3.2;
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.arc(hubX, hubY, 5.5, 0, Math.PI * 2);
+        ctx.arc(hubX, hubY, 7, 0, Math.PI * 2);
         ctx.fillStyle = '#00d2ff';
         ctx.fill();
 
-        ctx.fillStyle = 'rgba(248, 249, 250, 0.84)';
-        ctx.font = '700 9.5px "Google Sans", sans-serif';
-        ctx.fillText('MULTI-MODAL HUB', hubX - 46, hubY + 28);
+        ctx.fillStyle = 'rgba(248, 249, 250, 0.90)';
+        ctx.font = '700 10.5px "Google Sans", sans-serif';
+        ctx.fillText('MULTI-MODAL HUB', hubX - 52, hubY + 34);
 
         requestAnimationFrame(renderFrame);
       }
