@@ -1750,7 +1750,7 @@
       "videoSrc": "videos/demand_sensing_demo.mp4",
       "hasPreloadedVideo": true,
       "systems": "Gemini Enterprise · BigQuery Supply Chain Twin · Cloud Spanner Graph · AlloyDB · Looker Semantic Layer · Google Maps Platform · SAP S/4HANA & IBP · Manhattan WMS · Blue Yonder TMS · CargoWise",
-      "solverStack": "Gemini 2.5 Pro Conversational Analytics + Looker Governed Semantic Layer + Cloud Spanner Graph + A2A Cross-Domain Action Router",
+      "solverStack": "Gemini 3.1 Pro Conversational Analytics + Looker Governed Semantic Layer + Cloud Spanner Graph + A2A Cross-Domain Action Router",
       "apiWriteback": "Signed Role-Based Action Dispatch across SAP S/4HANA, IBP, WMS, TMS, CargoWise & Ariba via Apigee",
       "roiMetrics": [
         {
@@ -2037,7 +2037,7 @@
       "videoSrc": "videos/demand_sensing_demo.mp4",
       "hasPreloadedVideo": true,
       "systems": "SAP S/4HANA PP/DS · SAP IBP · Kinaxis RapidResponse · BigQuery · Cloud Spanner Graph · Google OR-Tools · Hyperion / Anaplan FP&A",
-      "solverStack": "Gemini 2.5 Pro + Cloud Spanner Constraint Graph + OR-Tools Multi-Objective MILP Capacity & Margin Solver",
+      "solverStack": "Gemini 3.1 Pro + Cloud Spanner Constraint Graph + OR-Tools Multi-Objective MILP Capacity & Margin Solver",
       "apiWriteback": "SAP IBP / S/4HANA Master Production Schedule (MPS) & Financial P&L Bridge Commit",
       "subAgents": [
         {
@@ -2486,7 +2486,7 @@
       "cadType": "corridor_map",
       "videoSrc": "videos/f2f_fleet_demo.mp4",
       "hasPreloadedVideo": true,
-      "systems": "Loop / Narvar RMA · Blue Yonder TMS · SAP S/4HANA QM & EWM · Gemini 2.5 Flash Vision · Google Maps Routes API · Google OR-Tools · AlloyDB",
+      "systems": "Loop / Narvar RMA · Blue Yonder TMS · SAP S/4HANA QM & EWM · Gemini 3.0 Flash Vision · Google Maps Routes API · Google OR-Tools · AlloyDB",
       "solverStack": "Gemini Multimodal Vision Defect Grader + Google Maps & OR-Tools Dynamic Backhaul Insertion CVRPTW",
       "apiWriteback": "TMS Fleet Backhaul Pickup Stop, SAP EWM Direct-to-Hub Restock & Vendor Warranty Debit Memo",
       "subAgents": [
@@ -2504,7 +2504,7 @@
         }
       ],
       "problem": "Companies pay expensive third-party LTL rates to ship returns to central depots while their own fleet returns empty, losing 40%+ of recoverable item value.",
-      "solution": "Grades returns at the edge using Gemini 2.5 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.",
+      "solution": "Grades returns at the edge using Gemini 3.0 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.",
       "advantage": "Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend."
     },
     "rfq_should_cost_agent": {
@@ -2577,7 +2577,7 @@
       "videoSrc": "videos/o2d_suite_demo.mp4",
       "hasPreloadedVideo": true,
       "systems": "SAP GTS · SAP Ariba CLM · Icertis · Document AI · AlloyDB pgvector · BigQuery · Google Earth Engine · USITC / EU TARIC Schedules",
-      "solverStack": "Document AI + AlloyDB pgvector Legal Contract RAG + Gemini 2.5 Pro Hierarchical HS Code Legal-Ruling Classifier",
+      "solverStack": "Document AI + AlloyDB pgvector Legal Contract RAG + Gemini 3.1 Pro Hierarchical HS Code Legal-Ruling Classifier",
       "apiWriteback": "SAP GTS 10-Digit HS Code Lock, FTA Certificate Filing & SAP AP Supplier Rebate Debit Memo",
       "subAgents": [
         {
@@ -2606,7 +2606,7 @@
       "cadType": "supplier_radar",
       "videoSrc": "videos/o2d_suite_demo.mp4",
       "hasPreloadedVideo": true,
-      "systems": "SAP S/4HANA QM · TrackWise / Veeva QMS · Siemens Teamcenter CAD PMI · Document AI · Gemini 2.5 Pro Vision · BigQuery ML · AlloyDB",
+      "systems": "SAP S/4HANA QM · TrackWise / Veeva QMS · Siemens Teamcenter CAD PMI · Document AI · Gemini 3.1 Pro Vision · BigQuery ML · AlloyDB",
       "solverStack": "Document AI & Gemini Multimodal COA Spec Verifier + BigQuery ML Bayesian SPC/Cpk Drift Predictor",
       "apiWriteback": "SAP QM Inspection Lot Quarantine (BAPI_INSPLOT_SETUSAGEDECISION), 8D CAPA Workflow & COPQ Debit Note",
       "subAgents": [

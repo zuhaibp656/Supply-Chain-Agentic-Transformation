@@ -61,7 +61,7 @@ vertexai.init(project="YOUR_ARGOLIS_PROJECT_ID", location="us-central1")
 # In-place deployment / update
 remote_agent = reasoning_engines.ReasoningEngine.create(
     reasoning_engines.LangchainAgent(
-        model="gemini-2.5-pro",
+        model="gemini-3-pro-preview",
         tools=[or_tools_solver, sap_bapi_connector, weather_next_sensor],
     ),
     requirements=[

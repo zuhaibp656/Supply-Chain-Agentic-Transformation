@@ -65,7 +65,7 @@
       "kpiBadge": "90s Cross-Silo Decisions",
       "problem": "Supply chain executives and planners wait days for analysts to pull data across disconnected ERP, WMS, TMS, ocean/air/rail portals, and procurement silos just to answer a single cross-functional question.",
       "solution": "Provides a single Gemini Enterprise conversational control tower grounded on the BigQuery Supply Chain Twin, Cloud Spanner Graph, AlloyDB, and Looker Semantic Layer—returning instant visual diagnostics and executable actions.",
-      "solverStack": "Gemini 2.5 Pro Conversational Analytics + Looker Governed Semantic Layer + Cloud Spanner Graph + A2A Cross-Domain Action Router",
+      "solverStack": "Gemini 3.1 Pro Conversational Analytics + Looker Governed Semantic Layer + Cloud Spanner Graph + A2A Cross-Domain Action Router",
       "subAgents": [
         {
           "name": "Semantic NL2SQL & Spanner Graph Agent",
@@ -195,7 +195,7 @@
       "kpiBadge": "21 Days → 45 Mins",
       "problem": "Sequential spreadsheet handoffs across Demand, Manufacturing, Procurement, Logistics, and Finance take 21 days—rendering monthly S&OP consensus plans obsolete before executives even sign off.",
       "solution": "Maintains a live Cloud Spanner constraint graph of finite plant lines, labor shifts, supplier allocations, and unit margins—solving Pareto-optimal supply plans in Google OR-Tools with instant BigQuery P&L translation.",
-      "solverStack": "Gemini 2.5 Pro + Cloud Spanner Constraint Graph + OR-Tools Multi-Objective MILP Capacity & Margin Solver",
+      "solverStack": "Gemini 3.1 Pro + Cloud Spanner Constraint Graph + OR-Tools Multi-Objective MILP Capacity & Margin Solver",
       "subAgents": [
         {
           "name": "Spanner Constraint Graph Builder",
@@ -325,7 +325,7 @@
       "kpiBadge": "99.6% Compliance",
       "problem": "Earned volume rebates and commodity caps stay buried in PDF contracts, while manual HS tariff classification causes ocean/air customs holds and overpaid duties.",
       "solution": "Continuously reconciles SAP purchasing transactions against Document AI parsed contract clauses in AlloyDB pgvector and global customs tariff schedules with full legal ruling citations.",
-      "solverStack": "Document AI + AlloyDB pgvector Legal Contract RAG + Gemini 2.5 Pro Hierarchical HS Code Legal-Ruling Classifier",
+      "solverStack": "Document AI + AlloyDB pgvector Legal Contract RAG + Gemini 3.1 Pro Hierarchical HS Code Legal-Ruling Classifier",
       "subAgents": [
         {
           "name": "Contract Clause & Rebate Miner",
@@ -818,7 +818,7 @@
       "fullName": "ReturnLoop — Autonomous RMA Grading & Backhaul Optimizer",
       "kpiBadge": "+31% Recovery Margin",
       "problem": "Companies pay expensive third-party LTL rates to ship returns to central depots while their own fleet returns empty, losing 40%+ of recoverable item value.",
-      "solution": "Grades returns at the edge using Gemini 2.5 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.",
+      "solution": "Grades returns at the edge using Gemini 3.0 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.",
       "solverStack": "Gemini Multimodal Vision Defect Grader + Google Maps & OR-Tools Dynamic Backhaul Insertion CVRPTW",
       "subAgents": [
         {

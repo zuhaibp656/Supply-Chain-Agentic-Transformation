@@ -4624,7 +4624,7 @@
         videoSrc: 'videos/demand_sensing_demo.mp4',
         hasPreloadedVideo: true,
         systems: 'Gemini Enterprise · BigQuery Supply Chain Twin · Cloud Spanner Graph · AlloyDB · Looker Semantic Layer · Google Maps Platform · SAP S/4HANA & IBP · Manhattan WMS · Blue Yonder TMS · CargoWise',
-        solverStack: 'Gemini 2.5 Pro Conversational Analytics + Looker Governed Semantic Layer + Cloud Spanner Graph + A2A Cross-Domain Action Router',
+        solverStack: 'Gemini 3.1 Pro Conversational Analytics + Looker Governed Semantic Layer + Cloud Spanner Graph + A2A Cross-Domain Action Router',
         apiWriteback: 'Signed Role-Based Action Dispatch across SAP S/4HANA, IBP, WMS, TMS, CargoWise & Ariba via Apigee',
         roiMetrics: [
           { val: '90 Secs', label: 'Cross-Silo Decision Speed', sub: 'Down from 4–6 days of analyst SQL & Excel stitching', color: '#00d2ff' },
@@ -4794,7 +4794,7 @@
         videoSrc: 'videos/demand_sensing_demo.mp4',
         hasPreloadedVideo: true,
         systems: 'SAP S/4HANA PP/DS · SAP IBP · Kinaxis RapidResponse · BigQuery · Cloud Spanner Graph · Google OR-Tools · Hyperion / Anaplan FP&A',
-        solverStack: 'Gemini 2.5 Pro + Cloud Spanner Constraint Graph + OR-Tools Multi-Objective MILP Capacity & Margin Solver',
+        solverStack: 'Gemini 3.1 Pro + Cloud Spanner Constraint Graph + OR-Tools Multi-Objective MILP Capacity & Margin Solver',
         apiWriteback: 'SAP IBP / S/4HANA Master Production Schedule (MPS) & Financial P&L Bridge Commit',
         subAgents: [
           { name: 'Spanner Constraint Graph Builder', role: 'Maps finite plant line rates, labor shifts, supplier MOQs & ocean/air lead times' },
@@ -5108,7 +5108,7 @@
         cadType: 'corridor_map',
         videoSrc: 'videos/f2f_fleet_demo.mp4',
         hasPreloadedVideo: true,
-        systems: 'Loop / Narvar RMA · Blue Yonder TMS · SAP S/4HANA QM & EWM · Gemini 2.5 Flash Vision · Google Maps Routes API · Google OR-Tools · AlloyDB',
+        systems: 'Loop / Narvar RMA · Blue Yonder TMS · SAP S/4HANA QM & EWM · Gemini 3.0 Flash Vision · Google Maps Routes API · Google OR-Tools · AlloyDB',
         solverStack: 'Gemini Multimodal Vision Defect Grader + Google Maps & OR-Tools Dynamic Backhaul Insertion CVRPTW',
         apiWriteback: 'TMS Fleet Backhaul Pickup Stop, SAP EWM Direct-to-Hub Restock & Vendor Warranty Debit Memo',
         subAgents: [
@@ -5117,7 +5117,7 @@
           { name: 'Vendor Warranty Recovery Agent', role: 'Links defect spikes in AlloyDB to supplier lots & posts SAP debit claims' }
         ],
         problem: 'Companies pay expensive third-party LTL rates to ship returns to central depots while their own fleet returns empty, losing 40%+ of recoverable item value.',
-        solution: 'Grades returns at the edge using Gemini 2.5 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.',
+        solution: 'Grades returns at the edge using Gemini 3.0 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.',
         advantage: 'Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend.'
       },
       rfq_should_cost_agent: {
@@ -5172,7 +5172,7 @@
         videoSrc: 'videos/o2d_suite_demo.mp4',
         hasPreloadedVideo: true,
         systems: 'SAP GTS · SAP Ariba CLM · Icertis · Document AI · AlloyDB pgvector · BigQuery · Google Earth Engine · USITC / EU TARIC Schedules',
-        solverStack: 'Document AI + AlloyDB pgvector Legal Contract RAG + Gemini 2.5 Pro Hierarchical HS Code Legal-Ruling Classifier',
+        solverStack: 'Document AI + AlloyDB pgvector Legal Contract RAG + Gemini 3.1 Pro Hierarchical HS Code Legal-Ruling Classifier',
         apiWriteback: 'SAP GTS 10-Digit HS Code Lock, FTA Certificate Filing & SAP AP Supplier Rebate Debit Memo',
         subAgents: [
           { name: 'Contract Clause & Rebate Miner', role: 'Extracts volume tiers, index caps & SLA rebates from PDFs via Document AI & AlloyDB' },
@@ -5192,7 +5192,7 @@
         cadType: 'supplier_radar',
         videoSrc: 'videos/o2d_suite_demo.mp4',
         hasPreloadedVideo: true,
-        systems: 'SAP S/4HANA QM · TrackWise / Veeva QMS · Siemens Teamcenter CAD PMI · Document AI · Gemini 2.5 Pro Vision · BigQuery ML · AlloyDB',
+        systems: 'SAP S/4HANA QM · TrackWise / Veeva QMS · Siemens Teamcenter CAD PMI · Document AI · Gemini 3.1 Pro Vision · BigQuery ML · AlloyDB',
         solverStack: 'Document AI & Gemini Multimodal COA Spec Verifier + BigQuery ML Bayesian SPC/Cpk Drift Predictor',
         apiWriteback: 'SAP QM Inspection Lot Quarantine (BAPI_INSPLOT_SETUSAGEDECISION), 8D CAPA Workflow & COPQ Debit Note',
         subAgents: [
@@ -8511,7 +8511,7 @@
         { name: 'Cloud Spanner & Spanner Graph', role: 'Multi-tier BOM graph, global ATP inventory ledger & multi-modal network state' },
         { name: 'AlloyDB for PostgreSQL + pgvector', role: 'Sub-millisecond operational state store, contract/tariff vector RAG & agent memory' },
         { name: 'Vertex AI Agent Engine (ADK & A2A)', role: 'Managed runtime orchestrating root supervisor & 3 collaborating A2A sub-agents' },
-        { name: 'Gemini 2.5 Pro & Gemini 2.5 Flash', role: 'Multimodal reasoning, COA/contract vision parsing & conversational analytics' },
+        { name: 'Gemini 3.1 Pro & Gemini 3.0 Flash', role: 'Multimodal reasoning, COA/contract vision parsing & conversational analytics' },
         { name: 'Google OR-Tools (CP-SAT / CVRPTW / MILP)', role: '100% deterministic finite scheduling, multi-modal routing & 3D LIFO/ULD bin-packing' },
         { name: 'Google Maps Platform (Routes & Fleet Engine)', role: 'Routes Preferred API, Distance Matrix, Live Traffic, Geofencing & Places API' },
         { name: 'Vertex AI TimesFM Foundation Model', role: 'Zero-shot & fine-tuned P10/P50/P90 probabilistic demand & lead-time forecasting' },
@@ -8968,11 +8968,11 @@
                 <text x="242" y="204" fill="#00d2ff" font-size="11.5" font-weight="700" font-family="monospace">BQ · Spanner · AlloyDB</text>
               </g>
 
-              <!-- Stage 3: Gemini 2.5 Orchestrator + A2A Coordinator -->
+              <!-- Stage 3: Gemini 3.1 Pro & 3.0 Flash Orchestrator + A2A Coordinator -->
               <rect x="436" y="20" width="188" height="222" rx="16" fill="rgba(20,30,55,0.98)" stroke="#a855f7" stroke-width="2.4" />
               <g clip-path="url(#bpClip3)">
                 <text x="450" y="50" fill="#c084fc" font-size="11.5" font-weight="700">03 · ADK ORCHESTRATOR</text>
-                <text x="450" y="76" fill="#ffffff" font-size="14.5" font-weight="700">Gemini 2.5 Pro/Flash</text>
+                <text x="450" y="76" fill="#ffffff" font-size="14.5" font-weight="700">Gemini 3.1 Pro / 3.0 Flash</text>
                 <text x="450" y="106" fill="#f1f5f9" font-size="12">• Root Supervisor Agent</text>
                 <text x="450" y="130" fill="#f1f5f9" font-size="12">• 3 A2A Sub-Agents</text>
                 <text x="450" y="154" fill="#f1f5f9" font-size="12">• TimesFM &amp; WeatherNext</text>
@@ -9375,7 +9375,7 @@
           <!-- Section: High-Code Mathematical Solver Stack & Signed API Write-Back Spec -->
           <h2 class="block-title">Mathematical Solver Stack &amp; Deterministic ERP/WMS/TMS Write-Back</h2>
           <p class="block-subtitle">
-            ${formatRichText('Why LLMs alone are never allowed to guess physical constraints—how Gemini 2.5 orchestrates 100% deterministic mathematical solvers before executing signed system transactions.')}
+            ${formatRichText('Why LLMs alone are never allowed to guess physical constraints—how Gemini 3.1 Pro & 3.0 Flash orchestrates 100% deterministic mathematical solvers before executing signed system transactions.')}
           </p>
 
           <div class="showcase-grid" style="grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); margin-bottom:32px;">
@@ -9385,7 +9385,7 @@
                 ${formatRichBullets(ag.solverStack || '', '#fbbf24')}
               </div>
               <div style="font-size:15px; color:var(--text-secondary); line-height:1.65;">
-                <strong>Implementation Tier (${sell.buildType}):</strong> ${formatRichText('Gemini 2.5 Pro/Flash translates unstructured disruption alerts, planner intent, and multimodal docs into formal mathematical parameters, invokes the deterministic solver on Vertex AI Agent Engine, and verifies 100% physical/SLA compliance.')}
+                <strong>Implementation Tier (${sell.buildType}):</strong> ${formatRichText('Gemini 3.1 Pro / 3.0 Flash translates unstructured disruption alerts, planner intent, and multimodal docs into formal mathematical parameters, invokes the deterministic solver on Vertex AI Agent Engine, and verifies 100% physical/SLA compliance.')}
               </div>
             </div>
 
@@ -9420,7 +9420,7 @@
             <div class="arch-layer-card">
               <div class="arch-layer-num" style="color:var(--sc-amber);">LAYER 03 · AGENTIC REASONING</div>
               <div class="arch-layer-title">Vertex AI Agent Engine + OR-Tools</div>
-              <div class="arch-layer-desc">${formatRichText(ag.solverStack || 'Multi-agent orchestration combining Gemini 2.5 reasoning with Google OR-Tools & Google Maps Platform physical solvers.')}</div>
+              <div class="arch-layer-desc">${formatRichText(ag.solverStack || 'Multi-agent orchestration combining Gemini 3.1 Pro & 3.0 Flash reasoning with Google OR-Tools & Google Maps Platform physical solvers.')}</div>
             </div>
             <div class="arch-layer-card">
               <div class="arch-layer-num" style="color:var(--sc-violet);">LAYER 04 · CONTROL TOWER UX</div>
