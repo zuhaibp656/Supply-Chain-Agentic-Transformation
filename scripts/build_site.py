@@ -178,45 +178,29 @@ def build_html() -> str:
     }
 
     /* =========================================================================
-       RICH READABILITY SYSTEM:
-       GLOWING METRIC PILLS, ACCENT UNDERLINES, BOLD EMPHASIS & STRUCTURED POINTS
+       CLEAN, CALM READABILITY SYSTEM (NO NOISY BOXES OR UNDERLINES IN TEXT)
        ========================================================================= */
     .sc-hl-metric {
-      display: inline-block;
-      padding: 1px 8px;
-      margin: 0 2px;
-      border-radius: 6px;
-      background: rgba(0, 210, 255, 0.16);
-      border: 1px solid rgba(0, 210, 255, 0.42);
-      color: #7dd3fc;
-      font-weight: 800;
+      color: #ffffff;
+      font-weight: 700;
       font-variant-numeric: tabular-nums;
-      line-height: 1.38;
-      box-shadow: 0 2px 8px rgba(0, 210, 255, 0.12);
     }
 
     .sc-hl-underline {
-      color: #ffffff;
-      font-weight: 700;
-      text-decoration: underline;
-      text-decoration-color: rgba(56, 189, 248, 0.85);
-      text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
+      color: #f8fafc;
+      font-weight: 600;
     }
 
     .sc-hl-bold {
       color: #ffffff;
-      font-weight: 800;
-      background: linear-gradient(180deg, transparent 62%, rgba(168, 85, 247, 0.28) 62%);
-      padding: 0 2px;
-      border-radius: 2px;
+      font-weight: 600;
     }
 
     .sc-rich-points {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: 10px;
       margin: 0;
       padding: 0;
     }
@@ -224,19 +208,18 @@ def build_html() -> str:
     .sc-rich-points li {
       display: flex;
       align-items: flex-start;
-      gap: 11px;
+      gap: 10px;
       line-height: 1.65;
-      color: #f8fafc;
+      color: #e2e8f0;
       font-size: inherit;
     }
 
     .sc-rich-points li .sc-pt-bullet {
       color: var(--pt-color, var(--pitch-accent, var(--dept-accent, #38bdf8)));
-      font-weight: 800;
-      font-size: 1.08em;
-      line-height: 1.48;
+      font-weight: 700;
+      font-size: 1em;
+      line-height: 1.5;
       flex-shrink: 0;
-      text-shadow: 0 0 10px currentColor;
     }
 
     /* =========================================================================
@@ -2881,255 +2864,404 @@ def build_html() -> str:
     }
 
     /* =========================================================================
-       PERIODIC TABLE OF SUPPLY CHAIN AI (#pagePeriodic & periodic_table.html)
+       CLEAN, SPACIOUS PERIODIC TABLE OF AGENTS (#pagePeriodic & periodic_table.html)
        ========================================================================= */
-    .pt-group-grid {
+    .pt-top-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 0 22px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 24px;
+    }
+
+    .pt-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #cbd5e1;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.25s var(--ease-spring);
+    }
+
+    .pt-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.09);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .pt-tab-btn.active {
+      background: #1d4ed8;
+      border-color: #3b82f6;
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+    }
+
+    .pt-tab-count {
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.72;
+    }
+
+    .pt-subheader-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .pt-stat-badges {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pt-stat-badge {
+      padding: 7px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 13.5px;
+      color: #cbd5e1;
+    }
+
+    .pt-stat-badge strong {
+      color: #ffffff;
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    /* 2-Column Main Periodic Layout: Left Domain Rows + Right Sticky Inspector & Legend */
+    .pt-main-layout {
       display: grid;
-      grid-template-columns: repeat(7, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 28px;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 36px;
       align-items: start;
     }
 
-    @media (max-width: 1360px) {
-      .pt-group-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    }
-    @media (max-width: 820px) {
-      .pt-group-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 1100px) {
+      .pt-main-layout {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .pt-group-col {
+    .pt-domain-section {
+      margin-bottom: 32px;
+    }
+
+    .pt-domain-heading {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: 12px;
-      border-radius: 18px;
-      background: rgba(10, 15, 26, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      border-top: 4px solid var(--pt-col-color, #00d2ff);
-    }
-
-    .pt-group-header {
-      padding: 8px 10px 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      margin-bottom: 2px;
-    }
-
-    .pt-group-code {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      align-items: center;
+      gap: 9px;
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 700;
       text-transform: uppercase;
-      color: var(--pt-col-color, #00d2ff);
+      letter-spacing: 0.08em;
+      color: #cbd5e1;
+      margin-bottom: 14px;
     }
 
-    .pt-group-title {
-      font-family: var(--font-display);
-      font-size: 14.5px;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.25;
-      margin-top: 3px;
+    .pt-domain-swatch {
+      width: 9px;
+      height: 9px;
+      border-radius: 2px;
+      background: var(--dom-color, #38bdf8);
+      box-shadow: 0 0 8px var(--dom-color, #38bdf8);
     }
 
-    .pt-element-tile {
+    .pt-domain-count {
+      color: #64748b;
+      font-weight: 600;
+      margin-left: 2px;
+    }
+
+    .pt-tiles-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(136px, 148px));
+      gap: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .pt-tiles-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Minimalist Periodic Element Tile — Easy on the Eyes! */
+    .pt-tile {
       position: relative;
-      padding: 12px 12px 10px;
-      border-radius: 14px;
-      background: linear-gradient(155deg, rgba(18, 27, 46, 0.96) 0%, rgba(10, 16, 28, 0.99) 100%);
-      border: 1.5px solid rgba(255, 255, 255, 0.14);
-      border-left: 4px solid var(--el-color, #00d2ff);
-      cursor: pointer;
-      transition: transform 0.26s var(--ease-spring), border-color 0.24s ease, box-shadow 0.26s var(--ease-spring), opacity 0.24s ease;
+      height: 92px;
+      padding: 10px 12px 9px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-top: 3px solid var(--tile-color, #38bdf8);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 128px;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
       user-select: none;
+      transition: transform 0.28s var(--ease-spring), background 0.22s ease, border-color 0.22s ease, box-shadow 0.28s var(--ease-spring), opacity 0.22s ease;
     }
 
-    .pt-element-tile:hover {
-      transform: translateY(-4px) scale(1.02);
-      border-color: var(--el-color, #00d2ff);
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6), 0 0 18px var(--el-glow, rgba(0, 210, 255, 0.28));
-      z-index: 4;
+    .pt-tile:hover {
+      transform: translateY(-4px);
+      background: rgba(23, 35, 62, 0.95);
+      border-color: var(--tile-color, #38bdf8);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
     }
 
-    .pt-element-tile.active-selected {
+    .pt-tile.active {
+      background: rgba(28, 43, 75, 0.98);
       border-color: #ffffff;
-      box-shadow: 0 0 0 2px var(--el-color, #00d2ff), 0 16px 36px rgba(0, 210, 255, 0.35);
+      box-shadow: 0 0 0 1.5px var(--tile-color, #38bdf8), 0 14px 32px rgba(0, 0, 0, 0.55);
       transform: translateY(-3px);
     }
 
-    .pt-element-tile.pt-highlighted {
-      border-color: var(--el-color, #00d2ff);
-      box-shadow: 0 0 22px var(--el-glow, rgba(0, 210, 255, 0.42)), inset 0 0 14px rgba(0, 210, 255, 0.14);
+    .pt-tile.dimmed {
+      opacity: 0.24;
     }
 
-    .pt-element-tile.pt-dimmed {
-      opacity: 0.22;
-      filter: grayscale(55%);
-    }
-
-    .pt-el-top {
+    .pt-tile-top {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       font-family: var(--font-mono);
       font-size: 11px;
       font-weight: 700;
-      color: #94a3b8;
+      color: var(--tile-color, #38bdf8);
     }
 
-    .pt-el-symbol {
-      font-family: var(--font-display);
-      font-size: 29px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      color: #ffffff;
-      margin: 4px 0 2px;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    .pt-tile-trig {
+      font-size: 11px;
+      opacity: 0.78;
     }
 
-    .pt-el-name {
-      font-family: var(--font-display);
-      font-size: 12.5px;
+    .pt-tile-title {
+      font-family: var(--font-sans);
+      font-size: 13px;
       font-weight: 700;
-      color: #f1f5f9;
-      line-height: 1.25;
-      margin-bottom: 6px;
-    }
-
-    .pt-el-kpi {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      font-weight: 700;
-      padding: 3px 7px;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.06);
-      color: #e2e8f0;
-      width: fit-content;
+      color: #f8fafc;
+      line-height: 1.22;
       max-width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
 
-    /* f-Block Style Persona Rows below the Agent Periodic Table */
-    .pt-persona-period-box {
-      padding: 22px 24px;
-      border-radius: 22px;
-      background: linear-gradient(160deg, rgba(12, 18, 32, 0.95) 0%, rgba(7, 11, 20, 0.98) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      margin-bottom: 28px;
+    .pt-tile-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--dot-color, #38bdf8);
     }
 
-    .pt-persona-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
-      gap: 10px;
-      margin-top: 14px;
+    /* Smooth Animated Inline Expansion Card when a Tile is Clicked */
+    @keyframes ptExpandIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.985);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
-    .pt-persona-tile {
-      padding: 11px 13px;
-      border-radius: 13px;
-      background: rgba(17, 25, 42, 0.92);
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
-      border-left: 4px solid var(--p-color, #10b981);
-      cursor: pointer;
-      transition: all 0.24s var(--ease-spring);
+    .pt-inline-expand {
+      margin-top: 16px;
+      padding: 24px 26px;
+      border-radius: 18px;
+      background: linear-gradient(160deg, rgba(15, 23, 42, 0.97) 0%, rgba(9, 14, 26, 0.99) 100%);
+      border: 1px solid var(--exp-color, #38bdf8);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.52);
+      animation: ptExpandIn 0.34s var(--ease-spring) forwards;
+    }
+
+    /* Right Sticky Sidebar: Preview Card + Legend */
+    .pt-sidebar {
+      position: sticky;
+      top: 86px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 18px;
     }
 
-    .pt-persona-tile:hover,
-    .pt-persona-tile.active-selected {
-      transform: translateY(-3px);
-      border-color: var(--p-color, #10b981);
-      background: rgba(26, 38, 64, 0.96);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.48);
+    .pt-side-card {
+      padding: 22px 22px;
+      border-radius: 16px;
+      background: rgba(13, 20, 36, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.42);
+      animation: ptExpandIn 0.28s var(--ease-spring) forwards;
     }
 
-    .pt-persona-tile.pt-dimmed {
-      opacity: 0.25;
+    .pt-side-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .pt-side-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    .pt-legend-box {
+      padding: 22px;
+      border-radius: 16px;
+      background: rgba(11, 17, 30, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .pt-legend-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+
+    .pt-legend-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+
+    .pt-legend-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
     }
 
     /* =========================================================================
-       NEURAL MIND MAP & PORTAL FLOWCHART (#pageMindMap & mind_map.html)
+       CLEAN, PROGRESSIVE NEURAL MIND MAP & FLOWCHART (#pageMindMap)
        ========================================================================= */
-    .mm-flowchart-grid {
+    .mm-progressive-grid {
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 14px;
-      margin-bottom: 34px;
+      grid-template-columns: 270px 310px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+      margin-bottom: 36px;
     }
 
-    @media (max-width: 1280px) {
-      .mm-flowchart-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    }
-    @media (max-width: 760px) {
-      .mm-flowchart-grid { grid-template-columns: 1fr; }
+    @media (max-width: 1120px) {
+      .mm-progressive-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .mm-flow-step {
-      position: relative;
-      padding: 20px 18px;
+    .mm-col-card {
+      padding: 20px;
       border-radius: 18px;
-      background: linear-gradient(160deg, rgba(16, 24, 42, 0.96) 0%, rgba(9, 14, 26, 0.99) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-top: 4px solid var(--step-color, #00d2ff);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 12px;
-      transition: transform 0.28s var(--ease-spring), border-color 0.25s ease;
+      background: rgba(11, 17, 30, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.11);
     }
 
-    .mm-flow-step:hover {
-      transform: translateY(-4px);
-      border-color: var(--step-color, #00d2ff);
-    }
-
-    .mm-table-wrap {
-      overflow-x: auto;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(8, 12, 22, 0.95);
-    }
-
-    .mm-matrix-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 14.5px;
-    }
-
-    .mm-matrix-table th {
-      padding: 16px 18px;
-      background: rgba(18, 28, 48, 0.96);
-      font-family: var(--font-display);
-      font-size: 12.5px;
-      font-weight: 800;
+    .mm-col-header {
+      font-size: 11.5px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: #93c5fd;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .mm-matrix-table td {
-      padding: 16px 18px;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      vertical-align: top;
-      color: #f1f5f9;
-      line-height: 1.55;
     }
 
-    .mm-matrix-table tr:hover td {
-      background: rgba(0, 210, 255, 0.05);
+    .mm-node-btn {
+      width: 100%;
+      padding: 13px 15px;
+      border-radius: 12px;
+      background: rgba(17, 25, 42, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-left: 3.5px solid var(--node-color, #38bdf8);
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 9px;
+      transition: all 0.25s var(--ease-spring);
+    }
+
+    .mm-node-btn:hover {
+      background: rgba(26, 38, 64, 0.95);
+      transform: translateX(3px);
+      border-color: var(--node-color, #38bdf8);
+    }
+
+    .mm-node-btn.active {
+      background: rgba(30, 46, 78, 0.98);
+      border-color: #ffffff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      transform: translateX(4px);
+    }
+
+    .mm-flow-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 960px) {
+      .mm-flow-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .mm-flow-card {
+      padding: 22px 24px;
+      border-radius: 16px;
+      background: rgba(13, 20, 36, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-top: 3px solid var(--fc-color, #38bdf8);
+      cursor: pointer;
+      transition: all 0.28s var(--ease-spring);
+    }
+
+    .mm-flow-card:hover,
+    .mm-flow-card.active {
+      transform: translateY(-3px);
+      background: rgba(20, 31, 56, 0.96);
+      border-color: var(--fc-color, #38bdf8);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
     }
   </style>
 </head>
@@ -8919,73 +9051,71 @@ def build_html() -> str:
     }
 
     /* =========================================================================
-       PAGE 7: PERIODIC TABLE OF SUPPLY CHAIN AI (32 AGENTS + 26 PERSONAS)
+       PAGE 7: THE PERIODIC TABLE OF AGENTS (CLEAN 2-COLUMN + RIGHT SIDEBAR + EXPAND)
        ========================================================================= */
     const PERIODIC_AGENT_META = {
-      // Group 0: Universal Cross-Persona Core (4)
-      csco_control_tower_copilot:     { num: '01', sym: 'Ct', short: 'TowerMind',      group: 'universal_csco' },
-      disruption_war_room_orchestrator:{ num: '02', sym: 'Sw', short: 'StormShield',    group: 'universal_csco' },
-      master_data_leadtime_steward:   { num: '03', sym: 'Dc', short: 'DataCleanse',    group: 'universal_csco' },
-      working_capital_cash_bridge:    { num: '04', sym: 'Mb', short: 'MarginBridge',   group: 'universal_csco' },
-      // Group I: SCOR 01 · Plan (4)
-      demand_sensing_agent:           { num: '05', sym: 'Pc', short: 'PulseCast',      group: 'demand_sop' },
-      sop_scenario_weaver:            { num: '06', sym: 'Sy', short: 'Synapse S&OP',   group: 'demand_sop' },
-      promo_lift_simulator:           { num: '07', sym: 'Eq', short: 'ElasticityIQ',   group: 'demand_sop' },
-      cpfr_sync_agent:                { num: '08', sym: 'Cs', short: 'ChannelSync',    group: 'demand_sop' },
-      // Group II: SCOR 02 · Source (4)
-      rfq_should_cost_agent:          { num: '09', sym: 'Sp', short: 'SourcePulse',    group: 'sourcing_risk' },
-      tier_n_risk_sentinel:           { num: '10', sym: 'Nx', short: 'NexusShield',    group: 'sourcing_risk' },
-      tariff_esg_agent:               { num: '11', sym: 'Cg', short: 'ClauseGuard',    group: 'sourcing_risk' },
-      supplier_quality_sentinel:      { num: '12', sym: 'Qs', short: 'QualiShield',    group: 'sourcing_risk' },
-      // Group III: SCOR 03 · Make (4)
-      line_schedule_optimizer:        { num: '13', sym: 'Cm', short: 'ChronosMake',    group: 'manufacturing_prod' },
-      predictive_oee_sentinel:        { num: '14', sym: 'Sg', short: 'SpindleGuard',   group: 'manufacturing_prod' },
-      inline_yield_guardian:          { num: '15', sym: 'Yv', short: 'YieldVision',    group: 'manufacturing_prod' },
-      eco_cutover_orchestrator:       { num: '16', sym: 'Ch', short: 'ChangeSync',     group: 'manufacturing_prod' },
-      // Group IV: SCOR 04 · Fulfill (5)
-      meio_safety_stock_agent:        { num: '17', sym: 'Ef', short: 'EchelonFlow',    group: 'inventory_warehouse' },
-      warehouse_slotting_agent:       { num: '18', sym: 'Sm', short: 'SlotMaster 3D',  group: 'inventory_warehouse' },
-      atp_order_promising_agent:      { num: '19', sym: 'Pg', short: 'PromiseGuard',   group: 'inventory_warehouse' },
-      yard_dock_sequencer:            { num: '20', sym: 'Yp', short: 'YardPulse',      group: 'inventory_warehouse' },
-      crossdock_transfer_orchestrator:{ num: '21', sym: 'Xd', short: 'CrossDockFlow',  group: 'inventory_warehouse' },
-      // Group V: SCOR 05 · Deliver — Multi-Modal Ship, Air, Rail & Road (7)
-      load_consolidation_agent:       { num: '22', sym: 'Cb', short: 'CubeMaster 3D',  group: 'logistics_fleet' },
-      fleetflow_dispatch:             { num: '23', sym: 'Ff', short: 'FleetFlow Maps', group: 'logistics_fleet' },
-      port_drayage_orchestrator:      { num: '24', sym: 'Pw', short: 'PortWatch Sea',  group: 'logistics_fleet' },
-      air_cargo_uld_optimizer:        { num: '25', sym: 'Af', short: 'AeroFreight Air',group: 'logistics_fleet' },
-      intermodal_rail_linehaul_agent: { num: '26', sym: 'Ir', short: 'IntermodalSync', group: 'logistics_fleet' },
-      multimodal_mode_shift_agent:    { num: '27', sym: 'Ms', short: 'ModalShift',     group: 'logistics_fleet' },
-      freight_control_tower:          { num: '28', sym: 'St', short: 'SentinelMove',   group: 'logistics_fleet' },
-      // Group VI: SCOR 06 · Return & Enable (4)
-      otif_penalty_shield:            { num: '29', sym: 'Ot', short: 'OTIFShield',     group: 'circular_enable' },
-      reverse_rma_optimizer:          { num: '30', sym: 'Rl', short: 'ReturnLoop RMA', group: 'circular_enable' },
-      carbon_scope3_ledger:           { num: '31', sym: 'Ec', short: 'EcoChain CO2e',  group: 'circular_enable' },
-      network_twin_architect:         { num: '32', sym: 'Td', short: 'TwinDesign',     group: 'circular_enable' }
+      // 01 · Plan (Demand & S&OP)
+      demand_sensing_agent:            { code: '101', sym: 'Pc', short: 'PulseCast',       group: 'demand_sop',          layer: 'BigQuery ML + TimesFM', layerColor: '#10b981', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      sop_scenario_weaver:             { code: '102', sym: 'Sy', short: 'Synapse S&OP',    group: 'demand_sop',          layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
+      promo_lift_simulator:            { code: '103', sym: 'Eq', short: 'ElasticityIQ',    group: 'demand_sop',          layer: 'BigQuery ML + TimesFM', layerColor: '#10b981', trigger: 'Chat-Initiated',    trigIcon: '💬' },
+      cpfr_sync_agent:                 { code: '104', sym: 'Cs', short: 'ChannelSync',     group: 'demand_sop',          layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      // 02 · Source (Procurement & Risk)
+      rfq_should_cost_agent:           { code: '201', sym: 'Sp', short: 'SourcePulse',     group: 'sourcing_risk',       layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Chat-Initiated',    trigIcon: '💬' },
+      tier_n_risk_sentinel:            { code: '202', sym: 'Nx', short: 'NexusShield',     group: 'sourcing_risk',       layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      tariff_esg_agent:                { code: '203', sym: 'Cg', short: 'ClauseGuard',     group: 'sourcing_risk',       layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      supplier_quality_sentinel:       { code: '204', sym: 'Qs', short: 'QualiShield',     group: 'sourcing_risk',       layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      // 03 · Make (Manufacturing & OEE)
+      line_schedule_optimizer:         { code: '301', sym: 'Cm', short: 'ChronosMake',     group: 'manufacturing_prod',  layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      predictive_oee_sentinel:         { code: '302', sym: 'Sg', short: 'SpindleGuard',    group: 'manufacturing_prod',  layer: 'BigQuery ML + TimesFM', layerColor: '#10b981', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      inline_yield_guardian:           { code: '303', sym: 'Yv', short: 'YieldVision',     group: 'manufacturing_prod',  layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      eco_cutover_orchestrator:        { code: '304', sym: 'Ch', short: 'ChangeSync',      group: 'manufacturing_prod',  layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
+      // 04 · Fulfill (3D WMS, MEIO & Cross-Dock)
+      meio_safety_stock_agent:         { code: '401', sym: 'Ef', short: 'EchelonFlow',     group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      warehouse_slotting_agent:        { code: '402', sym: 'Sm', short: 'SlotMaster 3D',   group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      atp_order_promising_agent:       { code: '403', sym: 'Pg', short: 'PromiseGuard',    group: 'inventory_warehouse', layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      yard_dock_sequencer:             { code: '404', sym: 'Yp', short: 'YardPulse',       group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      crossdock_transfer_orchestrator: { code: '405', sym: 'Xd', short: 'CrossDockFlow',   group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      // 05 · Deliver (Multi-Modal Ship, Air, Rail & Road)
+      load_consolidation_agent:        { code: '501', sym: 'Cb', short: 'CubeMaster 3D',   group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      fleetflow_dispatch:              { code: '502', sym: 'Ff', short: 'FleetFlow Maps',  group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      port_drayage_orchestrator:       { code: '503', sym: 'Pw', short: 'PortWatch Sea',   group: 'logistics_fleet',     layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      air_cargo_uld_optimizer:         { code: '504', sym: 'Af', short: 'AeroFreight Air', group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      intermodal_rail_linehaul_agent:  { code: '505', sym: 'Ir', short: 'IntermodalSync',  group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      multimodal_mode_shift_agent:     { code: '506', sym: 'Ms', short: 'ModalShift',      group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
+      freight_control_tower:           { code: '507', sym: 'St', short: 'SentinelMove',    group: 'logistics_fleet',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      // 06 · Return & Enable (OTIF, RMA & ESG)
+      otif_penalty_shield:             { code: '601', sym: 'Ot', short: 'OTIFShield',      group: 'circular_enable',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      reverse_rma_optimizer:           { code: '602', sym: 'Rl', short: 'ReturnLoop RMA',  group: 'circular_enable',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      carbon_scope3_ledger:            { code: '603', sym: 'Ec', short: 'EcoChain CO2e',   group: 'circular_enable',     layer: 'BigQuery ML + TimesFM', layerColor: '#10b981', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      network_twin_architect:          { code: '604', sym: 'Td', short: 'TwinDesign',      group: 'circular_enable',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
+      // 00 · Universal Cross-Persona CSCO Core
+      csco_control_tower_copilot:      { code: '001', sym: 'Ct', short: 'TowerMind',       group: 'universal_csco',      layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Chat-Initiated',    trigIcon: '💬' },
+      disruption_war_room_orchestrator:{ code: '002', sym: 'Sw', short: 'StormShield',     group: 'universal_csco',      layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      master_data_leadtime_steward:    { code: '003', sym: 'Dc', short: 'DataCleanse',     group: 'universal_csco',      layer: 'BigQuery ML + TimesFM', layerColor: '#10b981', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      working_capital_cash_bridge:     { code: '004', sym: 'Mb', short: 'MarginBridge',    group: 'universal_csco',      layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Human-in-the-loop', trigIcon: '🛡️' }
     };
 
     const PERIODIC_GROUPS = [
-      { id: 'universal_csco',      code: 'GROUP 0 · CORE',   title: 'Universal CSCO Core (4)',          color: '#38bdf8', glow: 'rgba(56,189,248,0.35)' },
-      { id: 'demand_sop',          code: 'GROUP I · PLAN',   title: '01 · Plan: Demand & S&OP (4)',     color: '#10b981', glow: 'rgba(16,185,129,0.35)' },
-      { id: 'sourcing_risk',       code: 'GROUP II · SOURCE',title: '02 · Source: Procurement (4)',     color: '#a142f4', glow: 'rgba(161,66,244,0.35)' },
-      { id: 'manufacturing_prod',  code: 'GROUP III · MAKE', title: '03 · Make: Manufacturing (4)',     color: '#3b82f6', glow: 'rgba(59,130,246,0.35)' },
-      { id: 'inventory_warehouse', code: 'GROUP IV · FULFILL',title: '04 · Fulfill: 3D WMS & MEIO (5)', color: '#00d2ff', glow: 'rgba(0,210,255,0.35)' },
-      { id: 'logistics_fleet',     code: 'GROUP V · DELIVER',title: '05 · Deliver: Ship/Air/Rail/Road (7)', color: '#ff8c00', glow: 'rgba(255,140,0,0.35)' },
-      { id: 'circular_enable',     code: 'GROUP VI · ENABLE',title: '06 · Return, OTIF & ESG (4)',      color: '#ec4899', glow: 'rgba(236,72,153,0.35)' }
+      { id: 'demand_sop',          shortTab: 'Plan',            title: '01 · PLAN — DEMAND & S&OP',                      color: '#10b981', count: 4 },
+      { id: 'sourcing_risk',       shortTab: 'Source',          title: '02 · SOURCE — PROCUREMENT & TIER-N RISK',        color: '#a142f4', count: 4 },
+      { id: 'manufacturing_prod',  shortTab: 'Make',            title: '03 · MAKE — MANUFACTURING & PLANT OEE',          color: '#3b82f6', count: 4 },
+      { id: 'inventory_warehouse', shortTab: 'Fulfill',         title: '04 · FULFILL — 3D WMS, MEIO & CROSS-DOCK',       color: '#00d2ff', count: 5 },
+      { id: 'logistics_fleet',     shortTab: 'Deliver',         title: '05 · DELIVER — OCEAN, AIR, RAIL & ROAD FLEET',   color: '#ff8c00', count: 7 },
+      { id: 'circular_enable',     shortTab: 'Return & Enable', title: '06 · RETURN & ENABLE — OTIF, RMA & SCOPE 3 ESG', color: '#ec4899', count: 4 },
+      { id: 'universal_csco',      shortTab: 'Universal Core',  title: '00 · UNIVERSAL CROSS-PERSONA CSCO CORE',         color: '#38bdf8', count: 4 }
     ];
 
-    let currentPeriodicFilter = 'all';
-    let currentPeriodicPersonaId = null;
-    let currentSelectedElementId = 'load_consolidation_agent';
+    let currentPeriodicFilter = 'all'; // 'all' | group.id | 'by_persona'
+    let currentSelectedElementId = 'demand_sensing_agent';
+    let currentExpandedInlineId = null;
 
-    function selectPeriodicPersona(personaId) {
-      if (currentPeriodicPersonaId === personaId) {
-        currentPeriodicPersonaId = null;
+    function handlePeriodicTileClick(agentId) {
+      currentSelectedElementId = agentId;
+      // Toggle smooth inline expansion drawer underneath the clicked domain row
+      if (currentExpandedInlineId === agentId) {
+        currentExpandedInlineId = null;
       } else {
-        currentPeriodicPersonaId = personaId;
-        const p = PERSONAS[personaId];
-        if (p && p.agentIds && p.agentIds.length > 0) {
-          currentSelectedElementId = p.agentIds[0];
-        }
+        currentExpandedInlineId = agentId;
       }
       openPeriodicTablePage(currentPeriodicFilter, currentSelectedElementId, false);
     }
@@ -8999,20 +9129,173 @@ def build_html() -> str:
         history.pushState({ page: 'periodic', filter: currentPeriodicFilter, agentId: currentSelectedElementId }, '', '#periodic');
       }
 
-      const activePersona = currentPeriodicPersonaId ? PERSONAS[currentPeriodicPersonaId] : null;
-      const personaLinkedAgents = activePersona
-        ? new Set([...(activePersona.agentIds || []), ...UNIVERSAL_AGENT_IDS])
-        : null;
-
-      const selAg = AGENTS[currentSelectedElementId] || AGENTS['load_consolidation_agent'];
-      const selMeta = PERIODIC_AGENT_META[selAg.id] || { num: '01', sym: 'Ai', short: selAg.name, group: selAg.deptId };
+      const selAg = AGENTS[currentSelectedElementId] || AGENTS['demand_sensing_agent'];
+      const selMeta = PERIODIC_AGENT_META[selAg.id] || {
+        code: '101', sym: 'Ai', short: selAg.name, group: selAg.deptId,
+        layer: 'Vertex AI ADK + A2A', layerColor: '#3b82f6', trigger: 'Event-Driven', trigIcon: '⚡'
+      };
+      const selGrp = PERIODIC_GROUPS.find(g => g.id === selMeta.group) || PERIODIC_GROUPS[0];
       const selDept = selAg.isUniversal
-        ? { id: 'universal_csco', name: 'Universal Cross-Persona Core', scorBadge: 'GROUP 0 · CORE', color: '#38bdf8' }
-        : (DEPARTMENTS[selAg.deptId] || { id: 'logistics_fleet', name: 'Deliver', scorBadge: 'SCOR', color: '#00d2ff' });
+        ? { id: 'universal_csco', name: 'Universal CSCO Core', scorBadge: '00 · CORE', color: '#38bdf8' }
+        : (DEPARTMENTS[selAg.deptId] || { id: 'demand_sop', name: 'Plan', scorBadge: 'SCOR', color: selGrp.color });
       const selSell = getAgentSellingMeta(selAg, selDept);
-      const selPersonaIds = new Set(selSell.usedByPersonas.map(p => p.id));
 
-      const allPersonasList = Object.values(PERSONAS);
+      const renderInlineExpansionCard = (ag, meta, grpColor) => {
+        const d = ag.isUniversal ? selDept : (DEPARTMENTS[ag.deptId] || selDept);
+        const sell = getAgentSellingMeta(ag, d);
+        return `
+          <div class="pt-inline-expand" style="--exp-color:${grpColor};">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:16px; padding-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:18px;">
+              <div>
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                  <span style="font-family:var(--font-mono); font-size:12px; font-weight:800; padding:3px 9px; border-radius:6px; background:${grpColor}22; border:1px solid ${grpColor}; color:#fff;">
+                    A-${meta.code} · ${meta.sym}
+                  </span>
+                  <span class="pt-side-tag">${meta.layer}</span>
+                  <span class="pt-side-tag">${meta.trigIcon} ${meta.trigger}</span>
+                  <span class="pt-side-tag" style="color:#6ee7b7; border-color:rgba(16,185,129,0.4);">${ag.badge}</span>
+                </div>
+                <h3 style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#ffffff;">
+                  ${ag.name}
+                </h3>
+                <p style="font-size:15px; color:#cbd5e1; margin-top:4px; max-width:880px;">
+                  ${ag.tagline || ag.shortDesc}
+                </p>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <button type="button" class="switch-pill" style="background:${grpColor}; color:#041019; font-weight:700; border:none;" onclick="openAgentPage('${ag.id}', true, event)">
+                  Open Agent Studio &rarr;
+                </button>
+                <button type="button" class="switch-pill" style="border-color:rgba(168,85,247,0.5); color:#e9d5ff;" onclick="openAgentBlueprintPage('${ag.id}', true, event)">
+                  Blueprint Spec &rarr;
+                </button>
+                <button type="button" class="switch-pill" onclick="currentExpandedInlineId = null; openPeriodicTablePage('${currentPeriodicFilter}', '${ag.id}', false)">
+                  ✕
+                </button>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px; margin-bottom:16px;">
+              <div style="padding:16px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08);">
+                <div style="font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:#fca5a5; margin-bottom:6px;">
+                  Problem Solved
+                </div>
+                <p style="font-size:14px; color:#e2e8f0; line-height:1.58;">${ag.problem}</p>
+              </div>
+              <div style="padding:16px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08);">
+                <div style="font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:#7dd3fc; margin-bottom:6px;">
+                  Agentic Solution &amp; Solver
+                </div>
+                <p style="font-size:14px; color:#e2e8f0; line-height:1.58;">${ag.solution}</p>
+              </div>
+              <div style="padding:16px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08);">
+                <div style="font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:#6ee7b7; margin-bottom:6px;">
+                  Verified Outcome
+                </div>
+                <p style="font-size:14px; color:#e2e8f0; line-height:1.58;">${ag.outcome}</p>
+              </div>
+            </div>
+
+            <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08);">
+              <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
+                <span style="font-size:12px; font-weight:700; color:#94a3b8; text-transform:uppercase;">Connected Personas:</span>
+                ${sell.usedByPersonas.map(p => `
+                  <button type="button" class="pt-side-tag" style="cursor:pointer; color:#fff;" onclick="openPersonaPage('${p.id}', true, event)">
+                    ${p.icon} ${p.name} &rarr;
+                  </button>
+                `).join('')}
+              </div>
+              <div style="font-size:12.5px; color:#94a3b8;">
+                Sub-Agents: ${(ag.subAgents || []).map(s => `<strong style="color:#cbd5e1;">${s.name}</strong>`).join(' · ')}
+              </div>
+            </div>
+          </div>
+        `;
+      };
+
+      // Build Left Column Sections (Either by 7 SCOR Domains or by 26 Personas)
+      let leftColumnHtml = '';
+      if (currentPeriodicFilter === 'by_persona') {
+        leftColumnHtml = Object.values(PERSONAS).map((p, idx) => {
+          const d = DEPARTMENTS[p.deptId] || { color: '#38bdf8', scorBadge: 'SCOR' };
+          const pAgents = [...(p.agentIds || []), ...UNIVERSAL_AGENT_IDS].map(id => AGENTS[id]).filter(Boolean);
+          const hasExpandedInRow = currentExpandedInlineId && p.agentIds && p.agentIds.includes(currentExpandedInlineId);
+          const expAg = hasExpandedInRow ? AGENTS[currentExpandedInlineId] : null;
+          const expMeta = expAg ? PERIODIC_AGENT_META[expAg.id] : null;
+
+          return `
+            <div class="pt-domain-section">
+              <div class="pt-domain-heading" style="justify-content:space-between; flex-wrap:wrap;">
+                <div style="display:flex; align-items:center; gap:9px; cursor:pointer;" onclick="openPersonaPage('${p.id}', true, event)">
+                  <span class="pt-domain-swatch" style="--dom-color:${d.color};"></span>
+                  <span style="color:#ffffff;">P${String(idx + 1).padStart(2, '0')} · ${p.name.toUpperCase()}</span>
+                  <span class="pt-domain-count">${pAgents.length} agents · ${p.timeSaved}</span>
+                </div>
+                <button type="button" style="font-size:12px; color:${d.color}; font-weight:600;" onclick="openPersonaPage('${p.id}', true, event)">
+                  View persona page &rarr;
+                </button>
+              </div>
+              <div class="pt-tiles-row">
+                ${pAgents.map(ag => {
+                  const m = PERIODIC_AGENT_META[ag.id] || { code: '100', short: ag.name, layerColor: d.color, trigIcon: '⚡' };
+                  const tileColor = ag.isUniversal ? '#38bdf8' : d.color;
+                  const isSel = ag.id === selAg.id;
+                  return `
+                    <div class="pt-tile ${isSel ? 'active' : ''}"
+                         style="--tile-color:${tileColor}; --dot-color:${m.layerColor};"
+                         onclick="handlePeriodicTileClick('${ag.id}')">
+                      <div class="pt-tile-top">
+                        <span>${m.code}</span>
+                        <span class="pt-tile-trig">${m.trigIcon}</span>
+                      </div>
+                      <div class="pt-tile-title">${m.short}</div>
+                      <div class="pt-tile-dot"></div>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+              ${expAg && expMeta ? renderInlineExpansionCard(expAg, expMeta, d.color) : ''}
+            </div>
+          `;
+        }).join('');
+      } else {
+        const visibleGroups = PERIODIC_GROUPS.filter(g => currentPeriodicFilter === 'all' || g.id === currentPeriodicFilter);
+        leftColumnHtml = visibleGroups.map(grp => {
+          const grpAgents = Object.entries(PERIODIC_AGENT_META)
+            .filter(([_, m]) => m.group === grp.id)
+            .map(([aid, m]) => ({ ag: AGENTS[aid], m }))
+            .filter(x => x.ag);
+          const expandedItem = grpAgents.find(x => x.ag.id === currentExpandedInlineId);
+
+          return `
+            <div class="pt-domain-section">
+              <div class="pt-domain-heading">
+                <span class="pt-domain-swatch" style="--dom-color:${grp.color};"></span>
+                <span>${grp.title}</span>
+                <span class="pt-domain-count">${grpAgents.length}</span>
+              </div>
+              <div class="pt-tiles-row">
+                ${grpAgents.map(({ ag, m }) => {
+                  const isSel = ag.id === selAg.id;
+                  return `
+                    <div class="pt-tile ${isSel ? 'active' : ''}"
+                         style="--tile-color:${grp.color}; --dot-color:${m.layerColor};"
+                         onclick="handlePeriodicTileClick('${ag.id}')">
+                      <div class="pt-tile-top">
+                        <span>${m.code}</span>
+                        <span class="pt-tile-trig" title="${m.trigger}">${m.trigIcon}</span>
+                      </div>
+                      <div class="pt-tile-title">${m.short}</div>
+                      <div class="pt-tile-dot" title="${m.layer}"></div>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+              ${expandedItem ? renderInlineExpansionCard(expandedItem.ag, expandedItem.m, grp.color) : ''}
+            </div>
+          `;
+        }).join('');
+      }
 
       const container = document.getElementById('periodicPageContent');
       container.innerHTML = `
@@ -9025,253 +9308,167 @@ def build_html() -> str:
             <span class="authors-credit-pill" style="padding:5px 14px; font-size:12px;">
               ✦ Built by <strong>Zuhaib Parvez</strong> &amp; <strong>Suman Banerjee</strong>
             </span>
-            <button type="button" class="switch-pill" style="border-color:rgba(16,185,129,0.45); color:#6ee7b7;" onclick="openMindMapPage('all', null, true)">
-              🧠 Switch to Neural Mind Map &amp; Flowchart &rarr;
+            <button type="button" class="switch-pill" style="border-color:rgba(16,185,129,0.45); color:#6ee7b7;" onclick="openMindMapPage('mindmap', null, null, true)">
+              🧠 Switch to Neural Mind Map &rarr;
             </button>
-            <a href="periodic_table.html" target="_blank" class="switch-pill" style="border-color:rgba(0,210,255,0.45); color:#7dd3fc;">
-              Open Standalone Periodic Table URL ↗
-            </a>
           </div>
         </div>
 
-        <div class="persona-hero" style="margin-bottom:26px;">
-          <div class="persona-eyebrow" style="color:#38bdf8;">
-            <span class="accent-dot" style="background:#38bdf8;"></span>
-            <span>PERIODIC TABLE OF SUPPLY CHAIN AGENTIC AI · 32 AGENT ELEMENTS × 26 PERSONA ELEMENTS</span>
-          </div>
-          <h1 class="persona-title">Periodic Table of Supply Chain &amp; Demand AI</h1>
-          <p class="persona-lead" style="max-width:1180px;">
-            An interactive <strong class="sc-hl-bold">Periodic Table</strong> organizing all <span class="sc-hl-metric">32 Supply Chain AI Agents</span> across <span class="sc-hl-metric">7 Functional Groups</span> (<strong class="sc-hl-bold">Group 0 Universal Core + 6 ASCM SCOR Verticals</strong>) and linking them to the <span class="sc-hl-metric">26 Supply Chain Personas</span> below. Click any <span class="sc-hl-underline">Agent Element Tile</span> (<code>01 Ct</code> – <code>32 Td</code>) to inspect the exact problem it solves and see which Personas use it, or click any <span class="sc-hl-underline">Persona Tile</span> (<code>P01</code> – <code>P26</code>) to light up its assigned Agent Elements.
-          </p>
+        <!-- Clean, Calm Header Matching Reference Screenshot -->
+        <div style="padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.12); margin-bottom: 22px;">
+          <h1 style="font-family:var(--font-display); font-size:clamp(32px, 3.6vw, 44px); font-weight:800; letter-spacing:-0.025em; color:#ffffff;">
+            The Periodic Table of Agents
+          </h1>
+        </div>
 
-          <!-- Group Filter Bar -->
-          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; align-items:center;">
-            <button type="button" class="switch-pill ${currentPeriodicFilter === 'all' && !currentPeriodicPersonaId ? 'active-pill' : ''}"
-                    onclick="currentPeriodicPersonaId = null; openPeriodicTablePage('all', '${selAg.id}', false)">
-              All 7 Groups (32 Elements)
+        <p style="font-size:16px; color:#cbd5e1; line-height:1.72; max-width:1080px; margin-bottom:10px;">
+          The Office of the CSCO enterprise catalog — <strong style="color:#fff;">32 AI agents across 7 SCOR domains &amp; 26 supply chain personas</strong> — laid out as a periodic table. Each tile is one agent, positioned in its <strong style="color:#fff;">domain group</strong> and colored by domain. The <strong style="color:#fff;">layer dot</strong> marks how it is built (OR-Tools Solver &rarr; Vertex AI ADK &rarr; BigQuery ML + TimesFM &rarr; Spanner Graph), the <strong style="color:#fff;">corner icon</strong> marks its trigger (⚡ event · 💬 chat · ⏱️ scheduled), and a <strong style="color:#fff;">shield</strong> (🛡️) marks a human-in-the-loop checkpoint. Switch domains with the tabs, or click any tile to smoothly expand its full specification.
+        </p>
+
+        <!-- Clean Pill Tabs -->
+        <div class="pt-top-tabs">
+          <button type="button" class="pt-tab-btn ${currentPeriodicFilter === 'all' ? 'active' : ''}"
+                  onclick="currentExpandedInlineId = null; openPeriodicTablePage('all', '${selAg.id}', false)">
+            <span>All Domains</span>
+            <span class="pt-tab-count">32</span>
+          </button>
+          ${PERIODIC_GROUPS.map(g => `
+            <button type="button" class="pt-tab-btn ${currentPeriodicFilter === g.id ? 'active' : ''}"
+                    onclick="currentExpandedInlineId = null; openPeriodicTablePage('${g.id}', '${selAg.id}', false)">
+              <span>${g.shortTab}</span>
+              <span class="pt-tab-count">${g.count}</span>
             </button>
-            ${PERIODIC_GROUPS.map(g => `
-              <button type="button" class="switch-pill ${currentPeriodicFilter === g.id ? 'active-pill' : ''}"
-                      style="border-color:${g.color}66; color:${currentPeriodicFilter === g.id ? '#fff' : g.color};"
-                      onclick="currentPeriodicPersonaId = null; openPeriodicTablePage('${g.id}', '${selAg.id}', false)">
-                ${g.title}
-              </button>
-            `).join('')}
-            ${currentPeriodicPersonaId ? `
-              <button type="button" class="switch-pill" style="background:rgba(239,68,68,0.18); border-color:#ef4444; color:#fca5a5;"
-                      onclick="currentPeriodicPersonaId = null; openPeriodicTablePage('all', '${selAg.id}', false)">
-                ✕ Clear Persona Filter (${activePersona ? activePersona.name : ''})
-              </button>
-            ` : ''}
+          `).join('')}
+          <button type="button" class="pt-tab-btn ${currentPeriodicFilter === 'by_persona' ? 'active' : ''}"
+                  onclick="currentExpandedInlineId = null; openPeriodicTablePage('by_persona', '${selAg.id}', false)">
+            <span>By Persona</span>
+            <span class="pt-tab-count">26</span>
+          </button>
+        </div>
+
+        <!-- Subheader Row with Right Stat Badges -->
+        <div class="pt-subheader-bar">
+          <div>
+            <h2 style="font-family:var(--font-display); font-size:21px; font-weight:700; color:#ffffff; margin-bottom:4px;">
+              ${currentPeriodicFilter === 'by_persona'
+                ? 'Persona-to-Agent Periodic View (26 Supply Chain Roles)'
+                : 'The Periodic Table of Supply Chain & Demand Agents'}
+            </h2>
+            <p style="font-size:14px; color:#94a3b8;">
+              Click any element tile to smoothly expand its workflow inline and inspect its specification on the right.
+            </p>
+          </div>
+          <div class="pt-stat-badges">
+            <div class="pt-stat-badge"><strong>32</strong>agents</div>
+            <div class="pt-stat-badge"><strong>7</strong>domains</div>
+            <div class="pt-stat-badge"><strong>26</strong>personas</div>
           </div>
         </div>
 
-        ${activePersona ? `
-          <div style="margin-bottom:24px; padding:22px 26px; border-radius:20px; background:linear-gradient(135deg, rgba(16,185,129,0.14) 0%, rgba(0,210,255,0.12) 100%); border:1.5px solid #10b981; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px;">
-            <div style="max-width:960px;">
-              <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:#6ee7b7; margin-bottom:4px;">
-                ACTIVE PERSONA FILTER · LIGHTING UP ${(activePersona.agentIds || []).length} DOMAIN AGENTS + 4 UNIVERSAL CORE AGENTS
-              </div>
-              <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#ffffff; margin-bottom:6px;">
-                ${activePersona.icon} ${activePersona.name} — <span style="color:#7dd3fc;">${activePersona.role}</span>
-              </div>
-              <div style="font-size:15.5px; color:#f1f5f9; line-height:1.6;">
-                ${formatRichText(activePersona.mandate)}
-              </div>
-            </div>
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <button type="button" class="cta-btn" style="background:#10b981; color:#04130d; padding:12px 20px;" onclick="openPersonaPage('${activePersona.id}', true, event)">
-                Open Full Persona Page &rarr;
-              </button>
-              <button type="button" class="switch-pill" onclick="currentPeriodicPersonaId = null; openPeriodicTablePage('all', '${selAg.id}', false)">
-                Reset Filter
-              </button>
-            </div>
+        <!-- Main 2-Column Layout: Left Horizontal Domain Rows + Right Sticky Inspector & Legend -->
+        <div class="pt-main-layout">
+          <div>
+            ${leftColumnHtml}
           </div>
-        ` : ''}
 
-        <!-- MAIN 7-GROUP PERIODIC TABLE GRID (32 AI AGENT ELEMENTS) -->
-        <div class="pt-group-grid">
-          ${PERIODIC_GROUPS.map(grp => {
-            const groupAgents = Object.entries(PERIODIC_AGENT_META)
-              .filter(([_, m]) => m.group === grp.id)
-              .map(([aid, m]) => ({ agent: AGENTS[aid], meta: m }))
-              .filter(x => x.agent);
-
-            return `
-              <div class="pt-group-col" style="--pt-col-color:${grp.color};">
-                <div class="pt-group-header">
-                  <div class="pt-group-code">${grp.code}</div>
-                  <div class="pt-group-title">${grp.title}</div>
+          <!-- Right Sticky Sidebar: Selected Tile Card + Legend -->
+          <aside class="pt-sidebar">
+            <div class="pt-side-card" style="border-top: 3px solid ${selGrp.color};">
+              <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:14px;">
+                <div class="pt-side-badge" style="background:${selGrp.color};">
+                  ${selMeta.code}
                 </div>
-                ${groupAgents.map(({ agent, meta }) => {
-                  const isSelected = agent.id === selAg.id;
-                  const isGroupFilteredOut = currentPeriodicFilter !== 'all' && currentPeriodicFilter !== grp.id;
-                  const isPersonaFilteredOut = personaLinkedAgents && !personaLinkedAgents.has(agent.id);
-                  const isDimmed = isGroupFilteredOut || isPersonaFilteredOut;
-                  const isHighlighted = (personaLinkedAgents && personaLinkedAgents.has(agent.id)) || (currentPeriodicFilter === grp.id);
-
-                  return `
-                    <div class="pt-element-tile ${isSelected ? 'active-selected' : ''} ${isDimmed ? 'pt-dimmed' : ''} ${isHighlighted ? 'pt-highlighted' : ''}"
-                         style="--el-color:${grp.color}; --el-glow:${grp.glow};"
-                         onclick="openPeriodicTablePage('${currentPeriodicFilter}', '${agent.id}', false)">
-                      <div>
-                        <div class="pt-el-top">
-                          <span>${meta.num}</span>
-                          <span style="color:${grp.color};">${agent.isUniversal ? 'CORE' : grp.code.split('·')[1].trim()}</span>
-                        </div>
-                        <div class="pt-el-symbol" style="color:${isSelected ? '#ffffff' : grp.color};">${meta.sym}</div>
-                        <div class="pt-el-name">${meta.short}</div>
-                      </div>
-                      <div class="pt-el-kpi" style="border:1px solid ${grp.color}44; color:#f8fafc;">
-                        ${agent.badge}
-                      </div>
-                    </div>
-                  `;
-                }).join('')}
-              </div>
-            `;
-          }).join('')}
-        </div>
-
-        <!-- LIVE ATOMIC ELEMENT INSPECTOR PANEL (SHOWS SELECTED AGENT'S PROBLEM, SOLUTION, PERSONAS & STACK) -->
-        <div id="periodicInspectorCard" style="margin-bottom:30px; padding:30px 32px; border-radius:24px; background:linear-gradient(160deg, rgba(14, 22, 38, 0.98) 0%, rgba(8, 13, 24, 0.99) 100%); border:2px solid ${selDept.color}; box-shadow:0 22px 56px rgba(0,0,0,0.6);">
-          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:20px; padding-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.12); margin-bottom:22px;">
-            <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
-              <div style="width:84px; height:84px; border-radius:18px; background:rgba(255,255,255,0.04); border:2px solid ${selDept.color}; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 0 24px ${selDept.color}44;">
-                <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#94a3b8;">#${selMeta.num}</span>
-                <span style="font-family:var(--font-display); font-size:34px; font-weight:800; color:${selDept.color}; line-height:1;">${selMeta.sym}</span>
-              </div>
-              <div style="max-width:860px;">
-                <div style="font-size:12.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${selDept.color}; margin-bottom:4px;">
-                  SELECTED ELEMENT #${selMeta.num} · ${selDept.scorBadge} · ${selAg.badge}
+                <div>
+                  <div style="font-family:var(--font-display); font-size:17px; font-weight:800; color:#ffffff; line-height:1.25;">
+                    ${selMeta.short}
+                  </div>
+                  <div style="font-family:var(--font-mono); font-size:12px; color:#94a3b8; margin-top:3px;">
+                    A-${selMeta.code} · ${selGrp.shortTab}
+                  </div>
                 </div>
-                <h2 style="font-family:var(--font-display); font-size:clamp(24px, 2.8vw, 32px); font-weight:800; color:#ffffff; margin-bottom:6px;">
-                  ${selAg.name}
-                </h2>
-                <p style="font-size:16.5px; color:#f1f5f9; line-height:1.6;">
-                  ${formatRichText(selAg.tagline || selAg.shortDesc)}
-                </p>
               </div>
-            </div>
-            <div style="display:flex; flex-wrap:wrap; gap:10px;">
-              <button type="button" class="cta-btn" style="background:linear-gradient(135deg, ${selDept.color}, #38bdf8); color:#041019; padding:13px 22px;" onclick="openAgentPage('${selAg.id}', true, event)">
-                <span>Launch Executive Studio &amp; Demo</span>
-                <span>&rarr;</span>
-              </button>
-              <button type="button" class="cta-btn" style="background:rgba(168,85,247,0.2); border:1px solid #a855f7; color:#f3e8ff; padding:13px 22px;" onclick="openAgentBlueprintPage('${selAg.id}', true, event)">
-                <span>🏗️ Open High-Code Blueprint</span>
-                <span>&rarr;</span>
-              </button>
-            </div>
-          </div>
 
-          <!-- 3-Column Problem / Solution / Outcome Breakdown -->
-          <div class="exec-pitch-grid" style="margin-bottom:22px;">
-            <div class="exec-pitch-card" style="--pitch-accent:#ef4444; padding:24px;">
-              <div class="exec-pitch-eyebrow" style="background:rgba(239,68,68,0.16); border:1px solid rgba(239,68,68,0.45); color:#fca5a5;">
-                ⚠️ 01 · What Problem We Are Solving
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;">
+                <span class="pt-side-tag">${selMeta.layer}</span>
+                <span class="pt-side-tag">${selMeta.trigIcon} ${selMeta.trigger}</span>
+                <span class="pt-side-tag" style="color:#6ee7b7; border-color:rgba(16,185,129,0.35);">${selAg.badge}</span>
               </div>
-              <div class="exec-pitch-title" style="font-size:19px;">Legacy Bottleneck &amp; Toil</div>
-              <div class="exec-pitch-body" style="font-size:15.5px;">${formatRichBullets(selAg.problem, '#ef4444')}</div>
-            </div>
-            <div class="exec-pitch-card" style="--pitch-accent:${selDept.color}; padding:24px;">
-              <div class="exec-pitch-eyebrow" style="background:rgba(0,210,255,0.15); border:1px solid ${selDept.color}; color:#f8fafc;">
-                ⚡ 02 · How The Agent Solves It
-              </div>
-              <div class="exec-pitch-title" style="font-size:19px;">Autonomous AI + Math Solver</div>
-              <div class="exec-pitch-body" style="font-size:15.5px;">${formatRichBullets(selAg.solution, selDept.color)}</div>
-            </div>
-            <div class="exec-pitch-card" style="--pitch-accent:#10b981; padding:24px;">
-              <div class="exec-pitch-eyebrow" style="background:rgba(16,185,129,0.16); border:1px solid rgba(16,185,129,0.48); color:#6ee7b7;">
-                📈 03 · Verified Bottom-Line Impact
-              </div>
-              <div class="exec-pitch-title" style="font-size:19px;">Quantified Value &amp; Proof</div>
-              <div class="exec-pitch-body" style="font-size:15.5px;">${formatRichBullets(selAg.outcome, '#10b981')}</div>
-            </div>
-          </div>
 
-          <!-- Neural Connections: Personas Using This Agent + 3 A2A Sub-Agents -->
-          <div style="display:grid; grid-template-columns: 1.2fr 1fr; gap:20px;">
-            <div style="padding:18px 20px; border-radius:16px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1);">
-              <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:#7dd3fc; margin-bottom:10px;">
-                🔗 Neural Persona Connections (${selSell.usedByPersonas.length} Supply Chain Roles Use Element #${selMeta.num} ${selMeta.sym})
-              </div>
-              <div class="used-by-pills">
-                ${selSell.usedByPersonas.map(p => {
-                  const pDept = DEPARTMENTS[p.deptId] || selDept;
-                  return `
-                    <button type="button" class="used-by-pill" style="border-color:${pDept.color}66;" onclick="openPersonaPage('${p.id}', true, event)">
-                      <span>${p.icon}</span>
-                      <span><strong>${p.name}</strong></span>
-                      <span style="color:${pDept.color}; font-size:11.5px;">Open &rarr;</span>
+              <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin-bottom:14px;">
+                ${selAg.shortDesc}
+              </p>
+
+              <div style="margin-bottom:16px;">
+                <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:#64748b; margin-bottom:6px;">
+                  Used by Personas (${selSell.usedByPersonas.length})
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:5px;">
+                  ${selSell.usedByPersonas.slice(0, 4).map(p => `
+                    <button type="button" class="pt-side-tag" style="cursor:pointer; font-size:11px;" onclick="openPersonaPage('${p.id}', true, event)">
+                      ${p.icon} ${p.name}
                     </button>
-                  `;
-                }).join('')}
+                  `).join('')}
+                </div>
+              </div>
+
+              <div style="display:flex; flex-direction:column; gap:8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08);">
+                <button type="button" style="display:inline-flex; align-items:center; justify-content:space-between; font-size:13.5px; font-weight:700; color:#60a5fa;" onclick="openAgentPage('${selAg.id}', true, event)">
+                  <span>View agent studio &rarr;</span>
+                  <span style="font-size:11.5px; color:#94a3b8;">#agent/${selAg.id}</span>
+                </button>
+                <button type="button" style="display:inline-flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#c084fc;" onclick="openAgentBlueprintPage('${selAg.id}', true, event)">
+                  <span>View high-code blueprint &rarr;</span>
+                  <span style="font-size:11.5px; color:#94a3b8;">ADK / A2A</span>
+                </button>
               </div>
             </div>
-            <div style="padding:18px 20px; border-radius:16px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1);">
-              <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:#c084fc; margin-bottom:10px;">
-                🤖 3 Collaborating A2A Sub-Agents &amp; Solver Stack
-              </div>
-              <div style="display:flex; flex-direction:column; gap:6px; font-size:14px; color:#f1f5f9;">
-                ${(selAg.subAgents || []).map(sa => `
-                  <div><strong style="color:${selDept.color};">▸ ${sa.name}:</strong> ${formatRichText(sa.role)}</div>
-                `).join('')}
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- f-BLOCK PERIOD ROWS: 26 SUPPLY CHAIN PERSONA ELEMENTS (CLICK ANY PERSONA TO HIGHLIGHT ITS AGENTS ABOVE) -->
-        <div class="pt-persona-period-box">
-          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px;">
-            <div>
-              <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:#10b981;">
-                PERSONA SERIES (P01 – P26) · CLICK ANY PERSONA TILE TO LIGHT UP ITS ASSIGNED AI AGENTS IN THE PERIODIC TABLE ABOVE
-              </div>
-              <h3 style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#ffffff; margin-top:4px;">
-                26 Supply Chain Personas Mapped to Periodic Agent Elements
-              </h3>
-            </div>
-            <span style="font-size:13.5px; color:#94a3b8;">
-              Highlighted tiles below indicate Personas connected to currently selected Element <strong>#${selMeta.num} ${selMeta.sym}</strong>
-            </span>
-          </div>
-
-          <div class="pt-persona-grid">
-            ${allPersonasList.map((p, idx) => {
-              const pNum = 'P' + String(idx + 1).padStart(2, '0');
-              const pDept = DEPARTMENTS[p.deptId] || { color: '#00d2ff', scorBadge: 'SCOR' };
-              const isActivePersona = currentPeriodicPersonaId === p.id;
-              const usesSelectedAgent = selPersonaIds.has(p.id);
-              const linkedSyms = (p.agentIds || []).map(aid => PERIODIC_AGENT_META[aid] ? PERIODIC_AGENT_META[aid].sym : '').filter(Boolean);
-
-              return `
-                <div class="pt-persona-tile ${isActivePersona ? 'active-selected' : ''} ${(!currentPeriodicPersonaId && !usesSelectedAgent) ? 'pt-dimmed' : ''}"
-                     style="--p-color:${pDept.color};"
-                     onclick="selectPeriodicPersona('${p.id}')">
-                  <div style="display:flex; justify-content:space-between; align-items:center; font-family:var(--font-mono); font-size:11px; color:#94a3b8;">
-                    <span style="font-weight:800; color:${pDept.color};">${pNum}</span>
-                    <span>${pDept.scorBadge.split('·')[0].trim()}</span>
+            <!-- Legend Box (LAYERS, TRIGGERS, DOMAINS) -->
+            <div class="pt-legend-box">
+              <div>
+                <div class="pt-legend-title">LAYERS</div>
+                <div class="pt-legend-list">
+                  <div class="pt-legend-row">
+                    <span style="display:inline-flex; align-items:center; gap:8px;"><span class="pt-tile-dot" style="--dot-color:#f59e0b;"></span>OR-Tools + Vertex ADK</span>
                   </div>
-                  <div style="font-family:var(--font-display); font-size:14px; font-weight:800; color:#ffffff; line-height:1.25; margin:2px 0;">
-                    ${p.icon} ${p.name}
+                  <div class="pt-legend-row">
+                    <span style="display:inline-flex; align-items:center; gap:8px;"><span class="pt-tile-dot" style="--dot-color:#3b82f6;"></span>Vertex AI ADK + A2A</span>
                   </div>
-                  <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:4px;">
-                    ${linkedSyms.map(sym => `
-                      <span style="font-family:var(--font-mono); font-size:10.5px; font-weight:800; padding:2px 6px; border-radius:5px; background:${pDept.color}22; border:1px solid ${pDept.color}66; color:#ffffff;">
-                        ${sym}
-                      </span>
-                    `).join('')}
-                    <span style="font-family:var(--font-mono); font-size:10px; padding:2px 5px; border-radius:5px; background:rgba(56,189,248,0.14); color:#7dd3fc;">
-                      +4 Core
-                    </span>
+                  <div class="pt-legend-row">
+                    <span style="display:inline-flex; align-items:center; gap:8px;"><span class="pt-tile-dot" style="--dot-color:#10b981;"></span>BigQuery ML + TimesFM</span>
+                  </div>
+                  <div class="pt-legend-row">
+                    <span style="display:inline-flex; align-items:center; gap:8px;"><span class="pt-tile-dot" style="--dot-color:#a855f7;"></span>Spanner Graph + AI</span>
                   </div>
                 </div>
-              `;
-            }).join('')}
-          </div>
+              </div>
+
+              <div>
+                <div class="pt-legend-title">TRIGGERS</div>
+                <div class="pt-legend-list">
+                  <div class="pt-legend-row"><span>⚡ Event-Driven</span></div>
+                  <div class="pt-legend-row"><span>💬 Chat-Initiated</span></div>
+                  <div class="pt-legend-row"><span>⏱️ Scheduled</span></div>
+                  <div class="pt-legend-row"><span>🛡️ Human-in-the-loop</span></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="pt-legend-title">DOMAINS</div>
+                <div class="pt-legend-list">
+                  ${PERIODIC_GROUPS.map(g => `
+                    <div class="pt-legend-row" style="cursor:pointer;" onclick="currentExpandedInlineId = null; openPeriodicTablePage('${g.id}', '${selAg.id}', false)">
+                      <span style="display:inline-flex; align-items:center; gap:8px;">
+                        <span class="pt-domain-swatch" style="--dom-color:${g.color};"></span>
+                        <span>${g.shortTab}</span>
+                      </span>
+                      <span style="color:#64748b; font-family:var(--font-mono); font-size:12px;">${g.count}</span>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
       `;
 
@@ -9280,87 +9477,129 @@ def build_html() -> str:
     }
 
     /* =========================================================================
-       PAGE 8: INTERACTIVE NEURAL MIND MAP, PORTAL CLICK-PATH FLOWCHART & MATRIX
+       PAGE 8: CLEAN, PROGRESSIVE NEURAL MIND MAP & CLICK-PATH FLOWCHART
        ========================================================================= */
-    let currentMindMapVertical = 'all';
-    let currentMindMapFocusId = 'demand_planning_dir';
+    let currentMindMapMode = 'mindmap'; // 'mindmap' | 'flowchart'
+    let currentMindMapDeptId = 'demand_sop';
+    let currentMindMapPersonaId = 'demand_planning_dir';
+    let currentMindMapAgentId = 'demand_sensing_agent';
+    let currentFlowStepIdx = 0;
 
-    function openMindMapPage(filterVertical = 'all', focusId = null, pushState = true) {
-      currentMindMapVertical = filterVertical || 'all';
-      if (focusId) currentMindMapFocusId = focusId;
+    function selectMindMapDept(deptId) {
+      currentMindMapDeptId = deptId;
+      const d = DEPARTMENTS[deptId];
+      if (d && d.personaIds && d.personaIds.length > 0) {
+        currentMindMapPersonaId = d.personaIds[0];
+        const p = PERSONAS[currentMindMapPersonaId];
+        if (p && p.agentIds && p.agentIds.length > 0) {
+          currentMindMapAgentId = p.agentIds[0];
+        }
+      }
+      openMindMapPage('mindmap', currentMindMapDeptId, currentMindMapPersonaId, false);
+    }
+
+    function selectMindMapPersona(personaId) {
+      currentMindMapPersonaId = personaId;
+      const p = PERSONAS[personaId];
+      if (p) {
+        currentMindMapDeptId = p.deptId;
+        if (p.agentIds && p.agentIds.length > 0) {
+          currentMindMapAgentId = p.agentIds[0];
+        }
+      }
+      openMindMapPage('mindmap', currentMindMapDeptId, currentMindMapPersonaId, false);
+    }
+
+    function selectMindMapAgent(agentId) {
+      currentMindMapAgentId = agentId;
+      openMindMapPage('mindmap', currentMindMapDeptId, currentMindMapPersonaId, false);
+    }
+
+    function openMindMapPage(mode = 'mindmap', deptId = null, personaId = null, pushState = true) {
+      if (typeof personaId === 'boolean') {
+        pushState = personaId;
+        personaId = null;
+      }
+      if (mode === 'mindmap' || mode === 'flowchart') {
+        currentMindMapMode = mode;
+      }
+      if (deptId && DEPARTMENTS[deptId]) {
+        currentMindMapDeptId = deptId;
+      }
+      if (personaId && PERSONAS[personaId]) {
+        currentMindMapPersonaId = personaId;
+      }
       if (pushState) {
-        history.pushState({ page: 'mindmap', vertical: currentMindMapVertical, focusId: currentMindMapFocusId }, '', '#mindmap');
+        history.pushState({ page: 'mindmap', mode: currentMindMapMode }, '', '#mindmap');
       }
 
-      const deptsToShow = Object.values(DEPARTMENTS).filter(d => currentMindMapVertical === 'all' || d.id === currentMindMapVertical);
-      const personasToShow = Object.values(PERSONAS).filter(p => currentMindMapVertical === 'all' || p.deptId === currentMindMapVertical);
-      const domainAgentsToShow = Object.values(AGENTS).filter(a => !a.isUniversal && (currentMindMapVertical === 'all' || a.deptId === currentMindMapVertical));
-      const universalAgents = UNIVERSAL_AGENT_IDS.map(id => AGENTS[id]).filter(Boolean);
+      const activeDept = DEPARTMENTS[currentMindMapDeptId] || Object.values(DEPARTMENTS)[0];
+      const deptPersonas = (activeDept.personaIds || []).map(pid => PERSONAS[pid]).filter(Boolean);
+      const activePersona = PERSONAS[currentMindMapPersonaId] || deptPersonas[0] || Object.values(PERSONAS)[0];
+      const personaDomainAgents = (activePersona.agentIds || []).map(aid => AGENTS[aid]).filter(Boolean);
+      const personaUniversalAgents = UNIVERSAL_AGENT_IDS.map(uid => AGENTS[uid]).filter(Boolean);
+      const allPersonaAgents = [...personaDomainAgents, ...personaUniversalAgents];
+      const activeAgent = AGENTS[currentMindMapAgentId] || allPersonaAgents[0] || Object.values(AGENTS)[0];
+      const activeAgentMeta = PERIODIC_AGENT_META[activeAgent.id] || { code: '101', sym: 'Ai', short: activeAgent.name, layer: 'Vertex AI ADK', trigger: 'Event-Driven', trigIcon: '⚡' };
 
-      // Determine focused Persona or Agent for the Neural Synapse Inspector
-      let focusedPersona = PERSONAS[currentMindMapFocusId] || personasToShow[0] || Object.values(PERSONAS)[0];
-      let focusedAgent = AGENTS[currentMindMapFocusId] || null;
-      if (!focusedAgent && focusedPersona && focusedPersona.agentIds && focusedPersona.agentIds.length > 0) {
-        focusedAgent = AGENTS[focusedPersona.agentIds[0]];
-      }
+      const flowSteps = [
+        {
+          num: '01',
+          title: 'Full-Screen Hero Landing (#)',
+          sub: '60fps Supply Chain Canvas & Thesis',
+          color: '#38bdf8',
+          whatOpens: 'Displays kinetic Supply Chain animations in the outer gutters and the core CSCO executive thesis in the center. Clicking "Explore CSCO Organization" smoothly scrolls down to the 6-Vertical CSCO Org Chart.',
+          actionLabel: 'Open Hero Landing &rarr;',
+          actionFn: "goHome()"
+        },
+        {
+          num: '02',
+          title: 'CSCO Org Chart (#orgChart)',
+          sub: '6 SCOR Verticals + 4 Universal Core Agents',
+          color: '#10b981',
+          whatOpens: 'Presents the Chief Supply Chain Officer root card, the 6 ASCM SCOR Vertical cards (Plan, Source, Make, Fulfill, Deliver, Return & Enable), the 4 Cross-Persona Universal Agents, and the 4 End-to-End Value Chains.',
+          actionLabel: 'Open CSCO Org Chart &rarr;',
+          actionFn: "goToOrgChart()"
+        },
+        {
+          num: '03',
+          title: 'Department Showcase Drawer',
+          sub: 'Animated Genie Expansion on Vertical Click',
+          color: '#a142f4',
+          whatOpens: 'Clicking any of the 6 SCOR Vertical cards smoothly expands a dedicated showcase drawer comparing Manual Toil vs. Agentic Impact and listing that vertical’s 4–6 Personas and Domain AI Agents.',
+          actionLabel: 'Try on CSCO Org Chart &rarr;',
+          actionFn: "goToOrgChart()"
+        },
+        {
+          num: '04',
+          title: 'Dedicated Persona Page (#persona/id)',
+          sub: '26 Supply Chain Roles · Before vs. After Toil',
+          color: '#00d2ff',
+          whatOpens: 'Clicking any Persona opens their dedicated transformation page featuring their Executive Mandate, a time-slotted Day-in-the-Life schedule (Manual Toil vs. Gemini Agentic Flow), and their assigned Domain + Universal Agents.',
+          actionLabel: 'Open Sample Persona Page &rarr;',
+          actionFn: "openPersonaPage('demand_planning_dir', true, event)"
+        },
+        {
+          num: '05',
+          title: 'Executive Agent Studio (#agent/id)',
+          sub: '32 Agents · ROI Cards, Pitch & Live 3D CAD',
+          color: '#ff8c00',
+          whatOpens: 'Clicking any Agent opens its Executive Selling Page: 4 headline ROI stat cards, 3 executive pitch cards (Problem, Solution, Outcome), an interactive CAD + MP4 video simulator, and the 12 Google Cloud & Enterprise Connectors panel.',
+          actionLabel: 'Open Sample Agent Studio &rarr;',
+          actionFn: "openAgentPage('load_consolidation_agent', true, event)"
+        },
+        {
+          num: '06',
+          title: 'High-Code Technical Blueprint (#blueprint/id)',
+          sub: '5-Stage ADK Pipeline, 3 Sub-Agents & Solvers',
+          color: '#ec4899',
+          whatOpens: 'Clicking "Open Technical Blueprint" on any Agent page opens the deep engineering specification: a 5-stage animated SVG architecture diagram, 3 collaborating A2A Sub-Agents, Private/Community/Public data schemas, and OR-Tools math solvers.',
+          actionLabel: 'Open Sample Blueprint &rarr;',
+          actionFn: "openAgentBlueprintPage('load_consolidation_agent', true, event)"
+        }
+      ];
 
-      // Build dynamic SVG coordinates for the 4-Layer Neural Synaptic Graph
-      const svgW = 1440;
-      const maxRows = Math.max(personasToShow.length, domainAgentsToShow.length, 8);
-      const svgH = Math.max(660, maxRows * 46 + 130);
-
-      // Layer X coordinates
-      const xRoot = 110;
-      const xDept = 365;
-      const xPersona = 710;
-      const xAgent = 1120;
-
-      const deptNodes = deptsToShow.map((d, i) => ({
-        ...d,
-        x: xDept,
-        y: Math.round(95 + (i + 0.5) * ((svgH - 140) / Math.max(deptsToShow.length, 1)))
-      }));
-      const deptNodeMap = Object.fromEntries(deptNodes.map(d => [d.id, d]));
-
-      const personaNodes = personasToShow.map((p, i) => ({
-        ...p,
-        x: xPersona,
-        y: Math.round(80 + (i + 0.5) * ((svgH - 115) / Math.max(personasToShow.length, 1))),
-        color: (DEPARTMENTS[p.deptId] && DEPARTMENTS[p.deptId].color) || '#00d2ff'
-      }));
-      const personaNodeMap = Object.fromEntries(personaNodes.map(p => [p.id, p]));
-
-      const allDisplayedAgents = [...universalAgents, ...domainAgentsToShow];
-      const agentNodes = allDisplayedAgents.map((a, i) => {
-        const meta = PERIODIC_AGENT_META[a.id] || { num: '00', sym: 'Ai', short: a.name };
-        const color = a.isUniversal ? '#38bdf8' : ((DEPARTMENTS[a.deptId] && DEPARTMENTS[a.deptId].color) || '#00d2ff');
-        return {
-          ...a,
-          meta,
-          x: xAgent,
-          y: Math.round(80 + (i + 0.5) * ((svgH - 115) / Math.max(allDisplayedAgents.length, 1))),
-          color
-        };
-      });
-      const agentNodeMap = Object.fromEntries(agentNodes.map(a => [a.id, a]));
-
-      // Determine highlighted synaptic edges based on currentMindMapFocusId
-      const isFocusingAgent = Boolean(AGENTS[currentMindMapFocusId]);
-      const activeAgentSet = new Set();
-      const activePersonaSet = new Set();
-
-      if (isFocusingAgent) {
-        activeAgentSet.add(currentMindMapFocusId);
-        Object.values(PERSONAS).forEach(p => {
-          if ((p.agentIds || []).includes(currentMindMapFocusId) || AGENTS[currentMindMapFocusId].isUniversal) {
-            activePersonaSet.add(p.id);
-          }
-        });
-      } else if (focusedPersona) {
-        activePersonaSet.add(focusedPersona.id);
-        (focusedPersona.agentIds || []).forEach(aid => activeAgentSet.add(aid));
-        UNIVERSAL_AGENT_IDS.forEach(uid => activeAgentSet.add(uid));
-      }
+      const activeFlowStep = flowSteps[currentFlowStepIdx] || flowSteps[0];
 
       const container = document.getElementById('mindMapPageContent');
       container.innerHTML = `
@@ -9374,361 +9613,280 @@ def build_html() -> str:
               ✦ Built by <strong>Zuhaib Parvez</strong> &amp; <strong>Suman Banerjee</strong>
             </span>
             <button type="button" class="switch-pill" style="border-color:rgba(0,210,255,0.45); color:#7dd3fc;" onclick="openPeriodicTablePage('all', null, true)">
-              🧪 Switch to Periodic Table (32) &rarr;
-            </button>
-            <a href="mind_map.html" target="_blank" class="switch-pill" style="border-color:rgba(16,185,129,0.45); color:#6ee7b7;">
-              Open Standalone Mind Map URL ↗
-            </a>
-          </div>
-        </div>
-
-        <div class="persona-hero" style="margin-bottom:28px;">
-          <div class="persona-eyebrow" style="color:#10b981;">
-            <span class="accent-dot" style="background:#10b981;"></span>
-            <span>NEURAL MIND MAP &amp; PORTAL ARCHITECTURE FLOWCHART · ZUHAIB PARVEZ &amp; SUMAN BANERJEE</span>
-          </div>
-          <h1 class="persona-title">Supply Chain Neural Mind Map &amp; Click-Path Flowchart</h1>
-          <p class="persona-lead" style="max-width:1180px;">
-            A complete visual guide to <strong class="sc-hl-bold">how the portal works</strong> (<span class="sc-hl-underline">what opens when you click each card</span>) and <strong class="sc-hl-bold">how the neural connections flow</strong> from the <span class="sc-hl-metric">Office of the CSCO</span> &rarr; <span class="sc-hl-metric">6 SCOR Verticals</span> &rarr; <span class="sc-hl-metric">26 Personas</span> &rarr; <span class="sc-hl-metric">32 AI Agents</span> &rarr; <span class="sc-hl-underline">Problems Solved &amp; Google Cloud Stack</span>.
-          </p>
-        </div>
-
-        <!-- PART 1: INTERACTIVE PORTAL NAVIGATION FLOWCHART ("IF YOU CLICK HERE -> WHAT OPENS UP") -->
-        <h2 class="block-title">1. Interactive Portal Navigation Flowchart ("If You Click Here &rarr; What Opens Up")</h2>
-        <p class="block-subtitle">Follow the 6-step progressive drill-down architecture from the Hero landing screen to the High-Code Engineering Blueprints.</p>
-
-        <div class="mm-flowchart-grid">
-          <div class="mm-flow-step" style="--step-color:#38bdf8;">
-            <div>
-              <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#38bdf8; margin-bottom:6px;">STEP 01 · ENTRY</div>
-              <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;">Full-Screen 60fps Hero</div>
-              <p style="font-size:14px; color:#cbd5e1; line-height:1.55;">
-                Displays kinetic Supply Chain animations on outer gutters + central executive thesis. Clicking <strong>"Explore CSCO Organization"</strong> smoothly scrolls to the CSCO Org Chart.
-              </p>
-            </div>
-            <button type="button" class="switch-pill" style="width:100%; justify-content:center; border-color:#38bdf866; color:#7dd3fc;" onclick="goHome()">
-              Open Step 01 (#) &rarr;
-            </button>
-          </div>
-
-          <div class="mm-flow-step" style="--step-color:#10b981;">
-            <div>
-              <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#10b981; margin-bottom:6px;">STEP 02 · ORG CHART</div>
-              <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;">6 SCOR Verticals + 4 Core Agents</div>
-              <p style="font-size:14px; color:#cbd5e1; line-height:1.55;">
-                Shows the <strong>CSCO Root Box</strong>, <strong>6 SCOR Vertical Cards</strong> (Plan, Source, Make, Fulfill, Deliver, Enable), <strong>4 Universal Agents</strong>, and <strong>4 Value Chains</strong>.
-              </p>
-            </div>
-            <button type="button" class="switch-pill" style="width:100%; justify-content:center; border-color:#10b98166; color:#6ee7b7;" onclick="goToOrgChart()">
-              Open Step 02 (#orgChart) &rarr;
-            </button>
-          </div>
-
-          <div class="mm-flow-step" style="--step-color:#a142f4;">
-            <div>
-              <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#c084fc; margin-bottom:6px;">STEP 03 · CLICK VERTICAL</div>
-              <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;">Department Showcase Drawer</div>
-              <p style="font-size:14px; color:#cbd5e1; line-height:1.55;">
-                Clicking any of the 6 SCOR Vertical cards triggers a <strong>Genie expansion</strong> revealing that department's Manual Toil vs. AI Impact, <strong>Personas (4–6)</strong>, and <strong>Domain Agents</strong>.
-              </p>
-            </div>
-            <button type="button" class="switch-pill" style="width:100%; justify-content:center; border-color:#a142f466; color:#e9d5ff;" onclick="goToOrgChart()">
-              Try on Org Chart &rarr;
-            </button>
-          </div>
-
-          <div class="mm-flow-step" style="--step-color:#00d2ff;">
-            <div>
-              <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#00d2ff; margin-bottom:6px;">STEP 04 · CLICK PERSONA</div>
-              <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;">26 Persona Pages (#persona/id)</div>
-              <p style="font-size:14px; color:#cbd5e1; line-height:1.55;">
-                Opens the role's <strong>Executive Mandate</strong>, <strong>Day-in-the-Life Schedule (Before Manual Toil vs. After Gemini Agentic Flow)</strong>, and assigned <strong>Domain + Universal Agents</strong>.
-              </p>
-            </div>
-            <button type="button" class="switch-pill" style="width:100%; justify-content:center; border-color:#00d2ff66; color:#7dd3fc;" onclick="openPersonaPage('demand_planning_dir', true, event)">
-              Sample Persona Page &rarr;
-            </button>
-          </div>
-
-          <div class="mm-flow-step" style="--step-color:#ff8c00;">
-            <div>
-              <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#ff8c00; margin-bottom:6px;">STEP 05 · CLICK AGENT</div>
-              <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;">32 Executive Agent Studios (#agent/id)</div>
-              <p style="font-size:14px; color:#cbd5e1; line-height:1.55;">
-                Opens the <strong>Executive Selling Page</strong>: 4 Big ROI Cards, <strong>Problem / Solution / Outcome Pitch Cards</strong>, <strong>Interactive CAD + Video Studio</strong>, and <strong>12 GCP Services</strong>.
-              </p>
-            </div>
-            <button type="button" class="switch-pill" style="width:100%; justify-content:center; border-color:#ff8c0066; color:#fdba74;" onclick="openAgentPage('load_consolidation_agent', true, event)">
-              Sample Agent Studio &rarr;
-            </button>
-          </div>
-
-          <div class="mm-flow-step" style="--step-color:#ec4899;">
-            <div>
-              <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#f472b6; margin-bottom:6px;">STEP 06 · CLICK BLUEPRINT</div>
-              <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;">32 High-Code Blueprints (#blueprint/id)</div>
-              <p style="font-size:14px; color:#cbd5e1; line-height:1.55;">
-                Opens the deep <strong>Engineering Blueprint</strong>: 5-Stage ADK/A2A Pipeline SVG, <strong>3 Collaborating Sub-Agents</strong>, Private/Community/Public Data, and <strong>OR-Tools Solvers</strong>.
-              </p>
-            </div>
-            <button type="button" class="switch-pill" style="width:100%; justify-content:center; border-color:#ec489966; color:#fbcfe8;" onclick="openAgentBlueprintPage('load_consolidation_agent', true, event)">
-              Sample Blueprint &rarr;
+              🧪 Switch to Periodic Table &rarr;
             </button>
           </div>
         </div>
 
-        <!-- PART 2: INTERACTIVE 4-LAYER NEURAL CONNECTION MIND MAP (CSCO -> VERTICAL -> PERSONA -> AGENT) -->
-        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:16px;">
-          <div>
-            <h2 class="block-title">2. Interactive Neural Connection Mind Map (Persona &harr; Agent Synaptic Graph)</h2>
-            <p class="block-subtitle" style="margin-bottom:0;">
-              Filter by any <span class="sc-hl-underline">SCOR Vertical</span> below or click any <strong class="sc-hl-bold">Persona Node</strong> or <strong class="sc-hl-bold">Agent Node</strong> inside the neural diagram to trace its live connections and inspect the exact business problem solved.
-            </p>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;">
-            <button type="button" class="switch-pill ${currentMindMapVertical === 'all' ? 'active-pill' : ''}"
-                    onclick="openMindMapPage('all', '${currentMindMapFocusId}', false)">
-              All 6 SCOR Verticals (Full Neural Map)
-            </button>
-            ${Object.values(DEPARTMENTS).map(d => `
-              <button type="button" class="switch-pill ${currentMindMapVertical === d.id ? 'active-pill' : ''}"
-                      style="border-color:${d.color}66; color:${currentMindMapVertical === d.id ? '#fff' : d.color};"
-                      onclick="openMindMapPage('${d.id}', '${d.personaIds[0]}', false)">
-                ${d.scorBadge} · ${d.name}
-              </button>
-            `).join('')}
-          </div>
+        <div style="padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.12); margin-bottom: 22px;">
+          <h1 style="font-family:var(--font-display); font-size:clamp(32px, 3.6vw, 44px); font-weight:800; letter-spacing:-0.025em; color:#ffffff;">
+            Neural Mind Map &amp; Portal Flowchart
+          </h1>
         </div>
 
-        <!-- SVG NEURAL GRAPH STAGE -->
-        <div style="border-radius:24px; background:#040812; border:1.5px solid rgba(0,210,255,0.32); padding:20px; margin-bottom:26px; overflow-x:auto; box-shadow:0 22px 58px rgba(0,0,0,0.62);">
-          <svg viewBox="0 0 ${svgW} ${svgH}" style="width:100%; min-width:1120px; height:auto; display:block;">
-            <defs>
-              <linearGradient id="mmPulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.85" />
-                <stop offset="50%" stop-color="#10b981" stop-opacity="0.95" />
-                <stop offset="100%" stop-color="#ff8c00" stop-opacity="0.95" />
-              </linearGradient>
-            </defs>
-
-            <!-- Column Headers -->
-            <text x="${xRoot}" y="36" text-anchor="middle" fill="#7dd3fc" font-size="12" font-weight="800" letter-spacing="1.2">LAYER 1 · CSCO APEX</text>
-            <text x="${xDept}" y="36" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="800" letter-spacing="1.2">LAYER 2 · SCOR VERTICALS (${deptsToShow.length})</text>
-            <text x="${xPersona}" y="36" text-anchor="middle" fill="#e9d5ff" font-size="12" font-weight="800" letter-spacing="1.2">LAYER 3 · SUPPLY CHAIN PERSONAS (${personasToShow.length})</text>
-            <text x="${xAgent}" y="36" text-anchor="middle" fill="#fdba74" font-size="12" font-weight="800" letter-spacing="1.2">LAYER 4 · AI AGENTS (${allDisplayedAgents.length})</text>
-
-            <!-- Edges: CSCO Root -> SCOR Verticals -->
-            ${deptNodes.map(d => {
-              const yRoot = Math.round(svgH / 2);
-              const pathD = `M ${xRoot + 82} ${yRoot} C ${xRoot + 165} ${yRoot}, ${d.x - 165} ${d.y}, ${d.x - 115} ${d.y}`;
-              return `
-                <path d="${pathD}" fill="none" stroke="${d.color}" stroke-opacity="0.45" stroke-width="2" />
-              `;
-            }).join('')}
-
-            <!-- Edges: SCOR Verticals -> Personas -->
-            ${personaNodes.map(p => {
-              const d = deptNodeMap[p.deptId];
-              if (!d) return '';
-              const isHigh = activePersonaSet.has(p.id);
-              const pathD = `M ${d.x + 115} ${d.y} C ${d.x + 195} ${d.y}, ${p.x - 210} ${p.y}, ${p.x - 145} ${p.y}`;
-              return `
-                <path d="${pathD}" fill="none" stroke="${d.color}" stroke-opacity="${isHigh ? '0.92' : '0.24'}" stroke-width="${isHigh ? '2.8' : '1.3'}" />
-              `;
-            }).join('')}
-
-            <!-- Edges: Personas -> Assigned Domain Agents & Universal Agents -->
-            ${personaNodes.map(p => {
-              const isPersonaActive = activePersonaSet.has(p.id);
-              const targetAgentIds = isPersonaActive
-                ? [...(p.agentIds || []), ...UNIVERSAL_AGENT_IDS]
-                : (p.agentIds || []);
-              return targetAgentIds.map(aid => {
-                const ag = agentNodeMap[aid];
-                if (!ag) return '';
-                const isEdgeActive = isPersonaActive && activeAgentSet.has(aid);
-                const pathD = `M ${p.x + 145} ${p.y} C ${p.x + 245} ${p.y}, ${ag.x - 255} ${ag.y}, ${ag.x - 160} ${ag.y}`;
-                return `
-                  <path d="${pathD}" fill="none"
-                        stroke="${ag.isUniversal ? '#38bdf8' : p.color}"
-                        stroke-opacity="${isEdgeActive ? '0.95' : '0.16'}"
-                        stroke-width="${isEdgeActive ? '2.8' : '1.1'}"
-                        ${ag.isUniversal && isEdgeActive ? 'stroke-dasharray="6 4"' : ''} />
-                `;
-              }).join('');
-            }).join('')}
-
-            <!-- Node: Layer 1 CSCO Root -->
-            <g transform="translate(${xRoot}, ${Math.round(svgH / 2)})" style="cursor:pointer;" onclick="goToOrgChart()">
-              <rect x="-82" y="-36" width="164" height="72" rx="16" fill="#0b1528" stroke="#38bdf8" stroke-width="2.2" />
-              <text x="0" y="-8" text-anchor="middle" fill="#38bdf8" font-size="10.5" font-weight="800">OFFICE OF THE CSCO</text>
-              <text x="0" y="10" text-anchor="middle" fill="#ffffff" font-size="13.5" font-weight="800">Chief Supply Chain</text>
-              <text x="0" y="26" text-anchor="middle" fill="#94a3b8" font-size="11">6 Verticals · 32 Agents</text>
-            </g>
-
-            <!-- Nodes: Layer 2 SCOR Verticals -->
-            ${deptNodes.map(d => `
-              <g transform="translate(${d.x}, ${d.y})" style="cursor:pointer;" onclick="openMindMapPage('${d.id === currentMindMapVertical ? 'all' : d.id}', '${d.personaIds[0]}', false)">
-                <rect x="-115" y="-26" width="230" height="52" rx="13" fill="#0d172a" stroke="${d.color}" stroke-width="2" />
-                <text x="0" y="-5" text-anchor="middle" fill="${d.color}" font-size="10.5" font-weight="800">${d.scorBadge}</text>
-                <text x="0" y="13" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="800">${d.name}</text>
-              </g>
-            `).join('')}
-
-            <!-- Nodes: Layer 3 Personas -->
-            ${personaNodes.map(p => {
-              const isHigh = activePersonaSet.has(p.id);
-              return `
-                <g transform="translate(${p.x}, ${p.y})" style="cursor:pointer;" onclick="openMindMapPage('${currentMindMapVertical}', '${p.id}', false)">
-                  <rect x="-145" y="-18" width="290" height="36" rx="10"
-                        fill="${isHigh ? '#162642' : '#0b1220'}"
-                        stroke="${isHigh ? '#ffffff' : p.color}"
-                        stroke-opacity="${isHigh ? '1' : '0.55'}"
-                        stroke-width="${isHigh ? '2.2' : '1.2'}" />
-                  <text x="-132" y="5" fill="#ffffff" font-size="12.5" font-weight="${isHigh ? '800' : '600'}">
-                    ${p.icon} ${p.name}
-                  </text>
-                </g>
-              `;
-            }).join('')}
-
-            <!-- Nodes: Layer 4 AI Agents (4 Universal + Domain Agents) -->
-            ${agentNodes.map(ag => {
-              const isHigh = activeAgentSet.has(ag.id);
-              return `
-                <g transform="translate(${ag.x}, ${ag.y})" style="cursor:pointer;" onclick="openMindMapPage('${currentMindMapVertical}', '${ag.id}', false)">
-                  <rect x="-160" y="-18" width="320" height="36" rx="10"
-                        fill="${isHigh ? '#172946' : '#0b1220'}"
-                        stroke="${isHigh ? '#ffffff' : ag.color}"
-                        stroke-opacity="${isHigh ? '1' : '0.55'}"
-                        stroke-width="${isHigh ? '2.2' : '1.2'}" />
-                  <text x="-148" y="5" fill="${ag.color}" font-family="monospace" font-size="11.5" font-weight="800">
-                    [${ag.meta.num} ${ag.meta.sym}]
-                  </text>
-                  <text x="-92" y="5" fill="#ffffff" font-size="12.5" font-weight="${isHigh ? '800' : '600'}">
-                    ${ag.meta.short} · ${ag.badge}
-                  </text>
-                </g>
-              `;
-            }).join('')}
-          </svg>
-        </div>
-
-        <!-- NEURAL SYNAPSE INSPECTOR (LIVE DETAILS FOR SELECTED PERSONA / AGENT IN MIND MAP) -->
-        ${focusedPersona && focusedAgent ? `
-          <div style="margin-bottom:36px; padding:26px 30px; border-radius:22px; background:linear-gradient(155deg, rgba(14,23,40,0.98) 0%, rgba(8,13,24,0.99) 100%); border:1.5px solid #10b981;">
-            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:14px; margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.1);">
-              <div>
-                <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:#6ee7b7;">
-                  ACTIVE NEURAL SYNAPSE INSPECTOR · CLICK ANY NODE IN THE GRAPH ABOVE TO TRACE
-                </div>
-                <h3 style="font-family:var(--font-display); font-size:23px; font-weight:800; color:#ffffff; margin-top:4px;">
-                  ${focusedPersona.icon} ${focusedPersona.name} &harr; ${focusedAgent.name} (${focusedAgent.badge})
-                </h3>
-              </div>
-              <div style="display:flex; flex-wrap:wrap; gap:10px;">
-                <button type="button" class="switch-pill" style="border-color:#10b981; color:#6ee7b7;" onclick="openPersonaPage('${focusedPersona.id}', true, event)">
-                  Open Persona (${focusedPersona.name}) &rarr;
-                </button>
-                <button type="button" class="switch-pill" style="border-color:#00d2ff; color:#7dd3fc;" onclick="openAgentPage('${focusedAgent.id}', true, event)">
-                  Open Agent Studio (${focusedAgent.name.split('—')[0].trim()}) &rarr;
-                </button>
-                <button type="button" class="switch-pill" style="border-color:#a855f7; color:#e9d5ff;" onclick="openAgentBlueprintPage('${focusedAgent.id}', true, event)">
-                  🏗️ Open High-Code Blueprint &rarr;
-                </button>
-              </div>
-            </div>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
-              <div style="padding:18px 20px; border-radius:16px; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.32);">
-                <div style="font-size:12px; font-weight:800; text-transform:uppercase; color:#fca5a5; margin-bottom:6px;">
-                  ⚠️ Problem Solved for ${focusedPersona.name}
-                </div>
-                <div style="font-size:15.5px; color:#f8fafc; line-height:1.62;">
-                  ${formatRichBullets(focusedAgent.problem, '#ef4444')}
-                </div>
-              </div>
-              <div style="padding:18px 20px; border-radius:16px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.34);">
-                <div style="font-size:12px; font-weight:800; text-transform:uppercase; color:#6ee7b7; margin-bottom:6px;">
-                  ⚡ How ${focusedAgent.name.split('—')[0].trim()} Solves It &amp; Quantified Outcome
-                </div>
-                <div style="font-size:15.5px; color:#f8fafc; line-height:1.62;">
-                  ${formatRichBullets(focusedAgent.solution + ' ' + focusedAgent.outcome, '#10b981')}
-                </div>
-              </div>
-            </div>
-          </div>
-        ` : ''}
-
-        <!-- PART 3: COMPLETE MASTER UNDERSTANDING MATRIX (PERSONA -> PROBLEM -> AGENTS -> ROI) -->
-        <h2 class="block-title">3. Complete Persona-to-Agent Problem Solving &amp; Neural Matrix (26 Personas × 32 Agents)</h2>
-        <p class="block-subtitle">
-          Every Supply Chain Persona, the core business bottleneck they face, their connected Domain + Universal AI Agents, and the verified bottom-line outcome.
+        <p style="font-size:16px; color:#cbd5e1; line-height:1.72; max-width:1060px; margin-bottom:10px;">
+          Explore how the <strong style="color:#fff;">Office of the CSCO</strong> connects across <strong style="color:#fff;">6 SCOR domains, 26 supply chain personas, and 32 AI agents</strong>. Click any domain on the left to smoothly expand its personas, click any persona to reveal its connected agents, and inspect the full problem-to-solution specification on the right.
         </p>
 
-        <div class="mm-table-wrap">
-          <table class="mm-matrix-table">
-            <thead>
-              <tr>
-                <th style="width:14%;">SCOR Vertical</th>
-                <th style="width:18%;">Persona &amp; Role</th>
-                <th style="width:28%;">Mandate &amp; Problem We Solve</th>
-                <th style="width:24%;">Connected AI Agents (Click to Open)</th>
-                <th style="width:16%;">Verified KPI Impact</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${personasToShow.map(p => {
-                const d = DEPARTMENTS[p.deptId] || { scorBadge: 'SCOR', name: 'Supply Chain', color: '#00d2ff' };
-                const domainAgs = (p.agentIds || []).map(id => AGENTS[id]).filter(Boolean);
-                return `
-                  <tr>
-                    <td>
-                      <span style="display:inline-block; padding:4px 10px; border-radius:999px; font-size:11.5px; font-weight:800; background:${d.color}22; border:1px solid ${d.color}66; color:${d.color};">
-                        ${d.scorBadge}
-                      </span>
-                      <div style="font-weight:700; color:#fff; margin-top:6px; font-size:13.5px;">${d.name}</div>
-                    </td>
-                    <td>
-                      <div style="font-family:var(--font-display); font-size:16px; font-weight:800; color:#fff; cursor:pointer;" onclick="openPersonaPage('${p.id}', true, event)">
-                        ${p.icon} ${p.name} &rarr;
-                      </div>
-                      <div style="font-size:13px; color:#94a3b8; margin-top:3px;">${p.role}</div>
-                    </td>
-                    <td>
-                      <div style="font-size:14.5px; color:#f1f5f9; line-height:1.58;">
-                        ${formatRichText(p.mandate)}
-                      </div>
-                    </td>
-                    <td>
-                      <div style="display:flex; flex-direction:column; gap:6px;">
-                        ${domainAgs.map(ag => {
-                          const m = PERIODIC_AGENT_META[ag.id] || { num: '00', sym: 'Ai' };
-                          return `
-                            <button type="button" class="switch-pill" style="justify-content:space-between; text-align:left; border-color:${d.color}55; padding:6px 11px;" onclick="openAgentPage('${ag.id}', true, event)">
-                              <span><strong style="color:${d.color};">[${m.num} ${m.sym}]</strong> ${ag.name.split('—')[0].trim()}</span>
-                              <span style="font-size:11px; color:#94a3b8;">&rarr;</span>
-                            </button>
-                          `;
-                        }).join('')}
-                        <div style="font-size:11.5px; color:#7dd3fc; padding-left:4px;">
-                          + 4 Universal Core Agents (<code>Ct</code>, <code>Sw</code>, <code>Dc</code>, <code>Mb</code>)
+        <!-- Clean Pill Tabs to Switch Between Interactive Mind Map & Portal Click-Path Flowchart -->
+        <div class="pt-top-tabs">
+          <button type="button" class="pt-tab-btn ${currentMindMapMode === 'mindmap' ? 'active' : ''}"
+                  onclick="openMindMapPage('mindmap', '${currentMindMapDeptId}', '${currentMindMapPersonaId}', false)">
+            <span>🧠 Interactive Neural Mind Map</span>
+            <span class="pt-tab-count">26 Personas &harr; 32 Agents</span>
+          </button>
+          <button type="button" class="pt-tab-btn ${currentMindMapMode === 'flowchart' ? 'active' : ''}"
+                  onclick="openMindMapPage('flowchart', '${currentMindMapDeptId}', '${currentMindMapPersonaId}', false)">
+            <span>🧭 Portal Navigation Flowchart ("What Opens When You Click")</span>
+            <span class="pt-tab-count">6 Steps</span>
+          </button>
+        </div>
+
+        ${currentMindMapMode === 'mindmap' ? `
+          <!-- PROGRESSIVE 3-COLUMN CLICK-TO-EXPAND NEURAL MIND MAP + RIGHT SIDE INSPECTOR -->
+          <div class="pt-main-layout">
+            <div class="mm-progressive-grid" style="margin-bottom:0;">
+              <!-- Column 1: 6 SCOR Domains -->
+              <div class="mm-col-card">
+                <div class="mm-col-header">1. Select SCOR Domain (6)</div>
+                ${Object.values(DEPARTMENTS).map(d => {
+                  const isAct = d.id === activeDept.id;
+                  return `
+                    <button type="button" class="mm-node-btn ${isAct ? 'active' : ''}"
+                            style="--node-color:${d.color};"
+                            onclick="selectMindMapDept('${d.id}')">
+                      <div>
+                        <div style="font-family:var(--font-mono); font-size:10.5px; font-weight:700; color:${d.color};">
+                          ${d.scorBadge}
+                        </div>
+                        <div style="font-size:14px; font-weight:700; color:#ffffff; margin-top:2px;">
+                          ${d.name}
                         </div>
                       </div>
-                    </td>
-                    <td>
-                      <div style="display:flex; flex-direction:column; gap:6px;">
-                        <span class="sc-hl-metric" style="width:fit-content;">${p.timeSaved || '-75% Manual Toil'}</span>
-                        ${domainAgs.map(ag => `
-                          <span style="font-family:var(--font-mono); font-size:12px; color:#6ee7b7; font-weight:700;">• ${ag.badge}</span>
-                        `).join('')}
+                      <span style="font-family:var(--font-mono); font-size:11.5px; color:#94a3b8;">
+                        ${d.personaIds.length} roles &rarr;
+                      </span>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+
+              <!-- Column 2: Personas in Selected Domain (Animated on Domain Click) -->
+              <div class="mm-col-card" style="animation: ptExpandIn 0.28s var(--ease-spring) forwards;">
+                <div class="mm-col-header" style="color:${activeDept.color};">
+                  2. Select Persona in ${activeDept.name} (${deptPersonas.length})
+                </div>
+                ${deptPersonas.map(p => {
+                  const isAct = p.id === activePersona.id;
+                  return `
+                    <button type="button" class="mm-node-btn ${isAct ? 'active' : ''}"
+                            style="--node-color:${activeDept.color};"
+                            onclick="selectMindMapPersona('${p.id}')">
+                      <div>
+                        <div style="font-size:14px; font-weight:700; color:#ffffff;">
+                          ${p.icon} ${p.name}
+                        </div>
+                        <div style="font-size:12px; color:#94a3b8; margin-top:2px;">
+                          ${p.timeSaved || '-75% Manual Toil'}
+                        </div>
                       </div>
-                    </td>
-                  </tr>
-                `;
-              }).join('')}
-            </tbody>
-          </table>
-        </div>
+                      <span style="font-family:var(--font-mono); font-size:11.5px; color:${activeDept.color};">
+                        ${(p.agentIds || []).length + 4} agents &rarr;
+                      </span>
+                    </button>
+                  `;
+                }).join('')}
+
+                <div style="margin-top:14px; padding:14px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07);">
+                  <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:#94a3b8; margin-bottom:4px;">
+                    Selected Persona Mandate
+                  </div>
+                  <p style="font-size:13px; color:#cbd5e1; line-height:1.55; margin-bottom:10px;">
+                    ${activePersona.mandate}
+                  </p>
+                  <button type="button" style="font-size:12.5px; font-weight:700; color:${activeDept.color};" onclick="openPersonaPage('${activePersona.id}', true, event)">
+                    Open ${activePersona.name} page &rarr;
+                  </button>
+                </div>
+              </div>
+
+              <!-- Column 3: Connected AI Agents for Selected Persona (Animated on Persona Click) -->
+              <div class="mm-col-card" style="animation: ptExpandIn 0.32s var(--ease-spring) forwards;">
+                <div class="mm-col-header" style="color:#7dd3fc;">
+                  3. Connected AI Agents for ${activePersona.name}
+                </div>
+
+                <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:${activeDept.color}; margin-bottom:8px;">
+                  Domain-Specific Agents (${personaDomainAgents.length})
+                </div>
+                ${personaDomainAgents.map(ag => {
+                  const m = PERIODIC_AGENT_META[ag.id] || { code: '101', short: ag.name, trigIcon: '⚡' };
+                  const isAct = ag.id === activeAgent.id;
+                  return `
+                    <button type="button" class="mm-node-btn ${isAct ? 'active' : ''}"
+                            style="--node-color:${activeDept.color};"
+                            onclick="selectMindMapAgent('${ag.id}')">
+                      <div>
+                        <div style="display:flex; align-items:center; gap:6px;">
+                          <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:${activeDept.color};">A-${m.code}</span>
+                          <span style="font-size:14px; font-weight:700; color:#ffffff;">${m.short}</span>
+                        </div>
+                        <div style="font-size:12px; color:#94a3b8; margin-top:2px;">${ag.badge}</div>
+                      </div>
+                      <span style="font-size:12px; color:#cbd5e1;">Inspect &rarr;</span>
+                    </button>
+                  `;
+                }).join('')}
+
+                <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#38bdf8; margin:16px 0 8px;">
+                  Universal Cross-Persona Core Agents (4)
+                </div>
+                ${personaUniversalAgents.map(ag => {
+                  const m = PERIODIC_AGENT_META[ag.id] || { code: '001', short: ag.name, trigIcon: '💬' };
+                  const isAct = ag.id === activeAgent.id;
+                  return `
+                    <button type="button" class="mm-node-btn ${isAct ? 'active' : ''}"
+                            style="--node-color:#38bdf8;"
+                            onclick="selectMindMapAgent('${ag.id}')">
+                      <div>
+                        <div style="display:flex; align-items:center; gap:6px;">
+                          <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#38bdf8;">A-${m.code}</span>
+                          <span style="font-size:13.5px; font-weight:700; color:#ffffff;">${m.short}</span>
+                        </div>
+                        <div style="font-size:11.5px; color:#94a3b8; margin-top:2px;">${ag.badge}</div>
+                      </div>
+                      <span style="font-size:12px; color:#cbd5e1;">Inspect &rarr;</span>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+
+            <!-- Right Sticky Sidebar: Neural Connection & Problem Inspector -->
+            <aside class="pt-sidebar">
+              <div class="pt-side-card" style="border-top: 3px solid ${activeAgent.isUniversal ? '#38bdf8' : activeDept.color};">
+                <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#94a3b8; margin-bottom:10px;">
+                  Neural Connection Inspector
+                </div>
+
+                <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:14px;">
+                  <div class="pt-side-badge" style="background:${activeAgent.isUniversal ? '#38bdf8' : activeDept.color};">
+                    ${activeAgentMeta.code}
+                  </div>
+                  <div>
+                    <div style="font-family:var(--font-display); font-size:17px; font-weight:800; color:#ffffff; line-height:1.25;">
+                      ${activeAgent.name}
+                    </div>
+                    <div style="font-size:12.5px; color:#94a3b8; margin-top:3px;">
+                      Connected to <strong style="color:#fff;">${activePersona.name}</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
+                  <span class="pt-side-tag">${activeAgentMeta.layer}</span>
+                  <span class="pt-side-tag" style="color:#6ee7b7; border-color:rgba(16,185,129,0.35);">${activeAgent.badge}</span>
+                </div>
+
+                <div style="padding:14px; border-radius:12px; background:rgba(239,68,68,0.07); border:1px solid rgba(239,68,68,0.22); margin-bottom:12px;">
+                  <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:#fca5a5; margin-bottom:4px;">
+                    Problem Solved
+                  </div>
+                  <p style="font-size:13px; color:#e2e8f0; line-height:1.55;">
+                    ${activeAgent.problem}
+                  </p>
+                </div>
+
+                <div style="padding:14px; border-radius:12px; background:rgba(16,185,129,0.07); border:1px solid rgba(16,185,129,0.22); margin-bottom:16px;">
+                  <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:#6ee7b7; margin-bottom:4px;">
+                    How It Works &amp; Outcome
+                  </div>
+                  <p style="font-size:13px; color:#e2e8f0; line-height:1.55;">
+                    ${activeAgent.solution} ${activeAgent.outcome}
+                  </p>
+                </div>
+
+                <div style="display:flex; flex-direction:column; gap:8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08);">
+                  <button type="button" style="display:inline-flex; align-items:center; justify-content:space-between; font-size:13.5px; font-weight:700; color:#60a5fa;" onclick="openAgentPage('${activeAgent.id}', true, event)">
+                    <span>View agent studio &rarr;</span>
+                    <span style="font-size:11.5px; color:#94a3b8;">#agent/${activeAgent.id}</span>
+                  </button>
+                  <button type="button" style="display:inline-flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#34d399;" onclick="openPersonaPage('${activePersona.id}', true, event)">
+                    <span>View persona page &rarr;</span>
+                    <span style="font-size:11.5px; color:#94a3b8;">#persona/${activePersona.id}</span>
+                  </button>
+                  <button type="button" style="display:inline-flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#c084fc;" onclick="openAgentBlueprintPage('${activeAgent.id}', true, event)">
+                    <span>View high-code blueprint &rarr;</span>
+                    <span style="font-size:11.5px; color:#94a3b8;">ADK / A2A</span>
+                  </button>
+                </div>
+              </div>
+            </aside>
+          </div>
+        ` : `
+          <!-- TAB 2: CLEAN, SPACIOUS 6-STEP PORTAL NAVIGATION FLOWCHART -->
+          <div class="pt-main-layout">
+            <div>
+              <div class="mm-flow-cards">
+                ${flowSteps.map((st, idx) => `
+                  <div class="mm-flow-card ${idx === currentFlowStepIdx ? 'active' : ''}"
+                       style="--fc-color:${st.color};"
+                       onclick="currentFlowStepIdx = ${idx}; openMindMapPage('flowchart', '${currentMindMapDeptId}', '${currentMindMapPersonaId}', false)">
+                    <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:${st.color}; margin-bottom:6px;">
+                      STEP ${st.num}
+                    </div>
+                    <div style="font-family:var(--font-display); font-size:17px; font-weight:800; color:#ffffff; margin-bottom:4px;">
+                      ${st.title}
+                    </div>
+                    <div style="font-size:13px; color:#94a3b8; margin-bottom:14px;">
+                      ${st.sub}
+                    </div>
+                    <div style="font-size:12.5px; font-weight:600; color:${st.color};">
+                      Click to inspect step &rarr;
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+
+              <!-- Smooth Animated Expansion Card for Selected Flowchart Step -->
+              <div class="pt-inline-expand" style="--exp-color:${activeFlowStep.color};">
+                <div style="font-family:var(--font-mono); font-size:12px; font-weight:800; color:${activeFlowStep.color}; margin-bottom:6px;">
+                  STEP ${activeFlowStep.num} · WHAT OPENS WHEN YOU CLICK
+                </div>
+                <h3 style="font-family:var(--font-display); font-size:24px; font-weight:800; color:#ffffff; margin-bottom:10px;">
+                  ${activeFlowStep.title}
+                </h3>
+                <p style="font-size:15.5px; color:#cbd5e1; line-height:1.68; margin-bottom:18px; max-width:860px;">
+                  ${activeFlowStep.whatOpens}
+                </p>
+                <button type="button" class="switch-pill" style="background:${activeFlowStep.color}; color:#041019; font-weight:700; border:none;" onclick="${activeFlowStep.actionFn}">
+                  ${activeFlowStep.actionLabel}
+                </button>
+              </div>
+            </div>
+
+            <aside class="pt-sidebar">
+              <div class="pt-side-card" style="border-top: 3px solid ${activeFlowStep.color};">
+                <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#94a3b8; margin-bottom:8px;">
+                  Portal Architecture Summary
+                </div>
+                <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#ffffff; margin-bottom:10px;">
+                  Progressive Drill-Down Flow
+                </div>
+                <p style="font-size:13.5px; color:#cbd5e1; line-height:1.62; margin-bottom:14px;">
+                  Designed so executives and engineers never face a wall of text: start at the CSCO Org Chart, expand 1 SCOR vertical at a time, open a Persona's daily workflow, and launch an Agent's live CAD studio or ADK blueprint.
+                </p>
+                <div class="pt-legend-list" style="padding-top:10px; border-top:1px solid rgba(255,255,255,0.08);">
+                  <div class="pt-legend-row"><span>SCOR Verticals</span><strong style="color:#fff;">6</strong></div>
+                  <div class="pt-legend-row"><span>Supply Chain Personas</span><strong style="color:#fff;">26</strong></div>
+                  <div class="pt-legend-row"><span>AI Agent Studios</span><strong style="color:#fff;">32</strong></div>
+                  <div class="pt-legend-row"><span>Collaborating Sub-Agents</span><strong style="color:#fff;">96</strong></div>
+                  <div class="pt-legend-row"><span>End-to-End Value Chains</span><strong style="color:#fff;">4</strong></div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        `}
       `;
 
       hydrateAssets();
