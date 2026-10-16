@@ -1,0 +1,891 @@
+{
+  "authors": [
+    "Zuhaib Parvez",
+    "Suman Banerjee"
+  ],
+  "groups": [
+    {
+      "id": "universal_csco",
+      "code": "GROUP 0 · CORE",
+      "title": "Universal CSCO Core (4)",
+      "color": "#38bdf8",
+      "glow": "rgba(56,189,248,0.35)"
+    },
+    {
+      "id": "demand_sop",
+      "code": "GROUP I · PLAN",
+      "title": "01 · Plan: Demand & S&OP (4)",
+      "color": "#10b981",
+      "glow": "rgba(16,185,129,0.35)"
+    },
+    {
+      "id": "sourcing_risk",
+      "code": "GROUP II · SOURCE",
+      "title": "02 · Source: Procurement (4)",
+      "color": "#a142f4",
+      "glow": "rgba(161,66,244,0.35)"
+    },
+    {
+      "id": "manufacturing_prod",
+      "code": "GROUP III · MAKE",
+      "title": "03 · Make: Manufacturing (4)",
+      "color": "#3b82f6",
+      "glow": "rgba(59,130,246,0.35)"
+    },
+    {
+      "id": "inventory_warehouse",
+      "code": "GROUP IV · FULFILL",
+      "title": "04 · Fulfill: 3D WMS & MEIO (5)",
+      "color": "#00d2ff",
+      "glow": "rgba(0,210,255,0.35)"
+    },
+    {
+      "id": "logistics_fleet",
+      "code": "GROUP V · DELIVER",
+      "title": "05 · Deliver: Ship/Air/Rail/Road (7)",
+      "color": "#ff8c00",
+      "glow": "rgba(255,140,0,0.35)"
+    },
+    {
+      "id": "circular_enable",
+      "code": "GROUP VI · ENABLE",
+      "title": "06 · Return, OTIF & ESG (4)",
+      "color": "#ec4899",
+      "glow": "rgba(236,72,153,0.35)"
+    }
+  ],
+  "elements": [
+    {
+      "atomicNumber": "01",
+      "symbol": "Ct",
+      "shortName": "TowerMind",
+      "group": "universal_csco",
+      "agentId": "csco_control_tower_copilot",
+      "fullName": "TowerMind — Enterprise Control Tower & Conversational Copilot",
+      "kpiBadge": "90s Cross-Silo Decisions",
+      "problem": "Supply chain executives and planners wait days for analysts to pull data across disconnected ERP, WMS, TMS, ocean/air/rail portals, and procurement silos just to answer a single cross-functional question.",
+      "solution": "Provides a single Gemini Enterprise conversational control tower grounded on the BigQuery Supply Chain Twin, Cloud Spanner Graph, AlloyDB, and Looker Semantic Layer—returning instant visual diagnostics and executable actions.",
+      "solverStack": "Gemini 2.5 Pro Conversational Analytics + Looker Governed Semantic Layer + Cloud Spanner Graph + A2A Cross-Domain Action Router",
+      "subAgents": [
+        {
+          "name": "Semantic NL2SQL & Spanner Graph Agent",
+          "role": "Translates executive questions into governed BigQuery, Spanner Graph & Looker queries"
+        },
+        {
+          "name": "Cross-Vertical Causal Root-Cause Agent",
+          "role": "Traces KPI misses across Demand, Sourcing, Plant, WMS & Ocean/Air/Rail/Road Fleet"
+        },
+        {
+          "name": "RBAC Action & Approval Dispatcher",
+          "role": "Routes recommended fixes to domain solvers via Vertex AI A2A with 1-click sign-off"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "02",
+      "symbol": "Sw",
+      "shortName": "StormShield",
+      "group": "universal_csco",
+      "agentId": "disruption_war_room_orchestrator",
+      "fullName": "StormShield — WeatherNext 3 & Global Disruption War-Room Agent",
+      "kpiBadge": "72-Hr Disruption Lead",
+      "problem": "Severe weather, port strikes, airspace closures, and geopolitical shocks are managed in reactive war-rooms days after vessels queue and roads close—forcing expensive spot expedites and lost sales.",
+      "solution": "Continuously overlays Google DeepMind WeatherNext 3 probabilistic ensembles onto your global supplier, plant, ocean, air, rail, DC, and road fleet network—simulating and executing coordinated mitigations 72 hours ahead.",
+      "solverStack": "WeatherNext 3 Ensemble Probabilistic Impact Model + Cloud Spanner Graph + OR-Tools Multi-Modal War-Room MILP Solver",
+      "subAgents": [
+        {
+          "name": "WeatherNext 3 & Geopolitical Sensor",
+          "role": "Maps probabilistic storm/strike footprints onto supplier, plant, port, airport & rail nodes"
+        },
+        {
+          "name": "Cross-SCOR Value-at-Risk Simulator",
+          "role": "Quantifies revenue, margin & SLA exposure across all 6 SCOR verticals in Spanner Graph"
+        },
+        {
+          "name": "Synchronized War-Room Playbook Agent",
+          "role": "Executes coordinated demand, sourcing, plant, WMS & ship/air/rail/truck mitigations"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "03",
+      "symbol": "Dc",
+      "shortName": "DataCleanse",
+      "group": "universal_csco",
+      "agentId": "master_data_leadtime_steward",
+      "fullName": "DataCleanse — Autonomous ERP Master Data, BOM & Lead-Time Steward",
+      "kpiBadge": "99.8% Master Data Hygiene",
+      "problem": "Even the best AI and mathematical solvers fail if ERP master data still lists a 14-day supplier or ocean transit time that actually takes 26 days, or wrong carton dimensions that break 3D aircraft ULD and truck loading.",
+      "solution": "Continuously compares actual goods-receipt timestamps, ocean/air/rail/truck transit logs, plant cycle times, and laser dimensioner scans against ERP master tables—auto-healing drifted parameters.",
+      "solverStack": "BigQuery ML Empirical Bayesian Lead-Time Estimator + Isolation-Forest Master Anomaly Detector + Apigee SAP BAPI Steward",
+      "subAgents": [
+        {
+          "name": "Empirical Lead-Time & Multi-Modal Profiler",
+          "role": "Compares actual supplier & ocean/air/rail/road P50 & P90 durations vs. static SAP fields"
+        },
+        {
+          "name": "3D Dimension & Crush-Weight Auditor",
+          "role": "Reconciles CubiScan/weighbridge telemetry against WMS, TMS & Air ULD item masters"
+        },
+        {
+          "name": "Governed SAP MDG Write-Back Steward",
+          "role": "Pushes verified parameter updates to SAP S/4HANA via Apigee with full audit trail"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "04",
+      "symbol": "Mb",
+      "shortName": "MarginBridge",
+      "group": "universal_csco",
+      "agentId": "working_capital_cash_bridge",
+      "fullName": "MarginBridge — CSCO-to-CFO Working Capital & Cash-to-Cash Agent",
+      "kpiBadge": "+$42M Free Cash Flow",
+      "problem": "Supply chain teams optimize physical KPIs (fill rate, OEE, container/truck fill) in units while Finance optimizes P&L and cash flow in dollars—leading to disconnected inventory write-offs and margin erosion.",
+      "solution": "Embeds a live financial digital twin into every supply chain workflow—instantly showing the Gross Margin, EBITDA, and Free Cash Flow impact of any operational decision before execution.",
+      "solverStack": "OR-Tools Stochastic Cash-Conversion-Cycle (DSI + DSO - DPO) Optimizer + BigQuery Real-Time Margin & COGS Bridge",
+      "subAgents": [
+        {
+          "name": "Real-Time Unit-to-EBITDA Translator",
+          "role": "Converts physical volume, scrap, overtime & multi-modal freight into P&L margin impact"
+        },
+        {
+          "name": "Cash-Conversion-Cycle (CCC) Solver",
+          "role": "Optimizes inventory buffers (DSI) vs. supplier payment terms (DPO) in OR-Tools"
+        },
+        {
+          "name": "Executive Deal & Expedite Gatekeeper",
+          "role": "Scores ocean-to-air mode shifts vs. customer SLA penalties in net NPV dollars"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "05",
+      "symbol": "Pc",
+      "shortName": "PulseCast",
+      "group": "demand_sop",
+      "agentId": "demand_sensing_agent",
+      "fullName": "PulseCast — Multi-Signal Demand Sensing Engine",
+      "kpiBadge": "-6.4 pts WAPE",
+      "problem": "Traditional ERP forecasting relies on historical ship-to orders distorted by stockouts and batch ordering—lagging real market consumption shifts by 2 to 4 weeks and inflating safety buffers.",
+      "solution": "Ingests daily sell-through, channel inventory, WeatherNext 3, and Google Maps foot-traffic drivers in BigQuery + Vertex AI TimesFM to impute past stockouts, score commercial Forecast Value Added (FVA), and stream daily P10/P50/P90 forecasts.",
+      "solverStack": "Vertex AI TimesFM Foundation Model + BigQuery ML Hierarchical Bayesian Censored-Demand Imputation",
+      "subAgents": [
+        {
+          "name": "POS & EDI Harmonizer",
+          "role": "Normalizes store/hub sell-through in BigQuery & imputes stockout censorship"
+        },
+        {
+          "name": "TimesFM Quantile Forecaster",
+          "role": "Generates zero-shot & fine-tuned P10/P50/P90 horizon fans on Vertex AI"
+        },
+        {
+          "name": "FVA Bias Auditor",
+          "role": "Scores commercial sales overrides & strips systematic bias in AlloyDB"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "06",
+      "symbol": "Sy",
+      "shortName": "Synapse S&OP",
+      "group": "demand_sop",
+      "agentId": "sop_scenario_weaver",
+      "fullName": "Synapse — Autonomous S&OP Scenario Weaver",
+      "kpiBadge": "21 Days → 45 Mins",
+      "problem": "Sequential spreadsheet handoffs across Demand, Manufacturing, Procurement, Logistics, and Finance take 21 days—rendering monthly S&OP consensus plans obsolete before executives even sign off.",
+      "solution": "Maintains a live Cloud Spanner constraint graph of finite plant lines, labor shifts, supplier allocations, and unit margins—solving Pareto-optimal supply plans in Google OR-Tools with instant BigQuery P&L translation.",
+      "solverStack": "Gemini 2.5 Pro + Cloud Spanner Constraint Graph + OR-Tools Multi-Objective MILP Capacity & Margin Solver",
+      "subAgents": [
+        {
+          "name": "Spanner Constraint Graph Builder",
+          "role": "Maps finite plant line rates, labor shifts, supplier MOQs & ocean/air lead times"
+        },
+        {
+          "name": "Pareto MILP Solver",
+          "role": "Solves 50+ overtime vs. pre-build vs. alt-plant trade-offs in Google OR-Tools"
+        },
+        {
+          "name": "Real-Time P&L Translator",
+          "role": "Computes gross margin, COGS & cash-flow bridge live in BigQuery Cortex"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "07",
+      "symbol": "Eq",
+      "shortName": "ElasticityIQ",
+      "group": "demand_sop",
+      "agentId": "promo_lift_simulator",
+      "fullName": "ElasticityIQ — Demand Shaping & Promo Simulator",
+      "kpiBadge": "+22% Promo ROI",
+      "problem": "Uncoordinated trade promotions spike demand on capacity-constrained SKUs while silently cannibalizing 30%+ of adjacent full-margin baseline items.",
+      "solution": "Combines hierarchical BigQuery ML Double-ML causal elasticity models with live MEIO stock availability in AlloyDB to recommend profit-maximizing price/promo shaping before campaigns launch.",
+      "solverStack": "BigQuery ML Causal Double-ML Uplift + Cross-SKU Cannibalization Matrix + OR-Tools Supply-Aware Price Shaper",
+      "subAgents": [
+        {
+          "name": "Causal Uplift Decomposer",
+          "role": "Separates net incremental lift from pull-forward & halo in BigQuery ML"
+        },
+        {
+          "name": "Cannibalization Matrix Agent",
+          "role": "Quantifies sister-SKU volume diversion across price tiers"
+        },
+        {
+          "name": "Supply-Aware Shaper",
+          "role": "Redirects promo spend toward surplus high-margin inventory via OR-Tools"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "08",
+      "symbol": "Cs",
+      "shortName": "ChannelSync",
+      "group": "demand_sop",
+      "agentId": "cpfr_sync_agent",
+      "fullName": "ChannelSync — Collaborative CPFR & POS Harmonizer",
+      "kpiBadge": "+3.8 pts Retail OSA",
+      "problem": "Planners spend hours downloading incompatible retailer portal spreadsheets while phantom store inventory hides on-shelf stockouts and bullwhip order swings.",
+      "solution": "Automatically harmonizes multi-retailer EDI 852 POS feeds via Cloud Dataflow and BigQuery, detects store-level phantom inventory via zero-scan anomaly models, and reconciles joint CPFR forecasts.",
+      "solverStack": "BigQuery ML Zero-Scan Poisson Anomaly Detector + Vertex AI ADK CPFR Consensus Reconciler",
+      "subAgents": [
+        {
+          "name": "Dataflow EDI 852 POS Ingestor",
+          "role": "Normalizes daily store scan & retailer DC withdrawal feeds into BigQuery"
+        },
+        {
+          "name": "Phantom Inventory Detector",
+          "role": "Flags zero-scan shelf stockouts masked by phantom ERP stock"
+        },
+        {
+          "name": "CPFR Packet Generator",
+          "role": "Reconciles retailer order forecast vs. internal sell-through & Google Maps store catchments"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "09",
+      "symbol": "Sp",
+      "shortName": "SourcePulse",
+      "group": "sourcing_risk",
+      "agentId": "rfq_should_cost_agent",
+      "fullName": "SourcePulse — Parametric Should-Cost & Autonomous RFQ Agent",
+      "kpiBadge": "-6.8% Direct Spend",
+      "problem": "Category managers spend weeks normalizing messy supplier quote spreadsheets and negotiate without granular bottom-up commodity, manufacturing, and landed freight cost visibility.",
+      "solution": "Builds parametric BOM should-cost models in BigQuery linked to live LME/resin/freight indices, auto-normalizes all supplier quotes via Document AI, and solves combinatorial award splits in Google OR-Tools.",
+      "solverStack": "BigQuery Parametric BOM Cost Tear-Down + Document AI Quote Parser + OR-Tools Combinatorial MILP Award Split Solver",
+      "subAgents": [
+        {
+          "name": "Parametric BOM Decomposer",
+          "role": "Computes raw material, cycle time, labor, SG&A & inbound ocean/air freight should-cost"
+        },
+        {
+          "name": "Document AI Multi-Bid Normalizer",
+          "role": "Extracts & aligns 40+ heterogeneous PDF/Excel supplier quotes onto one AlloyDB matrix"
+        },
+        {
+          "name": "Combinatorial Award Optimizer",
+          "role": "Solves optimal dual-source split under MOQ, capacity & risk constraints in OR-Tools"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "10",
+      "symbol": "Nx",
+      "shortName": "NexusShield",
+      "group": "sourcing_risk",
+      "agentId": "tier_n_risk_sentinel",
+      "fullName": "NexusShield — Multi-Tier Supply Network Sentinel",
+      "kpiBadge": "+11 Days Warning",
+      "problem": "65% of supply chain disruptions originate in Tier-2 or Tier-3 sub-suppliers where legacy ERPs have zero visibility until Tier-1 misses factory delivery.",
+      "solution": "Maintains a multi-tier supply knowledge graph in Cloud Spanner Graph linked to enterprise SAP BOMs and WeatherNext 3, automatically triggering backup supplier PO splits and MEIO buffer updates.",
+      "solverStack": "Cloud Spanner Multi-Tier Knowledge Graph + Vertex AI GNN + OR-Tools Revenue-at-Risk BOM Mitigation Solver",
+      "subAgents": [
+        {
+          "name": "Spanner Sub-Tier Graph Mapper",
+          "role": "Infers Tier-2 to Tier-4 nodes from customs BOL, ocean AIS & filings in Cloud Spanner Graph"
+        },
+        {
+          "name": "BOM Revenue-at-Risk Tracer",
+          "role": "Maps disrupted sub-tier site on Google Maps to exact finished SKUs & customer orders"
+        },
+        {
+          "name": "Autonomous Playbook Executor",
+          "role": "Drafts backup supplier PO splits & raises MEIO safety buffers via Vertex AI A2A"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "11",
+      "symbol": "Cg",
+      "shortName": "ClauseGuard",
+      "group": "sourcing_risk",
+      "agentId": "tariff_esg_agent",
+      "fullName": "ClauseGuard — Contract Intelligence & Trade Compliance Agent",
+      "kpiBadge": "99.6% Compliance",
+      "problem": "Earned volume rebates and commodity caps stay buried in PDF contracts, while manual HS tariff classification causes ocean/air customs holds and overpaid duties.",
+      "solution": "Continuously reconciles SAP purchasing transactions against Document AI parsed contract clauses in AlloyDB pgvector and global customs tariff schedules with full legal ruling citations.",
+      "solverStack": "Document AI + AlloyDB pgvector Legal Contract RAG + Gemini 2.5 Pro Hierarchical HS Code Legal-Ruling Classifier",
+      "subAgents": [
+        {
+          "name": "Contract Clause & Rebate Miner",
+          "role": "Extracts volume tiers, index caps & SLA rebates from PDFs via Document AI & AlloyDB"
+        },
+        {
+          "name": "HS Tariff & CROSS Ruling Classifier",
+          "role": "Maps engineering specs to 10-digit HS codes & FTA rules with legal citations"
+        },
+        {
+          "name": "Multi-Tier Provenance Verifier",
+          "role": "Validates UFLPA/CBAM origin chains & Scope-3 emissions with Google Earth Engine"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "12",
+      "symbol": "Qs",
+      "shortName": "QualiShield",
+      "group": "sourcing_risk",
+      "agentId": "supplier_quality_sentinel",
+      "fullName": "QualiShield — Predictive Supplier Quality & NCR Resolver",
+      "kpiBadge": "-64% Defect Escapes",
+      "problem": "Out-of-spec supplier lots slip past manual PDF Certificate of Analysis (COA) checks and fixed sampling rules, causing costly factory line stops and rework.",
+      "solution": "Automatically verifies 100% of inbound supplier COAs via Document AI and Gemini Vision against engineering tolerances, predicts SPC/Cpk drift in BigQuery ML, and enforces rigorous 8D root-cause closure.",
+      "solverStack": "Document AI & Gemini Multimodal COA Spec Verifier + BigQuery ML Bayesian SPC/Cpk Drift Predictor",
+      "subAgents": [
+        {
+          "name": "Multimodal COA Tolerance Auditor",
+          "role": "Verifies supplier test certificates against CAD/BOM tolerances via Document AI"
+        },
+        {
+          "name": "SPC / Cpk Drift Predictor",
+          "role": "Detects subtle process capability degradation across lots in BigQuery ML"
+        },
+        {
+          "name": "Autonomous 8D CAPA & COPQ Agent",
+          "role": "Validates root-cause evidence & posts poor-quality chargebacks in SAP QM/AP"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "13",
+      "symbol": "Cm",
+      "shortName": "ChronosMake",
+      "group": "manufacturing_prod",
+      "agentId": "line_schedule_optimizer",
+      "fullName": "ChronosMake — Finite Capacity Line & Changeover Optimizer",
+      "kpiBadge": "-32% Changeover · -25% Backorders",
+      "problem": "Infinite-capacity ERP MRP schedules ignore sequence-dependent washdowns and tooling swaps—wasting 19% of line hours on avoidable changeovers and missing outbound vessel/rail/truck cutoffs.",
+      "solution": "Solves finite-capacity job-shop scheduling across all work centers, labor shifts, tooling matrices, and outbound transport cutoffs in seconds using Google OR-Tools CP-SAT and Cloud Spanner.",
+      "solverStack": "OR-Tools CP-SAT Sequence-Dependent Setup & Finite Capacity Job-Shop Solver + Multi-Modal Outbound Cutoff Sync",
+      "subAgents": [
+        {
+          "name": "Sequence-Dependent Setup Solver",
+          "role": "Clusters compatible color, allergen, coil & mold families on each line in OR-Tools CP-SAT"
+        },
+        {
+          "name": "Component & Outbound Cutoff Verifier",
+          "role": "Verifies 100% material pegging & aligns batch completion with vessel/air/rail/truck departures"
+        },
+        {
+          "name": "Rush-Order Impact Simulator",
+          "role": "Computes exact OTIF, changeover & overtime trade-offs for commercial rush orders"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "14",
+      "symbol": "Sg",
+      "shortName": "SpindleGuard",
+      "group": "manufacturing_prod",
+      "agentId": "predictive_oee_sentinel",
+      "fullName": "SpindleGuard — Predictive Asset OEE & MRO Spares Sentinel",
+      "kpiBadge": "+14.2 pts Plant OEE",
+      "problem": "Unplanned machine breakdowns mid-batch halt factory lines for hours, scrap work-in-process, and force emergency air-freight of replacement spares.",
+      "solution": "Streams high-frequency PLC vibration, acoustic, and current draw via Cloud Pub/Sub and Dataflow into Vertex AI anomaly models—scheduling preventive swaps inside planned changeovers.",
+      "solverStack": "Vertex AI Multimodal Vibration/Acoustic Spectral Anomaly Model + OR-Tools Joint PM-Production Window MILP",
+      "subAgents": [
+        {
+          "name": "PLC Harmonic & Thermal Sensor",
+          "role": "Streams high-frequency vibration & current via Pub/Sub & Dataflow to detect degradation 48h ahead"
+        },
+        {
+          "name": "Opportunistic PM Window Slotter",
+          "role": "Aligns 45-min repair inside planned ChronosMake line changeovers for zero OEE loss"
+        },
+        {
+          "name": "MRO Spares & Multimodal Repair Copilot",
+          "role": "Reserves SAP MM crib parts & guides technicians with Gemini 3D schematics"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "15",
+      "symbol": "Yv",
+      "shortName": "YieldVision",
+      "group": "manufacturing_prod",
+      "agentId": "inline_yield_guardian",
+      "fullName": "YieldVision — Inline Vision QA & Closed-Loop SPC Recipe Agent",
+      "kpiBadge": "-44% Plant Scrap",
+      "problem": "End-of-line manual sampling discovers quality drift hours after thousands of defective units have already been produced, driving up scrap and quarantine holds.",
+      "solution": "Combines Vertex AI inline computer vision with closed-loop Statistical Process Control (SPC)—compensating for raw-material lot variance in real time and automating SAP QM batch release.",
+      "solverStack": "Vertex AI Edge Multimodal Vision Defect Classifier + BigQuery ML Bayesian Closed-Loop SPC Parameter Controller",
+      "subAgents": [
+        {
+          "name": "High-Speed Vision Defect Classifier",
+          "role": "Detects micro-surface, weld, seal & dimensional defects at line speed via Vertex AI Vision"
+        },
+        {
+          "name": "Closed-Loop SPC Recipe Controller",
+          "role": "Computes temperature/pressure/torque offsets when raw material lots vary"
+        },
+        {
+          "name": "Autonomous eBHR Release Auditor",
+          "role": "Verifies 100% of inline quality gates in AlloyDB for instant finished-goods release to outbound docks"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "16",
+      "symbol": "Ch",
+      "shortName": "ChangeSync",
+      "group": "manufacturing_prod",
+      "agentId": "eco_cutover_orchestrator",
+      "fullName": "ChangeSync — Engineering Change (ECO) & NPI Cutover Orchestrator",
+      "kpiBadge": "-58% Obsolete WIP",
+      "problem": "Arbitrary Engineering Change Order (ECO) cutover dates strand millions of dollars of prior-revision components in warehouses, ocean containers, and open supplier POs.",
+      "solution": "Links Teamcenter PLM engineering redlines in Cloud Spanner Graph to live SAP stock, WIP, and open supplier commitments—calculating the exact plant-by-plant cutover date in OR-Tools that minimizes write-offs.",
+      "solverStack": "Cloud Spanner eBOM-to-mBOM Graph Verifier + OR-Tools Multi-Plant BOM Burn-Down & Effectivity Date MILP",
+      "subAgents": [
+        {
+          "name": "Old-Rev Burn-Down Optimizer",
+          "role": "Finds the exact cutover date in OR-Tools that exhausts Rev-A stock and open ocean/air POs"
+        },
+        {
+          "name": "Spanner eBOM-to-mBOM Parity Auditor",
+          "role": "Reconciles Teamcenter PLM CAD redlines against SAP plant routings & work instructions"
+        },
+        {
+          "name": "NPI Ramp Readiness Tracker",
+          "role": "Verifies tooling, PPAP & line trial gates before mass production launch"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "17",
+      "symbol": "Ef",
+      "shortName": "EchelonFlow",
+      "group": "inventory_warehouse",
+      "agentId": "meio_safety_stock_agent",
+      "fullName": "EchelonFlow — Multi-Echelon Inventory (MEIO) Optimizer",
+      "kpiBadge": "-18% Working Capital",
+      "problem": "Single-echelon static ERP rules set safety buffers in isolation, trapping 24% excess working capital upstream while regional edge hubs still suffer stockouts.",
+      "solution": "Solves coupled multi-echelon stochastic inventory equations daily across factories, ports, CDCs, and RDCs using Cloud Spanner Graph and Google OR-Tools, triggering lateral hub-to-hub stock transfers before new production.",
+      "solverStack": "Cloud Spanner Echelon Graph + Coupled Stochastic Guaranteed-Service MEIO + OR-Tools Lateral Flow MILP",
+      "subAgents": [
+        {
+          "name": "Lead-Time & Demand Tail Profiler",
+          "role": "Fits empirical supplier & ocean/air/rail/truck lead-time tails in BigQuery"
+        },
+        {
+          "name": "Multi-Echelon Buffer Solver",
+          "role": "Optimizes coupled upstream/downstream safety buffers across Spanner Graph"
+        },
+        {
+          "name": "Lateral Rebalancing Broker",
+          "role": "Issues hub-to-hub STOs using Google Maps Distance Matrix before rush production"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "18",
+      "symbol": "Sm",
+      "shortName": "SlotMaster 3D",
+      "group": "inventory_warehouse",
+      "agentId": "warehouse_slotting_agent",
+      "fullName": "SlotMaster — 3D Warehouse Slotting & Wave Twin",
+      "kpiBadge": "-28% Picker Travel",
+      "problem": "Static annual warehouse slotting forces pickers to walk miles for fast-moving or co-ordered SKUs, while uncoordinated wave releases gridlock narrow aisles.",
+      "solution": "Builds a 3D geometric digital twin of every aisle, rack level, and conveyor—scheduling Golden-Zone moves and synchronizing wave completion with outbound cross-dock and truck doors.",
+      "solverStack": "3D Spatial Digital Twin + BigQuery FP-Growth Order Affinity + OR-Tools CP-SAT Congestion Wave Solver",
+      "subAgents": [
+        {
+          "name": "Co-Order Affinity Miner",
+          "role": "Discovers SKU pairs frequently picked in the same wave in BigQuery"
+        },
+        {
+          "name": "3D Golden-Zone Slotter",
+          "role": "Assigns high-velocity SKUs to ergonomic waist-height bays via OR-Tools"
+        },
+        {
+          "name": "Aisle Congestion Throttler",
+          "role": "Simulates picker/AMR traffic in AlloyDB & staggers wave releases"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "19",
+      "symbol": "Pg",
+      "shortName": "PromiseGuard",
+      "group": "inventory_warehouse",
+      "agentId": "atp_order_promising_agent",
+      "fullName": "PromiseGuard — Dynamic Order Promising (ATP) Broker",
+      "kpiBadge": "-34% Split Shipments",
+      "problem": "Rigid FIFO ERP order promising splits customer orders across 2 or 3 warehouses whenever a single line item is locally out of stock—destroying order margin.",
+      "solution": "Solves total landed fulfillment cost (shipping cost via Google Maps Distance Matrix vs. SLA penalty vs. stock protection) across Cloud Spanner global inventory and inbound ASNs in under 50 milliseconds.",
+      "solverStack": "Cloud Spanner Global Inventory Ledger + OR-Tools Sub-50ms Margin-Aware Multi-Node Sourcing MILP",
+      "subAgents": [
+        {
+          "name": "Spanner Global Inventory & ASN Scanner",
+          "role": "Evaluates on-hand, ocean/air/rail in-transit ASN & safety stock across all nodes"
+        },
+        {
+          "name": "Landed-Margin Sourcing Solver",
+          "role": "Trades off Google Maps lane distance, parcel/LTL/FTL split cost vs. SLA penalty"
+        },
+        {
+          "name": "Channel Fair-Share Governor",
+          "role": "Protects priority customer allocations in AlloyDB during tight supply"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "20",
+      "symbol": "Yp",
+      "shortName": "YardPulse",
+      "group": "inventory_warehouse",
+      "agentId": "yard_dock_sequencer",
+      "fullName": "YardPulse — Autonomous Dock Door & Yard Sequencer",
+      "kpiBadge": "-41% Trailer Dwell",
+      "problem": "Static whiteboard dock scheduling ignores live truck delays and interior staging congestion—causing gate bottlenecks, long yard hostler delays, and carrier detention bills.",
+      "solution": "Dynamically assigns inbound port/rail drayage and outbound road trailers to the dock door closest to their interior rack or cross-dock lane using Google Maps ETA and Google OR-Tools.",
+      "solverStack": "Google Maps Live ETA + OR-Tools Bipartite Dock-Door Matching + Shortest-Path Hostler Task Interleaving",
+      "subAgents": [
+        {
+          "name": "Gate Vision ANPR & Maps ETA Matcher",
+          "role": "Links live Google Maps truck arrival & gate camera OCR to dynamic dock slots"
+        },
+        {
+          "name": "Cross-Dock Proximity Solver",
+          "role": "Minimizes interior forklift travel from inbound rail/port door to outbound truck door"
+        },
+        {
+          "name": "Detention Clock Guardian",
+          "role": "Escalates unloading priority in AlloyDB before 2-hr free dwell expires"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "21",
+      "symbol": "Xd",
+      "shortName": "CrossDockFlow",
+      "group": "inventory_warehouse",
+      "agentId": "crossdock_transfer_orchestrator",
+      "fullName": "CrossDockFlow — Port/Air/Rail-to-Warehouse Cross-Dock & Flow-Through Agent",
+      "kpiBadge": "-52% Cross-Dock Dwell",
+      "problem": "Inbound ocean containers, air cargo pallets, and rail boxcars are blindly received into reserve warehouse racks and re-picked hours later—doubling warehouse labor and adding 24–48 hours of avoidable dwell.",
+      "solution": "Continuously matches inbound ocean, air, and rail ASNs in Cloud Spanner against open outbound customer orders—directing opportunistic cross-dock flow-through straight to outbound road fleet bays.",
+      "solverStack": "OR-Tools CP-SAT Inbound-to-Outbound Door Coupling + Flow-Through Pallet De-Consolidation MILP",
+      "subAgents": [
+        {
+          "name": "Inbound Container/ULD De-Consolidator",
+          "role": "Maps incoming ocean container, air ULD & rail car contents to urgent outbound orders"
+        },
+        {
+          "name": "Zero-Putaway Flow-Through Matcher",
+          "role": "Bypasses high-bay storage by routing pallets straight from inbound strip door to outbound bay"
+        },
+        {
+          "name": "Multi-Modal Wave Synchronizer",
+          "role": "Aligns cross-dock sortation completion with FleetFlow & CubeMaster 3D truck departure slots"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "22",
+      "symbol": "Cb",
+      "shortName": "CubeMaster 3D",
+      "group": "logistics_fleet",
+      "agentId": "load_consolidation_agent",
+      "fullName": "CubeMaster 3D — Isometric LIFO Bay & Load Consolidation Studio",
+      "kpiBadge": "92% Cube · 100% LIFO",
+      "problem": "Routes that fit by scalar weight/volume fail on the dock because Stop-1 cargo gets buried behind Stop-5 cargo or overloads highway drive-axle limits.",
+      "solution": "Runs a Google OR-Tools 3D guillotine bin-packing solver with crush-strength, orientation, longitudinal axle physics, and strict reverse-stop LIFO bay zones.",
+      "solverStack": "OR-Tools 3D Guillotine Bin-Packing + Reverse-Stop LIFO Zoning + Longitudinal Axle Torque & CoG Solver",
+      "subAgents": [
+        {
+          "name": "3D Guillotine Spatial Packer",
+          "role": "Places cartons/pallets in (X,Y,Z) respecting orientation, stacking & crush limits"
+        },
+        {
+          "name": "Strict LIFO Bay Partitioner",
+          "role": "Enforces reverse-stop unloading zones (Stop 1 at rear doors, Stop N at nose)"
+        },
+        {
+          "name": "Axle & CoG Physics Verifier",
+          "role": "Verifies front steering & rear drive axle load limits and center-of-gravity envelope"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "23",
+      "symbol": "Ff",
+      "shortName": "FleetFlow Maps",
+      "group": "logistics_fleet",
+      "agentId": "fleetflow_dispatch",
+      "fullName": "FleetFlow — Google Maps Corridor Route & Fleet Dispatch Studio",
+      "kpiBadge": "-19.4% Fleet Cost",
+      "problem": "Manual postcode routing creates criss-crossing multi-truck spaghetti paths, poor vehicle-class sizing, and missed customer delivery time windows.",
+      "solution": "Couples angular corridor clustering with Google OR-Tools Capacitated Vehicle Routing with Time Windows (CVRPTW) and Google Maps Routes Preferred API across heterogeneous truck classes.",
+      "solverStack": "Google Maps Distance Matrix + Angular Sector Corridor Clustering + OR-Tools Heterogeneous CVRPTW",
+      "subAgents": [
+        {
+          "name": "Angular Corridor Clusterer",
+          "role": "Partitions stops into non-overlapping radial delivery corridors using Google Maps geocodes"
+        },
+        {
+          "name": "Heterogeneous Fleet Sizer",
+          "role": "Selects optimal mix of 0.75t EV vans, 3.5t, 7.5t, 12t & 24t 40ft trucks in OR-Tools"
+        },
+        {
+          "name": "Dynamic Traffic Re-Sequencer",
+          "role": "Re-solves remaining stop order upon live Google Maps traffic or dock delay"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "24",
+      "symbol": "Pw",
+      "shortName": "PortWatch Sea",
+      "group": "logistics_fleet",
+      "agentId": "port_drayage_orchestrator",
+      "fullName": "PortWatch — Global Ocean Vessel, Container Stowage & Port Drayage Orchestrator",
+      "kpiBadge": "-67% Demurrage Fees",
+      "problem": "Ocean containers sit at congested port terminals accruing $350+/day demurrage fees while regional DCs stock out waiting for slow inland transit.",
+      "solution": "Tracks every container from factory gate stuffing onto ocean ships via satellite AIS and WeatherNext 3 marine routing, auto-books terminal drayage gates, and transloads urgent SKUs into regional rail or truck corridors.",
+      "solverStack": "WeatherNext 3 Marine ETA Ensemble + OR-Tools Port Free-Time Demurrage Optimizer + Coastal Transload Split MILP",
+      "subAgents": [
+        {
+          "name": "Satellite AIS & Berth Queue Predictor",
+          "role": "Forecasts vessel berth & container discharge timestamp 5+ days before port arrival"
+        },
+        {
+          "name": "Demurrage & Detention Clock Shield",
+          "role": "Prioritizes drayage pickup & empty container return before terminal free-time expires"
+        },
+        {
+          "name": "Coastal Transload & Mode-Split Solver",
+          "role": "Splits stockout-critical SKUs from 40ft ocean FEUs onto fast team trucks or intermodal rail"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "25",
+      "symbol": "Af",
+      "shortName": "AeroFreight Air",
+      "group": "logistics_fleet",
+      "agentId": "air_cargo_uld_optimizer",
+      "fullName": "AeroFreight — Air Cargo Charter, Belly Allocation & 3D ULD Contour Optimizer",
+      "kpiBadge": "-28% Air Freight Cost",
+      "problem": "Emergency air shipments suffer 25%+ volumetric chargeable-weight waste inside contoured aircraft ULDs and miss tight hub connections due to blind forwarder milestone lag.",
+      "solution": "Combines Google OR-Tools 3D contoured ULD bin-packing (LD3/LD7/PMC) with live TAC Index air rate optimization, IATA ONE Record e-AWB automation, and FlightAware ADS-B tail-number tracking.",
+      "solverStack": "OR-Tools 3D Contoured ULD (LD3/PMC) Weight-Balance Packer + Belly-vs-Charter Allotment MILP + ADS-B Flight Connection Guard",
+      "subAgents": [
+        {
+          "name": "3D Contoured ULD Packer (LD3/LD7/PMC)",
+          "role": "Eliminates volumetric chargeable-weight penalties via 3D fuselage contour & CoG packing"
+        },
+        {
+          "name": "Belly vs. Charter Capacity Broker",
+          "role": "Optimizes BSA forwarder commitments, passenger belly consolidations & spot charters"
+        },
+        {
+          "name": "ADS-B Tail-Number & Tarmac Guard",
+          "role": "Tracks live aircraft ADS-B flight paths & triggers tarmac recovery before missed connections"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "26",
+      "symbol": "Ir",
+      "shortName": "IntermodalSync",
+      "group": "logistics_fleet",
+      "agentId": "intermodal_rail_linehaul_agent",
+      "fullName": "IntermodalSync — Factory-to-DC Intermodal Rail, Barge & Linehaul Orchestrator",
+      "kpiBadge": "-34% Linehaul Cost",
+      "problem": "Long-haul freight defaults to expensive over-the-road diesel trucks because planners distrust rail ramp dwell variability and struggle to coordinate origin/destination drayage chassis.",
+      "solution": "Continuously evaluates factory-to-DC and port-to-inland corridors using Railinc EDI telemetry, Google Maps drayage routing, and Google OR-Tools—synchronizing rail consists, chassis pools, and warehouse cross-dock gates.",
+      "solverStack": "OR-Tools Multi-Corridor Rail/Truck Linehaul MILP + Rail Ramp Cutoff & Chassis Pool Synchronizer",
+      "subAgents": [
+        {
+          "name": "OTR-to-Rail Corridor Converter",
+          "role": "Identifies 500+ mile factory-to-DC lanes eligible for COFC/TOFC rail or inland barge conversion"
+        },
+        {
+          "name": "Class-I Consist & Ramp Dwell Predictor",
+          "role": "Ingests Railinc CLM & yard telemetry to forecast train arrival and prevent ramp storage fees"
+        },
+        {
+          "name": "Synchronized Chassis & Drayage Sequencer",
+          "role": "Couples origin factory drayage and destination DC cross-dock appointments on Google Maps"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "27",
+      "symbol": "Ms",
+      "shortName": "ModalShift",
+      "group": "logistics_fleet",
+      "agentId": "multimodal_mode_shift_agent",
+      "fullName": "ModalShift — Factory→Ship→Air→Rail→Truck Dynamic Mode-Switch Broker",
+      "kpiBadge": "-24% Total Transit Cost",
+      "problem": "Static ERP routing guides lock entire purchase orders onto a single transport mode—either shipping everything by slow ocean (causing stockouts) or panic-shipping the entire batch by air (destroying margin).",
+      "solution": "Models the complete global multi-modal network in Cloud Spanner Graph and Google OR-Tools—dynamically splitting and switching shipments across Ocean, Sea-Air (e.g., Dubai/Singapore/LA hubs), Air, Intermodal Rail, and Road Fleet.",
+      "solverStack": "Cloud Spanner Multi-Modal Network Graph + OR-Tools Pareto Cost / Carbon / SLA Mode-Switch MILP",
+      "subAgents": [
+        {
+          "name": "Factory-Gate Mode-Split Optimizer",
+          "role": "Splits factory outbound batches across Ocean, Sea-Air, Rail & Truck based on DC stockout risk"
+        },
+        {
+          "name": "Mid-Journey Sea-Air & Port-to-Rail Switcher",
+          "role": "Intercepts delayed ocean containers at transshipment hubs to upgrade only critical SKUs"
+        },
+        {
+          "name": "Landed Cost, Carbon & OTIF Pareto Broker",
+          "role": "Balances freight rate, inventory carrying cost, ISO-14083 CO2e & customer MABD penalties"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "28",
+      "symbol": "St",
+      "shortName": "SentinelMove",
+      "group": "logistics_fleet",
+      "agentId": "freight_control_tower",
+      "fullName": "SentinelMove — Multi-Modal In-Transit Control Tower & Freight Auditor",
+      "kpiBadge": "100% Auto-Audited",
+      "problem": "Delays and cold-chain excursions across ocean, air, rail, and road are discovered after cargo spoils, while 3–5% of global freight spend leaks to unaudited detention, demurrage, and rate errors.",
+      "solution": "Streams live Ocean AIS, Air ADS-B, Rail EDI, and Road GPS/IoT telemetry via Cloud Pub/Sub & Dataflow for mid-transit intervention, then cross-checks e-POD and Google Maps geofences against 100% of carrier invoices.",
+      "solverStack": "Pub/Sub + Dataflow Spatiotemporal ETA/Thermal Drift Predictor + Google Maps Geofence & Document AI Rate-Card Audit Engine",
+      "subAgents": [
+        {
+          "name": "Multi-Modal Excursion Guard",
+          "role": "Detects vessel, air, rail & truck ETA or reefer thermal drift 45+ mins before breach"
+        },
+        {
+          "name": "Maps Geofence Detention Verifier",
+          "role": "Matches carrier dwell/demurrage claims against exact Google Maps polygon timestamps"
+        },
+        {
+          "name": "EDI 210 / Air Waybill / Ocean Bill Auditor",
+          "role": "Audits 100% of multi-modal freight invoices against contracted lane tables in AlloyDB"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "29",
+      "symbol": "Ot",
+      "shortName": "OTIFShield",
+      "group": "circular_enable",
+      "agentId": "otif_penalty_shield",
+      "fullName": "OTIFShield — Customer SLA Rescue & Chargeback Dispute Agent",
+      "kpiBadge": "-78% OTIF Penalties",
+      "problem": "Major retailers deduct 3% to 5% of invoice value for early, late, or partial deliveries—costing consumer and industrial suppliers millions in preventable fines.",
+      "solution": "Intervenes 72 hours before Must-Arrive-By-Date (MABD) to rescue at-risk orders, and automatically disputes invalid retailer deductions with Google Maps GPS polygon and Document AI e-POD evidence.",
+      "solverStack": "BigQuery ML 72-Hr MABD Breach Predictor + OR-Tools Penalty-vs-Expedite NPV Solver + Document AI Dispute Assembler",
+      "subAgents": [
+        {
+          "name": "72-Hr MABD Breach Forecaster",
+          "role": "Scores every open retail order against WMS wave & Google Maps lane delay risk"
+        },
+        {
+          "name": "Penalty-Aware Rescue Broker",
+          "role": "Triggers alternate-DC ship or ModalShift team-truck upgrade when penalty > cost"
+        },
+        {
+          "name": "Automated Deduction Dispute Agent",
+          "role": "Compiles Google Maps geofence, EDI 214 & Document AI signed BOL proof to recover fines"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "30",
+      "symbol": "Rl",
+      "shortName": "ReturnLoop RMA",
+      "group": "circular_enable",
+      "agentId": "reverse_rma_optimizer",
+      "fullName": "ReturnLoop — Autonomous RMA Grading & Backhaul Optimizer",
+      "kpiBadge": "+31% Recovery Margin",
+      "problem": "Companies pay expensive third-party LTL rates to ship returns to central depots while their own fleet returns empty, losing 40%+ of recoverable item value.",
+      "solution": "Grades returns at the edge using Gemini 2.5 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.",
+      "solverStack": "Gemini Multimodal Vision Defect Grader + Google Maps & OR-Tools Dynamic Backhaul Insertion CVRPTW",
+      "subAgents": [
+        {
+          "name": "Backhaul Milk-Run Inserter",
+          "role": "Injects RMA, pallet & empty container pickups into returning FleetFlow vehicles via Google Maps"
+        },
+        {
+          "name": "Multimodal Disposition Grader",
+          "role": "Classifies returns into Grade-A Restock, Refurb, Vendor Claim or Scrap via Gemini Vision"
+        },
+        {
+          "name": "Vendor Warranty Recovery Agent",
+          "role": "Links defect spikes in AlloyDB to supplier lots & posts SAP debit claims"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "31",
+      "symbol": "Ec",
+      "shortName": "EcoChain CO2e",
+      "group": "circular_enable",
+      "agentId": "carbon_scope3_ledger",
+      "fullName": "EcoChain — Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger",
+      "kpiBadge": "-24% Freight CO2e",
+      "problem": "Spend-based ESG estimates fail EU CBAM and customer audits, while planners lack visibility into cost-neutral ways to decarbonize global ocean, air, rail, and road freight lanes.",
+      "solution": "Calculates transaction-level ISO-14083 carbon footprints in BigQuery, verifies plot origins via Google Earth Engine, and embeds carbon shadow-pricing into OR-Tools multi-modal routing.",
+      "solverStack": "BigQuery ISO-14083 Primary Telemetry Carbon Calculator + Earth Engine Canopy Verifier + OR-Tools Cost/Carbon Mode-Shift MILP",
+      "subAgents": [
+        {
+          "name": "ISO-14083 Telemetry Carbon Engine",
+          "role": "Computes primary CO2e per SKU-shipment across ocean, air, rail & road from actual fuel & load"
+        },
+        {
+          "name": "Earth Engine EUDR & CBAM Verifier",
+          "role": "Validates plot geolocation canopy history in Google Earth Engine & mill emission certs"
+        },
+        {
+          "name": "Green Mode-Shift Optimizer",
+          "role": "Identifies cost-neutral Air-to-Sea, OTR-to-Rail & Diesel-to-EV swaps in OR-Tools"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "32",
+      "symbol": "Td",
+      "shortName": "TwinDesign",
+      "group": "circular_enable",
+      "agentId": "network_twin_architect",
+      "fullName": "TwinDesign — Supply Chain Network & Cost-to-Serve Optimizer",
+      "kpiBadge": "+240 bps Net Margin",
+      "problem": "Flat overhead allocations hide the fact that 20% of SKUs and small fractional orders destroy net margin, while network design studies sit in static 3-year-old consulting binders.",
+      "solution": "Maintains a live activity-based Cost-to-Serve ledger in BigQuery and continuous network design MILP in Google OR-Tools & Cloud Spanner—optimizing DC territories, factory-direct bypass, and customer MOQ guardrails.",
+      "solverStack": "BigQuery Activity-Based Landed Cost-to-Serve Attribution + OR-Tools Capacitated Facility Location & Multi-Modal Flow MILP",
+      "subAgents": [
+        {
+          "name": "Activity-Based Cost-to-Serve Engine",
+          "role": "Attributes exact ocean, air, rail, drayage, pick, pack, cube & detention cost per order line"
+        },
+        {
+          "name": "Continuous Network Flow & Node Solver",
+          "role": "Optimizes DC territories, factory-to-customer bypass & 3PL overflow capacity in OR-Tools"
+        },
+        {
+          "name": "MOQ & Service-Tier Policy Optimizer",
+          "role": "Designs pallet-layer MOQ & bracket incentives to fix margin-dilutive small orders"
+        }
+      ]
+    }
+  ]
+}
