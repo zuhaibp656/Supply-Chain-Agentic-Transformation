@@ -2486,7 +2486,7 @@
       "cadType": "corridor_map",
       "videoSrc": "videos/f2f_fleet_demo.mp4",
       "hasPreloadedVideo": true,
-      "systems": "Loop / Narvar RMA · Blue Yonder TMS · SAP S/4HANA QM & EWM · Gemini 3.0 Flash Vision · Google Maps Routes API · Google OR-Tools · AlloyDB",
+      "systems": "Loop / Narvar RMA · Blue Yonder TMS · SAP S/4HANA QM & EWM · Gemini 3.8 Flash Vision · Google Maps Routes API · Google OR-Tools · AlloyDB",
       "solverStack": "Gemini Multimodal Vision Defect Grader + Google Maps & OR-Tools Dynamic Backhaul Insertion CVRPTW",
       "apiWriteback": "TMS Fleet Backhaul Pickup Stop, SAP EWM Direct-to-Hub Restock & Vendor Warranty Debit Memo",
       "subAgents": [
@@ -2504,7 +2504,7 @@
         }
       ],
       "problem": "Companies pay expensive third-party LTL rates to ship returns to central depots while their own fleet returns empty, losing 40%+ of recoverable item value.",
-      "solution": "Grades returns at the edge using Gemini 3.0 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.",
+      "solution": "Grades returns at the edge using Gemini 3.8 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.",
       "advantage": "Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend."
     },
     "rfq_should_cost_agent": {

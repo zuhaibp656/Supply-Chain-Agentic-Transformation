@@ -818,7 +818,7 @@
       "fullName": "ReturnLoop — Autonomous RMA Grading & Backhaul Optimizer",
       "kpiBadge": "+31% Recovery Margin",
       "problem": "Companies pay expensive third-party LTL rates to ship returns to central depots while their own fleet returns empty, losing 40%+ of recoverable item value.",
-      "solution": "Grades returns at the edge using Gemini 3.0 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.",
+      "solution": "Grades returns at the edge using Gemini 3.8 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.",
       "solverStack": "Gemini Multimodal Vision Defect Grader + Google Maps & OR-Tools Dynamic Backhaul Insertion CVRPTW",
       "subAgents": [
         {

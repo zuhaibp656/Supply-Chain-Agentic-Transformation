@@ -221,7 +221,7 @@ Every agent in the portal showcases **12 Google Cloud services** and pre-built *
 2. **Cloud Spanner & Spanner Graph** — Globally consistent state ledger and multi-hop graph traversal (Tier-N suppliers, multi-echelon nodes, multi-modal corridors).
 3. **AlloyDB for PostgreSQL + `pgvector`** — Sub-millisecond operational state store and hybrid vector search for contracts, SOPs, and tariffs.
 4. **Vertex AI Agent Engine (ADK & A2A Protocol)** — Managed high-code runtime executing the 5-stage reasoning loop and 3 specialized A2A sub-agents per agent.
-5. **Gemini 3.1 Pro & 3.0 Flash** — Multimodal reasoning over ERP tables, CAD schematics, Bills of Lading, Air Waybills, and satellite imagery.
+5. **Gemini 3.1 Pro & 3.8 Flash** — Multimodal reasoning over ERP tables, CAD schematics, Bills of Lading, Air Waybills, and satellite imagery.
 6. **Google OR-Tools (CP-SAT, CVRPTW, MILP, 3D Bin-Packing)** — Exact mathematical optimization for 3D trailer LIFO, 3D aircraft ULD contours (`LD3/LD7/PMC/Q6`), fleet routing, and finite scheduling.
 7. **Google Maps Platform (Routes Preferred, Fleet Engine, Distance Matrix, Geofencing)** — Commercial truck routing, live traffic ETA, dock-apron geofencing, and multi-stop corridor clustering.
 8. **Vertex AI TimesFM & Forecasting** — Zero-shot foundation time-series forecasting for P10/P50/P90 demand, transit lead times, and spot freight rates.
