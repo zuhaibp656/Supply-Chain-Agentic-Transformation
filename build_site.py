@@ -3350,13 +3350,9 @@ def build_html() -> str:
           <img data-asset="gemini_enterprise_dark.png" alt="Gemini Enterprise" class="gemini-hero" />
         </div>
 
-        <h1 class="hero-title">
+        <h1 class="hero-title" style="margin-bottom: 36px;">
           Agentic Transformation for <span class="gradient-word">Supply Chain &amp; Demand</span>
         </h1>
-
-        <p class="hero-subtitle">
-          <span class="sc-hl-metric">6 SCOR Verticals</span> · <span class="sc-hl-metric">26 Personas</span> · <span class="sc-hl-metric">32 High-ROI AI Agents</span> (<strong class="sc-hl-bold">28 Domain + 4 Cross-Persona Universal</strong>) spanning <span class="sc-hl-underline">Factory &rarr; Ocean Ships &rarr; Air Cargo &rarr; Rail &rarr; Warehouses &rarr; Road Fleet</span> on <span class="sc-hl-underline">Gemini Enterprise</span>, <span class="sc-hl-underline">BigQuery</span>, <span class="sc-hl-underline">Cloud Spanner</span>, <span class="sc-hl-underline">AlloyDB</span>, <span class="sc-hl-underline">OR-Tools</span> &amp; <span class="sc-hl-underline">Google Maps</span>.
-        </p>
 
         <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:14px;">
           <button type="button" class="hero-cta-btn" onclick="goToOrgChart()">
