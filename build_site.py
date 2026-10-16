@@ -5850,70 +5850,72 @@ def build_html() -> str:
           ctx.stroke();
         }
 
-        // Key anchor coordinates across the full viewport
-        const leftSpan = Math.min(480, w * 0.30);
-        const waveStartX = w * 0.015;
-        const waveEndX = waveStartX + leftSpan;
-        const waveBaseY = h * 0.23;
+        // Key hub anchor coordinates forming a seamless 360-degree supply chain circuit
+        const demandHubX = w * 0.205;
+        const demandHubY = h * 0.24;
 
-        const convStartX = w * 0.018;
-        const convStartY = h * 0.49;
-        const convLen = Math.min(450, w * 0.285);
-        const dirX = 0.866;
-        const dirY = 0.5;
-        const perpX = -0.866 * 46;
-        const perpY = 0.5 * 46;
-        const convEndX = convStartX + convLen * dirX;
-        const convEndY = convStartY + convLen * dirY;
+        const wmsHubX = w * 0.215;
+        const wmsHubY = h * 0.68;
 
-        const tierHubX = w * 0.83;
-        const tierHubY = h * 0.21;
+        const tierHubX = w * 0.825;
+        const tierHubY = h * 0.22;
 
-        const hubX = w * 0.84;
-        const hubY = h * 0.57;
+        const hubX = w * 0.835;
+        const hubY = h * 0.58;
         const spanR = Math.min(210, w * 0.155);
 
-        // 2. SEAMLESS CROSS-CANVAS AMBIENT SUPPLY CHAIN STREAMS (Connecting Left & Right Wings)
+        // 2. SEAMLESS 360° HUB-TO-HUB CROSS-CANVAS SUPPLY CHAIN STREAMS
         const ambientStreams = [
-          // Top stream: Demand Sensing Wave -> Tier-N Supplier & Factory Constellation
+          // Top arc: Demand & S&OP Hub (Top-Left) -> Smart Plant & Tier-N Hub (Top-Right)
           {
-            x0: waveEndX - 30, y0: waveBaseY,
-            x1: w * 0.42, y1: h * 0.06,
-            x2: w * 0.62, y2: h * 0.08,
-            x3: tierHubX - 70, y3: tierHubY - 12,
-            col: 'rgba(16, 185, 129, 0.22)',
+            x0: demandHubX, y0: demandHubY,
+            x1: w * 0.40, y1: h * 0.05,
+            x2: w * 0.62, y2: h * 0.05,
+            x3: tierHubX, y3: tierHubY + 18,
+            col: 'rgba(16, 185, 129, 0.24)',
             pulseCol: '#34d399',
-            speed: 0.11,
+            speed: 0.10,
             phase: 0.0
           },
-          // Upper-mid stream: Demand Sensing -> Multi-Modal Global Hub
+          // Upper-mid diagonal: Demand & S&OP Hub (Top-Left) -> Multi-Modal Hub (Bottom-Right)
           {
-            x0: waveEndX - 10, y0: waveBaseY + 18,
-            x1: w * 0.45, y1: h * 0.18,
-            x2: w * 0.64, y2: h * 0.32,
+            x0: demandHubX, y0: demandHubY,
+            x1: w * 0.44, y1: h * 0.17,
+            x2: w * 0.64, y2: h * 0.34,
             x3: hubX, y3: hubY,
-            col: 'rgba(0, 210, 255, 0.18)',
+            col: 'rgba(0, 210, 255, 0.16)',
             pulseCol: '#00d2ff',
-            speed: 0.09,
+            speed: 0.085,
             phase: 0.35
           },
-          // Lower stream: 3D WMS Conveyor Outbound -> Multi-Modal Global Hub
+          // Left vertical replenishment link: Demand & S&OP Hub (Top-Left) -> 3D WMS Fulfillment Hub (Bottom-Left)
           {
-            x0: convEndX, y0: convEndY,
-            x1: w * 0.44, y1: h * 0.89,
-            x2: w * 0.65, y2: h * 0.86,
-            x3: hubX, y3: hubY,
-            col: 'rgba(0, 210, 255, 0.24)',
+            x0: demandHubX, y0: demandHubY,
+            x1: w * 0.14, y1: h * 0.40,
+            x2: w * 0.15, y2: h * 0.54,
+            x3: wmsHubX, y3: wmsHubY,
+            col: 'rgba(56, 189, 248, 0.22)',
             pulseCol: '#38bdf8',
-            speed: 0.12,
+            speed: 0.14,
+            phase: 0.15
+          },
+          // Lower outbound arc: 3D WMS Fulfillment Hub (Bottom-Left) -> Multi-Modal Global Hub (Bottom-Right)
+          {
+            x0: wmsHubX, y0: wmsHubY,
+            x1: w * 0.42, y1: h * 0.88,
+            x2: w * 0.64, y2: h * 0.86,
+            x3: hubX, y3: hubY,
+            col: 'rgba(0, 210, 255, 0.25)',
+            pulseCol: '#38bdf8',
+            speed: 0.11,
             phase: 0.2
           },
-          // Bottom reverse-logistics / circularity stream: Multi-Modal Hub -> 3D WMS Inbound
+          // Bottom reverse-logistics / circularity arc: Multi-Modal Hub (Bottom-Right) -> 3D WMS Hub (Bottom-Left)
           {
-            x0: hubX - spanR * 0.75, y0: hubY + 195,
-            x1: w * 0.58, y1: h * 0.96,
-            x2: w * 0.34, y2: h * 0.92,
-            x3: convStartX + 40, y3: convStartY + 30,
+            x0: hubX, y0: hubY,
+            x1: w * 0.62, y1: h * 0.95,
+            x2: w * 0.40, y2: h * 0.95,
+            x3: wmsHubX, y3: wmsHubY,
             col: 'rgba(161, 66, 244, 0.20)',
             pulseCol: '#c084fc',
             speed: 0.08,
@@ -5957,142 +5959,242 @@ def build_html() -> str:
         });
         ctx.restore();
 
-        // 3. TOP-LEFT WING: Enlarged Probabilistic Demand Sensing Wave (P10 / P50 / P90 Fan)
+        // 3. TOP-LEFT WING: Seamlessly Tapered Demand Sensing Wave + S&OP Signals Hub (Zero Hard Vertical Edges)
         ctx.save();
-        // Outer P10-P90 fan band
+        const waveStartX = -12;
+        const waveEndX = demandHubX;
+        const waveSpan = waveEndX - waveStartX;
+        const waveSteps = 60;
+
+        const waveCenterY = (i) => {
+          const u = i / waveSteps;
+          // Taper wave oscillation gently as it converges into the Demand Hub
+          const amp = Math.sin(u * Math.PI);
+          return demandHubY + (Math.sin(i * 0.20 - t * 2.0) * 28 + Math.cos(i * 0.11 + t) * 12) * (0.35 + 0.65 * amp);
+        };
+
+        // Tapered P10-P90 Confidence Fan (pinches to 0 at both ends so there is never a flat vertical cut)
         ctx.beginPath();
-        for (let i = 0; i <= 56; i++) {
-          const px = waveStartX + i * (leftSpan / 56);
-          const env = 24 + (i / 56) * 20;
-          const py = waveBaseY + Math.sin(i * 0.21 - t * 2.0) * 32 + Math.cos(i * 0.11 + t) * 14 - env;
+        for (let i = 0; i <= waveSteps; i++) {
+          const u = i / waveSteps;
+          const px = waveStartX + u * waveSpan;
+          const band = Math.sin(u * Math.PI) * 34;
+          const py = waveCenterY(i) - band;
           if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
         }
-        for (let i = 56; i >= 0; i--) {
-          const px = waveStartX + i * (leftSpan / 56);
-          const env = 24 + (i / 56) * 20;
-          const py = waveBaseY + Math.sin(i * 0.21 - t * 2.0) * 32 + Math.cos(i * 0.11 + t) * 14 + env;
+        for (let i = waveSteps; i >= 0; i--) {
+          const u = i / waveSteps;
+          const px = waveStartX + u * waveSpan;
+          const band = Math.sin(u * Math.PI) * 34;
+          const py = waveCenterY(i) + band;
           ctx.lineTo(px, py);
         }
         ctx.closePath();
-        const fanGrad = ctx.createLinearGradient(waveStartX, waveBaseY - 60, waveEndX, waveBaseY + 60);
-        fanGrad.addColorStop(0, 'rgba(16, 185, 129, 0.04)');
-        fanGrad.addColorStop(0.5, 'rgba(16, 185, 129, 0.16)');
-        fanGrad.addColorStop(1, 'rgba(0, 210, 255, 0.08)');
+        const fanGrad = ctx.createLinearGradient(0, demandHubY, waveEndX, demandHubY);
+        fanGrad.addColorStop(0.0, 'rgba(16, 185, 129, 0.0)');
+        fanGrad.addColorStop(0.25, 'rgba(16, 185, 129, 0.14)');
+        fanGrad.addColorStop(0.75, 'rgba(0, 210, 255, 0.14)');
+        fanGrad.addColorStop(1.0, 'rgba(0, 210, 255, 0.0)');
         ctx.fillStyle = fanGrad;
         ctx.fill();
 
-        // Secondary harmonic wave (P90 upper bound)
+        // Tapered P90 Upper Bound Curve
         ctx.beginPath();
-        for (let i = 0; i <= 56; i++) {
-          const px = waveStartX + i * (leftSpan / 56);
-          const py = waveBaseY + Math.sin(i * 0.21 - t * 2.0) * 32 + Math.cos(i * 0.11 + t) * 14 - 22;
+        for (let i = 0; i <= waveSteps; i++) {
+          const u = i / waveSteps;
+          const px = waveStartX + u * waveSpan;
+          const py = waveCenterY(i) - Math.sin(u * Math.PI) * 24;
           if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
         }
-        ctx.strokeStyle = 'rgba(52, 211, 153, 0.28)';
+        const strokeGrad = ctx.createLinearGradient(0, demandHubY, waveEndX, demandHubY);
+        strokeGrad.addColorStop(0.0, 'rgba(52, 211, 153, 0.0)');
+        strokeGrad.addColorStop(0.2, 'rgba(52, 211, 153, 0.78)');
+        strokeGrad.addColorStop(0.85, 'rgba(0, 210, 255, 0.82)');
+        strokeGrad.addColorStop(1.0, 'rgba(0, 210, 255, 0.25)');
+        ctx.strokeStyle = 'rgba(52, 211, 153, 0.26)';
         ctx.setLineDash([4, 6]);
         ctx.lineWidth = 1.4;
         ctx.stroke();
         ctx.setLineDash([]);
 
-        // Primary P50 TimesFM Demand Wave
+        // Primary P50 TimesFM Demand Wave (feathered gradient stroke flowing directly into Demand Hub)
         ctx.beginPath();
-        for (let i = 0; i <= 56; i++) {
-          const px = waveStartX + i * (leftSpan / 56);
-          const py = waveBaseY + Math.sin(i * 0.21 - t * 2.0) * 32 + Math.cos(i * 0.11 + t) * 14;
+        for (let i = 0; i <= waveSteps; i++) {
+          const u = i / waveSteps;
+          const px = waveStartX + u * waveSpan;
+          const py = waveCenterY(i);
           if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
         }
-        ctx.strokeStyle = 'rgba(16, 185, 129, 0.78)';
-        ctx.lineWidth = 3.0;
+        ctx.strokeStyle = strokeGrad;
+        ctx.lineWidth = 2.8;
         ctx.stroke();
 
         // Moving demand sensing pulse dots along wave
-        [0, 19, 38].forEach(offset => {
-          const waveIdx = ((t * 11 + offset) % 56);
-          const wPx = waveStartX + waveIdx * (leftSpan / 56);
-          const wPy = waveBaseY + Math.sin(waveIdx * 0.21 - t * 2.0) * 32 + Math.cos(waveIdx * 0.11 + t) * 14;
+        [0, 20, 40].forEach(offset => {
+          const waveIdx = ((t * 10 + offset) % waveSteps);
+          const u = waveIdx / waveSteps;
+          const wPx = waveStartX + u * waveSpan;
+          const wPy = waveCenterY(waveIdx);
+          const dotAlpha = Math.sin(u * Math.PI);
+          ctx.save();
+          ctx.globalAlpha = dotAlpha;
           ctx.beginPath();
-          ctx.arc(wPx, wPy, 11, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(52, 211, 153, 0.20)';
+          ctx.arc(wPx, wPy, 10, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(52, 211, 153, 0.22)';
           ctx.fill();
           ctx.beginPath();
-          ctx.arc(wPx, wPy, 5, 0, Math.PI * 2);
+          ctx.arc(wPx, wPy, 4.5, 0, Math.PI * 2);
           ctx.fillStyle = '#34d399';
           ctx.fill();
+          ctx.restore();
         });
 
-        ctx.fillStyle = 'rgba(52, 211, 153, 0.86)';
-        ctx.font = '700 11px "Google Sans", sans-serif';
-        ctx.fillText('DEMAND SENSING · P10 / P50 / P90', waveStartX + 4, waveBaseY - 68);
-        ctx.restore();
-
-        // 4. BOTTOM-LEFT WING: Enlarged 3D Isometric WMS Conveyor + AS/RS Automated Racking
-        ctx.save();
-        // Background 3D Isometric AS/RS High-Bay Rack Structure above the belt
-        const rackBaseX = convStartX + 70;
-        const rackBaseY = convStartY - 26;
-        ctx.strokeStyle = 'rgba(0, 210, 255, 0.22)';
-        ctx.lineWidth = 1.3;
-        for (let bay = 0; bay <= 4; bay++) {
-          const bx = rackBaseX + bay * 62 * dirX;
-          const by = rackBaseY + bay * 62 * dirY;
+        // Curved feeder signals into Demand & S&OP Hub
+        const demandFeeders = [
+          { name: 'POS & PROMO SIGNALS', col: '#34d399', sx: demandHubX - 115, sy: demandHubY - 82, cpx: demandHubX - 45, cpy: demandHubY - 64 },
+          { name: 'WEATHERNEXT 3 · AI', col: '#00d2ff', sx: demandHubX - 88, sy: demandHubY + 86, cpx: demandHubX - 32, cpy: demandHubY + 62 }
+        ];
+        demandFeeders.forEach((df, idx) => {
           ctx.beginPath();
-          ctx.moveTo(bx, by);
-          ctx.lineTo(bx, by - 92);
+          ctx.moveTo(df.sx, df.sy);
+          ctx.quadraticCurveTo(df.cpx, df.cpy, demandHubX, demandHubY);
+          ctx.strokeStyle = df.col + '55';
+          ctx.lineWidth = 2;
           ctx.stroke();
-          if (bay < 4) {
-            [28, 58, 88].forEach((shelfZ, sIdx) => {
-              ctx.beginPath();
-              ctx.moveTo(bx, by - shelfZ);
-              ctx.lineTo(bx + 62 * dirX, by + 62 * dirY - shelfZ);
-              ctx.stroke();
-              // Subtle stowed pallet on shelf
-              if ((bay + sIdx) % 2 === 0) {
-                drawIsoBox(
-                  bx + 14 * dirX,
-                  by + 14 * dirY - shelfZ,
-                  20, 16, 16,
-                  'rgba(56, 189, 248, 0.28)',
-                  'rgba(2, 132, 199, 0.28)',
-                  'rgba(3, 105, 161, 0.28)',
-                  'rgba(186, 230, 253, 0.35)',
-                  0.72
-                );
-              }
-            });
-          }
-        }
 
-        // 3D Conveyor Deck Side Depth Skirt
+          ctx.beginPath();
+          ctx.arc(df.sx, df.sy, 5.5, 0, Math.PI * 2);
+          ctx.fillStyle = '#070b14';
+          ctx.fill();
+          ctx.strokeStyle = df.col;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          ctx.fillStyle = df.col;
+          ctx.font = '700 9.5px "Google Sans", sans-serif';
+          ctx.fillText(df.name, Math.max(18, df.sx - 28), df.sy < demandHubY ? df.sy - 10 : df.sy + 18);
+        });
+
+        // Glowing Demand & S&OP Hub Node
+        [42, 78].forEach(rad => {
+          ctx.beginPath();
+          ctx.arc(demandHubX, demandHubY, rad, 0, Math.PI * 2);
+          ctx.strokeStyle = 'rgba(16, 185, 129, 0.08)';
+          ctx.setLineDash([4, 6]);
+          ctx.lineWidth = 1.1;
+          ctx.stroke();
+        });
+        ctx.setLineDash([]);
+
         ctx.beginPath();
-        ctx.moveTo(convStartX + perpX, convStartY + perpY);
-        ctx.lineTo(convEndX + perpX, convEndY + perpY);
-        ctx.lineTo(convEndX + perpX, convEndY + perpY + 14);
-        ctx.lineTo(convStartX + perpX, convStartY + perpY + 14);
-        ctx.closePath();
-        ctx.fillStyle = 'rgba(8, 15, 28, 0.90)';
+        ctx.arc(demandHubX, demandHubY, 15, 0, Math.PI * 2);
+        ctx.fillStyle = '#081020';
         ctx.fill();
-        ctx.strokeStyle = 'rgba(0, 210, 255, 0.42)';
-        ctx.lineWidth = 1.4;
+        ctx.strokeStyle = '#10b981';
+        ctx.lineWidth = 2.8;
         ctx.stroke();
 
-        // Main 3D Isometric Conveyor Surface
+        ctx.beginPath();
+        ctx.arc(demandHubX, demandHubY, 5.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#34d399';
+        ctx.fill();
+
+        ctx.fillStyle = 'rgba(52, 211, 153, 0.90)';
+        ctx.font = '700 10px "Google Sans", sans-serif';
+        ctx.fillText('DEMAND & S&OP HUB', demandHubX - 52, demandHubY - 22);
+        ctx.restore();
+
+        // 4. BOTTOM-LEFT WING: Feathered 3D Isometric WMS Stream + Fulfillment Hub (Zero Hard Corners)
+        ctx.save();
+        // Radar rings around the 3D WMS & Fulfillment Hub so Left and Right wings are visually balanced
+        [52, 98, 146].forEach((rad, rIdx) => {
+          ctx.beginPath();
+          ctx.arc(wmsHubX, wmsHubY, rad, 0, Math.PI * 2);
+          ctx.strokeStyle = rIdx % 2 === 0 ? 'rgba(0, 210, 255, 0.08)' : 'rgba(255, 255, 255, 0.04)';
+          ctx.setLineDash([5, 7]);
+          ctx.lineWidth = 1.1;
+          ctx.stroke();
+        });
+        ctx.setLineDash([]);
+
+        // Curved warehouse automation branches around the WMS Hub
+        const wmsBranches = [
+          { name: 'AS/RS ROBOTICS', col: '#38bdf8', ex: wmsHubX - 95, ey: wmsHubY + 115, cpx: wmsHubX - 52, cpy: wmsHubY + 65 },
+          { name: 'CROSS-DOCK SORT', col: '#10b981', ex: wmsHubX + 54, ey: wmsHubY + 125, cpx: wmsHubX + 28, cpy: wmsHubY + 68 }
+        ];
+        wmsBranches.forEach((wb, bIdx) => {
+          ctx.beginPath();
+          ctx.moveTo(wmsHubX, wmsHubY);
+          ctx.quadraticCurveTo(wb.cpx, wb.cpy, wb.ex, wb.ey);
+          ctx.strokeStyle = wb.col + '66';
+          ctx.lineWidth = 2.2;
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.arc(wb.ex, wb.ey, 6, 0, Math.PI * 2);
+          ctx.fillStyle = '#070b14';
+          ctx.fill();
+          ctx.strokeStyle = wb.col;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          ctx.fillStyle = wb.col;
+          ctx.font = '700 9.5px "Google Sans", sans-serif';
+          ctx.fillText(wb.name, Math.max(18, wb.ex - 36), wb.ey + 18);
+        });
+
+        // Feathered 3D Isometric Conveyor Track feeding directly into (wmsHubX, wmsHubY)
+        const dirX = 0.866;
+        const dirY = 0.5;
+        const convLen = Math.min(310, w * 0.21);
+        const perpX = -0.866 * 36;
+        const perpY = 0.5 * 36;
+        // Center the end of the conveyor right at (wmsHubX, wmsHubY)
+        const convEndX = wmsHubX - perpX * 0.5;
+        const convEndY = wmsHubY - perpY * 0.5;
+        const convStartX = convEndX - convLen * dirX;
+        const convStartY = convEndY - convLen * dirY;
+
+        // Linear gradients along the conveyor so both ends fade smoothly to 0 opacity (zero hard edges!)
+        const deckGrad = ctx.createLinearGradient(convStartX, convStartY, convEndX, convEndY);
+        deckGrad.addColorStop(0.0, 'rgba(14, 24, 42, 0.0)');
+        deckGrad.addColorStop(0.22, 'rgba(14, 24, 42, 0.78)');
+        deckGrad.addColorStop(0.78, 'rgba(14, 24, 42, 0.78)');
+        deckGrad.addColorStop(1.0, 'rgba(14, 24, 42, 0.0)');
+
+        const railGrad = ctx.createLinearGradient(convStartX, convStartY, convEndX, convEndY);
+        railGrad.addColorStop(0.0, 'rgba(0, 210, 255, 0.0)');
+        railGrad.addColorStop(0.22, 'rgba(0, 210, 255, 0.58)');
+        railGrad.addColorStop(0.78, 'rgba(0, 210, 255, 0.58)');
+        railGrad.addColorStop(1.0, 'rgba(0, 210, 255, 0.0)');
+
+        // Conveyor surface (feathered fill, no hard end-cap lines)
         ctx.beginPath();
         ctx.moveTo(convStartX, convStartY);
         ctx.lineTo(convEndX, convEndY);
         ctx.lineTo(convEndX + perpX, convEndY + perpY);
         ctx.lineTo(convStartX + perpX, convStartY + perpY);
         ctx.closePath();
-        ctx.fillStyle = 'rgba(14, 24, 42, 0.86)';
+        ctx.fillStyle = deckGrad;
         ctx.fill();
-        ctx.strokeStyle = 'rgba(0, 210, 255, 0.62)';
-        ctx.lineWidth = 2.2;
+
+        // Stroke only the two long rails with feathered gradient (no sharp start/end cutoff lines!)
+        ctx.strokeStyle = railGrad;
+        ctx.lineWidth = 2.0;
+        ctx.beginPath();
+        ctx.moveTo(convStartX, convStartY);
+        ctx.lineTo(convEndX, convEndY);
+        ctx.moveTo(convStartX + perpX, convStartY + perpY);
+        ctx.lineTo(convEndX + perpX, convEndY + perpY);
         ctx.stroke();
 
-        // Animated conveyor rollers
-        const rollerShift = (t * 52) % 24;
-        ctx.strokeStyle = 'rgba(0, 210, 255, 0.30)';
-        ctx.lineWidth = 1.35;
+        // Feathered animated conveyor rollers
+        const rollerShift = (t * 44) % 24;
+        ctx.lineWidth = 1.2;
         for (let d = rollerShift; d < convLen; d += 24) {
+          const u = d / convLen;
+          const rAlpha = Math.sin(u * Math.PI) * 0.28;
+          ctx.strokeStyle = `rgba(0, 210, 255, ${rAlpha.toFixed(3)})`;
           const rx = convStartX + d * dirX;
           const ry = convStartY + d * dirY;
           ctx.beginPath();
@@ -6101,61 +6203,85 @@ def build_html() -> str:
           ctx.stroke();
         }
 
-        ctx.fillStyle = 'rgba(56, 189, 248, 0.88)';
-        ctx.font = '700 11px "Google Sans", sans-serif';
-        ctx.fillText('3D WMS CONVEYOR & AS/RS SLOTTING', convStartX, convStartY - 38);
+        // 4 well-spaced, sleek 3D cargo parcels that smoothly fade in and dissolve into the WMS Hub
+        const sleekBoxes = [
+          { offset: 0.00, col: ['#38bdf8', '#0284c7', '#0369a1'], stroke: '#bae6fd', h: 24 },
+          { offset: 0.25, col: ['#34d399', '#059669', '#047857'], stroke: '#a7f3d0', h: 27 },
+          { offset: 0.50, col: ['#60a5fa', '#2563eb', '#1d4ed8'], stroke: '#bfdbfe', h: 23 },
+          { offset: 0.75, col: ['#c084fc', '#9333ea', '#7e22ce'], stroke: '#e9d5ff', h: 26 }
+        ];
 
-        // Draw moving 3D cargo boxes sorted back-to-front along the enlarged conveyor
-        const activeBoxes = boxes.map(b => {
-          const prog = (b.offset + t * 0.11) % 1;
+        const activeBoxes = sleekBoxes.map(b => {
+          const prog = (b.offset + t * 0.10) % 1;
           return { ...b, prog };
         }).sort((a, b) => a.prog - b.prog);
 
         activeBoxes.forEach(b => {
-          const dist = b.prog * (convLen - 42);
-          const bx = convStartX + dist * dirX - 18;
-          const by = convStartY + dist * dirY + 6;
-          drawIsoBox(bx, by, 30, 26, b.h, b.col[0], b.col[1], b.col[2], b.stroke);
+          const dist = b.prog * (convLen - 28);
+          const bx = convStartX + dist * dirX - 13;
+          const by = convStartY + dist * dirY + 4;
+          // Smooth sine fade at both ends so boxes never pop abruptly at the edge!
+          const boxAlpha = Math.pow(Math.sin(b.prog * Math.PI), 0.75);
+          drawIsoBox(bx, by, 23, 20, b.h, b.col[0], b.col[1], b.col[2], b.stroke, boxAlpha);
 
-          if (Math.abs(b.prog - 0.36) < 0.05 || Math.abs(b.prog - 0.72) < 0.05) {
+          if (Math.abs(b.prog - 0.52) < 0.06) {
             ctx.save();
+            ctx.globalAlpha = boxAlpha;
             ctx.beginPath();
-            ctx.arc(bx, by - 14, 34, 0, Math.PI * 2);
+            ctx.arc(bx, by - 10, 26, 0, Math.PI * 2);
             ctx.fillStyle = 'rgba(0, 210, 255, 0.22)';
             ctx.fill();
             ctx.restore();
           }
         });
 
-        // Dual 3D RFID / Vision Scanner Gate Arches over the conveyor
-        [0.36, 0.72].forEach((gateRatio, gIdx) => {
-          const gateDist = convLen * gateRatio;
-          const gx1 = convStartX + gateDist * dirX;
-          const gy1 = convStartY + gateDist * dirY;
-          const gx2 = gx1 + perpX;
-          const gy2 = gy1 + perpY;
-          const archH = 64;
-          const archCol = gIdx === 0 ? 'rgba(0, 210, 255, 0.86)' : 'rgba(52, 211, 153, 0.82)';
-          const planeCol = gIdx === 0 ? 'rgba(0, 210, 255, 0.14)' : 'rgba(52, 211, 153, 0.13)';
+        // Single clean 3D RFID / Vision Scanner Gate Arch over the midpoint of the conveyor
+        const gateDist = convLen * 0.52;
+        const gx1 = convStartX + gateDist * dirX;
+        const gy1 = convStartY + gateDist * dirY;
+        const gx2 = gx1 + perpX;
+        const gy2 = gy1 + perpY;
+        const archH = 52;
+        ctx.strokeStyle = 'rgba(0, 210, 255, 0.80)';
+        ctx.lineWidth = 2.2;
+        ctx.beginPath();
+        ctx.moveTo(gx1, gy1);
+        ctx.lineTo(gx1, gy1 - archH);
+        ctx.lineTo(gx2, gy2 - archH);
+        ctx.lineTo(gx2, gy2);
+        ctx.stroke();
 
-          ctx.strokeStyle = archCol;
-          ctx.lineWidth = 2.5;
-          ctx.beginPath();
-          ctx.moveTo(gx1, gy1);
-          ctx.lineTo(gx1, gy1 - archH);
-          ctx.lineTo(gx2, gy2 - archH);
-          ctx.lineTo(gx2, gy2);
-          ctx.stroke();
+        ctx.fillStyle = 'rgba(0, 210, 255, 0.12)';
+        ctx.beginPath();
+        ctx.moveTo(gx1, gy1 - archH);
+        ctx.lineTo(gx2, gy2 - archH);
+        ctx.lineTo(gx2, gy2);
+        ctx.lineTo(gx1, gy1);
+        ctx.closePath();
+        ctx.fill();
 
-          ctx.fillStyle = planeCol;
-          ctx.beginPath();
-          ctx.moveTo(gx1, gy1 - archH);
-          ctx.lineTo(gx2, gy2 - archH);
-          ctx.lineTo(gx2, gy2);
-          ctx.lineTo(gx1, gy1);
-          ctx.closePath();
-          ctx.fill();
-        });
+        // Glowing 3D WMS & Fulfillment Hub Node at the outbound end of the conveyor
+        ctx.beginPath();
+        ctx.arc(wmsHubX, wmsHubY, 24, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0, 210, 255, 0.14)';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(wmsHubX, wmsHubY, 15, 0, Math.PI * 2);
+        ctx.fillStyle = '#081020';
+        ctx.fill();
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 2.8;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(wmsHubX, wmsHubY, 6, 0, Math.PI * 2);
+        ctx.fillStyle = '#00d2ff';
+        ctx.fill();
+
+        ctx.fillStyle = 'rgba(248, 249, 250, 0.88)';
+        ctx.font = '700 10px "Google Sans", sans-serif';
+        ctx.fillText('3D WMS & FULFILLMENT HUB', wmsHubX - 64, wmsHubY - 24);
         ctx.restore();
 
         // 5. TOP-RIGHT WING: Tier-N Supplier & Smart Factory OEE Constellation
