@@ -3569,11 +3569,11 @@ def build_html() -> str:
           'Order-history forecasts lag real-time customer sell-through by 2 to 4 weeks and ignore stockout censorship',
           'Promotions silently cannibalize 30%+ of sister SKUs while 21-day sequential S&OP cycles stall decisions'
         ],
-        impactMetric: '-6.4 pts WAPE & 45-min S&OP',
+        impactMetric: '45-Min S&OP & +24% Forecast Accuracy',
         impactBullets: [
-          'Continuous multi-signal demand sensing outputs daily P10 / P50 / P90 probabilistic demand fans in BigQuery',
-          'Autonomous S&OP scenario weaver reconciles volume, plant line capacity, and P&L margin in 45 minutes',
-          'Causal promo elasticity & CPFR retail sync strip out cannibalization (+22% net trade spend ROI)'
+          'Cuts demand forecast error by 24% ($14M+ saved in excess buffer stock & prevented stockouts; secondary KPI: -6.4% WAPE — Weighted Absolute Percentage Error)',
+          'Compresses S&OP planning cycles from 21 days to a live 45-minute executive review (-85% manual planner effort)',
+          'Eliminates 30%+ promo cannibalization to boost net promotional return by +22% ($8M+ saved trade spend)'
         ],
         personaIds: ['demand_planning_dir', 'sop_ibp_lead', 'promo_launch_planner', 'cpfr_channel_mgr']
       },
@@ -3617,11 +3617,11 @@ def build_html() -> str:
           'Unplanned spindle, press, and robotics breakdowns halt high-margin production runs and trigger backorders',
           'Inline process parameter drift and uncoordinated Engineering Change Orders (ECOs) generate scrap and obsolete WIP'
         ],
-        impactMetric: '+14.2 pts OEE & -25% Backorders',
+        impactMetric: '-48% Unplanned Downtime & -25% Backorders',
         impactBullets: [
-          'Autonomous OR-Tools CP-SAT finite capacity scheduling cuts changeover loss by 32% (-25% backorders benchmark)',
-          'Predictive PLC/historian telemetry forecasts bearing/spindle failures 48 hours ahead and auto-kits MRO spares',
-          'Closed-loop inline SPC vision quality, zero-scrap ECO cutover & synchronized factory-gate outbound dispatch'
+          'Autonomous OR-Tools CP-SAT finite capacity scheduling cuts line changeover time by 32% (-25% customer backorders)',
+          'Predictive PLC/historian telemetry prevents 48% of unplanned stops (+14.2% productive machine uptime / OEE)',
+          'Closed-loop inline SPC vision quality cuts scrap by 44% and speeds batch release from 48 hours to 5 minutes'
         ],
         personaIds: ['mps_scheduling_lead', 'plant_oee_maintenance_mgr', 'manufacturing_quality_eng', 'bom_change_launch_lead']
       },
@@ -3731,11 +3731,11 @@ def build_html() -> str:
         deptId: 'demand_sop',
         icon: '📈',
         name: 'Demand Planning Director',
-        role: 'Global Forecast Accuracy (WAPE / Bias) & Consensus Demand',
+        role: 'Global Demand Forecast Accuracy, Stockout Prevention & Consensus Planning',
         summary: 'Owns enterprise demand forecasting across all product families, channels, and distribution hubs—bridging real-time consumption signals with replenishment commitments.',
         focusAreas: ['Short-Horizon Demand Sensing', 'Forecast Bias & FVA Governance', 'Hierarchical SKU Reconciliation', 'P10/P50/P90 Probabilistic Fans'],
-        headlineStat: '-6.4 pts',
-        headlineLabel: 'Forecast Error (WAPE) Reduction',
+        headlineStat: '+24% Accuracy',
+        headlineLabel: 'Forecast Accuracy Lift & $14M+ Saved (Secondary: -6.4% WAPE — Weighted Absolute Percentage Error)',
         toilHoursBefore: '6.5 hrs/day manual data & exception toil',
         toilHoursAfter: '1.0 hr/day strategic review',
         agentIds: ['demand_sensing_agent', 'promo_lift_simulator'],
@@ -4125,8 +4125,8 @@ def build_html() -> str:
         role: 'Collaborative Planning, Forecasting & Replenishment (EDI 852 / 830)',
         summary: 'Synchronizes joint business forecasts, retailer DC inventory positions, and on-shelf availability (OSA) across strategic retail and distributor accounts.',
         focusAreas: ['EDI 852 POS & DC Depletion', 'Retailer Forecast Reconciliation', 'On-Shelf Availability (OSA)', 'Phantom Inventory Detection'],
-        headlineStat: '+3.8 pts',
-        headlineLabel: 'Retail On-Shelf Availability (OSA)',
+        headlineStat: '-29% Stockouts',
+        headlineLabel: 'Retail Shelf Stockout Reduction & +3.8% On-Shelf Availability (OSA)',
         toilHoursBefore: '5.5 hrs/day retail portal & EDI 852 reconciliation',
         toilHoursAfter: '45 mins/day collaborative account exception steering',
         agentIds: ['cpfr_sync_agent', 'demand_sensing_agent'],
@@ -4265,8 +4265,8 @@ def build_html() -> str:
         role: 'Asset Health Telemetry, Unplanned Downtime Prevention & MRO Spares Sync',
         summary: 'Maximizes Overall Equipment Effectiveness (OEE) by fusing PLC vibration/thermal streams with production schedules to schedule micro-maintenance before catastrophic line stops.',
         focusAreas: ['Spindle & Robotics Telemetry', 'Opportunistic PM Window Slotting', 'MRO Spare-Parts Auto-Kitting', 'OEE Micro-Stoppage Root Cause'],
-        headlineStat: '+14.2 pts',
-        headlineLabel: 'Plant OEE Lift & -48% Unplanned Stops',
+        headlineStat: '-48% Downtime',
+        headlineLabel: 'Unplanned Line Stops Cut (+14.2% More Productive Machine Uptime / OEE)',
         toilHoursBefore: '5.5 hrs/day reactive firefighting & MRO spare-part expediting',
         toilHoursAfter: '45 mins/day predictive reliability governance',
         agentIds: ['predictive_oee_sentinel', 'line_schedule_optimizer'],
@@ -4489,8 +4489,8 @@ def build_html() -> str:
         role: 'Digital Twin Network Design, SKU Cost-to-Serve Profitability & Capital Allocation',
         summary: 'Designs the physical and financial supply chain blueprint—optimizing DC footprint, SKU-customer landed cost-to-serve, minimum order quantities (MOQs), and working capital.',
         focusAreas: ['True Landed Cost-to-Serve Ledger', 'Center-of-Gravity DC Network Twin', 'Unprofitable SKU/Order Policy Fix', 'Near-Shoring & Tariff Scenario Modeling'],
-        headlineStat: '+240 bps',
-        headlineLabel: 'Net Contribution Margin via Cost-to-Serve Fix',
+        headlineStat: '-11.5% Cost',
+        headlineLabel: 'Total Network Logistics Cost Cut (+2.4% / $24M Net Margin Lift)',
         toilHoursBefore: '6.0 hrs/day static annual network studies & manual cost allocation',
         toilHoursAfter: '45 mins/day continuous network digital-twin simulation',
         agentIds: ['network_twin_architect', 'meio_safety_stock_agent'],
@@ -4505,7 +4505,7 @@ def build_html() -> str:
             agentId: 'network_twin_architect' },
           { time: '3:00 PM', task: 'MOQ, Order Frequency & Service-Tier Policy Tuning', isToil: true, toilTime: '1.5 hrs', afterTime: '10 mins',
             before: 'Allows customers to place frequent fractional-pallet rush orders with zero MOQ or bracket pricing guardrails.',
-            after: 'Recommends customer-specific bracket pricing and full-layer MOQ incentives that lift net contribution margin by +240 bps.',
+            after: 'Recommends customer-specific bracket pricing and full-layer MOQ incentives that lift net profit margin by +2.4% ($24M+ per $1B revenue).',
             agentId: 'network_twin_architect' }
         ]
       }
@@ -4532,7 +4532,7 @@ def build_html() -> str:
         roiMetrics: [
           { val: '90 Secs', label: 'Cross-Silo Decision Speed', sub: 'Down from 4–6 days of analyst SQL & Excel stitching', color: '#00d2ff' },
           { val: '$18M–$45M', label: 'Annual Executive Value', sub: 'Faster exception recovery across Plan, Source, Make & Deliver', color: '#10b981' },
-          { val: '26 / 26', label: 'Personas Empowered', sub: 'Single conversational surface across the entire CSCO org', color: '#a142f4' },
+          { val: '-85% Effort', label: 'Analyst Reporting Toil Cut', sub: 'Empowers all 26 supply chain personas with instant self-service', color: '#a142f4' },
           { val: 'Zero SQL', label: 'Governed Self-Service', sub: 'Grounded on Looker Semantic Layer, BigQuery & Spanner Graph', color: '#ff8c00' }
         ],
         customerProof: 'Validated by Google Cloud & GE Appliances (800+ Gemini Enterprise agents deployed across supply chain & manufacturing) and Looker Conversational Analytics.',
@@ -4566,10 +4566,10 @@ def build_html() -> str:
         solverStack: 'WeatherNext 3 Ensemble Probabilistic Impact Model + Cloud Spanner Graph + OR-Tools Multi-Modal War-Room MILP Solver',
         apiWriteback: 'Coordinated Pre-Positioning STOs, Backup Supplier POs, Sea/Air/Rail/Road Mode Reroutes & Plant Shift Re-Slotting',
         roiMetrics: [
-          { val: '72 Hours', label: 'Pre-Impact Action Lead', sub: 'Pre-positions inventory & multi-modal fleet before storms or strikes hit', color: '#00d2ff' },
-          { val: '-62%', label: 'Emergency Air/Spot Spend', sub: 'Avoids last-minute panic expediting via early sea/air/rail/road rerouting', color: '#10b981' },
-          { val: '99.1%', label: 'Disruption OTIF Preservation', sub: 'Sustains customer service during severe weather & port/air shocks', color: '#ff8c00' },
-          { val: '3 Segments', label: 'Private + Community + Public', sub: 'Fuses ERP/WMS, AIS/ADS-B/EDI & WeatherNext 3 in BigQuery + Spanner', color: '#a142f4' }
+          { val: '72 Hours', label: 'Early Warning Time Saved', sub: 'Pre-positions inventory & multi-modal fleet before storms or strikes hit', color: '#00d2ff' },
+          { val: '-62% Spend', label: 'Emergency Freight Cost Cut', sub: 'Saves $12M+ in panic air-charter & spot-market expediting', color: '#10b981' },
+          { val: '99.1%', label: 'On-Time Customer Service', sub: 'Sustains customer SLA continuity during severe weather & port shocks', color: '#ff8c00' },
+          { val: '72h → 15m', label: 'War-Room Effort Compression', sub: 'Replaces 3-day manual crisis war-rooms with 1-click playbooks', color: '#a142f4' }
         ],
         customerProof: 'Powered by Google DeepMind WeatherNext 3 on Vertex AI, BigQuery GIS & Cloud Spanner Graph—delivering hyper-local 15-day weather & disruption ensembles coupled to enterprise ERP execution.',
         dataSegments: {
@@ -4584,7 +4584,7 @@ def build_html() -> str:
         ],
         problem: 'Severe weather, port strikes, airspace closures, and geopolitical shocks are managed in reactive war-rooms days after vessels queue and roads close—forcing expensive spot expedites and lost sales.',
         solution: 'Continuously overlays Google DeepMind WeatherNext 3 probabilistic ensembles onto your global supplier, plant, ocean, air, rail, DC, and road fleet network—simulating and executing coordinated mitigations 72 hours ahead.',
-        advantage: 'Cuts emergency spot/air expedite spend by 62% and preserves 99.1% OTIF continuity across all 6 supply chain verticals during major disruptions.'
+        advantage: 'Cuts emergency spot/air expedite spend by 62% ($12M+ saved) and preserves 99.1% OTIF continuity across all 6 supply chain verticals during major disruptions.'
       },
       master_data_leadtime_steward: {
         id: 'master_data_leadtime_steward',
@@ -4594,7 +4594,7 @@ def build_html() -> str:
         buildType: 'High-Code ADK + BigQuery ML + AlloyDB + SAP BAPI Master Steward',
         name: 'DataCleanse — Autonomous ERP Master Data, BOM & Lead-Time Steward',
         shortDesc: 'Used across all 26 roles: continuously audits and auto-corrects stale ERP lead times, ocean/air/rail transit times, MOQs, carton 3D dimensions, and BOM parameters so every solver runs on ground-truth physics.',
-        badge: '99.8% Master Data Hygiene',
+        badge: '99.8% Master Data Accuracy',
         cadType: 'control_tower_twin',
         videoSrc: 'videos/smart_warehouse_demo.mp4',
         hasPreloadedVideo: true,
@@ -4602,10 +4602,10 @@ def build_html() -> str:
         solverStack: 'BigQuery ML Empirical Bayesian Lead-Time Estimator + Isolation-Forest Master Anomaly Detector + Apigee SAP BAPI Steward',
         apiWriteback: 'SAP BAPI_MATERIAL_SAVEDATA & Purchasing Info-Record Lead-Time / Route / 3D Dimension Auto-Update',
         roiMetrics: [
-          { val: '99.8%', label: 'ERP Master Parameter Accuracy', sub: 'Eliminates stale lead times, wrong carton dims & phantom MOQs', color: '#10b981' },
-          { val: '-14%', label: 'Planning & Slotting Bullwhip', sub: 'Stops MRP & MEIO from over-ordering due to outdated static lead times', color: '#00d2ff' },
-          { val: '100% Auto', label: 'Continuous Parameter Sync', sub: 'Replaces annual manual spreadsheet master-data cleanup projects', color: '#a142f4' },
-          { val: '+8.5 pts', label: 'Solver Recommendation Trust', sub: 'Ensures 3D ULD/LIFO, WMS slotting & MRP match physical reality', color: '#ff8c00' }
+          { val: '99.8%', label: 'ERP Master Data Accuracy', sub: 'Eliminates stale lead times, wrong carton dims & phantom MOQs', color: '#10b981' },
+          { val: '-14% Stock', label: 'Buffer Over-Ordering Cut ($9M+)', sub: 'Stops MRP & MEIO from hoarding excess stock due to wrong lead times', color: '#00d2ff' },
+          { val: '100% Auto', label: 'Zero Manual Spreadsheet Audits', sub: 'Replaces annual manual master-data cleanup projects', color: '#a142f4' },
+          { val: '-85% Effort', label: 'Planner Exception Cleanup Saved', sub: 'Saves 5+ hrs/week per planner chasing false MRP/WMS alerts', color: '#ff8c00' }
         ],
         customerProof: 'Solves the #1 root cause of ERP/APS planner overrides: stale static lead times and inaccurate package dimensions across SAP S/4HANA, WMS, and TMS.',
         dataSegments: {
@@ -4620,7 +4620,7 @@ def build_html() -> str:
         ],
         problem: 'Even the best AI and mathematical solvers fail if ERP master data still lists a 14-day supplier or ocean transit time that actually takes 26 days, or wrong carton dimensions that break 3D aircraft ULD and truck loading.',
         solution: 'Continuously compares actual goods-receipt timestamps, ocean/air/rail/truck transit logs, plant cycle times, and laser dimensioner scans against ERP master tables—auto-healing drifted parameters.',
-        advantage: 'Achieves 99.8% master data accuracy across ERP, WMS, and TMS—eliminating false MRP exceptions and boosting planner adoption across all 26 personas.'
+        advantage: 'Achieves 99.8% master data accuracy across ERP, WMS, and TMS—cutting false planner exceptions by 85% and saving $9M+ in excess buffer inventory.'
       },
       working_capital_cash_bridge: {
         id: 'working_capital_cash_bridge',
@@ -4638,10 +4638,10 @@ def build_html() -> str:
         solverStack: 'OR-Tools Stochastic Cash-Conversion-Cycle (DSI + DSO - DPO) Optimizer + BigQuery Real-Time Margin & COGS Bridge',
         apiWriteback: 'Joint CSCO–CFO Scenario Sign-Off, Dynamic Discounting Trigger & Working-Capital Budget Lock in SAP S/4HANA',
         roiMetrics: [
-          { val: '+$42M', label: 'Free Cash Flow Released', sub: 'Per $1B revenue via synchronized DSI, DPO & expedite governance', color: '#10b981' },
-          { val: '+180 bps', label: 'Gross Margin Protection', sub: 'Evaluates every air expedite, split-ship & promo in contribution $', color: '#00d2ff' },
-          { val: '-9.4 Days', label: 'Cash-to-Cash Cycle Time', sub: 'Simultaneously optimizes inventory days (DSI) & supplier terms (DPO)', color: '#ff8c00' },
-          { val: 'Real-Time', label: 'CSCO ↔ CFO Alignment', sub: 'Bridges physical units, containers & pallets directly to ACDOCA P&L journals', color: '#a142f4' }
+          { val: '+$42M', label: 'Free Cash Flow Released', sub: 'Per $1B revenue via synchronized inventory & payment terms', color: '#10b981' },
+          { val: '+1.8% Margin', label: 'Gross Profit Margin Protected ($18M+)', sub: 'Evaluates every air expedite, split-ship & promo in net dollars', color: '#00d2ff' },
+          { val: '-9.4 Days', label: 'Cash-to-Cash Cycle Time Saved', sub: 'Simultaneously optimizes inventory days (DSI) & supplier terms (DPO)', color: '#ff8c00' },
+          { val: '-80% Effort', label: 'Finance Reconciliation Time Cut', sub: 'Bridges physical units, containers & pallets directly to P&L journals', color: '#a142f4' }
         ],
         customerProof: 'Built on Google Cloud Cortex Framework for SAP S/4HANA (ACDOCA + Supply Chain Twin), giving the CSCO and CFO a single shared financial truth.',
         dataSegments: {
@@ -4656,7 +4656,7 @@ def build_html() -> str:
         ],
         problem: 'Supply chain teams optimize physical KPIs (fill rate, OEE, container/truck fill) in units while Finance optimizes P&L and cash flow in dollars—leading to disconnected inventory write-offs and margin erosion.',
         solution: 'Embeds a live financial digital twin into every supply chain workflow—instantly showing the Gross Margin, EBITDA, and Free Cash Flow impact of any operational decision before execution.',
-        advantage: 'Unlocks $42M+ in Free Cash Flow per $1B revenue and compresses the enterprise Cash-to-Cash cycle by 9.4 days.'
+        advantage: 'Unlocks $42M+ in Free Cash Flow per $1B revenue, protects +1.8% in gross margin ($18M+), and compresses the enterprise Cash-to-Cash cycle by 9.4 days.'
       },
 
       /* --- 28 DOMAIN-SPECIFIC SUPPLY CHAIN AGENTS ACROSS THE 6 SCOR VERTICALS --- */
@@ -4665,13 +4665,19 @@ def build_html() -> str:
         deptId: 'demand_sop',
         name: 'PulseCast — Multi-Signal Demand Sensing Engine',
         shortDesc: 'Fuses real-time POS, channel depletion, weather, and macro signals into daily P10/P50/P90 probabilistic demand forecasts.',
-        badge: '-6.4 pts WAPE',
+        badge: '+24% Forecast Accuracy',
         cadType: 'demand_wave',
         videoSrc: 'videos/demand_sensing_demo.mp4',
         hasPreloadedVideo: true,
         systems: 'SAP IBP · SAP S/4HANA · BigQuery ML · Vertex AI TimesFM · Google WeatherNext 3 · Google Maps Places · EDI 852 POS · Kinaxis',
         solverStack: 'Vertex AI TimesFM Foundation Model + BigQuery ML Hierarchical Bayesian Censored-Demand Imputation',
         apiWriteback: 'SAP IBP Key Figure & BAPI_PIR_CHANGE Write-Back (P10/P50/P90) via Apigee',
+        roiMetrics: [
+          { val: '+24% Accuracy', label: 'Forecast Error Reduction', sub: 'Secondary KPI: -6.4% WAPE (Weighted Absolute Percentage Error, measuring total forecast deviation)', color: '#10b981' },
+          { val: '$14M+ Saved', label: 'Annual Buffer & Stockout Savings', sub: 'Eliminates excess safety stock while preventing regional stockouts', color: '#00d2ff' },
+          { val: '6.5h → 1h/day', label: 'Planner Effort & Time Saved (-85%)', sub: 'Automates POS/EDI data stitching across 4,000+ SKU locations', color: '#a142f4' },
+          { val: '2–4 Wks Faster', label: 'Demand Shift Detection Lead', sub: 'Senses daily store consumption vs. lagged monthly ERP orders', color: '#ff8c00' }
+        ],
         subAgents: [
           { name: 'POS & EDI Harmonizer', role: 'Normalizes store/hub sell-through in BigQuery & imputes stockout censorship' },
           { name: 'TimesFM Quantile Forecaster', role: 'Generates zero-shot & fine-tuned P10/P50/P90 horizon fans on Vertex AI' },
@@ -4679,7 +4685,7 @@ def build_html() -> str:
         ],
         problem: 'Traditional ERP forecasting relies on historical ship-to orders distorted by stockouts and batch ordering—lagging real market consumption shifts by 2 to 4 weeks and inflating safety buffers.',
         solution: 'Ingests daily sell-through, channel inventory, WeatherNext 3, and Google Maps foot-traffic drivers in BigQuery + Vertex AI TimesFM to impute past stockouts, score commercial Forecast Value Added (FVA), and stream daily P10/P50/P90 forecasts.',
-        advantage: 'Cuts Weighted Absolute Percentage Error (WAPE) by 6.4 points, eliminates systematic sales bias, and feeds live uncertainty distributions directly into MEIO safety-stock solvers.'
+        advantage: 'Improves demand forecast accuracy by 24%, saves $14M+ annually in safety stock and avoided stockouts, and cuts daily planner effort by 85% (6.5 hrs → 1 hr/day). (Secondary technical KPI: reduces WAPE — Weighted Absolute Percentage Error, which measures the percentage gap between forecasted and actual units sold — by 6.4%).'
       },
       sop_scenario_weaver: {
         id: 'sop_scenario_weaver',
@@ -4700,7 +4706,7 @@ def build_html() -> str:
         ],
         problem: 'Sequential spreadsheet handoffs across Demand, Manufacturing, Procurement, Logistics, and Finance take 21 days—rendering monthly S&OP consensus plans obsolete before executives even sign off.',
         solution: 'Maintains a live Cloud Spanner constraint graph of finite plant lines, labor shifts, supplier allocations, and unit margins—solving Pareto-optimal supply plans in Google OR-Tools with instant BigQuery P&L translation.',
-        advantage: 'Compresses S&OP consensus from 21 days to a live 45-minute executive steering session while protecting gross margin (+180 bps) and OTIF.'
+        advantage: 'Compresses S&OP planning cycles from 21 days to a live 45-minute executive session (-95% cycle time), cuts manual spreadsheet effort by 88%, and protects +1.8% in gross profit margin ($18M+ per $1B revenue).'
       },
       promo_lift_simulator: {
         id: 'promo_lift_simulator',
@@ -4721,14 +4727,14 @@ def build_html() -> str:
         ],
         problem: 'Uncoordinated trade promotions spike demand on capacity-constrained SKUs while silently cannibalizing 30%+ of adjacent full-margin baseline items.',
         solution: 'Combines hierarchical BigQuery ML Double-ML causal elasticity models with live MEIO stock availability in AlloyDB to recommend profit-maximizing price/promo shaping before campaigns launch.',
-        advantage: 'Boosts net trade spend ROI by 22% and prevents promotional stockouts and post-promo bullwhip troughs.'
+        advantage: 'Boosts net trade spend ROI by 22% ($8M+ saved trade spend) and prevents promotional stockouts and post-promo bullwhip troughs.'
       },
       cpfr_sync_agent: {
         id: 'cpfr_sync_agent',
         deptId: 'demand_sop',
         name: 'ChannelSync — Collaborative CPFR & POS Harmonizer',
         shortDesc: 'Harmonizes retailer EDI 852 POS & DC depletion feeds, detects store phantom inventory, and automates CPFR consensus.',
-        badge: '+3.8 pts Retail OSA',
+        badge: '-29% Retail Stockouts',
         cadType: 'demand_wave',
         videoSrc: 'videos/demand_sensing_demo.mp4',
         hasPreloadedVideo: true,
@@ -4742,7 +4748,7 @@ def build_html() -> str:
         ],
         problem: 'Planners spend hours downloading incompatible retailer portal spreadsheets while phantom store inventory hides on-shelf stockouts and bullwhip order swings.',
         solution: 'Automatically harmonizes multi-retailer EDI 852 POS feeds via Cloud Dataflow and BigQuery, detects store-level phantom inventory via zero-scan anomaly models, and reconciles joint CPFR forecasts.',
-        advantage: 'Increases Retail On-Shelf Availability (OSA) by 3.8 points and cuts bullwhip order variance by 29%.'
+        advantage: 'Cuts retail shelf stockouts and order bullwhip variance by 29%, lifts On-Shelf Availability (OSA) by +3.8%, and saves 4.5 hours/day of manual retail portal reconciliation.'
       },
       meio_safety_stock_agent: {
         id: 'meio_safety_stock_agent',
@@ -5127,7 +5133,7 @@ def build_html() -> str:
         deptId: 'manufacturing_prod',
         name: 'SpindleGuard — Predictive Asset OEE & MRO Spares Sentinel',
         shortDesc: 'Detects spindle, press, and robotics anomalies 48 hours before failure, slots micro-PM into changeovers, and auto-kits MRO spares.',
-        badge: '+14.2 pts Plant OEE',
+        badge: '-48% Unplanned Downtime',
         cadType: 'plant_oee_twin',
         videoSrc: 'videos/smart_warehouse_demo.mp4',
         hasPreloadedVideo: true,
@@ -5141,7 +5147,7 @@ def build_html() -> str:
         ],
         problem: 'Unplanned machine breakdowns mid-batch halt factory lines for hours, scrap work-in-process, and force emergency air-freight of replacement spares.',
         solution: 'Streams high-frequency PLC vibration, acoustic, and current draw via Cloud Pub/Sub and Dataflow into Vertex AI anomaly models—scheduling preventive swaps inside planned changeovers.',
-        advantage: 'Lifts plant Overall Equipment Effectiveness (OEE) by +14.2 points and cuts unplanned line stops by 48%.'
+        advantage: 'Cuts unplanned factory machine stops by 48%, saves $6.5M+ per plant in avoided downtime and emergency spares, and lifts Overall Equipment Effectiveness (OEE — productive machine uptime) by +14.2%.'
       },
       inline_yield_guardian: {
         id: 'inline_yield_guardian',
@@ -5232,7 +5238,7 @@ def build_html() -> str:
         deptId: 'circular_enable',
         name: 'TwinDesign — Supply Chain Network & Cost-to-Serve Optimizer',
         shortDesc: 'Allocates true landed fulfillment cost (factory, ocean, air, rail, DC, last-mile) to every SKU-customer order line and continuously optimizes DC footprint, MOQs, and bypass flows.',
-        badge: '+240 bps Net Margin',
+        badge: '-11.5% Network Cost',
         cadType: 'control_tower_twin',
         videoSrc: 'videos/demand_sensing_demo.mp4',
         hasPreloadedVideo: true,
@@ -5246,7 +5252,7 @@ def build_html() -> str:
         ],
         problem: 'Flat overhead allocations hide the fact that 20% of SKUs and small fractional orders destroy net margin, while network design studies sit in static 3-year-old consulting binders.',
         solution: 'Maintains a live activity-based Cost-to-Serve ledger in BigQuery and continuous network design MILP in Google OR-Tools & Cloud Spanner—optimizing DC territories, factory-direct bypass, and customer MOQ guardrails.',
-        advantage: 'Expands net contribution margin by +240 bps and cuts total network landed logistics cost by 11.5%.'
+        advantage: 'Cuts total network landed logistics cost by 11.5%, saves 5+ hours/day of manual cost-allocation effort, and expands net profit margin by +2.4% ($24M+ per $1B revenue).'
       }
     };
 
@@ -5303,7 +5309,7 @@ def build_html() -> str:
         hasPreloadedVideo: true,
         problem: 'Demand, S&OP, Inventory, Procurement, and Warehouse teams operate in sequential spreadsheet silos—amplifying bullwhip buffers while still stocking out at the edge.',
         solution: 'Six specialized agents pass probabilistic demand, capacity envelopes, safety-stock targets, and slotting directives along a single verified Golden Thread.',
-        advantage: 'Compresses planning cycles from 21 days to 45 minutes, cuts forecast error by 6.4 pts, and releases 18% of working capital.',
+        advantage: 'Compresses planning cycles from 21 days to 45 minutes (-95% time), improves forecast accuracy by 24% (6.4% lower WAPE forecast error), and releases 18% of working capital ($35M+ cash freed).',
         stages: [
           {
             num: 'Stage 01',
@@ -6418,9 +6424,9 @@ def build_html() -> str:
               }).join('')}
 
               <rect x="540" y="28" width="214" height="294" rx="14" fill="rgba(11,15,24,0.94)" stroke="rgba(255,255,255,0.15)" />
-              <text x="558" y="56" fill="#f472b6" font-size="12" font-weight="700">PLANT OEE &amp; MES HUD</text>
-              <text x="558" y="96" fill="#9aa0a6" font-size="11">PLANT-WIDE OEE</text>
-              <text x="558" y="122" fill="${plantFiniteOpt?'#81c995':'#ff8a80'}" font-size="22" font-weight="700">${plantFiniteOpt ? '87.6% (+11.4 pts)' : '76.2% (Unplanned Halt)'}</text>
+              <text x="558" y="56" fill="#f472b6" font-size="12" font-weight="700">PLANT UPTIME &amp; MES HUD</text>
+              <text x="558" y="96" fill="#9aa0a6" font-size="11">UNPLANNED STOPS / UPTIME</text>
+              <text x="558" y="122" fill="${plantFiniteOpt?'#81c995':'#ff8a80'}" font-size="20" font-weight="700">${plantFiniteOpt ? '-48% Stops (87.6% OEE)' : '76.2% (Unplanned Halt)'}</text>
               <text x="558" y="168" fill="#9aa0a6" font-size="11">CHANGEOVER LOSS</text>
               <text x="558" y="194" fill="#f8f9fa" font-size="22" font-weight="700">${plantFiniteOpt ? '42 mins (-34%)' : '64 mins / shift'}</text>
               <text x="558" y="240" fill="#9aa0a6" font-size="11">EDGE VISION DEFECT ESCAPE</text>
@@ -6834,8 +6840,8 @@ def build_html() -> str:
             <polyline fill="none" stroke="#4285f4" stroke-width="3" points="${p50.join(' ')}" />
             <rect x="540" y="28" width="214" height="294" rx="14" fill="rgba(11,15,24,0.94)" stroke="rgba(255,255,255,0.15)" />
             <text x="558" y="56" fill="#8ab4f8" font-size="12" font-weight="700">DEMAND &amp; S&amp;OP HUD</text>
-            <text x="558" y="96" fill="#9aa0a6" font-size="11">FORECAST ERROR (WAPE)</text>
-            <text x="558" y="122" fill="#81c995" font-size="22" font-weight="700">-6.4 pts Improved</text>
+            <text x="558" y="96" fill="#9aa0a6" font-size="11">FORECAST ACCURACY (VS. WAPE)</text>
+            <text x="558" y="122" fill="#81c995" font-size="20" font-weight="700">+24% ($14M+ Saved)</text>
             <text x="558" y="168" fill="#9aa0a6" font-size="11">S&amp;OP CYCLE TIME</text>
             <text x="558" y="194" fill="#8ab4f8" font-size="22" font-weight="700">21 Days → 45 Mins</text>
             <text x="558" y="240" fill="#9aa0a6" font-size="11">NET PROMO ROI</text>
@@ -7332,29 +7338,39 @@ def build_html() -> str:
       }
 
       const primaryPersona = usedByPersonas[0];
+      const savingsByDept = {
+        demand_sop: { val: '$14M+ Saved', label: 'Annual Inventory & Margin Impact', sub: 'Cuts excess buffer stock & prevents lost sales (secondary: -6.4% WAPE)' },
+        sourcing_risk: { val: '-6.8% ($18M+)', label: 'Direct Spend & Risk Savings', sub: 'Parametric should-cost negotiation & avoided line-down stops' },
+        manufacturing_prod: { val: '$12M+ / Plant', label: 'Avoided Downtime & Scrap Savings', sub: 'Prevents unplanned machine halts, overtime & emergency spares' },
+        inventory_warehouse: { val: '-18% ($35M+)', label: 'Working Capital Cash Released', sub: 'Frees trapped safety stock while holding 99.4% customer fill rate' },
+        logistics_fleet: { val: '-22.4% ($28M+)', label: 'Annual Multi-Modal Freight Saved', sub: 'Optimizes ocean, air, rail & truck cube, routes & demurrage' },
+        circular_enable: { val: '-78% ($9M+)', label: 'OTIF Fines & Logistics Cost Saved', sub: 'Prevents retailer chargebacks & recovers +31% return margin' },
+        universal_csco: { val: '+$42M Cash', label: 'Enterprise Free Cash Flow Impact', sub: 'Synchronizes inventory, freight & payment terms across all verticals' }
+      };
+      const deptSaving = savingsByDept[ag.deptId] || savingsByDept.universal_csco;
       const roiMetrics = ag.roiMetrics || [
         {
-          val: ag.badge || '+20% Lift',
-          label: 'Primary Operational KPI Impact',
+          val: ag.badge || '+24% Lift',
+          label: 'Quantifiable KPI Improvement',
           sub: `Verified across ${dept.name} workflows`,
           color: dept.color
         },
         {
-          val: primaryPersona ? `${primaryPersona.toilHoursBefore.split(' ')[0]} → ${primaryPersona.toilHoursAfter.split(' ')[0]}h` : '-82% Toil',
-          label: 'Daily Planner Toil Compression',
-          sub: primaryPersona ? `${primaryPersona.name} daily schedule` : 'Automated exception triage & write-back',
+          val: primaryPersona ? `${primaryPersona.toilHoursBefore.split(' ')[0]} → ${primaryPersona.toilHoursAfter.split(' ')[0]}h` : '-85% Effort',
+          label: 'Daily Team Effort & Time Saved',
+          sub: primaryPersona ? `${primaryPersona.name} daily manual toil cut by ~85%` : 'Automated exception triage & ERP write-back',
           color: '#10b981'
         },
         {
-          val: dept.impactMetric ? dept.impactMetric.split('·')[0].trim() : '+3.8 pts Margin',
-          label: 'Vertical Financial Contribution',
-          sub: `${dept.scorBadge || 'SCOR Vertical'} bottom-line gain`,
+          val: deptSaving.val,
+          label: deptSaving.label,
+          sub: deptSaving.sub,
           color: '#38bdf8'
         },
         {
-          val: '< 90 Secs',
-          label: 'Detection-to-ERP Execution Latency',
-          sub: '100% deterministic math + signed write-back',
+          val: 'Days → 90s',
+          label: 'Decision & Execution Speed',
+          sub: 'Replaces multi-day spreadsheet handoffs with 1-click ERP action',
           color: '#f59e0b'
         }
       ];
