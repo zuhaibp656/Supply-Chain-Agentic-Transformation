@@ -1,0 +1,20 @@
+schema_version: "v1"
+id: "disruption_war_room_orchestrator"
+name: "Disruption War Room Orchestrator"
+description: "Autonomous multi-tier crisis war-room orchestration, supplier disaster mitigation, and cross-functional task coordination."
+agent_class: "app.agent.DisruptionWarRoomAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_weather_alerts"
+  - "query_maritime_ais_vessels"
+  - "query_resilinc_supplier_facilities"
+  - "query_news_disruptions"
+  - "action_create_war_room_incident"
+  - "action_dispatch_expedite_remediation"
+metadata:
+  scor_category: "Cross-Persona Universal Core"
+  tier_coverage: "Tier-1 through Tier-N"
+  roi_focus: "80% reduction in crisis response latency"

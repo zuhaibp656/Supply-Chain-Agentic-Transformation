@@ -1,0 +1,28 @@
+[
+  {
+    "signal_id": "NEWS-9014",
+    "timestamp": "2026-10-15T18:30:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Port of Antwerp docks, freezing customs release and crane shifts.",
+    "entities_extracted": {
+      "ports": ["Port of Antwerp", "BEANR"],
+      "carriers": ["Maersk", "MSC", "Hapag-Lloyd"],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9022",
+    "timestamp": "2026-10-16T04:15:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "locations": ["Hsinchu Science Park", "Taoyuan Airport Cargo Center"],
+      "commodities": ["Semiconductor Packaging", "Automotive MCUs", "SiC Wafers"],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  }
+]

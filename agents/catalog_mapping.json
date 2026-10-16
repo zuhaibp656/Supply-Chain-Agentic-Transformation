@@ -1,0 +1,1069 @@
+[
+  {
+    "id": "csco_control_tower_copilot",
+    "name": "CSCO Control Tower Copilot",
+    "vertical": "Universal Core",
+    "scor_category": "Cross-Persona Universal",
+    "primary_objective": "Provides executive cross-vertical KPI visibility, multi-echelon bottleneck triage, and natural language decision execution across ERP/WMS/TMS.",
+    "factory_matches": [
+      {
+        "okf_id": "supply-chain-disruption-monitor",
+        "match_type": "primary_core",
+        "systems": [
+          "weather-apis",
+          "resilinc",
+          "maritime-ais",
+          "google-news-api",
+          "everstream",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "procurement-kpi-dashboard",
+        "match_type": "kpi_governance",
+        "systems": [
+          "sap-ariba",
+          "sap-s-4hana",
+          "looker",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "delivery-performance-monitor",
+        "match_type": "transit_visibility",
+        "systems": [
+          "asn-data",
+          "carrier-edi",
+          "transit-models",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "disruption_war_room_orchestrator",
+    "name": "Disruption War Room Orchestrator",
+    "vertical": "Universal Core",
+    "scor_category": "Cross-Persona Universal",
+    "primary_objective": "Autonomous multi-tier crisis war-room orchestration, supplier disaster mitigation, air-freight expedite triage, and cross-functional task coordination.",
+    "factory_matches": [
+      {
+        "okf_id": "supply-chain-disruption-monitor",
+        "match_type": "primary_core",
+        "systems": [
+          "resilinc",
+          "weather-apis",
+          "maritime-ais",
+          "everstream",
+          "google-news-api"
+        ]
+      },
+      {
+        "okf_id": "major-incident-coordinator",
+        "match_type": "incident_workflow",
+        "systems": [
+          "servicenow",
+          "pagerduty",
+          "slack-teams",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "incident-near-miss-triage-agent",
+        "match_type": "risk_triage",
+        "systems": [
+          "enablon-ehs",
+          "safety-observations",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "master_data_leadtime_steward",
+    "name": "Master Data & Lead-Time Steward",
+    "vertical": "Universal Core",
+    "scor_category": "Cross-Persona Universal",
+    "primary_objective": "Self-healing SAP Material Master (MARA/MARC), BOM lead-time drift detection, CubiScan 3D dimension validation, and vendor master integrity.",
+    "factory_matches": [
+      {
+        "okf_id": "vendor-master-data-manager",
+        "match_type": "primary_core",
+        "systems": [
+          "sap-s-4hana-mm",
+          "d-b",
+          "document-ai",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "bom-plm-erp-sync-monitor",
+        "match_type": "bom_alignment",
+        "systems": [
+          "siemens-teamcenter",
+          "sap-s-4hana-pp",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "data-quality-governance-agent",
+        "match_type": "dq_scorecards",
+        "systems": [
+          "collibra",
+          "sap-mdg",
+          "bigquery-datacatalog"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "working_capital_cash_bridge",
+    "name": "Working Capital & Cash Conversion Bridge",
+    "vertical": "Universal Core",
+    "scor_category": "Cross-Persona Universal",
+    "primary_objective": "Bridges operational inventory levels to CFO cash flow (DIO, DPO, DSO), evaluating holding costs, standard cost variances, and AP discount optimization.",
+    "factory_matches": [
+      {
+        "okf_id": "inventory-valuation-agent",
+        "match_type": "primary_core",
+        "systems": [
+          "sap-s-4hana-fi",
+          "sap-material-ledger",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "cash-flow-forecaster",
+        "match_type": "cash_bridge",
+        "systems": [
+          "sap-acdoca",
+          "treasury-workstation",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "cogs-reconciliation-agent",
+        "match_type": "variance_reconciliation",
+        "systems": [
+          "sap-co-pa",
+          "sap-s-4hana",
+          "alloydb"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "demand_sensing_forecast_agent",
+    "name": "Demand Sensing & Multi-Horizon Forecast Agent",
+    "vertical": "01 \u00b7 Plan",
+    "scor_category": "Plan (Demand & S&OP)",
+    "primary_objective": "TimesFM foundation forecasting + Google WeatherNext 3 causal factors + POS EDI 852/830 ingestion for daily granular demand sensing.",
+    "factory_matches": [
+      {
+        "okf_id": "demand-forecasting-aggregation",
+        "match_type": "primary_core",
+        "systems": [
+          "sap-s-4hana-mm-pp",
+          "oracle-erp",
+          "coupa",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "demand-pattern-analyzer",
+        "match_type": "pattern_analysis",
+        "systems": [
+          "pos-data",
+          "retail-edi",
+          "bigquery-ml"
+        ]
+      },
+      {
+        "okf_id": "demand-forecast-exception-agent",
+        "match_type": "exception_triage",
+        "systems": [
+          "sap-ibp",
+          "kinaxis",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "promotional_lift_optimizer",
+    "name": "Promotional & Causal Demand Lift Optimizer",
+    "vertical": "01 \u00b7 Plan",
+    "scor_category": "Plan (Demand & S&OP)",
+    "primary_objective": "Double-ML causal inference for trade promotions, price elasticity modeling, baseline cannibalization adjustment, and margin maximization.",
+    "factory_matches": [
+      {
+        "okf_id": "promo-forecast-accuracy-analyzer",
+        "match_type": "primary_core",
+        "systems": [
+          "sap-tpm",
+          "salesforce-cgc",
+          "bigquery-ml"
+        ]
+      },
+      {
+        "okf_id": "markdown-optimization-engine",
+        "match_type": "price_elasticity",
+        "systems": [
+          "oracle-retail",
+          "inventory-snapshots",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "competitive-price-response-agent",
+        "match_type": "market_signals",
+        "systems": [
+          "pricing-feeds",
+          "competitor-scrapes",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "finite_capacity_planner",
+    "name": "Finite Capacity & Rough-Cut S&OP Planner",
+    "vertical": "01 \u00b7 Plan",
+    "scor_category": "Plan (Demand & S&OP)",
+    "primary_objective": "OR-Tools MILP solver balancing plant work center hours, tooling availability, raw material constraints, and executive S&OP consensus.",
+    "factory_matches": [
+      {
+        "okf_id": "demand-supply-gap-scenario-engine",
+        "match_type": "primary_core",
+        "systems": [
+          "kinaxis-rapidresponse",
+          "sap-ibp",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "capacity-planning-agent",
+        "match_type": "capacity_allocation",
+        "systems": [
+          "work-center-capacity",
+          "shift-calendars",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "production-schedule-adherence-monitor",
+        "match_type": "execution_feedback",
+        "systems": [
+          "siemens-opcenter",
+          "sap-pp",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "inventory_policy_agent",
+    "name": "Dynamic Inventory Policy & Safety Stock Optimizer",
+    "vertical": "01 \u00b7 Plan",
+    "scor_category": "Plan (Demand & S&OP)",
+    "primary_objective": "Stochastic safety stock retuning, demand variability (CV2) clustering, lead-time uncertainty absorption, and service level SLA optimization.",
+    "factory_matches": [
+      {
+        "okf_id": "inventory-rebalancing-orchestrator",
+        "match_type": "primary_core",
+        "systems": [
+          "sap-s-4hana-mm",
+          "kinaxis-rapidresponse",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "store-replenishment-orchestrator",
+        "match_type": "replenishment_curves",
+        "systems": [
+          "oracle-retail-mfcs",
+          "pos-scans",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "material-shortage-early-warning-monitor",
+        "match_type": "stockout_prevention",
+        "systems": [
+          "sap-s-4hana-pp-ds",
+          "inventory-buffers",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "supplier_risk_sentinel",
+    "name": "Multi-Tier Supplier Risk Sentinel",
+    "vertical": "02 \u00b7 Source",
+    "scor_category": "Source (Procurement & Tier-N Risk)",
+    "primary_objective": "Spanner Graph Tier-1 through Tier-N supply chain mapping, geopolitical sanction monitoring, natural catastrophe geofencing, and Altman Z-score financial distress scoring.",
+    "factory_matches": [
+      {
+        "okf_id": "supplier-risk-scoring-engine",
+        "match_type": "primary_core",
+        "systems": [
+          "resilinc",
+          "rapidratings",
+          "moodys",
+          "d-b",
+          "bitsight",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "sub-tier-visibility-agent",
+        "match_type": "tier_n_graph",
+        "systems": [
+          "spanner-graph",
+          "bill-of-materials",
+          "import-genius",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "supplier-delivery-risk-analyzer",
+        "match_type": "sla_risk",
+        "systems": [
+          "sap-ariba",
+          "carrier-edi",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "procurement_cost_modeler",
+    "name": "Dynamic Clean-Sheet Procurement Cost Modeler",
+    "vertical": "02 \u00b7 Source",
+    "scor_category": "Source (Procurement & Tier-N Risk)",
+    "primary_objective": "Parametric should-cost modeling decomposing manufactured components into raw commodity index pricing, machine cycle energy, labor rates, and supplier margin.",
+    "factory_matches": [
+      {
+        "okf_id": "should-cost-modeler",
+        "match_type": "primary_core",
+        "systems": [
+          "sap-s-4hana-bom-routing",
+          "commodity-price-feeds",
+          "industry-benchmarks"
+        ]
+      },
+      {
+        "okf_id": "total-cost-of-ownership-modeler",
+        "match_type": "tco_lifecycle",
+        "systems": [
+          "sap-ariba",
+          "inco-terms-tariffs",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "commodity-price-forecaster",
+        "match_type": "feed_prediction",
+        "systems": [
+          "lme-market-data",
+          "icis-chemicals",
+          "bigquery-ml"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "contract_compliance_guardian",
+    "name": "Contract Compliance & Tariff Classification Guardian",
+    "vertical": "02 \u00b7 Source",
+    "scor_category": "Source (Procurement & Tier-N Risk)",
+    "primary_objective": "Document AI PDF clause extraction, volume rebate audit, HS Code customs classification, and purchase price variance (PPV) invoice matching.",
+    "factory_matches": [
+      {
+        "okf_id": "contract-compliance-auditor",
+        "match_type": "primary_core",
+        "systems": [
+          "icertis",
+          "sap-ariba-clm",
+          "sap-s-4hana-mm",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "clause-risk-analyzer",
+        "match_type": "legal_clauses",
+        "systems": [
+          "contract-repository",
+          "document-ai",
+          "alloydb-pgvector"
+        ]
+      },
+      {
+        "okf_id": "obligation-mining-tracking",
+        "match_type": "sla_rebates",
+        "systems": [
+          "sap-s-4hana-fi",
+          "sap-ariba",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "supplier_quality_auditor",
+    "name": "Supplier Quality & Deviation Auditor",
+    "vertical": "02 \u00b7 Source",
+    "scor_category": "Source (Procurement & Tier-N Risk)",
+    "primary_objective": "Automated incoming goods inspection, Certificates of Analysis (COA) verification via Document AI, supplier defect Pareto scoring, and debit memo recovery.",
+    "factory_matches": [
+      {
+        "okf_id": "supplier-quality-scorecard-engine",
+        "match_type": "primary_core",
+        "systems": [
+          "sap-s-4hana-qm",
+          "trackwise-qms",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "supplier-scorecard-generator",
+        "match_type": "scorecard_reporting",
+        "systems": [
+          "sap-ariba",
+          "sap-qm",
+          "looker"
+        ]
+      },
+      {
+        "okf_id": "nonconformance-triage-agent",
+        "match_type": "deviation_triage",
+        "systems": [
+          "sap-s-4hana-qm",
+          "defect-records",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plant_oee_maintenance_agent",
+    "name": "Plant Predictive Maintenance & OEE Asset Guardian",
+    "vertical": "03 \u00b7 Make",
+    "scor_category": "Make (Manufacturing & Plant OEE)",
+    "primary_objective": "Industrial IoT vibration/temperature anomaly detection, MTBF/MTTR tracking, automated Maximo/SAP PM work order creation, and unbudgeted downtime prevention.",
+    "factory_matches": [
+      {
+        "okf_id": "oee-loss-pareto-analyzer",
+        "match_type": "primary_core",
+        "systems": [
+          "siemens-opcenter-mes",
+          "looker",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "predictive-asset-failure-monitor",
+        "match_type": "telemetry_anomaly",
+        "systems": [
+          "osisoft-pi-historian",
+          "sap-pm",
+          "bigquery-ml"
+        ]
+      },
+      {
+        "okf_id": "pm-schedule-optimization-engine",
+        "match_type": "work_orders",
+        "systems": [
+          "ibm-maximo",
+          "sap-s-4hana-pm",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "finite_production_scheduler",
+    "name": "Finite Production Line Sequence & Job Shop Scheduler",
+    "vertical": "03 \u00b7 Make",
+    "scor_category": "Make (Manufacturing & Plant OEE)",
+    "primary_objective": "OR-Tools CP-SAT discrete job-shop scheduling, changeover matrix minimization, tooling sequence locking, and line balancing.",
+    "factory_matches": [
+      {
+        "okf_id": "production-schedule-adherence-monitor",
+        "match_type": "primary_core",
+        "systems": [
+          "sap-s-4hana-pp-ds",
+          "siemens-opcenter-mes",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "work-order-backlog-triage-orchestrator",
+        "match_type": "backlog_prioritization",
+        "systems": [
+          "sap-pp",
+          "mes-dispatch-lists",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "changeover-time-optimization-agent",
+        "match_type": "changeover_matrix",
+        "systems": [
+          "siemens-opcenter",
+          "production-orders",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "scrap_defect_root_cause_agent",
+    "name": "Yield Optimization & Scrap Defect Root-Cause Agent",
+    "vertical": "03 \u00b7 Make",
+    "scor_category": "Make (Manufacturing & Plant OEE)",
+    "primary_objective": "Multi-variate regression correlating PLC process parameters (pressure, speed, heat) with final batch defect rates to maximize First Pass Yield (FPY).",
+    "factory_matches": [
+      {
+        "okf_id": "scrap-and-rework-analytics-engine",
+        "match_type": "primary_core",
+        "systems": [
+          "siemens-opcenter-mes",
+          "sap-s-4hana-qm",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "spc-drift-detection-monitor",
+        "match_type": "spc_statistical_control",
+        "systems": [
+          "osisoft-pi",
+          "laboratory-lims",
+          "bigquery-ml"
+        ]
+      },
+      {
+        "okf_id": "quality-incident-analyzer",
+        "match_type": "root_cause_pareto",
+        "systems": [
+          "trackwise",
+          "capa-records",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "inline_quality_inspection_agent",
+    "name": "Automated Inline Quality Gate & Inspection Agent",
+    "vertical": "03 \u00b7 Make",
+    "scor_category": "Make (Manufacturing & Plant OEE)",
+    "primary_objective": "Gemini 2.5 Pro Vision + edge camera inspection, automated eBHR batch record verification, and zero-defect finished-goods release.",
+    "factory_matches": [
+      {
+        "okf_id": "batch-record-review-analyzer",
+        "match_type": "primary_core",
+        "systems": [
+          "veeva-qms",
+          "siemens-opcenter-ebhr",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "quality-incident-analyzer",
+        "match_type": "inspection_gates",
+        "systems": [
+          "sap-s-4hana-qm",
+          "vision-telemetry",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "nonconformance-triage-agent",
+        "match_type": "inline_disposition",
+        "systems": [
+          "sap-qm",
+          "mes-inline-sensors",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "echelon_inventory_allocator",
+    "name": "Coupled Stochastic Multi-Echelon Inventory Allocator",
+    "vertical": "04 \u00b7 Fulfill",
+    "scor_category": "Fulfill (MEIO, Cross-Dock & 3D WMS)",
+    "primary_objective": "Clark-Scarf multi-echelon stock positioning, lateral DC-to-DC rebalancing, and SKU availability balancing across central hubs and spokes.",
+    "factory_matches": [
+      {
+        "okf_id": "inventory-rebalancing-orchestrator",
+        "match_type": "primary_core",
+        "systems": [
+          "sap-s-4hana-mm",
+          "kinaxis-rapidresponse",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "store-replenishment-orchestrator",
+        "match_type": "meio_replenishment",
+        "systems": [
+          "oracle-retail-mfcs",
+          "pos-scans",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "spare-parts-stockout-prediction-agent",
+        "match_type": "critical_buffer",
+        "systems": [
+          "ibm-maximo",
+          "sap-s-4hana-mm",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "warehouse_slotting_optimizer",
+    "name": "Dynamic 3D Warehouse Wave & Slotting Optimizer",
+    "vertical": "04 \u00b7 Fulfill",
+    "scor_category": "Fulfill (MEIO, Cross-Dock & 3D WMS)",
+    "primary_objective": "3D warehouse aisle velocity slotting, dynamic picker travel distance minimization, AMR swarm dispatching, and wave release balancing.",
+    "factory_matches": [
+      {
+        "okf_id": "dc-labor-planning-engine",
+        "match_type": "primary_core",
+        "systems": [
+          "ukg-dimensions",
+          "manhattan-active-wm",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "store-replenishment-orchestrator",
+        "match_type": "pick_pack_wave",
+        "systems": [
+          "warehouse-orders",
+          "pick-tasks",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dynamic_order_promising_atp",
+    "name": "Real-Time Dynamic ATP Order Promising Agent",
+    "vertical": "04 \u00b7 Fulfill",
+    "scor_category": "Fulfill (MEIO, Cross-Dock & 3D WMS)",
+    "primary_objective": "Sub-50ms Spanner order promising, customer allocation tier protection, real-time ATP/CTP calculation, and omnichannel fulfillment routing.",
+    "factory_matches": [
+      {
+        "okf_id": "order-jeopardy-prediction-engine",
+        "match_type": "primary_core",
+        "systems": [
+          "netcracker-service-orchestration",
+          "order-aging",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "order-fallout-resolution-agent",
+        "match_type": "fallout_resolution",
+        "systems": [
+          "sap-s-4hana-sd",
+          "ibm-sterling-oms",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "crossdock_transfer_orchestrator",
+    "name": "Real-Time Cross-Dock Flow-Through Orchestrator",
+    "vertical": "04 \u00b7 Fulfill",
+    "scor_category": "Fulfill (MEIO, Cross-Dock & 3D WMS)",
+    "primary_objective": "Synchronizes inbound supplier truck arrival milestones with outbound retail trailers, routing pallets directly across dock doors without staging.",
+    "factory_matches": [
+      {
+        "okf_id": "dispatch-optimization-orchestrator",
+        "match_type": "dock_dispatch",
+        "systems": [
+          "oracle-field-service",
+          "looker",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "inbound-po-eta-monitor",
+        "match_type": "inbound_milestones",
+        "systems": [
+          "manhattan-active-wm",
+          "asn-data",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "yard_dock_scheduling_agent",
+    "name": "Dynamic Yard Gate & Turnaround Demurrage Orchestrator",
+    "vertical": "04 \u00b7 Fulfill",
+    "scor_category": "Fulfill (MEIO, Cross-Dock & 3D WMS)",
+    "primary_objective": "Google Maps Fleet Engine geofencing, trailer spotter optimization, gate queue prediction, and 2-hour detention penalty elimination.",
+    "factory_matches": [
+      {
+        "okf_id": "truck-roll-avoidance-agent",
+        "match_type": "demurrage_mitigation",
+        "systems": [
+          "fourkites-project44",
+          "manhattan-yms",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "carrier-delivery-sla-analyzer",
+        "match_type": "detention_audit",
+        "systems": [
+          "warehouse-orders",
+          "dock-timestamps",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "multimodal_mode_shift_agent",
+    "name": "Intermodal Synchromodal Lane Optimization Agent",
+    "vertical": "05 \u00b7 Deliver",
+    "scor_category": "Deliver (Ocean, Air, Rail & Road Fleet)",
+    "primary_objective": "Synchromodal lane solver dynamically re-routing freight across Ocean, Air Cargo, Intermodal Rail, and Road Fleet based on cost, transit time, and carbon.",
+    "factory_matches": [
+      {
+        "okf_id": "carrier-delivery-sla-analyzer",
+        "match_type": "primary_core",
+        "systems": [
+          "manhattan-active-wm",
+          "looker",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "delivery-performance-monitor",
+        "match_type": "lane_performance",
+        "systems": [
+          "carrier-edi",
+          "transit-models",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fleet_route_dispatch_optimizer",
+    "name": "Real-Time Dynamic Fleet Dispatch & Road Route Optimizer",
+    "vertical": "05 \u00b7 Deliver",
+    "scor_category": "Deliver (Ocean, Air, Rail & Road Fleet)",
+    "primary_objective": "Google Maps Routes Preferred API + OR-Tools VRPTW (Vehicle Routing with Time Windows) dynamic dispatch, traffic re-routing, and fuel efficiency.",
+    "factory_matches": [
+      {
+        "okf_id": "dispatch-optimization-orchestrator",
+        "match_type": "primary_core",
+        "systems": [
+          "oracle-field-service",
+          "looker",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "carrier-delivery-sla-analyzer",
+        "match_type": "sla_route_audit",
+        "systems": [
+          "manhattan-active-wm",
+          "gps-telemetry",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "load_consolidation_3d_studio",
+    "name": "3D Multi-Drop LIFO Container & Trailer Load Studio",
+    "vertical": "05 \u00b7 Deliver",
+    "scor_category": "Deliver (Ocean, Air, Rail & Road Fleet)",
+    "primary_objective": "OR-Tools 3D bin packing engine enforcing LIFO drop sequence, axle weight distributions, volumetric cubing, and dangerous goods segregation.",
+    "factory_matches": [
+      {
+        "okf_id": "size-pack-optimization-engine",
+        "match_type": "primary_core",
+        "systems": [
+          "oracle-retail-mfcs",
+          "pallet-cubing",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "carrier-delivery-sla-analyzer",
+        "match_type": "weighbridge_audit",
+        "systems": [
+          "manhattan-active-wm",
+          "axle-sensors",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "in_transit_control_tower",
+    "name": "Multi-Modal In-Transit Milestone & Delay Risk Control Tower",
+    "vertical": "05 \u00b7 Deliver",
+    "scor_category": "Deliver (Ocean, Air, Rail & Road Fleet)",
+    "primary_objective": "IoT satellite telemetry (Spire AIS, FlightAware ADS-B, Samsara ELD), geofenced ETA prediction, and temperature/cold-chain breach prevention.",
+    "factory_matches": [
+      {
+        "okf_id": "carrier-delivery-sla-analyzer",
+        "match_type": "primary_core",
+        "systems": [
+          "manhattan-active-wm",
+          "sensitech-iot",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "inbound-po-eta-monitor",
+        "match_type": "eta_prediction",
+        "systems": [
+          "warehouse-orders",
+          "edi-214",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "delivery-performance-monitor",
+        "match_type": "delay_alerting",
+        "systems": [
+          "carrier-scans",
+          "weather-feeds",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ocean_port_drayage_orchestrator",
+    "name": "Autonomous Ocean Port Drayage & Container Demurrage Optimizer",
+    "vertical": "05 \u00b7 Deliver",
+    "scor_category": "Deliver (Ocean, Air, Rail & Road Fleet)",
+    "primary_objective": "Port terminal appointment booking, free time countdown tracking, container demurrage/detention audit, and empty container turn-in optimization.",
+    "factory_matches": [
+      {
+        "okf_id": "carrier-delivery-sla-analyzer",
+        "match_type": "primary_core",
+        "systems": [
+          "manhattan-active-wm",
+          "port-community-systems",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "inbound-po-eta-monitor",
+        "match_type": "vessel_ais_eta",
+        "systems": [
+          "spire-ais",
+          "port-terminals",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "air_cargo_uld_optimizer",
+    "name": "Air Freight ULD Pallet Optimization & Fast-Track Charter Agent",
+    "vertical": "05 \u00b7 Deliver",
+    "scor_category": "Deliver (Ocean, Air, Rail & Road Fleet)",
+    "primary_objective": "IATA Cargo-XML ULD contour allocation, volumetric density optimization, dangerous goods segregation, and emergency line-down charter flight booking.",
+    "factory_matches": [
+      {
+        "okf_id": "expedite-request-triage-agent",
+        "match_type": "primary_core",
+        "systems": [
+          "servicenow",
+          "kinaxis-rapidresponse",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "carrier-delivery-sla-analyzer",
+        "match_type": "air_freight_audit",
+        "systems": [
+          "iata-one-record",
+          "cargospot",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "intermodal_rail_linehaul_agent",
+    "name": "Intermodal Rail Linehaul & Railhead Transload Orchestrator",
+    "vertical": "05 \u00b7 Deliver",
+    "scor_category": "Deliver (Ocean, Air, Rail & Road Fleet)",
+    "primary_objective": "Railinc EDI 404/417 tracking, Class-I block train schedules, ramp dwell time prediction, and intermodal dray dispatch synchronization.",
+    "factory_matches": [
+      {
+        "okf_id": "carrier-delivery-sla-analyzer",
+        "match_type": "primary_core",
+        "systems": [
+          "railinc-edi",
+          "manhattan-wm",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "dispatch-optimization-orchestrator",
+        "match_type": "railhead_dray",
+        "systems": [
+          "oracle-field-service",
+          "rail-ramps",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reverse_logistics_disposition_agent",
+    "name": "Circular Reverse Logistics & Warranty Disposition Orchestrator",
+    "vertical": "06 \u00b7 Return & Enable",
+    "scor_category": "Return & Enable (Circular & Scope 3 ESG)",
+    "primary_objective": "Automated customer RMA intake, fraud/abuse detection, warranty entitlement checking, and disposition grading (resell, refurbish, recycle, scrap).",
+    "factory_matches": [
+      {
+        "okf_id": "returns-abuse-analyzer",
+        "match_type": "primary_core",
+        "systems": [
+          "salesforce-commerce-cloud",
+          "sap-s-4hana-sd",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "nonconformance-triage-agent",
+        "match_type": "warranty_claims",
+        "systems": [
+          "sap-s-4hana-qm",
+          "rma-portals",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "customer_order_delivery_experience",
+    "name": "Customer Order Delivery Experience & OTIF Fine Dispute Agent",
+    "vertical": "06 \u00b7 Return & Enable",
+    "scor_category": "Return & Enable (Circular & Scope 3 ESG)",
+    "primary_objective": "Big-box retailer OTIF (On-Time In-Full) scorecard audit, retailer chargeback dispute packet assembly with GPS proof-of-delivery, and fine recovery.",
+    "factory_matches": [
+      {
+        "okf_id": "carrier-delivery-sla-analyzer",
+        "match_type": "primary_core",
+        "systems": [
+          "warehouse-orders",
+          "pick-tasks",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "order-jeopardy-prediction-engine",
+        "match_type": "otif_jeopardy",
+        "systems": [
+          "retail-portals",
+          "sap-sd",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "complaint-root-cause-analyzer",
+        "match_type": "delivery_claims",
+        "systems": [
+          "genesys-cloud",
+          "servicenow",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esg_carbon_scope3_tracker",
+    "name": "Scope 3 Logistics Carbon & Decarbonization Optimization Agent",
+    "vertical": "06 \u00b7 Return & Enable",
+    "scor_category": "Return & Enable (Circular & Scope 3 ESG)",
+    "primary_objective": "GLEC / ISO-14083 compliant logistics carbon auditing, carrier carbon intensity benchmarking, mode-shift CO2 reduction calculation, and SEC ESG compliance.",
+    "factory_matches": [
+      {
+        "okf_id": "regulatory-emissions-reporting-agent",
+        "match_type": "primary_core",
+        "systems": [
+          "sphera-ehs",
+          "osisoft-pi",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "esg-sustainability-reporter",
+        "match_type": "gri_sasb_tcfd",
+        "systems": [
+          "energy-data",
+          "sap-s-4hana",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "eco-impact-analysis-agent",
+        "match_type": "lca_footprint",
+        "systems": [
+          "teamcenter-plm",
+          "bom-revisions",
+          "bigquery"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "regulatory_compliance_trade_agent",
+    "name": "Cross-Border Customs & Trade Compliance Tariff Agent",
+    "vertical": "06 \u00b7 Return & Enable",
+    "scor_category": "Return & Enable (Circular & Scope 3 ESG)",
+    "primary_objective": "EU CBAM embedded carbon documentation, USMCA / FTA rules of origin certification, Denied Party List screening, and export control classification (ECCN).",
+    "factory_matches": [
+      {
+        "okf_id": "regulatory-compliance-tracker",
+        "match_type": "primary_core",
+        "systems": [
+          "cbam-schedules",
+          "sap-gts",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "sanctions-watchlist-screener",
+        "match_type": "ofac_screening",
+        "systems": [
+          "ofac-eu-un-lists",
+          "d-b",
+          "bigquery"
+        ]
+      },
+      {
+        "okf_id": "compliance-tracking-escalation-agent",
+        "match_type": "audit_trail",
+        "systems": [
+          "trade-compliance-filings",
+          "customs-rulings"
+        ]
+      }
+    ]
+  }
+]

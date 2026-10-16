@@ -1,0 +1,40 @@
+[
+  {
+    "scenario_id": "SCENARIO-LEADTIME-DRIFT-HEAL",
+    "name": "Automated Lead-Time Calibration for Inverter Assembly",
+    "input_query": "Audit high-voltage power inverter MAT-880019 in Plant 1010. Detect lead-time drift between engineering BOM records and actual vendor deliveries, and execute self-healing calibration.",
+    "expected_tools": [
+      "query_leadtime_drift_anomalies",
+      "query_material_master_records",
+      "action_heal_material_leadtime"
+    ],
+    "ground_truth_assertions": {
+      "material_id": "MAT-880019",
+      "plant": "PLANT-1010",
+      "recorded_planned_leadtime_days": 21,
+      "empirical_leadtime_days": 46,
+      "drift_days": 25,
+      "healed_leadtime_days": 46,
+      "mutation_status": "SAP_MARC_UPDATED"
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-CUBISCAN-DIMENSION-REMEDIATION",
+    "name": "3D Laser Volumetric Packaging Discrepancy Correction",
+    "input_query": "Reconcile CubiScan 3D warehouse laser scans against SAP MARA dimensions for MAT-880019 to eliminate $42k carrier dimensional weight surcharge risk.",
+    "expected_tools": [
+      "query_cubiscan_dimension_discrepancies",
+      "action_remediate_cubiscan_dimensions"
+    ],
+    "ground_truth_assertions": {
+      "scan_id": "SCAN-3D-99014",
+      "volume_discrepancy_pct": 72.8,
+      "carrier_surcharge_risk_usd": 42000,
+      "corrected_length_cm": 52.0,
+      "corrected_width_cm": 41.0,
+      "corrected_height_cm": 28.0,
+      "corrected_weight_kg": 24.2,
+      "status": "SAP_MARA_DIMENSIONS_UPDATED"
+    }
+  }
+]

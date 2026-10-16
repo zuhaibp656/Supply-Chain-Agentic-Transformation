@@ -1,0 +1,20 @@
+schema_version: "v1"
+id: "csco_control_tower_copilot"
+name: "CSCO Control Tower Copilot"
+description: "Executive cross-vertical KPI visibility, multi-echelon bottleneck triage, and natural language decision execution across ERP/WMS/TMS."
+agent_class: "app.agent.CscoControlTowerAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_executive_kpis"
+  - "query_network_bottlenecks"
+  - "query_multiechelon_twin_status"
+  - "query_cross_erp_order_backlog"
+  - "action_execute_executive_playbook"
+  - "action_rebalance_network_allocation"
+metadata:
+  scor_category: "Cross-Persona Universal Core"
+  tier_coverage: "End-to-End Enterprise (Plan through Deliver)"
+  roi_focus: "$120M working capital freed, 99.2% customer OTIF, 75% faster executive S&OP consensus"

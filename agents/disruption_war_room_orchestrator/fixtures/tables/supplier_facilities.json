@@ -1,0 +1,30 @@
+[
+  {
+    "supplier_id": "VEND-10492",
+    "supplier_name": "Taiwan Micro-Power Semiconductor Corp",
+    "tier_level": 2,
+    "parent_tier1_vendor": "VEND-8820 (Bosch Mobility Electronics)",
+    "facility_name": "Hsinchu Fab 4 Advanced Packaging",
+    "country": "Taiwan",
+    "lat": 24.78,
+    "lon": 121.01,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": ["Microcontroller MCU-800V", "SiC Gate Driver IC"],
+    "daily_revenue_impact_usd": 1250000,
+    "buffer_days_on_hand": 4.5
+  },
+  {
+    "supplier_id": "VEND-30211",
+    "supplier_name": "Antwerp Terminal Stevedoring Co",
+    "tier_level": 1,
+    "parent_tier1_vendor": "DIRECT",
+    "facility_name": "Port of Antwerp Quay 1700",
+    "country": "Belgium",
+    "lat": 51.27,
+    "lon": 4.29,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": ["Sterile Vial Containers", "Lipid Nanoparticles Excipients"],
+    "daily_revenue_impact_usd": 480000,
+    "buffer_days_on_hand": 11.0
+  }
+]

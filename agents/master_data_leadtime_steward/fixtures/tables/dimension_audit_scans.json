@@ -1,0 +1,34 @@
+[
+  {
+    "scan_id": "SCAN-3D-99014",
+    "material_id": "MAT-880019",
+    "scanned_plant": "PLANT-1010",
+    "cubiscan_length_cm": 52.0,
+    "recorded_length_cm": 45.0,
+    "cubiscan_width_cm": 41.0,
+    "recorded_width_cm": 35.0,
+    "cubiscan_height_cm": 28.0,
+    "recorded_height_cm": 22.0,
+    "cubiscan_weight_kg": 24.2,
+    "recorded_weight_kg": 18.5,
+    "volume_discrepancy_pct": 72.8,
+    "carrier_surcharge_risk_usd": 42000,
+    "status": "DIMENSION_MISMATCH"
+  },
+  {
+    "scan_id": "SCAN-3D-99088",
+    "material_id": "MAT-440212",
+    "scanned_plant": "PLANT-1010",
+    "cubiscan_length_cm": 15.0,
+    "recorded_length_cm": 14.8,
+    "cubiscan_width_cm": 4.1,
+    "recorded_width_cm": 4.0,
+    "cubiscan_height_cm": 9.6,
+    "recorded_height_cm": 9.5,
+    "cubiscan_weight_kg": 2.12,
+    "recorded_weight_kg": 2.1,
+    "volume_discrepancy_pct": 2.4,
+    "carrier_surcharge_risk_usd": 0,
+    "status": "VERIFIED_ACCURATE"
+  }
+]

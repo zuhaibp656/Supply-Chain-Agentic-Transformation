@@ -1,0 +1,20 @@
+schema_version: "v1"
+id: "master_data_leadtime_steward"
+name: "Master Data & Lead-Time Steward"
+description: "Self-healing SAP Material Master (MARA/MARC), BOM lead-time drift detection, CubiScan 3D dimension validation, and vendor master integrity."
+agent_class: "app.agent.MasterDataLeadtimeAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_material_master_records"
+  - "query_leadtime_drift_anomalies"
+  - "query_cubiscan_dimension_discrepancies"
+  - "query_vendor_master_integrity"
+  - "action_heal_material_leadtime"
+  - "action_remediate_cubiscan_dimensions"
+metadata:
+  scor_category: "Cross-Persona Universal Core"
+  tier_coverage: "Enterprise ERP & Engineering BOMs"
+  roi_focus: "Eliminates phantom MRP lead-time delays, prevents $14M in parcel dimension carrier surcharges"

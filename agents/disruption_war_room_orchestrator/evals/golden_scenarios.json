@@ -1,0 +1,47 @@
+[
+  {
+    "scenario_id": "SCENARIO-GAEMI-SUPER-TYPHOON",
+    "name": "Super Typhoon Gaemi Maritime & Semiconductor Disruption",
+    "input_query": "Alert received: Super Typhoon Gaemi category 4 approaching Taiwan Strait with port closures at Keelung and Kaohsiung. Identify delayed container ships, at-risk tier-2 semiconductor packaging facilities, impacted customer purchase orders, and instantiate an executive war room.",
+    "expected_tools": [
+      "query_weather_alerts",
+      "query_maritime_ais_vessels",
+      "query_resilinc_supplier_facilities",
+      "query_news_disruptions",
+      "action_create_war_room_incident",
+      "action_dispatch_expedite_remediation"
+    ],
+    "ground_truth_assertions": {
+      "weather_alert_id": "WX-2026-0812",
+      "delayed_vessel": "EVER GLOBE",
+      "vessel_status": "ANCHORED_WEATHER_EVASION",
+      "projected_delay_hours": 126,
+      "impacted_po": "PO-450091281",
+      "impacted_sku": "SKU-BATTERY-MEB-01",
+      "tier2_supplier": "Taiwan Micro-Power Semiconductor Corp",
+      "buffer_days_on_hand": 4.5,
+      "expedite_mode": "FAST_TRACK_AIR_CHARTER",
+      "incident_status": "ACTIVE_TRIAGE"
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-ANTWERP-DOCK-STRIKE",
+    "name": "Port of Antwerp Wildcat Dockworker Strike",
+    "input_query": "Reuters reports 72-hour wildcat union strike across Port of Antwerp docks. Check inbound maritime vessels carrying active pharmaceutical ingredients, assess days of buffer inventory, and assemble war room mitigation.",
+    "expected_tools": [
+      "query_news_disruptions",
+      "query_maritime_ais_vessels",
+      "query_resilinc_supplier_facilities",
+      "action_create_war_room_incident"
+    ],
+    "ground_truth_assertions": {
+      "news_signal_id": "NEWS-9014",
+      "affected_port": "Port of Antwerp",
+      "delayed_vessel": "MAERSK MC-KINNEY MOLLER",
+      "at_risk_po": "PO-450089100",
+      "impacted_sku": "SKU-STERILE-VIAL-10ML",
+      "buffer_days_on_hand": 11.0,
+      "action_recommended": "Monitor buffer; hold air freight unless strike exceeds 96 hours."
+    }
+  }
+]

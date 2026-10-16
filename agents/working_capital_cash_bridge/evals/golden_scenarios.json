@@ -1,0 +1,38 @@
+[
+  {
+    "scenario_id": "SCENARIO-WORKING-CAPITAL-RIGHTSIZING",
+    "name": "Slow-Moving Buffer Rightsizing and Treasury Cash Release",
+    "input_query": "Analyze global days of inventory outstanding (DIO) against target. Pinpoint excess finished goods inventory in Dallas Central DC and execute buffer rightsizing to release trapped working capital.",
+    "expected_tools": [
+      "query_working_capital_metrics",
+      "query_inventory_valuation_ledger",
+      "query_trapped_cash_opportunities",
+      "action_rebalance_working_capital_buffer"
+    ],
+    "ground_truth_assertions": {
+      "current_global_dio": 58.4,
+      "target_global_dio": 45.0,
+      "trapped_cash_usd": 1646400.0,
+      "target_sku": "MAT-HVAC-901",
+      "target_plant": "DC-DALLAS-CENTRAL",
+      "recommended_reduction_units": 343,
+      "mutation_status": "BUFFER_RIGHTSIZED"
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-DYNAMIC-AP-DISCOUNTING",
+    "name": "Capture 2/10 Net 60 Dynamic Early Payment Supplier Discount",
+    "input_query": "Audit outstanding supplier AP invoices approaching discount deadlines. Authorize early payment settlement for Taiwan Micro-Power invoice INV-AP-489012 to capture annualized 36.5% return.",
+    "expected_tools": [
+      "query_ap_supplier_discount_invoices",
+      "action_trigger_dynamic_ap_discounting"
+    ],
+    "ground_truth_assertions": {
+      "invoice_id": "INV-AP-489012",
+      "vendor_id": "VEND-10492",
+      "discount_amount_usd": 18800.0,
+      "annualized_roi_pct": 36.5,
+      "status": "PAYMENT_SCHEDULED_EARLY"
+    }
+  }
+]
