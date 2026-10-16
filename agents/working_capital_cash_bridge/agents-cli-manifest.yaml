@@ -1,6 +1,6 @@
 schema_version: "v1"
 id: "working_capital_cash_bridge"
-name: "Working Capital & Cash Conversion Bridge"
+name: "MarginBridge — Working Capital & Cash Bridge"
 description: "Bridges operational inventory levels to CFO cash flow (DIO, DPO, DSO), evaluating holding costs, standard cost variances, and AP discount optimization."
 agent_class: "app.agent.WorkingCapitalCashBridgeAgent"
 runtime:

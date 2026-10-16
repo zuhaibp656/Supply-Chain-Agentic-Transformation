@@ -1,6 +1,6 @@
 schema_version: "v1"
 id: "csco_control_tower_copilot"
-name: "CSCO Control Tower Copilot"
+name: "TowerMind — CSCO Control Tower Copilot"
 description: "Executive cross-vertical KPI visibility, multi-echelon bottleneck triage, and natural language decision execution across ERP/WMS/TMS."
 agent_class: "app.agent.CscoControlTowerAgent"
 runtime:

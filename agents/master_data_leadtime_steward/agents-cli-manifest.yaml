@@ -1,6 +1,6 @@
 schema_version: "v1"
 id: "master_data_leadtime_steward"
-name: "Master Data & Lead-Time Steward"
+name: "DataCleanse — Master Data & Lead-Time Steward"
 description: "Self-healing SAP Material Master (MARA/MARC), BOM lead-time drift detection, CubiScan 3D dimension validation, and vendor master integrity."
 agent_class: "app.agent.MasterDataLeadtimeAgent"
 runtime:
