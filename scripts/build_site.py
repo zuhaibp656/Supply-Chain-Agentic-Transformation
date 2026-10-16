@@ -58,6 +58,7 @@ def build_html() -> str:
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gemini Enterprise — Supply Chain &amp; Demand (Office of the CSCO)</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050811'/%3E%3Cpolygon points='32,10 52,21 52,43 32,54 12,43 12,21' fill='rgba(0,210,255,0.18)' stroke='%2300d2ff' stroke-width='3'/%3E%3Cpath d='M32 10 L32 32 L52 21 M32 32 L12 21 M32 32 L32 54' stroke='%2334d399' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='32' cy='32' r='4.5' fill='%23ffffff'/%3E%3C/svg%3E" />
   <!-- Plus Jakarta Sans, Inter, Space Grotesk, JetBrains Mono & Google Sans Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
