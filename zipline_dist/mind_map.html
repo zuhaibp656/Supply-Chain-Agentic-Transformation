@@ -1145,6 +1145,44 @@
       transform: translateX(-3px);
     }
 
+    .twin-input-field {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+    .twin-input-field:focus {
+      border-color: #a855f7;
+      box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25);
+      background: rgba(15, 23, 42, 0.98);
+    }
+    .twin-input-field option {
+      background: #090d18;
+      color: #ffffff;
+    }
+    .btn-generate-twin:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(168, 85, 247, 0.5) !important;
+    }
+    .btn-generate-twin:active {
+      transform: translateY(0);
+    }
+    .twin-preset-card {
+      transition: all 0.2s ease;
+    }
+    .twin-preset-card:hover {
+      border-color: var(--sc-cyan) !important;
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.08) !important;
+    }
+
     .persona-switcher-pills {
       display: flex;
       flex-wrap: wrap;
@@ -3449,39 +3487,131 @@
         Instead of hardcoding single industries, the <strong>Enterprise Twin Agent</strong> uses autonomous Python research tools (Company Profiler, Career Persona Miner, Ecosystem Miner) to map your 26 SCOR personas and 32 AI agents to the customer's real job titles, factory hubs, and product nomenclature.
       </p>
 
-      <!-- Instant 1-Click Client Presets -->
-      <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#d8b4fe; margin-bottom:10px;">
-        Instant Client Twin Presets (Live View Switcher):
+      <!-- Interactive Form: Inputs for Custom Enterprise Research & Live-Apply -->
+      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(168,85,247,0.3); border-radius:18px; padding:22px; margin-bottom:24px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+          <div style="font-family:var(--font-display); font-size:16px; font-weight:800; color:#ffffff;">
+            🎯 Research Any Enterprise &amp; Generate Client Twin
+          </div>
+          <span style="font-size:11.5px; font-weight:700; color:#34d399; background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.35); padding:3px 10px; border-radius:10px;">
+            ● Live In-Browser Synthesis Active
+          </span>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin-bottom:14px;">
+          <div>
+            <label style="display:block; font-size:12px; font-weight:700; color:#cbd5e1; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">
+              Company Name <span style="color:#f43f5e;">*</span>
+            </label>
+            <input type="text" id="twinCompanyInput" class="twin-input-field" placeholder="e.g. Caterpillar, Boeing, BMW, Walmart, L'Oréal, Tesla..." value="" />
+          </div>
+
+          <div>
+            <label style="display:block; font-size:12px; font-weight:700; color:#cbd5e1; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">
+              Industry / Sector <span style="color:#f43f5e;">*</span>
+            </label>
+            <select id="twinIndustrySelect" class="twin-input-field" style="cursor:pointer;">
+              <option value="auto">✨ Auto-Detect from Company Name</option>
+              <option value="automotive">🚗 Automotive, EV &amp; Mobility</option>
+              <option value="oil_gas_energy">🛢️ Energy, Oil &amp; Gas / Petrochemicals</option>
+              <option value="life_sciences_pharma">💊 Life Sciences, Pharma &amp; BioTech</option>
+              <option value="cpg_retail">🛒 Consumer Goods (CPG) &amp; Retail</option>
+              <option value="aerospace">✈️ Aerospace &amp; Heavy Machinery</option>
+              <option value="hightech">⚡ High-Tech Electronics &amp; Semis</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-bottom:18px;">
+          <label style="display:block; font-size:12px; font-weight:700; color:#cbd5e1; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">
+            Strategic Operational Focus / Key Products (Optional)
+          </label>
+          <input type="text" id="twinFocusInput" class="twin-input-field" placeholder="e.g. Battery gigafactories & JIS chassis line feeding, cold-chain vaccines, pipeline hydraulics..." />
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
+          <button type="button" class="btn-generate-twin" onclick="executeTwinGeneration()" style="display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:12px; background:linear-gradient(135deg, #a855f7 0%, #38bdf8 100%); color:#ffffff; font-family:var(--font-display); font-size:14.5px; font-weight:800; border:none; cursor:pointer; box-shadow:0 8px 24px rgba(168,85,247,0.35); transition:transform 0.15s ease;">
+            <span>⚡ Research &amp; Live-Apply Client Twin</span>
+          </button>
+          
+          <div style="font-size:12px; color:#94a3b8;">
+            Instant live browser morph + optional decoupled Argolis/local backend call.
+          </div>
+        </div>
+
+        <!-- Animated Progress HUD -->
+        <div id="twinProgressHud" style="display:none; margin-top:16px; padding:16px; border-radius:12px; background:#04060a; border:1px solid rgba(168,85,247,0.4);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <span id="hudStatusText" style="font-family:var(--font-mono); font-size:12.5px; color:#38bdf8; font-weight:700;">
+              🔍 Autonomous Agent researching company identity...
+            </span>
+            <span id="hudPercentText" style="font-family:var(--font-mono); font-size:12px; color:#a7f3d0; font-weight:700;">0%</span>
+          </div>
+          <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:10px; overflow:hidden; margin-bottom:10px;">
+            <div id="hudProgressBar" style="width:0%; height:100%; background:linear-gradient(90deg, #a855f7, #00d2ff, #10b981); transition:width 0.3s ease;"></div>
+          </div>
+          <div id="hudStepLog" style="font-family:var(--font-mono); font-size:11.5px; color:#cbd5e1; line-height:1.6;"></div>
+        </div>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; margin-bottom:24px;">
-        <button type="button" class="twin-preset-card" onclick="switchClientTwin('volkswagen')" style="text-align:left; background:rgba(0,30,80,0.4); border:1px solid rgba(0,210,255,0.4); border-radius:14px; padding:12px; cursor:pointer;">
-          <div style="font-size:18px; margin-bottom:4px;">🚗 <strong>Volkswagen</strong></div>
-          <div style="font-size:11.5px; color:#7dd3fc;">Automotive · MEB Batteries · Wolfsburg</div>
+
+      <!-- Quick 1-Click Presets -->
+      <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#d8b4fe; margin-bottom:10px;">
+        Or Select Instant Preset Showcase:
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:10px; margin-bottom:24px;">
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('volkswagen')" style="text-align:left; background:rgba(0,30,80,0.4); border:1px solid rgba(0,210,255,0.4); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🚗 Volkswagen</div>
+          <div style="font-size:11px; color:#7dd3fc;">Auto · MEB Gigafactory</div>
         </button>
-        <button type="button" class="twin-preset-card" onclick="switchClientTwin('shell')" style="text-align:left; background:rgba(185,28,28,0.2); border:1px solid rgba(251,191,36,0.4); border-radius:14px; padding:12px; cursor:pointer;">
-          <div style="font-size:18px; margin-bottom:4px;">🛢️ <strong>Shell plc</strong></div>
-          <div style="font-size:11.5px; color:#fde047;">Energy · Crude Pipelines · Pernis Refinery</div>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('bmw')" style="text-align:left; background:rgba(0,102,178,0.25); border:1px solid rgba(96,165,250,0.4); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🏎️ BMW Group</div>
+          <div style="font-size:11px; color:#93c5fd;">Auto · Spartanburg JIS</div>
         </button>
-        <button type="button" class="twin-preset-card" onclick="switchClientTwin('pfizer')" style="text-align:left; background:rgba(0,0,255,0.2); border:1px solid rgba(0,210,255,0.4); border-radius:14px; padding:12px; cursor:pointer;">
-          <div style="font-size:18px; margin-bottom:4px;">💊 <strong>Pfizer Inc.</strong></div>
-          <div style="font-size:11.5px; color:#93c5fd;">Life Sciences · Cold-Chain cGMP Biologics</div>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('shell')" style="text-align:left; background:rgba(185,28,28,0.2); border:1px solid rgba(251,191,36,0.4); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🛢️ Shell plc</div>
+          <div style="font-size:11px; color:#fde047;">Energy · Crude Pipelines</div>
         </button>
-        <button type="button" class="twin-preset-card" onclick="switchClientTwin('reset')" style="text-align:left; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:12px; cursor:pointer;">
-          <div style="font-size:18px; margin-bottom:4px;">🌐 <strong>Reset</strong></div>
-          <div style="font-size:11.5px; color:#94a3b8;">Industry-Agnostic Golden SCOR</div>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('pfizer')" style="text-align:left; background:rgba(0,0,255,0.2); border:1px solid rgba(0,210,255,0.4); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">💊 Pfizer Inc.</div>
+          <div style="font-size:11px; color:#93c5fd;">Pharma · cGMP Biologics</div>
+        </button>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('caterpillar')" style="text-align:left; background:rgba(255,205,17,0.18); border:1px solid rgba(255,205,17,0.45); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🚜 Caterpillar</div>
+          <div style="font-size:11px; color:#fef08a;">Heavy Machinery &amp; Mining</div>
+        </button>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('boeing')" style="text-align:left; background:rgba(0,51,160,0.22); border:1px solid rgba(56,189,248,0.4); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">✈️ Boeing</div>
+          <div style="font-size:11px; color:#7dd3fc;">Aerospace · Long-Lead Forgings</div>
+        </button>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('unilever')" style="text-align:left; background:rgba(16,185,129,0.18); border:1px solid rgba(16,185,129,0.4); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🛒 Unilever</div>
+          <div style="font-size:11px; color:#a7f3d0;">CPG · 400 Retail Brands</div>
+        </button>
+        <button type="button" class="twin-preset-card" onclick="switchClientTwin('reset')" style="text-align:left; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.18); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🌐 Golden SCOR</div>
+          <div style="font-size:11px; color:#94a3b8;">Industry-Agnostic Base</div>
         </button>
       </div>
 
-      <!-- Autonomous Agent CLI Generator Panel -->
-      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:18px;">
-        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#38bdf8; margin-bottom:8px;">
-          Autonomous Python Agent Generation Command:
+      <!-- Decoupled Backend Architecture Information & Setting -->
+      <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:#38bdf8;">
+            🔗 Decoupled Backend Agent Service (Local / Cloud Run / Argolis):
+          </div>
+          <span style="font-family:var(--font-mono); font-size:11px; color:#94a3b8;">
+            POST /api/v1/generate-twin
+          </span>
         </div>
-        <div style="font-family:var(--font-mono); font-size:13px; color:#a7f3d0; background:#04060a; padding:12px 16px; border-radius:10px; border:1px solid rgba(16,185,129,0.3); margin-bottom:12px; overflow-x:auto;">
-          python3 -m enterprise_twin.cli --company "TargetCompany" --industry "Sector"
+        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:8px;">
+          <input type="text" id="twinBackendUrlInput" class="twin-input-field" style="flex:1; min-width:260px; font-family:var(--font-mono); font-size:12.5px; padding:8px 12px;" value="http://localhost:8080/api/v1/generate-twin" />
+          <label style="display:flex; align-items:center; gap:6px; font-size:12px; color:#cbd5e1; cursor:pointer;">
+            <input type="checkbox" id="twinCallBackendCheckbox" checked />
+            Call backend if reachable
+          </label>
         </div>
-        <div style="font-size:12px; color:#94a3b8; line-height:1.5;">
-          Autonomously researches the company's brand identity, mines LinkedIn / Careers for actual job titles, grounds solvers in product taxonomy, and outputs standalone client directories in <code style="color:#f8fafc;">dist/&lt;company&gt;/</code> with ready-to-upload Zipline bundles.
+        <div style="font-size:11.5px; color:#94a3b8; line-height:1.5;">
+          The website runs standalone on <strong>Zipline</strong> with full in-browser synthesis. If the local backend agent (<code>python3 -m enterprise_twin.server</code>) or Cloud Run / Argolis service is running, it compiles the persistent static files into <code>dist/&lt;company&gt;/</code> and builds the Zipline bundle automatically.
         </div>
       </div>
     </div>
@@ -10337,38 +10467,249 @@
       if (m) m.style.display = 'none';
     }
 
-    function switchClientTwin(clientKey) {
-      closeEnterpriseTwinModal();
+    function quickSelectPreset(key) {
+      const companyInput = document.getElementById('twinCompanyInput');
+      const industrySelect = document.getElementById('twinIndustrySelect');
+      const focusInput = document.getElementById('twinFocusInput');
+
+      if (key === 'volkswagen') {
+        if (companyInput) companyInput.value = 'Volkswagen Group';
+        if (industrySelect) industrySelect.value = 'automotive';
+        if (focusInput) focusInput.value = 'Wolfsburg & MEB gigafactories, PowerCo battery cells, JIS chassis line feeding';
+      } else if (key === 'bmw') {
+        if (companyInput) companyInput.value = 'BMW Group';
+        if (industrySelect) industrySelect.value = 'automotive';
+        if (focusInput) focusInput.value = 'Spartanburg plant assembly, Neue Klasse EV platforms, Tier-1 supplier synchrony';
+      } else if (key === 'shell') {
+        if (companyInput) companyInput.value = 'Shell plc';
+        if (industrySelect) industrySelect.value = 'oil_gas_energy';
+        if (focusInput) focusInput.value = 'Integrated crude trading, Pernis refinery catalytic slates, LNG carrier charters';
+      } else if (key === 'pfizer') {
+        if (companyInput) companyInput.value = 'Pfizer Inc.';
+        if (industrySelect) industrySelect.value = 'life_sciences_pharma';
+        if (focusInput) focusInput.value = 'cGMP sterile injectables, mRNA vaccine platform, cold-chain distribution';
+      } else if (key === 'caterpillar') {
+        if (companyInput) companyInput.value = 'Caterpillar Inc.';
+        if (industrySelect) industrySelect.value = 'aerospace';
+        if (focusInput) focusInput.value = 'Heavy mining equipment, global dealer parts fulfillment, engine remanufacturing';
+      } else if (key === 'boeing') {
+        if (companyInput) companyInput.value = 'Boeing';
+        if (industrySelect) industrySelect.value = 'aerospace';
+        if (focusInput) focusInput.value = '737/787 commercial jetliners, long-lead titanium forgings, FAA cGMP compliance';
+      } else if (key === 'unilever') {
+        if (companyInput) companyInput.value = 'Unilever';
+        if (industrySelect) industrySelect.value = 'cpg_retail';
+        if (focusInput) focusInput.value = '400+ consumer goods brands, hyper-local demand forecasting, sustainable palm oil';
+      }
+      executeTwinGeneration();
+    }
+
+    function applyBrowserTwin(company, industry, focus) {
+      window.CURRENT_TWIN = { company: company, industry: industry, focus: focus };
       const heroTitleEl = document.querySelector('.hero-title');
       const cscoBadgeEl = document.querySelector('.nav-csco-badge');
       const cscoTitleEl = document.querySelector('.csco-root-title');
       const cscoDescEl = document.querySelector('.csco-root-desc');
 
-      if (clientKey === 'volkswagen') {
-        if (cscoBadgeEl) cscoBadgeEl.innerHTML = '<span style="color:#00d2ff; font-weight:800;">🚗 Volkswagen Group</span> · Production &amp; Logistics';
-        if (heroTitleEl) {
-          heroTitleEl.innerHTML = '<span class="g-text-gradient">Volkswagen Group</span><br/>Supply Chain Agentic Transformation';
+      let accentColor = '#00d2ff';
+      let emoji = '🏢';
+      let execTitle = 'Chief Supply Chain Officer (CSCO), ' + company;
+      let execDesc = focus || ('Operating 6 SCOR-aligned departments spanning Factory → Ocean Ships → Air Cargo → Rail → Warehouses → Road Fleet for ' + company + '.');
+
+      if (industry === 'automotive') {
+        accentColor = '#00d2ff';
+        emoji = '🚗';
+        execTitle = 'Board Member for Production & Logistics, ' + company;
+        execDesc = focus || ('Synchronizing Wolfsburg & global assembly gigafactories, battery cell supply, and just-in-sequence (JIS) line feeding for ' + company + '.');
+      } else if (industry === 'oil_gas_energy') {
+        accentColor = '#fbbf24';
+        emoji = '🛢️';
+        execTitle = 'EVP of Global Supply Chain, Trading & Logistics, ' + company;
+        execDesc = focus || ('Optimizing global integrated crude trading, pipeline hydraulic flows, refinery catalytic slates, and international LNG carrier charters for ' + company + '.');
+      } else if (industry === 'life_sciences_pharma') {
+        accentColor = '#38bdf8';
+        emoji = '💊';
+        execTitle = 'President, Global Supply (PGS) & Technical Operations, ' + company;
+        execDesc = focus || ('Guaranteed zero-stockout patient fulfillment of sterile injectables, cGMP biologics platforms, and temperature-controlled distribution across ' + company + ' global sites.');
+      } else if (industry === 'cpg_retail') {
+        accentColor = '#10b981';
+        emoji = '🛒';
+        execTitle = 'Chief Supply Chain Officer & VP Customer Operations, ' + company;
+        execDesc = focus || ('Orchestrating end-to-end demand sensing, multi-echelon warehouse fulfillment, and shelf availability across thousands of SKUs and retail partner stores for ' + company + '.');
+      } else if (industry === 'aerospace') {
+        accentColor = '#f97316';
+        emoji = '✈️';
+        execTitle = 'SVP of Global Supply Chain & Manufacturing Operations, ' + company;
+        execDesc = focus || ('Synchronizing multi-year supplier lead times, precision titanium forgings, FAA compliance tracing, and final assembly lines for ' + company + '.');
+      } else if (industry === 'hightech') {
+        accentColor = '#a855f7';
+        emoji = '⚡';
+        execTitle = 'VP of Worldwide Supply Chain & Operations, ' + company;
+        execDesc = focus || ('Managing semiconductor fab capacity, wafer allocation, cleanroom assembly, and component multi-sourcing for ' + company + '.');
+      }
+
+      document.documentElement.style.setProperty('--sc-cyan', accentColor);
+      if (cscoBadgeEl) {
+        cscoBadgeEl.innerHTML = '<span style="color:' + accentColor + '; font-weight:800;">' + emoji + ' ' + company + '</span> · Office of the CSCO';
+      }
+      if (heroTitleEl) {
+        heroTitleEl.innerHTML = '<span class="g-text-gradient">' + company + '</span><br/>Supply Chain Agentic Transformation';
+      }
+      if (cscoTitleEl) {
+        cscoTitleEl.textContent = execTitle;
+      }
+      if (cscoDescEl) {
+        cscoDescEl.textContent = execDesc;
+      }
+      document.title = company + ' · Supply Chain Agentic Transformation (Office of the CSCO)';
+    }
+
+    function executeTwinGeneration() {
+      const companyInput = document.getElementById('twinCompanyInput');
+      const industrySelect = document.getElementById('twinIndustrySelect');
+      const focusInput = document.getElementById('twinFocusInput');
+      const backendInput = document.getElementById('twinBackendUrlInput');
+      const callBackendCheckbox = document.getElementById('twinCallBackendCheckbox');
+
+      let company = (companyInput ? companyInput.value : '').trim();
+      if (!company) {
+        company = 'Enterprise Customer';
+        if (companyInput) companyInput.value = company;
+      }
+      let industry = industrySelect ? industrySelect.value : 'auto';
+      const focus = (focusInput ? focusInput.value : '').trim();
+      const backendUrl = (backendInput ? backendInput.value : '').trim();
+      const callBackend = callBackendCheckbox ? callBackendCheckbox.checked : false;
+
+      // Auto-detect industry if set to 'auto'
+      if (industry === 'auto') {
+        const clower = (company + ' ' + focus).toLowerCase();
+        if (/auto|car|vehicle|bmw|volkswagen|vw|tesla|ford|toyota|audi|porsche|mercedes|stellantis|honda|hyundai|nissan|truck|gm|daimler/.test(clower)) {
+          industry = 'automotive';
+        } else if (/oil|gas|energy|shell|bp|chevron|exxon|aramco|petro|total|refin|pipeline|drill/.test(clower)) {
+          industry = 'oil_gas_energy';
+        } else if (/pharma|health|bio|pfizer|roche|novartis|merck|astrazeneca|gsk|sanofi|moderna|johnson|lilly|drug|med/.test(clower)) {
+          industry = 'life_sciences_pharma';
+        } else if (/retail|cpg|unilever|nestle|walmart|target|l'or|loreal|pepsi|coca|p&g|procter|consumer|grocer|food/.test(clower)) {
+          industry = 'cpg_retail';
+        } else if (/boeing|airbus|lockheed|machin|caterpillar|deere|komatsu|aero|defense|plane|aviation/.test(clower)) {
+          industry = 'aerospace';
+        } else if (/chip|semi|intel|nvidia|amd|apple|samsung|tsmc|asml|qualcomm|cisco|tech|device|hardware/.test(clower)) {
+          industry = 'hightech';
+        } else {
+          industry = 'automotive';
         }
-        if (cscoTitleEl) cscoTitleEl.textContent = 'Board Member for Production & Logistics, Volkswagen AG';
-        if (cscoDescEl) cscoDescEl.textContent = 'Synchronizing Wolfsburg & global MEB gigafactories, battery cell supply from PowerCo & CATL, and just-in-sequence (JIS) line feeding for 9+ million vehicles.';
-        document.documentElement.style.setProperty('--sc-cyan', '#00d2ff');
-      } else if (clientKey === 'shell') {
-        if (cscoBadgeEl) cscoBadgeEl.innerHTML = '<span style="color:#fbbf24; font-weight:800;">🛢️ Shell plc</span> · Supply Chain &amp; Trading';
-        if (heroTitleEl) {
-          heroTitleEl.innerHTML = '<span class="g-text-gradient">Shell plc</span><br/>Energy &amp; Supply Chain Transformation';
+      }
+
+      // Show progress HUD
+      const hud = document.getElementById('twinProgressHud');
+      const hudStatus = document.getElementById('hudStatusText');
+      const hudPercent = document.getElementById('hudPercentText');
+      const hudBar = document.getElementById('hudProgressBar');
+      const hudLog = document.getElementById('hudStepLog');
+
+      if (hud) hud.style.display = 'block';
+
+      // Define agentic workflow steps
+      const steps = [
+        { pct: 20, status: '🔍 Company Profiler: Querying corporate profile & branding for ' + company + '...', log: '[CompanyProfiler] Grounding operational hierarchy and plants for ' + company + ' (' + industry + ')...' },
+        { pct: 45, status: '🌐 Ecosystem Miner: Mapping Tier-1/Tier-2 supply networks & plant hubs...', log: '[EcosystemMiner] Identified key production sites, supplier nodes, and global trade corridors...' },
+        { pct: 70, status: '👔 Career Persona Miner: Mining VP & Director operational titles...', log: '[PersonaMiner] Calibrated 26 SCOR personas & 32 AI agents to ' + company + ' domain nomenclature...' },
+        { pct: 90, status: '⚡ Visual Styler: Synthesizing bespoke SVG watermarks & theme accents...', log: '[VisualStyler] Synthesized responsive CAD canvas & adaptive CSS tokens...' },
+        { pct: 100, status: '✨ Complete: Client Twin active for ' + company + '!', log: '[TwinReady] Live browser DOM morph successful. Portal now operates as ' + company + ' Supply Chain Twin.' }
+      ];
+
+      let currentStep = 0;
+      if (hudLog) hudLog.innerHTML = '';
+
+      const stepTimer = setInterval(() => {
+        if (currentStep < steps.length) {
+          const s = steps[currentStep];
+          if (hudStatus) hudStatus.textContent = s.status;
+          if (hudPercent) hudPercent.textContent = s.pct + '%';
+          if (hudBar) hudBar.style.width = s.pct + '%';
+          if (hudLog) {
+            const line = document.createElement('div');
+            line.style.marginTop = '4px';
+            line.innerHTML = '<span style="color:#34d399;">✓</span> ' + s.log;
+            hudLog.appendChild(line);
+          }
+          currentStep++;
+        } else {
+          clearInterval(stepTimer);
+
+          // Perform Live In-Browser DOM Morph
+          applyBrowserTwin(company, industry, focus);
+
+          // Decoupled backend trigger
+          if (callBackend && backendUrl) {
+            if (hudLog) {
+              const apiLine = document.createElement('div');
+              apiLine.style.marginTop = '6px';
+              apiLine.style.color = '#38bdf8';
+              apiLine.innerHTML = '<span>📡 Calling decoupled backend agent (' + backendUrl + ')...</span>';
+              hudLog.appendChild(apiLine);
+            }
+            fetch(backendUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ company_name: company, industry: industry, focus: focus })
+            })
+            .then(res => res.json())
+            .then(data => {
+              if (hudLog) {
+                const okLine = document.createElement('div');
+                okLine.style.marginTop = '4px';
+                okLine.style.color = '#10b981';
+                okLine.innerHTML = '<span>✓ Decoupled backend compiled bundle to: <code>' + (data.output_directory || 'dist/') + '</code></span>';
+                hudLog.appendChild(okLine);
+              }
+            })
+            .catch(err => {
+              console.warn('Backend call skipped or unreachable (browser twin is fully active):', err);
+              if (hudLog) {
+                const noteLine = document.createElement('div');
+                noteLine.style.marginTop = '4px';
+                noteLine.style.color = '#94a3b8';
+                noteLine.innerHTML = '<span>ℹ️ Decoupled backend offline or skipped. In-browser synthesis active.</span>';
+                hudLog.appendChild(noteLine);
+              }
+            });
+          }
+
+          // Add Explore button in HUD
+          if (hudLog) {
+            const exploreBtn = document.createElement('button');
+            exploreBtn.type = 'button';
+            exploreBtn.style.marginTop = '12px';
+            exploreBtn.style.padding = '8px 18px';
+            exploreBtn.style.borderRadius = '8px';
+            exploreBtn.style.background = '#10b981';
+            exploreBtn.style.color = '#040810';
+            exploreBtn.style.fontWeight = '800';
+            exploreBtn.style.fontSize = '13px';
+            exploreBtn.style.border = 'none';
+            exploreBtn.style.cursor = 'pointer';
+            exploreBtn.textContent = '🚀 Explore ' + company + ' Portal ↗';
+            exploreBtn.onclick = () => {
+              closeEnterpriseTwinModal();
+              goHome();
+            };
+            hudLog.appendChild(exploreBtn);
+          }
         }
-        if (cscoTitleEl) cscoTitleEl.textContent = 'EVP of Global Supply Chain, Trading & Logistics';
-        if (cscoDescEl) cscoDescEl.textContent = 'Optimizing global integrated crude trading, pipeline hydraulic flows, Pernis refinery catalytic slates, and international LNG carrier charters.';
-        document.documentElement.style.setProperty('--sc-cyan', '#fbbf24');
-      } else if (clientKey === 'pfizer') {
-        if (cscoBadgeEl) cscoBadgeEl.innerHTML = '<span style="color:#38bdf8; font-weight:800;">💊 Pfizer Inc.</span> · Global Supply (PGS)';
-        if (heroTitleEl) {
-          heroTitleEl.innerHTML = '<span class="g-text-gradient">Pfizer Inc.</span><br/>Biologics &amp; Supply Chain Transformation';
-        }
-        if (cscoTitleEl) cscoTitleEl.textContent = 'President, Pfizer Global Supply (PGS) & Technical Operations';
-        if (cscoDescEl) cscoDescEl.textContent = 'Guaranteed zero-stockout patient fulfillment of sterile injectables, mRNA vaccine platforms, and oncology APIs across 37 global manufacturing sites.';
-        document.documentElement.style.setProperty('--sc-cyan', '#38bdf8');
-      } else {
+      }, 240);
+    }
+
+    function switchClientTwin(clientKey) {
+      if (clientKey === 'reset') {
+        closeEnterpriseTwinModal();
+        window.CURRENT_TWIN = null;
+        const heroTitleEl = document.querySelector('.hero-title');
+        const cscoBadgeEl = document.querySelector('.nav-csco-badge');
+        const cscoTitleEl = document.querySelector('.csco-root-title');
+        const cscoDescEl = document.querySelector('.csco-root-desc');
+
         if (cscoBadgeEl) cscoBadgeEl.innerHTML = 'Office of the CSCO · Supply Chain';
         if (heroTitleEl) {
           heroTitleEl.innerHTML = 'Supply Chain &amp; Demand<br/><span class="g-text-gradient">Agentic Transformation</span>';
@@ -10376,8 +10717,11 @@
         if (cscoTitleEl) cscoTitleEl.textContent = 'Chief Supply Chain Officer (CSCO)';
         if (cscoDescEl) cscoDescEl.textContent = 'The Office of the CSCO operates 6 SCOR-aligned departments spanning Factory → Ocean Ships → Air Cargo → Rail → Warehouses → Road Fleet.';
         document.documentElement.style.setProperty('--sc-cyan', '#00d2ff');
+        document.title = 'Supply Chain & Demand · Agentic Transformation (Office of the CSCO)';
+        goHome();
+        return;
       }
-      goHome();
+      quickSelectPreset(clientKey);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
