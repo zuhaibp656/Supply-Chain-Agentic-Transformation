@@ -3290,9 +3290,6 @@ def build_html() -> str:
       <img data-asset="gemini_enterprise_dark.png" alt="Gemini Enterprise" class="gemini-logo" />
       <div class="nav-divider"></div>
       <span class="nav-csco-badge">Office of the CSCO · Supply Chain</span>
-      <span style="font-size:12px; font-weight:700; color:#7dd3fc; background:rgba(0,210,255,0.1); border:1px solid rgba(0,210,255,0.3); padding:4px 11px; border-radius:999px; margin-left:4px;">
-        Built by Zuhaib Parvez &amp; Suman Banerjee
-      </span>
     </div>
 
     <div class="nav-right">
@@ -3351,10 +3348,6 @@ def build_html() -> str:
         <!-- Single Clean Gemini Enterprise Lockup (No Duplicate Sparkle Logo) -->
         <div class="hero-logo-lockup">
           <img data-asset="gemini_enterprise_dark.png" alt="Gemini Enterprise" class="gemini-hero" />
-        </div>
-
-        <div class="authors-credit-pill" style="margin-bottom: 18px;">
-          <span>✦ Built by <strong>Zuhaib Parvez</strong> &amp; <strong>Suman Banerjee</strong> · Office of the CSCO Agentic Transformation</span>
         </div>
 
         <h1 class="hero-title">
@@ -9586,9 +9579,6 @@ def build_html() -> str:
             <span>Back to Home &amp; CSCO Org Chart</span>
           </button>
           <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
-            <span class="authors-credit-pill" style="padding:5px 14px; font-size:12px;">
-              ✦ Built by <strong>Zuhaib Parvez</strong> &amp; <strong>Suman Banerjee</strong>
-            </span>
             <button type="button" class="switch-pill" style="border-color:rgba(16,185,129,0.45); color:#6ee7b7;" onclick="openMindMapPage('mindmap', null, null, true)">
               🧠 Switch to Neural Mind Map &rarr;
             </button>
@@ -9890,9 +9880,6 @@ def build_html() -> str:
             <span>Back to Home &amp; CSCO Org Chart</span>
           </button>
           <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
-            <span class="authors-credit-pill" style="padding:5px 14px; font-size:12px;">
-              ✦ Built by <strong>Zuhaib Parvez</strong> &amp; <strong>Suman Banerjee</strong>
-            </span>
             <button type="button" class="switch-pill" style="border-color:rgba(0,210,255,0.45); color:#7dd3fc;" onclick="openPeriodicTablePage('all', null, true)">
               🧪 Switch to Periodic Table &rarr;
             </button>
