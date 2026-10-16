@@ -59,60 +59,22 @@ def build_html() -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gemini Enterprise — Supply Chain &amp; Demand (Office of the CSCO)</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050811'/%3E%3Cpolygon points='32,10 52,21 52,43 32,54 12,43 12,21' fill='rgba(0,210,255,0.18)' stroke='%2300d2ff' stroke-width='3'/%3E%3Cpath d='M32 10 L32 32 L52 21 M32 32 L12 21 M32 32 L32 54' stroke='%2334d399' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='32' cy='32' r='4.5' fill='%23ffffff'/%3E%3C/svg%3E" />
-  <!-- Plus Jakarta Sans, Inter, Space Grotesk, JetBrains Mono & Google Sans Typography -->
+  <!-- Google Sans, Google Sans Text, Google Sans Display, Inter & JetBrains Mono Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Google+Sans+Display:400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Google+Sans+Display:wght@400;500;700;800&family=Google+Sans+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    @font-face {
-      font-family: 'Google Sans';
-      font-style: normal;
-      font-weight: 400;
-      src: url(https://fonts.gstatic.com/s/googlesans/v70/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrwEIJllpyw.ttf) format('truetype');
-    }
-    @font-face {
-      font-family: 'Google Sans';
-      font-style: normal;
-      font-weight: 500;
-      src: url(https://fonts.gstatic.com/s/googlesans/v70/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrw2IJllpyw.ttf) format('truetype');
-    }
-    @font-face {
-      font-family: 'Google Sans';
-      font-style: normal;
-      font-weight: 700;
-      src: url(https://fonts.gstatic.com/s/googlesans/v70/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrzjJ5llpyw.ttf) format('truetype');
-    }
-    @font-face {
-      font-family: 'Google Sans Display';
-      font-style: normal;
-      font-weight: 400;
-      src: url(https://fonts.gstatic.com/s/googlesansdisplay/v23/ea8FacM9Wef3EJPWRrHjgE4B6CnlZxHVDv79pA.ttf) format('truetype');
-    }
-    @font-face {
-      font-family: 'Google Sans Display';
-      font-style: normal;
-      font-weight: 500;
-      src: url(https://fonts.gstatic.com/s/googlesansdisplay/v23/ea8IacM9Wef3EJPWRrHjgE4B6CnlZxHVBg3etBD7SQ.ttf) format('truetype');
-    }
-    @font-face {
-      font-family: 'Google Sans Display';
-      font-style: normal;
-      font-weight: 700;
-      src: url(https://fonts.gstatic.com/s/googlesansdisplay/v23/ea8IacM9Wef3EJPWRrHjgE4B6CnlZxHVBkHetBD7SQ.ttf) format('truetype');
-    }
-
     :root {
       --bg-page: #04060a;
       --bg-surface: #0b0f19;
       --bg-card: #101726;
       --bg-card-hover: #162033;
       --text-primary: #ffffff;
-      --text-secondary: #e2e8f0;
-      --text-muted: #cbd5e1;
-      --border-subtle: rgba(255, 255, 255, 0.11);
-      --border-strong: rgba(255, 255, 255, 0.22);
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border-subtle: rgba(255, 255, 255, 0.09);
+      --border-strong: rgba(255, 255, 255, 0.18);
 
       /* Official Google + Supply Chain Vibrant Palette */
       --g-blue: #4285f4;
@@ -124,9 +86,9 @@ def build_html() -> str:
       --sc-amber: #ff8c00;
       --sc-violet: #a142f4;
 
-      --font-sans: 'Plus Jakarta Sans', 'Inter', 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-display: 'Plus Jakarta Sans', 'Space Grotesk', 'Google Sans Display', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --font-sans: 'Google Sans Text', 'Google Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Google Sans Display', 'Google Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Roboto Mono', 'SF Mono', Menlo, Consolas, monospace;
       --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
       --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -9161,9 +9123,9 @@ def build_html() -> str:
               <div class="persona-badge" style="background: rgba(168,85,247,0.16); color: #c084fc; border: 1px solid rgba(168,85,247,0.45);">
                 <span>🏗️ Google Cloud · Vertex AI Agent Engine · BigQuery · Cloud Spanner · AlloyDB · Google Maps · OR-Tools</span>
               </div>
-              <h1 class="persona-page-title">Enterprise Supply Chain Agentic Reference Architecture</h1>
+              <h1 class="persona-page-title">Enterprise Supply Chain Reference Architecture</h1>
               <p class="persona-page-summary">
-                ${formatRichText('How Gemini Enterprise, High-Code Vertex AI Agent Engine (ADK), BigQuery & Cloud Spanner Graph 3-Segment Supply Chain Digital Twin, AlloyDB pgvector, Google Maps Platform, and Google OR-Tools 100% deterministic mathematical solvers orchestrate 32 supply chain agents (4 Cross-Persona Universal + 28 Domain Agents) and 96 collaborating sub-agents across Factory, Ocean, Air, Rail, Warehouse, and Road Fleet.')}
+                Five-layer reference architecture synchronizing enterprise ERP/WMS/TMS systems of record, real-time multi-modal telemetry, deterministic solvers, and autonomous A2A sub-agent swarms.
               </p>
             </div>
 
@@ -9178,7 +9140,7 @@ def build_html() -> str:
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
               <div>
                 <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#00d2ff;">
-                  ✦ End-to-End Multi-Agent System Topology (ASCM SCOR Plan · Source · Make · Fulfill · Deliver · Return/Enable)
+                  ✦ End-to-End Multi-Agent System Topology
                 </div>
                 <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#f8fafc; margin-top:2px;">
                   BigQuery + Spanner + AlloyDB Twin &rarr; 4 Universal + 28 Domain Agents &rarr; OR-Tools &amp; Maps &rarr; A2UI Control Tower
@@ -9206,7 +9168,7 @@ def build_html() -> str:
                 <rect x="20" y="18" width="1080" height="84" rx="14" fill="rgba(56,189,248,0.11)" stroke="#38bdf8" stroke-width="2" />
                 <text x="38" y="44" fill="#38bdf8" font-size="12.5" font-weight="700">LAYER 05 · A2UI CONTROL TOWER + 4 CROSS-PERSONA UNIVERSAL AGENTS (SHARED ACROSS ALL 26 ROLES)</text>
                 <text x="38" y="68" fill="#ffffff" font-size="13.5" font-weight="700">🌐 TowerMind Control Tower Copilot   ·   🌐 StormShield WeatherNext 3 War-Room   ·   🌐 DataCleanse Master Data Steward   ·   🌐 MarginBridge CSCO-to-CFO Twin</text>
-                <text x="38" y="90" fill="#cbd5e1" font-size="12.5">Interactive Multi-Modal (Ship / Air / Rail / Road) &amp; 3D LIFO / ULD / Slotting / Plant OEE CAD Studios · Looker Semantic Layer · Signed Write-Back</text>
+                <text x="38" y="90" fill="#cbd5e1" font-size="12.5">Interactive Multi-Modal &amp; 3D CAD Studios · Looker Semantic Layer · Signed ERP/WMS/TMS Write-Back</text>
 
                 <!-- Band 2: 6 SCOR Vertical Agent Swarms (28 Domain Agents) -->
                 <rect x="20" y="118" width="1080" height="150" rx="14" fill="rgba(168,85,247,0.10)" stroke="#a855f7" stroke-width="2.2" />
@@ -9243,30 +9205,30 @@ def build_html() -> str:
 
                 <!-- Band 4: Enterprise Systems of Record & Telemetry Ingestion -->
                 <rect x="20" y="398" width="1080" height="92" rx="14" fill="rgba(15,23,42,0.96)" stroke="#38bdf8" stroke-width="1.8" />
-                <text x="38" y="424" fill="#38bdf8" font-size="12.5" font-weight="700">LAYER 01 · ENTERPRISE SYSTEMS OF RECORD, MULTI-MODAL FEEDS &amp; IOT TELEMETRY (APIGEE + PUB/SUB + DATAFLOW)</text>
-                <text x="38" y="450" fill="#f1f5f9" font-size="12.8">SAP S/4HANA, IBP, EWM, TM, Ariba &amp; GTS · Oracle OTM · Kinaxis · Siemens Opcenter MES &amp; Teamcenter PLM · Manhattan Active WMS · Blue Yonder TMS</text>
-                <text x="38" y="474" fill="#cbd5e1" font-size="12.2">CargoWise · IATA ONE Record e-AWB · Spire Ocean AIS · FlightAware ADS-B · Railinc EDI 404 · Project44 · FourKites · Samsara ELD</text>
+                <text x="38" y="424" fill="#38bdf8" font-size="12.5" font-weight="700">LAYER 01 · SYSTEMS OF RECORD &amp; TELEMETRY (APIGEE + PUB/SUB + DATAFLOW)</text>
+                <text x="38" y="450" fill="#f1f5f9" font-size="12.8">SAP S/4HANA (MM/PP/SD/EWM/TM), SAP IBP, SAP Ariba · Oracle OTM · Manhattan Active WMS · Blue Yonder TMS · Siemens MES</text>
+                <text x="38" y="474" fill="#cbd5e1" font-size="12.2">CargoWise · IATA ONE Record · Spire Ocean AIS · FlightAware ADS-B · Railinc EDI 404 · Project44 · Samsara ELD</text>
               </svg>
             </div>
           </div>
 
           <!-- Interactive SCOR Vertical Filter Bar on Architecture Page -->
           <div class="dir-controls-bar" style="margin-bottom:28px;">
-            <div style="font-family:var(--font-display); font-size:17px; font-weight:800; color:#f8fafc;">
-              Filter Architecture Specifications by SCOR Vertical:
+            <div style="font-family:var(--font-display); font-size:16px; font-weight:700; color:#f8fafc;">
+              Filter Architecture Specifications:
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
               <button type="button"
                       class="switch-pill ${currentArchVerticalFilter === 'all' ? 'active' : ''}"
                       style="${currentArchVerticalFilter === 'all' ? 'background:#00d2ff; color:#040810; border-color:#00d2ff; font-weight:700;' : ''}"
                       onclick="filterArchVertical('all')">
-                All 32 Agents (4 Universal + 28 Domain)
+                All 32 Agents
               </button>
               <button type="button"
                       class="switch-pill ${currentArchVerticalFilter === 'universal' ? 'active' : ''}"
                       style="${currentArchVerticalFilter === 'universal' ? 'background:#38bdf8; color:#040810; border-color:#38bdf8; font-weight:700;' : ''}"
                       onclick="filterArchVertical('universal')">
-                🌐 4 Universal Agents
+                🌐 4 Universal Core
               </button>
               ${Object.values(DEPARTMENTS).map(d => {
                 const count = Object.values(AGENTS).filter(a => !a.isUniversal && a.deptId === d.id).length;
@@ -9284,65 +9246,56 @@ def build_html() -> str:
 
           ${(currentArchVerticalFilter === 'all' || currentArchVerticalFilter === 'universal') ? `
           <!-- 4 Cross-Persona Universal Agents Architecture Matrix -->
-          <div style="margin-bottom: 42px;">
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="margin-bottom: 36px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
               <span class="accent-dot" style="background:#38bdf8; box-shadow:0 0 12px #38bdf8;"></span>
-              <h3 style="font-family:var(--font-display); font-size:24px; font-weight:800; color:#f8fafc;">
-                Cross-Persona Universal Control Tower Agents (4 Universal Agents · Used by All 26 Personas)
+              <h3 style="font-family:var(--font-display); font-size:22px; font-weight:700; color:#f8fafc;">
+                Cross-Persona Universal Core Agents (Shared Across All 26 Roles)
               </h3>
             </div>
             <div class="dir-persona-grid">
               ${UNIVERSAL_AGENT_IDS.map(uid => {
                 const ag = AGENTS[uid];
                 if (!ag) return '';
-                const archDropId = `archSub_${ag.id}`;
                 return `
-                  <div class="dir-persona-card" style="--dept-accent:#38bdf8;">
+                  <div class="dir-persona-card" style="--dept-accent:#38bdf8; display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
                       <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px;">
                         <div>
-                          <div style="font-size:12px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">
-                            🌐 Universal Agent · All 26 Personas
+                          <div style="font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">
+                            🌐 Universal Core · All 26 Roles
                           </div>
-                          <div style="font-family:var(--font-display); font-size:20px; font-weight:800; color:#f8fafc;">
+                          <div style="font-family:var(--font-display); font-size:19px; font-weight:700; color:#f8fafc; line-height:1.25;">
                             ${ag.name}
                           </div>
                         </div>
-                        <span class="sc-tech-pill" style="border-color:#38bdf866; color:#38bdf8; font-weight:700;">${ag.badge}</span>
+                        <span class="sc-tech-pill" style="border-color:#38bdf866; color:#38bdf8; font-weight:700; font-size:12px;">${ag.badge}</span>
                       </div>
-                      <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.66; margin-bottom:14px;">${formatRichText(ag.shortDesc)}</p>
-                      <div style="font-size:12px; font-weight:700; text-transform:uppercase; color:#8ab4f8; margin-bottom:5px;">Solver &amp; Reasoning Stack</div>
-                      <div style="font-size:14.5px; color:#f1f5f9; line-height:1.6; margin-bottom:12px;">${formatRichText(ag.solverStack || '')}</div>
 
-                      <!-- Smooth Dropdown Drawer for 3 A2A Sub-Agents & Write-Back -->
-                      <div id="${archDropId}" class="sc-dropdown-block">
-                        <button type="button" class="sc-dropdown-btn" onclick="toggleScDropdown('${archDropId}')">
-                          <span>🔧 Inspect 3 Collaborating A2A Sub-Agents &amp; API Write-Back</span>
-                          <span class="sc-dropdown-chevron">▾</span>
-                        </button>
-                        <div class="sc-dropdown-body">
-                          <div class="sc-dropdown-inner">
-                            <ul class="clean-list" style="margin-bottom:12px;">
-                              ${(ag.subAgents || []).map(sa => `
-                                <li style="font-size:13.5px; margin-bottom:6px;">
-                                  <span class="bullet" style="color:#38bdf8;">▸</span>
-                                  <span><strong style="color:#f8fafc;">${sa.name}:</strong> ${formatRichText(sa.role)}</span>
-                                </li>
-                              `).join('')}
-                            </ul>
-                            <div style="font-size:12.5px; font-family:var(--font-mono); color:#d1fae5; background:rgba(16,185,129,0.09); border:1px solid rgba(16,185,129,0.28); padding:10px 12px; border-radius:8px;">
-                              ${ag.apiWriteback || ''}
-                            </div>
-                          </div>
+                      <p style="font-size:14px; color:#cbd5e1; line-height:1.56; margin-bottom:14px;">${ag.shortDesc}</p>
+
+                      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:12px 14px; margin-bottom:14px; display:flex; flex-direction:column; gap:8px;">
+                        <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                          <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">SOLVER</span>
+                          <span style="color:#f1f5f9; font-family:var(--font-mono); font-size:12px;">${ag.solverStack || ''}</span>
+                        </div>
+                        <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                          <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">WRITE-BACK</span>
+                          <span style="color:#a7f3d0; font-family:var(--font-mono); font-size:12px;">${ag.apiWriteback || ''}</span>
+                        </div>
+                        <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                          <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">A2A SWARM</span>
+                          <span style="color:#cbd5e1; font-size:12px;">${(ag.subAgents || []).map(sa => `<strong style="color:#f8fafc;">${sa.name}</strong>`).join(' · ')}</span>
                         </div>
                       </div>
                     </div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; padding-top:12px; margin-top:12px; border-top:1px solid rgba(148,163,184,0.16);">
-                      <button type="button" class="switch-pill" style="border-color:#38bdf866; color:#38bdf8;" onclick="openAgentPage('${ag.id}', true, event)">
-                        Executive Pitch &amp; Demo &rarr;
+
+                    <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08);">
+                      <button type="button" class="switch-pill" style="border-color:#38bdf855; color:#38bdf8; font-size:13px; font-weight:600;" onclick="openAgentBlueprintPage('${ag.id}', true, event)">
+                        Technical Blueprint &rarr;
                       </button>
-                      <button type="button" class="switch-pill" style="border-color:#c084fc66; color:#e9d5ff;" onclick="openAgentBlueprintPage('${ag.id}', true, event)">
-                        🏗️ High-Code Blueprint &rarr;
+                      <button type="button" style="font-size:12.5px; font-weight:600; color:#94a3b8;" onclick="openAgentPage('${ag.id}', true, event)">
+                        Executive Pitch ↗
                       </button>
                     </div>
                   </div>
@@ -9354,19 +9307,21 @@ def build_html() -> str:
 
           <!-- Complete 28-Domain-Agent Architecture Matrix by 6 SCOR Verticals -->
           ${currentArchVerticalFilter !== 'universal' ? `
-          <h2 class="block-title">28 Domain-Specific Agent Specifications Across 6 SCOR Verticals</h2>
-          <p class="block-subtitle">Select any Agent to open its <span class="sc-hl-underline">Executive Selling Studio</span> (<code>#agent/&lt;id&gt;</code>) or its dedicated <span class="sc-hl-underline">High-Code Engineering Blueprint</span> (<code>#blueprint/&lt;id&gt;</code>).</p>
+          <div style="margin-bottom: 24px;">
+            <h2 class="block-title" style="font-size:22px; margin-bottom:4px;">Domain-Specific Agent Architectures</h2>
+            <p class="block-subtitle" style="font-size:14.5px; color:#94a3b8; margin-bottom:24px;">Inspected specifications across deterministic solvers, A2A sub-agent swarms, and enterprise systems of record.</p>
+          </div>
 
           ${Object.values(DEPARTMENTS)
             .filter(dept => currentArchVerticalFilter === 'all' || dept.id === currentArchVerticalFilter)
             .map(dept => {
             const deptAgents = Object.values(AGENTS).filter(a => !a.isUniversal && a.deptId === dept.id);
             return `
-            <div style="margin-bottom: 38px;">
-              <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+            <div style="margin-bottom: 34px;">
+              <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
                 <span class="accent-dot" style="background:${dept.color}; box-shadow:0 0 12px ${dept.color};"></span>
-                <h3 style="font-family:var(--font-display); font-size:24px; font-weight:800; color:#f8fafc;">
-                  ${dept.scorBadge} · ${dept.fullName} (${deptAgents.length} Domain Agents · ${deptAgents.length * 3} A2A Sub-Agents)
+                <h3 style="font-family:var(--font-display); font-size:21px; font-weight:700; color:#f8fafc;">
+                  ${dept.scorBadge} · ${dept.fullName} (${deptAgents.length} Agents)
                 </h3>
               </div>
 
@@ -9374,61 +9329,45 @@ def build_html() -> str:
                 ${deptAgents.map(ag => {
                   const sell = getAgentSellingMeta(ag, dept);
                   const primaryP = sell.usedByPersonas[0];
-                  const archDropId = `archSub_${ag.id}`;
                   return `
-                    <div class="dir-persona-card" style="--dept-accent:${dept.color};">
+                    <div class="dir-persona-card" style="--dept-accent:${dept.color}; display:flex; flex-direction:column; justify-content:space-between;">
                       <div>
                         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px;">
                           <div>
-                            <div style="font-size:12px; font-weight:700; color:${dept.color}; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">
+                            <div style="font-size:11.5px; font-weight:700; color:${dept.color}; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">
                               ${primaryP ? `${primaryP.icon} ${primaryP.name}` : dept.name}
                             </div>
-                            <div style="font-family:var(--font-display); font-size:20px; font-weight:800; color:#f8fafc;">
+                            <div style="font-family:var(--font-display); font-size:19px; font-weight:700; color:#f8fafc; line-height:1.25;">
                               ${ag.name}
                             </div>
                           </div>
-                          <span class="sc-tech-pill" style="border-color:${dept.color}66; color:${dept.color}; font-weight:700;">${ag.badge}</span>
+                          <span class="sc-tech-pill" style="border-color:${dept.color}66; color:${dept.color}; font-weight:700; font-size:12px;">${ag.badge}</span>
                         </div>
 
-                        <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.66; margin-bottom:14px;">${formatRichText(ag.shortDesc)}</p>
+                        <p style="font-size:14px; color:#cbd5e1; line-height:1.56; margin-bottom:14px;">${ag.shortDesc}</p>
 
-                        <div style="font-size:12px; font-weight:700; text-transform:uppercase; color:#8ab4f8; margin-bottom:5px;">
-                          Solver &amp; Reasoning Stack
-                        </div>
-                        <div style="font-size:14.5px; color:#f1f5f9; line-height:1.6; margin-bottom:12px;">
-                          ${formatRichText(ag.solverStack || '')}
-                        </div>
-
-                        <!-- Smooth Dropdown Drawer for 3 Collaborating A2A Sub-Agents & Signed API Write-Back -->
-                        <div id="${archDropId}" class="sc-dropdown-block">
-                          <button type="button" class="sc-dropdown-btn" onclick="toggleScDropdown('${archDropId}')">
-                            <span>🔧 Inspect 3 Collaborating A2A Sub-Agents &amp; API Write-Back</span>
-                            <span class="sc-dropdown-chevron">▾</span>
-                          </button>
-                          <div class="sc-dropdown-body">
-                            <div class="sc-dropdown-inner">
-                              <ul class="clean-list" style="margin-bottom:12px;">
-                                ${(ag.subAgents || []).map(sa => `
-                                  <li style="font-size:13.5px; margin-bottom:6px;">
-                                    <span class="bullet" style="color:${dept.color};">▸</span>
-                                    <span><strong style="color:#f8fafc;">${sa.name}:</strong> ${formatRichText(sa.role)}</span>
-                                  </li>
-                                `).join('')}
-                              </ul>
-                              <div style="font-size:12.5px; font-family:var(--font-mono); color:#d1fae5; background:rgba(16,185,129,0.09); border:1px solid rgba(16,185,129,0.28); padding:10px 12px; border-radius:8px;">
-                                ${ag.apiWriteback || ''}
-                              </div>
-                            </div>
+                        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:12px 14px; margin-bottom:14px; display:flex; flex-direction:column; gap:8px;">
+                          <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                            <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">SOLVER</span>
+                            <span style="color:#f1f5f9; font-family:var(--font-mono); font-size:12px;">${ag.solverStack || ''}</span>
+                          </div>
+                          <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                            <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">WRITE-BACK</span>
+                            <span style="color:#a7f3d0; font-family:var(--font-mono); font-size:12px;">${ag.apiWriteback || ''}</span>
+                          </div>
+                          <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                            <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">A2A SWARM</span>
+                            <span style="color:#cbd5e1; font-size:12px;">${(ag.subAgents || []).map(sa => `<strong style="color:#f8fafc;">${sa.name}</strong>`).join(' · ')}</span>
                           </div>
                         </div>
                       </div>
 
-                      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; padding-top:12px; margin-top:12px; border-top:1px solid rgba(148,163,184,0.16);">
-                        <button type="button" class="switch-pill" style="border-color:${dept.color}66; color:${dept.color};" onclick="openAgentPage('${ag.id}', true, event)">
-                          Executive Pitch &amp; Demo &rarr;
+                      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08);">
+                        <button type="button" class="switch-pill" style="border-color:${dept.color}55; color:${dept.color}; font-size:13px; font-weight:600;" onclick="openAgentBlueprintPage('${ag.id}', true, event)">
+                          Technical Blueprint &rarr;
                         </button>
-                        <button type="button" class="switch-pill" style="border-color:#c084fc66; color:#e9d5ff;" onclick="openAgentBlueprintPage('${ag.id}', true, event)">
-                          🏗️ High-Code Blueprint &rarr;
+                        <button type="button" style="font-size:12.5px; font-weight:600; color:#94a3b8;" onclick="openAgentPage('${ag.id}', true, event)">
+                          Executive Pitch ↗
                         </button>
                       </div>
                     </div>
@@ -9707,16 +9646,15 @@ def build_html() -> str:
           </div>
         </div>
 
-        <!-- Clean, Calm Header Matching Reference Screenshot -->
-        <div style="padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.12); margin-bottom: 22px;">
-          <h1 style="font-family:var(--font-display); font-size:clamp(32px, 3.6vw, 44px); font-weight:800; letter-spacing:-0.025em; color:#ffffff;">
+        <!-- Clean, Minimal Header -->
+        <div style="padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.10); margin-bottom: 20px;">
+          <h1 style="font-family:var(--font-display); font-size:clamp(30px, 3.2vw, 42px); font-weight:800; letter-spacing:-0.025em; color:#ffffff; margin-bottom:6px;">
             The Periodic Table of Agents
           </h1>
+          <p style="font-size:15px; color:#94a3b8; line-height:1.6; max-width:960px;">
+            Enterprise catalog of 32 autonomous AI agents across 7 SCOR domains and 26 personas. Click any tile to inspect solvers, ERP write-backs, and human-in-the-loop controls.
+          </p>
         </div>
-
-        <p style="font-size:16px; color:#cbd5e1; line-height:1.72; max-width:1080px; margin-bottom:10px;">
-          The Office of the CSCO enterprise catalog — <strong style="color:#fff;">32 AI agents across 7 SCOR domains &amp; 26 supply chain personas</strong> — laid out as a periodic table. Each tile is one agent, positioned in its <strong style="color:#fff;">domain group</strong> and colored by domain. The <strong style="color:#fff;">layer dot</strong> marks how it is built (OR-Tools Solver &rarr; Vertex AI ADK &rarr; BigQuery ML + TimesFM &rarr; Spanner Graph), the <strong style="color:#fff;">corner icon</strong> marks its trigger (⚡ event · 💬 chat · ⏱️ scheduled), and a <strong style="color:#fff;">shield</strong> (🛡️) marks a human-in-the-loop checkpoint. Switch domains with the tabs, or click any tile to smoothly expand its full specification.
-        </p>
 
         <!-- Clean Pill Tabs -->
         <div class="pt-top-tabs">
@@ -9740,16 +9678,15 @@ def build_html() -> str:
         </div>
 
         <!-- Subheader Row with Right Stat Badges -->
-        <div class="pt-subheader-bar">
+        <div class="pt-subheader-bar" style="margin-bottom:18px;">
           <div>
-            <h2 style="font-family:var(--font-display); font-size:21px; font-weight:700; color:#ffffff; margin-bottom:4px;">
+            <h2 style="font-family:var(--font-display); font-size:18px; font-weight:700; color:#e2e8f0; margin-bottom:0;">
               ${currentPeriodicFilter === 'by_persona'
-                ? 'Persona-to-Agent Periodic View (26 Supply Chain Roles)'
-                : 'The Periodic Table of Supply Chain & Demand Agents'}
+                ? 'Persona-to-Agent Mapping (26 Supply Chain Roles)'
+                : (currentPeriodicFilter === 'all'
+                    ? 'All 7 SCOR Domains &amp; Universal Core'
+                    : (PERIODIC_GROUPS.find(g => g.id === currentPeriodicFilter)?.title || 'Domain Agents'))}
             </h2>
-            <p style="font-size:14px; color:#94a3b8;">
-              Click any element tile to smoothly expand its workflow inline and inspect its specification on the right.
-            </p>
           </div>
           <div class="pt-stat-badges">
             <div class="pt-stat-badge"><strong>32</strong>agents</div>
@@ -9941,7 +9878,7 @@ def build_html() -> str:
           title: 'Full-Screen Hero Landing (#)',
           sub: '60fps Supply Chain Canvas & Thesis',
           color: '#38bdf8',
-          whatOpens: 'Displays kinetic Supply Chain animations in the outer gutters and the core CSCO executive thesis in the center. Clicking "Explore CSCO Organization" smoothly scrolls down to the 6-Vertical CSCO Org Chart.',
+          whatOpens: '60fps kinetic supply chain canvas introducing the CSCO executive transformation thesis.',
           actionLabel: 'Open Hero Landing &rarr;',
           actionFn: "goHome()"
         },
@@ -9950,7 +9887,7 @@ def build_html() -> str:
           title: 'CSCO Org Chart (#orgChart)',
           sub: '6 SCOR Verticals + 4 Universal Core Agents',
           color: '#10b981',
-          whatOpens: 'Presents the Chief Supply Chain Officer root card, the 6 ASCM SCOR Vertical cards (Plan, Source, Make, Fulfill, Deliver, Return & Enable), the 4 Cross-Persona Universal Agents, and the 4 End-to-End Value Chains.',
+          whatOpens: 'Interactive tree organizing the 6 SCOR verticals, 26 personas, and 4 cross-persona universal agents.',
           actionLabel: 'Open CSCO Org Chart &rarr;',
           actionFn: "goToOrgChart()"
         },
@@ -9959,7 +9896,7 @@ def build_html() -> str:
           title: 'Department Showcase Drawer',
           sub: 'Animated Genie Expansion on Vertical Click',
           color: '#a142f4',
-          whatOpens: 'Clicking any of the 6 SCOR Vertical cards smoothly expands a dedicated showcase drawer comparing Manual Toil vs. Agentic Impact and listing that vertical’s 4–6 Personas and Domain AI Agents.',
+          whatOpens: 'Expands vertical workflows comparing manual toil against agentic automation with direct persona routing.',
           actionLabel: 'Try on CSCO Org Chart &rarr;',
           actionFn: "goToOrgChart()"
         },
@@ -9968,7 +9905,7 @@ def build_html() -> str:
           title: 'Dedicated Persona Page (#persona/id)',
           sub: '26 Supply Chain Roles · Before vs. After Toil',
           color: '#00d2ff',
-          whatOpens: 'Clicking any Persona opens their dedicated transformation page featuring their Executive Mandate, a time-slotted Day-in-the-Life schedule (Manual Toil vs. Gemini Agentic Flow), and their assigned Domain + Universal Agents.',
+          whatOpens: 'Deep-dive role view with side-by-side toil schedules and mapped domain agents.',
           actionLabel: 'Open Sample Persona Page &rarr;',
           actionFn: "openPersonaPage('demand_planning_dir', true, event)"
         },
@@ -9977,7 +9914,7 @@ def build_html() -> str:
           title: 'Executive Agent Studio (#agent/id)',
           sub: '32 Agents · ROI Cards, Pitch & Live 3D CAD',
           color: '#ff8c00',
-          whatOpens: 'Clicking any Agent opens its Executive Selling Page: 4 headline ROI stat cards, 3 executive pitch cards (Problem, Solution, Outcome), an interactive CAD + MP4 video simulator, and the 12 Google Cloud & Enterprise Connectors panel.',
+          whatOpens: 'Executive business case with verified ROI metrics, mathematical solvers, and interactive simulators.',
           actionLabel: 'Open Sample Agent Studio &rarr;',
           actionFn: "openAgentPage('load_consolidation_agent', true, event)"
         },
@@ -9986,7 +9923,7 @@ def build_html() -> str:
           title: 'High-Code Technical Blueprint (#blueprint/id)',
           sub: '5-Stage ADK Pipeline, 3 Sub-Agents & Solvers',
           color: '#ec4899',
-          whatOpens: 'Clicking "Open Technical Blueprint" on any Agent page opens the deep engineering specification: a 5-stage animated SVG architecture diagram, 3 collaborating A2A Sub-Agents, Private/Community/Public data schemas, and OR-Tools math solvers.',
+          whatOpens: 'High-code ADK pipeline specification, A2A agent mesh, ERP write-back schemas, and solver constraints.',
           actionLabel: 'Open Sample Blueprint &rarr;',
           actionFn: "openAgentBlueprintPage('load_consolidation_agent', true, event)"
         }
@@ -10008,15 +9945,15 @@ def build_html() -> str:
           </div>
         </div>
 
-        <div style="padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.12); margin-bottom: 22px;">
-          <h1 style="font-family:var(--font-display); font-size:clamp(32px, 3.6vw, 44px); font-weight:800; letter-spacing:-0.025em; color:#ffffff;">
+        <!-- Clean, Minimal Header -->
+        <div style="padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.10); margin-bottom: 20px;">
+          <h1 style="font-family:var(--font-display); font-size:clamp(30px, 3.2vw, 42px); font-weight:800; letter-spacing:-0.025em; color:#ffffff; margin-bottom:6px;">
             Neural Mind Map &amp; Portal Flowchart
           </h1>
+          <p style="font-size:15px; color:#94a3b8; line-height:1.6; max-width:960px;">
+            End-to-end interactive topology mapping 6 SCOR domains, 26 personas, and 32 autonomous AI agents across the enterprise.
+          </p>
         </div>
-
-        <p style="font-size:16px; color:#cbd5e1; line-height:1.72; max-width:1060px; margin-bottom:10px;">
-          Explore how the <strong style="color:#fff;">Office of the CSCO</strong> connects across <strong style="color:#fff;">6 SCOR domains, 26 supply chain personas, and 32 AI agents</strong>. Click any domain on the left to smoothly expand its personas, click any persona to reveal its connected agents, and inspect the full problem-to-solution specification on the right.
-        </p>
 
         <!-- Clean Pill Tabs to Switch Between Interactive Mind Map & Portal Click-Path Flowchart -->
         <div class="pt-top-tabs">
