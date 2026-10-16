@@ -3563,9 +3563,17 @@
           <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🚗 Volkswagen</div>
           <div style="font-size:11px; color:#7dd3fc;">Auto · MEB Gigafactory</div>
         </button>
-        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('bmw')" style="text-align:left; background:rgba(0,102,178,0.25); border:1px solid rgba(96,165,250,0.4); border-radius:14px; padding:12px; cursor:pointer;">
-          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🏎️ BMW Group</div>
-          <div style="font-size:11px; color:#93c5fd;">Auto · Spartanburg JIS</div>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('itc')" style="text-align:left; background:rgba(16,185,129,0.22); border:1px solid rgba(16,185,129,0.45); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🌾 ITC Limited</div>
+          <div style="font-size:11px; color:#6ee7b7;">FMCG · e-Choupal Agri</div>
+        </button>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('boeing')" style="text-align:left; background:rgba(0,51,160,0.22); border:1px solid rgba(56,189,248,0.4); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">✈️ Boeing</div>
+          <div style="font-size:11px; color:#7dd3fc;">Aerospace · Titanium Forgings</div>
+        </button>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('caterpillar')" style="text-align:left; background:rgba(255,205,17,0.18); border:1px solid rgba(255,205,17,0.45); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🚜 Caterpillar</div>
+          <div style="font-size:11px; color:#fef08a;">Heavy Machinery · Cat Reman</div>
         </button>
         <button type="button" class="twin-preset-card" onclick="quickSelectPreset('shell')" style="text-align:left; background:rgba(185,28,28,0.2); border:1px solid rgba(251,191,36,0.4); border-radius:14px; padding:12px; cursor:pointer;">
           <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🛢️ Shell plc</div>
@@ -3574,14 +3582,6 @@
         <button type="button" class="twin-preset-card" onclick="quickSelectPreset('pfizer')" style="text-align:left; background:rgba(0,0,255,0.2); border:1px solid rgba(0,210,255,0.4); border-radius:14px; padding:12px; cursor:pointer;">
           <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">💊 Pfizer Inc.</div>
           <div style="font-size:11px; color:#93c5fd;">Pharma · cGMP Biologics</div>
-        </button>
-        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('caterpillar')" style="text-align:left; background:rgba(255,205,17,0.18); border:1px solid rgba(255,205,17,0.45); border-radius:14px; padding:12px; cursor:pointer;">
-          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🚜 Caterpillar</div>
-          <div style="font-size:11px; color:#fef08a;">Heavy Machinery &amp; Mining</div>
-        </button>
-        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('boeing')" style="text-align:left; background:rgba(0,51,160,0.22); border:1px solid rgba(56,189,248,0.4); border-radius:14px; padding:12px; cursor:pointer;">
-          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">✈️ Boeing</div>
-          <div style="font-size:11px; color:#7dd3fc;">Aerospace · Long-Lead Forgings</div>
         </button>
         <button type="button" class="twin-preset-card" onclick="quickSelectPreset('unilever')" style="text-align:left; background:rgba(16,185,129,0.18); border:1px solid rgba(16,185,129,0.4); border-radius:14px; padding:12px; cursor:pointer;">
           <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🛒 Unilever</div>
@@ -5821,6 +5821,764 @@
 
     /* BASE64 EMBEDDED DESIGN ASSETS (BRAND LOGOS & SPARKLES ONLY) */
     const EMBEDDED_WEBP_BLOBS = {"gemini_enterprise_dark.webp": "data:image/webp;base64,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", "google_cloud_logo.webp": "data:image/webp;base64,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", "sparkle_blue_violet.webp": "data:image/webp;base64,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"};
+    const EMBEDDED_TWINS = {
+  "caterpillar_inc": {
+    "id": "automotive",
+    "displayName": "Caterpillar Inc.",
+    "executiveTitle": "Senior Vice President, Global Supply Chain & Customer Support Division, Caterpillar",
+    "executiveThesis": "Orchestrating heavy machinery assembly across 150+ global facilities, Cat Reman circular remanufacturing, and guaranteed 24-hour emergency dealer parts availability across 190 countries.",
+    "brandAccent": "#ffcd11",
+    "brandSecondary": "#000000",
+    "defaultSystems": "SAP S/4HANA for Automotive \u00b7 Catena-X Automotive Data Space \u00b7 Siemens Teamcenter PLM \u00b7 Siemens Opcenter MES \u00b7 Kuka Robotics SCADA \u00b7 DB Cargo Automotive Rail \u00b7 Wallenius Wilhelmsen RORO",
+    "watermarkType": "automotive_chassis",
+    "productVocabulary": {
+      "unit": "vehicle / chassis",
+      "subUnit": "battery module / stamped component",
+      "components": "MEB battery cells, stamped body-in-white panels, drive inverters, wiring harnesses, braking actuators",
+      "rawMaterials": "stamping sheet coils, lithium cathode precursor, aluminum ingots, microcontrollers",
+      "facilities": "Gigafactory & Final Assembly Plant",
+      "outboundMode": "Enclosed Bi-Level Auto-Rack Rail & Ocean RORO Vessels",
+      "inboundMode": "Just-in-Sequence (JIS) Dedicated Shuttle Fleet & Intermodal Rail"
+    },
+    "personaOverrides": {
+      "demand_planning_dir": {
+        "title": "Caterpillar Inc. Director of Global Machinery Demand & Dealer Quota Planning",
+        "role": "Mining Truck, Excavator & Generator Demand Forecasting & Dealer Stock Allocations",
+        "summary": "Directs global equipment demand forecasting across mining, construction, and power generation business units.",
+        "mandate": "Balances commodity cycle expansions (copper, gold, coal) and infrastructure construction cycles against factory build slots.",
+        "manualToil": "Monthly dealer orders in spreadsheets lagging mining project tenders by 3 months, leading to machine shortages.",
+        "agenticImpact": "Predictive heavy machinery demand sensing correlating global mining capex and machine telematics ($75M freed)."
+      },
+      "category_sourcing_mgr": {
+        "title": "Caterpillar Inc. Director of Heavy Castings, Hydraulics & Steel Sourcing",
+        "role": "Foundry Castings, High-Pressure Hydraulic Pumps & Structural Plate Steel Procurement",
+        "summary": "Directs procurement for heavy structural steel weldments, high-tonnage casting foundries, and high-pressure hydraulic cylinders.",
+        "mandate": "Secures critical foundry capacity and mitigates steel tariff surcharges across global manufacturing plants.",
+        "manualToil": "Inconsistent quotes from global foundries with volatile scrap metal and ferro-alloy surcharges.",
+        "agenticImpact": "Parametric should-cost modeling on scrap indices and foundry melt costs saving $85M in annual procurement."
+      },
+      "reverse_logistics_mgr": {
+        "title": "Caterpillar Inc. Cat Reman Core Return Logistics & Heavy Component Circularity Lead",
+        "role": "Used Engine Block, Transmission & Hydraulic Cylinder Core Returns from Global Dealers",
+        "summary": "Orchestrates the global circular supply chain, reclaiming worn diesel engine blocks, cylinders, and tracks for remanufacturing.",
+        "mandate": "Accelerates dealer core returns to achieve 85% raw material circularity and support customer 24-hour parts guarantees.",
+        "manualToil": "Heavy engine cores sitting in dealer yards for months due to complex core credit reconciliation and hazmat oil residue rules.",
+        "agenticImpact": "Automated core credit validation and return truckload backhaul routing cutting core turnaround by 26 days."
+      }
+    },
+    "agentOverrides": {
+      "demand_sensing_agent": {
+        "systems": "SAP S/4HANA \u00b7 Cat Dealer Network Portal \u00b7 Mining Equipment Utilization Feeds \u00b7 BigQuery \u00b7 TimesFM",
+        "problemDetails": "Global mining commodity cycles, infrastructure stimulus bills, and dealer rental fleet utilization spikes create extreme boom-and-bust order swings across large excavator and bulldozer lines.",
+        "solutionDetails": "Correlates global heavy construction bidding activity, mining commodity indexes, and Cat machine telematics (run hours, engine duty cycles) to forecast machine and parts replenishment.",
+        "outcomeDetails": "Reduces dealer parts stockouts by 34%; unlocks $75M in excess finished machine buffer inventory.",
+        "roiBadges": [
+          "$75M Inventory Freed",
+          "-34% Parts Stockout",
+          "24-Hour Part Guarantee",
+          "99.2% Dealer OTIF"
+        ]
+      },
+      "reverse_logistics_mgr": {
+        "systems": "Cat Reman Core Management System \u00b7 SAP S/4HANA Reverse \u00b7 Heavy Logistics Network",
+        "problemDetails": "Used diesel engine blocks, hydraulic cylinders, and transmissions (cores) sit in dealer scrap yards instead of returning to remanufacturing plants for circular re-machining.",
+        "solutionDetails": "Tracks and incentives dealer core returns with automated core credit verification, dynamic backhaul freight allocation, and circular remanufacturing production planning.",
+        "outcomeDetails": "Accelerates core turnaround by 26 days; remanufactures 140M lbs of heavy components annually while saving 85% of virgin raw steel.",
+        "roiBadges": [
+          "140M lbs Steel Reclaimed",
+          "-26 Days Core Return",
+          "-45% Reman Cost",
+          "Zero Landfill"
+        ]
+      }
+    },
+    "canonicalName": "Caterpillar Inc.",
+    "ticker": "NYSE: CAT",
+    "industryId": "heavy_machinery",
+    "flagshipSites": "Peoria Heavy Equipment Operations (USA) \u00b7 Decatur Mining Truck Facility \u00b7 Aurora Wheel Loader Plant \u00b7 Piracicaba Manufacturing Complex",
+    "coreProducts": "Cat Mining Excavators & Bulldozers \u00b7 Diesel & Natural Gas Power Turbines \u00b7 Cat Reman Recycled Engine Blocks \u00b7 High-Strength Casting Undercarriages",
+    "logoSvg": "<svg viewBox=\"0 0 100 100\" width=\"38\" height=\"38\" style=\"vertical-align:middle; margin-right:8px;\"><polygon points=\"50,15 88,80 12,80\" fill=\"#ffcd11\"/><polygon points=\"35,80 65,80 50,45\" fill=\"#000000\"/><text x=\"50\" y=\"76\" fill=\"#ffffff\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\" font-family=\"sans-serif\">CAT</text></svg>",
+    "ecosystem": {
+      "tier1Suppliers": [
+        "Global Strategic Suppliers (Direct Material)",
+        "OEM Technology Partners"
+      ],
+      "enterpriseSystems": [
+        "SAP S/4HANA",
+        "Manhattan Active WMS",
+        "Blue Yonder TMS",
+        "Cloud Spanner",
+        "BigQuery"
+      ],
+      "logisticsCorridors": [
+        "Global Multi-Modal Corridor (Ocean / Air / Rail / Road Fleet)"
+      ]
+    },
+    "company_slug": "caterpillar_inc",
+    "saved_at": "2026-10-16T10:23:28.276255+00:00",
+    "status": "approved",
+    "company_name": "Caterpillar Inc."
+  },
+  "itc_limited": {
+    "id": "automotive",
+    "displayName": "ITC Limited",
+    "executiveTitle": "Executive Director, FMCG, Agri-Business & Supply Chain, ITC Limited",
+    "executiveThesis": "Synchronizing India-wide FMCG manufacturing across 20+ ICMLs, e-Choupal direct farmer sourcing for wheat & spices, and multi-echelon Carrying & Forwarding distribution to 2M+ kirana retail stores.",
+    "brandAccent": "#10b981",
+    "brandSecondary": "#1e3a8a",
+    "defaultSystems": "SAP S/4HANA for Automotive \u00b7 Catena-X Automotive Data Space \u00b7 Siemens Teamcenter PLM \u00b7 Siemens Opcenter MES \u00b7 Kuka Robotics SCADA \u00b7 DB Cargo Automotive Rail \u00b7 Wallenius Wilhelmsen RORO",
+    "watermarkType": "automotive_chassis",
+    "productVocabulary": {
+      "unit": "vehicle / chassis",
+      "subUnit": "battery module / stamped component",
+      "components": "MEB battery cells, stamped body-in-white panels, drive inverters, wiring harnesses, braking actuators",
+      "rawMaterials": "stamping sheet coils, lithium cathode precursor, aluminum ingots, microcontrollers",
+      "facilities": "Gigafactory & Final Assembly Plant",
+      "outboundMode": "Enclosed Bi-Level Auto-Rack Rail & Ocean RORO Vessels",
+      "inboundMode": "Just-in-Sequence (JIS) Dedicated Shuttle Fleet & Intermodal Rail"
+    },
+    "personaOverrides": {
+      "demand_planning_dir": {
+        "title": "ITC Limited Head of FMCG Trade Demand Sensing & Category Consensus",
+        "role": "National Brand-Pack Demand Forecast Accuracy, Kirana Fill-Rates & Mandi Sourcing Sync",
+        "summary": "Directs trade demand forecasting across Aashirvaad, Sunfeast, Bingo!, and personal care SKUs\u2014balancing seasonal harvest cycles with 2M+ kirana retail and wholesale replenishment commitments.",
+        "mandate": "Forecasts brand-pack demand across 2M+ retail kirana stores, mother godowns, and Carrying & Forwarding Agents (CFAs).",
+        "manualToil": "Stitching monthly distributor CSVs and wholesale mandi price reports in Excel, missing sudden regional flour or biscuit stockouts.",
+        "agenticImpact": "Daily regional demand sensing in TimesFM synchronizing e-Choupal farmgate arrivals with distributor replenishment."
+      },
+      "sop_ibp_lead": {
+        "title": "ITC Limited Integrated Business Planning & ICML Plant Capacity Balancing Lead",
+        "role": "Multi-Plant S&OP Consensus, Seasonality Buffers & Trade Promotion Lock",
+        "summary": "Orchestrates monthly S&OP across 20+ Integrated Consumer Goods Manufacturing and Logistics (ICML) factories, aligning agricultural raw material arrivals with brand sales targets.",
+        "mandate": "Reconciles seasonal harvest flushes (wheat, tobacco, spices) against ICML baking, frying, and packaging line capacity.",
+        "manualToil": "Weeks spent manually balancing distributor trade promotion requests against factory capacity and wheat inventory buffers.",
+        "agenticImpact": "Live 45-minute multi-echelon S&OP consensus in OR-Tools linking farm arrivals, plant rates, and trade margins."
+      },
+      "category_sourcing_mgr": {
+        "title": "ITC Limited Head of Agri-Commodity Sourcing & e-Choupal Procurement",
+        "role": "Direct Farmgate Sourcing, Mandi Price Indexation & Sustainable Agriculture",
+        "summary": "Leads direct agricultural procurement through ITC e-Choupal rural kiosks, sourcing wheat, spices, coffee, and packaging pulp across thousands of farming villages.",
+        "mandate": "Coordinates direct farmgate procurement, APMC mandi trading, and sustainable pulpwood plantation contracts.",
+        "manualToil": "Manual consolidation of mandi arrivals across 10+ states with high price volatility and inconsistent grain moisture grades.",
+        "agenticImpact": "Parametric commodity should-costing and Spanner graph routing securing fair farmer prices and saving \u20b962 Cr."
+      },
+      "supplier_risk_lead": {
+        "title": "ITC Limited Agri-Supply Risk, Monsoon Tracking & Crop Disease Lead",
+        "role": "Crop Yield Forecasting, Multi-Tier Mandi Visibility & Drought Mitigation",
+        "summary": "Monitors monsoon patterns, soil moisture, and crop diseases across Indian agricultural basins to preempt raw material shortages.",
+        "mandate": "Shields manufacturing plants against monsoon failure, pest outbreaks, and export-import duty fluctuations.",
+        "manualToil": "Tracking district agricultural department bulletins and weather reports in static monthly spreadsheets.",
+        "agenticImpact": "DeepMind WeatherNext and satellite crop health alerts giving 14-day early warning on regional crop deficits."
+      },
+      "mps_scheduling_lead": {
+        "title": "ITC Limited Integrated Foods & Packaging Manufacturing Operations Meister",
+        "role": "Finite Line Scheduling, Oven Takt Time & Clean-in-Place (CIP) Optimization",
+        "summary": "Schedules high-speed biscuit baking, extruded snack seasoning, and cigarette packaging conversion lines across ICML facilities.",
+        "mandate": "Sequences dough preparation, continuous baking ovens, and high-speed multi-pack wrapping lines.",
+        "manualToil": "Manual whiteboards rescheduling lines when recipe flavor changes or dough packaging film tears stall production.",
+        "agenticImpact": "OR-Tools CP-SAT finite-capacity sequencing grouping allergen and flavor families to cut CIP downtime by 34%."
+      },
+      "meio_inventory_mgr": {
+        "title": "ITC Limited National Mother Godown & CFA Multi-Echelon Stock Controller",
+        "role": "Central Warehouse, Carrying & Forwarding (CFA) and Distributor Buffer Tuning",
+        "summary": "Controls multi-echelon buffer stock across mother godowns, regional CFAs, and super-stockists across urban and rural India.",
+        "mandate": "Maintains 99.4% on-shelf availability for high-velocity FMCG packs while minimizing locked working capital.",
+        "manualToil": "Hoarding 30+ days of finished goods inventory at regional depots to protect against unpredictable transport bottlenecks.",
+        "agenticImpact": "Stochastic MEIO solver dynamically rebalancing safety stocks between mother godowns and edge CFAs (-\u20b945 Cr working capital)."
+      },
+      "dock_yard_supervisor": {
+        "title": "ITC Limited ICML Inbound Grain Rake & Outbound Fleet Dock Master",
+        "role": "Rail Rake Unloading, Bulk Grain Silos & Inter-State Truck Dock Synchronization",
+        "summary": "Supervises bulk agricultural grain rake unloading, pallet staging, and primary transport truck turnaround at ICML plants.",
+        "mandate": "Prevents railway demurrage charges and minimizes truck turnaround time at factory gates.",
+        "manualToil": "Paper gate passes and manual truck driver queuing causing long lines and demurrage penalties during harvest season.",
+        "agenticImpact": "Automated dock appointment scheduling and vision-based license plate recognition cutting truck turnaround by 41%."
+      },
+      "fleet_dispatch_mgr": {
+        "title": "ITC Limited National Primary & Secondary FMCG Truckload Dispatch Lead",
+        "role": "Long-Haul Multi-Axle Linehaul & Secondary Rural Distributor Milk-Runs",
+        "summary": "Manages dedicated primary linehaul carriers and secondary distributor milk-run delivery trucks across 28 states.",
+        "mandate": "Routes thousands of daily truckloads between factories, mother godowns, and urban/rural distributor nodes.",
+        "manualToil": "Dispatchers manually negotiating spot market truck rates and guessing load axle weights in spreadsheets.",
+        "agenticImpact": "Google Maps Routes API with 3D truckload pallet consolidation cutting empty return miles by 22%."
+      },
+      "reverse_logistics_mgr": {
+        "title": "ITC Limited FMCG Expiry Reclaims, Pallet Returns & Packaging Circularity Lead",
+        "role": "Near-Expiry Repackaging, Corrugated Tray Reclaims & Sustainable Biopolymers",
+        "summary": "Orchestrates retail return flows for damaged or expired packs, wooden pallet reverse loops, and circular paperboard recycling.",
+        "mandate": "Minimizes product write-offs through secondary channels and maximizes corrugated carton recycling.",
+        "manualToil": "Distributors dumping damaged stock in backrooms while empty fleet trucks return to factories without reverse loads.",
+        "agenticImpact": "Edge mobile inspection with automated backhaul truck insertion boosting return recovery value by 31%."
+      }
+    },
+    "agentOverrides": {
+      "demand_sensing_agent": {
+        "systems": "SAP S/4HANA FMCG \u00b7 ITC e-Choupal Rural Agri Portal \u00b7 APMC Mandi Feeds \u00b7 Mother Godown WMS \u00b7 BigQuery \u00b7 Vertex AI TimesFM",
+        "problemDetails": "Seasonal monsoon shifts, wheat and spice harvest arrival fluctuations, and volatile wholesale demand across 2M+ kirana retail stores create persistent regional stockouts and distributor inventory imbalances.",
+        "solutionDetails": "PulseCast ingests daily e-Choupal farmgate arrivals, APMC mandi arrivals and spot prices, distributor order feeds, and weather patterns into Vertex AI TimesFM with hierarchical brand-pack reconciliation across Aashirvaad, Sunfeast, and Bingo! lines.",
+        "outcomeDetails": "Prevents festive stockouts across rural Carrying & Forwarding Agents (CFAs); cuts forecast error by 24% and frees \u20b945 Crore in trapped distributor working capital.",
+        "roiBadges": [
+          "\u20b945 Cr Cash Freed",
+          "-24% Forecast Error",
+          "45-Min S&OP Consensus",
+          "99.4% Kirana OTIF"
+        ]
+      },
+      "mps_finite_scheduler": {
+        "systems": "SAP S/4HANA PP/DS \u00b7 Siemens Opcenter MES \u00b7 ICML Integrated Plant SCADA \u00b7 OSIsoft PI \u00b7 OR-Tools CP-SAT",
+        "problemDetails": "Frequent recipe changes across high-speed biscuit baking lines, snack seasoning drums, and packaging conversions trigger excessive washdowns, dough wastage, and oven idling.",
+        "solutionDetails": "Orchestrates OR-Tools CP-SAT sequence-dependent setup optimization across ITC Integrated Consumer Goods Manufacturing and Logistics (ICML) plants, grouping similar dough and flavor profiles to minimize clean-in-place (CIP) turnaround.",
+        "outcomeDetails": "Increases effective line uptime by 14.8%; cuts product changeover waste by 34% and eliminates \u20b918 Crore in annual packaging scrap.",
+        "roiBadges": [
+          "+14.8% Plant OEE",
+          "-34% CIP Downtime",
+          "\u20b918 Cr Scrap Saved",
+          "100% Traceability"
+        ]
+      },
+      "category_should_cost": {
+        "systems": "SAP Ariba \u00b7 ITC e-Choupal Sourcing Network \u00b7 Agmarknet Mandi Index \u00b7 BigQuery Commodity Models",
+        "problemDetails": "Procurement teams struggle to benchmark farmgate wheat, tobacco leaf, and packaging laminate quotes against volatile global commodity indices and domestic agricultural MSP policies.",
+        "solutionDetails": "Parametrically breaks down should-costs based on farmgate mandi arrivals, crop yield forecasts, moisture adjustments, diesel freight tariffs, and converting overheads.",
+        "outcomeDetails": "Unlocks \u20b962 Crore in direct sourcing savings and establishes automated should-cost price corridors for e-Choupal procurement.",
+        "roiBadges": [
+          "\u20b962 Cr Spend Saved",
+          "-8.2% Sourcing Cost",
+          "Zero Spec Leakage",
+          "Fair Farmer Price"
+        ]
+      },
+      "tier_n_spanner_graph": {
+        "systems": "Cloud Spanner Graph \u00b7 ITC e-Choupal Village Kiosks \u00b7 APMC Agri-Feeds \u00b7 BigQuery GIS",
+        "problemDetails": "Disruptions at regional agricultural cooperatives, localized crop diseases, and unseasonal rains stay invisible until procurement targets fall short at processing plants.",
+        "solutionDetails": "Builds a live Cloud Spanner graph mapping 40,000+ village farming clusters, primary mandi aggregators, packaging converters, and ICML factory nodes with automated yield propagation.",
+        "outcomeDetails": "Provides 14-day early warning on commodity supply deficits, dynamically rerouting procurement quotas to surplus agricultural districts.",
+        "roiBadges": [
+          "14-Day Early Warning",
+          "40K+ Sourcing Nodes",
+          "100% Traceability",
+          "-65% Disruption Risk"
+        ]
+      },
+      "working_capital_cash_bridge": {
+        "systems": "SAP S/4HANA Finance \u00b7 BigQuery Cash Ledger \u00b7 CFA Depot Portals \u00b7 Google Looker",
+        "problemDetails": "Working capital is locked across multi-tier Carrying & Forwarding Agents (CFAs) and wholesale godowns due to cautious safety-stock hoarding during peak harvest seasons.",
+        "solutionDetails": "Generates an automated daily bridge between supply chain inventory velocity and corporate treasury cash flows, identifying high-toil stock points and rebalancing working capital.",
+        "outcomeDetails": "Releases \u20b985 Crore in enterprise working capital while improving service levels to retail distributors across Tier-2 and rural markets.",
+        "roiBadges": [
+          "\u20b985 Cr Cash Released",
+          "-14 Days DSI",
+          "+1.4% Operating Margin",
+          "Live Treasury Bridge"
+        ]
+      }
+    },
+    "canonicalName": "ITC Limited",
+    "ticker": "NSE: ITC",
+    "industryId": "fmcg_agribusiness",
+    "flagshipSites": "Bengaluru Integrated Consumer Goods Manufacturing & Logistics Facility (ICML) \u00b7 Tribeni Paperboards Complex \u00b7 Bhadrachalam Mill \u00b7 e-Choupal Rural Agri-Hubs",
+    "coreProducts": "Aashirvaad Atta & Spices \u00b7 Sunfeast Biscuits \u00b7 Bingo! Snacks \u00b7 Yippee! Instant Noodles \u00b7 Paperboards Packaging \u00b7 Agri-Commodities",
+    "logoSvg": "<svg viewBox=\"0 0 100 100\" width=\"38\" height=\"38\" style=\"vertical-align:middle; margin-right:8px;\"><polygon points=\"50,15 85,85 15,85\" fill=\"#1e3a8a\" stroke=\"#10b981\" stroke-width=\"5\"/><text x=\"50\" y=\"70\" fill=\"#ffffff\" font-size=\"24\" font-weight=\"900\" text-anchor=\"middle\" font-family=\"sans-serif\">ITC</text></svg>",
+    "ecosystem": {
+      "tier1Suppliers": [
+        "Global Strategic Suppliers (Direct Material)",
+        "OEM Technology Partners"
+      ],
+      "enterpriseSystems": [
+        "SAP S/4HANA",
+        "Manhattan Active WMS",
+        "Blue Yonder TMS",
+        "Cloud Spanner",
+        "BigQuery"
+      ],
+      "logisticsCorridors": [
+        "Global Multi-Modal Corridor (Ocean / Air / Rail / Road Fleet)"
+      ]
+    },
+    "company_slug": "itc_limited",
+    "saved_at": "2026-10-16T10:22:56.882105+00:00",
+    "status": "approved",
+    "company_name": "ITC Limited"
+  },
+  "pfizer_inc": {
+    "id": "life_sciences_pharma",
+    "displayName": "Pfizer Inc.",
+    "executiveTitle": "President, Pfizer Global Supply (PGS) & Technical Operations",
+    "executiveThesis": "Guaranteed zero-stockout patient fulfillment of sterile injectables, mRNA vaccine platforms, and oncology APIs across 37 global manufacturing sites.",
+    "brandAccent": "#38bdf8",
+    "brandSecondary": "#0000ff",
+    "defaultSystems": "SAP S/4HANA Life Sciences \u00b7 Veeva Vault QMS \u00b7 Siemens Opcenter Pharma MES \u00b7 TrackWise \u00b7 Sensitech Cold-Chain IoT \u00b7 Cloud Spanner Graph \u00b7 BigQuery",
+    "watermarkType": "pharma_biotech",
+    "productVocabulary": {
+      "unit": "vial / pre-filled syringe / blister pack",
+      "subUnit": "bioreactor batch / clinical lot",
+      "components": "active pharmaceutical ingredient (API), excipients, sterile glass vials, elastomeric stoppers",
+      "rawMaterials": "cell culture media, single-use bioreactor bags, chromatography resins, chemical precursors",
+      "facilities": "Sterile Fill-Finish Plant & cGMP Biomanufacturing Facility",
+      "outboundMode": "Validated Temperature-Controlled Cold-Chain Air Cargo (2\u00b0C\u20138\u00b0C / -70\u00b0C)",
+      "inboundMode": "Qualified Temperature-Monitored Dedicated Dedicated Logistics"
+    },
+    "personaOverrides": {
+      "demand_planning_dir": {
+        "title": "Pfizer Inc. Director of Demand Sensing & Consensus Planning",
+        "role": "Enterprise Forecast Accuracy & Customer Replenishment Alignment",
+        "summary": "Directs enterprise demand forecasting across all Pfizer Inc. business units, channels, and product families.",
+        "mandate": "Synchronizes customer point-of-sale signals and commercial promotions with operational production commitments.",
+        "manualToil": "Manual data aggregation across regional ERP instances and spreadsheet consolidation.",
+        "agenticImpact": "Automated multi-signal forecasting in Vertex AI TimesFM with daily P10/P50/P90 quantile fans."
+      },
+      "category_sourcing_mgr": {
+        "title": "Pfizer Inc. Head of Strategic Procurement & Direct Sourcing",
+        "role": "Category Sourcing, Should-Cost Decomposition & Supplier Contracting",
+        "summary": "Leads direct material procurement and supplier relationships for Pfizer Inc. manufacturing and operations.",
+        "mandate": "Delivers cost savings and mitigates single-source supplier vulnerabilities across critical components.",
+        "manualToil": "Weeks spent normalizing inconsistent supplier quotes in Excel without bottom-up cost benchmarks.",
+        "agenticImpact": "Parametric should-cost decomposition unlocking 7-10% in direct procurement savings."
+      },
+      "mps_scheduling_lead": {
+        "title": "Pfizer Inc. Master Production Scheduling & Factory Operations Meister",
+        "role": "Finite Capacity Scheduling & Plant Throughput Maximization",
+        "summary": "Orchestrates manufacturing line schedules, machine changeovers, and material allocations across Pfizer Inc. plants.",
+        "mandate": "Maximizes equipment utilization and eliminates line starvation through finite capacity sequencing.",
+        "manualToil": "Manual shift scheduling on spreadsheets frequently derailed by late material arrivals and equipment stops.",
+        "agenticImpact": "OR-Tools CP-SAT finite-capacity scheduling cutting changeover downtime by 30%."
+      }
+    },
+    "agentOverrides": {
+      "demand_sensing_agent": {
+        "systems": "SAP S/4HANA \u00b7 Enterprise POS & CRM Feeds \u00b7 BigQuery \u00b7 Vertex AI TimesFM",
+        "problemDetails": "Disconnected regional spreadsheets, lack of customer sell-through visibility, and promotion cannibalization create costly stockouts and working capital build-ups for Pfizer Inc..",
+        "solutionDetails": "PulseCast Demand Sensing Copilot ingests live point-of-sale data, distributor orders, and market signals into Vertex AI TimesFM with hierarchical SKU reconciliation.",
+        "outcomeDetails": "Cuts demand forecast error by 24% for Pfizer Inc.; unlocks 18% in trapped safety stock working capital.",
+        "roiBadges": [
+          "-24% Forecast Error",
+          "18% Working Capital Freed",
+          "45-Min S&OP Consensus",
+          "99.2% Customer OTIF"
+        ]
+      }
+    },
+    "canonicalName": "Pfizer Inc.",
+    "ticker": "NYSE: PFE",
+    "industryId": "life_sciences_pharma",
+    "flagshipSites": "Kalamazoo Sterile Injectables Hub (USA) \u00b7 Puurs Biomanufacturing Facility (Belgium) \u00b7 Grange Castle (Ireland) \u00b7 Freiburg Packaging Center",
+    "coreProducts": "mRNA Biologics & Vaccines \u00b7 Sterile Injectable APIs \u00b7 Lyophilized Vials \u00b7 Solid Oral Dose Oncology Therapies",
+    "logoSvg": "<svg viewBox=\"0 0 100 100\" width=\"38\" height=\"38\" style=\"vertical-align:middle; margin-right:8px;\"><ellipse cx=\"50\" cy=\"50\" rx=\"44\" ry=\"34\" fill=\"#0000ff\"/><path d=\"M30 50 Q45 28 65 35 Q75 42 70 54 Q65 66 45 62 L32 60\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"50\" cy=\"50\" r=\"4\" fill=\"#00d2ff\"/></svg>",
+    "ecosystem": {
+      "tier1Suppliers": [
+        "Lonza",
+        "Catalent",
+        "Thermo Fisher Scientific",
+        "Sartorius Stedim",
+        "Corning Life Sciences"
+      ],
+      "enterpriseSystems": [
+        "SAP S/4HANA Life Sciences",
+        "Veeva Vault QMS",
+        "Siemens Opcenter Pharma MES",
+        "TrackWise Serialization",
+        "Sensitech Cold-Chain IoT"
+      ],
+      "logisticsCorridors": [
+        "Brussels Airport Pharma Cold-Chain Ramp",
+        "Kalamazoo-to-Chicago Express Distribution Corridor",
+        "Frankfurt CargoCity Temperature-Controlled Hub",
+        "Global Ultra-Cold (-70\u00b0C) Air Freight Lanes"
+      ]
+    },
+    "company_slug": "pfizer_inc",
+    "saved_at": "2026-10-16T10:23:28.655449+00:00",
+    "status": "approved",
+    "company_name": "Pfizer Inc."
+  },
+  "shell_plc": {
+    "id": "oil_gas_energy",
+    "displayName": "Shell plc",
+    "executiveTitle": "Executive Vice President of Global Supply Chain & Trading, Shell plc",
+    "executiveThesis": "Optimizing global integrated crude trading, pipeline hydraulic flows, Pernis refinery catalytic slates, and international LNG carrier charters.",
+    "brandAccent": "#fbbf24",
+    "brandSecondary": "#b91c1c",
+    "defaultSystems": "SAP S/4HANA Oil & Gas (IS-Oil) \u00b7 AspenTech PIMS / HYSYS \u00b7 OSIsoft PI / AVEVA Historian \u00b7 Spire Ocean Tanker AIS \u00b7 Genscape Pipeline Telemetry \u00b7 AlloyDB \u00b7 BigQuery GIS",
+    "watermarkType": "energy_pipeline",
+    "productVocabulary": {
+      "unit": "barrel (bbl) / metric ton",
+      "subUnit": "cargo lot / pipeline batch",
+      "components": "distillate fuels, naphtha, ethylene, lubricants, LNG cargos, specialized catalysts",
+      "rawMaterials": "light sweet crude, sour heavy crude, natural gas liquids (NGL), drill pipe OCTG",
+      "facilities": "Refinery & Petrochemical Complex / Marine Tanker Terminal",
+      "outboundMode": "Product Pipelines, Jones Act Tankers & Unit Trains",
+      "inboundMode": "Crude Pipelines & VLCC Tanker Marine Terminals"
+    },
+    "personaOverrides": {
+      "demand_planning_dir": {
+        "title": "Shell plc Director of Demand Sensing & Consensus Planning",
+        "role": "Enterprise Forecast Accuracy & Customer Replenishment Alignment",
+        "summary": "Directs enterprise demand forecasting across all Shell plc business units, channels, and product families.",
+        "mandate": "Synchronizes customer point-of-sale signals and commercial promotions with operational production commitments.",
+        "manualToil": "Manual data aggregation across regional ERP instances and spreadsheet consolidation.",
+        "agenticImpact": "Automated multi-signal forecasting in Vertex AI TimesFM with daily P10/P50/P90 quantile fans."
+      },
+      "category_sourcing_mgr": {
+        "title": "Shell plc Head of Strategic Procurement & Direct Sourcing",
+        "role": "Category Sourcing, Should-Cost Decomposition & Supplier Contracting",
+        "summary": "Leads direct material procurement and supplier relationships for Shell plc manufacturing and operations.",
+        "mandate": "Delivers cost savings and mitigates single-source supplier vulnerabilities across critical components.",
+        "manualToil": "Weeks spent normalizing inconsistent supplier quotes in Excel without bottom-up cost benchmarks.",
+        "agenticImpact": "Parametric should-cost decomposition unlocking 7-10% in direct procurement savings."
+      },
+      "mps_scheduling_lead": {
+        "title": "Shell plc Master Production Scheduling & Factory Operations Meister",
+        "role": "Finite Capacity Scheduling & Plant Throughput Maximization",
+        "summary": "Orchestrates manufacturing line schedules, machine changeovers, and material allocations across Shell plc plants.",
+        "mandate": "Maximizes equipment utilization and eliminates line starvation through finite capacity sequencing.",
+        "manualToil": "Manual shift scheduling on spreadsheets frequently derailed by late material arrivals and equipment stops.",
+        "agenticImpact": "OR-Tools CP-SAT finite-capacity scheduling cutting changeover downtime by 30%."
+      }
+    },
+    "agentOverrides": {
+      "demand_sensing_agent": {
+        "systems": "SAP S/4HANA \u00b7 Enterprise POS & CRM Feeds \u00b7 BigQuery \u00b7 Vertex AI TimesFM",
+        "problemDetails": "Disconnected regional spreadsheets, lack of customer sell-through visibility, and promotion cannibalization create costly stockouts and working capital build-ups for Shell plc.",
+        "solutionDetails": "PulseCast Demand Sensing Copilot ingests live point-of-sale data, distributor orders, and market signals into Vertex AI TimesFM with hierarchical SKU reconciliation.",
+        "outcomeDetails": "Cuts demand forecast error by 24% for Shell plc; unlocks 18% in trapped safety stock working capital.",
+        "roiBadges": [
+          "-24% Forecast Error",
+          "18% Working Capital Freed",
+          "45-Min S&OP Consensus",
+          "99.2% Customer OTIF"
+        ]
+      }
+    },
+    "canonicalName": "Shell plc",
+    "ticker": "NYSE: SHEL",
+    "industryId": "oil_gas_energy",
+    "flagshipSites": "Pernis Energy & Chemicals Park (Rotterdam) \u00b7 Deer Park Complex \u00b7 Singapore Pulau Bukom Hub \u00b7 Port of Singapore Marine Terminal",
+    "coreProducts": "Crude Distillates & Low-Carbon Fuels \u00b7 Liquefied Natural Gas (LNG) Cargos \u00b7 Base Oils & Petrochemical Intermediates \u00b7 Pipeline Batches",
+    "logoSvg": "<svg viewBox=\"0 0 100 100\" width=\"38\" height=\"38\" style=\"vertical-align:middle; margin-right:8px;\"><path d=\"M50 12 C30 22 18 42 22 72 L32 88 L68 88 L78 72 C82 42 70 22 50 12 Z\" fill=\"#fbbf24\" stroke=\"#b91c1c\" stroke-width=\"4\"/><path d=\"M50 12 L50 88 M36 34 L40 88 M64 34 L60 88 M26 54 L32 88 M74 54 L68 88\" stroke=\"#b91c1c\" stroke-width=\"3\" fill=\"none\"/></svg>",
+    "ecosystem": {
+      "tier1Suppliers": [
+        "SLB (Schlumberger)",
+        "Baker Hughes",
+        "Halliburton",
+        "TechnipFMC",
+        "Tenaris"
+      ],
+      "enterpriseSystems": [
+        "SAP S/4HANA Oil & Gas (IS-Oil)",
+        "AspenTech PIMS / HYSYS",
+        "OSIsoft PI / AVEVA Enterprise Historian",
+        "Spire Global Ocean Tanker AIS",
+        "Genscape Pipeline Telemetry"
+      ],
+      "logisticsCorridors": [
+        "Pernis Rotterdam Marine Tanker Docks",
+        "Colonial & Plantation Pipeline Networks",
+        "Strait of Malacca Crude Tanker Lanes",
+        "Deer Park Houston Ship Channel"
+      ]
+    },
+    "company_slug": "shell_plc",
+    "saved_at": "2026-10-16T10:23:28.464865+00:00",
+    "status": "approved",
+    "company_name": "Shell plc"
+  },
+  "the_boeing_company": {
+    "id": "automotive",
+    "displayName": "The Boeing Company",
+    "executiveTitle": "Senior Vice President of Global Supply Chain & Manufacturing Operations, Boeing",
+    "executiveThesis": "Synchronizing multi-year supplier lead times, precision titanium forgings, FAA airworthiness compliance tracing, and final assembly lines for 737 and 787 aircraft programs.",
+    "brandAccent": "#0284c7",
+    "brandSecondary": "#0f172a",
+    "defaultSystems": "SAP S/4HANA for Automotive \u00b7 Catena-X Automotive Data Space \u00b7 Siemens Teamcenter PLM \u00b7 Siemens Opcenter MES \u00b7 Kuka Robotics SCADA \u00b7 DB Cargo Automotive Rail \u00b7 Wallenius Wilhelmsen RORO",
+    "watermarkType": "automotive_chassis",
+    "productVocabulary": {
+      "unit": "vehicle / chassis",
+      "subUnit": "battery module / stamped component",
+      "components": "MEB battery cells, stamped body-in-white panels, drive inverters, wiring harnesses, braking actuators",
+      "rawMaterials": "stamping sheet coils, lithium cathode precursor, aluminum ingots, microcontrollers",
+      "facilities": "Gigafactory & Final Assembly Plant",
+      "outboundMode": "Enclosed Bi-Level Auto-Rack Rail & Ocean RORO Vessels",
+      "inboundMode": "Just-in-Sequence (JIS) Dedicated Shuttle Fleet & Intermodal Rail"
+    },
+    "personaOverrides": {
+      "demand_planning_dir": {
+        "title": "The Boeing Company Director of Airplane Program Master Demand & Delivery Commitments",
+        "role": "Commercial Jetliner Skyline Slots, Defense Contract Delivery Cadence & Tier-1 Backlog",
+        "summary": "Aligns global commercial airline fleet delivery dates and defense milestone contracts across 737, 787, and 777X airframe programs.",
+        "mandate": "Establishes stable aircraft delivery skyline slots balancing airline customer entry-into-service dates with supply chain lead times.",
+        "manualToil": "Manual Excel skyline planning struggling with multi-year supplier lead time shifts and delivery delay penalties.",
+        "agenticImpact": "Probabilistic program delivery scheduling in TimesFM correlating flight demand curves with supply milestones."
+      },
+      "category_sourcing_mgr": {
+        "title": "The Boeing Company Director of Aerostructures & Raw Titanium Forgings Procurement",
+        "role": "Strategic Sourcing for Fuselage Barrels, High-Strength Alloys & Avionics",
+        "summary": "Directs multi-billion-dollar aerospace procurement for carbon-composite fuselage sections, titanium wing spars, and flight control avionics.",
+        "mandate": "Negotiates multi-year aerostructure contracts and secures titanium supply chains against geopolitical export restrictions.",
+        "manualToil": "Reviewing complex supplier cost breakdowns manually without clean-sheet 5-axis CNC machining models.",
+        "agenticImpact": "Parametric CAD should-cost modeling saving $140M across aerostructure and machining renegotiations."
+      },
+      "mps_scheduling_lead": {
+        "title": "The Boeing Company Fuselage Barrel & Final Assembly Line Scheduling Meister",
+        "role": "Dock Station Scheduling, Traveled Work Prevention & FAA Conformity Sign-Offs",
+        "summary": "Schedules wing-to-body joins, electrical wire harness threading, and interior installations across final assembly lines.",
+        "mandate": "Locks final assembly sequences to eliminate traveled work and ensure 100% FAA airworthiness inspection conformity.",
+        "manualToil": "Assembly stations gridlocked by traveled work when missing brackets or incomplete wire harnesses stall subsequent crews.",
+        "agenticImpact": "OR-Tools CP-SAT finite-capacity assembly scheduling cutting traveled work by 62%."
+      },
+      "meio_inventory_mgr": {
+        "title": "The Boeing Company Aircraft Program Assembly Buffer & AOG High-Value Spares Controller",
+        "role": "Assembly Station Line Buffers & Global Aircraft On Ground (AOG) Spares Network",
+        "summary": "Optimizes inventory of multi-million-dollar engines, landing gears, and flight-critical avionics across factories and airline hubs.",
+        "mandate": "Guarantees sub-4-hour emergency delivery for AOG critical components while cutting factory WIP buffers.",
+        "manualToil": "Millions of dollars in custom titanium fasteners and avionics sitting in dark storage while missing critical parts halt lines.",
+        "agenticImpact": "Multi-echelon inventory optimization tuning buffer stock to critical path milestones ($180M WIP freed)."
+      }
+    },
+    "agentOverrides": {
+      "demand_sensing_agent": {
+        "systems": "Dassault Systemes ENOVIA \u00b7 SAP S/4HANA Aerospace \u00b7 FAA Airworthiness Registry \u00b7 BigQuery \u00b7 Vertex AI TimesFM",
+        "problemDetails": "Multi-year airline fleet deliveries, lease return cycles, and defense contract milestone changes create unpredictable demand variations that ripple through multi-tier aerostructure suppliers.",
+        "solutionDetails": "Ingests global airline passenger load trends, fleet retirement projections, and commercial airframe order backlogs into Vertex AI TimesFM to generate calibrated milestone demand schedules.",
+        "outcomeDetails": "Stabilizes master production schedules across 737 and 787 final assembly lines; cuts parts expediting premiums by $55M.",
+        "roiBadges": [
+          "$55M Expediting Saved",
+          "-28% Lead Time Variance",
+          "100% Delivery Schedule",
+          "FAA Compliant"
+        ]
+      },
+      "category_should_cost": {
+        "systems": "SAP Ariba \u00b7 Dassault CATIA CAD/BOM \u00b7 Titanium Fastener Indices \u00b7 BigQuery Parametric Models",
+        "problemDetails": "Aerospace-grade titanium forgings, carbon fiber composite pre-pregs, and complex CNC machined ribs suffer from monopolistic supplier pricing and unpredictable metal surcharges.",
+        "solutionDetails": "Performs bottom-up parametric should-cost analysis decomposing 5-axis CNC machining hours, autoclave cure cycles, and raw titanium ingot prices to establish should-cost benchmarks.",
+        "outcomeDetails": "Yields $140M in validated cost savings during multi-year aerostructure and avionics supplier renegotiations.",
+        "roiBadges": [
+          "$140M Cost Saved",
+          "-9.1% Aerostructure Cost",
+          "Parametric CAD Audit",
+          "Zero Audit Gaps"
+        ]
+      },
+      "mps_finite_scheduler": {
+        "systems": "Siemens Opcenter MES \u00b7 SAP PP/DS Aerospace \u00b7 Boeing Renton Factory SCADA \u00b7 OR-Tools CP-SAT",
+        "problemDetails": "Wing-to-body joins, electrical wire harness threading, and cabin interior installations face severe traveling work bottlenecks when specialized mechanics or FAA-inspected parts arrive out of sequence.",
+        "solutionDetails": "Finite-capacity job-shop scheduling in OR-Tools dynamically balances assembly positions (dock stations) with technician skill certifications and FAA conformity inspection sign-offs.",
+        "outcomeDetails": "Reduces traveled work in final assembly by 62%; accelerates 737/787 rollout cadence and protects against millions in delivery delay liquidated damages.",
+        "roiBadges": [
+          "-62% Traveled Work",
+          "+18% Assembly Cadence",
+          "100% FAA Conformity",
+          "Zero Dock Gridlock"
+        ]
+      }
+    },
+    "canonicalName": "The Boeing Company",
+    "ticker": "NYSE: BA",
+    "industryId": "aerospace_defense",
+    "flagshipSites": "Renton 737 Final Assembly Facility \u00b7 North Charleston 787 Composite Hub \u00b7 Everett Wide-Body Delivery Center \u00b7 Boeing Defense St. Louis",
+    "coreProducts": "737 MAX Commercial Jetliners \u00b7 787 Dreamliner Composite Fuselages \u00b7 Titanium Wing Spar Forgings \u00b7 Avionics & Flight Control Systems",
+    "logoSvg": "<svg viewBox=\"0 0 100 100\" width=\"38\" height=\"38\" style=\"vertical-align:middle; margin-right:8px;\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#0f172a\" stroke=\"#0284c7\" stroke-width=\"5\"/><path d=\"M22 65 C40 35 60 30 78 35 M30 50 L55 35 L70 50\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>",
+    "ecosystem": {
+      "tier1Suppliers": [
+        "Global Strategic Suppliers (Direct Material)",
+        "OEM Technology Partners"
+      ],
+      "enterpriseSystems": [
+        "SAP S/4HANA",
+        "Manhattan Active WMS",
+        "Blue Yonder TMS",
+        "Cloud Spanner",
+        "BigQuery"
+      ],
+      "logisticsCorridors": [
+        "Global Multi-Modal Corridor (Ocean / Air / Rail / Road Fleet)"
+      ]
+    },
+    "company_slug": "the_boeing_company",
+    "saved_at": "2026-10-16T10:23:28.085595+00:00",
+    "status": "approved",
+    "company_name": "The Boeing Company"
+  },
+  "volkswagen_group": {
+    "id": "automotive",
+    "displayName": "Volkswagen Group",
+    "executiveTitle": "Board Member for Production & Logistics, Volkswagen AG",
+    "executiveThesis": "Synchronizing Wolfsburg & global MEB gigafactories, battery cell supply from PowerCo & CATL, and just-in-sequence (JIS) line feeding for 9+ million vehicles.",
+    "brandAccent": "#00d2ff",
+    "brandSecondary": "#001e50",
+    "defaultSystems": "SAP S/4HANA for Automotive \u00b7 Catena-X Automotive Data Space \u00b7 Siemens Teamcenter PLM \u00b7 Siemens Opcenter MES \u00b7 Kuka Robotics SCADA \u00b7 DB Cargo Automotive Rail \u00b7 Wallenius Wilhelmsen RORO",
+    "watermarkType": "automotive_chassis",
+    "productVocabulary": {
+      "unit": "vehicle / chassis",
+      "subUnit": "battery module / stamped component",
+      "components": "MEB battery cells, stamped body-in-white panels, drive inverters, wiring harnesses, braking actuators",
+      "rawMaterials": "stamping sheet coils, lithium cathode precursor, aluminum ingots, microcontrollers",
+      "facilities": "Gigafactory & Final Assembly Plant",
+      "outboundMode": "Enclosed Bi-Level Auto-Rack Rail & Ocean RORO Vessels",
+      "inboundMode": "Just-in-Sequence (JIS) Dedicated Shuttle Fleet & Intermodal Rail"
+    },
+    "personaOverrides": {
+      "demand_planning_dir": {
+        "title": "Volkswagen Group Head of Global Vehicle Demand & Model Mix Planning (MEB/ICE)",
+        "role": "Trim-Level Take Rates, EV Battery Cell Allocation & Global Dealer Pipeline",
+        "summary": "Directs vehicle forecasting across all platforms (electric MEB, SSP, and combustion architectures)\u2014synchronizing regional dealer order reservation spikes with assembly factory slots.",
+        "mandate": "Forecasts trim-level take rates, powertrain splits (BEV vs. PHEV vs. ICE), and dealer allocation curves across Volkswagen Group global markets.",
+        "manualToil": "Stitching monthly dealer portal spreadsheets in Excel, suffering 6-week blindspots on EV trim cancellation waves.",
+        "agenticImpact": "Daily regional VIN-level demand sensing in TimesFM balancing dealer pipeline and battery supply constraints."
+      },
+      "sop_ibp_lead": {
+        "title": "Volkswagen Group VP of Vehicle S&OP & Assembly Line Allocation Meister",
+        "role": "Takt Time Balancing, PowerCo Battery Supply Lock & Margin Maximization",
+        "summary": "Reconciles assembly line cycle times (Takt Time) against PowerCo battery cell allocations and critical Tier-1 semiconductor supplies.",
+        "mandate": "Balances global plant capacity (Wolfsburg, Zwickau, Chattanooga) against regional dealer demand and margin targets.",
+        "manualToil": "21-day S&OP cycles spent debating whether Wolfsburg or Zwickau gets constrained power inverter batches.",
+        "agenticImpact": "45-minute live Pareto MILP consensus in OR-Tools balancing margin per vehicle against EU fleet CO2 targets."
+      },
+      "category_sourcing_mgr": {
+        "title": "Volkswagen Group Head of Strategic Procurement (Powertrain, Battery Cells & Semis)",
+        "role": "Direct Material Procurement, Clean-Sheet Should-Cost & Long-Term Offtake Contracts",
+        "summary": "Directs multi-billion-euro procurement for high-voltage battery cells, drive inverters, microcontrollers, and stamped chassis steel.",
+        "mandate": "Secures long-term battery cell supply agreements with PowerCo and CATL while driving clean-sheet supplier cost negotiations.",
+        "manualToil": "Reviewing 50-page supplier RFQ cost breakdowns without bottom-up cycle time or raw metal price index models.",
+        "agenticImpact": "Parametric BOM should-costing on BigQuery and LME metal indices saving \u20ac110M in Tier-1 negotiations."
+      },
+      "supplier_risk_lead": {
+        "title": "Volkswagen Group Automotive Tier-N Risk & Semiconductor War-Room Lead",
+        "role": "Tier-N Bill-of-Materials Dependency Graph & Critical Component Defense",
+        "summary": "Maps sub-tier supplier dependencies past Tier-1 tier vendors down to semiconductor foundries, wiring harness weavers, and lithium refineries.",
+        "mandate": "Prevents assembly line-stopping disruptions caused by Tier-2/Tier-3 component shortages.",
+        "manualToil": "Manual war-room spreadsheets during supply crunches calling Tier-1s to ask where sub-components are sourced.",
+        "agenticImpact": "Cloud Spanner Graph mapping 12,000+ multi-tier automotive supplier nodes with automated bottleneck alerts."
+      },
+      "mps_scheduling_lead": {
+        "title": "Volkswagen Group Production Control & Assembly Line Meister (MEB/Chassis Sequencing)",
+        "role": "Body-in-White Stamping, Paint Color Blocking & Just-In-Sequence Line Feeding",
+        "summary": "Sequences the stamping press, robotic welding body shop, automated paint line, and final chassis assembly.",
+        "mandate": "Locks vehicle production sequences 48 hours before body drop to ensure zero assembly line stops.",
+        "manualToil": "Manual whiteboards rescheduling lines when missing wire harnesses or paint defects stall final trim.",
+        "agenticImpact": "OR-Tools CP-SAT finite-capacity sequencing locking 100% material pegging 48h before body drop."
+      },
+      "meio_inventory_mgr": {
+        "title": "Volkswagen Group Head of Assembly Plant Inbound Buffers & JIS Sequencing Yards",
+        "role": "Supplier Logistics Centers (SLC), High-Bay WMS & 4-Hour JIS Buffer Tuning",
+        "summary": "Controls inbound component inventory across plant supplier logistics centers, sequencing yards, and automated high-bay warehouses.",
+        "mandate": "Maintains lean 4-hour Just-in-Sequence (JIS) buffers without risking assembly line starvation.",
+        "manualToil": "Hoarding 14 days of safety stock in expensive off-site trailer yards to prevent assembly line-stops.",
+        "agenticImpact": "Guaranteed-Service MEIO dynamically tuning JIS buffer stocks down to 4 hours of production (\u20ac42M saved)."
+      },
+      "dock_yard_supervisor": {
+        "title": "Volkswagen Group Just-In-Sequence (JIS) Trailer Yard & Assembly Dock Master",
+        "role": "Live Trailer Dock Scheduling, Empty Stillages & Automated Tugger Sequencing",
+        "summary": "Controls assembly plant receiving docks, trailer yard hostling, and automated tugger routes feeding parts directly to assembly stations.",
+        "mandate": "Ensures sequenced component racks arrive at assembly line stations within 15 minutes of scheduled installation.",
+        "manualToil": "Yard jockey walkie-talkie chaos searching for missing trailers with chassis parts while assembly lines idle.",
+        "agenticImpact": "Real-time GPS yard management and automated dock door assignment cutting trailer dwell by 40%."
+      },
+      "fleet_dispatch_mgr": {
+        "title": "Volkswagen Group Outbound Vehicle Logistics & Dedicated Auto-Carrier Dispatch Lead",
+        "role": "9-Car Double-Deck Haulers, RoRo Port Transit & Dealer Compound Delivery",
+        "summary": "Manages the global finished vehicle distribution fleet, coordinating enclosed car carriers, rail auto-racks, and ocean RoRo vessels.",
+        "mandate": "Delivers finished vehicles from factory gates and ports to dealer showrooms with zero in-transit damage.",
+        "manualToil": "Dispatchers manually pairing cars to 9-car haulers with deadhead return miles and damaged bumpers.",
+        "agenticImpact": "Google Maps Corridor routing with 3D car-carrier spatial packing cutting empty miles by 24%."
+      },
+      "reverse_logistics_mgr": {
+        "title": "Volkswagen Group High-Voltage Battery Cell Circularity & Warranty Core Return Lead",
+        "role": "EV Battery Second-Life Diagnostics, Black Mass Recycling & Warranty Remanufacturing",
+        "summary": "Orchestrates reverse logistics for degraded or recalled high-voltage battery packs, electric drive motors, and dealer warranty cores.",
+        "mandate": "Enforces closed-loop battery recycling (PowerCo battery shredding and hydrometallurgical recovery) and warranty reman.",
+        "manualToil": "Dealers storing hazardous battery packs in parking lots while waiting for certified hazmat transport permits.",
+        "agenticImpact": "Automated battery health telemetry grading and compliant hazmat route optimization boosting recovery margin by 32%."
+      }
+    },
+    "agentOverrides": {
+      "demand_sensing_agent": {
+        "systems": "SAP S/4HANA Wolfsburg \u00b7 Siemens Opcenter MES \u00b7 PowerCo Cell ERP \u00b7 EDI 830/852 Dealer Feeds \u00b7 BigQuery \u00b7 Vertex AI TimesFM",
+        "problemDetails": "Monthly dealer order spreadsheets lack real-time visibility into electric vehicle (EV) trim-level take rates and battery capacity constraints, creating 6-week blindspots and assembly line imbalances.",
+        "solutionDetails": "PulseCast continuously ingests vehicle configurator signals, dealer showroom reservation curves, and European dealer inventory into TimesFM with hierarchical trim and powertrain reconciliation (BEV vs. ICE).",
+        "outcomeDetails": "Eliminates line starvation at Wolfsburg and Zwickau MEB plants; cuts finished vehicle lot dwell by 18 days (\u20ac42M in working capital freed).",
+        "roiBadges": [
+          "\u20ac42M Cash Freed",
+          "-24% Forecast Error",
+          "Zero Line Stops",
+          "100% Battery Pegging"
+        ]
+      },
+      "mps_finite_scheduler": {
+        "systems": "Siemens Opcenter MES \u00b7 SAP PP/DS \u00b7 KUKA Body Shop SCADA \u00b7 OR-Tools CP-SAT",
+        "problemDetails": "Stamping press coil changeovers, paint shop color block flushes, and just-in-sequence (JIS) chassis line feeding are frequently derailed by late supplier sub-assemblies.",
+        "solutionDetails": "OR-Tools CP-SAT finite capacity job-shop solver sequences body-in-white stamping, paint shop color blocks, and final assembly line feeding to lock 100% material pegging 48 hours before body drop.",
+        "outcomeDetails": "Reduces paint shop solvent purge waste by 28%; cuts line changeover delays by 32% and prevents assembly line stops across global MEB gigafactories.",
+        "roiBadges": [
+          "-32% Changeover Delay",
+          "-28% Solvent Waste",
+          "100% JIS Sequence",
+          "Zero Line Halts"
+        ]
+      },
+      "category_should_cost": {
+        "systems": "SAP Ariba \u00b7 Siemens Teamcenter BOM \u00b7 London Metal Exchange Feeds \u00b7 BigQuery ML",
+        "problemDetails": "Surging prices and opaque supplier markups on lithium cathode active materials, battery modules, and microcontrollers inflate vehicle bill of materials (BOM) costs.",
+        "solutionDetails": "Decomposes Tier-1 automotive sub-assemblies into raw raw-material indices (LME nickel/cobalt, engineered plastics, stamping steel) and clean-sheet manufacturing cycle times.",
+        "outcomeDetails": "Saves \u20ac110M in annual powertrain and electronics procurement negotiations; establishes transparent should-cost price corridors across Tier-1 suppliers.",
+        "roiBadges": [
+          "\u20ac110M Spend Saved",
+          "-7.4% Component Cost",
+          "100% BOM Visibility",
+          "Clean-Sheet Clout"
+        ]
+      },
+      "fleet_route_dispatch_optimizer": {
+        "systems": "SAP TM \u00b7 Port of Emden Vehicle Logistics Portal \u00b7 Google Maps Routes Preferred API \u00b7 OR-Tools CVRPTW",
+        "problemDetails": "Outbound vehicle logistics dispatchers manually assign finished cars to 9-car double-deck haulers, resulting in high deadhead return miles and vehicle bumper damage.",
+        "solutionDetails": "Solves heterogeneous 3D vehicle hauler spatial loading combined with Google Maps corridor routing, synchronizing factory yard gate dispatches with European dealer compound deliveries.",
+        "outcomeDetails": "Cuts empty return miles by 24%; improves dealer delivery on-time arrival to 98.6% and reduces in-transit vehicle scratches and damage claims by 40%.",
+        "roiBadges": [
+          "-24% Empty Miles",
+          "98.6% On-Time Delivery",
+          "-40% In-Transit Damage",
+          "3D Spatial Loading"
+        ]
+      }
+    },
+    "canonicalName": "Volkswagen Group",
+    "ticker": "XETRA: VOW3",
+    "industryId": "automotive",
+    "flagshipSites": "Wolfsburg (Germany) \u00b7 Zwickau MEB Gigafactory \u00b7 Chattanooga (USA) \u00b7 Bratislava \u00b7 Port of Emden Vehicle Logistics Hub",
+    "coreProducts": "ID.4 & ID.7 Electric Skateboards \u00b7 MEB Battery Pack Modules \u00b7 Stamped Body-in-White Assemblies \u00b7 TSI/TDI Powertrains",
+    "logoSvg": "<svg viewBox=\"0 0 100 100\" width=\"38\" height=\"38\" style=\"vertical-align:middle; margin-right:8px;\"><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"none\" stroke=\"#00d2ff\" stroke-width=\"6\"/><circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"#001e50\"/><path d=\"M26 35 L42 70 L50 50 L58 70 L74 35\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M35 35 L50 64 L65 35\" fill=\"none\" stroke=\"#00d2ff\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>",
+    "ecosystem": {
+      "tier1Suppliers": [
+        "Bosch",
+        "Continental",
+        "ZF Friedrichshafen",
+        "CATL",
+        "Gotion High-Tech",
+        "Denso",
+        "Magna"
+      ],
+      "enterpriseSystems": [
+        "SAP S/4HANA for Automotive",
+        "Catena-X Automotive Data Space",
+        "Siemens Teamcenter PLM",
+        "Siemens Opcenter MES",
+        "Kuka Robotics SCADA",
+        "MAN Truck & Bus Logistics",
+        "DB Cargo Automotive Rail"
+      ],
+      "logisticsCorridors": [
+        "Port of Emden Ocean Vehicle RORO Terminal",
+        "Wolfsburg-to-Zwickau Just-in-Sequence Rail Corridor",
+        "Chattanooga-to-Tennessee Valley Supplier Corridor",
+        "Antwerp-to-Bratislava Automotive Supply Chain"
+      ]
+    },
+    "company_slug": "volkswagen_group",
+    "saved_at": "2026-10-16T10:23:12.656556+00:00",
+    "status": "approved",
+    "company_name": "Volkswagen Group"
+  }
+};
 
     const EMBEDDED_ASSET_MAP = {
       "gemini_enterprise_dark.png": "gemini_enterprise_dark.webp",
@@ -10467,6 +11225,10 @@
       if (m) m.style.display = 'none';
     }
 
+    let BASELINE_PERSONAS = null;
+    let BASELINE_AGENTS = null;
+    let CURRENT_TWIN = null;
+
     function quickSelectPreset(key) {
       const companyInput = document.getElementById('twinCompanyInput');
       const industrySelect = document.getElementById('twinIndustrySelect');
@@ -10476,10 +11238,18 @@
         if (companyInput) companyInput.value = 'Volkswagen Group';
         if (industrySelect) industrySelect.value = 'automotive';
         if (focusInput) focusInput.value = 'Wolfsburg & MEB gigafactories, PowerCo battery cells, JIS chassis line feeding';
-      } else if (key === 'bmw') {
-        if (companyInput) companyInput.value = 'BMW Group';
-        if (industrySelect) industrySelect.value = 'automotive';
-        if (focusInput) focusInput.value = 'Spartanburg plant assembly, Neue Klasse EV platforms, Tier-1 supplier synchrony';
+      } else if (key === 'itc') {
+        if (companyInput) companyInput.value = 'ITC Limited';
+        if (industrySelect) industrySelect.value = 'cpg_retail';
+        if (focusInput) focusInput.value = 'e-Choupal rural farmer procurement, FMCG ICML plants, mother godown CFAs';
+      } else if (key === 'boeing') {
+        if (companyInput) companyInput.value = 'The Boeing Company';
+        if (industrySelect) industrySelect.value = 'aerospace';
+        if (focusInput) focusInput.value = '737/787 commercial jetliners, long-lead titanium forgings, FAA cGMP compliance';
+      } else if (key === 'caterpillar') {
+        if (companyInput) companyInput.value = 'Caterpillar Inc.';
+        if (industrySelect) industrySelect.value = 'aerospace';
+        if (focusInput) focusInput.value = 'Heavy mining equipment, global dealer parts fulfillment, engine remanufacturing';
       } else if (key === 'shell') {
         if (companyInput) companyInput.value = 'Shell plc';
         if (industrySelect) industrySelect.value = 'oil_gas_energy';
@@ -10488,14 +11258,6 @@
         if (companyInput) companyInput.value = 'Pfizer Inc.';
         if (industrySelect) industrySelect.value = 'life_sciences_pharma';
         if (focusInput) focusInput.value = 'cGMP sterile injectables, mRNA vaccine platform, cold-chain distribution';
-      } else if (key === 'caterpillar') {
-        if (companyInput) companyInput.value = 'Caterpillar Inc.';
-        if (industrySelect) industrySelect.value = 'aerospace';
-        if (focusInput) focusInput.value = 'Heavy mining equipment, global dealer parts fulfillment, engine remanufacturing';
-      } else if (key === 'boeing') {
-        if (companyInput) companyInput.value = 'Boeing';
-        if (industrySelect) industrySelect.value = 'aerospace';
-        if (focusInput) focusInput.value = '737/787 commercial jetliners, long-lead titanium forgings, FAA cGMP compliance';
       } else if (key === 'unilever') {
         if (companyInput) companyInput.value = 'Unilever';
         if (industrySelect) industrySelect.value = 'cpg_retail';
@@ -10504,64 +11266,219 @@
       executeTwinGeneration();
     }
 
-    function applyBrowserTwin(company, industry, focus) {
-      window.CURRENT_TWIN = { company: company, industry: industry, focus: focus };
+    function synthesizeClientSideTwin(company, industry, focus) {
+      const clower = (company + ' ' + (focus || '')).toLowerCase();
+      let ind = industry || 'automotive';
+      if (ind === 'auto') {
+        if (/fmcg|itc|agri|choupal|wheat|tobacco|retail|cpg|unilever|nestle|walmart|target|food|grocer/.test(clower)) {
+          ind = 'fmcg_agribusiness';
+        } else if (/boeing|airbus|plane|aero|defense|flight|titanium/.test(clower)) {
+          ind = 'aerospace_defense';
+        } else if (/caterpillar|cat|machin|mining|excavator|deere|komatsu|heavy/.test(clower)) {
+          ind = 'heavy_machinery';
+        } else if (/auto|car|vehicle|bmw|volkswagen|vw|tesla|ford|toyota|audi|mercedes|chassis|engine/.test(clower)) {
+          ind = 'automotive';
+        } else if (/oil|gas|energy|shell|bp|chevron|exxon|aramco|petro|refin|pipeline/.test(clower)) {
+          ind = 'oil_gas_energy';
+        } else if (/pharma|health|bio|pfizer|roche|novartis|merck|moderna|vaccine|drug/.test(clower)) {
+          ind = 'life_sciences_pharma';
+        } else {
+          ind = 'automotive';
+        }
+      }
+
+      let brandAccent = '#00d2ff';
+      let execTitle = 'Chief Supply Chain Officer (CSCO), ' + company;
+      let execThesis = focus || ('Orchestrating autonomous supply chain operations across ' + company + ' manufacturing plants and global distribution corridors.');
+
+      if (ind === 'fmcg_agribusiness' || ind === 'cpg_retail') {
+        brandAccent = '#10b981';
+        execTitle = 'Executive Director, FMCG, Agri-Business & Supply Chain, ' + company;
+        execThesis = focus || ('Synchronizing agricultural commodity sourcing, integrated manufacturing plants, and multi-echelon Carrying & Forwarding distribution for ' + company + '.');
+      } else if (ind === 'aerospace_defense' || ind === 'aerospace') {
+        brandAccent = '#0284c7';
+        execTitle = 'Senior Vice President of Global Supply Chain & Manufacturing Operations, ' + company;
+        execThesis = focus || ('Synchronizing multi-year supplier lead times, precision forgings, FAA airworthiness compliance, and final assembly lines for ' + company + '.');
+      } else if (ind === 'heavy_machinery') {
+        brandAccent = '#ffcd11';
+        execTitle = 'Senior Vice President, Global Supply Chain & Customer Support Division, ' + company;
+        execThesis = focus || ('Orchestrating heavy machinery assembly, circular remanufacturing, and guaranteed 24-hour emergency dealer parts availability for ' + company + '.');
+      } else if (ind === 'automotive') {
+        brandAccent = '#00d2ff';
+        execTitle = 'Board Member for Production & Logistics, ' + company;
+        execThesis = focus || ('Synchronizing gigafactories, battery cell supply, and just-in-sequence (JIS) line feeding for ' + company + ' vehicle platforms.');
+      } else if (ind === 'oil_gas_energy') {
+        brandAccent = '#fbbf24';
+        execTitle = 'Executive Vice President of Global Supply Chain & Trading, ' + company;
+        execThesis = focus || ('Optimizing integrated crude trading, pipeline hydraulic flows, refinery catalytic slates, and international bulk charters for ' + company + '.');
+      } else if (ind === 'life_sciences_pharma') {
+        brandAccent = '#38bdf8';
+        execTitle = 'President, Global Supply (PGS) & Technical Operations, ' + company;
+        execThesis = focus || ('Guaranteed zero-stockout patient fulfillment of sterile injectables, biologics platforms, and temperature-controlled distribution for ' + company + '.');
+      }
+
+      return {
+        canonicalName: company,
+        company_name: company,
+        industryId: ind,
+        brandAccent: brandAccent,
+        brandSecondary: '#001e50',
+        executiveTitle: execTitle,
+        executiveThesis: execThesis,
+        personaOverrides: {
+          demand_planning_dir: {
+            title: company + ' Head of Demand Sensing & Consensus Planning',
+            role: 'Enterprise Demand Forecast Accuracy & Customer Fill-Rate Governance',
+            summary: 'Directs enterprise demand forecasting across all ' + company + ' business units, channels, and product families.',
+            manualToil: 'Manual spreadsheets and fragmented portal downloads causing weekly forecasting blindspots at ' + company + '.',
+            agenticImpact: 'Daily demand sensing in TimesFM cutting forecast error by 24% for ' + company + '.'
+          },
+          mps_scheduling_lead: {
+            title: company + ' Production Control & Master Scheduling Meister',
+            role: 'Finite Capacity Scheduling & Plant Throughput Optimization',
+            summary: 'Orchestrates manufacturing line schedules, machine changeovers, and material allocations across ' + company + ' plants.',
+            manualToil: 'Manual shift scheduling frequently derailed by late material arrivals and equipment stops at ' + company + '.',
+            agenticImpact: 'OR-Tools CP-SAT finite-capacity sequencing cutting changeover downtime by 30%.'
+          },
+          category_sourcing_mgr: {
+            title: company + ' Head of Strategic Procurement & Direct Sourcing',
+            role: 'Category Sourcing, Should-Cost Decomposition & Supplier Contracting',
+            summary: 'Leads direct material procurement and supplier relationships for ' + company + ' manufacturing and operations.',
+            manualToil: 'Normalizing inconsistent supplier quotes in Excel without bottom-up cost benchmarks.',
+            agenticImpact: 'Parametric should-cost decomposition unlocking 7-10% in direct procurement savings.'
+          },
+          meio_inventory_mgr: {
+            title: company + ' Multi-Echelon Inventory & Distribution Hub Stock Controller',
+            role: 'Buffer Stock Optimization & Network Working Capital Tuning',
+            summary: 'Controls inventory across factories, central warehouses, and regional distribution centers for ' + company + '.',
+            manualToil: 'Hoarding excess safety stock at distribution centers to guard against transit delays.',
+            agenticImpact: 'Stochastic MEIO solver dynamically rebalancing safety stocks across network hubs.'
+          },
+          fleet_dispatch_mgr: {
+            title: company + ' Outbound Logistics & Carrier Fleet Dispatch Lead',
+            role: 'Dedicated Fleet Linehaul & Regional Delivery Dispatch',
+            summary: 'Manages dedicated linehaul carriers and delivery routes across ' + company + ' distribution corridors.',
+            manualToil: 'Dispatchers manually assigning orders to trucks with high deadhead return miles.',
+            agenticImpact: 'Google Maps Routes Preferred API cutting empty miles by 22%.'
+          }
+        },
+        agentOverrides: {
+          demand_sensing_agent: {
+            systems: 'SAP S/4HANA · ' + company + ' Enterprise Data Lake · BigQuery · Vertex AI TimesFM',
+            problemDetails: 'Disconnected regional spreadsheets, lack of customer sell-through visibility, and promotion cannibalization create costly stockouts and working capital build-ups for ' + company + '.',
+            solutionDetails: 'PulseCast Demand Sensing Copilot ingests live point-of-sale data, distributor orders, and market signals into Vertex AI TimesFM with hierarchical SKU reconciliation for ' + company + '.',
+            outcomeDetails: 'Cuts demand forecast error by 24% for ' + company + '; unlocks 18% in trapped safety stock working capital.',
+            roiBadges: ['-24% Forecast Error', '18% Working Capital Freed', '45-Min S&OP Consensus', '99.2% Customer OTIF']
+          },
+          mps_finite_scheduler: {
+            systems: 'Siemens Opcenter MES · SAP PP/DS · ' + company + ' Plant SCADA · OR-Tools CP-SAT',
+            problemDetails: 'Frequent product recipe changes and uncoordinated material feeding cause excessive line idle time and backorders across ' + company + ' manufacturing facilities.',
+            solutionDetails: 'OR-Tools CP-SAT finite-capacity scheduling solver optimizes sequence-dependent setups, grouping similar tooling and recipe families to maximize throughput.',
+            outcomeDetails: 'Reduces plant changeover downtime by 32%; eliminates line starvation and cuts scrap by 28% for ' + company + '.',
+            roiBadges: ['+14% Plant OEE', '-32% Changeover Delay', '-28% Scrap Waste', '100% Sequence Pegging']
+          }
+        }
+      };
+    }
+
+    function applyBrowserTwin(twinData) {
+      if (!twinData) return;
+      CURRENT_TWIN = twinData;
+      const cName = twinData.canonicalName || twinData.company_name || 'Enterprise';
+      const execTitle = twinData.executiveTitle || ('Chief Supply Chain Officer (CSCO), ' + cName);
+      const execThesis = twinData.executiveThesis || '';
+      const brandAccent = twinData.brandAccent || '#00d2ff';
+      const brandSec = twinData.brandSecondary || '#001e50';
+
+      // 1. Snapshot baseline if not already done
+      if (!BASELINE_PERSONAS) {
+        BASELINE_PERSONAS = JSON.parse(JSON.stringify(PERSONAS));
+      }
+      if (!BASELINE_AGENTS) {
+        BASELINE_AGENTS = JSON.parse(JSON.stringify(AGENTS));
+      }
+
+      // 2. Reset back to baseline first before applying overrides
+      for (let pid in BASELINE_PERSONAS) {
+        PERSONAS[pid] = JSON.parse(JSON.stringify(BASELINE_PERSONAS[pid]));
+      }
+      for (let aid in BASELINE_AGENTS) {
+        AGENTS[aid] = JSON.parse(JSON.stringify(BASELINE_AGENTS[aid]));
+      }
+
+      // 3. Apply Persona Overrides from ADK Agent
+      const pOverrides = twinData.personaOverrides || {};
+      for (let pid in pOverrides) {
+        if (PERSONAS[pid]) {
+          const po = pOverrides[pid];
+          if (po.title) PERSONAS[pid].name = po.title;
+          if (po.role) PERSONAS[pid].role = po.role;
+          if (po.summary) PERSONAS[pid].summary = po.summary;
+          if (po.mandate && !po.summary) PERSONAS[pid].summary = po.mandate;
+          if (po.manualToil && PERSONAS[pid].dayInLife && PERSONAS[pid].dayInLife.length > 0) {
+            PERSONAS[pid].dayInLife[0].before = po.manualToil;
+          }
+          if (po.agenticImpact && PERSONAS[pid].dayInLife && PERSONAS[pid].dayInLife.length > 0) {
+            PERSONAS[pid].dayInLife[0].after = po.agenticImpact;
+          }
+        }
+      }
+
+      // 4. Apply Agent Overrides from ADK Agent
+      const aOverrides = twinData.agentOverrides || {};
+      for (let aid in aOverrides) {
+        if (AGENTS[aid]) {
+          const ao = aOverrides[aid];
+          if (ao.systems) AGENTS[aid].systems = ao.systems;
+          if (ao.problemDetails) AGENTS[aid].problemDetails = ao.problemDetails;
+          if (ao.solutionDetails) AGENTS[aid].solutionDetails = ao.solutionDetails;
+          if (ao.outcomeDetails) AGENTS[aid].outcomeDetails = ao.outcomeDetails;
+          if (ao.roiBadges) AGENTS[aid].roiBadges = ao.roiBadges;
+        }
+      }
+
+      // 5. Update Header, Nav Badge, CSCO Card & Brand Colors
+      document.documentElement.style.setProperty('--sc-cyan', brandAccent);
       const heroTitleEl = document.querySelector('.hero-title');
       const cscoBadgeEl = document.querySelector('.nav-csco-badge');
       const cscoTitleEl = document.querySelector('.csco-root-title');
       const cscoDescEl = document.querySelector('.csco-root-desc');
 
-      let accentColor = '#00d2ff';
-      let emoji = '🏢';
-      let execTitle = 'Chief Supply Chain Officer (CSCO), ' + company;
-      let execDesc = focus || ('Operating 6 SCOR-aligned departments spanning Factory → Ocean Ships → Air Cargo → Rail → Warehouses → Road Fleet for ' + company + '.');
-
-      if (industry === 'automotive') {
-        accentColor = '#00d2ff';
-        emoji = '🚗';
-        execTitle = 'Board Member for Production & Logistics, ' + company;
-        execDesc = focus || ('Synchronizing Wolfsburg & global assembly gigafactories, battery cell supply, and just-in-sequence (JIS) line feeding for ' + company + '.');
-      } else if (industry === 'oil_gas_energy') {
-        accentColor = '#fbbf24';
-        emoji = '🛢️';
-        execTitle = 'EVP of Global Supply Chain, Trading & Logistics, ' + company;
-        execDesc = focus || ('Optimizing global integrated crude trading, pipeline hydraulic flows, refinery catalytic slates, and international LNG carrier charters for ' + company + '.');
-      } else if (industry === 'life_sciences_pharma') {
-        accentColor = '#38bdf8';
-        emoji = '💊';
-        execTitle = 'President, Global Supply (PGS) & Technical Operations, ' + company;
-        execDesc = focus || ('Guaranteed zero-stockout patient fulfillment of sterile injectables, cGMP biologics platforms, and temperature-controlled distribution across ' + company + ' global sites.');
-      } else if (industry === 'cpg_retail') {
-        accentColor = '#10b981';
-        emoji = '🛒';
-        execTitle = 'Chief Supply Chain Officer & VP Customer Operations, ' + company;
-        execDesc = focus || ('Orchestrating end-to-end demand sensing, multi-echelon warehouse fulfillment, and shelf availability across thousands of SKUs and retail partner stores for ' + company + '.');
-      } else if (industry === 'aerospace') {
-        accentColor = '#f97316';
-        emoji = '✈️';
-        execTitle = 'SVP of Global Supply Chain & Manufacturing Operations, ' + company;
-        execDesc = focus || ('Synchronizing multi-year supplier lead times, precision titanium forgings, FAA compliance tracing, and final assembly lines for ' + company + '.');
-      } else if (industry === 'hightech') {
-        accentColor = '#a855f7';
-        emoji = '⚡';
-        execTitle = 'VP of Worldwide Supply Chain & Operations, ' + company;
-        execDesc = focus || ('Managing semiconductor fab capacity, wafer allocation, cleanroom assembly, and component multi-sourcing for ' + company + '.');
-      }
-
-      document.documentElement.style.setProperty('--sc-cyan', accentColor);
       if (cscoBadgeEl) {
-        cscoBadgeEl.innerHTML = '<span style="color:' + accentColor + '; font-weight:800;">' + emoji + ' ' + company + '</span> · Office of the CSCO';
+        cscoBadgeEl.innerHTML = '<span style="color:' + brandAccent + '; font-weight:800;">' + cName + '</span> · Office of the CSCO';
       }
       if (heroTitleEl) {
-        heroTitleEl.innerHTML = '<span class="g-text-gradient">' + company + '</span><br/>Supply Chain Agentic Transformation';
+        heroTitleEl.innerHTML = '<span class="g-text-gradient">' + cName + '</span><br/>Supply Chain Agentic Transformation';
       }
       if (cscoTitleEl) {
         cscoTitleEl.textContent = execTitle;
       }
-      if (cscoDescEl) {
-        cscoDescEl.textContent = execDesc;
+      if (cscoDescEl && execThesis) {
+        cscoDescEl.textContent = execThesis;
       }
-      document.title = company + ' · Supply Chain Agentic Transformation (Office of the CSCO)';
+      document.title = cName + ' · Supply Chain Agentic Transformation (' + execTitle + ')';
+
+      // 6. Re-render Org Chart & Active Views
+      renderOrgChart();
+
+      // If active on a persona or agent page, refresh it live
+      if (typeof lastPersonaId !== 'undefined' && lastPersonaId && PERSONAS[lastPersonaId]) {
+        const pWrap = document.getElementById('personaPageContent');
+        if (pWrap && pWrap.offsetParent !== null) {
+          openPersonaPage(lastPersonaId, false);
+        }
+      }
+      if (typeof lastAgentId !== 'undefined' && lastAgentId && AGENTS[lastAgentId]) {
+        const aWrap = document.getElementById('agentPageContent');
+        if (aWrap && aWrap.offsetParent !== null) {
+          openAgentPage(lastAgentId, false);
+        }
+      }
+
+      // 7. Save to localStorage
+      try {
+        localStorage.setItem('ACTIVE_ENTERPRISE_TWIN', JSON.stringify(twinData));
+      } catch (e) {}
     }
 
     function executeTwinGeneration() {
@@ -10581,23 +11498,35 @@
       const backendUrl = (backendInput ? backendInput.value : '').trim();
       const callBackend = callBackendCheckbox ? callBackendCheckbox.checked : false;
 
-      // Auto-detect industry if set to 'auto'
+      // Auto-detect industry
+      const clower = (company + ' ' + focus).toLowerCase();
       if (industry === 'auto') {
-        const clower = (company + ' ' + focus).toLowerCase();
-        if (/auto|car|vehicle|bmw|volkswagen|vw|tesla|ford|toyota|audi|porsche|mercedes|stellantis|honda|hyundai|nissan|truck|gm|daimler/.test(clower)) {
+        if (/fmcg|itc|agri|choupal|wheat|tobacco|retail|cpg|unilever|nestle|walmart|target|food|grocer/.test(clower)) {
+          industry = 'fmcg_agribusiness';
+        } else if (/boeing|airbus|plane|aero|defense|flight|titanium/.test(clower)) {
+          industry = 'aerospace_defense';
+        } else if (/caterpillar|cat|machin|mining|excavator|deere|komatsu|heavy/.test(clower)) {
+          industry = 'heavy_machinery';
+        } else if (/auto|car|vehicle|bmw|volkswagen|vw|tesla|ford|toyota|audi|mercedes|chassis|engine/.test(clower)) {
           industry = 'automotive';
-        } else if (/oil|gas|energy|shell|bp|chevron|exxon|aramco|petro|total|refin|pipeline|drill/.test(clower)) {
+        } else if (/oil|gas|energy|shell|bp|chevron|exxon|aramco|petro|refin|pipeline/.test(clower)) {
           industry = 'oil_gas_energy';
-        } else if (/pharma|health|bio|pfizer|roche|novartis|merck|astrazeneca|gsk|sanofi|moderna|johnson|lilly|drug|med/.test(clower)) {
+        } else if (/pharma|health|bio|pfizer|roche|novartis|merck|moderna|vaccine|drug/.test(clower)) {
           industry = 'life_sciences_pharma';
-        } else if (/retail|cpg|unilever|nestle|walmart|target|l'or|loreal|pepsi|coca|p&g|procter|consumer|grocer|food/.test(clower)) {
-          industry = 'cpg_retail';
-        } else if (/boeing|airbus|lockheed|machin|caterpillar|deere|komatsu|aero|defense|plane|aviation/.test(clower)) {
-          industry = 'aerospace';
-        } else if (/chip|semi|intel|nvidia|amd|apple|samsung|tsmc|asml|qualcomm|cisco|tech|device|hardware/.test(clower)) {
-          industry = 'hightech';
         } else {
           industry = 'automotive';
+        }
+      }
+
+      // Check if we have a pre-embedded twin or previously cached twin
+      const slug = company.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+      let twinData = (typeof EMBEDDED_TWINS !== 'undefined' && EMBEDDED_TWINS[slug]) ? EMBEDDED_TWINS[slug] : null;
+      if (!twinData && typeof EMBEDDED_TWINS !== 'undefined') {
+        for (let k in EMBEDDED_TWINS) {
+          if (clower.includes(k) || k.includes(slug)) {
+            twinData = EMBEDDED_TWINS[k];
+            break;
+          }
         }
       }
 
@@ -10610,13 +11539,12 @@
 
       if (hud) hud.style.display = 'block';
 
-      // Define agentic workflow steps
       const steps = [
-        { pct: 20, status: '🔍 Company Profiler: Querying corporate profile & branding for ' + company + '...', log: '[CompanyProfiler] Grounding operational hierarchy and plants for ' + company + ' (' + industry + ')...' },
-        { pct: 45, status: '🌐 Ecosystem Miner: Mapping Tier-1/Tier-2 supply networks & plant hubs...', log: '[EcosystemMiner] Identified key production sites, supplier nodes, and global trade corridors...' },
-        { pct: 70, status: '👔 Career Persona Miner: Mining VP & Director operational titles...', log: '[PersonaMiner] Calibrated 26 SCOR personas & 32 AI agents to ' + company + ' domain nomenclature...' },
-        { pct: 90, status: '⚡ Visual Styler: Synthesizing bespoke SVG watermarks & theme accents...', log: '[VisualStyler] Synthesized responsive CAD canvas & adaptive CSS tokens...' },
-        { pct: 100, status: '✨ Complete: Client Twin active for ' + company + '!', log: '[TwinReady] Live browser DOM morph successful. Portal now operates as ' + company + ' Supply Chain Twin.' }
+        { pct: 20, status: '🤖 ADK Agent: Querying corporate profile & ecosystem for ' + company + '...', log: '[CompanyProfiler] Grounding operational hierarchy, plants & systems for ' + company + ' (' + industry + ')...' },
+        { pct: 45, status: '🌐 Ecosystem Miner: Mapping Tier-1/Tier-2 supply networks & plant hubs...', log: '[EcosystemMiner] Identified key facilities, supplier nodes, and global trade corridors...' },
+        { pct: 70, status: '👔 Career Persona Miner: Mining VP & Director titles for 26 SCOR roles...', log: '[PersonaMiner] Calibrated 26 SCOR personas with authentic ' + industry + ' domain lingo & toils...' },
+        { pct: 90, status: '⚙️ Agent Spec Miner: Customizing operational details inside 32 AI agents...', log: '[AgentSpecMiner] Synthesized target ERP/MES data inputs, problem cards, and ROI metrics...' },
+        { pct: 100, status: '✨ Complete: Digital Twin active for ' + company + '!', log: '[TwinReady] Live browser DOM morph successful. Portal now operates as ' + company + ' Supply Chain Twin.' }
       ];
 
       let currentStep = 0;
@@ -10638,8 +11566,13 @@
         } else {
           clearInterval(stepTimer);
 
-          // Perform Live In-Browser DOM Morph
-          applyBrowserTwin(company, industry, focus);
+          // If we had no embedded twin, synthesize one dynamically in browser!
+          if (!twinData) {
+            twinData = synthesizeClientSideTwin(company, industry, focus);
+          }
+
+          // Apply the twin to the browser DOM
+          applyBrowserTwin(twinData);
 
           // Decoupled backend trigger
           if (callBackend && backendUrl) {
@@ -10647,7 +11580,7 @@
               const apiLine = document.createElement('div');
               apiLine.style.marginTop = '6px';
               apiLine.style.color = '#38bdf8';
-              apiLine.innerHTML = '<span>📡 Calling decoupled backend agent (' + backendUrl + ')...</span>';
+              apiLine.innerHTML = '<span>📡 Calling decoupled ADK backend agent (' + backendUrl + ')...</span>';
               hudLog.appendChild(apiLine);
             }
             fetch(backendUrl, {
@@ -10661,8 +11594,11 @@
                 const okLine = document.createElement('div');
                 okLine.style.marginTop = '4px';
                 okLine.style.color = '#10b981';
-                okLine.innerHTML = '<span>✓ Decoupled backend compiled bundle to: <code>' + (data.output_directory || 'dist/') + '</code></span>';
+                okLine.innerHTML = '<span>✓ ADK Agent compiled persistent bundle to: <code>' + (data.output_dir || 'dist/') + '</code></span>';
                 hudLog.appendChild(okLine);
+              }
+              if (data.profile) {
+                applyBrowserTwin(data.profile);
               }
             })
             .catch(err => {
@@ -10690,10 +11626,14 @@
             exploreBtn.style.fontSize = '13px';
             exploreBtn.style.border = 'none';
             exploreBtn.style.cursor = 'pointer';
-            exploreBtn.textContent = '🚀 Explore ' + company + ' Portal ↗';
+            exploreBtn.textContent = '🚀 Explore ' + company + ' Org Chart & Agents ↗';
             exploreBtn.onclick = () => {
               closeEnterpriseTwinModal();
               goHome();
+              setTimeout(() => {
+                const el = document.getElementById('orgChartSection');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 40);
             };
             hudLog.appendChild(exploreBtn);
           }
@@ -10704,7 +11644,22 @@
     function switchClientTwin(clientKey) {
       if (clientKey === 'reset') {
         closeEnterpriseTwinModal();
-        window.CURRENT_TWIN = null;
+        CURRENT_TWIN = null;
+        try {
+          localStorage.removeItem('ACTIVE_ENTERPRISE_TWIN');
+        } catch (e) {}
+
+        if (BASELINE_PERSONAS) {
+          for (let pid in BASELINE_PERSONAS) {
+            PERSONAS[pid] = JSON.parse(JSON.stringify(BASELINE_PERSONAS[pid]));
+          }
+        }
+        if (BASELINE_AGENTS) {
+          for (let aid in BASELINE_AGENTS) {
+            AGENTS[aid] = JSON.parse(JSON.stringify(BASELINE_AGENTS[aid]));
+          }
+        }
+
         const heroTitleEl = document.querySelector('.hero-title');
         const cscoBadgeEl = document.querySelector('.nav-csco-badge');
         const cscoTitleEl = document.querySelector('.csco-root-title');
@@ -10718,6 +11673,8 @@
         if (cscoDescEl) cscoDescEl.textContent = 'The Office of the CSCO operates 6 SCOR-aligned departments spanning Factory → Ocean Ships → Air Cargo → Rail → Warehouses → Road Fleet.';
         document.documentElement.style.setProperty('--sc-cyan', '#00d2ff');
         document.title = 'Supply Chain & Demand · Agentic Transformation (Office of the CSCO)';
+
+        renderOrgChart();
         goHome();
         return;
       }
@@ -10725,11 +11682,30 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      if (!BASELINE_PERSONAS) {
+        BASELINE_PERSONAS = JSON.parse(JSON.stringify(PERSONAS));
+      }
+      if (!BASELINE_AGENTS) {
+        BASELINE_AGENTS = JSON.parse(JSON.stringify(AGENTS));
+      }
+
       hydrateAssets();
       initHeroSupplyChainCanvas();
       renderOrgChart();
       hydrateAssets();
       handleUrlHash();
+
+      // Check if a twin was previously cached in localStorage
+      try {
+        const cachedStr = localStorage.getItem('ACTIVE_ENTERPRISE_TWIN');
+        if (cachedStr) {
+          const cached = JSON.parse(cachedStr);
+          if (cached && (cached.canonicalName || cached.company_name)) {
+            console.log('Restoring active enterprise twin from memory:', cached.canonicalName || cached.company_name);
+            applyBrowserTwin(cached);
+          }
+        }
+      } catch (e) {}
     });
   </script>
 </body>

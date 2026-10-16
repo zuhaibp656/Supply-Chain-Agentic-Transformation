@@ -1,0 +1,91 @@
+{
+  "id": "life_sciences_pharma",
+  "displayName": "Pfizer Inc.",
+  "executiveTitle": "President, Pfizer Global Supply (PGS) & Technical Operations",
+  "executiveThesis": "Guaranteed zero-stockout patient fulfillment of sterile injectables, mRNA vaccine platforms, and oncology APIs across 37 global manufacturing sites.",
+  "brandAccent": "#38bdf8",
+  "brandSecondary": "#0000ff",
+  "defaultSystems": "SAP S/4HANA Life Sciences \u00b7 Veeva Vault QMS \u00b7 Siemens Opcenter Pharma MES \u00b7 TrackWise \u00b7 Sensitech Cold-Chain IoT \u00b7 Cloud Spanner Graph \u00b7 BigQuery",
+  "watermarkType": "pharma_biotech",
+  "productVocabulary": {
+    "unit": "vial / pre-filled syringe / blister pack",
+    "subUnit": "bioreactor batch / clinical lot",
+    "components": "active pharmaceutical ingredient (API), excipients, sterile glass vials, elastomeric stoppers",
+    "rawMaterials": "cell culture media, single-use bioreactor bags, chromatography resins, chemical precursors",
+    "facilities": "Sterile Fill-Finish Plant & cGMP Biomanufacturing Facility",
+    "outboundMode": "Validated Temperature-Controlled Cold-Chain Air Cargo (2\u00b0C\u20138\u00b0C / -70\u00b0C)",
+    "inboundMode": "Qualified Temperature-Monitored Dedicated Dedicated Logistics"
+  },
+  "personaOverrides": {
+    "demand_planning_dir": {
+      "title": "Pfizer Inc. Director of Demand Sensing & Consensus Planning",
+      "role": "Enterprise Forecast Accuracy & Customer Replenishment Alignment",
+      "summary": "Directs enterprise demand forecasting across all Pfizer Inc. business units, channels, and product families.",
+      "mandate": "Synchronizes customer point-of-sale signals and commercial promotions with operational production commitments.",
+      "manualToil": "Manual data aggregation across regional ERP instances and spreadsheet consolidation.",
+      "agenticImpact": "Automated multi-signal forecasting in Vertex AI TimesFM with daily P10/P50/P90 quantile fans."
+    },
+    "category_sourcing_mgr": {
+      "title": "Pfizer Inc. Head of Strategic Procurement & Direct Sourcing",
+      "role": "Category Sourcing, Should-Cost Decomposition & Supplier Contracting",
+      "summary": "Leads direct material procurement and supplier relationships for Pfizer Inc. manufacturing and operations.",
+      "mandate": "Delivers cost savings and mitigates single-source supplier vulnerabilities across critical components.",
+      "manualToil": "Weeks spent normalizing inconsistent supplier quotes in Excel without bottom-up cost benchmarks.",
+      "agenticImpact": "Parametric should-cost decomposition unlocking 7-10% in direct procurement savings."
+    },
+    "mps_scheduling_lead": {
+      "title": "Pfizer Inc. Master Production Scheduling & Factory Operations Meister",
+      "role": "Finite Capacity Scheduling & Plant Throughput Maximization",
+      "summary": "Orchestrates manufacturing line schedules, machine changeovers, and material allocations across Pfizer Inc. plants.",
+      "mandate": "Maximizes equipment utilization and eliminates line starvation through finite capacity sequencing.",
+      "manualToil": "Manual shift scheduling on spreadsheets frequently derailed by late material arrivals and equipment stops.",
+      "agenticImpact": "OR-Tools CP-SAT finite-capacity scheduling cutting changeover downtime by 30%."
+    }
+  },
+  "agentOverrides": {
+    "demand_sensing_agent": {
+      "systems": "SAP S/4HANA \u00b7 Enterprise POS & CRM Feeds \u00b7 BigQuery \u00b7 Vertex AI TimesFM",
+      "problemDetails": "Disconnected regional spreadsheets, lack of customer sell-through visibility, and promotion cannibalization create costly stockouts and working capital build-ups for Pfizer Inc..",
+      "solutionDetails": "PulseCast Demand Sensing Copilot ingests live point-of-sale data, distributor orders, and market signals into Vertex AI TimesFM with hierarchical SKU reconciliation.",
+      "outcomeDetails": "Cuts demand forecast error by 24% for Pfizer Inc.; unlocks 18% in trapped safety stock working capital.",
+      "roiBadges": [
+        "-24% Forecast Error",
+        "18% Working Capital Freed",
+        "45-Min S&OP Consensus",
+        "99.2% Customer OTIF"
+      ]
+    }
+  },
+  "canonicalName": "Pfizer Inc.",
+  "ticker": "NYSE: PFE",
+  "industryId": "life_sciences_pharma",
+  "flagshipSites": "Kalamazoo Sterile Injectables Hub (USA) \u00b7 Puurs Biomanufacturing Facility (Belgium) \u00b7 Grange Castle (Ireland) \u00b7 Freiburg Packaging Center",
+  "coreProducts": "mRNA Biologics & Vaccines \u00b7 Sterile Injectable APIs \u00b7 Lyophilized Vials \u00b7 Solid Oral Dose Oncology Therapies",
+  "logoSvg": "<svg viewBox=\"0 0 100 100\" width=\"38\" height=\"38\" style=\"vertical-align:middle; margin-right:8px;\"><ellipse cx=\"50\" cy=\"50\" rx=\"44\" ry=\"34\" fill=\"#0000ff\"/><path d=\"M30 50 Q45 28 65 35 Q75 42 70 54 Q65 66 45 62 L32 60\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"50\" cy=\"50\" r=\"4\" fill=\"#00d2ff\"/></svg>",
+  "ecosystem": {
+    "tier1Suppliers": [
+      "Lonza",
+      "Catalent",
+      "Thermo Fisher Scientific",
+      "Sartorius Stedim",
+      "Corning Life Sciences"
+    ],
+    "enterpriseSystems": [
+      "SAP S/4HANA Life Sciences",
+      "Veeva Vault QMS",
+      "Siemens Opcenter Pharma MES",
+      "TrackWise Serialization",
+      "Sensitech Cold-Chain IoT"
+    ],
+    "logisticsCorridors": [
+      "Brussels Airport Pharma Cold-Chain Ramp",
+      "Kalamazoo-to-Chicago Express Distribution Corridor",
+      "Frankfurt CargoCity Temperature-Controlled Hub",
+      "Global Ultra-Cold (-70\u00b0C) Air Freight Lanes"
+    ]
+  },
+  "company_slug": "pfizer_inc",
+  "saved_at": "2026-10-16T10:23:28.655449+00:00",
+  "status": "approved",
+  "company_name": "Pfizer Inc."
+}

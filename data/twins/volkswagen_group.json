@@ -1,0 +1,179 @@
+{
+  "id": "automotive",
+  "displayName": "Volkswagen Group",
+  "executiveTitle": "Board Member for Production & Logistics, Volkswagen AG",
+  "executiveThesis": "Synchronizing Wolfsburg & global MEB gigafactories, battery cell supply from PowerCo & CATL, and just-in-sequence (JIS) line feeding for 9+ million vehicles.",
+  "brandAccent": "#00d2ff",
+  "brandSecondary": "#001e50",
+  "defaultSystems": "SAP S/4HANA for Automotive \u00b7 Catena-X Automotive Data Space \u00b7 Siemens Teamcenter PLM \u00b7 Siemens Opcenter MES \u00b7 Kuka Robotics SCADA \u00b7 DB Cargo Automotive Rail \u00b7 Wallenius Wilhelmsen RORO",
+  "watermarkType": "automotive_chassis",
+  "productVocabulary": {
+    "unit": "vehicle / chassis",
+    "subUnit": "battery module / stamped component",
+    "components": "MEB battery cells, stamped body-in-white panels, drive inverters, wiring harnesses, braking actuators",
+    "rawMaterials": "stamping sheet coils, lithium cathode precursor, aluminum ingots, microcontrollers",
+    "facilities": "Gigafactory & Final Assembly Plant",
+    "outboundMode": "Enclosed Bi-Level Auto-Rack Rail & Ocean RORO Vessels",
+    "inboundMode": "Just-in-Sequence (JIS) Dedicated Shuttle Fleet & Intermodal Rail"
+  },
+  "personaOverrides": {
+    "demand_planning_dir": {
+      "title": "Volkswagen Group Head of Global Vehicle Demand & Model Mix Planning (MEB/ICE)",
+      "role": "Trim-Level Take Rates, EV Battery Cell Allocation & Global Dealer Pipeline",
+      "summary": "Directs vehicle forecasting across all platforms (electric MEB, SSP, and combustion architectures)\u2014synchronizing regional dealer order reservation spikes with assembly factory slots.",
+      "mandate": "Forecasts trim-level take rates, powertrain splits (BEV vs. PHEV vs. ICE), and dealer allocation curves across Volkswagen Group global markets.",
+      "manualToil": "Stitching monthly dealer portal spreadsheets in Excel, suffering 6-week blindspots on EV trim cancellation waves.",
+      "agenticImpact": "Daily regional VIN-level demand sensing in TimesFM balancing dealer pipeline and battery supply constraints."
+    },
+    "sop_ibp_lead": {
+      "title": "Volkswagen Group VP of Vehicle S&OP & Assembly Line Allocation Meister",
+      "role": "Takt Time Balancing, PowerCo Battery Supply Lock & Margin Maximization",
+      "summary": "Reconciles assembly line cycle times (Takt Time) against PowerCo battery cell allocations and critical Tier-1 semiconductor supplies.",
+      "mandate": "Balances global plant capacity (Wolfsburg, Zwickau, Chattanooga) against regional dealer demand and margin targets.",
+      "manualToil": "21-day S&OP cycles spent debating whether Wolfsburg or Zwickau gets constrained power inverter batches.",
+      "agenticImpact": "45-minute live Pareto MILP consensus in OR-Tools balancing margin per vehicle against EU fleet CO2 targets."
+    },
+    "category_sourcing_mgr": {
+      "title": "Volkswagen Group Head of Strategic Procurement (Powertrain, Battery Cells & Semis)",
+      "role": "Direct Material Procurement, Clean-Sheet Should-Cost & Long-Term Offtake Contracts",
+      "summary": "Directs multi-billion-euro procurement for high-voltage battery cells, drive inverters, microcontrollers, and stamped chassis steel.",
+      "mandate": "Secures long-term battery cell supply agreements with PowerCo and CATL while driving clean-sheet supplier cost negotiations.",
+      "manualToil": "Reviewing 50-page supplier RFQ cost breakdowns without bottom-up cycle time or raw metal price index models.",
+      "agenticImpact": "Parametric BOM should-costing on BigQuery and LME metal indices saving \u20ac110M in Tier-1 negotiations."
+    },
+    "supplier_risk_lead": {
+      "title": "Volkswagen Group Automotive Tier-N Risk & Semiconductor War-Room Lead",
+      "role": "Tier-N Bill-of-Materials Dependency Graph & Critical Component Defense",
+      "summary": "Maps sub-tier supplier dependencies past Tier-1 tier vendors down to semiconductor foundries, wiring harness weavers, and lithium refineries.",
+      "mandate": "Prevents assembly line-stopping disruptions caused by Tier-2/Tier-3 component shortages.",
+      "manualToil": "Manual war-room spreadsheets during supply crunches calling Tier-1s to ask where sub-components are sourced.",
+      "agenticImpact": "Cloud Spanner Graph mapping 12,000+ multi-tier automotive supplier nodes with automated bottleneck alerts."
+    },
+    "mps_scheduling_lead": {
+      "title": "Volkswagen Group Production Control & Assembly Line Meister (MEB/Chassis Sequencing)",
+      "role": "Body-in-White Stamping, Paint Color Blocking & Just-In-Sequence Line Feeding",
+      "summary": "Sequences the stamping press, robotic welding body shop, automated paint line, and final chassis assembly.",
+      "mandate": "Locks vehicle production sequences 48 hours before body drop to ensure zero assembly line stops.",
+      "manualToil": "Manual whiteboards rescheduling lines when missing wire harnesses or paint defects stall final trim.",
+      "agenticImpact": "OR-Tools CP-SAT finite-capacity sequencing locking 100% material pegging 48h before body drop."
+    },
+    "meio_inventory_mgr": {
+      "title": "Volkswagen Group Head of Assembly Plant Inbound Buffers & JIS Sequencing Yards",
+      "role": "Supplier Logistics Centers (SLC), High-Bay WMS & 4-Hour JIS Buffer Tuning",
+      "summary": "Controls inbound component inventory across plant supplier logistics centers, sequencing yards, and automated high-bay warehouses.",
+      "mandate": "Maintains lean 4-hour Just-in-Sequence (JIS) buffers without risking assembly line starvation.",
+      "manualToil": "Hoarding 14 days of safety stock in expensive off-site trailer yards to prevent assembly line-stops.",
+      "agenticImpact": "Guaranteed-Service MEIO dynamically tuning JIS buffer stocks down to 4 hours of production (\u20ac42M saved)."
+    },
+    "dock_yard_supervisor": {
+      "title": "Volkswagen Group Just-In-Sequence (JIS) Trailer Yard & Assembly Dock Master",
+      "role": "Live Trailer Dock Scheduling, Empty Stillages & Automated Tugger Sequencing",
+      "summary": "Controls assembly plant receiving docks, trailer yard hostling, and automated tugger routes feeding parts directly to assembly stations.",
+      "mandate": "Ensures sequenced component racks arrive at assembly line stations within 15 minutes of scheduled installation.",
+      "manualToil": "Yard jockey walkie-talkie chaos searching for missing trailers with chassis parts while assembly lines idle.",
+      "agenticImpact": "Real-time GPS yard management and automated dock door assignment cutting trailer dwell by 40%."
+    },
+    "fleet_dispatch_mgr": {
+      "title": "Volkswagen Group Outbound Vehicle Logistics & Dedicated Auto-Carrier Dispatch Lead",
+      "role": "9-Car Double-Deck Haulers, RoRo Port Transit & Dealer Compound Delivery",
+      "summary": "Manages the global finished vehicle distribution fleet, coordinating enclosed car carriers, rail auto-racks, and ocean RoRo vessels.",
+      "mandate": "Delivers finished vehicles from factory gates and ports to dealer showrooms with zero in-transit damage.",
+      "manualToil": "Dispatchers manually pairing cars to 9-car haulers with deadhead return miles and damaged bumpers.",
+      "agenticImpact": "Google Maps Corridor routing with 3D car-carrier spatial packing cutting empty miles by 24%."
+    },
+    "reverse_logistics_mgr": {
+      "title": "Volkswagen Group High-Voltage Battery Cell Circularity & Warranty Core Return Lead",
+      "role": "EV Battery Second-Life Diagnostics, Black Mass Recycling & Warranty Remanufacturing",
+      "summary": "Orchestrates reverse logistics for degraded or recalled high-voltage battery packs, electric drive motors, and dealer warranty cores.",
+      "mandate": "Enforces closed-loop battery recycling (PowerCo battery shredding and hydrometallurgical recovery) and warranty reman.",
+      "manualToil": "Dealers storing hazardous battery packs in parking lots while waiting for certified hazmat transport permits.",
+      "agenticImpact": "Automated battery health telemetry grading and compliant hazmat route optimization boosting recovery margin by 32%."
+    }
+  },
+  "agentOverrides": {
+    "demand_sensing_agent": {
+      "systems": "SAP S/4HANA Wolfsburg \u00b7 Siemens Opcenter MES \u00b7 PowerCo Cell ERP \u00b7 EDI 830/852 Dealer Feeds \u00b7 BigQuery \u00b7 Vertex AI TimesFM",
+      "problemDetails": "Monthly dealer order spreadsheets lack real-time visibility into electric vehicle (EV) trim-level take rates and battery capacity constraints, creating 6-week blindspots and assembly line imbalances.",
+      "solutionDetails": "PulseCast continuously ingests vehicle configurator signals, dealer showroom reservation curves, and European dealer inventory into TimesFM with hierarchical trim and powertrain reconciliation (BEV vs. ICE).",
+      "outcomeDetails": "Eliminates line starvation at Wolfsburg and Zwickau MEB plants; cuts finished vehicle lot dwell by 18 days (\u20ac42M in working capital freed).",
+      "roiBadges": [
+        "\u20ac42M Cash Freed",
+        "-24% Forecast Error",
+        "Zero Line Stops",
+        "100% Battery Pegging"
+      ]
+    },
+    "mps_finite_scheduler": {
+      "systems": "Siemens Opcenter MES \u00b7 SAP PP/DS \u00b7 KUKA Body Shop SCADA \u00b7 OR-Tools CP-SAT",
+      "problemDetails": "Stamping press coil changeovers, paint shop color block flushes, and just-in-sequence (JIS) chassis line feeding are frequently derailed by late supplier sub-assemblies.",
+      "solutionDetails": "OR-Tools CP-SAT finite capacity job-shop solver sequences body-in-white stamping, paint shop color blocks, and final assembly line feeding to lock 100% material pegging 48 hours before body drop.",
+      "outcomeDetails": "Reduces paint shop solvent purge waste by 28%; cuts line changeover delays by 32% and prevents assembly line stops across global MEB gigafactories.",
+      "roiBadges": [
+        "-32% Changeover Delay",
+        "-28% Solvent Waste",
+        "100% JIS Sequence",
+        "Zero Line Halts"
+      ]
+    },
+    "category_should_cost": {
+      "systems": "SAP Ariba \u00b7 Siemens Teamcenter BOM \u00b7 London Metal Exchange Feeds \u00b7 BigQuery ML",
+      "problemDetails": "Surging prices and opaque supplier markups on lithium cathode active materials, battery modules, and microcontrollers inflate vehicle bill of materials (BOM) costs.",
+      "solutionDetails": "Decomposes Tier-1 automotive sub-assemblies into raw raw-material indices (LME nickel/cobalt, engineered plastics, stamping steel) and clean-sheet manufacturing cycle times.",
+      "outcomeDetails": "Saves \u20ac110M in annual powertrain and electronics procurement negotiations; establishes transparent should-cost price corridors across Tier-1 suppliers.",
+      "roiBadges": [
+        "\u20ac110M Spend Saved",
+        "-7.4% Component Cost",
+        "100% BOM Visibility",
+        "Clean-Sheet Clout"
+      ]
+    },
+    "fleet_route_dispatch_optimizer": {
+      "systems": "SAP TM \u00b7 Port of Emden Vehicle Logistics Portal \u00b7 Google Maps Routes Preferred API \u00b7 OR-Tools CVRPTW",
+      "problemDetails": "Outbound vehicle logistics dispatchers manually assign finished cars to 9-car double-deck haulers, resulting in high deadhead return miles and vehicle bumper damage.",
+      "solutionDetails": "Solves heterogeneous 3D vehicle hauler spatial loading combined with Google Maps corridor routing, synchronizing factory yard gate dispatches with European dealer compound deliveries.",
+      "outcomeDetails": "Cuts empty return miles by 24%; improves dealer delivery on-time arrival to 98.6% and reduces in-transit vehicle scratches and damage claims by 40%.",
+      "roiBadges": [
+        "-24% Empty Miles",
+        "98.6% On-Time Delivery",
+        "-40% In-Transit Damage",
+        "3D Spatial Loading"
+      ]
+    }
+  },
+  "canonicalName": "Volkswagen Group",
+  "ticker": "XETRA: VOW3",
+  "industryId": "automotive",
+  "flagshipSites": "Wolfsburg (Germany) \u00b7 Zwickau MEB Gigafactory \u00b7 Chattanooga (USA) \u00b7 Bratislava \u00b7 Port of Emden Vehicle Logistics Hub",
+  "coreProducts": "ID.4 & ID.7 Electric Skateboards \u00b7 MEB Battery Pack Modules \u00b7 Stamped Body-in-White Assemblies \u00b7 TSI/TDI Powertrains",
+  "logoSvg": "<svg viewBox=\"0 0 100 100\" width=\"38\" height=\"38\" style=\"vertical-align:middle; margin-right:8px;\"><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"none\" stroke=\"#00d2ff\" stroke-width=\"6\"/><circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"#001e50\"/><path d=\"M26 35 L42 70 L50 50 L58 70 L74 35\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M35 35 L50 64 L65 35\" fill=\"none\" stroke=\"#00d2ff\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>",
+  "ecosystem": {
+    "tier1Suppliers": [
+      "Bosch",
+      "Continental",
+      "ZF Friedrichshafen",
+      "CATL",
+      "Gotion High-Tech",
+      "Denso",
+      "Magna"
+    ],
+    "enterpriseSystems": [
+      "SAP S/4HANA for Automotive",
+      "Catena-X Automotive Data Space",
+      "Siemens Teamcenter PLM",
+      "Siemens Opcenter MES",
+      "Kuka Robotics SCADA",
+      "MAN Truck & Bus Logistics",
+      "DB Cargo Automotive Rail"
+    ],
+    "logisticsCorridors": [
+      "Port of Emden Ocean Vehicle RORO Terminal",
+      "Wolfsburg-to-Zwickau Just-in-Sequence Rail Corridor",
+      "Chattanooga-to-Tennessee Valley Supplier Corridor",
+      "Antwerp-to-Bratislava Automotive Supply Chain"
+    ]
+  },
+  "company_slug": "volkswagen_group",
+  "saved_at": "2026-10-16T10:23:12.656556+00:00",
+  "status": "approved",
+  "company_name": "Volkswagen Group"
+}

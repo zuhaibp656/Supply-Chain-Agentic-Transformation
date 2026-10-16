@@ -10,9 +10,10 @@ import argparse
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from typing import Dict, Any
 
-from enterprise_twin.tools.company_profiler import profile_company, KNOWN_COMPANIES
+from enterprise_twin.agent import run_enterprise_twin_agent
+from enterprise_twin.tools.persistence import list_saved_twins, load_twin
 from enterprise_twin.tools.industry_archetypes import INDUSTRY_ARCHETYPES
-from enterprise_twin.generator.html_compiler import compile_enterprise_twin
+from enterprise_twin.tools.company_profiler import KNOWN_COMPANIES
 
 
 class EnterpriseTwinApiHandler(BaseHTTPRequestHandler):
@@ -42,6 +43,28 @@ class EnterpriseTwinApiHandler(BaseHTTPRequestHandler):
                 "known_presets": list(KNOWN_COMPANIES.keys())
             }
             self.wfile.write(json.dumps(resp, indent=2).encode("utf-8"))
+        elif self.path == "/api/v1/twins":
+            self.send_response(200)
+            self._send_cors_headers()
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            twins = list_saved_twins()
+            self.wfile.write(json.dumps({"status": "success", "count": len(twins), "twins": twins}, indent=2).encode("utf-8"))
+        elif self.path.startswith("/api/v1/twins/"):
+            slug = self.path.replace("/api/v1/twins/", "").strip()
+            twin = load_twin(slug)
+            if twin:
+                self.send_response(200)
+                self._send_cors_headers()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "success", "twin": twin}, indent=2).encode("utf-8"))
+            else:
+                self.send_response(404)
+                self._send_cors_headers()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": f"Twin '{slug}' not found in memory"}).encode("utf-8"))
         elif self.path == "/api/v1/archetypes":
             self.send_response(200)
             self._send_cors_headers()
@@ -81,31 +104,31 @@ class EnterpriseTwinApiHandler(BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"error": "Missing required field: 'company_name'"}).encode("utf-8"))
                 return
 
-            print(f"⚡ [Backend Agent] Received request to generate twin for: '{company_name}' (Industry: {industry})")
-            
-            try:
-                # 1. Autonomous Research & Profiling
-                profile = profile_company(company_name, industry)
-                if focus:
-                    profile['executiveThesis'] += f" Strategic focus: {focus}."
+            print(f"⚡ [Backend Server] Invoking ADK Agent for: '{company_name}' (Industry: {industry})")
 
-                # 2. Compile customized portal & Zipline bundle
-                out_dir = compile_enterprise_twin(profile)
-                slug = out_dir.name
-                
+            try:
+                # Execute full ADK Agent pipeline
+                agent_res = run_enterprise_twin_agent(company_name, industry, focus)
+                profile = agent_res["profile"]
+                artifacts = agent_res["artifacts"]
+
                 resp = {
                     "status": "success",
+                    "source": agent_res.get("source", "autonomous_synthesis"),
                     "company_name": profile['canonicalName'],
                     "industry": profile['industryId'],
                     "executive_title": profile['executiveTitle'],
+                    "executive_thesis": profile['executiveThesis'],
                     "brand_accent": profile['brandAccent'],
                     "brand_secondary": profile['brandSecondary'],
                     "flagship_sites": profile.get('flagshipSites', ''),
-                    "output_dir": str(out_dir),
-                    "index_file": str(out_dir / "index.html"),
-                    "periodic_table_file": str(out_dir / "periodic_table.html"),
-                    "mind_map_file": str(out_dir / "mind_map.html"),
-                    "zipline_bundle_file": str(out_dir / f"{slug}_zipline_bundle.zip"),
+                    "output_dir": artifacts.get("output_dir", ""),
+                    "index_file": artifacts.get("index_html", ""),
+                    "periodic_table_file": artifacts.get("periodic_table", ""),
+                    "mind_map_file": artifacts.get("mind_map", ""),
+                    "zipline_bundle_file": artifacts.get("zipline_bundle", ""),
+                    "personaOverrides": profile.get("personaOverrides", {}),
+                    "agentOverrides": profile.get("agentOverrides", {}),
                     "profile": profile
                 }
 
@@ -114,10 +137,10 @@ class EnterpriseTwinApiHandler(BaseHTTPRequestHandler):
                 self.send_header("Content-Type", "application/json")
                 self.end_headers()
                 self.wfile.write(json.dumps(resp, indent=2).encode("utf-8"))
-                print(f"✅ [Backend Agent] Successfully generated twin for: '{company_name}'")
+                print(f"✅ [Backend Server] Successfully returned ADK twin for: '{company_name}'")
 
             except Exception as e:
-                print(f"❌ [Backend Agent] Error generating twin: {e}")
+                print(f"❌ [Backend Server] Error generating twin: {e}")
                 self.send_response(500)
                 self._send_cors_headers()
                 self.send_header("Content-Type", "application/json")

@@ -1,0 +1,91 @@
+{
+  "id": "oil_gas_energy",
+  "displayName": "Shell plc",
+  "executiveTitle": "Executive Vice President of Global Supply Chain & Trading, Shell plc",
+  "executiveThesis": "Optimizing global integrated crude trading, pipeline hydraulic flows, Pernis refinery catalytic slates, and international LNG carrier charters.",
+  "brandAccent": "#fbbf24",
+  "brandSecondary": "#b91c1c",
+  "defaultSystems": "SAP S/4HANA Oil & Gas (IS-Oil) \u00b7 AspenTech PIMS / HYSYS \u00b7 OSIsoft PI / AVEVA Historian \u00b7 Spire Ocean Tanker AIS \u00b7 Genscape Pipeline Telemetry \u00b7 AlloyDB \u00b7 BigQuery GIS",
+  "watermarkType": "energy_pipeline",
+  "productVocabulary": {
+    "unit": "barrel (bbl) / metric ton",
+    "subUnit": "cargo lot / pipeline batch",
+    "components": "distillate fuels, naphtha, ethylene, lubricants, LNG cargos, specialized catalysts",
+    "rawMaterials": "light sweet crude, sour heavy crude, natural gas liquids (NGL), drill pipe OCTG",
+    "facilities": "Refinery & Petrochemical Complex / Marine Tanker Terminal",
+    "outboundMode": "Product Pipelines, Jones Act Tankers & Unit Trains",
+    "inboundMode": "Crude Pipelines & VLCC Tanker Marine Terminals"
+  },
+  "personaOverrides": {
+    "demand_planning_dir": {
+      "title": "Shell plc Director of Demand Sensing & Consensus Planning",
+      "role": "Enterprise Forecast Accuracy & Customer Replenishment Alignment",
+      "summary": "Directs enterprise demand forecasting across all Shell plc business units, channels, and product families.",
+      "mandate": "Synchronizes customer point-of-sale signals and commercial promotions with operational production commitments.",
+      "manualToil": "Manual data aggregation across regional ERP instances and spreadsheet consolidation.",
+      "agenticImpact": "Automated multi-signal forecasting in Vertex AI TimesFM with daily P10/P50/P90 quantile fans."
+    },
+    "category_sourcing_mgr": {
+      "title": "Shell plc Head of Strategic Procurement & Direct Sourcing",
+      "role": "Category Sourcing, Should-Cost Decomposition & Supplier Contracting",
+      "summary": "Leads direct material procurement and supplier relationships for Shell plc manufacturing and operations.",
+      "mandate": "Delivers cost savings and mitigates single-source supplier vulnerabilities across critical components.",
+      "manualToil": "Weeks spent normalizing inconsistent supplier quotes in Excel without bottom-up cost benchmarks.",
+      "agenticImpact": "Parametric should-cost decomposition unlocking 7-10% in direct procurement savings."
+    },
+    "mps_scheduling_lead": {
+      "title": "Shell plc Master Production Scheduling & Factory Operations Meister",
+      "role": "Finite Capacity Scheduling & Plant Throughput Maximization",
+      "summary": "Orchestrates manufacturing line schedules, machine changeovers, and material allocations across Shell plc plants.",
+      "mandate": "Maximizes equipment utilization and eliminates line starvation through finite capacity sequencing.",
+      "manualToil": "Manual shift scheduling on spreadsheets frequently derailed by late material arrivals and equipment stops.",
+      "agenticImpact": "OR-Tools CP-SAT finite-capacity scheduling cutting changeover downtime by 30%."
+    }
+  },
+  "agentOverrides": {
+    "demand_sensing_agent": {
+      "systems": "SAP S/4HANA \u00b7 Enterprise POS & CRM Feeds \u00b7 BigQuery \u00b7 Vertex AI TimesFM",
+      "problemDetails": "Disconnected regional spreadsheets, lack of customer sell-through visibility, and promotion cannibalization create costly stockouts and working capital build-ups for Shell plc.",
+      "solutionDetails": "PulseCast Demand Sensing Copilot ingests live point-of-sale data, distributor orders, and market signals into Vertex AI TimesFM with hierarchical SKU reconciliation.",
+      "outcomeDetails": "Cuts demand forecast error by 24% for Shell plc; unlocks 18% in trapped safety stock working capital.",
+      "roiBadges": [
+        "-24% Forecast Error",
+        "18% Working Capital Freed",
+        "45-Min S&OP Consensus",
+        "99.2% Customer OTIF"
+      ]
+    }
+  },
+  "canonicalName": "Shell plc",
+  "ticker": "NYSE: SHEL",
+  "industryId": "oil_gas_energy",
+  "flagshipSites": "Pernis Energy & Chemicals Park (Rotterdam) \u00b7 Deer Park Complex \u00b7 Singapore Pulau Bukom Hub \u00b7 Port of Singapore Marine Terminal",
+  "coreProducts": "Crude Distillates & Low-Carbon Fuels \u00b7 Liquefied Natural Gas (LNG) Cargos \u00b7 Base Oils & Petrochemical Intermediates \u00b7 Pipeline Batches",
+  "logoSvg": "<svg viewBox=\"0 0 100 100\" width=\"38\" height=\"38\" style=\"vertical-align:middle; margin-right:8px;\"><path d=\"M50 12 C30 22 18 42 22 72 L32 88 L68 88 L78 72 C82 42 70 22 50 12 Z\" fill=\"#fbbf24\" stroke=\"#b91c1c\" stroke-width=\"4\"/><path d=\"M50 12 L50 88 M36 34 L40 88 M64 34 L60 88 M26 54 L32 88 M74 54 L68 88\" stroke=\"#b91c1c\" stroke-width=\"3\" fill=\"none\"/></svg>",
+  "ecosystem": {
+    "tier1Suppliers": [
+      "SLB (Schlumberger)",
+      "Baker Hughes",
+      "Halliburton",
+      "TechnipFMC",
+      "Tenaris"
+    ],
+    "enterpriseSystems": [
+      "SAP S/4HANA Oil & Gas (IS-Oil)",
+      "AspenTech PIMS / HYSYS",
+      "OSIsoft PI / AVEVA Enterprise Historian",
+      "Spire Global Ocean Tanker AIS",
+      "Genscape Pipeline Telemetry"
+    ],
+    "logisticsCorridors": [
+      "Pernis Rotterdam Marine Tanker Docks",
+      "Colonial & Plantation Pipeline Networks",
+      "Strait of Malacca Crude Tanker Lanes",
+      "Deer Park Houston Ship Channel"
+    ]
+  },
+  "company_slug": "shell_plc",
+  "saved_at": "2026-10-16T10:23:28.464865+00:00",
+  "status": "approved",
+  "company_name": "Shell plc"
+}

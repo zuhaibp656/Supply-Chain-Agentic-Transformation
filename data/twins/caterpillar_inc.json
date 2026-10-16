@@ -1,0 +1,97 @@
+{
+  "id": "automotive",
+  "displayName": "Caterpillar Inc.",
+  "executiveTitle": "Senior Vice President, Global Supply Chain & Customer Support Division, Caterpillar",
+  "executiveThesis": "Orchestrating heavy machinery assembly across 150+ global facilities, Cat Reman circular remanufacturing, and guaranteed 24-hour emergency dealer parts availability across 190 countries.",
+  "brandAccent": "#ffcd11",
+  "brandSecondary": "#000000",
+  "defaultSystems": "SAP S/4HANA for Automotive \u00b7 Catena-X Automotive Data Space \u00b7 Siemens Teamcenter PLM \u00b7 Siemens Opcenter MES \u00b7 Kuka Robotics SCADA \u00b7 DB Cargo Automotive Rail \u00b7 Wallenius Wilhelmsen RORO",
+  "watermarkType": "automotive_chassis",
+  "productVocabulary": {
+    "unit": "vehicle / chassis",
+    "subUnit": "battery module / stamped component",
+    "components": "MEB battery cells, stamped body-in-white panels, drive inverters, wiring harnesses, braking actuators",
+    "rawMaterials": "stamping sheet coils, lithium cathode precursor, aluminum ingots, microcontrollers",
+    "facilities": "Gigafactory & Final Assembly Plant",
+    "outboundMode": "Enclosed Bi-Level Auto-Rack Rail & Ocean RORO Vessels",
+    "inboundMode": "Just-in-Sequence (JIS) Dedicated Shuttle Fleet & Intermodal Rail"
+  },
+  "personaOverrides": {
+    "demand_planning_dir": {
+      "title": "Caterpillar Inc. Director of Global Machinery Demand & Dealer Quota Planning",
+      "role": "Mining Truck, Excavator & Generator Demand Forecasting & Dealer Stock Allocations",
+      "summary": "Directs global equipment demand forecasting across mining, construction, and power generation business units.",
+      "mandate": "Balances commodity cycle expansions (copper, gold, coal) and infrastructure construction cycles against factory build slots.",
+      "manualToil": "Monthly dealer orders in spreadsheets lagging mining project tenders by 3 months, leading to machine shortages.",
+      "agenticImpact": "Predictive heavy machinery demand sensing correlating global mining capex and machine telematics ($75M freed)."
+    },
+    "category_sourcing_mgr": {
+      "title": "Caterpillar Inc. Director of Heavy Castings, Hydraulics & Steel Sourcing",
+      "role": "Foundry Castings, High-Pressure Hydraulic Pumps & Structural Plate Steel Procurement",
+      "summary": "Directs procurement for heavy structural steel weldments, high-tonnage casting foundries, and high-pressure hydraulic cylinders.",
+      "mandate": "Secures critical foundry capacity and mitigates steel tariff surcharges across global manufacturing plants.",
+      "manualToil": "Inconsistent quotes from global foundries with volatile scrap metal and ferro-alloy surcharges.",
+      "agenticImpact": "Parametric should-cost modeling on scrap indices and foundry melt costs saving $85M in annual procurement."
+    },
+    "reverse_logistics_mgr": {
+      "title": "Caterpillar Inc. Cat Reman Core Return Logistics & Heavy Component Circularity Lead",
+      "role": "Used Engine Block, Transmission & Hydraulic Cylinder Core Returns from Global Dealers",
+      "summary": "Orchestrates the global circular supply chain, reclaiming worn diesel engine blocks, cylinders, and tracks for remanufacturing.",
+      "mandate": "Accelerates dealer core returns to achieve 85% raw material circularity and support customer 24-hour parts guarantees.",
+      "manualToil": "Heavy engine cores sitting in dealer yards for months due to complex core credit reconciliation and hazmat oil residue rules.",
+      "agenticImpact": "Automated core credit validation and return truckload backhaul routing cutting core turnaround by 26 days."
+    }
+  },
+  "agentOverrides": {
+    "demand_sensing_agent": {
+      "systems": "SAP S/4HANA \u00b7 Cat Dealer Network Portal \u00b7 Mining Equipment Utilization Feeds \u00b7 BigQuery \u00b7 TimesFM",
+      "problemDetails": "Global mining commodity cycles, infrastructure stimulus bills, and dealer rental fleet utilization spikes create extreme boom-and-bust order swings across large excavator and bulldozer lines.",
+      "solutionDetails": "Correlates global heavy construction bidding activity, mining commodity indexes, and Cat machine telematics (run hours, engine duty cycles) to forecast machine and parts replenishment.",
+      "outcomeDetails": "Reduces dealer parts stockouts by 34%; unlocks $75M in excess finished machine buffer inventory.",
+      "roiBadges": [
+        "$75M Inventory Freed",
+        "-34% Parts Stockout",
+        "24-Hour Part Guarantee",
+        "99.2% Dealer OTIF"
+      ]
+    },
+    "reverse_logistics_mgr": {
+      "systems": "Cat Reman Core Management System \u00b7 SAP S/4HANA Reverse \u00b7 Heavy Logistics Network",
+      "problemDetails": "Used diesel engine blocks, hydraulic cylinders, and transmissions (cores) sit in dealer scrap yards instead of returning to remanufacturing plants for circular re-machining.",
+      "solutionDetails": "Tracks and incentives dealer core returns with automated core credit verification, dynamic backhaul freight allocation, and circular remanufacturing production planning.",
+      "outcomeDetails": "Accelerates core turnaround by 26 days; remanufactures 140M lbs of heavy components annually while saving 85% of virgin raw steel.",
+      "roiBadges": [
+        "140M lbs Steel Reclaimed",
+        "-26 Days Core Return",
+        "-45% Reman Cost",
+        "Zero Landfill"
+      ]
+    }
+  },
+  "canonicalName": "Caterpillar Inc.",
+  "ticker": "NYSE: CAT",
+  "industryId": "heavy_machinery",
+  "flagshipSites": "Peoria Heavy Equipment Operations (USA) \u00b7 Decatur Mining Truck Facility \u00b7 Aurora Wheel Loader Plant \u00b7 Piracicaba Manufacturing Complex",
+  "coreProducts": "Cat Mining Excavators & Bulldozers \u00b7 Diesel & Natural Gas Power Turbines \u00b7 Cat Reman Recycled Engine Blocks \u00b7 High-Strength Casting Undercarriages",
+  "logoSvg": "<svg viewBox=\"0 0 100 100\" width=\"38\" height=\"38\" style=\"vertical-align:middle; margin-right:8px;\"><polygon points=\"50,15 88,80 12,80\" fill=\"#ffcd11\"/><polygon points=\"35,80 65,80 50,45\" fill=\"#000000\"/><text x=\"50\" y=\"76\" fill=\"#ffffff\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\" font-family=\"sans-serif\">CAT</text></svg>",
+  "ecosystem": {
+    "tier1Suppliers": [
+      "Global Strategic Suppliers (Direct Material)",
+      "OEM Technology Partners"
+    ],
+    "enterpriseSystems": [
+      "SAP S/4HANA",
+      "Manhattan Active WMS",
+      "Blue Yonder TMS",
+      "Cloud Spanner",
+      "BigQuery"
+    ],
+    "logisticsCorridors": [
+      "Global Multi-Modal Corridor (Ocean / Air / Rail / Road Fleet)"
+    ]
+  },
+  "company_slug": "caterpillar_inc",
+  "saved_at": "2026-10-16T10:23:28.276255+00:00",
+  "status": "approved",
+  "company_name": "Caterpillar Inc."
+}

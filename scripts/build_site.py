@@ -49,8 +49,23 @@ def extract_embedded_webp_blobs() -> str:
         return raw_json
 
 
+def load_all_twins_json() -> str:
+    twins_dir = ROOT / "data" / "twins"
+    twins = {}
+    if twins_dir.exists():
+        for p in sorted(twins_dir.glob("*.json")):
+            try:
+                data = json.loads(p.read_text(encoding="utf-8"))
+                key = p.stem.lower()
+                twins[key] = data
+            except Exception as e:
+                print(f"Warning: could not load twin {p}: {e}")
+    return json.dumps(twins, indent=2)
+
+
 def build_html() -> str:
     blobs_js = extract_embedded_webp_blobs()
+    twins_js = load_all_twins_json()
 
     html = """<!DOCTYPE html>
 <html lang="en">
@@ -3617,9 +3632,17 @@ def build_html() -> str:
           <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🚗 Volkswagen</div>
           <div style="font-size:11px; color:#7dd3fc;">Auto · MEB Gigafactory</div>
         </button>
-        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('bmw')" style="text-align:left; background:rgba(0,102,178,0.25); border:1px solid rgba(96,165,250,0.4); border-radius:14px; padding:12px; cursor:pointer;">
-          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🏎️ BMW Group</div>
-          <div style="font-size:11px; color:#93c5fd;">Auto · Spartanburg JIS</div>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('itc')" style="text-align:left; background:rgba(16,185,129,0.22); border:1px solid rgba(16,185,129,0.45); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🌾 ITC Limited</div>
+          <div style="font-size:11px; color:#6ee7b7;">FMCG · e-Choupal Agri</div>
+        </button>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('boeing')" style="text-align:left; background:rgba(0,51,160,0.22); border:1px solid rgba(56,189,248,0.4); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">✈️ Boeing</div>
+          <div style="font-size:11px; color:#7dd3fc;">Aerospace · Titanium Forgings</div>
+        </button>
+        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('caterpillar')" style="text-align:left; background:rgba(255,205,17,0.18); border:1px solid rgba(255,205,17,0.45); border-radius:14px; padding:12px; cursor:pointer;">
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🚜 Caterpillar</div>
+          <div style="font-size:11px; color:#fef08a;">Heavy Machinery · Cat Reman</div>
         </button>
         <button type="button" class="twin-preset-card" onclick="quickSelectPreset('shell')" style="text-align:left; background:rgba(185,28,28,0.2); border:1px solid rgba(251,191,36,0.4); border-radius:14px; padding:12px; cursor:pointer;">
           <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🛢️ Shell plc</div>
@@ -3628,14 +3651,6 @@ def build_html() -> str:
         <button type="button" class="twin-preset-card" onclick="quickSelectPreset('pfizer')" style="text-align:left; background:rgba(0,0,255,0.2); border:1px solid rgba(0,210,255,0.4); border-radius:14px; padding:12px; cursor:pointer;">
           <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">💊 Pfizer Inc.</div>
           <div style="font-size:11px; color:#93c5fd;">Pharma · cGMP Biologics</div>
-        </button>
-        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('caterpillar')" style="text-align:left; background:rgba(255,205,17,0.18); border:1px solid rgba(255,205,17,0.45); border-radius:14px; padding:12px; cursor:pointer;">
-          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🚜 Caterpillar</div>
-          <div style="font-size:11px; color:#fef08a;">Heavy Machinery &amp; Mining</div>
-        </button>
-        <button type="button" class="twin-preset-card" onclick="quickSelectPreset('boeing')" style="text-align:left; background:rgba(0,51,160,0.22); border:1px solid rgba(56,189,248,0.4); border-radius:14px; padding:12px; cursor:pointer;">
-          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">✈️ Boeing</div>
-          <div style="font-size:11px; color:#7dd3fc;">Aerospace · Long-Lead Forgings</div>
         </button>
         <button type="button" class="twin-preset-card" onclick="quickSelectPreset('unilever')" style="text-align:left; background:rgba(16,185,129,0.18); border:1px solid rgba(16,185,129,0.4); border-radius:14px; padding:12px; cursor:pointer;">
           <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:3px;">🛒 Unilever</div>
@@ -5875,6 +5890,7 @@ def build_html() -> str:
 
     /* BASE64 EMBEDDED DESIGN ASSETS (BRAND LOGOS & SPARKLES ONLY) */
     const EMBEDDED_WEBP_BLOBS = __EMBEDDED_WEBP_BLOBS__;
+    const EMBEDDED_TWINS = __EMBEDDED_TWINS_JSON__;
 
     const EMBEDDED_ASSET_MAP = {
       "gemini_enterprise_dark.png": "gemini_enterprise_dark.webp",
@@ -10521,6 +10537,10 @@ def build_html() -> str:
       if (m) m.style.display = 'none';
     }
 
+    let BASELINE_PERSONAS = null;
+    let BASELINE_AGENTS = null;
+    let CURRENT_TWIN = null;
+
     function quickSelectPreset(key) {
       const companyInput = document.getElementById('twinCompanyInput');
       const industrySelect = document.getElementById('twinIndustrySelect');
@@ -10530,10 +10550,18 @@ def build_html() -> str:
         if (companyInput) companyInput.value = 'Volkswagen Group';
         if (industrySelect) industrySelect.value = 'automotive';
         if (focusInput) focusInput.value = 'Wolfsburg & MEB gigafactories, PowerCo battery cells, JIS chassis line feeding';
-      } else if (key === 'bmw') {
-        if (companyInput) companyInput.value = 'BMW Group';
-        if (industrySelect) industrySelect.value = 'automotive';
-        if (focusInput) focusInput.value = 'Spartanburg plant assembly, Neue Klasse EV platforms, Tier-1 supplier synchrony';
+      } else if (key === 'itc') {
+        if (companyInput) companyInput.value = 'ITC Limited';
+        if (industrySelect) industrySelect.value = 'cpg_retail';
+        if (focusInput) focusInput.value = 'e-Choupal rural farmer procurement, FMCG ICML plants, mother godown CFAs';
+      } else if (key === 'boeing') {
+        if (companyInput) companyInput.value = 'The Boeing Company';
+        if (industrySelect) industrySelect.value = 'aerospace';
+        if (focusInput) focusInput.value = '737/787 commercial jetliners, long-lead titanium forgings, FAA cGMP compliance';
+      } else if (key === 'caterpillar') {
+        if (companyInput) companyInput.value = 'Caterpillar Inc.';
+        if (industrySelect) industrySelect.value = 'aerospace';
+        if (focusInput) focusInput.value = 'Heavy mining equipment, global dealer parts fulfillment, engine remanufacturing';
       } else if (key === 'shell') {
         if (companyInput) companyInput.value = 'Shell plc';
         if (industrySelect) industrySelect.value = 'oil_gas_energy';
@@ -10542,14 +10570,6 @@ def build_html() -> str:
         if (companyInput) companyInput.value = 'Pfizer Inc.';
         if (industrySelect) industrySelect.value = 'life_sciences_pharma';
         if (focusInput) focusInput.value = 'cGMP sterile injectables, mRNA vaccine platform, cold-chain distribution';
-      } else if (key === 'caterpillar') {
-        if (companyInput) companyInput.value = 'Caterpillar Inc.';
-        if (industrySelect) industrySelect.value = 'aerospace';
-        if (focusInput) focusInput.value = 'Heavy mining equipment, global dealer parts fulfillment, engine remanufacturing';
-      } else if (key === 'boeing') {
-        if (companyInput) companyInput.value = 'Boeing';
-        if (industrySelect) industrySelect.value = 'aerospace';
-        if (focusInput) focusInput.value = '737/787 commercial jetliners, long-lead titanium forgings, FAA cGMP compliance';
       } else if (key === 'unilever') {
         if (companyInput) companyInput.value = 'Unilever';
         if (industrySelect) industrySelect.value = 'cpg_retail';
@@ -10558,64 +10578,219 @@ def build_html() -> str:
       executeTwinGeneration();
     }
 
-    function applyBrowserTwin(company, industry, focus) {
-      window.CURRENT_TWIN = { company: company, industry: industry, focus: focus };
+    function synthesizeClientSideTwin(company, industry, focus) {
+      const clower = (company + ' ' + (focus || '')).toLowerCase();
+      let ind = industry || 'automotive';
+      if (ind === 'auto') {
+        if (/fmcg|itc|agri|choupal|wheat|tobacco|retail|cpg|unilever|nestle|walmart|target|food|grocer/.test(clower)) {
+          ind = 'fmcg_agribusiness';
+        } else if (/boeing|airbus|plane|aero|defense|flight|titanium/.test(clower)) {
+          ind = 'aerospace_defense';
+        } else if (/caterpillar|cat\b|machin|mining|excavator|deere|komatsu|heavy/.test(clower)) {
+          ind = 'heavy_machinery';
+        } else if (/auto|car|vehicle|bmw|volkswagen|vw|tesla|ford|toyota|audi|mercedes|chassis|engine/.test(clower)) {
+          ind = 'automotive';
+        } else if (/oil|gas|energy|shell|bp|chevron|exxon|aramco|petro|refin|pipeline/.test(clower)) {
+          ind = 'oil_gas_energy';
+        } else if (/pharma|health|bio|pfizer|roche|novartis|merck|moderna|vaccine|drug/.test(clower)) {
+          ind = 'life_sciences_pharma';
+        } else {
+          ind = 'automotive';
+        }
+      }
+
+      let brandAccent = '#00d2ff';
+      let execTitle = 'Chief Supply Chain Officer (CSCO), ' + company;
+      let execThesis = focus || ('Orchestrating autonomous supply chain operations across ' + company + ' manufacturing plants and global distribution corridors.');
+
+      if (ind === 'fmcg_agribusiness' || ind === 'cpg_retail') {
+        brandAccent = '#10b981';
+        execTitle = 'Executive Director, FMCG, Agri-Business & Supply Chain, ' + company;
+        execThesis = focus || ('Synchronizing agricultural commodity sourcing, integrated manufacturing plants, and multi-echelon Carrying & Forwarding distribution for ' + company + '.');
+      } else if (ind === 'aerospace_defense' || ind === 'aerospace') {
+        brandAccent = '#0284c7';
+        execTitle = 'Senior Vice President of Global Supply Chain & Manufacturing Operations, ' + company;
+        execThesis = focus || ('Synchronizing multi-year supplier lead times, precision forgings, FAA airworthiness compliance, and final assembly lines for ' + company + '.');
+      } else if (ind === 'heavy_machinery') {
+        brandAccent = '#ffcd11';
+        execTitle = 'Senior Vice President, Global Supply Chain & Customer Support Division, ' + company;
+        execThesis = focus || ('Orchestrating heavy machinery assembly, circular remanufacturing, and guaranteed 24-hour emergency dealer parts availability for ' + company + '.');
+      } else if (ind === 'automotive') {
+        brandAccent = '#00d2ff';
+        execTitle = 'Board Member for Production & Logistics, ' + company;
+        execThesis = focus || ('Synchronizing gigafactories, battery cell supply, and just-in-sequence (JIS) line feeding for ' + company + ' vehicle platforms.');
+      } else if (ind === 'oil_gas_energy') {
+        brandAccent = '#fbbf24';
+        execTitle = 'Executive Vice President of Global Supply Chain & Trading, ' + company;
+        execThesis = focus || ('Optimizing integrated crude trading, pipeline hydraulic flows, refinery catalytic slates, and international bulk charters for ' + company + '.');
+      } else if (ind === 'life_sciences_pharma') {
+        brandAccent = '#38bdf8';
+        execTitle = 'President, Global Supply (PGS) & Technical Operations, ' + company;
+        execThesis = focus || ('Guaranteed zero-stockout patient fulfillment of sterile injectables, biologics platforms, and temperature-controlled distribution for ' + company + '.');
+      }
+
+      return {
+        canonicalName: company,
+        company_name: company,
+        industryId: ind,
+        brandAccent: brandAccent,
+        brandSecondary: '#001e50',
+        executiveTitle: execTitle,
+        executiveThesis: execThesis,
+        personaOverrides: {
+          demand_planning_dir: {
+            title: company + ' Head of Demand Sensing & Consensus Planning',
+            role: 'Enterprise Demand Forecast Accuracy & Customer Fill-Rate Governance',
+            summary: 'Directs enterprise demand forecasting across all ' + company + ' business units, channels, and product families.',
+            manualToil: 'Manual spreadsheets and fragmented portal downloads causing weekly forecasting blindspots at ' + company + '.',
+            agenticImpact: 'Daily demand sensing in TimesFM cutting forecast error by 24% for ' + company + '.'
+          },
+          mps_scheduling_lead: {
+            title: company + ' Production Control & Master Scheduling Meister',
+            role: 'Finite Capacity Scheduling & Plant Throughput Optimization',
+            summary: 'Orchestrates manufacturing line schedules, machine changeovers, and material allocations across ' + company + ' plants.',
+            manualToil: 'Manual shift scheduling frequently derailed by late material arrivals and equipment stops at ' + company + '.',
+            agenticImpact: 'OR-Tools CP-SAT finite-capacity sequencing cutting changeover downtime by 30%.'
+          },
+          category_sourcing_mgr: {
+            title: company + ' Head of Strategic Procurement & Direct Sourcing',
+            role: 'Category Sourcing, Should-Cost Decomposition & Supplier Contracting',
+            summary: 'Leads direct material procurement and supplier relationships for ' + company + ' manufacturing and operations.',
+            manualToil: 'Normalizing inconsistent supplier quotes in Excel without bottom-up cost benchmarks.',
+            agenticImpact: 'Parametric should-cost decomposition unlocking 7-10% in direct procurement savings.'
+          },
+          meio_inventory_mgr: {
+            title: company + ' Multi-Echelon Inventory & Distribution Hub Stock Controller',
+            role: 'Buffer Stock Optimization & Network Working Capital Tuning',
+            summary: 'Controls inventory across factories, central warehouses, and regional distribution centers for ' + company + '.',
+            manualToil: 'Hoarding excess safety stock at distribution centers to guard against transit delays.',
+            agenticImpact: 'Stochastic MEIO solver dynamically rebalancing safety stocks across network hubs.'
+          },
+          fleet_dispatch_mgr: {
+            title: company + ' Outbound Logistics & Carrier Fleet Dispatch Lead',
+            role: 'Dedicated Fleet Linehaul & Regional Delivery Dispatch',
+            summary: 'Manages dedicated linehaul carriers and delivery routes across ' + company + ' distribution corridors.',
+            manualToil: 'Dispatchers manually assigning orders to trucks with high deadhead return miles.',
+            agenticImpact: 'Google Maps Routes Preferred API cutting empty miles by 22%.'
+          }
+        },
+        agentOverrides: {
+          demand_sensing_agent: {
+            systems: 'SAP S/4HANA · ' + company + ' Enterprise Data Lake · BigQuery · Vertex AI TimesFM',
+            problemDetails: 'Disconnected regional spreadsheets, lack of customer sell-through visibility, and promotion cannibalization create costly stockouts and working capital build-ups for ' + company + '.',
+            solutionDetails: 'PulseCast Demand Sensing Copilot ingests live point-of-sale data, distributor orders, and market signals into Vertex AI TimesFM with hierarchical SKU reconciliation for ' + company + '.',
+            outcomeDetails: 'Cuts demand forecast error by 24% for ' + company + '; unlocks 18% in trapped safety stock working capital.',
+            roiBadges: ['-24% Forecast Error', '18% Working Capital Freed', '45-Min S&OP Consensus', '99.2% Customer OTIF']
+          },
+          mps_finite_scheduler: {
+            systems: 'Siemens Opcenter MES · SAP PP/DS · ' + company + ' Plant SCADA · OR-Tools CP-SAT',
+            problemDetails: 'Frequent product recipe changes and uncoordinated material feeding cause excessive line idle time and backorders across ' + company + ' manufacturing facilities.',
+            solutionDetails: 'OR-Tools CP-SAT finite-capacity scheduling solver optimizes sequence-dependent setups, grouping similar tooling and recipe families to maximize throughput.',
+            outcomeDetails: 'Reduces plant changeover downtime by 32%; eliminates line starvation and cuts scrap by 28% for ' + company + '.',
+            roiBadges: ['+14% Plant OEE', '-32% Changeover Delay', '-28% Scrap Waste', '100% Sequence Pegging']
+          }
+        }
+      };
+    }
+
+    function applyBrowserTwin(twinData) {
+      if (!twinData) return;
+      CURRENT_TWIN = twinData;
+      const cName = twinData.canonicalName || twinData.company_name || 'Enterprise';
+      const execTitle = twinData.executiveTitle || ('Chief Supply Chain Officer (CSCO), ' + cName);
+      const execThesis = twinData.executiveThesis || '';
+      const brandAccent = twinData.brandAccent || '#00d2ff';
+      const brandSec = twinData.brandSecondary || '#001e50';
+
+      // 1. Snapshot baseline if not already done
+      if (!BASELINE_PERSONAS) {
+        BASELINE_PERSONAS = JSON.parse(JSON.stringify(PERSONAS));
+      }
+      if (!BASELINE_AGENTS) {
+        BASELINE_AGENTS = JSON.parse(JSON.stringify(AGENTS));
+      }
+
+      // 2. Reset back to baseline first before applying overrides
+      for (let pid in BASELINE_PERSONAS) {
+        PERSONAS[pid] = JSON.parse(JSON.stringify(BASELINE_PERSONAS[pid]));
+      }
+      for (let aid in BASELINE_AGENTS) {
+        AGENTS[aid] = JSON.parse(JSON.stringify(BASELINE_AGENTS[aid]));
+      }
+
+      // 3. Apply Persona Overrides from ADK Agent
+      const pOverrides = twinData.personaOverrides || {};
+      for (let pid in pOverrides) {
+        if (PERSONAS[pid]) {
+          const po = pOverrides[pid];
+          if (po.title) PERSONAS[pid].name = po.title;
+          if (po.role) PERSONAS[pid].role = po.role;
+          if (po.summary) PERSONAS[pid].summary = po.summary;
+          if (po.mandate && !po.summary) PERSONAS[pid].summary = po.mandate;
+          if (po.manualToil && PERSONAS[pid].dayInLife && PERSONAS[pid].dayInLife.length > 0) {
+            PERSONAS[pid].dayInLife[0].before = po.manualToil;
+          }
+          if (po.agenticImpact && PERSONAS[pid].dayInLife && PERSONAS[pid].dayInLife.length > 0) {
+            PERSONAS[pid].dayInLife[0].after = po.agenticImpact;
+          }
+        }
+      }
+
+      // 4. Apply Agent Overrides from ADK Agent
+      const aOverrides = twinData.agentOverrides || {};
+      for (let aid in aOverrides) {
+        if (AGENTS[aid]) {
+          const ao = aOverrides[aid];
+          if (ao.systems) AGENTS[aid].systems = ao.systems;
+          if (ao.problemDetails) AGENTS[aid].problemDetails = ao.problemDetails;
+          if (ao.solutionDetails) AGENTS[aid].solutionDetails = ao.solutionDetails;
+          if (ao.outcomeDetails) AGENTS[aid].outcomeDetails = ao.outcomeDetails;
+          if (ao.roiBadges) AGENTS[aid].roiBadges = ao.roiBadges;
+        }
+      }
+
+      // 5. Update Header, Nav Badge, CSCO Card & Brand Colors
+      document.documentElement.style.setProperty('--sc-cyan', brandAccent);
       const heroTitleEl = document.querySelector('.hero-title');
       const cscoBadgeEl = document.querySelector('.nav-csco-badge');
       const cscoTitleEl = document.querySelector('.csco-root-title');
       const cscoDescEl = document.querySelector('.csco-root-desc');
 
-      let accentColor = '#00d2ff';
-      let emoji = '🏢';
-      let execTitle = 'Chief Supply Chain Officer (CSCO), ' + company;
-      let execDesc = focus || ('Operating 6 SCOR-aligned departments spanning Factory → Ocean Ships → Air Cargo → Rail → Warehouses → Road Fleet for ' + company + '.');
-
-      if (industry === 'automotive') {
-        accentColor = '#00d2ff';
-        emoji = '🚗';
-        execTitle = 'Board Member for Production & Logistics, ' + company;
-        execDesc = focus || ('Synchronizing Wolfsburg & global assembly gigafactories, battery cell supply, and just-in-sequence (JIS) line feeding for ' + company + '.');
-      } else if (industry === 'oil_gas_energy') {
-        accentColor = '#fbbf24';
-        emoji = '🛢️';
-        execTitle = 'EVP of Global Supply Chain, Trading & Logistics, ' + company;
-        execDesc = focus || ('Optimizing global integrated crude trading, pipeline hydraulic flows, refinery catalytic slates, and international LNG carrier charters for ' + company + '.');
-      } else if (industry === 'life_sciences_pharma') {
-        accentColor = '#38bdf8';
-        emoji = '💊';
-        execTitle = 'President, Global Supply (PGS) & Technical Operations, ' + company;
-        execDesc = focus || ('Guaranteed zero-stockout patient fulfillment of sterile injectables, cGMP biologics platforms, and temperature-controlled distribution across ' + company + ' global sites.');
-      } else if (industry === 'cpg_retail') {
-        accentColor = '#10b981';
-        emoji = '🛒';
-        execTitle = 'Chief Supply Chain Officer & VP Customer Operations, ' + company;
-        execDesc = focus || ('Orchestrating end-to-end demand sensing, multi-echelon warehouse fulfillment, and shelf availability across thousands of SKUs and retail partner stores for ' + company + '.');
-      } else if (industry === 'aerospace') {
-        accentColor = '#f97316';
-        emoji = '✈️';
-        execTitle = 'SVP of Global Supply Chain & Manufacturing Operations, ' + company;
-        execDesc = focus || ('Synchronizing multi-year supplier lead times, precision titanium forgings, FAA compliance tracing, and final assembly lines for ' + company + '.');
-      } else if (industry === 'hightech') {
-        accentColor = '#a855f7';
-        emoji = '⚡';
-        execTitle = 'VP of Worldwide Supply Chain & Operations, ' + company;
-        execDesc = focus || ('Managing semiconductor fab capacity, wafer allocation, cleanroom assembly, and component multi-sourcing for ' + company + '.');
-      }
-
-      document.documentElement.style.setProperty('--sc-cyan', accentColor);
       if (cscoBadgeEl) {
-        cscoBadgeEl.innerHTML = '<span style="color:' + accentColor + '; font-weight:800;">' + emoji + ' ' + company + '</span> · Office of the CSCO';
+        cscoBadgeEl.innerHTML = '<span style="color:' + brandAccent + '; font-weight:800;">' + cName + '</span> · Office of the CSCO';
       }
       if (heroTitleEl) {
-        heroTitleEl.innerHTML = '<span class="g-text-gradient">' + company + '</span><br/>Supply Chain Agentic Transformation';
+        heroTitleEl.innerHTML = '<span class="g-text-gradient">' + cName + '</span><br/>Supply Chain Agentic Transformation';
       }
       if (cscoTitleEl) {
         cscoTitleEl.textContent = execTitle;
       }
-      if (cscoDescEl) {
-        cscoDescEl.textContent = execDesc;
+      if (cscoDescEl && execThesis) {
+        cscoDescEl.textContent = execThesis;
       }
-      document.title = company + ' · Supply Chain Agentic Transformation (Office of the CSCO)';
+      document.title = cName + ' · Supply Chain Agentic Transformation (' + execTitle + ')';
+
+      // 6. Re-render Org Chart & Active Views
+      renderOrgChart();
+
+      // If active on a persona or agent page, refresh it live
+      if (typeof lastPersonaId !== 'undefined' && lastPersonaId && PERSONAS[lastPersonaId]) {
+        const pWrap = document.getElementById('personaPageContent');
+        if (pWrap && pWrap.offsetParent !== null) {
+          openPersonaPage(lastPersonaId, false);
+        }
+      }
+      if (typeof lastAgentId !== 'undefined' && lastAgentId && AGENTS[lastAgentId]) {
+        const aWrap = document.getElementById('agentPageContent');
+        if (aWrap && aWrap.offsetParent !== null) {
+          openAgentPage(lastAgentId, false);
+        }
+      }
+
+      // 7. Save to localStorage
+      try {
+        localStorage.setItem('ACTIVE_ENTERPRISE_TWIN', JSON.stringify(twinData));
+      } catch (e) {}
     }
 
     function executeTwinGeneration() {
@@ -10635,23 +10810,35 @@ def build_html() -> str:
       const backendUrl = (backendInput ? backendInput.value : '').trim();
       const callBackend = callBackendCheckbox ? callBackendCheckbox.checked : false;
 
-      // Auto-detect industry if set to 'auto'
+      // Auto-detect industry
+      const clower = (company + ' ' + focus).toLowerCase();
       if (industry === 'auto') {
-        const clower = (company + ' ' + focus).toLowerCase();
-        if (/auto|car|vehicle|bmw|volkswagen|vw|tesla|ford|toyota|audi|porsche|mercedes|stellantis|honda|hyundai|nissan|truck|gm|daimler/.test(clower)) {
+        if (/fmcg|itc|agri|choupal|wheat|tobacco|retail|cpg|unilever|nestle|walmart|target|food|grocer/.test(clower)) {
+          industry = 'fmcg_agribusiness';
+        } else if (/boeing|airbus|plane|aero|defense|flight|titanium/.test(clower)) {
+          industry = 'aerospace_defense';
+        } else if (/caterpillar|cat\b|machin|mining|excavator|deere|komatsu|heavy/.test(clower)) {
+          industry = 'heavy_machinery';
+        } else if (/auto|car|vehicle|bmw|volkswagen|vw|tesla|ford|toyota|audi|mercedes|chassis|engine/.test(clower)) {
           industry = 'automotive';
-        } else if (/oil|gas|energy|shell|bp|chevron|exxon|aramco|petro|total|refin|pipeline|drill/.test(clower)) {
+        } else if (/oil|gas|energy|shell|bp|chevron|exxon|aramco|petro|refin|pipeline/.test(clower)) {
           industry = 'oil_gas_energy';
-        } else if (/pharma|health|bio|pfizer|roche|novartis|merck|astrazeneca|gsk|sanofi|moderna|johnson|lilly|drug|med/.test(clower)) {
+        } else if (/pharma|health|bio|pfizer|roche|novartis|merck|moderna|vaccine|drug/.test(clower)) {
           industry = 'life_sciences_pharma';
-        } else if (/retail|cpg|unilever|nestle|walmart|target|l'or|loreal|pepsi|coca|p&g|procter|consumer|grocer|food/.test(clower)) {
-          industry = 'cpg_retail';
-        } else if (/boeing|airbus|lockheed|machin|caterpillar|deere|komatsu|aero|defense|plane|aviation/.test(clower)) {
-          industry = 'aerospace';
-        } else if (/chip|semi|intel|nvidia|amd|apple|samsung|tsmc|asml|qualcomm|cisco|tech|device|hardware/.test(clower)) {
-          industry = 'hightech';
         } else {
           industry = 'automotive';
+        }
+      }
+
+      // Check if we have a pre-embedded twin or previously cached twin
+      const slug = company.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+      let twinData = (typeof EMBEDDED_TWINS !== 'undefined' && EMBEDDED_TWINS[slug]) ? EMBEDDED_TWINS[slug] : null;
+      if (!twinData && typeof EMBEDDED_TWINS !== 'undefined') {
+        for (let k in EMBEDDED_TWINS) {
+          if (clower.includes(k) || k.includes(slug)) {
+            twinData = EMBEDDED_TWINS[k];
+            break;
+          }
         }
       }
 
@@ -10664,13 +10851,12 @@ def build_html() -> str:
 
       if (hud) hud.style.display = 'block';
 
-      // Define agentic workflow steps
       const steps = [
-        { pct: 20, status: '🔍 Company Profiler: Querying corporate profile & branding for ' + company + '...', log: '[CompanyProfiler] Grounding operational hierarchy and plants for ' + company + ' (' + industry + ')...' },
-        { pct: 45, status: '🌐 Ecosystem Miner: Mapping Tier-1/Tier-2 supply networks & plant hubs...', log: '[EcosystemMiner] Identified key production sites, supplier nodes, and global trade corridors...' },
-        { pct: 70, status: '👔 Career Persona Miner: Mining VP & Director operational titles...', log: '[PersonaMiner] Calibrated 26 SCOR personas & 32 AI agents to ' + company + ' domain nomenclature...' },
-        { pct: 90, status: '⚡ Visual Styler: Synthesizing bespoke SVG watermarks & theme accents...', log: '[VisualStyler] Synthesized responsive CAD canvas & adaptive CSS tokens...' },
-        { pct: 100, status: '✨ Complete: Client Twin active for ' + company + '!', log: '[TwinReady] Live browser DOM morph successful. Portal now operates as ' + company + ' Supply Chain Twin.' }
+        { pct: 20, status: '🤖 ADK Agent: Querying corporate profile & ecosystem for ' + company + '...', log: '[CompanyProfiler] Grounding operational hierarchy, plants & systems for ' + company + ' (' + industry + ')...' },
+        { pct: 45, status: '🌐 Ecosystem Miner: Mapping Tier-1/Tier-2 supply networks & plant hubs...', log: '[EcosystemMiner] Identified key facilities, supplier nodes, and global trade corridors...' },
+        { pct: 70, status: '👔 Career Persona Miner: Mining VP & Director titles for 26 SCOR roles...', log: '[PersonaMiner] Calibrated 26 SCOR personas with authentic ' + industry + ' domain lingo & toils...' },
+        { pct: 90, status: '⚙️ Agent Spec Miner: Customizing operational details inside 32 AI agents...', log: '[AgentSpecMiner] Synthesized target ERP/MES data inputs, problem cards, and ROI metrics...' },
+        { pct: 100, status: '✨ Complete: Digital Twin active for ' + company + '!', log: '[TwinReady] Live browser DOM morph successful. Portal now operates as ' + company + ' Supply Chain Twin.' }
       ];
 
       let currentStep = 0;
@@ -10692,8 +10878,13 @@ def build_html() -> str:
         } else {
           clearInterval(stepTimer);
 
-          // Perform Live In-Browser DOM Morph
-          applyBrowserTwin(company, industry, focus);
+          // If we had no embedded twin, synthesize one dynamically in browser!
+          if (!twinData) {
+            twinData = synthesizeClientSideTwin(company, industry, focus);
+          }
+
+          // Apply the twin to the browser DOM
+          applyBrowserTwin(twinData);
 
           // Decoupled backend trigger
           if (callBackend && backendUrl) {
@@ -10701,7 +10892,7 @@ def build_html() -> str:
               const apiLine = document.createElement('div');
               apiLine.style.marginTop = '6px';
               apiLine.style.color = '#38bdf8';
-              apiLine.innerHTML = '<span>📡 Calling decoupled backend agent (' + backendUrl + ')...</span>';
+              apiLine.innerHTML = '<span>📡 Calling decoupled ADK backend agent (' + backendUrl + ')...</span>';
               hudLog.appendChild(apiLine);
             }
             fetch(backendUrl, {
@@ -10715,8 +10906,11 @@ def build_html() -> str:
                 const okLine = document.createElement('div');
                 okLine.style.marginTop = '4px';
                 okLine.style.color = '#10b981';
-                okLine.innerHTML = '<span>✓ Decoupled backend compiled bundle to: <code>' + (data.output_directory || 'dist/') + '</code></span>';
+                okLine.innerHTML = '<span>✓ ADK Agent compiled persistent bundle to: <code>' + (data.output_dir || 'dist/') + '</code></span>';
                 hudLog.appendChild(okLine);
+              }
+              if (data.profile) {
+                applyBrowserTwin(data.profile);
               }
             })
             .catch(err => {
@@ -10744,10 +10938,14 @@ def build_html() -> str:
             exploreBtn.style.fontSize = '13px';
             exploreBtn.style.border = 'none';
             exploreBtn.style.cursor = 'pointer';
-            exploreBtn.textContent = '🚀 Explore ' + company + ' Portal ↗';
+            exploreBtn.textContent = '🚀 Explore ' + company + ' Org Chart & Agents ↗';
             exploreBtn.onclick = () => {
               closeEnterpriseTwinModal();
               goHome();
+              setTimeout(() => {
+                const el = document.getElementById('orgChartSection');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 40);
             };
             hudLog.appendChild(exploreBtn);
           }
@@ -10758,7 +10956,22 @@ def build_html() -> str:
     function switchClientTwin(clientKey) {
       if (clientKey === 'reset') {
         closeEnterpriseTwinModal();
-        window.CURRENT_TWIN = null;
+        CURRENT_TWIN = null;
+        try {
+          localStorage.removeItem('ACTIVE_ENTERPRISE_TWIN');
+        } catch (e) {}
+
+        if (BASELINE_PERSONAS) {
+          for (let pid in BASELINE_PERSONAS) {
+            PERSONAS[pid] = JSON.parse(JSON.stringify(BASELINE_PERSONAS[pid]));
+          }
+        }
+        if (BASELINE_AGENTS) {
+          for (let aid in BASELINE_AGENTS) {
+            AGENTS[aid] = JSON.parse(JSON.stringify(BASELINE_AGENTS[aid]));
+          }
+        }
+
         const heroTitleEl = document.querySelector('.hero-title');
         const cscoBadgeEl = document.querySelector('.nav-csco-badge');
         const cscoTitleEl = document.querySelector('.csco-root-title');
@@ -10772,6 +10985,8 @@ def build_html() -> str:
         if (cscoDescEl) cscoDescEl.textContent = 'The Office of the CSCO operates 6 SCOR-aligned departments spanning Factory → Ocean Ships → Air Cargo → Rail → Warehouses → Road Fleet.';
         document.documentElement.style.setProperty('--sc-cyan', '#00d2ff');
         document.title = 'Supply Chain & Demand · Agentic Transformation (Office of the CSCO)';
+
+        renderOrgChart();
         goHome();
         return;
       }
@@ -10779,17 +10994,38 @@ def build_html() -> str:
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      if (!BASELINE_PERSONAS) {
+        BASELINE_PERSONAS = JSON.parse(JSON.stringify(PERSONAS));
+      }
+      if (!BASELINE_AGENTS) {
+        BASELINE_AGENTS = JSON.parse(JSON.stringify(AGENTS));
+      }
+
       hydrateAssets();
       initHeroSupplyChainCanvas();
       renderOrgChart();
       hydrateAssets();
       handleUrlHash();
+
+      // Check if a twin was previously cached in localStorage
+      try {
+        const cachedStr = localStorage.getItem('ACTIVE_ENTERPRISE_TWIN');
+        if (cachedStr) {
+          const cached = JSON.parse(cachedStr);
+          if (cached && (cached.canonicalName || cached.company_name)) {
+            console.log('Restoring active enterprise twin from memory:', cached.canonicalName || cached.company_name);
+            applyBrowserTwin(cached);
+          }
+        }
+      } catch (e) {}
     });
   </script>
 </body>
 </html>
 """
-    return html.replace("__EMBEDDED_WEBP_BLOBS__", blobs_js)
+    html = html.replace("__EMBEDDED_WEBP_BLOBS__", blobs_js)
+    html = html.replace("__EMBEDDED_TWINS_JSON__", twins_js)
+    return html
 
 
 def main() -> None:

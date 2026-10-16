@@ -1,0 +1,117 @@
+{
+  "id": "automotive",
+  "displayName": "The Boeing Company",
+  "executiveTitle": "Senior Vice President of Global Supply Chain & Manufacturing Operations, Boeing",
+  "executiveThesis": "Synchronizing multi-year supplier lead times, precision titanium forgings, FAA airworthiness compliance tracing, and final assembly lines for 737 and 787 aircraft programs.",
+  "brandAccent": "#0284c7",
+  "brandSecondary": "#0f172a",
+  "defaultSystems": "SAP S/4HANA for Automotive \u00b7 Catena-X Automotive Data Space \u00b7 Siemens Teamcenter PLM \u00b7 Siemens Opcenter MES \u00b7 Kuka Robotics SCADA \u00b7 DB Cargo Automotive Rail \u00b7 Wallenius Wilhelmsen RORO",
+  "watermarkType": "automotive_chassis",
+  "productVocabulary": {
+    "unit": "vehicle / chassis",
+    "subUnit": "battery module / stamped component",
+    "components": "MEB battery cells, stamped body-in-white panels, drive inverters, wiring harnesses, braking actuators",
+    "rawMaterials": "stamping sheet coils, lithium cathode precursor, aluminum ingots, microcontrollers",
+    "facilities": "Gigafactory & Final Assembly Plant",
+    "outboundMode": "Enclosed Bi-Level Auto-Rack Rail & Ocean RORO Vessels",
+    "inboundMode": "Just-in-Sequence (JIS) Dedicated Shuttle Fleet & Intermodal Rail"
+  },
+  "personaOverrides": {
+    "demand_planning_dir": {
+      "title": "The Boeing Company Director of Airplane Program Master Demand & Delivery Commitments",
+      "role": "Commercial Jetliner Skyline Slots, Defense Contract Delivery Cadence & Tier-1 Backlog",
+      "summary": "Aligns global commercial airline fleet delivery dates and defense milestone contracts across 737, 787, and 777X airframe programs.",
+      "mandate": "Establishes stable aircraft delivery skyline slots balancing airline customer entry-into-service dates with supply chain lead times.",
+      "manualToil": "Manual Excel skyline planning struggling with multi-year supplier lead time shifts and delivery delay penalties.",
+      "agenticImpact": "Probabilistic program delivery scheduling in TimesFM correlating flight demand curves with supply milestones."
+    },
+    "category_sourcing_mgr": {
+      "title": "The Boeing Company Director of Aerostructures & Raw Titanium Forgings Procurement",
+      "role": "Strategic Sourcing for Fuselage Barrels, High-Strength Alloys & Avionics",
+      "summary": "Directs multi-billion-dollar aerospace procurement for carbon-composite fuselage sections, titanium wing spars, and flight control avionics.",
+      "mandate": "Negotiates multi-year aerostructure contracts and secures titanium supply chains against geopolitical export restrictions.",
+      "manualToil": "Reviewing complex supplier cost breakdowns manually without clean-sheet 5-axis CNC machining models.",
+      "agenticImpact": "Parametric CAD should-cost modeling saving $140M across aerostructure and machining renegotiations."
+    },
+    "mps_scheduling_lead": {
+      "title": "The Boeing Company Fuselage Barrel & Final Assembly Line Scheduling Meister",
+      "role": "Dock Station Scheduling, Traveled Work Prevention & FAA Conformity Sign-Offs",
+      "summary": "Schedules wing-to-body joins, electrical wire harness threading, and interior installations across final assembly lines.",
+      "mandate": "Locks final assembly sequences to eliminate traveled work and ensure 100% FAA airworthiness inspection conformity.",
+      "manualToil": "Assembly stations gridlocked by traveled work when missing brackets or incomplete wire harnesses stall subsequent crews.",
+      "agenticImpact": "OR-Tools CP-SAT finite-capacity assembly scheduling cutting traveled work by 62%."
+    },
+    "meio_inventory_mgr": {
+      "title": "The Boeing Company Aircraft Program Assembly Buffer & AOG High-Value Spares Controller",
+      "role": "Assembly Station Line Buffers & Global Aircraft On Ground (AOG) Spares Network",
+      "summary": "Optimizes inventory of multi-million-dollar engines, landing gears, and flight-critical avionics across factories and airline hubs.",
+      "mandate": "Guarantees sub-4-hour emergency delivery for AOG critical components while cutting factory WIP buffers.",
+      "manualToil": "Millions of dollars in custom titanium fasteners and avionics sitting in dark storage while missing critical parts halt lines.",
+      "agenticImpact": "Multi-echelon inventory optimization tuning buffer stock to critical path milestones ($180M WIP freed)."
+    }
+  },
+  "agentOverrides": {
+    "demand_sensing_agent": {
+      "systems": "Dassault Systemes ENOVIA \u00b7 SAP S/4HANA Aerospace \u00b7 FAA Airworthiness Registry \u00b7 BigQuery \u00b7 Vertex AI TimesFM",
+      "problemDetails": "Multi-year airline fleet deliveries, lease return cycles, and defense contract milestone changes create unpredictable demand variations that ripple through multi-tier aerostructure suppliers.",
+      "solutionDetails": "Ingests global airline passenger load trends, fleet retirement projections, and commercial airframe order backlogs into Vertex AI TimesFM to generate calibrated milestone demand schedules.",
+      "outcomeDetails": "Stabilizes master production schedules across 737 and 787 final assembly lines; cuts parts expediting premiums by $55M.",
+      "roiBadges": [
+        "$55M Expediting Saved",
+        "-28% Lead Time Variance",
+        "100% Delivery Schedule",
+        "FAA Compliant"
+      ]
+    },
+    "category_should_cost": {
+      "systems": "SAP Ariba \u00b7 Dassault CATIA CAD/BOM \u00b7 Titanium Fastener Indices \u00b7 BigQuery Parametric Models",
+      "problemDetails": "Aerospace-grade titanium forgings, carbon fiber composite pre-pregs, and complex CNC machined ribs suffer from monopolistic supplier pricing and unpredictable metal surcharges.",
+      "solutionDetails": "Performs bottom-up parametric should-cost analysis decomposing 5-axis CNC machining hours, autoclave cure cycles, and raw titanium ingot prices to establish should-cost benchmarks.",
+      "outcomeDetails": "Yields $140M in validated cost savings during multi-year aerostructure and avionics supplier renegotiations.",
+      "roiBadges": [
+        "$140M Cost Saved",
+        "-9.1% Aerostructure Cost",
+        "Parametric CAD Audit",
+        "Zero Audit Gaps"
+      ]
+    },
+    "mps_finite_scheduler": {
+      "systems": "Siemens Opcenter MES \u00b7 SAP PP/DS Aerospace \u00b7 Boeing Renton Factory SCADA \u00b7 OR-Tools CP-SAT",
+      "problemDetails": "Wing-to-body joins, electrical wire harness threading, and cabin interior installations face severe traveling work bottlenecks when specialized mechanics or FAA-inspected parts arrive out of sequence.",
+      "solutionDetails": "Finite-capacity job-shop scheduling in OR-Tools dynamically balances assembly positions (dock stations) with technician skill certifications and FAA conformity inspection sign-offs.",
+      "outcomeDetails": "Reduces traveled work in final assembly by 62%; accelerates 737/787 rollout cadence and protects against millions in delivery delay liquidated damages.",
+      "roiBadges": [
+        "-62% Traveled Work",
+        "+18% Assembly Cadence",
+        "100% FAA Conformity",
+        "Zero Dock Gridlock"
+      ]
+    }
+  },
+  "canonicalName": "The Boeing Company",
+  "ticker": "NYSE: BA",
+  "industryId": "aerospace_defense",
+  "flagshipSites": "Renton 737 Final Assembly Facility \u00b7 North Charleston 787 Composite Hub \u00b7 Everett Wide-Body Delivery Center \u00b7 Boeing Defense St. Louis",
+  "coreProducts": "737 MAX Commercial Jetliners \u00b7 787 Dreamliner Composite Fuselages \u00b7 Titanium Wing Spar Forgings \u00b7 Avionics & Flight Control Systems",
+  "logoSvg": "<svg viewBox=\"0 0 100 100\" width=\"38\" height=\"38\" style=\"vertical-align:middle; margin-right:8px;\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#0f172a\" stroke=\"#0284c7\" stroke-width=\"5\"/><path d=\"M22 65 C40 35 60 30 78 35 M30 50 L55 35 L70 50\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>",
+  "ecosystem": {
+    "tier1Suppliers": [
+      "Global Strategic Suppliers (Direct Material)",
+      "OEM Technology Partners"
+    ],
+    "enterpriseSystems": [
+      "SAP S/4HANA",
+      "Manhattan Active WMS",
+      "Blue Yonder TMS",
+      "Cloud Spanner",
+      "BigQuery"
+    ],
+    "logisticsCorridors": [
+      "Global Multi-Modal Corridor (Ocean / Air / Rail / Road Fleet)"
+    ]
+  },
+  "company_slug": "the_boeing_company",
+  "saved_at": "2026-10-16T10:23:28.085595+00:00",
+  "status": "approved",
+  "company_name": "The Boeing Company"
+}
