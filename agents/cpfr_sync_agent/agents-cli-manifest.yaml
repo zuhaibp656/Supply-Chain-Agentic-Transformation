@@ -1,0 +1,20 @@
+schema_version: "v1"
+id: "cpfr_sync_agent"
+name: "ChannelSync — Collaborative CPFR & POS Harmonizer"
+description: "Harmonizes retailer EDI 852 POS & DC depletion feeds, detects store phantom inventory, and automates CPFR consensus."
+agent_class: "app.agent.CpfrSyncAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_retailer_edi852_pos"
+  - "query_retailer_edi830_forecasts"
+  - "query_phantom_inventory_anomalies"
+  - "query_joint_cpfr_packets"
+  - "action_dispatch_vmi_replenishment_order"
+  - "action_flag_retail_phantom_audit"
+metadata:
+  scor_category: "01 · Plan (Demand Planning, Sensing & S&OP)"
+  tier_coverage: "Retail Store Shelves / Retailer DCs / VMI Hubs"
+  roi_focus: "+3.8 pts Retail OSA, -29% bullwhip order variance, zero undetected phantom stockouts"

@@ -1,0 +1,20 @@
+schema_version: "v1"
+id: "sop_scenario_weaver"
+name: "Synapse — Autonomous S&OP Scenario Weaver"
+description: "Simulates 50+ plant capacity, multi-modal transit, overtime, and margin trade-offs in seconds to compress 21-day S&OP cycles into 45 minutes."
+agent_class: "app.agent.SopScenarioWeaverAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_unconstrained_demand_gaps"
+  - "query_plant_line_capacities"
+  - "query_supplier_allocations"
+  - "query_sop_scenario_evaluations"
+  - "action_commit_mps_consensus_plan"
+  - "action_lock_sop_financial_bridge"
+metadata:
+  scor_category: "01 · Plan (Demand Planning, Sensing & S&OP)"
+  tier_coverage: "Enterprise Manufacturing Lines / Component Suppliers / Global DC Network"
+  roi_focus: "21 Days → 45 Mins cycle time, +180 bps gross margin, 99.4% plan adherence"

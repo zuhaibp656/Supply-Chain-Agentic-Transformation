@@ -1,0 +1,41 @@
+[
+  {
+    "signal_id": "SIG-WN3-TX-HEAT",
+    "provider": "Google DeepMind WeatherNext 3",
+    "region": "US-CENTRAL",
+    "event_type": "UNSEASONABLE_HEATWAVE",
+    "temperature_anomaly_celsius": 6.8,
+    "precipitation_anomaly_mm": -14.2,
+    "projected_category_surge_pct": 28.5,
+    "impacted_category": "Hydration Beverages",
+    "confidence_score": 0.94,
+    "valid_from": "2026-10-18",
+    "valid_to": "2026-10-25"
+  },
+  {
+    "signal_id": "SIG-WN3-SE-HURR",
+    "provider": "Google DeepMind WeatherNext 3",
+    "region": "US-SOUTHEAST",
+    "event_type": "TROPICAL_DEPRESSION",
+    "temperature_anomaly_celsius": -2.1,
+    "precipitation_anomaly_mm": 110.0,
+    "projected_category_surge_pct": 34.0,
+    "impacted_category": "Emergency Nutrition & Water",
+    "confidence_score": 0.89,
+    "valid_from": "2026-10-19",
+    "valid_to": "2026-10-24"
+  },
+  {
+    "signal_id": "SIG-GMAPS-FOOT-CHI",
+    "provider": "Google Maps Mobility & Foot Traffic",
+    "region": "US-MIDWEST",
+    "event_type": "SPORTS_MARATHON_SURGE",
+    "temperature_anomaly_celsius": 1.2,
+    "precipitation_anomaly_mm": 0.0,
+    "projected_category_surge_pct": 19.0,
+    "impacted_category": "Health Snacks",
+    "confidence_score": 0.91,
+    "valid_from": "2026-10-21",
+    "valid_to": "2026-10-23"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "facility_id": "PLANT-CINCINNATI-01",
+    "line_id": "LINE-PKG-03",
+    "process_type": "Aseptic Bottling & Retort Autoclave",
+    "standard_rate_units_per_hr": 12500,
+    "current_shifts_per_week": 15,
+    "max_shifts_per_week": 21,
+    "utilization_pct": 98.4,
+    "is_bottleneck": true,
+    "overtime_cost_per_shift_usd": 18500.0,
+    "changeover_hours_per_sku": 4.5
+  },
+  {
+    "facility_id": "PLANT-DALLAS-02",
+    "line_id": "LINE-PKG-01",
+    "process_type": "Aseptic Bottling & Retort Autoclave",
+    "standard_rate_units_per_hr": 14000,
+    "current_shifts_per_week": 12,
+    "max_shifts_per_week": 21,
+    "utilization_pct": 68.2,
+    "is_bottleneck": false,
+    "overtime_cost_per_shift_usd": 16200.0,
+    "changeover_hours_per_sku": 3.8
+  },
+  {
+    "facility_id": "PLANT-CHICAGO-03",
+    "line_id": "LINE-EXT-01",
+    "process_type": "Dual-Screw Continuous Extrusion",
+    "standard_rate_units_per_hr": 8500,
+    "current_shifts_per_week": 14,
+    "max_shifts_per_week": 20,
+    "utilization_pct": 94.1,
+    "is_bottleneck": true,
+    "overtime_cost_per_shift_usd": 14000.0,
+    "changeover_hours_per_sku": 5.0
+  }
+]

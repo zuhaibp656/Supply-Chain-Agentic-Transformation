@@ -1,0 +1,16 @@
+[
+  {
+    "scenario_id": "SCENARIO-PULSECAST-01",
+    "name": "Heatwave Demand Shock & Out-of-Stock Imputation",
+    "query": "Detect unseasonable weather demand surge in US-Central, impute Kroger store stockout censorship, and commit updated TimesFM P50 forecast to SAP IBP.",
+    "expected_proof_obligations": [
+      "Query POS store scans with stockout censorship flag true",
+      "Query WeatherNext 3 external heatwave surge anomaly",
+      "Retrieve TimesFM P10/P50/P90 quantile forecast for SKU-BEV-ISOTONIC-32OZ",
+      "Audit and dampen chronic sales optimism bias",
+      "Commit adjusted PIR to SAP IBP Key Figures",
+      "Generate VegaChart fan chart and atomic copy-ready markdown table"
+    ],
+    "sla_seconds": 15
+  }
+]

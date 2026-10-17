@@ -1065,5 +1065,142 @@
         ]
       }
     ]
+  },
+  {
+    "id": "demand_sensing_agent",
+    "name": "PulseCast \u2014 Multi-Signal Demand Sensing Engine",
+    "vertical": "01 \u00b7 Plan",
+    "scor_category": "Plan (Demand & S&OP)",
+    "primary_objective": "TimesFM foundation forecasting + Google DeepMind WeatherNext 3 + POS EDI 852/830 ingestion for daily granular demand sensing and FVA bias elimination.",
+    "factory_matches": [
+      {
+        "okf_id": "demand-forecasting-aggregation",
+        "match_type": "primary_core",
+        "systems": [
+          "bigquery",
+          "vertex-ai-timesfm",
+          "sap-ibp"
+        ]
+      },
+      {
+        "okf_id": "demand-pattern-analyzer",
+        "match_type": "pattern_analysis",
+        "systems": [
+          "pos-data",
+          "retail-edi",
+          "weathernext-3"
+        ]
+      },
+      {
+        "okf_id": "demand-forecast-exception-agent",
+        "match_type": "exception_triage",
+        "systems": [
+          "sap-ibp",
+          "fva-bias-auditor"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sop_scenario_weaver",
+    "name": "Synapse \u2014 Autonomous S&OP Scenario Weaver",
+    "vertical": "01 \u00b7 Plan",
+    "scor_category": "Plan (Demand & S&OP)",
+    "primary_objective": "Simulates 50+ plant capacity, multi-modal transit, overtime, and margin trade-offs in seconds via Google OR-Tools MILP and Cloud Spanner constraint graphs.",
+    "factory_matches": [
+      {
+        "okf_id": "demand-supply-gap-scenario-engine",
+        "match_type": "primary_core",
+        "systems": [
+          "spanner-graph",
+          "google-ortools-milp",
+          "sap-s4hana-ppds"
+        ]
+      },
+      {
+        "okf_id": "capacity-planning-agent",
+        "match_type": "capacity_allocation",
+        "systems": [
+          "plant-line-capacities",
+          "supplier-allocations"
+        ]
+      },
+      {
+        "okf_id": "production-schedule-adherence-monitor",
+        "match_type": "execution_feedback",
+        "systems": [
+          "bigquery-cortex",
+          "anaplan-fpa"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "promo_lift_simulator",
+    "name": "ElasticityIQ \u2014 Demand Shaping & Promo Simulator",
+    "vertical": "01 \u00b7 Plan",
+    "scor_category": "Plan (Demand & S&OP)",
+    "primary_objective": "Double-ML causal inference for trade promotions, price elasticity modeling, baseline cannibalization adjustment, and supply-aware margin maximization.",
+    "factory_matches": [
+      {
+        "okf_id": "promo-forecast-accuracy-analyzer",
+        "match_type": "primary_core",
+        "systems": [
+          "sap-tpm",
+          "salesforce-cgc",
+          "bigquery-ml"
+        ]
+      },
+      {
+        "okf_id": "markdown-optimization-engine",
+        "match_type": "price_elasticity",
+        "systems": [
+          "alloydb-stock-buffer",
+          "meio-availability"
+        ]
+      },
+      {
+        "okf_id": "competitive-price-response-agent",
+        "match_type": "market_signals",
+        "systems": [
+          "pricing-feeds",
+          "trade-spend-optimizer"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cpfr_sync_agent",
+    "name": "ChannelSync \u2014 Collaborative CPFR & POS Harmonizer",
+    "vertical": "01 \u00b7 Plan",
+    "scor_category": "Plan (Demand & S&OP)",
+    "primary_objective": "Harmonizes retailer EDI 852 POS & DC depletion feeds via Cloud Dataflow, detects store phantom inventory via BigQuery ML zero-scan anomaly models, and automates CPFR consensus.",
+    "factory_matches": [
+      {
+        "okf_id": "inventory-rebalancing-orchestrator",
+        "match_type": "primary_core",
+        "systems": [
+          "retail-edi-dataflow",
+          "edi852",
+          "edi830"
+        ]
+      },
+      {
+        "okf_id": "store-replenishment-orchestrator",
+        "match_type": "replenishment_curves",
+        "systems": [
+          "vmi-replenishment-engine",
+          "edi855"
+        ]
+      },
+      {
+        "okf_id": "material-shortage-early-warning-monitor",
+        "match_type": "stockout_prevention",
+        "systems": [
+          "bigquery-anomaly-vault",
+          "phantom-store-audits"
+        ]
+      }
+    ]
   }
 ]

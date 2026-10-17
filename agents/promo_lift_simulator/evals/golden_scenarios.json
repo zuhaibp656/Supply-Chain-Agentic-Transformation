@@ -1,0 +1,17 @@
+[
+  {
+    "scenario_id": "SCENARIO-ELASTICITY-01",
+    "name": "Promotional Cannibalization & Stockout Prevention",
+    "query": "Simulate BOGO Hydration Blitz promo in Walmart, isolate sister-SKU cannibalization, detect DC stockout risk, and reshape mechanic to 20% bundle.",
+    "expected_proof_obligations": [
+      "Query planned promotional campaigns for BOGO Hydration Blitz",
+      "Query BigQuery ML Double-ML causal price elasticity",
+      "Analyze cross-SKU cannibalization volume and margin loss",
+      "Inspect DC warehouse available-to-promise inventory",
+      "Reshape promotional discount and bundle mechanic",
+      "Lock finalized promo calendar in SAP TPM & Salesforce CGC",
+      "Generate VegaChart diverging bar chart and atomic copy-ready markdown table"
+    ],
+    "sla_seconds": 15
+  }
+]

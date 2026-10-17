@@ -1,0 +1,17 @@
+[
+  {
+    "scenario_id": "SCENARIO-CPFR-01",
+    "name": "Phantom Inventory Detection & VMI Replenishment Dispatch",
+    "query": "Harmonize retailer EDI 852 feeds, detect Kroger store phantom inventory stockout, dispatch store cycle count audit, and trigger Walmart VMI replenishment order.",
+    "expected_proof_obligations": [
+      "Query retailer EDI 852 daily store scan records",
+      "Query retailer EDI 830 forward order forecasts and bullwhip volatility",
+      "Detect zero-scan phantom inventory anomalies hiding on-shelf stockouts",
+      "Query collaborative CPFR consensus exception packets",
+      "Dispatch physical cycle count audit task via retailer portal API",
+      "Dispatch automated VMI replenishment order via EDI 855",
+      "Generate VegaChart CPFR channel sync chart and atomic copy-ready markdown table"
+    ],
+    "sla_seconds": 15
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "forecast_id": "EDI830-WMT-202611",
+    "retailer": "Walmart",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "horizon_weeks": 12,
+    "current_week_order_units": 125000,
+    "forward_4wk_projected_units": 540000,
+    "bullwhip_variance_ratio": 1.42,
+    "volatility_flag": "HIGH_BULLWHIP_SWING",
+    "consensus_status": "DIVERGENT_EXCEPTION"
+  },
+  {
+    "forecast_id": "EDI830-TGT-202611",
+    "retailer": "Target",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "horizon_weeks": 12,
+    "current_week_order_units": 65000,
+    "forward_4wk_projected_units": 270000,
+    "bullwhip_variance_ratio": 1.08,
+    "volatility_flag": "STABLE",
+    "consensus_status": "ALIGNED_CONSENSUS"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "anomaly_id": "PHANTOM-KROGER-ATL-01",
+    "store_id": "STORE-KROGER-ATL-209",
+    "retailer": "Kroger",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "book_inventory_units": 380,
+    "consecutive_zero_scan_days": 4,
+    "expected_daily_scan_units": 820,
+    "phantom_confidence_score": 0.96,
+    "root_cause_hypothesis": "Backroom misplaced pallet or store shelf pilferage hiding zero on-shelf availability.",
+    "revenue_leakage_per_day_usd": 2451.80,
+    "status": "UNRESOLVED_PHANTOM_STOCKOUT"
+  },
+  {
+    "anomaly_id": "PHANTOM-WALMART-DAL-02",
+    "store_id": "STORE-WALMART-DAL-104",
+    "retailer": "Walmart",
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "book_inventory_units": 150,
+    "consecutive_zero_scan_days": 3,
+    "expected_daily_scan_units": 310,
+    "phantom_confidence_score": 0.88,
+    "root_cause_hypothesis": "Incorrect barcode tagging preventing POS register optical recognition.",
+    "revenue_leakage_per_day_usd": 1236.90,
+    "status": "UNRESOLVED_PHANTOM_STOCKOUT"
+  }
+]

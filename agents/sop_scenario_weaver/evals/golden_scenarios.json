@@ -1,0 +1,17 @@
+[
+  {
+    "scenario_id": "SCENARIO-SYNAPSE-01",
+    "name": "Multi-Plant S&OP Bottleneck & Pareto Optimization",
+    "query": "Identify 650k unmet demand gap in CPG Hydration RTD, evaluate overtime vs multi-plant rerouting trade-offs, and commit Pareto consensus plan to SAP PP/DS and FP&A.",
+    "expected_proof_obligations": [
+      "Query unconstrained demand gaps for plan month 2026-11",
+      "Query bottleneck manufacturing plant line capacities",
+      "Query supplier raw material and can allocation limits",
+      "Evaluate multi-objective Pareto trade-off matrix",
+      "Commit consensus MPS plan to SAP S/4HANA PP/DS",
+      "Lock consensus financial revenue and margin bridge in FP&A ledger",
+      "Generate VegaChart Pareto trade-off chart and atomic copy-ready markdown table"
+    ],
+    "sla_seconds": 15
+  }
+]

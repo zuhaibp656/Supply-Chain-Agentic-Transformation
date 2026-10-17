@@ -1,0 +1,20 @@
+schema_version: "v1"
+id: "demand_sensing_agent"
+name: "PulseCast — Multi-Signal Demand Sensing Engine"
+description: "Ingests daily sell-through, channel inventory, WeatherNext 3, and Google Maps foot-traffic to predict P10/P50/P90 demand curves and eliminate sales bias."
+agent_class: "app.agent.DemandSensingAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_pos_store_scans"
+  - "query_external_demand_signals"
+  - "query_timesfm_forecast_horizons"
+  - "query_fva_sales_bias"
+  - "action_commit_ibp_pir_change"
+  - "action_suppress_fva_bias"
+metadata:
+  scor_category: "01 · Plan (Demand Planning, Sensing & S&OP)"
+  tier_coverage: "Store POS / Regional Distribution Hubs / Plant Buffers"
+  roi_focus: "-6.4 pts WAPE, +3.2 pts Forecast Value Added (FVA), zero out-of-stock censorship lag"

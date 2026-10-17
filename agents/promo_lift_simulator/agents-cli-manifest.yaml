@@ -1,0 +1,20 @@
+schema_version: "v1"
+id: "promo_lift_simulator"
+name: "ElasticityIQ — Demand Shaping & Promo Simulator"
+description: "Isolates true net promotional lift from sister-SKU cannibalization and steers promotions toward available warehouse & transit supply."
+agent_class: "app.agent.PromoLiftSimulatorAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_planned_promo_campaigns"
+  - "query_causal_promo_elasticity"
+  - "query_cross_sku_cannibalization"
+  - "query_warehouse_promo_availability"
+  - "action_shape_promotional_mechanic"
+  - "action_lock_tpm_calendar"
+metadata:
+  scor_category: "01 · Plan (Demand Planning, Sensing & S&OP)"
+  tier_coverage: "Retail Trade Promotions / Regional Distribution Centers"
+  roi_focus: "+22% net trade spend ROI, zero promotional stockouts, -30% sister-SKU margin cannibalization"

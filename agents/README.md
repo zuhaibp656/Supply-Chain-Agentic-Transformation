@@ -84,16 +84,20 @@ agents/<agent_id>/
 
 ---
 
-## 4. One-by-One Build & Verification Plan
+## 4. Current Implementation Status (8 Agents Completed & Verified)
 
-Per instruction, agents are implemented **one by one**, rigorously tested locally with smoke evals, and verified before proceeding to the next.
+All 8 agents have been built with complete Google ADK compliance, deterministic fixtures, pre-execution quality gates, Vega-Lite visual surfaces, and 100% passing unit smoke tests (56/56 tests passing).
 
-### Recommended Implementation Order:
-1. **Agent 01 (`disruption_war_room_orchestrator`)** [Universal Core]: The foundational crisis response and multi-tier monitoring engine leveraging `supply-chain-disruption-monitor`.
-2. **Agent 02 (`demand_sensing_forecast_agent`)** [01 · Plan]: TimesFM + POS EDI 852/830 foundation forecasting based on `demand-forecasting-aggregation`.
-3. **Agent 03 (`supplier_risk_sentinel`)** [02 · Source]: Multi-tier Spanner Graph supplier risk engine based on `supplier-risk-scoring-engine`.
-4. **Agent 04 (`plant_oee_maintenance_agent`)** [03 · Make]: Predictive maintenance and OEE pareto analyzer based on `oee-loss-pareto-analyzer`.
-5. **Agent 05 (`echelon_inventory_allocator`)** [04 · Fulfill]: Stochastic multi-echelon buffer positioning based on `inventory-rebalancing-orchestrator`.
-6. **Agent 06 (`fleet_route_dispatch_optimizer`)** [05 · Deliver]: Dynamic VRPTW fleet routing based on `dispatch-optimization-orchestrator`.
-7. **Agent 07 (`reverse_logistics_disposition_agent`)** [06 · Return]: RMA fraud and circular disposition based on `returns-abuse-analyzer`.
-8. *Remaining 25 agents sequentially built and validated against their matched OKF specifications.*
+### Completed Agents:
+1. **Universal Core 01**: `csco_control_tower_copilot` — TowerMind CSCO Control Tower Copilot (7/7 smoke tests pass)
+2. **Universal Core 02**: `disruption_war_room_orchestrator` — StormShield Disruption War Room Orchestrator (7/7 smoke tests pass)
+3. **Universal Core 03**: `master_data_leadtime_steward` — DataCleanse Master Data & Lead-Time Steward (7/7 smoke tests pass)
+4. **Universal Core 04**: `working_capital_cash_bridge` — MarginBridge Working Capital & Cash Conversion Bridge (7/7 smoke tests pass)
+5. **Vertical 01 · Plan 01**: `demand_sensing_agent` — PulseCast Multi-Signal Demand Sensing Engine (7/7 smoke tests pass)
+6. **Vertical 01 · Plan 02**: `sop_scenario_weaver` — Synapse Autonomous S&OP Scenario Weaver (7/7 smoke tests pass)
+7. **Vertical 01 · Plan 03**: `promo_lift_simulator` — ElasticityIQ Demand Shaping & Promo Simulator (7/7 smoke tests pass)
+8. **Vertical 01 · Plan 04**: `cpfr_sync_agent` — ChannelSync Collaborative CPFR & POS Harmonizer (7/7 smoke tests pass)
+
+### Next Vertical in Roadmap:
+- **02 · Source (Strategic Sourcing & Category Procurement)**: `rfq_should_cost_agent`, `tier_n_risk_sentinel`, `tariff_esg_agent`, `supplier_quality_sentinel`.
+

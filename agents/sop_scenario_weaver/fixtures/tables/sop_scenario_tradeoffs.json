@@ -1,0 +1,41 @@
+[
+  {
+    "scenario_id": "SCEN-01-UNCONSTRAINED",
+    "name": "Unconstrained Sales Forecast Plan",
+    "description": "Produce strictly to unconstrained commercial forecast without overtime or alternate routing.",
+    "revenue_usd": 68400000.0,
+    "gross_margin_usd": 41200000.0,
+    "gross_margin_pct": 60.2,
+    "otif_delivery_pct": 91.4,
+    "stockout_risk_usd": 4450000.0,
+    "overtime_cost_usd": 0.0,
+    "trapped_working_capital_usd": 38500000.0,
+    "or_tools_solver_status": "FEASIBLE_SUBOPTIMAL"
+  },
+  {
+    "scenario_id": "SCEN-02-OVERTIME-MAX",
+    "name": "Aggressive Weekend Overtime Plan",
+    "description": "Run 21 shifts/week at Plant Cincinnati and expedite raw materials via air freight.",
+    "revenue_usd": 72850000.0,
+    "gross_margin_usd": 44800000.0,
+    "gross_margin_pct": 61.5,
+    "otif_delivery_pct": 99.2,
+    "stockout_risk_usd": 450000.0,
+    "overtime_cost_usd": 850000.0,
+    "trapped_working_capital_usd": 46200000.0,
+    "or_tools_solver_status": "FEASIBLE_EXPENSIVE"
+  },
+  {
+    "scenario_id": "SCEN-03-SYNAPSE-PARETO",
+    "name": "Synapse Balanced Pareto Optimization Plan",
+    "description": "Reroute 400k units of Hydration RTD to underutilized Plant Dallas + moderate 2-shift overtime at Cincinnati.",
+    "revenue_usd": 72600000.0,
+    "gross_margin_usd": 48600000.0,
+    "gross_margin_pct": 66.9,
+    "otif_delivery_pct": 98.7,
+    "stockout_risk_usd": 220000.0,
+    "overtime_cost_usd": 220000.0,
+    "trapped_working_capital_usd": 32800000.0,
+    "or_tools_solver_status": "OPTIMAL_PARETO_FRONTIER"
+  }
+]

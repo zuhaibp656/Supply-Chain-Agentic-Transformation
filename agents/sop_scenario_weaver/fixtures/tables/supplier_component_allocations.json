@@ -1,0 +1,22 @@
+[
+  {
+    "supplier_id": "VEND-BALL-CORP-101",
+    "supplier_name": "Ball Metal Packaging",
+    "component_id": "COMP-CAN-ALUM-330ML",
+    "monthly_allocation_units": 5000000,
+    "committed_to_orders_units": 4400000,
+    "remaining_quota_units": 600000,
+    "lead_time_days": 18,
+    "expedite_premium_per_unit_usd": 0.045
+  },
+  {
+    "supplier_id": "VEND-INGREDION-202",
+    "supplier_name": "Ingredion Specialty Starches",
+    "component_id": "COMP-PROTEIN-ISOLATE-WHEY",
+    "monthly_allocation_units": 800000,
+    "committed_to_orders_units": 760000,
+    "remaining_quota_units": 40000,
+    "lead_time_days": 28,
+    "expedite_premium_per_unit_usd": 0.320
+  }
+]

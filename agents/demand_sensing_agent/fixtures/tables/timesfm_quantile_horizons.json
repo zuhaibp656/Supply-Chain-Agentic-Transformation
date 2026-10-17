@@ -1,0 +1,47 @@
+[
+  {
+    "forecast_id": "TFM-FC-202610-001",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "region": "US-CENTRAL",
+    "horizon_days": 14,
+    "p10_units": 245000,
+    "p50_units": 298000,
+    "p90_units": 362000,
+    "wape_pct": 5.2,
+    "baseline_erp_units": 262000,
+    "variance_vs_erp_units": 36000,
+    "revenue_at_risk_usd": 180000.0,
+    "driver_attribution": "WeatherNext 3 Heatwave + Pos Censorship Imputation",
+    "as_of_date": "2026-10-17"
+  },
+  {
+    "forecast_id": "TFM-FC-202610-002",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "region": "US-MIDWEST",
+    "horizon_days": 14,
+    "p10_units": 118000,
+    "p50_units": 142000,
+    "p90_units": 169000,
+    "wape_pct": 4.8,
+    "baseline_erp_units": 135000,
+    "variance_vs_erp_units": 7000,
+    "revenue_at_risk_usd": 35000.0,
+    "driver_attribution": "Google Maps Marathon Event Lift",
+    "as_of_date": "2026-10-17"
+  },
+  {
+    "forecast_id": "TFM-FC-202610-003",
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "region": "EU-UK",
+    "horizon_days": 14,
+    "p10_units": 84000,
+    "p50_units": 105000,
+    "p90_units": 131000,
+    "wape_pct": 6.1,
+    "baseline_erp_units": 98000,
+    "variance_vs_erp_units": 7000,
+    "revenue_at_risk_usd": 42000.0,
+    "driver_attribution": "Retailer Promotion Carryover",
+    "as_of_date": "2026-10-17"
+  }
+]
