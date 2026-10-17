@@ -71,7 +71,7 @@
   "elements": [
     {
       "atomicNumber": "01",
-      "symbol": "Ct",
+      "symbol": "To",
       "shortName": "TowerMind",
       "group": "universal_csco",
       "agentId": "csco_control_tower_copilot",
@@ -97,7 +97,7 @@
     },
     {
       "atomicNumber": "02",
-      "symbol": "Sw",
+      "symbol": "St",
       "shortName": "StormShield",
       "group": "universal_csco",
       "agentId": "disruption_war_room_orchestrator",
@@ -123,7 +123,7 @@
     },
     {
       "atomicNumber": "03",
-      "symbol": "Dc",
+      "symbol": "Da",
       "shortName": "DataCleanse",
       "group": "universal_csco",
       "agentId": "master_data_leadtime_steward",
@@ -149,7 +149,7 @@
     },
     {
       "atomicNumber": "04",
-      "symbol": "Mb",
+      "symbol": "Ma",
       "shortName": "MarginBridge",
       "group": "universal_csco",
       "agentId": "working_capital_cash_bridge",
@@ -175,7 +175,7 @@
     },
     {
       "atomicNumber": "05",
-      "symbol": "Pc",
+      "symbol": "Pu",
       "shortName": "PulseCast",
       "group": "demand_sop",
       "agentId": "demand_sensing_agent",
@@ -202,7 +202,7 @@
     {
       "atomicNumber": "06",
       "symbol": "Sy",
-      "shortName": "Synapse S&OP",
+      "shortName": "Synapse",
       "group": "demand_sop",
       "agentId": "sop_scenario_weaver",
       "fullName": "Synapse — Autonomous S&OP Scenario Weaver",
@@ -227,7 +227,7 @@
     },
     {
       "atomicNumber": "07",
-      "symbol": "Eq",
+      "symbol": "El",
       "shortName": "ElasticityIQ",
       "group": "demand_sop",
       "agentId": "promo_lift_simulator",
@@ -253,7 +253,7 @@
     },
     {
       "atomicNumber": "08",
-      "symbol": "Cs",
+      "symbol": "Ch",
       "shortName": "ChannelSync",
       "group": "demand_sop",
       "agentId": "cpfr_sync_agent",
@@ -279,7 +279,7 @@
     },
     {
       "atomicNumber": "09",
-      "symbol": "Sp",
+      "symbol": "So",
       "shortName": "SourcePulse",
       "group": "sourcing_procurement",
       "agentId": "rfq_should_cost_agent",
@@ -305,7 +305,7 @@
     },
     {
       "atomicNumber": "10",
-      "symbol": "Nx",
+      "symbol": "Ne",
       "shortName": "NexusShield",
       "group": "sourcing_procurement",
       "agentId": "tier_n_risk_sentinel",
@@ -331,7 +331,7 @@
     },
     {
       "atomicNumber": "11",
-      "symbol": "Cg",
+      "symbol": "Cl",
       "shortName": "ClauseGuard",
       "group": "sourcing_procurement",
       "agentId": "tariff_esg_agent",
@@ -357,7 +357,7 @@
     },
     {
       "atomicNumber": "12",
-      "symbol": "Qs",
+      "symbol": "Qu",
       "shortName": "QualiShield",
       "group": "sourcing_procurement",
       "agentId": "supplier_quality_sentinel",
@@ -383,7 +383,7 @@
     },
     {
       "atomicNumber": "13",
-      "symbol": "Cm",
+      "symbol": "Ch",
       "shortName": "ChronosMake",
       "group": "manufacturing_prod",
       "agentId": "line_schedule_optimizer",
@@ -409,7 +409,7 @@
     },
     {
       "atomicNumber": "14",
-      "symbol": "Sg",
+      "symbol": "Sp",
       "shortName": "SpindleGuard",
       "group": "manufacturing_prod",
       "agentId": "predictive_oee_sentinel",
@@ -435,7 +435,7 @@
     },
     {
       "atomicNumber": "15",
-      "symbol": "Yv",
+      "symbol": "Yi",
       "shortName": "YieldVision",
       "group": "manufacturing_prod",
       "agentId": "inline_yield_guardian",
@@ -487,7 +487,7 @@
     },
     {
       "atomicNumber": "17",
-      "symbol": "Ef",
+      "symbol": "Ec",
       "shortName": "EchelonFlow",
       "group": "inventory_meio",
       "agentId": "meio_safety_stock_agent",
@@ -513,33 +513,7 @@
     },
     {
       "atomicNumber": "18",
-      "symbol": "Sm",
-      "shortName": "SlotMaster 3D",
-      "group": "warehousing_qa",
-      "agentId": "warehouse_slotting_agent",
-      "fullName": "SlotMaster — 3D Warehouse Slotting & Wave Twin",
-      "kpiBadge": "-28% Picker Travel",
-      "problem": "Static annual warehouse slotting forces pickers to walk miles for fast-moving or co-ordered SKUs, while uncoordinated wave releases gridlock narrow aisles.",
-      "solution": "Builds a 3D geometric digital twin of every aisle, rack level, and conveyor—scheduling Golden-Zone moves and synchronizing wave completion with outbound cross-dock and truck doors.",
-      "solverStack": "3D Spatial Digital Twin + BigQuery FP-Growth Order Affinity + OR-Tools CP-SAT Congestion Wave Solver",
-      "subAgents": [
-        {
-          "name": "Co-Order Affinity Miner",
-          "role": "Discovers SKU pairs frequently picked in the same wave in BigQuery"
-        },
-        {
-          "name": "3D Golden-Zone Slotter",
-          "role": "Assigns high-velocity SKUs to ergonomic waist-height bays via OR-Tools"
-        },
-        {
-          "name": "Aisle Congestion Throttler",
-          "role": "Simulates picker/AMR traffic in AlloyDB & staggers wave releases"
-        }
-      ]
-    },
-    {
-      "atomicNumber": "19",
-      "symbol": "Pg",
+      "symbol": "Pr",
       "shortName": "PromiseGuard",
       "group": "inventory_meio",
       "agentId": "atp_order_promising_agent",
@@ -564,8 +538,60 @@
       ]
     },
     {
+      "atomicNumber": "19",
+      "symbol": "Tw",
+      "shortName": "TwinDesign",
+      "group": "inventory_meio",
+      "agentId": "network_twin_architect",
+      "fullName": "TwinDesign — Supply Chain Network & Cost-to-Serve Optimizer",
+      "kpiBadge": "+240 bps Net Margin",
+      "problem": "Flat overhead allocations hide the fact that 20% of SKUs and small fractional orders destroy net margin, while network design studies sit in static 3-year-old consulting binders.",
+      "solution": "Maintains a live activity-based Cost-to-Serve ledger in BigQuery and continuous network design MILP in Google OR-Tools & Cloud Spanner—optimizing DC territories, factory-direct bypass, and customer MOQ guardrails.",
+      "solverStack": "BigQuery Activity-Based Landed Cost-to-Serve Attribution + OR-Tools Capacitated Facility Location & Multi-Modal Flow MILP",
+      "subAgents": [
+        {
+          "name": "Activity-Based Cost-to-Serve Engine",
+          "role": "Attributes exact ocean, air, rail, drayage, pick, pack, cube & detention cost per order line"
+        },
+        {
+          "name": "Continuous Network Flow & Node Solver",
+          "role": "Optimizes DC territories, factory-to-customer bypass & 3PL overflow capacity in OR-Tools"
+        },
+        {
+          "name": "MOQ & Service-Tier Policy Optimizer",
+          "role": "Designs pallet-layer MOQ & bracket incentives to fix margin-dilutive small orders"
+        }
+      ]
+    },
+    {
       "atomicNumber": "20",
-      "symbol": "Yp",
+      "symbol": "Sl",
+      "shortName": "SlotMaster",
+      "group": "warehousing_qa",
+      "agentId": "warehouse_slotting_agent",
+      "fullName": "SlotMaster — 3D Warehouse Slotting & Wave Twin",
+      "kpiBadge": "-28% Picker Travel",
+      "problem": "Static annual warehouse slotting forces pickers to walk miles for fast-moving or co-ordered SKUs, while uncoordinated wave releases gridlock narrow aisles.",
+      "solution": "Builds a 3D geometric digital twin of every aisle, rack level, and conveyor—scheduling Golden-Zone moves and synchronizing wave completion with outbound cross-dock and truck doors.",
+      "solverStack": "3D Spatial Digital Twin + BigQuery FP-Growth Order Affinity + OR-Tools CP-SAT Congestion Wave Solver",
+      "subAgents": [
+        {
+          "name": "Co-Order Affinity Miner",
+          "role": "Discovers SKU pairs frequently picked in the same wave in BigQuery"
+        },
+        {
+          "name": "3D Golden-Zone Slotter",
+          "role": "Assigns high-velocity SKUs to ergonomic waist-height bays via OR-Tools"
+        },
+        {
+          "name": "Aisle Congestion Throttler",
+          "role": "Simulates picker/AMR traffic in AlloyDB & staggers wave releases"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "21",
+      "symbol": "Ya",
       "shortName": "YardPulse",
       "group": "warehousing_qa",
       "agentId": "yard_dock_sequencer",
@@ -590,8 +616,8 @@
       ]
     },
     {
-      "atomicNumber": "21",
-      "symbol": "Xd",
+      "atomicNumber": "22",
+      "symbol": "Cr",
       "shortName": "CrossDockFlow",
       "group": "warehousing_qa",
       "agentId": "crossdock_transfer_orchestrator",
@@ -616,8 +642,34 @@
       ]
     },
     {
-      "atomicNumber": "22",
-      "symbol": "Cb",
+      "atomicNumber": "23",
+      "symbol": "Fl",
+      "shortName": "FleetFlow",
+      "group": "logistics_fleet",
+      "agentId": "fleetflow_dispatch",
+      "fullName": "FleetFlow — Google Maps Corridor Route & Fleet Dispatch Studio",
+      "kpiBadge": "-19.4% Fleet Cost",
+      "problem": "Manual postcode routing creates criss-crossing multi-truck spaghetti paths, poor vehicle-class sizing, and missed customer delivery time windows.",
+      "solution": "Couples angular corridor clustering with Google OR-Tools Capacitated Vehicle Routing with Time Windows (CVRPTW) and Google Maps Routes Preferred API across heterogeneous truck classes.",
+      "solverStack": "Google Maps Distance Matrix + Angular Sector Corridor Clustering + OR-Tools Heterogeneous CVRPTW",
+      "subAgents": [
+        {
+          "name": "Angular Corridor Clusterer",
+          "role": "Partitions stops into non-overlapping radial delivery corridors using Google Maps geocodes"
+        },
+        {
+          "name": "Heterogeneous Fleet Sizer",
+          "role": "Selects optimal mix of 0.75t EV vans, 3.5t, 7.5t, 12t & 24t 40ft trucks in OR-Tools"
+        },
+        {
+          "name": "Dynamic Traffic Re-Sequencer",
+          "role": "Re-solves remaining stop order upon live Google Maps traffic or dock delay"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "24",
+      "symbol": "Cu",
       "shortName": "CubeMaster 3D",
       "group": "logistics_fleet",
       "agentId": "load_consolidation_agent",
@@ -642,138 +694,8 @@
       ]
     },
     {
-      "atomicNumber": "23",
-      "symbol": "Ff",
-      "shortName": "FleetFlow Maps",
-      "group": "trade_mkt_dist",
-      "agentId": "fleetflow_dispatch",
-      "fullName": "FleetFlow — Google Maps Corridor Route & Fleet Dispatch Studio",
-      "kpiBadge": "-19.4% Fleet Cost",
-      "problem": "Manual postcode routing creates criss-crossing multi-truck spaghetti paths, poor vehicle-class sizing, and missed customer delivery time windows.",
-      "solution": "Couples angular corridor clustering with Google OR-Tools Capacitated Vehicle Routing with Time Windows (CVRPTW) and Google Maps Routes Preferred API across heterogeneous truck classes.",
-      "solverStack": "Google Maps Distance Matrix + Angular Sector Corridor Clustering + OR-Tools Heterogeneous CVRPTW",
-      "subAgents": [
-        {
-          "name": "Angular Corridor Clusterer",
-          "role": "Partitions stops into non-overlapping radial delivery corridors using Google Maps geocodes"
-        },
-        {
-          "name": "Heterogeneous Fleet Sizer",
-          "role": "Selects optimal mix of 0.75t EV vans, 3.5t, 7.5t, 12t & 24t 40ft trucks in OR-Tools"
-        },
-        {
-          "name": "Dynamic Traffic Re-Sequencer",
-          "role": "Re-solves remaining stop order upon live Google Maps traffic or dock delay"
-        }
-      ]
-    },
-    {
-      "atomicNumber": "24",
-      "symbol": "Pw",
-      "shortName": "PortWatch Sea",
-      "group": "logistics_fleet",
-      "agentId": "port_drayage_orchestrator",
-      "fullName": "PortWatch — Global Ocean Vessel, Container Stowage & Port Drayage Orchestrator",
-      "kpiBadge": "-67% Demurrage Fees",
-      "problem": "Ocean containers sit at congested port terminals accruing $350+/day demurrage fees while regional DCs stock out waiting for slow inland transit.",
-      "solution": "Tracks every container from factory gate stuffing onto ocean ships via satellite AIS and WeatherNext 3 marine routing, auto-books terminal drayage gates, and transloads urgent SKUs into regional rail or truck corridors.",
-      "solverStack": "WeatherNext 3 Marine ETA Ensemble + OR-Tools Port Free-Time Demurrage Optimizer + Coastal Transload Split MILP",
-      "subAgents": [
-        {
-          "name": "Satellite AIS & Berth Queue Predictor",
-          "role": "Forecasts vessel berth & container discharge timestamp 5+ days before port arrival"
-        },
-        {
-          "name": "Demurrage & Detention Clock Shield",
-          "role": "Prioritizes drayage pickup & empty container return before terminal free-time expires"
-        },
-        {
-          "name": "Coastal Transload & Mode-Split Solver",
-          "role": "Splits stockout-critical SKUs from 40ft ocean FEUs onto fast team trucks or intermodal rail"
-        }
-      ]
-    },
-    {
       "atomicNumber": "25",
-      "symbol": "Af",
-      "shortName": "AeroFreight Air",
-      "group": "logistics_fleet",
-      "agentId": "air_cargo_uld_optimizer",
-      "fullName": "AeroFreight — Air Cargo Charter, Belly Allocation & 3D ULD Contour Optimizer",
-      "kpiBadge": "-28% Air Freight Cost",
-      "problem": "Emergency air shipments suffer 25%+ volumetric chargeable-weight waste inside contoured aircraft ULDs and miss tight hub connections due to blind forwarder milestone lag.",
-      "solution": "Combines Google OR-Tools 3D contoured ULD bin-packing (LD3/LD7/PMC) with live TAC Index air rate optimization, IATA ONE Record e-AWB automation, and FlightAware ADS-B tail-number tracking.",
-      "solverStack": "OR-Tools 3D Contoured ULD (LD3/PMC) Weight-Balance Packer + Belly-vs-Charter Allotment MILP + ADS-B Flight Connection Guard",
-      "subAgents": [
-        {
-          "name": "3D Contoured ULD Packer (LD3/LD7/PMC)",
-          "role": "Eliminates volumetric chargeable-weight penalties via 3D fuselage contour & CoG packing"
-        },
-        {
-          "name": "Belly vs. Charter Capacity Broker",
-          "role": "Optimizes BSA forwarder commitments, passenger belly consolidations & spot charters"
-        },
-        {
-          "name": "ADS-B Tail-Number & Tarmac Guard",
-          "role": "Tracks live aircraft ADS-B flight paths & triggers tarmac recovery before missed connections"
-        }
-      ]
-    },
-    {
-      "atomicNumber": "26",
-      "symbol": "Ir",
-      "shortName": "IntermodalSync",
-      "group": "logistics_fleet",
-      "agentId": "intermodal_rail_linehaul_agent",
-      "fullName": "IntermodalSync — Factory-to-DC Intermodal Rail, Barge & Linehaul Orchestrator",
-      "kpiBadge": "-34% Linehaul Cost",
-      "problem": "Long-haul freight defaults to expensive over-the-road diesel trucks because planners distrust rail ramp dwell variability and struggle to coordinate origin/destination drayage chassis.",
-      "solution": "Continuously evaluates factory-to-DC and port-to-inland corridors using Railinc EDI telemetry, Google Maps drayage routing, and Google OR-Tools—synchronizing rail consists, chassis pools, and warehouse cross-dock gates.",
-      "solverStack": "OR-Tools Multi-Corridor Rail/Truck Linehaul MILP + Rail Ramp Cutoff & Chassis Pool Synchronizer",
-      "subAgents": [
-        {
-          "name": "OTR-to-Rail Corridor Converter",
-          "role": "Identifies 500+ mile factory-to-DC lanes eligible for COFC/TOFC rail or inland barge conversion"
-        },
-        {
-          "name": "Class-I Consist & Ramp Dwell Predictor",
-          "role": "Ingests Railinc CLM & yard telemetry to forecast train arrival and prevent ramp storage fees"
-        },
-        {
-          "name": "Synchronized Chassis & Drayage Sequencer",
-          "role": "Couples origin factory drayage and destination DC cross-dock appointments on Google Maps"
-        }
-      ]
-    },
-    {
-      "atomicNumber": "27",
-      "symbol": "Ms",
-      "shortName": "ModalShift",
-      "group": "logistics_fleet",
-      "agentId": "multimodal_mode_shift_agent",
-      "fullName": "ModalShift — Factory→Ship→Air→Rail→Truck Dynamic Mode-Switch Broker",
-      "kpiBadge": "-24% Total Transit Cost",
-      "problem": "Static ERP routing guides lock entire purchase orders onto a single transport mode—either shipping everything by slow ocean (causing stockouts) or panic-shipping the entire batch by air (destroying margin).",
-      "solution": "Models the complete global multi-modal network in Cloud Spanner Graph and Google OR-Tools—dynamically splitting and switching shipments across Ocean, Sea-Air (e.g., Dubai/Singapore/LA hubs), Air, Intermodal Rail, and Road Fleet.",
-      "solverStack": "Cloud Spanner Multi-Modal Network Graph + OR-Tools Pareto Cost / Carbon / SLA Mode-Switch MILP",
-      "subAgents": [
-        {
-          "name": "Factory-Gate Mode-Split Optimizer",
-          "role": "Splits factory outbound batches across Ocean, Sea-Air, Rail & Truck based on DC stockout risk"
-        },
-        {
-          "name": "Mid-Journey Sea-Air & Port-to-Rail Switcher",
-          "role": "Intercepts delayed ocean containers at transshipment hubs to upgrade only critical SKUs"
-        },
-        {
-          "name": "Landed Cost, Carbon & OTIF Pareto Broker",
-          "role": "Balances freight rate, inventory carrying cost, ISO-14083 CO2e & customer MABD penalties"
-        }
-      ]
-    },
-    {
-      "atomicNumber": "28",
-      "symbol": "St",
+      "symbol": "Se",
       "shortName": "SentinelMove",
       "group": "logistics_fleet",
       "agentId": "freight_control_tower",
@@ -798,7 +720,215 @@
       ]
     },
     {
+      "atomicNumber": "26",
+      "symbol": "Po",
+      "shortName": "PortWatch",
+      "group": "logistics_fleet",
+      "agentId": "port_drayage_orchestrator",
+      "fullName": "PortWatch — Global Ocean Vessel, Container Stowage & Port Drayage Orchestrator",
+      "kpiBadge": "-67% Demurrage Fees",
+      "problem": "Ocean containers sit at congested port terminals accruing $350+/day demurrage fees while regional DCs stock out waiting for slow inland transit.",
+      "solution": "Tracks every container from factory gate stuffing onto ocean ships via satellite AIS and WeatherNext 3 marine routing, auto-books terminal drayage gates, and transloads urgent SKUs into regional rail or truck corridors.",
+      "solverStack": "WeatherNext 3 Marine ETA Ensemble + OR-Tools Port Free-Time Demurrage Optimizer + Coastal Transload Split MILP",
+      "subAgents": [
+        {
+          "name": "Satellite AIS & Berth Queue Predictor",
+          "role": "Forecasts vessel berth & container discharge timestamp 5+ days before port arrival"
+        },
+        {
+          "name": "Demurrage & Detention Clock Shield",
+          "role": "Prioritizes drayage pickup & empty container return before terminal free-time expires"
+        },
+        {
+          "name": "Coastal Transload & Mode-Split Solver",
+          "role": "Splits stockout-critical SKUs from 40ft ocean FEUs onto fast team trucks or intermodal rail"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "27",
+      "symbol": "Ae",
+      "shortName": "AeroFreight",
+      "group": "logistics_fleet",
+      "agentId": "air_cargo_uld_optimizer",
+      "fullName": "AeroFreight — Air Cargo Charter, Belly Allocation & 3D ULD Contour Optimizer",
+      "kpiBadge": "-28% Air Freight Cost",
+      "problem": "Emergency air shipments suffer 25%+ volumetric chargeable-weight waste inside contoured aircraft ULDs and miss tight hub connections due to blind forwarder milestone lag.",
+      "solution": "Combines Google OR-Tools 3D contoured ULD bin-packing (LD3/LD7/PMC) with live TAC Index air rate optimization, IATA ONE Record e-AWB automation, and FlightAware ADS-B tail-number tracking.",
+      "solverStack": "OR-Tools 3D Contoured ULD (LD3/PMC) Weight-Balance Packer + Belly-vs-Charter Allotment MILP + ADS-B Flight Connection Guard",
+      "subAgents": [
+        {
+          "name": "3D Contoured ULD Packer (LD3/LD7/PMC)",
+          "role": "Eliminates volumetric chargeable-weight penalties via 3D fuselage contour & CoG packing"
+        },
+        {
+          "name": "Belly vs. Charter Capacity Broker",
+          "role": "Optimizes BSA forwarder commitments, passenger belly consolidations & spot charters"
+        },
+        {
+          "name": "ADS-B Tail-Number & Tarmac Guard",
+          "role": "Tracks live aircraft ADS-B flight paths & triggers tarmac recovery before missed connections"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "28",
+      "symbol": "In",
+      "shortName": "IntermodalSync",
+      "group": "logistics_fleet",
+      "agentId": "intermodal_rail_linehaul_agent",
+      "fullName": "IntermodalSync — Factory-to-DC Intermodal Rail, Barge & Linehaul Orchestrator",
+      "kpiBadge": "-34% Linehaul Cost",
+      "problem": "Long-haul freight defaults to expensive over-the-road diesel trucks because planners distrust rail ramp dwell variability and struggle to coordinate origin/destination drayage chassis.",
+      "solution": "Continuously evaluates factory-to-DC and port-to-inland corridors using Railinc EDI telemetry, Google Maps drayage routing, and Google OR-Tools—synchronizing rail consists, chassis pools, and warehouse cross-dock gates.",
+      "solverStack": "OR-Tools Multi-Corridor Rail/Truck Linehaul MILP + Rail Ramp Cutoff & Chassis Pool Synchronizer",
+      "subAgents": [
+        {
+          "name": "OTR-to-Rail Corridor Converter",
+          "role": "Identifies 500+ mile factory-to-DC lanes eligible for COFC/TOFC rail or inland barge conversion"
+        },
+        {
+          "name": "Class-I Consist & Ramp Dwell Predictor",
+          "role": "Ingests Railinc CLM & yard telemetry to forecast train arrival and prevent ramp storage fees"
+        },
+        {
+          "name": "Synchronized Chassis & Drayage Sequencer",
+          "role": "Couples origin factory drayage and destination DC cross-dock appointments on Google Maps"
+        }
+      ]
+    },
+    {
       "atomicNumber": "29",
+      "symbol": "Mo",
+      "shortName": "ModalShift",
+      "group": "logistics_fleet",
+      "agentId": "multimodal_mode_shift_agent",
+      "fullName": "ModalShift — Factory→Ship→Air→Rail→Truck Dynamic Mode-Switch Broker",
+      "kpiBadge": "-24% Total Transit Cost",
+      "problem": "Static ERP routing guides lock entire purchase orders onto a single transport mode—either shipping everything by slow ocean (causing stockouts) or panic-shipping the entire batch by air (destroying margin).",
+      "solution": "Models the complete global multi-modal network in Cloud Spanner Graph and Google OR-Tools—dynamically splitting and switching shipments across Ocean, Sea-Air (e.g., Dubai/Singapore/LA hubs), Air, Intermodal Rail, and Road Fleet.",
+      "solverStack": "Cloud Spanner Multi-Modal Network Graph + OR-Tools Pareto Cost / Carbon / SLA Mode-Switch MILP",
+      "subAgents": [
+        {
+          "name": "Factory-Gate Mode-Split Optimizer",
+          "role": "Splits factory outbound batches across Ocean, Sea-Air, Rail & Truck based on DC stockout risk"
+        },
+        {
+          "name": "Mid-Journey Sea-Air & Port-to-Rail Switcher",
+          "role": "Intercepts delayed ocean containers at transshipment hubs to upgrade only critical SKUs"
+        },
+        {
+          "name": "Landed Cost, Carbon & OTIF Pareto Broker",
+          "role": "Balances freight rate, inventory carrying cost, ISO-14083 CO2e & customer MABD penalties"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "30",
+      "symbol": "Be",
+      "shortName": "BeatSync",
+      "group": "trade_mkt_dist",
+      "agentId": "field_beat_distributor_sync_agent",
+      "fullName": "BeatSync — Field Sales & Distributor Inventory Harmonizer",
+      "kpiBadge": "Zero OOS Pitches · +18% Fill",
+      "problem": "Field Sales Officers (FSOs) waste 30%+ of daily store visits booking orders for SKUs that are out-of-stock at the local distributor warehouse—causing delivery stockouts, wasted trips, and lost retailer trust.",
+      "solution": "Synchronizes daily FSO beat routes with live Distributor Management System (DMS) inventory in real time. If a SKU is stocked out, BeatSync dynamically swaps it on the sales rep's mobile SFA app with available high-margin variants or promotional sister pack sizes, and sequences visits using Google Maps Routes Preferred API.",
+      "solverStack": "Google Maps Routes Preferred CVRPTW Beat Sequencer + Real-Time DMS Inventory Reconciliation Broker + Smart Variant Recommender",
+      "subAgents": [
+        {
+          "name": "Live DMS Stock Validator",
+          "role": "Reconciles SKU catalog against real-time distributor warehouse inventory before each store call"
+        },
+        {
+          "name": "Smart Variant Recommender",
+          "role": "Dynamically swaps out-of-stock items with high-margin, in-stock promotional sister pack sizes"
+        },
+        {
+          "name": "Dynamic Beat Route Optimizer",
+          "role": "Re-sequences daily retail store calls with Google Maps Routes Preferred API to maximize productive strike rate"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "31",
+      "symbol": "Sh",
+      "shortName": "ShelfVision",
+      "group": "trade_mkt_dist",
+      "agentId": "planogram_merchandising_vision_auditor",
+      "fullName": "ShelfVision — Retail Planogram & Visibility Auditor",
+      "kpiBadge": "98.7% Vision Audit · -85% Time",
+      "problem": "FMCG brands spend millions on retailer visibility schemes, but manual audits of thousands of messy store photos take weeks, allowing widespread planogram violations and unearned payout leakages.",
+      "solution": "Multimodal vision agent powered by Gemini 3.8 Flash that inspects retail shelf, chiller, and end-cap photos captured by field sales reps during store visits. Measures brand facings, Share of Shelf (SOS), and competitor encroachment against corporate planogram rules.",
+      "solverStack": "Vertex AI Multimodal Vision Object & Facing Detection + Share-of-Shelf Planogram Compliance Classifier",
+      "subAgents": [
+        {
+          "name": "Multimodal Shelf Image Normalizer",
+          "role": "Automatically cleans, de-skews, and aligns wide-angle shelf photos uploaded by field reps"
+        },
+        {
+          "name": "SKU Facing & SOS Detector",
+          "role": "Counts brand facings, detects eye-level placements, and calculates exact Share-of-Shelf vs. competitors"
+        },
+        {
+          "name": "Payout Deduction Calculator",
+          "role": "Compares detected facings against contractual retailer planogram terms and computes approved visibility payouts"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "32",
+      "symbol": "Sc",
+      "shortName": "SchemeGuard",
+      "group": "trade_mkt_dist",
+      "agentId": "trade_scheme_claims_reconciler",
+      "fullName": "SchemeGuard — Secondary Trade Payout & Claims Sentinel",
+      "kpiBadge": "45 Days → <2 Hrs · Zero Leakage",
+      "problem": "Distributor trade promotion claims and volume slabs are reconciled manually over 45-day cycles, tying up distributor working capital and leaking millions to phantom invoices and duplicate claims.",
+      "solution": "Continuously reconciles distributor secondary sales invoices against corporate trade promotion schemes, volume slabs, and seasonal incentive agreements. Cross-references secondary sales data against opening/closing stock balances to detect phantom billing before payouts are released.",
+      "solverStack": "Deterministic Secondary Sales Volume Slab Engine + BigQuery Phantom Invoice Anomaly Classifier + ERP Credit Note Broker",
+      "subAgents": [
+        {
+          "name": "Secondary Invoice Validator",
+          "role": "Verifies retailer tax invoices against distributor opening/closing stock to detect phantom billing"
+        },
+        {
+          "name": "Tiered Slab Incentive Engine",
+          "role": "Computes exact volume-based discounts and special promotional scheme credits per trade contract"
+        },
+        {
+          "name": "Autonomous ERP Credit Broker",
+          "role": "Drafts validated credit memos in SAP S/4HANA and posts instant settlement notifications to distributor portals"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "33",
+      "symbol": "Re",
+      "shortName": "ReturnLoop",
+      "group": "reverse_risk_esg",
+      "agentId": "reverse_rma_optimizer",
+      "fullName": "ReturnLoop — Autonomous RMA Grading & Backhaul Optimizer",
+      "kpiBadge": "+31% Recovery Margin",
+      "problem": "Companies pay expensive third-party LTL rates to ship returns to central depots while their own fleet returns empty, losing 40%+ of recoverable item value.",
+      "solution": "Grades returns at the edge using Gemini 3.8 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.",
+      "solverStack": "Gemini Multimodal Vision Defect Grader + Google Maps & OR-Tools Dynamic Backhaul Insertion CVRPTW",
+      "subAgents": [
+        {
+          "name": "Backhaul Milk-Run Inserter",
+          "role": "Injects RMA, pallet & empty container pickups into returning FleetFlow vehicles via Google Maps"
+        },
+        {
+          "name": "Multimodal Disposition Grader",
+          "role": "Classifies returns into Grade-A Restock, Refurb, Vendor Claim or Scrap via Gemini Vision"
+        },
+        {
+          "name": "Vendor Warranty Recovery Agent",
+          "role": "Links defect spikes in AlloyDB to supplier lots & posts SAP debit claims"
+        }
+      ]
+    },
+    {
+      "atomicNumber": "34",
       "symbol": "Ot",
       "shortName": "OTIFShield",
       "group": "reverse_risk_esg",
@@ -824,35 +954,9 @@
       ]
     },
     {
-      "atomicNumber": "30",
-      "symbol": "Rl",
-      "shortName": "ReturnLoop RMA",
-      "group": "reverse_risk_esg",
-      "agentId": "reverse_rma_optimizer",
-      "fullName": "ReturnLoop — Autonomous RMA Grading & Backhaul Optimizer",
-      "kpiBadge": "+31% Recovery Margin",
-      "problem": "Companies pay expensive third-party LTL rates to ship returns to central depots while their own fleet returns empty, losing 40%+ of recoverable item value.",
-      "solution": "Grades returns at the edge using Gemini 3.8 Flash multimodal vision and inserts return pickups directly into returning FleetFlow corridor vehicles using Google Maps and OR-Tools.",
-      "solverStack": "Gemini Multimodal Vision Defect Grader + Google Maps & OR-Tools Dynamic Backhaul Insertion CVRPTW",
-      "subAgents": [
-        {
-          "name": "Backhaul Milk-Run Inserter",
-          "role": "Injects RMA, pallet & empty container pickups into returning FleetFlow vehicles via Google Maps"
-        },
-        {
-          "name": "Multimodal Disposition Grader",
-          "role": "Classifies returns into Grade-A Restock, Refurb, Vendor Claim or Scrap via Gemini Vision"
-        },
-        {
-          "name": "Vendor Warranty Recovery Agent",
-          "role": "Links defect spikes in AlloyDB to supplier lots & posts SAP debit claims"
-        }
-      ]
-    },
-    {
-      "atomicNumber": "31",
+      "atomicNumber": "35",
       "symbol": "Ec",
-      "shortName": "EcoChain CO2e",
+      "shortName": "EcoChain",
       "group": "reverse_risk_esg",
       "agentId": "carbon_scope3_ledger",
       "fullName": "EcoChain — Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger",
@@ -872,32 +976,6 @@
         {
           "name": "Green Mode-Shift Optimizer",
           "role": "Identifies cost-neutral Air-to-Sea, OTR-to-Rail & Diesel-to-EV swaps in OR-Tools"
-        }
-      ]
-    },
-    {
-      "atomicNumber": "32",
-      "symbol": "Td",
-      "shortName": "TwinDesign",
-      "group": "inventory_meio",
-      "agentId": "network_twin_architect",
-      "fullName": "TwinDesign — Supply Chain Network & Cost-to-Serve Optimizer",
-      "kpiBadge": "+240 bps Net Margin",
-      "problem": "Flat overhead allocations hide the fact that 20% of SKUs and small fractional orders destroy net margin, while network design studies sit in static 3-year-old consulting binders.",
-      "solution": "Maintains a live activity-based Cost-to-Serve ledger in BigQuery and continuous network design MILP in Google OR-Tools & Cloud Spanner—optimizing DC territories, factory-direct bypass, and customer MOQ guardrails.",
-      "solverStack": "BigQuery Activity-Based Landed Cost-to-Serve Attribution + OR-Tools Capacitated Facility Location & Multi-Modal Flow MILP",
-      "subAgents": [
-        {
-          "name": "Activity-Based Cost-to-Serve Engine",
-          "role": "Attributes exact ocean, air, rail, drayage, pick, pack, cube & detention cost per order line"
-        },
-        {
-          "name": "Continuous Network Flow & Node Solver",
-          "role": "Optimizes DC territories, factory-to-customer bypass & 3PL overflow capacity in OR-Tools"
-        },
-        {
-          "name": "MOQ & Service-Tier Policy Optimizer",
-          "role": "Designs pallet-layer MOQ & bracket incentives to fix margin-dilutive small orders"
         }
       ]
     }
