@@ -5,22 +5,28 @@
       "Zuhaib Parvez",
       "Suman Banerjee"
     ],
-    "scorVerticalsCount": 6,
+    "scorVerticalsCount": 8,
     "personasCount": 26,
     "agentsCount": 32,
     "universalAgentsCount": 4,
     "domainAgentsCount": 28,
-    "valueChainsCount": 4
+    "valueChainsCount": 4,
+    "verticalsCount": 8
   },
   "departments": {
     "demand_sop": {
       "id": "demand_sop",
-      "scorBadge": "SCOR 01 · PLAN",
-      "name": "Demand & S&OP",
-      "fullName": "Demand Planning, S&OP & Revenue Growth (SCOR Plan)",
+      "vNum": "V1",
+      "scorBadge": "VERTICAL 01 · DEMAND & S&OP",
+      "name": "Demand Planning, Sensing & S&OP",
+      "fullName": "Vertical 1: Demand Planning, Sensing & S&OP (The Forecasters)",
+      "tagline": "The Forecasters",
       "subtitle": "Demand sensing, 45-min S&OP consensus, promo elasticity & retail CPFR",
       "color": "#10b981",
       "watermarkType": "demand_wave",
+      "horizon": "Tactical Horizon (Weekly – 18 Months)",
+      "coreQuestion": "What, how much, when, and where will customers buy—and can our network supply it?",
+      "river": "River 2: Demand & Information Flow (◀── Upstream)",
       "systems": "SAP IBP · SAP S/4HANA · Kinaxis · o9 Solutions · EDI 852/830 POS · BigQuery · AlloyDB · Cloud Spanner · Vertex AI TimesFM · Google WeatherNext 3 · Google Maps Places · Apigee",
       "solverSummary": "Vertex AI TimesFM Zero-Shot Foundation Forecasting + Hierarchical Bayesian Reconciliation + Google OR-Tools MILP S&OP Capacity & Margin Solver on BigQuery & AlloyDB",
       "toilMetric": "65% of planning time lost",
@@ -29,27 +35,39 @@
         "Order-history forecasts lag real-time customer sell-through by 2 to 4 weeks and ignore stockout censorship",
         "Promotions silently cannibalize 30%+ of sister SKUs while 21-day sequential S&OP cycles stall decisions"
       ],
-      "impactMetric": "-6.4 pts WAPE & 45-min S&OP",
+      "impactMetric": "45-Min S&OP & +24% Forecast Accuracy",
       "impactBullets": [
-        "Continuous multi-signal demand sensing outputs daily P10 / P50 / P90 probabilistic demand fans in BigQuery",
-        "Autonomous S&OP scenario weaver reconciles volume, plant line capacity, and P&L margin in 45 minutes",
-        "Causal promo elasticity & CPFR retail sync strip out cannibalization (+22% net trade spend ROI)"
+        "Cuts demand forecast error by 24% ($14M+ saved in excess buffer stock & prevented stockouts; secondary KPI: -6.4% WAPE)",
+        "Compresses S&OP planning cycles from 21 days to a live 45-minute executive review (-85% manual planner effort)",
+        "Eliminates 30%+ promo cannibalization to boost net promotional return by +22% ($8M+ saved trade spend)"
       ],
+      "kpis": "Forecast Accuracy (1 - WMAPE) | Mean Absolute Percentage Error (MAPE) | Forecast Bias (%)",
       "personaIds": [
         "demand_planning_dir",
         "sop_ibp_lead",
         "promo_launch_planner",
         "cpfr_channel_mgr"
+      ],
+      "agentIds": [
+        "demand_sensing_agent",
+        "sop_scenario_weaver",
+        "promo_lift_simulator",
+        "cpfr_sync_agent"
       ]
     },
-    "sourcing_risk": {
-      "id": "sourcing_risk",
-      "scorBadge": "SCOR 02 · SOURCE",
-      "name": "Sourcing & Supplier Risk",
-      "fullName": "Strategic Sourcing, Tier-N Risk, Compliance & Quality (SCOR Source)",
-      "subtitle": "Parametric should-cost RFQ, Tier-N Spanner graph, trade compliance & COA quality",
+    "sourcing_procurement": {
+      "id": "sourcing_procurement",
+      "vNum": "V2",
+      "scorBadge": "VERTICAL 02 · SOURCING & PROCUREMENT",
+      "name": "Strategic Sourcing & Category Procurement",
+      "fullName": "Vertical 2: Strategic Sourcing & Category Procurement (The Buyers)",
+      "tagline": "The Buyers",
+      "subtitle": "Parametric should-cost RFQ, Tier-N Spanner graph, contract SLAs & inbound AQL QA",
       "color": "#a142f4",
       "watermarkType": "supplier_graph",
+      "horizon": "Strategic & Operational Horizon",
+      "coreQuestion": "Where do we procure raw materials & packaging at optimal total cost, lead time, and AQL quality?",
+      "river": "Bridges River 1 (Inbound Material) and River 3 (Cash Outflows / DPO)",
       "systems": "SAP Ariba · SAP S/4HANA MM/QM/GTS · Coupa · Siemens Teamcenter BOM · Cloud Spanner Graph · BigQuery · AlloyDB · Google Maps Geocoding · Document AI · OR-Tools · Apigee",
       "solverSummary": "Cloud Spanner Tier-N Graph Neural Propagation + Parametric BOM Should-Cost + Google OR-Tools Combinatorial MILP Award Split + Document AI COA/Contract Parser",
       "toilMetric": "Zero visibility past Tier-1",
@@ -64,21 +82,33 @@
         "Multi-tier (Tier-1 to Tier-4) Spanner dependency graph, predictive quality COA screening & backup PO routing (9 mos → hours)",
         "Continuous contract rebate recovery, HS tariff engineering & multi-tier provenance ledger"
       ],
+      "kpis": "Purchase Price Variance (PPV) | Supplier OTIF % | Lead-Time Std Dev (σ_LT) | Cost Savings ($/₹)",
       "personaIds": [
         "category_sourcing_mgr",
         "supplier_risk_lead",
         "tariff_compliance_spec",
         "supplier_quality_lead"
+      ],
+      "agentIds": [
+        "rfq_should_cost_agent",
+        "tier_n_risk_sentinel",
+        "tariff_esg_agent",
+        "supplier_quality_sentinel"
       ]
     },
     "manufacturing_prod": {
       "id": "manufacturing_prod",
-      "scorBadge": "SCOR 03 · MAKE",
-      "name": "Manufacturing & Make",
-      "fullName": "Manufacturing, Finite Scheduling, OEE & Factory Outbound (SCOR Make)",
+      "vNum": "V3",
+      "scorBadge": "VERTICAL 03 · MANUFACTURING & MPS",
+      "name": "Production Planning & Manufacturing / MPS",
+      "fullName": "Vertical 3: Production Planning & Manufacturing / MPS (The Makers)",
+      "tagline": "The Makers",
       "subtitle": "Finite MPS line scheduling, predictive spindle OEE, inline SPC yield & ECO cutover",
       "color": "#3b82f6",
       "watermarkType": "plant_oee",
+      "horizon": "Tactical to Shift-Level Execution",
+      "coreQuestion": "How do we sequence factory lines and synchronize BOM inputs for zero unplanned downtime?",
+      "river": "River 1: Physical Material Flow (Factory WIP & Transformation)",
       "systems": "SAP S/4HANA PP/DS & PM · Siemens Opcenter MES · Rockwell Plex · OSIsoft PI Historian · Teamcenter PLM · BigQuery · AlloyDB · Cloud Spanner · OR-Tools CP-SAT · Pub/Sub & Dataflow",
       "solverSummary": "Google OR-Tools CP-SAT Sequence-Dependent Setup & Finite Capacity Job-Shop Scheduler + Vertex AI Multimodal Vibration/Thermal OEE Anomaly Model + Closed-Loop SPC",
       "toilMetric": "19% capacity lost to changeovers & stops",
@@ -87,106 +117,219 @@
         "Unplanned spindle, press, and robotics breakdowns halt high-margin production runs and trigger backorders",
         "Inline process parameter drift and uncoordinated Engineering Change Orders (ECOs) generate scrap and obsolete WIP"
       ],
-      "impactMetric": "+14.2 pts OEE & -25% Backorders",
+      "impactMetric": "-48% Unplanned Downtime & -25% Backorders",
       "impactBullets": [
-        "Autonomous OR-Tools CP-SAT finite capacity scheduling cuts changeover loss by 32% (-25% backorders benchmark)",
-        "Predictive PLC/historian telemetry forecasts bearing/spindle failures 48 hours ahead and auto-kits MRO spares",
-        "Closed-loop inline SPC vision quality, zero-scrap ECO cutover & synchronized factory-gate outbound dispatch"
+        "Autonomous OR-Tools CP-SAT finite capacity scheduling cuts line changeover time by 32% (-25% customer backorders)",
+        "Predictive PLC/historian telemetry prevents 48% of unplanned stops (+14.2% productive machine uptime / OEE)",
+        "Closed-loop inline SPC vision quality cuts scrap by 44% and speeds batch release from 48 hours to 5 minutes"
       ],
+      "kpis": "Schedule Adherence (%) | Overall Equipment Effectiveness (OEE) | Changeover Downtime Hours",
       "personaIds": [
         "mps_scheduling_lead",
         "plant_oee_maintenance_mgr",
         "manufacturing_quality_eng",
         "bom_change_launch_lead"
+      ],
+      "agentIds": [
+        "line_schedule_optimizer",
+        "predictive_oee_sentinel",
+        "inline_yield_guardian",
+        "eco_cutover_orchestrator"
       ]
     },
-    "inventory_warehouse": {
-      "id": "inventory_warehouse",
-      "scorBadge": "SCOR 04 · FULFILL (WMS)",
-      "name": "Inventory & Warehousing",
-      "fullName": "Inventory (MEIO), 3D Warehousing, Cross-Dock, ATP & Yard Ops (SCOR Fulfill)",
-      "subtitle": "Multi-echelon safety stock, 3D Golden-Zone slotting, port/air cross-dock, ATP & yard sync",
-      "color": "#00d2ff",
-      "watermarkType": "conveyor_rack",
-      "systems": "Manhattan Active WMS & Omni · SAP EWM & aATP · Blue Yonder WMS · Dematic AS/RS WCS · BigQuery · AlloyDB · Cloud Spanner · Google Maps Distance Matrix & Geofencing · OR-Tools",
-      "solverSummary": "Coupled Stochastic Multi-Echelon (MEIO) + 3D Spatial Affinity Slotting Twin + Cross-Dock Flow-Through MILP + Sub-50ms AlloyDB/Spanner Real-Time ATP Order Promising",
+    "inventory_meio": {
+      "id": "inventory_meio",
+      "vNum": "V4",
+      "scorBadge": "VERTICAL 04 · INVENTORY & MEIO",
+      "name": "Inventory & Network Optimization / MEIO",
+      "fullName": "Vertical 4: Inventory & Network Optimization / MEIO (The Buffers)",
+      "tagline": "The Buffers",
+      "subtitle": "Multi-echelon safety stock, dynamic STO rebalancing, sub-50ms ATP & cost-to-serve",
+      "color": "#06b6d4",
+      "watermarkType": "demand_wave",
+      "horizon": "Tactical Horizon (Weekly – Monthly)",
+      "coreQuestion": "How much buffer stock should be placed at each echelon to guarantee 99%+ fill rate at minimum working capital?",
+      "river": "River 3: Cash & Working Capital Flow (DIO Optimization)",
+      "systems": "SAP IBP/MM · Blue Yonder MEIO · BigQuery · AlloyDB · Cloud Spanner · Google OR-Tools · Google Maps Distance Matrix",
+      "solverSummary": "Coupled Stochastic Multi-Echelon (MEIO) + Dynamic Lateral STO Rebalancing MILP + Sub-50ms AlloyDB/Spanner Real-Time ATP Order Promising + Network Cost-to-Serve Twin",
       "toilMetric": "24% excess buffer cash trapped",
       "toilBullets": [
-        "Static single-echelon ERP rules hoard redundant safety stocks upstream while edge hubs stock out",
-        "Annual manual warehouse slotting wastes 34% of picker walking time and creates aisle gridlock",
-        "Rigid FIFO order promising splits single orders across hubs while uncoordinated port/rail cross-docks back up"
+        "Static single-echelon ERP rules hoard redundant safety stocks upstream while edge regional depots stock out",
+        "Manual spreadsheet rebalancing moves stock too late—leaving festival markets dry while sister depots sit on dead inventory",
+        "Rigid FIFO order promising splits customer orders across distant depots, inflating secondary freight and late arrivals"
       ],
       "impactMetric": "-18% Working Capital @ 99.4% Fill",
       "impactBullets": [
-        "Stochastic Multi-Echelon Inventory Optimization (MEIO) & lateral hub-to-hub rebalancing on BigQuery & Spanner",
-        "3D Golden-Zone affinity slotting, port/air/rail flow-through cross-docking & dock sequencing (-28% travel, -41% dwell)",
+        "Stochastic Multi-Echelon Inventory Optimization (MEIO) & lateral hub-to-hub rebalancing unlocks $28M+ liquidity",
+        "Dynamic Stock Transfer Order (STO) orchestrator prevents regional stockouts with zero manual planner intervention",
         "Margin-aware real-time ATP order promising with Google Maps Distance Matrix cuts split shipments by 34%"
       ],
+      "kpis": "Days Inventory Outstanding (DIO) | Inventory Turns | Slow-Moving / Dead Stock (SLOB) %",
       "personaIds": [
         "meio_inventory_mgr",
-        "warehouse_slotting_lead",
         "atp_fulfillment_spec",
+        "sc_finops_network_architect"
+      ],
+      "agentIds": [
+        "meio_safety_stock_agent",
+        "atp_order_promising_agent",
+        "network_twin_architect"
+      ]
+    },
+    "warehousing_qa": {
+      "id": "warehousing_qa",
+      "vNum": "V5",
+      "scorBadge": "VERTICAL 05 · WAREHOUSING & QA",
+      "name": "Warehousing, Inwarding QA & Intralogistics",
+      "fullName": "Vertical 5: Warehousing, Inwarding QA & Intralogistics (The Custodians)",
+      "tagline": "The Custodians",
+      "subtitle": "Dock-to-stock <4h, inbound AQL quality, 3D Golden-Zone slotting & yard sequencing",
+      "color": "#00d2ff",
+      "watermarkType": "conveyor_rack",
+      "horizon": "Real-Time Daily Execution",
+      "coreQuestion": "How do we receive, inspect, putaway, and wave-pick goods inside facilities with zero congestion and <4h dock-to-stock?",
+      "river": "Node Custodians along River 1: Physical Material Flow",
+      "systems": "Manhattan Active WMS · SAP EWM · Dematic AS/RS WCS · ICML Quality SOP Manuals · Handheld RF Scanners · Yard Management",
+      "solverSummary": "3D Spatial Affinity Slotting Twin + Inbound AQL Defect Classifier + Port/Air/Rail Cross-Dock Flow-Through MILP + Dynamic Yard Door Sequencer",
+      "toilMetric": "Dock congestion & 34% pick travel waste",
+      "toilBullets": [
+        "When incoming deliveries breach AQL moisture or defect limits, supervisors waste hours flipping through SOP binders and contracts",
+        "Static annual warehouse slotting forces pickers to walk miles through congested aisles for high-velocity SKUs",
+        "Uncoordinated trailer yard arrivals cause dock gridlock while cross-dock transloads sit waiting for bay doors"
+      ],
+      "impactMetric": "-28% Picker Travel & <2.5h Dock-to-Stock",
+      "impactBullets": [
+        "Automated AQL defect auditing and instant PDF dispute memo generation with contract-backed penalty debit notes",
+        "3D Golden-Zone spatial affinity slotting cuts picker travel distance by 28% and boosts storage density by 31%",
+        "Autonomous trailer yard and dock door sequencing slashes gate dwell by 41% and speeds cross-dock flow-through"
+      ],
+      "kpis": "Dock-to-Stock Cycle Time (<4h) | Inbound AQL Defect Rate (%) | Warehouse Pick Accuracy (%)",
+      "personaIds": [
+        "warehouse_slotting_lead",
         "dock_yard_supervisor"
+      ],
+      "agentIds": [
+        "warehouse_slotting_agent",
+        "yard_dock_sequencer",
+        "crossdock_transfer_orchestrator"
       ]
     },
     "logistics_fleet": {
       "id": "logistics_fleet",
-      "scorBadge": "SCOR 05 · DELIVER (MULTI-MODAL TMS)",
-      "name": "Multi-Modal Global Logistics",
-      "fullName": "Factory → Ocean Ships → Air Cargo → Intermodal Rail → Warehouse → Road Fleet (SCOR Deliver)",
-      "subtitle": "Ocean vessel AIS/drayage, air cargo charter/3D ULD, rail linehaul, Google Maps road fleet & 3D LIFO",
+      "vNum": "V6",
+      "scorBadge": "VERTICAL 06 · LOGISTICS & FLEET",
+      "name": "Logistics, Fleet & Transportation Management",
+      "fullName": "Vertical 6: Logistics, Fleet & Transportation Management (The Movers)",
+      "tagline": "The Movers",
+      "subtitle": "Ocean vessel AIS, air cargo charter/ULD, rail siding free-time & 3D LIFO loading",
       "color": "#ff8c00",
       "watermarkType": "corridor_lifo",
-      "systems": "SAP TM · Blue Yonder TMS · Oracle OTM · CargoWise One · Spire/MarineTraffic AIS (Ocean) · IATA Cargo-XML / Champ (Air) · Railinc EDI 404 (Rail) · Google Maps Routes API & Fleet Engine · OR-Tools · BigQuery · AlloyDB · Spanner",
-      "solverSummary": "End-to-End Multi-Modal Mode-Shift MILP (Factory→Ship→Air→Rail→Truck) + 3D Aircraft ULD & Trailer LIFO Guillotine Bin-Packing + Google Maps Routes API Heterogeneous CVRPTW",
-      "toilMetric": "22% excess ocean, air, rail & fleet waste",
+      "horizon": "Real-Time Multi-Modal Daily Execution",
+      "coreQuestion": "How do we move freight across ocean vessels, cargo aircraft, intermodal rail rakes, and linehaul trailers at minimum cost and 98%+ OTIF?",
+      "river": "Arteries of River 1: Physical Material Flow",
+      "systems": "SAP TM · Blue Yonder TMS · Oracle OTM · CargoWise One · Spire AIS · IATA Cargo-XML · Railinc EDI 404 · Indian Railways FOIS · Google Maps Routes API · Google OR-Tools",
+      "solverSummary": "End-to-End Multi-Modal Mode-Shift MILP (Factory→Ship→Air→Rail→Truck) + 3D Aircraft ULD & Trailer LIFO Guillotine Bin-Packing + Rail Siding Free-Time & Demurrage Sentinel",
+      "toilMetric": "22% multi-modal freight waste & demurrage",
       "toilBullets": [
-        "Siloed factory-to-port ocean shipping, panic air-freight charters, slow rail handoffs, and unclustered road routes",
-        "2D paper load sheets ignore 3D aircraft ULD contours, 40ft container cube, highway axle limits, and strict LIFO stop order",
-        "Port demurrage, air tarmac thermal drift, rail dwell, and unaudited carrier detention leak 5–8% of global freight spend"
+        "Siloed ocean container booking, panic air freight charters, slow rail handoffs, and unclustered linehaul routes",
+        "2D paper load sheets ignore 3D aircraft ULD contours, container cube, highway axle limits, and strict reverse-stop LIFO order",
+        "Indian Railways siding demurrage and carrier detention fees leak millions due to unmonitored turnaround timestamps"
       ],
-      "impactMetric": "-22.4% Multi-Modal Cost & 100% LIFO/ULD",
+      "impactMetric": "-22.4% Multi-Modal Cost & Zero Demurrage",
       "impactBullets": [
-        "End-to-end multi-modal orchestration from Factory Gate to Ocean Vessels, Cargo Airplanes, Intermodal Rail, Warehouses & Road Trucks",
-        "3D guillotine bin-packing for 53ft Road Trailers (reverse-stop LIFO), 40ft Ocean Containers & Contoured Aircraft ULDs (LD3/PMC)",
-        "Google Maps Routes Preferred API & Fleet Engine live road routing, satellite AIS port drayage & 100% automated freight audit"
+        "End-to-end multi-modal corridor orchestration from Factory Gate to Ocean Ships, Airplanes, Rail Rakes & Road Trucks",
+        "3D guillotine bin-packing for 53ft trailers (reverse-stop LIFO), 40ft ocean containers & contoured aircraft ULDs (LD3/PMC)",
+        "Continuous railway rake siding turnaround monitoring and automated carrier freight invoice fuel surcharge auditing"
       ],
+      "kpis": "Freight Cost per Ton-Km (₹/PTPK) | Truck Cube Fill % | Railway Demurrage & Wharfage (₹)",
       "personaIds": [
         "global_trade_port_mgr",
         "air_cargo_charter_lead",
         "intermodal_rail_linehaul_lead",
-        "fleet_dispatch_mgr",
         "network_logistics_lead",
         "freight_claims_analyst"
+      ],
+      "agentIds": [
+        "port_drayage_orchestrator",
+        "air_cargo_uld_optimizer",
+        "intermodal_rail_linehaul_agent",
+        "multimodal_mode_shift_agent",
+        "load_consolidation_agent",
+        "freight_control_tower"
       ]
     },
-    "circular_enable": {
-      "id": "circular_enable",
-      "scorBadge": "SCOR 06 · RETURN & ENABLE",
-      "name": "Customer OTIF, Reverse & Enable",
-      "fullName": "Customer OTIF, Circular RMA, Scope-3 Carbon & Network FinOps (SCOR Return & Enable)",
-      "subtitle": "OTIF penalty shield, RMA backhaul recovery, Scope-3 ledger & network cost-to-serve",
+    "trade_mkt_dist": {
+      "id": "trade_mkt_dist",
+      "vNum": "V7",
+      "scorBadge": "VERTICAL 07 · TM&D & LAST-MILE",
+      "name": "Trade Marketing & Distribution / TM&D",
+      "fullName": "Vertical 7: Trade Marketing & Distribution / TM&D (The Last-Mile Push)",
+      "tagline": "The Last-Mile Push",
+      "subtitle": "Secondary distribution, FSO beat planning, distributor live stock & planogram audits",
+      "color": "#f59e0b",
+      "watermarkType": "corridor_lifo",
+      "horizon": "Daily Field Execution",
+      "coreQuestion": "How do we push inventory through distributors to millions of retail counters, optimize FSO beats, and prevent stockout pitches?",
+      "river": "Terminal Interface of River 1 (Retail Shelf) and River 2 (Consumer POS / Sell-Through)",
+      "systems": "DMS (Distributor Management Systems) · SFA Mobile Handhelds · Google Maps Platform · Store Visibility Sheets · Quick-Commerce Portals (Blinkit/Zepto)",
+      "solverSummary": "Google Maps Routes Preferred CVRPTW Beat Sequencer + Live DMS Inventory Stock-Reconciliation Broker + Planogram Vision Auditor + Secondary Trade Scheme Reconciler",
+      "toilMetric": "Field sales pitching out-of-stock SKUs",
+      "toilBullets": [
+        "Field Sales Officers (FSOs) waste retail counter visits booking orders for SKUs that are currently out of stock at the distributor",
+        "Manual store visibility audits rely on unverified photos, allowing retailer planogram violations and unearned scheme payouts",
+        "Sub-optimal distributor beat routes cause delayed delivery to high-velocity kirana stores, causing retail stockouts"
+      ],
+      "impactMetric": "+18% Distributor Case Fill & Zero Lost Visits",
+      "impactBullets": [
+        "Real-time reconciliation of FSO focus target SKUs with live distributor stock, automatically substituting available variants",
+        "Multimodal vision auditing of retail shelf photos verifies planogram compliance and automates scheme discount approvals",
+        "Google Maps Fleet Engine beat routing ensures 100% scheduled store coverage and accelerates secondary reorders"
+      ],
+      "kpis": "Effective Store Coverage % | Distributor Case Fill Rate % | Retail Planogram Compliance %",
+      "personaIds": [
+        "fleet_dispatch_mgr"
+      ],
+      "agentIds": [
+        "fleetflow_dispatch"
+      ]
+    },
+    "reverse_risk_esg": {
+      "id": "reverse_risk_esg",
+      "vNum": "V8",
+      "scorBadge": "VERTICAL 08 · REVERSE & RISK TOWER",
+      "name": "Reverse Logistics, Risk Control Tower & ESG",
+      "fullName": "Vertical 8: Reverse Logistics, Risk Control Tower & ESG (The Guardians)",
+      "tagline": "The Guardians",
+      "subtitle": "Retail OTIF chargeback defense, circular RMA backhaul, Scope-3 ESG & macro resilience",
       "color": "#ec4899",
       "watermarkType": "circular_loop",
-      "systems": "SAP S/4HANA SD/QM/CO-PA · Retail OTIF Portals · Loop RMA · Google Earth Engine · Google Maps Routes API · ISO-14083 Carbon Engine · BigQuery · Cloud Spanner · AlloyDB · OR-Tools",
-      "solverSummary": "Retail Chargeback Risk Classifier + Vision RMA Backhaul CVRPTW + Google Earth Engine & Maps ISO-14083 Carbon Engine + Network Cost-to-Serve MILP",
+      "horizon": "Continuous Strategic Horizon",
+      "coreQuestion": "How do we recover value from damaged/expired stock, defend against unearned chargebacks, and govern Scope-3 carbon & supply risks?",
+      "river": "Circular Loop closing River 1 (Reversals/Recycling) and shielding River 3 (Chargeback Protection)",
+      "systems": "SAP Claims & Returns Management · Retail OTIF Portals · Loop RMA · Google Earth Engine · ISO-14083 Carbon Engine · BigQuery Omni · Cloud Spanner · Live Commodity Feeds",
+      "solverSummary": "Retail Chargeback Risk Classifier + Vision RMA Backhaul CVRPTW + Google Earth Engine & Maps ISO-14083 Carbon Engine + RCSA Governance Auditor",
       "toilMetric": "3.5% revenue lost to OTIF fines & returns",
       "toilBullets": [
-        "Retailer On-Time In-Full (OTIF) chargebacks and shortage deductions are discovered weeks after invoice short-pay",
-        "Customer returns ship via costly third-party LTL to central depots while outbound fleet trucks return empty",
-        "Shipment-level Scope-3 carbon accounting (CBAM/EUDR) and network cost-to-serve rely on static annual spreadsheets"
+        "Retailer On-Time In-Full (OTIF) penalty deductions and shortage chargebacks are discovered weeks after payment with no easy dispute path",
+        "Customer returns ship via costly third-party LTL to central depots while outbound fleet trucks return backhaul empty",
+        "Shipment-level Scope-3 carbon accounting (CBAM/EUDR) and enterprise RCSA risk assessments rely on static annual guesswork"
       ],
       "impactMetric": "-78% OTIF Fines & +31% Return Margin",
       "impactBullets": [
-        "Predicts retail OTIF breaches 72 hours early to reallocate stock and disputes invalid retailer chargebacks automatically",
-        "Multimodal edge RMA grading & Google Maps fleet backhaul insertion boost net return recovery margin by 31%",
-        "Continuous SKU-customer cost-to-serve profitability optimization & audit-ready ISO-14083 Scope-3 carbon ledger"
+        "Predicts retailer OTIF breaches 72 hours early to reallocate stock and auto-generates contract-backed dispute evidence",
+        "Multimodal edge RMA grading and Google Maps fleet backhaul insertion boost net return recovery margin by 31%",
+        "Automated ISO-14083 compliant shipment-level Scope-3 carbon ledger and continuous supply chain RCSA risk auditing"
       ],
+      "kpis": "Return Processing Time | Unearned Claim Leakage % | Scope-3 Carbon Intensity | RCSA Audit Score",
       "personaIds": [
         "otif_customer_service_lead",
         "reverse_logistics_mgr",
-        "sc_sustainability_esg_lead",
-        "sc_finops_network_architect"
+        "sc_sustainability_esg_lead"
+      ],
+      "agentIds": [
+        "reverse_rma_optimizer",
+        "otif_penalty_shield",
+        "carbon_scope3_ledger"
       ]
     }
   },
@@ -400,7 +543,7 @@
     },
     "meio_inventory_mgr": {
       "id": "meio_inventory_mgr",
-      "deptId": "inventory_warehouse",
+      "deptId": "inventory_meio",
       "icon": "📦",
       "name": "Global Inventory (MEIO) Manager",
       "role": "Multi-Echelon Safety Stocks, Working Capital & Rebalancing",
@@ -471,7 +614,7 @@
     },
     "warehouse_slotting_lead": {
       "id": "warehouse_slotting_lead",
-      "deptId": "inventory_warehouse",
+      "deptId": "warehousing_qa",
       "icon": "🏗️",
       "name": "Warehouse & Slotting Ops Lead",
       "role": "3D DC Slotting, Pick-Wave Execution & Labor Productivity",
@@ -539,7 +682,7 @@
     },
     "atp_fulfillment_spec": {
       "id": "atp_fulfillment_spec",
-      "deptId": "inventory_warehouse",
+      "deptId": "inventory_meio",
       "icon": "⚡",
       "name": "Global ATP & Mode-Split Promising Lead",
       "role": "Real-Time Available-to-Promise, Split Prevention & Factory/DC/Mode Arbitrage",
@@ -601,7 +744,7 @@
     },
     "fleet_dispatch_mgr": {
       "id": "fleet_dispatch_mgr",
-      "deptId": "logistics_fleet",
+      "deptId": "trade_mkt_dist",
       "icon": "🚚",
       "name": "Road Fleet & Last-Mile Dispatch Manager",
       "role": "Google Maps Corridor Clustering, Heterogeneous Fleet Sizing (0.75t–24t) & Live Routing",
@@ -800,7 +943,7 @@
     },
     "category_sourcing_mgr": {
       "id": "category_sourcing_mgr",
-      "deptId": "sourcing_risk",
+      "deptId": "sourcing_procurement",
       "icon": "⚖️",
       "name": "Category Sourcing Manager",
       "role": "Parametric Should-Cost Modeling, RFQ & Award Optimization",
@@ -861,7 +1004,7 @@
     },
     "supplier_risk_lead": {
       "id": "supplier_risk_lead",
-      "deptId": "sourcing_risk",
+      "deptId": "sourcing_procurement",
       "icon": "🛡️",
       "name": "Supplier Risk & Resilience Lead",
       "role": "Multi-Tier (Tier-1 to Tier-N) Supply Graph & Continuity",
@@ -922,7 +1065,7 @@
     },
     "tariff_compliance_spec": {
       "id": "tariff_compliance_spec",
-      "deptId": "sourcing_risk",
+      "deptId": "sourcing_procurement",
       "icon": "📜",
       "name": "Contract & Trade Compliance Specialist",
       "role": "Contract Rebate Recovery, HS Tariff Engineering & Provenance",
@@ -1030,7 +1173,7 @@
     },
     "dock_yard_supervisor": {
       "id": "dock_yard_supervisor",
-      "deptId": "inventory_warehouse",
+      "deptId": "warehousing_qa",
       "icon": "🚧",
       "name": "Dock, Yard & Cross-Dock Transload Lead",
       "role": "Autonomous Yard Jockey Dispatch, Dock Door Sequencing, Port/Rail Cross-Dock & Detention Guard",
@@ -1085,7 +1228,7 @@
     },
     "reverse_logistics_mgr": {
       "id": "reverse_logistics_mgr",
-      "deptId": "circular_enable",
+      "deptId": "reverse_risk_esg",
       "icon": "♻️",
       "name": "Reverse Logistics & Circularity Lead",
       "role": "Omnichannel RMA Triage, Backhaul Consolidation & Asset Recovery",
@@ -1139,7 +1282,7 @@
     },
     "supplier_quality_lead": {
       "id": "supplier_quality_lead",
-      "deptId": "sourcing_risk",
+      "deptId": "sourcing_procurement",
       "icon": "🔬",
       "name": "Supplier Quality & PPAP Lead",
       "role": "Inbound COA Verification, Predictive Defect Screening & 8D CAPA",
@@ -1575,7 +1718,7 @@
     },
     "otif_customer_service_lead": {
       "id": "otif_customer_service_lead",
-      "deptId": "circular_enable",
+      "deptId": "reverse_risk_esg",
       "icon": "🛡️",
       "name": "Customer Service & OTIF Penalty Lead",
       "role": "Retailer OTIF Compliance, Proactive Order Recovery & Chargeback Dispute Automation",
@@ -1629,7 +1772,7 @@
     },
     "sc_sustainability_esg_lead": {
       "id": "sc_sustainability_esg_lead",
-      "deptId": "circular_enable",
+      "deptId": "reverse_risk_esg",
       "icon": "🌱",
       "name": "Supply Chain Sustainability & Carbon Lead",
       "role": "Shipment-Level Scope-3 Carbon Ledger, EU CBAM/EUDR Compliance & Green Mode Shift",
@@ -1683,7 +1826,7 @@
     },
     "sc_finops_network_architect": {
       "id": "sc_finops_network_architect",
-      "deptId": "circular_enable",
+      "deptId": "inventory_meio",
       "icon": "🧭",
       "name": "Supply Chain Network & Cost-to-Serve Architect",
       "role": "Digital Twin Network Design, SKU Cost-to-Serve Profitability & Capital Allocation",
@@ -2119,7 +2262,7 @@
     },
     "meio_safety_stock_agent": {
       "id": "meio_safety_stock_agent",
-      "deptId": "inventory_warehouse",
+      "deptId": "inventory_meio",
       "name": "EchelonFlow — Multi-Echelon Inventory (MEIO) Optimizer",
       "shortDesc": "Jointly optimizes stochastic safety stocks across factories, ports, central DCs, and regional hubs while automating lateral transfers.",
       "badge": "-18% Working Capital",
@@ -2149,7 +2292,7 @@
     },
     "warehouse_slotting_agent": {
       "id": "warehouse_slotting_agent",
-      "deptId": "inventory_warehouse",
+      "deptId": "warehousing_qa",
       "name": "SlotMaster — 3D Warehouse Slotting & Wave Twin",
       "shortDesc": "Optimizes Golden-Zone 3D rack placement from order-line affinity and throttles pick waves to eliminate aisle congestion.",
       "badge": "-28% Picker Travel",
@@ -2179,7 +2322,7 @@
     },
     "atp_order_promising_agent": {
       "id": "atp_order_promising_agent",
-      "deptId": "inventory_warehouse",
+      "deptId": "inventory_meio",
       "name": "PromiseGuard — Dynamic Order Promising (ATP) Broker",
       "shortDesc": "Commits orders from the margin-optimal factory, port, or DC node in real time to eliminate split shipments and protect OTIF.",
       "badge": "-34% Split Shipments",
@@ -2209,7 +2352,7 @@
     },
     "yard_dock_sequencer": {
       "id": "yard_dock_sequencer",
-      "deptId": "inventory_warehouse",
+      "deptId": "warehousing_qa",
       "name": "YardPulse — Autonomous Dock Door & Yard Sequencer",
       "shortDesc": "Matches live GPS truck & intermodal drayage arrivals to optimal dock doors and sequences yard jockey moves to slash trailer dwell.",
       "badge": "-41% Trailer Dwell",
@@ -2239,7 +2382,7 @@
     },
     "crossdock_transfer_orchestrator": {
       "id": "crossdock_transfer_orchestrator",
-      "deptId": "inventory_warehouse",
+      "deptId": "warehousing_qa",
       "name": "CrossDockFlow — Port/Air/Rail-to-Warehouse Cross-Dock & Flow-Through Agent",
       "shortDesc": "Synchronizes inbound ocean containers, air cargo ULDs, and intermodal rail cars with outbound road fleet docks for zero-storage flow-through.",
       "badge": "-52% Cross-Dock Dwell",
@@ -2269,7 +2412,7 @@
     },
     "fleetflow_dispatch": {
       "id": "fleetflow_dispatch",
-      "deptId": "logistics_fleet",
+      "deptId": "trade_mkt_dist",
       "name": "FleetFlow — Google Maps Corridor Route & Fleet Dispatch Studio",
       "shortDesc": "Clusters multi-stop deliveries into clean geographical corridors on Google Maps and solves optimal heterogeneous road fleet mix and routes.",
       "badge": "-19.4% Fleet Cost",
@@ -2479,7 +2622,7 @@
     },
     "reverse_rma_optimizer": {
       "id": "reverse_rma_optimizer",
-      "deptId": "circular_enable",
+      "deptId": "reverse_risk_esg",
       "name": "ReturnLoop — Autonomous RMA Grading & Backhaul Optimizer",
       "shortDesc": "Matches customer returns & empty pallets/containers to returning fleet backhauls and routes graded items to optimal recovery nodes.",
       "badge": "+31% Recovery Margin",
@@ -2509,7 +2652,7 @@
     },
     "rfq_should_cost_agent": {
       "id": "rfq_should_cost_agent",
-      "deptId": "sourcing_risk",
+      "deptId": "sourcing_procurement",
       "name": "SourcePulse — Parametric Should-Cost & Autonomous RFQ Agent",
       "shortDesc": "Decomposes BOM components into raw material, machine, labor, and multi-modal freight should-costs and normalizes multi-supplier RFQ bids.",
       "badge": "-6.8% Direct Spend",
@@ -2539,7 +2682,7 @@
     },
     "tier_n_risk_sentinel": {
       "id": "tier_n_risk_sentinel",
-      "deptId": "sourcing_risk",
+      "deptId": "sourcing_procurement",
       "name": "NexusShield — Multi-Tier Supply Network Sentinel",
       "shortDesc": "Maps Tier-1 to Tier-4 supplier dependencies in Cloud Spanner Graph, traces BOM revenue at risk, and triggers alternate-source allocations.",
       "badge": "+11 Days Warning",
@@ -2569,7 +2712,7 @@
     },
     "tariff_esg_agent": {
       "id": "tariff_esg_agent",
-      "deptId": "sourcing_risk",
+      "deptId": "sourcing_procurement",
       "name": "ClauseGuard — Contract Intelligence & Trade Compliance Agent",
       "shortDesc": "Audits POs against contract rebate/indexation clauses and automates Harmonized System (HS) tariff classification across ocean/air borders.",
       "badge": "99.6% Compliance",
@@ -2599,7 +2742,7 @@
     },
     "supplier_quality_sentinel": {
       "id": "supplier_quality_sentinel",
-      "deptId": "sourcing_risk",
+      "deptId": "sourcing_procurement",
       "name": "QualiShield — Predictive Supplier Quality & NCR Resolver",
       "shortDesc": "Audits inbound supplier Certificates of Analysis (COA), predicts lot Cpk drift, and automates 8D CAPA & COPQ recovery.",
       "badge": "-64% Defect Escapes",
@@ -2749,7 +2892,7 @@
     },
     "otif_penalty_shield": {
       "id": "otif_penalty_shield",
-      "deptId": "circular_enable",
+      "deptId": "reverse_risk_esg",
       "name": "OTIFShield — Customer SLA Rescue & Chargeback Dispute Agent",
       "shortDesc": "Predicts retailer Must-Arrive-By-Date (MABD) misses 72 hours early to reallocate stock or upgrade transit modes, and auto-disputes invalid OTIF deductions.",
       "badge": "-78% OTIF Penalties",
@@ -2779,7 +2922,7 @@
     },
     "carbon_scope3_ledger": {
       "id": "carbon_scope3_ledger",
-      "deptId": "circular_enable",
+      "deptId": "reverse_risk_esg",
       "name": "EcoChain — Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger",
       "shortDesc": "Calculates audit-ready ISO-14083 carbon per ocean/air/rail/truck shipment, automates EU CBAM & deforestation filings, and recommends green mode shifts.",
       "badge": "-24% Freight CO2e",
@@ -2809,7 +2952,7 @@
     },
     "network_twin_architect": {
       "id": "network_twin_architect",
-      "deptId": "circular_enable",
+      "deptId": "inventory_meio",
       "name": "TwinDesign — Supply Chain Network & Cost-to-Serve Optimizer",
       "shortDesc": "Allocates true landed fulfillment cost (factory, ocean, air, rail, DC, last-mile) to every SKU-customer order line and continuously optimizes DC footprint, MOQs, and bypass flows.",
       "badge": "+240 bps Net Margin",
@@ -3297,50 +3440,55 @@
       "id": "universal_csco",
       "code": "GROUP 0 · CORE",
       "title": "Universal CSCO Core (4)",
-      "color": "#38bdf8",
-      "glow": "rgba(56,189,248,0.35)"
+      "color": "#38bdf8"
     },
     {
       "id": "demand_sop",
-      "code": "GROUP I · PLAN",
-      "title": "01 · Plan: Demand & S&OP (4)",
-      "color": "#10b981",
-      "glow": "rgba(16,185,129,0.35)"
+      "code": "GROUP I · DEMAND & S&OP",
+      "title": "01 · Demand & S&OP (4)",
+      "color": "#10b981"
     },
     {
-      "id": "sourcing_risk",
-      "code": "GROUP II · SOURCE",
-      "title": "02 · Source: Procurement (4)",
-      "color": "#a142f4",
-      "glow": "rgba(161,66,244,0.35)"
+      "id": "sourcing_procurement",
+      "code": "GROUP II · SOURCING",
+      "title": "02 · Sourcing & Procurement (4)",
+      "color": "#a142f4"
     },
     {
       "id": "manufacturing_prod",
       "code": "GROUP III · MAKE",
-      "title": "03 · Make: Manufacturing (4)",
-      "color": "#3b82f6",
-      "glow": "rgba(59,130,246,0.35)"
+      "title": "03 · Manufacturing & MPS (4)",
+      "color": "#3b82f6"
     },
     {
-      "id": "inventory_warehouse",
-      "code": "GROUP IV · FULFILL",
-      "title": "04 · Fulfill: 3D WMS & MEIO (5)",
-      "color": "#00d2ff",
-      "glow": "rgba(0,210,255,0.35)"
+      "id": "inventory_meio",
+      "code": "GROUP IV · INVENTORY",
+      "title": "04 · Inventory & MEIO (3)",
+      "color": "#06b6d4"
+    },
+    {
+      "id": "warehousing_qa",
+      "code": "GROUP V · WAREHOUSE",
+      "title": "05 · Warehousing & QA (3)",
+      "color": "#00d2ff"
     },
     {
       "id": "logistics_fleet",
-      "code": "GROUP V · DELIVER",
-      "title": "05 · Deliver: Ship/Air/Rail/Road (7)",
-      "color": "#ff8c00",
-      "glow": "rgba(255,140,0,0.35)"
+      "code": "GROUP VI · LOGISTICS",
+      "title": "06 · Logistics & Fleet (6)",
+      "color": "#ff8c00"
     },
     {
-      "id": "circular_enable",
-      "code": "GROUP VI · ENABLE",
-      "title": "06 · Return, OTIF & ESG (4)",
-      "color": "#ec4899",
-      "glow": "rgba(236,72,153,0.35)"
+      "id": "trade_mkt_dist",
+      "code": "GROUP VII · TM&D",
+      "title": "07 · TM&D & Last-Mile (1)",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "reverse_risk_esg",
+      "code": "GROUP VIII · REVERSE & ESG",
+      "title": "08 · Reverse & Risk Tower (3)",
+      "color": "#ec4899"
     }
   ],
   "periodicAgentMeta": {

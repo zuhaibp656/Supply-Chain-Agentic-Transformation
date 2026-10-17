@@ -265,6 +265,8 @@
     .dept-row > :nth-child(4), .universal-agents-grid > :nth-child(4), .agent-roi-grid > :nth-child(4), .catalog-grid > :nth-child(4), .dir-persona-grid > :nth-child(4), .day-schedule > :nth-child(4) { animation-delay: 0.14s; }
     .dept-row > :nth-child(5), .catalog-grid > :nth-child(5), .dir-persona-grid > :nth-child(5), .day-schedule > :nth-child(5) { animation-delay: 0.18s; }
     .dept-row > :nth-child(6), .catalog-grid > :nth-child(6), .dir-persona-grid > :nth-child(6), .day-schedule > :nth-child(6) { animation-delay: 0.22s; }
+    .dept-row > :nth-child(7) { animation-delay: 0.25s; }
+    .dept-row > :nth-child(8) { animation-delay: 0.28s; }
 
     /* =========================================================================
        TOP NAVIGATION BAR (ZERO OVERFLOW, RESPONSIVE WRAP)
@@ -677,18 +679,291 @@
 
     .dept-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
       width: 100%;
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1280px) {
       .dept-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 680px) {
+      .dept-row { grid-template-columns: 1fr; }
       .org-connectors { display: none; }
       .cfo-box { margin-bottom: 28px; }
     }
-    @media (max-width: 600px) {
-      .dept-row { grid-template-columns: 1fr; }
+
+    /* Three Rivers Flow Architecture Banner */
+    .rivers-banner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 28px 0 32px;
+      width: 100%;
+    }
+    @media (max-width: 900px) {
+      .rivers-banner { grid-template-columns: 1fr; }
+    }
+    .river-box {
+      background: linear-gradient(165deg, rgba(16, 26, 46, 0.88) 0%, rgba(9, 14, 26, 0.94) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 18px 20px;
+      border-left: 4px solid #38bdf8;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .river-box:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+    .river-box.signal { border-left-color: #f472b6; }
+    .river-box.cash { border-left-color: #10b981; }
+    .river-box h4 {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .river-box p {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.58;
+    }
+
+    /* 8-Vertical Interactive Master Navigation Tab Bar on Front Page */
+    .vertical-tabs-nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      background: rgba(9, 14, 25, 0.92);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      margin: 18px 0 34px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+      position: sticky;
+      top: 68px;
+      z-index: 95;
+    }
+    .v-tab-btn {
+      background: rgba(18, 28, 48, 0.85);
+      color: #94a3b8;
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.26s var(--ease-spring);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+      text-align: left;
+      min-width: 140px;
+      position: relative;
+    }
+    .v-tab-btn:hover {
+      background: rgba(28, 44, 72, 0.95);
+      color: #fff;
+      border-color: var(--v-accent, #38bdf8);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    }
+    .v-tab-btn.active {
+      background: linear-gradient(145deg, rgba(22, 38, 64, 0.98), rgba(12, 20, 36, 0.98));
+      color: #fff;
+      border-color: var(--v-accent, #38bdf8);
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    .v-tab-btn .v-tab-num {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--v-accent, #38bdf8);
+    }
+    .v-tab-btn .v-tab-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      white-space: nowrap;
+    }
+    .v-tab-btn .v-tab-tag {
+      font-size: 11px;
+      font-weight: 500;
+      color: #94a3b8;
+    }
+    .v-tab-btn.active .v-tab-tag {
+      color: #cbd5e1;
+    }
+    .v-tab-btn .v-tab-badge {
+      font-size: 10px;
+      font-weight: 600;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* 4-Quadrant Level-1 to Level-3 Decomposition Grid inside Showcase */
+    .quad-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+      width: 100%;
+    }
+    .quad-card {
+      background: rgba(14, 22, 38, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+    .quad-card h5 {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--dept-accent, #38bdf8);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quad-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .quad-card li {
+      font-size: 13px;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.52;
+    }
+    .quad-card li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--dept-accent, #38bdf8);
+      font-weight: 700;
+    }
+
+    /* Interactive Multi-Echelon Safety Stock & ROP Calculator */
+    .ss-calc-card {
+      background: linear-gradient(165deg, rgba(14, 24, 42, 0.96) 0%, rgba(8, 14, 26, 0.98) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-radius: 20px;
+      padding: 28px;
+      margin: 36px 0 20px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+    .ss-calc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .ss-calc-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .ss-calc-sub {
+      font-size: 13.5px;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+    .control-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    .control-field {
+      flex: 1;
+      min-width: 240px;
+    }
+    .control-field label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 6px;
+    }
+    .control-field input[type="range"] {
+      width: 100%;
+      accent-color: #38bdf8;
+      cursor: pointer;
+    }
+    .ss-output-box {
+      background: #060a12;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 14px;
+    }
+    .bar-line { margin: 14px 0 6px; }
+    .bar-meta { display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 6px; color: #94a3b8; }
+    .bar-outer {
+      width: 100%;
+      height: 24px;
+      background: #090e17;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+    .bar-inner {
+      height: 100%;
+      background: linear-gradient(90deg, #38bdf8, #ec4899);
+      transition: width 0.35s ease;
+    }
+
+    /* 5-Step S&OP Cadence Table */
+    .sop-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .sop-cadence-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      background: rgba(10, 16, 28, 0.95);
+    }
+    .sop-cadence-table th {
+      background: #080d18;
+      color: #38bdf8;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: left;
+    }
+    .sop-cadence-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      color: #cbd5e1;
+    }
+    .sop-cadence-table tr:hover td {
+      background: rgba(255, 255, 255, 0.03);
     }
 
     /* 6 SCOR Vertical Cards — Fitted Visible Animation Stage that Brightens on Hover & Expands on Click */
@@ -3328,11 +3603,77 @@
       </div>
     </section>
 
-    <!-- 2. CSCO ORG CHART (PROGRESSIVE ONE-BY-ONE EXPLORATION ACROSS 6 SCOR VERTICALS) -->
+    <!-- 2. CSCO ORG CHART (PROGRESSIVE EXPLORATION ACROSS THE 8 OPERATIONAL VERTICALS) -->
     <section id="orgChartSection" class="org-section">
       <div class="section-header">
-        <h2 class="section-title">Office of the CSCO — 6 SCOR Supply Chain Verticals</h2>
-        <p class="section-subtitle">Aligned to the global <span class="sc-hl-underline">ASCM SCOR DS</span> taxonomy (<strong class="sc-hl-bold">Plan · Source · Make · Fulfill: Warehouse · Deliver: Ocean/Air/Rail/Road Fleet · Return &amp; Enable</strong>) — delivering <span class="sc-hl-metric">zero-toil execution</span>, <span class="sc-hl-underline">deterministic math optimization</span>, and verified <strong class="sc-hl-bold">bottom-line ROI</strong> across <span class="sc-hl-metric">26 roles</span>.</p>
+        <h2 class="section-title">Office of the CSCO — The 8 Operational Verticals</h2>
+        <p class="section-subtitle">The End-to-End Operating Topology decomposed from <span class="sc-hl-underline">Level-1 to Level-3</span> across the <strong class="sc-hl-bold">Three Rivers Flow</strong> (Physical Material Flow, Demand/Information Flow, Cash/Working Capital Flow) — powered by deterministic math solvers and Gemini Enterprise agentic orchestration.</p>
+      </div>
+
+      <!-- Three Rivers Flow Architecture Banner -->
+      <div class="rivers-banner">
+        <div class="river-box">
+          <h4>🌊 River 1: Physical Material Flow (Downstream ──▶)</h4>
+          <p>Raw Materials / Agri Nodes ──▶ Factory WIP ──▶ Mother Warehouses ──▶ Regional Depots ──▶ Distributors ──▶ Retail Shelf / Kirana.</p>
+        </div>
+        <div class="river-box signal">
+          <h4>📡 River 2: Demand &amp; Information Flow (◀── Upstream)</h4>
+          <p>Consumer POS Scans ◀── FSO Beat Orders ◀── DMS Inventory ◀── S&amp;OP Consensus Forecast ◀── MRP BOM Explosion ◀── Vendor POs.</p>
+        </div>
+        <div class="river-box cash">
+          <h4>💰 River 3: Cash &amp; Working Capital Flow (◀──▶ Cyclic)</h4>
+          <p>Cash Conversion Cycle = Days Inventory (DIO) + Receivables (DSO) − Payables (DPO). Every excess day of dead stock locks corporate liquidity.</p>
+        </div>
+      </div>
+
+      <!-- 8-Vertical Interactive Master Navigation Tab Bar on the Front Page -->
+      <div class="vertical-tabs-nav-bar" id="verticalTabsNavBar">
+        <button type="button" class="v-tab-btn active" data-vtab="all" onclick="switchVerticalTab('all', this)">
+          <span class="v-tab-num" style="color:#38bdf8;">ALL 8</span>
+          <span class="v-tab-title">All Verticals</span>
+          <span class="v-tab-tag">End-to-End Network</span>
+          <span class="v-tab-badge">26 Roles · 32 Agents</span>
+        </button>
+        <button type="button" class="v-tab-btn" data-vtab="demand_sop" onclick="switchVerticalTab('demand_sop', this)" style="--v-accent: #10b981;">
+          <span class="v-tab-num">V1 · PLAN</span>
+          <span class="v-tab-title">Demand &amp; S&amp;OP</span>
+          <span class="v-tab-tag">The Forecasters</span>
+        </button>
+        <button type="button" class="v-tab-btn" data-vtab="sourcing_procurement" onclick="switchVerticalTab('sourcing_procurement', this)" style="--v-accent: #a142f4;">
+          <span class="v-tab-num">V2 · SOURCE</span>
+          <span class="v-tab-title">Sourcing &amp; Procurement</span>
+          <span class="v-tab-tag">The Buyers</span>
+        </button>
+        <button type="button" class="v-tab-btn" data-vtab="manufacturing_prod" onclick="switchVerticalTab('manufacturing_prod', this)" style="--v-accent: #3b82f6;">
+          <span class="v-tab-num">V3 · MAKE</span>
+          <span class="v-tab-title">Manufacturing &amp; MPS</span>
+          <span class="v-tab-tag">The Makers</span>
+        </button>
+        <button type="button" class="v-tab-btn" data-vtab="inventory_meio" onclick="switchVerticalTab('inventory_meio', this)" style="--v-accent: #06b6d4;">
+          <span class="v-tab-num">V4 · BUFFER</span>
+          <span class="v-tab-title">Inventory &amp; MEIO</span>
+          <span class="v-tab-tag">The Buffers</span>
+        </button>
+        <button type="button" class="v-tab-btn" data-vtab="warehousing_qa" onclick="switchVerticalTab('warehousing_qa', this)" style="--v-accent: #00d2ff;">
+          <span class="v-tab-num">V5 · WMS &amp; QA</span>
+          <span class="v-tab-title">Warehousing &amp; QA</span>
+          <span class="v-tab-tag">The Custodians</span>
+        </button>
+        <button type="button" class="v-tab-btn" data-vtab="logistics_fleet" onclick="switchVerticalTab('logistics_fleet', this)" style="--v-accent: #ff8c00;">
+          <span class="v-tab-num">V6 · LOGISTICS</span>
+          <span class="v-tab-title">Logistics &amp; Fleet</span>
+          <span class="v-tab-tag">The Movers</span>
+        </button>
+        <button type="button" class="v-tab-btn" data-vtab="trade_mkt_dist" onclick="switchVerticalTab('trade_mkt_dist', this)" style="--v-accent: #f59e0b;">
+          <span class="v-tab-num">V7 · TM&amp;D</span>
+          <span class="v-tab-title">TM&amp;D Last-Mile</span>
+          <span class="v-tab-tag">The Last-Mile Push</span>
+        </button>
+        <button type="button" class="v-tab-btn" data-vtab="reverse_risk_esg" onclick="switchVerticalTab('reverse_risk_esg', this)" style="--v-accent: #ec4899;">
+          <span class="v-tab-num">V8 · GUARDIAN</span>
+          <span class="v-tab-title">Reverse &amp; Risk ESG</span>
+          <span class="v-tab-tag">The Guardians</span>
+        </button>
       </div>
 
       <div class="cfo-root-wrapper">
@@ -3353,31 +3694,35 @@
           </div>
           <div>
             <div class="cfo-box-title">Chief Supply Chain Officer (CSCO)</div>
-            <div class="cfo-box-sub"><span class="sc-hl-metric">6 SCOR Verticals</span> · <span class="sc-hl-metric">26 Personas</span> · <span class="sc-hl-metric">28 Domain Agents</span> + <span class="sc-hl-metric">4 Universal Cross-Persona Agents</span></div>
+            <div class="cfo-box-sub"><span class="sc-hl-metric">8 Operational Verticals</span> · <span class="sc-hl-metric">26 Personas</span> · <span class="sc-hl-metric">28 Domain Agents</span> + <span class="sc-hl-metric">4 Universal Cross-Persona Agents</span></div>
           </div>
         </div>
 
-        <!-- SVG Tree Lines to 6 Supply Chain Verticals (3x2 Grid) with Animated Telemetry Packets -->
+        <!-- SVG Tree Lines to 8 Supply Chain Verticals (4x2 Grid) with Animated Telemetry Packets -->
         <svg class="org-connectors" viewBox="0 0 1000 56" preserveAspectRatio="none">
           <defs>
             <linearGradient id="orgLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#10b981" stop-opacity="0.55" />
-              <stop offset="50%" stop-color="#00d2ff" stop-opacity="0.85" />
+              <stop offset="33%" stop-color="#3b82f6" stop-opacity="0.75" />
+              <stop offset="66%" stop-color="#ff8c00" stop-opacity="0.75" />
               <stop offset="100%" stop-color="#ec4899" stop-opacity="0.55" />
             </linearGradient>
           </defs>
-          <path d="M500,0 L500,24 M166,24 L834,24 M166,24 L166,56 M500,24 L500,56 M834,24 L834,56" />
-          <path d="M500,0 L500,24 M166,24 L834,24 M166,24 L166,56 M500,24 L500,56 M834,24 L834,56"
+          <path d="M500,0 L500,24 M125,24 L875,24 M125,24 L125,56 M375,24 L375,56 M625,24 L625,56 M875,24 L875,56" />
+          <path d="M500,0 L500,24 M125,24 L875,24 M125,24 L125,56 M375,24 L375,56 M625,24 L625,56 M875,24 L875,56"
                 stroke="url(#orgLineGrad)" stroke-width="2.2" stroke-dasharray="8 10" fill="none"
                 style="animation: scDashFlow 2.4s linear infinite;" />
-          <circle r="3.5" fill="#00d2ff">
-            <animateMotion dur="2.6s" repeatCount="indefinite" path="M500,0 L500,24 L166,24 L166,56" />
+          <circle r="3.5" fill="#10b981">
+            <animateMotion dur="2.4s" repeatCount="indefinite" path="M500,0 L500,24 L125,24 L125,56" />
           </circle>
-          <circle r="3.5" fill="#38bdf8">
-            <animateMotion dur="2.0s" repeatCount="indefinite" path="M500,0 L500,56" />
+          <circle r="3.5" fill="#3b82f6">
+            <animateMotion dur="2.0s" repeatCount="indefinite" path="M500,0 L500,24 L375,24 L375,56" />
           </circle>
-          <circle r="3.5" fill="#a855f7">
-            <animateMotion dur="2.6s" repeatCount="indefinite" path="M500,0 L500,24 L834,24 L834,56" />
+          <circle r="3.5" fill="#ff8c00">
+            <animateMotion dur="2.2s" repeatCount="indefinite" path="M500,0 L500,24 L625,24 L625,56" />
+          </circle>
+          <circle r="3.5" fill="#ec4899">
+            <animateMotion dur="2.6s" repeatCount="indefinite" path="M500,0 L500,24 L875,24 L875,56" />
           </circle>
         </svg>
 
@@ -3390,6 +3735,36 @@
 
       <!-- Cross-Persona Universal Supply Chain Agents (Used by All 26 Personas) -->
       <div id="universalAgentsHomeContainer"></div>
+
+      <!-- Interactive Multi-Echelon Safety Stock & ROP Calculator -->
+      <div class="ss-calc-card">
+        <div class="ss-calc-header">
+          <div>
+            <div class="ss-calc-title">🧮 Interactive Multi-Echelon Safety Stock &amp; Reorder Point (ROP) Calculator</div>
+            <div class="ss-calc-sub">See in real time why supplier lead-time volatility (σ_LT) exponentially inflates required buffer stock compared to pure demand fluctuations:</div>
+          </div>
+          <div style="font-size:12px; color:var(--text-muted); background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); padding:4px 12px; border-radius:999px;">
+            Service Level Z = 2.05 (98.0% Cycle Service)
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-field">
+            <label>Average Daily Demand (Cases/Day): <strong id="lblD" style="color:#fff;">600</strong></label>
+            <input type="range" id="rngD" min="100" max="2500" step="50" value="600" oninput="runSSCalc()"/>
+          </div>
+          <div class="control-field">
+            <label>Supplier Lead Time (Days): <strong id="lblLT" style="color:#fff;">8</strong></label>
+            <input type="range" id="rngLT" min="1" max="45" step="1" value="8" oninput="runSSCalc()"/>
+          </div>
+          <div class="control-field">
+            <label>Lead-Time Std Dev σ_LT (Days): <strong id="lblSLT" style="color:#fff;">3.0</strong></label>
+            <input type="range" id="rngSLT" min="0" max="15" step="0.5" value="3.0" oninput="runSSCalc()"/>
+          </div>
+        </div>
+
+        <div id="ssOutput" class="ss-output-box"></div>
+      </div>
 
       <!-- End-to-End Agentic Value Chains (4 Suites: F2F, O2D, S2P, P2R) -->
       <div class="vc-home-block">
@@ -3648,16 +4023,21 @@
        DATA & MULTI-PAGE CONTROLLER
        ========================================================================= -->
   <script>
-    /* 1. SIX UNIVERSAL SCOR SUPPLY CHAIN VERTICALS UNDER THE CSCO (26 PERSONAS & 32 AGENTS TOTAL) */
+    /* 1. EIGHT CANONICAL OPERATIONAL VERTICALS UNDER THE CSCO (LEVEL-1 TO LEVEL-3 DECOMPOSITION) */
     const DEPARTMENTS = {
       demand_sop: {
         id: 'demand_sop',
-        scorBadge: 'SCOR 01 · PLAN',
-        name: 'Demand & S&OP',
-        fullName: 'Demand Planning, S&OP & Revenue Growth (SCOR Plan)',
+        vNum: 'V1',
+        scorBadge: 'VERTICAL 01 · DEMAND & S&OP',
+        name: 'Demand Planning, Sensing & S&OP',
+        fullName: 'Vertical 1: Demand Planning, Sensing & S&OP (The Forecasters)',
+        tagline: 'The Forecasters',
         subtitle: 'Demand sensing, 45-min S&OP consensus, promo elasticity & retail CPFR',
         color: '#10b981',
         watermarkType: 'demand_wave',
+        horizon: 'Tactical Horizon (Weekly – 18 Months)',
+        coreQuestion: 'What, how much, when, and where will customers buy—and can our network supply it?',
+        river: 'River 2: Demand & Information Flow (◀── Upstream)',
         systems: 'SAP IBP · SAP S/4HANA · Kinaxis · o9 Solutions · EDI 852/830 POS · BigQuery · AlloyDB · Cloud Spanner · Vertex AI TimesFM · Google WeatherNext 3 · Google Maps Places · Apigee',
         solverSummary: 'Vertex AI TimesFM Zero-Shot Foundation Forecasting + Hierarchical Bayesian Reconciliation + Google OR-Tools MILP S&OP Capacity & Margin Solver on BigQuery & AlloyDB',
         toilMetric: '65% of planning time lost',
@@ -3668,20 +4048,33 @@
         ],
         impactMetric: '45-Min S&OP & +24% Forecast Accuracy',
         impactBullets: [
-          'Cuts demand forecast error by 24% ($14M+ saved in excess buffer stock & prevented stockouts; secondary KPI: -6.4% WAPE — Weighted Absolute Percentage Error)',
+          'Cuts demand forecast error by 24% ($14M+ saved in excess buffer stock & prevented stockouts; secondary KPI: -6.4% WAPE)',
           'Compresses S&OP planning cycles from 21 days to a live 45-minute executive review (-85% manual planner effort)',
           'Eliminates 30%+ promo cannibalization to boost net promotional return by +22% ($8M+ saved trade spend)'
         ],
-        personaIds: ['demand_planning_dir', 'sop_ibp_lead', 'promo_launch_planner', 'cpfr_channel_mgr']
+        l1toL3: {
+          mandate: 'Transforms market demand signals into a single consensus operational plan. Operates 5-stage monthly S&OP cadence reconciling Sales with Manufacturing. Utilizes statistical baseline models augmented by short-term AI demand sensing.',
+          mtoVsMts: 'Make-to-Stock across 5,000+ regional SKUs vs. Make-to-Order customized packs; solves festival demand spikes (e.g. Durga Puja, Diwali) while preventing Bullwhip amplification upstream.',
+          battleground: 'Finance plans in quarterly currency; Demand Planning must forecast cases per SKU per depot per week. Reconciles promotional lift with depot buffers.',
+          dataObjects: 'POS Scanner Streams · EDI 852 Feeds · TimesFM Forecast Curves · Promotional Lift Elasticity Coefficients · Consensus S&OP Master Sheets'
+        },
+        kpis: 'Forecast Accuracy (1 - WMAPE) | Mean Absolute Percentage Error (MAPE) | Forecast Bias (%)',
+        personaIds: ['demand_planning_dir', 'sop_ibp_lead', 'promo_launch_planner', 'cpfr_channel_mgr'],
+        agentIds: ['demand_sensing_agent', 'sop_scenario_weaver', 'promo_lift_simulator', 'cpfr_sync_agent']
       },
-      sourcing_risk: {
-        id: 'sourcing_risk',
-        scorBadge: 'SCOR 02 · SOURCE',
-        name: 'Sourcing & Supplier Risk',
-        fullName: 'Strategic Sourcing, Tier-N Risk, Compliance & Quality (SCOR Source)',
-        subtitle: 'Parametric should-cost RFQ, Tier-N Spanner graph, trade compliance & COA quality',
+      sourcing_procurement: {
+        id: 'sourcing_procurement',
+        vNum: 'V2',
+        scorBadge: 'VERTICAL 02 · SOURCING & PROCUREMENT',
+        name: 'Strategic Sourcing & Category Procurement',
+        fullName: 'Vertical 2: Strategic Sourcing & Category Procurement (The Buyers)',
+        tagline: 'The Buyers',
+        subtitle: 'Parametric should-cost RFQ, Tier-N Spanner graph, contract SLAs & inbound AQL QA',
         color: '#a142f4',
         watermarkType: 'supplier_graph',
+        horizon: 'Strategic & Operational Horizon',
+        coreQuestion: 'Where do we procure raw materials & packaging at optimal total cost, lead time, and AQL quality?',
+        river: 'Bridges River 1 (Inbound Material) and River 3 (Cash Outflows / DPO)',
         systems: 'SAP Ariba · SAP S/4HANA MM/QM/GTS · Coupa · Siemens Teamcenter BOM · Cloud Spanner Graph · BigQuery · AlloyDB · Google Maps Geocoding · Document AI · OR-Tools · Apigee',
         solverSummary: 'Cloud Spanner Tier-N Graph Neural Propagation + Parametric BOM Should-Cost + Google OR-Tools Combinatorial MILP Award Split + Document AI COA/Contract Parser',
         toilMetric: 'Zero visibility past Tier-1',
@@ -3696,16 +4089,29 @@
           'Multi-tier (Tier-1 to Tier-4) Spanner dependency graph, predictive quality COA screening & backup PO routing (9 mos → hours)',
           'Continuous contract rebate recovery, HS tariff engineering & multi-tier provenance ledger'
         ],
-        personaIds: ['category_sourcing_mgr', 'supplier_risk_lead', 'tariff_compliance_spec', 'supplier_quality_lead']
+        l1toL3: {
+          mandate: 'Manages all external supplier expenditure across Direct Procurement (agricultural crops, chemicals, packaging laminates) and Indirect Procurement (MRO spare parts, logistics services). Governs vendor RFPs, should-cost models, contract SLAs, and Delegation of Authority (DOA).',
+          mtoVsMts: 'Dual-sourcing strategies balancing committed long-term vendor allocations with dynamic spot-buy hedging across volatile commodity markets.',
+          battleground: 'Ensuring defective materials are rejected or penalized at the gate (AQL moisture/defect audits) before Accounts Payable pays the vendor.',
+          dataObjects: 'SAP Purchase Orders (ME21N) · Inwarding Gate Entries (MIGO) · Vendor Quality Defect Logs · Should-Cost Decomposition Tables · DOA Matrix'
+        },
+        kpis: 'Purchase Price Variance (PPV) | Supplier OTIF % | Lead-Time Std Dev (σ_LT) | Cost Savings ($/₹)',
+        personaIds: ['category_sourcing_mgr', 'supplier_risk_lead', 'tariff_compliance_spec', 'supplier_quality_lead'],
+        agentIds: ['rfq_should_cost_agent', 'tier_n_risk_sentinel', 'tariff_esg_agent', 'supplier_quality_sentinel']
       },
       manufacturing_prod: {
         id: 'manufacturing_prod',
-        scorBadge: 'SCOR 03 · MAKE',
-        name: 'Manufacturing & Make',
-        fullName: 'Manufacturing, Finite Scheduling, OEE & Factory Outbound (SCOR Make)',
+        vNum: 'V3',
+        scorBadge: 'VERTICAL 03 · MANUFACTURING & MPS',
+        name: 'Production Planning & Manufacturing / MPS',
+        fullName: 'Vertical 3: Production Planning & Manufacturing / MPS (The Makers)',
+        tagline: 'The Makers',
         subtitle: 'Finite MPS line scheduling, predictive spindle OEE, inline SPC yield & ECO cutover',
         color: '#3b82f6',
         watermarkType: 'plant_oee',
+        horizon: 'Tactical to Shift-Level Execution',
+        coreQuestion: 'How do we sequence factory lines and synchronize BOM inputs for zero unplanned downtime?',
+        river: 'River 1: Physical Material Flow (Factory WIP & Transformation)',
         systems: 'SAP S/4HANA PP/DS & PM · Siemens Opcenter MES · Rockwell Plex · OSIsoft PI Historian · Teamcenter PLM · BigQuery · AlloyDB · Cloud Spanner · OR-Tools CP-SAT · Pub/Sub & Dataflow',
         solverSummary: 'Google OR-Tools CP-SAT Sequence-Dependent Setup & Finite Capacity Job-Shop Scheduler + Vertex AI Multimodal Vibration/Thermal OEE Anomaly Model + Closed-Loop SPC',
         toilMetric: '19% capacity lost to changeovers & stops',
@@ -3720,83 +4126,208 @@
           'Predictive PLC/historian telemetry prevents 48% of unplanned stops (+14.2% productive machine uptime / OEE)',
           'Closed-loop inline SPC vision quality cuts scrap by 44% and speeds batch release from 48 hours to 5 minutes'
         ],
-        personaIds: ['mps_scheduling_lead', 'plant_oee_maintenance_mgr', 'manufacturing_quality_eng', 'bom_change_launch_lead']
+        l1toL3: {
+          mandate: 'Converts constrained S&OP plan into plant-level Master Production Schedules (MPS) and executes Material Requirements Planning (MRP) BOM explosions. Coordinates multi-component packaging synchronization (e.g. noodle cake + seasoning sachet) and drives shop-floor OEE.',
+          mtoVsMts: 'Balancing long efficient production runs with agility; minimizing sequence-dependent setup losses while holding line changeovers under strict limits.',
+          battleground: 'Short production runs increase changeover downtime costs; excessively long runs build surplus finished goods inventory.',
+          dataObjects: 'Production Orders (CO01) · Multi-Level BOMs · SCADA Historian High-Frequency Telemetry · Tooling Wear Indices · Shift Maintenance Schedules'
+        },
+        kpis: 'Schedule Adherence (%) | Overall Equipment Effectiveness (OEE) | Changeover Downtime Hours',
+        personaIds: ['mps_scheduling_lead', 'plant_oee_maintenance_mgr', 'manufacturing_quality_eng', 'bom_change_launch_lead'],
+        agentIds: ['line_schedule_optimizer', 'predictive_oee_sentinel', 'inline_yield_guardian', 'eco_cutover_orchestrator']
       },
-      inventory_warehouse: {
-        id: 'inventory_warehouse',
-        scorBadge: 'SCOR 04 · FULFILL (WMS)',
-        name: 'Inventory & Warehousing',
-        fullName: 'Inventory (MEIO), 3D Warehousing, Cross-Dock, ATP & Yard Ops (SCOR Fulfill)',
-        subtitle: 'Multi-echelon safety stock, 3D Golden-Zone slotting, port/air cross-dock, ATP & yard sync',
-        color: '#00d2ff',
-        watermarkType: 'conveyor_rack',
-        systems: 'Manhattan Active WMS & Omni · SAP EWM & aATP · Blue Yonder WMS · Dematic AS/RS WCS · BigQuery · AlloyDB · Cloud Spanner · Google Maps Distance Matrix & Geofencing · OR-Tools',
-        solverSummary: 'Coupled Stochastic Multi-Echelon (MEIO) + 3D Spatial Affinity Slotting Twin + Cross-Dock Flow-Through MILP + Sub-50ms AlloyDB/Spanner Real-Time ATP Order Promising',
+      inventory_meio: {
+        id: 'inventory_meio',
+        vNum: 'V4',
+        scorBadge: 'VERTICAL 04 · INVENTORY & MEIO',
+        name: 'Inventory & Network Optimization / MEIO',
+        fullName: 'Vertical 4: Inventory & Network Optimization / MEIO (The Buffers)',
+        tagline: 'The Buffers',
+        subtitle: 'Multi-echelon safety stock, dynamic STO rebalancing, sub-50ms ATP & cost-to-serve',
+        color: '#06b6d4',
+        watermarkType: 'demand_wave',
+        horizon: 'Tactical Horizon (Weekly – Monthly)',
+        coreQuestion: 'How much buffer stock should be placed at each echelon to guarantee 99%+ fill rate at minimum working capital?',
+        river: 'River 3: Cash & Working Capital Flow (DIO Optimization)',
+        systems: 'SAP IBP/MM · Blue Yonder MEIO · BigQuery · AlloyDB · Cloud Spanner · Google OR-Tools · Google Maps Distance Matrix',
+        solverSummary: 'Coupled Stochastic Multi-Echelon (MEIO) + Dynamic Lateral STO Rebalancing MILP + Sub-50ms AlloyDB/Spanner Real-Time ATP Order Promising + Network Cost-to-Serve Twin',
         toilMetric: '24% excess buffer cash trapped',
         toilBullets: [
-          'Static single-echelon ERP rules hoard redundant safety stocks upstream while edge hubs stock out',
-          'Annual manual warehouse slotting wastes 34% of picker walking time and creates aisle gridlock',
-          'Rigid FIFO order promising splits single orders across hubs while uncoordinated port/rail cross-docks back up'
+          'Static single-echelon ERP rules hoard redundant safety stocks upstream while edge regional depots stock out',
+          'Manual spreadsheet rebalancing moves stock too late—leaving festival markets dry while sister depots sit on dead inventory',
+          'Rigid FIFO order promising splits customer orders across distant depots, inflating secondary freight and late arrivals'
         ],
         impactMetric: '-18% Working Capital @ 99.4% Fill',
         impactBullets: [
-          'Stochastic Multi-Echelon Inventory Optimization (MEIO) & lateral hub-to-hub rebalancing on BigQuery & Spanner',
-          '3D Golden-Zone affinity slotting, port/air/rail flow-through cross-docking & dock sequencing (-28% travel, -41% dwell)',
+          'Stochastic Multi-Echelon Inventory Optimization (MEIO) & lateral hub-to-hub rebalancing unlocks $28M+ liquidity',
+          'Dynamic Stock Transfer Order (STO) orchestrator prevents regional stockouts with zero manual planner intervention',
           'Margin-aware real-time ATP order promising with Google Maps Distance Matrix cuts split shipments by 34%'
         ],
-        personaIds: ['meio_inventory_mgr', 'warehouse_slotting_lead', 'atp_fulfillment_spec', 'dock_yard_supervisor']
+        l1toL3: {
+          mandate: 'Acts as the physical treasury of the enterprise. Segments SKUs via ABC-XYZ matrices, calculates mathematically optimal Safety Stock buffers across central hubs and regional depots, and initiates dynamic Stock Transfer Orders (STOs) to prevent regional stockouts without bloating DIO.',
+          mtoVsMts: 'Decoupling points placement; holding generic WIP upstream and postponing final regional pack customization until local demand signals crystallize.',
+          battleground: 'CFO wants lean stock to free corporate cash; Sales wants safety buffers to prevent festival stockouts.',
+          dataObjects: 'Multi-Echelon Stock Ledgers · Safety Stock Targets (SS) · Reorder Points (ROP) · Inter-Depot Stock Transfer Orders (STOs) · ABC-XYZ Velocity Matrix'
+        },
+        kpis: 'Days Inventory Outstanding (DIO) | Inventory Turns | Slow-Moving / Dead Stock (SLOB) %',
+        personaIds: ['meio_inventory_mgr', 'atp_fulfillment_spec', 'sc_finops_network_architect'],
+        agentIds: ['meio_safety_stock_agent', 'atp_order_promising_agent', 'network_twin_architect']
+      },
+      warehousing_qa: {
+        id: 'warehousing_qa',
+        vNum: 'V5',
+        scorBadge: 'VERTICAL 05 · WAREHOUSING & QA',
+        name: 'Warehousing, Inwarding QA & Intralogistics',
+        fullName: 'Vertical 5: Warehousing, Inwarding QA & Intralogistics (The Custodians)',
+        tagline: 'The Custodians',
+        subtitle: 'Dock-to-stock <4h, inbound AQL quality, 3D Golden-Zone slotting & yard sequencing',
+        color: '#00d2ff',
+        watermarkType: 'conveyor_rack',
+        horizon: 'Real-Time Daily Execution',
+        coreQuestion: 'How do we receive, inspect, putaway, and wave-pick goods inside facilities with zero congestion and <4h dock-to-stock?',
+        river: 'Node Custodians along River 1: Physical Material Flow',
+        systems: 'Manhattan Active WMS · SAP EWM · Dematic AS/RS WCS · ICML Quality SOP Manuals · Handheld RF Scanners · Yard Management',
+        solverSummary: '3D Spatial Affinity Slotting Twin + Inbound AQL Defect Classifier + Port/Air/Rail Cross-Dock Flow-Through MILP + Dynamic Yard Door Sequencer',
+        toilMetric: 'Dock congestion & 34% pick travel waste',
+        toilBullets: [
+          'When incoming deliveries breach AQL moisture or defect limits, supervisors waste hours flipping through SOP binders and contracts',
+          'Static annual warehouse slotting forces pickers to walk miles through congested aisles for high-velocity SKUs',
+          'Uncoordinated trailer yard arrivals cause dock gridlock while cross-dock transloads sit waiting for bay doors'
+        ],
+        impactMetric: '-28% Picker Travel & <2.5h Dock-to-Stock',
+        impactBullets: [
+          'Automated AQL defect auditing and instant PDF dispute memo generation with contract-backed penalty debit notes',
+          '3D Golden-Zone spatial affinity slotting cuts picker travel distance by 28% and boosts storage density by 31%',
+          'Autonomous trailer yard and dock door sequencing slashes gate dwell by 41% and speeds cross-dock flow-through'
+        ],
+        l1toL3: {
+          mandate: 'Manages all physical movements inside factory warehouses and regional C&F depots: gate entry, inbound AQL quality sampling (moisture, visual defects), GRN posting, directed putaway, FEFO/FIFO wave picking, cross-docking, and physical-to-book stock cycle counting.',
+          mtoVsMts: 'Fast-moving consumer products require high-velocity cross-dock flow-through; high-value discrete parts require secure AS/RS high-bay quarantine.',
+          battleground: 'Dock congestion vs. turnaround speed; ensuring defective incoming batches do not contaminate clean stock.',
+          dataObjects: 'Goods Receipt Notes (MIGO/GRN) · Bin-Level Storage Locations · Wave-Pick Work Orders · RF Scan Timestamps · Yard Bay Schedules'
+        },
+        kpis: 'Dock-to-Stock Cycle Time (<4h) | Inbound AQL Defect Rate (%) | Warehouse Pick Accuracy (%)',
+        personaIds: ['warehouse_slotting_lead', 'dock_yard_supervisor'],
+        agentIds: ['warehouse_slotting_agent', 'yard_dock_sequencer', 'crossdock_transfer_orchestrator']
       },
       logistics_fleet: {
         id: 'logistics_fleet',
-        scorBadge: 'SCOR 05 · DELIVER (MULTI-MODAL TMS)',
-        name: 'Multi-Modal Global Logistics',
-        fullName: 'Factory → Ocean Ships → Air Cargo → Intermodal Rail → Warehouse → Road Fleet (SCOR Deliver)',
-        subtitle: 'Ocean vessel AIS/drayage, air cargo charter/3D ULD, rail linehaul, Google Maps road fleet & 3D LIFO',
+        vNum: 'V6',
+        scorBadge: 'VERTICAL 06 · LOGISTICS & FLEET',
+        name: 'Logistics, Fleet & Transportation Management',
+        fullName: 'Vertical 6: Logistics, Fleet & Transportation Management (The Movers)',
+        tagline: 'The Movers',
+        subtitle: 'Ocean vessel AIS, air cargo charter/ULD, rail siding free-time & 3D LIFO loading',
         color: '#ff8c00',
         watermarkType: 'corridor_lifo',
-        systems: 'SAP TM · Blue Yonder TMS · Oracle OTM · CargoWise One · Spire/MarineTraffic AIS (Ocean) · IATA Cargo-XML / Champ (Air) · Railinc EDI 404 (Rail) · Google Maps Routes API & Fleet Engine · OR-Tools · BigQuery · AlloyDB · Spanner',
-        solverSummary: 'End-to-End Multi-Modal Mode-Shift MILP (Factory→Ship→Air→Rail→Truck) + 3D Aircraft ULD & Trailer LIFO Guillotine Bin-Packing + Google Maps Routes API Heterogeneous CVRPTW',
-        toilMetric: '22% excess ocean, air, rail & fleet waste',
+        horizon: 'Real-Time Multi-Modal Daily Execution',
+        coreQuestion: 'How do we move freight across ocean vessels, cargo aircraft, intermodal rail rakes, and linehaul trailers at minimum cost and 98%+ OTIF?',
+        river: 'Arteries of River 1: Physical Material Flow',
+        systems: 'SAP TM · Blue Yonder TMS · Oracle OTM · CargoWise One · Spire AIS · IATA Cargo-XML · Railinc EDI 404 · Indian Railways FOIS · Google Maps Routes API · Google OR-Tools',
+        solverSummary: 'End-to-End Multi-Modal Mode-Shift MILP (Factory→Ship→Air→Rail→Truck) + 3D Aircraft ULD & Trailer LIFO Guillotine Bin-Packing + Rail Siding Free-Time & Demurrage Sentinel',
+        toilMetric: '22% multi-modal freight waste & demurrage',
         toilBullets: [
-          'Siloed factory-to-port ocean shipping, panic air-freight charters, slow rail handoffs, and unclustered road routes',
-          '2D paper load sheets ignore 3D aircraft ULD contours, 40ft container cube, highway axle limits, and strict LIFO stop order',
-          'Port demurrage, air tarmac thermal drift, rail dwell, and unaudited carrier detention leak 5–8% of global freight spend'
+          'Siloed ocean container booking, panic air freight charters, slow rail handoffs, and unclustered linehaul routes',
+          '2D paper load sheets ignore 3D aircraft ULD contours, container cube, highway axle limits, and strict reverse-stop LIFO order',
+          'Indian Railways siding demurrage and carrier detention fees leak millions due to unmonitored turnaround timestamps'
         ],
-        impactMetric: '-22.4% Multi-Modal Cost & 100% LIFO/ULD',
+        impactMetric: '-22.4% Multi-Modal Cost & Zero Demurrage',
         impactBullets: [
-          'End-to-end multi-modal orchestration from Factory Gate to Ocean Vessels, Cargo Airplanes, Intermodal Rail, Warehouses & Road Trucks',
-          '3D guillotine bin-packing for 53ft Road Trailers (reverse-stop LIFO), 40ft Ocean Containers & Contoured Aircraft ULDs (LD3/PMC)',
-          'Google Maps Routes Preferred API & Fleet Engine live road routing, satellite AIS port drayage & 100% automated freight audit'
+          'End-to-end multi-modal corridor orchestration from Factory Gate to Ocean Ships, Airplanes, Rail Rakes & Road Trucks',
+          '3D guillotine bin-packing for 53ft trailers (reverse-stop LIFO), 40ft ocean containers & contoured aircraft ULDs (LD3/PMC)',
+          'Continuous railway rake siding turnaround monitoring and automated carrier freight invoice fuel surcharge auditing'
         ],
-        personaIds: ['global_trade_port_mgr', 'air_cargo_charter_lead', 'intermodal_rail_linehaul_lead', 'fleet_dispatch_mgr', 'network_logistics_lead', 'freight_claims_analyst']
+        l1toL3: {
+          mandate: 'Manages Primary Freight (plant-to-depot via rail rakes, coastal shipping, and heavy multi-axle trucks) and Secondary Linehaul. Optimizes truck cube/weight fill, tracks railway rake placement to prevent demurrage/wharfage fines, and audits carrier freight/fuel invoices.',
+          mtoVsMts: 'Heavy industrial (cement/metals) relies on 58-wagon rail rakes where freight is 30% of COGS; CPG relies on multi-axle road fleet for agility.',
+          battleground: 'Unplanned rake demurrage penalties and freight invoice fuel surcharge creep eroding operating margins.',
+          dataObjects: 'Railway FOIS Timestamps · GPS Satellite AIS Pings · Electronic Bills of Lading (e-BOL) · 3D Load Plans (Cube/Axle) · Carrier Rate Cards'
+        },
+        kpis: 'Freight Cost per Ton-Km (₹/PTPK) | Truck Cube Fill % | Railway Demurrage & Wharfage (₹)',
+        personaIds: ['global_trade_port_mgr', 'air_cargo_charter_lead', 'intermodal_rail_linehaul_lead', 'network_logistics_lead', 'freight_claims_analyst'],
+        agentIds: ['port_drayage_orchestrator', 'air_cargo_uld_optimizer', 'intermodal_rail_linehaul_agent', 'multimodal_mode_shift_agent', 'load_consolidation_agent', 'freight_control_tower']
       },
-      circular_enable: {
-        id: 'circular_enable',
-        scorBadge: 'SCOR 06 · RETURN & ENABLE',
-        name: 'Customer OTIF, Reverse & Enable',
-        fullName: 'Customer OTIF, Circular RMA, Scope-3 Carbon & Network FinOps (SCOR Return & Enable)',
-        subtitle: 'OTIF penalty shield, RMA backhaul recovery, Scope-3 ledger & network cost-to-serve',
+      trade_mkt_dist: {
+        id: 'trade_mkt_dist',
+        vNum: 'V7',
+        scorBadge: 'VERTICAL 07 · TM&D & LAST-MILE',
+        name: 'Trade Marketing & Distribution / TM&D',
+        fullName: 'Vertical 7: Trade Marketing & Distribution / TM&D (The Last-Mile Push)',
+        tagline: 'The Last-Mile Push',
+        subtitle: 'Secondary distribution, FSO beat planning, distributor live stock & planogram audits',
+        color: '#f59e0b',
+        watermarkType: 'corridor_lifo',
+        horizon: 'Daily Field Execution',
+        coreQuestion: 'How do we push inventory through distributors to millions of retail counters, optimize FSO beats, and prevent stockout pitches?',
+        river: 'Terminal Interface of River 1 (Retail Shelf) and River 2 (Consumer POS / Sell-Through)',
+        systems: 'DMS (Distributor Management Systems) · SFA Mobile Handhelds · Google Maps Platform · Store Visibility Sheets · Quick-Commerce Portals (Blinkit/Zepto)',
+        solverSummary: 'Google Maps Routes Preferred CVRPTW Beat Sequencer + Live DMS Inventory Stock-Reconciliation Broker + Planogram Vision Auditor + Secondary Trade Scheme Reconciler',
+        toilMetric: 'Field sales pitching out-of-stock SKUs',
+        toilBullets: [
+          'Field Sales Officers (FSOs) waste retail counter visits booking orders for SKUs that are currently out of stock at the distributor',
+          'Manual store visibility audits rely on unverified photos, allowing retailer planogram violations and unearned scheme payouts',
+          'Sub-optimal distributor beat routes cause delayed delivery to high-velocity kirana stores, causing retail stockouts'
+        ],
+        impactMetric: '+18% Distributor Case Fill & Zero Lost Visits',
+        impactBullets: [
+          'Real-time reconciliation of FSO focus target SKUs with live distributor stock, automatically substituting available variants',
+          'Multimodal vision auditing of retail shelf photos verifies planogram compliance and automates scheme discount approvals',
+          'Google Maps Fleet Engine beat routing ensures 100% scheduled store coverage and accelerates secondary reorders'
+        ],
+        l1toL3: {
+          mandate: 'Orchestrates the commercial flow from Authorized Distributors to millions of General Trade (kirana) counters, Modern Trade, and Quick-Commerce dark stores. Optimizes Field Sales Officer (FSO) beat plans, audits live distributor stock, and verifies retail planogram visibility.',
+          mtoVsMts: 'Synchronizing distributor daily replenishment with ultra-fast quick-commerce dark store inventory feeds and daily kirana shop beats.',
+          battleground: 'Incomplete store deliveries and planogram compliance gaps delaying invoice acceptance and leaking trade spend.',
+          dataObjects: 'DMS Inventory Ledgers · FSO Beat Itineraries · Retail Shelf Visibility Photos · Secondary Trade Scheme Agreements · Store POS Feeds'
+        },
+        kpis: 'Effective Store Coverage % | Distributor Case Fill Rate % | Retail Planogram Compliance %',
+        personaIds: ['fleet_dispatch_mgr'],
+        agentIds: ['fleetflow_dispatch']
+      },
+      reverse_risk_esg: {
+        id: 'reverse_risk_esg',
+        vNum: 'V8',
+        scorBadge: 'VERTICAL 08 · REVERSE & RISK TOWER',
+        name: 'Reverse Logistics, Risk Control Tower & ESG',
+        fullName: 'Vertical 8: Reverse Logistics, Risk Control Tower & ESG (The Guardians)',
+        tagline: 'The Guardians',
+        subtitle: 'Retail OTIF chargeback defense, circular RMA backhaul, Scope-3 ESG & macro resilience',
         color: '#ec4899',
         watermarkType: 'circular_loop',
-        systems: 'SAP S/4HANA SD/QM/CO-PA · Retail OTIF Portals · Loop RMA · Google Earth Engine · Google Maps Routes API · ISO-14083 Carbon Engine · BigQuery · Cloud Spanner · AlloyDB · OR-Tools',
-        solverSummary: 'Retail Chargeback Risk Classifier + Vision RMA Backhaul CVRPTW + Google Earth Engine & Maps ISO-14083 Carbon Engine + Network Cost-to-Serve MILP',
+        horizon: 'Continuous Strategic Horizon',
+        coreQuestion: 'How do we recover value from damaged/expired stock, defend against unearned chargebacks, and govern Scope-3 carbon & supply risks?',
+        river: 'Circular Loop closing River 1 (Reversals/Recycling) and shielding River 3 (Chargeback Protection)',
+        systems: 'SAP Claims & Returns Management · Retail OTIF Portals · Loop RMA · Google Earth Engine · ISO-14083 Carbon Engine · BigQuery Omni · Cloud Spanner · Live Commodity Feeds',
+        solverSummary: 'Retail Chargeback Risk Classifier + Vision RMA Backhaul CVRPTW + Google Earth Engine & Maps ISO-14083 Carbon Engine + RCSA Governance Auditor',
         toilMetric: '3.5% revenue lost to OTIF fines & returns',
         toilBullets: [
-          'Retailer On-Time In-Full (OTIF) chargebacks and shortage deductions are discovered weeks after invoice short-pay',
-          'Customer returns ship via costly third-party LTL to central depots while outbound fleet trucks return empty',
-          'Shipment-level Scope-3 carbon accounting (CBAM/EUDR) and network cost-to-serve rely on static annual spreadsheets'
+          'Retailer On-Time In-Full (OTIF) penalty deductions and shortage chargebacks are discovered weeks after payment with no easy dispute path',
+          'Customer returns ship via costly third-party LTL to central depots while outbound fleet trucks return backhaul empty',
+          'Shipment-level Scope-3 carbon accounting (CBAM/EUDR) and enterprise RCSA risk assessments rely on static annual guesswork'
         ],
         impactMetric: '-78% OTIF Fines & +31% Return Margin',
         impactBullets: [
-          'Predicts retail OTIF breaches 72 hours early to reallocate stock and disputes invalid retailer chargebacks automatically',
-          'Multimodal edge RMA grading & Google Maps fleet backhaul insertion boost net return recovery margin by 31%',
-          'Continuous SKU-customer cost-to-serve profitability optimization & audit-ready ISO-14083 Scope-3 carbon ledger'
+          'Predicts retailer OTIF breaches 72 hours early to reallocate stock and auto-generates contract-backed dispute evidence',
+          'Multimodal edge RMA grading and Google Maps fleet backhaul insertion boost net return recovery margin by 31%',
+          'Automated ISO-14083 compliant shipment-level Scope-3 carbon ledger and continuous supply chain RCSA risk auditing'
         ],
-        personaIds: ['otif_customer_service_lead', 'reverse_logistics_mgr', 'sc_sustainability_esg_lead', 'sc_finops_network_architect']
+        l1toL3: {
+          mandate: 'Manages Return-to-Vendor (RTV) chargebacks, customer returns, farm-to-fork ESG traceability (e.g. carbon and water metrics), macro commodity stress testing, and internal RCSA risk and control compliance registers.',
+          mtoVsMts: 'Closed-loop circularity; recovering value from returned assets, packaging drums, pallets, and re-certifying refurbished stock.',
+          battleground: 'Preventing fraudulent distributor breakage claims that leak 1–2% of EBITDA margin and fighting invalid retailer deductions.',
+          dataObjects: 'Customer Return Authorizations (RMA) · Retailer OTIF Scorecards · Vendor Debit Notes · Scope 1/2/3 Carbon Emissions Ledgers · RCSA Matrix'
+        },
+        kpis: 'Return Processing Time | Unearned Claim Leakage % | Scope-3 Carbon Intensity | RCSA Audit Score',
+        personaIds: ['otif_customer_service_lead', 'reverse_logistics_mgr', 'sc_sustainability_esg_lead'],
+        agentIds: ['reverse_rma_optimizer', 'otif_penalty_shield', 'carbon_scope3_ledger']
       }
     };
 
-    /* Metadata helper for the 4 Universal Cross-Persona Supply Chain Agents */
+    /* Backward compatibility aliases (non-enumerable so Object.values has exactly 8 items) */
+    Object.defineProperty(DEPARTMENTS, "sourcing_risk", { get: () => DEPARTMENTS.sourcing_procurement, enumerable: false, configurable: true });
+    Object.defineProperty(DEPARTMENTS, "inventory_warehouse", { get: () => DEPARTMENTS.warehousing_qa, enumerable: false, configurable: true });
+    Object.defineProperty(DEPARTMENTS, "circular_enable", { get: () => DEPARTMENTS.reverse_risk_esg, enumerable: false, configurable: true });
+
     const UNIVERSAL_CSCO_DEPT = {
       id: 'universal_csco',
       scorBadge: 'CROSS-PERSONA · ENTERPRISE CSCO',
@@ -3928,7 +4459,7 @@
       },
       meio_inventory_mgr: {
         id: 'meio_inventory_mgr',
-        deptId: 'inventory_warehouse',
+        deptId: 'inventory_meio',
         icon: '📦',
         name: 'Global Inventory (MEIO) Manager',
         role: 'Multi-Echelon Safety Stocks, Working Capital & Rebalancing',
@@ -3963,7 +4494,7 @@
       },
       warehouse_slotting_lead: {
         id: 'warehouse_slotting_lead',
-        deptId: 'inventory_warehouse',
+        deptId: 'warehousing_qa',
         icon: '🏗️',
         name: 'Warehouse & Slotting Ops Lead',
         role: '3D DC Slotting, Pick-Wave Execution & Labor Productivity',
@@ -3997,7 +4528,7 @@
       },
       atp_fulfillment_spec: {
         id: 'atp_fulfillment_spec',
-        deptId: 'inventory_warehouse',
+        deptId: 'inventory_meio',
         icon: '⚡',
         name: 'Global ATP & Mode-Split Promising Lead',
         role: 'Real-Time Available-to-Promise, Split Prevention & Factory/DC/Mode Arbitrage',
@@ -4028,7 +4559,7 @@
       },
       fleet_dispatch_mgr: {
         id: 'fleet_dispatch_mgr',
-        deptId: 'logistics_fleet',
+        deptId: 'trade_mkt_dist',
         icon: '🚚',
         name: 'Road Fleet & Last-Mile Dispatch Manager',
         role: 'Google Maps Corridor Clustering, Heterogeneous Fleet Sizing (0.75t–24t) & Live Routing',
@@ -4126,7 +4657,7 @@
       },
       category_sourcing_mgr: {
         id: 'category_sourcing_mgr',
-        deptId: 'sourcing_risk',
+        deptId: 'sourcing_procurement',
         icon: '⚖️',
         name: 'Category Sourcing Manager',
         role: 'Parametric Should-Cost Modeling, RFQ & Award Optimization',
@@ -4157,7 +4688,7 @@
       },
       supplier_risk_lead: {
         id: 'supplier_risk_lead',
-        deptId: 'sourcing_risk',
+        deptId: 'sourcing_procurement',
         icon: '🛡️',
         name: 'Supplier Risk & Resilience Lead',
         role: 'Multi-Tier (Tier-1 to Tier-N) Supply Graph & Continuity',
@@ -4188,7 +4719,7 @@
       },
       tariff_compliance_spec: {
         id: 'tariff_compliance_spec',
-        deptId: 'sourcing_risk',
+        deptId: 'sourcing_procurement',
         icon: '📜',
         name: 'Contract & Trade Compliance Specialist',
         role: 'Contract Rebate Recovery, HS Tariff Engineering & Provenance',
@@ -4244,7 +4775,7 @@
       },
       dock_yard_supervisor: {
         id: 'dock_yard_supervisor',
-        deptId: 'inventory_warehouse',
+        deptId: 'warehousing_qa',
         icon: '🚧',
         name: 'Dock, Yard & Cross-Dock Transload Lead',
         role: 'Autonomous Yard Jockey Dispatch, Dock Door Sequencing, Port/Rail Cross-Dock & Detention Guard',
@@ -4272,7 +4803,7 @@
       },
       reverse_logistics_mgr: {
         id: 'reverse_logistics_mgr',
-        deptId: 'circular_enable',
+        deptId: 'reverse_risk_esg',
         icon: '♻️',
         name: 'Reverse Logistics & Circularity Lead',
         role: 'Omnichannel RMA Triage, Backhaul Consolidation & Asset Recovery',
@@ -4300,7 +4831,7 @@
       },
       supplier_quality_lead: {
         id: 'supplier_quality_lead',
-        deptId: 'sourcing_risk',
+        deptId: 'sourcing_procurement',
         icon: '🔬',
         name: 'Supplier Quality & PPAP Lead',
         role: 'Inbound COA Verification, Predictive Defect Screening & 8D CAPA',
@@ -4524,7 +5055,7 @@
       },
       otif_customer_service_lead: {
         id: 'otif_customer_service_lead',
-        deptId: 'circular_enable',
+        deptId: 'reverse_risk_esg',
         icon: '🛡️',
         name: 'Customer Service & OTIF Penalty Lead',
         role: 'Retailer OTIF Compliance, Proactive Order Recovery & Chargeback Dispute Automation',
@@ -4552,7 +5083,7 @@
       },
       sc_sustainability_esg_lead: {
         id: 'sc_sustainability_esg_lead',
-        deptId: 'circular_enable',
+        deptId: 'reverse_risk_esg',
         icon: '🌱',
         name: 'Supply Chain Sustainability & Carbon Lead',
         role: 'Shipment-Level Scope-3 Carbon Ledger, EU CBAM/EUDR Compliance & Green Mode Shift',
@@ -4580,7 +5111,7 @@
       },
       sc_finops_network_architect: {
         id: 'sc_finops_network_architect',
-        deptId: 'circular_enable',
+        deptId: 'inventory_meio',
         icon: '🧭',
         name: 'Supply Chain Network & Cost-to-Serve Architect',
         role: 'Digital Twin Network Design, SKU Cost-to-Serve Profitability & Capital Allocation',
@@ -4849,7 +5380,7 @@
       },
       meio_safety_stock_agent: {
         id: 'meio_safety_stock_agent',
-        deptId: 'inventory_warehouse',
+        deptId: 'inventory_meio',
         name: 'EchelonFlow — Multi-Echelon Inventory (MEIO) Optimizer',
         shortDesc: 'Jointly optimizes stochastic safety stocks across factories, ports, central DCs, and regional hubs while automating lateral transfers.',
         badge: '-18% Working Capital',
@@ -4870,7 +5401,7 @@
       },
       warehouse_slotting_agent: {
         id: 'warehouse_slotting_agent',
-        deptId: 'inventory_warehouse',
+        deptId: 'warehousing_qa',
         name: 'SlotMaster — 3D Warehouse Slotting & Wave Twin',
         shortDesc: 'Optimizes Golden-Zone 3D rack placement from order-line affinity and throttles pick waves to eliminate aisle congestion.',
         badge: '-28% Picker Travel',
@@ -4891,7 +5422,7 @@
       },
       atp_order_promising_agent: {
         id: 'atp_order_promising_agent',
-        deptId: 'inventory_warehouse',
+        deptId: 'inventory_meio',
         name: 'PromiseGuard — Dynamic Order Promising (ATP) Broker',
         shortDesc: 'Commits orders from the margin-optimal factory, port, or DC node in real time to eliminate split shipments and protect OTIF.',
         badge: '-34% Split Shipments',
@@ -4912,7 +5443,7 @@
       },
       yard_dock_sequencer: {
         id: 'yard_dock_sequencer',
-        deptId: 'inventory_warehouse',
+        deptId: 'warehousing_qa',
         name: 'YardPulse — Autonomous Dock Door & Yard Sequencer',
         shortDesc: 'Matches live GPS truck & intermodal drayage arrivals to optimal dock doors and sequences yard jockey moves to slash trailer dwell.',
         badge: '-41% Trailer Dwell',
@@ -4933,7 +5464,7 @@
       },
       crossdock_transfer_orchestrator: {
         id: 'crossdock_transfer_orchestrator',
-        deptId: 'inventory_warehouse',
+        deptId: 'warehousing_qa',
         name: 'CrossDockFlow — Port/Air/Rail-to-Warehouse Cross-Dock & Flow-Through Agent',
         shortDesc: 'Synchronizes inbound ocean containers, air cargo ULDs, and intermodal rail cars with outbound road fleet docks for zero-storage flow-through.',
         badge: '-52% Cross-Dock Dwell',
@@ -4954,7 +5485,7 @@
       },
       fleetflow_dispatch: {
         id: 'fleetflow_dispatch',
-        deptId: 'logistics_fleet',
+        deptId: 'trade_mkt_dist',
         name: 'FleetFlow — Google Maps Corridor Route & Fleet Dispatch Studio',
         shortDesc: 'Clusters multi-stop deliveries into clean geographical corridors on Google Maps and solves optimal heterogeneous road fleet mix and routes.',
         badge: '-19.4% Fleet Cost',
@@ -5101,7 +5632,7 @@
       },
       reverse_rma_optimizer: {
         id: 'reverse_rma_optimizer',
-        deptId: 'circular_enable',
+        deptId: 'reverse_risk_esg',
         name: 'ReturnLoop — Autonomous RMA Grading & Backhaul Optimizer',
         shortDesc: 'Matches customer returns & empty pallets/containers to returning fleet backhauls and routes graded items to optimal recovery nodes.',
         badge: '+31% Recovery Margin',
@@ -5122,7 +5653,7 @@
       },
       rfq_should_cost_agent: {
         id: 'rfq_should_cost_agent',
-        deptId: 'sourcing_risk',
+        deptId: 'sourcing_procurement',
         name: 'SourcePulse — Parametric Should-Cost & Autonomous RFQ Agent',
         shortDesc: 'Decomposes BOM components into raw material, machine, labor, and multi-modal freight should-costs and normalizes multi-supplier RFQ bids.',
         badge: '-6.8% Direct Spend',
@@ -5143,7 +5674,7 @@
       },
       tier_n_risk_sentinel: {
         id: 'tier_n_risk_sentinel',
-        deptId: 'sourcing_risk',
+        deptId: 'sourcing_procurement',
         name: 'NexusShield — Multi-Tier Supply Network Sentinel',
         shortDesc: 'Maps Tier-1 to Tier-4 supplier dependencies in Cloud Spanner Graph, traces BOM revenue at risk, and triggers alternate-source allocations.',
         badge: '+11 Days Warning',
@@ -5164,7 +5695,7 @@
       },
       tariff_esg_agent: {
         id: 'tariff_esg_agent',
-        deptId: 'sourcing_risk',
+        deptId: 'sourcing_procurement',
         name: 'ClauseGuard — Contract Intelligence & Trade Compliance Agent',
         shortDesc: 'Audits POs against contract rebate/indexation clauses and automates Harmonized System (HS) tariff classification across ocean/air borders.',
         badge: '99.6% Compliance',
@@ -5185,7 +5716,7 @@
       },
       supplier_quality_sentinel: {
         id: 'supplier_quality_sentinel',
-        deptId: 'sourcing_risk',
+        deptId: 'sourcing_procurement',
         name: 'QualiShield — Predictive Supplier Quality & NCR Resolver',
         shortDesc: 'Audits inbound supplier Certificates of Analysis (COA), predicts lot Cpk drift, and automates 8D CAPA & COPQ recovery.',
         badge: '-64% Defect Escapes',
@@ -5290,7 +5821,7 @@
       },
       otif_penalty_shield: {
         id: 'otif_penalty_shield',
-        deptId: 'circular_enable',
+        deptId: 'reverse_risk_esg',
         name: 'OTIFShield — Customer SLA Rescue & Chargeback Dispute Agent',
         shortDesc: 'Predicts retailer Must-Arrive-By-Date (MABD) misses 72 hours early to reallocate stock or upgrade transit modes, and auto-disputes invalid OTIF deductions.',
         badge: '-78% OTIF Penalties',
@@ -5311,7 +5842,7 @@
       },
       carbon_scope3_ledger: {
         id: 'carbon_scope3_ledger',
-        deptId: 'circular_enable',
+        deptId: 'reverse_risk_esg',
         name: 'EcoChain — Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger',
         shortDesc: 'Calculates audit-ready ISO-14083 carbon per ocean/air/rail/truck shipment, automates EU CBAM & deforestation filings, and recommends green mode shifts.',
         badge: '-24% Freight CO2e',
@@ -5332,7 +5863,7 @@
       },
       network_twin_architect: {
         id: 'network_twin_architect',
-        deptId: 'circular_enable',
+        deptId: 'inventory_meio',
         name: 'TwinDesign — Supply Chain Network & Cost-to-Serve Optimizer',
         shortDesc: 'Allocates true landed fulfillment cost (factory, ocean, air, rail, DC, last-mile) to every SKU-customer order line and continuously optimizes DC footprint, MOQs, and bypass flows.',
         badge: '-11.5% Network Cost',
@@ -8220,6 +8751,111 @@
       `;
     }
 
+    
+    /* 8-Vertical Interactive Master Navigation & Tab Controller */
+    let currentFrontPageVerticalTab = 'all';
+
+    function switchVerticalTab(vId, btnEl) {
+      currentFrontPageVerticalTab = vId;
+      document.querySelectorAll('#verticalTabsNavBar .v-tab-btn').forEach(b => {
+        const isTarget = b.getAttribute('data-vtab') === vId;
+        b.classList.toggle('active', isTarget);
+      });
+
+      if (vId === 'all') {
+        selectedDeptId = null;
+        const activeTabId = selectedDeptId || 'all';
+      document.querySelectorAll('#verticalTabsNavBar .v-tab-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-vtab') === activeTabId);
+      });
+
+      document.querySelectorAll('#deptRowContainer .dept-node').forEach(node => {
+          node.classList.remove('active');
+          node.style.display = 'flex';
+        });
+        renderDepartmentShowcaseBox();
+        const row = document.getElementById('deptRowContainer');
+        if (row) row.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        selectedDeptId = vId;
+        document.querySelectorAll('#deptRowContainer .dept-node').forEach(node => {
+          const nid = node.getAttribute('data-dept-id');
+          const isTarget = nid === vId;
+          node.classList.toggle('active', isTarget);
+          node.style.display = 'flex'; // keep visible in 4x2 grid
+        });
+        renderDepartmentShowcaseBox();
+        hydrateAssets();
+      runSSCalc();
+        setTimeout(() => {
+          const showcase = document.getElementById('deptShowcaseBoxEl');
+          if (showcase) showcase.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 80);
+      }
+    }
+
+    /* Live Interactive Safety Stock & ROP Calculator */
+    function runSSCalc() {
+      const elD = document.getElementById('rngD');
+      const elLT = document.getElementById('rngLT');
+      const elSLT = document.getElementById('rngSLT');
+      if (!elD || !elLT || !elSLT) return;
+
+      const D = parseFloat(elD.value);
+      const LT = parseFloat(elLT.value);
+      const sLT = parseFloat(elSLT.value);
+
+      document.getElementById('lblD').innerText = D.toLocaleString();
+      document.getElementById('lblLT').innerText = LT.toString();
+      document.getElementById('lblSLT').innerText = sLT.toFixed(1);
+
+      // Assume demand volatility is 15% of daily demand
+      const sD = D * 0.15;
+      const Z = 2.05; // 98% service level
+
+      // Safety Stock formula: Z * sqrt( L * sD^2 + D^2 * sLT^2 )
+      const varDemand = LT * Math.pow(sD, 2);
+      const varLeadTime = Math.pow(D, 2) * Math.pow(sLT, 2);
+      const ssUnits = Math.round(Z * Math.sqrt(varDemand + varLeadTime));
+      const cycleStock = Math.round((D * LT) / 2);
+      const ropUnits = Math.round(D * LT + ssUnits);
+
+      // Percent driven by lead time volatility
+      const pctLeadTimeRisk = Math.round((varLeadTime / (varDemand + varLeadTime)) * 100);
+
+      const outEl = document.getElementById('ssOutput');
+      if (outEl) {
+        outEl.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; margin-bottom:12px;">
+            <div>
+              <span style="color:#94a3b8; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700;">Optimal Safety Stock (SS)</span>
+              <div style="font-size:26px; font-weight:900; color:#38bdf8;">${ssUnits.toLocaleString()} Cases</div>
+            </div>
+            <div>
+              <span style="color:#94a3b8; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700;">Reorder Point (ROP)</span>
+              <div style="font-size:26px; font-weight:900; color:#10b981;">${ropUnits.toLocaleString()} Cases</div>
+            </div>
+            <div>
+              <span style="color:#94a3b8; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700;">Working Capital Locked</span>
+              <div style="font-size:26px; font-weight:900; color:#f59e0b;">$${Math.round((ssUnits * 42) / 1000).toLocaleString()}K</div>
+            </div>
+          </div>
+          <div class="bar-line">
+            <div class="bar-meta">
+              <span>Lead-Time Volatility Risk Share: <strong style="color:#ec4899;">${pctLeadTimeRisk}%</strong></span>
+              <span>Demand Volatility Share: <strong>${100 - pctLeadTimeRisk}%</strong></span>
+            </div>
+            <div class="bar-outer">
+              <div class="bar-inner" style="width: ${pctLeadTimeRisk}%;"></div>
+            </div>
+          </div>
+          <p style="color:#94a3b8; font-size:12px; margin-top:8px; line-height:1.5;">
+            💡 <em>Executive Insight:</em> When supplier delivery dates drift by ±${sLT.toFixed(1)} days, lead-time uncertainty drives <strong>${pctLeadTimeRisk}%</strong> of your required buffer stock. Tightening vendor delivery variance via agentic PO monitoring cuts working capital far faster than forecasting tweaks.
+          </p>
+        `;
+      }
+    }
+
     function renderOrgChart() {
       const row = document.getElementById('deptRowContainer');
       if (!row) return;
@@ -8327,6 +8963,134 @@
       }
     }
 
+    function renderVerticalWorkflowStrip(dept) {
+      if (!dept) return '';
+      if (dept.id === 'demand_sop') {
+        return `
+          <div style="margin: 18px 0 20px; padding: 16px 20px; background: rgba(14, 165, 233, 0.06); border: 1px solid rgba(14, 165, 233, 0.28); border-radius: 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+              <div style="font-size:14px; font-weight:800; color:#38bdf8; text-transform:uppercase; letter-spacing:0.06em; display:flex; align-items:center; gap:8px;">
+                <span>📅 5-Step Monthly S&amp;OP Cadence Timeline ("Closing the Plan")</span>
+              </div>
+              <div style="font-size:12px; color:#94a3b8;">
+                Rolling 12–24 Months · Unconstrained Consensus &rarr; Constrained Financial Lock
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(14,165,233,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:0.05em;">Week 1 · Day 1-5</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">1. Product Review</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Portfolio health, NPI launch schedules, phase-in/phase-out, SKU rationalization &amp; cannibalization models.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(14,165,233,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:0.05em;">Week 2 · Day 6-10</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">2. Demand Review</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Unconstrained statistical consensus, trade promo lift, WeatherNext 3 macro sensing, commercial consensus.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(14,165,233,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:0.05em;">Week 3 · Day 11-15</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">3. Supply Review</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Rough-cut capacity planning (RCCP), plant bottleneck resolution, supplier lead times, buffer plans.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(14,165,233,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:0.05em;">Week 4 · Day 16-20</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">4. Pre-S&amp;OP Financial Sync</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Demand-supply gap trade-offs, financial reconciliation (Revenue vs. EBITDA margin), what-if scenario simulations.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(14,165,233,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:0.05em;">Month-End · Day 21-25</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">5. Executive S&amp;OP / IBP</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">CSCO, CFO &amp; CMO consensus plan lock, capital allocation &amp; operating budget release across business units.</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      if (dept.id === 'sourcing_procurement') {
+        return `
+          <div style="margin: 18px 0 20px; padding: 16px 20px; background: rgba(168, 85, 247, 0.06); border: 1px solid rgba(168, 85, 247, 0.28); border-radius: 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+              <div style="font-size:14px; font-weight:800; color:#c084fc; text-transform:uppercase; letter-spacing:0.06em; display:flex; align-items:center; gap:8px;">
+                <span>🎯 5-Stage Strategic Sourcing &amp; Category Procurement Execution Flow</span>
+              </div>
+              <div style="font-size:12px; color:#94a3b8;">
+                Spend Analysis &rarr; Kraljic Matrix &rarr; Dynamic RFP &rarr; Total Cost of Ownership (TCO) &rarr; SRM
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(168,85,247,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#c084fc; text-transform:uppercase; letter-spacing:0.05em;">Stage 1 &middot; Spend Profiling</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Category &amp; Spend Cube</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Historical spend baseline, vendor concentration, Pareto 80/20 analysis &amp; multi-tier sub-tier dependencies.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(168,85,247,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#c084fc; text-transform:uppercase; letter-spacing:0.05em;">Stage 2 &middot; Kraljic Matrix</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Strategic Portfolio Fit</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Classify spend into Strategic, Bottleneck, Leverage, and Non-Critical quadrants to select negotiation tactics.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(168,85,247,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#c084fc; text-transform:uppercase; letter-spacing:0.05em;">Stage 3 &middot; Market Intel</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Cost Breakdown &amp; Should-Cost</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Raw material index tracking (LME/ICIS), energy indices, labor indices, and clean-sheet should-costing.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(168,85,247,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#c084fc; text-transform:uppercase; letter-spacing:0.05em;">Stage 4 &middot; RFx &amp; TCO</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Dynamic RFP &amp; Selection</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Automated RFP distribution, multi-variable scoring (Quality, Lead Time, ESG, Landed Cost), and contract award.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(168,85,247,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#c084fc; text-transform:uppercase; letter-spacing:0.05em;">Stage 5 &middot; SRM Governance</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Supplier Relationship (SRM)</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Automated PPAP compliance, OTIF audit scorecarding, Tier-N supplier visibility &amp; ESG/CBAM validation.</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      if (dept.id === 'manufacturing_prod') {
+        return `
+          <div style="margin: 18px 0 20px; padding: 16px 20px; background: rgba(249, 115, 22, 0.06); border: 1px solid rgba(249, 115, 22, 0.28); border-radius: 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+              <div style="font-size:14px; font-weight:800; color:#fb923c; text-transform:uppercase; letter-spacing:0.06em; display:flex; align-items:center; gap:8px;">
+                <span>⚙️ 5-Level Hierarchical Production Planning Framework</span>
+              </div>
+              <div style="font-size:12px; color:#94a3b8;">
+                Strategic Capacity &rarr; S&amp;OP Leveling &rarr; MPS Master Schedule &rarr; MRP BOM Explosion &rarr; MES Finite Sequencing
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(249,115,22,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#fb923c; text-transform:uppercase; letter-spacing:0.05em;">Level 1 &middot; Long Range (1-5 Yrs)</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Strategic Capacity Planning</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Global plant footprints, line additions, CapEx budgeting &amp; technology investments.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(249,115,22,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#fb923c; text-transform:uppercase; letter-spacing:0.05em;">Level 2 &middot; Medium Range (3-18 Mo)</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">S&amp;OP Aggregate Plan</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Product family leveling, seasonal pre-build inventory, shift patterns &amp; contract manufacturing allocation.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(249,115,22,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#fb923c; text-transform:uppercase; letter-spacing:0.05em;">Level 3 &middot; Operational (1-12 Wks)</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Master Production Schedule (MPS)</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Finished goods batch sizing, line slotting, frozen fence enforcement &amp; rough-cut capacity checks.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(249,115,22,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#fb923c; text-transform:uppercase; letter-spacing:0.05em;">Level 4 &middot; Tactical (Daily/Weekly)</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">MRP BOM Explosion</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Dependent demand calculation for sub-assemblies/raw materials, gross-to-net netting, planned production orders.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(249,115,22,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#fb923c; text-transform:uppercase; letter-spacing:0.05em;">Level 5 &middot; Execution (Shift/Hour)</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Finite Scheduling &amp; MES OEE</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">OR-Tools CP-SAT machine sequencing, changeover minimization, real-time telemetry &amp; scrap root-cause triage.</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      return '';
+    }
+
     function renderDepartmentShowcaseBox() {
       const container = document.getElementById('deptShowcaseContainer');
       if (!container) return;
@@ -8370,7 +9134,40 @@
           </div>
 
           <div class="showcase-grid">
-            <!-- Column 1: Problem / Manual Toil -->
+          <!-- 4-Quadrant Level-1 to Level-3 Process Decomposition Grid -->
+          <div style="margin: 20px 0 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+              <div style="font-size:16px; font-weight:800; color:#fff;">
+                📑 Level-1 to Level-3 Operational Process Architecture &amp; Mandate
+              </div>
+              <div style="font-size:12px; color:var(--text-muted);">
+                ${dept.horizon} · ${dept.river}
+              </div>
+            </div>
+            <div class="quad-grid">
+              <div class="quad-card">
+                <h5>1. Operational Mandate</h5>
+                <p style="font-size:13px; color:#cbd5e1; line-height:1.52;">${dept.l1toL3 ? dept.l1toL3.mandate : dept.subtitle}</p>
+              </div>
+              <div class="quad-card">
+                <h5>2. Make-to-Stock vs. MTO Nuances</h5>
+                <p style="font-size:13px; color:#cbd5e1; line-height:1.52;">${dept.l1toL3 ? dept.l1toL3.mtoVsMts : 'Postponement & multi-echelon buffering across regional distribution nodes.'}</p>
+              </div>
+              <div class="quad-card">
+                <h5>3. Operational Battleground</h5>
+                <p style="font-size:13px; color:#cbd5e1; line-height:1.52;">${dept.l1toL3 ? dept.l1toL3.battleground : 'Balancing operational uptime and service levels with lean working capital.'}</p>
+              </div>
+              <div class="quad-card">
+                <h5>4. Core Enterprise Data Objects</h5>
+                <p style="font-size:13px; color:#cbd5e1; line-height:1.52;">${dept.l1toL3 ? dept.l1toL3.dataObjects : dept.systems}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vertical Operational Workflow Sequence (S&OP 5-step, Strategic Sourcing, etc.) -->
+          ${renderVerticalWorkflowStrip(dept)}
+
+          <!-- Column 1: Problem / Manual Toil -->
             <div class="showcase-panel">
               <div class="panel-tag" style="color: var(--g-red);">
                 <span>✕ The Process Gap · Manual Toil</span>
@@ -8461,10 +9258,15 @@
       const defaultProofByDept = {
         universal_csco: 'GE Appliances (800+ Gemini Enterprise agents · -25% customer backorders) & Unilever ($100M+ productivity savings · 9m → hrs Tier-N mapping).',
         demand_sop: 'GE Appliances (800+ Gemini Enterprise agents · -25% customer backorders) & Google DeepMind WeatherNext 3 + BigQuery TimesFM retail demand sensing.',
+        sourcing_procurement: 'Unilever ($100M+ productivity savings · 9 months → hours Tier-N supplier mapping across 60,000+ suppliers) & SAP Ariba / BigQuery Supply Chain Twin.',
         sourcing_risk: 'Unilever ($100M+ productivity savings · 9 months → hours Tier-N supplier mapping across 60,000+ suppliers) & SAP Ariba / BigQuery Supply Chain Twin.',
         manufacturing_prod: 'Global Smart Factory deployments on Google Cloud Manufacturing Data Engine + OR-Tools CP-SAT (+9.4% OEE, -41% unplanned downtime, -52% scrap).',
-        inventory_warehouse: 'FM Logistic (Google DeepMind AlphaEvolve + Vertex AI · -10% picker travel · +31% storage density) & Manhattan Active WMS.',
+        inventory_meio: 'Multi-Echelon Network Deployments on BigQuery + Spanner (-18% working capital · $28M+ liquidity unlocked · 99.4% customer line fill).',
+        warehousing_qa: 'FM Logistic & Global High-Bay Deployments (AlphaEvolve + Vertex AI · -28% picker travel · <2.5h dock-to-stock · 99.8% pick accuracy).',
+        inventory_warehouse: 'FM Logistic (Google DeepMind AlphaEvolve + Vertex AI · -28% picker travel · <2.5h dock-to-stock) & Manhattan Active WMS.',
         logistics_fleet: 'Global Multi-Modal Ocean, Air, Rail & Fleet Operations on Google Cloud OR-Tools + Google Maps Platform (-24% multi-modal cost, -67% port demurrage, -28% air cargo spend, 92% 3D LIFO cube fill).',
+        trade_mkt_dist: 'ITC Foods & FMCG Field Operations (Google Maps Platform + BigQuery · +18% distributor case fill rate · zero stockout pitch waste · 100% automated planogram audits).',
+        reverse_risk_esg: 'CSCO Circular & ESG Operations on BigQuery + Cloud Spanner (+31% net RMA margin recovery, 99.6% audit-ready Scope 3 primary telemetry).',
         circular_enable: 'CSCO Circular & ESG Operations on BigQuery + Cloud Spanner (+31% net RMA margin recovery, 99.6% audit-ready Scope 3 primary telemetry).'
       };
 
@@ -8583,10 +9385,15 @@
       const primaryPersona = usedByPersonas[0];
       const savingsByDept = {
         demand_sop: { val: '$14M+ Saved', label: 'Annual Inventory & Margin Impact', sub: 'Cuts excess buffer stock & prevents lost sales (secondary: -6.4% WAPE)' },
+        sourcing_procurement: { val: '-6.8% ($18M+)', label: 'Direct Spend & Risk Savings', sub: 'Parametric should-cost negotiation & avoided line-down stops' },
         sourcing_risk: { val: '-6.8% ($18M+)', label: 'Direct Spend & Risk Savings', sub: 'Parametric should-cost negotiation & avoided line-down stops' },
         manufacturing_prod: { val: '$12M+ / Plant', label: 'Avoided Downtime & Scrap Savings', sub: 'Prevents unplanned machine halts, overtime & emergency spares' },
-        inventory_warehouse: { val: '-18% ($35M+)', label: 'Working Capital Cash Released', sub: 'Frees trapped safety stock while holding 99.4% customer fill rate' },
+        inventory_meio: { val: '-18% ($28M+)', label: 'Working Capital Cash Released', sub: 'Frees trapped safety stock while holding 99.4% customer fill rate' },
+        warehousing_qa: { val: '-28% Travel', label: 'Dock & Pick Labor Productivity', sub: 'Cuts picker walking by 28% and speeds dock-to-stock from 14h to <2.5h' },
+        inventory_warehouse: { val: '-18% ($28M+)', label: 'Working Capital Cash Released', sub: 'Frees trapped safety stock while holding 99.4% customer fill rate' },
         logistics_fleet: { val: '-22.4% ($28M+)', label: 'Annual Multi-Modal Freight Saved', sub: 'Optimizes ocean, air, rail & truck cube, routes & demurrage' },
+        trade_mkt_dist: { val: '+18% Fill Rate', label: 'Secondary Case Fill & Coverage', sub: 'Reconciles FSO beats with live distributor stock & cuts stockouts' },
+        reverse_risk_esg: { val: '-78% ($9M+)', label: 'OTIF Fines & Logistics Cost Saved', sub: 'Prevents retailer chargebacks & recovers +31% return margin' },
         circular_enable: { val: '-78% ($9M+)', label: 'OTIF Fines & Logistics Cost Saved', sub: 'Prevents retailer chargebacks & recovers +31% return margin' },
         universal_csco: { val: '+$42M Cash', label: 'Enterprise Free Cash Flow Impact', sub: 'Synchronizes inventory, freight & payment terms across all verticals' }
       };
@@ -8968,7 +9775,7 @@
                 <text x="242" y="204" fill="#00d2ff" font-size="11.5" font-weight="700" font-family="monospace">BQ · Spanner · AlloyDB</text>
               </g>
 
-              <!-- Stage 3: Gemini 3.1 Pro & 3.8 Flash Orchestrator + A2A Coordinator -->
+              <!-- Stage 3: Gemini 3.1 Pro / 3.8 Flash Orchestrator + A2A Coordinator -->
               <rect x="436" y="20" width="188" height="222" rx="16" fill="rgba(20,30,55,0.98)" stroke="#a855f7" stroke-width="2.4" />
               <g clip-path="url(#bpClip3)">
                 <text x="450" y="50" fill="#c084fc" font-size="11.5" font-weight="700">03 · ADK ORCHESTRATOR</text>
@@ -9375,7 +10182,7 @@
           <!-- Section: High-Code Mathematical Solver Stack & Signed API Write-Back Spec -->
           <h2 class="block-title">Mathematical Solver Stack &amp; Deterministic ERP/WMS/TMS Write-Back</h2>
           <p class="block-subtitle">
-            ${formatRichText('Why LLMs alone are never allowed to guess physical constraints—how Gemini 3.1 Pro & 3.8 Flash orchestrates 100% deterministic mathematical solvers before executing signed system transactions.')}
+            ${formatRichText('Why LLMs alone are never allowed to guess physical constraints—how Gemini 3.1 Pro & 3.8 Flash orchestrate 100% deterministic mathematical solvers before executing signed system transactions.')}
           </p>
 
           <div class="showcase-grid" style="grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); margin-bottom:32px;">
@@ -9385,7 +10192,7 @@
                 ${formatRichBullets(ag.solverStack || '', '#fbbf24')}
               </div>
               <div style="font-size:15px; color:var(--text-secondary); line-height:1.65;">
-                <strong>Implementation Tier (${sell.buildType}):</strong> ${formatRichText('Gemini 3.1 Pro / 3.8 Flash translates unstructured disruption alerts, planner intent, and multimodal docs into formal mathematical parameters, invokes the deterministic solver on Vertex AI Agent Engine, and verifies 100% physical/SLA compliance.')}
+                <strong>Implementation Tier (${sell.buildType}):</strong> ${formatRichText('Gemini 3.1 Pro & 3.8 Flash translate unstructured disruption alerts, planner intent, and multimodal docs into formal mathematical parameters, invoke the deterministic solver on Vertex AI Agent Engine, and verify 100% physical/SLA compliance.')}
               </div>
             </div>
 
@@ -10296,34 +11103,34 @@
       promo_lift_simulator:            { code: '103', sym: 'Eq', short: 'ElasticityIQ',    group: 'demand_sop',          layer: 'BigQuery ML + TimesFM', layerColor: '#10b981', trigger: 'Chat-Initiated',    trigIcon: '💬' },
       cpfr_sync_agent:                 { code: '104', sym: 'Cs', short: 'ChannelSync',     group: 'demand_sop',          layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
       // 02 · Source (Procurement & Risk)
-      rfq_should_cost_agent:           { code: '201', sym: 'Sp', short: 'SourcePulse',     group: 'sourcing_risk',       layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Chat-Initiated',    trigIcon: '💬' },
-      tier_n_risk_sentinel:            { code: '202', sym: 'Nx', short: 'NexusShield',     group: 'sourcing_risk',       layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      tariff_esg_agent:                { code: '203', sym: 'Cg', short: 'ClauseGuard',     group: 'sourcing_risk',       layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Scheduled',         trigIcon: '⏱️' },
-      supplier_quality_sentinel:       { code: '204', sym: 'Qs', short: 'QualiShield',     group: 'sourcing_risk',       layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      rfq_should_cost_agent:           { code: '201', sym: 'Sp', short: 'SourcePulse',     group: 'sourcing_procurement',       layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Chat-Initiated',    trigIcon: '💬' },
+      tier_n_risk_sentinel:            { code: '202', sym: 'Nx', short: 'NexusShield',     group: 'sourcing_procurement',       layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      tariff_esg_agent:                { code: '203', sym: 'Cg', short: 'ClauseGuard',     group: 'sourcing_procurement',       layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      supplier_quality_sentinel:       { code: '204', sym: 'Qs', short: 'QualiShield',     group: 'sourcing_procurement',       layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
       // 03 · Make (Manufacturing & OEE)
       line_schedule_optimizer:         { code: '301', sym: 'Cm', short: 'ChronosMake',     group: 'manufacturing_prod',  layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
       predictive_oee_sentinel:         { code: '302', sym: 'Sg', short: 'SpindleGuard',    group: 'manufacturing_prod',  layer: 'BigQuery ML + TimesFM', layerColor: '#10b981', trigger: 'Event-Driven',      trigIcon: '⚡' },
       inline_yield_guardian:           { code: '303', sym: 'Yv', short: 'YieldVision',     group: 'manufacturing_prod',  layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
       eco_cutover_orchestrator:        { code: '304', sym: 'Ch', short: 'ChangeSync',      group: 'manufacturing_prod',  layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
       // 04 · Fulfill (3D WMS, MEIO & Cross-Dock)
-      meio_safety_stock_agent:         { code: '401', sym: 'Ef', short: 'EchelonFlow',     group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
-      warehouse_slotting_agent:        { code: '402', sym: 'Sm', short: 'SlotMaster 3D',   group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
-      atp_order_promising_agent:       { code: '403', sym: 'Pg', short: 'PromiseGuard',    group: 'inventory_warehouse', layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      yard_dock_sequencer:             { code: '404', sym: 'Yp', short: 'YardPulse',       group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      crossdock_transfer_orchestrator: { code: '405', sym: 'Xd', short: 'CrossDockFlow',   group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      meio_safety_stock_agent:         { code: '401', sym: 'Ef', short: 'EchelonFlow',     group: 'inventory_meio', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      warehouse_slotting_agent:        { code: '501', sym: 'Sm', short: 'SlotMaster 3D',   group: 'warehousing_qa', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      atp_order_promising_agent:       { code: '402', sym: 'Pg', short: 'PromiseGuard',    group: 'inventory_meio', layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      yard_dock_sequencer:             { code: '502', sym: 'Yp', short: 'YardPulse',       group: 'warehousing_qa', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      crossdock_transfer_orchestrator: { code: '503', sym: 'Xd', short: 'CrossDockFlow',   group: 'warehousing_qa', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
       // 05 · Deliver (Multi-Modal Ship, Air, Rail & Road)
       load_consolidation_agent:        { code: '501', sym: 'Cb', short: 'CubeMaster 3D',   group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      fleetflow_dispatch:              { code: '502', sym: 'Ff', short: 'FleetFlow Maps',  group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      fleetflow_dispatch:              { code: '701', sym: 'Ff', short: 'FleetFlow Maps',  group: 'trade_mkt_dist',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
       port_drayage_orchestrator:       { code: '503', sym: 'Pw', short: 'PortWatch Sea',   group: 'logistics_fleet',     layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
       air_cargo_uld_optimizer:         { code: '504', sym: 'Af', short: 'AeroFreight Air', group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
       intermodal_rail_linehaul_agent:  { code: '505', sym: 'Ir', short: 'IntermodalSync',  group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
       multimodal_mode_shift_agent:     { code: '506', sym: 'Ms', short: 'ModalShift',      group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
       freight_control_tower:           { code: '507', sym: 'St', short: 'SentinelMove',    group: 'logistics_fleet',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
       // 06 · Return & Enable (OTIF, RMA & ESG)
-      otif_penalty_shield:             { code: '601', sym: 'Ot', short: 'OTIFShield',      group: 'circular_enable',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      reverse_rma_optimizer:           { code: '602', sym: 'Rl', short: 'ReturnLoop RMA',  group: 'circular_enable',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      carbon_scope3_ledger:            { code: '603', sym: 'Ec', short: 'EcoChain CO2e',   group: 'circular_enable',     layer: 'BigQuery ML + TimesFM', layerColor: '#10b981', trigger: 'Scheduled',         trigIcon: '⏱️' },
-      network_twin_architect:          { code: '604', sym: 'Td', short: 'TwinDesign',      group: 'circular_enable',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
+      otif_penalty_shield:             { code: '601', sym: 'Ot', short: 'OTIFShield',      group: 'reverse_risk_esg',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      reverse_rma_optimizer:           { code: '602', sym: 'Rl', short: 'ReturnLoop RMA',  group: 'reverse_risk_esg',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      carbon_scope3_ledger:            { code: '603', sym: 'Ec', short: 'EcoChain CO2e',   group: 'reverse_risk_esg',     layer: 'BigQuery ML + TimesFM', layerColor: '#10b981', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      network_twin_architect:          { code: '403', sym: 'Td', short: 'TwinDesign',      group: 'inventory_meio',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
       // 00 · Universal Cross-Persona CSCO Core
       csco_control_tower_copilot:      { code: '001', sym: 'Ct', short: 'TowerMind',       group: 'universal_csco',      layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Chat-Initiated',    trigIcon: '💬' },
       disruption_war_room_orchestrator:{ code: '002', sym: 'Sw', short: 'StormShield',     group: 'universal_csco',      layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
@@ -10332,13 +11139,15 @@
     };
 
     const PERIODIC_GROUPS = [
-      { id: 'demand_sop',          shortTab: 'Plan',            title: '01 · PLAN — DEMAND & S&OP',                      color: '#10b981', count: 4 },
-      { id: 'sourcing_risk',       shortTab: 'Source',          title: '02 · SOURCE — PROCUREMENT & TIER-N RISK',        color: '#a142f4', count: 4 },
-      { id: 'manufacturing_prod',  shortTab: 'Make',            title: '03 · MAKE — MANUFACTURING & PLANT OEE',          color: '#3b82f6', count: 4 },
-      { id: 'inventory_warehouse', shortTab: 'Fulfill',         title: '04 · FULFILL — 3D WMS, MEIO & CROSS-DOCK',       color: '#00d2ff', count: 5 },
-      { id: 'logistics_fleet',     shortTab: 'Deliver',         title: '05 · DELIVER — OCEAN, AIR, RAIL & ROAD FLEET',   color: '#ff8c00', count: 7 },
-      { id: 'circular_enable',     shortTab: 'Return & Enable', title: '06 · RETURN & ENABLE — OTIF, RMA & SCOPE 3 ESG', color: '#ec4899', count: 4 },
-      { id: 'universal_csco',      shortTab: 'Universal Core',  title: '00 · UNIVERSAL CROSS-PERSONA CSCO CORE',         color: '#38bdf8', count: 4 }
+      { id: 'demand_sop',          shortTab: 'Plan (V1)',            title: '01 · PLAN — DEMAND PLANNING, SENSING & S&OP (V1)',          color: '#10b981', count: 4 },
+      { id: 'sourcing_procurement', shortTab: 'Source (V2)',          title: '02 · SOURCE — STRATEGIC SOURCING & PROCUREMENT (V2)',        color: '#a142f4', count: 4 },
+      { id: 'manufacturing_prod',  shortTab: 'Make (V3)',            title: '03 · MAKE — PRODUCTION PLANNING & MANUFACTURING (V3)',       color: '#3b82f6', count: 4 },
+      { id: 'inventory_meio',      shortTab: 'Inventory (V4)',       title: '04 · INVENTORY — MULTI-ECHELON BUFFER & MEIO (V4)',          color: '#06b6d4', count: 3 },
+      { id: 'warehousing_qa',      shortTab: 'Warehouse (V5)',       title: '05 · WAREHOUSING — INWARDING QA & INTRALOGISTICS (V5)',      color: '#00d2ff', count: 3 },
+      { id: 'logistics_fleet',     shortTab: 'Logistics (V6)',       title: '06 · LOGISTICS — MULTI-MODAL FLEET & TRANSIT (V6)',          color: '#ff8c00', count: 6 },
+      { id: 'trade_mkt_dist',      shortTab: 'TM&D (V7)',            title: '07 · TM&D — TRADE MARKETING & DISTRIBUTION LAST-MILE (V7)',   color: '#f59e0b', count: 1 },
+      { id: 'reverse_risk_esg',    shortTab: 'Reverse & ESG (V8)',   title: '08 · REVERSE & RISK — CIRCULAR RMA, OTIF & ESG (V8)',        color: '#ec4899', count: 3 },
+      { id: 'universal_csco',      shortTab: 'Universal Core',       title: '00 · UNIVERSAL CROSS-PERSONA CSCO CONTROL TOWER CORE',       color: '#38bdf8', count: 4 }
     ];
 
     let currentPeriodicFilter = 'all'; // 'all' | group.id | 'by_persona'
