@@ -80,6 +80,19 @@ def test_end_to_end_scenario_execution():
     assert expedite["status"] == "dispatched"
     assert "FAST_TRACK_AIR_CHARTER" in expedite["audit_trail"]
 
+    # Verify A2UI surface compliance (Card containing VegaChart)
+    assert "a2ui_parts" in result
+    assert len(result["a2ui_parts"]) == 2
+    assert "vega_spec" in result
+    assert result["vega_spec"]["$schema"] == "https://vega.github.io/schema/vega-lite/v5.json"
+    assert "vconcat" in result["vega_spec"]
+
+    # Verify deterministic copy-ready table and markdown structure
+    assert "markdown" in result
+    assert "| PO Number |" in result["markdown"]
+    assert "### ⚡ Crisis Briefing" in result["markdown"]
+    assert "### 🔗 Connected Systems" in result["markdown"]
+
 
 if __name__ == "__main__":
     print("Running Disruption War Room Orchestrator smoke tests...")

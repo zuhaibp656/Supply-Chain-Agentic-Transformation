@@ -83,6 +83,19 @@ def test_end_to_end_scenario_execution():
     assert dim_action["status"] == "remediated"
     assert "DIM-FIX" in dim_action["dim_id"]
 
+    # Verify A2UI surface compliance (Card containing VegaChart)
+    assert "a2ui_parts" in result
+    assert len(result["a2ui_parts"]) == 2
+    assert "vega_spec" in result
+    assert result["vega_spec"]["$schema"] == "https://vega.github.io/schema/vega-lite/v5.json"
+    assert "vconcat" in result["vega_spec"]
+
+    # Verify deterministic copy-ready table and markdown structure
+    assert "markdown" in result
+    assert "| Material SKU |" in result["markdown"]
+    assert "### 🧹 Master Data Hygiene" in result["markdown"]
+    assert "### 🔗 Connected Systems" in result["markdown"]
+
 
 if __name__ == "__main__":
     print("Running Master Data & Lead-Time Steward smoke tests...")

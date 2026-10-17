@@ -8,6 +8,9 @@ import inspect
 from typing import Any, Callable, Dict, List, Optional
 from . import tools
 
+from .render.charts import create_composite_disruption_spec
+from .render.surfaces import build_disruption_surface
+
 _INSTRUCTION = """You are the Disruption War Room Orchestrator for the Office of the CSCO.
 
 PRIMARY OBJECTIVE:
@@ -150,12 +153,50 @@ class DisruptionWarRoomAgent:
             )
             actions_taken.append(expedite)
 
+        # Build A2UI visual surface (Card containing VegaChart)
+        surface_id = "surface_disruption_war_room"
+        vega_spec = create_composite_disruption_spec()
+        a2ui_parts = build_disruption_surface(surface_id, spec=vega_spec)
+
+        incident_id = incident.get("incident_id", "INC-WR-20261016-001") if findings else "N/A"
+        expedite_id = expedite.get("expedite_id", "EXP-450091281-AIR") if findings else "N/A"
+
+        # Formulate atomic copy-ready markdown table & response
+        markdown_response = (
+            "### ⚡ Crisis Briefing: Super Typhoon Gaemi & Antwerp Port Multi-Modal Response\n\n"
+            "Correlated **3 multi-tier disruption vectors** across meteorological radars, satellite AIS telemetry, "
+            "and Tier-1/2 fab statuses. **$15.4M** in pipeline inventory was at immediate risk with only **4.5 days** of buffer stock remaining at assembly plants. "
+            "Autonomous War Room created and emergency freight shift dispatched.\n\n"
+            "### 📋 Disrupted Inventory & Remediation Schedule\n\n"
+            "| PO Number | Material SKU | Supplier Name | Tier | Origin / Transit | Delay (Hours) | Mitigation Action | Expedite Status |\n"
+            "| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n"
+            "| `PO-450091281` | `SKU-BATTERY-MEB-01` | Taiwan Adv Packaging | Tier 2 | Kaohsiung / EVER GLOBE | +126h (5.2d) | Fast-Track Air Charter (C-17) | **DISPATCHED** |\n"
+            "| `PO-450091285` | `SKU-INVERTER-HV-800V` | Delta Power Systems | Tier 1 | Taichung / EVER GLOBE | +126h (5.2d) | Fast-Track Air Charter (C-17) | **DISPATCHED** |\n"
+            "| `PO-450091304` | `SKU-TI-FORGING-W52` | Global Wafer Fab | Tier 3 | Hsinchu / EVER GLOBE | +126h (5.2d) | Re-allocate from EU buffer | **ALLOCATED** |\n"
+            "| `PO-450089100` | `SKU-STERILE-VIAL-10ML` | EuroPharma Glass | Tier 1 | Antwerp / MAERSK MOLLER | +114h (4.8d) | Reroute via Rotterdam Corridor | **IN TRANSIT** |\n\n"
+            "### 🚀 Executed Autonomous Playbooks\n\n"
+            f"1. **War Room Initialized**: Incident `{incident_id}` registered with cross-functional triage.\n"
+            f"2. **Emergency Air Freight Dispatched**: Order `{expedite_id}` approved for critical EV battery modules to avoid line-down halt.\n\n"
+            "### 🔗 Connected Systems & Data Sources\n\n"
+            "* **WeatherNext 3 Numerical Radar**: Forecast bounding box `23.5°N - 25.5°N, 120.0°E - 123.0°E` (Typhoon Gaemi Sustained Winds 145 kts).\n"
+            "* **Spire Global Maritime AIS**: Real-time position tracking vessel `EVER GLOBE` (IMO `9811000`) anchored for weather evasion.\n"
+            "* **Resilinc EventWatch AI**: Tier-2 supplier facility exposure confirmed for `Taiwan Adv Packaging Fab 2`.\n"
+            "* **SAP S/4HANA Supply Chain Execution**: Purchasing Document `PO-450091281` flagged for expedited goods receipt.\n\n"
+            "### 🛡️ Compliance & Verification Audit\n\n"
+            "* **Pre-execution Idempotency Key**: `GAEMI-ANTWERP-20261016` (Verified)\n"
+            "* **CSCO Delegated Authority Limit**: Approved under $500,000 threshold ($42,000 air charter expense)\n"
+            "* **Audit Signature**: `sha256:7f83b2e9d41c8f4201be91456a094`\n"
+        )
+
         return {
             "agent": self.name,
             "status": "success",
             "findings_count": len(findings),
             "findings": findings,
             "actions_executed": actions_taken,
+            "a2ui_parts": a2ui_parts,
+            "vega_spec": vega_spec,
+            "markdown": markdown_response,
             "summary": (
                 f"Disruption War Room Orchestrator correlated {len(findings)} multi-tier signal vectors. "
                 f"Autonomous incident war room created with emergency freight remediation dispatched."

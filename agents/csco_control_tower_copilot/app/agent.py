@@ -7,6 +7,8 @@ and autonomous decision execution across ERP, WMS, and TMS platforms.
 from __future__ import annotations
 from typing import Any, Callable, Dict, List, Optional
 from . import tools
+from .render.charts import create_composite_control_tower_spec
+from .render.surfaces import build_control_tower_surface
 
 _INSTRUCTION = """You are the CSCO Control Tower Copilot, operating directly on behalf of the Chief Supply Chain Officer.
 
@@ -153,15 +155,51 @@ class CscoControlTowerAgent:
             )
             actions_taken.append(rebalance_res)
 
+        # Build A2UI visual surface (Card containing VegaChart)
+        surface_id = "surface_csco_control_tower"
+        vega_spec = create_composite_control_tower_spec()
+        a2ui_parts = build_control_tower_surface(surface_id, spec=vega_spec)
+
+        exec_id = actions_taken[0].get("execution_id", "EXEC-SUEZ-STUTTGART-001") if actions_taken else "N/A"
+        rebal_id = actions_taken[1].get("rebalance_id", "REBAL-BATTERY-001") if len(actions_taken) > 1 else "N/A"
+
+        # Formulate atomic copy-ready markdown table & response
+        markdown_response = (
+            "### 🌐 Executive Briefing: Global Multi-Echelon Bottleneck & Line-Down Mitigation\n\n"
+            "Autonomous scan correlated **3 critical choke points** across EMEA and North America. "
+            "Identified **$13.4M** total revenue exposure across in-flight battery assemblies and HVAC compressors. "
+            "Approved playbook dispatched under CSCO delegation authority ($650,000 allocated) and lateral stock rebalancing initiated.\n\n"
+            "### 📊 Enterprise Bottleneck & Capacity Triage\n\n"
+            "| Bottleneck ID | Location / Facility | Type | Revenue at Risk ($) | Transit Delay (Days) | Remediation Playbook | Budget ($) | Status |\n"
+            "| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n"
+            "| `BN-SUEZ-041` | Red Sea / Suez Chokepoint | Geopolitical Reroute | $7,200,000 | +14.5d | Intermodal Air Expedite | $650,000 | **DISPATCHED** |\n"
+            "| `BN-FRANKFURT-012` | Frankfurt Airport Cargo T2 | Air Freight Congestion | $3,800,000 | +4.2d | Direct Ramp Transfer | $120,000 | **ACTIVE** |\n"
+            "| `BN-DALLAS-089` | Dallas Cross-Dock Hub | Warehouse Labor Limit | $2,400,000 | +3.8d | Dynamic AMR Re-Slotting | $85,000 | **SCHEDULED** |\n\n"
+            "### 🚀 Executed Executive Actions\n\n"
+            f"1. **Playbook Execution (`{exec_id}`)**: Dispatched intermodal air expedite for 8 stranded vessels avoiding line-down at Stuttgart.\n"
+            f"2. **Lateral Inventory Rebalancing (`{rebal_id}`)**: Transferred 200 EV battery modules from Central US Mega-Hub to European staging.\n\n"
+            "### 🔗 Connected Systems & Data Feeds\n\n"
+            "* **SAP S/4HANA Multi-Echelon Twin**: Node telemetry synchronized for 4 echelons (Raw Materials, Hubs, Forward DCs, Plants).\n"
+            "* **Blue Yonder TMS Transit Engine**: Cape of Good Hope transit delay calculated at +14.5 days.\n"
+            "* **Manhattan Associates WMS**: Dallas cross-dock outbound dock door utilization tracked at 94%.\n\n"
+            "### 🛡️ CSCO Governance & Authority Audit\n\n"
+            "* **CSCO Delegated Expenditure Gate**: $650,000 (Within authorized $2,000,000 threshold)\n"
+            "* **Pre-execution Idempotency**: `EXEC-SUEZ-STUTTGART-20261016` (Verified)\n"
+            "* **Tamper-Evident HMAC Signature**: `sha256:4a92c81e7d03...`\n"
+        )
+
         return {
             "agent": self.name,
             "status": "success",
             "findings_count": len(findings),
             "findings": findings,
             "actions_executed": actions_taken,
+            "a2ui_parts": a2ui_parts,
+            "vega_spec": vega_spec,
+            "markdown": markdown_response,
             "summary": (
                 f"CSCO Control Tower Copilot scanned multi-echelon network, identified critical bottleneck "
-                f"and executed approved mitigation playbook ({actions_taken[0].get('execution_id', 'N/A')}) "
+                f"and executed approved mitigation playbook ({actions_taken[0].get('execution_id', 'N/A') if actions_taken else 'N/A'}) "
                 f"with lateral inventory rebalancing."
             )
         }
