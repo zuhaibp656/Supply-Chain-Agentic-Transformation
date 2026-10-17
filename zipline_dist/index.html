@@ -7357,6 +7357,14 @@
   }
 };
 
+    /* 4 UNIVERSAL CROSS-PERSONA CSCO AGENTS */
+    const UNIVERSAL_AGENT_IDS = [
+      'csco_control_tower_copilot',
+      'disruption_war_room_orchestrator',
+      'master_data_leadtime_steward',
+      'working_capital_cash_bridge'
+    ];
+
     /* 4. PERSONA -> VALUE CHAIN MAPPING (ALL 26 PERSONAS MAPPED ACROSS 4 SUITES) */
     const PERSONA_VALUE_CHAIN_MAP = {
       demand_planning_dir: 'f2f',
@@ -9697,6 +9705,54 @@
         </svg>`;
       }
       if (cadType === 'tmd_retail_network') {
+        return `<svg viewBox="0 0 280 130" style="width:88%;height:88%;position:relative;z-index:2;">
+          <rect x="36" y="24" width="80" height="82" rx="6" fill="#1e293b" stroke="${color}" stroke-width="1.5" />
+          <line x1="42" y1="50" x2="110" y2="50" stroke="#334155" stroke-width="1.5" />
+          <line x1="42" y1="76" x2="110" y2="76" stroke="#334155" stroke-width="1.5" />
+          <rect x="46" y="34" width="16" height="14" rx="2" fill="${color}" />
+          <rect x="68" y="34" width="16" height="14" rx="2" fill="#38bdf8" />
+          <rect x="46" y="58" width="18" height="16" rx="2" fill="#10b981" />
+          <rect x="70" y="58" width="18" height="16" rx="2" fill="#f59e0b" />
+          <path d="M 124 65 L 180 65" stroke="#34d399" stroke-width="2" class="sc-arc-flow" />
+          <rect x="186" y="44" width="60" height="42" rx="6" fill="#0b0f18" stroke="#38bdf8" stroke-width="1.6" />
+          <circle cx="200" cy="86" r="6" fill="#64748b" />
+          <circle cx="232" cy="86" r="6" fill="#64748b" />
+          <text x="140" y="18" text-anchor="middle" fill="#f8f9fa" font-size="9" font-weight="700">RETAIL SHELF · BEAT ROUTE · DMS</text>
+        </svg>`;
+      }
+      if (cadType === 'plant_oee_twin') {
+        return `<svg viewBox="0 0 280 130" style="width:88%;height:88%;position:relative;z-index:2;">
+          <rect x="24" y="42" width="46" height="46" rx="6" fill="#0b0f18" stroke="${color}" stroke-width="2" />
+          <rect x="92" y="42" width="46" height="46" rx="6" fill="#0b0f18" stroke="#00d2ff" stroke-width="2" />
+          <rect x="160" y="42" width="46" height="46" rx="6" fill="#0b0f18" stroke="#10b981" stroke-width="2" />
+          <line x1="70" y1="65" x2="92" y2="65" stroke="${color}" stroke-width="2.5" class="sc-arc-flow" />
+          <line x1="138" y1="65" x2="160" y2="65" stroke="#00d2ff" stroke-width="2.5" class="sc-arc-flow" />
+          <circle cx="242" cy="65" r="22" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="105 35" />
+          <text x="140" y="22" text-anchor="middle" fill="#f8f9fa" font-size="10" font-weight="700">SMART FACTORY OEE · CP-SAT FINITE SCHEDULE</text>
+        </svg>`;
+      }
+      if (cadType === 'control_tower_twin') {
+        return `<svg viewBox="0 0 280 130" style="width:88%;height:88%;position:relative;z-index:2;">
+          <circle cx="140" cy="65" r="24" fill="rgba(56,189,248,0.16)" stroke="#38bdf8" stroke-width="2.2" />
+          <circle cx="52" cy="34" r="10" fill="#0b0f18" stroke="#00d2ff" stroke-width="2" />
+          <circle cx="52" cy="96" r="10" fill="#0b0f18" stroke="#a855f7" stroke-width="2" />
+          <circle cx="228" cy="34" r="10" fill="#0b0f18" stroke="#ec4899" stroke-width="2" />
+          <circle cx="228" cy="96" r="10" fill="#0b0f18" stroke="#10b981" stroke-width="2" />
+          <line x1="62" y1="38" x2="118" y2="56" stroke="#00d2ff" stroke-width="2" class="sc-arc-flow" />
+          <line x1="62" y1="92" x2="118" y2="74" stroke="#a855f7" stroke-width="2" class="sc-arc-flow" />
+          <line x1="162" y1="56" x2="218" y2="38" stroke="#ec4899" stroke-width="2" class="sc-arc-flow" />
+          <line x1="162" y1="74" x2="218" y2="92" stroke="#10b981" stroke-width="2" class="sc-arc-flow" />
+          <text x="140" y="69" text-anchor="middle" fill="#f8fafc" font-size="9.5" font-weight="700">CSCO TWIN</text>
+        </svg>`;
+      }
+      return `<svg viewBox="0 0 280 130" style="width:88%;height:88%;position:relative;z-index:2;">
+        <path d="M 18 92 Q 75 26, 135 68 T 262 32" fill="none" stroke="${color}" stroke-width="3" class="sc-arc-flow" />
+        <path d="M 18 104 Q 75 48, 135 84 T 262 54" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.6" stroke-dasharray="4 4" />
+      </svg>`;
+    }
+
+    function renderInteractiveCadStage(cadType, mountId) {
+      if (cadType === 'tmd_retail_network') {
         return `
           <div id="${mountId}" style="width:100%;">
             <div class="cad-bar">
@@ -9779,38 +9835,6 @@
           </div>
         `;
       }
-      if (cadType === 'plant_oee_twin') {
-        return `<svg viewBox="0 0 280 130" style="width:88%;height:88%;position:relative;z-index:2;">
-          <rect x="24" y="42" width="46" height="46" rx="6" fill="#0b0f18" stroke="${color}" stroke-width="2" />
-          <rect x="92" y="42" width="46" height="46" rx="6" fill="#0b0f18" stroke="#00d2ff" stroke-width="2" />
-          <rect x="160" y="42" width="46" height="46" rx="6" fill="#0b0f18" stroke="#10b981" stroke-width="2" />
-          <line x1="70" y1="65" x2="92" y2="65" stroke="${color}" stroke-width="2.5" class="sc-arc-flow" />
-          <line x1="138" y1="65" x2="160" y2="65" stroke="#00d2ff" stroke-width="2.5" class="sc-arc-flow" />
-          <circle cx="242" cy="65" r="22" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="105 35" />
-          <text x="140" y="22" text-anchor="middle" fill="#f8f9fa" font-size="10" font-weight="700">SMART FACTORY OEE · CP-SAT FINITE SCHEDULE</text>
-        </svg>`;
-      }
-      if (cadType === 'control_tower_twin') {
-        return `<svg viewBox="0 0 280 130" style="width:88%;height:88%;position:relative;z-index:2;">
-          <circle cx="140" cy="65" r="24" fill="rgba(56,189,248,0.16)" stroke="#38bdf8" stroke-width="2.2" />
-          <circle cx="52" cy="34" r="10" fill="#0b0f18" stroke="#00d2ff" stroke-width="2" />
-          <circle cx="52" cy="96" r="10" fill="#0b0f18" stroke="#a855f7" stroke-width="2" />
-          <circle cx="228" cy="34" r="10" fill="#0b0f18" stroke="#ec4899" stroke-width="2" />
-          <circle cx="228" cy="96" r="10" fill="#0b0f18" stroke="#10b981" stroke-width="2" />
-          <line x1="62" y1="38" x2="118" y2="56" stroke="#00d2ff" stroke-width="2" class="sc-arc-flow" />
-          <line x1="62" y1="92" x2="118" y2="74" stroke="#a855f7" stroke-width="2" class="sc-arc-flow" />
-          <line x1="162" y1="56" x2="218" y2="38" stroke="#ec4899" stroke-width="2" class="sc-arc-flow" />
-          <line x1="162" y1="74" x2="218" y2="92" stroke="#10b981" stroke-width="2" class="sc-arc-flow" />
-          <text x="140" y="69" text-anchor="middle" fill="#f8fafc" font-size="9.5" font-weight="700">CSCO TWIN</text>
-        </svg>`;
-      }
-      return `<svg viewBox="0 0 280 130" style="width:88%;height:88%;position:relative;z-index:2;">
-        <path d="M 18 92 Q 75 26, 135 68 T 262 32" fill="none" stroke="${color}" stroke-width="3" class="sc-arc-flow" />
-        <path d="M 18 104 Q 75 48, 135 84 T 262 54" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.6" stroke-dasharray="4 4" />
-      </svg>`;
-    }
-
-    function renderInteractiveCadStage(cadType, mountId) {
       if (cadType === 'plant_oee_twin') {
         return `
           <div id="${mountId}" style="width:100%;">
