@@ -3607,22 +3607,22 @@
     <section id="orgChartSection" class="org-section">
       <div class="section-header">
         <h2 class="section-title">Office of the CSCO — The 8 Operational Verticals</h2>
-        <p class="section-subtitle">The End-to-End Operating Topology decomposed from <span class="sc-hl-underline">Level-1 to Level-3</span> across the <strong class="sc-hl-bold">Three Rivers Flow</strong> (Physical Material Flow, Demand/Information Flow, Cash/Working Capital Flow) — powered by deterministic math solvers and Gemini Enterprise agentic orchestration.</p>
+        <p class="section-subtitle">The End-to-End Operating Topology decomposed from <span class="sc-hl-underline">Level-1 to Level-3</span> across the <strong class="sc-hl-bold">Three Synchronized Enterprise Flows</strong> (Physical Material, Demand Signal, and Working Capital Cash) — powered by deterministic math solvers and Gemini Enterprise agentic orchestration.</p>
       </div>
 
-      <!-- Three Rivers Flow Architecture Banner -->
+      <!-- Three Synchronized Enterprise Flows Architecture Banner -->
       <div class="rivers-banner">
         <div class="river-box">
-          <h4>🌊 River 1: Physical Material Flow (Downstream ──▶)</h4>
-          <p>Raw Materials / Agri Nodes ──▶ Factory WIP ──▶ Mother Warehouses ──▶ Regional Depots ──▶ Distributors ──▶ Retail Shelf / Kirana.</p>
+          <h4>📦 Flow 1: Physical Material Flow (Downstream ──▶)</h4>
+          <p>Raw Materials / Sourcing ──▶ Manufacturing Transformation ──▶ Mother Warehouses ──▶ Multi-Modal Transit ──▶ Regional Hubs ──▶ Retail Shelf.</p>
         </div>
         <div class="river-box signal">
-          <h4>📡 River 2: Demand &amp; Information Flow (◀── Upstream)</h4>
-          <p>Consumer POS Scans ◀── FSO Beat Orders ◀── DMS Inventory ◀── S&amp;OP Consensus Forecast ◀── MRP BOM Explosion ◀── Vendor POs.</p>
+          <h4>📡 Flow 2: Demand &amp; Information Signal Flow (◀── Upstream)</h4>
+          <p>Consumer POS Checkouts ◀── Channel Sell-Through ◀── Continuous Replenishment ◀── S&amp;OP Consensus ◀── MRP Master Schedule ◀── Supplier Contracts.</p>
         </div>
         <div class="river-box cash">
-          <h4>💰 River 3: Cash &amp; Working Capital Flow (◀──▶ Cyclic)</h4>
-          <p>Cash Conversion Cycle = Days Inventory (DIO) + Receivables (DSO) − Payables (DPO). Every excess day of dead stock locks corporate liquidity.</p>
+          <h4>💰 Flow 3: Working Capital &amp; Cash Flow (◀──▶ Cyclic)</h4>
+          <p>Cash-to-Cash Cycle = Days Inventory Outstanding (DIO) + Days Sales Outstanding (DSO) − Days Payables (DPO). Unlocking trapped capital while protecting service fill rates.</p>
         </div>
       </div>
 
@@ -3735,36 +3735,6 @@
 
       <!-- Cross-Persona Universal Supply Chain Agents (Used by All 26 Personas) -->
       <div id="universalAgentsHomeContainer"></div>
-
-      <!-- Interactive Multi-Echelon Safety Stock & ROP Calculator -->
-      <div class="ss-calc-card">
-        <div class="ss-calc-header">
-          <div>
-            <div class="ss-calc-title">🧮 Interactive Multi-Echelon Safety Stock &amp; Reorder Point (ROP) Calculator</div>
-            <div class="ss-calc-sub">See in real time why supplier lead-time volatility (σ_LT) exponentially inflates required buffer stock compared to pure demand fluctuations:</div>
-          </div>
-          <div style="font-size:12px; color:var(--text-muted); background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); padding:4px 12px; border-radius:999px;">
-            Service Level Z = 2.05 (98.0% Cycle Service)
-          </div>
-        </div>
-
-        <div class="control-row">
-          <div class="control-field">
-            <label>Average Daily Demand (Cases/Day): <strong id="lblD" style="color:#fff;">600</strong></label>
-            <input type="range" id="rngD" min="100" max="2500" step="50" value="600" oninput="runSSCalc()"/>
-          </div>
-          <div class="control-field">
-            <label>Supplier Lead Time (Days): <strong id="lblLT" style="color:#fff;">8</strong></label>
-            <input type="range" id="rngLT" min="1" max="45" step="1" value="8" oninput="runSSCalc()"/>
-          </div>
-          <div class="control-field">
-            <label>Lead-Time Std Dev σ_LT (Days): <strong id="lblSLT" style="color:#fff;">3.0</strong></label>
-            <input type="range" id="rngSLT" min="0" max="15" step="0.5" value="3.0" oninput="runSSCalc()"/>
-          </div>
-        </div>
-
-        <div id="ssOutput" class="ss-output-box"></div>
-      </div>
 
       <!-- End-to-End Agentic Value Chains (4 Suites: F2F, O2D, S2P, P2R) -->
       <div class="vc-home-block">
@@ -4036,7 +4006,6 @@
     "watermarkType": "demand_wave",
     "horizon": "Tactical Horizon (Weekly – 18 Months)",
     "coreQuestion": "What, how much, when, and where will customers buy—and can our network supply it?",
-    "river": "River 2: Demand & Information Flow (◀── Upstream)",
     "systems": "SAP IBP · SAP S/4HANA · Kinaxis · o9 Solutions · EDI 852/830 POS · BigQuery · AlloyDB · Cloud Spanner · Vertex AI TimesFM · Google WeatherNext 3 · Google Maps Places · Apigee",
     "solverSummary": "Vertex AI TimesFM Zero-Shot Foundation Forecasting + Hierarchical Bayesian Reconciliation + Google OR-Tools MILP S&OP Capacity & Margin Solver on BigQuery & AlloyDB",
     "toilMetric": "65% of planning time lost",
@@ -4063,7 +4032,8 @@
       "sop_scenario_weaver",
       "promo_lift_simulator",
       "cpfr_sync_agent"
-    ]
+    ],
+    "flow": "Demand & Information Signal Flow (◀── Upstream)"
   },
   "sourcing_procurement": {
     "id": "sourcing_procurement",
@@ -4077,7 +4047,6 @@
     "watermarkType": "supplier_graph",
     "horizon": "Strategic & Operational Horizon",
     "coreQuestion": "Where do we procure raw materials & packaging at optimal total cost, lead time, and AQL quality?",
-    "river": "Bridges River 1 (Inbound Material) and River 3 (Cash Outflows / DPO)",
     "systems": "SAP Ariba · SAP S/4HANA MM/QM/GTS · Coupa · Siemens Teamcenter BOM · Cloud Spanner Graph · BigQuery · AlloyDB · Google Maps Geocoding · Document AI · OR-Tools · Apigee",
     "solverSummary": "Cloud Spanner Tier-N Graph Neural Propagation + Parametric BOM Should-Cost + Google OR-Tools Combinatorial MILP Award Split + Document AI COA/Contract Parser",
     "toilMetric": "Zero visibility past Tier-1",
@@ -4104,7 +4073,8 @@
       "tier_n_risk_sentinel",
       "tariff_esg_agent",
       "supplier_quality_sentinel"
-    ]
+    ],
+    "flow": "Inbound Supply & Invoicing Flow (Supplier to Plant)"
   },
   "manufacturing_prod": {
     "id": "manufacturing_prod",
@@ -4118,7 +4088,6 @@
     "watermarkType": "plant_oee",
     "horizon": "Tactical to Shift-Level Execution",
     "coreQuestion": "How do we sequence factory lines and synchronize BOM inputs for zero unplanned downtime?",
-    "river": "River 1: Physical Material Flow (Factory WIP & Transformation)",
     "systems": "SAP S/4HANA PP/DS & PM · Siemens Opcenter MES · Rockwell Plex · OSIsoft PI Historian · Teamcenter PLM · BigQuery · AlloyDB · Cloud Spanner · OR-Tools CP-SAT · Pub/Sub & Dataflow",
     "solverSummary": "Google OR-Tools CP-SAT Sequence-Dependent Setup & Finite Capacity Job-Shop Scheduler + Vertex AI Multimodal Vibration/Thermal OEE Anomaly Model + Closed-Loop SPC",
     "toilMetric": "19% capacity lost to changeovers & stops",
@@ -4145,7 +4114,8 @@
       "predictive_oee_sentinel",
       "inline_yield_guardian",
       "eco_cutover_orchestrator"
-    ]
+    ],
+    "flow": "Physical Material Transformation Flow (Factory WIP & Assembly)"
   },
   "inventory_meio": {
     "id": "inventory_meio",
@@ -4159,7 +4129,6 @@
     "watermarkType": "multi_echelon_buffer",
     "horizon": "Tactical Horizon (Weekly – Monthly)",
     "coreQuestion": "How much buffer stock should be placed at each echelon to guarantee 99%+ fill rate at minimum working capital?",
-    "river": "River 3: Cash & Working Capital Flow (DIO Optimization)",
     "systems": "SAP IBP/MM · Blue Yonder MEIO · BigQuery · AlloyDB · Cloud Spanner · Google OR-Tools · Google Maps Distance Matrix",
     "solverSummary": "Coupled Stochastic Multi-Echelon (MEIO) + Dynamic Lateral STO Rebalancing MILP + Sub-50ms AlloyDB/Spanner Real-Time ATP Order Promising + Network Cost-to-Serve Twin",
     "toilMetric": "24% excess buffer cash trapped",
@@ -4184,7 +4153,8 @@
       "meio_safety_stock_agent",
       "atp_order_promising_agent",
       "network_twin_architect"
-    ]
+    ],
+    "flow": "Working Capital & Buffer Flow (Multi-Echelon DIO Optimization)"
   },
   "warehousing_qa": {
     "id": "warehousing_qa",
@@ -4198,7 +4168,6 @@
     "watermarkType": "conveyor_rack",
     "horizon": "Real-Time Daily Execution",
     "coreQuestion": "How do we receive, inspect, putaway, and wave-pick goods inside facilities with zero congestion and <4h dock-to-stock?",
-    "river": "Node Custodians along River 1: Physical Material Flow",
     "systems": "Manhattan Active WMS · SAP EWM · Dematic AS/RS WCS · ICML Quality SOP Manuals · Handheld RF Scanners · Yard Management",
     "solverSummary": "3D Spatial Affinity Slotting Twin + Inbound AQL Defect Classifier + Port/Air/Rail Cross-Dock Flow-Through MILP + Dynamic Yard Door Sequencer",
     "toilMetric": "Dock congestion & 34% pick travel waste",
@@ -4222,7 +4191,8 @@
       "warehouse_slotting_agent",
       "yard_dock_sequencer",
       "crossdock_transfer_orchestrator"
-    ]
+    ],
+    "flow": "End-to-End Enterprise Synchronized Flow"
   },
   "logistics_fleet": {
     "id": "logistics_fleet",
@@ -4236,7 +4206,6 @@
     "watermarkType": "corridor_lifo",
     "horizon": "Real-Time Multi-Modal Daily Execution",
     "coreQuestion": "How do we move freight across ocean vessels, cargo aircraft, intermodal rail rakes, and linehaul trailers at minimum cost and 98%+ OTIF?",
-    "river": "Arteries of River 1: Physical Material Flow",
     "systems": "SAP TM · Blue Yonder TMS · Oracle OTM · CargoWise One · Spire AIS · IATA Cargo-XML · Railinc EDI 404 · Indian Railways FOIS · Google Maps Routes API · Google OR-Tools",
     "solverSummary": "End-to-End Multi-Modal Mode-Shift MILP (Factory→Ship→Air→Rail→Truck) + 3D Aircraft ULD & Trailer LIFO Guillotine Bin-Packing + Rail Siding Free-Time & Demurrage Sentinel",
     "toilMetric": "22% multi-modal freight waste & demurrage",
@@ -4268,7 +4237,8 @@
       "multimodal_mode_shift_agent",
       "load_consolidation_agent",
       "freight_control_tower"
-    ]
+    ],
+    "flow": "Physical Material Flow (Multi-Modal Arteries: Road, Rail, Air & Ocean)"
   },
   "trade_mkt_dist": {
     "id": "trade_mkt_dist",
@@ -4282,7 +4252,6 @@
     "watermarkType": "tmd_retail_network",
     "horizon": "Daily Field Execution",
     "coreQuestion": "How do we push inventory through distributors to millions of retail counters, optimize FSO beats, and prevent stockout pitches?",
-    "river": "Terminal Interface of River 1 (Retail Shelf) and River 2 (Consumer POS / Sell-Through)",
     "systems": "DMS (Distributor Management Systems) · SFA Mobile Handhelds · Google Maps Platform Routes · Modern Trade JBP Portals · BigQuery · AlloyDB · Apigee",
     "solverSummary": "Google Maps Routes Preferred CVRPTW Beat Sequencer + Real-Time DMS Inventory Reconciliation Broker + Multimodal Vision Planogram Auditor + Secondary Sales Slab Reconciler",
     "toilMetric": "Field sales pitching out-of-stock SKUs",
@@ -4313,7 +4282,8 @@
       "mtoVsMts": "High-velocity Make-to-Stock replenishment driven by daily store beat orders, distributor buffer norms, and localized trade promotion schemes.",
       "battleground": "Maximizing retailer on-shelf availability (OSA) and share-of-shelf (SOS) while preventing distributor stockouts and trade spend claim leakage.",
       "dataObjects": "Distributor Master, Retail Outlet Registry, Secondary Sales Orders, Beat Schedules, Scheme Slab Rate Cards, Shelf Images."
-    }
+    },
+    "flow": "Last-Mile Distribution & Sell-Through Flow (Distributor, FSO Beat & Retail Shelf)"
   },
   "reverse_risk_esg": {
     "id": "reverse_risk_esg",
@@ -4327,7 +4297,6 @@
     "watermarkType": "circular_loop",
     "horizon": "Continuous Strategic Horizon",
     "coreQuestion": "How do we recover value from damaged/expired stock, defend against unearned chargebacks, and govern Scope-3 carbon & supply risks?",
-    "river": "Circular Loop closing River 1 (Reversals/Recycling) and shielding River 3 (Chargeback Protection)",
     "systems": "SAP Claims & Returns Management · Retail OTIF Portals · Loop RMA · Google Earth Engine · ISO-14083 Carbon Engine · BigQuery Omni · Cloud Spanner · Live Commodity Feeds",
     "solverSummary": "Retail Chargeback Risk Classifier + Vision RMA Backhaul CVRPTW + Google Earth Engine & Maps ISO-14083 Carbon Engine + RCSA Governance Auditor",
     "toilMetric": "3.5% revenue lost to OTIF fines & returns",
@@ -4352,7 +4321,8 @@
       "reverse_rma_optimizer",
       "otif_penalty_shield",
       "carbon_scope3_ledger"
-    ]
+    ],
+    "flow": "End-to-End Enterprise Synchronized Flow"
   }
 };
     Object.defineProperty(DEPARTMENTS, 'sourcing_risk', { get: () => DEPARTMENTS.sourcing_procurement, enumerable: false, configurable: true });
@@ -10464,7 +10434,6 @@
         });
         renderDepartmentShowcaseBox();
         hydrateAssets();
-      runSSCalc();
         setTimeout(() => {
           const showcase = document.getElementById('deptShowcaseBoxEl');
           if (showcase) showcase.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -10472,67 +10441,7 @@
       }
     }
 
-    /* Live Interactive Safety Stock & ROP Calculator */
-    function runSSCalc() {
-      const elD = document.getElementById('rngD');
-      const elLT = document.getElementById('rngLT');
-      const elSLT = document.getElementById('rngSLT');
-      if (!elD || !elLT || !elSLT) return;
-
-      const D = parseFloat(elD.value);
-      const LT = parseFloat(elLT.value);
-      const sLT = parseFloat(elSLT.value);
-
-      document.getElementById('lblD').innerText = D.toLocaleString();
-      document.getElementById('lblLT').innerText = LT.toString();
-      document.getElementById('lblSLT').innerText = sLT.toFixed(1);
-
-      // Assume demand volatility is 15% of daily demand
-      const sD = D * 0.15;
-      const Z = 2.05; // 98% service level
-
-      // Safety Stock formula: Z * sqrt( L * sD^2 + D^2 * sLT^2 )
-      const varDemand = LT * Math.pow(sD, 2);
-      const varLeadTime = Math.pow(D, 2) * Math.pow(sLT, 2);
-      const ssUnits = Math.round(Z * Math.sqrt(varDemand + varLeadTime));
-      const cycleStock = Math.round((D * LT) / 2);
-      const ropUnits = Math.round(D * LT + ssUnits);
-
-      // Percent driven by lead time volatility
-      const pctLeadTimeRisk = Math.round((varLeadTime / (varDemand + varLeadTime)) * 100);
-
-      const outEl = document.getElementById('ssOutput');
-      if (outEl) {
-        outEl.innerHTML = `
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; margin-bottom:12px;">
-            <div>
-              <span style="color:#94a3b8; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700;">Optimal Safety Stock (SS)</span>
-              <div style="font-size:26px; font-weight:900; color:#38bdf8;">${ssUnits.toLocaleString()} Cases</div>
-            </div>
-            <div>
-              <span style="color:#94a3b8; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700;">Reorder Point (ROP)</span>
-              <div style="font-size:26px; font-weight:900; color:#10b981;">${ropUnits.toLocaleString()} Cases</div>
-            </div>
-            <div>
-              <span style="color:#94a3b8; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700;">Working Capital Locked</span>
-              <div style="font-size:26px; font-weight:900; color:#f59e0b;">$${Math.round((ssUnits * 42) / 1000).toLocaleString()}K</div>
-            </div>
-          </div>
-          <div class="bar-line">
-            <div class="bar-meta">
-              <span>Lead-Time Volatility Risk Share: <strong style="color:#ec4899;">${pctLeadTimeRisk}%</strong></span>
-              <span>Demand Volatility Share: <strong>${100 - pctLeadTimeRisk}%</strong></span>
-            </div>
-            <div class="bar-outer">
-              <div class="bar-inner" style="width: ${pctLeadTimeRisk}%;"></div>
-            </div>
-          </div>
-          <p style="color:#94a3b8; font-size:12px; margin-top:8px; line-height:1.5;">
-            💡 <em>Executive Insight:</em> When supplier delivery dates drift by ±${sLT.toFixed(1)} days, lead-time uncertainty drives <strong>${pctLeadTimeRisk}%</strong> of your required buffer stock. Tightening vendor delivery variance via agentic PO monitoring cuts working capital far faster than forecasting tweaks.
-          </p>
-        `;
-      }
-    }
+    
 
     function renderOrgChart() {
       const row = document.getElementById('deptRowContainer');
@@ -10840,6 +10749,130 @@
           </div>
         `;
       }
+            if (dept.id === 'warehouse_intralogistics') {
+        return `
+          <div style="margin: 18px 0 20px; padding: 16px 20px; background: rgba(59, 130, 246, 0.06); border: 1px solid rgba(59, 130, 246, 0.28); border-radius: 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+              <div style="font-size:14px; font-weight:800; color:#60a5fa; text-transform:uppercase; letter-spacing:0.06em; display:flex; align-items:center; gap:8px;">
+                <span>🏢 5-Stage Inbound Inwarding, Cross-Dock &amp; Automated Slotting Flow</span>
+              </div>
+              <div style="font-size:12px; color:#94a3b8;">
+                ASN Scheduling &rarr; Vision Gate &rarr; Cross-Dock Decision &rarr; 3D AS/RS Slotting &rarr; Wave Pick
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(59,130,246,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#60a5fa; text-transform:uppercase;">Stage 1 · Advance ASN</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Dock Door Scheduling</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">EDI 856 ingestion, trailer yard check-in, dynamic dock door assignment &amp; demurrage prevention.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(59,130,246,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#60a5fa; text-transform:uppercase;">Stage 2 · Vision Gate</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Automated Inspection</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Camera portal pallet scan; detects crushed cartons, tilted stacks, and barcode read errors in &lt;1.2s.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(59,130,246,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#60a5fa; text-transform:uppercase;">Stage 3 · Cross-Dock</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Zero-Putaway Staging</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Matches hot outbound backorders to bypass storage racks, moving straight to outbound outbound trailers.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(59,130,246,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#60a5fa; text-transform:uppercase;">Stage 4 · 3D Slotting</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">AS/RS &amp; High-Bay Racks</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Multi-objective integer program places high-velocity SKUs at ergonomic levels with strict thermal zoning.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(59,130,246,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#60a5fa; text-transform:uppercase;">Stage 5 · Outbound Wave</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Pick Path Optimization</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Batch wave releases and AGV traveling salesman routing, minimizing picker deadhead travel by 32%.</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      if (dept.id === 'logistics_fleet') {
+        return `
+          <div style="margin: 18px 0 20px; padding: 16px 20px; background: rgba(99, 102, 241, 0.06); border: 1px solid rgba(99, 102, 241, 0.28); border-radius: 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+              <div style="font-size:14px; font-weight:800; color:#818cf8; text-transform:uppercase; letter-spacing:0.06em; display:flex; align-items:center; gap:8px;">
+                <span>🚚 5-Stage Multi-Modal Corridor Dispatch &amp; Linehaul Flow</span>
+              </div>
+              <div style="font-size:12px; color:#94a3b8;">
+                3D Bay Packing &rarr; Mode Split &rarr; Dynamic Route Dispatch &rarr; Cold-Chain Tracking &rarr; Digital ePOD
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(99,102,241,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#818cf8; text-transform:uppercase;">Stage 1 · 3D Bay Packing</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">LIFO Axle-Weight Balance</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Physics-constrained 3D bin packing; optimizes axle weight distribution and reverse stop-drop sequencing.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(99,102,241,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#818cf8; text-transform:uppercase;">Stage 2 · Mode Split</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Air / Rail / Ocean / Road</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Trade-off solver balances freight cost vs carbon vs customer SLA, shifting freight to rail or ocean where viable.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(99,102,241,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#818cf8; text-transform:uppercase;">Stage 3 · Dynamic Routing</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Google Maps Fleet Engine</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Routes Preferred routing with live traffic, bridge height clearances, and driver corridor familiarity.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(99,102,241,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#818cf8; text-transform:uppercase;">Stage 4 · In-Transit Hub</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Satellite &amp; Telematics IoT</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Real-time Spire AIS / FlightAware / ELD tracking, geofence ETA countdowns, and cold-chain alert triggers.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(99,102,241,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#818cf8; text-transform:uppercase;">Stage 5 · Digital ePOD</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Instant Proof of Delivery</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Geofenced signature capture, discrepancy OS&amp;D logging, and automated freight audit freight billing lock.</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      if (dept.id === 'reverse_logistics_esg') {
+        return `
+          <div style="margin: 18px 0 20px; padding: 16px 20px; background: rgba(16, 185, 129, 0.06); border: 1px solid rgba(16, 185, 129, 0.28); border-radius: 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+              <div style="font-size:14px; font-weight:800; color:#34d399; text-transform:uppercase; letter-spacing:0.06em; display:flex; align-items:center; gap:8px;">
+                <span>♻️ 5-Stage Circular Recovery, Component Harvesting &amp; ESG Audit Flow</span>
+              </div>
+              <div style="font-size:12px; color:#94a3b8;">
+                RMA Intake &rarr; Visual Triage &rarr; Component Harvest &rarr; Secondary Resale &rarr; Scope 3 Audit
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#34d399; text-transform:uppercase;">Stage 1 · RMA Intake</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Customer Tele-Diagnosis</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Instant digital returns portal; validates warranty, captures failure mode, and generates return routing label.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#34d399; text-transform:uppercase;">Stage 2 · Visual Triage</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Gemini 3.8 Flash Grading</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Optical grade classification: directs item to Grade-A Restock, Component Harvest, or E-Waste Recycling.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#34d399; text-transform:uppercase;">Stage 3 · Harvesting</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Remanufacturing Ingestion</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Disassembles high-value assemblies; recertifies sub-components and credits net recoverable inventory to MRP.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#34d399; text-transform:uppercase;">Stage 4 · Secondary B2B</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Liquidation &amp; Resale</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Dynamic secondary pricing agent matches refurbished inventory to certified outlet channels, recovering 42% margin.</div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:12px;">
+                <div style="font-size:11px; font-weight:700; color:#34d399; text-transform:uppercase;">Stage 5 · Scope 3 ESG</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">CBAM &amp; Audit Trail</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Automated emissions ledger tracking avoided carbon and circularity ratio for SEC / EU CSRD compliance.</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
       return '';
     }
 
@@ -10885,94 +10918,182 @@
             </div>
           </div>
 
-          <div class="showcase-grid">
-          <!-- 4-Quadrant Level-1 to Level-3 Process Decomposition Grid -->
-          <div style="margin: 20px 0 14px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
-              <div style="font-size:16px; font-weight:800; color:#fff;">
-                📑 Level-1 to Level-3 Operational Process Architecture &amp; Mandate
+          <!-- Executive Problem, Solution & Business Value Grid (CFO Model) -->
+          <div class="showcase-exec-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:16px; margin: 20px 0 16px;">
+            <!-- Column 1: Problem / Manual Toil -->
+            <div class="showcase-panel" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(239, 68, 68, 0.28); border-radius: 14px; padding: 18px 20px;">
+              <div class="panel-tag" style="color: #f87171; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+                <span>✕ The Critical Problem · Legacy Process Gaps</span>
               </div>
-              <div style="font-size:12px; color:var(--text-muted);">
-                ${dept.horizon} · ${dept.river}
-              </div>
+              <div class="panel-metric" style="font-size:20px; font-weight:800; color:#fff; margin-bottom:12px;">${dept.toilMetric}</div>
+              <ul class="clean-list" style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+                ${dept.toilBullets.map(b => `
+                  <li style="display:flex; align-items:flex-start; gap:8px; font-size:13.5px; color:#cbd5e1; line-height:1.5;">
+                    <span class="bullet" style="color: #f87171; font-weight:bold; flex-shrink:0;">▸</span>
+                    <span>${formatRichText(b)}</span>
+                  </li>
+                `).join('')}
+              </ul>
             </div>
-            <div class="quad-grid">
-              <div class="quad-card">
-                <h5>1. Operational Mandate</h5>
-                <p style="font-size:13px; color:#cbd5e1; line-height:1.52;">${dept.l1toL3 ? dept.l1toL3.mandate : dept.subtitle}</p>
+
+            <!-- Column 2: Agentic Solution -->
+            <div class="showcase-panel" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.28); border-radius: 14px; padding: 18px 20px;">
+              <div class="panel-tag" style="color: #34d399; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+                <span>✦ The AI Solution · Gemini &amp; Math Solvers</span>
               </div>
-              <div class="quad-card">
-                <h5>2. Make-to-Stock vs. MTO Nuances</h5>
-                <p style="font-size:13px; color:#cbd5e1; line-height:1.52;">${dept.l1toL3 ? dept.l1toL3.mtoVsMts : 'Postponement & multi-echelon buffering across regional distribution nodes.'}</p>
+              <div class="panel-metric" style="font-size:20px; font-weight:800; color:#fff; margin-bottom:12px;">${dept.impactMetric}</div>
+              <ul class="clean-list" style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+                ${dept.impactBullets.map(b => `
+                  <li style="display:flex; align-items:flex-start; gap:8px; font-size:13.5px; color:#cbd5e1; line-height:1.5;">
+                    <span class="bullet" style="color: #34d399; font-weight:bold; flex-shrink:0;">▸</span>
+                    <span>${formatRichText(b)}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+
+            <!-- Column 3: Quantified Business Value & Working Capital Impact -->
+            <div class="showcase-panel" style="background: rgba(15, 23, 42, 0.85); border: 1px solid ${dept.color}44; border-radius: 14px; padding: 18px 20px; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <div class="panel-tag" style="color: ${dept.color}; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+                  <span>💎 Strategic Value &amp; Bottom-Line Outcomes</span>
+                </div>
+                <div class="panel-metric" style="font-size:20px; font-weight:800; color:#fff; margin-bottom:10px;">
+                  ${dept.vNum} · ${dept.tagline}
+                </div>
+                <div style="font-size:13px; color:#94a3b8; line-height:1.5; margin-bottom:14px;">
+                  ${dept.coreQuestion || dept.subtitle}
+                </div>
+                <div style="display:flex; flex-direction:column; gap:8px; font-size:12.5px; color:#cbd5e1;">
+                  <div style="display:flex; justify-content:space-between; padding:6px 10px; background:rgba(255,255,255,0.04); border-radius:8px;">
+                    <span style="color:#94a3b8;">Operational Horizon:</span>
+                    <strong style="color:#fff;">${dept.horizon}</strong>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; padding:6px 10px; background:rgba(255,255,255,0.04); border-radius:8px;">
+                    <span style="color:#94a3b8;">Enterprise Flow:</span>
+                    <strong style="color:#38bdf8;">${dept.flow || 'Physical & Signal Flow'}</strong>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; padding:6px 10px; background:rgba(255,255,255,0.04); border-radius:8px;">
+                    <span style="color:#94a3b8;">Human-in-the-Loop Gate:</span>
+                    <strong style="color:#34d399;">100% Signed ERP Writeback</strong>
+                  </div>
+                </div>
               </div>
-              <div class="quad-card">
-                <h5>3. Operational Battleground</h5>
-                <p style="font-size:13px; color:#cbd5e1; line-height:1.52;">${dept.l1toL3 ? dept.l1toL3.battleground : 'Balancing operational uptime and service levels with lean working capital.'}</p>
-              </div>
-              <div class="quad-card">
-                <h5>4. Core Enterprise Data Objects</h5>
-                <p style="font-size:13px; color:#cbd5e1; line-height:1.52;">${dept.l1toL3 ? dept.l1toL3.dataObjects : dept.systems}</p>
+
+              <div style="margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-size:12px; color:#94a3b8;">${dept.personaIds.length} Personas · ${dept.agentIds.length} Agents</span>
+                <button type="button" class="switch-pill" style="font-size:12px; padding:6px 14px;" onclick="openPersonasDirectoryPage('${dept.id}', '', true)">
+                  View in Directory &rarr;
+                </button>
               </div>
             </div>
           </div>
 
-          <!-- Vertical Operational Workflow Sequence (S&OP 5-step, Strategic Sourcing, etc.) -->
+          <!-- Vertical Operational & Distribution Workflow Sequence -->
           ${renderVerticalWorkflowStrip(dept)}
 
-          <!-- Column 1: Problem / Manual Toil -->
-            <div class="showcase-panel">
-              <div class="panel-tag" style="color: var(--g-red);">
-                <span>✕ The Process Gap · Manual Toil</span>
+          <!-- Personas & Their Day-in-the-Life Agentic Journeys (Built per Persona Journey) -->
+          <div class="showcase-personas-section" style="margin-top: 26px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+              <div>
+                <div style="font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
+                  <span>👥 Personas &amp; Their Day-in-the-Life Agentic Journeys in ${dept.name}</span>
+                </div>
+                <div style="font-size:13px; color:#94a3b8; margin-top:3px;">
+                  See how dedicated Google Cloud AI Agents intercept manual bottlenecks across each persona's daily workflow—converting hours of spreadsheet toil into autonomous, verified decisions.
+                </div>
               </div>
-              <div class="panel-metric">${dept.toilMetric}</div>
-              <ul class="clean-list">
-                ${dept.toilBullets.map(b => `
-                  <li>
-                    <span class="bullet" style="color: var(--g-red);">▸</span>
-                    <span>${formatRichText(b)}</span>
-                  </li>
-                `).join('')}
-              </ul>
+              <div style="font-size:12px; color:var(--text-muted);">
+                ${dept.personaIds.length} Core Operational Roles
+              </div>
             </div>
 
-            <!-- Column 2: Strategic Impact -->
-            <div class="showcase-panel">
-              <div class="panel-tag" style="color: var(--g-green);">
-                <span>✦ The Impact · Agentic Process Fix</span>
-              </div>
-              <div class="panel-metric">${dept.impactMetric}</div>
-              <ul class="clean-list">
-                ${dept.impactBullets.map(b => `
-                  <li>
-                    <span class="bullet" style="color: var(--g-green);">▸</span>
-                    <span>${formatRichText(b)}</span>
-                  </li>
-                `).join('')}
-              </ul>
-            </div>
+            <div class="persona-journeys-container" style="display:flex; flex-direction:column; gap:16px;">
+              ${dept.personaIds.map(pid => {
+                const p = PERSONAS[pid];
+                if (!p) return '';
+                const daySlots = (p.dayInLife || []).slice(0, 4);
+                const plugAgents = (p.agentIds || []).map(aid => AGENTS[aid]).filter(Boolean);
 
-            <!-- Column 3: Personas in this Vertical -->
-            <div class="showcase-panel">
-              <div class="panel-tag" style="color: ${dept.color};">
-                <span>${dept.personaIds.length} Personas in ${dept.name}</span>
-              </div>
-              <div class="dept-personas-list">
-                ${dept.personaIds.map(pid => {
-                  const p = PERSONAS[pid];
-                  return `
-                    <div class="persona-link-card" onclick="openPersonaPage('${p.id}', true, event)">
-                      <div class="persona-link-left">
-                        <div class="persona-emoji">${p.icon}</div>
+                return `
+                  <div class="persona-journey-card" style="background:rgba(15,23,42,0.85); border:1px solid rgba(255,255,255,0.08); border-left:4px solid ${dept.color}; border-radius:14px; padding:18px 20px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:14px; margin-bottom:14px;">
+                      <div style="display:flex; align-items:center; gap:12px;">
+                        <div style="width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; font-size:24px;">
+                          ${p.icon}
+                        </div>
                         <div>
-                          <div class="persona-link-name">${p.name}</div>
-                          <div class="persona-link-role">${p.role}</div>
+                          <div style="display:flex; align-items:center; gap:8px;">
+                            <span style="font-size:16px; font-weight:800; color:#fff;">${p.name}</span>
+                            <span style="font-size:11px; padding:2px 8px; border-radius:999px; background:${dept.color}22; color:${dept.color}; font-weight:700; border:1px solid ${dept.color}44;">${dept.name}</span>
+                          </div>
+                          <div style="font-size:13px; color:#cbd5e1; margin-top:2px;">${p.role}</div>
                         </div>
                       </div>
-                      <span class="persona-open-arrow" style="color:${dept.color};">Open &rarr;</span>
+
+                      <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                        <div style="display:inline-flex; align-items:center; gap:6px; font-size:12px; padding:5px 12px; border-radius:8px; background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.1);">
+                          <span style="color:#f87171; font-weight:600;">🔴 ${p.toilHoursBefore}</span>
+                          <span style="color:#64748b;">&rarr;</span>
+                          <span style="color:#34d399; font-weight:700;">🟢 ${p.toilHoursAfter}</span>
+                        </div>
+                        <button type="button" class="switch-pill" style="font-size:12px; padding:6px 12px;" onclick="openPersonaPage('${p.id}', true, event)">
+                          Explore Full Day Schedule &rarr;
+                        </button>
+                      </div>
                     </div>
-                  `;
-                }).join('')}
-              </div>
+
+                    <div style="font-size:13px; color:#94a3b8; line-height:1.55; margin-bottom:14px;">
+                      ${formatRichText(p.summary)}
+                    </div>
+
+                    <!-- 4-Stage Operational Journey Strip -->
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:10px; margin-bottom:14px;">
+                      ${daySlots.map((slot, sIdx) => {
+                        const slotAgent = slot.agentId ? AGENTS[slot.agentId] : null;
+                        const stageLabels = ['🌅 1. Morning Sensing & Intake', '⚡ 2. Automated Simulation', '🎯 3. Decision Recommendation', '✍️ 4. 1-Click ERP Writeback'];
+                        return `
+                          <div style="background:rgba(6,10,18,0.7); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:10px 12px; display:flex; flex-direction:column; justify-content:space-between;">
+                            <div>
+                              <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; margin-bottom:4px;">
+                                <span style="font-weight:700; color:${slot.isToil ? '#f87171' : '#38bdf8'};">${stageLabels[sIdx] || slot.time}</span>
+                                <span style="color:#64748b;">${slot.time}</span>
+                              </div>
+                              <div style="font-size:12.5px; font-weight:700; color:#fff; margin-bottom:4px;">${slot.task}</div>
+                              <div style="font-size:11.5px; color:#94a3b8; line-height:1.4;">${formatRichText(slot.after || slot.activity || slot.before)}</div>
+                            </div>
+                            ${slotAgent ? `
+                              <div style="margin-top:8px; padding-top:6px; border-top:1px dashed rgba(255,255,255,0.08); font-size:11px; color:#34d399; display:flex; align-items:center; gap:4px;">
+                                <span>⚡ Powered by:</span>
+                                <strong style="color:#fff; cursor:pointer;" onclick="openAgentPage('${slotAgent.id}', true, event)">${slotAgent.name}</strong>
+                              </div>
+                            ` : ''}
+                          </div>
+                        `;
+                      }).join('')}
+                    </div>
+
+                    <!-- Powered by AI Agents Buttons -->
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.06);">
+                      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                        <span style="font-size:11.5px; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:0.05em;">Dedicated AI Agents:</span>
+                        ${plugAgents.map(ag => `
+                          <button type="button" class="switch-pill" style="font-size:11.5px; padding:4px 10px; background:rgba(56,189,248,0.1); border-color:rgba(56,189,248,0.3); color:#38bdf8;" onclick="openAgentPage('${ag.id}', true, event)">
+                            <span>⚡ ${ag.name} (${ag.badge})</span>
+                          </button>
+                        `).join('')}
+                      </div>
+                      <div style="display:flex; align-items:center; gap:8px;">
+                        ${plugAgents.length > 0 ? `
+                          <button type="button" class="switch-pill" style="font-size:11px; padding:4px 8px; color:#94a3b8;" onclick="openAgentBlueprintPage('${plugAgents[0].id}', true, event)">
+                            🏗️ High-Code Blueprint &rarr;
+                          </button>
+                        ` : ''}
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
             </div>
           </div>
 
