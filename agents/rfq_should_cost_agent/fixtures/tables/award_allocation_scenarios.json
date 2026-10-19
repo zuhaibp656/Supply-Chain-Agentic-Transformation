@@ -1,0 +1,38 @@
+[
+  {
+    "scenario_id": "SCEN-AWARD-DUAL-70-30",
+    "name": "OR-Tools Optimal Dual-Source Risk & Cost Frontier",
+    "part_number": "PART-CAN-ALUM-330ML",
+    "annual_demand_units": 50000000,
+    "primary_supplier": "Ball Metal Packaging",
+    "primary_split_pct": 70.0,
+    "primary_volume_units": 35000000,
+    "secondary_supplier": "Crown Holdings",
+    "secondary_split_pct": 30.0,
+    "secondary_volume_units": 15000000,
+    "blended_unit_cost_usd": 31.62,
+    "annual_spend_usd": 1581000.0,
+    "annual_savings_vs_historical_usd": 115000.0,
+    "direct_material_savings_pct": 6.8,
+    "supply_security_score": 96.5,
+    "or_tools_status": "OPTIMAL_DUAL_SOURCE"
+  },
+  {
+    "scenario_id": "SCEN-AWARD-SINGLE-BALL",
+    "name": "Single-Source Pure Cost Minimization",
+    "part_number": "PART-CAN-ALUM-330ML",
+    "annual_demand_units": 50000000,
+    "primary_supplier": "Ball Metal Packaging",
+    "primary_split_pct": 100.0,
+    "primary_volume_units": 50000000,
+    "secondary_supplier": "None",
+    "secondary_split_pct": 0.0,
+    "secondary_volume_units": 0,
+    "blended_unit_cost_usd": 31.20,
+    "annual_spend_usd": 1560000.0,
+    "annual_savings_vs_historical_usd": 136000.0,
+    "direct_material_savings_pct": 8.0,
+    "supply_security_score": 62.0,
+    "or_tools_status": "VULNERABLE_SINGLE_SOURCE"
+  }
+]

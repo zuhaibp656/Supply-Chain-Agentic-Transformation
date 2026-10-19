@@ -1,0 +1,25 @@
+[
+  {
+    "scenario_id": "GOLDEN-SUPPLIER-QUALITY-001",
+    "name": "AlN Substrate Quality Drift Quarantine and COPQ Recovery",
+    "description": "Intercept incoming lot of AlN ceramic substrates from Kyocera with out-of-spec thermal conductivity (164.2 W/m·K vs 170.0 LSL), quarantine the lot in SAP QM, trigger TrackWise 8D CAPA workflow, and post $114,650 COPQ debit memo.",
+    "input_query": "Audit incoming lot LOT-INSP-202610-8841 for Kyocera AlN substrates, detect Cpk drift, quarantine the lot in SAP QM, and recover COPQ costs via automated debit memo.",
+    "expected_tools": [
+      "query_supplier_coa_inspections",
+      "query_spc_cpk_drift_metrics",
+      "query_quality_deviation_tickets",
+      "query_cost_of_poor_quality_ledger",
+      "action_quarantine_inspection_lot",
+      "action_trigger_8d_capa_debit"
+    ],
+    "expected_verifications": {
+      "inspection_lot_id": "LOT-INSP-202610-8841",
+      "measured_w_mk": 164.2,
+      "lsl_w_mk": 170.0,
+      "cpk": 0.54,
+      "quarantine_status": "SAP_QM_QUARANTINED_BLOCKED",
+      "copq_recovered_usd": 114650.0,
+      "debit_status": "SAP_FI_COPQ_DEBIT_POSTED"
+    }
+  }
+]

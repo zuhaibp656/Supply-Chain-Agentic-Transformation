@@ -1,0 +1,24 @@
+[
+  {
+    "scenario_id": "GOLDEN-TARIFF-ESG-001",
+    "name": "Supplier Rebate Recovery and 10-Digit HS Tariff Lock",
+    "description": "Identify unrecovered $47,430 volume rebate from Ball Corp under MSA contract clause, lock 10-digit HS code 7612.90.1065 in SAP GTS with CROSS ruling HQ H312891, and secure $27,645 in duty-free preferential savings.",
+    "input_query": "Audit contract clause obligations for Ball Corp, recover unissued volume rebates via SAP AP debit memo, and lock the 10-digit HS classification in SAP GTS.",
+    "expected_tools": [
+      "query_contract_clause_obligations",
+      "query_supplier_rebate_accruals",
+      "query_hs_tariff_classifications",
+      "query_cross_border_duty_impact",
+      "action_lock_hs_tariff_classification",
+      "action_issue_supplier_rebate_debit_memo"
+    ],
+    "expected_verifications": {
+      "rebate_recovered_usd": 47430.0,
+      "duty_savings_usd": 27645.0,
+      "ten_digit_hs_code": "7612.90.1065",
+      "cross_ruling": "HQ H312891",
+      "gts_lock_status": "SAP_GTS_HS_LOCKED",
+      "ap_debit_status": "SAP_AP_DEBIT_MEMO_POSTED"
+    }
+  }
+]

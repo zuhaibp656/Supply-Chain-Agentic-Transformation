@@ -1202,5 +1202,107 @@
         ]
       }
     ]
+  },
+  {
+    "id": "rfq_should_cost_agent",
+    "name": "SourcePulse — Parametric Should-Cost & Autonomous RFQ Agent",
+    "vertical": "02 · Source",
+    "scor_category": "Source (Strategic Sourcing & Category Procurement)",
+    "primary_objective": "Audits supplier quotes against parametric bottom-up cost models, live LME/ICIS indices, and solves multi-supplier Pareto split allocations.",
+    "factory_matches": [
+      {
+        "okf_id": "should-cost-modeler",
+        "match_type": "primary_core",
+        "systems": [
+          "sap_ariba_sourcing",
+          "lme_icis_commodity_lake",
+          "sap_s4hana_bom_routing"
+        ]
+      },
+      {
+        "okf_id": "total-cost-of-ownership-modeler",
+        "match_type": "cost_modeling",
+        "systems": [
+          "or_tools_split_solver"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tier_n_risk_sentinel",
+    "name": "NexusShield — Multi-Tier Supply Network Sentinel",
+    "vertical": "02 · Source",
+    "scor_category": "Source (Strategic Sourcing & Category Procurement)",
+    "primary_objective": "Uncovers sub-tier supply vulnerabilities and single-source chokepoints in Cloud Spanner Graph, evaluates disruption impact, and executes dual-sourcing purchase order splits.",
+    "factory_matches": [
+      {
+        "okf_id": "supplier-risk-scoring-engine",
+        "match_type": "primary_core",
+        "systems": [
+          "spanner_subtier_graph",
+          "weathernext_geopolitical_hub",
+          "sap_s4hana_po_bridge"
+        ]
+      },
+      {
+        "okf_id": "sub-tier-visibility-agent",
+        "match_type": "network_graph",
+        "systems": [
+          "kinaxis_meio_buffer_manager"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tariff_esg_agent",
+    "name": "ClauseGuard — Contract Intelligence & Trade Compliance Agent",
+    "vertical": "02 · Source",
+    "scor_category": "Source (Strategic Sourcing & Category Procurement)",
+    "primary_objective": "Audits purchasing spend against contract rebate clauses in AlloyDB pgvector, recovers uncollected rebates, and locks 10-digit HS tariff classifications in SAP GTS.",
+    "factory_matches": [
+      {
+        "okf_id": "contract-compliance-auditor",
+        "match_type": "primary_core",
+        "systems": [
+          "alloydb_contract_rag",
+          "customs_tariff_database",
+          "sap_gts_compliance",
+          "sap_ap_finance"
+        ]
+      },
+      {
+        "okf_id": "clause-risk-analyzer",
+        "match_type": "clause_mining",
+        "systems": [
+          "document_ai"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "supplier_quality_sentinel",
+    "name": "QualiShield — Predictive Supplier Quality & NCR Resolver",
+    "vertical": "02 · Source",
+    "scor_category": "Source (Strategic Sourcing & Category Procurement)",
+    "primary_objective": "Monitors supplier Certificate of Analysis (CoA) lot inspections and SPC / Cpk drift, quarantines out-of-spec lots in SAP QM, and triggers 8D CAPA with automated COPQ vendor debit memos.",
+    "factory_matches": [
+      {
+        "okf_id": "supplier-quality-scorecard-engine",
+        "match_type": "primary_core",
+        "systems": [
+          "sap_qm_s4hana",
+          "mes_supplier_telemetry",
+          "trackwise_etq_capa",
+          "sap_fi_copq_ledger"
+        ]
+      },
+      {
+        "okf_id": "nonconformance-triage-agent",
+        "match_type": "capa_workflow",
+        "systems": [
+          "trackwise_etq_capa"
+        ]
+      }
+    ]
   }
 ]

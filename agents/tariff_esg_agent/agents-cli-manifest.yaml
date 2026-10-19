@@ -1,0 +1,20 @@
+schema_version: "v1"
+id: "tariff_esg_agent"
+name: "ClauseGuard — Contract Intelligence & Trade Compliance Agent"
+description: "Audits purchase orders against contract rebate/indexation clauses in AlloyDB pgvector and automates 10-digit HS tariff classification across customs borders."
+agent_class: "app.agent.TariffEsgAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_contract_clause_obligations"
+  - "query_supplier_rebate_accruals"
+  - "query_hs_tariff_classifications"
+  - "query_cross_border_duty_impact"
+  - "action_lock_hs_tariff_classification"
+  - "action_issue_supplier_rebate_debit_memo"
+metadata:
+  scor_category: "02 · Source (Strategic Sourcing & Category Procurement)"
+  tier_coverage: "Global Commercial Supplier Contracts & Customs Border Checkpoints"
+  roi_focus: "99.6% tariff audit compliance, 100% earned supplier rebate recovery, zero customs border hold delays"

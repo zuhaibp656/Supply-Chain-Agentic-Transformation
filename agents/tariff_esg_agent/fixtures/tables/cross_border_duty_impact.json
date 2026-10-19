@@ -1,0 +1,28 @@
+[
+  {
+    "entry_id": "CUST-ENTRY-202610-01",
+    "part_number": "PART-CAN-ALUM-330ML",
+    "customs_port": "Port of New York / Newark",
+    "declared_customs_value_usd": 485000.0,
+    "declared_hs_code": "7612.90.1065",
+    "standard_duty_usd": 27645.0,
+    "preferential_duty_usd": 0.0,
+    "fta_duty_savings_usd": 27645.0,
+    "uflpa_origin_verified": true,
+    "cbam_carbon_intensity_kg_co2": 0.42,
+    "compliance_status": "DUTY_FREE_CLEARED"
+  },
+  {
+    "entry_id": "CUST-ENTRY-202610-02",
+    "part_number": "PART-ELECTROLYTE-SALT",
+    "customs_port": "Port of Los Angeles",
+    "declared_customs_value_usd": 320000.0,
+    "declared_hs_code": "2826.90.9000",
+    "standard_duty_usd": 9920.0,
+    "preferential_duty_usd": 0.0,
+    "fta_duty_savings_usd": 9920.0,
+    "uflpa_origin_verified": true,
+    "cbam_carbon_intensity_kg_co2": 0.18,
+    "compliance_status": "DUTY_FREE_CLEARED"
+  }
+]

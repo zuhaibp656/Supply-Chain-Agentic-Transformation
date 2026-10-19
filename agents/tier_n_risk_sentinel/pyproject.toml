@@ -1,0 +1,16 @@
+[project]
+name = "tier-n-risk-sentinel"
+version = "0.1.0"
+description = "High-Code Google ADK Agent for NexusShield Multi-Tier Supply Network Sentinel & Spanner Graph."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=0.1.0",
+    "google-genai>=1.0.0",
+    "pydantic>=2.0.0",
+    "pytest>=7.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

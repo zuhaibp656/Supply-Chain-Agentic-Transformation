@@ -1,0 +1,27 @@
+name: supplier_quality_sentinel
+display_name: "QualiShield — Predictive Supplier Quality & NCR Resolver"
+version: 0.1.0
+runtime: python310
+entrypoint: app.agent:SupplierQualitySentinelAgent
+framework: google-adk
+vertical: "02_source"
+description: >
+  QualiShield continuously monitors supplier Certificate of Analysis (CoA) lot inspections,
+  MES machine sensor telemetry, and statistical process control (SPC / Cpk) drift.
+  It detects microscopic dimension and chemical variations before assembly lines halt,
+  places non-conforming lots into digital quarantine in SAP QM, triggers automated 8D CAPA
+  investigations in TrackWise/ETQ, and issues Cost of Poor Quality (COPQ) supplier debit memos.
+
+parameters:
+  model: "gemini-3-pro-preview"
+  temperature: 0.1
+  max_output_tokens: 4096
+
+tools:
+  - app.tools:list_systems
+  - app.tools:query_supplier_coa_inspections
+  - app.tools:query_spc_cpk_drift_metrics
+  - app.tools:query_quality_deviation_tickets
+  - app.tools:query_cost_of_poor_quality_ledger
+  - app.tools:action_quarantine_inspection_lot
+  - app.tools:action_trigger_8d_capa_debit

@@ -1,0 +1,20 @@
+schema_version: "v1"
+id: "rfq_should_cost_agent"
+name: "SourcePulse — Parametric Should-Cost & Autonomous RFQ Agent"
+description: "Builds parametric BOM should-cost models in BigQuery linked to live commodity indices, normalizes bids via Document AI, and solves combinatorial award splits in OR-Tools."
+agent_class: "app.agent.RfqShouldCostAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_material_should_cost_bom"
+  - "query_commodity_index_rates"
+  - "query_supplier_rfq_bids"
+  - "query_combinatorial_award_scenarios"
+  - "action_award_supplier_contract"
+  - "action_challenge_vendor_outlier"
+metadata:
+  scor_category: "02 · Source (Strategic Sourcing & Category Procurement)"
+  tier_coverage: "Direct Raw Materials / Global Tier-1 Component Fabricators"
+  roi_focus: "+6.8% direct material cost savings, RFQ analysis compressed from 3 weeks to 15 mins, optimal dual-sourcing"

@@ -1,0 +1,16 @@
+[
+  {
+    "scenario_id": "SCENARIO-SHOULD-COST-01",
+    "name": "Aluminum Can Parametric Should-Cost & Dual-Source RFQ Award",
+    "query": "Normalize supplier RFQ bids for 330ml aluminum cans, challenge Ardagh outlier pricing, and award 70/30 dual-source split to Ball and Crown in SAP Ariba.",
+    "expected_proof_obligations": [
+      "Query parametric should-cost BOM for PART-CAN-ALUM-330ML",
+      "Query live LME primary aluminum cash index rates",
+      "Query Document AI normalized supplier quote proposals",
+      "Dispatch fact-based negotiation challenge on outlier bid",
+      "Commit optimal 70/30 dual-source contract award to SAP Ariba Sourcing",
+      "Generate VegaChart cost comparison chart and atomic copy-ready markdown table"
+    ],
+    "sla_seconds": 15
+  }
+]

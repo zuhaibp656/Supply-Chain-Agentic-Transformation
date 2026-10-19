@@ -84,9 +84,9 @@ agents/<agent_id>/
 
 ---
 
-## 4. Current Implementation Status (8 Agents Completed & Verified)
+## 4. Current Implementation Status (12 Agents Completed & Verified)
 
-All 8 agents have been built with complete Google ADK compliance, deterministic fixtures, pre-execution quality gates, Vega-Lite visual surfaces, and 100% passing unit smoke tests (56/56 tests passing).
+All 12 agents have been built with complete Google ADK compliance, deterministic fixtures, pre-execution quality gates, Vega-Lite visual surfaces, and 100% passing unit smoke tests (84/84 tests passing).
 
 ### Completed Agents:
 1. **Universal Core 01**: `csco_control_tower_copilot` — TowerMind CSCO Control Tower Copilot (7/7 smoke tests pass)
@@ -97,7 +97,12 @@ All 8 agents have been built with complete Google ADK compliance, deterministic 
 6. **Vertical 01 · Plan 02**: `sop_scenario_weaver` — Synapse Autonomous S&OP Scenario Weaver (7/7 smoke tests pass)
 7. **Vertical 01 · Plan 03**: `promo_lift_simulator` — ElasticityIQ Demand Shaping & Promo Simulator (7/7 smoke tests pass)
 8. **Vertical 01 · Plan 04**: `cpfr_sync_agent` — ChannelSync Collaborative CPFR & POS Harmonizer (7/7 smoke tests pass)
+9. **Vertical 02 · Source 01**: `rfq_should_cost_agent` — SourcePulse Parametric Should-Cost & Autonomous RFQ Agent (7/7 smoke tests pass)
+10. **Vertical 02 · Source 02**: `tier_n_risk_sentinel` — NexusShield Multi-Tier Supply Network Sentinel (7/7 smoke tests pass)
+11. **Vertical 02 · Source 03**: `tariff_esg_agent` — ClauseGuard Contract Intelligence & Trade Compliance Agent (7/7 smoke tests pass)
+12. **Vertical 02 · Source 04**: `supplier_quality_sentinel` — QualiShield Predictive Supplier Quality & NCR Resolver (7/7 smoke tests pass)
 
 ### Next Vertical in Roadmap:
-- **02 · Source (Strategic Sourcing & Category Procurement)**: `rfq_should_cost_agent`, `tier_n_risk_sentinel`, `tariff_esg_agent`, `supplier_quality_sentinel`.
+- **03 · Make (Manufacturing Operations & Plant Floor Execution)**: `plant_oee_maintenance_agent` (AssetGuard), `finite_production_scheduler` (FlowMaster), `scrap_defect_root_cause_agent` (YieldMax), `inline_quality_inspection_agent` (VisionInspect).
+
 

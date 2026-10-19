@@ -1,0 +1,17 @@
+[
+  {
+    "scenario_id": "SCENARIO-NEXUS-01",
+    "name": "Tier-4 Bauxite Cyclone Disruption & Dual-Source Reallocation",
+    "query": "Detect Category 4 Cyclone threat on Weipa Bauxite mine in Australia, trace $18.2M revenue at risk across BOM lineage, and dispatch 50% PO split to Norway.",
+    "expected_proof_obligations": [
+      "Query active disruption threats for Queensland cyclone",
+      "Traverse sub-tier supplier graph nodes in Cloud Spanner Graph",
+      "Trace exposed finished goods and calculate total revenue at risk",
+      "Query mitigation playbook options for dual-source backup",
+      "Dispatch secondary supplier PO reallocation in SAP S/4HANA",
+      "Surge regional MEIO safety stock buffers by +7.0 days",
+      "Generate VegaChart multi-tier risk radar and atomic copy-ready markdown table"
+    ],
+    "sla_seconds": 15
+  }
+]

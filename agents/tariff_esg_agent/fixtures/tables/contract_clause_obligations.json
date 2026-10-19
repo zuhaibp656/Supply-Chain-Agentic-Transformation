@@ -1,0 +1,28 @@
+[
+  {
+    "contract_id": "MSA-BALL-2025-09",
+    "supplier_id": "VEND-BALL-CORP-101",
+    "supplier_name": "Ball Metal Packaging",
+    "effective_start": "2025-01-01",
+    "effective_end": "2027-12-31",
+    "clause_id": "CLAUSE-REBATE-VOL-04",
+    "clause_title": "Annual Volume Growth Incentive Rebate",
+    "threshold_volume_units": 40000000,
+    "rebate_percentage": 3.0,
+    "rebate_settlement_frequency": "ANNUAL_CALENDAR_YEAR",
+    "document_ai_extraction_confidence": 0.99
+  },
+  {
+    "contract_id": "MSA-ALCOA-2025-11",
+    "supplier_id": "VEND-ALCOA-SMELT-IS",
+    "supplier_name": "Alcoa International Smelter",
+    "effective_start": "2025-01-01",
+    "effective_end": "2026-12-31",
+    "clause_id": "CLAUSE-LME-CAP-02",
+    "clause_title": "Commodity Escalation Ceiling Cap",
+    "threshold_volume_units": 10000,
+    "rebate_percentage": 0.0,
+    "rebate_settlement_frequency": "QUARTERLY",
+    "document_ai_extraction_confidence": 0.98
+  }
+]

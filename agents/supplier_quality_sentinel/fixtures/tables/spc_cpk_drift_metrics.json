@@ -1,0 +1,42 @@
+[
+  {
+    "metric_id": "SPC-KY-ALN-2026W41",
+    "supplier_id": "VEND-KYOCERA-PREC-09",
+    "part_number": "PART-SUBSTRATE-ALN-01",
+    "production_line": "LINE-SINTERING-04",
+    "sample_timestamp": "2026-10-18T14:30:00Z",
+    "target_nominal": 180.0,
+    "usl": 190.0,
+    "lsl": 170.0,
+    "mean_observed": 164.2,
+    "standard_deviation": 3.8,
+    "ucl": 175.6,
+    "lcl": 152.8,
+    "cpk": 0.54,
+    "target_cpk": 1.67,
+    "cpk_status": "CRITICAL_DRIFT_UNSTABLE",
+    "drift_direction": "NEGATIVE_SHIFT_BELOW_LSL",
+    "estimated_defect_ppm": 52600,
+    "root_cause_hypothesis": "Sintering furnace zone 3 thermocouple calibration drift (-14°C offset)"
+  },
+  {
+    "metric_id": "SPC-MU-MLCC-2026W41",
+    "supplier_id": "VEND-MURATA-CAP-22",
+    "part_number": "PART-MLCC-0402-10UF",
+    "production_line": "LINE-SMT-DIE-01",
+    "sample_timestamp": "2026-10-18T13:00:00Z",
+    "target_nominal": 10.0,
+    "usl": 11.0,
+    "lsl": 9.0,
+    "mean_observed": 10.02,
+    "standard_deviation": 0.18,
+    "ucl": 10.54,
+    "lcl": 9.50,
+    "cpk": 1.81,
+    "target_cpk": 1.67,
+    "cpk_status": "HIGHLY_CAPABLE_STABLE",
+    "drift_direction": "CENTERED",
+    "estimated_defect_ppm": 0.3,
+    "root_cause_hypothesis": "Process nominal within six sigma capability"
+  }
+]
