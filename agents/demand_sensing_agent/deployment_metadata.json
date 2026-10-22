@@ -1,0 +1,12 @@
+{
+  "agent_id": "demand_sensing_agent",
+  "display_name": "Demand Sensing Engine (PulseCast)",
+  "ge_display_name": "PulseCast Demand Sensing",
+  "section": "01 \u00b7 Plan",
+  "project_id": "zuhaibp-ai",
+  "region": "us-central1",
+  "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/6872242617594150912",
+  "model": "gemini-3-pro-preview",
+  "deployed_at": "2026-10-22T09:44:12Z",
+  "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4275760174019143309"
+}

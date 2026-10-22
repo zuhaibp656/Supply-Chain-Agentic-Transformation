@@ -1,0 +1,12 @@
+{
+  "agent_id": "inline_quality_inspection_agent",
+  "display_name": "Inline Multimodal Quality Inspector (VisionInspect)",
+  "ge_display_name": "VisionInspect Quality",
+  "section": "03 \u00b7 Make",
+  "project_id": "zuhaibp-ai",
+  "region": "us-central1",
+  "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/2816047465705242624",
+  "model": "gemini-3.8-flash",
+  "deployed_at": "2026-10-22T09:47:22Z",
+  "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/14928798980920927172"
+}

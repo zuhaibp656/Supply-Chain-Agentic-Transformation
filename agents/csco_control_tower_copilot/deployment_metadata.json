@@ -1,0 +1,12 @@
+{
+  "agent_id": "csco_control_tower_copilot",
+  "display_name": "CSCO Control Tower Copilot (TowerMind)",
+  "ge_display_name": "TowerMind Control Tower",
+  "section": "Universal Core",
+  "project_id": "zuhaibp-ai",
+  "region": "us-central1",
+  "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/2865587061606318080",
+  "model": "gemini-3-pro-preview",
+  "deployed_at": "2026-10-22T09:44:46Z",
+  "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4015823380636158533"
+}

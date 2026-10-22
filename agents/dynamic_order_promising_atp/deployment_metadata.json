@@ -1,0 +1,12 @@
+{
+  "agent_id": "dynamic_order_promising_atp",
+  "display_name": "Sub-50ms Spanner ATP & Order Promising (PromiseGuard)",
+  "ge_display_name": "PromiseGuard ATP",
+  "section": "04 \u00b7 Fulfill",
+  "project_id": "zuhaibp-ai",
+  "region": "us-central1",
+  "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/8558136990602625024",
+  "model": "gemini-3-pro-preview",
+  "deployed_at": "2026-10-22T09:48:42Z",
+  "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/6469216377587188453"
+}

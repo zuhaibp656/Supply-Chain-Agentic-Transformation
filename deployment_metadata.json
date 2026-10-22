@@ -7,100 +7,142 @@
       "agent_id": "csco_control_tower_copilot",
       "section": "Universal Core",
       "display_name": "CSCO Control Tower Copilot (TowerMind)",
+      "ge_display_name": "TowerMind Control Tower",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-csco_control_tower_copilot"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2865587061606318080",
+      "deployed_at": "2026-10-22T09:44:46Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4015823380636158533"
     },
     {
       "agent_id": "disruption_war_room_orchestrator",
       "section": "Universal Core",
       "display_name": "Disruption War Room Orchestrator (StormShield)",
+      "ge_display_name": "StormShield War Room",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-disruption_war_room_orchestrator"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1211217885989437440",
+      "deployed_at": "2026-10-22T09:44:39Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4685464268735078343"
     },
     {
       "agent_id": "demand_sensing_agent",
       "section": "01 \u00b7 Plan",
       "display_name": "Demand Sensing Engine (PulseCast)",
+      "ge_display_name": "PulseCast Demand Sensing",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-demand_sensing_agent"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6872242617594150912",
+      "deployed_at": "2026-10-22T09:44:12Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4275760174019143309"
     },
     {
       "agent_id": "sop_scenario_weaver",
       "section": "01 \u00b7 Plan",
       "display_name": "S&OP Scenario Weaver (Synapse)",
+      "ge_display_name": "Synapse S&OP Weaver",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-sop_scenario_weaver"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8086384929635565568",
+      "deployed_at": "2026-10-22T09:44:16Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9189674696747625515"
     },
     {
       "agent_id": "rfq_should_cost_agent",
       "section": "02 \u00b7 Source",
       "display_name": "Parametric Should-Cost & RFQ Agent (SourcePulse)",
+      "ge_display_name": "SourcePulse Should-Cost",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-rfq_should_cost_agent"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/7647283965966942208",
+      "deployed_at": "2026-10-22T09:44:03Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/18006815538360774894"
     },
     {
       "agent_id": "tier_n_risk_sentinel",
       "section": "02 \u00b7 Source",
       "display_name": "Multi-Tier Supply Network Sentinel (NexusShield)",
+      "ge_display_name": "NexusShield Risk Sentinel",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-tier_n_risk_sentinel"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5121890474918936576",
+      "deployed_at": "2026-10-22T09:47:06Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/6167693086894539620"
     },
     {
       "agent_id": "plant_oee_maintenance_agent",
       "section": "03 \u00b7 Make",
       "display_name": "Plant OEE & Maintenance Guardian (AssetGuard)",
+      "ge_display_name": "AssetGuard Plant OEE",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-plant_oee_maintenance_agent"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/4659145613206618112",
+      "deployed_at": "2026-10-22T09:47:49Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/12855910931272362848"
     },
     {
       "agent_id": "inline_quality_inspection_agent",
       "section": "03 \u00b7 Make",
       "display_name": "Inline Multimodal Quality Inspector (VisionInspect)",
+      "ge_display_name": "VisionInspect Quality",
       "model": "gemini-3.8-flash",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-inline_quality_inspection_agent"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2816047465705242624",
+      "deployed_at": "2026-10-22T09:47:22Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/14928798980920927172"
     },
     {
       "agent_id": "echelon_inventory_allocator",
       "section": "04 \u00b7 Fulfill",
       "display_name": "Multi-Echelon Inventory Allocator (EchelonFlow)",
+      "ge_display_name": "EchelonFlow MEIO",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-echelon_inventory_allocator"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/9178085626807844864",
+      "deployed_at": "2026-10-22T09:48:23Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9879109757966221077"
     },
     {
       "agent_id": "dynamic_order_promising_atp",
       "section": "04 \u00b7 Fulfill",
       "display_name": "Sub-50ms Spanner ATP & Order Promising (PromiseGuard)",
+      "ge_display_name": "PromiseGuard ATP",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-dynamic_order_promising_atp"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8558136990602625024",
+      "deployed_at": "2026-10-22T09:48:42Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/6469216377587188453"
     },
     {
       "agent_id": "fleetflow_dispatch",
       "section": "05 \u00b7 Deliver",
       "display_name": "Google Maps Corridor Route & Fleet Dispatch Studio (FleetFlow)",
+      "ge_display_name": "FleetFlow Route & Dispatch",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-fleetflow_dispatch"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1064147210658119680",
+      "deployed_at": "2026-10-22T09:49:56Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9502278280664039255"
     },
     {
       "agent_id": "load_consolidation_agent",
       "section": "05 \u00b7 Deliver",
       "display_name": "Isometric LIFO Bay & 3D Load Consolidation Studio (CubeMaster 3D)",
+      "ge_display_name": "CubeMaster 3D Load Studio",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-load_consolidation_agent"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/3771936486614630400",
+      "deployed_at": "2026-10-22T09:50:18Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/17846204712745878596"
     },
     {
       "agent_id": "reverse_rma_optimizer",
       "section": "06 \u00b7 Return & Enable",
       "display_name": "Autonomous RMA Grading & Circular Backhaul Optimizer (ReturnLoop)",
+      "ge_display_name": "ReturnLoop RMA & Backhaul",
       "model": "gemini-3.8-flash",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-reverse_rma_optimizer"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5468667646226464768",
+      "deployed_at": "2026-10-22T09:51:51Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/2869479596817501852"
     },
     {
       "agent_id": "carbon_scope3_ledger",
       "section": "06 \u00b7 Return & Enable",
       "display_name": "Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger (EcoChain)",
+      "ge_display_name": "EcoChain Scope-3 & CBAM",
       "model": "gemini-3-pro-preview",
-      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/verified-carbon_scope3_ledger"
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1067102697913581568",
+      "deployed_at": "2026-10-22T09:51:43Z",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/12043431535905541673"
     }
   ],
-  "updated_at": "2026-10-22T09:12:23Z"
+  "updated_at": "2026-10-22T09:52:40Z"
 }

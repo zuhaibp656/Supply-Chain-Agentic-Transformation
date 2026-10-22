@@ -1,0 +1,12 @@
+{
+  "agent_id": "reverse_rma_optimizer",
+  "display_name": "Autonomous RMA Grading & Circular Backhaul Optimizer (ReturnLoop)",
+  "ge_display_name": "ReturnLoop RMA & Backhaul",
+  "section": "06 \u00b7 Return & Enable",
+  "project_id": "zuhaibp-ai",
+  "region": "us-central1",
+  "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/5468667646226464768",
+  "model": "gemini-3.8-flash",
+  "deployed_at": "2026-10-22T09:51:51Z",
+  "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/2869479596817501852"
+}

@@ -254,8 +254,12 @@ def load_bq_tables(
                 }
                 api("POST", f"https://bigquery.googleapis.com/bigquery/v2/projects/{project}/datasets/{dataset}/tables",
                     body=tbl_body, token=token, project=project)
-                # Retry insert
-                api("POST", url, body={"rows": insert_rows}, token=token, project=project)
+                # Retry insert with short backoff for BigQuery metadata propagation
+                for attempt in range(4):
+                    time.sleep(1.5 * (attempt + 1))
+                    retry_res = api("POST", url, body={"rows": insert_rows}, token=token, project=project, ok404=True)
+                    if not retry_res.get("_404"):
+                        break
                 print(f"[CREATED & LOADED] BQ Table {dataset}.{name} ({len(rows)} rows)")
             else:
                 errs = res.get("insertErrors", [])

@@ -305,6 +305,18 @@ def get_token() -> str | None:
 
 
 def get_credentials():
+    adc_p = Path(os.path.expanduser("~/.config/gcloud/argolis_admin_adc.json"))
+    if adc_p.exists():
+        try:
+            import google.oauth2.credentials
+            from google.auth.transport.requests import Request
+            c = google.oauth2.credentials.Credentials.from_authorized_user_file(
+                str(adc_p), scopes=["https://www.googleapis.com/auth/cloud-platform"]
+            )
+            c.refresh(Request())
+            return c
+        except Exception:
+            pass
     tok = get_token()
     if tok:
         import google.oauth2.credentials
@@ -429,10 +441,12 @@ def deploy_agent_engine(
         print(f"[DRY-RUN VERIFIED] Loaded {spec['app_class']} ({display_name}) | model={spec['model']} | status={scenario_res.get('status')}")
         return f"projects/{project}/locations/{region}/reasoningEngines/verified-{agent_id}"
 
+    import google.auth
     import vertexai
     from vertexai import agent_engines
 
     creds = get_credentials()
+    google.auth.default = lambda *a, **k: (creds, project)
     vertexai.init(project=project, location=region, staging_bucket=f"gs://{staging_bucket}", credentials=creds)
 
     adk_app = app_cls(agent=root_agent)
@@ -442,63 +456,70 @@ def deploy_agent_engine(
         "SC_MODEL": spec["model"],
     }
 
-    # extra_packages points to the agent's app and fixtures directories
-    extra_packages = [str(agent_dir / "app")]
-    if (agent_dir / "fixtures").exists():
-        extra_packages.append(str(agent_dir / "fixtures"))
+    prev_cwd = os.getcwd()
+    os.chdir(agent_dir)
+    try:
+        # Relative paths inside agent_dir so dependencies.tar.gz extracts app/ and fixtures/ at root
+        extra_packages = ["app"]
+        if (agent_dir / "fixtures").exists():
+            extra_packages.append("fixtures")
 
-    kwargs = dict(
-        agent_engine=adk_app,
-        requirements=REQUIREMENTS,
-        extra_packages=extra_packages,
-        display_name=display_name,
-        description=spec["description"],
-        env_vars=env_vars,
-        resource_limits={"cpu": "2", "memory": "4Gi"},
-        min_instances=1,
-    )
+        kwargs = dict(
+            agent_engine=adk_app,
+            requirements=REQUIREMENTS,
+            extra_packages=extra_packages,
+            gcs_dir_name=agent_id,
+            display_name=display_name,
+            description=spec["description"],
+            env_vars=env_vars,
+            resource_limits={"cpu": "2", "memory": "4Gi"},
+            min_instances=1,
+        )
 
-    state_file = agent_dir / ".reasoning_engine_id"
-    existing = None
-    if state_file.exists():
-        try:
-            cached_id = state_file.read_text().strip()
-            existing = agent_engines.get(cached_id).resource_name
-        except Exception:
-            existing = None
+        state_file = agent_dir / ".reasoning_engine_id"
+        existing = None
+        if state_file.exists():
+            try:
+                cached_id = state_file.read_text().strip()
+                existing = agent_engines.get(cached_id).resource_name
+            except Exception:
+                existing = None
 
-    if not existing:
-        try:
-            for eng in agent_engines.list():
-                if getattr(eng, "display_name", "") == display_name:
-                    existing = eng.resource_name
-                    break
-        except Exception as e:
-            print(f"[WARN] Error listing reasoning engines: {e}")
+        if not existing:
+            try:
+                for eng in agent_engines.list():
+                    if getattr(eng, "display_name", "") == display_name:
+                        existing = eng.resource_name
+                        break
+            except Exception as e:
+                print(f"[WARN] Error listing reasoning engines: {e}")
 
-    t0 = time.time()
-    if existing:
-        print(f"[{agent_id}] UPDATING IN PLACE: {existing}")
-        eng = agent_engines.get(existing).update(**kwargs)
-    else:
-        print(f"[{agent_id}] CREATING Reasoning Engine '{display_name}' in {project}/{region} ...")
-        eng = agent_engines.create(**kwargs)
+        t0 = time.time()
+        if existing:
+            print(f"[{agent_id}] UPDATING IN PLACE: {existing}")
+            eng = agent_engines.get(existing).update(**kwargs)
+        else:
+            print(f"[{agent_id}] CREATING Reasoning Engine '{display_name}' in {project}/{region} ...")
+            eng = agent_engines.create(**kwargs)
 
-    res = eng.resource_name
-    state_file.write_text(res)
-    metadata = {
-        "agent_id": agent_id,
-        "display_name": display_name,
-        "section": spec["section"],
-        "project_id": project,
-        "region": region,
-        "reasoning_engine_resource_name": res,
-        "model": spec["model"],
-        "deployed_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-    }
-    (agent_dir / "deployment_metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
-    print(f"[{agent_id}] OK in {time.time() - t0:.1f}s: {res}")
-    return res
+        res = eng.resource_name
+        state_file.write_text(res)
+        metadata = {
+            "agent_id": agent_id,
+            "display_name": display_name,
+            "ge_display_name": spec["ge_display_name"],
+            "section": spec["section"],
+            "project_id": project,
+            "region": region,
+            "reasoning_engine_resource_name": res,
+            "model": spec["model"],
+            "deployed_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        }
+        (agent_dir / "deployment_metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
+        print(f"[{agent_id}] OK in {time.time() - t0:.1f}s: {res}")
+        return res
+    finally:
+        os.chdir(prev_cwd)
 
 
 # ==============================================================================
@@ -577,6 +598,7 @@ def main() -> None:
     parser.add_argument("--token", default="", help="OAuth2 access token override")
     parser.add_argument("--skip-ge", action="store_true", help="Skip registration in Gemini Enterprise")
     parser.add_argument("--skip-engine", action="store_true", help="Skip Vertex AI Agent Engine deployment")
+    parser.add_argument("--parallel", type=int, default=1, help="Number of parallel Reasoning Engine deploy workers")
     parser.add_argument("--dry-run", action="store_true", help="Dry run without calling GCP mutating APIs")
     args = parser.parse_args()
 
@@ -596,6 +618,7 @@ def main() -> None:
     print(f" Vertex Region  : {args.region}")
     print(f" GE App ID      : {args.gemini_app_id}")
     print(f" Flagship Count : {len(targets)} agents")
+    print(f" Parallelism    : {args.parallel} workers")
     print(f" Dry Run Mode   : {args.dry_run}")
     print("==================================================================")
 
@@ -606,53 +629,134 @@ def main() -> None:
 
     deployed_summary = []
 
-    for idx, agent_id in enumerate(targets, 1):
-        spec = FLAGSHIP_CONFIG[agent_id]
-        print(f"\n--- [{idx}/{len(targets)}] {agent_id} ({spec['section']}) ---")
-        engine_res = ""
-        if not args.skip_engine:
+    if args.parallel > 1 and len(targets) > 1 and not args.dry_run and not args.skip_engine:
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+
+        def _run_child_engine(aid: str) -> tuple[str, int, str]:
+            cmd = [
+                sys.executable,
+                str(Path(__file__).resolve()),
+                "--agent", aid,
+                "--project", args.project,
+                "--region", args.region,
+                "--staging-bucket", staging_bucket,
+                "--media-bucket", media_bucket,
+                "--skip-ge",
+            ]
+            print(f"[PARALLEL START] Launching Reasoning Engine deploy for {aid} ...")
+            proc = subprocess.run(cmd, capture_output=True, text=True)
+            out = (proc.stdout or "") + ("\n" + proc.stderr if proc.stderr else "")
+            for line in out.splitlines():
+                if any(k in line for k in (f"[{aid}]", "ERROR", "WARN", "CREATING", "UPDATING")):
+                    print(line, flush=True)
+            return aid, proc.returncode, out
+
+        with ThreadPoolExecutor(max_workers=args.parallel) as pool:
+            futs = {pool.submit(_run_child_engine, aid): aid for aid in targets}
+            for fut in as_completed(futs):
+                aid, rc, out = fut.result()
+                if rc != 0:
+                    print(f"[{aid}] Child deploy exited with code {rc}:\n{out[-600:]}")
+
+        # Now register all deployed engines in Gemini Enterprise sequentially
+        for idx, agent_id in enumerate(targets, 1):
+            spec = FLAGSHIP_CONFIG[agent_id]
+            state_file = ROOT / "agents" / agent_id / ".reasoning_engine_id"
+            engine_res = state_file.read_text().strip() if state_file.exists() else ""
+            if not args.skip_ge and engine_res:
+                try:
+                    register_gemini_enterprise(
+                        agent_id,
+                        spec,
+                        args.project,
+                        engine_res,
+                        args.gemini_app_id,
+                        args.gemini_app_location,
+                        dry_run=args.dry_run,
+                    )
+                except Exception as e:
+                    print(f"[{agent_id}] ERROR registering in Gemini Enterprise: {e}")
+            deployed_summary.append({
+                "agent_id": agent_id,
+                "section": spec["section"],
+                "display_name": spec["display_name"],
+                "ge_display_name": spec["ge_display_name"],
+                "model": spec["model"],
+                "reasoning_engine": engine_res,
+            })
+    else:
+        for idx, agent_id in enumerate(targets, 1):
+            spec = FLAGSHIP_CONFIG[agent_id]
+            print(f"\n--- [{idx}/{len(targets)}] {agent_id} ({spec['section']}) ---")
+            engine_res = ""
+            if not args.skip_engine:
+                try:
+                    engine_res = deploy_agent_engine(
+                        agent_id, spec, args.project, args.region, staging_bucket, dry_run=args.dry_run
+                    )
+                except Exception as e:
+                    print(f"[{agent_id}] ERROR deploying Reasoning Engine: {e}")
+                    if not args.dry_run:
+                        continue
+            else:
+                state_file = ROOT / "agents" / agent_id / ".reasoning_engine_id"
+                if state_file.exists():
+                    engine_res = state_file.read_text().strip()
+
+            if not args.skip_ge and engine_res:
+                try:
+                    register_gemini_enterprise(
+                        agent_id,
+                        spec,
+                        args.project,
+                        engine_res,
+                        args.gemini_app_id,
+                        args.gemini_app_location,
+                        dry_run=args.dry_run,
+                    )
+                except Exception as e:
+                    print(f"[{agent_id}] ERROR registering in Gemini Enterprise: {e}")
+
+            deployed_summary.append({
+                "agent_id": agent_id,
+                "section": spec["section"],
+                "display_name": spec["display_name"],
+                "ge_display_name": spec["ge_display_name"],
+                "model": spec["model"],
+                "reasoning_engine": engine_res,
+            })
+
+    # Aggregate all per-agent deployment_metadata.json files into root deployment_metadata.json
+    all_deployed = []
+    for aid, aspec in FLAGSHIP_CONFIG.items():
+        meta_file = ROOT / "agents" / aid / "deployment_metadata.json"
+        if meta_file.exists():
             try:
-                engine_res = deploy_agent_engine(
-                    agent_id, spec, args.project, args.region, staging_bucket, dry_run=args.dry_run
-                )
-            except Exception as e:
-                print(f"[{agent_id}] ERROR deploying Reasoning Engine: {e}")
-                if not args.dry_run:
-                    continue
+                m = json.loads(meta_file.read_text(encoding="utf-8"))
+                all_deployed.append({
+                    "agent_id": aid,
+                    "section": aspec["section"],
+                    "display_name": aspec["display_name"],
+                    "ge_display_name": aspec["ge_display_name"],
+                    "model": aspec["model"],
+                    "reasoning_engine": m.get("reasoning_engine_resource_name", ""),
+                    "deployed_at": m.get("deployed_at", ""),
+                })
+            except Exception:
+                pass
+    if not all_deployed:
+        all_deployed = deployed_summary
 
-        if not args.skip_ge and engine_res:
-            try:
-                register_gemini_enterprise(
-                    agent_id,
-                    spec,
-                    args.project,
-                    engine_res,
-                    args.gemini_app_id,
-                    args.gemini_app_location,
-                    dry_run=args.dry_run,
-                )
-            except Exception as e:
-                print(f"[{agent_id}] ERROR registering in Gemini Enterprise: {e}")
-
-        deployed_summary.append({
-            "agent_id": agent_id,
-            "section": spec["section"],
-            "display_name": spec["display_name"],
-            "model": spec["model"],
-            "reasoning_engine": engine_res,
-        })
-
-    # Save summary metadata
     summary_path = ROOT / "deployment_metadata.json"
     summary_data = {
         "project_id": args.project,
         "region": args.region,
         "gemini_app_id": args.gemini_app_id,
-        "agents_deployed": deployed_summary,
+        "agents_deployed": all_deployed,
         "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }
     summary_path.write_text(json.dumps(summary_data, indent=2) + "\n")
-    print(f"\n✅ Deployment pipeline finished! Summary saved to {summary_path}")
+    print(f"\n✅ Deployment pipeline finished! Summary ({len(all_deployed)} agents) saved to {summary_path}")
 
 
 if __name__ == "__main__":
