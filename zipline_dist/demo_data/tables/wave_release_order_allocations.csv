@@ -1,0 +1,3 @@
+wave_id,dc_id,zone_id,allocated_orders_count,total_pick_lines,active_pickers_count,target_pick_rate_lines_hr,actual_pick_rate_lines_hr,wave_congestion_score,recommended_max_pickers,status
+WAVE-20261022-AM-01,RDC-DALLAS-02,ZONE-BULK-MEZZANINE,450,1820,16,140,92,0.84,10,ZONE_SATURATED_THROTTLING_RECOMMENDED
+WAVE-20261022-AM-02,RDC-DALLAS-02,ZONE-GOLDEN-FLOW-RACK,620,3100,12,220,235,0.22,14,OPTIMAL_FLOW

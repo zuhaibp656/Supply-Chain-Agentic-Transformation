@@ -1,0 +1,4 @@
+signal_id,provider,region,event_type,temperature_anomaly_celsius,precipitation_anomaly_mm,projected_category_surge_pct,impacted_category,confidence_score,valid_from,valid_to
+SIG-WN3-TX-HEAT,Google DeepMind WeatherNext 3,US-CENTRAL,UNSEASONABLE_HEATWAVE,6.8,-14.2,28.5,Hydration Beverages,0.94,2026-10-18,2026-10-25
+SIG-WN3-SE-HURR,Google DeepMind WeatherNext 3,US-SOUTHEAST,TROPICAL_DEPRESSION,-2.1,110.0,34.0,Emergency Nutrition & Water,0.89,2026-10-19,2026-10-24
+SIG-GMAPS-FOOT-CHI,Google Maps Mobility & Foot Traffic,US-MIDWEST,SPORTS_MARATHON_SURGE,1.2,0.0,19.0,Health Snacks,0.91,2026-10-21,2026-10-23

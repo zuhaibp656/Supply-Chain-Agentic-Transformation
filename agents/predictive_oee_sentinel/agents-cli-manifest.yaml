@@ -1,0 +1,27 @@
+name: predictive_oee_sentinel
+display_name: "AssetGuard — Plant Predictive Maintenance & OEE Asset Guardian"
+version: 0.1.0
+runtime: python310
+entrypoint: app.agent:PlantOeeMaintenanceAgent
+framework: google-adk
+vertical: "03_make"
+description: >
+  AssetGuard monitors shopfloor vibration, temperature, and motor current telemetry from
+  Siemens Opcenter MES and OSIsoft PI Historian. It computes live Overall Equipment Effectiveness
+  (OEE: Availability, Performance, Quality), detects bearing and spindle degradation before
+  unplanned downtime occurs, dispatches automated SAP PM maintenance work orders, and reserves
+  critical spare parts in SAP MM.
+
+parameters:
+  model: "gemini-3-pro-preview"
+  temperature: 0.1
+  max_output_tokens: 4096
+
+tools:
+  - app.tools:list_systems
+  - app.tools:query_plant_machine_telemetry
+  - app.tools:query_oee_breakdown_metrics
+  - app.tools:query_predictive_maintenance_anomalies
+  - app.tools:query_spare_parts_inventory_status
+  - app.tools:action_dispatch_preventive_work_order
+  - app.tools:action_reserve_spare_parts

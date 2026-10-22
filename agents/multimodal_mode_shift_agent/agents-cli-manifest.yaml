@@ -1,0 +1,22 @@
+name: multimodal_mode_shift_agent
+display_name: "ModalShift — Factory→Ship→Air→Rail→Truck Dynamic Mode-Switch Broker"
+description: "Continuously solves the multi-objective Pareto trade-off between freight cost, transit lead-time, Scope-3 carbon, and downstream stockout penalty across Ocean, Sea-Air, Air, Rail, and Road."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "05 · Deliver"
+category: "Logistics, Fleet & Transportation Management"
+tags:
+  - mode-shift
+  - sea-air-hybrid
+  - multi-modal-milp
+  - or-tools
+  - pareto-frontier
+entrypoint: "app.agent:MultimodalModeShiftAgent"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_factory_gate_outbound_pos"
+  - "app.tools:query_multimodal_corridor_rate_tariff_matrix"
+  - "app.tools:query_dynamic_mode_split_recommendations"
+  - "app.tools:query_in_transit_mode_diversion_triggers"
+  - "app.tools:action_execute_dynamic_mode_split_booking"
+  - "app.tools:action_trigger_mid_route_sea_air_upgrade"

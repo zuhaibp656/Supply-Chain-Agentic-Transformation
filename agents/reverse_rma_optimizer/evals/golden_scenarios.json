@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "reverse_rma_optimizer_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for ReturnLoop \u2014 Autonomous RMA Grading & Backhaul Optimizer.",
+    "expected_tools": [
+      "query_customer_rma_intake_requests",
+      "query_multimodal_vision_grading_results",
+      "query_fleet_backhaul_pickup_slots",
+      "query_circular_disposition_routing_ledger",
+      "action_assign_rma_disposition_and_backhaul",
+      "action_issue_instant_customer_rma_credit_or_swap"
+    ],
+    "expected_status": "success"
+  }
+]

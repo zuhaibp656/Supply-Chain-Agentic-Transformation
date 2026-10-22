@@ -1,0 +1,2 @@
+record_id,trailer_id,carrier_id,carrier_name,current_dwell_minutes,free_detention_threshold_minutes,minutes_until_penalty,hourly_detention_rate_usd,projected_detention_penalty_usd,turnaround_sla_status,recommended_action
+DET-RISK-20261022-01,TRL-SWIFT-7741,CARRIER-SWIFT-TRANS,Swift Transportation,85.0,120.0,35.0,85.0,255.0,EXPEDITE_REQUIRED_TO_AVOID_FEE,DISPATCH_SPOTTER_TO_CROSSDOCK_08

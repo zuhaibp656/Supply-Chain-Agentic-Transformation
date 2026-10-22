@@ -1,0 +1,4 @@
+pallet_group_id,shipment_wave_id,stop_number,Stop_Name,length_mm,width_mm,height_mm,weight_kg,max_top_load_kg,fragility_tier
+PLT-STOP3-HVY01,WAVE-3D-20261022-09,3,San Antonio Depot,1200,1000,1450,840,1800,HEAVY_BASE
+PLT-STOP2-MED04,WAVE-3D-20261022-09,2,San Marcos DC,1200,1000,1300,520,950,STANDARD_MID
+PLT-STOP1-FRG02,WAVE-3D-20261022-09,1,Austin Supercenter,1200,1000,1100,280,0,TOP_ONLY_FRAGILE

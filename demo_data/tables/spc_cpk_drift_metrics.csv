@@ -1,0 +1,3 @@
+metric_id,supplier_id,part_number,production_line,sample_timestamp,target_nominal,usl,lsl,mean_observed,standard_deviation,ucl,lcl,cpk,target_cpk,cpk_status,drift_direction,estimated_defect_ppm,root_cause_hypothesis
+SPC-KY-ALN-2026W41,VEND-KYOCERA-PREC-09,PART-SUBSTRATE-ALN-01,LINE-SINTERING-04,2026-10-18T14:30:00Z,180.0,190.0,170.0,164.2,3.8,175.6,152.8,0.54,1.67,CRITICAL_DRIFT_UNSTABLE,NEGATIVE_SHIFT_BELOW_LSL,52600,Sintering furnace zone 3 thermocouple calibration drift (-14°C offset)
+SPC-MU-MLCC-2026W41,VEND-MURATA-CAP-22,PART-MLCC-0402-10UF,LINE-SMT-DIE-01,2026-10-18T13:00:00Z,10.0,11.0,9.0,10.02,0.18,10.54,9.5,1.81,1.67,HIGHLY_CAPABLE_STABLE,CENTERED,0.3,Process nominal within six sigma capability

@@ -1,0 +1,22 @@
+name: reverse_rma_optimizer
+display_name: "ReturnLoop — Autonomous RMA Grading & Backhaul Optimizer"
+description: "Combines Gemini 3.8 Flash optical RMA triage with returning FleetFlow backhaul insertion and margin-maximizing circular disposition (Grade-A Restock, Refurbish, Component Harvest)."
+version: "0.1.0"
+model: "gemini-3.8-flash"
+vertical: "06 · Return & Enable"
+category: "Reverse Logistics, Circularity & ESG"
+tags:
+  - reverse-logistics
+  - rma-vision-grading
+  - fleet-backhaul
+  - circular-economy
+  - remanufacturing
+entrypoint: "app.agent:ReverseRmaOptimizer"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_customer_rma_intake_requests"
+  - "app.tools:query_multimodal_vision_grading_results"
+  - "app.tools:query_fleet_backhaul_pickup_slots"
+  - "app.tools:query_circular_disposition_routing_ledger"
+  - "app.tools:action_assign_rma_disposition_and_backhaul"
+  - "app.tools:action_issue_instant_customer_rma_credit_or_swap"

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "planogram_merchandising_vision_auditor"
+version = "0.1.0"
+description = "Uses Gemini 3.8 Flash multimodal vision to audit retail store shelf photos in under 2 seconds, measuring Share-of-Shelf (SOS), eye-level facings, cooler purity, and on-shelf availability."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

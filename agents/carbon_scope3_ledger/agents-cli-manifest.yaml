@@ -1,0 +1,22 @@
+name: carbon_scope3_ledger
+display_name: "EcoChain — Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger"
+description: "Calculates audit-ready ISO 14083 & GLEC v3.0 shipment-level Scope-3 emissions from primary telematics, generates EU CBAM embedded carbon declarations, and verifies EUDR zero-deforestation plots via Google Earth Engine."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "06 · Return & Enable"
+category: "Sustainability, CBAM & Scope-3 ESG"
+tags:
+  - scope3-carbon
+  - iso-14083
+  - eu-cbam
+  - eudr-earth-engine
+  - glec-framework
+entrypoint: "app.agent:CarbonScope3Ledger"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_shipment_level_scope3_emissions"
+  - "app.tools:query_eu_cbam_embedded_carbon_declarations"
+  - "app.tools:query_eudr_earth_engine_plot_verifications"
+  - "app.tools:query_low_carbon_carrier_and_supplier_swaps"
+  - "app.tools:action_certify_cbam_and_eudr_compliance_dossier"
+  - "app.tools:action_commit_scope3_decarbonization_swap"

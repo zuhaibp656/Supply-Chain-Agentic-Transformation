@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reverse_rma_optimizer"
+version = "0.1.0"
+description = "Combines Gemini 3.8 Flash optical RMA triage with returning FleetFlow backhaul insertion and margin-maximizing circular disposition (Grade-A Restock, Refurbish, Component Harvest)."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

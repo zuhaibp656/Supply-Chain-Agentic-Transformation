@@ -1,0 +1,20 @@
+[
+  {
+    "manifest_id": "XDOCK-MNF-20261022-041",
+    "inbound_trailer_id": "TRL-INB-SWIFT-9921",
+    "supplier_id": "SUP-OATLY-PLANT-01",
+    "carrier_name": "Swift Transportation",
+    "inbound_door_id": "DOOR-INBOUND-04",
+    "total_pallets_count": 24,
+    "eligible_flowthrough_pallets": 18,
+    "staging_required_pallets": 6,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  }
+]

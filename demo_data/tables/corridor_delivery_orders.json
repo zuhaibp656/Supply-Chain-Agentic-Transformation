@@ -1,0 +1,32 @@
+[
+  {
+    "order_id": "ORD-FF-901",
+    "corridor_id": "CORR-I35-TEX",
+    "customer_hub": "Austin Supercenter #14",
+    "stop_sequence": 1,
+    "weight_kg": 4850,
+    "cube_m3": 18.4,
+    "time_window": "06:00-08:30",
+    "sla_tier": "PLATINUM"
+  },
+  {
+    "order_id": "ORD-FF-902",
+    "corridor_id": "CORR-I35-TEX",
+    "customer_hub": "San Marcos Regional DC",
+    "stop_sequence": 2,
+    "weight_kg": 6200,
+    "cube_m3": 24.1,
+    "time_window": "09:15-11:30",
+    "sla_tier": "GOLD"
+  },
+  {
+    "order_id": "ORD-FF-903",
+    "corridor_id": "CORR-I35-TEX",
+    "customer_hub": "San Antonio South Depot",
+    "stop_sequence": 3,
+    "weight_kg": 7400,
+    "cube_m3": 29.8,
+    "time_window": "12:30-15:00",
+    "sla_tier": "PLATINUM"
+  }
+]

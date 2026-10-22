@@ -1,0 +1,4 @@
+material_id,description,material_type,base_uom,plant,mrp_type,planned_delivery_time_days,actual_historical_leadtime_days,leadtime_drift_days,safety_stock_units,reorder_point_units,storage_bin,weight_kg,length_cm,width_cm,height_cm,status
+MAT-880019,High-Voltage Power Inverter Module 800V SiC,FERT,EA,PLANT-1010,PD,21,46,25,150,450,A-12-04,18.5,45.0,35.0,22.0,DRIFT_ALERT
+MAT-440212,Lithium Iron Phosphate Battery Cell 3.2V 100Ah,ROH,EA,PLANT-1010,PD,35,38,3,2400,6000,BAY-C-01,2.1,14.8,4.0,9.5,NOMINAL
+MAT-901140,Sterile Borosilicate Glass Vial 10mL Type I,ROH,CS,PLANT-2020,PD,14,32,18,800,2200,WH-CLEAN-08,6.8,38.0,28.0,19.0,DRIFT_ALERT

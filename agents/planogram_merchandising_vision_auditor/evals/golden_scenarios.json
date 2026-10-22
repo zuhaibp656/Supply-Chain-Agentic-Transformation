@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "planogram_merchandising_vision_auditor_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for ShelfVision \u2014 Retail Planogram & Visibility Auditor.",
+    "expected_tools": [
+      "query_store_shelf_vision_audit_captures",
+      "query_contracted_planogram_templates",
+      "query_shelf_compliance_scoring_ledger",
+      "query_merchandising_corrective_tasks",
+      "action_dispatch_instore_restock_directive",
+      "action_certify_store_planogram_audit"
+    ],
+    "expected_status": "success"
+  }
+]

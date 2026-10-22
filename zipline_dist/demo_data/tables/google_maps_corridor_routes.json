@@ -1,0 +1,22 @@
+[
+  {
+    "route_id": "RTE-I35-20261022-01",
+    "corridor_id": "CORR-I35-TEX",
+    "assigned_vehicle_id": "TRK-24T-TX08",
+    "total_distance_km": 462.5,
+    "baseline_distance_km": 574.0,
+    "distance_saved_pct": 19.4,
+    "on_time_probability": 0.994,
+    "bridge_clearance_verified": true
+  },
+  {
+    "route_id": "RTE-I45-20261022-02",
+    "corridor_id": "CORR-I45-HOU",
+    "assigned_vehicle_id": "TRK-12T-TX14",
+    "total_distance_km": 388.0,
+    "baseline_distance_km": 465.0,
+    "distance_saved_pct": 16.6,
+    "on_time_probability": 0.989,
+    "bridge_clearance_verified": true
+  }
+]

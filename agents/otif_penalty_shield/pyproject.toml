@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "otif_penalty_shield"
+version = "0.1.0"
+description = "Predicts customer Must-Arrive-By-Date (MABD) OTIF breaches 72 hours early to trigger margin-positive rescues and auto-assembles geofence + EDI 856 dispute dossiers to overturn invalid retail chargebacks."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

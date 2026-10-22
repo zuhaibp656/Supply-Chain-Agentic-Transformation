@@ -1,0 +1,45 @@
+[
+  {
+    "schedule_id": "SCHED-OR-TOOLS-2026W42-01",
+    "workcenter_id": "WC-LINE-ASEPTIC-01",
+    "solver_engine": "OR_TOOLS_CPSAT_SOLVER",
+    "objective_value_min_changeover_hours": 4.5,
+    "baseline_unoptimized_changeover_hours": 9.5,
+    "changeover_hours_saved": 5.0,
+    "additional_production_capacity_liters": 37500,
+    "capacity_gain_value_usd": 18750.0,
+    "sequence_blocks": [
+      {
+        "sequence_order": 1,
+        "order_id": "ORD-PROD-202610-771",
+        "material_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
+        "planned_start": "2026-10-23T06:00:00Z",
+        "planned_end": "2026-10-23T12:00:00Z",
+        "run_hours": 6.0,
+        "cleanout_hours": 0.0,
+        "cleanout_type": "INITIAL_CLEAN_START"
+      },
+      {
+        "sequence_order": 2,
+        "order_id": "ORD-PROD-202610-773",
+        "material_id": "SKU-BEV-OATMILK-CHOCOLATE-1L",
+        "planned_start": "2026-10-23T12:30:00Z",
+        "planned_end": "2026-10-23T17:30:00Z",
+        "run_hours": 5.0,
+        "cleanout_hours": 0.5,
+        "cleanout_type": "LIGHT_SANITATION_LINE_FLUSH"
+      },
+      {
+        "sequence_order": 3,
+        "order_id": "ORD-PROD-202610-772",
+        "material_id": "SKU-BEV-ALMONDMILK-VANILLA-1L",
+        "planned_start": "2026-10-23T21:30:00Z",
+        "planned_end": "2026-10-24T01:30:00Z",
+        "run_hours": 4.0,
+        "cleanout_hours": 4.0,
+        "cleanout_type": "DEEP_ALLERGEN_CIP_WASH_ATP_SWAB"
+      }
+    ],
+    "optimization_status": "OPTIMAL_FEASIBLE_LOCKED"
+  }
+]

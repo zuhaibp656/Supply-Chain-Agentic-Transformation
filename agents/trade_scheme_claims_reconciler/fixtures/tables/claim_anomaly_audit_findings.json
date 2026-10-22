@@ -1,0 +1,13 @@
+[
+  {
+    "audit_id": "CLM-AUD-9921",
+    "claim_id": "CLM-DIST04-9921",
+    "flagged_invoices": [
+      "INV-SEC-8812",
+      "INV-SEC-8819"
+    ],
+    "anomaly_type": "POST_SCHEME_WINDOW_AND_DUPLICATE_GSTIN",
+    "disallowed_leakage_usd": 2190.0,
+    "verified_net_payout_usd": 16260.0
+  }
+]

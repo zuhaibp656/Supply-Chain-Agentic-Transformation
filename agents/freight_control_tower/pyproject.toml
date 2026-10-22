@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "freight_control_tower"
+version = "0.1.0"
+description = "Monitors real-time GPS/AIS/ADS-B and cold-chain thermal telemetry across all in-transit shipments while performing 100% 3-way freight invoice auditing against contract tariffs and geofences."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

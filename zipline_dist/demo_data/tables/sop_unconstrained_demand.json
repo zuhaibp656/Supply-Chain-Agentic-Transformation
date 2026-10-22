@@ -1,0 +1,32 @@
+[
+  {
+    "plan_month": "2026-11",
+    "business_unit": "Consumer Packaged Goods",
+    "product_family": "Hydration RTD",
+    "unconstrained_demand_units": 4800000,
+    "constrained_supply_units": 4150000,
+    "gap_units": 650000,
+    "unmet_revenue_usd": 3250000.0,
+    "primary_bottleneck": "Packaging Line 3 Autoclave at Plant Cincinnati"
+  },
+  {
+    "plan_month": "2026-11",
+    "business_unit": "Nutrition & Wellness",
+    "product_family": "Active Nutrition Bars",
+    "unconstrained_demand_units": 2400000,
+    "constrained_supply_units": 2200000,
+    "gap_units": 200000,
+    "unmet_revenue_usd": 1200000.0,
+    "primary_bottleneck": "Extruder Line 1 Die Cleanout & Shift Staffing"
+  },
+  {
+    "plan_month": "2026-11",
+    "business_unit": "Personal Care",
+    "product_family": "Eco Cleansers",
+    "unconstrained_demand_units": 1800000,
+    "constrained_supply_units": 1800000,
+    "gap_units": 0,
+    "unmet_revenue_usd": 0.0,
+    "primary_bottleneck": "None \u2014 Fully Buffered"
+  }
+]

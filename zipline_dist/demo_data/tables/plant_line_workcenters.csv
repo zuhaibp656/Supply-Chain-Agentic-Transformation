@@ -1,0 +1,3 @@
+workcenter_id,workcenter_name,plant_id,max_throughput_liters_hr,current_scheduled_load_pct,cleaning_in_place_system,operator_crew_size,active_shift_pattern,status
+WC-LINE-ASEPTIC-01,Aseptic Tetra Pak High-Speed Filling Line 01,PLANT-1020-AUSTIN,9000,82.5,AUTOMATED_CIP_SKID_01,4,3_SHIFTS_24_7,OPERATIONAL_ACTIVE
+WC-LINE-POUCH-02,Flexible Retort Pouch Standup Line 02,PLANT-1020-AUSTIN,4500,65.0,SEMI_MANUAL_CIP_SKID_02,3,2_SHIFTS_16_HOURS,OPERATIONAL_ACTIVE

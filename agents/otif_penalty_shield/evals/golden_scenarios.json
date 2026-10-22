@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "otif_penalty_shield_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for OTIFShield \u2014 Customer SLA Rescue & Chargeback Dispute Agent.",
+    "expected_tools": [
+      "query_open_retail_customer_orders_sla",
+      "query_predicted_otif_breach_alerts",
+      "query_retailer_otif_chargeback_deductions",
+      "query_geofence_edi856_dispute_dossiers",
+      "action_execute_otif_sla_rescue_intervention",
+      "action_submit_chargeback_dispute_dossier"
+    ],
+    "expected_status": "success"
+  }
+]

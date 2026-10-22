@@ -1,0 +1,3 @@
+copq_id,ticket_id,supplier_id,supplier_name,scrap_material_cost_usd,sorting_inspection_labor_usd,production_line_downtime_cost_usd,total_copq_amount_usd,recovery_status,sap_debit_memo_number,accounting_cost_center
+COPQ-202610-8841,NCR-202610-0914,VEND-KYOCERA-PREC-09,Kyocera Precision Ceramics,68750.0,8400.0,37500.0,114650.0,PENDING_DEBIT_ISSUANCE,,CC-MFG-AUSTIN-SMT-40
+COPQ-202609-7719,NCR-202609-0820,VEND-MURATA-CAP-22,Murata Manufacturing Co.,1250.0,650.0,0.0,1900.0,RECOVERED_DEBIT_POSTED,SAP-DM-91002341,CC-MFG-AUSTIN-SMT-40

@@ -1,0 +1,28 @@
+[
+  {
+    "order_id": "SO-8840192",
+    "order_type": "CUSTOMER_SALES_ORDER",
+    "customer": "Global Auto Group North America",
+    "destination_country": "USA",
+    "total_value_usd": 1850000,
+    "required_delivery_date": "2026-10-22",
+    "status": "JEOPARDY_STOCKOUT",
+    "days_delayed": 5,
+    "allocated_sku": "SKU-BATTERY-MODULE-800V",
+    "quantity": 450,
+    "escalation_tier": "TIER_1_EXECUTIVE"
+  },
+  {
+    "order_id": "PO-450098112",
+    "order_type": "SUPPLIER_PURCHASE_ORDER",
+    "supplier": "Taiwan Micro-Power Semiconductor Corp",
+    "destination_plant": "PLANT-STUTTGART-01",
+    "total_value_usd": 940000,
+    "required_delivery_date": "2026-10-18",
+    "status": "IN_TRANSIT_DELAYED",
+    "days_delayed": 6,
+    "allocated_sku": "SKU-SEMICON-PMIC-12",
+    "quantity": 12000,
+    "escalation_tier": "TIER_2_PROCUREMENT"
+  }
+]

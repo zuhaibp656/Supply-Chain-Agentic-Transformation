@@ -1,0 +1,22 @@
+name: trade_scheme_claims_reconciler
+display_name: "SchemeGuard — Secondary Trade Payout & Claims Sentinel"
+description: "Audits 100% of distributor secondary sales scheme claims against circular slab rules, e-waybill proof, and ShelfVision compliance—blocking phantom/split invoices and posting SAP FI credit notes."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "05 · Deliver"
+category: "Trade Marketing & Distribution (TM&D)"
+tags:
+  - trade-promotions
+  - claims-audit
+  - phantom-billing-detection
+  - sap-fi-credit-note
+  - tmd
+entrypoint: "app.agent:TradeSchemeClaimsReconciler"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_active_trade_promotion_schemes"
+  - "app.tools:query_distributor_secondary_claim_submissions"
+  - "app.tools:query_claim_anomaly_audit_findings"
+  - "app.tools:query_sap_fi_credit_note_settlements"
+  - "app.tools:action_flag_phantom_invoice_for_audit_hold"
+  - "app.tools:action_post_sap_fi_trade_credit_note"

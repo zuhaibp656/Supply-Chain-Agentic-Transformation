@@ -1,0 +1,30 @@
+[
+  {
+    "invoice_id": "INV-AP-489012",
+    "vendor_id": "VEND-10492",
+    "vendor_name": "Taiwan Micro-Power Semiconductor Corp",
+    "invoice_amount_usd": 940000.0,
+    "invoice_date": "2026-10-10",
+    "standard_net_due_date": "2026-12-09",
+    "early_discount_terms": "2/10 Net 60",
+    "discount_deadline_date": "2026-10-20",
+    "discount_pct": 0.02,
+    "cash_discount_amount_usd": 18800.0,
+    "annualized_roi_pct": 36.5,
+    "status": "DISCOUNT_ELIGIBLE"
+  },
+  {
+    "invoice_id": "INV-AP-489088",
+    "vendor_id": "VEND-8820",
+    "vendor_name": "Bosch Mobility Electronics",
+    "invoice_amount_usd": 1250000.0,
+    "invoice_date": "2026-10-12",
+    "standard_net_due_date": "2026-11-26",
+    "early_discount_terms": "1.5/15 Net 45",
+    "discount_deadline_date": "2026-10-27",
+    "discount_pct": 0.015,
+    "cash_discount_amount_usd": 18750.0,
+    "annualized_roi_pct": 18.25,
+    "status": "DISCOUNT_ELIGIBLE"
+  }
+]

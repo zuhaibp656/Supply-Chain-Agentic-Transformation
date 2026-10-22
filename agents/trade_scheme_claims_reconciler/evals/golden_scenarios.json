@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "trade_scheme_claims_reconciler_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for SchemeGuard \u2014 Secondary Trade Payout & Claims Sentinel.",
+    "expected_tools": [
+      "query_active_trade_promotion_schemes",
+      "query_distributor_secondary_claim_submissions",
+      "query_claim_anomaly_audit_findings",
+      "query_sap_fi_credit_note_settlements",
+      "action_flag_phantom_invoice_for_audit_hold",
+      "action_post_sap_fi_trade_credit_note"
+    ],
+    "expected_status": "success"
+  }
+]

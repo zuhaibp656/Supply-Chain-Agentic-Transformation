@@ -1,0 +1,3 @@
+bay_id,outbound_trailer_id,carrier_name,destination_dc,route_code,current_pallet_load_count,max_pallet_capacity,available_pallet_slots,scheduled_departure_timestamp,dock_status
+BAY-OUTBOUND-12,TRL-OUT-JB-HUNT-4481,J.B. Hunt Transport,RDC-HOUSTON-05,RTE-TX-SOUTH-HOU-01,16,26,10,2026-10-22T07:30:00Z,BAY_OPEN_ACCEPTING_TRANSFERS
+BAY-OUTBOUND-14,TRL-OUT-SCHNEIDER-8820,Schneider National,FDC-AUSTIN-04,RTE-TX-CENTRAL-ATX-02,18,26,8,2026-10-22T08:00:00Z,BAY_OPEN_ACCEPTING_TRANSFERS

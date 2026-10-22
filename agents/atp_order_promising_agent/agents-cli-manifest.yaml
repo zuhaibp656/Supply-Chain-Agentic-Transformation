@@ -1,0 +1,22 @@
+name: atp_order_promising_agent
+display_name: "PromiseGuard — Real-Time Dynamic ATP Order Promising Agent"
+description: "Sub-50ms Spanner order promising, customer allocation tier protection, real-time ATP/CTP calculation, and omnichannel fulfillment routing."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "04 · Fulfill"
+category: "Inventory & Network Optimization / MEIO"
+tags:
+  - atp
+  - order-promising
+  - allocation-tier
+  - spanner
+  - ctp
+entrypoint: "app.agent:DynamicOrderPromisingAtp"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_realtime_sku_atp_allocations"
+  - "app.tools:query_customer_tier_sla_commitments"
+  - "app.tools:query_inbound_customer_order_requests"
+  - "app.tools:query_order_promising_routing_decisions"
+  - "app.tools:action_commit_dynamic_order_promise"
+  - "app.tools:action_protect_tier1_allocation_reserve"

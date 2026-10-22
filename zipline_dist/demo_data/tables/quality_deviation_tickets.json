@@ -1,0 +1,32 @@
+[
+  {
+    "ticket_id": "NCR-202610-0914",
+    "inspection_lot_id": "LOT-INSP-202610-8841",
+    "supplier_id": "VEND-KYOCERA-PREC-09",
+    "supplier_name": "Kyocera Precision Ceramics",
+    "part_number": "PART-SUBSTRATE-ALN-01",
+    "defect_category": "MATERIAL_THERMAL_CONDUCTIVITY_DEFICIENCY",
+    "severity": "CRITICAL_STOP_SHIP",
+    "containment_action": "QUARANTINE_INCOMING_WAREHOUSE",
+    "trackwise_capa_id": "CAPA-8D-202610-044",
+    "eight_d_status": "D3_CONTAINMENT_ACTIVE",
+    "target_8d_closure_days": 14,
+    "assigned_supplier_sqe": "h.tanaka@kyocera-ceramics.example.com",
+    "created_at": "2026-10-18T15:00:00Z"
+  },
+  {
+    "ticket_id": "NCR-202609-0820",
+    "inspection_lot_id": "LOT-INSP-202609-7719",
+    "supplier_id": "VEND-MURATA-CAP-22",
+    "supplier_name": "Murata Manufacturing Co.",
+    "part_number": "PART-MLCC-0402-10UF",
+    "defect_category": "PACKAGING_REEL_TAPE_SPLICE_JAM",
+    "severity": "MINOR_NONDISRUPTIVE",
+    "containment_action": "LOT_SORTED_PASSED",
+    "trackwise_capa_id": "CAPA-8D-202609-021",
+    "eight_d_status": "D8_CONCLUDED_CLOSED",
+    "target_8d_closure_days": 0,
+    "assigned_supplier_sqe": "k.sato@murata.example.com",
+    "created_at": "2026-09-20T10:15:00Z"
+  }
+]

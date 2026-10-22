@@ -1,0 +1,3 @@
+record_id,pallet_id,inbound_door_id,outbound_bay_id,dwell_time_minutes,forklift_transfer_distance_m,staging_area_bypassed,labor_touch_count,baseline_labor_touches,transfer_status
+XDOCK-DWELL-20261022-01,PLT-OAT-9921-01,DOOR-INBOUND-04,BAY-OUTBOUND-12,18.5,48.0,True,1,3,DIRECT_CROSSDOCK_COMPLETED
+XDOCK-DWELL-20261022-02,PLT-OAT-9921-05,DOOR-INBOUND-04,STAGING-BUFFER-LANE-B,145.0,92.0,False,3,3,STAGED_AWAITING_EVENING_TRAILER

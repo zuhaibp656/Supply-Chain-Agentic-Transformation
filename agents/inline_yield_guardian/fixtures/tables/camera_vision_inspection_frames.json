@@ -1,0 +1,26 @@
+[
+  {
+    "frame_id": "FRAME-CAM01-20261022-00841",
+    "camera_station_id": "STATION-VISION-LINE01-ENTRY",
+    "line_id": "LINE-ASEPTIC-01",
+    "conveyor_speed_m_s": 1.25,
+    "capture_timestamp": "2026-10-22T04:45:12.180Z",
+    "product_package_barcode": "079357318924",
+    "sku_code": "SKU-BEV-OATMILK-ORIGINAL-1L",
+    "image_resolution": "4096x2160",
+    "illumination_lux": 4200,
+    "inspection_status": "PROCESSED_DEFECT_DETECTED"
+  },
+  {
+    "frame_id": "FRAME-CAM01-20261022-00842",
+    "camera_station_id": "STATION-VISION-LINE01-ENTRY",
+    "line_id": "LINE-ASEPTIC-01",
+    "conveyor_speed_m_s": 1.25,
+    "capture_timestamp": "2026-10-22T04:45:12.680Z",
+    "product_package_barcode": "079357318924",
+    "sku_code": "SKU-BEV-OATMILK-ORIGINAL-1L",
+    "image_resolution": "4096x2160",
+    "illumination_lux": 4200,
+    "inspection_status": "PROCESSED_CONFORMING"
+  }
+]

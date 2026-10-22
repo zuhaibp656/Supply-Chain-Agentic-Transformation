@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "multimodal_mode_shift_agent_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for ModalShift \u2014 Factory\u2192Ship\u2192Air\u2192Rail\u2192Truck Dynamic Mode-Switch Broker.",
+    "expected_tools": [
+      "query_factory_gate_outbound_pos",
+      "query_multimodal_corridor_rate_tariff_matrix",
+      "query_dynamic_mode_split_recommendations",
+      "query_in_transit_mode_diversion_triggers",
+      "action_execute_dynamic_mode_split_booking",
+      "action_trigger_mid_route_sea_air_upgrade"
+    ],
+    "expected_status": "success"
+  }
+]

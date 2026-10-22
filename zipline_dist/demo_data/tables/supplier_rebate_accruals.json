@@ -1,0 +1,30 @@
+[
+  {
+    "accrual_id": "REB-BALL-2026-YTD",
+    "contract_id": "MSA-BALL-2025-09",
+    "supplier_id": "VEND-BALL-CORP-101",
+    "supplier_name": "Ball Metal Packaging",
+    "cumulative_spend_usd": 1581000.0,
+    "actual_volume_units": 48200000,
+    "threshold_met": true,
+    "contractual_rebate_pct": 3.0,
+    "earned_rebate_amount_usd": 47430.0,
+    "rebates_credited_by_vendor_usd": 0.0,
+    "uncollected_cash_leakage_usd": 47430.0,
+    "status": "UNRECOVERED_OVERDUE"
+  },
+  {
+    "accrual_id": "REB-ALCOA-2026-Q3",
+    "contract_id": "MSA-ALCOA-2025-11",
+    "supplier_id": "VEND-ALCOA-SMELT-IS",
+    "supplier_name": "Alcoa International Smelter",
+    "cumulative_spend_usd": 2420000.0,
+    "actual_volume_units": 12500,
+    "threshold_met": true,
+    "contractual_rebate_pct": 1.5,
+    "earned_rebate_amount_usd": 36300.0,
+    "rebates_credited_by_vendor_usd": 36300.0,
+    "uncollected_cash_leakage_usd": 0.0,
+    "status": "SETTLED_RECOVERED"
+  }
+]

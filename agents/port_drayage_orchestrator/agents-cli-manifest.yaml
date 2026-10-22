@@ -1,0 +1,22 @@
+name: port_drayage_orchestrator
+display_name: "PortWatch — Global Ocean Vessel, Container Stowage & Port Drayage Orchestrator"
+description: "Ingests Spire Maritime satellite AIS and WeatherNext 3 cyclone forecasts to predict berth discharge, prevent port demurrage, and optimize dual-transaction drayage gates."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "05 · Deliver"
+category: "Logistics, Fleet & Transportation Management"
+tags:
+  - ocean-ais
+  - port-drayage
+  - demurrage-shield
+  - weathernext-3
+  - cargowise
+entrypoint: "app.agent:PortDrayageOrchestrator"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_ocean_vessel_ais_berth_telemetry"
+  - "app.tools:query_container_discharge_demurrage_ledger"
+  - "app.tools:query_port_terminal_gate_appointments"
+  - "app.tools:query_drayage_chassis_transload_allocations"
+  - "app.tools:action_book_dual_transaction_drayage_gate"
+  - "app.tools:action_divert_container_to_transload_hub"

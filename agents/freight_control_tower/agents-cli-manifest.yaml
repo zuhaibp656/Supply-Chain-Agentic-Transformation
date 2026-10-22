@@ -1,0 +1,22 @@
+name: freight_control_tower
+display_name: "SentinelMove — Multi-Modal In-Transit Control Tower & Freight Auditor"
+description: "Monitors real-time GPS/AIS/ADS-B and cold-chain thermal telemetry across all in-transit shipments while performing 100% 3-way freight invoice auditing against contract tariffs and geofences."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "05 · Deliver"
+category: "Logistics, Fleet & Transportation Management"
+tags:
+  - in-transit-control-tower
+  - cold-chain-iot
+  - freight-bill-audit
+  - edi-210
+  - geofencing
+entrypoint: "app.agent:FreightControlTower"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_in_transit_multimodal_telemetry"
+  - "app.tools:query_cold_chain_thermal_excursion_alerts"
+  - "app.tools:query_carrier_edi210_freight_invoices"
+  - "app.tools:query_freight_audit_discrepancy_ledger"
+  - "app.tools:action_reroute_in_transit_reefer_shipment"
+  - "app.tools:action_issue_freight_audit_debit_adjustment"

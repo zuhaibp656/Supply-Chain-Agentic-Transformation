@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "freight_control_tower_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for SentinelMove \u2014 Multi-Modal In-Transit Control Tower & Freight Auditor.",
+    "expected_tools": [
+      "query_in_transit_multimodal_telemetry",
+      "query_cold_chain_thermal_excursion_alerts",
+      "query_carrier_edi210_freight_invoices",
+      "query_freight_audit_discrepancy_ledger",
+      "action_reroute_in_transit_reefer_shipment",
+      "action_issue_freight_audit_debit_adjustment"
+    ],
+    "expected_status": "success"
+  }
+]

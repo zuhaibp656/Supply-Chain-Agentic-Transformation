@@ -1,0 +1,38 @@
+[
+  {
+    "order_id": "ORD-PROD-202610-771",
+    "material_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
+    "material_description": "Organic Oat Milk Original 1L Tetra Brik",
+    "product_family": "BEVERAGE_OAT_BASE",
+    "allergen_group": "NON_ALLERGENIC",
+    "order_quantity_liters": 45000,
+    "due_datetime": "2026-10-23T18:00:00Z",
+    "run_rate_liters_per_hour": 7500.0,
+    "production_duration_hours": 6.0,
+    "sap_ppds_status": "RELEASED_UNSCHEDULED"
+  },
+  {
+    "order_id": "ORD-PROD-202610-772",
+    "material_id": "SKU-BEV-ALMONDMILK-VANILLA-1L",
+    "material_description": "Almond Milk Vanilla 1L Tetra Brik",
+    "product_family": "BEVERAGE_NUT_BASE",
+    "allergen_group": "TREE_NUT_ALLERGEN",
+    "order_quantity_liters": 30000,
+    "due_datetime": "2026-10-24T06:00:00Z",
+    "run_rate_liters_per_hour": 7500.0,
+    "production_duration_hours": 4.0,
+    "sap_ppds_status": "RELEASED_UNSCHEDULED"
+  },
+  {
+    "order_id": "ORD-PROD-202610-773",
+    "material_id": "SKU-BEV-OATMILK-CHOCOLATE-1L",
+    "material_description": "Oat Milk Dark Chocolate 1L Tetra Brik",
+    "product_family": "BEVERAGE_OAT_BASE",
+    "allergen_group": "NON_ALLERGENIC_DARK_COLOR",
+    "order_quantity_liters": 37500,
+    "due_datetime": "2026-10-24T14:00:00Z",
+    "run_rate_liters_per_hour": 7500.0,
+    "production_duration_hours": 5.0,
+    "sap_ppds_status": "RELEASED_UNSCHEDULED"
+  }
+]

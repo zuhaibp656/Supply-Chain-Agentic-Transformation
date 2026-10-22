@@ -1,0 +1,3 @@
+threat_id,threat_type,region,impacted_node_id,supplier_name,disruption_severity,estimated_downtime_days,source_feed,advance_warning_days,confidence_score
+THREAT-CYCLONE-QLD-01,CATEGORY_4_TROPICAL_CYCLONE,"Queensland, Australia",NODE-WEIPA-BAUXITE-AU,Weipa Bauxite Mining & Refinery,CRITICAL_FACILITY_SHUTDOWN,21,Google DeepMind WeatherNext 3 Cyclone Trajectory,11,0.94
+THREAT-SEISMIC-KANAGAWA-02,SEISMIC_EVENT_WARNING,"Kanagawa, Japan",NODE-SHOWA-SALT-JP,Showa Denko Chemical Specialty,PRECAUTIONARY_PORT_HALT,7,JMA Seismic Alert & AIS Berth Monitor,4,0.81

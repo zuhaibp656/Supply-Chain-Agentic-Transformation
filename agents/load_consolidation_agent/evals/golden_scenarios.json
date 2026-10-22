@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "load_consolidation_agent_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for CubeMaster 3D \u2014 Isometric LIFO Bay & Load Consolidation Studio.",
+    "expected_tools": [
+      "query_outbound_shipment_carton_dimensions",
+      "query_trailer_bay_geometry_specs",
+      "query_lifo_3d_voxel_load_plans",
+      "query_axle_weight_crush_audit_logs",
+      "action_commit_3d_lifo_load_plan",
+      "action_resequence_dock_staging_lanes"
+    ],
+    "expected_status": "success"
+  }
+]

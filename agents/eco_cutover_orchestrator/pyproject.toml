@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eco_cutover_orchestrator"
+version = "0.1.0"
+description = "Synchronizes PLM Engineering Change Orders (ECOs) with multi-plant ERP BOM effectivity dates and open supplier POs to minimize obsolete component write-offs while protecting NPI launch dates."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

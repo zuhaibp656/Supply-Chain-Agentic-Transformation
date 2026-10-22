@@ -1,0 +1,20 @@
+[
+  {
+    "container_id": "MSKU-904812-0",
+    "vessel_imo": "IMO-9839179",
+    "size_type": "40HC",
+    "stowage_tier": "UPPER_DECK_BAY14",
+    "last_free_day": "2026-10-29",
+    "daily_demurrage_usd": 375.0,
+    "downstream_stockout_risk": "CRITICAL_PROMO_SKU"
+  },
+  {
+    "container_id": "MSKU-904819-3",
+    "vessel_imo": "IMO-9839179",
+    "size_type": "40HC",
+    "stowage_tier": "HOLD_TIER04",
+    "last_free_day": "2026-10-30",
+    "daily_demurrage_usd": 375.0,
+    "downstream_stockout_risk": "STANDARD_REPLENISHMENT"
+  }
+]

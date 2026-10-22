@@ -1,0 +1,4 @@
+facility_id,line_id,process_type,standard_rate_units_per_hr,current_shifts_per_week,max_shifts_per_week,utilization_pct,is_bottleneck,overtime_cost_per_shift_usd,changeover_hours_per_sku
+PLANT-CINCINNATI-01,LINE-PKG-03,Aseptic Bottling & Retort Autoclave,12500,15,21,98.4,True,18500.0,4.5
+PLANT-DALLAS-02,LINE-PKG-01,Aseptic Bottling & Retort Autoclave,14000,12,21,68.2,False,16200.0,3.8
+PLANT-CHICAGO-03,LINE-EXT-01,Dual-Screw Continuous Extrusion,8500,14,20,94.1,True,14000.0,5.0

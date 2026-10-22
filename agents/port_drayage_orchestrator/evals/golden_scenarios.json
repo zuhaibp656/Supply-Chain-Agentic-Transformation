@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "port_drayage_orchestrator_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for PortWatch \u2014 Global Ocean Vessel, Container Stowage & Port Drayage Orchestrator.",
+    "expected_tools": [
+      "query_ocean_vessel_ais_berth_telemetry",
+      "query_container_discharge_demurrage_ledger",
+      "query_port_terminal_gate_appointments",
+      "query_drayage_chassis_transload_allocations",
+      "action_book_dual_transaction_drayage_gate",
+      "action_divert_container_to_transload_hub"
+    ],
+    "expected_status": "success"
+  }
+]

@@ -1,0 +1,26 @@
+name: line_schedule_optimizer
+display_name: "FlowMaster — Finite Production Line Sequence & Job Shop Scheduler"
+version: 0.1.0
+runtime: python310
+entrypoint: app.agent:FiniteProductionSchedulerAgent
+framework: google-adk
+vertical: "03_make"
+description: >
+  FlowMaster solves finite capacity scheduling across packaging and filling production lines
+  using Google OR-Tools CP-SAT constraint programming. It optimizes line changeover matrices,
+  enforces allergen washouts (e.g. non-dairy before dairy), respects shift maintenance blocks,
+  and dispatches sequenced production order blocks into SAP PP/DS.
+
+parameters:
+  model: "gemini-3-pro-preview"
+  temperature: 0.1
+  max_output_tokens: 4096
+
+tools:
+  - app.tools:list_systems
+  - app.tools:query_production_orders_backlog
+  - app.tools:query_changeover_matrix_rules
+  - app.tools:query_plant_line_workcenters
+  - app.tools:query_optimized_sequence_schedule
+  - app.tools:action_solve_and_lock_finite_sequence
+  - app.tools:action_dispatch_sap_ppds_sequence

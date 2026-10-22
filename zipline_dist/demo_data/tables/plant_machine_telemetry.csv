@@ -1,0 +1,3 @@
+sensor_id,asset_id,asset_name,plant_id,component,timestamp,vibration_velocity_rms_mm_s,vibration_threshold_warning_mm_s,vibration_threshold_critical_mm_s,temperature_celsius,temperature_max_threshold_celsius,motor_current_amperes,spindle_rpm,telemetry_health_status
+SENS-CNC-SPINDLE-VIB-01,ASSET-MILLING-CNC-04,5-Axis High-Precision Milling Center CNC-04,PLANT-1020-AUSTIN,High-Speed Spindle Bearing Assembly,2026-10-22T04:30:00Z,7.42,4.5,7.1,84.6,75.0,42.8,18200,CRITICAL_BEARING_DEGRADATION
+SENS-INJECT-MOLD-HYD-02,ASSET-INJECTION-MOLD-02,Hydraulic Injection Molding Machine IMM-02,PLANT-1020-AUSTIN,Hydraulic Pump & Platen Clamping Unit,2026-10-22T04:30:00Z,2.15,4.0,6.5,52.3,68.0,28.1,0,NORMAL_OPTIMAL

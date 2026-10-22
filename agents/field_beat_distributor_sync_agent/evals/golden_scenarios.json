@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "field_beat_distributor_sync_agent_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for BeatSync \u2014 Field Sales & Distributor Inventory Harmonizer.",
+    "expected_tools": [
+      "query_distributor_dms_live_inventory",
+      "query_fso_daily_beat_store_outlets",
+      "query_pitch_to_stock_substitution_rules",
+      "query_primary_replenishment_auto_orders",
+      "action_push_fso_dynamic_beat_and_pitch_list",
+      "action_trigger_distributor_primary_replenishment"
+    ],
+    "expected_status": "success"
+  }
+]

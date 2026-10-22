@@ -1,0 +1,40 @@
+[
+  {
+    "impacted_subtier_node": "NODE-WEIPA-BAUXITE-AU",
+    "component_id": "ORE-BAUXITE-METALLURGICAL",
+    "tier_depth": 4,
+    "finished_goods_impacted": [
+      {
+        "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+        "product_name": "Hydration RTD 32oz Can",
+        "monthly_volume_units": 4500000,
+        "revenue_at_risk_usd": 13455000.0
+      },
+      {
+        "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+        "product_name": "Electrolyte Recovery 500ml",
+        "monthly_volume_units": 1200000,
+        "revenue_at_risk_usd": 4788000.0
+      }
+    ],
+    "total_revenue_at_risk_usd": 18243000.0,
+    "factory_line_down_buffer_days": 16.5,
+    "critical_action_window_days": 5
+  },
+  {
+    "impacted_subtier_node": "NODE-SHOWA-SALT-JP",
+    "component_id": "CHEM-ELECTROLYTE-LIPF6",
+    "tier_depth": 3,
+    "finished_goods_impacted": [
+      {
+        "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+        "product_name": "Electrolyte Recovery 500ml",
+        "monthly_volume_units": 1200000,
+        "revenue_at_risk_usd": 4788000.0
+      }
+    ],
+    "total_revenue_at_risk_usd": 4788000.0,
+    "factory_line_down_buffer_days": 24.0,
+    "critical_action_window_days": 12
+  }
+]

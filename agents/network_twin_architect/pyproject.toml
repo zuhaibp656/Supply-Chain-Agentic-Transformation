@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "network_twin_architect"
+version = "0.1.0"
+description = "Solves Capacitated Facility Location & Center-of-Gravity MILP in Google OR-Tools paired with activity-based Cost-to-Serve attribution and tariff/port-strike stress testing."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

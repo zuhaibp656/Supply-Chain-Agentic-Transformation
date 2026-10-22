@@ -1,0 +1,3 @@
+sku_id,sku_name,velocity_tier,pick_frequency_lines_per_day,current_bin_id,recommended_bin_id,distance_to_pack_station_m,recommended_distance_m,daily_travel_saving_km,ergonomic_pick_zone,status
+SKU-BEV-OATMILK-ORIGINAL-1L,Barista Organic Oat Milk 1L Tetra,FAST_MOVER_TIER_A,840,BIN-AISLE-14-SHELF-04-HIGH,BIN-AISLE-02-SHELF-02-GOLDEN,142.0,22.0,100.8,OVERHEAD_NON_ERGONOMIC,SLOTTING_MISMATCH_HIGH_TRAVEL
+SKU-BEV-ALMOND-UNSWEET-1L,Almond Milk Unsweetened 1L,MEDIUM_MOVER_TIER_B,310,BIN-AISLE-05-SHELF-02-GOLDEN,BIN-AISLE-05-SHELF-02-GOLDEN,45.0,45.0,0.0,GOLDEN_ZONE_WAIST_HEIGHT,OPTIMALLY_SLOTTED

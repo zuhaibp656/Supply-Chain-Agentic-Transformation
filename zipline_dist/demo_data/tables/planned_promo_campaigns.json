@@ -1,0 +1,41 @@
+[
+  {
+    "campaign_id": "CMP-202611-BOGO",
+    "name": "BOGO Hydration Blitz",
+    "retailer": "Walmart",
+    "channel": "Retail Stores & Omnichannel",
+    "start_date": "2026-11-05",
+    "end_date": "2026-11-18",
+    "target_sku": "SKU-BEV-ISOTONIC-32OZ",
+    "mechanic": "BUY_ONE_GET_ONE_50PCT",
+    "trade_spend_usd": 120000.0,
+    "discount_pct": 25.0,
+    "status": "PROPOSED_PENDING_APPROVAL"
+  },
+  {
+    "campaign_id": "CMP-202611-PROT20",
+    "name": "20% Off Protein Snack Pack",
+    "retailer": "Costco",
+    "channel": "Club Warehouse",
+    "start_date": "2026-11-10",
+    "end_date": "2026-11-24",
+    "target_sku": "SKU-SNACK-PROTEIN-BAR",
+    "mechanic": "STRAIGHT_DISCOUNT",
+    "trade_spend_usd": 75000.0,
+    "discount_pct": 20.0,
+    "status": "APPROVED_COMMITTED"
+  },
+  {
+    "campaign_id": "CMP-202611-ELECTRO",
+    "name": "Bundle & Save Electrolytes",
+    "retailer": "Target",
+    "channel": "Retail Stores",
+    "start_date": "2026-11-12",
+    "end_date": "2026-11-26",
+    "target_sku": "SKU-BEV-ELECTROLYTE-500ML",
+    "mechanic": "MULTI_BUY_BUNDLE",
+    "trade_spend_usd": 45000.0,
+    "discount_pct": 15.0,
+    "status": "PROPOSED_PENDING_APPROVAL"
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "intermodal_rail_linehaul_agent_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for IntermodalSync \u2014 Factory-to-DC Intermodal Rail, Barge & Linehaul Orchestrator.",
+    "expected_tools": [
+      "query_intermodal_corridor_shipments",
+      "query_railinc_edi417_train_consists",
+      "query_rail_ramp_cutoff_and_drayage",
+      "query_otr_to_rail_mode_conversion_ledger",
+      "action_tender_edi404_rail_intermodal_bill",
+      "action_synchronize_ramp_crane_drayage_slot"
+    ],
+    "expected_status": "success"
+  }
+]

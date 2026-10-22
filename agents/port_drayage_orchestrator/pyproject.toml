@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "port_drayage_orchestrator"
+version = "0.1.0"
+description = "Ingests Spire Maritime satellite AIS and WeatherNext 3 cyclone forecasts to predict berth discharge, prevent port demurrage, and optimize dual-transaction drayage gates."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

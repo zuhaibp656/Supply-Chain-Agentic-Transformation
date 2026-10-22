@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "load_consolidation_agent"
+version = "0.1.0"
+description = "Solves 3D Guillotine & Extreme-Point Multi-Container Bin Packing with axle-weight equilibrium, crush fragility, and strict reverse-stop LIFO unloading order."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

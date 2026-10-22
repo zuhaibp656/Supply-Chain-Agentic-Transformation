@@ -1,0 +1,24 @@
+[
+  {
+    "scenario_id": "GOLDEN-VISION-INSPECT-001",
+    "name": "High-Speed Induction Foil Seal Tear Vision Classification and Pneumatic Reject",
+    "description": "Detect 1.8mm radial induction seal tear on Aseptic Packaging Line 01 via Gemini 3.8 Flash Vision (98.5% confidence), actuate pneumatic solenoid reject diverter within 14.2ms to quarantine defective unit, and log 21 CFR Part 11 compliant eBHR deviation in Veeva Vault and SAP QM.",
+    "input_query": "Monitor high-speed optical vision feed on Line Aseptic 01, identify induction seal defect, fire pneumatic reject gate, and log eBHR quality deviation.",
+    "expected_tools": [
+      "query_camera_vision_inspection_frames",
+      "query_vision_defect_classification_results",
+      "query_pneumatic_reject_gate_events",
+      "query_ebhr_batch_record_deviations",
+      "action_trigger_pneumatic_reject_diverter",
+      "action_log_ebhr_quality_deviation"
+    ],
+    "expected_verifications": {
+      "line_id": "LINE-ASEPTIC-01",
+      "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+      "model_confidence": 0.985,
+      "actuation_latency_ms": 14.2,
+      "diverter_status": "PNEUMATIC_DIVERTER_ACTIVATED",
+      "ebhr_status": "EBHR_DEVIATION_LOGGED"
+    }
+  }
+]

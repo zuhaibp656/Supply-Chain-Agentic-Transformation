@@ -1,0 +1,38 @@
+[
+  {
+    "edi_record_id": "EDI852-20261016-01",
+    "retailer": "Walmart",
+    "store_id": "STORE-WALMART-DAL-104",
+    "region": "US-CENTRAL",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "scan_date": "2026-10-16",
+    "daily_scan_units": 1840,
+    "store_book_inventory": 420,
+    "retailer_dc_withdrawal_units": 4500,
+    "on_shelf_availability_pct": 98.2
+  },
+  {
+    "edi_record_id": "EDI852-20261016-02",
+    "retailer": "Kroger",
+    "store_id": "STORE-KROGER-ATL-209",
+    "region": "US-SOUTHEAST",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "scan_date": "2026-10-16",
+    "daily_scan_units": 0,
+    "store_book_inventory": 380,
+    "retailer_dc_withdrawal_units": 0,
+    "on_shelf_availability_pct": 84.5
+  },
+  {
+    "edi_record_id": "EDI852-20261016-03",
+    "retailer": "Target",
+    "store_id": "STORE-TARGET-CHI-088",
+    "region": "US-MIDWEST",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "scan_date": "2026-10-16",
+    "daily_scan_units": 1280,
+    "store_book_inventory": 310,
+    "retailer_dc_withdrawal_units": 2800,
+    "on_shelf_availability_pct": 96.8
+  }
+]

@@ -1,0 +1,3 @@
+forecast_id,retailer,sku_id,horizon_weeks,current_week_order_units,forward_4wk_projected_units,bullwhip_variance_ratio,volatility_flag,consensus_status
+EDI830-WMT-202611,Walmart,SKU-BEV-ISOTONIC-32OZ,12,125000,540000,1.42,HIGH_BULLWHIP_SWING,DIVERGENT_EXCEPTION
+EDI830-TGT-202611,Target,SKU-SNACK-PROTEIN-BAR,12,65000,270000,1.08,STABLE,ALIGNED_CONSENSUS

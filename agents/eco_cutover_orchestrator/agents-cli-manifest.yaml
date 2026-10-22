@@ -1,0 +1,22 @@
+name: eco_cutover_orchestrator
+display_name: "ChangeSync — Engineering Change (ECO) & NPI Cutover Orchestrator"
+description: "Synchronizes PLM Engineering Change Orders (ECOs) with multi-plant ERP BOM effectivity dates and open supplier POs to minimize obsolete component write-offs while protecting NPI launch dates."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "03 · Make"
+category: "Manufacturing, BOM Governance & NPI Launch"
+tags:
+  - eco-cutover
+  - plm-erp-sync
+  - obsolete-inventory-shield
+  - npi-launch
+  - or-tools
+entrypoint: "app.agent:EcoCutoverOrchestrator"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_plm_engineering_change_orders"
+  - "app.tools:query_multi_plant_predecessor_inventory_runout"
+  - "app.tools:query_eco_optimal_cutover_schedules"
+  - "app.tools:query_erp_bom_effectivity_sync_audit"
+  - "app.tools:action_lock_multi_plant_eco_effectivity_dates"
+  - "app.tools:action_modify_open_supplier_po_revision"

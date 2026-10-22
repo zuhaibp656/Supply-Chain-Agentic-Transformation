@@ -1,0 +1,12 @@
+[
+  {
+    "shipment_id": "SHP-IM-LA-CHI-701",
+    "origin_hub": "Los Angeles Factory Hub",
+    "dest_dc": "Chicago Joliet RDC",
+    "distance_miles": 2015,
+    "otr_truck_cost_usd": 4650.0,
+    "cofc_rail_cost_usd": 2890.0,
+    "dest_dc_days_of_supply": 14.5,
+    "recommended_mode": "COFC_DOUBLE_STACK_RAIL"
+  }
+]

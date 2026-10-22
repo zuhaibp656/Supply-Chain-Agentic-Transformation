@@ -1,0 +1,3 @@
+packet_id,retailer,sku_id,retailer_forecast_units,manufacturer_unconstrained_units,variance_gap_units,reconciliation_status,recommended_consensus_units,recommended_replenishment_order_units,target_dc,rationale
+CPFR-PKT-202611-WMT,Walmart,SKU-BEV-ISOTONIC-32OZ,620000,540000,80000,DIVERGENT_EXCEPTION,580000,95000,DC-DALLAS-CENTRAL,Retailer forecast reflects unadjusted bullwhip order swing; harmonized consensus aligns with actual POS scan velocity.
+CPFR-PKT-202611-TGT,Target,SKU-SNACK-PROTEIN-BAR,280000,270000,10000,ALIGNED_CONSENSUS,275000,45000,DC-CHICAGO-MIDWEST,High consensus alignment with confirmed flyer circular.

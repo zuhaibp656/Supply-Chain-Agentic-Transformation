@@ -1,0 +1,3 @@
+scenario_id,name,part_number,annual_demand_units,primary_supplier,primary_split_pct,primary_volume_units,secondary_supplier,secondary_split_pct,secondary_volume_units,blended_unit_cost_usd,annual_spend_usd,annual_savings_vs_historical_usd,direct_material_savings_pct,supply_security_score,or_tools_status
+SCEN-AWARD-DUAL-70-30,OR-Tools Optimal Dual-Source Risk & Cost Frontier,PART-CAN-ALUM-330ML,50000000,Ball Metal Packaging,70.0,35000000,Crown Holdings,30.0,15000000,31.62,1581000.0,115000.0,6.8,96.5,OPTIMAL_DUAL_SOURCE
+SCEN-AWARD-SINGLE-BALL,Single-Source Pure Cost Minimization,PART-CAN-ALUM-330ML,50000000,Ball Metal Packaging,100.0,50000000,None,0.0,0,31.2,1560000.0,136000.0,8.0,62.0,VULNERABLE_SINGLE_SOURCE

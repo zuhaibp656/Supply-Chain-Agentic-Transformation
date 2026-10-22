@@ -1,0 +1,29 @@
+[
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "distribution_center": "DC-DALLAS-CENTRAL",
+    "available_to_promise_units": 95000,
+    "promo_surge_forecast_units": 85000,
+    "buffer_safety_stock_units": 20000,
+    "post_promo_stockout_risk": "ELEVATED_RISK",
+    "mitigation_recommendation": "Cap promo discount to 20% or bundle with high-stock SKU-BEV-ELECTROLYTE-500ML."
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "distribution_center": "DC-CHICAGO-MIDWEST",
+    "available_to_promise_units": 140000,
+    "promo_surge_forecast_units": 42000,
+    "buffer_safety_stock_units": 18000,
+    "post_promo_stockout_risk": "SAFE_SURPLUS",
+    "mitigation_recommendation": "Full promotional discount approved."
+  },
+  {
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "distribution_center": "DC-ATLANTA-SOUTHEAST",
+    "available_to_promise_units": 180000,
+    "promo_surge_forecast_units": 31000,
+    "buffer_safety_stock_units": 22000,
+    "post_promo_stockout_risk": "SAFE_SURPLUS",
+    "mitigation_recommendation": "Surplus inventory available for aggressive promo shaping."
+  }
+]

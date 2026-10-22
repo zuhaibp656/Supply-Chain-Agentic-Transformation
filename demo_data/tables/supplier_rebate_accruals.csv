@@ -1,0 +1,3 @@
+accrual_id,contract_id,supplier_id,supplier_name,cumulative_spend_usd,actual_volume_units,threshold_met,contractual_rebate_pct,earned_rebate_amount_usd,rebates_credited_by_vendor_usd,uncollected_cash_leakage_usd,status
+REB-BALL-2026-YTD,MSA-BALL-2025-09,VEND-BALL-CORP-101,Ball Metal Packaging,1581000.0,48200000,True,3.0,47430.0,0.0,47430.0,UNRECOVERED_OVERDUE
+REB-ALCOA-2026-Q3,MSA-ALCOA-2025-11,VEND-ALCOA-SMELT-IS,Alcoa International Smelter,2420000.0,12500,True,1.5,36300.0,36300.0,0.0,SETTLED_RECOVERED

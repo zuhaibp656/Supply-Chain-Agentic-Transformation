@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "air_cargo_uld_optimizer"
+version = "0.1.0"
+description = "Solves 3D non-rectangular aircraft ULD (LD3, LD7, PMC) contour packing to maximize volumetric weight efficiency and dynamically allocates air cargo across passenger belly and freighter charters."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

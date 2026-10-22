@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intermodal_rail_linehaul_agent"
+version = "0.1.0"
+description = "Optimizes long-haul (500+ mile) freight conversion from over-the-road diesel trucks to double-stack COFC intermodal rail, synchronizing Railinc EDI 404/417 consists and ramp drayage."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

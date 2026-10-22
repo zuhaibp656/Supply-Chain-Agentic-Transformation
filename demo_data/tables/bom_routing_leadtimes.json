@@ -1,0 +1,24 @@
+[
+  {
+    "bom_id": "BOM-EV-INVERTER-V2",
+    "parent_material_id": "MAT-880019",
+    "component_count": 48,
+    "critical_path_leadtime_days": 46,
+    "system_recorded_leadtime_days": 21,
+    "discrepancy_days": 25,
+    "bottleneck_subtier_component": "SiC Gate Driver Semiconductor",
+    "supplier_id": "VEND-10492",
+    "last_bom_sync_timestamp": "2026-10-14T08:30:00Z"
+  },
+  {
+    "bom_id": "BOM-MEB-CELL-01",
+    "parent_material_id": "MAT-440212",
+    "component_count": 12,
+    "critical_path_leadtime_days": 38,
+    "system_recorded_leadtime_days": 35,
+    "discrepancy_days": 3,
+    "bottleneck_subtier_component": "Aluminum Laminated Pouch Foil",
+    "supplier_id": "VEND-8820",
+    "last_bom_sync_timestamp": "2026-10-15T12:00:00Z"
+  }
+]

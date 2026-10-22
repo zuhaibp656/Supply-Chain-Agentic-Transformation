@@ -1,0 +1,22 @@
+name: field_beat_distributor_sync_agent
+display_name: "BeatSync — Field Sales & Distributor Inventory Harmonizer"
+description: "Synchronizes real-time Distributor Management System (DMS) stock with Field Sales Officer (FSO) beat routing so reps never pitch stocked-out SKUs and primary replenishment fires automatically."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "05 · Deliver"
+category: "Trade Marketing & Distribution (TM&D)"
+tags:
+  - dms-sync
+  - field-sales-beat
+  - pitch-to-stock
+  - tmd-distribution
+  - google-maps
+entrypoint: "app.agent:FieldBeatDistributorSyncAgent"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_distributor_dms_live_inventory"
+  - "app.tools:query_fso_daily_beat_store_outlets"
+  - "app.tools:query_pitch_to_stock_substitution_rules"
+  - "app.tools:query_primary_replenishment_auto_orders"
+  - "app.tools:action_push_fso_dynamic_beat_and_pitch_list"
+  - "app.tools:action_trigger_distributor_primary_replenishment"

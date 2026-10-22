@@ -1,0 +1,15 @@
+[
+  {
+    "load_plan_id": "LP-3D-20261022-88",
+    "shipment_wave_id": "WAVE-3D-20261022-09",
+    "trailer_type_id": "TRL-53FT-DRYVAN",
+    "cube_utilization_pct": 92.4,
+    "weight_utilization_pct": 90.5,
+    "lifo_sequence_order": [
+      "STOP_3_NOSE_ZONE_A",
+      "STOP_2_MID_ZONE_B",
+      "STOP_1_TAIL_ZONE_C"
+    ],
+    "zero_rehandling_verified": true
+  }
+]

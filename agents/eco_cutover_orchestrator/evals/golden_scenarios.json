@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "eco_cutover_orchestrator_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for ChangeSync \u2014 Engineering Change (ECO) & NPI Cutover Orchestrator.",
+    "expected_tools": [
+      "query_plm_engineering_change_orders",
+      "query_multi_plant_predecessor_inventory_runout",
+      "query_eco_optimal_cutover_schedules",
+      "query_erp_bom_effectivity_sync_audit",
+      "action_lock_multi_plant_eco_effectivity_dates",
+      "action_modify_open_supplier_po_revision"
+    ],
+    "expected_status": "success"
+  }
+]

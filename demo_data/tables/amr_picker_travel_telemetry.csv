@@ -1,0 +1,3 @@
+telemetry_id,dc_id,amr_id,wave_id,average_picker_speed_m_s,total_travel_distance_km,travel_time_pct,pick_time_pct,congestion_wait_pct,bottleneck_aisle,status
+AMR-TEL-20261022-001,RDC-DALLAS-02,AMR-KION-BOT-07,WAVE-20261022-AM-01,1.4,18.4,68.2,24.1,7.7,AISLE-14-BULK-LIQUID,EXCESSIVE_TRAVEL_FLAGGED
+AMR-TEL-20261022-002,RDC-DALLAS-02,AMR-KION-BOT-12,WAVE-20261022-AM-01,1.5,11.2,42.0,51.5,6.5,AISLE-02-GOLDEN-ZONE,OPTIMAL_PICK_DENSITY

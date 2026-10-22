@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "field_beat_distributor_sync_agent"
+version = "0.1.0"
+description = "Synchronizes real-time Distributor Management System (DMS) stock with Field Sales Officer (FSO) beat routing so reps never pitch stocked-out SKUs and primary replenishment fires automatically."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

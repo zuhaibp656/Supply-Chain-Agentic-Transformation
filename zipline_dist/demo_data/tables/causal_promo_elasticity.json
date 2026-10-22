@@ -1,0 +1,41 @@
+[
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "base_price_usd": 2.99,
+    "discounted_price_usd": 2.24,
+    "price_elasticity": -2.45,
+    "baseline_units": 140000,
+    "gross_lift_units": 85000,
+    "cannibalized_units": 26000,
+    "post_promo_dip_units": 11000,
+    "net_incremental_units": 48000,
+    "net_incremental_margin_usd": 83000.0,
+    "double_ml_confidence_pvalue": 0.002
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "base_price_usd": 3.49,
+    "discounted_price_usd": 2.79,
+    "price_elasticity": -1.82,
+    "baseline_units": 80000,
+    "gross_lift_units": 42000,
+    "cannibalized_units": 8500,
+    "post_promo_dip_units": 4500,
+    "net_incremental_units": 29000,
+    "net_incremental_margin_usd": 68250.0,
+    "double_ml_confidence_pvalue": 0.001
+  },
+  {
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "base_price_usd": 3.99,
+    "discounted_price_usd": 3.39,
+    "price_elasticity": -1.95,
+    "baseline_units": 65000,
+    "gross_lift_units": 31000,
+    "cannibalized_units": 4200,
+    "post_promo_dip_units": 2800,
+    "net_incremental_units": 24000,
+    "net_incremental_margin_usd": 69900.0,
+    "double_ml_confidence_pvalue": 0.004
+  }
+]

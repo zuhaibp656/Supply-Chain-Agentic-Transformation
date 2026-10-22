@@ -32,18 +32,20 @@ from typing import Any, Dict, List, Tuple
 os.environ["GOOGLE_API_USE_CLIENT_CERTIFICATE"] = "false"
 ROOT = Path(__file__).resolve().parent.parent
 
-FLAGSHIP_AGENTS = [
-    "csco_control_tower_copilot",
-    "disruption_war_room_orchestrator",
-    "demand_sensing_agent",
-    "sop_scenario_weaver",
-    "rfq_should_cost_agent",
-    "tier_n_risk_sentinel",
-    "plant_oee_maintenance_agent",
-    "inline_quality_inspection_agent",
-    "echelon_inventory_allocator",
-    "dynamic_order_promising_atp",
-]
+def _load_all_catalog_agents() -> List[str]:
+    catalog_path = ROOT / "data" / "supply_chain_catalog.json"
+    if catalog_path.exists():
+        try:
+            cat = json.loads(catalog_path.read_text(encoding="utf-8"))
+            agents_obj = cat.get("agents", {})
+            if isinstance(agents_obj, dict):
+                return list(agents_obj.keys())
+        except Exception:
+            pass
+    return sorted([p.name for p in (ROOT / "agents").iterdir() if p.is_dir() and (p / "fixtures" / "tables").exists()])
+
+
+FLAGSHIP_AGENTS = _load_all_catalog_agents()
 
 _TOKEN_OVERRIDE: str | None = None
 

@@ -1,0 +1,3 @@
+ticket_id,inspection_lot_id,supplier_id,supplier_name,part_number,defect_category,severity,containment_action,trackwise_capa_id,eight_d_status,target_8d_closure_days,assigned_supplier_sqe,created_at
+NCR-202610-0914,LOT-INSP-202610-8841,VEND-KYOCERA-PREC-09,Kyocera Precision Ceramics,PART-SUBSTRATE-ALN-01,MATERIAL_THERMAL_CONDUCTIVITY_DEFICIENCY,CRITICAL_STOP_SHIP,QUARANTINE_INCOMING_WAREHOUSE,CAPA-8D-202610-044,D3_CONTAINMENT_ACTIVE,14,h.tanaka@kyocera-ceramics.example.com,2026-10-18T15:00:00Z
+NCR-202609-0820,LOT-INSP-202609-7719,VEND-MURATA-CAP-22,Murata Manufacturing Co.,PART-MLCC-0402-10UF,PACKAGING_REEL_TAPE_SPLICE_JAM,MINOR_NONDISRUPTIVE,LOT_SORTED_PASSED,CAPA-8D-202609-021,D8_CONCLUDED_CLOSED,0,k.sato@murata.example.com,2026-09-20T10:15:00Z

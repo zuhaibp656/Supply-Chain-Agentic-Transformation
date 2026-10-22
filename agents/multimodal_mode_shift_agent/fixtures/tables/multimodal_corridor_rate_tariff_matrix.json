@@ -1,0 +1,20 @@
+[
+  {
+    "mode_code": "OCEAN_FCL_SUEZ",
+    "transit_days": 34,
+    "cost_per_kg_usd": 0.42,
+    "co2e_g_per_tkm": 11.2
+  },
+  {
+    "mode_code": "SEA_AIR_DXB_HYBRID",
+    "transit_days": 14,
+    "cost_per_kg_usd": 1.85,
+    "co2e_g_per_tkm": 215.0
+  },
+  {
+    "mode_code": "DIRECT_AIR_FREIGHT",
+    "transit_days": 4,
+    "cost_per_kg_usd": 5.9,
+    "co2e_g_per_tkm": 680.0
+  }
+]

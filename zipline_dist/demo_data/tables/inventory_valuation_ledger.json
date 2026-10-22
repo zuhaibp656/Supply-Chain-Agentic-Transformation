@@ -1,0 +1,44 @@
+[
+  {
+    "valuation_area": "PLANT-1010",
+    "valuation_class": "3000_FINISHED_GOODS",
+    "material_id": "MAT-880019",
+    "material_description": "High-Voltage Power Inverter Module 800V SiC",
+    "total_stock_units": 450,
+    "standard_cost_per_unit_usd": 3200.0,
+    "total_inventory_valuation_usd": 1440000.0,
+    "days_of_supply": 42.5,
+    "target_days_of_supply": 20.0,
+    "excess_stock_units": 238,
+    "trapped_cash_usd": 761600.0,
+    "annual_holding_cost_usd": 167552.0
+  },
+  {
+    "valuation_area": "PLANT-1010",
+    "valuation_class": "1000_RAW_MATERIALS",
+    "material_id": "MAT-440212",
+    "material_description": "Lithium Iron Phosphate Battery Cell 3.2V 100Ah",
+    "total_stock_units": 18000,
+    "standard_cost_per_unit_usd": 85.0,
+    "total_inventory_valuation_usd": 1530000.0,
+    "days_of_supply": 38.0,
+    "target_days_of_supply": 18.0,
+    "excess_stock_units": 9470,
+    "trapped_cash_usd": 804950.0,
+    "annual_holding_cost_usd": 177089.0
+  },
+  {
+    "valuation_area": "DC-DALLAS-CENTRAL",
+    "valuation_class": "3000_FINISHED_GOODS",
+    "material_id": "MAT-HVAC-901",
+    "material_description": "Commercial Inverter Scroll Compressor 50HP",
+    "total_stock_units": 620,
+    "standard_cost_per_unit_usd": 4800.0,
+    "total_inventory_valuation_usd": 2976000.0,
+    "days_of_supply": 56.0,
+    "target_days_of_supply": 25.0,
+    "excess_stock_units": 343,
+    "trapped_cash_usd": 1646400.0,
+    "annual_holding_cost_usd": 362208.0
+  }
+]

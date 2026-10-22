@@ -1,0 +1,23 @@
+[
+  {
+    "scenario_id": "GOLDEN-MEIO-ALLOCATOR-001",
+    "name": "Clark-Scarf Multi-Echelon Rebalancing and Downstream Stockout Prevention",
+    "description": "Detect imminent stockout at RDC Dallas (3.8 days of supply, 34.2% stockout probability), identify 68,400-unit surplus at CDC Chicago, dispatch 6,500-unit lateral transshipment ($1,420 freight vs $18,500 avoided stockout loss, 13.0x ROI), and update SAP IBP safety stock policy freeing $38,480 in working capital.",
+    "input_query": "Audit multi-echelon inventory positions for SKU-BEV-OATMILK-ORIGINAL-1L, resolve downstream stockout risk at RDC Dallas via lateral transshipment, and update SAP IBP safety stock parameters.",
+    "expected_tools": [
+      "query_multi_echelon_safety_stock_recommendations",
+      "query_dc_inventory_echelon_balances",
+      "query_echelon_service_level_projections",
+      "query_lateral_dc_rebalance_transfers",
+      "action_execute_lateral_dc_rebalance",
+      "action_update_echelon_safety_stock_policy"
+    ],
+    "expected_verifications": {
+      "source_dc_id": "CDC-CHICAGO-01",
+      "destination_dc_id": "RDC-DALLAS-02",
+      "transfer_quantity_units": 6500,
+      "rebalance_status": "LATERAL_REBALANCE_DISPATCHED",
+      "policy_status": "MEIO_SAFETY_STOCK_POLICY_UPDATED"
+    }
+  }
+]

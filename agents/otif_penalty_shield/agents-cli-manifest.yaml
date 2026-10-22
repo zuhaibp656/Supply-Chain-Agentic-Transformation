@@ -1,0 +1,22 @@
+name: otif_penalty_shield
+display_name: "OTIFShield — Customer SLA Rescue & Chargeback Dispute Agent"
+description: "Predicts customer Must-Arrive-By-Date (MABD) OTIF breaches 72 hours early to trigger margin-positive rescues and auto-assembles geofence + EDI 856 dispute dossiers to overturn invalid retail chargebacks."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "06 · Return & Enable"
+category: "Customer OTIF & SLA Governance"
+tags:
+  - otif-shield
+  - mabd-compliance
+  - chargeback-dispute
+  - edi-856
+  - retail-deductions
+entrypoint: "app.agent:OtifPenaltyShield"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_open_retail_customer_orders_sla"
+  - "app.tools:query_predicted_otif_breach_alerts"
+  - "app.tools:query_retailer_otif_chargeback_deductions"
+  - "app.tools:query_geofence_edi856_dispute_dossiers"
+  - "app.tools:action_execute_otif_sla_rescue_intervention"
+  - "app.tools:action_submit_chargeback_dispute_dossier"

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "carbon_scope3_ledger"
+version = "0.1.0"
+description = "Calculates audit-ready ISO 14083 & GLEC v3.0 shipment-level Scope-3 emissions from primary telematics, generates EU CBAM embedded carbon declarations, and verifies EUDR zero-deforestation plots via Google Earth Engine."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

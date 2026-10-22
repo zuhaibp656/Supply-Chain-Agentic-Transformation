@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multimodal_mode_shift_agent"
+version = "0.1.0"
+description = "Continuously solves the multi-objective Pareto trade-off between freight cost, transit lead-time, Scope-3 carbon, and downstream stockout penalty across Ocean, Sea-Air, Air, Rail, and Road."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

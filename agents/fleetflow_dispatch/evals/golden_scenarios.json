@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "fleetflow_dispatch_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for FleetFlow \u2014 Google Maps Corridor Route & Fleet Dispatch Studio.",
+    "expected_tools": [
+      "query_corridor_delivery_orders",
+      "query_fleet_vehicle_telematics_hos",
+      "query_google_maps_corridor_routes",
+      "query_backhaul_consolidation_opportunities",
+      "action_dispatch_corridor_route_manifest",
+      "action_assign_backhaul_return_load"
+    ],
+    "expected_status": "success"
+  }
+]

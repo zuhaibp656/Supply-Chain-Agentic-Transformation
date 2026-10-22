@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "network_twin_architect_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for TwinDesign \u2014 Supply Chain Network & Cost-to-Serve Optimizer.",
+    "expected_tools": [
+      "query_network_facility_nodes_and_leases",
+      "query_sku_customer_cost_to_serve_matrix",
+      "query_center_of_gravity_milp_scenarios",
+      "query_network_stress_test_simulations",
+      "action_publish_network_territory_realignment",
+      "action_update_cost_to_serve_order_policy"
+    ],
+    "expected_status": "success"
+  }
+]

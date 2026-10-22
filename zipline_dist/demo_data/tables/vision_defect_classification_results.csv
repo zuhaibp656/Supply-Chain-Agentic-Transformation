@@ -1,0 +1,3 @@
+classification_id,frame_id,defect_type,vision_model,confidence_score,bounding_box_normalized,defect_severity,defect_description,action_triggered
+CLS-FLASH-VISION-20261022-00841,FRAME-CAM01-20261022-00841,INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK,gemini-3.8-flash,0.985,"[0.42, 0.14, 0.48, 0.18]",CRITICAL_CONTAMINATION_RISK,Radial breach (1.8mm) detected on induction heat-seal foil membrane along top carton flange.,DIVERT_PNEUMATIC_REJECT_BIN_01
+CLS-FLASH-VISION-20261022-00842,FRAME-CAM01-20261022-00842,NONE_CONFORMING,gemini-3.8-flash,0.998,[],CONFORMING,"Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",PASS_TO_DOWNSTREAM_PACKER

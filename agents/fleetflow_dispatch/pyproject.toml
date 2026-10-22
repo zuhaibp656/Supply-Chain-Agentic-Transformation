@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fleetflow_dispatch"
+version = "0.1.0"
+description = "Solves Capacitated Vehicle Routing with Time Windows (CVRPTW) using Google OR-Tools and Google Maps Routes Preferred API across 0.75t to 24t fleet vehicles."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

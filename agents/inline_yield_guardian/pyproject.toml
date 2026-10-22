@@ -1,0 +1,16 @@
+[project]
+name = "inline_yield_guardian"
+version = "0.1.0"
+description = "VisionInspect — Automated Inline Quality Gate & Inspection Agent"
+authors = [{ name = "Supply Chain Agentic Transformation Team" }]
+requires-python = ">=3.10"
+dependencies = [
+    "google-cloud-aiplatform>=1.49.0",
+    "google-genai>=0.1.1",
+    "pydantic>=2.0.0",
+    "pillow>=10.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

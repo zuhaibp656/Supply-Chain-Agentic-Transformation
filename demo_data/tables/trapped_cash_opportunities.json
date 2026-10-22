@@ -1,0 +1,28 @@
+[
+  {
+    "opportunity_id": "OPP-CASH-001",
+    "valuation_area": "DC-DALLAS-CENTRAL",
+    "material_id": "MAT-HVAC-901",
+    "category": "SLOW_MOVING_BUFFER_REDUCTION",
+    "priority_rank": 1,
+    "cash_freed_usd": 1646400.0,
+    "current_days_of_supply": 56.0,
+    "recommended_target_days_of_supply": 25.0,
+    "recommended_reduction_units": 343,
+    "annual_holding_cost_saving_usd": 362208.0,
+    "stockout_risk_delta_pct": 0.02
+  },
+  {
+    "opportunity_id": "OPP-CASH-002",
+    "valuation_area": "PLANT-1010",
+    "material_id": "MAT-880019",
+    "category": "FINISHED_GOODS_BATCH_RIGHTSIZING",
+    "priority_rank": 2,
+    "cash_freed_usd": 761600.0,
+    "current_days_of_supply": 42.5,
+    "recommended_target_days_of_supply": 20.0,
+    "recommended_reduction_units": 238,
+    "annual_holding_cost_saving_usd": 167552.0,
+    "stockout_risk_delta_pct": 0.01
+  }
+]

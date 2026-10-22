@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trade_scheme_claims_reconciler"
+version = "0.1.0"
+description = "Audits 100% of distributor secondary sales scheme claims against circular slab rules, e-waybill proof, and ShelfVision compliance—blocking phantom/split invoices and posting SAP FI credit notes."
+readme = "agents-cli-manifest.yaml"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

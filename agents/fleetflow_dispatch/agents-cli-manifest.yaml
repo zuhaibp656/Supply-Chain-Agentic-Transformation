@@ -1,0 +1,22 @@
+name: fleetflow_dispatch
+display_name: "FleetFlow — Google Maps Corridor Route & Fleet Dispatch Studio"
+description: "Solves Capacitated Vehicle Routing with Time Windows (CVRPTW) using Google OR-Tools and Google Maps Routes Preferred API across 0.75t to 24t fleet vehicles."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "05 · Deliver"
+category: "Logistics, Fleet & Transportation Management"
+tags:
+  - cvrptw
+  - google-maps
+  - fleet-engine
+  - or-tools
+  - route-optimization
+entrypoint: "app.agent:FleetflowDispatch"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_corridor_delivery_orders"
+  - "app.tools:query_fleet_vehicle_telematics_hos"
+  - "app.tools:query_google_maps_corridor_routes"
+  - "app.tools:query_backhaul_consolidation_opportunities"
+  - "app.tools:action_dispatch_corridor_route_manifest"
+  - "app.tools:action_assign_backhaul_return_load"

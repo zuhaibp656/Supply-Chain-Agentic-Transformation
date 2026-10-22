@@ -1,0 +1,3 @@
+anomaly_id,store_id,retailer,sku_id,book_inventory_units,consecutive_zero_scan_days,expected_daily_scan_units,phantom_confidence_score,root_cause_hypothesis,revenue_leakage_per_day_usd,status
+PHANTOM-KROGER-ATL-01,STORE-KROGER-ATL-209,Kroger,SKU-BEV-ISOTONIC-32OZ,380,4,820,0.96,Backroom misplaced pallet or store shelf pilferage hiding zero on-shelf availability.,2451.8,UNRESOLVED_PHANTOM_STOCKOUT
+PHANTOM-WALMART-DAL-02,STORE-WALMART-DAL-104,Walmart,SKU-BEV-ELECTROLYTE-500ML,150,3,310,0.88,Incorrect barcode tagging preventing POS register optical recognition.,1236.9,UNRESOLVED_PHANTOM_STOCKOUT

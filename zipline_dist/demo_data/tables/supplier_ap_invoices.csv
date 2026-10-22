@@ -1,0 +1,3 @@
+invoice_id,vendor_id,vendor_name,invoice_amount_usd,invoice_date,standard_net_due_date,early_discount_terms,discount_deadline_date,discount_pct,cash_discount_amount_usd,annualized_roi_pct,status
+INV-AP-489012,VEND-10492,Taiwan Micro-Power Semiconductor Corp,940000.0,2026-10-10,2026-12-09,2/10 Net 60,2026-10-20,0.02,18800.0,36.5,DISCOUNT_ELIGIBLE
+INV-AP-489088,VEND-8820,Bosch Mobility Electronics,1250000.0,2026-10-12,2026-11-26,1.5/15 Net 45,2026-10-27,0.015,18750.0,18.25,DISCOUNT_ELIGIBLE

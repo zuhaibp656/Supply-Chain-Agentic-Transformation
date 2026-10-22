@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": "carbon_scope3_ledger_golden_01",
+    "prompt": "Run end-to-end optimization and ERP write-back for EcoChain \u2014 Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger.",
+    "expected_tools": [
+      "query_shipment_level_scope3_emissions",
+      "query_eu_cbam_embedded_carbon_declarations",
+      "query_eudr_earth_engine_plot_verifications",
+      "query_low_carbon_carrier_and_supplier_swaps",
+      "action_certify_cbam_and_eudr_compliance_dossier",
+      "action_commit_scope3_decarbonization_swap"
+    ],
+    "expected_status": "success"
+  }
+]

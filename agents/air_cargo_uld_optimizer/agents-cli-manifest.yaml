@@ -1,0 +1,22 @@
+name: air_cargo_uld_optimizer
+display_name: "AeroFreight — Air Cargo Charter, Belly Allocation & 3D ULD Contour Optimizer"
+description: "Solves 3D non-rectangular aircraft ULD (LD3, LD7, PMC) contour packing to maximize volumetric weight efficiency and dynamically allocates air cargo across passenger belly and freighter charters."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "05 · Deliver"
+category: "Logistics, Fleet & Transportation Management"
+tags:
+  - air-cargo
+  - 3d-uld-packing
+  - iata-one-record
+  - flightaware-adsb
+  - volumetric-weight
+entrypoint: "app.agent:AirCargoUldOptimizer"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_air_freight_priority_shipments"
+  - "app.tools:query_uld_contour_geometry_specs"
+  - "app.tools:query_uld_3d_packing_manifests"
+  - "app.tools:query_flightaware_adsb_belly_capacity"
+  - "app.tools:action_release_3d_uld_buildup_manifest"
+  - "app.tools:action_book_air_charter_or_belly_allotment"

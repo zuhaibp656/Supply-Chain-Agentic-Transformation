@@ -1,0 +1,22 @@
+[
+  {
+    "door_id": "DOOR-CROSSDOCK-08",
+    "facility_zone": "CROSSDOCK_NORTH_QUADRANT",
+    "assigned_trailer_id": "TRL-SWIFT-7741",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-22T05:50:00Z",
+    "scheduled_unload_duration_minutes": 25,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-14",
+    "facility_zone": "OUTBOUND_SOUTH_BAY",
+    "assigned_trailer_id": "TRL-JB-HUNT-1204",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-22T06:15:00Z",
+    "scheduled_unload_duration_minutes": 35,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "telemetry_id": "AMR-TEL-20261022-001",
+    "dc_id": "RDC-DALLAS-02",
+    "amr_id": "AMR-KION-BOT-07",
+    "wave_id": "WAVE-20261022-AM-01",
+    "average_picker_speed_m_s": 1.4,
+    "total_travel_distance_km": 18.4,
+    "travel_time_pct": 68.2,
+    "pick_time_pct": 24.1,
+    "congestion_wait_pct": 7.7,
+    "bottleneck_aisle": "AISLE-14-BULK-LIQUID",
+    "status": "EXCESSIVE_TRAVEL_FLAGGED"
+  },
+  {
+    "telemetry_id": "AMR-TEL-20261022-002",
+    "dc_id": "RDC-DALLAS-02",
+    "amr_id": "AMR-KION-BOT-12",
+    "wave_id": "WAVE-20261022-AM-01",
+    "average_picker_speed_m_s": 1.5,
+    "total_travel_distance_km": 11.2,
+    "travel_time_pct": 42.0,
+    "pick_time_pct": 51.5,
+    "congestion_wait_pct": 6.5,
+    "bottleneck_aisle": "AISLE-02-GOLDEN-ZONE",
+    "status": "OPTIMAL_PICK_DENSITY"
+  }
+]
