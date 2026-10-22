@@ -203,3 +203,51 @@ class CscoControlTowerAgent:
                 f"with lateral inventory rebalancing."
             )
         }
+
+
+# ==============================================================================
+# Google ADK & Vertex AI Reasoning Engine Integration
+# ==============================================================================
+try:
+    from google.adk.agents import Agent
+    from google.adk.apps import App
+    from google.adk.models import Gemini
+    from google.genai import types
+    from vertexai.preview.reasoning_engines import AdkApp
+
+    root_agent = Agent(
+        name="csco_control_tower_copilot",
+        description="CSCO Control Tower Copilot: multi-echelon bottleneck triage and autonomous playbook execution.",
+        model=Gemini(model="gemini-3-pro-preview", retry_options=types.HttpRetryOptions(attempts=3)),
+        generate_content_config=types.GenerateContentConfig(
+            max_output_tokens=4096,
+            temperature=0.0,
+            thinking_config=types.ThinkingConfig(thinking_budget=0),
+        ),
+        instruction=_INSTRUCTION,
+        tools=_AVAILABLE_TOOLS,
+    )
+
+    app = App(root_agent=root_agent, name="csco_control_tower_copilot")
+
+    class CscoControlTowerAdkApp(AdkApp):
+        """Vertex AI Reasoning Engine wrapper for CSCO Control Tower Copilot."""
+
+        def __init__(self, agent: Agent = root_agent, **kwargs: Any) -> None:
+            super().__init__(agent=agent, **kwargs)
+            self._scenario_agent = CscoControlTowerAgent()
+
+        def query(self, *args: Any, **kwargs: Any) -> Any:
+            return super().query(*args, **kwargs)
+
+        def stream_query(self, *args: Any, **kwargs: Any) -> Any:
+            yield from super().stream_query(*args, **kwargs)
+
+        def run_scenario(self, query: str = "") -> Dict[str, Any]:
+            return self._scenario_agent.run_scenario(query)
+
+except ImportError:
+    root_agent = None  # type: ignore
+    app = None  # type: ignore
+    CscoControlTowerAdkApp = None  # type: ignore
+

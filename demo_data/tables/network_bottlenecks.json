@@ -1,0 +1,62 @@
+[
+  {
+    "bottleneck_id": "BN-SUEZ-041",
+    "location": "Red Sea / Suez Canal Maritime Chokepoint",
+    "region": "EMEA",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 7200000,
+    "delay_days": 14.5,
+    "affected_vessels_count": 8,
+    "impacted_skus": [
+      "SKU-BATTERY-MODULE-800V",
+      "SKU-SOLAR-INVERTER-3KW",
+      "SKU-SEMICON-PMIC-12"
+    ],
+    "impacted_plants": [
+      "PLANT-STUTTGART-01",
+      "PLANT-ROTTERDAM-DC"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-INTERMODAL-AIR-EXPEDITE"
+  },
+  {
+    "bottleneck_id": "BN-DALLAS-089",
+    "location": "Dallas Regional Cross-Dock Hub",
+    "region": "NORTH_AMERICA",
+    "bottleneck_type": "WAREHOUSE_LABOR_CAPACITY",
+    "severity": "HIGH",
+    "revenue_impact_usd": 2400000,
+    "delay_days": 3.8,
+    "affected_vessels_count": 0,
+    "impacted_skus": [
+      "SKU-HVAC-COMPRESSOR-V4",
+      "SKU-BEARING-HUB-W9"
+    ],
+    "impacted_plants": [
+      "DC-DALLAS-CENTRAL",
+      "PLANT-AUSTIN-02"
+    ],
+    "root_cause": "35% weekend shift absenteeism combined with surging inbound holiday volume.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-FRANKFURT-012",
+    "location": "Frankfurt Airport Cargo Terminal 2",
+    "region": "EMEA",
+    "bottleneck_type": "AIR_FREIGHT_CONGESTION",
+    "severity": "HIGH",
+    "revenue_impact_usd": 3800000,
+    "delay_days": 4.2,
+    "affected_vessels_count": 0,
+    "impacted_skus": [
+      "SKU-API-LIPID-NP",
+      "SKU-BIOLOGIC-ENZYME-100"
+    ],
+    "impacted_plants": [
+      "PLANT-BASEL-03"
+    ],
+    "root_cause": "Cold-chain reefer staging capacity deficit during customs clearance backlog.",
+    "mitigation_playbook_ref": "PLAYBOOK-PHARMA-COLD-CHAIN-GUARD"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "sensor_id": "SENS-CNC-SPINDLE-VIB-01",
+    "asset_id": "ASSET-MILLING-CNC-04",
+    "asset_name": "5-Axis High-Precision Milling Center CNC-04",
+    "plant_id": "PLANT-1020-AUSTIN",
+    "component": "High-Speed Spindle Bearing Assembly",
+    "timestamp": "2026-10-22T04:30:00Z",
+    "vibration_velocity_rms_mm_s": 7.42,
+    "vibration_threshold_warning_mm_s": 4.5,
+    "vibration_threshold_critical_mm_s": 7.1,
+    "temperature_celsius": 84.6,
+    "temperature_max_threshold_celsius": 75.0,
+    "motor_current_amperes": 42.8,
+    "spindle_rpm": 18200,
+    "telemetry_health_status": "CRITICAL_BEARING_DEGRADATION"
+  },
+  {
+    "sensor_id": "SENS-INJECT-MOLD-HYD-02",
+    "asset_id": "ASSET-INJECTION-MOLD-02",
+    "asset_name": "Hydraulic Injection Molding Machine IMM-02",
+    "plant_id": "PLANT-1020-AUSTIN",
+    "component": "Hydraulic Pump & Platen Clamping Unit",
+    "timestamp": "2026-10-22T04:30:00Z",
+    "vibration_velocity_rms_mm_s": 2.15,
+    "vibration_threshold_warning_mm_s": 4.0,
+    "vibration_threshold_critical_mm_s": 6.5,
+    "temperature_celsius": 52.3,
+    "temperature_max_threshold_celsius": 68.0,
+    "motor_current_amperes": 28.1,
+    "spindle_rpm": 0,
+    "telemetry_health_status": "NORMAL_OPTIMAL"
+  }
+]

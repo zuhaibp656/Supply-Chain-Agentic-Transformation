@@ -1,0 +1,24 @@
+[
+  {
+    "order_id": "ORD-20261022-8841",
+    "customer_id": "CUST-KROGER-CORP",
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
+    "requested_units": 8000,
+    "requested_delivery_date": "2026-10-24T12:00:00Z",
+    "destination_zip": "75201",
+    "customer_tier": "TIER_1_STRATEGIC",
+    "order_channel": "EDI_850_DIRECT_STORE_DELIVERY",
+    "order_status": "PENDING_ATP_COMMITMENT"
+  },
+  {
+    "order_id": "ORD-20261022-8842",
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP",
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
+    "requested_units": 1200,
+    "requested_delivery_date": "2026-10-24T15:00:00Z",
+    "destination_zip": "78701",
+    "customer_tier": "TIER_3_STANDARD",
+    "order_channel": "B2B_PORTAL_WEB",
+    "order_status": "PENDING_ATP_COMMITMENT"
+  }
+]

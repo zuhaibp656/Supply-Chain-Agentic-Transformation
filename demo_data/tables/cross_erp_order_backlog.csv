@@ -1,0 +1,3 @@
+order_id,order_type,customer,destination_country,total_value_usd,required_delivery_date,status,days_delayed,allocated_sku,quantity,escalation_tier,supplier,destination_plant
+SO-8840192,CUSTOMER_SALES_ORDER,Global Auto Group North America,USA,1850000,2026-10-22,JEOPARDY_STOCKOUT,5,SKU-BATTERY-MODULE-800V,450,TIER_1_EXECUTIVE,,
+PO-450098112,SUPPLIER_PURCHASE_ORDER,,,940000,2026-10-18,IN_TRANSIT_DELAYED,6,SKU-SEMICON-PMIC-12,12000,TIER_2_PROCUREMENT,Taiwan Micro-Power Semiconductor Corp,PLANT-STUTTGART-01

@@ -1,0 +1,3 @@
+supplier_id,supplier_name,tier_level,parent_tier1_vendor,facility_name,country,lat,lon,criticality,affected_components,daily_revenue_impact_usd,buffer_days_on_hand
+VEND-10492,Taiwan Micro-Power Semiconductor Corp,2,VEND-8820 (Bosch Mobility Electronics),Hsinchu Fab 4 Advanced Packaging,Taiwan,24.78,121.01,HIGH_SINGLE_SOURCE,"[""Microcontroller MCU-800V"", ""SiC Gate Driver IC""]",1250000,4.5
+VEND-30211,Antwerp Terminal Stevedoring Co,1,DIRECT,Port of Antwerp Quay 1700,Belgium,51.27,4.29,MEDIUM_MULTI_GATE,"[""Sterile Vial Containers"", ""Lipid Nanoparticles Excipients""]",480000,11.0

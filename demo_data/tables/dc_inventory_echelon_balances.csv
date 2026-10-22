@@ -1,0 +1,4 @@
+dc_id,dc_name,echelon_tier,sku_id,on_hand_inventory_units,allocated_inventory_units,available_to_promise_units,safety_stock_threshold_units,days_of_supply,inventory_status
+CDC-CHICAGO-01,Midwest Central Distribution Center,TIER_1_CENTRAL_DC,SKU-BEV-OATMILK-ORIGINAL-1L,68400,14200,54200,32000,28.5,SURPLUS_AVAILABLE_FOR_REBALANCE
+RDC-DALLAS-02,South Regional Distribution Center,TIER_2_REGIONAL_DC,SKU-BEV-OATMILK-ORIGINAL-1L,7200,5400,1800,14200,3.8,STOCKOUT_ALERT_IMMINENT
+RDC-ATLANTA-03,Southeast Regional Distribution Center,TIER_2_REGIONAL_DC,SKU-BEV-OATMILK-ORIGINAL-1L,24500,4100,20400,11000,18.2,BALANCED_HEALTHY

@@ -1,0 +1,3 @@
+sku_id,network_node_id,node_type,total_physical_on_hand_units,allocated_committed_units,tier1_contract_reserved_units,realtime_uncommitted_atp_units,replenishment_pipeline_due_units,pipeline_due_date,capable_to_promise_ctp_units,spanner_query_latency_ms
+SKU-BEV-OATMILK-ORIGINAL-1L,CDC-CHICAGO-01,CENTRAL_DC,68400,14200,20000,34200,15000,2026-10-25T18:00:00Z,49200,14.8
+SKU-BEV-OATMILK-ORIGINAL-1L,RDC-DALLAS-02,REGIONAL_DC,13700,5400,5000,3300,6500,2026-10-23T14:00:00Z,9800,12.3

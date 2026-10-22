@@ -1,0 +1,3 @@
+alert_id,event_type,severity,region,lat,lon,radius_km,effective_start,effective_end,impact_summary,affected_corridors
+WX-2026-0812,TYPHOON,CRITICAL,East China Sea / Taiwan Strait,24.8,121.5,350,2026-10-15T00:00:00Z,2026-10-18T18:00:00Z,"Category 4 Super Typhoon winds >140kt causing port closures at Keelung and Kaohsiung, halting air cargo out of TPE.","[""TRANS-PACIFIC-01"", ""INTRA-ASIA-NORTH""]"
+WX-2026-0819,HURRICANE,WARNING,Gulf of Mexico,27.5,-85.2,280,2026-10-16T06:00:00Z,2026-10-19T12:00:00Z,"Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.","[""GULF-COAST-FEEDER"", ""PANAMA-TRANSIT""]"

@@ -1,0 +1,26 @@
+[
+  {
+    "threat_id": "THREAT-CYCLONE-QLD-01",
+    "threat_type": "CATEGORY_4_TROPICAL_CYCLONE",
+    "region": "Queensland, Australia",
+    "impacted_node_id": "NODE-WEIPA-BAUXITE-AU",
+    "supplier_name": "Weipa Bauxite Mining & Refinery",
+    "disruption_severity": "CRITICAL_FACILITY_SHUTDOWN",
+    "estimated_downtime_days": 21,
+    "source_feed": "Google DeepMind WeatherNext 3 Cyclone Trajectory",
+    "advance_warning_days": 11,
+    "confidence_score": 0.94
+  },
+  {
+    "threat_id": "THREAT-SEISMIC-KANAGAWA-02",
+    "threat_type": "SEISMIC_EVENT_WARNING",
+    "region": "Kanagawa, Japan",
+    "impacted_node_id": "NODE-SHOWA-SALT-JP",
+    "supplier_name": "Showa Denko Chemical Specialty",
+    "disruption_severity": "PRECAUTIONARY_PORT_HALT",
+    "estimated_downtime_days": 7,
+    "source_feed": "JMA Seismic Alert & AIS Berth Monitor",
+    "advance_warning_days": 4,
+    "confidence_score": 0.81
+  }
+]

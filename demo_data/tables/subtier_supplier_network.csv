@@ -1,0 +1,5 @@
+node_id,supplier_name,tier_level,component_provided,facility_country,facility_city,parent_tier_nodes,single_source_chokepoint,current_lead_time_days
+NODE-BALL-US-01,Ball Metal Packaging,1,COMP-CAN-ALUM-330ML,US,"Broomfield, CO","[""NODE-ALCOA-SMELT-IS"", ""NODE-HYDRO-SMELT-NO""]",False,18
+NODE-ALCOA-SMELT-IS,Alcoa International Smelter,2,RAW-ALUM-INGOT-P1020A,IS,Reykjavik,"[""NODE-WEIPA-BAUXITE-AU""]",False,35
+NODE-WEIPA-BAUXITE-AU,Weipa Bauxite Mining & Refinery,4,ORE-BAUXITE-METALLURGICAL,AU,"Cape York, Queensland",[],True,65
+NODE-SHOWA-SALT-JP,Showa Denko Chemical Specialty,3,CHEM-ELECTROLYTE-LIPF6,JP,"Kawasaki, Kanagawa",[],True,55

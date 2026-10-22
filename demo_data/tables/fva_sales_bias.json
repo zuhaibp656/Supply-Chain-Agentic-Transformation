@@ -1,0 +1,28 @@
+[
+  {
+    "override_id": "OVR-SALES-202610-01",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "sales_account": "Key Account Walmart",
+    "planner_id": "REP-JOHNSON-CENTRAL",
+    "statistical_baseline_units": 262000,
+    "sales_override_units": 340000,
+    "override_lift_pct": 29.8,
+    "historical_fva_pct": -4.2,
+    "bias_classification": "CHRONIC_OPTIMISM_BIAS",
+    "recommended_dampened_units": 298000,
+    "rationale": "Sales override consistently exceeds actual sell-through by 18-24%, causing trapped DC safety stock."
+  },
+  {
+    "override_id": "OVR-SALES-202610-02",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "sales_account": "Key Account Costco",
+    "planner_id": "REP-PATEL-WEST",
+    "statistical_baseline_units": 135000,
+    "sales_override_units": 142000,
+    "override_lift_pct": 5.2,
+    "historical_fva_pct": 2.8,
+    "bias_classification": "ACCURATE_VALUE_ADD",
+    "recommended_dampened_units": 142000,
+    "rationale": "Commercial override aligns with confirmed regional flyer promotion."
+  }
+]

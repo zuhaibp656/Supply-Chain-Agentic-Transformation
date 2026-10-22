@@ -1,0 +1,4 @@
+forecast_id,sku_id,region,horizon_days,p10_units,p50_units,p90_units,wape_pct,baseline_erp_units,variance_vs_erp_units,revenue_at_risk_usd,driver_attribution,as_of_date
+TFM-FC-202610-001,SKU-BEV-ISOTONIC-32OZ,US-CENTRAL,14,245000,298000,362000,5.2,262000,36000,180000.0,WeatherNext 3 Heatwave + Pos Censorship Imputation,2026-10-17
+TFM-FC-202610-002,SKU-SNACK-PROTEIN-BAR,US-MIDWEST,14,118000,142000,169000,4.8,135000,7000,35000.0,Google Maps Marathon Event Lift,2026-10-17
+TFM-FC-202610-003,SKU-BEV-ELECTROLYTE-500ML,EU-UK,14,84000,105000,131000,6.1,98000,7000,42000.0,Retailer Promotion Carryover,2026-10-17

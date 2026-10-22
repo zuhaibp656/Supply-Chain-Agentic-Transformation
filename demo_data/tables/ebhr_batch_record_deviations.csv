@@ -1,0 +1,2 @@
+deviation_id,batch_number,product_id,station_id,incident_timestamp,deviation_type,severity,veeva_ticket_id,sap_qm_notification,status,root_cause_summary
+DEV-EBHR-20261022-044,BATCH-OAT-2026W42-01,SKU-BEV-OATMILK-ORIGINAL-1L,STATION-VISION-LINE01-ENTRY,2026-10-22T04:45:12Z,SEAL_INTEGRITY_BREACH,CRITICAL_CONTAINMENT,VEEVA-QMS-DEV-99214,100084920,LOGGED_REJECTED_CONTAINED,Induction sealer heating head temperature dropped below 178°C momentarily during line restart.

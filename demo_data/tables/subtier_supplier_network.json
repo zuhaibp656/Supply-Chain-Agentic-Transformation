@@ -1,0 +1,51 @@
+[
+  {
+    "node_id": "NODE-BALL-US-01",
+    "supplier_name": "Ball Metal Packaging",
+    "tier_level": 1,
+    "component_provided": "COMP-CAN-ALUM-330ML",
+    "facility_country": "US",
+    "facility_city": "Broomfield, CO",
+    "parent_tier_nodes": [
+      "NODE-ALCOA-SMELT-IS",
+      "NODE-HYDRO-SMELT-NO"
+    ],
+    "single_source_chokepoint": false,
+    "current_lead_time_days": 18
+  },
+  {
+    "node_id": "NODE-ALCOA-SMELT-IS",
+    "supplier_name": "Alcoa International Smelter",
+    "tier_level": 2,
+    "component_provided": "RAW-ALUM-INGOT-P1020A",
+    "facility_country": "IS",
+    "facility_city": "Reykjavik",
+    "parent_tier_nodes": [
+      "NODE-WEIPA-BAUXITE-AU"
+    ],
+    "single_source_chokepoint": false,
+    "current_lead_time_days": 35
+  },
+  {
+    "node_id": "NODE-WEIPA-BAUXITE-AU",
+    "supplier_name": "Weipa Bauxite Mining & Refinery",
+    "tier_level": 4,
+    "component_provided": "ORE-BAUXITE-METALLURGICAL",
+    "facility_country": "AU",
+    "facility_city": "Cape York, Queensland",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 65
+  },
+  {
+    "node_id": "NODE-SHOWA-SALT-JP",
+    "supplier_name": "Showa Denko Chemical Specialty",
+    "tier_level": 3,
+    "component_provided": "CHEM-ELECTROLYTE-LIPF6",
+    "facility_country": "JP",
+    "facility_city": "Kawasaki, Kanagawa",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 55
+  }
+]

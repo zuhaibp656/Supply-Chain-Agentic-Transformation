@@ -1,0 +1,78 @@
+{
+  "project_id": "zuhaibp-ai",
+  "region": "us-central1",
+  "gemini_app_id": "gemini-enterprise-zuhaibp_1784012666241",
+  "agents_deployed": [
+    {
+      "agent_id": "csco_control_tower_copilot",
+      "section": "Universal Core",
+      "display_name": "CSCO Control Tower Copilot (TowerMind)",
+      "model": "gemini-3-pro-preview",
+      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/mock-csco_control_tower_copilot"
+    },
+    {
+      "agent_id": "disruption_war_room_orchestrator",
+      "section": "Universal Core",
+      "display_name": "Disruption War Room Orchestrator (StormShield)",
+      "model": "gemini-3-pro-preview",
+      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/mock-disruption_war_room_orchestrator"
+    },
+    {
+      "agent_id": "demand_sensing_agent",
+      "section": "01 \u00b7 Plan",
+      "display_name": "Demand Sensing Engine (PulseCast)",
+      "model": "gemini-3-pro-preview",
+      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/mock-demand_sensing_agent"
+    },
+    {
+      "agent_id": "sop_scenario_weaver",
+      "section": "01 \u00b7 Plan",
+      "display_name": "S&OP Scenario Weaver (Synapse)",
+      "model": "gemini-3-pro-preview",
+      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/mock-sop_scenario_weaver"
+    },
+    {
+      "agent_id": "rfq_should_cost_agent",
+      "section": "02 \u00b7 Source",
+      "display_name": "Parametric Should-Cost & RFQ Agent (SourcePulse)",
+      "model": "gemini-3-pro-preview",
+      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/mock-rfq_should_cost_agent"
+    },
+    {
+      "agent_id": "tier_n_risk_sentinel",
+      "section": "02 \u00b7 Source",
+      "display_name": "Multi-Tier Supply Network Sentinel (NexusShield)",
+      "model": "gemini-3-pro-preview",
+      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/mock-tier_n_risk_sentinel"
+    },
+    {
+      "agent_id": "plant_oee_maintenance_agent",
+      "section": "03 \u00b7 Make",
+      "display_name": "Plant OEE & Maintenance Guardian (AssetGuard)",
+      "model": "gemini-3-pro-preview",
+      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/mock-plant_oee_maintenance_agent"
+    },
+    {
+      "agent_id": "inline_quality_inspection_agent",
+      "section": "03 \u00b7 Make",
+      "display_name": "Inline Multimodal Quality Inspector (VisionInspect)",
+      "model": "gemini-3.8-flash",
+      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/mock-inline_quality_inspection_agent"
+    },
+    {
+      "agent_id": "echelon_inventory_allocator",
+      "section": "04 \u00b7 Fulfill",
+      "display_name": "Multi-Echelon Inventory Allocator (EchelonFlow)",
+      "model": "gemini-3-pro-preview",
+      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/mock-echelon_inventory_allocator"
+    },
+    {
+      "agent_id": "dynamic_order_promising_atp",
+      "section": "04 \u00b7 Fulfill",
+      "display_name": "Sub-50ms Spanner ATP & Order Promising (PromiseGuard)",
+      "model": "gemini-3-pro-preview",
+      "reasoning_engine": "projects/zuhaibp-ai/locations/us-central1/reasoningEngines/mock-dynamic_order_promising_atp"
+    }
+  ],
+  "updated_at": "2026-10-22T05:34:46Z"
+}

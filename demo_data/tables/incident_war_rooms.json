@@ -1,0 +1,15 @@
+[
+  {
+    "incident_id": "INC-WR-2026-001",
+    "title": "Red Sea Bab-el-Mandeb Houthis Missile Reroute",
+    "severity": "CRITICAL",
+    "created_at": "2026-10-10T12:00:00Z",
+    "status": "MITIGATED",
+    "owner": "Director of Global Logistics",
+    "affected_lanes": [
+      "ASIA-TO-EUROPE-SUEZ"
+    ],
+    "action_plan": "Diverted 14 vessels around Cape of Good Hope (+12 days buffer added in SAP IBP). Fast-tracked air charter for line-down sterile vials.",
+    "recovered_cost_usd": 3800000
+  }
+]

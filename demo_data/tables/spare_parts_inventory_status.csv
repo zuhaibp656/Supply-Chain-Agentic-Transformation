@@ -1,0 +1,3 @@
+part_number,description,compatible_assets,stock_on_hand,reserved_quantity,available_quantity,safety_stock_threshold,storage_bin,unit_cost_usd,lead_time_days,supplier_id,stock_status
+PART-SPARE-BEARING-CERAMIC-7014,High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A),"[""ASSET-MILLING-CNC-04"", ""ASSET-MILLING-CNC-05""]",3,0,3,1,BIN-AUSTIN-CRIB-04-A12,1250.0,18,VEND-SKF-BEARINGS-US,IN_STOCK_READY
+PART-SPARE-HYD-SEAL-KIT-08,FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit,"[""ASSET-INJECTION-MOLD-02""]",5,0,5,2,BIN-AUSTIN-CRIB-02-B08,320.0,7,VEND-PARKER-HANNIFIN,IN_STOCK_READY

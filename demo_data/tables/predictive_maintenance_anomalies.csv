@@ -1,0 +1,3 @@
+anomaly_id,asset_id,asset_name,failure_mode,severity,estimated_time_to_failure_hours,confidence_score,recommended_maintenance_type,required_downtime_hours,estimated_unplanned_cost_usd,preventive_repair_cost_usd,net_avoided_loss_usd,recommended_maintenance_window
+ANOM-CNC-04-VIB-992,ASSET-MILLING-CNC-04,5-Axis High-Precision Milling Center CNC-04,SPINDLE_FRONT_ROLLER_BEARING_FLAKING,CRITICAL_HIGH,36.0,0.96,EMERGENCY_PREVENTIVE_OVERHAUL,4.5,85000.0,4200.0,80800.0,NEXT_SHIFT_WINDOW_2200_TO_0230
+ANOM-IMM-02-TEMP-410,ASSET-INJECTION-MOLD-02,Hydraulic Injection Molding Machine IMM-02,HYDRAULIC_HEAT_EXCHANGER_FOULING,LOW_OBSERVED_TREND,340.0,0.72,PLANNED_SCHEDULED_SERVICING,2.0,12000.0,850.0,11150.0,MONTHLY_PM_BLOCK_NEXT_WEEK

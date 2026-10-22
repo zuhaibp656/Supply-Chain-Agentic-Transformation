@@ -1,0 +1,4 @@
+node_id,name,echelon_level,capacity_utilization_pct,inventory_value_usd,days_of_supply,safety_stock_health,active_inbound_shipments,active_outbound_orders
+NODE-CENTRAL-US,Chicago Central Fulfillment Mega-Hub,1,91.2,68400000,22.4,OPTIMAL,42,1280
+NODE-WEST-DC,Ontario California Regional DC,2,96.8,34100000,11.2,BELOW_BUFFER_RISK,18,840
+NODE-PLANT-GERMANY,Stuttgart Advanced Battery Plant,0,84.5,48900000,6.8,CRITICAL_BUFFER_BREACH,12,310

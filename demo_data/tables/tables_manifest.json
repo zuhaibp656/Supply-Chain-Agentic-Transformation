@@ -1,0 +1,296 @@
+[
+  {
+    "table_name": "active_disruption_threats",
+    "agent_id": "tier_n_risk_sentinel",
+    "row_count": 2,
+    "json_file": "active_disruption_threats.json",
+    "csv_file": "active_disruption_threats.csv"
+  },
+  {
+    "table_name": "award_allocation_scenarios",
+    "agent_id": "rfq_should_cost_agent",
+    "row_count": 2,
+    "json_file": "award_allocation_scenarios.json",
+    "csv_file": "award_allocation_scenarios.csv"
+  },
+  {
+    "table_name": "bom_finished_good_lineage",
+    "agent_id": "tier_n_risk_sentinel",
+    "row_count": 2,
+    "json_file": "bom_finished_good_lineage.json",
+    "csv_file": "bom_finished_good_lineage.csv"
+  },
+  {
+    "table_name": "camera_vision_inspection_frames",
+    "agent_id": "inline_quality_inspection_agent",
+    "row_count": 2,
+    "json_file": "camera_vision_inspection_frames.json",
+    "csv_file": "camera_vision_inspection_frames.csv"
+  },
+  {
+    "table_name": "commodity_index_rates",
+    "agent_id": "rfq_should_cost_agent",
+    "row_count": 3,
+    "json_file": "commodity_index_rates.json",
+    "csv_file": "commodity_index_rates.csv"
+  },
+  {
+    "table_name": "cross_erp_order_backlog",
+    "agent_id": "csco_control_tower_copilot",
+    "row_count": 2,
+    "json_file": "cross_erp_order_backlog.json",
+    "csv_file": "cross_erp_order_backlog.csv"
+  },
+  {
+    "table_name": "customer_tier_sla_commitments",
+    "agent_id": "dynamic_order_promising_atp",
+    "row_count": 2,
+    "json_file": "customer_tier_sla_commitments.json",
+    "csv_file": "customer_tier_sla_commitments.csv"
+  },
+  {
+    "table_name": "dc_inventory_echelon_balances",
+    "agent_id": "echelon_inventory_allocator",
+    "row_count": 3,
+    "json_file": "dc_inventory_echelon_balances.json",
+    "csv_file": "dc_inventory_echelon_balances.csv"
+  },
+  {
+    "table_name": "ebhr_batch_record_deviations",
+    "agent_id": "inline_quality_inspection_agent",
+    "row_count": 1,
+    "json_file": "ebhr_batch_record_deviations.json",
+    "csv_file": "ebhr_batch_record_deviations.csv"
+  },
+  {
+    "table_name": "echelon_service_level_projections",
+    "agent_id": "echelon_inventory_allocator",
+    "row_count": 1,
+    "json_file": "echelon_service_level_projections.json",
+    "csv_file": "echelon_service_level_projections.csv"
+  },
+  {
+    "table_name": "executive_playbooks",
+    "agent_id": "csco_control_tower_copilot",
+    "row_count": 2,
+    "json_file": "executive_playbooks.json",
+    "csv_file": "executive_playbooks.csv"
+  },
+  {
+    "table_name": "external_signals_weathernext",
+    "agent_id": "demand_sensing_agent",
+    "row_count": 3,
+    "json_file": "external_signals_weathernext.json",
+    "csv_file": "external_signals_weathernext.csv"
+  },
+  {
+    "table_name": "fva_sales_bias",
+    "agent_id": "demand_sensing_agent",
+    "row_count": 2,
+    "json_file": "fva_sales_bias.json",
+    "csv_file": "fva_sales_bias.csv"
+  },
+  {
+    "table_name": "inbound_customer_order_requests",
+    "agent_id": "dynamic_order_promising_atp",
+    "row_count": 2,
+    "json_file": "inbound_customer_order_requests.json",
+    "csv_file": "inbound_customer_order_requests.csv"
+  },
+  {
+    "table_name": "incident_war_rooms",
+    "agent_id": "disruption_war_room_orchestrator",
+    "row_count": 1,
+    "json_file": "incident_war_rooms.json",
+    "csv_file": "incident_war_rooms.csv"
+  },
+  {
+    "table_name": "lateral_dc_rebalance_transfers",
+    "agent_id": "echelon_inventory_allocator",
+    "row_count": 1,
+    "json_file": "lateral_dc_rebalance_transfers.json",
+    "csv_file": "lateral_dc_rebalance_transfers.csv"
+  },
+  {
+    "table_name": "maritime_ais_vessels",
+    "agent_id": "disruption_war_room_orchestrator",
+    "row_count": 2,
+    "json_file": "maritime_ais_vessels.json",
+    "csv_file": "maritime_ais_vessels.csv"
+  },
+  {
+    "table_name": "material_should_cost_bom",
+    "agent_id": "rfq_should_cost_agent",
+    "row_count": 2,
+    "json_file": "material_should_cost_bom.json",
+    "csv_file": "material_should_cost_bom.csv"
+  },
+  {
+    "table_name": "mitigation_playbook_options",
+    "agent_id": "tier_n_risk_sentinel",
+    "row_count": 2,
+    "json_file": "mitigation_playbook_options.json",
+    "csv_file": "mitigation_playbook_options.csv"
+  },
+  {
+    "table_name": "multi_echelon_safety_stock_recommendations",
+    "agent_id": "echelon_inventory_allocator",
+    "row_count": 2,
+    "json_file": "multi_echelon_safety_stock_recommendations.json",
+    "csv_file": "multi_echelon_safety_stock_recommendations.csv"
+  },
+  {
+    "table_name": "multiechelon_twin_status",
+    "agent_id": "csco_control_tower_copilot",
+    "row_count": 3,
+    "json_file": "multiechelon_twin_status.json",
+    "csv_file": "multiechelon_twin_status.csv"
+  },
+  {
+    "table_name": "network_bottlenecks",
+    "agent_id": "csco_control_tower_copilot",
+    "row_count": 3,
+    "json_file": "network_bottlenecks.json",
+    "csv_file": "network_bottlenecks.csv"
+  },
+  {
+    "table_name": "news_disruptions",
+    "agent_id": "disruption_war_room_orchestrator",
+    "row_count": 2,
+    "json_file": "news_disruptions.json",
+    "csv_file": "news_disruptions.csv"
+  },
+  {
+    "table_name": "oee_breakdown_metrics",
+    "agent_id": "plant_oee_maintenance_agent",
+    "row_count": 2,
+    "json_file": "oee_breakdown_metrics.json",
+    "csv_file": "oee_breakdown_metrics.csv"
+  },
+  {
+    "table_name": "order_promising_routing_decisions",
+    "agent_id": "dynamic_order_promising_atp",
+    "row_count": 1,
+    "json_file": "order_promising_routing_decisions.json",
+    "csv_file": "order_promising_routing_decisions.csv"
+  },
+  {
+    "table_name": "plant_line_capacities",
+    "agent_id": "sop_scenario_weaver",
+    "row_count": 3,
+    "json_file": "plant_line_capacities.json",
+    "csv_file": "plant_line_capacities.csv"
+  },
+  {
+    "table_name": "plant_machine_telemetry",
+    "agent_id": "plant_oee_maintenance_agent",
+    "row_count": 2,
+    "json_file": "plant_machine_telemetry.json",
+    "csv_file": "plant_machine_telemetry.csv"
+  },
+  {
+    "table_name": "pneumatic_reject_gate_events",
+    "agent_id": "inline_quality_inspection_agent",
+    "row_count": 1,
+    "json_file": "pneumatic_reject_gate_events.json",
+    "csv_file": "pneumatic_reject_gate_events.csv"
+  },
+  {
+    "table_name": "pos_store_scans",
+    "agent_id": "demand_sensing_agent",
+    "row_count": 5,
+    "json_file": "pos_store_scans.json",
+    "csv_file": "pos_store_scans.csv"
+  },
+  {
+    "table_name": "predictive_maintenance_anomalies",
+    "agent_id": "plant_oee_maintenance_agent",
+    "row_count": 2,
+    "json_file": "predictive_maintenance_anomalies.json",
+    "csv_file": "predictive_maintenance_anomalies.csv"
+  },
+  {
+    "table_name": "realtime_sku_atp_allocations",
+    "agent_id": "dynamic_order_promising_atp",
+    "row_count": 2,
+    "json_file": "realtime_sku_atp_allocations.json",
+    "csv_file": "realtime_sku_atp_allocations.csv"
+  },
+  {
+    "table_name": "sc_kpi_summary",
+    "agent_id": "csco_control_tower_copilot",
+    "row_count": 4,
+    "json_file": "sc_kpi_summary.json",
+    "csv_file": "sc_kpi_summary.csv"
+  },
+  {
+    "table_name": "sop_scenario_tradeoffs",
+    "agent_id": "sop_scenario_weaver",
+    "row_count": 3,
+    "json_file": "sop_scenario_tradeoffs.json",
+    "csv_file": "sop_scenario_tradeoffs.csv"
+  },
+  {
+    "table_name": "sop_unconstrained_demand",
+    "agent_id": "sop_scenario_weaver",
+    "row_count": 3,
+    "json_file": "sop_unconstrained_demand.json",
+    "csv_file": "sop_unconstrained_demand.csv"
+  },
+  {
+    "table_name": "spare_parts_inventory_status",
+    "agent_id": "plant_oee_maintenance_agent",
+    "row_count": 2,
+    "json_file": "spare_parts_inventory_status.json",
+    "csv_file": "spare_parts_inventory_status.csv"
+  },
+  {
+    "table_name": "subtier_supplier_network",
+    "agent_id": "tier_n_risk_sentinel",
+    "row_count": 4,
+    "json_file": "subtier_supplier_network.json",
+    "csv_file": "subtier_supplier_network.csv"
+  },
+  {
+    "table_name": "supplier_component_allocations",
+    "agent_id": "sop_scenario_weaver",
+    "row_count": 2,
+    "json_file": "supplier_component_allocations.json",
+    "csv_file": "supplier_component_allocations.csv"
+  },
+  {
+    "table_name": "supplier_facilities",
+    "agent_id": "disruption_war_room_orchestrator",
+    "row_count": 2,
+    "json_file": "supplier_facilities.json",
+    "csv_file": "supplier_facilities.csv"
+  },
+  {
+    "table_name": "supplier_rfq_bids",
+    "agent_id": "rfq_should_cost_agent",
+    "row_count": 3,
+    "json_file": "supplier_rfq_bids.json",
+    "csv_file": "supplier_rfq_bids.csv"
+  },
+  {
+    "table_name": "timesfm_quantile_horizons",
+    "agent_id": "demand_sensing_agent",
+    "row_count": 3,
+    "json_file": "timesfm_quantile_horizons.json",
+    "csv_file": "timesfm_quantile_horizons.csv"
+  },
+  {
+    "table_name": "vision_defect_classification_results",
+    "agent_id": "inline_quality_inspection_agent",
+    "row_count": 2,
+    "json_file": "vision_defect_classification_results.json",
+    "csv_file": "vision_defect_classification_results.csv"
+  },
+  {
+    "table_name": "weather_alerts",
+    "agent_id": "disruption_war_room_orchestrator",
+    "row_count": 2,
+    "json_file": "weather_alerts.json",
+    "csv_file": "weather_alerts.csv"
+  }
+]

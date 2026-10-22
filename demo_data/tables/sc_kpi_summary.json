@@ -1,0 +1,62 @@
+[
+  {
+    "region": "GLOBAL",
+    "period": "CURRENT_MONTH",
+    "otif_delivery_pct": 94.2,
+    "otif_target_pct": 98.0,
+    "days_inventory_outstanding_dio": 58.4,
+    "dio_target": 45.0,
+    "plant_oee_pct": 82.6,
+    "line_down_risk_score": 0.38,
+    "carbon_intensity_kg_per_ton_km": 0.048,
+    "total_revenue_at_risk_usd": 18450000,
+    "critical_stockouts_count": 14,
+    "freight_budget_variance_pct": 12.8,
+    "status": "ELEVATED_RISK"
+  },
+  {
+    "region": "NORTH_AMERICA",
+    "period": "CURRENT_MONTH",
+    "otif_delivery_pct": 96.1,
+    "otif_target_pct": 98.5,
+    "days_inventory_outstanding_dio": 52.1,
+    "dio_target": 42.0,
+    "plant_oee_pct": 84.1,
+    "line_down_risk_score": 0.22,
+    "carbon_intensity_kg_per_ton_km": 0.052,
+    "total_revenue_at_risk_usd": 4200000,
+    "critical_stockouts_count": 3,
+    "freight_budget_variance_pct": 6.4,
+    "status": "NOMINAL"
+  },
+  {
+    "region": "EMEA",
+    "period": "CURRENT_MONTH",
+    "otif_delivery_pct": 89.4,
+    "otif_target_pct": 97.5,
+    "days_inventory_outstanding_dio": 64.8,
+    "dio_target": 48.0,
+    "plant_oee_pct": 79.5,
+    "line_down_risk_score": 0.65,
+    "carbon_intensity_kg_per_ton_km": 0.044,
+    "total_revenue_at_risk_usd": 9800000,
+    "critical_stockouts_count": 8,
+    "freight_budget_variance_pct": 21.2,
+    "status": "CRITICAL_ATTENTION"
+  },
+  {
+    "region": "APAC",
+    "period": "CURRENT_MONTH",
+    "otif_delivery_pct": 93.8,
+    "otif_target_pct": 98.0,
+    "days_inventory_outstanding_dio": 61.2,
+    "dio_target": 46.0,
+    "plant_oee_pct": 85.0,
+    "line_down_risk_score": 0.42,
+    "carbon_intensity_kg_per_ton_km": 0.046,
+    "total_revenue_at_risk_usd": 4450000,
+    "critical_stockouts_count": 3,
+    "freight_budget_variance_pct": 9.1,
+    "status": "MODERATE_RISK"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "event_id": "REJ-GATE-20261022-00841",
+    "frame_id": "FRAME-CAM01-20261022-00841",
+    "classification_id": "CLS-FLASH-VISION-20261022-00841",
+    "line_id": "LINE-ASEPTIC-01",
+    "pneumatic_diverter_id": "DIVERTER-SOLENOID-LINE01-A",
+    "actuation_latency_ms": 14.2,
+    "conveyor_speed_m_s": 1.25,
+    "divert_target_bin": "REJECT-BIN-LINE01-01",
+    "optical_verification_sensor": "SENS-OPTICAL-REJECT-VERIFIED-TRUE",
+    "status": "PNEUMATIC_DIVERTER_FIRED_REJECTED"
+  }
+]

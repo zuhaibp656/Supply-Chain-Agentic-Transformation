@@ -1,0 +1,35 @@
+[
+  {
+    "node_id": "NODE-CENTRAL-US",
+    "name": "Chicago Central Fulfillment Mega-Hub",
+    "echelon_level": 1,
+    "capacity_utilization_pct": 91.2,
+    "inventory_value_usd": 68400000,
+    "days_of_supply": 22.4,
+    "safety_stock_health": "OPTIMAL",
+    "active_inbound_shipments": 42,
+    "active_outbound_orders": 1280
+  },
+  {
+    "node_id": "NODE-WEST-DC",
+    "name": "Ontario California Regional DC",
+    "echelon_level": 2,
+    "capacity_utilization_pct": 96.8,
+    "inventory_value_usd": 34100000,
+    "days_of_supply": 11.2,
+    "safety_stock_health": "BELOW_BUFFER_RISK",
+    "active_inbound_shipments": 18,
+    "active_outbound_orders": 840
+  },
+  {
+    "node_id": "NODE-PLANT-GERMANY",
+    "name": "Stuttgart Advanced Battery Plant",
+    "echelon_level": 0,
+    "capacity_utilization_pct": 84.5,
+    "inventory_value_usd": 48900000,
+    "days_of_supply": 6.8,
+    "safety_stock_health": "CRITICAL_BUFFER_BREACH",
+    "active_inbound_shipments": 12,
+    "active_outbound_orders": 310
+  }
+]
