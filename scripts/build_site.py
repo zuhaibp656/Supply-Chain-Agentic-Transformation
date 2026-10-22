@@ -86,32 +86,54 @@ def build_html() -> str:
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Google+Sans+Display:wght@400;500;700;800&family=Google+Sans+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg-page: #04060a;
-      --bg-surface: #0b0f19;
-      --bg-card: #101726;
-      --bg-card-hover: #162033;
-      --text-primary: #ffffff;
+    :root, html[data-theme="dark"] {
+      --bg-page: #080b12;
+      --bg-surface: #0f1522;
+      --bg-card: #131b2b;
+      --bg-card-hover: #192338;
+      --text-primary: #f1f5f9;
       --text-secondary: #cbd5e1;
       --text-muted: #94a3b8;
-      --border-subtle: rgba(255, 255, 255, 0.09);
-      --border-strong: rgba(255, 255, 255, 0.18);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.14);
 
-      /* Official Google + Supply Chain Vibrant Palette */
+      /* Official Google Brand Language Palette (Toned-Down, No Harsh Neon) */
       --g-blue: #4285f4;
       --g-green: #34a853;
       --g-yellow: #fbbc04;
       --g-red: #ea4335;
-      --sc-cyan: #00d2ff;
-      --sc-emerald: #10b981;
-      --sc-amber: #ff8c00;
-      --sc-violet: #a142f4;
+      --sc-cyan: #4285f4;
+      --sc-emerald: #2e8b57;
+      --sc-amber: #d97706;
+      --sc-violet: #7e57c2;
 
       --font-sans: 'Google Sans Text', 'Google Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-display: 'Google Sans Display', 'Google Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'JetBrains Mono', 'Roboto Mono', 'SF Mono', Menlo, Consolas, monospace;
       --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
       --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html[data-theme="light"] {
+      --bg-page: #ffffff;
+      --bg-surface: #f8f9fa;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f1f3f4;
+      --text-primary: #202124;
+      --text-secondary: #3c4043;
+      --text-muted: #5f6368;
+      --border-subtle: #e0e3e7;
+      --border-strong: #cbd2d9;
+
+      /* Dimmed Google Brand Palette for White Website */
+      --g-blue: #1a73e8;
+      --g-green: #1e8e3e;
+      --g-yellow: #b06000;
+      --g-red: #c5221f;
+      --sc-cyan: #1a73e8;
+      --sc-emerald: #1e8e3e;
+      --sc-amber: #b06000;
+      --sc-violet: #681da8;
     }
 
     * {
@@ -145,7 +167,7 @@ def build_html() -> str:
       text-wrap: balance;
       font-weight: 800;
       letter-spacing: -0.025em;
-      color: #ffffff;
+      color: var(--text-primary);
     }
 
     p, li, .hero-subtitle, .section-subtitle, .persona-page-summary, .agent-subtitle, .detail-card-text, .exec-pitch-text, .exec-pitch-body {
@@ -165,18 +187,18 @@ def build_html() -> str:
        CLEAN, CALM READABILITY SYSTEM (NO NOISY BOXES OR UNDERLINES IN TEXT)
        ========================================================================= */
     .sc-hl-metric {
-      color: #ffffff;
-      font-weight: 700;
+      color: var(--text-primary);
+      font-weight: 600;
       font-variant-numeric: tabular-nums;
     }
 
     .sc-hl-underline {
-      color: #f8fafc;
+      color: var(--text-primary);
       font-weight: 600;
     }
 
     .sc-hl-bold {
-      color: #ffffff;
+      color: var(--text-primary);
       font-weight: 600;
     }
 
@@ -3562,6 +3584,550 @@ def build_html() -> str:
       border-color: var(--fc-color, #38bdf8);
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
     }
+
+    /* =========================================================================
+       SIMPLIFIED PERSONA JOURNEY & COMPACT AGENT ARCHITECTURE STYLES
+       ========================================================================= */
+    .journey-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 42px;
+    }
+
+    .journey-step-row {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 16px 22px;
+      border-radius: 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      transition: border-color 0.22s ease, background 0.22s ease;
+    }
+
+    .journey-step-row:hover {
+      border-color: var(--border-strong);
+      background: var(--bg-card-hover);
+    }
+
+    @media (max-width: 860px) {
+      .journey-step-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+
+    .journey-step-time {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .journey-step-title {
+      font-family: var(--font-display);
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .journey-step-desc {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .journey-agent-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(66, 133, 244, 0.12);
+      border: 1px solid rgba(66, 133, 244, 0.32);
+      color: var(--g-blue);
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: all 0.22s ease;
+    }
+
+    .journey-agent-pill:hover {
+      background: var(--g-blue);
+      color: #ffffff;
+    }
+
+    .showcase-emblem-box {
+      width: 180px;
+      height: 84px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+
+    .simple-arch-card {
+      padding: 24px 28px;
+      border-radius: 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 28px;
+    }
+
+    .simple-arch-svg-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      padding: 12px;
+    }
+
+    .video-placeholder-stage {
+      width: 100%;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 36px 24px;
+      gap: 14px;
+      color: var(--text-secondary);
+    }
+
+    .video-placeholder-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(66, 133, 244, 0.12);
+      border: 1px solid rgba(66, 133, 244, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--g-blue);
+      font-size: 24px;
+    }
+
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-strong) !important;
+      background: var(--bg-surface) !important;
+      color: var(--text-primary) !important;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--g-blue) !important;
+    }
+
+    /* =========================================================================
+       TONED-DOWN DARK THEME REFINEMENTS (LESS NEON, MORE GOOGLE BRAND)
+       ========================================================================= */
+    .cfo-box {
+      border: 1.5px solid rgba(66, 133, 244, 0.45);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .dept-node {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    .dept-node:hover,
+    .dept-node.active {
+      background: var(--bg-card-hover);
+      border-color: var(--dept-accent, var(--g-blue));
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.36);
+    }
+
+    .dept-anim-stage svg.dept-stage-svg {
+      opacity: 0.84;
+      filter: saturate(0.88);
+    }
+
+    .dept-node:hover .dept-anim-stage svg.dept-stage-svg,
+    .dept-node.active .dept-anim-stage svg.dept-stage-svg {
+      opacity: 0.96;
+      filter: saturate(1.0);
+    }
+
+    /* =========================================================================
+       LIGHT THEME OVERRIDES (WHITE BACKGROUND, DIMMED GOOGLE BRAND COLORS)
+       ========================================================================= */
+    html[data-theme="light"],
+    html[data-theme="light"] body {
+      background: #ffffff;
+      color: #202124;
+    }
+
+    html[data-theme="light"] .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid #dadce0;
+      box-shadow: 0 1px 4px rgba(60, 64, 67, 0.06);
+    }
+
+    html[data-theme="light"] .nav-brand img.gemini-logo,
+    html[data-theme="light"] .hero-logo-lockup img.gemini-hero {
+      filter: invert(1) hue-rotate(180deg);
+    }
+
+    html[data-theme="light"] .nav-csco-badge {
+      background: #f1f3f4;
+      border-color: #dadce0;
+      color: #3c4043;
+    }
+
+    html[data-theme="light"] .nav-pill-btn {
+      color: #3c4043;
+    }
+
+    html[data-theme="light"] .nav-pill-btn:hover {
+      background: #f1f3f4;
+      color: #1a73e8;
+    }
+
+    html[data-theme="light"] .hero-section {
+      background: #ffffff;
+      border-bottom: 1px solid #e0e3e7;
+    }
+
+    html[data-theme="light"] .hero-aurora-backdrop {
+      background:
+        radial-gradient(circle 520px at 16% 26%, rgba(66, 133, 244, 0.06), transparent 72%),
+        radial-gradient(circle 560px at 84% 32%, rgba(52, 168, 83, 0.05), transparent 72%),
+        radial-gradient(circle 480px at 22% 76%, rgba(251, 188, 4, 0.05), transparent 70%),
+        radial-gradient(circle 520px at 82% 78%, rgba(234, 67, 53, 0.05), transparent 72%);
+    }
+
+    html[data-theme="light"] .hero-vignette {
+      background:
+        radial-gradient(ellipse 36% 42% at 50% 48%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.72) 56%, rgba(255, 255, 255, 0.0) 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.95) 100%);
+    }
+
+    html[data-theme="light"] .hero-logo-lockup {
+      background: #f8f9fa;
+      border: 1px solid #dadce0;
+      box-shadow: 0 2px 10px rgba(60, 64, 67, 0.07);
+    }
+
+    html[data-theme="light"] .hero-title {
+      color: #202124;
+      text-shadow: none;
+    }
+
+    html[data-theme="light"] .hero-title .gradient-word {
+      background: linear-gradient(92deg, #1a73e8 0%, #1e8e3e 52%, #b06000 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    html[data-theme="light"] .hero-subtitle {
+      color: #5f6368;
+      text-shadow: none;
+    }
+
+    html[data-theme="light"] .hero-cta-btn {
+      background: #1a73e8;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(26, 115, 232, 0.22);
+    }
+
+    html[data-theme="light"] .hero-cta-btn.secondary-hero-btn {
+      background: #f8f9fa !important;
+      color: #3c4043 !important;
+      border: 1px solid #dadce0 !important;
+      box-shadow: 0 1px 4px rgba(60, 64, 67, 0.06) !important;
+    }
+
+    html[data-theme="light"] .four-color-bar {
+      box-shadow: none;
+    }
+
+    html[data-theme="light"] .section-title,
+    html[data-theme="light"] .cfo-box-title,
+    html[data-theme="light"] .dept-node-title,
+    html[data-theme="light"] .showcase-dept-name,
+    html[data-theme="light"] .persona-link-name,
+    html[data-theme="light"] .persona-page-title,
+    html[data-theme="light"] .agent-title,
+    html[data-theme="light"] .block-title,
+    html[data-theme="light"] .catalog-title {
+      color: #202124 !important;
+    }
+
+    html[data-theme="light"] .section-subtitle,
+    html[data-theme="light"] .cfo-box-sub,
+    html[data-theme="light"] .dept-node-sub,
+    html[data-theme="light"] .showcase-visual-desc,
+    html[data-theme="light"] .persona-link-role,
+    html[data-theme="light"] .persona-page-summary,
+    html[data-theme="light"] .agent-subtitle,
+    html[data-theme="light"] .block-subtitle,
+    html[data-theme="light"] .catalog-desc {
+      color: #5f6368 !important;
+    }
+
+    html[data-theme="light"] .vertical-tabs-nav-bar {
+      background: rgba(248, 249, 250, 0.96);
+      border: 1px solid #dadce0;
+      box-shadow: 0 4px 14px rgba(60, 64, 67, 0.07);
+    }
+
+    html[data-theme="light"] .v-tab-btn {
+      background: #ffffff;
+      color: #5f6368;
+      border: 1px solid #e0e3e7;
+    }
+
+    html[data-theme="light"] .v-tab-btn .v-tab-title {
+      color: #202124;
+    }
+
+    html[data-theme="light"] .v-tab-btn:hover {
+      background: #f1f3f4;
+      border-color: #bdc1c6;
+      box-shadow: 0 2px 8px rgba(60, 64, 67, 0.08);
+    }
+
+    html[data-theme="light"] .v-tab-btn.active {
+      background: #e8f0fe;
+      border-color: var(--v-accent, #1a73e8);
+      box-shadow: 0 2px 8px rgba(26, 115, 232, 0.12);
+    }
+
+    html[data-theme="light"] .v-tab-btn.active .v-tab-tag {
+      color: #3c4043;
+    }
+
+    html[data-theme="light"] .cfo-box {
+      background: #f8f9fa;
+      border: 1.5px solid #dadce0;
+      box-shadow: 0 4px 14px rgba(60, 64, 67, 0.07);
+    }
+
+    html[data-theme="light"] .cfo-sc-emblem {
+      background: #ffffff;
+      border: 1px solid #e0e3e7;
+    }
+
+    html[data-theme="light"] .dept-node {
+      background: #ffffff;
+      border: 1px solid #dadce0;
+      box-shadow: 0 2px 8px rgba(60, 64, 67, 0.06);
+    }
+
+    html[data-theme="light"] .dept-node:hover,
+    html[data-theme="light"] .dept-node.active {
+      background: #f8f9fa;
+      border-color: var(--dept-accent, #1a73e8);
+      box-shadow: 0 6px 20px rgba(60, 64, 67, 0.11);
+    }
+
+    html[data-theme="light"] .dept-anim-stage {
+      background: #f8f9fa;
+      border: 1px solid #e8eaed;
+    }
+
+    html[data-theme="light"] .dept-node:hover .dept-anim-stage,
+    html[data-theme="light"] .dept-node.active .dept-anim-stage {
+      background: #f1f3f4;
+      border-color: #dadce0;
+    }
+
+    html[data-theme="light"] .dept-anim-stage svg.dept-stage-svg {
+      opacity: 0.78;
+      filter: saturate(0.72) contrast(0.92);
+    }
+
+    html[data-theme="light"] .dept-node:hover .dept-anim-stage svg.dept-stage-svg,
+    html[data-theme="light"] .dept-node.active .dept-anim-stage svg.dept-stage-svg {
+      opacity: 0.92;
+      filter: saturate(0.85) contrast(0.96);
+    }
+
+    html[data-theme="light"] .dept-anim-meta {
+      background: rgba(255, 255, 255, 0.92);
+      color: #3c4043;
+      border: 1px solid #dadce0;
+    }
+
+    html[data-theme="light"] .dept-showcase-box {
+      background: #f8f9fa;
+      border: 1px solid #dadce0;
+      box-shadow: 0 8px 24px rgba(60, 64, 67, 0.09);
+    }
+
+    html[data-theme="light"] .showcase-visual-strip {
+      background: #ffffff;
+      border: 1px solid #e0e3e7;
+    }
+
+    html[data-theme="light"] .persona-link-card {
+      background: #ffffff;
+      border: 1px solid #dadce0;
+      box-shadow: 0 1px 3px rgba(60, 64, 67, 0.05);
+    }
+
+    html[data-theme="light"] .persona-link-card:hover {
+      background: #f1f3f4;
+      border-color: var(--dept-accent, #1a73e8);
+      box-shadow: 0 4px 12px rgba(60, 64, 67, 0.09);
+    }
+
+    html[data-theme="light"] .persona-emoji {
+      background: #f8f9fa;
+      border: 1px solid #e0e3e7;
+    }
+
+    html[data-theme="light"] .persona-header-card,
+    html[data-theme="light"] .agent-hero-banner {
+      background: #f8f9fa;
+      border: 1px solid #dadce0;
+      box-shadow: 0 4px 14px rgba(60, 64, 67, 0.06);
+    }
+
+    html[data-theme="light"] .persona-header-sc-watermark {
+      opacity: 0.14;
+      filter: saturate(0.65);
+    }
+
+    html[data-theme="light"] .catalog-card,
+    html[data-theme="light"] .dir-persona-card {
+      background: #ffffff;
+      border: 1px solid #dadce0;
+      box-shadow: 0 2px 8px rgba(60, 64, 67, 0.06);
+    }
+
+    html[data-theme="light"] .catalog-card:hover,
+    html[data-theme="light"] .dir-persona-card:hover {
+      background: #f8f9fa;
+      border-color: #bdc1c6;
+      box-shadow: 0 6px 18px rgba(60, 64, 67, 0.11);
+    }
+
+    html[data-theme="light"] .catalog-thumb {
+      background: #f1f3f4;
+      border-bottom: 1px solid #e0e3e7;
+    }
+
+    html[data-theme="light"] .play-circle {
+      background: #ffffff;
+      color: #1a73e8;
+      border: 1px solid #dadce0;
+    }
+
+    html[data-theme="light"] .video-stage-box {
+      background: #f8f9fa;
+      border: 1px solid #dadce0;
+      box-shadow: 0 4px 16px rgba(60, 64, 67, 0.08);
+    }
+
+    html[data-theme="light"] .video-viewport {
+      background: #f1f3f4;
+    }
+
+    html[data-theme="light"] .upload-video-btn {
+      background: #ffffff;
+      color: #3c4043;
+      border: 1px solid #dadce0;
+    }
+
+    html[data-theme="light"] .upload-video-btn:hover,
+    html[data-theme="light"] .upload-video-btn.active {
+      background: #1a73e8;
+      color: #ffffff;
+      border-color: #1a73e8;
+    }
+
+    html[data-theme="light"] .dir-search-input {
+      background: #ffffff;
+      border: 1px solid #dadce0;
+      color: #202124;
+    }
+
+    html[data-theme="light"] .dir-agent-launch-row {
+      background: #f8f9fa;
+      border: 1px solid #e0e3e7;
+    }
+
+    html[data-theme="light"] .dir-agent-launch-row:hover {
+      background: #e8f0fe;
+      border-color: #1a73e8;
+    }
+
+    html[data-theme="light"] .pt-tile {
+      background: #ffffff;
+      border: 1px solid #dadce0;
+      border-top: 3px solid var(--tile-color, #1a73e8);
+      box-shadow: 0 1px 4px rgba(60, 64, 67, 0.05);
+    }
+
+    html[data-theme="light"] .pt-tile-title {
+      color: #202124;
+    }
+
+    html[data-theme="light"] .pt-tile:hover,
+    html[data-theme="light"] .pt-tile.active {
+      background: #f8f9fa;
+      box-shadow: 0 4px 12px rgba(60, 64, 67, 0.12);
+    }
+
+    html[data-theme="light"] .pt-side-card,
+    html[data-theme="light"] .pt-legend-box,
+    html[data-theme="light"] .pt-inline-expand,
+    html[data-theme="light"] .mm-col-card,
+    html[data-theme="light"] .mm-flow-card {
+      background: #f8f9fa;
+      border: 1px solid #dadce0;
+      box-shadow: 0 2px 10px rgba(60, 64, 67, 0.06);
+      color: #202124;
+    }
+
+    html[data-theme="light"] .mm-node-btn {
+      background: #ffffff;
+      border: 1px solid #dadce0;
+      border-left: 3.5px solid var(--node-color, #1a73e8);
+    }
+
+    html[data-theme="light"] .mm-node-btn:hover,
+    html[data-theme="light"] .mm-node-btn.active {
+      background: #e8f0fe;
+    }
+
+    html[data-theme="light"] .global-authors-footer {
+      background: #f8f9fa;
+      border: 1px solid #dadce0;
+      box-shadow: 0 2px 8px rgba(60, 64, 67, 0.05);
+    }
+
+    html[data-theme="light"] .authors-credit-pill {
+      background: #e8f0fe;
+      border: 1px solid #d2e3fc;
+      color: #1967d2;
+      box-shadow: none;
+    }
+
+    html[data-theme="light"] .authors-credit-pill strong {
+      color: #174ea6;
+      text-decoration-color: rgba(23, 78, 166, 0.4);
+    }
+
   </style>
 </head>
 <body>
@@ -3590,39 +4156,15 @@ def build_html() -> str:
 
     <div class="nav-right">
       <button type="button" class="nav-pill-btn" onclick="goHome()">Home</button>
-      <button type="button" class="nav-pill-btn" onclick="goToOrgChart()">CSCO Org Chart (6)</button>
-      <button type="button" class="nav-pill-btn" onclick="openPersonasDirectoryPage('all', '', true, 'personas')">Personas (26)</button>
-      <button type="button" class="nav-pill-btn" onclick="openPersonasDirectoryPage('all', '', true, 'agents')">Agents Gallery (32)</button>
-      <button type="button" class="nav-pill-btn" style="border-color:rgba(0,210,255,0.45); color:#7dd3fc; font-weight:700;" onclick="openPeriodicTablePage('all', null, true)">Periodic Table (32)</button>
-      <button type="button" class="nav-pill-btn" style="border-color:rgba(16,185,129,0.45); color:#6ee7b7; font-weight:700;" onclick="openMindMapPage('all', null, true)">Neural Mind Map</button>
-      <button type="button" class="nav-pill-btn" style="border-color:rgba(168,85,247,0.55); color:#d8b4fe; background:rgba(168,85,247,0.12); font-weight:700;" onclick="openEnterpriseTwinModal()">🪄 Client Twin</button>
-
-      <!-- Smooth Dropdown for All 4 End-to-End Value Chains -->
-      <div class="nav-dropdown-wrap" id="navVcDropdown">
-        <button type="button" class="nav-pill-btn" onclick="document.getElementById('navVcDropdown').classList.toggle('open')">
-          <span>Value Chains (4) &#9662;</span>
-        </button>
-        <div class="nav-dropdown-menu">
-          <button type="button" class="nav-dropdown-item" onclick="openValueChainPage('f2f', true)">
-            <span><strong style="color:#10b981;">F2F</strong> · Forecast-to-Fulfill</span>
-            <span style="font-size:11px;color:var(--text-secondary);">6 Stages &rarr;</span>
-          </button>
-          <button type="button" class="nav-dropdown-item" onclick="openValueChainPage('o2d', true)">
-            <span><strong style="color:#ff8c00;">O2D</strong> · Multi-Modal Order-to-Delivery</span>
-            <span style="font-size:11px;color:var(--text-secondary);">Factory&rarr;Ship&rarr;Air&rarr;Truck &rarr;</span>
-          </button>
-          <button type="button" class="nav-dropdown-item" onclick="openValueChainPage('s2p', true)">
-            <span><strong style="color:#a142f4;">S2P</strong> · Source-to-Pay Resilience</span>
-            <span style="font-size:11px;color:var(--text-secondary);">6 Stages &rarr;</span>
-          </button>
-          <button type="button" class="nav-dropdown-item" onclick="openValueChainPage('p2r', true)">
-            <span><strong style="color:#00d2ff;">P2R</strong> · Plan-to-Recovery Circular</span>
-            <span style="font-size:11px;color:var(--text-secondary);">6 Stages &rarr;</span>
-          </button>
-        </div>
-      </div>
-
-      <button type="button" class="nav-pill-btn primary" onclick="openArchitecturePage(true)">Agent Architecture</button>
+      <button type="button" class="nav-pill-btn" onclick="goToOrgChart()">6 SCOR Pillars</button>
+      <button type="button" class="nav-pill-btn" onclick="openPersonasDirectoryPage('all', '', true, 'personas')">Personas (29)</button>
+      <button type="button" class="nav-pill-btn" onclick="openPersonasDirectoryPage('all', '', true, 'agents')">Agents (35)</button>
+      <button type="button" class="nav-pill-btn" onclick="openPeriodicTablePage('all', null, true)">Periodic Table</button>
+      <button type="button" class="nav-pill-btn" onclick="openMindMapPage('all', null, true)">Mind Map</button>
+      <button type="button" id="themeToggleBtn" class="nav-pill-btn theme-toggle-btn" onclick="togglePortalTheme()" title="Switch between Light and Dark Theme">
+        <span id="themeToggleIcon">☀️</span>
+        <span id="themeToggleLabel">Light Theme</span>
+      </button>
     </div>
   </header>
 
@@ -3642,156 +4184,121 @@ def build_html() -> str:
       <div class="hero-vignette"></div>
 
       <div class="hero-content">
-        <!-- Single Clean Gemini Enterprise Lockup (No Duplicate Sparkle Logo) -->
         <div class="hero-logo-lockup">
           <img data-asset="gemini_enterprise_dark.png" alt="Gemini Enterprise" class="gemini-hero" />
         </div>
 
-        <h1 class="hero-title" style="margin-bottom: 36px;">
+        <h1 class="hero-title" style="margin-bottom: 32px;">
           Agentic Transformation for <span class="gradient-word">Supply Chain &amp; Demand</span>
         </h1>
 
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:14px;">
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
           <button type="button" class="hero-cta-btn" onclick="goToOrgChart()">
-            <span>Explore CSCO Organization (6 Verticals)</span>
+            <span>Explore 6 SCOR Pillars</span>
             <span>&darr;</span>
           </button>
-          <button type="button" class="hero-cta-btn" style="background:rgba(16,22,34,0.88); color:#fff; border:1px solid rgba(0,210,255,0.4);" onclick="openPersonasDirectoryPage('all', '', true, 'agents')">
-            <span>Explore All 32 AI Agents &amp; ROI &rarr;</span>
-          </button>
-          <button type="button" class="hero-cta-btn" style="background:rgba(14,26,44,0.92); color:#7dd3fc; border:1px solid rgba(0,210,255,0.55);" onclick="openPeriodicTablePage('all', null, true)">
-            <span>🧪 Periodic Table of Agents (32) &rarr;</span>
-          </button>
-          <button type="button" class="hero-cta-btn" style="background:rgba(12,32,28,0.92); color:#6ee7b7; border:1px solid rgba(16,185,129,0.55);" onclick="openMindMapPage('all', null, true)">
-            <span>🧠 Neural Mind Map &amp; Flowchart &rarr;</span>
+          <button type="button" class="hero-cta-btn secondary-hero-btn" style="background:rgba(19,27,43,0.9); color:#f1f5f9; border:1px solid rgba(255,255,255,0.16);" onclick="openPersonasDirectoryPage('all', '', true, 'agents')">
+            <span>Browse Personas &amp; Agents &rarr;</span>
           </button>
         </div>
 
-        <div class="four-color-bar" style="width:180px;">
-          <span style="background:var(--sc-emerald);"></span>
-          <span style="background:var(--sc-violet);"></span>
-          <span style="background:#3b82f6;"></span>
-          <span style="background:var(--sc-cyan);"></span>
-          <span style="background:var(--sc-amber);"></span>
-          <span style="background:#ec4899;"></span>
+        <div class="four-color-bar" style="width:160px;">
+          <span style="background:var(--g-blue);"></span>
+          <span style="background:var(--g-red);"></span>
+          <span style="background:var(--g-yellow);"></span>
+          <span style="background:var(--g-green);"></span>
         </div>
       </div>
     </section>
 
     <!-- 2. CSCO ORG CHART (PROGRESSIVE EXPLORATION ACROSS THE 6 SCOR PILLARS) -->
     <section id="orgChartSection" class="org-section">
-      <div class="section-header">
+      <div class="section-header" style="margin-bottom: 32px;">
         <h2 class="section-title">Office of the CSCO — The 6 ASCM SCOR Pillars</h2>
-        <p class="section-subtitle">The End-to-End Operating Topology decomposed from <span class="sc-hl-underline">Level-1 to Level-3</span> across the <strong class="sc-hl-bold">Three Synchronized Enterprise Flows</strong> (Physical Material, Demand Signal, and Working Capital Cash) — powered by deterministic math solvers and Gemini Enterprise agentic orchestration.</p>
+        <p class="section-subtitle">Select any pillar below to view what it means and explore its supply chain personas.</p>
       </div>
 
-      <!-- Three Synchronized Enterprise Flows Architecture Banner -->
-      <div class="rivers-banner">
-        <div class="river-box">
-          <h4>📦 Flow 1: Physical Material Flow (Downstream ──▶)</h4>
-          <p>Raw Materials / Sourcing ──▶ Manufacturing Transformation ──▶ Mother Warehouses ──▶ Multi-Modal Transit ──▶ Regional Hubs ──▶ Retail Shelf.</p>
-        </div>
-        <div class="river-box signal">
-          <h4>📡 Flow 2: Demand &amp; Information Signal Flow (◀── Upstream)</h4>
-          <p>Consumer POS Checkouts ◀── Channel Sell-Through ◀── Continuous Replenishment ◀── S&amp;OP Consensus ◀── MRP Master Schedule ◀── Supplier Contracts.</p>
-        </div>
-        <div class="river-box cash">
-          <h4>💰 Flow 3: Working Capital &amp; Cash Flow (◀──▶ Cyclic)</h4>
-          <p>Cash-to-Cash Cycle = Days Inventory Outstanding (DIO) + Days Sales Outstanding (DSO) − Days Payables (DPO). Unlocking trapped capital while protecting service fill rates.</p>
-        </div>
-      </div>
-
-      <!-- 6-Pillar Interactive Master Navigation Tab Bar on the Front Page -->
+      <!-- 6-Pillar Interactive Master Navigation Tab Bar -->
       <div class="vertical-tabs-nav-bar" id="verticalTabsNavBar">
         <button type="button" class="v-tab-btn active" data-vtab="all" onclick="switchVerticalTab('all', this)">
-          <span class="v-tab-num" style="color:#38bdf8;">ALL 6</span>
+          <span class="v-tab-num" style="color:var(--g-blue);">ALL 6</span>
           <span class="v-tab-title">All 6 Pillars</span>
           <span class="v-tab-tag">SCOR End-to-End</span>
-          <span class="v-tab-badge">29 Personas · 35 Agents</span>
         </button>
-        <button type="button" class="v-tab-btn" data-vtab="demand_sop" onclick="switchVerticalTab('demand_sop', this)" style="--v-accent: #10b981;">
+        <button type="button" class="v-tab-btn" data-vtab="demand_sop" onclick="switchVerticalTab('demand_sop', this)" style="--v-accent: #2e8b57;">
           <span class="v-tab-num">01 · PLAN</span>
           <span class="v-tab-title">Demand &amp; S&amp;OP</span>
-          <span class="v-tab-tag">The Forecasters</span>
-          <span class="v-tab-badge">4 Roles · 4 Agents</span>
+          <span class="v-tab-tag">4 Personas</span>
         </button>
-        <button type="button" class="v-tab-btn" data-vtab="sourcing_procurement" onclick="switchVerticalTab('sourcing_procurement', this)" style="--v-accent: #a142f4;">
+        <button type="button" class="v-tab-btn" data-vtab="sourcing_procurement" onclick="switchVerticalTab('sourcing_procurement', this)" style="--v-accent: #7e57c2;">
           <span class="v-tab-num">02 · SOURCE</span>
           <span class="v-tab-title">Sourcing &amp; Procurement</span>
-          <span class="v-tab-tag">The Buyers</span>
-          <span class="v-tab-badge">4 Roles · 4 Agents</span>
+          <span class="v-tab-tag">4 Personas</span>
         </button>
-        <button type="button" class="v-tab-btn" data-vtab="manufacturing_prod" onclick="switchVerticalTab('manufacturing_prod', this)" style="--v-accent: #3b82f6;">
+        <button type="button" class="v-tab-btn" data-vtab="manufacturing_prod" onclick="switchVerticalTab('manufacturing_prod', this)" style="--v-accent: #3b78e7;">
           <span class="v-tab-num">03 · MAKE</span>
           <span class="v-tab-title">Manufacturing &amp; MPS</span>
-          <span class="v-tab-tag">The Makers</span>
-          <span class="v-tab-badge">4 Roles · 4 Agents</span>
+          <span class="v-tab-tag">4 Personas</span>
         </button>
-        <button type="button" class="v-tab-btn" data-vtab="inventory_warehouse" onclick="switchVerticalTab('inventory_warehouse', this)" style="--v-accent: #00d2ff;">
+        <button type="button" class="v-tab-btn" data-vtab="inventory_warehouse" onclick="switchVerticalTab('inventory_warehouse', this)" style="--v-accent: #00897b;">
           <span class="v-tab-num">04 · FULFILL</span>
           <span class="v-tab-title">Inventory &amp; Warehousing</span>
-          <span class="v-tab-tag">The Buffers &amp; Custodians</span>
-          <span class="v-tab-badge">5 Roles · 6 Agents</span>
+          <span class="v-tab-tag">5 Personas</span>
         </button>
-        <button type="button" class="v-tab-btn" data-vtab="logistics_fleet" onclick="switchVerticalTab('logistics_fleet', this)" style="--v-accent: #ff8c00;">
+        <button type="button" class="v-tab-btn" data-vtab="logistics_fleet" onclick="switchVerticalTab('logistics_fleet', this)" style="--v-accent: #d97706;">
           <span class="v-tab-num">05 · DELIVER</span>
-          <span class="v-tab-title">Logistics, Fleet &amp; TM&amp;D</span>
-          <span class="v-tab-tag">The Movers &amp; Distributors</span>
-          <span class="v-tab-badge">9 Roles · 10 Agents</span>
+          <span class="v-tab-title">Logistics &amp; Distribution</span>
+          <span class="v-tab-tag">9 Personas</span>
         </button>
-        <button type="button" class="v-tab-btn" data-vtab="circular_enable" onclick="switchVerticalTab('circular_enable', this)" style="--v-accent: #ec4899;">
+        <button type="button" class="v-tab-btn" data-vtab="circular_enable" onclick="switchVerticalTab('circular_enable', this)" style="--v-accent: #c53929;">
           <span class="v-tab-num">06 · RETURN &amp; ENABLE</span>
-          <span class="v-tab-title">Customer OTIF, RMA &amp; ESG</span>
-          <span class="v-tab-tag">The Guardians</span>
-          <span class="v-tab-badge">3 Roles · 3 Agents</span>
+          <span class="v-tab-title">OTIF, Returns &amp; ESG</span>
+          <span class="v-tab-tag">3 Personas</span>
         </button>
       </div>
 
       <div class="cfo-root-wrapper">
-        <!-- CSCO Apex Box featuring Animated 3D Isometric Conveyor & Control Tower Emblem -->
         <div class="cfo-box">
           <div class="cfo-sc-emblem" aria-hidden="true">
             <svg viewBox="0 0 84 64" style="width:100%;height:100%;">
-              <polygon points="8,42 42,24 76,42 42,58" fill="rgba(0,210,255,0.12)" stroke="#00d2ff" stroke-width="1.3" />
-              <line x1="18" y1="37" x2="66" y2="37" stroke="#00d2ff" stroke-width="1" stroke-dasharray="4 3" class="sc-arc-flow" />
+              <polygon points="8,42 42,24 76,42 42,58" fill="rgba(66,133,244,0.10)" stroke="#4285f4" stroke-width="1.3" />
+              <line x1="18" y1="37" x2="66" y2="37" stroke="#4285f4" stroke-width="1" stroke-dasharray="4 3" class="sc-arc-flow" />
               <g class="sc-conveyor-box-anim" style="animation-duration:2.6s;">
-                <polygon points="16,30 26,25 36,30 26,35" fill="#00d2ff" />
-                <polygon points="16,30 26,35 26,44 16,39" fill="#0284c7" />
-                <polygon points="36,30 26,35 26,44 36,39" fill="#0369a1" />
+                <polygon points="16,30 26,25 36,30 26,35" fill="#4285f4" />
+                <polygon points="16,30 26,35 26,44 16,39" fill="#1a73e8" />
+                <polygon points="36,30 26,35 26,44 36,39" fill="#174ea6" />
               </g>
-              <circle cx="42" cy="16" r="7" fill="none" stroke="#10b981" stroke-width="1.4" stroke-dasharray="4 2" class="sc-arc-flow" />
-              <circle cx="42" cy="16" r="2.8" fill="#ff8c00" class="sc-node-pulse" />
+              <circle cx="42" cy="16" r="7" fill="none" stroke="#34a853" stroke-width="1.4" stroke-dasharray="4 2" class="sc-arc-flow" />
+              <circle cx="42" cy="16" r="2.8" fill="#fbbc04" class="sc-node-pulse" />
             </svg>
           </div>
           <div>
             <div class="cfo-box-title">Chief Supply Chain Officer (CSCO)</div>
-            <div class="cfo-box-sub"><span class="sc-hl-metric">6 ASCM SCOR Pillars</span> · <span class="sc-hl-metric">29 Personas</span> · <span class="sc-hl-metric">31 Domain Agents</span> + <span class="sc-hl-metric">4 Universal Core Flagship Copilots</span></div>
+            <div class="cfo-box-sub">6 ASCM SCOR Pillars · 29 Personas · 35 AI Agents</div>
           </div>
         </div>
 
-        <!-- SVG Tree Lines to 6 Supply Chain Pillars (3x2 Grid) with Animated Telemetry Packets -->
+        <!-- SVG Tree Lines to 6 Supply Chain Pillars (3x2 Grid) -->
         <svg class="org-connectors" viewBox="0 0 1000 56" preserveAspectRatio="none">
           <defs>
             <linearGradient id="orgLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#10b981" stop-opacity="0.55" />
-              <stop offset="20%" stop-color="#a142f4" stop-opacity="0.65" />
-              <stop offset="40%" stop-color="#3b82f6" stop-opacity="0.75" />
-              <stop offset="60%" stop-color="#00d2ff" stop-opacity="0.75" />
-              <stop offset="80%" stop-color="#ff8c00" stop-opacity="0.75" />
-              <stop offset="100%" stop-color="#ec4899" stop-opacity="0.55" />
+              <stop offset="0%" stop-color="#34a853" stop-opacity="0.55" />
+              <stop offset="35%" stop-color="#4285f4" stop-opacity="0.65" />
+              <stop offset="70%" stop-color="#fbbc04" stop-opacity="0.65" />
+              <stop offset="100%" stop-color="#ea4335" stop-opacity="0.55" />
             </linearGradient>
           </defs>
-          <path d="M500,0 L500,24 M166,24 L834,24 M166,24 L166,56 M500,24 L500,56 M834,24 L834,56" />
+          <path d="M500,0 L500,24 M166,24 L834,24 M166,24 L166,56 M500,24 L500,56 M834,24 L834,56" stroke="var(--border-strong)" stroke-width="1.5" fill="none" />
           <path d="M500,0 L500,24 M166,24 L834,24 M166,24 L166,56 M500,24 L500,56 M834,24 L834,56"
-                stroke="url(#orgLineGrad)" stroke-width="2.2" stroke-dasharray="8 10" fill="none"
+                stroke="url(#orgLineGrad)" stroke-width="2" stroke-dasharray="8 10" fill="none"
                 style="animation: scDashFlow 2.4s linear infinite;" />
-          <circle r="3.5" fill="#10b981">
+          <circle r="3" fill="#34a853">
             <animateMotion dur="2.4s" repeatCount="indefinite" path="M500,0 L500,24 L166,24 L166,56" />
           </circle>
-          <circle r="3.5" fill="#00d2ff">
+          <circle r="3" fill="#4285f4">
             <animateMotion dur="2.0s" repeatCount="indefinite" path="M500,0 L500,24 L500,56" />
           </circle>
-          <circle r="3.5" fill="#ec4899">
+          <circle r="3" fill="#ea4335">
             <animateMotion dur="2.6s" repeatCount="indefinite" path="M500,0 L500,24 L834,24 L834,56" />
           </circle>
         </svg>
@@ -3800,20 +4307,8 @@ def build_html() -> str:
         <div id="deptRowContainer" class="dept-row"></div>
       </div>
 
-      <!-- Progressive Department Showcase Box (Smooth Slide-Down Accordion Drawer) -->
+      <!-- Progressive Pillar Drawer (What This Pillar Means + Personas Only) -->
       <div id="deptShowcaseContainer"></div>
-
-      <!-- Cross-Persona Universal Supply Chain Agents (Used by All 26 Personas) -->
-      <div id="universalAgentsHomeContainer"></div>
-
-      <!-- End-to-End Agentic Value Chains (4 Suites: F2F, O2D, S2P, P2R) -->
-      <div class="vc-home-block">
-        <div class="section-header" style="margin-bottom: 36px;">
-          <h2 class="section-title" style="font-size: clamp(28px, 3.2vw, 38px);">End-to-End Agentic Value Chains (4 Suites)</h2>
-          <p class="section-subtitle">Connected <span class="sc-hl-metric">6-stage pipelines</span> that synchronize <span class="sc-hl-underline">demand sensing</span>, <span class="sc-hl-underline">finite manufacturing</span>, <span class="sc-hl-underline">multi-echelon inventory</span>, <strong class="sc-hl-bold">Factory &rarr; Ship &rarr; Airplane &rarr; Rail &rarr; Warehouse &rarr; 3D LIFO Truck delivery</strong>, <span class="sc-hl-underline">strategic sourcing</span>, and <span class="sc-hl-underline">circular recovery</span>.</p>
-        </div>
-        <div id="valueChainEntryContainer" class="vc-entry-grid"></div>
-      </div>
     </section>
 
   </main>
@@ -4676,6 +5171,8 @@ def build_html() -> str:
       function renderFrame(now) {
         const t = now * 0.001;
         ctx.clearRect(0, 0, w, h);
+        const isLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
+        ctx.globalAlpha = isLightTheme ? 0.55 : 0.85;
 
         // 1. Continuous Isometric Supply Chain Perspective Grid (softly breathing)
         ctx.strokeStyle = 'rgba(0, 210, 255, 0.05)';
@@ -6283,7 +6780,7 @@ def build_html() -> str:
        ========================================================================= */
     let selectedDeptId = null;
     let lastPersonaId = 'demand_planning_dir';
-    let stageViewMode = 'cad'; // 'cad' | 'video'
+    let stageViewMode = 'video'; // 'cad' | 'video'
     const customVideos = {};
     const customVcVideos = {};
 
@@ -6302,50 +6799,66 @@ def build_html() -> str:
     /* =========================================================================
        RICH TEXT, METRIC PILLS, UNDERLINES & STRUCTURED BULLET FORMATTERS
        ========================================================================= */
-    function formatRichText(raw) {
+    function shortSentence(raw, maxLen = 140) {
       if (!raw) return '';
-      let s = String(raw);
-      const tokens = [];
-      const stash = (html) => {
-        const id = `@@SCTOK${tokens.length}@@`;
-        tokens.push(html);
-        return id;
-      };
-
-      // 1. Highlight key metrics, percentages, dollar figures, durations, and tiers
-      const metricRegex = /(\\b\\d+\\s*(?:days?|hrs?|hours?|mins?|minutes?|months?|weeks?|secs?|seconds?)\\s*(?:→|to|&rarr;)\\s*\\d+\\s*(?:days?|hrs?|hours?|mins?|minutes?|months?|weeks?|secs?|seconds?)|[+$−-]?\\d+(?:\\.\\d+)?\\s*(?:%|pts|bps|x)\\b|\\$\\d+(?:\\.\\d+)?[BMK+]*\\b|(?:<|>|±)\\s*\\d+(?:\\.\\d+)?\\s*(?:secs?|seconds?|mins?|minutes?|hrs?|hours?|days?|%)?|\\b(?:P10(?:[–-]P90)?|P50|P90|3D\\s+LIFO|Tier-[1234N](?:\\s*to\\s*Tier-[1234N])?|Scope\\s+[123](?:\\/[23])*)\\b)/gi;
-      s = s.replace(metricRegex, (m) => stash(`<span class="sc-hl-metric">${m}</span>`));
-
-      // 2. Bold + Accent-Underline key Enterprise Systems, Google Cloud AI, and Solvers
-      const underlineRegex = /\\b(SAP S\\/4HANA(?:\\s+(?:MM|PP\\/DS|SD|QM|EWM|TM|PM|CO-PA|aATP))*|SAP IBP|SAP Ariba|SAP EWM|SAP TM|SAP GTS|Oracle OTM|Oracle Fusion ERP|Manhattan Active WMS|Blue Yonder(?:\\s+(?:TMS|WMS|Luminate))?|Kinaxis(?:\\s+RapidResponse)?|Siemens Opcenter(?:\\s+MES)?|Siemens Teamcenter(?:\\s+PLM)?|Rockwell FactoryTalk|CargoWise(?:\\s+One)?|Spire(?:\\s+Global)?(?:\\s+Satellite)?\\s+AIS|FlightAware ADS-B|IATA ONE Record|Railinc(?:\\s+EDI\\s+404)?|Project44|FourKites|Samsara ELD|BigQuery(?:\\s+ML|\\s+GIS|\\s+Twin)?|Cloud Spanner(?:\\s+Graph)?|AlloyDB(?:\\s+pgvector)?|Vertex AI(?:\\s+Agent Engine|\\s+TimesFM)?|Gemini 2\\.5(?:\\s+Pro|\\s+Flash)?|Gemini Enterprise|Google OR-Tools|OR-Tools(?:\\s+CP-SAT|\\s+CVRPTW|\\s+MILP)?|CP-SAT|CVRPTW|MILP|Google Maps(?:\\s+Platform|\\s+Routes(?:\\s+Preferred)?\\s+API|\\s+Fleet Engine)?|WeatherNext 3|Google Earth Engine|AlphaEvolve|Document AI|Apigee|Looker|ASCM SCOR|Supply Chain Twin|Digital Twin)\\b/g;
-      s = s.replace(underlineRegex, (m) => stash(`<span class="sc-hl-underline">${m}</span>`));
-
-      // 3. Bold high-impact operational action & value phrases
-      const boldRegex = /\\b(100%\\s+deterministic|zero-toil|zero-touch|zero\\s+unverified|signed\\s+write-back|real-time|autonomous(?:ly)?|multi-modal|multi-echelon|end-to-end|root-cause|probabilistic|finite-capacity|axle-weight|cube\\s+utilization|working\\s+capital|service\\s+level|otif(?:\\s+penalties)?|demurrage(?:\\s+&amp;\\s+detention)?|safety\\s+stock|manual\\s+toil|golden\\s+thread)\\b/gi;
-      s = s.replace(boldRegex, (m) => stash(`<strong class="sc-hl-bold">${m}</strong>`));
-
-      return s.replace(/@@SCTOK(\\d+)@@/g, (_, idx) => tokens[Number(idx)]);
+      let s = String(raw).replace(/\\s+/g, ' ').trim();
+      // Remove parenthetical technical bloat for cleaner executive reading
+      s = s.replace(/\\s*\\([^)]{18,}\\)\\s*/g, ' ').replace(/\\s+/g, ' ').trim();
+      const firstSplit = s.split(/(?:\\.\\s+|\\s+—\\s+|\\s+;\\s+)/)[0].trim();
+      let out = firstSplit || s;
+      if (out.length > maxLen) {
+        out = out.slice(0, maxLen - 1).replace(/[,;:\\s]+$/, '') + '…';
+      }
+      if (!/[.!?…]$/.test(out)) out += '.';
+      return out;
     }
 
-    function formatRichBullets(raw, bulletColor = '#00d2ff') {
+    function formatRichText(raw) {
       if (!raw) return '';
-      const text = String(raw).trim();
-      let parts = text.split(/(?:\\.\\s+|\\s+;\\s+|\\s+—\\s+)/).map(p => p.trim()).filter(Boolean);
-      if (parts.length <= 1 && text.length > 125) {
-        const commaParts = text.split(/,\\s+(?=(?:and\\s+|while\\s+|reducing\\s+|cutting\\s+|increasing\\s+|triggering\\s+|executing\\s+|eliminating\\s+|fusing\\s+|orchestrating\\s+|dispatching\\s+|verifying\\s+|with\\s+|across\\s+))/i).map(p => p.trim()).filter(Boolean);
-        if (commaParts.length > 1) parts = commaParts;
+      return String(raw).replace(/\\s+/g, ' ').trim();
+    }
+
+    function formatRichBullets(raw, bulletColor = '#4285f4') {
+      if (!raw) return '';
+      return `<p style="margin:0;">${shortSentence(raw, 165)}</p>`;
+    }
+
+    /* Theme Controller (Dark Theme & Light Theme with Google Brand Colors) */
+    function applyPortalTheme(theme) {
+      const validTheme = theme === 'light' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', validTheme);
+      const iconEl = document.getElementById('themeToggleIcon');
+      const labelEl = document.getElementById('themeToggleLabel');
+      if (iconEl && labelEl) {
+        if (validTheme === 'light') {
+          iconEl.textContent = '🌙';
+          labelEl.textContent = 'Dark Theme';
+        } else {
+          iconEl.textContent = '☀️';
+          labelEl.textContent = 'Light Theme';
+        }
       }
-      if (parts.length <= 1) {
-        return `<p style="margin:0;">${formatRichText(text)}</p>`;
-      }
-      return `
-        <ul class="sc-rich-points" style="--pt-color: ${bulletColor};">
-          ${parts.map(part => {
-            const clean = /[.!?]$/.test(part) ? part : part + '.';
-            return `<li><span class="sc-pt-bullet" style="color:${bulletColor};">▸</span><span>${formatRichText(clean)}</span></li>`;
-          }).join('')}
-        </ul>
-      `;
+      try {
+        localStorage.setItem('sc_portal_theme', validTheme);
+      } catch (e) {}
+    }
+
+    function togglePortalTheme() {
+      const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+      applyPortalTheme(cur === 'light' ? 'dark' : 'light');
+    }
+
+    function initPortalTheme() {
+      let saved = 'dark';
+      try {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('theme') === 'light' || params.get('theme') === 'dark') {
+          saved = params.get('theme');
+        } else {
+          saved = localStorage.getItem('sc_portal_theme') || 'dark';
+        }
+      } catch (e) {}
+      applyPortalTheme(saved);
     }
 
     function renderUniversalAgentsHomeBanner() {
@@ -6459,23 +6972,21 @@ def build_html() -> str:
                style="--dept-accent: ${dept.color};"
                onclick="selectDepartment('${dept.id}', event)">
             <div style="position:relative; z-index:2;">
-              <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 11px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; background:${dept.color}22; color:${dept.color}; border:1px solid ${dept.color}55; margin-bottom:10px;">
-                <span>${dept.scorBadge || 'SCOR VERTICAL'}</span>
+              <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 11px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; background:${dept.color}18; color:${dept.color}; border:1px solid ${dept.color}40; margin-bottom:10px;">
+                <span>${dept.scorBadge || 'SCOR PILLAR'}</span>
               </div>
               <div class="dept-node-title">${dept.name}</div>
-              <div class="dept-node-sub">${formatRichText(dept.subtitle)}</div>
+              <div class="dept-node-sub">${shortSentence(dept.subtitle, 110)}</div>
             </div>
             <div class="dept-anim-stage">
               ${renderSupplyChainWatermarkSvg(dept.watermarkType, dept.color, 'dept-stage-svg')}
-              <span class="dept-anim-meta">${dept.personaIds.length} Personas · ${domainAgentCount} Domain + 4 Universal Agents</span>
+              <span class="dept-anim-meta">${dept.personaIds.length} Personas · ${domainAgentCount} Agents</span>
             </div>
           </div>
         `;
       }).join('');
 
       renderDepartmentShowcaseBox();
-      renderUniversalAgentsHomeBanner();
-      renderValueChainEntryCards();
     }
 
     function getVcWatermarkType(vcId) {
@@ -6894,124 +7405,39 @@ def build_html() -> str:
         return;
       }
       const dept = DEPARTMENTS[selectedDeptId];
-      const drawerId = `deptSpecDrawer_${dept.id}`;
 
       container.innerHTML = `
         <div id="deptShowcaseBoxEl" class="dept-showcase-box genie-enter" style="--dept-accent: ${dept.color};">
           <div class="showcase-header">
             <div class="showcase-dept-name">
-              <span class="accent-dot" style="background: ${dept.color}; box-shadow: 0 0 12px ${dept.color};"></span>
-              <span>${dept.fullName}</span>
+              <span class="accent-dot" style="background: ${dept.color};"></span>
+              <span>${dept.scorBadge || ''} · ${dept.name}</span>
             </div>
-            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-              <button type="button" class="switch-pill" onclick="openPersonasDirectoryPage('${dept.id}', '', true)">
-                View All ${dept.personaIds.length} Personas in Directory &rarr;
-              </button>
-              <button type="button" class="switch-pill" onclick="selectDepartment('${dept.id}')">
-                ✕ Collapse Drawer
-              </button>
-            </div>
+            <button type="button" class="switch-pill" onclick="selectDepartment('${dept.id}')">
+              ✕ Close
+            </button>
           </div>
 
-          <!-- Live Supply Chain Visual Strip inside the expanded Department Box -->
-          <div class="showcase-visual-strip" style="border-color: ${dept.color}44;">
-            <div style="width:210px; height:96px; flex-shrink:0; border-radius:14px; background:rgba(4,9,18,0.92); border:1px solid ${dept.color}55; overflow:hidden; display:flex; align-items:center; justify-content:center; padding:6px;">
+          <!-- What This Pillar Means -->
+          <div class="showcase-visual-strip">
+            <div class="showcase-emblem-box">
               ${renderSupplyChainWatermarkSvg(dept.watermarkType, dept.color, 'dept-stage-svg')}
             </div>
             <div class="showcase-visual-meta">
               <div class="showcase-visual-title" style="color:${dept.color};">
-                <span>⚡ Live Supply Chain Control Tower Telemetry · ${dept.name}</span>
+                What This Pillar Means
               </div>
               <div class="showcase-visual-desc">
-                ${formatRichText(`${dept.subtitle} — Autonomous multi-agent sensing, digital-twin validation, and zero-toil ERP/WMS/TMS execution across ${dept.personaIds.length} core supply chain roles.`)}
+                ${shortSentence(dept.subtitle, 165)}
               </div>
             </div>
           </div>
 
-          <!-- Executive Problem, Solution & Business Value Grid (CFO Model) -->
-          <div class="showcase-exec-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:16px; margin: 20px 0 16px;">
-            <!-- Column 1: Problem / Manual Toil -->
-            <div class="showcase-panel" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(239, 68, 68, 0.28); border-radius: 14px; padding: 18px 20px;">
-              <div class="panel-tag" style="color: #f87171; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
-                <span>✕ The Critical Problem · Legacy Process Gaps</span>
-              </div>
-              <div class="panel-metric" style="font-size:20px; font-weight:800; color:#fff; margin-bottom:12px;">${dept.toilMetric}</div>
-              <ul class="clean-list" style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
-                ${dept.toilBullets.map(b => `
-                  <li style="display:flex; align-items:flex-start; gap:8px; font-size:13.5px; color:#cbd5e1; line-height:1.5;">
-                    <span class="bullet" style="color: #f87171; font-weight:bold; flex-shrink:0;">▸</span>
-                    <span>${formatRichText(b)}</span>
-                  </li>
-                `).join('')}
-              </ul>
-            </div>
-
-            <!-- Column 2: Agentic Solution -->
-            <div class="showcase-panel" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.28); border-radius: 14px; padding: 18px 20px;">
-              <div class="panel-tag" style="color: #34d399; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
-                <span>✦ The AI Solution · Gemini &amp; Math Solvers</span>
-              </div>
-              <div class="panel-metric" style="font-size:20px; font-weight:800; color:#fff; margin-bottom:12px;">${dept.impactMetric}</div>
-              <ul class="clean-list" style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
-                ${dept.impactBullets.map(b => `
-                  <li style="display:flex; align-items:flex-start; gap:8px; font-size:13.5px; color:#cbd5e1; line-height:1.5;">
-                    <span class="bullet" style="color: #34d399; font-weight:bold; flex-shrink:0;">▸</span>
-                    <span>${formatRichText(b)}</span>
-                  </li>
-                `).join('')}
-              </ul>
-            </div>
-
-            <!-- Column 3: Quantified Business Value & Working Capital Impact -->
-            <div class="showcase-panel" style="background: rgba(15, 23, 42, 0.85); border: 1px solid ${dept.color}44; border-radius: 14px; padding: 18px 20px; display:flex; flex-direction:column; justify-content:space-between;">
-              <div>
-                <div class="panel-tag" style="color: ${dept.color}; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
-                  <span>💎 Strategic Value &amp; Bottom-Line Outcomes</span>
-                </div>
-                <div class="panel-metric" style="font-size:20px; font-weight:800; color:#fff; margin-bottom:10px;">
-                  ${dept.vNum} · ${dept.tagline}
-                </div>
-                <div style="font-size:13px; color:#94a3b8; line-height:1.5; margin-bottom:14px;">
-                  ${dept.coreQuestion || dept.subtitle}
-                </div>
-                <div style="display:flex; flex-direction:column; gap:8px; font-size:12.5px; color:#cbd5e1;">
-                  <div style="display:flex; justify-content:space-between; padding:6px 10px; background:rgba(255,255,255,0.04); border-radius:8px;">
-                    <span style="color:#94a3b8;">Operational Horizon:</span>
-                    <strong style="color:#fff;">${dept.horizon}</strong>
-                  </div>
-                  <div style="display:flex; justify-content:space-between; padding:6px 10px; background:rgba(255,255,255,0.04); border-radius:8px;">
-                    <span style="color:#94a3b8;">Enterprise Flow:</span>
-                    <strong style="color:#38bdf8;">${dept.flow || 'Physical & Signal Flow'}</strong>
-                  </div>
-                  <div style="display:flex; justify-content:space-between; padding:6px 10px; background:rgba(255,255,255,0.04); border-radius:8px;">
-                    <span style="color:#94a3b8;">Human-in-the-Loop Gate:</span>
-                    <strong style="color:#34d399;">100% Signed ERP Writeback</strong>
-                  </div>
-                </div>
-              </div>
-
-              <div style="margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-size:12px; color:#94a3b8;">${dept.personaIds.length} Personas · ${dept.agentIds.length} Agents</span>
-                <button type="button" class="switch-pill" style="font-size:12px; padding:6px 14px;" onclick="openPersonasDirectoryPage('${dept.id}', '', true)">
-                  View in Directory &rarr;
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Vertical Operational & Distribution Workflow Sequence -->
-          ${renderVerticalWorkflowStrip(dept)}
-
-          <!-- Personas in this Vertical (Clean, Uncongested Click-to-Open List) -->
-          <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08);">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
-              <div style="font-size:15px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
-                <span class="accent-dot" style="background:${dept.color}; box-shadow:0 0 10px ${dept.color};"></span>
-                <span>Personas in ${dept.name} (${dept.personaIds.length} Core Roles)</span>
-              </div>
-              <div style="font-size:12px; color:var(--text-muted);">
-                Click any persona to open their dedicated schedule &amp; AI agents &rarr;
-              </div>
+          <!-- Personas in this Pillar -->
+          <div style="margin-top: 20px;">
+            <div style="font-size:15px; font-weight:700; color:var(--text-primary); margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+              <span class="accent-dot" style="background:${dept.color};"></span>
+              <span>Personas (${dept.personaIds.length})</span>
             </div>
 
             <div class="dept-personas-list" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px;">
@@ -7027,34 +7453,10 @@ def build_html() -> str:
                         <div class="persona-link-role">${p.role}</div>
                       </div>
                     </div>
-                    <span class="persona-open-arrow" style="color:${dept.color};">Open &rarr;</span>
+                    <span class="persona-open-arrow" style="color:${dept.color};">&rarr;</span>
                   </div>
                 `;
               }).join('')}
-            </div>
-          </div>
-
-          <!-- Collapsible Dropdown Drawer for Systems of Record & Solver Stack -->
-          <div id="${drawerId}" class="sc-dropdown-block" style="position:relative; z-index:2; margin-top:18px;">
-            <button type="button" class="sc-dropdown-btn" onclick="toggleScDropdown('${drawerId}')">
-              <span>🔧 Enterprise Systems of Record, EDI Feeds &amp; AI Solver Stack (${dept.name})</span>
-              <span class="sc-dropdown-chevron">▾</span>
-            </button>
-            <div class="sc-dropdown-body">
-              <div class="sc-dropdown-inner">
-                <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:8px;">
-                  Connected ERP / WMS / TMS / Telemetry Systems
-                </div>
-                <div class="sc-tech-pills" style="margin-bottom:14px;">
-                  ${toSysArray(dept.systems).map(sys => `<span class="sc-tech-pill">${sys}</span>`).join('')}
-                </div>
-                <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#34d399; margin-bottom:6px;">
-                  Active Mathematical &amp; Agentic Reasoning Solvers
-                </div>
-                <div style="font-size:15.5px; color:var(--text-secondary); line-height:1.68;">
-                  ${formatRichBullets(dept.solverSummary || '', '#34d399')}
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -7300,8 +7702,6 @@ def build_html() -> str:
       lastPersonaId = personaId;
       selectedDeptId = p.deptId;
       const dept = getDeptMeta(p.deptId);
-      const linkedVcId = PERSONA_VALUE_CHAIN_MAP[p.id];
-      const linkedVc = linkedVcId ? VALUE_CHAINS[linkedVcId] : null;
 
       if (pushHash) {
         history.pushState({ page: 'persona', id: personaId }, '', `#persona/${personaId}`);
@@ -7312,24 +7712,19 @@ def build_html() -> str:
         <div id="personaGenieWrap" class="${transClass}">
           <!-- Top Back & Switcher Bar -->
           <div class="back-bar">
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <button type="button" class="back-btn" onclick="goToOrgChart()">
-                <span>&larr;</span>
-                <span>CSCO Org Chart (${dept.name})</span>
-              </button>
-              <button type="button" class="back-btn" onclick="openPersonasDirectoryPage('${dept.id}', '', true, 'personas', event)">
-                <span>👥</span>
-                <span>All 29 Personas &amp; 35 Agents</span>
-              </button>
-            </div>
+            <button type="button" class="back-btn" onclick="goToOrgChart()">
+              <span>&larr;</span>
+              <span>Back to 6 Pillars (${dept.name})</span>
+            </button>
 
             <div class="persona-switcher-pills">
               ${dept.personaIds.map(pid => {
                 const other = PERSONAS[pid];
+                if (!other) return '';
                 return `
                   <button type="button"
                           class="switch-pill ${pid === p.id ? 'active' : ''}"
-                          style="${pid === p.id ? `background:${dept.color}; border-color:${dept.color}; color:#040810; font-weight:700;` : ''}"
+                          style="${pid === p.id ? `background:${dept.color}; border-color:${dept.color}; color:#ffffff; font-weight:700;` : ''}"
                           onclick="openPersonaPage('${pid}', true, event)">
                     ${other.icon} ${other.name}
                   </button>
@@ -7338,158 +7733,54 @@ def build_html() -> str:
             </div>
           </div>
 
-          <!-- Persona Overview Header -->
-          <div class="persona-header-card" style="border-color: ${dept.color}44;">
+          <!-- Simple Persona Overview Header -->
+          <div class="persona-header-card" style="grid-template-columns: 1fr; padding: 30px 34px; margin-bottom: 28px;">
             ${renderSupplyChainWatermarkSvg(dept.watermarkType, dept.color, 'persona-header-sc-watermark')}
 
             <div style="position:relative; z-index:2;">
-              <div class="persona-badge" style="background: ${dept.color}22; color: ${dept.color}; border: 1px solid ${dept.color}55;">
+              <div class="persona-badge" style="background: ${dept.color}18; color: ${dept.color}; border: 1px solid ${dept.color}40;">
                 <span>${p.icon}</span>
-                <span>${dept.scorBadge || ''} · ${dept.fullName} · ${p.role}</span>
+                <span>${dept.scorBadge || ''} · ${dept.name} · ${p.role}</span>
               </div>
               <h1 class="persona-page-title">${p.name}</h1>
-              <p class="persona-page-summary">${formatRichText(p.summary)}</p>
-              <div class="persona-focus-pills">
-                ${p.focusAreas.map(f => `<span class="focus-pill">${f}</span>`).join('')}
-              </div>
-            </div>
-
-            <div class="persona-stat-highlight" style="border-color: ${dept.color}44;">
-              <div class="persona-stat-value" style="color: ${dept.color};">${p.headlineStat}</div>
-              <div class="persona-stat-label">${p.headlineLabel}</div>
+              <p class="persona-page-summary">${shortSentence(p.summary, 160)}</p>
             </div>
           </div>
 
-          ${linkedVc ? `
-            <div class="persona-vc-banner" onclick="openValueChainPage('${linkedVc.id}', true, event)">
-              <div style="display:flex; align-items:center; gap:14px;">
-                <span class="vc-flow-badge" style="margin-bottom:0; background:${linkedVc.color}22; color:${linkedVc.color}; border:1px solid ${linkedVc.color}55;">
-                  End-to-End Value Chain
-                </span>
-                <div>
-                  <div style="font-family:var(--font-display); font-size:18px; font-weight:800;">${linkedVc.title}</div>
-                  <div style="font-size:15px; color:var(--text-secondary);">${formatRichText(linkedVc.cardSubtitle)}</div>
-                </div>
-              </div>
-              <span style="font-size:14px; font-weight:700; color:${linkedVc.color}; white-space:nowrap;">
-                Open 6-Stage Pipeline &rarr;
-              </span>
-            </div>
-          ` : ''}
-
-          <!-- Realistic Day in the Life Header + Legend -->
-          <div class="ditl-header-row">
-            <div>
-              <h2 class="block-title">A Realistic Day in the Life</h2>
-              <p class="block-subtitle">Full daily schedule—highlighting where <span class="sc-hl-underline">process gaps</span> happen and how <span class="sc-hl-underline">Gemini Enterprise</span> transforms them.</p>
-            </div>
-
-            <div class="ditl-legend">
-              <span class="legend-item">
-                <span class="legend-swatch" style="background: rgba(255,255,255,0.25);"></span>
-                <span>Core Strategic / Human Work</span>
-              </span>
-              <span class="legend-item">
-                <span class="legend-swatch" style="background: var(--g-red);"></span>
-                <span style="color: #ff8a80;">Manual Toil Bottleneck</span>
-              </span>
-              <span class="legend-item">
-                <span class="legend-swatch" style="background: var(--g-green);"></span>
-                <span style="color: #81c995;">Gemini Enterprise Improvement</span>
-              </span>
-            </div>
+          <!-- Simple, Scannable Persona Journey -->
+          <div style="margin-bottom: 14px;">
+            <h2 class="block-title" style="border-left-color: ${dept.color};">Persona Journey</h2>
+            <p class="block-subtitle">Key daily workflow steps and where AI agents assist.</p>
           </div>
 
-          <!-- Before vs After Daily Capacity Meter -->
-          <div class="time-shift-banner">
-            <div class="shift-meter-card">
-              <div class="shift-meter-top">
-                <span style="color: var(--text-secondary);">Traditional Workday</span>
-                <span style="color: #ff8a80; font-weight: 700;">${p.toilHoursBefore}</span>
-              </div>
-              <div class="shift-bar-track">
-                <div style="width: 74%; background: var(--g-red);"></div>
-                <div style="width: 26%; background: rgba(255,255,255,0.18);"></div>
-              </div>
-            </div>
-
-            <div class="shift-meter-card">
-              <div class="shift-meter-top">
-                <span style="color: var(--text-secondary);">With Gemini Enterprise</span>
-                <span style="color: #81c995; font-weight: 700;">${p.toilHoursAfter}</span>
-              </div>
-              <div class="shift-bar-track">
-                <div style="width: 14%; background: var(--g-green);"></div>
-                <div style="width: 86%; background: var(--g-blue);"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Full Chronological Schedule -->
-          <div class="day-schedule">
-            ${p.dayInLife.map((slot, idx) => {
-              if (!slot.isToil) {
-                return `
-                  <div class="schedule-row-human">
-                    <div class="slot-time-col">
-                      <div class="slot-clock">${slot.time}</div>
-                      <div class="slot-title">${slot.task}</div>
-                    </div>
-                    <div class="human-task-box">
-                      <span class="human-task-desc">${formatRichText(slot.activity)}</span>
-                      <span class="human-pill">👤 ${slot.tag}</span>
-                    </div>
-                  </div>
-                `;
-              }
-
+          <div class="journey-list">
+            ${p.dayInLife.map(slot => {
               const plugAgent = slot.agentId ? AGENTS[slot.agentId] : null;
+              const desc = shortSentence(slot.isToil ? slot.after : slot.activity, 125);
               return `
-                <div class="schedule-row-toil">
-                  <div class="slot-time-col">
-                    <div class="slot-clock">${slot.time}</div>
-                    <div class="slot-title" style="color: #ff8a80;">${slot.task}</div>
+                <div class="journey-step-row">
+                  <div>
+                    <div class="journey-step-time">${slot.time}</div>
+                    <div class="journey-step-title">${slot.task}</div>
                   </div>
-
-                  <div class="toil-highlight-box">
-                    <div class="toil-top-bar">
-                      <span class="toil-badge">✕ Manual Toil</span>
-                      <span class="toil-duration">${slot.toilTime}</span>
-                    </div>
-                    <div class="toil-text">${formatRichBullets(slot.before, '#f87171')}</div>
-                  </div>
-
-                  <div class="gemini-improve-box">
-                    <div class="improve-top-bar">
-                      <span class="improve-badge">
-                        <img data-asset="sparkle_blue_violet.png" alt="" />
-                        <span>Gemini Improvement</span>
-                      </span>
-                      <span class="improve-time-saved">${slot.toilTime} &rarr; ${slot.afterTime}</span>
-                    </div>
-                    <div class="improve-text">${formatRichBullets(slot.after, '#34d399')}</div>
+                  <div class="journey-step-desc">${desc}</div>
+                  <div>
                     ${plugAgent ? `
-                      <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:8px;">
-                        <button type="button" class="plugin-agent-btn" onclick="openAgentPage('${plugAgent.id}', true, event)">
-                          <span>🔌 Plug-in Agent: ${plugAgent.name} (${plugAgent.badge})</span>
-                          <span>&rarr;</span>
-                        </button>
-                        <button type="button" class="switch-pill" style="font-size:12.5px; padding:7px 14px;" onclick="openAgentBlueprintPage('${plugAgent.id}', true, event)">
-                          <span>🏗️ High-Code Blueprint</span>
-                        </button>
-                      </div>
-                    ` : ''}
+                      <button type="button" class="journey-agent-pill" onclick="openAgentPage('${plugAgent.id}', true, event)">
+                        <span>🤖 ${plugAgent.name}</span>
+                        <span>&rarr;</span>
+                      </button>
+                    ` : `<span style="font-size:12.5px; color:var(--text-muted);">👤 ${slot.tag || 'Core Task'}</span>`}
                   </div>
                 </div>
               `;
             }).join('')}
           </div>
 
-          <!-- Domain-Specific Agent Catalogue + 4 Cross-Persona Universal Agents -->
-          <h2 class="block-title">Agent Catalogue for ${p.name}</h2>
-          <p class="block-subtitle">
-            Every supply chain persona is powered by their <strong>Dedicated Domain Agent(s)</strong> plus the <span class="sc-hl-underline">4 Cross-Persona Universal Control Tower Agents</span> shared across all <span class="sc-hl-metric">26 roles</span>.
-          </p>
+          <!-- Clean Agent Catalogue for this Persona -->
+          <div style="margin-bottom: 16px;">
+            <h2 class="block-title" style="border-left-color: ${dept.color};">AI Agents for ${p.name}</h2>
+          </div>
 
           <div class="catalog-grid">
             ${[...new Set([...(p.agentIds || []), ...UNIVERSAL_AGENT_IDS])].map(aid => {
@@ -7497,29 +7788,20 @@ def build_html() -> str:
               if (!ag) return '';
               const agDept = getDeptMeta(ag.deptId);
               return `
-                <div class="catalog-card" onclick="openAgentPage('${ag.id}', true, event)" style="border-color:${ag.isUniversal ? 'rgba(56,189,248,0.35)' : `${dept.color}44`};">
-                  <div class="catalog-thumb">
+                <div class="catalog-card" onclick="openAgentPage('${ag.id}', true, event)">
+                  <div class="catalog-thumb" style="height: 136px;">
                     ${renderMiniCatalogCadSvg(ag.cadType, agDept.color)}
-                    <div class="play-circle">
-                      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
                   </div>
-
-                  <div class="catalog-body">
+                  <div class="catalog-body" style="padding: 20px;">
                     <div>
-                      <div style="display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${agDept.color}; margin-bottom:6px;">
-                        <span>${ag.isUniversal ? '🌐 Cross-Persona Universal Agent (All 29 Roles)' : `🔌 Dedicated ${dept.name} Agent`}</span>
+                      <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:${agDept.color}; margin-bottom:6px;">
+                        ${ag.isUniversal ? 'Universal Core Agent' : `${dept.name} Agent`}
                       </div>
-                      <div class="catalog-title">${ag.name}</div>
-                      <div class="catalog-desc">${formatRichText(ag.shortDesc)}</div>
-                      <div class="sc-tech-pills" style="margin-top:12px;">
-                        ${toSysArray(ag.systems).slice(0, 4).map(s => `<span class="sc-tech-pill">${s}</span>`).join('')}
-                      </div>
+                      <div class="catalog-title" style="font-size:18.5px;">${ag.name}</div>
+                      <div class="catalog-desc" style="font-size:14.5px;">${shortSentence(ag.shortDesc, 115)}</div>
                     </div>
-                    <div class="catalog-footer" style="margin-top:16px;">
-                      <span style="color: ${agDept.color};">${ag.badge}</span>
+                    <div class="catalog-footer" style="margin-top:12px; padding-top:12px;">
+                      <span style="color: ${agDept.color}; font-size:13.5px;">Open Agent</span>
                       <span>&rarr;</span>
                     </div>
                   </div>
@@ -7710,6 +7992,66 @@ def build_html() -> str:
     /* =========================================================================
        PAGE 3 RENDERING: EXECUTIVE SELLING AGENT PAGE (#agent/<id>)
        ========================================================================= */
+    function renderSimpleAgentArchitectureDiagram(ag, dept) {
+      const sysArr = toSysArray(ag.systems);
+      const trunc = (str, max = 22) => {
+        const s = String(str || '').trim();
+        return s.length > max ? s.slice(0, max - 1) + '…' : s;
+      };
+      const s1 = trunc(sysArr[0] || 'Enterprise ERP', 22);
+      const s2 = trunc(sysArr[1] || 'WMS / TMS Feeds', 22);
+      const agentShort = trunc(ag.name, 22);
+
+      return `
+        <div class="simple-arch-card">
+          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:4px;">
+            Architecture Overview
+          </div>
+          <h2 style="font-family:var(--font-display); font-size:20px; font-weight:800; color:var(--text-primary); margin-bottom:14px;">
+            How ${ag.name} Works
+          </h2>
+
+          <div class="simple-arch-svg-wrap">
+            <svg viewBox="0 0 920 148" style="width:100%; height:auto; display:block;">
+              <!-- Connecting Arrows -->
+              <line x1="205" y1="74" x2="245" y2="74" stroke="${dept.color}" stroke-width="2" stroke-dasharray="5 4" />
+              <polygon points="245,74 237,69 237,79" fill="${dept.color}" />
+
+              <line x1="435" y1="74" x2="475" y2="74" stroke="#4285f4" stroke-width="2" stroke-dasharray="5 4" />
+              <polygon points="475,74 467,69 467,79" fill="#4285f4" />
+
+              <line x1="675" y1="74" x2="715" y2="74" stroke="#34a853" stroke-width="2" stroke-dasharray="5 4" />
+              <polygon points="715,74 707,69 707,79" fill="#34a853" />
+
+              <!-- Box 1: Data Sources -->
+              <rect x="15" y="20" width="190" height="108" rx="12" fill="var(--bg-card)" stroke="${dept.color}" stroke-width="1.5" />
+              <text x="30" y="46" fill="${dept.color}" font-size="11" font-weight="700">01 · DATA SOURCES</text>
+              <text x="30" y="72" fill="var(--text-primary)" font-size="13.5" font-weight="700">${s1}</text>
+              <text x="30" y="96" fill="var(--text-secondary)" font-size="12">${s2}</text>
+
+              <!-- Box 2: Digital Twin -->
+              <rect x="245" y="20" width="190" height="108" rx="12" fill="var(--bg-card)" stroke="#4285f4" stroke-width="1.5" />
+              <text x="260" y="46" fill="#4285f4" font-size="11" font-weight="700">02 · DATA PLATFORM</text>
+              <text x="260" y="72" fill="var(--text-primary)" font-size="13.5" font-weight="700">BigQuery &amp; Spanner</text>
+              <text x="260" y="96" fill="var(--text-secondary)" font-size="12">Unified Supply Chain Data</text>
+
+              <!-- Box 3: AI Agent & Reasoning -->
+              <rect x="475" y="16" width="200" height="116" rx="12" fill="var(--bg-card)" stroke="#7e57c2" stroke-width="2" />
+              <text x="490" y="44" fill="#7e57c2" font-size="11" font-weight="700">03 · AI AGENT</text>
+              <text x="490" y="70" fill="var(--text-primary)" font-size="13.5" font-weight="700">${agentShort}</text>
+              <text x="490" y="94" fill="var(--text-secondary)" font-size="12">Gemini + OR-Tools Solver</text>
+
+              <!-- Box 4: Enterprise Execution -->
+              <rect x="715" y="20" width="190" height="108" rx="12" fill="var(--bg-card)" stroke="#34a853" stroke-width="1.5" />
+              <text x="730" y="46" fill="#34a853" font-size="11" font-weight="700">04 · EXECUTION</text>
+              <text x="730" y="72" fill="var(--text-primary)" font-size="13.5" font-weight="700">Automated Action</text>
+              <text x="730" y="96" fill="var(--text-secondary)" font-size="12">ERP / WMS Write-Back</text>
+            </svg>
+          </div>
+        </div>
+      `;
+    }
+
     function openAgentPage(agentId, pushHash = true, ev = null) {
       const ag = AGENTS[agentId];
       if (!ag) return;
@@ -7718,10 +8060,9 @@ def build_html() -> str:
       const transClass = getPageTransitionClass(ev, sRect);
 
       const dept = getDeptMeta(ag.deptId);
-      const sell = getAgentSellingMeta(ag, dept);
       const backPersona = PERSONAS[lastPersonaId] || Object.values(PERSONAS)[0];
       const videoUrl = customVideos[ag.id] || ag.videoSrc;
-      const showVideoPlayer = ag.hasPreloadedVideo || Boolean(customVideos[ag.id]);
+      const hasVideo = Boolean(customVideos[ag.id]) || Boolean(ag.hasPreloadedVideo);
 
       if (pushHash) {
         history.pushState({ page: 'agent', id: agentId }, '', `#agent/${agentId}`);
@@ -7736,165 +8077,75 @@ def build_html() -> str:
                 <span>&larr;</span>
                 <span>Back to ${backPersona.name}</span>
               </button>
-              <button type="button" class="back-btn" onclick="openPersonasDirectoryPage('${ag.isUniversal ? 'universal' : dept.id}', '', true, 'agents', event)">
-                <span>🤖</span>
-                <span>All 32 Supply Chain Agents</span>
-              </button>
-            </div>
-
-            <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              <button type="button" class="switch-pill" style="border-color:#c084fc88; color:#e9d5ff; font-weight:700;" onclick="openAgentBlueprintPage('${ag.id}', true, event)">
-                🏗️ Open High-Code Architecture &amp; Sub-Agent Page &rarr;
-              </button>
-              <button type="button" class="switch-pill" onclick="goToOrgChart()">
-                CSCO Org Chart
+              <button type="button" class="back-btn" onclick="goToOrgChart()">
+                <span>6 SCOR Pillars</span>
               </button>
             </div>
           </div>
 
-          <!-- Executive Hero Banner -->
-          <div class="agent-hero-banner" style="border-color: ${dept.color}44;">
-            ${renderSupplyChainWatermarkSvg(dept.watermarkType, dept.color, 'persona-header-sc-watermark')}
-
-            <div style="position:relative; z-index:2; display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:14px;">
-              <div class="persona-badge" style="margin-bottom:0; background: ${dept.color}22; color: ${dept.color}; border: 1px solid ${dept.color}55;">
-                <img data-asset="sparkle_blue_violet.png" alt="" style="width:14px; height:14px;" />
-                <span>${ag.isUniversal ? '🌐 Cross-Persona Universal Agent · All 29 Roles' : `${dept.scorBadge} · ${dept.fullName}`}</span>
+          <!-- 1. What This Agent Does -->
+          <div class="agent-hero-banner" style="padding: 30px 34px; margin-bottom: 24px;">
+            <div style="position:relative; z-index:2; display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:12px;">
+              <div class="persona-badge" style="margin-bottom:0; background: ${dept.color}18; color: ${dept.color}; border: 1px solid ${dept.color}40;">
+                <span>${ag.isUniversal ? '🌐 Universal Core Agent' : `${dept.scorBadge} · ${dept.name}`}</span>
               </div>
-              <span class="sc-tech-pill" style="border-color:#38bdf866; color:#38bdf8; font-weight:700; padding:6px 14px;">
-                ⚡ ${sell.buildType}
-              </span>
             </div>
 
-            <h1 class="agent-title">${ag.name}</h1>
-            <p class="agent-subtitle">${formatRichText(ag.shortDesc)}</p>
-
-            <div class="sc-tech-pills" style="position:relative; z-index:2; margin-top:16px;">
-              ${toSysArray(ag.systems).map(s => `<span class="sc-tech-pill">${s}</span>`).join('')}
-            </div>
+            <h1 class="agent-title" style="font-size: clamp(28px, 3.2vw, 40px); margin-bottom: 10px;">${ag.name}</h1>
+            <p class="agent-subtitle" style="font-size: 16.5px;">
+              ${shortSentence(ag.shortDesc, 175)} ${shortSentence(ag.solution, 175)}
+            </p>
           </div>
 
-          <!-- 4 Big Executive ROI, Growth & Cost-Saving Stat Cards -->
-          <div class="agent-roi-grid">
-            ${sell.roiMetrics.map(m => `
-              <div class="agent-roi-card" style="--roi-accent: ${m.color || dept.color};">
-                <div class="agent-roi-val" style="color: ${m.color || dept.color};">${m.val}</div>
-                <div class="agent-roi-label">${m.label}</div>
-                <div class="agent-roi-sub">${m.sub}</div>
-              </div>
-            `).join('')}
-          </div>
+          <!-- 2. Small Architecture Diagram -->
+          ${renderSimpleAgentArchitectureDiagram(ag, dept)}
 
-          <!-- 3 HERO-SIZED EXECUTIVE SELLING PITCH CARDS (BIG, PROMINENT & IMPOSSIBLE TO MISS) -->
-          <div class="exec-pitch-grid">
-            <div class="exec-pitch-card" style="--pitch-accent: #f87171;">
-              <div class="exec-pitch-eyebrow" style="color: #fca5a5; background: rgba(239, 68, 68, 0.14); border: 1px solid rgba(239, 68, 68, 0.4);">
-                <span>✕ 01 · The Business Problem</span>
-              </div>
-              <h2 class="exec-pitch-title">The Process Gap &amp; Manual Cost Leakage</h2>
-              <div class="exec-pitch-body">${formatRichBullets(ag.problem, '#f87171')}</div>
-            </div>
-
-            <div class="exec-pitch-card" style="--pitch-accent: #38bdf8;">
-              <div class="exec-pitch-eyebrow" style="color: #7dd3fc; background: rgba(56, 189, 248, 0.14); border: 1px solid rgba(56, 189, 248, 0.4);">
-                <span>⚡ 02 · The Executive Solution</span>
-              </div>
-              <h2 class="exec-pitch-title">How ${ag.name} Solves It Autonomously</h2>
-              <div class="exec-pitch-body">${formatRichBullets(ag.solution, '#38bdf8')}</div>
-            </div>
-
-            <div class="exec-pitch-card" style="--pitch-accent: #34d399;">
-              <div class="exec-pitch-eyebrow" style="color: #6ee7b7; background: rgba(16, 185, 129, 0.14); border: 1px solid rgba(16, 185, 129, 0.4);">
-                <span>✦ 03 · Bottom-Line Outcome (${ag.badge})</span>
-              </div>
-              <h2 class="exec-pitch-title">Verified Financial &amp; Operational Impact</h2>
-              <div class="exec-pitch-body">${formatRichBullets(ag.advantage, '#34d399')}</div>
-              <div class="exec-pitch-proof">
-                <strong>Verified Customer Proof Point:</strong> ${formatRichText(sell.customerProof)}
-              </div>
-            </div>
-          </div>
-
-          <!-- Interactive CAD Simulation Studio + Preloaded .mp4 Demo Video Stage -->
+          <!-- 3. Dedicated Box for a Video -->
           <div class="video-stage-box">
-            <div class="video-viewport" id="agentVideoViewport">
-              ${renderStageViewportHtml(ag, 'agent', videoUrl, showVideoPlayer)}
-            </div>
-
-            <div class="video-toolbar">
-              <span>${stageViewMode === 'cad' ? `Interactive Vector CAD Studio: ${ag.name}` : `Executive Demo Video (.mp4): ${ag.name}`}</span>
+            <div class="video-toolbar" style="border-top:none; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-weight:700; color:var(--text-primary);">🎬 Agent Demo Video — ${ag.name}</span>
               <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                <button type="button" class="upload-video-btn ${stageViewMode==='cad'?'active':''}"
-                        onclick="stageViewMode='cad';openAgentPage('${ag.id}', false)">
-                  <span>✦ Interactive CAD Simulator</span>
-                </button>
                 <button type="button" class="upload-video-btn ${stageViewMode==='video'?'active':''}"
                         onclick="stageViewMode='video';openAgentPage('${ag.id}', false)">
-                  <span>▶ Watch Demo Video (.mp4)</span>
+                  <span>▶ Video Box</span>
                 </button>
-                <label class="upload-video-btn" title="Drop in any custom .mp4 screen recording for this agent">
-                  <span>Swap Local .mp4</span>
+                <button type="button" class="upload-video-btn ${stageViewMode==='cad'?'active':''}"
+                        onclick="stageViewMode='cad';openAgentPage('${ag.id}', false)">
+                  <span>✦ Interactive Preview</span>
+                </button>
+                <label class="upload-video-btn" title="Attach an .mp4 demo video for this agent">
+                  <span>📎 Attach Video (.mp4)</span>
                   <input type="file" accept="video/*" style="display:none;" onchange="attachAgentVideo(event, '${ag.id}')" />
                 </label>
               </div>
             </div>
-          </div>
 
-          <!-- Full Google Cloud Service Stack (12 Services) & Pre-Built Enterprise Connectors -->
-          ${renderGcpAndEnterpriseConnectorsPanel(ag, dept, sell)}
-
-          <!-- Prominent CTA Banner to Dedicated High-Code Technical Architecture Page (#blueprint/<id>) -->
-          <div class="blueprint-cta-banner" style="margin-bottom:28px;">
-            <div style="max-width:980px;">
-              <div style="font-size:12.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:#c084fc; margin-bottom:6px;">
-                🏗️ Deep Technical &amp; High-Code Engineering Specification (Dedicated Sub-Page)
-              </div>
-              <div style="font-family:var(--font-display); font-size:23px; font-weight:800; color:#f8fafc; margin-bottom:8px;">
-                Want to inspect the High-Code ADK Orchestrator, 3 A2A Sub-Agents, OR-Tools Math Solvers &amp; ERP Write-Back APIs?
-              </div>
-              <p style="font-size:16px; color:var(--text-secondary); line-height:1.68;">
-                Click across to the dedicated <span class="sc-hl-underline">High-Code Architecture &amp; Sub-Agent Flow Page</span> for <strong class="sc-hl-bold">${ag.name}</strong> to review the 5-stage system diagram, 3-segment data foundation (Private / Community / Public), and signed BAPI/EDI payloads.
-              </p>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:10px; align-items:flex-end;">
-              <button type="button"
-                      class="cta-btn"
-                      style="background:linear-gradient(135deg, #a855f7, #00d2ff); color:#040810; font-weight:700; border:none;"
-                      onclick="openAgentBlueprintPage('${ag.id}', true, event)">
-                <span>🏗️ Open High-Code Architecture &amp; Sub-Agent Page</span>
-                <span>&rarr;</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Operational Adoption Across the CSCO Org Chart (Moved to Bottom of Agent Page) -->
-          <div class="used-by-strip" style="margin-bottom:0;">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-              <div>
-                <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:${dept.color};">
-                  👥 Operational Adoption Across the CSCO Org Chart
-                </div>
-                <div style="font-family:var(--font-display); font-size:19px; font-weight:800; color:#f8fafc; margin-top:2px;">
-                  ${ag.isUniversal
-                    ? 'Used Daily by All 26 Supply Chain Personas Across All 6 SCOR Verticals'
-                    : `Used by Supply Chain Personas in ${dept.fullName}`}
-                </div>
-              </div>
-              <button type="button" class="switch-pill" onclick="openPersonasDirectoryPage('${ag.isUniversal ? 'all' : dept.id}', '', true, 'personas', event)">
-                Browse All 29 Personas &rarr;
-              </button>
-            </div>
-            <div class="used-by-pills">
-              ${sell.usedByPersonas.map(p => {
-                const pDept = getDeptMeta(p.deptId);
-                return `
-                  <button type="button" class="used-by-pill" onclick="openPersonaPage('${p.id}', true, event)">
-                    <span>${p.icon}</span>
-                    <span>${p.name}</span>
-                    <span style="font-size:12px; color:${pDept.color};">(${pDept.name}) &rarr;</span>
-                  </button>
-                `;
-              }).join('')}
+            <div class="video-viewport" id="agentVideoViewport" style="min-height: 380px;">
+              ${stageViewMode === 'cad'
+                ? renderInteractiveCadStage(ag.cadType || 'demand_wave', 'agentCadMount')
+                : (hasVideo
+                    ? `<video id="agentVideoPlayer" controls autoplay loop muted playsinline src="${videoUrl}"></video>`
+                    : `
+                      <div class="video-placeholder-stage">
+                        <div class="video-placeholder-icon">▶</div>
+                        <div style="font-family:var(--font-display); font-size:20px; font-weight:700; color:var(--text-primary);">
+                          Demo Video Box · ${ag.name}
+                        </div>
+                        <div style="font-size:14.5px; color:var(--text-secondary); max-width:480px;">
+                          Video slot ready. Click <strong>Attach Video (.mp4)</strong> to load a recording, or switch to <strong>Interactive Preview</strong>.
+                        </div>
+                        <div style="display:flex; gap:10px; margin-top:6px;">
+                          <label class="upload-video-btn active" style="cursor:pointer;">
+                            <span>📎 Attach .mp4 Video</span>
+                            <input type="file" accept="video/*" style="display:none;" onchange="attachAgentVideo(event, '${ag.id}')" />
+                          </label>
+                          <button type="button" class="upload-video-btn" onclick="stageViewMode='cad';openAgentPage('${ag.id}', false)">
+                            <span>✦ View Interactive Animation</span>
+                          </button>
+                        </div>
+                      </div>
+                    `)
+              }
             </div>
           </div>
         </div>
@@ -8325,187 +8576,74 @@ def build_html() -> str:
           if (deptFilter !== 'all' && deptFilter !== 'universal' && ag.deptId !== deptFilter) return false;
           if (!q) return true;
           const dept = getDeptMeta(ag.deptId);
-          const haystack = [
-            ag.name, ag.shortDesc, ag.badge, ag.problem, ag.solution, ag.advantage,
-            ag.solverStack || '', ag.apiWriteback || '',
-            dept ? dept.name : '', dept ? dept.fullName : '',
-            ...toSysArray(ag.systems)
-          ].join(' ').toLowerCase();
+          const haystack = [ag.name, ag.shortDesc, dept ? dept.name : ''].join(' ').toLowerCase();
           return haystack.includes(q);
         });
 
         if (!agentsList.length) {
-          return `
-            <div style="grid-column: 1 / -1; padding: 42px; text-align: center; border-radius: 18px; border: 1px dashed rgba(148,163,184,0.28); color: var(--text-secondary); font-size: 15.5px;">
-              No Supply Chain Agents matched "<strong>${searchQuery}</strong>". Try clearing the filter or searching for "Ocean", "Air Cargo", "Rail", "Spanner", "Google Maps", "SAP", "LIFO", or "Tier-N".
-            </div>
-          `;
+          return `<div style="grid-column: 1 / -1; padding: 36px; text-align: center; color: var(--text-secondary);">No matching agents found.</div>`;
         }
 
         return agentsList.map(ag => {
           const dept = getDeptMeta(ag.deptId);
-          const sell = getAgentSellingMeta(ag, dept);
           return `
-            <div class="dir-persona-card" style="--dept-accent: ${dept.color};">
+            <div class="dir-persona-card" style="--dept-accent: ${dept.color}; cursor:pointer;" onclick="openAgentPage('${ag.id}', true, event)">
               <div>
-                <div class="dir-card-top">
-                  <div>
-                    <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:4px;">
-                      ${ag.isUniversal ? '🌐 Cross-Persona Universal Agent · All 29 Roles' : `${dept.scorBadge || ''} · ${dept.name}`}
-                    </div>
-                    <div style="font-family:var(--font-display); font-size:20px; font-weight:800; color:#f8fafc;">
-                      ${ag.name}
-                    </div>
-                  </div>
-                  <div style="text-align:right;">
-                    <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:${dept.color};">${ag.badge}</div>
-                    <div style="font-size:11.5px; color:#38bdf8; font-weight:600;">${sell.buildType}</div>
-                  </div>
+                <div style="font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:${dept.color}; margin-bottom:4px;">
+                  ${ag.isUniversal ? 'Universal Core Agent' : `${dept.scorBadge || ''} · ${dept.name}`}
                 </div>
-
-                <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.68; margin: 14px 0;">
-                  ${formatRichText(ag.shortDesc)}
+                <div style="font-family:var(--font-display); font-size:19px; font-weight:800; color:var(--text-primary); margin-bottom:8px;">
+                  ${ag.name}
+                </div>
+                <p style="font-size:14.5px; color:var(--text-secondary); line-height:1.58; margin:0;">
+                  ${shortSentence(ag.shortDesc, 130)}
                 </p>
-
-                <div class="sc-tech-pills" style="margin-bottom: 14px;">
-                  ${toSysArray(ag.systems).slice(0, 5).map(s => `<span class="sc-tech-pill">${s}</span>`).join('')}
-                </div>
               </div>
-
-              <div>
-                <div class="dir-agent-launch-row" onclick="openAgentPage('${ag.id}', true, event)">
-                  <div>
-                    <div style="font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color};">
-                      ✦ Executive Value Pitch, ROI &amp; Live CAD/Video Studio
-                    </div>
-                    <div style="font-family:var(--font-display); font-size:16px; font-weight:800; color:#f8fafc;">
-                      Open ${ag.name} Selling Page
-                    </div>
-                  </div>
-                  <span style="font-size:14px; font-weight:700; color:${dept.color}; white-space:nowrap;">Expand &rarr;</span>
-                </div>
-
-                <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; margin-top:14px; padding-top:12px; border-top:1px solid rgba(148,163,184,0.16);">
-                  <span style="font-size:13px; color:var(--text-secondary);">
-                    ${ag.isUniversal ? 'Used by all 29 Personas' : `Used by ${sell.usedByPersonas.length} Personas`}
-                  </span>
-                  <button type="button" class="switch-pill" style="border-color:#c084fc66; color:#e9d5ff;" onclick="openAgentBlueprintPage('${ag.id}', true, event)">
-                    🏗️ High-Code Blueprint &rarr;
-                  </button>
-                </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; padding-top:12px; border-top:1px solid var(--border-subtle); font-size:13.5px; font-weight:700; color:${dept.color};">
+                <span>Open Agent</span>
+                <span>&rarr;</span>
               </div>
             </div>
           `;
         }).join('');
       }
 
-      // Default mode: 'personas' (29 Personas)
       const personasList = Object.values(PERSONAS).filter(p => {
         if (deptFilter !== 'all' && deptFilter !== 'universal' && p.deptId !== deptFilter) return false;
         if (!q) return true;
         const dept = getDeptMeta(p.deptId);
-        const ag = AGENTS[p.agentIds[0]];
-        const haystack = [
-          p.name, p.role, p.summary, p.headlineStat, p.headlineLabel,
-          ...(p.focusAreas || []),
-          dept ? dept.name : '', dept ? dept.fullName : '',
-          ag ? ag.name : '', ag ? ag.shortDesc : '', ag ? ag.solverStack : '',
-          ...toSysArray(ag ? ag.systems : '')
-        ].join(' ').toLowerCase();
+        const haystack = [p.name, p.role, p.summary, dept ? dept.name : ''].join(' ').toLowerCase();
         return haystack.includes(q);
       });
 
       if (!personasList.length) {
-        return `
-          <div style="grid-column: 1 / -1; padding: 42px; text-align: center; border-radius: 18px; border: 1px dashed rgba(148,163,184,0.28); color: var(--text-secondary); font-size: 15.5px;">
-            No Supply Chain Personas matched "<strong>${searchQuery}</strong>". Try clearing the filter or searching for "Air Cargo", "Rail", "Ocean", "SAP", "LIFO", "WMS", or "OEE".
-          </div>
-        `;
+        return `<div style="grid-column: 1 / -1; padding: 36px; text-align: center; color: var(--text-secondary);">No matching personas found.</div>`;
       }
 
       return personasList.map(p => {
         const dept = getDeptMeta(p.deptId);
-        const ag = AGENTS[p.agentIds[0]];
-        const drawerId = `dirDrawer_${p.id}`;
         return `
-          <div class="dir-persona-card" style="--dept-accent: ${dept.color};">
+          <div class="dir-persona-card" style="--dept-accent: ${dept.color}; cursor:pointer;" onclick="openPersonaPage('${p.id}', true, event)">
             <div>
-              <div class="dir-card-top">
-                <div class="dir-card-person">
-                  <div class="persona-emoji" style="width:44px; height:44px; font-size:21px;">${p.icon}</div>
-                  <div>
-                    <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color};">
-                      ${dept.scorBadge || ''} · ${dept.name}
-                    </div>
-                    <div style="font-family:var(--font-display); font-size:19.5px; font-weight:800; color:#f8fafc;">
-                      ${p.name}
-                    </div>
-                    <div style="font-size:13.5px; color:var(--text-secondary);">${p.role}</div>
+              <div class="dir-card-person" style="margin-bottom: 10px;">
+                <div class="persona-emoji" style="width:42px; height:42px; font-size:20px;">${p.icon}</div>
+                <div>
+                  <div style="font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:${dept.color};">
+                    ${dept.scorBadge || ''} · ${dept.name}
                   </div>
-                </div>
-                <div style="text-align:right;">
-                  <div style="font-family:var(--font-display); font-size:19px; font-weight:800; color:${dept.color};">${p.headlineStat}</div>
-                  <div style="font-size:12px; color:var(--text-secondary); max-width:140px;">${p.headlineLabel}</div>
+                  <div style="font-family:var(--font-display); font-size:18.5px; font-weight:800; color:var(--text-primary);">
+                    ${p.name}
+                  </div>
+                  <div style="font-size:13px; color:var(--text-secondary);">${p.role}</div>
                 </div>
               </div>
-
-              <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.68; margin: 14px 0;">
-                ${formatRichText(p.summary)}
+              <p style="font-size:14.5px; color:var(--text-secondary); line-height:1.58; margin:0;">
+                ${shortSentence(p.summary, 130)}
               </p>
-
-              <div class="sc-tech-pills" style="margin-bottom: 14px;">
-                ${(p.focusAreas || []).map(f => `<span class="sc-tech-pill">${f}</span>`).join('')}
-              </div>
-
-              <!-- Smooth Dropdown Drawer for Quick Spec Preview + 4 Universal Agents -->
-              <div id="${drawerId}" class="sc-dropdown-block">
-                <button type="button" class="sc-dropdown-btn" onclick="toggleScDropdown('${drawerId}')">
-                  <span>⚡ Daily Toil Shift &amp; Connected Agents (${(p.agentIds || []).length} Domain + 4 Universal)</span>
-                  <span class="sc-dropdown-chevron">▾</span>
-                </button>
-                <div class="sc-dropdown-body">
-                  <div class="sc-dropdown-inner">
-                    <div style="display:flex; justify-content:space-between; font-size:13.5px; margin-bottom:10px;">
-                      <span style="color:#ff8a80;">Before: ${p.toilHoursBefore}</span>
-                      <span style="color:#81c995; font-weight:700;">After: ${p.toilHoursAfter}</span>
-                    </div>
-                    <div style="font-size:12.5px; color:#38bdf8; font-weight:700; margin-bottom:8px;">
-                      Shared Cross-Persona Universal Agents:
-                    </div>
-                    <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                      ${UNIVERSAL_AGENT_IDS.map(uid => {
-                        const uag = AGENTS[uid];
-                        return uag ? `<button type="button" class="sc-tech-pill" style="cursor:pointer; border-color:#38bdf855; color:#bae6fd;" onclick="openAgentPage('${uag.id}', true, event)">🌐 ${uag.name}</button>` : '';
-                      }).join('')}
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-
-            <div>
-              ${ag ? `
-                <div class="dir-agent-launch-row" onclick="openAgentPage('${ag.id}', true, event)">
-                  <div>
-                    <div style="font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color};">
-                      🔌 Primary Domain Agent · ${ag.badge}
-                    </div>
-                    <div style="font-family:var(--font-display); font-size:16px; font-weight:800; color:#f8fafc;">
-                      ${ag.name}
-                    </div>
-                  </div>
-                  <span style="font-size:14px; font-weight:700; color:${dept.color}; white-space:nowrap;">Expand &rarr;</span>
-                </div>
-              ` : ''}
-
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:12px; border-top:1px solid rgba(148,163,184,0.16);">
-                <div class="sc-tech-pills">
-                  ${toSysArray(ag ? ag.systems : '').slice(0, 2).map(s => `<span class="sc-tech-pill">${s}</span>`).join('')}
-                </div>
-                <button type="button" class="switch-pill" style="border-color:${dept.color}66; color:${dept.color};" onclick="openPersonaPage('${p.id}', true, event)">
-                  Day in the Life &rarr;
-                </button>
-              </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding-top:12px; border-top:1px solid var(--border-subtle); font-size:13.5px; font-weight:700; color:${dept.color};">
+              <span>Open Persona (${(p.agentIds || []).length} Agents)</span>
+              <span>&rarr;</span>
             </div>
           </div>
         `;
@@ -10342,6 +10480,7 @@ def build_html() -> str:
         BASELINE_AGENTS = JSON.parse(JSON.stringify(AGENTS));
       }
 
+      initPortalTheme();
       hydrateAssets();
       initHeroSupplyChainCanvas();
       renderOrgChart();

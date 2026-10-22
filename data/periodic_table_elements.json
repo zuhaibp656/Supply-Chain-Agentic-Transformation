@@ -15,42 +15,42 @@
       "id": "demand_sop",
       "code": "GROUP I · PLAN",
       "title": "01 · Plan: Demand & S&OP (4)",
-      "color": "#10b981",
+      "color": "#2e8b57",
       "glow": "rgba(16,185,129,0.35)"
     },
     {
       "id": "sourcing_procurement",
       "code": "GROUP II · SOURCE",
       "title": "02 · Source: Procurement (4)",
-      "color": "#a142f4",
+      "color": "#7e57c2",
       "glow": "rgba(161,66,244,0.35)"
     },
     {
       "id": "manufacturing_prod",
       "code": "GROUP III · MAKE",
       "title": "03 · Make: Manufacturing (4)",
-      "color": "#3b82f6",
+      "color": "#3b78e7",
       "glow": "rgba(59,130,246,0.35)"
     },
     {
       "id": "inventory_warehouse",
       "code": "GROUP IV · FULFILL",
       "title": "04 · Fulfill: 3D WMS & MEIO (6)",
-      "color": "#00d2ff",
+      "color": "#00897b",
       "glow": "rgba(0,210,255,0.35)"
     },
     {
       "id": "logistics_fleet",
       "code": "GROUP V · DELIVER",
       "title": "05 · Deliver: Ship/Air/Rail/Road/TM&D (10)",
-      "color": "#ff8c00",
+      "color": "#d97706",
       "glow": "rgba(255,140,0,0.35)"
     },
     {
       "id": "circular_enable",
       "code": "GROUP VI · RETURN & ENABLE",
       "title": "06 · Return & Enable: OTIF & ESG (3)",
-      "color": "#ec4899",
+      "color": "#c53929",
       "glow": "rgba(236,72,153,0.35)"
     }
   ],
@@ -183,7 +183,8 @@
           "name": "FVA Bias Auditor",
           "role": "Scores commercial sales overrides & strips systematic bias in AlloyDB"
         }
-      ]
+      ],
+      "groupColor": "#2e8b57"
     },
     {
       "atomicNumber": "06",
@@ -209,7 +210,8 @@
           "name": "Real-Time P&L Translator",
           "role": "Computes gross margin, COGS & cash-flow bridge live in BigQuery Cortex"
         }
-      ]
+      ],
+      "groupColor": "#2e8b57"
     },
     {
       "atomicNumber": "07",
@@ -235,7 +237,8 @@
           "name": "Supply-Aware Shaper",
           "role": "Redirects promo spend toward surplus high-margin inventory via OR-Tools"
         }
-      ]
+      ],
+      "groupColor": "#2e8b57"
     },
     {
       "atomicNumber": "08",
@@ -261,7 +264,8 @@
           "name": "CPFR Packet Generator",
           "role": "Reconciles retailer order forecast vs. internal sell-through & Google Maps store catchments"
         }
-      ]
+      ],
+      "groupColor": "#2e8b57"
     },
     {
       "atomicNumber": "09",
@@ -287,7 +291,8 @@
           "name": "Combinatorial Award Optimizer",
           "role": "Solves optimal dual-source split under MOQ, capacity & risk constraints in OR-Tools"
         }
-      ]
+      ],
+      "groupColor": "#7e57c2"
     },
     {
       "atomicNumber": "10",
@@ -313,7 +318,8 @@
           "name": "Autonomous Playbook Executor",
           "role": "Drafts backup supplier PO splits & raises MEIO safety buffers via Vertex AI A2A"
         }
-      ]
+      ],
+      "groupColor": "#7e57c2"
     },
     {
       "atomicNumber": "11",
@@ -339,7 +345,8 @@
           "name": "Multi-Tier Provenance Verifier",
           "role": "Validates UFLPA/CBAM origin chains & Scope-3 emissions with Google Earth Engine"
         }
-      ]
+      ],
+      "groupColor": "#7e57c2"
     },
     {
       "atomicNumber": "12",
@@ -365,7 +372,8 @@
           "name": "Autonomous 8D CAPA & COPQ Agent",
           "role": "Validates root-cause evidence & posts poor-quality chargebacks in SAP QM/AP"
         }
-      ]
+      ],
+      "groupColor": "#7e57c2"
     },
     {
       "atomicNumber": "13",
@@ -391,7 +399,8 @@
           "name": "Rush-Order Impact Simulator",
           "role": "Computes exact OTIF, changeover & overtime trade-offs for commercial rush orders"
         }
-      ]
+      ],
+      "groupColor": "#3b78e7"
     },
     {
       "atomicNumber": "14",
@@ -417,7 +426,8 @@
           "name": "MRO Spares & Multimodal Repair Copilot",
           "role": "Reserves SAP MM crib parts & guides technicians with Gemini 3D schematics"
         }
-      ]
+      ],
+      "groupColor": "#3b78e7"
     },
     {
       "atomicNumber": "15",
@@ -443,7 +453,8 @@
           "name": "Autonomous eBHR Release Auditor",
           "role": "Verifies 100% of inline quality gates in AlloyDB for instant finished-goods release to outbound docks"
         }
-      ]
+      ],
+      "groupColor": "#3b78e7"
     },
     {
       "atomicNumber": "16",
@@ -469,7 +480,8 @@
           "name": "NPI Ramp Readiness Tracker",
           "role": "Verifies tooling, PPAP & line trial gates before mass production launch"
         }
-      ]
+      ],
+      "groupColor": "#3b78e7"
     },
     {
       "atomicNumber": "17",
@@ -495,7 +507,8 @@
           "name": "Lateral Rebalancing Broker",
           "role": "Issues hub-to-hub STOs using Google Maps Distance Matrix before rush production"
         }
-      ]
+      ],
+      "groupColor": "#00897b"
     },
     {
       "atomicNumber": "18",
@@ -521,7 +534,8 @@
           "name": "Channel Fair-Share Governor",
           "role": "Protects priority customer allocations in AlloyDB during tight supply"
         }
-      ]
+      ],
+      "groupColor": "#00897b"
     },
     {
       "atomicNumber": "19",
@@ -547,7 +561,8 @@
           "name": "MOQ & Service-Tier Policy Optimizer",
           "role": "Designs pallet-layer MOQ & bracket incentives to fix margin-dilutive small orders"
         }
-      ]
+      ],
+      "groupColor": "#00897b"
     },
     {
       "atomicNumber": "20",
@@ -573,7 +588,8 @@
           "name": "Aisle Congestion Throttler",
           "role": "Simulates picker/AMR traffic in AlloyDB & staggers wave releases"
         }
-      ]
+      ],
+      "groupColor": "#00897b"
     },
     {
       "atomicNumber": "21",
@@ -599,7 +615,8 @@
           "name": "Detention Clock Guardian",
           "role": "Escalates unloading priority in AlloyDB before 2-hr free dwell expires"
         }
-      ]
+      ],
+      "groupColor": "#00897b"
     },
     {
       "atomicNumber": "22",
@@ -625,7 +642,8 @@
           "name": "Multi-Modal Wave Synchronizer",
           "role": "Aligns cross-dock sortation completion with FleetFlow & CubeMaster 3D truck departure slots"
         }
-      ]
+      ],
+      "groupColor": "#00897b"
     },
     {
       "atomicNumber": "23",
@@ -651,7 +669,8 @@
           "name": "Dynamic Traffic Re-Sequencer",
           "role": "Re-solves remaining stop order upon live Google Maps traffic or dock delay"
         }
-      ]
+      ],
+      "groupColor": "#d97706"
     },
     {
       "atomicNumber": "24",
@@ -677,7 +696,8 @@
           "name": "Axle & CoG Physics Verifier",
           "role": "Verifies front steering & rear drive axle load limits and center-of-gravity envelope"
         }
-      ]
+      ],
+      "groupColor": "#d97706"
     },
     {
       "atomicNumber": "25",
@@ -703,7 +723,8 @@
           "name": "EDI 210 / Air Waybill / Ocean Bill Auditor",
           "role": "Audits 100% of multi-modal freight invoices against contracted lane tables in AlloyDB"
         }
-      ]
+      ],
+      "groupColor": "#d97706"
     },
     {
       "atomicNumber": "26",
@@ -729,7 +750,8 @@
           "name": "Coastal Transload & Mode-Split Solver",
           "role": "Splits stockout-critical SKUs from 40ft ocean FEUs onto fast team trucks or intermodal rail"
         }
-      ]
+      ],
+      "groupColor": "#d97706"
     },
     {
       "atomicNumber": "27",
@@ -755,7 +777,8 @@
           "name": "ADS-B Tail-Number & Tarmac Guard",
           "role": "Tracks live aircraft ADS-B flight paths & triggers tarmac recovery before missed connections"
         }
-      ]
+      ],
+      "groupColor": "#d97706"
     },
     {
       "atomicNumber": "28",
@@ -781,7 +804,8 @@
           "name": "Synchronized Chassis & Drayage Sequencer",
           "role": "Couples origin factory drayage and destination DC cross-dock appointments on Google Maps"
         }
-      ]
+      ],
+      "groupColor": "#d97706"
     },
     {
       "atomicNumber": "29",
@@ -807,7 +831,8 @@
           "name": "Landed Cost, Carbon & OTIF Pareto Broker",
           "role": "Balances freight rate, inventory carrying cost, ISO-14083 CO2e & customer MABD penalties"
         }
-      ]
+      ],
+      "groupColor": "#d97706"
     },
     {
       "atomicNumber": "30",
@@ -833,7 +858,8 @@
           "name": "Dynamic Beat Route Optimizer",
           "role": "Re-sequences daily retail store calls with Google Maps Routes Preferred API to maximize productive strike rate"
         }
-      ]
+      ],
+      "groupColor": "#d97706"
     },
     {
       "atomicNumber": "31",
@@ -859,7 +885,8 @@
           "name": "Payout Deduction Calculator",
           "role": "Compares detected facings against contractual retailer planogram terms and computes approved visibility payouts"
         }
-      ]
+      ],
+      "groupColor": "#d97706"
     },
     {
       "atomicNumber": "32",
@@ -885,7 +912,8 @@
           "name": "Autonomous ERP Credit Broker",
           "role": "Drafts validated credit memos in SAP S/4HANA and posts instant settlement notifications to distributor portals"
         }
-      ]
+      ],
+      "groupColor": "#d97706"
     },
     {
       "atomicNumber": "33",
@@ -911,7 +939,8 @@
           "name": "Vendor Warranty Recovery Agent",
           "role": "Links defect spikes in AlloyDB to supplier lots & posts SAP debit claims"
         }
-      ]
+      ],
+      "groupColor": "#c53929"
     },
     {
       "atomicNumber": "34",
@@ -937,7 +966,8 @@
           "name": "Automated Deduction Dispute Agent",
           "role": "Compiles Google Maps geofence, EDI 214 & Document AI signed BOL proof to recover fines"
         }
-      ]
+      ],
+      "groupColor": "#c53929"
     },
     {
       "atomicNumber": "35",
@@ -963,7 +993,8 @@
           "name": "Green Mode-Shift Optimizer",
           "role": "Identifies cost-neutral Air-to-Sea, OTR-to-Rail & Diesel-to-EV swaps in OR-Tools"
         }
-      ]
+      ],
+      "groupColor": "#c53929"
     }
   ]
 }
