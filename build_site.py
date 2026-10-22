@@ -754,12 +754,12 @@ def build_html() -> str:
 
     .dept-row {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       width: 100%;
     }
 
-    @media (max-width: 1280px) {
+    @media (max-width: 1100px) {
       .dept-row { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 680px) {
@@ -3678,10 +3678,10 @@ def build_html() -> str:
       </div>
     </section>
 
-    <!-- 2. CSCO ORG CHART (PROGRESSIVE EXPLORATION ACROSS THE 8 OPERATIONAL VERTICALS) -->
+    <!-- 2. CSCO ORG CHART (PROGRESSIVE EXPLORATION ACROSS THE 6 SCOR PILLARS) -->
     <section id="orgChartSection" class="org-section">
       <div class="section-header">
-        <h2 class="section-title">Office of the CSCO — The 8 Operational Verticals</h2>
+        <h2 class="section-title">Office of the CSCO — The 6 ASCM SCOR Pillars</h2>
         <p class="section-subtitle">The End-to-End Operating Topology decomposed from <span class="sc-hl-underline">Level-1 to Level-3</span> across the <strong class="sc-hl-bold">Three Synchronized Enterprise Flows</strong> (Physical Material, Demand Signal, and Working Capital Cash) — powered by deterministic math solvers and Gemini Enterprise agentic orchestration.</p>
       </div>
 
@@ -3701,53 +3701,49 @@ def build_html() -> str:
         </div>
       </div>
 
-      <!-- 8-Vertical Interactive Master Navigation Tab Bar on the Front Page -->
+      <!-- 6-Pillar Interactive Master Navigation Tab Bar on the Front Page -->
       <div class="vertical-tabs-nav-bar" id="verticalTabsNavBar">
         <button type="button" class="v-tab-btn active" data-vtab="all" onclick="switchVerticalTab('all', this)">
-          <span class="v-tab-num" style="color:#38bdf8;">ALL 8</span>
-          <span class="v-tab-title">All Verticals</span>
-          <span class="v-tab-tag">End-to-End Network</span>
-          <span class="v-tab-badge">26 Roles · 32 Agents</span>
+          <span class="v-tab-num" style="color:#38bdf8;">ALL 6</span>
+          <span class="v-tab-title">All 6 Pillars</span>
+          <span class="v-tab-tag">SCOR End-to-End</span>
+          <span class="v-tab-badge">29 Personas · 35 Agents</span>
         </button>
         <button type="button" class="v-tab-btn" data-vtab="demand_sop" onclick="switchVerticalTab('demand_sop', this)" style="--v-accent: #10b981;">
-          <span class="v-tab-num">V1 · PLAN</span>
+          <span class="v-tab-num">01 · PLAN</span>
           <span class="v-tab-title">Demand &amp; S&amp;OP</span>
           <span class="v-tab-tag">The Forecasters</span>
+          <span class="v-tab-badge">4 Roles · 4 Agents</span>
         </button>
         <button type="button" class="v-tab-btn" data-vtab="sourcing_procurement" onclick="switchVerticalTab('sourcing_procurement', this)" style="--v-accent: #a142f4;">
-          <span class="v-tab-num">V2 · SOURCE</span>
+          <span class="v-tab-num">02 · SOURCE</span>
           <span class="v-tab-title">Sourcing &amp; Procurement</span>
           <span class="v-tab-tag">The Buyers</span>
+          <span class="v-tab-badge">4 Roles · 4 Agents</span>
         </button>
         <button type="button" class="v-tab-btn" data-vtab="manufacturing_prod" onclick="switchVerticalTab('manufacturing_prod', this)" style="--v-accent: #3b82f6;">
-          <span class="v-tab-num">V3 · MAKE</span>
+          <span class="v-tab-num">03 · MAKE</span>
           <span class="v-tab-title">Manufacturing &amp; MPS</span>
           <span class="v-tab-tag">The Makers</span>
+          <span class="v-tab-badge">4 Roles · 4 Agents</span>
         </button>
-        <button type="button" class="v-tab-btn" data-vtab="inventory_meio" onclick="switchVerticalTab('inventory_meio', this)" style="--v-accent: #06b6d4;">
-          <span class="v-tab-num">V4 · BUFFER</span>
-          <span class="v-tab-title">Inventory &amp; MEIO</span>
-          <span class="v-tab-tag">The Buffers</span>
-        </button>
-        <button type="button" class="v-tab-btn" data-vtab="warehousing_qa" onclick="switchVerticalTab('warehousing_qa', this)" style="--v-accent: #00d2ff;">
-          <span class="v-tab-num">V5 · WMS &amp; QA</span>
-          <span class="v-tab-title">Warehousing &amp; QA</span>
-          <span class="v-tab-tag">The Custodians</span>
+        <button type="button" class="v-tab-btn" data-vtab="inventory_warehouse" onclick="switchVerticalTab('inventory_warehouse', this)" style="--v-accent: #00d2ff;">
+          <span class="v-tab-num">04 · FULFILL</span>
+          <span class="v-tab-title">Inventory &amp; Warehousing</span>
+          <span class="v-tab-tag">The Buffers &amp; Custodians</span>
+          <span class="v-tab-badge">5 Roles · 6 Agents</span>
         </button>
         <button type="button" class="v-tab-btn" data-vtab="logistics_fleet" onclick="switchVerticalTab('logistics_fleet', this)" style="--v-accent: #ff8c00;">
-          <span class="v-tab-num">V6 · LOGISTICS</span>
-          <span class="v-tab-title">Logistics &amp; Fleet</span>
-          <span class="v-tab-tag">The Movers</span>
+          <span class="v-tab-num">05 · DELIVER</span>
+          <span class="v-tab-title">Logistics, Fleet &amp; TM&amp;D</span>
+          <span class="v-tab-tag">The Movers &amp; Distributors</span>
+          <span class="v-tab-badge">9 Roles · 10 Agents</span>
         </button>
-        <button type="button" class="v-tab-btn" data-vtab="trade_mkt_dist" onclick="switchVerticalTab('trade_mkt_dist', this)" style="--v-accent: #f59e0b;">
-          <span class="v-tab-num">V7 · TM&amp;D</span>
-          <span class="v-tab-title">TM&amp;D Last-Mile</span>
-          <span class="v-tab-tag">The Last-Mile Push</span>
-        </button>
-        <button type="button" class="v-tab-btn" data-vtab="reverse_risk_esg" onclick="switchVerticalTab('reverse_risk_esg', this)" style="--v-accent: #ec4899;">
-          <span class="v-tab-num">V8 · GUARDIAN</span>
-          <span class="v-tab-title">Reverse &amp; Risk ESG</span>
+        <button type="button" class="v-tab-btn" data-vtab="circular_enable" onclick="switchVerticalTab('circular_enable', this)" style="--v-accent: #ec4899;">
+          <span class="v-tab-num">06 · RETURN &amp; ENABLE</span>
+          <span class="v-tab-title">Customer OTIF, RMA &amp; ESG</span>
           <span class="v-tab-tag">The Guardians</span>
+          <span class="v-tab-badge">3 Roles · 3 Agents</span>
         </button>
       </div>
 
@@ -3769,39 +3765,38 @@ def build_html() -> str:
           </div>
           <div>
             <div class="cfo-box-title">Chief Supply Chain Officer (CSCO)</div>
-            <div class="cfo-box-sub"><span class="sc-hl-metric">8 Operational Verticals</span> · <span class="sc-hl-metric">26 Personas</span> · <span class="sc-hl-metric">28 Domain Agents</span> + <span class="sc-hl-metric">4 Universal Cross-Persona Agents</span></div>
+            <div class="cfo-box-sub"><span class="sc-hl-metric">6 ASCM SCOR Pillars</span> · <span class="sc-hl-metric">29 Personas</span> · <span class="sc-hl-metric">31 Domain Agents</span> + <span class="sc-hl-metric">4 Universal Core Flagship Copilots</span></div>
           </div>
         </div>
 
-        <!-- SVG Tree Lines to 8 Supply Chain Verticals (4x2 Grid) with Animated Telemetry Packets -->
+        <!-- SVG Tree Lines to 6 Supply Chain Pillars (3x2 Grid) with Animated Telemetry Packets -->
         <svg class="org-connectors" viewBox="0 0 1000 56" preserveAspectRatio="none">
           <defs>
             <linearGradient id="orgLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#10b981" stop-opacity="0.55" />
-              <stop offset="33%" stop-color="#3b82f6" stop-opacity="0.75" />
-              <stop offset="66%" stop-color="#ff8c00" stop-opacity="0.75" />
+              <stop offset="20%" stop-color="#a142f4" stop-opacity="0.65" />
+              <stop offset="40%" stop-color="#3b82f6" stop-opacity="0.75" />
+              <stop offset="60%" stop-color="#00d2ff" stop-opacity="0.75" />
+              <stop offset="80%" stop-color="#ff8c00" stop-opacity="0.75" />
               <stop offset="100%" stop-color="#ec4899" stop-opacity="0.55" />
             </linearGradient>
           </defs>
-          <path d="M500,0 L500,24 M125,24 L875,24 M125,24 L125,56 M375,24 L375,56 M625,24 L625,56 M875,24 L875,56" />
-          <path d="M500,0 L500,24 M125,24 L875,24 M125,24 L125,56 M375,24 L375,56 M625,24 L625,56 M875,24 L875,56"
+          <path d="M500,0 L500,24 M166,24 L834,24 M166,24 L166,56 M500,24 L500,56 M834,24 L834,56" />
+          <path d="M500,0 L500,24 M166,24 L834,24 M166,24 L166,56 M500,24 L500,56 M834,24 L834,56"
                 stroke="url(#orgLineGrad)" stroke-width="2.2" stroke-dasharray="8 10" fill="none"
                 style="animation: scDashFlow 2.4s linear infinite;" />
           <circle r="3.5" fill="#10b981">
-            <animateMotion dur="2.4s" repeatCount="indefinite" path="M500,0 L500,24 L125,24 L125,56" />
+            <animateMotion dur="2.4s" repeatCount="indefinite" path="M500,0 L500,24 L166,24 L166,56" />
           </circle>
-          <circle r="3.5" fill="#3b82f6">
-            <animateMotion dur="2.0s" repeatCount="indefinite" path="M500,0 L500,24 L375,24 L375,56" />
-          </circle>
-          <circle r="3.5" fill="#ff8c00">
-            <animateMotion dur="2.2s" repeatCount="indefinite" path="M500,0 L500,24 L625,24 L625,56" />
+          <circle r="3.5" fill="#00d2ff">
+            <animateMotion dur="2.0s" repeatCount="indefinite" path="M500,0 L500,24 L500,56" />
           </circle>
           <circle r="3.5" fill="#ec4899">
-            <animateMotion dur="2.6s" repeatCount="indefinite" path="M500,0 L500,24 L875,24 L875,56" />
+            <animateMotion dur="2.6s" repeatCount="indefinite" path="M500,0 L500,24 L834,24 L834,56" />
           </circle>
         </svg>
 
-        <!-- 6 Clean Supply Chain Vertical Boxes -->
+        <!-- 6 Clean Supply Chain Pillar Boxes -->
         <div id="deptRowContainer" class="dept-row"></div>
       </div>
 
@@ -4067,11 +4062,15 @@ def build_html() -> str:
   <!-- =========================================================================
        DATA & MULTI-PAGE CONTROLLER
        ========================================================================= -->
-  <script>    /* 1. EIGHT CANONICAL OPERATIONAL VERTICALS UNDER THE CSCO */
+  <script>    /* 1. SIX CANONICAL SCOR PILLARS UNDER THE CSCO */
     const DEPARTMENTS = __EMBEDDED_DEPARTMENTS_JSON__;
     Object.defineProperty(DEPARTMENTS, 'sourcing_risk', { get: () => DEPARTMENTS.sourcing_procurement, enumerable: false, configurable: true });
-    Object.defineProperty(DEPARTMENTS, 'inventory_warehouse', { get: () => DEPARTMENTS.warehousing_qa, enumerable: false, configurable: true });
-    Object.defineProperty(DEPARTMENTS, 'circular_enable', { get: () => DEPARTMENTS.reverse_risk_esg, enumerable: false, configurable: true });
+    Object.defineProperty(DEPARTMENTS, 'inventory_meio', { get: () => DEPARTMENTS.inventory_warehouse, enumerable: false, configurable: true });
+    Object.defineProperty(DEPARTMENTS, 'warehousing_qa', { get: () => DEPARTMENTS.inventory_warehouse, enumerable: false, configurable: true });
+    Object.defineProperty(DEPARTMENTS, 'warehouse_intralogistics', { get: () => DEPARTMENTS.inventory_warehouse, enumerable: false, configurable: true });
+    Object.defineProperty(DEPARTMENTS, 'trade_mkt_dist', { get: () => DEPARTMENTS.logistics_fleet, enumerable: false, configurable: true });
+    Object.defineProperty(DEPARTMENTS, 'reverse_risk_esg', { get: () => DEPARTMENTS.circular_enable, enumerable: false, configurable: true });
+    Object.defineProperty(DEPARTMENTS, 'reverse_logistics_esg', { get: () => DEPARTMENTS.circular_enable, enumerable: false, configurable: true });
 
     function getDeptMeta(deptId) {
       if (DEPARTMENTS[deptId]) return DEPARTMENTS[deptId];
@@ -6357,7 +6356,7 @@ def build_html() -> str:
           <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:14px;">
             <div>
               <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:#38bdf8; margin-bottom:4px;">
-                ✦ Shared Cross-Vertical Agentic Mesh · Used by All 26 Personas Across 6 SCOR Domains
+                ✦ Shared Cross-Vertical Agentic Mesh · Used by All 29 Personas Across 6 SCOR Pillars
               </div>
               <h3 style="font-family:var(--font-display); font-size:24px; font-weight:800; color:#f8fafc;">
                 4 Cross-Persona Universal Supply Chain Agents
@@ -6379,7 +6378,7 @@ def build_html() -> str:
                 <div class="universal-agent-card" onclick="openAgentPage('${ag.id}', true, event)">
                   <div>
                     <div class="universal-agent-badge">
-                      <span>🌐 Universal · All 26 Personas</span>
+                      <span>🌐 Universal · All 29 Personas</span>
                     </div>
                     <div class="universal-agent-name">${ag.name}</div>
                     <div class="universal-agent-desc">${formatRichText(ag.shortDesc)}</div>
@@ -6397,24 +6396,34 @@ def build_html() -> str:
     }
 
     
-    /* 8-Vertical Interactive Master Navigation & Tab Controller */
+    /* 6-Pillar Interactive Master Navigation & Tab Controller */
     let currentFrontPageVerticalTab = 'all';
 
     function switchVerticalTab(vId, btnEl) {
-      currentFrontPageVerticalTab = vId;
+      const DEPT_ALIASES = {
+        'inventory_meio': 'inventory_warehouse',
+        'warehousing_qa': 'inventory_warehouse',
+        'warehouse_intralogistics': 'inventory_warehouse',
+        'trade_mkt_dist': 'logistics_fleet',
+        'reverse_risk_esg': 'circular_enable',
+        'reverse_logistics_esg': 'circular_enable',
+        'sourcing_risk': 'sourcing_procurement'
+      };
+      const canonicalVId = DEPT_ALIASES[vId] || vId;
+      currentFrontPageVerticalTab = canonicalVId;
       document.querySelectorAll('#verticalTabsNavBar .v-tab-btn').forEach(b => {
-        const isTarget = b.getAttribute('data-vtab') === vId;
+        const targetAttr = b.getAttribute('data-vtab');
+        const isTarget = targetAttr === canonicalVId || targetAttr === vId;
         b.classList.toggle('active', isTarget);
       });
 
-      if (vId === 'all') {
+      if (canonicalVId === 'all') {
         selectedDeptId = null;
-        const activeTabId = selectedDeptId || 'all';
-      document.querySelectorAll('#verticalTabsNavBar .v-tab-btn').forEach(b => {
-        b.classList.toggle('active', b.getAttribute('data-vtab') === activeTabId);
-      });
+        document.querySelectorAll('#verticalTabsNavBar .v-tab-btn').forEach(b => {
+          b.classList.toggle('active', b.getAttribute('data-vtab') === 'all');
+        });
 
-      document.querySelectorAll('#deptRowContainer .dept-node').forEach(node => {
+        document.querySelectorAll('#deptRowContainer .dept-node').forEach(node => {
           node.classList.remove('active');
           node.style.display = 'flex';
         });
@@ -6422,12 +6431,12 @@ def build_html() -> str:
         const row = document.getElementById('deptRowContainer');
         if (row) row.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
-        selectedDeptId = vId;
+        selectedDeptId = canonicalVId;
         document.querySelectorAll('#deptRowContainer .dept-node').forEach(node => {
           const nid = node.getAttribute('data-dept-id');
-          const isTarget = nid === vId;
+          const isTarget = nid === canonicalVId;
           node.classList.toggle('active', isTarget);
-          node.style.display = 'flex'; // keep visible in 4x2 grid
+          node.style.display = 'flex'; // keep visible in 3x2 grid
         });
         renderDepartmentShowcaseBox();
         hydrateAssets();
@@ -6437,8 +6446,6 @@ def build_html() -> str:
         }, 80);
       }
     }
-
-    
 
     function renderOrgChart() {
       const row = document.getElementById('deptRowContainer');
@@ -6524,11 +6531,17 @@ def build_html() -> str:
       const sRect = getClickedCardRect(ev);
       selectedDeptId = (selectedDeptId === deptId) ? null : deptId;
 
-      // Update active state on the 6 SCOR Vertical cards in-place without re-creating DOM nodes
+      // Update active state on the 6 SCOR Pillar cards in-place without re-creating DOM nodes
       document.querySelectorAll('#deptRowContainer .dept-node').forEach(node => {
         const nid = node.getAttribute('data-dept-id');
         const active = nid === selectedDeptId;
         node.classList.toggle('active', active);
+      });
+
+      // Synchronize front-page master tab bar
+      const activeTabId = selectedDeptId || 'all';
+      document.querySelectorAll('#verticalTabsNavBar .v-tab-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-vtab') === activeTabId);
       });
 
       renderDepartmentShowcaseBox();
@@ -6746,7 +6759,7 @@ def build_html() -> str:
           </div>
         `;
       }
-            if (dept.id === 'warehouse_intralogistics') {
+            if (dept.id === 'inventory_warehouse' || dept.id === 'warehouse_intralogistics' || dept.id === 'warehousing_qa' || dept.id === 'inventory_meio') {
         return `
           <div style="margin: 18px 0 20px; padding: 16px 20px; background: rgba(59, 130, 246, 0.06); border: 1px solid rgba(59, 130, 246, 0.28); border-radius: 14px;">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
@@ -6787,7 +6800,7 @@ def build_html() -> str:
           </div>
         `;
       }
-      if (dept.id === 'logistics_fleet') {
+      if (dept.id === 'logistics_fleet' || dept.id === 'trade_mkt_dist') {
         return `
           <div style="margin: 18px 0 20px; padding: 16px 20px; background: rgba(99, 102, 241, 0.06); border: 1px solid rgba(99, 102, 241, 0.28); border-radius: 14px;">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
@@ -6828,7 +6841,7 @@ def build_html() -> str:
           </div>
         `;
       }
-      if (dept.id === 'reverse_logistics_esg') {
+      if (dept.id === 'circular_enable' || dept.id === 'reverse_risk_esg' || dept.id === 'reverse_logistics_esg') {
         return `
           <div style="margin: 18px 0 20px; padding: 16px 20px; background: rgba(16, 185, 129, 0.06); border: 1px solid rgba(16, 185, 129, 0.28); border-radius: 14px;">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
@@ -7306,7 +7319,7 @@ def build_html() -> str:
               </button>
               <button type="button" class="back-btn" onclick="openPersonasDirectoryPage('${dept.id}', '', true, 'personas', event)">
                 <span>👥</span>
-                <span>All 26 Personas &amp; 32 Agents</span>
+                <span>All 29 Personas &amp; 35 Agents</span>
               </button>
             </div>
 
@@ -7497,7 +7510,7 @@ def build_html() -> str:
                   <div class="catalog-body">
                     <div>
                       <div style="display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${agDept.color}; margin-bottom:6px;">
-                        <span>${ag.isUniversal ? '🌐 Cross-Persona Universal Agent (All 26 Roles)' : `🔌 Dedicated ${dept.name} Agent`}</span>
+                        <span>${ag.isUniversal ? '🌐 Cross-Persona Universal Agent (All 29 Roles)' : `🔌 Dedicated ${dept.name} Agent`}</span>
                       </div>
                       <div class="catalog-title">${ag.name}</div>
                       <div class="catalog-desc">${formatRichText(ag.shortDesc)}</div>
@@ -7746,7 +7759,7 @@ def build_html() -> str:
             <div style="position:relative; z-index:2; display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:14px;">
               <div class="persona-badge" style="margin-bottom:0; background: ${dept.color}22; color: ${dept.color}; border: 1px solid ${dept.color}55;">
                 <img data-asset="sparkle_blue_violet.png" alt="" style="width:14px; height:14px;" />
-                <span>${ag.isUniversal ? '🌐 Cross-Persona Universal Agent · All 26 Roles' : `${dept.scorBadge} · ${dept.fullName}`}</span>
+                <span>${ag.isUniversal ? '🌐 Cross-Persona Universal Agent · All 29 Roles' : `${dept.scorBadge} · ${dept.fullName}`}</span>
               </div>
               <span class="sc-tech-pill" style="border-color:#38bdf866; color:#38bdf8; font-weight:700; padding:6px 14px;">
                 ⚡ ${sell.buildType}
@@ -7868,7 +7881,7 @@ def build_html() -> str:
                 </div>
               </div>
               <button type="button" class="switch-pill" onclick="openPersonasDirectoryPage('${ag.isUniversal ? 'all' : dept.id}', '', true, 'personas', event)">
-                Browse All 26 Personas &rarr;
+                Browse All 29 Personas &rarr;
               </button>
             </div>
             <div class="used-by-pills">
@@ -8338,7 +8351,7 @@ def build_html() -> str:
                 <div class="dir-card-top">
                   <div>
                     <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:4px;">
-                      ${ag.isUniversal ? '🌐 Cross-Persona Universal Agent · All 26 Roles' : `${dept.scorBadge || ''} · ${dept.name}`}
+                      ${ag.isUniversal ? '🌐 Cross-Persona Universal Agent · All 29 Roles' : `${dept.scorBadge || ''} · ${dept.name}`}
                     </div>
                     <div style="font-family:var(--font-display); font-size:20px; font-weight:800; color:#f8fafc;">
                       ${ag.name}
@@ -8374,7 +8387,7 @@ def build_html() -> str:
 
                 <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; margin-top:14px; padding-top:12px; border-top:1px solid rgba(148,163,184,0.16);">
                   <span style="font-size:13px; color:var(--text-secondary);">
-                    ${ag.isUniversal ? 'Used by all 26 Personas' : `Used by ${sell.usedByPersonas.length} Personas`}
+                    ${ag.isUniversal ? 'Used by all 29 Personas' : `Used by ${sell.usedByPersonas.length} Personas`}
                   </span>
                   <button type="button" class="switch-pill" style="border-color:#c084fc66; color:#e9d5ff;" onclick="openAgentBlueprintPage('${ag.id}', true, event)">
                     🏗️ High-Code Blueprint &rarr;
@@ -8386,7 +8399,7 @@ def build_html() -> str:
         }).join('');
       }
 
-      // Default mode: 'personas' (26 Personas)
+      // Default mode: 'personas' (29 Personas)
       const personasList = Object.values(PERSONAS).filter(p => {
         if (deptFilter !== 'all' && deptFilter !== 'universal' && p.deptId !== deptFilter) return false;
         if (!q) return true;
@@ -8535,7 +8548,7 @@ def build_html() -> str:
                       class="switch-pill ${currentDirMode === 'personas' ? 'active' : ''}"
                       style="${currentDirMode === 'personas' ? 'background:#00d2ff; color:#040810; border-color:#00d2ff; font-weight:700;' : ''}"
                       onclick="openPersonasDirectoryPage(currentDirDeptFilter === 'universal' ? 'all' : currentDirDeptFilter, currentDirSearch, false, 'personas', event)">
-                👥 View All 26 Personas
+                👥 View All 29 Personas
               </button>
               <button type="button"
                       class="switch-pill ${currentDirMode === 'agents' ? 'active' : ''}"
@@ -8568,7 +8581,7 @@ def build_html() -> str:
 
             <div class="persona-stat-highlight" style="border-color: rgba(0, 210, 255, 0.4);">
               <div class="persona-stat-value" style="color: #00d2ff;">26 × 32</div>
-              <div class="persona-stat-label">6 SCOR Verticals · 26 Personas · 28 Domain Agents + 4 Universal Agents</div>
+              <div class="persona-stat-label">6 SCOR Pillars · 29 Personas · 31 Domain Agents + 4 Universal Core Copilots</div>
             </div>
           </div>
 
@@ -8585,7 +8598,7 @@ def build_html() -> str:
                       class="switch-pill ${currentDirDeptFilter === 'all' ? 'active' : ''}"
                       style="${currentDirDeptFilter === 'all' ? 'background:#00d2ff; color:#040810; border-color:#00d2ff; font-weight:700;' : ''}"
                       onclick="openPersonasDirectoryPage('all', currentDirSearch, false, currentDirMode, event)">
-                All 6 SCOR Verticals (${currentDirMode === 'agents' ? '32 Agents' : '26 Personas'})
+                All 6 SCOR Pillars (${currentDirMode === 'agents' ? '35 Agents' : '29 Personas'})
               </button>
               <button type="button"
                       class="switch-pill ${currentDirDeptFilter === 'universal' ? 'active' : ''}"
@@ -8649,7 +8662,7 @@ def build_html() -> str:
                 🤖 Explore All 32 AI Agents
               </button>
               <button type="button" class="switch-pill" onclick="openPersonasDirectoryPage('all', '', true, 'personas', event)">
-                👥 Explore All 26 Personas
+                👥 Explore All 29 Personas
               </button>
             </div>
           </div>
@@ -8669,7 +8682,7 @@ def build_html() -> str:
 
             <div class="persona-stat-highlight" style="border-color: rgba(168, 85, 247, 0.45);">
               <div class="persona-stat-value" style="color: #c084fc;">32 Agents</div>
-              <div class="persona-stat-label">4 Universal + 28 Domain Agents · 96 A2A Sub-Agents · 26 Personas</div>
+              <div class="persona-stat-label">4 Universal + 31 Domain Agents · 105 A2A Sub-Agents · 29 Personas</div>
             </div>
           </div>
 
@@ -8788,7 +8801,7 @@ def build_html() -> str:
             <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
               <span class="accent-dot" style="background:#38bdf8; box-shadow:0 0 12px #38bdf8;"></span>
               <h3 style="font-family:var(--font-display); font-size:22px; font-weight:700; color:#f8fafc;">
-                Cross-Persona Universal Core Agents (Shared Across All 26 Roles)
+                Cross-Persona Universal Core Agents (Shared Across All 29 Roles)
               </h3>
             </div>
             <div class="dir-persona-grid">
@@ -8801,7 +8814,7 @@ def build_html() -> str:
                       <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px;">
                         <div>
                           <div style="font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">
-                            🌐 Universal Core · All 26 Roles
+                            🌐 Universal Core · All 29 Roles
                           </div>
                           <div style="font-family:var(--font-display); font-size:19px; font-weight:700; color:#f8fafc; line-height:1.25;">
                             ${ag.name}
@@ -8943,28 +8956,27 @@ def build_html() -> str:
       inline_yield_guardian:           { code: '303', sym: 'Yv', short: 'YieldVision',     group: 'manufacturing_prod',  layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
       eco_cutover_orchestrator:        { code: '304', sym: 'Ch', short: 'ChangeSync',      group: 'manufacturing_prod',  layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
       // 04 · Fulfill (3D WMS, MEIO & Cross-Dock)
-      meio_safety_stock_agent:         { code: '401', sym: 'Ef', short: 'EchelonFlow',     group: 'inventory_meio', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
-      warehouse_slotting_agent:        { code: '501', sym: 'Sm', short: 'SlotMaster 3D',   group: 'warehousing_qa', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
-      atp_order_promising_agent:       { code: '402', sym: 'Pg', short: 'PromiseGuard',    group: 'inventory_meio', layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      yard_dock_sequencer:             { code: '502', sym: 'Yp', short: 'YardPulse',       group: 'warehousing_qa', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      crossdock_transfer_orchestrator: { code: '503', sym: 'Xd', short: 'CrossDockFlow',   group: 'warehousing_qa', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      // 05 · Deliver (Multi-Modal Ship, Air, Rail & Road)
+      meio_safety_stock_agent:         { code: '401', sym: 'Ef', short: 'EchelonFlow',     group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      warehouse_slotting_agent:        { code: '402', sym: 'Sm', short: 'SlotMaster 3D',   group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      atp_order_promising_agent:       { code: '403', sym: 'Pg', short: 'PromiseGuard',    group: 'inventory_warehouse', layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      yard_dock_sequencer:             { code: '404', sym: 'Yp', short: 'YardPulse',       group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      crossdock_transfer_orchestrator: { code: '405', sym: 'Xd', short: 'CrossDockFlow',   group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      network_twin_architect:          { code: '406', sym: 'Td', short: 'TwinDesign',      group: 'inventory_warehouse', layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
+      // 05 · Deliver (Multi-Modal Ship, Air, Rail, Road & TM&D)
       load_consolidation_agent:        { code: '501', sym: 'Cb', short: 'CubeMaster 3D',   group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      fleetflow_dispatch:              { code: '601', sym: 'Ff', short: 'FleetFlow Maps',  group: 'logistics_fleet',    layer: 'OR-Tools + Google Maps', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      // 07 · TM&D (Trade Marketing & Distribution Last-Mile)
-      field_beat_distributor_sync_agent: { code: '701', sym: 'Bs', short: 'BeatSync FSO', group: 'trade_mkt_dist', layer: 'OR-Tools + Google Maps', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      planogram_merchandising_vision_auditor: { code: '702', sym: 'Sv', short: 'ShelfVision IR', group: 'trade_mkt_dist', layer: 'Gemini 3.8 Flash Vision', layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      trade_scheme_claims_reconciler: { code: '703', sym: 'Sg', short: 'SchemeGuard', group: 'trade_mkt_dist', layer: 'BigQuery + Vertex ADK', layerColor: '#10b981', trigger: 'Scheduled',         trigIcon: '⏱️' },
-      port_drayage_orchestrator:       { code: '503', sym: 'Pw', short: 'PortWatch Sea',   group: 'logistics_fleet',     layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      air_cargo_uld_optimizer:         { code: '504', sym: 'Af', short: 'AeroFreight Air', group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      intermodal_rail_linehaul_agent:  { code: '505', sym: 'Ir', short: 'IntermodalSync',  group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
-      multimodal_mode_shift_agent:     { code: '506', sym: 'Ms', short: 'ModalShift',      group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
-      freight_control_tower:           { code: '507', sym: 'St', short: 'SentinelMove',    group: 'logistics_fleet',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      fleetflow_dispatch:              { code: '502', sym: 'Ff', short: 'FleetFlow Maps',  group: 'logistics_fleet',    layer: 'OR-Tools + Google Maps', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      field_beat_distributor_sync_agent: { code: '503', sym: 'Bs', short: 'BeatSync FSO', group: 'logistics_fleet', layer: 'OR-Tools + Google Maps', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      planogram_merchandising_vision_auditor: { code: '504', sym: 'Sv', short: 'ShelfVision IR', group: 'logistics_fleet', layer: 'Gemini 3.8 Flash Vision', layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      trade_scheme_claims_reconciler: { code: '505', sym: 'Sg', short: 'SchemeGuard', group: 'logistics_fleet', layer: 'BigQuery + Vertex ADK', layerColor: '#10b981', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      port_drayage_orchestrator:       { code: '506', sym: 'Pw', short: 'PortWatch Sea',   group: 'logistics_fleet',     layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      air_cargo_uld_optimizer:         { code: '507', sym: 'Af', short: 'AeroFreight Air', group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      intermodal_rail_linehaul_agent:  { code: '508', sym: 'Ir', short: 'IntermodalSync',  group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Scheduled',         trigIcon: '⏱️' },
+      multimodal_mode_shift_agent:     { code: '509', sym: 'Ms', short: 'ModalShift',      group: 'logistics_fleet',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
+      freight_control_tower:           { code: '510', sym: 'St', short: 'SentinelMove',    group: 'logistics_fleet',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
       // 06 · Return & Enable (OTIF, RMA & ESG)
-      otif_penalty_shield:             { code: '601', sym: 'Ot', short: 'OTIFShield',      group: 'reverse_risk_esg',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      reverse_rma_optimizer:           { code: '602', sym: 'Rl', short: 'ReturnLoop RMA',  group: 'reverse_risk_esg',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
-      carbon_scope3_ledger:            { code: '603', sym: 'Ec', short: 'EcoChain CO2e',   group: 'reverse_risk_esg',     layer: 'BigQuery ML + TimesFM', layerColor: '#10b981', trigger: 'Scheduled',         trigIcon: '⏱️' },
-      network_twin_architect:          { code: '403', sym: 'Td', short: 'TwinDesign',      group: 'inventory_meio',     layer: 'OR-Tools + Vertex ADK', layerColor: '#f59e0b', trigger: 'Human-in-the-loop', trigIcon: '🛡️' },
+      otif_penalty_shield:             { code: '601', sym: 'Ot', short: 'OTIFShield',      group: 'circular_enable',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      reverse_rma_optimizer:           { code: '602', sym: 'Rl', short: 'ReturnLoop RMA',  group: 'circular_enable',     layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Event-Driven',      trigIcon: '⚡' },
+      carbon_scope3_ledger:            { code: '603', sym: 'Ec', short: 'EcoChain CO2e',   group: 'circular_enable',     layer: 'BigQuery ML + TimesFM', layerColor: '#10b981', trigger: 'Scheduled',         trigIcon: '⏱️' },
       // 00 · Universal Cross-Persona CSCO Core
       csco_control_tower_copilot:      { code: '001', sym: 'Ct', short: 'TowerMind',       group: 'universal_csco',      layer: 'Vertex AI ADK + A2A',   layerColor: '#3b82f6', trigger: 'Chat-Initiated',    trigIcon: '💬' },
       disruption_war_room_orchestrator:{ code: '002', sym: 'Sw', short: 'StormShield',     group: 'universal_csco',      layer: 'Spanner Graph + AI',    layerColor: '#a855f7', trigger: 'Event-Driven',      trigIcon: '⚡' },
@@ -8973,15 +8985,13 @@ def build_html() -> str:
     };
 
     const PERIODIC_GROUPS = [
-      { id: 'demand_sop',          shortTab: 'Plan (V1)',            title: '01 · PLAN — DEMAND PLANNING, SENSING & S&OP (V1)',          color: '#10b981', count: 4 },
-      { id: 'sourcing_procurement', shortTab: 'Source (V2)',          title: '02 · SOURCE — STRATEGIC SOURCING & PROCUREMENT (V2)',        color: '#a142f4', count: 4 },
-      { id: 'manufacturing_prod',  shortTab: 'Make (V3)',            title: '03 · MAKE — PRODUCTION PLANNING & MANUFACTURING (V3)',       color: '#3b82f6', count: 4 },
-      { id: 'inventory_meio',      shortTab: 'Inventory (V4)',       title: '04 · INVENTORY — MULTI-ECHELON BUFFER & MEIO (V4)',          color: '#06b6d4', count: 3 },
-      { id: 'warehousing_qa',      shortTab: 'Warehouse (V5)',       title: '05 · WAREHOUSING — INWARDING QA & INTRALOGISTICS (V5)',      color: '#00d2ff', count: 3 },
-      { id: 'logistics_fleet',     shortTab: 'Logistics (V6)',       title: '06 · LOGISTICS — MULTI-MODAL FLEET & TRANSIT (V6)',          color: '#ff8c00', count: 7 },
-      { id: 'trade_mkt_dist',      shortTab: 'TM&D (V7)',            title: '07 · TM&D — TRADE MARKETING & DISTRIBUTION LAST-MILE (V7)',   color: '#f59e0b', count: 3 },
-      { id: 'reverse_risk_esg',    shortTab: 'Reverse & ESG (V8)',   title: '08 · REVERSE & RISK — CIRCULAR RMA, OTIF & ESG (V8)',        color: '#ec4899', count: 3 },
-      { id: 'universal_csco',      shortTab: 'Universal Core',       title: '00 · UNIVERSAL CROSS-PERSONA CSCO CONTROL TOWER CORE',       color: '#38bdf8', count: 4 }
+      { id: 'demand_sop',          shortTab: 'Plan (01)',            title: '01 · PLAN — DEMAND PLANNING, SENSING & S&OP',          color: '#10b981', count: 4 },
+      { id: 'sourcing_procurement', shortTab: 'Source (02)',          title: '02 · SOURCE — STRATEGIC SOURCING & PROCUREMENT',        color: '#a142f4', count: 4 },
+      { id: 'manufacturing_prod',  shortTab: 'Make (03)',            title: '03 · MAKE — PRODUCTION PLANNING & MANUFACTURING',       color: '#3b82f6', count: 4 },
+      { id: 'inventory_warehouse', shortTab: 'Fulfill (04)',         title: '04 · FULFILL — MULTI-ECHELON INVENTORY & 3D WMS',       color: '#00d2ff', count: 6 },
+      { id: 'logistics_fleet',     shortTab: 'Deliver (05)',         title: '05 · DELIVER — MULTI-MODAL FLEET & TRADE DISTRIBUTION', color: '#ff8c00', count: 10 },
+      { id: 'circular_enable',     shortTab: 'Return & Enable (06)', title: '06 · RETURN & ENABLE — CIRCULAR RMA, OTIF & ESG',        color: '#ec4899', count: 3 },
+      { id: 'universal_csco',      shortTab: 'Universal Core',       title: '00 · UNIVERSAL CROSS-PERSONA CSCO CONTROL TOWER CORE',  color: '#38bdf8', count: 4 }
     ];
 
     let currentPeriodicFilter = 'all'; // 'all' | group.id | 'by_persona'
@@ -9092,7 +9102,7 @@ def build_html() -> str:
         `;
       };
 
-      // Build Left Column Sections (Either by 7 SCOR Domains or by 26 Personas)
+      // Build Left Column Sections (Either by 6 SCOR Pillars or by 29 Personas)
       let leftColumnHtml = '';
       if (currentPeriodicFilter === 'by_persona') {
         leftColumnHtml = Object.values(PERSONAS).map((p, idx) => {
@@ -9447,7 +9457,7 @@ def build_html() -> str:
         {
           num: '04',
           title: 'Dedicated Persona Page (#persona/id)',
-          sub: '26 Supply Chain Roles · Before vs. After Toil',
+          sub: '29 Supply Chain Roles · Before vs. After Toil',
           color: '#00d2ff',
           whatOpens: 'Deep-dive role view with side-by-side toil schedules and mapped domain agents.',
           actionLabel: 'Open Sample Persona Page &rarr;',
@@ -9504,7 +9514,7 @@ def build_html() -> str:
           <button type="button" class="pt-tab-btn ${currentMindMapMode === 'mindmap' ? 'active' : ''}"
                   onclick="openMindMapPage('mindmap', '${currentMindMapDeptId}', '${currentMindMapPersonaId}', false)">
             <span>🧠 Interactive Neural Mind Map</span>
-            <span class="pt-tab-count">26 Personas &harr; 32 Agents</span>
+            <span class="pt-tab-count">29 Personas &harr; 35 Agents</span>
           </button>
           <button type="button" class="pt-tab-btn ${currentMindMapMode === 'flowchart' ? 'active' : ''}"
                   onclick="openMindMapPage('flowchart', '${currentMindMapDeptId}', '${currentMindMapPersonaId}', false)">
