@@ -172,3 +172,50 @@ class AirCargoUldOptimizer:
             lines.append(f"- **{sys_meta['name']}** (`{sys_meta['protocol']}`)")
 
         return "\n".join(lines)
+
+
+# ==============================================================================
+# Google ADK & Vertex AI Reasoning Engine Integration
+# ==============================================================================
+try:
+    from google.adk.agents import Agent
+    from google.adk.apps import App
+    from google.adk.models import Gemini
+    from google.genai import types
+    from vertexai.preview.reasoning_engines import AdkApp
+
+    root_agent = Agent(
+        name="air_cargo_uld_optimizer",
+        description="Solves 3D non-rectangular aircraft ULD (LD3, LD7, PMC) contour packing to maximize volumetric weight efficiency and dynamically allocates air cargo across passenger belly and freighter charters.",
+        model=Gemini(model="gemini-3-pro-preview", retry_options=types.HttpRetryOptions(attempts=3)),
+        generate_content_config=types.GenerateContentConfig(
+            max_output_tokens=4096,
+            temperature=0.0,
+            thinking_config=types.ThinkingConfig(thinking_budget=0),
+        ),
+        instruction=_INSTRUCTION,
+        tools=_AVAILABLE_TOOLS,
+    )
+
+    app = App(root_agent=root_agent, name="air_cargo_uld_optimizer")
+
+    class AirCargoUldOptimizerAdkApp(AdkApp):
+        """Vertex AI Reasoning Engine wrapper for air_cargo_uld_optimizer."""
+
+        def __init__(self, agent: Agent = root_agent, **kwargs: Any) -> None:
+            super().__init__(agent=agent, **kwargs)
+            self._scenario_agent = AirCargoUldOptimizer()
+
+        def query(self, *args: Any, **kwargs: Any) -> Any:
+            return super().query(*args, **kwargs)
+
+        def stream_query(self, *args: Any, **kwargs: Any) -> Any:
+            yield from super().stream_query(*args, **kwargs)
+
+        def run_scenario(self, query: str = "") -> Dict[str, Any]:
+            return self._scenario_agent.run_scenario(query)
+
+except ImportError:
+    root_agent = AirCargoUldOptimizer()  # type: ignore
+    app = None  # type: ignore
+    AirCargoUldOptimizerAdkApp = None  # type: ignore

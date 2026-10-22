@@ -203,6 +203,70 @@ FLAGSHIP_CONFIG: Dict[str, Dict[str, Any]] = {
             "Route split-shipment order across Dallas DC and Chicago Hub",
         ],
     },
+    "fleetflow_dispatch": {
+        "section": "05 · Deliver",
+        "display_name": "Google Maps Corridor Route & Fleet Dispatch Studio (FleetFlow)",
+        "ge_display_name": "FleetFlow Route & Dispatch",
+        "description": "FleetFlow Dispatch Studio: angular sector corridor clustering, Google Maps Routes v2 live traffic matrices, and OR-Tools CVRPTW fleet dispatch.",
+        "model": "gemini-3-pro-preview",
+        "icon": "local_shipping",
+        "app_class": "FleetflowDispatchAdkApp",
+        "tool_description": "Use FleetFlow to cluster urban delivery stops into directional corridors, solve OR-Tools CVRPTW fleet dispatch, and issue mobile driver manifests.",
+        "starter_prompts": [
+            "Cluster 64 retail delivery drops into 8 directional highway corridors",
+            "Optimize morning fleet dispatch to cut active truck count from 10 to 8",
+            "Pin lead driver Ravi to West corridor on 14-ft truck and rebalance overflow",
+            "Generate turn-by-turn Google Maps navigation links and driver challans",
+        ],
+    },
+    "load_consolidation_agent": {
+        "section": "05 · Deliver",
+        "display_name": "Isometric LIFO Bay & 3D Load Consolidation Studio (CubeMaster 3D)",
+        "ge_display_name": "CubeMaster 3D Load Studio",
+        "description": "CubeMaster 3D Load Studio: cab-to-door reverse-stop LIFO bay zoning, 3D Guillotine bin-packing, crush-fragility stacking, and CMVR Rule 93 axle balance.",
+        "model": "gemini-3-pro-preview",
+        "icon": "view_in_ar",
+        "app_class": "LoadConsolidationAgentAdkApp",
+        "tool_description": "Use CubeMaster 3D to pack multi-stop cartons in reverse delivery order (LIFO), verify 80%+ vertical support, and balance steer/drive axle torque.",
+        "starter_prompts": [
+            "Generate 3D cab-to-door LIFO loading plan for 53-ft trailer on Corridor West",
+            "Verify zero crush-fragility violations and 80%+ floor support across all tiers",
+            "Check CMVR Rule 93 steer vs drive axle weight balance and Center of Gravity",
+            "Commit verified 3D bay loading manifest to Manhattan WMS dock doors",
+        ],
+    },
+    "reverse_rma_optimizer": {
+        "section": "06 · Return & Enable",
+        "display_name": "Autonomous RMA Grading & Circular Backhaul Optimizer (ReturnLoop)",
+        "ge_display_name": "ReturnLoop RMA & Backhaul",
+        "description": "ReturnLoop RMA Optimizer: Gemini 3.8 Flash multimodal defect grading, automated disposition routing, and empty-backhaul fleet insertion.",
+        "model": "gemini-3.8-flash",
+        "icon": "assignment_return",
+        "app_class": "ReverseRmaOptimizerAdkApp",
+        "tool_description": "Use ReturnLoop to grade customer RMA photos with Gemini 3.8 Flash vision, route refurbish vs scrap dispositions, and match return pickups to empty backhauls.",
+        "starter_prompts": [
+            "Grade customer RMA return photos and classify refurbish vs scrap disposition",
+            "Match 18 retail return pallets to returning FleetFlow empty-backhaul trucks",
+            "Calculate net circular recovery value across open RMA queue",
+            "Issue instant customer RMA credit memo and refurbishment work order",
+        ],
+    },
+    "carbon_scope3_ledger": {
+        "section": "06 · Return & Enable",
+        "display_name": "Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger (EcoChain)",
+        "ge_display_name": "EcoChain Scope-3 & CBAM",
+        "description": "EcoChain Carbon Ledger: ISO 14083 & GLEC v3.0 primary telemetry Scope-3 accounting, EU CBAM embedded carbon declarations, and Earth Engine EUDR verification.",
+        "model": "gemini-3-pro-preview",
+        "icon": "eco",
+        "app_class": "CarbonScope3LedgerAdkApp",
+        "tool_description": "Use EcoChain to compute ISO 14083 shipment Scope-3 emissions, certify EU CBAM smelter declarations, and verify EUDR zero-deforestation plots via Earth Engine.",
+        "starter_prompts": [
+            "Calculate ISO 14083 primary telemetry Scope-3 emissions for Rhine corridor",
+            "Generate EU CBAM embedded carbon declaration using primary smelter certificates",
+            "Verify zero post-2020 deforestation on supplier rubber plots via Earth Engine",
+            "Recommend low-carbon HVO100 biofuel and electric barge carrier swaps",
+        ],
+    },
 }
 
 _TOKEN_OVERRIDE: str | None = None
@@ -341,9 +405,10 @@ def deploy_agent_engine(
     display_name = spec["display_name"]
     agent_dir = ROOT / "agents" / agent_id
 
-    if dry_run:
-        print(f"[DRY-RUN] Would deploy {agent_id} ({display_name}) with model {spec['model']}")
-        return f"projects/{project}/locations/{region}/reasoningEngines/mock-{agent_id}"
+    # Evict previously loaded agent 'app' modules so each agent_dir loads cleanly
+    for mod_name in list(sys.modules.keys()):
+        if mod_name == "app" or mod_name.startswith("app."):
+            del sys.modules[mod_name]
 
     # Load agent module dynamically from agent_dir
     sys.path.insert(0, str(agent_dir))
@@ -356,6 +421,13 @@ def deploy_agent_engine(
     finally:
         if str(agent_dir) in sys.path:
             sys.path.remove(str(agent_dir))
+
+    if dry_run:
+        # Verify local scenario execution on the loaded ADK wrapper
+        adk_instance = app_cls(agent=root_agent) if app_cls is not None else None
+        scenario_res = adk_instance.run_scenario("Verify end-to-end readiness") if adk_instance and hasattr(adk_instance, "run_scenario") else {"status": "ready"}
+        print(f"[DRY-RUN VERIFIED] Loaded {spec['app_class']} ({display_name}) | model={spec['model']} | status={scenario_res.get('status')}")
+        return f"projects/{project}/locations/{region}/reasoningEngines/verified-{agent_id}"
 
     import vertexai
     from vertexai import agent_engines

@@ -171,3 +171,50 @@ class OtifPenaltyShield:
             lines.append(f"- **{sys_meta['name']}** (`{sys_meta['protocol']}`)")
 
         return "\n".join(lines)
+
+
+# ==============================================================================
+# Google ADK & Vertex AI Reasoning Engine Integration
+# ==============================================================================
+try:
+    from google.adk.agents import Agent
+    from google.adk.apps import App
+    from google.adk.models import Gemini
+    from google.genai import types
+    from vertexai.preview.reasoning_engines import AdkApp
+
+    root_agent = Agent(
+        name="otif_penalty_shield",
+        description="Predicts customer Must-Arrive-By-Date (MABD) OTIF breaches 72 hours early to trigger margin-positive rescues and auto-assembles geofence + EDI 856 dispute dossiers to overturn invalid retail chargebacks.",
+        model=Gemini(model="gemini-3-pro-preview", retry_options=types.HttpRetryOptions(attempts=3)),
+        generate_content_config=types.GenerateContentConfig(
+            max_output_tokens=4096,
+            temperature=0.0,
+            thinking_config=types.ThinkingConfig(thinking_budget=0),
+        ),
+        instruction=_INSTRUCTION,
+        tools=_AVAILABLE_TOOLS,
+    )
+
+    app = App(root_agent=root_agent, name="otif_penalty_shield")
+
+    class OtifPenaltyShieldAdkApp(AdkApp):
+        """Vertex AI Reasoning Engine wrapper for otif_penalty_shield."""
+
+        def __init__(self, agent: Agent = root_agent, **kwargs: Any) -> None:
+            super().__init__(agent=agent, **kwargs)
+            self._scenario_agent = OtifPenaltyShield()
+
+        def query(self, *args: Any, **kwargs: Any) -> Any:
+            return super().query(*args, **kwargs)
+
+        def stream_query(self, *args: Any, **kwargs: Any) -> Any:
+            yield from super().stream_query(*args, **kwargs)
+
+        def run_scenario(self, query: str = "") -> Dict[str, Any]:
+            return self._scenario_agent.run_scenario(query)
+
+except ImportError:
+    root_agent = OtifPenaltyShield()  # type: ignore
+    app = None  # type: ignore
+    OtifPenaltyShieldAdkApp = None  # type: ignore

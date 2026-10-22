@@ -171,3 +171,50 @@ class FreightControlTower:
             lines.append(f"- **{sys_meta['name']}** (`{sys_meta['protocol']}`)")
 
         return "\n".join(lines)
+
+
+# ==============================================================================
+# Google ADK & Vertex AI Reasoning Engine Integration
+# ==============================================================================
+try:
+    from google.adk.agents import Agent
+    from google.adk.apps import App
+    from google.adk.models import Gemini
+    from google.genai import types
+    from vertexai.preview.reasoning_engines import AdkApp
+
+    root_agent = Agent(
+        name="freight_control_tower",
+        description="Monitors real-time GPS/AIS/ADS-B and cold-chain thermal telemetry across all in-transit shipments while performing 100% 3-way freight invoice auditing against contract tariffs and geofences.",
+        model=Gemini(model="gemini-3-pro-preview", retry_options=types.HttpRetryOptions(attempts=3)),
+        generate_content_config=types.GenerateContentConfig(
+            max_output_tokens=4096,
+            temperature=0.0,
+            thinking_config=types.ThinkingConfig(thinking_budget=0),
+        ),
+        instruction=_INSTRUCTION,
+        tools=_AVAILABLE_TOOLS,
+    )
+
+    app = App(root_agent=root_agent, name="freight_control_tower")
+
+    class FreightControlTowerAdkApp(AdkApp):
+        """Vertex AI Reasoning Engine wrapper for freight_control_tower."""
+
+        def __init__(self, agent: Agent = root_agent, **kwargs: Any) -> None:
+            super().__init__(agent=agent, **kwargs)
+            self._scenario_agent = FreightControlTower()
+
+        def query(self, *args: Any, **kwargs: Any) -> Any:
+            return super().query(*args, **kwargs)
+
+        def stream_query(self, *args: Any, **kwargs: Any) -> Any:
+            yield from super().stream_query(*args, **kwargs)
+
+        def run_scenario(self, query: str = "") -> Dict[str, Any]:
+            return self._scenario_agent.run_scenario(query)
+
+except ImportError:
+    root_agent = FreightControlTower()  # type: ignore
+    app = None  # type: ignore
+    FreightControlTowerAdkApp = None  # type: ignore

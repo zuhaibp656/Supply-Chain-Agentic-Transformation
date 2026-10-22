@@ -172,3 +172,50 @@ class FleetflowDispatch:
             lines.append(f"- **{sys_meta['name']}** (`{sys_meta['protocol']}`)")
 
         return "\n".join(lines)
+
+
+# ==============================================================================
+# Google ADK & Vertex AI Reasoning Engine Integration
+# ==============================================================================
+try:
+    from google.adk.agents import Agent
+    from google.adk.apps import App
+    from google.adk.models import Gemini
+    from google.genai import types
+    from vertexai.preview.reasoning_engines import AdkApp
+
+    root_agent = Agent(
+        name="fleetflow_dispatch",
+        description="Solves Capacitated Vehicle Routing with Time Windows (CVRPTW) using Google OR-Tools and Google Maps Routes Preferred API across 0.75t to 24t fleet vehicles.",
+        model=Gemini(model="gemini-3-pro-preview", retry_options=types.HttpRetryOptions(attempts=3)),
+        generate_content_config=types.GenerateContentConfig(
+            max_output_tokens=4096,
+            temperature=0.0,
+            thinking_config=types.ThinkingConfig(thinking_budget=0),
+        ),
+        instruction=_INSTRUCTION,
+        tools=_AVAILABLE_TOOLS,
+    )
+
+    app = App(root_agent=root_agent, name="fleetflow_dispatch")
+
+    class FleetflowDispatchAdkApp(AdkApp):
+        """Vertex AI Reasoning Engine wrapper for fleetflow_dispatch."""
+
+        def __init__(self, agent: Agent = root_agent, **kwargs: Any) -> None:
+            super().__init__(agent=agent, **kwargs)
+            self._scenario_agent = FleetflowDispatch()
+
+        def query(self, *args: Any, **kwargs: Any) -> Any:
+            return super().query(*args, **kwargs)
+
+        def stream_query(self, *args: Any, **kwargs: Any) -> Any:
+            yield from super().stream_query(*args, **kwargs)
+
+        def run_scenario(self, query: str = "") -> Dict[str, Any]:
+            return self._scenario_agent.run_scenario(query)
+
+except ImportError:
+    root_agent = FleetflowDispatch()  # type: ignore
+    app = None  # type: ignore
+    FleetflowDispatchAdkApp = None  # type: ignore
