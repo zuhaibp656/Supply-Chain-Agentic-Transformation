@@ -1,0 +1,6 @@
+supplier_id,vendor_code_sap,supplier_name,tier_level,country,city,supplied_skus,contract_payment_terms,annual_spend_usd,on_time_delivery_pct,quality_cpk,geopolitical_risk_score,cbam_verified_smelter,upstream_tier2_supplier_id
+SUP-XYZ-T1-ALUWELD,VEND-900112,AluWeld Precision Thermal GmbH,TIER_1,DE,Essen,"[""SKU-XYZ-101"", ""SKU-XYZ-518""]",2/10 Net 45,18400000,96.4,1.54,14.0,True,SUP-XYZ-T2-NORSKHYDRO
+SUP-XYZ-T1-SILICONCORE,VEND-900245,Taiwan SiliconCore Microelectronics Co.,TIER_1,TW,Hsinchu,"[""SKU-XYZ-101"", ""SKU-XYZ-412""]",Net 60,29500000,91.2,1.68,78.5,True,SUP-XYZ-T2-KYOTOWAFER
+SUP-XYZ-T1-ASEPTIPACK,VEND-900389,AseptiPack Foil & Closures North America,TIER_1,US,"Dallas, TX","[""SKU-XYZ-204""]",Net 30,11200000,94.8,1.18,11.0,False,SUP-XYZ-T2-NOVELISALU
+SUP-XYZ-T1-SUMATRARUBBER,VEND-900514,PT Sumatra Agro-Elastomers Indonesia,TIER_1,ID,Medan,"[""SKU-XYZ-625""]",Net 45,6800000,89.5,1.42,46.0,True,PLOT-IDN-882-EUDR
+SUP-XYZ-T2-KYOTOWAFER,VEND-900801,Kyoto UltraPure Silicon Wafer Ltd.,TIER_2,JP,Kyoto,"[""SKU-XYZ-101"", ""SKU-XYZ-412""]",Net 45,14100000,98.1,1.82,22.0,True,SUP-XYZ-T3-QUARTZMINE

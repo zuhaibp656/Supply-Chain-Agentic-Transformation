@@ -1,0 +1,38 @@
+[
+  {
+    "shift_id": "SHIFT-STUT-A",
+    "facility_id": "PLANT-XYZ-STUTTGART",
+    "shift_pattern": "06:00-14:00 CET",
+    "supervisor": "Lukas Weber",
+    "certified_cnc_operators": 38,
+    "maintenance_techs_on_duty": 6,
+    "overtime_authorized": true
+  },
+  {
+    "shift_id": "SHIFT-AUST-A",
+    "facility_id": "PLANT-XYZ-AUSTIN",
+    "shift_pattern": "06:00-14:00 CST",
+    "supervisor": "Sarah Jenkins",
+    "certified_cnc_operators": 52,
+    "maintenance_techs_on_duty": 8,
+    "overtime_authorized": true
+  },
+  {
+    "shift_id": "SHIFT-BLR-A",
+    "facility_id": "PLANT-XYZ-BENGALURU",
+    "shift_pattern": "07:00-15:00 IST",
+    "supervisor": "Arjun Rao",
+    "certified_cnc_operators": 64,
+    "maintenance_techs_on_duty": 9,
+    "overtime_authorized": true
+  },
+  {
+    "shift_id": "SHIFT-MUM-FLEET",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "shift_pattern": "05:30-14:30 IST",
+    "supervisor": "Vikram Deshmukh",
+    "active_commercial_drivers": 24,
+    "lead_west_corridor_driver": "Ravi Sharma (TRK-T14-01)",
+    "overtime_authorized": false
+  }
+]

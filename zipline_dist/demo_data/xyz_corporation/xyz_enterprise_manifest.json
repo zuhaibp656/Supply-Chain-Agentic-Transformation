@@ -1,0 +1,451 @@
+{
+  "company_name": "XYZ Global Industries Corp.",
+  "company_code": "XYZ-CORP-01",
+  "fiscal_year": "FY2026",
+  "description": "End-to-End Multi-Modal Enterprise Demo Data Universe spanning 35 AI Agents across 6 ASCM SCOR Pillars + Universal Core AND organizational ERP/HR/Finance/Legal systems outside individual agents.",
+  "summary_counts": {
+    "agent_digital_twin_tables": 146,
+    "enterprise_org_backbone_tables": 7,
+    "total_relational_tables": 153,
+    "excel_workbooks_xlsx": 7,
+    "pdf_documents": 7,
+    "operational_vision_images_png": 8,
+    "word_docs_edi_emails": 6
+  },
+  "shared_golden_thread_entities": {
+    "skus": [
+      "SKU-XYZ-101",
+      "SKU-XYZ-204",
+      "SKU-XYZ-309",
+      "SKU-XYZ-412",
+      "SKU-XYZ-518",
+      "SKU-XYZ-625"
+    ],
+    "facilities": [
+      "PLANT-XYZ-STUTTGART",
+      "PLANT-XYZ-AUSTIN",
+      "PLANT-XYZ-BENGALURU",
+      "PLANT-XYZ-MONTERREY",
+      "RDC-XYZ-CHICAGO",
+      "FDC-XYZ-ATLANTA",
+      "FDC-XYZ-ROTTERDAM",
+      "FDC-XYZ-MUMBAI"
+    ],
+    "suppliers": [
+      "SUP-XYZ-T1-ALUWELD",
+      "SUP-XYZ-T1-SILICONCORE",
+      "SUP-XYZ-T1-ASEPTIPACK",
+      "SUP-XYZ-T1-SUMATRARUBBER",
+      "SUP-XYZ-T2-KYOTOWAFER"
+    ],
+    "customers": [
+      "CUST-XYZ-TIER1-AUTOWORKS",
+      "CUST-XYZ-TIER1-MEGAMART",
+      "CUST-XYZ-TIER2-METROCPG"
+    ],
+    "golden_threads": [
+      {
+        "golden_thread_id": "GT-XYZ-2026-001",
+        "sku_id": "SKU-XYZ-101",
+        "demand_signal_id": "SIG-WEATH-HEATWAVE-EU",
+        "sop_scenario_id": "SOP-2026-11-CONSENSUS",
+        "purchase_order_id": "PO-XYZ-880142",
+        "supplier_id": "SUP-XYZ-T1-ALUWELD",
+        "production_batch_id": "BATCH-XYZ-STUT-904",
+        "plant_id": "PLANT-XYZ-STUTTGART",
+        "meio_transfer_id": "XFER-XYZ-STUT-ROT-11",
+        "sales_order_id": "SO-XYZ-20261022-801",
+        "customer_id": "CUST-XYZ-TIER1-AUTOWORKS",
+        "shipment_id": "SHP-XYZ-9041",
+        "container_or_truck_id": "TRK-EU-RHINE-08",
+        "scope3_emissions_kg_co2e": 1420.5,
+        "rma_ticket_id": "NONE",
+        "end_to_end_status": "IN_TRANSIT_ON_TIME"
+      },
+      {
+        "golden_thread_id": "GT-XYZ-2026-002",
+        "sku_id": "SKU-XYZ-204",
+        "demand_signal_id": "SIG-POS-HEATWAVE-MW",
+        "sop_scenario_id": "SOP-2026-11-PROMO-LIFT",
+        "purchase_order_id": "PO-XYZ-880219",
+        "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
+        "production_batch_id": "BATCH-XYZ-AUST-8841",
+        "plant_id": "PLANT-XYZ-AUSTIN",
+        "meio_transfer_id": "XFER-XYZ-CHI-ATL-04",
+        "sales_order_id": "SO-XYZ-20261022-802",
+        "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+        "shipment_id": "SHP-XYZ-9088",
+        "container_or_truck_id": "TRK-T17-WEST-01",
+        "scope3_emissions_kg_co2e": 412.8,
+        "rma_ticket_id": "RMA-20261022-501",
+        "end_to_end_status": "DELIVERED_RMA_BACKHAUL_MATCHED"
+      },
+      {
+        "golden_thread_id": "GT-XYZ-2026-003",
+        "sku_id": "SKU-XYZ-412",
+        "demand_signal_id": "SIG-CPFR-DIST-SYNC",
+        "sop_scenario_id": "SOP-2026-11-AIR-EXPEDITE",
+        "purchase_order_id": "PO-XYZ-880355",
+        "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+        "production_batch_id": "BATCH-XYZ-BLR-7712",
+        "plant_id": "PLANT-XYZ-BENGALURU",
+        "meio_transfer_id": "XFER-XYZ-BLR-MUM-09",
+        "sales_order_id": "SO-XYZ-20261022-803",
+        "customer_id": "CUST-XYZ-TIER2-METROCPG",
+        "shipment_id": "SHP-XYZ-9102",
+        "container_or_truck_id": "ULD-LD3-AERO-04",
+        "scope3_emissions_kg_co2e": 890.0,
+        "rma_ticket_id": "NONE",
+        "end_to_end_status": "DISRUPTION_MITIGATED_BY_AIR_ULD"
+      }
+    ]
+  },
+  "excel_workbooks": [
+    {
+      "filename": "XYZ_Corp_00_Global_ERP_Master_and_Org_Data.xlsx",
+      "path": "demo_data/xyz_corporation/excel/XYZ_Corp_00_Global_ERP_Master_and_Org_Data.xlsx",
+      "title": "Global ERP Master Data, Finance GL Cost Centers & HR Plant Rosters",
+      "pillar": "Universal CSCO Core & Enterprise Backbone",
+      "format": "XLSX",
+      "sheets": [
+        "Material_Master_MARA",
+        "Facility_Network_Nodes",
+        "Vendor_Master_LFA1",
+        "Customer_Master_KNA1",
+        "Finance_GL_CostCenters",
+        "HR_Plant_Shift_Rosters",
+        "Golden_Thread_Ledger"
+      ],
+      "row_count": 36,
+      "size_kb": 16.3
+    },
+    {
+      "filename": "XYZ_Corp_01_Plan_Demand_SOP_and_CPFR_Workbook.xlsx",
+      "path": "demo_data/xyz_corporation/excel/XYZ_Corp_01_Plan_Demand_SOP_and_CPFR_Workbook.xlsx",
+      "title": "01 \u00b7 PLAN \u2014 Demand Sensing, TimesFM Forecasts, S&OP & CPFR Consensus",
+      "pillar": "01 \u00b7 Plan",
+      "format": "XLSX",
+      "sheets": [
+        "POS_Store_Scans",
+        "WeatherNext_Signals",
+        "TimesFM_Quantiles",
+        "SOP_Capacity_Scenarios",
+        "Promo_Elasticity_Matrix",
+        "CPFR_Retailer_Sync"
+      ],
+      "row_count": 19,
+      "size_kb": 12.6
+    },
+    {
+      "filename": "XYZ_Corp_02_Source_ShouldCost_RFQ_and_TierN_Risk.xlsx",
+      "path": "demo_data/xyz_corporation/excel/XYZ_Corp_02_Source_ShouldCost_RFQ_and_TierN_Risk.xlsx",
+      "title": "02 \u00b7 SOURCE \u2014 Parametric Should-Cost BOM, RFQ Bids & Spanner Tier-N Graph",
+      "pillar": "02 \u00b7 Source",
+      "format": "XLSX",
+      "sheets": [
+        "Parametric_Should_Cost",
+        "Supplier_RFQ_Bids",
+        "Commodity_Index_LME",
+        "TierN_Supplier_Graph",
+        "HS_Tariff_Duty_Matrix",
+        "Supplier_COA_Quality"
+      ],
+      "row_count": 16,
+      "size_kb": 12.7
+    },
+    {
+      "filename": "XYZ_Corp_03_Make_Plant_OEE_Production_and_Vision_QA.xlsx",
+      "path": "demo_data/xyz_corporation/excel/XYZ_Corp_03_Make_Plant_OEE_Production_and_Vision_QA.xlsx",
+      "title": "03 \u00b7 MAKE \u2014 Plant OEE Telemetry, Job-Shop Schedules & Inline Vision QA",
+      "pillar": "03 \u00b7 Make",
+      "format": "XLSX",
+      "sheets": [
+        "Plant_OEE_Breakdown",
+        "Machine_IoT_Telemetry",
+        "Finite_JobShop_Schedule",
+        "Vision_Defect_Frames",
+        "eBHR_Batch_Deviations",
+        "PLM_ECO_Cutover"
+      ],
+      "row_count": 9,
+      "size_kb": 12.2
+    },
+    {
+      "filename": "XYZ_Corp_04_Fulfill_MEIO_3D_Slotting_and_Spanner_ATP.xlsx",
+      "path": "demo_data/xyz_corporation/excel/XYZ_Corp_04_Fulfill_MEIO_3D_Slotting_and_Spanner_ATP.xlsx",
+      "title": "04 \u00b7 FULFILL \u2014 Clark-Scarf MEIO, 3D Warehouse Slotting, Spanner ATP & Yard",
+      "pillar": "04 \u00b7 Fulfill",
+      "format": "XLSX",
+      "sheets": [
+        "Echelon_Inventory",
+        "Clark_Scarf_MEIO",
+        "Spanner_Realtime_ATP",
+        "Warehouse_3D_Slotting",
+        "CrossDock_Transfers",
+        "Yard_Dock_Schedules"
+      ],
+      "row_count": 12,
+      "size_kb": 12.0
+    },
+    {
+      "filename": "XYZ_Corp_05_Deliver_MultiModal_Fleet_3D_LIFO_and_TMD.xlsx",
+      "path": "demo_data/xyz_corporation/excel/XYZ_Corp_05_Deliver_MultiModal_Fleet_3D_LIFO_and_TMD.xlsx",
+      "title": "05 \u00b7 DELIVER \u2014 FleetFlow Corridors, CubeMaster 3D LIFO, Ocean/Air/Rail & TM&D",
+      "pillar": "05 \u00b7 Deliver",
+      "format": "XLSX",
+      "sheets": [
+        "FleetFlow_Corridors",
+        "CubeMaster_3D_Cartons",
+        "Ocean_Port_Drayage",
+        "Air_Cargo_ULD_Manifest",
+        "Rail_Intermodal_EDI417",
+        "TMD_Distributor_Claims"
+      ],
+      "row_count": 11,
+      "size_kb": 10.7
+    },
+    {
+      "filename": "XYZ_Corp_06_Return_RMA_OTIF_Shield_and_Scope3_CBAM.xlsx",
+      "path": "demo_data/xyz_corporation/excel/XYZ_Corp_06_Return_RMA_OTIF_Shield_and_Scope3_CBAM.xlsx",
+      "title": "06 \u00b7 RETURN & ENABLE \u2014 Circular RMA Grading, OTIF Disputes & ISO 14083 Scope-3",
+      "pillar": "06 \u00b7 Return & Enable",
+      "format": "XLSX",
+      "sheets": [
+        "Customer_RMA_Queue",
+        "Backhaul_Pickup_Slots",
+        "OTIF_Penalty_Shield",
+        "ISO14083_Scope3_Ledger",
+        "EU_CBAM_Declarations",
+        "EUDR_Satellite_Plots"
+      ],
+      "row_count": 6,
+      "size_kb": 10.3
+    }
+  ],
+  "pdf_documents": [
+    {
+      "filename": "XYZ_Corp_Master_Supplier_MSA_and_Force_Majeure_2026.pdf",
+      "path": "demo_data/xyz_corporation/pdfs/XYZ_Corp_Master_Supplier_MSA_and_Force_Majeure_2026.pdf",
+      "title": "MASTER SUPPLIER SERVICES AGREEMENT (MSA) & FORCE MAJEURE",
+      "doc_code": "MSA-XYZ-2026-01",
+      "pillar": "02 \u00b7 Source (ClauseGuard & SourcePulse)",
+      "format": "PDF",
+      "pages": 2,
+      "size_kb": 353.3
+    },
+    {
+      "filename": "XYZ_Corp_Supplier_Certificate_of_Analysis_COA_Batch_8841.pdf",
+      "path": "demo_data/xyz_corporation/pdfs/XYZ_Corp_Supplier_Certificate_of_Analysis_COA_Batch_8841.pdf",
+      "title": "SUPPLIER CERTIFICATE OF ANALYSIS (COA) & SPC CPK REPORT",
+      "doc_code": "COA-XYZ-BATCH-8841",
+      "pillar": "02 \u00b7 Source / 03 \u00b7 Make (QualiShield & VisionInspect)",
+      "format": "PDF",
+      "pages": 2,
+      "size_kb": 322.7
+    },
+    {
+      "filename": "XYZ_Corp_Commercial_Invoice_and_Customs_BOL_SHP9041.pdf",
+      "path": "demo_data/xyz_corporation/pdfs/XYZ_Corp_Commercial_Invoice_and_Customs_BOL_SHP9041.pdf",
+      "title": "COMMERCIAL INVOICE, PACKING LIST & CUSTOMS BILL OF LADING",
+      "doc_code": "INV-BOL-SHP-9041",
+      "pillar": "05 \u00b7 Deliver / 02 \u00b7 Source (ClauseGuard, PortWatch & SentinelMove)",
+      "format": "PDF",
+      "pages": 2,
+      "size_kb": 314.0
+    },
+    {
+      "filename": "XYZ_Corp_EU_CBAM_Embedded_Carbon_and_EUDR_Certificate.pdf",
+      "path": "demo_data/xyz_corporation/pdfs/XYZ_Corp_EU_CBAM_Embedded_Carbon_and_EUDR_Certificate.pdf",
+      "title": "EU CBAM EMBEDDED CARBON & EUDR DUE DILIGENCE CERTIFICATE",
+      "doc_code": "ESG-CBAM-2026-882",
+      "pillar": "06 \u00b7 Return & Enable (EcoChain Scope-3 & CBAM Ledger)",
+      "format": "PDF",
+      "pages": 2,
+      "size_kb": 319.2
+    },
+    {
+      "filename": "XYZ_Corp_21CFR11_Electronic_Batch_Record_eBHR_8841.pdf",
+      "path": "demo_data/xyz_corporation/pdfs/XYZ_Corp_21CFR11_Electronic_Batch_Record_eBHR_8841.pdf",
+      "title": "21 CFR PART 11 ELECTRONIC BATCH MANUFACTURING RECORD (eBHR)",
+      "doc_code": "EBHR-AUST-8841",
+      "pillar": "03 \u00b7 Make (VisionInspect, YieldMax & SyncChange)",
+      "format": "PDF",
+      "pages": 2,
+      "size_kb": 324.3
+    },
+    {
+      "filename": "XYZ_Corp_Transporter_Lorry_Receipt_Challan_and_POD_SHP9088.pdf",
+      "path": "demo_data/xyz_corporation/pdfs/XYZ_Corp_Transporter_Lorry_Receipt_Challan_and_POD_SHP9088.pdf",
+      "title": "TRANSPORTER LORRY RECEIPT (LR CHALLAN), 3D LOAD & DIGITAL POD",
+      "doc_code": "LR-POD-SHP-9088",
+      "pillar": "05 \u00b7 Deliver / 06 \u00b7 Return (FleetFlow, CubeMaster 3D & OTIF Shield)",
+      "format": "PDF",
+      "pages": 2,
+      "size_kb": 323.9
+    },
+    {
+      "filename": "XYZ_Corp_CSCO_Executive_Board_Briefing_and_WarRoom_Dossier.pdf",
+      "path": "demo_data/xyz_corporation/pdfs/XYZ_Corp_CSCO_Executive_Board_Briefing_and_WarRoom_Dossier.pdf",
+      "title": "OFFICE OF THE CSCO \u2014 EXECUTIVE CONTROL TOWER & S&OP DOSSIER",
+      "doc_code": "CSCO-BOARD-2026-Q4",
+      "pillar": "Universal CSCO Core (TowerMind, StormShield, MasterGuard & CashBridge)",
+      "format": "PDF",
+      "pages": 2,
+      "size_kb": 339.4
+    }
+  ],
+  "images": [
+    {
+      "filename": "XYZ_01_Dock_QR_Carton_Staging_Vision.png",
+      "path": "demo_data/xyz_corporation/images/XYZ_01_Dock_QR_Carton_Staging_Vision.png",
+      "title": "Dock QR Carton & Pallet Staging Vision Scan",
+      "pillar": "05 \u00b7 Deliver / 04 \u00b7 Fulfill",
+      "agent_id": "fleetflow_dispatch"
+    },
+    {
+      "filename": "XYZ_02_VisionInspect_Inline_Seal_Defect_Frame841.png",
+      "path": "demo_data/xyz_corporation/images/XYZ_02_VisionInspect_Inline_Seal_Defect_Frame841.png",
+      "title": "VisionInspect 120FPS Inline Seal Defect & Pneumatic Divert",
+      "pillar": "03 \u00b7 Make",
+      "agent_id": "inline_quality_inspection_agent"
+    },
+    {
+      "filename": "XYZ_03_ReturnLoop_RMA_Optical_Grading_Scan.png",
+      "path": "demo_data/xyz_corporation/images/XYZ_03_ReturnLoop_RMA_Optical_Grading_Scan.png",
+      "title": "ReturnLoop Multimodal RMA Grading & Backhaul Match",
+      "pillar": "06 \u00b7 Return & Enable",
+      "agent_id": "reverse_rma_optimizer"
+    },
+    {
+      "filename": "XYZ_04_ShelfVision_Retail_Planogram_Audit.png",
+      "path": "demo_data/xyz_corporation/images/XYZ_04_ShelfVision_Retail_Planogram_Audit.png",
+      "title": "ShelfVision Retail Store Planogram & OOS Gap Detection",
+      "pillar": "05 \u00b7 Deliver (TM&D)",
+      "agent_id": "planogram_merchandising_vision_auditor"
+    },
+    {
+      "filename": "XYZ_05_AssetGuard_CNC_Vibration_FFT_Spectrogram.png",
+      "path": "demo_data/xyz_corporation/images/XYZ_05_AssetGuard_CNC_Vibration_FFT_Spectrogram.png",
+      "title": "AssetGuard CNC Spindle Bearing FFT Vibration Spectrogram",
+      "pillar": "03 \u00b7 Make",
+      "agent_id": "plant_oee_maintenance_agent"
+    },
+    {
+      "filename": "XYZ_06_EcoChain_EUDR_Satellite_Deforestation_Scan.png",
+      "path": "demo_data/xyz_corporation/images/XYZ_06_EcoChain_EUDR_Satellite_Deforestation_Scan.png",
+      "title": "EcoChain Earth Engine EUDR Satellite Polygon Scan",
+      "pillar": "06 \u00b7 Return & Enable",
+      "agent_id": "carbon_scope3_ledger"
+    },
+    {
+      "filename": "XYZ_07_StormShield_Typhoon_Maritime_AIS_Radar.png",
+      "path": "demo_data/xyz_corporation/images/XYZ_07_StormShield_Typhoon_Maritime_AIS_Radar.png",
+      "title": "StormShield Maritime AIS & Typhoon Reroute Radar",
+      "pillar": "Universal Core / 05 \u00b7 Deliver",
+      "agent_id": "disruption_war_room_orchestrator"
+    },
+    {
+      "filename": "XYZ_08_CubeMaster_3D_LIFO_Trailer_Load_Plan.png",
+      "path": "demo_data/xyz_corporation/images/XYZ_08_CubeMaster_3D_LIFO_Trailer_Load_Plan.png",
+      "title": "CubeMaster 3D LIFO Trailer Bay & Axle Physics Plan",
+      "pillar": "05 \u00b7 Deliver",
+      "agent_id": "load_consolidation_agent"
+    }
+  ],
+  "docs_and_streams": [
+    {
+      "filename": "XYZ_Corp_Global_Supply_Chain_SOP_and_Delegation_Matrix.docx",
+      "path": "demo_data/xyz_corporation/docs/XYZ_Corp_Global_Supply_Chain_SOP_and_Delegation_Matrix.docx",
+      "title": "XYZ Global Industries Corp \u2014 Global Supply Chain SOP & Delegation of Authority Matrix",
+      "format": "DOCX",
+      "size_kb": 1.6
+    },
+    {
+      "filename": "XYZ_Corp_Disruption_WarRoom_and_MultiModal_Reroute_Playbook.docx",
+      "path": "demo_data/xyz_corporation/docs/XYZ_Corp_Disruption_WarRoom_and_MultiModal_Reroute_Playbook.docx",
+      "title": "XYZ Global Industries Corp \u2014 Geopolitical & Typhoon Disruption War Room Playbook",
+      "format": "DOCX",
+      "size_kb": 1.4
+    },
+    {
+      "filename": "XYZ_Corp_Quality_21CFR11_and_Supplier_SCAR_Protocol.docx",
+      "path": "demo_data/xyz_corporation/docs/XYZ_Corp_Quality_21CFR11_and_Supplier_SCAR_Protocol.docx",
+      "title": "XYZ Global Industries Corp \u2014 21 CFR Part 11 Inline Quality & Supplier SCAR Protocol",
+      "format": "DOCX",
+      "size_kb": 1.3
+    },
+    {
+      "filename": "XYZ_Corp_Circular_RMA_and_ISO14083_ESG_Compliance_Manual.docx",
+      "path": "demo_data/xyz_corporation/docs/XYZ_Corp_Circular_RMA_and_ISO14083_ESG_Compliance_Manual.docx",
+      "title": "XYZ Global Industries Corp \u2014 Circular RMA Grading, CBAM & EUDR Compliance Manual",
+      "format": "DOCX",
+      "size_kb": 1.4
+    },
+    {
+      "filename": "XYZ_Corp_Unstructured_Customer_and_Carrier_Emails.eml",
+      "path": "demo_data/xyz_corporation/docs/XYZ_Corp_Unstructured_Customer_and_Carrier_Emails.eml",
+      "title": "Unstructured Customer Rush Order, RMA Pickup & Typhoon Carrier Alert Emails",
+      "format": "EML",
+      "size_kb": 1.3
+    },
+    {
+      "filename": "XYZ_Corp_X12_EDI_850_856_210_417_Stream.edi",
+      "path": "demo_data/xyz_corporation/docs/XYZ_Corp_X12_EDI_850_856_210_417_Stream.edi",
+      "title": "X12 EDI Transaction Stream (EDI 850 PO, EDI 856 ASN, EDI 210 Freight Invoice)",
+      "format": "EDI",
+      "size_kb": 0.8
+    }
+  ],
+  "org_backbone_tables": [
+    {
+      "table_name": "xyz_erp_material_master_mara",
+      "row_count": 6,
+      "scope": "Enterprise Backbone (Shared Across All 35 Agents & Non-Agent ERP/HR/Finance)",
+      "json_path": "demo_data/xyz_corporation/tables/xyz_erp_material_master_mara.json",
+      "csv_path": "demo_data/xyz_corporation/tables/xyz_erp_material_master_mara.csv"
+    },
+    {
+      "table_name": "xyz_enterprise_facility_network",
+      "row_count": 8,
+      "scope": "Enterprise Backbone (Shared Across All 35 Agents & Non-Agent ERP/HR/Finance)",
+      "json_path": "demo_data/xyz_corporation/tables/xyz_enterprise_facility_network.json",
+      "csv_path": "demo_data/xyz_corporation/tables/xyz_enterprise_facility_network.csv"
+    },
+    {
+      "table_name": "xyz_vendor_master_lfa1",
+      "row_count": 5,
+      "scope": "Enterprise Backbone (Shared Across All 35 Agents & Non-Agent ERP/HR/Finance)",
+      "json_path": "demo_data/xyz_corporation/tables/xyz_vendor_master_lfa1.json",
+      "csv_path": "demo_data/xyz_corporation/tables/xyz_vendor_master_lfa1.csv"
+    },
+    {
+      "table_name": "xyz_customer_master_kna1",
+      "row_count": 3,
+      "scope": "Enterprise Backbone (Shared Across All 35 Agents & Non-Agent ERP/HR/Finance)",
+      "json_path": "demo_data/xyz_corporation/tables/xyz_customer_master_kna1.json",
+      "csv_path": "demo_data/xyz_corporation/tables/xyz_customer_master_kna1.csv"
+    },
+    {
+      "table_name": "xyz_finance_gl_cost_centers",
+      "row_count": 7,
+      "scope": "Enterprise Backbone (Shared Across All 35 Agents & Non-Agent ERP/HR/Finance)",
+      "json_path": "demo_data/xyz_corporation/tables/xyz_finance_gl_cost_centers.json",
+      "csv_path": "demo_data/xyz_corporation/tables/xyz_finance_gl_cost_centers.csv"
+    },
+    {
+      "table_name": "xyz_hr_plant_shift_rosters",
+      "row_count": 4,
+      "scope": "Enterprise Backbone (Shared Across All 35 Agents & Non-Agent ERP/HR/Finance)",
+      "json_path": "demo_data/xyz_corporation/tables/xyz_hr_plant_shift_rosters.json",
+      "csv_path": "demo_data/xyz_corporation/tables/xyz_hr_plant_shift_rosters.csv"
+    },
+    {
+      "table_name": "xyz_golden_thread_order_ledger",
+      "row_count": 3,
+      "scope": "Enterprise Backbone (Shared Across All 35 Agents & Non-Agent ERP/HR/Finance)",
+      "json_path": "demo_data/xyz_corporation/tables/xyz_golden_thread_order_ledger.json",
+      "csv_path": "demo_data/xyz_corporation/tables/xyz_golden_thread_order_ledger.csv"
+    }
+  ],
+  "generated_at": "2026-10-22T10:41:29Z"
+}

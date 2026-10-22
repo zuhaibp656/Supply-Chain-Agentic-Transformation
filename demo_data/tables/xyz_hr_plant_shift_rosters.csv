@@ -1,0 +1,5 @@
+shift_id,facility_id,shift_pattern,supervisor,certified_cnc_operators,maintenance_techs_on_duty,overtime_authorized,active_commercial_drivers,lead_west_corridor_driver
+SHIFT-STUT-A,PLANT-XYZ-STUTTGART,06:00-14:00 CET,Lukas Weber,38,6,True,,
+SHIFT-AUST-A,PLANT-XYZ-AUSTIN,06:00-14:00 CST,Sarah Jenkins,52,8,True,,
+SHIFT-BLR-A,PLANT-XYZ-BENGALURU,07:00-15:00 IST,Arjun Rao,64,9,True,,
+SHIFT-MUM-FLEET,FDC-XYZ-MUMBAI,05:30-14:30 IST,Vikram Deshmukh,,,False,24,Ravi Sharma (TRK-T14-01)

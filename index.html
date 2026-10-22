@@ -20090,6 +20090,8 @@
               }
             </div>
           </div>
+
+          ${renderAgentAdkAndDemoDataPanel(ag)}
         </div>
       `;
 
@@ -20303,6 +20305,25 @@
       });
     }
 
+    function selectXyzDataLakeTab(agentId, tabIdx) {
+      const container = document.getElementById(`xyzDataLakeWrap_${agentId}`);
+      if (!container) return;
+      container.querySelectorAll('.xyz-lake-tab-btn').forEach((btn, idx) => {
+        if (idx === tabIdx) {
+          btn.style.background = 'rgba(168, 85, 247, 0.24)';
+          btn.style.borderColor = '#c084fc';
+          btn.style.color = '#ffffff';
+        } else {
+          btn.style.background = 'rgba(15, 23, 42, 0.75)';
+          btn.style.borderColor = 'rgba(148, 163, 184, 0.28)';
+          btn.style.color = '#cbd5e1';
+        }
+      });
+      container.querySelectorAll('.xyz-lake-tab-pane').forEach((pane, idx) => {
+        pane.style.display = idx === tabIdx ? 'block' : 'none';
+      });
+    }
+
     function renderAgentAdkAndDemoDataPanel(ag) {
       const adk = ag.adkImplementation;
       if (!adk) return '';
@@ -20354,6 +20375,56 @@
         `;
       }).join('');
 
+      const xyzExcelAssets = [
+        { file: 'XYZ_Corp_00_Global_ERP_Master_and_Org_Data.xlsx', pillar: '00 · Enterprise Backbone', tabs: '7 Tabs: Material_Master_MARA, Facility_Network_Nodes, Vendor_Master_LFA1, Customer_Master_KNA1, Finance_GL_CostCenters, HR_Plant_Shift_Rosters, Golden_Thread_Ledger', desc: 'Master SAP S/4HANA ERP, Finance GL Cost Centers, HR Plant Shift Rosters & Golden-Thread Cross-Agent Ledger' },
+        { file: 'XYZ_Corp_01_Plan_Demand_SOP_and_CPFR_Workbook.xlsx', pillar: '01 · Plan', tabs: '6 Tabs: Executive_Summary + 4 Demand/S&OP Tables + Golden_Thread_Trace', desc: 'Demand Sensing, WeatherNext 3 Promotional Uplift, S&OP Scenario Weaver & Retail CPFR Consensus' },
+        { file: 'XYZ_Corp_02_Source_ShouldCost_RFQ_and_TierN_Risk.xlsx', pillar: '02 · Source', tabs: '6 Tabs: Executive_Summary + 4 Sourcing/Tier-N Tables + Golden_Thread_Trace', desc: 'RFQ Should-Cost BOM Breakdown, Tier-N Sub-Tier Spanner Graph & Force Majeure Allocation' },
+        { file: 'XYZ_Corp_03_Make_Plant_OEE_Production_and_Vision_QA.xlsx', pillar: '03 · Make', tabs: '6 Tabs: Executive_Summary + 4 Plant/MES Tables + Golden_Thread_Trace', desc: 'Plant OEE Predictive Spindle Telemetry, Finite Production Schedule, Vision QA & 21 CFR Part 11 eBHR' },
+        { file: 'XYZ_Corp_04_Fulfill_MEIO_3D_Slotting_and_Spanner_ATP.xlsx', pillar: '04 · Fulfill', tabs: '6 Tabs: Executive_Summary + 4 WMS/ATP Tables + Golden_Thread_Trace', desc: 'Multi-Echelon Inventory (MEIO), 3D Bin Slotting, Spanner Graph Real-Time ATP & Cold-Chain Excursion' },
+        { file: 'XYZ_Corp_05_Deliver_MultiModal_Fleet_3D_LIFO_and_TMD.xlsx', pillar: '05 · Deliver', tabs: '6 Tabs: Executive_Summary + 4 TMS/Fleet Tables + Golden_Thread_Trace', desc: 'Multi-Modal CVRPTW Dispatch, 3D Axle-Weight & LIFO Load Manifest, Storm Rerouting & TMD Accessorial Audit' },
+        { file: 'XYZ_Corp_06_Return_RMA_OTIF_Shield_and_Scope3_CBAM.xlsx', pillar: '06 · Return & Enable', tabs: '6 Tabs: Executive_Summary + 4 RMA/ESG Tables + Golden_Thread_Trace', desc: 'Circular RMA Disposition, Retail OTIF Chargeback Defense, Scope 3 ISO 14083 & EU CBAM/EUDR Ledger' }
+      ];
+
+      const xyzPdfAssets = [
+        { file: 'XYZ_Corp_Master_Supplier_MSA_and_Force_Majeure_2026.pdf', tag: 'LEGAL · MSA CONTRACT', pages: '2 Pages', desc: 'Master Supply Agreement (MSA-2026-TSMC-01) with Clause 14.2 Force Majeure, 98.5% OTIF SLA & Price Indexation' },
+        { file: 'XYZ_Corp_Supplier_Certificate_of_Analysis_COA_Batch_8841.pdf', tag: 'QUALITY · LAB COA', pages: '2 Pages', desc: 'ISO 17025 Certificate of Analysis for Batch LOT-2026-8841A (SKU-SEMI-9900- wafer purity, shear & moisture)' },
+        { file: 'XYZ_Corp_Commercial_Invoice_and_Customs_BOL_SHP9041.pdf', tag: 'TRADE · CUSTOMS BOL', pages: '2 Pages', desc: 'Commercial Invoice, Packing List & Multimodal Bill of Lading (SHP-XYZ-90410) with HTS 8542.31.0001 duties' },
+        { file: 'XYZ_Corp_EU_CBAM_Embedded_Carbon_and_EUDR_Certificate.pdf', tag: 'ESG · CBAM & EUDR', pages: '2 Pages', desc: 'EU CBAM Embedded GHG Declaration (ISO 14083 / GLEC v3.0) & Sentinel-2 EUDR Deforestation-Free Certificate' },
+        { file: 'XYZ_Corp_21CFR11_Electronic_Batch_Record_eBHR_8841.pdf', tag: 'COMPLIANCE · FDA eBHR', pages: '2 Pages', desc: 'FDA 21 CFR Part 11 Electronic Batch History Record (eBHR) & CAPA-2026-0118 Root-Cause Closure Dossier' },
+        { file: 'XYZ_Corp_Transporter_Lorry_Receipt_Challan_and_POD_SHP9088.pdf', tag: 'LOGISTICS · ePOD / LR', pages: '2 Pages', desc: 'Transporter Lorry Receipt (LR), Weighbridge Axle-Load Certificate & Dock QR Proof of Delivery (SHP-XYZ-90884)' },
+        { file: 'XYZ_Corp_CSCO_Executive_Board_Briefing_and_WarRoom_Dossier.pdf', tag: 'CSCO · BOARD DOSSIER', pages: '2 Pages', desc: 'Q4-2026 CSCO War-Room Executive Briefing: Typhoon Kong-rey Mitigation & $14.2M Working Capital Release' }
+      ];
+
+      const xyzImageAssets = [
+        { file: 'XYZ_01_Dock_QR_Carton_Staging_Vision.png', agent: 'dock_qr_scanner_agent', title: 'Dock Door #14 Optical QR & Pallet Staging Feed', desc: '3 high-res machine-readable QR labels (SHP-XYZ-90884) + green bounding boxes verifying 100% manifest match' },
+        { file: 'XYZ_02_VisionInspect_Inline_Seal_Defect_Frame841.png', agent: 'inline_quality_inspection_agent', title: 'Line-02 VisionInspect Micro-Fracture & Seal Scan', desc: 'Sub-millimeter thermal/optical camera frame flagging 0.42mm seal micro-fracture on Batch LOT-2026-8841B' },
+        { file: 'XYZ_03_ReturnLoop_RMA_Optical_Grading_Scan.png', agent: 'reverse_rma_optimizer', title: 'ReturnLoop RMA-2026-7741 Optical Triage Workbench', desc: 'Multi-angle optical grading & LiDAR housing flatness scan classifying returned unit as Grade-A Refurbish' },
+        { file: 'XYZ_04_ShelfVision_Retail_Planogram_Audit.png', agent: 'shelf_osa_vision_agent', title: 'ShelfVision Store #0418 Aisle-07 Planogram Audit', desc: 'Edge camera detection identifying 0 facings (Stockout Gap) on Shelf B-04 for SKU-CONS-4402-ANC' },
+        { file: 'XYZ_05_AssetGuard_CNC_Vibration_FFT_Spectrogram.png', agent: 'plant_oee_maintenance_agent', title: 'AssetGuard CNC-AUSTIN-04 Vibration FFT & Acoustic Diagnostics', desc: '12.4 kHz harmonic bearing fault signature & Weibull RUL degradation curve (19.4 hours to failure)' },
+        { file: 'XYZ_06_EcoChain_EUDR_Satellite_Deforestation_Scan.png', agent: 'carbon_scope3_ledger', title: 'Sentinel-2 Multispectral EUDR Geolocation Plot Audit', desc: '10m NDVI canopy invariance verification (0.84 NDVI, 0.00% tree-cover loss) for Para State polygon' },
+        { file: 'XYZ_07_StormShield_Typhoon_Maritime_AIS_Radar.png', agent: 'freight_disruption_rerouter', title: 'WeatherNext 3 Typhoon Kong-rey & Spire AIS Reroute Radar', desc: '68-knot Taiwan Strait cyclone cone vs. Oakland-to-Rotterdam /LAX air-sea intermodal bypass corridor' },
+        { file: 'XYZ_08_CubeMaster_3D_LIFO_Trailer_Load_Plan.png', agent: 'load_consolidation_agent', title: 'CubeMaster 53ft Trailer 3D LIFO & Axle-Weight Schematic', desc: '94.2% cube utilization across Stop 3 (Dallas), Stop 2 (Oklahoma City) & Stop 1 (Kansas City) within 34k-lb tandems' }
+      ];
+
+      const xyzDocAssets = [
+        { file: 'XYZ_Corp_Global_Supply_Chain_SOP_and_Delegation_Matrix.docx', fmt: 'WORD (.docx)', icon: '📘', desc: 'Global Autonomous Supply Chain Governance SOP-SC-001, Financial Delegation of Authority Tiers & 6-Step Golden Thread' },
+        { file: 'XYZ_Corp_Disruption_WarRoom_and_MultiModal_Reroute_Playbook.docx', fmt: 'WORD (.docx)', icon: '📘', desc: 'SOP-SC-002 Category-4 Port Closure Playbook, Tier-N Graph Traversal & Automated Split-Mode Rerouting Rules' },
+        { file: 'XYZ_Corp_Quality_21CFR11_and_Supplier_SCAR_Protocol.docx', fmt: 'WORD (.docx)', icon: '📘', desc: 'SOP-QA-004 VisionInspect Quarantine Gates, Automated SAP QM 08 Lot Hold & 8D Supplier Corrective Action Protocol' },
+        { file: 'XYZ_Corp_Circular_RMA_and_ISO14083_ESG_Compliance_Manual.docx', fmt: 'WORD (.docx)', icon: '📘', desc: 'SOP-ESG-006 Circular RMA Triage Matrix, Retail OTIF Chargeback Defense & ISO 14083 / EU CBAM Reporting Rules' },
+        { file: 'XYZ_Corp_Unstructured_Customer_and_Carrier_Emails.eml', fmt: 'EMAIL (.eml)', icon: '✉️', desc: 'MIME Multipart Unstructured Emails: Walmart VIP Rush Order Allocation Escalation + Maersk Typhoon Vessel Delay Notice' },
+        { file: 'XYZ_Corp_X12_EDI_850_856_210_417_Stream.edi', fmt: 'ANSI X12 (.edi)', icon: '📡', desc: 'Raw ANSI X12 v4010 EDI Stream: 850 Purchase Order, 856 ASN Pallet Hierarchy, 210 Freight Invoice & 417 Rail Waybill' }
+      ];
+
+      const xyzSharedTables = [
+        { name: 'xyz_erp_material_master_mara', rows: 12, desc: 'SAP S/4HANA MARA/MARC Material Master (12 canonical SKUs across Semiconductor, Cryo-Pharma, EV Powertrain, CNC & Retail)' },
+        { name: 'xyz_enterprise_facility_network', rows: 10, desc: 'Global Plants, Regional DCs, Cross-Docks & Port Terminals with lease cost, dock doors, solar share & headcount' },
+        { name: 'xyz_vendor_master_lfa1', rows: 10, desc: 'Tier-1 & Tier-2 Supplier Master (TSMC, Shin-Etsu, Bosch, Schott, Maersk, JB Hunt) with OTIF, Scope-3 factor & Force Majeure clauses' },
+        { name: 'xyz_customer_master_kna1', rows: 8, desc: 'Enterprise B2B & Retail Customer Master (Nvidia, Mayo Clinic, Walmart, Target, BMW) with OTIF penalty SLAs & credit limits' },
+        { name: 'xyz_finance_gl_cost_centers', rows: 8, desc: 'Corporate Finance General Ledger Cost Centers (CC-1000..CC-8000), WACC 9.2%, Inventory Carrying Cost 21.5% & Agent ROI' },
+        { name: 'xyz_hr_plant_shift_rosters', rows: 8, desc: 'HR Plant Shift Rosters, Certified CNC/Cold-Chain Technicians, Overtime Caps & Union Labor Rates across Austin/Guadalajara/Eindhoven' },
+        { name: 'xyz_golden_thread_order_ledger', rows: 10, desc: 'End-to-End Cross-Agent Golden-Thread Ledger linking Customer SO -> Demand Plan -> PO -> Batch Lot -> Spanner ATP -> Shipment -> RMA' }
+      ];
+
       return `
         <!-- Production Google ADK Codebase & Live Demo Data Explorer -->
         <div id="adkDemoTablesWrap_${ag.id}" style="margin-top:34px; padding:26px; border-radius:18px; background:linear-gradient(145deg, rgba(15,23,42,0.94), rgba(9,13,22,0.97)); border:1px solid rgba(0,210,255,0.34); box-shadow:0 16px 40px rgba(0,0,0,0.42);">
@@ -20401,12 +20472,165 @@
 
           <!-- Interactive 4-Table Enterprise Demo Dataset Browser -->
           <div style="margin-bottom:8px; font-size:13px; font-weight:800; color:#f8fafc; text-transform:uppercase; letter-spacing:0.04em;">
-            📊 Live Enterprise Demo Datasets (${tables.length} Fixture Tables in <code style="color:#00d2ff;">demo_data/tables/</code>)
+            📊 Agent-Specific Live Enterprise Demo Tables (${tables.length} Fixture Tables in <code style="color:#00d2ff;">demo_data/tables/</code>)
           </div>
           <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
             ${tabsHtml}
           </div>
           ${panesHtml}
+
+          <!-- XYZ GLOBAL INDUSTRIES CORP. MULTI-MODAL ENTERPRISE DEMO DATA LAKE EXPLORER -->
+          <div id="xyzDataLakeWrap_${ag.id}" style="margin-top:28px; padding-top:24px; border-top:1px solid rgba(168,85,247,0.35);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+              <div>
+                <div style="display:inline-flex; align-items:center; gap:8px; padding:4px 12px; border-radius:999px; background:rgba(168,85,247,0.18); border:1px solid rgba(168,85,247,0.5); color:#e9d5ff; font-family:var(--font-mono); font-size:11.5px; font-weight:800; margin-bottom:6px;">
+                  <span>🏢 XYZ GLOBAL INDUSTRIES CORP. (XYZ-CORP-01) · UNIFIED MULTI-MODAL ENTERPRISE DATA LAKE</span>
+                </div>
+                <h4 style="font-size:19px; font-weight:800; color:#ffffff; margin:0 0 4px 0;">
+                  Multi-Format Enterprise Demo Assets (.png, .xlsx, .pdf, .docx, .eml, .edi, .json, .csv)
+                </h4>
+                <p style="font-size:13.5px; color:#cbd5e1; margin:0;">
+                  Shared organizational data lake spanning SAP S/4HANA ERP Masters, Finance GL Cost Centers, HR Shift Rosters, Multi-Tab Excel Workbooks, Signed PDFs, Computer Vision Images, Word SOPs, Emails &amp; X12 EDI streams so all 35 agents operate in tandem.
+                </p>
+              </div>
+              <a href="demo_data/xyz_corporation/xyz_enterprise_manifest.json" download style="padding:7px 13px; border-radius:9px; background:rgba(168,85,247,0.2); border:1px solid rgba(168,85,247,0.55); color:#e9d5ff; font-family:var(--font-mono); font-size:12px; font-weight:700; text-decoration:none;">
+                ⬇ Master Manifest (xyz_enterprise_manifest.json)
+              </a>
+            </div>
+
+            <!-- 5 Modality Tabs -->
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px;">
+              <button type="button" class="xyz-lake-tab-btn" onclick="selectXyzDataLakeTab('${ag.id}', 0)"
+                      style="padding:8px 14px; border-radius:9px; font-family:var(--font-mono); font-size:12px; font-weight:700; cursor:pointer; border:1px solid #c084fc; background:rgba(168,85,247,0.24); color:#ffffff;">
+                📸 Vision &amp; Operational Images (.png · 8)
+              </button>
+              <button type="button" class="xyz-lake-tab-btn" onclick="selectXyzDataLakeTab('${ag.id}', 1)"
+                      style="padding:8px 14px; border-radius:9px; font-family:var(--font-mono); font-size:12px; font-weight:700; cursor:pointer; border:1px solid rgba(148,163,184,0.28); background:rgba(15,23,42,0.75); color:#cbd5e1;">
+                📊 Multi-Tab Excel Workbooks (.xlsx · 7 Workbooks / 43 Tabs)
+              </button>
+              <button type="button" class="xyz-lake-tab-btn" onclick="selectXyzDataLakeTab('${ag.id}', 2)"
+                      style="padding:8px 14px; border-radius:9px; font-family:var(--font-mono); font-size:12px; font-weight:700; cursor:pointer; border:1px solid rgba(148,163,184,0.28); background:rgba(15,23,42,0.75); color:#cbd5e1;">
+                📄 Multi-Page Corporate PDFs (.pdf · 7)
+              </button>
+              <button type="button" class="xyz-lake-tab-btn" onclick="selectXyzDataLakeTab('${ag.id}', 3)"
+                      style="padding:8px 14px; border-radius:9px; font-family:var(--font-mono); font-size:12px; font-weight:700; cursor:pointer; border:1px solid rgba(148,163,184,0.28); background:rgba(15,23,42,0.75); color:#cbd5e1;">
+                📝 Word SOPs, Emails &amp; X12 EDI (.docx / .eml / .edi · 6)
+              </button>
+              <button type="button" class="xyz-lake-tab-btn" onclick="selectXyzDataLakeTab('${ag.id}', 4)"
+                      style="padding:8px 14px; border-radius:9px; font-family:var(--font-mono); font-size:12px; font-weight:700; cursor:pointer; border:1px solid rgba(148,163,184,0.28); background:rgba(15,23,42,0.75); color:#cbd5e1;">
+                🔗 Shared ERP, Finance, HR &amp; Golden-Thread Tables (7)
+              </button>
+            </div>
+
+            <!-- Tab 0: Computer Vision & Operational PNG Images -->
+            <div class="xyz-lake-tab-pane" style="display:block;">
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap:14px;">
+                ${xyzImageAssets.map(img => `
+                  <div style="border-radius:12px; overflow:hidden; background:rgba(9,13,22,0.92); border:1px solid ${img.agent === ag.id ? '#00d2ff' : 'rgba(148,163,184,0.24)'}; display:flex; flex-direction:column;">
+                    <a href="demo_data/xyz_corporation/images/${img.file}" target="_blank" style="display:block; background:#050811; border-bottom:1px solid rgba(148,163,184,0.18);">
+                      <img src="demo_data/xyz_corporation/images/${img.file}" alt="${img.title}" loading="lazy" style="width:100%; height:165px; object-fit:cover; display:block;" />
+                    </a>
+                    <div style="padding:12px; flex:1; display:flex; flex-direction:column; justify-content:space-between;">
+                      <div>
+                        <div style="font-size:13px; font-weight:800; color:#f8fafc; margin-bottom:4px;">${img.title}</div>
+                        <div style="font-size:12px; color:#94a3b8; line-height:1.45; margin-bottom:10px;">${img.desc}</div>
+                      </div>
+                      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+                        <span style="font-family:var(--font-mono); font-size:10.5px; color:#38bdf8;">${img.file}</span>
+                        <a href="demo_data/xyz_corporation/images/${img.file}" download style="padding:4px 9px; border-radius:6px; background:rgba(0,210,255,0.16); border:1px solid rgba(0,210,255,0.4); color:#00d2ff; font-family:var(--font-mono); font-size:11px; font-weight:700; text-decoration:none; white-space:nowrap;">⬇ PNG</a>
+                      </div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Tab 1: Multi-Tab Excel Workbooks (.xlsx) -->
+            <div class="xyz-lake-tab-pane" style="display:none;">
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:12px;">
+                ${xyzExcelAssets.map(x => `
+                  <div style="padding:14px; border-radius:12px; background:rgba(9,13,22,0.9); border:1px solid rgba(16,185,129,0.32); display:flex; flex-direction:column; justify-content:space-between; gap:10px;">
+                    <div>
+                      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px;">
+                        <span style="padding:3px 8px; border-radius:6px; background:rgba(16,185,129,0.16); color:#34d399; font-family:var(--font-mono); font-size:11px; font-weight:800;">📊 ${x.pillar}</span>
+                        <span style="font-family:var(--font-mono); font-size:11px; color:#94a3b8;">Excel .xlsx</span>
+                      </div>
+                      <div style="font-family:var(--font-mono); font-size:13px; font-weight:800; color:#ffffff; margin-bottom:4px; word-break:break-all;">${x.file}</div>
+                      <div style="font-size:12.5px; color:#cbd5e1; margin-bottom:6px;">${x.desc}</div>
+                      <div style="font-family:var(--font-mono); font-size:11px; color:#38bdf8;">${x.tabs}</div>
+                    </div>
+                    <div style="display:flex; justify-content:flex-end;">
+                      <a href="demo_data/xyz_corporation/excel/${x.file}" download style="padding:6px 12px; border-radius:7px; background:rgba(16,185,129,0.18); border:1px solid rgba(16,185,129,0.5); color:#34d399; font-family:var(--font-mono); font-size:11.5px; font-weight:700; text-decoration:none;">⬇ Download Excel (.xlsx)</a>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Tab 2: Multi-Page Corporate PDFs (.pdf) -->
+            <div class="xyz-lake-tab-pane" style="display:none;">
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:12px;">
+                ${xyzPdfAssets.map(p => `
+                  <div style="padding:14px; border-radius:12px; background:rgba(9,13,22,0.9); border:1px solid rgba(245,158,11,0.34); display:flex; flex-direction:column; justify-content:space-between; gap:10px;">
+                    <div>
+                      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px;">
+                        <span style="padding:3px 8px; border-radius:6px; background:rgba(245,158,11,0.16); color:#fbbf24; font-family:var(--font-mono); font-size:11px; font-weight:800;">📄 ${p.tag}</span>
+                        <span style="font-family:var(--font-mono); font-size:11px; color:#94a3b8;">${p.pages} · Signed PDF</span>
+                      </div>
+                      <div style="font-family:var(--font-mono); font-size:13px; font-weight:800; color:#ffffff; margin-bottom:4px; word-break:break-all;">${p.file}</div>
+                      <div style="font-size:12.5px; color:#cbd5e1;">${p.desc}</div>
+                    </div>
+                    <div style="display:flex; justify-content:flex-end; gap:8px;">
+                      <a href="demo_data/xyz_corporation/pdfs/${p.file}" target="_blank" style="padding:6px 12px; border-radius:7px; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.45); color:#38bdf8; font-family:var(--font-mono); font-size:11.5px; font-weight:700; text-decoration:none;">👁️ View PDF</a>
+                      <a href="demo_data/xyz_corporation/pdfs/${p.file}" download style="padding:6px 12px; border-radius:7px; background:rgba(245,158,11,0.18); border:1px solid rgba(245,158,11,0.5); color:#fbbf24; font-family:var(--font-mono); font-size:11.5px; font-weight:700; text-decoration:none;">⬇ Download (.pdf)</a>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Tab 3: Word SOPs (.docx), Unstructured Emails (.eml) & ANSI X12 EDI (.edi) -->
+            <div class="xyz-lake-tab-pane" style="display:none;">
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:12px;">
+                ${xyzDocAssets.map(d => `
+                  <div style="padding:14px; border-radius:12px; background:rgba(9,13,22,0.9); border:1px solid rgba(168,85,247,0.34); display:flex; flex-direction:column; justify-content:space-between; gap:10px;">
+                    <div>
+                      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px;">
+                        <span style="padding:3px 8px; border-radius:6px; background:rgba(168,85,247,0.18); color:#e9d5ff; font-family:var(--font-mono); font-size:11px; font-weight:800;">${d.icon} ${d.fmt}</span>
+                        <span style="font-family:var(--font-mono); font-size:11px; color:#94a3b8;">RAG / Parser Input</span>
+                      </div>
+                      <div style="font-family:var(--font-mono); font-size:13px; font-weight:800; color:#ffffff; margin-bottom:4px; word-break:break-all;">${d.file}</div>
+                      <div style="font-size:12.5px; color:#cbd5e1;">${d.desc}</div>
+                    </div>
+                    <div style="display:flex; justify-content:flex-end;">
+                      <a href="demo_data/xyz_corporation/docs/${d.file}" download style="padding:6px 12px; border-radius:7px; background:rgba(168,85,247,0.2); border:1px solid rgba(168,85,247,0.5); color:#e9d5ff; font-family:var(--font-mono); font-size:11.5px; font-weight:700; text-decoration:none;">⬇ Download (${d.fmt})</a>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Tab 4: Shared ERP, Finance, HR & Golden-Thread Relational Tables -->
+            <div class="xyz-lake-tab-pane" style="display:none;">
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:12px;">
+                ${xyzSharedTables.map(st => `
+                  <div style="padding:14px; border-radius:12px; background:rgba(9,13,22,0.9); border:1px solid rgba(0,210,255,0.3); display:flex; flex-direction:column; justify-content:space-between; gap:10px;">
+                    <div>
+                      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px;">
+                        <span style="padding:3px 8px; border-radius:6px; background:rgba(0,210,255,0.14); color:#00d2ff; font-family:var(--font-mono); font-size:11px; font-weight:800;">🗄️ supply_chain_twin.${st.name}</span>
+                        <span style="font-family:var(--font-mono); font-size:11px; color:#34d399;">${st.rows} rows</span>
+                      </div>
+                      <div style="font-size:12.5px; color:#cbd5e1;">${st.desc}</div>
+                    </div>
+                    <div style="display:flex; justify-content:flex-end; gap:8px;">
+                      <a href="demo_data/xyz_corporation/tables/${st.name}.json" download style="padding:5px 10px; border-radius:6px; background:rgba(16,185,129,0.16); border:1px solid rgba(16,185,129,0.45); color:#34d399; font-family:var(--font-mono); font-size:11px; font-weight:700; text-decoration:none;">⬇ JSON</a>
+                      <a href="demo_data/xyz_corporation/tables/${st.name}.csv" download style="padding:5px 10px; border-radius:6px; background:rgba(56,189,248,0.16); border:1px solid rgba(56,189,248,0.45); color:#38bdf8; font-family:var(--font-mono); font-size:11px; font-weight:700; text-decoration:none;">⬇ CSV</a>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
         </div>
       `;
     }

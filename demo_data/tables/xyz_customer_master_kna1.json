@@ -1,0 +1,39 @@
+[
+  {
+    "customer_id": "CUST-XYZ-TIER1-AUTOWORKS",
+    "customer_name": "EuroAuto Mobility AG",
+    "tier": "STRATEGIC_TIER_1",
+    "country": "DE",
+    "otif_target_pct": 98.5,
+    "chargeback_penalty_pct": 5.0,
+    "primary_skus": [
+      "SKU-XYZ-101",
+      "SKU-XYZ-309",
+      "SKU-XYZ-518"
+    ]
+  },
+  {
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "customer_name": "MegaMart National Retail Corp",
+    "tier": "STRATEGIC_TIER_1",
+    "country": "US",
+    "otif_target_pct": 99.0,
+    "chargeback_penalty_pct": 3.5,
+    "primary_skus": [
+      "SKU-XYZ-204",
+      "SKU-XYZ-412"
+    ]
+  },
+  {
+    "customer_id": "CUST-XYZ-TIER2-METROCPG",
+    "customer_name": "MetroFresh Hypermarkets India",
+    "tier": "PREMIER_TIER_2",
+    "country": "IN",
+    "otif_target_pct": 96.0,
+    "chargeback_penalty_pct": 2.0,
+    "primary_skus": [
+      "SKU-XYZ-204",
+      "SKU-XYZ-625"
+    ]
+  }
+]

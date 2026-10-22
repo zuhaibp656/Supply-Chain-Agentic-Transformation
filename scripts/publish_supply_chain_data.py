@@ -113,7 +113,7 @@ def api(
 
 
 def collect_agent_fixtures() -> Dict[str, Dict[str, Any]]:
-    """Scan all 10 flagship agents and gather fixture tables with metadata."""
+    """Scan all 35 flagship agents plus XYZ Corporation organizational backbone tables."""
     tables: Dict[str, Dict[str, Any]] = {}
     for agent_id in FLAGSHIP_AGENTS:
         fixtures_dir = ROOT / "agents" / agent_id / "fixtures" / "tables"
@@ -133,6 +133,22 @@ def collect_agent_fixtures() -> Dict[str, Dict[str, Any]]:
                 "rows": rows,
                 "row_count": len(rows),
             }
+    # Also include XYZ Corporation enterprise backbone tables (outside individual agents)
+    xyz_tables_dir = ROOT / "demo_data" / "xyz_corporation" / "tables"
+    if xyz_tables_dir.exists():
+        for json_file in sorted(xyz_tables_dir.glob("*.json")):
+            tbl_name = json_file.stem
+            try:
+                rows = json.loads(json_file.read_text(encoding="utf-8"))
+                tables[tbl_name] = {
+                    "table_name": tbl_name,
+                    "agent_id": "xyz_corporation_enterprise_backbone",
+                    "source_path": str(json_file),
+                    "rows": rows,
+                    "row_count": len(rows),
+                }
+            except Exception:
+                pass
     return tables
 
 
@@ -222,7 +238,6 @@ def load_bq_tables(
         # Prepare streaming payload
         insert_rows = []
         for idx, row in enumerate(rows):
-            # BigQuery requires JSON primitive fields or RECORD types; stringify complex dicts/lists for schemaless flexibility
             clean_row = {}
             for k, v in row.items():
                 if isinstance(v, (dict, list)):
@@ -234,7 +249,6 @@ def load_bq_tables(
         try:
             res = api("POST", url, body={"rows": insert_rows}, token=token, project=project, ok404=True)
             if res.get("_404"):
-                # Table does not exist, create table schema first
                 sample = rows[0]
                 fields = []
                 for k, v in sample.items():
@@ -254,7 +268,6 @@ def load_bq_tables(
                 }
                 api("POST", f"https://bigquery.googleapis.com/bigquery/v2/projects/{project}/datasets/{dataset}/tables",
                     body=tbl_body, token=token, project=project)
-                # Retry insert with short backoff for BigQuery metadata propagation
                 for attempt in range(4):
                     time.sleep(1.5 * (attempt + 1))
                     retry_res = api("POST", url, body={"rows": insert_rows}, token=token, project=project, ok404=True)
@@ -273,9 +286,23 @@ def load_bq_tables(
     print(f"[OK] Processed {loaded} BigQuery tables in dataset {dataset}")
 
 
+def _guess_mime_type(file_path: Path) -> str:
+    suf = file_path.suffix.lower()
+    return {
+        ".json": "application/json",
+        ".csv": "text/csv",
+        ".xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        ".pdf": "application/pdf",
+        ".png": "image/png",
+        ".jpg": "image/jpeg",
+        ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        ".eml": "message/rfc822",
+        ".edi": "text/plain",
+    }.get(suf, "application/octet-stream")
+
+
 def upload_gcs_assets(bucket: str, tables_dir: Path, token: str | None, project: str) -> None:
-    """Uploads table JSON and CSV files to Cloud Storage."""
-    # Ensure bucket exists
+    """Uploads table JSON/CSV files AND XYZ Corporation multimodal files (XLSX, PDF, PNG, DOCX, EDI, EML) to GCS."""
     b_url = f"https://storage.googleapis.com/storage/v1/b/{bucket}"
     b_res = api("GET", b_url, token=token, project=project, ok404=True)
     if b_res.get("_404"):
@@ -293,7 +320,7 @@ def upload_gcs_assets(bucket: str, tables_dir: Path, token: str | None, project:
     uploaded = 0
     for file_path in tables_dir.glob("*.*"):
         blob_name = f"demo-data/tables/{file_path.name}"
-        c_type = "application/json" if file_path.suffix == ".json" else "text/csv"
+        c_type = _guess_mime_type(file_path)
         raw_bytes = file_path.read_bytes()
         upload_url = f"https://storage.googleapis.com/upload/storage/v1/b/{bucket}/o?uploadType=media&name={urllib.parse.quote(blob_name)}"
         try:
@@ -301,7 +328,25 @@ def upload_gcs_assets(bucket: str, tables_dir: Path, token: str | None, project:
             uploaded += 1
         except Exception as e:
             print(f"[WARN] GCS upload failed for {blob_name}: {str(e)[:160]}")
-    print(f"[OK] Uploaded {uploaded} data assets to gs://{bucket}/demo-data/tables/")
+    print(f"[OK] Uploaded {uploaded} table assets to gs://{bucket}/demo-data/tables/")
+
+    xyz_dir = ROOT / "demo_data" / "xyz_corporation"
+    if xyz_dir.exists():
+        xyz_uploaded = 0
+        for file_path in sorted(xyz_dir.rglob("*.*")):
+            if file_path.is_dir():
+                continue
+            rel = file_path.relative_to(xyz_dir).as_posix()
+            blob_name = f"xyz-corporation/{rel}"
+            c_type = _guess_mime_type(file_path)
+            raw_bytes = file_path.read_bytes()
+            upload_url = f"https://storage.googleapis.com/upload/storage/v1/b/{bucket}/o?uploadType=media&name={urllib.parse.quote(blob_name)}"
+            try:
+                api("POST", upload_url, raw_data=raw_bytes, content_type=c_type, token=token, project=project)
+                xyz_uploaded += 1
+            except Exception as e:
+                print(f"[WARN] GCS upload failed for {blob_name}: {str(e)[:160]}")
+        print(f"[OK] Uploaded {xyz_uploaded} XYZ Corporation multimodal files (XLSX, PDF, PNG, DOCX, EML, EDI) to gs://{bucket}/xyz-corporation/")
 
 
 def main() -> None:

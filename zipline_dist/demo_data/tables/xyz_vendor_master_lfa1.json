@@ -1,0 +1,95 @@
+[
+  {
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "vendor_code_sap": "VEND-900112",
+    "supplier_name": "AluWeld Precision Thermal GmbH",
+    "tier_level": "TIER_1",
+    "country": "DE",
+    "city": "Essen",
+    "supplied_skus": [
+      "SKU-XYZ-101",
+      "SKU-XYZ-518"
+    ],
+    "contract_payment_terms": "2/10 Net 45",
+    "annual_spend_usd": 18400000,
+    "on_time_delivery_pct": 96.4,
+    "quality_cpk": 1.54,
+    "geopolitical_risk_score": 14.0,
+    "cbam_verified_smelter": true,
+    "upstream_tier2_supplier_id": "SUP-XYZ-T2-NORSKHYDRO"
+  },
+  {
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "vendor_code_sap": "VEND-900245",
+    "supplier_name": "Taiwan SiliconCore Microelectronics Co.",
+    "tier_level": "TIER_1",
+    "country": "TW",
+    "city": "Hsinchu",
+    "supplied_skus": [
+      "SKU-XYZ-101",
+      "SKU-XYZ-412"
+    ],
+    "contract_payment_terms": "Net 60",
+    "annual_spend_usd": 29500000,
+    "on_time_delivery_pct": 91.2,
+    "quality_cpk": 1.68,
+    "geopolitical_risk_score": 78.5,
+    "cbam_verified_smelter": true,
+    "upstream_tier2_supplier_id": "SUP-XYZ-T2-KYOTOWAFER"
+  },
+  {
+    "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
+    "vendor_code_sap": "VEND-900389",
+    "supplier_name": "AseptiPack Foil & Closures North America",
+    "tier_level": "TIER_1",
+    "country": "US",
+    "city": "Dallas, TX",
+    "supplied_skus": [
+      "SKU-XYZ-204"
+    ],
+    "contract_payment_terms": "Net 30",
+    "annual_spend_usd": 11200000,
+    "on_time_delivery_pct": 94.8,
+    "quality_cpk": 1.18,
+    "geopolitical_risk_score": 11.0,
+    "cbam_verified_smelter": false,
+    "upstream_tier2_supplier_id": "SUP-XYZ-T2-NOVELISALU"
+  },
+  {
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "vendor_code_sap": "VEND-900514",
+    "supplier_name": "PT Sumatra Agro-Elastomers Indonesia",
+    "tier_level": "TIER_1",
+    "country": "ID",
+    "city": "Medan",
+    "supplied_skus": [
+      "SKU-XYZ-625"
+    ],
+    "contract_payment_terms": "Net 45",
+    "annual_spend_usd": 6800000,
+    "on_time_delivery_pct": 89.5,
+    "quality_cpk": 1.42,
+    "geopolitical_risk_score": 46.0,
+    "cbam_verified_smelter": true,
+    "upstream_tier2_supplier_id": "PLOT-IDN-882-EUDR"
+  },
+  {
+    "supplier_id": "SUP-XYZ-T2-KYOTOWAFER",
+    "vendor_code_sap": "VEND-900801",
+    "supplier_name": "Kyoto UltraPure Silicon Wafer Ltd.",
+    "tier_level": "TIER_2",
+    "country": "JP",
+    "city": "Kyoto",
+    "supplied_skus": [
+      "SKU-XYZ-101",
+      "SKU-XYZ-412"
+    ],
+    "contract_payment_terms": "Net 45",
+    "annual_spend_usd": 14100000,
+    "on_time_delivery_pct": 98.1,
+    "quality_cpk": 1.82,
+    "geopolitical_risk_score": 22.0,
+    "cbam_verified_smelter": true,
+    "upstream_tier2_supplier_id": "SUP-XYZ-T3-QUARTZMINE"
+  }
+]

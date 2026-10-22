@@ -1,0 +1,58 @@
+[
+  {
+    "cost_center_id": "CC-XYZ-1000",
+    "department": "Office of the CSCO & Global Control Tower",
+    "vp_owner": "Elena Rostova (CSCO)",
+    "annual_budget_usd": 15000000,
+    "delegation_limit_usd": 2000000,
+    "erp_ledger": "SAP-FI-GLOBAL"
+  },
+  {
+    "cost_center_id": "CC-XYZ-2100",
+    "department": "Global Demand Planning & S&OP",
+    "vp_owner": "Marcus Vance (VP Demand)",
+    "annual_budget_usd": 8200000,
+    "delegation_limit_usd": 500000,
+    "erp_ledger": "SAP-FI-NAMER"
+  },
+  {
+    "cost_center_id": "CC-XYZ-3200",
+    "department": "Strategic Sourcing & Direct Procurement",
+    "vp_owner": "Priya Nair (CPO)",
+    "annual_budget_usd": 94500000,
+    "delegation_limit_usd": 1500000,
+    "erp_ledger": "SAP-FI-EMEA"
+  },
+  {
+    "cost_center_id": "CC-XYZ-4300",
+    "department": "Global Manufacturing & Plant Operations",
+    "vp_owner": "Hans Becker (VP Mfg)",
+    "annual_budget_usd": 42000000,
+    "delegation_limit_usd": 750000,
+    "erp_ledger": "SAP-FI-EMEA"
+  },
+  {
+    "cost_center_id": "CC-XYZ-5400",
+    "department": "Multi-Echelon Inventory & Warehousing",
+    "vp_owner": "Carlos Mendez (VP Fulfillment)",
+    "annual_budget_usd": 28500000,
+    "delegation_limit_usd": 600000,
+    "erp_ledger": "SAP-FI-NAMER"
+  },
+  {
+    "cost_center_id": "CC-XYZ-6500",
+    "department": "Global Fleet, Multi-Modal Transit & TM&D",
+    "vp_owner": "Suman Banerjee (VP Logistics)",
+    "annual_budget_usd": 36800000,
+    "delegation_limit_usd": 800000,
+    "erp_ledger": "SAP-FI-APAC"
+  },
+  {
+    "cost_center_id": "CC-XYZ-7600",
+    "department": "Circular RMA, Customer OTIF & ESG Compliance",
+    "vp_owner": "Claire Dubois (VP Sustainability)",
+    "annual_budget_usd": 11400000,
+    "delegation_limit_usd": 450000,
+    "erp_ledger": "SAP-FI-EMEA"
+  }
+]

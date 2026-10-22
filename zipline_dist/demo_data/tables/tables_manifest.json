@@ -980,6 +980,55 @@
     "csv_file": "working_capital_metrics.csv"
   },
   {
+    "table_name": "xyz_customer_master_kna1",
+    "agent_id": "xyz_corporation_enterprise_backbone",
+    "row_count": 3,
+    "json_file": "xyz_customer_master_kna1.json",
+    "csv_file": "xyz_customer_master_kna1.csv"
+  },
+  {
+    "table_name": "xyz_enterprise_facility_network",
+    "agent_id": "xyz_corporation_enterprise_backbone",
+    "row_count": 8,
+    "json_file": "xyz_enterprise_facility_network.json",
+    "csv_file": "xyz_enterprise_facility_network.csv"
+  },
+  {
+    "table_name": "xyz_erp_material_master_mara",
+    "agent_id": "xyz_corporation_enterprise_backbone",
+    "row_count": 6,
+    "json_file": "xyz_erp_material_master_mara.json",
+    "csv_file": "xyz_erp_material_master_mara.csv"
+  },
+  {
+    "table_name": "xyz_finance_gl_cost_centers",
+    "agent_id": "xyz_corporation_enterprise_backbone",
+    "row_count": 7,
+    "json_file": "xyz_finance_gl_cost_centers.json",
+    "csv_file": "xyz_finance_gl_cost_centers.csv"
+  },
+  {
+    "table_name": "xyz_golden_thread_order_ledger",
+    "agent_id": "xyz_corporation_enterprise_backbone",
+    "row_count": 3,
+    "json_file": "xyz_golden_thread_order_ledger.json",
+    "csv_file": "xyz_golden_thread_order_ledger.csv"
+  },
+  {
+    "table_name": "xyz_hr_plant_shift_rosters",
+    "agent_id": "xyz_corporation_enterprise_backbone",
+    "row_count": 4,
+    "json_file": "xyz_hr_plant_shift_rosters.json",
+    "csv_file": "xyz_hr_plant_shift_rosters.csv"
+  },
+  {
+    "table_name": "xyz_vendor_master_lfa1",
+    "agent_id": "xyz_corporation_enterprise_backbone",
+    "row_count": 5,
+    "json_file": "xyz_vendor_master_lfa1.json",
+    "csv_file": "xyz_vendor_master_lfa1.csv"
+  },
+  {
     "table_name": "yard_spotter_move_tasks",
     "agent_id": "yard_dock_sequencer",
     "row_count": 1,

@@ -1,0 +1,9 @@
+facility_id,facility_name,facility_type,region,country,city,lat,lon,erp_system,mes_wms_system,daily_capacity_units,current_oee_pct,headcount_fte,annual_lease_opex_usd
+PLANT-XYZ-STUTTGART,XYZ Stuttgart Gigafactory & Precision Machining Plant,MANUFACTURING_PLANT,EMEA,DE,Stuttgart,48.7758,9.1829,SAP S/4HANA Production (EU-01),Siemens Opcenter MES,4800,86.4,420,8400000
+PLANT-XYZ-AUSTIN,XYZ Austin Aseptic Bottling & Battery Assembly Campus,MANUFACTURING_PLANT,NAMER,US,"Austin, TX",30.2672,-97.7431,SAP S/4HANA Production (US-01),Rockwell FactoryTalk + Veeva QMS,12500,89.2,510,9600000
+PLANT-XYZ-BENGALURU,XYZ Bengaluru Electronics & Elastomer Smart Factory,MANUFACTURING_PLANT,APAC,IN,Bengaluru (Nelamangala),13.0998,77.3936,SAP S/4HANA Production (IN-01),Siemens Opcenter + GigE Vision,9200,88.1,640,4200000
+PLANT-XYZ-MONTERREY,XYZ Monterrey Thermal Brazing & Nearshore Assembly Plant,MANUFACTURING_PLANT,LATAM,MX,Monterrey,25.6866,-100.3161,SAP S/4HANA Production (MX-01),Honeywell Forge MES,6400,84.7,380,5100000
+RDC-XYZ-CHICAGO,XYZ Midwest Mega-Regional Distribution Center (Joliet),REGIONAL_DC,NAMER,US,"Chicago, IL",41.525,-88.0817,SAP S/4HANA Inventory,Manhattan Active WMS + AMR Fleet,45000,94.2,290,6800000
+FDC-XYZ-ATLANTA,XYZ Southeast Forward Fulfillment & Cross-Dock Hub,FORWARD_DC,NAMER,US,"Atlanta, GA",33.749,-84.388,SAP S/4HANA Inventory,Manhattan Active WMS,22000,92.8,145,3400000
+FDC-XYZ-ROTTERDAM,XYZ Europort Bonded Cross-Dock & Rhine Barge Terminal,FORWARD_DC,EMEA,NL,Rotterdam,51.9244,4.4777,SAP S/4HANA GTS & Inventory,Blue Yonder WMS,30000,95.1,175,4900000
+FDC-XYZ-MUMBAI,XYZ Mumbai Bhiwandi Last-Mile & TM&D Fulfillment Hub,FORWARD_DC,APAC,IN,Mumbai (Bhiwandi),19.2813,73.0483,SAP S/4HANA + DMS,Manhattan Active WMS + FleetFlow,28000,93.5,210,2600000
