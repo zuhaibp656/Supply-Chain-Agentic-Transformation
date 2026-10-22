@@ -4709,6 +4709,186 @@
       color: #1e293b !important;
     }
 
+
+    /* =========================================================================
+       VISUAL END-TO-END PROCESS JOURNEYS (F2F, O2D, S2P, P2R) — LESS TEXT, MORE DIAGRAMS
+       ========================================================================= */
+    .vc-mini-pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .vc-mini-stage-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #f8fafc;
+      white-space: nowrap;
+    }
+
+    .vc-mini-stage-pill .st-idx {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--vc-accent, #34a853);
+    }
+
+    .vc-mini-arrow {
+      font-size: 11px;
+      color: var(--vc-accent, #34a853);
+      font-weight: 800;
+      opacity: 0.85;
+    }
+
+    /* Visual 3-Block Stage Spotlight Schematic */
+    .vc-spotlight-card {
+      padding: 22px 24px;
+      border-radius: 20px;
+      background: linear-gradient(155deg, rgba(15, 23, 42, 0.96) 0%, rgba(9, 14, 26, 0.99) 100%);
+      border: 1.5px solid var(--vc-accent, #34a853);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
+      margin-bottom: 24px;
+      animation: ptExpandIn 0.28s var(--ease-spring) forwards;
+    }
+
+    .vc-schematic-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1.15fr) 48px minmax(0, 1fr);
+      align-items: stretch;
+      gap: 8px;
+      margin: 16px 0 20px;
+    }
+
+    @media (max-width: 960px) {
+      .vc-schematic-row {
+        grid-template-columns: 1fr;
+      }
+      .vc-schematic-arrow {
+        transform: rotate(90deg);
+        margin: 4px auto;
+      }
+    }
+
+    .vc-schematic-node {
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .vc-schematic-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--vc-accent, #34a853);
+    }
+
+    /* 6-Stage At-a-Glance Visual Pipeline Cards */
+    .vc-pipeline-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 1180px) {
+      .vc-pipeline-strip-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .vc-pipeline-strip-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .vc-pipe-step-card {
+      padding: 14px 14px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-top: 3.5px solid var(--st-color, #34a853);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-spring), border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .vc-pipe-step-card:hover,
+    .vc-pipe-step-card.active {
+      transform: translateY(-5px);
+      background: rgba(24, 36, 64, 0.98);
+      border-color: var(--st-color, #34a853);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Light Theme Overrides for Visual Process Journeys */
+    html[data-theme="light"] .vc-entry-card {
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      border-top: 4px solid var(--vc-accent, #1a73e8);
+      box-shadow: 0 8px 22px rgba(26, 115, 232, 0.07);
+    }
+
+    html[data-theme="light"] .vc-entry-card:hover {
+      background: #ffffff;
+      border-color: var(--vc-accent, #1a73e8);
+      box-shadow: 0 20px 42px rgba(26, 115, 232, 0.18);
+    }
+
+    html[data-theme="light"] .vc-mini-stage-pill {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+    }
+
+    html[data-theme="light"] .vc-spotlight-card {
+      background: #ffffff;
+      border: 2px solid var(--vc-accent, #1a73e8);
+      box-shadow: 0 14px 34px rgba(26, 115, 232, 0.12);
+    }
+
+    html[data-theme="light"] .vc-schematic-node {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+    }
+
+    html[data-theme="light"] .vc-pipe-step-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-top: 3.5px solid var(--st-color, #1a73e8);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    }
+
+    html[data-theme="light"] .vc-pipe-step-card:hover,
+    html[data-theme="light"] .vc-pipe-step-card.active {
+      background: #f4f8ff;
+      border-color: var(--st-color, #1a73e8);
+      box-shadow: 0 12px 26px rgba(26, 115, 232, 0.16);
+    }
+
   </style>
 </head>
 <body>
@@ -4741,6 +4921,11 @@
       <div class="nav-dropdown-wrap" style="position:relative;">
         <button type="button" class="nav-pill-btn" onclick="goToOrgChart()">6 SCOR Pillars ▾</button>
         <div class="nav-quick-menu" id="navPillarsQuickMenu"></div>
+      </div>
+
+      <div class="nav-dropdown-wrap" style="position:relative;">
+        <button type="button" class="nav-pill-btn" onclick="scrollToProcessJourneys()">Processes (4) ▾</button>
+        <div class="nav-quick-menu" id="navProcessesQuickMenu"></div>
       </div>
 
       <div class="nav-dropdown-wrap" style="position:relative;">
@@ -4901,8 +5086,21 @@
         <div id="deptRowContainer" class="dept-row"></div>
       </div>
 
-      <!-- Progressive Pillar Drawer (What This Pillar Means + Personas Only) -->
+      <!-- Progressive Pillar Drawer (What This Pillar Means + Personas & Agents) -->
       <div id="deptShowcaseContainer"></div>
+
+      <!-- 3. END-TO-END CROSS-PILLAR SUPPLY CHAIN PROCESS JOURNEYS (F2F, O2D, S2P, P2R) -->
+      <div id="processJourneysSection" class="vc-home-block">
+        <div class="section-header" style="margin-bottom: 26px;">
+          <div style="display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:999px; background:rgba(52,168,83,0.14); border:1px solid rgba(52,168,83,0.4); color:#34a853; font-size:11.5px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;">
+            <span>🔗 4 End-to-End Cross-Pillar Process Journeys</span>
+          </div>
+          <h2 class="section-title">End-to-End Supply Chain Process Flows</h2>
+          <p class="section-subtitle">Click any end-to-end process below to explore its interactive 6-stage visual diagram, system handoffs, and live simulation.</p>
+        </div>
+
+        <div id="valueChainEntryContainer" class="vc-entry-grid"></div>
+      </div>
     </section>
 
   </main>
@@ -11637,25 +11835,53 @@
       return !cl || cl.contains('switch-pill') || cl.contains('nav-pill') || cl.contains('nav-dropdown-item') || cl.contains('back-btn');
     }
 
+    function scrollToProcessJourneys() {
+      history.pushState({ page: 'home' }, '', '#processes');
+      showActivePage('pageHome');
+      renderValueChainEntryCards();
+      setTimeout(() => {
+        const el = document.getElementById('processJourneysSection');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 40);
+    }
+
     function renderValueChainEntryCards() {
       const vcContainer = document.getElementById('valueChainEntryContainer');
       if (!vcContainer) return;
       vcContainer.innerHTML = Object.values(VALUE_CHAINS).map(vc => {
         const wmType = getVcWatermarkType(vc.id);
+        const miniStagesHtml = (vc.stages || []).map((st, idx) => {
+          const shortName = st.name.split('&')[0].replace(/Multi-Signal |Autonomous |Multi-Echelon |Multi-Tier |3D |Factory Gate |Ocean Vessel |Air Cargo |Intermodal Rail |Google Maps |Multi-Modal /g, '').trim();
+          return `
+            <span class="vc-mini-stage-pill">
+              <span class="st-idx">0${idx + 1}</span>
+              <span>${shortName}</span>
+            </span>
+            ${idx < vc.stages.length - 1 ? '<span class="vc-mini-arrow">&rarr;</span>' : ''}
+          `;
+        }).join('');
+
         return `
           <div class="vc-entry-card"
                style="--vc-accent: ${vc.color}; --dept-accent: ${vc.color};"
                onclick="openValueChainPage('${vc.id}', true, event)">
             <div style="position:relative; z-index:2;">
-              <div class="vc-flow-badge" style="background: ${vc.color}20; color: ${vc.color}; border: 1px solid ${vc.color}50;">
-                <span>${vc.flowBadge}</span>
+              <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+                <div class="vc-flow-badge" style="margin-bottom:0; background: ${vc.color}20; color: ${vc.color}; border: 1px solid ${vc.color}50;">
+                  <span>🔗 ${vc.flowBadge}</span>
+                </div>
+                <span style="font-family:var(--font-mono); font-size:12.5px; font-weight:800; padding:4px 10px; border-radius:8px; background:${vc.color}22; color:${vc.color}; border:1px solid ${vc.color}55;">
+                  ${vc.headlineStat}
+                </span>
               </div>
-              <div class="dept-node-title" style="font-size: 23px;">${vc.shortTitle}</div>
-              <div class="dept-node-sub">${formatRichText(vc.cardSubtitle)}</div>
+              <div class="dept-node-title" style="font-size: 22px; margin-bottom: 4px;">${vc.shortTitle}</div>
+              <div class="vc-mini-pipeline">
+                ${miniStagesHtml}
+              </div>
             </div>
             <div class="dept-anim-stage" style="--dept-accent: ${vc.color};">
               ${renderSupplyChainWatermarkSvg(wmType, vc.color, 'dept-stage-svg')}
-              <span class="dept-anim-meta">${vc.cardFooterLeft}</span>
+              <span class="dept-anim-meta">${vc.cardFooterLeft} · Interactive Process Diagram &rarr;</span>
             </div>
           </div>
         `;
@@ -12089,6 +12315,7 @@
 
     function populateNavbarQuickMenus() {
       const pillarsMenu = document.getElementById('navPillarsQuickMenu');
+      const processesMenu = document.getElementById('navProcessesQuickMenu');
       const personasMenu = document.getElementById('navPersonasQuickMenu');
       const agentsMenu = document.getElementById('navAgentsQuickMenu');
 
@@ -12105,6 +12332,25 @@
             </button>
           `;
         }).join('');
+      }
+
+      if (processesMenu) {
+        processesMenu.innerHTML = `
+          <button type="button" class="nav-quick-item" style="color:var(--g-blue); font-weight:800;" onclick="scrollToProcessJourneys()">
+            <span>🔗 View All 4 End-to-End Processes</span>
+            <span>&rarr;</span>
+          </button>
+          <div class="nav-quick-group-title" style="color:#34a853;">Cross-Pillar End-to-End Process Suites (6 Stages Each)</div>
+          ${Object.values(VALUE_CHAINS).map(vc => `
+            <button type="button" class="nav-quick-item" onclick="openValueChainPage('${vc.id}', true, event)">
+              <span style="display:flex; align-items:center; gap:8px;">
+                <span style="width:8px; height:8px; border-radius:50%; background:${vc.color};"></span>
+                <span>${vc.shortTitle}</span>
+              </span>
+              <span style="font-family:var(--font-mono); font-size:11px; color:${vc.color}; font-weight:700;">${vc.headlineStat}</span>
+            </button>
+          `).join('')}
+        `;
       }
 
       if (personasMenu) {
@@ -12167,6 +12413,114 @@
       }
     }
 
+    /* Visual 5-Stage Pillar Process Diagram (No Text Bloat — Pure Visual Flow + Link to Full E2E Process) */
+    function renderVisualPillarProcessStrip(dept) {
+      const PILLAR_FLOWS = {
+        demand_sop: {
+          title: '5-Stage S&OP & Demand Consensus Process',
+          vcId: 'f2f',
+          vcLabel: 'Open Full Forecast-to-Fulfill (F2F) Process &rarr;',
+          steps: [
+            { icon: '📡', name: '1. POS & Macro Sensing', sub: 'TimesFM + WeatherNext' },
+            { icon: '📈', name: '2. Promo & Uplift Shaping', sub: 'Cannibalization Filter' },
+            { icon: '🤝', name: '3. CPFR Channel Sync', sub: 'Retail EDI 852 Lock' },
+            { icon: '⚖️', name: '4. Supply-Demand Match', sub: 'RCCP Capacity Check' },
+            { icon: '🔒', name: '5. Executive S&OP Lock', sub: 'P&L Consensus Plan' }
+          ]
+        },
+        sourcing_procurement: {
+          title: '5-Stage Source-to-Pay & Tier-N Resilience Process',
+          vcId: 's2p',
+          vcLabel: 'Open Full Source-to-Pay (S2P) Process &rarr;',
+          steps: [
+            { icon: '🕸️', name: '1. Tier-N Graph Mapping', sub: 'Spanner BOM Lineage' },
+            { icon: '🧮', name: '2. Parametric Should-Cost', sub: 'Index & Labor Teardown' },
+            { icon: '🏆', name: '3. Combinatorial RFQ', sub: 'OR-Tools Split Award' },
+            { icon: '🛃', name: '4. HS Tariff & FTA Guard', sub: 'SAP GTS Compliance' },
+            { icon: '🔬', name: '5. COA Quality & Settlement', sub: 'Zero-Escape Lot Lock' }
+          ]
+        },
+        manufacturing_prod: {
+          title: '5-Stage Finite Production & Plant OEE Process',
+          vcId: 'f2f',
+          vcLabel: 'Open Full Forecast-to-Fulfill (F2F) Process &rarr;',
+          steps: [
+            { icon: '🗓️', name: '1. Master Schedule (MPS)', sub: 'Frozen Fence Lock' },
+            { icon: '⚙️', name: '2. Finite CP-SAT Sequence', sub: 'Setup Minimization' },
+            { icon: '🔧', name: '3. Predictive Asset OEE', sub: 'Spindle & Bearing Guard' },
+            { icon: '📷', name: '4. Inline Vision QA Gate', sub: 'Sub-50ms Defect Eject' },
+            { icon: '🎯', name: '5. Yield & Scrap Loop', sub: 'Closed-Loop PLC Tune' }
+          ]
+        },
+        inventory_warehouse: {
+          title: '5-Stage MEIO Buffer, Yard & 3D Warehouse Process',
+          vcId: 'p2r',
+          vcLabel: 'Open Full Plan-to-Recovery (P2R) Process &rarr;',
+          steps: [
+            { icon: '🌐', name: '1. Multi-Echelon MEIO', sub: 'Coupled Safety Stock' },
+            { icon: '⚡', name: '2. Sub-50ms Spanner ATP', sub: 'Order Promising Lock' },
+            { icon: '🚛', name: '3. Autonomous Yard & Dock', sub: 'Door Sequencing' },
+            { icon: '🔄', name: '4. Zero-Putaway Cross-Dock', sub: 'Inbound-to-Outbound' },
+            { icon: '📦', name: '5. 3D Golden-Zone Slotting', sub: 'Wave & Pick Path' }
+          ]
+        },
+        logistics_fleet: {
+          title: '5-Stage Multi-Modal Global Transit & Last-Mile Process',
+          vcId: 'o2d',
+          vcLabel: 'Open Full Order-to-Delivery (O2D) Process &rarr;',
+          steps: [
+            { icon: '🧭', name: '1. Factory Mode-Split', sub: 'Ship / Air / Rail / Road' },
+            { icon: '🚢', name: '2. Ocean AIS & Air ULD', sub: 'Port Drayage & 3D ULD' },
+            { icon: '🚆', name: '3. Intermodal Rail Linehaul', sub: 'COFC Ramp Sync' },
+            { icon: '🚚', name: '4. Maps Fleet & 3D LIFO', sub: 'Axle-Safe Bay Packing' },
+            { icon: '🏪', name: '5. Retail Beat & ePOD Audit', sub: 'ShelfVision & Claims' }
+          ]
+        },
+        circular_enable: {
+          title: '5-Stage Customer OTIF, Circular RMA & Scope 3 Process',
+          vcId: 'p2r',
+          vcLabel: 'Open Full Plan-to-Recovery (P2R) Process &rarr;',
+          steps: [
+            { icon: '🛡️', name: '1. Proactive OTIF Shield', sub: 'Penalty Prevention' },
+            { icon: '↩️', name: '2. Fleet Backhaul RMA', sub: 'Zero-Deadhead Pickup' },
+            { icon: '🔍', name: '3. Vision RMA Grading', sub: 'Restock vs Harvest' },
+            { icon: '♻️', name: '4. Circular Re-Commerce', sub: 'Margin Recovery' },
+            { icon: '🌿', name: '5. Scope 3 & CBAM Ledger', sub: 'Audit-Ready Carbon' }
+          ]
+        }
+      };
+
+      const cfg = PILLAR_FLOWS[dept.id] || PILLAR_FLOWS.demand_sop;
+      return `
+        <div style="margin-top:18px; padding:16px 18px; border-radius:16px; background:rgba(15,23,42,0.55); border:1px solid ${dept.color}44;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div style="font-size:12.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:${dept.color};">
+              ⚡ ${cfg.title}
+            </div>
+            <button type="button" class="switch-pill" style="padding:5px 12px; font-size:12px; border-color:${dept.color}; color:${dept.color}; font-weight:700;" onclick="openValueChainPage('${cfg.vcId}', true, event)">
+              ${cfg.vcLabel}
+            </button>
+          </div>
+          <div style="display:grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap:10px;">
+            ${cfg.steps.map((s, idx) => `
+              <div style="position:relative; padding:12px 12px; border-radius:12px; background:var(--bg-card); border:1px solid var(--border-subtle); border-top:3px solid ${dept.color}; display:flex; flex-direction:column; gap:4px;">
+                <div style="display:flex; align-items:center; justify-content:space-between;">
+                  <span style="font-size:18px;">${s.icon}</span>
+                  <span style="font-family:var(--font-mono); font-size:10px; font-weight:800; color:${dept.color};">${idx < 4 ? '──▶' : '✓'}</span>
+                </div>
+                <div style="font-family:var(--font-display); font-size:13px; font-weight:800; color:var(--text-primary); line-height:1.25;">
+                  ${s.name}
+                </div>
+                <div style="font-size:11px; color:var(--text-secondary); font-weight:600;">
+                  ${s.sub}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
     function renderDepartmentShowcaseBox() {
       const container = document.getElementById('deptShowcaseContainer');
       if (!container) return;
@@ -12204,6 +12558,9 @@
             </div>
           </div>
 
+          <!-- Visual 5-Stage Pillar Process Diagram + Link to Full End-to-End Process Journey -->
+          ${renderVisualPillarProcessStrip(dept)}
+
           <!-- SECTION 1: PRIMARY HIGHLIGHTED HUMAN PERSONAS (Executive Role Cards) -->
           <div style="margin-top: 22px;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
@@ -12217,56 +12574,59 @@
               </div>
             </div>
 
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap:14px;">
+            <div class="persona-cards-grid">
               ${dept.personaIds.map(pid => {
                 const p = PERSONAS[pid];
                 if (!p) return '';
                 return `
-                  <div class="human-persona-card" style="--dept-accent: ${dept.color};" onclick="openPersonaPage('${p.id}', true, event)">
-                    <div style="display:flex; align-items:center; gap:14px; min-width:0;">
+                  <div class="human-persona-card"
+                       style="--dept-accent: ${dept.color};"
+                       onclick="openPersonaPage('${p.id}', true, event)">
+                    <div style="display:flex; align-items:center; gap:14px;">
                       <div class="human-avatar-circle" style="--dept-accent: ${dept.color};">${p.icon}</div>
-                      <div style="min-width:0;">
+                      <div>
                         <div class="human-role-tag">👤 Human Role</div>
                         <div class="human-persona-title">${p.name}</div>
                         <div class="human-persona-sub">${p.role}</div>
                       </div>
                     </div>
-                    <span class="persona-open-arrow" style="color:${dept.color}; font-size:18px; font-weight:800;">&rarr;</span>
+                    <span class="persona-open-arrow" style="color:${dept.color}; font-weight:800;">Open &rarr;</span>
                   </div>
                 `;
               }).join('')}
             </div>
           </div>
 
-          <!-- SECTION 2: VISUALLY DISTINCT AI AGENT DOCK (Indigo/Violet Tech Chips) -->
+          <!-- SECTION 2: DISTINCT AI AGENT DOCK (Tech Module Chips) -->
           <div class="ai-agent-dock-box">
-            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
               <div style="display:flex; align-items:center; gap:10px;">
-                <span style="padding:4px 10px; border-radius:8px; background:linear-gradient(135deg,#4f46e5,#7c3aed); color:#ffffff; font-size:11.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;">
+                <span class="ai-agent-type-tag" style="padding:4px 10px; font-size:11px;">
                   ✦ AI Agents (${pillarAgents.length})
                 </span>
-                <span style="font-size:13.5px; font-weight:600; color:var(--text-secondary);">
-                  Direct jump to AI agents in ${dept.name}
+                <span style="font-size:13.5px; font-weight:700; color:var(--text-secondary);">
+                  Autonomous AI copilots &amp; solvers plugging into ${dept.name}
                 </span>
               </div>
             </div>
 
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:10px;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap:12px;">
               ${pillarAgents.map(ag => {
                 const cls = getAgentBuildClassification(ag);
                 return `
-                  <div class="ai-agent-chip-card" onclick="openAgentPage('${ag.id}', true, event)">
-                    <div style="display:flex; align-items:center; gap:12px; min-width:0;">
+                  <div class="ai-agent-chip-card"
+                       onclick="openAgentPage('${ag.id}', true, event)">
+                    <div style="display:flex; align-items:center; gap:12px;">
                       <div class="ai-bot-square">✦</div>
-                      <div style="min-width:0;">
-                        <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:3px;">
-                          <span class="ai-agent-type-tag">AI AGENT</span>
+                      <div>
+                        <div style="display:flex; align-items:center; gap:6px; margin-bottom:3px;">
+                          <span class="ai-agent-type-tag">AI Agent</span>
                           <span class="build-tier-badge ${cls.cssClass}" style="font-size:9.5px; padding:1px 7px;">${cls.tier}</span>
                         </div>
                         <div class="ai-agent-chip-title">${ag.name}</div>
                       </div>
                     </div>
-                    <span style="color:#6366f1; font-weight:800; font-size:16px;">&rarr;</span>
+                    <span style="color:#818cf8; font-weight:800; font-size:14px;">&rarr;</span>
                   </div>
                 `;
               }).join('')}
@@ -12276,235 +12636,6 @@
       `;
     }
 
-    /* =========================================================================
-       EXECUTIVE SELLING METADATA HELPER FOR ALL 32 AGENTS
-       ========================================================================= */
-    function getAgentSellingMeta(ag, dept) {
-      const defaultProofByDept = {
-        universal_csco: 'GE Appliances (800+ Gemini Enterprise agents · -25% customer backorders) & Unilever ($100M+ productivity savings · 9m → hrs Tier-N mapping).',
-        demand_sop: 'GE Appliances (800+ Gemini Enterprise agents · -25% customer backorders) & Google DeepMind WeatherNext 3 + BigQuery TimesFM retail demand sensing.',
-        sourcing_procurement: 'Unilever ($100M+ productivity savings · 9 months → hours Tier-N supplier mapping across 60,000+ suppliers) & SAP Ariba / BigQuery Supply Chain Twin.',
-        sourcing_risk: 'Unilever ($100M+ productivity savings · 9 months → hours Tier-N supplier mapping across 60,000+ suppliers) & SAP Ariba / BigQuery Supply Chain Twin.',
-        manufacturing_prod: 'Global Smart Factory deployments on Google Cloud Manufacturing Data Engine + OR-Tools CP-SAT (+9.4% OEE, -41% unplanned downtime, -52% scrap).',
-        inventory_meio: 'Multi-Echelon Network Deployments on BigQuery + Spanner (-18% working capital · $28M+ liquidity unlocked · 99.4% customer line fill).',
-        warehousing_qa: 'FM Logistic & Global High-Bay Deployments (AlphaEvolve + Vertex AI · -28% picker travel · <2.5h dock-to-stock · 99.8% pick accuracy).',
-        inventory_warehouse: 'FM Logistic (Google DeepMind AlphaEvolve + Vertex AI · -28% picker travel · <2.5h dock-to-stock) & Manhattan Active WMS.',
-        logistics_fleet: 'Global Multi-Modal Ocean, Air, Rail & Fleet Operations on Google Cloud OR-Tools + Google Maps Platform (-24% multi-modal cost, -67% port demurrage, -28% air cargo spend, 92% 3D LIFO cube fill).',
-        trade_mkt_dist: 'ITC Foods & FMCG Field Operations (Google Maps Platform + BigQuery · +18% distributor case fill rate · zero stockout pitch waste · 100% automated planogram audits).',
-        reverse_risk_esg: 'CSCO Circular & ESG Operations on BigQuery + Cloud Spanner (+31% net RMA margin recovery, 99.6% audit-ready Scope 3 primary telemetry).',
-        circular_enable: 'CSCO Circular & ESG Operations on BigQuery + Cloud Spanner (+31% net RMA margin recovery, 99.6% audit-ready Scope 3 primary telemetry).'
-      };
-
-      const defaultDataByDept = {
-        universal_csco: {
-          privateData: 'SAP S/4HANA & IBP, Oracle ERP, Manhattan WMS, Blue Yonder TMS, CargoWise, Siemens Opcenter MES, AR/AP & Inventory Ledgers in BigQuery & AlloyDB',
-          communityData: 'Tier-1 to Tier-4 Supplier Portals, EDI 850/856/214/315/404, Spire Ocean AIS, FlightAware ADS-B, Project44 / FourKites, Retailer CPFR Portals',
-          publicData: 'Google DeepMind WeatherNext 3 Ensembles, Google Maps Live Traffic, Google Earth Engine, Global Port AIS & Macro Commodity/FX Indices'
-        },
-        demand_sop: {
-          privateData: 'POS Sell-Through, SAP S/4HANA Order History, Trade Promo Calendars, Plant Capacity & SKU Margin Tables (SAP IBP / Kinaxis) in BigQuery & AlloyDB',
-          communityData: 'Retailer CPFR Portals (Walmart Luminate, Target Greenfield, Amazon Vendor Central), Circana/NIQ Scanner Feeds, Distributor EDI 852 Feeds',
-          publicData: 'Google DeepMind WeatherNext 3 (15-Day Sub-County Ensembles), Google Maps Places Foot-Traffic, Google Trends Search Velocity, Local Event Signals'
-        },
-        sourcing_risk: {
-          privateData: 'SAP Ariba Contracts, Approved Vendor List (AVL), Multi-Level SAP & Siemens Teamcenter BOMs, PPAP & Incoming Lot Inspection Logs in Cloud Spanner & AlloyDB',
-          communityData: 'Tier-1/2/3/4 Supplier Portals, Customs BOL & Ocean AIS Graphs, EDI 850/855/856 ASN Streams, Dun & Bradstreet Financial Health & COA Certificates',
-          publicData: 'Google WeatherNext 3 Typhoon/Flood Tracks, Google Earth Engine Canopy Maps, London Metal Exchange (LME), ICIS Resin & USITC/TARIC Tariff Schedules'
-        },
-        manufacturing_prod: {
-          privateData: 'SAP S/4HANA PP/DS & PM, Siemens Opcenter / Rockwell FactoryTalk MES, OSIsoft PI Historian 10kHz Vibration & Thermal Streams, Teamcenter PLM BOMs',
-          communityData: 'Contract Manufacturer (CMO/EMS) Capacity Feeds, Tooling Vendor Lead-Time Portals, Outbound Ocean/Air/Rail/Truck Cutoff Schedules',
-          publicData: 'Regional Power Grid Tariff & Peak-Demand Schedules, Ambient Humidity/Temperature Feeds, ISO/IATF Quality Standards'
-        },
-        inventory_warehouse: {
-          privateData: 'Manhattan Active WMS / SAP EWM Bin-Level Inventory, IBM Sterling OMS, RF Gun & AMR/ASRS Telemetry, CubiScan 3D Carton Dimensions in Cloud Spanner & AlloyDB',
-          communityData: 'Inbound Ocean Container (EDI 315), Air ULD (e-AWB) & Rail (EDI 404) ASNs, FourKites / Project44 Yard ETA Streams, 3PL Capacity Portals',
-          publicData: 'Google Maps Distance Matrix & Live Highway Traffic, Port-to-DC Drayage Congestion Indices, Seasonal Peak Volume Curves'
-        },
-        logistics_fleet: {
-          privateData: 'SAP TM, Blue Yonder TMS, Oracle OTM & CargoWise Manifests, Samsara ELD & Sensitech Reefer IoT, 3D Carton/Pallet/ULD Dimensions & Axle Weight Limits',
-          communityData: 'Spire Global / MarineTraffic Satellite Vessel AIS, INTTRA Ocean Bookings, IATA ONE Record / Cargo-XML e-AWB, FlightAware ADS-B, Railinc EDI 404/417, Project44 / FourKites',
-          publicData: 'Google Maps Routes Preferred API & Fleet Engine Live Traffic, Google DeepMind WeatherNext 3 Marine/Aviation/Highway Alerts, Drewry WCI, TAC Air & DAT Spot Indices'
-        },
-        trade_mkt_dist: {
-          privateData: 'Distributor Management System (DMS) secondary sales records, opening/closing stock ledgers, retailer credit master & trade scheme agreements in BigQuery & AlloyDB',
-          communityData: 'Field Sales Officer (FSO) daily GPS store check-ins, geo-tagged store shelf/chiller photos, distributor delivery van manifests, distributor purchase orders',
-          publicData: 'Google Maps Live Traffic, local market festival surge calendars, competitor FMCG retail pricing, GST tax compliance ledgers'
-        },
-        inventory_meio: {
-          privateData: 'SAP S/4HANA material ledger, depot safety stocks, BOM gross-to-net requirements, SKU carrying costs & service level SLAs in BigQuery & Cloud Spanner',
-          communityData: 'Vendor ASN delivery streams, transit stock transfer orders (STOs), regional DC replenishment requests, 3PL inventory advice (EDI 846)',
-          publicData: 'Google Maps Distance Matrix transit durations, regional seasonal demand volatility, commodity interest rates (WACC)'
-        },
-        warehousing_qa: {
-          privateData: 'Manhattan Active WMS bin-level inventory, SAP EWM putaway rules, RF scan timestamps, CubiScan 3D carton dimensions, AQL defect tolerance tables in Cloud Spanner & AlloyDB',
-          communityData: 'Inbound ocean/air/rail ASNs (EDI 856/315/404), carrier yard check-in timestamps, supplier COA lab certificates, 3PL cross-dock transshipment logs',
-          publicData: 'Highway congestion around port/DC corridors, ambient dock weather/humidity feeds'
-        },
-        circular_enable: {
-          privateData: 'Loop / Narvar RMA Logs, SAP S/4HANA SD/QM/CO-PA, PLM Engineering BOMs, Scope 1/2/3 Emissions Ledgers in BigQuery & Cloud Spanner',
-          communityData: 'Walmart Luminate / Target / Kroger OTIF Portals, Supplier Primary Carbon PCF Declarations, GLEC / ISO-14083 Multi-Modal Carrier Fuel Telemetry',
-          publicData: 'Google Earth Engine Plot Deforestation Verification (EUDR), Google Maps Geofences & Routes, EU CBAM & CSRD Regulatory Rules'
-        }
-      };
-
-      const gcpStack = [
-        { name: 'BigQuery & BigQuery ML / GIS', role: 'Canonical Supply Chain Digital Twin, spatiotemporal GIS & bayesian ML' },
-        { name: 'Cloud Spanner & Spanner Graph', role: 'Multi-tier BOM graph, global ATP inventory ledger & multi-modal network state' },
-        { name: 'AlloyDB for PostgreSQL + pgvector', role: 'Sub-millisecond operational state store, contract/tariff vector RAG & agent memory' },
-        { name: 'Vertex AI Agent Engine (ADK & A2A)', role: 'Managed runtime orchestrating root supervisor & 3 collaborating A2A sub-agents' },
-        { name: 'Gemini 3.1 Pro & Gemini 3.8 Flash', role: 'Multimodal reasoning, COA/contract vision parsing & conversational analytics' },
-        { name: 'Google OR-Tools (CP-SAT / CVRPTW / MILP)', role: '100% deterministic finite scheduling, multi-modal routing & 3D LIFO/ULD bin-packing' },
-        { name: 'Google Maps Platform (Routes & Fleet Engine)', role: 'Routes Preferred API, Distance Matrix, Live Traffic, Geofencing & Places API' },
-        { name: 'Vertex AI TimesFM Foundation Model', role: 'Zero-shot & fine-tuned P10/P50/P90 probabilistic demand & lead-time forecasting' },
-        { name: 'Google DeepMind WeatherNext 3 & Earth Engine', role: '15-day hyper-local cyclone/marine/freeze ensembles & satellite plot verification' },
-        { name: 'Apigee API Management & Integration Connectors', role: 'Governed, role-scoped BAPI, IDoc, OData, REST & EDI write-back gateway' },
-        { name: 'Cloud Pub/Sub, Dataflow & Cloud Run', role: 'Real-time AIS, ADS-B, PLC, RFID & ELD telemetry streaming + 3D solver microservices' },
-        { name: 'Document AI & Looker Semantic Layer', role: 'Automated commercial invoice/BOL/e-AWB/COA extraction & governed BI metrics' }
-      ];
-
-      const connectorsByDept = {
-        universal_csco: [
-          'SAP S/4HANA (MM / PP-DS / SD / FI-CO)', 'SAP IBP', 'SAP Ariba & GTS', 'Oracle Fusion ERP & OTM',
-          'Manhattan Active WMS & Omni', 'Blue Yonder TMS & Luminate', 'Kinaxis RapidResponse', 'CargoWise One',
-          'Spire Satellite Ocean AIS', 'FlightAware ADS-B', 'Railinc EDI 404', 'Project44 & FourKites'
-        ],
-        demand_sop: [
-          'SAP IBP (Demand & S&OP)', 'SAP S/4HANA PP/DS & SD', 'Kinaxis RapidResponse', 'o9 Digital Brain',
-          'Salesforce Consumer Goods Cloud', 'Walmart Luminate & Target Greenfield', 'Amazon Vendor Central',
-          'EDI 852 (POS Sales) & EDI 830', 'Circana / NielsenIQ Syndicated POS', 'Oracle Hyperion / Anaplan FP&A'
-        ],
-        sourcing_risk: [
-          'SAP Ariba Sourcing & CLM', 'SAP S/4HANA MM & QM', 'SAP GTS (Global Trade Services)', 'Coupa & Icertis CLM',
-          'Siemens Teamcenter & PTC Windchill PLM', 'Resilinc & Everstream Risk Feeds', 'TrackWise / Veeva QMS',
-          'USITC HTS & EU TARIC Customs Schedules', 'LME / ICIS / Platts Commodity Feeds', 'EDI 850 / 855 / 856 / 860'
-        ],
-        manufacturing_prod: [
-          'SAP S/4HANA PP/DS, PM & QM', 'Siemens Opcenter MES', 'Rockwell FactoryTalk / Plex MES', 'OSIsoft PI / AVEVA Historian',
-          'Siemens SIMATIC & Allen-Bradley PLCs (OPC-UA)', 'Cognex & Keyence Inline Vision', 'Siemens Teamcenter PLM (CC02)',
-          'Kinaxis RapidResponse', 'Electronic Batch Record (eBHR)', 'MRO Crib & Tooling Matrix Systems'
-        ],
-        inventory_warehouse: [
-          'Manhattan Active WMS & YMS', 'SAP EWM (Extended Warehouse Mgmt)', 'SAP S/4HANA aATP & MM', 'Blue Yonder WMS',
-          'IBM Sterling OMS & Manhattan Active Omni', 'Dematic / Knapp / Swisslog WCS (AS/RS & AMRs)', 'CubiScan 3D Laser Dimensioners',
-          'FourKites & Project44 Yard Telemetry', 'Zebra RF Scanners & Impinj RFID Gates', 'EDI 940 / 943 / 944 / 945 / 856'
-        ],
-        logistics_fleet: [
-          'SAP S/4HANA TM (Transportation Mgmt)', 'Blue Yonder TMS', 'Oracle Transportation Management (OTM)', 'CargoWise One & INTTRA Ocean',
-          'IATA ONE Record / Cargo-XML e-AWB & Champ Cargospot', 'Spire Global / MarineTraffic Satellite AIS', 'FlightAware ADS-B Aircraft Telemetry',
-          'Railinc EDI 404 / 417 & Class-I Rail (BNSF/UP/CSX/NS)', 'Project44 & FourKites Multi-Modal Visibility', 'Samsara ELD & Sensitech Cold-Chain IoT'
-        ],
-        trade_mkt_dist: [
-          'DMS (Distributor Management Systems)', 'Field SFA Mobile Handhelds (Sales Force Automation)',
-          'Google Maps Platform Routes & Fleet Engine', 'Modern Trade Key Account Portals (Walmart/Target/Reliance)',
-          'Quick-Commerce Portals (Blinkit/Zepto/Instacart)', 'SAP S/4HANA SD / Billing (VF01/VF04)',
-          'Circana / NielsenIQ Retail Scanner Feeds', 'Secondary Sales EDI 852 & GST Tax Ledgers'
-        ],
-        inventory_meio: [
-          'SAP S/4HANA MM/SD & aATP', 'Blue Yonder Multi-Echelon Inventory Optimization (MEIO)',
-          'BigQuery Multi-Tier Inventory Twin', 'Cloud Spanner Real-Time ATP Ledger',
-          'Google OR-Tools Stochastic Inventory Balancer', 'Google Maps Distance Matrix API',
-          'EDI 846 (Inventory Inquiry/Advice) & EDI 861', 'AlloyDB Sub-50ms Buffer State'
-        ],
-        warehousing_qa: [
-          'Manhattan Active WMS & YMS', 'SAP EWM (Extended Warehouse Management)',
-          'Dematic / Knapp / Swisslog WCS (AS/RS & AMRs)', 'CubiScan 3D Laser Dimensioners',
-          'FourKites & Project44 Yard Telemetry', 'Zebra Handheld RF Scanners & Impinj RFID Gates',
-          'ICML Quality Inspection SOP Manuals', 'EDI 940 / 943 / 944 / 945 / 856'
-        ],
-        circular_enable: [
-          'SAP S/4HANA SD, QM, EHS & CO-PA', 'Loop Returns & Narvar RMA Portals', 'Walmart Luminate / Target / Kroger OTIF Portals',
-          'Blue Yonder TMS & Manhattan WMS', 'ISO-14083 / GLEC Framework Carbon Engine', 'EU CBAM & EUDR Customs XML Portals',
-          'Watershed / Persefoni / SAP Sustainability Footprint', 'Project44 & Samsara Geofence Telemetry', 'EDI 180 (RMA) / 210 / 214 / 812'
-        ]
-      };
-
-      const isHighCodeSolver = /OR-Tools|MILP|CP-SAT|3D|LIFO|ULD|CVRPTW|Finite|Kalman|Isolation|Vision|Spanner/i.test(ag.solverStack || '');
-      const buildType = ag.buildType || (isHighCodeSolver
-        ? 'High-Code ADK + OR-Tools + Spanner/BigQuery'
-        : 'Gemini Enterprise + Vertex AI + BigQuery');
-
-      // Find all personas that use this agent
-      let usedByPersonas = [];
-      if (ag.isUniversal) {
-        usedByPersonas = Object.values(DEPARTMENTS).map(d => PERSONAS[d.personaIds[0]]).filter(Boolean);
-      } else {
-        const direct = Object.values(PERSONAS).filter(p => (p.agentIds || []).includes(ag.id));
-        const sameDept = (dept && dept.personaIds) ? dept.personaIds.map(pid => PERSONAS[pid]).filter(Boolean) : [];
-        const seen = new Set();
-        [...direct, ...sameDept].forEach(p => {
-          if (p && !seen.has(p.id)) {
-            seen.add(p.id);
-            usedByPersonas.push(p);
-          }
-        });
-      }
-
-      const primaryPersona = usedByPersonas[0];
-      const savingsByDept = {
-        demand_sop: { val: '$14M+ Saved', label: 'Annual Inventory & Margin Impact', sub: 'Cuts excess buffer stock & prevents lost sales (secondary: -6.4% WAPE)' },
-        sourcing_procurement: { val: '-6.8% ($18M+)', label: 'Direct Spend & Risk Savings', sub: 'Parametric should-cost negotiation & avoided line-down stops' },
-        sourcing_risk: { val: '-6.8% ($18M+)', label: 'Direct Spend & Risk Savings', sub: 'Parametric should-cost negotiation & avoided line-down stops' },
-        manufacturing_prod: { val: '$12M+ / Plant', label: 'Avoided Downtime & Scrap Savings', sub: 'Prevents unplanned machine halts, overtime & emergency spares' },
-        inventory_meio: { val: '-18% ($28M+)', label: 'Working Capital Cash Released', sub: 'Frees trapped safety stock while holding 99.4% customer fill rate' },
-        warehousing_qa: { val: '-28% Travel', label: 'Dock & Pick Labor Productivity', sub: 'Cuts picker walking by 28% and speeds dock-to-stock from 14h to <2.5h' },
-        inventory_warehouse: { val: '-18% ($28M+)', label: 'Working Capital Cash Released', sub: 'Frees trapped safety stock while holding 99.4% customer fill rate' },
-        logistics_fleet: { val: '-22.4% ($28M+)', label: 'Annual Multi-Modal Freight Saved', sub: 'Optimizes ocean, air, rail & truck cube, routes & demurrage' },
-        trade_mkt_dist: { val: '+18% Fill Rate', label: 'Secondary Case Fill & Coverage', sub: 'Reconciles FSO beats with live distributor stock & cuts stockouts' },
-        reverse_risk_esg: { val: '-78% ($9M+)', label: 'OTIF Fines & Logistics Cost Saved', sub: 'Prevents retailer chargebacks & recovers +31% return margin' },
-        circular_enable: { val: '-78% ($9M+)', label: 'OTIF Fines & Logistics Cost Saved', sub: 'Prevents retailer chargebacks & recovers +31% return margin' },
-        universal_csco: { val: '+$42M Cash', label: 'Enterprise Free Cash Flow Impact', sub: 'Synchronizes inventory, freight & payment terms across all verticals' }
-      };
-      const deptSaving = savingsByDept[ag.deptId] || savingsByDept.universal_csco;
-      const roiMetrics = ag.roiMetrics || [
-        {
-          val: ag.badge || '+24% Lift',
-          label: 'Quantifiable KPI Improvement',
-          sub: `Verified across ${dept.name} workflows`,
-          color: dept.color
-        },
-        {
-          val: primaryPersona ? `${primaryPersona.toilHoursBefore.split(' ')[0]} → ${primaryPersona.toilHoursAfter.split(' ')[0]}h` : '-85% Effort',
-          label: 'Daily Team Effort & Time Saved',
-          sub: primaryPersona ? `${primaryPersona.name} daily manual toil cut by ~85%` : 'Automated exception triage & ERP write-back',
-          color: '#10b981'
-        },
-        {
-          val: deptSaving.val,
-          label: deptSaving.label,
-          sub: deptSaving.sub,
-          color: '#38bdf8'
-        },
-        {
-          val: 'Days → 90s',
-          label: 'Decision & Execution Speed',
-          sub: 'Replaces multi-day spreadsheet handoffs with 1-click ERP action',
-          color: '#f59e0b'
-        }
-      ];
-
-      const rawSeg = ag.dataSegments || defaultDataByDept[ag.deptId] || defaultDataByDept.universal_csco;
-      const baseConnectors = connectorsByDept[ag.deptId] || connectorsByDept.universal_csco;
-      const mergedConnectors = [...new Set([...toSysArray(ag.systems), ...baseConnectors])];
-
-      return {
-        roiMetrics,
-        customerProof: ag.customerProof || defaultProofByDept[ag.deptId] || defaultProofByDept.universal_csco,
-        buildType,
-        gcpStack,
-        enterpriseConnectors: mergedConnectors,
-        dataSegments: {
-          privateData: rawSeg.privateData || rawSeg.private || '',
-          communityData: rawSeg.communityData || rawSeg.community || '',
-          publicData: rawSeg.publicData || rawSeg.public || ''
-        },
-        usedByPersonas
-      };
-    }
-
-    /* =========================================================================
-       PAGE 2 RENDERING: DEDICATED PERSONA PAGE (26 PERSONAS)
-       ========================================================================= */
     function togglePersonaJourneyStep(stepElId) {
       const el = document.getElementById(stepElId);
       if (el) el.classList.toggle('open');
@@ -13355,6 +13486,168 @@
     /* =========================================================================
        PAGE 4 RENDERING: DEDICATED END-TO-END VALUE CHAIN PAGE (F2F, O2D, S2P, P2R)
        ========================================================================= */
+    let currentVcSelectedStageIdx = 0;
+
+    function selectVcStage(vcId, stageIdx) {
+      currentVcSelectedStageIdx = stageIdx;
+      openValueChainPage(vcId, false, null);
+    }
+
+    /* Interactive Full-Width Animated 6-Stage Process Diagram SVG */
+    function renderVisualValueChainDiagramSvg(vc, activeIdx) {
+      const stages = vc.stages || [];
+      const nodePositions = [42, 224, 406, 588, 770, 952];
+
+      const stageIcons = {
+        f2f: ['📡', '📈', '⚖️', '🌐', '🕸️', '📦'],
+        o2d: ['🧭', '🚢', '✈️', '🚆', '🚚', '🛡️'],
+        s2p: ['🕸️', '🧮', '🏆', '🛃', '🔬', '💳'],
+        p2r: ['🛒', '🚛', '📦', '↩️', '📷', '♻️']
+      };
+      const icons = stageIcons[vc.id] || ['01', '02', '03', '04', '05', '06'];
+
+      const nodesSvg = stages.map((st, idx) => {
+        const x = nodePositions[idx] || (42 + idx * 182);
+        const isAct = idx === activeIdx;
+        const shortTitle = st.name.split('&')[0].replace(/Multi-Signal |Autonomous |Multi-Echelon |Multi-Tier |3D |Factory Gate |Ocean Vessel |Air Cargo |Intermodal Rail |Google Maps |Multi-Modal /g, '').trim();
+        const titleLine1 = shortTitle.slice(0, 19);
+        const titleLine2 = shortTitle.length > 19 ? shortTitle.slice(19, 36) : '';
+        const sysFirst = (st.systems || '').split('·')[0].trim().slice(0, 18);
+        const modShort = (st.modality || '').slice(0, 18);
+
+        return `
+          <g style="cursor:pointer;" onclick="selectVcStage('${vc.id}', ${idx})">
+            <!-- Active Outer Glow Ring -->
+            ${isAct ? `
+              <rect x="${x - 5}" y="83" width="176" height="194" rx="18"
+                    fill="none" stroke="${st.color}" stroke-width="2.5" stroke-dasharray="6 4" />
+            ` : ''}
+            <!-- Stage Node Box -->
+            <rect x="${x}" y="88" width="166" height="184" rx="15"
+                  fill="${isAct ? '#172542' : '#0f172a'}"
+                  stroke="${isAct ? '#ffffff' : st.color}"
+                  stroke-width="${isAct ? '2.5' : '1.6'}" />
+            <!-- Top Color Header Strip -->
+            <rect x="${x}" y="88" width="166" height="32" rx="15" fill="${st.color}28" />
+            <text x="${x + 14}" y="109" fill="${st.color}" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800">
+              STAGE 0${idx + 1}
+            </text>
+            <text x="${x + 148}" y="110" text-anchor="end" font-size="15">${icons[idx] || '⚡'}</text>
+
+            <!-- Stage Name -->
+            <text x="${x + 83}" y="142" text-anchor="middle" fill="#ffffff" font-family="'Google Sans Display', sans-serif" font-size="13" font-weight="800">
+              ${titleLine1}
+            </text>
+            ${titleLine2 ? `
+              <text x="${x + 83}" y="158" text-anchor="middle" fill="#ffffff" font-family="'Google Sans Display', sans-serif" font-size="12.5" font-weight="800">
+                ${titleLine2}
+              </text>
+            ` : ''}
+
+            <!-- AI Solver Pill -->
+            <rect x="${x + 12}" y="172" width="142" height="24" rx="6" fill="#090d16" stroke="${st.color}66" stroke-width="1" />
+            <text x="${x + 83}" y="188" text-anchor="middle" fill="#a5b4fc" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">
+              ✦ ${modShort}
+            </text>
+
+            <!-- Enterprise System Pill -->
+            <rect x="${x + 12}" y="203" width="142" height="22" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+            <text x="${x + 83}" y="218" text-anchor="middle" fill="#e2e8f0" font-family="'Google Sans Text', sans-serif" font-size="10" font-weight="600">
+              ${sysFirst}
+            </text>
+
+            <!-- Cycle Time Badge -->
+            <rect x="${x + 28}" y="236" width="110" height="22" rx="11" fill="rgba(52,168,83,0.18)" stroke="#34a853" stroke-width="1" />
+            <text x="${x + 83}" y="251" text-anchor="middle" fill="#81c995" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800">
+              ⚡ ${st.afterTime}
+            </text>
+          </g>
+        `;
+      }).join('');
+
+      const connectorsSvg = [0, 1, 2, 3, 4].map(idx => {
+        const x1 = nodePositions[idx] + 166;
+        const x2 = nodePositions[idx + 1];
+        const col = stages[idx] ? stages[idx].color : vc.color;
+        return `
+          <g>
+            <path id="vcConn_${vc.id}_${idx}" d="M${x1},180 L${x2},180"
+                  stroke="${col}" stroke-width="2.2" stroke-dasharray="4 3" fill="none" />
+            <polygon points="${x2},180 ${x2 - 6},176 ${x2 - 6},184" fill="${col}" />
+            <circle r="3.5" fill="#ffffff">
+              <animateMotion dur="${1.4 + idx * 0.15}s" repeatCount="indefinite" path="M${x1},180 L${x2},180" />
+            </circle>
+          </g>
+        `;
+      }).join('');
+
+      return `
+        <div class="simple-arch-card" style="margin-bottom: 22px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${vc.color};">
+                ✦ Interactive End-to-End Process Architecture Diagram
+              </div>
+              <div style="font-family:var(--font-display); font-size:20px; font-weight:800; color:var(--text-primary);">
+                6-Stage Connected Golden Thread Pipeline (Click Any Stage Node to Inspect)
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="pt-side-tag" style="border-color:${vc.color}66; color:${vc.color};">⚡ Cycle: ${vc.headlineStat}</span>
+              <span class="pt-side-tag">6 Connected Stages</span>
+            </div>
+          </div>
+
+          <div class="simple-arch-svg-wrap">
+            <svg viewBox="0 0 1160 335" style="width:100%; height:auto; display:block;" role="img" aria-label="${vc.title} 6-Stage Process Diagram">
+              <defs>
+                <pattern id="vcGrid_${vc.id}" width="28" height="28" patternUnits="userSpaceOnUse">
+                  <path d="M 28 0 L 0 0 0 28" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1" />
+                </pattern>
+              </defs>
+              <rect width="1160" height="335" rx="14" fill="url(#vcGrid_${vc.id})" />
+
+              <!-- Top 3 Synchronized Enterprise Flow Ribbons -->
+              <g>
+                <rect x="42" y="18" width="340" height="26" rx="13" fill="rgba(66,133,244,0.14)" stroke="#4285f4" stroke-width="1" />
+                <text x="212" y="35" text-anchor="middle" fill="#93c5fd" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700">
+                  FLOW 1 · PHYSICAL MATERIAL &amp; INVENTORY ──▶
+                </text>
+
+                <rect x="410" y="18" width="340" height="26" rx="13" fill="rgba(52,168,83,0.14)" stroke="#34a853" stroke-width="1" />
+                <text x="580" y="35" text-anchor="middle" fill="#86efac" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700">
+                  FLOW 2 · GOLDEN THREAD DATA HANDOFF ⚡ ──▶
+                </text>
+
+                <rect x="778" y="18" width="340" height="26" rx="13" fill="rgba(168,85,247,0.14)" stroke="#a855f7" stroke-width="1" />
+                <text x="948" y="35" text-anchor="middle" fill="#d8b4fe" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700">
+                  FLOW 3 · CLOSED-LOOP DIGITAL TWIN SYNC ◀──▶
+                </text>
+              </g>
+
+              <!-- Stage-to-Stage Animated Connectors -->
+              ${connectorsSvg}
+
+              <!-- 6 Interactive Stage Nodes -->
+              ${nodesSvg}
+
+              <!-- Bottom Closed-Loop Digital Twin Feedback Conduit (Stage 06 -> Stage 01) -->
+              <path d="M1035,272 L1035,312 L125,312 L125,272"
+                    stroke="${vc.color}" stroke-width="1.6" stroke-dasharray="6 4" fill="none" opacity="0.75" />
+              <polygon points="125,272 121,280 129,280" fill="${vc.color}" />
+              <circle r="3.5" fill="${vc.color}">
+                <animateMotion dur="4.2s" repeatCount="indefinite" path="M1035,272 L1035,312 L125,312 L125,272" />
+              </circle>
+              <rect x="420" y="299" width="320" height="22" rx="11" fill="#0b1120" stroke="${vc.color}66" stroke-width="1" />
+              <text x="580" y="314" text-anchor="middle" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">
+                🔄 CLOSED-LOOP BIGQUERY &amp; SPANNER DIGITAL TWIN FEEDBACK
+              </text>
+            </svg>
+          </div>
+        </div>
+      `;
+    }
+
     function openValueChainPage(vcId, pushHash = true, ev = null) {
       const vc = VALUE_CHAINS[vcId];
       if (!vc) return;
@@ -13367,8 +13660,18 @@
       const wmType = getVcWatermarkType(vc.id);
 
       if (pushHash) {
+        currentVcSelectedStageIdx = 0;
         history.pushState({ page: 'valuechain', id: vcId }, '', `#valuechain/${vcId}`);
       }
+
+      const stages = vc.stages || [];
+      if (currentVcSelectedStageIdx >= stages.length) currentVcSelectedStageIdx = 0;
+      const activeStage = stages[currentVcSelectedStageIdx] || stages[0];
+      const ownerPersona = PERSONAS[activeStage.ownerId];
+      const ownerDept = ownerPersona ? (DEPARTMENTS[ownerPersona.deptId] || { color: vc.color }) : { color: vc.color };
+      const stageAgentId = (ownerPersona && ownerPersona.agentIds && ownerPersona.agentIds[0]) ? ownerPersona.agentIds[0] : 'demand_sensing_agent';
+      const stageAgent = AGENTS[stageAgentId] || Object.values(AGENTS)[0];
+      const stageAgentCls = getAgentBuildClassification(stageAgent);
 
       const container = document.getElementById('valueChainPageContent');
       container.innerHTML = `
@@ -13391,16 +13694,16 @@
             </div>
           </div>
 
-          <div class="persona-header-card" style="border-color: ${vc.color}44;">
+          <!-- Compact Visual Process Header -->
+          <div class="persona-header-card" style="border-color: ${vc.color}44; padding: 24px 28px; margin-bottom: 22px;">
             ${renderSupplyChainWatermarkSvg(wmType, vc.color, 'persona-header-sc-watermark')}
 
             <div style="position:relative; z-index:2;">
               <div class="persona-badge" style="background: ${vc.color}22; color: ${vc.color}; border: 1px solid ${vc.color}55;">
-                <span>${vc.flowBadge}</span>
+                <span>🔗 ${vc.flowBadge}</span>
               </div>
-              <h1 class="persona-page-title">${vc.title}</h1>
-              <p class="persona-page-summary">${formatRichText(vc.summary)}</p>
-              <div class="persona-focus-pills">
+              <h1 class="persona-page-title" style="font-size:clamp(24px, 2.8vw, 34px); margin-bottom:6px;">${vc.title}</h1>
+              <div class="persona-focus-pills" style="margin-top:8px;">
                 ${vc.focusAreas.map(f => `<span class="focus-pill">${f}</span>`).join('')}
               </div>
             </div>
@@ -13411,125 +13714,149 @@
             </div>
           </div>
 
-          <div class="time-shift-banner">
-            <div class="shift-meter-card">
-              <div class="shift-meter-top">
-                <span style="color: var(--text-secondary);">Traditional Process</span>
-                <span style="color: #ff8a80; font-weight: 700;">${vc.toilHoursBefore}</span>
-              </div>
-              <div class="shift-bar-track">
-                <div style="width: 76%; background: var(--g-red);"></div>
-                <div style="width: 24%; background: rgba(255,255,255,0.18);"></div>
-              </div>
-            </div>
+          <!-- 1. FULL-WIDTH INTERACTIVE 6-STAGE ANIMATED PROCESS ARCHITECTURE DIAGRAM -->
+          ${renderVisualValueChainDiagramSvg(vc, currentVcSelectedStageIdx)}
 
-            <div class="shift-meter-card">
-              <div class="shift-meter-top">
-                <span style="color: var(--text-secondary);">With Gemini Enterprise</span>
-                <span style="color: #81c995; font-weight: 700;">${vc.toilHoursAfter}</span>
+          <!-- 2. INTERACTIVE STAGE SPOTLIGHT SCHEMATIC (3-Node Visual Flow + Distinct Persona & Agent Cards) -->
+          <div class="vc-spotlight-card" style="--vc-accent: ${activeStage.color || vc.color};">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span style="padding:4px 12px; border-radius:8px; background:${activeStage.color || vc.color}; color:#041019; font-family:var(--font-mono); font-size:12px; font-weight:800;">
+                  ${activeStage.num.toUpperCase()} SPOTLIGHT
+                </span>
+                <h2 style="font-family:var(--font-display); font-size:21px; font-weight:800; color:var(--text-primary); margin:0;">
+                  ${activeStage.name}
+                </h2>
               </div>
-              <div class="shift-bar-track">
-                <div style="width: 16%; background: var(--g-green);"></div>
-                <div style="width: 84%; background: var(--g-blue);"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3 Hero-Sized Executive Summary Cards for the Value Chain -->
-          <div class="exec-pitch-grid">
-            <div class="exec-pitch-card" style="--pitch-accent: #f87171;">
-              <div class="exec-pitch-eyebrow" style="color:#fca5a5; background:rgba(239,68,68,0.14); border:1px solid rgba(239,68,68,0.4);">
-                <span>✕ 01 · Process Gap (Before)</span>
-              </div>
-              <h2 class="exec-pitch-title">Siloed Handoffs &amp; Latency</h2>
-              <div class="exec-pitch-body">${formatRichBullets(vc.problem, '#f87171')}</div>
-            </div>
-
-            <div class="exec-pitch-card" style="--pitch-accent: #38bdf8;">
-              <div class="exec-pitch-eyebrow" style="color:#7dd3fc; background:rgba(56,189,248,0.14); border:1px solid rgba(56,189,248,0.4);">
-                <span>⚡ 02 · How It Works</span>
-              </div>
-              <h2 class="exec-pitch-title">Golden Thread Multi-Agent Pipeline</h2>
-              <div class="exec-pitch-body">${formatRichBullets(vc.solution, '#38bdf8')}</div>
-            </div>
-
-            <div class="exec-pitch-card" style="--pitch-accent: #34d399;">
-              <div class="exec-pitch-eyebrow" style="color:#6ee7b7; background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.4);">
-                <span>✦ 03 · CSCO Advantage (${vc.headlineStat})</span>
-              </div>
-              <h2 class="exec-pitch-title">End-to-End Value Realization</h2>
-              <div class="exec-pitch-body">${formatRichBullets(vc.advantage, '#34d399')}</div>
-            </div>
-          </div>
-
-          <div class="ditl-header-row">
-            <div>
-              <h2 class="block-title">Connected 6-Stage Pipeline</h2>
-              <p class="block-subtitle">Each stage passes verified supply chain context forward via a <span class="sc-hl-underline">Golden Thread</span>—eliminating manual spreadsheet handoffs.</p>
-            </div>
-
-            <div class="ditl-legend">
-              <span class="legend-item">
-                <span class="legend-swatch" style="background: var(--g-red);"></span>
-                <span style="color: #ff8a80;">Manual Toil</span>
-              </span>
-              <span class="legend-item">
-                <span class="legend-swatch" style="background: var(--g-green);"></span>
-                <span style="color: #81c995;">Gemini Improvement</span>
-              </span>
-              <span class="legend-item">
-                <span class="legend-swatch" style="background: var(--g-blue);"></span>
-                <span style="color: #8ab4f8;">Golden Thread Handoff</span>
-              </span>
-            </div>
-          </div>
-
-          <div class="day-schedule">
-            ${vc.stages.map(st => `
-              <div class="vc-stage-row" style="--vc-stage-color: ${st.color};">
-                <div class="vc-stage-meta">
-                  <div>
-                    <div class="vc-stage-num" style="color: ${st.color};">${st.num}</div>
-                    <div class="vc-stage-name">${st.name}</div>
-                  </div>
-                  <div class="vc-modality-row">
-                    <span class="vc-modality-pill" style="border-color: ${st.color}55; color: ${st.color};">${st.modality}</span>
-                    <span class="vc-modality-pill">${st.systems}</span>
-                  </div>
-                  <button type="button" class="vc-owner-btn" onclick="openPersonaPage('${st.ownerId}', true, event)">
-                    <span>👤 ${st.ownerLabel} &rarr;</span>
+              <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                ${stages.map((st, idx) => `
+                  <button type="button"
+                          class="switch-pill"
+                          style="padding:5px 11px; font-size:11.5px; ${idx === currentVcSelectedStageIdx ? `background:${st.color}; color:#041019; font-weight:800; border-color:${st.color};` : ''}"
+                          onclick="selectVcStage('${vc.id}', ${idx})">
+                    0${idx + 1}
                   </button>
-                </div>
+                `).join('')}
+              </div>
+            </div>
 
-                <div class="toil-highlight-box">
-                  <div class="toil-top-bar">
-                    <span class="toil-badge">✕ Manual Toil</span>
-                    <span class="toil-duration">${st.toilTime}</span>
-                  </div>
-                  <div class="toil-text">${formatRichBullets(st.before, '#f87171')}</div>
+            <!-- 3-Node Visual Stage Flow Schematic (Systems -> Autonomous AI Engine -> Golden Thread Output) -->
+            <div class="vc-schematic-row" style="--vc-accent: ${activeStage.color || vc.color};">
+              <div class="vc-schematic-node" style="border-left: 4px solid #38bdf8;">
+                <div style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#38bdf8; text-transform:uppercase;">
+                  📥 1. Stage Input &amp; Systems
                 </div>
-
-                <div class="gemini-improve-box">
-                  <div class="improve-top-bar">
-                    <span class="improve-badge">
-                      <img data-asset="sparkle_blue_violet.png" alt="" />
-                      <span>Gemini Improvement</span>
-                    </span>
-                    <span class="improve-time-saved">${st.toilTime} &rarr; ${st.afterTime}</span>
-                  </div>
-                  <div class="improve-text">${formatRichBullets(st.after, '#34d399')}</div>
-                  <div class="vc-golden-thread">
-                    <div class="vc-golden-label">🔗 Golden Thread Handoff</div>
-                    <div>${formatRichText(st.goldenThread)}</div>
-                  </div>
+                <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+                  ${toSysArray(activeStage.systems).map(s => `
+                    <span class="pt-side-tag" style="font-size:11.5px;">${s}</span>
+                  `).join('')}
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary);">
+                  Live telemetry &amp; ERP state ingested into Digital Twin.
                 </div>
               </div>
-            `).join('')}
+
+              <div class="vc-schematic-arrow">──⚡──▶</div>
+
+              <div class="vc-schematic-node" style="border-left: 4px solid ${activeStage.color || vc.color};">
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                  <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:${activeStage.color || vc.color}; text-transform:uppercase;">
+                    🧠 2. AI Process Engine (${activeStage.modality})
+                  </span>
+                  <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#34a853;">
+                    ${activeStage.toilTime} &rarr; ${activeStage.afterTime}
+                  </span>
+                </div>
+                <div style="font-size:14px; font-weight:600; color:var(--text-primary); line-height:1.45;">
+                  ${shortSentence(activeStage.after, 130)}
+                </div>
+              </div>
+
+              <div class="vc-schematic-arrow">──🔗──▶</div>
+
+              <div class="vc-schematic-node" style="border-left: 4px solid #34a853;">
+                <div style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#34a853; text-transform:uppercase;">
+                  📤 3. Golden Thread Handoff
+                </div>
+                <div style="font-size:13.5px; font-weight:600; color:var(--text-primary); line-height:1.45;">
+                  ${shortSentence(activeStage.goldenThread, 125)}
+                </div>
+              </div>
+            </div>
+
+            <!-- Distinct Human Persona Owner Card vs. AI Agent Card for This Stage -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px; padding-top:14px; border-top:1px solid var(--border-subtle);">
+              ${ownerPersona ? `
+                <div class="human-persona-card"
+                     style="--dept-accent: ${ownerDept.color}; padding: 14px 18px;"
+                     onclick="openPersonaPage('${ownerPersona.id}', true, event)">
+                  <div style="display:flex; align-items:center; gap:12px;">
+                    <div class="human-avatar-circle" style="--dept-accent: ${ownerDept.color}; width:42px; height:42px; font-size:20px;">${ownerPersona.icon}</div>
+                    <div>
+                      <div class="human-role-tag">👤 Stage Owner (Human Persona)</div>
+                      <div class="human-persona-title" style="font-size:16px;">${ownerPersona.name}</div>
+                      <div class="human-persona-sub" style="font-size:12px;">${ownerPersona.role}</div>
+                    </div>
+                  </div>
+                  <span style="color:${ownerDept.color}; font-weight:800; font-size:13px;">Persona &rarr;</span>
+                </div>
+              ` : ''}
+
+              ${stageAgent ? `
+                <div class="ai-agent-chip-card"
+                     style="padding: 14px 18px;"
+                     onclick="openAgentPage('${stageAgent.id}', true, event)">
+                  <div style="display:flex; align-items:center; gap:12px;">
+                    <div class="ai-bot-square" style="width:40px; height:40px;">✦</div>
+                    <div>
+                      <div style="display:flex; align-items:center; gap:6px; margin-bottom:3px;">
+                        <span class="ai-agent-type-tag">✦ Stage AI Agent</span>
+                        <span class="build-tier-badge ${stageAgentCls.cssClass}" style="font-size:9.5px; padding:1px 7px;">${stageAgentCls.tier}</span>
+                      </div>
+                      <div class="ai-agent-chip-title" style="font-size:16px;">${stageAgent.name}</div>
+                    </div>
+                  </div>
+                  <span style="color:#818cf8; font-weight:800; font-size:13px;">Agent Studio &rarr;</span>
+                </div>
+              ` : ''}
+            </div>
           </div>
 
-          <h2 class="block-title" style="margin-bottom: 6px;">Interactive Simulation &amp; End-to-End Walkthrough</h2>
-          <p class="block-subtitle" style="margin-bottom: 20px;">Interact with the live <strong>${vc.shortTitle}</strong> CAD simulator or watch the pre-rendered walkthrough.</p>
+          <!-- 3. ALL 6 STAGES AT-A-GLANCE VISUAL PIPELINE STRIP -->
+          <div style="margin-bottom: 10px; display:flex; align-items:center; justify-content:space-between;">
+            <h3 style="font-family:var(--font-display); font-size:17px; font-weight:800; color:var(--text-primary);">
+              All 6 Process Stages (Click Any Card to Focus Diagram)
+            </h3>
+          </div>
+          <div class="vc-pipeline-strip-grid">
+            ${stages.map((st, idx) => {
+              const isAct = idx === currentVcSelectedStageIdx;
+              return `
+                <div class="vc-pipe-step-card ${isAct ? 'active' : ''}"
+                     style="--st-color: ${st.color};"
+                     onclick="selectVcStage('${vc.id}', ${idx})">
+                  <div>
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+                      <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:${st.color};">${st.num}</span>
+                      <span style="font-family:var(--font-mono); font-size:10.5px; color:#34a853; font-weight:700;">⚡ ${st.afterTime}</span>
+                    </div>
+                    <div style="font-family:var(--font-display); font-size:14.5px; font-weight:800; color:var(--text-primary); line-height:1.25; margin-bottom:8px;">
+                      ${st.name}
+                    </div>
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:5px;">
+                    <span class="pt-side-tag" style="font-size:10.5px; justify-content:center;">✦ ${st.modality}</span>
+                    <span style="font-size:11.5px; font-weight:700; color:${st.color}; text-align:center;">
+                      👤 ${st.ownerLabel}
+                    </span>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
 
+          <!-- 4. INTERACTIVE SIMULATION & VIDEO WALKTHROUGH -->
+          <h2 class="block-title" style="font-size:20px; margin-bottom: 10px;">Interactive Process Simulation &amp; Demo Walkthrough</h2>
           <div class="video-stage-box">
             <div class="video-viewport">
               ${renderStageViewportHtml(vc, 'vc', videoUrl, showVideoPlayer)}
@@ -15480,6 +15807,8 @@
       hydrateAssets();
       initHeroSupplyChainCanvas();
       renderOrgChart();
+      renderValueChainEntryCards();
+      populateNavbarQuickMenus();
       hydrateAssets();
       if (!window.location.hash) { window.location.hash = '#mindmap'; } handleUrlHash();
 
