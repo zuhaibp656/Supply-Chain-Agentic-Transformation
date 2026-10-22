@@ -1,0 +1,26 @@
+name: inline_quality_inspection_agent
+display_name: "VisionInspect — Automated Inline Quality Gate & Inspection Agent"
+version: 0.1.0
+runtime: python310
+entrypoint: app.agent:InlineQualityInspectionAgent
+framework: google-adk
+vertical: "03_make"
+description: >
+  VisionInspect uses multimodal Gemini 3.8 Flash Vision to inspect high-speed conveyor
+  optical feeds at 120 frames per minute. It classifies micro-cracks, induction seal breaches,
+  and barcode readability defects, triggers pneumatic reject gate diverters in milliseconds,
+  and logs electronic Batch Manufacturing Record (eBHR) deviation entries in Veeva / SAP QM.
+
+parameters:
+  model: "gemini-3.8-flash"
+  temperature: 0.1
+  max_output_tokens: 4096
+
+tools:
+  - app.tools:list_systems
+  - app.tools:query_camera_vision_inspection_frames
+  - app.tools:query_vision_defect_classification_results
+  - app.tools:query_ebhr_batch_record_deviations
+  - app.tools:query_pneumatic_reject_gate_events
+  - app.tools:action_trigger_pneumatic_reject_diverter
+  - app.tools:action_log_ebhr_quality_deviation

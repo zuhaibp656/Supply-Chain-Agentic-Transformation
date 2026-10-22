@@ -1,0 +1,15 @@
+[
+  {
+    "transfer_id": "REBAL-TRANSFER-202610-001",
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
+    "source_dc_id": "CDC-CHICAGO-01",
+    "destination_dc_id": "RDC-DALLAS-02",
+    "quantity_transferred_units": 6500,
+    "transport_mode": "DEDICATED_DRY_VAN_REBALANCE",
+    "freight_cost_usd": 1420.00,
+    "stockout_cost_avoided_usd": 18500.00,
+    "net_roi_ratio": 13.0,
+    "status": "TRANSFER_ORDER_DISPATCHED",
+    "estimated_arrival": "2026-10-23T14:00:00Z"
+  }
+]

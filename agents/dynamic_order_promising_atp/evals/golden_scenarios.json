@@ -1,0 +1,24 @@
+[
+  {
+    "scenario_id": "GOLDEN-ORDER-PROMISING-001",
+    "name": "Kroger Strategic Tier 1 ATP Commitment and OTIF Penalty Avoidance",
+    "description": "Evaluate high-value order ORD-8841 (8,000 units Oat Milk 1L) for Kroger National Distribution via Cloud Spanner (14.8ms latency), protect 20,000-unit Tier 1 reserved quota at CDC Chicago, commit binding delivery date for Oct 24 at 10:00 AM, and avoid $2,500/day OTIF penalty.",
+    "input_query": "Evaluate inbound customer order ORD-20261022-8841 from Kroger, execute sub-50ms Spanner ATP check, ringfence Tier 1 strategic allocation reserve, and commit binding delivery date.",
+    "expected_tools": [
+      "query_realtime_sku_atp_allocations",
+      "query_customer_tier_sla_commitments",
+      "query_inbound_customer_order_requests",
+      "query_order_promising_routing_decisions",
+      "action_protect_tier1_allocation_reserve",
+      "action_commit_dynamic_order_promise"
+    ],
+    "expected_verifications": {
+      "order_id": "ORD-20261022-8841",
+      "customer_id": "CUST-KROGER-CORP",
+      "promised_fulfillment_node": "CDC-CHICAGO-01",
+      "atp_reserved_qty": 8000,
+      "promise_status": "ATP_PROMISE_COMMITTED",
+      "protection_status": "TIER1_ALLOCATION_RINGFENCED"
+    }
+  }
+]

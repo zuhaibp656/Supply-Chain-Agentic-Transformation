@@ -1,0 +1,23 @@
+[
+  {
+    "scenario_id": "GOLDEN-FINITE-SCHEDULER-001",
+    "name": "OR-Tools Allergen-Aware Finite Production Scheduling and SAP PP/DS Dispatch",
+    "description": "Formulate and solve a finite capacity production schedule on Aseptic Line 01 using Google OR-Tools CP-SAT, sequence non-allergenic oat milk before tree-nut almond milk, reduce changeover wash time by 5.0 hours, and dispatch schedule blocks to SAP PP/DS.",
+    "input_query": "Sequence unscheduled production orders for Line 01 in SAP PP/DS, apply allergen changeover matrix, solve with OR-Tools CP-SAT to minimize CIP downtime, and dispatch locked blocks.",
+    "expected_tools": [
+      "query_production_orders_backlog",
+      "query_changeover_matrix_rules",
+      "query_plant_line_workcenters",
+      "query_optimized_sequence_schedule",
+      "action_solve_and_lock_finite_sequence",
+      "action_dispatch_sap_ppds_sequence"
+    ],
+    "expected_verifications": {
+      "workcenter_id": "WC-LINE-ASEPTIC-01",
+      "changeover_hours_saved": 5.0,
+      "objective_hours": 4.5,
+      "sequence_status": "OR_TOOLS_SEQUENCE_LOCKED",
+      "ppds_status": "SAP_PPDS_SCHEDULE_DISPATCHED"
+    }
+  }
+]

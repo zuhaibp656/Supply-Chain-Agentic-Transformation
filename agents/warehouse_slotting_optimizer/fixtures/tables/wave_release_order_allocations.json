@@ -1,0 +1,28 @@
+[
+  {
+    "wave_id": "WAVE-20261022-AM-01",
+    "dc_id": "RDC-DALLAS-02",
+    "zone_id": "ZONE-BULK-MEZZANINE",
+    "allocated_orders_count": 450,
+    "total_pick_lines": 1820,
+    "active_pickers_count": 16,
+    "target_pick_rate_lines_hr": 140,
+    "actual_pick_rate_lines_hr": 92,
+    "wave_congestion_score": 0.84,
+    "recommended_max_pickers": 10,
+    "status": "ZONE_SATURATED_THROTTLING_RECOMMENDED"
+  },
+  {
+    "wave_id": "WAVE-20261022-AM-02",
+    "dc_id": "RDC-DALLAS-02",
+    "zone_id": "ZONE-GOLDEN-FLOW-RACK",
+    "allocated_orders_count": 620,
+    "total_pick_lines": 3100,
+    "active_pickers_count": 12,
+    "target_pick_rate_lines_hr": 220,
+    "actual_pick_rate_lines_hr": 235,
+    "wave_congestion_score": 0.22,
+    "recommended_max_pickers": 14,
+    "status": "OPTIMAL_FLOW"
+  }
+]

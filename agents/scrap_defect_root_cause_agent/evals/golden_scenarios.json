@@ -1,0 +1,23 @@
+[
+  {
+    "scenario_id": "GOLDEN-SCRAP-DEFECT-001",
+    "name": "Injection Mold Parting Flash Pareto Triage and SCADA Setpoint Writeback",
+    "description": "Diagnose parting line flash defect (5.68% scrap rate, 58.4% of total scrap) on IMM-02, isolate holding pressure spike (945 bar, r=0.88) via multivariate correlation, lock calibrated setpoints in SCADA/PLC, and post $2,806.70 scrap variance in SAP CO.",
+    "input_query": "Audit scrap loss records for Injection Mold IMM-02, identify top Pareto defect, correlate machine process parameters, execute SCADA setpoint writeback, and post scrap variance to SAP CO.",
+    "expected_tools": [
+      "query_scrap_loss_pareto_records",
+      "query_batch_process_parameter_correlations",
+      "query_scrap_financial_cost_ledger",
+      "query_scada_setpoint_recommendations",
+      "action_update_scada_recipe_setpoints",
+      "action_post_scrap_variance_adjustment"
+    ],
+    "expected_verifications": {
+      "asset_id": "ASSET-INJECTION-MOLD-02",
+      "top_defect_name": "Parting Line Polymer Flash Excess",
+      "correlation_r": 0.88,
+      "scada_status": "SCADA_PLC_SETPOINTS_LOCKED",
+      "sap_co_status": "SAP_CO_VARIANCE_POSTED"
+    }
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "scenario_id": "GOLDEN-PLANT-OEE-001",
+    "name": "Spindle Bearing Degradation Anomaly and SAP PM Work Order Dispatch",
+    "description": "Detect high vibration (7.42 mm/s RMS) and bearing degradation on CNC Milling Center CNC-04, compute OEE deficit (57.1%), dispatch preventive SAP PM work order for next shift, and reserve ceramic bearing in SAP MM crib.",
+    "input_query": "Audit machine health for Milling Center ASSET-MILLING-CNC-04, analyze OEE losses, predict time to failure, dispatch preventive work order, and reserve replacement bearings.",
+    "expected_tools": [
+      "query_plant_machine_telemetry",
+      "query_oee_breakdown_metrics",
+      "query_predictive_maintenance_anomalies",
+      "query_spare_parts_inventory_status",
+      "action_dispatch_preventive_work_order",
+      "action_reserve_spare_parts"
+    ],
+    "expected_verifications": {
+      "asset_id": "ASSET-MILLING-CNC-04",
+      "vibration_rms": 7.42,
+      "oee_pct": 57.08,
+      "ttf_hours": 36.0,
+      "net_avoided_loss_usd": 80800.0,
+      "pm_status": "SAP_PM_WORK_ORDER_DISPATCHED",
+      "mm_status": "SAP_MM_PARTS_RESERVED"
+    }
+  }
+]

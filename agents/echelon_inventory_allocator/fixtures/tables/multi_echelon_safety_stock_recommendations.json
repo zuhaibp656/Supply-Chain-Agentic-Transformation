@@ -1,0 +1,32 @@
+[
+  {
+    "recommendation_id": "MEIO-REC-202610-001",
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
+    "sku_description": "Barista Organic Oat Milk 1L Tetra",
+    "echelon_tier": "TIER_1_CENTRAL_DC",
+    "network_node_id": "CDC-CHICAGO-01",
+    "current_safety_stock_units": 45000,
+    "recommended_safety_stock_units": 32000,
+    "safety_stock_delta_units": -13000,
+    "working_capital_freed_usd": 38480.00,
+    "service_level_target_pct": 98.5,
+    "service_level_achieved_pct": 99.2,
+    "holding_cost_rate_annual": 0.22,
+    "rationale": "Clark-Scarf stochastic pooling permits holding buffer upstream at Central DC while reducing sluggish stock at Tier 2 RDCs."
+  },
+  {
+    "recommendation_id": "MEIO-REC-202610-002",
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
+    "sku_description": "Barista Organic Oat Milk 1L Tetra",
+    "echelon_tier": "TIER_2_REGIONAL_DC",
+    "network_node_id": "RDC-DALLAS-02",
+    "current_safety_stock_units": 8500,
+    "recommended_safety_stock_units": 14200,
+    "safety_stock_delta_units": 5700,
+    "working_capital_freed_usd": -16872.00,
+    "service_level_target_pct": 98.5,
+    "service_level_achieved_pct": 98.6,
+    "holding_cost_rate_annual": 0.22,
+    "rationale": "High downstream order velocity in Texas/South region requires safety stock buffer increase to protect 98.5% fill rate SLA."
+  }
+]

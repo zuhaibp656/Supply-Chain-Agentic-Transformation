@@ -84,9 +84,9 @@ agents/<agent_id>/
 
 ---
 
-## 4. Current Implementation Status (12 Agents Completed & Verified)
+## 4. Current Implementation Status (21 Agents Completed & Verified)
 
-All 12 agents have been built with complete Google ADK compliance, deterministic fixtures, pre-execution quality gates, Vega-Lite visual surfaces, and 100% passing unit smoke tests (84/84 tests passing).
+All 21 agents have been built with complete Google ADK compliance, deterministic fixtures, pre-execution quality gates, Vega-Lite visual surfaces, and 100% passing unit smoke tests (147/147 tests passing).
 
 ### Completed Agents:
 1. **Universal Core 01**: `csco_control_tower_copilot` — TowerMind CSCO Control Tower Copilot (7/7 smoke tests pass)
@@ -101,8 +101,18 @@ All 12 agents have been built with complete Google ADK compliance, deterministic
 10. **Vertical 02 · Source 02**: `tier_n_risk_sentinel` — NexusShield Multi-Tier Supply Network Sentinel (7/7 smoke tests pass)
 11. **Vertical 02 · Source 03**: `tariff_esg_agent` — ClauseGuard Contract Intelligence & Trade Compliance Agent (7/7 smoke tests pass)
 12. **Vertical 02 · Source 04**: `supplier_quality_sentinel` — QualiShield Predictive Supplier Quality & NCR Resolver (7/7 smoke tests pass)
+13. **Vertical 03 · Make 01**: `plant_oee_maintenance_agent` — AssetGuard Plant Predictive Maintenance & OEE Asset Guardian (7/7 smoke tests pass)
+14. **Vertical 03 · Make 02**: `finite_production_scheduler` — FlowMaster Finite Production Line Sequence & Job Shop Scheduler (7/7 smoke tests pass)
+15. **Vertical 03 · Make 03**: `scrap_defect_root_cause_agent` — YieldMax Yield Optimization & Scrap Defect Root-Cause Agent (7/7 smoke tests pass)
+16. **Vertical 03 · Make 04**: `inline_quality_inspection_agent` — VisionInspect Automated Inline Quality Gate & Inspection Agent (7/7 smoke tests pass)
+17. **Vertical 04 · Fulfill 01**: `echelon_inventory_allocator` — EchelonFlow Coupled Stochastic Multi-Echelon Inventory Allocator (7/7 smoke tests pass)
+18. **Vertical 04 · Fulfill 02**: `warehouse_slotting_optimizer` — SlotMaster Dynamic 3D Warehouse Wave & Slotting Optimizer (7/7 smoke tests pass)
+19. **Vertical 04 · Fulfill 03**: `dynamic_order_promising_atp` — PromiseGuard Real-Time Dynamic ATP Order Promising Agent (7/7 smoke tests pass)
+20. **Vertical 04 · Fulfill 04**: `crossdock_transfer_orchestrator` — CrossDockFlow Real-Time Cross-Dock Flow-Through Orchestrator (7/7 smoke tests pass)
+21. **Vertical 04 · Fulfill 05**: `yard_dock_scheduling_agent` — YardPulse Dynamic Yard Gate & Turnaround Demurrage Orchestrator (7/7 smoke tests pass)
 
 ### Next Vertical in Roadmap:
-- **03 · Make (Manufacturing Operations & Plant Floor Execution)**: `plant_oee_maintenance_agent` (AssetGuard), `finite_production_scheduler` (FlowMaster), `scrap_defect_root_cause_agent` (YieldMax), `inline_quality_inspection_agent` (VisionInspect).
+- **05 · Deliver (Multi-Modal Global Transit & Fleet Logistics)**: `multimodal_mode_shift_agent`, `fleet_route_dispatch_optimizer`, `load_consolidation_3d_studio`, `in_transit_control_tower`, `ocean_port_drayage_orchestrator`, `air_cargo_uld_optimizer`, `intermodal_rail_linehaul_agent`.
+
 
 

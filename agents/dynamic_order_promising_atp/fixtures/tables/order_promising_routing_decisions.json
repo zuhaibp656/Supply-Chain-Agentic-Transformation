@@ -1,0 +1,15 @@
+[
+  {
+    "decision_id": "OP-DEC-20261022-001",
+    "order_id": "ORD-20261022-8841",
+    "customer_id": "CUST-KROGER-CORP",
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
+    "promised_units": 8000,
+    "promised_fulfillment_node": "CDC-CHICAGO-01",
+    "allocated_tier": "TIER_1_STRATEGIC_RESERVED",
+    "estimated_transit_hours": 18.0,
+    "promised_delivery_date": "2026-10-24T10:00:00Z",
+    "otif_penalty_risk_usd": 0.0,
+    "routing_status": "ATP_COMMITTED_CONFIRMED"
+  }
+]

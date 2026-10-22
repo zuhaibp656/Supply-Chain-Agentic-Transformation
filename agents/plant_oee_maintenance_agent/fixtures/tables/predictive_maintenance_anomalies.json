@@ -1,0 +1,32 @@
+[
+  {
+    "anomaly_id": "ANOM-CNC-04-VIB-992",
+    "asset_id": "ASSET-MILLING-CNC-04",
+    "asset_name": "5-Axis High-Precision Milling Center CNC-04",
+    "failure_mode": "SPINDLE_FRONT_ROLLER_BEARING_FLAKING",
+    "severity": "CRITICAL_HIGH",
+    "estimated_time_to_failure_hours": 36.0,
+    "confidence_score": 0.96,
+    "recommended_maintenance_type": "EMERGENCY_PREVENTIVE_OVERHAUL",
+    "required_downtime_hours": 4.5,
+    "estimated_unplanned_cost_usd": 85000.0,
+    "preventive_repair_cost_usd": 4200.0,
+    "net_avoided_loss_usd": 80800.0,
+    "recommended_maintenance_window": "NEXT_SHIFT_WINDOW_2200_TO_0230"
+  },
+  {
+    "anomaly_id": "ANOM-IMM-02-TEMP-410",
+    "asset_id": "ASSET-INJECTION-MOLD-02",
+    "asset_name": "Hydraulic Injection Molding Machine IMM-02",
+    "failure_mode": "HYDRAULIC_HEAT_EXCHANGER_FOULING",
+    "severity": "LOW_OBSERVED_TREND",
+    "estimated_time_to_failure_hours": 340.0,
+    "confidence_score": 0.72,
+    "recommended_maintenance_type": "PLANNED_SCHEDULED_SERVICING",
+    "required_downtime_hours": 2.0,
+    "estimated_unplanned_cost_usd": 12000.0,
+    "preventive_repair_cost_usd": 850.0,
+    "net_avoided_loss_usd": 11150.0,
+    "recommended_maintenance_window": "MONTHLY_PM_BLOCK_NEXT_WEEK"
+  }
+]

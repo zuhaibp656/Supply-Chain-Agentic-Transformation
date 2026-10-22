@@ -1,0 +1,23 @@
+[
+  {
+    "scenario_id": "GOLDEN-CROSSDOCK-FLOW-001",
+    "name": "Inbound Carrier Milestone Sync and Direct Door-to-Door Cross-Dock Transfer",
+    "description": "Synchronize Swift inbound delivery at Door Inbound 04 with outbound J.B. Hunt trailer at Bay 12, dispatch direct cross-dock transfer for 4 pallets avoiding staging (18.5 min dwell time, saving 2 touches per pallet), and route evening lot to staging buffer lane B.",
+    "input_query": "Synchronize inbound shipment SHP-SWIFT-20261022-9921 at Door Inbound 04, dispatch direct cross-dock transfers into outbound retail linehauls, and buffer non-immediate pallets.",
+    "expected_tools": [
+      "query_inbound_outbound_crossdock_manifests",
+      "query_inbound_carrier_eta_milestones",
+      "query_outbound_trailer_bay_assignments",
+      "query_crossdock_dwell_time_records",
+      "action_dispatch_direct_crossdock_transfer",
+      "action_hold_pallet_for_staging_buffer"
+    ],
+    "expected_verifications": {
+      "inbound_manifest_id": "XDOCK-MNF-20261022-041",
+      "outbound_bay_id": "BAY-OUTBOUND-12",
+      "pallet_count": 4,
+      "transfer_status": "CROSSDOCK_TRANSFER_DISPATCHED",
+      "hold_status": "PALLET_HELD_IN_STAGING"
+    }
+  }
+]

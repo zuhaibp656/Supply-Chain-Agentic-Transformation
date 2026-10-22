@@ -1,0 +1,26 @@
+[
+  {
+    "correlation_id": "CORR-FLASH-IMM-02-01",
+    "defect_id": "DEF-FLASH-IMM-02",
+    "parameter_name": "Injection Holding Pressure (bar)",
+    "nominal_setpoint": 820.0,
+    "actual_observed_mean": 945.0,
+    "upper_tolerance_limit": 860.0,
+    "lower_tolerance_limit": 780.0,
+    "pearson_correlation_coefficient": 0.88,
+    "p_value": 0.0002,
+    "root_cause_finding": "Holding pressure spiked +125 bar above nominal, exceeding mold clamp force and forcing melt into parting line vents."
+  },
+  {
+    "correlation_id": "CORR-FLASH-IMM-02-02",
+    "defect_id": "DEF-FLASH-IMM-02",
+    "parameter_name": "Barrel Zone 4 Melt Temperature (°C)",
+    "nominal_setpoint": 235.0,
+    "actual_observed_mean": 248.5,
+    "upper_tolerance_limit": 240.0,
+    "lower_tolerance_limit": 230.0,
+    "pearson_correlation_coefficient": 0.74,
+    "p_value": 0.0031,
+    "root_cause_finding": "Super-heated melt viscosity dropped by 24%, accelerating parting line flashing under excessive pack pressure."
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "scenario_id": "GOLDEN-SLOTTING-OPTIMIZER-001",
+    "name": "Fast-Mover Golden Zone Relocation and Wave Congestion Throttling",
+    "description": "Identify fast-mover Oat Milk slotted in mezzanine Aisle 14 (142m walk, 68.2% travel time), dispatch WMS relocation task to Aisle 02 Golden Zone (22m walk, saving 100.8 km of walking daily and 412 labor hours annually), and throttle Bulk Mezzanine wave release from 16 to 10 pickers to eliminate gridlock.",
+    "input_query": "Audit 3D warehouse slotting for fast-moving beverage SKUs at RDC Dallas, eliminate excessive picker travel, and rebalance congested wave release profiles.",
+    "expected_tools": [
+      "query_warehouse_slotting_velocity_tiers",
+      "query_amr_picker_travel_telemetry",
+      "query_wave_release_order_allocations",
+      "query_slot_reassignment_recommendations",
+      "action_execute_slot_reassignment",
+      "action_balance_wave_release_profile"
+    ],
+    "expected_verifications": {
+      "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
+      "target_bin_id": "BIN-AISLE-02-SHELF-02-GOLDEN",
+      "travel_reduction_pct": 84.5,
+      "relocation_status": "RELOCATION_TASK_DISPATCHED",
+      "wave_status": "WAVE_PROFILE_REBALANCED"
+    }
+  }
+]

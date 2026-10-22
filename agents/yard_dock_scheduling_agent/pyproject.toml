@@ -1,0 +1,13 @@
+[project]
+name = "yard-dock-scheduling-agent"
+version = "0.1.0"
+description = "YardPulse Dynamic Yard Gate & Turnaround Demurrage Orchestrator"
+dependencies = [
+    "google-genai>=1.0.0",
+    "google-cloud-aiplatform>=1.70.0",
+    "pydantic>=2.0.0"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

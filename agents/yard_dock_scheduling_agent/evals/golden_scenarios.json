@@ -1,0 +1,23 @@
+[
+  {
+    "scenario_id": "GOLDEN-YARD-DOCK-001",
+    "name": "Fleet Engine Yard Geofence Dwell Triage and Detention Demurrage Elimination",
+    "description": "Detect Swift trailer TRL-SWIFT-7741 at 85 min dwell (35 min remaining before 120-min free detention penalty), dispatch spotter hostler to ready Door Crossdock 08, complete turnaround within 95 min, and neutralize $255.00 carrier demurrage penalty.",
+    "input_query": "Audit yard dwell times at Dallas Yard 02 via Fleet Engine geofencing, expedite trailers nearing 2-hour detention cutoff, and eliminate demurrage penalty fees.",
+    "expected_tools": [
+      "query_yard_trailer_geofence_status",
+      "query_carrier_detention_risk_records",
+      "query_dock_door_turnaround_schedules",
+      "query_yard_spotter_move_tasks",
+      "action_dispatch_yard_spotter_move",
+      "action_resolve_carrier_detention_alert"
+    ],
+    "expected_verifications": {
+      "trailer_id": "TRL-SWIFT-7741",
+      "target_dock_door": "DOOR-CROSSDOCK-08",
+      "fee_avoided_usd": 255.00,
+      "move_status": "SPOTTER_MOVE_DISPATCHED",
+      "resolution_status": "DETENTION_PENALTY_NEUTRALIZED"
+    }
+  }
+]

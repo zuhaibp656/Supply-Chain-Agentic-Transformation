@@ -1,0 +1,26 @@
+name: scrap_defect_root_cause_agent
+display_name: "YieldMax — Yield Optimization & Scrap Defect Root-Cause Agent"
+version: 0.1.0
+runtime: python310
+entrypoint: app.agent:ScrapDefectRootCauseAgent
+framework: google-adk
+vertical: "03_make"
+description: >
+  YieldMax performs real-time scrap loss Pareto diagnostics and multivariate regression
+  across machine process parameters (barrel temperature, injection pressure, screw speed).
+  It isolates root causes of flash, short-shot, and warpage defects, triggers automated
+  recipe setpoint corrections in SCADA/MES, and posts scrap variance write-offs in SAP CO.
+
+parameters:
+  model: "gemini-3-pro-preview"
+  temperature: 0.1
+  max_output_tokens: 4096
+
+tools:
+  - app.tools:list_systems
+  - app.tools:query_scrap_loss_pareto_records
+  - app.tools:query_batch_process_parameter_correlations
+  - app.tools:query_scrap_financial_cost_ledger
+  - app.tools:query_scada_setpoint_recommendations
+  - app.tools:action_update_scada_recipe_setpoints
+  - app.tools:action_post_scrap_variance_adjustment

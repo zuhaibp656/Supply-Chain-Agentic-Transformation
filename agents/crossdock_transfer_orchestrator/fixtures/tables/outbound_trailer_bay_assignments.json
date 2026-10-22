@@ -1,0 +1,26 @@
+[
+  {
+    "bay_id": "BAY-OUTBOUND-12",
+    "outbound_trailer_id": "TRL-OUT-JB-HUNT-4481",
+    "carrier_name": "J.B. Hunt Transport",
+    "destination_dc": "RDC-HOUSTON-05",
+    "route_code": "RTE-TX-SOUTH-HOU-01",
+    "current_pallet_load_count": 16,
+    "max_pallet_capacity": 26,
+    "available_pallet_slots": 10,
+    "scheduled_departure_timestamp": "2026-10-22T07:30:00Z",
+    "dock_status": "BAY_OPEN_ACCEPTING_TRANSFERS"
+  },
+  {
+    "bay_id": "BAY-OUTBOUND-14",
+    "outbound_trailer_id": "TRL-OUT-SCHNEIDER-8820",
+    "carrier_name": "Schneider National",
+    "destination_dc": "FDC-AUSTIN-04",
+    "route_code": "RTE-TX-CENTRAL-ATX-02",
+    "current_pallet_load_count": 18,
+    "max_pallet_capacity": 26,
+    "available_pallet_slots": 8,
+    "scheduled_departure_timestamp": "2026-10-22T08:00:00Z",
+    "dock_status": "BAY_OPEN_ACCEPTING_TRANSFERS"
+  }
+]

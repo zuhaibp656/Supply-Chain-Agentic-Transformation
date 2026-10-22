@@ -1,0 +1,15 @@
+[
+  {
+    "ledger_id": "SCRAP-LEDGER-202610-09",
+    "production_order_id": "ORD-PROD-202610-771",
+    "asset_id": "ASSET-INJECTION-MOLD-02",
+    "material_id": "SKU-BEV-CAP-TETHERED-28MM",
+    "scrap_quantity_pieces": 2210,
+    "unit_material_cost_usd": 0.082,
+    "unit_conversion_cost_usd": 0.045,
+    "total_scrap_financial_loss_usd": 2806.70,
+    "sap_cost_center": "CC-MFG-AUSTIN-MOLD-20",
+    "gl_account": "GL-510020-SCRAP-EXPENSE",
+    "settlement_status": "PENDING_VARIANCE_POSTING"
+  }
+]

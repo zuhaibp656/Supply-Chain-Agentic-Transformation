@@ -1,0 +1,22 @@
+name: warehouse_slotting_optimizer
+display_name: "SlotMaster — Dynamic 3D Warehouse Wave & Slotting Optimizer"
+description: "3D warehouse aisle velocity slotting, dynamic picker travel distance minimization, AMR swarm dispatching, and wave release balancing."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "04 · Fulfill"
+category: "Warehousing, Inwarding QA & Intralogistics"
+tags:
+  - slotting
+  - warehouse-management
+  - wave-release
+  - amr-swarm
+  - travel-reduction
+entrypoint: "app.agent:WarehouseSlottingOptimizer"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_warehouse_slotting_velocity_tiers"
+  - "app.tools:query_amr_picker_travel_telemetry"
+  - "app.tools:query_wave_release_order_allocations"
+  - "app.tools:query_slot_reassignment_recommendations"
+  - "app.tools:action_execute_slot_reassignment"
+  - "app.tools:action_balance_wave_release_profile"

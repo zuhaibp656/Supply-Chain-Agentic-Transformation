@@ -1,0 +1,22 @@
+[
+  {
+    "customer_id": "CUST-KROGER-CORP",
+    "customer_name": "Kroger National Distribution",
+    "contract_tier": "TIER_1_STRATEGIC",
+    "minimum_fill_rate_sla_pct": 98.5,
+    "on_time_in_full_otif_sla_pct": 97.0,
+    "otif_penalty_fee_per_late_day_usd": 2500.0,
+    "reserved_allocation_quota_units": 20000,
+    "status": "PROTECTED_STRATEGIC_TIER"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP",
+    "customer_name": "Lone Star Organic Grocers Co-op",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 92.0,
+    "on_time_in_full_otif_sla_pct": 90.0,
+    "otif_penalty_fee_per_late_day_usd": 0.0,
+    "reserved_allocation_quota_units": 0,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  }
+]

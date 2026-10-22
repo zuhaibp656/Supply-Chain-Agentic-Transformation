@@ -1,0 +1,22 @@
+name: crossdock_transfer_orchestrator
+display_name: "CrossDockFlow — Real-Time Cross-Dock Flow-Through Orchestrator"
+description: "Synchronizes inbound supplier truck arrival milestones with outbound retail trailers, routing pallets directly across dock doors without staging."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "04 · Fulfill"
+category: "Warehousing, Inwarding QA & Intralogistics"
+tags:
+  - cross-dock
+  - flow-through
+  - dock-door
+  - dwell-time-reduction
+  - manhattan-wms
+entrypoint: "app.agent:CrossdockTransferOrchestrator"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_inbound_outbound_crossdock_manifests"
+  - "app.tools:query_inbound_carrier_eta_milestones"
+  - "app.tools:query_outbound_trailer_bay_assignments"
+  - "app.tools:query_crossdock_dwell_time_records"
+  - "app.tools:action_dispatch_direct_crossdock_transfer"
+  - "app.tools:action_hold_pallet_for_staging_buffer"

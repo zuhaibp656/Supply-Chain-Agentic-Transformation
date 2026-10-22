@@ -1,0 +1,42 @@
+[
+  {
+    "metric_id": "OEE-MILLING-CNC-04-2026W42",
+    "asset_id": "ASSET-MILLING-CNC-04",
+    "production_line": "LINE-MACHINING-BAY-02",
+    "shift_id": "SHIFT-MORNING-A",
+    "planned_production_time_min": 480.0,
+    "operating_time_min": 352.0,
+    "unplanned_downtime_min": 128.0,
+    "availability_pct": 73.33,
+    "ideal_run_rate_units_hr": 60.0,
+    "actual_output_units": 298,
+    "performance_pct": 84.66,
+    "good_units": 274,
+    "defect_units": 24,
+    "quality_pct": 91.95,
+    "overall_oee_pct": 57.08,
+    "target_world_class_oee_pct": 85.00,
+    "primary_loss_category": "UNPLANNED_BEARING_VIBRATION_INTERLOCK",
+    "status": "CRITICAL_OEE_SUB_PAR"
+  },
+  {
+    "metric_id": "OEE-INJECT-IMM-02-2026W42",
+    "asset_id": "ASSET-INJECTION-MOLD-02",
+    "production_line": "LINE-MOLDING-BAY-01",
+    "shift_id": "SHIFT-MORNING-A",
+    "planned_production_time_min": 480.0,
+    "operating_time_min": 465.0,
+    "unplanned_downtime_min": 15.0,
+    "availability_pct": 96.88,
+    "ideal_run_rate_units_hr": 120.0,
+    "actual_output_units": 912,
+    "performance_pct": 98.06,
+    "good_units": 908,
+    "defect_units": 4,
+    "quality_pct": 99.56,
+    "overall_oee_pct": 94.58,
+    "target_world_class_oee_pct": 85.00,
+    "primary_loss_category": "ROUTINE_PURGE_NOZZLE_CLEANUP",
+    "status": "EXCELLENT_WORLD_CLASS"
+  }
+]

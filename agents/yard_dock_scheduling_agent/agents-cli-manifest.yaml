@@ -1,0 +1,22 @@
+name: yard_dock_scheduling_agent
+display_name: "YardPulse — Dynamic Yard Gate & Turnaround Demurrage Orchestrator"
+description: "Google Maps Fleet Engine geofencing, trailer spotter hostler optimization, gate queue prediction, and 2-hour detention penalty elimination."
+version: "0.1.0"
+model: "gemini-3-pro-preview"
+vertical: "04 · Fulfill"
+category: "Warehousing, Inwarding QA & Intralogistics"
+tags:
+  - yard-management
+  - fleet-engine
+  - geofencing
+  - detention-avoidance
+  - spotter-truck
+entrypoint: "app.agent:YardDockSchedulingAgent"
+tools:
+  - "app.tools:list_systems"
+  - "app.tools:query_yard_trailer_geofence_status"
+  - "app.tools:query_yard_spotter_move_tasks"
+  - "app.tools:query_dock_door_turnaround_schedules"
+  - "app.tools:query_carrier_detention_risk_records"
+  - "app.tools:action_dispatch_yard_spotter_move"
+  - "app.tools:action_resolve_carrier_detention_alert"
