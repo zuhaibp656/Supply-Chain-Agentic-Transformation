@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -72,10 +83,13 @@ def query_warehouse_slotting_velocity_tiers(
 ) -> Dict[str, Any]:
     """Query SKU pick velocity tiers, pack station travel distances, and ergonomic golden zone status."""
     rows = _read_json("warehouse_slotting_velocity_tiers.json")
+    all_rows = list(rows)
     if sku_id:
         rows = [r for r in rows if sku_id.lower() in r.get("sku_id", "").lower()]
     if velocity_tier:
         rows = [r for r in rows if velocity_tier.lower() in r.get("velocity_tier", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "manhattan_active_wms_slotting",
         "table": "warehouse_slotting_velocity_tiers",
@@ -91,10 +105,13 @@ def query_amr_picker_travel_telemetry(
 ) -> Dict[str, Any]:
     """Query AMR robot travel distance, picker walking percentage, and aisle congestion wait times."""
     rows = _read_json("amr_picker_travel_telemetry.json")
+    all_rows = list(rows)
     if dc_id:
         rows = [r for r in rows if dc_id.lower() in r.get("dc_id", "").lower()]
     if wave_id:
         rows = [r for r in rows if wave_id.lower() in r.get("wave_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "kion_amr_fleet_manager",
         "table": "amr_picker_travel_telemetry",
@@ -111,12 +128,15 @@ def query_wave_release_order_allocations(
 ) -> Dict[str, Any]:
     """Query warehouse wave release status, active picker density, and congestion throttling recommendations."""
     rows = _read_json("wave_release_order_allocations.json")
+    all_rows = list(rows)
     if dc_id:
         rows = [r for r in rows if dc_id.lower() in r.get("dc_id", "").lower()]
     if wave_id:
         rows = [r for r in rows if wave_id.lower() in r.get("wave_id", "").lower()]
     if zone_id:
         rows = [r for r in rows if zone_id.lower() in r.get("zone_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "wms_wave_release_engine",
         "table": "wave_release_order_allocations",
@@ -133,12 +153,15 @@ def query_slot_reassignment_recommendations(
 ) -> Dict[str, Any]:
     """Query slot reassignment recommendations, travel reduction estimates, and annual labor savings."""
     rows = _read_json("slot_reassignment_recommendations.json")
+    all_rows = list(rows)
     if sku_id:
         rows = [r for r in rows if sku_id.lower() in r.get("sku_id", "").lower()]
     if current_bin_id:
         rows = [r for r in rows if current_bin_id.lower() in r.get("current_bin_id", "").lower()]
     if recommended_bin_id:
         rows = [r for r in rows if recommended_bin_id.lower() in r.get("recommended_bin_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "ergonomic_pick_face_ledger",
         "table": "slot_reassignment_recommendations",

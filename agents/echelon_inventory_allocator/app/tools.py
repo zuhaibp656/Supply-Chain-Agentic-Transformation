@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -72,10 +83,13 @@ def query_multi_echelon_safety_stock_recommendations(
 ) -> Dict[str, Any]:
     """Query Clark-Scarf multi-echelon safety stock recommendations, capital freed, and target SLAs."""
     rows = _read_json("multi_echelon_safety_stock_recommendations.json")
+    all_rows = list(rows)
     if sku_id:
         rows = [r for r in rows if sku_id.lower() in r.get("sku_id", "").lower()]
     if echelon_tier:
         rows = [r for r in rows if echelon_tier.lower() in r.get("echelon_tier", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "sap_ibp_meio_engine",
         "table": "multi_echelon_safety_stock_recommendations",
@@ -91,10 +105,13 @@ def query_dc_inventory_echelon_balances(
 ) -> Dict[str, Any]:
     """Query on-hand stock, ATP balances, days of supply, and stockout alert status across DC tiers."""
     rows = _read_json("dc_inventory_echelon_balances.json")
+    all_rows = list(rows)
     if dc_id:
         rows = [r for r in rows if dc_id.lower() in r.get("dc_id", "").lower()]
     if sku_id:
         rows = [r for r in rows if sku_id.lower() in r.get("sku_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "manhattan_wms_dc_inventory",
         "table": "dc_inventory_echelon_balances",
@@ -111,12 +128,15 @@ def query_lateral_dc_rebalance_transfers(
 ) -> Dict[str, Any]:
     """Query lateral inter-DC stock rebalancing transfers, avoided stockout savings, and transport modes."""
     rows = _read_json("lateral_dc_rebalance_transfers.json")
+    all_rows = list(rows)
     if transfer_id:
         rows = [r for r in rows if transfer_id.lower() in r.get("transfer_id", "").lower()]
     if source_dc_id:
         rows = [r for r in rows if source_dc_id.lower() in r.get("source_dc_id", "").lower()]
     if destination_dc_id:
         rows = [r for r in rows if destination_dc_id.lower() in r.get("destination_dc_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "lateral_transshipment_service",
         "table": "lateral_dc_rebalance_transfers",
@@ -132,10 +152,13 @@ def query_echelon_service_level_projections(
 ) -> Dict[str, Any]:
     """Query stochastic service level projections, baseline stockout risk, and ATP shortfall avoidance."""
     rows = _read_json("echelon_service_level_projections.json")
+    all_rows = list(rows)
     if sku_id:
         rows = [r for r in rows if sku_id.lower() in r.get("sku_id", "").lower()]
     if network_node_id:
         rows = [r for r in rows if network_node_id.lower() in r.get("network_node_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "stockout_risk_predictor",
         "table": "echelon_service_level_projections",

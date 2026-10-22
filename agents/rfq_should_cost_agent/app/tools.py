@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -71,8 +82,11 @@ def query_material_should_cost_bom(
 ) -> Dict[str, Any]:
     """Query bottom-up parametric should-cost models and engineering cost drivers."""
     rows = _read_json("material_should_cost_bom.json")
+    all_rows = list(rows)
     if part_number:
         rows = [r for r in rows if part_number.lower() in r.get("part_number", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "bigquery_commodity_lake",
         "table": "material_should_cost_bom",
@@ -87,8 +101,11 @@ def query_commodity_index_rates(
 ) -> Dict[str, Any]:
     """Query live London Metal Exchange (LME), ICIS resin, and ocean freight market indices."""
     rows = _read_json("commodity_index_rates.json")
+    all_rows = list(rows)
     if index_symbol:
         rows = [r for r in rows if index_symbol.lower() in r.get("index_symbol", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "bigquery_commodity_lake",
         "table": "commodity_index_rates",
@@ -104,10 +121,13 @@ def query_supplier_rfq_bids(
 ) -> Dict[str, Any]:
     """Query Document AI normalized supplier quote proposals and should-cost variances."""
     rows = _read_json("supplier_rfq_bids.json")
+    all_rows = list(rows)
     if part_number:
         rows = [r for r in rows if part_number.lower() in r.get("part_number", "").lower()]
     if supplier_id:
         rows = [r for r in rows if supplier_id.lower() in r.get("supplier_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "document_ai_rfq_vault",
         "table": "supplier_rfq_bids",
@@ -123,10 +143,13 @@ def query_combinatorial_award_scenarios(
 ) -> Dict[str, Any]:
     """Query OR-Tools solved dual-source award allocations balancing cost and security."""
     rows = _read_json("award_allocation_scenarios.json")
+    all_rows = list(rows)
     if scenario_id:
         rows = [r for r in rows if scenario_id.lower() in r.get("scenario_id", "").lower()]
     if part_number:
         rows = [r for r in rows if part_number.lower() in r.get("part_number", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "google_ortools_procurement",
         "table": "award_allocation_scenarios",

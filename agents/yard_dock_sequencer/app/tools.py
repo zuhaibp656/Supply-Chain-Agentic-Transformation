@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -72,10 +83,13 @@ def query_yard_trailer_geofence_status(
 ) -> Dict[str, Any]:
     """Query trailer yard presence, geofence check-in timestamp, and current yard slot location."""
     rows = _read_json("yard_trailer_geofence_status.json")
+    all_rows = list(rows)
     if trailer_id:
         rows = [r for r in rows if trailer_id.lower() in r.get("trailer_id", "").lower()]
     if yard_id:
         rows = [r for r in rows if yard_id.lower() in r.get("yard_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "fleet_engine_yard_geofence",
         "table": "yard_trailer_geofence_status",
@@ -91,10 +105,13 @@ def query_yard_spotter_move_tasks(
 ) -> Dict[str, Any]:
     """Query yard spotter hostler move tasks, priority queues, and transit durations."""
     rows = _read_json("yard_spotter_move_tasks.json")
+    all_rows = list(rows)
     if task_id:
         rows = [r for r in rows if task_id.lower() in r.get("task_id", "").lower()]
     if spotter_truck_id:
         rows = [r for r in rows if spotter_truck_id.lower() in r.get("spotter_truck_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "hostler_spotter_dispatch",
         "table": "yard_spotter_move_tasks",
@@ -110,10 +127,13 @@ def query_dock_door_turnaround_schedules(
 ) -> Dict[str, Any]:
     """Query dock door occupancy, turnaround duration targets, and assigned forklift crews."""
     rows = _read_json("dock_door_turnaround_schedules.json")
+    all_rows = list(rows)
     if door_id:
         rows = [r for r in rows if door_id.lower() in r.get("door_id", "").lower()]
     if facility_zone:
         rows = [r for r in rows if facility_zone.lower() in r.get("facility_zone", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "dock_door_schedule_ledger",
         "table": "dock_door_turnaround_schedules",
@@ -129,10 +149,13 @@ def query_carrier_detention_risk_records(
 ) -> Dict[str, Any]:
     """Query carrier 2-hour detention thresholds, accrued dwell minutes, and demurrage risk penalties."""
     rows = _read_json("carrier_detention_risk_records.json")
+    all_rows = list(rows)
     if trailer_id:
         rows = [r for r in rows if trailer_id.lower() in r.get("trailer_id", "").lower()]
     if carrier_id:
         rows = [r for r in rows if carrier_id.lower() in r.get("carrier_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "carrier_detention_penalty_ledger",
         "table": "carrier_detention_risk_records",

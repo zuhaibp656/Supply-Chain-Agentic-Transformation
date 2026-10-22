@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -78,8 +89,11 @@ def query_corridor_delivery_orders(
 ) -> Dict[str, Any]:
     """Query corridor_delivery_orders records from google_maps_routes_preferred."""
     rows = _read_json("corridor_delivery_orders.json")
+    all_rows = list(rows)
     if corridor_id:
         rows = [r for r in rows if corridor_id.lower() in str(r.get("corridor_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "google_maps_routes_preferred",
         "table": "corridor_delivery_orders",
@@ -93,8 +107,11 @@ def query_fleet_vehicle_telematics_hos(
 ) -> Dict[str, Any]:
     """Query fleet_vehicle_telematics_hos records from or_tools_cvrptw_solver."""
     rows = _read_json("fleet_vehicle_telematics_hos.json")
+    all_rows = list(rows)
     if vehicle_id:
         rows = [r for r in rows if vehicle_id.lower() in str(r.get("vehicle_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "or_tools_cvrptw_solver",
         "table": "fleet_vehicle_telematics_hos",
@@ -108,8 +125,11 @@ def query_google_maps_corridor_routes(
 ) -> Dict[str, Any]:
     """Query google_maps_corridor_routes records from samsara_eld_telematics."""
     rows = _read_json("google_maps_corridor_routes.json")
+    all_rows = list(rows)
     if route_id:
         rows = [r for r in rows if route_id.lower() in str(r.get("route_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "samsara_eld_telematics",
         "table": "google_maps_corridor_routes",
@@ -123,8 +143,11 @@ def query_backhaul_consolidation_opportunities(
 ) -> Dict[str, Any]:
     """Query backhaul_consolidation_opportunities records from backhaul_freight_matcher."""
     rows = _read_json("backhaul_consolidation_opportunities.json")
+    all_rows = list(rows)
     if backhaul_id:
         rows = [r for r in rows if backhaul_id.lower() in str(r.get("backhaul_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "backhaul_freight_matcher",
         "table": "backhaul_consolidation_opportunities",

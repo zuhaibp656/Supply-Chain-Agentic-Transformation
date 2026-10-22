@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -79,8 +90,11 @@ def query_plm_engineering_change_orders(
 ) -> Dict[str, Any]:
     """Query plm_engineering_change_orders records from teamcenter_plm_eco_stream."""
     rows = _read_json("plm_engineering_change_orders.json")
+    all_rows = list(rows)
     if eco_id:
         rows = [r for r in rows if eco_id.lower() in str(r.get("eco_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "teamcenter_plm_eco_stream",
         "table": "plm_engineering_change_orders",
@@ -94,8 +108,11 @@ def query_multi_plant_predecessor_inventory_runout(
 ) -> Dict[str, Any]:
     """Query multi_plant_predecessor_inventory_runout records from sap_mm_pp_runout_ledger."""
     rows = _read_json("multi_plant_predecessor_inventory_runout.json")
+    all_rows = list(rows)
     if eco_id:
         rows = [r for r in rows if eco_id.lower() in str(r.get("eco_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "sap_mm_pp_runout_ledger",
         "table": "multi_plant_predecessor_inventory_runout",
@@ -109,8 +126,11 @@ def query_eco_optimal_cutover_schedules(
 ) -> Dict[str, Any]:
     """Query eco_optimal_cutover_schedules records from or_tools_eco_cutover_solver."""
     rows = _read_json("eco_optimal_cutover_schedules.json")
+    all_rows = list(rows)
     if eco_id:
         rows = [r for r in rows if eco_id.lower() in str(r.get("eco_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "or_tools_eco_cutover_solver",
         "table": "eco_optimal_cutover_schedules",
@@ -124,8 +144,11 @@ def query_erp_bom_effectivity_sync_audit(
 ) -> Dict[str, Any]:
     """Query erp_bom_effectivity_sync_audit records from ariba_po_revision_updater."""
     rows = _read_json("erp_bom_effectivity_sync_audit.json")
+    all_rows = list(rows)
     if eco_id:
         rows = [r for r in rows if eco_id.lower() in str(r.get("eco_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "ariba_po_revision_updater",
         "table": "erp_bom_effectivity_sync_audit",

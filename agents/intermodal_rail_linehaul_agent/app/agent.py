@@ -59,7 +59,7 @@ def enforce_tool_contract(tool_name: str, args: Dict[str, Any]) -> Optional[Dict
 class IntermodalRailLinehaulAgent:
     """Production Google ADK Agent conforming to Vertex AI Agent Engine."""
 
-    def __init__(self, model: str = "gemini-3-pro-preview"):
+    def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "intermodal_rail_linehaul_agent"
         self.model = model
         self.system_instruction = _INSTRUCTION
@@ -179,16 +179,102 @@ class IntermodalRailLinehaulAgent:
 # Google ADK & Vertex AI Reasoning Engine Integration
 # ==============================================================================
 try:
+    import os
+    import uuid
+    from functools import cached_property
     from google.adk.agents import Agent
+    from google.adk.agents.callback_context import CallbackContext
     from google.adk.apps import App
     from google.adk.models import Gemini
-    from google.genai import types
+    from google.adk.models.llm_request import LlmRequest
+    from google.adk.models.llm_response import LlmResponse
+    from google.genai import Client, types
     from vertexai.preview.reasoning_engines import AdkApp
+    from .render.a2ui_envelope import A2A_DATA_PART_OPEN_TAG
+
+    class GlobalGemini(Gemini):
+        """Routes Gemini 3.1 Pro & 3.8 Flash calls to the global Vertex AI endpoint even when the Reasoning Engine runs in us-central1."""
+
+        @cached_property
+        def api_client(self) -> Client:
+            return Client(
+                vertexai=True,
+                project=os.environ.get("GOOGLE_CLOUD_PROJECT", "zuhaibp-ai"),
+                location="global",
+                http_options=types.HttpOptions(
+                    headers=self._tracking_headers(),
+                    retry_options=self.retry_options,
+                ),
+            )
+
+    def _sanitize_llm_request(
+        callback_context: Optional[CallbackContext] = None,
+        llm_request: Optional[LlmRequest] = None,
+        **_: Any,
+    ) -> None:
+        if llm_request is None or not llm_request.contents:
+            return None
+        for content in llm_request.contents:
+            if not content.parts:
+                continue
+            cleaned: List[types.Part] = []
+            for part in content.parts:
+                if getattr(part, "inline_data", None) is not None:
+                    continue
+                t = getattr(part, "text", None)
+                if t and A2A_DATA_PART_OPEN_TAG in t:
+                    continue
+                cleaned.append(part)
+            content.parts = cleaned or [types.Part(text="[Visual Chart Surface Rendered in UI]")]
+        return None
+
+    def _append_verified_report(
+        callback_context: Optional[CallbackContext] = None,
+        llm_response: Optional[LlmResponse] = None,
+        **_: Any,
+    ) -> Optional[LlmResponse]:
+        if llm_response is None or llm_response.content is None:
+            return None
+        parts = llm_response.content.parts or []
+        has_call = any(getattr(p, "function_call", None) is not None for p in parts)
+        if has_call:
+            return llm_response
+        try:
+            scenario = IntermodalRailLinehaulAgent().run_scenario("live_turn")
+            report_md = scenario.get("markdown", "")
+            if report_md:
+                idx = max((i for i, p in enumerate(parts) if getattr(p, "text", None)), default=-1)
+                if idx >= 0:
+                    existing = (parts[idx].text or "").strip()
+                    if "#### 📊" not in existing:
+                        parts[idx] = types.Part(text=f"{existing}\n\n---\n\n{report_md}")
+                else:
+                    parts.append(types.Part(text=report_md))
+            llm_response.content.parts = parts
+        except Exception:
+            pass
+        return llm_response
+
+    def _emit_a2ui_surface(
+        callback_context: Optional[CallbackContext] = None,
+        **_: Any,
+    ) -> Optional[types.Content]:
+        try:
+            surface_id = f"intermodal-r-{uuid.uuid4().hex[:8]}"
+            a2ui_parts = build_intermodal_rail_linehaul_agent_surface(surface_id, spec=create_intermodal_rail_linehaul_agent_chart_spec())
+            if a2ui_parts:
+                return types.Content(role="model", parts=a2ui_parts)
+        except Exception:
+            pass
+        return None
 
     root_agent = Agent(
         name="intermodal_rail_linehaul_agent",
         description="Optimizes long-haul (500+ mile) freight conversion from over-the-road diesel trucks to double-stack COFC intermodal rail, synchronizing Railinc EDI 404/417 consists and ramp drayage.",
-        model=Gemini(model="gemini-3-pro-preview", retry_options=types.HttpRetryOptions(attempts=3)),
+        model=GlobalGemini(
+            model="gemini-3.1-pro-preview",
+            retry_options=types.HttpRetryOptions(attempts=3),
+        ),
         generate_content_config=types.GenerateContentConfig(
             max_output_tokens=4096,
             temperature=0.0,
@@ -196,6 +282,9 @@ try:
         ),
         instruction=_INSTRUCTION,
         tools=_AVAILABLE_TOOLS,
+        before_model_callback=_sanitize_llm_request,
+        after_model_callback=_append_verified_report,
+        after_agent_callback=_emit_a2ui_surface,
     )
 
     app = App(root_agent=root_agent, name="intermodal_rail_linehaul_agent")
@@ -207,16 +296,23 @@ try:
             super().__init__(agent=agent, **kwargs)
             self._scenario_agent = IntermodalRailLinehaulAgent()
 
+        @staticmethod
+        def _pin_env() -> None:
+            os.environ["GOOGLE_GENAI_USE_VERTEXAI"] = "TRUE"
+            os.environ.setdefault("GOOGLE_CLOUD_PROJECT", "zuhaibp-ai")
+
         def query(self, *args: Any, **kwargs: Any) -> Any:
+            self._pin_env()
             return super().query(*args, **kwargs)
 
         def stream_query(self, *args: Any, **kwargs: Any) -> Any:
+            self._pin_env()
             yield from super().stream_query(*args, **kwargs)
 
         def run_scenario(self, query: str = "") -> Dict[str, Any]:
             return self._scenario_agent.run_scenario(query)
 
 except ImportError:
-    root_agent = IntermodalRailLinehaulAgent()  # type: ignore
+    root_agent = None  # type: ignore
     app = None  # type: ignore
     IntermodalRailLinehaulAgentAdkApp = None  # type: ignore

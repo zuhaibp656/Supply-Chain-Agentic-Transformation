@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -72,10 +83,13 @@ def query_inbound_outbound_crossdock_manifests(
 ) -> Dict[str, Any]:
     """Query inbound cross-dock manifests, eligible flow-through pallet counts, and assigned doors."""
     rows = _read_json("inbound_outbound_crossdock_manifests.json")
+    all_rows = list(rows)
     if manifest_id:
         rows = [r for r in rows if manifest_id.lower() in r.get("manifest_id", "").lower()]
     if supplier_id:
         rows = [r for r in rows if supplier_id.lower() in r.get("supplier_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "manhattan_crossdock_sorter",
         "table": "inbound_outbound_crossdock_manifests",
@@ -91,10 +105,13 @@ def query_inbound_carrier_eta_milestones(
 ) -> Dict[str, Any]:
     """Query carrier arrival milestones, geofence check-ins, and unloading completion estimates."""
     rows = _read_json("inbound_carrier_eta_milestones.json")
+    all_rows = list(rows)
     if shipment_id:
         rows = [r for r in rows if shipment_id.lower() in r.get("shipment_id", "").lower()]
     if carrier_id:
         rows = [r for r in rows if carrier_id.lower() in r.get("carrier_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "carrier_milestone_edi_feed",
         "table": "inbound_carrier_eta_milestones",
@@ -110,10 +127,13 @@ def query_outbound_trailer_bay_assignments(
 ) -> Dict[str, Any]:
     """Query outbound trailer bay capacities, scheduled departure cutoffs, and available pallet slots."""
     rows = _read_json("outbound_trailer_bay_assignments.json")
+    all_rows = list(rows)
     if bay_id:
         rows = [r for r in rows if bay_id.lower() in r.get("bay_id", "").lower()]
     if destination_dc:
         rows = [r for r in rows if destination_dc.lower() in r.get("destination_dc", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "outbound_retail_wave_ledger",
         "table": "outbound_trailer_bay_assignments",
@@ -129,10 +149,13 @@ def query_crossdock_dwell_time_records(
 ) -> Dict[str, Any]:
     """Query pallet dwell times, forklift transfer distances, and labor touch reduction counts."""
     rows = _read_json("crossdock_dwell_time_records.json")
+    all_rows = list(rows)
     if pallet_id:
         rows = [r for r in rows if pallet_id.lower() in r.get("pallet_id", "").lower()]
     if transfer_status:
         rows = [r for r in rows if transfer_status.lower() in r.get("transfer_status", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "pallet_flowthrough_telemetry",
         "table": "crossdock_dwell_time_records",

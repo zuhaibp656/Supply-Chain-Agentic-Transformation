@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -79,8 +90,11 @@ def query_distributor_dms_live_inventory(
 ) -> Dict[str, Any]:
     """Query distributor_dms_live_inventory records from dms_distributor_inventory_cloud."""
     rows = _read_json("distributor_dms_live_inventory.json")
+    all_rows = list(rows)
     if distributor_id:
         rows = [r for r in rows if distributor_id.lower() in str(r.get("distributor_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "dms_distributor_inventory_cloud",
         "table": "distributor_dms_live_inventory",
@@ -94,8 +108,11 @@ def query_fso_daily_beat_store_outlets(
 ) -> Dict[str, Any]:
     """Query fso_daily_beat_store_outlets records from sfa_field_beat_optimizer."""
     rows = _read_json("fso_daily_beat_store_outlets.json")
+    all_rows = list(rows)
     if fso_id:
         rows = [r for r in rows if fso_id.lower() in str(r.get("fso_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "sfa_field_beat_optimizer",
         "table": "fso_daily_beat_store_outlets",
@@ -109,8 +126,11 @@ def query_pitch_to_stock_substitution_rules(
 ) -> Dict[str, Any]:
     """Query pitch_to_stock_substitution_rules records from pitch_to_stock_recommender."""
     rows = _read_json("pitch_to_stock_substitution_rules.json")
+    all_rows = list(rows)
     if stocked_out_sku:
         rows = [r for r in rows if stocked_out_sku.lower() in str(r.get("stocked_out_sku", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "pitch_to_stock_recommender",
         "table": "pitch_to_stock_substitution_rules",
@@ -124,8 +144,11 @@ def query_primary_replenishment_auto_orders(
 ) -> Dict[str, Any]:
     """Query primary_replenishment_auto_orders records from sap_sd_primary_billing."""
     rows = _read_json("primary_replenishment_auto_orders.json")
+    all_rows = list(rows)
     if distributor_id:
         rows = [r for r in rows if distributor_id.lower() in str(r.get("distributor_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "sap_sd_primary_billing",
         "table": "primary_replenishment_auto_orders",

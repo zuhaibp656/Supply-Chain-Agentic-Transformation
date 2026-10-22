@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -72,10 +83,13 @@ def query_unconstrained_demand_gaps(
 ) -> Dict[str, Any]:
     """Query unconstrained commercial demand vs constrained supply gaps."""
     rows = _read_json("sop_unconstrained_demand.json")
+    all_rows = list(rows)
     if plan_month:
         rows = [r for r in rows if plan_month in r.get("plan_month", "")]
     if business_unit:
         rows = [r for r in rows if business_unit.lower() in r.get("business_unit", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "bigquery_cortex_pnl",
         "table": "sop_unconstrained_demand",
@@ -91,10 +105,13 @@ def query_plant_line_capacities(
 ) -> Dict[str, Any]:
     """Query manufacturing plant line utilization, shifts, and bottleneck work centers."""
     rows = _read_json("plant_line_capacities.json")
+    all_rows = list(rows)
     if facility_id:
         rows = [r for r in rows if facility_id.lower() in r.get("facility_id", "").lower()]
     if is_bottleneck:
         rows = [r for r in rows if r.get("is_bottleneck") is True]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "spanner_constraint_graph",
         "table": "plant_line_capacities",
@@ -110,10 +127,13 @@ def query_supplier_allocations(
 ) -> Dict[str, Any]:
     """Query Tier-1/Tier-2 component allocation limits, supplier MOQs, and lead times."""
     rows = _read_json("supplier_component_allocations.json")
+    all_rows = list(rows)
     if supplier_id:
         rows = [r for r in rows if supplier_id.lower() in r.get("supplier_id", "").lower()]
     if component_id:
         rows = [r for r in rows if component_id.lower() in r.get("component_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "spanner_constraint_graph",
         "table": "supplier_component_allocations",
@@ -128,8 +148,11 @@ def query_sop_scenario_evaluations(
 ) -> Dict[str, Any]:
     """Query Google OR-Tools multi-criteria Pareto trade-off evaluations."""
     rows = _read_json("sop_scenario_tradeoffs.json")
+    all_rows = list(rows)
     if scenario_id:
         rows = [r for r in rows if scenario_id.lower() in r.get("scenario_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "google_ortools_milp",
         "table": "sop_scenario_tradeoffs",

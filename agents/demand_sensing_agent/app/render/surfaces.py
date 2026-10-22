@@ -5,6 +5,7 @@ from .a2ui_envelope import wrap_a2ui_part
 from .a2ui_lifecycle import (
     build_create_surface,
     build_update_components,
+    build_update_data_model,
 )
 from .charts import create_demand_sensing_spec
 
@@ -19,6 +20,7 @@ def build_demand_sensing_surface(
 
     parts = [
         wrap_a2ui_part(build_create_surface(surface_id)),
+        wrap_a2ui_part(build_update_data_model(surface_id, {"spec": chart_spec})),
         wrap_a2ui_part(build_update_components(
             surface_id,
             [

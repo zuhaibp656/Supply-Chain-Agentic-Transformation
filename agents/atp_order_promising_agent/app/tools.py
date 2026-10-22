@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -72,10 +83,13 @@ def query_realtime_sku_atp_allocations(
 ) -> Dict[str, Any]:
     """Query real-time available-to-promise (ATP) inventory, capable-to-promise (CTP), and tier reserves."""
     rows = _read_json("realtime_sku_atp_allocations.json")
+    all_rows = list(rows)
     if sku_id:
         rows = [r for r in rows if sku_id.lower() in r.get("sku_id", "").lower()]
     if network_node_id:
         rows = [r for r in rows if network_node_id.lower() in r.get("network_node_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "spanner_realtime_atp_engine",
         "table": "realtime_sku_atp_allocations",
@@ -91,10 +105,13 @@ def query_customer_tier_sla_commitments(
 ) -> Dict[str, Any]:
     """Query customer contract tier SLAs, minimum fill rate commitments, and OTIF penalty liabilities."""
     rows = _read_json("customer_tier_sla_commitments.json")
+    all_rows = list(rows)
     if customer_id:
         rows = [r for r in rows if customer_id.lower() in r.get("customer_id", "").lower()]
     if contract_tier:
         rows = [r for r in rows if contract_tier.lower() in r.get("contract_tier", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "customer_contract_tier_ledger",
         "table": "customer_tier_sla_commitments",
@@ -110,10 +127,13 @@ def query_inbound_customer_order_requests(
 ) -> Dict[str, Any]:
     """Query inbound customer order requests awaiting real-time ATP commitment and promised delivery date."""
     rows = _read_json("inbound_customer_order_requests.json")
+    all_rows = list(rows)
     if order_id:
         rows = [r for r in rows if order_id.lower() in r.get("order_id", "").lower()]
     if customer_id:
         rows = [r for r in rows if customer_id.lower() in r.get("customer_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "omnichannel_order_stream",
         "table": "inbound_customer_order_requests",
@@ -129,10 +149,13 @@ def query_order_promising_routing_decisions(
 ) -> Dict[str, Any]:
     """Query optimal fulfillment node routing decisions, transit hours, and OTIF penalty risk elimination."""
     rows = _read_json("order_promising_routing_decisions.json")
+    all_rows = list(rows)
     if order_id:
         rows = [r for r in rows if order_id.lower() in r.get("order_id", "").lower()]
     if customer_id:
         rows = [r for r in rows if customer_id.lower() in r.get("customer_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "fulfillment_routing_optimizer",
         "table": "order_promising_routing_decisions",

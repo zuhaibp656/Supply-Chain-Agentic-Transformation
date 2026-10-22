@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -73,12 +84,15 @@ def query_subtier_network_nodes(
 ) -> Dict[str, Any]:
     """Query Tier-1 through Tier-4 supplier dependencies, parents, and single-source chokepoints."""
     rows = _read_json("subtier_supplier_network.json")
+    all_rows = list(rows)
     if node_id:
         rows = [r for r in rows if node_id.lower() in r.get("node_id", "").lower()]
     if tier_level > 0:
         rows = [r for r in rows if r.get("tier_level") == tier_level]
     if chokepoint_only:
         rows = [r for r in rows if r.get("single_source_chokepoint") is True]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "spanner_subtier_graph",
         "table": "subtier_supplier_network",
@@ -94,10 +108,13 @@ def query_active_disruption_threats(
 ) -> Dict[str, Any]:
     """Query active geopolitical, weather cyclone, seismic, or port halt disruption threats."""
     rows = _read_json("active_disruption_threats.json")
+    all_rows = list(rows)
     if threat_id:
         rows = [r for r in rows if threat_id.lower() in r.get("threat_id", "").lower()]
     if threat_type:
         rows = [r for r in rows if threat_type.lower() in r.get("threat_type", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "weathernext_geopolitical_hub",
         "table": "active_disruption_threats",
@@ -112,8 +129,11 @@ def query_bom_revenue_lineage(
 ) -> Dict[str, Any]:
     """Trace exposed sub-tier component dependencies to finished goods and revenue at risk."""
     rows = _read_json("bom_finished_good_lineage.json")
+    all_rows = list(rows)
     if impacted_node:
         rows = [r for r in rows if impacted_node.lower() in r.get("impacted_subtier_node", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "spanner_subtier_graph",
         "table": "bom_finished_good_lineage",
@@ -129,10 +149,13 @@ def query_mitigation_playbook_options(
 ) -> Dict[str, Any]:
     """Query pre-qualified backup suppliers, reallocations, expedite costs, and buffer surges."""
     rows = _read_json("mitigation_playbook_options.json")
+    all_rows = list(rows)
     if threat_id:
         rows = [r for r in rows if threat_id.lower() in r.get("threat_id", "").lower()]
     if playbook_id:
         rows = [r for r in rows if playbook_id.lower() in r.get("playbook_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "meio_buffer_gateway",
         "table": "mitigation_playbook_options",

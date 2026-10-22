@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -72,10 +83,13 @@ def query_production_orders_backlog(
 ) -> Dict[str, Any]:
     """Query released unscheduled production orders, allergen flags, batch volumes, and due dates."""
     rows = _read_json("production_orders_backlog.json")
+    all_rows = list(rows)
     if order_id:
         rows = [r for r in rows if order_id.lower() in r.get("order_id", "").lower()]
     if product_family:
         rows = [r for r in rows if product_family.lower() in r.get("product_family", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "sap_ppds_production",
         "table": "production_orders_backlog",
@@ -92,12 +106,15 @@ def query_changeover_matrix_rules(
 ) -> Dict[str, Any]:
     """Query sequence-dependent changeover matrix wash times, CIP hours, and allergen sanitization rules."""
     rows = _read_json("changeover_matrix_rules.json")
+    all_rows = list(rows)
     if rule_id:
         rows = [r for r in rows if rule_id.lower() in r.get("rule_id", "").lower()]
     if from_family:
         rows = [r for r in rows if from_family.lower() in r.get("from_product_family", "").lower()]
     if to_family:
         rows = [r for r in rows if to_family.lower() in r.get("to_product_family", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "changeover_matrix_vault",
         "table": "changeover_matrix_rules",
@@ -113,10 +130,13 @@ def query_plant_line_workcenters(
 ) -> Dict[str, Any]:
     """Query plant workcenter rated throughput liters/hr, CIP system specs, and current shift patterns."""
     rows = _read_json("plant_line_workcenters.json")
+    all_rows = list(rows)
     if workcenter_id:
         rows = [r for r in rows if workcenter_id.lower() in r.get("workcenter_id", "").lower()]
     if plant_id:
         rows = [r for r in rows if plant_id.lower() in r.get("plant_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "plant_line_workcenters",
         "table": "plant_line_workcenters",
@@ -132,10 +152,13 @@ def query_optimized_sequence_schedule(
 ) -> Dict[str, Any]:
     """Query OR-Tools CP-SAT solved schedule blocks, changeover hours saved, and capacity gains."""
     rows = _read_json("optimized_sequence_schedule.json")
+    all_rows = list(rows)
     if schedule_id:
         rows = [r for r in rows if schedule_id.lower() in r.get("schedule_id", "").lower()]
     if workcenter_id:
         rows = [r for r in rows if workcenter_id.lower() in r.get("workcenter_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "or_tools_cpsat_solver",
         "table": "optimized_sequence_schedule",

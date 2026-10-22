@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -79,8 +90,11 @@ def query_network_facility_nodes_and_leases(
 ) -> Dict[str, Any]:
     """Query network_facility_nodes_and_leases records from or_tools_facility_location_milp."""
     rows = _read_json("network_facility_nodes_and_leases.json")
+    all_rows = list(rows)
     if facility_id:
         rows = [r for r in rows if facility_id.lower() in str(r.get("facility_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "or_tools_facility_location_milp",
         "table": "network_facility_nodes_and_leases",
@@ -94,8 +108,11 @@ def query_sku_customer_cost_to_serve_matrix(
 ) -> Dict[str, Any]:
     """Query sku_customer_cost_to_serve_matrix records from bigquery_abc_cost_to_serve."""
     rows = _read_json("sku_customer_cost_to_serve_matrix.json")
+    all_rows = list(rows)
     if customer_segment_id:
         rows = [r for r in rows if customer_segment_id.lower() in str(r.get("customer_segment_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "bigquery_abc_cost_to_serve",
         "table": "sku_customer_cost_to_serve_matrix",
@@ -109,8 +126,11 @@ def query_center_of_gravity_milp_scenarios(
 ) -> Dict[str, Any]:
     """Query center_of_gravity_milp_scenarios records from tariff_port_strike_simulator."""
     rows = _read_json("center_of_gravity_milp_scenarios.json")
+    all_rows = list(rows)
     if scenario_id:
         rows = [r for r in rows if scenario_id.lower() in str(r.get("scenario_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "tariff_port_strike_simulator",
         "table": "center_of_gravity_milp_scenarios",
@@ -124,8 +144,11 @@ def query_network_stress_test_simulations(
 ) -> Dict[str, Any]:
     """Query network_stress_test_simulations records from sap_ibp_network_master."""
     rows = _read_json("network_stress_test_simulations.json")
+    all_rows = list(rows)
     if stress_test_id:
         rows = [r for r in rows if stress_test_id.lower() in str(r.get("stress_test_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "sap_ibp_network_master",
         "table": "network_stress_test_simulations",

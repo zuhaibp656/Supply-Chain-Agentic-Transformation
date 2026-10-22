@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -73,12 +84,15 @@ def query_retailer_edi852_pos(
 ) -> Dict[str, Any]:
     """Query normalized daily retailer store POS scans, book inventory, and DC withdrawals."""
     rows = _read_json("retailer_edi852_daily_pos.json")
+    all_rows = list(rows)
     if store_id:
         rows = [r for r in rows if store_id.lower() in r.get("store_id", "").lower()]
     if retailer:
         rows = [r for r in rows if retailer.lower() in r.get("retailer", "").lower()]
     if sku_id:
         rows = [r for r in rows if sku_id.lower() in r.get("sku_id", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "retail_edi_dataflow",
         "table": "retailer_edi852_daily_pos",
@@ -95,12 +109,15 @@ def query_retailer_edi830_forecasts(
 ) -> Dict[str, Any]:
     """Query retailer 12-week forward order commitments and detect bullwhip swings."""
     rows = _read_json("retailer_edi830_order_forecasts.json")
+    all_rows = list(rows)
     if retailer:
         rows = [r for r in rows if retailer.lower() in r.get("retailer", "").lower()]
     if sku_id:
         rows = [r for r in rows if sku_id.lower() in r.get("sku_id", "").lower()]
     if volatility_flag:
         rows = [r for r in rows if volatility_flag.lower() in r.get("volatility_flag", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "retail_edi_dataflow",
         "table": "retailer_edi830_order_forecasts",
@@ -116,10 +133,13 @@ def query_phantom_inventory_anomalies(
 ) -> Dict[str, Any]:
     """Identify stores exhibiting zero daily scans despite positive book inventory."""
     rows = _read_json("store_phantom_inventory_anomalies.json")
+    all_rows = list(rows)
     if store_id:
         rows = [r for r in rows if store_id.lower() in r.get("store_id", "").lower()]
     if retailer:
         rows = [r for r in rows if retailer.lower() in r.get("retailer", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "bigquery_anomaly_vault",
         "table": "store_phantom_inventory_anomalies",
@@ -135,10 +155,13 @@ def query_joint_cpfr_packets(
 ) -> Dict[str, Any]:
     """Retrieve collaborative CPFR exception packets comparing retailer vs manufacturer demand."""
     rows = _read_json("joint_cpfr_consensus_packets.json")
+    all_rows = list(rows)
     if packet_id:
         rows = [r for r in rows if packet_id.lower() in r.get("packet_id", "").lower()]
     if retailer:
         rows = [r for r in rows if retailer.lower() in r.get("retailer", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "sap_ibp_cpfr",
         "table": "joint_cpfr_consensus_packets",

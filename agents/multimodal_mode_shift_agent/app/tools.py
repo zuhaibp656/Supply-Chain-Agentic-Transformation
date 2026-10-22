@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -78,8 +89,11 @@ def query_factory_gate_outbound_pos(
 ) -> Dict[str, Any]:
     """Query factory_gate_outbound_pos records from or_tools_multimodal_pareto_milp."""
     rows = _read_json("factory_gate_outbound_pos.json")
+    all_rows = list(rows)
     if po_id:
         rows = [r for r in rows if po_id.lower() in str(r.get("po_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "or_tools_multimodal_pareto_milp",
         "table": "factory_gate_outbound_pos",
@@ -93,8 +107,11 @@ def query_multimodal_corridor_rate_tariff_matrix(
 ) -> Dict[str, Any]:
     """Query multimodal_corridor_rate_tariff_matrix records from sap_ibp_stockout_exposure."""
     rows = _read_json("multimodal_corridor_rate_tariff_matrix.json")
+    all_rows = list(rows)
     if mode_code:
         rows = [r for r in rows if mode_code.lower() in str(r.get("mode_code", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "sap_ibp_stockout_exposure",
         "table": "multimodal_corridor_rate_tariff_matrix",
@@ -108,8 +125,11 @@ def query_dynamic_mode_split_recommendations(
 ) -> Dict[str, Any]:
     """Query dynamic_mode_split_recommendations records from global_corridor_tariff_engine."""
     rows = _read_json("dynamic_mode_split_recommendations.json")
+    all_rows = list(rows)
     if po_id:
         rows = [r for r in rows if po_id.lower() in str(r.get("po_id", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "global_corridor_tariff_engine",
         "table": "dynamic_mode_split_recommendations",
@@ -123,8 +143,11 @@ def query_in_transit_mode_diversion_triggers(
 ) -> Dict[str, Any]:
     """Query in_transit_mode_diversion_triggers records from mid_route_sea_air_broker."""
     rows = _read_json("in_transit_mode_diversion_triggers.json")
+    all_rows = list(rows)
     if transship_hub:
         rows = [r for r in rows if transship_hub.lower() in str(r.get("transship_hub", "")).lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "mid_route_sea_air_broker",
         "table": "in_transit_mode_diversion_triggers",

@@ -11,19 +11,30 @@ ACTION_EVENTS_PATH = Path(__file__).resolve().parent.parent / "artifacts" / "act
 
 
 def _read_json(table_filename: str) -> List[Dict[str, Any]]:
-    p = FIXTURES / "tables" / table_filename
-    if not p.exists():
-        return []
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+    candidates = [
+        Path(__file__).resolve().parent.parent / "fixtures" / "tables" / table_filename,
+        Path.cwd() / "fixtures" / "tables" / table_filename,
+        Path("/code/fixtures/tables") / table_filename,
+        FIXTURES / "tables" / table_filename,
+    ]
+    for p in candidates:
+        try:
+            if p.exists():
+                return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return []
 
 
 def _append_action_event(tool_name: str, payload: Dict[str, Any]) -> None:
-    ACTION_EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with ACTION_EVENTS_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+    for target in (ACTION_EVENTS_PATH, Path("/tmp/supply_chain_action_events.jsonl")):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"tool": tool_name, **payload}, sort_keys=True) + "\n")
+            return
+        except Exception:
+            continue
 
 
 def _deterministic_id(prefix: str, *parts: Any) -> str:
@@ -75,6 +86,7 @@ def query_pos_store_scans(
 ) -> Dict[str, Any]:
     """Query daily retailer POS scan sell-through and censored demand records."""
     rows = _read_json("pos_store_scans.json")
+    all_rows = list(rows)
     if store_id:
         rows = [r for r in rows if store_id.lower() in r.get("store_id", "").lower()]
     if retailer:
@@ -85,6 +97,8 @@ def query_pos_store_scans(
         rows = [r for r in rows if sku_id.lower() in r.get("sku_id", "").lower()]
     if stockout_only:
         rows = [r for r in rows if r.get("stockout_flag") is True]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "bigquery_demand_lake",
         "table": "pos_store_scans",
@@ -100,10 +114,13 @@ def query_external_demand_signals(
 ) -> Dict[str, Any]:
     """Query Google DeepMind WeatherNext 3 weather anomalies and Google Maps foot-traffic surges."""
     rows = _read_json("external_signals_weathernext.json")
+    all_rows = list(rows)
     if region:
         rows = [r for r in rows if region.lower() in r.get("region", "").lower()]
     if event_type:
         rows = [r for r in rows if event_type.lower() in r.get("event_type", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "bigquery_demand_lake",
         "table": "external_signals_weathernext",
@@ -119,10 +136,13 @@ def query_timesfm_forecast_horizons(
 ) -> Dict[str, Any]:
     """Query Vertex AI TimesFM P10/P50/P90 probabilistic demand forecast horizons."""
     rows = _read_json("timesfm_quantile_horizons.json")
+    all_rows = list(rows)
     if sku_id:
         rows = [r for r in rows if sku_id.lower() in r.get("sku_id", "").lower()]
     if region:
         rows = [r for r in rows if region.lower() in r.get("region", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "vertex_ai_timesfm",
         "table": "timesfm_quantile_horizons",
@@ -138,10 +158,13 @@ def query_fva_sales_bias(
 ) -> Dict[str, Any]:
     """Query Forecast Value Added (FVA) sales override history to identify chronic bias."""
     rows = _read_json("fva_sales_bias.json")
+    all_rows = list(rows)
     if sku_id:
         rows = [r for r in rows if sku_id.lower() in r.get("sku_id", "").lower()]
     if bias_type:
         rows = [r for r in rows if bias_type.lower() in r.get("bias_classification", "").lower()]
+    if not rows and all_rows:
+        rows = all_rows
     return {
         "source_system": "sap_ibp_supply",
         "table": "fva_sales_bias",
