@@ -4443,322 +4443,53 @@
     }
 
     /* =========================================================================
-       APPLE / XIAOMI PRODUCT-LAUNCH SCROLL-SNAP PERSONA STORY EXPERIENCE
+       CLEAN AI AGENT BOXES INSIDE PERSONA JOURNEY & DOCK (DARK + LIGHT THEMES)
        ========================================================================= */
-    html:has(#pagePersona.active) {
-      scroll-snap-type: y proximity;
-      scroll-behavior: smooth;
-    }
-
-    .persona-story-hero-stage {
-      scroll-snap-align: start;
-      scroll-margin-top: 84px;
-      margin-bottom: 28px;
-    }
-
-    .persona-scroll-story-stream {
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
-      position: relative;
-      padding-bottom: 28px;
-    }
-
-    .persona-snap-stage {
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-      scroll-margin-top: 86px;
-      min-height: 76vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-radius: 28px;
-      padding: 34px 38px 26px;
-      background: radial-gradient(120% 120% at 88% 12%, rgba(56, 189, 248, 0.09) 0%, rgba(11, 16, 28, 0.96) 58%, rgba(7, 11, 20, 0.99) 100%);
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 26px 64px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.10);
-      position: relative;
-      overflow: hidden;
-      opacity: 0.72;
-      transform: translateY(18px) scale(0.988);
-      transition: opacity 0.52s cubic-bezier(0.22, 1, 0.36, 1),
-                  transform 0.52s cubic-bezier(0.22, 1, 0.36, 1),
-                  border-color 0.42s ease,
-                  box-shadow 0.42s ease;
-    }
-
-    .persona-snap-stage.in-view,
-    .persona-snap-stage:hover {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      border-color: var(--dept-accent, #00d2ff);
-      box-shadow: 0 32px 76px rgba(0, 0, 0, 0.62), 0 0 38px rgba(0, 210, 255, 0.14);
-    }
-
-    .persona-snap-top-bar {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-      position: relative;
-      z-index: 2;
-    }
-
-    .persona-step-eyebrow {
+    .persona-step-agent-box {
+      margin-top: 14px;
+      padding: 16px 20px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.16) 0%, rgba(30, 27, 75, 0.55) 100%);
+      border: 1.5px solid rgba(129, 140, 248, 0.45);
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: space-between;
+      gap: 18px;
       flex-wrap: wrap;
-      margin-bottom: 10px;
     }
 
-    .persona-step-num-pill {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: var(--dept-accent, #00d2ff);
-      color: #040812;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
-    }
-
-    .persona-step-time-pill {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      font-weight: 800;
-      padding: 5px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #f8fafc;
-    }
-
-    .persona-snap-title {
-      font-family: var(--font-display);
-      font-size: clamp(24px, 2.7vw, 35px);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      line-height: 1.16;
-      color: #ffffff;
-      margin: 0;
-    }
-
-    .persona-time-delta-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 18px;
+    .persona-agent-dock-card {
+      padding: 18px 20px;
       border-radius: 16px;
-      background: linear-gradient(135deg, rgba(234, 67, 53, 0.16) 0%, rgba(16, 185, 129, 0.22) 100%);
-      border: 1.5px solid rgba(52, 168, 83, 0.48);
-      font-family: var(--font-mono);
-      font-size: 13.5px;
-      font-weight: 800;
-      color: #ffffff;
-      white-space: nowrap;
-    }
-
-    .persona-snap-split-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 1.15fr;
-      gap: 26px;
-      align-items: stretch;
-      position: relative;
-      z-index: 2;
-      flex: 1;
-    }
-
-    @media (max-width: 1060px) {
-      .persona-snap-split-grid {
-        grid-template-columns: 1fr;
-      }
-      .persona-snap-stage {
-        min-height: auto;
-        padding: 24px 22px;
-      }
-    }
-
-    .persona-process-col {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      justify-content: space-between;
-    }
-
-    .persona-agent-spotlight-card {
-      border-radius: 22px;
-      padding: 24px 26px;
-      background: linear-gradient(145deg, rgba(30, 27, 75, 0.72) 0%, rgba(15, 23, 42, 0.92) 100%);
-      border: 1.5px solid rgba(129, 140, 248, 0.48);
-      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      background: linear-gradient(145deg, rgba(30, 27, 75, 0.65) 0%, rgba(15, 23, 42, 0.90) 100%);
+      border: 1.5px solid rgba(129, 140, 248, 0.42);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 16px;
-      position: relative;
-      overflow: hidden;
+      gap: 14px;
+      transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.24s ease, box-shadow 0.24s ease;
     }
 
-    .persona-agent-cad-stage {
-      height: 188px;
-      border-radius: 16px;
-      background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.95) 0%, #050811 100%);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      padding: 10px;
+    .persona-agent-dock-card:hover {
+      transform: translateY(-4px);
+      border-color: #818cf8;
+      box-shadow: 0 14px 32px rgba(79, 70, 229, 0.25);
     }
 
-    .persona-snap-footer-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      position: relative;
-      z-index: 2;
-    }
-
-    .persona-next-step-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 18px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.20);
-      color: #f8fafc;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.24s ease;
-    }
-
-    .persona-next-step-btn:hover {
-      background: var(--dept-accent, #00d2ff);
-      border-color: var(--dept-accent, #00d2ff);
-      color: #040812;
-      transform: translateY(-2px);
-    }
-
-    /* Floating Side Step Scroller Rail (Apple / Xiaomi Style) */
-    .persona-scroll-rail {
-      position: fixed;
-      right: 22px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 90;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: 12px 10px;
-      border-radius: 999px;
-      background: rgba(8, 13, 26, 0.86);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.48);
-    }
-
-    @media (max-width: 1280px) {
-      .persona-scroll-rail {
-        display: none;
-      }
-    }
-
-    .persona-rail-dot {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 800;
-      color: #cbd5e1;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      cursor: pointer;
-      transition: all 0.24s cubic-bezier(0.22, 1, 0.36, 1);
-      position: relative;
-    }
-
-    .persona-rail-dot:hover,
-    .persona-rail-dot.active {
-      background: var(--dept-accent, #00d2ff);
-      color: #040812;
-      border-color: var(--dept-accent, #00d2ff);
-      transform: scale(1.14);
-      box-shadow: 0 0 16px var(--dept-accent, #00d2ff);
-    }
-
-    html[data-theme="light"] .persona-snap-stage {
-      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-      border: 1.5px solid #cbd5e1;
-      box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
-    }
-
-    html[data-theme="light"] .persona-snap-stage.in-view,
-    html[data-theme="light"] .persona-snap-stage:hover {
-      border-color: var(--dept-accent, #1a73e8);
-      box-shadow: 0 24px 56px rgba(26, 115, 232, 0.16);
-    }
-
-    html[data-theme="light"] .persona-snap-top-bar,
-    html[data-theme="light"] .persona-snap-footer-bar {
-      border-color: #e2e8f0;
-    }
-
-    html[data-theme="light"] .persona-snap-title {
-      color: #0f172a;
-    }
-
-    html[data-theme="light"] .persona-step-time-pill {
-      background: #f1f5f9;
-      border-color: #cbd5e1;
-      color: #0f172a;
-    }
-
-    html[data-theme="light"] .persona-time-delta-pill {
-      background: #ecfdf5;
-      border-color: #34d399;
-      color: #065f46;
-    }
-
-    html[data-theme="light"] .persona-agent-spotlight-card {
-      background: linear-gradient(145deg, #f5f3ff 0%, #eef2ff 100%);
+    html[data-theme="light"] .persona-step-agent-box {
+      background: linear-gradient(135deg, #f5f3ff 0%, #eef2ff 100%);
       border: 1.5px solid #818cf8;
-      box-shadow: 0 12px 30px rgba(79, 70, 229, 0.10);
     }
 
-    html[data-theme="light"] .persona-next-step-btn {
-      background: #f1f5f9;
-      border-color: #cbd5e1;
-      color: #0f172a;
+    html[data-theme="light"] .persona-agent-dock-card {
+      background: linear-gradient(145deg, #ffffff 0%, #f5f3ff 100%);
+      border: 1.5px solid #818cf8;
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.08);
     }
 
-    html[data-theme="light"] .persona-scroll-rail {
-      background: rgba(255, 255, 255, 0.94);
-      border-color: #cbd5e1;
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
-    }
-
-    html[data-theme="light"] .persona-rail-dot {
-      background: #f1f5f9;
-      color: #1e293b;
-      border-color: #cbd5e1;
+    html[data-theme="light"] .persona-agent-dock-card:hover {
+      border-color: #4f46e5;
+      box-shadow: 0 14px 28px rgba(79, 70, 229, 0.18);
     }
 
     /* =========================================================================
@@ -19740,41 +19471,6 @@
       if (el) el.classList.toggle('open');
     }
 
-    let personaSnapObserver = null;
-
-    function scrollToPersonaSnapStep(targetId) {
-      const el = document.getElementById(targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
-    function initPersonaScrollObserver() {
-      if (personaSnapObserver) {
-        personaSnapObserver.disconnect();
-      }
-      const stages = document.querySelectorAll('#pagePersona .persona-snap-stage, #pagePersona .persona-story-hero-stage, #pagePersona #personaAgentsDockStage');
-      const railDots = document.querySelectorAll('#pagePersona .persona-rail-dot');
-      if (!stages.length) return;
-
-      personaSnapObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            const stageId = entry.target.id;
-            railDots.forEach(dot => {
-              dot.classList.toggle('active', dot.getAttribute('data-target') === stageId);
-            });
-          }
-        });
-      }, { threshold: 0.35 });
-
-      stages.forEach((st, i) => {
-        if (i === 0 || i === 1) st.classList.add('in-view');
-        personaSnapObserver.observe(st);
-      });
-    }
-
     function openPersonaPage(personaId, pushHash = true, ev = null) {
       const p = PERSONAS[personaId];
       if (!p) return;
@@ -19790,31 +19486,12 @@
         history.pushState({ page: 'persona', id: personaId }, '', `#persona/${personaId}`);
       }
 
-      const slots = p.dayInLife || [];
-      const fallbackAgentId = (p.agentIds && p.agentIds[0]) ? p.agentIds[0] : 'csco_control_tower_copilot';
+      // Open the first toil step by default; rest open on click
+      let firstToilOpened = false;
 
       const container = document.getElementById('personaPageContent');
       container.innerHTML = `
-        <div id="personaGenieWrap" class="${transClass}" style="--dept-accent:${dept.color};">
-          <!-- Floating Apple/Xiaomi Right-Side Step Progress Rail -->
-          <nav class="persona-scroll-rail" aria-label="Persona Story Steps" style="--dept-accent:${dept.color};">
-            <button type="button" class="persona-rail-dot active" data-target="personaHeroStage_${p.id}" title="Persona Overview" onclick="scrollToPersonaSnapStep('personaHeroStage_${p.id}')">
-              👤
-            </button>
-            ${slots.map((slot, idx) => {
-              const stepId = `pStep_${p.id}_${idx}`;
-              const numStr = String(idx + 1).padStart(2, '0');
-              return `
-                <button type="button" class="persona-rail-dot" data-target="${stepId}" title="${slot.time} · ${slot.task}" onclick="scrollToPersonaSnapStep('${stepId}')">
-                  ${numStr}
-                </button>
-              `;
-            }).join('')}
-            <button type="button" class="persona-rail-dot" data-target="personaAgentsDockStage" title="All AI Agents for ${p.name}" onclick="scrollToPersonaSnapStep('personaAgentsDockStage')">
-              ✦
-            </button>
-          </nav>
-
+        <div id="personaGenieWrap" class="${transClass}">
           <!-- Top Back & Switcher Bar -->
           <div class="back-bar">
             <button type="button" class="back-btn" onclick="goToOrgChart()">
@@ -19838,253 +19515,181 @@
             </div>
           </div>
 
-          <!-- Stage 0: Persona Hero Header + Scroll-Snap Launch Bar -->
-          <div id="personaHeroStage_${p.id}" class="persona-story-hero-stage">
-            <div class="persona-header-card" style="padding: 28px 34px; margin-bottom: 18px;">
-              ${renderSupplyChainWatermarkSvg(dept.watermarkType, dept.color, 'persona-header-sc-watermark')}
+          <!-- Clean, Compact Persona Header -->
+          <div class="persona-header-card" style="padding: 24px 30px; margin-bottom: 22px;">
+            ${renderSupplyChainWatermarkSvg(dept.watermarkType, dept.color, 'persona-header-sc-watermark')}
 
-              <div style="position:relative; z-index:2; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
-                <div class="human-avatar-circle" style="width:68px; height:68px; font-size:32px; --dept-accent:${dept.color};">
-                  ${p.icon}
-                </div>
-                <div>
-                  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
-                    <span class="human-role-tag">👤 Human Persona</span>
-                    <span class="persona-badge" style="margin-bottom:0; background: ${dept.color}18; color: ${dept.color}; border: 1px solid ${dept.color}45;">
-                      ${dept.scorBadge || ''} · ${dept.name}
-                    </span>
-                  </div>
-                  <h1 class="persona-page-title" style="margin-bottom:4px;">${p.name}</h1>
-                  <div style="font-size:15.5px; color:var(--text-secondary); font-weight:600;">${p.role}</div>
-                </div>
+            <div style="position:relative; z-index:2; display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
+              <div class="human-avatar-circle" style="width:60px; height:60px; font-size:28px; --dept-accent:${dept.color};">
+                ${p.icon}
               </div>
-
-              <div class="persona-stat-highlight" style="border-color: ${dept.color}45;">
-                <div class="persona-stat-value" style="color: ${dept.color};">${p.headlineStat || '-85% Toil'}</div>
-                <div class="persona-stat-label">${p.toilHoursBefore || '6.5h'} Manual &rarr; ${p.toilHoursAfter || '1.0h'} with AI</div>
+              <div>
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
+                  <span class="human-role-tag">👤 Human Persona</span>
+                  <span class="persona-badge" style="margin-bottom:0; background: ${dept.color}18; color: ${dept.color}; border: 1px solid ${dept.color}45;">
+                    ${dept.scorBadge || ''} · ${dept.name}
+                  </span>
+                </div>
+                <h1 class="persona-page-title" style="margin-bottom:4px;">${p.name}</h1>
+                <div style="font-size:15px; color:var(--text-secondary); font-weight:600;">${p.role}</div>
               </div>
             </div>
 
-            <!-- Scroll-Snap Story Guidance Strip -->
-            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; padding:14px 22px; border-radius:18px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12);">
-              <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-                <span style="padding:5px 12px; border-radius:999px; background:${dept.color}22; border:1px solid ${dept.color}66; color:${dept.color}; font-size:11.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;">
-                  🎬 Scroll-Snap Daily Transformation Story (${slots.length} Stages)
-                </span>
-                <span style="font-size:14px; color:var(--text-secondary); font-weight:600;">
-                  Scroll down to snap through each daily process, compare <strong style="color:#ea4335;">Manual Time</strong> vs. <strong style="color:#34a853;">AI Speed</strong>, and explore the <strong style="color:#818cf8;">AI Agent Spotlight</strong>.
-                </span>
-              </div>
-              ${slots.length ? `
-                <button type="button" class="persona-next-step-btn" style="background:${dept.color}; color:#040812; border-color:${dept.color}; font-weight:800;" onclick="scrollToPersonaSnapStep('pStep_${p.id}_0')">
-                  <span>Start Step 01 (${slots[0].time})</span>
-                  <span>&darr;</span>
-                </button>
-              ` : ''}
+            <div class="persona-stat-highlight" style="border-color: ${dept.color}45;">
+              <div class="persona-stat-value" style="color: ${dept.color};">${p.headlineStat || '-85% Toil'}</div>
+              <div class="persona-stat-label">${p.toilHoursBefore || '6.5h'} &rarr; ${p.toilHoursAfter || '1.0h'}</div>
             </div>
           </div>
 
-          <!-- Apple / Xiaomi Scroll-Snap Story Stream -->
-          <div class="persona-scroll-story-stream">
-            ${slots.map((slot, idx) => {
+          <!-- Simple Persona Daily Journey -->
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom: 14px;">
+            <div>
+              <h2 class="block-title" style="border-left-color: ${dept.color}; margin-bottom:2px;">Persona Daily Journey</h2>
+              <p class="block-subtitle" style="margin:0;">Click any daily task below to compare <strong style="color:#ea4335;">Manual Bottleneck (Red)</strong> vs. <strong style="color:#34a853;">With Gemini AI (Green)</strong> and launch the assigned AI Agent.</p>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 34px;">
+            ${p.dayInLife.map((slot, idx) => {
               const stepId = `pStep_${p.id}_${idx}`;
-              const nextStepId = idx < slots.length - 1 ? `pStep_${p.id}_${idx + 1}` : 'personaAgentsDockStage';
-              const nextSlot = idx < slots.length - 1 ? slots[idx + 1] : null;
-              const numStr = String(idx + 1).padStart(2, '0');
-              const totalStr = String(slots.length).padStart(2, '0');
-
-              // Always spotlight the assigned AI agent or fallback to the persona's flagship agent
-              const resolvedAgentId = slot.agentId || (p.agentIds && p.agentIds[idx % p.agentIds.length]) || fallbackAgentId;
-              const plugAgent = AGENTS[resolvedAgentId] || Object.values(AGENTS)[0];
-              const plugCls = getAgentBuildClassification(plugAgent);
-              const sysList = toSysArray(plugAgent.systems).slice(0, 4);
-
-              const manualTime = slot.toilDuration || '2.0 hrs';
-              const aiTime = slot.afterDuration || '8 mins';
-              const beforeText = slot.isToil
-                ? shortSentence(slot.before, 155)
-                : 'Manual executive review across disconnected spreadsheets, delayed email attachments, and static slide decks.';
-              const afterText = slot.isToil
-                ? shortSentence(slot.after, 155)
-                : shortSentence(slot.activity || plugAgent.solution, 155);
+              const plugAgent = slot.agentId ? AGENTS[slot.agentId] : null;
+              const plugCls = plugAgent ? getAgentBuildClassification(plugAgent) : null;
+              const isDefaultOpen = slot.isToil && !firstToilOpened;
+              if (isDefaultOpen) firstToilOpened = true;
 
               return `
-                <section id="${stepId}" class="persona-snap-stage ${idx === 0 ? 'in-view' : ''}" style="--dept-accent:${dept.color};">
-                  ${renderSupplyChainWatermarkSvg(dept.watermarkType, dept.color, 'persona-header-sc-watermark')}
-
-                  <!-- Stage Top Header: Step Number + Time + Process Headline + Time Saved Pill -->
-                  <div>
-                    <div class="persona-snap-top-bar">
-                      <div style="max-width:760px;">
-                        <div class="persona-step-eyebrow">
-                          <span class="persona-step-num-pill">STEP ${numStr} / ${totalStr}</span>
-                          <span class="persona-step-time-pill">🕒 ${slot.time}</span>
-                          <span style="font-size:12px; font-weight:800; padding:4px 12px; border-radius:999px; background:${slot.isToil ? 'rgba(52,168,83,0.16)' : 'rgba(99,102,241,0.18)'}; color:${slot.isToil ? '#34d399' : '#a5b4fc'}; border:1px solid ${slot.isToil ? 'rgba(52,168,83,0.4)' : 'rgba(99,102,241,0.4)'};">
-                            ${slot.isToil ? '⚡ AI-Transformed Core Process' : `👤 ${slot.tag || 'Executive Decision Sync'}`}
-                          </span>
-                        </div>
-                        <h2 class="persona-snap-title">${slot.task}</h2>
-                      </div>
-
-                      <div class="persona-time-delta-pill">
-                        <span style="color:#f87171; text-decoration:line-through;">${manualTime} Manual</span>
-                        <span style="color:#94a3b8;">&rarr;</span>
-                        <span style="color:#34d399; font-size:15px;">⚡ ${aiTime} with Gemini AI</span>
-                      </div>
+                <div id="${stepId}" class="journey-accordion-item ${isDefaultOpen ? 'open' : ''}" style="--dept-accent:${dept.color};">
+                  <button type="button" class="journey-accordion-header" onclick="togglePersonaJourneyStep('${stepId}')">
+                    <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+                      <span class="time-badge" style="min-width:82px;">${slot.time}</span>
+                      <span class="task-title" style="font-size:16.5px;">${slot.task}</span>
+                      ${slot.isToil ? `
+                        <span style="font-size:12px; font-weight:700; padding:3px 10px; border-radius:999px; background:rgba(52,168,83,0.14); color:#34a853; border:1px solid rgba(52,168,83,0.35);">
+                          ${slot.toilDuration || '2.0 hrs'} &rarr; ${slot.afterDuration || '10 mins'}
+                        </span>
+                      ` : `
+                        <span class="core-tag-pill">👤 ${slot.tag || 'Leadership'}</span>
+                      `}
                     </div>
 
-                    <!-- 2-Column Split: Left = Process Before/After Transformation, Right = AI Agent Spotlight Stage -->
-                    <div class="persona-snap-split-grid">
-                      <!-- Left Column: What Process They Do & Before vs. After -->
-                      <div class="persona-process-col">
-                        <div style="display:flex; flex-direction:column; gap:14px;">
-                          <div class="toil-highlight-box" style="padding:18px 20px;">
-                            <div class="toil-top-bar" style="margin-bottom:8px;">
-                              <span class="toil-badge">✕ Legacy Manual Bottleneck</span>
-                              <span class="toil-duration">⏱ ${manualTime}</span>
-                            </div>
-                            <div class="toil-text" style="font-size:15px; line-height:1.55;">${beforeText}</div>
-                          </div>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                      ${plugAgent ? `
+                        <span class="ai-agent-type-tag" style="padding:4px 9px; font-size:11px;" onclick="event.stopPropagation(); openAgentPage('${plugAgent.id}', true, event)">
+                          ✦ ${plugAgent.name} &rarr;
+                        </span>
+                      ` : ''}
+                      <span class="journey-accordion-chevron">Details ▾</span>
+                    </div>
+                  </button>
 
-                          <div class="gemini-improve-box" style="padding:18px 20px;">
-                            <div class="improve-top-bar" style="margin-bottom:8px;">
-                              <span class="improve-badge">✦ Autonomous Process with ${plugAgent.name}</span>
-                              <span class="improve-time-saved">⚡ ${manualTime} &rarr; ${aiTime}</span>
-                            </div>
-                            <div class="improve-text" style="font-size:15px; line-height:1.55;">${afterText}</div>
+                  <div class="journey-accordion-body">
+                    ${slot.isToil ? `
+                      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px; padding-top:14px;">
+                        <div class="toil-highlight-box" style="padding:16px 18px;">
+                          <div class="toil-top-bar" style="margin-bottom:8px;">
+                            <span class="toil-badge">✕ Manual Bottleneck</span>
+                            <span class="toil-duration">⏱ ${slot.toilDuration || '2.0 hrs'}</span>
                           </div>
+                          <div class="toil-text" style="font-size:14.5px; line-height:1.58;">${shortSentence(slot.before, 220)}</div>
                         </div>
 
-                        <!-- Visual 3-Node Process Pipeline Strip -->
-                        <div style="padding:14px 16px; border-radius:16px; background:rgba(15,23,42,0.55); border:1px solid rgba(148,163,184,0.18);">
-                          <div style="font-family:var(--font-mono); font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:8px;">
-                            🔗 Automated Process Execution Pipeline
+                        <div class="gemini-improve-box" style="padding:16px 18px;">
+                          <div class="improve-top-bar" style="margin-bottom:8px;">
+                            <span class="improve-badge">✦ With Gemini AI</span>
+                            <span class="improve-time-saved">⚡ ${slot.toilDuration || '2.0 hrs'} &rarr; ${slot.afterDuration || '10 mins'}</span>
                           </div>
-                          <div style="display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:center; gap:8px; font-size:12px; font-weight:700;">
-                            <div style="padding:8px 10px; border-radius:10px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); text-align:center;">
-                              📥 ${sysList[0] || 'SAP S/4HANA'}
-                            </div>
-                            <span style="color:${dept.color}; font-weight:900;">&rarr;</span>
-                            <div style="padding:8px 10px; border-radius:10px; background:${dept.color}22; border:1px solid ${dept.color}66; color:#ffffff; text-align:center;">
-                              🧠 ${plugAgent.name}
-                            </div>
-                            <span style="color:#34d399; font-weight:900;">&rarr;</span>
-                            <div style="padding:8px 10px; border-radius:10px; background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.4); color:#34d399; text-align:center;">
-                              📤 1-Click Write-Back
-                            </div>
-                          </div>
+                          <div class="improve-text" style="font-size:14.5px; line-height:1.58;">${shortSentence(slot.after, 220)}</div>
                         </div>
                       </div>
 
-                      <!-- Right Column: AI Agent Spotlight Stage (Visual Diagram + Specs + 1-Click Launch) -->
-                      <div class="persona-agent-spotlight-card">
-                        <div>
-                          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
-                            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                              <span style="padding:4px 10px; border-radius:8px; background:linear-gradient(135deg,#4f46e5,#7c3aed); color:#ffffff; font-size:11px; font-weight:800; letter-spacing:0.07em; text-transform:uppercase;">
-                                ✦ AI Agent Spotlight
-                              </span>
-                              <span class="build-tier-badge ${plugCls.cssClass}">${plugCls.label}</span>
-                            </div>
-                            <span style="font-family:var(--font-mono); font-size:12px; font-weight:800; color:#a5b4fc;">
-                              ${plugAgent.code || 'AI-CORE'}
-                            </span>
-                          </div>
-
-                          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:12px;">
+                      ${plugAgent ? `
+                        <div class="persona-step-agent-box">
+                          <div style="display:flex; align-items:center; gap:14px; flex:1; min-width:240px;">
+                            <div class="ai-bot-square" style="width:42px; height:42px; font-size:18px; flex-shrink:0;">✦</div>
                             <div>
-                              <h3 style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#ffffff; margin:0 0 3px 0;">
-                                ${plugAgent.name}
-                              </h3>
-                              <div style="font-size:13px; color:#cbd5e1; font-weight:600;">
-                                ${plugAgent.role || 'Autonomous Supply Chain Agent'}
+                              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:4px;">
+                                <span style="font-family:var(--font-display); font-size:16.5px; font-weight:800; color:var(--text-primary);">
+                                  ${plugAgent.name}
+                                </span>
+                                <span class="build-tier-badge ${plugCls.cssClass}">${plugCls.label}</span>
+                                ${plugAgent.badge ? `
+                                  <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; padding:2px 9px; border-radius:999px; background:rgba(16,185,129,0.16); color:#10b981; border:1px solid rgba(16,185,129,0.4);">
+                                    ${plugAgent.badge}
+                                  </span>
+                                ` : ''}
+                              </div>
+                              <div style="font-size:13.5px; color:var(--text-secondary); line-height:1.45;">
+                                ${shortSentence(plugAgent.solution || plugAgent.role, 155)}
                               </div>
                             </div>
-                            <span style="padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.18); border:1px solid rgba(16,185,129,0.45); color:#34d399; font-family:var(--font-mono); font-size:12px; font-weight:800;">
-                              ${plugAgent.badge || '-85% Manual Toil'}
-                            </span>
                           </div>
 
-                          <!-- Animated Supply Chain Schematic Stage -->
-                          <div class="persona-agent-cad-stage" onclick="openAgentPage('${plugAgent.id}', true, event)" style="cursor:pointer;" title="Click to open ${plugAgent.name}">
-                            ${renderMiniCatalogCadSvg(plugAgent.cadType, dept.color)}
-                          </div>
+                          <button type="button" class="agent-plug-btn" style="padding:10px 18px; font-size:13px;" onclick="openAgentPage('${plugAgent.id}', true, event)">
+                            <span>Open ${plugAgent.name} &amp; Demo</span>
+                            <span>&rarr;</span>
+                          </button>
                         </div>
-
-                        <!-- Connected Systems + 1-Click Agent Launch CTA -->
-                        <div>
-                          <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:12px;">
-                            ${sysList.map(s => `
-                              <span style="font-family:var(--font-mono); font-size:11px; font-weight:700; padding:3px 9px; border-radius:6px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.14); color:#e2e8f0;">
-                                🔌 ${s}
-                              </span>
-                            `).join('')}
-                          </div>
-
-                          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-                            <button type="button" class="agent-plug-btn" style="flex:1; justify-content:center; padding:11px 18px; font-size:13.5px;" onclick="openAgentPage('${plugAgent.id}', true, event)">
-                              <span>🚀 Open ${plugAgent.name} &amp; Demo Video</span>
-                              <span>&rarr;</span>
-                            </button>
-                            <button type="button" class="persona-next-step-btn" style="padding:10px 14px; font-size:12.5px;" onclick="openAgentBlueprintPage('${plugAgent.id}', true, event)">
-                              <span>📐 Blueprint &amp; Data</span>
-                            </button>
-                          </div>
-                        </div>
+                      ` : ''}
+                    ` : `
+                      <div style="padding-top:12px; font-size:14.5px; line-height:1.58; color:var(--text-secondary);">
+                        ${shortSentence(slot.activity, 200)}
                       </div>
-                    </div>
+                    `}
                   </div>
-
-                  <!-- Stage Footer: Next Step Scroll-Snap Button -->
-                  <div class="persona-snap-footer-bar">
-                    <span style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary); font-weight:700;">
-                      ${p.name} · Daily Transformation Step ${numStr} of ${totalStr}
-                    </span>
-
-                    <button type="button" class="persona-next-step-btn" onclick="scrollToPersonaSnapStep('${nextStepId}')">
-                      <span>${nextSlot ? `Next Process (${nextSlot.time}): ${nextSlot.task}` : `View All AI Agents for ${p.name}`}</span>
-                      <span>&darr;</span>
-                    </button>
-                  </div>
-                </section>
+                </div>
               `;
             }).join('')}
           </div>
 
-          <!-- Final Snap Stage: Complete AI Agents Dock for this Persona -->
-          <div id="personaAgentsDockStage" class="ai-agent-dock-box" style="scroll-snap-align:start; scroll-margin-top:86px;">
-            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
+          <!-- Structured AI Agents Dock for this Persona (Good Boxes + Clear Button) -->
+          <div class="ai-agent-dock-box">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:16px;">
               <div style="display:flex; align-items:center; gap:10px;">
                 <span style="padding:4px 10px; border-radius:8px; background:linear-gradient(135deg,#4f46e5,#7c3aed); color:#ffffff; font-size:11.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;">
-                  ✦ Complete AI Agent Suite for ${p.name}
+                  ✦ AI Agents for ${p.name}
                 </span>
                 <span style="font-size:13.5px; color:var(--text-secondary); font-weight:600;">
-                  Click any AI agent to view its workflow diagram &amp; demo video
+                  Explore each AI agent's architecture, ROI, and demo video
                 </span>
               </div>
-              <button type="button" class="persona-next-step-btn" onclick="scrollToPersonaSnapStep('personaHeroStage_${p.id}')">
-                <span>&uarr; Back to Top of Story</span>
-              </button>
             </div>
 
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px;">
               ${[...new Set([...(p.agentIds || []), ...UNIVERSAL_AGENT_IDS])].map(aid => {
                 const ag = AGENTS[aid];
                 if (!ag) return '';
                 const cls = getAgentBuildClassification(ag);
                 return `
-                  <div class="ai-agent-chip-card" onclick="openAgentPage('${ag.id}', true, event)">
-                    <div style="display:flex; align-items:center; gap:12px; min-width:0;">
-                      <div class="ai-bot-square">✦</div>
-                      <div style="min-width:0;">
-                        <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:3px;">
-                          <span class="ai-agent-type-tag">${ag.isUniversal ? 'UNIVERSAL AI' : 'DOMAIN AI'}</span>
-                          <span class="build-tier-badge ${cls.cssClass}" style="font-size:9.5px; padding:1px 7px;">${cls.tier}</span>
+                  <div class="persona-agent-dock-card">
+                    <div>
+                      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:10px;">
+                        <div style="display:flex; align-items:center; gap:12px;">
+                          <div class="ai-bot-square" style="width:40px; height:40px; font-size:17px; flex-shrink:0;">✦</div>
+                          <div>
+                            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:3px;">
+                              <span class="ai-agent-type-tag">${ag.isUniversal ? 'UNIVERSAL AI' : 'DOMAIN AI'}</span>
+                              <span class="build-tier-badge ${cls.cssClass}" style="font-size:10px; padding:2px 8px;">${cls.tier}</span>
+                            </div>
+                            <div class="ai-agent-chip-title" style="font-size:16.5px;">${ag.name}</div>
+                          </div>
                         </div>
-                        <div class="ai-agent-chip-title">${ag.name}</div>
                       </div>
+
+                      <div style="font-size:13.5px; color:var(--text-secondary); line-height:1.5; margin-bottom:10px;">
+                        ${shortSentence(ag.solution || ag.role, 135)}
+                      </div>
+
+                      ${ag.badge ? `
+                        <div style="display:inline-flex; align-items:center; padding:3px 10px; border-radius:999px; background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.38); color:#10b981; font-family:var(--font-mono); font-size:11px; font-weight:800;">
+                          ✦ ${ag.badge}
+                        </div>
+                      ` : ''}
                     </div>
-                    <span style="color:#6366f1; font-weight:800; font-size:16px;">&rarr;</span>
+
+                    <button type="button" class="agent-plug-btn" style="width:100%; justify-content:center; padding:10px 16px; font-size:13px;" onclick="openAgentPage('${ag.id}', true, event)">
+                      <span>Open ${ag.name} &amp; Demo</span>
+                      <span>&rarr;</span>
+                    </button>
                   </div>
                 `;
               }).join('')}
@@ -20095,7 +19700,6 @@
 
       hydrateAssets();
       showActivePage('pagePersona');
-      initPersonaScrollObserver();
       const wrap = document.getElementById('personaGenieWrap');
       if (sRect && wrap) {
         animateGenieOutOfBox(sRect, wrap, dept.color);
