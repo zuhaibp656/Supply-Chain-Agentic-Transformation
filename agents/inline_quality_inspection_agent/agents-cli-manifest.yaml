@@ -24,3 +24,4 @@ tools:
   - app.tools:query_pneumatic_reject_gate_events
   - app.tools:action_trigger_pneumatic_reject_diverter
   - app.tools:action_log_ebhr_quality_deviation
+  orchestrator_routing: "Agent Orchestrator dynamically routes between Gemini 3.8 Flash (gemini-3.8-flash) and Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability); evals run on Gemini 3.8 Flash & Gemini 4 Argon"

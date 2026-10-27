@@ -11319,7 +11319,7 @@
       "toolsFile": "agents/demand_sensing_agent/app/tools.py",
       "chartsFile": "agents/demand_sensing_agent/app/render/charts.py",
       "smokeTestFile": "agents/demand_sensing_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_pos_store_scans",
@@ -11607,7 +11607,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "demand_forecasting",
     "subPillarName": "Demand Forecasting",
@@ -11633,8 +11635,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.98,
       "monthlyEnterpriseCostFsp3YrUsd": 205.05,
       "monthlyPilotCostUsd": 57.41,
@@ -11642,12 +11644,14 @@
       "annualConservativeBenefitUsd": 1149000,
       "annualLikelyBenefitUsd": 1879000,
       "cloudRoiMultiple": 467,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "demand_sensing_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3459,
@@ -11737,7 +11741,9 @@
         "cloudRoiMultipleConservative": 467,
         "cloudRoiMultipleLikely": 764,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "cpfr_sync_agent": {
@@ -11775,7 +11781,7 @@
       "toolsFile": "agents/cpfr_sync_agent/app/tools.py",
       "chartsFile": "agents/cpfr_sync_agent/app/render/charts.py",
       "smokeTestFile": "agents/cpfr_sync_agent/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_retailer_edi852_pos",
@@ -11987,7 +11993,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "demand_forecasting",
     "subPillarName": "Demand Forecasting",
@@ -12013,8 +12021,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.48,
       "monthlyEnterpriseCostFsp3YrUsd": 172.46,
       "monthlyPilotCostUsd": 48.29,
@@ -12022,12 +12030,14 @@
       "annualConservativeBenefitUsd": 1094000,
       "annualLikelyBenefitUsd": 1775000,
       "cloudRoiMultiple": 529,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "cpfr_sync_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3874,
@@ -12117,7 +12127,9 @@
         "cloudRoiMultipleConservative": 529,
         "cloudRoiMultipleLikely": 858,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "npi_demand_profiler": {
@@ -12155,7 +12167,7 @@
       "toolsFile": "agents/npi_demand_profiler/app/tools.py",
       "chartsFile": "agents/npi_demand_profiler/app/render/charts.py",
       "smokeTestFile": "agents/npi_demand_profiler/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.1-pro / gemini-4-argon",
       "smokeTestsPassed": 7,
       "tools": [
         "query_npi_demand_profiler_telemetry_feed",
@@ -12396,7 +12408,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP IBP Key Figure & BAPI_PIR_CHANGE Write-Back (P10/P50/P90) via Apigee"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "demand_forecasting",
     "subPillarName": "Demand Forecasting",
@@ -12422,8 +12436,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-pro",
-      "modelDisplayName": "Gemini Pro (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.1-pro / gemini-4-argon",
+      "modelDisplayName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
       "costPer1kInvocationsUsd": 14.66,
       "monthlyEnterpriseCostFsp3YrUsd": 557.19,
       "monthlyPilotCostUsd": 156.01,
@@ -12431,12 +12445,14 @@
       "annualConservativeBenefitUsd": 1194000,
       "annualLikelyBenefitUsd": 1942000,
       "cloudRoiMultiple": 179,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "npi_demand_profiler",
-      "modelName": "Gemini Pro (Vertex AI)",
-      "modelSlug": "gemini-2.5-pro",
+      "modelName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
+      "modelSlug": "gemini-3.1-pro / gemini-4-argon",
       "tierLabel": "Tier 3 \u00b7 Frontier Reasoning & Multi-Echelon Synthesis",
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 1267,
@@ -12526,7 +12542,9 @@
         "cloudRoiMultipleConservative": 179,
         "cloudRoiMultipleLikely": 290,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "promo_lift_simulator": {
@@ -12564,7 +12582,7 @@
       "toolsFile": "agents/promo_lift_simulator/app/tools.py",
       "chartsFile": "agents/promo_lift_simulator/app/render/charts.py",
       "smokeTestFile": "agents/promo_lift_simulator/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.1-pro / gemini-4-argon",
       "smokeTestsPassed": 7,
       "tools": [
         "query_planned_promo_campaigns",
@@ -12793,7 +12811,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "trade_promotion",
     "subPillarName": "Trade Promotion",
@@ -12819,8 +12839,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-pro",
-      "modelDisplayName": "Gemini Pro (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.1-pro / gemini-4-argon",
+      "modelDisplayName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
       "costPer1kInvocationsUsd": 18.77,
       "monthlyEnterpriseCostFsp3YrUsd": 472.33,
       "monthlyPilotCostUsd": 132.25,
@@ -12828,12 +12848,14 @@
       "annualConservativeBenefitUsd": 1167000,
       "annualLikelyBenefitUsd": 1911000,
       "cloudRoiMultiple": 206,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "promo_lift_simulator",
-      "modelName": "Gemini Pro (Vertex AI)",
-      "modelSlug": "gemini-2.5-pro",
+      "modelName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
+      "modelSlug": "gemini-3.1-pro / gemini-4-argon",
       "tierLabel": "Tier 3 \u00b7 Frontier Reasoning & Multi-Echelon Synthesis",
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 839,
@@ -12923,7 +12945,9 @@
         "cloudRoiMultipleConservative": 206,
         "cloudRoiMultipleLikely": 337,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "field_beat_distributor_sync_agent": {
@@ -12993,7 +13017,7 @@
       "toolsFile": "agents/field_beat_distributor_sync_agent/app/tools.py",
       "chartsFile": "agents/field_beat_distributor_sync_agent/app/render/charts.py",
       "smokeTestFile": "agents/field_beat_distributor_sync_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_distributor_dms_live_inventory",
@@ -13116,7 +13140,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "trade_promotion",
     "subPillarName": "Trade Promotion",
@@ -13142,8 +13168,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.63,
       "monthlyEnterpriseCostFsp3YrUsd": 187.95,
       "monthlyPilotCostUsd": 52.63,
@@ -13151,12 +13177,14 @@
       "annualConservativeBenefitUsd": 1156000,
       "annualLikelyBenefitUsd": 1879000,
       "cloudRoiMultiple": 513,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "field_beat_distributor_sync_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3842,
@@ -13246,7 +13274,9 @@
         "cloudRoiMultipleConservative": 513,
         "cloudRoiMultipleLikely": 833,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "trade_scheme_claims_reconciler": {
@@ -13316,7 +13346,7 @@
       "toolsFile": "agents/trade_scheme_claims_reconciler/app/tools.py",
       "chartsFile": "agents/trade_scheme_claims_reconciler/app/render/charts.py",
       "smokeTestFile": "agents/trade_scheme_claims_reconciler/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_active_trade_promotion_schemes",
@@ -13432,7 +13462,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "trade_promotion",
     "subPillarName": "Trade Promotion",
@@ -13458,8 +13490,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.05,
       "monthlyEnterpriseCostFsp3YrUsd": 142.52,
       "monthlyPilotCostUsd": 39.91,
@@ -13467,12 +13499,14 @@
       "annualConservativeBenefitUsd": 1026000,
       "annualLikelyBenefitUsd": 1673000,
       "cloudRoiMultiple": 600,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "trade_scheme_claims_reconciler",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2322,
@@ -13562,7 +13596,9 @@
         "cloudRoiMultipleConservative": 600,
         "cloudRoiMultipleLikely": 978,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "sop_scenario_weaver": {
@@ -13600,7 +13636,7 @@
       "toolsFile": "agents/sop_scenario_weaver/app/tools.py",
       "chartsFile": "agents/sop_scenario_weaver/app/render/charts.py",
       "smokeTestFile": "agents/sop_scenario_weaver/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.1-pro / gemini-4-argon",
       "smokeTestsPassed": 7,
       "tools": [
         "query_unconstrained_demand_gaps",
@@ -13823,7 +13859,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "sop_ibp",
     "subPillarName": "S&OP / IBP",
@@ -13849,8 +13887,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-pro",
-      "modelDisplayName": "Gemini Pro (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.1-pro / gemini-4-argon",
+      "modelDisplayName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
       "costPer1kInvocationsUsd": 13.84,
       "monthlyEnterpriseCostFsp3YrUsd": 728.31,
       "monthlyPilotCostUsd": 203.93,
@@ -13858,12 +13896,14 @@
       "annualConservativeBenefitUsd": 995000,
       "annualLikelyBenefitUsd": 1612000,
       "cloudRoiMultiple": 114,
-      "paybackDays": 4
+      "paybackDays": 4,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "sop_scenario_weaver",
-      "modelName": "Gemini Pro (Vertex AI)",
-      "modelSlug": "gemini-2.5-pro",
+      "modelName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
+      "modelSlug": "gemini-3.1-pro / gemini-4-argon",
       "tierLabel": "Tier 3 \u00b7 Frontier Reasoning & Multi-Echelon Synthesis",
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 1754,
@@ -13953,7 +13993,9 @@
         "cloudRoiMultipleConservative": 114,
         "cloudRoiMultipleLikely": 184,
         "paybackDays": 4
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "disruption_war_room_orchestrator": {
@@ -14028,7 +14070,7 @@
       "toolsFile": "agents/disruption_war_room_orchestrator/app/tools.py",
       "chartsFile": "agents/disruption_war_room_orchestrator/app/render/charts.py",
       "smokeTestFile": "agents/disruption_war_room_orchestrator/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.1-pro / gemini-4-argon",
       "smokeTestsPassed": 7,
       "tools": [
         "query_weather_alerts",
@@ -14316,7 +14358,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "Disruption War Room Orchestrator correlated 1 multi-tier signal vectors. Autonomous incident war room created with emergency freight remediation dispatched.",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "sop_ibp",
     "subPillarName": "S&OP / IBP",
@@ -14338,8 +14382,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-pro",
-      "modelDisplayName": "Gemini Pro (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.1-pro / gemini-4-argon",
+      "modelDisplayName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
       "costPer1kInvocationsUsd": 14.39,
       "monthlyEnterpriseCostFsp3YrUsd": 786.17,
       "monthlyPilotCostUsd": 220.13,
@@ -14347,12 +14391,14 @@
       "annualConservativeBenefitUsd": 940000,
       "annualLikelyBenefitUsd": 1533000,
       "cloudRoiMultiple": 100,
-      "paybackDays": 4
+      "paybackDays": 4,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "disruption_war_room_orchestrator",
-      "modelName": "Gemini Pro (Vertex AI)",
-      "modelSlug": "gemini-2.5-pro",
+      "modelName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
+      "modelSlug": "gemini-3.1-pro / gemini-4-argon",
       "tierLabel": "Tier 3 \u00b7 Frontier Reasoning & Multi-Echelon Synthesis",
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 1821,
@@ -14442,7 +14488,9 @@
         "cloudRoiMultipleConservative": 100,
         "cloudRoiMultipleLikely": 162,
         "paybackDays": 4
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "csco_control_tower_copilot": {
@@ -14517,7 +14565,7 @@
       "toolsFile": "agents/csco_control_tower_copilot/app/tools.py",
       "chartsFile": "agents/csco_control_tower_copilot/app/render/charts.py",
       "smokeTestFile": "agents/csco_control_tower_copilot/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.1-pro / gemini-4-argon",
       "smokeTestsPassed": 7,
       "tools": [
         "query_executive_kpis",
@@ -14842,7 +14890,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "CSCO Control Tower Copilot scanned multi-echelon network, identified critical bottleneck and executed approved mitigation playbook (EXEC-PB-0FA7187B) with lateral inventory rebalancing.",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "sop_ibp",
     "subPillarName": "S&OP / IBP",
@@ -14864,8 +14914,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-pro",
-      "modelDisplayName": "Gemini Pro (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.1-pro / gemini-4-argon",
+      "modelDisplayName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
       "costPer1kInvocationsUsd": 16.55,
       "monthlyEnterpriseCostFsp3YrUsd": 789.42,
       "monthlyPilotCostUsd": 221.04,
@@ -14873,12 +14923,14 @@
       "annualConservativeBenefitUsd": 1319000,
       "annualLikelyBenefitUsd": 2150000,
       "cloudRoiMultiple": 139,
-      "paybackDays": 3
+      "paybackDays": 3,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "csco_control_tower_copilot",
-      "modelName": "Gemini Pro (Vertex AI)",
-      "modelSlug": "gemini-2.5-pro",
+      "modelName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
+      "modelSlug": "gemini-3.1-pro / gemini-4-argon",
       "tierLabel": "Tier 3 \u00b7 Frontier Reasoning & Multi-Echelon Synthesis",
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 1590,
@@ -14968,7 +15020,9 @@
         "cloudRoiMultipleConservative": 139,
         "cloudRoiMultipleLikely": 227,
         "paybackDays": 3
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "working_capital_cash_bridge": {
@@ -15043,7 +15097,7 @@
       "toolsFile": "agents/working_capital_cash_bridge/app/tools.py",
       "chartsFile": "agents/working_capital_cash_bridge/app/render/charts.py",
       "smokeTestFile": "agents/working_capital_cash_bridge/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_working_capital_metrics",
@@ -15293,7 +15347,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "Working Capital Cash Bridge scanned inventory valuation ledgers and AP schedules: executed 2 cash optimization actions releasing capital and capturing discounts.",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "portfolio_sku",
     "subPillarName": "Portfolio & SKU",
@@ -15315,8 +15371,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.5,
       "monthlyEnterpriseCostFsp3YrUsd": 121.02,
       "monthlyPilotCostUsd": 33.89,
@@ -15324,12 +15380,14 @@
       "annualConservativeBenefitUsd": 680000,
       "annualLikelyBenefitUsd": 1108000,
       "cloudRoiMultiple": 468,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "working_capital_cash_bridge",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1614,
@@ -15419,7 +15477,9 @@
         "cloudRoiMultipleConservative": 468,
         "cloudRoiMultipleLikely": 763,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "eco_cutover_orchestrator": {
@@ -15457,7 +15517,7 @@
       "toolsFile": "agents/eco_cutover_orchestrator/app/tools.py",
       "chartsFile": "agents/eco_cutover_orchestrator/app/render/charts.py",
       "smokeTestFile": "agents/eco_cutover_orchestrator/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_plm_engineering_change_orders",
@@ -15580,7 +15640,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "portfolio_sku",
     "subPillarName": "Portfolio & SKU",
@@ -15606,8 +15668,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.76,
       "monthlyEnterpriseCostFsp3YrUsd": 161.69,
       "monthlyPilotCostUsd": 45.27,
@@ -15615,12 +15677,14 @@
       "annualConservativeBenefitUsd": 1285000,
       "annualLikelyBenefitUsd": 2096000,
       "cloudRoiMultiple": 662,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "eco_cutover_orchestrator",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3064,
@@ -15710,7 +15774,9 @@
         "cloudRoiMultipleConservative": 662,
         "cloudRoiMultipleLikely": 1080,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "network_twin_architect": {
@@ -15748,7 +15814,7 @@
       "toolsFile": "agents/network_twin_architect/app/tools.py",
       "chartsFile": "agents/network_twin_architect/app/render/charts.py",
       "smokeTestFile": "agents/network_twin_architect/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_network_facility_nodes_and_leases",
@@ -15867,7 +15933,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "portfolio_sku",
     "subPillarName": "Portfolio & SKU",
@@ -15893,8 +15961,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.55,
       "monthlyEnterpriseCostFsp3YrUsd": 156.67,
       "monthlyPilotCostUsd": 43.87,
@@ -15902,12 +15970,14 @@
       "annualConservativeBenefitUsd": 1482000,
       "annualLikelyBenefitUsd": 2417000,
       "cloudRoiMultiple": 788,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "network_twin_architect",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3373,
@@ -15997,7 +16067,9 @@
         "cloudRoiMultipleConservative": 788,
         "cloudRoiMultipleLikely": 1286,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "tier_n_risk_sentinel": {
@@ -16035,7 +16107,7 @@
       "toolsFile": "agents/tier_n_risk_sentinel/app/tools.py",
       "chartsFile": "agents/tier_n_risk_sentinel/app/render/charts.py",
       "smokeTestFile": "agents/tier_n_risk_sentinel/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_subtier_network_nodes",
@@ -16270,7 +16342,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "supplier_network",
     "subPillarName": "Supplier Network",
@@ -16296,8 +16370,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 3.06,
       "monthlyEnterpriseCostFsp3YrUsd": 176.68,
       "monthlyPilotCostUsd": 49.47,
@@ -16305,12 +16379,14 @@
       "annualConservativeBenefitUsd": 835000,
       "annualLikelyBenefitUsd": 1361000,
       "cloudRoiMultiple": 394,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "tier_n_risk_sentinel",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1922,
@@ -16400,7 +16476,9 @@
         "cloudRoiMultipleConservative": 394,
         "cloudRoiMultipleLikely": 642,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "supplier_quality_sentinel": {
@@ -16438,7 +16516,7 @@
       "toolsFile": "agents/supplier_quality_sentinel/app/tools.py",
       "chartsFile": "agents/supplier_quality_sentinel/app/render/charts.py",
       "smokeTestFile": "agents/supplier_quality_sentinel/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_supplier_coa_inspections",
@@ -16698,7 +16776,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "supplier_network",
     "subPillarName": "Supplier Network",
@@ -16724,8 +16804,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.52,
       "monthlyEnterpriseCostFsp3YrUsd": 147.88,
       "monthlyPilotCostUsd": 41.41,
@@ -16733,12 +16813,14 @@
       "annualConservativeBenefitUsd": 1212000,
       "annualLikelyBenefitUsd": 1980000,
       "cloudRoiMultiple": 683,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "supplier_quality_sentinel",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1953,
@@ -16828,7 +16910,9 @@
         "cloudRoiMultipleConservative": 683,
         "cloudRoiMultipleLikely": 1116,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "carbon_scope3_ledger": {
@@ -16866,7 +16950,7 @@
       "toolsFile": "agents/carbon_scope3_ledger/app/tools.py",
       "chartsFile": "agents/carbon_scope3_ledger/app/render/charts.py",
       "smokeTestFile": "agents/carbon_scope3_ledger/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_shipment_level_scope3_emissions",
@@ -16987,7 +17071,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "supplier_network",
     "subPillarName": "Supplier Network",
@@ -17013,8 +17099,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.02,
       "monthlyEnterpriseCostFsp3YrUsd": 180.1,
       "monthlyPilotCostUsd": 50.43,
@@ -17022,12 +17108,14 @@
       "annualConservativeBenefitUsd": 990000,
       "annualLikelyBenefitUsd": 1620000,
       "cloudRoiMultiple": 458,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "carbon_scope3_ledger",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2974,
@@ -17117,7 +17205,9 @@
         "cloudRoiMultipleConservative": 458,
         "cloudRoiMultipleLikely": 750,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "commodity_index_advisor": {
@@ -17155,7 +17245,7 @@
       "toolsFile": "agents/commodity_index_advisor/app/tools.py",
       "chartsFile": "agents/commodity_index_advisor/app/render/charts.py",
       "smokeTestFile": "agents/commodity_index_advisor/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_commodity_index_advisor_telemetry_feed",
@@ -17396,7 +17486,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP Ariba Award Allocation, Redlined Negotiation Fact-Pack & SAP Purchasing Info-Record Update (ME12)"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "material_packaging",
     "subPillarName": "Material & Packaging",
@@ -17422,8 +17514,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.91,
       "monthlyEnterpriseCostFsp3YrUsd": 143.13,
       "monthlyPilotCostUsd": 40.08,
@@ -17431,12 +17523,14 @@
       "annualConservativeBenefitUsd": 1250000,
       "annualLikelyBenefitUsd": 2043000,
       "cloudRoiMultiple": 728,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "commodity_index_advisor",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1639,
@@ -17526,7 +17620,9 @@
         "cloudRoiMultipleConservative": 728,
         "cloudRoiMultipleLikely": 1189,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "rfq_should_cost_agent": {
@@ -17564,7 +17660,7 @@
       "toolsFile": "agents/rfq_should_cost_agent/app/tools.py",
       "chartsFile": "agents/rfq_should_cost_agent/app/render/charts.py",
       "smokeTestFile": "agents/rfq_should_cost_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_material_should_cost_bom",
@@ -17804,7 +17900,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "material_packaging",
     "subPillarName": "Material & Packaging",
@@ -17830,8 +17928,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.32,
       "monthlyEnterpriseCostFsp3YrUsd": 188.08,
       "monthlyPilotCostUsd": 52.66,
@@ -17839,12 +17937,14 @@
       "annualConservativeBenefitUsd": 1311000,
       "annualLikelyBenefitUsd": 2139000,
       "cloudRoiMultiple": 581,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "rfq_should_cost_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2699,
@@ -17934,7 +18034,9 @@
         "cloudRoiMultipleConservative": 581,
         "cloudRoiMultipleLikely": 948,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "sustainable_packaging_agent": {
@@ -17972,7 +18074,7 @@
       "toolsFile": "agents/sustainable_packaging_agent/app/tools.py",
       "chartsFile": "agents/sustainable_packaging_agent/app/render/charts.py",
       "smokeTestFile": "agents/sustainable_packaging_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_sustainable_packaging_agent_telemetry_feed",
@@ -18213,7 +18315,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "EU CBAM / EUDR XML Customs Filing & SAP TM / Blue Yonder Low-Carbon Rail/EV/Ocean Lane Allocation"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "material_packaging",
     "subPillarName": "Material & Packaging",
@@ -18239,8 +18343,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.36,
       "monthlyEnterpriseCostFsp3YrUsd": 133.35,
       "monthlyPilotCostUsd": 37.34,
@@ -18248,12 +18352,14 @@
       "annualConservativeBenefitUsd": 1162000,
       "annualLikelyBenefitUsd": 1895000,
       "cloudRoiMultiple": 726,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "sustainable_packaging_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1884,
@@ -18343,7 +18449,9 @@
         "cloudRoiMultipleConservative": 726,
         "cloudRoiMultipleLikely": 1184,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "tariff_esg_agent": {
@@ -18381,7 +18489,7 @@
       "toolsFile": "agents/tariff_esg_agent/app/tools.py",
       "chartsFile": "agents/tariff_esg_agent/app/render/charts.py",
       "smokeTestFile": "agents/tariff_esg_agent/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_contract_clause_obligations",
@@ -18587,7 +18695,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "contract_po_mgmt",
     "subPillarName": "Contract & PO Mgmt",
@@ -18613,8 +18723,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.6,
       "monthlyEnterpriseCostFsp3YrUsd": 172.67,
       "monthlyPilotCostUsd": 48.35,
@@ -18622,12 +18732,14 @@
       "annualConservativeBenefitUsd": 1041000,
       "annualLikelyBenefitUsd": 1692000,
       "cloudRoiMultiple": 502,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "tariff_esg_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3596,
@@ -18717,7 +18829,9 @@
         "cloudRoiMultipleConservative": 502,
         "cloudRoiMultipleLikely": 817,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "master_data_leadtime_steward": {
@@ -18792,7 +18906,7 @@
       "toolsFile": "agents/master_data_leadtime_steward/app/tools.py",
       "chartsFile": "agents/master_data_leadtime_steward/app/render/charts.py",
       "smokeTestFile": "agents/master_data_leadtime_steward/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_material_master_records",
@@ -19038,7 +19152,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "Master Data Steward audited SAP Material Master and 3D CubiScan sensors: calibrated 2 discrepancies and updated ERP records.",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "contract_po_mgmt",
     "subPillarName": "Contract & PO Mgmt",
@@ -19060,8 +19176,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash-lite",
-      "modelDisplayName": "Gemini Flash-Lite (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 0.9,
       "monthlyEnterpriseCostFsp3YrUsd": 139.93,
       "monthlyPilotCostUsd": 39.18,
@@ -19069,12 +19185,14 @@
       "annualConservativeBenefitUsd": 1162000,
       "annualLikelyBenefitUsd": 1899000,
       "cloudRoiMultiple": 692,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "master_data_leadtime_steward",
-      "modelName": "Gemini Flash-Lite (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash-lite",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 1 \u00b7 High-Frequency Stream Triage & Document/Gate Check",
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 5211,
@@ -19164,7 +19282,9 @@
         "cloudRoiMultipleConservative": 692,
         "cloudRoiMultipleLikely": 1131,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "three_way_match_dispute": {
@@ -19202,7 +19322,7 @@
       "toolsFile": "agents/three_way_match_dispute/app/tools.py",
       "chartsFile": "agents/three_way_match_dispute/app/render/charts.py",
       "smokeTestFile": "agents/three_way_match_dispute/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_three_way_match_dispute_telemetry_feed",
@@ -19443,7 +19563,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP GTS 10-Digit HS Code Lock, FTA Certificate Filing & SAP AP Supplier Rebate Debit Memo"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "contract_po_mgmt",
     "subPillarName": "Contract & PO Mgmt",
@@ -19469,8 +19591,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash-lite",
-      "modelDisplayName": "Gemini Flash-Lite (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.21,
       "monthlyEnterpriseCostFsp3YrUsd": 208.23,
       "monthlyPilotCostUsd": 58.3,
@@ -19478,12 +19600,14 @@
       "annualConservativeBenefitUsd": 1328000,
       "annualLikelyBenefitUsd": 2162000,
       "cloudRoiMultiple": 531,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "three_way_match_dispute",
-      "modelName": "Gemini Flash-Lite (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash-lite",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 1 \u00b7 High-Frequency Stream Triage & Document/Gate Check",
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 5748,
@@ -19573,7 +19697,9 @@
         "cloudRoiMultipleConservative": 531,
         "cloudRoiMultipleLikely": 865,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "finite_production_scheduler": {
@@ -19611,7 +19737,7 @@
       "toolsFile": "agents/finite_production_scheduler/app/tools.py",
       "chartsFile": "agents/finite_production_scheduler/app/render/charts.py",
       "smokeTestFile": "agents/finite_production_scheduler/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_production_orders_backlog",
@@ -19840,7 +19966,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "production_scheduling",
     "subPillarName": "Production Scheduling",
@@ -19866,8 +19994,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 3.13,
       "monthlyEnterpriseCostFsp3YrUsd": 200.85,
       "monthlyPilotCostUsd": 56.24,
@@ -19875,12 +20003,14 @@
       "annualConservativeBenefitUsd": 1042000,
       "annualLikelyBenefitUsd": 1687000,
       "cloudRoiMultiple": 432,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "finite_production_scheduler",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2139,
@@ -19970,7 +20100,9 @@
         "cloudRoiMultipleConservative": 432,
         "cloudRoiMultipleLikely": 700,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "line_schedule_optimizer": {
@@ -20008,7 +20140,7 @@
       "toolsFile": "agents/line_schedule_optimizer/app/tools.py",
       "chartsFile": "agents/line_schedule_optimizer/app/render/charts.py",
       "smokeTestFile": "agents/line_schedule_optimizer/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_production_orders_backlog",
@@ -20237,7 +20369,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "production_scheduling",
     "subPillarName": "Production Scheduling",
@@ -20263,8 +20397,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.36,
       "monthlyEnterpriseCostFsp3YrUsd": 171.31,
       "monthlyPilotCostUsd": 47.97,
@@ -20272,12 +20406,14 @@
       "annualConservativeBenefitUsd": 820000,
       "annualLikelyBenefitUsd": 1338000,
       "cloudRoiMultiple": 399,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "line_schedule_optimizer",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2420,
@@ -20367,7 +20503,9 @@
         "cloudRoiMultipleConservative": 399,
         "cloudRoiMultipleLikely": 651,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "labor_line_balancing_agent": {
@@ -20405,7 +20543,7 @@
       "toolsFile": "agents/labor_line_balancing_agent/app/tools.py",
       "chartsFile": "agents/labor_line_balancing_agent/app/render/charts.py",
       "smokeTestFile": "agents/labor_line_balancing_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_labor_line_balancing_agent_telemetry_feed",
@@ -20646,7 +20784,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP PP/DS Production Order Dispatch Sequence (BAPI_PRODORD_CHANGE) & Siemens MES Line Recipe Queue"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "production_scheduling",
     "subPillarName": "Production Scheduling",
@@ -20672,8 +20812,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.11,
       "monthlyEnterpriseCostFsp3YrUsd": 231.81,
       "monthlyPilotCostUsd": 64.91,
@@ -20681,12 +20821,14 @@
       "annualConservativeBenefitUsd": 1079000,
       "annualLikelyBenefitUsd": 1766000,
       "cloudRoiMultiple": 388,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "labor_line_balancing_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3657,
@@ -20776,7 +20918,9 @@
         "cloudRoiMultipleConservative": 388,
         "cloudRoiMultipleLikely": 635,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "predictive_oee_sentinel": {
@@ -20814,7 +20958,7 @@
       "toolsFile": "agents/predictive_oee_sentinel/app/tools.py",
       "chartsFile": "agents/predictive_oee_sentinel/app/render/charts.py",
       "smokeTestFile": "agents/predictive_oee_sentinel/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_plant_machine_telemetry",
@@ -21067,7 +21211,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "capacity_planning",
     "subPillarName": "Capacity Planning",
@@ -21093,8 +21239,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.62,
       "monthlyEnterpriseCostFsp3YrUsd": 181.76,
       "monthlyPilotCostUsd": 50.89,
@@ -21102,12 +21248,14 @@
       "annualConservativeBenefitUsd": 1080000,
       "annualLikelyBenefitUsd": 1751000,
       "cloudRoiMultiple": 495,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "predictive_oee_sentinel",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2312,
@@ -21197,7 +21345,9 @@
         "cloudRoiMultipleConservative": 495,
         "cloudRoiMultipleLikely": 803,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "copacker_allocation_agent": {
@@ -21235,7 +21385,7 @@
       "toolsFile": "agents/copacker_allocation_agent/app/tools.py",
       "chartsFile": "agents/copacker_allocation_agent/app/render/charts.py",
       "smokeTestFile": "agents/copacker_allocation_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_copacker_allocation_agent_telemetry_feed",
@@ -21476,7 +21626,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP IBP / S/4HANA Master Production Schedule (MPS) & Financial P&L Bridge Commit"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "capacity_planning",
     "subPillarName": "Capacity Planning",
@@ -21502,8 +21654,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.11,
       "monthlyEnterpriseCostFsp3YrUsd": 182.86,
       "monthlyPilotCostUsd": 51.2,
@@ -21511,12 +21663,14 @@
       "annualConservativeBenefitUsd": 1082000,
       "annualLikelyBenefitUsd": 1769000,
       "cloudRoiMultiple": 493,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "copacker_allocation_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2887,
@@ -21606,7 +21760,9 @@
         "cloudRoiMultipleConservative": 493,
         "cloudRoiMultipleLikely": 806,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "capex_simulator_agent": {
@@ -21644,7 +21800,7 @@
       "toolsFile": "agents/capex_simulator_agent/app/tools.py",
       "chartsFile": "agents/capex_simulator_agent/app/render/charts.py",
       "smokeTestFile": "agents/capex_simulator_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.1-pro / gemini-4-argon",
       "smokeTestsPassed": 7,
       "tools": [
         "query_capex_simulator_agent_telemetry_feed",
@@ -21885,7 +22041,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP SD Customer MOQ / Bracket Pricing Policy Update & SAP S/4HANA Sourcing Assignment Split"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "capacity_planning",
     "subPillarName": "Capacity Planning",
@@ -21911,8 +22069,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-pro",
-      "modelDisplayName": "Gemini Pro (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.1-pro / gemini-4-argon",
+      "modelDisplayName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
       "costPer1kInvocationsUsd": 18.4,
       "monthlyEnterpriseCostFsp3YrUsd": 533.3,
       "monthlyPilotCostUsd": 149.32,
@@ -21920,12 +22078,14 @@
       "annualConservativeBenefitUsd": 1080000,
       "annualLikelyBenefitUsd": 1756000,
       "cloudRoiMultiple": 169,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "capex_simulator_agent",
-      "modelName": "Gemini Pro (Vertex AI)",
-      "modelSlug": "gemini-2.5-pro",
+      "modelName": "Gemini 3.1 Pro / 4 Argon (subject to availability) + 3.8 Flash",
+      "modelSlug": "gemini-3.1-pro / gemini-4-argon",
       "tierLabel": "Tier 3 \u00b7 Frontier Reasoning & Multi-Echelon Synthesis",
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 966,
@@ -22015,7 +22175,9 @@
         "cloudRoiMultipleConservative": 169,
         "cloudRoiMultipleLikely": 274,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes complex multi-echelon & scenario queries to Gemini 3.1 Pro / 4 Argon (subject to availability) and delegates fast telemetry sub-tasks to Gemini 3.8 Flash.",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "inline_yield_guardian": {
@@ -22230,7 +22392,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "quality_compliance",
     "subPillarName": "Quality & Compliance",
@@ -22256,8 +22420,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.08,
       "monthlyEnterpriseCostFsp3YrUsd": 224.17,
       "monthlyPilotCostUsd": 62.77,
@@ -22265,12 +22429,14 @@
       "annualConservativeBenefitUsd": 1214000,
       "annualLikelyBenefitUsd": 1979000,
       "cloudRoiMultiple": 451,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "inline_yield_guardian",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3585,
@@ -22360,7 +22526,9 @@
         "cloudRoiMultipleConservative": 451,
         "cloudRoiMultipleLikely": 736,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "batch_record_auditor": {
@@ -22639,7 +22807,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "Bounded PLC Recipe Offset Recommendation & Automated SAP QM Usage Decision (BAPI_INSPLOT_SETUSAGEDECISION)"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "quality_compliance",
     "subPillarName": "Quality & Compliance",
@@ -22665,8 +22835,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.11,
       "monthlyEnterpriseCostFsp3YrUsd": 144.17,
       "monthlyPilotCostUsd": 40.37,
@@ -22674,12 +22844,14 @@
       "annualConservativeBenefitUsd": 1088000,
       "annualLikelyBenefitUsd": 1762000,
       "cloudRoiMultiple": 629,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "batch_record_auditor",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2279,
@@ -22769,7 +22941,9 @@
         "cloudRoiMultipleConservative": 629,
         "cloudRoiMultipleLikely": 1018,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "scrap_defect_root_cause_agent": {
@@ -22807,7 +22981,7 @@
       "toolsFile": "agents/scrap_defect_root_cause_agent/app/tools.py",
       "chartsFile": "agents/scrap_defect_root_cause_agent/app/render/charts.py",
       "smokeTestFile": "agents/scrap_defect_root_cause_agent/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_scrap_loss_pareto_records",
@@ -23009,7 +23183,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "quality_compliance",
     "subPillarName": "Quality & Compliance",
@@ -23035,8 +23211,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.22,
       "monthlyEnterpriseCostFsp3YrUsd": 123.66,
       "monthlyPilotCostUsd": 34.62,
@@ -23044,12 +23220,14 @@
       "annualConservativeBenefitUsd": 1032000,
       "annualLikelyBenefitUsd": 1671000,
       "cloudRoiMultiple": 695,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "scrap_defect_root_cause_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1855,
@@ -23139,7 +23317,9 @@
         "cloudRoiMultipleConservative": 695,
         "cloudRoiMultipleLikely": 1126,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "meio_safety_stock_agent": {
@@ -23177,7 +23357,7 @@
       "toolsFile": "agents/meio_safety_stock_agent/app/tools.py",
       "chartsFile": "agents/meio_safety_stock_agent/app/render/charts.py",
       "smokeTestFile": "agents/meio_safety_stock_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_multi_echelon_safety_stock_recommendations",
@@ -23371,7 +23551,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "positioning_optimization",
     "subPillarName": "Positioning & Optimization",
@@ -23397,8 +23579,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 3.47,
       "monthlyEnterpriseCostFsp3YrUsd": 214.13,
       "monthlyPilotCostUsd": 59.96,
@@ -23406,12 +23588,14 @@
       "annualConservativeBenefitUsd": 1329000,
       "annualLikelyBenefitUsd": 2162000,
       "cloudRoiMultiple": 517,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "meio_safety_stock_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2059,
@@ -23501,7 +23685,9 @@
         "cloudRoiMultipleConservative": 517,
         "cloudRoiMultipleLikely": 841,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "slob_disposition_agent": {
@@ -23539,7 +23725,7 @@
       "toolsFile": "agents/slob_disposition_agent/app/tools.py",
       "chartsFile": "agents/slob_disposition_agent/app/render/charts.py",
       "smokeTestFile": "agents/slob_disposition_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_slob_disposition_agent_telemetry_feed",
@@ -23780,7 +23966,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP BAPI_MATERIAL_SAVEDATA Safety Stock / ROP Update & STO Lateral Transfer Creation (BAPI_PO_CREATE1)"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "positioning_optimization",
     "subPillarName": "Positioning & Optimization",
@@ -23806,8 +23994,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.31,
       "monthlyEnterpriseCostFsp3YrUsd": 142.65,
       "monthlyPilotCostUsd": 39.94,
@@ -23815,12 +24003,14 @@
       "annualConservativeBenefitUsd": 735000,
       "annualLikelyBenefitUsd": 1196000,
       "cloudRoiMultiple": 429,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "slob_disposition_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2054,
@@ -23910,7 +24100,9 @@
         "cloudRoiMultipleConservative": 429,
         "cloudRoiMultipleLikely": 699,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "crossdock_transfer_orchestrator": {
@@ -23948,7 +24140,7 @@
       "toolsFile": "agents/crossdock_transfer_orchestrator/app/tools.py",
       "chartsFile": "agents/crossdock_transfer_orchestrator/app/render/charts.py",
       "smokeTestFile": "agents/crossdock_transfer_orchestrator/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_inbound_outbound_crossdock_manifests",
@@ -24126,7 +24318,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "positioning_optimization",
     "subPillarName": "Positioning & Optimization",
@@ -24152,8 +24346,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.52,
       "monthlyEnterpriseCostFsp3YrUsd": 170.23,
       "monthlyPilotCostUsd": 47.66,
@@ -24161,12 +24355,14 @@
       "annualConservativeBenefitUsd": 1134000,
       "annualLikelyBenefitUsd": 1845000,
       "cloudRoiMultiple": 555,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "crossdock_transfer_orchestrator",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2249,
@@ -24256,7 +24452,9 @@
         "cloudRoiMultipleConservative": 555,
         "cloudRoiMultipleLikely": 903,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "warehouse_slotting_agent": {
@@ -24294,7 +24492,7 @@
       "toolsFile": "agents/warehouse_slotting_agent/app/tools.py",
       "chartsFile": "agents/warehouse_slotting_agent/app/render/charts.py",
       "smokeTestFile": "agents/warehouse_slotting_agent/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_warehouse_slotting_velocity_tiers",
@@ -24488,7 +24686,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "warehouse_operations",
     "subPillarName": "Warehouse Operations",
@@ -24514,8 +24714,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.75,
       "monthlyEnterpriseCostFsp3YrUsd": 146.63,
       "monthlyPilotCostUsd": 41.06,
@@ -24523,12 +24723,14 @@
       "annualConservativeBenefitUsd": 1159000,
       "annualLikelyBenefitUsd": 1897000,
       "cloudRoiMultiple": 659,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "warehouse_slotting_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2794,
@@ -24618,7 +24820,9 @@
         "cloudRoiMultipleConservative": 659,
         "cloudRoiMultipleLikely": 1078,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "dock_to_stock_agent": {
@@ -24656,7 +24860,7 @@
       "toolsFile": "agents/dock_to_stock_agent/app/tools.py",
       "chartsFile": "agents/dock_to_stock_agent/app/render/charts.py",
       "smokeTestFile": "agents/dock_to_stock_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_dock_to_stock_agent_telemetry_feed",
@@ -24897,7 +25101,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "YMS / SAP EWM Dock Door Assignment, Driver SMS Gate Pass & Hostler Tablet Dispatch"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "warehouse_operations",
     "subPillarName": "Warehouse Operations",
@@ -24923,8 +25129,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash-lite",
-      "modelDisplayName": "Gemini Flash-Lite (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.17,
       "monthlyEnterpriseCostFsp3YrUsd": 141.03,
       "monthlyPilotCostUsd": 39.49,
@@ -24932,12 +25138,14 @@
       "annualConservativeBenefitUsd": 1459000,
       "annualLikelyBenefitUsd": 2375000,
       "cloudRoiMultiple": 862,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "dock_to_stock_agent",
-      "modelName": "Gemini Flash-Lite (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash-lite",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 1 \u00b7 High-Frequency Stream Triage & Document/Gate Check",
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 4010,
@@ -25027,7 +25235,9 @@
         "cloudRoiMultipleConservative": 862,
         "cloudRoiMultipleLikely": 1403,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "wave_fulfillment_copilot": {
@@ -25065,7 +25275,7 @@
       "toolsFile": "agents/wave_fulfillment_copilot/app/tools.py",
       "chartsFile": "agents/wave_fulfillment_copilot/app/render/charts.py",
       "smokeTestFile": "agents/wave_fulfillment_copilot/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_wave_fulfillment_copilot_telemetry_feed",
@@ -25306,7 +25516,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "Manhattan / SAP EWM Directed Putaway, Re-Slot Tasks & Dynamic Wave Release via Apigee"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "warehouse_operations",
     "subPillarName": "Warehouse Operations",
@@ -25332,8 +25544,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.57,
       "monthlyEnterpriseCostFsp3YrUsd": 248.32,
       "monthlyPilotCostUsd": 69.53,
@@ -25341,12 +25553,14 @@
       "annualConservativeBenefitUsd": 1454000,
       "annualLikelyBenefitUsd": 2368000,
       "cloudRoiMultiple": 488,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "wave_fulfillment_copilot",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3223,
@@ -25436,7 +25650,9 @@
         "cloudRoiMultipleConservative": 488,
         "cloudRoiMultipleLikely": 795,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "planogram_merchandising_vision_auditor": {
@@ -25621,7 +25837,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "omnichannel_visibility",
     "subPillarName": "Omnichannel Visibility",
@@ -25647,8 +25865,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.31,
       "monthlyEnterpriseCostFsp3YrUsd": 160.94,
       "monthlyPilotCostUsd": 45.06,
@@ -25656,12 +25874,14 @@
       "annualConservativeBenefitUsd": 676000,
       "annualLikelyBenefitUsd": 1102000,
       "cloudRoiMultiple": 350,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "planogram_merchandising_vision_auditor",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2327,
@@ -25751,7 +25971,9 @@
         "cloudRoiMultipleConservative": 350,
         "cloudRoiMultipleLikely": 571,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "atp_order_promising_agent": {
@@ -25789,7 +26011,7 @@
       "toolsFile": "agents/atp_order_promising_agent/app/tools.py",
       "chartsFile": "agents/atp_order_promising_agent/app/render/charts.py",
       "smokeTestFile": "agents/atp_order_promising_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_realtime_sku_atp_allocations",
@@ -25970,7 +26192,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "omnichannel_visibility",
     "subPillarName": "Omnichannel Visibility",
@@ -25996,8 +26220,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.68,
       "monthlyEnterpriseCostFsp3YrUsd": 182.41,
       "monthlyPilotCostUsd": 51.07,
@@ -26005,12 +26229,14 @@
       "annualConservativeBenefitUsd": 1304000,
       "annualLikelyBenefitUsd": 2132000,
       "cloudRoiMultiple": 596,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "atp_order_promising_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3629,
@@ -26100,7 +26326,9 @@
         "cloudRoiMultipleConservative": 596,
         "cloudRoiMultipleLikely": 974,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "returns_triage_agent": {
@@ -26138,7 +26366,7 @@
       "toolsFile": "agents/returns_triage_agent/app/tools.py",
       "chartsFile": "agents/returns_triage_agent/app/render/charts.py",
       "smokeTestFile": "agents/returns_triage_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_returns_triage_agent_telemetry_feed",
@@ -26379,7 +26607,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "TMS Fleet Backhaul Pickup Stop, SAP EWM Direct-to-Hub Restock & Vendor Warranty Debit Memo"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "omnichannel_visibility",
     "subPillarName": "Omnichannel Visibility",
@@ -26405,8 +26635,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash-lite",
-      "modelDisplayName": "Gemini Flash-Lite (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.01,
       "monthlyEnterpriseCostFsp3YrUsd": 136.6,
       "monthlyPilotCostUsd": 38.25,
@@ -26414,12 +26644,14 @@
       "annualConservativeBenefitUsd": 991000,
       "annualLikelyBenefitUsd": 1618000,
       "cloudRoiMultiple": 605,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "returns_triage_agent",
-      "modelName": "Gemini Flash-Lite (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash-lite",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 1 \u00b7 High-Frequency Stream Triage & Document/Gate Check",
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 4488,
@@ -26509,7 +26741,9 @@
         "cloudRoiMultipleConservative": 605,
         "cloudRoiMultipleLikely": 987,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "load_consolidation_agent": {
@@ -26547,7 +26781,7 @@
       "toolsFile": "agents/load_consolidation_agent/app/tools.py",
       "chartsFile": "agents/load_consolidation_agent/app/render/charts.py",
       "smokeTestFile": "agents/load_consolidation_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_outbound_shipment_carton_dimensions",
@@ -26710,7 +26944,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "first_mid_mile",
     "subPillarName": "First & Mid-Mile",
@@ -26736,8 +26972,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.97,
       "monthlyEnterpriseCostFsp3YrUsd": 147.18,
       "monthlyPilotCostUsd": 41.21,
@@ -26745,12 +26981,14 @@
       "annualConservativeBenefitUsd": 1368000,
       "annualLikelyBenefitUsd": 2232000,
       "cloudRoiMultiple": 775,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "load_consolidation_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2490,
@@ -26840,7 +27078,9 @@
         "cloudRoiMultipleConservative": 775,
         "cloudRoiMultipleLikely": 1264,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "yard_dock_sequencer": {
@@ -26878,7 +27118,7 @@
       "toolsFile": "agents/yard_dock_sequencer/app/tools.py",
       "chartsFile": "agents/yard_dock_sequencer/app/render/charts.py",
       "smokeTestFile": "agents/yard_dock_sequencer/tests/test_smoke.py",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_yard_trailer_geofence_status",
@@ -27048,7 +27288,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "first_mid_mile",
     "subPillarName": "First & Mid-Mile",
@@ -27074,8 +27316,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.86,
       "monthlyEnterpriseCostFsp3YrUsd": 144.82,
       "monthlyPilotCostUsd": 40.55,
@@ -27083,12 +27325,14 @@
       "annualConservativeBenefitUsd": 1060000,
       "annualLikelyBenefitUsd": 1716000,
       "cloudRoiMultiple": 610,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "yard_dock_sequencer",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2590,
@@ -27178,7 +27422,9 @@
         "cloudRoiMultipleConservative": 610,
         "cloudRoiMultipleLikely": 987,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "cold_chain_auditor": {
@@ -27457,7 +27703,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "Automated Carrier Claim Dispute Packet & Approved SAP S/4HANA AP Freight Voucher (BAPI_INCOMINGINVOICE_CREATE)"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "first_mid_mile",
     "subPillarName": "First & Mid-Mile",
@@ -27483,8 +27731,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash-lite",
-      "modelDisplayName": "Gemini Flash-Lite (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.15,
       "monthlyEnterpriseCostFsp3YrUsd": 190.83,
       "monthlyPilotCostUsd": 53.43,
@@ -27492,12 +27740,14 @@
       "annualConservativeBenefitUsd": 1114000,
       "annualLikelyBenefitUsd": 1824000,
       "cloudRoiMultiple": 486,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "cold_chain_auditor",
-      "modelName": "Gemini Flash-Lite (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash-lite",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 1 \u00b7 High-Frequency Stream Triage & Document/Gate Check",
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 5531,
@@ -27587,7 +27837,9 @@
         "cloudRoiMultipleConservative": 486,
         "cloudRoiMultipleLikely": 797,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "aisle_aligned_pallet_agent": {
@@ -27625,7 +27877,7 @@
       "toolsFile": "agents/aisle_aligned_pallet_agent/app/tools.py",
       "chartsFile": "agents/aisle_aligned_pallet_agent/app/render/charts.py",
       "smokeTestFile": "agents/aisle_aligned_pallet_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_aisle_aligned_pallet_agent_telemetry_feed",
@@ -27866,7 +28118,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "IATA e-AWB (FWB/FHL) Execution, 3D ULD Build-Up Manifest & Airport Ramp Transfer Dispatch"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "store_replenishment",
     "subPillarName": "Store Replenishment",
@@ -27892,8 +28146,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 3.44,
       "monthlyEnterpriseCostFsp3YrUsd": 186.91,
       "monthlyPilotCostUsd": 52.33,
@@ -27901,12 +28155,14 @@
       "annualConservativeBenefitUsd": 1075000,
       "annualLikelyBenefitUsd": 1752000,
       "cloudRoiMultiple": 479,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "aisle_aligned_pallet_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1810,
@@ -27996,7 +28252,9 @@
         "cloudRoiMultipleConservative": 479,
         "cloudRoiMultipleLikely": 781,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "store_capacity_agent": {
@@ -28034,7 +28292,7 @@
       "toolsFile": "agents/store_capacity_agent/app/tools.py",
       "chartsFile": "agents/store_capacity_agent/app/render/charts.py",
       "smokeTestFile": "agents/store_capacity_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_store_capacity_agent_telemetry_feed",
@@ -28275,7 +28533,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP BAPI_MATERIAL_SAVEDATA Safety Stock / ROP Update & STO Lateral Transfer Creation (BAPI_PO_CREATE1)"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "store_replenishment",
     "subPillarName": "Store Replenishment",
@@ -28301,8 +28561,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash-lite",
-      "modelDisplayName": "Gemini Flash-Lite (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 0.94,
       "monthlyEnterpriseCostFsp3YrUsd": 154.56,
       "monthlyPilotCostUsd": 43.28,
@@ -28310,12 +28570,14 @@
       "annualConservativeBenefitUsd": 700000,
       "annualLikelyBenefitUsd": 1141000,
       "cloudRoiMultiple": 377,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "store_capacity_agent",
-      "modelName": "Gemini Flash-Lite (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash-lite",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 1 \u00b7 High-Frequency Stream Triage & Document/Gate Check",
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 5477,
@@ -28405,7 +28667,9 @@
         "cloudRoiMultipleConservative": 377,
         "cloudRoiMultipleLikely": 615,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "port_drayage_orchestrator": {
@@ -28443,7 +28707,7 @@
       "toolsFile": "agents/port_drayage_orchestrator/app/tools.py",
       "chartsFile": "agents/port_drayage_orchestrator/app/render/charts.py",
       "smokeTestFile": "agents/port_drayage_orchestrator/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_ocean_vessel_ais_berth_telemetry",
@@ -28577,7 +28841,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "store_replenishment",
     "subPillarName": "Store Replenishment",
@@ -28603,8 +28869,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.3,
       "monthlyEnterpriseCostFsp3YrUsd": 125.22,
       "monthlyPilotCostUsd": 35.06,
@@ -28612,12 +28878,14 @@
       "annualConservativeBenefitUsd": 1081000,
       "annualLikelyBenefitUsd": 1756000,
       "cloudRoiMultiple": 719,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "port_drayage_orchestrator",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1811,
@@ -28707,7 +28975,9 @@
         "cloudRoiMultipleConservative": 719,
         "cloudRoiMultipleLikely": 1169,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "geocoding_intelligence_agent": {
@@ -28745,7 +29015,7 @@
       "toolsFile": "agents/geocoding_intelligence_agent/app/tools.py",
       "chartsFile": "agents/geocoding_intelligence_agent/app/render/charts.py",
       "smokeTestFile": "agents/geocoding_intelligence_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_geocoding_intelligence_agent_telemetry_feed",
@@ -28986,7 +29256,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP TM / Blue Yonder TMS Load Tender (EDI 204), Google Maps Driver Route Manifest & Live ETA Broadcast"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "last_mile_delivery",
     "subPillarName": "Last-Mile Delivery",
@@ -29012,8 +29284,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash-lite",
-      "modelDisplayName": "Gemini Flash-Lite (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.69,
       "monthlyEnterpriseCostFsp3YrUsd": 198.66,
       "monthlyPilotCostUsd": 55.62,
@@ -29021,12 +29293,14 @@
       "annualConservativeBenefitUsd": 1155000,
       "annualLikelyBenefitUsd": 1893000,
       "cloudRoiMultiple": 484,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "geocoding_intelligence_agent",
-      "modelName": "Gemini Flash-Lite (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash-lite",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 1 \u00b7 High-Frequency Stream Triage & Document/Gate Check",
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 3908,
@@ -29116,7 +29390,9 @@
         "cloudRoiMultipleConservative": 484,
         "cloudRoiMultipleLikely": 794,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "multimodal_mode_shift_agent": {
@@ -29154,7 +29430,7 @@
       "toolsFile": "agents/multimodal_mode_shift_agent/app/tools.py",
       "chartsFile": "agents/multimodal_mode_shift_agent/app/render/charts.py",
       "smokeTestFile": "agents/multimodal_mode_shift_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_factory_gate_outbound_pos",
@@ -29285,7 +29561,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "last_mile_delivery",
     "subPillarName": "Last-Mile Delivery",
@@ -29311,8 +29589,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.75,
       "monthlyEnterpriseCostFsp3YrUsd": 201.31,
       "monthlyPilotCostUsd": 56.37,
@@ -29320,12 +29598,14 @@
       "annualConservativeBenefitUsd": 1128000,
       "annualLikelyBenefitUsd": 1828000,
       "cloudRoiMultiple": 467,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "multimodal_mode_shift_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3835,
@@ -29415,7 +29695,9 @@
         "cloudRoiMultipleConservative": 467,
         "cloudRoiMultipleLikely": 757,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "otif_penalty_shield": {
@@ -29453,7 +29735,7 @@
       "toolsFile": "agents/otif_penalty_shield/app/tools.py",
       "chartsFile": "agents/otif_penalty_shield/app/render/charts.py",
       "smokeTestFile": "agents/otif_penalty_shield/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_open_retail_customer_orders_sla",
@@ -29572,7 +29854,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "last_mile_delivery",
     "subPillarName": "Last-Mile Delivery",
@@ -29598,8 +29882,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.66,
       "monthlyEnterpriseCostFsp3YrUsd": 165.14,
       "monthlyPilotCostUsd": 46.24,
@@ -29607,12 +29891,14 @@
       "annualConservativeBenefitUsd": 1091000,
       "annualLikelyBenefitUsd": 1773000,
       "cloudRoiMultiple": 551,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "otif_penalty_shield",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3309,
@@ -29702,7 +29988,9 @@
         "cloudRoiMultipleConservative": 551,
         "cloudRoiMultipleLikely": 895,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "fleetflow_dispatch": {
@@ -29740,7 +30028,7 @@
       "toolsFile": "agents/fleetflow_dispatch/app/tools.py",
       "chartsFile": "agents/fleetflow_dispatch/app/render/charts.py",
       "smokeTestFile": "agents/fleetflow_dispatch/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_corridor_delivery_orders",
@@ -29908,7 +30196,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "route_carrier",
     "subPillarName": "Route & Carrier",
@@ -29934,8 +30224,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.93,
       "monthlyEnterpriseCostFsp3YrUsd": 158.1,
       "monthlyPilotCostUsd": 44.27,
@@ -29943,12 +30233,14 @@
       "annualConservativeBenefitUsd": 918000,
       "annualLikelyBenefitUsd": 1499000,
       "cloudRoiMultiple": 484,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "fleetflow_dispatch",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2735,
@@ -30038,7 +30330,9 @@
         "cloudRoiMultipleConservative": 484,
         "cloudRoiMultipleLikely": 790,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "freight_control_tower": {
@@ -30076,7 +30370,7 @@
       "toolsFile": "agents/freight_control_tower/app/tools.py",
       "chartsFile": "agents/freight_control_tower/app/render/charts.py",
       "smokeTestFile": "agents/freight_control_tower/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_in_transit_multimodal_telemetry",
@@ -30203,7 +30497,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "route_carrier",
     "subPillarName": "Route & Carrier",
@@ -30229,8 +30525,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.73,
       "monthlyEnterpriseCostFsp3YrUsd": 145.52,
       "monthlyPilotCostUsd": 40.75,
@@ -30238,12 +30534,14 @@
       "annualConservativeBenefitUsd": 1088000,
       "annualLikelyBenefitUsd": 1778000,
       "cloudRoiMultiple": 623,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "freight_control_tower",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2808,
@@ -30333,7 +30631,9 @@
         "cloudRoiMultipleConservative": 623,
         "cloudRoiMultipleLikely": 1018,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "freight_bill_audit_agent": {
@@ -30371,7 +30671,7 @@
       "toolsFile": "agents/freight_bill_audit_agent/app/tools.py",
       "chartsFile": "agents/freight_bill_audit_agent/app/render/charts.py",
       "smokeTestFile": "agents/freight_bill_audit_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_freight_bill_audit_agent_telemetry_feed",
@@ -30612,7 +30912,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "Automated Carrier Claim Dispute Packet & Approved SAP S/4HANA AP Freight Voucher (BAPI_INCOMINGINVOICE_CREATE)"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "route_carrier",
     "subPillarName": "Route & Carrier",
@@ -30638,8 +30940,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.58,
       "monthlyEnterpriseCostFsp3YrUsd": 165.66,
       "monthlyPilotCostUsd": 46.38,
@@ -30647,12 +30949,14 @@
       "annualConservativeBenefitUsd": 1312000,
       "annualLikelyBenefitUsd": 2140000,
       "cloudRoiMultiple": 660,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "freight_bill_audit_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2140,
@@ -30742,7 +31046,9 @@
         "cloudRoiMultipleConservative": 660,
         "cloudRoiMultipleLikely": 1077,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "reverse_rma_optimizer": {
@@ -30901,7 +31207,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "returns_claims_mgmt",
     "subPillarName": "Returns & Claims Mgmt",
@@ -30927,8 +31235,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.5,
       "monthlyEnterpriseCostFsp3YrUsd": 166.08,
       "monthlyPilotCostUsd": 46.5,
@@ -30936,12 +31244,14 @@
       "annualConservativeBenefitUsd": 900000,
       "annualLikelyBenefitUsd": 1460000,
       "cloudRoiMultiple": 452,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "reverse_rma_optimizer",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3700,
@@ -31031,7 +31341,9 @@
         "cloudRoiMultipleConservative": 452,
         "cloudRoiMultipleLikely": 733,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "keep_it_routing_advisor": {
@@ -31069,7 +31381,7 @@
       "toolsFile": "agents/keep_it_routing_advisor/app/tools.py",
       "chartsFile": "agents/keep_it_routing_advisor/app/render/charts.py",
       "smokeTestFile": "agents/keep_it_routing_advisor/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_keep_it_routing_advisor_telemetry_feed",
@@ -31310,7 +31622,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "TMS Fleet Backhaul Pickup Stop, SAP EWM Direct-to-Hub Restock & Vendor Warranty Debit Memo"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "returns_claims_mgmt",
     "subPillarName": "Returns & Claims Mgmt",
@@ -31336,8 +31650,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash-lite",
-      "modelDisplayName": "Gemini Flash-Lite (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 0.96,
       "monthlyEnterpriseCostFsp3YrUsd": 133.35,
       "monthlyPilotCostUsd": 37.34,
@@ -31345,12 +31659,14 @@
       "annualConservativeBenefitUsd": 935000,
       "annualLikelyBenefitUsd": 1526000,
       "cloudRoiMultiple": 584,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "keep_it_routing_advisor",
-      "modelName": "Gemini Flash-Lite (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash-lite",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 1 \u00b7 High-Frequency Stream Triage & Document/Gate Check",
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 4632,
@@ -31440,7 +31756,9 @@
         "cloudRoiMultipleConservative": 584,
         "cloudRoiMultipleLikely": 954,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "osd_freight_claims_agent": {
@@ -31478,7 +31796,7 @@
       "toolsFile": "agents/osd_freight_claims_agent/app/tools.py",
       "chartsFile": "agents/osd_freight_claims_agent/app/render/charts.py",
       "smokeTestFile": "agents/osd_freight_claims_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_osd_freight_claims_agent_telemetry_feed",
@@ -31719,7 +32037,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP SD Alternate-DC Order Re-Allocation & Automated Retailer Portal Dispute Submission via Apigee"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "returns_claims_mgmt",
     "subPillarName": "Returns & Claims Mgmt",
@@ -31745,8 +32065,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.97,
       "monthlyEnterpriseCostFsp3YrUsd": 143.5,
       "monthlyPilotCostUsd": 40.18,
@@ -31754,12 +32074,14 @@
       "annualConservativeBenefitUsd": 756000,
       "annualLikelyBenefitUsd": 1230000,
       "cloudRoiMultiple": 439,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "osd_freight_claims_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1611,
@@ -31849,7 +32171,9 @@
         "cloudRoiMultipleConservative": 439,
         "cloudRoiMultipleLikely": 714,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "dynamic_markdown_agent": {
@@ -31887,7 +32211,7 @@
       "toolsFile": "agents/dynamic_markdown_agent/app/tools.py",
       "chartsFile": "agents/dynamic_markdown_agent/app/render/charts.py",
       "smokeTestFile": "agents/dynamic_markdown_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_dynamic_markdown_agent_telemetry_feed",
@@ -32128,7 +32452,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "Salesforce / SAP Trade Promo Calendar Lock & Shaped Regional SKU Curve Update"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "expiry_markdowns",
     "subPillarName": "Expiry & Markdowns",
@@ -32154,8 +32480,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.85,
       "monthlyEnterpriseCostFsp3YrUsd": 179.31,
       "monthlyPilotCostUsd": 50.21,
@@ -32163,12 +32489,14 @@
       "annualConservativeBenefitUsd": 1219000,
       "annualLikelyBenefitUsd": 1979000,
       "cloudRoiMultiple": 567,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "dynamic_markdown_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3229,
@@ -32258,7 +32586,9 @@
         "cloudRoiMultipleConservative": 567,
         "cloudRoiMultipleLikely": 920,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "short_dated_redistributor": {
@@ -32296,7 +32626,7 @@
       "toolsFile": "agents/short_dated_redistributor/app/tools.py",
       "chartsFile": "agents/short_dated_redistributor/app/render/charts.py",
       "smokeTestFile": "agents/short_dated_redistributor/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_short_dated_redistributor_telemetry_feed",
@@ -32537,7 +32867,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP EWM / Manhattan Cross-Dock Flow-Through Directive, Conveyor Sortation Route & Outbound Staging Lock"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "expiry_markdowns",
     "subPillarName": "Expiry & Markdowns",
@@ -32563,8 +32895,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 2.13,
       "monthlyEnterpriseCostFsp3YrUsd": 180.32,
       "monthlyPilotCostUsd": 50.49,
@@ -32572,12 +32904,14 @@
       "annualConservativeBenefitUsd": 1544000,
       "annualLikelyBenefitUsd": 2515000,
       "cloudRoiMultiple": 714,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "short_dated_redistributor",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2817,
@@ -32667,7 +33001,9 @@
         "cloudRoiMultipleConservative": 714,
         "cloudRoiMultipleLikely": 1162,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "food_waste_esg_copilot": {
@@ -32705,7 +33041,7 @@
       "toolsFile": "agents/food_waste_esg_copilot/app/tools.py",
       "chartsFile": "agents/food_waste_esg_copilot/app/render/charts.py",
       "smokeTestFile": "agents/food_waste_esg_copilot/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_food_waste_esg_copilot_telemetry_feed",
@@ -32946,7 +33282,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "EU CBAM / EUDR XML Customs Filing & SAP TM / Blue Yonder Low-Carbon Rail/EV/Ocean Lane Allocation"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "expiry_markdowns",
     "subPillarName": "Expiry & Markdowns",
@@ -32972,8 +33310,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.93,
       "monthlyEnterpriseCostFsp3YrUsd": 128.16,
       "monthlyPilotCostUsd": 35.88,
@@ -32981,12 +33319,14 @@
       "annualConservativeBenefitUsd": 1305000,
       "annualLikelyBenefitUsd": 2132000,
       "cloudRoiMultiple": 849,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "food_waste_esg_copilot",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2219,
@@ -33076,7 +33416,9 @@
         "cloudRoiMultipleConservative": 849,
         "cloudRoiMultipleLikely": 1386,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "rti_balance_reconciler": {
@@ -33151,7 +33493,7 @@
       "toolsFile": "agents/rti_balance_reconciler/app/tools.py",
       "chartsFile": "agents/rti_balance_reconciler/app/render/charts.py",
       "smokeTestFile": "agents/rti_balance_reconciler/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_rti_balance_reconciler_telemetry_feed",
@@ -33392,7 +33734,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "SAP BAPI_MATERIAL_SAVEDATA & Purchasing Info-Record Lead-Time / Route / 3D Dimension Auto-Update"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "pallet_tote_reclamation",
     "subPillarName": "Pallet & Tote Reclamation",
@@ -33414,8 +33758,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash-lite",
-      "modelDisplayName": "Gemini Flash-Lite (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.11,
       "monthlyEnterpriseCostFsp3YrUsd": 127.88,
       "monthlyPilotCostUsd": 35.81,
@@ -33423,12 +33767,14 @@
       "annualConservativeBenefitUsd": 1054000,
       "annualLikelyBenefitUsd": 1712000,
       "cloudRoiMultiple": 687,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "rti_balance_reconciler",
-      "modelName": "Gemini Flash-Lite (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash-lite",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 1 \u00b7 High-Frequency Stream Triage & Document/Gate Check",
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 3835,
@@ -33518,7 +33864,9 @@
         "cloudRoiMultipleConservative": 687,
         "cloudRoiMultipleLikely": 1116,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "intermodal_rail_linehaul_agent": {
@@ -33556,7 +33904,7 @@
       "toolsFile": "agents/intermodal_rail_linehaul_agent/app/tools.py",
       "chartsFile": "agents/intermodal_rail_linehaul_agent/app/render/charts.py",
       "smokeTestFile": "agents/intermodal_rail_linehaul_agent/tests/test_smoke.py",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3.8-flash",
       "smokeTestsPassed": 7,
       "tools": [
         "query_intermodal_corridor_shipments",
@@ -33679,7 +34027,9 @@
         "vegaChartMark": "layered-combo",
         "markdownResponse": "",
         "mutationReceipt": {}
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "pallet_tote_reclamation",
     "subPillarName": "Pallet & Tote Reclamation",
@@ -33705,8 +34055,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash",
-      "modelDisplayName": "Gemini Flash (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 1.98,
       "monthlyEnterpriseCostFsp3YrUsd": 164.61,
       "monthlyPilotCostUsd": 46.09,
@@ -33714,12 +34064,14 @@
       "annualConservativeBenefitUsd": 1354000,
       "annualLikelyBenefitUsd": 2212000,
       "cloudRoiMultiple": 685,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "intermodal_rail_linehaul_agent",
-      "modelName": "Gemini Flash (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 2 \u00b7 Primary Workhorse Operational & Solver Orchestration",
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2775,
@@ -33809,7 +34161,9 @@
         "cloudRoiMultipleConservative": 685,
         "cloudRoiMultipleLikely": 1120,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   },
   "sanitation_health_agent": {
@@ -34088,7 +34442,9 @@
           "confidence_score": 0.96,
           "erp_writeback": "Bounded PLC Recipe Offset Recommendation & Automated SAP QM Usage Decision (BAPI_INSPLOT_SETUSAGEDECISION)"
         }
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (or gemini-3.1-pro subject to availability)"
     },
     "subPillarId": "pallet_tote_reclamation",
     "subPillarName": "Pallet & Tote Reclamation",
@@ -34114,8 +34470,8 @@
       "ISO/IEC 42001 AI Management System"
     ],
     "finopsProfile": {
-      "primaryRuntimeModel": "gemini-2.5-flash-lite",
-      "modelDisplayName": "Gemini Flash-Lite (Vertex AI)",
+      "primaryRuntimeModel": "gemini-3.8-flash",
+      "modelDisplayName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
       "costPer1kInvocationsUsd": 0.94,
       "monthlyEnterpriseCostFsp3YrUsd": 128.31,
       "monthlyPilotCostUsd": 35.93,
@@ -34123,12 +34479,14 @@
       "annualConservativeBenefitUsd": 938000,
       "annualLikelyBenefitUsd": 1533000,
       "cloudRoiMultiple": 609,
-      "paybackDays": 2
+      "paybackDays": 2,
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "gemini-3.8-flash & gemini-4-argon (subject to availability)"
     },
     "costModel": {
       "agentId": "sanitation_health_agent",
-      "modelName": "Gemini Flash-Lite (Vertex AI)",
-      "modelSlug": "gemini-2.5-flash-lite",
+      "modelName": "Gemini 3.8 Flash (Dynamic Orchestrator \u2192 3.1 Pro / 4 Argon)",
+      "modelSlug": "gemini-3.8-flash",
       "tierLabel": "Tier 1 \u00b7 High-Frequency Stream Triage & Document/Gate Check",
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 4537,
@@ -34218,7 +34576,9 @@
         "cloudRoiMultipleConservative": 609,
         "cloudRoiMultipleLikely": 996,
         "paybackDays": 2
-      }
+      },
+      "orchestratorRouting": "Agent Orchestrator dynamically routes high-speed operational & sensing queries to Gemini 3.8 Flash (gemini-3.8-flash) and escalates complex multi-constraint exceptions to Gemini 3.1 Pro / 4 Argon (subject to availability).",
+      "evalModels": "Gemini 3.8 Flash (gemini-3.8-flash) & Gemini 4 Argon (or Gemini 3.1 Pro subject to availability)"
     }
   }
 };
@@ -38847,33 +39207,33 @@
 
 
     /* =========================================================================
-       SIMPLE AGENT COST DETAILS CARD (MATCHING WEBSITE THEME & DESIGN)
+       SIMPLE AGENT COST DETAILS CARD (INFRA + INVOCATION + TOKEN COST ONLY)
        ========================================================================= */
     function renderAgentCostAndRoiPanel(ag, dept) {
       const cm = ag.costModel;
       if (!cm) return '';
       const mb = cm.monthlyBreakdown;
       const vm = cm.valueModel;
-      const modelShort = cm.modelName.replace(' (Vertex AI)', '');
+      const infraDataMo = (mb.computeUsd + mb.dataUsd + mb.apiUsd);
 
       return `
         <div class="simple-arch-card" style="margin-top: 22px; margin-bottom: 22px;">
           <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
             <div>
               <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:4px;">
-                Cloud FinOps &amp; Value Summary
+                Infra, Invocation &amp; Token Cost (Excl. Seat Licensing)
               </div>
               <h2 style="font-family:var(--font-display); font-size:21px; font-weight:800; color:var(--text-primary); margin:0;">
-                Estimated Cost Details — ${ag.name}
+                Cost Details — ${ag.name}
               </h2>
             </div>
 
             <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-              <span class=" sc-tech-pill" style="border-color:${dept.color}55; color:${dept.color}; font-weight:700;">
-                Model: ${modelShort}
+              <span class="sc-tech-pill" style="border-color:${dept.color}55; color:${dept.color}; font-weight:700;">
+                🧠 Orchestrator: Gemini 3.8 Flash ↔ 3.1 Pro / 4 Argon (subject to availability)
               </span>
               <span class="sc-tech-pill" style="font-weight:700;">
-                ~${cm.eventsPerDay.toLocaleString()} runs/day
+                ~${cm.eventsPerDay.toLocaleString()} invocations/day
               </span>
             </div>
           </div>
@@ -38881,49 +39241,49 @@
           <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:14px;">
             <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid ${dept.color};">
               <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
-                Enterprise Monthly Cost
+                Monthly Infra + Token Cost
               </div>
               <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
                 $${mb.totalFsp3YrUsd.toFixed(0)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
               </div>
               <div style="font-size:12.5px; color:var(--text-secondary);">
-                $${Math.round(mb.annualCloudFsp3YrUsd).toLocaleString()} / year (with 3-Yr FSP)
+                $${Math.round(mb.annualCloudFsp3YrUsd).toLocaleString()} / yr (3-Yr FSP · Pilot: $${mb.pilotScaleMoUsd.toFixed(0)}/mo)
               </div>
             </div>
 
             <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid ${dept.color};">
               <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
-                Pilot Scale Cost (1 Site)
+                LLM Token Invocation Cost
               </div>
               <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
-                $${mb.pilotScaleMoUsd.toFixed(0)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
+                $${mb.llmFsp3YrUsd.toFixed(0)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
               </div>
               <div style="font-size:12.5px; color:var(--text-secondary);">
-                ~$${Math.round(mb.pilotScaleMoUsd * 12).toLocaleString()} / year pilot run rate
+                $${cm.tokens.tokenCostPer1kCallsUsd.toFixed(2)} / 1K token runs · 75% Cache Hit
               </div>
             </div>
 
             <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid ${dept.color};">
               <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
-                Cost per 1,000 Runs
+                Runtime &amp; Data Infra Cost
               </div>
               <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
-                $${mb.blendedCostPer1kCallsUsd.toFixed(2)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ 1K</span>
+                $${infraDataMo.toFixed(0)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
               </div>
               <div style="font-size:12.5px; color:var(--text-secondary);">
-                AI: $${mb.llmFsp3YrUsd.toFixed(0)} · Compute: $${mb.computeUsd.toFixed(0)} · Data: $${(mb.dataUsd + mb.apiUsd).toFixed(0)}
+                ADK Compute: $${mb.computeUsd.toFixed(0)} · BQ/API: $${(mb.dataUsd + mb.apiUsd).toFixed(0)}
               </div>
             </div>
 
             <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid #10b981;">
               <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
-                Estimated Annual Value
+                Cost per 1,000 Invocations
               </div>
               <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:#10b981; margin:6px 0 2px;">
-                $${(vm.grossAnnualConservativeUsd / 1e6).toFixed(2)}M <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ yr</span>
+                $${mb.blendedCostPer1kCallsUsd.toFixed(2)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ 1K</span>
               </div>
               <div style="font-size:12.5px; color:var(--text-secondary);">
-                ${vm.cloudRoiMultipleConservative}x return · ${vm.paybackDays} days payback
+                Est. Value: $${(vm.grossAnnualConservativeUsd / 1e6).toFixed(2)}M/yr (${vm.cloudRoiMultipleConservative}x ROI)
               </div>
             </div>
           </div>

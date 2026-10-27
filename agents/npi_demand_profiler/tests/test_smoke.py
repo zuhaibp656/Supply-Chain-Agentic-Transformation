@@ -66,6 +66,11 @@ class TestNpiDemandProfilerAgentSmoke(unittest.TestCase):
         res = agent.run_scenario("Run full optimization")
         self.assertEqual(res["status"], "SUCCESS")
         self.assertIn("#### 📊", res["markdown"])
+        routing_fast = agent.select_orchestrated_model("check status")
+        self.assertEqual(routing_fast["selected_model"], "gemini-3.8-flash")
+        routing_pro = agent.select_orchestrated_model("Run multi-echelon scenario optimization")
+        self.assertIn("gemini-4-argon", routing_pro["selected_model"])
+        self.assertIn("orchestrator_routing", res)
 
 
 if __name__ == "__main__":

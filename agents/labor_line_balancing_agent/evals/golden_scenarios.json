@@ -9,6 +9,11 @@
       "query_labor_line_balancing_agent_constraint_matrix",
       "action_commit_labor_line_balancing_agent_plan"
     ],
-    "expected_outcome": "Prevents certified skill bottlenecks"
+    "expected_outcome": "Prevents certified skill bottlenecks",
+    "eval_models": {
+      "fast_execution_model": "gemini-3.8-flash",
+      "deep_reasoning_and_judge_model": "gemini-4-argon (or gemini-3.1-pro subject to availability)",
+      "orchestrator_routing": "Agent Orchestrator dynamically decides whether to route the query to Gemini 3.8 Flash (gemini-3.8-flash) or escalate to Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability)."
+    }
   }
 ]

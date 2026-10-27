@@ -96,3 +96,8 @@ python3 -m http.server 8080
 ---
 
 **Authors**: Built by **Zuhaib Parvez** & **Suman Banerjee**
+
+## 🧠 Dynamic Agent Orchestrator Routing & Evaluation Models
+
+- **Dynamic Model Routing per Query**: Every Agent Orchestrator dynamically inspects incoming query complexity, constraint depth, and multi-echelon scope to decide whether to execute on **`Gemini 3.8 Flash` (`gemini-3.8-flash`)** for high-speed multimodal sensing and tool execution, or escalate to **`Gemini 3.1 Pro` / `Gemini 4 Argon` (`gemini-3.1-pro` / `gemini-4-argon`, subject to availability)** for deep multi-echelon scenario reasoning, legal redlining, and cross-pillar synthesis.
+- **Evaluation Suite (`agents/*/evals/golden_scenarios.json`)**: All 60+ agent evaluation suites run using **`Gemini 3.8 Flash` (`gemini-3.8-flash`)** and **`Gemini 4 Argon` (`gemini-4-argon` / `gemini-3.1-pro`, subject to availability)**.

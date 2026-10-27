@@ -151,7 +151,7 @@ def update_catalog() -> dict:
         dept_id = agent.get("departmentId", "demand_sop")
         standards = PILLAR_STANDARDS.get(dept_id, PILLAR_STANDARDS["demand_sop"])
         is_pro = aid in PRO_MODEL_AGENTS
-        model_tier = "gemini-2.5-pro" if is_pro else "gemini-2.5-flash"
+        model_tier = "gemini-3.1-pro / gemini-4-argon" if is_pro else "gemini-3.8-flash"
         cost_per_1k = 15.80 if is_pro else 0.60
 
         agent["standardsCompliance"] = standards
@@ -196,7 +196,7 @@ def update_agent_manifests(catalog: dict) -> None:
         dept_id = agent.get("departmentId", "demand_sop")
         standards = PILLAR_STANDARDS.get(dept_id, PILLAR_STANDARDS["demand_sop"])
         is_pro = aid in PRO_MODEL_AGENTS
-        model_tier = "gemini-2.5-pro" if is_pro else "gemini-2.5-flash"
+        model_tier = "gemini-3.1-pro / gemini-4-argon" if is_pro else "gemini-3.8-flash"
         cost_1k = "15.80" if is_pro else "0.60"
 
         if "standards_compliance:" not in text:

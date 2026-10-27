@@ -20,3 +20,4 @@ tools:
   - "app.tools:query_order_promising_routing_decisions"
   - "app.tools:action_commit_dynamic_order_promise"
   - "app.tools:action_protect_tier1_allocation_reserve"
+  orchestrator_routing: "Agent Orchestrator dynamically routes between Gemini 3.8 Flash (gemini-3.8-flash) and Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability); evals run on Gemini 3.8 Flash & Gemini 4 Argon"

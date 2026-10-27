@@ -19,4 +19,5 @@ metadata:
   tier_coverage: "Direct Raw Materials / Global Tier-1 Component Fabricators"
   roi_focus: "+6.8% direct material cost savings, RFQ analysis compressed from 3 weeks to 15 mins, optimal dual-sourcing"
   standards_compliance: "ASCM SCOR DS v14.0 Plan (P1-P5) · VICS CPFR Collaborative Planning Standard · A2UI v0.9"
-  finops_tier: "gemini-2.5-flash (Context Cached -75%, 3-Yr FSP -20%, $2.32/1K calls, $188.08/mo enterprise, $1.31M/yr value, 581x ROI)"
+  finops_tier: "gemini-3.8-flash (Context Cached -75%, 3-Yr FSP -20%, $2.32/1K calls, $188.08/mo enterprise, $1.31M/yr value, 581x ROI)"
+  orchestrator_routing: "Agent Orchestrator dynamically routes between Gemini 3.8 Flash (gemini-3.8-flash) and Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability); evals run on Gemini 3.8 Flash & Gemini 4 Argon"

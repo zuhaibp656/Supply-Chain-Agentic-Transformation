@@ -22,4 +22,5 @@ metadata:
   persona_owner: "Brand & Innovation Manager"
   roi_focus: "Cuts 90-day launch forecast errors"
   standards_compliance: "ASCM SCOR DS v14.0 Plan (P1-P5) · VICS CPFR Collaborative Planning Standard · A2UI v0.9"
-  finops_tier: "gemini-2.5-pro (Context Cached -75%, 3-Yr FSP -20%, $14.66/1K calls, $557.19/mo enterprise, $1.19M/yr value, 179x ROI)"
+  finops_tier: "gemini-3.1-pro / gemini-4-argon (Context Cached -75%, 3-Yr FSP -20%, $14.66/1K calls, $557.19/mo enterprise, $1.19M/yr value, 179x ROI)"
+  orchestrator_routing: "Agent Orchestrator dynamically routes between Gemini 3.8 Flash (gemini-3.8-flash) and Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability); evals run on Gemini 3.8 Flash & Gemini 4 Argon"

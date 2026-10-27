@@ -153,8 +153,8 @@ def build_agent_cost_model(aid: str, agent: dict, idx: int) -> dict:
 
     # 1. Model tier & exact Vertex AI token pricing (USD per 1M tokens)
     if aid in PRO_AGENTS:
-        model_name = "Gemini Pro (Vertex AI)"
-        model_slug = "gemini-2.5-pro"
+        model_name = "Gemini 3.1 Pro / 4 Argon (Dynamic Orchestrator, subject to availability)"
+        model_slug = "gemini-3.1-pro / gemini-4-argon"
         tier_label = "Tier 3 · Frontier Reasoning & Multi-Echelon Synthesis"
         rate_in = 1.25
         rate_cache = 0.3125  # 75% Context Caching discount
@@ -165,8 +165,8 @@ def build_agent_cost_model(aid: str, agent: dict, idx: int) -> dict:
         events_per_day = deterministic_int(aid + "_epd", 650, 1850)
         trigger_cadence = "Interactive Scenario Run + Scheduled Executive Synthesis"
     elif aid in FLASH_LITE_AGENTS:
-        model_name = "Gemini Flash-Lite (Vertex AI)"
-        model_slug = "gemini-2.5-flash-lite"
+        model_name = "Gemini 3.8 Flash (Dynamic Orchestrator w/ 3.1 Pro / 4 Argon)"
+        model_slug = "gemini-3.8-flash"
         tier_label = "Tier 1 · High-Frequency Stream Triage & Document/Gate Check"
         rate_in = 0.075
         rate_cache = 0.01875
@@ -177,8 +177,8 @@ def build_agent_cost_model(aid: str, agent: dict, idx: int) -> dict:
         events_per_day = deterministic_int(aid + "_epd", 3200, 5800)
         trigger_cadence = "Real-Time EDI / Scan / Gate Event Stream"
     else:
-        model_name = "Gemini Flash (Vertex AI)"
-        model_slug = "gemini-2.5-flash"
+        model_name = "Gemini 3.8 Flash (Dynamic Orchestrator w/ 3.1 Pro / 4 Argon)"
+        model_slug = "gemini-3.8-flash"
         tier_label = "Tier 2 · Primary Workhorse Operational & Solver Orchestration"
         rate_in = 0.15
         rate_cache = 0.0375

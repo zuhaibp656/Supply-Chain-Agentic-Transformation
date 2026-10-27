@@ -42,6 +42,22 @@ class SlobDispositionAgentAgent:
         self.tools = list(ALL_TOOLS)
         self.system_connectors = list(SYSTEM_CONNECTORS)
 
+    def select_orchestrated_model(self, query: str = "") -> Dict[str, str]:
+        """Agent Orchestrator dynamically decides whether to use Gemini 3.8 Flash or Gemini 3.1 Pro / 4 Argon."""
+        q_lower = (query or "").lower()
+        needs_pro_or_argon = any(
+            k in q_lower
+            for k in ("scenario", "multi-echelon", "war room", "redline", "capex", "trade-off", "optimize", "simulate", "optimization")
+        )
+        selected = "gemini-3.1-pro / gemini-4-argon (subject to availability)" if needs_pro_or_argon else "gemini-3.8-flash"
+        return {
+            "orchestrator_policy": "Dynamic Agent Orchestrator Routing (Gemini 3.8 Flash <-> Gemini 3.1 Pro / 4 Argon subject to availability)",
+            "selected_model": selected,
+            "fast_model": "gemini-3.8-flash",
+            "pro_argon_model": "gemini-3.1-pro / gemini-4-argon (subject to availability)",
+            "eval_judge_model": "gemini-4-argon (fallback: gemini-3.1-pro, subject to availability)",
+        }
+
     def run_scenario(self, prompt: str = "Execute end-to-end optimization") -> Dict[str, Any]:
         t0 = query_slob_disposition_agent_telemetry_feed()
         t1 = query_slob_disposition_agent_constraint_matrix()
@@ -79,6 +95,7 @@ class SlobDispositionAgentAgent:
             "category": self.category,
             "description": self.description,
             "model": self.model,
+            "orchestrator_routing": self.select_orchestrated_model(prompt),
             "prompt": prompt,
             "telemetry": t0,
             "constraints": t1,
@@ -111,7 +128,7 @@ try:
     from .render.a2ui_envelope import A2A_DATA_PART_OPEN_TAG
 
     class GlobalGemini(Gemini):
-        """Routes Gemini 3.1 Pro & 3.8 Flash calls to the global Vertex AI endpoint even when the Reasoning Engine runs in us-central1."""
+        """Routes Gemini 3.8 Flash and Gemini 3.1 Pro / 4 Argon (subject to availability) calls to the global Vertex AI endpoint even when the Reasoning Engine runs in us-central1."""
 
         @cached_property
         def api_client(self) -> Client:

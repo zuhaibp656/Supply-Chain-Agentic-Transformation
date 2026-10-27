@@ -69,6 +69,19 @@ class PlanogramMerchandisingVisionAuditor:
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
         self.tool_map = {t.__name__: t for t in self.tools}
 
+    def select_orchestrated_model(self, query: str = "") -> Dict[str, str]:
+        """Agent Orchestrator dynamically decides whether to use Gemini 3.8 Flash or Gemini 3.1 Pro / 4 Argon."""
+        q_lower = (query or "").lower()
+        needs_pro_or_argon = any(k in q_lower for k in ("scenario", "multi-echelon", "war room", "redline", "capex", "trade-off", "optimize", "simulate"))
+        selected = "gemini-3.1-pro / gemini-4-argon (subject to availability)" if needs_pro_or_argon else "gemini-3.8-flash"
+        return {
+            "orchestrator_policy": "Dynamic Agent Orchestrator Routing (Gemini 3.8 Flash <-> Gemini 3.1 Pro / 4 Argon subject to availability)",
+            "selected_model": selected,
+            "fast_model": "gemini-3.8-flash",
+            "pro_argon_model": "gemini-3.1-pro / gemini-4-argon (subject to availability)",
+            "eval_judge_model": "gemini-4-argon (fallback: gemini-3.1-pro, subject to availability)",
+        }
+
     def execute_tool(self, tool_name: str, **kwargs) -> Dict[str, Any]:
         """Dispatches tool call with pre-execution safety gate."""
         if tool_name not in self.tool_map:
@@ -195,7 +208,7 @@ try:
     from .render.a2ui_envelope import A2A_DATA_PART_OPEN_TAG
 
     class GlobalGemini(Gemini):
-        """Routes Gemini 3.1 Pro & 3.8 Flash calls to the global Vertex AI endpoint even when the Reasoning Engine runs in us-central1."""
+        """Routes Gemini 3.8 Flash and Gemini 3.1 Pro / 4 Argon (subject to availability) calls to the global Vertex AI endpoint even when the Reasoning Engine runs in us-central1."""
 
         @cached_property
         def api_client(self) -> Client:

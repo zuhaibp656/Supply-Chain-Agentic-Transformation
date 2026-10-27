@@ -19,4 +19,5 @@ metadata:
   tier_coverage: "Enterprise Manufacturing Lines / Component Suppliers / Global DC Network"
   roi_focus: "21 Days → 45 Mins cycle time, +180 bps gross margin, 99.4% plan adherence"
   standards_compliance: "ASCM SCOR DS v14.0 Plan (P1-P5) · VICS CPFR Collaborative Planning Standard · A2UI v0.9"
-  finops_tier: "gemini-2.5-pro (Context Cached -75%, 3-Yr FSP -20%, $13.84/1K calls, $728.31/mo enterprise, $0.99M/yr value, 114x ROI)"
+  finops_tier: "gemini-3.1-pro / gemini-4-argon (Context Cached -75%, 3-Yr FSP -20%, $13.84/1K calls, $728.31/mo enterprise, $0.99M/yr value, 114x ROI)"
+  orchestrator_routing: "Agent Orchestrator dynamically routes between Gemini 3.8 Flash (gemini-3.8-flash) and Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability); evals run on Gemini 3.8 Flash & Gemini 4 Argon"
