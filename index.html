@@ -4492,6 +4492,489 @@
       box-shadow: 0 14px 28px rgba(79, 70, 229, 0.18);
     }
 
+
+    /* =========================================================================
+       VAMSHI-ALIGNED PERIODIC TABLE OF AGENTS (.pt-*) — DARK & LIGHT THEMES
+       ========================================================================= */
+    .pt {
+      --pt-border: rgba(148, 163, 184, 0.22);
+      --pt-surface: rgba(15, 23, 42, 0.72);
+      --pt-surface-hover: rgba(30, 41, 59, 0.95);
+      --pt-text: #f8fafc;
+      --pt-muted: #94a3b8;
+      margin: 0.5rem 0 2rem;
+    }
+
+    html[data-theme="light"] .pt {
+      --pt-border: rgba(15, 23, 42, 0.12);
+      --pt-surface: #ffffff;
+      --pt-surface-hover: #f8fafc;
+      --pt-text: #0f172a;
+      --pt-muted: #475569;
+    }
+
+    .pt-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0 0 1.25rem;
+      padding: 0 0 0.9rem;
+      border-bottom: 1px solid var(--pt-border);
+    }
+
+    .pt-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.42rem 0.85rem;
+      border: 1px solid var(--pt-border);
+      border-radius: 999px;
+      background: var(--pt-surface);
+      color: var(--pt-text);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 120ms ease;
+    }
+
+    .pt-tab:hover {
+      border-color: var(--g-blue);
+      transform: translateY(-1px);
+    }
+
+    .pt-tab.is-active {
+      background: var(--g-blue);
+      color: #ffffff !important;
+      border-color: var(--g-blue);
+    }
+
+    .pt-tab-label {
+      color: inherit;
+    }
+
+    .pt-tab-count {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.08rem 0.42rem;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.18);
+      color: inherit;
+    }
+
+    .pt-tab.is-active .pt-tab-count {
+      background: rgba(255, 255, 255, 0.24);
+      color: #ffffff;
+    }
+
+    .pt-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--pt-border);
+    }
+
+    .pt-title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--pt-text);
+    }
+
+    .pt-subtitle {
+      margin: 0.25rem 0 0;
+      font-size: 0.86rem;
+      color: var(--pt-muted);
+      max-width: 52rem;
+      line-height: 1.45;
+    }
+
+    .pt-stats {
+      display: flex;
+      gap: 1.1rem;
+    }
+
+    .pt-stat {
+      font-size: 0.78rem;
+      color: var(--pt-muted);
+    }
+
+    .pt-stat strong {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--pt-text);
+      font-variant-numeric: tabular-nums;
+      line-height: 1.1;
+    }
+
+    .pt-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 17.5rem;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1080px) {
+      .pt-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pt-grid-wrap {
+      min-width: 0;
+    }
+
+    .pt-group {
+      margin-bottom: 0.95rem;
+    }
+
+    .pt-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .pt-group-head {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .pt-group-swatch {
+      width: 0.62rem;
+      height: 0.62rem;
+      border-radius: 0.16rem;
+      flex-shrink: 0;
+    }
+
+    .pt-group-title {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--pt-text);
+    }
+
+    .pt-group-pillar-tag {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      font-weight: 600;
+      color: var(--pt-muted);
+      padding: 0.05rem 0.38rem;
+      border-radius: 4px;
+      border: 1px solid var(--pt-border);
+    }
+
+    .pt-group-count {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--pt-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .pt-grid {
+      display: grid;
+      grid-template-columns: repeat(var(--pt-cols, 6), minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    @media (max-width: 1100px) {
+      .pt-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .pt-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .pt-cell {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0.35rem 0.42rem;
+      min-height: 4.1rem;
+      border: 1px solid var(--pt-border);
+      border-top: 3px solid var(--pt-domain, #475569);
+      border-radius: 6px 6px 4px 4px;
+      background: var(--pt-surface);
+      color: var(--pt-text);
+      text-decoration: none;
+      transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease, background 120ms ease;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .pt-cell:hover,
+    .pt-cell:focus-visible,
+    .pt-cell.is-selected {
+      transform: scale(1.08);
+      z-index: 5;
+      background: var(--pt-surface-hover);
+      border-color: var(--pt-domain, #475569);
+      box-shadow: 0 8px 22px -4px rgba(0, 0, 0, 0.32);
+      outline: none;
+    }
+
+    .pt-cell-num {
+      position: absolute;
+      top: 0.28rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--pt-muted);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .pt-cell-name {
+      font-size: 0.68rem;
+      font-weight: 600;
+      line-height: 1.18;
+      text-align: center;
+      color: var(--pt-text);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-word;
+      hyphens: auto;
+      max-width: 100%;
+      margin-top: 0.1rem;
+    }
+
+    .pt-cell-dot {
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 999px;
+      flex-shrink: 0;
+      margin-top: 0.32rem;
+    }
+
+    .pt-cell-trig {
+      position: absolute;
+      top: 0.26rem;
+      right: 0.28rem;
+      width: 0.72rem;
+      height: 0.72rem;
+      opacity: 0.85;
+      color: var(--pt-text);
+      flex-shrink: 0;
+    }
+
+    .pt-cell-trig[data-trig="event-driven"] { color: #10b981; }
+    .pt-cell-trig[data-trig="chat-initiated"] { color: #3b82f6; }
+    .pt-cell-trig[data-trig="scheduled"] { color: #f59e0b; }
+
+    .pt-cell-hitl {
+      position: absolute;
+      top: 0.26rem;
+      left: 0.28rem;
+      width: 0.72rem;
+      height: 0.72rem;
+      color: #ef4444;
+      opacity: 0.9;
+      flex-shrink: 0;
+    }
+
+    .pt-side {
+      position: sticky;
+      top: 5.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .pt-detail {
+      border: 1px solid var(--pt-border);
+      border-radius: 0.65rem;
+      padding: 0.9rem;
+      background: var(--pt-surface);
+      min-height: 7.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.65rem;
+    }
+
+    .pt-detail-top {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+    }
+
+    .pt-detail-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #ffffff;
+      padding: 0.28rem 0.5rem;
+      border-radius: 0.32rem;
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+
+    .pt-detail-titles {
+      min-width: 0;
+    }
+
+    .pt-detail-name {
+      font-weight: 700;
+      font-size: 0.92rem;
+      line-height: 1.25;
+      color: var(--pt-text);
+    }
+
+    .pt-detail-meta {
+      font-size: 0.74rem;
+      color: var(--pt-muted);
+      margin-top: 0.14rem;
+    }
+
+    .pt-detail-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .pt-tag {
+      font-size: 0.68rem;
+      padding: 0.14rem 0.46rem;
+      border-radius: 0.28rem;
+      border: 1px solid var(--pt-border);
+      color: var(--pt-text);
+      font-weight: 600;
+    }
+
+    .pt-tag--layer {
+      border-color: var(--tag-c);
+      color: var(--tag-c);
+      font-weight: 700;
+    }
+
+    .pt-tag--hitl {
+      border-color: rgba(239, 68, 68, 0.45);
+      color: #ef4444;
+    }
+
+    .pt-detail-link {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--g-blue);
+      text-decoration: none;
+      align-self: flex-start;
+      cursor: pointer;
+    }
+
+    .pt-detail-link:hover {
+      text-decoration: underline;
+    }
+
+    .pt-legend {
+      border: 1px solid var(--pt-border);
+      border-radius: 0.65rem;
+      padding: 0.8rem 0.9rem;
+      background: var(--pt-surface);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .pt-legend-title {
+      font-size: 0.66rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--pt-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .pt-legend-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.28rem;
+    }
+
+    .pt-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.74rem;
+      color: var(--pt-text);
+    }
+
+    .pt-legend-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .pt-legend-ico {
+      width: 0.8rem;
+      height: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .pt-legend-domains {
+      display: flex;
+      flex-direction: column;
+      gap: 0.24rem;
+      max-height: 16rem;
+      overflow-y: auto;
+      padding-right: 0.2rem;
+    }
+
+    .pt-legend-domain {
+      display: grid;
+      grid-template-columns: 0.55rem 1fr auto;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.72rem;
+      padding: 0.16rem 0.25rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 120ms ease;
+    }
+
+    .pt-legend-domain:hover {
+      background: rgba(148, 163, 184, 0.14);
+    }
+
+    .pt-legend-swatch {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 2px;
+    }
+
+    .pt-legend-domain-title {
+      color: var(--pt-text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .pt-legend-domain-count {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      color: var(--pt-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
     /* =========================================================================
        PERIODIC TABLE & MIND MAP HIGH-CONTRAST READABILITY CLASSES (BOTH THEMES)
        ========================================================================= */
@@ -39226,7 +39709,6 @@
                           ${p.icon}
                         </div>
                         <div>
-                          <div class="human-role-tag" style="margin-bottom:4px;">👤 Human Persona</div>
                           <div class="human-persona-title" style="font-size:17.5px;">${p.name}</div>
                           <div class="human-persona-sub" style="font-size:12.5px; margin-top:2px;">${activeSubPillar.name}</div>
                         </div>
@@ -39301,14 +39783,8 @@
                 ${p.icon}
               </div>
               <div>
-                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
-                  <span class="human-role-tag">👤 Human Persona</span>
-                  <span class="persona-badge" style="margin-bottom:0; background: ${dept.color}18; color: ${dept.color}; border: 1px solid ${dept.color}45;">
-                    ${dept.scorBadge || ''} · ${p.subPillarName || dept.name}
-                  </span>
-                </div>
                 <h1 class="persona-page-title" style="margin-bottom:4px;">${p.name}</h1>
-                <div style="font-size:15px; color:var(--text-secondary); font-weight:600;">${p.role}</div>
+                <div style="font-size:15px; color:var(--text-secondary); font-weight:600;">${p.subPillarName || dept.name}</div>
               </div>
             </div>
 
@@ -39450,11 +39926,8 @@
                         <div style="display:flex; align-items:center; gap:12px;">
                           <div class="ai-bot-square" style="width:40px; height:40px; font-size:17px; flex-shrink:0;">✦</div>
                           <div>
-                            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:3px;">
-                              <span class="ai-agent-type-tag">${ag.isUniversal ? 'UNIVERSAL AI' : 'DOMAIN AI'}</span>
-                              <span class="build-tier-badge ${cls.cssClass}" style="font-size:10px; padding:2px 8px;">${cls.tier}</span>
-                            </div>
-                            <div class="ai-agent-chip-title" style="font-size:16.5px;">${ag.name}</div>
+                            <div class="ai-agent-chip-title" style="font-size:16.5px;">${cleanAgentName(ag.name)}</div>
+                            <div style="font-size:12.5px; color:var(--text-secondary); margin-top:2px;">${ag.subPillarName || dept.name}</div>
                           </div>
                         </div>
                       </div>
@@ -40039,23 +40512,12 @@
 
           <!-- 1. What This Agent Does + Low-Code / Hybrid / High-Code Badge -->
           <div class="agent-hero-banner" style="padding: 30px 34px; margin-bottom: 24px;">
-            <div style="position:relative; z-index:2; display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:12px;">
-              <div class="persona-badge" style="margin-bottom:0; background: ${dept.color}18; color: ${dept.color}; border: 1px solid ${dept.color}40;">
-                <span>${ag.isUniversal ? '🌐 Universal Core Agent' : `${dept.scorBadge} · ${dept.name}`}</span>
-              </div>
-              <span class="build-tier-badge ${cls.cssClass}">
-                ${cls.label}
-              </span>
-              ${ag.badge ? `<span class="build-tier-badge" style="background:${dept.color}18; color:${dept.color}; border:1px solid ${dept.color}45;">✦ ${ag.badge}</span>` : ''}
-              ${ag.costModel ? `<span class="build-tier-badge" style="background:${dept.color}14; color:${dept.color}; border:1px solid ${dept.color}40;">💰 $${ag.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo · $${ag.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K</span>` : ''}
-            </div>
-
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
                 <div class="ai-bot-square" style="width:48px; height:48px; font-size:22px;">✦</div>
                 <div>
-                  <h1 class="agent-title" style="font-size: clamp(24px, 2.7vw, 34px); margin: 0;">${ag.categoryDisplayName || ag.name}</h1>
-                  <div style="font-size:14.5px; color:var(--text-secondary); margin-top:4px;">${shortSentence(ag.categorizedDescription || ag.shortDesc, 175)}</div>
+                  <h1 class="agent-title" style="font-size: clamp(24px, 2.7vw, 34px); margin: 0;">${cleanAgentName(ag.name)}</h1>
+                  <div style="font-size:14.5px; color:var(--text-secondary); margin-top:4px; font-weight:600;">${ag.subPillarName || dept.name}</div>
                 </div>
               </div>
               <button type="button" class="switch-pill" onclick="togglePersonaJourneyStep('agentMoreDetailsDrawer')">
@@ -40855,9 +41317,8 @@
                   <div style="display:flex; align-items:center; gap:12px;">
                     <div class="human-avatar-circle" style="--dept-accent: ${ownerDept.color}; width:42px; height:42px; font-size:20px;">${ownerPersona.icon}</div>
                     <div>
-                      <div class="human-role-tag">👤 Stage Owner (Human Persona)</div>
                       <div class="human-persona-title" style="font-size:16px;">${ownerPersona.name}</div>
-                      <div class="human-persona-sub" style="font-size:12px;">${ownerPersona.role}</div>
+                      <div class="human-persona-sub" style="font-size:12px;">${ownerPersona.subPillarName || ownerDept.name}</div>
                     </div>
                   </div>
                   <span style="color:${ownerDept.color}; font-weight:800; font-size:13px;">Persona &rarr;</span>
@@ -40871,11 +41332,8 @@
                   <div style="display:flex; align-items:center; gap:12px;">
                     <div class="ai-bot-square" style="width:40px; height:40px;">✦</div>
                     <div>
-                      <div style="display:flex; align-items:center; gap:6px; margin-bottom:3px;">
-                        <span class="ai-agent-type-tag">✦ Stage AI Agent</span>
-                        <span class="build-tier-badge ${stageAgentCls.cssClass}" style="font-size:9.5px; padding:1px 7px;">${stageAgentCls.tier}</span>
-                      </div>
-                      <div class="ai-agent-chip-title" style="font-size:16px;">${stageAgent.name}</div>
+                      <div class="ai-agent-chip-title" style="font-size:16px;">${cleanAgentName(stageAgent.name)}</div>
+                      <div style="font-size:12px; color:var(--text-secondary); margin-top:2px;">${stageAgent.subPillarName || ownerDept.name}</div>
                     </div>
                   </div>
                   <span style="color:#818cf8; font-weight:800; font-size:13px;">Agent Studio &rarr;</span>
@@ -40977,7 +41435,7 @@
           if (deptFilter !== 'all' && deptFilter !== 'universal' && ag.deptId !== deptFilter) return false;
           if (!q) return true;
           const dept = getDeptMeta(ag.deptId);
-          const haystack = [ag.name, ag.shortDesc, dept ? dept.name : ''].join(' ').toLowerCase();
+          const haystack = [cleanAgentName(ag.name), ag.subPillarName || '', dept ? dept.name : ''].join(' ').toLowerCase();
           return haystack.includes(q);
         });
 
@@ -40987,32 +41445,17 @@
 
         return agentsList.map(ag => {
           const dept = getDeptMeta(ag.deptId);
-          const cls = getAgentBuildClassification(ag);
+          const cName = cleanAgentName(ag.name);
+          const subLabel = ag.isUniversal ? 'Cross-Pillar Core' : (ag.subPillarName || dept.name);
           return `
             <div class="ai-agent-chip-card" style="padding:18px 20px;" onclick="openAgentPage('${ag.id}', true, event)">
               <div style="display:flex; align-items:center; gap:14px; min-width:0;">
                 <div class="ai-bot-square" style="width:42px; height:42px; font-size:18px;">✦</div>
                 <div style="min-width:0;">
-                  <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:4px;">
-                    <span class="ai-agent-type-tag">${ag.isUniversal ? 'UNIVERSAL CORE' : (dept.scorBadge || 'SCOR')}</span>
-                    <span class="build-tier-badge ${cls.cssClass}" style="font-size:10px; padding:2px 8px;">
-                      ${cls.shortLabel}
-                    </span>
+                  <div class="ai-agent-chip-title" style="font-size:17px;">${cName}</div>
+                  <div style="font-size:13px; color:var(--text-secondary); margin-top:2px;">
+                    ${subLabel}
                   </div>
-                  <div class="ai-agent-chip-title" style="font-size:16px;">${ag.categoryDisplayName || ag.name}</div>
-                  <div style="font-size:12.5px; color:var(--text-secondary); margin-top:2px;">
-                    ${ag.isUniversal ? 'All 6 SCOR Pillars' : dept.name}
-                  </div>
-                  ${ag.costModel ? `
-                    <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; font-family:var(--font-mono); font-size:10.5px; font-weight:800;">
-                      <span style="padding:2px 7px; border-radius:5px; background:rgba(2,132,199,0.12); color:#0284c7; border:1px solid rgba(2,132,199,0.28);">
-                        💰 $${ag.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo · $${ag.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K
-                      </span>
-                      <span style="padding:2px 7px; border-radius:5px; background:rgba(16,185,129,0.12); color:#059669; border:1px solid rgba(16,185,129,0.28);">
-                        📈 $${(ag.costModel.valueModel.grossAnnualConservativeUsd/1e6).toFixed(2)}M/yr (${ag.costModel.valueModel.cloudRoiMultipleConservative}x ROI)
-                      </span>
-                    </div>
-                  ` : ''}
                 </div>
               </div>
               <span style="color:#6366f1; font-weight:800; font-size:18px;">&rarr;</span>
@@ -41025,7 +41468,7 @@
         if (deptFilter !== 'all' && deptFilter !== 'universal' && p.deptId !== deptFilter) return false;
         if (!q) return true;
         const dept = getDeptMeta(p.deptId);
-        const haystack = [p.name, p.role, p.summary, dept ? dept.name : ''].join(' ').toLowerCase();
+        const haystack = [p.name, p.subPillarName || '', dept ? dept.name : ''].join(' ').toLowerCase();
         return haystack.includes(q);
       });
 
@@ -41035,19 +41478,14 @@
 
       return personasList.map(p => {
         const dept = getDeptMeta(p.deptId);
+        const subLabel = p.subPillarName || dept.name;
         return `
           <div class="human-persona-card" style="--dept-accent: ${dept.color};" onclick="openPersonaPage('${p.id}', true, event)">
             <div style="display:flex; align-items:center; gap:14px; min-width:0;">
               <div class="human-avatar-circle" style="--dept-accent: ${dept.color};">${p.icon}</div>
               <div style="min-width:0;">
-                <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:3px;">
-                  <span class="human-role-tag">👤 Human Persona</span>
-                  <span style="font-size:11px; font-weight:800; color:${dept.color}; text-transform:uppercase;">
-                    ${dept.scorBadge || ''} · ${p.subPillarName || dept.name}
-                  </span>
-                </div>
                 <div class="human-persona-title">${p.name}</div>
-                <div class="human-persona-sub">${p.role}</div>
+                <div class="human-persona-sub">${subLabel}</div>
               </div>
             </div>
             <span class="persona-open-arrow" style="color:${dept.color}; font-size:18px; font-weight:800;">&rarr;</span>
@@ -41092,13 +41530,13 @@
                       class="switch-pill ${currentDirMode === 'personas' ? 'active' : ''}"
                       style="${currentDirMode === 'personas' ? 'background:#d97706; color:#ffffff; border-color:#d97706; font-weight:800;' : ''}"
                       onclick="openPersonasDirectoryPage(currentDirDeptFilter === 'universal' ? 'all' : currentDirDeptFilter, currentDirSearch, false, 'personas', event)">
-                👤 Human Personas (60)
+                Personas (60)
               </button>
               <button type="button"
                       class="switch-pill ${currentDirMode === 'agents' ? 'active' : ''}"
                       style="${currentDirMode === 'agents' ? 'background:#4f46e5; color:#ffffff; border-color:#4f46e5; font-weight:800;' : ''}"
                       onclick="openPersonasDirectoryPage(currentDirDeptFilter, currentDirSearch, false, 'agents', event)">
-                ✦ AI Agents (60)
+                Agents (60)
               </button>
             </div>
           </div>
@@ -41106,7 +41544,7 @@
           <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; margin-bottom:18px;">
             <div>
               <h1 style="font-family:var(--font-display); font-size:clamp(26px, 2.8vw, 34px); font-weight:800; color:var(--text-primary); margin:0;">
-                ${currentDirMode === 'agents' ? '✦ 60 Supply Chain AI Agents' : '👤 60 Supply Chain Human Personas'}
+                ${currentDirMode === 'agents' ? '60 Supply Chain Agents' : '60 Supply Chain Personas'}
               </h1>
               <p style="font-size:14.5px; color:var(--text-secondary); margin:4px 0 0;">
                 Click any ${currentDirMode === 'agents' ? 'AI agent to view its workflow diagram & demo video' : 'persona to view their daily Red vs. Green journey'}.
@@ -42444,18 +42882,105 @@
       };
     }
 
-    let currentPeriodicFilter = 'all'; // 'all' | group.id
+    let currentPeriodicFilter = 'all'; // 'all' | group.id | 'sp:' + subPillarId
     let currentSelectedElementId = 'demand_sensing_agent';
     let currentExpandedInlineId = null;
 
-    function handlePeriodicTileClick(agentId) {
-      currentSelectedElementId = agentId;
-      if (currentExpandedInlineId === agentId) {
-        currentExpandedInlineId = null;
-      } else {
-        currentExpandedInlineId = agentId;
+    function cleanAgentName(rawName) {
+      if (!rawName) return '';
+      return String(rawName).replace(/^\[[^\]]+\]\s*/, '').trim();
+    }
+
+    function getVamshiTriggerMeta(triggerStr) {
+      const t = String(triggerStr || '').toLowerCase();
+      if (t.includes('chat')) {
+        return {
+          slug: 'chat-initiated',
+          label: 'Chat-Initiated',
+          svgPath: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>'
+        };
       }
-      openPeriodicTablePage(currentPeriodicFilter, currentSelectedElementId, false);
+      if (t.includes('sched') || t.includes('guard')) {
+        return {
+          slug: 'scheduled',
+          label: 'Scheduled',
+          svgPath: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'
+        };
+      }
+      return {
+        slug: 'event-driven',
+        label: 'Event-Driven',
+        svgPath: '<path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/>'
+      };
+    }
+
+    function getVamshiLayerMeta(ag, meta) {
+      const l = String((meta && meta.layer) || '').toLowerCase();
+      const cls = getAgentBuildClassification(ag);
+      if (cls.tier === 'Low-Code' || l.includes('studio')) {
+        return { name: 'OOTB', color: '#10b981' };
+      }
+      if (cls.tier === 'Hybrid' || l.includes('cloud run')) {
+        return { name: 'Agent Designer', color: '#3b82f6' };
+      }
+      if (ag && ag.id && (ag.id.includes('steward') || ag.id.includes('auditor') || ag.id.includes('ledger') || ag.id.includes('sensor'))) {
+        return { name: 'Data Agent', color: '#64748b' };
+      }
+      return { name: 'Custom ADK', color: '#f59e0b' };
+    }
+
+    function previewPeriodicAgent(agentId) {
+      const ag = AGENTS[agentId];
+      if (!ag) return;
+      currentSelectedElementId = agentId;
+      const meta = PERIODIC_AGENT_META[agentId] || {
+        code: '101', short: cleanAgentName(ag.name), group: ag.deptId,
+        subPillar: ag.subPillarName || 'Supply Chain', subPillarColor: '#2563eb',
+        personaName: ag.primaryPersonaName || 'Supply Chain Lead',
+        layer: 'Custom ADK', layerColor: '#f59e0b', trigger: 'Event-Driven'
+      };
+      const trig = getVamshiTriggerMeta(meta.trigger);
+      const layer = getVamshiLayerMeta(ag, meta);
+      const spColor = ag.subPillarColor || meta.subPillarColor || '#2563eb';
+      const domainTitle = ag.subPillarName || meta.subPillar || 'Supply Chain';
+      const cName = cleanAgentName(ag.name);
+
+      const badgeEl = document.getElementById('ptDetailBadge');
+      const nameEl = document.getElementById('ptDetailName');
+      const metaEl = document.getElementById('ptDetailMeta');
+      const tagsEl = document.getElementById('ptDetailTags');
+      const linkEl = document.getElementById('ptDetailLink');
+
+      if (badgeEl) {
+        badgeEl.textContent = `A-${meta.code}`;
+        badgeEl.style.background = spColor;
+      }
+      if (nameEl) nameEl.textContent = cName;
+      if (metaEl) metaEl.textContent = `A-${meta.code} · ${domainTitle}`;
+      if (tagsEl) {
+        const hitlName = meta.personaName || ag.primaryPersonaName || 'Domain Lead';
+        tagsEl.innerHTML = `
+          <span class="pt-tag pt-tag--layer" style="--tag-c:${layer.color}">${layer.name}</span>
+          <span class="pt-tag">${trig.label}</span>
+          <span class="pt-tag pt-tag--hitl" title="${hitlName}">HITL · ${hitlName}</span>
+        `;
+      }
+      if (linkEl) {
+        linkEl.setAttribute('href', `#agent/${ag.id}`);
+        linkEl.onclick = function(ev) {
+          ev.preventDefault();
+          openAgentPage(ag.id, true, ev);
+        };
+      }
+
+      document.querySelectorAll('.pt-cell.is-selected').forEach(el => el.classList.remove('is-selected'));
+      const activeCell = document.querySelector(`.pt-cell[data-agent-id="${agentId}"]`);
+      if (activeCell) activeCell.classList.add('is-selected');
+    }
+
+    function handlePeriodicTileClick(agentId, ev) {
+      currentSelectedElementId = agentId;
+      openAgentPage(agentId, true, ev);
     }
 
     function openPeriodicTablePage(filterGroup = 'all', selectedAgentId = null, pushState = true) {
@@ -42469,281 +42994,217 @@
 
       const selAg = AGENTS[currentSelectedElementId] || Object.values(AGENTS)[0];
       const selMeta = PERIODIC_AGENT_META[selAg.id] || {
-        code: '101', sym: 'Ai', short: selAg.name, group: selAg.deptId,
-        layer: 'Vertex AI ADK + A2A', layerColor: '#3b82f6', trigger: 'Event-Driven', trigIcon: '⚡'
+        code: '101', short: cleanAgentName(selAg.name), group: selAg.deptId,
+        subPillar: selAg.subPillarName || 'Demand Forecasting', subPillarColor: '#2563eb',
+        personaName: selAg.primaryPersonaName || 'Demand Planner / Forecaster',
+        layer: 'Custom ADK', layerColor: '#f59e0b', trigger: 'Event-Driven'
       };
-      const selGrp = PERIODIC_GROUPS.find(g => g.id === selMeta.group) || PERIODIC_GROUPS[0];
-      const selDept = DEPARTMENTS[selAg.deptId] || Object.values(DEPARTMENTS)[0];
-      const selSell = getAgentSellingMeta(selAg, selDept);
-      const selCls = getAgentBuildClassification(selAg);
-      const selPrimaryPersona = (selAg.personaId && PERSONAS[selAg.personaId]) || selSell.usedByPersonas[0] || Object.values(PERSONAS)[0];
+      const selTrig = getVamshiTriggerMeta(selMeta.trigger);
+      const selLayer = getVamshiLayerMeta(selAg, selMeta);
+      const selSpColor = selAg.subPillarColor || selMeta.subPillarColor || '#2563eb';
+      const selDomainTitle = selAg.subPillarName || selMeta.subPillar || 'Demand Forecasting';
+      const selCleanName = cleanAgentName(selAg.name);
 
-      const renderInlineExpansionCard = (ag, meta, grpColor) => {
-        const d = DEPARTMENTS[ag.deptId] || selDept;
-        const cls = getAgentBuildClassification(ag);
-        const pOwner = (ag.personaId && PERSONAS[ag.personaId]) || getAgentSellingMeta(ag, d).usedByPersonas[0];
-        return `
-          <div class="pt-inline-expand" style="--exp-color:${grpColor};">
-            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px; padding-bottom:14px; border-bottom:1px solid var(--border-subtle); margin-bottom:16px;">
-              <div>
-                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
-                  <span style="font-family:var(--font-mono); font-size:12px; font-weight:800; padding:3px 9px; border-radius:6px; background:${grpColor}22; border:1px solid ${grpColor}; color:var(--text-primary);">
-                    A-${meta.code} · ${meta.sym}
-                  </span>
-                  <span class="build-tier-badge ${cls.cssClass}">${cls.label}</span>
-                  <span class="pt-side-tag">${meta.trigIcon} ${meta.trigger}</span>
-                  <span class="pt-side-tag" style="color:#10b981; border-color:rgba(16,185,129,0.4); font-weight:800;">✦ ${ag.badge}</span>
-                </div>
-                <h3 style="font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text-primary); margin-bottom:2px;">
-                  ${ag.name}
-                </h3>
-                <div style="font-size:13.5px; color:var(--text-secondary);">
-                  ${d.scorBadge} · <strong>${ag.subPillarName || meta.subPillar || d.name}</strong>
-                </div>
-              </div>
-              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-                ${pOwner ? `
-                  <button type="button" class="switch-pill" style="border-color:#f59e0b; color:#f59e0b; font-weight:700;" onclick="openPersonaPage('${pOwner.id}', true, event)">
-                    👤 ${pOwner.name} &rarr;
-                  </button>
-                ` : ''}
-                <button type="button" class="agent-plug-btn" style="padding:9px 16px; font-size:13px;" onclick="openAgentPage('${ag.id}', true, event)">
-                  <span>Open ${ag.name} Studio</span>
-                  <span>&rarr;</span>
-                </button>
-                <button type="button" class="switch-pill" onclick="currentExpandedInlineId = null; openPeriodicTablePage('${currentPeriodicFilter}', '${ag.id}', false)">
-                  ✕
-                </button>
-              </div>
-            </div>
-
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
-              <div style="padding:14px 16px; border-radius:12px; background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.22);">
-                <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.07em; color:#ef4444; margin-bottom:4px;">
-                  ✕ Manual Bottleneck
-                </div>
-                <p style="font-size:13.5px; color:var(--text-primary); line-height:1.55; margin:0;">${shortSentence(ag.problem, 180)}</p>
-              </div>
-              <div style="padding:14px 16px; border-radius:12px; background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.22);">
-                <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.07em; color:#3b82f6; margin-bottom:4px;">
-                  ✦ AI Agent Solution
-                </div>
-                <p style="font-size:13.5px; color:var(--text-primary); line-height:1.55; margin:0;">${shortSentence(ag.solution, 180)}</p>
-              </div>
-              <div style="padding:14px 16px; border-radius:12px; background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.22);">
-                <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.07em; color:#10b981; margin-bottom:4px;">
-                  ⚡ Quantified Outcome
-                </div>
-                <p style="font-size:13.5px; color:var(--text-primary); line-height:1.55; margin:0;">${shortSentence(ag.outcome, 180)}</p>
-              </div>
-            </div>
-          </div>
-        `;
-      };
-
-      const visibleGroups = PERIODIC_GROUPS.filter(g => currentPeriodicFilter === 'all' || g.id === currentPeriodicFilter);
-      const leftColumnHtml = visibleGroups.map(grp => {
+      // Collect all 20 Sub-Pillar Domains across the 6 Pillars
+      const allDomains = [];
+      PERIODIC_GROUPS.forEach(grp => {
         const deptObj = DEPARTMENTS[grp.id];
         const subPillars = (deptObj && deptObj.subPillars) || [];
-        const grpAgents = Object.entries(PERIODIC_AGENT_META)
-          .filter(([_, m]) => m.group === grp.id)
-          .map(([aid, m]) => ({ ag: AGENTS[aid], m }))
-          .filter(x => x.ag);
-        const expandedItem = grpAgents.find(x => x.ag.id === currentExpandedInlineId);
+        subPillars.forEach(sp => {
+          const spItems = (sp.items || []).map(it => {
+            const ag = AGENTS[it.agentId];
+            const m = PERIODIC_AGENT_META[it.agentId] || {
+              code: '101', short: cleanAgentName(it.agentName),
+              subPillar: sp.name, subPillarColor: sp.color || grp.color,
+              personaName: it.personaName || 'Supply Chain Lead',
+              layer: 'Custom ADK', layerColor: '#f59e0b', trigger: 'Event-Driven'
+            };
+            return { ag, m, it };
+          }).filter(x => x.ag);
+          allDomains.push({
+            id: sp.id,
+            name: sp.name,
+            color: sp.color || grp.color,
+            pillarId: grp.id,
+            pillarShort: grp.shortTab.replace(/\s*\(\d+\)$/, ''),
+            items: spItems
+          });
+        });
+      });
+
+      const visibleDomains = allDomains.filter(dom => {
+        if (currentPeriodicFilter === 'all') return true;
+        if (currentPeriodicFilter.startsWith('sp:')) return dom.id === currentPeriodicFilter.slice(3);
+        return dom.pillarId === currentPeriodicFilter;
+      });
+
+      const totalVisibleAgents = visibleDomains.reduce((acc, d) => acc + d.items.length, 0);
+      const activeGroupObj = PERIODIC_GROUPS.find(g => g.id === currentPeriodicFilter);
+      const headTitle = currentPeriodicFilter === 'all'
+        ? 'All Supply Chain'
+        : (activeGroupObj ? activeGroupObj.shortTab.replace(/\s*\(\d+\)$/, '') : (visibleDomains[0] ? visibleDomains[0].name : 'Supply Chain'));
+      const headSubtitle = currentPeriodicFilter === 'all'
+        ? 'Cross-pillar view of all 60 Supply Chain AI agents across 20 operational domains — hover any tile to preview, click to open.'
+        : `Showing ${totalVisibleAgents} Supply Chain AI agents across ${visibleDomains.length} operational ${visibleDomains.length === 1 ? 'domain' : 'domains'} — hover any tile to preview, click to open.`;
+
+      const domainRowsHtml = visibleDomains.map(dom => {
+        const cols = Math.max(6, dom.items.length);
+        const cellsHtml = dom.items.map(({ ag, m }) => {
+          const trig = getVamshiTriggerMeta(m.trigger);
+          const layer = getVamshiLayerMeta(ag, m);
+          const shortTitle = cleanAgentName(m.short || ag.name).replace(/\s+Agent$/i, '');
+          const hitlPersona = m.personaName || ag.primaryPersonaName || 'Domain Lead';
+          const isSel = ag.id === selAg.id;
+
+          return `
+            <a class="pt-cell ${isSel ? 'is-selected' : ''}"
+               href="#agent/${ag.id}"
+               data-agent-id="${ag.id}"
+               style="--pt-domain:${dom.color}"
+               onmouseenter="previewPeriodicAgent('${ag.id}')"
+               onfocus="previewPeriodicAgent('${ag.id}')"
+               onclick="event.preventDefault(); handlePeriodicTileClick('${ag.id}', event)">
+              <span class="pt-cell-num">${m.code}</span>
+              <svg class="pt-cell-hitl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-label="Human-in-the-loop required">
+                <title>Human-in-the-loop: ${hitlPersona}</title>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              <svg class="pt-cell-trig" data-trig="${trig.slug}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-label="Trigger: ${trig.label}">
+                <title>Trigger: ${trig.label}</title>
+                ${trig.svgPath}
+              </svg>
+              <span class="pt-cell-name">${shortTitle}</span>
+              <span class="pt-cell-dot" style="background:${layer.color}" title="Layer: ${layer.name}"></span>
+            </a>
+          `;
+        }).join('');
 
         return `
-          <div class="pt-pillar-card" style="--dom-color:${grp.color};">
-            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:8px;">
-              <div style="display:flex; align-items:center; gap:10px;">
-                <span class="pt-domain-swatch" style="--dom-color:${grp.color}; width:12px; height:12px; border-radius:3px;"></span>
-                <span style="font-family:var(--font-display); font-size:16px; font-weight:800; color:var(--text-primary); letter-spacing:0.02em;">
-                  ${grp.title}
-                </span>
-              </div>
-              <span style="font-family:var(--font-mono); font-size:12px; font-weight:700; color:${grp.color}; padding:3px 10px; border-radius:999px; background:${grp.color}18; border:1px solid ${grp.color}40;">
-                ${subPillars.length} Sub-Pillars · ${grpAgents.length} AI Agents
-              </span>
+          <div class="pt-group">
+            <div class="pt-group-head">
+              <span class="pt-group-swatch" style="background:${dom.color}"></span>
+              <span class="pt-group-title">${dom.name}</span>
+              <span class="pt-group-count">${dom.items.length}</span>
             </div>
-
-            <div class="pt-subpillars-grid">
-              ${subPillars.map(sp => {
-                const spItems = (sp.items || []).map(it => {
-                  const ag = AGENTS[it.agentId];
-                  const m = PERIODIC_AGENT_META[it.agentId] || { code: '101', sym: 'Ai', short: it.agentName, layerColor: sp.color, trigIcon: '⚡', layer: 'Vertex AI ADK', trigger: 'Event-Driven' };
-                  return { ag, m, it };
-                }).filter(x => x.ag);
-
-                return `
-                  <div class="pt-subpillar-group" style="--sp-color:${sp.color || grp.color};">
-                    <div class="pt-subpillar-title">
-                      <span>${sp.icon} ${sp.name}</span>
-                      <span style="font-family:var(--font-mono); font-size:11px; color:${sp.color || grp.color};">3</span>
-                    </div>
-                    <div class="pt-subpillar-tiles">
-                      ${spItems.map(({ ag, m }) => {
-                        const isSel = ag.id === selAg.id;
-                        return `
-                          <div class="pt-tile ${isSel ? 'active' : ''}"
-                               style="--tile-color:${sp.color || grp.color}; --dot-color:${m.layerColor};"
-                               onclick="handlePeriodicTileClick('${ag.id}')">
-                            <div class="pt-tile-top">
-                              <span>${m.code}</span>
-                              <span class="pt-tile-trig" title="${m.trigger}">${m.trigIcon}</span>
-                            </div>
-                            <div class="pt-tile-sym">${m.sym}</div>
-                            <div class="pt-tile-title" title="${ag.name}">${m.short}</div>
-                            <div class="pt-tile-dot" title="${m.layer}"></div>
-                          </div>
-                        `;
-                      }).join('')}
-                    </div>
-                  </div>
-                `;
-              }).join('')}
+            <div class="pt-grid" style="--pt-cols:${cols}">
+              ${cellsHtml}
             </div>
-
-            ${expandedItem ? renderInlineExpansionCard(expandedItem.ag, expandedItem.m, grp.color) : ''}
           </div>
         `;
       }).join('');
 
+      const legendDomainsHtml = visibleDomains.map(dom => `
+        <div class="pt-legend-domain" onclick="openPeriodicTablePage('sp:${dom.id}', '${dom.items[0] ? dom.items[0].ag.id : selAg.id}', false)">
+          <span class="pt-legend-swatch" style="background:${dom.color}"></span>
+          <span class="pt-legend-domain-title">${dom.name}</span>
+          <span class="pt-legend-domain-count">${dom.items.length}</span>
+        </div>
+      `).join('');
+
       const container = document.getElementById('periodicPageContent');
       container.innerHTML = `
-        <div class="subpage-top-bar">
-          <button type="button" class="back-btn" onclick="goHome()">
-            <span>&larr;</span>
-            <span>Back to 6 Pillars</span>
-          </button>
-          <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
-            <button type="button" class="switch-pill" style="border-color:rgba(16,185,129,0.45); color:#10b981; font-weight:700;" onclick="openMindMapPage('mindmap', null, null, true)">
-              🧠 Switch to Neural Mind Map &rarr;
+        <div class="pt">
+          <!-- Top Pill Tabs (Vamshi Periodic Table Style) -->
+          <div class="pt-tabs" role="tablist" aria-label="Supply Chain Pillars">
+            <button type="button" role="tab" class="pt-tab ${currentPeriodicFilter === 'all' ? 'is-active' : ''}"
+                    onclick="openPeriodicTablePage('all', '${selAg.id}', false)">
+              <span class="pt-tab-label">All Supply Chain</span>
+              <span class="pt-tab-count">60</span>
             </button>
-          </div>
-        </div>
-
-        <!-- Clean Header -->
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 18px;">
-          <div>
-            <h1 style="font-family:var(--font-display); font-size:clamp(28px, 3vw, 40px); font-weight:800; letter-spacing:-0.025em; color:var(--text-primary); margin-bottom:4px;">
-              The Periodic Table of Supply Chain AI Agents
-            </h1>
-            <p style="font-size:14.5px; color:var(--text-secondary); margin:0;">
-              <strong>6 Core Pillars</strong> &rarr; <strong>20 Sub-Pillars</strong> &rarr; <strong>60 AI Agents</strong> (3 per Sub-Pillar). Click any element tile to inspect its Persona and launch the Agent Studio.
-            </p>
-          </div>
-          <div class="pt-stat-badges">
-            <div class="pt-stat-badge"><strong>6</strong>pillars</div>
-            <div class="pt-stat-badge"><strong>20</strong>sub-pillars</div>
-            <div class="pt-stat-badge"><strong>60</strong>agents</div>
-          </div>
-        </div>
-
-        <!-- Clean Pillar Filter Tabs -->
-        <div class="pt-top-tabs" style="margin-bottom:20px;">
-          <button type="button" class="pt-tab-btn ${currentPeriodicFilter === 'all' ? 'active' : ''}"
-                  onclick="currentExpandedInlineId = null; openPeriodicTablePage('all', '${selAg.id}', false)">
-            <span>All 6 Pillars</span>
-            <span class="pt-tab-count">60</span>
-          </button>
-          ${PERIODIC_GROUPS.map(g => `
-            <button type="button" class="pt-tab-btn ${currentPeriodicFilter === g.id ? 'active' : ''}"
-                    onclick="currentExpandedInlineId = null; openPeriodicTablePage('${g.id}', '${selAg.id}', false)">
-              <span>${g.shortTab}</span>
-              <span class="pt-tab-count">${g.count}</span>
-            </button>
-          `).join('')}
-        </div>
-
-        <!-- Main 2-Column Layout: Left Structured Sub-Pillar Periodic Table + Right Sticky Inspector -->
-        <div class="pt-main-layout">
-          <div>
-            ${leftColumnHtml}
-          </div>
-
-          <aside class="pt-sidebar">
-            <div class="pt-side-card" style="border-top: 4px solid ${selGrp.color};">
-              <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:14px;">
-                <div class="pt-side-badge" style="background:${selGrp.color}; width:44px; height:44px; font-size:15px;">
-                  ${selMeta.sym}
-                </div>
-                <div>
-                  <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:${selGrp.color};">
-                    ELEMENT A-${selMeta.code} · ${selAg.subPillarName || selMeta.subPillar || selGrp.shortTab}
-                  </div>
-                  <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:var(--text-primary); line-height:1.25; margin-top:2px;">
-                    ${selAg.name}
-                  </div>
-                </div>
-              </div>
-
-              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;">
-                <span class="build-tier-badge ${selCls.cssClass}">${selCls.tier}</span>
-                <span class="pt-side-tag">${selMeta.trigIcon} ${selMeta.trigger}</span>
-                <span class="pt-side-tag" style="color:#10b981; border-color:rgba(16,185,129,0.35); font-weight:800;">✦ ${selAg.badge}</span>
-              </div>
-
-              <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.58; margin-bottom:16px;">
-                ${shortSentence(selAg.solution || selAg.shortDesc, 165)}
-              </p>
-
-              ${selAg.costModel ? `
-                <div style="padding:10px 12px; border-radius:10px; background:var(--bg-elevated); border:1px solid var(--border-subtle); margin-bottom:14px; font-family:var(--font-mono); font-size:11.5px; color:var(--text-secondary);">
-                  💰 Est. Cost: <strong style="color:var(--text-primary);">$${selAg.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo</strong> · Pilot: <strong style="color:var(--text-primary);">$${selAg.costModel.monthlyBreakdown.pilotScaleMoUsd.toFixed(0)}/mo</strong> · <strong style="color:var(--text-primary);">$${selAg.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K</strong>
-                </div>
-              ` : ''}
-
-              <!-- Primary Human Persona Box inside Inspector -->
-              ${selPrimaryPersona ? `
-                <div style="padding:12px 14px; border-radius:12px; background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.35); border-left:4px solid #f59e0b; margin-bottom:16px;">
-                  <div style="font-family:var(--font-mono); font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:#f59e0b; margin-bottom:4px;">
-                    👤 Human Persona in the Loop
-                  </div>
-                  <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
-                    <div style="font-size:14px; font-weight:800; color:var(--text-primary);">
-                      ${selPrimaryPersona.icon} ${selPrimaryPersona.name}
-                    </div>
-                    <button type="button" style="font-size:12px; font-weight:700; color:#f59e0b; background:none; border:none; cursor:pointer;" onclick="openPersonaPage('${selPrimaryPersona.id}', true, event)">
-                      Journey &rarr;
-                    </button>
-                  </div>
-                </div>
-              ` : ''}
-
-              <div style="display:flex; flex-direction:column; gap:10px; padding-top:12px; border-top:1px solid var(--border-subtle);">
-                <button type="button" class="agent-plug-btn" style="width:100%; justify-content:center; padding:10px 14px; font-size:13px;" onclick="openAgentPage('${selAg.id}', true, event)">
-                  <span>Open ${selAg.name} Studio</span>
-                  <span>&rarr;</span>
+            ${PERIODIC_GROUPS.map(g => {
+              const cleanTab = g.shortTab.replace(/\s*\(\d+\)$/, '');
+              return `
+                <button type="button" role="tab" class="pt-tab ${currentPeriodicFilter === g.id ? 'is-active' : ''}"
+                        onclick="openPeriodicTablePage('${g.id}', '${selAg.id}', false)">
+                  <span class="pt-tab-label">${cleanTab}</span>
+                  <span class="pt-tab-count">${g.count}</span>
                 </button>
-              </div>
+              `;
+            }).join('')}
+          </div>
+
+          <!-- Header Row -->
+          <div class="pt-head">
+            <div>
+              <h2 class="pt-title">${headTitle}</h2>
+              <p class="pt-subtitle">${headSubtitle}</p>
+            </div>
+            <div class="pt-stats">
+              <span class="pt-stat"><strong>${totalVisibleAgents}</strong> agents</span>
+              <span class="pt-stat"><strong>${visibleDomains.length}</strong> domains</span>
+            </div>
+          </div>
+
+          <!-- 2-Column Body: Left Flat Domain Grid + Right Sticky Detail & Legend -->
+          <div class="pt-body">
+            <div class="pt-grid-wrap">
+              ${domainRowsHtml}
             </div>
 
-            <!-- Compact Legend Box -->
-            <div class="pt-legend-box">
-              <div>
-                <div class="pt-legend-title">BUILD TIERS &amp; STACK</div>
-                <div class="pt-legend-list">
-                  <div class="pt-legend-row">
-                    <span style="display:inline-flex; align-items:center; gap:8px;"><span class="pt-tile-dot" style="--dot-color:#10b981;"></span>Low-Code · Gemini Studio</span>
+            <aside class="pt-side">
+              <!-- Live Hover Preview Card (.pt-detail) -->
+              <div class="pt-detail">
+                <div class="pt-detail-top">
+                  <span class="pt-detail-badge" id="ptDetailBadge" style="background:${selSpColor}">A-${selMeta.code}</span>
+                  <div class="pt-detail-titles">
+                    <div class="pt-detail-name" id="ptDetailName">${selCleanName}</div>
+                    <div class="pt-detail-meta" id="ptDetailMeta">A-${selMeta.code} · ${selDomainTitle}</div>
                   </div>
-                  <div class="pt-legend-row">
-                    <span style="display:inline-flex; align-items:center; gap:8px;"><span class="pt-tile-dot" style="--dot-color:#3b82f6;"></span>Hybrid · ADK + Cloud Run</span>
+                </div>
+                <div class="pt-detail-tags" id="ptDetailTags">
+                  <span class="pt-tag pt-tag--layer" style="--tag-c:${selLayer.color}">${selLayer.name}</span>
+                  <span class="pt-tag">${selTrig.label}</span>
+                  <span class="pt-tag pt-tag--hitl" title="${selMeta.personaName || ''}">HITL · ${selMeta.personaName || 'Domain Lead'}</span>
+                </div>
+                <a class="pt-detail-link" id="ptDetailLink" href="#agent/${selAg.id}" onclick="event.preventDefault(); openAgentPage('${selAg.id}', true, event)">
+                  View agent spec &rarr;
+                </a>
+              </div>
+
+              <!-- Legend Box (.pt-legend) -->
+              <div class="pt-legend">
+                <div>
+                  <div class="pt-legend-title">Layers</div>
+                  <div class="pt-legend-items">
+                    <span class="pt-legend-item"><span class="pt-legend-dot" style="background:#10b981"></span>OOTB</span>
+                    <span class="pt-legend-item"><span class="pt-legend-dot" style="background:#3b82f6"></span>Agent Designer</span>
+                    <span class="pt-legend-item"><span class="pt-legend-dot" style="background:#f59e0b"></span>Custom ADK</span>
+                    <span class="pt-legend-item"><span class="pt-legend-dot" style="background:#64748b"></span>Data Agent</span>
                   </div>
-                  <div class="pt-legend-row">
-                    <span style="display:inline-flex; align-items:center; gap:8px;"><span class="pt-tile-dot" style="--dot-color:#f59e0b;"></span>High-Code · ADK + OR-Tools</span>
+                </div>
+
+                <div>
+                  <div class="pt-legend-title">Triggers</div>
+                  <div class="pt-legend-items">
+                    <span class="pt-legend-item">
+                      <svg class="pt-legend-ico" style="color:#10b981" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+                      Event-Driven
+                    </span>
+                    <span class="pt-legend-item">
+                      <svg class="pt-legend-ico" style="color:#3b82f6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                      Chat-Initiated
+                    </span>
+                    <span class="pt-legend-item">
+                      <svg class="pt-legend-ico" style="color:#f59e0b" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                      Scheduled
+                    </span>
+                    <span class="pt-legend-item">
+                      <svg class="pt-legend-ico" style="color:#ef4444" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                      Human-in-the-loop
+                    </span>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="pt-legend-title">Domains</div>
+                  <div class="pt-legend-domains">
+                    ${legendDomainsHtml}
                   </div>
                 </div>
               </div>
-
-              <div>
-                <div class="pt-legend-title">TRIGGERS</div>
-                <div class="pt-legend-list">
-                  <div class="pt-legend-row"><span>⚡ Event-Driven</span></div>
-                  <div class="pt-legend-row"><span>💬 Chat-Initiated</span></div>
-                  <div class="pt-legend-row"><span>🛡️ Scheduled / Guardrail</span></div>
-                </div>
-              </div>
-            </div>
-          </aside>
+            </aside>
+          </div>
         </div>
       `;
 
@@ -43120,20 +43581,11 @@
                         <div style="display:flex; align-items:center; gap:14px;">
                           <div class="ai-bot-square" style="width:46px; height:46px; font-size:19px; flex-shrink:0;">✦</div>
                           <div>
-                            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:4px;">
-                              <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; padding:2px 8px; border-radius:6px; background:${spColor}22; color:${spColor}; border:1px solid ${spColor}55;">
-                                A-${m.code} · ${m.sym}
-                              </span>
-                              <span class="build-tier-badge ${cls.cssClass}" style="font-size:10.5px; padding:2px 8px;">${cls.label}</span>
-                              <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#10b981;">✦ ${ag.badge}</span>
-                              ${ag.costModel ? `
-                                <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; padding:2px 8px; border-radius:6px; background:rgba(2,132,199,0.14); color:#0284c7; border:1px solid rgba(2,132,199,0.35);">
-                                  💰 $${ag.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo · $${ag.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K · 📈 $${(ag.costModel.valueModel.grossAnnualConservativeUsd/1e6).toFixed(2)}M/yr (${ag.costModel.valueModel.cloudRoiMultipleConservative}x ROI)
-                                </span>
-                              ` : ''}
-                            </div>
                             <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:var(--text-primary);">
-                              ${ag.name}
+                              ${cleanAgentName(ag.name)}
+                            </div>
+                            <div style="font-size:13px; color:var(--text-secondary); margin-top:2px;">
+                              ${ag.subPillarName || activeDept.name}
                             </div>
                           </div>
                         </div>
@@ -43157,17 +43609,11 @@
                               ${p.icon}
                             </div>
                             <div>
-                              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:3px;">
-                                <span class="human-role-tag">👤 Connected Human Persona</span>
-                                <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#10b981;">
-                                  ⚡ ${p.toilHoursBefore || '6.5h'} &rarr; ${p.toilHoursAfter || '1.0h'} (${p.headlineStat || '-85% Toil'})
-                                </span>
-                              </div>
                               <div style="font-family:var(--font-display); font-size:17.5px; font-weight:800; color:var(--text-primary);">
                                 ${p.name}
                               </div>
                               <div style="font-size:13px; color:var(--text-secondary); margin-top:2px;">
-                                ${shortSentence(p.mandate || p.role, 130)}
+                                ${p.subPillarName || activeDept.name}
                               </div>
                             </div>
                           </div>
