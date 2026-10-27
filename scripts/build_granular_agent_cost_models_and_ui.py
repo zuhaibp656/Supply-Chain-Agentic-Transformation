@@ -280,6 +280,16 @@ def build_agent_cost_model(aid: str, agent: dict, idx: int) -> dict:
     roi_multiple_like = int(round(gross_annual_like / max(1.0, annual_cloud_fsp3yr)))
     payback_days = max(2, int(round((total_annual_run_cost / gross_annual_cons) * 365)))
 
+    # 6. Manual / Legacy Process Equivalent Cost (Analyst Hours + Error Rework)
+    manual_hours_mo = deterministic_int(aid + "_mhrs", 240, 420)
+    fte_equiv = round(manual_hours_mo / 160.0, 1)
+    hourly_rate_usd = 65
+    manual_rework_mo = deterministic_int(aid + "_mrew", 22, 54) * 100
+    manual_mo_usd = int(round((manual_hours_mo * hourly_rate_usd + manual_rework_mo) / 100.0) * 100)
+    manual_yr_usd = manual_mo_usd * 12
+    direct_savings_mo_usd = int(round(manual_mo_usd - total_mo_fsp3yr))
+    direct_savings_pct = round(((manual_mo_usd - total_mo_fsp3yr) / max(1.0, manual_mo_usd)) * 100.0, 1)
+
     return {
         "agentId": aid,
         "modelName": model_name,
@@ -288,6 +298,16 @@ def build_agent_cost_model(aid: str, agent: dict, idx: int) -> dict:
         "triggerCadence": trigger_cadence,
         "eventsPerDay": events_per_day,
         "monthlyCalls": monthly_calls,
+        "manualComparison": {
+            "manualHoursPerMonth": manual_hours_mo,
+            "fteEquivalent": fte_equiv,
+            "hourlyRateUsd": hourly_rate_usd,
+            "manualErrorReworkMoUsd": manual_rework_mo,
+            "manualMonthlyCostUsd": manual_mo_usd,
+            "manualAnnualCostUsd": manual_yr_usd,
+            "directMonthlySavingsUsd": direct_savings_mo_usd,
+            "directSavingsPct": direct_savings_pct,
+        },
         "tokens": {
             "cachedInput": cached_tok,
             "dynamicInput": dyn_tok,

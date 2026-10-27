@@ -5618,6 +5618,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3459,
         "monthlyCalls": 103770,
+        "manualComparison": {
+          "manualHoursPerMonth": 356,
+          "fteEquivalent": 2.2,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3800,
+          "manualMonthlyCostUsd": 26900,
+          "manualAnnualCostUsd": 322800,
+          "directMonthlySavingsUsd": 26695,
+          "directSavingsPct": 99.2
+        },
         "tokens": {
           "cachedInput": 3087,
           "dynamicInput": 1588,
@@ -6004,6 +6014,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3874,
         "monthlyCalls": 116220,
+        "manualComparison": {
+          "manualHoursPerMonth": 409,
+          "fteEquivalent": 2.6,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4900,
+          "manualMonthlyCostUsd": 31500,
+          "manualAnnualCostUsd": 378000,
+          "directMonthlySavingsUsd": 31328,
+          "directSavingsPct": 99.5
+        },
         "tokens": {
           "cachedInput": 2840,
           "dynamicInput": 1088,
@@ -6419,6 +6439,16 @@
         "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
         "eventsPerDay": 1267,
         "monthlyCalls": 38010,
+        "manualComparison": {
+          "manualHoursPerMonth": 285,
+          "fteEquivalent": 1.8,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4500,
+          "manualMonthlyCostUsd": 23000,
+          "manualAnnualCostUsd": 276000,
+          "directMonthlySavingsUsd": 22443,
+          "directSavingsPct": 97.6
+        },
         "tokens": {
           "cachedInput": 5108,
           "dynamicInput": 1947,
@@ -6822,6 +6852,16 @@
         "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
         "eventsPerDay": 839,
         "monthlyCalls": 25170,
+        "manualComparison": {
+          "manualHoursPerMonth": 365,
+          "fteEquivalent": 2.3,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4700,
+          "manualMonthlyCostUsd": 28400,
+          "manualAnnualCostUsd": 340800,
+          "directMonthlySavingsUsd": 27928,
+          "directSavingsPct": 98.3
+        },
         "tokens": {
           "cachedInput": 6366,
           "dynamicInput": 3022,
@@ -7151,6 +7191,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3842,
         "monthlyCalls": 115260,
+        "manualComparison": {
+          "manualHoursPerMonth": 321,
+          "fteEquivalent": 2.0,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2900,
+          "manualMonthlyCostUsd": 23800,
+          "manualAnnualCostUsd": 285600,
+          "directMonthlySavingsUsd": 23612,
+          "directSavingsPct": 99.2
+        },
         "tokens": {
           "cachedInput": 3369,
           "dynamicInput": 1740,
@@ -7473,6 +7523,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2322,
         "monthlyCalls": 69660,
+        "manualComparison": {
+          "manualHoursPerMonth": 284,
+          "fteEquivalent": 1.8,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 5400,
+          "manualMonthlyCostUsd": 23900,
+          "manualAnnualCostUsd": 286800,
+          "directMonthlySavingsUsd": 23757,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 2862,
           "dynamicInput": 2093,
@@ -7870,6 +7930,16 @@
         "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
         "eventsPerDay": 1754,
         "monthlyCalls": 52620,
+        "manualComparison": {
+          "manualHoursPerMonth": 363,
+          "fteEquivalent": 2.3,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2500,
+          "manualMonthlyCostUsd": 26100,
+          "manualAnnualCostUsd": 313200,
+          "directMonthlySavingsUsd": 25372,
+          "directSavingsPct": 97.2
+        },
         "tokens": {
           "cachedInput": 6323,
           "dynamicInput": 2149,
@@ -8365,6 +8435,16 @@
         "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
         "eventsPerDay": 1821,
         "monthlyCalls": 54630,
+        "manualComparison": {
+          "manualHoursPerMonth": 252,
+          "fteEquivalent": 1.6,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3400,
+          "manualMonthlyCostUsd": 19800,
+          "manualAnnualCostUsd": 237600,
+          "directMonthlySavingsUsd": 19014,
+          "directSavingsPct": 96.0
+        },
         "tokens": {
           "cachedInput": 6253,
           "dynamicInput": 2462,
@@ -8897,6 +8977,16 @@
         "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
         "eventsPerDay": 1590,
         "monthlyCalls": 47700,
+        "manualComparison": {
+          "manualHoursPerMonth": 283,
+          "fteEquivalent": 1.8,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3100,
+          "manualMonthlyCostUsd": 21500,
+          "manualAnnualCostUsd": 258000,
+          "directMonthlySavingsUsd": 20711,
+          "directSavingsPct": 96.3
+        },
         "tokens": {
           "cachedInput": 5384,
           "dynamicInput": 2254,
@@ -9354,6 +9444,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 1614,
         "monthlyCalls": 48420,
+        "manualComparison": {
+          "manualHoursPerMonth": 383,
+          "fteEquivalent": 2.4,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4000,
+          "manualMonthlyCostUsd": 28900,
+          "manualAnnualCostUsd": 346800,
+          "directMonthlySavingsUsd": 28779,
+          "directSavingsPct": 99.6
+        },
         "tokens": {
           "cachedInput": 2655,
           "dynamicInput": 1370,
@@ -9651,6 +9751,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3064,
         "monthlyCalls": 91920,
+        "manualComparison": {
+          "manualHoursPerMonth": 279,
+          "fteEquivalent": 1.7,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4800,
+          "manualMonthlyCostUsd": 22900,
+          "manualAnnualCostUsd": 274800,
+          "directMonthlySavingsUsd": 22738,
+          "directSavingsPct": 99.3
+        },
         "tokens": {
           "cachedInput": 3220,
           "dynamicInput": 1319,
@@ -9944,6 +10054,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3373,
         "monthlyCalls": 101190,
+        "manualComparison": {
+          "manualHoursPerMonth": 316,
+          "fteEquivalent": 2.0,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2200,
+          "manualMonthlyCostUsd": 22700,
+          "manualAnnualCostUsd": 272400,
+          "directMonthlySavingsUsd": 22543,
+          "directSavingsPct": 99.3
+        },
         "tokens": {
           "cachedInput": 2539,
           "dynamicInput": 1410,
@@ -10353,6 +10473,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 1922,
         "monthlyCalls": 57660,
+        "manualComparison": {
+          "manualHoursPerMonth": 279,
+          "fteEquivalent": 1.7,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4600,
+          "manualMonthlyCostUsd": 22700,
+          "manualAnnualCostUsd": 272400,
+          "directMonthlySavingsUsd": 22523,
+          "directSavingsPct": 99.2
+        },
         "tokens": {
           "cachedInput": 2525,
           "dynamicInput": 1958,
@@ -10787,6 +10917,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 1953,
         "monthlyCalls": 58590,
+        "manualComparison": {
+          "manualHoursPerMonth": 267,
+          "fteEquivalent": 1.7,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3900,
+          "manualMonthlyCostUsd": 21300,
+          "manualAnnualCostUsd": 255600,
+          "directMonthlySavingsUsd": 21152,
+          "directSavingsPct": 99.3
+        },
         "tokens": {
           "cachedInput": 2620,
           "dynamicInput": 1458,
@@ -11082,6 +11222,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2974,
         "monthlyCalls": 89220,
+        "manualComparison": {
+          "manualHoursPerMonth": 339,
+          "fteEquivalent": 2.1,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3600,
+          "manualMonthlyCostUsd": 25600,
+          "manualAnnualCostUsd": 307200,
+          "directMonthlySavingsUsd": 25420,
+          "directSavingsPct": 99.3
+        },
         "tokens": {
           "cachedInput": 3679,
           "dynamicInput": 1838,
@@ -11497,6 +11647,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 1639,
         "monthlyCalls": 49170,
+        "manualComparison": {
+          "manualHoursPerMonth": 337,
+          "fteEquivalent": 2.1,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4400,
+          "manualMonthlyCostUsd": 26300,
+          "manualAnnualCostUsd": 315600,
+          "directMonthlySavingsUsd": 26157,
+          "directSavingsPct": 99.5
+        },
         "tokens": {
           "cachedInput": 3438,
           "dynamicInput": 1715,
@@ -11911,6 +12071,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2699,
         "monthlyCalls": 80970,
+        "manualComparison": {
+          "manualHoursPerMonth": 384,
+          "fteEquivalent": 2.4,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4500,
+          "manualMonthlyCostUsd": 29500,
+          "manualAnnualCostUsd": 354000,
+          "directMonthlySavingsUsd": 29312,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 3304,
           "dynamicInput": 1871,
@@ -12326,6 +12496,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 1884,
         "monthlyCalls": 56520,
+        "manualComparison": {
+          "manualHoursPerMonth": 346,
+          "fteEquivalent": 2.2,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4300,
+          "manualMonthlyCostUsd": 26800,
+          "manualAnnualCostUsd": 321600,
+          "directMonthlySavingsUsd": 26667,
+          "directSavingsPct": 99.5
+        },
         "tokens": {
           "cachedInput": 3358,
           "dynamicInput": 1876,
@@ -12706,6 +12886,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3596,
         "monthlyCalls": 107880,
+        "manualComparison": {
+          "manualHoursPerMonth": 398,
+          "fteEquivalent": 2.5,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3100,
+          "manualMonthlyCostUsd": 29000,
+          "manualAnnualCostUsd": 348000,
+          "directMonthlySavingsUsd": 28827,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 3236,
           "dynamicInput": 1508,
@@ -13159,6 +13349,16 @@
         "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
         "eventsPerDay": 5211,
         "monthlyCalls": 156330,
+        "manualComparison": {
+          "manualHoursPerMonth": 396,
+          "fteEquivalent": 2.5,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4800,
+          "manualMonthlyCostUsd": 30500,
+          "manualAnnualCostUsd": 366000,
+          "directMonthlySavingsUsd": 30360,
+          "directSavingsPct": 99.5
+        },
         "tokens": {
           "cachedInput": 2718,
           "dynamicInput": 1094,
@@ -13574,6 +13774,16 @@
         "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
         "eventsPerDay": 5748,
         "monthlyCalls": 172440,
+        "manualComparison": {
+          "manualHoursPerMonth": 270,
+          "fteEquivalent": 1.7,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3600,
+          "manualMonthlyCostUsd": 21200,
+          "manualAnnualCostUsd": 254400,
+          "directMonthlySavingsUsd": 20992,
+          "directSavingsPct": 99.0
+        },
         "tokens": {
           "cachedInput": 2147,
           "dynamicInput": 1303,
@@ -13977,6 +14187,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2139,
         "monthlyCalls": 64170,
+        "manualComparison": {
+          "manualHoursPerMonth": 272,
+          "fteEquivalent": 1.7,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 5100,
+          "manualMonthlyCostUsd": 22800,
+          "manualAnnualCostUsd": 273600,
+          "directMonthlySavingsUsd": 22599,
+          "directSavingsPct": 99.1
+        },
         "tokens": {
           "cachedInput": 2505,
           "dynamicInput": 2057,
@@ -14380,6 +14600,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2420,
         "monthlyCalls": 72600,
+        "manualComparison": {
+          "manualHoursPerMonth": 357,
+          "fteEquivalent": 2.2,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2400,
+          "manualMonthlyCostUsd": 25600,
+          "manualAnnualCostUsd": 307200,
+          "directMonthlySavingsUsd": 25429,
+          "directSavingsPct": 99.3
+        },
         "tokens": {
           "cachedInput": 2507,
           "dynamicInput": 1196,
@@ -14795,6 +15025,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3657,
         "monthlyCalls": 109710,
+        "manualComparison": {
+          "manualHoursPerMonth": 366,
+          "fteEquivalent": 2.3,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2800,
+          "manualMonthlyCostUsd": 26600,
+          "manualAnnualCostUsd": 319200,
+          "directMonthlySavingsUsd": 26368,
+          "directSavingsPct": 99.1
+        },
         "tokens": {
           "cachedInput": 2778,
           "dynamicInput": 2026,
@@ -15222,6 +15462,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2312,
         "monthlyCalls": 69360,
+        "manualComparison": {
+          "manualHoursPerMonth": 260,
+          "fteEquivalent": 1.6,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 5300,
+          "manualMonthlyCostUsd": 22200,
+          "manualAnnualCostUsd": 266400,
+          "directMonthlySavingsUsd": 22018,
+          "directSavingsPct": 99.2
+        },
         "tokens": {
           "cachedInput": 3522,
           "dynamicInput": 1857,
@@ -15637,6 +15887,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2887,
         "monthlyCalls": 86610,
+        "manualComparison": {
+          "manualHoursPerMonth": 265,
+          "fteEquivalent": 1.7,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2500,
+          "manualMonthlyCostUsd": 19700,
+          "manualAnnualCostUsd": 236400,
+          "directMonthlySavingsUsd": 19517,
+          "directSavingsPct": 99.1
+        },
         "tokens": {
           "cachedInput": 2571,
           "dynamicInput": 1331,
@@ -16052,6 +16312,16 @@
         "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
         "eventsPerDay": 966,
         "monthlyCalls": 28980,
+        "manualComparison": {
+          "manualHoursPerMonth": 255,
+          "fteEquivalent": 1.6,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4300,
+          "manualMonthlyCostUsd": 20900,
+          "manualAnnualCostUsd": 250800,
+          "directMonthlySavingsUsd": 20367,
+          "directSavingsPct": 97.4
+        },
         "tokens": {
           "cachedInput": 5946,
           "dynamicInput": 2458,
@@ -16403,6 +16673,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3585,
         "monthlyCalls": 107550,
+        "manualComparison": {
+          "manualHoursPerMonth": 407,
+          "fteEquivalent": 2.5,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4500,
+          "manualMonthlyCostUsd": 31000,
+          "manualAnnualCostUsd": 372000,
+          "directMonthlySavingsUsd": 30776,
+          "directSavingsPct": 99.3
+        },
         "tokens": {
           "cachedInput": 3644,
           "dynamicInput": 1341,
@@ -16818,6 +17098,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2279,
         "monthlyCalls": 68370,
+        "manualComparison": {
+          "manualHoursPerMonth": 420,
+          "fteEquivalent": 2.6,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 5300,
+          "manualMonthlyCostUsd": 32600,
+          "manualAnnualCostUsd": 391200,
+          "directMonthlySavingsUsd": 32456,
+          "directSavingsPct": 99.6
+        },
         "tokens": {
           "cachedInput": 3588,
           "dynamicInput": 1101,
@@ -17194,6 +17484,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 1855,
         "monthlyCalls": 55650,
+        "manualComparison": {
+          "manualHoursPerMonth": 322,
+          "fteEquivalent": 2.0,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4700,
+          "manualMonthlyCostUsd": 25600,
+          "manualAnnualCostUsd": 307200,
+          "directMonthlySavingsUsd": 25476,
+          "directSavingsPct": 99.5
+        },
         "tokens": {
           "cachedInput": 3407,
           "dynamicInput": 1334,
@@ -17562,6 +17862,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2059,
         "monthlyCalls": 61770,
+        "manualComparison": {
+          "manualHoursPerMonth": 348,
+          "fteEquivalent": 2.2,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2800,
+          "manualMonthlyCostUsd": 25400,
+          "manualAnnualCostUsd": 304800,
+          "directMonthlySavingsUsd": 25186,
+          "directSavingsPct": 99.2
+        },
         "tokens": {
           "cachedInput": 3116,
           "dynamicInput": 1541,
@@ -17977,6 +18287,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2054,
         "monthlyCalls": 61620,
+        "manualComparison": {
+          "manualHoursPerMonth": 311,
+          "fteEquivalent": 1.9,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2400,
+          "manualMonthlyCostUsd": 22600,
+          "manualAnnualCostUsd": 271200,
+          "directMonthlySavingsUsd": 22457,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 3256,
           "dynamicInput": 1580,
@@ -18329,6 +18649,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2249,
         "monthlyCalls": 67470,
+        "manualComparison": {
+          "manualHoursPerMonth": 337,
+          "fteEquivalent": 2.1,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4300,
+          "manualMonthlyCostUsd": 26200,
+          "manualAnnualCostUsd": 314400,
+          "directMonthlySavingsUsd": 26030,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 3332,
           "dynamicInput": 1891,
@@ -18697,6 +19027,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2794,
         "monthlyCalls": 83820,
+        "manualComparison": {
+          "manualHoursPerMonth": 379,
+          "fteEquivalent": 2.4,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3800,
+          "manualMonthlyCostUsd": 28400,
+          "manualAnnualCostUsd": 340800,
+          "directMonthlySavingsUsd": 28253,
+          "directSavingsPct": 99.5
+        },
         "tokens": {
           "cachedInput": 3140,
           "dynamicInput": 1420,
@@ -19112,6 +19452,16 @@
         "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
         "eventsPerDay": 4010,
         "monthlyCalls": 120300,
+        "manualComparison": {
+          "manualHoursPerMonth": 277,
+          "fteEquivalent": 1.7,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4700,
+          "manualMonthlyCostUsd": 22700,
+          "manualAnnualCostUsd": 272400,
+          "directMonthlySavingsUsd": 22559,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 2579,
           "dynamicInput": 959,
@@ -19527,6 +19877,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3223,
         "monthlyCalls": 96690,
+        "manualComparison": {
+          "manualHoursPerMonth": 416,
+          "fteEquivalent": 2.6,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4300,
+          "manualMonthlyCostUsd": 31300,
+          "manualAnnualCostUsd": 375600,
+          "directMonthlySavingsUsd": 31052,
+          "directSavingsPct": 99.2
+        },
         "tokens": {
           "cachedInput": 2840,
           "dynamicInput": 2012,
@@ -19848,6 +20208,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2327,
         "monthlyCalls": 69810,
+        "manualComparison": {
+          "manualHoursPerMonth": 272,
+          "fteEquivalent": 1.7,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2400,
+          "manualMonthlyCostUsd": 20100,
+          "manualAnnualCostUsd": 241200,
+          "directMonthlySavingsUsd": 19939,
+          "directSavingsPct": 99.2
+        },
         "tokens": {
           "cachedInput": 3590,
           "dynamicInput": 1703,
@@ -20203,6 +20573,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3629,
         "monthlyCalls": 108870,
+        "manualComparison": {
+          "manualHoursPerMonth": 409,
+          "fteEquivalent": 2.6,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 5000,
+          "manualMonthlyCostUsd": 31600,
+          "manualAnnualCostUsd": 379200,
+          "directMonthlySavingsUsd": 31418,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 3303,
           "dynamicInput": 1099,
@@ -20618,6 +20998,16 @@
         "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
         "eventsPerDay": 4488,
         "monthlyCalls": 134640,
+        "manualComparison": {
+          "manualHoursPerMonth": 396,
+          "fteEquivalent": 2.5,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 5200,
+          "manualMonthlyCostUsd": 30900,
+          "manualAnnualCostUsd": 370800,
+          "directMonthlySavingsUsd": 30763,
+          "directSavingsPct": 99.6
+        },
         "tokens": {
           "cachedInput": 2878,
           "dynamicInput": 1443,
@@ -20955,6 +21345,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2490,
         "monthlyCalls": 74700,
+        "manualComparison": {
+          "manualHoursPerMonth": 326,
+          "fteEquivalent": 2.0,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2300,
+          "manualMonthlyCostUsd": 23500,
+          "manualAnnualCostUsd": 282000,
+          "directMonthlySavingsUsd": 23353,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 2908,
           "dynamicInput": 1655,
@@ -21299,6 +21699,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2590,
         "monthlyCalls": 77700,
+        "manualComparison": {
+          "manualHoursPerMonth": 257,
+          "fteEquivalent": 1.6,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4800,
+          "manualMonthlyCostUsd": 21500,
+          "manualAnnualCostUsd": 258000,
+          "directMonthlySavingsUsd": 21355,
+          "directSavingsPct": 99.3
+        },
         "tokens": {
           "cachedInput": 2970,
           "dynamicInput": 1250,
@@ -21714,6 +22124,16 @@
         "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
         "eventsPerDay": 5531,
         "monthlyCalls": 165930,
+        "manualComparison": {
+          "manualHoursPerMonth": 387,
+          "fteEquivalent": 2.4,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2700,
+          "manualMonthlyCostUsd": 27900,
+          "manualAnnualCostUsd": 334800,
+          "directMonthlySavingsUsd": 27709,
+          "directSavingsPct": 99.3
+        },
         "tokens": {
           "cachedInput": 2823,
           "dynamicInput": 1138,
@@ -22129,6 +22549,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 1810,
         "monthlyCalls": 54300,
+        "manualComparison": {
+          "manualHoursPerMonth": 398,
+          "fteEquivalent": 2.5,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3900,
+          "manualMonthlyCostUsd": 29800,
+          "manualAnnualCostUsd": 357600,
+          "directMonthlySavingsUsd": 29613,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 2522,
           "dynamicInput": 1514,
@@ -22544,6 +22974,16 @@
         "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
         "eventsPerDay": 5477,
         "monthlyCalls": 164310,
+        "manualComparison": {
+          "manualHoursPerMonth": 353,
+          "fteEquivalent": 2.2,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2900,
+          "manualMonthlyCostUsd": 25800,
+          "manualAnnualCostUsd": 309600,
+          "directMonthlySavingsUsd": 25645,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 2420,
           "dynamicInput": 1233,
@@ -22852,6 +23292,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 1811,
         "monthlyCalls": 54330,
+        "manualComparison": {
+          "manualHoursPerMonth": 265,
+          "fteEquivalent": 1.7,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2700,
+          "manualMonthlyCostUsd": 19900,
+          "manualAnnualCostUsd": 238800,
+          "directMonthlySavingsUsd": 19775,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 3090,
           "dynamicInput": 1380,
@@ -23267,6 +23717,16 @@
         "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
         "eventsPerDay": 3908,
         "monthlyCalls": 117240,
+        "manualComparison": {
+          "manualHoursPerMonth": 255,
+          "fteEquivalent": 1.6,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 5000,
+          "manualMonthlyCostUsd": 21600,
+          "manualAnnualCostUsd": 259200,
+          "directMonthlySavingsUsd": 21401,
+          "directSavingsPct": 99.1
+        },
         "tokens": {
           "cachedInput": 2872,
           "dynamicInput": 1396,
@@ -23572,6 +24032,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3835,
         "monthlyCalls": 115050,
+        "manualComparison": {
+          "manualHoursPerMonth": 288,
+          "fteEquivalent": 1.8,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2400,
+          "manualMonthlyCostUsd": 21100,
+          "manualAnnualCostUsd": 253200,
+          "directMonthlySavingsUsd": 20899,
+          "directSavingsPct": 99.0
+        },
         "tokens": {
           "cachedInput": 3633,
           "dynamicInput": 1608,
@@ -23865,6 +24335,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3309,
         "monthlyCalls": 99270,
+        "manualComparison": {
+          "manualHoursPerMonth": 290,
+          "fteEquivalent": 1.8,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2500,
+          "manualMonthlyCostUsd": 21400,
+          "manualAnnualCostUsd": 256800,
+          "directMonthlySavingsUsd": 21235,
+          "directSavingsPct": 99.2
+        },
         "tokens": {
           "cachedInput": 3590,
           "dynamicInput": 1637,
@@ -24207,6 +24687,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2735,
         "monthlyCalls": 82050,
+        "manualComparison": {
+          "manualHoursPerMonth": 357,
+          "fteEquivalent": 2.2,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2600,
+          "manualMonthlyCostUsd": 25800,
+          "manualAnnualCostUsd": 309600,
+          "directMonthlySavingsUsd": 25642,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 3480,
           "dynamicInput": 1893,
@@ -24508,6 +24998,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2808,
         "monthlyCalls": 84240,
+        "manualComparison": {
+          "manualHoursPerMonth": 323,
+          "fteEquivalent": 2.0,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4500,
+          "manualMonthlyCostUsd": 25500,
+          "manualAnnualCostUsd": 306000,
+          "directMonthlySavingsUsd": 25354,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 2564,
           "dynamicInput": 1448,
@@ -24923,6 +25423,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2140,
         "monthlyCalls": 64200,
+        "manualComparison": {
+          "manualHoursPerMonth": 359,
+          "fteEquivalent": 2.2,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2800,
+          "manualMonthlyCostUsd": 26100,
+          "manualAnnualCostUsd": 313200,
+          "directMonthlySavingsUsd": 25934,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 3625,
           "dynamicInput": 1058,
@@ -25218,6 +25728,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3700,
         "monthlyCalls": 111000,
+        "manualComparison": {
+          "manualHoursPerMonth": 360,
+          "fteEquivalent": 2.2,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4300,
+          "manualMonthlyCostUsd": 27700,
+          "manualAnnualCostUsd": 332400,
+          "directMonthlySavingsUsd": 27534,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 3614,
           "dynamicInput": 1874,
@@ -25633,6 +26153,16 @@
         "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
         "eventsPerDay": 4632,
         "monthlyCalls": 138960,
+        "manualComparison": {
+          "manualHoursPerMonth": 368,
+          "fteEquivalent": 2.3,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2700,
+          "manualMonthlyCostUsd": 26600,
+          "manualAnnualCostUsd": 319200,
+          "directMonthlySavingsUsd": 26467,
+          "directSavingsPct": 99.5
+        },
         "tokens": {
           "cachedInput": 2235,
           "dynamicInput": 1256,
@@ -26048,6 +26578,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 1611,
         "monthlyCalls": 48330,
+        "manualComparison": {
+          "manualHoursPerMonth": 409,
+          "fteEquivalent": 2.6,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3700,
+          "manualMonthlyCostUsd": 30300,
+          "manualAnnualCostUsd": 363600,
+          "directMonthlySavingsUsd": 30156,
+          "directSavingsPct": 99.5
+        },
         "tokens": {
           "cachedInput": 3096,
           "dynamicInput": 1129,
@@ -26463,6 +27003,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 3229,
         "monthlyCalls": 96870,
+        "manualComparison": {
+          "manualHoursPerMonth": 372,
+          "fteEquivalent": 2.3,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 5400,
+          "manualMonthlyCostUsd": 29600,
+          "manualAnnualCostUsd": 355200,
+          "directMonthlySavingsUsd": 29421,
+          "directSavingsPct": 99.4
+        },
         "tokens": {
           "cachedInput": 3563,
           "dynamicInput": 1917,
@@ -26878,6 +27428,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2817,
         "monthlyCalls": 84510,
+        "manualComparison": {
+          "manualHoursPerMonth": 303,
+          "fteEquivalent": 1.9,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3100,
+          "manualMonthlyCostUsd": 22800,
+          "manualAnnualCostUsd": 273600,
+          "directMonthlySavingsUsd": 22620,
+          "directSavingsPct": 99.2
+        },
         "tokens": {
           "cachedInput": 3103,
           "dynamicInput": 1093,
@@ -27293,6 +27853,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2219,
         "monthlyCalls": 66570,
+        "manualComparison": {
+          "manualHoursPerMonth": 333,
+          "fteEquivalent": 2.1,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 2300,
+          "manualMonthlyCostUsd": 23900,
+          "manualAnnualCostUsd": 286800,
+          "directMonthlySavingsUsd": 23772,
+          "directSavingsPct": 99.5
+        },
         "tokens": {
           "cachedInput": 3662,
           "dynamicInput": 1204,
@@ -27741,6 +28311,16 @@
         "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
         "eventsPerDay": 3835,
         "monthlyCalls": 115050,
+        "manualComparison": {
+          "manualHoursPerMonth": 390,
+          "fteEquivalent": 2.4,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 5200,
+          "manualMonthlyCostUsd": 30600,
+          "manualAnnualCostUsd": 367200,
+          "directMonthlySavingsUsd": 30472,
+          "directSavingsPct": 99.6
+        },
         "tokens": {
           "cachedInput": 2311,
           "dynamicInput": 1195,
@@ -28038,6 +28618,16 @@
         "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
         "eventsPerDay": 2775,
         "monthlyCalls": 83250,
+        "manualComparison": {
+          "manualHoursPerMonth": 417,
+          "fteEquivalent": 2.6,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 3400,
+          "manualMonthlyCostUsd": 30500,
+          "manualAnnualCostUsd": 366000,
+          "directMonthlySavingsUsd": 30335,
+          "directSavingsPct": 99.5
+        },
         "tokens": {
           "cachedInput": 2643,
           "dynamicInput": 1813,
@@ -28453,6 +29043,16 @@
         "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
         "eventsPerDay": 4537,
         "monthlyCalls": 136110,
+        "manualComparison": {
+          "manualHoursPerMonth": 297,
+          "fteEquivalent": 1.9,
+          "hourlyRateUsd": 65,
+          "manualErrorReworkMoUsd": 4400,
+          "manualMonthlyCostUsd": 23700,
+          "manualAnnualCostUsd": 284400,
+          "directMonthlySavingsUsd": 23572,
+          "directSavingsPct": 99.5
+        },
         "tokens": {
           "cachedInput": 2270,
           "dynamicInput": 849,

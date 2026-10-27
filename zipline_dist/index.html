@@ -5631,6 +5631,7 @@
 
       <button type="button" class="nav-pill-btn" onclick="openPeriodicTablePage('all', null, true)">Periodic Table</button>
       <button type="button" class="nav-pill-btn" onclick="openMindMapPage('all', null, true)">Mind Map</button>
+      <button type="button" class="nav-pill-btn" onclick="openCostTabPage('all', null, true)">Cost &amp; ROI</button>
       <button type="button" id="themeToggleBtn" class="nav-pill-btn theme-toggle-btn" onclick="togglePortalTheme()" title="Switch between Light and Dark Theme">
         <span id="themeToggleIcon">☀️</span>
         <span id="themeToggleLabel">Light Theme</span>
@@ -5837,6 +5838,13 @@
        ========================================================================= -->
   <main id="pageMindMap" class="page-view">
     <div id="mindMapPageContent" class="subpage-container"></div>
+  </main>
+
+  <!-- =========================================================================
+       PAGE 9: INTERACTIVE COST & ROI CALCULATOR & MANUAL COMPARISON TAB
+       ========================================================================= -->
+  <main id="pageCost" class="page-view">
+    <div id="costPageContent" class="subpage-container"></div>
   </main>
 
   <!-- =========================================================================
@@ -11656,6 +11664,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3459,
       "monthlyCalls": 103770,
+      "manualComparison": {
+        "manualHoursPerMonth": 356,
+        "fteEquivalent": 2.2,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3800,
+        "manualMonthlyCostUsd": 26900,
+        "manualAnnualCostUsd": 322800,
+        "directMonthlySavingsUsd": 26695,
+        "directSavingsPct": 99.2
+      },
       "tokens": {
         "cachedInput": 3087,
         "dynamicInput": 1588,
@@ -12042,6 +12060,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3874,
       "monthlyCalls": 116220,
+      "manualComparison": {
+        "manualHoursPerMonth": 409,
+        "fteEquivalent": 2.6,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4900,
+        "manualMonthlyCostUsd": 31500,
+        "manualAnnualCostUsd": 378000,
+        "directMonthlySavingsUsd": 31328,
+        "directSavingsPct": 99.5
+      },
       "tokens": {
         "cachedInput": 2840,
         "dynamicInput": 1088,
@@ -12457,6 +12485,16 @@
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 1267,
       "monthlyCalls": 38010,
+      "manualComparison": {
+        "manualHoursPerMonth": 285,
+        "fteEquivalent": 1.8,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4500,
+        "manualMonthlyCostUsd": 23000,
+        "manualAnnualCostUsd": 276000,
+        "directMonthlySavingsUsd": 22443,
+        "directSavingsPct": 97.6
+      },
       "tokens": {
         "cachedInput": 5108,
         "dynamicInput": 1947,
@@ -12860,6 +12898,16 @@
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 839,
       "monthlyCalls": 25170,
+      "manualComparison": {
+        "manualHoursPerMonth": 365,
+        "fteEquivalent": 2.3,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4700,
+        "manualMonthlyCostUsd": 28400,
+        "manualAnnualCostUsd": 340800,
+        "directMonthlySavingsUsd": 27928,
+        "directSavingsPct": 98.3
+      },
       "tokens": {
         "cachedInput": 6366,
         "dynamicInput": 3022,
@@ -13189,6 +13237,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3842,
       "monthlyCalls": 115260,
+      "manualComparison": {
+        "manualHoursPerMonth": 321,
+        "fteEquivalent": 2.0,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2900,
+        "manualMonthlyCostUsd": 23800,
+        "manualAnnualCostUsd": 285600,
+        "directMonthlySavingsUsd": 23612,
+        "directSavingsPct": 99.2
+      },
       "tokens": {
         "cachedInput": 3369,
         "dynamicInput": 1740,
@@ -13511,6 +13569,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2322,
       "monthlyCalls": 69660,
+      "manualComparison": {
+        "manualHoursPerMonth": 284,
+        "fteEquivalent": 1.8,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 5400,
+        "manualMonthlyCostUsd": 23900,
+        "manualAnnualCostUsd": 286800,
+        "directMonthlySavingsUsd": 23757,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 2862,
         "dynamicInput": 2093,
@@ -13908,6 +13976,16 @@
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 1754,
       "monthlyCalls": 52620,
+      "manualComparison": {
+        "manualHoursPerMonth": 363,
+        "fteEquivalent": 2.3,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2500,
+        "manualMonthlyCostUsd": 26100,
+        "manualAnnualCostUsd": 313200,
+        "directMonthlySavingsUsd": 25372,
+        "directSavingsPct": 97.2
+      },
       "tokens": {
         "cachedInput": 6323,
         "dynamicInput": 2149,
@@ -14403,6 +14481,16 @@
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 1821,
       "monthlyCalls": 54630,
+      "manualComparison": {
+        "manualHoursPerMonth": 252,
+        "fteEquivalent": 1.6,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3400,
+        "manualMonthlyCostUsd": 19800,
+        "manualAnnualCostUsd": 237600,
+        "directMonthlySavingsUsd": 19014,
+        "directSavingsPct": 96.0
+      },
       "tokens": {
         "cachedInput": 6253,
         "dynamicInput": 2462,
@@ -14935,6 +15023,16 @@
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 1590,
       "monthlyCalls": 47700,
+      "manualComparison": {
+        "manualHoursPerMonth": 283,
+        "fteEquivalent": 1.8,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3100,
+        "manualMonthlyCostUsd": 21500,
+        "manualAnnualCostUsd": 258000,
+        "directMonthlySavingsUsd": 20711,
+        "directSavingsPct": 96.3
+      },
       "tokens": {
         "cachedInput": 5384,
         "dynamicInput": 2254,
@@ -15392,6 +15490,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1614,
       "monthlyCalls": 48420,
+      "manualComparison": {
+        "manualHoursPerMonth": 383,
+        "fteEquivalent": 2.4,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4000,
+        "manualMonthlyCostUsd": 28900,
+        "manualAnnualCostUsd": 346800,
+        "directMonthlySavingsUsd": 28779,
+        "directSavingsPct": 99.6
+      },
       "tokens": {
         "cachedInput": 2655,
         "dynamicInput": 1370,
@@ -15689,6 +15797,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3064,
       "monthlyCalls": 91920,
+      "manualComparison": {
+        "manualHoursPerMonth": 279,
+        "fteEquivalent": 1.7,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4800,
+        "manualMonthlyCostUsd": 22900,
+        "manualAnnualCostUsd": 274800,
+        "directMonthlySavingsUsd": 22738,
+        "directSavingsPct": 99.3
+      },
       "tokens": {
         "cachedInput": 3220,
         "dynamicInput": 1319,
@@ -15982,6 +16100,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3373,
       "monthlyCalls": 101190,
+      "manualComparison": {
+        "manualHoursPerMonth": 316,
+        "fteEquivalent": 2.0,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2200,
+        "manualMonthlyCostUsd": 22700,
+        "manualAnnualCostUsd": 272400,
+        "directMonthlySavingsUsd": 22543,
+        "directSavingsPct": 99.3
+      },
       "tokens": {
         "cachedInput": 2539,
         "dynamicInput": 1410,
@@ -16391,6 +16519,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1922,
       "monthlyCalls": 57660,
+      "manualComparison": {
+        "manualHoursPerMonth": 279,
+        "fteEquivalent": 1.7,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4600,
+        "manualMonthlyCostUsd": 22700,
+        "manualAnnualCostUsd": 272400,
+        "directMonthlySavingsUsd": 22523,
+        "directSavingsPct": 99.2
+      },
       "tokens": {
         "cachedInput": 2525,
         "dynamicInput": 1958,
@@ -16825,6 +16963,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1953,
       "monthlyCalls": 58590,
+      "manualComparison": {
+        "manualHoursPerMonth": 267,
+        "fteEquivalent": 1.7,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3900,
+        "manualMonthlyCostUsd": 21300,
+        "manualAnnualCostUsd": 255600,
+        "directMonthlySavingsUsd": 21152,
+        "directSavingsPct": 99.3
+      },
       "tokens": {
         "cachedInput": 2620,
         "dynamicInput": 1458,
@@ -17120,6 +17268,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2974,
       "monthlyCalls": 89220,
+      "manualComparison": {
+        "manualHoursPerMonth": 339,
+        "fteEquivalent": 2.1,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3600,
+        "manualMonthlyCostUsd": 25600,
+        "manualAnnualCostUsd": 307200,
+        "directMonthlySavingsUsd": 25420,
+        "directSavingsPct": 99.3
+      },
       "tokens": {
         "cachedInput": 3679,
         "dynamicInput": 1838,
@@ -17535,6 +17693,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1639,
       "monthlyCalls": 49170,
+      "manualComparison": {
+        "manualHoursPerMonth": 337,
+        "fteEquivalent": 2.1,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4400,
+        "manualMonthlyCostUsd": 26300,
+        "manualAnnualCostUsd": 315600,
+        "directMonthlySavingsUsd": 26157,
+        "directSavingsPct": 99.5
+      },
       "tokens": {
         "cachedInput": 3438,
         "dynamicInput": 1715,
@@ -17949,6 +18117,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2699,
       "monthlyCalls": 80970,
+      "manualComparison": {
+        "manualHoursPerMonth": 384,
+        "fteEquivalent": 2.4,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4500,
+        "manualMonthlyCostUsd": 29500,
+        "manualAnnualCostUsd": 354000,
+        "directMonthlySavingsUsd": 29312,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 3304,
         "dynamicInput": 1871,
@@ -18364,6 +18542,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1884,
       "monthlyCalls": 56520,
+      "manualComparison": {
+        "manualHoursPerMonth": 346,
+        "fteEquivalent": 2.2,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4300,
+        "manualMonthlyCostUsd": 26800,
+        "manualAnnualCostUsd": 321600,
+        "directMonthlySavingsUsd": 26667,
+        "directSavingsPct": 99.5
+      },
       "tokens": {
         "cachedInput": 3358,
         "dynamicInput": 1876,
@@ -18744,6 +18932,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3596,
       "monthlyCalls": 107880,
+      "manualComparison": {
+        "manualHoursPerMonth": 398,
+        "fteEquivalent": 2.5,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3100,
+        "manualMonthlyCostUsd": 29000,
+        "manualAnnualCostUsd": 348000,
+        "directMonthlySavingsUsd": 28827,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 3236,
         "dynamicInput": 1508,
@@ -19197,6 +19395,16 @@
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 5211,
       "monthlyCalls": 156330,
+      "manualComparison": {
+        "manualHoursPerMonth": 396,
+        "fteEquivalent": 2.5,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4800,
+        "manualMonthlyCostUsd": 30500,
+        "manualAnnualCostUsd": 366000,
+        "directMonthlySavingsUsd": 30360,
+        "directSavingsPct": 99.5
+      },
       "tokens": {
         "cachedInput": 2718,
         "dynamicInput": 1094,
@@ -19612,6 +19820,16 @@
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 5748,
       "monthlyCalls": 172440,
+      "manualComparison": {
+        "manualHoursPerMonth": 270,
+        "fteEquivalent": 1.7,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3600,
+        "manualMonthlyCostUsd": 21200,
+        "manualAnnualCostUsd": 254400,
+        "directMonthlySavingsUsd": 20992,
+        "directSavingsPct": 99.0
+      },
       "tokens": {
         "cachedInput": 2147,
         "dynamicInput": 1303,
@@ -20015,6 +20233,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2139,
       "monthlyCalls": 64170,
+      "manualComparison": {
+        "manualHoursPerMonth": 272,
+        "fteEquivalent": 1.7,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 5100,
+        "manualMonthlyCostUsd": 22800,
+        "manualAnnualCostUsd": 273600,
+        "directMonthlySavingsUsd": 22599,
+        "directSavingsPct": 99.1
+      },
       "tokens": {
         "cachedInput": 2505,
         "dynamicInput": 2057,
@@ -20418,6 +20646,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2420,
       "monthlyCalls": 72600,
+      "manualComparison": {
+        "manualHoursPerMonth": 357,
+        "fteEquivalent": 2.2,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2400,
+        "manualMonthlyCostUsd": 25600,
+        "manualAnnualCostUsd": 307200,
+        "directMonthlySavingsUsd": 25429,
+        "directSavingsPct": 99.3
+      },
       "tokens": {
         "cachedInput": 2507,
         "dynamicInput": 1196,
@@ -20833,6 +21071,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3657,
       "monthlyCalls": 109710,
+      "manualComparison": {
+        "manualHoursPerMonth": 366,
+        "fteEquivalent": 2.3,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2800,
+        "manualMonthlyCostUsd": 26600,
+        "manualAnnualCostUsd": 319200,
+        "directMonthlySavingsUsd": 26368,
+        "directSavingsPct": 99.1
+      },
       "tokens": {
         "cachedInput": 2778,
         "dynamicInput": 2026,
@@ -21260,6 +21508,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2312,
       "monthlyCalls": 69360,
+      "manualComparison": {
+        "manualHoursPerMonth": 260,
+        "fteEquivalent": 1.6,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 5300,
+        "manualMonthlyCostUsd": 22200,
+        "manualAnnualCostUsd": 266400,
+        "directMonthlySavingsUsd": 22018,
+        "directSavingsPct": 99.2
+      },
       "tokens": {
         "cachedInput": 3522,
         "dynamicInput": 1857,
@@ -21675,6 +21933,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2887,
       "monthlyCalls": 86610,
+      "manualComparison": {
+        "manualHoursPerMonth": 265,
+        "fteEquivalent": 1.7,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2500,
+        "manualMonthlyCostUsd": 19700,
+        "manualAnnualCostUsd": 236400,
+        "directMonthlySavingsUsd": 19517,
+        "directSavingsPct": 99.1
+      },
       "tokens": {
         "cachedInput": 2571,
         "dynamicInput": 1331,
@@ -22090,6 +22358,16 @@
       "triggerCadence": "Interactive Scenario Run + Scheduled Executive Synthesis",
       "eventsPerDay": 966,
       "monthlyCalls": 28980,
+      "manualComparison": {
+        "manualHoursPerMonth": 255,
+        "fteEquivalent": 1.6,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4300,
+        "manualMonthlyCostUsd": 20900,
+        "manualAnnualCostUsd": 250800,
+        "directMonthlySavingsUsd": 20367,
+        "directSavingsPct": 97.4
+      },
       "tokens": {
         "cachedInput": 5946,
         "dynamicInput": 2458,
@@ -22441,6 +22719,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3585,
       "monthlyCalls": 107550,
+      "manualComparison": {
+        "manualHoursPerMonth": 407,
+        "fteEquivalent": 2.5,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4500,
+        "manualMonthlyCostUsd": 31000,
+        "manualAnnualCostUsd": 372000,
+        "directMonthlySavingsUsd": 30776,
+        "directSavingsPct": 99.3
+      },
       "tokens": {
         "cachedInput": 3644,
         "dynamicInput": 1341,
@@ -22856,6 +23144,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2279,
       "monthlyCalls": 68370,
+      "manualComparison": {
+        "manualHoursPerMonth": 420,
+        "fteEquivalent": 2.6,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 5300,
+        "manualMonthlyCostUsd": 32600,
+        "manualAnnualCostUsd": 391200,
+        "directMonthlySavingsUsd": 32456,
+        "directSavingsPct": 99.6
+      },
       "tokens": {
         "cachedInput": 3588,
         "dynamicInput": 1101,
@@ -23232,6 +23530,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1855,
       "monthlyCalls": 55650,
+      "manualComparison": {
+        "manualHoursPerMonth": 322,
+        "fteEquivalent": 2.0,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4700,
+        "manualMonthlyCostUsd": 25600,
+        "manualAnnualCostUsd": 307200,
+        "directMonthlySavingsUsd": 25476,
+        "directSavingsPct": 99.5
+      },
       "tokens": {
         "cachedInput": 3407,
         "dynamicInput": 1334,
@@ -23600,6 +23908,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2059,
       "monthlyCalls": 61770,
+      "manualComparison": {
+        "manualHoursPerMonth": 348,
+        "fteEquivalent": 2.2,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2800,
+        "manualMonthlyCostUsd": 25400,
+        "manualAnnualCostUsd": 304800,
+        "directMonthlySavingsUsd": 25186,
+        "directSavingsPct": 99.2
+      },
       "tokens": {
         "cachedInput": 3116,
         "dynamicInput": 1541,
@@ -24015,6 +24333,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2054,
       "monthlyCalls": 61620,
+      "manualComparison": {
+        "manualHoursPerMonth": 311,
+        "fteEquivalent": 1.9,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2400,
+        "manualMonthlyCostUsd": 22600,
+        "manualAnnualCostUsd": 271200,
+        "directMonthlySavingsUsd": 22457,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 3256,
         "dynamicInput": 1580,
@@ -24367,6 +24695,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2249,
       "monthlyCalls": 67470,
+      "manualComparison": {
+        "manualHoursPerMonth": 337,
+        "fteEquivalent": 2.1,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4300,
+        "manualMonthlyCostUsd": 26200,
+        "manualAnnualCostUsd": 314400,
+        "directMonthlySavingsUsd": 26030,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 3332,
         "dynamicInput": 1891,
@@ -24735,6 +25073,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2794,
       "monthlyCalls": 83820,
+      "manualComparison": {
+        "manualHoursPerMonth": 379,
+        "fteEquivalent": 2.4,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3800,
+        "manualMonthlyCostUsd": 28400,
+        "manualAnnualCostUsd": 340800,
+        "directMonthlySavingsUsd": 28253,
+        "directSavingsPct": 99.5
+      },
       "tokens": {
         "cachedInput": 3140,
         "dynamicInput": 1420,
@@ -25150,6 +25498,16 @@
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 4010,
       "monthlyCalls": 120300,
+      "manualComparison": {
+        "manualHoursPerMonth": 277,
+        "fteEquivalent": 1.7,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4700,
+        "manualMonthlyCostUsd": 22700,
+        "manualAnnualCostUsd": 272400,
+        "directMonthlySavingsUsd": 22559,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 2579,
         "dynamicInput": 959,
@@ -25565,6 +25923,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3223,
       "monthlyCalls": 96690,
+      "manualComparison": {
+        "manualHoursPerMonth": 416,
+        "fteEquivalent": 2.6,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4300,
+        "manualMonthlyCostUsd": 31300,
+        "manualAnnualCostUsd": 375600,
+        "directMonthlySavingsUsd": 31052,
+        "directSavingsPct": 99.2
+      },
       "tokens": {
         "cachedInput": 2840,
         "dynamicInput": 2012,
@@ -25886,6 +26254,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2327,
       "monthlyCalls": 69810,
+      "manualComparison": {
+        "manualHoursPerMonth": 272,
+        "fteEquivalent": 1.7,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2400,
+        "manualMonthlyCostUsd": 20100,
+        "manualAnnualCostUsd": 241200,
+        "directMonthlySavingsUsd": 19939,
+        "directSavingsPct": 99.2
+      },
       "tokens": {
         "cachedInput": 3590,
         "dynamicInput": 1703,
@@ -26241,6 +26619,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3629,
       "monthlyCalls": 108870,
+      "manualComparison": {
+        "manualHoursPerMonth": 409,
+        "fteEquivalent": 2.6,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 5000,
+        "manualMonthlyCostUsd": 31600,
+        "manualAnnualCostUsd": 379200,
+        "directMonthlySavingsUsd": 31418,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 3303,
         "dynamicInput": 1099,
@@ -26656,6 +27044,16 @@
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 4488,
       "monthlyCalls": 134640,
+      "manualComparison": {
+        "manualHoursPerMonth": 396,
+        "fteEquivalent": 2.5,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 5200,
+        "manualMonthlyCostUsd": 30900,
+        "manualAnnualCostUsd": 370800,
+        "directMonthlySavingsUsd": 30763,
+        "directSavingsPct": 99.6
+      },
       "tokens": {
         "cachedInput": 2878,
         "dynamicInput": 1443,
@@ -26993,6 +27391,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2490,
       "monthlyCalls": 74700,
+      "manualComparison": {
+        "manualHoursPerMonth": 326,
+        "fteEquivalent": 2.0,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2300,
+        "manualMonthlyCostUsd": 23500,
+        "manualAnnualCostUsd": 282000,
+        "directMonthlySavingsUsd": 23353,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 2908,
         "dynamicInput": 1655,
@@ -27337,6 +27745,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2590,
       "monthlyCalls": 77700,
+      "manualComparison": {
+        "manualHoursPerMonth": 257,
+        "fteEquivalent": 1.6,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4800,
+        "manualMonthlyCostUsd": 21500,
+        "manualAnnualCostUsd": 258000,
+        "directMonthlySavingsUsd": 21355,
+        "directSavingsPct": 99.3
+      },
       "tokens": {
         "cachedInput": 2970,
         "dynamicInput": 1250,
@@ -27752,6 +28170,16 @@
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 5531,
       "monthlyCalls": 165930,
+      "manualComparison": {
+        "manualHoursPerMonth": 387,
+        "fteEquivalent": 2.4,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2700,
+        "manualMonthlyCostUsd": 27900,
+        "manualAnnualCostUsd": 334800,
+        "directMonthlySavingsUsd": 27709,
+        "directSavingsPct": 99.3
+      },
       "tokens": {
         "cachedInput": 2823,
         "dynamicInput": 1138,
@@ -28167,6 +28595,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1810,
       "monthlyCalls": 54300,
+      "manualComparison": {
+        "manualHoursPerMonth": 398,
+        "fteEquivalent": 2.5,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3900,
+        "manualMonthlyCostUsd": 29800,
+        "manualAnnualCostUsd": 357600,
+        "directMonthlySavingsUsd": 29613,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 2522,
         "dynamicInput": 1514,
@@ -28582,6 +29020,16 @@
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 5477,
       "monthlyCalls": 164310,
+      "manualComparison": {
+        "manualHoursPerMonth": 353,
+        "fteEquivalent": 2.2,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2900,
+        "manualMonthlyCostUsd": 25800,
+        "manualAnnualCostUsd": 309600,
+        "directMonthlySavingsUsd": 25645,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 2420,
         "dynamicInput": 1233,
@@ -28890,6 +29338,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1811,
       "monthlyCalls": 54330,
+      "manualComparison": {
+        "manualHoursPerMonth": 265,
+        "fteEquivalent": 1.7,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2700,
+        "manualMonthlyCostUsd": 19900,
+        "manualAnnualCostUsd": 238800,
+        "directMonthlySavingsUsd": 19775,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 3090,
         "dynamicInput": 1380,
@@ -29305,6 +29763,16 @@
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 3908,
       "monthlyCalls": 117240,
+      "manualComparison": {
+        "manualHoursPerMonth": 255,
+        "fteEquivalent": 1.6,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 5000,
+        "manualMonthlyCostUsd": 21600,
+        "manualAnnualCostUsd": 259200,
+        "directMonthlySavingsUsd": 21401,
+        "directSavingsPct": 99.1
+      },
       "tokens": {
         "cachedInput": 2872,
         "dynamicInput": 1396,
@@ -29610,6 +30078,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3835,
       "monthlyCalls": 115050,
+      "manualComparison": {
+        "manualHoursPerMonth": 288,
+        "fteEquivalent": 1.8,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2400,
+        "manualMonthlyCostUsd": 21100,
+        "manualAnnualCostUsd": 253200,
+        "directMonthlySavingsUsd": 20899,
+        "directSavingsPct": 99.0
+      },
       "tokens": {
         "cachedInput": 3633,
         "dynamicInput": 1608,
@@ -29903,6 +30381,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3309,
       "monthlyCalls": 99270,
+      "manualComparison": {
+        "manualHoursPerMonth": 290,
+        "fteEquivalent": 1.8,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2500,
+        "manualMonthlyCostUsd": 21400,
+        "manualAnnualCostUsd": 256800,
+        "directMonthlySavingsUsd": 21235,
+        "directSavingsPct": 99.2
+      },
       "tokens": {
         "cachedInput": 3590,
         "dynamicInput": 1637,
@@ -30245,6 +30733,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2735,
       "monthlyCalls": 82050,
+      "manualComparison": {
+        "manualHoursPerMonth": 357,
+        "fteEquivalent": 2.2,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2600,
+        "manualMonthlyCostUsd": 25800,
+        "manualAnnualCostUsd": 309600,
+        "directMonthlySavingsUsd": 25642,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 3480,
         "dynamicInput": 1893,
@@ -30546,6 +31044,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2808,
       "monthlyCalls": 84240,
+      "manualComparison": {
+        "manualHoursPerMonth": 323,
+        "fteEquivalent": 2.0,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4500,
+        "manualMonthlyCostUsd": 25500,
+        "manualAnnualCostUsd": 306000,
+        "directMonthlySavingsUsd": 25354,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 2564,
         "dynamicInput": 1448,
@@ -30961,6 +31469,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2140,
       "monthlyCalls": 64200,
+      "manualComparison": {
+        "manualHoursPerMonth": 359,
+        "fteEquivalent": 2.2,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2800,
+        "manualMonthlyCostUsd": 26100,
+        "manualAnnualCostUsd": 313200,
+        "directMonthlySavingsUsd": 25934,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 3625,
         "dynamicInput": 1058,
@@ -31256,6 +31774,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3700,
       "monthlyCalls": 111000,
+      "manualComparison": {
+        "manualHoursPerMonth": 360,
+        "fteEquivalent": 2.2,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4300,
+        "manualMonthlyCostUsd": 27700,
+        "manualAnnualCostUsd": 332400,
+        "directMonthlySavingsUsd": 27534,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 3614,
         "dynamicInput": 1874,
@@ -31671,6 +32199,16 @@
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 4632,
       "monthlyCalls": 138960,
+      "manualComparison": {
+        "manualHoursPerMonth": 368,
+        "fteEquivalent": 2.3,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2700,
+        "manualMonthlyCostUsd": 26600,
+        "manualAnnualCostUsd": 319200,
+        "directMonthlySavingsUsd": 26467,
+        "directSavingsPct": 99.5
+      },
       "tokens": {
         "cachedInput": 2235,
         "dynamicInput": 1256,
@@ -32086,6 +32624,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 1611,
       "monthlyCalls": 48330,
+      "manualComparison": {
+        "manualHoursPerMonth": 409,
+        "fteEquivalent": 2.6,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3700,
+        "manualMonthlyCostUsd": 30300,
+        "manualAnnualCostUsd": 363600,
+        "directMonthlySavingsUsd": 30156,
+        "directSavingsPct": 99.5
+      },
       "tokens": {
         "cachedInput": 3096,
         "dynamicInput": 1129,
@@ -32501,6 +33049,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 3229,
       "monthlyCalls": 96870,
+      "manualComparison": {
+        "manualHoursPerMonth": 372,
+        "fteEquivalent": 2.3,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 5400,
+        "manualMonthlyCostUsd": 29600,
+        "manualAnnualCostUsd": 355200,
+        "directMonthlySavingsUsd": 29421,
+        "directSavingsPct": 99.4
+      },
       "tokens": {
         "cachedInput": 3563,
         "dynamicInput": 1917,
@@ -32916,6 +33474,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2817,
       "monthlyCalls": 84510,
+      "manualComparison": {
+        "manualHoursPerMonth": 303,
+        "fteEquivalent": 1.9,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3100,
+        "manualMonthlyCostUsd": 22800,
+        "manualAnnualCostUsd": 273600,
+        "directMonthlySavingsUsd": 22620,
+        "directSavingsPct": 99.2
+      },
       "tokens": {
         "cachedInput": 3103,
         "dynamicInput": 1093,
@@ -33331,6 +33899,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2219,
       "monthlyCalls": 66570,
+      "manualComparison": {
+        "manualHoursPerMonth": 333,
+        "fteEquivalent": 2.1,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 2300,
+        "manualMonthlyCostUsd": 23900,
+        "manualAnnualCostUsd": 286800,
+        "directMonthlySavingsUsd": 23772,
+        "directSavingsPct": 99.5
+      },
       "tokens": {
         "cachedInput": 3662,
         "dynamicInput": 1204,
@@ -33779,6 +34357,16 @@
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 3835,
       "monthlyCalls": 115050,
+      "manualComparison": {
+        "manualHoursPerMonth": 390,
+        "fteEquivalent": 2.4,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 5200,
+        "manualMonthlyCostUsd": 30600,
+        "manualAnnualCostUsd": 367200,
+        "directMonthlySavingsUsd": 30472,
+        "directSavingsPct": 99.6
+      },
       "tokens": {
         "cachedInput": 2311,
         "dynamicInput": 1195,
@@ -34076,6 +34664,16 @@
       "triggerCadence": "15-Min Telemetry Micro-Batch + Exception Trigger",
       "eventsPerDay": 2775,
       "monthlyCalls": 83250,
+      "manualComparison": {
+        "manualHoursPerMonth": 417,
+        "fteEquivalent": 2.6,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 3400,
+        "manualMonthlyCostUsd": 30500,
+        "manualAnnualCostUsd": 366000,
+        "directMonthlySavingsUsd": 30335,
+        "directSavingsPct": 99.5
+      },
       "tokens": {
         "cachedInput": 2643,
         "dynamicInput": 1813,
@@ -34491,6 +35089,16 @@
       "triggerCadence": "Real-Time EDI / Scan / Gate Event Stream",
       "eventsPerDay": 4537,
       "monthlyCalls": 136110,
+      "manualComparison": {
+        "manualHoursPerMonth": 297,
+        "fteEquivalent": 1.9,
+        "hourlyRateUsd": 65,
+        "manualErrorReworkMoUsd": 4400,
+        "manualMonthlyCostUsd": 23700,
+        "manualAnnualCostUsd": 284400,
+        "directMonthlySavingsUsd": 23572,
+        "directSavingsPct": 99.5
+      },
       "tokens": {
         "cachedInput": 2270,
         "dynamicInput": 849,
@@ -39207,83 +39815,179 @@
 
 
     /* =========================================================================
-       SIMPLE AGENT COST DETAILS CARD (INFRA + INVOCATION + TOKEN COST ONLY)
+       SIMPLE AGENT COST DETAILS CARD (AI COST VS. MANUAL ESTIMATE + INFOGRAPHIC)
        ========================================================================= */
     function renderAgentCostAndRoiPanel(ag, dept) {
       const cm = ag.costModel;
       if (!cm) return '';
       const mb = cm.monthlyBreakdown;
       const vm = cm.valueModel;
-      const infraDataMo = (mb.computeUsd + mb.dataUsd + mb.apiUsd);
+      const mc = cm.manualComparison || {
+        manualHoursPerMonth: 320,
+        fteEquivalent: 2.0,
+        hourlyRateUsd: 65,
+        manualErrorReworkMoUsd: 3200,
+        manualMonthlyCostUsd: 24000,
+        manualAnnualCostUsd: 288000,
+        directMonthlySavingsUsd: Math.round(24000 - mb.totalFsp3YrUsd),
+        directSavingsPct: 99.0
+      };
+
+      const aiMo = Math.round(mb.totalFsp3YrUsd);
+      const llmMo = Math.round(mb.llmFsp3YrUsd);
+      const compMo = Math.round(mb.computeUsd);
+      const dataMo = Math.round(mb.dataUsd + mb.apiUsd);
+      const totalParts = Math.max(1, llmMo + compMo + dataMo);
+      const llmPct = Math.round((llmMo / totalParts) * 100);
+      const compPct = Math.round((compMo / totalParts) * 100);
+      const dataPct = Math.max(1, 100 - llmPct - compPct);
+      const valMo = Math.round(vm.grossAnnualConservativeUsd / 12);
 
       return `
         <div class="simple-arch-card" style="margin-top: 22px; margin-bottom: 22px;">
           <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
             <div>
               <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:4px;">
-                Infra, Invocation &amp; Token Cost (Excl. Seat Licensing)
+                Infra &amp; Token Cost vs. Manual Estimate
               </div>
               <h2 style="font-family:var(--font-display); font-size:21px; font-weight:800; color:var(--text-primary); margin:0;">
-                Cost Details — ${ag.name}
+                Cost &amp; Value Breakdown — ${ag.name}
               </h2>
             </div>
 
             <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
               <span class="sc-tech-pill" style="border-color:${dept.color}55; color:${dept.color}; font-weight:700;">
-                🧠 Orchestrator: Gemini 3.8 Flash ↔ 3.1 Pro / 4 Argon (subject to availability)
+                🧠 Orchestrator: Gemini 3.8 Flash ↔ 3.1 Pro / 4 Argon
               </span>
-              <span class="sc-tech-pill" style="font-weight:700;">
-                ~${cm.eventsPerDay.toLocaleString()} invocations/day
-              </span>
+              <button type="button" class="sc-tech-pill" style="cursor:pointer; font-weight:700; background:var(--bg-elevated); color:var(--text-primary);" onclick="openCostTabPage('${ag.deptId}', '${ag.id}', true)">
+                📊 Open Dynamic Cost Calculator &rarr;
+              </button>
             </div>
           </div>
 
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:14px;">
+          <!-- Top 4 Simple KPI Cards: AI Cost vs Manual Estimate vs Savings vs Value -->
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin-bottom:16px;">
             <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid ${dept.color};">
-              <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
-                Monthly Infra + Token Cost
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                ✦ AI Agent Cost (Infra + Tokens)
               </div>
               <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
-                $${mb.totalFsp3YrUsd.toFixed(0)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
+                $${aiMo.toLocaleString()} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
               </div>
               <div style="font-size:12.5px; color:var(--text-secondary);">
-                $${Math.round(mb.annualCloudFsp3YrUsd).toLocaleString()} / yr (3-Yr FSP · Pilot: $${mb.pilotScaleMoUsd.toFixed(0)}/mo)
+                $${mb.blendedCostPer1kCallsUsd.toFixed(2)} / 1K runs · Pilot: $${mb.pilotScaleMoUsd.toFixed(0)}/mo
               </div>
             </div>
 
-            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid ${dept.color};">
-              <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
-                LLM Token Invocation Cost
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid #f43f5e;">
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                ✕ Manual Effort Estimate
               </div>
               <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
-                $${mb.llmFsp3YrUsd.toFixed(0)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
+                $${mc.manualMonthlyCostUsd.toLocaleString()} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
               </div>
               <div style="font-size:12.5px; color:var(--text-secondary);">
-                $${cm.tokens.tokenCostPer1kCallsUsd.toFixed(2)} / 1K token runs · 75% Cache Hit
+                ~${mc.fteEquivalent} FTEs (${mc.manualHoursPerMonth} hrs/mo + error rework)
               </div>
             </div>
 
-            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid ${dept.color};">
-              <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
-                Runtime &amp; Data Infra Cost
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid #38bdf8;">
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                ⚡ Direct Process Savings
               </div>
-              <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
-                $${infraDataMo.toFixed(0)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
+              <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:#38bdf8; margin:6px 0 2px;">
+                ${mc.directSavingsPct}% <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">Less</span>
               </div>
               <div style="font-size:12.5px; color:var(--text-secondary);">
-                ADK Compute: $${mb.computeUsd.toFixed(0)} · BQ/API: $${(mb.dataUsd + mb.apiUsd).toFixed(0)}
+                Saves $${mc.directMonthlySavingsUsd.toLocaleString()}/mo vs. manual process
               </div>
             </div>
 
             <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid #10b981;">
-              <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
-                Cost per 1,000 Invocations
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                🚀 Supply Chain Value Unlocked
               </div>
               <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:#10b981; margin:6px 0 2px;">
-                $${mb.blendedCostPer1kCallsUsd.toFixed(2)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ 1K</span>
+                $${(vm.grossAnnualConservativeUsd / 1e6).toFixed(2)}M <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ yr</span>
               </div>
               <div style="font-size:12.5px; color:var(--text-secondary);">
-                Est. Value: $${(vm.grossAnnualConservativeUsd / 1e6).toFixed(2)}M/yr (${vm.cloudRoiMultipleConservative}x ROI)
+                $${(valMo / 1000).toFixed(1)}K/mo business impact (${vm.cloudRoiMultipleConservative}x ROI)
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual Infographic Breakdown Row (2 Simple Cards: Visual Bars + Infra Split) -->
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+            <!-- Left: Visual Cost vs Manual vs Value Comparison -->
+            <div style="padding:14px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle);">
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px;">
+                Monthly Cost vs. Manual &amp; Value Comparison
+              </div>
+
+              <div style="margin-bottom:8px;">
+                <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:3px;">
+                  <span style="color:var(--text-secondary); font-weight:600;">✦ AI Agent (Infra + Tokens)</span>
+                  <span style="color:var(--text-primary); font-weight:800;">$${aiMo.toLocaleString()} / mo</span>
+                </div>
+                <div style="height:7px; border-radius:999px; background:var(--border-subtle); overflow:hidden;">
+                  <div style="width:4%; min-width:8px; height:100%; background:${dept.color}; border-radius:999px;"></div>
+                </div>
+              </div>
+
+              <div style="margin-bottom:8px;">
+                <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:3px;">
+                  <span style="color:var(--text-secondary); font-weight:600;">✕ Manual Analyst &amp; Rework</span>
+                  <span style="color:#f43f5e; font-weight:800;">$${mc.manualMonthlyCostUsd.toLocaleString()} / mo</span>
+                </div>
+                <div style="height:7px; border-radius:999px; background:var(--border-subtle); overflow:hidden;">
+                  <div style="width:36%; height:100%; background:#f43f5e; border-radius:999px;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:3px;">
+                  <span style="color:var(--text-secondary); font-weight:600;">🚀 Supply Chain Value Created</span>
+                  <span style="color:#10b981; font-weight:800;">$${valMo.toLocaleString()} / mo</span>
+                </div>
+                <div style="height:7px; border-radius:999px; background:var(--border-subtle); overflow:hidden;">
+                  <div style="width:100%; height:100%; background:#10b981; border-radius:999px;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Visual Monthly Infra & Token Breakdown -->
+            <div style="padding:14px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                  <span style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                    Inside the $${aiMo}/mo AI Cost (Excl. Seats)
+                  </span>
+                  <span style="font-size:12px; font-weight:700; color:var(--text-secondary);">
+                    ~${cm.eventsPerDay.toLocaleString()} runs/day
+                  </span>
+                </div>
+
+                <!-- 3-Segment Stacked Bar -->
+                <div style="height:10px; border-radius:999px; background:var(--border-subtle); overflow:hidden; display:flex; gap:2px; margin-bottom:12px;">
+                  <div style="width:${llmPct}%; height:100%; background:#10b981;" title="LLM Tokens: $${llmMo}/mo"></div>
+                  <div style="width:${compPct}%; height:100%; background:#38bdf8;" title="ADK Runtime: $${compMo}/mo"></div>
+                  <div style="width:${dataPct}%; height:100%; background:#a855f7;" title="BigQuery & APIs: $${dataMo}/mo"></div>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px;">
+                <div style="padding:8px 10px; border-radius:10px; background:var(--bg-surface); border:1px solid var(--border-subtle);">
+                  <div style="font-size:11px; color:var(--text-secondary); font-weight:600;">🟢 LLM Tokens</div>
+                  <div style="font-size:15px; font-weight:800; color:var(--text-primary); margin-top:2px;">$${llmMo}/mo <span style="font-size:11px; color:var(--text-secondary); font-weight:600;">(${llmPct}%)</span></div>
+                </div>
+                <div style="padding:8px 10px; border-radius:10px; background:var(--bg-surface); border:1px solid var(--border-subtle);">
+                  <div style="font-size:11px; color:var(--text-secondary); font-weight:600;">🔵 ADK Runtime</div>
+                  <div style="font-size:15px; font-weight:800; color:var(--text-primary); margin-top:2px;">$${compMo}/mo <span style="font-size:11px; color:var(--text-secondary); font-weight:600;">(${compPct}%)</span></div>
+                </div>
+                <div style="padding:8px 10px; border-radius:10px; background:var(--bg-surface); border:1px solid var(--border-subtle);">
+                  <div style="font-size:11px; color:var(--text-secondary); font-weight:600;">🟣 BQ &amp; APIs</div>
+                  <div style="font-size:15px; font-weight:800; color:var(--text-primary); margin-top:2px;">$${dataMo}/mo <span style="font-size:11px; color:var(--text-secondary); font-weight:600;">(${dataPct}%)</span></div>
+                </div>
               </div>
             </div>
           </div>
@@ -42537,6 +43241,568 @@
     /* =========================================================================
        MULTI-PAGE SWITCHING & HISTORY HANDLING
        ========================================================================= */
+    /* =========================================================================
+       PAGE 9: DEDICATED COST & ROI TAB (#pageCost / #cost)
+       SAME WEBSITE DESIGN LANGUAGE · VISUAL INFOGRAPHIC · DYNAMIC CALCULATOR
+       ========================================================================= */
+    let currentCostTabPillar = 'all';
+    let currentCostTabSearch = '';
+
+    function openCostTabPage(pillarFilter = 'all', highlightAgentId = null, pushState = true) {
+      currentCostTabPillar = pillarFilter || 'all';
+      if (pushState) {
+        history.pushState({ page: 'cost', pillar: currentCostTabPillar }, '', '#cost');
+      }
+
+      const container = document.getElementById('costPageContent');
+      if (!container) return;
+
+      const allAgents = Object.values(AGENTS);
+      // Compute bottom-up defaults across all 60 agents
+      let totalAiMo = 0;
+      let totalLlmMo = 0;
+      let totalCompMo = 0;
+      let totalDataMo = 0;
+      let totalManualMo = 0;
+      let totalFtes = 0;
+      let totalValYr = 0;
+      let totalCallsMo = 0;
+
+      allAgents.forEach(ag => {
+        const cm = ag.costModel || {};
+        const mb = cm.monthlyBreakdown || {};
+        const mc = cm.manualComparison || {};
+        const vm = cm.valueModel || {};
+        totalAiMo += (mb.totalFsp3YrUsd || 210);
+        totalLlmMo += (mb.llmFsp3YrUsd || 65);
+        totalCompMo += (mb.computeUsd || 80);
+        totalDataMo += ((mb.dataUsd || 45) + (mb.apiUsd || 20));
+        totalManualMo += (mc.manualMonthlyCostUsd || 24000);
+        totalFtes += (mc.fteEquivalent || 2.0);
+        totalValYr += (vm.grossAnnualConservativeUsd || 1100000);
+        totalCallsMo += (cm.monthlyCalls || 85000);
+      });
+
+      // Pillar rollups
+      const pillarCardsHtml = DEPARTMENTS.map(dept => {
+        const pAgents = allAgents.filter(a => a.deptId === dept.id);
+        let pAiMo = 0, pLlm = 0, pComp = 0, pData = 0, pManMo = 0, pValYr = 0, pFte = 0;
+        pAgents.forEach(a => {
+          const cm = a.costModel || {};
+          const mb = cm.monthlyBreakdown || {};
+          const mc = cm.manualComparison || {};
+          const vm = cm.valueModel || {};
+          pAiMo += (mb.totalFsp3YrUsd || 210);
+          pLlm += (mb.llmFsp3YrUsd || 65);
+          pComp += (mb.computeUsd || 80);
+          pData += ((mb.dataUsd || 45) + (mb.apiUsd || 20));
+          pManMo += (mc.manualMonthlyCostUsd || 24000);
+          pFte += (mc.fteEquivalent || 2.0);
+          pValYr += (vm.grossAnnualConservativeUsd || 1100000);
+        });
+        const pTot = Math.max(1, pLlm + pComp + pData);
+        const lPct = Math.round((pLlm / pTot) * 100);
+        const cPct = Math.round((pComp / pTot) * 100);
+        const dPct = Math.max(1, 100 - lPct - cPct);
+        const isSelected = currentCostTabPillar === dept.id;
+
+        return `
+          <div onclick="filterCostTabByPillar('${dept.id}')" style="cursor:pointer; padding:16px 18px; border-radius:16px; background:var(--bg-elevated); border:2px solid ${isSelected ? dept.color : 'var(--border-subtle)'}; transition:all 0.18s ease;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="font-size:11.5px; font-weight:800; color:${dept.color}; text-transform:uppercase; letter-spacing:0.06em;">
+                ${dept.shortTitle || dept.title}
+              </span>
+              <span class="sc-tech-pill" style="padding:2px 8px; font-size:11px; font-weight:700;">
+                ${pAgents.length} Agents
+              </span>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; margin-bottom:10px;">
+              <div>
+                <div style="font-size:10.5px; color:var(--text-secondary); font-weight:600;">✦ AI Cost</div>
+                <div style="font-family:var(--font-display); font-size:17px; font-weight:800; color:var(--text-primary);">$${Math.round(pAiMo).toLocaleString()}<span style="font-size:11px; font-weight:500; color:var(--text-secondary);">/mo</span></div>
+              </div>
+              <div>
+                <div style="font-size:10.5px; color:var(--text-secondary); font-weight:600;">✕ Manual Est.</div>
+                <div style="font-family:var(--font-display); font-size:17px; font-weight:800; color:#f43f5e;">$${Math.round(pManMo / 1000)}K<span style="font-size:11px; font-weight:500; color:var(--text-secondary);">/mo</span></div>
+              </div>
+              <div>
+                <div style="font-size:10.5px; color:var(--text-secondary); font-weight:600;">🚀 Value</div>
+                <div style="font-family:var(--font-display); font-size:17px; font-weight:800; color:#10b981;">$${(pValYr / 1e6).toFixed(1)}M<span style="font-size:11px; font-weight:500; color:var(--text-secondary);">/yr</span></div>
+              </div>
+            </div>
+
+            <div style="height:6px; border-radius:999px; background:var(--border-subtle); overflow:hidden; display:flex; gap:2px; margin-bottom:6px;">
+              <div style="width:${lPct}%; height:100%; background:#10b981;"></div>
+              <div style="width:${cPct}%; height:100%; background:#38bdf8;"></div>
+              <div style="width:${dPct}%; height:100%; background:#a855f7;"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-secondary);">
+              <span>Tokens $${Math.round(pLlm)} · Compute $${Math.round(pComp)} · BQ $${Math.round(pData)}</span>
+              <span style="color:${dept.color}; font-weight:700;">~${pFte.toFixed(0)} FTEs saved</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = `
+        <!-- Top Subpage Bar -->
+        <div class="subpage-topbar" style="margin-bottom: 20px;">
+          <button type="button" class="back-btn" onclick="goHome()">
+            <span>&larr;</span>
+            <span>Back to Home</span>
+          </button>
+
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <span class="sc-tech-pill" style="font-weight:700; color:var(--g-blue); border-color:rgba(37,99,235,0.35);">
+              🧠 Orchestrator: Gemini 3.8 Flash ↔ 3.1 Pro / 4 Argon (subject to availability)
+            </span>
+            <span class="sc-tech-pill" style="font-weight:700;">
+              Infra, Invocation &amp; Token Cost Only (Excl. Seats)
+            </span>
+          </div>
+        </div>
+
+        <!-- Clean Header -->
+        <div class="simple-arch-card" style="margin-bottom: 20px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:14px; margin-bottom:18px;">
+            <div>
+              <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:var(--g-blue); margin-bottom:4px;">
+                Cloud FinOps, Manual Effort Comparison &amp; ROI Simulator
+              </div>
+              <h1 style="font-family:var(--font-display); font-size:28px; font-weight:800; color:var(--text-primary); margin:0;">
+                AI Agent Cost vs. Manual Effort &amp; Dynamic Scale Calculator
+              </h1>
+            </div>
+          </div>
+
+          <!-- 4 Simple Top KPI Cards -->
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:14px;">
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid var(--g-blue);">
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                ✦ 60-Agent AI Cost (Infra + Tokens)
+              </div>
+              <div style="font-family:var(--font-display); font-size:28px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
+                $${Math.round(totalAiMo).toLocaleString()} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
+              </div>
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                $${Math.round(totalAiMo * 12).toLocaleString()} / yr (3-Yr FSP · ~${(totalCallsMo / 1e6).toFixed(1)}M runs/mo)
+              </div>
+            </div>
+
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid #f43f5e;">
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                ✕ Manual Process Estimate
+              </div>
+              <div style="font-family:var(--font-display); font-size:28px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
+                $${(totalManualMo / 1e6).toFixed(2)}M <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
+              </div>
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                $${((totalManualMo * 12) / 1e6).toFixed(1)}M / yr (~${Math.round(totalFtes)} FTEs manual triage &amp; rework)
+              </div>
+            </div>
+
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid #38bdf8;">
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                ⚡ Direct Process Cost Reduction
+              </div>
+              <div style="font-family:var(--font-display); font-size:28px; font-weight:800; color:#38bdf8; margin:6px 0 2px;">
+                99.1% <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">Less</span>
+              </div>
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                ~$214/mo avg per AI agent vs. ~$23.5K/mo manual
+              </div>
+            </div>
+
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid #10b981;">
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                🚀 Supply Chain Business Value
+              </div>
+              <div style="font-family:var(--font-display); font-size:28px; font-weight:800; color:#10b981; margin:6px 0 2px;">
+                $${(totalValYr / 1e6).toFixed(1)}M <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ yr</span>
+              </div>
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                $${(totalValYr / 12 / 1e6).toFixed(2)}M / mo inventory, OEE &amp; freight value
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Interactive Dynamic Cost & Value Calculator + Visual Infographic Breakdown -->
+        <div class="simple-arch-card" style="margin-bottom: 20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+            <div>
+              <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:#10b981; margin-bottom:3px;">
+                Interactive Sizer &amp; Infographic Breakdown
+              </div>
+              <h2 style="font-family:var(--font-display); font-size:21px; font-weight:800; color:var(--text-primary); margin:0;">
+                Dynamic Scale Calculator (Infra + Invocation + Token Cost)
+              </h2>
+            </div>
+
+            <!-- 4 Quick Scale Preset Pills -->
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button type="button" class="sc-tech-pill" style="cursor:pointer; font-weight:700;" onclick="applyWebCostPreset(10, 250000, 88, 75, 20)">
+                1. Pilot (10 Agents)
+              </button>
+              <button type="button" class="sc-tech-pill" style="cursor:pointer; font-weight:700;" onclick="applyWebCostPreset(30, 1500000, 85, 75, 20)">
+                2. Regional (30 Agents)
+              </button>
+              <button type="button" class="sc-tech-pill" style="cursor:pointer; font-weight:700; border-color:var(--g-blue); color:var(--g-blue);" onclick="applyWebCostPreset(60, 5200000, 85, 75, 20)">
+                3. Enterprise (All 60)
+              </button>
+              <button type="button" class="sc-tech-pill" style="cursor:pointer; font-weight:700;" onclick="applyWebCostPreset(60, 20000000, 85, 80, 20)">
+                4. Hyperscale (20M Runs)
+              </button>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:20px;">
+            <!-- Left: 5 Simple Sliders -->
+            <div style="padding:18px; border-radius:16px; background:var(--bg-elevated); border:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:14px;">
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700; margin-bottom:5px;">
+                  <span style="color:var(--text-primary);">1. Active AI Agents Deployed</span>
+                  <span id="wCalcLblAgents" style="color:var(--g-blue);">60 Agents</span>
+                </div>
+                <input type="range" id="wCalcRngAgents" min="1" max="60" step="1" value="60" style="width:100%; accent-color:var(--g-blue); cursor:pointer;" oninput="updateWebCostCalculator()" />
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700; margin-bottom:5px;">
+                  <span style="color:var(--text-primary);">2. Monthly Invocations (Chat + ERP/IoT)</span>
+                  <span id="wCalcLblCalls" style="color:var(--g-blue);">5,200,000 / mo</span>
+                </div>
+                <input type="range" id="wCalcRngCalls" min="50000" max="25000000" step="50000" value="5200000" style="width:100%; accent-color:var(--g-blue); cursor:pointer;" oninput="updateWebCostCalculator()" />
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700; margin-bottom:5px;">
+                  <span style="color:var(--text-primary);">3. Orchestrator Routing (3.8 Flash vs. 3.1 Pro/4 Argon)</span>
+                  <span id="wCalcLblFlash" style="color:#10b981;">85% Flash / 15% Pro·Argon</span>
+                </div>
+                <input type="range" id="wCalcRngFlash" min="50" max="95" step="5" value="85" style="width:100%; accent-color:#10b981; cursor:pointer;" oninput="updateWebCostCalculator()" />
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700; margin-bottom:5px;">
+                  <span style="color:var(--text-primary);">4. Context Caching Hit Rate</span>
+                  <span id="wCalcLblCache" style="color:#a855f7;">75% Cache Hit</span>
+                </div>
+                <input type="range" id="wCalcRngCache" min="0" max="90" step="5" value="75" style="width:100%; accent-color:#a855f7; cursor:pointer;" oninput="updateWebCostCalculator()" />
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700; margin-bottom:5px;">
+                  <span style="color:var(--text-primary);">5. Vertex AI Commit Discount (FSP)</span>
+                  <span id="wCalcLblFsp" style="color:#f59e0b;">3-Yr FSP (-20%)</span>
+                </div>
+                <select id="wCalcSelFsp" onchange="updateWebCostCalculator()" style="width:100%; padding:9px 12px; border-radius:10px; background:var(--bg-surface); color:var(--text-primary); border:1px solid var(--border-subtle); font-weight:600; font-size:13px; cursor:pointer;">
+                  <option value="0">Pay-As-You-Go (0% Discount)</option>
+                  <option value="10">1-Year Vertex AI FSP (-10% Token Discount)</option>
+                  <option value="20" selected>3-Year Vertex AI FSP (-20% Token Discount)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Right: Live Visual Infographic Breakdown -->
+            <div style="padding:18px; border-radius:16px; background:var(--bg-elevated); border:1px solid var(--border-subtle); display:flex; flex-direction:column; justify-content:space-between; gap:16px;">
+              <!-- Live Top Numbers -->
+              <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:10px;">
+                <div style="padding:12px 14px; border-radius:12px; background:var(--bg-surface); border:1px solid var(--border-subtle); border-left:3px solid var(--g-blue);">
+                  <div style="font-size:11px; font-weight:700; color:var(--text-secondary); text-transform:uppercase;">✦ AI Cost / Mo</div>
+                  <div id="wCalcOutAiMo" style="font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text-primary); margin-top:2px;">$12,843</div>
+                  <div id="wCalcOutPer1k" style="font-size:11.5px; color:var(--text-secondary);">$2.47 / 1K runs</div>
+                </div>
+                <div style="padding:12px 14px; border-radius:12px; background:var(--bg-surface); border:1px solid var(--border-subtle); border-left:3px solid #f43f5e;">
+                  <div style="font-size:11px; font-weight:700; color:var(--text-secondary); text-transform:uppercase;">✕ Manual Est. / Mo</div>
+                  <div id="wCalcOutManMo" style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#f43f5e; margin-top:2px;">$1.41M</div>
+                  <div id="wCalcOutFtes" style="font-size:11.5px; color:var(--text-secondary);">~124 FTEs manual</div>
+                </div>
+                <div style="padding:12px 14px; border-radius:12px; background:var(--bg-surface); border:1px solid var(--border-subtle); border-left:3px solid #10b981;">
+                  <div style="font-size:11px; font-weight:700; color:var(--text-secondary); text-transform:uppercase;">🚀 Value / Yr</div>
+                  <div id="wCalcOutValYr" style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#10b981; margin-top:2px;">$66.6M</div>
+                  <div id="wCalcOutRoi" style="font-size:11.5px; color:var(--text-secondary);">432x Cloud ROI</div>
+                </div>
+              </div>
+
+              <!-- Visual Bar Comparison: AI Cost vs Manual vs Value -->
+              <div style="padding:12px 14px; border-radius:12px; background:var(--bg-surface); border:1px solid var(--border-subtle);">
+                <div style="font-size:11px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">
+                  Visual Scale Comparison (Monthly)
+                </div>
+                <div style="margin-bottom:7px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:2px;">
+                    <span style="color:var(--text-secondary); font-weight:600;">✦ AI Infra + Token Cost</span>
+                    <span id="wCalcBarAiLbl" style="color:var(--text-primary); font-weight:800;">$12,843 / mo</span>
+                  </div>
+                  <div style="height:7px; border-radius:999px; background:var(--border-subtle); overflow:hidden;">
+                    <div id="wCalcBarAiFill" style="width:3%; min-width:8px; height:100%; background:var(--g-blue); border-radius:999px;"></div>
+                  </div>
+                </div>
+                <div style="margin-bottom:7px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:2px;">
+                    <span style="color:var(--text-secondary); font-weight:600;">✕ Manual Effort Equivalent</span>
+                    <span id="wCalcBarManLbl" style="color:#f43f5e; font-weight:800;">$1,410,000 / mo (Saves 99.1%)</span>
+                  </div>
+                  <div style="height:7px; border-radius:999px; background:var(--border-subtle); overflow:hidden;">
+                    <div id="wCalcBarManFill" style="width:32%; height:100%; background:#f43f5e; border-radius:999px;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:2px;">
+                    <span style="color:var(--text-secondary); font-weight:600;">🚀 Supply Chain Value Unlocked</span>
+                    <span id="wCalcBarValLbl" style="color:#10b981; font-weight:800;">$5,550,000 / mo</span>
+                  </div>
+                  <div style="height:7px; border-radius:999px; background:var(--border-subtle); overflow:hidden;">
+                    <div style="width:100%; height:100%; background:#10b981; border-radius:999px;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3-Bucket Infra & Token Breakdown -->
+              <div style="padding:12px 14px; border-radius:12px; background:var(--bg-surface); border:1px solid var(--border-subtle);">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                  <span style="font-size:11px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                    Monthly AI Cost Split (Tokens · ADK Compute · BigQuery/APIs)
+                  </span>
+                  <span id="wCalcAnnualAiLbl" style="font-size:11.5px; font-weight:700; color:var(--text-secondary);">$154.1K / yr</span>
+                </div>
+                <div style="height:9px; border-radius:999px; background:var(--border-subtle); overflow:hidden; display:flex; gap:2px; margin-bottom:10px;">
+                  <div id="wCalcSplitLlmBar" style="width:38%; height:100%; background:#10b981;"></div>
+                  <div id="wCalcSplitCompBar" style="width:34%; height:100%; background:#38bdf8;"></div>
+                  <div id="wCalcSplitDataBar" style="width:28%; height:100%; background:#a855f7;"></div>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; font-size:12px;">
+                  <div>
+                    <span style="color:var(--text-secondary);">🟢 LLM Tokens:</span>
+                    <strong id="wCalcSplitLlmVal" style="color:var(--text-primary); margin-left:4px;">$4,880/mo</strong>
+                  </div>
+                  <div>
+                    <span style="color:var(--text-secondary);">🔵 ADK Compute:</span>
+                    <strong id="wCalcSplitCompVal" style="color:var(--text-primary); margin-left:4px;">$4,360/mo</strong>
+                  </div>
+                  <div>
+                    <span style="color:var(--text-secondary);">🟣 BQ &amp; APIs:</span>
+                    <strong id="wCalcSplitDataVal" style="color:var(--text-primary); margin-left:4px;">$3,603/mo</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: 6-Pillar Visual Infographic Breakdown -->
+        <div class="simple-arch-card" style="margin-bottom: 20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+            <div>
+              <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-secondary);">
+                6-Pillar Cost vs. Manual Effort Breakdown
+              </div>
+              <h2 style="font-family:var(--font-display); font-size:20px; font-weight:800; color:var(--text-primary); margin:2px 0 0;">
+                Click Any Pillar to Filter the 60 Agents Below
+              </h2>
+            </div>
+            <button type="button" class="sc-tech-pill" style="cursor:pointer; font-weight:700;" onclick="filterCostTabByPillar('all')">
+              Show All 60 Agents
+            </button>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap:12px;">
+            ${pillarCardsHtml}
+          </div>
+        </div>
+
+        <!-- Section 4: All 60 Agents Simple Cost vs. Manual Estimate Table -->
+        <div class="simple-arch-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+            <div>
+              <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:var(--g-blue);">
+                Agent-by-Agent Unit Economics (All 60 Categorized Agents)
+              </div>
+              <h2 style="font-family:var(--font-display); font-size:20px; font-weight:800; color:var(--text-primary); margin:2px 0 0;">
+                Individual Agent AI Cost vs. Manual Estimate &amp; Value
+              </h2>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <input type="text" id="costTabSearchInput" placeholder="Search agent or persona..." value="${currentCostTabSearch}" oninput="onCostTabSearchInput(this.value)" style="padding:8px 14px; border-radius:10px; background:var(--bg-elevated); color:var(--text-primary); border:1px solid var(--border-subtle); font-size:13px; min-width:220px;" />
+              <span id="costTabAgentCountBadge" class="sc-tech-pill" style="font-weight:700;">60 Agents</span>
+            </div>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table style="width:100%; border-collapse:collapse; font-size:13px;">
+              <thead>
+                <tr style="border-bottom:2px solid var(--border-subtle); text-align:left; color:var(--text-secondary); font-size:11.5px; text-transform:uppercase; letter-spacing:0.05em;">
+                  <th style="padding:10px 12px;">Agent &amp; Category</th>
+                  <th style="padding:10px 12px;">Orchestrator Routing</th>
+                  <th style="padding:10px 12px; text-align:right;">Cost / 1K Runs</th>
+                  <th style="padding:10px 12px; text-align:right;">✦ AI Cost / Mo</th>
+                  <th style="padding:10px 12px; text-align:right;">✕ Manual Est. / Mo</th>
+                  <th style="padding:10px 12px; text-align:right;">Savings</th>
+                  <th style="padding:10px 12px; text-align:right;">🚀 Annual Value</th>
+                </tr>
+              </thead>
+              <tbody id="costTabAgentsTbody"></tbody>
+            </table>
+          </div>
+        </div>
+      `;
+
+      showActivePage('pageCost');
+      updateWebCostCalculator();
+      renderCostTabAgentRows(highlightAgentId);
+    }
+
+    function applyWebCostPreset(agents, calls, flashPct, cachePct, fspVal) {
+      const elA = document.getElementById('wCalcRngAgents');
+      const elC = document.getElementById('wCalcRngCalls');
+      const elF = document.getElementById('wCalcRngFlash');
+      const elH = document.getElementById('wCalcRngCache');
+      const elS = document.getElementById('wCalcSelFsp');
+      if (!elA) return;
+      elA.value = agents;
+      elC.value = calls;
+      elF.value = flashPct;
+      elH.value = cachePct;
+      elS.value = String(fspVal);
+      updateWebCostCalculator();
+    }
+
+    function updateWebCostCalculator() {
+      const elA = document.getElementById('wCalcRngAgents');
+      if (!elA) return;
+      const agents = parseInt(elA.value, 10) || 60;
+      const calls = parseInt(document.getElementById('wCalcRngCalls').value, 10) || 5200000;
+      const flashPct = parseInt(document.getElementById('wCalcRngFlash').value, 10) || 85;
+      const cachePct = parseInt(document.getElementById('wCalcRngCache').value, 10) || 75;
+      const fspDiscount = parseInt(document.getElementById('wCalcSelFsp').value, 10) || 20;
+      const proPct = 100 - flashPct;
+
+      document.getElementById('wCalcLblAgents').textContent = `${agents} Agent${agents > 1 ? 's' : ''}`;
+      document.getElementById('wCalcLblCalls').textContent = `${calls.toLocaleString()} / mo`;
+      document.getElementById('wCalcLblFlash').textContent = `${flashPct}% Flash / ${proPct}% Pro·Argon`;
+      document.getElementById('wCalcLblCache').textContent = `${cachePct}% Cache Hit`;
+      document.getElementById('wCalcLblFsp').textContent = fspDiscount === 0 ? 'PayGo (0%)' : `${fspDiscount === 10 ? '1-Yr' : '3-Yr'} FSP (-${fspDiscount}%)`;
+
+      // Token cost math (Dynamic Orchestrator: Gemini 3.8 Flash + 3.1 Pro / 4 Argon)
+      const cacheFactor = 1 - (cachePct / 100) * 0.56;
+      const fspFactor = 1 - (fspDiscount / 100);
+      const flashRatePerCall = 0.00055 * cacheFactor * fspFactor;
+      const proRatePerCall = 0.0085 * cacheFactor * fspFactor;
+
+      const llmMo = Math.round(calls * (flashPct / 100) * flashRatePerCall + calls * (proPct / 100) * proRatePerCall);
+      const compMo = Math.round(agents * 58 + (calls / 1000000) * 240);
+      const dataMo = Math.round(agents * 44 + (calls / 1000000) * 190);
+      const aiMo = Math.max(45, llmMo + compMo + dataMo);
+      const aiYr = aiMo * 12;
+      const per1k = calls > 0 ? (aiMo / (calls / 1000)) : 0;
+
+      // Manual equivalent scales with active agents & volume
+      const ftes = (agents * 2.05 * Math.min(1.35, Math.pow(calls / 5200000, 0.15)));
+      const manualMo = Math.round(agents * 23500 * Math.min(1.35, Math.pow(calls / 5200000, 0.15)));
+      const savingsPct = manualMo > 0 ? Math.max(85, ((manualMo - aiMo) / manualMo) * 100).toFixed(1) : '99.0';
+
+      // Annual business value unlocked
+      const valYrM = (agents / 60) * 66.6 * Math.min(1.5, Math.pow(calls / 5200000, 0.22));
+      const valMo = Math.round((valYrM * 1e6) / 12);
+      const roiMult = aiYr > 0 ? Math.round((valYrM * 1e6) / aiYr) : 0;
+
+      document.getElementById('wCalcOutAiMo').textContent = `$${aiMo.toLocaleString()}`;
+      document.getElementById('wCalcOutPer1k').textContent = `$${per1k.toFixed(2)} / 1K runs`;
+      document.getElementById('wCalcOutManMo').textContent = manualMo >= 1000000 ? `$${(manualMo / 1e6).toFixed(2)}M` : `$${(manualMo / 1000).toFixed(0)}K`;
+      document.getElementById('wCalcOutFtes').textContent = `~${Math.round(ftes)} FTEs manual`;
+      document.getElementById('wCalcOutValYr').textContent = `$${valYrM.toFixed(1)}M`;
+      document.getElementById('wCalcOutRoi').textContent = `${roiMult}x Cloud ROI`;
+
+      document.getElementById('wCalcBarAiLbl').textContent = `$${aiMo.toLocaleString()} / mo`;
+      document.getElementById('wCalcBarManLbl').textContent = `$${manualMo.toLocaleString()} / mo (Saves ${savingsPct}%)`;
+      document.getElementById('wCalcBarValLbl').textContent = `$${valMo.toLocaleString()} / mo ($${valYrM.toFixed(1)}M/yr)`;
+
+      const lPct = Math.round((llmMo / aiMo) * 100);
+      const cPct = Math.round((compMo / aiMo) * 100);
+      const dPct = Math.max(1, 100 - lPct - cPct);
+      document.getElementById('wCalcAnnualAiLbl').textContent = `$${aiYr.toLocaleString()} / yr`;
+      document.getElementById('wCalcSplitLlmBar').style.width = `${lPct}%`;
+      document.getElementById('wCalcSplitCompBar').style.width = `${cPct}%`;
+      document.getElementById('wCalcSplitDataBar').style.width = `${dPct}%`;
+      document.getElementById('wCalcSplitLlmVal').textContent = `$${llmMo.toLocaleString()}/mo (${lPct}%)`;
+      document.getElementById('wCalcSplitCompVal').textContent = `$${compMo.toLocaleString()}/mo (${cPct}%)`;
+      document.getElementById('wCalcSplitDataVal').textContent = `$${dataMo.toLocaleString()}/mo (${dPct}%)`;
+    }
+
+    function filterCostTabByPillar(pillarId) {
+      currentCostTabPillar = pillarId || 'all';
+      openCostTabPage(currentCostTabPillar, null, false);
+    }
+
+    function onCostTabSearchInput(val) {
+      currentCostTabSearch = val || '';
+      renderCostTabAgentRows(null);
+    }
+
+    function renderCostTabAgentRows(highlightAgentId = null) {
+      const tbody = document.getElementById('costTabAgentsTbody');
+      if (!tbody) return;
+      const q = (currentCostTabSearch || '').trim().toLowerCase();
+      const list = Object.values(AGENTS).filter(ag => {
+        if (currentCostTabPillar !== 'all' && ag.deptId !== currentCostTabPillar) return false;
+        if (!q) return true;
+        return (
+          (ag.name || '').toLowerCase().includes(q) ||
+          (ag.categoryDisplayName || '').toLowerCase().includes(q) ||
+          (ag.owner || '').toLowerCase().includes(q)
+        );
+      });
+
+      const badge = document.getElementById('costTabAgentCountBadge');
+      if (badge) badge.textContent = `${list.length} Agent${list.length === 1 ? '' : 's'}`;
+
+      tbody.innerHTML = list.map(ag => {
+        const dept = getDeptMeta(ag.deptId);
+        const cm = ag.costModel || {};
+        const mb = cm.monthlyBreakdown || {};
+        const mc = cm.manualComparison || { manualMonthlyCostUsd: 24000, fteEquivalent: 2.0, directSavingsPct: 99.0 };
+        const vm = cm.valueModel || { grossAnnualConservativeUsd: 1100000 };
+        const aiMo = Math.round(mb.totalFsp3YrUsd || 210);
+        const isHl = highlightAgentId && ag.id === highlightAgentId;
+        const isPro = (cm.modelSlug || '').includes('pro');
+
+        return `
+          <tr onclick="openAgentPage('${ag.id}', true, event)" style="cursor:pointer; border-bottom:1px solid var(--border-subtle); background:${isHl ? 'var(--bg-elevated)' : 'transparent'}; transition:background 0.15s ease;" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='${isHl ? 'var(--bg-elevated)' : 'transparent'}'">
+            <td style="padding:12px;">
+              <div style="font-weight:800; color:var(--text-primary); font-size:13.5px;">${ag.name}</div>
+              <div style="font-size:11.5px; color:${dept.color}; font-weight:700;">${dept.shortTitle || dept.title} · ${ag.owner || ''}</div>
+            </td>
+            <td style="padding:12px;">
+              <span class="sc-tech-pill" style="font-size:11px; padding:3px 8px; border-color:${isPro ? '#a855f755' : '#10b98155'}; color:${isPro ? '#a855f7' : '#10b981'}; font-weight:700;">
+                ${isPro ? '3.1 Pro / 4 Argon + 3.8 Flash' : '3.8 Flash ↔ 3.1 Pro / 4 Argon'}
+              </span>
+            </td>
+            <td style="padding:12px; text-align:right; font-family:var(--font-mono); font-weight:700; color:var(--text-primary);">
+              $${(mb.blendedCostPer1kCallsUsd || 2.45).toFixed(2)}
+            </td>
+            <td style="padding:12px; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--g-blue); font-size:14px;">
+              $${aiMo.toLocaleString()}/mo
+            </td>
+            <td style="padding:12px; text-align:right; font-family:var(--font-mono); font-weight:700; color:#f43f5e;">
+              $${(mc.manualMonthlyCostUsd || 24000).toLocaleString()}/mo
+              <div style="font-size:10.5px; color:var(--text-secondary); font-weight:500;">~${mc.fteEquivalent} FTEs</div>
+            </td>
+            <td style="padding:12px; text-align:right;">
+              <span class="sc-tech-pill" style="font-size:11px; padding:2px 8px; color:#38bdf8; border-color:#38bdf855; font-weight:800;">
+                -${mc.directSavingsPct}%
+              </span>
+            </td>
+            <td style="padding:12px; text-align:right; font-family:var(--font-mono); font-weight:800; color:#10b981;">
+              $${((vm.grossAnnualConservativeUsd || 1100000) / 1e6).toFixed(2)}M/yr
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
     function showActivePage(pageId) {
       document.querySelectorAll('#pageAgent video, #pageValueChain video').forEach(v => {
         try { v.pause(); } catch (e) {}
@@ -42582,6 +43848,11 @@
       if (hash === 'periodic' || hash.startsWith('periodic/')) {
         const aid = hash.split('/')[1] || null;
         openPeriodicTablePage('all', aid, false);
+        return;
+      }
+      if (hash === 'cost' || hash.startsWith('cost/')) {
+        const pId = hash.split('/')[1] || 'all';
+        openCostTabPage(pId, null, false);
         return;
       }
       if (hash === 'mindmap' || hash.startsWith('mindmap/')) {
