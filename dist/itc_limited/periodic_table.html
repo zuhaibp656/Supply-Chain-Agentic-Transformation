@@ -5610,11 +5610,6 @@
       <button type="button" class="nav-pill-btn" onclick="goHome()">Home</button>
 
       <div class="nav-dropdown-wrap" style="position:relative;">
-        <button type="button" class="nav-pill-btn" onclick="goToOrgChart()">6 Pillars (20 Sub-Pillars) ▾</button>
-        <div class="nav-quick-menu" id="navPillarsQuickMenu"></div>
-      </div>
-
-      <div class="nav-dropdown-wrap" style="position:relative;">
         <button type="button" class="nav-pill-btn" onclick="scrollToProcessJourneys()">Processes (4) ▾</button>
         <div class="nav-quick-menu" id="navProcessesQuickMenu"></div>
       </div>
@@ -5690,7 +5685,7 @@
       </div>
 
       <!-- 6-Pillar Interactive Master Navigation Tab Bar -->
-            <div class="vertical-tabs-nav-bar" id="verticalTabsNavBar">
+            <div class="vertical-tabs-nav-bar" id="verticalTabsNavBar" style="display:none;">
         <button type="button" class="v-tab-btn active" data-vtab="all" onclick="switchVerticalTab('all', this)">
           <span class="v-tab-num" style="color:var(--g-blue);">ALL 6 PILLARS</span>
           <span class="v-tab-title">All 6 Pillars</span>
