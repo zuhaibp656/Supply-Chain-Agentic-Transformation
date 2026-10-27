@@ -6,12 +6,24 @@
       "Suman Banerjee"
     ],
     "scorVerticalsCount": 6,
-    "personasCount": 29,
-    "agentsCount": 35,
+    "subPillarsCount": 20,
+    "personasCount": 60,
+    "agentsCount": 60,
     "universalAgentsCount": 4,
-    "domainAgentsCount": 31,
+    "domainAgentsCount": 56,
     "valueChainsCount": 4,
-    "verticalsCount": 6
+    "verticalsCount": 6,
+    "demoDataTablesCount": 245,
+    "costAnalysisDeck": "cost_analysis_presentation.html",
+    "standardsCompliance": [
+      "ASCM SCOR Digital Standard (SCOR DS v14.0)",
+      "ISA-95 / IEC 62264 & OPC-UA",
+      "GS1 EPCIS 2.0 & FDA 21 CFR Part 11",
+      "ANSI X12 EDI & UN/EDIFACT",
+      "GHG Protocol Scope 1/2/3 & EU CSRD",
+      "Google ADK + A2A Protocol + MCP + A2UI v0.9",
+      "ISO/IEC 42001 & NIST AI RMF 1.0"
+    ]
   },
   "departments": {
     "demand_sop": {
@@ -5560,7 +5572,24 @@
       "categoryTag": "01 \u00b7 Plan | Demand Forecasting",
       "categoryDisplayName": "[01 \u00b7 Plan | Demand Forecasting] Demand Sensing Agent",
       "geDisplayName": "[Plan \u00b7 Demand Forecasting] Demand Sensing Agent",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Demand Forecasting] Demand Sensing Agent (Demand Planner / Forecaster): Synthesizes POS velocity, weather anomalies, and macro trends. Outcome: Detects demand shifts 7\u201314 days earlier."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Demand Forecasting] Demand Sensing Agent (Demand Planner / Forecaster): Synthesizes POS velocity, weather anomalies, and macro trends. Outcome: Detects demand shifts 7\u201314 days earlier.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "cpfr_sync_agent": {
       "id": "cpfr_sync_agent",
@@ -5826,7 +5855,24 @@
       "categoryTag": "01 \u00b7 Plan | Demand Forecasting",
       "categoryDisplayName": "[01 \u00b7 Plan | Demand Forecasting] Forecast Reconciliation",
       "geDisplayName": "[Plan \u00b7 Demand Forecasting] Forecast Reconciliation",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Demand Forecasting] Forecast Reconciliation (Commercial Planning Lead): Identifies unmodeled drivers across eCommerce and retail channels. Outcome: Replaces black-box variance models."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Demand Forecasting] Forecast Reconciliation (Commercial Planning Lead): Identifies unmodeled drivers across eCommerce and retail channels. Outcome: Replaces black-box variance models.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "npi_demand_profiler": {
       "id": "npi_demand_profiler",
@@ -6121,7 +6167,24 @@
       "categoryTag": "01 \u00b7 Plan | Demand Forecasting",
       "categoryDisplayName": "[01 \u00b7 Plan | Demand Forecasting] NPI Demand Profiler",
       "geDisplayName": "[Plan \u00b7 Demand Forecasting] NPI Demand Profiler",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Demand Forecasting] NPI Demand Profiler (Brand & Innovation Manager): Matches launch packaging and attributes to historical lookalikes. Outcome: Cuts 90-day launch forecast errors."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Demand Forecasting] NPI Demand Profiler (Brand & Innovation Manager): Matches launch packaging and attributes to historical lookalikes. Outcome: Cuts 90-day launch forecast errors.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-pro",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 15.8,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "promo_lift_simulator": {
       "id": "promo_lift_simulator",
@@ -6404,7 +6467,24 @@
       "categoryTag": "01 \u00b7 Plan | Trade Promotion",
       "categoryDisplayName": "[01 \u00b7 Plan | Trade Promotion] Promo ROI Simulator",
       "geDisplayName": "[Plan \u00b7 Trade Promotion] Promo ROI Simulator",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Trade Promotion] Promo ROI Simulator (Trade Marketing Manager): Simulates price elasticity, shelf lift, and incremental spend return. Outcome: Prevents break-even trade leakage."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Trade Promotion] Promo ROI Simulator (Trade Marketing Manager): Simulates price elasticity, shelf lift, and incremental spend return. Outcome: Prevents break-even trade leakage.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-pro",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 15.8,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "field_beat_distributor_sync_agent": {
       "id": "field_beat_distributor_sync_agent",
@@ -6613,7 +6693,24 @@
       "categoryTag": "01 \u00b7 Plan | Trade Promotion",
       "categoryDisplayName": "[01 \u00b7 Plan | Trade Promotion] JBP Negotiation Agent",
       "geDisplayName": "[Plan \u00b7 Trade Promotion] JBP Negotiation Agent",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Trade Promotion] JBP Negotiation Agent (Key Account Manager (KAM)): Creates customized sell-in story decks and joint promotional calendars. Outcome: Aligns buyer margins and volume goals."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Trade Promotion] JBP Negotiation Agent (Key Account Manager (KAM)): Creates customized sell-in story decks and joint promotional calendars. Outcome: Aligns buyer margins and volume goals.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "trade_scheme_claims_reconciler": {
       "id": "trade_scheme_claims_reconciler",
@@ -6815,7 +6912,24 @@
       "categoryTag": "01 \u00b7 Plan | Trade Promotion",
       "categoryDisplayName": "[01 \u00b7 Plan | Trade Promotion] Deduction Audit Agent",
       "geDisplayName": "[Plan \u00b7 Trade Promotion] Deduction Audit Agent",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Trade Promotion] Deduction Audit Agent (Revenue / Trade Finance Lead): Audits scanned proof-of-performance circulars and invoices via OCR. Outcome: Resolves claim disputes in hours."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Trade Promotion] Deduction Audit Agent (Revenue / Trade Finance Lead): Audits scanned proof-of-performance circulars and invoices via OCR. Outcome: Resolves claim disputes in hours.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "sop_scenario_weaver": {
       "id": "sop_scenario_weaver",
@@ -7092,7 +7206,24 @@
       "categoryTag": "01 \u00b7 Plan | S&OP / IBP",
       "categoryDisplayName": "[01 \u00b7 Plan | S&OP / IBP] Consensus & Gap Agent",
       "geDisplayName": "[Plan \u00b7 S&OP / IBP] Consensus & Gap Agent",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 S&OP / IBP] Consensus & Gap Agent (S&OP / Supply Planning Dir.): Reconciles unconstrained demand with factory plant bottleneck limits. Outcome: Highlights margin-dilutive imbalances."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 S&OP / IBP] Consensus & Gap Agent (S&OP / Supply Planning Dir.): Reconciles unconstrained demand with factory plant bottleneck limits. Outcome: Highlights margin-dilutive imbalances.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-pro",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 15.8,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "disruption_war_room_orchestrator": {
       "id": "disruption_war_room_orchestrator",
@@ -7467,7 +7598,24 @@
       "categoryTag": "01 \u00b7 Plan | S&OP / IBP",
       "categoryDisplayName": "[01 \u00b7 Plan | S&OP / IBP] Digital War-Room Agent",
       "geDisplayName": "[Plan \u00b7 S&OP / IBP] Digital War-Room Agent",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 S&OP / IBP] Digital War-Room Agent (Supply Chain VP / COO): Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Rapid OTIF impact scenario brief."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 S&OP / IBP] Digital War-Room Agent (Supply Chain VP / COO): Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Rapid OTIF impact scenario brief.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-pro",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 15.8,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "csco_control_tower_copilot": {
       "id": "csco_control_tower_copilot",
@@ -7879,7 +8027,24 @@
       "categoryTag": "01 \u00b7 Plan | S&OP / IBP",
       "categoryDisplayName": "[01 \u00b7 Plan | S&OP / IBP] Executive Copilot",
       "geDisplayName": "[Plan \u00b7 S&OP / IBP] Executive Copilot",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 S&OP / IBP] Executive Copilot (IBP Lead / Chief Planning Off.): Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Reduces deck preparation by days."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 S&OP / IBP] Executive Copilot (IBP Lead / Chief Planning Off.): Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Reduces deck preparation by days.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-pro",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 15.8,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "working_capital_cash_bridge": {
       "id": "working_capital_cash_bridge",
@@ -8216,7 +8381,24 @@
       "categoryTag": "01 \u00b7 Plan | Portfolio & SKU",
       "categoryDisplayName": "[01 \u00b7 Plan | Portfolio & SKU] SKU Pruning Agent",
       "geDisplayName": "[Plan \u00b7 Portfolio & SKU] SKU Pruning Agent",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU] SKU Pruning Agent (Category Manager): Scores velocity, plant changeover cost, and shelf revenue yield. Outcome: Unlocks tail working capital."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU] SKU Pruning Agent (Category Manager): Scores velocity, plant changeover cost, and shelf revenue yield. Outcome: Unlocks tail working capital.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "eco_cutover_orchestrator": {
       "id": "eco_cutover_orchestrator",
@@ -8393,7 +8575,24 @@
       "categoryTag": "01 \u00b7 Plan | Portfolio & SKU",
       "categoryDisplayName": "[01 \u00b7 Plan | Portfolio & SKU] PIPO Run-Out Agent",
       "geDisplayName": "[Plan \u00b7 Portfolio & SKU] PIPO Run-Out Agent",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU] PIPO Run-Out Agent (Lifecycle / Materials Mgr): Orchestrates transition buffers to sync packaging and formulation cuts. Outcome: Eliminates stranded write-offs."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU] PIPO Run-Out Agent (Lifecycle / Materials Mgr): Orchestrates transition buffers to sync packaging and formulation cuts. Outcome: Eliminates stranded write-offs.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "network_twin_architect": {
       "id": "network_twin_architect",
@@ -8566,7 +8765,24 @@
       "categoryTag": "01 \u00b7 Plan | Portfolio & SKU",
       "categoryDisplayName": "[01 \u00b7 Plan | Portfolio & SKU] Cost-to-Serve Diagnostic",
       "geDisplayName": "[Plan \u00b7 Portfolio & SKU] Cost-to-Serve Diagnostic",
-      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU] Cost-to-Serve Diagnostic (Commercial Finance Director): Calculates net-net margin across Club, Grocery, and eCommerce packs. Outcome: Re-engineers MOQ and pack rules."
+      "categorizedDescription": "[Category: 01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU] Cost-to-Serve Diagnostic (Commercial Finance Director): Calculates net-net margin across Club, Grocery, and eCommerce packs. Outcome: Re-engineers MOQ and pack rules.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "tier_n_risk_sentinel": {
       "id": "tier_n_risk_sentinel",
@@ -8855,7 +9071,24 @@
       "categoryTag": "02 \u00b7 Source | Supplier Network",
       "categoryDisplayName": "[02 \u00b7 Source | Supplier Network] Disruption Sensing Agent",
       "geDisplayName": "[Source \u00b7 Supplier Network] Disruption Sensing Agent",
-      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Supplier Network] Disruption Sensing Agent (Procurement Dir. / Risk Mgr): Monitors multi-tier supply feeds, port delays, and vendor financials. Outcome: 2\u20133 week advance disruption warning."
+      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Supplier Network] Disruption Sensing Agent (Procurement Dir. / Risk Mgr): Monitors multi-tier supply feeds, port delays, and vendor financials. Outcome: 2\u20133 week advance disruption warning.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "supplier_quality_sentinel": {
       "id": "supplier_quality_sentinel",
@@ -9169,7 +9402,24 @@
       "categoryTag": "02 \u00b7 Source | Supplier Network",
       "categoryDisplayName": "[02 \u00b7 Source | Supplier Network] Onboarding & Qual. Agent",
       "geDisplayName": "[Source \u00b7 Supplier Network] Onboarding & Qual. Agent",
-      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Supplier Network] Onboarding & Qual. Agent (Procurement Operations Lead): Parses BRC/ISO audits, food-safety filings, and tax registrations. Outcome: Cuts onboarding from weeks to <48h."
+      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Supplier Network] Onboarding & Qual. Agent (Procurement Operations Lead): Parses BRC/ISO audits, food-safety filings, and tax registrations. Outcome: Cuts onboarding from weeks to <48h.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "carbon_scope3_ledger": {
       "id": "carbon_scope3_ledger",
@@ -9344,7 +9594,24 @@
       "categoryTag": "02 \u00b7 Source | Supplier Network",
       "categoryDisplayName": "[02 \u00b7 Source | Supplier Network] ESG & Scope 3 Auditor",
       "geDisplayName": "[Source \u00b7 Supplier Network] ESG & Scope 3 Auditor",
-      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Supplier Network] ESG & Scope 3 Auditor (Chief Sustainability Officer): Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. Outcome: Automates Scope 3 disclosure audits."
+      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Supplier Network] ESG & Scope 3 Auditor (Chief Sustainability Officer): Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. Outcome: Automates Scope 3 disclosure audits.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "commodity_index_advisor": {
       "id": "commodity_index_advisor",
@@ -9639,7 +9906,24 @@
       "categoryTag": "02 \u00b7 Source | Material & Packaging",
       "categoryDisplayName": "[02 \u00b7 Source | Material & Packaging] Commodity Index Advisor",
       "geDisplayName": "[Source \u00b7 Material & Packaging] Commodity Index Advisor",
-      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging] Commodity Index Advisor (Category Sourcing Mgr (Direct)): Correlates CBOT/Platts feedstocks with depletion to advise hedging. Outcome: Optimizes forward-contract windows."
+      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging] Commodity Index Advisor (Category Sourcing Mgr (Direct)): Correlates CBOT/Platts feedstocks with depletion to advise hedging. Outcome: Optimizes forward-contract windows.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "rfq_should_cost_agent": {
       "id": "rfq_should_cost_agent",
@@ -9933,7 +10217,24 @@
       "categoryTag": "02 \u00b7 Source | Material & Packaging",
       "categoryDisplayName": "[02 \u00b7 Source | Material & Packaging] Dynamic Should-Cost Agent",
       "geDisplayName": "[Source \u00b7 Material & Packaging] Dynamic Should-Cost Agent",
-      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging] Dynamic Should-Cost Agent (Strategic Sourcing Lead): Deconstructs packaging specs (resin weight, corrugate, conversion energy). Outcome: Fact-based margin leverage in RFPs."
+      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging] Dynamic Should-Cost Agent (Strategic Sourcing Lead): Deconstructs packaging specs (resin weight, corrugate, conversion energy). Outcome: Fact-based margin leverage in RFPs.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "sustainable_packaging_agent": {
       "id": "sustainable_packaging_agent",
@@ -10228,7 +10529,24 @@
       "categoryTag": "02 \u00b7 Source | Material & Packaging",
       "categoryDisplayName": "[02 \u00b7 Source | Material & Packaging] Sustainable Packaging Agent",
       "geDisplayName": "[Source] Sustainable Packaging Agent",
-      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging] Sustainable Packaging Agent (Packaging R&D Engineer): Evaluates PCR resins and barrier materials against line runnability & taxes. Outcome: Mitigates EPR and landfill taxation."
+      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging] Sustainable Packaging Agent (Packaging R&D Engineer): Evaluates PCR resins and barrier materials against line runnability & taxes. Outcome: Mitigates EPR and landfill taxation.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "tariff_esg_agent": {
       "id": "tariff_esg_agent",
@@ -10488,7 +10806,24 @@
       "categoryTag": "02 \u00b7 Source | Contract & PO Mgmt",
       "categoryDisplayName": "[02 \u00b7 Source | Contract & PO Mgmt] Contract Leakage Agent",
       "geDisplayName": "[Source \u00b7 Contract & PO Mgmt] Contract Leakage Agent",
-      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt] Contract Leakage Agent (Commercial Sourcing / Legal): Reconciles live spend against negotiated rebate tiers and volume discount scales. Outcome: Recovers missed rebates & surcharges."
+      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt] Contract Leakage Agent (Commercial Sourcing / Legal): Reconciles live spend against negotiated rebate tiers and volume discount scales. Outcome: Recovers missed rebates & surcharges.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "master_data_leadtime_steward": {
       "id": "master_data_leadtime_steward",
@@ -10821,7 +11156,24 @@
       "categoryTag": "02 \u00b7 Source | Contract & PO Mgmt",
       "categoryDisplayName": "[02 \u00b7 Source | Contract & PO Mgmt] PO Expediting Agent",
       "geDisplayName": "[Source \u00b7 Contract & PO Mgmt] PO Expediting Agent",
-      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt] PO Expediting Agent (Buyer / Procurement Coord.): Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments. Outcome: Resolves ~70% of standard PO delays."
+      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt] PO Expediting Agent (Buyer / Procurement Coord.): Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments. Outcome: Resolves ~70% of standard PO delays.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "three_way_match_dispute": {
       "id": "three_way_match_dispute",
@@ -11116,7 +11468,24 @@
       "categoryTag": "02 \u00b7 Source | Contract & PO Mgmt",
       "categoryDisplayName": "[02 \u00b7 Source | Contract & PO Mgmt] Three-Way Match Dispute",
       "geDisplayName": "[Source \u00b7 Contract & PO Mgmt] Three-Way Match Dispute",
-      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt] Three-Way Match Dispute (Accounts Payable Lead): Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. Outcome: Prevents vendor holds & saves discounts."
+      "categorizedDescription": "[Category: 02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt] Three-Way Match Dispute (Accounts Payable Lead): Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. Outcome: Prevents vendor holds & saves discounts.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "finite_production_scheduler": {
       "id": "finite_production_scheduler",
@@ -11399,7 +11768,24 @@
       "categoryTag": "03 \u00b7 Make | Production Scheduling",
       "categoryDisplayName": "[03 \u00b7 Make | Production Scheduling] Changeover Optimizer",
       "geDisplayName": "[Make \u00b7 Production Scheduling] Changeover Optimizer",
-      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Production Scheduling] Changeover Optimizer (Master Production Scheduler): Sequences allergen, kosher, and packaging runs to minimize washdowns. Outcome: Cuts sanitation downtime by 15\u201325%."
+      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Production Scheduling] Changeover Optimizer (Master Production Scheduler): Sequences allergen, kosher, and packaging runs to minimize washdowns. Outcome: Cuts sanitation downtime by 15\u201325%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "line_schedule_optimizer": {
       "id": "line_schedule_optimizer",
@@ -11682,7 +12068,24 @@
       "categoryTag": "03 \u00b7 Make | Production Scheduling",
       "categoryDisplayName": "[03 \u00b7 Make | Production Scheduling] Disruption Re-sequencer",
       "geDisplayName": "[Make \u00b7 Production Scheduling] Disruption Re-sequencer",
-      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Production Scheduling] Disruption Re-sequencer (Shop Floor / Shift Lead): Detects machine halts and re-routes perishable WIP to alternate lines. Outcome: Line reallocation in <3 minutes."
+      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Production Scheduling] Disruption Re-sequencer (Shop Floor / Shift Lead): Detects machine halts and re-routes perishable WIP to alternate lines. Outcome: Line reallocation in <3 minutes.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "labor_line_balancing_agent": {
       "id": "labor_line_balancing_agent",
@@ -11977,7 +12380,24 @@
       "categoryTag": "03 \u00b7 Make | Production Scheduling",
       "categoryDisplayName": "[03 \u00b7 Make | Production Scheduling] Labor & Line Balancing",
       "geDisplayName": "[Make \u00b7 Production Scheduling] Labor & Line Balancing",
-      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Production Scheduling] Labor & Line Balancing (Plant Operations Manager): Maps shift skill certifications and fatigue constraints to line speeds. Outcome: Prevents certified skill bottlenecks."
+      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Production Scheduling] Labor & Line Balancing (Plant Operations Manager): Maps shift skill certifications and fatigue constraints to line speeds. Outcome: Prevents certified skill bottlenecks.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "predictive_oee_sentinel": {
       "id": "predictive_oee_sentinel",
@@ -12284,7 +12704,24 @@
       "categoryTag": "03 \u00b7 Make | Capacity Planning",
       "categoryDisplayName": "[03 \u00b7 Make | Capacity Planning] Bottleneck Diagnostic",
       "geDisplayName": "[Make \u00b7 Capacity Planning] Bottleneck Diagnostic",
-      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Capacity Planning] Bottleneck Diagnostic (Supply Chain Ops Director): Assesses CIP utilities, boiler loads, and cold storage holding limits. Outcome: Flags facility constraints 3\u20136 mos out."
+      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Capacity Planning] Bottleneck Diagnostic (Supply Chain Ops Director): Assesses CIP utilities, boiler loads, and cold storage holding limits. Outcome: Flags facility constraints 3\u20136 mos out.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "copacker_allocation_agent": {
       "id": "copacker_allocation_agent",
@@ -12579,7 +13016,24 @@
       "categoryTag": "03 \u00b7 Make | Capacity Planning",
       "categoryDisplayName": "[03 \u00b7 Make | Capacity Planning] Co-Packer Allocation",
       "geDisplayName": "[Make \u00b7 Capacity Planning] Co-Packer Allocation",
-      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Capacity Planning] Co-Packer Allocation (External Sourcing / CMO Lead): Models internal conversion costs against co-packer tolling agreements. Outcome: Optimizes net gross margin per case."
+      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Capacity Planning] Co-Packer Allocation (External Sourcing / CMO Lead): Models internal conversion costs against co-packer tolling agreements. Outcome: Optimizes net gross margin per case.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "capex_simulator_agent": {
       "id": "capex_simulator_agent",
@@ -12874,7 +13328,24 @@
       "categoryTag": "03 \u00b7 Make | Capacity Planning",
       "categoryDisplayName": "[03 \u00b7 Make | Capacity Planning] CapEx Simulator",
       "geDisplayName": "[Make \u00b7 Capacity Planning] CapEx Simulator",
-      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Capacity Planning] CapEx Simulator (VP Manufacturing Engineering): Simulates multi-year volume trends to test high-speed line expansions. Outcome: Delivers defensible board CapEx ROI."
+      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Capacity Planning] CapEx Simulator (VP Manufacturing Engineering): Simulates multi-year volume trends to test high-speed line expansions. Outcome: Delivers defensible board CapEx ROI.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-pro",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 15.8,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "inline_yield_guardian": {
       "id": "inline_yield_guardian",
@@ -13105,7 +13576,24 @@
       "categoryTag": "03 \u00b7 Make | Quality & Compliance",
       "categoryDisplayName": "[03 \u00b7 Make | Quality & Compliance] Visual Defect Triager",
       "geDisplayName": "[Make \u00b7 Quality & Compliance] Visual Defect Triager",
-      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance] Visual Defect Triager (QA Manager / Line Inspector): Inspects high-speed video frames for crimped seals, lot codes, and labels. Outcome: Prevents full pallet scrap & holds."
+      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance] Visual Defect Triager (QA Manager / Line Inspector): Inspects high-speed video frames for crimped seals, lot codes, and labels. Outcome: Prevents full pallet scrap & holds.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "batch_record_auditor": {
       "id": "batch_record_auditor",
@@ -13400,7 +13888,24 @@
       "categoryTag": "03 \u00b7 Make | Quality & Compliance",
       "categoryDisplayName": "[03 \u00b7 Make | Quality & Compliance] Batch Record Auditor",
       "geDisplayName": "[Make \u00b7 Quality & Compliance] Batch Record Auditor",
-      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance] Batch Record Auditor (Regulatory Compliance Lead): Parses BPR and COA documents to flag pasteurization & CCP deviations. Outcome: 60\u201380% faster batch release review."
+      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance] Batch Record Auditor (Regulatory Compliance Lead): Parses BPR and COA documents to flag pasteurization & CCP deviations. Outcome: 60\u201380% faster batch release review.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "scrap_defect_root_cause_agent": {
       "id": "scrap_defect_root_cause_agent",
@@ -13656,7 +14161,24 @@
       "categoryTag": "03 \u00b7 Make | Quality & Compliance",
       "categoryDisplayName": "[03 \u00b7 Make | Quality & Compliance] RCA & CAPA Copilot",
       "geDisplayName": "[Make \u00b7 Quality & Compliance] RCA & CAPA Copilot",
-      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance] RCA & CAPA Copilot (Continuous Improvement Lead): Correlates consumer complaints with ingredient lots and machine telemetry. Outcome: Speeds 5-Why investigation closures."
+      "categorizedDescription": "[Category: 03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance] RCA & CAPA Copilot (Continuous Improvement Lead): Correlates consumer complaints with ingredient lots and machine telemetry. Outcome: Speeds 5-Why investigation closures.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "meio_safety_stock_agent": {
       "id": "meio_safety_stock_agent",
@@ -13904,7 +14426,24 @@
       "categoryTag": "04 \u00b7 Inventory & DC | Positioning & Optimization",
       "categoryDisplayName": "[04 \u00b7 Inventory & DC | Positioning & Optimization] Safety Stock Agent",
       "geDisplayName": "[Inventory & DC] Safety Stock Agent",
-      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization] Safety Stock Agent (Inventory Optimization Lead): Recalibrates multi-echelon buffers using live lead-time and demand variance. Outcome: Cuts working capital by 10\u201318%."
+      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization] Safety Stock Agent (Inventory Optimization Lead): Recalibrates multi-echelon buffers using live lead-time and demand variance. Outcome: Cuts working capital by 10\u201318%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "slob_disposition_agent": {
       "id": "slob_disposition_agent",
@@ -14199,7 +14738,24 @@
       "categoryTag": "04 \u00b7 Inventory & DC | Positioning & Optimization",
       "categoryDisplayName": "[04 \u00b7 Inventory & DC | Positioning & Optimization] SLOB Disposition Agent",
       "geDisplayName": "[Inventory & DC] SLOB Disposition Agent",
-      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization] SLOB Disposition Agent (Inventory Controller / Buyer): Analyzes shelf-life risk and triggers promotional bundles or liquidations. Outcome: Prevents expired stock write-offs."
+      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization] SLOB Disposition Agent (Inventory Controller / Buyer): Analyzes shelf-life risk and triggers promotional bundles or liquidations. Outcome: Prevents expired stock write-offs.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "crossdock_transfer_orchestrator": {
       "id": "crossdock_transfer_orchestrator",
@@ -14431,7 +14987,24 @@
       "categoryTag": "04 \u00b7 Inventory & DC | Positioning & Optimization",
       "categoryDisplayName": "[04 \u00b7 Inventory & DC | Positioning & Optimization] Inter-Facility Rebalancer",
       "geDisplayName": "[Inventory & DC] Inter-Facility Rebalancer",
-      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization] Inter-Facility Rebalancer (Replenishment Planner): Generates automated inter-DC and store transfers to balance localized gluts. Outcome: Eliminates regional out-of-stocks."
+      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization] Inter-Facility Rebalancer (Replenishment Planner): Generates automated inter-DC and store transfers to balance localized gluts. Outcome: Eliminates regional out-of-stocks.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "warehouse_slotting_agent": {
       "id": "warehouse_slotting_agent",
@@ -14679,7 +15252,24 @@
       "categoryTag": "04 \u00b7 Inventory & DC | Warehouse Operations",
       "categoryDisplayName": "[04 \u00b7 Inventory & DC | Warehouse Operations] Dynamic Slotting Agent",
       "geDisplayName": "[Inventory & DC] Dynamic Slotting Agent",
-      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations] Dynamic Slotting Agent (DC Operations Mgr / IE Lead): Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting. Outcome: Reduces picker transit time by 15\u201330%."
+      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations] Dynamic Slotting Agent (DC Operations Mgr / IE Lead): Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting. Outcome: Reduces picker transit time by 15\u201330%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "dock_to_stock_agent": {
       "id": "dock_to_stock_agent",
@@ -14974,7 +15564,24 @@
       "categoryTag": "04 \u00b7 Inventory & DC | Warehouse Operations",
       "categoryDisplayName": "[04 \u00b7 Inventory & DC | Warehouse Operations] Dock-to-Stock Agent",
       "geDisplayName": "[Inventory & DC] Dock-to-Stock Agent",
-      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations] Dock-to-Stock Agent (Inbound Receiving Supervisor): Parses scanned BOLs and pallet photos to reconcile open ASN variances. Outcome: Dock turnaround in minutes vs. hours."
+      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations] Dock-to-Stock Agent (Inbound Receiving Supervisor): Parses scanned BOLs and pallet photos to reconcile open ASN variances. Outcome: Dock turnaround in minutes vs. hours.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "wave_fulfillment_copilot": {
       "id": "wave_fulfillment_copilot",
@@ -15269,7 +15876,24 @@
       "categoryTag": "04 \u00b7 Inventory & DC | Warehouse Operations",
       "categoryDisplayName": "[04 \u00b7 Inventory & DC | Warehouse Operations] Wave Fulfillment Copilot",
       "geDisplayName": "[Inventory & DC] Wave Fulfillment Copilot",
-      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations] Wave Fulfillment Copilot (DC Shift Floor Lead): Balances picker lines dynamically to protect carrier pickup cutoff times. Outcome: Prevents missed dispatch windows (OTIF)."
+      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations] Wave Fulfillment Copilot (DC Shift Floor Lead): Balances picker lines dynamically to protect carrier pickup cutoff times. Outcome: Prevents missed dispatch windows (OTIF).",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "planogram_merchandising_vision_auditor": {
       "id": "planogram_merchandising_vision_auditor",
@@ -15470,7 +16094,24 @@
       "categoryTag": "04 \u00b7 Inventory & DC | Omnichannel Visibility",
       "categoryDisplayName": "[04 \u00b7 Inventory & DC | Omnichannel Visibility] Phantom Inventory Sensor",
       "geDisplayName": "[Inventory & DC] Phantom Inventory Sensor",
-      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility] Phantom Inventory Sensor (Store Operations / Omni Lead): Identifies shrinkage anomalies when on-hand stock stops scanning at POS. Outcome: Triggers targeted floor cycle counts."
+      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility] Phantom Inventory Sensor (Store Operations / Omni Lead): Identifies shrinkage anomalies when on-hand stock stops scanning at POS. Outcome: Triggers targeted floor cycle counts.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "atp_order_promising_agent": {
       "id": "atp_order_promising_agent",
@@ -15705,7 +16346,24 @@
       "categoryTag": "04 \u00b7 Inventory & DC | Omnichannel Visibility",
       "categoryDisplayName": "[04 \u00b7 Inventory & DC | Omnichannel Visibility] SFS / BOPIS Sourcing",
       "geDisplayName": "[Inventory & DC] SFS / BOPIS Sourcing",
-      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility] SFS / BOPIS Sourcing (Omnichannel Fulfillment Dir.): Selects lowest-cost fulfillment nodes based on store labor and parcel zones. Outcome: Lowers parcel costs & split rates."
+      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility] SFS / BOPIS Sourcing (Omnichannel Fulfillment Dir.): Selects lowest-cost fulfillment nodes based on store labor and parcel zones. Outcome: Lowers parcel costs & split rates.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "returns_triage_agent": {
       "id": "returns_triage_agent",
@@ -16000,7 +16658,24 @@
       "categoryTag": "04 \u00b7 Inventory & DC | Omnichannel Visibility",
       "categoryDisplayName": "[04 \u00b7 Inventory & DC | Omnichannel Visibility] Returns Triage Agent",
       "geDisplayName": "[Inventory & DC] Returns Triage Agent",
-      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility] Returns Triage Agent (Reverse Logistics Lead): Evaluates item condition scans to triage restock, vendor return, or liquidation. Outcome: Restocks sellable returns within 24h."
+      "categorizedDescription": "[Category: 04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility] Returns Triage Agent (Reverse Logistics Lead): Evaluates item condition scans to triage restock, vendor return, or liquidation. Outcome: Restocks sellable returns within 24h.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "load_consolidation_agent": {
       "id": "load_consolidation_agent",
@@ -16217,7 +16892,24 @@
       "categoryTag": "05 \u00b7 Logistics | First & Mid-Mile",
       "categoryDisplayName": "[05 \u00b7 Logistics | First & Mid-Mile] Load Consolidation",
       "geDisplayName": "[Logistics \u00b7 First & Mid-Mile] Load Consolidation",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile] Load Consolidation (Transport Planner / Inbound Mgr): Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling. Outcome: 12\u201318% higher trailer fill rate."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile] Load Consolidation (Transport Planner / Inbound Mgr): Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling. Outcome: 12\u201318% higher trailer fill rate.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "yard_dock_sequencer": {
       "id": "yard_dock_sequencer",
@@ -16441,7 +17133,24 @@
       "categoryTag": "05 \u00b7 Logistics | First & Mid-Mile",
       "categoryDisplayName": "[05 \u00b7 Logistics | First & Mid-Mile] Yard Disruption Agent",
       "geDisplayName": "[Logistics \u00b7 First & Mid-Mile] Yard Disruption Agent",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile] Yard Disruption Agent (Yard Master / Plant Logistics): Parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically. Outcome: Eliminates demurrage & line starvation."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile] Yard Disruption Agent (Yard Master / Plant Logistics): Parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically. Outcome: Eliminates demurrage & line starvation.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "cold_chain_auditor": {
       "id": "cold_chain_auditor",
@@ -16736,7 +17445,24 @@
       "categoryTag": "05 \u00b7 Logistics | First & Mid-Mile",
       "categoryDisplayName": "[05 \u00b7 Logistics | First & Mid-Mile] Cold-Chain Auditor",
       "geDisplayName": "[Logistics \u00b7 First & Mid-Mile] Cold-Chain Auditor",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile] Cold-Chain Auditor (Cold Chain QA / Logistics Dir.): Analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims. Outcome: Prevents perishable food spoilage."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile] Cold-Chain Auditor (Cold Chain QA / Logistics Dir.): Analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims. Outcome: Prevents perishable food spoilage.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "aisle_aligned_pallet_agent": {
       "id": "aisle_aligned_pallet_agent",
@@ -17031,7 +17757,24 @@
       "categoryTag": "05 \u00b7 Logistics | Store Replenishment",
       "categoryDisplayName": "[05 \u00b7 Logistics | Store Replenishment] Aisle-Aligned Pallet",
       "geDisplayName": "[Logistics \u00b7 Store Replenishment] Aisle-Aligned Pallet",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Store Replenishment] Aisle-Aligned Pallet (Outbound Lead / Industrial Eng.): Sequences DC pick waves to match individual store planograms and shelf layouts. Outcome: Cuts store stocking labor by 20\u201335%."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Store Replenishment] Aisle-Aligned Pallet (Outbound Lead / Industrial Eng.): Sequences DC pick waves to match individual store planograms and shelf layouts. Outcome: Cuts store stocking labor by 20\u201335%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "store_capacity_agent": {
       "id": "store_capacity_agent",
@@ -17326,7 +18069,24 @@
       "categoryTag": "05 \u00b7 Logistics | Store Replenishment",
       "categoryDisplayName": "[05 \u00b7 Logistics | Store Replenishment] Store Capacity Agent",
       "geDisplayName": "[Logistics \u00b7 Store Replenishment] Store Capacity Agent",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Store Replenishment] Store Capacity Agent (Store Replenishment Lead): Throttles push replenishment based on store backroom limits and live POS velocity. Outcome: Reduces backroom stock by 25%."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Store Replenishment] Store Capacity Agent (Store Replenishment Lead): Throttles push replenishment based on store backroom limits and live POS velocity. Outcome: Reduces backroom stock by 25%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "port_drayage_orchestrator": {
       "id": "port_drayage_orchestrator",
@@ -17514,7 +18274,24 @@
       "categoryTag": "05 \u00b7 Logistics | Store Replenishment",
       "categoryDisplayName": "[05 \u00b7 Logistics | Store Replenishment] Curfew Orchestrator",
       "geDisplayName": "[Logistics \u00b7 Store Replenishment] Curfew Orchestrator",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Store Replenishment] Curfew Orchestrator (Retail Logistics Dispatcher): Coordinates municipal delivery curfews and store dock shift schedules dynamically. Outcome: 98%+ on-time store window compliance."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Store Replenishment] Curfew Orchestrator (Retail Logistics Dispatcher): Coordinates municipal delivery curfews and store dock shift schedules dynamically. Outcome: 98%+ on-time store window compliance.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "geocoding_intelligence_agent": {
       "id": "geocoding_intelligence_agent",
@@ -17809,7 +18586,24 @@
       "categoryTag": "05 \u00b7 Logistics | Last-Mile Delivery",
       "categoryDisplayName": "[05 \u00b7 Logistics | Last-Mile Delivery] Geocoding Intelligence",
       "geDisplayName": "[Logistics \u00b7 Last-Mile Delivery] Geocoding Intelligence",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery] Geocoding Intelligence (Last-Mile Operations Lead): Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers. Outcome: Drops failed deliveries by 30\u201345%."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery] Geocoding Intelligence (Last-Mile Operations Lead): Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers. Outcome: Drops failed deliveries by 30\u201345%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "multimodal_mode_shift_agent": {
       "id": "multimodal_mode_shift_agent",
@@ -17994,7 +18788,24 @@
       "categoryTag": "05 \u00b7 Logistics | Last-Mile Delivery",
       "categoryDisplayName": "[05 \u00b7 Logistics | Last-Mile Delivery] Courier Allocation",
       "geDisplayName": "[Logistics \u00b7 Last-Mile Delivery] Courier Allocation",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery] Courier Allocation (E-Commerce Logistics Dir.): Routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card. Outcome: Lowers last-mile cost by 8\u201314%."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery] Courier Allocation (E-Commerce Logistics Dir.): Routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card. Outcome: Lowers last-mile cost by 8\u201314%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "otif_penalty_shield": {
       "id": "otif_penalty_shield",
@@ -18167,7 +18978,24 @@
       "categoryTag": "05 \u00b7 Logistics | Last-Mile Delivery",
       "categoryDisplayName": "[05 \u00b7 Logistics | Last-Mile Delivery] Delivery Exception Copilot",
       "geDisplayName": "[Logistics] Delivery Exception Copilot",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery] Delivery Exception Copilot (Customer Support Ops Lead): Detects en-route exceptions and updates customers proactively with reschedule links. Outcome: Decreases WISMO calls by up to 60%."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery] Delivery Exception Copilot (Customer Support Ops Lead): Detects en-route exceptions and updates customers proactively with reschedule links. Outcome: Decreases WISMO calls by up to 60%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "fleetflow_dispatch": {
       "id": "fleetflow_dispatch",
@@ -18389,7 +19217,24 @@
       "categoryTag": "05 \u00b7 Logistics | Route & Carrier",
       "categoryDisplayName": "[05 \u00b7 Logistics | Route & Carrier] Dynamic Rerouter",
       "geDisplayName": "[Logistics \u00b7 Route & Carrier] Dynamic Rerouter",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Route & Carrier] Dynamic Rerouter (Fleet Dispatcher / Central Ops): Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits. Outcome: Cuts fleet fuel usage by 6\u201310%."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Route & Carrier] Dynamic Rerouter (Fleet Dispatcher / Central Ops): Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits. Outcome: Cuts fleet fuel usage by 6\u201310%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "freight_control_tower": {
       "id": "freight_control_tower",
@@ -18570,7 +19415,24 @@
       "categoryTag": "05 \u00b7 Logistics | Route & Carrier",
       "categoryDisplayName": "[05 \u00b7 Logistics | Route & Carrier] Routing Guide Compliance",
       "geDisplayName": "[Logistics \u00b7 Route & Carrier] Routing Guide Compliance",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Route & Carrier] Routing Guide Compliance (Transport Procurement Lead): Tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides. Outcome: Reduces spot freight by 15\u201320%."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Route & Carrier] Routing Guide Compliance (Transport Procurement Lead): Tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides. Outcome: Reduces spot freight by 15\u201320%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "freight_bill_audit_agent": {
       "id": "freight_bill_audit_agent",
@@ -18865,7 +19727,24 @@
       "categoryTag": "05 \u00b7 Logistics | Route & Carrier",
       "categoryDisplayName": "[05 \u00b7 Logistics | Route & Carrier] Freight Bill Audit Agent",
       "geDisplayName": "[Logistics \u00b7 Route & Carrier] Freight Bill Audit Agent",
-      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Route & Carrier] Freight Bill Audit Agent (Freight Controller / Claims): Extracts signed PODs and rate contracts via OCR to audit accessorial surcharges. Outcome: Captures 3\u20137% in overbilled fees."
+      "categorizedDescription": "[Category: 05 \u00b7 Distribution & Logistics \u2014 Route & Carrier] Freight Bill Audit Agent (Freight Controller / Claims): Extracts signed PODs and rate contracts via OCR to audit accessorial surcharges. Outcome: Captures 3\u20137% in overbilled fees.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "reverse_rma_optimizer": {
       "id": "reverse_rma_optimizer",
@@ -19040,7 +19919,24 @@
       "categoryTag": "06 \u00b7 Returns & ESG | Returns & Claims Mgmt",
       "categoryDisplayName": "[06 \u00b7 Returns & ESG | Returns & Claims Mgmt] Return Fraud Sentinel",
       "geDisplayName": "[Returns & ESG] Return Fraud Sentinel",
-      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt] Return Fraud Sentinel (Reverse Logistics / Fraud Lead): Analyzes item photos and packaging video feeds to detect wear or swapped tags. Outcome: Cuts returns fraud abuse by 25\u201340%."
+      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt] Return Fraud Sentinel (Reverse Logistics / Fraud Lead): Analyzes item photos and packaging video feeds to detect wear or swapped tags. Outcome: Cuts returns fraud abuse by 25\u201340%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "keep_it_routing_advisor": {
       "id": "keep_it_routing_advisor",
@@ -19335,7 +20231,24 @@
       "categoryTag": "06 \u00b7 Returns & ESG | Returns & Claims Mgmt",
       "categoryDisplayName": "[06 \u00b7 Returns & ESG | Returns & Claims Mgmt] Keep-It & Routing Advisor",
       "geDisplayName": "[Returns & ESG] Keep-It & Routing Advisor",
-      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt] Keep-It & Routing Advisor (Customer Experience (CX) Lead): Evaluates salvage margins vs reverse freight to determine keep-it instant refunds. Outcome: Lowers net return costs by 15\u201322%."
+      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt] Keep-It & Routing Advisor (Customer Experience (CX) Lead): Evaluates salvage margins vs reverse freight to determine keep-it instant refunds. Outcome: Lowers net return costs by 15\u201322%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "osd_freight_claims_agent": {
       "id": "osd_freight_claims_agent",
@@ -19630,7 +20543,24 @@
       "categoryTag": "06 \u00b7 Returns & ESG | Returns & Claims Mgmt",
       "categoryDisplayName": "[06 \u00b7 Returns & ESG | Returns & Claims Mgmt] OS&D Freight Claims",
       "geDisplayName": "[Returns & ESG] OS&D Freight Claims",
-      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt] OS&D Freight Claims (Claims Specialist / Controller): Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes. Outcome: Resolves carrier claims in <72 hours."
+      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt] OS&D Freight Claims (Claims Specialist / Controller): Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes. Outcome: Resolves carrier claims in <72 hours.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "dynamic_markdown_agent": {
       "id": "dynamic_markdown_agent",
@@ -19925,7 +20855,24 @@
       "categoryTag": "06 \u00b7 Returns & ESG | Expiry & Markdowns",
       "categoryDisplayName": "[06 \u00b7 Returns & ESG | Expiry & Markdowns] Dynamic Markdown Agent",
       "geDisplayName": "[Returns & ESG] Dynamic Markdown Agent",
-      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns] Dynamic Markdown Agent (Merchandising / Store Ops Mgr): Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts. Outcome: Cuts perishable scrap by 20\u201335%."
+      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns] Dynamic Markdown Agent (Merchandising / Store Ops Mgr): Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts. Outcome: Cuts perishable scrap by 20\u201335%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "short_dated_redistributor": {
       "id": "short_dated_redistributor",
@@ -20220,7 +21167,24 @@
       "categoryTag": "06 \u00b7 Returns & ESG | Expiry & Markdowns",
       "categoryDisplayName": "[06 \u00b7 Returns & ESG | Expiry & Markdowns] Short-Dated Redistributor",
       "geDisplayName": "[Returns & ESG] Short-Dated Redistributor",
-      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns] Short-Dated Redistributor (Inventory Disposition Lead): Matches near-date DC lots with discounters or food banks before acceptance cutoffs. Outcome: Diverts bulk perishables from landfill."
+      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns] Short-Dated Redistributor (Inventory Disposition Lead): Matches near-date DC lots with discounters or food banks before acceptance cutoffs. Outcome: Diverts bulk perishables from landfill.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "food_waste_esg_copilot": {
       "id": "food_waste_esg_copilot",
@@ -20515,7 +21479,24 @@
       "categoryTag": "06 \u00b7 Returns & ESG | Expiry & Markdowns",
       "categoryDisplayName": "[06 \u00b7 Returns & ESG | Expiry & Markdowns] Food Waste & ESG Copilot",
       "geDisplayName": "[Returns & ESG] Food Waste & ESG Copilot",
-      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns] Food Waste & ESG Copilot (Chief Sustainability Officer): Aggregates store shrink and organic haul logs to generate audited GHG diversion filings. Outcome: Automates annual circularity reporting."
+      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns] Food Waste & ESG Copilot (Chief Sustainability Officer): Aggregates store shrink and organic haul logs to generate audited GHG diversion filings. Outcome: Automates annual circularity reporting.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "rti_balance_reconciler": {
       "id": "rti_balance_reconciler",
@@ -20843,7 +21824,24 @@
       "categoryTag": "06 \u00b7 Returns & ESG | Pallet & Tote Reclamation",
       "categoryDisplayName": "[06 \u00b7 Returns & ESG | Pallet & Tote Reclamation] RTI Balance Reconciler",
       "geDisplayName": "[Returns & ESG] RTI Balance Reconciler",
-      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation] RTI Balance Reconciler (Asset Recovery / RTI Manager): Reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. Outcome: Eliminates 30% in non-return fee fines."
+      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation] RTI Balance Reconciler (Asset Recovery / RTI Manager): Reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. Outcome: Eliminates 30% in non-return fee fines.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "intermodal_rail_linehaul_agent": {
       "id": "intermodal_rail_linehaul_agent",
@@ -21020,7 +22018,24 @@
       "categoryTag": "06 \u00b7 Returns & ESG | Pallet & Tote Reclamation",
       "categoryDisplayName": "[06 \u00b7 Returns & ESG | Pallet & Tote Reclamation] Milk-Run Consolidation",
       "geDisplayName": "[Returns & ESG] Milk-Run Consolidation",
-      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation] Milk-Run Consolidation (Reverse Transport Planner): Schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. Outcome: Boosts backhaul fill rate by 25\u201340%."
+      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation] Milk-Run Consolidation (Reverse Transport Planner): Schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. Outcome: Boosts backhaul fill rate by 25\u201340%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     },
     "sanitation_health_agent": {
       "id": "sanitation_health_agent",
@@ -21315,7 +22330,24 @@
       "categoryTag": "06 \u00b7 Returns & ESG | Pallet & Tote Reclamation",
       "categoryDisplayName": "[06 \u00b7 Returns & ESG | Pallet & Tote Reclamation] Sanitation & Health Agent",
       "geDisplayName": "[Returns & ESG] Sanitation & Health Agent",
-      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation] Sanitation & Health Agent (Packaging QA / Food Safety): Inspects return photos and wash logs for structural fatigue and chemical compliance. Outcome: Extends reusable lifecycle by 15\u201320%."
+      "categorizedDescription": "[Category: 06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation] Sanitation & Health Agent (Packaging QA / Food Safety): Inspects return photos and wash logs for structural fatigue and chemical compliance. Outcome: Extends reusable lifecycle by 15\u201320%.",
+      "standardsCompliance": [
+        "ASCM SCOR DS v14.0 Plan (P1-P5)",
+        "VICS CPFR Collaborative Planning Standard",
+        "ISO 9001:2015 Quality Management",
+        "Google ADK + A2A v1.0 + MCP + A2UI v0.9",
+        "ISO/IEC 42001 AI Management System"
+      ],
+      "finopsProfile": {
+        "primaryRuntimeModel": "gemini-2.5-flash",
+        "contextCachingEnabled": true,
+        "cacheDiscountPct": 75,
+        "costPer1kInvocationsUsd": 0.6,
+        "fsp3YrDiscountPct": 20,
+        "sharedBigQueryDataset": "supply_chain_twin",
+        "tableCount": 4,
+        "a2uiProtocolVersion": "v0.9"
+      }
     }
   },
   "valueChains": {
@@ -21909,199 +22941,288 @@
   },
   "periodicGroups": [
     {
-      "id": "universal_csco",
-      "code": "GROUP 0 \u00b7 CORE",
-      "title": "Universal CSCO Core (4)",
-      "color": "#38bdf8",
-      "glow": "rgba(56,189,248,0.35)"
-    },
-    {
       "id": "demand_sop",
       "code": "GROUP I \u00b7 PLAN",
-      "title": "01 \u00b7 Plan: Demand & S&OP (4)",
-      "color": "#2e8b57",
+      "title": "01 \u00b7 Planning & Strategy (9 Agents \u00b7 3 Sub-Pillars)",
+      "color": "#10b981",
       "glow": "rgba(16,185,129,0.35)"
     },
     {
       "id": "sourcing_procurement",
       "code": "GROUP II \u00b7 SOURCE",
-      "title": "02 \u00b7 Source: Procurement (4)",
-      "color": "#7e57c2",
-      "glow": "rgba(161,66,244,0.35)"
+      "title": "02 \u00b7 Sourcing & Procurement (10 Agents \u00b7 3 Sub-Pillars)",
+      "color": "#a855f7",
+      "glow": "rgba(168,85,247,0.35)"
     },
     {
       "id": "manufacturing_prod",
       "code": "GROUP III \u00b7 MAKE",
-      "title": "03 \u00b7 Make: Manufacturing (4)",
-      "color": "#3b78e7",
+      "title": "03 \u00b7 Manufacturing & Operations (10 Agents \u00b7 3 Sub-Pillars)",
+      "color": "#3b82f6",
       "glow": "rgba(59,130,246,0.35)"
     },
     {
       "id": "inventory_warehouse",
-      "code": "GROUP IV \u00b7 FULFILL",
-      "title": "04 \u00b7 Fulfill: 3D WMS & MEIO (6)",
-      "color": "#00897b",
+      "code": "GROUP IV \u00b7 STORE",
+      "title": "04 \u00b7 Warehousing & Fulfillment (10 Agents \u00b7 3 Sub-Pillars)",
+      "color": "#00d2ff",
       "glow": "rgba(0,210,255,0.35)"
     },
     {
       "id": "logistics_fleet",
-      "code": "GROUP V \u00b7 DELIVER",
-      "title": "05 \u00b7 Deliver: Ship/Air/Rail/Road/TM&D (10)",
-      "color": "#d97706",
-      "glow": "rgba(255,140,0,0.35)"
+      "code": "GROUP V \u00b7 MOVE",
+      "title": "05 \u00b7 Logistics & Transportation (12 Agents \u00b7 4 Sub-Pillars)",
+      "color": "#f59e0b",
+      "glow": "rgba(245,158,11,0.35)"
     },
     {
       "id": "circular_enable",
-      "code": "GROUP VI \u00b7 RETURN & ENABLE",
-      "title": "06 \u00b7 Return & Enable: OTIF & ESG (3)",
-      "color": "#c53929",
-      "glow": "rgba(236,72,153,0.35)"
+      "code": "GROUP VI \u00b7 SUSTAIN",
+      "title": "06 \u00b7 Retail, Sustainability & Circular (9 Agents \u00b7 3 Sub-Pillars)",
+      "color": "#f43f5e",
+      "glow": "rgba(244,63,94,0.35)"
     }
   ],
   "periodicAgentMeta": {
     "csco_control_tower_copilot": {
-      "num": "01",
-      "sym": "Ct",
-      "short": "TowerMind",
-      "group": "universal_csco"
+      "num": 9,
+      "sym": "Cc",
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 S&OP / IBP",
+      "subPillar": "",
+      "short": "csco_control_tower_cop",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "disruption_war_room_orchestrator": {
-      "num": "02",
-      "sym": "Sw",
-      "short": "StormShield",
-      "group": "universal_csco"
+      "num": 8,
+      "sym": "Dw",
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 S&OP / IBP",
+      "subPillar": "",
+      "short": "disruption_war_room_or",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "master_data_leadtime_steward": {
-      "num": "03",
-      "sym": "Dc",
-      "short": "DataCleanse",
-      "group": "universal_csco"
+      "num": 20,
+      "sym": "Md",
+      "group": "demand_sop",
+      "category": "02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt",
+      "subPillar": "",
+      "short": "master_data_leadtime_s",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "working_capital_cash_bridge": {
-      "num": "04",
-      "sym": "Mb",
-      "short": "MarginBridge",
-      "group": "universal_csco"
+      "num": 10,
+      "sym": "Wc",
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU",
+      "subPillar": "",
+      "short": "working_capital_cash_b",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "demand_sensing_agent": {
-      "num": "05",
-      "sym": "Pc",
-      "short": "PulseCast",
-      "group": "demand_sop"
+      "num": 1,
+      "sym": "Ds",
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 Demand Forecasting",
+      "subPillar": "",
+      "short": "demand_sensing_agent",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "sop_scenario_weaver": {
-      "num": "06",
-      "sym": "Sy",
-      "short": "Synapse S&OP",
-      "group": "demand_sop"
+      "num": 7,
+      "sym": "Ss",
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 S&OP / IBP",
+      "subPillar": "",
+      "short": "sop_scenario_weaver",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "promo_lift_simulator": {
-      "num": "07",
-      "sym": "Eq",
-      "short": "ElasticityIQ",
-      "group": "demand_sop"
+      "num": 4,
+      "sym": "Pl",
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 Trade Promotion",
+      "subPillar": "",
+      "short": "promo_lift_simulator",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "cpfr_sync_agent": {
-      "num": "08",
+      "num": 2,
       "sym": "Cs",
-      "short": "ChannelSync",
-      "group": "demand_sop"
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 Demand Forecasting",
+      "subPillar": "",
+      "short": "cpfr_sync_agent",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "rfq_should_cost_agent": {
-      "num": "09",
-      "sym": "Sp",
-      "short": "SourcePulse",
-      "group": "sourcing_procurement"
+      "num": 17,
+      "sym": "Rs",
+      "group": "demand_sop",
+      "category": "02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging",
+      "subPillar": "",
+      "short": "rfq_should_cost_agent",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "tier_n_risk_sentinel": {
-      "num": "10",
-      "sym": "Nx",
-      "short": "NexusShield",
-      "group": "sourcing_procurement"
+      "num": 13,
+      "sym": "Tn",
+      "group": "demand_sop",
+      "category": "02 \u00b7 Sourcing & Procurement \u2014 Supplier Network",
+      "subPillar": "",
+      "short": "tier_n_risk_sentinel",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "tariff_esg_agent": {
-      "num": "11",
-      "sym": "Cg",
-      "short": "ClauseGuard",
-      "group": "sourcing_procurement"
+      "num": 19,
+      "sym": "Te",
+      "group": "demand_sop",
+      "category": "02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt",
+      "subPillar": "",
+      "short": "tariff_esg_agent",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "supplier_quality_sentinel": {
-      "num": "12",
-      "sym": "Qs",
-      "short": "QualiShield",
-      "group": "sourcing_procurement"
+      "num": 14,
+      "sym": "Sq",
+      "group": "demand_sop",
+      "category": "02 \u00b7 Sourcing & Procurement \u2014 Supplier Network",
+      "subPillar": "",
+      "short": "supplier_quality_senti",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "line_schedule_optimizer": {
-      "num": "13",
-      "sym": "Cm",
-      "short": "ChronosMake",
-      "group": "manufacturing_prod"
+      "num": 23,
+      "sym": "Ls",
+      "group": "demand_sop",
+      "category": "03 \u00b7 Manufacturing & Production \u2014 Production Scheduling",
+      "subPillar": "",
+      "short": "line_schedule_optimize",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "predictive_oee_sentinel": {
-      "num": "14",
-      "sym": "Sg",
-      "short": "SpindleGuard",
-      "group": "manufacturing_prod"
+      "num": 25,
+      "sym": "Po",
+      "group": "demand_sop",
+      "category": "03 \u00b7 Manufacturing & Production \u2014 Capacity Planning",
+      "subPillar": "",
+      "short": "predictive_oee_sentine",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "inline_yield_guardian": {
-      "num": "15",
-      "sym": "Yv",
-      "short": "YieldVision",
-      "group": "manufacturing_prod"
+      "num": 28,
+      "sym": "Iy",
+      "group": "demand_sop",
+      "category": "03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance",
+      "subPillar": "",
+      "short": "inline_yield_guardian",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "eco_cutover_orchestrator": {
-      "num": "16",
-      "sym": "Ch",
-      "short": "ChangeSync",
-      "group": "manufacturing_prod"
+      "num": 11,
+      "sym": "Ec",
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU",
+      "subPillar": "",
+      "short": "eco_cutover_orchestrat",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "meio_safety_stock_agent": {
-      "num": "17",
-      "sym": "Ef",
-      "short": "EchelonFlow",
-      "group": "inventory_warehouse"
+      "num": 31,
+      "sym": "Ms",
+      "group": "demand_sop",
+      "category": "04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization",
+      "subPillar": "",
+      "short": "meio_safety_stock_agen",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "warehouse_slotting_agent": {
-      "num": "18",
-      "sym": "Sm",
-      "short": "SlotMaster 3D",
-      "group": "inventory_warehouse"
+      "num": 34,
+      "sym": "Ws",
+      "group": "demand_sop",
+      "category": "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations",
+      "subPillar": "",
+      "short": "warehouse_slotting_age",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "atp_order_promising_agent": {
-      "num": "19",
-      "sym": "Pg",
-      "short": "PromiseGuard",
-      "group": "inventory_warehouse"
+      "num": 38,
+      "sym": "Ao",
+      "group": "demand_sop",
+      "category": "04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility",
+      "subPillar": "",
+      "short": "atp_order_promising_ag",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "yard_dock_sequencer": {
-      "num": "20",
-      "sym": "Yp",
-      "short": "YardPulse",
-      "group": "inventory_warehouse"
+      "num": 41,
+      "sym": "Yd",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile",
+      "subPillar": "",
+      "short": "yard_dock_sequencer",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "crossdock_transfer_orchestrator": {
-      "num": "21",
-      "sym": "Xd",
-      "short": "CrossDockFlow",
-      "group": "inventory_warehouse"
+      "num": 33,
+      "sym": "Ct",
+      "group": "demand_sop",
+      "category": "04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization",
+      "subPillar": "",
+      "short": "crossdock_transfer_orc",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "load_consolidation_agent": {
-      "num": "22",
-      "sym": "Cb",
-      "short": "CubeMaster 3D",
-      "group": "logistics_fleet"
+      "num": 40,
+      "sym": "Lc",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile",
+      "subPillar": "",
+      "short": "load_consolidation_age",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "fleetflow_dispatch": {
-      "num": "23",
-      "sym": "Ff",
-      "short": "FleetFlow Maps",
-      "group": "logistics_fleet"
+      "num": 49,
+      "sym": "Fd",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 Route & Carrier",
+      "subPillar": "",
+      "short": "fleetflow_dispatch",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "port_drayage_orchestrator": {
-      "num": "24",
-      "sym": "Pw",
-      "short": "PortWatch Sea",
-      "group": "logistics_fleet"
+      "num": 45,
+      "sym": "Pd",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 Store Replenishment",
+      "subPillar": "",
+      "short": "port_drayage_orchestra",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "air_cargo_uld_optimizer": {
       "num": "25",
@@ -22110,46 +23231,364 @@
       "group": "logistics_fleet"
     },
     "intermodal_rail_linehaul_agent": {
-      "num": "26",
+      "num": 59,
       "sym": "Ir",
-      "short": "IntermodalSync",
-      "group": "logistics_fleet"
+      "group": "demand_sop",
+      "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation",
+      "subPillar": "",
+      "short": "intermodal_rail_lineha",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "multimodal_mode_shift_agent": {
-      "num": "27",
-      "sym": "Ms",
-      "short": "ModalShift",
-      "group": "logistics_fleet"
+      "num": 47,
+      "sym": "Mm",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery",
+      "subPillar": "",
+      "short": "multimodal_mode_shift_",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "freight_control_tower": {
-      "num": "28",
-      "sym": "St",
-      "short": "SentinelMove",
-      "group": "logistics_fleet"
+      "num": 50,
+      "sym": "Fc",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 Route & Carrier",
+      "subPillar": "",
+      "short": "freight_control_tower",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "otif_penalty_shield": {
-      "num": "29",
-      "sym": "Ot",
-      "short": "OTIFShield",
-      "group": "circular_enable"
+      "num": 48,
+      "sym": "Op",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery",
+      "subPillar": "",
+      "short": "otif_penalty_shield",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "reverse_rma_optimizer": {
-      "num": "30",
-      "sym": "Rl",
-      "short": "ReturnLoop RMA",
-      "group": "circular_enable"
+      "num": 52,
+      "sym": "Rr",
+      "group": "demand_sop",
+      "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt",
+      "subPillar": "",
+      "short": "reverse_rma_optimizer",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "carbon_scope3_ledger": {
-      "num": "31",
-      "sym": "Ec",
-      "short": "EcoChain CO2e",
-      "group": "circular_enable"
+      "num": 15,
+      "sym": "Cs",
+      "group": "demand_sop",
+      "category": "02 \u00b7 Sourcing & Procurement \u2014 Supplier Network",
+      "subPillar": "",
+      "short": "carbon_scope3_ledger",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     },
     "network_twin_architect": {
-      "num": "32",
-      "sym": "Td",
-      "short": "TwinDesign",
-      "group": "inventory_warehouse"
+      "num": 12,
+      "sym": "Nt",
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU",
+      "subPillar": "",
+      "short": "network_twin_architect",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "npi_demand_profiler": {
+      "num": 3,
+      "sym": "Nd",
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 Demand Forecasting",
+      "subPillar": "",
+      "short": "npi_demand_profiler",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "field_beat_distributor_sync_agent": {
+      "num": 5,
+      "sym": "Fb",
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 Trade Promotion",
+      "subPillar": "",
+      "short": "field_beat_distributor",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "trade_scheme_claims_reconciler": {
+      "num": 6,
+      "sym": "Ts",
+      "group": "demand_sop",
+      "category": "01 \u00b7 Planning & Strategy \u2014 Trade Promotion",
+      "subPillar": "",
+      "short": "trade_scheme_claims_re",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "commodity_index_advisor": {
+      "num": 16,
+      "sym": "Ci",
+      "group": "demand_sop",
+      "category": "02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging",
+      "subPillar": "",
+      "short": "commodity_index_adviso",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "sustainable_packaging_agent": {
+      "num": 18,
+      "sym": "Sp",
+      "group": "demand_sop",
+      "category": "02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging",
+      "subPillar": "",
+      "short": "sustainable_packaging_",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "three_way_match_dispute": {
+      "num": 21,
+      "sym": "Tw",
+      "group": "demand_sop",
+      "category": "02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt",
+      "subPillar": "",
+      "short": "three_way_match_disput",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "finite_production_scheduler": {
+      "num": 22,
+      "sym": "Fp",
+      "group": "demand_sop",
+      "category": "03 \u00b7 Manufacturing & Production \u2014 Production Scheduling",
+      "subPillar": "",
+      "short": "finite_production_sche",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "labor_line_balancing_agent": {
+      "num": 24,
+      "sym": "Ll",
+      "group": "demand_sop",
+      "category": "03 \u00b7 Manufacturing & Production \u2014 Production Scheduling",
+      "subPillar": "",
+      "short": "labor_line_balancing_a",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "copacker_allocation_agent": {
+      "num": 26,
+      "sym": "Ca",
+      "group": "demand_sop",
+      "category": "03 \u00b7 Manufacturing & Production \u2014 Capacity Planning",
+      "subPillar": "",
+      "short": "copacker_allocation_ag",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "capex_simulator_agent": {
+      "num": 27,
+      "sym": "Cs",
+      "group": "demand_sop",
+      "category": "03 \u00b7 Manufacturing & Production \u2014 Capacity Planning",
+      "subPillar": "",
+      "short": "capex_simulator_agent",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "batch_record_auditor": {
+      "num": 29,
+      "sym": "Br",
+      "group": "demand_sop",
+      "category": "03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance",
+      "subPillar": "",
+      "short": "batch_record_auditor",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "scrap_defect_root_cause_agent": {
+      "num": 30,
+      "sym": "Sd",
+      "group": "demand_sop",
+      "category": "03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance",
+      "subPillar": "",
+      "short": "scrap_defect_root_caus",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "slob_disposition_agent": {
+      "num": 32,
+      "sym": "Sd",
+      "group": "demand_sop",
+      "category": "04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization",
+      "subPillar": "",
+      "short": "slob_disposition_agent",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "dock_to_stock_agent": {
+      "num": 35,
+      "sym": "Dt",
+      "group": "demand_sop",
+      "category": "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations",
+      "subPillar": "",
+      "short": "dock_to_stock_agent",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "wave_fulfillment_copilot": {
+      "num": 36,
+      "sym": "Wf",
+      "group": "demand_sop",
+      "category": "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations",
+      "subPillar": "",
+      "short": "wave_fulfillment_copil",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "planogram_merchandising_vision_auditor": {
+      "num": 37,
+      "sym": "Pm",
+      "group": "demand_sop",
+      "category": "04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility",
+      "subPillar": "",
+      "short": "planogram_merchandisin",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "returns_triage_agent": {
+      "num": 39,
+      "sym": "Rt",
+      "group": "demand_sop",
+      "category": "04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility",
+      "subPillar": "",
+      "short": "returns_triage_agent",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "cold_chain_auditor": {
+      "num": 42,
+      "sym": "Cc",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile",
+      "subPillar": "",
+      "short": "cold_chain_auditor",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "aisle_aligned_pallet_agent": {
+      "num": 43,
+      "sym": "Aa",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 Store Replenishment",
+      "subPillar": "",
+      "short": "aisle_aligned_pallet_a",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "store_capacity_agent": {
+      "num": 44,
+      "sym": "Sc",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 Store Replenishment",
+      "subPillar": "",
+      "short": "store_capacity_agent",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "geocoding_intelligence_agent": {
+      "num": 46,
+      "sym": "Gi",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery",
+      "subPillar": "",
+      "short": "geocoding_intelligence",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "freight_bill_audit_agent": {
+      "num": 51,
+      "sym": "Fb",
+      "group": "demand_sop",
+      "category": "05 \u00b7 Distribution & Logistics \u2014 Route & Carrier",
+      "subPillar": "",
+      "short": "freight_bill_audit_age",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "keep_it_routing_advisor": {
+      "num": 53,
+      "sym": "Ki",
+      "group": "demand_sop",
+      "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt",
+      "subPillar": "",
+      "short": "keep_it_routing_adviso",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "osd_freight_claims_agent": {
+      "num": 54,
+      "sym": "Of",
+      "group": "demand_sop",
+      "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt",
+      "subPillar": "",
+      "short": "osd_freight_claims_age",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "dynamic_markdown_agent": {
+      "num": 55,
+      "sym": "Dm",
+      "group": "demand_sop",
+      "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns",
+      "subPillar": "",
+      "short": "dynamic_markdown_agent",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "short_dated_redistributor": {
+      "num": 56,
+      "sym": "Sd",
+      "group": "demand_sop",
+      "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns",
+      "subPillar": "",
+      "short": "short_dated_redistribu",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "food_waste_esg_copilot": {
+      "num": 57,
+      "sym": "Fw",
+      "group": "demand_sop",
+      "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns",
+      "subPillar": "",
+      "short": "food_waste_esg_copilot",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "rti_balance_reconciler": {
+      "num": 58,
+      "sym": "Rb",
+      "group": "demand_sop",
+      "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation",
+      "subPillar": "",
+      "short": "rti_balance_reconciler",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
+    },
+    "sanitation_health_agent": {
+      "num": 60,
+      "sym": "Sh",
+      "group": "demand_sop",
+      "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation",
+      "subPillar": "",
+      "short": "sanitation_health_agen",
+      "role": "Supply Chain Lead",
+      "kpi": "High ROI"
     }
   },
   "universalAgentIds": [

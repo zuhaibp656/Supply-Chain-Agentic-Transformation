@@ -20,3 +20,5 @@ tools:
   - "app.tools:query_erp_bom_effectivity_sync_audit"
   - "app.tools:action_lock_multi_plant_eco_effectivity_dates"
   - "app.tools:action_modify_open_supplier_po_revision"
+  standards_compliance: "ASCM SCOR DS v14.0 Plan (P1-P5) · VICS CPFR Collaborative Planning Standard · A2UI v0.9"
+  finops_tier: "gemini-2.5-flash (Context Cached -75%, 3-Yr FSP -20%, $0.60/1K calls)"

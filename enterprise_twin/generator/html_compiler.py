@@ -26,8 +26,9 @@ def compile_enterprise_twin(profile: Dict[str, Any], output_slug: str = None) ->
     out_dir = DIST_DIR / slug
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # 1. Generate customized index.html
-    base_html = build_html()
+    # 1. Generate customized index.html from canonical root index.html
+    root_index = ROOT_DIR / "index.html"
+    base_html = root_index.read_text(encoding="utf-8") if root_index.exists() else build_html()
     custom_html = transform_html_for_company(base_html, profile)
     
     index_file = out_dir / "index.html"
@@ -62,7 +63,11 @@ def compile_enterprise_twin(profile: Dict[str, Any], output_slug: str = None) ->
     # 5. Build Zipline ZIP bundle
     zip_path = out_dir / f"{slug}_zipline_bundle.zip"
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        for f in [index_file, pt_file, mm_file]:
+        cost_src = ROOT_DIR / "cost_analysis_presentation.html"
+        if cost_src.exists():
+            cost_dst = out_dir / "cost_analysis_presentation.html"
+            cost_dst.write_text(cost_src.read_text(encoding="utf-8"), encoding="utf-8")
+        for f in [index_file, pt_file, mm_file] + ([out_dir / "cost_analysis_presentation.html"] if (out_dir / "cost_analysis_presentation.html").exists() else []):
             zf.write(f, arcname=f.name)
         if videos_dst.exists():
             for v in videos_dst.glob("*.mp4"):

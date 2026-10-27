@@ -1,7 +1,7 @@
 """Career Persona Miner Tool.
 
 Mines enterprise job postings, LinkedIn career profiles, and organizational charts
-to discover how a target company titles and structures its 26 supply chain roles,
+to discover how a target company titles and structures its 60 supply chain roles,
 grounding them in authentic corporate lingo (car parts/JIS for auto, e-Choupal/mandi
 for FMCG/agri, titanium/FAA for aerospace, Reman/dealer for heavy machinery).
 """
@@ -10,7 +10,7 @@ from typing import Dict, Any
 
 
 def mine_company_personas(company_name: str, industry_id: str) -> Dict[str, Any]:
-    """Mines specialized role titles, executive mandates, and daily toils for the 26 SCOR roles."""
+    """Mines specialized role titles, executive mandates, and daily toils for the 60 SCOR roles."""
     c_lower = company_name.lower()
     ind = industry_id.lower()
 
@@ -258,3 +258,25 @@ def mine_company_personas(company_name: str, industry_id: str) -> Dict[str, Any]
                 'agenticImpact': 'OR-Tools CP-SAT finite-capacity scheduling cutting changeover downtime by 30%.'
             }
         }
+
+
+# Automatically alias canonical 60-persona IDs to industry-specific overrides
+_ORIG_MINE_PERSONAS = mine_company_personas
+
+def mine_company_personas(company_name: str, industry_id: str) -> Dict[str, Any]:
+    res = dict(_ORIG_MINE_PERSONAS(company_name, industry_id))
+    persona_aliases = [
+        ("demand_planning_dir", "demand_planner_forecaster"),
+        ("sop_ibp_lead", "sop_supply_planning_dir"),
+        ("category_sourcing_mgr", "category_manager_portfolio"),
+        ("supplier_risk_lead", "supplier_risk_manager"),
+        ("mps_scheduling_lead", "master_production_scheduler"),
+        ("meio_inventory_mgr", "inventory_planning_manager"),
+        ("dock_yard_supervisor", "yard_master_gate_controller"),
+        ("fleet_dispatch_mgr", "transportation_planner_router"),
+        ("reverse_logistics_mgr", "value_recovery_recommerce"),
+    ]
+    for old_k, new_k in persona_aliases:
+        if old_k in res and new_k not in res:
+            res[new_k] = dict(res[old_k])
+    return res

@@ -20,3 +20,5 @@ tools:
   - "app.tools:query_geofence_edi856_dispute_dossiers"
   - "app.tools:action_execute_otif_sla_rescue_intervention"
   - "app.tools:action_submit_chargeback_dispute_dossier"
+  standards_compliance: "ASCM SCOR DS v14.0 Plan (P1-P5) · VICS CPFR Collaborative Planning Standard · A2UI v0.9"
+  finops_tier: "gemini-2.5-flash (Context Cached -75%, 3-Yr FSP -20%, $0.60/1K calls)"

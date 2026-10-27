@@ -4,8 +4,8 @@ Autonomous Google ADK (Agent Development Kit) Agent for enterprise supply chain
 digital twin synthesis. Takes any company name (e.g., ITC, Volkswagen, Boeing,
 Caterpillar, Shell, Pfizer) and:
 1. Conducts LLM & tool-based corporate profiling (industry, facilities, products).
-2. Mines authentic organizational job titles and operational toils across all 26 SCOR roles.
-3. Customizes the operational details inside all 32 AI Agents (ERP/MES systems, inputs, outcomes)
+2. Mines authentic organizational job titles and operational toils across all 60 SCOR roles.
+3. Customizes the operational details inside all 60 Categorized AI Agents (ERP/MES systems, inputs, outcomes)
    while keeping the core base architecture identical.
 4. Persists the generated twin to local JSON storage, memory cache, and BigQuery/GCS staging.
 5. Generates the tailored interactive portal files and ready-to-deploy Zipline bundles.
@@ -38,12 +38,12 @@ def tool_profile_enterprise(company_name: str, industry_hint: Optional[str] = No
 
 
 def tool_mine_personas(company_name: str, industry_id: str) -> Dict[str, Any]:
-    """Discovers real organizational job titles and operational toils for the 26 SCOR personas."""
+    """Discovers real organizational job titles and operational toils for the 60 SCOR personas."""
     return mine_company_personas(company_name, industry_id)
 
 
 def tool_mine_agent_specs(company_name: str, industry_id: str) -> Dict[str, Any]:
-    """Adapts internal operational details for 32 AI agents while keeping base engines intact."""
+    """Adapts internal operational details for 60 Categorized AI agents while keeping base engines intact."""
     return mine_company_agent_specs(company_name, industry_id)
 
 
@@ -94,8 +94,8 @@ def run_enterprise_twin_agent(company_name: str, industry: Optional[str] = None,
     personas = tool_mine_personas(profile['canonicalName'], profile['industryId'])
     profile['personaOverrides'] = personas
 
-    # 4. Tool 3: Adapt Internal Operational Details for 32 AI Agents
-    print(f"⚙️  [ADK Agent] Step 3/4: Tailoring operational specs for 32 AI agents...")
+    # 4. Tool 3: Adapt Internal Operational Details for 60 Categorized AI Agents
+    print(f"⚙️  [ADK Agent] Step 3/4: Tailoring operational specs for 60 Categorized AI agents...")
     agent_specs = tool_mine_agent_specs(profile['canonicalName'], profile['industryId'])
     profile['agentOverrides'] = agent_specs
 
@@ -127,8 +127,8 @@ try:
         instruction=(
             "You are the Enterprise Twin ADK Agent.\n"
             "Given any enterprise company name, research its real supply chain operations, products, and plants.\n"
-            "Adapt all 26 SCOR personas into the company's real organizational titles with authentic industry lingo.\n"
-            "Customize the operational details inside all 32 AI agents with the company's real ERP/MES systems.\n"
+            "Adapt all 60 SCOR personas into the company's real organizational titles with authentic industry lingo.\n"
+            "Customize the operational details inside all 60 Categorized AI agents with the company's real ERP/MES systems.\n"
             "Persist the twin and generate the complete adapted portal."
         ),
         tools=[tool_profile_enterprise, tool_mine_personas, tool_mine_agent_specs, tool_persist_twin, tool_compile_portal]

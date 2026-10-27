@@ -20,3 +20,5 @@ tools:
   - "app.tools:query_order_promising_routing_decisions"
   - "app.tools:action_commit_dynamic_order_promise"
   - "app.tools:action_protect_tier1_allocation_reserve"
+  standards_compliance: "ASCM SCOR DS v14.0 Plan (P1-P5) · VICS CPFR Collaborative Planning Standard · A2UI v0.9"
+  finops_tier: "gemini-2.5-flash (Context Cached -75%, 3-Yr FSP -20%, $0.60/1K calls)"

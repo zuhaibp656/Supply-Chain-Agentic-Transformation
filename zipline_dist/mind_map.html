@@ -5826,7 +5826,7 @@
   </main>
 
   <!-- =========================================================================
-       PAGE 7: PERIODIC TABLE OF SUPPLY CHAIN AI (32 AGENTS & 26 PERSONAS)
+       PAGE 7: PERIODIC TABLE OF SUPPLY CHAIN AI (60 CATEGORIZED AGENTS & 60 PERSONAS)
        ========================================================================= -->
   <main id="pagePeriodic" class="page-view">
     <div id="periodicPageContent" class="subpage-container"></div>
@@ -5864,7 +5864,7 @@
       </div>
 
       <p style="font-size:14px; color:#94a3b8; line-height:1.65; margin-bottom:20px;">
-        Instead of hardcoding single industries, the <strong>Enterprise Twin Agent</strong> uses autonomous Python research tools (Company Profiler, Career Persona Miner, Ecosystem Miner) to map your 26 SCOR personas and 32 AI agents to the customer's real job titles, factory hubs, and product nomenclature.
+        Instead of hardcoding single industries, the <strong>Enterprise Twin Agent</strong> uses autonomous Python research tools (Company Profiler, Career Persona Miner, Ecosystem Miner) to map your 60 SCOR personas and 60 categorized AI agents to the customer's real job titles, factory hubs, and product nomenclature.
       </p>
 
       <!-- Interactive Form: Inputs for Custom Enterprise Research & Live-Apply -->
@@ -16619,7 +16619,7 @@
     ],
     "problem": "In Contract & PO Mgmt, Buyer / Procurement Coord. teams face manual bottlenecks across disconnected spreadsheets and ERP screens\u2014delaying decisions before PO Expediting Agent intervenes.",
     "solution": "Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments.",
-    "advantage": "Achieves 99.8% master data accuracy across ERP, WMS, and TMS\u2014eliminating false MRP exceptions and boosting planner adoption across all 26 personas.",
+    "advantage": "Achieves 99.8% master data accuracy across ERP, WMS, and TMS\u2014eliminating false MRP exceptions and boosting planner adoption across all 60 personas.",
     "adkImplementation": {
       "packageDir": "agents/master_data_leadtime_steward",
       "agentFile": "agents/master_data_leadtime_steward/app/agent.py",
@@ -26646,7 +26646,7 @@
     ],
     "problem": "In Pallet & Tote Reclamation, Asset Recovery / RTI Manager teams face manual bottlenecks across disconnected spreadsheets and ERP screens\u2014delaying decisions before RTI Balance Reconciler intervenes.",
     "solution": "Reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes.",
-    "advantage": "Achieves 99.8% master data accuracy across ERP, WMS, and TMS\u2014eliminating false MRP exceptions and boosting planner adoption across all 26 personas.",
+    "advantage": "Achieves 99.8% master data accuracy across ERP, WMS, and TMS\u2014eliminating false MRP exceptions and boosting planner adoption across all 60 personas.",
     "adkImplementation": {
       "packageDir": "agents/rti_balance_reconciler",
       "agentFile": "agents/rti_balance_reconciler/app/agent.py",
@@ -30627,7 +30627,7 @@
           <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:14px;">
             <div>
               <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:#38bdf8; margin-bottom:4px;">
-                ✦ Shared Cross-Vertical Agentic Mesh · Used by All 29 Personas Across 6 SCOR Pillars
+                ✦ Shared Cross-Vertical Agentic Mesh · Used by All 60 Personas Across 6 SCOR Pillars & 20 Sub-Pillars
               </div>
               <h3 style="font-family:var(--font-display); font-size:24px; font-weight:800; color:#f8fafc;">
                 4 Cross-Persona Universal Supply Chain Agents
@@ -30637,7 +30637,7 @@
               </p>
             </div>
             <button type="button" class="switch-pill" style="border-color:#38bdf888; color:#38bdf8;" onclick="openPersonasDirectoryPage('universal', '', true, 'agents')">
-              Explore All 32 Agents in Directory &rarr;
+              Explore All 60 Agents in Directory &rarr;
             </button>
           </div>
 
@@ -30649,7 +30649,7 @@
                 <div class="universal-agent-card" onclick="openAgentPage('${ag.id}', true, event)">
                   <div>
                     <div class="universal-agent-badge">
-                      <span>🌐 Universal · All 29 Personas</span>
+                      <span>🌐 Universal · All 60 Personas</span>
                     </div>
                     <div class="universal-agent-name">${ag.name}</div>
                     <div class="universal-agent-desc">${formatRichText(ag.shortDesc)}</div>
@@ -32181,13 +32181,13 @@
               </button>
               <button type="button" class="back-btn" onclick="openArchitecturePage(true, event)">
                 <span>🏗️</span>
-                <span>All 32 Agents Enterprise Architecture</span>
+                <span>All 60 Agents Enterprise Architecture</span>
               </button>
             </div>
 
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
               <button type="button" class="switch-pill" onclick="openPersonasDirectoryPage('${ag.isUniversal ? 'universal' : dept.id}', '', true, 'agents', event)">
-                🤖 Browse All 32 Agents
+                🤖 Browse All 60 Agents
               </button>
               <button type="button" class="switch-pill" onclick="goToOrgChart()">
                 CSCO Org Chart
@@ -32531,7 +32531,7 @@
                   Multi-Format Enterprise Demo Assets (.png, .xlsx, .pdf, .docx, .eml, .edi, .json, .csv)
                 </h4>
                 <p style="font-size:13.5px; color:#cbd5e1; margin:0;">
-                  Shared organizational data lake spanning SAP S/4HANA ERP Masters, Finance GL Cost Centers, HR Shift Rosters, Multi-Tab Excel Workbooks, Signed PDFs, Computer Vision Images, Word SOPs, Emails &amp; X12 EDI streams so all 35 agents operate in tandem.
+                  Shared organizational data lake spanning SAP S/4HANA ERP Masters, Finance GL Cost Centers, HR Shift Rosters, Multi-Tab Excel Workbooks, Signed PDFs, Computer Vision Images, Word SOPs, Emails &amp; X12 EDI streams so all 60 categorized agents operate in tandem.
                 </p>
               </div>
               <a href="demo_data/xyz_corporation/xyz_enterprise_manifest.json" download style="padding:7px 13px; border-radius:9px; background:rgba(168,85,247,0.2); border:1px solid rgba(168,85,247,0.55); color:#e9d5ff; font-family:var(--font-mono); font-size:12px; font-weight:700; text-decoration:none;">
@@ -33093,7 +33093,7 @@
     }
 
     /* =========================================================================
-       PAGE 5 RENDERING: SEARCHABLE 26 PERSONAS & 32 AGENTS DIRECTORY
+       PAGE 5 RENDERING: SEARCHABLE 60 PERSONAS & 60 CATEGORIZED AGENTS DIRECTORY
        ========================================================================= */
     let currentDirDeptFilter = 'all';
     let currentDirSearch = '';
@@ -33312,10 +33312,10 @@
 
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
               <button type="button" class="switch-pill" onclick="openPersonasDirectoryPage('all', '', true, 'agents', event)">
-                🤖 Explore All 32 AI Agents
+                🤖 Explore All 60 AI Agents
               </button>
               <button type="button" class="switch-pill" onclick="openPersonasDirectoryPage('all', '', true, 'personas', event)">
-                👥 Explore All 29 Personas
+                👥 Explore All 60 Personas
               </button>
             </div>
           </div>
@@ -33334,8 +33334,8 @@
             </div>
 
             <div class="persona-stat-highlight" style="border-color: rgba(168, 85, 247, 0.45);">
-              <div class="persona-stat-value" style="color: #c084fc;">32 Agents</div>
-              <div class="persona-stat-label">4 Universal + 31 Domain Agents · 105 A2A Sub-Agents · 29 Personas</div>
+              <div class="persona-stat-value" style="color: #c084fc;">60 Agents</div>
+              <div class="persona-stat-label">4 Universal + 56 Domain Agents · 180 A2A Sub-Agents · 60 Personas</div>
             </div>
           </div>
 
@@ -33370,7 +33370,7 @@
 
                 <!-- Band 1: Control Tower UX + 4 Universal Cross-Persona Agents -->
                 <rect x="20" y="18" width="1080" height="84" rx="14" fill="rgba(56,189,248,0.11)" stroke="#38bdf8" stroke-width="2" />
-                <text x="38" y="44" fill="#38bdf8" font-size="12.5" font-weight="700">LAYER 05 · A2UI CONTROL TOWER + 4 CROSS-PERSONA UNIVERSAL AGENTS (SHARED ACROSS ALL 26 ROLES)</text>
+                <text x="38" y="44" fill="#38bdf8" font-size="12.5" font-weight="700">LAYER 05 · A2UI CONTROL TOWER + 4 CROSS-PERSONA UNIVERSAL AGENTS (SHARED ACROSS ALL 60 ROLES)</text>
                 <text x="38" y="68" fill="#ffffff" font-size="13.5" font-weight="700">🌐 TowerMind Control Tower Copilot   ·   🌐 StormShield WeatherNext 3 War-Room   ·   🌐 DataCleanse Master Data Steward   ·   🌐 MarginBridge CSCO-to-CFO Twin</text>
                 <text x="38" y="90" fill="#cbd5e1" font-size="12.5">Interactive Multi-Modal &amp; 3D CAD Studios · Looker Semantic Layer · Signed ERP/WMS/TMS Write-Back</text>
 
@@ -33380,11 +33380,11 @@
 
                 ${[
                   { title: '01 · PLAN (4 Agents)', sub1: 'PulseCast · Synapse S&OP', sub2: 'ElasticityIQ · ChannelSync', col: '#10b981', x: 34 },
-                  { title: '02 · SOURCE (4 Agents)', sub1: 'SourcePulse · NexusShield', sub2: 'ClauseGuard · QualiShield', col: '#a855f7', x: 210 },
-                  { title: '03 · MAKE (4 Agents)', sub1: 'ChronosMake · SpindleGuard', sub2: 'YieldVision · ChangeSync', col: '#3b82f6', x: 386 },
-                  { title: '04 · FULFILL (5 Agents)', sub1: 'EchelonFlow · SlotMaster 3D', sub2: 'PromiseGuard · Yard · CrossDock', col: '#00d2ff', x: 562 },
-                  { title: '05 · DELIVER (7 Agents)', sub1: 'PortWatch · AeroFreight · Rail', sub2: 'ModalShift · FleetFlow · LIFO 3D', col: '#f59e0b', x: 738 },
-                  { title: '06 · ENABLE (4 Agents)', sub1: 'OTIFShield · ReturnLoop RMA', sub2: 'EcoChain ESG · TwinDesign', col: '#ec4899', x: 914 }
+                  { title: '02 · SOURCE (10 Agents)', sub1: 'Spend · Commodity · ShouldCost', sub2: 'Tier-N · Redliner · 3-Way Match', col: '#a855f7', x: 210 },
+                  { title: '03 · MAKE (10 Agents)', sub1: 'Scheduler · CIP · LineBalance', sub2: 'PdM OEE · EMS · Batch Audit', col: '#3b82f6', x: 386 },
+                  { title: '04 · STORE (10 Agents)', sub1: 'MEIO · SLOB · Dock-to-Stock', sub2: '3D Slot · Wave · Cold Chain', col: '#00d2ff', x: 562 },
+                  { title: '05 · MOVE (12 Agents)', sub1: 'Fleet · 3D Load · EV · Yard', sub2: 'Drayage · FBAP · Last-Mile', col: '#f59e0b', x: 738 },
+                  { title: '06 · SUSTAIN (9 Agents)', sub1: 'Markdown · Short-Dated · RMA', sub2: 'Scope 3 · Food Waste · RTI', col: '#ec4899', x: 914 }
                 ].map((b, idx) => `
                   <g>
                     <rect x="${b.x}" y="156" width="166" height="96" rx="12" fill="rgba(4,9,18,0.95)" stroke="${b.col}" stroke-width="1.8" />
@@ -33426,7 +33426,7 @@
                       class="switch-pill ${currentArchVerticalFilter === 'all' ? 'active' : ''}"
                       style="${currentArchVerticalFilter === 'all' ? 'background:#00d2ff; color:#040810; border-color:#00d2ff; font-weight:700;' : ''}"
                       onclick="filterArchVertical('all')">
-                All 32 Agents
+                All 60 Agents
               </button>
               <button type="button"
                       class="switch-pill ${currentArchVerticalFilter === 'universal' ? 'active' : ''}"
@@ -33454,7 +33454,7 @@
             <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
               <span class="accent-dot" style="background:#38bdf8; box-shadow:0 0 12px #38bdf8;"></span>
               <h3 style="font-family:var(--font-display); font-size:22px; font-weight:700; color:#f8fafc;">
-                Cross-Persona Universal Core Agents (Shared Across All 29 Roles)
+                Cross-Persona Universal Core Agents (Shared Across All 60 Roles)
               </h3>
             </div>
             <div class="dir-persona-grid">
@@ -33467,7 +33467,7 @@
                       <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px;">
                         <div>
                           <div style="font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">
-                            🌐 Universal Core · All 29 Roles
+                            🌐 Universal Core · All 60 Roles
                           </div>
                           <div style="font-family:var(--font-display); font-size:19px; font-weight:700; color:#f8fafc; line-height:1.25;">
                             ${ag.name}
@@ -35762,8 +35762,8 @@
       const steps = [
         { pct: 20, status: '🤖 ADK Agent: Querying corporate profile & ecosystem for ' + company + '...', log: '[CompanyProfiler] Grounding operational hierarchy, plants & systems for ' + company + ' (' + industry + ')...' },
         { pct: 45, status: '🌐 Ecosystem Miner: Mapping Tier-1/Tier-2 supply networks & plant hubs...', log: '[EcosystemMiner] Identified key facilities, supplier nodes, and global trade corridors...' },
-        { pct: 70, status: '👔 Career Persona Miner: Mining VP & Director titles for 26 SCOR roles...', log: '[PersonaMiner] Calibrated 26 SCOR personas with authentic ' + industry + ' domain lingo & toils...' },
-        { pct: 90, status: '⚙️ Agent Spec Miner: Customizing operational details inside 32 AI agents...', log: '[AgentSpecMiner] Synthesized target ERP/MES data inputs, problem cards, and ROI metrics...' },
+        { pct: 70, status: '👔 Career Persona Miner: Mining VP & Director titles for 60 SCOR roles...', log: '[PersonaMiner] Calibrated 60 SCOR personas with authentic ' + industry + ' domain lingo & toils...' },
+        { pct: 90, status: '⚙️ Agent Spec Miner: Customizing operational details inside 60 categorized AI agents...', log: '[AgentSpecMiner] Synthesized target ERP/MES data inputs, problem cards, and ROI metrics...' },
         { pct: 100, status: '✨ Complete: Digital Twin active for ' + company + '!', log: '[TwinReady] Live browser DOM morph successful. Portal now operates as ' + company + ' Supply Chain Twin.' }
       ];
 

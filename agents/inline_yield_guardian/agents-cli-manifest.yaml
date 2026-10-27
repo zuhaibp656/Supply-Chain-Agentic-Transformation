@@ -24,3 +24,5 @@ tools:
   - app.tools:query_pneumatic_reject_gate_events
   - app.tools:action_trigger_pneumatic_reject_diverter
   - app.tools:action_log_ebhr_quality_deviation
+  standards_compliance: "ASCM SCOR DS v14.0 Plan (P1-P5) · VICS CPFR Collaborative Planning Standard · A2UI v0.9"
+  finops_tier: "gemini-2.5-flash (Context Cached -75%, 3-Yr FSP -20%, $0.60/1K calls)"

@@ -20,3 +20,5 @@ tools:
   - "app.tools:query_freight_audit_discrepancy_ledger"
   - "app.tools:action_reroute_in_transit_reefer_shipment"
   - "app.tools:action_issue_freight_audit_debit_adjustment"
+  standards_compliance: "ASCM SCOR DS v14.0 Plan (P1-P5) · VICS CPFR Collaborative Planning Standard · A2UI v0.9"
+  finops_tier: "gemini-2.5-flash (Context Cached -75%, 3-Yr FSP -20%, $0.60/1K calls)"

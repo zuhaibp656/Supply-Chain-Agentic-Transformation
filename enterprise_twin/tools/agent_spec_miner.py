@@ -1,6 +1,6 @@
 """Agent Specification Miner Tool.
 
-Adapts the operational details INSIDE each of the 32 AI Agents for a target enterprise
+Adapts the operational details INSIDE each of the 60 Categorized AI Agents for a target enterprise
 while keeping the core base of each agent identical (preserving its fundamental purpose,
 algorithmic foundation, and OR-Tools / TimesFM / Spanner / Maps engine).
 """
@@ -9,7 +9,7 @@ from typing import Dict, Any
 
 
 def mine_company_agent_specs(company_name: str, industry_id: str) -> Dict[str, Any]:
-    """Mines enterprise-tailored operational specs for the 32 AI agents."""
+    """Mines enterprise-tailored operational specs for the 60 Categorized AI agents."""
     c_lower = company_name.lower()
 
     if 'itc' in c_lower or industry_id == 'fmcg_agribusiness':
@@ -133,3 +133,22 @@ def mine_company_agent_specs(company_name: str, industry_id: str) -> Dict[str, A
                 'roiBadges': ['-24% Forecast Error', '18% Working Capital Freed', '45-Min S&OP Consensus', '99.2% Customer OTIF']
             }
         }
+
+
+# Automatically alias canonical 60-agent IDs to industry-specific overrides
+_ORIG_MINE_SPECS = mine_company_agent_specs
+
+def mine_company_agent_specs(company_name: str, industry_id: str) -> Dict[str, Any]:
+    res = dict(_ORIG_MINE_SPECS(company_name, industry_id))
+    alias_pairs = [
+        ("mps_finite_scheduler", "finite_production_scheduler"),
+        ("category_should_cost", "rfq_should_cost_agent"),
+        ("category_should_cost", "commodity_index_advisor"),
+        ("tier_n_spanner_graph", "tier_n_risk_sentinel"),
+        ("reverse_logistics_mgr", "reverse_rma_recommerce_agent"),
+        ("reverse_logistics_mgr", "returns_triage_agent"),
+    ]
+    for old_k, new_k in alias_pairs:
+        if old_k in res and new_k not in res:
+            res[new_k] = dict(res[old_k])
+    return res
