@@ -38436,12 +38436,9 @@
                                 ${shortSentence(plugAgent.solution || plugAgent.role, 155)}
                               </div>
                               ${plugAgent.costModel ? `
-                                <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:7px;">
-                                  <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; padding:3px 9px; border-radius:6px; background:rgba(2,132,199,0.12); color:#0284c7; border:1px solid rgba(2,132,199,0.3);">
-                                    💰 Cloud: $${plugAgent.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo ($${plugAgent.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K calls · ${plugAgent.costModel.modelName.replace(' (Vertex AI)', '')})
-                                  </span>
-                                  <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; padding:3px 9px; border-radius:6px; background:rgba(16,185,129,0.12); color:#059669; border:1px solid rgba(16,185,129,0.3);">
-                                    📈 Value: $${(plugAgent.costModel.valueModel.grossAnnualConservativeUsd/1e6).toFixed(2)}M–$${(plugAgent.costModel.valueModel.grossAnnualLikelyUsd/1e6).toFixed(2)}M/yr (${plugAgent.costModel.valueModel.cloudRoiMultipleConservative}x ROI)
+                                <div style="margin-top:6px;">
+                                  <span style="font-family:var(--font-mono); font-size:11px; font-weight:700; color:var(--text-secondary);">
+                                    💰 Est. Cost: <strong style="color:var(--text-primary);">$${plugAgent.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo</strong> ($${plugAgent.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K runs)
                                   </span>
                                 </div>
                               ` : ''}
@@ -38509,9 +38506,8 @@
                         </div>
                       ` : ''}
                       ${ag.costModel ? `
-                        <div style="padding:8px 10px; border-radius:8px; background:rgba(2,132,199,0.08); border:1px solid rgba(2,132,199,0.25); font-family:var(--font-mono); font-size:11px; color:var(--text-primary); margin-top:4px; line-height:1.45;">
-                          <div><strong>💰 Cloud Run Rate:</strong> $${ag.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo ($${ag.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K calls)</div>
-                          <div style="color:#059669; font-weight:800;"><strong>📈 Net Value:</strong> $${(ag.costModel.valueModel.grossAnnualConservativeUsd/1e6).toFixed(2)}M/yr (${ag.costModel.valueModel.cloudRoiMultipleConservative}x ROI · ${ag.costModel.valueModel.paybackDays}d payback)</div>
+                        <div style="font-family:var(--font-mono); font-size:11.5px; color:var(--text-secondary); margin-top:6px;">
+                          💰 Est. Cost: <strong style="color:var(--text-primary);">$${ag.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo</strong> ($${ag.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K)
                         </div>
                       ` : ''}
                     </div>
@@ -38851,375 +38847,84 @@
 
 
     /* =========================================================================
-       SINGLE-AGENT CLOUD COST, TOKENOMICS & 3-YEAR ROI SHOWCASE CALCULATOR
+       SIMPLE AGENT COST DETAILS CARD (MATCHING WEBSITE THEME & DESIGN)
        ========================================================================= */
-    function setSingleAgentScalePreset(agentId, dailyCalls, fspPct) {
-      const sliderEl = document.getElementById(`agCostCallsSlider_${agentId}`);
-      const fspEl = document.getElementById(`agCostFspSelect_${agentId}`);
-      if (sliderEl) sliderEl.value = dailyCalls;
-      if (fspEl && typeof fspPct === 'number') fspEl.value = String(fspPct);
-      updateSingleAgentCostCalc(agentId);
-    }
-
-    function updateSingleAgentCostCalc(agentId) {
-      const ag = AGENTS[agentId];
-      if (!ag || !ag.costModel) return;
-      const cm = ag.costModel;
-
-      const sliderEl = document.getElementById(`agCostCallsSlider_${agentId}`);
-      const fspEl = document.getElementById(`agCostFspSelect_${agentId}`);
-      if (!sliderEl || !fspEl) return;
-
-      const dailyCalls = parseInt(sliderEl.value, 10) || cm.eventsPerDay;
-      const fspPct = parseInt(fspEl.value, 10) || 0;
-      const monthlyCalls = dailyCalls * 30;
-      const scaleRatio = monthlyCalls / Math.max(1, cm.monthlyCalls);
-      const fspMult = 1 - (fspPct / 100.0);
-
-      // 1. Gemini Token Inference Cost
-      const llmMo = +(monthlyCalls * cm.tokens.tokenCostPerCallUsd * fspMult).toFixed(2);
-
-      // 2. Agent Engine + Solver Compute Cost (base warm pool + dynamic vCPU/GiB hours)
-      const dynamicComputeBase = Math.max(0, cm.compute.monthlyComputeUsd - cm.compute.baseWarmPoolUsd);
-      const computeMo = +(cm.compute.baseWarmPoolUsd + dynamicComputeBase * scaleRatio).toFixed(2);
-
-      // 3. BigQuery Digital Twin Scan & Storage Cost (fixed active storage + dynamic query scan)
-      const fixedStorageCost = +(cm.data.activeStorageGb * 0.18).toFixed(2);
-      const dynamicScanBase = Math.max(8, cm.data.monthlyDataUsd - fixedStorageCost);
-      const dataMo = +(fixedStorageCost + dynamicScanBase * scaleRatio).toFixed(2);
-
-      // 4. External API & Enterprise Connector Cost
-      const apiMo = +(cm.api.monthlyApiUsd * scaleRatio).toFixed(2);
-
-      const totalMo = +(llmMo + computeMo + dataMo + apiMo).toFixed(2);
-      const totalYr = +(totalMo * 12).toFixed(2);
-      const maintYr = +(totalYr * 0.15).toFixed(2);
-      const totalRunYr = +(totalYr + maintYr).toFixed(2);
-      const unit1k = monthlyCalls > 0 ? +((totalMo / monthlyCalls) * 1000).toFixed(2) : 0;
-
-      // Value scales sub-linearly with coverage volume
-      const valScale = Math.min(2.2, Math.max(0.35, Math.pow(scaleRatio, 0.35)));
-      const consValYr = Math.round(cm.valueModel.grossAnnualConservativeUsd * valScale);
-      const likeValYr = Math.round(cm.valueModel.grossAnnualLikelyUsd * valScale);
-      const roiCons = Math.max(1, Math.round(consValYr / Math.max(1, totalYr)));
-      const roiLike = Math.max(1, Math.round(likeValYr / Math.max(1, totalYr)));
-      const paybackDays = Math.max(1, Math.round((totalRunYr / Math.max(1, consValYr)) * 365));
-
-      const setTxt = (id, txt) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = txt;
-      };
-
-      setTxt(`agCallsLbl_${agentId}`, `${dailyCalls.toLocaleString()} calls/day (${monthlyCalls.toLocaleString()}/mo)`);
-      setTxt(`agLiveMoCost_${agentId}`, `$${totalMo.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} / mo`);
-      setTxt(`agLiveYrCost_${agentId}`, `$${Math.round(totalYr).toLocaleString()} / yr Cloud ($${Math.round(totalRunYr).toLocaleString()}/yr incl. 15% Ops)`);
-      setTxt(`agLiveUnit1k_${agentId}`, `$${unit1k.toFixed(2)} / 1K calls`);
-      setTxt(`agLiveRoiMult_${agentId}`, `${roiCons}x – ${roiLike}x Cloud ROI · ${paybackDays}d Payback`);
-
-      setTxt(`agBktLlm_${agentId}`, `$${llmMo.toFixed(2)}/mo`);
-      setTxt(`agBktComp_${agentId}`, `$${computeMo.toFixed(2)}/mo`);
-      setTxt(`agBktData_${agentId}`, `$${dataMo.toFixed(2)}/mo`);
-      setTxt(`agBktApi_${agentId}`, `$${apiMo.toFixed(2)}/mo`);
-      setTxt(`agLiveTotalBanner_${agentId}`, `$${totalMo.toFixed(2)}/mo ($${Math.round(totalYr).toLocaleString()}/yr)`);
-
-      const pct = (v) => totalMo > 0 ? Math.max(4, Math.round((v / totalMo) * 100)) : 25;
-      const barLlm = document.getElementById(`agBarLlm_${agentId}`);
-      const barComp = document.getElementById(`agBarComp_${agentId}`);
-      const barData = document.getElementById(`agBarData_${agentId}`);
-      const barApi = document.getElementById(`agBarApi_${agentId}`);
-      if (barLlm) barLlm.style.width = `${pct(llmMo)}%`;
-      if (barComp) barComp.style.width = `${pct(computeMo)}%`;
-      if (barData) barData.style.width = `${pct(dataMo)}%`;
-      if (barApi) barApi.style.width = `${pct(apiMo)}%`;
-    }
-
     function renderAgentCostAndRoiPanel(ag, dept) {
       const cm = ag.costModel;
       if (!cm) return '';
       const mb = cm.monthlyBreakdown;
       const vm = cm.valueModel;
-      const d1 = vm.drivers[0];
-      const d2 = vm.drivers[1];
-      const pilotCallsDay = Math.max(50, Math.round(cm.eventsPerDay * 0.28));
-      const hyperCallsDay = cm.eventsPerDay * 5;
-
-      const llmPct = Math.max(5, Math.round((mb.llmFsp3YrUsd / mb.totalFsp3YrUsd) * 100));
-      const compPct = Math.max(5, Math.round((mb.computeUsd / mb.totalFsp3YrUsd) * 100));
-      const dataPct = Math.max(5, Math.round((mb.dataUsd / mb.totalFsp3YrUsd) * 100));
-      const apiPct = Math.max(4, 100 - llmPct - compPct - dataPct);
+      const modelShort = cm.modelName.replace(' (Vertex AI)', '');
 
       return `
-        <div id="agentCostRoiSection_${ag.id}" class="agent-arch-box" style="margin-top:26px; margin-bottom:26px; border:1px solid rgba(16,185,129,0.42); background:linear-gradient(180deg, rgba(6,18,32,0.96), rgba(9,24,42,0.94)); box-shadow:0 16px 40px rgba(0,0,0,0.28);">
-          <!-- Top Header -->
-          <div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:14px; padding-bottom:16px; border-bottom:1px solid rgba(148,163,184,0.2); margin-bottom:20px;">
+        <div class="simple-arch-card" style="margin-top: 22px; margin-bottom: 22px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
             <div>
-              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
-                <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; padding:4px 10px; border-radius:999px; background:rgba(16,185,129,0.18); color:#34d399; border:1px solid rgba(16,185,129,0.45); letter-spacing:0.06em; text-transform:uppercase;">
-                  💰 SINGLE-AGENT CLOUD COST, TOKENOMICS &amp; 3-YEAR ROI MODEL
-                </span>
-                <span style="font-family:var(--font-mono); font-size:11px; font-weight:700; padding:4px 10px; border-radius:999px; background:rgba(56,189,248,0.15); color:#38bdf8; border:1px solid rgba(56,189,248,0.38);">
-                  ${cm.modelName} · ${cm.tierLabel.split('·')[0].trim()}
-                </span>
-                <span style="font-family:var(--font-mono); font-size:11px; font-weight:700; padding:4px 10px; border-radius:999px; background:rgba(168,85,247,0.15); color:#c084fc; border:1px solid rgba(168,85,247,0.38);">
-                  Context Cache -75% · 3-Yr FSP -20%
-                </span>
+              <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:4px;">
+                Cloud FinOps &amp; Value Summary
               </div>
-              <h3 style="font-family:var(--font-display); font-size:clamp(20px, 2.2vw, 25px); font-weight:800; color:#f8fafc; margin:0;">
-                How Much Does <span style="color:#34d399;">${ag.name}</span> Cost to Run &amp; What Is Its Net ROI?
-              </h3>
-              <p style="font-size:13.5px; color:#cbd5e1; margin:5px 0 0; line-height:1.5;">
-                Deterministic bottom-up FinOps calculation across <strong>Vertex AI Gemini tokens</strong>, <strong>Agent Engine + ${cm.compute.solverEngine}</strong>, <strong>4 Partitioned BigQuery Tables</strong>, and <strong>${cm.api.connectorName}</strong>.
-              </p>
+              <h2 style="font-family:var(--font-display); font-size:21px; font-weight:800; color:var(--text-primary); margin:0;">
+                Estimated Cost Details — ${ag.name}
+              </h2>
             </div>
-            <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-              <a href="cost_analysis_presentation.html" target="_blank"
-                 style="text-decoration:none; display:inline-flex; align-items:center; gap:7px; padding:9px 15px; border-radius:999px; background:linear-gradient(135deg,#059669,#0284c7); color:#ffffff; font-size:12.5px; font-weight:800; border:1px solid rgba(52,211,153,0.5); box-shadow:0 4px 14px rgba(16,185,129,0.28);">
-                📊 Open Full 60-Agent Portfolio Cost Deck &rarr;
-              </a>
+
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class=" sc-tech-pill" style="border-color:${dept.color}55; color:${dept.color}; font-weight:700;">
+                Model: ${modelShort}
+              </span>
+              <span class="sc-tech-pill" style="font-weight:700;">
+                ~${cm.eventsPerDay.toLocaleString()} runs/day
+              </span>
             </div>
           </div>
 
-          <!-- 4 Executive KPI Cards -->
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap:14px; margin-bottom:20px;">
-            <!-- Card 1: Enterprise Monthly Run Rate -->
-            <div style="padding:16px 18px; border-radius:14px; background:rgba(15,23,42,0.85); border:1px solid rgba(56,189,248,0.38); border-top:3px solid #38bdf8;">
-              <div style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#38bdf8; text-transform:uppercase; letter-spacing:0.05em;">
-                01 · Enterprise Cloud Cost (3-Yr FSP)
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:14px;">
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid ${dept.color};">
+              <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                Enterprise Monthly Cost
               </div>
-              <div id="agLiveMoCost_${ag.id}" style="font-family:var(--font-display); font-size:28px; font-weight:800; color:#ffffff; margin:6px 0 4px;">
-                $${mb.totalFsp3YrUsd.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})} / mo
+              <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
+                $${mb.totalFsp3YrUsd.toFixed(0)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
               </div>
-              <div id="agLiveYrCost_${ag.id}" style="font-size:12.5px; color:#94a3b8; line-height:1.45;">
-                $${Math.round(mb.annualCloudFsp3YrUsd).toLocaleString()} / yr Cloud ($${Math.round(mb.totalAnnualRunCostUsd).toLocaleString()}/yr incl. 15% Ops)
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                $${Math.round(mb.annualCloudFsp3YrUsd).toLocaleString()} / year (with 3-Yr FSP)
               </div>
             </div>
 
-            <!-- Card 2: Unit Cost per 1K Invocations -->
-            <div style="padding:16px 18px; border-radius:14px; background:rgba(15,23,42,0.85); border:1px solid rgba(168,85,247,0.38); border-top:3px solid #a855f7;">
-              <div style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#c084fc; text-transform:uppercase; letter-spacing:0.05em;">
-                02 · Blended Unit Cost / 1,000 Calls
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid ${dept.color};">
+              <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                Pilot Scale Cost (1 Site)
               </div>
-              <div id="agLiveUnit1k_${ag.id}" style="font-family:var(--font-display); font-size:28px; font-weight:800; color:#ffffff; margin:6px 0 4px;">
-                $${mb.blendedCostPer1kCallsUsd.toFixed(2)} / 1K calls
+              <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
+                $${mb.pilotScaleMoUsd.toFixed(0)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
               </div>
-              <div style="font-size:12.5px; color:#94a3b8; line-height:1.45;">
-                Token Inference: <strong>$${cm.tokens.tokenCostPer1kCallsUsd.toFixed(2)}/1K</strong> (${cm.tokens.totalPerCall.toLocaleString()} tok/call)
-              </div>
-            </div>
-
-            <!-- Card 3: Scale Envelopes (Pilot vs Hyperscale) -->
-            <div style="padding:16px 18px; border-radius:14px; background:rgba(15,23,42,0.85); border:1px solid rgba(245,158,11,0.38); border-top:3px solid #f59e0b;">
-              <div style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#fbbf24; text-transform:uppercase; letter-spacing:0.05em;">
-                03 · Pilot (1 Plant) vs. Hyperscale (5x)
-              </div>
-              <div style="font-family:var(--font-display); font-size:24px; font-weight:800; color:#ffffff; margin:6px 0 4px;">
-                $${mb.pilotScaleMoUsd.toFixed(0)}/mo <span style="font-size:14px; color:#94a3b8; font-weight:600;">&rarr;</span> $${Math.round(mb.hyperscaleMoUsd).toLocaleString()}/mo
-              </div>
-              <div style="font-size:12.5px; color:#94a3b8; line-height:1.45;">
-                PayGo List: $${mb.totalPayGoUsd.toFixed(2)}/mo · 1-Yr FSP: $${mb.totalFsp1YrUsd.toFixed(2)}/mo
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                ~$${Math.round(mb.pilotScaleMoUsd * 12).toLocaleString()} / year pilot run rate
               </div>
             </div>
 
-            <!-- Card 4: Single-Agent Net Annual Value & Payback -->
-            <div style="padding:16px 18px; border-radius:14px; background:rgba(15,23,42,0.85); border:1px solid rgba(16,185,129,0.45); border-top:3px solid #10b981;">
-              <div style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#34d399; text-transform:uppercase; letter-spacing:0.05em;">
-                04 · Single-Agent Annual Business Value
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid ${dept.color};">
+              <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                Cost per 1,000 Runs
               </div>
-              <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:#34d399; margin:6px 0 4px;">
-                $${(vm.grossAnnualConservativeUsd / 1e6).toFixed(2)}M – $${(vm.grossAnnualLikelyUsd / 1e6).toFixed(2)}M/yr
+              <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
+                $${mb.blendedCostPer1kCallsUsd.toFixed(2)} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ 1K</span>
               </div>
-              <div id="agLiveRoiMult_${ag.id}" style="font-size:12.5px; color:#d1fae5; font-weight:700; line-height:1.45;">
-                ${vm.cloudRoiMultipleConservative}x – ${vm.cloudRoiMultipleLikely}x Cloud ROI · ${vm.paybackDays}d Payback
-              </div>
-            </div>
-          </div>
-
-          <!-- Interactive Live Single-Agent Volume & FSP Sizer -->
-          <div style="padding:18px 20px; border-radius:14px; background:rgba(15,23,42,0.9); border:1px solid rgba(148,163,184,0.24); margin-bottom:20px;">
-            <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px;">
-              <div>
-                <div style="font-family:var(--font-display); font-size:16px; font-weight:800; color:#f8fafc;">
-                  🎛️ Live Showcase Sizer — Test ${ag.name} at Your Enterprise Volume
-                </div>
-                <div style="font-size:12.5px; color:#94a3b8;">
-                  Drag daily invocation frequency or click a scale preset to recalculate monthly cloud spend &amp; ROI live during customer presentations:
-                </div>
-              </div>
-              <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                <button type="button" class="switch-pill" style="font-size:11.5px; padding:5px 11px; border-color:rgba(245,158,11,0.45); color:#fbbf24;"
-                        onclick="setSingleAgentScalePreset('${ag.id}', ${pilotCallsDay}, 20)">
-                  🌱 Pilot (1 Plant · ${pilotCallsDay.toLocaleString()}/day)
-                </button>
-                <button type="button" class="switch-pill" style="font-size:11.5px; padding:5px 11px; border-color:rgba(56,189,248,0.5); color:#38bdf8; font-weight:700;"
-                        onclick="setSingleAgentScalePreset('${ag.id}', ${cm.eventsPerDay}, 20)">
-                  🏢 Enterprise Baseline (${cm.eventsPerDay.toLocaleString()}/day)
-                </button>
-                <button type="button" class="switch-pill" style="font-size:11.5px; padding:5px 11px; border-color:rgba(16,185,129,0.5); color:#34d399;"
-                        onclick="setSingleAgentScalePreset('${ag.id}', ${hyperCallsDay}, 20)">
-                  🌐 Global Hyperscale (${hyperCallsDay.toLocaleString()}/day)
-                </button>
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                AI: $${mb.llmFsp3YrUsd.toFixed(0)} · Compute: $${mb.computeUsd.toFixed(0)} · Data: $${(mb.dataUsd + mb.apiUsd).toFixed(0)}
               </div>
             </div>
 
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; align-items:center; margin-bottom:16px;">
-              <div>
-                <div style="display:flex; justify-content:space-between; font-size:12.5px; font-weight:700; color:#e2e8f0; margin-bottom:6px;">
-                  <span>Daily Agent Runs (${cm.triggerCadence})</span>
-                  <span id="agCallsLbl_${ag.id}" style="font-family:var(--font-mono); color:#38bdf8;">${cm.eventsPerDay.toLocaleString()} calls/day (${cm.monthlyCalls.toLocaleString()}/mo)</span>
-                </div>
-                <input id="agCostCallsSlider_${ag.id}" type="range" min="50" max="20000" step="50" value="${cm.eventsPerDay}"
-                       style="width:100%; accent-color:#38bdf8; cursor:pointer;"
-                       oninput="updateSingleAgentCostCalc('${ag.id}')" />
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid #10b981;">
+              <div style="font-size:12px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                Estimated Annual Value
               </div>
-
-              <div>
-                <div style="display:flex; justify-content:space-between; font-size:12.5px; font-weight:700; color:#e2e8f0; margin-bottom:6px;">
-                  <span>Vertex AI FSP Commitment Tier</span>
-                  <span style="font-family:var(--font-mono); color:#34d399;"> Applies to Gemini Token Inference</span>
-                </div>
-                <select id="agCostFspSelect_${ag.id}" onchange="updateSingleAgentCostCalc('${ag.id}')"
-                        style="width:100%; padding:8px 12px; border-radius:8px; background:#0f172a; color:#f8fafc; border:1px solid rgba(56,189,248,0.4); font-family:var(--font-mono); font-size:12.5px; font-weight:700;">
-                  <option value="0">Pay-As-You-Go (0% Discount · $${mb.totalPayGoUsd.toFixed(2)}/mo baseline)</option>
-                  <option value="10">1-Year Vertex AI FSP (-10% Token Discount · $${mb.totalFsp1YrUsd.toFixed(2)}/mo baseline)</option>
-                  <option value="20" selected>3-Year Vertex AI FSP (-20% Token Discount · $${mb.totalFsp3YrUsd.toFixed(2)}/mo baseline)</option>
-                </select>
+              <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:#10b981; margin:6px 0 2px;">
+                $${(vm.grossAnnualConservativeUsd / 1e6).toFixed(2)}M <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ yr</span>
               </div>
-            </div>
-
-            <!-- Visual 4-Component Cost Distribution Bar -->
-            <div style="height:10px; border-radius:999px; overflow:hidden; display:flex; background:#090d16; margin-bottom:12px;">
-              <div id="agBarLlm_${ag.id}" style="width:${llmPct}%; background:#38bdf8;" title="Vertex AI Gemini Token Inference"></div>
-              <div id="agBarComp_${ag.id}" style="width:${compPct}%; background:#a855f7;" title="Agent Engine + OR-Tools Solver Compute"></div>
-              <div id="agBarData_${ag.id}" style="width:${dataPct}%; background:#10b981;" title="BigQuery Digital Twin Scan & Storage"></div>
-              <div id="agBarApi_${ag.id}" style="width:${apiPct}%; background:#f59e0b;" title="Domain APIs & Enterprise Connectors"></div>
-            </div>
-
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:10px;">
-              <div style="padding:10px 12px; border-radius:10px; background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.28); display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-size:12px; color:#bae6fd; font-weight:700;">● Gemini Tokens</span>
-                <span id="agBktLlm_${ag.id}" style="font-family:var(--font-mono); font-size:13px; font-weight:800; color:#38bdf8;">$${mb.llmFsp3YrUsd.toFixed(2)}/mo</span>
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                ${vm.cloudRoiMultipleConservative}x return · ${vm.paybackDays} days payback
               </div>
-              <div style="padding:10px 12px; border-radius:10px; background:rgba(168,85,247,0.08); border:1px solid rgba(168,85,247,0.28); display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-size:12px; color:#e9d5ff; font-weight:700;">● Agent Engine + Solver</span>
-                <span id="agBktComp_${ag.id}" style="font-family:var(--font-mono); font-size:13px; font-weight:800; color:#c084fc;">$${mb.computeUsd.toFixed(2)}/mo</span>
-              </div>
-              <div style="padding:10px 12px; border-radius:10px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.28); display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-size:12px; color:#a7f3d0; font-weight:700;">● BigQuery (4 Tables)</span>
-                <span id="agBktData_${ag.id}" style="font-family:var(--font-mono); font-size:13px; font-weight:800; color:#34d399;">$${mb.dataUsd.toFixed(2)}/mo</span>
-              </div>
-              <div style="padding:10px 12px; border-radius:10px; background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.28); display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-size:12px; color:#fde68a; font-weight:700;">● Domain APIs / ERP</span>
-                <span id="agBktApi_${ag.id}" style="font-family:var(--font-mono); font-size:13px; font-weight:800; color:#fbbf24;">$${mb.apiUsd.toFixed(2)}/mo</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Two Side-by-Side Audit Ledger Tables: (1) Cloud Cost Math & (2) Business Value Math -->
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap:16px;">
-            <!-- Left Table: 4-Bucket Bottom-Up Cloud Cost Formula -->
-            <div style="padding:16px 18px; border-radius:14px; background:rgba(15,23,42,0.82); border:1px solid rgba(148,163,184,0.22); overflow-x:auto;">
-              <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#38bdf8; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">
-                🧮 Bottom-Up Monthly Cloud Cost Formula (${cm.monthlyCalls.toLocaleString()} calls/mo)
-              </div>
-              <table style="width:100%; border-collapse:collapse; font-size:12.5px; color:#e2e8f0;">
-                <thead>
-                  <tr style="border-bottom:1px solid rgba(148,163,184,0.25); text-align:left; color:#94a3b8; font-family:var(--font-mono); font-size:11px;">
-                    <th style="padding:7px 6px;">Cost Bucket</th>
-                    <th style="padding:7px 6px;">Engineering Formula</th>
-                    <th style="padding:7px 6px; text-align:right;">Monthly (3-Yr FSP)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr style="border-bottom:1px solid rgba(148,163,184,0.12);">
-                    <td style="padding:9px 6px; font-weight:700; color:#38bdf8;">1. Gemini Tokens<br><span style="font-size:11px; color:#94a3b8; font-weight:500;">${cm.modelSlug}</span></td>
-                    <td style="padding:9px 6px; font-family:var(--font-mono); font-size:11.5px; color:#cbd5e1;">${cm.tokens.formula}<br><span style="color:#94a3b8;">× ${cm.monthlyCalls.toLocaleString()} calls/mo × 0.80 (3-Yr FSP)</span></td>
-                    <td style="padding:9px 6px; text-align:right; font-family:var(--font-mono); font-weight:800; color:#38bdf8;">$${mb.llmFsp3YrUsd.toFixed(2)}<br><span style="font-size:10.5px; color:#94a3b8; font-weight:500;">PayGo: $${mb.llmPayGoUsd.toFixed(2)}</span></td>
-                  </tr>
-                  <tr style="border-bottom:1px solid rgba(148,163,184,0.12);">
-                    <td style="padding:9px 6px; font-weight:700; color:#c084fc;">2. Agent Engine<br><span style="font-size:11px; color:#94a3b8; font-weight:500;">${cm.compute.solverEngine}</span></td>
-                    <td style="padding:9px 6px; font-family:var(--font-mono); font-size:11.5px; color:#cbd5e1;">${cm.compute.formula}<br><span style="color:#94a3b8;">(${cm.compute.avgDurationSec}s avg · ${cm.compute.vcpuCount} vCPU / ${cm.compute.ramGib} GiB)</span></td>
-                    <td style="padding:9px 6px; text-align:right; font-family:var(--font-mono); font-weight:800; color:#c084fc;">$${mb.computeUsd.toFixed(2)}</td>
-                  </tr>
-                  <tr style="border-bottom:1px solid rgba(148,163,184,0.12);">
-                    <td style="padding:9px 6px; font-weight:700; color:#34d399;">3. BigQuery Twin<br><span style="font-size:11px; color:#94a3b8; font-weight:500;">4 Partitioned Tables</span></td>
-                    <td style="padding:9px 6px; font-family:var(--font-mono); font-size:11.5px; color:#cbd5e1;">${cm.data.formula}</td>
-                    <td style="padding:9px 6px; text-align:right; font-family:var(--font-mono); font-weight:800; color:#34d399;">$${mb.dataUsd.toFixed(2)}</td>
-                  </tr>
-                  <tr style="border-bottom:1px solid rgba(148,163,184,0.22);">
-                    <td style="padding:9px 6px; font-weight:700; color:#fbbf24;">4. Domain APIs<br><span style="font-size:11px; color:#94a3b8; font-weight:500;">External Connectors</span></td>
-                    <td style="padding:9px 6px; font-family:var(--font-mono); font-size:11.5px; color:#cbd5e1;">${cm.api.formula}</td>
-                    <td style="padding:9px 6px; text-align:right; font-family:var(--font-mono); font-weight:800; color:#fbbf24;">$${mb.apiUsd.toFixed(2)}</td>
-                  </tr>
-                  <tr style="background:rgba(56,189,248,0.1);">
-                    <td colspan="2" style="padding:10px 8px; font-weight:800; color:#ffffff;">Total Single-Agent Cloud Run-Rate (3-Yr FSP)</td>
-                    <td style="padding:10px 8px; text-align:right; font-family:var(--font-mono); font-weight:800; color:#38bdf8; font-size:14px;">$${mb.totalFsp3YrUsd.toFixed(2)}/mo<br><span style="font-size:11px; color:#cbd5e1;">$${Math.round(mb.annualCloudFsp3YrUsd).toLocaleString()}/yr</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- Right Table: Quantified Business Value Drivers (Conservative vs. Likely) -->
-            <div style="padding:16px 18px; border-radius:14px; background:rgba(15,23,42,0.82); border:1px solid rgba(148,163,184,0.22); overflow-x:auto;">
-              <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#34d399; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">
-                📈 Single-Agent Value Model &amp; 3-Year ROI (Conservative vs. Likely)
-              </div>
-              <table style="width:100%; border-collapse:collapse; font-size:12.5px; color:#e2e8f0;">
-                <thead>
-                  <tr style="border-bottom:1px solid rgba(148,163,184,0.25); text-align:left; color:#94a3b8; font-family:var(--font-mono); font-size:11px;">
-                    <th style="padding:7px 6px;">Value Driver &amp; Baseline</th>
-                    <th style="padding:7px 6px; text-align:right;">Conservative</th>
-                    <th style="padding:7px 6px; text-align:right;">Likely</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr style="border-bottom:1px solid rgba(148,163,184,0.12);">
-                    <td style="padding:9px 6px;">
-                      <span style="font-family:var(--font-mono); font-size:10.5px; font-weight:800; color:#38bdf8; text-transform:uppercase;">${d1.category}</span>
-                      <div style="font-weight:700; color:#f8fafc; margin:2px 0;">${d1.name}</div>
-                      <div style="font-size:11.5px; color:#94a3b8;">${d1.formula}</div>
-                    </td>
-                    <td style="padding:9px 6px; text-align:right; font-family:var(--font-mono); font-weight:700; color:#e2e8f0;">
-                      +$${(d1.conservativeAnnualUsd / 1e3).toLocaleString()}K/yr<br>
-                      <span style="font-size:10.5px; color:#94a3b8;">(${d1.conservativeLiftPct}% lift)</span>
-                    </td>
-                    <td style="padding:9px 6px; text-align:right; font-family:var(--font-mono); font-weight:800; color:#34d399;">
-                      +$${(d1.likelyAnnualUsd / 1e3).toLocaleString()}K/yr<br>
-                      <span style="font-size:10.5px; color:#a7f3d0;">(${d1.likelyLiftPct}% lift)</span>
-                    </td>
-                  </tr>
-                  <tr style="border-bottom:1px solid rgba(148,163,184,0.12);">
-                    <td style="padding:9px 6px;">
-                      <span style="font-family:var(--font-mono); font-size:10.5px; font-weight:800; color:#c084fc; text-transform:uppercase;">${d2.category}</span>
-                      <div style="font-weight:700; color:#f8fafc; margin:2px 0;">${d2.name}</div>
-                      <div style="font-size:11.5px; color:#94a3b8;">${d2.formula}</div>
-                    </td>
-                    <td style="padding:9px 6px; text-align:right; font-family:var(--font-mono); font-weight:700; color:#e2e8f0;">
-                      +$${(d2.conservativeAnnualUsd / 1e3).toLocaleString()}K/yr<br>
-                      <span style="font-size:10.5px; color:#94a3b8;">(${d2.conservativeLiftPct}% lift)</span>
-                    </td>
-                    <td style="padding:9px 6px; text-align:right; font-family:var(--font-mono); font-weight:800; color:#34d399;">
-                      +$${(d2.likelyAnnualUsd / 1e3).toLocaleString()}K/yr<br>
-                      <span style="font-size:10.5px; color:#a7f3d0;">(${d2.likelyLiftPct}% lift)</span>
-                    </td>
-                  </tr>
-                  <tr style="border-bottom:1px solid rgba(148,163,184,0.2);">
-                    <td style="padding:8px 6px; color:#fca5a5; font-weight:600;">Less Annual Cloud + 15% Ops Maintenance Cost</td>
-                    <td style="padding:8px 6px; text-align:right; font-family:var(--font-mono); color:#fca5a5;">-$${Math.round(mb.totalAnnualRunCostUsd).toLocaleString()}/yr</td>
-                    <td style="padding:8px 6px; text-align:right; font-family:var(--font-mono); color:#fca5a5;">-$${Math.round(mb.totalAnnualRunCostUsd).toLocaleString()}/yr</td>
-                  </tr>
-                  <tr style="background:rgba(16,185,129,0.12);">
-                    <td style="padding:10px 8px; font-weight:800; color:#ffffff;">Net Annual Value &amp; Cloud ROI Multiple</td>
-                    <td style="padding:10px 8px; text-align:right; font-family:var(--font-mono); font-weight:800; color:#e2e8f0; font-size:13.5px;">
-                      $${(vm.netAnnualConservativeUsd / 1e6).toFixed(2)}M/yr<br>
-                      <span style="font-size:11px; color:#38bdf8;">${vm.cloudRoiMultipleConservative}x Cloud ROI</span>
-                    </td>
-                    <td style="padding:10px 8px; text-align:right; font-family:var(--font-mono); font-weight:800; color:#34d399; font-size:14px;">
-                      $${(vm.netAnnualLikelyUsd / 1e6).toFixed(2)}M/yr<br>
-                      <span style="font-size:11px; color:#a7f3d0;">${vm.cloudRoiMultipleLikely}x ROI · ${vm.paybackDays}d Payback</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>
@@ -39283,6 +38988,7 @@
                 ${cls.label}
               </span>
               ${ag.badge ? `<span class="build-tier-badge" style="background:${dept.color}18; color:${dept.color}; border:1px solid ${dept.color}45;">✦ ${ag.badge}</span>` : ''}
+              ${ag.costModel ? `<span class="build-tier-badge" style="background:${dept.color}14; color:${dept.color}; border:1px solid ${dept.color}40;">💰 $${ag.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo · $${ag.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K</span>` : ''}
             </div>
 
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
@@ -39299,14 +39005,7 @@
             </div>
             <div id="agentMoreDetailsDrawer" class="journey-accordion-item" style="margin-top:14px; margin-bottom:0;">
               <div class="journey-accordion-body" style="padding:16px 18px;">
-                ${ag.costModel ? `
-              <div style="padding:12px 16px; border-radius:12px; background:rgba(2,132,199,0.08); border:1px solid rgba(2,132,199,0.28); margin-bottom:14px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; font-family:var(--font-mono); font-size:12px;">
-                <div><strong>💰 Enterprise Cloud Cost (3-Yr FSP):</strong> <span style="color:#0284c7; font-weight:800;">$${ag.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(2)}/mo</span> ($${Math.round(ag.costModel.monthlyBreakdown.annualCloudFsp3YrUsd).toLocaleString()}/yr · Pilot: $${ag.costModel.monthlyBreakdown.pilotScaleMoUsd.toFixed(0)}/mo)</div>
-                <div><strong>⚡ Unit Cost:</strong> $${ag.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K calls (${ag.costModel.modelName.replace(' (Vertex AI)', '')})</div>
-                <div style="color:#059669; font-weight:800;">📈 Net Value: $${(ag.costModel.valueModel.grossAnnualConservativeUsd/1e6).toFixed(2)}M–$${(ag.costModel.valueModel.grossAnnualLikelyUsd/1e6).toFixed(2)}M/yr (${ag.costModel.valueModel.cloudRoiMultipleConservative}x ROI)</div>
-              </div>
-            ` : ''}
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
                   <div class="toil-highlight-box">
                     <div class="toil-top-bar"><span class="toil-badge">✕ Problem Solved</span></div>
                     <div class="toil-text">${shortSentence(ag.problem, 130)}</div>
@@ -39323,7 +39022,10 @@
           <!-- 2. Branching Multi-Stage Workflow Architecture Diagram -->
           ${renderSimpleAgentArchitectureDiagram(ag, dept)}
 
-          <!-- 3. Dedicated Box for a Video -->
+          <!-- 3. Simple Basic Cost Details Card (Same Website Design & Theme) -->
+          ${renderAgentCostAndRoiPanel(ag, dept)}
+
+          <!-- 4. Dedicated Box for a Video -->
           <div class="video-stage-box">
             <div class="video-toolbar" style="border-top:none; border-bottom:1px solid var(--border-subtle);">
               <span style="font-weight:700; color:var(--text-primary);">🎬 Agent Demo Video Box — ${ag.name}</span>
@@ -39371,10 +39073,6 @@
               }
             </div>
           </div>
-
-          ${renderAgentCostAndRoiPanel(ag, dept)}
-
-          ${renderAgentAdkAndDemoDataPanel(ag)}
         </div>
       `;
 
@@ -39405,8 +39103,6 @@
       const transClass = getPageTransitionClass(ev, sRect);
 
       const dept = getDeptMeta(ag.deptId);
-      const sell = getAgentSellingMeta(ag, dept);
-      const sysArr = toSysArray(ag.systems);
 
       if (pushHash) {
         history.pushState({ page: 'blueprint', id: agentId }, '', `#blueprint/${agentId}`);
@@ -39419,147 +39115,17 @@
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
               <button type="button" class="back-btn" onclick="openAgentPage('${ag.id}', true, event)">
                 <span>&larr;</span>
-                <span>Back to ${ag.name} (Executive Selling Page)</span>
+                <span>Back to ${ag.name}</span>
               </button>
-              <button type="button" class="back-btn" onclick="openArchitecturePage(true, event)">
-                <span>🏗️</span>
-                <span>All 60 Agents Enterprise Architecture</span>
-              </button>
-            </div>
-
-            <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              <button type="button" class="switch-pill" onclick="openPersonasDirectoryPage('${ag.isUniversal ? 'universal' : dept.id}', '', true, 'agents', event)">
-                🤖 Browse All 60 Agents
-              </button>
-              <button type="button" class="switch-pill" onclick="goToOrgChart()">
-                CSCO Org Chart
+              <button type="button" class="back-btn" onclick="goToOrgChart()">
+                <span>6 SCOR Pillars</span>
               </button>
             </div>
           </div>
 
-          <!-- Technical Blueprint Header Card -->
-          <div class="persona-header-card" style="border-color: rgba(168, 85, 247, 0.45);">
-            ${renderSupplyChainWatermarkSvg(dept.watermarkType, dept.color, 'persona-header-sc-watermark')}
-
-            <div style="position:relative; z-index:2;">
-              <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:12px;">
-                <div class="persona-badge" style="margin-bottom:0; background: rgba(168,85,247,0.18); color: #e9d5ff; border: 1px solid rgba(168,85,247,0.5);">
-                  <span>🏗️ High-Code Technical Architecture &amp; A2A Sub-Agent Spec</span>
-                </div>
-                <span class="sc-tech-pill" style="border-color:${dept.color}66; color:${dept.color}; font-weight:700;">
-                  ${sell.buildType}
-                </span>
-              </div>
-              <h1 class="persona-page-title">${ag.categoryDisplayName || ag.name} — Engineering Blueprint</h1>
-              <p class="persona-page-summary">
-                ${formatRichText('Complete multi-agent system topology, A2A sub-agent decomposition, Google Cloud 12-Service Stack (BigQuery, Cloud Spanner Graph, AlloyDB, Google Maps Platform, OR-Tools, Vertex AI ADK), and signed ERP/WMS/TMS write-back specification.')}
-              </p>
-            </div>
-
-            <div class="persona-stat-highlight" style="border-color: ${dept.color}55;">
-              <div class="persona-stat-value" style="color: ${dept.color};">${ag.badge}</div>
-              <div class="persona-stat-label">3 Collaborating A2A Sub-Agents · 100% Deterministic Write-Back</div>
-            </div>
-          </div>
-
-          <!-- 5-Stage Visual SVG Architecture Diagram + 3 Collaborating A2A Sub-Agents -->
-          ${renderAgentArchitectureBlueprint(ag, dept)}
-
-          <!-- Full Google Cloud Service Stack (12 Services) & Pre-Built Enterprise Connectors -->
-          <div style="margin-top:28px;">
-            ${renderGcpAndEnterpriseConnectorsPanel(ag, dept, sell)}
-          </div>
-
-          <!-- Section: Google Cloud 3-Segment Supply Chain Data Foundation (Private / Community / Public) -->
-          <h2 class="block-title" style="margin-top:34px;">3-Segment Supply Chain Data Foundation</h2>
-          <p class="block-subtitle">
-            ${formatRichText('Aligned with Google Cloud’s Supply Chain Twin architecture—fusing Private ERP/WMS/MES records, Community Partner/EDI/AIS/ADS-B feeds, and Public WeatherNext 3 / Maps signals in BigQuery, Cloud Spanner & AlloyDB.')}
-          </p>
-
-          <div class="exec-pitch-grid" style="margin-bottom:34px;">
-            <div class="exec-pitch-card" style="--pitch-accent: #00d2ff;">
-              <div class="exec-pitch-eyebrow" style="color:#00d2ff; background:rgba(0,210,255,0.12); border:1px solid rgba(0,210,255,0.38);">
-                <span>01 · Private Enterprise Data</span>
-              </div>
-              <h3 class="exec-pitch-title">Internal Systems of Record</h3>
-              <div class="exec-pitch-body">${formatRichBullets(sell.dataSegments.privateData, '#00d2ff')}</div>
-            </div>
-            <div class="exec-pitch-card" style="--pitch-accent: #c084fc;">
-              <div class="exec-pitch-eyebrow" style="color:#c084fc; background:rgba(168,85,247,0.14); border:1px solid rgba(168,85,247,0.4);">
-                <span>02 · Community &amp; Partner Data</span>
-              </div>
-              <h3 class="exec-pitch-title">EDI, AIS, ADS-B &amp; Supplier Portals</h3>
-              <div class="exec-pitch-body">${formatRichBullets(sell.dataSegments.communityData, '#c084fc')}</div>
-            </div>
-            <div class="exec-pitch-card" style="--pitch-accent: #34d399;">
-              <div class="exec-pitch-eyebrow" style="color:#34d399; background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.4);">
-                <span>03 · Public &amp; Environmental Signals</span>
-              </div>
-              <h3 class="exec-pitch-title">WeatherNext 3, Maps &amp; Earth Engine</h3>
-              <div class="exec-pitch-body">${formatRichBullets(sell.dataSegments.publicData, '#34d399')}</div>
-            </div>
-          </div>
-
-          <!-- Section: High-Code Mathematical Solver Stack & Signed API Write-Back Spec -->
-          <h2 class="block-title">Mathematical Solver Stack &amp; Deterministic ERP/WMS/TMS Write-Back</h2>
-          <p class="block-subtitle">
-            ${formatRichText('Why LLMs alone are never allowed to guess physical constraints—how Gemini 3.1 Pro & 3.8 Flash orchestrate 100% deterministic mathematical solvers before executing signed system transactions.')}
-          </p>
-
-          <div class="showcase-grid" style="grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); margin-bottom:32px;">
-            <div class="showcase-panel" style="border-color:rgba(245,158,11,0.38);">
-              <div class="panel-tag" style="color:#fbbf24;">🧮 Deterministic Mathematical &amp; AI Solver Stack</div>
-              <div style="font-size:17px; color:#f8fafc; font-weight:500; line-height:1.68; margin-bottom:14px;">
-                ${formatRichBullets(ag.solverStack || '', '#fbbf24')}
-              </div>
-              <div style="font-size:15px; color:var(--text-secondary); line-height:1.65;">
-                <strong>Implementation Tier (${sell.buildType}):</strong> ${formatRichText('Gemini 3.1 Pro & 3.8 Flash translate unstructured disruption alerts, planner intent, and multimodal docs into formal mathematical parameters, invoke the deterministic solver on Vertex AI Agent Engine, and verify 100% physical/SLA compliance.')}
-              </div>
-            </div>
-
-            <div class="showcase-panel" style="border-color:rgba(16,185,129,0.38);">
-              <div class="panel-tag" style="color:#34d399;">🔐 Signed Enterprise API / BAPI / EDI Write-Back Payload</div>
-              <div style="font-size:14.5px; font-family:var(--font-mono); color:#d1fae5; background:rgba(16,185,129,0.09); border:1px solid rgba(16,185,129,0.32); padding:16px 18px; border-radius:12px; margin-bottom:14px; line-height:1.68;">
-                ${ag.apiWriteback || ''}
-              </div>
-              <div style="font-size:13px; color:#94a3b8; margin-bottom:8px; font-weight:700; text-transform:uppercase;">
-                Connected Enterprise Systems &amp; Gateways:
-              </div>
-              <div class="sc-tech-pills">
-                ${sysArr.map(s => `<span class="sc-tech-pill">${s}</span>`).join('')}
-              </div>
-            </div>
-          </div>
-
-          <!-- 4-Layer Agentic Supply Chain Reference Architecture -->
-          <h3 class="block-title" style="font-size:22px; margin-top:16px; margin-bottom:4px;">4-Layer Vertex AI, BigQuery, Cloud Spanner &amp; AlloyDB Reference Stack</h3>
-          <p class="block-subtitle" style="margin-bottom:14px;">End-to-end production deployment pattern for <strong>${ag.name}</strong>.</p>
-          <div class="arch-layer-grid">
-            <div class="arch-layer-card">
-              <div class="arch-layer-num" style="color:var(--sc-cyan);">LAYER 01 · TELEMETRY &amp; SYSTEMS</div>
-              <div class="arch-layer-title">Apigee + Pub/Sub + Dataflow</div>
-              <div class="arch-layer-desc">${formatRichText(sysArr.join(', ') || 'SAP S/4HANA & IBP, Oracle OTM, Manhattan WMS, Blue Yonder TMS, CargoWise, EDI 204/214/315/404/856, Spire AIS, FlightAware ADS-B & IoT streams.')}</div>
-            </div>
-            <div class="arch-layer-card">
-              <div class="arch-layer-num" style="color:var(--sc-emerald);">LAYER 02 · UNIFIED DATA FABRIC</div>
-              <div class="arch-layer-title">BigQuery + Spanner + AlloyDB</div>
-              <div class="arch-layer-desc">${formatRichText('Canonical SKU-Location-Tier entity graph in BigQuery + Cloud Spanner Graph and AlloyDB pgvector RAG.')}</div>
-            </div>
-            <div class="arch-layer-card">
-              <div class="arch-layer-num" style="color:var(--sc-amber);">LAYER 03 · AGENTIC REASONING</div>
-              <div class="arch-layer-title">Vertex AI Agent Engine + OR-Tools</div>
-              <div class="arch-layer-desc">${formatRichText(ag.solverStack || 'Multi-agent orchestration combining Gemini 3.1 Pro & 3.8 Flash reasoning with Google OR-Tools & Google Maps Platform physical solvers.')}</div>
-            </div>
-            <div class="arch-layer-card">
-              <div class="arch-layer-num" style="color:var(--sc-violet);">LAYER 04 · CONTROL TOWER UX</div>
-              <div class="arch-layer-title">A2UI + Looker + Signed Write-Back</div>
-              <div class="arch-layer-desc">${formatRichText(`Interactive 3D/2D vector schematics, Looker semantic charts, and 1-click signed write-back (${ag.apiWriteback || 'ERP/WMS/TMS'}).`)}</div>
-            </div>
-          </div>
+          ${renderSimpleAgentArchitectureDiagram(ag, dept)}
 
           ${renderAgentCostAndRoiPanel(ag, dept)}
-
-          ${renderAgentAdkAndDemoDataPanel(ag)}
         </div>
       `;
 
@@ -41967,7 +41533,6 @@
                             </div>
                             <div class="pt-tile-sym">${m.sym}</div>
                             <div class="pt-tile-title" title="${ag.name}">${m.short}</div>
-                            ${ag.costModel ? `<div style="font-family:var(--font-mono); font-size:9.5px; font-weight:800; color:#0284c7; margin-top:2px;">$${ag.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo · ${ag.costModel.valueModel.cloudRoiMultipleConservative}x</div>` : ''}
                             <div class="pt-tile-dot" title="${m.layer}"></div>
                           </div>
                         `;
@@ -42062,21 +41627,9 @@
                 ${shortSentence(selAg.solution || selAg.shortDesc, 165)}
               </p>
 
-              <!-- Cloud Cost & ROI Summary inside Sticky Inspector -->
               ${selAg.costModel ? `
-                <div style="padding:12px 14px; border-radius:12px; background:rgba(2,132,199,0.08); border:1px solid rgba(2,132,199,0.32); border-left:4px solid #0284c7; margin-bottom:14px;">
-                  <div style="font-family:var(--font-mono); font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:#0284c7; margin-bottom:6px;">
-                    💰 Cloud FinOps &amp; 3-Year ROI (${selAg.costModel.modelName.replace(' (Vertex AI)', '')})
-                  </div>
-                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-family:var(--font-mono); font-size:11.5px; color:var(--text-primary);">
-                    <div><span style="color:var(--text-secondary);">Enterprise:</span> <strong>$${selAg.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo</strong></div>
-                    <div><span style="color:var(--text-secondary);">Pilot Scale:</span> <strong>$${selAg.costModel.monthlyBreakdown.pilotScaleMoUsd.toFixed(0)}/mo</strong></div>
-                    <div><span style="color:var(--text-secondary);">Unit Cost:</span> <strong>$${selAg.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K</strong></div>
-                    <div><span style="color:var(--text-secondary);">Payback:</span> <strong>${selAg.costModel.valueModel.paybackDays} Days</strong></div>
-                  </div>
-                  <div style="margin-top:6px; padding-top:6px; border-top:1px dashed rgba(148,163,184,0.3); font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#059669;">
-                    📈 Value: $${(selAg.costModel.valueModel.grossAnnualConservativeUsd/1e6).toFixed(2)}M–$${(selAg.costModel.valueModel.grossAnnualLikelyUsd/1e6).toFixed(2)}M/yr (${selAg.costModel.valueModel.cloudRoiMultipleConservative}x ROI)
-                  </div>
+                <div style="padding:10px 12px; border-radius:10px; background:var(--bg-elevated); border:1px solid var(--border-subtle); margin-bottom:14px; font-family:var(--font-mono); font-size:11.5px; color:var(--text-secondary);">
+                  💰 Est. Cost: <strong style="color:var(--text-primary);">$${selAg.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo</strong> · Pilot: <strong style="color:var(--text-primary);">$${selAg.costModel.monthlyBreakdown.pilotScaleMoUsd.toFixed(0)}/mo</strong> · <strong style="color:var(--text-primary);">$${selAg.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K</strong>
                 </div>
               ` : ''}
 
