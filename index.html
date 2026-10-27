@@ -54967,7 +54967,7 @@
       });
 
       // Pillar rollups
-      const pillarCardsHtml = DEPARTMENTS.map(dept => {
+      const pillarCardsHtml = Object.values(DEPARTMENTS).map(dept => {
         const pAgents = allAgents.filter(a => a.deptId === dept.id);
         let pAiMo = 0, pLlm = 0, pComp = 0, pData = 0, pManMo = 0, pValYr = 0, pFte = 0;
         pAgents.forEach(a => {
@@ -54993,7 +54993,7 @@
           <div onclick="filterCostTabByPillar('${dept.id}')" style="cursor:pointer; padding:16px 18px; border-radius:16px; background:var(--bg-elevated); border:2px solid ${isSelected ? dept.color : 'var(--border-subtle)'}; transition:all 0.18s ease;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
               <span style="font-size:11.5px; font-weight:800; color:${dept.color}; text-transform:uppercase; letter-spacing:0.06em;">
-                ${dept.shortTitle || dept.title}
+                ${dept.vNum ? dept.vNum + ' · ' : ''}${dept.name}
               </span>
               <span class="sc-tech-pill" style="padding:2px 8px; font-size:11px; font-weight:700;">
                 ${pAgents.length} Agents
@@ -55435,7 +55435,8 @@
         return (
           (ag.name || '').toLowerCase().includes(q) ||
           (ag.categoryDisplayName || '').toLowerCase().includes(q) ||
-          (ag.owner || '').toLowerCase().includes(q)
+          (ag.subPillarName || '').toLowerCase().includes(q) ||
+          (ag.primaryPersonaName || '').toLowerCase().includes(q)
         );
       });
 
@@ -55455,8 +55456,8 @@
         return `
           <tr onclick="openAgentPage('${ag.id}', true, event)" style="cursor:pointer; border-bottom:1px solid var(--border-subtle); background:${isHl ? 'var(--bg-elevated)' : 'transparent'}; transition:background 0.15s ease;" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='${isHl ? 'var(--bg-elevated)' : 'transparent'}'">
             <td style="padding:12px;">
-              <div style="font-weight:800; color:var(--text-primary); font-size:13.5px;">${ag.name}</div>
-              <div style="font-size:11.5px; color:${dept.color}; font-weight:700;">${dept.shortTitle || dept.title} · ${ag.owner || ''}</div>
+              <div style="font-weight:800; color:var(--text-primary); font-size:13.5px;">${cleanAgentName(ag.name)}</div>
+              <div style="font-size:11.5px; color:${dept.color}; font-weight:700;">${ag.subPillarName || dept.name}${ag.primaryPersonaName ? ' · ' + ag.primaryPersonaName : ''}</div>
             </td>
             <td style="padding:12px;">
               <span class="sc-tech-pill" style="font-size:11px; padding:3px 8px; border-color:${isPro ? '#a855f755' : '#10b98155'}; color:${isPro ? '#a855f7' : '#10b981'}; font-weight:700;">
