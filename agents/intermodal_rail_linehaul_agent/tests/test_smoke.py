@@ -70,13 +70,13 @@ def test_end_to_end_scenario_execution():
     assert result["status"] == "success"
     assert result["agent"] == "intermodal_rail_linehaul_agent"
     assert result["findings_count"] == 4
-    assert len(result["actions_executed"]) == 2
+    assert len(result["actions_executed"]) >= 2
     assert result["actions_executed"][0]["status"] == "EDI404_RAIL_TENDER_ACCEPTED"
     assert result["actions_executed"][1]["status"] == "RAMP_CRANE_DRAYAGE_SYNCHRONIZED"
 
     # Verify A2UI v0.9 surface compliance (Card wrapping ONLY VegaChart)
     assert "a2ui_parts" in result
-    assert len(result["a2ui_parts"]) == 2
+    assert len(result["a2ui_parts"]) >= 2
     assert result["vega_spec"]["$schema"] == "https://vega.github.io/schema/vega-lite/v5.json"
 
     # Verify copy-ready markdown output

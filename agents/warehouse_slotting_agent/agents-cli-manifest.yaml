@@ -1,10 +1,10 @@
 name: warehouse_slotting_agent
 display_name: "SlotMaster — Dynamic 3D Warehouse Wave & Slotting Optimizer"
-description: "3D warehouse aisle velocity slotting, dynamic picker travel distance minimization, AMR swarm dispatching, and wave release balancing."
+description: "[Category: 04 · Inventory & Warehousing — Warehouse Operations] Dynamic Slotting Agent (DC Operations Mgr / IE Lead): Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting. Outcome: Reduces picker transit time by 15–30%."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "04 · Fulfill"
-category: "Warehousing, Inwarding QA & Intralogistics"
+category: "04 · Inventory & Warehousing — Warehouse Operations"
 tags:
   - slotting
   - warehouse-management

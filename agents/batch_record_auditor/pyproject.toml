@@ -1,0 +1,10 @@
+[project]
+name = "batch-record-auditor"
+version = "1.0.0"
+description = "[Category: 03 · Manufacturing & Production — Quality & Compliance] Batch Record Auditor (Regulatory Compliance Lead): Parses BPR and COA documents to flag pasteurization & CCP deviations. Outcome: 60–80% faster batch release review."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

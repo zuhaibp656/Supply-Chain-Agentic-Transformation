@@ -1,0 +1,29 @@
+[
+  {
+    "scenario_id": "SCEN-BASELINE-MANUAL",
+    "scenario_name": "Legacy Manual Spreadsheet Baseline",
+    "category": "02 \u00b7 Source | Material & Packaging",
+    "service_level_pct": 88.4,
+    "annual_cost_usd": 4850000,
+    "cycle_time_hrs": 42.0,
+    "kpi_impact": "High manual toil & delayed ERP response"
+  },
+  {
+    "scenario_id": "SCEN-AI-OPTIMAL",
+    "scenario_name": "Sustainable Packaging Agent Autonomous Policy",
+    "category": "02 \u00b7 Source | Material & Packaging",
+    "service_level_pct": 98.7,
+    "annual_cost_usd": 3620000,
+    "cycle_time_hrs": 1.5,
+    "kpi_impact": "Mitigates EPR and landfill taxation"
+  },
+  {
+    "scenario_id": "SCEN-STRESS-SURGE",
+    "scenario_name": "Peak Surge & Disruption Resilience Mode",
+    "category": "02 \u00b7 Source | Material & Packaging",
+    "service_level_pct": 96.9,
+    "annual_cost_usd": 3890000,
+    "cycle_time_hrs": 2.2,
+    "kpi_impact": "Protected SLA under +25% demand/supply shock"
+  }
+]

@@ -1,0 +1,10 @@
+[project]
+name = "dynamic-markdown-agent"
+version = "1.0.0"
+description = "[Category: 06 · Returns & Reverse Logistics — Expiry & Markdowns] Dynamic Markdown Agent (Merchandising / Store Ops Mgr): Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts. Outcome: Cuts perishable scrap by 20–35%."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

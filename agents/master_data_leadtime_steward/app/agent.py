@@ -83,6 +83,9 @@ class MasterDataLeadtimeAgent:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "master_data_leadtime_steward"
+        self.category = "02 · Sourcing & Procurement — Contract & PO Mgmt"
+        self.display_name = "[02 · Source | Contract & PO Mgmt] PO Expediting Agent"
+        self.description = "[Category: 02 · Sourcing & Procurement — Contract & PO Mgmt] PO Expediting Agent (Buyer / Procurement Coord.): Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments. Outcome: Resolves ~70% of standard PO delays."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

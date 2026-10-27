@@ -1,7 +1,7 @@
 schema_version: "v1"
 id: "rfq_should_cost_agent"
-name: "SourcePulse — Parametric Should-Cost & Autonomous RFQ Agent"
-description: "Builds parametric BOM should-cost models in BigQuery linked to live commodity indices, normalizes bids via Document AI, and solves combinatorial award splits in OR-Tools."
+name: "[02 · Source | Material & Packaging] Dynamic Should-Cost Agent"
+description: "[Category: 02 · Sourcing & Procurement — Material & Packaging] Dynamic Should-Cost Agent (Strategic Sourcing Lead): Deconstructs packaging specs (resin weight, corrugate, conversion energy). Outcome: Fact-based margin leverage in RFPs."
 agent_class: "app.agent.RfqShouldCostAgent"
 runtime:
   type: "adk"
@@ -15,6 +15,6 @@ tools:
   - "action_award_supplier_contract"
   - "action_challenge_vendor_outlier"
 metadata:
-  scor_category: "02 · Source (Strategic Sourcing & Category Procurement)"
+  scor_category: "02 · Sourcing & Procurement — Material & Packaging"
   tier_coverage: "Direct Raw Materials / Global Tier-1 Component Fabricators"
   roi_focus: "+6.8% direct material cost savings, RFQ analysis compressed from 3 weeks to 15 mins, optimal dual-sourcing"

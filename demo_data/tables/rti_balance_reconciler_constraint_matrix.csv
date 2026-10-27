@@ -1,0 +1,4 @@
+constraint_id,sku_id,vendor_id,sub_pillar,capacity_limit,current_load,utilization_pct,sla_threshold_hrs,solver_recommendation
+RTI_BA-CON-201,SKU-SEMI-9900-X1,VND-T1-TSMC-TW01,Pallet & Tote Reclamation,12500,11950,95.6,24,Rebalance via RTI Balance Reconciler OR-Tools solver
+RTI_BA-CON-202,SKU-CRYO-4410-BIO,VND-T1-BOSCH-DE02,Pallet & Tote Reclamation,8400,7980,95.0,12,Trigger automated SAP S/4HANA schedule update
+RTI_BA-CON-203,SKU-AUTO-7720-EV,VND-T2-LGCHEM-KR01,Pallet & Tote Reclamation,15000,12300,82.0,48,Hold optimal buffer allocation

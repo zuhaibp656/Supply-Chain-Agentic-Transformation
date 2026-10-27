@@ -83,6 +83,9 @@ class ScrapDefectRootCauseAgent:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "scrap_defect_root_cause_agent"
+        self.category = "03 · Manufacturing & Production — Quality & Compliance"
+        self.display_name = "[03 · Make | Quality & Compliance] RCA & CAPA Copilot"
+        self.description = "[Category: 03 · Manufacturing & Production — Quality & Compliance] RCA & CAPA Copilot (Continuous Improvement Lead): Correlates consumer complaints with ingredient lots and machine telemetry. Outcome: Speeds 5-Why investigation closures."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

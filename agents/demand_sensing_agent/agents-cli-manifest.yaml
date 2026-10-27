@@ -1,7 +1,7 @@
 schema_version: "v1"
 id: "demand_sensing_agent"
-name: "PulseCast — Multi-Signal Demand Sensing Engine"
-description: "Ingests daily sell-through, channel inventory, WeatherNext 3, and Google Maps foot-traffic to predict P10/P50/P90 demand curves and eliminate sales bias."
+name: "[01 · Plan | Demand Forecasting] Demand Sensing Agent"
+description: "[Category: 01 · Planning & Strategy — Demand Forecasting] Demand Sensing Agent (Demand Planner / Forecaster): Synthesizes POS velocity, weather anomalies, and macro trends. Outcome: Detects demand shifts 7–14 days earlier."
 agent_class: "app.agent.DemandSensingAgent"
 runtime:
   type: "adk"
@@ -15,6 +15,6 @@ tools:
   - "action_commit_ibp_pir_change"
   - "action_suppress_fva_bias"
 metadata:
-  scor_category: "01 · Plan (Demand Planning, Sensing & S&OP)"
+  scor_category: "01 · Planning & Strategy — Demand Forecasting"
   tier_coverage: "Store POS / Regional Distribution Hubs / Plant Buffers"
   roi_focus: "-6.4 pts WAPE, +3.2 pts Forecast Value Added (FVA), zero out-of-stock censorship lag"

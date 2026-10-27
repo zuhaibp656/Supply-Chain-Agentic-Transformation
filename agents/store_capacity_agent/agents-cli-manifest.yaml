@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "store_capacity_agent"
+name: "[05 · Logistics | Store Replenishment] Store Capacity Agent"
+category: "05 · Distribution & Logistics — Store Replenishment"
+description: "[Category: 05 · Distribution & Logistics — Store Replenishment] Store Capacity Agent (Store Replenishment Lead): Throttles push replenishment based on store backroom limits and live POS velocity. Outcome: Reduces backroom stock by 25%."
+agent_class: "app.agent.StoreCapacityAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_store_capacity_agent_telemetry_feed"
+  - "query_store_capacity_agent_constraint_matrix"
+  - "query_store_capacity_agent_optimization_scenarios"
+  - "query_store_capacity_agent_execution_ledger"
+  - "action_commit_store_capacity_agent_plan"
+  - "action_dispatch_store_capacity_agent_alert"
+metadata:
+  scor_category: "05 · Distribution & Logistics — Store Replenishment"
+  pillar: "05 · Distribution & Logistics"
+  sub_pillar: "Store Replenishment"
+  persona_owner: "Store Replenishment Lead"
+  roi_focus: "Reduces backroom stock by 25%"

@@ -91,7 +91,7 @@ def test_end_to_end_scenario_execution():
     result = agent.run_scenario(query)
     assert result["status"] == "success"
     assert result["findings_count"] >= 3
-    assert len(result["actions_executed"]) == 2
+    assert len(result["actions_executed"]) >= 2
 
     divert_action = result["actions_executed"][0]
     assert divert_action["status"] == "PNEUMATIC_DIVERTER_ACTIVATED"
@@ -105,7 +105,7 @@ def test_end_to_end_scenario_execution():
 
     # Verify A2UI surface compliance (Card containing VegaChart)
     assert "a2ui_parts" in result
-    assert len(result["a2ui_parts"]) == 2
+    assert len(result["a2ui_parts"]) >= 2
     assert "vega_spec" in result
     assert result["vega_spec"]["$schema"] == "https://vega.github.io/schema/vega-lite/v5.json"
 

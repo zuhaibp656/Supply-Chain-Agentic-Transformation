@@ -1,0 +1,35 @@
+[
+  {
+    "constraint_id": "DYNAMI-CON-201",
+    "sku_id": "SKU-SEMI-9900-X1",
+    "vendor_id": "VND-T1-TSMC-TW01",
+    "sub_pillar": "Expiry & Markdowns",
+    "capacity_limit": 12500,
+    "current_load": 11950,
+    "utilization_pct": 95.6,
+    "sla_threshold_hrs": 24,
+    "solver_recommendation": "Rebalance via Dynamic Markdown Agent OR-Tools solver"
+  },
+  {
+    "constraint_id": "DYNAMI-CON-202",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "vendor_id": "VND-T1-BOSCH-DE02",
+    "sub_pillar": "Expiry & Markdowns",
+    "capacity_limit": 8400,
+    "current_load": 7980,
+    "utilization_pct": 95.0,
+    "sla_threshold_hrs": 12,
+    "solver_recommendation": "Trigger automated SAP S/4HANA schedule update"
+  },
+  {
+    "constraint_id": "DYNAMI-CON-203",
+    "sku_id": "SKU-AUTO-7720-EV",
+    "vendor_id": "VND-T2-LGCHEM-KR01",
+    "sub_pillar": "Expiry & Markdowns",
+    "capacity_limit": 15000,
+    "current_load": 12300,
+    "utilization_pct": 82.0,
+    "sla_threshold_hrs": 48,
+    "solver_recommendation": "Hold optimal buffer allocation"
+  }
+]

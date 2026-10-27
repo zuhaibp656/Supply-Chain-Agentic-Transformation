@@ -1,0 +1,10 @@
+[project]
+name = "wave-fulfillment-copilot"
+version = "1.0.0"
+description = "[Category: 04 · Inventory & Warehousing — Warehouse Operations] Wave Fulfillment Copilot (DC Shift Floor Lead): Balances picker lines dynamically to protect carrier pickup cutoff times. Outcome: Prevents missed dispatch windows (OTIF)."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

@@ -1,0 +1,10 @@
+[project]
+name = "three-way-match-dispute"
+version = "1.0.0"
+description = "[Category: 02 · Sourcing & Procurement — Contract & PO Mgmt] Three-Way Match Dispute (Accounts Payable Lead): Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. Outcome: Prevents vendor holds & saves discounts."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

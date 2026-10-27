@@ -61,6 +61,9 @@ class NetworkTwinArchitect:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "network_twin_architect"
+        self.category = "01 · Planning & Strategy — Portfolio & SKU"
+        self.display_name = "[01 · Plan | Portfolio & SKU] Cost-to-Serve Diagnostic"
+        self.description = "[Category: 01 · Planning & Strategy — Portfolio & SKU] Cost-to-Serve Diagnostic (Commercial Finance Director): Calculates net-net margin across Club, Grocery, and eCommerce packs. Outcome: Re-engineers MOQ and pack rules."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -267,7 +270,7 @@ try:
 
     root_agent = Agent(
         name="network_twin_architect",
-        description="Solves Capacitated Facility Location & Center-of-Gravity MILP in Google OR-Tools paired with activity-based Cost-to-Serve attribution and tariff/port-strike stress testing.",
+        description="[Category: 01 · Planning & Strategy — Portfolio & SKU] Cost-to-Serve Diagnostic (Commercial Finance Director): Calculates net-net margin across Club, Grocery, and eCommerce packs. Outcome: Re-engineers MOQ and pack rules.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

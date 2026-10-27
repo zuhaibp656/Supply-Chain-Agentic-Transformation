@@ -1,0 +1,10 @@
+[project]
+name = "short-dated-redistributor"
+version = "1.0.0"
+description = "[Category: 06 · Returns & Reverse Logistics — Expiry & Markdowns] Short-Dated Redistributor (Inventory Disposition Lead): Matches near-date DC lots with discounters or food banks before acceptance cutoffs. Outcome: Diverts bulk perishables from landfill."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

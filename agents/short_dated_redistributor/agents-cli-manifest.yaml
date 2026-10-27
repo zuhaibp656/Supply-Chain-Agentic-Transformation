@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "short_dated_redistributor"
+name: "[06 · Returns & ESG | Expiry & Markdowns] Short-Dated Redistributor"
+category: "06 · Returns & Reverse Logistics — Expiry & Markdowns"
+description: "[Category: 06 · Returns & Reverse Logistics — Expiry & Markdowns] Short-Dated Redistributor (Inventory Disposition Lead): Matches near-date DC lots with discounters or food banks before acceptance cutoffs. Outcome: Diverts bulk perishables from landfill."
+agent_class: "app.agent.ShortDatedRedistributorAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_short_dated_redistributor_telemetry_feed"
+  - "query_short_dated_redistributor_constraint_matrix"
+  - "query_short_dated_redistributor_optimization_scenarios"
+  - "query_short_dated_redistributor_execution_ledger"
+  - "action_commit_short_dated_redistributor_plan"
+  - "action_dispatch_short_dated_redistributor_alert"
+metadata:
+  scor_category: "06 · Returns & Reverse Logistics — Expiry & Markdowns"
+  pillar: "06 · Returns & Reverse Logistics"
+  sub_pillar: "Expiry & Markdowns"
+  persona_owner: "Inventory Disposition Lead"
+  roi_focus: "Diverts bulk perishables from landfill"

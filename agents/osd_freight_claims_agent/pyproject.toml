@@ -1,0 +1,10 @@
+[project]
+name = "osd-freight-claims-agent"
+version = "1.0.0"
+description = "[Category: 06 · Returns & Reverse Logistics — Returns & Claims Mgmt] OS&D Freight Claims (Claims Specialist / Controller): Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes. Outcome: Resolves carrier claims in <72 hours."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

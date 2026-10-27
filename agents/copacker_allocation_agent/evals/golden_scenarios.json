@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "copacker_allocation_agent_golden_01",
+    "category": "03 \u00b7 Manufacturing & Production \u2014 Capacity Planning",
+    "agent_name": "[03 \u00b7 Make | Capacity Planning] Co-Packer Allocation",
+    "prompt": "Run Co-Packer Allocation analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_copacker_allocation_agent_telemetry_feed",
+      "query_copacker_allocation_agent_constraint_matrix",
+      "action_commit_copacker_allocation_agent_plan"
+    ],
+    "expected_outcome": "Optimizes net gross margin per case"
+  }
+]

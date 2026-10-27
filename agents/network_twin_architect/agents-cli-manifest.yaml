@@ -1,10 +1,10 @@
 name: network_twin_architect
 display_name: "TwinDesign — Supply Chain Network & Cost-to-Serve Optimizer"
-description: "Solves Capacitated Facility Location & Center-of-Gravity MILP in Google OR-Tools paired with activity-based Cost-to-Serve attribution and tariff/port-strike stress testing."
+description: "[Category: 01 · Planning & Strategy — Portfolio & SKU] Cost-to-Serve Diagnostic (Commercial Finance Director): Calculates net-net margin across Club, Grocery, and eCommerce packs. Outcome: Re-engineers MOQ and pack rules."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "04 · Fulfill"
-category: "Network Design & Cost-to-Serve FinOps"
+category: "01 · Planning & Strategy — Portfolio & SKU"
 tags:
   - network-design
   - facility-location-milp

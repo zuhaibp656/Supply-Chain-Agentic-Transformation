@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "returns_triage_agent"
+name: "[04 · Inventory & DC | Omnichannel Visibility] Returns Triage Agent"
+category: "04 · Inventory & Warehousing — Omnichannel Visibility"
+description: "[Category: 04 · Inventory & Warehousing — Omnichannel Visibility] Returns Triage Agent (Reverse Logistics Lead): Evaluates item condition scans to triage restock, vendor return, or liquidation. Outcome: Restocks sellable returns within 24h."
+agent_class: "app.agent.ReturnsTriageAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_returns_triage_agent_telemetry_feed"
+  - "query_returns_triage_agent_constraint_matrix"
+  - "query_returns_triage_agent_optimization_scenarios"
+  - "query_returns_triage_agent_execution_ledger"
+  - "action_commit_returns_triage_agent_plan"
+  - "action_dispatch_returns_triage_agent_alert"
+metadata:
+  scor_category: "04 · Inventory & Warehousing — Omnichannel Visibility"
+  pillar: "04 · Inventory & Warehousing"
+  sub_pillar: "Omnichannel Visibility"
+  persona_owner: "Reverse Logistics Lead"
+  roi_focus: "Restocks sellable returns within 24h"

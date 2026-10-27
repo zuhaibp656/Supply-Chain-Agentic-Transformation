@@ -83,6 +83,9 @@ class DynamicOrderPromisingAtp:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "atp_order_promising_agent"
+        self.category = "04 · Inventory & Warehousing — Omnichannel Visibility"
+        self.display_name = "[04 · Inventory & DC | Omnichannel Visibility] SFS / BOPIS Sourcing"
+        self.description = "[Category: 04 · Inventory & Warehousing — Omnichannel Visibility] SFS / BOPIS Sourcing (Omnichannel Fulfillment Dir.): Selects lowest-cost fulfillment nodes based on store labor and parcel zones. Outcome: Lowers parcel costs & split rates."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -303,7 +306,7 @@ try:
 
     root_agent = Agent(
         name="atp_order_promising_agent",
-        description="PromiseGuard Sub-50ms Spanner ATP: real-time order promising and strategic tier quota protection.",
+        description="[Category: 04 · Inventory & Warehousing — Omnichannel Visibility] SFS / BOPIS Sourcing (Omnichannel Fulfillment Dir.): Selects lowest-cost fulfillment nodes based on store labor and parcel zones. Outcome: Lowers parcel costs & split rates.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

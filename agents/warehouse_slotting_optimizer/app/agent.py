@@ -81,6 +81,9 @@ class WarehouseSlottingOptimizer:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "warehouse_slotting_optimizer"
+        self.category = "04 · Inventory & Warehousing — Warehouse Operations"
+        self.display_name = "[04 · Inventory & DC | Warehouse Operations] Dynamic Slotting Agent"
+        self.description = "[Category: 04 · Inventory & Warehousing — Warehouse Operations] Dynamic Slotting Agent (DC Operations Mgr / IE Lead): Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting. Outcome: Reduces picker transit time by 15–30%."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

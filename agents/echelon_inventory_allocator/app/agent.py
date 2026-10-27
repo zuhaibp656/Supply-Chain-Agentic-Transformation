@@ -83,6 +83,9 @@ class EchelonInventoryAllocator:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "echelon_inventory_allocator"
+        self.category = "04 · Inventory & Warehousing — Positioning & Optimization"
+        self.display_name = "[04 · Inventory & DC | Positioning & Optimization] Safety Stock Agent"
+        self.description = "[Category: 04 · Inventory & Warehousing — Positioning & Optimization] Safety Stock Agent (Inventory Optimization Lead): Recalibrates multi-echelon buffers using live lead-time and demand variance. Outcome: Cuts working capital by 10–18%."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -305,7 +308,7 @@ try:
 
     root_agent = Agent(
         name="echelon_inventory_allocator",
-        description="EchelonFlow Multi-Echelon Inventory Allocator: Clark-Scarf MEIO safety stock and lateral DC rebalancing.",
+        description="[Category: 04 · Inventory & Warehousing — Positioning & Optimization] Safety Stock Agent (Inventory Optimization Lead): Recalibrates multi-echelon buffers using live lead-time and demand variance. Outcome: Cuts working capital by 10–18%.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

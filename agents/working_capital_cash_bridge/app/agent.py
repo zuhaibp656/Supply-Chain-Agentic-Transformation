@@ -83,6 +83,9 @@ class WorkingCapitalCashBridgeAgent:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "working_capital_cash_bridge"
+        self.category = "01 · Planning & Strategy — Portfolio & SKU"
+        self.display_name = "[01 · Plan | Portfolio & SKU] SKU Pruning Agent"
+        self.description = "[Category: 01 · Planning & Strategy — Portfolio & SKU] SKU Pruning Agent (Category Manager): Scores velocity, plant changeover cost, and shelf revenue yield. Outcome: Unlocks tail working capital."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

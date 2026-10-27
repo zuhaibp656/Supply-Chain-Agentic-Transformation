@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "dock_to_stock_agent_golden_01",
+    "category": "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations",
+    "agent_name": "[04 \u00b7 Inventory & DC | Warehouse Operations] Dock-to-Stock Agent",
+    "prompt": "Run Dock-to-Stock Agent analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_dock_to_stock_agent_telemetry_feed",
+      "query_dock_to_stock_agent_constraint_matrix",
+      "action_commit_dock_to_stock_agent_plan"
+    ],
+    "expected_outcome": "Dock turnaround in minutes vs. hours"
+  }
+]

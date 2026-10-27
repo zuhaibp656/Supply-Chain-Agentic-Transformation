@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "aisle_aligned_pallet_agent_golden_01",
+    "category": "05 \u00b7 Distribution & Logistics \u2014 Store Replenishment",
+    "agent_name": "[05 \u00b7 Logistics | Store Replenishment] Aisle-Aligned Pallet",
+    "prompt": "Run Aisle-Aligned Pallet analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_aisle_aligned_pallet_agent_telemetry_feed",
+      "query_aisle_aligned_pallet_agent_constraint_matrix",
+      "action_commit_aisle_aligned_pallet_agent_plan"
+    ],
+    "expected_outcome": "Cuts store stocking labor by 20\u201335%"
+  }
+]

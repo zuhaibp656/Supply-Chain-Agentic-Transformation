@@ -1,0 +1,10 @@
+[project]
+name = "cold-chain-auditor"
+version = "1.0.0"
+description = "[Category: 05 · Distribution & Logistics — First & Mid-Mile] Cold-Chain Auditor (Cold Chain QA / Logistics Dir.): Analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims. Outcome: Prevents perishable food spoilage."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

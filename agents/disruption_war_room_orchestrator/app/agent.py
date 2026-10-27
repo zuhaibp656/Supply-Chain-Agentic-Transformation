@@ -85,6 +85,9 @@ class DisruptionWarRoomAgent:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "disruption_war_room_orchestrator"
+        self.category = "01 · Planning & Strategy — S&OP / IBP"
+        self.display_name = "[01 · Plan | S&OP / IBP] Digital War-Room Agent"
+        self.description = "[Category: 01 · Planning & Strategy — S&OP / IBP] Digital War-Room Agent (Supply Chain VP / COO): Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Rapid OTIF impact scenario brief."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -299,7 +302,7 @@ try:
 
     root_agent = Agent(
         name="disruption_war_room_orchestrator",
-        description="Disruption War Room Orchestrator: geopolitical crisis response and maritime vessel rerouting.",
+        description="[Category: 01 · Planning & Strategy — S&OP / IBP] Digital War-Room Agent (Supply Chain VP / COO): Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Rapid OTIF impact scenario brief.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

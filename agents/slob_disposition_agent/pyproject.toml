@@ -1,0 +1,10 @@
+[project]
+name = "slob-disposition-agent"
+version = "1.0.0"
+description = "[Category: 04 · Inventory & Warehousing — Positioning & Optimization] SLOB Disposition Agent (Inventory Controller / Buyer): Analyzes shelf-life risk and triggers promotional bundles or liquidations. Outcome: Prevents expired stock write-offs."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

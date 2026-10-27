@@ -1,10 +1,10 @@
 name: trade_scheme_claims_reconciler
 display_name: "SchemeGuard — Secondary Trade Payout & Claims Sentinel"
-description: "Audits 100% of distributor secondary sales scheme claims against circular slab rules, e-waybill proof, and ShelfVision compliance—blocking phantom/split invoices and posting SAP FI credit notes."
+description: "[Category: 01 · Planning & Strategy — Trade Promotion] Deduction Audit Agent (Revenue / Trade Finance Lead): Audits scanned proof-of-performance circulars and invoices via OCR. Outcome: Resolves claim disputes in hours."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "05 · Deliver"
-category: "Trade Marketing & Distribution (TM&D)"
+category: "01 · Planning & Strategy — Trade Promotion"
 tags:
   - trade-promotions
   - claims-audit

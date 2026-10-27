@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "three_way_match_dispute_golden_01",
+    "category": "02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt",
+    "agent_name": "[02 \u00b7 Source | Contract & PO Mgmt] Three-Way Match Dispute",
+    "prompt": "Run Three-Way Match Dispute analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_three_way_match_dispute_telemetry_feed",
+      "query_three_way_match_dispute_constraint_matrix",
+      "action_commit_three_way_match_dispute_plan"
+    ],
+    "expected_outcome": "Prevents vendor holds & saves discounts"
+  }
+]

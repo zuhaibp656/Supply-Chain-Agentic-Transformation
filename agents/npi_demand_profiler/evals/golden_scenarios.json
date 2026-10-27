@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "npi_demand_profiler_golden_01",
+    "category": "01 \u00b7 Planning & Strategy \u2014 Demand Forecasting",
+    "agent_name": "[01 \u00b7 Plan | Demand Forecasting] NPI Demand Profiler",
+    "prompt": "Run NPI Demand Profiler analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_npi_demand_profiler_telemetry_feed",
+      "query_npi_demand_profiler_constraint_matrix",
+      "action_commit_npi_demand_profiler_plan"
+    ],
+    "expected_outcome": "Cuts 90-day launch forecast errors"
+  }
+]

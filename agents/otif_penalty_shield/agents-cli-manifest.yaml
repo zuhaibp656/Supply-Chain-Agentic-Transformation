@@ -1,10 +1,10 @@
 name: otif_penalty_shield
 display_name: "OTIFShield — Customer SLA Rescue & Chargeback Dispute Agent"
-description: "Predicts customer Must-Arrive-By-Date (MABD) OTIF breaches 72 hours early to trigger margin-positive rescues and auto-assembles geofence + EDI 856 dispute dossiers to overturn invalid retail chargebacks."
+description: "[Category: 05 · Distribution & Logistics — Last-Mile Delivery] Delivery Exception Copilot (Customer Support Ops Lead): Detects en-route exceptions and updates customers proactively with reschedule links. Outcome: Decreases WISMO calls by up to 60%."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "06 · Return & Enable"
-category: "Customer OTIF & SLA Governance"
+category: "05 · Distribution & Logistics — Last-Mile Delivery"
 tags:
   - otif-shield
   - mabd-compliance

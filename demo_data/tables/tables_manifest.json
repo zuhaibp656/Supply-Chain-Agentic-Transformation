@@ -14,11 +14,32 @@
     "csv_file": "active_trade_promotion_schemes.csv"
   },
   {
-    "table_name": "air_freight_priority_shipments",
-    "agent_id": "air_cargo_uld_optimizer",
-    "row_count": 2,
-    "json_file": "air_freight_priority_shipments.json",
-    "csv_file": "air_freight_priority_shipments.csv"
+    "table_name": "aisle_aligned_pallet_agent_constraint_matrix",
+    "agent_id": "aisle_aligned_pallet_agent",
+    "row_count": 3,
+    "json_file": "aisle_aligned_pallet_agent_constraint_matrix.json",
+    "csv_file": "aisle_aligned_pallet_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "aisle_aligned_pallet_agent_execution_ledger",
+    "agent_id": "aisle_aligned_pallet_agent",
+    "row_count": 3,
+    "json_file": "aisle_aligned_pallet_agent_execution_ledger.json",
+    "csv_file": "aisle_aligned_pallet_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "aisle_aligned_pallet_agent_optimization_scenarios",
+    "agent_id": "aisle_aligned_pallet_agent",
+    "row_count": 3,
+    "json_file": "aisle_aligned_pallet_agent_optimization_scenarios.json",
+    "csv_file": "aisle_aligned_pallet_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "aisle_aligned_pallet_agent_telemetry_feed",
+    "agent_id": "aisle_aligned_pallet_agent",
+    "row_count": 4,
+    "json_file": "aisle_aligned_pallet_agent_telemetry_feed.json",
+    "csv_file": "aisle_aligned_pallet_agent_telemetry_feed.csv"
   },
   {
     "table_name": "amr_picker_travel_telemetry",
@@ -49,6 +70,41 @@
     "csv_file": "backhaul_consolidation_opportunities.csv"
   },
   {
+    "table_name": "batch_process_parameter_correlations",
+    "agent_id": "scrap_defect_root_cause_agent",
+    "row_count": 2,
+    "json_file": "batch_process_parameter_correlations.json",
+    "csv_file": "batch_process_parameter_correlations.csv"
+  },
+  {
+    "table_name": "batch_record_auditor_constraint_matrix",
+    "agent_id": "batch_record_auditor",
+    "row_count": 3,
+    "json_file": "batch_record_auditor_constraint_matrix.json",
+    "csv_file": "batch_record_auditor_constraint_matrix.csv"
+  },
+  {
+    "table_name": "batch_record_auditor_execution_ledger",
+    "agent_id": "batch_record_auditor",
+    "row_count": 3,
+    "json_file": "batch_record_auditor_execution_ledger.json",
+    "csv_file": "batch_record_auditor_execution_ledger.csv"
+  },
+  {
+    "table_name": "batch_record_auditor_optimization_scenarios",
+    "agent_id": "batch_record_auditor",
+    "row_count": 3,
+    "json_file": "batch_record_auditor_optimization_scenarios.json",
+    "csv_file": "batch_record_auditor_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "batch_record_auditor_telemetry_feed",
+    "agent_id": "batch_record_auditor",
+    "row_count": 4,
+    "json_file": "batch_record_auditor_telemetry_feed.json",
+    "csv_file": "batch_record_auditor_telemetry_feed.csv"
+  },
+  {
     "table_name": "bom_finished_good_lineage",
     "agent_id": "tier_n_risk_sentinel",
     "row_count": 2,
@@ -68,6 +124,34 @@
     "row_count": 2,
     "json_file": "camera_vision_inspection_frames.json",
     "csv_file": "camera_vision_inspection_frames.csv"
+  },
+  {
+    "table_name": "capex_simulator_agent_constraint_matrix",
+    "agent_id": "capex_simulator_agent",
+    "row_count": 3,
+    "json_file": "capex_simulator_agent_constraint_matrix.json",
+    "csv_file": "capex_simulator_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "capex_simulator_agent_execution_ledger",
+    "agent_id": "capex_simulator_agent",
+    "row_count": 3,
+    "json_file": "capex_simulator_agent_execution_ledger.json",
+    "csv_file": "capex_simulator_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "capex_simulator_agent_optimization_scenarios",
+    "agent_id": "capex_simulator_agent",
+    "row_count": 3,
+    "json_file": "capex_simulator_agent_optimization_scenarios.json",
+    "csv_file": "capex_simulator_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "capex_simulator_agent_telemetry_feed",
+    "agent_id": "capex_simulator_agent",
+    "row_count": 4,
+    "json_file": "capex_simulator_agent_telemetry_feed.json",
+    "csv_file": "capex_simulator_agent_telemetry_feed.csv"
   },
   {
     "table_name": "carrier_detention_risk_records",
@@ -119,11 +203,67 @@
     "csv_file": "claim_anomaly_audit_findings.csv"
   },
   {
+    "table_name": "cold_chain_auditor_constraint_matrix",
+    "agent_id": "cold_chain_auditor",
+    "row_count": 3,
+    "json_file": "cold_chain_auditor_constraint_matrix.json",
+    "csv_file": "cold_chain_auditor_constraint_matrix.csv"
+  },
+  {
+    "table_name": "cold_chain_auditor_execution_ledger",
+    "agent_id": "cold_chain_auditor",
+    "row_count": 3,
+    "json_file": "cold_chain_auditor_execution_ledger.json",
+    "csv_file": "cold_chain_auditor_execution_ledger.csv"
+  },
+  {
+    "table_name": "cold_chain_auditor_optimization_scenarios",
+    "agent_id": "cold_chain_auditor",
+    "row_count": 3,
+    "json_file": "cold_chain_auditor_optimization_scenarios.json",
+    "csv_file": "cold_chain_auditor_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "cold_chain_auditor_telemetry_feed",
+    "agent_id": "cold_chain_auditor",
+    "row_count": 4,
+    "json_file": "cold_chain_auditor_telemetry_feed.json",
+    "csv_file": "cold_chain_auditor_telemetry_feed.csv"
+  },
+  {
     "table_name": "cold_chain_thermal_excursion_alerts",
     "agent_id": "freight_control_tower",
     "row_count": 1,
     "json_file": "cold_chain_thermal_excursion_alerts.json",
     "csv_file": "cold_chain_thermal_excursion_alerts.csv"
+  },
+  {
+    "table_name": "commodity_index_advisor_constraint_matrix",
+    "agent_id": "commodity_index_advisor",
+    "row_count": 3,
+    "json_file": "commodity_index_advisor_constraint_matrix.json",
+    "csv_file": "commodity_index_advisor_constraint_matrix.csv"
+  },
+  {
+    "table_name": "commodity_index_advisor_execution_ledger",
+    "agent_id": "commodity_index_advisor",
+    "row_count": 3,
+    "json_file": "commodity_index_advisor_execution_ledger.json",
+    "csv_file": "commodity_index_advisor_execution_ledger.csv"
+  },
+  {
+    "table_name": "commodity_index_advisor_optimization_scenarios",
+    "agent_id": "commodity_index_advisor",
+    "row_count": 3,
+    "json_file": "commodity_index_advisor_optimization_scenarios.json",
+    "csv_file": "commodity_index_advisor_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "commodity_index_advisor_telemetry_feed",
+    "agent_id": "commodity_index_advisor",
+    "row_count": 4,
+    "json_file": "commodity_index_advisor_telemetry_feed.json",
+    "csv_file": "commodity_index_advisor_telemetry_feed.csv"
   },
   {
     "table_name": "commodity_index_rates",
@@ -152,6 +292,34 @@
     "row_count": 1,
     "json_file": "contracted_planogram_templates.json",
     "csv_file": "contracted_planogram_templates.csv"
+  },
+  {
+    "table_name": "copacker_allocation_agent_constraint_matrix",
+    "agent_id": "copacker_allocation_agent",
+    "row_count": 3,
+    "json_file": "copacker_allocation_agent_constraint_matrix.json",
+    "csv_file": "copacker_allocation_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "copacker_allocation_agent_execution_ledger",
+    "agent_id": "copacker_allocation_agent",
+    "row_count": 3,
+    "json_file": "copacker_allocation_agent_execution_ledger.json",
+    "csv_file": "copacker_allocation_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "copacker_allocation_agent_optimization_scenarios",
+    "agent_id": "copacker_allocation_agent",
+    "row_count": 3,
+    "json_file": "copacker_allocation_agent_optimization_scenarios.json",
+    "csv_file": "copacker_allocation_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "copacker_allocation_agent_telemetry_feed",
+    "agent_id": "copacker_allocation_agent",
+    "row_count": 4,
+    "json_file": "copacker_allocation_agent_telemetry_feed.json",
+    "csv_file": "copacker_allocation_agent_telemetry_feed.csv"
   },
   {
     "table_name": "corridor_delivery_orders",
@@ -245,11 +413,67 @@
     "csv_file": "dock_door_turnaround_schedules.csv"
   },
   {
+    "table_name": "dock_to_stock_agent_constraint_matrix",
+    "agent_id": "dock_to_stock_agent",
+    "row_count": 3,
+    "json_file": "dock_to_stock_agent_constraint_matrix.json",
+    "csv_file": "dock_to_stock_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "dock_to_stock_agent_execution_ledger",
+    "agent_id": "dock_to_stock_agent",
+    "row_count": 3,
+    "json_file": "dock_to_stock_agent_execution_ledger.json",
+    "csv_file": "dock_to_stock_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "dock_to_stock_agent_optimization_scenarios",
+    "agent_id": "dock_to_stock_agent",
+    "row_count": 3,
+    "json_file": "dock_to_stock_agent_optimization_scenarios.json",
+    "csv_file": "dock_to_stock_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "dock_to_stock_agent_telemetry_feed",
+    "agent_id": "dock_to_stock_agent",
+    "row_count": 4,
+    "json_file": "dock_to_stock_agent_telemetry_feed.json",
+    "csv_file": "dock_to_stock_agent_telemetry_feed.csv"
+  },
+  {
     "table_name": "drayage_chassis_transload_allocations",
     "agent_id": "port_drayage_orchestrator",
     "row_count": 1,
     "json_file": "drayage_chassis_transload_allocations.json",
     "csv_file": "drayage_chassis_transload_allocations.csv"
+  },
+  {
+    "table_name": "dynamic_markdown_agent_constraint_matrix",
+    "agent_id": "dynamic_markdown_agent",
+    "row_count": 3,
+    "json_file": "dynamic_markdown_agent_constraint_matrix.json",
+    "csv_file": "dynamic_markdown_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "dynamic_markdown_agent_execution_ledger",
+    "agent_id": "dynamic_markdown_agent",
+    "row_count": 3,
+    "json_file": "dynamic_markdown_agent_execution_ledger.json",
+    "csv_file": "dynamic_markdown_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "dynamic_markdown_agent_optimization_scenarios",
+    "agent_id": "dynamic_markdown_agent",
+    "row_count": 3,
+    "json_file": "dynamic_markdown_agent_optimization_scenarios.json",
+    "csv_file": "dynamic_markdown_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "dynamic_markdown_agent_telemetry_feed",
+    "agent_id": "dynamic_markdown_agent",
+    "row_count": 4,
+    "json_file": "dynamic_markdown_agent_telemetry_feed.json",
+    "csv_file": "dynamic_markdown_agent_telemetry_feed.csv"
   },
   {
     "table_name": "dynamic_mode_split_recommendations",
@@ -336,11 +560,32 @@
     "csv_file": "fleet_vehicle_telematics_hos.csv"
   },
   {
-    "table_name": "flightaware_adsb_belly_capacity",
-    "agent_id": "air_cargo_uld_optimizer",
-    "row_count": 1,
-    "json_file": "flightaware_adsb_belly_capacity.json",
-    "csv_file": "flightaware_adsb_belly_capacity.csv"
+    "table_name": "food_waste_esg_copilot_constraint_matrix",
+    "agent_id": "food_waste_esg_copilot",
+    "row_count": 3,
+    "json_file": "food_waste_esg_copilot_constraint_matrix.json",
+    "csv_file": "food_waste_esg_copilot_constraint_matrix.csv"
+  },
+  {
+    "table_name": "food_waste_esg_copilot_execution_ledger",
+    "agent_id": "food_waste_esg_copilot",
+    "row_count": 3,
+    "json_file": "food_waste_esg_copilot_execution_ledger.json",
+    "csv_file": "food_waste_esg_copilot_execution_ledger.csv"
+  },
+  {
+    "table_name": "food_waste_esg_copilot_optimization_scenarios",
+    "agent_id": "food_waste_esg_copilot",
+    "row_count": 3,
+    "json_file": "food_waste_esg_copilot_optimization_scenarios.json",
+    "csv_file": "food_waste_esg_copilot_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "food_waste_esg_copilot_telemetry_feed",
+    "agent_id": "food_waste_esg_copilot",
+    "row_count": 4,
+    "json_file": "food_waste_esg_copilot_telemetry_feed.json",
+    "csv_file": "food_waste_esg_copilot_telemetry_feed.csv"
   },
   {
     "table_name": "freight_audit_discrepancy_ledger",
@@ -348,6 +593,34 @@
     "row_count": 1,
     "json_file": "freight_audit_discrepancy_ledger.json",
     "csv_file": "freight_audit_discrepancy_ledger.csv"
+  },
+  {
+    "table_name": "freight_bill_audit_agent_constraint_matrix",
+    "agent_id": "freight_bill_audit_agent",
+    "row_count": 3,
+    "json_file": "freight_bill_audit_agent_constraint_matrix.json",
+    "csv_file": "freight_bill_audit_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "freight_bill_audit_agent_execution_ledger",
+    "agent_id": "freight_bill_audit_agent",
+    "row_count": 3,
+    "json_file": "freight_bill_audit_agent_execution_ledger.json",
+    "csv_file": "freight_bill_audit_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "freight_bill_audit_agent_optimization_scenarios",
+    "agent_id": "freight_bill_audit_agent",
+    "row_count": 3,
+    "json_file": "freight_bill_audit_agent_optimization_scenarios.json",
+    "csv_file": "freight_bill_audit_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "freight_bill_audit_agent_telemetry_feed",
+    "agent_id": "freight_bill_audit_agent",
+    "row_count": 4,
+    "json_file": "freight_bill_audit_agent_telemetry_feed.json",
+    "csv_file": "freight_bill_audit_agent_telemetry_feed.csv"
   },
   {
     "table_name": "fso_daily_beat_store_outlets",
@@ -362,6 +635,34 @@
     "row_count": 2,
     "json_file": "fva_sales_bias.json",
     "csv_file": "fva_sales_bias.csv"
+  },
+  {
+    "table_name": "geocoding_intelligence_agent_constraint_matrix",
+    "agent_id": "geocoding_intelligence_agent",
+    "row_count": 3,
+    "json_file": "geocoding_intelligence_agent_constraint_matrix.json",
+    "csv_file": "geocoding_intelligence_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "geocoding_intelligence_agent_execution_ledger",
+    "agent_id": "geocoding_intelligence_agent",
+    "row_count": 3,
+    "json_file": "geocoding_intelligence_agent_execution_ledger.json",
+    "csv_file": "geocoding_intelligence_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "geocoding_intelligence_agent_optimization_scenarios",
+    "agent_id": "geocoding_intelligence_agent",
+    "row_count": 3,
+    "json_file": "geocoding_intelligence_agent_optimization_scenarios.json",
+    "csv_file": "geocoding_intelligence_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "geocoding_intelligence_agent_telemetry_feed",
+    "agent_id": "geocoding_intelligence_agent",
+    "row_count": 4,
+    "json_file": "geocoding_intelligence_agent_telemetry_feed.json",
+    "csv_file": "geocoding_intelligence_agent_telemetry_feed.csv"
   },
   {
     "table_name": "geofence_edi856_dispute_dossiers",
@@ -446,6 +747,62 @@
     "row_count": 2,
     "json_file": "joint_cpfr_consensus_packets.json",
     "csv_file": "joint_cpfr_consensus_packets.csv"
+  },
+  {
+    "table_name": "keep_it_routing_advisor_constraint_matrix",
+    "agent_id": "keep_it_routing_advisor",
+    "row_count": 3,
+    "json_file": "keep_it_routing_advisor_constraint_matrix.json",
+    "csv_file": "keep_it_routing_advisor_constraint_matrix.csv"
+  },
+  {
+    "table_name": "keep_it_routing_advisor_execution_ledger",
+    "agent_id": "keep_it_routing_advisor",
+    "row_count": 3,
+    "json_file": "keep_it_routing_advisor_execution_ledger.json",
+    "csv_file": "keep_it_routing_advisor_execution_ledger.csv"
+  },
+  {
+    "table_name": "keep_it_routing_advisor_optimization_scenarios",
+    "agent_id": "keep_it_routing_advisor",
+    "row_count": 3,
+    "json_file": "keep_it_routing_advisor_optimization_scenarios.json",
+    "csv_file": "keep_it_routing_advisor_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "keep_it_routing_advisor_telemetry_feed",
+    "agent_id": "keep_it_routing_advisor",
+    "row_count": 4,
+    "json_file": "keep_it_routing_advisor_telemetry_feed.json",
+    "csv_file": "keep_it_routing_advisor_telemetry_feed.csv"
+  },
+  {
+    "table_name": "labor_line_balancing_agent_constraint_matrix",
+    "agent_id": "labor_line_balancing_agent",
+    "row_count": 3,
+    "json_file": "labor_line_balancing_agent_constraint_matrix.json",
+    "csv_file": "labor_line_balancing_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "labor_line_balancing_agent_execution_ledger",
+    "agent_id": "labor_line_balancing_agent",
+    "row_count": 3,
+    "json_file": "labor_line_balancing_agent_execution_ledger.json",
+    "csv_file": "labor_line_balancing_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "labor_line_balancing_agent_optimization_scenarios",
+    "agent_id": "labor_line_balancing_agent",
+    "row_count": 3,
+    "json_file": "labor_line_balancing_agent_optimization_scenarios.json",
+    "csv_file": "labor_line_balancing_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "labor_line_balancing_agent_telemetry_feed",
+    "agent_id": "labor_line_balancing_agent",
+    "row_count": 4,
+    "json_file": "labor_line_balancing_agent_telemetry_feed.json",
+    "csv_file": "labor_line_balancing_agent_telemetry_feed.csv"
   },
   {
     "table_name": "lateral_dc_rebalance_transfers",
@@ -567,6 +924,34 @@
     "csv_file": "news_disruptions.csv"
   },
   {
+    "table_name": "npi_demand_profiler_constraint_matrix",
+    "agent_id": "npi_demand_profiler",
+    "row_count": 3,
+    "json_file": "npi_demand_profiler_constraint_matrix.json",
+    "csv_file": "npi_demand_profiler_constraint_matrix.csv"
+  },
+  {
+    "table_name": "npi_demand_profiler_execution_ledger",
+    "agent_id": "npi_demand_profiler",
+    "row_count": 3,
+    "json_file": "npi_demand_profiler_execution_ledger.json",
+    "csv_file": "npi_demand_profiler_execution_ledger.csv"
+  },
+  {
+    "table_name": "npi_demand_profiler_optimization_scenarios",
+    "agent_id": "npi_demand_profiler",
+    "row_count": 3,
+    "json_file": "npi_demand_profiler_optimization_scenarios.json",
+    "csv_file": "npi_demand_profiler_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "npi_demand_profiler_telemetry_feed",
+    "agent_id": "npi_demand_profiler",
+    "row_count": 4,
+    "json_file": "npi_demand_profiler_telemetry_feed.json",
+    "csv_file": "npi_demand_profiler_telemetry_feed.csv"
+  },
+  {
     "table_name": "ocean_vessel_ais_berth_telemetry",
     "agent_id": "port_drayage_orchestrator",
     "row_count": 1,
@@ -600,6 +985,34 @@
     "row_count": 1,
     "json_file": "order_promising_routing_decisions.json",
     "csv_file": "order_promising_routing_decisions.csv"
+  },
+  {
+    "table_name": "osd_freight_claims_agent_constraint_matrix",
+    "agent_id": "osd_freight_claims_agent",
+    "row_count": 3,
+    "json_file": "osd_freight_claims_agent_constraint_matrix.json",
+    "csv_file": "osd_freight_claims_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "osd_freight_claims_agent_execution_ledger",
+    "agent_id": "osd_freight_claims_agent",
+    "row_count": 3,
+    "json_file": "osd_freight_claims_agent_execution_ledger.json",
+    "csv_file": "osd_freight_claims_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "osd_freight_claims_agent_optimization_scenarios",
+    "agent_id": "osd_freight_claims_agent",
+    "row_count": 3,
+    "json_file": "osd_freight_claims_agent_optimization_scenarios.json",
+    "csv_file": "osd_freight_claims_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "osd_freight_claims_agent_telemetry_feed",
+    "agent_id": "osd_freight_claims_agent",
+    "row_count": 4,
+    "json_file": "osd_freight_claims_agent_telemetry_feed.json",
+    "csv_file": "osd_freight_claims_agent_telemetry_feed.csv"
   },
   {
     "table_name": "otr_to_rail_mode_conversion_ledger",
@@ -681,7 +1094,7 @@
   {
     "table_name": "pos_store_scans",
     "agent_id": "demand_sensing_agent",
-    "row_count": 5,
+    "row_count": 6,
     "json_file": "pos_store_scans.json",
     "csv_file": "pos_store_scans.csv"
   },
@@ -763,6 +1176,90 @@
     "csv_file": "retailer_otif_chargeback_deductions.csv"
   },
   {
+    "table_name": "returns_triage_agent_constraint_matrix",
+    "agent_id": "returns_triage_agent",
+    "row_count": 3,
+    "json_file": "returns_triage_agent_constraint_matrix.json",
+    "csv_file": "returns_triage_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "returns_triage_agent_execution_ledger",
+    "agent_id": "returns_triage_agent",
+    "row_count": 3,
+    "json_file": "returns_triage_agent_execution_ledger.json",
+    "csv_file": "returns_triage_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "returns_triage_agent_optimization_scenarios",
+    "agent_id": "returns_triage_agent",
+    "row_count": 3,
+    "json_file": "returns_triage_agent_optimization_scenarios.json",
+    "csv_file": "returns_triage_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "returns_triage_agent_telemetry_feed",
+    "agent_id": "returns_triage_agent",
+    "row_count": 4,
+    "json_file": "returns_triage_agent_telemetry_feed.json",
+    "csv_file": "returns_triage_agent_telemetry_feed.csv"
+  },
+  {
+    "table_name": "rti_balance_reconciler_constraint_matrix",
+    "agent_id": "rti_balance_reconciler",
+    "row_count": 3,
+    "json_file": "rti_balance_reconciler_constraint_matrix.json",
+    "csv_file": "rti_balance_reconciler_constraint_matrix.csv"
+  },
+  {
+    "table_name": "rti_balance_reconciler_execution_ledger",
+    "agent_id": "rti_balance_reconciler",
+    "row_count": 3,
+    "json_file": "rti_balance_reconciler_execution_ledger.json",
+    "csv_file": "rti_balance_reconciler_execution_ledger.csv"
+  },
+  {
+    "table_name": "rti_balance_reconciler_optimization_scenarios",
+    "agent_id": "rti_balance_reconciler",
+    "row_count": 3,
+    "json_file": "rti_balance_reconciler_optimization_scenarios.json",
+    "csv_file": "rti_balance_reconciler_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "rti_balance_reconciler_telemetry_feed",
+    "agent_id": "rti_balance_reconciler",
+    "row_count": 4,
+    "json_file": "rti_balance_reconciler_telemetry_feed.json",
+    "csv_file": "rti_balance_reconciler_telemetry_feed.csv"
+  },
+  {
+    "table_name": "sanitation_health_agent_constraint_matrix",
+    "agent_id": "sanitation_health_agent",
+    "row_count": 3,
+    "json_file": "sanitation_health_agent_constraint_matrix.json",
+    "csv_file": "sanitation_health_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "sanitation_health_agent_execution_ledger",
+    "agent_id": "sanitation_health_agent",
+    "row_count": 3,
+    "json_file": "sanitation_health_agent_execution_ledger.json",
+    "csv_file": "sanitation_health_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "sanitation_health_agent_optimization_scenarios",
+    "agent_id": "sanitation_health_agent",
+    "row_count": 3,
+    "json_file": "sanitation_health_agent_optimization_scenarios.json",
+    "csv_file": "sanitation_health_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "sanitation_health_agent_telemetry_feed",
+    "agent_id": "sanitation_health_agent",
+    "row_count": 4,
+    "json_file": "sanitation_health_agent_telemetry_feed.json",
+    "csv_file": "sanitation_health_agent_telemetry_feed.csv"
+  },
+  {
     "table_name": "sap_fi_credit_note_settlements",
     "agent_id": "trade_scheme_claims_reconciler",
     "row_count": 1,
@@ -775,6 +1272,27 @@
     "row_count": 4,
     "json_file": "sc_kpi_summary.json",
     "csv_file": "sc_kpi_summary.csv"
+  },
+  {
+    "table_name": "scada_setpoint_recommendations",
+    "agent_id": "scrap_defect_root_cause_agent",
+    "row_count": 1,
+    "json_file": "scada_setpoint_recommendations.json",
+    "csv_file": "scada_setpoint_recommendations.csv"
+  },
+  {
+    "table_name": "scrap_financial_cost_ledger",
+    "agent_id": "scrap_defect_root_cause_agent",
+    "row_count": 1,
+    "json_file": "scrap_financial_cost_ledger.json",
+    "csv_file": "scrap_financial_cost_ledger.csv"
+  },
+  {
+    "table_name": "scrap_loss_pareto_records",
+    "agent_id": "scrap_defect_root_cause_agent",
+    "row_count": 3,
+    "json_file": "scrap_loss_pareto_records.json",
+    "csv_file": "scrap_loss_pareto_records.csv"
   },
   {
     "table_name": "shelf_compliance_scoring_ledger",
@@ -791,11 +1309,67 @@
     "csv_file": "shipment_level_scope3_emissions.csv"
   },
   {
+    "table_name": "short_dated_redistributor_constraint_matrix",
+    "agent_id": "short_dated_redistributor",
+    "row_count": 3,
+    "json_file": "short_dated_redistributor_constraint_matrix.json",
+    "csv_file": "short_dated_redistributor_constraint_matrix.csv"
+  },
+  {
+    "table_name": "short_dated_redistributor_execution_ledger",
+    "agent_id": "short_dated_redistributor",
+    "row_count": 3,
+    "json_file": "short_dated_redistributor_execution_ledger.json",
+    "csv_file": "short_dated_redistributor_execution_ledger.csv"
+  },
+  {
+    "table_name": "short_dated_redistributor_optimization_scenarios",
+    "agent_id": "short_dated_redistributor",
+    "row_count": 3,
+    "json_file": "short_dated_redistributor_optimization_scenarios.json",
+    "csv_file": "short_dated_redistributor_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "short_dated_redistributor_telemetry_feed",
+    "agent_id": "short_dated_redistributor",
+    "row_count": 4,
+    "json_file": "short_dated_redistributor_telemetry_feed.json",
+    "csv_file": "short_dated_redistributor_telemetry_feed.csv"
+  },
+  {
     "table_name": "sku_customer_cost_to_serve_matrix",
     "agent_id": "network_twin_architect",
     "row_count": 1,
     "json_file": "sku_customer_cost_to_serve_matrix.json",
     "csv_file": "sku_customer_cost_to_serve_matrix.csv"
+  },
+  {
+    "table_name": "slob_disposition_agent_constraint_matrix",
+    "agent_id": "slob_disposition_agent",
+    "row_count": 3,
+    "json_file": "slob_disposition_agent_constraint_matrix.json",
+    "csv_file": "slob_disposition_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "slob_disposition_agent_execution_ledger",
+    "agent_id": "slob_disposition_agent",
+    "row_count": 3,
+    "json_file": "slob_disposition_agent_execution_ledger.json",
+    "csv_file": "slob_disposition_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "slob_disposition_agent_optimization_scenarios",
+    "agent_id": "slob_disposition_agent",
+    "row_count": 3,
+    "json_file": "slob_disposition_agent_optimization_scenarios.json",
+    "csv_file": "slob_disposition_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "slob_disposition_agent_telemetry_feed",
+    "agent_id": "slob_disposition_agent",
+    "row_count": 4,
+    "json_file": "slob_disposition_agent_telemetry_feed.json",
+    "csv_file": "slob_disposition_agent_telemetry_feed.csv"
   },
   {
     "table_name": "slot_reassignment_recommendations",
@@ -831,6 +1405,34 @@
     "row_count": 2,
     "json_file": "spc_cpk_drift_metrics.json",
     "csv_file": "spc_cpk_drift_metrics.csv"
+  },
+  {
+    "table_name": "store_capacity_agent_constraint_matrix",
+    "agent_id": "store_capacity_agent",
+    "row_count": 3,
+    "json_file": "store_capacity_agent_constraint_matrix.json",
+    "csv_file": "store_capacity_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "store_capacity_agent_execution_ledger",
+    "agent_id": "store_capacity_agent",
+    "row_count": 3,
+    "json_file": "store_capacity_agent_execution_ledger.json",
+    "csv_file": "store_capacity_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "store_capacity_agent_optimization_scenarios",
+    "agent_id": "store_capacity_agent",
+    "row_count": 3,
+    "json_file": "store_capacity_agent_optimization_scenarios.json",
+    "csv_file": "store_capacity_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "store_capacity_agent_telemetry_feed",
+    "agent_id": "store_capacity_agent",
+    "row_count": 4,
+    "json_file": "store_capacity_agent_telemetry_feed.json",
+    "csv_file": "store_capacity_agent_telemetry_feed.csv"
   },
   {
     "table_name": "store_phantom_inventory_anomalies",
@@ -896,6 +1498,62 @@
     "csv_file": "supplier_rfq_bids.csv"
   },
   {
+    "table_name": "sustainable_packaging_agent_constraint_matrix",
+    "agent_id": "sustainable_packaging_agent",
+    "row_count": 3,
+    "json_file": "sustainable_packaging_agent_constraint_matrix.json",
+    "csv_file": "sustainable_packaging_agent_constraint_matrix.csv"
+  },
+  {
+    "table_name": "sustainable_packaging_agent_execution_ledger",
+    "agent_id": "sustainable_packaging_agent",
+    "row_count": 3,
+    "json_file": "sustainable_packaging_agent_execution_ledger.json",
+    "csv_file": "sustainable_packaging_agent_execution_ledger.csv"
+  },
+  {
+    "table_name": "sustainable_packaging_agent_optimization_scenarios",
+    "agent_id": "sustainable_packaging_agent",
+    "row_count": 3,
+    "json_file": "sustainable_packaging_agent_optimization_scenarios.json",
+    "csv_file": "sustainable_packaging_agent_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "sustainable_packaging_agent_telemetry_feed",
+    "agent_id": "sustainable_packaging_agent",
+    "row_count": 4,
+    "json_file": "sustainable_packaging_agent_telemetry_feed.json",
+    "csv_file": "sustainable_packaging_agent_telemetry_feed.csv"
+  },
+  {
+    "table_name": "three_way_match_dispute_constraint_matrix",
+    "agent_id": "three_way_match_dispute",
+    "row_count": 3,
+    "json_file": "three_way_match_dispute_constraint_matrix.json",
+    "csv_file": "three_way_match_dispute_constraint_matrix.csv"
+  },
+  {
+    "table_name": "three_way_match_dispute_execution_ledger",
+    "agent_id": "three_way_match_dispute",
+    "row_count": 3,
+    "json_file": "three_way_match_dispute_execution_ledger.json",
+    "csv_file": "three_way_match_dispute_execution_ledger.csv"
+  },
+  {
+    "table_name": "three_way_match_dispute_optimization_scenarios",
+    "agent_id": "three_way_match_dispute",
+    "row_count": 3,
+    "json_file": "three_way_match_dispute_optimization_scenarios.json",
+    "csv_file": "three_way_match_dispute_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "three_way_match_dispute_telemetry_feed",
+    "agent_id": "three_way_match_dispute",
+    "row_count": 4,
+    "json_file": "three_way_match_dispute_telemetry_feed.json",
+    "csv_file": "three_way_match_dispute_telemetry_feed.csv"
+  },
+  {
     "table_name": "timesfm_quantile_horizons",
     "agent_id": "demand_sensing_agent",
     "row_count": 3,
@@ -915,20 +1573,6 @@
     "row_count": 2,
     "json_file": "trapped_cash_opportunities.json",
     "csv_file": "trapped_cash_opportunities.csv"
-  },
-  {
-    "table_name": "uld_3d_packing_manifests",
-    "agent_id": "air_cargo_uld_optimizer",
-    "row_count": 1,
-    "json_file": "uld_3d_packing_manifests.json",
-    "csv_file": "uld_3d_packing_manifests.csv"
-  },
-  {
-    "table_name": "uld_contour_geometry_specs",
-    "agent_id": "air_cargo_uld_optimizer",
-    "row_count": 2,
-    "json_file": "uld_contour_geometry_specs.json",
-    "csv_file": "uld_contour_geometry_specs.csv"
   },
   {
     "table_name": "vendor_master_records",
@@ -957,6 +1601,34 @@
     "row_count": 2,
     "json_file": "warehouse_slotting_velocity_tiers.json",
     "csv_file": "warehouse_slotting_velocity_tiers.csv"
+  },
+  {
+    "table_name": "wave_fulfillment_copilot_constraint_matrix",
+    "agent_id": "wave_fulfillment_copilot",
+    "row_count": 3,
+    "json_file": "wave_fulfillment_copilot_constraint_matrix.json",
+    "csv_file": "wave_fulfillment_copilot_constraint_matrix.csv"
+  },
+  {
+    "table_name": "wave_fulfillment_copilot_execution_ledger",
+    "agent_id": "wave_fulfillment_copilot",
+    "row_count": 3,
+    "json_file": "wave_fulfillment_copilot_execution_ledger.json",
+    "csv_file": "wave_fulfillment_copilot_execution_ledger.csv"
+  },
+  {
+    "table_name": "wave_fulfillment_copilot_optimization_scenarios",
+    "agent_id": "wave_fulfillment_copilot",
+    "row_count": 3,
+    "json_file": "wave_fulfillment_copilot_optimization_scenarios.json",
+    "csv_file": "wave_fulfillment_copilot_optimization_scenarios.csv"
+  },
+  {
+    "table_name": "wave_fulfillment_copilot_telemetry_feed",
+    "agent_id": "wave_fulfillment_copilot",
+    "row_count": 4,
+    "json_file": "wave_fulfillment_copilot_telemetry_feed.json",
+    "csv_file": "wave_fulfillment_copilot_telemetry_feed.csv"
   },
   {
     "table_name": "wave_release_order_allocations",

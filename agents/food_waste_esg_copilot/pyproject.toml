@@ -1,0 +1,10 @@
+[project]
+name = "food-waste-esg-copilot"
+version = "1.0.0"
+description = "[Category: 06 · Returns & Reverse Logistics — Expiry & Markdowns] Food Waste & ESG Copilot (Chief Sustainability Officer): Aggregates store shrink and organic haul logs to generate audited GHG diversion filings. Outcome: Automates annual circularity reporting."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

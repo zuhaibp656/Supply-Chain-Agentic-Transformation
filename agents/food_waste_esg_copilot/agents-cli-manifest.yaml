@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "food_waste_esg_copilot"
+name: "[06 · Returns & ESG | Expiry & Markdowns] Food Waste & ESG Copilot"
+category: "06 · Returns & Reverse Logistics — Expiry & Markdowns"
+description: "[Category: 06 · Returns & Reverse Logistics — Expiry & Markdowns] Food Waste & ESG Copilot (Chief Sustainability Officer): Aggregates store shrink and organic haul logs to generate audited GHG diversion filings. Outcome: Automates annual circularity reporting."
+agent_class: "app.agent.FoodWasteEsgCopilotAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_food_waste_esg_copilot_telemetry_feed"
+  - "query_food_waste_esg_copilot_constraint_matrix"
+  - "query_food_waste_esg_copilot_optimization_scenarios"
+  - "query_food_waste_esg_copilot_execution_ledger"
+  - "action_commit_food_waste_esg_copilot_plan"
+  - "action_dispatch_food_waste_esg_copilot_alert"
+metadata:
+  scor_category: "06 · Returns & Reverse Logistics — Expiry & Markdowns"
+  pillar: "06 · Returns & Reverse Logistics"
+  sub_pillar: "Expiry & Markdowns"
+  persona_owner: "Chief Sustainability Officer"
+  roi_focus: "Automates annual circularity reporting"

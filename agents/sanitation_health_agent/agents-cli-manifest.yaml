@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "sanitation_health_agent"
+name: "[06 · Returns & ESG | Pallet & Tote Reclamation] Sanitation & Health Agent"
+category: "06 · Returns & Reverse Logistics — Pallet & Tote Reclamation"
+description: "[Category: 06 · Returns & Reverse Logistics — Pallet & Tote Reclamation] Sanitation & Health Agent (Packaging QA / Food Safety): Inspects return photos and wash logs for structural fatigue and chemical compliance. Outcome: Extends reusable lifecycle by 15–20%."
+agent_class: "app.agent.SanitationHealthAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.8-flash"
+entrypoint: "app/agent.py"
+tools:
+  - "query_sanitation_health_agent_telemetry_feed"
+  - "query_sanitation_health_agent_constraint_matrix"
+  - "query_sanitation_health_agent_optimization_scenarios"
+  - "query_sanitation_health_agent_execution_ledger"
+  - "action_commit_sanitation_health_agent_plan"
+  - "action_dispatch_sanitation_health_agent_alert"
+metadata:
+  scor_category: "06 · Returns & Reverse Logistics — Pallet & Tote Reclamation"
+  pillar: "06 · Returns & Reverse Logistics"
+  sub_pillar: "Pallet & Tote Reclamation"
+  persona_owner: "Packaging QA / Food Safety"
+  roi_focus: "Extends reusable lifecycle by 15–20%"

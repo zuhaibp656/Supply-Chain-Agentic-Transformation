@@ -1,7 +1,7 @@
 schema_version: "v1"
 id: "promo_lift_simulator"
-name: "ElasticityIQ — Demand Shaping & Promo Simulator"
-description: "Isolates true net promotional lift from sister-SKU cannibalization and steers promotions toward available warehouse & transit supply."
+name: "[01 · Plan | Trade Promotion] Promo ROI Simulator"
+description: "[Category: 01 · Planning & Strategy — Trade Promotion] Promo ROI Simulator (Trade Marketing Manager): Simulates price elasticity, shelf lift, and incremental spend return. Outcome: Prevents break-even trade leakage."
 agent_class: "app.agent.PromoLiftSimulatorAgent"
 runtime:
   type: "adk"
@@ -15,6 +15,6 @@ tools:
   - "action_shape_promotional_mechanic"
   - "action_lock_tpm_calendar"
 metadata:
-  scor_category: "01 · Plan (Demand Planning, Sensing & S&OP)"
+  scor_category: "01 · Planning & Strategy — Trade Promotion"
   tier_coverage: "Retail Trade Promotions / Regional Distribution Centers"
   roi_focus: "+22% net trade spend ROI, zero promotional stockouts, -30% sister-SKU margin cannibalization"

@@ -1,0 +1,10 @@
+[project]
+name = "sanitation-health-agent"
+version = "1.0.0"
+description = "[Category: 06 · Returns & Reverse Logistics — Pallet & Tote Reclamation] Sanitation & Health Agent (Packaging QA / Food Safety): Inspects return photos and wash logs for structural fatigue and chemical compliance. Outcome: Extends reusable lifecycle by 15–20%."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

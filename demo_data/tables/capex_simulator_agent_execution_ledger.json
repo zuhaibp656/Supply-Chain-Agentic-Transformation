@@ -1,0 +1,32 @@
+[
+  {
+    "execution_id": "CAPEX_-EXE-301",
+    "shipment_id": "SHP-XYZ-90884",
+    "order_id": "ORD-XYZ-2026-99401",
+    "persona_owner": "VP Manufacturing Engineering",
+    "erp_system": "SAP S/4HANA & BigQuery Twin",
+    "writeback_bapi": "SAP SD Customer MOQ / Bracket Pricing Policy Update & SAP S/4HANA Sourcing Assignment Split",
+    "savings_usd": 142500,
+    "audit_status": "COMMITTED"
+  },
+  {
+    "execution_id": "CAPEX_-EXE-302",
+    "shipment_id": "SHP-XYZ-90885",
+    "order_id": "ORD-XYZ-2026-99402",
+    "persona_owner": "VP Manufacturing Engineering",
+    "erp_system": "Manhattan Active WMS & Cloud Spanner",
+    "writeback_bapi": "SAP SD Customer MOQ / Bracket Pricing Policy Update & SAP S/4HANA Sourcing Assignment Split",
+    "savings_usd": 98400,
+    "audit_status": "COMMITTED"
+  },
+  {
+    "execution_id": "CAPEX_-EXE-303",
+    "shipment_id": "SHP-XYZ-90886",
+    "order_id": "ORD-XYZ-2026-99403",
+    "persona_owner": "VP Manufacturing Engineering",
+    "erp_system": "Blue Yonder TMS & Apigee Gateway",
+    "writeback_bapi": "SAP SD Customer MOQ / Bracket Pricing Policy Update & SAP S/4HANA Sourcing Assignment Split",
+    "savings_usd": 116800,
+    "audit_status": "VERIFIED"
+  }
+]

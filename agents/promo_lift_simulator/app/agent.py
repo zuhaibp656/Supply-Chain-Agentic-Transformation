@@ -81,6 +81,9 @@ class PromoLiftSimulatorAgent:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "promo_lift_simulator"
+        self.category = "01 · Planning & Strategy — Trade Promotion"
+        self.display_name = "[01 · Plan | Trade Promotion] Promo ROI Simulator"
+        self.description = "[Category: 01 · Planning & Strategy — Trade Promotion] Promo ROI Simulator (Trade Marketing Manager): Simulates price elasticity, shelf lift, and incremental spend return. Outcome: Prevents break-even trade leakage."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

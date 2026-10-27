@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "commodity_index_advisor"
+name: "[02 · Source | Material & Packaging] Commodity Index Advisor"
+category: "02 · Sourcing & Procurement — Material & Packaging"
+description: "[Category: 02 · Sourcing & Procurement — Material & Packaging] Commodity Index Advisor (Category Sourcing Mgr (Direct)): Correlates CBOT/Platts feedstocks with depletion to advise hedging. Outcome: Optimizes forward-contract windows."
+agent_class: "app.agent.CommodityIndexAdvisorAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_commodity_index_advisor_telemetry_feed"
+  - "query_commodity_index_advisor_constraint_matrix"
+  - "query_commodity_index_advisor_optimization_scenarios"
+  - "query_commodity_index_advisor_execution_ledger"
+  - "action_commit_commodity_index_advisor_plan"
+  - "action_dispatch_commodity_index_advisor_alert"
+metadata:
+  scor_category: "02 · Sourcing & Procurement — Material & Packaging"
+  pillar: "02 · Sourcing & Procurement"
+  sub_pillar: "Material & Packaging"
+  persona_owner: "Category Sourcing Mgr (Direct)"
+  roi_focus: "Optimizes forward-contract windows"

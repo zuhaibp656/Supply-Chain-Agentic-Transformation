@@ -1,7 +1,7 @@
 schema_version: "v1"
 id: "working_capital_cash_bridge"
-name: "MarginBridge — Working Capital & Cash Bridge"
-description: "Bridges operational inventory levels to CFO cash flow (DIO, DPO, DSO), evaluating holding costs, standard cost variances, and AP discount optimization."
+name: "[01 · Plan | Portfolio & SKU] SKU Pruning Agent"
+description: "[Category: 01 · Planning & Strategy — Portfolio & SKU] SKU Pruning Agent (Category Manager): Scores velocity, plant changeover cost, and shelf revenue yield. Outcome: Unlocks tail working capital."
 agent_class: "app.agent.WorkingCapitalCashBridgeAgent"
 runtime:
   type: "adk"
@@ -15,6 +15,6 @@ tools:
   - "action_rebalance_working_capital_buffer"
   - "action_trigger_dynamic_ap_discounting"
 metadata:
-  scor_category: "Cross-Persona Universal Core"
+  scor_category: "01 · Planning & Strategy — Portfolio & SKU"
   tier_coverage: "Enterprise Treasury & Supply Chain Balance Sheet"
   roi_focus: "$85M working capital released, -14 days DSI/DIO, +1.4% operating margin"

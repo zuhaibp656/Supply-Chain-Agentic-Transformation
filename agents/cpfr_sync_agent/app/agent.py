@@ -82,6 +82,9 @@ class CpfrSyncAgent:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "cpfr_sync_agent"
+        self.category = "01 · Planning & Strategy — Demand Forecasting"
+        self.display_name = "[01 · Plan | Demand Forecasting] Forecast Reconciliation"
+        self.description = "[Category: 01 · Planning & Strategy — Demand Forecasting] Forecast Reconciliation (Commercial Planning Lead): Identifies unmodeled drivers across eCommerce and retail channels. Outcome: Replaces black-box variance models."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

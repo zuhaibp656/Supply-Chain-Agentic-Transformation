@@ -1,0 +1,10 @@
+[project]
+name = "sustainable-packaging-agent"
+version = "1.0.0"
+description = "[Category: 02 · Sourcing & Procurement — Material & Packaging] Sustainable Packaging Agent (Packaging R&D Engineer): Evaluates PCR resins and barrier materials against line runnability & taxes. Outcome: Mitigates EPR and landfill taxation."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

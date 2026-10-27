@@ -75,6 +75,9 @@ class InlineQualityInspectionAgent:
 
     def __init__(self, model: str = "gemini-3.8-flash"):
         self.name = "inline_quality_inspection_agent"
+        self.category = "03 · Manufacturing & Production — Quality & Compliance"
+        self.display_name = "[03 · Make | Quality & Compliance] Visual Defect Triager"
+        self.description = "[Category: 03 · Manufacturing & Production — Quality & Compliance] Visual Defect Triager (QA Manager / Line Inspector): Inspects high-speed video frames for crimped seals, lot codes, and labels. Outcome: Prevents full pallet scrap & holds."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -299,7 +302,7 @@ try:
 
     root_agent = Agent(
         name="inline_quality_inspection_agent",
-        description="VisionInspect Inline Multimodal Quality Inspector: Gemini 3.8 Flash defect classification and reject gate triage.",
+        description="[Category: 03 · Manufacturing & Production — Quality & Compliance] Visual Defect Triager (QA Manager / Line Inspector): Inspects high-speed video frames for crimped seals, lot codes, and labels. Outcome: Prevents full pallet scrap & holds.",
         model=GlobalGemini(
             model="gemini-3.8-flash",
             retry_options=types.HttpRetryOptions(attempts=3),

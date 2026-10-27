@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "store_capacity_agent_golden_01",
+    "category": "05 \u00b7 Distribution & Logistics \u2014 Store Replenishment",
+    "agent_name": "[05 \u00b7 Logistics | Store Replenishment] Store Capacity Agent",
+    "prompt": "Run Store Capacity Agent analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_store_capacity_agent_telemetry_feed",
+      "query_store_capacity_agent_constraint_matrix",
+      "action_commit_store_capacity_agent_plan"
+    ],
+    "expected_outcome": "Reduces backroom stock by 25%"
+  }
+]

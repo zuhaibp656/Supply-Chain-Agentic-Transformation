@@ -1,0 +1,10 @@
+[project]
+name = "commodity-index-advisor"
+version = "1.0.0"
+description = "[Category: 02 · Sourcing & Procurement — Material & Packaging] Commodity Index Advisor (Category Sourcing Mgr (Direct)): Correlates CBOT/Platts feedstocks with depletion to advise hedging. Outcome: Optimizes forward-contract windows."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

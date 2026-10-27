@@ -1,0 +1,10 @@
+[project]
+name = "dock-to-stock-agent"
+version = "1.0.0"
+description = "[Category: 04 · Inventory & Warehousing — Warehouse Operations] Dock-to-Stock Agent (Inbound Receiving Supervisor): Parses scanned BOLs and pallet photos to reconcile open ASN variances. Outcome: Dock turnaround in minutes vs. hours."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

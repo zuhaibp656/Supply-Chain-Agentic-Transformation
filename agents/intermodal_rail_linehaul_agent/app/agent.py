@@ -61,6 +61,9 @@ class IntermodalRailLinehaulAgent:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "intermodal_rail_linehaul_agent"
+        self.category = "06 · Returns & Reverse Logistics — Pallet & Tote Reclamation"
+        self.display_name = "[06 · Returns & ESG | Pallet & Tote Reclamation] Milk-Run Consolidation"
+        self.description = "[Category: 06 · Returns & Reverse Logistics — Pallet & Tote Reclamation] Milk-Run Consolidation (Reverse Transport Planner): Schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. Outcome: Boosts backhaul fill rate by 25–40%."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -270,7 +273,7 @@ try:
 
     root_agent = Agent(
         name="intermodal_rail_linehaul_agent",
-        description="Optimizes long-haul (500+ mile) freight conversion from over-the-road diesel trucks to double-stack COFC intermodal rail, synchronizing Railinc EDI 404/417 consists and ramp drayage.",
+        description="[Category: 06 · Returns & Reverse Logistics — Pallet & Tote Reclamation] Milk-Run Consolidation (Reverse Transport Planner): Schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. Outcome: Boosts backhaul fill rate by 25–40%.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

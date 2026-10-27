@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "aisle_aligned_pallet_agent"
+name: "[05 · Logistics | Store Replenishment] Aisle-Aligned Pallet"
+category: "05 · Distribution & Logistics — Store Replenishment"
+description: "[Category: 05 · Distribution & Logistics — Store Replenishment] Aisle-Aligned Pallet (Outbound Lead / Industrial Eng.): Sequences DC pick waves to match individual store planograms and shelf layouts. Outcome: Cuts store stocking labor by 20–35%."
+agent_class: "app.agent.AisleAlignedPalletAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_aisle_aligned_pallet_agent_telemetry_feed"
+  - "query_aisle_aligned_pallet_agent_constraint_matrix"
+  - "query_aisle_aligned_pallet_agent_optimization_scenarios"
+  - "query_aisle_aligned_pallet_agent_execution_ledger"
+  - "action_commit_aisle_aligned_pallet_agent_plan"
+  - "action_dispatch_aisle_aligned_pallet_agent_alert"
+metadata:
+  scor_category: "05 · Distribution & Logistics — Store Replenishment"
+  pillar: "05 · Distribution & Logistics"
+  sub_pillar: "Store Replenishment"
+  persona_owner: "Outbound Lead / Industrial Eng."
+  roi_focus: "Cuts store stocking labor by 20–35%"

@@ -81,6 +81,9 @@ class DemandSensingAgent:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "demand_sensing_agent"
+        self.category = "01 · Planning & Strategy — Demand Forecasting"
+        self.display_name = "[01 · Plan | Demand Forecasting] Demand Sensing Agent"
+        self.description = "[Category: 01 · Planning & Strategy — Demand Forecasting] Demand Sensing Agent (Demand Planner / Forecaster): Synthesizes POS velocity, weather anomalies, and macro trends. Outcome: Detects demand shifts 7–14 days earlier."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -300,7 +303,7 @@ try:
 
     root_agent = Agent(
         name="demand_sensing_agent",
-        description="PulseCast Demand Sensing Engine: probabilistic TimesFM demand curves and WeatherNext 3 correlation.",
+        description="[Category: 01 · Planning & Strategy — Demand Forecasting] Demand Sensing Agent (Demand Planner / Forecaster): Synthesizes POS velocity, weather anomalies, and macro trends. Outcome: Detects demand shifts 7–14 days earlier.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

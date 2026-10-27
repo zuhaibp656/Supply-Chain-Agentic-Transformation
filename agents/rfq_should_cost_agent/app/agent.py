@@ -83,6 +83,9 @@ class RfqShouldCostAgent:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "rfq_should_cost_agent"
+        self.category = "02 · Sourcing & Procurement — Material & Packaging"
+        self.display_name = "[02 · Source | Material & Packaging] Dynamic Should-Cost Agent"
+        self.description = "[Category: 02 · Sourcing & Procurement — Material & Packaging] Dynamic Should-Cost Agent (Strategic Sourcing Lead): Deconstructs packaging specs (resin weight, corrugate, conversion energy). Outcome: Fact-based margin leverage in RFPs."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -310,7 +313,7 @@ try:
 
     root_agent = Agent(
         name="rfq_should_cost_agent",
-        description="SourcePulse Parametric Should-Cost: automated BOM cost breakdown and supplier RFQ bid analysis.",
+        description="[Category: 02 · Sourcing & Procurement — Material & Packaging] Dynamic Should-Cost Agent (Strategic Sourcing Lead): Deconstructs packaging specs (resin weight, corrugate, conversion energy). Outcome: Fact-based margin leverage in RFPs.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

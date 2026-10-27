@@ -1,10 +1,10 @@
 name: intermodal_rail_linehaul_agent
 display_name: "IntermodalSync — Factory-to-DC Intermodal Rail, Barge & Linehaul Orchestrator"
-description: "Optimizes long-haul (500+ mile) freight conversion from over-the-road diesel trucks to double-stack COFC intermodal rail, synchronizing Railinc EDI 404/417 consists and ramp drayage."
+description: "[Category: 06 · Returns & Reverse Logistics — Pallet & Tote Reclamation] Milk-Run Consolidation (Reverse Transport Planner): Schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. Outcome: Boosts backhaul fill rate by 25–40%."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "05 · Deliver"
-category: "Logistics, Fleet & Transportation Management"
+category: "06 · Returns & Reverse Logistics — Pallet & Tote Reclamation"
 tags:
   - intermodal-rail
   - cofc

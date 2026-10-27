@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "freight_bill_audit_agent"
+name: "[05 · Logistics | Route & Carrier] Freight Bill Audit Agent"
+category: "05 · Distribution & Logistics — Route & Carrier"
+description: "[Category: 05 · Distribution & Logistics — Route & Carrier] Freight Bill Audit Agent (Freight Controller / Claims): Extracts signed PODs and rate contracts via OCR to audit accessorial surcharges. Outcome: Captures 3–7% in overbilled fees."
+agent_class: "app.agent.FreightBillAuditAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_freight_bill_audit_agent_telemetry_feed"
+  - "query_freight_bill_audit_agent_constraint_matrix"
+  - "query_freight_bill_audit_agent_optimization_scenarios"
+  - "query_freight_bill_audit_agent_execution_ledger"
+  - "action_commit_freight_bill_audit_agent_plan"
+  - "action_dispatch_freight_bill_audit_agent_alert"
+metadata:
+  scor_category: "05 · Distribution & Logistics — Route & Carrier"
+  pillar: "05 · Distribution & Logistics"
+  sub_pillar: "Route & Carrier"
+  persona_owner: "Freight Controller / Claims"
+  roi_focus: "Captures 3–7% in overbilled fees"

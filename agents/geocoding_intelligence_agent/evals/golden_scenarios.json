@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "geocoding_intelligence_agent_golden_01",
+    "category": "05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery",
+    "agent_name": "[05 \u00b7 Logistics | Last-Mile Delivery] Geocoding Intelligence",
+    "prompt": "Run Geocoding Intelligence analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_geocoding_intelligence_agent_telemetry_feed",
+      "query_geocoding_intelligence_agent_constraint_matrix",
+      "action_commit_geocoding_intelligence_agent_plan"
+    ],
+    "expected_outcome": "Drops failed deliveries by 30\u201345%"
+  }
+]

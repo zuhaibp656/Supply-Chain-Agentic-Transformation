@@ -61,6 +61,9 @@ class FleetflowDispatch:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "fleetflow_dispatch"
+        self.category = "05 · Distribution & Logistics — Route & Carrier"
+        self.display_name = "[05 · Logistics | Route & Carrier] Dynamic Rerouter"
+        self.description = "[Category: 05 · Distribution & Logistics — Route & Carrier] Dynamic Rerouter (Fleet Dispatcher / Central Ops): Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits. Outcome: Cuts fleet fuel usage by 6–10%."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -269,7 +272,7 @@ try:
 
     root_agent = Agent(
         name="fleetflow_dispatch",
-        description="Solves Capacitated Vehicle Routing with Time Windows (CVRPTW) using Google OR-Tools and Google Maps Routes Preferred API across 0.75t to 24t fleet vehicles.",
+        description="[Category: 05 · Distribution & Logistics — Route & Carrier] Dynamic Rerouter (Fleet Dispatcher / Central Ops): Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits. Outcome: Cuts fleet fuel usage by 6–10%.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

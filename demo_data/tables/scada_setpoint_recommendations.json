@@ -1,0 +1,27 @@
+[
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH",
+    "asset_id": "ASSET-INJECTION-MOLD-02",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "\u00b0C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 0.42,
+    "projected_cost_savings_per_shift_usd": 2450.0,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  }
+]

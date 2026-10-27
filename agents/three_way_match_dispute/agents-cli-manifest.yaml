@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "three_way_match_dispute"
+name: "[02 · Source | Contract & PO Mgmt] Three-Way Match Dispute"
+category: "02 · Sourcing & Procurement — Contract & PO Mgmt"
+description: "[Category: 02 · Sourcing & Procurement — Contract & PO Mgmt] Three-Way Match Dispute (Accounts Payable Lead): Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. Outcome: Prevents vendor holds & saves discounts."
+agent_class: "app.agent.ThreeWayMatchDisputeAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_three_way_match_dispute_telemetry_feed"
+  - "query_three_way_match_dispute_constraint_matrix"
+  - "query_three_way_match_dispute_optimization_scenarios"
+  - "query_three_way_match_dispute_execution_ledger"
+  - "action_commit_three_way_match_dispute_plan"
+  - "action_dispatch_three_way_match_dispute_alert"
+metadata:
+  scor_category: "02 · Sourcing & Procurement — Contract & PO Mgmt"
+  pillar: "02 · Sourcing & Procurement"
+  sub_pillar: "Contract & PO Mgmt"
+  persona_owner: "Accounts Payable Lead"
+  roi_focus: "Prevents vendor holds & saves discounts"

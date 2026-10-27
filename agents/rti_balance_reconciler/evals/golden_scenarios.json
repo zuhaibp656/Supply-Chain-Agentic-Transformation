@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "rti_balance_reconciler_golden_01",
+    "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation",
+    "agent_name": "[06 \u00b7 Returns & ESG | Pallet & Tote Reclamation] RTI Balance Reconciler",
+    "prompt": "Run RTI Balance Reconciler analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_rti_balance_reconciler_telemetry_feed",
+      "query_rti_balance_reconciler_constraint_matrix",
+      "action_commit_rti_balance_reconciler_plan"
+    ],
+    "expected_outcome": "Eliminates 30% in non-return fee fines"
+  }
+]

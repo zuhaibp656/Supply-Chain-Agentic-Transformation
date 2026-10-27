@@ -1,0 +1,4 @@
+scenario_id,scenario_name,category,service_level_pct,annual_cost_usd,cycle_time_hrs,kpi_impact
+SCEN-BASELINE-MANUAL,Legacy Manual Spreadsheet Baseline,03 · Make | Capacity Planning,88.4,4850000,42.0,High manual toil & delayed ERP response
+SCEN-AI-OPTIMAL,Co-Packer Allocation Autonomous Policy,03 · Make | Capacity Planning,98.7,3620000,1.5,Optimizes net gross margin per case
+SCEN-STRESS-SURGE,Peak Surge & Disruption Resilience Mode,03 · Make | Capacity Planning,96.9,3890000,2.2,Protected SLA under +25% demand/supply shock

@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "returns_triage_agent_golden_01",
+    "category": "04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility",
+    "agent_name": "[04 \u00b7 Inventory & DC | Omnichannel Visibility] Returns Triage Agent",
+    "prompt": "Run Returns Triage Agent analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_returns_triage_agent_telemetry_feed",
+      "query_returns_triage_agent_constraint_matrix",
+      "action_commit_returns_triage_agent_plan"
+    ],
+    "expected_outcome": "Restocks sellable returns within 24h"
+  }
+]

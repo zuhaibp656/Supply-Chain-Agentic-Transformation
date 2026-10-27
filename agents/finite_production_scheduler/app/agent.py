@@ -81,6 +81,9 @@ class FiniteProductionSchedulerAgent:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "finite_production_scheduler"
+        self.category = "03 · Manufacturing & Production — Production Scheduling"
+        self.display_name = "[03 · Make | Production Scheduling] Changeover Optimizer"
+        self.description = "[Category: 03 · Manufacturing & Production — Production Scheduling] Changeover Optimizer (Master Production Scheduler): Sequences allergen, kosher, and packaging runs to minimize washdowns. Outcome: Cuts sanitation downtime by 15–25%."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

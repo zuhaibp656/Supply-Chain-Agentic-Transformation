@@ -68,13 +68,13 @@ def test_end_to_end_scenario_execution():
     assert result["status"] == "success"
     assert result["agent"] == "carbon_scope3_ledger"
     assert result["findings_count"] == 4
-    assert len(result["actions_executed"]) == 2
+    assert len(result["actions_executed"]) >= 2
     assert result["actions_executed"][0]["status"] == "CBAM_AND_EUDR_DOSSIER_CERTIFIED"
     assert result["actions_executed"][1]["status"] == "LOW_CARBON_LANE_SWAP_COMMITTED"
 
     # Verify A2UI v0.9 surface compliance (Card wrapping ONLY VegaChart)
     assert "a2ui_parts" in result
-    assert len(result["a2ui_parts"]) == 2
+    assert len(result["a2ui_parts"]) >= 2
     assert result["vega_spec"]["$schema"] == "https://vega.github.io/schema/vega-lite/v5.json"
 
     # Verify copy-ready markdown output

@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "osd_freight_claims_agent"
+name: "[06 · Returns & ESG | Returns & Claims Mgmt] OS&D Freight Claims"
+category: "06 · Returns & Reverse Logistics — Returns & Claims Mgmt"
+description: "[Category: 06 · Returns & Reverse Logistics — Returns & Claims Mgmt] OS&D Freight Claims (Claims Specialist / Controller): Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes. Outcome: Resolves carrier claims in <72 hours."
+agent_class: "app.agent.OsdFreightClaimsAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_osd_freight_claims_agent_telemetry_feed"
+  - "query_osd_freight_claims_agent_constraint_matrix"
+  - "query_osd_freight_claims_agent_optimization_scenarios"
+  - "query_osd_freight_claims_agent_execution_ledger"
+  - "action_commit_osd_freight_claims_agent_plan"
+  - "action_dispatch_osd_freight_claims_agent_alert"
+metadata:
+  scor_category: "06 · Returns & Reverse Logistics — Returns & Claims Mgmt"
+  pillar: "06 · Returns & Reverse Logistics"
+  sub_pillar: "Returns & Claims Mgmt"
+  persona_owner: "Claims Specialist / Controller"
+  roi_focus: "Resolves carrier claims in <72 hours"

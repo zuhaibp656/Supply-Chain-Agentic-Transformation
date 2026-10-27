@@ -1,10 +1,10 @@
 name: crossdock_transfer_orchestrator
 display_name: "CrossDockFlow — Real-Time Cross-Dock Flow-Through Orchestrator"
-description: "Synchronizes inbound supplier truck arrival milestones with outbound retail trailers, routing pallets directly across dock doors without staging."
+description: "[Category: 04 · Inventory & Warehousing — Positioning & Optimization] Inter-Facility Rebalancer (Replenishment Planner): Generates automated inter-DC and store transfers to balance localized gluts. Outcome: Eliminates regional out-of-stocks."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "04 · Fulfill"
-category: "Warehousing, Inwarding QA & Intralogistics"
+category: "04 · Inventory & Warehousing — Positioning & Optimization"
 tags:
   - cross-dock
   - flow-through

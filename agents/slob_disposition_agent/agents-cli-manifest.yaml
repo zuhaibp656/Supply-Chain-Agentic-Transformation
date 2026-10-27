@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "slob_disposition_agent"
+name: "[04 · Inventory & DC | Positioning & Optimization] SLOB Disposition Agent"
+category: "04 · Inventory & Warehousing — Positioning & Optimization"
+description: "[Category: 04 · Inventory & Warehousing — Positioning & Optimization] SLOB Disposition Agent (Inventory Controller / Buyer): Analyzes shelf-life risk and triggers promotional bundles or liquidations. Outcome: Prevents expired stock write-offs."
+agent_class: "app.agent.SlobDispositionAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_slob_disposition_agent_telemetry_feed"
+  - "query_slob_disposition_agent_constraint_matrix"
+  - "query_slob_disposition_agent_optimization_scenarios"
+  - "query_slob_disposition_agent_execution_ledger"
+  - "action_commit_slob_disposition_agent_plan"
+  - "action_dispatch_slob_disposition_agent_alert"
+metadata:
+  scor_category: "04 · Inventory & Warehousing — Positioning & Optimization"
+  pillar: "04 · Inventory & Warehousing"
+  sub_pillar: "Positioning & Optimization"
+  persona_owner: "Inventory Controller / Buyer"
+  roi_focus: "Prevents expired stock write-offs"

@@ -61,6 +61,9 @@ class EcoCutoverOrchestrator:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "eco_cutover_orchestrator"
+        self.category = "01 · Planning & Strategy — Portfolio & SKU"
+        self.display_name = "[01 · Plan | Portfolio & SKU] PIPO Run-Out Agent"
+        self.description = "[Category: 01 · Planning & Strategy — Portfolio & SKU] PIPO Run-Out Agent (Lifecycle / Materials Mgr): Orchestrates transition buffers to sync packaging and formulation cuts. Outcome: Eliminates stranded write-offs."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -268,7 +271,7 @@ try:
 
     root_agent = Agent(
         name="eco_cutover_orchestrator",
-        description="Synchronizes PLM Engineering Change Orders (ECOs) with multi-plant ERP BOM effectivity dates and open supplier POs to minimize obsolete component write-offs while protecting NPI launch dates.",
+        description="[Category: 01 · Planning & Strategy — Portfolio & SKU] PIPO Run-Out Agent (Lifecycle / Materials Mgr): Orchestrates transition buffers to sync packaging and formulation cuts. Outcome: Eliminates stranded write-offs.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

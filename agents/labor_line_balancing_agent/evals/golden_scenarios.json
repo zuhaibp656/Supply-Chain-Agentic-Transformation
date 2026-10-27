@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "labor_line_balancing_agent_golden_01",
+    "category": "03 \u00b7 Manufacturing & Production \u2014 Production Scheduling",
+    "agent_name": "[03 \u00b7 Make | Production Scheduling] Labor & Line Balancing",
+    "prompt": "Run Labor & Line Balancing analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_labor_line_balancing_agent_telemetry_feed",
+      "query_labor_line_balancing_agent_constraint_matrix",
+      "action_commit_labor_line_balancing_agent_plan"
+    ],
+    "expected_outcome": "Prevents certified skill bottlenecks"
+  }
+]

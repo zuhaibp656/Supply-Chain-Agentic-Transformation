@@ -61,6 +61,9 @@ class PortDrayageOrchestrator:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "port_drayage_orchestrator"
+        self.category = "05 · Distribution & Logistics — Store Replenishment"
+        self.display_name = "[05 · Logistics | Store Replenishment] Curfew Orchestrator"
+        self.description = "[Category: 05 · Distribution & Logistics — Store Replenishment] Curfew Orchestrator (Retail Logistics Dispatcher): Coordinates municipal delivery curfews and store dock shift schedules dynamically. Outcome: 98%+ on-time store window compliance."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -268,7 +271,7 @@ try:
 
     root_agent = Agent(
         name="port_drayage_orchestrator",
-        description="Ingests Spire Maritime satellite AIS and WeatherNext 3 cyclone forecasts to predict berth discharge, prevent port demurrage, and optimize dual-transaction drayage gates.",
+        description="[Category: 05 · Distribution & Logistics — Store Replenishment] Curfew Orchestrator (Retail Logistics Dispatcher): Coordinates municipal delivery curfews and store dock shift schedules dynamically. Outcome: 98%+ on-time store window compliance.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

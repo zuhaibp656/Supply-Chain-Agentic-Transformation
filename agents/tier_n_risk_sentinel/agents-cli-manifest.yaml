@@ -1,7 +1,7 @@
 schema_version: "v1"
 id: "tier_n_risk_sentinel"
-name: "NexusShield — Multi-Tier Supply Network Sentinel"
-description: "Maps Tier-1 to Tier-4 supplier dependencies in Cloud Spanner Graph, traces BOM revenue at risk, and triggers alternate-source allocations."
+name: "[02 · Source | Supplier Network] Disruption Sensing Agent"
+description: "[Category: 02 · Sourcing & Procurement — Supplier Network] Disruption Sensing Agent (Procurement Dir. / Risk Mgr): Monitors multi-tier supply feeds, port delays, and vendor financials. Outcome: 2–3 week advance disruption warning."
 agent_class: "app.agent.TierNRiskSentinelAgent"
 runtime:
   type: "adk"
@@ -15,6 +15,6 @@ tools:
   - "action_dispatch_dual_source_po_split"
   - "action_surge_meio_safety_buffer"
 metadata:
-  scor_category: "02 · Source (Strategic Sourcing & Category Procurement)"
+  scor_category: "02 · Sourcing & Procurement — Supplier Network"
   tier_coverage: "Tier-1 through Tier-4 Global Supply Network"
   roi_focus: "+11 days advance disruption warning, zero factory line-down hours, $18.4M revenue protected"

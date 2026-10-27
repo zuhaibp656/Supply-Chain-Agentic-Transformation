@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "cold_chain_auditor_golden_01",
+    "category": "05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile",
+    "agent_name": "[05 \u00b7 Logistics | First & Mid-Mile] Cold-Chain Auditor",
+    "prompt": "Run Cold-Chain Auditor analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_cold_chain_auditor_telemetry_feed",
+      "query_cold_chain_auditor_constraint_matrix",
+      "action_commit_cold_chain_auditor_plan"
+    ],
+    "expected_outcome": "Prevents perishable food spoilage"
+  }
+]

@@ -81,6 +81,9 @@ class SopScenarioWeaverAgent:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "sop_scenario_weaver"
+        self.category = "01 · Planning & Strategy — S&OP / IBP"
+        self.display_name = "[01 · Plan | S&OP / IBP] Consensus & Gap Agent"
+        self.description = "[Category: 01 · Planning & Strategy — S&OP / IBP] Consensus & Gap Agent (S&OP / Supply Planning Dir.): Reconciles unconstrained demand with factory plant bottleneck limits. Outcome: Highlights margin-dilutive imbalances."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -300,7 +303,7 @@ try:
 
     root_agent = Agent(
         name="sop_scenario_weaver",
-        description="Synapse S&OP Scenario Weaver: finite plant capacity balancing and component allocation optimization.",
+        description="[Category: 01 · Planning & Strategy — S&OP / IBP] Consensus & Gap Agent (S&OP / Supply Planning Dir.): Reconciles unconstrained demand with factory plant bottleneck limits. Outcome: Highlights margin-dilutive imbalances.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

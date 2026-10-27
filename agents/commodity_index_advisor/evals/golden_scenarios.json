@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "commodity_index_advisor_golden_01",
+    "category": "02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging",
+    "agent_name": "[02 \u00b7 Source | Material & Packaging] Commodity Index Advisor",
+    "prompt": "Run Commodity Index Advisor analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_commodity_index_advisor_telemetry_feed",
+      "query_commodity_index_advisor_constraint_matrix",
+      "action_commit_commodity_index_advisor_plan"
+    ],
+    "expected_outcome": "Optimizes forward-contract windows"
+  }
+]

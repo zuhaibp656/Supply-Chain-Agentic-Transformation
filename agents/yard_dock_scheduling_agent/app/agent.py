@@ -82,6 +82,9 @@ class YardDockSchedulingAgent:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "yard_dock_scheduling_agent"
+        self.category = "05 · Distribution & Logistics — First & Mid-Mile"
+        self.display_name = "[05 · Logistics | First & Mid-Mile] Yard Disruption Agent"
+        self.description = "[Category: 05 · Distribution & Logistics — First & Mid-Mile] Yard Disruption Agent (Yard Master / Plant Logistics): Parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically. Outcome: Eliminates demurrage & line starvation."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

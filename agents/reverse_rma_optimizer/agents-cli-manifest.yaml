@@ -1,10 +1,10 @@
 name: reverse_rma_optimizer
 display_name: "ReturnLoop — Autonomous RMA Grading & Backhaul Optimizer"
-description: "Combines Gemini 3.8 Flash optical RMA triage with returning FleetFlow backhaul insertion and margin-maximizing circular disposition (Grade-A Restock, Refurbish, Component Harvest)."
+description: "[Category: 06 · Returns & Reverse Logistics — Returns & Claims Mgmt] Return Fraud Sentinel (Reverse Logistics / Fraud Lead): Analyzes item photos and packaging video feeds to detect wear or swapped tags. Outcome: Cuts returns fraud abuse by 25–40%."
 version: "0.1.0"
 model: "gemini-3.8-flash"
 vertical: "06 · Return & Enable"
-category: "Reverse Logistics, Circularity & ESG"
+category: "06 · Returns & Reverse Logistics — Returns & Claims Mgmt"
 tags:
   - reverse-logistics
   - rma-vision-grading

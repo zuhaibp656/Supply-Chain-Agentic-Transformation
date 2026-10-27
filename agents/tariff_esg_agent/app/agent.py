@@ -81,6 +81,9 @@ class TariffEsgAgent:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "tariff_esg_agent"
+        self.category = "02 · Sourcing & Procurement — Contract & PO Mgmt"
+        self.display_name = "[02 · Source | Contract & PO Mgmt] Contract Leakage Agent"
+        self.description = "[Category: 02 · Sourcing & Procurement — Contract & PO Mgmt] Contract Leakage Agent (Commercial Sourcing / Legal): Reconciles live spend against negotiated rebate tiers and volume discount scales. Outcome: Recovers missed rebates & surcharges."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

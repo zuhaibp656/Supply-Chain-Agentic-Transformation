@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "short_dated_redistributor_golden_01",
+    "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns",
+    "agent_name": "[06 \u00b7 Returns & ESG | Expiry & Markdowns] Short-Dated Redistributor",
+    "prompt": "Run Short-Dated Redistributor analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_short_dated_redistributor_telemetry_feed",
+      "query_short_dated_redistributor_constraint_matrix",
+      "action_commit_short_dated_redistributor_plan"
+    ],
+    "expected_outcome": "Diverts bulk perishables from landfill"
+  }
+]

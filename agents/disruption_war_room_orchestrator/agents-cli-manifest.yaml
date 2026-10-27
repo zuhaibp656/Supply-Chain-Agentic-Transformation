@@ -1,7 +1,7 @@
 schema_version: "v1"
 id: "disruption_war_room_orchestrator"
-name: "StormShield — Disruption War Room Orchestrator"
-description: "Autonomous multi-tier crisis war-room orchestration, supplier disaster mitigation, and cross-functional task coordination."
+name: "[01 · Plan | S&OP / IBP] Digital War-Room Agent"
+description: "[Category: 01 · Planning & Strategy — S&OP / IBP] Digital War-Room Agent (Supply Chain VP / COO): Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Rapid OTIF impact scenario brief."
 agent_class: "app.agent.DisruptionWarRoomAgent"
 runtime:
   type: "adk"
@@ -15,6 +15,6 @@ tools:
   - "action_create_war_room_incident"
   - "action_dispatch_expedite_remediation"
 metadata:
-  scor_category: "Cross-Persona Universal Core"
+  scor_category: "01 · Planning & Strategy — S&OP / IBP"
   tier_coverage: "Tier-1 through Tier-N"
   roi_focus: "80% reduction in crisis response latency"

@@ -1,10 +1,10 @@
 name: freight_control_tower
 display_name: "SentinelMove — Multi-Modal In-Transit Control Tower & Freight Auditor"
-description: "Monitors real-time GPS/AIS/ADS-B and cold-chain thermal telemetry across all in-transit shipments while performing 100% 3-way freight invoice auditing against contract tariffs and geofences."
+description: "[Category: 05 · Distribution & Logistics — Route & Carrier] Routing Guide Compliance (Transport Procurement Lead): Tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides. Outcome: Reduces spot freight by 15–20%."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "05 · Deliver"
-category: "Logistics, Fleet & Transportation Management"
+category: "05 · Distribution & Logistics — Route & Carrier"
 tags:
   - in-transit-control-tower
   - cold-chain-iot

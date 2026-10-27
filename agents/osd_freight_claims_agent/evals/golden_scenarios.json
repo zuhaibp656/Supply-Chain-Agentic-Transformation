@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "osd_freight_claims_agent_golden_01",
+    "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt",
+    "agent_name": "[06 \u00b7 Returns & ESG | Returns & Claims Mgmt] OS&D Freight Claims",
+    "prompt": "Run OS&D Freight Claims analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_osd_freight_claims_agent_telemetry_feed",
+      "query_osd_freight_claims_agent_constraint_matrix",
+      "action_commit_osd_freight_claims_agent_plan"
+    ],
+    "expected_outcome": "Resolves carrier claims in <72 hours"
+  }
+]

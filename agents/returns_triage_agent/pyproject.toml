@@ -1,0 +1,10 @@
+[project]
+name = "returns-triage-agent"
+version = "1.0.0"
+description = "[Category: 04 · Inventory & Warehousing — Omnichannel Visibility] Returns Triage Agent (Reverse Logistics Lead): Evaluates item condition scans to triage restock, vendor return, or liquidation. Outcome: Restocks sellable returns within 24h."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

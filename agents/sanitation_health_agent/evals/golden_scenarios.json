@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "sanitation_health_agent_golden_01",
+    "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation",
+    "agent_name": "[06 \u00b7 Returns & ESG | Pallet & Tote Reclamation] Sanitation & Health Agent",
+    "prompt": "Run Sanitation & Health Agent analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_sanitation_health_agent_telemetry_feed",
+      "query_sanitation_health_agent_constraint_matrix",
+      "action_commit_sanitation_health_agent_plan"
+    ],
+    "expected_outcome": "Extends reusable lifecycle by 15\u201320%"
+  }
+]

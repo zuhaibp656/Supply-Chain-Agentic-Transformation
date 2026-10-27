@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "sustainable_packaging_agent"
+name: "[02 · Source | Material & Packaging] Sustainable Packaging Agent"
+category: "02 · Sourcing & Procurement — Material & Packaging"
+description: "[Category: 02 · Sourcing & Procurement — Material & Packaging] Sustainable Packaging Agent (Packaging R&D Engineer): Evaluates PCR resins and barrier materials against line runnability & taxes. Outcome: Mitigates EPR and landfill taxation."
+agent_class: "app.agent.SustainablePackagingAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_sustainable_packaging_agent_telemetry_feed"
+  - "query_sustainable_packaging_agent_constraint_matrix"
+  - "query_sustainable_packaging_agent_optimization_scenarios"
+  - "query_sustainable_packaging_agent_execution_ledger"
+  - "action_commit_sustainable_packaging_agent_plan"
+  - "action_dispatch_sustainable_packaging_agent_alert"
+metadata:
+  scor_category: "02 · Sourcing & Procurement — Material & Packaging"
+  pillar: "02 · Sourcing & Procurement"
+  sub_pillar: "Material & Packaging"
+  persona_owner: "Packaging R&D Engineer"
+  roi_focus: "Mitigates EPR and landfill taxation"

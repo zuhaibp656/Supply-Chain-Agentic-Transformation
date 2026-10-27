@@ -1,10 +1,10 @@
 name: yard_dock_scheduling_agent
 display_name: "YardPulse — Dynamic Yard Gate & Turnaround Demurrage Orchestrator"
-description: "Google Maps Fleet Engine geofencing, trailer spotter hostler optimization, gate queue prediction, and 2-hour detention penalty elimination."
+description: "[Category: 05 · Distribution & Logistics — First & Mid-Mile] Yard Disruption Agent (Yard Master / Plant Logistics): Parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically. Outcome: Eliminates demurrage & line starvation."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "04 · Fulfill"
-category: "Warehousing, Inwarding QA & Intralogistics"
+category: "05 · Distribution & Logistics — First & Mid-Mile"
 tags:
   - yard-management
   - fleet-engine

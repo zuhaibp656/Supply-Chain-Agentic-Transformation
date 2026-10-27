@@ -61,6 +61,9 @@ class FieldBeatDistributorSyncAgent:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "field_beat_distributor_sync_agent"
+        self.category = "01 · Planning & Strategy — Trade Promotion"
+        self.display_name = "[01 · Plan | Trade Promotion] JBP Negotiation Agent"
+        self.description = "[Category: 01 · Planning & Strategy — Trade Promotion] JBP Negotiation Agent (Key Account Manager (KAM)): Creates customized sell-in story decks and joint promotional calendars. Outcome: Aligns buyer margins and volume goals."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -269,7 +272,7 @@ try:
 
     root_agent = Agent(
         name="field_beat_distributor_sync_agent",
-        description="Synchronizes real-time Distributor Management System (DMS) stock with Field Sales Officer (FSO) beat routing so reps never pitch stocked-out SKUs and primary replenishment fires automatically.",
+        description="[Category: 01 · Planning & Strategy — Trade Promotion] JBP Negotiation Agent (Key Account Manager (KAM)): Creates customized sell-in story decks and joint promotional calendars. Outcome: Aligns buyer margins and volume goals.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

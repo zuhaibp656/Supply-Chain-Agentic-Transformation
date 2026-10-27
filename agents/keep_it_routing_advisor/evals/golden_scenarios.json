@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "keep_it_routing_advisor_golden_01",
+    "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt",
+    "agent_name": "[06 \u00b7 Returns & ESG | Returns & Claims Mgmt] Keep-It & Routing Advisor",
+    "prompt": "Run Keep-It & Routing Advisor analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_keep_it_routing_advisor_telemetry_feed",
+      "query_keep_it_routing_advisor_constraint_matrix",
+      "action_commit_keep_it_routing_advisor_plan"
+    ],
+    "expected_outcome": "Lowers net return costs by 15\u201322%"
+  }
+]

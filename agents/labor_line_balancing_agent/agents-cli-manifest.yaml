@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "labor_line_balancing_agent"
+name: "[03 · Make | Production Scheduling] Labor & Line Balancing"
+category: "03 · Manufacturing & Production — Production Scheduling"
+description: "[Category: 03 · Manufacturing & Production — Production Scheduling] Labor & Line Balancing (Plant Operations Manager): Maps shift skill certifications and fatigue constraints to line speeds. Outcome: Prevents certified skill bottlenecks."
+agent_class: "app.agent.LaborLineBalancingAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_labor_line_balancing_agent_telemetry_feed"
+  - "query_labor_line_balancing_agent_constraint_matrix"
+  - "query_labor_line_balancing_agent_optimization_scenarios"
+  - "query_labor_line_balancing_agent_execution_ledger"
+  - "action_commit_labor_line_balancing_agent_plan"
+  - "action_dispatch_labor_line_balancing_agent_alert"
+metadata:
+  scor_category: "03 · Manufacturing & Production — Production Scheduling"
+  pillar: "03 · Manufacturing & Production"
+  sub_pillar: "Production Scheduling"
+  persona_owner: "Plant Operations Manager"
+  roi_focus: "Prevents certified skill bottlenecks"

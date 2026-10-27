@@ -61,6 +61,9 @@ class CarbonScope3Ledger:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "carbon_scope3_ledger"
+        self.category = "02 · Sourcing & Procurement — Supplier Network"
+        self.display_name = "[02 · Source | Supplier Network] ESG & Scope 3 Auditor"
+        self.description = "[Category: 02 · Sourcing & Procurement — Supplier Network] ESG & Scope 3 Auditor (Chief Sustainability Officer): Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. Outcome: Automates Scope 3 disclosure audits."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -267,7 +270,7 @@ try:
 
     root_agent = Agent(
         name="carbon_scope3_ledger",
-        description="Calculates audit-ready ISO 14083 & GLEC v3.0 shipment-level Scope-3 emissions from primary telematics, generates EU CBAM embedded carbon declarations, and verifies EUDR zero-deforestation plots via Google Earth Engine.",
+        description="[Category: 02 · Sourcing & Procurement — Supplier Network] ESG & Scope 3 Auditor (Chief Sustainability Officer): Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. Outcome: Automates Scope 3 disclosure audits.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

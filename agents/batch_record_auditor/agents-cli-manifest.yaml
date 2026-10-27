@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "batch_record_auditor"
+name: "[03 · Make | Quality & Compliance] Batch Record Auditor"
+category: "03 · Manufacturing & Production — Quality & Compliance"
+description: "[Category: 03 · Manufacturing & Production — Quality & Compliance] Batch Record Auditor (Regulatory Compliance Lead): Parses BPR and COA documents to flag pasteurization & CCP deviations. Outcome: 60–80% faster batch release review."
+agent_class: "app.agent.BatchRecordAuditorAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.8-flash"
+entrypoint: "app/agent.py"
+tools:
+  - "query_batch_record_auditor_telemetry_feed"
+  - "query_batch_record_auditor_constraint_matrix"
+  - "query_batch_record_auditor_optimization_scenarios"
+  - "query_batch_record_auditor_execution_ledger"
+  - "action_commit_batch_record_auditor_plan"
+  - "action_dispatch_batch_record_auditor_alert"
+metadata:
+  scor_category: "03 · Manufacturing & Production — Quality & Compliance"
+  pillar: "03 · Manufacturing & Production"
+  sub_pillar: "Quality & Compliance"
+  persona_owner: "Regulatory Compliance Lead"
+  roi_focus: "60–80% faster batch release review"

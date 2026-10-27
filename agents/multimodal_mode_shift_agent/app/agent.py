@@ -61,6 +61,9 @@ class MultimodalModeShiftAgent:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "multimodal_mode_shift_agent"
+        self.category = "05 · Distribution & Logistics — Last-Mile Delivery"
+        self.display_name = "[05 · Logistics | Last-Mile Delivery] Courier Allocation"
+        self.description = "[Category: 05 · Distribution & Logistics — Last-Mile Delivery] Courier Allocation (E-Commerce Logistics Dir.): Routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card. Outcome: Lowers last-mile cost by 8–14%."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -270,7 +273,7 @@ try:
 
     root_agent = Agent(
         name="multimodal_mode_shift_agent",
-        description="Continuously solves the multi-objective Pareto trade-off between freight cost, transit lead-time, Scope-3 carbon, and downstream stockout penalty across Ocean, Sea-Air, Air, Rail, and Road.",
+        description="[Category: 05 · Distribution & Logistics — Last-Mile Delivery] Courier Allocation (E-Commerce Logistics Dir.): Routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card. Outcome: Lowers last-mile cost by 8–14%.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

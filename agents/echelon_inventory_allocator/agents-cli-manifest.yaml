@@ -1,10 +1,10 @@
 name: echelon_inventory_allocator
 display_name: "EchelonFlow — Coupled Stochastic Multi-Echelon Inventory (MEIO) Allocator"
-description: "Coupled stochastic multi-echelon stock positioning, lateral DC-to-DC rebalancing, and SKU availability balancing across central hubs and spokes."
+description: "[Category: 04 · Inventory & Warehousing — Positioning & Optimization] Safety Stock Agent (Inventory Optimization Lead): Recalibrates multi-echelon buffers using live lead-time and demand variance. Outcome: Cuts working capital by 10–18%."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "04 · Fulfill"
-category: "Inventory & Network Optimization / MEIO"
+category: "04 · Inventory & Warehousing — Positioning & Optimization"
 tags:
   - meio
   - clark-scarf

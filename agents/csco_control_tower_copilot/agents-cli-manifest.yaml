@@ -1,7 +1,7 @@
 schema_version: "v1"
 id: "csco_control_tower_copilot"
-name: "TowerMind — CSCO Control Tower Copilot"
-description: "Executive cross-vertical KPI visibility, multi-echelon bottleneck triage, and natural language decision execution across ERP/WMS/TMS."
+name: "[01 · Plan | S&OP / IBP] Executive Copilot"
+description: "[Category: 01 · Planning & Strategy — S&OP / IBP] Executive Copilot (IBP Lead / Chief Planning Off.): Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Reduces deck preparation by days."
 agent_class: "app.agent.CscoControlTowerAgent"
 runtime:
   type: "adk"
@@ -15,6 +15,6 @@ tools:
   - "action_execute_executive_playbook"
   - "action_rebalance_network_allocation"
 metadata:
-  scor_category: "Cross-Persona Universal Core"
+  scor_category: "01 · Planning & Strategy — S&OP / IBP"
   tier_coverage: "End-to-End Enterprise (Plan through Deliver)"
   roi_focus: "$120M working capital freed, 99.2% customer OTIF, 75% faster executive S&OP consensus"

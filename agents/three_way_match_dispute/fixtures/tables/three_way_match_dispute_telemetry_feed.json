@@ -1,0 +1,50 @@
+[
+  {
+    "record_id": "THREE_-TEL-101",
+    "company_id": "XYZ-CORP-01",
+    "category": "02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt",
+    "facility_id": "FAC-PLANT-US-AUS01",
+    "sku_id": "SKU-SEMI-9900-X1",
+    "order_id": "ORD-XYZ-2026-99401",
+    "baseline_metric": 78.4,
+    "optimized_metric": 96.2,
+    "variance_pct": -18.5,
+    "status": "ACTION_REQUIRED"
+  },
+  {
+    "record_id": "THREE_-TEL-102",
+    "company_id": "XYZ-CORP-01",
+    "category": "02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt",
+    "facility_id": "FAC-DC-US-DAL02",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "order_id": "ORD-XYZ-2026-99402",
+    "baseline_metric": 81.0,
+    "optimized_metric": 97.5,
+    "variance_pct": -14.2,
+    "status": "OPTIMIZED"
+  },
+  {
+    "record_id": "THREE_-TEL-103",
+    "company_id": "XYZ-CORP-01",
+    "category": "02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt",
+    "facility_id": "FAC-PORT-NL-RTM01",
+    "sku_id": "SKU-AUTO-7720-EV",
+    "order_id": "ORD-XYZ-2026-99403",
+    "baseline_metric": 74.2,
+    "optimized_metric": 95.8,
+    "variance_pct": -22.1,
+    "status": "MITIGATED"
+  },
+  {
+    "record_id": "THREE_-TEL-104",
+    "company_id": "XYZ-CORP-01",
+    "category": "02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt",
+    "facility_id": "FAC-PLANT-DE-STR01",
+    "sku_id": "SKU-PACK-3310-EPR",
+    "order_id": "ORD-XYZ-2026-99404",
+    "baseline_metric": 83.6,
+    "optimized_metric": 98.1,
+    "variance_pct": -11.9,
+    "status": "VERIFIED"
+  }
+]

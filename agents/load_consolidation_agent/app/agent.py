@@ -61,6 +61,9 @@ class LoadConsolidationAgent:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "load_consolidation_agent"
+        self.category = "05 · Distribution & Logistics — First & Mid-Mile"
+        self.display_name = "[05 · Logistics | First & Mid-Mile] Load Consolidation"
+        self.description = "[Category: 05 · Distribution & Logistics — First & Mid-Mile] Load Consolidation (Transport Planner / Inbound Mgr): Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling. Outcome: 12–18% higher trailer fill rate."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -268,7 +271,7 @@ try:
 
     root_agent = Agent(
         name="load_consolidation_agent",
-        description="Solves 3D Guillotine & Extreme-Point Multi-Container Bin Packing with axle-weight equilibrium, crush fragility, and strict reverse-stop LIFO unloading order.",
+        description="[Category: 05 · Distribution & Logistics — First & Mid-Mile] Load Consolidation (Transport Planner / Inbound Mgr): Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling. Outcome: 12–18% higher trailer fill rate.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

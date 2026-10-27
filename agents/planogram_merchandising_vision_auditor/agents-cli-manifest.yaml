@@ -1,10 +1,10 @@
 name: planogram_merchandising_vision_auditor
 display_name: "ShelfVision — Retail Planogram & Visibility Auditor"
-description: "Uses Gemini 3.8 Flash multimodal vision to audit retail store shelf photos in under 2 seconds, measuring Share-of-Shelf (SOS), eye-level facings, cooler purity, and on-shelf availability."
+description: "[Category: 04 · Inventory & Warehousing — Omnichannel Visibility] Phantom Inventory Sensor (Store Operations / Omni Lead): Identifies shrinkage anomalies when on-hand stock stops scanning at POS. Outcome: Triggers targeted floor cycle counts."
 version: "0.1.0"
 model: "gemini-3.8-flash"
 vertical: "05 · Deliver"
-category: "Trade Marketing & Distribution (TM&D)"
+category: "04 · Inventory & Warehousing — Omnichannel Visibility"
 tags:
   - gemini-3.8-flash
   - planogram-vision

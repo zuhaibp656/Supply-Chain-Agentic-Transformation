@@ -82,6 +82,9 @@ class PlantOeeMaintenanceAgent:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "plant_oee_maintenance_agent"
+        self.category = "03 · Manufacturing & Production — Capacity Planning"
+        self.display_name = "[03 · Make | Capacity Planning] Bottleneck Diagnostic"
+        self.description = "[Category: 03 · Manufacturing & Production — Capacity Planning] Bottleneck Diagnostic (Supply Chain Ops Director): Assesses CIP utilities, boiler loads, and cold storage holding limits. Outcome: Flags facility constraints 3–6 mos out."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -304,7 +307,7 @@ try:
 
     root_agent = Agent(
         name="plant_oee_maintenance_agent",
-        description="AssetGuard Plant OEE & Predictive Maintenance: IoT vibration analysis and spare parts optimization.",
+        description="[Category: 03 · Manufacturing & Production — Capacity Planning] Bottleneck Diagnostic (Supply Chain Ops Director): Assesses CIP utilities, boiler loads, and cold storage holding limits. Outcome: Flags facility constraints 3–6 mos out.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

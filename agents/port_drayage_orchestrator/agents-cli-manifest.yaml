@@ -1,10 +1,10 @@
 name: port_drayage_orchestrator
 display_name: "PortWatch — Global Ocean Vessel, Container Stowage & Port Drayage Orchestrator"
-description: "Ingests Spire Maritime satellite AIS and WeatherNext 3 cyclone forecasts to predict berth discharge, prevent port demurrage, and optimize dual-transaction drayage gates."
+description: "[Category: 05 · Distribution & Logistics — Store Replenishment] Curfew Orchestrator (Retail Logistics Dispatcher): Coordinates municipal delivery curfews and store dock shift schedules dynamically. Outcome: 98%+ on-time store window compliance."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "05 · Deliver"
-category: "Logistics, Fleet & Transportation Management"
+category: "05 · Distribution & Logistics — Store Replenishment"
 tags:
   - ocean-ais
   - port-drayage

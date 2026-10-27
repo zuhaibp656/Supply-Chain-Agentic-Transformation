@@ -1,0 +1,10 @@
+[project]
+name = "capex-simulator-agent"
+version = "1.0.0"
+description = "[Category: 03 · Manufacturing & Production — Capacity Planning] CapEx Simulator (VP Manufacturing Engineering): Simulates multi-year volume trends to test high-speed line expansions. Outcome: Delivers defensible board CapEx ROI."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

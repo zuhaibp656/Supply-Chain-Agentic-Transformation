@@ -1,10 +1,10 @@
 name: carbon_scope3_ledger
 display_name: "EcoChain — Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger"
-description: "Calculates audit-ready ISO 14083 & GLEC v3.0 shipment-level Scope-3 emissions from primary telematics, generates EU CBAM embedded carbon declarations, and verifies EUDR zero-deforestation plots via Google Earth Engine."
+description: "[Category: 02 · Sourcing & Procurement — Supplier Network] ESG & Scope 3 Auditor (Chief Sustainability Officer): Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. Outcome: Automates Scope 3 disclosure audits."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "06 · Return & Enable"
-category: "Sustainability, CBAM & Scope-3 ESG"
+category: "02 · Sourcing & Procurement — Supplier Network"
 tags:
   - scope3-carbon
   - iso-14083

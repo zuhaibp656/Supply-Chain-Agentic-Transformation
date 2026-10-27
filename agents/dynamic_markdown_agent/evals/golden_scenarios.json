@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "dynamic_markdown_agent_golden_01",
+    "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns",
+    "agent_name": "[06 \u00b7 Returns & ESG | Expiry & Markdowns] Dynamic Markdown Agent",
+    "prompt": "Run Dynamic Markdown Agent analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_dynamic_markdown_agent_telemetry_feed",
+      "query_dynamic_markdown_agent_constraint_matrix",
+      "action_commit_dynamic_markdown_agent_plan"
+    ],
+    "expected_outcome": "Cuts perishable scrap by 20\u201335%"
+  }
+]

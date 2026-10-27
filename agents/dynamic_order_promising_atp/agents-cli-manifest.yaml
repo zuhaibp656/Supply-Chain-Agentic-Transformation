@@ -1,10 +1,10 @@
 name: dynamic_order_promising_atp
 display_name: "PromiseGuard — Real-Time Dynamic ATP Order Promising Agent"
-description: "Sub-50ms Spanner order promising, customer allocation tier protection, real-time ATP/CTP calculation, and omnichannel fulfillment routing."
+description: "[Category: 04 · Inventory & Warehousing — Omnichannel Visibility] SFS / BOPIS Sourcing (Omnichannel Fulfillment Dir.): Selects lowest-cost fulfillment nodes based on store labor and parcel zones. Outcome: Lowers parcel costs & split rates."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "04 · Fulfill"
-category: "Inventory & Network Optimization / MEIO"
+category: "04 · Inventory & Warehousing — Omnichannel Visibility"
 tags:
   - atp
   - order-promising

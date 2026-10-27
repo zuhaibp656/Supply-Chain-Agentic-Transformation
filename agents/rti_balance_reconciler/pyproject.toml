@@ -1,0 +1,10 @@
+[project]
+name = "rti-balance-reconciler"
+version = "1.0.0"
+description = "[Category: 06 · Returns & Reverse Logistics — Pallet & Tote Reclamation] RTI Balance Reconciler (Asset Recovery / RTI Manager): Reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. Outcome: Eliminates 30% in non-return fee fines."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

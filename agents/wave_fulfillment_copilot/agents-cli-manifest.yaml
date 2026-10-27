@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "wave_fulfillment_copilot"
+name: "[04 · Inventory & DC | Warehouse Operations] Wave Fulfillment Copilot"
+category: "04 · Inventory & Warehousing — Warehouse Operations"
+description: "[Category: 04 · Inventory & Warehousing — Warehouse Operations] Wave Fulfillment Copilot (DC Shift Floor Lead): Balances picker lines dynamically to protect carrier pickup cutoff times. Outcome: Prevents missed dispatch windows (OTIF)."
+agent_class: "app.agent.WaveFulfillmentCopilotAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_wave_fulfillment_copilot_telemetry_feed"
+  - "query_wave_fulfillment_copilot_constraint_matrix"
+  - "query_wave_fulfillment_copilot_optimization_scenarios"
+  - "query_wave_fulfillment_copilot_execution_ledger"
+  - "action_commit_wave_fulfillment_copilot_plan"
+  - "action_dispatch_wave_fulfillment_copilot_alert"
+metadata:
+  scor_category: "04 · Inventory & Warehousing — Warehouse Operations"
+  pillar: "04 · Inventory & Warehousing"
+  sub_pillar: "Warehouse Operations"
+  persona_owner: "DC Shift Floor Lead"
+  roi_focus: "Prevents missed dispatch windows (OTIF)"

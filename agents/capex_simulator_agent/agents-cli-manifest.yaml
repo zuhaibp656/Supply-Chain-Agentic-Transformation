@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "capex_simulator_agent"
+name: "[03 · Make | Capacity Planning] CapEx Simulator"
+category: "03 · Manufacturing & Production — Capacity Planning"
+description: "[Category: 03 · Manufacturing & Production — Capacity Planning] CapEx Simulator (VP Manufacturing Engineering): Simulates multi-year volume trends to test high-speed line expansions. Outcome: Delivers defensible board CapEx ROI."
+agent_class: "app.agent.CapexSimulatorAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_capex_simulator_agent_telemetry_feed"
+  - "query_capex_simulator_agent_constraint_matrix"
+  - "query_capex_simulator_agent_optimization_scenarios"
+  - "query_capex_simulator_agent_execution_ledger"
+  - "action_commit_capex_simulator_agent_plan"
+  - "action_dispatch_capex_simulator_agent_alert"
+metadata:
+  scor_category: "03 · Manufacturing & Production — Capacity Planning"
+  pillar: "03 · Manufacturing & Production"
+  sub_pillar: "Capacity Planning"
+  persona_owner: "VP Manufacturing Engineering"
+  roi_focus: "Delivers defensible board CapEx ROI"

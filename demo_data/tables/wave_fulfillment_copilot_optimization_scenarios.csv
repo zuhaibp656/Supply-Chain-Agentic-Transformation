@@ -1,0 +1,4 @@
+scenario_id,scenario_name,category,service_level_pct,annual_cost_usd,cycle_time_hrs,kpi_impact
+SCEN-BASELINE-MANUAL,Legacy Manual Spreadsheet Baseline,04 · Inventory & DC | Warehouse Operations,88.4,4850000,42.0,High manual toil & delayed ERP response
+SCEN-AI-OPTIMAL,Wave Fulfillment Copilot Autonomous Policy,04 · Inventory & DC | Warehouse Operations,98.7,3620000,1.5,Prevents missed dispatch windows (OTIF)
+SCEN-STRESS-SURGE,Peak Surge & Disruption Resilience Mode,04 · Inventory & DC | Warehouse Operations,96.9,3890000,2.2,Protected SLA under +25% demand/supply shock

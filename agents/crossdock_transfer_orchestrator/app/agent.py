@@ -82,6 +82,9 @@ class CrossdockTransferOrchestrator:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "crossdock_transfer_orchestrator"
+        self.category = "04 · Inventory & Warehousing — Positioning & Optimization"
+        self.display_name = "[04 · Inventory & DC | Positioning & Optimization] Inter-Facility Rebalancer"
+        self.description = "[Category: 04 · Inventory & Warehousing — Positioning & Optimization] Inter-Facility Rebalancer (Replenishment Planner): Generates automated inter-DC and store transfers to balance localized gluts. Outcome: Eliminates regional out-of-stocks."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

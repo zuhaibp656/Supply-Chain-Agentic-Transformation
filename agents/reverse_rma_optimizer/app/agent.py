@@ -61,6 +61,9 @@ class ReverseRmaOptimizer:
 
     def __init__(self, model: str = "gemini-3.8-flash"):
         self.name = "reverse_rma_optimizer"
+        self.category = "06 · Returns & Reverse Logistics — Returns & Claims Mgmt"
+        self.display_name = "[06 · Returns & ESG | Returns & Claims Mgmt] Return Fraud Sentinel"
+        self.description = "[Category: 06 · Returns & Reverse Logistics — Returns & Claims Mgmt] Return Fraud Sentinel (Reverse Logistics / Fraud Lead): Analyzes item photos and packaging video feeds to detect wear or swapped tags. Outcome: Cuts returns fraud abuse by 25–40%."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -268,7 +271,7 @@ try:
 
     root_agent = Agent(
         name="reverse_rma_optimizer",
-        description="Combines Gemini 3.8 Flash optical RMA triage with returning FleetFlow backhaul insertion and margin-maximizing circular disposition (Grade-A Restock, Refurbish, Component Harvest).",
+        description="[Category: 06 · Returns & Reverse Logistics — Returns & Claims Mgmt] Return Fraud Sentinel (Reverse Logistics / Fraud Lead): Analyzes item photos and packaging video feeds to detect wear or swapped tags. Outcome: Cuts returns fraud abuse by 25–40%.",
         model=GlobalGemini(
             model="gemini-3.8-flash",
             retry_options=types.HttpRetryOptions(attempts=3),

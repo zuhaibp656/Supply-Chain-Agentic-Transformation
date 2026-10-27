@@ -1,10 +1,10 @@
 name: load_consolidation_agent
 display_name: "CubeMaster 3D — Isometric LIFO Bay & Load Consolidation Studio"
-description: "Solves 3D Guillotine & Extreme-Point Multi-Container Bin Packing with axle-weight equilibrium, crush fragility, and strict reverse-stop LIFO unloading order."
+description: "[Category: 05 · Distribution & Logistics — First & Mid-Mile] Load Consolidation (Transport Planner / Inbound Mgr): Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling. Outcome: 12–18% higher trailer fill rate."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "05 · Deliver"
-category: "Logistics, Fleet & Transportation Management"
+category: "05 · Distribution & Logistics — First & Mid-Mile"
 tags:
   - 3d-bin-packing
   - lifo-sequencing

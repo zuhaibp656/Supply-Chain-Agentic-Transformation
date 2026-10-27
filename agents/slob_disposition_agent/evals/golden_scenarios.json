@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "slob_disposition_agent_golden_01",
+    "category": "04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization",
+    "agent_name": "[04 \u00b7 Inventory & DC | Positioning & Optimization] SLOB Disposition Agent",
+    "prompt": "Run SLOB Disposition Agent analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_slob_disposition_agent_telemetry_feed",
+      "query_slob_disposition_agent_constraint_matrix",
+      "action_commit_slob_disposition_agent_plan"
+    ],
+    "expected_outcome": "Prevents expired stock write-offs"
+  }
+]

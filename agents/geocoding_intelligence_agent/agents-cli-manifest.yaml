@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "geocoding_intelligence_agent"
+name: "[05 · Logistics | Last-Mile Delivery] Geocoding Intelligence"
+category: "05 · Distribution & Logistics — Last-Mile Delivery"
+description: "[Category: 05 · Distribution & Logistics — Last-Mile Delivery] Geocoding Intelligence (Last-Mile Operations Lead): Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers. Outcome: Drops failed deliveries by 30–45%."
+agent_class: "app.agent.GeocodingIntelligenceAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_geocoding_intelligence_agent_telemetry_feed"
+  - "query_geocoding_intelligence_agent_constraint_matrix"
+  - "query_geocoding_intelligence_agent_optimization_scenarios"
+  - "query_geocoding_intelligence_agent_execution_ledger"
+  - "action_commit_geocoding_intelligence_agent_plan"
+  - "action_dispatch_geocoding_intelligence_agent_alert"
+metadata:
+  scor_category: "05 · Distribution & Logistics — Last-Mile Delivery"
+  pillar: "05 · Distribution & Logistics"
+  sub_pillar: "Last-Mile Delivery"
+  persona_owner: "Last-Mile Operations Lead"
+  roi_focus: "Drops failed deliveries by 30–45%"

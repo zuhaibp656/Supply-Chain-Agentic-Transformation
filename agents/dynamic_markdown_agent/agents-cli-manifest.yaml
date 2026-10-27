@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "dynamic_markdown_agent"
+name: "[06 · Returns & ESG | Expiry & Markdowns] Dynamic Markdown Agent"
+category: "06 · Returns & Reverse Logistics — Expiry & Markdowns"
+description: "[Category: 06 · Returns & Reverse Logistics — Expiry & Markdowns] Dynamic Markdown Agent (Merchandising / Store Ops Mgr): Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts. Outcome: Cuts perishable scrap by 20–35%."
+agent_class: "app.agent.DynamicMarkdownAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_dynamic_markdown_agent_telemetry_feed"
+  - "query_dynamic_markdown_agent_constraint_matrix"
+  - "query_dynamic_markdown_agent_optimization_scenarios"
+  - "query_dynamic_markdown_agent_execution_ledger"
+  - "action_commit_dynamic_markdown_agent_plan"
+  - "action_dispatch_dynamic_markdown_agent_alert"
+metadata:
+  scor_category: "06 · Returns & Reverse Logistics — Expiry & Markdowns"
+  pillar: "06 · Returns & Reverse Logistics"
+  sub_pillar: "Expiry & Markdowns"
+  persona_owner: "Merchandising / Store Ops Mgr"
+  roi_focus: "Cuts perishable scrap by 20–35%"

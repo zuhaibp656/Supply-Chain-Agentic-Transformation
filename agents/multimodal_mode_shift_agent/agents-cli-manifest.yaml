@@ -1,10 +1,10 @@
 name: multimodal_mode_shift_agent
 display_name: "ModalShift — Factory→Ship→Air→Rail→Truck Dynamic Mode-Switch Broker"
-description: "Continuously solves the multi-objective Pareto trade-off between freight cost, transit lead-time, Scope-3 carbon, and downstream stockout penalty across Ocean, Sea-Air, Air, Rail, and Road."
+description: "[Category: 05 · Distribution & Logistics — Last-Mile Delivery] Courier Allocation (E-Commerce Logistics Dir.): Routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card. Outcome: Lowers last-mile cost by 8–14%."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "05 · Deliver"
-category: "Logistics, Fleet & Transportation Management"
+category: "05 · Distribution & Logistics — Last-Mile Delivery"
 tags:
   - mode-shift
   - sea-air-hybrid

@@ -1,0 +1,10 @@
+[project]
+name = "aisle-aligned-pallet-agent"
+version = "1.0.0"
+description = "[Category: 05 · Distribution & Logistics — Store Replenishment] Aisle-Aligned Pallet (Outbound Lead / Industrial Eng.): Sequences DC pick waves to match individual store planograms and shelf layouts. Outcome: Cuts store stocking labor by 20–35%."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

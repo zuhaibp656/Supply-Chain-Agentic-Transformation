@@ -1,0 +1,4 @@
+execution_id,shipment_id,order_id,persona_owner,erp_system,writeback_bapi,savings_usd,audit_status
+SHORT_-EXE-301,SHP-XYZ-90884,ORD-XYZ-2026-99401,Inventory Disposition Lead,SAP S/4HANA & BigQuery Twin,"SAP EWM / Manhattan Cross-Dock Flow-Through Directive, Conveyor Sortation Route & Outbound Staging Lock",142500,COMMITTED
+SHORT_-EXE-302,SHP-XYZ-90885,ORD-XYZ-2026-99402,Inventory Disposition Lead,Manhattan Active WMS & Cloud Spanner,"SAP EWM / Manhattan Cross-Dock Flow-Through Directive, Conveyor Sortation Route & Outbound Staging Lock",98400,COMMITTED
+SHORT_-EXE-303,SHP-XYZ-90886,ORD-XYZ-2026-99403,Inventory Disposition Lead,Blue Yonder TMS & Apigee Gateway,"SAP EWM / Manhattan Cross-Dock Flow-Through Directive, Conveyor Sortation Route & Outbound Staging Lock",116800,VERIFIED

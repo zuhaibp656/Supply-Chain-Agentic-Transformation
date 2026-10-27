@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "food_waste_esg_copilot_golden_01",
+    "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns",
+    "agent_name": "[06 \u00b7 Returns & ESG | Expiry & Markdowns] Food Waste & ESG Copilot",
+    "prompt": "Run Food Waste & ESG Copilot analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_food_waste_esg_copilot_telemetry_feed",
+      "query_food_waste_esg_copilot_constraint_matrix",
+      "action_commit_food_waste_esg_copilot_plan"
+    ],
+    "expected_outcome": "Automates annual circularity reporting"
+  }
+]

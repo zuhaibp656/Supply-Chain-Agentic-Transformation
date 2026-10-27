@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "batch_record_auditor_golden_01",
+    "category": "03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance",
+    "agent_name": "[03 \u00b7 Make | Quality & Compliance] Batch Record Auditor",
+    "prompt": "Run Batch Record Auditor analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_batch_record_auditor_telemetry_feed",
+      "query_batch_record_auditor_constraint_matrix",
+      "action_commit_batch_record_auditor_plan"
+    ],
+    "expected_outcome": "60\u201380% faster batch release review"
+  }
+]

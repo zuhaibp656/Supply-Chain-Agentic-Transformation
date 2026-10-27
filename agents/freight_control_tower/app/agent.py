@@ -61,6 +61,9 @@ class FreightControlTower:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "freight_control_tower"
+        self.category = "05 · Distribution & Logistics — Route & Carrier"
+        self.display_name = "[05 · Logistics | Route & Carrier] Routing Guide Compliance"
+        self.description = "[Category: 05 · Distribution & Logistics — Route & Carrier] Routing Guide Compliance (Transport Procurement Lead): Tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides. Outcome: Reduces spot freight by 15–20%."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -268,7 +271,7 @@ try:
 
     root_agent = Agent(
         name="freight_control_tower",
-        description="Monitors real-time GPS/AIS/ADS-B and cold-chain thermal telemetry across all in-transit shipments while performing 100% 3-way freight invoice auditing against contract tariffs and geofences.",
+        description="[Category: 05 · Distribution & Logistics — Route & Carrier] Routing Guide Compliance (Transport Procurement Lead): Tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides. Outcome: Reduces spot freight by 15–20%.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

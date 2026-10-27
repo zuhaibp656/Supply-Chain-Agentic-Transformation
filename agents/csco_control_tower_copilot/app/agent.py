@@ -83,6 +83,9 @@ class CscoControlTowerAgent:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "csco_control_tower_copilot"
+        self.category = "01 · Planning & Strategy — S&OP / IBP"
+        self.display_name = "[01 · Plan | S&OP / IBP] Executive Copilot"
+        self.description = "[Category: 01 · Planning & Strategy — S&OP / IBP] Executive Copilot (IBP Lead / Chief Planning Off.): Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Reduces deck preparation by days."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -300,7 +303,7 @@ try:
 
     root_agent = Agent(
         name="csco_control_tower_copilot",
-        description="CSCO Control Tower Copilot: multi-echelon bottleneck triage and autonomous playbook execution.",
+        description="[Category: 01 · Planning & Strategy — S&OP / IBP] Executive Copilot (IBP Lead / Chief Planning Off.): Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Reduces deck preparation by days.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

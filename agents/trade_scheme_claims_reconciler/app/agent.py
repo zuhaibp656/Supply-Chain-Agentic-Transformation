@@ -61,6 +61,9 @@ class TradeSchemeClaimsReconciler:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "trade_scheme_claims_reconciler"
+        self.category = "01 · Planning & Strategy — Trade Promotion"
+        self.display_name = "[01 · Plan | Trade Promotion] Deduction Audit Agent"
+        self.description = "[Category: 01 · Planning & Strategy — Trade Promotion] Deduction Audit Agent (Revenue / Trade Finance Lead): Audits scanned proof-of-performance circulars and invoices via OCR. Outcome: Resolves claim disputes in hours."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -267,7 +270,7 @@ try:
 
     root_agent = Agent(
         name="trade_scheme_claims_reconciler",
-        description="Audits 100% of distributor secondary sales scheme claims against circular slab rules, e-waybill proof, and ShelfVision compliance\u2014blocking phantom/split invoices and posting SAP FI credit notes.",
+        description="[Category: 01 · Planning & Strategy — Trade Promotion] Deduction Audit Agent (Revenue / Trade Finance Lead): Audits scanned proof-of-performance circulars and invoices via OCR. Outcome: Resolves claim disputes in hours.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

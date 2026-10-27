@@ -1,0 +1,10 @@
+[project]
+name = "labor-line-balancing-agent"
+version = "1.0.0"
+description = "[Category: 03 · Manufacturing & Production — Production Scheduling] Labor & Line Balancing (Plant Operations Manager): Maps shift skill certifications and fatigue constraints to line speeds. Outcome: Prevents certified skill bottlenecks."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

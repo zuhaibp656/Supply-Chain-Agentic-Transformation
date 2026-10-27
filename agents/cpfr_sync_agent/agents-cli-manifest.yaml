@@ -1,7 +1,7 @@
 schema_version: "v1"
 id: "cpfr_sync_agent"
-name: "ChannelSync — Collaborative CPFR & POS Harmonizer"
-description: "Harmonizes retailer EDI 852 POS & DC depletion feeds, detects store phantom inventory, and automates CPFR consensus."
+name: "[01 · Plan | Demand Forecasting] Forecast Reconciliation"
+description: "[Category: 01 · Planning & Strategy — Demand Forecasting] Forecast Reconciliation (Commercial Planning Lead): Identifies unmodeled drivers across eCommerce and retail channels. Outcome: Replaces black-box variance models."
 agent_class: "app.agent.CpfrSyncAgent"
 runtime:
   type: "adk"
@@ -15,6 +15,6 @@ tools:
   - "action_dispatch_vmi_replenishment_order"
   - "action_flag_retail_phantom_audit"
 metadata:
-  scor_category: "01 · Plan (Demand Planning, Sensing & S&OP)"
+  scor_category: "01 · Planning & Strategy — Demand Forecasting"
   tier_coverage: "Retail Store Shelves / Retailer DCs / VMI Hubs"
   roi_focus: "+3.8 pts Retail OSA, -29% bullwhip order variance, zero undetected phantom stockouts"

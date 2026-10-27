@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "wave_fulfillment_copilot_golden_01",
+    "category": "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations",
+    "agent_name": "[04 \u00b7 Inventory & DC | Warehouse Operations] Wave Fulfillment Copilot",
+    "prompt": "Run Wave Fulfillment Copilot analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_wave_fulfillment_copilot_telemetry_feed",
+      "query_wave_fulfillment_copilot_constraint_matrix",
+      "action_commit_wave_fulfillment_copilot_plan"
+    ],
+    "expected_outcome": "Prevents missed dispatch windows (OTIF)"
+  }
+]

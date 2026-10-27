@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "freight_bill_audit_agent_golden_01",
+    "category": "05 \u00b7 Distribution & Logistics \u2014 Route & Carrier",
+    "agent_name": "[05 \u00b7 Logistics | Route & Carrier] Freight Bill Audit Agent",
+    "prompt": "Run Freight Bill Audit Agent analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_freight_bill_audit_agent_telemetry_feed",
+      "query_freight_bill_audit_agent_constraint_matrix",
+      "action_commit_freight_bill_audit_agent_plan"
+    ],
+    "expected_outcome": "Captures 3\u20137% in overbilled fees"
+  }
+]

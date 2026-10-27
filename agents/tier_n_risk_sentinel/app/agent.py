@@ -83,6 +83,9 @@ class TierNRiskSentinelAgent:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "tier_n_risk_sentinel"
+        self.category = "02 · Sourcing & Procurement — Supplier Network"
+        self.display_name = "[02 · Source | Supplier Network] Disruption Sensing Agent"
+        self.description = "[Category: 02 · Sourcing & Procurement — Supplier Network] Disruption Sensing Agent (Procurement Dir. / Risk Mgr): Monitors multi-tier supply feeds, port delays, and vendor financials. Outcome: 2–3 week advance disruption warning."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -301,7 +304,7 @@ try:
 
     root_agent = Agent(
         name="tier_n_risk_sentinel",
-        description="NexusShield Multi-Tier Supply Network Sentinel: Cloud Spanner Graph lineage and deep dependency mapping.",
+        description="[Category: 02 · Sourcing & Procurement — Supplier Network] Disruption Sensing Agent (Procurement Dir. / Risk Mgr): Monitors multi-tier supply feeds, port delays, and vendor financials. Outcome: 2–3 week advance disruption warning.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

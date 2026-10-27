@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "rti_balance_reconciler"
+name: "[06 · Returns & ESG | Pallet & Tote Reclamation] RTI Balance Reconciler"
+category: "06 · Returns & Reverse Logistics — Pallet & Tote Reclamation"
+description: "[Category: 06 · Returns & Reverse Logistics — Pallet & Tote Reclamation] RTI Balance Reconciler (Asset Recovery / RTI Manager): Reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. Outcome: Eliminates 30% in non-return fee fines."
+agent_class: "app.agent.RtiBalanceReconcilerAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_rti_balance_reconciler_telemetry_feed"
+  - "query_rti_balance_reconciler_constraint_matrix"
+  - "query_rti_balance_reconciler_optimization_scenarios"
+  - "query_rti_balance_reconciler_execution_ledger"
+  - "action_commit_rti_balance_reconciler_plan"
+  - "action_dispatch_rti_balance_reconciler_alert"
+metadata:
+  scor_category: "06 · Returns & Reverse Logistics — Pallet & Tote Reclamation"
+  pillar: "06 · Returns & Reverse Logistics"
+  sub_pillar: "Pallet & Tote Reclamation"
+  persona_owner: "Asset Recovery / RTI Manager"
+  roi_focus: "Eliminates 30% in non-return fee fines"

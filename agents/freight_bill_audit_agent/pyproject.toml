@@ -1,0 +1,10 @@
+[project]
+name = "freight-bill-audit-agent"
+version = "1.0.0"
+description = "[Category: 05 · Distribution & Logistics — Route & Carrier] Freight Bill Audit Agent (Freight Controller / Claims): Extracts signed PODs and rate contracts via OCR to audit accessorial surcharges. Outcome: Captures 3–7% in overbilled fees."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

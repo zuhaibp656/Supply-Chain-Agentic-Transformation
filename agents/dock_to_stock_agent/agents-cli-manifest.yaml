@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "dock_to_stock_agent"
+name: "[04 · Inventory & DC | Warehouse Operations] Dock-to-Stock Agent"
+category: "04 · Inventory & Warehousing — Warehouse Operations"
+description: "[Category: 04 · Inventory & Warehousing — Warehouse Operations] Dock-to-Stock Agent (Inbound Receiving Supervisor): Parses scanned BOLs and pallet photos to reconcile open ASN variances. Outcome: Dock turnaround in minutes vs. hours."
+agent_class: "app.agent.DockToStockAgentAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_dock_to_stock_agent_telemetry_feed"
+  - "query_dock_to_stock_agent_constraint_matrix"
+  - "query_dock_to_stock_agent_optimization_scenarios"
+  - "query_dock_to_stock_agent_execution_ledger"
+  - "action_commit_dock_to_stock_agent_plan"
+  - "action_dispatch_dock_to_stock_agent_alert"
+metadata:
+  scor_category: "04 · Inventory & Warehousing — Warehouse Operations"
+  pillar: "04 · Inventory & Warehousing"
+  sub_pillar: "Warehouse Operations"
+  persona_owner: "Inbound Receiving Supervisor"
+  roi_focus: "Dock turnaround in minutes vs. hours"

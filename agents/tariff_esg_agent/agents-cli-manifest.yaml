@@ -1,7 +1,7 @@
 schema_version: "v1"
 id: "tariff_esg_agent"
-name: "ClauseGuard — Contract Intelligence & Trade Compliance Agent"
-description: "Audits purchase orders against contract rebate/indexation clauses in AlloyDB pgvector and automates 10-digit HS tariff classification across customs borders."
+name: "[02 · Source | Contract & PO Mgmt] Contract Leakage Agent"
+description: "[Category: 02 · Sourcing & Procurement — Contract & PO Mgmt] Contract Leakage Agent (Commercial Sourcing / Legal): Reconciles live spend against negotiated rebate tiers and volume discount scales. Outcome: Recovers missed rebates & surcharges."
 agent_class: "app.agent.TariffEsgAgent"
 runtime:
   type: "adk"
@@ -15,6 +15,6 @@ tools:
   - "action_lock_hs_tariff_classification"
   - "action_issue_supplier_rebate_debit_memo"
 metadata:
-  scor_category: "02 · Source (Strategic Sourcing & Category Procurement)"
+  scor_category: "02 · Sourcing & Procurement — Contract & PO Mgmt"
   tier_coverage: "Global Commercial Supplier Contracts & Customs Border Checkpoints"
   roi_focus: "99.6% tariff audit compliance, 100% earned supplier rebate recovery, zero customs border hold delays"

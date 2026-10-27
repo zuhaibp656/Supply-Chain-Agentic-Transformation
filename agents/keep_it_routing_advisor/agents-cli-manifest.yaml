@@ -1,0 +1,23 @@
+schema_version: "v1"
+id: "keep_it_routing_advisor"
+name: "[06 · Returns & ESG | Returns & Claims Mgmt] Keep-It & Routing Advisor"
+category: "06 · Returns & Reverse Logistics — Returns & Claims Mgmt"
+description: "[Category: 06 · Returns & Reverse Logistics — Returns & Claims Mgmt] Keep-It & Routing Advisor (Customer Experience (CX) Lead): Evaluates salvage margins vs reverse freight to determine keep-it instant refunds. Outcome: Lowers net return costs by 15–22%."
+agent_class: "app.agent.KeepItRoutingAdvisorAgent"
+runtime:
+  type: "adk"
+  model: "gemini-3.1-pro-preview"
+entrypoint: "app/agent.py"
+tools:
+  - "query_keep_it_routing_advisor_telemetry_feed"
+  - "query_keep_it_routing_advisor_constraint_matrix"
+  - "query_keep_it_routing_advisor_optimization_scenarios"
+  - "query_keep_it_routing_advisor_execution_ledger"
+  - "action_commit_keep_it_routing_advisor_plan"
+  - "action_dispatch_keep_it_routing_advisor_alert"
+metadata:
+  scor_category: "06 · Returns & Reverse Logistics — Returns & Claims Mgmt"
+  pillar: "06 · Returns & Reverse Logistics"
+  sub_pillar: "Returns & Claims Mgmt"
+  persona_owner: "Customer Experience (CX) Lead"
+  roi_focus: "Lowers net return costs by 15–22%"

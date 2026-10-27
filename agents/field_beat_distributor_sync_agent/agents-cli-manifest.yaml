@@ -1,10 +1,10 @@
 name: field_beat_distributor_sync_agent
 display_name: "BeatSync — Field Sales & Distributor Inventory Harmonizer"
-description: "Synchronizes real-time Distributor Management System (DMS) stock with Field Sales Officer (FSO) beat routing so reps never pitch stocked-out SKUs and primary replenishment fires automatically."
+description: "[Category: 01 · Planning & Strategy — Trade Promotion] JBP Negotiation Agent (Key Account Manager (KAM)): Creates customized sell-in story decks and joint promotional calendars. Outcome: Aligns buyer margins and volume goals."
 version: "0.1.0"
 model: "gemini-3-pro-preview"
 vertical: "05 · Deliver"
-category: "Trade Marketing & Distribution (TM&D)"
+category: "01 · Planning & Strategy — Trade Promotion"
 tags:
   - dms-sync
   - field-sales-beat

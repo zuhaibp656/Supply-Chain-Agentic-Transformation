@@ -1,0 +1,10 @@
+[project]
+name = "geocoding-intelligence-agent"
+version = "1.0.0"
+description = "[Category: 05 · Distribution & Logistics — Last-Mile Delivery] Geocoding Intelligence (Last-Mile Operations Lead): Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers. Outcome: Drops failed deliveries by 30–45%."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

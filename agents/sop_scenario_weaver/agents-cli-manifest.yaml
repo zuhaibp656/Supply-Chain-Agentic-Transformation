@@ -1,7 +1,7 @@
 schema_version: "v1"
 id: "sop_scenario_weaver"
-name: "Synapse — Autonomous S&OP Scenario Weaver"
-description: "Simulates 50+ plant capacity, multi-modal transit, overtime, and margin trade-offs in seconds to compress 21-day S&OP cycles into 45 minutes."
+name: "[01 · Plan | S&OP / IBP] Consensus & Gap Agent"
+description: "[Category: 01 · Planning & Strategy — S&OP / IBP] Consensus & Gap Agent (S&OP / Supply Planning Dir.): Reconciles unconstrained demand with factory plant bottleneck limits. Outcome: Highlights margin-dilutive imbalances."
 agent_class: "app.agent.SopScenarioWeaverAgent"
 runtime:
   type: "adk"
@@ -15,6 +15,6 @@ tools:
   - "action_commit_mps_consensus_plan"
   - "action_lock_sop_financial_bridge"
 metadata:
-  scor_category: "01 · Plan (Demand Planning, Sensing & S&OP)"
+  scor_category: "01 · Planning & Strategy — S&OP / IBP"
   tier_coverage: "Enterprise Manufacturing Lines / Component Suppliers / Global DC Network"
   roi_focus: "21 Days → 45 Mins cycle time, +180 bps gross margin, 99.4% plan adherence"

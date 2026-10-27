@@ -1,0 +1,4 @@
+scenario_id,scenario_name,category,service_level_pct,annual_cost_usd,cycle_time_hrs,kpi_impact
+SCEN-BASELINE-MANUAL,Legacy Manual Spreadsheet Baseline,03 · Make | Quality & Compliance,88.4,4850000,42.0,High manual toil & delayed ERP response
+SCEN-AI-OPTIMAL,Batch Record Auditor Autonomous Policy,03 · Make | Quality & Compliance,98.7,3620000,1.5,60–80% faster batch release review
+SCEN-STRESS-SURGE,Peak Surge & Disruption Resilience Mode,03 · Make | Quality & Compliance,96.9,3890000,2.2,Protected SLA under +25% demand/supply shock

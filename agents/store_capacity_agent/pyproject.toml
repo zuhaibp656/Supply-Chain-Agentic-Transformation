@@ -1,0 +1,10 @@
+[project]
+name = "store-capacity-agent"
+version = "1.0.0"
+description = "[Category: 05 · Distribution & Logistics — Store Replenishment] Store Capacity Agent (Store Replenishment Lead): Throttles push replenishment based on store backroom limits and live POS velocity. Outcome: Reduces backroom stock by 25%."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "capex_simulator_agent_golden_01",
+    "category": "03 \u00b7 Manufacturing & Production \u2014 Capacity Planning",
+    "agent_name": "[03 \u00b7 Make | Capacity Planning] CapEx Simulator",
+    "prompt": "Run CapEx Simulator analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_capex_simulator_agent_telemetry_feed",
+      "query_capex_simulator_agent_constraint_matrix",
+      "action_commit_capex_simulator_agent_plan"
+    ],
+    "expected_outcome": "Delivers defensible board CapEx ROI"
+  }
+]

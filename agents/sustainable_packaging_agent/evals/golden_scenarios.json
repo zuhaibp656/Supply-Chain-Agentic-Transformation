@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_id": "sustainable_packaging_agent_golden_01",
+    "category": "02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging",
+    "agent_name": "[02 \u00b7 Source | Material & Packaging] Sustainable Packaging Agent",
+    "prompt": "Run Sustainable Packaging Agent analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
+    "expected_tools": [
+      "query_sustainable_packaging_agent_telemetry_feed",
+      "query_sustainable_packaging_agent_constraint_matrix",
+      "action_commit_sustainable_packaging_agent_plan"
+    ],
+    "expected_outcome": "Mitigates EPR and landfill taxation"
+  }
+]

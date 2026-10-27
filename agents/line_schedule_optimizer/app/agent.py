@@ -81,6 +81,9 @@ class FiniteProductionSchedulerAgent:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "line_schedule_optimizer"
+        self.category = "03 · Manufacturing & Production — Production Scheduling"
+        self.display_name = "[03 · Make | Production Scheduling] Disruption Re-sequencer"
+        self.description = "[Category: 03 · Manufacturing & Production — Production Scheduling] Disruption Re-sequencer (Shop Floor / Shift Lead): Detects machine halts and re-routes perishable WIP to alternate lines. Outcome: Line reallocation in <3 minutes."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

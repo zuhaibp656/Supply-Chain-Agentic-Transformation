@@ -82,6 +82,9 @@ class SupplierQualitySentinelAgent:
 
     def __init__(self, model: str = "gemini-3-pro-preview"):
         self.name = "supplier_quality_sentinel"
+        self.category = "02 · Sourcing & Procurement — Supplier Network"
+        self.display_name = "[02 · Source | Supplier Network] Onboarding & Qual. Agent"
+        self.description = "[Category: 02 · Sourcing & Procurement — Supplier Network] Onboarding & Qual. Agent (Procurement Operations Lead): Parses BRC/ISO audits, food-safety filings, and tax registrations. Outcome: Cuts onboarding from weeks to <48h."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)

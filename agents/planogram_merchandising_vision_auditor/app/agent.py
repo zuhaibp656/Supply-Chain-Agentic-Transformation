@@ -61,6 +61,9 @@ class PlanogramMerchandisingVisionAuditor:
 
     def __init__(self, model: str = "gemini-3.8-flash"):
         self.name = "planogram_merchandising_vision_auditor"
+        self.category = "04 · Inventory & Warehousing — Omnichannel Visibility"
+        self.display_name = "[04 · Inventory & DC | Omnichannel Visibility] Phantom Inventory Sensor"
+        self.description = "[Category: 04 · Inventory & Warehousing — Omnichannel Visibility] Phantom Inventory Sensor (Store Operations / Omni Lead): Identifies shrinkage anomalies when on-hand stock stops scanning at POS. Outcome: Triggers targeted floor cycle counts."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -269,7 +272,7 @@ try:
 
     root_agent = Agent(
         name="planogram_merchandising_vision_auditor",
-        description="Uses Gemini 3.8 Flash multimodal vision to audit retail store shelf photos in under 2 seconds, measuring Share-of-Shelf (SOS), eye-level facings, cooler purity, and on-shelf availability.",
+        description="[Category: 04 · Inventory & Warehousing — Omnichannel Visibility] Phantom Inventory Sensor (Store Operations / Omni Lead): Identifies shrinkage anomalies when on-hand stock stops scanning at POS. Outcome: Triggers targeted floor cycle counts.",
         model=GlobalGemini(
             model="gemini-3.8-flash",
             retry_options=types.HttpRetryOptions(attempts=3),

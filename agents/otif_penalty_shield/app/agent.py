@@ -61,6 +61,9 @@ class OtifPenaltyShield:
 
     def __init__(self, model: str = "gemini-3.1-pro-preview"):
         self.name = "otif_penalty_shield"
+        self.category = "05 · Distribution & Logistics — Last-Mile Delivery"
+        self.display_name = "[05 · Logistics | Last-Mile Delivery] Delivery Exception Copilot"
+        self.description = "[Category: 05 · Distribution & Logistics — Last-Mile Delivery] Delivery Exception Copilot (Customer Support Ops Lead): Detects en-route exceptions and updates customers proactively with reschedule links. Outcome: Decreases WISMO calls by up to 60%."
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
@@ -268,7 +271,7 @@ try:
 
     root_agent = Agent(
         name="otif_penalty_shield",
-        description="Predicts customer Must-Arrive-By-Date (MABD) OTIF breaches 72 hours early to trigger margin-positive rescues and auto-assembles geofence + EDI 856 dispute dossiers to overturn invalid retail chargebacks.",
+        description="[Category: 05 · Distribution & Logistics — Last-Mile Delivery] Delivery Exception Copilot (Customer Support Ops Lead): Detects en-route exceptions and updates customers proactively with reschedule links. Outcome: Decreases WISMO calls by up to 60%.",
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),

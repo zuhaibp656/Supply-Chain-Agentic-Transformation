@@ -1,0 +1,10 @@
+[project]
+name = "copacker-allocation-agent"
+version = "1.0.0"
+description = "[Category: 03 · Manufacturing & Production — Capacity Planning] Co-Packer Allocation (External Sourcing / CMO Lead): Models internal conversion costs against co-packer tolling agreements. Outcome: Optimizes net gross margin per case."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]

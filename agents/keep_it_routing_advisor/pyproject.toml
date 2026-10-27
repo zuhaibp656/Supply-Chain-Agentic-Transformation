@@ -1,0 +1,10 @@
+[project]
+name = "keep-it-routing-advisor"
+version = "1.0.0"
+description = "[Category: 06 · Returns & Reverse Logistics — Returns & Claims Mgmt] Keep-It & Routing Advisor (Customer Experience (CX) Lead): Evaluates salvage margins vs reverse freight to determine keep-it instant refunds. Outcome: Lowers net return costs by 15–22%."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.95.0",
+    "google-genai>=1.0.0",
+]
