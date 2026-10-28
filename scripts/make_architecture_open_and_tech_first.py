@@ -119,7 +119,7 @@ def clean_tech_text(val):
         return [clean_tech_text(v) for v in val]
     if isinstance(val, dict):
         return {
-            k: (v if k in ("id", "deptId", "subPillarId", "primaryPersonaId", "code", "symbol", "videoSrc", "table_name", "name") and k == "id" else clean_tech_text(v))
+            k: (v if k == "id" else clean_tech_text(v))
             for k, v in val.items()
         }
     return val
@@ -186,52 +186,65 @@ def update_catalog():
 def update_html_file(path: Path):
     text = path.read_text(encoding="utf-8")
 
-    # 1. Apply technology replacements inside the AGENTS object and renderAgentFullSpecSheet / getAgentBuildClassification
-    # Locate `const AGENTS = {` and `const PERSONAS = {` (or similar boundary)
+    # 1. Clean ONLY the `const AGENTS = { ... }` data block (up to `const PERSONAS = {`)
     ag_start = text.find("const AGENTS = {")
-    fn_end = text.find("function openAgentPage(")
-    if ag_start != -1 and fn_end != -1 and fn_end > ag_start:
-        segment = text[ag_start:fn_end]
+    pe_start = text.find("const PERSONAS = {")
+    if ag_start != -1 and pe_start != -1 and pe_start > ag_start:
+        seg_a = text[ag_start:pe_start]
         for pat, rep in TECH_REPLACEMENTS:
-            segment = re.sub(pat, rep, segment, flags=re.IGNORECASE)
+            seg_a = re.sub(pat, rep, seg_a, flags=re.IGNORECASE)
+        text = text[:ag_start] + seg_a + text[pe_start:]
 
-        # Also update build classification labels to be technology-first
-        segment = segment.replace(
-            "label: '🟢 Low-Code · Gemini Enterprise Studio'",
-            "label: '🟢 Low-Code · Conversational Agent + BigQuery / MCP RAG'",
-        )
-        segment = segment.replace(
-            "label: '🔵 Hybrid · Low-Code Agent + Cloud Run Tool'",
-            "label: '🔵 Hybrid · Conversational Agent + Serverless API / MCP Tool'",
-        )
-        segment = segment.replace(
-            "label: '🟣 High-Code · Vertex ADK + OR-Tools Solver'",
-            "label: '🟣 High-Code · Multi-Agent ADK + Mathematical Optimization Solver'",
-        )
-        segment = segment.replace(
+    # 2. Clean ONLY `renderAgentAtAGlanceStrip` and `renderAgentFullSpecSheet` (up to `function openAgentPage(`)
+    spec_start = text.find("function renderAgentAtAGlanceStrip(")
+    open_ag_start = text.find("function openAgentPage(")
+    if spec_start != -1 and open_ag_start != -1 and open_ag_start > spec_start:
+        seg_b = text[spec_start:open_ag_start]
+        for pat, rep in TECH_REPLACEMENTS:
+            seg_b = re.sub(pat, rep, seg_b, flags=re.IGNORECASE)
+        seg_b = seg_b.replace(
             "Guarantees exactly-once execution across SAP S/4HANA, IBP, WMS, and TMS connectors.",
             "Guarantees exactly-once execution across Enterprise ERP, Planning, WMS, TMS, On-Premise DBs, and 3rd-party MCP connectors.",
         )
-        segment = segment.replace(
+        seg_b = seg_b.replace(
             "Protocol: 'REST / OData v4 / BigQuery SQL'",
             "Protocol: 'MCP Server / REST API / BigQuery / On-Prem SQL'",
         )
-        text = text[:ag_start] + segment + text[fn_end:]
+        text = text[:spec_start] + seg_b + text[open_ag_start:]
+
+    # 3. Clean `getAgentBuildClassification` labels
+    cls_start = text.find("function getAgentBuildClassification(")
+    cls_end = text.find("function getClickedCardRect(")
+    if cls_start != -1 and cls_end != -1 and cls_end > cls_start:
+        seg_c = text[cls_start:cls_end]
+        seg_c = seg_c.replace(
+            "label: '🟢 Low-Code · Gemini Enterprise Studio'",
+            "label: '🟢 Low-Code · Conversational Agent + BigQuery / MCP RAG'",
+        )
+        seg_c = seg_c.replace(
+            "label: '🔵 Hybrid · Low-Code Agent + Cloud Run Tool'",
+            "label: '🔵 Hybrid · Conversational Agent + Serverless API / MCP Tool'",
+        )
+        seg_c = seg_c.replace(
+            "label: '🟣 High-Code · Vertex ADK + OR-Tools Solver'",
+            "label: '🟣 High-Code · Multi-Agent ADK + Mathematical Optimization Solver'",
+        )
+        text = text[:cls_start] + seg_c + text[cls_end:]
 
     path.write_text(text, encoding="utf-8")
     print(f"Cleaned open technology terminology in {path.name}")
 
 
 def main():
-    # Step 1: Run build_distinct_agent_flow_diagrams.py
-    build_distinct_agent_flow_diagrams.main()
-
-    # Step 2: Update catalog & HTML files with technology-first open labels
+    # Step 1: Update catalog & HTML data blocks
     update_catalog()
     for name in ("index.html", "periodic_table.html", "mind_map.html"):
         p = ROOT / name
         if p.exists():
             update_html_file(p)
+
+    # Step 2: Inject fresh `NEW_ARCH_DIAGRAM_JS` AFTER text replacements so JS regex literals in `toOpenTechLabel` are never mutated!
+    build_distinct_agent_flow_diagrams.main()
 
 
 if __name__ == "__main__":

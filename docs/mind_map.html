@@ -50927,6 +50927,10 @@
        AGENT-SPECIFIC MEANINGFUL FLOW & ARCHITECTURE DIAGRAM
        (OPEN, TECHNOLOGY-FIRST & CUSTOMER-AGNOSTIC: BIGQUERY, ON-PREM DBs, 3RD-PARTY MCPs)
        ========================================================================= */
+    /* =========================================================================
+       AGENT-SPECIFIC MEANINGFUL FLOW & ARCHITECTURE DIAGRAM
+       (OPEN, TECHNOLOGY-FIRST & CUSTOMER-AGNOSTIC: BIGQUERY, ON-PREM DBs, 3RD-PARTY MCPs)
+       ========================================================================= */
     const AGENT_TOPOLOGY_MAP = {
       // 1. Probabilistic Multi-Signal Sensing & Forecast Fan
       demand_sensing_agent: 'sensing_fan',
@@ -51061,11 +51065,11 @@
       if (!rawStr) return 'Enterprise System (MCP / API / On-Prem DB)';
       let s = String(rawStr).trim();
       const replacements = [
-        [/Operational SQL & Vector DB (On-Prem / Cloud)\s*pgvector/gi, 'Vector Search Index (DB / MCP)'],
-        [/Operational SQL & Vector DB (On-Prem / Cloud)/gi, 'Operational SQL / Vector DB'],
-        [/Cloud\s*Transactional State DB\s*Graph/gi, 'Multi-Hop Graph DB (Cloud / On-Prem)'],
-        [/Cloud\s*Transactional State DB/gi, 'Distributed Transactional DB'],
-        [/Transactional State DB/gi, 'Low-Latency State DB'],
+        [/AlloyDB\s*pgvector/gi, 'Vector Search Index (DB / MCP)'],
+        [/AlloyDB/gi, 'Operational SQL / Vector DB'],
+        [/Cloud\s*Spanner\s*Graph/gi, 'Multi-Hop Graph DB (Cloud / On-Prem)'],
+        [/Cloud\s*Spanner/gi, 'Distributed Transactional DB'],
+        [/Spanner/gi, 'Low-Latency State DB'],
         [/Google\s*WeatherNext\s*3/gi, 'Weather & Climate Telemetry API'],
         [/WeatherNext\s*3/gi, 'Weather Ensemble Feed'],
         [/Google\s*Earth\s*Engine/gi, 'Satellite & Geospatial Imagery API'],
@@ -51074,12 +51078,12 @@
         [/Google\s*Maps\s*Fleet\s*Engine/gi, 'Fleet & Yard Geofencing API'],
         [/Google\s*Maps\s*Places/gi, 'Geospatial & POI Intelligence API'],
         [/Google\s*Maps\s*Platform/gi, 'Geospatial Routing & ETA API'],
-        [/Vertex\s*AI\s*Time-Series Forecasting Model\s*Foundation\s*Model/gi, 'Time-Series Forecasting Foundation Model'],
-        [/Vertex\s*AI\s*Time-Series Forecasting Model/gi, 'Time-Series Forecasting Model'],
-        [/Time-Series Forecasting Model\s*2\.5/gi, 'Time-Series Forecasting Model'],
-        [/Time-Series Forecasting Model/gi, 'Time-Series Forecasting Model'],
-        [/Google\s*Mathematical Optimization Solver (MILP / CP-SAT)/gi, 'Mathematical Optimization Solver (MILP / CP-SAT)'],
-        [/Mathematical Optimization Solver (MILP / CP-SAT)/gi, 'Constraint Optimization Solver (MILP)'],
+        [/Vertex\s*AI\s*TimesFM\s*Foundation\s*Model/gi, 'Time-Series Forecasting Foundation Model'],
+        [/Vertex\s*AI\s*TimesFM/gi, 'Time-Series Forecasting Model'],
+        [/TimesFM\s*2\.5/gi, 'Time-Series Forecasting Model'],
+        [/TimesFM/gi, 'Time-Series Forecasting Model'],
+        [/Google\s*OR-Tools/gi, 'Mathematical Optimization Solver (MILP / CP-SAT)'],
+        [/OR-Tools/gi, 'Constraint Optimization Solver (MILP)'],
         [/SAP\s*IBP\s*&\s*S\/4HANA/gi, 'Enterprise ERP & Supply Planning (MCP / On-Prem)'],
         [/SAP\s*IBP/gi, 'Supply Planning System (MCP / API)'],
         [/SAP\s*S\/4HANA\s*PP\/DS/gi, 'Production Planning & ERP (MCP / On-Prem)'],
@@ -51092,8 +51096,8 @@
         [/SAP\s*GTS/gi, 'Global Trade & Tariff System (MCP / API)'],
         [/SAP\s*TPM/gi, 'Trade Promotion Management (TPM / CRM)'],
         [/SAP\s*Ariba/gi, 'e-Procurement & Sourcing Portal (MCP / API)'],
-        [/Supply Planning Platform (MCP / API)\s*RapidResponse/gi, 'Concurrent Supply Planning Engine (MCP / API)'],
-        [/Supply Planning Platform (MCP / API)/gi, 'Supply Planning Platform (MCP / API)'],
+        [/Kinaxis\s*RapidResponse/gi, 'Concurrent Supply Planning Engine (MCP / API)'],
+        [/Kinaxis/gi, 'Supply Planning Platform (MCP / API)'],
         [/Manhattan\s*Active\s*WMS/gi, 'Warehouse Management System (WMS / API)'],
         [/Blue\s*Yonder\s*TMS/gi, 'Transportation Management System (TMS / API)'],
         [/Blue\s*Yonder/gi, 'Supply Chain Execution System (MCP / API)'],
@@ -51105,11 +51109,11 @@
         [/Amazon\s*Vendor\s*Central/gi, 'e-Commerce Vendor Portal (API / EDI)'],
         [/Spire\s*Ocean\s*AIS/gi, 'Ocean Vessel AIS Telemetry (API / MCP)'],
         [/FlightAware\s*ADS-B/gi, 'Air Cargo Flight Telemetry (API / MCP)'],
-        [/Real-Time Carrier Visibility (MCP / API)/gi, 'Real-Time Carrier Visibility (MCP / API)'],
-        [/Carrier Transit Telemetry (MCP / API)/gi, 'Carrier Transit Telemetry (MCP / API)'],
-        [/Enterprise API & MCP Gateway\s*APIs/gi, 'Enterprise API & MCP Gateway'],
-        [/via\s*Enterprise API & MCP Gateway/gi, 'via MCP / REST / On-Prem Gateway'],
-        [/Enterprise API & MCP Gateway/gi, 'MCP / REST API Gateway']
+        [/Project44/gi, 'Real-Time Carrier Visibility (MCP / API)'],
+        [/FourKites/gi, 'Carrier Transit Telemetry (MCP / API)'],
+        [/Apigee\s*APIs/gi, 'Enterprise API & MCP Gateway'],
+        [/via\s*Apigee/gi, 'via MCP / REST / On-Prem Gateway'],
+        [/Apigee/gi, 'MCP / REST API Gateway']
       ];
       for (const [regex, rep] of replacements) {
         s = s.replace(regex, rep);
