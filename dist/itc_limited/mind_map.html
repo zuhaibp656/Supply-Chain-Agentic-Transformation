@@ -5813,6 +5813,146 @@
       box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
     }
 
+
+    /* Collapsible Spec Section Cards (<details class="sc-spec-section-card sc-spec-collapsible">) */
+    details.sc-spec-section-card.sc-spec-collapsible {
+      padding: 0;
+      overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    details.sc-spec-section-card.sc-spec-collapsible:hover {
+      border-color: rgba(56, 189, 248, 0.42);
+    }
+    details.sc-spec-section-card.sc-spec-collapsible > summary.sc-spec-sec-head {
+      padding: 20px 26px;
+      margin-bottom: 0;
+      border-bottom: none;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      transition: background 0.18s ease;
+    }
+    details.sc-spec-section-card.sc-spec-collapsible > summary.sc-spec-sec-head::-webkit-details-marker {
+      display: none;
+    }
+    details.sc-spec-section-card.sc-spec-collapsible > summary.sc-spec-sec-head:hover {
+      background: rgba(148, 163, 184, 0.06);
+    }
+    details.sc-spec-section-card.sc-spec-collapsible[open] > summary.sc-spec-sec-head {
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(148, 163, 184, 0.04);
+    }
+    .sc-spec-sec-body {
+      padding: 22px 28px 26px;
+    }
+    .sc-spec-toggle-pill {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.18s ease;
+    }
+    details.sc-spec-section-card.sc-spec-collapsible > summary.sc-spec-sec-head .sc-spec-toggle-pill::before {
+      content: '▾ Click to Expand';
+    }
+    details.sc-spec-section-card.sc-spec-collapsible[open] > summary.sc-spec-sec-head .sc-spec-toggle-pill::before {
+      content: '▴ Collapse';
+    }
+    .sc-spec-open-page-mini {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    html[data-theme="light"] .sc-spec-open-page-mini {
+      background: rgba(37, 99, 235, 0.08);
+      border-color: rgba(37, 99, 235, 0.28);
+      color: #1d4ed8;
+    }
+    .sc-spec-open-page-mini:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.12);
+    }
+
+    /* Master Launcher Bar above Collapsible Spec Sections */
+    .sc-spec-master-launcher {
+      margin-top: 24px;
+      margin-bottom: 14px;
+      padding: 20px 26px;
+      border-radius: 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    }
+    html[data-theme="light"] .sc-spec-master-launcher {
+      background: #ffffff;
+      border-color: rgba(15, 23, 42, 0.12);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+    }
+
+    /* Nested Collapsible Sub-Drawers inside 01 · Playbook & Governance */
+    details.sc-spec-sub-drawer {
+      margin-top: 12px;
+      border-radius: 14px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+    details.sc-spec-sub-drawer > summary {
+      padding: 13px 18px;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    details.sc-spec-sub-drawer > summary::-webkit-details-marker {
+      display: none;
+    }
+    details.sc-spec-sub-drawer[open] > summary {
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(148, 163, 184, 0.05);
+    }
+    details.sc-spec-sub-drawer > summary .sc-sub-toggle-hint {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+    details.sc-spec-sub-drawer > summary .sc-sub-toggle-hint::before {
+      content: '▾ Expand';
+    }
+    details.sc-spec-sub-drawer[open] > summary .sc-sub-toggle-hint::before {
+      content: '▴ Collapse';
+    }
+    .sc-spec-sub-drawer-body {
+      padding: 16px 18px;
+    }
+
     .sc-spec-sec-head {
       display: flex;
       align-items: center;
@@ -52613,7 +52753,44 @@
       };
     }
 
-    function renderAgentAtAGlanceStrip(ag, dept) {
+    function openAndScrollToSpecSection(sectionId, childId = null) {
+      const sec = document.getElementById(sectionId);
+      if (sec) {
+        if (sec.tagName === 'DETAILS') sec.open = true;
+        const parentDetails = sec.closest('details.sc-spec-collapsible');
+        if (parentDetails) parentDetails.open = true;
+      }
+      if (childId) {
+        const ch = document.getElementById(childId);
+        if (ch) {
+          if (ch.tagName === 'DETAILS') ch.open = true;
+          const parentSub = ch.closest('details.sc-spec-sub-drawer');
+          if (parentSub) parentSub.open = true;
+          setTimeout(() => ch.scrollIntoView({ behavior: 'smooth', block: 'start' }), 40);
+          return false;
+        }
+      }
+      if (sec) {
+        setTimeout(() => sec.scrollIntoView({ behavior: 'smooth', block: 'start' }), 40);
+      }
+      return false;
+    }
+
+    function toggleAllAgentSpecSections(btn) {
+      const root = btn.closest('#agentGenieWrap, #blueprintGenieWrap') || document;
+      const drawers = Array.from(root.querySelectorAll('details.sc-spec-collapsible'));
+      if (!drawers.length) return;
+      const anyClosed = drawers.some(d => !d.open);
+      drawers.forEach(d => {
+        d.open = anyClosed;
+        if (anyClosed) {
+          d.querySelectorAll('details.sc-spec-sub-drawer').forEach(sub => { sub.open = true; });
+        }
+      });
+      btn.textContent = anyClosed ? '▴ Collapse All 6 Spec Sections' : '▾ Expand All 6 Spec Sections Inline';
+    }
+
+    function renderAgentAtAGlanceStrip(ag, dept, isDedicatedSpecPage = false) {
       const st = computeAgentSpecStats(ag);
       return `
         <div class="sc-spec-stats-strip">
@@ -52652,29 +52829,34 @@
         </div>
 
         <div class="sc-spec-jump-bar" style="--spec-accent:${dept.color};">
-          <a class="sc-spec-jump-pill" href="#spec-governance" onclick="document.getElementById('spec-governance')?.scrollIntoView({behavior:'smooth'}); return false;">
-            🛡️ Playbook &amp; Governance
+          ${!isDedicatedSpecPage ? `
+            <button type="button" class="sc-spec-jump-pill" style="border-color:${dept.color}; background:${dept.color}22; color:var(--text-primary); font-weight:800;" onclick="openAgentBlueprintPage('${ag.id}', true, event, 'spec-governance')">
+              📄 Open Contract &amp; Spec in Dedicated Page &rarr;
+            </button>
+          ` : ''}
+          <a class="sc-spec-jump-pill" href="#spec-governance" onclick="return openAndScrollToSpecSection('spec-governance');">
+            🛡️ 01 · Playbook &amp; Governance
           </a>
-          <a class="sc-spec-jump-pill" href="#spec-workflow" onclick="document.getElementById('spec-workflow')?.scrollIntoView({behavior:'smooth'}); return false;">
-            ⚡ 3-Stage Workflow
+          <a class="sc-spec-jump-pill" href="#spec-workflow" onclick="return openAndScrollToSpecSection('spec-workflow');">
+            ⚡ 02 · 3-Stage Workflow
           </a>
-          <a class="sc-spec-jump-pill" href="#spec-tools" onclick="document.getElementById('spec-tools')?.scrollIntoView({behavior:'smooth'}); return false;">
-            🔧 Agent Tools (${st.toolsCount})
+          <a class="sc-spec-jump-pill" href="#spec-tools" onclick="return openAndScrollToSpecSection('spec-tools');">
+            🔧 03 · Agent Tools (${st.toolsCount})
           </a>
-          <a class="sc-spec-jump-pill" href="#spec-systems" onclick="document.getElementById('spec-systems')?.scrollIntoView({behavior:'smooth'}); return false;">
-            🔌 Source Systems (${st.systemsCount})
+          <a class="sc-spec-jump-pill" href="#spec-systems" onclick="return openAndScrollToSpecSection('spec-systems');">
+            🔌 04 · Source Systems (${st.systemsCount})
           </a>
-          <a class="sc-spec-jump-pill" href="#spec-data-model" onclick="document.getElementById('spec-data-model')?.scrollIntoView({behavior:'smooth'}); return false;">
-            🗄️ Data Model (${st.entitiesCount} entities · ${st.fieldsCount} fields)
+          <a class="sc-spec-jump-pill" href="#spec-data-model" onclick="return openAndScrollToSpecSection('spec-data-model');">
+            🗄️ 05 · Data Model (${st.entitiesCount} entities · ${st.fieldsCount} fields)
           </a>
-          <a class="sc-spec-jump-pill" href="#spec-evals" onclick="document.getElementById('spec-evals')?.scrollIntoView({behavior:'smooth'}); return false;">
-            ✅ Evals &amp; Proof
+          <a class="sc-spec-jump-pill" href="#spec-evals" onclick="return openAndScrollToSpecSection('spec-evals');">
+            ✅ 06 · Evals &amp; Proof
           </a>
         </div>
       `;
     }
 
-    function renderAgentFullSpecSheet(ag, dept) {
+    function renderAgentFullSpecSheet(ag, dept, openByDefault = false) {
       const adk = ag.adkImplementation || {};
       const spec = ag.adkSpec || {};
       const cls = getAgentBuildClassification(ag);
@@ -52683,6 +52865,7 @@
       const subPillar = ag.subPillarName || dept.name;
       const tables = adk.fixtureTables || [];
       const totalFields = tables.reduce((acc, t) => acc + ((t.columns || []).length), 0);
+      const openAttr = openByDefault ? 'open' : '';
 
       // 1. Tools metadata
       const rawTools = (spec.toolsMeta && spec.toolsMeta.length)
@@ -52815,109 +52998,178 @@
         : ['ASCM SCOR DS v14.0', 'ISO 9001:2015 Quality Management', 'Google ADK + A2A v1.0 + MCP + A2UI v0.9', 'ISO/IEC 42001 AI Management System'];
 
       return `
-        <!-- SECTION 1: PLAYBOOK & GOVERNANCE -->
-        <div class="sc-spec-section-card" id="spec-governance">
-          <div class="sc-spec-sec-head">
+        <!-- MASTER LAUNCHER BAR FOR COLLAPSIBLE CONTRACT & SPEC SECTIONS -->
+        <div class="sc-spec-master-launcher" style="border-left: 4px solid ${dept.color};">
+          <div>
+            <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
+              📋 Enterprise Agent Contract · Playbook, Governance &amp; Technical Specification
+            </div>
+            <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:var(--text-primary);">
+              ${cleanName} — 6 Modular Specification Drawers
+            </div>
+            <div style="font-size:12.5px; color:var(--text-secondary); margin-top:2px;">
+              ${openByDefault
+                ? 'Dedicated Contract &amp; Specification View · Click any section or sub-section header below to collapse or expand.'
+                : 'Collapsed by default to keep this view simple and clean · Click any section to expand inline, or open in a dedicated page.'}
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+            <button type="button" class="switch-pill" onclick="toggleAllAgentSpecSections(this)">
+              ${openByDefault ? '▴ Collapse All 6 Spec Sections' : '▾ Expand All 6 Spec Sections Inline'}
+            </button>
+            ${!openByDefault ? `
+              <button type="button" class="switch-pill" style="background:${dept.color}; border-color:${dept.color}; color:#ffffff; font-weight:700;" onclick="openAgentBlueprintPage('${ag.id}', true, event, 'spec-governance')">
+                📄 Open Contract &amp; Spec in Dedicated Page &rarr;
+              </button>
+            ` : `
+              <button type="button" class="switch-pill" onclick="openAgentPage('${ag.id}', true, event)">
+                &larr; Back to ${cleanName} Overview
+              </button>
+            `}
+          </div>
+        </div>
+
+        <!-- SECTION 1: PLAYBOOK & GOVERNANCE (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-governance" ${openAttr}>
+          <summary class="sc-spec-sec-head">
             <div>
               <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
                 01 · Enterprise Agent Contract
               </div>
-              <h2 class="sc-spec-sec-title">Playbook &amp; Governance</h2>
+              <h2 class="sc-spec-sec-title">
+                Playbook &amp; Governance
+                <span class="sc-spec-count-badge">${personaName} · ${subPillar}</span>
+              </h2>
             </div>
-            <span class="sc-spec-count-badge">${personaName} · ${subPillar}</span>
-          </div>
-
-          <p style="font-size:14.5px; color:var(--text-primary); line-height:1.6; margin:0 0 14px;">
-            <strong>Role Mandate:</strong> Autonomous <strong>${personaName}</strong> agent for the <strong>${cleanName}</strong> workflow in <strong>${subPillar}</strong>. ${ag.solution} ${ag.advantage || ag.outcome}
-          </p>
-
-          <div class="sc-spec-scope-grid">
-            <div class="sc-spec-scope-col scope-in">
-              <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; text-transform:uppercase; color:#10b981; letter-spacing:0.06em;">
-                ✓ In Scope (Autonomous Execution)
-              </div>
-              <ul class="sc-spec-scope-list">
-                <li>${ag.solution}</li>
-                <li>Multi-table evidence synthesis across ${tables.map(t => `<code class="sc-spec-code">${t.table_name}</code>`).join(' ')} using <strong>${ag.solverStack || 'Vertex AI + BigQuery ML'}</strong>.</li>
-                <li>Governed write-back execution via <strong>${ag.apiWriteback || 'Signed MCP / REST / On-Prem ERP Connector'}</strong> with deterministic <code class="sc-spec-code">idempotency_key</code> audit logging.</li>
-              </ul>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-governance')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
             </div>
+          </summary>
 
-            <div class="sc-spec-scope-col scope-out">
-              <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; text-transform:uppercase; color:#f43f5e; letter-spacing:0.06em;">
-                ✕ Out of Scope (Human Authority Retained)
-              </div>
-              <ul class="sc-spec-scope-list">
-                <li>Unapproved capital expenditure, legal contract termination, or policy overrides outside ${personaName} delegation limits.</li>
-                <li>Direct database mutations bypassing <code class="sc-spec-code">enforce_tool_contract()</code> or missing mandatory <code class="sc-spec-code">idempotency_key</code> tokens.</li>
-                <li>Executing external ERP/WMS write-backs when source telemetry exceeds staleness thresholds without human confirmation.</li>
-              </ul>
-            </div>
-          </div>
+          <div class="sc-spec-sec-body">
+            <!-- Sub-Drawer 1A: Role Mandate & In-Scope vs Out-of-Scope -->
+            <details class="sc-spec-sub-drawer" open>
+              <summary>
+                <span>🛡️ 1A · Role Mandate &amp; Autonomous Scope (In-Scope vs. Out-of-Scope)</span>
+                <span class="sc-sub-toggle-hint"></span>
+              </summary>
+              <div class="sc-spec-sub-drawer-body">
+                <p style="font-size:14.5px; color:var(--text-primary); line-height:1.6; margin:0 0 14px;">
+                  <strong>Role Mandate:</strong> Autonomous <strong>${personaName}</strong> agent for the <strong>${cleanName}</strong> workflow in <strong>${subPillar}</strong>. ${ag.solution} ${ag.advantage || ag.outcome}
+                </p>
 
-          <div class="sc-spec-mini-label">Escalation Rules &amp; Pre-Execution Quality Gates</div>
-          <div class="sc-spec-table-wrap">
-            <table class="sc-spec-table">
-              <thead>
-                <tr>
-                  <th style="width:38%;">Trigger Condition</th>
-                  <th style="width:20%;">Gate Action</th>
-                  <th>Governance Rationale</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Financial or volume impact exceeds <strong>${personaName}</strong> autonomous threshold (&gt;20% variance vs. baseline plan)</td>
-                  <td><span class="sc-spec-code action-code">escalate_to_human</span></td>
-                  <td style="color:var(--text-secondary);">High-magnitude supply chain reallocations require human sign-off in Control Tower before ERP commit.</td>
-                </tr>
-                <tr>
-                  <td>Mutation call to <code class="sc-spec-code">${writeToolNames}</code> missing required fields (<code class="sc-spec-code">${reqFieldsList}</code>)</td>
-                  <td><span class="sc-spec-code">request_more_info</span></td>
-                  <td style="color:var(--text-secondary);">Enforced by <code class="sc-spec-code">enforce_tool_contract()</code> in <code class="sc-spec-code">agents/${ag.id}/app/agent.py</code> to prevent partial ERP writes.</td>
-                </tr>
-                <tr>
-                  <td>Mutation call lacks a non-empty <code class="sc-spec-code">idempotency_key</code> or attempts duplicate replay</td>
-                  <td><span class="sc-spec-code">request_confirmation</span></td>
-                  <td style="color:var(--text-secondary);">Guarantees exactly-once execution across Enterprise ERP (MCP / On-Prem DB), IBP, WMS, and TMS connectors.</td>
-                </tr>
-                <tr>
-                  <td>Proposed action contradicts physical constraints or lacks corroborating records across at least 2 tables</td>
-                  <td><span class="sc-spec-code action-code">refuse / reject_mutation</span></td>
-                  <td style="color:var(--text-secondary);">Single-source or unverified assertions cannot trigger production state changes.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px; margin-top:16px;">
-            <div>
-              <div class="sc-spec-mini-label" style="margin-top:4px;">Hard Guardrails</div>
-              <ul class="sc-spec-scope-list" style="margin:0;">
-                <li>Never fabricate SKU quantities, lead times, or financial metrics; cite exact rows from ${tables.slice(0, 2).map(t => `<code class="sc-spec-code">${t.table_name}</code>`).join(' & ')}.</li>
-                <li>Never bypass <code class="sc-spec-code">enforce_tool_contract()</code> before invoking ${actionTools.map(t => `<code class="sc-spec-code action-code">${t.name}</code>`).join(' ') || 'write tools'}.</li>
-                <li>Append every executed mutation to immutable audit trail <code class="sc-spec-code ev-code">artifacts/action-events.jsonl</code>.</li>
-                <li>Route routine operational queries to <strong>Gemini 3.8 Flash</strong> and escalate multi-echelon trade-offs to <strong>Gemini 3.1 Pro / 4 Argon</strong>.</li>
-              </ul>
-            </div>
-
-            <div>
-              <div class="sc-spec-mini-label" style="margin-top:4px;">Evidence Requirements</div>
-              <div style="display:flex; flex-direction:column; gap:8px;">
-                ${evidenceItems.map(ev => `
-                  <div style="padding:10px 14px; border-radius:10px; background:var(--bg-elevated); border:1px solid var(--border-subtle);">
-                    <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:4px;">${ev.claim}</div>
-                    <div>${ev.cites.map(c => `<code class="sc-spec-code ev-code">${c}</code>`).join('')}</div>
+                <div class="sc-spec-scope-grid">
+                  <div class="sc-spec-scope-col scope-in">
+                    <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; text-transform:uppercase; color:#10b981; letter-spacing:0.06em;">
+                      ✓ In Scope (Autonomous Execution)
+                    </div>
+                    <ul class="sc-spec-scope-list">
+                      <li>${ag.solution}</li>
+                      <li>Multi-table evidence synthesis across ${tables.map(t => `<code class="sc-spec-code">${t.table_name}</code>`).join(' ')} using <strong>${ag.solverStack || 'Vertex AI + BigQuery ML'}</strong>.</li>
+                      <li>Governed write-back execution via <strong>${ag.apiWriteback || 'Signed MCP / REST / On-Prem ERP Connector'}</strong> with deterministic <code class="sc-spec-code">idempotency_key</code> audit logging.</li>
+                    </ul>
                   </div>
-                `).join('')}
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- SECTION 2: MULTI-STAGE WORKFLOW -->
-        <div class="sc-spec-section-card" id="spec-workflow">
-          <div class="sc-spec-sec-head">
+                  <div class="sc-spec-scope-col scope-out">
+                    <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; text-transform:uppercase; color:#f43f5e; letter-spacing:0.06em;">
+                      ✕ Out of Scope (Human Authority Retained)
+                    </div>
+                    <ul class="sc-spec-scope-list">
+                      <li>Unapproved capital expenditure, legal contract termination, or policy overrides outside ${personaName} delegation limits.</li>
+                      <li>Direct database mutations bypassing <code class="sc-spec-code">enforce_tool_contract()</code> or missing mandatory <code class="sc-spec-code">idempotency_key</code> tokens.</li>
+                      <li>Executing external ERP/WMS write-backs when source telemetry exceeds staleness thresholds without human confirmation.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- Sub-Drawer 1B: Escalation Rules & Pre-Execution Quality Gates -->
+            <details class="sc-spec-sub-drawer" ${openAttr}>
+              <summary>
+                <span>🚦 1B · Escalation Rules &amp; Pre-Execution Quality Gates (4 Governed Triggers)</span>
+                <span class="sc-sub-toggle-hint"></span>
+              </summary>
+              <div class="sc-spec-sub-drawer-body">
+                <div class="sc-spec-table-wrap">
+                  <table class="sc-spec-table">
+                    <thead>
+                      <tr>
+                        <th style="width:38%;">Trigger Condition</th>
+                        <th style="width:20%;">Gate Action</th>
+                        <th>Governance Rationale</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Financial or volume impact exceeds <strong>${personaName}</strong> autonomous threshold (&gt;20% variance vs. baseline plan)</td>
+                        <td><span class="sc-spec-code action-code">escalate_to_human</span></td>
+                        <td style="color:var(--text-secondary);">High-magnitude supply chain reallocations require human sign-off in Control Tower before ERP commit.</td>
+                      </tr>
+                      <tr>
+                        <td>Mutation call to <code class="sc-spec-code">${writeToolNames}</code> missing required fields (<code class="sc-spec-code">${reqFieldsList}</code>)</td>
+                        <td><span class="sc-spec-code">request_more_info</span></td>
+                        <td style="color:var(--text-secondary);">Enforced by <code class="sc-spec-code">enforce_tool_contract()</code> in <code class="sc-spec-code">agents/${ag.id}/app/agent.py</code> to prevent partial ERP writes.</td>
+                      </tr>
+                      <tr>
+                        <td>Mutation call lacks a non-empty <code class="sc-spec-code">idempotency_key</code> or attempts duplicate replay</td>
+                        <td><span class="sc-spec-code">request_confirmation</span></td>
+                        <td style="color:var(--text-secondary);">Guarantees exactly-once execution across Enterprise ERP (MCP / On-Prem DB), IBP, WMS, and TMS connectors.</td>
+                      </tr>
+                      <tr>
+                        <td>Proposed action contradicts physical constraints or lacks corroborating records across at least 2 tables</td>
+                        <td><span class="sc-spec-code action-code">refuse / reject_mutation</span></td>
+                        <td style="color:var(--text-secondary);">Single-source or unverified assertions cannot trigger production state changes.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+
+            <!-- Sub-Drawer 1C: Hard Guardrails & Evidence Requirements -->
+            <details class="sc-spec-sub-drawer" ${openAttr}>
+              <summary>
+                <span>🔒 1C · Hard Guardrails &amp; Source-Table Evidence Requirements (${evidenceItems.length} Rules)</span>
+                <span class="sc-sub-toggle-hint"></span>
+              </summary>
+              <div class="sc-spec-sub-drawer-body">
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px;">
+                  <div>
+                    <div class="sc-spec-mini-label" style="margin-top:0;">Hard Guardrails</div>
+                    <ul class="sc-spec-scope-list" style="margin:0;">
+                      <li>Never fabricate SKU quantities, lead times, or financial metrics; cite exact rows from ${tables.slice(0, 2).map(t => `<code class="sc-spec-code">${t.table_name}</code>`).join(' & ')}.</li>
+                      <li>Never bypass <code class="sc-spec-code">enforce_tool_contract()</code> before invoking ${actionTools.map(t => `<code class="sc-spec-code action-code">${t.name}</code>`).join(' ') || 'write tools'}.</li>
+                      <li>Append every executed mutation to immutable audit trail <code class="sc-spec-code ev-code">artifacts/action-events.jsonl</code>.</li>
+                      <li>Route routine operational queries to <strong>Gemini 3.8 Flash</strong> and escalate multi-echelon trade-offs to <strong>Gemini 3.1 Pro / 4 Argon</strong>.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div class="sc-spec-mini-label" style="margin-top:0;">Evidence Requirements</div>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                      ${evidenceItems.map(ev => `
+                        <div style="padding:10px 14px; border-radius:10px; background:var(--bg-card); border:1px solid var(--border-subtle);">
+                          <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:4px;">${ev.claim}</div>
+                          <div>${ev.cites.map(c => `<code class="sc-spec-code ev-code">${c}</code>`).join('')}</div>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </details>
+
+        <!-- SECTION 2: MULTI-STAGE WORKFLOW (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-workflow" ${openAttr}>
+          <summary class="sc-spec-sec-head">
             <div>
               <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
                 02 · Execution Sequence
@@ -52926,37 +53178,47 @@
                 Workflow <span class="sc-spec-count-badge">Sequential &amp; A2A Branching · ${subs.length} Stages</span>
               </h2>
             </div>
-            <span style="font-size:12.5px; color:var(--text-secondary); font-weight:600;">
-              Solver Stack: ${ag.solverStack || 'Vertex AI + BigQuery ML'}
-            </span>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-workflow')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
+            </div>
+          </summary>
+
+          <div class="sc-spec-sec-body">
+            <div style="font-size:12.5px; color:var(--text-secondary); font-weight:600; margin-bottom:12px;">
+              Solver &amp; Reasoning Stack: <strong>${ag.solverStack || 'Vertex AI + BigQuery ML'}</strong>
+            </div>
+            <ol class="sc-spec-flow-list">
+              ${subs.map((sub, idx) => `
+                <li class="sc-spec-flow-step">
+                  <div class="sc-spec-step-num" style="background:${dept.color};">${idx + 1}</div>
+                  <div style="flex:1;">
+                    <div style="font-family:var(--font-display); font-size:16px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">
+                      ${sub.name}
+                    </div>
+                    <p style="font-size:13.5px; color:var(--text-secondary); margin:0 0 8px; line-height:1.5;">
+                      ${sub.role}. Grounds state across ${tables[idx] ? `<code class="sc-spec-code">${tables[idx].table_name}</code>` : 'connected digital twin tables'} and validates execution constraints.
+                    </p>
+                    <div>
+                      ${(stageTools[idx] || []).map(tName => {
+                        const isAct = String(tName).startsWith('action_');
+                        return `<a href="#spec-tool-${tName}" class="sc-spec-code ${isAct ? 'action-code' : ''}" onclick="return openAndScrollToSpecSection('spec-tools', 'spec-tool-${tName}');">${tName}</a>`;
+                      }).join('')}
+                    </div>
+                  </div>
+                </li>
+              `).join('')}
+            </ol>
           </div>
+        </details>
 
-          <ol class="sc-spec-flow-list">
-            ${subs.map((sub, idx) => `
-              <li class="sc-spec-flow-step">
-                <div class="sc-spec-step-num" style="background:${dept.color};">${idx + 1}</div>
-                <div style="flex:1;">
-                  <div style="font-family:var(--font-display); font-size:16px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">
-                    ${sub.name}
-                  </div>
-                  <p style="font-size:13.5px; color:var(--text-secondary); margin:0 0 8px; line-height:1.5;">
-                    ${sub.role}. Grounds state across ${tables[idx] ? `<code class="sc-spec-code">${tables[idx].table_name}</code>` : 'connected digital twin tables'} and validates execution constraints.
-                  </p>
-                  <div>
-                    ${(stageTools[idx] || []).map(tName => {
-                      const isAct = String(tName).startsWith('action_');
-                      return `<a href="#spec-tool-${tName}" class="sc-spec-code ${isAct ? 'action-code' : ''}" onclick="document.getElementById('spec-tool-${tName}')?.scrollIntoView({behavior:'smooth'}); return false;">${tName}</a>`;
-                    }).join('')}
-                  </div>
-                </div>
-              </li>
-            `).join('')}
-          </ol>
-        </div>
-
-        <!-- SECTION 3: AGENT TOOLS -->
-        <div class="sc-spec-section-card" id="spec-tools">
-          <div class="sc-spec-sec-head">
+        <!-- SECTION 3: AGENT TOOLS (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-tools" ${openAttr}>
+          <summary class="sc-spec-sec-head">
             <div>
               <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
                 03 · Bound ADK Function Contracts
@@ -52965,47 +53227,57 @@
                 Agent Tools <span class="sc-spec-count-badge">${rawTools.length}</span>
               </h2>
             </div>
-            <span class="sc-spec-code">agents/${ag.id}/app/tools.py</span>
-          </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="sc-spec-code">agents/${ag.id}/app/tools.py</span>
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-tools')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
+            </div>
+          </summary>
 
-          <div class="sc-spec-tools-grid">
-            ${rawTools.map(t => `
-              <div class="sc-spec-tool-card" id="spec-tool-${t.name}">
-                <div>
-                  <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; margin-bottom:8px;">
-                    <code class="sc-spec-code ${t.kind === 'action' ? 'action-code' : ''}" style="font-size:13px; font-weight:800;">${t.name}</code>
-                    <div style="display:flex; align-items:center; gap:6px;">
-                      <span class="sc-spec-count-badge" style="color:${t.kind === 'action' ? '#fb7185' : '#38bdf8'};">${t.kind}</span>
-                      ${t.table ? `<span class="sc-spec-count-badge">${t.table}</span>` : ''}
+          <div class="sc-spec-sec-body">
+            <div class="sc-spec-tools-grid">
+              ${rawTools.map(t => `
+                <div class="sc-spec-tool-card" id="spec-tool-${t.name}">
+                  <div>
+                    <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; margin-bottom:8px;">
+                      <code class="sc-spec-code ${t.kind === 'action' ? 'action-code' : ''}" style="font-size:13px; font-weight:800;">${t.name}</code>
+                      <div style="display:flex; align-items:center; gap:6px;">
+                        <span class="sc-spec-count-badge" style="color:${t.kind === 'action' ? '#fb7185' : '#38bdf8'};">${t.kind}</span>
+                        ${t.table ? `<span class="sc-spec-count-badge">${t.table}</span>` : ''}
+                      </div>
+                    </div>
+                    <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px; line-height:1.5;">
+                      ${t.description}
+                    </p>
+                  </div>
+
+                  <div style="border-top:1px solid var(--border-subtle); padding-top:8px;">
+                    <div class="sc-spec-io-row">
+                      <span class="sc-spec-io-label">in</span>
+                      ${(t.inputs || []).map(inp => `<code class="sc-spec-code">${inp}</code>`).join('')}
+                    </div>
+                    <div class="sc-spec-io-row">
+                      <span class="sc-spec-io-label">out</span>
+                      ${(t.outputs || []).map(out => `<code class="sc-spec-code">${out}</code>`).join('')}
+                    </div>
+                    <div class="sc-spec-io-row">
+                      <span class="sc-spec-io-label">evidence</span>
+                      ${(t.evidence || []).map(ev => `<code class="sc-spec-code ev-code">${ev}</code>`).join('')}
                     </div>
                   </div>
-                  <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px; line-height:1.5;">
-                    ${t.description}
-                  </p>
                 </div>
-
-                <div style="border-top:1px solid var(--border-subtle); padding-top:8px;">
-                  <div class="sc-spec-io-row">
-                    <span class="sc-spec-io-label">in</span>
-                    ${(t.inputs || []).map(inp => `<code class="sc-spec-code">${inp}</code>`).join('')}
-                  </div>
-                  <div class="sc-spec-io-row">
-                    <span class="sc-spec-io-label">out</span>
-                    ${(t.outputs || []).map(out => `<code class="sc-spec-code">${out}</code>`).join('')}
-                  </div>
-                  <div class="sc-spec-io-row">
-                    <span class="sc-spec-io-label">evidence</span>
-                    ${(t.evidence || []).map(ev => `<code class="sc-spec-code ev-code">${ev}</code>`).join('')}
-                  </div>
-                </div>
-              </div>
-            `).join('')}
+              `).join('')}
+            </div>
           </div>
-        </div>
+        </details>
 
-        <!-- SECTION 4: SOURCE SYSTEMS -->
-        <div class="sc-spec-section-card" id="spec-systems">
-          <div class="sc-spec-sec-head">
+        <!-- SECTION 4: SOURCE SYSTEMS (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-systems" ${openAttr}>
+          <summary class="sc-spec-sec-head">
             <div>
               <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
                 04 · Enterprise Integration Topology
@@ -53014,44 +53286,54 @@
                 Source Systems <span class="sc-spec-count-badge">${sysList.length}</span>
               </h2>
             </div>
-            <span style="font-size:12.5px; color:var(--text-secondary); font-weight:600;">
-              Write-Back Target: ${ag.apiWriteback || 'Signed MCP / REST / On-Prem ERP API'}
-            </span>
-          </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-systems')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
+            </div>
+          </summary>
 
-          <div class="sc-spec-sys-grid">
-            ${sysList.map(sys => `
-              <div class="sc-spec-sys-card">
-                <div>
-                  <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px;">
-                    <span style="font-family:var(--font-display); font-size:16px; font-weight:800; color:var(--text-primary);">${sys.name}</span>
-                    <span class="sc-spec-count-badge" style="color:${sys.mode.includes('write') ? '#34d399' : '#38bdf8'};">${sys.mode}</span>
-                  </div>
-                  <div style="font-family:var(--font-mono); font-size:11.5px; color:var(--text-secondary); margin-bottom:10px;">
-                    Protocol: ${sys.protocol} · ${sys.category}
-                  </div>
-                </div>
-
-                <div style="border-top:1px solid var(--border-subtle); padding-top:8px;">
-                  ${sys.ownedTables && sys.ownedTables.length ? `
-                    <div class="sc-spec-io-row">
-                      <span class="sc-spec-io-label">owns</span>
-                      ${sys.ownedTables.map(tbl => `<a href="#spec-entity-${tbl}" class="sc-spec-code ev-code" onclick="const el=document.getElementById('spec-entity-${tbl}'); if(el){el.open=true; el.scrollIntoView({behavior:'smooth'});} return false;">${tbl}</a>`).join('')}
+          <div class="sc-spec-sec-body">
+            <div style="font-size:12.5px; color:var(--text-secondary); font-weight:600; margin-bottom:12px;">
+              Write-Back Target: <strong>${ag.apiWriteback || 'Signed MCP / REST / On-Prem ERP API'}</strong>
+            </div>
+            <div class="sc-spec-sys-grid">
+              ${sysList.map(sys => `
+                <div class="sc-spec-sys-card">
+                  <div>
+                    <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px;">
+                      <span style="font-family:var(--font-display); font-size:16px; font-weight:800; color:var(--text-primary);">${sys.name}</span>
+                      <span class="sc-spec-count-badge" style="color:${sys.mode.includes('write') ? '#34d399' : '#38bdf8'};">${sys.mode}</span>
                     </div>
-                  ` : ''}
-                  <div class="sc-spec-io-row">
-                    <span class="sc-spec-io-label">tools</span>
-                    ${(sys.boundTools || []).map(tName => `<a href="#spec-tool-${tName}" class="sc-spec-code ${String(tName).startsWith('action_') ? 'action-code' : ''}" onclick="document.getElementById('spec-tool-${tName}')?.scrollIntoView({behavior:'smooth'}); return false;">${tName}</a>`).join('')}
+                    <div style="font-family:var(--font-mono); font-size:11.5px; color:var(--text-secondary); margin-bottom:10px;">
+                      Protocol: ${sys.protocol} · ${sys.category}
+                    </div>
+                  </div>
+
+                  <div style="border-top:1px solid var(--border-subtle); padding-top:8px;">
+                    ${sys.ownedTables && sys.ownedTables.length ? `
+                      <div class="sc-spec-io-row">
+                        <span class="sc-spec-io-label">owns</span>
+                        ${sys.ownedTables.map(tbl => `<a href="#spec-entity-${tbl}" class="sc-spec-code ev-code" onclick="return openAndScrollToSpecSection('spec-data-model', 'spec-entity-${tbl}');">${tbl}</a>`).join('')}
+                      </div>
+                    ` : ''}
+                    <div class="sc-spec-io-row">
+                      <span class="sc-spec-io-label">tools</span>
+                      ${(sys.boundTools || []).map(tName => `<a href="#spec-tool-${tName}" class="sc-spec-code ${String(tName).startsWith('action_') ? 'action-code' : ''}" onclick="return openAndScrollToSpecSection('spec-tools', 'spec-tool-${tName}');">${tName}</a>`).join('')}
+                    </div>
                   </div>
                 </div>
-              </div>
-            `).join('')}
+              `).join('')}
+            </div>
           </div>
-        </div>
+        </details>
 
-        <!-- SECTION 5: DATA MODEL & SCHEMAS -->
-        <div class="sc-spec-section-card" id="spec-data-model">
-          <div class="sc-spec-sec-head">
+        <!-- SECTION 5: DATA MODEL & SCHEMAS (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-data-model" ${openAttr}>
+          <summary class="sc-spec-sec-head">
             <div>
               <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
                 05 · Canonical Digital Twin Schema &amp; Live Fixtures
@@ -53060,94 +53342,104 @@
                 Data Model <span class="sc-spec-count-badge">${tables.length} entities · ${totalFields} fields</span>
               </h2>
             </div>
-            <span class="sc-spec-code">Pluggable Data Layer: BigQuery · On-Prem SQL · 3rd-Party MCPs</span>
-          </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="sc-spec-code">Pluggable Data Layer: BigQuery · On-Prem SQL · 3rd-Party MCPs</span>
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-data-model')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
+            </div>
+          </summary>
 
-          <div class="sc-spec-entities-list">
-            ${tables.map((t, idx) => {
-              const cols = t.columns || [];
-              const rows = t.rows || [];
-              return `
-                <details class="sc-spec-entity" id="spec-entity-${t.table_name}" ${idx === 0 ? 'open' : ''}>
-                  <summary>
-                    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-                      <code class="sc-spec-code ev-code" style="font-size:13.5px; font-weight:800;">${t.table_name}</code>
-                      <span style="font-size:12.5px; color:var(--text-secondary); font-weight:600;">
-                        ${cols.length} cols · ${t.row_count || rows.length} fixture rows · BigQuery / On-Prem SQL / MCP Data Layer
-                      </span>
+          <div class="sc-spec-sec-body">
+            <div class="sc-spec-entities-list">
+              ${tables.map((t, idx) => {
+                const cols = t.columns || [];
+                const rows = t.rows || [];
+                return `
+                  <details class="sc-spec-entity" id="spec-entity-${t.table_name}" ${idx === 0 ? 'open' : ''}>
+                    <summary>
+                      <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                        <code class="sc-spec-code ev-code" style="font-size:13.5px; font-weight:800;">${t.table_name}</code>
+                        <span style="font-size:12.5px; color:var(--text-secondary); font-weight:600;">
+                          ${cols.length} cols · ${t.row_count || rows.length} fixture rows · BigQuery / On-Prem SQL / MCP Data Layer
+                        </span>
+                      </div>
+                      <span style="font-size:12px; color:${dept.color}; font-weight:700;">▾ Click to Inspect Schema &amp; Sample Values</span>
+                    </summary>
+                    <div style="padding:14px 18px;">
+                      <div class="sc-spec-table-wrap">
+                        <table class="sc-spec-table">
+                          <thead>
+                            <tr>
+                              <th style="width:28%;">Column</th>
+                              <th style="width:18%;">Type</th>
+                              <th style="width:16%;">Constraints</th>
+                              <th>Verified Fixture Sample Values</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            ${cols.map(col => {
+                              const info = inferColumnTypeAndConstraint(col, rows);
+                              return `
+                                <tr>
+                                  <td>
+                                    <code class="sc-spec-code" style="margin:0;">${col}</code>
+                                    ${info.isPk ? `<span class="sc-spec-count-badge" style="margin-left:6px; color:#f59e0b; border-color:#f59e0b55;">PK</span>` : ''}
+                                  </td>
+                                  <td style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">${info.colType}</td>
+                                  <td><span class="sc-spec-count-badge">required</span></td>
+                                  <td style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">${info.sampleStr || '—'}</td>
+                                </tr>
+                              `;
+                            }).join('')}
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
-                    <span style="font-size:12px; color:${dept.color}; font-weight:700;">▾ Click to Inspect Schema &amp; Sample Values</span>
-                  </summary>
-                  <div style="padding:14px 18px;">
-                    <div class="sc-spec-table-wrap">
-                      <table class="sc-spec-table">
-                        <thead>
-                          <tr>
-                            <th style="width:28%;">Column</th>
-                            <th style="width:18%;">Type</th>
-                            <th style="width:16%;">Constraints</th>
-                            <th>Verified Fixture Sample Values</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          ${cols.map(col => {
-                            const info = inferColumnTypeAndConstraint(col, rows);
-                            return `
-                              <tr>
-                                <td>
-                                  <code class="sc-spec-code" style="margin:0;">${col}</code>
-                                  ${info.isPk ? `<span class="sc-spec-count-badge" style="margin-left:6px; color:#f59e0b; border-color:#f59e0b55;">PK</span>` : ''}
-                                </td>
-                                <td style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">${info.colType}</td>
-                                <td><span class="sc-spec-count-badge">required</span></td>
-                                <td style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">${info.sampleStr || '—'}</td>
-                              </tr>
-                            `;
-                          }).join('')}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </details>
-              `;
-            }).join('')}
-          </div>
-
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px; margin-top:16px;">
-            <div>
-              <div class="sc-spec-mini-label">Entity Relationships</div>
-              <ul class="sc-spec-scope-list" style="margin:0;">
-                ${relationships.map(rel => `
-                  <li>
-                    <code class="sc-spec-code">${rel.left}</code>
-                    <span style="color:${dept.color}; font-weight:800;">&rarr;</span>
-                    <code class="sc-spec-code">${rel.right}</code>
-                    <span style="font-size:12px; color:var(--text-secondary);">(${rel.relType})</span>
-                  </li>
-                `).join('')}
-              </ul>
+                  </details>
+                `;
+              }).join('')}
             </div>
 
-            <div>
-              <div class="sc-spec-mini-label">Seeded Operational Anomalies (What the Agent Must Catch)</div>
-              <div style="padding:14px 16px; border-radius:12px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-left:4px solid #f59e0b;">
-                <p style="font-size:13px; color:var(--text-primary); margin:0 0 8px; line-height:1.5;">
-                  <strong>Seeded Fault:</strong> ${ag.problem}
-                </p>
-                <div style="margin-bottom:8px;">
-                  ${tables.slice(0, 2).map(t => `<code class="sc-spec-code ev-code">${t.table_name}</code>`).join('')}
-                </div>
-                <div style="font-size:12.5px; color:var(--text-secondary);">
-                  <strong>Expected Remediation:</strong> Detect anomaly across connected tables, validate constraints via ${ag.solverStack || 'Vertex AI'}, and execute <code class="sc-spec-code action-code">${writeToolNames}</code>.
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px; margin-top:16px;">
+              <div>
+                <div class="sc-spec-mini-label">Entity Relationships</div>
+                <ul class="sc-spec-scope-list" style="margin:0;">
+                  ${relationships.map(rel => `
+                    <li>
+                      <code class="sc-spec-code">${rel.left}</code>
+                      <span style="color:${dept.color}; font-weight:800;">&rarr;</span>
+                      <code class="sc-spec-code">${rel.right}</code>
+                      <span style="font-size:12px; color:var(--text-secondary);">(${rel.relType})</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+
+              <div>
+                <div class="sc-spec-mini-label">Seeded Operational Anomalies (What the Agent Must Catch)</div>
+                <div style="padding:14px 16px; border-radius:12px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-left:4px solid #f59e0b;">
+                  <p style="font-size:13px; color:var(--text-primary); margin:0 0 8px; line-height:1.5;">
+                    <strong>Seeded Fault:</strong> ${ag.problem}
+                  </p>
+                  <div style="margin-bottom:8px;">
+                    ${tables.slice(0, 2).map(t => `<code class="sc-spec-code ev-code">${t.table_name}</code>`).join('')}
+                  </div>
+                  <div style="font-size:12.5px; color:var(--text-secondary);">
+                    <strong>Expected Remediation:</strong> Detect anomaly across connected tables, validate constraints via ${ag.solverStack || 'Vertex AI'}, and execute <code class="sc-spec-code action-code">${writeToolNames}</code>.
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </details>
 
-        <!-- SECTION 6: EVALS & PROOF -->
-        <div class="sc-spec-section-card" id="spec-evals">
-          <div class="sc-spec-sec-head">
+        <!-- SECTION 6: EVALS & PROOF (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-evals" ${openAttr}>
+          <summary class="sc-spec-sec-head">
             <div>
               <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
                 06 · Behavioral Proof &amp; Golden Evaluations
@@ -53156,53 +53448,63 @@
                 Evals &amp; Proof <span class="sc-spec-count-badge">${adk.smokeTestsPassed || 7}/7 Smoke Tests Passing</span>
               </h2>
             </div>
-            <span class="sc-spec-code">agents/${ag.id}/evals/golden_scenarios.json</span>
-          </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="sc-spec-code">agents/${ag.id}/evals/golden_scenarios.json</span>
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-evals')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
+            </div>
+          </summary>
 
-          <div style="padding:18px 20px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-left:4px solid ${dept.color}; margin-bottom:16px;">
-            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
-              <span style="font-family:var(--font-mono); font-size:12px; font-weight:800; color:${dept.color};">
-                ${evalObj.scenario_id} · ${evalObj.name}
-              </span>
-              <span class="sc-spec-count-badge">SLA Target: &le;${evalObj.sla_seconds || 15}s</span>
-            </div>
-            <p style="font-size:15px; font-weight:700; color:var(--text-primary); margin:0 0 12px; line-height:1.5;">
-              “${evalObj.query}”
-            </p>
-            <div class="sc-spec-io-row">
-              <span class="sc-spec-io-label">expects tools</span>
-              ${rawTools.map(t => `<code class="sc-spec-code ${t.kind === 'action' ? 'action-code' : ''}">${t.name}</code>`).join('')}
-            </div>
-            <div class="sc-spec-io-row">
-              <span class="sc-spec-io-label">cites entities</span>
-              ${tables.map(t => `<code class="sc-spec-code ev-code">${t.table_name}</code>`).join('')}
-            </div>
-            <div class="sc-spec-io-row">
-              <span class="sc-spec-io-label">eval models</span>
-              <code class="sc-spec-code">gemini-3.8-flash</code>
-              <code class="sc-spec-code">gemini-3.1-pro / gemini-4-argon (subject to availability)</code>
-            </div>
-          </div>
-
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
-            <div>
-              <div class="sc-spec-mini-label" style="margin-top:0;">Expected Proof Obligations</div>
-              <ul class="sc-spec-scope-list" style="margin:0;">
-                ${(evalObj.expected_proof_obligations || []).map(ob => `<li>${ob}</li>`).join('')}
-              </ul>
-            </div>
-
-            <div>
-              <div class="sc-spec-mini-label" style="margin-top:0;">Governing Documents &amp; Industry Standards</div>
-              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;">
-                ${standards.map(st => `<span class="sc-spec-code ev-code">${st}</span>`).join('')}
+          <div class="sc-spec-sec-body">
+            <div style="padding:18px 20px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-left:4px solid ${dept.color}; margin-bottom:16px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+                <span style="font-family:var(--font-mono); font-size:12px; font-weight:800; color:${dept.color};">
+                  ${evalObj.scenario_id} · ${evalObj.name}
+                </span>
+                <span class="sc-spec-count-badge">SLA Target: &le;${evalObj.sla_seconds || 15}s</span>
               </div>
-              <div style="font-size:12.5px; color:var(--text-secondary); line-height:1.55; padding:10px 12px; border-radius:10px; background:var(--bg-elevated); border:1px solid var(--border-subtle);">
-                <strong>Spec Source:</strong> <code class="sc-spec-code">agents/${ag.id}/app/agent.py</code> · <code class="sc-spec-code">agents/${ag.id}/tests/test_smoke.py</code> · Verified 7/7 deterministic contract &amp; A2UI surface checks passing.
+              <p style="font-size:15px; font-weight:700; color:var(--text-primary); margin:0 0 12px; line-height:1.5;">
+                “${evalObj.query}”
+              </p>
+              <div class="sc-spec-io-row">
+                <span class="sc-spec-io-label">expects tools</span>
+                ${rawTools.map(t => `<code class="sc-spec-code ${t.kind === 'action' ? 'action-code' : ''}">${t.name}</code>`).join('')}
+              </div>
+              <div class="sc-spec-io-row">
+                <span class="sc-spec-io-label">cites entities</span>
+                ${tables.map(t => `<code class="sc-spec-code ev-code">${t.table_name}</code>`).join('')}
+              </div>
+              <div class="sc-spec-io-row">
+                <span class="sc-spec-io-label">eval models</span>
+                <code class="sc-spec-code">gemini-3.8-flash</code>
+                <code class="sc-spec-code">gemini-3.1-pro / gemini-4-argon (subject to availability)</code>
               </div>
             </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+              <div>
+                <div class="sc-spec-mini-label" style="margin-top:0;">Expected Proof Obligations</div>
+                <ul class="sc-spec-scope-list" style="margin:0;">
+                  ${(evalObj.expected_proof_obligations || []).map(ob => `<li>${ob}</li>`).join('')}
+                </ul>
+              </div>
+
+              <div>
+                <div class="sc-spec-mini-label" style="margin-top:0;">Governing Documents &amp; Industry Standards</div>
+                <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;">
+                  ${standards.map(st => `<span class="sc-spec-code ev-code">${st}</span>`).join('')}
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary); line-height:1.55; padding:10px 12px; border-radius:10px; background:var(--bg-elevated); border:1px solid var(--border-subtle);">
+                  <strong>Spec Source:</strong> <code class="sc-spec-code">agents/${ag.id}/app/agent.py</code> · <code class="sc-spec-code">agents/${ag.id}/tests/test_smoke.py</code> · Verified 7/7 deterministic contract &amp; A2UI surface checks passing.
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </details>
       `;
     }
 
@@ -53253,7 +53555,7 @@
             </div>
           </div>
 
-          <!-- 1. What This Agent Does + Low-Code / Hybrid / High-Code Badge -->
+          <!-- 1. What This Agent Does + At-a-Glance Strip -->
           <div class="agent-hero-banner" style="padding: 30px 34px; margin-bottom: 24px;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
@@ -53263,9 +53565,14 @@
                   <div style="font-size:14.5px; color:var(--text-secondary); margin-top:4px; font-weight:600;">${ag.subPillarName || dept.name}</div>
                 </div>
               </div>
-              <button type="button" class="switch-pill" onclick="togglePersonaJourneyStep('agentMoreDetailsDrawer')">
-                ▾ Click for Problem &amp; Outcome Details
-              </button>
+              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                <button type="button" class="switch-pill" onclick="togglePersonaJourneyStep('agentMoreDetailsDrawer')">
+                  ▾ Click for Problem &amp; Outcome Details
+                </button>
+                <button type="button" class="switch-pill" style="background:${dept.color}; border-color:${dept.color}; color:#ffffff; font-weight:700;" onclick="openAgentBlueprintPage('${ag.id}', true, event, 'spec-governance')">
+                  📄 Playbook, Governance &amp; Full Spec Page &rarr;
+                </button>
+              </div>
             </div>
             <div id="agentMoreDetailsDrawer" class="journey-accordion-item" style="margin-top:14px; margin-bottom:0;">
               <div class="journey-accordion-body" style="padding:16px 18px;">
@@ -53281,7 +53588,7 @@
                 </div>
               </div>
             </div>
-            ${renderAgentAtAGlanceStrip(ag, dept)}
+            ${renderAgentAtAGlanceStrip(ag, dept, false)}
           </div>
 
           <!-- 2. Branching Multi-Stage Workflow Architecture Diagram -->
@@ -53290,10 +53597,7 @@
           <!-- 3. Simple Basic Cost Details Card (Same Website Design & Theme) -->
           ${renderAgentCostAndRoiPanel(ag, dept)}
 
-          <!-- 3B. Full Agent Specification & Governance Sheet -->
-          ${renderAgentFullSpecSheet(ag, dept)}
-
-          <!-- 4. Dedicated Box for a Video -->
+          <!-- 4. Dedicated Box for a Video (Placed above collapsed spec drawers for a clean executive view) -->
           <div class="video-stage-box">
             <div class="video-toolbar" style="border-top:none; border-bottom:1px solid var(--border-subtle);">
               <span style="font-weight:700; color:var(--text-primary);">🎬 Agent Demo Video Box — ${ag.name}</span>
@@ -53341,6 +53645,9 @@
               }
             </div>
           </div>
+
+          <!-- 5. Collapsible Enterprise Agent Contract, Playbook & Technical Specification Sheet (Collapsed by Default) -->
+          ${renderAgentFullSpecSheet(ag, dept, false)}
         </div>
       `;
 
@@ -53361,16 +53668,18 @@
     }
 
     /* =========================================================================
-       DEDICATED HIGH-CODE ARCHITECTURE & SUB-AGENT BLUEPRINT PAGE (#blueprint/<id>)
+       DEDICATED ENTERPRISE AGENT CONTRACT, PLAYBOOK & TECHNICAL BLUEPRINT PAGE (#blueprint/<id>)
        ========================================================================= */
-    function openAgentBlueprintPage(agentId, pushHash = true, ev = null) {
+    function openAgentBlueprintPage(agentId, pushHash = true, ev = null, focusSectionId = null) {
       const ag = AGENTS[agentId];
       if (!ag) return;
       const useSlide = isPillOrNavSwitch(ev);
       const sRect = useSlide ? null : getClickedCardRect(ev);
       const transClass = getPageTransitionClass(ev, sRect);
 
+      lastAgentId = agentId;
       const dept = getDeptMeta(ag.deptId);
+      const siblingAgents = Object.values(AGENTS).filter(a => a.deptId === dept.id && (!ag.subPillarId || a.subPillarId === ag.subPillarId));
 
       if (pushHash) {
         history.pushState({ page: 'blueprint', id: agentId }, '', `#blueprint/${agentId}`);
@@ -53383,19 +53692,44 @@
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
               <button type="button" class="back-btn" onclick="openAgentPage('${ag.id}', true, event)">
                 <span>&larr;</span>
-                <span>Back to ${ag.name}</span>
+                <span>Back to ${cleanAgentName(ag.name)}</span>
               </button>
               <button type="button" class="back-btn" onclick="goToOrgChart()">
                 <span>6 SCOR Pillars</span>
               </button>
             </div>
+
+            <div class="persona-switcher-pills">
+              ${siblingAgents.map(other => `
+                <button type="button"
+                        class="switch-pill ${other.id === ag.id ? 'active' : ''}"
+                        style="${other.id === ag.id ? `background:${dept.color}; border-color:${dept.color}; color:#ffffff; font-weight:700;` : ''}"
+                        onclick="openAgentBlueprintPage('${other.id}', true, event)">
+                  📋 ${cleanAgentName(other.name)}
+                </button>
+              `).join('')}
+            </div>
           </div>
 
-          ${renderSimpleAgentArchitectureDiagram(ag, dept)}
+          <div class="agent-hero-banner" style="padding: 26px 32px; margin-bottom: 20px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+              <div style="display:flex; align-items:center; gap:14px;">
+                <div class="ai-bot-square" style="width:46px; height:46px; font-size:20px;">🛡️</div>
+                <div>
+                  <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:2px;">
+                    Dedicated Enterprise Agent Contract · Playbook &amp; Technical Specification
+                  </div>
+                  <h1 class="agent-title" style="font-size: clamp(22px, 2.4vw, 30px); margin: 0;">${cleanAgentName(ag.name)}</h1>
+                </div>
+              </div>
+              <button type="button" class="switch-pill" onclick="openAgentPage('${ag.id}', true, event)">
+                &larr; Return to Clean Agent Overview
+              </button>
+            </div>
+            ${renderAgentAtAGlanceStrip(ag, dept, true)}
+          </div>
 
-          ${renderAgentCostAndRoiPanel(ag, dept)}
-
-          ${renderAgentFullSpecSheet(ag, dept)}
+          ${renderAgentFullSpecSheet(ag, dept, true)}
         </div>
       `;
 
@@ -53404,6 +53738,11 @@
       const wrap = document.getElementById('blueprintGenieWrap');
       if (sRect && wrap) {
         animateGenieOutOfBox(sRect, wrap, dept.color);
+      }
+      if (focusSectionId) {
+        openAndScrollToSpecSection(focusSectionId);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
