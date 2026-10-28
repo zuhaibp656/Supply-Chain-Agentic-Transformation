@@ -5953,202 +5953,6 @@
       padding: 16px 18px;
     }
 
-
-    /* =========================================================================
-       3D FLIPPABLE CARDS (.sc-flip-card) — BIG HEADINGS ON FRONT, CLEAN CONCISE BACK
-       ========================================================================= */
-    .sc-flip-card {
-      perspective: 1100px;
-      cursor: pointer;
-      user-select: none;
-      min-height: 178px;
-      position: relative;
-    }
-    .sc-flip-card.sc-flip-tall {
-      min-height: 204px;
-    }
-    .sc-flip-card.sc-flip-compact {
-      min-height: 148px;
-    }
-    .sc-flip-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      min-height: inherit;
-      transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
-      transform-style: preserve-3d;
-    }
-    .sc-flip-card.is-flipped .sc-flip-inner {
-      transform: rotateY(180deg);
-    }
-    .sc-flip-front,
-    .sc-flip-back {
-      position: absolute;
-      inset: 0;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      border-radius: 16px;
-      padding: 18px 20px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-      border-top: 4px solid var(--flip-accent, #38bdf8);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-      overflow: hidden;
-    }
-    html[data-theme="light"] .sc-flip-front,
-    html[data-theme="light"] .sc-flip-back {
-      background: #ffffff;
-      border-color: rgba(15, 23, 42, 0.12);
-      border-top: 4px solid var(--flip-accent, #2563eb);
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
-    }
-    .sc-flip-card:hover .sc-flip-front,
-    .sc-flip-card:hover .sc-flip-back {
-      border-color: var(--flip-accent, #38bdf8);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
-    }
-    .sc-flip-back {
-      transform: rotateY(180deg);
-      background: var(--bg-card);
-    }
-    html[data-theme="light"] .sc-flip-back {
-      background: #f8fafc;
-    }
-    .sc-flip-top-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-    .sc-flip-kicker {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--flip-accent, #38bdf8);
-    }
-    .sc-flip-hint {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.12);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-subtle);
-      white-space: nowrap;
-    }
-    .sc-flip-big-heading {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--text-primary);
-      line-height: 1.22;
-      margin: 8px 0 6px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .sc-flip-icon-box {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: rgba(148, 163, 184, 0.1);
-      border: 1px solid var(--border-subtle);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-    .sc-flip-back-text {
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.48;
-      margin: 6px 0;
-    }
-    .sc-flip-bottom-pills {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .sc-flip-pill {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 9px;
-      border-radius: 999px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-secondary);
-    }
-
-    /* Single Master Button + 6-Tab Spec Switcher */
-    .sc-single-spec-trigger-bar {
-      margin-top: 22px;
-      margin-bottom: 14px;
-      padding: 22px 28px;
-      border-radius: 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-    }
-    html[data-theme="light"] .sc-single-spec-trigger-bar {
-      background: #ffffff;
-      border-color: rgba(15, 23, 42, 0.12);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
-    }
-    .sc-spec-tabs-nav {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding-bottom: 16px;
-      margin-bottom: 18px;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .sc-spec-tab-btn {
-      padding: 9px 16px;
-      border-radius: 999px;
-      font-family: var(--font-display);
-      font-size: 13.5px;
-      font-weight: 800;
-      color: var(--text-secondary);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-      cursor: pointer;
-      transition: all 0.18s ease;
-    }
-    .sc-spec-tab-btn:hover {
-      color: var(--text-primary);
-      transform: translateY(-1px);
-    }
-    .sc-spec-tab-btn.active {
-      background: var(--spec-accent, #2563eb);
-      border-color: var(--spec-accent, #2563eb);
-      color: #ffffff;
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
-    }
-    .sc-spec-tab-pane {
-      display: none;
-    }
-    .sc-spec-tab-pane.active {
-      display: block;
-      animation: fadeIn 0.22s ease;
-    }
-
     .sc-spec-sec-head {
       display: flex;
       align-items: center;
@@ -6564,6 +6368,336 @@
       overflow: hidden;
       text-overflow: ellipsis;
       max-width: 100%;
+    }
+
+  
+    /* =========================================================================
+       MILD ROUNDED EDGES, BIG READABLE TYPOGRAPHY & SINGLE MASTER CONTRACT TAB
+       ========================================================================= */
+    .agent-plug-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 12px !important;
+      padding: 12px 22px;
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 700;
+      line-height: 1.25;
+      cursor: pointer;
+      text-decoration: none;
+      background: rgba(59, 130, 246, 0.14);
+      border: 1.5px solid rgba(59, 130, 246, 0.45);
+      color: #60a5fa;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+
+    .agent-plug-btn:hover {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.28);
+    }
+
+    html[data-theme="light"] .agent-plug-btn {
+      background: #e8f0fe;
+      border: 1.5px solid #8ab4f8;
+      color: #1967d2;
+      border-radius: 12px !important;
+    }
+
+    html[data-theme="light"] .agent-plug-btn:hover {
+      background: #1a73e8;
+      border-color: #1a73e8;
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(26, 115, 232, 0.22);
+    }
+
+    /* Universal mild rounded corners for badges, pills, headers, and buttons */
+    .time-badge {
+      border-radius: 10px !important;
+      padding: 6px 14px !important;
+      font-size: 13.5px !important;
+      font-weight: 800 !important;
+    }
+
+    .core-tag-pill,
+    .toil-badge,
+    .improve-badge,
+    .toil-duration,
+    .improve-time-saved,
+    .ai-agent-type-tag,
+    .journey-accordion-chevron,
+    .subagent-tag,
+    .pt-tab-count {
+      border-radius: 999px !important;
+    }
+
+    .toil-badge,
+    .improve-badge {
+      padding: 5px 14px !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toil-duration,
+    .improve-time-saved {
+      padding: 5px 14px !important;
+      font-size: 13.5px !important;
+      font-weight: 800 !important;
+    }
+
+    .btn-generate-twin,
+    .adk-demo-tab-btn,
+    .xyz-lake-tab-btn {
+      border-radius: 12px !important;
+    }
+
+    .twin-preset-card,
+    .mm-agent-neural-header,
+    .mm-neural-col-header,
+    .video-placeholder-stage {
+      border-radius: 16px !important;
+    }
+
+    /* Spacious, Big-Text Persona Day-to-Day Life Comparison & Accordion Items */
+    .journey-accordion-item {
+      border-radius: 18px !important;
+      margin-bottom: 16px !important;
+      overflow: hidden;
+    }
+
+    .journey-accordion-header {
+      border-radius: 18px !important;
+      padding: 20px 26px !important;
+    }
+
+    .journey-accordion-header .task-title {
+      font-size: 18.5px !important;
+      font-weight: 800 !important;
+      line-height: 1.35 !important;
+    }
+
+    .journey-accordion-body {
+      padding: 6px 26px 26px !important;
+    }
+
+    .toil-highlight-box,
+    .gemini-improve-box {
+      border-radius: 16px !important;
+      padding: 22px 26px !important;
+    }
+
+    .toil-top-bar,
+    .improve-top-bar {
+      margin-bottom: 12px !important;
+      padding-bottom: 10px !important;
+    }
+
+    .toil-text,
+    .improve-text {
+      font-size: 16px !important;
+      line-height: 1.72 !important;
+    }
+
+    .persona-step-agent-box {
+      border-radius: 16px !important;
+      padding: 20px 24px !important;
+      margin-top: 18px !important;
+      gap: 18px !important;
+    }
+
+    .ai-agent-dock-box {
+      border-radius: 22px !important;
+      padding: 26px 30px !important;
+    }
+
+    .persona-agent-dock-card {
+      border-radius: 18px !important;
+      padding: 22px 24px !important;
+      gap: 16px !important;
+    }
+
+    /* Execution Flow 5-Step Cards: Spacious & Zero Text Clipping */
+    .ag-flow-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)) !important;
+      gap: 16px !important;
+      margin-top: 18px !important;
+    }
+
+    .ag-flow-step-card {
+      border-radius: 16px !important;
+      padding: 18px 20px !important;
+      min-width: 0;
+    }
+
+    .ag-flow-step-title {
+      font-size: 16px !important;
+      line-height: 1.35 !important;
+      overflow-wrap: break-word;
+    }
+
+    .ag-flow-step-desc {
+      font-size: 14px !important;
+      line-height: 1.62 !important;
+    }
+
+    .ag-flow-mini-chip {
+      border-radius: 8px !important;
+      font-size: 11.5px !important;
+      padding: 4px 9px !important;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      white-space: normal !important;
+    }
+
+    /* Single Expandable Master Tab for Enterprise Agent Contract & Technical Spec */
+    details.sc-master-contract-drawer {
+      margin-top: 24px;
+      margin-bottom: 28px;
+      border-radius: 20px;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-subtle);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+      overflow: hidden;
+      transition: all 0.25s ease;
+    }
+
+    html[data-theme="light"] details.sc-master-contract-drawer {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    details.sc-master-contract-drawer > summary.sc-master-contract-summary {
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+      padding: 24px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.85), rgba(9, 13, 22, 0.92));
+      transition: background 0.2s ease;
+    }
+
+    html[data-theme="light"] details.sc-master-contract-drawer > summary.sc-master-contract-summary {
+      background: linear-gradient(145deg, #f8fafc, #eff6ff);
+    }
+
+    details.sc-master-contract-drawer > summary.sc-master-contract-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.sc-master-contract-drawer[open] > summary.sc-master-contract-summary {
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .sc-master-contract-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 800;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1.5px solid rgba(59, 130, 246, 0.45);
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+    }
+
+    details.sc-master-contract-drawer > summary.sc-master-contract-summary:hover .sc-master-contract-toggle-btn {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #ffffff;
+    }
+
+    .sc-master-contract-toggle-btn::before {
+      content: '▾ Expand Enterprise Agent Contract & Full Specs (6 Sections)';
+    }
+
+    details.sc-master-contract-drawer[open] .sc-master-contract-toggle-btn::before {
+      content: '▴ Hide Enterprise Agent Contract & Full Specs';
+    }
+
+    .sc-master-contract-body {
+      padding: 24px 28px 30px;
+    }
+
+    /* Spacious typography inside the 6 Enterprise Agent Contract Sections */
+    .sc-spec-section-card {
+      border-radius: 18px !important;
+      margin-bottom: 20px !important;
+    }
+
+    .sc-spec-sec-head {
+      padding: 20px 26px !important;
+    }
+
+    .sc-spec-sec-title {
+      font-size: 21px !important;
+    }
+
+    .sc-spec-sec-body {
+      padding: 22px 26px 26px !important;
+    }
+
+    .sc-spec-sub-drawer {
+      border-radius: 14px !important;
+      margin-bottom: 14px !important;
+    }
+
+    .sc-spec-sub-drawer > summary {
+      padding: 15px 20px !important;
+      font-size: 15px !important;
+    }
+
+    .sc-spec-sub-drawer-body {
+      padding: 18px 22px 22px !important;
+    }
+
+    .sc-spec-scope-col {
+      border-radius: 14px !important;
+      padding: 20px 22px !important;
+    }
+
+    .sc-spec-scope-list li {
+      font-size: 15px !important;
+      line-height: 1.68 !important;
+      margin-bottom: 10px !important;
+    }
+
+    .sc-spec-table th {
+      font-size: 12.5px !important;
+      padding: 13px 16px !important;
+    }
+
+    .sc-spec-table td {
+      font-size: 14.5px !important;
+      line-height: 1.62 !important;
+      padding: 14px 16px !important;
+    }
+
+    .sc-spec-tool-card,
+    .sc-spec-sys-card {
+      border-radius: 16px !important;
+      padding: 20px 22px !important;
+    }
+
+    .sc-spec-flow-step {
+      border-radius: 16px !important;
+      padding: 20px 22px !important;
     }
 
   </style>
@@ -50861,7 +50995,7 @@
       }
 
       // Open the first toil step by default; rest open on click
-      let firstToilOpened = true;
+      let firstToilOpened = false;
 
       const container = document.getElementById('personaPageContent');
       container.innerHTML = `
@@ -50889,181 +51023,193 @@
             </div>
           </div>
 
-          <!-- Clean, Compact Persona Header -->
-          <div class="persona-header-card" style="padding: 24px 30px; margin-bottom: 22px;">
+          <!-- Spacious, Readable Persona Header -->
+          <div class="persona-header-card" style="padding: 28px 34px; margin-bottom: 26px; border-radius: 22px;">
             ${renderSupplyChainWatermarkSvg(dept.watermarkType, dept.color, 'persona-header-sc-watermark')}
 
-            <div style="position:relative; z-index:2; display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
-              <div class="human-avatar-circle" style="width:60px; height:60px; font-size:28px; --dept-accent:${dept.color};">
+            <div style="position:relative; z-index:2; display:flex; align-items:flex-start; gap:20px; flex-wrap:wrap; flex:1;">
+              <div class="human-avatar-circle" style="width:66px; height:66px; font-size:30px; --dept-accent:${dept.color}; flex-shrink:0;">
                 ${p.icon}
               </div>
-              <div>
-                <h1 class="persona-page-title" style="margin-bottom:4px;">${p.name}</h1>
-                <div style="font-size:15px; color:var(--text-secondary); font-weight:600;">${p.subPillarName || dept.name}</div>
+              <div style="flex:1; min-width:260px;">
+                <h1 class="persona-page-title" style="font-size:clamp(26px, 2.8vw, 36px); margin-bottom:6px;">${p.name}</h1>
+                <div style="font-size:15.5px; color:${dept.color}; font-weight:700; margin-bottom:8px;">${p.subPillarName || dept.name}</div>
+                <p style="font-size:16px; line-height:1.68; color:var(--text-secondary); margin:0; max-width:820px;">
+                  ${p.role || ''}
+                </p>
               </div>
             </div>
 
-            <div class="persona-stat-highlight" style="border-color: ${dept.color}45;">
-              <div class="persona-stat-value" style="color: ${dept.color};">${p.headlineStat || '-85% Toil'}</div>
-              <div class="persona-stat-label">${p.toilHoursBefore || '6.5h'} &rarr; ${p.toilHoursAfter || '1.0h'}</div>
+            <div class="persona-stat-highlight" style="border-color: ${dept.color}45; border-radius: 18px; padding: 18px 24px;">
+              <div class="persona-stat-value" style="color: ${dept.color}; font-size: 28px;">${p.headlineStat || '-85% Toil'}</div>
+              <div class="persona-stat-label" style="font-size: 14px;">${p.toilHoursBefore || '6.5h'} &rarr; ${p.toilHoursAfter || '1.0h'}</div>
             </div>
           </div>
 
-          <!-- Simple Persona Daily Journey -->
-          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom: 14px;">
+          <!-- Spacious Persona Day-to-Day Life Comparison -->
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; margin-bottom: 18px;">
             <div>
-              <h2 class="block-title" style="border-left-color: ${dept.color}; margin-bottom:2px;">Persona Daily Journey</h2>
-              <p class="block-subtitle" style="margin:0;">Click any daily task below to compare <strong style="color:#ea4335;">Manual Bottleneck (Red)</strong> vs. <strong style="color:#34a853;">With Gemini AI (Green)</strong> and launch the assigned AI Agent.</p>
+              <h2 class="block-title" style="border-left-color: ${dept.color}; font-size: 24px; margin-bottom: 4px;">Day-to-Day Life Comparison — ${p.name}</h2>
+              <p class="block-subtitle" style="margin:0; font-size: 15.5px; line-height: 1.6;">Compare <strong style="color:#ea4335;">Manual Bottleneck (Before AI)</strong> vs. <strong style="color:#34a853;">With Gemini AI (Autonomous Flow)</strong> across each daily workflow step.</p>
             </div>
+            <button type="button" class="switch-pill" style="padding: 9px 18px; font-size: 13.5px; font-weight: 700;" onclick="toggleAllPersonaDailySteps(this)">
+              ▾ Expand All Daily Tasks
+            </button>
           </div>
 
-          <div style="margin-bottom: 34px;">
-            ${p.dayInLife.map((slot, idx) => {
-              const stepId = `pStep_${p.id}_${idx}`;
-              const plugAgent = slot.agentId ? AGENTS[slot.agentId] : null;
-              const plugCls = plugAgent ? getAgentBuildClassification(plugAgent) : null;
-              const isDefaultOpen = slot.isToil && !firstToilOpened;
-              if (isDefaultOpen) firstToilOpened = true;
+          <div style="margin-bottom: 38px;">
+            ${(() => {
+              let openedToilCount = 0;
+              return p.dayInLife.map((slot, idx) => {
+                const stepId = `pStep_${p.id}_${idx}`;
+                const plugAgent = slot.agentId ? AGENTS[slot.agentId] : null;
+                const plugCls = plugAgent ? getAgentBuildClassification(plugAgent) : null;
+                const isDefaultOpen = slot.isToil && openedToilCount < 2;
+                if (isDefaultOpen) openedToilCount++;
 
-              return `
-                <div id="${stepId}" class="journey-accordion-item ${isDefaultOpen ? 'open' : ''}" style="--dept-accent:${dept.color};">
-                  <button type="button" class="journey-accordion-header" onclick="togglePersonaJourneyStep('${stepId}')">
-                    <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
-                      <span class="time-badge" style="min-width:82px;">${slot.time}</span>
-                      <span class="task-title" style="font-size:16.5px;">${slot.task}</span>
-                      ${slot.isToil ? `
-                        <span style="font-size:12px; font-weight:700; padding:3px 10px; border-radius:999px; background:rgba(52,168,83,0.14); color:#34a853; border:1px solid rgba(52,168,83,0.35);">
-                          ${slot.toilDuration || '2.0 hrs'} &rarr; ${slot.afterDuration || '10 mins'}
-                        </span>
-                      ` : `
-                        <span class="core-tag-pill">👤 ${slot.tag || 'Leadership'}</span>
-                      `}
-                    </div>
-
-                    <div style="display:flex; align-items:center; gap:10px;">
-                      ${plugAgent ? `
-                        <span class="ai-agent-type-tag" style="padding:4px 9px; font-size:11px;" onclick="event.stopPropagation(); openAgentPage('${plugAgent.id}', true, event)">
-                          ✦ ${plugAgent.name} &rarr;
-                        </span>
-                      ` : ''}
-                      <span class="journey-accordion-chevron">Details ▾</span>
-                    </div>
-                  </button>
-
-                  <div class="journey-accordion-body">
-                    ${slot.isToil ? `
-                      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px; padding-top:14px;">
-                        <div class="toil-highlight-box" style="padding:16px 18px;">
-                          <div class="toil-top-bar" style="margin-bottom:8px;">
-                            <span class="toil-badge">✕ Manual Bottleneck</span>
-                            <span class="toil-duration">⏱ ${slot.toilDuration || '2.0 hrs'}</span>
-                          </div>
-                          <div class="toil-text" style="font-size:14.5px; line-height:1.58;">${shortSentence(slot.before, 220)}</div>
-                        </div>
-
-                        <div class="gemini-improve-box" style="padding:16px 18px;">
-                          <div class="improve-top-bar" style="margin-bottom:8px;">
-                            <span class="improve-badge">✦ With Gemini AI</span>
-                            <span class="improve-time-saved">⚡ ${slot.toilDuration || '2.0 hrs'} &rarr; ${slot.afterDuration || '10 mins'}</span>
-                          </div>
-                          <div class="improve-text" style="font-size:14.5px; line-height:1.58;">${shortSentence(slot.after, 220)}</div>
-                        </div>
+                return `
+                  <div id="${stepId}" class="journey-accordion-item ${isDefaultOpen ? 'open' : ''}" style="--dept-accent:${dept.color};">
+                    <button type="button" class="journey-accordion-header" onclick="togglePersonaJourneyStep('${stepId}')">
+                      <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+                        <span class="time-badge" style="min-width:92px; text-align:center;">${slot.time}</span>
+                        <span class="task-title">${slot.task}</span>
+                        ${slot.isToil ? `
+                          <span style="font-size:13.5px; font-weight:800; padding:5px 14px; border-radius:999px; background:rgba(52,168,83,0.14); color:#34a853; border:1px solid rgba(52,168,83,0.35);">
+                            ⚡ ${slot.toilDuration || '2.0 hrs'} &rarr; ${slot.afterDuration || '10 mins'}
+                          </span>
+                        ` : `
+                          <span class="core-tag-pill">👤 ${slot.tag || 'Leadership'}</span>
+                        `}
                       </div>
 
-                      ${plugAgent ? `
-                        <div class="persona-step-agent-box">
-                          <div style="display:flex; align-items:center; gap:14px; flex:1; min-width:240px;">
-                            <div class="ai-bot-square" style="width:42px; height:42px; font-size:18px; flex-shrink:0;">✦</div>
-                            <div>
-                              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:4px;">
-                                <span style="font-family:var(--font-display); font-size:16.5px; font-weight:800; color:var(--text-primary);">
-                                  ${plugAgent.name}
-                                </span>
-                                <span class="build-tier-badge ${plugCls.cssClass}">${plugCls.label}</span>
-                                ${plugAgent.badge ? `
-                                  <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; padding:2px 9px; border-radius:999px; background:rgba(16,185,129,0.16); color:#10b981; border:1px solid rgba(16,185,129,0.4);">
-                                    ${plugAgent.badge}
+                      <div style="display:flex; align-items:center; gap:12px;">
+                        ${plugAgent ? `
+                          <span class="ai-agent-type-tag" style="padding:6px 14px; font-size:12.5px;" onclick="event.stopPropagation(); openAgentPage('${plugAgent.id}', true, event)">
+                            ✦ ${plugAgent.name} &rarr;
+                          </span>
+                        ` : ''}
+                        <span class="journey-accordion-chevron" style="padding:6px 14px; font-size:13px;">Details ▾</span>
+                      </div>
+                    </button>
+
+                    <div class="journey-accordion-body">
+                      ${slot.isToil ? `
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:22px; padding-top:18px;">
+                          <div class="toil-highlight-box">
+                            <div class="toil-top-bar">
+                              <span class="toil-badge">✕ Manual Bottleneck (Before AI)</span>
+                              <span class="toil-duration">⏱ ${slot.toilDuration || '2.0 hrs'}</span>
+                            </div>
+                            <div class="toil-text">${slot.before}</div>
+                          </div>
+
+                          <div class="gemini-improve-box">
+                            <div class="improve-top-bar">
+                              <span class="improve-badge">✦ With Gemini AI (Autonomous Flow)</span>
+                              <span class="improve-time-saved">⚡ ${slot.toilDuration || '2.0 hrs'} &rarr; ${slot.afterDuration || '10 mins'}</span>
+                            </div>
+                            <div class="improve-text">${slot.after}</div>
+                          </div>
+                        </div>
+
+                        ${plugAgent ? `
+                          <div class="persona-step-agent-box">
+                            <div style="display:flex; align-items:flex-start; gap:16px; flex:1; min-width:260px;">
+                              <div class="ai-bot-square" style="width:46px; height:46px; font-size:20px; border-radius:14px; flex-shrink:0;">✦</div>
+                              <div>
+                                <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px;">
+                                  <span style="font-family:var(--font-display); font-size:18.5px; font-weight:800; color:var(--text-primary);">
+                                    ${plugAgent.name}
                                   </span>
+                                  <span class="build-tier-badge ${plugCls.cssClass}">${plugCls.label}</span>
+                                  ${plugAgent.badge ? `
+                                    <span style="font-family:var(--font-mono); font-size:12px; font-weight:800; padding:4px 12px; border-radius:999px; background:rgba(16,185,129,0.16); color:#10b981; border:1px solid rgba(16,185,129,0.4);">
+                                      ${plugAgent.badge}
+                                    </span>
+                                  ` : ''}
+                                </div>
+                                <div style="font-size:15.5px; color:var(--text-secondary); line-height:1.68;">
+                                  ${plugAgent.solution || plugAgent.role}
+                                </div>
+                                ${plugAgent.costModel ? `
+                                  <div style="margin-top:8px;">
+                                    <span style="font-family:var(--font-mono); font-size:12.5px; font-weight:700; color:var(--text-secondary);">
+                                      💰 Est. Run Cost: <strong style="color:var(--text-primary);">$${plugAgent.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo</strong> ($${plugAgent.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K runs)
+                                    </span>
+                                  </div>
                                 ` : ''}
                               </div>
-                              <div style="font-size:13.5px; color:var(--text-secondary); line-height:1.45;">
-                                ${shortSentence(plugAgent.solution || plugAgent.role, 155)}
-                              </div>
-                              ${plugAgent.costModel ? `
-                                <div style="margin-top:6px;">
-                                  <span style="font-family:var(--font-mono); font-size:11px; font-weight:700; color:var(--text-secondary);">
-                                    💰 Est. Cost: <strong style="color:var(--text-primary);">$${plugAgent.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo</strong> ($${plugAgent.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K runs)
-                                  </span>
-                                </div>
-                              ` : ''}
                             </div>
-                          </div>
 
-                          <button type="button" class="agent-plug-btn" style="padding:10px 18px; font-size:13px;" onclick="openAgentPage('${plugAgent.id}', true, event)">
-                            <span>Open ${plugAgent.name} &amp; Demo</span>
-                            <span>&rarr;</span>
-                          </button>
+                            <button type="button" class="agent-plug-btn" onclick="openAgentPage('${plugAgent.id}', true, event)">
+                              <span>Open ${plugAgent.name} &amp; Demo</span>
+                              <span>&rarr;</span>
+                            </button>
+                          </div>
+                        ` : ''}
+                      ` : `
+                        <div style="padding-top:16px; font-size:16px; line-height:1.72; color:var(--text-secondary);">
+                          ${slot.activity}
                         </div>
-                      ` : ''}
-                    ` : `
-                      <div style="padding-top:12px; font-size:14.5px; line-height:1.58; color:var(--text-secondary);">
-                        ${shortSentence(slot.activity, 200)}
-                      </div>
-                    `}
+                      `}
+                    </div>
                   </div>
-                </div>
-              `;
-            }).join('')}
+                `;
+              }).join('');
+            })()}
           </div>
 
-          <!-- Big-Heading Flippable AI Agent Cards for this Persona -->
+          <!-- Structured AI Agents Dock for this Persona (Spacious Cards + Rounded Buttons) -->
           <div class="ai-agent-dock-box">
-            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:16px;">
-              <h2 style="font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text-primary); margin:0;">
-                ✦ AI Agents for ${p.name}
-              </h2>
-              <span style="font-size:12.5px; color:var(--text-secondary); font-weight:600;">
-                Click any card to flip for details, or open the Agent Studio
-              </span>
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
+              <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                <span style="padding:6px 14px; border-radius:999px; background:linear-gradient(135deg,#4f46e5,#7c3aed); color:#ffffff; font-size:12.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;">
+                  ✦ AI Agents Assigned to ${p.name}
+                </span>
+                <span style="font-size:15px; color:var(--text-secondary); font-weight:600;">
+                  Explore each agent's execution flow, ROI, demo video, and full enterprise contract
+                </span>
+              </div>
             </div>
 
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap:16px;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap:20px;">
               ${[...new Set(p.agentIds || [])].map(aid => {
                 const ag = AGENTS[aid];
                 if (!ag) return '';
+                const cls = getAgentBuildClassification(ag);
                 return `
-                  <div class="sc-flip-card sc-flip-tall" style="--flip-accent:${dept.color};" onclick="this.classList.toggle('is-flipped')">
-                    <div class="sc-flip-inner">
-                      <div class="sc-flip-front">
-                        <div class="sc-flip-top-row">
-                          <span class="sc-flip-kicker">${ag.subPillarName || dept.name}</span>
-                          <span class="sc-flip-hint">↻ Flip for Info</span>
-                        </div>
-                        <div class="sc-flip-big-heading" style="font-size:21px;">
-                          <div class="ai-bot-square" style="width:42px; height:42px; font-size:18px; flex-shrink:0;">✦</div>
-                          <span>${cleanAgentName(ag.name)}</span>
-                        </div>
-                        <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap;">
-                          <span class="sc-flip-pill" style="color:#10b981; border-color:rgba(16,185,129,0.35);">✦ ${ag.badge || 'High ROI'}</span>
-                          <button type="button" class="agent-plug-btn" style="padding:7px 14px; font-size:12.5px;" onclick="event.stopPropagation(); openAgentPage('${ag.id}', true, event)">
-                            <span>Open Agent &rarr;</span>
-                          </button>
+                  <div class="persona-agent-dock-card">
+                    <div>
+                      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:12px;">
+                        <div style="display:flex; align-items:center; gap:14px;">
+                          <div class="ai-bot-square" style="width:46px; height:46px; font-size:19px; border-radius:14px; flex-shrink:0;">✦</div>
+                          <div>
+                            <div class="ai-agent-chip-title" style="font-size:18.5px; font-weight:800;">${cleanAgentName(ag.name)}</div>
+                            <div style="font-size:13.5px; color:var(--text-secondary); margin-top:3px;">${ag.subPillarName || dept.name}</div>
+                          </div>
                         </div>
                       </div>
-                      <div class="sc-flip-back">
-                        <div class="sc-flip-top-row">
-                          <span class="sc-flip-kicker">AGENT SUMMARY</span>
-                          <span class="sc-flip-hint">↺ Back</span>
-                        </div>
-                        <div class="sc-flip-back-text">${shortSentence(ag.solution || ag.role, 100)}</div>
-                        <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
-                          ${ag.costModel ? `<span class="sc-flip-pill">💰 $${ag.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo</span>` : ''}
-                          <button type="button" class="agent-plug-btn" style="padding:7px 14px; font-size:12.5px;" onclick="event.stopPropagation(); openAgentPage('${ag.id}', true, event)">
-                            <span>Open Studio &rarr;</span>
-                          </button>
-                        </div>
+
+                      <div style="font-size:15.5px; color:var(--text-secondary); line-height:1.68; margin-bottom:14px;">
+                        ${ag.solution || ag.role}
                       </div>
+
+                      ${ag.badge ? `
+                        <div style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.38); color:#10b981; font-family:var(--font-mono); font-size:12px; font-weight:800; margin-bottom:8px;">
+                          ✦ ${ag.badge}
+                        </div>
+                      ` : ''}
+                      ${ag.costModel ? `
+                        <div style="font-family:var(--font-mono); font-size:12.5px; color:var(--text-secondary); margin-top:6px;">
+                          💰 Est. Cost: <strong style="color:var(--text-primary);">$${ag.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo</strong> ($${ag.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K)
+                        </div>
+                      ` : ''}
                     </div>
+
+                    <button type="button" class="agent-plug-btn" style="width:100%; justify-content:center;" onclick="openAgentPage('${ag.id}', true, event)">
+                      <span>Open ${ag.name} &amp; Demo</span>
+                      <span>&rarr;</span>
+                    </button>
                   </div>
                 `;
               }).join('')}
@@ -52501,18 +52647,6 @@
       `;
     }
 
-    function shortStepHeading(rawTitle, fallback) {
-      const s = String(rawTitle || fallback || '').trim()
-        .replace(/^Transactional State DB\s+/i, '')
-        .replace(/^Multi-Hop Graph DB\s+/i, '')
-        .replace(/^Time-Series Forecasting FM\s+/i, '')
-        .replace(/^Mathematical Optimization Solver \(MILP \/ CP-SAT\)\s+/i, '')
-        .replace(/^Vector Search & Semantic Index\s+/i, '');
-      const words = s.split(/\s+/).filter(Boolean);
-      if (words.length <= 4) return s;
-      return words.slice(0, 4).join(' ');
-    }
-
     function renderSimpleAgentArchitectureDiagram(ag, dept) {
       const adk = ag.adkImplementation || {};
       const spec = ag.adkSpec || {};
@@ -52553,13 +52687,13 @@
       const q2 = qTools[1] || qTools[0] || 'query_twin_constraints';
       const a1 = aTools[0] || 'action_commit_writeback';
 
-      // 3. Real 3 A2A Sub-Agents for this agent
+      // 3. Real 3 A2A Sub-Agents for this agent (cleaned of vendor lock-in names)
       const rawSubs = (ag.subAgents && ag.subAgents.length >= 3)
         ? ag.subAgents.slice(0, 3)
         : [
-            { name: 'Signal Context Node', role: 'Streams & validates live operational inputs' },
-            { name: 'Optimization Engine', role: 'Evaluates constraints & ranks actions' },
-            { name: 'Write-Back Dispatcher', role: 'Enforces quality gates & signed payloads' }
+            { name: 'Signal Ingestion & Context Node', role: 'Streams & validates live operational inputs' },
+            { name: 'Scenario & Optimization Engine', role: 'Evaluates constraints & ranks actions' },
+            { name: 'Exception & Write-Back Dispatcher', role: 'Enforces quality gates & signed payloads' }
           ];
       const subs = rawSubs.map(sa => ({
         name: toOpenTechLabel(sa.name),
@@ -52578,54 +52712,6 @@
         q1, q2, a1, subs, solverLabel, writebackLabel
       });
 
-      const flipSteps = [
-        {
-          kicker: '01 · INGEST',
-          icon: ic1,
-          heading: 'Open Connectors',
-          frontPill: `🔌 ${sysArr.length || 3} Systems`,
-          accent: dept.color,
-          backText: `Ingests live state via MCP, REST/EDI, or On-Prem DB adapters from ${trunc(sys1, 32)}.`,
-          backPills: [trunc(sys1, 24), trunc(sys2, 24)]
-        },
-        {
-          kicker: '02 · NORMALIZE',
-          icon: tMeta.icons[1],
-          heading: shortStepHeading(subs[0].name, 'State Normalizer'),
-          frontPill: `🗄️ ${tables.length || 4} Tables`,
-          accent: '#38bdf8',
-          backText: shortSentence(subs[0].role, 88),
-          backPills: [q1, tbl1]
-        },
-        {
-          kicker: '03 · SOLVE',
-          icon: tMeta.icons[2],
-          heading: shortStepHeading(subs[1].name, 'AI & Math Solver'),
-          frontPill: '🧠 Gemini 3.8 + 4 Argon',
-          accent: cls.color,
-          backText: shortSentence(`${subs[1].role} using ${solverLabel}.`, 88),
-          backPills: ['gemini-3.8-flash', 'gemini-3.1-pro / 4-argon']
-        },
-        {
-          kicker: '04 · GOVERN',
-          icon: tMeta.icons[3],
-          heading: shortStepHeading(subs[2].name, 'Safety & Policy Gate'),
-          frontPill: '🛡️ Pre-Gate Verified',
-          accent: '#f59e0b',
-          backText: 'Verifies idempotency_key, schema contracts & delegation thresholds before commit.',
-          backPills: ['enforce_tool_contract()', 'HITL Escalation']
-        },
-        {
-          kicker: '05 · ACTUATE',
-          icon: tMeta.icons[4],
-          heading: 'MCP / API Write-Back',
-          frontPill: `⚡ ${trunc(ag.badge || 'Signed Commit', 18)}`,
-          accent: '#10b981',
-          backText: `Commits governed payload via ${trunc(writebackFull, 38)} and renders VegaChart.`,
-          backPills: [a1, 'A2UI VegaChart']
-        }
-      ];
-
       return `
         <div class="simple-arch-card">
           <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
@@ -52638,14 +52724,17 @@
                   ⏱️ ${cadence}
                 </span>
               </div>
-              <h2 style="font-family:var(--font-display); font-size:24px; font-weight:800; color:var(--text-primary); margin:0;">
-                Execution Flow — ${cleanName}
+              <h2 style="font-family:var(--font-display); font-size:21px; font-weight:800; color:var(--text-primary); margin:0;">
+                How ${cleanName} Works — Open Technology &amp; Execution Flow
               </h2>
             </div>
 
             <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
               <span class="sc-spec-count-badge" style="color:#10b981; border-color:rgba(16,185,129,0.35);">
-                🔌 BigQuery · On-Prem DBs · 3rd-Party MCPs · REST/EDI
+                🔌 Pluggable: BigQuery · On-Prem DBs · 3rd-Party MCPs · REST/EDI
+              </span>
+              <span class="sc-spec-count-badge" style="color:${dept.color}; border-color:${dept.color}44;">
+                🧠 Gemini 3.8 Flash ↔ 3.1 Pro / 4 Argon
               </span>
             </div>
           </div>
@@ -52668,44 +52757,107 @@
             </svg>
           </div>
 
-          <!-- 5 Big-Heading Flippable Step Cards (Zero Paragraph Clutter on Front; Click to Flip) -->
-          <div class="ag-flow-steps-grid" style="margin-top:16px;">
-            ${flipSteps.map(st => `
-              <div class="sc-flip-card" style="--flip-accent:${st.accent};" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">${st.kicker}</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">${st.icon}</div>
-                      <span>${st.heading}</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">${st.frontPill}</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">${st.kicker}</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">${st.backText}</div>
-                    <div class="sc-flip-bottom-pills">
-                      ${st.backPills.map(p => `<span class="sc-flip-pill">${p}</span>`).join('')}
-                    </div>
+          <!-- 5-Stage Agent-Specific Meaningful Step Cards (Technology-First & Open Integration) -->
+          <div class="ag-flow-steps-grid">
+            <div class="ag-flow-step-card" style="--step-accent:${dept.color};">
+              <div>
+                <div class="ag-flow-step-head">
+                  <div class="ag-flow-step-icon">${ic1}</div>
+                  <div>
+                    <div class="ag-flow-step-kicker">${tMeta.stageLabels[0]}</div>
+                    <div class="ag-flow-step-title">Open Source Connectors</div>
                   </div>
                 </div>
+                <p class="ag-flow-step-desc" style="margin-top:8px;">
+                  Connects via <strong>MCP servers, REST/EDI, or On-Prem DB adapters</strong> to <strong>${sys1}</strong>, <strong>${sys2}</strong>, and <strong>${sys3}</strong>.
+                </p>
               </div>
-            `).join('')}
+              <div class="ag-flow-step-chips">
+                ${sysArr.slice(0, 3).map(s => `<span class="ag-flow-mini-chip">${pickSystemIcon(s)} ${trunc(s, 20)}</span>`).join('')}
+              </div>
+            </div>
+
+            <div class="ag-flow-step-card" style="--step-accent:#38bdf8;">
+              <div>
+                <div class="ag-flow-step-head">
+                  <div class="ag-flow-step-icon">${tMeta.icons[1]}</div>
+                  <div>
+                    <div class="ag-flow-step-kicker">${tMeta.stageLabels[1]}</div>
+                    <div class="ag-flow-step-title">${subs[0].name}</div>
+                  </div>
+                </div>
+                <p class="ag-flow-step-desc" style="margin-top:8px;">
+                  ${subs[0].role}. Queries <strong>${tables.length || 4} domain tables</strong> across BigQuery, On-Prem SQL, or customer data lakes.
+                </p>
+              </div>
+              <div class="ag-flow-step-chips">
+                ${qTools.slice(0, 3).map(qt => `<span class="ag-flow-mini-chip">🔍 ${qt}</span>`).join('')}
+              </div>
+            </div>
+
+            <div class="ag-flow-step-card" style="--step-accent:${cls.color};">
+              <div>
+                <div class="ag-flow-step-head">
+                  <div class="ag-flow-step-icon">${tMeta.icons[2]}</div>
+                  <div>
+                    <div class="ag-flow-step-kicker">${tMeta.stageLabels[2]}</div>
+                    <div class="ag-flow-step-title">${subs[1].name}</div>
+                  </div>
+                </div>
+                <p class="ag-flow-step-desc" style="margin-top:8px;">
+                  ${subs[1].role} powered by <strong>${solverLabel}</strong>.
+                </p>
+              </div>
+              <div class="ag-flow-step-chips">
+                <span class="ag-flow-mini-chip">⚡ gemini-3.8-flash</span>
+                <span class="ag-flow-mini-chip">🧠 gemini-3.1-pro / 4-argon</span>
+              </div>
+            </div>
+
+            <div class="ag-flow-step-card" style="--step-accent:#f59e0b;">
+              <div>
+                <div class="ag-flow-step-head">
+                  <div class="ag-flow-step-icon">${tMeta.icons[3]}</div>
+                  <div>
+                    <div class="ag-flow-step-kicker">${tMeta.stageLabels[3]}</div>
+                    <div class="ag-flow-step-title">${subs[2].name}</div>
+                  </div>
+                </div>
+                <p class="ag-flow-step-desc" style="margin-top:8px;">
+                  ${subs[2].role}. Enforces pre-execution <code style="font-family:var(--font-mono); font-size:11px;">enforce_tool_contract()</code> &amp; idempotency.
+                </p>
+              </div>
+              <div class="ag-flow-step-chips">
+                <span class="ag-flow-mini-chip">🛡️ idempotency_key</span>
+                <span class="ag-flow-mini-chip">👤 HITL Escalation Gate</span>
+              </div>
+            </div>
+
+            <div class="ag-flow-step-card" style="--step-accent:#10b981;">
+              <div>
+                <div class="ag-flow-step-head">
+                  <div class="ag-flow-step-icon">${tMeta.icons[4]}</div>
+                  <div>
+                    <div class="ag-flow-step-kicker">${tMeta.stageLabels[4]}</div>
+                    <div class="ag-flow-step-title">MCP / API Write-Back</div>
+                  </div>
+                </div>
+                <p class="ag-flow-step-desc" style="margin-top:8px;">
+                  Commits signed action via <strong>${writebackFull}</strong> (MCP, REST API, or On-Prem connector) and renders the A2UI <code style="font-family:var(--font-mono); font-size:11px;">VegaChart</code>.
+                </p>
+              </div>
+              <div class="ag-flow-step-chips">
+                ${aTools.slice(0, 2).map(at => `<span class="ag-flow-mini-chip">⚡ ${at}</span>`).join('')}
+                <span class="ag-flow-mini-chip">📊 ${trunc(ag.badge || 'KPI Impact', 20)}</span>
+              </div>
+            </div>
           </div>
         </div>
       `;
     }
 
     /* =========================================================================
-       CLEAN AGENT COST & VALUE FLIPPABLE CARDS + 1-BUTTON BREAKDOWN DRAWER
+       SIMPLE AGENT COST DETAILS CARD (AI COST VS. MANUAL ESTIMATE + INFOGRAPHIC)
        ========================================================================= */
     function renderAgentCostAndRoiPanel(ag, dept) {
       const cm = ag.costModel;
@@ -52737,196 +52889,146 @@
         <div class="simple-arch-card" style="margin-top: 22px; margin-bottom: 22px;">
           <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
             <div>
-              <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
-                FinOps &amp; Business ROI
+              <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:4px;">
+                Infra &amp; Token Cost vs. Manual Estimate
               </div>
-              <h2 style="font-family:var(--font-display); font-size:24px; font-weight:800; color:var(--text-primary); margin:0;">
-                Cost vs. Value — ${cleanAgentName(ag.name)}
+              <h2 style="font-family:var(--font-display); font-size:21px; font-weight:800; color:var(--text-primary); margin:0;">
+                Cost &amp; Value Breakdown — ${ag.name}
               </h2>
             </div>
 
             <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-              <button type="button" class="switch-pill" onclick="const el=document.getElementById('costBarsDrawer_${ag.id}'); if(el){const open=el.style.display==='none'; el.style.display=open?'grid':'none'; this.textContent=open?'▴ Hide Breakdown Bars':'▾ View Breakdown Bars';}">
-                ▾ View Breakdown Bars
-              </button>
-              <button type="button" class="switch-pill" onclick="openCostTabPage('${ag.deptId}', '${ag.id}', true)">
-                📊 Cost Calculator &rarr;
+              <span class="sc-tech-pill" style="border-color:${dept.color}55; color:${dept.color}; font-weight:700;">
+                🧠 Orchestrator: Gemini 3.8 Flash ↔ 3.1 Pro / 4 Argon
+              </span>
+              <button type="button" class="sc-tech-pill" style="cursor:pointer; font-weight:700; background:var(--bg-elevated); color:var(--text-primary);" onclick="openCostTabPage('${ag.deptId}', '${ag.id}', true)">
+                📊 Open Dynamic Cost Calculator &rarr;
               </button>
             </div>
           </div>
 
-          <!-- 4 Big-Heading Flippable KPI Cards -->
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:14px;">
-            <div class="sc-flip-card sc-flip-compact" style="--flip-accent:${dept.color};" onclick="this.classList.toggle('is-flipped')">
-              <div class="sc-flip-inner">
-                <div class="sc-flip-front">
-                  <div class="sc-flip-top-row">
-                    <span class="sc-flip-kicker">✦ AI AGENT COST</span>
-                    <span class="sc-flip-hint">↻ Flip</span>
-                  </div>
-                  <div style="font-family:var(--font-display); font-size:30px; font-weight:800; color:var(--text-primary);">
-                    $${aiMo.toLocaleString()}<span style="font-size:15px; font-weight:600; color:var(--text-secondary);">/mo</span>
-                  </div>
-                  <div class="sc-flip-bottom-pills">
-                    <span class="sc-flip-pill">Infra + Tokens</span>
-                  </div>
-                </div>
-                <div class="sc-flip-back">
-                  <div class="sc-flip-top-row">
-                    <span class="sc-flip-kicker">UNIT ECONOMICS</span>
-                    <span class="sc-flip-hint">↺ Back</span>
-                  </div>
-                  <div class="sc-flip-back-text">
-                    $${mb.blendedCostPer1kCallsUsd.toFixed(2)} per 1K runs · Pilot scale: $${mb.pilotScaleMoUsd.toFixed(0)}/mo.
-                  </div>
-                  <div class="sc-flip-bottom-pills">
-                    <span class="sc-flip-pill">🟢 LLM $${llmMo}</span>
-                    <span class="sc-flip-pill">🔵 Compute $${compMo}</span>
-                  </div>
-                </div>
+          <!-- Top 4 Simple KPI Cards: AI Cost vs Manual Estimate vs Savings vs Value -->
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin-bottom:16px;">
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid ${dept.color};">
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                ✦ AI Agent Cost (Infra + Tokens)
+              </div>
+              <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
+                $${aiMo.toLocaleString()} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
+              </div>
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                $${mb.blendedCostPer1kCallsUsd.toFixed(2)} / 1K runs · Pilot: $${mb.pilotScaleMoUsd.toFixed(0)}/mo
               </div>
             </div>
 
-            <div class="sc-flip-card sc-flip-compact" style="--flip-accent:#f43f5e;" onclick="this.classList.toggle('is-flipped')">
-              <div class="sc-flip-inner">
-                <div class="sc-flip-front">
-                  <div class="sc-flip-top-row">
-                    <span class="sc-flip-kicker">✕ MANUAL EFFORT</span>
-                    <span class="sc-flip-hint">↻ Flip</span>
-                  </div>
-                  <div style="font-family:var(--font-display); font-size:30px; font-weight:800; color:var(--text-primary);">
-                    $${mc.manualMonthlyCostUsd.toLocaleString()}<span style="font-size:15px; font-weight:600; color:var(--text-secondary);">/mo</span>
-                  </div>
-                  <div class="sc-flip-bottom-pills">
-                    <span class="sc-flip-pill">~${mc.fteEquivalent} FTE Baseline</span>
-                  </div>
-                </div>
-                <div class="sc-flip-back">
-                  <div class="sc-flip-top-row">
-                    <span class="sc-flip-kicker">MANUAL BASELINE</span>
-                    <span class="sc-flip-hint">↺ Back</span>
-                  </div>
-                  <div class="sc-flip-back-text">
-                    Replaces ~${mc.manualHoursPerMonth} hrs/mo of manual spreadsheet &amp; exception rework.
-                  </div>
-                  <div class="sc-flip-bottom-pills">
-                    <span class="sc-flip-pill">${mc.manualHoursPerMonth} hrs/mo</span>
-                  </div>
-                </div>
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid #f43f5e;">
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                ✕ Manual Effort Estimate
+              </div>
+              <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); margin:6px 0 2px;">
+                $${mc.manualMonthlyCostUsd.toLocaleString()} <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ mo</span>
+              </div>
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                ~${mc.fteEquivalent} FTEs (${mc.manualHoursPerMonth} hrs/mo + error rework)
               </div>
             </div>
 
-            <div class="sc-flip-card sc-flip-compact" style="--flip-accent:#38bdf8;" onclick="this.classList.toggle('is-flipped')">
-              <div class="sc-flip-inner">
-                <div class="sc-flip-front">
-                  <div class="sc-flip-top-row">
-                    <span class="sc-flip-kicker">⚡ PROCESS SAVINGS</span>
-                    <span class="sc-flip-hint">↻ Flip</span>
-                  </div>
-                  <div style="font-family:var(--font-display); font-size:30px; font-weight:800; color:#38bdf8;">
-                    ${mc.directSavingsPct}%<span style="font-size:15px; font-weight:600; color:var(--text-secondary);"> Less</span>
-                  </div>
-                  <div class="sc-flip-bottom-pills">
-                    <span class="sc-flip-pill">-$${mc.directMonthlySavingsUsd.toLocaleString()}/mo</span>
-                  </div>
-                </div>
-                <div class="sc-flip-back">
-                  <div class="sc-flip-top-row">
-                    <span class="sc-flip-kicker">NET SAVINGS</span>
-                    <span class="sc-flip-hint">↺ Back</span>
-                  </div>
-                  <div class="sc-flip-back-text">
-                    Saves $${mc.directMonthlySavingsUsd.toLocaleString()}/mo directly vs. manual analyst effort.
-                  </div>
-                  <div class="sc-flip-bottom-pills">
-                    <span class="sc-flip-pill">~${cm.eventsPerDay.toLocaleString()} runs/day</span>
-                  </div>
-                </div>
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid #38bdf8;">
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                ⚡ Direct Process Savings
+              </div>
+              <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:#38bdf8; margin:6px 0 2px;">
+                ${mc.directSavingsPct}% <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">Less</span>
+              </div>
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                Saves $${mc.directMonthlySavingsUsd.toLocaleString()}/mo vs. manual process
               </div>
             </div>
 
-            <div class="sc-flip-card sc-flip-compact" style="--flip-accent:#10b981;" onclick="this.classList.toggle('is-flipped')">
-              <div class="sc-flip-inner">
-                <div class="sc-flip-front">
-                  <div class="sc-flip-top-row">
-                    <span class="sc-flip-kicker">🚀 VALUE UNLOCKED</span>
-                    <span class="sc-flip-hint">↻ Flip</span>
-                  </div>
-                  <div style="font-family:var(--font-display); font-size:30px; font-weight:800; color:#10b981;">
-                    $${(vm.grossAnnualConservativeUsd / 1e6).toFixed(2)}M<span style="font-size:15px; font-weight:600; color:var(--text-secondary);">/yr</span>
-                  </div>
-                  <div class="sc-flip-bottom-pills">
-                    <span class="sc-flip-pill">${vm.cloudRoiMultipleConservative}x Cloud ROI</span>
-                  </div>
-                </div>
-                <div class="sc-flip-back">
-                  <div class="sc-flip-top-row">
-                    <span class="sc-flip-kicker">ANNUAL IMPACT</span>
-                    <span class="sc-flip-hint">↺ Back</span>
-                  </div>
-                  <div class="sc-flip-back-text">
-                    Unlocks ~$${(valMo / 1000).toFixed(1)}K/mo in inventory, margin &amp; SLA protection.
-                  </div>
-                  <div class="sc-flip-bottom-pills">
-                    <span class="sc-flip-pill">${ag.badge || 'Verified ROI'}</span>
-                  </div>
-                </div>
+            <div style="padding:16px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-top:3px solid #10b981;">
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                🚀 Supply Chain Value Unlocked
+              </div>
+              <div style="font-family:var(--font-display); font-size:26px; font-weight:800; color:#10b981; margin:6px 0 2px;">
+                $${(vm.grossAnnualConservativeUsd / 1e6).toFixed(2)}M <span style="font-size:14px; font-weight:600; color:var(--text-secondary);">/ yr</span>
+              </div>
+              <div style="font-size:12.5px; color:var(--text-secondary);">
+                $${(valMo / 1000).toFixed(1)}K/mo business impact (${vm.cloudRoiMultipleConservative}x ROI)
               </div>
             </div>
           </div>
 
-          <!-- Collapsible Visual Breakdown Bars (Hidden by Default for Clean Main Page) -->
-          <div id="costBarsDrawer_${ag.id}" style="display:none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px; margin-top:14px;">
+          <!-- Visual Infographic Breakdown Row (2 Simple Cards: Visual Bars + Infra Split) -->
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+            <!-- Left: Visual Cost vs Manual vs Value Comparison -->
             <div style="padding:14px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle);">
-              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; margin-bottom:10px;">
-                Monthly Cost vs. Manual &amp; Value
+              <div style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px;">
+                Monthly Cost vs. Manual &amp; Value Comparison
               </div>
+
               <div style="margin-bottom:8px;">
                 <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:3px;">
-                  <span>✦ AI Agent</span><strong>$${aiMo.toLocaleString()}/mo</strong>
+                  <span style="color:var(--text-secondary); font-weight:600;">✦ AI Agent (Infra + Tokens)</span>
+                  <span style="color:var(--text-primary); font-weight:800;">$${aiMo.toLocaleString()} / mo</span>
                 </div>
                 <div style="height:7px; border-radius:999px; background:var(--border-subtle); overflow:hidden;">
-                  <div style="width:4%; min-width:8px; height:100%; background:${dept.color};"></div>
+                  <div style="width:4%; min-width:8px; height:100%; background:${dept.color}; border-radius:999px;"></div>
                 </div>
               </div>
+
               <div style="margin-bottom:8px;">
                 <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:3px;">
-                  <span>✕ Manual Effort</span><strong style="color:#f43f5e;">$${mc.manualMonthlyCostUsd.toLocaleString()}/mo</strong>
+                  <span style="color:var(--text-secondary); font-weight:600;">✕ Manual Analyst &amp; Rework</span>
+                  <span style="color:#f43f5e; font-weight:800;">$${mc.manualMonthlyCostUsd.toLocaleString()} / mo</span>
                 </div>
                 <div style="height:7px; border-radius:999px; background:var(--border-subtle); overflow:hidden;">
-                  <div style="width:36%; height:100%; background:#f43f5e;"></div>
+                  <div style="width:36%; height:100%; background:#f43f5e; border-radius:999px;"></div>
                 </div>
               </div>
+
               <div>
                 <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:3px;">
-                  <span>🚀 Value Created</span><strong style="color:#10b981;">$${valMo.toLocaleString()}/mo</strong>
+                  <span style="color:var(--text-secondary); font-weight:600;">🚀 Supply Chain Value Created</span>
+                  <span style="color:#10b981; font-weight:800;">$${valMo.toLocaleString()} / mo</span>
                 </div>
                 <div style="height:7px; border-radius:999px; background:var(--border-subtle); overflow:hidden;">
-                  <div style="width:100%; height:100%; background:#10b981;"></div>
+                  <div style="width:100%; height:100%; background:#10b981; border-radius:999px;"></div>
                 </div>
               </div>
             </div>
 
+            <!-- Right: Visual Monthly Infra & Token Breakdown -->
             <div style="padding:14px 18px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); display:flex; flex-direction:column; justify-content:space-between;">
               <div>
-                <div style="display:flex; justify-content:space-between; font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; margin-bottom:10px;">
-                  <span>Monthly Infra &amp; Token Split</span><span>~${cm.eventsPerDay.toLocaleString()} runs/day</span>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                  <span style="font-size:11.5px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em;">
+                    Inside the $${aiMo}/mo AI Cost (Excl. Seats)
+                  </span>
+                  <span style="font-size:12px; font-weight:700; color:var(--text-secondary);">
+                    ~${cm.eventsPerDay.toLocaleString()} runs/day
+                  </span>
                 </div>
+
+                <!-- 3-Segment Stacked Bar -->
                 <div style="height:10px; border-radius:999px; background:var(--border-subtle); overflow:hidden; display:flex; gap:2px; margin-bottom:12px;">
-                  <div style="width:${llmPct}%; height:100%; background:#10b981;"></div>
-                  <div style="width:${compPct}%; height:100%; background:#38bdf8;"></div>
-                  <div style="width:${dataPct}%; height:100%; background:#a855f7;"></div>
+                  <div style="width:${llmPct}%; height:100%; background:#10b981;" title="LLM Tokens: $${llmMo}/mo"></div>
+                  <div style="width:${compPct}%; height:100%; background:#38bdf8;" title="ADK Runtime: $${compMo}/mo"></div>
+                  <div style="width:${dataPct}%; height:100%; background:#a855f7;" title="BigQuery & APIs: $${dataMo}/mo"></div>
                 </div>
               </div>
+
               <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px;">
-                <div style="padding:8px; border-radius:10px; background:var(--bg-surface); border:1px solid var(--border-subtle); font-size:12px;">
-                  🟢 LLM: <strong>$${llmMo}</strong> (${llmPct}%)
+                <div style="padding:8px 10px; border-radius:10px; background:var(--bg-surface); border:1px solid var(--border-subtle);">
+                  <div style="font-size:11px; color:var(--text-secondary); font-weight:600;">🟢 LLM Tokens</div>
+                  <div style="font-size:15px; font-weight:800; color:var(--text-primary); margin-top:2px;">$${llmMo}/mo <span style="font-size:11px; color:var(--text-secondary); font-weight:600;">(${llmPct}%)</span></div>
                 </div>
-                <div style="padding:8px; border-radius:10px; background:var(--bg-surface); border:1px solid var(--border-subtle); font-size:12px;">
-                  🔵 ADK: <strong>$${compMo}</strong> (${compPct}%)
+                <div style="padding:8px 10px; border-radius:10px; background:var(--bg-surface); border:1px solid var(--border-subtle);">
+                  <div style="font-size:11px; color:var(--text-secondary); font-weight:600;">🔵 ADK Runtime</div>
+                  <div style="font-size:15px; font-weight:800; color:var(--text-primary); margin-top:2px;">$${compMo}/mo <span style="font-size:11px; color:var(--text-secondary); font-weight:600;">(${compPct}%)</span></div>
                 </div>
-                <div style="padding:8px; border-radius:10px; background:var(--bg-surface); border:1px solid var(--border-subtle); font-size:12px;">
-                  🟣 Data: <strong>$${dataMo}</strong> (${dataPct}%)
+                <div style="padding:8px 10px; border-radius:10px; background:var(--bg-surface); border:1px solid var(--border-subtle);">
+                  <div style="font-size:11px; color:var(--text-secondary); font-weight:600;">🟣 BQ &amp; APIs</div>
+                  <div style="font-size:15px; font-weight:800; color:var(--text-primary); margin-top:2px;">$${dataMo}/mo <span style="font-size:11px; color:var(--text-secondary); font-weight:600;">(${dataPct}%)</span></div>
                 </div>
               </div>
             </div>
@@ -52935,6 +53037,10 @@
       `;
     }
 
+/* =========================================================================
+       FULL AGENT SPECIFICATION SHEET (PLAYBOOK & GOVERNANCE, WORKFLOW, TOOLS,
+       SOURCE SYSTEMS, DATA MODEL & SCHEMAS, EVALS & PROOF)
+       ========================================================================= */
     function inferColumnTypeAndConstraint(colName, rows) {
       const c = String(colName || '').toLowerCase();
       const isPk = c.endsWith('_id') && (c === Object.keys(rows[0] || {})[0]?.toLowerCase());
@@ -52946,28 +53052,29 @@
         colType = 'boolean';
       } else if (typeof firstVal === 'number' || c.endsWith('_pct') || c.endsWith('_usd') || c.endsWith('_units') || c.endsWith('_days') || c.endsWith('_score') || c.endsWith('_count')) {
         colType = Number.isInteger(firstVal) ? 'integer' : 'numeric(12,2)';
-      } else if (c.includes('timestamp') || c.endsWith('_at') || c.endsWith('_date')) {
-        colType = 'timestamp';
-      } else if (c.endsWith('_id') || c.endsWith('_code') || c === 'sku' || c === 'region') {
-        colType = 'string (key)';
+      } else if (c.includes('date') || c.startsWith('valid_') || c.endsWith('_at') || c.endsWith('_ts')) {
+        colType = 'date / timestamp';
+      } else if (c.includes('status') || c.includes('type') || c.includes('tier') || c.includes('region') || c.includes('classification') || c.includes('category') || c.includes('severity')) {
+        colType = 'enum';
+      } else if (c.endsWith('_id')) {
+        colType = isPk ? 'seq / pk' : 'foreign_ref';
       }
 
-      const uniqSamples = [];
-      for (const v of vals) {
-        const s = typeof v === 'object' ? JSON.stringify(v) : String(v);
-        if (!uniqSamples.includes(s)) uniqSamples.push(s);
-        if (uniqSamples.length >= 2) break;
-      }
-      const sampleStr = uniqSamples.map(s => s.length > 28 ? s.slice(0, 27) + '…' : s).join(', ');
-      return { colType, isPk, sampleStr };
+      const uniqueSamples = Array.from(new Set(vals.map(v => String(v)))).slice(0, 3);
+      const sampleStr = uniqueSamples.join(' · ');
+      return {
+        isPk,
+        colType,
+        sampleStr: sampleStr.length > 64 ? sampleStr.slice(0, 61) + '…' : sampleStr
+      };
     }
 
     function computeAgentSpecStats(ag) {
       const adk = ag.adkImplementation || {};
       const spec = ag.adkSpec || {};
+      const sysArr = (spec.systems && spec.systems.length) ? spec.systems : toSysArray(ag.systems);
       const tables = adk.fixtureTables || [];
       const totalFields = tables.reduce((acc, t) => acc + ((t.columns || []).length), 0);
-      const sysArr = (spec.systems && spec.systems.length) ? spec.systems : toSysArray(ag.systems);
       const toolsList = (spec.toolsMeta && spec.toolsMeta.length)
         ? spec.toolsMeta
         : (adk.tools || []).filter(t => t !== 'list_systems').map(t => ({ name: t }));
@@ -52985,67 +53092,121 @@
       };
     }
 
-    function switchAgentSpecTab(agentId, tabKey, btnEl) {
-      const wrap = document.getElementById(`agentSingleSpecBody_${agentId}`);
-      if (!wrap) return;
-      wrap.style.display = 'block';
-      const toggleBtn = document.getElementById(`agentSingleSpecBtn_${agentId}`);
-      if (toggleBtn) toggleBtn.textContent = '▴ Hide Playbook & Technical Specs';
-
-      wrap.querySelectorAll('.sc-spec-tab-btn').forEach(b => {
-        b.classList.toggle('active', b.getAttribute('data-spec-tab') === tabKey);
-      });
-      wrap.querySelectorAll('.sc-spec-tab-pane').forEach(p => {
-        p.classList.toggle('active', p.getAttribute('data-spec-pane') === tabKey);
-      });
-    }
-
-    function toggleSingleAgentSpecDrawer(agentId) {
-      const wrap = document.getElementById(`agentSingleSpecBody_${agentId}`);
-      const btn = document.getElementById(`agentSingleSpecBtn_${agentId}`);
-      if (!wrap) return;
-      const isHidden = wrap.style.display === 'none';
-      wrap.style.display = isHidden ? 'block' : 'none';
-      if (btn) {
-        btn.textContent = isHidden ? '▴ Hide Playbook & Technical Specs' : '▾ Open Playbook, Governance & Technical Specs';
-      }
-      if (isHidden) {
-        setTimeout(() => wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 40);
-      }
-    }
-
     function openAndScrollToSpecSection(sectionId, childId = null) {
-      const mapTab = {
-        'spec-governance': 'governance',
-        'spec-workflow': 'workflow',
-        'spec-tools': 'tools',
-        'spec-systems': 'systems',
-        'spec-data-model': 'datamodel',
-        'spec-evals': 'evals'
-      };
-      const tabKey = mapTab[sectionId] || 'governance';
-      if (typeof lastAgentId !== 'undefined' && lastAgentId) {
-        switchAgentSpecTab(lastAgentId, tabKey);
-      }
+      const master = document.getElementById('agentMasterContractDrawer');
+      if (master && master.tagName === 'DETAILS') master.open = true;
       const sec = document.getElementById(sectionId);
+      if (sec) {
+        if (sec.tagName === 'DETAILS') sec.open = true;
+        const parentDetails = sec.closest('details.sc-spec-collapsible');
+        if (parentDetails) parentDetails.open = true;
+      }
+      if (childId) {
+        const ch = document.getElementById(childId);
+        if (ch) {
+          if (ch.tagName === 'DETAILS') ch.open = true;
+          const parentSub = ch.closest('details.sc-spec-sub-drawer');
+          if (parentSub) parentSub.open = true;
+          setTimeout(() => ch.scrollIntoView({ behavior: 'smooth', block: 'start' }), 40);
+          return false;
+        }
+      }
       if (sec) {
         setTimeout(() => sec.scrollIntoView({ behavior: 'smooth', block: 'start' }), 40);
       }
       return false;
     }
 
+    function toggleAllAgentSpecSections(btn) {
+      const master = document.getElementById('agentMasterContractDrawer');
+      if (master && master.tagName === 'DETAILS') master.open = true;
+      const root = btn.closest('#agentGenieWrap, #blueprintGenieWrap') || document;
+      const drawers = Array.from(root.querySelectorAll('details.sc-spec-collapsible'));
+      if (!drawers.length) return;
+      const anyClosed = drawers.some(d => !d.open);
+      drawers.forEach(d => {
+        d.open = anyClosed;
+        if (anyClosed) {
+          d.querySelectorAll('details.sc-spec-sub-drawer').forEach(sub => { sub.open = true; });
+        }
+      });
+      btn.textContent = anyClosed ? '▴ Collapse All 6 Spec Sections' : '▾ Expand All 6 Spec Sections';
+    }
+
+    function toggleAllPersonaDailySteps(btn) {
+      const root = document.getElementById('personaGenieWrap') || document;
+      const items = Array.from(root.querySelectorAll('.journey-accordion-item'));
+      if (!items.length) return;
+      const anyClosed = items.some(el => !el.classList.contains('open'));
+      items.forEach(el => {
+        if (anyClosed) el.classList.add('open');
+        else el.classList.remove('open');
+      });
+      btn.textContent = anyClosed ? '▴ Collapse Daily Tasks' : '▾ Expand All Daily Tasks';
+    }
+
     function renderAgentAtAGlanceStrip(ag, dept, isDedicatedSpecPage = false) {
       const st = computeAgentSpecStats(ag);
       return `
         <div class="sc-spec-stats-strip">
-          <div class="sc-spec-stat-box"><span class="sc-spec-stat-num" style="color:${dept.color};">${st.systemsCount}</span><span class="sc-spec-stat-label">systems</span></div>
-          <div class="sc-spec-stat-box"><span class="sc-spec-stat-num">${st.entitiesCount}</span><span class="sc-spec-stat-label">entities</span></div>
-          <div class="sc-spec-stat-box"><span class="sc-spec-stat-num">${st.fieldsCount}</span><span class="sc-spec-stat-label">fields</span></div>
-          <div class="sc-spec-stat-box"><span class="sc-spec-stat-num">${st.toolsCount}</span><span class="sc-spec-stat-label">tools</span></div>
-          <div class="sc-spec-stat-box"><span class="sc-spec-stat-num">${st.stepsCount}</span><span class="sc-spec-stat-label">stages</span></div>
-          <div class="sc-spec-stat-box"><span class="sc-spec-stat-num">${st.evidenceRulesCount}</span><span class="sc-spec-stat-label">rules</span></div>
-          <div class="sc-spec-stat-box"><span class="sc-spec-stat-num">${st.evalsCount}</span><span class="sc-spec-stat-label">evals</span></div>
-          <div class="sc-spec-stat-box"><span class="sc-spec-stat-num">${st.anomaliesCount}</span><span class="sc-spec-stat-label">anomalies</span></div>
+          <div class="sc-spec-stat-box">
+            <span class="sc-spec-stat-num" style="color:${dept.color};">${st.systemsCount}</span>
+            <span class="sc-spec-stat-label">systems</span>
+          </div>
+          <div class="sc-spec-stat-box">
+            <span class="sc-spec-stat-num">${st.entitiesCount}</span>
+            <span class="sc-spec-stat-label">entities</span>
+          </div>
+          <div class="sc-spec-stat-box">
+            <span class="sc-spec-stat-num">${st.fieldsCount}</span>
+            <span class="sc-spec-stat-label">fields</span>
+          </div>
+          <div class="sc-spec-stat-box">
+            <span class="sc-spec-stat-num">${st.toolsCount}</span>
+            <span class="sc-spec-stat-label">tools</span>
+          </div>
+          <div class="sc-spec-stat-box">
+            <span class="sc-spec-stat-num">${st.stepsCount}</span>
+            <span class="sc-spec-stat-label">workflow steps</span>
+          </div>
+          <div class="sc-spec-stat-box">
+            <span class="sc-spec-stat-num">${st.evidenceRulesCount}</span>
+            <span class="sc-spec-stat-label">evidence rules</span>
+          </div>
+          <div class="sc-spec-stat-box">
+            <span class="sc-spec-stat-num">${st.evalsCount}</span>
+            <span class="sc-spec-stat-label">evals</span>
+          </div>
+          <div class="sc-spec-stat-box">
+            <span class="sc-spec-stat-num">${st.anomaliesCount}</span>
+            <span class="sc-spec-stat-label">anomalies</span>
+          </div>
+        </div>
+
+        <div class="sc-spec-jump-bar" style="--spec-accent:${dept.color};">
+          ${!isDedicatedSpecPage ? `
+            <button type="button" class="sc-spec-jump-pill" style="border-color:${dept.color}; background:${dept.color}22; color:var(--text-primary); font-weight:800;" onclick="openAgentBlueprintPage('${ag.id}', true, event, 'spec-governance')">
+              📄 Open Contract &amp; Spec in Dedicated Page &rarr;
+            </button>
+          ` : ''}
+          <a class="sc-spec-jump-pill" href="#spec-governance" onclick="return openAndScrollToSpecSection('spec-governance');">
+            🛡️ 01 · Playbook &amp; Governance
+          </a>
+          <a class="sc-spec-jump-pill" href="#spec-workflow" onclick="return openAndScrollToSpecSection('spec-workflow');">
+            ⚡ 02 · 3-Stage Workflow
+          </a>
+          <a class="sc-spec-jump-pill" href="#spec-tools" onclick="return openAndScrollToSpecSection('spec-tools');">
+            🔧 03 · Agent Tools (${st.toolsCount})
+          </a>
+          <a class="sc-spec-jump-pill" href="#spec-systems" onclick="return openAndScrollToSpecSection('spec-systems');">
+            🔌 04 · Source Systems (${st.systemsCount})
+          </a>
+          <a class="sc-spec-jump-pill" href="#spec-data-model" onclick="return openAndScrollToSpecSection('spec-data-model');">
+            🗄️ 05 · Data Model (${st.entitiesCount} entities · ${st.fieldsCount} fields)
+          </a>
+          <a class="sc-spec-jump-pill" href="#spec-evals" onclick="return openAndScrollToSpecSection('spec-evals');">
+            ✅ 06 · Evals &amp; Proof
+          </a>
         </div>
       `;
     }
@@ -53053,11 +53214,14 @@
     function renderAgentFullSpecSheet(ag, dept, openByDefault = false) {
       const adk = ag.adkImplementation || {};
       const spec = ag.adkSpec || {};
+      const cls = getAgentBuildClassification(ag);
       const cleanName = cleanAgentName(ag.name);
       const personaName = ag.primaryPersonaName || 'Supply Chain Operations Lead';
       const subPillar = ag.subPillarName || dept.name;
       const tables = adk.fixtureTables || [];
       const totalFields = tables.reduce((acc, t) => acc + ((t.columns || []).length), 0);
+      const masterOpenAttr = openByDefault ? 'open' : '';
+      const openAttr = 'open';
 
       // 1. Tools metadata
       const rawTools = (spec.toolsMeta && spec.toolsMeta.length)
@@ -53068,341 +53232,492 @@
               name: tName,
               kind: isAct ? 'action' : 'query',
               description: isAct
-                ? `Executes governed write-back (${tName}) after pre-execution gate & idempotency validation.`
-                : `Queries live records from connected ${subPillar} tables (${tName}).`,
+                ? `Execute governed write-back (${tName}) after pre-execution gate & idempotency validation.`
+                : `Query live records from connected ${subPillar} tables (${tName}).`,
               inputs: isAct ? ['target_id', 'rationale', 'idempotency_key'] : ['lookup_key', 'region', 'sku_id'],
               outputs: isAct ? ['action_id', 'status', 'idempotency_key'] : ['records', 'total_count'],
+              evidence: isAct ? ['api_mutation_receipt', 'action_events_jsonl'] : ['source_system_record'],
+              sourceSystemId: 'bigquery_supply_chain_twin',
               table: tables[0]?.table_name || 'supply_chain_records'
             };
           });
 
       const queryTools = rawTools.filter(t => t.kind === 'query');
       const actionTools = rawTools.filter(t => t.kind === 'action');
-      const writeToolNames = actionTools.map(t => t.name).join(', ') || 'action_commit_writeback';
 
       // 2. Source systems metadata
-      const sysStrings = toSysArray(ag.systems).map(s => toOpenTechLabel(s));
+      const sysStrings = toSysArray(ag.systems);
       const sysList = (spec.systems && spec.systems.length)
         ? spec.systems.map((s, idx) => {
             const ownedTables = (s.tables && s.tables.length)
               ? s.tables
               : (tables[idx] ? [tables[idx].table_name] : (tables[0] ? [tables[0].table_name] : []));
-            const hasWrite = idx === spec.systems.length - 1 && actionTools.length > 0;
+            const sysTools = rawTools.filter(t => t.sourceSystemId === s.id || ownedTables.includes(t.table));
+            const hasWrite = sysTools.some(t => t.kind === 'action') || (idx === spec.systems.length - 1 && actionTools.length > 0);
             return {
-              name: toOpenTechLabel(s.name || sysStrings[idx] || 'Enterprise System'),
-              protocol: toOpenTechLabel(s.protocol || 'MCP / REST / SQL Adapter'),
+              name: s.name || sysStrings[idx] || 'Enterprise System',
+              protocol: s.protocol || 'REST / OData v4 / BigQuery SQL',
               mode: hasWrite ? 'read / write' : 'read',
-              ownedTables
+              category: idx === 0 ? 'Digital Twin / Lakehouse' : (hasWrite ? 'ERP / Execution Target' : 'Sensing & Solver Layer'),
+              ownedTables,
+              boundTools: sysTools.length ? sysTools.map(t => t.name) : (hasWrite ? actionTools.map(t => t.name) : queryTools.slice(0, 2).map(t => t.name))
             };
           })
-        : sysStrings.slice(0, 4).map((sName, idx) => ({
-            name: sName,
-            protocol: idx === 0 ? 'MCP / REST / On-Prem Adapter' : 'BigQuery / Analytical SQL / EDI',
-            mode: idx === 0 ? 'read / write' : 'read',
-            ownedTables: tables[idx] ? [tables[idx].table_name] : []
-          }));
+        : sysStrings.slice(0, 4).map((sName, idx) => {
+            const ownedTables = tables[idx] ? [tables[idx].table_name] : (tables[0] ? [tables[0].table_name] : []);
+            const hasWrite = idx === 0 || idx === sysStrings.slice(0, 4).length - 1;
+            return {
+              name: sName,
+              protocol: idx === 0 ? 'OData v4 / BAPI / REST' : 'BigQuery Storage Read API / PubSub',
+              mode: hasWrite ? 'read / write' : 'read',
+              category: idx === 0 ? 'ERP / System of Record' : 'Telemetry & Digital Twin',
+              ownedTables,
+              boundTools: hasWrite ? actionTools.map(t => t.name).concat(queryTools.slice(0, 1).map(t => t.name)) : queryTools.slice(idx, idx + 2).map(t => t.name)
+            };
+          });
 
-      // 3. Workflow Stages
+      // 3. Workflow Stages (3 A2A Sub-Agents)
       const subs = (ag.subAgents && ag.subAgents.length >= 3)
         ? ag.subAgents.slice(0, 3)
         : [
-            { name: 'Signal Context Node', role: 'Streams & validates live operational records' },
-            { name: 'Optimization Engine', role: 'Evaluates multi-echelon constraints & trade-offs' },
-            { name: 'Write-Back Dispatcher', role: 'Enforces quality gates & commits signed payloads' }
+            { name: 'Signal Ingestion & Context Node', role: 'Streams & validates live operational records from connected ERP/WMS/TMS tables' },
+            { name: 'Scenario & Optimization Engine', role: 'Evaluates multi-echelon constraints, probability fans, and trade-offs' },
+            { name: 'Exception & Write-Back Dispatcher', role: 'Enforces quality gates and commits signed payloads with idempotency keys' }
           ];
 
-      // 4. Golden Eval Scenario
+      const stageTools = [
+        queryTools.slice(0, Math.max(1, Math.ceil(queryTools.length / 2))).map(t => t.name),
+        queryTools.slice(Math.floor(queryTools.length / 2)).map(t => t.name),
+        actionTools.map(t => t.name).concat(queryTools.slice(-1).map(t => t.name))
+      ];
+
+      // 4. Escalation Rules (derived from write_tools_req & domain thresholds)
+      const writeToolNames = actionTools.map(t => t.name).join(', ') || 'action_commit_writeback';
+      const writeReqs = Object.entries(spec.writeToolsReq || {});
+      const reqFieldsList = writeReqs.length
+        ? writeReqs.map(([fn, reqs]) => `${fn}(${(reqs || []).join(', ')})`).join(' · ')
+        : 'target_id, rationale, idempotency_key';
+
+      // 5. Evidence Requirements
+      const evidenceItems = tables.slice(0, 3).map((t, i) => {
+        const keyCols = (t.columns || []).slice(0, 3).map(c => `${t.table_name}.${c}`);
+        const claim = i === 0
+          ? `${ag.badge || ag.outcome} grounded in primary operational telemetry`
+          : (i === 1
+              ? `Cross-system anomaly & constraint verification across ${subPillar}`
+              : `Pre-mutation baseline vs. post-action delta audit verification`);
+        return { claim, cites: keyCols };
+      });
+
+      // 6. Relationships across fixture tables
+      const relationships = [];
+      for (let i = 0; i < tables.length; i++) {
+        for (let j = i + 1; j < tables.length; j++) {
+          const colsA = tables[i].columns || [];
+          const colsB = tables[j].columns || [];
+          const shared = colsA.filter(c => colsB.includes(c) && (c.endsWith('_id') || c === 'region' || c === 'sku_id' || c === 'plant_id' || c === 'vendor_id' || c === 'facility_id'));
+          shared.forEach(col => {
+            relationships.push({
+              left: `${tables[i].table_name}.${col}`,
+              right: `${tables[j].table_name}.${col}`,
+              relType: col.endsWith('_id') ? 'foreign-key join (many-to-one)' : 'dimensional join'
+            });
+          });
+        }
+      }
+      if (relationships.length === 0 && tables.length >= 2) {
+        const c0 = (tables[0].columns || ['id'])[0];
+        const c1 = (tables[1].columns || ['id'])[0];
+        relationships.push({
+          left: `${tables[0].table_name}.${c0}`,
+          right: `${tables[1].table_name}.${c1}`,
+          relType: 'workflow entity correlation'
+        });
+      }
+
+      // 7. Golden Eval Scenario
       const evalObj = (spec.evalScenarios && spec.evalScenarios[0]) || {
         scenario_id: `SCENARIO-${ag.id.toUpperCase().slice(0, 12)}-01`,
-        name: `${cleanName} Golden Eval`,
-        query: `Execute ${cleanName} for the current horizon, cite table evidence, and commit governed remediation.`,
+        name: `${cleanName} Golden Operational Verification`,
+        query: `Execute the ${cleanName} workflow for the current operational horizon, cite source-system table evidence, and commit governed remediation write-backs.`,
         expected_proof_obligations: [
           `Query primary ${subPillar} records from ${(tables[0]?.table_name) || 'digital_twin'}`,
-          `Validate constraints before invoking ${writeToolNames}`,
-          `Emit A2UI VegaChart and copy-ready markdown table`
+          `Cross-reference constraints & anomalies in ${(tables[1]?.table_name) || 'secondary_signals'}`,
+          `Execute pre-execution quality gate & idempotency check before ${writeToolNames}`,
+          `Emit VegaChart visual surface and atomic copy-ready markdown table`
         ],
         sla_seconds: 15
       };
 
       const standards = (ag.standardsCompliance && ag.standardsCompliance.length)
         ? ag.standardsCompliance
-        : ['ASCM SCOR DS v14.0', 'ISO 9001:2015', 'Google ADK + A2A + MCP + A2UI v0.9', 'ISO/IEC 42001'];
+        : ['ASCM SCOR DS v14.0', 'ISO 9001:2015 Quality Management', 'Google ADK + A2A v1.0 + MCP + A2UI v0.9', 'ISO/IEC 42001 AI Management System'];
 
       return `
-        <!-- ONE SINGLE BUTTON / BAR ON THE MAIN AGENT PAGE -->
-        <div class="sc-single-spec-trigger-bar" style="border-left: 5px solid ${dept.color};">
-          <div>
-            <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
-              🛡️ Enterprise Agent Contract · Playbook, Governance &amp; Technical Specification
+        <!-- SINGLE EXPANDABLE MASTER TAB CONTAINING THE ENTIRE ENTERPRISE AGENT CONTRACT & ALL 6 SPEC SECTIONS -->
+        <details class="sc-master-contract-drawer" id="agentMasterContractDrawer" style="border-left: 5px solid ${dept.color};" ${masterOpenAttr}>
+          <summary class="sc-master-contract-summary">
+            <div style="flex:1; min-width:280px;">
+              <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:5px;">
+                📋 01–06 · Enterprise Agent Contract · Playbook, Governance &amp; Technical Specification
+              </div>
+              <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text-primary);">
+                ${cleanName} — Complete Enterprise Agent Contract &amp; Technical Specification
+              </div>
+              <div style="font-size:14.5px; color:var(--text-secondary); margin-top:5px; line-height:1.55;">
+                All 6 sections preserved in full: <strong>01 Playbook &amp; Governance</strong> (Role Mandate, In-Scope / Out-of-Scope, Escalation Gates, Hard Guardrails &amp; Evidence) · <strong>02 Workflow</strong> · <strong>03 Agent Tools (${rawTools.length})</strong> · <strong>04 Source Systems (${sysList.length})</strong> · <strong>05 Data Model (${tables.length} tables · ${totalFields} fields)</strong> · <strong>06 Evals &amp; Proof</strong>
+              </div>
             </div>
-            <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text-primary);">
-              ${cleanName} — Deep-Dive Specification
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+              <span class="sc-master-contract-toggle-btn"></span>
+              ${!openByDefault ? `
+                <button type="button" class="switch-pill" style="background:${dept.color}; border-color:${dept.color}; color:#ffffff; font-weight:700; padding:11px 18px; font-size:13.5px;" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-governance')">
+                  📄 Open in Dedicated Page &rarr;
+                </button>
+              ` : `
+                <button type="button" class="switch-pill" style="padding:11px 18px; font-size:13.5px;" onclick="event.preventDefault(); event.stopPropagation(); openAgentPage('${ag.id}', true, event)">
+                  &larr; Back to ${cleanName} Overview
+                </button>
+              `}
             </div>
-          </div>
+          </summary>
 
-          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-            <button type="button" id="agentSingleSpecBtn_${ag.id}" class="switch-pill" style="font-weight:800; padding:10px 18px;" onclick="toggleSingleAgentSpecDrawer('${ag.id}')">
-              ${openByDefault ? '▴ Hide Playbook & Technical Specs' : '▾ Open Playbook, Governance & Technical Specs'}
-            </button>
-            ${!openByDefault ? `
-              <button type="button" class="switch-pill" style="background:${dept.color}; border-color:${dept.color}; color:#ffffff; font-weight:800; padding:10px 18px;" onclick="openAgentBlueprintPage('${ag.id}', true, event, 'spec-governance')">
-                📄 Open in Dedicated Page &rarr;
+          <div class="sc-master-contract-body">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+              <div style="font-size:14px; font-weight:700; color:var(--text-secondary);">
+                Jump to any specification section below, or collapse/expand individual sections:
+              </div>
+              <button type="button" class="switch-pill" onclick="toggleAllAgentSpecSections(this)">
+                ▴ Collapse All 6 Spec Sections
               </button>
-            ` : ''}
-          </div>
-        </div>
-
-        <!-- EXPANDABLE 6-TAB SPECIFICATION CONTAINER (Hidden by default on #agent/<id>, Open on #blueprint/<id>) -->
-        <div id="agentSingleSpecBody_${ag.id}" class="sc-spec-section-card sc-spec-collapsible" style="display:${openByDefault ? 'block' : 'none'}; margin-top:0; --spec-accent:${dept.color};">
-          ${renderAgentAtAGlanceStrip(ag, dept, true)}
-
-          <!-- Clean 6-Tab Switcher Bar -->
-          <div class="sc-spec-tabs-nav" style="margin-top:16px;">
-            <button type="button" class="sc-spec-tab-btn active" data-spec-tab="governance" onclick="switchAgentSpecTab('${ag.id}', 'governance', this)">
-              🛡️ 01 · Playbook &amp; Governance
-            </button>
-            <button type="button" class="sc-spec-tab-btn" data-spec-tab="workflow" onclick="switchAgentSpecTab('${ag.id}', 'workflow', this)">
-              ⚡ 02 · 3-Stage Workflow
-            </button>
-            <button type="button" class="sc-spec-tab-btn" data-spec-tab="tools" onclick="switchAgentSpecTab('${ag.id}', 'tools', this)">
-              🔧 03 · Agent Tools (${rawTools.length})
-            </button>
-            <button type="button" class="sc-spec-tab-btn" data-spec-tab="systems" onclick="switchAgentSpecTab('${ag.id}', 'systems', this)">
-              🔌 04 · Source Systems (${sysList.length})
-            </button>
-            <button type="button" class="sc-spec-tab-btn" data-spec-tab="datamodel" onclick="switchAgentSpecTab('${ag.id}', 'datamodel', this)">
-              🗄️ 05 · Data Model (${tables.length})
-            </button>
-            <button type="button" class="sc-spec-tab-btn" data-spec-tab="evals" onclick="switchAgentSpecTab('${ag.id}', 'evals', this)">
-              ✅ 06 · Evals &amp; Proof
-            </button>
-          </div>
-
-          <!-- TAB 01: PLAYBOOK & GOVERNANCE (4 Big-Heading Flippable Cards) -->
-          <div id="spec-governance" class="sc-spec-tab-pane active" data-spec-pane="governance">
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px;">
-              <div class="sc-flip-card sc-flip-tall" style="--flip-accent:#10b981;" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">01A · AUTONOMOUS</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">✓</div>
-                      <span>In-Scope Mandate</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">${personaName}</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">IN-SCOPE EXECUTION</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">${shortSentence(ag.solution, 105)}</div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">${tables[0]?.table_name || 'digital_twin'}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sc-flip-card sc-flip-tall" style="--flip-accent:#f43f5e;" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">01B · BOUNDARIES</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">✕</div>
-                      <span>Out-of-Scope Limits</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">Human Sign-Off Retained</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">HUMAN AUTHORITY</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">No unapproved CapEx, contract termination, or policy overrides outside ${personaName} limits.</div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">No Unverified Writes</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sc-flip-card sc-flip-tall" style="--flip-accent:#f59e0b;" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">01C · QUALITY GATES</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">🚦</div>
-                      <span>Escalation Rules</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">enforce_tool_contract()</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">4 GOVERNED TRIGGERS</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">&gt;20% plan variance escalates to human; missing idempotency_key or schema fields blocks mutation.</div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">escalate_to_human</span>
-                      <span class="sc-flip-pill">idempotency_key</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sc-flip-card sc-flip-tall" style="--flip-accent:#38bdf8;" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">01D · AUDIT TRAIL</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">🔒</div>
-                      <span>Hard Guardrails</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">${tables.length || 4} Cited Tables</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">EVIDENCE MANDATE</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">Zero fabricated metrics; every decision cites live rows and logs to action-events.jsonl.</div>
-                    <div class="sc-flip-bottom-pills">
-                      ${tables.slice(0, 2).map(t => `<span class="sc-flip-pill">${t.table_name}</span>`).join('')}
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+            ${renderAgentAtAGlanceStrip(ag, dept, openByDefault)}
 
-          <!-- TAB 02: WORKFLOW (3 Big-Heading Flippable Stage Cards) -->
-          <div id="spec-workflow" class="sc-spec-tab-pane" data-spec-pane="workflow">
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+        <!-- SECTION 1: PLAYBOOK & GOVERNANCE (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-governance" ${openAttr}>
+          <summary class="sc-spec-sec-head">
+            <div>
+              <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
+                01 · Enterprise Agent Contract
+              </div>
+              <h2 class="sc-spec-sec-title">
+                Playbook &amp; Governance
+                <span class="sc-spec-count-badge">${personaName} · ${subPillar}</span>
+              </h2>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-governance')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
+            </div>
+          </summary>
+
+          <div class="sc-spec-sec-body">
+            <!-- Sub-Drawer 1A: Role Mandate & In-Scope vs Out-of-Scope -->
+            <details class="sc-spec-sub-drawer" open>
+              <summary>
+                <span>🛡️ 1A · Role Mandate &amp; Autonomous Scope (In-Scope vs. Out-of-Scope)</span>
+                <span class="sc-sub-toggle-hint"></span>
+              </summary>
+              <div class="sc-spec-sub-drawer-body">
+                <p style="font-size:14.5px; color:var(--text-primary); line-height:1.6; margin:0 0 14px;">
+                  <strong>Role Mandate:</strong> Autonomous <strong>${personaName}</strong> agent for the <strong>${cleanName}</strong> workflow in <strong>${subPillar}</strong>. ${ag.solution} ${ag.advantage || ag.outcome}
+                </p>
+
+                <div class="sc-spec-scope-grid">
+                  <div class="sc-spec-scope-col scope-in">
+                    <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; text-transform:uppercase; color:#10b981; letter-spacing:0.06em;">
+                      ✓ In Scope (Autonomous Execution)
+                    </div>
+                    <ul class="sc-spec-scope-list">
+                      <li>${ag.solution}</li>
+                      <li>Multi-table evidence synthesis across ${tables.map(t => `<code class="sc-spec-code">${t.table_name}</code>`).join(' ')} using <strong>${ag.solverStack || 'Vertex AI + BigQuery ML'}</strong>.</li>
+                      <li>Governed write-back execution via <strong>${ag.apiWriteback || 'Signed MCP / REST / On-Prem ERP Connector'}</strong> with deterministic <code class="sc-spec-code">idempotency_key</code> audit logging.</li>
+                    </ul>
+                  </div>
+
+                  <div class="sc-spec-scope-col scope-out">
+                    <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; text-transform:uppercase; color:#f43f5e; letter-spacing:0.06em;">
+                      ✕ Out of Scope (Human Authority Retained)
+                    </div>
+                    <ul class="sc-spec-scope-list">
+                      <li>Unapproved capital expenditure, legal contract termination, or policy overrides outside ${personaName} delegation limits.</li>
+                      <li>Direct database mutations bypassing <code class="sc-spec-code">enforce_tool_contract()</code> or missing mandatory <code class="sc-spec-code">idempotency_key</code> tokens.</li>
+                      <li>Executing external ERP/WMS write-backs when source telemetry exceeds staleness thresholds without human confirmation.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- Sub-Drawer 1B: Escalation Rules & Pre-Execution Quality Gates -->
+            <details class="sc-spec-sub-drawer" ${openAttr}>
+              <summary>
+                <span>🚦 1B · Escalation Rules &amp; Pre-Execution Quality Gates (4 Governed Triggers)</span>
+                <span class="sc-sub-toggle-hint"></span>
+              </summary>
+              <div class="sc-spec-sub-drawer-body">
+                <div class="sc-spec-table-wrap">
+                  <table class="sc-spec-table">
+                    <thead>
+                      <tr>
+                        <th style="width:38%;">Trigger Condition</th>
+                        <th style="width:20%;">Gate Action</th>
+                        <th>Governance Rationale</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Financial or volume impact exceeds <strong>${personaName}</strong> autonomous threshold (&gt;20% variance vs. baseline plan)</td>
+                        <td><span class="sc-spec-code action-code">escalate_to_human</span></td>
+                        <td style="color:var(--text-secondary);">High-magnitude supply chain reallocations require human sign-off in Control Tower before ERP commit.</td>
+                      </tr>
+                      <tr>
+                        <td>Mutation call to <code class="sc-spec-code">${writeToolNames}</code> missing required fields (<code class="sc-spec-code">${reqFieldsList}</code>)</td>
+                        <td><span class="sc-spec-code">request_more_info</span></td>
+                        <td style="color:var(--text-secondary);">Enforced by <code class="sc-spec-code">enforce_tool_contract()</code> in <code class="sc-spec-code">agents/${ag.id}/app/agent.py</code> to prevent partial ERP writes.</td>
+                      </tr>
+                      <tr>
+                        <td>Mutation call lacks a non-empty <code class="sc-spec-code">idempotency_key</code> or attempts duplicate replay</td>
+                        <td><span class="sc-spec-code">request_confirmation</span></td>
+                        <td style="color:var(--text-secondary);">Guarantees exactly-once execution across Enterprise ERP (MCP / On-Prem DB), IBP, WMS, and TMS connectors.</td>
+                      </tr>
+                      <tr>
+                        <td>Proposed action contradicts physical constraints or lacks corroborating records across at least 2 tables</td>
+                        <td><span class="sc-spec-code action-code">refuse / reject_mutation</span></td>
+                        <td style="color:var(--text-secondary);">Single-source or unverified assertions cannot trigger production state changes.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+
+            <!-- Sub-Drawer 1C: Hard Guardrails & Evidence Requirements -->
+            <details class="sc-spec-sub-drawer" ${openAttr}>
+              <summary>
+                <span>🔒 1C · Hard Guardrails &amp; Source-Table Evidence Requirements (${evidenceItems.length} Rules)</span>
+                <span class="sc-sub-toggle-hint"></span>
+              </summary>
+              <div class="sc-spec-sub-drawer-body">
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px;">
+                  <div>
+                    <div class="sc-spec-mini-label" style="margin-top:0;">Hard Guardrails</div>
+                    <ul class="sc-spec-scope-list" style="margin:0;">
+                      <li>Never fabricate SKU quantities, lead times, or financial metrics; cite exact rows from ${tables.slice(0, 2).map(t => `<code class="sc-spec-code">${t.table_name}</code>`).join(' & ')}.</li>
+                      <li>Never bypass <code class="sc-spec-code">enforce_tool_contract()</code> before invoking ${actionTools.map(t => `<code class="sc-spec-code action-code">${t.name}</code>`).join(' ') || 'write tools'}.</li>
+                      <li>Append every executed mutation to immutable audit trail <code class="sc-spec-code ev-code">artifacts/action-events.jsonl</code>.</li>
+                      <li>Route routine operational queries to <strong>Gemini 3.8 Flash</strong> and escalate multi-echelon trade-offs to <strong>Gemini 3.1 Pro / 4 Argon</strong>.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div class="sc-spec-mini-label" style="margin-top:0;">Evidence Requirements</div>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                      ${evidenceItems.map(ev => `
+                        <div style="padding:10px 14px; border-radius:10px; background:var(--bg-card); border:1px solid var(--border-subtle);">
+                          <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:4px;">${ev.claim}</div>
+                          <div>${ev.cites.map(c => `<code class="sc-spec-code ev-code">${c}</code>`).join('')}</div>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </details>
+
+        <!-- SECTION 2: MULTI-STAGE WORKFLOW (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-workflow" ${openAttr}>
+          <summary class="sc-spec-sec-head">
+            <div>
+              <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
+                02 · Execution Sequence
+              </div>
+              <h2 class="sc-spec-sec-title">
+                Workflow <span class="sc-spec-count-badge">Sequential &amp; A2A Branching · ${subs.length} Stages</span>
+              </h2>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-workflow')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
+            </div>
+          </summary>
+
+          <div class="sc-spec-sec-body">
+            <div style="font-size:12.5px; color:var(--text-secondary); font-weight:600; margin-bottom:12px;">
+              Solver &amp; Reasoning Stack: <strong>${ag.solverStack || 'Vertex AI + BigQuery ML'}</strong>
+            </div>
+            <ol class="sc-spec-flow-list">
               ${subs.map((sub, idx) => `
-                <div class="sc-flip-card sc-flip-tall" style="--flip-accent:${dept.color};" onclick="this.classList.toggle('is-flipped')">
-                  <div class="sc-flip-inner">
-                    <div class="sc-flip-front">
-                      <div class="sc-flip-top-row">
-                        <span class="sc-flip-kicker">STAGE 0${idx + 1} · A2A NODE</span>
-                        <span class="sc-flip-hint">↻ Flip</span>
-                      </div>
-                      <div class="sc-flip-big-heading">
-                        <div class="sc-flip-icon-box">0${idx + 1}</div>
-                        <span>${shortStepHeading(toOpenTechLabel(sub.name), `Stage ${idx + 1}`)}</span>
-                      </div>
-                      <div class="sc-flip-bottom-pills">
-                        <span class="sc-flip-pill">${tables[idx]?.table_name || 'digital_twin'}</span>
-                      </div>
+                <li class="sc-spec-flow-step">
+                  <div class="sc-spec-step-num" style="background:${dept.color};">${idx + 1}</div>
+                  <div style="flex:1;">
+                    <div style="font-family:var(--font-display); font-size:16px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">
+                      ${sub.name}
                     </div>
-                    <div class="sc-flip-back">
-                      <div class="sc-flip-top-row">
-                        <span class="sc-flip-kicker">STAGE 0${idx + 1} ROLE</span>
-                        <span class="sc-flip-hint">↺ Back</span>
-                      </div>
-                      <div class="sc-flip-back-text">${shortSentence(toOpenTechLabel(sub.role), 100)}</div>
-                      <div class="sc-flip-bottom-pills">
-                        <span class="sc-flip-pill">${rawTools[idx]?.name || 'query_state'}</span>
-                      </div>
+                    <p style="font-size:13.5px; color:var(--text-secondary); margin:0 0 8px; line-height:1.5;">
+                      ${sub.role}. Grounds state across ${tables[idx] ? `<code class="sc-spec-code">${tables[idx].table_name}</code>` : 'connected digital twin tables'} and validates execution constraints.
+                    </p>
+                    <div>
+                      ${(stageTools[idx] || []).map(tName => {
+                        const isAct = String(tName).startsWith('action_');
+                        return `<a href="#spec-tool-${tName}" class="sc-spec-code ${isAct ? 'action-code' : ''}" onclick="return openAndScrollToSpecSection('spec-tools', 'spec-tool-${tName}');">${tName}</a>`;
+                      }).join('')}
                     </div>
                   </div>
-                </div>
+                </li>
               `).join('')}
-            </div>
+            </ol>
           </div>
+        </details>
 
-          <!-- TAB 03: AGENT TOOLS (Flippable Tool Cards) -->
-          <div id="spec-tools" class="sc-spec-tab-pane" data-spec-pane="tools">
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
+        <!-- SECTION 3: AGENT TOOLS (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-tools" ${openAttr}>
+          <summary class="sc-spec-sec-head">
+            <div>
+              <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
+                03 · Bound ADK Function Contracts
+              </div>
+              <h2 class="sc-spec-sec-title">
+                Agent Tools <span class="sc-spec-count-badge">${rawTools.length}</span>
+              </h2>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="sc-spec-code">agents/${ag.id}/app/tools.py</span>
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-tools')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
+            </div>
+          </summary>
+
+          <div class="sc-spec-sec-body">
+            <div class="sc-spec-tools-grid">
               ${rawTools.map(t => `
-                <div class="sc-flip-card" id="spec-tool-${t.name}" style="--flip-accent:${t.kind === 'action' ? '#f43f5e' : '#38bdf8'};" onclick="this.classList.toggle('is-flipped')">
-                  <div class="sc-flip-inner">
-                    <div class="sc-flip-front">
-                      <div class="sc-flip-top-row">
-                        <span class="sc-flip-kicker">${t.kind === 'action' ? '⚡ ACTION TOOL' : '🔍 QUERY TOOL'}</span>
-                        <span class="sc-flip-hint">↻ Flip</span>
-                      </div>
-                      <div class="sc-flip-big-heading" style="font-size:16.5px; font-family:var(--font-mono); word-break:break-word;">
-                        <span>${t.name}</span>
-                      </div>
-                      <div class="sc-flip-bottom-pills">
-                        <span class="sc-flip-pill">${t.table || 'supply_chain_twin'}</span>
+                <div class="sc-spec-tool-card" id="spec-tool-${t.name}">
+                  <div>
+                    <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; margin-bottom:8px;">
+                      <code class="sc-spec-code ${t.kind === 'action' ? 'action-code' : ''}" style="font-size:13px; font-weight:800;">${t.name}</code>
+                      <div style="display:flex; align-items:center; gap:6px;">
+                        <span class="sc-spec-count-badge" style="color:${t.kind === 'action' ? '#fb7185' : '#38bdf8'};">${t.kind}</span>
+                        ${t.table ? `<span class="sc-spec-count-badge">${t.table}</span>` : ''}
                       </div>
                     </div>
-                    <div class="sc-flip-back">
-                      <div class="sc-flip-top-row">
-                        <span class="sc-flip-kicker">CONTRACT I/O</span>
-                        <span class="sc-flip-hint">↺ Back</span>
-                      </div>
-                      <div class="sc-flip-back-text">${shortSentence(t.description, 95)}</div>
-                      <div class="sc-flip-bottom-pills">
-                        <span class="sc-flip-pill">IN: ${(t.inputs || []).slice(0, 2).join(', ')}</span>
-                        <span class="sc-flip-pill">OUT: ${(t.outputs || []).slice(0, 2).join(', ')}</span>
-                      </div>
+                    <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px; line-height:1.5;">
+                      ${t.description}
+                    </p>
+                  </div>
+
+                  <div style="border-top:1px solid var(--border-subtle); padding-top:8px;">
+                    <div class="sc-spec-io-row">
+                      <span class="sc-spec-io-label">in</span>
+                      ${(t.inputs || []).map(inp => `<code class="sc-spec-code">${inp}</code>`).join('')}
+                    </div>
+                    <div class="sc-spec-io-row">
+                      <span class="sc-spec-io-label">out</span>
+                      ${(t.outputs || []).map(out => `<code class="sc-spec-code">${out}</code>`).join('')}
+                    </div>
+                    <div class="sc-spec-io-row">
+                      <span class="sc-spec-io-label">evidence</span>
+                      ${(t.evidence || []).map(ev => `<code class="sc-spec-code ev-code">${ev}</code>`).join('')}
                     </div>
                   </div>
                 </div>
               `).join('')}
             </div>
           </div>
+        </details>
 
-          <!-- TAB 04: SOURCE SYSTEMS (Flippable System Cards) -->
-          <div id="spec-systems" class="sc-spec-tab-pane" data-spec-pane="systems">
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
+        <!-- SECTION 4: SOURCE SYSTEMS (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-systems" ${openAttr}>
+          <summary class="sc-spec-sec-head">
+            <div>
+              <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
+                04 · Enterprise Integration Topology
+              </div>
+              <h2 class="sc-spec-sec-title">
+                Source Systems <span class="sc-spec-count-badge">${sysList.length}</span>
+              </h2>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-systems')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
+            </div>
+          </summary>
+
+          <div class="sc-spec-sec-body">
+            <div style="font-size:12.5px; color:var(--text-secondary); font-weight:600; margin-bottom:12px;">
+              Write-Back Target: <strong>${ag.apiWriteback || 'Signed MCP / REST / On-Prem ERP API'}</strong>
+            </div>
+            <div class="sc-spec-sys-grid">
               ${sysList.map(sys => `
-                <div class="sc-flip-card" style="--flip-accent:${sys.mode.includes('write') ? '#10b981' : '#38bdf8'};" onclick="this.classList.toggle('is-flipped')">
-                  <div class="sc-flip-inner">
-                    <div class="sc-flip-front">
-                      <div class="sc-flip-top-row">
-                        <span class="sc-flip-kicker">${sys.mode.toUpperCase()}</span>
-                        <span class="sc-flip-hint">↻ Flip</span>
-                      </div>
-                      <div class="sc-flip-big-heading" style="font-size:18px;">
-                        <div class="sc-flip-icon-box">${pickSystemIcon(sys.name)}</div>
-                        <span>${sys.name}</span>
-                      </div>
-                      <div class="sc-flip-bottom-pills">
-                        <span class="sc-flip-pill">Pluggable MCP / DB / API</span>
-                      </div>
+                <div class="sc-spec-sys-card">
+                  <div>
+                    <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px;">
+                      <span style="font-family:var(--font-display); font-size:16px; font-weight:800; color:var(--text-primary);">${sys.name}</span>
+                      <span class="sc-spec-count-badge" style="color:${sys.mode.includes('write') ? '#34d399' : '#38bdf8'};">${sys.mode}</span>
                     </div>
-                    <div class="sc-flip-back">
-                      <div class="sc-flip-top-row">
-                        <span class="sc-flip-kicker">INTEGRATION PROTOCOL</span>
-                        <span class="sc-flip-hint">↺ Back</span>
+                    <div style="font-family:var(--font-mono); font-size:11.5px; color:var(--text-secondary); margin-bottom:10px;">
+                      Protocol: ${sys.protocol} · ${sys.category}
+                    </div>
+                  </div>
+
+                  <div style="border-top:1px solid var(--border-subtle); padding-top:8px;">
+                    ${sys.ownedTables && sys.ownedTables.length ? `
+                      <div class="sc-spec-io-row">
+                        <span class="sc-spec-io-label">owns</span>
+                        ${sys.ownedTables.map(tbl => `<a href="#spec-entity-${tbl}" class="sc-spec-code ev-code" onclick="return openAndScrollToSpecSection('spec-data-model', 'spec-entity-${tbl}');">${tbl}</a>`).join('')}
                       </div>
-                      <div class="sc-flip-back-text">Protocol: ${sys.protocol}</div>
-                      <div class="sc-flip-bottom-pills">
-                        ${(sys.ownedTables || []).slice(0, 2).map(tb => `<span class="sc-flip-pill">${tb}</span>`).join('')}
-                      </div>
+                    ` : ''}
+                    <div class="sc-spec-io-row">
+                      <span class="sc-spec-io-label">tools</span>
+                      ${(sys.boundTools || []).map(tName => `<a href="#spec-tool-${tName}" class="sc-spec-code ${String(tName).startsWith('action_') ? 'action-code' : ''}" onclick="return openAndScrollToSpecSection('spec-tools', 'spec-tool-${tName}');">${tName}</a>`).join('')}
                     </div>
                   </div>
                 </div>
               `).join('')}
             </div>
           </div>
+        </details>
 
-          <!-- TAB 05: DATA MODEL (Collapsible Table Schemas) -->
-          <div id="spec-data-model" class="sc-spec-tab-pane" data-spec-pane="datamodel">
+        <!-- SECTION 5: DATA MODEL & SCHEMAS (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-data-model" ${openAttr}>
+          <summary class="sc-spec-sec-head">
+            <div>
+              <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
+                05 · Canonical Digital Twin Schema &amp; Live Fixtures
+              </div>
+              <h2 class="sc-spec-sec-title">
+                Data Model <span class="sc-spec-count-badge">${tables.length} entities · ${totalFields} fields</span>
+              </h2>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="sc-spec-code">Pluggable Data Layer: BigQuery · On-Prem SQL · 3rd-Party MCPs</span>
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-data-model')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
+            </div>
+          </summary>
+
+          <div class="sc-spec-sec-body">
             <div class="sc-spec-entities-list">
               ${tables.map((t, idx) => {
                 const cols = t.columns || [];
@@ -53411,23 +53726,38 @@
                   <details class="sc-spec-entity" id="spec-entity-${t.table_name}" ${idx === 0 ? 'open' : ''}>
                     <summary>
                       <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-                        <code class="sc-spec-code ev-code" style="font-size:14px; font-weight:800;">${t.table_name}</code>
+                        <code class="sc-spec-code ev-code" style="font-size:13.5px; font-weight:800;">${t.table_name}</code>
                         <span style="font-size:12.5px; color:var(--text-secondary); font-weight:600;">
-                          ${cols.length} cols · ${t.row_count || rows.length} rows
+                          ${cols.length} cols · ${t.row_count || rows.length} fixture rows · BigQuery / On-Prem SQL / MCP Data Layer
                         </span>
                       </div>
-                      <span style="font-size:12px; color:${dept.color}; font-weight:700;">▾ Schema &amp; Samples</span>
+                      <span style="font-size:12px; color:${dept.color}; font-weight:700;">▾ Click to Inspect Schema &amp; Sample Values</span>
                     </summary>
                     <div style="padding:14px 18px;">
                       <div class="sc-spec-table-wrap">
                         <table class="sc-spec-table">
                           <thead>
-                            <tr><th>Column</th><th>Type</th><th>Sample Values</th></tr>
+                            <tr>
+                              <th style="width:28%;">Column</th>
+                              <th style="width:18%;">Type</th>
+                              <th style="width:16%;">Constraints</th>
+                              <th>Verified Fixture Sample Values</th>
+                            </tr>
                           </thead>
                           <tbody>
                             ${cols.map(col => {
                               const info = inferColumnTypeAndConstraint(col, rows);
-                              return `<tr><td><code class="sc-spec-code">${col}</code></td><td>${info.colType}</td><td style="font-family:var(--font-mono); font-size:12px;">${info.sampleStr || '—'}</td></tr>`;
+                              return `
+                                <tr>
+                                  <td>
+                                    <code class="sc-spec-code" style="margin:0;">${col}</code>
+                                    ${info.isPk ? `<span class="sc-spec-count-badge" style="margin-left:6px; color:#f59e0b; border-color:#f59e0b55;">PK</span>` : ''}
+                                  </td>
+                                  <td style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">${info.colType}</td>
+                                  <td><span class="sc-spec-count-badge">required</span></td>
+                                  <td style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">${info.sampleStr || '—'}</td>
+                                </tr>
+                              `;
                             }).join('')}
                           </tbody>
                         </table>
@@ -53437,98 +53767,110 @@
                 `;
               }).join('')}
             </div>
-          </div>
 
-          <!-- TAB 06: EVALS & PROOF (3 Big-Heading Flippable Cards) -->
-          <div id="spec-evals" class="sc-spec-tab-pane" data-spec-pane="evals">
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
-              <div class="sc-flip-card sc-flip-tall" style="--flip-accent:${dept.color};" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">${evalObj.scenario_id}</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">🎯</div>
-                      <span>Golden Eval Scenario</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">SLA &le;${evalObj.sla_seconds || 15}s · 7/7 Pass</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">EVAL PROMPT</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">“${shortSentence(evalObj.query, 105)}”</div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">gemini-3.8-flash</span>
-                      <span class="sc-flip-pill">gemini-3.1-pro / 4-argon</span>
-                    </div>
-                  </div>
-                </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px; margin-top:16px;">
+              <div>
+                <div class="sc-spec-mini-label">Entity Relationships</div>
+                <ul class="sc-spec-scope-list" style="margin:0;">
+                  ${relationships.map(rel => `
+                    <li>
+                      <code class="sc-spec-code">${rel.left}</code>
+                      <span style="color:${dept.color}; font-weight:800;">&rarr;</span>
+                      <code class="sc-spec-code">${rel.right}</code>
+                      <span style="font-size:12px; color:var(--text-secondary);">(${rel.relType})</span>
+                    </li>
+                  `).join('')}
+                </ul>
               </div>
 
-              <div class="sc-flip-card sc-flip-tall" style="--flip-accent:#10b981;" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">VERIFICATION</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">✅</div>
-                      <span>Proof Obligations</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">test_smoke.py Verified</span>
-                    </div>
+              <div>
+                <div class="sc-spec-mini-label">Seeded Operational Anomalies (What the Agent Must Catch)</div>
+                <div style="padding:14px 16px; border-radius:12px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-left:4px solid #f59e0b;">
+                  <p style="font-size:13px; color:var(--text-primary); margin:0 0 8px; line-height:1.5;">
+                    <strong>Seeded Fault:</strong> ${ag.problem}
+                  </p>
+                  <div style="margin-bottom:8px;">
+                    ${tables.slice(0, 2).map(t => `<code class="sc-spec-code ev-code">${t.table_name}</code>`).join('')}
                   </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">REQUIRED CHECKS</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">${(evalObj.expected_proof_obligations || []).slice(0, 2).join(' · ')}</div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">A2UI VegaChart</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sc-flip-card sc-flip-tall" style="--flip-accent:#a855f7;" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">COMPLIANCE</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">📜</div>
-                      <span>Industry Standards</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">${standards[0] || 'ASCM SCOR DS'}</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">STANDARDS ALIGNED</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">Aligned with global supply chain &amp; AI governance frameworks.</div>
-                    <div class="sc-flip-bottom-pills">
-                      ${standards.slice(0, 3).map(st => `<span class="sc-flip-pill">${st}</span>`).join('')}
-                    </div>
+                  <div style="font-size:12.5px; color:var(--text-secondary);">
+                    <strong>Expected Remediation:</strong> Detect anomaly across connected tables, validate constraints via ${ag.solverStack || 'Vertex AI'}, and execute <code class="sc-spec-code action-code">${writeToolNames}</code>.
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </details>
+
+        <!-- SECTION 6: EVALS & PROOF (COLLAPSIBLE) -->
+        <details class="sc-spec-section-card sc-spec-collapsible" id="spec-evals" ${openAttr}>
+          <summary class="sc-spec-sec-head">
+            <div>
+              <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
+                06 · Behavioral Proof &amp; Golden Evaluations
+              </div>
+              <h2 class="sc-spec-sec-title">
+                Evals &amp; Proof <span class="sc-spec-count-badge">${adk.smokeTestsPassed || 7}/7 Smoke Tests Passing</span>
+              </h2>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="sc-spec-code">agents/${ag.id}/evals/golden_scenarios.json</span>
+              ${!openByDefault ? `
+                <span class="sc-spec-open-page-mini" onclick="event.preventDefault(); event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event, 'spec-evals')">
+                  ↗ Open in Dedicated Page
+                </span>
+              ` : ''}
+              <span class="sc-spec-toggle-pill"></span>
+            </div>
+          </summary>
+
+          <div class="sc-spec-sec-body">
+            <div style="padding:18px 20px; border-radius:14px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-left:4px solid ${dept.color}; margin-bottom:16px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+                <span style="font-family:var(--font-mono); font-size:12px; font-weight:800; color:${dept.color};">
+                  ${evalObj.scenario_id} · ${evalObj.name}
+                </span>
+                <span class="sc-spec-count-badge">SLA Target: &le;${evalObj.sla_seconds || 15}s</span>
+              </div>
+              <p style="font-size:15px; font-weight:700; color:var(--text-primary); margin:0 0 12px; line-height:1.5;">
+                “${evalObj.query}”
+              </p>
+              <div class="sc-spec-io-row">
+                <span class="sc-spec-io-label">expects tools</span>
+                ${rawTools.map(t => `<code class="sc-spec-code ${t.kind === 'action' ? 'action-code' : ''}">${t.name}</code>`).join('')}
+              </div>
+              <div class="sc-spec-io-row">
+                <span class="sc-spec-io-label">cites entities</span>
+                ${tables.map(t => `<code class="sc-spec-code ev-code">${t.table_name}</code>`).join('')}
+              </div>
+              <div class="sc-spec-io-row">
+                <span class="sc-spec-io-label">eval models</span>
+                <code class="sc-spec-code">gemini-3.8-flash</code>
+                <code class="sc-spec-code">gemini-3.1-pro / gemini-4-argon (subject to availability)</code>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+              <div>
+                <div class="sc-spec-mini-label" style="margin-top:0;">Expected Proof Obligations</div>
+                <ul class="sc-spec-scope-list" style="margin:0;">
+                  ${(evalObj.expected_proof_obligations || []).map(ob => `<li>${ob}</li>`).join('')}
+                </ul>
+              </div>
+
+              <div>
+                <div class="sc-spec-mini-label" style="margin-top:0;">Governing Documents &amp; Industry Standards</div>
+                <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;">
+                  ${standards.map(st => `<span class="sc-spec-code ev-code">${st}</span>`).join('')}
+                </div>
+                <div style="font-size:13.5px; color:var(--text-secondary); line-height:1.62; padding:12px 16px; border-radius:12px; background:var(--bg-elevated); border:1px solid var(--border-subtle);">
+                  <strong>Spec Source:</strong> <code class="sc-spec-code">agents/${ag.id}/app/agent.py</code> · <code class="sc-spec-code">agents/${ag.id}/tests/test_smoke.py</code> · Verified 7/7 deterministic contract &amp; A2UI surface checks passing.
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+          </div>
+        </details>
       `;
     }
 
@@ -53573,125 +53915,57 @@
                         class="switch-pill ${other.id === ag.id ? 'active' : ''}"
                         style="${other.id === ag.id ? `background:${dept.color}; border-color:${dept.color}; color:#ffffff; font-weight:700;` : ''}"
                         onclick="openAgentPage('${other.id}', true, event)">
-                  🤖 ${cleanAgentName(other.name)}
+                  🤖 ${other.name}
                 </button>
               `).join('')}
             </div>
           </div>
 
-          <!-- 1. Clean Big-Heading Hero + 3 Flippable Executive Cards (Problem / Solution / Outcome) -->
-          <div class="agent-hero-banner" style="padding: 28px 32px; margin-bottom: 22px;">
-            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+          <!-- 1. What This Agent Does + At-a-Glance Strip -->
+          <div class="agent-hero-banner" style="padding: 30px 34px; margin-bottom: 24px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
-                <div class="ai-bot-square" style="width:52px; height:52px; font-size:24px;">✦</div>
+                <div class="ai-bot-square" style="width:48px; height:48px; font-size:22px;">✦</div>
                 <div>
-                  <h1 class="agent-title" style="font-size: clamp(26px, 3vw, 36px); margin: 0;">${cleanAgentName(ag.name)}</h1>
-                  <div style="font-size:15px; color:var(--text-secondary); margin-top:4px; font-weight:700;">${ag.subPillarName || dept.name}</div>
+                  <h1 class="agent-title" style="font-size: clamp(24px, 2.7vw, 34px); margin: 0;">${cleanAgentName(ag.name)}</h1>
+                  <div style="font-size:14.5px; color:var(--text-secondary); margin-top:4px; font-weight:600;">${ag.subPillarName || dept.name}</div>
                 </div>
               </div>
               <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-                <span class="build-tier-badge ${cls.cssClass}">${cls.label}</span>
+                <button type="button" class="switch-pill" onclick="togglePersonaJourneyStep('agentMoreDetailsDrawer')">
+                  ▾ Click for Problem &amp; Outcome Details
+                </button>
+                <button type="button" class="switch-pill" style="background:${dept.color}; border-color:${dept.color}; color:#ffffff; font-weight:700;" onclick="openAgentBlueprintPage('${ag.id}', true, event, 'spec-governance')">
+                  📄 Playbook, Governance &amp; Full Spec Page &rarr;
+                </button>
               </div>
             </div>
-
-            <!-- 3 Big-Heading Flippable Summary Cards -->
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:14px;">
-              <div class="sc-flip-card sc-flip-compact" style="--flip-accent:#f43f5e;" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">01 · CHALLENGE</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">✕</div>
-                      <span>The Bottleneck</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">Click to read problem</span>
-                    </div>
+            <div id="agentMoreDetailsDrawer" class="journey-accordion-item open" style="margin-top:18px; margin-bottom:0;">
+              <div class="journey-accordion-body" style="padding:18px 22px 22px;">
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:20px;">
+                  <div class="toil-highlight-box">
+                    <div class="toil-top-bar"><span class="toil-badge">✕ Legacy Bottleneck Solved</span></div>
+                    <div class="toil-text">${ag.problem}</div>
                   </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">✕ PROBLEM SOLVED</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">${shortSentence(ag.problem, 105)}</div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">${ag.subPillarName || dept.name}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sc-flip-card sc-flip-compact" style="--flip-accent:${dept.color};" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">02 · CAPABILITY</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">✦</div>
-                      <span>AI Agent Solution</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">Click to read solution</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">✦ AGENTIC SOLUTION</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">${shortSentence(ag.solution, 105)}</div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">Autonomous Execution</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sc-flip-card sc-flip-compact" style="--flip-accent:#10b981;" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">03 · BUSINESS IMPACT</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">🚀</div>
-                      <span>${ag.badge || 'Verified ROI'}</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">Click to read outcome</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">🚀 VERIFIED OUTCOME</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">${shortSentence(ag.outcome, 105)}</div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">${ag.badge || 'KPI Impact'}</span>
-                    </div>
+                  <div class="gemini-improve-box">
+                    <div class="improve-top-bar"><span class="improve-badge">✦ Agentic AI Solution &amp; Outcome</span></div>
+                    <div class="improve-text">${ag.solution} <strong>${ag.outcome}</strong></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 2. Execution Flow SVG + 5 Flippable Step Cards -->
+          <!-- 2. Branching Multi-Stage Workflow Architecture Diagram -->
           ${renderSimpleAgentArchitectureDiagram(ag, dept)}
 
-          <!-- 3. 4 Flippable Cost & Value KPI Cards -->
+          <!-- 3. Simple Basic Cost Details Card (Same Website Design & Theme) -->
           ${renderAgentCostAndRoiPanel(ag, dept)}
 
-          <!-- 4. Dedicated Box for a Video -->
+          <!-- 4. Dedicated Box for a Video (Placed above collapsed spec drawers for a clean executive view) -->
           <div class="video-stage-box">
             <div class="video-toolbar" style="border-top:none; border-bottom:1px solid var(--border-subtle);">
-              <span style="font-weight:700; color:var(--text-primary);">🎬 Agent Demo Video — ${cleanAgentName(ag.name)}</span>
+              <span style="font-weight:700; color:var(--text-primary);">🎬 Agent Demo Video Box — ${ag.name}</span>
               <div style="display:flex; flex-wrap:wrap; gap:8px;">
                 <button type="button" class="upload-video-btn ${stageViewMode==='video'?'active':''}"
                         onclick="stageViewMode='video';openAgentPage('${ag.id}', false)">
@@ -53708,7 +53982,7 @@
               </div>
             </div>
 
-            <div class="video-viewport" id="agentVideoViewport" style="min-height: 360px;">
+            <div class="video-viewport" id="agentVideoViewport" style="min-height: 380px;">
               ${stageViewMode === 'cad'
                 ? renderInteractiveCadStage(ag.cadType || 'demand_wave', 'agentCadMount')
                 : (hasVideo
@@ -53716,10 +53990,13 @@
                     : `
                       <div class="video-placeholder-stage">
                         <div class="video-placeholder-icon">▶</div>
-                        <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text-primary);">
-                          ${cleanAgentName(ag.name)} — Demo Studio
+                        <div style="font-family:var(--font-display); font-size:20px; font-weight:700; color:var(--text-primary);">
+                          Demo Video Box · ${ag.name}
                         </div>
-                        <div style="display:flex; gap:10px; margin-top:8px;">
+                        <div style="font-size:14.5px; color:var(--text-secondary); max-width:500px;">
+                          Dedicated slot reserved for your demo video. Click <strong>Attach Video (.mp4)</strong> to load a recording, or switch to <strong>Interactive Preview</strong>.
+                        </div>
+                        <div style="display:flex; gap:10px; margin-top:6px;">
                           <label class="upload-video-btn active" style="cursor:pointer;">
                             <span>📎 Attach .mp4 Video</span>
                             <input type="file" accept="video/*" style="display:none;" onchange="attachAgentVideo(event, '${ag.id}')" />
@@ -53734,7 +54011,7 @@
             </div>
           </div>
 
-          <!-- 5. ONE Single Button / Tab for Playbook, Governance & Technical Specs -->
+          <!-- 5. Collapsible Enterprise Agent Contract, Playbook & Technical Specification Sheet (Collapsed by Default) -->
           ${renderAgentFullSpecSheet(ag, dept, false)}
         </div>
       `;
@@ -53796,6 +54073,23 @@
                   📋 ${cleanAgentName(other.name)}
                 </button>
               `).join('')}
+            </div>
+          </div>
+
+          <div class="agent-hero-banner" style="padding: 26px 32px; margin-bottom: 20px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+              <div style="display:flex; align-items:center; gap:14px;">
+                <div class="ai-bot-square" style="width:46px; height:46px; font-size:20px;">🛡️</div>
+                <div>
+                  <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:2px;">
+                    Dedicated Enterprise Agent Contract · Playbook &amp; Technical Specification
+                  </div>
+                  <h1 class="agent-title" style="font-size: clamp(22px, 2.4vw, 30px); margin: 0;">${cleanAgentName(ag.name)}</h1>
+                </div>
+              </div>
+              <button type="button" class="switch-pill" onclick="openAgentPage('${ag.id}', true, event)">
+                &larr; Return to Clean Agent Overview
+              </button>
             </div>
           </div>
 
@@ -54422,90 +54716,65 @@
               </div>
             </div>
 
-            <!-- 3 Big-Heading Flippable Stage Cards -->
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:14px; margin: 16px 0;">
-              <div class="sc-flip-card sc-flip-compact" style="--flip-accent:#38bdf8;" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">01 · STAGE INPUT</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">📥</div>
-                      <span>Source Systems</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">${toSysArray(activeStage.systems).length} Connected Feeds</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">CONNECTED SYSTEMS</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">Live operational state &amp; telemetry ingested into the Digital Twin.</div>
-                    <div class="sc-flip-bottom-pills">
-                      ${toSysArray(activeStage.systems).slice(0, 3).map(s => `<span class="sc-flip-pill">${toOpenTechLabel(s)}</span>`).join('')}
-                    </div>
-                  </div>
+            <!-- 3-Node Visual Stage Flow Schematic (Systems -> Autonomous AI Engine -> Golden Thread Output) -->
+            <div class="vc-schematic-row" style="--vc-accent: ${activeStage.color || vc.color};">
+              <div class="vc-schematic-node" style="border-left: 4px solid #38bdf8;">
+                <div style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#38bdf8; text-transform:uppercase;">
+                  📥 1. Stage Input &amp; Systems
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+                  ${toSysArray(activeStage.systems).map(s => `
+                    <span class="pt-side-tag" style="font-size:11.5px;">${s}</span>
+                  `).join('')}
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary);">
+                  Live telemetry &amp; ERP state ingested into Digital Twin.
                 </div>
               </div>
 
-              <div class="sc-flip-card sc-flip-compact" style="--flip-accent:${activeStage.color || vc.color};" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">02 · AI ENGINE (${activeStage.modality})</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">⚡</div>
-                      <span>${activeStage.toilTime} &rarr; ${activeStage.afterTime}</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">Click for AI Action</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">AUTONOMOUS EXECUTION</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">${shortSentence(activeStage.after, 95)}</div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">${activeStage.modality}</span>
-                    </div>
-                  </div>
+              <div class="vc-schematic-arrow">──⚡──▶</div>
+
+              <div class="vc-schematic-node" style="border-left: 4px solid ${activeStage.color || vc.color};">
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                  <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:${activeStage.color || vc.color}; text-transform:uppercase;">
+                    🧠 2. AI Process Engine (${activeStage.modality})
+                  </span>
+                  <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#34a853;">
+                    ${activeStage.toilTime} &rarr; ${activeStage.afterTime}
+                  </span>
+                </div>
+                <div style="font-size:15.5px; font-weight:600; color:var(--text-primary); line-height:1.65;">
+                  ${activeStage.after}
                 </div>
               </div>
 
-              <div class="sc-flip-card sc-flip-compact" style="--flip-accent:#10b981;" onclick="this.classList.toggle('is-flipped')">
-                <div class="sc-flip-inner">
-                  <div class="sc-flip-front">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">03 · GOLDEN THREAD</span>
-                      <span class="sc-flip-hint">↻ Flip</span>
-                    </div>
-                    <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">🔗</div>
-                      <span>Downstream Handoff</span>
-                    </div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">Click for Handoff</span>
-                    </div>
-                  </div>
-                  <div class="sc-flip-back">
-                    <div class="sc-flip-top-row">
-                      <span class="sc-flip-kicker">GOLDEN THREAD OUTPUT</span>
-                      <span class="sc-flip-hint">↺ Back</span>
-                    </div>
-                    <div class="sc-flip-back-text">${shortSentence(activeStage.goldenThread, 95)}</div>
-                    <div class="sc-flip-bottom-pills">
-                      <span class="sc-flip-pill">Signed State Commit</span>
-                    </div>
-                  </div>
+              <div class="vc-schematic-arrow">──🔗──▶</div>
+
+              <div class="vc-schematic-node" style="border-left: 4px solid #34a853;">
+                <div style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:#34a853; text-transform:uppercase;">
+                  📤 3. Golden Thread Handoff
                 </div>
+                <div style="font-size:15.5px; font-weight:600; color:var(--text-primary); line-height:1.65;">
+                  ${activeStage.goldenThread}
+                </div>
+              </div>
+            </div>
+
+            <!-- Spacious Before vs. After Stage Comparison -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:22px; margin: 18px 0;">
+              <div class="toil-highlight-box">
+                <div class="toil-top-bar">
+                  <span class="toil-badge">✕ Manual Bottleneck (Before AI)</span>
+                  <span class="toil-duration">⏱ ${activeStage.toilTime}</span>
+                </div>
+                <div class="toil-text">${activeStage.before}</div>
+              </div>
+              <div class="gemini-improve-box">
+                <div class="improve-top-bar">
+                  <span class="improve-badge">✦ With Gemini AI (Autonomous Stage)</span>
+                  <span class="improve-time-saved">⚡ ${activeStage.toilTime} &rarr; ${activeStage.afterTime}</span>
+                </div>
+                <div class="improve-text">${activeStage.after}</div>
               </div>
             </div>
 
@@ -54934,93 +55203,178 @@
             </div>
           </div>
 
-          <!-- ONE Single Button to Expand All 60 Flippable Agent Architecture Cards -->
-          <div class="sc-single-spec-trigger-bar" style="border-left: 5px solid #a855f7; margin-top: 8px;">
-            <div>
-              <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:#c084fc; margin-bottom:3px;">
-                🤖 60-Agent Technical Catalog · Flippable Architecture Cards
-              </div>
-              <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text-primary);">
-                Explore Individual Agent Solvers, Write-Backs &amp; A2A Swarms
-              </div>
+          <!-- Interactive SCOR Vertical Filter Bar on Architecture Page -->
+          <div class="dir-controls-bar" style="margin-bottom:28px;">
+            <div style="font-family:var(--font-display); font-size:16px; font-weight:700; color:#f8fafc;">
+              Filter Architecture Specifications:
             </div>
-            <button type="button" class="switch-pill" style="font-weight:800; padding:10px 18px;" onclick="const el=document.getElementById('archAll60MatrixDrawer'); if(el){const open=el.style.display==='none'; el.style.display=open?'block':'none'; this.textContent=open?'▴ Hide 60-Agent Catalog':'▾ Open 60-Agent Flippable Catalog';}">
-              ${currentArchVerticalFilter !== 'all' ? '▴ Hide 60-Agent Catalog' : '▾ Open 60-Agent Flippable Catalog'}
-            </button>
-          </div>
-
-          <div id="archAll60MatrixDrawer" style="display:${currentArchVerticalFilter !== 'all' ? 'block' : 'none'}; margin-top:16px;">
-            <div class="dir-controls-bar" style="margin-bottom:22px;">
-              <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                <button type="button"
-                        class="switch-pill ${currentArchVerticalFilter === 'all' ? 'active' : ''}"
-                        style="${currentArchVerticalFilter === 'all' ? 'background:#00d2ff; color:#040810; border-color:#00d2ff; font-weight:700;' : ''}"
-                        onclick="filterArchVertical('all')">
-                  All 60 Agents
-                </button>
-                ${Object.values(DEPARTMENTS).map(d => `
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button type="button"
+                      class="switch-pill ${currentArchVerticalFilter === 'all' ? 'active' : ''}"
+                      style="${currentArchVerticalFilter === 'all' ? 'background:#00d2ff; color:#040810; border-color:#00d2ff; font-weight:700;' : ''}"
+                      onclick="filterArchVertical('all')">
+                All 60 Agents
+              </button>
+              <button type="button"
+                      class="switch-pill ${currentArchVerticalFilter === 'universal' ? 'active' : ''}"
+                      style="${currentArchVerticalFilter === 'universal' ? 'background:#38bdf8; color:#040810; border-color:#38bdf8; font-weight:700;' : ''}"
+                      onclick="filterArchVertical('universal')">
+                🌐 4 Universal Core
+              </button>
+              ${Object.values(DEPARTMENTS).map(d => {
+                const count = d.agentIds.length;
+                return `
                   <button type="button"
                           class="switch-pill ${currentArchVerticalFilter === d.id ? 'active' : ''}"
                           style="${currentArchVerticalFilter === d.id ? `background:${d.color}; color:#040810; border-color:${d.color}; font-weight:700;` : ''}"
                           onclick="filterArchVertical('${d.id}')">
-                    ${d.name} (${d.agentIds.length})
+                    ${d.name} (${count})
                   </button>
-                `).join('')}
-              </div>
+                `;
+              }).join('')}
             </div>
+          </div>
 
-            ${Object.values(DEPARTMENTS)
-              .filter(dept => currentArchVerticalFilter === 'all' || dept.id === currentArchVerticalFilter)
-              .map(dept => {
-                const deptAgents = Object.values(AGENTS).filter(a => a.deptId === dept.id);
+          ${(currentArchVerticalFilter === 'all' || currentArchVerticalFilter === 'universal') ? `
+          <!-- 4 Cross-Persona Universal Agents Architecture Matrix -->
+          <div style="margin-bottom: 36px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+              <span class="accent-dot" style="background:#38bdf8; box-shadow:0 0 12px #38bdf8;"></span>
+              <h3 style="font-family:var(--font-display); font-size:22px; font-weight:700; color:#f8fafc;">
+                Cross-Persona Universal Core Agents (Shared Across All 60 Roles)
+              </h3>
+            </div>
+            <div class="dir-persona-grid">
+              ${UNIVERSAL_AGENT_IDS.map(uid => {
+                const ag = AGENTS[uid];
+                if (!ag) return '';
                 return `
-                  <div style="margin-bottom: 28px;">
-                    <h3 style="font-family:var(--font-display); font-size:20px; font-weight:800; color:var(--text-primary); margin-bottom:12px;">
-                      ${dept.scorBadge} · ${dept.name} (${deptAgents.length})
-                    </h3>
-                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
-                      ${deptAgents.map(ag => `
-                        <div class="sc-flip-card sc-flip-tall" style="--flip-accent:${dept.color};" onclick="this.classList.toggle('is-flipped')">
-                          <div class="sc-flip-inner">
-                            <div class="sc-flip-front">
-                              <div class="sc-flip-top-row">
-                                <span class="sc-flip-kicker">${ag.subPillarName || dept.name}</span>
-                                <span class="sc-flip-hint">↻ Flip</span>
-                              </div>
-                              <div class="sc-flip-big-heading" style="font-size:19px;">
-                                <div class="ai-bot-square" style="width:38px; height:38px; font-size:16px; flex-shrink:0;">✦</div>
-                                <span>${cleanAgentName(ag.name)}</span>
-                              </div>
-                              <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
-                                <span class="sc-flip-pill">${ag.badge || 'High ROI'}</span>
-                                <button type="button" class="switch-pill" style="padding:5px 12px; font-size:12px;" onclick="event.stopPropagation(); openAgentPage('${ag.id}', true, event)">
-                                  Open &rarr;
-                                </button>
-                              </div>
-                            </div>
-                            <div class="sc-flip-back">
-                              <div class="sc-flip-top-row">
-                                <span class="sc-flip-kicker">TECH STACK</span>
-                                <span class="sc-flip-hint">↺ Back</span>
-                              </div>
-                              <div class="sc-flip-back-text">
-                                <strong>Solver:</strong> ${shortSentence(toOpenTechLabel(ag.solverStack || 'Vertex AI + BigQuery ML'), 60)}
-                              </div>
-                              <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
-                                <span class="sc-flip-pill">${toOpenTechLabel(ag.apiWriteback || 'MCP Write-Back').slice(0, 24)}</span>
-                                <button type="button" class="switch-pill" style="padding:5px 12px; font-size:12px;" onclick="event.stopPropagation(); openAgentBlueprintPage('${ag.id}', true, event)">
-                                  Spec ↗
-                                </button>
-                              </div>
-                            </div>
+                  <div class="dir-persona-card" style="--dept-accent:#38bdf8; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px;">
+                        <div>
+                          <div style="font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">
+                            🌐 Universal Core · All 60 Roles
+                          </div>
+                          <div style="font-family:var(--font-display); font-size:19px; font-weight:700; color:#f8fafc; line-height:1.25;">
+                            ${ag.name}
                           </div>
                         </div>
-                      `).join('')}
+                        <span class="sc-tech-pill" style="border-color:#38bdf866; color:#38bdf8; font-weight:700; font-size:12px;">${ag.badge}</span>
+                      </div>
+
+                      <p style="font-size:14px; color:#cbd5e1; line-height:1.56; margin-bottom:14px;">${ag.shortDesc}</p>
+
+                      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:12px 14px; margin-bottom:14px; display:flex; flex-direction:column; gap:8px;">
+                        <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                          <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">SOLVER</span>
+                          <span style="color:#f1f5f9; font-family:var(--font-mono); font-size:12px;">${ag.solverStack || ''}</span>
+                        </div>
+                        <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                          <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">WRITE-BACK</span>
+                          <span style="color:#a7f3d0; font-family:var(--font-mono); font-size:12px;">${ag.apiWriteback || ''}</span>
+                        </div>
+                        <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                          <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">A2A SWARM</span>
+                          <span style="color:#cbd5e1; font-size:12px;">${(ag.subAgents || []).map(sa => `<strong style="color:#f8fafc;">${sa.name}</strong>`).join(' · ')}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08);">
+                      <button type="button" class="switch-pill" style="border-color:#38bdf855; color:#38bdf8; font-size:13px; font-weight:600;" onclick="openAgentBlueprintPage('${ag.id}', true, event)">
+                        Technical Blueprint &rarr;
+                      </button>
+                      <button type="button" style="font-size:12.5px; font-weight:600; color:#94a3b8;" onclick="openAgentPage('${ag.id}', true, event)">
+                        Executive Pitch ↗
+                      </button>
                     </div>
                   </div>
                 `;
               }).join('')}
+            </div>
           </div>
+          ` : ''}
+
+          <!-- Complete 28-Domain-Agent Architecture Matrix by 6 SCOR Verticals -->
+          ${currentArchVerticalFilter !== 'universal' ? `
+          <div style="margin-bottom: 24px;">
+            <h2 class="block-title" style="font-size:22px; margin-bottom:4px;">Domain-Specific Agent Architectures</h2>
+            <p class="block-subtitle" style="font-size:14.5px; color:#94a3b8; margin-bottom:24px;">Inspected specifications across deterministic solvers, A2A sub-agent swarms, and enterprise systems of record.</p>
+          </div>
+
+          ${Object.values(DEPARTMENTS)
+            .filter(dept => currentArchVerticalFilter === 'all' || dept.id === currentArchVerticalFilter)
+            .map(dept => {
+            const deptAgents = Object.values(AGENTS).filter(a => !a.isUniversal && a.deptId === dept.id);
+            return `
+            <div style="margin-bottom: 34px;">
+              <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+                <span class="accent-dot" style="background:${dept.color}; box-shadow:0 0 12px ${dept.color};"></span>
+                <h3 style="font-family:var(--font-display); font-size:21px; font-weight:700; color:#f8fafc;">
+                  ${dept.scorBadge} · ${dept.fullName} (${deptAgents.length} Agents)
+                </h3>
+              </div>
+
+              <div class="dir-persona-grid">
+                ${deptAgents.map(ag => {
+                  const sell = getAgentSellingMeta(ag, dept);
+                  const primaryP = sell.usedByPersonas[0];
+                  return `
+                    <div class="dir-persona-card" style="--dept-accent:${dept.color}; display:flex; flex-direction:column; justify-content:space-between;">
+                      <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px;">
+                          <div>
+                            <div style="font-size:11.5px; font-weight:700; color:${dept.color}; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">
+                              ${primaryP ? `${primaryP.icon} ${primaryP.name}` : dept.name}
+                            </div>
+                            <div style="font-family:var(--font-display); font-size:19px; font-weight:700; color:#f8fafc; line-height:1.25;">
+                              ${ag.name}
+                            </div>
+                          </div>
+                          <span class="sc-tech-pill" style="border-color:${dept.color}66; color:${dept.color}; font-weight:700; font-size:12px;">${ag.badge}</span>
+                        </div>
+
+                        <p style="font-size:14px; color:#cbd5e1; line-height:1.56; margin-bottom:14px;">${ag.shortDesc}</p>
+
+                        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:12px 14px; margin-bottom:14px; display:flex; flex-direction:column; gap:8px;">
+                          <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                            <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">SOLVER</span>
+                            <span style="color:#f1f5f9; font-family:var(--font-mono); font-size:12px;">${ag.solverStack || ''}</span>
+                          </div>
+                          <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                            <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">WRITE-BACK</span>
+                            <span style="color:#a7f3d0; font-family:var(--font-mono); font-size:12px;">${ag.apiWriteback || ''}</span>
+                          </div>
+                          <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline;">
+                            <span style="font-weight:700; color:#94a3b8; text-transform:uppercase; font-size:11px;">A2A SWARM</span>
+                            <span style="color:#cbd5e1; font-size:12px;">${(ag.subAgents || []).map(sa => `<strong style="color:#f8fafc;">${sa.name}</strong>`).join(' · ')}</span>
+                          </div>
+                          ${ag.costModel ? `
+                          <div style="display:grid; grid-template-columns:88px 1fr; gap:4px 8px; font-size:12.5px; align-items:baseline; padding-top:4px; border-top:1px dashed rgba(148,163,184,0.2);">
+                            <span style="font-weight:800; color:#38bdf8; text-transform:uppercase; font-size:11px;">FINOPS &amp; ROI</span>
+                            <span style="color:#34d399; font-family:var(--font-mono); font-size:11.5px; font-weight:700;">💰 $${ag.costModel.monthlyBreakdown.totalFsp3YrUsd.toFixed(0)}/mo ($${ag.costModel.monthlyBreakdown.blendedCostPer1kCallsUsd.toFixed(2)}/1K) · 📈 $${(ag.costModel.valueModel.grossAnnualConservativeUsd/1e6).toFixed(2)}M/yr (${ag.costModel.valueModel.cloudRoiMultipleConservative}x ROI)</span>
+                          </div>
+                          ` : ''}
+                        </div>
+                      </div>
+
+                      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08);">
+                        <button type="button" class="switch-pill" style="border-color:${dept.color}55; color:${dept.color}; font-size:13px; font-weight:600;" onclick="openAgentBlueprintPage('${ag.id}', true, event)">
+                          Technical Blueprint &rarr;
+                        </button>
+                        <button type="button" style="font-size:12.5px; font-weight:600; color:#94a3b8;" onclick="openAgentPage('${ag.id}', true, event)">
+                          Executive Pitch ↗
+                        </button>
+                      </div>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `;
+          }).join('')}
+          ` : ''}
         </div>
       `;
 
