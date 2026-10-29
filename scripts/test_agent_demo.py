@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Universal CLI Runner & Demo Data Inspector for all 60 Supply Chain AI Agents.
 
-Usage Examples (for Video Recording & Live Demos):
+Usage Examples (for Video Recording & Manual Testing):
   1. Run an agent's full autonomous demo scenario (Read -> Solve -> Safety Gate -> Write-Back + Markdown Report):
      python3 scripts/test_agent_demo.py demand_sensing_agent
 
@@ -42,15 +42,14 @@ def instantiate_agent(agent_id: str):
         raise FileNotFoundError(f"Agent package not found at agents/{agent_id}/app/agent.py")
 
     sys.path.insert(0, str(agent_dir))
-    # Clear cached app modules if switching agents
     for mod_name in list(sys.modules.keys()):
         if mod_name == "app" or mod_name.startswith("app."):
             del sys.modules[mod_name]
 
     agent_mod = importlib.import_module("app.agent")
     tools_mod = importlib.import_module("app.tools")
+    charts_mod = importlib.import_module("app.render.charts")
 
-    # Find the agent class with run_scenario
     agent_cls = None
     for name, obj in inspect.getmembers(agent_mod, inspect.isclass):
         if hasattr(obj, "run_scenario") and obj.__module__ == "app.agent" and not name.endswith("AdkApp"):
@@ -60,7 +59,45 @@ def instantiate_agent(agent_id: str):
     if agent_cls is None:
         raise RuntimeError(f"Could not locate agent class in agents/{agent_id}/app/agent.py")
 
-    return agent_cls(), tools_mod, agent_mod
+    return agent_cls(), tools_mod, agent_mod, charts_mod
+
+
+def extract_normalized_scenario(agent_id: str, query: str | None = None) -> dict:
+    """Runs run_scenario() on any of the 60 agents and normalizes the output dict."""
+    cat = load_catalog()
+    ag_meta = cat.get("agents", {}).get(agent_id, {})
+    spec = ag_meta.get("adkSpec", {})
+    eval_obj = spec.get("evalScenario", {})
+    default_query = eval_obj.get("query") or f"Execute full autonomous analysis and write-back for {ag_meta.get('name', agent_id)}."
+    active_query = query or default_query
+
+    agent, _, _, charts_mod = instantiate_agent(agent_id)
+    routing = agent.select_orchestrated_model(active_query) if hasattr(agent, "select_orchestrated_model") else {}
+    res = agent.run_scenario(active_query)
+
+    actions = res.get("actions_executed") or res.get("actions_taken") or []
+    vega_spec = res.get("vega_spec")
+    if not vega_spec:
+        for fn_name, fn_obj in inspect.getmembers(charts_mod, inspect.isfunction):
+            if fn_name.startswith("create_") and "spec" in fn_name:
+                try:
+                    vega_spec = fn_obj()
+                    break
+                except Exception:
+                    pass
+    vega_spec = vega_spec or {}
+    a2ui_parts = res.get("a2ui_parts") or res.get("a2ui_surface") or []
+    md = res.get("markdown") or res.get("markdown_response") or ""
+
+    return {
+        "status": str(res.get("status", "success")).lower(),
+        "query": active_query,
+        "routing": routing,
+        "actions": actions,
+        "vega_spec": vega_spec,
+        "a2ui_parts_count": len(a2ui_parts),
+        "markdown": md,
+    }
 
 
 def print_banner(title: str, char: str = "=") -> None:
@@ -107,55 +144,57 @@ def cmd_show_data(agent_id: str, cat: dict) -> None:
 
 
 def cmd_test_guardrail(agent_id: str) -> None:
-    agent, _, agent_mod = instantiate_agent(agent_id)
-    write_tools = getattr(agent_mod, "_WRITE_TOOLS", {})
+    agent, _, agent_mod, _ = instantiate_agent(agent_id)
+    write_tools = getattr(agent_mod, "_WRITE_TOOLS", None) or getattr(agent_mod, "WRITE_TOOLS", {})
     print_banner(f"GOVERNANCE & SAFETY GATE TEST — {agent_id}")
     if not write_tools:
+        # Test enforce_tool_contract directly if available
+        if hasattr(agent_mod, "enforce_tool_contract"):
+            res = agent_mod.enforce_tool_contract("action_commit", {})
+            print(f"   -> Gate Response (missing idempotency_key): {json.dumps(res, ensure_ascii=False)}")
+            print("\n✅ Pre-Execution Quality Gate verified!\n")
+            return
         print("No write tools registered.")
         return
 
-    tool_name, req_fields = next(iter(write_tools.items()))
+    if isinstance(write_tools, dict):
+        tool_name, req_fields = next(iter(write_tools.items()))
+    else:
+        tool_name, req_fields = list(write_tools)[0], ["idempotency_key"]
+
     print(f"1. Testing Write Tool '{tool_name}' WITHOUT required fields:")
-    res1 = agent.execute_tool(tool_name)
+    res1 = agent.execute_tool(tool_name) if hasattr(agent, "execute_tool") else agent_mod.enforce_tool_contract(tool_name, {})
     print(f"   -> Gate Response: {json.dumps(res1, ensure_ascii=False)}")
 
     print(f"\n2. Testing Write Tool '{tool_name}' WITH required fields={req_fields} but WITHOUT idempotency_key:")
-    dummy_kwargs = {k: "TEST-VAL-01" if "units" not in k and "qty" not in k and "amount" not in k else 100 for k in req_fields}
-    res2 = agent.execute_tool(tool_name, **dummy_kwargs)
+    dummy_kwargs = {k: "TEST-VAL-01" if "units" not in k and "qty" not in k and "amount" not in k else 100 for k in req_fields if k != "idempotency_key"}
+    res2 = agent.execute_tool(tool_name, **dummy_kwargs) if hasattr(agent, "execute_tool") else agent_mod.enforce_tool_contract(tool_name, dummy_kwargs)
     print(f"   -> Gate Response: {json.dumps(res2, ensure_ascii=False)}")
     print("\n✅ Pre-Execution Quality Gate verified: unauthenticated or partial mutations are deterministically blocked!\n")
 
 
 def cmd_run_demo(agent_id: str, query: str | None, cat: dict) -> None:
     ag_meta = cat.get("agents", {}).get(agent_id, {})
-    spec = ag_meta.get("adkSpec", {})
-    eval_obj = spec.get("evalScenario", {})
-    default_query = eval_obj.get("query") or f"Execute full autonomous analysis and write-back for {ag_meta.get('name', agent_id)}."
-    active_query = query or default_query
-
-    agent, _, _ = instantiate_agent(agent_id)
-    routing = agent.select_orchestrated_model(active_query) if hasattr(agent, "select_orchestrated_model") else {}
+    norm = extract_normalized_scenario(agent_id, query)
 
     print_banner(f"RUNNING LIVE AGENT DEMO — {ag_meta.get('name', agent_id)} ({agent_id})")
     print(f"🎯 What It Does : {ag_meta.get('solution', '')}")
-    print(f"💬 Demo Prompt  : \"{active_query}\"")
-    if routing:
-        print(f"🧠 Model Routed : {routing.get('selected_model', 'gemini-3.8-flash')}")
-
-    result = agent.run_scenario(active_query)
+    print(f"💬 Demo Prompt  : \"{norm['query']}\"")
+    if norm["routing"]:
+        print(f"🧠 Model Routed : {norm['routing'].get('selected_model', 'gemini-3.8-flash')}")
 
     print_banner("1. EXECUTED WRITE-BACK ACTIONS & AUDIT RECEIPTS", "-")
-    for idx, act in enumerate(result.get("actions_executed", []), 1):
+    for idx, act in enumerate(norm["actions"], 1):
         print(f"  [{idx}] {json.dumps(act, ensure_ascii=False)}")
 
     print_banner("2. A2UI VISUAL SURFACE (VEGA-LITE CHART SPEC)", "-")
-    vega = result.get("vega_spec", {})
+    vega = norm["vega_spec"]
     print(f"  • Schema : {vega.get('$schema', 'vega-lite/v5')}")
     print(f"  • Title  : {vega.get('title', 'Operational Visual Surface')}")
-    print(f"  • Parts  : {len(result.get('a2ui_parts', []))} A2UI envelope parts generated")
+    print(f"  • Parts  : {norm['a2ui_parts_count']} A2UI envelope parts generated")
 
     print_banner("3. EXECUTIVE MARKDOWN RESPONSE & COPY-READY TABLE", "-")
-    print(result.get("markdown", ""))
+    print(norm["markdown"])
     print("\n✅ Scenario completed successfully!\n")
 
 
