@@ -386,24 +386,24 @@ Every physical product you touch — a bottle of sports drink, an iPhone, a car,
 
 | Acronym | Full Spelled-Out Name | Plain-English Meaning | Real-World Company Example |
 |:---|:---|:---|:---|
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
-| `code` | **full** | simple | example |
+| `OTIF` | **On-Time In-Full** | Did 100% of the boxes the customer ordered arrive inside the exact promised delivery window? (Not late, and not missing a single box). | Walmart requires suppliers like Procter & Gamble and Kraft Heinz to hit 98% OTIF (On-Time In-Full), or Walmart deducts a 3% penalty fine from their invoice. |
+| `DIO` | **Days Inventory Outstanding** | How many days your company's cash sits tied up as unsold physical boxes on warehouse shelves before being sold to a customer (lower is usually better). | Apple keeps DIO (Days Inventory Outstanding) around ~9 days so electronics never go obsolete, whereas a luxury watchmaker or pharma company may hold 90+ days of DIO. |
+| `DSO` | **Days Sales Outstanding** | How many days it takes to collect cash from your customers after you deliver their order (lower means cash comes in faster). | When you buy on Amazon with a credit card, Amazon's DSO (Days Sales Outstanding) is ~2 days. When a manufacturer sells to a big supermarket chain on credit, DSO is often 30 to 45 days. |
+| `DPO` | **Days Payable Outstanding** | How many days your company waits before paying its own raw material suppliers (higher keeps cash in your bank account longer). | Global giants like Walmart, Amazon, and Apple negotiate 60 to 90 days DPO (Days Payable Outstanding) with their suppliers. |
+| `CCC` | **Cash Conversion Cycle (Formula: DIO + DSO − DPO)** | The total number of days a dollar spent buying raw materials stays trapped in your supply chain before coming back into your bank account as customer cash. | Amazon and Apple have a NEGATIVE CCC (Cash Conversion Cycle) of around -30 days: they sell inventory in 9 days (DIO), collect cash in 2 days (DSO), and pay suppliers 75 days later (DPO)! |
+| `SKU` | **Stock Keeping Unit** | A unique barcode/code for one specific product flavor and package size (a 500ml Coke bottle and a 2-Liter Coke bottle are two different SKUs). | A typical Walmart Supercenter carries ~120,000 SKUs (Stock Keeping Units), while Costco intentionally carries only ~4,000 high-volume SKUs to keep warehouse costs ultra-low. |
+| `POS` | **Point of Sale** | Cash-register or online checkout barcode scans showing what shoppers are actually buying right now today. | Zara and PepsiCo read daily POS (Point of Sale) checkout scans from thousands of stores so they spot trending items immediately instead of waiting for monthly warehouse reports. |
+| `S&OP / IBP` | **Sales & Operations Planning / Integrated Business Planning** | The monthly process where Sales, Factories, Warehouses, and Finance meet to agree on a single 'One-Number Plan' for what to make and sell. | Unilever and Nestlé run monthly S&OP (Sales & Operations Planning) to align promotion calendars with factory capacity and raw material buying. |
+| `BOM` | **Bill of Materials** | The exact 'recipe card' or parts list needed to manufacture one unit of a finished product. | A Toyota Camry BOM (Bill of Materials) lists ~30,000 individual parts (from steel doors down to 5mm bolts); an iPhone BOM lists ~1,500 micro-components. |
+| `RFQ & PO` | **Request for Quotation & Purchase Order** | An RFQ asks suppliers 'What price will you charge us?'; once a winner is chosen, the buyer sends an official PO (Purchase Order) contract to buy the goods. | Samsung sends an RFQ (Request for Quotation) to 3 glass makers, picks the best bid, and issues a binding PO (Purchase Order) for 5 million display screens. |
+| `GRN & 3-Way Match` | **Goods Receipt Note & 3-Way Invoice Match** | The GRN is the warehouse dock barcode scan proving how many boxes actually arrived. A 3-Way Match checks that PO = GRN = Supplier Invoice before paying. | If Target ordered 1,000 cases on the PO, the dock scanned 960 cases on the GRN, and the vendor billed for 1,000, the 3-Way Match blocks the 40-case overcharge automatically. |
+| `OEE` | **Overall Equipment Effectiveness** | The #1 scorecard for a factory machine: Availability (did it run without breaking?) × Performance (did it run at full speed?) × Quality (were units defect-free?). | World-class bottling lines at Coca-Cola and battery lines at Tesla target 85%+ OEE (Overall Equipment Effectiveness) using vibration and thermal sensors. |
+| `MTS vs. MTO` | **Make-to-Stock vs. Make-to-Order** | MTS means making products in advance from a forecast and stacking them in warehouses; MTO means waiting until a customer places an order before building it. | Colgate toothpaste and Oreo cookies are MTS (Make-to-Stock); a custom Boeing 787 jet or custom-configured Dell server is MTO (Make-to-Order). |
+| `RDC vs. FDC` | **Regional Distribution Center vs. Fulfillment Distribution Center** | An RDC is a giant central hub warehouse that receives full truckloads from factories; an FDC is a smaller local warehouse near cities that picks daily customer orders. | ITC and Unilever ship bulk pallets from factories to 5 giant RDCs (Regional Distribution Centers), which replenish 40+ local FDCs (Fulfillment Centers) near major cities. |
+| `FEFO / FIFO / LIFO` | **First-Expired First-Out / First-In First-Out / Last-In First-Out** | FEFO ships the earliest expiration date first; FIFO ships the oldest arrived pallet first; LIFO loads Stop #1 last at the rear truck doors so it unloads first. | Pfizer vaccines & Amul milk use FEFO; Apple & Sony electronics use FIFO; Sysco & PepsiCo multi-stop delivery trucks load pallets using LIFO. |
+| `ATP` | **Available-to-Promise** | How many uncommitted units are sitting in the warehouse ready to be promised to a new customer order right now. | When Amazon says 'Order within 2 hrs 14 mins for delivery tomorrow by 10 PM', its ATP (Available-to-Promise) engine just checked live stock in your nearest warehouse in 30 milliseconds. |
+| `FTL vs. LTL` | **Full Truckload vs. Less-Than-Truckload** | FTL means booking an entire 53-foot semi-truck just for your company's pallets; LTL means paying for just 2 or 3 pallet spaces shared with other companies' freight. | Shipping 26 pallets of Tide detergent from a P&G factory to Walmart uses cheap FTL (Full Truckload); shipping 2 pallets of spare parts to a repair shop uses LTL (Less-Than-Truckload). |
+| `RMA` | **Return Merchandise Authorization** | The official approval code, shipping label, and inspection process when a customer returns a bought item for a refund or replacement. | Amazon and Best Buy issue an RMA (Return Merchandise Authorization) QR code and use AI to decide whether to refund immediately ('Keep-It') or route the item to a refurbishment center. |
 
 
 ---

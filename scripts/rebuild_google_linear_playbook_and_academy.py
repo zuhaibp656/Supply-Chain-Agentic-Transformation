@@ -1268,6 +1268,20 @@ def build_google_linear_playbook() -> None:
     print(f"Rebuilt one-by-one Google clean {out_path.name} ({len(html_doc)//1024} KB)")
 
 
+def _convert_backticks(obj):
+    """Recursively converts markdown `code` backticks into HTML <code>code</code> tags."""
+    import re
+    if isinstance(obj, str):
+        return re.sub(r"`([^`]+)`", r"<code>\1</code>", obj)
+    if isinstance(obj, list):
+        return [_convert_backticks(x) for x in obj]
+    if isinstance(obj, tuple):
+        return tuple(_convert_backticks(x) for x in obj)
+    if isinstance(obj, dict):
+        return {k: _convert_backticks(v) for k, v in obj.items()}
+    return obj
+
+
 def build_google_linear_academy() -> None:
     """Rebuilds supply_chain_101_interactive_academy.html in Google's bright, spacious, linear, button-wise & tabular design language."""
     from supply_chain_real_world_sectors_data import (
@@ -1276,21 +1290,21 @@ def build_google_linear_academy() -> None:
         STAGES_DATA,
     )
 
-    fc_json = json.dumps(FLASHCARDS, ensure_ascii=False)
-    wf_json = json.dumps(WORKFLOW_SIMULATORS, ensure_ascii=False)
-    dec_json = json.dumps(CUSTOMER_DECODER, ensure_ascii=False)
-    quiz_json = json.dumps(QUIZ_QUESTIONS, ensure_ascii=False)
-    stages_json = json.dumps(STAGES_DATA, ensure_ascii=False)
-    sectors_json = json.dumps(SECTOR_CASE_STUDIES, ensure_ascii=False)
+    fc_json = json.dumps(_convert_backticks(FLASHCARDS), ensure_ascii=False)
+    wf_json = json.dumps(_convert_backticks(WORKFLOW_SIMULATORS), ensure_ascii=False)
+    dec_json = json.dumps(_convert_backticks(CUSTOMER_DECODER), ensure_ascii=False)
+    quiz_json = json.dumps(_convert_backticks(QUIZ_QUESTIONS), ensure_ascii=False)
+    stages_json = json.dumps(_convert_backticks(STAGES_DATA), ensure_ascii=False)
+    sectors_json = json.dumps(_convert_backticks(SECTOR_CASE_STUDIES), ensure_ascii=False)
 
     abbr_rows_html = "".join(
         f"""<tr>
-          <td style="font-weight:800; color:#1A73E8; font-size:17px;"><code>{ab}</code></td>
-          <td style="font-weight:700; color:#1E8E3E;">{full}</td>
-          <td>{meaning}</td>
-          <td style="background:#F8FAFD; color:#202124;">{example}</td>
+          <td style="font-weight:800; color:#1A73E8; font-size:17px;"><code>{row["code"]}</code></td>
+          <td style="font-weight:700; color:#1E8E3E;">{row["full"]}</td>
+          <td>{row["simple"]}</td>
+          <td style="background:#F8FAFD; color:#202124;">{row["example"]}</td>
         </tr>"""
-        for ab, full, meaning, example in QUICK_ABBREVIATIONS_TABLE
+        for row in QUICK_ABBREVIATIONS_TABLE
     )
 
     html_doc = f"""<!DOCTYPE html>
@@ -1680,7 +1694,7 @@ def build_google_linear_academy() -> None:
             🔤 PART 1A-2 · QUICK-DECODE TABLE OF THE 18 MOST COMMON SUPPLY CHAIN ABBREVIATIONS
           </span>
           <h3 style="font-family:var(--font-display); font-size:24px; margin:0 0 8px; color:#202124;">
-            Bookmark This Table: Every Major Acronym (`OTIF`, `DIO`, `DSO`, `DPO`, `CCC`, `BOM`, `S&OP`, `MEIO`, `FEFO`, `ATP`, `ERP/MES/WMS/TMS`) Explained Simply
+            Bookmark This Table: Every Major Acronym (<code>OTIF</code>, <code>DIO</code>, <code>DSO</code>, <code>DPO</code>, <code>CCC</code>, <code>BOM</code>, <code>S&amp;OP</code>, <code>MEIO</code>, <code>FEFO</code>, <code>ATP</code>, <code>ERP/MES/WMS/TMS</code>) Explained Simply
           </h3>
           <p style="margin:0 0 16px; color:#5F6368;">
             Whenever someone in a meeting drops a 3-letter or 4-letter supply chain acronym, here is what it stands for, what it means in everyday words, and how a real-world company uses it:
