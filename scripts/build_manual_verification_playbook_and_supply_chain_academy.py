@@ -26,6 +26,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from test_agent_demo import extract_normalized_scenario, load_catalog
+from svg_infographics_helper import render_agent_flow_svg, render_vega_svg_preview
+
 
 CATALOG_PATH = ROOT / "data" / "supply_chain_catalog.json"
 HTML_FILES = [
@@ -401,6 +403,9 @@ def build_upgraded_playbook() -> None:
                   </div>
                 </div>
 
+                <!-- 1B. Visual 4-Stage Agent Execution Diagram -->
+                {render_agent_flow_svg(c_name, tables, read_tools, write_tools, vega_info['title'], pillar_color)}
+
                 <!-- 2. Side-by-Side: Input You Give & Resources Used vs. Exact Expected Output -->
                 <div class="pb-two-col">
                   <!-- LEFT: Input Prompt, Demo Data Values & Manual Testing Checklist -->
@@ -462,10 +467,10 @@ def build_upgraded_playbook() -> None:
                   <div class="pb-panel">
                     <div class="pb-section-kicker" style="color:#10b981;">📤 3 · EXACT OUTPUT YOU SHOULD RECEIVE (A2UI GRAPHIC + TABLE + WRITE-BACK)</div>
 
-                    <!-- Expected A2UI Graphic Banner -->
+                    <!-- Expected A2UI Graphic Banner + Rendered SVG Infographic Preview -->
                     <div class="pb-a2ui-preview-box">
                       <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
-                        <span style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#38bdf8;">📊 EXPECTED A2UI VISUAL CARD (VegaChart)</span>
+                        <span style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#38bdf8;">📊 EXPECTED A2UI VISUAL CARD (VegaChart INFOGRAPHIC PREVIEW)</span>
                         <span class="pb-badge" style="color:#10b981; border-color:rgba(16,185,129,0.4);">Chart Type: {html.escape(vega_info['mark_type'])}</span>
                       </div>
                       <div style="font-size:15px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">
@@ -474,7 +479,9 @@ def build_upgraded_playbook() -> None:
                       <div style="font-size:12.5px; color:var(--text-secondary); font-family:var(--font-mono);">
                         Plotted Series ({vega_info['data_rows']} pts): {html.escape(vega_info['sample_points'])}
                       </div>
+                      {render_vega_svg_preview(norm["vega_spec"], pillar_color)}
                     </div>
+
 
                     <!-- Expected Rendered Markdown Report & Copy-Ready Table -->
                     <div class="pb-expected-md-box">

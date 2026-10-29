@@ -1225,6 +1225,97 @@ def build_academy_files() -> None:
          MODULE 1: THE BIG PICTURE, 6-STAGE JOURNEY & BULLWHIP SIMULATOR
          ===================================================================== -->
     <section id="mod1" class="ac-module-pane active">
+      <!-- END-TO-END ANIMATED 3-FLOW SUPPLY CHAIN ARCHITECTURE DIAGRAM -->
+      <div class="ac-card" style="padding:22px 24px;">
+        <div class="ac-pill" style="color:#10b981; margin-bottom:8px;">ANIMATED END-TO-END ARCHITECTURE INFOGRAPHIC · THE 3 SYNCHRONIZED FLOWS</div>
+        <h2 style="font-family:var(--font-display); font-size:25px; margin:0 0 8px;">
+          The Complete Supply Chain Blueprint: Physical Goods (──▶), Demand Signals (◀──), and Cash (◀──▶)
+        </h2>
+        <p style="font-size:15px; color:var(--text-secondary); margin:0 0 14px;">
+          Every supply chain is <strong>3 simultaneous rivers</strong> flowing across 6 physical nodes. When any one of these 3 flows gets delayed or distorted, the whole company loses money:
+        </p>
+        <svg viewBox="0 0 1120 235" style="width:100%; height:auto; display:block; background:rgba(2,6,23,0.65); border-radius:16px; border:1px solid rgba(148,163,184,0.22);">
+          <!-- Top Flow: Physical Material Flow (Downstream ->) -->
+          <text x="560" y="24" text-anchor="middle" fill="#10b981" font-size="11.5" font-weight="800" font-family="JetBrains Mono, monospace">
+            FLOW 1 · PHYSICAL GOODS &amp; INVENTORY FLOW (DOWNSTREAM: SUPPLIER ──▶ FACTORY ──▶ WAREHOUSE ──▶ TRUCK ──▶ CUSTOMER)
+          </text>
+          <path id="physFlowPath" d="M 95 95 L 1025 95" stroke="#10b981" stroke-width="3" stroke-dasharray="7 5" fill="none"/>
+          <circle r="5.5" fill="#10b981">
+            <animateMotion dur="5s" repeatCount="indefinite" path="M 95 95 L 1025 95"/>
+          </circle>
+          <circle r="5.5" fill="#34d399">
+            <animateMotion dur="5s" begin="2.5s" repeatCount="indefinite" path="M 95 95 L 1025 95"/>
+          </circle>
+
+          <!-- 6 Supply Chain Nodes -->
+          <g transform="translate(22, 48)">
+            <rect width="150" height="94" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+            <text x="75" y="26" text-anchor="middle" fill="#f59e0b" font-size="10.5" font-weight="800" font-family="JetBrains Mono, monospace">01 · SOURCE</text>
+            <text x="75" y="48" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="800" font-family="Inter, sans-serif">⛏️ Tier-2/1 Suppliers</text>
+            <text x="75" y="68" text-anchor="middle" fill="#cbd5e1" font-size="10.5" font-family="Inter, sans-serif">BOM · RFQ · PO · 3-Way</text>
+            <text x="75" y="84" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="JetBrains Mono, monospace">SAP Ariba / ERP</text>
+          </g>
+
+          <g transform="translate(206, 48)">
+            <rect width="150" height="94" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="2"/>
+            <text x="75" y="26" text-anchor="middle" fill="#c084fc" font-size="10.5" font-weight="800" font-family="JetBrains Mono, monospace">02 · MAKE</text>
+            <text x="75" y="48" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="800" font-family="Inter, sans-serif">🏭 Factory &amp; Lines</text>
+            <text x="75" y="68" text-anchor="middle" fill="#cbd5e1" font-size="10.5" font-family="Inter, sans-serif">OEE · MTS/MTO · eBHR</text>
+            <text x="75" y="84" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="JetBrains Mono, monospace">MES / SCADA / PLC</text>
+          </g>
+
+          <g transform="translate(390, 48)">
+            <rect width="150" height="94" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="2"/>
+            <text x="75" y="26" text-anchor="middle" fill="#10b981" font-size="10.5" font-weight="800" font-family="JetBrains Mono, monospace">03 · CENTRAL DC</text>
+            <text x="75" y="48" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="800" font-family="Inter, sans-serif">🏢 Regional DC (RDC)</text>
+            <text x="75" y="68" text-anchor="middle" fill="#cbd5e1" font-size="10.5" font-family="Inter, sans-serif">MEIO · Safety Stock · ROP</text>
+            <text x="75" y="84" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="JetBrains Mono, monospace">Supply Planning / IBP</text>
+          </g>
+
+          <g transform="translate(574, 48)">
+            <rect width="150" height="94" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+            <text x="75" y="26" text-anchor="middle" fill="#38bdf8" font-size="10.5" font-weight="800" font-family="JetBrains Mono, monospace">04 · LOCAL DC</text>
+            <text x="75" y="48" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="800" font-family="Inter, sans-serif">📦 Fulfillment (FDC)</text>
+            <text x="75" y="68" text-anchor="middle" fill="#cbd5e1" font-size="10.5" font-family="Inter, sans-serif">FEFO · Slotting · ATP</text>
+            <text x="75" y="84" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="JetBrains Mono, monospace">Manhattan / SAP WMS</text>
+          </g>
+
+          <g transform="translate(758, 48)">
+            <rect width="150" height="94" rx="12" fill="#0f172a" stroke="#06b6d4" stroke-width="2"/>
+            <text x="75" y="26" text-anchor="middle" fill="#22d3ee" font-size="10.5" font-weight="800" font-family="JetBrains Mono, monospace">05 · DELIVER</text>
+            <text x="75" y="48" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="800" font-family="Inter, sans-serif">🚚 Multi-Modal Fleet</text>
+            <text x="75" y="68" text-anchor="middle" fill="#cbd5e1" font-size="10.5" font-family="Inter, sans-serif">FTL/LTL · LIFO · BOL/ASN</text>
+            <text x="75" y="84" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="JetBrains Mono, monospace">Oracle / Blue Yonder TMS</text>
+          </g>
+
+          <g transform="translate(942, 48)">
+            <rect width="156" height="94" rx="12" fill="#0f172a" stroke="#f43f5e" stroke-width="2"/>
+            <text x="78" y="26" text-anchor="middle" fill="#fb7185" font-size="10.5" font-weight="800" font-family="JetBrains Mono, monospace">06 · CUSTOMER &amp; ESG</text>
+            <text x="78" y="48" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="800" font-family="Inter, sans-serif">🛒 Store, POS &amp; RMA</text>
+            <text x="78" y="68" text-anchor="middle" fill="#cbd5e1" font-size="10.5" font-family="Inter, sans-serif">OTIF · ePOD · Scope 3</text>
+            <text x="78" y="84" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="JetBrains Mono, monospace">Retail POS &amp; Returns</text>
+          </g>
+
+          <!-- Bottom Flow 2: Demand & Information Signals (Upstream <-) -->
+          <path d="M 1020 166 L 95 166" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6 4" fill="none"/>
+          <circle r="5" fill="#38bdf8">
+            <animateMotion dur="4.5s" repeatCount="indefinite" path="M 1020 166 L 95 166"/>
+          </circle>
+          <text x="560" y="185" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">
+            FLOW 2 · DEMAND &amp; INFORMATION SIGNALS (UPSTREAM: POS CHECKOUT SCANS ◀── ORDERS ◀── S&amp;OP FORECASTS ◀── SUPPLIER POs)
+          </text>
+
+          <!-- Bottom Flow 3: Cash & Working Capital (Cyclic <->) -->
+          <path d="M 1020 204 L 95 204" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
+          <circle r="4.5" fill="#f59e0b">
+            <animateMotion dur="6s" repeatCount="indefinite" path="M 1020 204 L 95 204"/>
+          </circle>
+          <text x="560" y="223" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">
+            FLOW 3 · CASH CONVERSION CYCLE (CCC = DIO + DSO − DPO: CUSTOMER INVOICE PAID ◀── WORKING CAPITAL ──▶ SUPPLIER 3-WAY MATCH PAID)
+          </text>
+        </svg>
+      </div>
+
       <div class="ac-card">
         <div class="ac-pill" style="color:#38bdf8; margin-bottom:8px;">INTERACTIVE VISUAL MAP · CLICK ANY STAGE BELOW</div>
         <h2 style="font-family:var(--font-display); font-size:26px; margin:0 0 8px;">
@@ -1320,6 +1411,104 @@ def build_academy_files() -> None:
           <div class="ac-decoder-box" style="border-top:3px solid #06b6d4;">
             <span class="ac-box-kicker" style="color:#22d3ee;">4. TMS (Transportation Management System)</span>
             <p><strong>Examples:</strong> Blue Yonder TMS, Oracle OTM.<br/><strong>What it does:</strong> Runs everything moving outside between locations. Books trucking/ocean carriers, plans delivery routes, and audits freight bills.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 VISUAL INFOGRAPHIC CHEAT-SHEETS (SVG DIAGRAMS) -->
+      <div class="ac-card">
+        <span class="ac-pill" style="color:#38bdf8; margin-bottom:8px;">📊 VISUAL CHEAT-SHEET INFOGRAPHICS · 4 CONCEPTS EVERY CSCO TALKS ABOUT</span>
+        <h2 style="font-family:var(--font-display); font-size:25px; margin:0 0 16px;">
+          4 Essential Supply Chain Diagrams (MTS vs. MTO · FEFO/FIFO/LIFO · Cash Cycle · Scope 1/2/3)
+        </h2>
+        <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px;">
+          <!-- Infographic 1: MTS vs MTO -->
+          <div style="background:var(--bg-elevated); border:1px solid var(--border-subtle); border-radius:16px; padding:16px;">
+            <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#c084fc; margin-bottom:6px;">
+              1 · MAKE-TO-STOCK (MTS / PUSH) VS. MAKE-TO-ORDER (MTO / PULL)
+            </div>
+            <svg viewBox="0 0 500 135" style="width:100%; height:auto; display:block; background:rgba(2,6,23,0.55); border-radius:10px;">
+              <rect x="14" y="16" width="220" height="46" rx="8" fill="#1e1b4b" stroke="#8b5cf6"/>
+              <text x="124" y="36" text-anchor="middle" fill="#c084fc" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">MTS (MAKE-TO-STOCK · PUSH)</text>
+              <text x="124" y="52" text-anchor="middle" fill="#e2e8f0" font-size="10.5" font-family="Inter, sans-serif">Build from Forecast → Hold in DC → Fast Ship</text>
+              <rect x="266" y="16" width="220" height="46" rx="8" fill="#064e3b" stroke="#10b981"/>
+              <text x="376" y="36" text-anchor="middle" fill="#34d399" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">MTO (MAKE-TO-ORDER · PULL)</text>
+              <text x="376" y="52" text-anchor="middle" fill="#e2e8f0" font-size="10.5" font-family="Inter, sans-serif">Wait for Order → Custom Build → Zero Dead Stock</text>
+              <rect x="14" y="76" width="472" height="44" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-dasharray="4 3"/>
+              <text x="250" y="95" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">⚖️ DECOUPLING POINT (POSTPONEMENT)</text>
+              <text x="250" y="111" text-anchor="middle" fill="#cbd5e1" font-size="10.5" font-family="Inter, sans-serif">Hold semi-finished base components in stock (MTS), then finish/label only when ordered (MTO)</text>
+            </svg>
+          </div>
+
+          <!-- Infographic 2: FEFO vs FIFO vs LIFO -->
+          <div style="background:var(--bg-elevated); border:1px solid var(--border-subtle); border-radius:16px; padding:16px;">
+            <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#10b981; margin-bottom:6px;">
+              2 · WAREHOUSE &amp; TRUCK RULES: FEFO VS. FIFO VS. LIFO
+            </div>
+            <svg viewBox="0 0 500 135" style="width:100%; height:auto; display:block; background:rgba(2,6,23,0.55); border-radius:10px;">
+              <rect x="12" y="16" width="150" height="104" rx="8" fill="#0f172a" stroke="#f43f5e"/>
+              <text x="87" y="36" text-anchor="middle" fill="#fb7185" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">FEFO (First-Expired)</text>
+              <text x="87" y="56" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="700" font-family="Inter, sans-serif">🥛 Food / Pharma</text>
+              <text x="87" y="76" text-anchor="middle" fill="#cbd5e1" font-size="10" font-family="Inter, sans-serif">Ship batch expiring</text>
+              <text x="87" y="92" text-anchor="middle" fill="#cbd5e1" font-size="10" font-family="Inter, sans-serif">soonest first!</text>
+
+              <rect x="175" y="16" width="150" height="104" rx="8" fill="#0f172a" stroke="#10b981"/>
+              <text x="250" y="36" text-anchor="middle" fill="#34d399" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">FIFO (First-In)</text>
+              <text x="250" y="56" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="700" font-family="Inter, sans-serif">📦 Standard Goods</text>
+              <text x="250" y="76" text-anchor="middle" fill="#cbd5e1" font-size="10" font-family="Inter, sans-serif">Ship oldest arrived</text>
+              <text x="250" y="92" text-anchor="middle" fill="#cbd5e1" font-size="10" font-family="Inter, sans-serif">pallet first!</text>
+
+              <rect x="338" y="16" width="150" height="104" rx="8" fill="#0f172a" stroke="#38bdf8"/>
+              <text x="413" y="36" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">LIFO (Last-In)</text>
+              <text x="413" y="56" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="700" font-family="Inter, sans-serif">🚚 Multi-Stop Truck</text>
+              <text x="413" y="76" text-anchor="middle" fill="#cbd5e1" font-size="10" font-family="Inter, sans-serif">Load Stop #1 last</text>
+              <text x="413" y="92" text-anchor="middle" fill="#cbd5e1" font-size="10" font-family="Inter, sans-serif">(at rear doors)!</text>
+            </svg>
+          </div>
+
+          <!-- Infographic 3: Cash Conversion Cycle (CCC) -->
+          <div style="background:var(--bg-elevated); border:1px solid var(--border-subtle); border-radius:16px; padding:16px;">
+            <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#f59e0b; margin-bottom:6px;">
+              3 · CASH CONVERSION CYCLE FORMULA: CCC = DIO + DSO − DPO
+            </div>
+            <svg viewBox="0 0 500 135" style="width:100%; height:auto; display:block; background:rgba(2,6,23,0.55); border-radius:10px;">
+              <rect x="14" y="18" width="230" height="36" rx="6" fill="rgba(56,189,248,0.22)" stroke="#38bdf8"/>
+              <text x="129" y="40" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">+ DIO: Stock Sits (55 Days)</text>
+              <rect x="252" y="18" width="234" height="36" rx="6" fill="rgba(168,85,247,0.22)" stroke="#a855f7"/>
+              <text x="369" y="40" text-anchor="middle" fill="#c084fc" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">+ DSO: Customer Pays (40 Days)</text>
+              <rect x="14" y="66" width="190" height="48" rx="6" fill="rgba(16,185,129,0.2)" stroke="#10b981"/>
+              <text x="109" y="88" text-anchor="middle" fill="#10b981" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">− DPO: Pay Vendor</text>
+              <text x="109" y="104" text-anchor="middle" fill="#6ee7b7" font-size="10.5" font-family="JetBrains Mono, monospace">(45 Days Credit)</text>
+              <rect x="214" y="66" width="272" height="48" rx="6" fill="rgba(245,158,11,0.22)" stroke="#f59e0b"/>
+              <text x="350" y="88" text-anchor="middle" fill="#fbbf24" font-size="11.5" font-weight="800" font-family="JetBrains Mono, monospace">= CCC: 50 DAYS CASH LOCKED UP</text>
+              <text x="350" y="104" text-anchor="middle" fill="#fde68a" font-size="10" font-family="Inter, sans-serif">Every 1 day reduced frees millions in cash!</text>
+            </svg>
+          </div>
+
+          <!-- Infographic 4: Scope 1, 2, 3 Carbon Emissions -->
+          <div style="background:var(--bg-elevated); border:1px solid var(--border-subtle); border-radius:16px; padding:16px;">
+            <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:#fb7185; margin-bottom:6px;">
+              4 · CARBON EMISSIONS: SCOPE 1 VS. SCOPE 2 VS. SCOPE 3 (85% OF TOTAL)
+            </div>
+            <svg viewBox="0 0 500 135" style="width:100%; height:auto; display:block; background:rgba(2,6,23,0.55); border-radius:10px;">
+              <rect x="14" y="18" width="95" height="98" rx="8" fill="#0f172a" stroke="#94a3b8"/>
+              <text x="61" y="42" text-anchor="middle" fill="#cbd5e1" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">SCOPE 1</text>
+              <text x="61" y="64" text-anchor="middle" fill="#f8fafc" font-size="15" font-weight="800" font-family="JetBrains Mono, monospace">~8%</text>
+              <text x="61" y="84" text-anchor="middle" fill="#94a3b8" font-size="9.5" font-family="Inter, sans-serif">Own boilers</text>
+              <text x="61" y="98" text-anchor="middle" fill="#94a3b8" font-size="9.5" font-family="Inter, sans-serif">&amp; company vans</text>
+
+              <rect x="120" y="18" width="95" height="98" rx="8" fill="#0f172a" stroke="#38bdf8"/>
+              <text x="167" y="42" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="800" font-family="JetBrains Mono, monospace">SCOPE 2</text>
+              <text x="167" y="64" text-anchor="middle" fill="#f8fafc" font-size="15" font-weight="800" font-family="JetBrains Mono, monospace">~7%</text>
+              <text x="167" y="84" text-anchor="middle" fill="#94a3b8" font-size="9.5" font-family="Inter, sans-serif">Purchased grid</text>
+              <text x="167" y="98" text-anchor="middle" fill="#94a3b8" font-size="9.5" font-family="Inter, sans-serif">electricity</text>
+
+              <rect x="226" y="18" width="260" height="98" rx="8" fill="rgba(16,185,129,0.14)" stroke="#10b981" stroke-width="2"/>
+              <text x="356" y="40" text-anchor="middle" fill="#10b981" font-size="11.5" font-weight="800" font-family="JetBrains Mono, monospace">SCOPE 3 · SUPPLY CHAIN (85%!)</text>
+              <text x="356" y="64" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="800" font-family="Inter, sans-serif">Suppliers + Ocean/Air/Truck Freight</text>
+              <text x="356" y="84" text-anchor="middle" fill="#cbd5e1" font-size="10.5" font-family="Inter, sans-serif">Tracked by CBAM (Carbon Border Tax) &amp;</text>
+              <text x="356" y="100" text-anchor="middle" fill="#cbd5e1" font-size="10.5" font-family="Inter, sans-serif">EUDR (Deforestation Satellite Ledger)</text>
+            </svg>
           </div>
         </div>
       </div>
