@@ -48,45 +48,186 @@ from build_supply_chain_101_academy import (
 WORKFLOW_SIMULATORS = {
     "sop": {
         "title": "1 · Monthly S&OP (Sales & Operations Planning — 5 Steps)",
-        "subtitle": "How a company aligns Sales forecasts, Factory capacity, and Finance budgets every month:",
+        "subtitle": "How a company aligns Sales forecasts, Factory capacity, and Finance budgets every month so everyone works from one plan:",
+        "company_case": "🌍 Real-World Company Spotlight: How Unilever, PepsiCo & Mondelēz Run Monthly S&OP Across 190+ Countries",
+        "company_summary": "Every month, consumer giants like Unilever (Dove soap, Magnum ice cream) and PepsiCo align 100,000+ store checkout feeds with 300+ factories so a heatwave in Europe or a Super Bowl promotion in the US never leaves supermarket shelves empty.",
         "steps": [
-            {"badge": "Step 1 · Data Gathering", "title": "Pull Past Sales, POS Checkout Scans & Weather", "plain": "Collect what stores actually sold last month plus upcoming promotions and weather.", "manual": "Analysts spend 5 days downloading CSVs and fixing broken Excel formulas.", "ai": "Demand Sensing Agent pulls live POS scans & weather automatically in seconds."},
-            {"badge": "Step 2 · Demand Plan", "title": "Agree on What Customers Will Buy", "plain": "Create a statistical baseline forecast and check if salesperson overrides help or hurt (FVA).", "manual": "Sales reps pad forecasts by +20% 'just in case', creating negative Forecast Value Added.", "ai": "Flags biased manual overrides and harmonies retailer CPFR forecasts."},
-            {"badge": "Step 3 · Supply & Factory Check", "title": "Check If Factories & Suppliers Can Build It", "plain": "Compare the demand forecast against real factory line hours, machine OEE, and supplier stock.", "manual": "Planners discover 2 weeks too late that a line is booked or a supplier is short.", "ai": "Finite Scheduler & Tier-N Sentinel flag capacity and component bottlenecks early."},
-            {"badge": "Step 4 · Pre-S&OP Trade-Offs", "title": "Solve Gaps (Overtime vs. Air Freight vs. Margin)", "plain": "When demand beats capacity, simulate options: run weekend overtime, use co-packers, or shift stock.", "manual": "Teams argue in meetings with no live math on profit margin vs. OTIF service impact.", "ai": "S&OP Scenario Weaver simulates 3 cost/margin/service options in 10 seconds."},
-            {"badge": "Step 5 · Executive Sign-Off", "title": "Lock the One-Number Plan into ERP", "plain": "Leadership approves the final plan and publishes firm production & procurement targets.", "manual": "Manual re-keying into ERP takes days; plan is stale before execution starts.", "ai": "1-click governed write-back locks the consensus plan across ERP, MES, and WMS."},
+            {
+                "badge": "Step 1 · Data Gathering",
+                "title": "Pull Past Sales, POS (Point of Sale — store checkout scans) & Weather",
+                "plain": "Collect what retail stores actually sold at the cash register last month, plus upcoming price promotions and local weather forecasts.",
+                "real_world": "PepsiCo & Unilever pull daily Point of Sale (POS) scanner data from Walmart, Tesco, and Carrefour plus 14-day weather forecasts (because a +5°C warmer weekend spikes cold beverage & ice cream sales by +28%).",
+                "manual": "Analysts spend 5 days downloading CSV spreadsheets and fixing broken Excel formulas.",
+                "ai": "Demand Sensing Agent pulls live POS (Point of Sale) scans & weather automatically in seconds.",
+            },
+            {
+                "badge": "Step 2 · Demand Plan",
+                "title": "Agree on What Customers Will Buy & Check FVA (Forecast Value Added)",
+                "plain": "Create a statistical baseline forecast and check whether human salesperson edits actually improved accuracy or hurt it — called FVA (Forecast Value Added).",
+                "real_world": "At Nestl\u00e9 & P&G, regional sales managers often pad forecasts by +20% before a holiday 'just in case'. Measuring FVA (Forecast Value Added) exposes which manual overrides add value vs. which ones create unsold warehouse clutter.",
+                "manual": "Sales reps pad forecasts by +20% 'just in case', creating negative FVA (Forecast Value Added).",
+                "ai": "Flags biased manual overrides and harmonizes joint retailer CPFR (Collaborative Planning, Forecasting & Replenishment) forecasts.",
+            },
+            {
+                "badge": "Step 3 · Supply & Factory Check",
+                "title": "Check If Factories & Suppliers Can Build It (Checking OEE — Machine Uptime)",
+                "plain": "Compare the demand forecast against real factory line hours, machine OEE (Overall Equipment Effectiveness — uptime & speed %), and raw material supplier stock.",
+                "real_world": "Before locking a summer beverage plan, Coca-Cola & ITC check if their high-speed bottling lines have enough OEE (Overall Equipment Effectiveness) capacity and whether aluminum can & sugar suppliers can deliver on time.",
+                "manual": "Planners discover 2 weeks too late that a factory line is booked or a supplier is short.",
+                "ai": "Finite Production Scheduler & Tier-N Risk Sentinel flag capacity and component bottlenecks weeks early.",
+            },
+            {
+                "badge": "Step 4 · Pre-S&OP Trade-Offs",
+                "title": "Solve Gaps (Overtime vs. Air Freight vs. Profit Margin vs. OTIF Service)",
+                "plain": "When demand beats capacity, simulate options: run weekend factory overtime, hire contract packers, or shift stock while protecting OTIF (On-Time In-Full delivery).",
+                "real_world": "When demand for Sony PlayStation or Apple AirPods spikes 35% above plan, executives compare the profit margin impact of chartering air cargo vs. running 3rd-shift factory overtime in a 30-minute trade-off review.",
+                "manual": "Teams argue in meetings with no live math on profit margin vs. OTIF (On-Time In-Full) service impact.",
+                "ai": "S&OP Scenario Weaver simulates 3 cost/margin/OTIF service options in 10 seconds.",
+            },
+            {
+                "badge": "Step 5 · Executive Sign-Off",
+                "title": "Lock the One-Number Plan into ERP (Enterprise Resource Planning)",
+                "plain": "Leadership approves the final plan and publishes firm production & buying targets into ERP (Enterprise Resource Planning — corporate software like SAP).",
+                "real_world": "Once the Chief Supply Chain Officer (CSCO) and Chief Financial Officer (CFO) sign off at Procter & Gamble, SAP ERP automatically releases raw material Purchase Orders (POs) and factory build schedules worldwide.",
+                "manual": "Manual re-keying into ERP takes days; the plan is already stale before execution starts.",
+                "ai": "1-click governed write-back locks the consensus plan across ERP (Head Office), MES (Factory), and WMS (Warehouse).",
+            },
         ],
     },
     "match3": {
         "title": "2 · Paying Suppliers: The 3-Way Invoice Match (4 Steps)",
-        "subtitle": "How Procurement & Accounts Payable make sure the company never overpays a supplier invoice:",
+        "subtitle": "How Procurement & Accounts Payable make sure the company never overpays a supplier bill by matching 3 documents (PO + GRN + Invoice):",
+        "company_case": "🌍 Real-World Company Spotlight: How Toyota, Target & Walmart Verify Millions of Supplier Invoices Without Overpaying",
+        "company_summary": "Large manufacturers and retailers receive 50,000+ supplier invoices every week. By strictly matching Document #1 (Purchase Order / PO), Document #2 (Warehouse Goods Receipt Note / GRN), and Document #3 (Vendor Invoice), they prevent tens of millions in billing errors and short-shipments.",
         "steps": [
-            {"badge": "Step 1 · Document #1 (PO)", "title": "Check the Original Purchase Order (PO)", "plain": "Look up what price and quantity our buyer officially agreed to pay (e.g., 1,000 units @ $10 = $10,000).", "manual": "AP clerk manually searches SAP for the PO number typed on a PDF invoice.", "ai": "Three-Way Match Agent extracts the PO line items automatically."},
-            {"badge": "Step 2 · Document #2 (GRN)", "title": "Check the Warehouse Goods Receipt Note (GRN)", "plain": "Check what the receiving dock actually unloaded and scanned (e.g., only 960 units arrived; 40 were missing).", "manual": "Clerk emails the warehouse manager waiting 3 days to confirm dock count.", "ai": "Instantly cross-checks WMS dock barcode scans (GRN) against the PO."},
-            {"badge": "Step 3 · Document #3 (Invoice)", "title": "Compare Supplier Invoice Against PO & GRN", "plain": "The vendor billed $10,500 (1,000 units @ $10.50) — both unit price and quantity are wrong!", "manual": "Invoice sits blocked in a queue for weeks while teams argue over email.", "ai": "Pinpoints the exact $500 price variance + $400 short-shipment discrepancy."},
-            {"badge": "Step 4 · Auto-Debit & Release", "title": "Issue Debit Memo & Release Exact Approved Payment", "plain": "Block the $900 overcharge, send an automated debit memo with dock proof, and pay the valid $9,600.", "manual": "Late payment causes supplier credit hold or accidental overpayment.", "ai": "Issues signed debit memo and releases the exact verified amount on time."},
+            {
+                "badge": "Step 1 · Document #1 (PO)",
+                "title": "Check the Original PO (Purchase Order — Our Official Buyer Contract)",
+                "plain": "Look up what unit price and quantity our buyer officially agreed to pay on the PO (Purchase Order) — e.g., 1,000 units @ $10.00 = $10,000.",
+                "real_world": "Toyota's procurement system issues a firm PO (Purchase Order) to a brake-pad supplier (e.g., Bosch or Denso) specifying 1,000 brake assemblies at an agreed contract price of $10.00 each.",
+                "manual": "Accounts Payable clerk manually searches SAP ERP for the PO number typed on a PDF invoice.",
+                "ai": "Three-Way Match Agent extracts the PO (Purchase Order) line items automatically.",
+            },
+            {
+                "badge": "Step 2 · Document #2 (GRN)",
+                "title": "Check the Warehouse GRN (Goods Receipt Note — What Actually Arrived at the Dock)",
+                "plain": "Check what the warehouse receiving dock actually unloaded and scanned on the GRN (Goods Receipt Note) — e.g., only 960 units arrived; 40 were missing!",
+                "real_world": "When the supplier's truck backs into Target's or Toyota's receiving dock, workers scan every pallet barcode into the WMS (Warehouse Management System), generating a GRN (Goods Receipt Note) showing only 960 units were physically inside the trailer.",
+                "manual": "Clerk emails the warehouse manager and waits 3 days to confirm the physical dock count.",
+                "ai": "Instantly cross-checks WMS (Warehouse Management System) dock barcode scans (GRN) against the PO.",
+            },
+            {
+                "badge": "Step 3 · Document #3 (Invoice)",
+                "title": "Compare Supplier Invoice Against PO (Purchase Order) & GRN (Goods Receipt Note)",
+                "plain": "The vendor billed $10,500 (1,000 units @ $10.50) — both unit price (+$0.50 higher) and quantity (+40 missing units) are wrong!",
+                "real_world": "In fast-moving consumer goods (Unilever / Kraft Heinz), resin or packaging vendors frequently bill outdated price tiers or full truckload quantities even when 2 pallets were left behind at the factory.",
+                "manual": "Invoice sits blocked in an exception queue for weeks while teams argue over email.",
+                "ai": "Pinpoints the exact $500 price variance + $400 short-shipment discrepancy ($900 total overcharge).",
+            },
+            {
+                "badge": "Step 4 · Auto-Debit & Release",
+                "title": "Issue Automated Debit Memo & Pay the Exact Verified Amount ($9,600)",
+                "plain": "Block the $900 overcharge, send an automated debit memo with dock scan proof, and pay the valid $9,600 (960 units @ $10.00) on time.",
+                "real_world": "Walmart and Amazon automatically deduct short-shipped quantities via an electronic Debit Memo with attached GRN (Goods Receipt Note) barcode logs and release the exact $9,600 payment on the agreed DPO (Days Payable Outstanding) date.",
+                "manual": "Late payment causes supplier credit hold, or rubber-stamping causes a $900 cash loss.",
+                "ai": "Issues a signed debit memo and releases the exact verified payment amount on time.",
+            },
         ],
     },
     "wms_flow": {
         "title": "3 · Inside the Warehouse: Inbound Dock to Outbound Truck (5 Steps)",
-        "subtitle": "How pallets move through the 4 walls of a Distribution Center (WMS):",
+        "subtitle": "How pallets move through the 4 walls of a Distribution Center using a WMS (Warehouse Management System):",
+        "company_case": "🌍 Real-World Company Spotlight: Inside an Amazon Fulfillment Center, Sysco Food Hub & Pfizer Cold-Chain Depot",
+        "company_summary": "A modern distribution center is like a high-speed airport for boxes. Companies like Amazon, Sysco (restaurant food distribution), and DHL process 100+ trucks a day — unloading, checking quality, slotting fast movers, picking by expiration date (FEFO), and packing outbound trailers in reverse stop order (LIFO).",
         "steps": [
-            {"badge": "Step 1 · Yard & Dock Arrival", "title": "Assign Incoming Truck to the Best Dock Door", "plain": "A supplier truck arrives at the gate and needs an open unloading door.", "manual": "Trucks wait 3 hours in line, triggering $150/hr carrier detention penalties.", "ai": "Yard & Dock Sequencer assigns the optimal door dynamically from live GPS ETA."},
-            {"badge": "Step 2 · Dock-to-Stock & QA", "title": "Scan Pallets (GRN) & Check Quality / Cold-Chain", "plain": "Unload pallets, scan barcodes, and verify temperature logs before releasing stock for sale.", "manual": "Pallets sit on the dock floor for 28 hours waiting for manual clipboards.", "ai": "Dock-to-Stock & Cold-Chain Auditors clear good pallets in under 2 hours."},
-            {"badge": "Step 3 · Dynamic Slotting", "title": "Put Fast-Selling Items in Golden-Zone Bins", "plain": "Store high-velocity SKUs at waist height near shipping doors to minimize forklift travel.", "manual": "Static bin maps leave workers walking 8 extra miles a day in congested aisles.", "ai": "Warehouse Slotting Optimizer re-slots fast movers before peak waves."},
-            {"badge": "Step 4 · Wave Picking (FEFO)", "title": "Batch Customer Orders & Pick Earliest-Expiring Stock", "plain": "Release picking waves to handheld scanners enforcing First-Expired, First-Out (FEFO).", "manual": "One zone gets swamped while packing stations sit idle waiting for carts.", "ai": "Wave Fulfillment Copilot balances zone labor and enforces strict FEFO."},
-            {"badge": "Step 5 · 3D LIFO Truck Loading", "title": "Pack the Outbound 53-Foot Trailer in Stop Order", "plain": "Stack pallets safely by crush resistance, axle weight, and Last-In First-Out (LIFO) delivery sequence.", "manual": "Trailers leave 25% empty or drivers have to dig behind pallets at Stop #1.", "ai": "3D Load Consolidation Studio builds axle-legal LIFO load blueprints."},
+            {
+                "badge": "Step 1 · Yard & Dock Arrival",
+                "title": "Assign Incoming Truck to the Best Unloading Dock Door",
+                "plain": "A supplier truck arrives at the security gate and needs an open dock door near the rack zone where its goods belong.",
+                "real_world": "At Walmart and DHL mega-hubs with 150+ dock doors, live GPS telematics assigns an incoming refrigerated dairy truck to Cold-Dock Door #14 zero minutes after arrival so the driver never waits in line.",
+                "manual": "Trucks wait 3 hours in yard queues, triggering $150/hr carrier detention penalties.",
+                "ai": "Yard & Dock Sequencer assigns the optimal door dynamically from live GPS arrival time.",
+            },
+            {
+                "badge": "Step 2 · Dock-to-Stock & QA",
+                "title": "Scan Pallets (GRN — Goods Receipt Note) & Check Quality / Cold-Chain",
+                "plain": "Unload pallets, scan barcodes to create the GRN (Goods Receipt Note), and verify temperature logs before releasing stock for sale.",
+                "real_world": "At Pfizer (vaccines) and Amul (chilled dairy), workers plug in the truck's digital temperature logger at the dock; if the trailer stayed between 2°C and 8°C for the entire trip, the batch is cleared into saleable stock in minutes.",
+                "manual": "Pallets sit on the dock floor for 28 hours waiting for manual paper clipboard checks.",
+                "ai": "Dock-to-Stock & Cold-Chain Auditors clear good pallets into active inventory in under 2 hours.",
+            },
+            {
+                "badge": "Step 3 · Dynamic Slotting",
+                "title": "Put Fast-Selling SKUs (Stock Keeping Units) in Golden-Zone Bins",
+                "plain": "Store high-velocity SKUs (Stock Keeping Units — individual product items) at waist height right near the outbound shipping doors to minimize walking and forklift travel.",
+                "real_world": "Before Prime Day or Black Friday, Amazon and Nike re-slot their top 500 fastest-selling items into 'Golden Zone' waist-high bins right next to packing stations, cutting picker walking distance by 40%.",
+                "manual": "Static bin maps leave workers walking 8 extra miles a day into high back aisles.",
+                "ai": "Warehouse Slotting Optimizer re-slots fast movers automatically before peak waves.",
+            },
+            {
+                "badge": "Step 4 · Wave Picking (FEFO)",
+                "title": "Batch Customer Orders & Pick Earliest-Expiring Stock (FEFO — First-Expired, First-Out)",
+                "plain": "Release picking waves to handheld barcode scanners enforcing FEFO (First-Expired, First-Out — shipping the batch whose expiration date is closest first).",
+                "real_world": "At Sysco, Nestlé, and grocery hubs, handheld WMS (Warehouse Management System) scanners force pickers to scan the yogurt pallet expiring May 12 before touching the pallet expiring May 25 (strict FEFO).",
+                "manual": "Pickers grab whichever pallet is closest, leaving older batches in the back to expire.",
+                "ai": "Wave Fulfillment Copilot balances zone labor and enforces strict FEFO (First-Expired, First-Out).",
+            },
+            {
+                "badge": "Step 5 · 3D LIFO Truck Loading",
+                "title": "Pack the Outbound 53-Foot Trailer in Stop Order (LIFO — Last-In, First-Out)",
+                "plain": "Stack pallets safely by crush resistance, highway axle weight, and LIFO (Last-In, First-Out — loading Stop #1 last at the rear doors so it unloads first).",
+                "real_world": "A Sysco or Coca-Cola delivery truck making 6 restaurant/store stops loads Stop #6 deep in the nose of the trailer first, and loads Stop #1 last right at the tail doors (LIFO) with heavy cans on the floor and fragile chips on top.",
+                "manual": "Trailers leave 25% empty, or drivers have to dig behind 10 pallets at Stop #1.",
+                "ai": "3D Load Consolidation Studio builds axle-legal LIFO (Last-In, First-Out) load blueprints.",
+            },
         ],
     },
     "otif_flow": {
         "title": "4 · Customer Order to On-Time In-Full (OTIF) Delivery (5 Steps)",
-        "subtitle": "How a customer order is promised, routed, tracked, and protected from retailer fines:",
+        "subtitle": "How a customer order is promised, routed, tracked, and delivered On-Time In-Full (OTIF) without retailer penalty fines:",
+        "company_case": "🌍 Real-World Company Spotlight: How P&G, Kraft Heinz & Unilever Hit Walmart's Strict 98% OTIF (On-Time In-Full) Mandate",
+        "company_summary": "Big retailers like Walmart, Target, and Kroger fine suppliers 3% of the order value if a truck arrives outside its 2-hour appointment window or is missing even a few cases. Here is how top companies achieve 98%+ OTIF (On-Time In-Full):",
         "steps": [
-            {"badge": "Step 1 · Order Promising (ATP)", "title": "Promise an Accurate Delivery Date & Protect VIP Stock", "plain": "Check real-time Available-to-Promise (ATP) stock and reserve inventory for high-priority orders.", "manual": "First-come-first-served rules let low-margin orders drain VIP stock.", "ai": "ATP Order Promising Agent allocates stock from the best node in <50ms."},
-            {"badge": "Step 2 · Mode & Carrier Selection", "title": "Choose Full Truckload (FTL), Rail, or Expedite", "plain": "Pick the lowest-cost transport mode that still meets the customer's exact delivery window.", "manual": "Planners book expensive last-minute air freight or LTL out of habit.", "ai": "Multimodal Mode-Shift & FleetFlow optimize multi-stop routes."},
-            {"badge": "Step 3 · In-Transit Tracking", "title": "Watch Live GPS, Weather & Driver Hours (ELD/HOS)", "plain": "Track the truck along the highway and predict if weather or driver hours will cause a delay.", "manual": "Nobody knows a shipment is stuck until the customer calls angry.", "ai": "Freight Control Tower & OTIF Shield flag at-risk loads 48 hours early."},
-            {"badge": "Step 4 · Delivery & ePOD", "title": "Arrive Inside Appointment Window & Capture ePOD", "plain": "Deliver 100% of cases on time and capture timestamped GPS + Electronic Proof of Delivery (ePOD).", "manual": "Paper delivery slips get lost, leaving no proof when retailers claim late arrival.", "ai": "Automatically archives signed ePOD, BOL, and geofence arrival timestamps."},
-            {"badge": "Step 5 · Freight Audit & Claims", "title": "Audit Carrier Freight Bill & Dispute Unfair Fines", "plain": "Verify carrier freight rates against contract tables and auto-dispute invalid retailer OTIF fines.", "manual": "Companies lose 3% revenue to unchallenged chargebacks and billing errors.", "ai": "Freight Bill Audit & OTIF Shield recover overcharges automatically."},
+            {
+                "badge": "Step 1 · Order Promising (ATP)",
+                "title": "Promise an Accurate Delivery Date Using ATP (Available-to-Promise)",
+                "plain": "Check real-time ATP (Available-to-Promise — uncommitted sellable stock) across warehouses and reserve stock for high-priority orders.",
+                "real_world": "When Walmart places a 5,000-case order with Procter & Gamble (Tide detergent), P&G's ATP (Available-to-Promise) rules protect strategic retail buffer so a small spot order doesn't accidentally drain Walmart's stock.",
+                "manual": "First-come-first-served rules let low-margin orders drain VIP customer stock.",
+                "ai": "ATP Order Promising Agent allocates stock from the best warehouse node in under 50 milliseconds.",
+            },
+            {
+                "badge": "Step 2 · Mode & Carrier Selection",
+                "title": "Choose FTL (Full Truckload), Intermodal Rail, or LTL (Less-Than-Truckload)",
+                "plain": "Pick the lowest-cost transport mode — FTL (Full Truckload — full 53-ft truck), rail, or LTL (Less-Than-Truckload — shared pallet space) — that meets the delivery window.",
+                "real_world": "Nike and Samsung combine multiple smaller LTL (Less-Than-Truckload) shipments heading to the same city into a single consolidated FTL (Full Truckload) or intermodal rail move, cutting freight cost by 22%.",
+                "manual": "Planners book expensive last-minute air freight or LTL (Less-Than-Truckload) out of habit.",
+                "ai": "Multimodal Mode-Shift & FleetFlow optimize multi-stop routes and mode choices.",
+            },
+            {
+                "badge": "Step 3 · In-Transit Tracking",
+                "title": "Watch Live GPS, Weather & Driver ELD / HOS (Electronic Logging / Hours of Service)",
+                "plain": "Track the truck along the highway and check driver ELD (Electronic Logging Device) and HOS (Hours of Service — legal driving limits) to spot delays 48 hours early.",
+                "real_world": "If a winter storm slows I-80 and the truck driver only has 2 hours left on their federal HOS (Hours of Service) clock on the cab's ELD (Electronic Logging Device), Nestlé's Control Tower swaps in a relay driver to save the appointment.",
+                "manual": "Nobody knows a shipment is stuck on the highway until the customer calls angry.",
+                "ai": "Freight Control Tower & OTIF Shield flag at-risk loads 48 hours early and re-route.",
+            },
+            {
+                "badge": "Step 4 · Delivery & ePOD",
+                "title": "Arrive Inside Appointment Window & Capture ePOD (Electronic Proof of Delivery)",
+                "plain": "Deliver 100% of ordered cases on time — achieving OTIF (On-Time In-Full) — and capture timestamped GPS + ePOD (Electronic Proof of Delivery).",
+                "real_world": "When a FedEx, UPS, or JB Hunt driver backs into a Kroger dock at 08:14 AM for an 08:00–10:00 AM window, geofence GPS + a tablet signature creates an tamper-proof ePOD (Electronic Proof of Delivery) and BOL (Bill of Lading) archive.",
+                "manual": "Paper delivery slips get lost in truck cabs, leaving no proof when retailers claim late arrival.",
+                "ai": "Automatically archives signed ePOD (Electronic Proof of Delivery), BOL (Bill of Lading), and GPS timestamps.",
+            },
+            {
+                "badge": "Step 5 · Freight Audit & Claims",
+                "title": "Audit Carrier Freight Bill & Dispute Unfair OTIF (On-Time In-Full) Fines",
+                "plain": "Verify carrier freight bills against contract rate tables and automatically dispute invalid retailer OTIF (On-Time In-Full) chargeback fines.",
+                "real_world": "When a retailer's automated system mistakenly deducts a $45,000 OTIF (On-Time In-Full) penalty even though the truck arrived at the gate on time, Kraft Heinz / Unilever submit the GPS + ASN (Advance Ship Notice) + ePOD dossier to recover 100% of the fine.",
+                "manual": "Companies lose 2%–3% of revenue to unchallenged retail chargebacks and carrier billing errors.",
+                "ai": "Freight Bill Audit & OTIF Penalty Shield recover overcharges and invalid fines automatically.",
+            },
         ],
     },
 }
@@ -101,6 +242,27 @@ GOOGLE_PILLAR_META = [
     ("inventory_warehouse", "05 · Inventory & Warehouse", "#1E8E3E", "#E6F4EA"),  # Google Green
     ("circular_enable", "06 · Control Tower, Returns & ESG", "#D93025", "#FCE8E6"), # Google Red
 ]
+
+PILLAR_REAL_WORLD_EXAMPLES = {
+    "demand_sop": (
+        "<strong>Unilever, PepsiCo &amp; Zara:</strong> Unilever and PepsiCo ingest daily <strong>POS (Point of Sale — store checkout barcode scans)</strong> from Walmart and Tesco plus local weather forecasts to adjust production before weekend heatwaves hit, while Zara uses daily store checkout signals to update garment forecasts twice a week and avoid the Bullwhip Effect."
+    ),
+    "sourcing_procurement": (
+        "<strong>Apple, Toyota &amp; Nestl\u00e9:</strong> Apple and Toyota map every <strong>BOM (Bill of Materials — product recipe)</strong> across Tier-1 (Foxconn/Denso) and Tier-2/3 raw wafer and lithium suppliers, benchmark supplier <strong>RFQ (Request for Quotation)</strong> bids against live commodity indices, and run automated <strong>3-Way Match</strong> (matching the <strong>PO — Purchase Order</strong>, <strong>GRN — Goods Receipt Note</strong>, and Invoice) before releasing cash."
+    ),
+    "manufacturing_prod": (
+        "<strong>Tesla, Pfizer &amp; Amul Dairy:</strong> Tesla and Toyota track real-time factory machine <strong>OEE (Overall Equipment Effectiveness — uptime, speed &amp; quality %)</strong> via vibration sensors to stop unplanned line breakdowns; Pfizer audits digital <strong>eBHR (Electronic Batch History Records)</strong> and <strong>COA (Certificates of Analysis)</strong> for rapid vaccine release; and Amul optimizes <strong>CIP (Clean-in-Place)</strong> pipe washes between dairy batches."
+    ),
+    "logistics_fleet": (
+        "<strong>Walmart, Maersk, Sysco &amp; FedEx:</strong> Sysco and Coca-Cola pack multi-stop delivery trailers in <strong>3D LIFO (Last-In, First-Out)</strong> stop sequence so Stop #1 sits right at the rear doors; Maersk and Nike orchestrate ocean port drayage to avoid daily container <strong>Demurrage</strong> fines; and Walmart tracks truck <strong>ELD (Electronic Logging Device)</strong> driving hours and <strong>ePOD (Electronic Proof of Delivery)</strong> to protect 98% <strong>OTIF (On-Time In-Full)</strong> delivery."
+    ),
+    "inventory_warehouse": (
+        "<strong>Amazon, Target &amp; McKesson Pharma:</strong> Amazon and DHL dynamically re-slot fast-selling <strong>SKUs (Stock Keeping Units)</strong> into waist-high Golden-Zone bins inside their <strong>WMS (Warehouse Management System)</strong>; McKesson and Amul enforce strict <strong>FEFO (First-Expired, First-Out)</strong> wave picking so short-dated medicine and milk never expire in the warehouse; and Procter &amp; Gamble uses <strong>MEIO (Multi-Echelon Inventory Optimization)</strong> to cut <strong>DIO (Days Inventory Outstanding)</strong>."
+    ),
+    "circular_enable": (
+        "<strong>Amazon, Apple, Unilever &amp; Tata Steel:</strong> Amazon uses <strong>Keep-It vs. Return-It</strong> math on low-price <strong>RMA (Return Merchandise Authorization)</strong> refunds when return shipping costs more than the item; Apple achieves a negative <strong>CCC (Cash Conversion Cycle = DIO + DSO &minus; DPO)</strong> by turning inventory in 9 days; and Unilever &amp; Tata Steel track supplier <strong>Scope 3 Carbon</strong> for European <strong>CBAM (Carbon Border Adjustment Mechanism)</strong> and <strong>EUDR (EU Deforestation Regulation)</strong> compliance."
+    ),
+}
 
 
 def _num(val: Any) -> float | None:
@@ -359,6 +521,10 @@ def build_google_linear_playbook() -> None:
             prob_explained = expand_acronyms_once(ag.get("problem", ""))
             sol_explained = expand_acronyms_once(ag.get("solution", ""))
             out_explained = expand_acronyms_once(ag.get("outcome", ""))
+            real_world_example = PILLAR_REAL_WORLD_EXAMPLES.get(
+                dept_id,
+                PILLAR_REAL_WORLD_EXAMPLES["demand_sop"],
+            )
 
             t1 = tables[0].get("table_name", "fixture_table_1") if len(tables) > 0 else "erp_live_feed"
             t2 = tables[1].get("table_name", "fixture_table_2") if len(tables) > 1 else "iot_twin_state"
@@ -380,6 +546,7 @@ def build_google_linear_playbook() -> None:
                 "problem": prob_explained,
                 "solution": sol_explained,
                 "outcome": out_explained,
+                "realWorld": real_world_example,
                 "prompt": demo_prompt,
                 "readTools": read_tools,
                 "writeTools": write_tools,
@@ -916,13 +1083,13 @@ def build_google_linear_playbook() -> None:
           </div>
 
           <div class="g-step-badge" style="background:#E8F0FE; color:#1A73E8;">
-            🗣️ PART 1 · HOW TO EXPLAIN THIS AGENT TO A CUSTOMER (PLAIN ENGLISH TABLE)
+            🗣️ PART 1 · HOW TO EXPLAIN THIS AGENT TO A CUSTOMER (PLAIN ENGLISH TABLE + REAL-WORLD EXAMPLE)
           </div>
           <div class="g-table-wrap">
             <table class="g-table">
               <thead>
                 <tr>
-                  <th style="width:220px;">Question</th>
+                  <th style="width:240px;">Question</th>
                   <th>Plain-English Answer (All Abbreviations Spelled Out)</th>
                 </tr>
               </thead>
@@ -938,6 +1105,10 @@ def build_google_linear_playbook() -> None:
                 <tr>
                   <td style="font-weight:700; color:#1E8E3E;">🚀 3. What Business Result Does It Deliver?</td>
                   <td><strong>${{ag.outcome}}</strong> (${{ag.roiBadge}})</td>
+                </tr>
+                <tr style="background:#FEF7E0;">
+                  <td style="font-weight:700; color:#B06000;">🌍 4. Real-World Company Example</td>
+                  <td>${{ag.realWorld}}</td>
                 </tr>
               </tbody>
             </table>
@@ -1099,10 +1270,28 @@ def build_google_linear_playbook() -> None:
 
 def build_google_linear_academy() -> None:
     """Rebuilds supply_chain_101_interactive_academy.html in Google's bright, spacious, linear, button-wise & tabular design language."""
+    from supply_chain_real_world_sectors_data import (
+        QUICK_ABBREVIATIONS_TABLE,
+        SECTOR_CASE_STUDIES,
+        STAGES_DATA,
+    )
+
     fc_json = json.dumps(FLASHCARDS, ensure_ascii=False)
     wf_json = json.dumps(WORKFLOW_SIMULATORS, ensure_ascii=False)
     dec_json = json.dumps(CUSTOMER_DECODER, ensure_ascii=False)
     quiz_json = json.dumps(QUIZ_QUESTIONS, ensure_ascii=False)
+    stages_json = json.dumps(STAGES_DATA, ensure_ascii=False)
+    sectors_json = json.dumps(SECTOR_CASE_STUDIES, ensure_ascii=False)
+
+    abbr_rows_html = "".join(
+        f"""<tr>
+          <td style="font-weight:800; color:#1A73E8; font-size:17px;"><code>{ab}</code></td>
+          <td style="font-weight:700; color:#1E8E3E;">{full}</td>
+          <td>{meaning}</td>
+          <td style="background:#F8FAFD; color:#202124;">{example}</td>
+        </tr>"""
+        for ab, full, meaning, example in QUICK_ABBREVIATIONS_TABLE
+    )
 
     html_doc = f"""<!DOCTYPE html>
 <html lang="en">
@@ -1164,7 +1353,7 @@ def build_google_linear_academy() -> None:
       flex-wrap: wrap;
     }}
     .g-container {{
-      max-width: 1120px;
+      max-width: 1140px;
       margin: 0 auto;
       padding: 32px 24px 96px;
     }}
@@ -1214,21 +1403,21 @@ def build_google_linear_academy() -> None:
       border-radius: 999px;
       margin-bottom: 12px;
     }}
-    /* Chapter Navigation Bar */
+    /* Chapter Navigation Bar (6 Chapters) */
     .g-chapter-bar {{
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 10px;
       margin-bottom: 28px;
     }}
-    @media (max-width: 900px) {{
-      .g-chapter-bar {{ grid-template-columns: 1fr 1fr; }}
+    @media (max-width: 1020px) {{
+      .g-chapter-bar {{ grid-template-columns: repeat(2, 1fr); }}
     }}
     .g-chap-btn {{
       font-family: var(--font-sans);
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 700;
-      padding: 16px 14px;
+      padding: 16px 12px;
       border-radius: 16px;
       border: 2px solid var(--border-light);
       background: #FFFFFF;
@@ -1299,7 +1488,7 @@ def build_google_linear_academy() -> None:
     <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
       <a href="index.html" class="g-btn">&larr; Main Portal</a>
       <span style="font-family:var(--font-display); font-size:20px; font-weight:700; color:#202124;">
-        🎓 Supply Chain 101 — Simple, Linear &amp; Tabular Guide
+        🎓 Supply Chain 101 — Zero Unexplained Abbreviations + Real-World Companies
       </span>
     </div>
     <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
@@ -1313,26 +1502,26 @@ def build_google_linear_academy() -> None:
     <!-- SIMPLE HERO -->
     <section class="g-card" style="padding:28px 34px; background:linear-gradient(135deg, #E8F0FE 0%, #FFFFFF 65%, #E6F4EA 100%);">
       <span class="g-badge" style="background:#FFFFFF; color:var(--g-blue); border:1px solid #DADCE0;">
-        ZERO UNEXPLAINED JARGON · ONE STEP AT A TIME
+        EVERY ABBREVIATION SPELLED OUT · REAL-WORLD EXAMPLES IN EVERY SECTION + 8 INDUSTRY SECTORS
       </span>
       <h1 style="font-family:var(--font-display); font-size:34px; margin:0 0 8px;">
         Learn Supply Chain From Scratch (Button-by-Button &amp; Tabular)
       </h1>
-      <p style="margin:0; color:var(--text-sub); font-size:18px; max-width:920px;">
-        Click through the <strong>5 simple chapters</strong> below one at a time. Every concept is explained in everyday words using clean tables, bright Google diagrams, and one-by-one interactive cards.
+      <p style="margin:0; color:var(--text-sub); font-size:18px; max-width:980px;">
+        Click through the <strong>6 simple chapters</strong> below one at a time. Every single abbreviation (like <strong>OTIF — On-Time In-Full</strong>, <strong>DIO — Days Inventory Outstanding</strong>, and <strong>CCC — Cash Conversion Cycle</strong>) is spelled out and explained right where it appears, with <strong>real-world company examples</strong> inside every section plus a dedicated <strong>Chapter 6 covering 8 major industry sectors</strong>.
       </p>
     </section>
 
-    <!-- 5 CHAPTER BUTTONS -->
+    <!-- 6 CHAPTER BUTTONS -->
     <nav class="g-chapter-bar">
       <button type="button" class="g-chap-btn active" onclick="switchChapter('chap1', this)">
-        1 · Intro to Supply Chain &amp; The 7 Stages
+        1 · Intro, Abbreviations &amp; 7 Stages
       </button>
       <button type="button" class="g-chap-btn" onclick="switchChapter('chap2', this)">
         2 · Bullwhip &amp; 4 Core Diagrams
       </button>
       <button type="button" class="g-chap-btn" onclick="switchChapter('chap3', this)">
-        3 · 4 Step-by-Step Processes
+        3 · 4 Step-by-Step Workflows
       </button>
       <button type="button" class="g-chap-btn" onclick="switchChapter('chap4', this)">
         4 · All 56 Terms (1-by-1 or Table)
@@ -1340,10 +1529,13 @@ def build_google_linear_academy() -> None:
       <button type="button" class="g-chap-btn" onclick="switchChapter('chap5', this)">
         5 · Customer Decoder &amp; Quiz
       </button>
+      <button type="button" class="g-chap-btn" style="border-color:#1E8E3E;" onclick="switchChapter('chap6', this)">
+        🌍 6 · Real-World Companies (8 Sectors)
+      </button>
     </nav>
 
     <!-- ===================================================================
-         CHAPTER 1: INTRODUCTION TO SUPPLY CHAIN, WHERE IT FITS & THE 7 STAGES
+         CHAPTER 1: INTRODUCTION TO SUPPLY CHAIN, ABBREVIATIONS & THE 7 STAGES
          =================================================================== -->
     <div id="chap1" class="g-pane active">
       <!-- SECTION 1A: WHAT IS A SUPPLY CHAIN & WHERE DOES IT COME INTO THE PICTURE? -->
@@ -1355,7 +1547,7 @@ def build_google_linear_academy() -> None:
           What Is a Supply Chain, and Where Does It Come Into the Picture?
         </h2>
         <p style="font-size:18px; color:var(--text-main); margin:0 0 16px;">
-          Look at any physical item around you right now — a <strong>jar of coffee</strong>, a <strong>smartphone</strong>, a <strong>pair of running shoes</strong>, or <strong>medicine at a pharmacy</strong>. None of those products magically appeared on a shelf. Every single one started as raw materials in the ground (coffee beans on a farm, silica sand for microchips, rubber and cotton, chemical compounds) and had to be <strong>planned, bought, manufactured, packed, stored in warehouses, shipped across oceans and highways, and placed on a shelf</strong> at the exact moment you wanted to buy it.
+          Look at any physical item around you right now — a <strong>jar of Nestlé coffee</strong>, an <strong>Apple iPhone</strong>, a <strong>pair of Nike running shoes</strong>, or <strong>Pfizer medicine at a pharmacy</strong>. None of those products magically appeared on a shelf. Every single one started as raw materials in the ground (coffee beans on a farm in Colombia, silica sand for microchips in Taiwan, rubber and cotton in Vietnam, chemical compounds in Germany) and had to be <strong>planned, bought, manufactured, packed, stored in warehouses, shipped across oceans and highways, and placed on a shelf</strong> at the exact moment you wanted to buy it.
         </p>
         <div style="background:#E8F0FE; border-left:5px solid #1A73E8; border-radius:12px; padding:18px 22px; margin-bottom:26px; font-size:18px; font-weight:600; color:#174EA6;">
           💡 <strong>In one simple sentence:</strong> The <strong>Supply Chain</strong> is the entire end-to-end system of people, factories, suppliers, warehouses, trucks, and software that turns raw ingredients into a finished product in the customer’s hands — and it accounts for <strong>60% to 80% of a product company’s total cost!</strong>
@@ -1365,23 +1557,23 @@ def build_google_linear_academy() -> None:
           Where Does Supply Chain Come Into the Picture Inside a Company?
         </h3>
         <p style="color:var(--text-sub); margin:0 0 16px;">
-          Every product company has 4 main parts. Here is how they hand the baton to each other, and where Supply Chain takes over:
+          Every product company has 4 main parts. Here is how they hand the baton to each other, where Supply Chain takes over, and how real companies do this every day:
         </p>
 
         <!-- Bright Google SVG: Where Supply Chain Fits in the Enterprise -->
         <svg viewBox="0 0 1020 126" style="width:100%; height:auto; display:block; margin-bottom:20px; background:#F8F9FA; border-radius:16px; border:1px solid #DADCE0; padding:8px;">
           <g transform="translate(14,16)">
             <rect width="205" height="94" rx="14" fill="#FFFFFF" stroke="#DADCE0" stroke-width="2"/>
-            <text x="102" y="30" text-anchor="middle" fill="#5F6368" font-size="11.5" font-weight="800">1 · R&amp;D / PRODUCT</text>
+            <text x="102" y="30" text-anchor="middle" fill="#5F6368" font-size="11" font-weight="800">1 · R&amp;D (RESEARCH &amp; DEV)</text>
             <text x="102" y="54" text-anchor="middle" fill="#202124" font-size="14.5" font-weight="700">🧪 Designs Product</text>
-            <text x="102" y="76" text-anchor="middle" fill="#5F6368" font-size="11.5">Creates recipe (BOM)</text>
+            <text x="102" y="76" text-anchor="middle" fill="#5F6368" font-size="11">Recipe: BOM (Bill of Materials)</text>
           </g>
           <text x="230" y="68" fill="#5F6368" font-size="20" font-weight="700">&rarr;</text>
           <g transform="translate(248,16)">
             <rect width="205" height="94" rx="14" fill="#FFFFFF" stroke="#DADCE0" stroke-width="2"/>
-            <text x="102" y="30" text-anchor="middle" fill="#5F6368" font-size="11.5" font-weight="800">2 · MARKETING &amp; SALES</text>
+            <text x="102" y="30" text-anchor="middle" fill="#5F6368" font-size="11" font-weight="800">2 · MARKETING &amp; SALES</text>
             <text x="102" y="54" text-anchor="middle" fill="#202124" font-size="14.5" font-weight="700">📣 Creates Demand</text>
-            <text x="102" y="76" text-anchor="middle" fill="#5F6368" font-size="11.5">Runs promos &amp; takes orders</text>
+            <text x="102" y="76" text-anchor="middle" fill="#5F6368" font-size="11">Runs promos &amp; takes orders</text>
           </g>
           <text x="464" y="68" fill="#1A73E8" font-size="20" font-weight="700">&rarr;</text>
           <g transform="translate(482,12)">
@@ -1389,101 +1581,138 @@ def build_google_linear_academy() -> None:
             <text x="150" y="28" text-anchor="middle" fill="#1A73E8" font-size="12" font-weight="800">3 · 🎯 THE SUPPLY CHAIN (ENGINE ROOM)</text>
             <text x="150" y="54" text-anchor="middle" fill="#202124" font-size="15.5" font-weight="800">⚙️ Plans · Buys · Makes · Stores · Ships</text>
             <text x="150" y="76" text-anchor="middle" fill="#174EA6" font-size="12" font-weight="700">60%–80% of Company Cost &amp; Cash!</text>
-            <text x="150" y="94" text-anchor="middle" fill="#5F6368" font-size="11">Led by Chief Supply Chain Officer (CSCO)</text>
+            <text x="150" y="94" text-anchor="middle" fill="#5F6368" font-size="11">Led by CSCO (Chief Supply Chain Officer)</text>
           </g>
           <text x="794" y="68" fill="#1E8E3E" font-size="20" font-weight="700">&rarr;</text>
           <g transform="translate(812,16)">
             <rect width="194" height="94" rx="14" fill="#E6F4EA" stroke="#1E8E3E" stroke-width="2"/>
-            <text x="97" y="30" text-anchor="middle" fill="#1E8E3E" font-size="11.5" font-weight="800">4 · FINANCE &amp; CFO</text>
+            <text x="97" y="30" text-anchor="middle" fill="#1E8E3E" font-size="11" font-weight="800">4 · FINANCE (THE CFO)</text>
             <text x="97" y="54" text-anchor="middle" fill="#202124" font-size="14.5" font-weight="700">💰 Collects Cash</text>
-            <text x="97" y="76" text-anchor="middle" fill="#137333" font-size="11.5">Pays vendors &amp; books profit</text>
+            <text x="97" y="76" text-anchor="middle" fill="#137333" font-size="11">Pays vendors &amp; books profit</text>
           </g>
         </svg>
 
-        <div class="g-table-wrap" style="margin-bottom:28px;">
+        <div class="g-table-wrap" style="margin-bottom:32px;">
           <table class="g-table">
             <thead>
               <tr>
-                <th style="width:230px;">Company Function</th>
-                <th style="width:260px;">What They Do</th>
+                <th style="width:210px;">Company Function</th>
+                <th style="width:230px;">What They Do</th>
                 <th>How Supply Chain Connects to Them</th>
+                <th style="width:270px;">🌍 Real-World Company Example</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-weight:700;">🧪 1. Product / R&amp;D</td>
-                <td>Invents the product and defines its recipe of parts (<strong>BOM — Bill of Materials</strong>).</td>
-                <td>Hands the recipe to Supply Chain so buyers can find suppliers for every screw, chip, bottle, and label before launch (<strong>NPI — New Product Introduction</strong>).</td>
+                <td style="font-weight:700;">🧪 1. Product / R&amp;D<br/><span style="font-size:13px; color:#5F6368;">(Research &amp; Development)</span></td>
+                <td>Invents the product and defines its exact recipe of parts (<strong>BOM — Bill of Materials</strong>, the complete ingredients list).</td>
+                <td>Hands the recipe to Supply Chain so buyers can qualify suppliers for every screw, microchip, bottle, and label months before launch (<strong>NPI — New Product Introduction</strong>).</td>
+                <td style="background:#F8FAFD;"><strong>📱 Apple (Cupertino):</strong> Engineers design the iPhone in California, then hand the 1,500-part <strong>BOM (Bill of Materials)</strong> to Apple’s supply chain team to lock in Sony cameras, Samsung OLED screens, and TSMC chips 6 months before September launch.</td>
               </tr>
               <tr>
                 <td style="font-weight:700;">📣 2. Sales &amp; Marketing</td>
-                <td>Runs price promotions, signs retail deals (Walmart, Amazon), and promises delivery dates.</td>
-                <td>If Sales runs a 20%-off promotion without telling Supply Chain, stores run out of stock! Supply Chain works with Sales every month (<strong>S&amp;OP</strong>) to match supply with demand.</td>
+                <td>Runs price promotions, signs retail deals (Walmart, Target, Amazon), and promises delivery dates.</td>
+                <td>If Sales runs a 20%-off promotion without telling Supply Chain, stores run out of stock! Supply Chain meets with Sales every month in <strong>S&amp;OP (Sales &amp; Operations Planning)</strong> to match factory output with sales deals.</td>
+                <td style="background:#F8FAFD;"><strong>🥔 PepsiCo (Frito-Lay):</strong> Before Super Bowl Sunday, Marketing plans a nationwide Doritos display at Walmart. Supply Chain ramps up potato &amp; corn frying lines 4 weeks early so 5,000 stores don’t run empty on game day.</td>
               </tr>
-              <tr style="background:#F8FAFD;">
-                <td style="font-weight:800; color:#1A73E8;">⚙️ 3. THE SUPPLY CHAIN<br/><span style="font-size:13px; color:#5F6368;">(Office of the CSCO)</span></td>
+              <tr style="background:#E8F0FE;">
+                <td style="font-weight:800; color:#1A73E8;">⚙️ 3. THE SUPPLY CHAIN<br/><span style="font-size:13px; color:#174EA6;">Led by CSCO (Chief Supply Chain Officer)</span></td>
                 <td><strong>Forecasts demand, buys raw materials, runs factories, manages warehouses, and dispatches trucks/ships.</strong></td>
-                <td><strong>The physical execution engine of the business.</strong> If Supply Chain fails, factories stop, shelves go empty, or millions of dollars get trapped in unsold warehouse inventory.</td>
+                <td><strong>The physical execution engine of the business.</strong> If Supply Chain fails, factories stop, store shelves go empty, or tens of millions of dollars get trapped in unsold warehouse boxes.</td>
+                <td style="background:#FFFFFF;"><strong>🧴 Unilever &amp; Nestlé:</strong> Their supply chains coordinate 300+ factories and 50,000+ suppliers daily to deliver 2 billion Dove soaps, Maggi noodles, and Nescafé jars across 190 countries.</td>
               </tr>
               <tr>
-                <td style="font-weight:700;">💰 4. Finance (The CFO)</td>
+                <td style="font-weight:700;">💰 4. Finance<br/><span style="font-size:13px; color:#5F6368;">Led by CFO (Chief Financial Officer)</span></td>
                 <td>Manages company cash flow, profit margins, and supplier/customer payments.</td>
-                <td>The CFO relies on Supply Chain to keep <strong>Inventory Cash (DIO)</strong> low, avoid expensive emergency air freight, and verify every supplier bill before paying (<strong>3-Way Match</strong>).</td>
+                <td>The CFO relies on Supply Chain to keep <strong>DIO (Days Inventory Outstanding — days cash sits in warehouse boxes)</strong> low, avoid expensive emergency air freight, and check every supplier bill before paying (<strong>3-Way Match</strong>).</td>
+                <td style="background:#F8FAFD;"><strong>📦 Amazon &amp; P&amp;G:</strong> Finance tracks how fast warehouse inventory turns into cash (<strong>CCC — Cash Conversion Cycle</strong>) and blocks any supplier invoice that doesn’t match the original Purchase Order and warehouse receipt.</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <h3 style="font-family:var(--font-display); font-size:23px; margin:0 0 10px;">
-          Why Is Supply Chain So Hard? (The 3-Way Tug-of-War)
+          Why Is Supply Chain So Hard? (The 3-Way Tug-of-War — With Every Abbreviation Explained)
         </h3>
         <p style="color:var(--text-sub); margin:0 0 14px;">
-          Running a supply chain is difficult because every decision pulls in <strong>3 opposite directions</strong> at once:
+          Running a supply chain is difficult because every decision pulls in <strong>3 opposite directions</strong> at once. Notice how every abbreviation below (<strong>OTIF</strong>, <strong>DIO</strong>, <strong>CCC</strong>) is spelled out right in the table:
         </p>
-        <div class="g-table-wrap">
+        <div class="g-table-wrap" style="margin-bottom:32px;">
           <table class="g-table">
             <thead>
               <tr>
-                <th style="width:220px;">Goal</th>
-                <th style="width:200px;">Who Demands It</th>
+                <th style="width:190px;">Goal</th>
+                <th style="width:220px;">Who Demands It &amp; Key Metric Spelled Out</th>
                 <th>What Happens If You Push Too Far</th>
-                <th style="width:270px;">How Our AI Agents Solve It</th>
+                <th style="width:240px;">🌍 Real-World Example</th>
+                <th style="width:220px;">How Our AI Agents Solve It</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td style="font-weight:800; color:#1E8E3E;">🎯 1. High Service<br/>(Never Run Out)</td>
-                <td><strong>Sales &amp; Retail Customers</strong><br/>(Want 99% <code>OTIF</code>)</td>
-                <td>To never run out, you pile up mountains of extra backup stock in every warehouse — tying up tens of millions in cash!</td>
-                <td><strong>Demand Sensing &amp; ATP Agents</strong> predict exact local demand and protect VIP stock.</td>
+                <td><strong>Sales &amp; Retail Customers</strong><br/>Demand 98%+ <strong>OTIF (On-Time In-Full — delivering the exact quantity ordered inside the exact time window)</strong>.</td>
+                <td>To never run out, you pile up mountains of extra backup stock in every warehouse — tying up tens of millions of dollars in cash!</td>
+                <td style="background:#F8FAFD;"><strong>🛒 Walmart &amp; Target</strong> fine suppliers like Kraft Heinz or Colgate <strong>3% of the invoice value</strong> whenever a truck arrives late or short on cases (an <strong>OTIF penalty</strong>).</td>
+                <td><strong>Demand Sensing &amp; ATP (Available-to-Promise) Agents</strong> predict exact local demand and protect VIP stock.</td>
               </tr>
               <tr>
                 <td style="font-weight:800; color:#1A73E8;">💵 2. Low Inventory Cash<br/>(Lean Warehouses)</td>
-                <td><strong>Chief Financial Officer (CFO)</strong><br/>(Wants low <code>DIO</code> / <code>CCC</code>)</td>
-                <td>If you slash warehouse stock too aggressively, a single supplier delay or warm weekend causes immediate store stockouts!</td>
-                <td><strong>MEIO Safety Stock Agent</strong> mathematically places smaller, smarter buffers across hubs.</td>
+                <td><strong>CFO (Chief Financial Officer)</strong><br/>Wants low <strong>DIO (Days Inventory Outstanding — days cash is trapped in unsold boxes)</strong> and low <strong>CCC (Cash Conversion Cycle — total days a dollar stays stuck before turning back into cash)</strong>.</td>
+                <td>If you slash warehouse stock too aggressively to save cash, a single supplier delay or warm weekend causes immediate empty shelves (<strong>Stockouts</strong>)!</td>
+                <td style="background:#F8FAFD;"><strong>👟 Nike (2022–2023):</strong> When pandemic shipping delays cleared all at once, Nike’s <strong>DIO (Days Inventory Outstanding)</strong> ballooned to $9.7 Billion in unsold shoes, forcing margin-crushing clearance sales.</td>
+                <td><strong>MEIO (Multi-Echelon Inventory Optimization) Agent</strong> mathematically places smaller, smarter buffers across hubs.</td>
               </tr>
               <tr>
-                <td style="font-weight:800; color:#E8710A;">🚚 3. Low Operating Cost<br/>(Cheap Production &amp; Freight)</td>
-                <td><strong>Factory &amp; Logistics Heads</strong><br/>(Want full lines &amp; full trucks)</td>
-                <td>Waiting to fill a 53-foot truck or running huge factory batches saves unit cost, but makes reaction time slow when demand shifts.</td>
-                <td><strong>Finite Scheduler &amp; 3D Load Studio</strong> cut changeover waste and pack multi-stop trucks.</td>
+                <td style="font-weight:800; color:#E8710A;">🚚 3. Low Operating Cost<br/>(Cheap Factory &amp; Freight)</td>
+                <td><strong>Factory &amp; Logistics Heads</strong><br/>Want long factory runs and 100% full <strong>FTL (Full Truckload — 53-foot highway trailers)</strong>.</td>
+                <td>Waiting to fill a 53-foot truck or running huge factory batches lowers cost per box, but makes reaction time slow when customer tastes shift.</td>
+                <td style="background:#F8FAFD;"><strong>🥤 Coca-Cola:</strong> Running only classic red Coke cans all week maximizes factory speed, but stores also need Diet Coke, Sprite, and Fanta every 48 hours without shipping half-empty trucks.</td>
+                <td><strong>Finite Scheduler &amp; 3D Load Studio</strong> cut line changeover waste and pack multi-stop full trucks.</td>
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <!-- PART 1A-2: QUICK-DECODE TABLE OF THE 18 MOST COMMON ABBREVIATIONS -->
+        <div style="background:#FEF7E0; border:2px solid #F9AB00; border-radius:16px; padding:22px 26px; margin-bottom:10px;">
+          <span class="g-badge" style="background:#FFFFFF; color:#B06000; border:1px solid #F9AB00;">
+            🔤 PART 1A-2 · QUICK-DECODE TABLE OF THE 18 MOST COMMON SUPPLY CHAIN ABBREVIATIONS
+          </span>
+          <h3 style="font-family:var(--font-display); font-size:24px; margin:0 0 8px; color:#202124;">
+            Bookmark This Table: Every Major Acronym (`OTIF`, `DIO`, `DSO`, `DPO`, `CCC`, `BOM`, `S&OP`, `MEIO`, `FEFO`, `ATP`, `ERP/MES/WMS/TMS`) Explained Simply
+          </h3>
+          <p style="margin:0 0 16px; color:#5F6368;">
+            Whenever someone in a meeting drops a 3-letter or 4-letter supply chain acronym, here is what it stands for, what it means in everyday words, and how a real-world company uses it:
+          </p>
+          <div class="g-table-wrap">
+            <table class="g-table">
+              <thead>
+                <tr>
+                  <th style="width:110px;">Acronym</th>
+                  <th style="width:230px;">Full Spelled-Out Name</th>
+                  <th>Plain-English Meaning (Zero Jargon)</th>
+                  <th style="width:310px;">🌍 Real-World Company Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                {abbr_rows_html}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
       <!-- SECTION 1B: THE 7 STAGES OF THE SUPPLY CHAIN PROCESS (DETAILED WALKTHROUGH) -->
       <section class="g-card">
         <span class="g-badge" style="background:var(--g-blue-bg); color:var(--g-blue);">
-          PART 1B · THE 7 STAGES OF THE SUPPLY CHAIN PROCESS (CLICK EACH STAGE IN ORDER)
+          PART 1B · THE 7 STAGES OF THE SUPPLY CHAIN PROCESS (WITH REAL-WORLD COMPANY EXAMPLES IN EVERY STAGE)
         </span>
         <h2 style="font-family:var(--font-display); font-size:28px; margin:0 0 10px;">
           Step-by-Step: How the Supply Chain Process Works From Beginning to End
         </h2>
         <p style="color:var(--text-sub); margin:0 0 20px;">
-          Notice that before a single physical box moves, the process starts with <strong>Stage 0 · Planning &amp; Forecasting</strong> (the brain), followed by the <strong>6 physical stages</strong>. Click each of the 7 stage buttons below in order (or use <code>Next Stage &rarr;</code>) for a deep, plain-English walkthrough:
+          Before a single physical box moves, the process starts with <strong>Stage 0 · Planning &amp; Forecasting</strong> (the brain), followed by the <strong>6 physical stages</strong>. Click each of the 7 stage buttons below in order (or use <code>Next Stage &rarr;</code>) to see what happens, <strong>how 3 real-world companies execute that stage</strong>, and every abbreviation spelled out in full:
         </p>
 
         <!-- Bright Google SVG 7-Stage Relay Diagram -->
@@ -1512,7 +1741,7 @@ def build_google_linear_academy() -> None:
           <g transform="translate(458,18)">
             <rect width="132" height="88" rx="12" fill="#E6F4EA" stroke="#1E8E3E" stroke-width="2"/>
             <text x="66" y="28" text-anchor="middle" fill="#1E8E3E" font-size="11" font-weight="800">STAGE 3 · RDC</text>
-            <text x="66" y="52" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="700">🏢 Regional DC</text>
+            <text x="66" y="52" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="700">🏢 Regional Hub</text>
             <text x="66" y="72" text-anchor="middle" fill="#5F6368" font-size="10.5">Central Buffer</text>
           </g>
           <text x="595" y="65" fill="#5F6368" font-size="16" font-weight="700">&rarr;</text>
@@ -1533,8 +1762,8 @@ def build_google_linear_academy() -> None:
           <g transform="translate(908,18)">
             <rect width="142" height="88" rx="12" fill="#FCE8E6" stroke="#D93025" stroke-width="2"/>
             <text x="71" y="28" text-anchor="middle" fill="#D93025" font-size="11" font-weight="800">STAGE 6 · DELIVER</text>
-            <text x="71" y="52" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="700">🛒 Store &amp; RMA</text>
-            <text x="71" y="72" text-anchor="middle" fill="#5F6368" font-size="10.5">OTIF, POS &amp; ESG</text>
+            <text x="71" y="52" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="700">🛒 Store &amp; Returns</text>
+            <text x="71" y="72" text-anchor="middle" fill="#5F6368" font-size="10.5">On-Time In-Full</text>
           </g>
         </svg>
 
@@ -1543,10 +1772,10 @@ def build_google_linear_academy() -> None:
           <button type="button" class="g-btn active" onclick="showStageTable(0, this)">0 · 📈 Plan &amp; Forecast (The Brain)</button>
           <button type="button" class="g-btn" onclick="showStageTable(1, this)">1 · ⛏️ Source (Suppliers)</button>
           <button type="button" class="g-btn" onclick="showStageTable(2, this)">2 · 🏭 Make (Factory)</button>
-          <button type="button" class="g-btn" onclick="showStageTable(3, this)">3 · 🏢 Central Store (RDC)</button>
-          <button type="button" class="g-btn" onclick="showStageTable(4, this)">4 · 📦 Local Store (FDC)</button>
+          <button type="button" class="g-btn" onclick="showStageTable(3, this)">3 · 🏢 Central Hub (RDC)</button>
+          <button type="button" class="g-btn" onclick="showStageTable(4, this)">4 · 📦 Local Warehouse (FDC)</button>
           <button type="button" class="g-btn" onclick="showStageTable(5, this)">5 · 🚚 Move (Fleet &amp; Transit)</button>
-          <button type="button" class="g-btn" onclick="showStageTable(6, this)">6 · 🛒 Customer, OTIF &amp; Returns</button>
+          <button type="button" class="g-btn" onclick="showStageTable(6, this)">6 · 🛒 Customer Delivery &amp; Returns</button>
         </div>
 
         <div id="stageTableMount"></div>
@@ -1555,7 +1784,7 @@ def build_google_linear_academy() -> None:
       <!-- THE 3 FLOWS TABLE -->
       <section class="g-card">
         <span class="g-badge" style="background:var(--g-green-bg); color:var(--g-green);">
-          PART 1C · THE 3 FLOWS TABLE
+          PART 1C · THE 3 FLOWS TABLE (WITH REAL-WORLD COMPANY EXAMPLES)
         </span>
         <h2 style="font-family:var(--font-display); font-size:26px; margin:0 0 14px;">
           The 3 Things Moving Through Every Supply Chain at the Same Time
@@ -1564,9 +1793,10 @@ def build_google_linear_academy() -> None:
           <table class="g-table">
             <thead>
               <tr>
-                <th style="width:230px;">Flow Name</th>
-                <th style="width:180px;">Direction</th>
+                <th style="width:210px;">Flow Name</th>
+                <th style="width:170px;">Direction</th>
                 <th>What Moves &amp; Why It Matters in Plain English</th>
+                <th style="width:310px;">🌍 Real-World Company Example</th>
               </tr>
             </thead>
             <tbody>
@@ -1574,16 +1804,19 @@ def build_google_linear_academy() -> None:
                 <td style="font-weight:700; color:#1E8E3E;">📦 1. Physical Goods Flow</td>
                 <td><strong>Downstream (&rarr;)</strong><br/>Supplier &rarr; Customer</td>
                 <td>Raw materials, parts, pallets, and finished boxes moving toward the customer. If this stops, store shelves go empty (<strong>Stockout</strong>).</td>
+                <td style="background:#F8FAFD;"><strong>☕ Starbucks:</strong> Arabica coffee beans travel from farms in Colombia &rarr; roasting plants in Nevada &rarr; regional hubs &rarr; 16,000 cafés every week.</td>
               </tr>
               <tr>
                 <td style="font-weight:700; color:#1A73E8;">📡 2. Information Signal Flow</td>
                 <td><strong>Upstream (&larr;)</strong><br/>Customer &rarr; Supplier</td>
                 <td>Store checkout barcode scans (<strong>POS — Point of Sale</strong>), customer orders, and forecasts moving backward to tell factories what to make next.</td>
+                <td style="background:#F8FAFD;"><strong>🛒 Walmart Retail Link:</strong> Every time a shopper scans a bottle of Tide detergent at checkout, Walmart’s computer sends that live <strong>POS (Point of Sale)</strong> signal straight back to Procter &amp; Gamble’s factory.</td>
               </tr>
               <tr>
                 <td style="font-weight:700; color:#E8710A;">💰 3. Money &amp; Cash Flow</td>
                 <td><strong>Both Ways (&harr;)</strong><br/>Customer &harr; Company &harr; Vendor</td>
-                <td>Customers pay invoices (<strong>DSO — Days Sales Outstanding</strong>), while the company pays suppliers after checking the invoice (<strong>3-Way Match</strong>).</td>
+                <td>Customers pay invoices (<strong>DSO — Days Sales Outstanding</strong>), while the company pays suppliers (<strong>DPO — Days Payable Outstanding</strong>) after checking the bill (<strong>3-Way Match</strong>). Together with inventory days (<strong>DIO</strong>), this sets your <strong>CCC (Cash Conversion Cycle)</strong>.</td>
+                <td style="background:#F8FAFD;"><strong>📱 Apple &amp; 📦 Amazon:</strong> Shoppers pay Apple &amp; Amazon immediately by credit card (<strong>DSO = ~5 days</strong>), inventory sells out in 9–25 days (<strong>DIO</strong>), and Apple/Amazon pay their suppliers 60–90 days later (<strong>DPO</strong>) — giving them a <strong>negative Cash Conversion Cycle (CCC)</strong>!</td>
               </tr>
             </tbody>
           </table>
@@ -1593,7 +1826,7 @@ def build_google_linear_academy() -> None:
       <!-- THE 4 ENTERPRISE SOFTWARE SYSTEMS TABLE -->
       <section class="g-card">
         <span class="g-badge" style="background:#F3E8FD; color:#9334E6;">
-          PART 1D · THE 4 SOFTWARE SYSTEMS TABLE
+          PART 1D · THE 4 SOFTWARE SYSTEMS TABLE (WITH REAL-WORLD COMPANY EXAMPLES)
         </span>
         <h2 style="font-family:var(--font-display); font-size:26px; margin:0 0 14px;">
           ERP vs. MES vs. WMS vs. TMS — What Software Runs Which Building?
@@ -1602,10 +1835,11 @@ def build_google_linear_academy() -> None:
           <table class="g-table">
             <thead>
               <tr>
-                <th style="width:140px;">Acronym</th>
-                <th style="width:240px;">Full Name Spelled Out</th>
-                <th style="width:200px;">Where It Lives</th>
+                <th style="width:110px;">Acronym</th>
+                <th style="width:210px;">Full Name Spelled Out</th>
+                <th style="width:180px;">Where It Lives</th>
                 <th>What It Does in Plain Words (With Brand Examples)</th>
+                <th style="width:290px;">🌍 Real-World Company Example</th>
               </tr>
             </thead>
             <tbody>
@@ -1613,25 +1847,29 @@ def build_google_linear_academy() -> None:
                 <td><strong style="font-size:18px; color:#1A73E8;">ERP</strong></td>
                 <td><strong>Enterprise Resource Planning</strong></td>
                 <td>🏢 Corporate Head Office &amp; Finance</td>
-                <td>The company’s financial brain. Holds customer orders, product part numbers (<strong>SKUs</strong>), supplier <strong>Purchase Orders (POs)</strong>, and accounting invoices. <em>(Examples: SAP S/4HANA, Oracle Cloud ERP)</em></td>
+                <td>The company’s financial brain. Holds customer orders, product part numbers (<strong>SKUs — Stock Keeping Units</strong>), supplier <strong>POs (Purchase Orders)</strong>, and accounting invoices. <em>(SAP S/4HANA, Oracle Cloud ERP)</em></td>
+                <td style="background:#F8FAFD;"><strong>🍫 Nestlé &amp; 🧴 Unilever</strong> run global <strong>SAP S/4HANA ERP</strong> to manage 100,000+ product SKUs, supplier Purchase Orders, and financial books across 190 countries.</td>
               </tr>
               <tr>
                 <td><strong style="font-size:18px; color:#9334E6;">MES</strong></td>
                 <td><strong>Manufacturing Execution System</strong></td>
                 <td>🏭 Inside the Factory Floor</td>
-                <td>Runs the factory machines and assembly lines. Tracks machine health (<strong>OEE</strong>), production schedules, and quality batch logs (<strong>eBHR</strong>). <em>(Examples: Siemens Opcenter, Rockwell)</em></td>
+                <td>Runs the factory machines and assembly lines. Tracks machine health (<strong>OEE — Overall Equipment Effectiveness</strong>), production schedules, and digital batch logs (<strong>eBHR — Electronic Batch History Record</strong>). <em>(Siemens Opcenter, Rockwell)</em></td>
+                <td style="background:#F8FAFD;"><strong>🚗 Tesla &amp; BMW</strong> use factory-floor <strong>MES</strong> systems to guide every welding robot, torque wrench, and battery quality test on each car’s VIN number.</td>
               </tr>
               <tr>
                 <td><strong style="font-size:18px; color:#1E8E3E;">WMS</strong></td>
                 <td><strong>Warehouse Management System</strong></td>
                 <td>📦 Inside the 4 Walls of the Warehouse</td>
-                <td>Tracks exactly which shelf bin every pallet sits in (<strong>Slotting</strong>) and guides workers with barcode scanners to pick and pack orders (<strong>Wave Picking</strong>). <em>(Examples: Manhattan Active, SAP EWM)</em></td>
+                <td>Tracks exactly which shelf bin every pallet sits in (<strong>Slotting</strong>) and guides workers or robots with barcode scanners to pick and pack orders (<strong>Wave Picking</strong>). <em>(Manhattan Active WMS, SAP EWM)</em></td>
+                <td style="background:#F8FAFD;"><strong>👟 Nike &amp; 📦 Amazon</strong> use <strong>WMS</strong> software to coordinate 750,000+ mobile warehouse robots and human pickers so an online order is packed in under 30 minutes.</td>
               </tr>
               <tr>
                 <td><strong style="font-size:18px; color:#007B83;">TMS</strong></td>
                 <td><strong>Transportation Management System</strong></td>
                 <td>🚚 Outside on the Road, Ocean &amp; Air</td>
-                <td>Books trucking and shipping carriers, plans delivery routes, tracks live truck GPS, and audits freight bills. <em>(Examples: Oracle OTM, Blue Yonder TMS)</em></td>
+                <td>Books trucking and ocean carriers, plans multi-stop delivery routes, tracks live truck GPS, and audits freight bills. <em>(Oracle OTM, Blue Yonder TMS)</em></td>
+                <td style="background:#F8FAFD;"><strong>🥤 PepsiCo &amp; 🛒 Walmart</strong> use <strong>TMS</strong> platforms to route 10,000+ highway trucks daily, consolidate loads, and track live GPS arrival times.</td>
               </tr>
             </tbody>
           </table>
@@ -1647,7 +1885,7 @@ def build_google_linear_academy() -> None:
         <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:14px;">
           <div>
             <span class="g-badge" style="background:var(--g-yellow-bg); color:#B06000;">
-              CHAPTER 2A · INTERACTIVE BULLWHIP SIMULATOR
+              CHAPTER 2A · INTERACTIVE BULLWHIP SIMULATOR + REAL-WORLD CASE STUDIES
             </span>
             <h2 style="font-family:var(--font-display); font-size:28px; margin:0;">
               Why Small Store Changes Cause Giant Factory Panic (“The Bullwhip Effect”)
@@ -1658,27 +1896,63 @@ def build_google_linear_academy() -> None:
           </button>
         </div>
         <p style="color:var(--text-sub); margin:0 0 18px;">
-          Drag the slider below to change how much extra customers buy at the store checkout, and see what happens to orders at each stage upstream in the table below:
+          Drag the slider below to change how much extra customers buy at the store checkout (<strong>POS — Point of Sale</strong>), and see what happens to orders at each stage upstream in the table below:
         </p>
 
         <div style="background:#F8F9FA; border:1px solid var(--border-light); border-radius:16px; padding:20px 24px; margin-bottom:20px;">
           <label style="font-weight:700; font-size:18px; display:flex; justify-content:space-between;">
-            <span>🛒 Customer Checkout Surge at the Store (POS):</span>
+            <span>🛒 Customer Checkout Surge at the Store (POS — Point of Sale):</span>
             <span id="bwValLabel" style="color:var(--g-blue); font-weight:800;">+10%</span>
           </label>
           <input type="range" id="bwRange" min="5" max="25" value="10" style="width:100%; margin-top:12px; accent-color:var(--g-blue);" oninput="renderBwTable()" />
         </div>
 
-        <div id="bwTableMount"></div>
+        <div id="bwTableMount" style="margin-bottom:26px;"></div>
+
+        <h3 style="font-family:var(--font-display); font-size:22px; margin:0 0 12px;">
+          🌍 3 Famous Real-World Company Examples of the Bullwhip Effect
+        </h3>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead>
+              <tr>
+                <th style="width:230px;">Real-World Company</th>
+                <th style="width:240px;">What Customers Actually Did</th>
+                <th>How the Bullwhip Panic Happened Upstream</th>
+                <th style="width:260px;">How They Fixed It</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:800; color:#1A73E8;">👶 1. Procter &amp; Gamble (Pampers Diapers)</td>
+                <td>Babies used diapers at a steady, flat rate every single week (±2% variation at store checkouts).</td>
+                <td>Store managers padded orders during promos &rarr; distributors doubled orders &rarr; P&amp;G’s diaper factories saw ±40% swings &rarr; 3M’s adhesive tape suppliers saw ±80% wild booms and crashes! (This is where P&amp;G executives coined the term <em>“Bullwhip Effect”</em>.)</td>
+                <td style="background:#E6F4EA; color:#137333;">Connected live <strong>POS (Point of Sale)</strong> store scanner data directly to P&amp;G planners via <strong>CPFR (Collaborative Planning, Forecasting &amp; Replenishment)</strong>.</td>
+              </tr>
+              <tr>
+                <td style="font-weight:800; color:#D93025;">🚗 2. Ford, GM &amp; TSMC (2020–2022 Chip Crisis)</td>
+                <td>Car sales dipped briefly in Spring 2020, then rebounded by +15% as people bought cars.</td>
+                <td>Automakers canceled all microchip orders in April 2020, then panic-ordered 3× their normal chip volume in late 2020. Taiwan Semiconductor (TSMC) lines jammed for 18 months, forcing Ford and GM to park 100,000 unfinished trucks in lots!</td>
+                <td style="background:#E6F4EA; color:#137333;">Automakers now share 52-week rolling production schedules directly with Tier-2 wafer foundries (<strong>Tier-N Visibility</strong>).</td>
+              </tr>
+              <tr>
+                <td style="font-weight:800; color:#B06000;">🍝 3. Barilla Pasta (Italy)</td>
+                <td>Italians ate steady amounts of pasta every week all year round.</td>
+                <td>Barilla’s sales reps offered end-of-quarter volume discounts, causing grocery distributors to buy 10 weeks of pasta at once and zero for the next two months — overwhelming Barilla’s pasta drying ovens and trucks.</td>
+                <td style="background:#E6F4EA; color:#137333;">Barilla took over automatic warehouse replenishment based on actual daily grocery shelf sales.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <!-- 4 CORE VISUAL DIAGRAMS (CLICK 1 BUTTON AT A TIME) -->
       <section class="g-card">
         <span class="g-badge" style="background:var(--g-blue-bg); color:var(--g-blue);">
-          CHAPTER 2B · 4 ESSENTIAL VISUAL DIAGRAMS (CLICK ONE BUTTON AT A TIME)
+          CHAPTER 2B · 4 ESSENTIAL VISUAL DIAGRAMS (WITH REAL-WORLD COMPANY EXAMPLES)
         </span>
         <h2 style="font-family:var(--font-display); font-size:28px; margin:0 0 16px;">
-          Click Any Concept Below to View Its Diagram &amp; Simple Comparison Table
+          Click Any Concept Below to View Its Diagram, Spelled-Out Abbreviations &amp; Real-World Company Examples
         </h2>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px;">
           <button type="button" class="g-btn active" onclick="showConceptDiagram(0, this)">1 · Make-to-Stock (MTS) vs. Make-to-Order (MTO)</button>
@@ -1697,20 +1971,20 @@ def build_google_linear_academy() -> None:
     <div id="chap3" class="g-pane">
       <section class="g-card">
         <span class="g-badge" style="background:var(--g-green-bg); color:var(--g-green);">
-          CHAPTER 3 · 4 CORE SUPPLY CHAIN WORKFLOWS (BUTTON-BY-BUTTON &amp; TABULAR)
+          CHAPTER 3 · 4 CORE SUPPLY CHAIN WORKFLOWS (WITH REAL-WORLD COMPANY SPOTLIGHTS)
         </span>
         <h2 style="font-family:var(--font-display); font-size:28px; margin:0 0 12px;">
-          How Supply Chain Teams Actually Work Day-to-Day
+          How Supply Chain Teams Actually Work Day-to-Day (With Real-World Examples at Every Step)
         </h2>
         <p style="color:var(--text-sub); margin:0 0 20px;">
-          Click any of the 4 core processes below to see every step in a clean, spacious table comparing the <strong>Old Manual Way</strong> vs. the <strong>New AI Agent Way</strong>:
+          Click any of the 4 core processes below to see every step in a clean, spacious table comparing the <strong>Old Manual Way</strong> vs. the <strong>New AI Agent Way</strong>, plus how real companies execute each step:
         </p>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px;">
-          <button type="button" class="g-btn active" onclick="selectWorkflow('sop', this)">1 · 📅 Monthly Planning (S&amp;OP)</button>
-          <button type="button" class="g-btn" onclick="selectWorkflow('match3', this)">2 · 🧾 Paying Suppliers (3-Way Match)</button>
-          <button type="button" class="g-btn" onclick="selectWorkflow('wms_flow', this)">3 · 📦 Warehouse Flow (Inbound to Ship)</button>
-          <button type="button" class="g-btn" onclick="selectWorkflow('otif_flow', this)">4 · 🚚 Customer Order to Delivery (OTIF)</button>
+          <button type="button" class="g-btn active" onclick="selectWorkflow('sop', this)">1 · 📅 Monthly Planning (S&amp;OP — Sales &amp; Operations Planning)</button>
+          <button type="button" class="g-btn" onclick="selectWorkflow('match3', this)">2 · 🧾 Paying Suppliers (3-Way Match: PO + GRN + Invoice)</button>
+          <button type="button" class="g-btn" onclick="selectWorkflow('wms_flow', this)">3 · 📦 Warehouse Flow (Inbound Unload to Outbound Ship)</button>
+          <button type="button" class="g-btn" onclick="selectWorkflow('otif_flow', this)">4 · 🚚 Customer Order to Delivery (OTIF — On-Time In-Full)</button>
         </div>
 
         <div id="workflowMount"></div>
@@ -1776,6 +2050,38 @@ def build_google_linear_academy() -> None:
         <div id="quizOneMount"></div>
       </section>
     </div>
+
+    <!-- ===================================================================
+         CHAPTER 6: REAL-WORLD COMPANIES ACROSS ALL 8 INDUSTRY SECTORS
+         =================================================================== -->
+    <div id="chap6" class="g-pane">
+      <section class="g-card" style="border-top: 6px solid var(--g-green);">
+        <span class="g-badge" style="background:var(--g-green-bg); color:var(--g-green);">
+          CHAPTER 6 · REAL-WORLD SUPPLY CHAINS ACROSS ALL 8 MAJOR INDUSTRY SECTORS
+        </span>
+        <h2 style="font-family:var(--font-display); font-size:30px; margin:0 0 10px;">
+          How Famous Companies Across Every Sector Actually Run Their Supply Chains End-to-End
+        </h2>
+        <p style="color:var(--text-sub); margin:0 0 20px;">
+          A smartphone company (Apple), a fast-fashion retailer (Zara), a vaccine maker (Pfizer), and a dairy cooperative (Amul) all use the same 7 supply chain stages — but they configure them in completely different ways! Click any of the <strong>8 industry sectors</strong> below (or click <strong>📊 Compare All 8 Sectors in One Table</strong>) to see their end-to-end blueprint, metrics, secret weapon, and AI agents:
+        </p>
+
+        <!-- 8 Sector Selector Buttons + Master Comparison Button -->
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px;" id="sectorBtnRow">
+          <button type="button" class="g-btn active" onclick="showSectorCase(0, this)">1 · 🛒 Consumer Goods (Unilever, Nestlé, ITC)</button>
+          <button type="button" class="g-btn" onclick="showSectorCase(1, this)">2 · 📱 Smartphones &amp; Tech (Apple, Samsung)</button>
+          <button type="button" class="g-btn" onclick="showSectorCase(2, this)">3 · 🚗 Automotive &amp; EVs (Toyota, Tesla)</button>
+          <button type="button" class="g-btn" onclick="showSectorCase(3, this)">4 · 💊 Pharma &amp; Vaccines (Pfizer, Novo Nordisk)</button>
+          <button type="button" class="g-btn" onclick="showSectorCase(4, this)">5 · 📦 Retail &amp; E-Commerce (Walmart, Amazon)</button>
+          <button type="button" class="g-btn" onclick="showSectorCase(5, this)">6 · 👗 Fast Fashion &amp; Shoes (Zara, Nike)</button>
+          <button type="button" class="g-btn" onclick="showSectorCase(6, this)">7 · 🥛 Fresh Dairy &amp; Food (Amul, McDonald's)</button>
+          <button type="button" class="g-btn" onclick="showSectorCase(7, this)">8 · ⚙️ Industrial &amp; Heavy (Caterpillar, BASF)</button>
+          <button type="button" class="g-btn" style="border-color:#1E8E3E; color:#1E8E3E; font-weight:700;" onclick="showAllSectorsComparison(this)">📊 Compare All 8 Sectors in One Table</button>
+        </div>
+
+        <div id="sectorCaseMount"></div>
+      </section>
+    </div>
   </main>
 
   <script>
@@ -1783,93 +2089,8 @@ def build_google_linear_academy() -> None:
     const WORKFLOWS = {wf_json};
     const DECODER = {dec_json};
     const QUIZ = {quiz_json};
-
-    const STAGES = [
-      {{
-        title: "Stage 0 · 📈 Demand Planning, Sensing & S&OP (The Brain of the Supply Chain)",
-        whyExists: "Because buying raw materials and running factories takes weeks or months (Lead Time), a company cannot wait until you walk into a store to start making a product. Planning is the 'brain' that predicts what customers will buy, where, and when — and aligns Sales, Factories, Warehouses, and Finance around a single plan.",
-        analogy: "🍽️ Everyday Analogy: Like a restaurant chef checking Friday reservation bookings, local weather, and last month's popular dishes before deciding how much fish and produce to order for the weekend.",
-        story: "1. Forecasters pull historical sales, daily store checkout scans (POS), weather forecasts, and upcoming promotions.<br/>2. They generate a baseline demand forecast for each product (SKU) and measure forecast error (WAPE) and human bias (FVA).<br/>3. In the monthly S&OP (Sales & Operations Planning) cycle, Sales, Operations, and Finance resolve capacity gaps and lock a 'One-Number Plan'.",
-        personas: "Demand Planner / Forecaster, S&OP / IBP Director, Trade Promotion Manager, New Product (NPI) Planner",
-        docs: "Baseline Statistical Forecast, Consensus Demand Plan, Promotion Lift Calendar, Retailer CPFR Forecast",
-        software: "IBP & Demand Planning Systems (SAP IBP, Kinaxis RapidResponse, o9 Solutions, Blue Yonder)",
-        breaks: "Forecasts rely on 30-day-old ERP shipments instead of daily store checkout scans; sales reps manually inflate forecasts by +20% 'just in case' (Negative FVA), triggering the Bullwhip Effect.",
-        agents: "Demand Sensing Agent (`demand_sensing_agent`), S&OP Scenario Weaver (`sop_scenario_weaver`), Promo Lift Simulator (`promo_lift_simulator`), CPFR Sync (`cpfr_sync_agent`), NPI Profiler (`npi_demand_profiler`)",
-        terms: "SKU (Stock Keeping Unit), WAPE (Weighted Absolute Percentage Error), Bias, FVA (Forecast Value Added), S&OP (Sales & Operations Planning), IBP (Integrated Business Planning), CPFR, POS (Point of Sale)"
-      }},
-      {{
-        title: "Stage 1 · ⛏️ Strategic Sourcing & Tier-N Suppliers (Buying Raw Materials & Packaging)",
-        whyExists: "Once the Demand Plan says we need 500,000 jars of coffee next month, the factory cannot build anything without coffee beans, glass jars, metal lids, and paper labels. Sourcing finds qualified suppliers, negotiates fair prices, tracks multi-tier supply risks, and issues official Purchase Orders (POs).",
-        analogy: "🥣 Everyday Analogy: Like a bakery checking its recipe card (Bill of Materials), comparing flour mill prices against wheat market prices, ordering 50 sacks of flour, and checking the bill before paying.",
-        story: "1. ERP explodes the finished product forecast into raw component quantities using the Bill of Materials (BOM).<br/>2. Category Buyers send out Requests for Quotations (RFQs) and compare vendor bids against a bottom-up Should-Cost model tied to live commodity indices (steel, resin, coffee, energy).<br/>3. Buyers check Tier-2 and Tier-3 sub-suppliers for disruptions or tariff/ESG risks, then issue a binding Purchase Order (PO).<br/>4. When the supplier sends an invoice, Accounts Payable verifies the 3-Way Match (PO vs. Warehouse Goods Receipt vs. Invoice) before paying.",
-        personas: "Category Procurement Manager, Supplier Risk Manager, Accounts Payable / 3-Way Match Specialist, Packaging Sustainability Lead",
-        docs: "BOM (Bill of Materials), RFQ (Request for Quotation), Should-Cost Model, PO (Purchase Order), 3-Way Match Packet, NCR (Non-Conformance Report)",
-        software: "ERP & Source-to-Pay Portals (SAP Ariba, Coupa, SAP S/4HANA MM, Oracle Procurement)",
-        breaks: "A Tier-2 sub-supplier has a factory fire that nobody knew about; suppliers pad quotes by +15% when commodity prices actually dropped; or 20% of invoices fail 3-Way Match due to price/quantity errors.",
-        agents: "RFQ Should-Cost Agent (`rfq_should_cost_agent`), Tier-N Risk Sentinel (`tier_n_risk_sentinel`), Three-Way Match Dispute Agent (`three_way_match_dispute`), Supplier Quality Sentinel (`supplier_quality_sentinel`), Commodity Index Advisor (`commodity_index_advisor`)",
-        terms: "BOM (Bill of Materials), RFQ (Request for Quotation), Should-Cost, Tier-1 / Tier-2 / Tier-3 Supplier, PO (Purchase Order), GRN (Goods Receipt Note), 3-Way Match, MOQ (Minimum Order Quantity), Lead Time, NCR & COPQ"
-      }},
-      {{
-        title: "Stage 2 · 🏭 Manufacturing & Plant Operations (Making & Testing the Product)",
-        whyExists: "This is where raw ingredients and components are physically transformed, mixed, assembled, filled, and quality-tested on high-speed production lines to become finished goods ready for sale.",
-        analogy: "👩‍🍳 Everyday Analogy: Like a commercial kitchen scheduling which oven bakes bread vs. pastries, cleaning mixers between allergen batches, monitoring oven temperatures, and tasting every batch before boxing.",
-        story: "1. Production Planners sequence jobs across factory lines (Finite Capacity Scheduling) to minimize wash-down and changeover downtime between flavors or sizes.<br/>2. Plant Engineers monitor machine health — Availability × Performance × Quality (OEE — Overall Equipment Effectiveness) — using vibration and temperature sensors.<br/>3. Cameras and sensors inspect products inline for defects, and Quality Assurance (QA) audits the Electronic Batch History Record (eBHR) and Certificate of Analysis (COA) to release the batch.",
-        personas: "Master Production Scheduler, Plant Manager / OEE Lead, Quality Assurance (QA) Auditor, Line Labor Supervisor, Co-Packer Manager",
-        docs: "Master Production Schedule (MPS), Work Order, eBHR (Electronic Batch History Record), COA (Certificate of Analysis), CIP (Clean-in-Place) Log",
-        software: "MES — Manufacturing Execution System & SCADA/PLC Sensors (Siemens Opcenter, Rockwell FactoryTalk, SAP DMC)",
-        breaks: "A critical motor bearing fails mid-shift causing $50,000/hr unplanned downtime; poor sequencing wastes 18 hours a week on line changeovers; or finished pallets sit quarantined for 6 days waiting for manual paper batch record review.",
-        agents: "Predictive OEE Maintenance Sentinel (`predictive_oee_sentinel`), Finite Production Scheduler (`line_schedule_optimizer`), Inline Vision & Yield Guardian (`inline_yield_guardian`), Batch Record Auditor (`batch_record_auditor`), Labor Line Balancing (`labor_line_balancing_agent`)",
-        terms: "OEE (Overall Equipment Effectiveness), MTS (Make-to-Stock) vs. MTO (Make-to-Order), Finite Scheduling, Changeover / Setup Time, eBHR (Electronic Batch Record), COA (Certificate of Analysis), CIP (Clean-in-Place)"
-      }},
-      {{
-        title: "Stage 3 · 🏢 Regional Distribution Center — RDC (Central Network Inventory & Buffers)",
-        whyExists: "Factories produce in large batches, but thousands of local stores need small replenishments every day. Regional Distribution Centers (RDCs) act as the central shock absorber — holding strategic safety stock buffers and distributing inventory across the country.",
-        analogy: "🏦 Everyday Analogy: Like a central Federal Reserve vault that holds bulk cash reserves and replenishes local neighborhood bank branches whenever a branch runs low.",
-        story: "1. Full truckloads of finished pallets arrive from factories at 3 to 5 huge Regional Distribution Centers (RDCs).<br/>2. Inventory Optimizers use Multi-Echelon Inventory Optimization (MEIO) math to decide how much Safety Stock and Reorder Point (ROP) buffer to hold centrally at the RDC vs. pushing forward to local warehouses.<br/>3. Planners monitor Slow-Moving & Obsolete stock (SLOB) and short-dated perishable batches so inventory doesn't expire or become dead cash.",
-        personas: "Multi-Echelon Inventory Planner (MEIO), Network Allocation Lead, Inventory Health / SLOB Analyst, Cold-Chain Inventory Steward",
-        docs: "Network Safety Stock Policy, Stock Transfer Order (STO), Inventory Aging / SLOB Report",
-        software: "Enterprise Inventory & Supply Planning (SAP IBP Inventory, Kinaxis, Manhattan, ERP MM)",
-        breaks: "Each warehouse manager hoards extra 'just-in-case' buffer in silos — locking up $40M in excess working capital while other regions simultaneously suffer stockouts!",
-        agents: "MEIO Safety Stock Agent (`meio_safety_stock_agent`), SLOB Disposition Agent (`slob_disposition_agent`), Short-Dated Redistributor (`short_dated_redistributor`), Dynamic Markdown Agent (`dynamic_markdown_agent`)",
-        terms: "RDC (Regional Distribution Center), MEIO (Multi-Echelon Inventory Optimization), Safety Stock, ROP (Reorder Point), SLOB (Slow-Moving & Obsolete Stock), DIO (Days Inventory Outstanding)"
-      }},
-      {{
-        title: "Stage 4 · 📦 Local Fulfillment Center — FDC (Inside the 4 Walls of the Warehouse)",
-        whyExists: "When a retail store or online shopper places an order, boxes must be unloaded, put away in rack bins, picked accurately, packed onto store-friendly pallets, and staged at outbound dock doors within hours.",
-        analogy: "🛒 Everyday Analogy: Like organizing a giant supermarket backroom so fast-selling drinks sit right by the door at waist height, oldest milk is grabbed first, and outgoing carts are lined up by delivery route.",
-        story: "1. Inbound trucks are sequenced to unloading doors (Yard & Dock Management) and pallets are scanned into inventory (Dock-to-Stock).<br/>2. The Warehouse Management System (WMS) assigns each product to an optimal rack bin (Slotting) and groups customer orders into picking waves (Wave Picking) following First-Expired, First-Out (FEFO).<br/>3. Or, if demand is urgent, incoming pallets bypass storage racks completely and roll straight across the floor to an outbound truck (Cross-Docking).<br/>4. Meanwhile, the Available-to-Promise (ATP) engine commits exact delivery dates to customer orders in milliseconds.",
-        personas: "Warehouse Operations Manager, Slotting & Wave Supervisor, Order Promising (ATP) Specialist, Yard & Dock Coordinator",
-        docs: "GRN (Goods Receipt Note), Putaway & Pick Wave List, Cross-Dock Flow Manifest, ATP Order Confirmation",
-        software: "WMS — Warehouse Management System (Manhattan Active WMS, Blue Yonder WMS, SAP EWM)",
-        breaks: "Trucks wait 4 hours at congested yard gates; pickers walk 9 miles a day because fast-moving items are slotted in high back aisles; or low-margin orders steal stock needed for VIP retail accounts.",
-        agents: "Warehouse Slotting Optimizer (`warehouse_slotting_agent`), Wave Fulfillment Copilot (`wave_fulfillment_copilot`), ATP Order Promising Agent (`atp_order_promising_agent`), Cross-Dock Orchestrator (`crossdock_transfer_orchestrator`), Yard & Dock Sequencer (`yard_dock_sequencer`), Dock-to-Stock Agent (`dock_to_stock_agent`)",
-        terms: "FDC (Fulfillment Distribution Center), WMS (Warehouse Management System), Dock-to-Stock, Slotting, Wave Picking, Cross-Docking, FEFO / FIFO, ATP (Available-to-Promise)"
-      }},
-      {{
-        title: "Stage 5 · 🚚 Multi-Modal Fleet & Global Transit (Ocean Ships, Airplanes, Rail & Road Trucks)",
-        whyExists: "Inventory sitting in a warehouse has zero value until it physically travels across oceans, railroads, and highways to reach the customer safely, legally, and at the lowest freight cost.",
-        analogy: "✈️ Everyday Analogy: Like planning a cross-country move — choosing between ocean container ships, freight trains, or 53-foot highway trucks, packing boxes tightly to the roof in reverse stop order, and tracking live traffic.",
-        story: "1. Load Planners pack orders into 3D trailer/container blueprints (Cube Utilization), putting Stop #1 last at the rear doors (LIFO — Last-In, First-Out) while respecting highway axle weight limits.<br/>2. Port Coordinators pull ocean containers from marine terminals before free days expire (Drayage) to avoid $300/day Demurrage & Detention fines.<br/>3. Dispatchers route trucks using live traffic, weather, and driver Electronic Logging Device (ELD / Hours of Service) limits, sending an Advance Ship Notice (ASN) and Bill of Lading (BOL) ahead of the truck.",
-        personas: "Fleet & Route Dispatch Manager, Ocean Port & Drayage Lead, Air Cargo & Intermodal Planner, Freight Bill Audit Specialist",
-        docs: "BOL (Bill of Lading), ASN (Advance Ship Notice / EDI 856), 3D LIFO Load Plan, Carrier Freight Invoice",
-        software: "TMS — Transportation Management System & Telematics (Oracle OTM, Blue Yonder TMS, Project44, Samsara ELD)",
-        breaks: "Trailers leave 28% empty shipping expensive Less-Than-Truckload (LTL) pallets; containers rack up port Demurrage fees; or carriers overbill fuel surcharges and accessorial fees by 6%.",
-        agents: "FleetFlow Route & Dispatch (`fleetflow_dispatch`), 3D Load Consolidation Studio (`load_consolidation_agent`), Ocean Port Drayage Orchestrator (`port_drayage_orchestrator`), Multimodal Mode-Shift (`multimodal_mode_shift_agent`), Freight Bill Audit (`freight_bill_audit_agent`), Cold-Chain Auditor (`cold_chain_auditor`)",
-        terms: "TMS (Transportation Management System), FTL (Full Truckload) vs. LTL (Less-Than-Truckload), 3D Cube Utilization, LIFO (Last-In, First-Out), Drayage, Demurrage & Detention, BOL (Bill of Lading), ASN (Advance Ship Notice), ELD & HOS"
-      }},
-      {{
-        title: "Stage 6 · 🛒 Customer Delivery (OTIF), Retail Execution, Reverse Returns (RMA) & ESG",
-        whyExists: "The final mile — and the reverse loop back! Products must arrive On-Time In-Full (OTIF), get stocked properly on store shelves, handle customer returns (RMA) profitably when items come back, and report carbon emissions (Scope 3) and working capital to leadership.",
-        analogy: "🔄 Everyday Analogy: Like delivering an online grocery order inside the exact 1-hour window with a photo receipt — and handling refunds or bottle recycling afterward.",
-        story: "1. The truck arrives at the customer dock within the scheduled window, delivers 100% of ordered cases (OTIF — On-Time In-Full), and captures a signed Electronic Proof of Delivery (ePOD).<br/>2. If a retailer unfairly deducts a 3% OTIF penalty or claims OS&D (Over, Short & Damaged), the team uses GPS + ePOD + dock photos to win back the chargeback.<br/>3. Field sales vans replenish local stores (TM&D) and audit shelf compliance (Planogram).<br/>4. When customers initiate a return (RMA), AI calculates whether to refund without return ('Keep-It') or route to refurbishment, while the Control Tower tracks Scope 3 carbon (CBAM/EUDR) and Cash Conversion Cycle (CCC).",
-        personas: "Customer OTIF & Chargeback Lead, Reverse Logistics / RMA Manager, Trade Marketing (TM&D) Lead, Chief Supply Chain Officer (CSCO), Sustainability & ESG Officer",
-        docs: "ePOD (Electronic Proof of Delivery), OTIF Dispute Dossier, RMA (Return Merchandise Authorization), Scope 3 Carbon & CBAM Certificate",
-        software: "Enterprise Control Tower, Retail Execution & Returns Systems (SAP GTS, Loop Returns, Looker / BigQuery Twin)",
-        breaks: "Retailers deduct millions in unchallenged OTIF penalties; companies spend $15 in return shipping to take back a $10 item; or sudden port strikes paralyze multiple pillars at once.",
-        agents: "CSCO Control Tower Copilot (`csco_control_tower_copilot`), Disruption War-Room (`disruption_war_room_orchestrator`), OTIF Penalty Shield (`otif_penalty_shield`), Keep-It vs. Return Advisor (`keep_it_routing_advisor`), Returns Triage (`returns_triage_agent`), Scope 3 Carbon Ledger (`carbon_scope3_ledger`), Working Capital Cash Bridge (`working_capital_cash_bridge`)",
-        terms: "OTIF (On-Time In-Full), ePOD (Electronic Proof of Delivery), OS&D (Over, Short & Damaged), TM&D & Planogram, RMA (Return Merchandise Authorization), Keep-It vs. Return-It, CCC (Cash Conversion Cycle), Scope 1/2/3, CBAM & EUDR"
-      }}
-    ];
+    const STAGES = {stages_json};
+    const SECTORS = {sectors_json};
 
     let currentStageIdx = 0;
 
@@ -1909,7 +2130,7 @@ def build_google_linear_academy() -> None:
             </thead>
             <tbody>
               <tr>
-                <td style="width:260px; font-weight:700; color:#1A73E8;">🎯 1. What This Stage Is &amp; Why It Exists</td>
+                <td style="width:270px; font-weight:700; color:#1A73E8;">🎯 1. What This Stage Is &amp; Why It Exists</td>
                 <td style="font-size:17px; font-weight:500;">${{s.whyExists}}</td>
               </tr>
               <tr>
@@ -1917,32 +2138,36 @@ def build_google_linear_academy() -> None:
                 <td style="font-weight:600; background:#FEF7E0;">${{s.analogy}}</td>
               </tr>
               <tr>
-                <td style="font-weight:700; color:#1E8E3E;">📦 3. Step-by-Step What Actually Happens Here</td>
+                <td style="font-weight:800; color:#174EA6;">🌍 3. Real-World Company Examples at This Stage</td>
+                <td style="background:#E8F0FE; color:#202124;">${{s.realWorld}}</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#1E8E3E;">📦 4. Step-by-Step What Actually Happens Here</td>
                 <td>${{s.story}}</td>
               </tr>
               <tr>
-                <td style="font-weight:700; color:#202124;">👥 4. Who Works Here (Human Roles)</td>
+                <td style="font-weight:700; color:#202124;">👥 5. Who Works Here (Human Roles)</td>
                 <td>${{s.personas}}</td>
               </tr>
               <tr>
-                <td style="font-weight:700; color:#007B83;">📄 5. Key Documents &amp; Data Passed Forward</td>
+                <td style="font-weight:700; color:#007B83;">📄 6. Key Documents &amp; Data Passed Forward</td>
                 <td><strong>${{s.docs}}</strong></td>
               </tr>
               <tr>
-                <td style="font-weight:700; color:#9334E6;">💻 6. Software Systems Used</td>
+                <td style="font-weight:700; color:#9334E6;">💻 7. Software Systems Used</td>
                 <td><strong>${{s.software}}</strong></td>
               </tr>
               <tr>
-                <td style="font-weight:700; color:#D93025;">⚠️ 7. What Goes Wrong &amp; Why It Costs Millions</td>
+                <td style="font-weight:700; color:#D93025;">⚠️ 8. What Goes Wrong &amp; Why It Costs Millions</td>
                 <td style="background:#FCE8E6; color:#C5221F; font-weight:500;">${{s.breaks}}</td>
               </tr>
               <tr>
-                <td style="font-weight:700; color:#1E8E3E;">🤖 8. How Our AI Agents Solve It</td>
+                <td style="font-weight:700; color:#1E8E3E;">🤖 9. How Our AI Agents Solve It</td>
                 <td style="background:#E6F4EA; color:#137333; font-weight:600;">${{s.agents}}</td>
               </tr>
               <tr>
-                <td style="font-weight:700; color:#5F6368;">🔤 9. Key Abbreviations in This Stage</td>
-                <td><code>${{s.terms}}</code></td>
+                <td style="font-weight:800; color:#202124;">🔤 10. Every Abbreviation in This Stage Explained in Plain Words</td>
+                <td style="background:#F8F9FA;">${{s.terms}}</td>
               </tr>
             </tbody>
           </table>
@@ -1964,9 +2189,9 @@ def build_google_linear_academy() -> None:
       document.getElementById('bwValLabel').textContent = `+${{pos}}%`;
       const mults = bwAi ? [1.0, 1.08, 1.15, 1.22, 1.28] : [1.0, 1.8, 3.2, 5.2, 7.5];
       const names = [
-        ["1. Store Checkout (POS)", "Customers buy slightly more on a warm weekend."],
-        ["2. Store Manager Order", bwAi ? "Shared live via CPFR — no panic padding." : "Manager panics and pads order to avoid running out."],
-        ["3. Local Warehouse (FDC)", bwAi ? "MEIO adjusts buffer smoothly." : "Sees spiky store orders and doubles safety buffer."],
+        ["1. Store Checkout (POS — Point of Sale)", "Customers buy slightly more on a warm weekend."],
+        ["2. Store Manager Order", bwAi ? "Shared live via CPFR (Collaborative Planning, Forecasting & Replenishment) — no panic padding." : "Manager panics and pads order to avoid running out."],
+        ["3. Local Warehouse (FDC — Fulfillment Distribution Center)", bwAi ? "MEIO (Multi-Echelon Inventory Optimization) adjusts buffer smoothly." : "Sees spiky store orders and doubles safety buffer."],
         ["4. Factory Production Line", bwAi ? "Runs steady shift schedule." : "Turns on expensive weekend overtime shifts."],
         ["5. Raw Material Supplier", bwAi ? "Steady raw material pulls." : "Sees massive fake boom, followed by order cancellations!"]
       ];
@@ -1975,9 +2200,9 @@ def build_google_linear_academy() -> None:
         const barW = Math.min(100, Math.round(val / 1.8));
         const col = bwAi ? '#1E8E3E' : (i >= 3 ? '#D93025' : (i >= 1 ? '#F9AB00' : '#1A73E8'));
         return `<tr>
-          <td style="font-weight:700; width:230px;">${{n[0]}}</td>
+          <td style="font-weight:700; width:260px;">${{n[0]}}</td>
           <td style="width:120px; font-weight:800; color:${{col}}; font-size:18px;">+${{val}}%</td>
-          <td style="width:280px;">
+          <td style="width:260px;">
             <div style="background:#F1F3F4; height:18px; border-radius:999px; overflow:hidden;">
               <div style="width:${{barW}}%; height:100%; background:${{col}}; border-radius:999px;"></div>
             </div>
@@ -1995,7 +2220,7 @@ def build_google_linear_academy() -> None:
       `;
     }}
 
-    // 4 Core Concept Diagrams (One at a Time)
+    // 4 Core Concept Diagrams (One at a Time, with Real-World Company Examples)
     function showConceptDiagram(idx, btn) {{
       if (btn) {{
         btn.parentElement.querySelectorAll('.g-btn').forEach(b => b.classList.remove('active'));
@@ -2008,19 +2233,19 @@ def build_google_linear_academy() -> None:
             <rect x="20" y="20" width="420" height="100" rx="14" fill="#E8F0FE" stroke="#1A73E8" stroke-width="2"/>
             <text x="230" y="52" text-anchor="middle" fill="#1A73E8" font-size="15" font-weight="800">MAKE-TO-STOCK (MTS · PUSH STRATEGY)</text>
             <text x="230" y="80" text-anchor="middle" fill="#202124" font-size="14" font-weight="600">Forecast &rarr; Manufacture Early &rarr; Hold in Warehouse &rarr; Instant Ship</text>
-            <text x="230" y="104" text-anchor="middle" fill="#5F6368" font-size="12.5">Examples: Toothpaste, Soda, AA Batteries</text>
+            <text x="230" y="104" text-anchor="middle" fill="#5F6368" font-size="12.5">Examples: Colgate Toothpaste, Coca-Cola, Duracell Batteries</text>
 
             <rect x="480" y="20" width="420" height="100" rx="14" fill="#E6F4EA" stroke="#1E8E3E" stroke-width="2"/>
             <text x="690" y="52" text-anchor="middle" fill="#1E8E3E" font-size="15" font-weight="800">MAKE-TO-ORDER (MTO · PULL STRATEGY)</text>
             <text x="690" y="80" text-anchor="middle" fill="#202124" font-size="14" font-weight="600">Wait for Customer Order &rarr; Custom Build &rarr; Ship Direct</text>
-            <text x="690" y="104" text-anchor="middle" fill="#5F6368" font-size="12.5">Examples: Custom Dell Server, Boeing Jet, Custom Suit</text>
+            <text x="690" y="104" text-anchor="middle" fill="#5F6368" font-size="12.5">Examples: Custom Dell Server, Boeing 787 Jet, Custom Tesla</text>
           </svg>
           <div class="g-table-wrap">
             <table class="g-table">
-              <thead><tr><th>Strategy</th><th>Full Name</th><th>How It Works</th><th>Biggest Risk</th></tr></thead>
+              <thead><tr><th style="width:90px;">Acronym</th><th style="width:160px;">Full Name</th><th>How It Works &amp; Biggest Risk</th><th style="width:340px;">🌍 Real-World Company Examples</th></tr></thead>
               <tbody>
-                <tr><td><strong style="color:#1A73E8;">MTS</strong></td><td>Make-to-Stock</td><td>Factory builds goods in advance based on a forecast and stacks them in warehouses.</td><td>If the forecast is wrong, you get stuck with unsold dead stock (<strong>SLOB</strong>).</td></tr>
-                <tr><td><strong style="color:#1E8E3E;">MTO</strong></td><td>Make-to-Order</td><td>Factory waits until a customer actually places a firm order before building it.</td><td>Customer has to wait longer (lead time), and raw component shortages delay delivery.</td></tr>
+                <tr><td><strong style="color:#1A73E8;">MTS</strong></td><td><strong>Make-to-Stock</strong></td><td>Factory builds goods in advance based on a forecast and stacks them in warehouses so shoppers can grab them immediately. <em>Risk:</em> If the forecast is wrong, you get stuck with unsold dead stock (<strong>SLOB — Slow-Moving &amp; Obsolete Stock</strong>).</td><td style="background:#F8FAFD;"><strong>🧴 Procter &amp; Gamble (Tide) &amp; 🍫 Nestlé (KitKat):</strong> You will never wait 2 weeks for a factory to custom-make a KitKat bar — they are produced <strong>MTS (Make-to-Stock)</strong> millions at a time.</td></tr>
+                <tr><td><strong style="color:#1E8E3E;">MTO</strong></td><td><strong>Make-to-Order</strong></td><td>Factory waits until a customer actually places a firm order before building the finished product. <em>Risk:</em> Customer has to wait longer (<strong>Lead Time</strong>), and raw part shortages delay delivery.</td><td style="background:#F8FAFD;"><strong>💻 Dell Custom Servers, ✈️ Boeing &amp; 👟 Nike By You:</strong> Boeing doesn’t build $250M airplanes and hope an airline buys them — every plane is built <strong>MTO (Make-to-Order)</strong> to the airline’s exact cabin blueprint.</td></tr>
               </tbody>
             </table>
           </div>
@@ -2031,25 +2256,25 @@ def build_google_linear_academy() -> None:
             <rect x="20" y="20" width="280" height="100" rx="14" fill="#FCE8E6" stroke="#D93025" stroke-width="2"/>
             <text x="160" y="50" text-anchor="middle" fill="#D93025" font-size="15" font-weight="800">1. FEFO (First-Expired, First-Out)</text>
             <text x="160" y="78" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="600">🥛 Ship batch expiring soonest first</text>
-            <text x="160" y="102" text-anchor="middle" fill="#5F6368" font-size="12">Used for Food, Dairy, Vaccines, Pharma</text>
+            <text x="160" y="102" text-anchor="middle" fill="#5F6368" font-size="12">Amul Dairy, Pfizer Vaccines, Chobani</text>
 
             <rect x="320" y="20" width="280" height="100" rx="14" fill="#E6F4EA" stroke="#1E8E3E" stroke-width="2"/>
             <text x="460" y="50" text-anchor="middle" fill="#1E8E3E" font-size="15" font-weight="800">2. FIFO (First-In, First-Out)</text>
             <text x="460" y="78" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="600">📦 Ship oldest arrived pallet first</text>
-            <text x="460" y="102" text-anchor="middle" fill="#5F6368" font-size="12">Used for Electronics, Apparel, Hardware</text>
+            <text x="460" y="102" text-anchor="middle" fill="#5F6368" font-size="12">Apple Electronics, IKEA, Nike Shoes</text>
 
             <rect x="620" y="20" width="280" height="100" rx="14" fill="#E8F0FE" stroke="#1A73E8" stroke-width="2"/>
             <text x="760" y="50" text-anchor="middle" fill="#1A73E8" font-size="15" font-weight="800">3. LIFO (Last-In, First-Out)</text>
             <text x="760" y="78" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="600">🚚 Load Delivery Stop #1 LAST</text>
-            <text x="760" y="102" text-anchor="middle" fill="#5F6368" font-size="12">So Stop #1 sits right at the rear truck doors!</text>
+            <text x="760" y="102" text-anchor="middle" fill="#5F6368" font-size="12">Sysco Food Trucks, UPS, PepsiCo</text>
           </svg>
           <div class="g-table-wrap">
             <table class="g-table">
-              <thead><tr><th>Rule</th><th>Full Name</th><th>Everyday Meaning</th><th>Which Agent Uses It</th></tr></thead>
+              <thead><tr><th style="width:90px;">Rule</th><th style="width:190px;">Full Name</th><th>Everyday Meaning</th><th style="width:330px;">🌍 Real-World Company Examples</th><th style="width:190px;">Which Agent Uses It</th></tr></thead>
               <tbody>
-                <tr><td><strong style="color:#D93025;">FEFO</strong></td><td>First-Expired, First-Out</td><td>Always ship the batch whose expiration date is closest so nothing spoils in the warehouse.</td><td><code>short_dated_redistributor</code> &amp; <code>dynamic_markdown_agent</code></td></tr>
-                <tr><td><strong style="color:#1E8E3E;">FIFO</strong></td><td>First-In, First-Out</td><td>Ship the pallet that arrived earliest so boxes don't gather dust in the back of the rack.</td><td><code>warehouse_slotting_agent</code></td></tr>
-                <tr><td><strong style="color:#1A73E8;">LIFO</strong></td><td>Last-In, First-Out</td><td>When loading a multi-stop delivery truck, put Stop #3 in the nose first and Stop #1 in the tail last.</td><td><code>load_consolidation_agent</code> (CubeMaster 3D)</td></tr>
+                <tr><td><strong style="color:#D93025;">FEFO</strong></td><td><strong>First-Expired, First-Out</strong></td><td>Always ship the batch whose expiration date is closest so nothing spoils in the warehouse.</td><td style="background:#F8FAFD;"><strong>🥛 Amul Dairy &amp; 💊 Pfizer:</strong> A yogurt pallet expiring May 10 is always shipped before a pallet expiring May 18, even if the May 10 pallet arrived later.</td><td><code>short_dated_redistributor</code> &amp; <code>dynamic_markdown_agent</code></td></tr>
+                <tr><td><strong style="color:#1E8E3E;">FIFO</strong></td><td><strong>First-In, First-Out</strong></td><td>Ship the pallet that arrived earliest so boxes don’t gather dust or packaging wear in the back of the rack.</td><td style="background:#F8FAFD;"><strong>🛋️ IKEA &amp; 📱 Samsung:</strong> TVs and bookshelves don’t expire like milk, so warehouses ship the oldest arrived batch first so boxes stay fresh.</td><td><code>warehouse_slotting_agent</code></td></tr>
+                <tr><td><strong style="color:#1A73E8;">LIFO</strong></td><td><strong>Last-In, First-Out</strong></td><td>When loading a multi-stop delivery truck, put Stop #3 in the nose first and Stop #1 at the rear doors last.</td><td style="background:#F8FAFD;"><strong>🚛 Sysco &amp; PepsiCo Route Trucks:</strong> If a truck delivers to 4 restaurants at 6 AM, 7 AM, 8 AM, and 9 AM, the 6 AM restaurant’s pallets are loaded <strong>LAST (LIFO)</strong> right against the rear doors.</td><td><code>load_consolidation_agent</code> (CubeMaster 3D)</td></tr>
               </tbody>
             </table>
           </div>
@@ -2059,24 +2284,24 @@ def build_google_linear_academy() -> None:
           <svg viewBox="0 0 920 140" style="width:100%; height:auto; display:block; margin-bottom:20px; background:#F8F9FA; border-radius:16px; border:1px solid #DADCE0;">
             <rect x="20" y="24" width="260" height="92" rx="14" fill="#E8F0FE" stroke="#1A73E8" stroke-width="2"/>
             <text x="150" y="56" text-anchor="middle" fill="#1A73E8" font-size="15" font-weight="800">+ DIO (55 Days)</text>
-            <text x="150" y="82" text-anchor="middle" fill="#202124" font-size="13">Days Inventory sits in Warehouse</text>
+            <text x="150" y="82" text-anchor="middle" fill="#202124" font-size="13">Days Inventory Outstanding</text>
 
             <rect x="300" y="24" width="260" height="92" rx="14" fill="#FEF7E0" stroke="#F9AB00" stroke-width="2"/>
             <text x="430" y="56" text-anchor="middle" fill="#B06000" font-size="15" font-weight="800">+ DSO (40 Days)</text>
-            <text x="430" y="82" text-anchor="middle" fill="#202124" font-size="13">Days Customer takes to pay you</text>
+            <text x="430" y="82" text-anchor="middle" fill="#202124" font-size="13">Days Sales Outstanding</text>
 
             <rect x="580" y="24" width="320" height="92" rx="14" fill="#E6F4EA" stroke="#1E8E3E" stroke-width="2"/>
             <text x="740" y="56" text-anchor="middle" fill="#1E8E3E" font-size="15" font-weight="800">− DPO (45 Days) = 50 Days CCC</text>
-            <text x="740" y="82" text-anchor="middle" fill="#202124" font-size="13">Minus Days you take to pay Suppliers</text>
+            <text x="740" y="82" text-anchor="middle" fill="#202124" font-size="13">Minus Days Payable Outstanding</text>
           </svg>
           <div class="g-table-wrap">
             <table class="g-table">
-              <thead><tr><th>Term</th><th>Full Name</th><th>Plain-English Meaning</th></tr></thead>
+              <thead><tr><th style="width:90px;">Term</th><th style="width:210px;">Full Name Spelled Out</th><th>Plain-English Meaning</th><th style="width:360px;">🌍 Real-World Company Examples</th></tr></thead>
               <tbody>
-                <tr><td><strong>DIO</strong></td><td>Days Inventory Outstanding</td><td>How many days cash sits tied up as physical boxes on warehouse shelves before being sold (lower is better).</td></tr>
-                <tr><td><strong>DSO</strong></td><td>Days Sales Outstanding</td><td>How many days it takes to collect cash from customers after you ship their order (lower is better).</td></tr>
-                <tr><td><strong>DPO</strong></td><td>Days Payable Outstanding</td><td>How many days you wait before paying your suppliers' invoices (higher keeps cash in your bank longer).</td></tr>
-                <tr><td><strong style="color:#1A73E8;">CCC</strong></td><td>Cash Conversion Cycle (<code>DIO + DSO − DPO</code>)</td><td>Total days a dollar is trapped in your supply chain. Cutting CCC by 5 days frees tens of millions in cash!</td></tr>
+                <tr><td><strong>DIO</strong></td><td><strong>Days Inventory Outstanding</strong></td><td>How many days cash sits tied up as physical boxes on warehouse shelves before being sold (lower is better).</td><td style="background:#F8FAFD;"><strong>📱 Apple holds only ~9 days of DIO</strong> (iPhones fly out of warehouses almost immediately), whereas a luxury watchmaker or heavy machinery company like <strong>Caterpillar holds 110+ days of DIO</strong>.</td></tr>
+                <tr><td><strong>DSO</strong></td><td><strong>Days Sales Outstanding</strong></td><td>How many days it takes to collect cash from customers after you ship their order (lower is better).</td><td style="background:#F8FAFD;"><strong>📦 Amazon &amp; Zara have ~3–5 days DSO</strong> because shoppers pay immediately by credit card, whereas B2B suppliers selling to hospitals wait <strong>45–60 days (DSO)</strong> to get paid.</td></tr>
+                <tr><td><strong>DPO</strong></td><td><strong>Days Payable Outstanding</strong></td><td>How many days you wait before paying your suppliers’ invoices (higher keeps cash in your bank longer).</td><td style="background:#F8FAFD;"><strong>🧴 Unilever, P&amp;G &amp; Apple</strong> negotiate <strong>60 to 95 days DPO</strong> with their raw material and component suppliers.</td></tr>
+                <tr><td><strong style="color:#1A73E8;">CCC</strong></td><td><strong>Cash Conversion Cycle</strong><br/>(<code>DIO + DSO − DPO</code>)</td><td>Total days a dollar is trapped in your supply chain. Cutting CCC by 5 days frees tens of millions in cash!</td><td style="background:#E6F4EA; color:#137333;"><strong>🔥 How Apple &amp; Amazon Achieve a NEGATIVE CCC (-30 to -60 Days):</strong> Apple sells an iPhone in 9 days (<code>DIO=9</code>), collects credit card cash in 5 days (<code>DSO=5</code>), and pays Foxconn/suppliers 80 days later (<code>DPO=80</code>) &rarr; <code>9 + 5 − 80 = -66 days CCC</code>! Apple gets customer cash 2 months before paying suppliers!</td></tr>
               </tbody>
             </table>
           </div>
@@ -2098,11 +2323,11 @@ def build_google_linear_academy() -> None:
           </svg>
           <div class="g-table-wrap">
             <table class="g-table">
-              <thead><tr><th>Term</th><th>Full Name</th><th>Why Customers Care</th></tr></thead>
+              <thead><tr><th style="width:130px;">Term</th><th style="width:220px;">Full Name Spelled Out</th><th>Why Customers Care</th><th style="width:350px;">🌍 Real-World Company Examples</th></tr></thead>
               <tbody>
-                <tr><td><strong>Scope 1 &amp; 2</strong></td><td>Direct Fuel &amp; Purchased Electricity</td><td>Emissions from burning fuel in your own buildings/trucks (Scope 1) and buying utility power (Scope 2).</td></tr>
-                <tr><td><strong style="color:#1E8E3E;">Scope 3</strong></td><td>Value Chain Emissions (Suppliers + Freight)</td><td>Makes up 80–90% of a company's carbon footprint! Tracked by our <code>carbon_scope3_ledger</code> agent.</td></tr>
-                <tr><td><strong>CBAM &amp; EUDR</strong></td><td>Carbon Border Adjustment &amp; Deforestation Rules</td><td>European laws that tax carbon-heavy imports (CBAM) and block goods from deforested land (EUDR).</td></tr>
+                <tr><td><strong>Scope 1 &amp; 2</strong></td><td><strong>Direct Fuel &amp; Purchased Electricity</strong></td><td>Emissions from burning fuel in your own buildings/trucks (Scope 1) and buying utility power (Scope 2).</td><td style="background:#F8FAFD;"><strong>📦 Amazon &amp; 🥤 PepsiCo</strong> deploy Rivian electric delivery vans and rooftop warehouse solar panels to cut Scope 1 and Scope 2 emissions.</td></tr>
+                <tr><td><strong style="color:#1E8E3E;">Scope 3</strong></td><td><strong>Value Chain Emissions (Suppliers + Freight)</strong></td><td>Makes up 80–90% of a product company’s total carbon footprint! Tracked by our <code>carbon_scope3_ledger</code> agent.</td><td style="background:#F8FAFD;"><strong>🧴 Unilever &amp; 📱 Apple:</strong> Over 85% of an iPhone’s or Dove soap bar’s carbon comes from upstream raw material suppliers and cargo flights (<strong>Scope 3</strong>).</td></tr>
+                <tr><td><strong>CBAM &amp; EUDR</strong></td><td><strong>Carbon Border Adjustment Mechanism &amp; EU Deforestation Regulation</strong></td><td>European laws that tax carbon-heavy steel/aluminum imports (<strong>CBAM</strong>) and block coffee, cocoa, palm oil, or paper from deforested land (<strong>EUDR</strong>).</td><td style="background:#F8FAFD;"><strong>🍫 Nestlé, Ferrero (Nutella) &amp; ⚙️ Tata Steel:</strong> Must provide satellite GPS farm polygons for every cocoa/coffee shipment entering Europe (<strong>EUDR</strong>) and verified steel furnace carbon certificates (<strong>CBAM</strong>).</td></tr>
               </tbody>
             </table>
           </div>
@@ -2110,7 +2335,7 @@ def build_google_linear_academy() -> None:
       }}
     }}
 
-    // Chapter 3: Workflows rendered as Clean Spacious Tables
+    // Chapter 3: Workflows rendered as Clean Spacious Tables with Real-World Company Spotlights
     function selectWorkflow(wfKey, btn) {{
       if (btn) {{
         btn.parentElement.querySelectorAll('.g-btn').forEach(b => b.classList.remove('active'));
@@ -2119,21 +2344,27 @@ def build_google_linear_academy() -> None:
       const wf = WORKFLOWS[wfKey];
       const rows = wf.steps.map(st => `
         <tr>
-          <td style="font-weight:800; color:#1A73E8; width:210px;">${{st.badge}}<br/><span style="color:#202124; font-size:15.5px;">${{st.title}}</span></td>
+          <td style="font-weight:800; color:#1A73E8; width:195px;">${{st.badge}}<br/><span style="color:#202124; font-size:15.5px;">${{st.title}}</span></td>
           <td>${{st.plain}}</td>
+          <td style="background:#F8FAFD; color:#202124;">${{st.real_world || ''}}</td>
           <td style="background:#FCE8E6; color:#C5221F; font-weight:500;">✕ ${{st.manual}}</td>
           <td style="background:#E6F4EA; color:#137333; font-weight:600;">✦ ${{st.ai}}</td>
         </tr>
       `).join('');
       document.getElementById('workflowMount').innerHTML = `
         <h3 style="font-family:var(--font-display); font-size:23px; margin:0 0 6px; color:#1A73E8;">${{wf.title}}</h3>
-        <p style="color:var(--text-sub); margin:0 0 16px;">${{wf.subtitle}}</p>
+        <p style="color:var(--text-sub); margin:0 0 14px;">${{wf.subtitle}}</p>
+        <div style="background:#E8F0FE; border-left:5px solid #1A73E8; border-radius:12px; padding:16px 20px; margin-bottom:18px;">
+          <div style="font-weight:800; color:#174EA6; font-size:16.5px; margin-bottom:4px;">${{wf.company_case || ''}}</div>
+          <div style="color:#202124; font-size:16px;">${{wf.company_summary || ''}}</div>
+        </div>
         <div class="g-table-wrap">
           <table class="g-table">
             <thead>
               <tr>
                 <th>Step</th>
                 <th>What Happens in Plain English</th>
+                <th style="width:270px;">🌍 Real-World Company Example</th>
                 <th>✕ Old Manual Bottleneck</th>
                 <th>✦ With Our AI Agent</th>
               </tr>
@@ -2326,6 +2557,127 @@ def build_google_linear_academy() -> None:
       }}
     }}
 
+    // Chapter 6: 8 Real-World Industry Sector Case Studies + All-8-Sectors Master Comparison
+    let currentSectorIdx = 0;
+    function stepSector(delta) {{
+      const next = (currentSectorIdx + delta + SECTORS.length) % SECTORS.length;
+      const btns = document.querySelectorAll('#sectorBtnRow .g-btn');
+      showSectorCase(next, btns[next]);
+    }}
+
+    function showSectorCase(idx, btn) {{
+      currentSectorIdx = idx;
+      if (btn) {{
+        document.querySelectorAll('#sectorBtnRow .g-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }}
+      const sec = SECTORS[idx];
+      const nodeSvg = sec.svgNodes.map((nd, ni) => {{
+        const x = 14 + ni * 202;
+        const arrow = ni < 4 ? `<text x="${{x + 190}}" y="62" fill="${{sec.color}}" font-size="18" font-weight="800">&rarr;</text>` : '';
+        return `
+          <g transform="translate(${{x}}, 12)">
+            <rect width="184" height="94" rx="12" fill="#FFFFFF" stroke="${{sec.color}}" stroke-width="2"/>
+            <text x="92" y="30" text-anchor="middle" fill="${{sec.color}}" font-size="12" font-weight="800">${{nd[0]}}</text>
+            <text x="92" y="54" text-anchor="middle" fill="#202124" font-size="12" font-weight="700">${{nd[1]}}</text>
+            <text x="92" y="76" text-anchor="middle" fill="#5F6368" font-size="11">${{nd[2] || ''}}</text>
+          </g>
+          ${{arrow}}
+        `;
+      }}).join('');
+
+      const stageRows = sec.stages.map(st => `
+        <tr>
+          <td style="width:270px; font-weight:800; color:${{sec.color}};">${{st[0]}}</td>
+          <td>${{st[1]}}</td>
+        </tr>
+      `).join('');
+
+      document.getElementById('sectorCaseMount').innerHTML = `
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px;">
+          <button type="button" class="g-btn" onclick="stepSector(-1)">&larr; Previous Sector</button>
+          <strong style="color:${{sec.color}}; font-size:18px;">Industry Sector ${{idx + 1}} of ${{SECTORS.length}} · ${{sec.sector}}</strong>
+          <button type="button" class="g-btn g-btn-primary" onclick="stepSector(1)">Next Sector &rarr;</button>
+        </div>
+
+        <div style="background:#F8F9FA; border:2px solid ${{sec.color}}; border-radius:18px; padding:26px 30px; margin-bottom:22px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:8px;">
+            <span class="g-badge" style="background:${{sec.bg}}; color:${{sec.color}}; margin:0;">${{sec.sector}}</span>
+            <span class="g-badge" style="background:#FFFFFF; color:#202124; border:1px solid #DADCE0; margin:0;">🏢 Companies: ${{sec.companies}}</span>
+          </div>
+          <h3 style="font-family:var(--font-display); font-size:26px; margin:6px 0 8px; color:#202124;">${{sec.headline}}</h3>
+          <p style="margin:0 0 16px; color:#202124; font-size:17px;">${{sec.overview}}</p>
+
+          <!-- Key Metrics Strip Banner -->
+          <div style="background:#FFFFFF; border:1px solid #DADCE0; border-left:5px solid ${{sec.color}}; border-radius:12px; padding:14px 18px; margin-bottom:18px; font-size:15.5px;">
+            📊 ${{sec.metrics}}
+          </div>
+
+          <!-- 5-Node End-to-End Physical Flow SVG -->
+          <svg viewBox="0 0 1020 118" style="width:100%; height:auto; display:block; margin-bottom:20px; background:${{sec.bg}}; border-radius:14px; padding:4px;">
+            ${{nodeSvg}}
+          </svg>
+
+          <!-- How This Sector Uses All 7 Supply Chain Stages -->
+          <h4 style="font-family:var(--font-display); font-size:20px; margin:0 0 10px; color:${{sec.color}};">
+            🔍 Step-by-Step: How ${{sec.companies}} Use Each Stage of the Supply Chain
+          </h4>
+          <div class="g-table-wrap">
+            <table class="g-table">
+              <thead>
+                <tr>
+                  <th>Supply Chain Stage</th>
+                  <th>How Companies in This Sector Execute This Stage in the Real World</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${{stageRows}}
+                <tr>
+                  <td style="font-weight:800; color:#1E8E3E;">🤖 Top AI Agents Used by This Sector</td>
+                  <td style="background:#E6F4EA; color:#137333; font-weight:700;">${{sec.agents}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }}
+
+    function showAllSectorsComparison(btn) {{
+      if (btn) {{
+        document.querySelectorAll('#sectorBtnRow .g-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }}
+      const rows = SECTORS.map((s) => `
+        <tr>
+          <td style="font-weight:800; color:${{s.color}}; width:210px;">${{s.sector}}</td>
+          <td style="font-weight:700; width:190px;">${{s.companies}}</td>
+          <td><strong>${{s.headline}}</strong><br/><span style="color:#5F6368; font-size:15px;">${{s.overview}}</span></td>
+          <td style="background:#F8FAFD; width:270px; font-size:15px;">${{s.metrics}}</td>
+          <td style="background:#E6F4EA; color:#137333; font-weight:600; width:220px; font-size:14.5px;">${{s.agents}}</td>
+        </tr>
+      `).join('');
+      document.getElementById('sectorCaseMount').innerHTML = `
+        <h3 style="font-family:var(--font-display); font-size:24px; margin:0 0 12px; color:#1E8E3E;">
+          📊 Master Side-by-Side Comparison: How All 8 Industry Sectors Run Their Supply Chains
+        </h3>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead>
+              <tr>
+                <th>Industry Sector</th>
+                <th>Iconic Companies</th>
+                <th>How Their Supply Chain Works End-to-End</th>
+                <th>Key Metrics (DIO, DSO, DPO, CCC &amp; OTIF)</th>
+                <th>Top AI Agents Used</th>
+              </tr>
+            </thead>
+            <tbody>${{rows}}</tbody>
+          </table>
+        </div>
+      `;
+    }}
+
     showStageTable(0);
     renderBwTable();
     showConceptDiagram(0);
@@ -2333,6 +2685,7 @@ def build_google_linear_academy() -> None:
     renderTerms();
     renderDecoderTable();
     renderOneQuiz();
+    showSectorCase(0);
   </script>
 </body>
 </html>
