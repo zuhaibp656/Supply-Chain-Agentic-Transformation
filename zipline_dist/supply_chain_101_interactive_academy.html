@@ -220,7 +220,7 @@
     <!-- 5 CHAPTER BUTTONS -->
     <nav class="g-chapter-bar">
       <button type="button" class="g-chap-btn active" onclick="switchChapter('chap1', this)">
-        1 · The 6 Stages &amp; 4 Software Systems
+        1 · Intro to Supply Chain &amp; The 7 Stages
       </button>
       <button type="button" class="g-chap-btn" onclick="switchChapter('chap2', this)">
         2 · Bullwhip &amp; 4 Core Diagrams
@@ -237,73 +237,210 @@
     </nav>
 
     <!-- ===================================================================
-         CHAPTER 1: THE 6 STAGES, 3 FLOWS & 4 SOFTWARE SYSTEMS (LINEAR & TABULAR)
+         CHAPTER 1: INTRODUCTION TO SUPPLY CHAIN, WHERE IT FITS & THE 7 STAGES
          =================================================================== -->
     <div id="chap1" class="g-pane active">
-      <section class="g-card">
+      <!-- SECTION 1A: WHAT IS A SUPPLY CHAIN & WHERE DOES IT COME INTO THE PICTURE? -->
+      <section class="g-card" style="border-top: 6px solid var(--g-blue);">
         <span class="g-badge" style="background:var(--g-blue-bg); color:var(--g-blue);">
-          CHAPTER 1A · THE 6-STAGE RELAY RACE (CLICK ONE STAGE AT A TIME)
+          PART 1A · INTRODUCTION — WHAT IS A SUPPLY CHAIN ALL ABOUT?
         </span>
-        <h2 style="font-family:var(--font-display); font-size:28px; margin:0 0 10px;">
-          How Every Product Travels From Raw Materials to Your Doorstep
+        <h2 style="font-family:var(--font-display); font-size:30px; margin:0 0 12px;">
+          What Is a Supply Chain, and Where Does It Come Into the Picture?
         </h2>
-        <p style="color:var(--text-sub); margin:0 0 20px;">
-          A supply chain is simply a <strong>6-stage relay race</strong>. Click any of the 6 stage buttons below to inspect that stage in a clean table:
+        <p style="font-size:18px; color:var(--text-main); margin:0 0 16px;">
+          Look at any physical item around you right now — a <strong>jar of coffee</strong>, a <strong>smartphone</strong>, a <strong>pair of running shoes</strong>, or <strong>medicine at a pharmacy</strong>. None of those products magically appeared on a shelf. Every single one started as raw materials in the ground (coffee beans on a farm, silica sand for microchips, rubber and cotton, chemical compounds) and had to be <strong>planned, bought, manufactured, packed, stored in warehouses, shipped across oceans and highways, and placed on a shelf</strong> at the exact moment you wanted to buy it.
+        </p>
+        <div style="background:#E8F0FE; border-left:5px solid #1A73E8; border-radius:12px; padding:18px 22px; margin-bottom:26px; font-size:18px; font-weight:600; color:#174EA6;">
+          💡 <strong>In one simple sentence:</strong> The <strong>Supply Chain</strong> is the entire end-to-end system of people, factories, suppliers, warehouses, trucks, and software that turns raw ingredients into a finished product in the customer’s hands — and it accounts for <strong>60% to 80% of a product company’s total cost!</strong>
+        </div>
+
+        <h3 style="font-family:var(--font-display); font-size:23px; margin:0 0 12px;">
+          Where Does Supply Chain Come Into the Picture Inside a Company?
+        </h3>
+        <p style="color:var(--text-sub); margin:0 0 16px;">
+          Every product company has 4 main parts. Here is how they hand the baton to each other, and where Supply Chain takes over:
         </p>
 
-        <!-- Bright Google SVG Relay Diagram -->
-        <svg viewBox="0 0 1020 120" style="width:100%; height:auto; display:block; margin-bottom:22px; background:#F8F9FA; border-radius:16px; border:1px solid #DADCE0; padding:8px;">
-          <g transform="translate(12,18)">
-            <rect width="145" height="84" rx="12" fill="#FEF7E0" stroke="#F9AB00" stroke-width="2"/>
-            <text x="72" y="30" text-anchor="middle" fill="#B06000" font-size="11.5" font-weight="800">STAGE 1</text>
-            <text x="72" y="54" text-anchor="middle" fill="#202124" font-size="14" font-weight="700">⛏️ Suppliers</text>
-            <text x="72" y="72" text-anchor="middle" fill="#5F6368" font-size="11">Raw Materials</text>
+        <!-- Bright Google SVG: Where Supply Chain Fits in the Enterprise -->
+        <svg viewBox="0 0 1020 126" style="width:100%; height:auto; display:block; margin-bottom:20px; background:#F8F9FA; border-radius:16px; border:1px solid #DADCE0; padding:8px;">
+          <g transform="translate(14,16)">
+            <rect width="205" height="94" rx="14" fill="#FFFFFF" stroke="#DADCE0" stroke-width="2"/>
+            <text x="102" y="30" text-anchor="middle" fill="#5F6368" font-size="11.5" font-weight="800">1 · R&amp;D / PRODUCT</text>
+            <text x="102" y="54" text-anchor="middle" fill="#202124" font-size="14.5" font-weight="700">🧪 Designs Product</text>
+            <text x="102" y="76" text-anchor="middle" fill="#5F6368" font-size="11.5">Creates recipe (BOM)</text>
           </g>
-          <text x="168" y="65" fill="#5F6368" font-size="18" font-weight="700">&rarr;</text>
-          <g transform="translate(182,18)">
-            <rect width="145" height="84" rx="12" fill="#F3E8FD" stroke="#9334E6" stroke-width="2"/>
-            <text x="72" y="30" text-anchor="middle" fill="#9334E6" font-size="11.5" font-weight="800">STAGE 2</text>
-            <text x="72" y="54" text-anchor="middle" fill="#202124" font-size="14" font-weight="700">🏭 Factory</text>
-            <text x="72" y="72" text-anchor="middle" fill="#5F6368" font-size="11">Make Product</text>
+          <text x="230" y="68" fill="#5F6368" font-size="20" font-weight="700">&rarr;</text>
+          <g transform="translate(248,16)">
+            <rect width="205" height="94" rx="14" fill="#FFFFFF" stroke="#DADCE0" stroke-width="2"/>
+            <text x="102" y="30" text-anchor="middle" fill="#5F6368" font-size="11.5" font-weight="800">2 · MARKETING &amp; SALES</text>
+            <text x="102" y="54" text-anchor="middle" fill="#202124" font-size="14.5" font-weight="700">📣 Creates Demand</text>
+            <text x="102" y="76" text-anchor="middle" fill="#5F6368" font-size="11.5">Runs promos &amp; takes orders</text>
           </g>
-          <text x="338" y="65" fill="#5F6368" font-size="18" font-weight="700">&rarr;</text>
-          <g transform="translate(352,18)">
-            <rect width="145" height="84" rx="12" fill="#E6F4EA" stroke="#1E8E3E" stroke-width="2"/>
-            <text x="72" y="30" text-anchor="middle" fill="#1E8E3E" font-size="11.5" font-weight="800">STAGE 3</text>
-            <text x="72" y="54" text-anchor="middle" fill="#202124" font-size="14" font-weight="700">🏢 Regional DC</text>
-            <text x="72" y="72" text-anchor="middle" fill="#5F6368" font-size="11">Bulk Storage</text>
+          <text x="464" y="68" fill="#1A73E8" font-size="20" font-weight="700">&rarr;</text>
+          <g transform="translate(482,12)">
+            <rect width="300" height="102" rx="16" fill="#E8F0FE" stroke="#1A73E8" stroke-width="3"/>
+            <text x="150" y="28" text-anchor="middle" fill="#1A73E8" font-size="12" font-weight="800">3 · 🎯 THE SUPPLY CHAIN (ENGINE ROOM)</text>
+            <text x="150" y="54" text-anchor="middle" fill="#202124" font-size="15.5" font-weight="800">⚙️ Plans · Buys · Makes · Stores · Ships</text>
+            <text x="150" y="76" text-anchor="middle" fill="#174EA6" font-size="12" font-weight="700">60%–80% of Company Cost &amp; Cash!</text>
+            <text x="150" y="94" text-anchor="middle" fill="#5F6368" font-size="11">Led by Chief Supply Chain Officer (CSCO)</text>
           </g>
-          <text x="508" y="65" fill="#5F6368" font-size="18" font-weight="700">&rarr;</text>
-          <g transform="translate(522,18)">
-            <rect width="145" height="84" rx="12" fill="#E8F0FE" stroke="#1A73E8" stroke-width="2"/>
-            <text x="72" y="30" text-anchor="middle" fill="#1A73E8" font-size="11.5" font-weight="800">STAGE 4</text>
-            <text x="72" y="54" text-anchor="middle" fill="#202124" font-size="14" font-weight="700">📦 Local DC</text>
-            <text x="72" y="72" text-anchor="middle" fill="#5F6368" font-size="11">Pick &amp; Pack</text>
-          </g>
-          <text x="678" y="65" fill="#5F6368" font-size="18" font-weight="700">&rarr;</text>
-          <g transform="translate(692,18)">
-            <rect width="145" height="84" rx="12" fill="#E4F7FB" stroke="#007B83" stroke-width="2"/>
-            <text x="72" y="30" text-anchor="middle" fill="#007B83" font-size="11.5" font-weight="800">STAGE 5</text>
-            <text x="72" y="54" text-anchor="middle" fill="#202124" font-size="14" font-weight="700">🚚 Fleet Transit</text>
-            <text x="72" y="72" text-anchor="middle" fill="#5F6368" font-size="11">Ship / Air / Truck</text>
-          </g>
-          <text x="848" y="65" fill="#5F6368" font-size="18" font-weight="700">&rarr;</text>
-          <g transform="translate(862,18)">
-            <rect width="145" height="84" rx="12" fill="#FCE8E6" stroke="#D93025" stroke-width="2"/>
-            <text x="72" y="30" text-anchor="middle" fill="#D93025" font-size="11.5" font-weight="800">STAGE 6</text>
-            <text x="72" y="54" text-anchor="middle" fill="#202124" font-size="14" font-weight="700">🛒 Store &amp; RMA</text>
-            <text x="72" y="72" text-anchor="middle" fill="#5F6368" font-size="11">Customer &amp; Returns</text>
+          <text x="794" y="68" fill="#1E8E3E" font-size="20" font-weight="700">&rarr;</text>
+          <g transform="translate(812,16)">
+            <rect width="194" height="94" rx="14" fill="#E6F4EA" stroke="#1E8E3E" stroke-width="2"/>
+            <text x="97" y="30" text-anchor="middle" fill="#1E8E3E" font-size="11.5" font-weight="800">4 · FINANCE &amp; CFO</text>
+            <text x="97" y="54" text-anchor="middle" fill="#202124" font-size="14.5" font-weight="700">💰 Collects Cash</text>
+            <text x="97" y="76" text-anchor="middle" fill="#137333" font-size="11.5">Pays vendors &amp; books profit</text>
           </g>
         </svg>
 
-        <!-- 6 Stage Selector Buttons -->
+        <div class="g-table-wrap" style="margin-bottom:28px;">
+          <table class="g-table">
+            <thead>
+              <tr>
+                <th style="width:230px;">Company Function</th>
+                <th style="width:260px;">What They Do</th>
+                <th>How Supply Chain Connects to Them</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700;">🧪 1. Product / R&amp;D</td>
+                <td>Invents the product and defines its recipe of parts (<strong>BOM — Bill of Materials</strong>).</td>
+                <td>Hands the recipe to Supply Chain so buyers can find suppliers for every screw, chip, bottle, and label before launch (<strong>NPI — New Product Introduction</strong>).</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;">📣 2. Sales &amp; Marketing</td>
+                <td>Runs price promotions, signs retail deals (Walmart, Amazon), and promises delivery dates.</td>
+                <td>If Sales runs a 20%-off promotion without telling Supply Chain, stores run out of stock! Supply Chain works with Sales every month (<strong>S&amp;OP</strong>) to match supply with demand.</td>
+              </tr>
+              <tr style="background:#F8FAFD;">
+                <td style="font-weight:800; color:#1A73E8;">⚙️ 3. THE SUPPLY CHAIN<br/><span style="font-size:13px; color:#5F6368;">(Office of the CSCO)</span></td>
+                <td><strong>Forecasts demand, buys raw materials, runs factories, manages warehouses, and dispatches trucks/ships.</strong></td>
+                <td><strong>The physical execution engine of the business.</strong> If Supply Chain fails, factories stop, shelves go empty, or millions of dollars get trapped in unsold warehouse inventory.</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;">💰 4. Finance (The CFO)</td>
+                <td>Manages company cash flow, profit margins, and supplier/customer payments.</td>
+                <td>The CFO relies on Supply Chain to keep <strong>Inventory Cash (DIO)</strong> low, avoid expensive emergency air freight, and verify every supplier bill before paying (<strong>3-Way Match</strong>).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-family:var(--font-display); font-size:23px; margin:0 0 10px;">
+          Why Is Supply Chain So Hard? (The 3-Way Tug-of-War)
+        </h3>
+        <p style="color:var(--text-sub); margin:0 0 14px;">
+          Running a supply chain is difficult because every decision pulls in <strong>3 opposite directions</strong> at once:
+        </p>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead>
+              <tr>
+                <th style="width:220px;">Goal</th>
+                <th style="width:200px;">Who Demands It</th>
+                <th>What Happens If You Push Too Far</th>
+                <th style="width:270px;">How Our AI Agents Solve It</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:800; color:#1E8E3E;">🎯 1. High Service<br/>(Never Run Out)</td>
+                <td><strong>Sales &amp; Retail Customers</strong><br/>(Want 99% <code>OTIF</code>)</td>
+                <td>To never run out, you pile up mountains of extra backup stock in every warehouse — tying up tens of millions in cash!</td>
+                <td><strong>Demand Sensing &amp; ATP Agents</strong> predict exact local demand and protect VIP stock.</td>
+              </tr>
+              <tr>
+                <td style="font-weight:800; color:#1A73E8;">💵 2. Low Inventory Cash<br/>(Lean Warehouses)</td>
+                <td><strong>Chief Financial Officer (CFO)</strong><br/>(Wants low <code>DIO</code> / <code>CCC</code>)</td>
+                <td>If you slash warehouse stock too aggressively, a single supplier delay or warm weekend causes immediate store stockouts!</td>
+                <td><strong>MEIO Safety Stock Agent</strong> mathematically places smaller, smarter buffers across hubs.</td>
+              </tr>
+              <tr>
+                <td style="font-weight:800; color:#E8710A;">🚚 3. Low Operating Cost<br/>(Cheap Production &amp; Freight)</td>
+                <td><strong>Factory &amp; Logistics Heads</strong><br/>(Want full lines &amp; full trucks)</td>
+                <td>Waiting to fill a 53-foot truck or running huge factory batches saves unit cost, but makes reaction time slow when demand shifts.</td>
+                <td><strong>Finite Scheduler &amp; 3D Load Studio</strong> cut changeover waste and pack multi-stop trucks.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 1B: THE 7 STAGES OF THE SUPPLY CHAIN PROCESS (DETAILED WALKTHROUGH) -->
+      <section class="g-card">
+        <span class="g-badge" style="background:var(--g-blue-bg); color:var(--g-blue);">
+          PART 1B · THE 7 STAGES OF THE SUPPLY CHAIN PROCESS (CLICK EACH STAGE IN ORDER)
+        </span>
+        <h2 style="font-family:var(--font-display); font-size:28px; margin:0 0 10px;">
+          Step-by-Step: How the Supply Chain Process Works From Beginning to End
+        </h2>
+        <p style="color:var(--text-sub); margin:0 0 20px;">
+          Notice that before a single physical box moves, the process starts with <strong>Stage 0 · Planning &amp; Forecasting</strong> (the brain), followed by the <strong>6 physical stages</strong>. Click each of the 7 stage buttons below in order (or use <code>Next Stage &rarr;</code>) for a deep, plain-English walkthrough:
+        </p>
+
+        <!-- Bright Google SVG 7-Stage Relay Diagram -->
+        <svg viewBox="0 0 1060 124" style="width:100%; height:auto; display:block; margin-bottom:22px; background:#F8F9FA; border-radius:16px; border:1px solid #DADCE0; padding:8px;">
+          <g transform="translate(8,18)">
+            <rect width="132" height="88" rx="12" fill="#E8F0FE" stroke="#1A73E8" stroke-width="2.5"/>
+            <text x="66" y="28" text-anchor="middle" fill="#1A73E8" font-size="11" font-weight="800">STAGE 0 (BRAIN)</text>
+            <text x="66" y="52" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="700">📈 Plan &amp; S&amp;OP</text>
+            <text x="66" y="72" text-anchor="middle" fill="#5F6368" font-size="10.5">Forecast Demand</text>
+          </g>
+          <text x="145" y="65" fill="#1A73E8" font-size="16" font-weight="700">&rarr;</text>
+          <g transform="translate(158,18)">
+            <rect width="132" height="88" rx="12" fill="#FEF7E0" stroke="#F9AB00" stroke-width="2"/>
+            <text x="66" y="28" text-anchor="middle" fill="#B06000" font-size="11" font-weight="800">STAGE 1 · SOURCE</text>
+            <text x="66" y="52" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="700">⛏️ Suppliers</text>
+            <text x="66" y="72" text-anchor="middle" fill="#5F6368" font-size="10.5">Buy Raw Parts</text>
+          </g>
+          <text x="295" y="65" fill="#5F6368" font-size="16" font-weight="700">&rarr;</text>
+          <g transform="translate(308,18)">
+            <rect width="132" height="88" rx="12" fill="#F3E8FD" stroke="#9334E6" stroke-width="2"/>
+            <text x="66" y="28" text-anchor="middle" fill="#9334E6" font-size="11" font-weight="800">STAGE 2 · MAKE</text>
+            <text x="66" y="52" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="700">🏭 Factory</text>
+            <text x="66" y="72" text-anchor="middle" fill="#5F6368" font-size="10.5">Build &amp; QA Test</text>
+          </g>
+          <text x="445" y="65" fill="#5F6368" font-size="16" font-weight="700">&rarr;</text>
+          <g transform="translate(458,18)">
+            <rect width="132" height="88" rx="12" fill="#E6F4EA" stroke="#1E8E3E" stroke-width="2"/>
+            <text x="66" y="28" text-anchor="middle" fill="#1E8E3E" font-size="11" font-weight="800">STAGE 3 · RDC</text>
+            <text x="66" y="52" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="700">🏢 Regional DC</text>
+            <text x="66" y="72" text-anchor="middle" fill="#5F6368" font-size="10.5">Central Buffer</text>
+          </g>
+          <text x="595" y="65" fill="#5F6368" font-size="16" font-weight="700">&rarr;</text>
+          <g transform="translate(608,18)">
+            <rect width="132" height="88" rx="12" fill="#E8F0FE" stroke="#1A73E8" stroke-width="2"/>
+            <text x="66" y="28" text-anchor="middle" fill="#1A73E8" font-size="11" font-weight="800">STAGE 4 · FDC</text>
+            <text x="66" y="52" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="700">📦 Local DC</text>
+            <text x="66" y="72" text-anchor="middle" fill="#5F6368" font-size="10.5">Pick, Pack &amp; ATP</text>
+          </g>
+          <text x="745" y="65" fill="#5F6368" font-size="16" font-weight="700">&rarr;</text>
+          <g transform="translate(758,18)">
+            <rect width="132" height="88" rx="12" fill="#E4F7FB" stroke="#007B83" stroke-width="2"/>
+            <text x="66" y="28" text-anchor="middle" fill="#007B83" font-size="11" font-weight="800">STAGE 5 · MOVE</text>
+            <text x="66" y="52" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="700">🚚 Fleet Transit</text>
+            <text x="66" y="72" text-anchor="middle" fill="#5F6368" font-size="10.5">Ocean / Air / Truck</text>
+          </g>
+          <text x="895" y="65" fill="#5F6368" font-size="16" font-weight="700">&rarr;</text>
+          <g transform="translate(908,18)">
+            <rect width="142" height="88" rx="12" fill="#FCE8E6" stroke="#D93025" stroke-width="2"/>
+            <text x="71" y="28" text-anchor="middle" fill="#D93025" font-size="11" font-weight="800">STAGE 6 · DELIVER</text>
+            <text x="71" y="52" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="700">🛒 Store &amp; RMA</text>
+            <text x="71" y="72" text-anchor="middle" fill="#5F6368" font-size="10.5">OTIF, POS &amp; ESG</text>
+          </g>
+        </svg>
+
+        <!-- 7 Stage Selector Buttons -->
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;" id="stageBtnRow">
-          <button type="button" class="g-btn active" onclick="showStageTable(0, this)">1 · ⛏️ Suppliers</button>
-          <button type="button" class="g-btn" onclick="showStageTable(1, this)">2 · 🏭 Factory</button>
-          <button type="button" class="g-btn" onclick="showStageTable(2, this)">3 · 🏢 Regional DC (RDC)</button>
-          <button type="button" class="g-btn" onclick="showStageTable(3, this)">4 · 📦 Local DC (FDC)</button>
-          <button type="button" class="g-btn" onclick="showStageTable(4, this)">5 · 🚚 Fleet &amp; Transit</button>
-          <button type="button" class="g-btn" onclick="showStageTable(5, this)">6 · 🛒 Store &amp; Returns</button>
+          <button type="button" class="g-btn active" onclick="showStageTable(0, this)">0 · 📈 Plan &amp; Forecast (The Brain)</button>
+          <button type="button" class="g-btn" onclick="showStageTable(1, this)">1 · ⛏️ Source (Suppliers)</button>
+          <button type="button" class="g-btn" onclick="showStageTable(2, this)">2 · 🏭 Make (Factory)</button>
+          <button type="button" class="g-btn" onclick="showStageTable(3, this)">3 · 🏢 Central Store (RDC)</button>
+          <button type="button" class="g-btn" onclick="showStageTable(4, this)">4 · 📦 Local Store (FDC)</button>
+          <button type="button" class="g-btn" onclick="showStageTable(5, this)">5 · 🚚 Move (Fleet &amp; Transit)</button>
+          <button type="button" class="g-btn" onclick="showStageTable(6, this)">6 · 🛒 Customer, OTIF &amp; Returns</button>
         </div>
 
         <div id="stageTableMount"></div>
@@ -312,7 +449,7 @@
       <!-- THE 3 FLOWS TABLE -->
       <section class="g-card">
         <span class="g-badge" style="background:var(--g-green-bg); color:var(--g-green);">
-          CHAPTER 1B · THE 3 FLOWS TABLE
+          PART 1C · THE 3 FLOWS TABLE
         </span>
         <h2 style="font-family:var(--font-display); font-size:26px; margin:0 0 14px;">
           The 3 Things Moving Through Every Supply Chain at the Same Time
@@ -350,7 +487,7 @@
       <!-- THE 4 ENTERPRISE SOFTWARE SYSTEMS TABLE -->
       <section class="g-card">
         <span class="g-badge" style="background:#F3E8FD; color:#9334E6;">
-          CHAPTER 1C · THE 4 SOFTWARE SYSTEMS TABLE
+          PART 1D · THE 4 SOFTWARE SYSTEMS TABLE
         </span>
         <h2 style="font-family:var(--font-display); font-size:26px; margin:0 0 14px;">
           ERP vs. MES vs. WMS vs. TMS — What Software Runs Which Building?
@@ -543,54 +680,92 @@
 
     const STAGES = [
       {
-        title: "Stage 1 · ⛏️ Tier-2 & Tier-1 Suppliers (Sourcing Raw Materials)",
-        analogy: "🥣 Everyday Analogy: Like a bakery buying flour from a mill (Tier-1), which bought wheat from a farm (Tier-2).",
-        happens: "Procurement buyers look at the product recipe (BOM — Bill of Materials), ask vendors for price quotes (RFQ — Request for Quotation), check fair market prices (Should-Cost), and send official Purchase Orders (POs).",
-        software: "ERP & Procurement Portal (SAP Ariba, Coupa, SAP S/4HANA)",
-        breaks: "A Tier-2 sub-supplier has a factory fire or port delay, or a supplier pads their quote by +15% above raw commodity indices.",
-        terms: "BOM (Bill of Materials), RFQ (Request for Quotation), Should-Cost, PO (Purchase Order), Tier-1 / Tier-2 Supplier, MOQ (Minimum Order Quantity)"
+        title: "Stage 0 · 📈 Demand Planning, Sensing & S&OP (The Brain of the Supply Chain)",
+        whyExists: "Because buying raw materials and running factories takes weeks or months (Lead Time), a company cannot wait until you walk into a store to start making a product. Planning is the 'brain' that predicts what customers will buy, where, and when — and aligns Sales, Factories, Warehouses, and Finance around a single plan.",
+        analogy: "🍽️ Everyday Analogy: Like a restaurant chef checking Friday reservation bookings, local weather, and last month's popular dishes before deciding how much fish and produce to order for the weekend.",
+        story: "1. Forecasters pull historical sales, daily store checkout scans (POS), weather forecasts, and upcoming promotions.<br/>2. They generate a baseline demand forecast for each product (SKU) and measure forecast error (WAPE) and human bias (FVA).<br/>3. In the monthly S&OP (Sales & Operations Planning) cycle, Sales, Operations, and Finance resolve capacity gaps and lock a 'One-Number Plan'.",
+        personas: "Demand Planner / Forecaster, S&OP / IBP Director, Trade Promotion Manager, New Product (NPI) Planner",
+        docs: "Baseline Statistical Forecast, Consensus Demand Plan, Promotion Lift Calendar, Retailer CPFR Forecast",
+        software: "IBP & Demand Planning Systems (SAP IBP, Kinaxis RapidResponse, o9 Solutions, Blue Yonder)",
+        breaks: "Forecasts rely on 30-day-old ERP shipments instead of daily store checkout scans; sales reps manually inflate forecasts by +20% 'just in case' (Negative FVA), triggering the Bullwhip Effect.",
+        agents: "Demand Sensing Agent (`demand_sensing_agent`), S&OP Scenario Weaver (`sop_scenario_weaver`), Promo Lift Simulator (`promo_lift_simulator`), CPFR Sync (`cpfr_sync_agent`), NPI Profiler (`npi_demand_profiler`)",
+        terms: "SKU (Stock Keeping Unit), WAPE (Weighted Absolute Percentage Error), Bias, FVA (Forecast Value Added), S&OP (Sales & Operations Planning), IBP (Integrated Business Planning), CPFR, POS (Point of Sale)"
       },
       {
-        title: "Stage 2 · 🏭 The Factory Floor (Manufacturing & Quality)",
-        analogy: "👩‍🍳 Everyday Analogy: Like the kitchen cooking batches of food, washing equipment between recipes, and tasting every batch before plating.",
-        happens: "Production planners schedule which product runs on which machine line (Finite Scheduling), monitor machine health (OEE — Overall Equipment Effectiveness), and inspect finished batches (eBHR — Electronic Batch History Record).",
-        software: "MES — Manufacturing Execution System (Siemens Opcenter, Rockwell)",
-        breaks: "A spindle motor overheats mid-batch causing an unplanned breakdown, or switching from dark chocolate to white chocolate takes 4 hours of wash-down (Changeover loss).",
-        terms: "OEE (Overall Equipment Effectiveness), MTS (Make-to-Stock) vs. MTO (Make-to-Order), Finite Scheduling, eBHR (Electronic Batch Record), COA (Certificate of Analysis)"
+        title: "Stage 1 · ⛏️ Strategic Sourcing & Tier-N Suppliers (Buying Raw Materials & Packaging)",
+        whyExists: "Once the Demand Plan says we need 500,000 jars of coffee next month, the factory cannot build anything without coffee beans, glass jars, metal lids, and paper labels. Sourcing finds qualified suppliers, negotiates fair prices, tracks multi-tier supply risks, and issues official Purchase Orders (POs).",
+        analogy: "🥣 Everyday Analogy: Like a bakery checking its recipe card (Bill of Materials), comparing flour mill prices against wheat market prices, ordering 50 sacks of flour, and checking the bill before paying.",
+        story: "1. ERP explodes the finished product forecast into raw component quantities using the Bill of Materials (BOM).<br/>2. Category Buyers send out Requests for Quotations (RFQs) and compare vendor bids against a bottom-up Should-Cost model tied to live commodity indices (steel, resin, coffee, energy).<br/>3. Buyers check Tier-2 and Tier-3 sub-suppliers for disruptions or tariff/ESG risks, then issue a binding Purchase Order (PO).<br/>4. When the supplier sends an invoice, Accounts Payable verifies the 3-Way Match (PO vs. Warehouse Goods Receipt vs. Invoice) before paying.",
+        personas: "Category Procurement Manager, Supplier Risk Manager, Accounts Payable / 3-Way Match Specialist, Packaging Sustainability Lead",
+        docs: "BOM (Bill of Materials), RFQ (Request for Quotation), Should-Cost Model, PO (Purchase Order), 3-Way Match Packet, NCR (Non-Conformance Report)",
+        software: "ERP & Source-to-Pay Portals (SAP Ariba, Coupa, SAP S/4HANA MM, Oracle Procurement)",
+        breaks: "A Tier-2 sub-supplier has a factory fire that nobody knew about; suppliers pad quotes by +15% when commodity prices actually dropped; or 20% of invoices fail 3-Way Match due to price/quantity errors.",
+        agents: "RFQ Should-Cost Agent (`rfq_should_cost_agent`), Tier-N Risk Sentinel (`tier_n_risk_sentinel`), Three-Way Match Dispute Agent (`three_way_match_dispute`), Supplier Quality Sentinel (`supplier_quality_sentinel`), Commodity Index Advisor (`commodity_index_advisor`)",
+        terms: "BOM (Bill of Materials), RFQ (Request for Quotation), Should-Cost, Tier-1 / Tier-2 / Tier-3 Supplier, PO (Purchase Order), GRN (Goods Receipt Note), 3-Way Match, MOQ (Minimum Order Quantity), Lead Time, NCR & COPQ"
       },
       {
-        title: "Stage 3 · 🏢 Regional Distribution Center — RDC (Central Bulk Storage)",
-        analogy: "🏦 Everyday Analogy: Like a central reserve vault that holds large backup pallets to replenish smaller city branches.",
-        happens: "Finished pallets arrive from the factory. Inventory planners calculate how much safety buffer (Safety Stock & ROP — Reorder Point) to keep at the central hub vs. pushing forward to local city warehouses (MEIO — Multi-Echelon Inventory Optimization).",
-        software: "Supply Planning / IBP — Integrated Business Planning (SAP IBP, Kinaxis)",
-        breaks: "Every warehouse hoards extra safety stock in silos, locking up millions of dollars in slow-moving or obsolete inventory (SLOB).",
-        terms: "RDC (Regional Distribution Center), MEIO (Multi-Echelon Inventory Optimization), Safety Stock, ROP (Reorder Point), SLOB (Slow-Moving & Obsolete Stock)"
+        title: "Stage 2 · 🏭 Manufacturing & Plant Operations (Making & Testing the Product)",
+        whyExists: "This is where raw ingredients and components are physically transformed, mixed, assembled, filled, and quality-tested on high-speed production lines to become finished goods ready for sale.",
+        analogy: "👩‍🍳 Everyday Analogy: Like a commercial kitchen scheduling which oven bakes bread vs. pastries, cleaning mixers between allergen batches, monitoring oven temperatures, and tasting every batch before boxing.",
+        story: "1. Production Planners sequence jobs across factory lines (Finite Capacity Scheduling) to minimize wash-down and changeover downtime between flavors or sizes.<br/>2. Plant Engineers monitor machine health — Availability × Performance × Quality (OEE — Overall Equipment Effectiveness) — using vibration and temperature sensors.<br/>3. Cameras and sensors inspect products inline for defects, and Quality Assurance (QA) audits the Electronic Batch History Record (eBHR) and Certificate of Analysis (COA) to release the batch.",
+        personas: "Master Production Scheduler, Plant Manager / OEE Lead, Quality Assurance (QA) Auditor, Line Labor Supervisor, Co-Packer Manager",
+        docs: "Master Production Schedule (MPS), Work Order, eBHR (Electronic Batch History Record), COA (Certificate of Analysis), CIP (Clean-in-Place) Log",
+        software: "MES — Manufacturing Execution System & SCADA/PLC Sensors (Siemens Opcenter, Rockwell FactoryTalk, SAP DMC)",
+        breaks: "A critical motor bearing fails mid-shift causing $50,000/hr unplanned downtime; poor sequencing wastes 18 hours a week on line changeovers; or finished pallets sit quarantined for 6 days waiting for manual paper batch record review.",
+        agents: "Predictive OEE Maintenance Sentinel (`predictive_oee_sentinel`), Finite Production Scheduler (`line_schedule_optimizer`), Inline Vision & Yield Guardian (`inline_yield_guardian`), Batch Record Auditor (`batch_record_auditor`), Labor Line Balancing (`labor_line_balancing_agent`)",
+        terms: "OEE (Overall Equipment Effectiveness), MTS (Make-to-Stock) vs. MTO (Make-to-Order), Finite Scheduling, Changeover / Setup Time, eBHR (Electronic Batch Record), COA (Certificate of Analysis), CIP (Clean-in-Place)"
       },
       {
-        title: "Stage 4 · 📦 Local Fulfillment Center — FDC (Warehouse Pick, Pack & Ship)",
-        analogy: "🛒 Everyday Analogy: Like organizing your kitchen pantry so everyday items are at waist height in front, and milk expiring soonest is used first.",
-        happens: "Workers receive pallets at the dock (Dock-to-Stock), store fast-selling items in golden-zone bins (Slotting), group orders into picking batches (Wave Picking), and promise delivery dates to customers (ATP — Available-to-Promise).",
-        software: "WMS — Warehouse Management System (Manhattan Active, Blue Yonder WMS)",
-        breaks: "Fast-moving items are stored in high back aisles causing picker congestion, or workers ship newer batches while older batches expire on the rack (violating FEFO).",
-        terms: "FDC (Fulfillment Distribution Center), WMS (Warehouse Management System), FEFO / FIFO, Slotting, Wave Picking, Cross-Docking, ATP (Available-to-Promise)"
+        title: "Stage 3 · 🏢 Regional Distribution Center — RDC (Central Network Inventory & Buffers)",
+        whyExists: "Factories produce in large batches, but thousands of local stores need small replenishments every day. Regional Distribution Centers (RDCs) act as the central shock absorber — holding strategic safety stock buffers and distributing inventory across the country.",
+        analogy: "🏦 Everyday Analogy: Like a central Federal Reserve vault that holds bulk cash reserves and replenishes local neighborhood bank branches whenever a branch runs low.",
+        story: "1. Full truckloads of finished pallets arrive from factories at 3 to 5 huge Regional Distribution Centers (RDCs).<br/>2. Inventory Optimizers use Multi-Echelon Inventory Optimization (MEIO) math to decide how much Safety Stock and Reorder Point (ROP) buffer to hold centrally at the RDC vs. pushing forward to local warehouses.<br/>3. Planners monitor Slow-Moving & Obsolete stock (SLOB) and short-dated perishable batches so inventory doesn't expire or become dead cash.",
+        personas: "Multi-Echelon Inventory Planner (MEIO), Network Allocation Lead, Inventory Health / SLOB Analyst, Cold-Chain Inventory Steward",
+        docs: "Network Safety Stock Policy, Stock Transfer Order (STO), Inventory Aging / SLOB Report",
+        software: "Enterprise Inventory & Supply Planning (SAP IBP Inventory, Kinaxis, Manhattan, ERP MM)",
+        breaks: "Each warehouse manager hoards extra 'just-in-case' buffer in silos — locking up $40M in excess working capital while other regions simultaneously suffer stockouts!",
+        agents: "MEIO Safety Stock Agent (`meio_safety_stock_agent`), SLOB Disposition Agent (`slob_disposition_agent`), Short-Dated Redistributor (`short_dated_redistributor`), Dynamic Markdown Agent (`dynamic_markdown_agent`)",
+        terms: "RDC (Regional Distribution Center), MEIO (Multi-Echelon Inventory Optimization), Safety Stock, ROP (Reorder Point), SLOB (Slow-Moving & Obsolete Stock), DIO (Days Inventory Outstanding)"
       },
       {
-        title: "Stage 5 · 🚚 Multi-Modal Fleet & Transit (Ships, Planes, Rail & Trucks)",
-        analogy: "✈️ Everyday Analogy: Like choosing between a cheap bus, a full carpool van, or an express flight — and packing suitcases in reverse stop order.",
-        happens: "Logistics planners consolidate pallets into full 53-foot trailers (FTL — Full Truckload) loaded in reverse delivery order (LIFO), pull ocean containers from ports before free days expire (Drayage & Demurrage), and track live GPS & hours-of-service (ELD).",
-        software: "TMS — Transportation Management System (Oracle OTM, Project44, Samsara)",
-        breaks: "Containers sit at port terminals racking up $300/day Demurrage fines, or half-empty trucks leave the dock paying expensive Less-Than-Truckload (LTL) rates.",
-        terms: "TMS (Transportation Management System), FTL vs. LTL, Demurrage & Detention, Drayage, BOL (Bill of Lading), ASN (Advance Ship Notice), ePOD (Electronic Proof of Delivery)"
+        title: "Stage 4 · 📦 Local Fulfillment Center — FDC (Inside the 4 Walls of the Warehouse)",
+        whyExists: "When a retail store or online shopper places an order, boxes must be unloaded, put away in rack bins, picked accurately, packed onto store-friendly pallets, and staged at outbound dock doors within hours.",
+        analogy: "🛒 Everyday Analogy: Like organizing a giant supermarket backroom so fast-selling drinks sit right by the door at waist height, oldest milk is grabbed first, and outgoing carts are lined up by delivery route.",
+        story: "1. Inbound trucks are sequenced to unloading doors (Yard & Dock Management) and pallets are scanned into inventory (Dock-to-Stock).<br/>2. The Warehouse Management System (WMS) assigns each product to an optimal rack bin (Slotting) and groups customer orders into picking waves (Wave Picking) following First-Expired, First-Out (FEFO).<br/>3. Or, if demand is urgent, incoming pallets bypass storage racks completely and roll straight across the floor to an outbound truck (Cross-Docking).<br/>4. Meanwhile, the Available-to-Promise (ATP) engine commits exact delivery dates to customer orders in milliseconds.",
+        personas: "Warehouse Operations Manager, Slotting & Wave Supervisor, Order Promising (ATP) Specialist, Yard & Dock Coordinator",
+        docs: "GRN (Goods Receipt Note), Putaway & Pick Wave List, Cross-Dock Flow Manifest, ATP Order Confirmation",
+        software: "WMS — Warehouse Management System (Manhattan Active WMS, Blue Yonder WMS, SAP EWM)",
+        breaks: "Trucks wait 4 hours at congested yard gates; pickers walk 9 miles a day because fast-moving items are slotted in high back aisles; or low-margin orders steal stock needed for VIP retail accounts.",
+        agents: "Warehouse Slotting Optimizer (`warehouse_slotting_agent`), Wave Fulfillment Copilot (`wave_fulfillment_copilot`), ATP Order Promising Agent (`atp_order_promising_agent`), Cross-Dock Orchestrator (`crossdock_transfer_orchestrator`), Yard & Dock Sequencer (`yard_dock_sequencer`), Dock-to-Stock Agent (`dock_to_stock_agent`)",
+        terms: "FDC (Fulfillment Distribution Center), WMS (Warehouse Management System), Dock-to-Stock, Slotting, Wave Picking, Cross-Docking, FEFO / FIFO, ATP (Available-to-Promise)"
       },
       {
-        title: "Stage 6 · 🛒 Store Shelf, Customer Delivery & Reverse Returns (OTIF & RMA)",
-        analogy: "🔄 Everyday Analogy: Like delivering a pizza hot and complete on time — and deciding what to do when a customer returns an online order.",
-        happens: "Orders arrive at the retailer within the exact appointment window (OTIF — On-Time In-Full), retail shelves are audited for stockouts (Planogram), customer returns are triaged (RMA — Return Merchandise Authorization), and carbon emissions are logged (Scope 3 & CBAM).",
-        software: "Retail POS, Control Tower & Returns Portal (Loop, SAP GTS)",
-        breaks: "Walmart fines the supplier 3% for late/short deliveries (OTIF chargebacks), or shipping back a $12 returned item costs $16 in return postage!",
-        terms: "OTIF (On-Time In-Full), POS (Point of Sale), RMA (Return Merchandise Authorization), Keep-It vs. Return-It, CCC (Cash Conversion Cycle), Scope 1/2/3 & CBAM"
+        title: "Stage 5 · 🚚 Multi-Modal Fleet & Global Transit (Ocean Ships, Airplanes, Rail & Road Trucks)",
+        whyExists: "Inventory sitting in a warehouse has zero value until it physically travels across oceans, railroads, and highways to reach the customer safely, legally, and at the lowest freight cost.",
+        analogy: "✈️ Everyday Analogy: Like planning a cross-country move — choosing between ocean container ships, freight trains, or 53-foot highway trucks, packing boxes tightly to the roof in reverse stop order, and tracking live traffic.",
+        story: "1. Load Planners pack orders into 3D trailer/container blueprints (Cube Utilization), putting Stop #1 last at the rear doors (LIFO — Last-In, First-Out) while respecting highway axle weight limits.<br/>2. Port Coordinators pull ocean containers from marine terminals before free days expire (Drayage) to avoid $300/day Demurrage & Detention fines.<br/>3. Dispatchers route trucks using live traffic, weather, and driver Electronic Logging Device (ELD / Hours of Service) limits, sending an Advance Ship Notice (ASN) and Bill of Lading (BOL) ahead of the truck.",
+        personas: "Fleet & Route Dispatch Manager, Ocean Port & Drayage Lead, Air Cargo & Intermodal Planner, Freight Bill Audit Specialist",
+        docs: "BOL (Bill of Lading), ASN (Advance Ship Notice / EDI 856), 3D LIFO Load Plan, Carrier Freight Invoice",
+        software: "TMS — Transportation Management System & Telematics (Oracle OTM, Blue Yonder TMS, Project44, Samsara ELD)",
+        breaks: "Trailers leave 28% empty shipping expensive Less-Than-Truckload (LTL) pallets; containers rack up port Demurrage fees; or carriers overbill fuel surcharges and accessorial fees by 6%.",
+        agents: "FleetFlow Route & Dispatch (`fleetflow_dispatch`), 3D Load Consolidation Studio (`load_consolidation_agent`), Ocean Port Drayage Orchestrator (`port_drayage_orchestrator`), Multimodal Mode-Shift (`multimodal_mode_shift_agent`), Freight Bill Audit (`freight_bill_audit_agent`), Cold-Chain Auditor (`cold_chain_auditor`)",
+        terms: "TMS (Transportation Management System), FTL (Full Truckload) vs. LTL (Less-Than-Truckload), 3D Cube Utilization, LIFO (Last-In, First-Out), Drayage, Demurrage & Detention, BOL (Bill of Lading), ASN (Advance Ship Notice), ELD & HOS"
+      },
+      {
+        title: "Stage 6 · 🛒 Customer Delivery (OTIF), Retail Execution, Reverse Returns (RMA) & ESG",
+        whyExists: "The final mile — and the reverse loop back! Products must arrive On-Time In-Full (OTIF), get stocked properly on store shelves, handle customer returns (RMA) profitably when items come back, and report carbon emissions (Scope 3) and working capital to leadership.",
+        analogy: "🔄 Everyday Analogy: Like delivering an online grocery order inside the exact 1-hour window with a photo receipt — and handling refunds or bottle recycling afterward.",
+        story: "1. The truck arrives at the customer dock within the scheduled window, delivers 100% of ordered cases (OTIF — On-Time In-Full), and captures a signed Electronic Proof of Delivery (ePOD).<br/>2. If a retailer unfairly deducts a 3% OTIF penalty or claims OS&D (Over, Short & Damaged), the team uses GPS + ePOD + dock photos to win back the chargeback.<br/>3. Field sales vans replenish local stores (TM&D) and audit shelf compliance (Planogram).<br/>4. When customers initiate a return (RMA), AI calculates whether to refund without return ('Keep-It') or route to refurbishment, while the Control Tower tracks Scope 3 carbon (CBAM/EUDR) and Cash Conversion Cycle (CCC).",
+        personas: "Customer OTIF & Chargeback Lead, Reverse Logistics / RMA Manager, Trade Marketing (TM&D) Lead, Chief Supply Chain Officer (CSCO), Sustainability & ESG Officer",
+        docs: "ePOD (Electronic Proof of Delivery), OTIF Dispute Dossier, RMA (Return Merchandise Authorization), Scope 3 Carbon & CBAM Certificate",
+        software: "Enterprise Control Tower, Retail Execution & Returns Systems (SAP GTS, Loop Returns, Looker / BigQuery Twin)",
+        breaks: "Retailers deduct millions in unchallenged OTIF penalties; companies spend $15 in return shipping to take back a $10 item; or sudden port strikes paralyze multiple pillars at once.",
+        agents: "CSCO Control Tower Copilot (`csco_control_tower_copilot`), Disruption War-Room (`disruption_war_room_orchestrator`), OTIF Penalty Shield (`otif_penalty_shield`), Keep-It vs. Return Advisor (`keep_it_routing_advisor`), Returns Triage (`returns_triage_agent`), Scope 3 Carbon Ledger (`carbon_scope3_ledger`), Working Capital Cash Bridge (`working_capital_cash_bridge`)",
+        terms: "OTIF (On-Time In-Full), ePOD (Electronic Proof of Delivery), OS&D (Over, Short & Damaged), TM&D & Planogram, RMA (Return Merchandise Authorization), Keep-It vs. Return-It, CCC (Cash Conversion Cycle), Scope 1/2/3, CBAM & EUDR"
       }
     ];
+
+    let currentStageIdx = 0;
 
     function switchChapter(id, btn) {
       document.querySelectorAll('.g-pane').forEach(p => p.classList.remove('active'));
@@ -600,39 +775,67 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    function stepStage(delta) {
+      const next = (currentStageIdx + delta + STAGES.length) % STAGES.length;
+      const btns = document.querySelectorAll('#stageBtnRow .g-btn');
+      showStageTable(next, btns[next]);
+    }
+
     function showStageTable(idx, btn) {
+      currentStageIdx = idx;
       if (btn) {
         document.querySelectorAll('#stageBtnRow .g-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
       }
       const s = STAGES[idx];
       document.getElementById('stageTableMount').innerHTML = `
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px;">
+          <button type="button" class="g-btn" onclick="stepStage(-1)">&larr; Previous Stage</button>
+          <strong style="color:#1A73E8; font-size:18px;">Viewing Stage ${idx} of 6 (${idx + 1} of 7 Total Steps)</strong>
+          <button type="button" class="g-btn g-btn-primary" onclick="stepStage(1)">Next Stage &rarr;</button>
+        </div>
         <div class="g-table-wrap">
           <table class="g-table">
             <thead>
               <tr>
-                <th colspan="2" style="background:#E8F0FE; color:#1A73E8; font-size:17px;">${s.title}</th>
+                <th colspan="2" style="background:#E8F0FE; color:#1A73E8; font-size:18px; padding:18px 22px;">${s.title}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="width:240px; font-weight:700; color:#1A73E8;">💡 Everyday Analogy</td>
-                <td style="font-weight:600;">${s.analogy}</td>
+                <td style="width:260px; font-weight:700; color:#1A73E8;">🎯 1. What This Stage Is &amp; Why It Exists</td>
+                <td style="font-size:17px; font-weight:500;">${s.whyExists}</td>
               </tr>
               <tr>
-                <td style="font-weight:700; color:#1E8E3E;">⚙️ What Happens Here</td>
-                <td>${s.happens}</td>
+                <td style="font-weight:700; color:#B06000;">💡 2. Everyday Real-Life Analogy</td>
+                <td style="font-weight:600; background:#FEF7E0;">${s.analogy}</td>
               </tr>
               <tr>
-                <td style="font-weight:700; color:#9334E6;">💻 Software Used</td>
+                <td style="font-weight:700; color:#1E8E3E;">📦 3. Step-by-Step What Actually Happens Here</td>
+                <td>${s.story}</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#202124;">👥 4. Who Works Here (Human Roles)</td>
+                <td>${s.personas}</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#007B83;">📄 5. Key Documents &amp; Data Passed Forward</td>
+                <td><strong>${s.docs}</strong></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#9334E6;">💻 6. Software Systems Used</td>
                 <td><strong>${s.software}</strong></td>
               </tr>
               <tr>
-                <td style="font-weight:700; color:#D93025;">⚠️ What Goes Wrong</td>
-                <td>${s.breaks}</td>
+                <td style="font-weight:700; color:#D93025;">⚠️ 7. What Goes Wrong &amp; Why It Costs Millions</td>
+                <td style="background:#FCE8E6; color:#C5221F; font-weight:500;">${s.breaks}</td>
               </tr>
               <tr>
-                <td style="font-weight:700; color:#B06000;">🔤 Terms Used Here</td>
+                <td style="font-weight:700; color:#1E8E3E;">🤖 8. How Our AI Agents Solve It</td>
+                <td style="background:#E6F4EA; color:#137333; font-weight:600;">${s.agents}</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#5F6368;">🔤 9. Key Abbreviations in This Stage</td>
                 <td><code>${s.terms}</code></td>
               </tr>
             </tbody>
