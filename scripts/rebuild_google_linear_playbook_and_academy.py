@@ -688,7 +688,7 @@ def build_google_linear_playbook() -> None:
                 "solution": sol_explained,
                 "outcome": out_explained,
                 "realWorld": real_world_example,
-                "prompt": demo_prompt,
+                "prompt": ui_prompts[0]["prompt"] if ui_prompts else demo_prompt,
                 "readTools": read_tools,
                 "writeTools": write_tools,
                 "analyzeToolName": deep["analyzeToolName"],
@@ -1442,13 +1442,13 @@ def build_google_linear_playbook() -> None:
         <!-- CARD 3: 5 INTERACTIVE TEST PROMPTS & WHAT TO EXPECT -->
         <section class="g-card" style="border-top: 6px solid #1A73E8;">
           <div class="g-step-badge" style="background:#E8F0FE; color:#1A73E8;">
-            🧪 PART 3 · 5 COPY-READY TEST PROMPTS &amp; EXACT EXPECTED BEHAVIOR PER MODE
+            🧪 PART 3 · 5 NATURAL PLAIN-ENGLISH TEST PROMPTS &amp; EXPECTED AGENT BEHAVIOR
           </div>
           <h3 style="font-family:var(--font-display); font-size:22px; margin:0 0 8px;">
-            Click Any Test Mode Below to Copy Its Prompt &amp; See Which Tools Fire + What to Expect
+            Ask in Plain Everyday English — The Agent Automatically Finds the Right Tables &amp; Runs the Math
           </h3>
           <p style="color:var(--text-sub); margin:0 0 14px;">
-            Covers Read-Only Python Analytics (0 mutations), Live Visual Charting (A2UI <code>VegaChart</code> + PNG), Persona Brief Drafting, Authorized Write-Back, and Safety Gate Refusal:
+            No table names, tool names, or technical codes needed: just copy a human-style business prompt below. Behind the scenes, the agent automatically queries its connected tables, runs Python calculations, renders an interactive <code>VegaChart</code> card, and replies in clear, medium-length plain English with abbreviations spelled out:
           </p>
           <div class="g-mode-tabs" id="promptModeTabs"></div>
           <div id="promptActiveBox"></div>

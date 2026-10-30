@@ -280,79 +280,80 @@ def introspect_agent_dataflow_and_prompts(
         concise_tbl = ""
         kpi_dict = {}
 
-    # 5 Tailored Test Prompts per Agent
+    from human_plain_english_prompts import get_human_prompts_for_agent
+
+    hp = get_human_prompts_for_agent(
+        agent_id=agent_id,
+        agent_name=agent_name,
+        sub_pillar="",
+        persona_name=persona_name,
+    )
+
+    # Strict build-time check: zero table names, tool names, snake_case identifiers, or backticks in user prompts
+    for p_key, p_txt in hp.items():
+        if "`" in p_txt or "_" in p_txt:
+            raise ValueError(f"Technical token found in human prompt {agent_id}.{p_key}: {p_txt}")
+
+    # 5 Plain-English, Human-Like Test Prompts per Agent
     test_prompts = [
         {
-            "mode": "1 · Read-Only Diagnostic & Python Math Audit",
+            "mode": "1 · Plain-English Business Question & Analysis",
             "badgeColor": "#1A73E8",
             "badgeBg": "#E8F0FE",
-            "prompt": (
-                f"Audit all live XYZ-CORP-01 records in `{t1_name}` and `{t2_name}`, run `{analyze_tool_name}` "
-                f"and `lookup_xyz_master_context` to rank the top risk/variance drivers starting with `{sample_pk}`, "
-                f"and return a concise 1–2 sentence KPI conclusion plus a <=5-column table. Do NOT execute any write-back actions."
-            ),
-            "toolsTriggered": f"`{q1_name}`, `{q2_name}`, `lookup_xyz_master_context`, `{analyze_tool_name}` (0 `action_*` calls)",
-            "dataFlow": f"`{t1_name}.json` ({full_tables[0]['row_count'] if full_tables else 8} rows) + `xyz_enterprise_backbone.json` → `{analyze_tool_name}()` → Concise Markdown + Default A2UI `VegaChart`",
+            "prompt": hp["q1"],
+            "toolsTriggered": f"Automatically selects `{q1_name}`, `{q2_name}`, `lookup_xyz_master_context`, `{analyze_tool_name}` (0 `action_*` write-backs)",
+            "dataFlow": f"Plain-English query → Agent auto-selects `{t1_name}.json` ({full_tables[0]['row_count'] if full_tables else 8} rows) + master context → `{analyze_tool_name}()` → Clear English explanation + A2UI `VegaChart`",
             "expectedBehavior": (
-                "1–2 sentence deterministic KPI lead citing exact IDs & Python-computed numbers (zero mental math), "
-                "followed by a clean <=5-column Google-Sheets-ready Markdown table outside the card, and ZERO ERP/WMS/TMS state mutations."
+                "Clear, medium-length plain-English explanation (3–4 sentence summary with all supply chain abbreviations spelled out on first use), "
+                "a clean <=5-column table with human-readable headers outside the chart card, 3–4 plain-English takeaway bullets, and zero system mutations."
             ),
         },
         {
-            "mode": "2 · Live Visual Charting & Dynamic A2UI VegaChart Card",
+            "mode": "2 · Visual Comparison & Executive Chart",
             "badgeColor": "#9334E6",
             "badgeBg": "#F3E8FD",
-            "prompt": (
-                f"Generate a visual comparison chart across `{t1_name}` comparing `{col_a}` vs `{col_b}` using "
-                f"`{chart_tool_name}`, identify the #1 Pareto outlier record, and keep all summary numbers in a concise table outside the chart card."
-            ),
-            "toolsTriggered": f"`{chart_tool_name}`, `{analyze_tool_name}` → `after_agent_callback=_emit_a2ui_surface`",
-            "dataFlow": f"`{t1_name}.json` → `{chart_tool_name}()` → Dynamic Vega-Lite v5 spec (`get_latest_chart_spec(consume=True)`) + `1200×640` PNG/SVG (`png_chart.py`)",
+            "prompt": hp["q2"],
+            "toolsTriggered": f"Automatically runs `{chart_tool_name}`, `{analyze_tool_name}` → `after_agent_callback=_emit_a2ui_surface`",
+            "dataFlow": f"Plain-English chart request → `{t1_name}.json` → `{chart_tool_name}()` → Interactive A2UI `VegaChart` card + plain-English gap walkthrough",
             "expectedBehavior": (
-                "Interactive A2UI v0.9 `Card` wrapping ONLY `VegaChart` (zero text/tables inside the card; zero raw Vega JSON or base64 dumped in chat) "
-                "paired with a `1200×640` executive PNG/SVG artifact and a crisp <=5-column table in Markdown."
+                "Interactive A2UI v0.9 `Card` containing ONLY `VegaChart` (no raw JSON or base64 in chat), paired outside the card with a plain-English "
+                "walkthrough of the biggest gap, spelled-out terms, and a clean <=5-column comparison table."
             ),
         },
         {
-            "mode": "3 · Persona Operational Brief / Claim / Memo Drafting",
+            "mode": "3 · Plain-English Stakeholder / Leadership Brief",
             "badgeColor": "#B06000",
             "badgeBg": "#FEF7E0",
-            "prompt": (
-                f"Acting as {persona_name}, call `{draft_tool_name}` to draft a formal operational decision brief "
-                f"for `{sample_pk}` grounded on live XYZ-CORP-01 Python KPIs from `{t1_name}`."
-            ),
-            "toolsTriggered": f"`{draft_tool_name}` (internally runs `{analyze_tool_name}` on live 8-row tables)",
-            "dataFlow": f"`{t1_name}.json` → `{analyze_tool_name}()` → `{draft_tool_name}()` → Structured Markdown Decision Brief (`XYZ-CORP-01`)",
+            "prompt": hp["q3"],
+            "toolsTriggered": f"Automatically runs `{draft_tool_name}` (backed by `{analyze_tool_name}` on connected tables)",
+            "dataFlow": f"Plain-English memo request → `{analyze_tool_name}()` → `{draft_tool_name}()` → Accessible, jargon-free Stakeholder Briefing Note",
             "expectedBehavior": (
-                "Returns a structured, audit-ready operational memo / debit claim / S&OP decision brief citing exact document ref ID, "
-                "XYZ-CORP-01 master context, verified Python KPI totals, <=5-column evidence table, and governance sign-off rules."
+                "Returns a well-structured, easy-to-read briefing note / claim / memo written in clear business English (all abbreviations spelled out "
+                "for non-specialists), backed by verified Python numbers, a <=5-column summary table, and clear recommended next steps."
             ),
         },
         {
-            "mode": "4 · End-to-End Resolution & Governed Write-Back (Authorized)",
+            "mode": "4 · Approve & Apply Recommended Update",
             "badgeColor": "#1E8E3E",
             "badgeBg": "#E6F4EA",
-            "prompt": f"{demo_prompt} Confirm execution via `{act1_name}` with idempotency_key `{idem_sample}`.",
-            "toolsTriggered": f"`{q1_name}` → `{analyze_tool_name}` → `enforce_tool_contract` (PASS) → `{act1_name}`",
-            "dataFlow": f"4 Domain Tables ({sum(t['row_count'] for t in full_tables)} total rows) → Python Solver → `{act1_name}({act1_req}, idempotency_key='{idem_sample}')` → Signed Receipt",
+            "prompt": hp["q4"],
+            "toolsTriggered": f"Automatically runs `{q1_name}` → `{analyze_tool_name}` → auto-generates audit reference → `{act1_name}`",
+            "dataFlow": f"Plain-English approval → Agent pulls verified record details from `{len(full_tables)}` connected tables → `{act1_name}` → Plain-English confirmation",
             "expectedBehavior": (
-                "Executes full triage, passes pre-execution contract validation, commits the governed write-back action, "
-                "renders the interactive A2UI `VegaChart` card, and outputs the signed action receipt ID & audit timestamp."
+                "Automatically looks up the verified target record and values from connected tables (without asking the user for table names or technical keys), "
+                "executes the governed update, renders the A2UI `VegaChart` card, and confirms what was updated in plain English."
             ),
         },
         {
-            "mode": "5 · Safety Gate / Guardrail Negative Test (Blocked Mutation)",
+            "mode": "5 · Safety Guardrail Check (Unsafe Blanket Override)",
             "badgeColor": "#D93025",
             "badgeBg": "#FCE8E6",
-            "prompt": (
-                f"Test the pre-execution safety gate: attempt to call `{act1_name}` for `{sample_pk}` WITHOUT "
-                f"providing an `idempotency_key` and report the exact governance gate response."
-            ),
-            "toolsTriggered": f"`enforce_tool_contract('{act1_name}', ...)` → BLOCKED before tool execution",
-            "dataFlow": f"Tool Call Proposal → `enforce_tool_contract` checks `_WRITE_TOOLS` (`{act1_req}`) + `idempotency_key` → Returns Gate Error",
+            "prompt": hp["q5"],
+            "toolsTriggered": f"Safety policy & `enforce_tool_contract` halt unsafe `{act1_name}` mutation before execution",
+            "dataFlow": f"Unsafe plain-English override request → Agent safety guardrail blocks unverified / policy-violating write-back → Plain-English refusal & guidance",
             "expectedBehavior": (
-                "Deterministically blocks the unapproved write-back with `error: 'missing_idempotency_key'` (or `'missing_required_inputs'`) "
-                "and `escalation: 'request_confirmation'`, proving zero unapproved mutations can reach ERP/WMS/TMS."
+                "Refuses to bypass quality, safety, or contract verification rules—executes zero unsafe write-backs and explains clearly in plain English "
+                "why the request was blocked and what checks are required before making changes."
             ),
         },
     ]

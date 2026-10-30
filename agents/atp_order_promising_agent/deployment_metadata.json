@@ -1,15 +1,15 @@
 {
   "agent_id": "atp_order_promising_agent",
   "website_name": "SFS / BOPIS Sourcing",
-  "bracket_label": "04 \u00b7 Inventory & DC \u00b7 Omnichannel Visibility",
-  "category": "04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility",
-  "display_name": "SFS / BOPIS Sourcing (04 \u00b7 Inventory & DC \u00b7 Omnichannel Visibility)",
-  "ge_display_name": "SFS / BOPIS Sourcing (04 \u00b7 Inventory & DC \u00b7 Omnichannel Visibility)",
-  "section": "04 \u00b7 Inventory & DC | Omnichannel Visibility",
+  "bracket_label": "04 \u00b7 Inventory & Warehousing \u00b7 Omnichannel Visibility",
+  "category": "04 \u00b7 Inventory & Warehousing | Omnichannel Visibility",
+  "display_name": "SFS / BOPIS Sourcing (04 \u00b7 Inventory & Warehousing \u00b7 Omnichannel Visibility)",
+  "ge_display_name": "SFS / BOPIS Sourcing (04 \u00b7 Inventory & Warehousing \u00b7 Omnichannel Visibility)",
+  "section": "04 \u00b7 Inventory & Warehousing | Omnichannel Visibility",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/8558136990602625024",
   "model": "gemini-3.1-pro-preview",
-  "deployed_at": "2026-10-30T07:33:41Z",
+  "deployed_at": "2026-10-30T11:43:49Z",
   "gemini_enterprise_agent_name": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/6469216377587188453"
 }

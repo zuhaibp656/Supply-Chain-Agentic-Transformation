@@ -1,15 +1,15 @@
 {
   "agent_id": "sop_scenario_weaver",
   "website_name": "Consensus & Gap Agent",
-  "bracket_label": "01 \u00b7 Plan \u00b7 S&OP / IBP",
-  "category": "01 \u00b7 Planning & Strategy \u2014 S&OP / IBP",
-  "display_name": "Consensus & Gap Agent (01 \u00b7 Plan \u00b7 S&OP / IBP)",
-  "ge_display_name": "Consensus & Gap Agent (01 \u00b7 Plan \u00b7 S&OP / IBP)",
-  "section": "01 \u00b7 Plan | S&OP / IBP",
+  "bracket_label": "01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP",
+  "category": "01 \u00b7 Planning & Strategy | S&OP / IBP",
+  "display_name": "Consensus & Gap Agent (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
+  "ge_display_name": "Consensus & Gap Agent (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
+  "section": "01 \u00b7 Planning & Strategy | S&OP / IBP",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/8086384929635565568",
   "model": "gemini-3.1-pro-preview",
-  "deployed_at": "2026-10-30T07:29:33Z",
+  "deployed_at": "2026-10-30T11:41:02Z",
   "gemini_enterprise_agent_name": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9189674696747625515"
 }

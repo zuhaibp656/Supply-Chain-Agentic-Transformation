@@ -259,14 +259,17 @@ def _detect_agent_model_and_class(agent_dir: Path, aid: str) -> tuple[str, str]:
     return app_class, model
 
 
-def _build_playbook_starter_prompts(website_name: str, bracket_label: str) -> List[str]:
-    """Builds 4 crisp Playbook-aligned starter prompts (Diagnostic, Chart, Brief Draft, Write-Back Check)."""
-    return [
-        f"Run a read-only {website_name} diagnostic on XYZ-CORP-01 data and show the top KPI table.",
-        f"Analyze operational metrics for {website_name} and render the visual comparison chart.",
-        f"Draft a concise {website_name} operational action brief citing exact XYZ-CORP-01 IDs and variances.",
-        f"Show the recommended {bracket_label} remediation action and verify pre-execution safety gates.",
-    ]
+def _build_playbook_starter_prompts(agent_id: str, website_name: str, sub_pillar: str, persona_name: str) -> List[str]:
+    """Builds 4 natural, plain-English human starter prompts (zero table/tool/code jargon) aligned with the Playbook."""
+    from human_plain_english_prompts import get_human_prompts_for_agent
+
+    hp = get_human_prompts_for_agent(
+        agent_id=agent_id,
+        agent_name=website_name,
+        sub_pillar=sub_pillar,
+        persona_name=persona_name,
+    )
+    return [hp["q1"], hp["q2"], hp["q3"], hp["q4"]]
 
 
 def build_all_60_agents_config() -> Dict[str, Dict[str, Any]]:
@@ -317,6 +320,8 @@ def build_all_60_agents_config() -> Dict[str, Dict[str, Any]]:
             if candidate and candidate not in legacy_list:
                 legacy_list.append(candidate)
 
+        persona_name = ag.get("primaryPersonaName") or "Supply Chain Lead"
+
         configs[aid] = {
             "section": cat_full,
             "bracket_label": bracket_label,
@@ -330,11 +335,11 @@ def build_all_60_agents_config() -> Dict[str, Dict[str, Any]]:
             "icon": AGENT_ICONS.get(aid, "smart_toy"),
             "app_class": app_class,
             "tool_description": (
-                f"({bracket_label}) Invoke {website_name} to query XYZ-CORP-01 enterprise tables, "
-                f"run deterministic Python optimization math, render interactive VegaChart cards, "
-                f"draft persona briefs, and execute governed ERP/WMS/TMS write-backs."
+                f"({bracket_label}) Invoke {website_name} to automatically pull connected supply chain data, "
+                f"run Python calculations, render interactive charts, draft plain-English briefs, "
+                f"and execute governed updates."
             ),
-            "starter_prompts": _build_playbook_starter_prompts(website_name, bracket_label),
+            "starter_prompts": _build_playbook_starter_prompts(aid, website_name, sub_pillar, persona_name),
         }
 
     return configs
@@ -346,7 +351,11 @@ _TOKEN_OVERRIDE: str | None = None
 
 
 def sync_gcloud_db_to_argolis_adc(project: str) -> None:
-    """Syncs fresh admin@zuhaibp.altostrat.com OAuth refresh_token from gcloud credentials.db to ADC."""
+    """Syncs fresh admin@zuhaibp.altostrat.com OAuth refresh_token from gcloud credentials.db to ADC.
+
+    Guards against CloudTop VSCode's credential_file_override client_id (681255809395-...),
+    which stores @google.com tokens under the active account label.
+    """
     db_path = GCLOUD_DIR / "credentials.db"
     if not db_path.exists():
         return
@@ -357,10 +366,14 @@ def sync_gcloud_db_to_argolis_adc(project: str) -> None:
         for account_id, val in cur.fetchall():
             if "zuhaibp.altostrat.com" in account_id:
                 data = json.loads(val)
-                if data.get("refresh_token") and data.get("client_id"):
+                cid = str(data.get("client_id", ""))
+                # Never overwrite Argolis ADC with VSCode's @google.com OAuth client (681255809395)
+                if cid.startswith("681255809395"):
+                    continue
+                if data.get("refresh_token") and cid:
                     payload = {
                         "account": account_id,
-                        "client_id": data["client_id"],
+                        "client_id": cid,
                         "client_secret": data["client_secret"],
                         "refresh_token": data["refresh_token"],
                         "type": "authorized_user",

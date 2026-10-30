@@ -1,15 +1,15 @@
 {
   "agent_id": "finite_production_scheduler",
   "website_name": "Changeover Optimizer",
-  "bracket_label": "03 \u00b7 Make \u00b7 Production Scheduling",
-  "category": "03 \u00b7 Manufacturing & Production \u2014 Production Scheduling",
-  "display_name": "Changeover Optimizer (03 \u00b7 Make \u00b7 Production Scheduling)",
-  "ge_display_name": "Changeover Optimizer (03 \u00b7 Make \u00b7 Production Scheduling)",
-  "section": "03 \u00b7 Make | Production Scheduling",
+  "bracket_label": "03 \u00b7 Manufacturing & Production \u00b7 Production Scheduling",
+  "category": "03 \u00b7 Manufacturing & Production | Production Scheduling",
+  "display_name": "Changeover Optimizer (03 \u00b7 Manufacturing & Production \u00b7 Production Scheduling)",
+  "ge_display_name": "Changeover Optimizer (03 \u00b7 Manufacturing & Production \u00b7 Production Scheduling)",
+  "section": "03 \u00b7 Manufacturing & Production | Production Scheduling",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/8139317618419957760",
   "model": "gemini-3.1-pro-preview",
-  "deployed_at": "2026-10-30T07:32:14Z",
+  "deployed_at": "2026-10-30T11:43:42Z",
   "gemini_enterprise_agent_name": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/16838162618721244143"
 }

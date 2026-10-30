@@ -1,15 +1,15 @@
 {
   "agent_id": "warehouse_slotting_agent",
   "website_name": "Dynamic Slotting Agent",
-  "bracket_label": "04 \u00b7 Inventory & DC \u00b7 Warehouse Operations",
-  "category": "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations",
-  "display_name": "Dynamic Slotting Agent (04 \u00b7 Inventory & DC \u00b7 Warehouse Operations)",
-  "ge_display_name": "Dynamic Slotting Agent (04 \u00b7 Inventory & DC \u00b7 Warehouse Operations)",
-  "section": "04 \u00b7 Inventory & DC | Warehouse Operations",
+  "bracket_label": "04 \u00b7 Inventory & Warehousing \u00b7 Warehouse Operations",
+  "category": "04 \u00b7 Inventory & Warehousing | Warehouse Operations",
+  "display_name": "Dynamic Slotting Agent (04 \u00b7 Inventory & Warehousing \u00b7 Warehouse Operations)",
+  "ge_display_name": "Dynamic Slotting Agent (04 \u00b7 Inventory & Warehousing \u00b7 Warehouse Operations)",
+  "section": "04 \u00b7 Inventory & Warehousing | Warehouse Operations",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/6594019996278456320",
   "model": "gemini-3.1-pro-preview",
-  "deployed_at": "2026-10-30T07:33:37Z",
+  "deployed_at": "2026-10-30T11:43:50Z",
   "gemini_enterprise_agent_name": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/680853864033816982"
 }

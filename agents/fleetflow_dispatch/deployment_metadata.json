@@ -1,15 +1,15 @@
 {
   "agent_id": "fleetflow_dispatch",
   "website_name": "Dynamic Rerouter",
-  "bracket_label": "05 \u00b7 Logistics \u00b7 Route & Carrier",
-  "category": "05 \u00b7 Distribution & Logistics \u2014 Route & Carrier",
-  "display_name": "Dynamic Rerouter (05 \u00b7 Logistics \u00b7 Route & Carrier)",
-  "ge_display_name": "Dynamic Rerouter (05 \u00b7 Logistics \u00b7 Route & Carrier)",
-  "section": "05 \u00b7 Logistics | Route & Carrier",
+  "bracket_label": "05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier",
+  "category": "05 \u00b7 Distribution & Logistics | Route & Carrier",
+  "display_name": "Dynamic Rerouter (05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier)",
+  "ge_display_name": "Dynamic Rerouter (05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier)",
+  "section": "05 \u00b7 Distribution & Logistics | Route & Carrier",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/1064147210658119680",
   "model": "gemini-3.1-pro-preview",
-  "deployed_at": "2026-10-30T07:35:53Z",
+  "deployed_at": "2026-10-30T11:46:56Z",
   "gemini_enterprise_agent_name": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9502278280664039255"
 }

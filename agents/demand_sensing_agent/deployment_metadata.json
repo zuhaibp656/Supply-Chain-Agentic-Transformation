@@ -1,15 +1,15 @@
 {
   "agent_id": "demand_sensing_agent",
   "website_name": "Demand Sensing Agent",
-  "bracket_label": "01 \u00b7 Plan \u00b7 Demand Forecasting",
-  "category": "01 \u00b7 Planning & Strategy \u2014 Demand Forecasting",
-  "display_name": "Demand Sensing Agent (01 \u00b7 Plan \u00b7 Demand Forecasting)",
-  "ge_display_name": "Demand Sensing Agent (01 \u00b7 Plan \u00b7 Demand Forecasting)",
-  "section": "01 \u00b7 Plan | Demand Forecasting",
+  "bracket_label": "01 \u00b7 Planning & Strategy \u00b7 Demand Forecasting",
+  "category": "01 \u00b7 Planning & Strategy | Demand Forecasting",
+  "display_name": "Demand Sensing Agent (01 \u00b7 Planning & Strategy \u00b7 Demand Forecasting)",
+  "ge_display_name": "Demand Sensing Agent (01 \u00b7 Planning & Strategy \u00b7 Demand Forecasting)",
+  "section": "01 \u00b7 Planning & Strategy | Demand Forecasting",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/6872242617594150912",
   "model": "gemini-3.1-pro-preview",
-  "deployed_at": "2026-10-30T07:29:42Z",
+  "deployed_at": "2026-10-30T11:40:31Z",
   "gemini_enterprise_agent_name": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4275760174019143309"
 }

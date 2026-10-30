@@ -1,15 +1,15 @@
 {
   "agent_id": "working_capital_cash_bridge",
   "website_name": "SKU Pruning Agent",
-  "bracket_label": "01 \u00b7 Plan \u00b7 Portfolio & SKU",
-  "category": "01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU",
-  "display_name": "SKU Pruning Agent (01 \u00b7 Plan \u00b7 Portfolio & SKU)",
-  "ge_display_name": "SKU Pruning Agent (01 \u00b7 Plan \u00b7 Portfolio & SKU)",
-  "section": "01 \u00b7 Plan | Portfolio & SKU",
+  "bracket_label": "01 \u00b7 Planning & Strategy \u00b7 Portfolio & SKU",
+  "category": "01 \u00b7 Planning & Strategy | Portfolio & SKU",
+  "display_name": "SKU Pruning Agent (01 \u00b7 Planning & Strategy \u00b7 Portfolio & SKU)",
+  "ge_display_name": "SKU Pruning Agent (01 \u00b7 Planning & Strategy \u00b7 Portfolio & SKU)",
+  "section": "01 \u00b7 Planning & Strategy | Portfolio & SKU",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/5833474609206263808",
   "model": "gemini-3.1-pro-preview",
-  "deployed_at": "2026-10-30T07:30:22Z",
+  "deployed_at": "2026-10-30T11:40:48Z",
   "gemini_enterprise_agent_name": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/14094336958774128849"
 }

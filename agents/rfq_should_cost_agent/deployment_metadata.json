@@ -1,15 +1,15 @@
 {
   "agent_id": "rfq_should_cost_agent",
   "website_name": "Dynamic Should-Cost Agent",
-  "bracket_label": "02 \u00b7 Source \u00b7 Material & Packaging",
-  "category": "02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging",
-  "display_name": "Dynamic Should-Cost Agent (02 \u00b7 Source \u00b7 Material & Packaging)",
-  "ge_display_name": "Dynamic Should-Cost Agent (02 \u00b7 Source \u00b7 Material & Packaging)",
-  "section": "02 \u00b7 Source | Material & Packaging",
+  "bracket_label": "02 \u00b7 Sourcing & Procurement \u00b7 Material & Packaging",
+  "category": "02 \u00b7 Sourcing & Procurement | Material & Packaging",
+  "display_name": "Dynamic Should-Cost Agent (02 \u00b7 Sourcing & Procurement \u00b7 Material & Packaging)",
+  "ge_display_name": "Dynamic Should-Cost Agent (02 \u00b7 Sourcing & Procurement \u00b7 Material & Packaging)",
+  "section": "02 \u00b7 Sourcing & Procurement | Material & Packaging",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/7647283965966942208",
   "model": "gemini-3.1-pro-preview",
-  "deployed_at": "2026-10-30T07:32:11Z",
+  "deployed_at": "2026-10-30T11:43:26Z",
   "gemini_enterprise_agent_name": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/18006815538360774894"
 }
