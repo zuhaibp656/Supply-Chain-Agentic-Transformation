@@ -1,3 +1,9 @@
 playbook_id,threat_id,impacted_component,primary_supplier_impacted,backup_qualified_supplier,target_po_reallocation_units,reallocation_split_pct,additional_expedite_cost_usd,revenue_protected_usd,meio_safety_buffer_days_increase,mitigation_confidence
 PB-DUAL-SOURCE-ALUM,THREAT-CYCLONE-QLD-01,RAW-ALUM-INGOT-P1020A,Alcoa International Smelter (IS),Hydro Aluminium (NO),4500000,50.0,68000.0,18243000.0,7.0,0.96
 PB-BACKUP-ELECTROLYTE,THREAT-SEISMIC-KANAGAWA-02,CHEM-ELECTROLYTE-LIPF6,Showa Denko Chemical Specialty,Mitsubishi Chemical Specialty,600000,40.0,32000.0,4788000.0,5.0,0.91
+PB-DUAL-SOURCE-ALUM-R02CD4,THREAT-CYCLONE-QLD-16,RAW-ALUM-INGOT-P1020A,Alcoa International Smelter (IS),Hydro Aluminium (NO),3870000,41.5,62560.0,20614590.0,5.81,0.99
+PB-BACKUP-ELECTROLYTE-R035FD,THREAT-SEISMIC-KANAGAWA-24,CHEM-ELECTROLYTE-LIPF6,Showa Denko Chemical Specialty,Mitsubishi Chemical Specialty,678000,36.8,26560.0,5985000.0,5.65,0.837
+PB-DUAL-SOURCE-ALUM-R040C4,THREAT-CYCLONE-QLD-30,RAW-ALUM-INGOT-P1020A,Alcoa International Smelter (IS),Hydro Aluminium (NO),4140000,43.0,62560.0,16783560.0,8.33,0.99
+PB-BACKUP-ELECTROLYTE-R0561D,THREAT-SEISMIC-KANAGAWA-38,CHEM-ELECTROLYTE-LIPF6,Showa Denko Chemical Specialty,Mitsubishi Chemical Specialty,678000,47.6,40000.0,5985000.0,3.9,0.974
+PB-DUAL-SOURCE-ALUM-R06B12,THREAT-CYCLONE-QLD-44,RAW-ALUM-INGOT-P1020A,Alcoa International Smelter (IS),Hydro Aluminium (NO),3510000,41.5,72760.0,20614590.0,7.49,0.99
+PB-BACKUP-ELECTROLYTE-R07C00,THREAT-SEISMIC-KANAGAWA-52,CHEM-ELECTROLYTE-LIPF6,Showa Denko Chemical Specialty,Mitsubishi Chemical Specialty,468000,31.2,27520.0,4404960.0,4.15,0.99

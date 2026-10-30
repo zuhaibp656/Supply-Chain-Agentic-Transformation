@@ -1,4 +1,9 @@
-customer_id,customer_name,tier,country,otif_target_pct,chargeback_penalty_pct,primary_skus
-CUST-XYZ-TIER1-AUTOWORKS,EuroAuto Mobility AG,STRATEGIC_TIER_1,DE,98.5,5.0,"[""SKU-XYZ-101"", ""SKU-XYZ-309"", ""SKU-XYZ-518""]"
-CUST-XYZ-TIER1-MEGAMART,MegaMart National Retail Corp,STRATEGIC_TIER_1,US,99.0,3.5,"[""SKU-XYZ-204"", ""SKU-XYZ-412""]"
-CUST-XYZ-TIER2-METROCPG,MetroFresh Hypermarkets India,PREMIER_TIER_2,IN,96.0,2.0,"[""SKU-XYZ-204"", ""SKU-XYZ-625""]"
+customer_id,customer_name,tier,channel,country,otif_target_pct,chargeback_penalty_pct,min_remaining_shelf_life_pct,primary_skus
+CUST-XYZ-TIER1-MEGAMART,MegaMart National Supercenters Corp,STRATEGIC_TIER_1,NATIONAL_GROCERY_MASS,US,98.5,3.5,75.0,"[""SKU-XYZ-204"", ""SKU-BEV-ISOTONIC-32OZ"", ""SKU-BEV-OATMILK-1L"", ""SKU-SNACK-PROTEIN-BAR""]"
+CUST-KROGER-US01,Kroger Fresh & Marketplace Divisions,STRATEGIC_TIER_1,REGIONAL_SUPERMARKET,US,98.0,3.0,70.0,"[""SKU-BEV-ISOTONIC-32OZ"", ""SKU-BEV-OATMILK-1L"", ""SKU-DAIRY-PROBIOTIC-6PK""]"
+CUST-COSTCO-US04,Costco Club Wholesale North America,STRATEGIC_TIER_1,CLUB_WHOLESALE,US,99.0,4.0,80.0,"[""SKU-XYZ-204"", ""SKU-SNACK-PROTEIN-BAR""]"
+CUST-XYZ-TIER1-AUTOWORKS,EuroAuto Mobility & Powertrain AG,STRATEGIC_TIER_1,OEM_AUTOMOTIVE_JIT,DE,99.2,5.0,50.0,"[""SKU-XYZ-101"", ""SKU-XYZ-309"", ""SKU-XYZ-518""]"
+CUST-MEDLINE-BIO01,MedCore Specialty Hospital Biologics Network,STRATEGIC_TIER_1,HEALTHCARE_COLD_CHAIN,DE,99.5,6.0,65.0,"[""SKU-CRYO-4410-BIO"", ""SKU-XYZ-412""]"
+CUST-XYZ-TIER2-METROCPG,MetroFresh Hypermarkets & Quick-Commerce India,PREMIER_TIER_2,MODERN_TRADE_INDIA,IN,96.0,2.0,65.0,"[""SKU-XYZ-204"", ""SKU-DAIRY-PROBIOTIC-6PK"", ""SKU-XYZ-625""]"
+CUST-ALDI-OUTLET-US09,ValueMax Closeout & Secondary Grocery Grocers,SECONDARY_CLEARANCE,DISCOUNT_OUTLET,US,92.0,0.0,30.0,"[""SKU-BEV-OATMILK-1L"", ""SKU-DAIRY-PROBIOTIC-6PK"", ""SKU-SNACK-PROTEIN-BAR""]"
+CUST-FEEDAMERICA-NONPROFIT,Feeding America Regional Cold Food Bank Network,ESG_TAX_DONATION,IRC_170E3_CHARITY,US,90.0,0.0,12.0,"[""SKU-BEV-OATMILK-1L"", ""SKU-DAIRY-PROBIOTIC-6PK""]"

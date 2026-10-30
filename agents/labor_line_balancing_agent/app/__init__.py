@@ -1,4 +1,2 @@
-"""[03 · Make | Production Scheduling] Labor & Line Balancing — Google ADK Package."""
-from .agent import LaborLineBalancingAgentAgent, root_agent
-
-__all__ = ["LaborLineBalancingAgentAgent", "root_agent"]
+"""ADK package for [03 · Make | Production Scheduling] Labor & Line Balancing Agent."""
+from .agent import root_agent, LaborLineBalancingAgentAgent, LaborLineBalancingAgentAdkApp

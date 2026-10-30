@@ -1,4 +1,2 @@
-"""[05 · Logistics | Store Replenishment] Aisle-Aligned Pallet — Google ADK Package."""
-from .agent import AisleAlignedPalletAgentAgent, root_agent
-
-__all__ = ["AisleAlignedPalletAgentAgent", "root_agent"]
+"""ADK package for [05 · Deliver | Store Replenishment] Aisle-Aligned Pallet Builder."""
+from .agent import root_agent, AisleAlignedPalletAgentAgent, AisleAlignedPalletAgentAdkApp

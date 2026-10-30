@@ -16,5 +16,59 @@
     "last_free_day": "2026-10-30",
     "daily_demurrage_usd": 375.0,
     "downstream_stockout_risk": "STANDARD_REPLENISHMENT"
+  },
+  {
+    "container_id": "MSKU-904812-15",
+    "vessel_imo": "IMO-9839179",
+    "size_type": "40HC",
+    "stowage_tier": "UPPER_DECK_BAY14",
+    "last_free_day": "2026-10-18",
+    "daily_demurrage_usd": 446.25,
+    "downstream_stockout_risk": "CRITICAL_PROMO_SKU"
+  },
+  {
+    "container_id": "MSKU-904819-25",
+    "vessel_imo": "IMO-9839179",
+    "size_type": "40HC",
+    "stowage_tier": "HOLD_TIER04",
+    "last_free_day": "2026-10-21",
+    "daily_demurrage_usd": 468.75,
+    "downstream_stockout_risk": "STANDARD_REPLENISHMENT"
+  },
+  {
+    "container_id": "MSKU-904812-29",
+    "vessel_imo": "IMO-9839179",
+    "size_type": "40HC",
+    "stowage_tier": "UPPER_DECK_BAY14",
+    "last_free_day": "2026-10-24",
+    "daily_demurrage_usd": 292.5,
+    "downstream_stockout_risk": "CRITICAL_PROMO_SKU"
+  },
+  {
+    "container_id": "MSKU-904819-39",
+    "vessel_imo": "IMO-9839179",
+    "size_type": "40HC",
+    "stowage_tier": "HOLD_TIER04",
+    "last_free_day": "2026-10-27",
+    "daily_demurrage_usd": 446.25,
+    "downstream_stockout_risk": "STANDARD_REPLENISHMENT"
+  },
+  {
+    "container_id": "MSKU-904812-43",
+    "vessel_imo": "IMO-9839179",
+    "size_type": "40HC",
+    "stowage_tier": "UPPER_DECK_BAY14",
+    "last_free_day": "2026-10-03",
+    "daily_demurrage_usd": 446.25,
+    "downstream_stockout_risk": "CRITICAL_PROMO_SKU"
+  },
+  {
+    "container_id": "MSKU-904819-53",
+    "vessel_imo": "IMO-9839179",
+    "size_type": "40HC",
+    "stowage_tier": "HOLD_TIER04",
+    "last_free_day": "2026-10-06",
+    "daily_demurrage_usd": 446.25,
+    "downstream_stockout_risk": "STANDARD_REPLENISHMENT"
   }
 ]

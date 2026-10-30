@@ -1,0 +1,58 @@
+[
+  {
+    "freight_inv_id": "EDI210-7701",
+    "total_billed_usd": 3984.4,
+    "verified_payable_usd": 3369.6,
+    "overcharge_recovered_usd": 614.8,
+    "audit_status": "SHORT_PAY_DISPUTE_ISSUED"
+  },
+  {
+    "freight_inv_id": "EDI210-7702",
+    "total_billed_usd": 1210.0,
+    "verified_payable_usd": 761.8,
+    "overcharge_recovered_usd": 448.2,
+    "audit_status": "SHORT_PAY_DISPUTE_ISSUED"
+  },
+  {
+    "freight_inv_id": "EDI210-7703",
+    "total_billed_usd": 2059.1,
+    "verified_payable_usd": 2059.1,
+    "overcharge_recovered_usd": 0.0,
+    "audit_status": "AUTO_APPROVED_TOUCHLESS"
+  },
+  {
+    "freight_inv_id": "EDI210-7704",
+    "total_billed_usd": 2328.6,
+    "verified_payable_usd": 1599.5,
+    "overcharge_recovered_usd": 729.1,
+    "audit_status": "LATE_ARRIVAL_DETENTION_DENIED"
+  },
+  {
+    "freight_inv_id": "EDI210-7705",
+    "total_billed_usd": 789.0,
+    "verified_payable_usd": 492.5,
+    "overcharge_recovered_usd": 296.5,
+    "audit_status": "SHORT_PAY_DISPUTE_ISSUED"
+  },
+  {
+    "freight_inv_id": "EDI210-7706",
+    "total_billed_usd": 1772.0,
+    "verified_payable_usd": 1772.0,
+    "overcharge_recovered_usd": 0.0,
+    "audit_status": "AUTO_APPROVED_TOUCHLESS"
+  },
+  {
+    "freight_inv_id": "EDI210-7707",
+    "total_billed_usd": 19785.0,
+    "verified_payable_usd": 17574.6,
+    "overcharge_recovered_usd": 2210.4,
+    "audit_status": "SHORT_PAY_DISPUTE_ISSUED"
+  },
+  {
+    "freight_inv_id": "EDI210-7708",
+    "total_billed_usd": 989.2,
+    "verified_payable_usd": 573.6,
+    "overcharge_recovered_usd": 415.6,
+    "audit_status": "SHORT_PAY_DISPUTE_ISSUED"
+  }
+]

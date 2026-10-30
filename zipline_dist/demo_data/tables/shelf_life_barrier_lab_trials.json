@@ -1,0 +1,82 @@
+[
+  {
+    "trial_id": "TRL-PK-01",
+    "pack_spec_id": "PK-BOT-32OZ",
+    "wvtr_g_m2_day": 0.42,
+    "max_allowed_wvtr": 0.55,
+    "otr_cc_m2_day": 0.85,
+    "top_load_crush_n": 312.0,
+    "line_speed_efficiency_pct": 99.1,
+    "qualification_result": "QUALIFIED_PASS"
+  },
+  {
+    "trial_id": "TRL-PK-02",
+    "pack_spec_id": "PK-CARTON-1L",
+    "wvtr_g_m2_day": 0.18,
+    "max_allowed_wvtr": 0.25,
+    "otr_cc_m2_day": 0.22,
+    "top_load_crush_n": 245.0,
+    "line_speed_efficiency_pct": 98.7,
+    "qualification_result": "QUALIFIED_PASS"
+  },
+  {
+    "trial_id": "TRL-PK-03",
+    "pack_spec_id": "PK-FILM-BAR",
+    "wvtr_g_m2_day": 0.61,
+    "max_allowed_wvtr": 0.75,
+    "otr_cc_m2_day": 0.92,
+    "top_load_crush_n": 95.0,
+    "line_speed_efficiency_pct": 98.4,
+    "qualification_result": "QUALIFIED_PASS"
+  },
+  {
+    "trial_id": "TRL-PK-04",
+    "pack_spec_id": "PK-SHOT-6PK",
+    "wvtr_g_m2_day": 0.34,
+    "max_allowed_wvtr": 0.45,
+    "otr_cc_m2_day": 0.64,
+    "top_load_crush_n": 190.0,
+    "line_speed_efficiency_pct": 99.0,
+    "qualification_result": "QUALIFIED_PASS"
+  },
+  {
+    "trial_id": "TRL-PK-05",
+    "pack_spec_id": "PK-CASE-24PK",
+    "wvtr_g_m2_day": 1.1,
+    "max_allowed_wvtr": 2.0,
+    "otr_cc_m2_day": 2.5,
+    "top_load_crush_n": 640.0,
+    "line_speed_efficiency_pct": 99.5,
+    "qualification_result": "QUALIFIED_PASS"
+  },
+  {
+    "trial_id": "TRL-PK-06",
+    "pack_spec_id": "PK-CRYO-TRAY",
+    "wvtr_g_m2_day": 0.4,
+    "max_allowed_wvtr": 0.8,
+    "otr_cc_m2_day": 1.0,
+    "top_load_crush_n": 410.0,
+    "line_speed_efficiency_pct": 99.2,
+    "qualification_result": "QUALIFIED_PASS"
+  },
+  {
+    "trial_id": "TRL-PK-07",
+    "pack_spec_id": "PK-FOAM-101",
+    "wvtr_g_m2_day": 0.9,
+    "max_allowed_wvtr": 1.5,
+    "otr_cc_m2_day": 1.8,
+    "top_load_crush_n": 880.0,
+    "line_speed_efficiency_pct": 99.6,
+    "qualification_result": "QUALIFIED_PASS"
+  },
+  {
+    "trial_id": "TRL-PK-08",
+    "pack_spec_id": "PK-BOX-412",
+    "wvtr_g_m2_day": 1.25,
+    "max_allowed_wvtr": 2.0,
+    "otr_cc_m2_day": 2.4,
+    "top_load_crush_n": 520.0,
+    "line_speed_efficiency_pct": 99.4,
+    "qualification_result": "QUALIFIED_PASS"
+  }
+]

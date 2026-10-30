@@ -1,0 +1,66 @@
+[
+  {
+    "constraint_id": "BNK-AUS-ASEP",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "workcenter": "Aseptic Rotary Filler #1",
+    "current_utilization_pct": 96.8,
+    "annual_cmo_overflow_spend_usd": 3420000,
+    "scrap_rate_pct": 3.4
+  },
+  {
+    "constraint_id": "BNK-STU-LASER",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "workcenter": "800V Cell Laser Tab Welder",
+    "current_utilization_pct": 94.5,
+    "annual_cmo_overflow_spend_usd": 2890000,
+    "scrap_rate_pct": 2.9
+  },
+  {
+    "constraint_id": "BNK-CHI-PAL",
+    "plant_id": "RDC-XYZ-CHICAGO",
+    "workcenter": "Manual Case Layer Palletizing",
+    "current_utilization_pct": 92.1,
+    "annual_cmo_overflow_spend_usd": 1950000,
+    "scrap_rate_pct": 1.8
+  },
+  {
+    "constraint_id": "BNK-BLR-AOI",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "workcenter": "SMT Inline Optical Inspection",
+    "current_utilization_pct": 91.4,
+    "annual_cmo_overflow_spend_usd": 1180000,
+    "scrap_rate_pct": 4.1
+  },
+  {
+    "constraint_id": "BNK-MTY-FURN",
+    "plant_id": "PLANT-XYZ-MONTERREY",
+    "workcenter": "CAB Vacuum Brazing Furnace",
+    "current_utilization_pct": 95.2,
+    "annual_cmo_overflow_spend_usd": 1640000,
+    "scrap_rate_pct": 2.6
+  },
+  {
+    "constraint_id": "BNK-AUS-CIP",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "workcenter": "Dual-Loop CIP Skid Recovery",
+    "current_utilization_pct": 89.0,
+    "annual_cmo_overflow_spend_usd": 920000,
+    "scrap_rate_pct": 1.5
+  },
+  {
+    "constraint_id": "BNK-FRA-VAULT",
+    "plant_id": "RDC-XYZ-FRANKFURT",
+    "workcenter": "2-8C AS/RS Cold Shuttle Bay",
+    "current_utilization_pct": 93.7,
+    "annual_cmo_overflow_spend_usd": 1480000,
+    "scrap_rate_pct": 0.9
+  },
+  {
+    "constraint_id": "BNK-STU-LYO",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "workcenter": "GMP Lyophilizer Freeze Dryer",
+    "current_utilization_pct": 84.0,
+    "annual_cmo_overflow_spend_usd": 610000,
+    "scrap_rate_pct": 1.1
+  }
+]

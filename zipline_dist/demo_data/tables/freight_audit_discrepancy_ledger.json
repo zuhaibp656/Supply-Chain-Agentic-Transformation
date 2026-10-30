@@ -8,5 +8,75 @@
     "overcharge_detected_usd": 615.0,
     "verified_payable_usd": 2875.0,
     "discrepancy_type": "INVALID_DETENTION_AND_FSC_RATE"
+  },
+  {
+    "audit_id": "FAUD-77418",
+    "invoice_id": "INV-EDI210-77418",
+    "geofence_verified_dwell_hrs": 1.03,
+    "contract_free_time_hrs": 1.66,
+    "contract_fsc_pct": 33.91,
+    "overcharge_detected_usd": 768.75,
+    "verified_payable_usd": 3076.25,
+    "discrepancy_type": "INVALID_DETENTION_AND_FSC_RATE"
+  },
+  {
+    "audit_id": "FAUD-77425",
+    "invoice_id": "INV-EDI210-77425",
+    "geofence_verified_dwell_hrs": 1.0,
+    "contract_free_time_hrs": 1.72,
+    "contract_fsc_pct": 35.62,
+    "overcharge_detected_usd": 510.45,
+    "verified_payable_usd": 2645.0,
+    "discrepancy_type": "INVALID_DETENTION_AND_FSC_RATE"
+  },
+  {
+    "audit_id": "FAUD-77432",
+    "invoice_id": "INV-EDI210-77432",
+    "geofence_verified_dwell_hrs": 1.43,
+    "contract_free_time_hrs": 1.84,
+    "contract_fsc_pct": 22.23,
+    "overcharge_detected_usd": 528.9,
+    "verified_payable_usd": 3076.25,
+    "discrepancy_type": "INVALID_DETENTION_AND_FSC_RATE"
+  },
+  {
+    "audit_id": "FAUD-77439",
+    "invoice_id": "INV-EDI210-77439",
+    "geofence_verified_dwell_hrs": 0.94,
+    "contract_free_time_hrs": 1.84,
+    "contract_fsc_pct": 23.65,
+    "overcharge_detected_usd": 528.9,
+    "verified_payable_usd": 2472.5,
+    "discrepancy_type": "INVALID_DETENTION_AND_FSC_RATE"
+  },
+  {
+    "audit_id": "FAUD-77446",
+    "invoice_id": "INV-EDI210-77446",
+    "geofence_verified_dwell_hrs": 1.0,
+    "contract_free_time_hrs": 1.72,
+    "contract_fsc_pct": 23.65,
+    "overcharge_detected_usd": 479.7,
+    "verified_payable_usd": 2242.5,
+    "discrepancy_type": "INVALID_DETENTION_AND_FSC_RATE"
+  },
+  {
+    "audit_id": "FAUD-77453",
+    "invoice_id": "INV-EDI210-77453",
+    "geofence_verified_dwell_hrs": 1.36,
+    "contract_free_time_hrs": 2.38,
+    "contract_fsc_pct": 24.51,
+    "overcharge_detected_usd": 694.95,
+    "verified_payable_usd": 2472.5,
+    "discrepancy_type": "INVALID_DETENTION_AND_FSC_RATE"
+  },
+  {
+    "audit_id": "FAUD-77460",
+    "invoice_id": "INV-EDI210-77460",
+    "geofence_verified_dwell_hrs": 1.5,
+    "contract_free_time_hrs": 2.5,
+    "contract_fsc_pct": 32.2,
+    "overcharge_detected_usd": 768.75,
+    "verified_payable_usd": 2645.0,
+    "discrepancy_type": "INVALID_DETENTION_AND_FSC_RATE"
   }
 ]

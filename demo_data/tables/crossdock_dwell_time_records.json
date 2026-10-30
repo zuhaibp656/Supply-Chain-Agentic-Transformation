@@ -22,5 +22,77 @@
     "labor_touch_count": 3,
     "baseline_labor_touches": 3,
     "transfer_status": "STAGED_AWAITING_EVENING_TRAILER"
+  },
+  {
+    "record_id": "XDOCK-DWELL-20261022-16",
+    "pallet_id": "PLT-OAT-9921-16",
+    "inbound_door_id": "DOOR-INBOUND-19",
+    "outbound_bay_id": "BAY-OUTBOUND-27",
+    "dwell_time_minutes": 23.12,
+    "forklift_transfer_distance_m": 57.12,
+    "staging_area_bypassed": true,
+    "labor_touch_count": 1,
+    "baseline_labor_touches": 3,
+    "transfer_status": "DIRECT_CROSSDOCK_COMPLETED"
+  },
+  {
+    "record_id": "XDOCK-DWELL-20261022-24",
+    "pallet_id": "PLT-OAT-9921-27",
+    "inbound_door_id": "DOOR-INBOUND-26",
+    "outbound_bay_id": "STAGING-BUFFER-LANE-B",
+    "dwell_time_minutes": 172.55,
+    "forklift_transfer_distance_m": 109.48,
+    "staging_area_bypassed": true,
+    "labor_touch_count": 2,
+    "baseline_labor_touches": 3,
+    "transfer_status": "STAGED_AWAITING_EVENING_TRAILER"
+  },
+  {
+    "record_id": "XDOCK-DWELL-20261022-30",
+    "pallet_id": "PLT-OAT-9921-30",
+    "inbound_door_id": "DOOR-INBOUND-33",
+    "outbound_bay_id": "BAY-OUTBOUND-41",
+    "dwell_time_minutes": 17.02,
+    "forklift_transfer_distance_m": 51.36,
+    "staging_area_bypassed": true,
+    "labor_touch_count": 1,
+    "baseline_labor_touches": 3,
+    "transfer_status": "DIRECT_CROSSDOCK_COMPLETED"
+  },
+  {
+    "record_id": "XDOCK-DWELL-20261022-38",
+    "pallet_id": "PLT-OAT-9921-41",
+    "inbound_door_id": "DOOR-INBOUND-40",
+    "outbound_bay_id": "STAGING-BUFFER-LANE-B",
+    "dwell_time_minutes": 113.1,
+    "forklift_transfer_distance_m": 103.96,
+    "staging_area_bypassed": false,
+    "labor_touch_count": 3,
+    "baseline_labor_touches": 3,
+    "transfer_status": "STAGED_AWAITING_EVENING_TRAILER"
+  },
+  {
+    "record_id": "XDOCK-DWELL-20261022-44",
+    "pallet_id": "PLT-OAT-9921-44",
+    "inbound_door_id": "DOOR-INBOUND-47",
+    "outbound_bay_id": "BAY-OUTBOUND-55",
+    "dwell_time_minutes": 17.02,
+    "forklift_transfer_distance_m": 39.84,
+    "staging_area_bypassed": false,
+    "labor_touch_count": 1,
+    "baseline_labor_touches": 4,
+    "transfer_status": "DIRECT_CROSSDOCK_COMPLETED"
+  },
+  {
+    "record_id": "XDOCK-DWELL-20261022-52",
+    "pallet_id": "PLT-OAT-9921-55",
+    "inbound_door_id": "DOOR-INBOUND-54",
+    "outbound_bay_id": "STAGING-BUFFER-LANE-B",
+    "dwell_time_minutes": 124.7,
+    "forklift_transfer_distance_m": 115.0,
+    "staging_area_bypassed": false,
+    "labor_touch_count": 4,
+    "baseline_labor_touches": 4,
+    "transfer_status": "STAGED_AWAITING_EVENING_TRAILER"
   }
 ]

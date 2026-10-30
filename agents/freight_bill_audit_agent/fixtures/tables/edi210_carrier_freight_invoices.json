@@ -1,0 +1,90 @@
+[
+  {
+    "freight_inv_id": "EDI210-7701",
+    "shipment_id": "SHP-XYZ-9088",
+    "carrier_id": "CAR-JBHT-FTL",
+    "lane_code": "AUS-CHI-FTL",
+    "billed_miles": 1195,
+    "billed_linehaul_usd": 3020.0,
+    "billed_fsc_usd": 664.4,
+    "billed_detention_usd": 300.0,
+    "total_billed_usd": 3984.4
+  },
+  {
+    "freight_inv_id": "EDI210-7702",
+    "shipment_id": "SHP-XYZ-9185",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "lane_code": "AUS-DAL-REEF",
+    "billed_miles": 212,
+    "billed_linehaul_usd": 740.0,
+    "billed_fsc_usd": 185.0,
+    "billed_detention_usd": 285.0,
+    "total_billed_usd": 1210.0
+  },
+  {
+    "freight_inv_id": "EDI210-7703",
+    "shipment_id": "SHP-XYZ-9140",
+    "carrier_id": "CAR-JBHT-FTL",
+    "lane_code": "CHI-ATL-FTL",
+    "billed_miles": 718,
+    "billed_linehaul_usd": 1737.6,
+    "billed_fsc_usd": 321.5,
+    "billed_detention_usd": 0.0,
+    "total_billed_usd": 2059.1
+  },
+  {
+    "freight_inv_id": "EDI210-7704",
+    "shipment_id": "SHP-XYZ-9402",
+    "carrier_id": "CAR-XPO-LTL",
+    "lane_code": "DAL-ATL-LTL",
+    "billed_miles": 815,
+    "billed_linehaul_usd": 1620.0,
+    "billed_fsc_usd": 453.6,
+    "billed_detention_usd": 255.0,
+    "total_billed_usd": 2328.6
+  },
+  {
+    "freight_inv_id": "EDI210-7705",
+    "shipment_id": "SHP-XYZ-9210",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "lane_code": "STU-FRA-REEF",
+    "billed_miles": 135,
+    "billed_linehaul_usd": 495.0,
+    "billed_fsc_usd": 104.0,
+    "billed_detention_usd": 190.0,
+    "total_billed_usd": 789.0
+  },
+  {
+    "freight_inv_id": "EDI210-7706",
+    "shipment_id": "SHP-XYZ-9450",
+    "carrier_id": "CAR-BNSF-RAIL",
+    "lane_code": "AUS-CHI-IMDL",
+    "billed_miles": 1160,
+    "billed_linehaul_usd": 1554.4,
+    "billed_fsc_usd": 217.6,
+    "billed_detention_usd": 0.0,
+    "total_billed_usd": 1772.0
+  },
+  {
+    "freight_inv_id": "EDI210-7707",
+    "shipment_id": "SHP-XYZ-9488",
+    "carrier_id": "CAR-LH-AIRCARGO",
+    "lane_code": "FRA-ORD-ULD",
+    "billed_miles": 4330,
+    "billed_linehaul_usd": 14850.0,
+    "billed_fsc_usd": 4455.0,
+    "billed_detention_usd": 480.0,
+    "total_billed_usd": 19785.0
+  },
+  {
+    "freight_inv_id": "EDI210-7708",
+    "shipment_id": "SHP-XYZ-9512",
+    "carrier_id": "CAR-XPO-LTL",
+    "lane_code": "CHI-DET-LTL",
+    "billed_miles": 298,
+    "billed_linehaul_usd": 640.0,
+    "billed_fsc_usd": 179.2,
+    "billed_detention_usd": 170.0,
+    "total_billed_usd": 989.2
+  }
+]

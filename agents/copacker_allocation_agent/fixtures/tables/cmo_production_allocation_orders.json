@@ -1,0 +1,74 @@
+[
+  {
+    "alloc_order_id": "SUB-PO-701",
+    "cmo_id": "CMO-XYZ-DALLAS",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "allocated_cases": 23000,
+    "tolling_rate_usd": 2.02,
+    "component_kit_status": "PREFORM_AND_FOIL_STAGED",
+    "allocation_status": "OPTIMAL_READY"
+  },
+  {
+    "alloc_order_id": "SUB-PO-702",
+    "cmo_id": "CMO-XYZ-DALLAS",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "allocated_cases": 12000,
+    "tolling_rate_usd": 2.32,
+    "component_kit_status": "OAT_BASE_DROP_SHIPPED",
+    "allocation_status": "OPTIMAL_READY"
+  },
+  {
+    "alloc_order_id": "SUB-PO-703",
+    "cmo_id": "CMO-XYZ-PUNE",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "allocated_cases": 16000,
+    "tolling_rate_usd": 1.56,
+    "component_kit_status": "WHEY_AND_FILM_STAGED",
+    "allocation_status": "OPTIMAL_READY"
+  },
+  {
+    "alloc_order_id": "SUB-PO-704",
+    "cmo_id": "CMO-XYZ-DALLAS",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "allocated_cases": 8000,
+    "tolling_rate_usd": 2.52,
+    "component_kit_status": "CULTURE_COLD_SHIPPED",
+    "allocation_status": "OPTIMAL_READY"
+  },
+  {
+    "alloc_order_id": "SUB-PO-705",
+    "cmo_id": "CMO-BAJIO-METAL",
+    "sku_id": "SKU-XYZ-518",
+    "allocated_cases": 1500,
+    "tolling_rate_usd": 15.8,
+    "component_kit_status": "ALU_COIL_ALLOCATED",
+    "allocation_status": "OPTIMAL_READY"
+  },
+  {
+    "alloc_order_id": "SUB-PO-706",
+    "cmo_id": "CMO-MIDWEST-BEV",
+    "sku_id": "SKU-XYZ-204",
+    "allocated_cases": 10000,
+    "tolling_rate_usd": 1.94,
+    "component_kit_status": "ASEPTIC_CARTON_STAGED",
+    "allocation_status": "OPTIMAL_READY"
+  },
+  {
+    "alloc_order_id": "SUB-PO-707",
+    "cmo_id": "PLANT-XYZ-STUTTGART",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "allocated_cases": 4200,
+    "tolling_rate_usd": 28.0,
+    "component_kit_status": "KEEP_100PCT_INTERNAL",
+    "allocation_status": "INTERNAL_RETAINED"
+  },
+  {
+    "alloc_order_id": "SUB-PO-708",
+    "cmo_id": "CMO-LOWQA-HOLD",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "allocated_cases": 0,
+    "tolling_rate_usd": 1.79,
+    "component_kit_status": "BLOCKED_QA_BELOW_90",
+    "allocation_status": "QA_BLOCKED"
+  }
+]

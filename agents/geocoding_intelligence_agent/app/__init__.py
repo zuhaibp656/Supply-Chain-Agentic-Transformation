@@ -1,4 +1,2 @@
-"""[05 · Logistics | Last-Mile Delivery] Geocoding Intelligence — Google ADK Package."""
-from .agent import GeocodingIntelligenceAgentAgent, root_agent
-
-__all__ = ["GeocodingIntelligenceAgentAgent", "root_agent"]
+"""ADK package for [05 · Deliver | Last-Mile Delivery] Last-Mile Dock Pin & Geocode Corrector."""
+from .agent import root_agent, GeocodingIntelligenceAgentAgent, GeocodingIntelligenceAgentAdkApp

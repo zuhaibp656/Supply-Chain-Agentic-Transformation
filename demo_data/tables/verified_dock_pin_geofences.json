@@ -1,0 +1,58 @@
+[
+  {
+    "geofence_id": "GEO-401",
+    "stop_id": "STP-CHI-401",
+    "entry_street": "Lower Michigan Service Level Ramp B",
+    "dock_instructions": "Enter Lower Wacker service ramp; max 12ft-6in height; Freight Elevator #3.",
+    "geofence_radius_m": 15
+  },
+  {
+    "geofence_id": "GEO-402",
+    "stop_id": "STP-DAL-402",
+    "entry_street": "Worcola St Rear Truck Court",
+    "dock_instructions": "Avoid retail parking lot; punch gate #4482 at Worcola alley.",
+    "geofence_radius_m": 18
+  },
+  {
+    "geofence_id": "GEO-403",
+    "stop_id": "STP-FRA-403",
+    "entry_street": "Sandhofstrasse Gate 4 Biologics",
+    "dock_instructions": "Cold-chain dock bay B2; scan 2D temperature bar code at security.",
+    "geofence_radius_m": 12
+  },
+  {
+    "geofence_id": "GEO-404",
+    "stop_id": "STP-ATL-404",
+    "entry_street": "Spring St NW West Tunnel",
+    "dock_instructions": "Check in via intercom Channel 2 before descending dock ramp.",
+    "geofence_radius_m": 15
+  },
+  {
+    "geofence_id": "GEO-405",
+    "stop_id": "STP-MUM-405",
+    "entry_street": "Senapati Bapat Service Lane East",
+    "dock_instructions": "Strict 06:00-10:00 window; hand-truck ramp behind Tower C.",
+    "geofence_radius_m": 12
+  },
+  {
+    "geofence_id": "GEO-406",
+    "stop_id": "STP-CHI-406",
+    "entry_street": "Clybourn Ave South Apron",
+    "dock_instructions": "Back into Bays 1-3 from south apron; chock wheels immediately.",
+    "geofence_radius_m": 20
+  },
+  {
+    "geofence_id": "GEO-407",
+    "stop_id": "STP-STU-407",
+    "entry_street": "Mercedesstrasse Tor B7",
+    "dock_instructions": "RFID transponder lane 2; direct side-curtain unload at Hall 9.",
+    "geofence_radius_m": 15
+  },
+  {
+    "geofence_id": "GEO-408",
+    "stop_id": "STP-DAL-408",
+    "entry_street": "kingsley Rd Rear Service Drive",
+    "dock_instructions": "No raised dock; deploy 2,500-lb hydraulic liftgate onto concrete pad.",
+    "geofence_radius_m": 16
+  }
+]

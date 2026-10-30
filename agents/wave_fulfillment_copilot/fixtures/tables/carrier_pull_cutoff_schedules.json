@@ -1,0 +1,66 @@
+[
+  {
+    "wave_id": "WAVE-CHI-1400",
+    "carrier_scac": "CRYX",
+    "dock_door": "CHI-DOOR-12",
+    "customer_id": "CUST-KROGER-US01",
+    "otif_penalty_if_missed_usd": 5197.5,
+    "trailer_staged": true
+  },
+  {
+    "wave_id": "WAVE-CHI-1530",
+    "carrier_scac": "JBHT",
+    "dock_door": "CHI-DOOR-08",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "otif_penalty_if_missed_usd": 3374.0,
+    "trailer_staged": true
+  },
+  {
+    "wave_id": "WAVE-CHI-1700",
+    "carrier_scac": "BNSF",
+    "dock_door": "CHI-DOOR-19",
+    "customer_id": "CUST-COSTCO-US04",
+    "otif_penalty_if_missed_usd": 2968.0,
+    "trailer_staged": true
+  },
+  {
+    "wave_id": "WAVE-DAL-1430",
+    "carrier_scac": "CNWY",
+    "dock_door": "DAL-DOOR-04",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "otif_penalty_if_missed_usd": 3920.0,
+    "trailer_staged": true
+  },
+  {
+    "wave_id": "WAVE-DAL-1800",
+    "carrier_scac": "JBHT",
+    "dock_door": "DAL-DOOR-09",
+    "customer_id": "CUST-ALDI-OUTLET-US09",
+    "otif_penalty_if_missed_usd": 0.0,
+    "trailer_staged": false
+  },
+  {
+    "wave_id": "WAVE-ATL-1500",
+    "carrier_scac": "JBHT",
+    "dock_door": "ATL-DOOR-03",
+    "customer_id": "CUST-KROGER-US01",
+    "otif_penalty_if_missed_usd": 2667.0,
+    "trailer_staged": true
+  },
+  {
+    "wave_id": "WAVE-FRA-1600",
+    "carrier_scac": "LHCA",
+    "dock_door": "FRA-DOOR-01",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "otif_penalty_if_missed_usd": 21840.0,
+    "trailer_staged": true
+  },
+  {
+    "wave_id": "WAVE-FRA-1900",
+    "carrier_scac": "MAEU",
+    "dock_door": "FRA-DOOR-06",
+    "customer_id": "CUST-XYZ-TIER1-AUTOWORKS",
+    "otif_penalty_if_missed_usd": 4600.0,
+    "trailer_staged": true
+  }
+]

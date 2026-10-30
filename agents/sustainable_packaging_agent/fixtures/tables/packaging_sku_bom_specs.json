@@ -1,0 +1,82 @@
+[
+  {
+    "pack_spec_id": "PK-BOT-32OZ",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "material_type": "PET_BOTTLE_38MM",
+    "current_pcr_pct": 15.0,
+    "target_pcr_pct": 50.0,
+    "gram_weight_g": 28.5,
+    "optimized_gram_weight_g": 25.2,
+    "annual_units_m": 42.0
+  },
+  {
+    "pack_spec_id": "PK-CARTON-1L",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "material_type": "ASEPTIC_GABLE_CARTON",
+    "current_pcr_pct": 0.0,
+    "target_pcr_pct": 35.0,
+    "gram_weight_g": 31.0,
+    "optimized_gram_weight_g": 28.8,
+    "annual_units_m": 28.5
+  },
+  {
+    "pack_spec_id": "PK-FILM-BAR",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "material_type": "MONO_BOPE_FLOWWRAP",
+    "current_pcr_pct": 0.0,
+    "target_pcr_pct": 30.0,
+    "gram_weight_g": 4.2,
+    "optimized_gram_weight_g": 3.7,
+    "annual_units_m": 65.0
+  },
+  {
+    "pack_spec_id": "PK-SHOT-6PK",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "material_type": "RHDPE_MINI_BOTTLE",
+    "current_pcr_pct": 10.0,
+    "target_pcr_pct": 40.0,
+    "gram_weight_g": 11.4,
+    "optimized_gram_weight_g": 10.1,
+    "annual_units_m": 31.0
+  },
+  {
+    "pack_spec_id": "PK-CASE-24PK",
+    "sku_id": "SKU-XYZ-204",
+    "material_type": "FSC_CORRUGATE_TRAY_SHRINK",
+    "current_pcr_pct": 20.0,
+    "target_pcr_pct": 60.0,
+    "gram_weight_g": 210.0,
+    "optimized_gram_weight_g": 186.0,
+    "annual_units_m": 14.0
+  },
+  {
+    "pack_spec_id": "PK-CRYO-TRAY",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "material_type": "MOLDED_PULP_CRYO_INSERT",
+    "current_pcr_pct": 0.0,
+    "target_pcr_pct": 85.0,
+    "gram_weight_g": 95.0,
+    "optimized_gram_weight_g": 82.0,
+    "annual_units_m": 1.8
+  },
+  {
+    "pack_spec_id": "PK-FOAM-101",
+    "sku_id": "SKU-XYZ-101",
+    "material_type": "EPP_REUSABLE_DUNNAGE",
+    "current_pcr_pct": 25.0,
+    "target_pcr_pct": 55.0,
+    "gram_weight_g": 480.0,
+    "optimized_gram_weight_g": 430.0,
+    "annual_units_m": 0.9
+  },
+  {
+    "pack_spec_id": "PK-BOX-412",
+    "sku_id": "SKU-XYZ-412",
+    "material_type": "FSC_RIGID_MAILER",
+    "current_pcr_pct": 40.0,
+    "target_pcr_pct": 90.0,
+    "gram_weight_g": 115.0,
+    "optimized_gram_weight_g": 98.0,
+    "annual_units_m": 2.4
+  }
+]

@@ -1,0 +1,7 @@
+carrier_id,scac_code,carrier_name,mode,contract_rate_per_mile_usd,fsc_index_pct,free_detention_hours,detention_rate_per_hr_usd,emission_factor_gco2e_tkm
+CAR-JBHT-FTL,JBHT,J.B. Hunt Dedicated Contract & Intermodal,FTL_AND_INTERMODAL,2.42,18.5,2.0,75.0,62.4
+CAR-CRYOEXP-REEFER,CRYX,CryoExpress Validated Dual-Temp Reefer Fleet,REEFER_2C_8C,3.18,21.0,2.0,95.0,84.0
+CAR-XPO-LTL,CNWY,XPO National LTL Pallet Network,LTL_PALLET,1.65,22.4,1.5,85.0,96.5
+CAR-BNSF-RAIL,BNSF,BNSF Premier COFC 53ft Intermodal Rail,INTERMODAL_RAIL,1.34,14.0,24.0,45.0,21.8
+CAR-MAERSK-OCEAN,MAEU,Maersk Eco-Delivery Ocean Container Line,OCEAN_FCL,0.42,11.0,96.0,165.0,11.2
+CAR-LH-AIRCARGO,LHCA,Lufthansa Cargo Pharma & Cool ULD Priority,AIR_ULD_CHARTER,8.9,26.0,6.0,120.0,612.0

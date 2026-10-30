@@ -1,0 +1,82 @@
+[
+  {
+    "cmo_id": "CMO-XYZ-DALLAS",
+    "cmo_name": "Trinity Valley Co-Packing TX",
+    "qualified_sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "moq_cases": 15000,
+    "weekly_avail_cap_cases": 35000,
+    "tier1_tolling_fee_usd": 2.28,
+    "tier2_vol_tolling_fee_usd": 2.02,
+    "fsc22000_qa_score": 97.4
+  },
+  {
+    "cmo_id": "CMO-XYZ-DALLAS",
+    "cmo_name": "Trinity Valley Co-Packing TX",
+    "qualified_sku_id": "SKU-BEV-OATMILK-1L",
+    "moq_cases": 10000,
+    "weekly_avail_cap_cases": 20000,
+    "tier1_tolling_fee_usd": 2.55,
+    "tier2_vol_tolling_fee_usd": 2.32,
+    "fsc22000_qa_score": 97.4
+  },
+  {
+    "cmo_id": "CMO-XYZ-PUNE",
+    "cmo_name": "Deccan NutriPack CMO Pune",
+    "qualified_sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "moq_cases": 12000,
+    "weekly_avail_cap_cases": 25000,
+    "tier1_tolling_fee_usd": 1.75,
+    "tier2_vol_tolling_fee_usd": 1.56,
+    "fsc22000_qa_score": 96.1
+  },
+  {
+    "cmo_id": "CMO-MIDWEST-BEV",
+    "cmo_name": "Heartland Aseptic Bottlers IL",
+    "qualified_sku_id": "SKU-XYZ-204",
+    "moq_cases": 10000,
+    "weekly_avail_cap_cases": 30000,
+    "tier1_tolling_fee_usd": 2.15,
+    "tier2_vol_tolling_fee_usd": 1.94,
+    "fsc22000_qa_score": 95.8
+  },
+  {
+    "cmo_id": "CMO-BAJIO-METAL",
+    "cmo_name": "Bajio Precision Brazing MX",
+    "qualified_sku_id": "SKU-XYZ-518",
+    "moq_cases": 1000,
+    "weekly_avail_cap_cases": 3000,
+    "tier1_tolling_fee_usd": 16.9,
+    "tier2_vol_tolling_fee_usd": 15.8,
+    "fsc22000_qa_score": 94.5
+  },
+  {
+    "cmo_id": "CMO-XYZ-DALLAS",
+    "cmo_name": "Trinity Valley Co-Packing TX",
+    "qualified_sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "moq_cases": 8000,
+    "weekly_avail_cap_cases": 15000,
+    "tier1_tolling_fee_usd": 2.75,
+    "tier2_vol_tolling_fee_usd": 2.52,
+    "fsc22000_qa_score": 97.4
+  },
+  {
+    "cmo_id": "CMO-LOWQA-HOLD",
+    "cmo_name": "SunBelt Low-Tier Packer (QA Hold)",
+    "qualified_sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "moq_cases": 5000,
+    "weekly_avail_cap_cases": 25000,
+    "tier1_tolling_fee_usd": 1.89,
+    "tier2_vol_tolling_fee_usd": 1.79,
+    "fsc22000_qa_score": 78.2
+  },
+  {
+    "cmo_id": "CMO-EU-PHARMA",
+    "cmo_name": "Basel Sterile Fill-Finish CMO",
+    "qualified_sku_id": "SKU-CRYO-4410-BIO",
+    "moq_cases": 500,
+    "weekly_avail_cap_cases": 1500,
+    "tier1_tolling_fee_usd": 36.0,
+    "tier2_vol_tolling_fee_usd": 33.5,
+    "fsc22000_qa_score": 99.1
+  }
+]

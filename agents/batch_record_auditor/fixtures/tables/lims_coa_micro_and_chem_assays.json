@@ -1,0 +1,74 @@
+[
+  {
+    "assay_id": "LIMS-901",
+    "batch_id": "BATCH-XYZ-AUST-8841",
+    "ph_value": 4.12,
+    "spec_max_ph": 4.35,
+    "bioburden_cfu_ml": 0,
+    "brix_pct": 6.8,
+    "coa_assay_status": "IN_SPEC"
+  },
+  {
+    "assay_id": "LIMS-902",
+    "batch_id": "BATCH-XYZ-AUST-8955",
+    "ph_value": 6.72,
+    "spec_max_ph": 6.9,
+    "bioburden_cfu_ml": 0,
+    "brix_pct": 9.4,
+    "coa_assay_status": "IN_SPEC"
+  },
+  {
+    "assay_id": "LIMS-903",
+    "batch_id": "BATCH-XYZ-AUST-8962",
+    "ph_value": 4.68,
+    "spec_max_ph": 4.45,
+    "bioburden_cfu_ml": 18,
+    "brix_pct": 8.1,
+    "coa_assay_status": "OUT_OF_SPEC_OOS"
+  },
+  {
+    "assay_id": "LIMS-904",
+    "batch_id": "BATCH-XYZ-STUT-942",
+    "ph_value": 7.38,
+    "spec_max_ph": 7.45,
+    "bioburden_cfu_ml": 0,
+    "brix_pct": 0.0,
+    "coa_assay_status": "STERILE_IN_SPEC"
+  },
+  {
+    "assay_id": "LIMS-905",
+    "batch_id": "BATCH-XYZ-STUT-949",
+    "ph_value": 7.4,
+    "spec_max_ph": 7.45,
+    "bioburden_cfu_ml": 0,
+    "brix_pct": 0.0,
+    "coa_assay_status": "STERILE_IN_SPEC"
+  },
+  {
+    "assay_id": "LIMS-906",
+    "batch_id": "BATCH-XYZ-DAL-410",
+    "ph_value": 3.95,
+    "spec_max_ph": 4.25,
+    "bioburden_cfu_ml": 0,
+    "brix_pct": 6.2,
+    "coa_assay_status": "IN_SPEC"
+  },
+  {
+    "assay_id": "LIMS-907",
+    "batch_id": "BATCH-XYZ-PUNE-312",
+    "ph_value": 5.8,
+    "spec_max_ph": 6.1,
+    "bioburden_cfu_ml": 2,
+    "brix_pct": 0.0,
+    "coa_assay_status": "IN_SPEC"
+  },
+  {
+    "assay_id": "LIMS-908",
+    "batch_id": "BATCH-XYZ-AUST-8970",
+    "ph_value": 4.18,
+    "spec_max_ph": 4.35,
+    "bioburden_cfu_ml": 0,
+    "brix_pct": 6.9,
+    "coa_assay_status": "IN_SPEC"
+  }
+]

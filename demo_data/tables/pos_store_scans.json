@@ -70,5 +70,29 @@
     "stockout_flag": false,
     "censored_demand_imputed_units": 2400,
     "scan_date": "2026-10-16"
+  },
+  {
+    "store_id": "STORE-WALMART-DAL-147",
+    "retailer": "Walmart",
+    "region": "US-CENTRAL",
+    "sku_id": "SKU-XYZ-309",
+    "category": "Hydration Beverages",
+    "daily_scan_units": 2190,
+    "on_shelf_inventory": 449,
+    "stockout_flag": true,
+    "censored_demand_imputed_units": 1435,
+    "scan_date": "2026-10-03"
+  },
+  {
+    "store_id": "STORE-KROGER-ATL-259",
+    "retailer": "Kroger",
+    "region": "US-SOUTHEAST",
+    "sku_id": "SKU-XYZ-412",
+    "category": "Hydration Beverages",
+    "daily_scan_units": 808,
+    "on_shelf_inventory": 6,
+    "stockout_flag": true,
+    "censored_demand_imputed_units": 2333,
+    "scan_date": "2026-10-06"
   }
 ]

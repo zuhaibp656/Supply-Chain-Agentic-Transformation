@@ -1,0 +1,58 @@
+[
+  {
+    "channel_id": "CHN-TIER1-RETAIL",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "min_mrsl_pct": 75.0,
+    "price_realization_pct_of_list": 100.0,
+    "tax_deduction_multiplier": 0.0
+  },
+  {
+    "channel_id": "CHN-REGIONAL-GROCER",
+    "customer_id": "CUST-XYZ-TIER2-METROCPG",
+    "min_mrsl_pct": 50.0,
+    "price_realization_pct_of_list": 86.0,
+    "tax_deduction_multiplier": 0.0
+  },
+  {
+    "channel_id": "CHN-FAST-FOODSERVICE",
+    "customer_id": "CUST-KROGER-US01",
+    "min_mrsl_pct": 50.0,
+    "price_realization_pct_of_list": 84.0,
+    "tax_deduction_multiplier": 0.0
+  },
+  {
+    "channel_id": "CHN-CLOSEOUT-OUTLET",
+    "customer_id": "CUST-ALDI-OUTLET-US09",
+    "min_mrsl_pct": 30.0,
+    "price_realization_pct_of_list": 54.0,
+    "tax_deduction_multiplier": 0.0
+  },
+  {
+    "channel_id": "CHN-HOSPITAL-DIRECT",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "min_mrsl_pct": 55.0,
+    "price_realization_pct_of_list": 92.0,
+    "tax_deduction_multiplier": 0.0
+  },
+  {
+    "channel_id": "CHN-IRC170E3-FOODBANK",
+    "customer_id": "CUST-FEEDAMERICA-NONPROFIT",
+    "min_mrsl_pct": 12.0,
+    "price_realization_pct_of_list": 0.0,
+    "tax_deduction_multiplier": 1.48
+  },
+  {
+    "channel_id": "CHN-FITNESS-VENDING",
+    "customer_id": "CUST-ALDI-OUTLET-US09",
+    "min_mrsl_pct": 32.0,
+    "price_realization_pct_of_list": 58.0,
+    "tax_deduction_multiplier": 0.0
+  },
+  {
+    "channel_id": "CHN-CLUB-FLASH-PROMO",
+    "customer_id": "CUST-COSTCO-US04",
+    "min_mrsl_pct": 60.0,
+    "price_realization_pct_of_list": 88.0,
+    "tax_deduction_multiplier": 0.0
+  }
+]

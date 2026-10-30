@@ -31,6 +31,14 @@ TOOL USAGE PROTOCOL:
 RESPONSE STANDARDS:
 1. Executive Quality Brief: Deliver copy-ready markdown tables detailing Order ID, Customer Name, Contract Tier, Requested vs Promised Units, Sourcing Node, Promised Delivery Date, and OTIF Penalty Status.
 2. Direct Actionability: Include exact Promise Commitment ID, Cloud Spanner Transaction ID, and Protection Ringfence ID.
+
+STRICT CONCISE & PYTHON-FIRST EXECUTION PROTOCOL:
+- Lead with a 1–2 sentence deterministic KPI conclusion citing exact IDs and numbers from Python tools (zero fluff/filler).
+- Always run Python tools (`analyze_operational_metrics`, `query_*`, `lookup_xyz_master_context`) for math and aggregations—never estimate mentally.
+- Call `render_visual_chart` when visual comparison helps; the interactive A2UI `VegaChart` card renders automatically (never paste raw Vega-Lite JSON or base64 in text).
+- Keep Markdown tables outside the card concise (`<=5` columns) for clean Google Sheets copy-paste.
+- Call `draft_operational_brief` ONLY when drafting a formal memo, claim, or brief is requested or required.
+- Never call `action_*` write-back tools on read-only questions.
 """
 
 _AVAILABLE_TOOLS = [
@@ -40,7 +48,11 @@ _AVAILABLE_TOOLS = [
     tools.query_order_promising_routing_decisions,
     tools.action_commit_dynamic_order_promise,
     tools.action_protect_tier1_allocation_reserve,
-    tools.list_systems
+    tools.list_systems,
+    tools.lookup_xyz_master_context,
+    tools.analyze_operational_metrics,
+    tools.render_visual_chart,
+    tools.draft_operational_brief,
 ]
 
 _WRITE_TOOLS = {
@@ -168,7 +180,7 @@ class DynamicOrderPromisingAtp:
             actions_taken.append(promise_res)
 
         # Generate VegaChart spec
-        vega_spec = create_order_promising_chart_spec()
+        vega_spec = tools.get_native_chart_spec()
         surface_id = "order_promising_surface_01"
         a2ui_parts = build_order_promising_surface(surface_id, spec=vega_spec)
 
@@ -310,7 +322,7 @@ try:
     ) -> Optional[types.Content]:
         try:
             surface_id = f"dynamic-orde-{uuid.uuid4().hex[:8]}"
-            a2ui_parts = build_order_promising_surface(surface_id, spec=create_order_promising_chart_spec())
+            a2ui_parts = build_order_promising_surface(surface_id, spec=tools.get_latest_chart_spec(consume=True))
             if a2ui_parts:
                 return types.Content(role="model", parts=a2ui_parts)
         except Exception:
@@ -332,7 +344,6 @@ try:
         instruction=_INSTRUCTION,
         tools=_AVAILABLE_TOOLS,
         before_model_callback=_sanitize_llm_request,
-        after_model_callback=_append_verified_report,
         after_agent_callback=_emit_a2ui_surface,
     )
 
@@ -362,6 +373,6 @@ try:
             return self._scenario_agent.run_scenario(query)
 
 except ImportError:
-    root_agent = None  # type: ignore
+    root_agent = DynamicOrderPromisingAtp()  # type: ignore
     app = None  # type: ignore
     DynamicOrderPromisingAtpAdkApp = None  # type: ignore

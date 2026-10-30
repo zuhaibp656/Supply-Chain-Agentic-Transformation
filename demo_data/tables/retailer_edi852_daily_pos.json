@@ -34,5 +34,65 @@
     "store_book_inventory": 310,
     "retailer_dc_withdrawal_units": 2800,
     "on_shelf_availability_pct": 96.8
+  },
+  {
+    "edi_record_id": "EDI852-20261016-23",
+    "retailer": "Walmart",
+    "store_id": "STORE-WALMART-DAL-126",
+    "region": "US-CENTRAL",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "scan_date": "2026-10-21",
+    "daily_scan_units": 2079,
+    "store_book_inventory": 361,
+    "retailer_dc_withdrawal_units": 3870,
+    "on_shelf_availability_pct": 99.6
+  },
+  {
+    "edi_record_id": "EDI852-20261016-31",
+    "retailer": "Kroger",
+    "store_id": "STORE-KROGER-ATL-238",
+    "region": "US-SOUTHEAST",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "scan_date": "2026-10-24",
+    "daily_scan_units": 0,
+    "store_book_inventory": 296,
+    "retailer_dc_withdrawal_units": 0,
+    "on_shelf_availability_pct": 99.6
+  },
+  {
+    "edi_record_id": "EDI852-20261016-39",
+    "retailer": "Target",
+    "store_id": "STORE-TARGET-CHI-124",
+    "region": "US-MIDWEST",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "scan_date": "2026-10-27",
+    "daily_scan_units": 1178,
+    "store_book_inventory": 388,
+    "retailer_dc_withdrawal_units": 3332,
+    "on_shelf_availability_pct": 99.6
+  },
+  {
+    "edi_record_id": "EDI852-20261016-44",
+    "retailer": "Walmart",
+    "store_id": "STORE-WALMART-DAL-147",
+    "region": "US-CENTRAL",
+    "sku_id": "SKU-XYZ-309",
+    "scan_date": "2026-10-03",
+    "daily_scan_units": 1435,
+    "store_book_inventory": 349,
+    "retailer_dc_withdrawal_units": 5085,
+    "on_shelf_availability_pct": 99.6
+  },
+  {
+    "edi_record_id": "EDI852-20261016-52",
+    "retailer": "Kroger",
+    "store_id": "STORE-KROGER-ATL-259",
+    "region": "US-SOUTHEAST",
+    "sku_id": "SKU-XYZ-412",
+    "scan_date": "2026-10-06",
+    "daily_scan_units": 6,
+    "store_book_inventory": 296,
+    "retailer_dc_withdrawal_units": 6,
+    "on_shelf_availability_pct": 95.48
   }
 ]

@@ -7,5 +7,68 @@
     "billed_detention_hrs": 4.5,
     "billed_detention_fee_usd": 450.0,
     "billed_fuel_surcharge_pct": 34.0
+  },
+  {
+    "invoice_id": "INV-EDI210-77418",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "shipment_id": "SHP-DRY-5527",
+    "billed_amount_usd": 3734.3,
+    "billed_detention_hrs": 3.73,
+    "billed_detention_fee_usd": 535.5,
+    "billed_fuel_surcharge_pct": 29.24
+  },
+  {
+    "invoice_id": "INV-EDI210-77425",
+    "carrier_id": "CAR-XPO-LTL",
+    "shipment_id": "SHP-DRY-5534",
+    "billed_amount_usd": 3001.4,
+    "billed_detention_hrs": 3.51,
+    "billed_detention_fee_usd": 414.0,
+    "billed_fuel_surcharge_pct": 38.42
+  },
+  {
+    "invoice_id": "INV-EDI210-77432",
+    "carrier_id": "CAR-BNSF-RAIL",
+    "shipment_id": "SHP-DRY-5541",
+    "billed_amount_usd": 3210.8,
+    "billed_detention_hrs": 5.35,
+    "billed_detention_fee_usd": 535.5,
+    "billed_fuel_surcharge_pct": 40.46
+  },
+  {
+    "invoice_id": "INV-EDI210-77439",
+    "carrier_id": "CAR-MAERSK-OCEAN",
+    "shipment_id": "SHP-DRY-5548",
+    "billed_amount_usd": 3001.4,
+    "billed_detention_hrs": 3.87,
+    "billed_detention_fee_usd": 535.5,
+    "billed_fuel_surcharge_pct": 26.52
+  },
+  {
+    "invoice_id": "INV-EDI210-77446",
+    "carrier_id": "CAR-LH-AIRCARGO",
+    "shipment_id": "SHP-DRY-5555",
+    "billed_amount_usd": 4362.5,
+    "billed_detention_hrs": 3.51,
+    "billed_detention_fee_usd": 508.5,
+    "billed_fuel_surcharge_pct": 40.46
+  },
+  {
+    "invoice_id": "INV-EDI210-77453",
+    "carrier_id": "CAR-JBHT-FTL",
+    "shipment_id": "SHP-DRY-5562",
+    "billed_amount_usd": 3210.8,
+    "billed_detention_hrs": 3.73,
+    "billed_detention_fee_usd": 373.5,
+    "billed_fuel_surcharge_pct": 36.38
+  },
+  {
+    "invoice_id": "INV-EDI210-77460",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "shipment_id": "SHP-DRY-5569",
+    "billed_amount_usd": 3734.3,
+    "billed_detention_hrs": 3.51,
+    "billed_detention_fee_usd": 508.5,
+    "billed_fuel_surcharge_pct": 31.28
   }
 ]

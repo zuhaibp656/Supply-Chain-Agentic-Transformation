@@ -1,4 +1,0 @@
-constraint_id,sku_id,vendor_id,sub_pillar,capacity_limit,current_load,utilization_pct,sla_threshold_hrs,solver_recommendation
-DOCK_T-CON-201,SKU-SEMI-9900-X1,VND-T1-TSMC-TW01,Warehouse Operations,12500,11950,95.6,24,Rebalance via Dock-to-Stock Agent OR-Tools solver
-DOCK_T-CON-202,SKU-CRYO-4410-BIO,VND-T1-BOSCH-DE02,Warehouse Operations,8400,7980,95.0,12,Trigger automated SAP S/4HANA schedule update
-DOCK_T-CON-203,SKU-AUTO-7720-EV,VND-T2-LGCHEM-KR01,Warehouse Operations,15000,12300,82.0,48,Hold optimal buffer allocation

@@ -1,0 +1,66 @@
+[
+  {
+    "partner_id": "DIV-TX-FEED01",
+    "partner_name": "LoneStar Livestock Wet-Grain Upcyclers",
+    "epa_tier": "TIER_3_ANIMAL_FEED",
+    "has_depackager": false,
+    "distance_from_hub_km": 38,
+    "methane_avoided_tco2e_per_mt": 0.89
+  },
+  {
+    "partner_id": "DIV-TX-BIOGAS02",
+    "partner_name": "Trinity Valley Depackaging & Anaerobic Digester",
+    "epa_tier": "TIER_4_ANAEROBIC_DIGESTION",
+    "has_depackager": true,
+    "distance_from_hub_km": 44,
+    "methane_avoided_tco2e_per_mt": 0.74
+  },
+  {
+    "partner_id": "DIV-GA-BIOGAS03",
+    "partner_name": "Peachtree RNG Depackager & Digester",
+    "epa_tier": "TIER_4_ANAEROBIC_DIGESTION",
+    "has_depackager": true,
+    "distance_from_hub_km": 31,
+    "methane_avoided_tco2e_per_mt": 0.74
+  },
+  {
+    "partner_id": "DIV-TX-FEED04",
+    "partner_name": "Brazos Cattle High-Protein Feed Mill",
+    "epa_tier": "TIER_3_ANIMAL_FEED",
+    "has_depackager": false,
+    "distance_from_hub_km": 52,
+    "methane_avoided_tco2e_per_mt": 0.92
+  },
+  {
+    "partner_id": "DIV-IL-BIOGAS05",
+    "partner_name": "Midwest Circular Depack & Biogas RNG",
+    "epa_tier": "TIER_4_ANAEROBIC_DIGESTION",
+    "has_depackager": true,
+    "distance_from_hub_km": 29,
+    "methane_avoided_tco2e_per_mt": 0.72
+  },
+  {
+    "partner_id": "DIV-TX-COMP06",
+    "partner_name": "Austin Aerobic Windrow Composting",
+    "epa_tier": "TIER_5_AEROBIC_COMPOST",
+    "has_depackager": false,
+    "distance_from_hub_km": 22,
+    "methane_avoided_tco2e_per_mt": 0.61
+  },
+  {
+    "partner_id": "DIV-IN-BIOGAS07",
+    "partner_name": "Navi Mumbai Bio-CNG Circular Plant",
+    "epa_tier": "TIER_4_ANAEROBIC_DIGESTION",
+    "has_depackager": true,
+    "distance_from_hub_km": 27,
+    "methane_avoided_tco2e_per_mt": 0.75
+  },
+  {
+    "partner_id": "DIV-DE-BIOGAS08",
+    "partner_name": "Rhein-Main Biogas & Aluminum Recovery GmbH",
+    "epa_tier": "TIER_4_ANAEROBIC_DIGESTION",
+    "has_depackager": true,
+    "distance_from_hub_km": 24,
+    "methane_avoided_tco2e_per_mt": 0.78
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "po_number": "PO-XYZ-880219",
+    "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "sku_id": "SKU-XYZ-204",
+    "po_qty": 10000,
+    "po_unit_price_usd": 14.8,
+    "po_total_usd": 148000.0,
+    "incoterms": "DDP_AUSTIN",
+    "payment_terms": "2/10 Net 30"
+  },
+  {
+    "po_number": "PO-XYZ-880142",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "sku_id": "SKU-XYZ-101",
+    "po_qty": 1200,
+    "po_unit_price_usd": 420.0,
+    "po_total_usd": 504000.0,
+    "incoterms": "DAP_STUTTGART",
+    "payment_terms": "2/10 Net 45"
+  },
+  {
+    "po_number": "PO-XYZ-880410",
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "sku_id": "PKG-RPET-PREFORM-38MM",
+    "po_qty": 2500,
+    "po_unit_price_usd": 74.5,
+    "po_total_usd": 186250.0,
+    "incoterms": "DDP_AUSTIN",
+    "payment_terms": "2/10 Net 30"
+  },
+  {
+    "po_number": "PO-XYZ-880492",
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "po_qty": 6000,
+    "po_unit_price_usd": 16.2,
+    "po_total_usd": 97200.0,
+    "incoterms": "FCA_ORIGIN",
+    "payment_terms": "1.5/10 Net 30"
+  },
+  {
+    "po_number": "PO-XYZ-880355",
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "sku_id": "SKU-XYZ-412",
+    "po_qty": 3000,
+    "po_unit_price_usd": 185.0,
+    "po_total_usd": 555000.0,
+    "incoterms": "CIP_BLR",
+    "payment_terms": "Net 60"
+  },
+  {
+    "po_number": "PO-XYZ-880530",
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "po_qty": 500,
+    "po_unit_price_usd": 640.0,
+    "po_total_usd": 320000.0,
+    "incoterms": "DDP_STUTTGART",
+    "payment_terms": "2/10 Net 45"
+  },
+  {
+    "po_number": "PO-XYZ-880612",
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "sku_id": "SKU-XYZ-625",
+    "po_qty": 1500,
+    "po_unit_price_usd": 88.0,
+    "po_total_usd": 132000.0,
+    "incoterms": "CIF_CHENNAI",
+    "payment_terms": "Net 45"
+  },
+  {
+    "po_number": "PO-XYZ-880688",
+    "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
+    "plant_id": "CMO-XYZ-DALLAS",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "po_qty": 8000,
+    "po_unit_price_usd": 11.4,
+    "po_total_usd": 91200.0,
+    "incoterms": "DDP_DALLAS",
+    "payment_terms": "2/10 Net 30"
+  }
+]

@@ -24,5 +24,83 @@
     "pipeline_due_date": "2026-10-23T14:00:00Z",
     "capable_to_promise_ctp_units": 9800,
     "spanner_query_latency_ms": 12.3
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R022DB",
+    "network_node_id": "CDC-CHICAGO-16",
+    "node_type": "CENTRAL_DC",
+    "total_physical_on_hand_units": 77292,
+    "allocated_committed_units": 11076,
+    "tier1_contract_reserved_units": 22600,
+    "realtime_uncommitted_atp_units": 36594,
+    "replenishment_pipeline_due_units": 17850,
+    "pipeline_due_date": "2026-10-25T18:00:00Z",
+    "capable_to_promise_ctp_units": 52644,
+    "spanner_query_latency_ms": 14.716
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R03710",
+    "network_node_id": "RDC-DALLAS-24",
+    "node_type": "REGIONAL_DC",
+    "total_physical_on_hand_units": 16303,
+    "allocated_committed_units": 6102,
+    "tier1_contract_reserved_units": 5950,
+    "realtime_uncommitted_atp_units": 3729,
+    "replenishment_pipeline_due_units": 7345,
+    "pipeline_due_date": "2026-10-23T14:00:00Z",
+    "capable_to_promise_ctp_units": 12250,
+    "spanner_query_latency_ms": 12.258
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R04911",
+    "network_node_id": "CDC-CHICAGO-30",
+    "node_type": "CENTRAL_DC",
+    "total_physical_on_hand_units": 81396,
+    "allocated_committed_units": 12212,
+    "tier1_contract_reserved_units": 17200,
+    "realtime_uncommitted_atp_units": 31464,
+    "replenishment_pipeline_due_units": 16050,
+    "pipeline_due_date": "2026-10-25T18:00:00Z",
+    "capable_to_promise_ctp_units": 38376,
+    "spanner_query_latency_ms": 14.8
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R05C32",
+    "network_node_id": "RDC-DALLAS-38",
+    "node_type": "REGIONAL_DC",
+    "total_physical_on_hand_units": 11782,
+    "allocated_committed_units": 6750,
+    "tier1_contract_reserved_units": 5950,
+    "realtime_uncommitted_atp_units": 2838,
+    "replenishment_pipeline_due_units": 6955,
+    "pipeline_due_date": "2026-10-23T14:00:00Z",
+    "capable_to_promise_ctp_units": 10486,
+    "spanner_query_latency_ms": 12.342
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R0644A",
+    "network_node_id": "CDC-CHICAGO-44",
+    "node_type": "CENTRAL_DC",
+    "total_physical_on_hand_units": 81396,
+    "allocated_committed_units": 12212,
+    "tier1_contract_reserved_units": 25000,
+    "realtime_uncommitted_atp_units": 42750,
+    "replenishment_pipeline_due_units": 16950,
+    "pipeline_due_date": "2026-10-25T18:00:00Z",
+    "capable_to_promise_ctp_units": 52644,
+    "spanner_query_latency_ms": 14.884
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R0701B",
+    "network_node_id": "RDC-DALLAS-52",
+    "node_type": "REGIONAL_DC",
+    "total_physical_on_hand_units": 17125,
+    "allocated_committed_units": 4212,
+    "tier1_contract_reserved_units": 6250,
+    "realtime_uncommitted_atp_units": 3531,
+    "replenishment_pipeline_due_units": 5395,
+    "pipeline_due_date": "2026-10-23T14:00:00Z",
+    "capable_to_promise_ctp_units": 11662,
+    "spanner_query_latency_ms": 12.426
   }
 ]

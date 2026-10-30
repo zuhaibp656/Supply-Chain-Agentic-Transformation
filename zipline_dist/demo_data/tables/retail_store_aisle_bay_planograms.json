@@ -1,0 +1,74 @@
+[
+  {
+    "planogram_id": "PLG-MEGA-A04",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "sku_id": "SKU-XYZ-204",
+    "store_aisle": "AISLE-04",
+    "bay_seq": 2,
+    "walk_path_order": 1,
+    "aisle_zone_group": "BEVERAGE_HEAVY"
+  },
+  {
+    "planogram_id": "PLG-MEGA-A05",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "store_aisle": "AISLE-05",
+    "bay_seq": 6,
+    "walk_path_order": 2,
+    "aisle_zone_group": "SPORTS_HYDRATION"
+  },
+  {
+    "planogram_id": "PLG-MEGA-A11",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "store_aisle": "AISLE-11",
+    "bay_seq": 3,
+    "walk_path_order": 3,
+    "aisle_zone_group": "NUTRITION_CHECKOUT"
+  },
+  {
+    "planogram_id": "PLG-KROG-C02",
+    "customer_id": "CUST-KROGER-US01",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "store_aisle": "CHILL-02",
+    "bay_seq": 4,
+    "walk_path_order": 1,
+    "aisle_zone_group": "PLANT_DAIRY_WALL"
+  },
+  {
+    "planogram_id": "PLG-KROG-C03",
+    "customer_id": "CUST-KROGER-US01",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "store_aisle": "CHILL-03",
+    "bay_seq": 1,
+    "walk_path_order": 2,
+    "aisle_zone_group": "CULTURED_SHOTS_TOP"
+  },
+  {
+    "planogram_id": "PLG-COST-B08",
+    "customer_id": "CUST-COSTCO-US04",
+    "sku_id": "SKU-XYZ-204",
+    "store_aisle": "CLUB-BAY-08",
+    "bay_seq": 1,
+    "walk_path_order": 1,
+    "aisle_zone_group": "BULK_BEVERAGE"
+  },
+  {
+    "planogram_id": "PLG-COST-B14",
+    "customer_id": "CUST-COSTCO-US04",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "store_aisle": "CLUB-BAY-14",
+    "bay_seq": 5,
+    "walk_path_order": 2,
+    "aisle_zone_group": "FITNESS_ENDCAP"
+  },
+  {
+    "planogram_id": "PLG-METR-A03",
+    "customer_id": "CUST-XYZ-TIER2-METROCPG",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "store_aisle": "AISLE-03",
+    "bay_seq": 2,
+    "walk_path_order": 1,
+    "aisle_zone_group": "HYDRATION_MAIN"
+  }
+]

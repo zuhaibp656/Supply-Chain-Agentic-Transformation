@@ -1,4 +1,2 @@
-"""[04 · Inventory & DC | Positioning & Optimization] SLOB Disposition Agent — Google ADK Package."""
-from .agent import SlobDispositionAgentAgent, root_agent
-
-__all__ = ["SlobDispositionAgentAgent", "root_agent"]
+"""ADK package for [04 · Inventory & DC | Positioning & Optimization] SLOB Disposition Agent."""
+from .agent import root_agent, SlobDispositionAgentAgent, SlobDispositionAgentAdkApp

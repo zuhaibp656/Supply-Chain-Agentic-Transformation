@@ -1,0 +1,66 @@
+[
+  {
+    "sweep_id": "SWP-701",
+    "custodian_id": "CUST-XYZ-TIER1-MEGAMART",
+    "asset_type": "CHEP_48X40_BLUE_PALLET",
+    "lost_fee_exposure_usd": 22040.0,
+    "backhaul_sweep_cost_usd": 420.0,
+    "reclamation_action": "DEDICATED_EMPTY_BACKHAUL_SWEEP"
+  },
+  {
+    "sweep_id": "SWP-702",
+    "custodian_id": "CUST-KROGER-US01",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "lost_fee_exposure_usd": 15080.0,
+    "backhaul_sweep_cost_usd": 380.0,
+    "reclamation_action": "COLLAPSED_RPC_BACKHAUL_PICKUP"
+  },
+  {
+    "sweep_id": "SWP-703",
+    "custodian_id": "CUST-MEDLINE-BIO01",
+    "asset_type": "VAQTEC_VIP_CRYO_SHIPPER",
+    "lost_fee_exposure_usd": 63700.0,
+    "backhaul_sweep_cost_usd": 890.0,
+    "reclamation_action": "PRIORITY_COURIER_CRYO_RECOVERY"
+  },
+  {
+    "sweep_id": "SWP-704",
+    "custodian_id": "CUST-XYZ-TIER1-AUTOWORKS",
+    "asset_type": "AUTO_STEEL_STILLAGE_RACK",
+    "lost_fee_exposure_usd": 50320.0,
+    "backhaul_sweep_cost_usd": 640.0,
+    "reclamation_action": "MILKRUN_RETURN_LOOP_LOCK"
+  },
+  {
+    "sweep_id": "SWP-705",
+    "custodian_id": "CUST-COSTCO-US04",
+    "asset_type": "PECO_BLOCK_PALLET",
+    "lost_fee_exposure_usd": 0.0,
+    "backhaul_sweep_cost_usd": 0.0,
+    "reclamation_action": "WITHIN_GRACE_NO_ACTION"
+  },
+  {
+    "sweep_id": "SWP-706",
+    "custodian_id": "CUST-KROGER-US01",
+    "asset_type": "INSULATED_DAIRY_ROLLCAGE",
+    "lost_fee_exposure_usd": 88150.0,
+    "backhaul_sweep_cost_usd": 710.0,
+    "reclamation_action": "REEFER_DEADHEAD_SWEEP_DISPATCH"
+  },
+  {
+    "sweep_id": "SWP-707",
+    "custodian_id": "CUST-ALDI-OUTLET-US09",
+    "asset_type": "CHEP_48X40_BLUE_PALLET",
+    "lost_fee_exposure_usd": 16340.0,
+    "backhaul_sweep_cost_usd": 490.0,
+    "reclamation_action": "SWEEP_OR_45D_DEPOSIT_INVOICE"
+  },
+  {
+    "sweep_id": "SWP-708",
+    "custodian_id": "CUST-XYZ-TIER2-METROCPG",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "lost_fee_exposure_usd": 8990.0,
+    "backhaul_sweep_cost_usd": 310.0,
+    "reclamation_action": "URBAN_REVERSE_VAN_SWEEP"
+  }
+]

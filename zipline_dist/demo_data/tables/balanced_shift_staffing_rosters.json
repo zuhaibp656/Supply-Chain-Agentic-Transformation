@@ -1,0 +1,82 @@
+[
+  {
+    "move_id": "BAL-SHF-01",
+    "line_id": "LINE-ASEPTIC-A1",
+    "operator_id": "OP-AUS-104",
+    "from_station": "STN-AUS-PAL-04",
+    "to_station": "STN-AUS-FILL-01",
+    "new_cycle_sec": 39.8,
+    "line_efficiency_after_pct": 94.6,
+    "shift_overtime_saved_usd": 1840.0
+  },
+  {
+    "move_id": "BAL-SHF-02",
+    "line_id": "LINE-ASEPTIC-A1",
+    "operator_id": "OP-AUS-118",
+    "from_station": "STN-AUS-PAL-04",
+    "to_station": "STN-AUS-PACK-03",
+    "new_cycle_sec": 40.5,
+    "line_efficiency_after_pct": 94.6,
+    "shift_overtime_saved_usd": 1420.0
+  },
+  {
+    "move_id": "BAL-SHF-03",
+    "line_id": "LINE-LASER-B2",
+    "operator_id": "OP-STU-205",
+    "from_station": "STN-STU-TEST-02",
+    "to_station": "STN-STU-WELD-01",
+    "new_cycle_sec": 62.4,
+    "line_efficiency_after_pct": 93.8,
+    "shift_overtime_saved_usd": 2160.0
+  },
+  {
+    "move_id": "BAL-SHF-04",
+    "line_id": "LINE-IOT-C1",
+    "operator_id": "OP-BLR-302",
+    "from_station": "STN-BLR-BOX-02",
+    "to_station": "STN-BLR-SMT-01",
+    "new_cycle_sec": 34.8,
+    "line_efficiency_after_pct": 95.1,
+    "shift_overtime_saved_usd": 980.0
+  },
+  {
+    "move_id": "BAL-SHF-05",
+    "line_id": "LINE-ASEPTIC-A1",
+    "operator_id": "OP-AUS-122",
+    "from_station": "STN-AUS-FILL-01",
+    "to_station": "STN-AUS-CAP-02",
+    "new_cycle_sec": 39.0,
+    "line_efficiency_after_pct": 94.6,
+    "shift_overtime_saved_usd": 640.0
+  },
+  {
+    "move_id": "BAL-SHF-06",
+    "line_id": "LINE-ASEPTIC-A1",
+    "operator_id": "OP-AUS-135",
+    "from_station": "STN-AUS-CAP-02",
+    "to_station": "STN-AUS-PACK-03",
+    "new_cycle_sec": 40.1,
+    "line_efficiency_after_pct": 94.9,
+    "shift_overtime_saved_usd": 520.0
+  },
+  {
+    "move_id": "BAL-SHF-07",
+    "line_id": "LINE-LASER-B2",
+    "operator_id": "OP-STU-219",
+    "from_station": "STN-STU-WELD-01",
+    "to_station": "STN-STU-TEST-02",
+    "new_cycle_sec": 60.5,
+    "line_efficiency_after_pct": 93.8,
+    "shift_overtime_saved_usd": 810.0
+  },
+  {
+    "move_id": "BAL-SHF-08",
+    "line_id": "LINE-IOT-C1",
+    "operator_id": "OP-BLR-311",
+    "from_station": "STN-BLR-SMT-01",
+    "to_station": "STN-BLR-BOX-02",
+    "new_cycle_sec": 33.5,
+    "line_efficiency_after_pct": 95.1,
+    "shift_overtime_saved_usd": 490.0
+  }
+]

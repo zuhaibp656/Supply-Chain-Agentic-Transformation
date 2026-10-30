@@ -11,5 +11,96 @@
       "STOP_1_TAIL_ZONE_C"
     ],
     "zero_rehandling_verified": true
+  },
+  {
+    "load_plan_id": "LP-3D-20261022-96",
+    "shipment_wave_id": "WAVE-3D-20261022-17",
+    "trailer_type_id": "TRL-53FT-DRYVAN-R01BEB",
+    "cube_utilization_pct": 99.6,
+    "weight_utilization_pct": 99.6,
+    "lifo_sequence_order": [
+      "STOP_3_NOSE_ZONE_A",
+      "STOP_2_MID_ZONE_B",
+      "STOP_1_TAIL_ZONE_C"
+    ],
+    "zero_rehandling_verified": true
+  },
+  {
+    "load_plan_id": "LP-3D-20261022-103",
+    "shipment_wave_id": "WAVE-3D-20261022-24",
+    "trailer_type_id": "TRL-53FT-DRYVAN-R02B61",
+    "cube_utilization_pct": 76.69,
+    "weight_utilization_pct": 99.6,
+    "lifo_sequence_order": [
+      "STOP_3_NOSE_ZONE_A",
+      "STOP_2_MID_ZONE_B",
+      "STOP_1_TAIL_ZONE_C"
+    ],
+    "zero_rehandling_verified": true
+  },
+  {
+    "load_plan_id": "LP-3D-20261022-110",
+    "shipment_wave_id": "WAVE-3D-20261022-31",
+    "trailer_type_id": "TRL-53FT-DRYVAN-R033F3",
+    "cube_utilization_pct": 72.07,
+    "weight_utilization_pct": 70.59,
+    "lifo_sequence_order": [
+      "STOP_3_NOSE_ZONE_A",
+      "STOP_2_MID_ZONE_B",
+      "STOP_1_TAIL_ZONE_C"
+    ],
+    "zero_rehandling_verified": false
+  },
+  {
+    "load_plan_id": "LP-3D-20261022-117",
+    "shipment_wave_id": "WAVE-3D-20261022-38",
+    "trailer_type_id": "TRL-53FT-DRYVAN-R04B8F",
+    "cube_utilization_pct": 79.46,
+    "weight_utilization_pct": 70.59,
+    "lifo_sequence_order": [
+      "STOP_3_NOSE_ZONE_A",
+      "STOP_2_MID_ZONE_B",
+      "STOP_1_TAIL_ZONE_C"
+    ],
+    "zero_rehandling_verified": true
+  },
+  {
+    "load_plan_id": "LP-3D-20261022-124",
+    "shipment_wave_id": "WAVE-3D-20261022-45",
+    "trailer_type_id": "TRL-53FT-DRYVAN-R05610",
+    "cube_utilization_pct": 98.87,
+    "weight_utilization_pct": 96.84,
+    "lifo_sequence_order": [
+      "STOP_3_NOSE_ZONE_A",
+      "STOP_2_MID_ZONE_B",
+      "STOP_1_TAIL_ZONE_C"
+    ],
+    "zero_rehandling_verified": true
+  },
+  {
+    "load_plan_id": "LP-3D-20261022-131",
+    "shipment_wave_id": "WAVE-3D-20261022-52",
+    "trailer_type_id": "TRL-53FT-DRYVAN-R06E3B",
+    "cube_utilization_pct": 85.01,
+    "weight_utilization_pct": 77.83,
+    "lifo_sequence_order": [
+      "STOP_3_NOSE_ZONE_A",
+      "STOP_2_MID_ZONE_B",
+      "STOP_1_TAIL_ZONE_C"
+    ],
+    "zero_rehandling_verified": false
+  },
+  {
+    "load_plan_id": "LP-3D-20261022-138",
+    "shipment_wave_id": "WAVE-3D-20261022-59",
+    "trailer_type_id": "TRL-53FT-DRYVAN-R07838",
+    "cube_utilization_pct": 98.87,
+    "weight_utilization_pct": 99.6,
+    "lifo_sequence_order": [
+      "STOP_3_NOSE_ZONE_A",
+      "STOP_2_MID_ZONE_B",
+      "STOP_1_TAIL_ZONE_C"
+    ],
+    "zero_rehandling_verified": true
   }
 ]

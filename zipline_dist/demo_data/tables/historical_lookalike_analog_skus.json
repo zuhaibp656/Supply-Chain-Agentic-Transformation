@@ -1,0 +1,82 @@
+[
+  {
+    "analog_id": "ANLG-001",
+    "npi_sku_id": "SKU-NPI-ELECTRO-ZERO-16OZ",
+    "lookalike_sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "cosine_similarity": 0.94,
+    "bass_p_innovation": 0.038,
+    "bass_q_imitation": 0.41,
+    "realized_units_per_store_week": 6.8,
+    "repeat_purchase_pct": 38.5
+  },
+  {
+    "analog_id": "ANLG-002",
+    "npi_sku_id": "SKU-NPI-OAT-VANILLA-1L",
+    "lookalike_sku_id": "SKU-BEV-OATMILK-1L",
+    "cosine_similarity": 0.96,
+    "bass_p_innovation": 0.042,
+    "bass_q_imitation": 0.39,
+    "realized_units_per_store_week": 5.4,
+    "repeat_purchase_pct": 44.2
+  },
+  {
+    "analog_id": "ANLG-003",
+    "npi_sku_id": "SKU-NPI-KEFIR-MANGO-6PK",
+    "lookalike_sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "cosine_similarity": 0.91,
+    "bass_p_innovation": 0.049,
+    "bass_q_imitation": 0.46,
+    "realized_units_per_store_week": 7.9,
+    "repeat_purchase_pct": 47.0
+  },
+  {
+    "analog_id": "ANLG-004",
+    "npi_sku_id": "SKU-NPI-BAR-PEANUT-24CT",
+    "lookalike_sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "cosine_similarity": 0.95,
+    "bass_p_innovation": 0.036,
+    "bass_q_imitation": 0.37,
+    "realized_units_per_store_week": 6.2,
+    "repeat_purchase_pct": 41.8
+  },
+  {
+    "analog_id": "ANLG-005",
+    "npi_sku_id": "SKU-NPI-CELL-950V-MOD",
+    "lookalike_sku_id": "SKU-XYZ-101",
+    "cosine_similarity": 0.89,
+    "bass_p_innovation": 0.029,
+    "bass_q_imitation": 0.33,
+    "realized_units_per_store_week": 14.0,
+    "repeat_purchase_pct": 62.0
+  },
+  {
+    "analog_id": "ANLG-006",
+    "npi_sku_id": "SKU-NPI-IOT-5G-TAG",
+    "lookalike_sku_id": "SKU-XYZ-412",
+    "cosine_similarity": 0.92,
+    "bass_p_innovation": 0.034,
+    "bass_q_imitation": 0.35,
+    "realized_units_per_store_week": 9.5,
+    "repeat_purchase_pct": 54.0
+  },
+  {
+    "analog_id": "ANLG-007",
+    "npi_sku_id": "SKU-NPI-CRYO-KIT-V2",
+    "lookalike_sku_id": "SKU-CRYO-4410-BIO",
+    "cosine_similarity": 0.93,
+    "bass_p_innovation": 0.044,
+    "bass_q_imitation": 0.43,
+    "realized_units_per_store_week": 4.6,
+    "repeat_purchase_pct": 68.5
+  },
+  {
+    "analog_id": "ANLG-008",
+    "npi_sku_id": "SKU-NPI-HYDRA-POWDER-30CT",
+    "lookalike_sku_id": "SKU-XYZ-204",
+    "cosine_similarity": 0.9,
+    "bass_p_innovation": 0.04,
+    "bass_q_imitation": 0.42,
+    "realized_units_per_store_week": 6.1,
+    "repeat_purchase_pct": 43.1
+  }
+]

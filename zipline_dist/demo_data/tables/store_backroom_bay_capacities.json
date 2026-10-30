@@ -1,0 +1,74 @@
+[
+  {
+    "store_id": "STR-MEGA-DAL-014",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "storage_zone": "AMBIENT_BACKROOM",
+    "max_pallet_bays": 28,
+    "occupied_pallet_bays": 25,
+    "inbound_scheduled_pallets": 9,
+    "receiving_dock_hrs_cap": 6.0
+  },
+  {
+    "store_id": "STR-MEGA-CHI-022",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "storage_zone": "AMBIENT_BACKROOM",
+    "max_pallet_bays": 32,
+    "occupied_pallet_bays": 29,
+    "inbound_scheduled_pallets": 8,
+    "receiving_dock_hrs_cap": 6.0
+  },
+  {
+    "store_id": "STR-KROG-ATL-108",
+    "customer_id": "CUST-KROGER-US01",
+    "storage_zone": "WALKIN_COOLER_2_8C",
+    "max_pallet_bays": 14,
+    "occupied_pallet_bays": 12,
+    "inbound_scheduled_pallets": 6,
+    "receiving_dock_hrs_cap": 4.5
+  },
+  {
+    "store_id": "STR-KROG-DAL-119",
+    "customer_id": "CUST-KROGER-US01",
+    "storage_zone": "WALKIN_COOLER_2_8C",
+    "max_pallet_bays": 16,
+    "occupied_pallet_bays": 11,
+    "inbound_scheduled_pallets": 4,
+    "receiving_dock_hrs_cap": 5.0
+  },
+  {
+    "store_id": "STR-COST-CHI-007",
+    "customer_id": "CUST-COSTCO-US04",
+    "storage_zone": "STEEL_RACK_FLOOR",
+    "max_pallet_bays": 60,
+    "occupied_pallet_bays": 54,
+    "inbound_scheduled_pallets": 12,
+    "receiving_dock_hrs_cap": 8.0
+  },
+  {
+    "store_id": "STR-METR-MUM-031",
+    "customer_id": "CUST-XYZ-TIER2-METROCPG",
+    "storage_zone": "URBAN_DARKSTORE_COOL",
+    "max_pallet_bays": 10,
+    "occupied_pallet_bays": 9,
+    "inbound_scheduled_pallets": 4,
+    "receiving_dock_hrs_cap": 4.0
+  },
+  {
+    "store_id": "STR-MEGA-ATL-045",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "storage_zone": "AMBIENT_BACKROOM",
+    "max_pallet_bays": 26,
+    "occupied_pallet_bays": 18,
+    "inbound_scheduled_pallets": 6,
+    "receiving_dock_hrs_cap": 6.0
+  },
+  {
+    "store_id": "STR-KROG-CHI-142",
+    "customer_id": "CUST-KROGER-US01",
+    "storage_zone": "WALKIN_COOLER_2_8C",
+    "max_pallet_bays": 12,
+    "occupied_pallet_bays": 11,
+    "inbound_scheduled_pallets": 5,
+    "receiving_dock_hrs_cap": 4.0
+  }
+]

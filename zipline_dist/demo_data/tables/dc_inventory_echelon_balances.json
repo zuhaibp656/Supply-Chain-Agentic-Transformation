@@ -34,5 +34,65 @@
     "safety_stock_threshold_units": 11000,
     "days_of_supply": 18.2,
     "inventory_status": "BALANCED_HEALTHY"
+  },
+  {
+    "dc_id": "CDC-CHICAGO-23",
+    "dc_name": "Midwest Central Distribution Center",
+    "echelon_tier": "TIER_1_CENTRAL_DC",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "on_hand_inventory_units": 81396,
+    "allocated_inventory_units": 16898,
+    "available_to_promise_units": 64498,
+    "safety_stock_threshold_units": 40000,
+    "days_of_supply": 30.5,
+    "inventory_status": "SURPLUS_AVAILABLE_FOR_REBALANCE"
+  },
+  {
+    "dc_id": "RDC-DALLAS-31",
+    "dc_name": "South Regional Distribution Center",
+    "echelon_tier": "TIER_2_REGIONAL_DC",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "on_hand_inventory_units": 6192,
+    "allocated_inventory_units": 4968,
+    "available_to_promise_units": 1494,
+    "safety_stock_threshold_units": 15194,
+    "days_of_supply": 4.52,
+    "inventory_status": "STOCKOUT_ALERT_IMMINENT"
+  },
+  {
+    "dc_id": "RDC-ATLANTA-39",
+    "dc_name": "Southeast Regional Distribution Center",
+    "echelon_tier": "TIER_2_REGIONAL_DC",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "on_hand_inventory_units": 27685,
+    "allocated_inventory_units": 3198,
+    "available_to_promise_units": 15912,
+    "safety_stock_threshold_units": 9130,
+    "days_of_supply": 21.66,
+    "inventory_status": "BALANCED_HEALTHY"
+  },
+  {
+    "dc_id": "CDC-CHICAGO-44",
+    "dc_name": "Midwest Central Distribution Center",
+    "echelon_tier": "TIER_1_CENTRAL_DC",
+    "sku_id": "SKU-XYZ-309",
+    "on_hand_inventory_units": 56772,
+    "allocated_inventory_units": 11076,
+    "available_to_promise_units": 46612,
+    "safety_stock_threshold_units": 27520,
+    "days_of_supply": 32.2,
+    "inventory_status": "SURPLUS_AVAILABLE_FOR_REBALANCE"
+  },
+  {
+    "dc_id": "RDC-DALLAS-52",
+    "dc_name": "South Regional Distribution Center",
+    "echelon_tier": "TIER_2_REGIONAL_DC",
+    "sku_id": "SKU-XYZ-412",
+    "on_hand_inventory_units": 6624,
+    "allocated_inventory_units": 4212,
+    "available_to_promise_units": 1656,
+    "safety_stock_threshold_units": 11076,
+    "days_of_supply": 3.15,
+    "inventory_status": "STOCKOUT_ALERT_IMMINENT"
   }
 ]

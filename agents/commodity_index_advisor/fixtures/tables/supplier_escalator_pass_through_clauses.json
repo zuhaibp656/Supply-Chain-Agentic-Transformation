@@ -1,0 +1,82 @@
+[
+  {
+    "clause_id": "CLS-IND-01",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "commodity_code": "LME-ALUMINUM-P1020",
+    "index_weight_in_price_pct": 62.0,
+    "deadband_corridor_pct": 5.0,
+    "supplier_requested_hike_pct": 9.8,
+    "formula_verified_hike_pct": 6.1,
+    "overcharge_exposure_usd": 218400
+  },
+  {
+    "clause_id": "CLS-IND-02",
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "commodity_code": "ICIS-RPET-FOODGRADE-US",
+    "index_weight_in_price_pct": 74.0,
+    "deadband_corridor_pct": 4.0,
+    "supplier_requested_hike_pct": 0.0,
+    "formula_verified_hike_pct": -7.1,
+    "overcharge_exposure_usd": 495000
+  },
+  {
+    "clause_id": "CLS-IND-03",
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "commodity_code": "FAST-LITHIUM-CARB-BG",
+    "index_weight_in_price_pct": 48.0,
+    "deadband_corridor_pct": 5.0,
+    "supplier_requested_hike_pct": 0.0,
+    "formula_verified_hike_pct": -5.4,
+    "overcharge_exposure_usd": 384000
+  },
+  {
+    "clause_id": "CLS-IND-04",
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "commodity_code": "CBOT-MILLING-OATS",
+    "index_weight_in_price_pct": 58.0,
+    "deadband_corridor_pct": 4.0,
+    "supplier_requested_hike_pct": 11.5,
+    "formula_verified_hike_pct": 7.2,
+    "overcharge_exposure_usd": 146000
+  },
+  {
+    "clause_id": "CLS-IND-05",
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "index_weight_in_price_pct": 68.0,
+    "deadband_corridor_pct": 5.0,
+    "supplier_requested_hike_pct": 10.8,
+    "formula_verified_hike_pct": 7.4,
+    "overcharge_exposure_usd": 121800
+  },
+  {
+    "clause_id": "CLS-IND-06",
+    "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
+    "commodity_code": "LME-ALUMINUM-P1020",
+    "index_weight_in_price_pct": 55.0,
+    "deadband_corridor_pct": 5.0,
+    "supplier_requested_hike_pct": 8.2,
+    "formula_verified_hike_pct": 5.4,
+    "overcharge_exposure_usd": 164200
+  },
+  {
+    "clause_id": "CLS-IND-07",
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "index_weight_in_price_pct": 65.0,
+    "deadband_corridor_pct": 4.0,
+    "supplier_requested_hike_pct": 9.0,
+    "formula_verified_hike_pct": 5.8,
+    "overcharge_exposure_usd": 189000
+  },
+  {
+    "clause_id": "CLS-IND-08",
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "commodity_code": "EU-NAT-GAS-TTF-GLASS",
+    "index_weight_in_price_pct": 38.0,
+    "deadband_corridor_pct": 6.0,
+    "supplier_requested_hike_pct": 0.0,
+    "formula_verified_hike_pct": -2.6,
+    "overcharge_exposure_usd": 74000
+  }
+]

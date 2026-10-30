@@ -1,19 +1,25 @@
-[
-  {
-    "scenario_id": "keep_it_routing_advisor_golden_01",
-    "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt",
-    "agent_name": "[06 \u00b7 Returns & ESG | Returns & Claims Mgmt] Keep-It & Routing Advisor",
-    "prompt": "Run Keep-It & Routing Advisor analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
-    "expected_tools": [
-      "query_keep_it_routing_advisor_telemetry_feed",
-      "query_keep_it_routing_advisor_constraint_matrix",
-      "action_commit_keep_it_routing_advisor_plan"
-    ],
-    "expected_outcome": "Lowers net return costs by 15\u201322%",
-    "eval_models": {
-      "fast_execution_model": "gemini-3.8-flash",
-      "deep_reasoning_and_judge_model": "gemini-4-argon (or gemini-3.1-pro subject to availability)",
-      "orchestrator_routing": "Agent Orchestrator dynamically decides whether to route the query to Gemini 3.8 Flash (gemini-3.8-flash) or escalate to Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability)."
+{
+  "agent_id": "keep_it_routing_advisor",
+  "organization_id": "XYZ-CORP-01",
+  "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt",
+  "persona": "Returns Operations Manager",
+  "eval_judge_model": "gemini-4-argon (fallback: gemini-3.1-pro)",
+  "scenarios": [
+    {
+      "id": "keep_it_routing_advisor_analytical_audit",
+      "prompt": "Run analyze_keep_it_economic_breakeven across XYZ-CORP-01 records and render a visual comparison chart.",
+      "expected_tools": [
+        "query_low_asp_return_requests",
+        "analyze_keep_it_economic_breakeven",
+        "render_visual_chart"
+      ]
+    },
+    {
+      "id": "keep_it_routing_advisor_persona_draft_and_gate",
+      "prompt": "Draft the Returnless 'Keep-It' Breakeven & Abuse-Gate Audit Summary for leadership review without committing mutations until confirmed.",
+      "expected_tools": [
+        "draft_returnless_refund_policy_audit_memo"
+      ]
     }
-  }
-]
+  ]
+}

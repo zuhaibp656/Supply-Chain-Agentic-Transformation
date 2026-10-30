@@ -1,4 +1,2 @@
-"""[05 · Logistics | First & Mid-Mile] Cold-Chain Auditor — Google ADK Package."""
-from .agent import ColdChainAuditorAgent, root_agent
-
-__all__ = ["ColdChainAuditorAgent", "root_agent"]
+"""ADK package for [05 · Deliver | First & Mid-Mile] Cold-Chain Auditor."""
+from .agent import root_agent, ColdChainAuditorAgent, ColdChainAuditorAdkApp

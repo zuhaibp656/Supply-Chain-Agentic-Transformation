@@ -7,5 +7,68 @@
     "pallets": 22,
     "deadhead_miles_eliminated": 274,
     "net_freight_savings_usd": 1480.0
+  },
+  {
+    "backhaul_id": "BKH-SAT-DAL-52",
+    "origin_hub": "PLANT-XYZ-MONTERREY",
+    "destination_dc": "PLANT-XYZ-BENGALURU",
+    "weight_kg": 17750,
+    "pallets": 25,
+    "deadhead_miles_eliminated": 342,
+    "net_freight_savings_usd": 1850.0
+  },
+  {
+    "backhaul_id": "BKH-SAT-DAL-59",
+    "origin_hub": "PLANT-XYZ-BENGALURU",
+    "destination_dc": "CMO-XYZ-DALLAS",
+    "weight_kg": 11786,
+    "pallets": 25,
+    "deadhead_miles_eliminated": 214,
+    "net_freight_savings_usd": 1154.4
+  },
+  {
+    "backhaul_id": "BKH-SAT-DAL-66",
+    "origin_hub": "CMO-XYZ-DALLAS",
+    "destination_dc": "RDC-XYZ-CHICAGO",
+    "weight_kg": 16898,
+    "pallets": 24,
+    "deadhead_miles_eliminated": 214,
+    "net_freight_savings_usd": 1361.6
+  },
+  {
+    "backhaul_id": "BKH-SAT-DAL-73",
+    "origin_hub": "RDC-XYZ-CHICAGO",
+    "destination_dc": "FDC-XYZ-DALLAS",
+    "weight_kg": 11076,
+    "pallets": 17,
+    "deadhead_miles_eliminated": 293,
+    "net_freight_savings_usd": 1272.8
+  },
+  {
+    "backhaul_id": "BKH-SAT-DAL-80",
+    "origin_hub": "FDC-XYZ-DALLAS",
+    "destination_dc": "FDC-XYZ-ATLANTA",
+    "weight_kg": 15194,
+    "pallets": 17,
+    "deadhead_miles_eliminated": 252,
+    "net_freight_savings_usd": 1154.4
+  },
+  {
+    "backhaul_id": "BKH-SAT-DAL-87",
+    "origin_hub": "FDC-XYZ-ATLANTA",
+    "destination_dc": "RDC-XYZ-FRANKFURT",
+    "weight_kg": 11076,
+    "pallets": 19,
+    "deadhead_miles_eliminated": 310,
+    "net_freight_savings_usd": 1272.8
+  },
+  {
+    "backhaul_id": "BKH-SAT-DAL-94",
+    "origin_hub": "RDC-XYZ-FRANKFURT",
+    "destination_dc": "FDC-XYZ-MUMBAI",
+    "weight_kg": 12212,
+    "pallets": 24,
+    "deadhead_miles_eliminated": 214,
+    "net_freight_savings_usd": 1228.4
   }
 ]

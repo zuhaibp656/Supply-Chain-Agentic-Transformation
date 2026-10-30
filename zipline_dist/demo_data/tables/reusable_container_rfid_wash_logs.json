@@ -1,0 +1,82 @@
+[
+  {
+    "wash_batch_id": "WSH-2026-601",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "asset_lot_rfid": "RPC-LOT-DAL-18",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "units_washed": 1200,
+    "rinse_temp_c": 76.4,
+    "caustic_conc_pct": 2.3,
+    "contact_time_sec": 95
+  },
+  {
+    "wash_batch_id": "WSH-2026-602",
+    "facility_id": "PLANT-XYZ-AUSTIN",
+    "asset_lot_rfid": "IBC-LOT-AUS-04",
+    "asset_type": "IBC_STAINLESS_ASEPTIC_1000L",
+    "units_washed": 24,
+    "rinse_temp_c": 68.2,
+    "caustic_conc_pct": 1.6,
+    "contact_time_sec": 82
+  },
+  {
+    "wash_batch_id": "WSH-2026-603",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "asset_lot_rfid": "CRYO-LOT-FRA-09",
+    "asset_type": "VAQTEC_VIP_CRYO_SHIPPER",
+    "units_washed": 32,
+    "rinse_temp_c": 74.8,
+    "caustic_conc_pct": 2.2,
+    "contact_time_sec": 110
+  },
+  {
+    "wash_batch_id": "WSH-2026-604",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "asset_lot_rfid": "CAGE-LOT-ATL-11",
+    "asset_type": "INSULATED_DAIRY_ROLLCAGE",
+    "units_washed": 140,
+    "rinse_temp_c": 75.1,
+    "caustic_conc_pct": 2.4,
+    "contact_time_sec": 92
+  },
+  {
+    "wash_batch_id": "WSH-2026-605",
+    "facility_id": "CMO-XYZ-DALLAS",
+    "asset_lot_rfid": "TOTE-LOT-CMO-27",
+    "asset_type": "ALLERGEN_PEANUT_BAR_BIN",
+    "units_washed": 85,
+    "rinse_temp_c": 71.0,
+    "caustic_conc_pct": 1.8,
+    "contact_time_sec": 78
+  },
+  {
+    "wash_batch_id": "WSH-2026-606",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "asset_lot_rfid": "RPC-LOT-CHI-42",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "units_washed": 1600,
+    "rinse_temp_c": 77.2,
+    "caustic_conc_pct": 2.5,
+    "contact_time_sec": 98
+  },
+  {
+    "wash_batch_id": "WSH-2026-607",
+    "facility_id": "PLANT-XYZ-STUTTGART",
+    "asset_lot_rfid": "ESD-LOT-STU-15",
+    "asset_type": "ESD_BATTERY_MODULE_TOTE",
+    "units_washed": 220,
+    "rinse_temp_c": 73.5,
+    "caustic_conc_pct": 2.1,
+    "contact_time_sec": 90
+  },
+  {
+    "wash_batch_id": "WSH-2026-608",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "asset_lot_rfid": "RPC-LOT-MUM-08",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "units_washed": 950,
+    "rinse_temp_c": 75.8,
+    "caustic_conc_pct": 2.3,
+    "contact_time_sec": 94
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "directive_id": "WREB-01",
+    "wave_id": "WAVE-CHI-1400",
+    "from_zone": "ZONE-BULK-04",
+    "to_zone": "ZONE-CHILL-02",
+    "pickers_shifted": 4,
+    "baseline_hours_needed": 3.23,
+    "rebalanced_hours_needed": 1.94,
+    "cutoff_buffer_min": 15.6
+  },
+  {
+    "directive_id": "WREB-02",
+    "wave_id": "WAVE-DAL-1430",
+    "from_zone": "ZONE-RESERVE-05",
+    "to_zone": "ZONE-EACH-03",
+    "pickers_shifted": 3,
+    "baseline_hours_needed": 3.13,
+    "rebalanced_hours_needed": 2.19,
+    "cutoff_buffer_min": 18.6
+  },
+  {
+    "directive_id": "WREB-03",
+    "wave_id": "WAVE-FRA-1600",
+    "from_zone": "ZONE-AMBIENT-03",
+    "to_zone": "ZONE-GDP-01",
+    "pickers_shifted": 2,
+    "baseline_hours_needed": 2.35,
+    "rebalanced_hours_needed": 1.41,
+    "cutoff_buffer_min": 29.4
+  },
+  {
+    "directive_id": "WREB-04",
+    "wave_id": "WAVE-ATL-1500",
+    "from_zone": "PACK-FLOAT-ATL",
+    "to_zone": "ZONE-FAST-01",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 2.67,
+    "rebalanced_hours_needed": 2.29,
+    "cutoff_buffer_min": 30.6
+  },
+  {
+    "directive_id": "WREB-05",
+    "wave_id": "WAVE-CHI-1530",
+    "from_zone": "NONE",
+    "to_zone": "ZONE-DRY-01",
+    "pickers_shifted": 0,
+    "baseline_hours_needed": 1.61,
+    "rebalanced_hours_needed": 1.61,
+    "cutoff_buffer_min": 125.0
+  },
+  {
+    "directive_id": "WREB-06",
+    "wave_id": "WAVE-CHI-1700",
+    "from_zone": "ZONE-BULK-04",
+    "to_zone": "DEFER_30MIN",
+    "pickers_shifted": 0,
+    "baseline_hours_needed": 1.04,
+    "rebalanced_hours_needed": 2.43,
+    "cutoff_buffer_min": 166.0
+  },
+  {
+    "directive_id": "WREB-07",
+    "wave_id": "WAVE-DAL-1800",
+    "from_zone": "ZONE-RESERVE-05",
+    "to_zone": "DEFER_45MIN",
+    "pickers_shifted": 0,
+    "baseline_hours_needed": 1.0,
+    "rebalanced_hours_needed": 2.0,
+    "cutoff_buffer_min": 240.0
+  },
+  {
+    "directive_id": "WREB-08",
+    "wave_id": "WAVE-FRA-1900",
+    "from_zone": "ZONE-AMBIENT-03",
+    "to_zone": "DEFER_30MIN",
+    "pickers_shifted": 0,
+    "baseline_hours_needed": 0.85,
+    "rebalanced_hours_needed": 1.41,
+    "cutoff_buffer_min": 209.0
+  }
+]

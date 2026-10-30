@@ -1,0 +1,82 @@
+[
+  {
+    "ebol_id": "EBOL-2026-4410",
+    "shipment_id": "SHP-XYZ-9088",
+    "carrier_id": "CAR-JBHT-FTL",
+    "sku_id": "SKU-XYZ-204",
+    "shipped_cases": 1800,
+    "origin_seal_no": "SEAL-TX-88412",
+    "invoice_unit_value_usd": 28.5,
+    "shipper_load_count_slc": false
+  },
+  {
+    "ebol_id": "EBOL-2026-4425",
+    "shipment_id": "SHP-XYZ-9402",
+    "carrier_id": "CAR-XPO-LTL",
+    "sku_id": "SKU-XYZ-412",
+    "shipped_cases": 120,
+    "origin_seal_no": "LTL-CONSOL-N/A",
+    "invoice_unit_value_usd": 310.0,
+    "shipper_load_count_slc": false
+  },
+  {
+    "ebol_id": "EBOL-2026-4439",
+    "shipment_id": "SHP-XYZ-9244",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "shipped_cases": 1302,
+    "origin_seal_no": "SEAL-TX-88904",
+    "invoice_unit_value_usd": 36.0,
+    "shipper_load_count_slc": false
+  },
+  {
+    "ebol_id": "EBOL-2026-4451",
+    "shipment_id": "SHP-XYZ-9041",
+    "carrier_id": "CAR-JBHT-FTL",
+    "sku_id": "SKU-XYZ-101",
+    "shipped_cases": 144,
+    "origin_seal_no": "SEAL-DE-11209",
+    "invoice_unit_value_usd": 685.0,
+    "shipper_load_count_slc": false
+  },
+  {
+    "ebol_id": "EBOL-2026-4468",
+    "shipment_id": "SHP-XYZ-9512",
+    "carrier_id": "CAR-XPO-LTL",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "shipped_cases": 480,
+    "origin_seal_no": "LTL-CONSOL-N/A",
+    "invoice_unit_value_usd": 38.4,
+    "shipper_load_count_slc": false
+  },
+  {
+    "ebol_id": "EBOL-2026-4479",
+    "shipment_id": "SHP-XYZ-9488",
+    "carrier_id": "CAR-LH-AIRCARGO",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "shipped_cases": 96,
+    "origin_seal_no": "ULD-SEAL-9910",
+    "invoice_unit_value_usd": 1480.0,
+    "shipper_load_count_slc": false
+  },
+  {
+    "ebol_id": "EBOL-2026-4490",
+    "shipment_id": "SHP-XYZ-9450",
+    "carrier_id": "CAR-BNSF-RAIL",
+    "sku_id": "SKU-XYZ-625",
+    "shipped_cases": 900,
+    "origin_seal_no": "SEAL-IMDL-7721",
+    "invoice_unit_value_usd": 98.0,
+    "shipper_load_count_slc": true
+  },
+  {
+    "ebol_id": "EBOL-2026-4504",
+    "shipment_id": "SHP-XYZ-9140",
+    "carrier_id": "CAR-JBHT-FTL",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "shipped_cases": 1500,
+    "origin_seal_no": "SEAL-IL-55102",
+    "invoice_unit_value_usd": 22.8,
+    "shipper_load_count_slc": false
+  }
+]

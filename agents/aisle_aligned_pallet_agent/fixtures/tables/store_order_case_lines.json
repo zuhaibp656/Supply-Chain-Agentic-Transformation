@@ -1,0 +1,74 @@
+[
+  {
+    "order_line_id": "SLN-801",
+    "store_order_id": "SO-STR-MEGA-104",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "sku_id": "SKU-XYZ-204",
+    "ordered_cases": 24,
+    "case_weight_kg": 12.4
+  },
+  {
+    "order_line_id": "SLN-802",
+    "store_order_id": "SO-STR-MEGA-104",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "ordered_cases": 20,
+    "case_weight_kg": 11.8
+  },
+  {
+    "order_line_id": "SLN-803",
+    "store_order_id": "SO-STR-MEGA-104",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "ordered_cases": 32,
+    "case_weight_kg": 4.2
+  },
+  {
+    "order_line_id": "SLN-804",
+    "store_order_id": "SO-STR-KROG-219",
+    "customer_id": "CUST-KROGER-US01",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "ordered_cases": 30,
+    "case_weight_kg": 12.9
+  },
+  {
+    "order_line_id": "SLN-805",
+    "store_order_id": "SO-STR-KROG-219",
+    "customer_id": "CUST-KROGER-US01",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "ordered_cases": 28,
+    "case_weight_kg": 7.6
+  },
+  {
+    "order_line_id": "SLN-806",
+    "store_order_id": "SO-STR-COST-305",
+    "customer_id": "CUST-COSTCO-US04",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "sku_id": "SKU-XYZ-204",
+    "ordered_cases": 40,
+    "case_weight_kg": 12.4
+  },
+  {
+    "order_line_id": "SLN-807",
+    "store_order_id": "SO-STR-COST-305",
+    "customer_id": "CUST-COSTCO-US04",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "ordered_cases": 36,
+    "case_weight_kg": 4.2
+  },
+  {
+    "order_line_id": "SLN-808",
+    "store_order_id": "SO-STR-METR-412",
+    "customer_id": "CUST-XYZ-TIER2-METROCPG",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "ordered_cases": 26,
+    "case_weight_kg": 11.8
+  }
+]

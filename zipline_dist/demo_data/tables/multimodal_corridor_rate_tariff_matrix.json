@@ -16,5 +16,35 @@
     "transit_days": 4,
     "cost_per_kg_usd": 5.9,
     "co2e_g_per_tkm": 680.0
+  },
+  {
+    "mode_code": "OCEAN_FCL_SUEZ-R0305D",
+    "transit_days": 27,
+    "cost_per_kg_usd": 0.36,
+    "co2e_g_per_tkm": 10.3
+  },
+  {
+    "mode_code": "SEA_AIR_DXB_HYBRID-R046EA",
+    "transit_days": 15,
+    "cost_per_kg_usd": 1.54,
+    "co2e_g_per_tkm": 255.85
+  },
+  {
+    "mode_code": "DIRECT_AIR_FREIGHT-R05484",
+    "transit_days": 4,
+    "cost_per_kg_usd": 7.38,
+    "co2e_g_per_tkm": 530.4
+  },
+  {
+    "mode_code": "OCEAN_FCL_SUEZ-R064DE",
+    "transit_days": 28,
+    "cost_per_kg_usd": 0.45,
+    "co2e_g_per_tkm": 8.74
+  },
+  {
+    "mode_code": "SEA_AIR_DXB_HYBRID-R077AA",
+    "transit_days": 13,
+    "cost_per_kg_usd": 2.09,
+    "co2e_g_per_tkm": 242.95
   }
 ]

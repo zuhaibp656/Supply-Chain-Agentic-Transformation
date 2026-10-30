@@ -1,0 +1,66 @@
+[
+  {
+    "zone_id": "ZONE-CHILL-02",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "active_pickers": 6,
+    "lines_per_picker_hr": 95.0,
+    "hourly_zone_capacity_lines": 570.0,
+    "pack_chute_utilization_pct": 94.0
+  },
+  {
+    "zone_id": "ZONE-DRY-01",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "active_pickers": 8,
+    "lines_per_picker_hr": 110.0,
+    "hourly_zone_capacity_lines": 880.0,
+    "pack_chute_utilization_pct": 76.0
+  },
+  {
+    "zone_id": "ZONE-BULK-04",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "active_pickers": 7,
+    "lines_per_picker_hr": 85.0,
+    "hourly_zone_capacity_lines": 595.0,
+    "pack_chute_utilization_pct": 42.0
+  },
+  {
+    "zone_id": "ZONE-EACH-03",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "active_pickers": 7,
+    "lines_per_picker_hr": 98.0,
+    "hourly_zone_capacity_lines": 686.0,
+    "pack_chute_utilization_pct": 96.5
+  },
+  {
+    "zone_id": "ZONE-RESERVE-05",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "active_pickers": 6,
+    "lines_per_picker_hr": 90.0,
+    "hourly_zone_capacity_lines": 540.0,
+    "pack_chute_utilization_pct": 38.0
+  },
+  {
+    "zone_id": "ZONE-FAST-01",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "active_pickers": 6,
+    "lines_per_picker_hr": 105.0,
+    "hourly_zone_capacity_lines": 630.0,
+    "pack_chute_utilization_pct": 84.0
+  },
+  {
+    "zone_id": "ZONE-GDP-01",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "active_pickers": 3,
+    "lines_per_picker_hr": 68.0,
+    "hourly_zone_capacity_lines": 204.0,
+    "pack_chute_utilization_pct": 91.0
+  },
+  {
+    "zone_id": "ZONE-AMBIENT-03",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "active_pickers": 5,
+    "lines_per_picker_hr": 92.0,
+    "hourly_zone_capacity_lines": 460.0,
+    "pack_chute_utilization_pct": 35.0
+  }
+]

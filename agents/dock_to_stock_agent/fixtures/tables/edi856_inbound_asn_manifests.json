@@ -1,0 +1,82 @@
+[
+  {
+    "asn_id": "ASN-2026-8801",
+    "po_number": "PO-XYZ-880219",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "sku_id": "SKU-XYZ-204",
+    "expected_pallets": 24,
+    "expected_cases": 1440,
+    "temp_requirement": "AMBIENT",
+    "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-8802",
+    "po_number": "PO-XYZ-880492",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "expected_pallets": 20,
+    "expected_cases": 1200,
+    "temp_requirement": "CHILLED_2_8C",
+    "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-8803",
+    "po_number": "PO-XYZ-880530",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "expected_pallets": 8,
+    "expected_cases": 256,
+    "temp_requirement": "VALIDATED_2_8C",
+    "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-8804",
+    "po_number": "PO-XYZ-880142",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "sku_id": "SKU-XYZ-101",
+    "expected_pallets": 16,
+    "expected_cases": 192,
+    "temp_requirement": "HAZMAT_UN3480",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8805",
+    "po_number": "PO-XYZ-880688",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "expected_pallets": 26,
+    "expected_cases": 1300,
+    "temp_requirement": "AMBIENT",
+    "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-8806",
+    "po_number": "PO-XYZ-880355",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "sku_id": "SKU-XYZ-412",
+    "expected_pallets": 10,
+    "expected_cases": 600,
+    "temp_requirement": "LITHIUM_DRY",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8807",
+    "po_number": "PO-XYZ-880410",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "expected_pallets": 18,
+    "expected_cases": 1728,
+    "temp_requirement": "COOL_DRY",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8808",
+    "po_number": "PO-XYZ-880612",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "expected_pallets": 14,
+    "expected_cases": 1176,
+    "temp_requirement": "CHILLED_2_6C",
+    "urgent_backorder_flag": true
+  }
+]

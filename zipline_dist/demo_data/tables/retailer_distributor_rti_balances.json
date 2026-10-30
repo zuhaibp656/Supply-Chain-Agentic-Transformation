@@ -1,0 +1,58 @@
+[
+  {
+    "custodian_id": "CUST-XYZ-TIER1-MEGAMART",
+    "asset_type": "CHEP_48X40_BLUE_PALLET",
+    "net_unreturned_units": 730,
+    "free_grace_days": 21,
+    "overdue_units_past_grace": 580
+  },
+  {
+    "custodian_id": "CUST-KROGER-US01",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "net_unreturned_units": 1360,
+    "free_grace_days": 18,
+    "overdue_units_past_grace": 1040
+  },
+  {
+    "custodian_id": "CUST-MEDLINE-BIO01",
+    "asset_type": "VAQTEC_VIP_CRYO_SHIPPER",
+    "net_unreturned_units": 34,
+    "free_grace_days": 10,
+    "overdue_units_past_grace": 26
+  },
+  {
+    "custodian_id": "CUST-XYZ-TIER1-AUTOWORKS",
+    "asset_type": "AUTO_STEEL_STILLAGE_RACK",
+    "net_unreturned_units": 92,
+    "free_grace_days": 14,
+    "overdue_units_past_grace": 74
+  },
+  {
+    "custodian_id": "CUST-COSTCO-US04",
+    "asset_type": "PECO_BLOCK_PALLET",
+    "net_unreturned_units": 110,
+    "free_grace_days": 21,
+    "overdue_units_past_grace": 0
+  },
+  {
+    "custodian_id": "CUST-KROGER-US01",
+    "asset_type": "INSULATED_DAIRY_ROLLCAGE",
+    "net_unreturned_units": 270,
+    "free_grace_days": 14,
+    "overdue_units_past_grace": 215
+  },
+  {
+    "custodian_id": "CUST-ALDI-OUTLET-US09",
+    "asset_type": "CHEP_48X40_BLUE_PALLET",
+    "net_unreturned_units": 470,
+    "free_grace_days": 21,
+    "overdue_units_past_grace": 430
+  },
+  {
+    "custodian_id": "CUST-XYZ-TIER2-METROCPG",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "net_unreturned_units": 790,
+    "free_grace_days": 20,
+    "overdue_units_past_grace": 620
+  }
+]

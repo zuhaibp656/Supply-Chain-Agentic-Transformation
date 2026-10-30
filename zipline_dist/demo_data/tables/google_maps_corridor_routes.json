@@ -18,5 +18,65 @@
     "distance_saved_pct": 16.6,
     "on_time_probability": 0.989,
     "bridge_clearance_verified": true
+  },
+  {
+    "route_id": "RTE-I35-20261022-16",
+    "corridor_id": "CORR-I35-TEX-R02E3F",
+    "assigned_vehicle_id": "TRK-24T-TX23",
+    "total_distance_km": 383.88,
+    "baseline_distance_km": 528.08,
+    "distance_saved_pct": 16.1,
+    "on_time_probability": 0.99,
+    "bridge_clearance_verified": true
+  },
+  {
+    "route_id": "RTE-I45-20261022-24",
+    "corridor_id": "CORR-I45-HOU-R03ACA",
+    "assigned_vehicle_id": "TRK-12T-TX36",
+    "total_distance_km": 485.0,
+    "baseline_distance_km": 427.8,
+    "distance_saved_pct": 19.75,
+    "on_time_probability": 0.99,
+    "bridge_clearance_verified": false
+  },
+  {
+    "route_id": "RTE-I35-20261022-30",
+    "corridor_id": "CORR-I35-TEX-R04D3B",
+    "assigned_vehicle_id": "TRK-24T-TX37",
+    "total_distance_km": 360.75,
+    "baseline_distance_km": 528.08,
+    "distance_saved_pct": 16.1,
+    "on_time_probability": 0.825,
+    "bridge_clearance_verified": true
+  },
+  {
+    "route_id": "RTE-I45-20261022-38",
+    "corridor_id": "CORR-I45-HOU-R051DC",
+    "assigned_vehicle_id": "TRK-12T-TX50",
+    "total_distance_km": 333.68,
+    "baseline_distance_km": 525.45,
+    "distance_saved_pct": 12.95,
+    "on_time_probability": 0.851,
+    "bridge_clearance_verified": true
+  },
+  {
+    "route_id": "RTE-I35-20261022-44",
+    "corridor_id": "CORR-I35-TEX-R0685A",
+    "assigned_vehicle_id": "TRK-24T-TX51",
+    "total_distance_km": 494.88,
+    "baseline_distance_km": 528.08,
+    "distance_saved_pct": 17.85,
+    "on_time_probability": 0.99,
+    "bridge_clearance_verified": false
+  },
+  {
+    "route_id": "RTE-I45-20261022-52",
+    "corridor_id": "CORR-I45-HOU-R070D7",
+    "assigned_vehicle_id": "TRK-12T-TX64",
+    "total_distance_km": 322.04,
+    "baseline_distance_km": 525.45,
+    "distance_saved_pct": 18.76,
+    "on_time_probability": 0.771,
+    "bridge_clearance_verified": true
   }
 ]

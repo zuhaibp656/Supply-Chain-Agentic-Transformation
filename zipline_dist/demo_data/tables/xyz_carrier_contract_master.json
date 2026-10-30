@@ -1,0 +1,68 @@
+[
+  {
+    "carrier_id": "CAR-JBHT-FTL",
+    "scac_code": "JBHT",
+    "carrier_name": "J.B. Hunt Dedicated Contract & Intermodal",
+    "mode": "FTL_AND_INTERMODAL",
+    "contract_rate_per_mile_usd": 2.42,
+    "fsc_index_pct": 18.5,
+    "free_detention_hours": 2.0,
+    "detention_rate_per_hr_usd": 75.0,
+    "emission_factor_gco2e_tkm": 62.4
+  },
+  {
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "scac_code": "CRYX",
+    "carrier_name": "CryoExpress Validated Dual-Temp Reefer Fleet",
+    "mode": "REEFER_2C_8C",
+    "contract_rate_per_mile_usd": 3.18,
+    "fsc_index_pct": 21.0,
+    "free_detention_hours": 2.0,
+    "detention_rate_per_hr_usd": 95.0,
+    "emission_factor_gco2e_tkm": 84.0
+  },
+  {
+    "carrier_id": "CAR-XPO-LTL",
+    "scac_code": "CNWY",
+    "carrier_name": "XPO National LTL Pallet Network",
+    "mode": "LTL_PALLET",
+    "contract_rate_per_mile_usd": 1.65,
+    "fsc_index_pct": 22.4,
+    "free_detention_hours": 1.5,
+    "detention_rate_per_hr_usd": 85.0,
+    "emission_factor_gco2e_tkm": 96.5
+  },
+  {
+    "carrier_id": "CAR-BNSF-RAIL",
+    "scac_code": "BNSF",
+    "carrier_name": "BNSF Premier COFC 53ft Intermodal Rail",
+    "mode": "INTERMODAL_RAIL",
+    "contract_rate_per_mile_usd": 1.34,
+    "fsc_index_pct": 14.0,
+    "free_detention_hours": 24.0,
+    "detention_rate_per_hr_usd": 45.0,
+    "emission_factor_gco2e_tkm": 21.8
+  },
+  {
+    "carrier_id": "CAR-MAERSK-OCEAN",
+    "scac_code": "MAEU",
+    "carrier_name": "Maersk Eco-Delivery Ocean Container Line",
+    "mode": "OCEAN_FCL",
+    "contract_rate_per_mile_usd": 0.42,
+    "fsc_index_pct": 11.0,
+    "free_detention_hours": 96.0,
+    "detention_rate_per_hr_usd": 165.0,
+    "emission_factor_gco2e_tkm": 11.2
+  },
+  {
+    "carrier_id": "CAR-LH-AIRCARGO",
+    "scac_code": "LHCA",
+    "carrier_name": "Lufthansa Cargo Pharma & Cool ULD Priority",
+    "mode": "AIR_ULD_CHARTER",
+    "contract_rate_per_mile_usd": 8.9,
+    "fsc_index_pct": 26.0,
+    "free_detention_hours": 6.0,
+    "detention_rate_per_hr_usd": 120.0,
+    "emission_factor_gco2e_tkm": 612.0
+  }
+]

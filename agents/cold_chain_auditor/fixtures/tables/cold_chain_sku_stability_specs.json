@@ -1,0 +1,74 @@
+[
+  {
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "temp_band_label": "2C_TO_8C_CHILLED",
+    "max_continuous_temp_c": 8.0,
+    "max_mkt_allowed_c": 8.0,
+    "max_excursion_minutes": 120,
+    "activation_energy_kj_mol": 83.144,
+    "cargo_lot_value_usd": 38880.0
+  },
+  {
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "temp_band_label": "2C_TO_6C_STRICT",
+    "max_continuous_temp_c": 6.0,
+    "max_mkt_allowed_c": 6.5,
+    "max_excursion_minutes": 90,
+    "activation_energy_kj_mol": 83.144,
+    "cargo_lot_value_usd": 46872.0
+  },
+  {
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "temp_band_label": "2C_TO_8C_GDP_BIOLOGIC",
+    "max_continuous_temp_c": 8.0,
+    "max_mkt_allowed_c": 8.0,
+    "max_excursion_minutes": 90,
+    "activation_energy_kj_mol": 83.144,
+    "cargo_lot_value_usd": 142000.0
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "temp_band_label": "15C_TO_24C_CHOC_COATED",
+    "max_continuous_temp_c": 24.0,
+    "max_mkt_allowed_c": 24.5,
+    "max_excursion_minutes": 150,
+    "activation_energy_kj_mol": 83.144,
+    "cargo_lot_value_usd": 29952.0
+  },
+  {
+    "sku_id": "SKU-XYZ-204",
+    "temp_band_label": "AMBIENT_MAX_32C",
+    "max_continuous_temp_c": 32.0,
+    "max_mkt_allowed_c": 32.0,
+    "max_excursion_minutes": 360,
+    "activation_energy_kj_mol": 83.144,
+    "cargo_lot_value_usd": 26640.0
+  },
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "temp_band_label": "AMBIENT_MAX_32C",
+    "max_continuous_temp_c": 32.0,
+    "max_mkt_allowed_c": 32.0,
+    "max_excursion_minutes": 360,
+    "activation_energy_kj_mol": 83.144,
+    "cargo_lot_value_usd": 22800.0
+  },
+  {
+    "sku_id": "SKU-XYZ-101",
+    "temp_band_label": "15C_TO_30C_DRY_CELL",
+    "max_continuous_temp_c": 30.0,
+    "max_mkt_allowed_c": 30.0,
+    "max_excursion_minutes": 240,
+    "activation_energy_kj_mol": 83.144,
+    "cargo_lot_value_usd": 98640.0
+  },
+  {
+    "sku_id": "SKU-XYZ-412",
+    "temp_band_label": "10C_TO_30C_ELECTRONICS",
+    "max_continuous_temp_c": 30.0,
+    "max_mkt_allowed_c": 30.0,
+    "max_excursion_minutes": 300,
+    "activation_energy_kj_mol": 83.144,
+    "cargo_lot_value_usd": 64800.0
+  }
+]

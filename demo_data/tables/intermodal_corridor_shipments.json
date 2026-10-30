@@ -8,5 +8,75 @@
     "cofc_rail_cost_usd": 2890.0,
     "dest_dc_days_of_supply": 14.5,
     "recommended_mode": "COFC_DOUBLE_STACK_RAIL"
+  },
+  {
+    "shipment_id": "SHP-IM-LA-CHI-709",
+    "origin_hub": "PLANT-XYZ-MONTERREY",
+    "dest_dc": "Chicago Joliet RDC",
+    "distance_miles": 2156,
+    "otr_truck_cost_usd": 5533.5,
+    "cofc_rail_cost_usd": 2658.8,
+    "dest_dc_days_of_supply": 15.52,
+    "recommended_mode": "COFC_DOUBLE_STACK_RAIL"
+  },
+  {
+    "shipment_id": "SHP-IM-LA-CHI-716",
+    "origin_hub": "PLANT-XYZ-BENGALURU",
+    "dest_dc": "Chicago Joliet RDC",
+    "distance_miles": 2398,
+    "otr_truck_cost_usd": 4278.0,
+    "cofc_rail_cost_usd": 3265.7,
+    "dest_dc_days_of_supply": 13.34,
+    "recommended_mode": "COFC_DOUBLE_STACK_RAIL"
+  },
+  {
+    "shipment_id": "SHP-IM-LA-CHI-723",
+    "origin_hub": "CMO-XYZ-DALLAS",
+    "dest_dc": "Chicago Joliet RDC",
+    "distance_miles": 1672,
+    "otr_truck_cost_usd": 5533.5,
+    "cofc_rail_cost_usd": 2485.4,
+    "dest_dc_days_of_supply": 15.52,
+    "recommended_mode": "COFC_DOUBLE_STACK_RAIL"
+  },
+  {
+    "shipment_id": "SHP-IM-LA-CHI-730",
+    "origin_hub": "RDC-XYZ-CHICAGO",
+    "dest_dc": "Chicago Joliet RDC",
+    "distance_miles": 2156,
+    "otr_truck_cost_usd": 5533.5,
+    "cofc_rail_cost_usd": 3092.3,
+    "dest_dc_days_of_supply": 11.31,
+    "recommended_mode": "COFC_DOUBLE_STACK_RAIL"
+  },
+  {
+    "shipment_id": "SHP-IM-LA-CHI-737",
+    "origin_hub": "FDC-XYZ-DALLAS",
+    "dest_dc": "Chicago Joliet RDC",
+    "distance_miles": 1854,
+    "otr_truck_cost_usd": 5812.5,
+    "cofc_rail_cost_usd": 3265.7,
+    "dest_dc_days_of_supply": 17.25,
+    "recommended_mode": "COFC_DOUBLE_STACK_RAIL"
+  },
+  {
+    "shipment_id": "SHP-IM-LA-CHI-744",
+    "origin_hub": "FDC-XYZ-ATLANTA",
+    "dest_dc": "Chicago Joliet RDC",
+    "distance_miles": 2398,
+    "otr_truck_cost_usd": 4278.0,
+    "cofc_rail_cost_usd": 3265.7,
+    "dest_dc_days_of_supply": 12.47,
+    "recommended_mode": "COFC_DOUBLE_STACK_RAIL"
+  },
+  {
+    "shipment_id": "SHP-IM-LA-CHI-751",
+    "origin_hub": "RDC-XYZ-FRANKFURT",
+    "dest_dc": "Chicago Joliet RDC",
+    "distance_miles": 1733,
+    "otr_truck_cost_usd": 5533.5,
+    "cofc_rail_cost_usd": 3265.7,
+    "dest_dc_days_of_supply": 15.52,
+    "recommended_mode": "COFC_DOUBLE_STACK_RAIL"
   }
 ]

@@ -1,0 +1,66 @@
+[
+  {
+    "batch_id": "BATCH-XYZ-AUST-8841",
+    "sku_id": "SKU-XYZ-204",
+    "manual_review_hrs": 52.0,
+    "ai_exception_review_hrs": 1.5,
+    "working_cap_unlocked_usd": 148000.0,
+    "usage_decision": "FAST_TRACK_RELEASE_UD_A"
+  },
+  {
+    "batch_id": "BATCH-XYZ-AUST-8955",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "manual_review_hrs": 48.0,
+    "ai_exception_review_hrs": 1.5,
+    "working_cap_unlocked_usd": 97200.0,
+    "usage_decision": "FAST_TRACK_RELEASE_UD_A"
+  },
+  {
+    "batch_id": "BATCH-XYZ-AUST-8962",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "manual_review_hrs": 72.0,
+    "ai_exception_review_hrs": 0.5,
+    "working_cap_unlocked_usd": 0.0,
+    "usage_decision": "QUARANTINE_BLOCK_UD_R"
+  },
+  {
+    "batch_id": "BATCH-XYZ-STUT-942",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "manual_review_hrs": 96.0,
+    "ai_exception_review_hrs": 2.0,
+    "working_cap_unlocked_usd": 320000.0,
+    "usage_decision": "FAST_TRACK_RELEASE_UD_A"
+  },
+  {
+    "batch_id": "BATCH-XYZ-STUT-949",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "manual_review_hrs": 96.0,
+    "ai_exception_review_hrs": 3.0,
+    "working_cap_unlocked_usd": 320000.0,
+    "usage_decision": "HOLD_FOR_ESIGNATURE"
+  },
+  {
+    "batch_id": "BATCH-XYZ-DAL-410",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "manual_review_hrs": 44.0,
+    "ai_exception_review_hrs": 1.2,
+    "working_cap_unlocked_usd": 91200.0,
+    "usage_decision": "FAST_TRACK_RELEASE_UD_A"
+  },
+  {
+    "batch_id": "BATCH-XYZ-PUNE-312",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "manual_review_hrs": 40.0,
+    "ai_exception_review_hrs": 1.0,
+    "working_cap_unlocked_usd": 117000.0,
+    "usage_decision": "FAST_TRACK_RELEASE_UD_A"
+  },
+  {
+    "batch_id": "BATCH-XYZ-AUST-8970",
+    "sku_id": "SKU-XYZ-204",
+    "manual_review_hrs": 50.0,
+    "ai_exception_review_hrs": 1.4,
+    "working_cap_unlocked_usd": 133200.0,
+    "usage_decision": "FAST_TRACK_RELEASE_UD_A"
+  }
+]

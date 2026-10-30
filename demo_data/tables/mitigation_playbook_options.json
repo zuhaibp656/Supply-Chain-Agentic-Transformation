@@ -24,5 +24,83 @@
     "revenue_protected_usd": 4788000.0,
     "meio_safety_buffer_days_increase": 5.0,
     "mitigation_confidence": 0.91
+  },
+  {
+    "playbook_id": "PB-DUAL-SOURCE-ALUM-R02CD4",
+    "threat_id": "THREAT-CYCLONE-QLD-16",
+    "impacted_component": "RAW-ALUM-INGOT-P1020A",
+    "primary_supplier_impacted": "Alcoa International Smelter (IS)",
+    "backup_qualified_supplier": "Hydro Aluminium (NO)",
+    "target_po_reallocation_units": 3870000,
+    "reallocation_split_pct": 41.5,
+    "additional_expedite_cost_usd": 62560.0,
+    "revenue_protected_usd": 20614590.0,
+    "meio_safety_buffer_days_increase": 5.81,
+    "mitigation_confidence": 0.99
+  },
+  {
+    "playbook_id": "PB-BACKUP-ELECTROLYTE-R035FD",
+    "threat_id": "THREAT-SEISMIC-KANAGAWA-24",
+    "impacted_component": "CHEM-ELECTROLYTE-LIPF6",
+    "primary_supplier_impacted": "Showa Denko Chemical Specialty",
+    "backup_qualified_supplier": "Mitsubishi Chemical Specialty",
+    "target_po_reallocation_units": 678000,
+    "reallocation_split_pct": 36.8,
+    "additional_expedite_cost_usd": 26560.0,
+    "revenue_protected_usd": 5985000.0,
+    "meio_safety_buffer_days_increase": 5.65,
+    "mitigation_confidence": 0.837
+  },
+  {
+    "playbook_id": "PB-DUAL-SOURCE-ALUM-R040C4",
+    "threat_id": "THREAT-CYCLONE-QLD-30",
+    "impacted_component": "RAW-ALUM-INGOT-P1020A",
+    "primary_supplier_impacted": "Alcoa International Smelter (IS)",
+    "backup_qualified_supplier": "Hydro Aluminium (NO)",
+    "target_po_reallocation_units": 4140000,
+    "reallocation_split_pct": 43.0,
+    "additional_expedite_cost_usd": 62560.0,
+    "revenue_protected_usd": 16783560.0,
+    "meio_safety_buffer_days_increase": 8.33,
+    "mitigation_confidence": 0.99
+  },
+  {
+    "playbook_id": "PB-BACKUP-ELECTROLYTE-R0561D",
+    "threat_id": "THREAT-SEISMIC-KANAGAWA-38",
+    "impacted_component": "CHEM-ELECTROLYTE-LIPF6",
+    "primary_supplier_impacted": "Showa Denko Chemical Specialty",
+    "backup_qualified_supplier": "Mitsubishi Chemical Specialty",
+    "target_po_reallocation_units": 678000,
+    "reallocation_split_pct": 47.6,
+    "additional_expedite_cost_usd": 40000.0,
+    "revenue_protected_usd": 5985000.0,
+    "meio_safety_buffer_days_increase": 3.9,
+    "mitigation_confidence": 0.974
+  },
+  {
+    "playbook_id": "PB-DUAL-SOURCE-ALUM-R06B12",
+    "threat_id": "THREAT-CYCLONE-QLD-44",
+    "impacted_component": "RAW-ALUM-INGOT-P1020A",
+    "primary_supplier_impacted": "Alcoa International Smelter (IS)",
+    "backup_qualified_supplier": "Hydro Aluminium (NO)",
+    "target_po_reallocation_units": 3510000,
+    "reallocation_split_pct": 41.5,
+    "additional_expedite_cost_usd": 72760.0,
+    "revenue_protected_usd": 20614590.0,
+    "meio_safety_buffer_days_increase": 7.49,
+    "mitigation_confidence": 0.99
+  },
+  {
+    "playbook_id": "PB-BACKUP-ELECTROLYTE-R07C00",
+    "threat_id": "THREAT-SEISMIC-KANAGAWA-52",
+    "impacted_component": "CHEM-ELECTROLYTE-LIPF6",
+    "primary_supplier_impacted": "Showa Denko Chemical Specialty",
+    "backup_qualified_supplier": "Mitsubishi Chemical Specialty",
+    "target_po_reallocation_units": 468000,
+    "reallocation_split_pct": 31.2,
+    "additional_expedite_cost_usd": 27520.0,
+    "revenue_protected_usd": 4404960.0,
+    "meio_safety_buffer_days_increase": 4.15,
+    "mitigation_confidence": 0.99
   }
 ]

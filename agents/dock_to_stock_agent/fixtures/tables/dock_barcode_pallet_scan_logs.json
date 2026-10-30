@@ -1,0 +1,74 @@
+[
+  {
+    "scan_id": "SCN-DOCK-01",
+    "asn_id": "ASN-2026-8801",
+    "scanned_pallets": 24,
+    "scanned_cases": 1440,
+    "sscc_label_read_pct": 100.0,
+    "variance_cases": 0,
+    "scan_exception": "CLEAN_MATCH"
+  },
+  {
+    "scan_id": "SCN-DOCK-02",
+    "asn_id": "ASN-2026-8802",
+    "scanned_pallets": 19,
+    "scanned_cases": 1140,
+    "sscc_label_read_pct": 100.0,
+    "variance_cases": -60,
+    "scan_exception": "SHORT_1_PALLET_60_CASES"
+  },
+  {
+    "scan_id": "SCN-DOCK-03",
+    "asn_id": "ASN-2026-8803",
+    "scanned_pallets": 8,
+    "scanned_cases": 256,
+    "sscc_label_read_pct": 100.0,
+    "variance_cases": 0,
+    "scan_exception": "CLEAN_COLD_PRIORITY"
+  },
+  {
+    "scan_id": "SCN-DOCK-04",
+    "asn_id": "ASN-2026-8804",
+    "scanned_pallets": 16,
+    "scanned_cases": 192,
+    "sscc_label_read_pct": 93.8,
+    "variance_cases": 0,
+    "scan_exception": "RELABLED_1_TORN_SSCC"
+  },
+  {
+    "scan_id": "SCN-DOCK-05",
+    "asn_id": "ASN-2026-8805",
+    "scanned_pallets": 26,
+    "scanned_cases": 1300,
+    "sscc_label_read_pct": 100.0,
+    "variance_cases": 0,
+    "scan_exception": "CROSSDOCK_FLOWTHROUGH"
+  },
+  {
+    "scan_id": "SCN-DOCK-06",
+    "asn_id": "ASN-2026-8806",
+    "scanned_pallets": 10,
+    "scanned_cases": 592,
+    "sscc_label_read_pct": 100.0,
+    "variance_cases": -8,
+    "scan_exception": "SHORT_8_CASES_CARTON_OPEN"
+  },
+  {
+    "scan_id": "SCN-DOCK-07",
+    "asn_id": "ASN-2026-8807",
+    "scanned_pallets": 18,
+    "scanned_cases": 1728,
+    "sscc_label_read_pct": 100.0,
+    "variance_cases": 0,
+    "scan_exception": "CLEAN_MATCH"
+  },
+  {
+    "scan_id": "SCN-DOCK-08",
+    "asn_id": "ASN-2026-8808",
+    "scanned_pallets": 14,
+    "scanned_cases": 1176,
+    "sscc_label_read_pct": 100.0,
+    "variance_cases": 0,
+    "scan_exception": "CLEAN_COLD_PRIORITY"
+  }
+]

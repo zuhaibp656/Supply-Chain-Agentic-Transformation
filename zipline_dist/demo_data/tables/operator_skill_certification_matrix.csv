@@ -1,0 +1,9 @@
+operator_id,operator_name,plant_id,certified_stations,aseptic_fda_cert,efficiency_rating,current_station
+OP-AUS-104,Elena Martinez,PLANT-XYZ-AUSTIN,"[""STN-AUS-FILL-01"", ""STN-AUS-PAL-04""]",True,1.12,STN-AUS-PAL-04
+OP-AUS-118,Marcus Vance,PLANT-XYZ-AUSTIN,"[""STN-AUS-PACK-03"", ""STN-AUS-PAL-04""]",True,1.08,STN-AUS-PAL-04
+OP-AUS-122,Devon Brooks,PLANT-XYZ-AUSTIN,"[""STN-AUS-FILL-01"", ""STN-AUS-CAP-02""]",True,1.05,STN-AUS-FILL-01
+OP-STU-205,Lukas Weber,PLANT-XYZ-STUTTGART,"[""STN-STU-WELD-01"", ""STN-STU-TEST-02""]",False,1.14,STN-STU-TEST-02
+OP-STU-219,Hannah Richter,PLANT-XYZ-STUTTGART,"[""STN-STU-WELD-01""]",False,1.06,STN-STU-WELD-01
+OP-BLR-302,Karthik Nair,PLANT-XYZ-BENGALURU,"[""STN-BLR-SMT-01"", ""STN-BLR-BOX-02""]",False,1.15,STN-BLR-BOX-02
+OP-BLR-311,Priya Deshmukh,PLANT-XYZ-BENGALURU,"[""STN-BLR-SMT-01""]",False,1.09,STN-BLR-SMT-01
+OP-AUS-135,Sofia Chen,PLANT-XYZ-AUSTIN,"[""STN-AUS-CAP-02"", ""STN-AUS-PACK-03""]",True,1.1,STN-AUS-CAP-02

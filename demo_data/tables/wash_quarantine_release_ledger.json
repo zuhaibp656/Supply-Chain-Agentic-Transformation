@@ -1,0 +1,66 @@
+[
+  {
+    "wash_batch_id": "WSH-2026-601",
+    "measured_atp_rlu": 28,
+    "max_allowed_atp_rlu": 100,
+    "released_clean_units": 1191,
+    "quarantined_or_culled_units": 9,
+    "gate_status": "CLEAN_RELEASED_WITH_9_CULLS"
+  },
+  {
+    "wash_batch_id": "WSH-2026-602",
+    "measured_atp_rlu": 184,
+    "max_allowed_atp_rlu": 100,
+    "released_clean_units": 0,
+    "quarantined_or_culled_units": 24,
+    "gate_status": "HOLD_REWASH_LOW_TEMP_ATP_FAIL"
+  },
+  {
+    "wash_batch_id": "WSH-2026-603",
+    "measured_atp_rlu": 19,
+    "max_allowed_atp_rlu": 50,
+    "released_clean_units": 30,
+    "quarantined_or_culled_units": 2,
+    "gate_status": "VIP_VACUUM_RETEST_2_UNITS"
+  },
+  {
+    "wash_batch_id": "WSH-2026-604",
+    "measured_atp_rlu": 41,
+    "max_allowed_atp_rlu": 100,
+    "released_clean_units": 122,
+    "quarantined_or_culled_units": 18,
+    "gate_status": "RETIRE_CYCLE_FATIGUE_CAGES"
+  },
+  {
+    "wash_batch_id": "WSH-2026-605",
+    "measured_atp_rlu": 162,
+    "max_allowed_atp_rlu": 80,
+    "released_clean_units": 0,
+    "quarantined_or_culled_units": 85,
+    "gate_status": "HOLD_ALLERGEN_CAUSTIC_REWASH"
+  },
+  {
+    "wash_batch_id": "WSH-2026-606",
+    "measured_atp_rlu": 33,
+    "max_allowed_atp_rlu": 100,
+    "released_clean_units": 1558,
+    "quarantined_or_culled_units": 42,
+    "gate_status": "REGRIND_42_END_OF_LIFE_RPCS"
+  },
+  {
+    "wash_batch_id": "WSH-2026-607",
+    "measured_atp_rlu": 24,
+    "max_allowed_atp_rlu": 100,
+    "released_clean_units": 219,
+    "quarantined_or_culled_units": 1,
+    "gate_status": "CLEAN_RELEASED"
+  },
+  {
+    "wash_batch_id": "WSH-2026-608",
+    "measured_atp_rlu": 47,
+    "max_allowed_atp_rlu": 100,
+    "released_clean_units": 943,
+    "quarantined_or_culled_units": 7,
+    "gate_status": "CLEAN_RELEASED_WITH_7_CULLS"
+  }
+]

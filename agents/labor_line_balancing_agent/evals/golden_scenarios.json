@@ -1,19 +1,25 @@
-[
-  {
-    "scenario_id": "labor_line_balancing_agent_golden_01",
-    "category": "03 \u00b7 Manufacturing & Production \u2014 Production Scheduling",
-    "agent_name": "[03 \u00b7 Make | Production Scheduling] Labor & Line Balancing",
-    "prompt": "Run Labor & Line Balancing analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
-    "expected_tools": [
-      "query_labor_line_balancing_agent_telemetry_feed",
-      "query_labor_line_balancing_agent_constraint_matrix",
-      "action_commit_labor_line_balancing_agent_plan"
-    ],
-    "expected_outcome": "Prevents certified skill bottlenecks",
-    "eval_models": {
-      "fast_execution_model": "gemini-3.8-flash",
-      "deep_reasoning_and_judge_model": "gemini-4-argon (or gemini-3.1-pro subject to availability)",
-      "orchestrator_routing": "Agent Orchestrator dynamically decides whether to route the query to Gemini 3.8 Flash (gemini-3.8-flash) or escalate to Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability)."
+{
+  "agent_id": "labor_line_balancing_agent",
+  "organization_id": "XYZ-CORP-01",
+  "category": "03 \u00b7 Manufacturing & Production \u2014 Production Scheduling",
+  "persona": "Shift Supervisor",
+  "eval_judge_model": "gemini-4-argon (fallback: gemini-3.1-pro)",
+  "scenarios": [
+    {
+      "id": "labor_line_balancing_agent_analytical_audit",
+      "prompt": "Run analyze_takt_bottlenecks_and_balancing across XYZ-CORP-01 records and render a visual comparison chart.",
+      "expected_tools": [
+        "query_shift_station_cycle_times",
+        "analyze_takt_bottlenecks_and_balancing",
+        "render_visual_chart"
+      ]
+    },
+    {
+      "id": "labor_line_balancing_agent_persona_draft_and_gate",
+      "prompt": "Draft the Shift Workstation Rebalancing & Ergonomic Rotation Brief for leadership review without committing mutations until confirmed.",
+      "expected_tools": [
+        "draft_shift_handoff_staffing_brief"
+      ]
     }
-  }
-]
+  ]
+}

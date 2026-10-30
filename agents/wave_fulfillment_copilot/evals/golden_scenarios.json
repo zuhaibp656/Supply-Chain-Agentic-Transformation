@@ -1,19 +1,25 @@
-[
-  {
-    "scenario_id": "wave_fulfillment_copilot_golden_01",
-    "category": "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations",
-    "agent_name": "[04 \u00b7 Inventory & DC | Warehouse Operations] Wave Fulfillment Copilot",
-    "prompt": "Run Wave Fulfillment Copilot analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
-    "expected_tools": [
-      "query_wave_fulfillment_copilot_telemetry_feed",
-      "query_wave_fulfillment_copilot_constraint_matrix",
-      "action_commit_wave_fulfillment_copilot_plan"
-    ],
-    "expected_outcome": "Prevents missed dispatch windows (OTIF)",
-    "eval_models": {
-      "fast_execution_model": "gemini-3.8-flash",
-      "deep_reasoning_and_judge_model": "gemini-4-argon (or gemini-3.1-pro subject to availability)",
-      "orchestrator_routing": "Agent Orchestrator dynamically decides whether to route the query to Gemini 3.8 Flash (gemini-3.8-flash) or escalate to Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability)."
+{
+  "agent_id": "wave_fulfillment_copilot",
+  "organization_id": "XYZ-CORP-01",
+  "category": "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations",
+  "persona": "Pick/Pack Operations Lead",
+  "eval_judge_model": "gemini-4-argon (fallback: gemini-3.1-pro)",
+  "scenarios": [
+    {
+      "id": "wave_fulfillment_copilot_analytical_audit",
+      "prompt": "Run analyze_wave_cutoff_burn_down across XYZ-CORP-01 records and render a visual comparison chart.",
+      "expected_tools": [
+        "query_open_outbound_waves",
+        "analyze_wave_cutoff_burn_down",
+        "render_visual_chart"
+      ]
+    },
+    {
+      "id": "wave_fulfillment_copilot_persona_draft_and_gate",
+      "prompt": "Draft the DC Outbound Wave & Zone Picker Rebalance Directive for leadership review without committing mutations until confirmed.",
+      "expected_tools": [
+        "draft_floor_wave_rebalance_huddle"
+      ]
     }
-  }
-]
+  ]
+}

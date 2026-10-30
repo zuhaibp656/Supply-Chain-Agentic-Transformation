@@ -34,5 +34,65 @@
     "is_bottleneck": true,
     "overtime_cost_per_shift_usd": 14000.0,
     "changeover_hours_per_sku": 5.0
+  },
+  {
+    "facility_id": "PLANT-CINCINNATI-23",
+    "line_id": "LINE-PKG-25",
+    "process_type": "Aseptic Bottling & Retort Autoclave",
+    "standard_rate_units_per_hr": 99,
+    "current_shifts_per_week": 19,
+    "max_shifts_per_week": 26,
+    "utilization_pct": 99.6,
+    "is_bottleneck": false,
+    "overtime_cost_per_shift_usd": 20905.0,
+    "changeover_hours_per_sku": 5.62
+  },
+  {
+    "facility_id": "PLANT-DALLAS-31",
+    "line_id": "LINE-PKG-30",
+    "process_type": "Aseptic Bottling & Retort Autoclave",
+    "standard_rate_units_per_hr": 99,
+    "current_shifts_per_week": 11,
+    "max_shifts_per_week": 18,
+    "utilization_pct": 56.61,
+    "is_bottleneck": false,
+    "overtime_cost_per_shift_usd": 18306.0,
+    "changeover_hours_per_sku": 3.5
+  },
+  {
+    "facility_id": "PLANT-CHICAGO-39",
+    "line_id": "LINE-EXT-37",
+    "process_type": "Dual-Screw Continuous Extrusion",
+    "standard_rate_units_per_hr": 99,
+    "current_shifts_per_week": 16,
+    "max_shifts_per_week": 24,
+    "utilization_pct": 99.6,
+    "is_bottleneck": true,
+    "overtime_cost_per_shift_usd": 10920.0,
+    "changeover_hours_per_sku": 3.9
+  },
+  {
+    "facility_id": "PLANT-CINCINNATI-44",
+    "line_id": "LINE-PKG-46",
+    "process_type": "Aseptic Bottling & Retort Autoclave",
+    "standard_rate_units_per_hr": 99,
+    "current_shifts_per_week": 12,
+    "max_shifts_per_week": 19,
+    "utilization_pct": 99.6,
+    "is_bottleneck": false,
+    "overtime_cost_per_shift_usd": 20905.0,
+    "changeover_hours_per_sku": 3.73
+  },
+  {
+    "facility_id": "PLANT-DALLAS-52",
+    "line_id": "LINE-PKG-51",
+    "process_type": "Aseptic Bottling & Retort Autoclave",
+    "standard_rate_units_per_hr": 99,
+    "current_shifts_per_week": 11,
+    "max_shifts_per_week": 25,
+    "utilization_pct": 58.65,
+    "is_bottleneck": false,
+    "overtime_cost_per_shift_usd": 18306.0,
+    "changeover_hours_per_sku": 4.29
   }
 ]

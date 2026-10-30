@@ -25,5 +25,50 @@
     "margin_loss_per_unit_usd": 1.1,
     "total_cannibalization_loss_usd": 9350.0,
     "brand_portfolio_risk": "LOW"
+  },
+  {
+    "promoted_sku": "SKU-BEV-ISOTONIC-32OZ-R03A95",
+    "cannibalized_sku": "SKU-BEV-ISOTONIC-16OZ",
+    "cannibalization_rate_pct": 19.8,
+    "volume_diverted_units": 14720,
+    "margin_loss_per_unit_usd": 0.96,
+    "total_cannibalization_loss_usd": 11696.0,
+    "brand_portfolio_risk": "MEDIUM"
+  },
+  {
+    "promoted_sku": "SKU-BEV-ISOTONIC-32OZ-R04360",
+    "cannibalized_sku": "SKU-BEV-ORGANIC-WATER-1L",
+    "cannibalization_rate_pct": 13.68,
+    "volume_diverted_units": 9200,
+    "margin_loss_per_unit_usd": 1.41,
+    "total_cannibalization_loss_usd": 14125.0,
+    "brand_portfolio_risk": "HIGH"
+  },
+  {
+    "promoted_sku": "SKU-SNACK-PROTEIN-BAR-R05CF2",
+    "cannibalized_sku": "SKU-SNACK-ALMOND-CRUNCH",
+    "cannibalization_rate_pct": 10.92,
+    "volume_diverted_units": 10115,
+    "margin_loss_per_unit_usd": 1.31,
+    "total_cannibalization_loss_usd": 11126.5,
+    "brand_portfolio_risk": "LOW"
+  },
+  {
+    "promoted_sku": "SKU-BEV-ISOTONIC-32OZ-R0690C",
+    "cannibalized_sku": "SKU-BEV-ISOTONIC-16OZ",
+    "cannibalization_rate_pct": 14.43,
+    "volume_diverted_units": 19040,
+    "margin_loss_per_unit_usd": 1.01,
+    "total_cannibalization_loss_usd": 11288.0,
+    "brand_portfolio_risk": "MEDIUM"
+  },
+  {
+    "promoted_sku": "SKU-BEV-ISOTONIC-32OZ-R07014",
+    "cannibalized_sku": "SKU-BEV-ORGANIC-WATER-1L",
+    "cannibalization_rate_pct": 8.97,
+    "volume_diverted_units": 10700,
+    "margin_loss_per_unit_usd": 1.56,
+    "total_cannibalization_loss_usd": 15625.0,
+    "brand_portfolio_risk": "HIGH"
   }
 ]

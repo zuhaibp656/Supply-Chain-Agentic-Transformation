@@ -1,0 +1,58 @@
+[
+  {
+    "sku_id": "SKU-XYZ-204",
+    "ect_box_rating_lb_in": 44,
+    "max_top_load_kg": 240.0,
+    "crush_fragility_index": 0.28,
+    "allowed_pallet_tier": "BASE_OR_MID"
+  },
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "ect_box_rating_lb_in": 44,
+    "max_top_load_kg": 225.0,
+    "crush_fragility_index": 0.32,
+    "allowed_pallet_tier": "BASE_OR_MID"
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "ect_box_rating_lb_in": 40,
+    "max_top_load_kg": 195.0,
+    "crush_fragility_index": 0.42,
+    "allowed_pallet_tier": "BASE_OR_MID"
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "ect_box_rating_lb_in": 32,
+    "max_top_load_kg": 55.0,
+    "crush_fragility_index": 0.81,
+    "allowed_pallet_tier": "TOP_CAP_ONLY"
+  },
+  {
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "ect_box_rating_lb_in": 29,
+    "max_top_load_kg": 38.0,
+    "crush_fragility_index": 0.88,
+    "allowed_pallet_tier": "TOP_CAP_ONLY"
+  },
+  {
+    "sku_id": "SKU-XYZ-625",
+    "ect_box_rating_lb_in": 48,
+    "max_top_load_kg": 310.0,
+    "crush_fragility_index": 0.19,
+    "allowed_pallet_tier": "BASE_ANCHOR"
+  },
+  {
+    "sku_id": "SKU-XYZ-412",
+    "ect_box_rating_lb_in": 36,
+    "max_top_load_kg": 85.0,
+    "crush_fragility_index": 0.64,
+    "allowed_pallet_tier": "MID_OR_TOP"
+  },
+  {
+    "sku_id": "SKU-XYZ-101",
+    "ect_box_rating_lb_in": 61,
+    "max_top_load_kg": 480.0,
+    "crush_fragility_index": 0.15,
+    "allowed_pallet_tier": "DEDICATED_SKID"
+  }
+]

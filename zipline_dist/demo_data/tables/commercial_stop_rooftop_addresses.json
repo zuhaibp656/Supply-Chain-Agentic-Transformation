@@ -1,0 +1,74 @@
+[
+  {
+    "stop_id": "STP-CHI-401",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "site_name": "MegaMart Magnificent Mile Urban Underground",
+    "rooftop_lat": 41.8942,
+    "rooftop_lon": -87.6244,
+    "truck_size_limit": "26FT_STRAIGHT_MAX_12FT6_CLEARANCE",
+    "failed_attempts_90d": 7
+  },
+  {
+    "stop_id": "STP-DAL-402",
+    "customer_id": "CUST-KROGER-US01",
+    "site_name": "Kroger Mockingbird Mixed-Use Plaza",
+    "rooftop_lat": 32.8371,
+    "rooftop_lon": -96.7745,
+    "truck_size_limit": "53FT_REAR_ALLEY_GATE_CODE",
+    "failed_attempts_90d": 5
+  },
+  {
+    "stop_id": "STP-FRA-403",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "site_name": "MedCore Uniklinik Campus Cryo Receiving",
+    "rooftop_lat": 50.0958,
+    "rooftop_lon": 8.6512,
+    "truck_size_limit": "PHARMA_BAY_NORTH_WING_ONLY",
+    "failed_attempts_90d": 6
+  },
+  {
+    "stop_id": "STP-ATL-404",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "site_name": "MegaMart Midtown Multi-Level Mall",
+    "rooftop_lat": 33.7815,
+    "rooftop_lon": -84.3862,
+    "truck_size_limit": "LOADING_TUNNEL_WEST_RAMP",
+    "failed_attempts_90d": 8
+  },
+  {
+    "stop_id": "STP-MUM-405",
+    "customer_id": "CUST-XYZ-TIER2-METROCPG",
+    "site_name": "MetroFresh Lower Parel High-Street Hub",
+    "rooftop_lat": 18.9952,
+    "rooftop_lon": 72.8288,
+    "truck_size_limit": "EV_VAN_BEFORE_10AM_CURFEW",
+    "failed_attempts_90d": 9
+  },
+  {
+    "stop_id": "STP-CHI-406",
+    "customer_id": "CUST-COSTCO-US04",
+    "site_name": "Costco Lincoln Park Club Receiving",
+    "rooftop_lat": 41.9298,
+    "rooftop_lon": -87.6655,
+    "truck_size_limit": "53FT_SOUTH_APRON_SWING",
+    "failed_attempts_90d": 2
+  },
+  {
+    "stop_id": "STP-STU-407",
+    "customer_id": "CUST-XYZ-TIER1-AUTOWORKS",
+    "site_name": "EuroAuto Werk 4 Powertrain Gate B",
+    "rooftop_lat": 48.7844,
+    "rooftop_lon": 9.2281,
+    "truck_size_limit": "JIT_GATE_B7_TRANSPONDER",
+    "failed_attempts_90d": 4
+  },
+  {
+    "stop_id": "STP-DAL-408",
+    "customer_id": "CUST-ALDI-OUTLET-US09",
+    "site_name": "ValueMax Garland Strip Center",
+    "rooftop_lat": 32.9126,
+    "rooftop_lon": -96.6389,
+    "truck_size_limit": "48FT_LIFTGATE_REQUIRED",
+    "failed_attempts_90d": 5
+  }
+]

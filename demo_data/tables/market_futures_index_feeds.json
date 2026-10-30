@@ -1,0 +1,74 @@
+[
+  {
+    "index_code": "LME-ALUMINUM-P1020",
+    "spot_usd": 2615.0,
+    "fwd_3m_usd": 2560.0,
+    "fwd_6m_usd": 2515.0,
+    "curve_structure": "BACKWARDATION",
+    "volatility_30d_pct": 18.4,
+    "buy_signal": "DELAY_SPOT_COLLAR_6M"
+  },
+  {
+    "index_code": "ICIS-RPET-FOODGRADE-US",
+    "spot_usd": 1465.0,
+    "fwd_3m_usd": 1510.0,
+    "fwd_6m_usd": 1575.0,
+    "curve_structure": "CONTANGO_DIP",
+    "volatility_30d_pct": 14.2,
+    "buy_signal": "LOCK_FORWARD_75PCT_NOW"
+  },
+  {
+    "index_code": "FAST-LITHIUM-CARB-BG",
+    "spot_usd": 13150.0,
+    "fwd_3m_usd": 13600.0,
+    "fwd_6m_usd": 14100.0,
+    "curve_structure": "CONTANGO_TROUGH",
+    "volatility_30d_pct": 26.5,
+    "buy_signal": "LOCK_FORWARD_80PCT_NOW"
+  },
+  {
+    "index_code": "CBOT-MILLING-OATS",
+    "spot_usd": 388.0,
+    "fwd_3m_usd": 372.0,
+    "fwd_6m_usd": 360.0,
+    "curve_structure": "BACKWARDATION",
+    "volatility_30d_pct": 16.9,
+    "buy_signal": "STAGGERED_TRANCHE_BUY"
+  },
+  {
+    "index_code": "SGX-TSR20-NAT-RUBBER",
+    "spot_usd": 1895.0,
+    "fwd_3m_usd": 1860.0,
+    "fwd_6m_usd": 1825.0,
+    "curve_structure": "BACKWARDATION",
+    "volatility_30d_pct": 19.1,
+    "buy_signal": "ZERO_COST_COLLAR"
+  },
+  {
+    "index_code": "LME-COPPER-GRADE-A",
+    "spot_usd": 9580.0,
+    "fwd_3m_usd": 9640.0,
+    "fwd_6m_usd": 9710.0,
+    "curve_structure": "CONTANGO",
+    "volatility_30d_pct": 17.8,
+    "buy_signal": "CAP_COLLAR_75PCT"
+  },
+  {
+    "index_code": "CME-WHEY-ISOLATE-80",
+    "spot_usd": 4490.0,
+    "fwd_3m_usd": 4540.0,
+    "fwd_6m_usd": 4590.0,
+    "curve_structure": "CONTANGO_RALLY",
+    "volatility_30d_pct": 21.0,
+    "buy_signal": "URGENT_HEDGE_ADD_40PCT"
+  },
+  {
+    "index_code": "EU-NAT-GAS-TTF-GLASS",
+    "spot_usd": 2890.0,
+    "fwd_3m_usd": 2940.0,
+    "fwd_6m_usd": 3020.0,
+    "curve_structure": "SEASONAL_CONTANGO",
+    "volatility_30d_pct": 24.0,
+    "buy_signal": "HOLD_EXISTING_65PCT"
+  }
+]

@@ -1,0 +1,9 @@
+deviation_id,batch_id,severity,root_cause,capa_required,lot_value_at_risk_usd
+DEV-QMS-401,BATCH-XYZ-AUST-8962,CRITICAL_CLASS_I,Steam control valve PCV-14 pressure dip (-3.6C under CCP) + pH 4.68 OOS,True,89280.0
+DEV-QMS-402,BATCH-XYZ-STUT-949,MINOR_ADMIN,Line supervisor 21 CFR Part 11 secondary e-signature pending on filter integrity step,False,320000.0
+DEV-NONE-01,BATCH-XYZ-AUST-8841,NONE,Zero CCP or LIMS exceptions,False,0.0
+DEV-NONE-02,BATCH-XYZ-AUST-8955,NONE,Zero CCP or LIMS exceptions,False,0.0
+DEV-NONE-03,BATCH-XYZ-STUT-942,NONE,Zero CCP or LIMS exceptions,False,0.0
+DEV-NONE-04,BATCH-XYZ-DAL-410,NONE,Zero CCP or LIMS exceptions,False,0.0
+DEV-NONE-05,BATCH-XYZ-PUNE-312,NONE,Zero CCP or LIMS exceptions,False,0.0
+DEV-NONE-06,BATCH-XYZ-AUST-8970,NONE,Zero CCP or LIMS exceptions,False,0.0

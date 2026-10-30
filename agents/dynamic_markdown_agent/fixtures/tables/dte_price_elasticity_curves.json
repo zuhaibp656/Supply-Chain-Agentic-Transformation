@@ -1,0 +1,66 @@
+[
+  {
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "price_elasticity_beta": -2.45,
+    "lift_at_15pct_off": 1.48,
+    "lift_at_30pct_off": 2.35,
+    "lift_at_50pct_off": 3.9,
+    "disposal_fee_per_unit_usd": 0.42
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "price_elasticity_beta": -2.15,
+    "lift_at_15pct_off": 1.41,
+    "lift_at_30pct_off": 2.18,
+    "lift_at_50pct_off": 3.45,
+    "disposal_fee_per_unit_usd": 0.38
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "price_elasticity_beta": -1.85,
+    "lift_at_15pct_off": 1.34,
+    "lift_at_30pct_off": 1.92,
+    "lift_at_50pct_off": 2.95,
+    "disposal_fee_per_unit_usd": 0.55
+  },
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "price_elasticity_beta": -1.95,
+    "lift_at_15pct_off": 1.38,
+    "lift_at_30pct_off": 2.04,
+    "lift_at_50pct_off": 3.1,
+    "disposal_fee_per_unit_usd": 0.6
+  },
+  {
+    "sku_id": "SKU-XYZ-204",
+    "price_elasticity_beta": -1.75,
+    "lift_at_15pct_off": 1.31,
+    "lift_at_30pct_off": 1.88,
+    "lift_at_50pct_off": 2.8,
+    "disposal_fee_per_unit_usd": 0.6
+  },
+  {
+    "sku_id": "SKU-NPI-KEFIR-MANGO-6PK",
+    "price_elasticity_beta": -2.5,
+    "lift_at_15pct_off": 1.52,
+    "lift_at_30pct_off": 2.4,
+    "lift_at_50pct_off": 4.0,
+    "disposal_fee_per_unit_usd": 0.42
+  },
+  {
+    "sku_id": "SKU-NPI-OAT-VANILLA-1L",
+    "price_elasticity_beta": -2.2,
+    "lift_at_15pct_off": 1.43,
+    "lift_at_30pct_off": 2.22,
+    "lift_at_50pct_off": 3.55,
+    "disposal_fee_per_unit_usd": 0.38
+  },
+  {
+    "sku_id": "SKU-NPI-BAR-PEANUT-24CT",
+    "price_elasticity_beta": -1.8,
+    "lift_at_15pct_off": 1.32,
+    "lift_at_30pct_off": 1.9,
+    "lift_at_50pct_off": 2.9,
+    "disposal_fee_per_unit_usd": 0.55
+  }
+]

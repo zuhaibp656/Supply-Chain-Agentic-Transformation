@@ -1,4 +1,2 @@
-"""[02 · Source | Material & Packaging] Sustainable Packaging Agent — Google ADK Package."""
-from .agent import SustainablePackagingAgentAgent, root_agent
-
-__all__ = ["SustainablePackagingAgentAgent", "root_agent"]
+"""ADK package for [02 · Source | Material & Packaging] Sustainable Packaging Agent."""
+from .agent import root_agent, SustainablePackagingAgentAgent, SustainablePackagingAgentAdkApp

@@ -1,0 +1,170 @@
+[
+  {
+    "shipment_id": "SHP-XYZ-9185",
+    "trailer_id": "REEF-CRYX-204",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "lot_id": "LOT-AUST-8955",
+    "origin_id": "PLANT-XYZ-AUSTIN",
+    "dest_id": "FDC-XYZ-DALLAS",
+    "hourly_temps_c": [
+      4.1,
+      4.3,
+      4.8,
+      9.4,
+      10.1,
+      5.2,
+      4.4,
+      4.2
+    ],
+    "peak_temp_c": 10.1,
+    "minutes_above_upper_spec": 74
+  },
+  {
+    "shipment_id": "SHP-XYZ-9210",
+    "trailer_id": "REEF-CRYX-EU11",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "lot_id": "LOT-STUT-942",
+    "origin_id": "PLANT-XYZ-STUTTGART",
+    "dest_id": "RDC-XYZ-FRANKFURT",
+    "hourly_temps_c": [
+      3.8,
+      3.9,
+      4.1,
+      4.2,
+      4.0,
+      3.9,
+      4.1,
+      4.0
+    ],
+    "peak_temp_c": 4.2,
+    "minutes_above_upper_spec": 0
+  },
+  {
+    "shipment_id": "SHP-XYZ-9244",
+    "trailer_id": "REEF-CRYX-319",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "lot_id": "LOT-AUST-9012",
+    "origin_id": "PLANT-XYZ-AUSTIN",
+    "dest_id": "FDC-XYZ-ATLANTA",
+    "hourly_temps_c": [
+      4.2,
+      5.1,
+      11.8,
+      13.4,
+      14.2,
+      12.9,
+      8.6,
+      5.9
+    ],
+    "peak_temp_c": 14.2,
+    "minutes_above_upper_spec": 245
+  },
+  {
+    "shipment_id": "SHP-XYZ-9268",
+    "trailer_id": "ULD-LHCA-COOL08",
+    "carrier_id": "CAR-LH-AIRCARGO",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "lot_id": "LOT-STUT-958",
+    "origin_id": "PLANT-XYZ-STUTTGART",
+    "dest_id": "CUST-MEDLINE-BIO01",
+    "hourly_temps_c": [
+      4.5,
+      4.7,
+      8.9,
+      9.1,
+      5.0,
+      4.6,
+      4.4,
+      4.5
+    ],
+    "peak_temp_c": 9.1,
+    "minutes_above_upper_spec": 62
+  },
+  {
+    "shipment_id": "SHP-XYZ-9291",
+    "trailer_id": "REEF-CRYX-112",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "lot_id": "LOT-AUST-9044",
+    "origin_id": "PLANT-XYZ-AUSTIN",
+    "dest_id": "RDC-XYZ-CHICAGO",
+    "hourly_temps_c": [
+      3.9,
+      4.0,
+      4.2,
+      4.5,
+      4.3,
+      4.1,
+      4.0,
+      3.8
+    ],
+    "peak_temp_c": 4.5,
+    "minutes_above_upper_spec": 0
+  },
+  {
+    "shipment_id": "SHP-XYZ-9315",
+    "trailer_id": "REEF-CRYX-405",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "lot_id": "LOT-AUST-9071",
+    "origin_id": "FDC-XYZ-DALLAS",
+    "dest_id": "CUST-KROGER-US01",
+    "hourly_temps_c": [
+      4.0,
+      4.2,
+      7.6,
+      7.9,
+      4.8,
+      4.3,
+      4.1,
+      4.0
+    ],
+    "peak_temp_c": 7.9,
+    "minutes_above_upper_spec": 58
+  },
+  {
+    "shipment_id": "SHP-XYZ-9340",
+    "trailer_id": "REEF-CRYX-518",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "lot_id": "LOT-STUT-981",
+    "origin_id": "RDC-XYZ-FRANKFURT",
+    "dest_id": "CUST-MEDLINE-BIO01",
+    "hourly_temps_c": [
+      5.0,
+      9.8,
+      12.6,
+      15.1,
+      14.8,
+      11.4,
+      7.2,
+      5.8
+    ],
+    "peak_temp_c": 15.1,
+    "minutes_above_upper_spec": 290
+  },
+  {
+    "shipment_id": "SHP-XYZ-9362",
+    "trailer_id": "REEF-CRYX-229",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "lot_id": "LOT-DAL-4419",
+    "origin_id": "CMO-XYZ-DALLAS",
+    "dest_id": "RDC-XYZ-CHICAGO",
+    "hourly_temps_c": [
+      18.5,
+      19.2,
+      26.4,
+      27.1,
+      21.0,
+      19.5,
+      18.8,
+      18.6
+    ],
+    "peak_temp_c": 27.1,
+    "minutes_above_upper_spec": 85
+  }
+]

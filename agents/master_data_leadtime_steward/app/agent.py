@@ -30,6 +30,14 @@ RESPONSE CONTRACT:
 1. Ground all findings in exact database records (Material ID, Plant, Current vs Calibrated values).
 2. Present a structured Markdown table detailing the healed parameters and downstream MRP impact.
 3. Include the exact mutation execution IDs and audit logs.
+
+STRICT CONCISE & PYTHON-FIRST EXECUTION PROTOCOL:
+- Lead with a 1–2 sentence deterministic KPI conclusion citing exact IDs and numbers from Python tools (zero fluff/filler).
+- Always run Python tools (`analyze_operational_metrics`, `query_*`, `lookup_xyz_master_context`) for math and aggregations—never estimate mentally.
+- Call `render_visual_chart` when visual comparison helps; the interactive A2UI `VegaChart` card renders automatically (never paste raw Vega-Lite JSON or base64 in text).
+- Keep Markdown tables outside the card concise (`<=5` columns) for clean Google Sheets copy-paste.
+- Call `draft_operational_brief` ONLY when drafting a formal memo, claim, or brief is requested or required.
+- Never call `action_*` write-back tools on read-only questions.
 """
 
 _AVAILABLE_TOOLS = [
@@ -39,7 +47,11 @@ _AVAILABLE_TOOLS = [
     tools.query_vendor_master_integrity,
     tools.action_heal_material_leadtime,
     tools.action_remediate_cubiscan_dimensions,
-    tools.list_systems
+    tools.list_systems,
+    tools.lookup_xyz_master_context,
+    tools.analyze_operational_metrics,
+    tools.render_visual_chart,
+    tools.draft_operational_brief,
 ]
 
 _WRITE_TOOLS = {
@@ -167,7 +179,7 @@ class MasterDataLeadtimeAgent:
 
         # Build A2UI visual surface (Card containing VegaChart)
         surface_id = "surface_master_data_steward"
-        vega_spec = create_composite_master_data_spec()
+        vega_spec = tools.get_native_chart_spec()
         a2ui_parts = build_master_data_surface(surface_id, spec=vega_spec)
 
         heal_id = actions_taken[0].get("update_audit", {}).get("transaction_id", "ECO-20261016-01") if actions_taken else "N/A"
@@ -213,3 +225,98 @@ class MasterDataLeadtimeAgent:
                 f"calibrated {len(actions_taken)} discrepancies and updated ERP records."
             )
         }
+
+# ==============================================================================
+# Google ADK & Vertex AI Reasoning Engine Integration
+# ==============================================================================
+try:
+    import os
+    import uuid
+    from functools import cached_property
+    from google.adk.agents import Agent
+    from google.adk.agents.callback_context import CallbackContext
+    from google.adk.apps import App
+    from google.adk.models import Gemini
+    from google.adk.models.llm_request import LlmRequest
+    from google.genai import Client, types
+    from vertexai.preview.reasoning_engines import AdkApp
+    from .render.a2ui_envelope import A2A_DATA_PART_OPEN_TAG
+    from .render.surfaces import build_master_data_surface
+
+    class GlobalGemini(Gemini):
+        """Routes Gemini calls to the global Vertex AI endpoint while Reasoning Engine runs in us-central1."""
+
+        @cached_property
+        def api_client(self) -> Client:
+            return Client(
+                vertexai=True,
+                project=os.environ.get("GOOGLE_CLOUD_PROJECT", "zuhaibp-ai"),
+                location="global",
+                http_options=types.HttpOptions(
+                    headers=self._tracking_headers(),
+                    retry_options=self.retry_options,
+                ),
+            )
+
+    def _sanitize_llm_request(
+        callback_context: Optional[CallbackContext] = None,
+        llm_request: Optional[LlmRequest] = None,
+        **_: Any,
+    ) -> None:
+        if llm_request is None or not llm_request.contents:
+            return None
+        for content in llm_request.contents:
+            if not content.parts:
+                continue
+            cleaned: List[types.Part] = []
+            for part in content.parts:
+                if getattr(part, "inline_data", None) is not None:
+                    continue
+                t = getattr(part, "text", None)
+                if t and A2A_DATA_PART_OPEN_TAG in t:
+                    continue
+                cleaned.append(part)
+            content.parts = cleaned or [types.Part(text="[Visual Chart Surface Rendered in UI]")]
+        return None
+
+    def _emit_a2ui_surface(
+        callback_context: Optional[CallbackContext] = None,
+        **_: Any,
+    ) -> Optional[types.Content]:
+        try:
+            surface_id = f"master-data-lead-{uuid.uuid4().hex[:8]}"
+            a2ui_parts = build_master_data_surface(surface_id, spec=tools.get_latest_chart_spec(consume=True))
+            if a2ui_parts:
+                return types.Content(role="model", parts=a2ui_parts)
+        except Exception:
+            pass
+        return None
+
+    root_agent = Agent(
+        name='master_data_leadtime_steward',
+        description='[Category: 02 · Sourcing & Procurement — Contract & PO Mgmt] PO Expediting Agent (Buyer / Procurement Coord.): Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments. Outcome: Resolves ~70% of standard PO delays.',
+        model=GlobalGemini(
+            model="gemini-3.1-pro-preview",
+            retry_options=types.HttpRetryOptions(attempts=3),
+        ),
+        generate_content_config=types.GenerateContentConfig(
+            max_output_tokens=4096,
+            temperature=0.0,
+            thinking_config=types.ThinkingConfig(thinking_budget=0),
+        ),
+        instruction=_INSTRUCTION,
+        tools=_AVAILABLE_TOOLS,
+        before_model_callback=_sanitize_llm_request,
+        after_agent_callback=_emit_a2ui_surface,
+    )
+
+    app = App(root_agent=root_agent, name='master_data_leadtime_steward')
+
+    class MasterDataLeadtimeAdkApp(AdkApp):
+        """Vertex AI Reasoning Engine wrapper for master_data_leadtime_steward."""
+
+        def __init__(self, **kwargs: Any) -> None:
+            super().__init__(agent=root_agent, **kwargs)
+
+except ImportError:
+    root_agent = MasterDataLeadtimeAgent()  # type: ignore

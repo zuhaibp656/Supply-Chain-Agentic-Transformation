@@ -1,0 +1,66 @@
+[
+  {
+    "shipment_id": "SHP-XYZ-9185",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "computed_mkt_c": 6.08,
+    "max_mkt_allowed_c": 8.0,
+    "qa_decision": "MKT_PASS_AUTO_RELEASE",
+    "value_saved_or_claimed_usd": 38880.0
+  },
+  {
+    "shipment_id": "SHP-XYZ-9210",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "computed_mkt_c": 4.0,
+    "max_mkt_allowed_c": 8.0,
+    "qa_decision": "NOMINAL_AUTO_RELEASE",
+    "value_saved_or_claimed_usd": 142000.0
+  },
+  {
+    "shipment_id": "SHP-XYZ-9244",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "computed_mkt_c": 10.42,
+    "max_mkt_allowed_c": 6.5,
+    "qa_decision": "QUARANTINE_AND_CARRIER_CLAIM",
+    "value_saved_or_claimed_usd": 46872.0
+  },
+  {
+    "shipment_id": "SHP-XYZ-9268",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "computed_mkt_c": 5.96,
+    "max_mkt_allowed_c": 8.0,
+    "qa_decision": "MKT_PASS_STABILITY_BUDGET_DEDUCT",
+    "value_saved_or_claimed_usd": 142000.0
+  },
+  {
+    "shipment_id": "SHP-XYZ-9291",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "computed_mkt_c": 4.1,
+    "max_mkt_allowed_c": 8.0,
+    "qa_decision": "NOMINAL_AUTO_RELEASE",
+    "value_saved_or_claimed_usd": 38880.0
+  },
+  {
+    "shipment_id": "SHP-XYZ-9315",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "computed_mkt_c": 5.31,
+    "max_mkt_allowed_c": 6.5,
+    "qa_decision": "MKT_PASS_AUTO_RELEASE",
+    "value_saved_or_claimed_usd": 46872.0
+  },
+  {
+    "shipment_id": "SHP-XYZ-9340",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "computed_mkt_c": 11.15,
+    "max_mkt_allowed_c": 8.0,
+    "qa_decision": "QUARANTINE_GDP_DESTRUCTION_CLAIM",
+    "value_saved_or_claimed_usd": 142000.0
+  },
+  {
+    "shipment_id": "SHP-XYZ-9362",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "computed_mkt_c": 21.64,
+    "max_mkt_allowed_c": 24.5,
+    "qa_decision": "MKT_PASS_AUTO_RELEASE",
+    "value_saved_or_claimed_usd": 29952.0
+  }
+]

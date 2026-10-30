@@ -1,0 +1,74 @@
+[
+  {
+    "incident_id": "EXC-2026-801",
+    "shipment_id": "SHP-XYZ-9185",
+    "root_cause": "CROSSDOCK_DOOR_STAGING_DELAY",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 48,
+    "degree_minutes_above_spec": 118.4,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-802",
+    "shipment_id": "SHP-XYZ-9244",
+    "root_cause": "COMPRESSOR_EXPANSION_VALVE_FAIL",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 12,
+    "degree_minutes_above_spec": 1642.0,
+    "carrier_fault_flag": true
+  },
+  {
+    "incident_id": "EXC-2026-803",
+    "shipment_id": "SHP-XYZ-9268",
+    "root_cause": "TARMAC_ULD_TRANSFER_EXPOSURE",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 35,
+    "degree_minutes_above_spec": 64.5,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-804",
+    "shipment_id": "SHP-XYZ-9315",
+    "root_cause": "DEFROST_CYCLE_SPIKE",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 8,
+    "degree_minutes_above_spec": 94.2,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-805",
+    "shipment_id": "SHP-XYZ-9340",
+    "root_cause": "REEFER_FUEL_STARVATION_SHUTOFF",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 15,
+    "degree_minutes_above_spec": 1810.5,
+    "carrier_fault_flag": true
+  },
+  {
+    "incident_id": "EXC-2026-806",
+    "shipment_id": "SHP-XYZ-9362",
+    "root_cause": "TEXAS_MIDDAY_DOCK_WAIT",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 40,
+    "degree_minutes_above_spec": 198.0,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-807",
+    "shipment_id": "SHP-XYZ-9210",
+    "root_cause": "NONE_NOMINAL_TRANSIT",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 6,
+    "degree_minutes_above_spec": 0.0,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-808",
+    "shipment_id": "SHP-XYZ-9291",
+    "root_cause": "NONE_NOMINAL_TRANSIT",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 9,
+    "degree_minutes_above_spec": 0.0,
+    "carrier_fault_flag": false
+  }
+]

@@ -1,5 +1,6 @@
-"""A2UI message envelope serializer."""
+"""Self-contained A2UI v0.9 envelope serializer for Gemini Enterprise."""
 from __future__ import annotations
+
 import json
 from typing import Any, Dict
 
@@ -35,26 +36,16 @@ def wrap_a2ui_part(message: Any) -> Any:
     }
 
     json_str = json.dumps(payload_envelope, separators=(",", ":"))
-    wire_payload = (
-        f"{A2A_DATA_PART_OPEN_TAG}"
-        f"{json_str}"
-        f"{A2A_DATA_PART_CLOSE_TAG}"
-    ).encode("utf-8")
+    wire_payload = f"{A2A_DATA_PART_OPEN_TAG}{json_str}{A2A_DATA_PART_CLOSE_TAG}".encode("utf-8")
 
     if types is not None:
         return types.Part(
-            inline_data=types.Blob(
-                data=wire_payload,
-                mime_type="text/plain",
-            ),
+            inline_data=types.Blob(data=wire_payload, mime_type="text/plain"),
             part_metadata={"mimeType": A2UI_MIME},
         )
 
     return {
-        "inline_data": {
-            "data": wire_payload.decode("utf-8"),
-            "mime_type": "text/plain",
-        },
+        "inline_data": {"data": wire_payload.decode("utf-8"), "mime_type": "text/plain"},
         "part_metadata": {"mimeType": A2UI_MIME},
         "wire_payload": wire_payload.decode("utf-8"),
     }

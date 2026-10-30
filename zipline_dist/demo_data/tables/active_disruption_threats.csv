@@ -1,3 +1,9 @@
 threat_id,threat_type,region,impacted_node_id,supplier_name,disruption_severity,estimated_downtime_days,source_feed,advance_warning_days,confidence_score
 THREAT-CYCLONE-QLD-01,CATEGORY_4_TROPICAL_CYCLONE,"Queensland, Australia",NODE-WEIPA-BAUXITE-AU,Weipa Bauxite Mining & Refinery,CRITICAL_FACILITY_SHUTDOWN,21,Google DeepMind WeatherNext 3 Cyclone Trajectory,11,0.94
 THREAT-SEISMIC-KANAGAWA-02,SEISMIC_EVENT_WARNING,"Kanagawa, Japan",NODE-SHOWA-SALT-JP,Showa Denko Chemical Specialty,PRECAUTIONARY_PORT_HALT,7,JMA Seismic Alert & AIS Berth Monitor,4,0.81
+THREAT-CYCLONE-QLD-16,CATEGORY_4_TROPICAL_CYCLONE,"Queensland, Australia",NODE-WEIPA-BAUXITE-AU,Weipa Bauxite Mining & Refinery,CRITICAL_FACILITY_SHUTDOWN,26,Google DeepMind WeatherNext 3 Cyclone Trajectory,9,0.99
+THREAT-SEISMIC-KANAGAWA-24,SEISMIC_EVENT_WARNING,"Kanagawa, Japan",NODE-SHOWA-SALT-JP,Showa Denko Chemical Specialty,PRECAUTIONARY_PORT_HALT,6,JMA Seismic Alert & AIS Berth Monitor,3,0.672
+THREAT-CYCLONE-QLD-30,CATEGORY_4_TROPICAL_CYCLONE,"Queensland, Australia",NODE-WEIPA-BAUXITE-AU,Weipa Bauxite Mining & Refinery,CRITICAL_FACILITY_SHUTDOWN,18,Google DeepMind WeatherNext 3 Cyclone Trajectory,9,0.99
+THREAT-SEISMIC-KANAGAWA-38,SEISMIC_EVENT_WARNING,"Kanagawa, Japan",NODE-SHOWA-SALT-JP,Showa Denko Chemical Specialty,PRECAUTIONARY_PORT_HALT,9,JMA Seismic Alert & AIS Berth Monitor,3,0.964
+THREAT-CYCLONE-QLD-44,CATEGORY_4_TROPICAL_CYCLONE,"Queensland, Australia",NODE-WEIPA-BAUXITE-AU,Weipa Bauxite Mining & Refinery,CRITICAL_FACILITY_SHUTDOWN,17,Google DeepMind WeatherNext 3 Cyclone Trajectory,12,0.99
+THREAT-SEISMIC-KANAGAWA-52,SEISMIC_EVENT_WARNING,"Kanagawa, Japan",NODE-SHOWA-SALT-JP,Showa Denko Chemical Specialty,PRECAUTIONARY_PORT_HALT,8,JMA Seismic Alert & AIS Berth Monitor,3,0.964

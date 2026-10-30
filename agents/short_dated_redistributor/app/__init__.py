@@ -1,4 +1,2 @@
-"""[06 · Returns & ESG | Expiry & Markdowns] Short-Dated Redistributor — Google ADK Package."""
-from .agent import ShortDatedRedistributorAgent, root_agent
-
-__all__ = ["ShortDatedRedistributorAgent", "root_agent"]
+"""ADK package for [06 · Return | Expiry & Markdowns] Short-Dated DC Inventory Redistributor."""
+from .agent import root_agent, ShortDatedRedistributorAgent, ShortDatedRedistributorAdkApp

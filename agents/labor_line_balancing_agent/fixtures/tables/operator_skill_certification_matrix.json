@@ -1,0 +1,96 @@
+[
+  {
+    "operator_id": "OP-AUS-104",
+    "operator_name": "Elena Martinez",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "certified_stations": [
+      "STN-AUS-FILL-01",
+      "STN-AUS-PAL-04"
+    ],
+    "aseptic_fda_cert": true,
+    "efficiency_rating": 1.12,
+    "current_station": "STN-AUS-PAL-04"
+  },
+  {
+    "operator_id": "OP-AUS-118",
+    "operator_name": "Marcus Vance",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "certified_stations": [
+      "STN-AUS-PACK-03",
+      "STN-AUS-PAL-04"
+    ],
+    "aseptic_fda_cert": true,
+    "efficiency_rating": 1.08,
+    "current_station": "STN-AUS-PAL-04"
+  },
+  {
+    "operator_id": "OP-AUS-122",
+    "operator_name": "Devon Brooks",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "certified_stations": [
+      "STN-AUS-FILL-01",
+      "STN-AUS-CAP-02"
+    ],
+    "aseptic_fda_cert": true,
+    "efficiency_rating": 1.05,
+    "current_station": "STN-AUS-FILL-01"
+  },
+  {
+    "operator_id": "OP-STU-205",
+    "operator_name": "Lukas Weber",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "certified_stations": [
+      "STN-STU-WELD-01",
+      "STN-STU-TEST-02"
+    ],
+    "aseptic_fda_cert": false,
+    "efficiency_rating": 1.14,
+    "current_station": "STN-STU-TEST-02"
+  },
+  {
+    "operator_id": "OP-STU-219",
+    "operator_name": "Hannah Richter",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "certified_stations": [
+      "STN-STU-WELD-01"
+    ],
+    "aseptic_fda_cert": false,
+    "efficiency_rating": 1.06,
+    "current_station": "STN-STU-WELD-01"
+  },
+  {
+    "operator_id": "OP-BLR-302",
+    "operator_name": "Karthik Nair",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "certified_stations": [
+      "STN-BLR-SMT-01",
+      "STN-BLR-BOX-02"
+    ],
+    "aseptic_fda_cert": false,
+    "efficiency_rating": 1.15,
+    "current_station": "STN-BLR-BOX-02"
+  },
+  {
+    "operator_id": "OP-BLR-311",
+    "operator_name": "Priya Deshmukh",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "certified_stations": [
+      "STN-BLR-SMT-01"
+    ],
+    "aseptic_fda_cert": false,
+    "efficiency_rating": 1.09,
+    "current_station": "STN-BLR-SMT-01"
+  },
+  {
+    "operator_id": "OP-AUS-135",
+    "operator_name": "Sofia Chen",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "certified_stations": [
+      "STN-AUS-CAP-02",
+      "STN-AUS-PACK-03"
+    ],
+    "aseptic_fda_cert": true,
+    "efficiency_rating": 1.1,
+    "current_station": "STN-AUS-CAP-02"
+  }
+]

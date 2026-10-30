@@ -1,3 +1,9 @@
 anomaly_id,store_id,retailer,sku_id,book_inventory_units,consecutive_zero_scan_days,expected_daily_scan_units,phantom_confidence_score,root_cause_hypothesis,revenue_leakage_per_day_usd,status
 PHANTOM-KROGER-ATL-01,STORE-KROGER-ATL-209,Kroger,SKU-BEV-ISOTONIC-32OZ,380,4,820,0.96,Backroom misplaced pallet or store shelf pilferage hiding zero on-shelf availability.,2451.8,UNRESOLVED_PHANTOM_STOCKOUT
 PHANTOM-WALMART-DAL-02,STORE-WALMART-DAL-104,Walmart,SKU-BEV-ELECTROLYTE-500ML,150,3,310,0.88,Incorrect barcode tagging preventing POS register optical recognition.,1236.9,UNRESOLVED_PHANTOM_STOCKOUT
+PHANTOM-KROGER-ATL-16,STORE-KROGER-ATL-224,Kroger,SKU-BEV-ISOTONIC-32OZ,429,5,1025,0.883,Backroom misplaced pallet or store shelf pilferage hiding zero on-shelf availability.,2255.66,UNRESOLVED_PHANTOM_STOCKOUT
+PHANTOM-WALMART-DAL-24,STORE-WALMART-DAL-126,Walmart,SKU-BEV-OATMILK-1L,138,4,350,0.757,Incorrect barcode tagging preventing POS register optical recognition.,1026.63,UNRESOLVED_PHANTOM_STOCKOUT
+PHANTOM-KROGER-ATL-30,STORE-KROGER-ATL-238,Kroger,SKU-DAIRY-PROBIOTIC-6PK,429,3,976,0.749,Backroom misplaced pallet or store shelf pilferage hiding zero on-shelf availability.,2108.55,UNRESOLVED_PHANTOM_STOCKOUT
+PHANTOM-WALMART-DAL-38,STORE-WALMART-DAL-140,Walmart,SKU-SNACK-PROTEIN-BAR,178,4,332,0.99,Incorrect barcode tagging preventing POS register optical recognition.,1471.91,UNRESOLVED_PHANTOM_STOCKOUT
+PHANTOM-KROGER-ATL-44,STORE-KROGER-ATL-252,Kroger,SKU-XYZ-309,452,3,640,0.826,Backroom misplaced pallet or store shelf pilferage hiding zero on-shelf availability.,2770.53,UNRESOLVED_PHANTOM_STOCKOUT
+PHANTOM-WALMART-DAL-52,STORE-WALMART-DAL-154,Walmart,SKU-XYZ-412,169,3,388,0.686,Incorrect barcode tagging preventing POS register optical recognition.,964.78,UNRESOLVED_PHANTOM_STOCKOUT

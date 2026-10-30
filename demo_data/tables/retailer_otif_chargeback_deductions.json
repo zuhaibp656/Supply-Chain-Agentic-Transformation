@@ -5,5 +5,54 @@
     "shipment_id": "SHP-WMT-4012",
     "claimed_reason": "LATE_ARRIVAL_PAST_MABD",
     "deducted_amount_usd": 9450.0
+  },
+  {
+    "deduction_id": "DED-RET01-44918",
+    "customer_id": "CUST-KROGER-US01",
+    "shipment_id": "SHP-WMT-4020",
+    "claimed_reason": "LATE_ARRIVAL_PAST_MABD",
+    "deducted_amount_usd": 7843.5
+  },
+  {
+    "deduction_id": "DED-RET01-44925",
+    "customer_id": "CUST-COSTCO-US04",
+    "shipment_id": "SHP-WMT-4027",
+    "claimed_reason": "LATE_ARRIVAL_PAST_MABD",
+    "deducted_amount_usd": 10111.5
+  },
+  {
+    "deduction_id": "DED-RET01-44932",
+    "customer_id": "CUST-XYZ-TIER1-AUTOWORKS",
+    "shipment_id": "SHP-WMT-4034",
+    "claimed_reason": "LATE_ARRIVAL_PAST_MABD",
+    "deducted_amount_usd": 7843.5
+  },
+  {
+    "deduction_id": "DED-RET01-44939",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "shipment_id": "SHP-WMT-4041",
+    "claimed_reason": "LATE_ARRIVAL_PAST_MABD",
+    "deducted_amount_usd": 8127.0
+  },
+  {
+    "deduction_id": "DED-RET01-44946",
+    "customer_id": "CUST-XYZ-TIER2-METROCPG",
+    "shipment_id": "SHP-WMT-4048",
+    "claimed_reason": "LATE_ARRIVAL_PAST_MABD",
+    "deducted_amount_usd": 11245.5
+  },
+  {
+    "deduction_id": "DED-RET01-44953",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "shipment_id": "SHP-WMT-4055",
+    "claimed_reason": "LATE_ARRIVAL_PAST_MABD",
+    "deducted_amount_usd": 10678.5
+  },
+  {
+    "deduction_id": "DED-RET01-44960",
+    "customer_id": "CUST-KROGER-US01",
+    "shipment_id": "SHP-WMT-4062",
+    "claimed_reason": "LATE_ARRIVAL_PAST_MABD",
+    "deducted_amount_usd": 7371.0
   }
 ]

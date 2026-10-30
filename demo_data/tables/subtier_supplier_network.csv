@@ -3,3 +3,7 @@ NODE-BALL-US-01,Ball Metal Packaging,1,COMP-CAN-ALUM-330ML,US,"Broomfield, CO","
 NODE-ALCOA-SMELT-IS,Alcoa International Smelter,2,RAW-ALUM-INGOT-P1020A,IS,Reykjavik,"[""NODE-WEIPA-BAUXITE-AU""]",False,35
 NODE-WEIPA-BAUXITE-AU,Weipa Bauxite Mining & Refinery,4,ORE-BAUXITE-METALLURGICAL,AU,"Cape York, Queensland",[],True,65
 NODE-SHOWA-SALT-JP,Showa Denko Chemical Specialty,3,CHEM-ELECTROLYTE-LIPF6,JP,"Kawasaki, Kanagawa",[],True,55
+NODE-BALL-US-30,Ball Metal Packaging,1,COMP-CAN-ALUM-330ML,US,"Broomfield, CO","[""NODE-ALCOA-SMELT-IS"", ""NODE-HYDRO-SMELT-NO""]",False,21
+NODE-ALCOA-SMELT-IS-R05002,Alcoa International Smelter,2,RAW-ALUM-INGOT-P1020A,IS,Reykjavik,"[""NODE-WEIPA-BAUXITE-AU""]",False,40
+NODE-WEIPA-BAUXITE-AU-R06E7B,Weipa Bauxite Mining & Refinery,5,ORE-BAUXITE-METALLURGICAL,AU,"Cape York, Queensland",[],False,56
+NODE-SHOWA-SALT-JP-R074C3,Showa Denko Chemical Specialty,3,CHEM-ELECTROLYTE-LIPF6,JP,"Kawasaki, Kanagawa",[],True,69

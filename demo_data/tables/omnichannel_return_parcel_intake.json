@@ -1,0 +1,74 @@
+[
+  {
+    "rma_id": "RMA-OMNI-501",
+    "sku_id": "SKU-XYZ-412",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "return_channel": "ECOMM_PARCEL",
+    "units": 45,
+    "return_reason": "BUYER_REMORSE_UNOPENED",
+    "retail_value_usd": 15705.0
+  },
+  {
+    "rma_id": "RMA-OMNI-502",
+    "sku_id": "SKU-XYZ-101",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "return_channel": "B2B_DEALER_RETURN",
+    "units": 12,
+    "return_reason": "WRONG_CONNECTOR_ORDERED",
+    "retail_value_usd": 8220.0
+  },
+  {
+    "rma_id": "RMA-OMNI-503",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "return_channel": "BORIS_STORE_DROP",
+    "units": 180,
+    "return_reason": "OUTER_CADDY_DENTED",
+    "retail_value_usd": 6912.0
+  },
+  {
+    "rma_id": "RMA-OMNI-504",
+    "sku_id": "SKU-XYZ-309",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "return_channel": "WARRANTY_CLAIM",
+    "units": 18,
+    "return_reason": "SEAL_VALVE_LEAK_DEFECT",
+    "retail_value_usd": 9720.0
+  },
+  {
+    "rma_id": "RMA-OMNI-505",
+    "sku_id": "SKU-XYZ-518",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "return_channel": "DIST_STOCK_ROTATION",
+    "units": 30,
+    "return_reason": "CLEAN_OVERSTOCK_ROTATION",
+    "retail_value_usd": 7350.0
+  },
+  {
+    "rma_id": "RMA-OMNI-506",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "return_channel": "RETAIL_BACKROOM_RETURN",
+    "units": 220,
+    "return_reason": "SHRINKWRAP_SCUFFED",
+    "retail_value_usd": 5016.0
+  },
+  {
+    "rma_id": "RMA-OMNI-507",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "return_channel": "ECOMM_COLD_RETURN",
+    "units": 65,
+    "return_reason": "CUSTOMER_REFUSED_DELIVERY",
+    "retail_value_usd": 2340.0
+  },
+  {
+    "rma_id": "RMA-OMNI-508",
+    "sku_id": "SKU-XYZ-412",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "return_channel": "WARRANTY_CLAIM",
+    "units": 25,
+    "return_reason": "FIRMWARE_BOOT_FAULT",
+    "retail_value_usd": 8725.0
+  }
+]

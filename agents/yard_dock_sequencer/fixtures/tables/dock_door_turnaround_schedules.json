@@ -18,5 +18,65 @@
     "scheduled_unload_duration_minutes": 35,
     "forklift_crew_assigned": "CREW-ALPHA-01",
     "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-23",
+    "facility_zone": "CROSSDOCK_NORTH_QUADRANT",
+    "assigned_trailer_id": "TRL-SWIFT-7756",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-22T05:50:00Z",
+    "scheduled_unload_duration_minutes": 31,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-36",
+    "facility_zone": "OUTBOUND_SOUTH_BAY",
+    "assigned_trailer_id": "TRL-JB-HUNT-1226",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-22T06:15:00Z",
+    "scheduled_unload_duration_minutes": 32,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-37",
+    "facility_zone": "CROSSDOCK_NORTH_QUADRANT",
+    "assigned_trailer_id": "TRL-SWIFT-7770",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-22T05:50:00Z",
+    "scheduled_unload_duration_minutes": 22,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-50",
+    "facility_zone": "OUTBOUND_SOUTH_BAY",
+    "assigned_trailer_id": "TRL-JB-HUNT-1240",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-22T06:15:00Z",
+    "scheduled_unload_duration_minutes": 30,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-51",
+    "facility_zone": "CROSSDOCK_NORTH_QUADRANT",
+    "assigned_trailer_id": "TRL-SWIFT-7784",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-22T05:50:00Z",
+    "scheduled_unload_duration_minutes": 23,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-64",
+    "facility_zone": "OUTBOUND_SOUTH_BAY",
+    "assigned_trailer_id": "TRL-JB-HUNT-1254",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-22T06:15:00Z",
+    "scheduled_unload_duration_minutes": 30,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
   }
 ]

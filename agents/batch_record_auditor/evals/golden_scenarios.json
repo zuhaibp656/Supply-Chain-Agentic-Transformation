@@ -1,19 +1,25 @@
-[
-  {
-    "scenario_id": "batch_record_auditor_golden_01",
-    "category": "03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance",
-    "agent_name": "[03 \u00b7 Make | Quality & Compliance] Batch Record Auditor",
-    "prompt": "Run Batch Record Auditor analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
-    "expected_tools": [
-      "query_batch_record_auditor_telemetry_feed",
-      "query_batch_record_auditor_constraint_matrix",
-      "action_commit_batch_record_auditor_plan"
-    ],
-    "expected_outcome": "60\u201380% faster batch release review",
-    "eval_models": {
-      "fast_execution_model": "gemini-3.8-flash",
-      "deep_reasoning_and_judge_model": "gemini-4-argon (or gemini-3.1-pro subject to availability)",
-      "orchestrator_routing": "Agent Orchestrator dynamically decides whether to route the query to Gemini 3.8 Flash (gemini-3.8-flash) or escalate to Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability)."
+{
+  "agent_id": "batch_record_auditor",
+  "organization_id": "XYZ-CORP-01",
+  "category": "03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance",
+  "persona": "QA / Compliance Director",
+  "eval_judge_model": "gemini-4-argon (fallback: gemini-3.1-pro)",
+  "scenarios": [
+    {
+      "id": "batch_record_auditor_analytical_audit",
+      "prompt": "Run analyze_ebhr_review_by_exception across XYZ-CORP-01 records and render a visual comparison chart.",
+      "expected_tools": [
+        "query_mes_ebhr_ccps",
+        "analyze_ebhr_review_by_exception",
+        "render_visual_chart"
+      ]
+    },
+    {
+      "id": "batch_record_auditor_persona_draft_and_gate",
+      "prompt": "Draft the 21 CFR Part 11 QA Batch Disposition & CAPA Report for leadership review without committing mutations until confirmed.",
+      "expected_tools": [
+        "draft_21cfr11_capa_and_release_certificate"
+      ]
     }
-  }
-]
+  ]
+}

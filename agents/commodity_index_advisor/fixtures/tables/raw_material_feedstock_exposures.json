@@ -1,0 +1,90 @@
+[
+  {
+    "exposure_id": "EXP-ALU-01",
+    "commodity_code": "LME-ALUMINUM-P1020",
+    "affected_sku_id": "SKU-XYZ-518",
+    "plant_id": "PLANT-XYZ-MONTERREY",
+    "annual_tonnage_mt": 4200,
+    "budget_price_per_mt_usd": 2380.0,
+    "spot_price_per_mt_usd": 2615.0,
+    "hedge_coverage_pct": 45.0,
+    "unhedged_var_95_usd": 542850
+  },
+  {
+    "exposure_id": "EXP-RPET-02",
+    "commodity_code": "ICIS-RPET-FOODGRADE-US",
+    "affected_sku_id": "PKG-RPET-PREFORM-38MM",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "annual_tonnage_mt": 6800,
+    "budget_price_per_mt_usd": 1620.0,
+    "spot_price_per_mt_usd": 1465.0,
+    "hedge_coverage_pct": 30.0,
+    "unhedged_var_95_usd": 318000
+  },
+  {
+    "exposure_id": "EXP-LITH-03",
+    "commodity_code": "FAST-LITHIUM-CARB-BG",
+    "affected_sku_id": "SKU-XYZ-101",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "annual_tonnage_mt": 950,
+    "budget_price_per_mt_usd": 14800.0,
+    "spot_price_per_mt_usd": 13150.0,
+    "hedge_coverage_pct": 50.0,
+    "unhedged_var_95_usd": 783750
+  },
+  {
+    "exposure_id": "EXP-OAT-04",
+    "commodity_code": "CBOT-MILLING-OATS",
+    "affected_sku_id": "SKU-BEV-OATMILK-1L",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "annual_tonnage_mt": 9400,
+    "budget_price_per_mt_usd": 345.0,
+    "spot_price_per_mt_usd": 388.0,
+    "hedge_coverage_pct": 40.0,
+    "unhedged_var_95_usd": 242520
+  },
+  {
+    "exposure_id": "EXP-RUB-05",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "affected_sku_id": "SKU-XYZ-625",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "annual_tonnage_mt": 2100,
+    "budget_price_per_mt_usd": 1710.0,
+    "spot_price_per_mt_usd": 1895.0,
+    "hedge_coverage_pct": 35.0,
+    "unhedged_var_95_usd": 252525
+  },
+  {
+    "exposure_id": "EXP-CU-06",
+    "commodity_code": "LME-COPPER-GRADE-A",
+    "affected_sku_id": "SKU-XYZ-101",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "annual_tonnage_mt": 1150,
+    "budget_price_per_mt_usd": 8950.0,
+    "spot_price_per_mt_usd": 9580.0,
+    "hedge_coverage_pct": 55.0,
+    "unhedged_var_95_usd": 326025
+  },
+  {
+    "exposure_id": "EXP-WHEY-07",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "affected_sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "plant_id": "CMO-XYZ-DALLAS",
+    "annual_tonnage_mt": 1850,
+    "budget_price_per_mt_usd": 4120.0,
+    "spot_price_per_mt_usd": 4490.0,
+    "hedge_coverage_pct": 25.0,
+    "unhedged_var_95_usd": 513375
+  },
+  {
+    "exposure_id": "EXP-BORO-08",
+    "commodity_code": "EU-NAT-GAS-TTF-GLASS",
+    "affected_sku_id": "SKU-CRYO-4410-BIO",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "annual_tonnage_mt": 780,
+    "budget_price_per_mt_usd": 3100.0,
+    "spot_price_per_mt_usd": 2890.0,
+    "hedge_coverage_pct": 65.0,
+    "unhedged_var_95_usd": 98400
+  }
+]

@@ -1,0 +1,9 @@
+scenario_id,business_unit,cagr_5yr_pct,wacc_hurdle_pct,tax_rate_pct,probability_weight
+SCEN-BASE,Consumer Health & Beverages,11.4,9.5,24.0,0.55
+SCEN-BULL,Consumer Health & Beverages,16.8,9.5,24.0,0.25
+SCEN-BEAR,Consumer Health & Beverages,5.2,9.5,24.0,0.2
+SCEN-EV-BASE,Industrial Power & Mobility,14.2,10.0,26.0,0.6
+SCEN-EV-BEAR,Industrial Power & Mobility,6.5,10.0,26.0,0.4
+SCEN-IOT-BASE,Connected Supply Chain Devices,18.5,10.0,22.0,0.7
+SCEN-BIO-BASE,Cold-Chain Biologics,15.0,9.0,25.0,0.65
+SCEN-THERM-BASE,Thermal Management Systems,9.8,10.5,25.0,0.6

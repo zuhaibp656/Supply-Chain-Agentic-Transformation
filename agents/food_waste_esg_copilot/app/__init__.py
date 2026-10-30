@@ -1,4 +1,2 @@
-"""[06 · Returns & ESG | Expiry & Markdowns] Food Waste & ESG Copilot — Google ADK Package."""
-from .agent import FoodWasteEsgCopilotAgent, root_agent
-
-__all__ = ["FoodWasteEsgCopilotAgent", "root_agent"]
+"""ADK package for [06 · Return | Expiry & Markdowns] Zero-Waste & Organic Circularity Copilot."""
+from .agent import root_agent, FoodWasteEsgCopilotAgent, FoodWasteEsgCopilotAdkApp

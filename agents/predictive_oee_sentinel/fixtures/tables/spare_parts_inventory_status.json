@@ -2,7 +2,10 @@
   {
     "part_number": "PART-SPARE-BEARING-CERAMIC-7014",
     "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
-    "compatible_assets": ["ASSET-MILLING-CNC-04", "ASSET-MILLING-CNC-05"],
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
     "stock_on_hand": 3,
     "reserved_quantity": 0,
     "available_quantity": 3,
@@ -16,7 +19,9 @@
   {
     "part_number": "PART-SPARE-HYD-SEAL-KIT-08",
     "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
-    "compatible_assets": ["ASSET-INJECTION-MOLD-02"],
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
     "stock_on_hand": 5,
     "reserved_quantity": 0,
     "available_quantity": 5,
@@ -25,6 +30,105 @@
     "unit_cost_usd": 320.0,
     "lead_time_days": 7,
     "supplier_id": "VEND-PARKER-HANNIFIN",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7029",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 3,
+    "reserved_quantity": 4,
+    "available_quantity": 3,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 1075.0,
+    "lead_time_days": 20,
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-30",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 5,
+    "reserved_quantity": 6,
+    "available_quantity": 6,
+    "safety_stock_threshold": 2,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 265.6,
+    "lead_time_days": 8,
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7043",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 4,
+    "reserved_quantity": 0,
+    "available_quantity": 3,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 1562.5,
+    "lead_time_days": 15,
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-44",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 6,
+    "reserved_quantity": 2,
+    "available_quantity": 5,
+    "safety_stock_threshold": 2,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 294.4,
+    "lead_time_days": 5,
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7057",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 3,
+    "reserved_quantity": 4,
+    "available_quantity": 3,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 1150.0,
+    "lead_time_days": 20,
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-58",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 4,
+    "reserved_quantity": 6,
+    "available_quantity": 5,
+    "safety_stock_threshold": 2,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 380.8,
+    "lead_time_days": 6,
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
     "stock_status": "IN_STOCK_READY"
   }
 ]

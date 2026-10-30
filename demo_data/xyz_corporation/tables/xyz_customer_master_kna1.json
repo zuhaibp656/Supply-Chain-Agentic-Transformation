@@ -1,11 +1,58 @@
 [
   {
-    "customer_id": "CUST-XYZ-TIER1-AUTOWORKS",
-    "customer_name": "EuroAuto Mobility AG",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "customer_name": "MegaMart National Supercenters Corp",
     "tier": "STRATEGIC_TIER_1",
-    "country": "DE",
+    "channel": "NATIONAL_GROCERY_MASS",
+    "country": "US",
     "otif_target_pct": 98.5,
+    "chargeback_penalty_pct": 3.5,
+    "min_remaining_shelf_life_pct": 75.0,
+    "primary_skus": [
+      "SKU-XYZ-204",
+      "SKU-BEV-ISOTONIC-32OZ",
+      "SKU-BEV-OATMILK-1L",
+      "SKU-SNACK-PROTEIN-BAR"
+    ]
+  },
+  {
+    "customer_id": "CUST-KROGER-US01",
+    "customer_name": "Kroger Fresh & Marketplace Divisions",
+    "tier": "STRATEGIC_TIER_1",
+    "channel": "REGIONAL_SUPERMARKET",
+    "country": "US",
+    "otif_target_pct": 98.0,
+    "chargeback_penalty_pct": 3.0,
+    "min_remaining_shelf_life_pct": 70.0,
+    "primary_skus": [
+      "SKU-BEV-ISOTONIC-32OZ",
+      "SKU-BEV-OATMILK-1L",
+      "SKU-DAIRY-PROBIOTIC-6PK"
+    ]
+  },
+  {
+    "customer_id": "CUST-COSTCO-US04",
+    "customer_name": "Costco Club Wholesale North America",
+    "tier": "STRATEGIC_TIER_1",
+    "channel": "CLUB_WHOLESALE",
+    "country": "US",
+    "otif_target_pct": 99.0,
+    "chargeback_penalty_pct": 4.0,
+    "min_remaining_shelf_life_pct": 80.0,
+    "primary_skus": [
+      "SKU-XYZ-204",
+      "SKU-SNACK-PROTEIN-BAR"
+    ]
+  },
+  {
+    "customer_id": "CUST-XYZ-TIER1-AUTOWORKS",
+    "customer_name": "EuroAuto Mobility & Powertrain AG",
+    "tier": "STRATEGIC_TIER_1",
+    "channel": "OEM_AUTOMOTIVE_JIT",
+    "country": "DE",
+    "otif_target_pct": 99.2,
     "chargeback_penalty_pct": 5.0,
+    "min_remaining_shelf_life_pct": 50.0,
     "primary_skus": [
       "SKU-XYZ-101",
       "SKU-XYZ-309",
@@ -13,27 +60,61 @@
     ]
   },
   {
-    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
-    "customer_name": "MegaMart National Retail Corp",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "customer_name": "MedCore Specialty Hospital Biologics Network",
     "tier": "STRATEGIC_TIER_1",
-    "country": "US",
-    "otif_target_pct": 99.0,
-    "chargeback_penalty_pct": 3.5,
+    "channel": "HEALTHCARE_COLD_CHAIN",
+    "country": "DE",
+    "otif_target_pct": 99.5,
+    "chargeback_penalty_pct": 6.0,
+    "min_remaining_shelf_life_pct": 65.0,
     "primary_skus": [
-      "SKU-XYZ-204",
+      "SKU-CRYO-4410-BIO",
       "SKU-XYZ-412"
     ]
   },
   {
     "customer_id": "CUST-XYZ-TIER2-METROCPG",
-    "customer_name": "MetroFresh Hypermarkets India",
+    "customer_name": "MetroFresh Hypermarkets & Quick-Commerce India",
     "tier": "PREMIER_TIER_2",
+    "channel": "MODERN_TRADE_INDIA",
     "country": "IN",
     "otif_target_pct": 96.0,
     "chargeback_penalty_pct": 2.0,
+    "min_remaining_shelf_life_pct": 65.0,
     "primary_skus": [
       "SKU-XYZ-204",
+      "SKU-DAIRY-PROBIOTIC-6PK",
       "SKU-XYZ-625"
+    ]
+  },
+  {
+    "customer_id": "CUST-ALDI-OUTLET-US09",
+    "customer_name": "ValueMax Closeout & Secondary Grocery Grocers",
+    "tier": "SECONDARY_CLEARANCE",
+    "channel": "DISCOUNT_OUTLET",
+    "country": "US",
+    "otif_target_pct": 92.0,
+    "chargeback_penalty_pct": 0.0,
+    "min_remaining_shelf_life_pct": 30.0,
+    "primary_skus": [
+      "SKU-BEV-OATMILK-1L",
+      "SKU-DAIRY-PROBIOTIC-6PK",
+      "SKU-SNACK-PROTEIN-BAR"
+    ]
+  },
+  {
+    "customer_id": "CUST-FEEDAMERICA-NONPROFIT",
+    "customer_name": "Feeding America Regional Cold Food Bank Network",
+    "tier": "ESG_TAX_DONATION",
+    "channel": "IRC_170E3_CHARITY",
+    "country": "US",
+    "otif_target_pct": 90.0,
+    "chargeback_penalty_pct": 0.0,
+    "min_remaining_shelf_life_pct": 12.0,
+    "primary_skus": [
+      "SKU-BEV-OATMILK-1L",
+      "SKU-DAIRY-PROBIOTIC-6PK"
     ]
   }
 ]

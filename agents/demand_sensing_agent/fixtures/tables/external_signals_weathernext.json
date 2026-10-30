@@ -37,5 +37,70 @@
     "confidence_score": 0.91,
     "valid_from": "2026-10-21",
     "valid_to": "2026-10-23"
+  },
+  {
+    "signal_id": "SIG-WN3-TX-HEAT-R0389A",
+    "provider": "Google DeepMind WeatherNext 3",
+    "region": "US-CENTRAL",
+    "event_type": "UNSEASONABLE_HEATWAVE",
+    "temperature_anomaly_celsius": 5.3,
+    "precipitation_anomaly_mm": -12.21,
+    "projected_category_surge_pct": 22.23,
+    "impacted_category": "Hydration Beverages",
+    "confidence_score": 0.99,
+    "valid_from": "2026-10-21",
+    "valid_to": "2026-10-21"
+  },
+  {
+    "signal_id": "SIG-WN3-SE-HURR-R04606",
+    "provider": "Google DeepMind WeatherNext 3",
+    "region": "US-SOUTHEAST",
+    "event_type": "TROPICAL_DEPRESSION",
+    "temperature_anomaly_celsius": -1.93,
+    "precipitation_anomaly_mm": 101.2,
+    "projected_category_surge_pct": 38.42,
+    "impacted_category": "Emergency Nutrition & Water",
+    "confidence_score": 0.99,
+    "valid_from": "2026-10-24",
+    "valid_to": "2026-10-24"
+  },
+  {
+    "signal_id": "SIG-GMAPS-FOOT-CHI-R05FBE",
+    "provider": "Google Maps Mobility & Foot Traffic",
+    "region": "US-MIDWEST",
+    "event_type": "SPORTS_MARATHON_SURGE",
+    "temperature_anomaly_celsius": 1.36,
+    "precipitation_anomaly_mm": 2.5,
+    "projected_category_surge_pct": 17.48,
+    "impacted_category": "Health Snacks",
+    "confidence_score": 0.99,
+    "valid_from": "2026-10-27",
+    "valid_to": "2026-10-27"
+  },
+  {
+    "signal_id": "SIG-WN3-TX-HEAT-R06D4B",
+    "provider": "Google DeepMind WeatherNext 3",
+    "region": "US-CENTRAL",
+    "event_type": "UNSEASONABLE_HEATWAVE",
+    "temperature_anomaly_celsius": 5.3,
+    "precipitation_anomaly_mm": -12.21,
+    "projected_category_surge_pct": 33.91,
+    "impacted_category": "Hydration Beverages",
+    "confidence_score": 0.99,
+    "valid_from": "2026-10-03",
+    "valid_to": "2026-10-03"
+  },
+  {
+    "signal_id": "SIG-WN3-SE-HURR-R0763D",
+    "provider": "Google DeepMind WeatherNext 3",
+    "region": "US-SOUTHEAST",
+    "event_type": "TROPICAL_DEPRESSION",
+    "temperature_anomaly_celsius": -2.62,
+    "precipitation_anomaly_mm": 130.9,
+    "projected_category_surge_pct": 42.5,
+    "impacted_category": "Emergency Nutrition & Water",
+    "confidence_score": 0.99,
+    "valid_from": "2026-10-06",
+    "valid_to": "2026-10-06"
   }
 ]

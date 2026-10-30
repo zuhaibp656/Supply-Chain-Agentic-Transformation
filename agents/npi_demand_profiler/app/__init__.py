@@ -1,4 +1,2 @@
-"""[01 · Plan | Demand Forecasting] NPI Demand Profiler — Google ADK Package."""
-from .agent import NpiDemandProfilerAgent, root_agent
-
-__all__ = ["NpiDemandProfilerAgent", "root_agent"]
+"""ADK package for [01 · Plan | Demand Forecasting] NPI Demand Profiler."""
+from .agent import root_agent, NpiDemandProfilerAgent, NpiDemandProfilerAdkApp

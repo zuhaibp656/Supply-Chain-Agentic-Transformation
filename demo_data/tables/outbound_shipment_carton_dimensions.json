@@ -34,5 +34,65 @@
     "weight_kg": 280,
     "max_top_load_kg": 0,
     "fragility_tier": "TOP_ONLY_FRAGILE"
+  },
+  {
+    "pallet_group_id": "PLT-STOP3-HVY23",
+    "shipment_wave_id": "WAVE-3D-20261022-31",
+    "stop_number": 3,
+    "Stop_Name": "San Antonio Depot",
+    "length_mm": 1104,
+    "width_mm": 1130,
+    "height_mm": 1247,
+    "weight_kg": 655,
+    "max_top_load_kg": 1494,
+    "fragility_tier": "HEAVY_BASE"
+  },
+  {
+    "pallet_group_id": "PLT-STOP2-MED33",
+    "shipment_wave_id": "WAVE-3D-20261022-38",
+    "stop_number": 2,
+    "Stop_Name": "San Marcos DC",
+    "length_mm": 1356,
+    "width_mm": 1130,
+    "height_mm": 1391,
+    "weight_kg": 406,
+    "max_top_load_kg": 1188,
+    "fragility_tier": "STANDARD_MID"
+  },
+  {
+    "pallet_group_id": "PLT-STOP1-FRG38",
+    "shipment_wave_id": "WAVE-3D-20261022-45",
+    "stop_number": 1,
+    "Stop_Name": "Austin Supercenter",
+    "length_mm": 1284,
+    "width_mm": 830,
+    "height_mm": 1375,
+    "weight_kg": 333,
+    "max_top_load_kg": 2,
+    "fragility_tier": "TOP_ONLY_FRAGILE"
+  },
+  {
+    "pallet_group_id": "PLT-STOP3-HVY44",
+    "shipment_wave_id": "WAVE-3D-20261022-52",
+    "stop_number": 2,
+    "Stop_Name": "San Antonio Depot",
+    "length_mm": 1500,
+    "width_mm": 1070,
+    "height_mm": 1334,
+    "weight_kg": 1050,
+    "max_top_load_kg": 1548,
+    "fragility_tier": "HEAVY_BASE"
+  },
+  {
+    "pallet_group_id": "PLT-STOP2-MED54",
+    "shipment_wave_id": "WAVE-3D-20261022-59",
+    "stop_number": 2,
+    "Stop_Name": "San Marcos DC",
+    "length_mm": 1500,
+    "width_mm": 1190,
+    "height_mm": 1625,
+    "weight_kg": 432,
+    "max_top_load_kg": 1017,
+    "fragility_tier": "STANDARD_MID"
   }
 ]

@@ -24,5 +24,83 @@
     "rebate_percentage": 0.0,
     "rebate_settlement_frequency": "QUARTERLY",
     "document_ai_extraction_confidence": 0.98
+  },
+  {
+    "contract_id": "MSA-BALL-2025-24",
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "supplier_name": "Ball Metal Packaging",
+    "effective_start": "2025-01-18",
+    "effective_end": "2027-12-18",
+    "clause_id": "CLAUSE-REBATE-VOL-19",
+    "clause_title": "Annual Volume Growth Incentive Rebate",
+    "threshold_volume_units": 42800000,
+    "rebate_percentage": 3.57,
+    "rebate_settlement_frequency": "ANNUAL_CALENDAR_YEAR",
+    "document_ai_extraction_confidence": 0.772
+  },
+  {
+    "contract_id": "MSA-ALCOA-2025-33",
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "supplier_name": "Alcoa International Smelter",
+    "effective_start": "2025-01-21",
+    "effective_end": "2026-12-21",
+    "clause_id": "CLAUSE-LME-CAP-24",
+    "clause_title": "Commodity Escalation Ceiling Cap",
+    "threshold_volume_units": 11900,
+    "rebate_percentage": 0.0,
+    "rebate_settlement_frequency": "QUARTERLY",
+    "document_ai_extraction_confidence": 0.99
+  },
+  {
+    "contract_id": "MSA-BALL-2025-38",
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "supplier_name": "Ball Metal Packaging",
+    "effective_start": "2025-01-24",
+    "effective_end": "2027-12-24",
+    "clause_id": "CLAUSE-REBATE-VOL-33",
+    "clause_title": "Annual Volume Growth Incentive Rebate",
+    "threshold_volume_units": 42800000,
+    "rebate_percentage": 2.58,
+    "rebate_settlement_frequency": "ANNUAL_CALENDAR_YEAR",
+    "document_ai_extraction_confidence": 0.822
+  },
+  {
+    "contract_id": "MSA-ALCOA-2025-47",
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "supplier_name": "Alcoa International Smelter",
+    "effective_start": "2025-01-27",
+    "effective_end": "2026-12-27",
+    "clause_id": "CLAUSE-LME-CAP-38",
+    "clause_title": "Commodity Escalation Ceiling Cap",
+    "threshold_volume_units": 7800,
+    "rebate_percentage": 2.5,
+    "rebate_settlement_frequency": "QUARTERLY",
+    "document_ai_extraction_confidence": 0.99
+  },
+  {
+    "contract_id": "MSA-BALL-2025-52",
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "supplier_name": "Ball Metal Packaging",
+    "effective_start": "2025-01-03",
+    "effective_end": "2027-12-03",
+    "clause_id": "CLAUSE-REBATE-VOL-47",
+    "clause_title": "Annual Volume Growth Incentive Rebate",
+    "threshold_volume_units": 50000000,
+    "rebate_percentage": 2.5,
+    "rebate_settlement_frequency": "ANNUAL_CALENDAR_YEAR",
+    "document_ai_extraction_confidence": 0.911
+  },
+  {
+    "contract_id": "MSA-ALCOA-2025-61",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "supplier_name": "Alcoa International Smelter",
+    "effective_start": "2025-01-06",
+    "effective_end": "2026-12-06",
+    "clause_id": "CLAUSE-LME-CAP-52",
+    "clause_title": "Commodity Escalation Ceiling Cap",
+    "threshold_volume_units": 8300,
+    "rebate_percentage": 1.25,
+    "rebate_settlement_frequency": "QUARTERLY",
+    "document_ai_extraction_confidence": 0.813
   }
 ]

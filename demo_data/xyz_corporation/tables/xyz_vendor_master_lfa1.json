@@ -45,15 +45,56 @@
     "country": "US",
     "city": "Dallas, TX",
     "supplied_skus": [
-      "SKU-XYZ-204"
+      "SKU-XYZ-204",
+      "SKU-BEV-ISOTONIC-32OZ",
+      "SKU-BEV-OATMILK-1L"
     ],
-    "contract_payment_terms": "Net 30",
-    "annual_spend_usd": 11200000,
+    "contract_payment_terms": "2/10 Net 30",
+    "annual_spend_usd": 14600000,
     "on_time_delivery_pct": 94.8,
     "quality_cpk": 1.18,
     "geopolitical_risk_score": 11.0,
     "cbam_verified_smelter": false,
     "upstream_tier2_supplier_id": "SUP-XYZ-T2-NOVELISALU"
+  },
+  {
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "vendor_code_sap": "VEND-900420",
+    "supplier_name": "CircularPolymer rPET & Bio-Barrier Resins Inc.",
+    "tier_level": "TIER_1",
+    "country": "US",
+    "city": "Houston, TX",
+    "supplied_skus": [
+      "PKG-RPET-PREFORM-38MM",
+      "SKU-BEV-ISOTONIC-32OZ"
+    ],
+    "contract_payment_terms": "2/10 Net 30",
+    "annual_spend_usd": 12900000,
+    "on_time_delivery_pct": 95.6,
+    "quality_cpk": 1.49,
+    "geopolitical_risk_score": 15.0,
+    "cbam_verified_smelter": true,
+    "upstream_tier2_supplier_id": "SUP-XYZ-T2-GULFPETRO"
+  },
+  {
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "vendor_code_sap": "VEND-900478",
+    "supplier_name": "PrairieGold Enzymatic Oat & Whey Ingredients Ltd.",
+    "tier_level": "TIER_1",
+    "country": "CA",
+    "city": "Saskatoon",
+    "supplied_skus": [
+      "SKU-BEV-OATMILK-1L",
+      "SKU-SNACK-PROTEIN-BAR",
+      "SKU-DAIRY-PROBIOTIC-6PK"
+    ],
+    "contract_payment_terms": "1.5/10 Net 30",
+    "annual_spend_usd": 9800000,
+    "on_time_delivery_pct": 93.1,
+    "quality_cpk": 1.44,
+    "geopolitical_risk_score": 12.0,
+    "cbam_verified_smelter": true,
+    "upstream_tier2_supplier_id": "PLOT-CAN-SASK-104"
   },
   {
     "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
@@ -74,6 +115,24 @@
     "upstream_tier2_supplier_id": "PLOT-IDN-882-EUDR"
   },
   {
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "vendor_code_sap": "VEND-900633",
+    "supplier_name": "Mainz Borosilicate Cryo-Glassware AG",
+    "tier_level": "TIER_1",
+    "country": "DE",
+    "city": "Mainz",
+    "supplied_skus": [
+      "SKU-CRYO-4410-BIO"
+    ],
+    "contract_payment_terms": "2/10 Net 45",
+    "annual_spend_usd": 11400000,
+    "on_time_delivery_pct": 97.9,
+    "quality_cpk": 1.76,
+    "geopolitical_risk_score": 9.5,
+    "cbam_verified_smelter": true,
+    "upstream_tier2_supplier_id": "SUP-XYZ-T2-BAVARIASILICA"
+  },
+  {
     "supplier_id": "SUP-XYZ-T2-KYOTOWAFER",
     "vendor_code_sap": "VEND-900801",
     "supplier_name": "Kyoto UltraPure Silicon Wafer Ltd.",
@@ -91,5 +150,24 @@
     "geopolitical_risk_score": 22.0,
     "cbam_verified_smelter": true,
     "upstream_tier2_supplier_id": "SUP-XYZ-T3-QUARTZMINE"
+  },
+  {
+    "supplier_id": "SUP-XYZ-T2-NORSKHYDRO",
+    "vendor_code_sap": "VEND-900855",
+    "supplier_name": "Nordic Hydro Low-Carbon Primary Aluminum ASA",
+    "tier_level": "TIER_2",
+    "country": "NO",
+    "city": "Oslo",
+    "supplied_skus": [
+      "SKU-XYZ-101",
+      "SKU-XYZ-518"
+    ],
+    "contract_payment_terms": "Net 30",
+    "annual_spend_usd": 16200000,
+    "on_time_delivery_pct": 98.6,
+    "quality_cpk": 1.71,
+    "geopolitical_risk_score": 6.0,
+    "cbam_verified_smelter": true,
+    "upstream_tier2_supplier_id": "HYDRO-EAF-NO01"
   }
 ]

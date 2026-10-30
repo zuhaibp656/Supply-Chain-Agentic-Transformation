@@ -1,4 +1,2 @@
-"""[03 · Make | Quality & Compliance] Batch Record Auditor — Google ADK Package."""
-from .agent import BatchRecordAuditorAgent, root_agent
-
-__all__ = ["BatchRecordAuditorAgent", "root_agent"]
+"""ADK package for [03 · Make | Quality & Compliance] Batch Record Auditor."""
+from .agent import root_agent, BatchRecordAuditorAgent, BatchRecordAuditorAdkApp

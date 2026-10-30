@@ -1,0 +1,82 @@
+[
+  {
+    "wave_id": "WAVE-CHI-1400",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "zone_id": "ZONE-CHILL-02",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "remaining_lines": 1840,
+    "hours_to_cutoff": 2.2,
+    "otif_revenue_usd": 148500.0,
+    "cutoff_risk": "CRITICAL_MISS_RISK"
+  },
+  {
+    "wave_id": "WAVE-CHI-1530",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "zone_id": "ZONE-DRY-01",
+    "carrier_id": "CAR-JBHT-FTL",
+    "remaining_lines": 1420,
+    "hours_to_cutoff": 3.7,
+    "otif_revenue_usd": 96400.0,
+    "cutoff_risk": "ON_TRACK"
+  },
+  {
+    "wave_id": "WAVE-CHI-1700",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "zone_id": "ZONE-BULK-04",
+    "carrier_id": "CAR-BNSF-RAIL",
+    "remaining_lines": 620,
+    "hours_to_cutoff": 5.2,
+    "otif_revenue_usd": 74200.0,
+    "cutoff_risk": "SURPLUS_CAPACITY"
+  },
+  {
+    "wave_id": "WAVE-DAL-1430",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "zone_id": "ZONE-EACH-03",
+    "carrier_id": "CAR-XPO-LTL",
+    "remaining_lines": 2150,
+    "hours_to_cutoff": 2.5,
+    "otif_revenue_usd": 112000.0,
+    "cutoff_risk": "CRITICAL_MISS_RISK"
+  },
+  {
+    "wave_id": "WAVE-DAL-1800",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "zone_id": "ZONE-RESERVE-05",
+    "carrier_id": "CAR-JBHT-FTL",
+    "remaining_lines": 540,
+    "hours_to_cutoff": 6.0,
+    "otif_revenue_usd": 51000.0,
+    "cutoff_risk": "SURPLUS_CAPACITY"
+  },
+  {
+    "wave_id": "WAVE-ATL-1500",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "zone_id": "ZONE-FAST-01",
+    "carrier_id": "CAR-JBHT-FTL",
+    "remaining_lines": 1680,
+    "hours_to_cutoff": 2.8,
+    "otif_revenue_usd": 88900.0,
+    "cutoff_risk": "WARNING_TIGHT"
+  },
+  {
+    "wave_id": "WAVE-FRA-1600",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "zone_id": "ZONE-GDP-01",
+    "carrier_id": "CAR-LH-AIRCARGO",
+    "remaining_lines": 480,
+    "hours_to_cutoff": 1.9,
+    "otif_revenue_usd": 364000.0,
+    "cutoff_risk": "CRITICAL_MISS_RISK"
+  },
+  {
+    "wave_id": "WAVE-FRA-1900",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "zone_id": "ZONE-AMBIENT-03",
+    "carrier_id": "CAR-MAERSK-OCEAN",
+    "remaining_lines": 390,
+    "hours_to_cutoff": 4.9,
+    "otif_revenue_usd": 92000.0,
+    "cutoff_risk": "SURPLUS_CAPACITY"
+  }
+]

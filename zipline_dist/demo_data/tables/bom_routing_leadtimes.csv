@@ -1,3 +1,9 @@
 bom_id,parent_material_id,component_count,critical_path_leadtime_days,system_recorded_leadtime_days,discrepancy_days,bottleneck_subtier_component,supplier_id,last_bom_sync_timestamp
 BOM-EV-INVERTER-V2,MAT-880019,48,46,21,25,SiC Gate Driver Semiconductor,VEND-10492,2026-10-14T08:30:00Z
 BOM-MEB-CELL-01,MAT-440212,12,38,35,3,Aluminum Laminated Pouch Foil,VEND-8820,2026-10-15T12:00:00Z
+BOM-EV-INVERTER-V17,MAT-880034,60,55,22,23,SiC Gate Driver Semiconductor,SUP-XYZ-T1-SILICONCORE,2026-10-14T08:30:00Z
+BOM-MEB-CELL-23,MAT-440234,9,32,37,2,Aluminum Laminated Pouch Foil,SUP-XYZ-T1-ECORESIN,2026-10-15T12:00:00Z
+BOM-EV-INVERTER-V31,MAT-880048,54,58,25,31,SiC Gate Driver Semiconductor,SUP-XYZ-T1-PRAIRIEOAT,2026-10-14T08:30:00Z
+BOM-MEB-CELL-37,MAT-440248,15,35,29,4,Aluminum Laminated Pouch Foil,SUP-XYZ-T1-SUMATRARUBBER,2026-10-15T12:00:00Z
+BOM-EV-INVERTER-V45,MAT-880062,41,58,17,20,SiC Gate Driver Semiconductor,SUP-XYZ-T1-SCHOTTCRYO,2026-10-14T08:30:00Z
+BOM-MEB-CELL-51,MAT-440262,11,30,30,2,Aluminum Laminated Pouch Foil,SUP-XYZ-T1-ALUWELD,2026-10-15T12:00:00Z

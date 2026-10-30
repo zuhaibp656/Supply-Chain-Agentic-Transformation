@@ -1,0 +1,66 @@
+[
+  {
+    "asn_id": "ASN-2026-8801",
+    "assigned_bin_zone": "CHI-ZONE-A-FAST",
+    "legacy_dock_to_stock_hrs": 14.5,
+    "directed_dock_to_stock_hrs": 1.8,
+    "backorder_revenue_released_usd": 41040.0,
+    "putaway_status": "DIRECTED_AMR_PUTAWAY"
+  },
+  {
+    "asn_id": "ASN-2026-8802",
+    "assigned_bin_zone": "DAL-CHILL-VAULT-1",
+    "legacy_dock_to_stock_hrs": 16.0,
+    "directed_dock_to_stock_hrs": 1.4,
+    "backorder_revenue_released_usd": 35340.0,
+    "putaway_status": "PARTIAL_GRN_POSTED_SHORT_FLAGGED"
+  },
+  {
+    "asn_id": "ASN-2026-8803",
+    "assigned_bin_zone": "FRA-GDP-CELL-2",
+    "legacy_dock_to_stock_hrs": 11.2,
+    "directed_dock_to_stock_hrs": 0.9,
+    "backorder_revenue_released_usd": 378880.0,
+    "putaway_status": "COLD_FAST_TRACK_VAULTED"
+  },
+  {
+    "asn_id": "ASN-2026-8804",
+    "assigned_bin_zone": "FRA-HAZ-BUNKER-4",
+    "legacy_dock_to_stock_hrs": 18.4,
+    "directed_dock_to_stock_hrs": 2.6,
+    "backorder_revenue_released_usd": 0.0,
+    "putaway_status": "HAZMAT_SEGREGATED_PUTAWAY"
+  },
+  {
+    "asn_id": "ASN-2026-8805",
+    "assigned_bin_zone": "ATL-XDOCK-LANE-3",
+    "legacy_dock_to_stock_hrs": 12.8,
+    "directed_dock_to_stock_hrs": 0.8,
+    "backorder_revenue_released_usd": 29640.0,
+    "putaway_status": "BYPASS_RACK_DIRECT_XDOCK"
+  },
+  {
+    "asn_id": "ASN-2026-8806",
+    "assigned_bin_zone": "MUM-SEC-CAGE-1",
+    "legacy_dock_to_stock_hrs": 15.6,
+    "directed_dock_to_stock_hrs": 2.3,
+    "backorder_revenue_released_usd": 0.0,
+    "putaway_status": "PARTIAL_GRN_OSD_LOGGED"
+  },
+  {
+    "asn_id": "ASN-2026-8807",
+    "assigned_bin_zone": "CHI-ZONE-B-COOL",
+    "legacy_dock_to_stock_hrs": 13.4,
+    "directed_dock_to_stock_hrs": 2.1,
+    "backorder_revenue_released_usd": 0.0,
+    "putaway_status": "DIRECTED_AMR_PUTAWAY"
+  },
+  {
+    "asn_id": "ASN-2026-8808",
+    "assigned_bin_zone": "DAL-CHILL-STRICT-2",
+    "legacy_dock_to_stock_hrs": 12.0,
+    "directed_dock_to_stock_hrs": 1.1,
+    "backorder_revenue_released_usd": 42336.0,
+    "putaway_status": "COLD_FAST_TRACK_VAULTED"
+  }
+]

@@ -1,4 +1,0 @@
-execution_id,shipment_id,order_id,persona_owner,erp_system,writeback_bapi,savings_usd,audit_status
-COLD_C-EXE-301,SHP-XYZ-90884,ORD-XYZ-2026-99401,Cold Chain QA / Logistics Dir.,SAP S/4HANA & BigQuery Twin,Automated Carrier Claim Dispute Packet & Approved SAP S/4HANA AP Freight Voucher (BAPI_INCOMINGINVOICE_CREATE),142500,COMMITTED
-COLD_C-EXE-302,SHP-XYZ-90885,ORD-XYZ-2026-99402,Cold Chain QA / Logistics Dir.,Manhattan Active WMS & Cloud Spanner,Automated Carrier Claim Dispute Packet & Approved SAP S/4HANA AP Freight Voucher (BAPI_INCOMINGINVOICE_CREATE),98400,COMMITTED
-COLD_C-EXE-303,SHP-XYZ-90886,ORD-XYZ-2026-99403,Cold Chain QA / Logistics Dir.,Blue Yonder TMS & Apigee Gateway,Automated Carrier Claim Dispute Packet & Approved SAP S/4HANA AP Freight Voucher (BAPI_INCOMINGINVOICE_CREATE),116800,VERIFIED

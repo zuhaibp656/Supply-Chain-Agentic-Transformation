@@ -1,19 +1,25 @@
-[
-  {
-    "scenario_id": "store_capacity_agent_golden_01",
-    "category": "05 \u00b7 Distribution & Logistics \u2014 Store Replenishment",
-    "agent_name": "[05 \u00b7 Logistics | Store Replenishment] Store Capacity Agent",
-    "prompt": "Run Store Capacity Agent analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
-    "expected_tools": [
-      "query_store_capacity_agent_telemetry_feed",
-      "query_store_capacity_agent_constraint_matrix",
-      "action_commit_store_capacity_agent_plan"
-    ],
-    "expected_outcome": "Reduces backroom stock by 25%",
-    "eval_models": {
-      "fast_execution_model": "gemini-3.8-flash",
-      "deep_reasoning_and_judge_model": "gemini-4-argon (or gemini-3.1-pro subject to availability)",
-      "orchestrator_routing": "Agent Orchestrator dynamically decides whether to route the query to Gemini 3.8 Flash (gemini-3.8-flash) or escalate to Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability)."
+{
+  "agent_id": "store_capacity_agent",
+  "organization_id": "XYZ-CORP-01",
+  "category": "05 \u00b7 Distribution & Logistics \u2014 Store Replenishment",
+  "persona": "Store Replenishment Planner",
+  "eval_judge_model": "gemini-4-argon (fallback: gemini-3.1-pro)",
+  "scenarios": [
+    {
+      "id": "store_capacity_agent_analytical_audit",
+      "prompt": "Run analyze_backroom_overflow_and_osa_throttle across XYZ-CORP-01 records and render a visual comparison chart.",
+      "expected_tools": [
+        "query_store_backroom_capacities",
+        "analyze_backroom_overflow_and_osa_throttle",
+        "render_visual_chart"
+      ]
+    },
+    {
+      "id": "store_capacity_agent_persona_draft_and_gate",
+      "prompt": "Draft the Store Backroom Overflow Throttling & A-SKU OSA Protection Plan for leadership review without committing mutations until confirmed.",
+      "expected_tools": [
+        "draft_store_replenishment_throttle_advisory"
+      ]
     }
-  }
-]
+  ]
+}

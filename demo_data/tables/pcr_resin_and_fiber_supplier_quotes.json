@@ -1,0 +1,82 @@
+[
+  {
+    "quote_id": "Q-PCR-01",
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "pack_spec_id": "PK-BOT-32OZ",
+    "fda_efsa_food_grade": true,
+    "virgin_cost_per_ton_usd": 1390.0,
+    "pcr_blend_cost_per_ton_usd": 1465.0,
+    "lead_time_days": 7,
+    "carbon_reduction_pct": 41.0
+  },
+  {
+    "quote_id": "Q-PCR-02",
+    "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
+    "pack_spec_id": "PK-CARTON-1L",
+    "fda_efsa_food_grade": true,
+    "virgin_cost_per_ton_usd": 1680.0,
+    "pcr_blend_cost_per_ton_usd": 1710.0,
+    "lead_time_days": 9,
+    "carbon_reduction_pct": 33.5
+  },
+  {
+    "quote_id": "Q-PCR-03",
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "pack_spec_id": "PK-FILM-BAR",
+    "fda_efsa_food_grade": true,
+    "virgin_cost_per_ton_usd": 2150.0,
+    "pcr_blend_cost_per_ton_usd": 2210.0,
+    "lead_time_days": 10,
+    "carbon_reduction_pct": 36.0
+  },
+  {
+    "quote_id": "Q-PCR-04",
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "pack_spec_id": "PK-SHOT-6PK",
+    "fda_efsa_food_grade": true,
+    "virgin_cost_per_ton_usd": 1520.0,
+    "pcr_blend_cost_per_ton_usd": 1590.0,
+    "lead_time_days": 8,
+    "carbon_reduction_pct": 38.2
+  },
+  {
+    "quote_id": "Q-PCR-05",
+    "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
+    "pack_spec_id": "PK-CASE-24PK",
+    "fda_efsa_food_grade": true,
+    "virgin_cost_per_ton_usd": 980.0,
+    "pcr_blend_cost_per_ton_usd": 945.0,
+    "lead_time_days": 5,
+    "carbon_reduction_pct": 44.0
+  },
+  {
+    "quote_id": "Q-PCR-06",
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "pack_spec_id": "PK-CRYO-TRAY",
+    "fda_efsa_food_grade": true,
+    "virgin_cost_per_ton_usd": 2400.0,
+    "pcr_blend_cost_per_ton_usd": 2180.0,
+    "lead_time_days": 12,
+    "carbon_reduction_pct": 58.0
+  },
+  {
+    "quote_id": "Q-PCR-07",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "pack_spec_id": "PK-FOAM-101",
+    "fda_efsa_food_grade": false,
+    "virgin_cost_per_ton_usd": 2890.0,
+    "pcr_blend_cost_per_ton_usd": 2740.0,
+    "lead_time_days": 14,
+    "carbon_reduction_pct": 46.0
+  },
+  {
+    "quote_id": "Q-PCR-08",
+    "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
+    "pack_spec_id": "PK-BOX-412",
+    "fda_efsa_food_grade": false,
+    "virgin_cost_per_ton_usd": 1120.0,
+    "pcr_blend_cost_per_ton_usd": 1060.0,
+    "lead_time_days": 6,
+    "carbon_reduction_pct": 51.0
+  }
+]

@@ -24,5 +24,83 @@
     "bias_classification": "ACCURATE_VALUE_ADD",
     "recommended_dampened_units": 142000,
     "rationale": "Commercial override aligns with confirmed regional flyer promotion."
+  },
+  {
+    "override_id": "OVR-SALES-202610-16",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "sales_account": "Key Account Walmart",
+    "planner_id": "REP-JOHNSON-CENTRAL",
+    "statistical_baseline_units": 217460,
+    "sales_override_units": 312800,
+    "override_lift_pct": 23.24,
+    "historical_fva_pct": -3.28,
+    "bias_classification": "CHRONIC_OPTIMISM_BIAS",
+    "recommended_dampened_units": 256280,
+    "rationale": "Sales override consistently exceeds actual sell-through by 18-24%, causing trapped DC safety stock."
+  },
+  {
+    "override_id": "OVR-SALES-202610-24",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "sales_account": "Key Account Costco",
+    "planner_id": "REP-PATEL-WEST",
+    "statistical_baseline_units": 124200,
+    "sales_override_units": 110760,
+    "override_lift_pct": 4.47,
+    "historical_fva_pct": 3.0,
+    "bias_classification": "ACCURATE_VALUE_ADD",
+    "recommended_dampened_units": 160460,
+    "rationale": "Commercial override aligns with confirmed regional flyer promotion."
+  },
+  {
+    "override_id": "OVR-SALES-202610-30",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "sales_account": "Key Account Walmart",
+    "planner_id": "REP-JOHNSON-CENTRAL",
+    "statistical_baseline_units": 311780,
+    "sales_override_units": 404600,
+    "override_lift_pct": 37.25,
+    "historical_fva_pct": -4.75,
+    "bias_classification": "CHRONIC_OPTIMISM_BIAS",
+    "recommended_dampened_units": 372500,
+    "rationale": "Sales override consistently exceeds actual sell-through by 18-24%, causing trapped DC safety stock."
+  },
+  {
+    "override_id": "OVR-SALES-202610-38",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "sales_account": "Key Account Costco",
+    "planner_id": "REP-PATEL-WEST",
+    "statistical_baseline_units": 160650,
+    "sales_override_units": 177500,
+    "override_lift_pct": 5.56,
+    "historical_fva_pct": 3.5,
+    "bias_classification": "ACCURATE_VALUE_ADD",
+    "recommended_dampened_units": 151940,
+    "rationale": "Commercial override aligns with confirmed regional flyer promotion."
+  },
+  {
+    "override_id": "OVR-SALES-202610-44",
+    "sku_id": "SKU-XYZ-309",
+    "sales_account": "Key Account Walmart",
+    "planner_id": "REP-JOHNSON-CENTRAL",
+    "statistical_baseline_units": 241040,
+    "sales_override_units": 363800,
+    "override_lift_pct": 23.24,
+    "historical_fva_pct": -3.61,
+    "bias_classification": "CHRONIC_OPTIMISM_BIAS",
+    "recommended_dampened_units": 354620,
+    "rationale": "Sales override consistently exceeds actual sell-through by 18-24%, causing trapped DC safety stock."
+  },
+  {
+    "override_id": "OVR-SALES-202610-52",
+    "sku_id": "SKU-XYZ-412",
+    "sales_account": "Key Account Costco",
+    "planner_id": "REP-PATEL-WEST",
+    "statistical_baseline_units": 168750,
+    "sales_override_units": 151940,
+    "override_lift_pct": 5.88,
+    "historical_fva_pct": 2.5,
+    "bias_classification": "ACCURATE_VALUE_ADD",
+    "recommended_dampened_units": 117860,
+    "rationale": "Commercial override aligns with confirmed regional flyer promotion."
   }
 ]

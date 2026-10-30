@@ -24,5 +24,83 @@
     "recommended_reduction_units": 238,
     "annual_holding_cost_saving_usd": 167552.0,
     "stockout_risk_delta_pct": 0.01
+  },
+  {
+    "opportunity_id": "OPP-CASH-016",
+    "valuation_area": "DC-DALLAS-CENTRAL",
+    "material_id": "SKU-BEV-ISOTONIC-32OZ",
+    "category": "SLOW_MOVING_BUFFER_REDUCTION",
+    "priority_rank": 1,
+    "cash_freed_usd": 1959216.0,
+    "current_days_of_supply": 48.16,
+    "recommended_target_days_of_supply": 19.5,
+    "recommended_reduction_units": 316,
+    "annual_holding_cost_saving_usd": 282522.24,
+    "stockout_risk_delta_pct": 2.5
+  },
+  {
+    "opportunity_id": "OPP-CASH-024",
+    "valuation_area": "PLANT-1010",
+    "material_id": "SKU-BEV-OATMILK-1L",
+    "category": "FINISHED_GOODS_BATCH_RIGHTSIZING",
+    "priority_rank": 2,
+    "cash_freed_usd": 814912.0,
+    "current_days_of_supply": 39.1,
+    "recommended_target_days_of_supply": 18.4,
+    "recommended_reduction_units": 269,
+    "annual_holding_cost_saving_usd": 199386.88,
+    "stockout_risk_delta_pct": 2.5
+  },
+  {
+    "opportunity_id": "OPP-CASH-030",
+    "valuation_area": "DC-DALLAS-CENTRAL",
+    "material_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "category": "SLOW_MOVING_BUFFER_REDUCTION",
+    "priority_rank": 1,
+    "cash_freed_usd": 1366512.0,
+    "current_days_of_supply": 48.16,
+    "recommended_target_days_of_supply": 29.75,
+    "recommended_reduction_units": 285,
+    "annual_holding_cost_saving_usd": 282522.24,
+    "stockout_risk_delta_pct": 2.5
+  },
+  {
+    "opportunity_id": "OPP-CASH-038",
+    "valuation_area": "PLANT-1010",
+    "material_id": "SKU-SNACK-PROTEIN-BAR",
+    "category": "FINISHED_GOODS_BATCH_RIGHTSIZING",
+    "priority_rank": 2,
+    "cash_freed_usd": 814912.0,
+    "current_days_of_supply": 36.55,
+    "recommended_target_days_of_supply": 16.6,
+    "recommended_reduction_units": 255,
+    "annual_holding_cost_saving_usd": 154147.84,
+    "stockout_risk_delta_pct": 2.5
+  },
+  {
+    "opportunity_id": "OPP-CASH-044",
+    "valuation_area": "DC-DALLAS-CENTRAL",
+    "material_id": "SKU-XYZ-309",
+    "category": "SLOW_MOVING_BUFFER_REDUCTION",
+    "priority_rank": 1,
+    "cash_freed_usd": 1284192.0,
+    "current_days_of_supply": 51.52,
+    "recommended_target_days_of_supply": 21.5,
+    "recommended_reduction_units": 429,
+    "annual_holding_cost_saving_usd": 431027.52,
+    "stockout_risk_delta_pct": 2.5
+  },
+  {
+    "opportunity_id": "OPP-CASH-052",
+    "valuation_area": "PLANT-1010",
+    "material_id": "SKU-XYZ-412",
+    "category": "FINISHED_GOODS_BATCH_RIGHTSIZING",
+    "priority_rank": 2,
+    "cash_freed_usd": 906304.0,
+    "current_days_of_supply": 50.57,
+    "recommended_target_days_of_supply": 23.8,
+    "recommended_reduction_units": 298,
+    "annual_holding_cost_saving_usd": 139068.16,
+    "stockout_risk_delta_pct": 2.5
   }
 ]

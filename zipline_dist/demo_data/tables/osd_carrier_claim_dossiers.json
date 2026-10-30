@@ -1,0 +1,58 @@
+[
+  {
+    "claim_id": "CLM-OSD-101",
+    "osd_id": "OSD-901",
+    "gross_loss_usd": 2422.5,
+    "recoverable_carmack_usd": 2422.5,
+    "claim_decision": "FILE_CARRIER_CARMACK_CLAIM"
+  },
+  {
+    "claim_id": "CLM-OSD-102",
+    "osd_id": "OSD-902",
+    "gross_loss_usd": 5580.0,
+    "recoverable_carmack_usd": 4860.0,
+    "claim_decision": "FILE_LTL_CAPPED_CLAIM"
+  },
+  {
+    "claim_id": "CLM-OSD-103",
+    "osd_id": "OSD-903",
+    "gross_loss_usd": 15120.0,
+    "recoverable_carmack_usd": 15120.0,
+    "claim_decision": "FILE_REEFER_SPOILAGE_CLAIM"
+  },
+  {
+    "claim_id": "CLM-OSD-104",
+    "osd_id": "OSD-904",
+    "gross_loss_usd": 4110.0,
+    "recoverable_carmack_usd": 4110.0,
+    "claim_decision": "FILE_CARRIER_CARMACK_CLAIM"
+  },
+  {
+    "claim_id": "CLM-OSD-105",
+    "osd_id": "OSD-905",
+    "gross_loss_usd": 3532.8,
+    "recoverable_carmack_usd": 3532.8,
+    "claim_decision": "FILE_WET_TRAILER_CLAIM"
+  },
+  {
+    "claim_id": "CLM-OSD-106",
+    "osd_id": "OSD-906",
+    "gross_loss_usd": 4440.0,
+    "recoverable_carmack_usd": 3980.0,
+    "claim_decision": "FILE_MONTREAL_SDR_CLAIM"
+  },
+  {
+    "claim_id": "CLM-OSD-107",
+    "osd_id": "OSD-907",
+    "gross_loss_usd": 1764.0,
+    "recoverable_carmack_usd": 0.0,
+    "claim_decision": "INTERNAL_ORIGIN_DC_RECOUNT_SLC"
+  },
+  {
+    "claim_id": "CLM-OSD-108",
+    "osd_id": "OSD-908",
+    "gross_loss_usd": 1710.0,
+    "recoverable_carmack_usd": 1710.0,
+    "claim_decision": "FILE_BROKEN_SEAL_CLAIM"
+  }
+]

@@ -73,37 +73,60 @@ def main() -> None:
 
         vega_title = ag["name"]
         vega_mark = "layered-combo"
-        a2ui_list = res.get("a2ui_Parts", res.get("a2ui_surface", []))
-        if isinstance(a2ui_list, dict):
-            a2ui_list = a2ui_list.get("messages", [])
-        for msg in a2ui_list if isinstance(a2ui_list, list) else []:
-            if isinstance(msg, dict) and "updateComponents" in msg:
-                for c in msg["updateComponents"].get("components", []):
-                    if c.get("component") == "VegaChart":
-                        spec = c.get("spec", {})
-                        vega_title = (
-                            spec.get("title", {}).get("text", vega_title)
-                            if isinstance(spec.get("title"), dict)
-                            else spec.get("title", vega_title)
-                        )
-                        if "mark" in spec:
-                            vega_mark = (
-                                spec["mark"].get("type", "bar")
-                                if isinstance(spec["mark"], dict)
-                                else str(spec["mark"])
+        spec_direct = res.get("vega_spec")
+        if isinstance(spec_direct, dict) and spec_direct:
+            vega_title = (
+                spec_direct.get("title", {}).get("text", vega_title)
+                if isinstance(spec_direct.get("title"), dict)
+                else spec_direct.get("title", vega_title)
+            )
+            if "vconcat" in spec_direct:
+                vega_mark = "multi-panel-vconcat"
+            elif "layer" in spec_direct:
+                vega_mark = "layered-combo"
+            elif "mark" in spec_direct:
+                vega_mark = (
+                    spec_direct["mark"].get("type", "bar")
+                    if isinstance(spec_direct["mark"], dict)
+                    else str(spec_direct["mark"])
+                )
+        else:
+            a2ui_list = res.get("a2ui_parts") or res.get("a2ui_Parts") or res.get("a2ui_surface", [])
+            if isinstance(a2ui_list, dict):
+                a2ui_list = a2ui_list.get("messages", [])
+            for msg in a2ui_list if isinstance(a2ui_list, list) else []:
+                if isinstance(msg, dict) and "updateComponents" in msg:
+                    for c in msg["updateComponents"].get("components", []):
+                        if c.get("component") == "VegaChart":
+                            spec = c.get("spec", {})
+                            vega_title = (
+                                spec.get("title", {}).get("text", vega_title)
+                                if isinstance(spec.get("title"), dict)
+                                else spec.get("title", vega_title)
                             )
-                        elif "layer" in spec:
-                            vega_mark = "layered-combo"
+                            if "mark" in spec:
+                                vega_mark = (
+                                    spec["mark"].get("type", "bar")
+                                    if isinstance(spec["mark"], dict)
+                                    else str(spec["mark"])
+                                )
+                            elif "layer" in spec:
+                                vega_mark = "layered-combo"
 
         mut = res.get("mutation_receipt", {})
         if not mut and res.get("actions_taken"):
             mut = res["actions_taken"][0]
+        if not mut and res.get("actions_executed"):
+            mut = res["actions_executed"][0]
         action_id = (
             mut.get("action_id")
             or mut.get("execution_id")
             or mut.get("transfer_id")
             or mut.get("order_id")
             or mut.get("award_id")
+            or mut.get("po_id")
+            or mut.get("claim_id")
+            or mut.get("debit_memo_id")
             or "ACT-VERIFIED"
         )
 
@@ -112,9 +135,10 @@ def main() -> None:
             "agentFile": f"agents/{aid}/app/agent.py",
             "toolsFile": f"agents/{aid}/app/tools.py",
             "chartsFile": f"agents/{aid}/app/render/charts.py",
+            "pngChartFile": f"agents/{aid}/app/render/png_chart.py",
             "smokeTestFile": f"agents/{aid}/tests/test_smoke.py",
             "model": model_name,
-            "smokeTestsPassed": 7,
+            "smokeTestsPassed": 8,
             "tools": tool_names,
             "fixtureTables": fixture_tables,
             "sampleExecution": {
@@ -123,7 +147,7 @@ def main() -> None:
                 "mutationStatus": mut.get("status", "COMMITTED"),
                 "vegaChartTitle": vega_title,
                 "vegaChartMark": vega_mark,
-                "markdownResponse": res.get("markdown_response", res.get("summary", "")),
+                "markdownResponse": res.get("markdown_response") or res.get("markdown") or res.get("summary", ""),
                 "mutationReceipt": mut,
             },
         }

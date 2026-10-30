@@ -1,4 +1,2 @@
-"""[04 · Inventory & DC | Omnichannel Visibility] Returns Triage Agent — Google ADK Package."""
-from .agent import ReturnsTriageAgentAgent, root_agent
-
-__all__ = ["ReturnsTriageAgentAgent", "root_agent"]
+"""ADK package for [04 · Inventory & DC | Omnichannel Visibility] Returns Triage Agent."""
+from .agent import root_agent, ReturnsTriageAgentAgent, ReturnsTriageAgentAdkApp

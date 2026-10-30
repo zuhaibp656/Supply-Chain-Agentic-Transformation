@@ -1,0 +1,66 @@
+[
+  {
+    "bin_zone_id": "CHI-ZONE-A-FAST",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "temp_zone": "AMBIENT",
+    "open_pallet_slots": 42,
+    "amr_travel_meters": 48.0,
+    "fefo_pick_face": true
+  },
+  {
+    "bin_zone_id": "DAL-CHILL-VAULT-1",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "temp_zone": "CHILLED_2_8C",
+    "open_pallet_slots": 38,
+    "amr_travel_meters": 34.0,
+    "fefo_pick_face": true
+  },
+  {
+    "bin_zone_id": "FRA-GDP-CELL-2",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "temp_zone": "VALIDATED_2_8C",
+    "open_pallet_slots": 20,
+    "amr_travel_meters": 26.0,
+    "fefo_pick_face": true
+  },
+  {
+    "bin_zone_id": "FRA-HAZ-BUNKER-4",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "temp_zone": "HAZMAT_UN3480",
+    "open_pallet_slots": 28,
+    "amr_travel_meters": 82.0,
+    "fefo_pick_face": false
+  },
+  {
+    "bin_zone_id": "ATL-XDOCK-LANE-3",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "temp_zone": "AMBIENT",
+    "open_pallet_slots": 50,
+    "amr_travel_meters": 22.0,
+    "fefo_pick_face": true
+  },
+  {
+    "bin_zone_id": "MUM-SEC-CAGE-1",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "temp_zone": "LITHIUM_DRY",
+    "open_pallet_slots": 24,
+    "amr_travel_meters": 45.0,
+    "fefo_pick_face": true
+  },
+  {
+    "bin_zone_id": "CHI-ZONE-B-COOL",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "temp_zone": "COOL_DRY",
+    "open_pallet_slots": 36,
+    "amr_travel_meters": 62.0,
+    "fefo_pick_face": true
+  },
+  {
+    "bin_zone_id": "DAL-CHILL-STRICT-2",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "temp_zone": "CHILLED_2_6C",
+    "open_pallet_slots": 22,
+    "amr_travel_meters": 29.0,
+    "fefo_pick_face": true
+  }
+]

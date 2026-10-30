@@ -20,5 +20,71 @@
     "operator_crew_size": 3,
     "active_shift_pattern": "2_SHIFTS_16_HOURS",
     "status": "OPERATIONAL_ACTIVE"
+  },
+  {
+    "workcenter_id": "WC-LINE-ASEPTIC-16",
+    "workcenter_name": "Aseptic Tetra Pak High-Speed Filling Line 01",
+    "plant_id": "PLANT-XYZ-MONTERREY",
+    "max_throughput_liters_hr": 10170,
+    "current_scheduled_load_pct": 99.6,
+    "cleaning_in_place_system": "AUTOMATED_CIP_SKID_01",
+    "operator_crew_size": 3,
+    "active_shift_pattern": "3_SHIFTS_24_7",
+    "status": "OPERATIONAL_ACTIVE"
+  },
+  {
+    "workcenter_id": "WC-LINE-POUCH-24",
+    "workcenter_name": "Flexible Retort Pouch Standup Line 02",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "max_throughput_liters_hr": 4140,
+    "current_scheduled_load_pct": 69.55,
+    "cleaning_in_place_system": "SEMI_MANUAL_CIP_SKID_02",
+    "operator_crew_size": 4,
+    "active_shift_pattern": "2_SHIFTS_16_HOURS",
+    "status": "OPERATIONAL_ACTIVE"
+  },
+  {
+    "workcenter_id": "WC-LINE-ASEPTIC-30",
+    "workcenter_name": "Aseptic Tetra Pak High-Speed Filling Line 01",
+    "plant_id": "CMO-XYZ-DALLAS",
+    "max_throughput_liters_hr": 7020,
+    "current_scheduled_load_pct": 75.9,
+    "cleaning_in_place_system": "AUTOMATED_CIP_SKID_01",
+    "operator_crew_size": 3,
+    "active_shift_pattern": "3_SHIFTS_24_7",
+    "status": "OPERATIONAL_ACTIVE"
+  },
+  {
+    "workcenter_id": "WC-LINE-POUCH-38",
+    "workcenter_name": "Flexible Retort Pouch Standup Line 02",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "max_throughput_liters_hr": 3510,
+    "current_scheduled_load_pct": 53.95,
+    "cleaning_in_place_system": "SEMI_MANUAL_CIP_SKID_02",
+    "operator_crew_size": 3,
+    "active_shift_pattern": "2_SHIFTS_16_HOURS",
+    "status": "OPERATIONAL_ACTIVE"
+  },
+  {
+    "workcenter_id": "WC-LINE-ASEPTIC-44",
+    "workcenter_name": "Aseptic Tetra Pak High-Speed Filling Line 01",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "max_throughput_liters_hr": 9630,
+    "current_scheduled_load_pct": 98.17,
+    "cleaning_in_place_system": "AUTOMATED_CIP_SKID_01",
+    "operator_crew_size": 3,
+    "active_shift_pattern": "3_SHIFTS_24_7",
+    "status": "OPERATIONAL_ACTIVE"
+  },
+  {
+    "workcenter_id": "WC-LINE-POUCH-52",
+    "workcenter_name": "Flexible Retort Pouch Standup Line 02",
+    "plant_id": "PLANT-XYZ-MONTERREY",
+    "max_throughput_liters_hr": 4815,
+    "current_scheduled_load_pct": 69.55,
+    "cleaning_in_place_system": "SEMI_MANUAL_CIP_SKID_02",
+    "operator_crew_size": 3,
+    "active_shift_pattern": "2_SHIFTS_16_HOURS",
+    "status": "OPERATIONAL_ACTIVE"
   }
 ]

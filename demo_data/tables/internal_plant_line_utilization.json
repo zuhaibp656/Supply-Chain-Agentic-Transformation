@@ -1,0 +1,82 @@
+[
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "line_id": "LINE-ASEPTIC-A1",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "weekly_demand_cases": 85000,
+    "internal_max_regular_cases": 62000,
+    "utilization_pct": 118.4,
+    "regular_conv_cost_case_usd": 1.85,
+    "overtime_conv_cost_case_usd": 3.1
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "line_id": "LINE-CHILL-A2",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "weekly_demand_cases": 54000,
+    "internal_max_regular_cases": 42000,
+    "utilization_pct": 112.0,
+    "regular_conv_cost_case_usd": 2.15,
+    "overtime_conv_cost_case_usd": 3.45
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "line_id": "LINE-BOTTLE-A3",
+    "sku_id": "SKU-XYZ-204",
+    "weekly_demand_cases": 72000,
+    "internal_max_regular_cases": 68000,
+    "utilization_pct": 105.9,
+    "regular_conv_cost_case_usd": 1.72,
+    "overtime_conv_cost_case_usd": 2.88
+  },
+  {
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "line_id": "LINE-POUCH-IN1",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "weekly_demand_cases": 48000,
+    "internal_max_regular_cases": 32000,
+    "utilization_pct": 124.5,
+    "regular_conv_cost_case_usd": 1.4,
+    "overtime_conv_cost_case_usd": 2.55
+  },
+  {
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "line_id": "LINE-FILL-EU1",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "weekly_demand_cases": 4200,
+    "internal_max_regular_cases": 4500,
+    "utilization_pct": 93.3,
+    "regular_conv_cost_case_usd": 28.0,
+    "overtime_conv_cost_case_usd": 44.0
+  },
+  {
+    "plant_id": "PLANT-XYZ-MONTERREY",
+    "line_id": "LINE-BRAZE-MX1",
+    "sku_id": "SKU-XYZ-518",
+    "weekly_demand_cases": 9500,
+    "internal_max_regular_cases": 8000,
+    "utilization_pct": 118.8,
+    "regular_conv_cost_case_usd": 14.2,
+    "overtime_conv_cost_case_usd": 21.8
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "line_id": "LINE-KEFIR-A4",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "weekly_demand_cases": 39000,
+    "internal_max_regular_cases": 31000,
+    "utilization_pct": 125.8,
+    "regular_conv_cost_case_usd": 2.3,
+    "overtime_conv_cost_case_usd": 3.75
+  },
+  {
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "line_id": "LINE-ELAST-IN2",
+    "sku_id": "SKU-XYZ-625",
+    "weekly_demand_cases": 6200,
+    "internal_max_regular_cases": 6500,
+    "utilization_pct": 95.4,
+    "regular_conv_cost_case_usd": 6.8,
+    "overtime_conv_cost_case_usd": 10.4
+  }
+]

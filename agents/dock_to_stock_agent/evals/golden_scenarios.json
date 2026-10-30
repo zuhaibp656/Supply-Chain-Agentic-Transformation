@@ -1,19 +1,25 @@
-[
-  {
-    "scenario_id": "dock_to_stock_agent_golden_01",
-    "category": "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations",
-    "agent_name": "[04 \u00b7 Inventory & DC | Warehouse Operations] Dock-to-Stock Agent",
-    "prompt": "Run Dock-to-Stock Agent analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
-    "expected_tools": [
-      "query_dock_to_stock_agent_telemetry_feed",
-      "query_dock_to_stock_agent_constraint_matrix",
-      "action_commit_dock_to_stock_agent_plan"
-    ],
-    "expected_outcome": "Dock turnaround in minutes vs. hours",
-    "eval_models": {
-      "fast_execution_model": "gemini-3.8-flash",
-      "deep_reasoning_and_judge_model": "gemini-4-argon (or gemini-3.1-pro subject to availability)",
-      "orchestrator_routing": "Agent Orchestrator dynamically decides whether to route the query to Gemini 3.8 Flash (gemini-3.8-flash) or escalate to Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability)."
+{
+  "agent_id": "dock_to_stock_agent",
+  "organization_id": "XYZ-CORP-01",
+  "category": "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations",
+  "persona": "Receiving & Inbound Lead",
+  "eval_judge_model": "gemini-4-argon (fallback: gemini-3.1-pro)",
+  "scenarios": [
+    {
+      "id": "dock_to_stock_agent_analytical_audit",
+      "prompt": "Run analyze_asn_reconciliation_and_putaway across XYZ-CORP-01 records and render a visual comparison chart.",
+      "expected_tools": [
+        "query_edi856_inbound_asns",
+        "analyze_asn_reconciliation_and_putaway",
+        "render_visual_chart"
+      ]
+    },
+    {
+      "id": "dock_to_stock_agent_persona_draft_and_gate",
+      "prompt": "Draft the Inbound EDI 861 Receiving Discrepancy & Putaway Advice for leadership review without committing mutations until confirmed.",
+      "expected_tools": [
+        "draft_inbound_asn_discrepancy_report"
+      ]
     }
-  }
-]
+  ]
+}

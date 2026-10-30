@@ -1,3 +1,9 @@
 packet_id,retailer,sku_id,retailer_forecast_units,manufacturer_unconstrained_units,variance_gap_units,reconciliation_status,recommended_consensus_units,recommended_replenishment_order_units,target_dc,rationale
 CPFR-PKT-202611-WMT,Walmart,SKU-BEV-ISOTONIC-32OZ,620000,540000,80000,DIVERGENT_EXCEPTION,580000,95000,DC-DALLAS-CENTRAL,Retailer forecast reflects unadjusted bullwhip order swing; harmonized consensus aligns with actual POS scan velocity.
 CPFR-PKT-202611-TGT,Target,SKU-SNACK-PROTEIN-BAR,280000,270000,10000,ALIGNED_CONSENSUS,275000,45000,DC-CHICAGO-MIDWEST,High consensus alignment with confirmed flyer circular.
+CPFR-PKT-202611-WMT-R029EB,Walmart,SKU-BEV-ISOTONIC-32OZ,775000,464400,85600,DIVERGENT_EXCEPTION,725000,118750,DC-DALLAS-CENTRAL,Retailer forecast reflects unadjusted bullwhip order swing; harmonized consensus aligns with actual POS scan velocity.
+CPFR-PKT-202611-TGT-R0312E,Target,SKU-BEV-OATMILK-1L,299600,288900,12500,ALIGNED_CONSENSUS,310750,35100,DC-CHICAGO-MIDWEST,High consensus alignment with confirmed flyer circular.
+CPFR-PKT-202611-WMT-R04A0E,Walmart,SKU-DAIRY-PROBIOTIC-6PK,663400,421200,95200,DIVERGENT_EXCEPTION,725000,113050,DC-DALLAS-CENTRAL,Retailer forecast reflects unadjusted bullwhip order swing; harmonized consensus aligns with actual POS scan velocity.
+CPFR-PKT-202611-TGT-R056C5,Target,SKU-SNACK-PROTEIN-BAR,218400,224100,11300,ALIGNED_CONSENSUS,214500,38700,DC-CHICAGO-MIDWEST,High consensus alignment with confirmed flyer circular.
+CPFR-PKT-202611-WMT-R06F4D,Walmart,SKU-XYZ-309,775000,675000,95200,DIVERGENT_EXCEPTION,655400,87400,DC-DALLAS-CENTRAL,Retailer forecast reflects unadjusted bullwhip order swing; harmonized consensus aligns with actual POS scan velocity.
+CPFR-PKT-202611-TGT-R078B2,Target,SKU-XYZ-412,333200,288900,9200,ALIGNED_CONSENSUS,228250,38700,DC-CHICAGO-MIDWEST,High consensus alignment with confirmed flyer circular.

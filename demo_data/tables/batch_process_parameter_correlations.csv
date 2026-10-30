@@ -1,3 +1,9 @@
 correlation_id,defect_id,parameter_name,nominal_setpoint,actual_observed_mean,upper_tolerance_limit,lower_tolerance_limit,pearson_correlation_coefficient,p_value,root_cause_finding
 CORR-FLASH-IMM-02-01,DEF-FLASH-IMM-02,Injection Holding Pressure (bar),820.0,945.0,860.0,780.0,0.88,0.0002,"Holding pressure spiked +125 bar above nominal, exceeding mold clamp force and forcing melt into parting line vents."
 CORR-FLASH-IMM-02-02,DEF-FLASH-IMM-02,Barrel Zone 4 Melt Temperature (°C),235.0,248.5,240.0,230.0,0.74,0.0031,"Super-heated melt viscosity dropped by 24%, accelerating parting line flashing under excessive pack pressure."
+CORR-FLASH-IMM-02-16,DEF-FLASH-IMM-17,Injection Holding Pressure (bar),1025.0,784.35,739.6,975.0,0.796,0.0,"Holding pressure spiked +125 bar above nominal, exceeding mold clamp force and forcing melt into parting line vents."
+CORR-FLASH-IMM-02-24,DEF-FLASH-IMM-24,Barrel Zone 4 Melt Temperature (°C),293.75,213.71,271.2,246.1,0.698,0.0,"Super-heated melt viscosity dropped by 24%, accelerating parting line flashing under excessive pack pressure."
+CORR-FLASH-IMM-02-30,DEF-FLASH-IMM-31,Injection Holding Pressure (bar),754.4,812.7,1023.4,608.4,0.88,0.0,"Holding pressure spiked +125 bar above nominal, exceeding mold clamp force and forcing melt into parting line vents."
+CORR-FLASH-IMM-02-38,DEF-FLASH-IMM-38,Barrel Zone 4 Melt Temperature (°C),251.45,265.9,199.2,179.4,0.782,0.0,"Super-heated melt viscosity dropped by 24%, accelerating parting line flashing under excessive pack pressure."
+CORR-FLASH-IMM-02-44,DEF-FLASH-IMM-45,Injection Holding Pressure (bar),639.6,869.4,670.8,647.4,0.964,0.0,"Holding pressure spiked +125 bar above nominal, exceeding mold clamp force and forcing melt into parting line vents."
+CORR-FLASH-IMM-02-52,DEF-FLASH-IMM-52,Barrel Zone 4 Melt Temperature (°C),279.65,295.71,187.2,273.7,0.866,0.0,"Super-heated melt viscosity dropped by 24%, accelerating parting line flashing under excessive pack pressure."

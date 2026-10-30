@@ -9,5 +9,82 @@
     "anomaly_type": "POST_SCHEME_WINDOW_AND_DUPLICATE_GSTIN",
     "disallowed_leakage_usd": 2190.0,
     "verified_net_payout_usd": 16260.0
+  },
+  {
+    "audit_id": "CLM-AUD-9929",
+    "claim_id": "CLM-DIST04-9929",
+    "flagged_invoices": [
+      "INV-SEC-8812",
+      "INV-SEC-8819"
+    ],
+    "anomaly_type": "POST_SCHEME_WINDOW_AND_DUPLICATE_GSTIN",
+    "disallowed_leakage_usd": 2737.5,
+    "verified_net_payout_usd": 13983.6
+  },
+  {
+    "audit_id": "CLM-AUD-9936",
+    "claim_id": "CLM-DIST04-9936",
+    "flagged_invoices": [
+      "INV-SEC-8812",
+      "INV-SEC-8819"
+    ],
+    "anomaly_type": "POST_SCHEME_WINDOW_AND_DUPLICATE_GSTIN",
+    "disallowed_leakage_usd": 2737.5,
+    "verified_net_payout_usd": 20325.0
+  },
+  {
+    "audit_id": "CLM-AUD-9943",
+    "claim_id": "CLM-DIST04-9943",
+    "flagged_invoices": [
+      "INV-SEC-8812",
+      "INV-SEC-8819"
+    ],
+    "anomaly_type": "POST_SCHEME_WINDOW_AND_DUPLICATE_GSTIN",
+    "disallowed_leakage_usd": 2343.3,
+    "verified_net_payout_usd": 17398.2
+  },
+  {
+    "audit_id": "CLM-AUD-9950",
+    "claim_id": "CLM-DIST04-9950",
+    "flagged_invoices": [
+      "INV-SEC-8812",
+      "INV-SEC-8819"
+    ],
+    "anomaly_type": "POST_SCHEME_WINDOW_AND_DUPLICATE_GSTIN",
+    "disallowed_leakage_usd": 1708.2,
+    "verified_net_payout_usd": 20325.0
+  },
+  {
+    "audit_id": "CLM-AUD-9957",
+    "claim_id": "CLM-DIST04-9957",
+    "flagged_invoices": [
+      "INV-SEC-8812",
+      "INV-SEC-8819"
+    ],
+    "anomaly_type": "POST_SCHEME_WINDOW_AND_DUPLICATE_GSTIN",
+    "disallowed_leakage_usd": 2474.7,
+    "verified_net_payout_usd": 18373.8
+  },
+  {
+    "audit_id": "CLM-AUD-9964",
+    "claim_id": "CLM-DIST04-9964",
+    "flagged_invoices": [
+      "INV-SEC-8812",
+      "INV-SEC-8819"
+    ],
+    "anomaly_type": "POST_SCHEME_WINDOW_AND_DUPLICATE_GSTIN",
+    "disallowed_leakage_usd": 1708.2,
+    "verified_net_payout_usd": 19349.4
+  },
+  {
+    "audit_id": "CLM-AUD-9971",
+    "claim_id": "CLM-DIST04-9971",
+    "flagged_invoices": [
+      "INV-SEC-8812",
+      "INV-SEC-8819"
+    ],
+    "anomaly_type": "POST_SCHEME_WINDOW_AND_DUPLICATE_GSTIN",
+    "disallowed_leakage_usd": 2014.8,
+    "verified_net_payout_usd": 20325.0
   }
 ]

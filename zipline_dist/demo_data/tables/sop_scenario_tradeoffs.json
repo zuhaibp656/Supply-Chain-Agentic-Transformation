@@ -37,5 +37,70 @@
     "overtime_cost_usd": 220000.0,
     "trapped_working_capital_usd": 32800000.0,
     "or_tools_solver_status": "OPTIMAL_PARETO_FRONTIER"
+  },
+  {
+    "scenario_id": "SCEN-01-UNCONSTRAINED-R0381F",
+    "name": "Unconstrained Sales Forecast Plan",
+    "description": "Produce strictly to unconstrained commercial forecast without overtime or alternate routing.",
+    "revenue_usd": 77292000.0,
+    "gross_margin_usd": 51500000.0,
+    "gross_margin_pct": 46.96,
+    "otif_delivery_pct": 84.09,
+    "stockout_risk_usd": 4761500.0,
+    "overtime_cost_usd": 0.0,
+    "trapped_working_capital_usd": 48125000.0,
+    "or_tools_solver_status": "FEASIBLE_SUBOPTIMAL"
+  },
+  {
+    "scenario_id": "SCEN-02-OVERTIME-MAX-R044AE",
+    "name": "Aggressive Weekend Overtime Plan",
+    "description": "Run 21 shifts/week at Plant Cincinnati and expedite raw materials via air freight.",
+    "revenue_usd": 82320500.0,
+    "gross_margin_usd": 38528000.0,
+    "gross_margin_pct": 65.81,
+    "otif_delivery_pct": 99.6,
+    "stockout_risk_usd": 481500.0,
+    "overtime_cost_usd": 960500.0,
+    "trapped_working_capital_usd": 39732000.0,
+    "or_tools_solver_status": "FEASIBLE_EXPENSIVE"
+  },
+  {
+    "scenario_id": "SCEN-03-SYNAPSE-PARETO-R05DE7",
+    "name": "Synapse Balanced Pareto Optimization Plan",
+    "description": "Reroute 400k units of Hydration RTD to underutilized Plant Dallas + moderate 2-shift overtime at Cincinnati.",
+    "revenue_usd": 82038000.0,
+    "gross_margin_usd": 41796000.0,
+    "gross_margin_pct": 61.55,
+    "otif_delivery_pct": 84.88,
+    "stockout_risk_usd": 189200.0,
+    "overtime_cost_usd": 171600.0,
+    "trapped_working_capital_usd": 25584000.0,
+    "or_tools_solver_status": "OPTIMAL_PARETO_FRONTIER"
+  },
+  {
+    "scenario_id": "SCEN-01-UNCONSTRAINED-R0681D",
+    "name": "Unconstrained Sales Forecast Plan",
+    "description": "Produce strictly to unconstrained commercial forecast without overtime or alternate routing.",
+    "revenue_usd": 53352000.0,
+    "gross_margin_usd": 35432000.0,
+    "gross_margin_pct": 49.97,
+    "otif_delivery_pct": 99.6,
+    "stockout_risk_usd": 5562500.0,
+    "overtime_cost_usd": 0.0,
+    "trapped_working_capital_usd": 41195000.0,
+    "or_tools_solver_status": "FEASIBLE_SUBOPTIMAL"
+  },
+  {
+    "scenario_id": "SCEN-02-OVERTIME-MAX-R07D51",
+    "name": "Aggressive Weekend Overtime Plan",
+    "description": "Run 21 shifts/week at Plant Cincinnati and expedite raw materials via air freight.",
+    "revenue_usd": 56823000.0,
+    "gross_margin_usd": 41216000.0,
+    "gross_margin_pct": 47.97,
+    "otif_delivery_pct": 99.6,
+    "stockout_risk_usd": 414000.0,
+    "overtime_cost_usd": 909500.0,
+    "trapped_working_capital_usd": 42504000.0,
+    "or_tools_solver_status": "FEASIBLE_EXPENSIVE"
   }
 ]

@@ -20,5 +20,71 @@
     "customer_tier": "TIER_3_STANDARD",
     "order_channel": "B2B_PORTAL_WEB",
     "order_status": "PENDING_ATP_COMMITMENT"
+  },
+  {
+    "order_id": "ORD-20261022-8856",
+    "customer_id": "CUST-COSTCO-US04",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "requested_units": 6640,
+    "requested_delivery_date": "2026-10-24T12:00:00Z",
+    "destination_zip": "75201",
+    "customer_tier": "TIER_1_STRATEGIC",
+    "order_channel": "EDI_850_DIRECT_STORE_DELIVERY",
+    "order_status": "PENDING_ATP_COMMITMENT"
+  },
+  {
+    "order_id": "ORD-20261022-8864",
+    "customer_id": "CUST-XYZ-TIER1-AUTOWORKS",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "requested_units": 1428,
+    "requested_delivery_date": "2026-10-24T15:00:00Z",
+    "destination_zip": "78701",
+    "customer_tier": "TIER_3_STANDARD",
+    "order_channel": "B2B_PORTAL_WEB",
+    "order_status": "PENDING_ATP_COMMITMENT"
+  },
+  {
+    "order_id": "ORD-20261022-8870",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "requested_units": 6240,
+    "requested_delivery_date": "2026-10-24T12:00:00Z",
+    "destination_zip": "75201",
+    "customer_tier": "TIER_1_STRATEGIC",
+    "order_channel": "EDI_850_DIRECT_STORE_DELIVERY",
+    "order_status": "PENDING_ATP_COMMITMENT"
+  },
+  {
+    "order_id": "ORD-20261022-8878",
+    "customer_id": "CUST-XYZ-TIER2-METROCPG",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "requested_units": 1032,
+    "requested_delivery_date": "2026-10-24T15:00:00Z",
+    "destination_zip": "78701",
+    "customer_tier": "TIER_3_STANDARD",
+    "order_channel": "B2B_PORTAL_WEB",
+    "order_status": "PENDING_ATP_COMMITMENT"
+  },
+  {
+    "order_id": "ORD-20261022-8884",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "sku_id": "SKU-XYZ-309",
+    "requested_units": 7360,
+    "requested_delivery_date": "2026-10-24T12:00:00Z",
+    "destination_zip": "75201",
+    "customer_tier": "TIER_1_STRATEGIC",
+    "order_channel": "EDI_850_DIRECT_STORE_DELIVERY",
+    "order_status": "PENDING_ATP_COMMITMENT"
+  },
+  {
+    "order_id": "ORD-20261022-8892",
+    "customer_id": "CUST-KROGER-US01",
+    "sku_id": "SKU-XYZ-412",
+    "requested_units": 1284,
+    "requested_delivery_date": "2026-10-24T15:00:00Z",
+    "destination_zip": "78701",
+    "customer_tier": "TIER_3_STANDARD",
+    "order_channel": "B2B_PORTAL_WEB",
+    "order_status": "PENDING_ATP_COMMITMENT"
   }
 ]

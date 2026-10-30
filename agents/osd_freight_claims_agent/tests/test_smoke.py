@@ -1,76 +1,74 @@
-"""7-test unit smoke suite for [06 · Returns & ESG | Returns & Claims Mgmt] OS&D Freight Claims (06 · Returns & Reverse Logistics — Returns & Claims Mgmt)."""
+"""Comprehensive deterministic smoke & persona workflow tests for [06 · Return | Returns & Claims Mgmt] OS&D Freight Claims Automator."""
 from __future__ import annotations
 
+from pathlib import Path
 import sys
 import unittest
-from pathlib import Path
 
-PKG_DIR = Path(__file__).resolve().parent.parent
-if str(PKG_DIR) not in sys.path:
-    sys.path.insert(0, str(PKG_DIR))
+PKG_ROOT = Path(__file__).resolve().parent.parent
+if str(PKG_ROOT) not in sys.path:
+    sys.path.insert(0, str(PKG_ROOT))
 
-from app.agent import OsdFreightClaimsAgentAgent, AGENT_CATEGORY, AGENT_DISPLAY_NAME, AGENT_DESCRIPTION
-from app.render.charts import create_osd_freight_claims_agent_chart_spec
-from app.render.surfaces import build_osd_freight_claims_agent_surface
-from app.tools import (
-    query_osd_freight_claims_agent_telemetry_feed,
-    query_osd_freight_claims_agent_constraint_matrix,
-    query_osd_freight_claims_agent_optimization_scenarios,
-    query_osd_freight_claims_agent_execution_ledger,
-    action_commit_osd_freight_claims_agent_plan,
-    action_dispatch_osd_freight_claims_agent_alert,
-)
+from app.agent import OsdFreightClaimsAgentAgent  # noqa: E402
+from app import tools  # noqa: E402
 
 
-class TestOsdFreightClaimsAgentAgentSmoke(unittest.TestCase):
-    def test_01_category_in_name_and_description(self) -> None:
-        agent = OsdFreightClaimsAgentAgent()
-        self.assertIn("Returns & Claims Mgmt", AGENT_DISPLAY_NAME)
-        self.assertIn("Returns & Claims Mgmt", AGENT_DESCRIPTION)
-        self.assertEqual(agent.category, AGENT_CATEGORY)
+class TestOsdFreightClaimsAgentSmoke(unittest.TestCase):
+    def setUp(self) -> None:
+        self.agent = OsdFreightClaimsAgentAgent()
 
-    def test_02_telemetry_and_constraint_queries(self) -> None:
-        r0 = query_osd_freight_claims_agent_telemetry_feed()
-        r1 = query_osd_freight_claims_agent_constraint_matrix()
-        self.assertEqual(r0["status"], "SUCCESS")
-        self.assertGreater(len(r0["rows"]), 0)
-        self.assertEqual(r1["status"], "SUCCESS")
-        self.assertGreater(len(r1["rows"]), 0)
+    def test_01_systems_and_master_backbone_join(self) -> None:
+        sys_info = tools.list_systems()
+        self.assertEqual(sys_info["organization_id"], "XYZ-CORP-01")
+        self.assertEqual(len(sys_info["systems"]), 4)
+        master = tools.lookup_xyz_master_context(sku_id="SKU-XYZ-204", facility_id="PLANT-XYZ-AUSTIN")
+        self.assertEqual(master["status"], "SUCCESS")
+        self.assertIsNotNone(master.get("material"))
+        self.assertIsNotNone(master.get("facility"))
 
-    def test_03_scenarios_and_ledger_queries(self) -> None:
-        r2 = query_osd_freight_claims_agent_optimization_scenarios()
-        r3 = query_osd_freight_claims_agent_execution_ledger()
-        self.assertEqual(r2["status"], "SUCCESS")
-        self.assertGreater(len(r2["rows"]), 0)
-        self.assertEqual(r3["status"], "SUCCESS")
-        self.assertGreater(len(r3["rows"]), 0)
+    def test_02_all_four_domain_tables_have_realistic_8_rows(self) -> None:
+        for fn_name in ['query_ebol_seal_manifests', 'query_dock_osd_inspections', 'query_carmack_liability_rules', 'query_osd_claim_dossiers']:
+            res = self.agent.execute_tool(fn_name)
+            self.assertEqual(res["status"], "SUCCESS")
+            self.assertGreaterEqual(res["row_count"], 8, f"{fn_name} must return >=8 rows")
 
-    def test_04_quality_gate_blocks_low_confidence(self) -> None:
-        blocked = action_commit_osd_freight_claims_agent_plan(confidence_score=0.40)
-        self.assertEqual(blocked["status"], "BLOCKED_BY_QUALITY_GATE")
-
-    def test_05_mutation_and_alert_commit(self) -> None:
-        committed = action_commit_osd_freight_claims_agent_plan(confidence_score=0.96)
-        self.assertEqual(committed["status"], "COMMITTED")
-        alert = action_dispatch_osd_freight_claims_agent_alert(severity="HIGH")
-        self.assertEqual(alert["status"], "DISPATCHED")
-
-    def test_06_vega_chart_and_a2ui_surface(self) -> None:
-        spec = create_osd_freight_claims_agent_chart_spec()
-        self.assertIn("$schema", spec)
-        parts = build_osd_freight_claims_agent_surface("test-surface")
-        self.assertEqual(len(parts), 3)
-
-    def test_07_end_to_end_scenario_execution(self) -> None:
-        agent = OsdFreightClaimsAgentAgent()
-        res = agent.run_scenario("Run full optimization")
+    def test_03_python_mathematical_analysis_solver(self) -> None:
+        res = self.agent.execute_tool('analyze_carmack_liability_and_recovery')
         self.assertEqual(res["status"], "SUCCESS")
-        self.assertIn("#### 📊", res["markdown"])
-        routing_fast = agent.select_orchestrated_model("check status")
-        self.assertEqual(routing_fast["selected_model"], "gemini-3.8-flash")
-        routing_pro = agent.select_orchestrated_model("Run multi-echelon scenario optimization")
-        self.assertIn("gemini-4-argon", routing_pro["selected_model"])
-        self.assertIn("orchestrator_routing", res)
+        self.assertGreaterEqual(res["records_evaluated"], 8)
+        self.assertIn("kpi_summary", res)
+        self.assertIn("ranked_drivers", res)
+        self.assertTrue(res["concise_markdown_table"].startswith("| Record |"))
+
+    def test_04_png_infographic_and_vegalite_chart_generation(self) -> None:
+        chart = self.agent.execute_tool("render_visual_chart")
+        self.assertEqual(chart["status"], "SUCCESS")
+        self.assertTrue(chart["a2ui_vega_lite_queued"])
+        png_path = Path(chart["png_infographic"]["png_path"])
+        if chart["png_infographic"]["status"] == "SUCCESS":
+            self.assertTrue(png_path.exists())
+            self.assertGreater(png_path.stat().st_size, 1500)
+
+    def test_05_persona_operational_drafting_tool(self) -> None:
+        draft = self.agent.execute_tool('draft_carmack_osd_freight_claim_packet')
+        self.assertEqual(draft["status"], "DRAFT_READY")
+        self.assertIn("XYZ-CORP-01", draft["markdown_draft"])
+
+    def test_06_write_back_quality_gate_blocks_missing_inputs(self) -> None:
+        blocked = self.agent.execute_tool('action_transmit_edi920_carrier_claim')
+        self.assertIn(blocked.get("error"), ("missing_required_inputs", "missing_idempotency_key"))
+
+    def test_07_orchestrator_model_routing(self) -> None:
+        fast = self.agent.select_orchestrated_model("Check status of current lot")
+        self.assertEqual(fast["selected_model"], "gemini-3.8-flash")
+        deep = self.agent.select_orchestrated_model("Simulate multi-echelon trade-off scenario")
+        self.assertIn("gemini-3.1-pro", deep["selected_model"])
+
+    def test_08_end_to_end_scenario_and_a2ui_card(self) -> None:
+        out = self.agent.run_scenario("Execute full persona audit")
+        self.assertEqual(out["status"], "SUCCESS")
+        self.assertEqual(len(out["a2ui_surface"]), 3)
+        self.assertTrue(out["mutation_receipt"]["action_id"].startswith("ACT-"))
 
 
 if __name__ == "__main__":

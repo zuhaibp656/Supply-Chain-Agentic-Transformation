@@ -1,5 +1,6 @@
-"""A2UI v0.9 lifecycle message builders."""
+"""Self-contained A2UI v0.9 lifecycle builders."""
 from __future__ import annotations
+
 from typing import Any, Dict, List, Optional
 
 DEFAULT_GE_CATALOG_ID: str = (

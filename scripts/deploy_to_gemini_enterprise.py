@@ -476,6 +476,7 @@ REQUIREMENTS = [
     "google-cloud-storage>=2.18.0,<4.0.0",
     "google-cloud-bigquery>=3.25.0",
     "pydantic>=2.0.0",
+    "Pillow>=10.0.0",
 ]
 
 

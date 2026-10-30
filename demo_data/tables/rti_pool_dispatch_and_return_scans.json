@@ -1,0 +1,74 @@
+[
+  {
+    "ledger_id": "RTI-SCAN-01",
+    "asset_type": "CHEP_48X40_BLUE_PALLET",
+    "origin_facility_id": "RDC-XYZ-CHICAGO",
+    "custodian_id": "CUST-XYZ-TIER1-MEGAMART",
+    "dispatched_90d": 4850,
+    "returned_90d": 4120,
+    "avg_dwell_days": 38
+  },
+  {
+    "ledger_id": "RTI-SCAN-02",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "origin_facility_id": "FDC-XYZ-DALLAS",
+    "custodian_id": "CUST-KROGER-US01",
+    "dispatched_90d": 9200,
+    "returned_90d": 7840,
+    "avg_dwell_days": 31
+  },
+  {
+    "ledger_id": "RTI-SCAN-03",
+    "asset_type": "VAQTEC_VIP_CRYO_SHIPPER",
+    "origin_facility_id": "RDC-XYZ-FRANKFURT",
+    "custodian_id": "CUST-MEDLINE-BIO01",
+    "dispatched_90d": 185,
+    "returned_90d": 151,
+    "avg_dwell_days": 24
+  },
+  {
+    "ledger_id": "RTI-SCAN-04",
+    "asset_type": "AUTO_STEEL_STILLAGE_RACK",
+    "origin_facility_id": "PLANT-XYZ-STUTTGART",
+    "custodian_id": "CUST-XYZ-TIER1-AUTOWORKS",
+    "dispatched_90d": 640,
+    "returned_90d": 548,
+    "avg_dwell_days": 29
+  },
+  {
+    "ledger_id": "RTI-SCAN-05",
+    "asset_type": "PECO_BLOCK_PALLET",
+    "origin_facility_id": "RDC-XYZ-CHICAGO",
+    "custodian_id": "CUST-COSTCO-US04",
+    "dispatched_90d": 3600,
+    "returned_90d": 3490,
+    "avg_dwell_days": 14
+  },
+  {
+    "ledger_id": "RTI-SCAN-06",
+    "asset_type": "INSULATED_DAIRY_ROLLCAGE",
+    "origin_facility_id": "FDC-XYZ-ATLANTA",
+    "custodian_id": "CUST-KROGER-US01",
+    "dispatched_90d": 1420,
+    "returned_90d": 1150,
+    "avg_dwell_days": 34
+  },
+  {
+    "ledger_id": "RTI-SCAN-07",
+    "asset_type": "CHEP_48X40_BLUE_PALLET",
+    "origin_facility_id": "FDC-XYZ-DALLAS",
+    "custodian_id": "CUST-ALDI-OUTLET-US09",
+    "dispatched_90d": 1650,
+    "returned_90d": 1180,
+    "avg_dwell_days": 49
+  },
+  {
+    "ledger_id": "RTI-SCAN-08",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "origin_facility_id": "FDC-XYZ-MUMBAI",
+    "custodian_id": "CUST-XYZ-TIER2-METROCPG",
+    "dispatched_90d": 5400,
+    "returned_90d": 4610,
+    "avg_dwell_days": 33
+  }
+]

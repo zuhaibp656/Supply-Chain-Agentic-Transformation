@@ -1,0 +1,75 @@
+[
+  {
+    "rma_req_id": "KPR-3001",
+    "sku_id": "SKU-XYZ-204",
+    "buyer_segment": "D2C_SUBSCRIPTION_VIP",
+    "return_qty": 1,
+    "item_paid_price_usd": 28.5,
+    "unit_cogs_usd": 14.8,
+    "return_reason": "FLAVOR_PREFERENCE_SWAP"
+  },
+  {
+    "rma_req_id": "KPR-3002",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "buyer_segment": "D2C_PRIME_MEMBER",
+    "return_qty": 1,
+    "item_paid_price_usd": 22.8,
+    "unit_cogs_usd": 11.4,
+    "return_reason": "OUTER_CARTON_DENTED"
+  },
+  {
+    "rma_req_id": "KPR-3003",
+    "sku_id": "SKU-XYZ-412",
+    "buyer_segment": "B2B_CLINIC_BUYER",
+    "return_qty": 2,
+    "item_paid_price_usd": 620.0,
+    "unit_cogs_usd": 324.0,
+    "return_reason": "ORDERED_WRONG_GATEWAY"
+  },
+  {
+    "rma_req_id": "KPR-3004",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "buyer_segment": "D2C_GROCERY_APP",
+    "return_qty": 1,
+    "item_paid_price_usd": 36.0,
+    "unit_cogs_usd": 18.6,
+    "return_reason": "WARM_ICE_PACK_ON_ARRIVAL"
+  },
+  {
+    "rma_req_id": "KPR-3005",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "buyer_segment": "D2C_REPEAT_BUYER",
+    "return_qty": 1,
+    "item_paid_price_usd": 38.4,
+    "unit_cogs_usd": 19.5,
+    "return_qty_weight_kg": 4.2,
+    "return_reason": "CHANGED_MIND_UNOPENED"
+  },
+  {
+    "rma_req_id": "KPR-3006",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "buyer_segment": "NEW_GUEST_CHECKOUT",
+    "return_qty": 2,
+    "item_paid_price_usd": 62.0,
+    "unit_cogs_usd": 32.4,
+    "return_reason": "CLAIMED_DAMAGED_NO_PHOTO"
+  },
+  {
+    "rma_req_id": "KPR-3007",
+    "sku_id": "SKU-XYZ-625",
+    "buyer_segment": "B2B_MRO_DISTRIBUTOR",
+    "return_qty": 4,
+    "item_paid_price_usd": 392.0,
+    "unit_cogs_usd": 208.0,
+    "return_reason": "SIZE_SPEC_MISMATCH"
+  },
+  {
+    "rma_req_id": "KPR-3008",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "buyer_segment": "D2C_SUBSCRIPTION_VIP",
+    "return_qty": 1,
+    "item_paid_price_usd": 22.8,
+    "unit_cogs_usd": 11.4,
+    "return_reason": "LATE_DELIVERY_EVENT_PASSED"
+  }
+]

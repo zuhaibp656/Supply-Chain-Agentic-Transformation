@@ -20,5 +20,71 @@
     "bullwhip_variance_ratio": 1.08,
     "volatility_flag": "STABLE",
     "consensus_status": "ALIGNED_CONSENSUS"
+  },
+  {
+    "forecast_id": "EDI830-WMT-202626",
+    "retailer": "Walmart",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "horizon_weeks": 13,
+    "current_week_order_units": 156250,
+    "forward_4wk_projected_units": 448200,
+    "bullwhip_variance_ratio": 1.22,
+    "volatility_flag": "HIGH_BULLWHIP_SWING",
+    "consensus_status": "DIVERGENT_EXCEPTION"
+  },
+  {
+    "forecast_id": "EDI830-TGT-202633",
+    "retailer": "Target",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "horizon_weeks": 14,
+    "current_week_order_units": 59800,
+    "forward_4wk_projected_units": 288900,
+    "bullwhip_variance_ratio": 0.9,
+    "volatility_flag": "STABLE",
+    "consensus_status": "ALIGNED_CONSENSUS"
+  },
+  {
+    "forecast_id": "EDI830-WMT-202640",
+    "retailer": "Walmart",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "horizon_weeks": 10,
+    "current_week_order_units": 148750,
+    "forward_4wk_projected_units": 610200,
+    "bullwhip_variance_ratio": 1.77,
+    "volatility_flag": "HIGH_BULLWHIP_SWING",
+    "consensus_status": "DIVERGENT_EXCEPTION"
+  },
+  {
+    "forecast_id": "EDI830-TGT-202647",
+    "retailer": "Target",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "horizon_weeks": 9,
+    "current_week_order_units": 55900,
+    "forward_4wk_projected_units": 224100,
+    "bullwhip_variance_ratio": 0.9,
+    "volatility_flag": "STABLE",
+    "consensus_status": "ALIGNED_CONSENSUS"
+  },
+  {
+    "forecast_id": "EDI830-WMT-202654",
+    "retailer": "Walmart",
+    "sku_id": "SKU-XYZ-309",
+    "horizon_weeks": 10,
+    "current_week_order_units": 156250,
+    "forward_4wk_projected_units": 464400,
+    "bullwhip_variance_ratio": 1.11,
+    "volatility_flag": "HIGH_BULLWHIP_SWING",
+    "consensus_status": "DIVERGENT_EXCEPTION"
+  },
+  {
+    "forecast_id": "EDI830-TGT-202661",
+    "retailer": "Target",
+    "sku_id": "SKU-XYZ-412",
+    "horizon_weeks": 13,
+    "current_week_order_units": 77350,
+    "forward_4wk_projected_units": 337500,
+    "bullwhip_variance_ratio": 0.93,
+    "volatility_flag": "STABLE",
+    "consensus_status": "ALIGNED_CONSENSUS"
   }
 ]

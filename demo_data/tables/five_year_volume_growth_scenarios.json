@@ -1,0 +1,66 @@
+[
+  {
+    "scenario_id": "SCEN-BASE",
+    "business_unit": "Consumer Health & Beverages",
+    "cagr_5yr_pct": 11.4,
+    "wacc_hurdle_pct": 9.5,
+    "tax_rate_pct": 24.0,
+    "probability_weight": 0.55
+  },
+  {
+    "scenario_id": "SCEN-BULL",
+    "business_unit": "Consumer Health & Beverages",
+    "cagr_5yr_pct": 16.8,
+    "wacc_hurdle_pct": 9.5,
+    "tax_rate_pct": 24.0,
+    "probability_weight": 0.25
+  },
+  {
+    "scenario_id": "SCEN-BEAR",
+    "business_unit": "Consumer Health & Beverages",
+    "cagr_5yr_pct": 5.2,
+    "wacc_hurdle_pct": 9.5,
+    "tax_rate_pct": 24.0,
+    "probability_weight": 0.2
+  },
+  {
+    "scenario_id": "SCEN-EV-BASE",
+    "business_unit": "Industrial Power & Mobility",
+    "cagr_5yr_pct": 14.2,
+    "wacc_hurdle_pct": 10.0,
+    "tax_rate_pct": 26.0,
+    "probability_weight": 0.6
+  },
+  {
+    "scenario_id": "SCEN-EV-BEAR",
+    "business_unit": "Industrial Power & Mobility",
+    "cagr_5yr_pct": 6.5,
+    "wacc_hurdle_pct": 10.0,
+    "tax_rate_pct": 26.0,
+    "probability_weight": 0.4
+  },
+  {
+    "scenario_id": "SCEN-IOT-BASE",
+    "business_unit": "Connected Supply Chain Devices",
+    "cagr_5yr_pct": 18.5,
+    "wacc_hurdle_pct": 10.0,
+    "tax_rate_pct": 22.0,
+    "probability_weight": 0.7
+  },
+  {
+    "scenario_id": "SCEN-BIO-BASE",
+    "business_unit": "Cold-Chain Biologics",
+    "cagr_5yr_pct": 15.0,
+    "wacc_hurdle_pct": 9.0,
+    "tax_rate_pct": 25.0,
+    "probability_weight": 0.65
+  },
+  {
+    "scenario_id": "SCEN-THERM-BASE",
+    "business_unit": "Thermal Management Systems",
+    "cagr_5yr_pct": 9.8,
+    "wacc_hurdle_pct": 10.5,
+    "tax_rate_pct": 25.0,
+    "probability_weight": 0.6
+  }
+]

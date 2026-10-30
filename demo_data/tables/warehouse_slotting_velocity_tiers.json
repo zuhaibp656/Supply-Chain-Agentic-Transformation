@@ -24,5 +24,83 @@
     "daily_travel_saving_km": 0.0,
     "ergonomic_pick_zone": "GOLDEN_ZONE_WAIST_HEIGHT",
     "status": "OPTIMALLY_SLOTTED"
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R02394",
+    "sku_name": "Barista Organic Oat Milk 1L Tetra",
+    "velocity_tier": "FAST_MOVER_TIER_A",
+    "pick_frequency_lines_per_day": 949,
+    "current_bin_id": "BIN-AISLE-14-SHELF-04-HIGH-R02BD8",
+    "recommended_bin_id": "BIN-AISLE-02-SHELF-02-GOLDEN-R0286D",
+    "distance_to_pack_station_m": 160.46,
+    "recommended_distance_m": 26.18,
+    "daily_travel_saving_km": 78.62,
+    "ergonomic_pick_zone": "OVERHEAD_NON_ERGONOMIC",
+    "status": "SLOTTING_MISMATCH_HIGH_TRAVEL"
+  },
+  {
+    "sku_id": "SKU-BEV-ALMOND-UNSWEET-1L-R03481",
+    "sku_name": "Almond Milk Unsweetened 1L",
+    "velocity_tier": "MEDIUM_MOVER_TIER_B",
+    "pick_frequency_lines_per_day": 369,
+    "current_bin_id": "BIN-AISLE-05-SHELF-02-GOLDEN-R036F2",
+    "recommended_bin_id": "BIN-AISLE-05-SHELF-02-GOLDEN-R0389D",
+    "distance_to_pack_station_m": 35.1,
+    "recommended_distance_m": 35.1,
+    "daily_travel_saving_km": 0.0,
+    "ergonomic_pick_zone": "GOLDEN_ZONE_WAIST_HEIGHT",
+    "status": "OPTIMALLY_SLOTTED"
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R04DFB",
+    "sku_name": "Barista Organic Oat Milk 1L Tetra",
+    "velocity_tier": "FAST_MOVER_TIER_A",
+    "pick_frequency_lines_per_day": 697,
+    "current_bin_id": "BIN-AISLE-14-SHELF-04-HIGH-R04DE1",
+    "recommended_bin_id": "BIN-AISLE-02-SHELF-02-GOLDEN-R04EE5",
+    "distance_to_pack_station_m": 160.46,
+    "recommended_distance_m": 18.92,
+    "daily_travel_saving_km": 83.66,
+    "ergonomic_pick_zone": "OVERHEAD_NON_ERGONOMIC",
+    "status": "SLOTTING_MISMATCH_HIGH_TRAVEL"
+  },
+  {
+    "sku_id": "SKU-BEV-ALMOND-UNSWEET-1L-R0543C",
+    "sku_name": "Almond Milk Unsweetened 1L",
+    "velocity_tier": "MEDIUM_MOVER_TIER_B",
+    "pick_frequency_lines_per_day": 257,
+    "current_bin_id": "BIN-AISLE-05-SHELF-02-GOLDEN-R059F1",
+    "recommended_bin_id": "BIN-AISLE-05-SHELF-02-GOLDEN-R05BFB",
+    "distance_to_pack_station_m": 53.55,
+    "recommended_distance_m": 50.85,
+    "daily_travel_saving_km": 2.5,
+    "ergonomic_pick_zone": "GOLDEN_ZONE_WAIST_HEIGHT",
+    "status": "OPTIMALLY_SLOTTED"
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R06BF3",
+    "sku_name": "Barista Organic Oat Milk 1L Tetra",
+    "velocity_tier": "FAST_MOVER_TIER_A",
+    "pick_frequency_lines_per_day": 773,
+    "current_bin_id": "BIN-AISLE-14-SHELF-04-HIGH-R06C75",
+    "recommended_bin_id": "BIN-AISLE-02-SHELF-02-GOLDEN-R068BE",
+    "distance_to_pack_station_m": 122.12,
+    "recommended_distance_m": 24.86,
+    "daily_travel_saving_km": 113.9,
+    "ergonomic_pick_zone": "OVERHEAD_NON_ERGONOMIC",
+    "status": "SLOTTING_MISMATCH_HIGH_TRAVEL"
+  },
+  {
+    "sku_id": "SKU-BEV-ALMOND-UNSWEET-1L-R07F63",
+    "sku_name": "Almond Milk Unsweetened 1L",
+    "velocity_tier": "MEDIUM_MOVER_TIER_B",
+    "pick_frequency_lines_per_day": 388,
+    "current_bin_id": "BIN-AISLE-05-SHELF-02-GOLDEN-R07680",
+    "recommended_bin_id": "BIN-AISLE-05-SHELF-02-GOLDEN-R07A9A",
+    "distance_to_pack_station_m": 53.55,
+    "recommended_distance_m": 56.25,
+    "daily_travel_saving_km": 1.25,
+    "ergonomic_pick_zone": "GOLDEN_ZONE_WAIST_HEIGHT",
+    "status": "OPTIMALLY_SLOTTED"
   }
 ]

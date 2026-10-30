@@ -24,5 +24,83 @@
     "recommended_replenishment_order_units": 45000,
     "target_dc": "DC-CHICAGO-MIDWEST",
     "rationale": "High consensus alignment with confirmed flyer circular."
+  },
+  {
+    "packet_id": "CPFR-PKT-202611-WMT-R029EB",
+    "retailer": "Walmart",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "retailer_forecast_units": 775000,
+    "manufacturer_unconstrained_units": 464400,
+    "variance_gap_units": 85600,
+    "reconciliation_status": "DIVERGENT_EXCEPTION",
+    "recommended_consensus_units": 725000,
+    "recommended_replenishment_order_units": 118750,
+    "target_dc": "DC-DALLAS-CENTRAL",
+    "rationale": "Retailer forecast reflects unadjusted bullwhip order swing; harmonized consensus aligns with actual POS scan velocity."
+  },
+  {
+    "packet_id": "CPFR-PKT-202611-TGT-R0312E",
+    "retailer": "Target",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "retailer_forecast_units": 299600,
+    "manufacturer_unconstrained_units": 288900,
+    "variance_gap_units": 12500,
+    "reconciliation_status": "ALIGNED_CONSENSUS",
+    "recommended_consensus_units": 310750,
+    "recommended_replenishment_order_units": 35100,
+    "target_dc": "DC-CHICAGO-MIDWEST",
+    "rationale": "High consensus alignment with confirmed flyer circular."
+  },
+  {
+    "packet_id": "CPFR-PKT-202611-WMT-R04A0E",
+    "retailer": "Walmart",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "retailer_forecast_units": 663400,
+    "manufacturer_unconstrained_units": 421200,
+    "variance_gap_units": 95200,
+    "reconciliation_status": "DIVERGENT_EXCEPTION",
+    "recommended_consensus_units": 725000,
+    "recommended_replenishment_order_units": 113050,
+    "target_dc": "DC-DALLAS-CENTRAL",
+    "rationale": "Retailer forecast reflects unadjusted bullwhip order swing; harmonized consensus aligns with actual POS scan velocity."
+  },
+  {
+    "packet_id": "CPFR-PKT-202611-TGT-R056C5",
+    "retailer": "Target",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "retailer_forecast_units": 218400,
+    "manufacturer_unconstrained_units": 224100,
+    "variance_gap_units": 11300,
+    "reconciliation_status": "ALIGNED_CONSENSUS",
+    "recommended_consensus_units": 214500,
+    "recommended_replenishment_order_units": 38700,
+    "target_dc": "DC-CHICAGO-MIDWEST",
+    "rationale": "High consensus alignment with confirmed flyer circular."
+  },
+  {
+    "packet_id": "CPFR-PKT-202611-WMT-R06F4D",
+    "retailer": "Walmart",
+    "sku_id": "SKU-XYZ-309",
+    "retailer_forecast_units": 775000,
+    "manufacturer_unconstrained_units": 675000,
+    "variance_gap_units": 95200,
+    "reconciliation_status": "DIVERGENT_EXCEPTION",
+    "recommended_consensus_units": 655400,
+    "recommended_replenishment_order_units": 87400,
+    "target_dc": "DC-DALLAS-CENTRAL",
+    "rationale": "Retailer forecast reflects unadjusted bullwhip order swing; harmonized consensus aligns with actual POS scan velocity."
+  },
+  {
+    "packet_id": "CPFR-PKT-202611-TGT-R078B2",
+    "retailer": "Target",
+    "sku_id": "SKU-XYZ-412",
+    "retailer_forecast_units": 333200,
+    "manufacturer_unconstrained_units": 288900,
+    "variance_gap_units": 9200,
+    "reconciliation_status": "ALIGNED_CONSENSUS",
+    "recommended_consensus_units": 228250,
+    "recommended_replenishment_order_units": 38700,
+    "target_dc": "DC-CHICAGO-MIDWEST",
+    "rationale": "High consensus alignment with confirmed flyer circular."
   }
 ]

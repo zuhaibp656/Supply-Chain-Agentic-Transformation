@@ -37,5 +37,70 @@
     "trade_spend_usd": 45000.0,
     "discount_pct": 15.0,
     "status": "PROPOSED_PENDING_APPROVAL"
+  },
+  {
+    "campaign_id": "CMP-202611-BOGO-R03025",
+    "name": "BOGO Hydration Blitz",
+    "retailer": "Walmart",
+    "channel": "Retail Stores & Omnichannel",
+    "start_date": "2026-11-21",
+    "end_date": "2026-11-21",
+    "target_sku": "SKU-BEV-ISOTONIC-32OZ",
+    "mechanic": "BUY_ONE_GET_ONE_50PCT",
+    "trade_spend_usd": 128400.0,
+    "discount_pct": 31.25,
+    "status": "PROPOSED_PENDING_APPROVAL"
+  },
+  {
+    "campaign_id": "CMP-202611-PROT49",
+    "name": "20% Off Protein Snack Pack",
+    "retailer": "Costco",
+    "channel": "Club Warehouse",
+    "start_date": "2026-11-24",
+    "end_date": "2026-11-24",
+    "target_sku": "SKU-SNACK-PROTEIN-BAR",
+    "mechanic": "STRAIGHT_DISCOUNT",
+    "trade_spend_usd": 84750.0,
+    "discount_pct": 17.2,
+    "status": "APPROVED_COMMITTED"
+  },
+  {
+    "campaign_id": "CMP-202611-ELECTRO-R05A1C",
+    "name": "Bundle & Save Electrolytes",
+    "retailer": "Target",
+    "channel": "Retail Stores",
+    "start_date": "2026-11-27",
+    "end_date": "2026-11-27",
+    "target_sku": "SKU-BEV-ELECTROLYTE-500ML",
+    "mechanic": "MULTI_BUY_BUNDLE",
+    "trade_spend_usd": 48150.0,
+    "discount_pct": 17.85,
+    "status": "PROPOSED_PENDING_APPROVAL"
+  },
+  {
+    "campaign_id": "CMP-202611-BOGO-R06B7D",
+    "name": "BOGO Hydration Blitz",
+    "retailer": "Walmart",
+    "channel": "Retail Stores & Omnichannel",
+    "start_date": "2026-11-03",
+    "end_date": "2026-11-03",
+    "target_sku": "SKU-BEV-ISOTONIC-32OZ",
+    "mechanic": "BUY_ONE_GET_ONE_50PCT",
+    "trade_spend_usd": 103200.0,
+    "discount_pct": 28.25,
+    "status": "PROPOSED_PENDING_APPROVAL"
+  },
+  {
+    "campaign_id": "CMP-202611-PROT70",
+    "name": "20% Off Protein Snack Pack",
+    "retailer": "Costco",
+    "channel": "Club Warehouse",
+    "start_date": "2026-11-06",
+    "end_date": "2026-11-06",
+    "target_sku": "SKU-SNACK-PROTEIN-BAR",
+    "mechanic": "STRAIGHT_DISCOUNT",
+    "trade_spend_usd": 62250.0,
+    "discount_pct": 15.6,
+    "status": "APPROVED_COMMITTED"
   }
 ]

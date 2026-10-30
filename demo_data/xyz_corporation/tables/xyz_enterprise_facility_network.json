@@ -1,7 +1,7 @@
 [
   {
     "facility_id": "PLANT-XYZ-STUTTGART",
-    "facility_name": "XYZ Stuttgart Gigafactory & Precision Machining Plant",
+    "facility_name": "XYZ Stuttgart Gigafactory & Biologics Fill-Finish Plant",
     "facility_type": "MANUFACTURING_PLANT",
     "region": "EMEA",
     "country": "DE",
@@ -9,7 +9,7 @@
     "lat": 48.7758,
     "lon": 9.1829,
     "erp_system": "SAP S/4HANA Production (EU-01)",
-    "mes_wms_system": "Siemens Opcenter MES",
+    "mes_wms_system": "Siemens Opcenter MES + LIMS",
     "daily_capacity_units": 4800,
     "current_oee_pct": 86.4,
     "headcount_fte": 420,
@@ -17,7 +17,7 @@
   },
   {
     "facility_id": "PLANT-XYZ-AUSTIN",
-    "facility_name": "XYZ Austin Aseptic Bottling & Battery Assembly Campus",
+    "facility_name": "XYZ Austin Aseptic Beverage & Battery Assembly Campus",
     "facility_type": "MANUFACTURING_PLANT",
     "region": "NAMER",
     "country": "US",
@@ -26,7 +26,7 @@
     "lon": -97.7431,
     "erp_system": "SAP S/4HANA Production (US-01)",
     "mes_wms_system": "Rockwell FactoryTalk + Veeva QMS",
-    "daily_capacity_units": 12500,
+    "daily_capacity_units": 18500,
     "current_oee_pct": 89.2,
     "headcount_fte": 510,
     "annual_lease_opex_usd": 9600000
@@ -64,6 +64,38 @@
     "annual_lease_opex_usd": 5100000
   },
   {
+    "facility_id": "CMO-XYZ-DALLAS",
+    "facility_name": "Trinity Valley Co-Packing & Cold-Fill CMO Partner",
+    "facility_type": "CONTRACT_MANUFACTURER",
+    "region": "NAMER",
+    "country": "US",
+    "city": "Dallas, TX",
+    "lat": 32.7767,
+    "lon": -96.797,
+    "erp_system": "EDI 850/856 + Ariba SCC",
+    "mes_wms_system": "Partner Cloud MES",
+    "daily_capacity_units": 14000,
+    "current_oee_pct": 83.5,
+    "headcount_fte": 220,
+    "annual_lease_opex_usd": 0
+  },
+  {
+    "facility_id": "CMO-XYZ-PUNE",
+    "facility_name": "Deccan NutriPack Contract Extrusion & Pouch CMO",
+    "facility_type": "CONTRACT_MANUFACTURER",
+    "region": "APAC",
+    "country": "IN",
+    "city": "Pune (Chakan)",
+    "lat": 18.7606,
+    "lon": 73.8636,
+    "erp_system": "EDI 850/856 + Ariba SCC",
+    "mes_wms_system": "Partner SAP B1",
+    "daily_capacity_units": 11000,
+    "current_oee_pct": 81.9,
+    "headcount_fte": 195,
+    "annual_lease_opex_usd": 0
+  },
+  {
     "facility_id": "RDC-XYZ-CHICAGO",
     "facility_name": "XYZ Midwest Mega-Regional Distribution Center (Joliet)",
     "facility_type": "REGIONAL_DC",
@@ -80,6 +112,22 @@
     "annual_lease_opex_usd": 6800000
   },
   {
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "facility_name": "XYZ Central European Cold & Dry Hub (Rhein-Main)",
+    "facility_type": "REGIONAL_DC",
+    "region": "EMEA",
+    "country": "DE",
+    "city": "Frankfurt",
+    "lat": 50.0379,
+    "lon": 8.5622,
+    "erp_system": "SAP S/4HANA EWM",
+    "mes_wms_system": "SAP EWM + Validated 2-8C Vault",
+    "daily_capacity_units": 36000,
+    "current_oee_pct": 95.4,
+    "headcount_fte": 230,
+    "annual_lease_opex_usd": 7200000
+  },
+  {
     "facility_id": "FDC-XYZ-ATLANTA",
     "facility_name": "XYZ Southeast Forward Fulfillment & Cross-Dock Hub",
     "facility_type": "FORWARD_DC",
@@ -94,6 +142,22 @@
     "current_oee_pct": 92.8,
     "headcount_fte": 145,
     "annual_lease_opex_usd": 3400000
+  },
+  {
+    "facility_id": "FDC-XYZ-DALLAS",
+    "facility_name": "XYZ South-Central Chilled & Omnichannel Returns Hub",
+    "facility_type": "FORWARD_DC",
+    "region": "NAMER",
+    "country": "US",
+    "city": "Dallas, TX",
+    "lat": 32.8998,
+    "lon": -97.0403,
+    "erp_system": "SAP S/4HANA Inventory",
+    "mes_wms_system": "Manhattan Active WMS + Returns Optical Triage",
+    "daily_capacity_units": 26000,
+    "current_oee_pct": 93.1,
+    "headcount_fte": 165,
+    "annual_lease_opex_usd": 3900000
   },
   {
     "facility_id": "FDC-XYZ-ROTTERDAM",

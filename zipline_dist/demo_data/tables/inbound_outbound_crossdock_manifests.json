@@ -16,5 +16,131 @@
       "PLT-OAT-9921-04"
     ],
     "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-049",
+    "inbound_trailer_id": "TRL-INB-SWIFT-9929",
+    "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
+    "carrier_name": "Swift Transportation",
+    "inbound_door_id": "DOOR-INBOUND-12",
+    "total_pallets_count": 21,
+    "eligible_flowthrough_pallets": 15,
+    "staging_required_pallets": 7,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-056",
+    "inbound_trailer_id": "TRL-INB-SWIFT-9936",
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "carrier_name": "Swift Transportation",
+    "inbound_door_id": "DOOR-INBOUND-19",
+    "total_pallets_count": 21,
+    "eligible_flowthrough_pallets": 14,
+    "staging_required_pallets": 8,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-063",
+    "inbound_trailer_id": "TRL-INB-SWIFT-9943",
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "carrier_name": "Swift Transportation",
+    "inbound_door_id": "DOOR-INBOUND-26",
+    "total_pallets_count": 21,
+    "eligible_flowthrough_pallets": 15,
+    "staging_required_pallets": 8,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-070",
+    "inbound_trailer_id": "TRL-INB-SWIFT-9950",
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "carrier_name": "Swift Transportation",
+    "inbound_door_id": "DOOR-INBOUND-33",
+    "total_pallets_count": 22,
+    "eligible_flowthrough_pallets": 21,
+    "staging_required_pallets": 5,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-077",
+    "inbound_trailer_id": "TRL-INB-SWIFT-9957",
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "carrier_name": "Swift Transportation",
+    "inbound_door_id": "DOOR-INBOUND-40",
+    "total_pallets_count": 19,
+    "eligible_flowthrough_pallets": 22,
+    "staging_required_pallets": 7,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-084",
+    "inbound_trailer_id": "TRL-INB-SWIFT-9964",
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "carrier_name": "Swift Transportation",
+    "inbound_door_id": "DOOR-INBOUND-47",
+    "total_pallets_count": 27,
+    "eligible_flowthrough_pallets": 14,
+    "staging_required_pallets": 6,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-091",
+    "inbound_trailer_id": "TRL-INB-SWIFT-9971",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "carrier_name": "Swift Transportation",
+    "inbound_door_id": "DOOR-INBOUND-54",
+    "total_pallets_count": 19,
+    "eligible_flowthrough_pallets": 17,
+    "staging_required_pallets": 5,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
   }
 ]

@@ -17,6 +17,66 @@
     "committed_to_orders_units": 760000,
     "remaining_quota_units": 40000,
     "lead_time_days": 28,
-    "expedite_premium_per_unit_usd": 0.320
+    "expedite_premium_per_unit_usd": 0.32
+  },
+  {
+    "supplier_id": "VEND-BALL-CORP-116",
+    "supplier_name": "Ball Metal Packaging",
+    "component_id": "COMP-CAN-ALUM-330ML-R02F52",
+    "monthly_allocation_units": 4150000,
+    "committed_to_orders_units": 4708000,
+    "remaining_quota_units": 714000,
+    "lead_time_days": 20,
+    "expedite_premium_per_unit_usd": 0.04
+  },
+  {
+    "supplier_id": "VEND-INGREDION-224",
+    "supplier_name": "Ingredion Specialty Starches",
+    "component_id": "COMP-PROTEIN-ISOLATE-WHEY",
+    "monthly_allocation_units": 1000000,
+    "committed_to_orders_units": 592800,
+    "remaining_quota_units": 47600,
+    "lead_time_days": 30,
+    "expedite_premium_per_unit_usd": 0.36
+  },
+  {
+    "supplier_id": "VEND-BALL-CORP-130",
+    "supplier_name": "Ball Metal Packaging",
+    "component_id": "COMP-CAN-ALUM-330ML-R04497",
+    "monthly_allocation_units": 5650000,
+    "committed_to_orders_units": 5500000,
+    "remaining_quota_units": 714000,
+    "lead_time_days": 19,
+    "expedite_premium_per_unit_usd": 0.06
+  },
+  {
+    "supplier_id": "VEND-INGREDION-238",
+    "supplier_name": "Ingredion Specialty Starches",
+    "component_id": "COMP-PROTEIN-ISOLATE-WHEY",
+    "monthly_allocation_units": 904000,
+    "committed_to_orders_units": 950000,
+    "remaining_quota_units": 47600,
+    "lead_time_days": 22,
+    "expedite_premium_per_unit_usd": 0.34
+  },
+  {
+    "supplier_id": "VEND-BALL-CORP-144",
+    "supplier_name": "Ball Metal Packaging",
+    "component_id": "COMP-CAN-ALUM-330ML-R06FF9",
+    "monthly_allocation_units": 5650000,
+    "committed_to_orders_units": 4972000,
+    "remaining_quota_units": 516000,
+    "lead_time_days": 14,
+    "expedite_premium_per_unit_usd": 0.04
+  },
+  {
+    "supplier_id": "VEND-INGREDION-252",
+    "supplier_name": "Ingredion Specialty Starches",
+    "component_id": "COMP-PROTEIN-ISOLATE-WHEY",
+    "monthly_allocation_units": 1000000,
+    "committed_to_orders_units": 699200,
+    "remaining_quota_units": 31200,
+    "lead_time_days": 33,
+    "expedite_premium_per_unit_usd": 0.27
   }
 ]

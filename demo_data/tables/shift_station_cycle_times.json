@@ -1,0 +1,82 @@
+[
+  {
+    "station_id": "STN-AUS-FILL-01",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "line_id": "LINE-ASEPTIC-A1",
+    "takt_time_sec": 42.0,
+    "actual_cycle_sec": 51.4,
+    "operators_assigned": 2,
+    "bottleneck_flag": true,
+    "hourly_cases_lost": 135
+  },
+  {
+    "station_id": "STN-AUS-CAP-02",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "line_id": "LINE-ASEPTIC-A1",
+    "takt_time_sec": 42.0,
+    "actual_cycle_sec": 39.2,
+    "operators_assigned": 2,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 0
+  },
+  {
+    "station_id": "STN-AUS-PACK-03",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "line_id": "LINE-ASEPTIC-A1",
+    "takt_time_sec": 42.0,
+    "actual_cycle_sec": 48.8,
+    "operators_assigned": 3,
+    "bottleneck_flag": true,
+    "hourly_cases_lost": 98
+  },
+  {
+    "station_id": "STN-AUS-PAL-04",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "line_id": "LINE-ASEPTIC-A1",
+    "takt_time_sec": 42.0,
+    "actual_cycle_sec": 31.5,
+    "operators_assigned": 3,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 0
+  },
+  {
+    "station_id": "STN-STU-WELD-01",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "line_id": "LINE-LASER-B2",
+    "takt_time_sec": 65.0,
+    "actual_cycle_sec": 74.2,
+    "operators_assigned": 2,
+    "bottleneck_flag": true,
+    "hourly_cases_lost": 44
+  },
+  {
+    "station_id": "STN-STU-TEST-02",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "line_id": "LINE-LASER-B2",
+    "takt_time_sec": 65.0,
+    "actual_cycle_sec": 58.0,
+    "operators_assigned": 3,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 0
+  },
+  {
+    "station_id": "STN-BLR-SMT-01",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "line_id": "LINE-IOT-C1",
+    "takt_time_sec": 36.0,
+    "actual_cycle_sec": 43.5,
+    "operators_assigned": 2,
+    "bottleneck_flag": true,
+    "hourly_cases_lost": 112
+  },
+  {
+    "station_id": "STN-BLR-BOX-02",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "line_id": "LINE-IOT-C1",
+    "takt_time_sec": 36.0,
+    "actual_cycle_sec": 29.0,
+    "operators_assigned": 3,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 0
+  }
+]

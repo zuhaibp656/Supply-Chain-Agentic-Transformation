@@ -1,0 +1,66 @@
+[
+  {
+    "deviation_id": "DEV-QMS-401",
+    "batch_id": "BATCH-XYZ-AUST-8962",
+    "severity": "CRITICAL_CLASS_I",
+    "root_cause": "Steam control valve PCV-14 pressure dip (-3.6C under CCP) + pH 4.68 OOS",
+    "capa_required": true,
+    "lot_value_at_risk_usd": 89280.0
+  },
+  {
+    "deviation_id": "DEV-QMS-402",
+    "batch_id": "BATCH-XYZ-STUT-949",
+    "severity": "MINOR_ADMIN",
+    "root_cause": "Line supervisor 21 CFR Part 11 secondary e-signature pending on filter integrity step",
+    "capa_required": false,
+    "lot_value_at_risk_usd": 320000.0
+  },
+  {
+    "deviation_id": "DEV-NONE-01",
+    "batch_id": "BATCH-XYZ-AUST-8841",
+    "severity": "NONE",
+    "root_cause": "Zero CCP or LIMS exceptions",
+    "capa_required": false,
+    "lot_value_at_risk_usd": 0.0
+  },
+  {
+    "deviation_id": "DEV-NONE-02",
+    "batch_id": "BATCH-XYZ-AUST-8955",
+    "severity": "NONE",
+    "root_cause": "Zero CCP or LIMS exceptions",
+    "capa_required": false,
+    "lot_value_at_risk_usd": 0.0
+  },
+  {
+    "deviation_id": "DEV-NONE-03",
+    "batch_id": "BATCH-XYZ-STUT-942",
+    "severity": "NONE",
+    "root_cause": "Zero CCP or LIMS exceptions",
+    "capa_required": false,
+    "lot_value_at_risk_usd": 0.0
+  },
+  {
+    "deviation_id": "DEV-NONE-04",
+    "batch_id": "BATCH-XYZ-DAL-410",
+    "severity": "NONE",
+    "root_cause": "Zero CCP or LIMS exceptions",
+    "capa_required": false,
+    "lot_value_at_risk_usd": 0.0
+  },
+  {
+    "deviation_id": "DEV-NONE-05",
+    "batch_id": "BATCH-XYZ-PUNE-312",
+    "severity": "NONE",
+    "root_cause": "Zero CCP or LIMS exceptions",
+    "capa_required": false,
+    "lot_value_at_risk_usd": 0.0
+  },
+  {
+    "deviation_id": "DEV-NONE-06",
+    "batch_id": "BATCH-XYZ-AUST-8970",
+    "severity": "NONE",
+    "root_cause": "Zero CCP or LIMS exceptions",
+    "capa_required": false,
+    "lot_value_at_risk_usd": 0.0
+  }
+]

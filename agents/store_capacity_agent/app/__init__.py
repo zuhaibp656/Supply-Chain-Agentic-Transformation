@@ -1,4 +1,2 @@
-"""[05 · Logistics | Store Replenishment] Store Capacity Agent — Google ADK Package."""
-from .agent import StoreCapacityAgentAgent, root_agent
-
-__all__ = ["StoreCapacityAgentAgent", "root_agent"]
+"""ADK package for [05 · Deliver | Store Replenishment] Store Backroom Capacity Throttler."""
+from .agent import root_agent, StoreCapacityAgentAgent, StoreCapacityAgentAdkApp

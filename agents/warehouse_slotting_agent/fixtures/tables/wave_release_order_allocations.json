@@ -24,5 +24,83 @@
     "wave_congestion_score": 0.22,
     "recommended_max_pickers": 14,
     "status": "OPTIMAL_FLOW"
+  },
+  {
+    "wave_id": "WAVE-20261022-AM-16",
+    "dc_id": "PLANT-XYZ-BENGALURU",
+    "zone_id": "ZONE-BULK-MEZZANINE",
+    "allocated_orders_count": 562,
+    "total_pick_lines": 1947,
+    "active_pickers_count": 14,
+    "target_pick_rate_lines_hr": 99,
+    "actual_pick_rate_lines_hr": 99,
+    "wave_congestion_score": 0.99,
+    "recommended_max_pickers": 8,
+    "status": "ZONE_SATURATED_THROTTLING_RECOMMENDED"
+  },
+  {
+    "wave_id": "WAVE-20261022-AM-24",
+    "dc_id": "CMO-XYZ-DALLAS",
+    "zone_id": "ZONE-GOLDEN-FLOW-RACK",
+    "allocated_orders_count": 663,
+    "total_pick_lines": 2666,
+    "active_pickers_count": 9,
+    "target_pick_rate_lines_hr": 99,
+    "actual_pick_rate_lines_hr": 99,
+    "wave_congestion_score": 0.202,
+    "recommended_max_pickers": 12,
+    "status": "OPTIMAL_FLOW"
+  },
+  {
+    "wave_id": "WAVE-20261022-AM-30",
+    "dc_id": "RDC-XYZ-CHICAGO",
+    "zone_id": "ZONE-BULK-MEZZANINE",
+    "allocated_orders_count": 536,
+    "total_pick_lines": 2166,
+    "active_pickers_count": 15,
+    "target_pick_rate_lines_hr": 99,
+    "actual_pick_rate_lines_hr": 99,
+    "wave_congestion_score": 0.773,
+    "recommended_max_pickers": 12,
+    "status": "ZONE_SATURATED_THROTTLING_RECOMMENDED"
+  },
+  {
+    "wave_id": "WAVE-20261022-AM-38",
+    "dc_id": "FDC-XYZ-DALLAS",
+    "zone_id": "ZONE-GOLDEN-FLOW-RACK",
+    "allocated_orders_count": 515,
+    "total_pick_lines": 3689,
+    "active_pickers_count": 15,
+    "target_pick_rate_lines_hr": 99,
+    "actual_pick_rate_lines_hr": 99,
+    "wave_congestion_score": 0.172,
+    "recommended_max_pickers": 16,
+    "status": "OPTIMAL_FLOW"
+  },
+  {
+    "wave_id": "WAVE-20261022-AM-44",
+    "dc_id": "FDC-XYZ-ATLANTA",
+    "zone_id": "ZONE-BULK-MEZZANINE",
+    "allocated_orders_count": 414,
+    "total_pick_lines": 2166,
+    "active_pickers_count": 20,
+    "target_pick_rate_lines_hr": 99,
+    "actual_pick_rate_lines_hr": 99,
+    "wave_congestion_score": 0.773,
+    "recommended_max_pickers": 11,
+    "status": "ZONE_SATURATED_THROTTLING_RECOMMENDED"
+  },
+  {
+    "wave_id": "WAVE-20261022-AM-52",
+    "dc_id": "RDC-XYZ-FRANKFURT",
+    "zone_id": "ZONE-GOLDEN-FLOW-RACK",
+    "allocated_orders_count": 570,
+    "total_pick_lines": 3503,
+    "active_pickers_count": 13,
+    "target_pick_rate_lines_hr": 99,
+    "actual_pick_rate_lines_hr": 99,
+    "wave_congestion_score": 0.183,
+    "recommended_max_pickers": 16,
+    "status": "OPTIMAL_FLOW"
   }
 ]

@@ -8,5 +8,75 @@
     "optimal_split_cost_usd": 12975.0,
     "net_savings_vs_air_usd": 93225.0,
     "zero_stockout_guaranteed": true
+  },
+  {
+    "split_plan_id": "SPLIT-VN-RTM-09",
+    "po_id": "PO-FAC-VN-88218",
+    "base_ocean_units": 21250,
+    "expedite_sea_air_units": 2580,
+    "panic_full_air_cost_usd": 120006.0,
+    "optimal_split_cost_usd": 15440.25,
+    "net_savings_vs_air_usd": 99750.75,
+    "zero_stockout_guaranteed": true
+  },
+  {
+    "split_plan_id": "SPLIT-VN-RTM-16",
+    "po_id": "PO-FAC-VN-88225",
+    "base_ocean_units": 15640,
+    "expedite_sea_air_units": 3210,
+    "panic_full_air_cost_usd": 126378.0,
+    "optimal_split_cost_usd": 10769.25,
+    "net_savings_vs_air_usd": 99750.75,
+    "zero_stockout_guaranteed": true
+  },
+  {
+    "split_plan_id": "SPLIT-VN-RTM-23",
+    "po_id": "PO-FAC-VN-88232",
+    "base_ocean_units": 19210,
+    "expedite_sea_air_units": 2490,
+    "panic_full_air_cost_usd": 97704.0,
+    "optimal_split_cost_usd": 13883.25,
+    "net_savings_vs_air_usd": 77376.75,
+    "zero_stockout_guaranteed": false
+  },
+  {
+    "split_plan_id": "SPLIT-VN-RTM-30",
+    "po_id": "PO-FAC-VN-88239",
+    "base_ocean_units": 15640,
+    "expedite_sea_air_units": 2490,
+    "panic_full_air_cost_usd": 126378.0,
+    "optimal_split_cost_usd": 13883.25,
+    "net_savings_vs_air_usd": 99750.75,
+    "zero_stockout_guaranteed": true
+  },
+  {
+    "split_plan_id": "SPLIT-VN-RTM-37",
+    "po_id": "PO-FAC-VN-88246",
+    "base_ocean_units": 14110,
+    "expedite_sea_air_units": 2760,
+    "panic_full_air_cost_usd": 113634.0,
+    "optimal_split_cost_usd": 13883.25,
+    "net_savings_vs_air_usd": 80173.5,
+    "zero_stockout_guaranteed": true
+  },
+  {
+    "split_plan_id": "SPLIT-VN-RTM-44",
+    "po_id": "PO-FAC-VN-88253",
+    "base_ocean_units": 21250,
+    "expedite_sea_air_units": 3210,
+    "panic_full_air_cost_usd": 113634.0,
+    "optimal_split_cost_usd": 11937.0,
+    "net_savings_vs_air_usd": 72715.5,
+    "zero_stockout_guaranteed": false
+  },
+  {
+    "split_plan_id": "SPLIT-VN-RTM-51",
+    "po_id": "PO-FAC-VN-88260",
+    "base_ocean_units": 14620,
+    "expedite_sea_air_units": 3210,
+    "panic_full_air_cost_usd": 97704.0,
+    "optimal_split_cost_usd": 11158.5,
+    "net_savings_vs_air_usd": 77376.75,
+    "zero_stockout_guaranteed": true
   }
 ]

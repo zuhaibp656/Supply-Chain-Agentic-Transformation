@@ -1,0 +1,74 @@
+[
+  {
+    "lane_code": "AUS-CHI-FTL",
+    "carrier_id": "CAR-JBHT-FTL",
+    "pcmiler_contract_miles": 1162,
+    "contract_rate_mile_usd": 2.42,
+    "doe_verified_fsc_pct": 18.5,
+    "free_detention_hrs": 2.0,
+    "detention_hr_usd": 75.0
+  },
+  {
+    "lane_code": "AUS-DAL-REEF",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "pcmiler_contract_miles": 198,
+    "contract_rate_mile_usd": 3.18,
+    "doe_verified_fsc_pct": 21.0,
+    "free_detention_hrs": 2.0,
+    "detention_hr_usd": 95.0
+  },
+  {
+    "lane_code": "CHI-ATL-FTL",
+    "carrier_id": "CAR-JBHT-FTL",
+    "pcmiler_contract_miles": 718,
+    "contract_rate_mile_usd": 2.42,
+    "doe_verified_fsc_pct": 18.5,
+    "free_detention_hrs": 2.0,
+    "detention_hr_usd": 75.0
+  },
+  {
+    "lane_code": "DAL-ATL-LTL",
+    "carrier_id": "CAR-XPO-LTL",
+    "pcmiler_contract_miles": 792,
+    "contract_rate_mile_usd": 1.65,
+    "doe_verified_fsc_pct": 22.4,
+    "free_detention_hrs": 1.5,
+    "detention_hr_usd": 85.0
+  },
+  {
+    "lane_code": "STU-FRA-REEF",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "pcmiler_contract_miles": 128,
+    "contract_rate_mile_usd": 3.18,
+    "doe_verified_fsc_pct": 21.0,
+    "free_detention_hrs": 2.0,
+    "detention_hr_usd": 95.0
+  },
+  {
+    "lane_code": "AUS-CHI-IMDL",
+    "carrier_id": "CAR-BNSF-RAIL",
+    "pcmiler_contract_miles": 1160,
+    "contract_rate_mile_usd": 1.34,
+    "doe_verified_fsc_pct": 14.0,
+    "free_detention_hrs": 24.0,
+    "detention_hr_usd": 45.0
+  },
+  {
+    "lane_code": "FRA-ORD-ULD",
+    "carrier_id": "CAR-LH-AIRCARGO",
+    "pcmiler_contract_miles": 4330,
+    "contract_rate_mile_usd": 3.2,
+    "doe_verified_fsc_pct": 26.0,
+    "free_detention_hrs": 6.0,
+    "detention_hr_usd": 120.0
+  },
+  {
+    "lane_code": "CHI-DET-LTL",
+    "carrier_id": "CAR-XPO-LTL",
+    "pcmiler_contract_miles": 284,
+    "contract_rate_mile_usd": 1.65,
+    "doe_verified_fsc_pct": 22.4,
+    "free_detention_hrs": 1.5,
+    "detention_hr_usd": 85.0
+  }
+]

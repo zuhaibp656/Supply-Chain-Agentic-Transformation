@@ -7,5 +7,68 @@
     "rescue_option": "PRIORITY_DOCK_RELEASE_AND_TEAM_DRIVER",
     "rescue_cost_usd": 650.0,
     "net_penalty_saved_usd": 11950.0
+  },
+  {
+    "alert_id": "OTIF-ALT-889",
+    "order_id": "SO-WMT-20261022-889",
+    "breach_probability": 0.671,
+    "root_cause": "PRIMARY_DC_WAVE_BACKLOG_6HRS",
+    "rescue_option": "PRIORITY_DOCK_RELEASE_AND_TEAM_DRIVER",
+    "rescue_cost_usd": 559.0,
+    "net_penalty_saved_usd": 14220.5
+  },
+  {
+    "alert_id": "OTIF-ALT-896",
+    "order_id": "SO-WMT-20261022-896",
+    "breach_probability": 0.608,
+    "root_cause": "PRIMARY_DC_WAVE_BACKLOG_6HRS",
+    "rescue_option": "PRIORITY_DOCK_RELEASE_AND_TEAM_DRIVER",
+    "rescue_cost_usd": 812.5,
+    "net_penalty_saved_usd": 10277.0
+  },
+  {
+    "alert_id": "OTIF-ALT-903",
+    "order_id": "SO-WMT-20261022-903",
+    "breach_probability": 0.608,
+    "root_cause": "PRIMARY_DC_WAVE_BACKLOG_6HRS",
+    "rescue_option": "PRIORITY_DOCK_RELEASE_AND_TEAM_DRIVER",
+    "rescue_cost_usd": 507.0,
+    "net_penalty_saved_usd": 14937.5
+  },
+  {
+    "alert_id": "OTIF-ALT-910",
+    "order_id": "SO-WMT-20261022-910",
+    "breach_probability": 0.881,
+    "root_cause": "PRIMARY_DC_WAVE_BACKLOG_6HRS",
+    "rescue_option": "PRIORITY_DOCK_RELEASE_AND_TEAM_DRIVER",
+    "rescue_cost_usd": 507.0,
+    "net_penalty_saved_usd": 9918.5
+  },
+  {
+    "alert_id": "OTIF-ALT-917",
+    "order_id": "SO-WMT-20261022-917",
+    "breach_probability": 0.975,
+    "root_cause": "PRIMARY_DC_WAVE_BACKLOG_6HRS",
+    "rescue_option": "PRIORITY_DOCK_RELEASE_AND_TEAM_DRIVER",
+    "rescue_cost_usd": 507.0,
+    "net_penalty_saved_usd": 14220.5
+  },
+  {
+    "alert_id": "OTIF-ALT-924",
+    "order_id": "SO-WMT-20261022-924",
+    "breach_probability": 0.671,
+    "root_cause": "PRIMARY_DC_WAVE_BACKLOG_6HRS",
+    "rescue_option": "PRIORITY_DOCK_RELEASE_AND_TEAM_DRIVER",
+    "rescue_cost_usd": 734.5,
+    "net_penalty_saved_usd": 10994.0
+  },
+  {
+    "alert_id": "OTIF-ALT-931",
+    "order_id": "SO-WMT-20261022-931",
+    "breach_probability": 0.647,
+    "root_cause": "PRIMARY_DC_WAVE_BACKLOG_6HRS",
+    "rescue_option": "PRIORITY_DOCK_RELEASE_AND_TEAM_DRIVER",
+    "rescue_cost_usd": 812.5,
+    "net_penalty_saved_usd": 14937.5
   }
 ]

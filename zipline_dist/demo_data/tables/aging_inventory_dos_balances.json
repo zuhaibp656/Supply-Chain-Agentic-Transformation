@@ -1,0 +1,82 @@
+[
+  {
+    "lot_id": "LOT-SLOB-901",
+    "sku_id": "SKU-XYZ-204",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "on_hand_cases": 6400,
+    "daily_sell_through_cases": 28.0,
+    "days_of_supply_dos": 228.6,
+    "remaining_shelf_life_days": 74,
+    "slob_tier": "CRITICAL_EXPIRY_TRAP"
+  },
+  {
+    "lot_id": "LOT-SLOB-902",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "on_hand_cases": 5200,
+    "daily_sell_through_cases": 24.0,
+    "days_of_supply_dos": 216.7,
+    "remaining_shelf_life_days": 88,
+    "slob_tier": "CRITICAL_EXPIRY_TRAP"
+  },
+  {
+    "lot_id": "LOT-SLOB-903",
+    "sku_id": "SKU-XYZ-625",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "on_hand_cases": 1850,
+    "daily_sell_through_cases": 6.5,
+    "days_of_supply_dos": 284.6,
+    "remaining_shelf_life_days": 390,
+    "slob_tier": "EXCESS_CAPITAL_DRAG"
+  },
+  {
+    "lot_id": "LOT-SLOB-904",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "on_hand_cases": 7800,
+    "daily_sell_through_cases": 45.0,
+    "days_of_supply_dos": 173.3,
+    "remaining_shelf_life_days": 68,
+    "slob_tier": "CRITICAL_EXPIRY_TRAP"
+  },
+  {
+    "lot_id": "LOT-SLOB-905",
+    "sku_id": "SKU-XYZ-309",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "on_hand_cases": 410,
+    "daily_sell_through_cases": 1.4,
+    "days_of_supply_dos": 292.9,
+    "remaining_shelf_life_days": 920,
+    "slob_tier": "EXCESS_CAPITAL_DRAG"
+  },
+  {
+    "lot_id": "LOT-SLOB-906",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "on_hand_cases": 3900,
+    "daily_sell_through_cases": 62.0,
+    "days_of_supply_dos": 62.9,
+    "remaining_shelf_life_days": 22,
+    "slob_tier": "CRITICAL_EXPIRY_TRAP"
+  },
+  {
+    "lot_id": "LOT-SLOB-907",
+    "sku_id": "SKU-XYZ-412",
+    "facility_id": "PLANT-XYZ-BENGALURU",
+    "on_hand_cases": 680,
+    "daily_sell_through_cases": 3.0,
+    "days_of_supply_dos": 226.7,
+    "remaining_shelf_life_days": 780,
+    "slob_tier": "SLOW_MOVING_WATCH"
+  },
+  {
+    "lot_id": "LOT-SLOB-908",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "on_hand_cases": 2400,
+    "daily_sell_through_cases": 52.0,
+    "days_of_supply_dos": 46.2,
+    "remaining_shelf_life_days": 14,
+    "slob_tier": "CRITICAL_EXPIRY_TRAP"
+  }
+]

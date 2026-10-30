@@ -34,5 +34,65 @@
     "run_rate_liters_per_hour": 7500.0,
     "production_duration_hours": 5.0,
     "sap_ppds_status": "RELEASED_UNSCHEDULED"
+  },
+  {
+    "order_id": "ORD-PROD-202610-793",
+    "material_id": "SKU-BEV-OATMILK-1L",
+    "material_description": "Organic Oat Milk Original 1L Tetra Brik",
+    "product_family": "BEVERAGE_OAT_BASE",
+    "allergen_group": "NON_ALLERGENIC",
+    "order_quantity_liters": 48150,
+    "due_datetime": "2026-10-23T18:00:00Z",
+    "run_rate_liters_per_hour": 8475.0,
+    "production_duration_hours": 4.98,
+    "sap_ppds_status": "RELEASED_UNSCHEDULED"
+  },
+  {
+    "order_id": "ORD-PROD-202610-801",
+    "material_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "material_description": "Almond Milk Vanilla 1L Tetra Brik",
+    "product_family": "BEVERAGE_NUT_BASE",
+    "allergen_group": "TREE_NUT_ALLERGEN",
+    "order_quantity_liters": 35700,
+    "due_datetime": "2026-10-24T06:00:00Z",
+    "run_rate_liters_per_hour": 8925.0,
+    "production_duration_hours": 3.32,
+    "sap_ppds_status": "RELEASED_UNSCHEDULED"
+  },
+  {
+    "order_id": "ORD-PROD-202610-809",
+    "material_id": "SKU-SNACK-PROTEIN-BAR",
+    "material_description": "Oat Milk Dark Chocolate 1L Tetra Brik",
+    "product_family": "BEVERAGE_OAT_BASE",
+    "allergen_group": "NON_ALLERGENIC_DARK_COLOR",
+    "order_quantity_liters": 46875,
+    "due_datetime": "2026-10-24T14:00:00Z",
+    "run_rate_liters_per_hour": 8475.0,
+    "production_duration_hours": 5.65,
+    "sap_ppds_status": "RELEASED_UNSCHEDULED"
+  },
+  {
+    "order_id": "ORD-PROD-202610-814",
+    "material_id": "SKU-XYZ-309",
+    "material_description": "Organic Oat Milk Original 1L Tetra Brik",
+    "product_family": "BEVERAGE_OAT_BASE",
+    "allergen_group": "NON_ALLERGENIC",
+    "order_quantity_liters": 56250,
+    "due_datetime": "2026-10-23T18:00:00Z",
+    "run_rate_liters_per_hour": 6900.0,
+    "production_duration_hours": 4.68,
+    "sap_ppds_status": "RELEASED_UNSCHEDULED"
+  },
+  {
+    "order_id": "ORD-PROD-202610-822",
+    "material_id": "SKU-XYZ-412",
+    "material_description": "Almond Milk Vanilla 1L Tetra Brik",
+    "product_family": "BEVERAGE_NUT_BASE",
+    "allergen_group": "TREE_NUT_ALLERGEN",
+    "order_quantity_liters": 23400,
+    "due_datetime": "2026-10-24T06:00:00Z",
+    "run_rate_liters_per_hour": 8475.0,
+    "production_duration_hours": 4.28,
+    "sap_ppds_status": "RELEASED_UNSCHEDULED"
   }
 ]

@@ -1,19 +1,25 @@
-[
-  {
-    "scenario_id": "osd_freight_claims_agent_golden_01",
-    "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt",
-    "agent_name": "[06 \u00b7 Returns & ESG | Returns & Claims Mgmt] OS&D Freight Claims",
-    "prompt": "Run OS&D Freight Claims analysis for FAC-PLANT-US-AUS01 and SKU-SEMI-9900-X1.",
-    "expected_tools": [
-      "query_osd_freight_claims_agent_telemetry_feed",
-      "query_osd_freight_claims_agent_constraint_matrix",
-      "action_commit_osd_freight_claims_agent_plan"
-    ],
-    "expected_outcome": "Resolves carrier claims in <72 hours",
-    "eval_models": {
-      "fast_execution_model": "gemini-3.8-flash",
-      "deep_reasoning_and_judge_model": "gemini-4-argon (or gemini-3.1-pro subject to availability)",
-      "orchestrator_routing": "Agent Orchestrator dynamically decides whether to route the query to Gemini 3.8 Flash (gemini-3.8-flash) or escalate to Gemini 3.1 Pro / 4 Argon (gemini-3.1-pro / gemini-4-argon, subject to availability)."
+{
+  "agent_id": "osd_freight_claims_agent",
+  "organization_id": "XYZ-CORP-01",
+  "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt",
+  "persona": "Claims & Dispute Analyst",
+  "eval_judge_model": "gemini-4-argon (fallback: gemini-3.1-pro)",
+  "scenarios": [
+    {
+      "id": "osd_freight_claims_agent_analytical_audit",
+      "prompt": "Run analyze_carmack_liability_and_recovery across XYZ-CORP-01 records and render a visual comparison chart.",
+      "expected_tools": [
+        "query_ebol_seal_manifests",
+        "analyze_carmack_liability_and_recovery",
+        "render_visual_chart"
+      ]
+    },
+    {
+      "id": "osd_freight_claims_agent_persona_draft_and_gate",
+      "prompt": "Draft the 49 U.S.C. \u00a7 14706 Carmack Amendment OS&D Carrier Claim Packet for leadership review without committing mutations until confirmed.",
+      "expected_tools": [
+        "draft_carmack_osd_freight_claim_packet"
+      ]
     }
-  }
-]
+  ]
+}

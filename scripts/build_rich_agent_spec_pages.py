@@ -53,7 +53,7 @@ def parse_agent_files(agent_id: str) -> dict:
             for node in tree.body:
                 if isinstance(node, ast.FunctionDef):
                     fn_name = node.name
-                    if fn_name.startswith("_"):
+                    if fn_name.startswith("_") or fn_name in ("get_latest_chart_spec", "get_native_chart_spec"):
                         continue
                     doc = ast.get_docstring(node) or ""
                     args = [a.arg for a in node.args.args if a.arg not in ("self", "limit")]

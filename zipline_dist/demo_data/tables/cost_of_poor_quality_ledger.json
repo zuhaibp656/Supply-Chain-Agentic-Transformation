@@ -24,5 +24,83 @@
     "recovery_status": "RECOVERED_DEBIT_POSTED",
     "sap_debit_memo_number": "SAP-DM-91002341",
     "accounting_cost_center": "CC-MFG-AUSTIN-SMT-40"
+  },
+  {
+    "copq_id": "COPQ-202610-8856",
+    "ticket_id": "NCR-202610-0929",
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "supplier_name": "Kyocera Precision Ceramics",
+    "scrap_material_cost_usd": 57062.5,
+    "sorting_inspection_labor_usd": 7224.0,
+    "production_line_downtime_cost_usd": 40125.0,
+    "total_copq_amount_usd": 129554.5,
+    "recovery_status": "PENDING_DEBIT_ISSUANCE",
+    "sap_debit_memo_number": "",
+    "accounting_cost_center": "CC-MFG-AUSTIN-SMT-40"
+  },
+  {
+    "copq_id": "COPQ-202609-7741",
+    "ticket_id": "NCR-202609-0842",
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "supplier_name": "Murata Manufacturing Co.",
+    "scrap_material_cost_usd": 1412.5,
+    "sorting_inspection_labor_usd": 598.0,
+    "production_line_downtime_cost_usd": 0.0,
+    "total_copq_amount_usd": 2375.0,
+    "recovery_status": "RECOVERED_DEBIT_POSTED",
+    "sap_debit_memo_number": "SAP-DM-91002341",
+    "accounting_cost_center": "CC-MFG-AUSTIN-SMT-40"
+  },
+  {
+    "copq_id": "COPQ-202610-8870",
+    "ticket_id": "NCR-202610-0943",
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "supplier_name": "Kyocera Precision Ceramics",
+    "scrap_material_cost_usd": 59125.0,
+    "sorting_inspection_labor_usd": 9492.0,
+    "production_line_downtime_cost_usd": 40125.0,
+    "total_copq_amount_usd": 143312.5,
+    "recovery_status": "PENDING_DEBIT_ISSUANCE",
+    "sap_debit_memo_number": "",
+    "accounting_cost_center": "CC-MFG-AUSTIN-SMT-40"
+  },
+  {
+    "copq_id": "COPQ-202609-7755",
+    "ticket_id": "NCR-202609-0856",
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "supplier_name": "Murata Manufacturing Co.",
+    "scrap_material_cost_usd": 1075.0,
+    "sorting_inspection_labor_usd": 812.5,
+    "production_line_downtime_cost_usd": 2.5,
+    "total_copq_amount_usd": 1634.0,
+    "recovery_status": "RECOVERED_DEBIT_POSTED",
+    "sap_debit_memo_number": "SAP-DM-91002341",
+    "accounting_cost_center": "CC-MFG-AUSTIN-SMT-40"
+  },
+  {
+    "copq_id": "COPQ-202610-8884",
+    "ticket_id": "NCR-202610-0957",
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "supplier_name": "Kyocera Precision Ceramics",
+    "scrap_material_cost_usd": 57062.5,
+    "sorting_inspection_labor_usd": 10500.0,
+    "production_line_downtime_cost_usd": 29250.0,
+    "total_copq_amount_usd": 122675.5,
+    "recovery_status": "PENDING_DEBIT_ISSUANCE",
+    "sap_debit_memo_number": "",
+    "accounting_cost_center": "CC-MFG-AUSTIN-SMT-40"
+  },
+  {
+    "copq_id": "COPQ-202609-7769",
+    "ticket_id": "NCR-202609-0870",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "supplier_name": "Murata Manufacturing Co.",
+    "scrap_material_cost_usd": 975.0,
+    "sorting_inspection_labor_usd": 539.5,
+    "production_line_downtime_cost_usd": 1.25,
+    "total_copq_amount_usd": 1634.0,
+    "recovery_status": "RECOVERED_DEBIT_POSTED",
+    "sap_debit_memo_number": "SAP-DM-91002341",
+    "accounting_cost_center": "CC-MFG-AUSTIN-SMT-40"
   }
 ]

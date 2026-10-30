@@ -6,5 +6,61 @@
     "nearest_cold_crossdock": "DES_MOINES_COLD_HUB_04",
     "distance_to_hub_km": 24.5,
     "recommended_action": "TRANS_LOAD_TO_BACKUP_REEFER"
+  },
+  {
+    "alert_id": "THRM-ALT-8849",
+    "shipment_id": "SHP-REEF-8849",
+    "cargo_value_at_risk_usd": 176120.0,
+    "nearest_cold_crossdock": "DES_MOINES_COLD_HUB_04",
+    "distance_to_hub_km": 20.33,
+    "recommended_action": "TRANS_LOAD_TO_BACKUP_REEFER"
+  },
+  {
+    "alert_id": "THRM-ALT-8856",
+    "shipment_id": "SHP-REEF-8856",
+    "cargo_value_at_risk_usd": 122840.0,
+    "nearest_cold_crossdock": "DES_MOINES_COLD_HUB_04",
+    "distance_to_hub_km": 29.15,
+    "recommended_action": "TRANS_LOAD_TO_BACKUP_REEFER"
+  },
+  {
+    "alert_id": "THRM-ALT-8863",
+    "shipment_id": "SHP-REEF-8863",
+    "cargo_value_at_risk_usd": 127280.0,
+    "nearest_cold_crossdock": "DES_MOINES_COLD_HUB_04",
+    "distance_to_hub_km": 29.15,
+    "recommended_action": "TRANS_LOAD_TO_BACKUP_REEFER"
+  },
+  {
+    "alert_id": "THRM-ALT-8870",
+    "shipment_id": "SHP-REEF-8870",
+    "cargo_value_at_risk_usd": 127280.0,
+    "nearest_cold_crossdock": "DES_MOINES_COLD_HUB_04",
+    "distance_to_hub_km": 22.54,
+    "recommended_action": "TRANS_LOAD_TO_BACKUP_REEFER"
+  },
+  {
+    "alert_id": "THRM-ALT-8877",
+    "shipment_id": "SHP-REEF-8877",
+    "cargo_value_at_risk_usd": 136160.0,
+    "nearest_cold_crossdock": "DES_MOINES_COLD_HUB_04",
+    "distance_to_hub_km": 26.21,
+    "recommended_action": "TRANS_LOAD_TO_BACKUP_REEFER"
+  },
+  {
+    "alert_id": "THRM-ALT-8884",
+    "shipment_id": "SHP-REEF-8884",
+    "cargo_value_at_risk_usd": 127280.0,
+    "nearest_cold_crossdock": "DES_MOINES_COLD_HUB_04",
+    "distance_to_hub_km": 30.62,
+    "recommended_action": "TRANS_LOAD_TO_BACKUP_REEFER"
+  },
+  {
+    "alert_id": "THRM-ALT-8891",
+    "shipment_id": "SHP-REEF-8891",
+    "cargo_value_at_risk_usd": 136160.0,
+    "nearest_cold_crossdock": "DES_MOINES_COLD_HUB_04",
+    "distance_to_hub_km": 21.07,
+    "recommended_action": "TRANS_LOAD_TO_BACKUP_REEFER"
   }
 ]

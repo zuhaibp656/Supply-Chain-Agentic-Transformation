@@ -37,5 +37,70 @@
     "net_incremental_units": 24000,
     "net_incremental_margin_usd": 69900.0,
     "double_ml_confidence_pvalue": 0.004
+  },
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ-R031C5",
+    "base_price_usd": 2.33,
+    "discounted_price_usd": 1.93,
+    "price_elasticity": -2.92,
+    "baseline_units": 128800,
+    "gross_lift_units": 106250,
+    "cannibalized_units": 20280,
+    "post_promo_dip_units": 9130,
+    "net_incremental_units": 51360,
+    "net_incremental_margin_usd": 64740.0,
+    "double_ml_confidence_pvalue": 0.03
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR-R04683",
+    "base_price_usd": 3.0,
+    "discounted_price_usd": 2.4,
+    "price_elasticity": -1.57,
+    "baseline_units": 85600,
+    "gross_lift_units": 32760,
+    "cannibalized_units": 7820,
+    "post_promo_dip_units": 5625,
+    "net_incremental_units": 24070,
+    "net_incremental_margin_usd": 77122.5,
+    "double_ml_confidence_pvalue": 0.03
+  },
+  {
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML-R05A95",
+    "base_price_usd": 3.43,
+    "discounted_price_usd": 3.83,
+    "price_elasticity": -1.79,
+    "baseline_units": 55900,
+    "gross_lift_units": 25730,
+    "cannibalized_units": 3612,
+    "post_promo_dip_units": 2324,
+    "net_incremental_units": 22080,
+    "net_incremental_margin_usd": 78987.0,
+    "double_ml_confidence_pvalue": 0.03
+  },
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ-R06281",
+    "base_price_usd": 3.56,
+    "discounted_price_usd": 1.75,
+    "price_elasticity": -1.91,
+    "baseline_units": 128800,
+    "gross_lift_units": 73100,
+    "cannibalized_units": 23920,
+    "post_promo_dip_units": 9130,
+    "net_incremental_units": 37440,
+    "net_incremental_margin_usd": 64740.0,
+    "double_ml_confidence_pvalue": 0.03
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR-R07CD8",
+    "base_price_usd": 4.15,
+    "discounted_price_usd": 2.57,
+    "price_elasticity": -2.06,
+    "baseline_units": 73600,
+    "gross_lift_units": 49980,
+    "cannibalized_units": 7055,
+    "post_promo_dip_units": 3735,
+    "net_incremental_units": 31030,
+    "net_incremental_margin_usd": 56647.5,
+    "double_ml_confidence_pvalue": 0.03
   }
 ]

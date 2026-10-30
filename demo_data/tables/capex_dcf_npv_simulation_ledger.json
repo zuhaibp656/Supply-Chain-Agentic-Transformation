@@ -1,0 +1,82 @@
+[
+  {
+    "project_id": "CAPEX-2026-A1",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "capex_outlay_usd": 6800000,
+    "npv_5yr_usd": 4920000,
+    "irr_pct": 34.8,
+    "payback_months": 25.6,
+    "portfolio_rank": 1,
+    "approval_decision": "APPROVE_TIER_1"
+  },
+  {
+    "project_id": "CAPEX-2026-B4",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "capex_outlay_usd": 1650000,
+    "npv_5yr_usd": 2140000,
+    "irr_pct": 46.2,
+    "payback_months": 19.4,
+    "portfolio_rank": 2,
+    "approval_decision": "APPROVE_TIER_1"
+  },
+  {
+    "project_id": "CAPEX-2026-C3",
+    "plant_id": "RDC-XYZ-CHICAGO",
+    "capex_outlay_usd": 2900000,
+    "npv_5yr_usd": 2980000,
+    "irr_pct": 39.5,
+    "payback_months": 22.0,
+    "portfolio_rank": 3,
+    "approval_decision": "APPROVE_TIER_1"
+  },
+  {
+    "project_id": "CAPEX-2026-S2",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "capex_outlay_usd": 4500000,
+    "npv_5yr_usd": 3840000,
+    "irr_pct": 36.1,
+    "payback_months": 23.6,
+    "portfolio_rank": 4,
+    "approval_decision": "APPROVE_TIER_1"
+  },
+  {
+    "project_id": "CAPEX-2026-A6",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "capex_outlay_usd": 1200000,
+    "npv_5yr_usd": 1680000,
+    "irr_pct": 48.0,
+    "payback_months": 18.2,
+    "portfolio_rank": 5,
+    "approval_decision": "APPROVE_TIER_1"
+  },
+  {
+    "project_id": "CAPEX-2026-F7",
+    "plant_id": "RDC-XYZ-FRANKFURT",
+    "capex_outlay_usd": 4100000,
+    "npv_5yr_usd": 2210000,
+    "irr_pct": 27.4,
+    "payback_months": 28.6,
+    "portfolio_rank": 6,
+    "approval_decision": "STAGE_Q2"
+  },
+  {
+    "project_id": "CAPEX-2026-M5",
+    "plant_id": "PLANT-XYZ-MONTERREY",
+    "capex_outlay_usd": 3800000,
+    "npv_5yr_usd": 1590000,
+    "irr_pct": 24.1,
+    "payback_months": 30.6,
+    "portfolio_rank": 7,
+    "approval_decision": "STAGE_Q2"
+  },
+  {
+    "project_id": "CAPEX-2026-S8",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "capex_outlay_usd": 5400000,
+    "npv_5yr_usd": -1820000,
+    "irr_pct": 4.2,
+    "payback_months": 77.1,
+    "portfolio_rank": 8,
+    "approval_decision": "DEFER_BELOW_WACC"
+  }
+]

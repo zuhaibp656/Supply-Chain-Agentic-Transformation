@@ -1,0 +1,50 @@
+[
+  {
+    "channel_code": "LATERAL_DC_TRANSFER",
+    "recovery_pct_of_book": 94.0,
+    "min_shelf_life_days": 45,
+    "brand_dilution_risk": "ZERO"
+  },
+  {
+    "channel_code": "ECOMM_BOGO_PROMO_BUNDLE",
+    "recovery_pct_of_book": 78.5,
+    "min_shelf_life_days": 30,
+    "brand_dilution_risk": "LOW"
+  },
+  {
+    "channel_code": "SECONDARY_OFFPRICE_OUTLET",
+    "recovery_pct_of_book": 54.0,
+    "min_shelf_life_days": 18,
+    "brand_dilution_risk": "CONTROLLED"
+  },
+  {
+    "channel_code": "IRC_170E3_CHARITY_TAX_SHIELD",
+    "recovery_pct_of_book": 38.0,
+    "min_shelf_life_days": 7,
+    "brand_dilution_risk": "ZERO_ESG_POSITIVE"
+  },
+  {
+    "channel_code": "OEM_AFTERMARKET_SPARES",
+    "recovery_pct_of_book": 86.0,
+    "min_shelf_life_days": 180,
+    "brand_dilution_risk": "ZERO"
+  },
+  {
+    "channel_code": "B2B_DISTRIBUTOR_FLASH_PACK",
+    "recovery_pct_of_book": 71.0,
+    "min_shelf_life_days": 40,
+    "brand_dilution_risk": "LOW"
+  },
+  {
+    "channel_code": "COMPONENT_HARVEST_REWORK",
+    "recovery_pct_of_book": 68.0,
+    "min_shelf_life_days": 90,
+    "brand_dilution_risk": "ZERO"
+  },
+  {
+    "channel_code": "LANDFILL_DESTRUCTION_BASELINE",
+    "recovery_pct_of_book": -4.5,
+    "min_shelf_life_days": 0,
+    "brand_dilution_risk": "NEGATIVE_ESG"
+  }
+]

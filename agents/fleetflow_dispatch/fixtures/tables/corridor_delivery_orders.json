@@ -28,5 +28,55 @@
     "cube_m3": 29.8,
     "time_window": "12:30-15:00",
     "sla_tier": "PLATINUM"
+  },
+  {
+    "order_id": "ORD-FF-923",
+    "corridor_id": "CORR-I35-TEX-R0375D",
+    "customer_hub": "Austin Supercenter #14",
+    "stop_sequence": 1,
+    "weight_kg": 4462,
+    "cube_m3": 23.0,
+    "time_window": "06:00-08:30",
+    "sla_tier": "PLATINUM"
+  },
+  {
+    "order_id": "ORD-FF-931",
+    "corridor_id": "CORR-I35-TEX-R04050",
+    "customer_hub": "San Marcos Regional DC",
+    "stop_sequence": 2,
+    "weight_kg": 5704,
+    "cube_m3": 20.73,
+    "time_window": "09:15-11:30",
+    "sla_tier": "GOLD"
+  },
+  {
+    "order_id": "ORD-FF-939",
+    "corridor_id": "CORR-I35-TEX-R05EA8",
+    "customer_hub": "San Antonio South Depot",
+    "stop_sequence": 3,
+    "weight_kg": 6808,
+    "cube_m3": 35.46,
+    "time_window": "12:30-15:00",
+    "sla_tier": "PLATINUM"
+  },
+  {
+    "order_id": "ORD-FF-944",
+    "corridor_id": "CORR-I35-TEX-R0639D",
+    "customer_hub": "Austin Supercenter #14",
+    "stop_sequence": 1,
+    "weight_kg": 6062,
+    "cube_m3": 15.27,
+    "time_window": "06:00-08:30",
+    "sla_tier": "PLATINUM"
+  },
+  {
+    "order_id": "ORD-FF-952",
+    "corridor_id": "CORR-I35-TEX-R077D0",
+    "customer_hub": "San Marcos Regional DC",
+    "stop_sequence": 2,
+    "weight_kg": 5332,
+    "cube_m3": 18.8,
+    "time_window": "09:15-11:30",
+    "sla_tier": "GOLD"
   }
 ]

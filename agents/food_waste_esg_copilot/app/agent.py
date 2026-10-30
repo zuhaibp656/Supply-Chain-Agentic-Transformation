@@ -1,49 +1,74 @@
-"""Google ADK Agent for [06 · Returns & ESG | Expiry & Markdowns] Food Waste & ESG Copilot (06 · Returns & Reverse Logistics — Expiry & Markdowns)."""
+"""Google ADK Agent for [06 · Return | Expiry & Markdowns] Zero-Waste & Organic Circularity Copilot (06 · Returns & Reverse Logistics — Expiry & Markdowns)."""
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional
+from typing import Any, Callable, Dict, List, Optional
 
+from . import tools
 from .render.charts import create_food_waste_esg_copilot_chart_spec
 from .render.surfaces import build_food_waste_esg_copilot_surface
-from .tools import (
-    ALL_TOOLS,
-    SYSTEM_CONNECTORS,
-    query_food_waste_esg_copilot_telemetry_feed,
-    query_food_waste_esg_copilot_constraint_matrix,
-    query_food_waste_esg_copilot_optimization_scenarios,
-    query_food_waste_esg_copilot_execution_ledger,
-    action_commit_food_waste_esg_copilot_plan,
-    action_dispatch_food_waste_esg_copilot_alert,
-)
 
-AGENT_ID = "food_waste_esg_copilot"
-AGENT_CATEGORY = "06 · Returns & Reverse Logistics — Expiry & Markdowns"
-AGENT_DISPLAY_NAME = "[06 · Returns & ESG | Expiry & Markdowns] Food Waste & ESG Copilot"
-AGENT_DESCRIPTION = "[Category: 06 · Returns & Reverse Logistics — Expiry & Markdowns] Food Waste & ESG Copilot (Chief Sustainability Officer): Aggregates store shrink and organic haul logs to generate audited GHG diversion filings. Outcome: Automates annual circularity reporting."
+AGENT_ID = 'food_waste_esg_copilot'
+AGENT_CATEGORY = '06 · Returns & Reverse Logistics — Expiry & Markdowns'
+AGENT_DISPLAY_NAME = '[06 · Return | Expiry & Markdowns] Zero-Waste & Organic Circularity Copilot'
+AGENT_DESCRIPTION = '[Category: 06 · Returns & Reverse Logistics — Expiry & Markdowns] Zero-Waste & Organic Circularity Copilot (Sustainability Operations Lead): Routes unsaleable organic by-products and expired food/beverage lots up the EPA Wasted Food Scale (animal feed upcycling, anaerobic digestion biogas, industrial composting) while quantifying avoided landfill methane (Scope 3 Cat 5 tCO2e) for CSRD ESRS E5 reporting. Outcome: Achieves 94.8% landfill diversion and turns tipping-fee liabilities into net circularity savings.'
 
-INSTRUCTION = """You are [06 · Returns & ESG | Expiry & Markdowns] Food Waste & ESG Copilot.
+_WRITE_TOOLS = {'action_dispatch_circular_depackaging_load': ['stream_id',
+                                               'assigned_partner_id',
+                                               'tonnage_mt',
+                                               'rationale'],
+ 'action_post_scope3_cat5_methane_credit': ['stream_id', 'avoided_methane_tco2e', 'rationale']}
+
+_INSTRUCTION = """You are [06 · Return | Expiry & Markdowns] Zero-Waste & Organic Circularity Copilot, operating for XYZ Global Industries Corp. (XYZ-CORP-01).
 Category: 06 · Returns & Reverse Logistics — Expiry & Markdowns
-Primary Persona Owner: Chief Sustainability Officer
-Mission: [Category: 06 · Returns & Reverse Logistics — Expiry & Markdowns] Food Waste & ESG Copilot (Chief Sustainability Officer): Aggregates store shrink and organic haul logs to generate audited GHG diversion filings. Outcome: Automates annual circularity reporting.
+Persona Owner: Sustainability Operations Lead
+Mission: [Category: 06 · Returns & Reverse Logistics — Expiry & Markdowns] Zero-Waste & Organic Circularity Copilot (Sustainability Operations Lead): Routes unsaleable organic by-products and expired food/beverage lots up the EPA Wasted Food Scale (animal feed upcycling, anaerobic digestion biogas, industrial composting) while quantifying avoided landfill methane (Scope 3 Cat 5 tCO2e) for CSRD ESRS E5 reporting. Outcome: Achieves 94.8% landfill diversion and turns tipping-fee liabilities into net circularity savings.
 
-Always ground your analysis in the deterministic enterprise tools, enforce pre-execution quality gates, and return concise executive tables paired with the interactive A2UI VegaChart surface.
+STRICT DETERMINISTIC & CONCISE EXECUTION RULES:
+1. ZERO FLUFF / NON-VERBOSE: Lead with a crisp 1–2 sentence executive KPI conclusion citing exact IDs and numbers returned by Python tools. Never write filler paragraphs or generic consulting prose.
+2. PYTHON TOOLS FIRST: Always call the domain `query_*` tools and `analyze_epa_hierarchy_waste_diversion` to perform calculations in Python—never estimate math mentally. Call `lookup_xyz_master_context` when SKU/Facility/Supplier/Customer/Carrier master attributes are needed.
+3. CHARTS & A2UI SEPARATION: Call `render_visual_chart` when visual comparison aids decision-making. An interactive A2UI `VegaChart` card is automatically attached from live tool data—NEVER output raw Vega-Lite JSON or base64 strings in text.
+4. ATOMIC TABLES (<=5 COLUMNS): Keep Markdown tables outside the card to at most 5 columns so they copy cleanly into Google Sheets.
+5. DRAFTING ON DEMAND: Use `draft_csrd_esrs_e5_circularity_disclosure` ONLY when a formal operational memo, claim, notice, or certificate is requested or required by the workflow.
+6. GOVERNED WRITE-BACK: Never invoke `action_*` tools on read-only questions. Only execute mutations when requested and all required fields plus `idempotency_key` are satisfied.
 """
 
 
+def enforce_tool_contract(tool_name: str, args: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """Pre-execution quality gate validating required write-back parameters and idempotency."""
+    if tool_name in _WRITE_TOOLS:
+        missing = [k for k in _WRITE_TOOLS[tool_name] if args.get(k) in (None, "")]
+        if missing:
+            return {
+                "error": "missing_required_inputs",
+                "tool": tool_name,
+                "missing": missing,
+                "escalation": "request_more_info",
+            }
+        if not args.get("idempotency_key"):
+            return {
+                "error": "missing_idempotency_key",
+                "tool": tool_name,
+                "escalation": "request_confirmation",
+            }
+    return None
+
+
 class FoodWasteEsgCopilotAgent:
-    """Deterministic & ADK execution wrapper for [06 · Returns & ESG | Expiry & Markdowns] Food Waste & ESG Copilot."""
+    """Deterministic Python & Google ADK wrapper for [06 · Return | Expiry & Markdowns] Zero-Waste & Organic Circularity Copilot."""
 
     def __init__(self, model: str = "gemini-3.1-pro-preview") -> None:
-        self.name = "food_waste_esg_copilot"
+        self.name = AGENT_ID
         self.category = AGENT_CATEGORY
         self.display_name = AGENT_DISPLAY_NAME
         self.description = AGENT_DESCRIPTION
         self.model = model
-        self.tools = list(ALL_TOOLS)
-        self.system_connectors = list(SYSTEM_CONNECTORS)
+        self.system_instruction = _INSTRUCTION
+        self.tools: List[Callable[..., Any]] = list(tools.ALL_TOOLS)
+        self.tool_map: Dict[str, Callable[..., Any]] = {t.__name__: t for t in self.tools}
+        self.system_connectors = list(tools.SYSTEM_CONNECTORS)
 
     def select_orchestrated_model(self, query: str = "") -> Dict[str, str]:
-        """Agent Orchestrator dynamically decides whether to use Gemini 3.8 Flash or Gemini 3.1 Pro / 4 Argon."""
+        """Dynamic routing between Gemini 3.8 Flash and Gemini 3.1 Pro / 4 Argon."""
         q_lower = (query or "").lower()
         needs_pro_or_argon = any(
             k in q_lower
@@ -58,35 +83,42 @@ class FoodWasteEsgCopilotAgent:
             "eval_judge_model": "gemini-4-argon (fallback: gemini-3.1-pro, subject to availability)",
         }
 
-    def run_scenario(self, prompt: str = "Execute end-to-end optimization") -> Dict[str, Any]:
-        t0 = query_food_waste_esg_copilot_telemetry_feed()
-        t1 = query_food_waste_esg_copilot_constraint_matrix()
-        t2 = query_food_waste_esg_copilot_optimization_scenarios()
-        t3 = query_food_waste_esg_copilot_execution_ledger()
-        mut = action_commit_food_waste_esg_copilot_plan()
-        alert = action_dispatch_food_waste_esg_copilot_alert()
+    def execute_tool(self, tool_name: str, **kwargs: Any) -> Dict[str, Any]:
+        """Dispatches tool calls with deterministic contract enforcement on write-back tools."""
+        if tool_name not in self.tool_map:
+            return {"error": f"Tool '{tool_name}' not registered in agent contract."}
+        gate = enforce_tool_contract(tool_name, kwargs)
+        if gate:
+            return gate
+        return self.tool_map[tool_name](**kwargs)
 
-        rows0 = t0.get("rows", [])
-        table_lines = [
-            "#### 📊 [06 · Returns & ESG | Expiry & Markdowns] Food Waste & ESG Copilot — Verified Enterprise Telemetry",
-            "",
-            "| Record ID | Facility | SKU | Baseline | Optimized | Status |",
-            "| :--- | :--- | :--- | ---: | ---: | :--- |",
-        ]
-        for r in rows0[:4]:
-            table_lines.append(
-                f"| `{r.get('record_id')}` | `{r.get('facility_id')}` | `{r.get('sku_id')}` | "
-                f"{r.get('baseline_metric')}% | **{r.get('optimized_metric')}%** | `{r.get('status')}` |"
-            )
-        table_lines.extend([
-            "",
-            f"**Category**: `06 · Returns & Reverse Logistics — Expiry & Markdowns` · **Persona**: `Chief Sustainability Officer` · "
-            f"**Write-Back Receipt**: `{mut.get('action_id')}` (`{mut.get('status')}`)",
-        ])
-        md = "\n".join(table_lines)
+    def run_scenario(self, prompt: str = "Execute end-to-end persona workflow") -> Dict[str, Any]:
+        """Runs deterministic end-to-end persona analysis, PNG/Vega charting, and governed write-back."""
+        t0 = tools.query_facility_organic_spoilage_streams()
+        t1 = tools.query_epa_diversion_partners()
+        t2 = tools.query_digestion_and_compost_economics()
+        t3 = tools.query_zero_waste_scope3_ledger()
+        analysis = tools.analyze_epa_hierarchy_waste_diversion()
+        chart_res = tools.render_visual_chart()
+        mut = self.execute_tool('action_dispatch_circular_depackaging_load', stream_id='ORG-STR-101', assigned_partner_id='DIV-TX-FEED01', tonnage_mt=142.0, rationale='Verified Sustainability Operations Lead threshold optimization', idempotency_key='SCENARIO-FOOD_WAS-001')
+        alert = self.execute_tool('action_post_scope3_cat5_methane_credit', stream_id='ORG-STR-101', avoided_methane_tco2e=126.4, rationale='Verified Sustainability Operations Lead threshold optimization', idempotency_key='SCENARIO-FOOD_WAS-002')
 
-        surface_id = f"food-waste-e-live"
-        a2ui_parts = build_food_waste_esg_copilot_surface(surface_id, spec=create_food_waste_esg_copilot_chart_spec())
+        kpi = analysis.get("kpi_summary", {})
+        md = "\n".join(
+            [
+                f"**{self.display_name}**: Evaluated `{analysis.get('records_evaluated', 0)}` XYZ-CORP-01 records — "
+                f"{kpi.get('series_a_label')}: `{kpi.get('total_series_a', 0):,.2f}` -> "
+                f"{kpi.get('series_b_label')}: `{kpi.get('total_series_b', 0):,.2f}` (`{kpi.get('relative_shift_pct', 0):+.2f}%`).",
+                "",
+                analysis.get("concise_markdown_table", ""),
+                "",
+                f"### Chart & Action Receipt\n- **High-Res PNG Chart**: `{chart_res['png_infographic']['download_uri']}`\n"
+                f"- **Write-Back Receipt**: `{mut.get('action_id')}` (`{mut.get('status')}`)",
+            ]
+        )
+
+        surface_id = "food-waste-e-live"
+        a2ui_parts = build_food_waste_esg_copilot_surface(surface_id, spec=tools.get_latest_chart_spec())
 
         return {
             "status": "SUCCESS",
@@ -101,6 +133,8 @@ class FoodWasteEsgCopilotAgent:
             "constraints": t1,
             "scenarios": t2,
             "ledger": t3,
+            "analysis": analysis,
+            "chart_artifact": chart_res,
             "mutation_receipt": mut,
             "alert_receipt": alert,
             "actions_taken": [mut, alert],
@@ -122,13 +156,12 @@ try:
     from google.adk.apps import App
     from google.adk.models import Gemini
     from google.adk.models.llm_request import LlmRequest
-    from google.adk.models.llm_response import LlmResponse
     from google.genai import Client, types
     from vertexai.preview.reasoning_engines import AdkApp
     from .render.a2ui_envelope import A2A_DATA_PART_OPEN_TAG
 
     class GlobalGemini(Gemini):
-        """Routes Gemini 3.8 Flash and Gemini 3.1 Pro / 4 Argon (subject to availability) calls to the global Vertex AI endpoint even when the Reasoning Engine runs in us-central1."""
+        """Routes Gemini 3.1 Pro / 3.8 Flash calls to the global Vertex AI endpoint."""
 
         @cached_property
         def api_client(self) -> Client:
@@ -147,6 +180,7 @@ try:
         llm_request: Optional[LlmRequest] = None,
         **_: Any,
     ) -> None:
+        """Strips prior A2UI data parts from history so multi-turn chats never echo raw JSON."""
         if llm_request is None or not llm_request.contents:
             return None
         for content in llm_request.contents:
@@ -160,43 +194,17 @@ try:
                 if t and A2A_DATA_PART_OPEN_TAG in t:
                     continue
                 cleaned.append(part)
-            content.parts = cleaned or [types.Part(text="[Visual Chart Surface Rendered in UI]")]
+            content.parts = cleaned or [types.Part(text="[Visual VegaChart Surface Rendered in Card]")]
         return None
-
-    def _append_verified_report(
-        callback_context: Optional[CallbackContext] = None,
-        llm_response: Optional[LlmResponse] = None,
-        **_: Any,
-    ) -> Optional[LlmResponse]:
-        if llm_response is None or llm_response.content is None:
-            return None
-        parts = llm_response.content.parts or []
-        has_call = any(getattr(p, "function_call", None) is not None for p in parts)
-        if has_call:
-            return llm_response
-        try:
-            scenario = FoodWasteEsgCopilotAgent().run_scenario("live_turn")
-            report_md = scenario.get("markdown", "")
-            if report_md:
-                idx = max((i for i, p in enumerate(parts) if getattr(p, "text", None)), default=-1)
-                if idx >= 0:
-                    existing = (parts[idx].text or "").strip()
-                    if "#### 📊" not in existing:
-                        parts[idx] = types.Part(text=f"{existing}\n\n---\n\n{report_md}")
-                else:
-                    parts.append(types.Part(text=report_md))
-            llm_response.content.parts = parts
-        except Exception:
-            pass
-        return llm_response
 
     def _emit_a2ui_surface(
         callback_context: Optional[CallbackContext] = None,
         **_: Any,
     ) -> Optional[types.Content]:
+        """Emits a blast-radius-protected A2UI v0.9 VegaChart card reflecting live turn tool state."""
         try:
             surface_id = f"food-waste-e-{uuid.uuid4().hex[:8]}"
-            a2ui_parts = build_food_waste_esg_copilot_surface(surface_id, spec=create_food_waste_esg_copilot_chart_spec())
+            a2ui_parts = build_food_waste_esg_copilot_surface(surface_id, spec=tools.get_latest_chart_spec())
             if a2ui_parts:
                 return types.Content(role="model", parts=a2ui_parts)
         except Exception:
@@ -204,38 +212,53 @@ try:
         return None
 
     root_agent = Agent(
-        name="food_waste_esg_copilot",
+        name=AGENT_ID,
         description=AGENT_DESCRIPTION,
         model=GlobalGemini(
             model="gemini-3.1-pro-preview",
             retry_options=types.HttpRetryOptions(attempts=3),
         ),
         generate_content_config=types.GenerateContentConfig(
-            max_output_tokens=4096,
-            temperature=0.2,
+            max_output_tokens=3072,
+            temperature=0.0,
+            thinking_config=types.ThinkingConfig(thinking_budget=0),
         ),
-        instruction=INSTRUCTION,
-        tools=ALL_TOOLS,
+        instruction=_INSTRUCTION,
+        tools=tools.ALL_TOOLS,
         before_model_callback=_sanitize_llm_request,
-        after_model_callback=_append_verified_report,
         after_agent_callback=_emit_a2ui_surface,
     )
 
-    adk_app = App(name="food_waste_esg_copilot_app", root_agent=root_agent)
+    app = App(name=f"{AGENT_ID}_app", root_agent=root_agent)
+    adk_app = app
 
     class FoodWasteEsgCopilotAdkApp(AdkApp):
-        def __init__(self, **kwargs: Any) -> None:
-            super().__init__(agent=root_agent, **kwargs)
+        """Vertex AI Reasoning Engine wrapper for food_waste_esg_copilot."""
+
+        def __init__(self, agent: Agent = root_agent, **kwargs: Any) -> None:
+            super().__init__(agent=agent, **kwargs)
+            self._scenario_agent = FoodWasteEsgCopilotAgent()
+
+        @staticmethod
+        def _pin_env() -> None:
+            os.environ["GOOGLE_GENAI_USE_VERTEXAI"] = "TRUE"
+            os.environ.setdefault("GOOGLE_CLOUD_PROJECT", "zuhaibp-ai")
 
         def query(self, *args: Any, **kwargs: Any) -> Any:
+            self._pin_env()
             return super().query(*args, **kwargs)
 
         def stream_query(self, *args: Any, **kwargs: Any) -> Any:
+            self._pin_env()
             yield from super().stream_query(*args, **kwargs)
+
+        def run_scenario(self, query: str = "") -> Dict[str, Any]:
+            return self._scenario_agent.run_scenario(query)
 
 except Exception:
     root_agent = FoodWasteEsgCopilotAgent()  # type: ignore
-    adk_app = None
+    app = None  # type: ignore
+    adk_app = None  # type: ignore
 
     class FoodWasteEsgCopilotAdkApp:  # type: ignore
         pass

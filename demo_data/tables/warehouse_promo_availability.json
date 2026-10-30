@@ -25,5 +25,50 @@
     "buffer_safety_stock_units": 22000,
     "post_promo_stockout_risk": "SAFE_SURPLUS",
     "mitigation_recommendation": "Surplus inventory available for aggressive promo shaping."
+  },
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ-R03709",
+    "distribution_center": "DC-DALLAS-CENTRAL",
+    "available_to_promise_units": 78850,
+    "promo_surge_forecast_units": 73100,
+    "buffer_safety_stock_units": 18400,
+    "post_promo_stockout_risk": "ELEVATED_RISK",
+    "mitigation_recommendation": "Cap promo discount to 20% or bundle with high-stock SKU-BEV-ELECTROLYTE-500ML."
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR-R047DA",
+    "distribution_center": "DC-CHICAGO-MIDWEST",
+    "available_to_promise_units": 120400,
+    "promo_surge_forecast_units": 32760,
+    "buffer_safety_stock_units": 19260,
+    "post_promo_stockout_risk": "SAFE_SURPLUS",
+    "mitigation_recommendation": "Full promotional discount approved."
+  },
+  {
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML-R05101",
+    "distribution_center": "DC-ATLANTA-SOUTHEAST",
+    "available_to_promise_units": 149400,
+    "promo_surge_forecast_units": 33170,
+    "buffer_safety_stock_units": 23540,
+    "post_promo_stockout_risk": "SAFE_SURPLUS",
+    "mitigation_recommendation": "Surplus inventory available for aggressive promo shaping."
+  },
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ-R0609A",
+    "distribution_center": "DC-DALLAS-CENTRAL",
+    "available_to_promise_units": 78850,
+    "promo_surge_forecast_units": 66300,
+    "buffer_safety_stock_units": 15600,
+    "post_promo_stockout_risk": "ELEVATED_RISK",
+    "mitigation_recommendation": "Cap promo discount to 20% or bundle with high-stock SKU-BEV-ELECTROLYTE-500ML."
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR-R07345",
+    "distribution_center": "DC-CHICAGO-MIDWEST",
+    "available_to_promise_units": 116200,
+    "promo_surge_forecast_units": 49980,
+    "buffer_safety_stock_units": 15480,
+    "post_promo_stockout_risk": "SAFE_SURPLUS",
+    "mitigation_recommendation": "Full promotional discount approved."
   }
 ]

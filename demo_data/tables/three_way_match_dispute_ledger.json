@@ -1,0 +1,82 @@
+[
+  {
+    "dispute_id": "DSP-3WM-01",
+    "invoice_id": "INV-AP-90411",
+    "po_number": "PO-XYZ-880219",
+    "discrepancy_type": "QTY_SHORT_PLUS_PRICE_AND_DDP_FREIGHT",
+    "verified_payable_usd": 141192.0,
+    "debit_memo_variance_usd": 14658.0,
+    "early_pay_discount_saved_usd": 2823.84,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-02",
+    "invoice_id": "INV-AP-90412",
+    "po_number": "PO-XYZ-880142",
+    "discrepancy_type": "UNAPPROVED_UNIT_PRICE_HIKE",
+    "verified_payable_usd": 504000.0,
+    "debit_memo_variance_usd": 21600.0,
+    "early_pay_discount_saved_usd": 10080.0,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-03",
+    "invoice_id": "INV-AP-90413",
+    "po_number": "PO-XYZ-880410",
+    "discrepancy_type": "UNAUTHORIZED_DDP_FREIGHT_ADDON",
+    "verified_payable_usd": 186250.0,
+    "debit_memo_variance_usd": 2400.0,
+    "early_pay_discount_saved_usd": 3725.0,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-04",
+    "invoice_id": "INV-AP-90414",
+    "po_number": "PO-XYZ-880492",
+    "discrepancy_type": "GRN_SHORT_SHIPMENT_150_CASES",
+    "verified_payable_usd": 94770.0,
+    "debit_memo_variance_usd": 2430.0,
+    "early_pay_discount_saved_usd": 1421.55,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-05",
+    "invoice_id": "INV-AP-90415",
+    "po_number": "PO-XYZ-880355",
+    "discrepancy_type": "QM_DAMAGED_REJECT_30_EA",
+    "verified_payable_usd": 549450.0,
+    "debit_memo_variance_usd": 5550.0,
+    "early_pay_discount_saved_usd": 0.0,
+    "match_status": "HOLD_PENDING_QM_CREDIT"
+  },
+  {
+    "dispute_id": "DSP-3WM-06",
+    "invoice_id": "INV-AP-90416",
+    "po_number": "PO-XYZ-880530",
+    "discrepancy_type": "CLEAN_3WAY_EXACT_MATCH",
+    "verified_payable_usd": 320000.0,
+    "debit_memo_variance_usd": 0.0,
+    "early_pay_discount_saved_usd": 6400.0,
+    "match_status": "CLEAN_POSTED"
+  },
+  {
+    "dispute_id": "DSP-3WM-07",
+    "invoice_id": "INV-AP-90417",
+    "po_number": "PO-XYZ-880612",
+    "discrepancy_type": "QTY_SHORT_80_PLUS_PRICE_VARIANCE",
+    "verified_payable_usd": 124960.0,
+    "debit_memo_variance_usd": 12290.0,
+    "early_pay_discount_saved_usd": 0.0,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-08",
+    "invoice_id": "INV-AP-90418",
+    "po_number": "PO-XYZ-880688",
+    "discrepancy_type": "CLEAN_3WAY_EXACT_MATCH",
+    "verified_payable_usd": 91200.0,
+    "debit_memo_variance_usd": 0.0,
+    "early_pay_discount_saved_usd": 1824.0,
+    "match_status": "CLEAN_POSTED"
+  }
+]

@@ -24,5 +24,83 @@
     "assigned_spotter_truck": "SPOTTER-HOSTLER-01",
     "trailer_load_type": "OUTBOUND_EMPTY_STAGING",
     "status": "ON_SCHEDULE_HEALTHY"
+  },
+  {
+    "trailer_id": "TRL-SWIFT-7756",
+    "carrier_id": "CAR-XPO-LTL",
+    "carrier_name": "Swift Transportation",
+    "yard_id": "YARD-DALLAS-17",
+    "current_slot_id": "SLOT-STAGING-SOUTH-59",
+    "geofence_entry_timestamp": "2026-10-22T04:20:00Z",
+    "dwell_time_in_yard_minutes": 106.25,
+    "target_dock_door": "DOOR-CROSSDOCK-08",
+    "assigned_spotter_truck": "SPOTTER-HOSTLER-03",
+    "trailer_load_type": "INBOUND_FULL_LOAD",
+    "status": "AT_RISK_OF_DETENTION"
+  },
+  {
+    "trailer_id": "TRL-JB-HUNT-1226",
+    "carrier_id": "CAR-BNSF-RAIL",
+    "carrier_name": "J.B. Hunt Transport",
+    "yard_id": "YARD-DALLAS-24",
+    "current_slot_id": "SLOT-STAGING-NORTH-34",
+    "geofence_entry_timestamp": "2026-10-22T05:10:00Z",
+    "dwell_time_in_yard_minutes": 30.1,
+    "target_dock_door": "DOOR-OUTBOUND-14",
+    "assigned_spotter_truck": "SPOTTER-HOSTLER-01",
+    "trailer_load_type": "OUTBOUND_EMPTY_STAGING",
+    "status": "ON_SCHEDULE_HEALTHY"
+  },
+  {
+    "trailer_id": "TRL-SWIFT-7770",
+    "carrier_id": "CAR-MAERSK-OCEAN",
+    "carrier_name": "Swift Transportation",
+    "yard_id": "YARD-DALLAS-31",
+    "current_slot_id": "SLOT-STAGING-SOUTH-73",
+    "geofence_entry_timestamp": "2026-10-22T04:20:00Z",
+    "dwell_time_in_yard_minutes": 90.95,
+    "target_dock_door": "DOOR-CROSSDOCK-08",
+    "assigned_spotter_truck": "SPOTTER-HOSTLER-03",
+    "trailer_load_type": "INBOUND_FULL_LOAD",
+    "status": "AT_RISK_OF_DETENTION"
+  },
+  {
+    "trailer_id": "TRL-JB-HUNT-1240",
+    "carrier_id": "CAR-LH-AIRCARGO",
+    "carrier_name": "J.B. Hunt Transport",
+    "yard_id": "YARD-DALLAS-38",
+    "current_slot_id": "SLOT-STAGING-NORTH-48",
+    "geofence_entry_timestamp": "2026-10-22T05:10:00Z",
+    "dwell_time_in_yard_minutes": 43.75,
+    "target_dock_door": "DOOR-OUTBOUND-14",
+    "assigned_spotter_truck": "SPOTTER-HOSTLER-01",
+    "trailer_load_type": "OUTBOUND_EMPTY_STAGING",
+    "status": "ON_SCHEDULE_HEALTHY"
+  },
+  {
+    "trailer_id": "TRL-SWIFT-7784",
+    "carrier_id": "CAR-JBHT-FTL",
+    "carrier_name": "Swift Transportation",
+    "yard_id": "YARD-DALLAS-45",
+    "current_slot_id": "SLOT-STAGING-SOUTH-87",
+    "geofence_entry_timestamp": "2026-10-22T04:20:00Z",
+    "dwell_time_in_yard_minutes": 78.2,
+    "target_dock_door": "DOOR-CROSSDOCK-08",
+    "assigned_spotter_truck": "SPOTTER-HOSTLER-03",
+    "trailer_load_type": "INBOUND_FULL_LOAD",
+    "status": "AT_RISK_OF_DETENTION"
+  },
+  {
+    "trailer_id": "TRL-JB-HUNT-1254",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "carrier_name": "J.B. Hunt Transport",
+    "yard_id": "YARD-DALLAS-52",
+    "current_slot_id": "SLOT-STAGING-NORTH-62",
+    "geofence_entry_timestamp": "2026-10-22T05:10:00Z",
+    "dwell_time_in_yard_minutes": 30.1,
+    "target_dock_door": "DOOR-OUTBOUND-14",
+    "assigned_spotter_truck": "SPOTTER-HOSTLER-01",
+    "trailer_load_type": "OUTBOUND_EMPTY_STAGING",
+    "status": "ON_SCHEDULE_HEALTHY"
   }
 ]

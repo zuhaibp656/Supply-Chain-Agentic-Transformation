@@ -1,3 +1,9 @@
 override_id,sku_id,sales_account,planner_id,statistical_baseline_units,sales_override_units,override_lift_pct,historical_fva_pct,bias_classification,recommended_dampened_units,rationale
 OVR-SALES-202610-01,SKU-BEV-ISOTONIC-32OZ,Key Account Walmart,REP-JOHNSON-CENTRAL,262000,340000,29.8,-4.2,CHRONIC_OPTIMISM_BIAS,298000,"Sales override consistently exceeds actual sell-through by 18-24%, causing trapped DC safety stock."
 OVR-SALES-202610-02,SKU-SNACK-PROTEIN-BAR,Key Account Costco,REP-PATEL-WEST,135000,142000,5.2,2.8,ACCURATE_VALUE_ADD,142000,Commercial override aligns with confirmed regional flyer promotion.
+OVR-SALES-202610-16,SKU-BEV-ISOTONIC-32OZ,Key Account Walmart,REP-JOHNSON-CENTRAL,217460,312800,23.24,-3.28,CHRONIC_OPTIMISM_BIAS,256280,"Sales override consistently exceeds actual sell-through by 18-24%, causing trapped DC safety stock."
+OVR-SALES-202610-24,SKU-BEV-OATMILK-1L,Key Account Costco,REP-PATEL-WEST,124200,110760,4.47,3.0,ACCURATE_VALUE_ADD,160460,Commercial override aligns with confirmed regional flyer promotion.
+OVR-SALES-202610-30,SKU-DAIRY-PROBIOTIC-6PK,Key Account Walmart,REP-JOHNSON-CENTRAL,311780,404600,37.25,-4.75,CHRONIC_OPTIMISM_BIAS,372500,"Sales override consistently exceeds actual sell-through by 18-24%, causing trapped DC safety stock."
+OVR-SALES-202610-38,SKU-SNACK-PROTEIN-BAR,Key Account Costco,REP-PATEL-WEST,160650,177500,5.56,3.5,ACCURATE_VALUE_ADD,151940,Commercial override aligns with confirmed regional flyer promotion.
+OVR-SALES-202610-44,SKU-XYZ-309,Key Account Walmart,REP-JOHNSON-CENTRAL,241040,363800,23.24,-3.61,CHRONIC_OPTIMISM_BIAS,354620,"Sales override consistently exceeds actual sell-through by 18-24%, causing trapped DC safety stock."
+OVR-SALES-202610-52,SKU-XYZ-412,Key Account Costco,REP-PATEL-WEST,168750,151940,5.88,2.5,ACCURATE_VALUE_ADD,117860,Commercial override aligns with confirmed regional flyer promotion.

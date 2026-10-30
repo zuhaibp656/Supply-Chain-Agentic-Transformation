@@ -32,5 +32,107 @@
     ],
     "daily_revenue_impact_usd": 480000,
     "buffer_days_on_hand": 11.0
+  },
+  {
+    "supplier_id": "VEND-10507",
+    "supplier_name": "Taiwan Micro-Power Semiconductor Corp",
+    "tier_level": 2,
+    "parent_tier1_vendor": "VEND-8820 (Bosch Mobility Electronics)",
+    "facility_name": "Hsinchu Fab 4 Advanced Packaging",
+    "country": "Taiwan",
+    "lat": 24.696,
+    "lon": 120.908,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 1337500,
+    "buffer_days_on_hand": 5.62
+  },
+  {
+    "supplier_id": "VEND-30233",
+    "supplier_name": "Antwerp Terminal Stevedoring Co",
+    "tier_level": 1,
+    "parent_tier1_vendor": "DIRECT",
+    "facility_name": "Port of Antwerp Quay 1700",
+    "country": "Belgium",
+    "lat": 51.228,
+    "lon": 4.239,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 513600,
+    "buffer_days_on_hand": 11.77
+  },
+  {
+    "supplier_id": "VEND-10521",
+    "supplier_name": "Taiwan Micro-Power Semiconductor Corp",
+    "tier_level": 2,
+    "parent_tier1_vendor": "VEND-8820 (Bosch Mobility Electronics)",
+    "facility_name": "Hsinchu Fab 4 Advanced Packaging",
+    "country": "Taiwan",
+    "lat": 24.78,
+    "lon": 121.01,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 1075000,
+    "buffer_days_on_hand": 5.08
+  },
+  {
+    "supplier_id": "VEND-30247",
+    "supplier_name": "Antwerp Terminal Stevedoring Co",
+    "tier_level": 1,
+    "parent_tier1_vendor": "DIRECT",
+    "facility_name": "Port of Antwerp Quay 1700",
+    "country": "Belgium",
+    "lat": 51.312,
+    "lon": 4.341,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 398400,
+    "buffer_days_on_hand": 9.46
+  },
+  {
+    "supplier_id": "VEND-10535",
+    "supplier_name": "Taiwan Micro-Power Semiconductor Corp",
+    "tier_level": 2,
+    "parent_tier1_vendor": "VEND-8820 (Bosch Mobility Electronics)",
+    "facility_name": "Hsinchu Fab 4 Advanced Packaging",
+    "country": "Taiwan",
+    "lat": 24.864,
+    "lon": 121.112,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 1075000,
+    "buffer_days_on_hand": 5.35
+  },
+  {
+    "supplier_id": "VEND-30261",
+    "supplier_name": "Antwerp Terminal Stevedoring Co",
+    "tier_level": 1,
+    "parent_tier1_vendor": "DIRECT",
+    "facility_name": "Port of Antwerp Quay 1700",
+    "country": "Belgium",
+    "lat": 51.396,
+    "lon": 4.443,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 441600,
+    "buffer_days_on_hand": 9.46
   }
 ]

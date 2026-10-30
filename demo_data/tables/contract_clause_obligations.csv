@@ -1,3 +1,9 @@
 contract_id,supplier_id,supplier_name,effective_start,effective_end,clause_id,clause_title,threshold_volume_units,rebate_percentage,rebate_settlement_frequency,document_ai_extraction_confidence
 MSA-BALL-2025-09,VEND-BALL-CORP-101,Ball Metal Packaging,2025-01-01,2027-12-31,CLAUSE-REBATE-VOL-04,Annual Volume Growth Incentive Rebate,40000000,3.0,ANNUAL_CALENDAR_YEAR,0.99
 MSA-ALCOA-2025-11,VEND-ALCOA-SMELT-IS,Alcoa International Smelter,2025-01-01,2026-12-31,CLAUSE-LME-CAP-02,Commodity Escalation Ceiling Cap,10000,0.0,QUARTERLY,0.98
+MSA-BALL-2025-24,SUP-XYZ-T1-SILICONCORE,Ball Metal Packaging,2025-01-18,2027-12-18,CLAUSE-REBATE-VOL-19,Annual Volume Growth Incentive Rebate,42800000,3.57,ANNUAL_CALENDAR_YEAR,0.772
+MSA-ALCOA-2025-33,SUP-XYZ-T1-ECORESIN,Alcoa International Smelter,2025-01-21,2026-12-21,CLAUSE-LME-CAP-24,Commodity Escalation Ceiling Cap,11900,0.0,QUARTERLY,0.99
+MSA-BALL-2025-38,SUP-XYZ-T1-PRAIRIEOAT,Ball Metal Packaging,2025-01-24,2027-12-24,CLAUSE-REBATE-VOL-33,Annual Volume Growth Incentive Rebate,42800000,2.58,ANNUAL_CALENDAR_YEAR,0.822
+MSA-ALCOA-2025-47,SUP-XYZ-T1-SUMATRARUBBER,Alcoa International Smelter,2025-01-27,2026-12-27,CLAUSE-LME-CAP-38,Commodity Escalation Ceiling Cap,7800,2.5,QUARTERLY,0.99
+MSA-BALL-2025-52,SUP-XYZ-T1-SCHOTTCRYO,Ball Metal Packaging,2025-01-03,2027-12-03,CLAUSE-REBATE-VOL-47,Annual Volume Growth Incentive Rebate,50000000,2.5,ANNUAL_CALENDAR_YEAR,0.911
+MSA-ALCOA-2025-61,SUP-XYZ-T1-ALUWELD,Alcoa International Smelter,2025-01-06,2026-12-06,CLAUSE-LME-CAP-52,Commodity Escalation Ceiling Cap,8300,1.25,QUARTERLY,0.813

@@ -20,5 +20,71 @@
     "bottleneck_subtier_component": "Aluminum Laminated Pouch Foil",
     "supplier_id": "VEND-8820",
     "last_bom_sync_timestamp": "2026-10-15T12:00:00Z"
+  },
+  {
+    "bom_id": "BOM-EV-INVERTER-V17",
+    "parent_material_id": "MAT-880034",
+    "component_count": 60,
+    "critical_path_leadtime_days": 55,
+    "system_recorded_leadtime_days": 22,
+    "discrepancy_days": 23,
+    "bottleneck_subtier_component": "SiC Gate Driver Semiconductor",
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "last_bom_sync_timestamp": "2026-10-14T08:30:00Z"
+  },
+  {
+    "bom_id": "BOM-MEB-CELL-23",
+    "parent_material_id": "MAT-440234",
+    "component_count": 9,
+    "critical_path_leadtime_days": 32,
+    "system_recorded_leadtime_days": 37,
+    "discrepancy_days": 2,
+    "bottleneck_subtier_component": "Aluminum Laminated Pouch Foil",
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "last_bom_sync_timestamp": "2026-10-15T12:00:00Z"
+  },
+  {
+    "bom_id": "BOM-EV-INVERTER-V31",
+    "parent_material_id": "MAT-880048",
+    "component_count": 54,
+    "critical_path_leadtime_days": 58,
+    "system_recorded_leadtime_days": 25,
+    "discrepancy_days": 31,
+    "bottleneck_subtier_component": "SiC Gate Driver Semiconductor",
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "last_bom_sync_timestamp": "2026-10-14T08:30:00Z"
+  },
+  {
+    "bom_id": "BOM-MEB-CELL-37",
+    "parent_material_id": "MAT-440248",
+    "component_count": 15,
+    "critical_path_leadtime_days": 35,
+    "system_recorded_leadtime_days": 29,
+    "discrepancy_days": 4,
+    "bottleneck_subtier_component": "Aluminum Laminated Pouch Foil",
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "last_bom_sync_timestamp": "2026-10-15T12:00:00Z"
+  },
+  {
+    "bom_id": "BOM-EV-INVERTER-V45",
+    "parent_material_id": "MAT-880062",
+    "component_count": 41,
+    "critical_path_leadtime_days": 58,
+    "system_recorded_leadtime_days": 17,
+    "discrepancy_days": 20,
+    "bottleneck_subtier_component": "SiC Gate Driver Semiconductor",
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "last_bom_sync_timestamp": "2026-10-14T08:30:00Z"
+  },
+  {
+    "bom_id": "BOM-MEB-CELL-51",
+    "parent_material_id": "MAT-440262",
+    "component_count": 11,
+    "critical_path_leadtime_days": 30,
+    "system_recorded_leadtime_days": 30,
+    "discrepancy_days": 2,
+    "bottleneck_subtier_component": "Aluminum Laminated Pouch Foil",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "last_bom_sync_timestamp": "2026-10-15T12:00:00Z"
   }
 ]

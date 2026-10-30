@@ -1,0 +1,82 @@
+[
+  {
+    "position_id": "HDG-2026-01",
+    "commodity_code": "ICIS-RPET-FOODGRADE-US",
+    "instrument": "6M_FIXED_FORWARD_LOCK",
+    "current_hedge_pct": 30.0,
+    "recommended_hedge_pct": 75.0,
+    "strike_floor_usd": 1465.0,
+    "strike_cap_usd": 1510.0,
+    "projected_savings_usd": 474300
+  },
+  {
+    "position_id": "HDG-2026-02",
+    "commodity_code": "LME-ALUMINUM-P1020",
+    "instrument": "ZERO_COST_COLLAR",
+    "current_hedge_pct": 45.0,
+    "recommended_hedge_pct": 75.0,
+    "strike_floor_usd": 2440.0,
+    "strike_cap_usd": 2650.0,
+    "projected_savings_usd": 289000
+  },
+  {
+    "position_id": "HDG-2026-03",
+    "commodity_code": "FAST-LITHIUM-CARB-BG",
+    "instrument": "6M_FIXED_FORWARD_LOCK",
+    "current_hedge_pct": 50.0,
+    "recommended_hedge_pct": 80.0,
+    "strike_floor_usd": 13150.0,
+    "strike_cap_usd": 13600.0,
+    "projected_savings_usd": 470250
+  },
+  {
+    "position_id": "HDG-2026-04",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "instrument": "CALL_SPREAD_COLLAR",
+    "current_hedge_pct": 25.0,
+    "recommended_hedge_pct": 65.0,
+    "strike_floor_usd": 4350.0,
+    "strike_cap_usd": 4580.0,
+    "projected_savings_usd": 214000
+  },
+  {
+    "position_id": "HDG-2026-05",
+    "commodity_code": "CBOT-MILLING-OATS",
+    "instrument": "TRANCHE_FORWARD",
+    "current_hedge_pct": 40.0,
+    "recommended_hedge_pct": 65.0,
+    "strike_floor_usd": 360.0,
+    "strike_cap_usd": 385.0,
+    "projected_savings_usd": 138500
+  },
+  {
+    "position_id": "HDG-2026-06",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "instrument": "ZERO_COST_COLLAR",
+    "current_hedge_pct": 35.0,
+    "recommended_hedge_pct": 70.0,
+    "strike_floor_usd": 1790.0,
+    "strike_cap_usd": 1920.0,
+    "projected_savings_usd": 116400
+  },
+  {
+    "position_id": "HDG-2026-07",
+    "commodity_code": "LME-COPPER-GRADE-A",
+    "instrument": "ZERO_COST_COLLAR",
+    "current_hedge_pct": 55.0,
+    "recommended_hedge_pct": 75.0,
+    "strike_floor_usd": 9200.0,
+    "strike_cap_usd": 9750.0,
+    "projected_savings_usd": 168000
+  },
+  {
+    "position_id": "HDG-2026-08",
+    "commodity_code": "EU-NAT-GAS-TTF-GLASS",
+    "instrument": "HOLD_SWAP",
+    "current_hedge_pct": 65.0,
+    "recommended_hedge_pct": 70.0,
+    "strike_floor_usd": 2850.0,
+    "strike_cap_usd": 3050.0,
+    "projected_savings_usd": 62000
+  }
+]

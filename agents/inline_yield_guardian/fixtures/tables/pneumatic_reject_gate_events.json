@@ -10,5 +10,89 @@
     "divert_target_bin": "REJECT-BIN-LINE01-01",
     "optical_verification_sensor": "SENS-OPTICAL-REJECT-VERIFIED-TRUE",
     "status": "PNEUMATIC_DIVERTER_FIRED_REJECTED"
+  },
+  {
+    "event_id": "REJ-GATE-20261022-00849",
+    "frame_id": "FRAME-CAM01-20261022-00849",
+    "classification_id": "CLS-FLASH-VISION-20261022-00849",
+    "line_id": "LINE-ASEPTIC-09",
+    "pneumatic_diverter_id": "DIVERTER-SOLENOID-LINE01-A-R01880",
+    "actuation_latency_ms": 14.074,
+    "conveyor_speed_m_s": 1.04,
+    "divert_target_bin": "REJECT-BIN-LINE01-01",
+    "optical_verification_sensor": "SENS-OPTICAL-REJECT-VERIFIED-TRUE",
+    "status": "PNEUMATIC_DIVERTER_FIRED_REJECTED"
+  },
+  {
+    "event_id": "REJ-GATE-20261022-00856",
+    "frame_id": "FRAME-CAM01-20261022-00856",
+    "classification_id": "CLS-FLASH-VISION-20261022-00856",
+    "line_id": "LINE-ASEPTIC-16",
+    "pneumatic_diverter_id": "DIVERTER-SOLENOID-LINE01-A-R020F7",
+    "actuation_latency_ms": 14.116,
+    "conveyor_speed_m_s": 1.56,
+    "divert_target_bin": "REJECT-BIN-LINE01-01",
+    "optical_verification_sensor": "SENS-OPTICAL-REJECT-VERIFIED-TRUE",
+    "status": "PNEUMATIC_DIVERTER_FIRED_REJECTED"
+  },
+  {
+    "event_id": "REJ-GATE-20261022-00863",
+    "frame_id": "FRAME-CAM01-20261022-00863",
+    "classification_id": "CLS-FLASH-VISION-20261022-00863",
+    "line_id": "LINE-ASEPTIC-23",
+    "pneumatic_diverter_id": "DIVERTER-SOLENOID-LINE01-A-R03253",
+    "actuation_latency_ms": 14.158,
+    "conveyor_speed_m_s": 1.49,
+    "divert_target_bin": "REJECT-BIN-LINE01-01",
+    "optical_verification_sensor": "SENS-OPTICAL-REJECT-VERIFIED-TRUE",
+    "status": "PNEUMATIC_DIVERTER_FIRED_REJECTED"
+  },
+  {
+    "event_id": "REJ-GATE-20261022-00870",
+    "frame_id": "FRAME-CAM01-20261022-00870",
+    "classification_id": "CLS-FLASH-VISION-20261022-00870",
+    "line_id": "LINE-ASEPTIC-30",
+    "pneumatic_diverter_id": "DIVERTER-SOLENOID-LINE01-A-R04A54",
+    "actuation_latency_ms": 14.2,
+    "conveyor_speed_m_s": 1.41,
+    "divert_target_bin": "REJECT-BIN-LINE01-01",
+    "optical_verification_sensor": "SENS-OPTICAL-REJECT-VERIFIED-TRUE",
+    "status": "PNEUMATIC_DIVERTER_FIRED_REJECTED"
+  },
+  {
+    "event_id": "REJ-GATE-20261022-00877",
+    "frame_id": "FRAME-CAM01-20261022-00877",
+    "classification_id": "CLS-FLASH-VISION-20261022-00877",
+    "line_id": "LINE-ASEPTIC-37",
+    "pneumatic_diverter_id": "DIVERTER-SOLENOID-LINE01-A-R05C71",
+    "actuation_latency_ms": 14.242,
+    "conveyor_speed_m_s": 1.49,
+    "divert_target_bin": "REJECT-BIN-LINE01-01",
+    "optical_verification_sensor": "SENS-OPTICAL-REJECT-VERIFIED-TRUE",
+    "status": "PNEUMATIC_DIVERTER_FIRED_REJECTED"
+  },
+  {
+    "event_id": "REJ-GATE-20261022-00884",
+    "frame_id": "FRAME-CAM01-20261022-00884",
+    "classification_id": "CLS-FLASH-VISION-20261022-00884",
+    "line_id": "LINE-ASEPTIC-44",
+    "pneumatic_diverter_id": "DIVERTER-SOLENOID-LINE01-A-R06CC1",
+    "actuation_latency_ms": 14.284,
+    "conveyor_speed_m_s": 1.49,
+    "divert_target_bin": "REJECT-BIN-LINE01-01",
+    "optical_verification_sensor": "SENS-OPTICAL-REJECT-VERIFIED-TRUE",
+    "status": "PNEUMATIC_DIVERTER_FIRED_REJECTED"
+  },
+  {
+    "event_id": "REJ-GATE-20261022-00891",
+    "frame_id": "FRAME-CAM01-20261022-00891",
+    "classification_id": "CLS-FLASH-VISION-20261022-00891",
+    "line_id": "LINE-ASEPTIC-51",
+    "pneumatic_diverter_id": "DIVERTER-SOLENOID-LINE01-A-R073F3",
+    "actuation_latency_ms": 14.326,
+    "conveyor_speed_m_s": 1.04,
+    "divert_target_bin": "REJECT-BIN-LINE01-01",
+    "optical_verification_sensor": "SENS-OPTICAL-REJECT-VERIFIED-TRUE",
+    "status": "PNEUMATIC_DIVERTER_FIRED_REJECTED"
   }
 ]

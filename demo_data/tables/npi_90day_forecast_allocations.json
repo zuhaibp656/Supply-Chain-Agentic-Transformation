@@ -1,0 +1,82 @@
+[
+  {
+    "alloc_id": "NPI-FC-01",
+    "npi_sku_id": "SKU-NPI-ELECTRO-ZERO-16OZ",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "sales_pitch_units": 215000,
+    "modeled_p50_units": 168400,
+    "modeled_p90_units": 191200,
+    "cannibalization_drag_pct": 11.5,
+    "stranded_working_cap_avoided_usd": 531200
+  },
+  {
+    "alloc_id": "NPI-FC-02",
+    "npi_sku_id": "SKU-NPI-OAT-VANILLA-1L",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "sales_pitch_units": 148000,
+    "modeled_p50_units": 114200,
+    "modeled_p90_units": 129500,
+    "cannibalization_drag_pct": 14.2,
+    "stranded_working_cap_avoided_usd": 547500
+  },
+  {
+    "alloc_id": "NPI-FC-03",
+    "npi_sku_id": "SKU-NPI-KEFIR-MANGO-6PK",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "sales_pitch_units": 92000,
+    "modeled_p50_units": 118600,
+    "modeled_p90_units": 134000,
+    "cannibalization_drag_pct": 6.8,
+    "stranded_working_cap_avoided_usd": 398000
+  },
+  {
+    "alloc_id": "NPI-FC-04",
+    "npi_sku_id": "SKU-NPI-BAR-PEANUT-24CT",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "sales_pitch_units": 164000,
+    "modeled_p50_units": 158900,
+    "modeled_p90_units": 176400,
+    "cannibalization_drag_pct": 8.4,
+    "stranded_working_cap_avoided_usd": 99450
+  },
+  {
+    "alloc_id": "NPI-FC-05",
+    "npi_sku_id": "SKU-NPI-CELL-950V-MOD",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "sales_pitch_units": 18500,
+    "modeled_p50_units": 17900,
+    "modeled_p90_units": 20100,
+    "cannibalization_drag_pct": 9.0,
+    "stranded_working_cap_avoided_usd": 252000
+  },
+  {
+    "alloc_id": "NPI-FC-06",
+    "npi_sku_id": "SKU-NPI-IOT-5G-TAG",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "sales_pitch_units": 34000,
+    "modeled_p50_units": 26800,
+    "modeled_p90_units": 30400,
+    "cannibalization_drag_pct": 7.5,
+    "stranded_working_cap_avoided_usd": 396000
+  },
+  {
+    "alloc_id": "NPI-FC-07",
+    "npi_sku_id": "SKU-NPI-CRYO-KIT-V2",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "sales_pitch_units": 8200,
+    "modeled_p50_units": 10450,
+    "modeled_p90_units": 11900,
+    "cannibalization_drag_pct": 4.2,
+    "stranded_working_cap_avoided_usd": 485000
+  },
+  {
+    "alloc_id": "NPI-FC-08",
+    "npi_sku_id": "SKU-NPI-HYDRA-POWDER-30CT",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "sales_pitch_units": 128000,
+    "modeled_p50_units": 124500,
+    "modeled_p90_units": 139000,
+    "cannibalization_drag_pct": 5.1,
+    "stranded_working_cap_avoided_usd": 51800
+  }
+]

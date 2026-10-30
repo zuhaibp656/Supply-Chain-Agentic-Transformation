@@ -1,0 +1,82 @@
+[
+  {
+    "osd_id": "OSD-901",
+    "ebol_id": "EBOL-2026-4410",
+    "exception_type": "CRUSHED_PALLETS_FORKLIFT_PUNCTURE",
+    "short_cases": 0,
+    "damaged_cases": 85,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 6
+  },
+  {
+    "osd_id": "OSD-902",
+    "ebol_id": "EBOL-2026-4425",
+    "exception_type": "SHORTAGE_PILFERAGE_TERMINAL",
+    "short_cases": 14,
+    "damaged_cases": 4,
+    "arrival_seal_intact": false,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 5
+  },
+  {
+    "osd_id": "OSD-903",
+    "ebol_id": "EBOL-2026-4439",
+    "exception_type": "REEFER_SPOILAGE_TEMP_ABUSE",
+    "short_cases": 0,
+    "damaged_cases": 420,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 8
+  },
+  {
+    "osd_id": "OSD-904",
+    "ebol_id": "EBOL-2026-4451",
+    "exception_type": "SHOCK_SENSOR_TRIPPED_DROPPED_SKID",
+    "short_cases": 0,
+    "damaged_cases": 6,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 7
+  },
+  {
+    "osd_id": "OSD-905",
+    "ebol_id": "EBOL-2026-4468",
+    "exception_type": "WATER_WET_TRAILER_ROOF_LEAK",
+    "short_cases": 0,
+    "damaged_cases": 92,
+    "arrival_seal_intact": false,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 6
+  },
+  {
+    "osd_id": "OSD-906",
+    "ebol_id": "EBOL-2026-4479",
+    "exception_type": "CONCEALED_SHOCK_CRUSH_REPORTED_48H",
+    "short_cases": 0,
+    "damaged_cases": 3,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": false,
+    "photo_evidence_count": 9
+  },
+  {
+    "osd_id": "OSD-907",
+    "ebol_id": "EBOL-2026-4490",
+    "exception_type": "SHORTAGE_SEAL_INTACT_SHIPPER_LOAD",
+    "short_cases": 18,
+    "damaged_cases": 0,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": false,
+    "photo_evidence_count": 3
+  },
+  {
+    "osd_id": "OSD-908",
+    "ebol_id": "EBOL-2026-4504",
+    "exception_type": "BROKEN_SEAL_SHORTAGE",
+    "short_cases": 60,
+    "damaged_cases": 15,
+    "arrival_seal_intact": false,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 5
+  }
+]

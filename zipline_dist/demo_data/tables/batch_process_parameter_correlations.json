@@ -1,0 +1,98 @@
+[
+  {
+    "correlation_id": "CORR-FLASH-IMM-02-01",
+    "defect_id": "DEF-FLASH-IMM-02",
+    "parameter_name": "Injection Holding Pressure (bar)",
+    "nominal_setpoint": 820.0,
+    "actual_observed_mean": 945.0,
+    "upper_tolerance_limit": 860.0,
+    "lower_tolerance_limit": 780.0,
+    "pearson_correlation_coefficient": 0.88,
+    "p_value": 0.0002,
+    "root_cause_finding": "Holding pressure spiked +125 bar above nominal, exceeding mold clamp force and forcing melt into parting line vents."
+  },
+  {
+    "correlation_id": "CORR-FLASH-IMM-02-02",
+    "defect_id": "DEF-FLASH-IMM-02",
+    "parameter_name": "Barrel Zone 4 Melt Temperature (\u00b0C)",
+    "nominal_setpoint": 235.0,
+    "actual_observed_mean": 248.5,
+    "upper_tolerance_limit": 240.0,
+    "lower_tolerance_limit": 230.0,
+    "pearson_correlation_coefficient": 0.74,
+    "p_value": 0.0031,
+    "root_cause_finding": "Super-heated melt viscosity dropped by 24%, accelerating parting line flashing under excessive pack pressure."
+  },
+  {
+    "correlation_id": "CORR-FLASH-IMM-02-16",
+    "defect_id": "DEF-FLASH-IMM-17",
+    "parameter_name": "Injection Holding Pressure (bar)",
+    "nominal_setpoint": 1025.0,
+    "actual_observed_mean": 784.35,
+    "upper_tolerance_limit": 739.6,
+    "lower_tolerance_limit": 975.0,
+    "pearson_correlation_coefficient": 0.796,
+    "p_value": 0.0,
+    "root_cause_finding": "Holding pressure spiked +125 bar above nominal, exceeding mold clamp force and forcing melt into parting line vents."
+  },
+  {
+    "correlation_id": "CORR-FLASH-IMM-02-24",
+    "defect_id": "DEF-FLASH-IMM-24",
+    "parameter_name": "Barrel Zone 4 Melt Temperature (\u00b0C)",
+    "nominal_setpoint": 293.75,
+    "actual_observed_mean": 213.71,
+    "upper_tolerance_limit": 271.2,
+    "lower_tolerance_limit": 246.1,
+    "pearson_correlation_coefficient": 0.698,
+    "p_value": 0.0,
+    "root_cause_finding": "Super-heated melt viscosity dropped by 24%, accelerating parting line flashing under excessive pack pressure."
+  },
+  {
+    "correlation_id": "CORR-FLASH-IMM-02-30",
+    "defect_id": "DEF-FLASH-IMM-31",
+    "parameter_name": "Injection Holding Pressure (bar)",
+    "nominal_setpoint": 754.4,
+    "actual_observed_mean": 812.7,
+    "upper_tolerance_limit": 1023.4,
+    "lower_tolerance_limit": 608.4,
+    "pearson_correlation_coefficient": 0.88,
+    "p_value": 0.0,
+    "root_cause_finding": "Holding pressure spiked +125 bar above nominal, exceeding mold clamp force and forcing melt into parting line vents."
+  },
+  {
+    "correlation_id": "CORR-FLASH-IMM-02-38",
+    "defect_id": "DEF-FLASH-IMM-38",
+    "parameter_name": "Barrel Zone 4 Melt Temperature (\u00b0C)",
+    "nominal_setpoint": 251.45,
+    "actual_observed_mean": 265.9,
+    "upper_tolerance_limit": 199.2,
+    "lower_tolerance_limit": 179.4,
+    "pearson_correlation_coefficient": 0.782,
+    "p_value": 0.0,
+    "root_cause_finding": "Super-heated melt viscosity dropped by 24%, accelerating parting line flashing under excessive pack pressure."
+  },
+  {
+    "correlation_id": "CORR-FLASH-IMM-02-44",
+    "defect_id": "DEF-FLASH-IMM-45",
+    "parameter_name": "Injection Holding Pressure (bar)",
+    "nominal_setpoint": 639.6,
+    "actual_observed_mean": 869.4,
+    "upper_tolerance_limit": 670.8,
+    "lower_tolerance_limit": 647.4,
+    "pearson_correlation_coefficient": 0.964,
+    "p_value": 0.0,
+    "root_cause_finding": "Holding pressure spiked +125 bar above nominal, exceeding mold clamp force and forcing melt into parting line vents."
+  },
+  {
+    "correlation_id": "CORR-FLASH-IMM-02-52",
+    "defect_id": "DEF-FLASH-IMM-52",
+    "parameter_name": "Barrel Zone 4 Melt Temperature (\u00b0C)",
+    "nominal_setpoint": 279.65,
+    "actual_observed_mean": 295.71,
+    "upper_tolerance_limit": 187.2,
+    "lower_tolerance_limit": 273.7,
+    "pearson_correlation_coefficient": 0.866,
+    "p_value": 0.0,
+    "root_cause_finding": "Super-heated melt viscosity dropped by 24%, accelerating parting line flashing under excessive pack pressure."
+  }
+]
