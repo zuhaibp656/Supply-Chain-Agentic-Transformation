@@ -301,9 +301,9 @@ try:
             retry_options=types.HttpRetryOptions(attempts=3),
         ),
         generate_content_config=types.GenerateContentConfig(
-            max_output_tokens=4096,
+            max_output_tokens=16384,
             temperature=0.0,
-            thinking_config=types.ThinkingConfig(thinking_budget=0),
+            thinking_config=types.ThinkingConfig(thinking_level="LOW"),
         ),
         instruction=_INSTRUCTION,
         tools=_AVAILABLE_TOOLS,

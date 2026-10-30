@@ -39,10 +39,10 @@ HTML_FILES = [
 PILLAR_ORDER = [
     ("demand_sop", "01 · Planning & Strategy", "#3b82f6"),
     ("sourcing_procurement", "02 · Sourcing & Procurement", "#f59e0b"),
-    ("manufacturing_prod", "03 · Manufacturing & Operations", "#8b5cf6"),
-    ("logistics_fleet", "04 · Logistics & Distribution", "#06b6d4"),
-    ("inventory_warehouse", "05 · Inventory & Warehousing", "#10b981"),
-    ("circular_enable", "06 · Control Tower & Governance", "#f43f5e"),
+    ("manufacturing_prod", "03 · Manufacturing & Production", "#8b5cf6"),
+    ("inventory_warehouse", "04 · Inventory & Warehousing", "#10b981"),
+    ("logistics_fleet", "05 · Distribution & Logistics", "#06b6d4"),
+    ("circular_enable", "06 · Returns & Reverse Logistics", "#f43f5e"),
 ]
 
 # Glossary of common abbreviations to automatically spell out the first time they appear in customer explanations

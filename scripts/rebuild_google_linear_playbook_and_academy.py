@@ -234,14 +234,14 @@ WORKFLOW_SIMULATORS = {
 }
 
 
-# Google Brand Colors mapped to the 6 Pillars
+# Google Brand Colors mapped to Suman's 6 Core Operating Pillars (exact Slide 1 order & names)
 GOOGLE_PILLAR_META = [
-    ("demand_sop", "01 · Planning & Forecasting", "#1A73E8", "#E8F0FE"),          # Google Blue
-    ("sourcing_procurement", "02 · Sourcing & Suppliers", "#E8710A", "#FEF7E0"),  # Google Amber/Orange
-    ("manufacturing_prod", "03 · Factory & Manufacturing", "#9334E6", "#F3E8FD"), # Google Purple
-    ("logistics_fleet", "04 · Logistics & Trucking", "#007B83", "#E4F7FB"),       # Google Teal
-    ("inventory_warehouse", "05 · Inventory & Warehouse", "#1E8E3E", "#E6F4EA"),  # Google Green
-    ("circular_enable", "06 · Control Tower, Returns & ESG", "#D93025", "#FCE8E6"), # Google Red
+    ("demand_sop", "01 · Planning & Strategy", "#1A73E8", "#E8F0FE"),                # Google Blue (12 agents)
+    ("sourcing_procurement", "02 · Sourcing & Procurement", "#E8710A", "#FEF7E0"),   # Google Amber/Orange (9 agents)
+    ("manufacturing_prod", "03 · Manufacturing & Production", "#9334E6", "#F3E8FD"), # Google Purple (9 agents)
+    ("inventory_warehouse", "04 · Inventory & Warehousing", "#1E8E3E", "#E6F4EA"),   # Google Green (9 agents)
+    ("logistics_fleet", "05 · Distribution & Logistics", "#007B83", "#E4F7FB"),      # Google Teal (12 agents)
+    ("circular_enable", "06 · Returns & Reverse Logistics", "#D93025", "#FCE8E6"),   # Google Red (9 agents)
 ]
 
 PILLAR_REAL_WORLD_EXAMPLES = {
@@ -729,10 +729,11 @@ def build_google_linear_playbook() -> None:
     pillar_buttons_html = []
     for idx, (pid, ptitle, pcol, pbg) in enumerate(GOOGLE_PILLAR_META):
         active_cls = "active" if idx == 0 else ""
+        p_count = len(by_dept.get(pid, []))
         pillar_buttons_html.append(
             f'<button type="button" class="g-pillar-btn {active_cls}" data-dept="{pid}" '
             f'style="--pcol:{pcol}; --pbg:{pbg};" onclick="selectPillar(\'{pid}\')">'
-            f'{html.escape(ptitle)} <span class="g-count-pill">10</span></button>'
+            f'{html.escape(ptitle)} <span class="g-count-pill">{p_count}</span></button>'
         )
 
     # Strip raw Markdown-only fields before embedding JSON into HTML to keep payload lean
@@ -1138,8 +1139,8 @@ def build_google_linear_playbook() -> None:
       </div>
 
       <div style="margin-top:16px;">
-        <div style="font-size:13.5px; font-weight:700; color:var(--text-sub); text-transform:uppercase; margin-bottom:10px;">
-          Click Any Agent in This Pillar (10 Agents):
+        <div id="pillarAgentCountLabel" style="font-size:13.5px; font-weight:700; color:var(--text-sub); text-transform:uppercase; margin-bottom:10px;">
+          Click Any Agent in This Pillar (12 Agents):
         </div>
         <div class="g-agent-pills" id="agentPillsContainer"></div>
       </div>
@@ -1286,6 +1287,10 @@ def build_google_linear_playbook() -> None:
     function renderAgentPills(deptId) {{
       const container = document.getElementById('agentPillsContainer');
       const list = AGENTS.map((a, idx) => ({{ ...a, idx }})).filter(a => a.deptId === deptId);
+      const countLbl = document.getElementById('pillarAgentCountLabel');
+      if (countLbl) {{
+        countLbl.textContent = `Click Any Agent in This Pillar (${{list.length}} Agents):`;
+      }}
       container.innerHTML = list.map(a => {{
         const done = isAgentFullyVerified(a.id);
         const active = a.idx === currentIdx ? 'active' : '';
@@ -2407,12 +2412,12 @@ def build_google_linear_academy() -> None:
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:22px;">
           <button type="button" class="g-btn active" onclick="filterTerms('all', this)">All 56 Terms</button>
           <button type="button" class="g-btn" onclick="filterTerms('top15', this)">⭐ Top 15 Must-Know</button>
-          <button type="button" class="g-btn" onclick="filterTerms('planning', this)">01 · Planning</button>
-          <button type="button" class="g-btn" onclick="filterTerms('sourcing', this)">02 · Sourcing</button>
-          <button type="button" class="g-btn" onclick="filterTerms('manufacturing', this)">03 · Factory</button>
-          <button type="button" class="g-btn" onclick="filterTerms('inventory', this)">04 · Warehouse</button>
-          <button type="button" class="g-btn" onclick="filterTerms('logistics', this)">05 · Logistics</button>
-          <button type="button" class="g-btn" onclick="filterTerms('finance_esg', this)">06 · Finance &amp; ESG</button>
+          <button type="button" class="g-btn" onclick="filterTerms('planning', this)">01 · Planning &amp; Strategy</button>
+          <button type="button" class="g-btn" onclick="filterTerms('sourcing', this)">02 · Sourcing &amp; Procurement</button>
+          <button type="button" class="g-btn" onclick="filterTerms('manufacturing', this)">03 · Manufacturing &amp; Production</button>
+          <button type="button" class="g-btn" onclick="filterTerms('inventory', this)">04 · Inventory &amp; Warehousing</button>
+          <button type="button" class="g-btn" onclick="filterTerms('logistics', this)">05 · Distribution &amp; Logistics</button>
+          <button type="button" class="g-btn" onclick="filterTerms('finance_esg', this)">06 · Returns &amp; Reverse Logistics</button>
         </div>
 
         <div id="termsMount"></div>

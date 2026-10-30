@@ -312,9 +312,9 @@ try:
             retry_options=types.HttpRetryOptions(attempts=3),
         ),
         generate_content_config=types.GenerateContentConfig(
-            max_output_tokens=4096,
+            max_output_tokens=16384,
             temperature=0.0,
-            thinking_config=types.ThinkingConfig(thinking_budget=0),
+            thinking_config=types.ThinkingConfig(thinking_level="LOW"),
         ),
         instruction=_INSTRUCTION,
         tools=_AVAILABLE_TOOLS,
@@ -327,8 +327,21 @@ try:
     class YardDockSchedulingAdkApp(AdkApp):
         """Vertex AI Reasoning Engine wrapper for yard_dock_sequencer."""
 
-        def __init__(self, **kwargs: Any) -> None:
-            super().__init__(agent=root_agent, **kwargs)
+        def __init__(self, agent: Agent = root_agent, **kwargs: Any) -> None:
+            super().__init__(agent=agent, **kwargs)
+
+        @staticmethod
+        def _pin_env() -> None:
+            os.environ["GOOGLE_GENAI_USE_VERTEXAI"] = "TRUE"
+            os.environ.setdefault("GOOGLE_CLOUD_PROJECT", "zuhaibp-ai")
+
+        def query(self, *args: Any, **kwargs: Any) -> Any:
+            self._pin_env()
+            return super().query(*args, **kwargs)
+
+        def stream_query(self, *args: Any, **kwargs: Any) -> Any:
+            self._pin_env()
+            yield from super().stream_query(*args, **kwargs)
 
 except ImportError:
     root_agent = YardDockSchedulingAgent()  # type: ignore

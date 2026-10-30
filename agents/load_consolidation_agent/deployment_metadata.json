@@ -1,11 +1,15 @@
 {
   "agent_id": "load_consolidation_agent",
-  "display_name": "Isometric LIFO Bay & 3D Load Consolidation Studio (CubeMaster 3D)",
-  "ge_display_name": "CubeMaster 3D Load Studio",
-  "section": "05 \u00b7 Deliver",
+  "website_name": "Load Consolidation",
+  "bracket_label": "05 \u00b7 Logistics \u00b7 First & Mid-Mile",
+  "category": "05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile",
+  "display_name": "Load Consolidation (05 \u00b7 Logistics \u00b7 First & Mid-Mile)",
+  "ge_display_name": "Load Consolidation (05 \u00b7 Logistics \u00b7 First & Mid-Mile)",
+  "section": "05 \u00b7 Logistics | First & Mid-Mile",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/3771936486614630400",
   "model": "gemini-3.1-pro-preview",
-  "deployed_at": "2026-10-22T11:45:14Z"
+  "deployed_at": "2026-10-30T07:34:49Z",
+  "gemini_enterprise_agent_name": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/17846204712745878596"
 }

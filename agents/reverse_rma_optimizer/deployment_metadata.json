@@ -1,11 +1,15 @@
 {
   "agent_id": "reverse_rma_optimizer",
-  "display_name": "Autonomous RMA Grading & Circular Backhaul Optimizer (ReturnLoop)",
-  "ge_display_name": "ReturnLoop RMA & Backhaul",
-  "section": "06 \u00b7 Return & Enable",
+  "website_name": "Return Fraud Sentinel",
+  "bracket_label": "06 \u00b7 Returns & ESG \u00b7 Returns & Claims Mgmt",
+  "category": "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt",
+  "display_name": "Return Fraud Sentinel (06 \u00b7 Returns & ESG \u00b7 Returns & Claims Mgmt)",
+  "ge_display_name": "Return Fraud Sentinel (06 \u00b7 Returns & ESG \u00b7 Returns & Claims Mgmt)",
+  "section": "06 \u00b7 Returns & ESG | Returns & Claims Mgmt",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/5468667646226464768",
   "model": "gemini-3.8-flash",
-  "deployed_at": "2026-10-22T11:45:25Z"
+  "deployed_at": "2026-10-30T07:36:39Z",
+  "gemini_enterprise_agent_name": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/2869479596817501852"
 }

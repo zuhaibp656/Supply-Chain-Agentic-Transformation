@@ -1,11 +1,15 @@
 {
   "agent_id": "csco_control_tower_copilot",
-  "display_name": "CSCO Control Tower Copilot (TowerMind)",
-  "ge_display_name": "TowerMind Control Tower",
-  "section": "Universal Core",
+  "website_name": "Executive Copilot",
+  "bracket_label": "01 \u00b7 Plan \u00b7 S&OP / IBP",
+  "category": "01 \u00b7 Planning & Strategy \u2014 S&OP / IBP",
+  "display_name": "Executive Copilot (01 \u00b7 Plan \u00b7 S&OP / IBP)",
+  "ge_display_name": "Executive Copilot (01 \u00b7 Plan \u00b7 S&OP / IBP)",
+  "section": "01 \u00b7 Plan | S&OP / IBP",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/2865587061606318080",
   "model": "gemini-3.1-pro-preview",
-  "deployed_at": "2026-10-22T11:39:04Z"
+  "deployed_at": "2026-10-30T07:29:43Z",
+  "gemini_enterprise_agent_name": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4015823380636158533"
 }

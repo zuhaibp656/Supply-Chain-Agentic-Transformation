@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
-"""One-shot idempotent deployer: Supply Chain Categorized ADK Agents -> Vertex AI Agent Engine -> Gemini Enterprise.
+"""Idempotent Deployer: Supply Chain ADK Agents -> Vertex AI Agent Engine -> Gemini Enterprise.
 
-Features:
-  - Explicitly includes each agent's Category (`[<Pillar> · <Sub-Pillar>]`) in its `display_name`,
-    `ge_display_name`, `description`, and `tool_description`.
-  - Supports all 60 catalog agents (`--agent <id>` or `--all-60`) as well as the 14 provisioned
-    flagship agents (`--all-flagship`), reusing existing Vertex AI Reasoning Engines (`.reasoning_engine_id`)
-    and existing Gemini Enterprise agent registrations (`provisionedReasoningEngine` match) IN-PLACE!
+Key Capabilities:
+  - Names every agent in BOTH Vertex AI Agent Engine and Gemini Enterprise using the exact
+    Website & Playbook name plus `(Pillar · Sub-Pillar)` in brackets:
+      `<Website Agent Name> (<Pillar> · <Sub-Pillar>)`
+    e.g. `Demand Sensing Agent (01 · Plan · Demand Forecasting)`,
+         `Cold-Chain Auditor (05 · Logistics · First & Mid-Mile)`,
+         `Freight Bill Audit Agent (05 · Logistics · Route & Carrier)`.
+  - Overwrites / updates existing Vertex AI Reasoning Engines (`.reasoning_engine_id`) and
+    existing Gemini Enterprise agent registrations (`provisionedReasoningEngine` match) IN-PLACE
+    with zero duplicate deployments.
+  - Syncs fresh `admin@zuhaibp.altostrat.com` OAuth credentials from `~/.config/gcloud/credentials.db`
+    so CloudTop VSCode credential helper overrides never break Argolis authentication.
+  - Supports `--curated-showcase` (25 high-ROI showcase agents spanning ALL 6 Pillars and ALL 20
+    Sub-Pillars, including all 14 previously deployed Reasoning Engines updated in-place + 11 new
+    sub-pillar leaders with extra Logistics depth), `--all-flagship`, `--all-60`, or `--agent <id>`.
 """
 
 from __future__ import annotations
@@ -15,338 +24,320 @@ import argparse
 import importlib
 import json
 import os
+import re
+import sqlite3
 import subprocess
 import sys
 import time
 import urllib.error
-import urllib.parse
 import urllib.request
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 os.environ["GOOGLE_API_USE_CLIENT_CERTIFICATE"] = "false"
 ROOT = Path(__file__).resolve().parent.parent
+GCLOUD_DIR = Path.home() / ".config" / "gcloud"
 
-# ==============================================================================
-# 14 Provisioned Flagship Agents (with Category in Name & Description + Resource Reuse)
-# ==============================================================================
-FLAGSHIP_CONFIG: Dict[str, Dict[str, Any]] = {
-    "csco_control_tower_copilot": {
-        "section": "01 · Plan | S&OP / IBP",
-        "category": "01 · Planning & Strategy — S&OP / IBP",
-        "display_name": "[01 · Plan | S&OP / IBP] CSCO Control Tower Copilot (TowerMind)",
-        "legacy_display_name": "CSCO Control Tower Copilot (TowerMind)",
-        "ge_display_name": "[Plan · S&OP/IBP] TowerMind Control Tower",
-        "legacy_ge_display_name": "TowerMind Control Tower",
-        "description": "[Category: 01 · Planning & Strategy — S&OP / IBP] CSCO Control Tower Copilot (TowerMind): multi-echelon bottleneck triage, real-time KPI visibility, and autonomous S&OP/IBP playbook execution across ERP, WMS, and TMS.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "hub",
-        "app_class": "CscoControlTowerAdkApp",
-        "tool_description": "[Category: 01 · Plan | S&OP / IBP] Use TowerMind to investigate global supply chain KPIs, detect multi-echelon bottlenecks, and execute executive remediation playbooks.",
-        "starter_prompts": [
-            "Show global supply chain KPI briefing and active bottlenecks",
-            "Investigate Suez Canal delay impact on Stuttgart assembly line",
-            "Trigger intermodal air expedite playbook for critical battery modules",
-            "Rebalance inventory from Central US Hub to European staging",
-        ],
-    },
-    "disruption_war_room_orchestrator": {
-        "section": "01 · Plan | S&OP / IBP",
-        "category": "01 · Planning & Strategy — S&OP / IBP",
-        "display_name": "[01 · Plan | S&OP / IBP] Disruption War Room Orchestrator (StormShield)",
-        "legacy_display_name": "Disruption War Room Orchestrator (StormShield)",
-        "ge_display_name": "[Plan · S&OP/IBP] StormShield War Room",
-        "legacy_ge_display_name": "StormShield War Room",
-        "description": "[Category: 01 · Planning & Strategy — S&OP / IBP] Disruption War Room Orchestrator (StormShield): multi-modal geopolitical crisis response, maritime vessel tracking, weather radar correlation, and automated S&OP recovery.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "crisis_alert",
-        "app_class": "DisruptionWarRoomAdkApp",
-        "tool_description": "[Category: 01 · Plan | S&OP / IBP] Use StormShield to scan maritime corridors for typhoon alerts, map multi-tier supplier exposure, and launch emergency war rooms.",
-        "starter_prompts": [
-            "Scan global maritime corridors for active typhoon disruptions",
-            "Assess Tier-1 supplier facility flood exposure in Southeast Asia",
-            "Convene emergency War Room for Mediterranean port congestion",
-            "Execute Cape of Good Hope rerouting with fuel surcharge impact",
-        ],
-    },
-    "demand_sensing_agent": {
-        "section": "01 · Plan | Demand Forecasting",
-        "category": "01 · Planning & Strategy — Demand Forecasting",
-        "display_name": "[01 · Plan | Demand Forecasting] Demand Sensing Engine (PulseCast)",
-        "legacy_display_name": "Demand Sensing Engine (PulseCast)",
-        "ge_display_name": "[Plan · Forecasting] PulseCast Demand Sensing",
-        "legacy_ge_display_name": "PulseCast Demand Sensing",
-        "description": "[Category: 01 · Planning & Strategy — Demand Forecasting] Demand Sensing Engine (PulseCast): multi-signal probabilistic forecasting with WeatherNext 3, POS scans, and TimesFM quantile intervals.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "trending_up",
-        "app_class": "DemandSensingAdkApp",
-        "tool_description": "[Category: 01 · Plan | Demand Forecasting] Use PulseCast to ingest store POS scans, correlate WeatherNext weather signals, and calculate TimesFM probabilistic demand forecasts.",
-        "starter_prompts": [
-            "Sense demand shift for beverage category across Midwest stores",
-            "Incorporate WeatherNext heatwave alert into 14-day demand forecast",
-            "Detect demand shaping lift from upcoming retail promotion",
-            "Harmonize channel POS scan discrepancies with CPFR distributor feed",
-        ],
-    },
-    "sop_scenario_weaver": {
-        "section": "01 · Plan | S&OP / IBP",
-        "category": "01 · Planning & Strategy — S&OP / IBP",
-        "display_name": "[01 · Plan | S&OP / IBP] S&OP Scenario Weaver (Synapse)",
-        "legacy_display_name": "S&OP Scenario Weaver (Synapse)",
-        "ge_display_name": "[Plan · S&OP/IBP] Synapse S&OP Weaver",
-        "legacy_ge_display_name": "Synapse S&OP Weaver",
-        "description": "[Category: 01 · Planning & Strategy — S&OP / IBP] S&OP Scenario Weaver (Synapse): finite plant capacity balancing, supplier allocation quotas, and margin-maximizing scenario tradeoffs.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "tune",
-        "app_class": "SopScenarioWeaverAdkApp",
-        "tool_description": "[Category: 01 · Plan | S&OP / IBP] Use Synapse to generate 5-step monthly S&OP consensus scenarios, balance finite plant line capacities, and optimize component allocations.",
-        "starter_prompts": [
-            "Generate 5-step monthly S&OP consensus scenario comparison",
-            "Evaluate plant line capacity overrun if European demand surges 15%",
-            "Optimize supplier component allocations under dual-sourcing quota",
-            "Recommend margin-maximizing production mix for Q4 peak season",
-        ],
-    },
-    "rfq_should_cost_agent": {
-        "section": "02 · Source | Material & Packaging",
-        "category": "02 · Sourcing & Procurement — Material & Packaging",
-        "display_name": "[02 · Source | Material & Packaging] Parametric Should-Cost & RFQ Agent (SourcePulse)",
-        "legacy_display_name": "Parametric Should-Cost & RFQ Agent (SourcePulse)",
-        "ge_display_name": "[Source · Material] SourcePulse Should-Cost",
-        "legacy_ge_display_name": "SourcePulse Should-Cost",
-        "description": "[Category: 02 · Sourcing & Procurement — Material & Packaging] Parametric Should-Cost & RFQ Agent (SourcePulse): automated BOM cost breakdown, commodity index tracking, and autonomous supplier RFQ bid analysis.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "request_quote",
-        "app_class": "RfqShouldCostAdkApp",
-        "tool_description": "[Category: 02 · Source | Material & Packaging] Use SourcePulse to calculate bottom-up parametric should-cost models, benchmark commodity indexes, and audit supplier RFQ bids.",
-        "starter_prompts": [
-            "Calculate parametric should-cost for aluminum heat exchanger BOM",
-            "Benchmark supplier RFQ bids against London Metal Exchange index",
-            "Flag outlier quotes with excessive margin in injection molding",
-            "Recommend multi-supplier award allocation maximizing margin",
-        ],
-    },
-    "tier_n_risk_sentinel": {
-        "section": "02 · Source | Vendor Sourcing",
-        "category": "02 · Sourcing & Procurement — Vendor Sourcing",
-        "display_name": "[02 · Source | Vendor Sourcing] Multi-Tier Supply Network Sentinel (NexusShield)",
-        "legacy_display_name": "Multi-Tier Supply Network Sentinel (NexusShield)",
-        "ge_display_name": "[Source · Vendor Risk] NexusShield Sentinel",
-        "legacy_ge_display_name": "NexusShield Risk Sentinel",
-        "description": "[Category: 02 · Sourcing & Procurement — Vendor Sourcing] Multi-Tier Supply Network Sentinel (NexusShield): Cloud Spanner Graph lineage, deep supplier dependencies, geopolitical risk, and single-source exposure.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "security",
-        "app_class": "TierNRiskSentinelAdkApp",
-        "tool_description": "[Category: 02 · Source | Vendor Sourcing] Use NexusShield to trace multi-tier supplier lineage in Spanner Graph, detect single-source component risks, and simulate trade impacts.",
-        "starter_prompts": [
-            "Trace Tier-3 semiconductor dependencies for engine control units",
-            "Identify single-source chokepoints in Tier-2 raw material supply",
-            "Simulate trade restriction impact on Taiwanese component suppliers",
-            "Recommend qualified secondary suppliers with audited capacity",
-        ],
-    },
-    "plant_oee_maintenance_agent": {
-        "section": "03 · Make | Production Scheduling",
-        "category": "03 · Manufacturing & Production — Production Scheduling",
-        "display_name": "[03 · Make | Production Scheduling] Plant OEE & Maintenance Guardian (AssetGuard)",
-        "legacy_display_name": "Plant OEE & Maintenance Guardian (AssetGuard)",
-        "ge_display_name": "[Make · OEE & Sched] AssetGuard Plant OEE",
-        "legacy_ge_display_name": "AssetGuard Plant OEE",
-        "description": "[Category: 03 · Manufacturing & Production — Production Scheduling] Plant OEE & Maintenance Guardian (AssetGuard): real-time IoT vibration analysis, anomaly detection, predictive maintenance scheduling, and spare parts inventory.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "precision_manufacturing",
-        "app_class": "PlantOeeMaintenanceAdkApp",
-        "tool_description": "[Category: 03 · Make | Production Scheduling] Use AssetGuard to audit plant OEE metrics, analyze machine vibration telemetry, detect anomalies, and schedule maintenance windows.",
-        "starter_prompts": [
-            "Show OEE breakdown across automotive assembly lines A and B",
-            "Analyze spindle vibration telemetry on CNC Machine 4",
-            "Check spare parts availability for high-risk hydraulic pump",
-            "Schedule preventative maintenance window to avoid unplanned downtime",
-        ],
-    },
-    "inline_quality_inspection_agent": {
-        "section": "03 · Make | Quality & Compliance",
-        "category": "03 · Manufacturing & Production — Quality & Compliance",
-        "display_name": "[03 · Make | Quality & Compliance] Inline Multimodal Quality Inspector (VisionInspect)",
-        "legacy_display_name": "Inline Multimodal Quality Inspector (VisionInspect)",
-        "ge_display_name": "[Make · Quality] VisionInspect Quality",
-        "legacy_ge_display_name": "VisionInspect Quality",
-        "description": "[Category: 03 · Manufacturing & Production — Quality & Compliance] Inline Multimodal Quality Inspector (VisionInspect): Gemini 3.8 Flash multimodal vision, micro-crack & seal defect detection, and pneumatic diverter gate triage.",
-        "model": "gemini-3.8-flash",
-        "icon": "document_scanner",
-        "app_class": "InlineQualityInspectionAdkApp",
-        "tool_description": "[Category: 03 · Make | Quality & Compliance] Use VisionInspect with Gemini 3.8 Flash to inspect camera frames, classify micro-defects, audit batch records, and calibrate pneumatic diverters.",
-        "starter_prompts": [
-            "Inspect latest high-speed camera frame for seal integrity defects",
-            "Review electronic batch record deviation log for Line 3",
-            "Calibrate pneumatic reject gate timing for micro-crack ejection",
-            "Summarize daily scrap rate and defect classification distribution",
-        ],
-    },
-    "echelon_inventory_allocator": {
-        "section": "04 · Inventory & DC | Positioning & Optimization",
-        "category": "04 · Inventory & Warehousing — Positioning & Optimization",
-        "display_name": "[04 · Inventory & DC | Positioning & Optimization] Multi-Echelon Inventory Allocator (EchelonFlow)",
-        "legacy_display_name": "Multi-Echelon Inventory Allocator (EchelonFlow)",
-        "ge_display_name": "[Inventory · MEIO] EchelonFlow Allocator",
-        "legacy_ge_display_name": "EchelonFlow MEIO",
-        "description": "[Category: 04 · Inventory & Warehousing — Positioning & Optimization] Multi-Echelon Inventory Allocator (EchelonFlow): stochastic Clark-Scarf multi-echelon safety stock optimization, service level projection, and lateral DC rebalancing.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "inventory_2",
-        "app_class": "EchelonInventoryAllocatorAdkApp",
-        "tool_description": "[Category: 04 · Inventory & DC | Positioning & Optimization] Use EchelonFlow to run Clark-Scarf multi-echelon safety stock calculations, evaluate service level vs capital, and execute lateral DC transfers.",
-        "starter_prompts": [
-            "Optimize multi-echelon safety stock across Central RDC and 4 FDCs",
-            "Simulate service level vs working capital curve for A-category SKUs",
-            "Plan lateral DC inventory transfer to avert stockout in Atlanta",
-            "Review Clark-Scarf echelon holding cost vs stockout penalty tradeoffs",
-        ],
-    },
-    "dynamic_order_promising_atp": {
-        "section": "04 · Inventory & DC | Omnichannel Visibility",
-        "category": "04 · Inventory & Warehousing — Omnichannel Visibility",
-        "display_name": "[04 · Inventory & DC | Omnichannel Visibility] Sub-50ms Spanner ATP & Order Promising (PromiseGuard)",
-        "legacy_display_name": "Sub-50ms Spanner ATP & Order Promising (PromiseGuard)",
-        "ge_display_name": "[Inventory · Omnichannel] PromiseGuard ATP",
-        "legacy_ge_display_name": "PromiseGuard ATP",
-        "description": "[Category: 04 · Inventory & Warehousing — Omnichannel Visibility] Sub-50ms Spanner ATP & Order Promising (PromiseGuard): real-time available-to-promise, strategic customer tier quota protection, and multi-facility order routing.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "verified",
-        "app_class": "DynamicOrderPromisingAtpAdkApp",
-        "tool_description": "[Category: 04 · Inventory & DC | Omnichannel Visibility] Use PromiseGuard to evaluate sub-50ms Spanner ATP availability, protect strategic tier quotas, and route customer sales orders.",
-        "starter_prompts": [
-            "Check real-time ATP for 5,000 units of Enterprise Server SKU",
-            "Evaluate order promising for Tier-1 customer with strict 48h SLA",
-            "Protect strategic quota from stockout during wholesale rush",
-            "Route split-shipment order across Dallas DC and Chicago Hub",
-        ],
-    },
-    "fleetflow_dispatch": {
-        "section": "05 · Logistics | Last-Mile Delivery",
-        "category": "05 · Distribution & Logistics — Last-Mile Delivery",
-        "display_name": "[05 · Logistics | Last-Mile Delivery] Google Maps Corridor Route & Fleet Dispatch Studio (FleetFlow)",
-        "legacy_display_name": "Google Maps Corridor Route & Fleet Dispatch Studio (FleetFlow)",
-        "ge_display_name": "[Logistics · Last-Mile] FleetFlow Dispatch",
-        "legacy_ge_display_name": "FleetFlow Route & Dispatch",
-        "description": "[Category: 05 · Distribution & Logistics — Last-Mile Delivery] FleetFlow Dispatch Studio: angular sector corridor clustering, Google Maps Routes v2 live traffic matrices, and OR-Tools CVRPTW fleet dispatch.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "local_shipping",
-        "app_class": "FleetflowDispatchAdkApp",
-        "tool_description": "[Category: 05 · Logistics | Last-Mile Delivery] Use FleetFlow to cluster urban delivery stops into directional corridors, solve OR-Tools CVRPTW fleet dispatch, and issue mobile driver manifests.",
-        "starter_prompts": [
-            "Cluster 64 retail delivery drops into 8 directional highway corridors",
-            "Optimize morning fleet dispatch to cut active truck count from 10 to 8",
-            "Pin lead driver Ravi to West corridor on 14-ft truck and rebalance overflow",
-            "Generate turn-by-turn Google Maps navigation links and driver challans",
-        ],
-    },
-    "load_consolidation_agent": {
-        "section": "05 · Logistics | First & Mid-Mile",
-        "category": "05 · Distribution & Logistics — First & Mid-Mile",
-        "display_name": "[05 · Logistics | First & Mid-Mile] Isometric LIFO Bay & 3D Load Consolidation Studio (CubeMaster 3D)",
-        "legacy_display_name": "Isometric LIFO Bay & 3D Load Consolidation Studio (CubeMaster 3D)",
-        "ge_display_name": "[Logistics · 3D Load] CubeMaster 3D Studio",
-        "legacy_ge_display_name": "CubeMaster 3D Load Studio",
-        "description": "[Category: 05 · Distribution & Logistics — First & Mid-Mile] CubeMaster 3D Load Studio: cab-to-door reverse-stop LIFO bay zoning, 3D Guillotine bin-packing, crush-fragility stacking, and CMVR Rule 93 axle balance.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "view_in_ar",
-        "app_class": "LoadConsolidationAgentAdkApp",
-        "tool_description": "[Category: 05 · Logistics | First & Mid-Mile] Use CubeMaster 3D to pack multi-stop cartons in reverse delivery order (LIFO), verify 80%+ vertical support, and balance steer/drive axle torque.",
-        "starter_prompts": [
-            "Generate 3D cab-to-door LIFO loading plan for 53-ft trailer on Corridor West",
-            "Verify zero crush-fragility violations and 80%+ floor support across all tiers",
-            "Check CMVR Rule 93 steer vs drive axle weight balance and Center of Gravity",
-            "Commit verified 3D bay loading manifest to Manhattan WMS dock doors",
-        ],
-    },
-    "reverse_rma_optimizer": {
-        "section": "06 · Returns & ESG | Returns & Claims Mgmt",
-        "category": "06 · Returns & Reverse Logistics — Returns & Claims Mgmt",
-        "display_name": "[06 · Returns & ESG | Returns & Claims Mgmt] Autonomous RMA Grading & Circular Backhaul Optimizer (ReturnLoop)",
-        "legacy_display_name": "Autonomous RMA Grading & Circular Backhaul Optimizer (ReturnLoop)",
-        "ge_display_name": "[Returns · RMA Triage] ReturnLoop Optimizer",
-        "legacy_ge_display_name": "ReturnLoop RMA & Backhaul",
-        "description": "[Category: 06 · Returns & Reverse Logistics — Returns & Claims Mgmt] ReturnLoop RMA Optimizer: Gemini 3.8 Flash multimodal defect grading, automated disposition routing, and empty-backhaul fleet insertion.",
-        "model": "gemini-3.8-flash",
-        "icon": "assignment_return",
-        "app_class": "ReverseRmaOptimizerAdkApp",
-        "tool_description": "[Category: 06 · Returns & ESG | Returns & Claims Mgmt] Use ReturnLoop to grade customer RMA photos with Gemini 3.8 Flash vision, route refurbish vs scrap dispositions, and match return pickups to empty backhauls.",
-        "starter_prompts": [
-            "Grade customer RMA return photos and classify refurbish vs scrap disposition",
-            "Match 18 retail return pallets to returning FleetFlow empty-backhaul trucks",
-            "Calculate net circular recovery value across open RMA queue",
-            "Issue instant customer RMA credit memo and refurbishment work order",
-        ],
-    },
-    "carbon_scope3_ledger": {
-        "section": "02 · Source | Vendor Sourcing",
-        "category": "02 · Sourcing & Procurement — Vendor Sourcing",
-        "display_name": "[02 · Source | Vendor Sourcing] Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger (EcoChain)",
-        "legacy_display_name": "Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger (EcoChain)",
-        "ge_display_name": "[Source · ESG & Carbon] EcoChain Scope-3",
-        "legacy_ge_display_name": "EcoChain Scope-3 & CBAM",
-        "description": "[Category: 02 · Sourcing & Procurement — Vendor Sourcing] EcoChain Carbon Ledger: ISO 14083 & GLEC v3.0 primary telemetry Scope-3 accounting, EU CBAM embedded carbon declarations, and Earth Engine EUDR verification.",
-        "model": "gemini-3.1-pro-preview",
-        "icon": "eco",
-        "app_class": "CarbonScope3LedgerAdkApp",
-        "tool_description": "[Category: 02 · Source | Vendor Sourcing] Use EcoChain to compute ISO 14083 shipment Scope-3 emissions, certify EU CBAM smelter declarations, and verify EUDR zero-deforestation plots via Earth Engine.",
-        "starter_prompts": [
-            "Calculate ISO 14083 primary telemetry Scope-3 emissions for Rhine corridor",
-            "Generate EU CBAM embedded carbon declaration using primary smelter certificates",
-            "Verify zero post-2020 deforestation on supplier rubber plots via Earth Engine",
-            "Recommend low-carbon HVO100 biofuel and electric barge carrier swaps",
-        ],
-    },
+# Canonical Website ID <-> Legacy Alias Directory pairs sharing a Reasoning Engine ID
+ALIAS_SYNC_PAIRS: Dict[str, str] = {
+    "predictive_oee_sentinel": "plant_oee_maintenance_agent",
+    "inline_yield_guardian": "inline_quality_inspection_agent",
+    "meio_safety_stock_agent": "echelon_inventory_allocator",
+    "atp_order_promising_agent": "dynamic_order_promising_atp",
+    "port_drayage_orchestrator": "ocean_port_drayage_orchestrator",
+    "yard_dock_sequencer": "yard_dock_scheduling_agent",
+    "freight_control_tower": "in_transit_control_tower",
 }
+
+# Legacy display names from earlier deployments so in-place matching catches 100% of prior resources
+LEGACY_NAMES_BY_ID: Dict[str, List[str]] = {
+    "csco_control_tower_copilot": [
+        "CSCO Control Tower Copilot (TowerMind)",
+        "[01 · Plan | S&OP / IBP] CSCO Control Tower Copilot (TowerMind)",
+        "TowerMind Control Tower",
+        "[Plan · S&OP/IBP] TowerMind Control Tower",
+    ],
+    "disruption_war_room_orchestrator": [
+        "Disruption War Room Orchestrator (StormShield)",
+        "[01 · Plan | S&OP / IBP] Disruption War Room Orchestrator (StormShield)",
+        "StormShield War Room",
+        "[Plan · S&OP/IBP] StormShield War Room",
+    ],
+    "demand_sensing_agent": [
+        "Demand Sensing Engine (PulseCast)",
+        "[01 · Plan | Demand Forecasting] Demand Sensing Engine (PulseCast)",
+        "PulseCast Demand Sensing",
+        "[Plan · Forecasting] PulseCast Demand Sensing",
+    ],
+    "sop_scenario_weaver": [
+        "S&OP Scenario Weaver (Synapse)",
+        "[01 · Plan | S&OP / IBP] S&OP Scenario Weaver (Synapse)",
+        "Synapse S&OP Weaver",
+        "[Plan · S&OP/IBP] Synapse S&OP Weaver",
+    ],
+    "rfq_should_cost_agent": [
+        "Parametric Should-Cost & RFQ Agent (SourcePulse)",
+        "[02 · Source | Material & Packaging] Parametric Should-Cost & RFQ Agent (SourcePulse)",
+        "SourcePulse Should-Cost",
+        "[Source · Material] SourcePulse Should-Cost",
+    ],
+    "tier_n_risk_sentinel": [
+        "Multi-Tier Supply Network Sentinel (NexusShield)",
+        "[02 · Source | Vendor Sourcing] Multi-Tier Supply Network Sentinel (NexusShield)",
+        "NexusShield Risk Sentinel",
+        "[Source · Vendor Risk] NexusShield Sentinel",
+    ],
+    "predictive_oee_sentinel": [
+        "Plant OEE & Maintenance Guardian (AssetGuard)",
+        "[03 · Make | Production Scheduling] Plant OEE & Maintenance Guardian (AssetGuard)",
+        "AssetGuard Plant OEE",
+        "[Make · OEE & Sched] AssetGuard Plant OEE",
+    ],
+    "plant_oee_maintenance_agent": [
+        "Plant OEE & Maintenance Guardian (AssetGuard)",
+        "AssetGuard Plant OEE",
+    ],
+    "inline_yield_guardian": [
+        "Inline Multimodal Quality Inspector (VisionInspect)",
+        "[03 · Make | Quality & Compliance] Inline Multimodal Quality Inspector (VisionInspect)",
+        "VisionInspect Quality",
+        "[Make · Quality] VisionInspect Quality",
+    ],
+    "inline_quality_inspection_agent": [
+        "Inline Multimodal Quality Inspector (VisionInspect)",
+        "VisionInspect Quality",
+    ],
+    "meio_safety_stock_agent": [
+        "Multi-Echelon Inventory Allocator (EchelonFlow)",
+        "[04 · Inventory & DC | Positioning & Optimization] Multi-Echelon Inventory Allocator (EchelonFlow)",
+        "EchelonFlow MEIO",
+        "[Inventory · MEIO] EchelonFlow Allocator",
+    ],
+    "echelon_inventory_allocator": [
+        "Multi-Echelon Inventory Allocator (EchelonFlow)",
+        "EchelonFlow MEIO",
+    ],
+    "atp_order_promising_agent": [
+        "Sub-50ms Spanner ATP & Order Promising (PromiseGuard)",
+        "[04 · Inventory & DC | Omnichannel Visibility] Sub-50ms Spanner ATP & Order Promising (PromiseGuard)",
+        "PromiseGuard ATP",
+        "[Inventory · Omnichannel] PromiseGuard ATP",
+    ],
+    "dynamic_order_promising_atp": [
+        "Sub-50ms Spanner ATP & Order Promising (PromiseGuard)",
+        "PromiseGuard ATP",
+    ],
+    "fleetflow_dispatch": [
+        "Google Maps Corridor Route & Fleet Dispatch Studio (FleetFlow)",
+        "[05 · Logistics | Last-Mile Delivery] Google Maps Corridor Route & Fleet Dispatch Studio (FleetFlow)",
+        "FleetFlow Route & Dispatch",
+        "[Logistics · Last-Mile] FleetFlow Dispatch",
+    ],
+    "load_consolidation_agent": [
+        "Isometric LIFO Bay & 3D Load Consolidation Studio (CubeMaster 3D)",
+        "[05 · Logistics | First & Mid-Mile] Isometric LIFO Bay & 3D Load Consolidation Studio (CubeMaster 3D)",
+        "CubeMaster 3D Load Studio",
+        "[Logistics · 3D Load] CubeMaster 3D Studio",
+    ],
+    "reverse_rma_optimizer": [
+        "Autonomous RMA Grading & Circular Backhaul Optimizer (ReturnLoop)",
+        "[06 · Returns & ESG | Returns & Claims Mgmt] Autonomous RMA Grading & Circular Backhaul Optimizer (ReturnLoop)",
+        "ReturnLoop RMA & Backhaul",
+        "[Returns · RMA Triage] ReturnLoop Optimizer",
+    ],
+    "carbon_scope3_ledger": [
+        "Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger (EcoChain)",
+        "[02 · Source | Vendor Sourcing] Shipment-Level Scope-3 Carbon, CBAM & EUDR Ledger (EcoChain)",
+        "EcoChain Scope-3 & CBAM",
+        "[Source · ESG & Carbon] EcoChain Scope-3",
+    ],
+}
+
+# Google Material Symbols icon per agent (200 OK on fonts.gstatic.com/s/i/short-term/release/googlesymbols/<icon>/default/24px.svg)
+AGENT_ICONS: Dict[str, str] = {
+    "demand_sensing_agent": "trending_up",
+    "promo_lift_simulator": "sell",
+    "csco_control_tower_copilot": "hub",
+    "sop_scenario_weaver": "tune",
+    "disruption_war_room_orchestrator": "crisis_alert",
+    "working_capital_cash_bridge": "account_balance",
+    "tier_n_risk_sentinel": "security",
+    "carbon_scope3_ledger": "eco",
+    "rfq_should_cost_agent": "request_quote",
+    "three_way_match_dispute": "receipt_long",
+    "finite_production_scheduler": "schedule",
+    "predictive_oee_sentinel": "precision_manufacturing",
+    "inline_yield_guardian": "document_scanner",
+    "meio_safety_stock_agent": "inventory_2",
+    "warehouse_slotting_agent": "warehouse",
+    "atp_order_promising_agent": "verified",
+    "load_consolidation_agent": "view_in_ar",
+    "cold_chain_auditor": "ac_unit",
+    "port_drayage_orchestrator": "directions_boat",
+    "geocoding_intelligence_agent": "pin_drop",
+    "fleetflow_dispatch": "local_shipping",
+    "freight_bill_audit_agent": "fact_check",
+    "reverse_rma_optimizer": "assignment_return",
+    "dynamic_markdown_agent": "loyalty",
+    "rti_balance_reconciler": "inventory",
+}
+
+# 14 Canonical Website IDs corresponding to the 14 previously deployed Reasoning Engines
+EXISTING_14_CANONICAL_IDS: List[str] = [
+    "demand_sensing_agent",
+    "sop_scenario_weaver",
+    "disruption_war_room_orchestrator",
+    "csco_control_tower_copilot",
+    "tier_n_risk_sentinel",
+    "carbon_scope3_ledger",
+    "rfq_should_cost_agent",
+    "predictive_oee_sentinel",
+    "inline_yield_guardian",
+    "meio_safety_stock_agent",
+    "atp_order_promising_agent",
+    "load_consolidation_agent",
+    "fleetflow_dispatch",
+    "reverse_rma_optimizer",
+]
+
+# 25 Curated Showcase Agents:
+# - Updates ALL 14 existing Reasoning Engines IN-PLACE with Website Name + (Pillar · Sub-Pillar)
+# - Adds 11 high-value showcase agents so ALL 20 Sub-Pillars across ALL 6 Pillars have >=1 live agent,
+#   with 6 flagship showcase agents in 05 · Logistics (First/Mid-Mile, Cold-Chain, Store Curfew, Geocoding, Dynamic Rerouter, Freight Bill Audit).
+CURATED_SHOWCASE_25_IDS: List[str] = [
+    # 01 · Plan (4 Sub-Pillars: Demand Forecasting, Trade Promotion, S&OP / IBP, Portfolio & SKU)
+    "demand_sensing_agent",             # (01 · Plan · Demand Forecasting) — In-Place RE Update
+    "promo_lift_simulator",             # (01 · Plan · Trade Promotion) — New Sub-Pillar Showcase
+    "csco_control_tower_copilot",       # (01 · Plan · S&OP / IBP) — In-Place RE Update
+    "sop_scenario_weaver",              # (01 · Plan · S&OP / IBP) — In-Place RE Update
+    "disruption_war_room_orchestrator", # (01 · Plan · S&OP / IBP) — In-Place RE Update
+    "working_capital_cash_bridge",      # (01 · Plan · Portfolio & SKU) — New Sub-Pillar Showcase
+
+    # 02 · Source (3 Sub-Pillars: Supplier Network, Material & Packaging, Contract & PO Mgmt)
+    "tier_n_risk_sentinel",             # (02 · Source · Supplier Network) — In-Place RE Update
+    "carbon_scope3_ledger",             # (02 · Source · Supplier Network) — In-Place RE Update
+    "rfq_should_cost_agent",            # (02 · Source · Material & Packaging) — In-Place RE Update
+    "three_way_match_dispute",          # (02 · Source · Contract & PO Mgmt) — New Sub-Pillar Showcase
+
+    # 03 · Make (3 Sub-Pillars: Production Scheduling, Capacity Planning, Quality & Compliance)
+    "finite_production_scheduler",      # (03 · Make · Production Scheduling) — New Sub-Pillar Showcase
+    "predictive_oee_sentinel",          # (03 · Make · Capacity Planning) — In-Place RE Update
+    "inline_yield_guardian",            # (03 · Make · Quality & Compliance) — In-Place RE Update
+
+    # 04 · Inventory & DC (3 Sub-Pillars: Positioning & Optimization, Warehouse Operations, Omnichannel Visibility)
+    "meio_safety_stock_agent",          # (04 · Inventory & DC · Positioning & Optimization) — In-Place RE Update
+    "warehouse_slotting_agent",         # (04 · Inventory & DC · Warehouse Operations) — New Sub-Pillar Showcase
+    "atp_order_promising_agent",        # (04 · Inventory & DC · Omnichannel Visibility) — In-Place RE Update
+
+    # 05 · Logistics (4 Sub-Pillars: First & Mid-Mile, Store Replenishment, Last-Mile Delivery, Route & Carrier)
+    "load_consolidation_agent",         # (05 · Logistics · First & Mid-Mile) — In-Place RE Update
+    "cold_chain_auditor",               # (05 · Logistics · First & Mid-Mile) — New Logistics Showcase (Arrhenius MKT °C)
+    "port_drayage_orchestrator",        # (05 · Logistics · Store Replenishment) — New Sub-Pillar Showcase
+    "geocoding_intelligence_agent",     # (05 · Logistics · Last-Mile Delivery) — New Sub-Pillar Showcase (Haversine Drift)
+    "fleetflow_dispatch",               # (05 · Logistics · Route & Carrier) — In-Place RE Update
+    "freight_bill_audit_agent",         # (05 · Logistics · Route & Carrier) — New Logistics Showcase (EDI 210 + DOE FSC)
+
+    # 06 · Returns & ESG (3 Sub-Pillars: Returns & Claims Mgmt, Expiry & Markdowns, Pallet & Tote Reclamation)
+    "reverse_rma_optimizer",            # (06 · Returns & ESG · Returns & Claims Mgmt) — In-Place RE Update
+    "dynamic_markdown_agent",           # (06 · Returns & ESG · Expiry & Markdowns) — New Sub-Pillar Showcase
+    "rti_balance_reconciler",           # (06 · Returns & ESG · Pallet & Tote Reclamation) — New Sub-Pillar Showcase
+]
+
+
+def _detect_agent_model_and_class(agent_dir: Path, aid: str) -> tuple[str, str]:
+    app_class = "".join(w.capitalize() for w in aid.split("_") if w) + "AdkApp"
+    model = "gemini-3.1-pro-preview"
+    agent_py = agent_dir / "app" / "agent.py"
+    if agent_py.exists():
+        txt = agent_py.read_text(encoding="utf-8")
+        m_cls = re.search(r"class\s+(\w+)\(AdkApp\):", txt)
+        if m_cls:
+            app_class = m_cls.group(1)
+        m_mod = re.search(r'GlobalGemini\(\s*model=["\']([^"\']+)["\']', txt)
+        if m_mod:
+            model = m_mod.group(1)
+    return app_class, model
+
+
+def _build_playbook_starter_prompts(website_name: str, bracket_label: str) -> List[str]:
+    """Builds 4 crisp Playbook-aligned starter prompts (Diagnostic, Chart, Brief Draft, Write-Back Check)."""
+    return [
+        f"Run a read-only {website_name} diagnostic on XYZ-CORP-01 data and show the top KPI table.",
+        f"Analyze operational metrics for {website_name} and render the visual comparison chart.",
+        f"Draft a concise {website_name} operational action brief citing exact XYZ-CORP-01 IDs and variances.",
+        f"Show the recommended {bracket_label} remediation action and verify pre-execution safety gates.",
+    ]
 
 
 def build_all_60_agents_config() -> Dict[str, Dict[str, Any]]:
-    """Builds deployment specs for all 60 catalog agents (merging with FLAGSHIP_CONFIG)."""
-    merged = dict(FLAGSHIP_CONFIG)
+    """Builds deployment specs for all 60 catalog agents using `<Website Name> (<Pillar> · <Sub-Pillar>)`."""
     cat_path = ROOT / "data" / "supply_chain_catalog.json"
-    if not cat_path.exists():
-        return merged
-
     cat = json.loads(cat_path.read_text(encoding="utf-8"))
+    configs: Dict[str, Dict[str, Any]] = {}
+
+    suman_pillar_prefix = {
+        "demand_sop": "01 · Planning & Strategy",
+        "sourcing_procurement": "02 · Sourcing & Procurement",
+        "manufacturing_prod": "03 · Manufacturing & Production",
+        "inventory_warehouse": "04 · Inventory & Warehousing",
+        "logistics_fleet": "05 · Distribution & Logistics",
+        "circular_enable": "06 · Returns & Reverse Logistics",
+    }
+
     for aid, ag in cat.get("agents", {}).items():
-        if aid in merged:
-            continue
         agent_dir = ROOT / "agents" / aid
-        agent_py = agent_dir / "app" / "agent.py"
-        app_class = "".join(w.capitalize() for w in aid.split("_") if w) + "AdkApp"
-        if agent_py.exists():
-            import re
-            m = re.search(r"class\s+(\w+)\(AdkApp\):", agent_py.read_text(encoding="utf-8"))
-            if m:
-                app_class = m.group(1)
+        app_class, model = _detect_agent_model_and_class(agent_dir, aid)
 
-        cat_tag = ag.get("categoryTag", "01 · Plan")
-        cat_full = ag.get("category", "01 · Planning & Strategy")
-        disp = ag.get("categoryDisplayName") or f"[{cat_tag}] {ag['name']}"
-        ge_disp = ag.get("geDisplayName") or disp[:58]
-        desc = ag.get("categorizedDescription") or f"[Category: {cat_full}] {ag.get('shortDesc', ag['name'])}"
-        model = "gemini-3.8-flash" if any(k in aid for k in ("vision", "inspection", "rma", "sanitation", "cold_chain", "batch_record")) else "gemini-3.1-pro-preview"
+        website_name = ag["name"].strip()
+        dept_id = ag.get("deptId", "demand_sop")
+        pillar_label = suman_pillar_prefix.get(dept_id, "01 · Planning & Strategy")
+        sub_pillar = (ag.get("subPillarName") or "General").strip()
+        cat_tag = ag.get("categoryTag", f"{pillar_label} | {sub_pillar}").strip()
+        short_bracket_label = cat_tag.replace(" | ", " · ")
+        bracket_label = f"{pillar_label} · {sub_pillar}"
+        cat_full = f"{pillar_label} | {sub_pillar}"
 
-        merged[aid] = {
-            "section": cat_tag,
+        # Exact format requested: `<Website Agent Name> (<Pillar> · <Sub-Pillar>)` aligned 100% with Suman's PPT
+        unified_display_name = f"{website_name} ({bracket_label})"
+
+        short_desc = ag.get("shortDesc") or ag.get("solution") or website_name
+        outcome = ag.get("outcome") or ""
+        desc = f"[{bracket_label}] {website_name} — {short_desc}"
+        if outcome and outcome not in desc:
+            desc = f"{desc} Outcome: {outcome}"
+
+        legacy_list = list(LEGACY_NAMES_BY_ID.get(aid, []))
+        for candidate in (
+            website_name,
+            f"{website_name} ({short_bracket_label})",
+            ag.get("categoryDisplayName", ""),
+            ag.get("geDisplayName", ""),
+            f"[{cat_tag}] {website_name}",
+        ):
+            if candidate and candidate not in legacy_list:
+                legacy_list.append(candidate)
+
+        configs[aid] = {
+            "section": cat_full,
+            "bracket_label": bracket_label,
             "category": cat_full,
-            "display_name": disp,
-            "legacy_display_name": ag["name"],
-            "ge_display_name": ge_disp,
-            "legacy_ge_display_name": ag["name"],
-            "description": desc,
+            "website_name": website_name,
+            "display_name": unified_display_name,
+            "ge_display_name": unified_display_name,
+            "legacy_names": legacy_list,
+            "description": desc[:480],
             "model": model,
-            "icon": "smart_toy",
+            "icon": AGENT_ICONS.get(aid, "smart_toy"),
             "app_class": app_class,
-            "tool_description": f"[{cat_tag}] Use {ag['name']} ({cat_full}) to analyze enterprise telemetry and commit governed ERP actions.",
-            "starter_prompts": [
-                f"Run {ag['name']} diagnostic on FAC-PLANT-US-AUS01",
-                f"Evaluate constraint matrix and optimization scenarios for {ag['name']}",
-                f"Commit verified ERP write-back action for SKU-SEMI-9900-X1",
-                f"Show KPI impact summary for {cat_full}",
-            ],
+            "tool_description": (
+                f"({bracket_label}) Invoke {website_name} to query XYZ-CORP-01 enterprise tables, "
+                f"run deterministic Python optimization math, render interactive VegaChart cards, "
+                f"draft persona briefs, and execute governed ERP/WMS/TMS write-backs."
+            ),
+            "starter_prompts": _build_playbook_starter_prompts(website_name, bracket_label),
         }
-    return merged
+
+    return configs
 
 
 ALL_AGENTS_CONFIG = build_all_60_agents_config()
@@ -354,12 +345,44 @@ ALL_AGENTS_CONFIG = build_all_60_agents_config()
 _TOKEN_OVERRIDE: str | None = None
 
 
+def sync_gcloud_db_to_argolis_adc(project: str) -> None:
+    """Syncs fresh admin@zuhaibp.altostrat.com OAuth refresh_token from gcloud credentials.db to ADC."""
+    db_path = GCLOUD_DIR / "credentials.db"
+    if not db_path.exists():
+        return
+    try:
+        conn = sqlite3.connect(str(db_path))
+        cur = conn.cursor()
+        cur.execute("SELECT account_id, value FROM credentials")
+        for account_id, val in cur.fetchall():
+            if "zuhaibp.altostrat.com" in account_id:
+                data = json.loads(val)
+                if data.get("refresh_token") and data.get("client_id"):
+                    payload = {
+                        "account": account_id,
+                        "client_id": data["client_id"],
+                        "client_secret": data["client_secret"],
+                        "refresh_token": data["refresh_token"],
+                        "type": "authorized_user",
+                        "quota_project_id": project,
+                    }
+                    for target in (
+                        GCLOUD_DIR / "argolis_admin_adc.json",
+                        GCLOUD_DIR / "application_default_credentials.json",
+                    ):
+                        target.write_text(json.dumps(payload, indent=2) + "\n")
+                break
+        conn.close()
+    except Exception:
+        pass
+
+
 def get_token() -> str | None:
     if _TOKEN_OVERRIDE:
         return _TOKEN_OVERRIDE
     if os.environ.get("GCP_ACCESS_TOKEN"):
         return os.environ["GCP_ACCESS_TOKEN"]
-    adc_p = Path(os.path.expanduser("~/.config/gcloud/argolis_admin_adc.json"))
+    adc_p = GCLOUD_DIR / "argolis_admin_adc.json"
     if adc_p.exists():
         try:
             import google.oauth2.credentials
@@ -385,7 +408,7 @@ def get_token() -> str | None:
 
 
 def get_credentials():
-    adc_p = Path(os.path.expanduser("~/.config/gcloud/argolis_admin_adc.json"))
+    adc_p = GCLOUD_DIR / "argolis_admin_adc.json"
     if adc_p.exists():
         try:
             import google.oauth2.credentials
@@ -447,8 +470,12 @@ def enable_apis(project: str) -> None:
         "logging.googleapis.com",
     ]
     try:
-        api("POST", f"https://serviceusage.googleapis.com/v1/projects/{project}/services:batchEnable",
-            {"serviceIds": services}, project=project)
+        api(
+            "POST",
+            f"https://serviceusage.googleapis.com/v1/projects/{project}/services:batchEnable",
+            {"serviceIds": services},
+            project=project,
+        )
         print(f"[OK] APIs verified ({len(services)}) in {project}")
     except RuntimeError as e:
         print(f"[NOTE] ServiceUsage batchEnable notice: {str(e)[:160]}")
@@ -458,9 +485,12 @@ def ensure_bucket(project: str, region: str, name: str) -> str:
     r = api("GET", f"https://storage.googleapis.com/storage/v1/b/{name}", project=project, ok404=True)
     if r.get("_404"):
         try:
-            api("POST", f"https://storage.googleapis.com/storage/v1/b?project={project}",
+            api(
+                "POST",
+                f"https://storage.googleapis.com/storage/v1/b?project={project}",
                 {"name": name, "location": region, "iamConfiguration": {"uniformBucketLevelAccess": {"enabled": True}}},
-                project=project)
+                project=project,
+            )
             print(f"[CREATED] gs://{name} ({region})")
         except Exception as e:
             print(f"[WARN] Bucket create note: {e}")
@@ -480,6 +510,17 @@ REQUIREMENTS = [
 ]
 
 
+def _write_reasoning_engine_state(agent_id: str, resource_name: str, metadata: Dict[str, Any]) -> None:
+    agent_dir = ROOT / "agents" / agent_id
+    (agent_dir / ".reasoning_engine_id").write_text(resource_name + "\n")
+    (agent_dir / "deployment_metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
+    # Sync paired alias directory if present
+    alias_id = ALIAS_SYNC_PAIRS.get(agent_id)
+    if alias_id and (ROOT / "agents" / alias_id).is_dir():
+        (ROOT / "agents" / alias_id / ".reasoning_engine_id").write_text(resource_name + "\n")
+        (ROOT / "agents" / alias_id / "deployment_metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
+
+
 def deploy_agent_engine(
     agent_id: str,
     spec: Dict[str, Any],
@@ -490,7 +531,7 @@ def deploy_agent_engine(
 ) -> str:
     """Deploys or updates the agent IN-PLACE on Vertex AI Agent Engine (reusing existing resources)."""
     display_name = spec["display_name"]
-    legacy_display_name = spec.get("legacy_display_name", display_name)
+    legacy_names = set(spec.get("legacy_names", [])) | {display_name}
     agent_dir = ROOT / "agents" / agent_id
 
     for mod_name in list(sys.modules.keys()):
@@ -510,8 +551,9 @@ def deploy_agent_engine(
 
     if dry_run:
         state_file = agent_dir / ".reasoning_engine_id"
-        cached = state_file.read_text().strip() if state_file.exists() else f"projects/{project}/locations/{region}/reasoningEngines/verified-{agent_id}"
-        print(f"[DRY-RUN VERIFIED] Loaded {spec['app_class']} ({display_name}) | model={spec['model']} | reuse={cached}")
+        cached = state_file.read_text().strip() if state_file.exists() else f"projects/{project}/locations/{region}/reasoningEngines/NEW-{agent_id}"
+        mode = "IN-PLACE UPDATE" if state_file.exists() else "NEW CREATE"
+        print(f"[DRY-RUN {mode}] {spec['app_class']} -> '{display_name}' | model={spec['model']} | re={cached.split('/')[-1]}")
         return cached
 
     import google.auth
@@ -562,7 +604,7 @@ def deploy_agent_engine(
             try:
                 for eng in agent_engines.list():
                     dname = getattr(eng, "display_name", "")
-                    if dname in (display_name, legacy_display_name):
+                    if dname in legacy_names:
                         existing = eng.resource_name
                         break
             except Exception as e:
@@ -570,16 +612,17 @@ def deploy_agent_engine(
 
         t0 = time.time()
         if existing:
-            print(f"[{agent_id}] REUSING & UPDATING IN PLACE: {existing}")
+            print(f"[{agent_id}] REUSING & UPDATING IN PLACE: {existing} -> '{display_name}'")
             eng = agent_engines.get(existing).update(**kwargs)
         else:
             print(f"[{agent_id}] CREATING Reasoning Engine '{display_name}' in {project}/{region} ...")
             eng = agent_engines.create(**kwargs)
 
         res = eng.resource_name
-        state_file.write_text(res)
         metadata = {
             "agent_id": agent_id,
+            "website_name": spec["website_name"],
+            "bracket_label": spec["bracket_label"],
             "category": spec.get("category", spec["section"]),
             "display_name": display_name,
             "ge_display_name": spec["ge_display_name"],
@@ -590,7 +633,7 @@ def deploy_agent_engine(
             "model": spec["model"],
             "deployed_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         }
-        (agent_dir / "deployment_metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
+        _write_reasoning_engine_state(agent_id, res, metadata)
         print(f"[{agent_id}] OK in {time.time() - t0:.1f}s: {res}")
         return res
     finally:
@@ -605,10 +648,10 @@ def register_gemini_enterprise(
     app_id: str,
     app_location: str = "global",
     dry_run: bool = False,
-) -> None:
+) -> str:
     """Registers or updates the agent in Gemini Enterprise IN-PLACE (matching by Reasoning Engine or Display Name)."""
     ge_display = spec["ge_display_name"]
-    legacy_ge_display = spec.get("legacy_ge_display_name", ge_display)
+    legacy_names = set(spec.get("legacy_names", [])) | {ge_display}
     icon_name = spec["icon"]
     icon_url = f"https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/{icon_name}/default/24px.svg"
 
@@ -624,8 +667,8 @@ def register_gemini_enterprise(
     }
 
     if dry_run:
-        print(f"[DRY-RUN] Would update/register in Gemini Enterprise '{app_id}': {ge_display} -> {engine_resource_name}")
-        return
+        print(f"[DRY-RUN GE] '{ge_display}' -> {engine_resource_name.split('/')[-1]}")
+        return f"dry-run-ge-{agent_id}"
 
     host = "discoveryengine.googleapis.com" if app_location == "global" else f"{app_location}-discoveryengine.googleapis.com"
     base = (
@@ -633,43 +676,57 @@ def register_gemini_enterprise(
         f"engines/{app_id}/assistants/default_assistant/agents"
     )
 
-    try:
-        agents = api("GET", base, project=project).get("agents", [])
-        # Match existing agent by provisionedReasoningEngine first (100% resource reuse), then by current or legacy displayName
-        cur = None
-        for a in agents:
-            re_ref = (
-                a.get("adkAgentDefinition", {})
-                .get("provisionedReasoningEngine", {})
-                .get("reasoningEngine", "")
-            )
-            if re_ref and engine_resource_name and re_ref.split("/")[-1] == engine_resource_name.split("/")[-1]:
-                cur = a["name"]
-                break
-            if a.get("displayName") in (ge_display, legacy_ge_display):
-                cur = a["name"]
-                break
+    agents = api("GET", base, project=project).get("agents", [])
+    cur = None
+    for a in agents:
+        re_ref = (
+            a.get("adkAgentDefinition", {})
+            .get("provisionedReasoningEngine", {})
+            .get("reasoningEngine", "")
+        )
+        if re_ref and engine_resource_name and re_ref.split("/")[-1] == engine_resource_name.split("/")[-1]:
+            cur = a["name"]
+            break
+        if a.get("displayName") in legacy_names:
+            cur = a["name"]
+            break
 
-        if cur:
-            res = api(
-                "PATCH",
-                f"https://{host}/v1alpha/{cur}?updateMask=displayName,description,icon,starterPrompts,adkAgentDefinition",
-                body={**payload, "name": cur},
-                project=project,
-            )
-            print(f"[{agent_id}] GE REUSED & UPDATED IN-PLACE: {res.get('name', cur)} -> '{ge_display}'")
-        else:
-            res = api("POST", base, body=payload, project=project)
-            print(f"[{agent_id}] GE REGISTERED: {res.get('name')} -> '{ge_display}'")
-    except RuntimeError as e:
-        print(f"[{agent_id}] GE NOTE: {str(e)[:300]}")
+    if cur:
+        res = api(
+            "PATCH",
+            f"https://{host}/v1alpha/{cur}?updateMask=displayName,description,icon,starterPrompts,adkAgentDefinition",
+            body={**payload, "name": cur},
+            project=project,
+        )
+        ge_name = res.get("name", cur)
+        print(f"[{agent_id}] GE UPDATED IN-PLACE: {ge_name.split('/')[-1]} -> '{ge_display}'")
+    else:
+        res = api("POST", base, body=payload, project=project)
+        ge_name = res.get("name", "")
+        print(f"[{agent_id}] GE REGISTERED NEW: {ge_name.split('/')[-1]} -> '{ge_display}'")
+
+    # Persist GE agent resource name in deployment_metadata.json
+    meta_file = ROOT / "agents" / agent_id / "deployment_metadata.json"
+    if meta_file.exists():
+        try:
+            m = json.loads(meta_file.read_text(encoding="utf-8"))
+            m["gemini_enterprise_agent_name"] = ge_name
+            meta_file.write_text(json.dumps(m, indent=2) + "\n")
+        except Exception:
+            pass
+    return ge_name
 
 
 def main() -> None:
     global _TOKEN_OVERRIDE
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--agent", choices=list(ALL_AGENTS_CONFIG.keys()), help="Deploy a single agent (any of 60)")
-    parser.add_argument("--all-flagship", action="store_true", help="Deploy/update the 14 provisioned flagship agents in-place")
+    parser.add_argument("--agent", choices=list(ALL_AGENTS_CONFIG.keys()), help="Deploy a single catalog agent (any of 60)")
+    parser.add_argument(
+        "--curated-showcase",
+        action="store_true",
+        help="Deploy/update the 25 curated showcase agents (all 14 existing REs updated in-place + 11 sub-pillar leaders across all 20 sub-pillars)",
+    )
+    parser.add_argument("--all-flagship", action="store_true", help="Deploy/update the 14 previously provisioned flagship agents in-place")
     parser.add_argument("--all-60", action="store_true", help="Deploy/update all 60 catalog agents")
     parser.add_argument("--project", default=os.environ.get("GOOGLE_CLOUD_PROJECT", "zuhaibp-ai"))
     parser.add_argument("--region", default="us-central1")
@@ -686,14 +743,18 @@ def main() -> None:
 
     if args.token:
         _TOKEN_OVERRIDE = args.token
+    else:
+        sync_gcloud_db_to_argolis_adc(args.project)
 
-    if not args.agent and not args.all_flagship and not args.all_60:
-        parser.error("Specify --agent <agent_id>, --all-flagship, or --all-60")
+    if not (args.agent or args.curated_showcase or args.all_flagship or args.all_60):
+        parser.error("Specify --agent <agent_id>, --curated-showcase, --all-flagship, or --all-60")
 
     if args.all_60:
         targets = list(ALL_AGENTS_CONFIG.keys())
+    elif args.curated_showcase:
+        targets = list(CURATED_SHOWCASE_25_IDS)
     elif args.all_flagship:
-        targets = list(FLAGSHIP_CONFIG.keys())
+        targets = list(EXISTING_14_CANONICAL_IDS)
     else:
         targets = [args.agent]
 
@@ -701,7 +762,7 @@ def main() -> None:
     media_bucket = args.media_bucket or f"{args.project}-supply-chain-media"
 
     print("==================================================================")
-    print(" 🚀 Supply Chain Categorized ADK Deployer (Resource Reuse Enabled)")
+    print(" 🚀 Supply Chain Website-Named ADK Deployer (In-Place Reuse)")
     print(f" Target Project : {args.project}")
     print(f" Vertex Region  : {args.region}")
     print(f" GE App ID      : {args.gemini_app_id}")
@@ -714,8 +775,6 @@ def main() -> None:
         enable_apis(args.project)
         ensure_bucket(args.project, args.region, staging_bucket)
         ensure_bucket(args.project, args.region, media_bucket)
-
-    deployed_summary = []
 
     if args.parallel > 1 and len(targets) > 1 and not args.dry_run and not args.skip_engine:
         from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -731,7 +790,7 @@ def main() -> None:
                 "--media-bucket", media_bucket,
                 "--skip-ge",
             ]
-            print(f"[PARALLEL START] Launching Reasoning Engine update for {aid} ...")
+            print(f"[PARALLEL START] Launching Reasoning Engine build/update for {aid} -> '{ALL_AGENTS_CONFIG[aid]['display_name']}' ...", flush=True)
             proc = subprocess.run(cmd, capture_output=True, text=True)
             out = (proc.stdout or "") + ("\n" + proc.stderr if proc.stderr else "")
             for line in out.splitlines():
@@ -744,9 +803,9 @@ def main() -> None:
             for fut in as_completed(futs):
                 aid, rc, out = fut.result()
                 if rc != 0:
-                    print(f"[{aid}] Child deploy exited with code {rc}:\n{out[-600:]}")
+                    print(f"[{aid}] ERROR child deploy exited with code {rc}:\n{out[-800:]}", flush=True)
 
-        for idx, agent_id in enumerate(targets, 1):
+        for agent_id in targets:
             spec = ALL_AGENTS_CONFIG[agent_id]
             state_file = ROOT / "agents" / agent_id / ".reasoning_engine_id"
             engine_res = state_file.read_text().strip() if state_file.exists() else ""
@@ -762,21 +821,11 @@ def main() -> None:
                         dry_run=args.dry_run,
                     )
                 except Exception as e:
-                    print(f"[{agent_id}] ERROR registering in Gemini Enterprise: {e}")
-            deployed_summary.append({
-                "agent_id": agent_id,
-                "category": spec.get("category", spec["section"]),
-                "section": spec["section"],
-                "display_name": spec["display_name"],
-                "ge_display_name": spec["ge_display_name"],
-                "description": spec["description"],
-                "model": spec["model"],
-                "reasoning_engine": engine_res,
-            })
+                    print(f"[{agent_id}] ERROR registering in Gemini Enterprise: {e}", flush=True)
     else:
         for idx, agent_id in enumerate(targets, 1):
             spec = ALL_AGENTS_CONFIG[agent_id]
-            print(f"\n--- [{idx}/{len(targets)}] {agent_id} ({spec['section']}) ---")
+            print(f"\n--- [{idx}/{len(targets)}] {agent_id} -> {spec['display_name']} ---")
             engine_res = ""
             if not args.skip_engine:
                 try:
@@ -806,53 +855,52 @@ def main() -> None:
                 except Exception as e:
                     print(f"[{agent_id}] ERROR registering in Gemini Enterprise: {e}")
 
-            deployed_summary.append({
-                "agent_id": agent_id,
-                "category": spec.get("category", spec["section"]),
-                "section": spec["section"],
-                "display_name": spec["display_name"],
-                "ge_display_name": spec["ge_display_name"],
-                "description": spec["description"],
-                "model": spec["model"],
-                "reasoning_engine": engine_res,
-            })
-
-    # Update deployment_metadata.json
+    # Rebuild root deployment_metadata.json across ALL catalog agents that currently have a .reasoning_engine_id
     all_deployed = []
-    for aid, aspec in FLAGSHIP_CONFIG.items():
-        meta_file = ROOT / "agents" / aid / "deployment_metadata.json"
+    for aid, aspec in ALL_AGENTS_CONFIG.items():
         state_file = ROOT / "agents" / aid / ".reasoning_engine_id"
-        re_name = state_file.read_text().strip() if state_file.exists() else ""
+        if not state_file.exists():
+            continue
+        re_name = state_file.read_text().strip()
+        if not re_name:
+            continue
+        meta_file = ROOT / "agents" / aid / "deployment_metadata.json"
         deployed_at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        ge_agent_name = ""
         if meta_file.exists():
             try:
                 m = json.loads(meta_file.read_text(encoding="utf-8"))
-                re_name = m.get("reasoning_engine_resource_name", re_name)
                 deployed_at = m.get("deployed_at", deployed_at)
+                ge_agent_name = m.get("gemini_enterprise_agent_name", "")
             except Exception:
                 pass
         all_deployed.append({
             "agent_id": aid,
-            "category": aspec.get("category", aspec["section"]),
+            "website_name": aspec["website_name"],
+            "bracket_label": aspec["bracket_label"],
+            "category": aspec["category"],
             "section": aspec["section"],
             "display_name": aspec["display_name"],
             "ge_display_name": aspec["ge_display_name"],
             "description": aspec["description"],
             "model": aspec["model"],
             "reasoning_engine": re_name,
+            "gemini_enterprise_agent": ge_agent_name,
             "deployed_at": deployed_at,
         })
 
-    summary_path = ROOT / "deployment_metadata.json"
-    summary_data = {
-        "project_id": args.project,
-        "region": args.region,
-        "gemini_app_id": args.gemini_app_id,
-        "agents_deployed": all_deployed,
-        "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-    }
-    summary_path.write_text(json.dumps(summary_data, indent=2) + "\n")
-    print(f"\n✅ Deployment pipeline finished! Summary ({len(all_deployed)} agents) saved to {summary_path}")
+    if not args.dry_run:
+        summary_path = ROOT / "deployment_metadata.json"
+        summary_data = {
+            "project_id": args.project,
+            "region": args.region,
+            "gemini_app_id": args.gemini_app_id,
+            "deployed_count": len(all_deployed),
+            "agents_deployed": all_deployed,
+            "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        }
+        summary_path.write_text(json.dumps(summary_data, indent=2) + "\n")
+        print(f"\n✅ Deployment pipeline finished! Live summary ({len(all_deployed)} agents) saved to {summary_path}")
 
 
 if __name__ == "__main__":

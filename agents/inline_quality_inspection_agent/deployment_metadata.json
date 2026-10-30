@@ -1,11 +1,14 @@
 {
-  "agent_id": "inline_quality_inspection_agent",
-  "display_name": "Inline Multimodal Quality Inspector (VisionInspect)",
-  "ge_display_name": "VisionInspect Quality",
-  "section": "03 \u00b7 Make",
+  "agent_id": "inline_yield_guardian",
+  "website_name": "Visual Defect Triager",
+  "bracket_label": "03 \u00b7 Make \u00b7 Quality & Compliance",
+  "category": "03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance",
+  "display_name": "Visual Defect Triager (03 \u00b7 Make \u00b7 Quality & Compliance)",
+  "ge_display_name": "Visual Defect Triager (03 \u00b7 Make \u00b7 Quality & Compliance)",
+  "section": "03 \u00b7 Make | Quality & Compliance",
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "reasoning_engine_resource_name": "projects/632239123109/locations/us-central1/reasoningEngines/2816047465705242624",
   "model": "gemini-3.8-flash",
-  "deployed_at": "2026-10-22T11:42:17Z"
+  "deployed_at": "2026-10-30T07:33:29Z"
 }
