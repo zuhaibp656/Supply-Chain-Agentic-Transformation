@@ -1,178 +1,386 @@
-"""Decoupled Backend Agent Server for Enterprise Twin Generation.
+"""Enterprise Twin Studio — FastAPI + SSE Portal Server (`v2.0`).
 
-Provides a REST API for the frontend (hosted on Zipline, Cloud Run, or local)
-to trigger autonomous research, profiling, and customized portal compilation.
-Supports local testing and is ready for containerized Cloud Run / Argolis deployment.
+Serves:
+  1. `GET /` & `GET /welcome` -> `"Welcome to Supply Chain"` Enterprise Portal Studio (`welcome.html`).
+  2. `GET /t/{twin_slug}` -> Hydrates `index.html` in `<200ms` from the persistent database
+     with `<base href="/" />`, dynamic `<title>`, and `window.__INITIAL_TWIN__`.
+  3. `GET /base` & `GET /index.html` -> Industry-agnostic base Supply Chain Portal (all 60 agents).
+  4. `POST /api/v1/twins/generate-stream` -> Live Server-Sent Events (`text/event-stream`) streaming
+     real-time 4-stage ADK research, logo optical framing, career job-title grounding, and agent filtering.
+  5. `POST /api/v1/generate-twin`, `GET /api/v1/twins`, `GET /api/v1/twins/{twin_slug}`,
+     `PATCH /api/v1/twins/{twin_slug}`, and `GET /api/v1/health`.
+
+Cloud Run ready (`uvicorn enterprise_twin.server:app --host 0.0.0.0 --port ${PORT:-8080}`).
 """
 
-import json
+from __future__ import annotations
+
 import argparse
-from http.server import HTTPServer, BaseHTTPRequestHandler
-from typing import Dict, Any
+import asyncio
+import html
+import json
+import os
+from pathlib import Path
+import sys
+import threading
+from typing import Any, AsyncGenerator, Dict, Optional, Tuple
+
+from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, StreamingResponse
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel, Field
+
+CURRENT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = CURRENT_DIR.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from enterprise_twin.agent import run_enterprise_twin_agent
-from enterprise_twin.tools.persistence import list_saved_twins, load_twin
-from enterprise_twin.tools.industry_archetypes import INDUSTRY_ARCHETYPES
-from enterprise_twin.tools.company_profiler import KNOWN_COMPANIES
+from enterprise_twin.schema import TwinOverlaySpec, validate_and_normalize_overlay
+from enterprise_twin.tools.logo_resolver import resolve_company_logo
+from enterprise_twin.tools.persistence import list_saved_twins, load_twin_spec, save_twin_spec
+
+WELCOME_HTML_PATH = CURRENT_DIR / "web" / "welcome.html"
+PORTAL_HTML_FILES = {
+    "index.html": PROJECT_ROOT / "index.html",
+    "periodic_table.html": PROJECT_ROOT / "periodic_table.html",
+    "mind_map.html": PROJECT_ROOT / "mind_map.html",
+    "cost_analysis_presentation.html": PROJECT_ROOT / "cost_analysis_presentation.html",
+    "agent_testing_and_video_playbook.html": PROJECT_ROOT / "agent_testing_and_video_playbook.html",
+    "supply_chain_101_interactive_academy.html": PROJECT_ROOT / "supply_chain_101_interactive_academy.html",
+}
+
+# Cache canonical HTML strings in memory for sub-millisecond hydration
+_HTML_TEMPLATE_CACHE: Dict[str, Tuple[float, str]] = {}
 
 
-class EnterpriseTwinApiHandler(BaseHTTPRequestHandler):
-    """CORS-enabled REST API handler for decoupled Enterprise Twin Agent."""
-
-    def _send_cors_headers(self):
-        self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
-
-    def do_OPTIONS(self):
-        self.send_response(204)
-        self._send_cors_headers()
-        self.end_headers()
-
-    def do_GET(self):
-        if self.path == "/api/v1/health":
-            self.send_response(200)
-            self._send_cors_headers()
-            self.send_header("Content-Type", "application/json")
-            self.end_headers()
-            resp = {
-                "status": "healthy",
-                "service": "EnterpriseTwinAgent",
-                "version": "1.0.0",
-                "available_archetypes": list(INDUSTRY_ARCHETYPES.keys()),
-                "known_presets": list(KNOWN_COMPANIES.keys())
-            }
-            self.wfile.write(json.dumps(resp, indent=2).encode("utf-8"))
-        elif self.path == "/api/v1/twins":
-            self.send_response(200)
-            self._send_cors_headers()
-            self.send_header("Content-Type", "application/json")
-            self.end_headers()
-            twins = list_saved_twins()
-            self.wfile.write(json.dumps({"status": "success", "count": len(twins), "twins": twins}, indent=2).encode("utf-8"))
-        elif self.path.startswith("/api/v1/twins/"):
-            slug = self.path.replace("/api/v1/twins/", "").strip()
-            twin = load_twin(slug)
-            if twin:
-                self.send_response(200)
-                self._send_cors_headers()
-                self.send_header("Content-Type", "application/json")
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "success", "twin": twin}, indent=2).encode("utf-8"))
-            else:
-                self.send_response(404)
-                self._send_cors_headers()
-                self.send_header("Content-Type", "application/json")
-                self.end_headers()
-                self.wfile.write(json.dumps({"error": f"Twin '{slug}' not found in memory"}).encode("utf-8"))
-        elif self.path == "/api/v1/archetypes":
-            self.send_response(200)
-            self._send_cors_headers()
-            self.send_header("Content-Type", "application/json")
-            self.end_headers()
-            self.wfile.write(json.dumps(INDUSTRY_ARCHETYPES, indent=2).encode("utf-8"))
-        else:
-            self.send_response(404)
-            self._send_cors_headers()
-            self.send_header("Content-Type", "application/json")
-            self.end_headers()
-            self.wfile.write(json.dumps({"error": "Not found"}).encode("utf-8"))
-
-    def do_POST(self):
-        if self.path == "/api/v1/generate-twin":
-            content_length = int(self.headers.get("Content-Length", 0))
-            body = self.rfile.read(content_length).decode("utf-8")
-            try:
-                data = json.loads(body) if body else {}
-            except Exception as e:
-                self.send_response(400)
-                self._send_cors_headers()
-                self.send_header("Content-Type", "application/json")
-                self.end_headers()
-                self.wfile.write(json.dumps({"error": f"Invalid JSON payload: {e}"}).encode("utf-8"))
-                return
-
-            company_name = data.get("company_name", "").strip()
-            industry = data.get("industry", None)
-            focus = data.get("focus", "")
-
-            if not company_name:
-                self.send_response(400)
-                self._send_cors_headers()
-                self.send_header("Content-Type", "application/json")
-                self.end_headers()
-                self.wfile.write(json.dumps({"error": "Missing required field: 'company_name'"}).encode("utf-8"))
-                return
-
-            print(f"⚡ [Backend Server] Invoking ADK Agent for: '{company_name}' (Industry: {industry})")
-
-            try:
-                # Execute full ADK Agent pipeline
-                agent_res = run_enterprise_twin_agent(company_name, industry, focus)
-                profile = agent_res["profile"]
-                artifacts = agent_res["artifacts"]
-
-                resp = {
-                    "status": "success",
-                    "source": agent_res.get("source", "autonomous_synthesis"),
-                    "company_name": profile['canonicalName'],
-                    "industry": profile['industryId'],
-                    "executive_title": profile['executiveTitle'],
-                    "executive_thesis": profile['executiveThesis'],
-                    "brand_accent": profile['brandAccent'],
-                    "brand_secondary": profile['brandSecondary'],
-                    "flagship_sites": profile.get('flagshipSites', ''),
-                    "output_dir": artifacts.get("output_dir", ""),
-                    "index_file": artifacts.get("index_html", ""),
-                    "periodic_table_file": artifacts.get("periodic_table", ""),
-                    "mind_map_file": artifacts.get("mind_map", ""),
-                    "zipline_bundle_file": artifacts.get("zipline_bundle", ""),
-                    "personaOverrides": profile.get("personaOverrides", {}),
-                    "agentOverrides": profile.get("agentOverrides", {}),
-                    "profile": profile
-                }
-
-                self.send_response(200)
-                self._send_cors_headers()
-                self.send_header("Content-Type", "application/json")
-                self.end_headers()
-                self.wfile.write(json.dumps(resp, indent=2).encode("utf-8"))
-                print(f"✅ [Backend Server] Successfully returned ADK twin for: '{company_name}'")
-
-            except Exception as e:
-                print(f"❌ [Backend Server] Error generating twin: {e}")
-                self.send_response(500)
-                self._send_cors_headers()
-                self.send_header("Content-Type", "application/json")
-                self.end_headers()
-                self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
-        else:
-            self.send_response(404)
-            self._send_cors_headers()
-            self.send_header("Content-Type", "application/json")
-            self.end_headers()
-            self.wfile.write(json.dumps({"error": "Endpoint not found"}).encode("utf-8"))
+def _read_cached_html(path: Path) -> str:
+    if not path.exists():
+        raise HTTPException(status_code=404, detail=f"Portal file not found: {path.name}")
+    mtime = path.stat().st_mtime
+    key = str(path)
+    cached = _HTML_TEMPLATE_CACHE.get(key)
+    if cached and cached[0] == mtime:
+        return cached[1]
+    text = path.read_text(encoding="utf-8")
+    _HTML_TEMPLATE_CACHE[key] = (mtime, text)
+    return text
 
 
-def run_server(port: int = 8080, host: str = "0.0.0.0"):
-    server_address = (host, port)
-    httpd = HTTPServer(server_address, EnterpriseTwinApiHandler)
-    print("="*70)
-    print(f"🚀 ENTERPRISE TWIN DECOUPLED BACKEND AGENT SERVICE")
-    print(f"   Listening on http://{host}:{port}")
-    print(f"   Health check: http://localhost:{port}/api/v1/health")
-    print(f"   API endpoint: POST http://localhost:{port}/api/v1/generate-twin")
-    print("="*70)
-    try:
-        httpd.serve_forever()
-    except KeyboardInterrupt:
-        print("\nStopping server.")
-        httpd.server_close()
+def _safe_json_for_script(obj: Any) -> str:
+    """Serializes JSON safely for embedding inside an HTML `<script>` block."""
+    raw = json.dumps(obj, ensure_ascii=False)
+    return raw.replace("</", "<\\/")
+
+
+def _hydrate_portal_html(
+    html_filename: str,
+    twin_spec: Optional[Dict[str, Any]] = None,
+    inject_base_href: bool = False,
+) -> str:
+    path = PORTAL_HTML_FILES[html_filename]
+    doc = _read_cached_html(path)
+
+    scripts = ["window.__ENTERPRISE_STUDIO_SERVER__ = true;"]
+    if twin_spec:
+        scripts.append(f"window.__INITIAL_TWIN__ = {_safe_json_for_script(twin_spec)};")
+
+    head_injection = ""
+    if inject_base_href:
+        head_injection += '\n  <base href="/" />'
+    head_injection += f"\n  <script>{' '.join(scripts)}</script>\n"
+
+    if twin_spec and twin_spec.get("display_label"):
+        safe_title = html.escape(f"{twin_spec['display_label']} — Supply Chain Agentic Transformation")
+        t_start = doc.find("<title>")
+        t_end = doc.find("</title>")
+        if t_start != -1 and t_end != -1 and t_end > t_start:
+            doc = doc[: t_start + 7] + safe_title + doc[t_end:]
+
+    head_pos = doc.find("<head>")
+    if head_pos != -1:
+        insert_at = head_pos + len("<head>")
+        return doc[:insert_at] + head_injection + doc[insert_at:]
+    return head_injection + doc
+
+
+class GenerateTwinRequest(BaseModel):
+    company_name: str = Field(..., min_length=1, max_length=140)
+    division_name: str = Field(default="", max_length=160)
+    geography: str = Field(default="Global", max_length=80)
+    industry: Optional[str] = Field(default=None)
+    focus: str = Field(default="", max_length=2000)
+    custom_logo_input: str = Field(default="")
+    force_refresh: bool = Field(default=False)
+
+
+class PatchTwinRequest(BaseModel):
+    executive_title: Optional[str] = None
+    executive_thesis: Optional[str] = None
+    flagship_sites: Optional[str] = None
+    custom_logo_input: Optional[str] = None
+    persona_overrides: Optional[Dict[str, Dict[str, Any]]] = None
+    agent_relevance: Optional[Dict[str, Dict[str, Any]]] = None
+
+
+app = FastAPI(
+    title="Supply Chain Enterprise Twin Studio",
+    version="2.0.0",
+    description="Google ADK + Gemini 3.1 Pro / Gemini 3.8 Flash Enterprise Portal Generator & Persistent Twin Server",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+if (PROJECT_ROOT / "videos").exists():
+    app.mount("/videos", StaticFiles(directory=str(PROJECT_ROOT / "videos")), name="videos")
+
+if (PROJECT_ROOT / "data" / "twins" / "logos").exists():
+    app.mount(
+        "/assets/logos",
+        StaticFiles(directory=str(PROJECT_ROOT / "data" / "twins" / "logos")),
+        name="twin_logos",
+    )
+
+
+@app.get("/", response_class=HTMLResponse)
+@app.get("/welcome", response_class=HTMLResponse)
+async def serve_welcome_studio() -> HTMLResponse:
+    return HTMLResponse(content=_read_cached_html(WELCOME_HTML_PATH))
+
+
+@app.get("/base", response_class=HTMLResponse)
+@app.get("/index.html", response_class=HTMLResponse)
+async def serve_base_or_query_portal(twin: Optional[str] = Query(default=None)) -> HTMLResponse:
+    spec = None
+    if twin and twin not in ("base", "reset"):
+        spec = load_twin_spec(twin)
+    return HTMLResponse(content=_hydrate_portal_html("index.html", twin_spec=spec, inject_base_href=False))
+
+
+@app.get("/t/{twin_slug}", response_class=HTMLResponse)
+async def serve_tailored_company_portal(twin_slug: str) -> HTMLResponse:
+    spec = load_twin_spec(twin_slug)
+    if not spec:
+        # Auto-synthesize on the fly if someone visits a shared URL slug not yet in local cache
+        parts = twin_slug.split("--", 1)
+        co_guess = parts[0].replace("-", " ").title()
+        div_guess = parts[1].replace("-", " ").title() if len(parts) > 1 else ""
+        res = await asyncio.to_thread(
+            run_enterprise_twin_agent,
+            company_name=co_guess,
+            division_name=div_guess,
+        )
+        spec = res["overlay"]
+    return HTMLResponse(content=_hydrate_portal_html("index.html", twin_spec=spec, inject_base_href=True))
+
+
+@app.get("/periodic_table.html", response_class=HTMLResponse)
+async def serve_periodic_table(twin: Optional[str] = Query(default=None)) -> HTMLResponse:
+    spec = load_twin_spec(twin) if twin and twin not in ("base", "reset") else None
+    return HTMLResponse(content=_hydrate_portal_html("periodic_table.html", twin_spec=spec))
+
+
+@app.get("/mind_map.html", response_class=HTMLResponse)
+async def serve_mind_map(twin: Optional[str] = Query(default=None)) -> HTMLResponse:
+    spec = load_twin_spec(twin) if twin and twin not in ("base", "reset") else None
+    return HTMLResponse(content=_hydrate_portal_html("mind_map.html", twin_spec=spec))
+
+
+@app.get("/cost_analysis_presentation.html")
+async def serve_cost_deck() -> FileResponse:
+    return FileResponse(str(PORTAL_HTML_FILES["cost_analysis_presentation.html"]))
+
+
+@app.get("/agent_testing_and_video_playbook.html")
+async def serve_playbook() -> FileResponse:
+    return FileResponse(str(PORTAL_HTML_FILES["agent_testing_and_video_playbook.html"]))
+
+
+@app.get("/supply_chain_101_interactive_academy.html")
+async def serve_academy() -> FileResponse:
+    return FileResponse(str(PORTAL_HTML_FILES["supply_chain_101_interactive_academy.html"]))
+
+
+@app.get("/api/v1/health")
+async def api_health() -> Dict[str, Any]:
+    twins = list_saved_twins(include_cloud=False)
+    return {
+        "status": "healthy",
+        "service": "EnterpriseTwinStudio",
+        "version": "2.0.0",
+        "models": {
+            "deep_research_grounding": os.environ.get("SC_TWIN_PRO_MODEL", "gemini-3.1-pro-preview"),
+            "parallel_pillar_synthesis": os.environ.get("SC_TWIN_FLASH_MODEL", "gemini-3.8-flash"),
+        },
+        "saved_portals_count": len(twins),
+    }
+
+
+@app.get("/api/v1/twins")
+async def api_list_twins() -> Dict[str, Any]:
+    twins = await asyncio.to_thread(list_saved_twins, True)
+    return {"status": "success", "count": len(twins), "twins": twins}
+
+
+@app.get("/api/v1/twins/{twin_slug}")
+async def api_get_twin(twin_slug: str) -> Dict[str, Any]:
+    spec = await asyncio.to_thread(load_twin_spec, twin_slug)
+    if not spec:
+        raise HTTPException(status_code=404, detail=f"Portal '{twin_slug}' not found.")
+    return {"status": "success", "twin": spec}
+
+
+@app.patch("/api/v1/twins/{twin_slug}")
+async def api_patch_twin(twin_slug: str, req: PatchTwinRequest) -> Dict[str, Any]:
+    existing = await asyncio.to_thread(load_twin_spec, twin_slug)
+    if not existing:
+        raise HTTPException(status_code=404, detail=f"Portal '{twin_slug}' not found.")
+
+    brand = existing.get("brand", {})
+    if req.executive_title:
+        brand["executive_title"] = req.executive_title
+    if req.executive_thesis:
+        brand["executive_thesis"] = req.executive_thesis
+    if req.flagship_sites:
+        brand["flagship_sites"] = req.flagship_sites
+    if req.custom_logo_input:
+        logo_spec = await asyncio.to_thread(
+            resolve_company_logo,
+            existing.get("canonical_name") or existing.get("company_name", ""),
+            brand.get("official_domain", ""),
+            req.custom_logo_input,
+        )
+        brand["logo"] = logo_spec.model_dump(mode="json")
+    existing["brand"] = brand
+
+    if req.persona_overrides:
+        cur_p = existing.get("persona_overrides", {})
+        for pid, patch_obj in req.persona_overrides.items():
+            if pid in cur_p and isinstance(patch_obj, dict):
+                cur_p[pid].update(patch_obj)
+        existing["persona_overrides"] = cur_p
+
+    if req.agent_relevance:
+        cur_a = existing.get("agent_relevance", {})
+        for aid, patch_obj in req.agent_relevance.items():
+            if aid in cur_a and isinstance(patch_obj, dict):
+                cur_a[aid].update(patch_obj)
+        existing["agent_relevance"] = cur_a
+
+    validated = validate_and_normalize_overlay(TwinOverlaySpec.model_validate(existing))
+    saved = await asyncio.to_thread(save_twin_spec, validated, True)
+    return {
+        "status": "success",
+        "twin_slug": saved["twin_slug"],
+        "portal_url": f"/t/{saved['twin_slug']}",
+        "twin": saved,
+    }
+
+
+@app.post("/api/v1/generate-twin")
+async def api_generate_twin(req: GenerateTwinRequest) -> Dict[str, Any]:
+    division = req.division_name.strip() or (req.industry or "").strip()
+    result = await asyncio.to_thread(
+        run_enterprise_twin_agent,
+        company_name=req.company_name.strip(),
+        division_name=division,
+        geography=req.geography.strip() or "Global",
+        focus=req.focus.strip(),
+        custom_logo_input=req.custom_logo_input.strip(),
+        force_refresh=req.force_refresh,
+    )
+    ov = result["overlay"]
+    return {
+        "status": "success",
+        "source": result["source"],
+        "twin_slug": ov["twin_slug"],
+        "portal_url": f"/t/{ov['twin_slug']}",
+        "display_label": ov["display_label"],
+        "active_agents_count": ov["active_agents_count"],
+        "hidden_agent_ids": ov["hidden_agent_ids"],
+        "overlay": ov,
+    }
+
+
+@app.post("/api/v1/twins/generate-stream")
+async def api_generate_twin_stream(req: GenerateTwinRequest) -> StreamingResponse:
+    """Streams real-time SSE progress events during synthesis and finishes with redirect URL."""
+    loop = asyncio.get_running_loop()
+    queue: asyncio.Queue[Dict[str, Any]] = asyncio.Queue()
+
+    def progress_callback(ev: Dict[str, Any]) -> None:
+        loop.call_soon_threadsafe(queue.put_nowait, ev)
+
+    def worker() -> None:
+        try:
+            division = req.division_name.strip() or (req.industry or "").strip()
+            res = run_enterprise_twin_agent(
+                company_name=req.company_name.strip(),
+                division_name=division,
+                geography=req.geography.strip() or "Global",
+                focus=req.focus.strip(),
+                custom_logo_input=req.custom_logo_input.strip(),
+                force_refresh=req.force_refresh,
+                progress_cb=progress_callback,
+            )
+            ov = res["overlay"]
+            loop.call_soon_threadsafe(
+                queue.put_nowait,
+                {
+                    "pct": 100,
+                    "stage": "done",
+                    "source": res["source"],
+                    "twin_slug": ov["twin_slug"],
+                    "display_label": ov["display_label"],
+                    "active_agents_count": ov["active_agents_count"],
+                    "hidden_agents_count": len(ov.get("hidden_agent_ids") or []),
+                    "redirect_url": f"/t/{ov['twin_slug']}",
+                    "message": f"Portal ready: {ov['display_label']} ({ov['active_agents_count']}/60 relevant agents)",
+                },
+            )
+        except Exception as exc:
+            loop.call_soon_threadsafe(
+                queue.put_nowait,
+                {"pct": 0, "stage": "error", "error": str(exc)},
+            )
+
+    threading.Thread(target=worker, daemon=True).start()
+
+    async def event_generator() -> AsyncGenerator[str, None]:
+        yield f"data: {json.dumps({'pct': 5, 'stage': 'accepted', 'message': f'Starting Enterprise Twin Studio for {req.company_name}...'})}\n\n"
+        while True:
+            ev = await queue.get()
+            yield f"data: {json.dumps(ev, ensure_ascii=False)}\n\n"
+            if ev.get("stage") in ("done", "error"):
+                break
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
+def run_server(port: int = 8080, host: str = "0.0.0.0") -> None:
+    import uvicorn
+
+    uvicorn.run(app, host=host, port=port, log_level="info")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Enterprise Twin Backend Agent Server")
-    parser.add_argument("--port", type=int, default=8080, help="Port to listen on (default: 8080)")
-    parser.add_argument("--host", type=str, default="0.0.0.0", help="Host address (default: 0.0.0.0)")
+    parser = argparse.ArgumentParser(description="Enterprise Twin Studio FastAPI Server")
+    parser.add_argument("--port", type=int, default=int(os.environ.get("PORT", "8080")))
+    parser.add_argument("--host", type=str, default="0.0.0.0")
     args = parser.parse_args()
-    run_server(args.port, args.host)
+    run_server(port=args.port, host=args.host)

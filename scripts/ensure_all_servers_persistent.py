@@ -32,6 +32,15 @@ SYSTEMD_USER_DIR = HOME / ".config" / "systemd" / "user"
 
 SERVICES = [
     {
+        "unit": "sc-twin-studio-8095",
+        "desc": "Supply Chain Enterprise Twin Studio FastAPI + SSE Portal (Primary 8095)",
+        "port": 8095,
+        "cwd": SC_DIR,
+        "cmd": [str(VENV_BIN / "uvicorn"), "enterprise_twin.server:app", "--host", "0.0.0.0", "--port", "8095"],
+        "check_url": "http://127.0.0.1:8095/api/v1/health",
+        "requires_path": VENV_BIN / "uvicorn",
+    },
+    {
         "unit": "sc-portal-8899",
         "desc": "Supply Chain Portal & Playbook (Primary 8899)",
         "port": 8899,

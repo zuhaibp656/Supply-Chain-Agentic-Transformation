@@ -1,0 +1,1522 @@
+{
+  "schema_version": "2.0",
+  "twin_slug": "aditya-birla-group--ultratech-cement-division",
+  "company_name": "Aditya Birla Group",
+  "canonical_name": "Aditya Birla Group",
+  "division_name": "UltraTech Cement Division",
+  "display_label": "Aditya Birla Group — UltraTech Cement Division",
+  "brand": {
+    "company_name": "Aditya Birla Group",
+    "canonical_name": "Aditya Birla Group",
+    "division_name": "UltraTech Cement Division",
+    "twin_slug": "aditya-birla-group--ultratech-cement-division",
+    "official_domain": "",
+    "industry_sector": "Heavy Building Materials · Integrated Clinker, Grinding Units & Bulk Logistics",
+    "geography": "India",
+    "brand_accent": "#f59e0b",
+    "brand_secondary": "#1e293b",
+    "executive_title": "Chief Manufacturing & Supply Chain Officer (Integrated Units, Grinding & Bulk Logistics), Aditya Birla Group",
+    "executive_thesis": "Optimizing Aditya Birla Group — UltraTech Cement Division's limestone mines, pyro-processing rotary kilns, split-location Grinding Units (GUs), bulk coastal terminals, Indian Railways clinker/cement rakes, and primary/secondary road dispatch across thousands of channel dealers…",
+    "flagship_sites": "Integrated Limestone & Clinker Mother Plants · Regional Split Grinding Units (GUs) · Bulk Packing Terminals · Rail Siding & C&F Depots",
+    "erp_systems": "SAP S/4HANA · Kiln APC & Historian · Rail Rake & GPS Fleet Control Tower · Dealer Order Portal",
+    "logo": {
+      "data_uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAILElEQVR42u2aXYxdVRXHf2ufc7/vzNy5M9PptNPSoZ0KxdKCbZUP01iQUjFGJRofNCjhjRjfSHwhfdInoy+8+GSUmCBGTdBEBQkqFIotlJZ+TTuUaZlO5+vezv0+Z5+zlw/n0kB4aeJ9GZyV3Ieds/Y+67/+/7X2yskVVS0CzwDfBrKsDusAvwOeFFX9DfBdVqc9K6raAnKrFEBbVFVZxWZY5bYGYA3AGoA1AGsA/ifzb8bpxG9/jTv+GjYIcBKx+57N5PqzIB4g4GXAGFAHKPgGrMU1WhgbQ6xJqjyT+AmAA2vBObAR2ok5M1UnCmN8gdae/ex97PHeAJg+f5Hac7/Hxg7rlKtv9fG1h0dJNTrd0SqGtAEPaCtkBHyP6ZMNNjw8SuHoEqRIfLTLe6wQKTggUKavBkzPhuTjmKG0x+XBzeztFQMGJSNgBJZjx/ULdbaPFth5SwYyDnyByIGYJKOLSlgN6MyENDYVyV03mPMLYBSC7uTy4QTjC51ImbpmicOI2BOsJjh7VgOGJKkAaSOkVDlyukI9TidPUybJZsaDUopYlPBSE98zqCocmICJgQRoCigYyBowgms63r7YJrKJdFKSuMW9BCAipIxgBPJGyBshuB5y9GwVlSx4PuR88AV1QnCqiVEo+Aay3aC/ehv0Z8CTREq+oNaxULEsNpUgclgF21VVT7uQbwxqzI2DHUkc756rMBd6kMtANgXNmOD1FWzH4RQyxuCcQ8VBPkV8cHvClgGc4iK4uORQp1indJwj1kRdaemlhIzBM4aMCHlPKHpCzggZ6/jXa7PYuACxYN+LiOsQeR6BGBAhbsU4G6HOEQ3nCfduhsCBwnI1ZimEWmjxBQTBqRKq4vWSAVXFquKAnBEKniBA4JRz0yucv1gjmo0Jr0WI75HyPfAMxggaKnhC1HbYlYhgYgg7WSZuOZZaKTqhJYodgVN8SdhtxtrbGnDqUOfIG8EXoc9LfhkjjBg4+/YH1Fv9+LkM+B5iBCOCB5iSh/RniVSJ2ooNmixtz1Ijy0InxsSOFOBLcnbglI5TnPaSAafkBYqekJKkhcckbbWQMRzamqNSq+INlfFTPr5nSPkGUcXP+tggIFYLpoXttHDXOxS2DmFth8BGGJEbbTNjhLRJGO7ZTRw4xTglRGk7xQhkjdDnGx68o59izsNk2syF/YwO5kmtN2RKQqOQ4oUfnmB0fZ7SZD9jdw/SN+SxrtJHql7hc5NZXjzWQV2SjMApg75QNNDoJQBN7hvaSe0ROUh5cP8dfawrJ0fkjCAr1zD3jeNLClyERIpdDqlULQtnVjj2xxkOHdjI6K3roNakXPDYd1uRI2fqWJcUcdYkLbt9kxq6KQmt70szsm2A0BNCp6xEjrF1GTaPpJMaiZTmVJv8XJuFyyswWALfA2MwXakBjGV8JoIitX9exrUtZIWJiSzbNueIFbKecCmC5XKKoWKmdwxkUoa79hTZcc8w7xxf5tqVJnu25MCAekJtqkPcSbqInlxiZdMQA+kCuAYObuh5/8QwURgTNSy192Bgdx4xcOdtRa60oN+Dh7Zk6S+leDWf6h0AI0BgyRCzb98Q+vQhdGqB6NgUnK7gBzERECEU246lN2YofmUXEgVId/zY2peiPDxI59oyqOLaSnU2Ym48g+zIcu9DY4y9tIC0LUSCMdLDUQKgEUMzhgNbkHIbc+8Q+oP9vF4xXHdKziRDX4xQmG0zd3Eek8vjSXJv7N40gm208KylY4QzofLCqRWGv7mZiYe2Uf7MOuJvbE3GjFjx0N4Oc3QcunMLWswkd70LmTtymrlqk7PpAsclzbx1pEXJqRIencEGAZ7AjnIBSgMs1du8uhLw4mKTY5UW9XZE9a0GHgbP92GwgN5/K/jgbvJ7m3/TDOzdhO4YRaJuKxKheqGGiWM69SblcoGgf5B3myFDYYfRVsz1c/OUfMHlsrx86hK1ZkBGlHW+YFSox8rydJ3JSJC0j2QUdoyg1TZGXe8ADExu4Uq8k/CqI4wVjEE8w6V4Cyt3DSMiVAXSvkGMYVphQB2TOZ/ivpC/dWLyZSFtoA00gViErAjLuT7OnhtGpJspp2THP8tI4ZabAvDp+zaqcQzq0MiCKuocLrKotTgb4qzt9n6Luvhj+zT6yLOPrrt7krHk42OaCzrJeyJ7wx91uDDo7g27MUS4MPjE/o9JKKws8f5zzzLyyNeZeuYXZPr7GN7/IM2lJWpv/JvU5O1Is055bAxdN0brzSNM/ugpvHSamT//icWp8wyOb6Q6O0txoESzXmfjnbuY+c+bfOHHT+Os5dzPf8qOp54G4OKvfkmczpIulaicPIGfSbP+8/cx98pLZMY3k8vnmL84zbZHv0X1nRPMvvIy2b4i+37yM0Tkkwx88IfnuPrWcaIgpLR7D/n1G6nNz5MrDVLedTfjDxxk+2NPMP3Si6y/cxdXTxxn7u9/uZFZUUenUsHFDuKY4P1p/NGxhFVg8R9/Zfb4MdpLiwAsX75Maccd1KYvgHO0Lr1HyynFWya4/XuPs3j2bFcRiqqiNqSwdfJG8ADe4cOHD3+4mD11kuEvfon2wjy10yfxymWGd+5CUmkUyG/YSN/wCLVqFdesM3TgINWZGUZ33UVjYR5bW6E4sQ3n+6QHhxj98iE6Vy7T+OAyttmkUa0y/uh3WLlwnsFtk4jvUz11Ar9vACkNMn7wEbzI0lhcYPHYG2x44GFSuRyVY0fZ8MBBQoSd33/iU17EawDWAKwBWAOwBuD/DkB7FcffNsDzqxjA8z7wZHexKv9u81/GfP6vTwfxjgAAAABJRU5ErkJggg==",
+      "source_url": "https://adityabirla.com",
+      "source_type": "google_hd_icon",
+      "plate_style": "dark_plate",
+      "aspect_ratio": 1.0,
+      "monogram": "AB"
+    }
+  },
+  "pillar_overrides": {
+    "demand_sop": {
+      "dept_id": "demand_sop",
+      "custom_name": "Planning & Strategy",
+      "custom_tagline": "Aditya Birla Group — UltraTech Cement Division · Core Planning Lifecycle",
+      "custom_subtitle": "Tailored for Aditya Birla Group — UltraTech Cement Division: Demand signals and strategic S&OP alignment."
+    },
+    "sourcing_procurement": {
+      "dept_id": "sourcing_procurement",
+      "custom_name": "Sourcing & Procurement",
+      "custom_tagline": "Aditya Birla Group — UltraTech Cement Division · Procurement Lifecycle Spine",
+      "custom_subtitle": "Tailored for Aditya Birla Group — UltraTech Cement Division: Tier vendor networks and EDI order routing."
+    },
+    "manufacturing_prod": {
+      "dept_id": "manufacturing_prod",
+      "custom_name": "Manufacturing & Production",
+      "custom_tagline": "Aditya Birla Group — UltraTech Cement Division · Manufacturing Operations Lifecycle",
+      "custom_subtitle": "Tailored for Aditya Birla Group — UltraTech Cement Division: Optimized runs and zero-defect QA protocols."
+    },
+    "inventory_warehouse": {
+      "dept_id": "inventory_warehouse",
+      "custom_name": "Inventory & Warehousing",
+      "custom_tagline": "Aditya Birla Group — UltraTech Cement Division · Inventory & DC Lifecycle Spine",
+      "custom_subtitle": "Tailored for Aditya Birla Group — UltraTech Cement Division: Multi-node staging and enterprise visibility."
+    },
+    "logistics_fleet": {
+      "dept_id": "logistics_fleet",
+      "custom_name": "Distribution & Logistics",
+      "custom_tagline": "Aditya Birla Group — UltraTech Cement Division · Logistics Fulfillment Lifecycle",
+      "custom_subtitle": "Tailored for Aditya Birla Group — UltraTech Cement Division: Store replenishment and last-mile dispatch."
+    },
+    "circular_enable": {
+      "dept_id": "circular_enable",
+      "custom_name": "Returns & Reverse Logistics",
+      "custom_tagline": "Aditya Birla Group — UltraTech Cement Division · Reverse Value Stream Lifecycle",
+      "custom_subtitle": "Tailored for Aditya Birla Group — UltraTech Cement Division: Triage inspection and upstream defect loops."
+    }
+  },
+  "sub_pillar_overrides": {
+    "demand_forecasting": {
+      "sub_pillar_id": "demand_forecasting",
+      "dept_id": "demand_sop",
+      "canonical_name": "Demand Forecasting",
+      "custom_name": "District Trade Dealer & Infra Project Demand"
+    },
+    "trade_promotion": {
+      "sub_pillar_id": "trade_promotion",
+      "dept_id": "demand_sop",
+      "canonical_name": "Trade Promotion",
+      "custom_name": "Dealer Lifting Slabs & Seasonal Rebate ROI"
+    },
+    "sop_ibp": {
+      "sub_pillar_id": "sop_ibp",
+      "dept_id": "demand_sop",
+      "canonical_name": "S&OP / IBP",
+      "custom_name": "Clinker-to-Grinding S&OP & Rail-Road Mix"
+    },
+    "portfolio_sku": {
+      "sub_pillar_id": "portfolio_sku",
+      "dept_id": "demand_sop",
+      "canonical_name": "Portfolio & SKU",
+      "custom_name": "OPC / PPC / Composite Blend & Bag Portfolio"
+    },
+    "supplier_network": {
+      "sub_pillar_id": "supplier_network",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Supplier Network",
+      "custom_name": "Petcoke, Imported Coal, Fly-Ash & Slag Network"
+    },
+    "material_packaging": {
+      "sub_pillar_id": "material_packaging",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Material & Packaging",
+      "custom_name": "Fuel Linkage, Gypsum & PP Woven Sack Sourcing"
+    },
+    "contract_po_mgmt": {
+      "sub_pillar_id": "contract_po_mgmt",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Contract & PO Mgmt",
+      "custom_name": "Contract & PO Mgmt"
+    },
+    "production_scheduling": {
+      "sub_pillar_id": "production_scheduling",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Production Scheduling",
+      "custom_name": "Kiln Campaign & Ball-Mill Grinding Scheduling"
+    },
+    "capacity_planning": {
+      "sub_pillar_id": "capacity_planning",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Capacity Planning",
+      "custom_name": "Rotary Kiln OEE, Refractory & WHRS Power"
+    },
+    "quality_compliance": {
+      "sub_pillar_id": "quality_compliance",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Quality & Compliance",
+      "custom_name": "Blaine Fineness, Compressive Strength & BIS QA"
+    },
+    "positioning_optimization": {
+      "sub_pillar_id": "positioning_optimization",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Positioning & Optimization",
+      "custom_name": "Clinker Silo, Grinding Unit & Godown Buffers"
+    },
+    "warehouse_operations": {
+      "sub_pillar_id": "warehouse_operations",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Warehouse Operations",
+      "custom_name": "Rail Siding Rake Loading & Packer Bay Slotting"
+    },
+    "omnichannel_visibility": {
+      "sub_pillar_id": "omnichannel_visibility",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Omnichannel Visibility",
+      "custom_name": "Dealer Portal & Infra Site Order Visibility"
+    },
+    "first_mid_mile": {
+      "sub_pillar_id": "first_mid_mile",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "First & Mid-Mile",
+      "custom_name": "Rail Rake Clinker Transfer & Bulk Bulker Hauls"
+    },
+    "store_replenishment": {
+      "sub_pillar_id": "store_replenishment",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Store Replenishment",
+      "custom_name": "C&F Godown & Exclusive Dealer Replenishment"
+    },
+    "last_mile_delivery": {
+      "sub_pillar_id": "last_mile_delivery",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Last-Mile Delivery",
+      "custom_name": "Direct-from-Plant Construction Site Delivery"
+    },
+    "route_carrier": {
+      "sub_pillar_id": "route_carrier",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Route & Carrier",
+      "custom_name": "Primary Lead-Distance & Transporter Bill Audit"
+    },
+    "returns_claims_mgmt": {
+      "sub_pillar_id": "returns_claims_mgmt",
+      "dept_id": "circular_enable",
+      "canonical_name": "Returns & Claims Mgmt",
+      "custom_name": "Returns & Claims Mgmt"
+    },
+    "expiry_markdowns": {
+      "sub_pillar_id": "expiry_markdowns",
+      "dept_id": "circular_enable",
+      "canonical_name": "Expiry & Markdowns",
+      "custom_name": "Monsoon Silo Age & Monsoon Stock Rotation"
+    },
+    "pallet_tote_reclamation": {
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "dept_id": "circular_enable",
+      "canonical_name": "Pallet & Tote Reclamation",
+      "custom_name": "Pallet & Tote Reclamation"
+    }
+  },
+  "persona_overrides": {
+    "demand_planner_forecaster": {
+      "persona_id": "demand_planner_forecaster",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Planner / Forecaster",
+      "title": "Zonal Manager — District Trade & Infra Cement Demand",
+      "role": "District Trade Dealer & Infra Project Demand · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads district trade dealer & infra project demand across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns demand forecasting execution within Supply Chain Planning & Strategy—partnering…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose demand forecasting variances and exceptions across regions.",
+      "agentic_impact": "Demand Sensing Agent automatically synthesizes POS velocity, weather anomalies, and macro trends. — detects demand shifts 7–14 days earlier.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "commercial_planning_lead": {
+      "persona_id": "commercial_planning_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Commercial Planning Lead",
+      "title": "Head of Dealer Channel & Institutional Forecast Sync",
+      "role": "District Trade Dealer & Infra Project Demand · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads district trade dealer & infra project demand across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns demand forecasting execution within Supply Chain Planning & Strategy—partnering…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose demand forecasting variances and exceptions across regions.",
+      "agentic_impact": "Forecast Reconciliation automatically identifies unmodeled drivers across eCommerce and retail channels. — replaces black-box variance models.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "brand_innovation_mgr": {
+      "persona_id": "brand_innovation_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Brand & Innovation Manager",
+      "title": "Product Lead — Blended Low-Carbon & Specialty Cements",
+      "role": "District Trade Dealer & Infra Project Demand · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads district trade dealer & infra project demand across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns demand forecasting execution within Supply Chain Planning & Strategy—partnering…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose demand forecasting variances and exceptions across regions.",
+      "agentic_impact": "NPI Demand Profiler automatically matches launch packaging and attributes to historical lookalikes. — cuts 90-day launch forecast errors.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "trade_marketing_manager": {
+      "persona_id": "trade_marketing_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Trade Marketing Manager",
+      "title": "Zonal Head — Dealer Lifting Schemes & Rebate Slabs",
+      "role": "Dealer Lifting Slabs & Seasonal Rebate ROI · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads dealer lifting slabs & seasonal rebate roi across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns trade promotion execution within Supply Chain Planning & Strategy—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose trade promotion variances and exceptions across regions.",
+      "agentic_impact": "Promo ROI Simulator automatically simulates price elasticity, shelf lift, and incremental spend return. — prevents break-even trade leakage.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "key_account_manager": {
+      "persona_id": "key_account_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Key Account Manager (KAM)",
+      "title": "Head of Dealer Lifting Slabs & Seasonal Rebate ROI (Key Account Manager (KAM))",
+      "role": "Dealer Lifting Slabs & Seasonal Rebate ROI · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads dealer lifting slabs & seasonal rebate roi across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns trade promotion execution within Supply Chain Planning & Strategy—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose trade promotion variances and exceptions across regions.",
+      "agentic_impact": "JBP Negotiation Agent automatically creates customized sell-in story decks and joint promotional calendars. — aligns buyer margins and volume goals.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "revenue_trade_finance_lead": {
+      "persona_id": "revenue_trade_finance_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Revenue / Trade Finance Lead",
+      "title": "Head of Dealer Lifting Slabs & Seasonal Rebate ROI (Revenue / Trade Finance Lead)",
+      "role": "Dealer Lifting Slabs & Seasonal Rebate ROI · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads dealer lifting slabs & seasonal rebate roi across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns trade promotion execution within Supply Chain Planning & Strategy—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose trade promotion variances and exceptions across regions.",
+      "agentic_impact": "Deduction Audit Agent automatically audits scanned proof-of-performance circulars and invoices via OCR. — resolves claim disputes in hours.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "sop_supply_planning_dir": {
+      "persona_id": "sop_supply_planning_dir",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "S&OP / Supply Planning Dir.",
+      "title": "Head of Clinker-to-Grinding S&OP & Rail-Road Mix (S&OP / Supply Planning Dir.)",
+      "role": "Clinker-to-Grinding S&OP & Rail-Road Mix · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads clinker-to-grinding s&op & rail-road mix across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns s&op / ibp execution within Supply Chain Planning & Strategy—partnering with Consensus…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose s&op / ibp variances and exceptions across regions.",
+      "agentic_impact": "Consensus & Gap Agent automatically reconciles unconstrained demand with factory plant bottleneck limits. — highlights margin-dilutive imbalances.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "supply_chain_vp_coo": {
+      "persona_id": "supply_chain_vp_coo",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Supply Chain VP / COO",
+      "title": "Head of Clinker-to-Grinding S&OP & Rail-Road Mix (Supply Chain VP / COO)",
+      "role": "Clinker-to-Grinding S&OP & Rail-Road Mix · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads clinker-to-grinding s&op & rail-road mix across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns s&op / ibp execution within Supply Chain Planning & Strategy—partnering with Digital…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose s&op / ibp variances and exceptions across regions.",
+      "agentic_impact": "Digital War-Room Agent automatically evaluates co-packer shifts and allocation trade-offs during supply outages. — rapid otif impact scenario brief.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "ibp_lead_chief_planning_off": {
+      "persona_id": "ibp_lead_chief_planning_off",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "IBP Lead / Chief Planning Off.",
+      "title": "Head of Clinker-to-Grinding S&OP & Rail-Road Mix (IBP Lead / Chief Planning Off.)",
+      "role": "Clinker-to-Grinding S&OP & Rail-Road Mix · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads clinker-to-grinding s&op & rail-road mix across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns s&op / ibp execution within Supply Chain Planning & Strategy—partnering with Executive…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose s&op / ibp variances and exceptions across regions.",
+      "agentic_impact": "Executive Copilot automatically generates pre-read decks and tracks sign-offs across cross-functional leads. — reduces deck preparation by days.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "category_manager_portfolio": {
+      "persona_id": "category_manager_portfolio",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Category Manager",
+      "title": "Head of OPC / PPC / Composite Blend & Bag Portfolio (Category Manager)",
+      "role": "OPC / PPC / Composite Blend & Bag Portfolio · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads opc / ppc / composite blend & bag portfolio across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns portfolio & sku execution within Supply Chain Planning & Strategy—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose portfolio & sku variances and exceptions across regions.",
+      "agentic_impact": "SKU Pruning Agent automatically scores velocity, plant changeover cost, and shelf revenue yield. — unlocks tail working capital.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "lifecycle_materials_mgr": {
+      "persona_id": "lifecycle_materials_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Lifecycle / Materials Mgr",
+      "title": "Head of OPC / PPC / Composite Blend & Bag Portfolio (Lifecycle / Materials Mgr)",
+      "role": "OPC / PPC / Composite Blend & Bag Portfolio · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads opc / ppc / composite blend & bag portfolio across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns portfolio & sku execution within Supply Chain Planning & Strategy—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose portfolio & sku variances and exceptions across regions.",
+      "agentic_impact": "PIPO Run-Out Agent automatically orchestrates transition buffers to sync packaging and formulation cuts. — eliminates stranded write-offs.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "commercial_finance_director": {
+      "persona_id": "commercial_finance_director",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Commercial Finance Director",
+      "title": "Head of OPC / PPC / Composite Blend & Bag Portfolio (Commercial Finance Director)",
+      "role": "OPC / PPC / Composite Blend & Bag Portfolio · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads opc / ppc / composite blend & bag portfolio across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns portfolio & sku execution within Supply Chain Planning & Strategy—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose portfolio & sku variances and exceptions across regions.",
+      "agentic_impact": "Cost-to-Serve Diagnostic automatically calculates net-net margin across Club, Grocery, and eCommerce packs. — re-engineers moq and pack rules.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "procurement_dir_risk_mgr": {
+      "persona_id": "procurement_dir_risk_mgr",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Dir. / Risk Mgr",
+      "title": "Head of Petcoke, Imported Coal, Fly-Ash & Slag Network (Procurement Dir. / Risk Mgr)",
+      "role": "Petcoke, Imported Coal, Fly-Ash & Slag Network · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads petcoke, imported coal, fly-ash & slag network across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns supplier network execution within Strategic Procurement—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose supplier network variances and exceptions across regions.",
+      "agentic_impact": "Disruption Sensing Agent automatically monitors multi-tier supply feeds, port delays, and vendor financials. — 2–3 week advance disruption warning.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "procurement_operations_lead": {
+      "persona_id": "procurement_operations_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Operations Lead",
+      "title": "Head of Petcoke, Imported Coal, Fly-Ash & Slag Network (Procurement Operations Lead)",
+      "role": "Petcoke, Imported Coal, Fly-Ash & Slag Network · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads petcoke, imported coal, fly-ash & slag network across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns supplier network execution within Strategic Procurement—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose supplier network variances and exceptions across regions.",
+      "agentic_impact": "Onboarding & Qual. Agent automatically parses BRC/ISO audits, food-safety filings, and tax registrations. — cuts onboarding from weeks to <48h.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "chief_sustainability_officer": {
+      "persona_id": "chief_sustainability_officer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Head of Petcoke, Imported Coal, Fly-Ash & Slag Network (Chief Sustainability Officer)",
+      "role": "Petcoke, Imported Coal, Fly-Ash & Slag Network · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads petcoke, imported coal, fly-ash & slag network across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns supplier network execution within Strategic Procurement—partnering with ESG &…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose supplier network variances and exceptions across regions.",
+      "agentic_impact": "ESG & Scope 3 Auditor automatically standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. — automates scope 3 disclosure audits.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "category_sourcing_mgr_direct": {
+      "persona_id": "category_sourcing_mgr_direct",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Category Sourcing Mgr (Direct)",
+      "title": "Head of Fuel Linkage, Gypsum & PP Woven Sack Sourcing (Category Sourcing Mgr (Direct))",
+      "role": "Fuel Linkage, Gypsum & PP Woven Sack Sourcing · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads fuel linkage, gypsum & pp woven sack sourcing across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns material & packaging execution within Strategic Procurement—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose material & packaging variances and exceptions across regions.",
+      "agentic_impact": "Commodity Index Advisor automatically correlates CBOT/Platts feedstocks with depletion to advise hedging. — optimizes forward-contract windows.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "strategic_sourcing_lead": {
+      "persona_id": "strategic_sourcing_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Strategic Sourcing Lead",
+      "title": "Head of Fuel Linkage, Gypsum & PP Woven Sack Sourcing (Strategic Sourcing Lead)",
+      "role": "Fuel Linkage, Gypsum & PP Woven Sack Sourcing · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads fuel linkage, gypsum & pp woven sack sourcing across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns material & packaging execution within Strategic Procurement—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose material & packaging variances and exceptions across regions.",
+      "agentic_impact": "Dynamic Should-Cost Agent automatically deconstructs packaging specs (resin weight, corrugate, conversion energy). — fact-based margin leverage in rfps.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "packaging_rd_engineer": {
+      "persona_id": "packaging_rd_engineer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Packaging R&D Engineer",
+      "title": "Head of Fuel Linkage, Gypsum & PP Woven Sack Sourcing (Packaging R&D Engineer)",
+      "role": "Fuel Linkage, Gypsum & PP Woven Sack Sourcing · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads fuel linkage, gypsum & pp woven sack sourcing across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns material & packaging execution within Strategic Procurement—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose material & packaging variances and exceptions across regions.",
+      "agentic_impact": "Sustainable Packaging Agent automatically evaluates PCR resins and barrier materials against line runnability & taxes. — mitigates epr and landfill taxation.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "commercial_sourcing_legal": {
+      "persona_id": "commercial_sourcing_legal",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Commercial Sourcing / Legal",
+      "title": "Head of Contract & PO Mgmt (Commercial Sourcing / Legal)",
+      "role": "Contract & PO Mgmt · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads contract & po mgmt across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns contract & po mgmt execution within Strategic Procurement—partnering with Contract Leakage Agent to recovers…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Contract Leakage Agent automatically reconciles live spend against negotiated rebate tiers and volume discount scales. — recovers missed rebates & surcharges.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "buyer_procurement_coord": {
+      "persona_id": "buyer_procurement_coord",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Buyer / Procurement Coord.",
+      "title": "Head of Contract & PO Mgmt (Buyer / Procurement Coord.)",
+      "role": "Contract & PO Mgmt · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads contract & po mgmt across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns contract & po mgmt execution within Strategic Procurement—partnering with PO Expediting Agent to resolves…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "PO Expediting Agent automatically monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments. — resolves ~70% of standard po delays.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "accounts_payable_lead": {
+      "persona_id": "accounts_payable_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Accounts Payable Lead",
+      "title": "Head of Contract & PO Mgmt (Accounts Payable Lead)",
+      "role": "Contract & PO Mgmt · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads contract & po mgmt across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns contract & po mgmt execution within Strategic Procurement—partnering with Three-Way Match Dispute to…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Three-Way Match Dispute automatically diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. — prevents vendor holds & saves discounts.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "master_production_scheduler": {
+      "persona_id": "master_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Master Production Scheduler",
+      "title": "Chief Scheduler — Rotary Kiln & Vertical Roller Mills",
+      "role": "Kiln Campaign & Ball-Mill Grinding Scheduling · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads kiln campaign & ball-mill grinding scheduling across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns production scheduling execution within Intelligent Shop Floor—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose production scheduling variances and exceptions across regions.",
+      "agentic_impact": "Changeover Optimizer automatically sequences allergen, kosher, and packaging runs to minimize washdowns. — cuts sanitation downtime by 15–25%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "shop_floor_shift_lead": {
+      "persona_id": "shop_floor_shift_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Shop Floor / Shift Lead",
+      "title": "Head of Kiln Campaign & Ball-Mill Grinding Scheduling (Shop Floor / Shift Lead)",
+      "role": "Kiln Campaign & Ball-Mill Grinding Scheduling · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads kiln campaign & ball-mill grinding scheduling across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns production scheduling execution within Intelligent Shop Floor—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose production scheduling variances and exceptions across regions.",
+      "agentic_impact": "Disruption Re-sequencer automatically detects machine halts and re-routes perishable WIP to alternate lines. — line reallocation in <3 minutes.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "plant_operations_manager": {
+      "persona_id": "plant_operations_manager",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Plant Operations Manager",
+      "title": "Head of Kiln Campaign & Ball-Mill Grinding Scheduling (Plant Operations Manager)",
+      "role": "Kiln Campaign & Ball-Mill Grinding Scheduling · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads kiln campaign & ball-mill grinding scheduling across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns production scheduling execution within Intelligent Shop Floor—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose production scheduling variances and exceptions across regions.",
+      "agentic_impact": "Labor & Line Balancing automatically maps shift skill certifications and fatigue constraints to line speeds. — prevents certified skill bottlenecks.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "supply_chain_ops_director": {
+      "persona_id": "supply_chain_ops_director",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Supply Chain Ops Director",
+      "title": "Head of Rotary Kiln OEE, Refractory & WHRS Power (Supply Chain Ops Director)",
+      "role": "Rotary Kiln OEE, Refractory & WHRS Power · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads rotary kiln oee, refractory & whrs power across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns capacity planning execution within Intelligent Shop Floor—partnering with Bottleneck…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose capacity planning variances and exceptions across regions.",
+      "agentic_impact": "Bottleneck Diagnostic automatically assesses CIP utilities, boiler loads, and cold storage holding limits. — flags facility constraints 3–6 mos out.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "external_sourcing_cmo_lead": {
+      "persona_id": "external_sourcing_cmo_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "External Sourcing / CMO Lead",
+      "title": "Head of Rotary Kiln OEE, Refractory & WHRS Power (External Sourcing / CMO Lead)",
+      "role": "Rotary Kiln OEE, Refractory & WHRS Power · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads rotary kiln oee, refractory & whrs power across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns capacity planning execution within Intelligent Shop Floor—partnering with Co-Packer…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose capacity planning variances and exceptions across regions.",
+      "agentic_impact": "Co-Packer Allocation automatically models internal conversion costs against co-packer tolling agreements. — optimizes net gross margin per case.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "vp_manufacturing_engineering": {
+      "persona_id": "vp_manufacturing_engineering",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "VP Manufacturing Engineering",
+      "title": "Head of Rotary Kiln OEE, Refractory & WHRS Power (VP Manufacturing Engineering)",
+      "role": "Rotary Kiln OEE, Refractory & WHRS Power · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads rotary kiln oee, refractory & whrs power across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns capacity planning execution within Intelligent Shop Floor—partnering with CapEx…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose capacity planning variances and exceptions across regions.",
+      "agentic_impact": "CapEx Simulator automatically simulates multi-year volume trends to test high-speed line expansions. — delivers defensible board capex roi.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "qa_manager_line_inspector": {
+      "persona_id": "qa_manager_line_inspector",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "QA Manager / Line Inspector",
+      "title": "Head of Blaine Fineness, Compressive Strength & BIS QA (QA Manager / Line Inspector)",
+      "role": "Blaine Fineness, Compressive Strength & BIS QA · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads blaine fineness, compressive strength & bis qa across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns quality & compliance execution within Intelligent Shop Floor—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose quality & compliance variances and exceptions across regions.",
+      "agentic_impact": "Visual Defect Triager automatically inspects high-speed video frames for crimped seals, lot codes, and labels. — prevents full pallet scrap & holds.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "regulatory_compliance_lead": {
+      "persona_id": "regulatory_compliance_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Regulatory Compliance Lead",
+      "title": "Head of Blaine Fineness, Compressive Strength & BIS QA (Regulatory Compliance Lead)",
+      "role": "Blaine Fineness, Compressive Strength & BIS QA · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads blaine fineness, compressive strength & bis qa across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns quality & compliance execution within Intelligent Shop Floor—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose quality & compliance variances and exceptions across regions.",
+      "agentic_impact": "Batch Record Auditor automatically parses BPR and COA documents to flag pasteurization & CCP deviations. — 60–80% faster batch release review.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "continuous_improvement_lead": {
+      "persona_id": "continuous_improvement_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Continuous Improvement Lead",
+      "title": "Head of Blaine Fineness, Compressive Strength & BIS QA (Continuous Improvement Lead)",
+      "role": "Blaine Fineness, Compressive Strength & BIS QA · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads blaine fineness, compressive strength & bis qa across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns quality & compliance execution within Intelligent Shop Floor—partnering with RCA…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose quality & compliance variances and exceptions across regions.",
+      "agentic_impact": "RCA & CAPA Copilot automatically correlates consumer complaints with ingredient lots and machine telemetry. — speeds 5-why investigation closures.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "inventory_optimization_lead": {
+      "persona_id": "inventory_optimization_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Optimization Lead",
+      "title": "Head of Clinker Silo & Split Grinding Unit Stock Norms",
+      "role": "Clinker Silo, Grinding Unit & Godown Buffers · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads clinker silo, grinding unit & godown buffers across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns positioning & optimization execution within Dynamic Fulfillment—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose positioning & optimization variances and exceptions across regions.",
+      "agentic_impact": "Safety Stock Agent automatically recalibrates multi-echelon buffers using live lead-time and demand variance. — cuts working capital by 10–18%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "inventory_controller_buyer": {
+      "persona_id": "inventory_controller_buyer",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Controller / Buyer",
+      "title": "Head of Clinker Silo, Grinding Unit & Godown Buffers (Inventory Controller / Buyer)",
+      "role": "Clinker Silo, Grinding Unit & Godown Buffers · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads clinker silo, grinding unit & godown buffers across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns positioning & optimization execution within Dynamic Fulfillment—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose positioning & optimization variances and exceptions across regions.",
+      "agentic_impact": "SLOB Disposition Agent automatically analyzes shelf-life risk and triggers promotional bundles or liquidations. — prevents expired stock write-offs.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "replenishment_planner": {
+      "persona_id": "replenishment_planner",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Replenishment Planner",
+      "title": "Zonal Controller — C&F Godown & Exclusive Dealer Stock",
+      "role": "Clinker Silo, Grinding Unit & Godown Buffers · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads clinker silo, grinding unit & godown buffers across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns positioning & optimization execution within Dynamic Fulfillment—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose positioning & optimization variances and exceptions across regions.",
+      "agentic_impact": "Inter-Facility Rebalancer automatically generates automated inter-DC and store transfers to balance localized gluts. — eliminates regional out-of-stocks.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "dc_operations_mgr": {
+      "persona_id": "dc_operations_mgr",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Operations Mgr / IE Lead",
+      "title": "Head of Rail Siding Rake Loading & Packer Bay Slotting (DC Operations Mgr / IE Lead)",
+      "role": "Rail Siding Rake Loading & Packer Bay Slotting · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads rail siding rake loading & packer bay slotting across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns warehouse operations execution within Dynamic Fulfillment—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose warehouse operations variances and exceptions across regions.",
+      "agentic_impact": "Dynamic Slotting Agent automatically evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting. — reduces picker transit time by 15–30%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "inbound_receiving_supervisor": {
+      "persona_id": "inbound_receiving_supervisor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Inbound Receiving Supervisor",
+      "title": "Head of Rail Siding Rake Loading & Packer Bay Slotting (Inbound Receiving Supervisor)",
+      "role": "Rail Siding Rake Loading & Packer Bay Slotting · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads rail siding rake loading & packer bay slotting across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns warehouse operations execution within Dynamic Fulfillment—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose warehouse operations variances and exceptions across regions.",
+      "agentic_impact": "Dock-to-Stock Agent automatically parses scanned BOLs and pallet photos to reconcile open ASN variances. — dock turnaround in minutes vs. hours.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "dc_shift_floor_lead": {
+      "persona_id": "dc_shift_floor_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Shift Floor Lead",
+      "title": "Head of Rail Siding Rake Loading & Packer Bay Slotting (DC Shift Floor Lead)",
+      "role": "Rail Siding Rake Loading & Packer Bay Slotting · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads rail siding rake loading & packer bay slotting across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns warehouse operations execution within Dynamic Fulfillment—partnering with Wave…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose warehouse operations variances and exceptions across regions.",
+      "agentic_impact": "Wave Fulfillment Copilot automatically balances picker lines dynamically to protect carrier pickup cutoff times. — prevents missed dispatch windows (otif).",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "store_operations_omni_lead": {
+      "persona_id": "store_operations_omni_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Store Operations / Omni Lead",
+      "title": "Head of Dealer Portal & Infra Site Order Visibility (Store Operations / Omni Lead)",
+      "role": "Dealer Portal & Infra Site Order Visibility · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads dealer portal & infra site order visibility across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns omnichannel visibility execution within Dynamic Fulfillment—partnering with Phantom…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose omnichannel visibility variances and exceptions across regions.",
+      "agentic_impact": "Phantom Inventory Sensor automatically identifies shrinkage anomalies when on-hand stock stops scanning at POS. — triggers targeted floor cycle counts.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "omnichannel_fulfillment_dir": {
+      "persona_id": "omnichannel_fulfillment_dir",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Omnichannel Fulfillment Dir.",
+      "title": "Head of Dealer Portal & Infra Site Order Visibility (Omnichannel Fulfillment Dir.)",
+      "role": "Dealer Portal & Infra Site Order Visibility · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads dealer portal & infra site order visibility across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns omnichannel visibility execution within Dynamic Fulfillment—partnering with SFS /…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose omnichannel visibility variances and exceptions across regions.",
+      "agentic_impact": "SFS / BOPIS Sourcing automatically selects lowest-cost fulfillment nodes based on store labor and parcel zones. — lowers parcel costs & split rates.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "reverse_logistics_lead_wh": {
+      "persona_id": "reverse_logistics_lead_wh",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Reverse Logistics Lead",
+      "title": "Head of Dealer Portal & Infra Site Order Visibility (Reverse Logistics Lead)",
+      "role": "Dealer Portal & Infra Site Order Visibility · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads dealer portal & infra site order visibility across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns omnichannel visibility execution within Dynamic Fulfillment—partnering with Returns…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose omnichannel visibility variances and exceptions across regions.",
+      "agentic_impact": "Returns Triage Agent automatically evaluates item condition scans to triage restock, vendor return, or liquidation. — restocks sellable returns within 24h.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "transport_planner_inbound_mgr": {
+      "persona_id": "transport_planner_inbound_mgr",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Transport Planner / Inbound Mgr",
+      "title": "Head of Rail Rake Clinker Transfer & Bulk Bulker Hauls (Transport Planner / Inbound Mgr)",
+      "role": "Rail Rake Clinker Transfer & Bulk Bulker Hauls · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads rail rake clinker transfer & bulk bulker hauls across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns first & mid-mile execution within End-to-End Fulfillment—partnering with Load…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose first & mid-mile variances and exceptions across regions.",
+      "agentic_impact": "Load Consolidation automatically consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling. — 12–18% higher trailer fill rate.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "yard_master_plant_logistics": {
+      "persona_id": "yard_master_plant_logistics",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Master / Plant Logistics",
+      "title": "Head of Rail Rake Clinker Transfer & Bulk Bulker Hauls (Yard Master / Plant Logistics)",
+      "role": "Rail Rake Clinker Transfer & Bulk Bulker Hauls · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads rail rake clinker transfer & bulk bulker hauls across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns first & mid-mile execution within End-to-End Fulfillment—partnering with Yard…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose first & mid-mile variances and exceptions across regions.",
+      "agentic_impact": "Yard Disruption Agent automatically parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically. — eliminates demurrage & line starvation.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "cold_chain_qa_logistics_dir": {
+      "persona_id": "cold_chain_qa_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold Chain QA / Logistics Dir.",
+      "title": "Head of Rail Rake Clinker Transfer & Bulk Bulker Hauls (Cold Chain QA / Logistics Dir.)",
+      "role": "Rail Rake Clinker Transfer & Bulk Bulker Hauls · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads rail rake clinker transfer & bulk bulker hauls across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns first & mid-mile execution within End-to-End Fulfillment—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose first & mid-mile variances and exceptions across regions.",
+      "agentic_impact": "Cold-Chain Auditor automatically analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims. — prevents perishable food spoilage.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "outbound_lead_industrial_eng": {
+      "persona_id": "outbound_lead_industrial_eng",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Outbound Lead / Industrial Eng.",
+      "title": "Head of C&F Godown & Exclusive Dealer Replenishment (Outbound Lead / Industrial Eng.)",
+      "role": "C&F Godown & Exclusive Dealer Replenishment · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads c&f godown & exclusive dealer replenishment across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns store replenishment execution within End-to-End Fulfillment—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose store replenishment variances and exceptions across regions.",
+      "agentic_impact": "Aisle-Aligned Pallet automatically sequences DC pick waves to match individual store planograms and shelf layouts. — cuts store stocking labor by 20–35%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "store_replenishment_lead": {
+      "persona_id": "store_replenishment_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Replenishment Lead",
+      "title": "Head of C&F Godown & Exclusive Dealer Replenishment (Store Replenishment Lead)",
+      "role": "C&F Godown & Exclusive Dealer Replenishment · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads c&f godown & exclusive dealer replenishment across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns store replenishment execution within End-to-End Fulfillment—partnering with Store…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose store replenishment variances and exceptions across regions.",
+      "agentic_impact": "Store Capacity Agent automatically throttles push replenishment based on store backroom limits and live POS velocity. — reduces backroom stock by 25%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "retail_logistics_dispatcher": {
+      "persona_id": "retail_logistics_dispatcher",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Retail Logistics Dispatcher",
+      "title": "Head of C&F Godown & Exclusive Dealer Replenishment (Retail Logistics Dispatcher)",
+      "role": "C&F Godown & Exclusive Dealer Replenishment · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads c&f godown & exclusive dealer replenishment across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns store replenishment execution within End-to-End Fulfillment—partnering with Curfew…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose store replenishment variances and exceptions across regions.",
+      "agentic_impact": "Curfew Orchestrator automatically coordinates municipal delivery curfews and store dock shift schedules dynamically. — 98%+ on-time store window compliance.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "last_mile_operations_lead": {
+      "persona_id": "last_mile_operations_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Last-Mile Operations Lead",
+      "title": "Head of Direct-from-Plant Construction Site Delivery (Last-Mile Operations Lead)",
+      "role": "Direct-from-Plant Construction Site Delivery · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads direct-from-plant construction site delivery across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns last-mile delivery execution within End-to-End Fulfillment—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose last-mile delivery variances and exceptions across regions.",
+      "agentic_impact": "Geocoding Intelligence automatically interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers. — drops failed deliveries by 30–45%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "ecommerce_logistics_dir": {
+      "persona_id": "ecommerce_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "E-Commerce Logistics Dir.",
+      "title": "Head of Direct-from-Plant Construction Site Delivery (E-Commerce Logistics Dir.)",
+      "role": "Direct-from-Plant Construction Site Delivery · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads direct-from-plant construction site delivery across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns last-mile delivery execution within End-to-End Fulfillment—partnering with Courier…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose last-mile delivery variances and exceptions across regions.",
+      "agentic_impact": "Courier Allocation automatically routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card. — lowers last-mile cost by 8–14%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "customer_support_ops_lead": {
+      "persona_id": "customer_support_ops_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Customer Support Ops Lead",
+      "title": "Head of Direct-from-Plant Construction Site Delivery (Customer Support Ops Lead)",
+      "role": "Direct-from-Plant Construction Site Delivery · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads direct-from-plant construction site delivery across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns last-mile delivery execution within End-to-End Fulfillment—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose last-mile delivery variances and exceptions across regions.",
+      "agentic_impact": "Delivery Exception Copilot automatically detects en-route exceptions and updates customers proactively with reschedule links. — decreases wismo calls by up to 60%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "fleet_dispatcher_central_ops": {
+      "persona_id": "fleet_dispatcher_central_ops",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Fleet Dispatcher / Central Ops",
+      "title": "Head of Primary Lead-Distance & Transporter Bill Audit (Fleet Dispatcher / Central Ops)",
+      "role": "Primary Lead-Distance & Transporter Bill Audit · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads primary lead-distance & transporter bill audit across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns route & carrier execution within End-to-End Fulfillment—partnering with Dynamic…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose route & carrier variances and exceptions across regions.",
+      "agentic_impact": "Dynamic Rerouter automatically recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits. — cuts fleet fuel usage by 6–10%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "transport_procurement_lead": {
+      "persona_id": "transport_procurement_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Transport Procurement Lead",
+      "title": "Head of Primary Lead-Distance & Transporter Bill Audit (Transport Procurement Lead)",
+      "role": "Primary Lead-Distance & Transporter Bill Audit · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads primary lead-distance & transporter bill audit across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns route & carrier execution within End-to-End Fulfillment—partnering with Routing…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose route & carrier variances and exceptions across regions.",
+      "agentic_impact": "Routing Guide Compliance automatically tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides. — reduces spot freight by 15–20%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "freight_controller_claims": {
+      "persona_id": "freight_controller_claims",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Controller / Claims",
+      "title": "Head of Primary Lead-Distance & Transporter Bill Audit (Freight Controller / Claims)",
+      "role": "Primary Lead-Distance & Transporter Bill Audit · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads primary lead-distance & transporter bill audit across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns route & carrier execution within End-to-End Fulfillment—partnering with Freight…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose route & carrier variances and exceptions across regions.",
+      "agentic_impact": "Freight Bill Audit Agent automatically extracts signed PODs and rate contracts via OCR to audit accessorial surcharges. — captures 3–7% in overbilled fees.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "reverse_logistics_fraud_lead": {
+      "persona_id": "reverse_logistics_fraud_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Reverse Logistics / Fraud Lead",
+      "title": "Head of Returns & Claims Mgmt (Reverse Logistics / Fraud Lead)",
+      "role": "Returns & Claims Mgmt · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads returns & claims mgmt across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Return Fraud Sentinel…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Return Fraud Sentinel automatically analyzes item photos and packaging video feeds to detect wear or swapped tags. — cuts returns fraud abuse by 25–40%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "customer_experience_cx_lead": {
+      "persona_id": "customer_experience_cx_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Customer Experience (CX) Lead",
+      "title": "Head of Returns & Claims Mgmt (Customer Experience (CX) Lead)",
+      "role": "Returns & Claims Mgmt · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads returns & claims mgmt across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Keep-It & Routing…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Keep-It & Routing Advisor automatically evaluates salvage margins vs reverse freight to determine keep-it instant refunds. — lowers net return costs by 15–22%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "claims_specialist_controller": {
+      "persona_id": "claims_specialist_controller",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Claims Specialist / Controller",
+      "title": "Head of Returns & Claims Mgmt (Claims Specialist / Controller)",
+      "role": "Returns & Claims Mgmt · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads returns & claims mgmt across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with OS&D Freight Claims…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "OS&D Freight Claims automatically reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes. — resolves carrier claims in <72 hours.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "merchandising_store_ops_mgr": {
+      "persona_id": "merchandising_store_ops_mgr",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Merchandising / Store Ops Mgr",
+      "title": "Head of Monsoon Silo Age & Monsoon Stock Rotation (Merchandising / Store Ops Mgr)",
+      "role": "Monsoon Silo Age & Monsoon Stock Rotation · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads monsoon silo age & monsoon stock rotation across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns expiry & markdowns execution within Circularity & Value Recovery—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose expiry & markdowns variances and exceptions across regions.",
+      "agentic_impact": "Dynamic Markdown Agent automatically correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts. — cuts perishable scrap by 20–35%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "inventory_disposition_lead": {
+      "persona_id": "inventory_disposition_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Inventory Disposition Lead",
+      "title": "Head of Monsoon Silo Age & Monsoon Stock Rotation (Inventory Disposition Lead)",
+      "role": "Monsoon Silo Age & Monsoon Stock Rotation · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads monsoon silo age & monsoon stock rotation across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns expiry & markdowns execution within Circularity & Value Recovery—partnering with…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose expiry & markdowns variances and exceptions across regions.",
+      "agentic_impact": "Short-Dated Redistributor automatically matches near-date DC lots with discounters or food banks before acceptance cutoffs. — diverts bulk perishables from landfill.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "cso_circular_lead": {
+      "persona_id": "cso_circular_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Head of Monsoon Silo Age & Monsoon Stock Rotation (Chief Sustainability Officer)",
+      "role": "Monsoon Silo Age & Monsoon Stock Rotation · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads monsoon silo age & monsoon stock rotation across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns expiry & markdowns execution within Circularity & Value Recovery—partnering with Food…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose expiry & markdowns variances and exceptions across regions.",
+      "agentic_impact": "Food Waste & ESG Copilot automatically aggregates store shrink and organic haul logs to generate audited GHG diversion filings. — automates annual circularity reporting.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "asset_recovery_rti_manager": {
+      "persona_id": "asset_recovery_rti_manager",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Asset Recovery / RTI Manager",
+      "title": "Head of Pallet & Tote Reclamation (Asset Recovery / RTI Manager)",
+      "role": "Pallet & Tote Reclamation · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads pallet & tote reclamation across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with RTI Balance…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "RTI Balance Reconciler automatically reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. — eliminates 30% in non-return fee fines.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "reverse_transport_planner": {
+      "persona_id": "reverse_transport_planner",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Reverse Transport Planner",
+      "title": "Head of Pallet & Tote Reclamation (Reverse Transport Planner)",
+      "role": "Pallet & Tote Reclamation · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads pallet & tote reclamation across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Milk-Run…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Milk-Run Consolidation automatically schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. — boosts backhaul fill rate by 25–40%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    },
+    "packaging_qa_food_safety": {
+      "persona_id": "packaging_qa_food_safety",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Packaging QA / Food Safety",
+      "title": "Head of Pallet & Tote Reclamation (Packaging QA / Food Safety)",
+      "role": "Pallet & Tote Reclamation · Aditya Birla Group — UltraTech Cement Division",
+      "summary": "Leads pallet & tote reclamation across Aditya Birla Group — UltraTech Cement Division (Integrated Limestone & Clinker Mother Plants and network nodes). Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Sanitation &…",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Sanitation & Health Agent automatically inspects return photos and wash logs for structural fatigue and chemical compliance. — extends reusable lifecycle by 15–20%.",
+      "grounding_source": "Aligned to Aditya Birla Group (Heavy Building Materials) org hierarchy"
+    }
+  },
+  "agent_relevance": {
+    "demand_sensing_agent": {
+      "agent_id": "demand_sensing_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Sensing Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'District Trade Dealer & Infra Project Demand', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "cpfr_sync_agent": {
+      "agent_id": "cpfr_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Forecast Reconciliation",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'District Trade Dealer & Infra Project Demand', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "npi_demand_profiler": {
+      "agent_id": "npi_demand_profiler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "NPI Demand Profiler",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'District Trade Dealer & Infra Project Demand', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "promo_lift_simulator": {
+      "agent_id": "promo_lift_simulator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Promo ROI Simulator",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Dealer Lifting Slabs & Seasonal Rebate ROI', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "field_beat_distributor_sync_agent": {
+      "agent_id": "field_beat_distributor_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "JBP Negotiation Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Dealer Lifting Slabs & Seasonal Rebate ROI', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "trade_scheme_claims_reconciler": {
+      "agent_id": "trade_scheme_claims_reconciler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Deduction Audit Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Dealer Lifting Slabs & Seasonal Rebate ROI', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "sop_scenario_weaver": {
+      "agent_id": "sop_scenario_weaver",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Consensus & Gap Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker-to-Grinding S&OP & Rail-Road Mix', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "disruption_war_room_orchestrator": {
+      "agent_id": "disruption_war_room_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Digital War-Room Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker-to-Grinding S&OP & Rail-Road Mix', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "csco_control_tower_copilot": {
+      "agent_id": "csco_control_tower_copilot",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Executive Copilot",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker-to-Grinding S&OP & Rail-Road Mix', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "working_capital_cash_bridge": {
+      "agent_id": "working_capital_cash_bridge",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "SKU Pruning Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'OPC / PPC / Composite Blend & Bag Portfolio', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "eco_cutover_orchestrator": {
+      "agent_id": "eco_cutover_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "PIPO Run-Out Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'OPC / PPC / Composite Blend & Bag Portfolio', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "network_twin_architect": {
+      "agent_id": "network_twin_architect",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Cost-to-Serve Diagnostic",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'OPC / PPC / Composite Blend & Bag Portfolio', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "tier_n_risk_sentinel": {
+      "agent_id": "tier_n_risk_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Disruption Sensing Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Petcoke, Imported Coal, Fly-Ash & Slag Network', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "supplier_quality_sentinel": {
+      "agent_id": "supplier_quality_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Onboarding & Qual. Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Petcoke, Imported Coal, Fly-Ash & Slag Network', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "carbon_scope3_ledger": {
+      "agent_id": "carbon_scope3_ledger",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "ESG & Scope 3 Auditor",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Petcoke, Imported Coal, Fly-Ash & Slag Network', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "commodity_index_advisor": {
+      "agent_id": "commodity_index_advisor",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Commodity Index Advisor",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Fuel Linkage, Gypsum & PP Woven Sack Sourcing', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "rfq_should_cost_agent": {
+      "agent_id": "rfq_should_cost_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Dynamic Should-Cost Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Fuel Linkage, Gypsum & PP Woven Sack Sourcing', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "sustainable_packaging_agent": {
+      "agent_id": "sustainable_packaging_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Sustainable Packaging Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Fuel Linkage, Gypsum & PP Woven Sack Sourcing', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "tariff_esg_agent": {
+      "agent_id": "tariff_esg_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Contract Leakage Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Contract & PO Mgmt', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "master_data_leadtime_steward": {
+      "agent_id": "master_data_leadtime_steward",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "PO Expediting Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Contract & PO Mgmt', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "three_way_match_dispute": {
+      "agent_id": "three_way_match_dispute",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Three-Way Match Dispute",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Contract & PO Mgmt', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "finite_production_scheduler": {
+      "agent_id": "finite_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Changeover Optimizer",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Kiln Campaign & Ball-Mill Grinding Scheduling', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "line_schedule_optimizer": {
+      "agent_id": "line_schedule_optimizer",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Disruption Re-sequencer",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Kiln Campaign & Ball-Mill Grinding Scheduling', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "labor_line_balancing_agent": {
+      "agent_id": "labor_line_balancing_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Labor & Line Balancing",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Kiln Campaign & Ball-Mill Grinding Scheduling', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "predictive_oee_sentinel": {
+      "agent_id": "predictive_oee_sentinel",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Bottleneck Diagnostic",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rotary Kiln OEE, Refractory & WHRS Power', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "copacker_allocation_agent": {
+      "agent_id": "copacker_allocation_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Co-Packer Allocation",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rotary Kiln OEE, Refractory & WHRS Power', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "capex_simulator_agent": {
+      "agent_id": "capex_simulator_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "CapEx Simulator",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rotary Kiln OEE, Refractory & WHRS Power', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "inline_yield_guardian": {
+      "agent_id": "inline_yield_guardian",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Visual Defect Triager",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Blaine Fineness, Compressive Strength & BIS QA', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "batch_record_auditor": {
+      "agent_id": "batch_record_auditor",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Batch Record Auditor",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Blaine Fineness, Compressive Strength & BIS QA', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "scrap_defect_root_cause_agent": {
+      "agent_id": "scrap_defect_root_cause_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "RCA & CAPA Copilot",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Blaine Fineness, Compressive Strength & BIS QA', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "meio_safety_stock_agent": {
+      "agent_id": "meio_safety_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Safety Stock Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker Silo, Grinding Unit & Godown Buffers', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "slob_disposition_agent": {
+      "agent_id": "slob_disposition_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "SLOB Disposition Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker Silo, Grinding Unit & Godown Buffers', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "crossdock_transfer_orchestrator": {
+      "agent_id": "crossdock_transfer_orchestrator",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inter-Facility Rebalancer",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker Silo, Grinding Unit & Godown Buffers', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "warehouse_slotting_agent": {
+      "agent_id": "warehouse_slotting_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dynamic Slotting Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rail Siding Rake Loading & Packer Bay Slotting', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "dock_to_stock_agent": {
+      "agent_id": "dock_to_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dock-to-Stock Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rail Siding Rake Loading & Packer Bay Slotting', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "wave_fulfillment_copilot": {
+      "agent_id": "wave_fulfillment_copilot",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Wave Fulfillment Copilot",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rail Siding Rake Loading & Packer Bay Slotting', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "planogram_merchandising_vision_auditor": {
+      "agent_id": "planogram_merchandising_vision_auditor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Phantom Inventory Sensor",
+      "is_relevant": false,
+      "division_context": "",
+      "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
+    },
+    "atp_order_promising_agent": {
+      "agent_id": "atp_order_promising_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "SFS / BOPIS Sourcing",
+      "is_relevant": false,
+      "division_context": "",
+      "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
+    },
+    "returns_triage_agent": {
+      "agent_id": "returns_triage_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Returns Triage Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Dealer Portal & Infra Site Order Visibility', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "load_consolidation_agent": {
+      "agent_id": "load_consolidation_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Load Consolidation",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rail Rake Clinker Transfer & Bulk Bulker Hauls', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "yard_dock_sequencer": {
+      "agent_id": "yard_dock_sequencer",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Disruption Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rail Rake Clinker Transfer & Bulk Bulker Hauls', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "cold_chain_auditor": {
+      "agent_id": "cold_chain_auditor",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold-Chain Auditor",
+      "is_relevant": false,
+      "division_context": "",
+      "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
+    },
+    "aisle_aligned_pallet_agent": {
+      "agent_id": "aisle_aligned_pallet_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Aisle-Aligned Pallet",
+      "is_relevant": false,
+      "division_context": "",
+      "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
+    },
+    "store_capacity_agent": {
+      "agent_id": "store_capacity_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Capacity Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'C&F Godown & Exclusive Dealer Replenishment', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "port_drayage_orchestrator": {
+      "agent_id": "port_drayage_orchestrator",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Curfew Orchestrator",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'C&F Godown & Exclusive Dealer Replenishment', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "geocoding_intelligence_agent": {
+      "agent_id": "geocoding_intelligence_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Geocoding Intelligence",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Direct-from-Plant Construction Site Delivery', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "multimodal_mode_shift_agent": {
+      "agent_id": "multimodal_mode_shift_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Courier Allocation",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Direct-from-Plant Construction Site Delivery', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "otif_penalty_shield": {
+      "agent_id": "otif_penalty_shield",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Delivery Exception Copilot",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Direct-from-Plant Construction Site Delivery', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "fleetflow_dispatch": {
+      "agent_id": "fleetflow_dispatch",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Dynamic Rerouter",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Primary Lead-Distance & Transporter Bill Audit', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "freight_control_tower": {
+      "agent_id": "freight_control_tower",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Routing Guide Compliance",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Primary Lead-Distance & Transporter Bill Audit', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "freight_bill_audit_agent": {
+      "agent_id": "freight_bill_audit_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Bill Audit Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Primary Lead-Distance & Transporter Bill Audit', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "reverse_rma_optimizer": {
+      "agent_id": "reverse_rma_optimizer",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Return Fraud Sentinel",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Returns & Claims Mgmt', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "keep_it_routing_advisor": {
+      "agent_id": "keep_it_routing_advisor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Keep-It & Routing Advisor",
+      "is_relevant": false,
+      "division_context": "",
+      "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
+    },
+    "osd_freight_claims_agent": {
+      "agent_id": "osd_freight_claims_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "OS&D Freight Claims",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Returns & Claims Mgmt', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "dynamic_markdown_agent": {
+      "agent_id": "dynamic_markdown_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Dynamic Markdown Agent",
+      "is_relevant": false,
+      "division_context": "",
+      "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
+    },
+    "short_dated_redistributor": {
+      "agent_id": "short_dated_redistributor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Short-Dated Redistributor",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Monsoon Silo Age & Monsoon Stock Rotation', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "food_waste_esg_copilot": {
+      "agent_id": "food_waste_esg_copilot",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Food Waste & ESG Copilot",
+      "is_relevant": false,
+      "division_context": "",
+      "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
+    },
+    "rti_balance_reconciler": {
+      "agent_id": "rti_balance_reconciler",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "RTI Balance Reconciler",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Pallet & Tote Reclamation', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "intermodal_rail_linehaul_agent": {
+      "agent_id": "intermodal_rail_linehaul_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Milk-Run Consolidation",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Pallet & Tote Reclamation', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    },
+    "sanitation_health_agent": {
+      "agent_id": "sanitation_health_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Sanitation & Health Agent",
+      "is_relevant": true,
+      "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Pallet & Tote Reclamation', connecting SAP S/4HANA with deterministic optimization.",
+      "hidden_reason": ""
+    }
+  },
+  "process_overrides": {
+    "f2f": {
+      "vc_id": "f2f",
+      "custom_title": "Quarry-to-Site Forecast-to-Fulfill",
+      "custom_subtitle": "Balancing clinker kiln output, regional Grinding Unit power tariffs, and district cement demand."
+    },
+    "o2d": {
+      "vc_id": "o2d",
+      "custom_title": "Packer-to-Dealer & Infra Site Order-to-Delivery",
+      "custom_subtitle": "Minimizing primary/secondary ton-km freight across rail rakes and GPS-tracked trucks."
+    },
+    "s2p": {
+      "vc_id": "s2p",
+      "custom_title": "Petcoke, Fly-Ash & Woven Sack Source-to-Pay",
+      "custom_subtitle": "Optimizing landed fuel calorific cost, thermal power plant fly-ash, and PP bags."
+    },
+    "p2r": {
+      "vc_id": "p2r",
+      "custom_title": "Alternative Fuel (AFR) Co-Processing & Bag Claims",
+      "custom_subtitle": "Co-processing municipal/industrial waste in kilns and auditing transit damage."
+    }
+  },
+  "hidden_agent_ids": [
+    "aisle_aligned_pallet_agent",
+    "atp_order_promising_agent",
+    "cold_chain_auditor",
+    "dynamic_markdown_agent",
+    "food_waste_esg_copilot",
+    "keep_it_routing_advisor",
+    "planogram_merchandising_vision_auditor"
+  ],
+  "hidden_persona_ids": [
+    "cold_chain_qa_logistics_dir",
+    "cso_circular_lead",
+    "customer_experience_cx_lead",
+    "merchandising_store_ops_mgr",
+    "omnichannel_fulfillment_dir",
+    "outbound_lead_industrial_eng",
+    "store_operations_omni_lead"
+  ],
+  "active_agents_count": 53,
+  "active_personas_count": 53,
+  "active_sub_pillars_count": 20,
+  "grounding_citations": [
+    {
+      "title": "Aditya Birla Group Official Brand & Operations Profile",
+      "url": "https://adityabirla.com",
+      "snippet": ""
+    }
+  ],
+  "career_title_examples": [
+    "Unit Head — Integrated Cement & Clinker Operations",
+    "Zonal Head — Logistics, Rail Rake & Primary Dispatch",
+    "General Manager — Coal, Petcoke, Fly-Ash & Gypsum Sourcing",
+    "Regional Planning & Lead-Distance Optimization Manager",
+    "Depot & Secondary Dealer Freight Controller",
+    "Head of Pyro-Processing Maintenance & WHRS Energy"
+  ],
+  "terminology_highlights": [
+    "IU / GU — Integrated Clinker Unit & Split Grinding Unit",
+    "PTP /PKD — Primary Lead Distance & Rail-Road Mix",
+    "PPC / OPC — Pozzolana & Ordinary Portland Cement Blends",
+    "C&F Godown — Clearing & Forwarding Dealer Warehouse"
+  ],
+  "created_at": "2026-11-02T18:14:30.491354+00:00",
+  "updated_at": "2026-11-02T18:14:30.491354+00:00",
+  "generation_model": "Enterprise Twin Domain & Career Archetype Engine + Live Logo Resolver"
+}
