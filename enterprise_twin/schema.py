@@ -134,6 +134,7 @@ class AgentRelevanceSpec(BaseModel):
     dept_id: str
     sub_pillar_id: str
     canonical_name: str
+    custom_agent_name: str = ""
     is_relevant: bool = True
     division_context: str = ""
     hidden_reason: str = ""
@@ -278,6 +279,9 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
     for aid, ar in spec.agent_relevance.items():
         ar.division_context = clean_ui_text(ar.division_context, 220)
         ar.hidden_reason = clean_ui_text(ar.hidden_reason, 160)
+        ar.custom_agent_name = clean_ui_text(ar.custom_agent_name, 54)
+        if not ar.is_relevant or ar.custom_agent_name == ar.canonical_name:
+            ar.custom_agent_name = ""
         if not ar.is_relevant:
             hidden_agents.append(aid)
             paired_pid = agent_to_persona.get(aid)

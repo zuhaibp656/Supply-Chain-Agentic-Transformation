@@ -1,22 +1,27 @@
 #!/usr/bin/env python3
-"""Upgrades `index.html`, `periodic_table.html`, and `mind_map.html` with the Immaculate v2.0 Enterprise Twin Overlay Engine.
+"""Upgrades `index.html`, `periodic_table.html`, and `mind_map.html` with the Immaculate v2.1 Enterprise Twin Overlay & Visual Polish Engine.
 
 Guarantees zero breakage across all 10 portal views while supporting:
-  1. Optically framed, contrast-plated real corporate logos (`.sc-twin-logo-plate`) in Navbar, Hero & Context Bar.
-  2. Dynamic renaming of 6 Pillars, 20 Sub-Pillars, and 4 Cross-Pillar Process Journeys (`VALUE_CHAINS`).
+  1. Larger, prominently placed & contrast-plated real corporate logos (`.sc-twin-logo-plate`):
+     - `40px` Navbar lockup
+     - `70px` (`size-hero`) Hero Showcase Co-Brand Lockup above `.hero-title`
+     - `58px` (`size-xl`) Official Company Logo inside the CSCO Root Box (`.cfo-box`) & Active Context Bar
+     - `50px` (`size-lg`) Logo Plate in Saved Portals & Agent Operational Lens
+  2. Dynamic renaming of 6 Pillars, 20 Sub-Pillars, 4 Cross-Pillar Process Journeys (`VALUE_CHAINS`),
+     and optional company-specific Agent Display Names (`custom_agent_name`) while keeping `ag.canonicalName`,
+     `ag.id`, Playbook deep-links, and all 60 core ADK Demo Engines 100% intact.
   3. Grounded corporate job titles & Red/Green daily toil scenarios across all 60 Personas (`#persona/<id>`).
   4. Intelligent hiding of division-irrelevant agents (`hidden_agent_ids`) with clean count updates,
-     Value Chain stage remapping guards, and a 1-click `'Show All 60'` toggle—while keeping 100% of
-     Demo Agent names, 4-stage SVG workflows, Cost/ROI math, Playbook links, and Case Studies intact.
-  5. Seamless integration with `/welcome` Studio, `/t/<slug>` server hydration (`window.__INITIAL_TWIN__`),
-     `?twin=<slug>` URL links, and embedded flagship twins (`EMBEDDED_TWINS_V2`) for offline/Zipline parity.
+     Value Chain stage remapping guards, and a 1-click `'Show All 60'` toggle.
+  5. Stronger, high-contrast architectural box outlines (`1.5px solid`), nested container luminance separation,
+     and sleek collapsed-by-default Deep-Dive Tab Bar styling (`💰 Cost & ROI ▾`, `⚡ 5 Execution Steps ▾`,
+     `📚 Benchmark Proof ▾`, `🛡️ Governance & Tech Specs ▾`) across Dark & Light themes.
 """
 
 from __future__ import annotations
 
 import json
 from pathlib import Path
-import re
 
 ROOT = Path(__file__).resolve().parent.parent
 TWINS_V2_DIR = ROOT / "data" / "twins" / "v2"
@@ -26,109 +31,354 @@ CSS_MARKER_END = "/* === ENTERPRISE TWIN STUDIO V2 OVERLAY STYLES END === */"
 
 TWIN_CSS = f"""
     {CSS_MARKER_START}
+    /* 1. Stronger Architectural Box Outlines & Visual Segregation (Dark + Light) */
+    :root {{
+      --border-subtle: rgba(148, 163, 184, 0.24);
+      --border-strong: rgba(148, 163, 184, 0.44);
+    }}
+    html[data-theme="light"] {{
+      --border-subtle: #cbd5e1;
+      --border-strong: #94a3b8;
+    }}
+    #orgChartSection {{
+      scroll-margin-top: 138px;
+    }}
+
+    .cfo-box,
+    .dept-node,
+    .dept-showcase-box,
+    .subpillar-box-card,
+    .human-persona-card,
+    .ai-agent-chip-card,
+    .persona-header-card,
+    .time-shift-banner,
+    .journey-accordion-item,
+    .persona-step-agent-box,
+    .agent-hero-banner,
+    .simple-arch-card,
+    .video-stage-box,
+    .sc-proof-strip,
+    .sc-spec-section-card,
+    .pt-pillar-card,
+    .pt-side-card,
+    .pt-legend-card,
+    .mm-col-panel,
+    .mm-agent-neural-card {{
+      border: 1.5px solid var(--border-strong) !important;
+      box-shadow: 0 12px 32px rgba(2, 6, 23, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }}
+    html[data-theme="light"] .cfo-box,
+    html[data-theme="light"] .dept-node,
+    html[data-theme="light"] .dept-showcase-box,
+    html[data-theme="light"] .subpillar-box-card,
+    html[data-theme="light"] .human-persona-card,
+    html[data-theme="light"] .ai-agent-chip-card,
+    html[data-theme="light"] .persona-header-card,
+    html[data-theme="light"] .time-shift-banner,
+    html[data-theme="light"] .journey-accordion-item,
+    html[data-theme="light"] .persona-step-agent-box,
+    html[data-theme="light"] .agent-hero-banner,
+    html[data-theme="light"] .simple-arch-card,
+    html[data-theme="light"] .video-stage-box,
+    html[data-theme="light"] .sc-proof-strip,
+    html[data-theme="light"] .sc-spec-section-card,
+    html[data-theme="light"] .pt-pillar-card,
+    html[data-theme="light"] .pt-side-card,
+    html[data-theme="light"] .pt-legend-card,
+    html[data-theme="light"] .mm-col-panel,
+    html[data-theme="light"] .mm-agent-neural-card {{
+      border: 1.5px solid #cbd5e1 !important;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.07), inset 0 1px 0 #ffffff;
+    }}
+
+    /* Preserve unmistakable Human Role left accent bar */
+    .human-persona-card {{
+      border-left: 5px solid var(--dept-accent, var(--sc-cyan)) !important;
+    }}
+
+    /* Nested Containers & Drawers: Distinct Surface Contrast + Crisp Outlines */
+    .dept-anim-stage,
+    .subpillar-personas-drawer,
+    .ag-flow-canvas-wrap,
+    .sc-proof-box,
+    .sc-spec-sub-drawer,
+    .sc-spec-entity,
+    .pt-subpillar-group,
+    .pt-tile,
+    .mm-node-btn,
+    .mm-expanded-persona-box {{
+      border: 1.5px solid rgba(148, 163, 184, 0.30) !important;
+    }}
+    html[data-theme="light"] .dept-anim-stage,
+    html[data-theme="light"] .subpillar-personas-drawer,
+    html[data-theme="light"] .ag-flow-canvas-wrap,
+    html[data-theme="light"] .sc-proof-box,
+    html[data-theme="light"] .sc-spec-sub-drawer,
+    html[data-theme="light"] .sc-spec-entity,
+    html[data-theme="light"] .pt-subpillar-group,
+    html[data-theme="light"] .pt-tile,
+    html[data-theme="light"] .mm-node-btn,
+    html[data-theme="light"] .mm-expanded-persona-box {{
+      border: 1.5px solid #cbd5e1 !important;
+    }}
+
+    .manual-toil-box {{
+      border: 1.5px solid rgba(244, 63, 94, 0.45) !important;
+    }}
+    .gemini-improve-box {{
+      border: 1.5px solid rgba(16, 185, 129, 0.45) !important;
+    }}
+    .ai-agent-dock-box {{
+      border: 1.5px dashed rgba(99, 102, 241, 0.52) !important;
+    }}
+
+    /* Crisp 3D Flip Card Faces with Top Accent Bar Segregation */
+    .sc-flip-front,
+    .sc-flip-back {{
+      border: 1.5px solid rgba(148, 163, 184, 0.34) !important;
+      border-top: 3px solid var(--flip-accent, var(--sc-cyan)) !important;
+      box-shadow: 0 10px 24px rgba(2, 6, 23, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }}
+    html[data-theme="light"] .sc-flip-front,
+    html[data-theme="light"] .sc-flip-back {{
+      border: 1.5px solid #cbd5e1 !important;
+      border-top: 3px solid var(--flip-accent, var(--sc-cyan)) !important;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    }}
+    .sc-flip-card:hover .sc-flip-front,
+    .sc-flip-card:hover .sc-flip-back {{
+      border-color: var(--flip-accent, var(--sc-cyan)) !important;
+    }}
+
+    .sc-agent-card-brief {{
+      font-size: 14px;
+      line-height: 1.52;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-top: 4px;
+    }}
+    .sc-twin-core-engine-chip {{
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 9px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--sc-cyan);
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.34);
+    }}
+
+    /* 2. Sleek Collapsed-by-Default Deep-Dive Tab Bar on #pageAgent */
+    .agent-deepdive-bar {{
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding: 13px 18px;
+      border-radius: 16px;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-strong);
+      border-left: 5px solid var(--deep-accent, var(--sc-cyan));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      box-shadow: 0 10px 26px rgba(2, 6, 23, 0.24);
+    }}
+    html[data-theme="light"] .agent-deepdive-bar {{
+      background: #ffffff;
+      border-color: #cbd5e1;
+      border-left: 5px solid var(--deep-accent, var(--sc-cyan));
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+    }}
+    .agent-deepdive-label {{
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-right: 4px;
+    }}
+    .agent-deepdive-pill {{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      background: var(--bg-elevated);
+      border: 1.5px solid var(--border-strong);
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }}
+    .agent-deepdive-pill:hover {{
+      border-color: var(--deep-accent, var(--sc-cyan));
+      transform: translateY(-1px);
+    }}
+    .agent-deepdive-pill.active {{
+      background: var(--deep-accent, var(--sc-cyan));
+      border-color: var(--deep-accent, var(--sc-cyan));
+      color: #ffffff;
+    }}
+    .agent-deepdive-pill.blueprint-jump {{
+      background: rgba(56, 189, 248, 0.12);
+      border-color: rgba(56, 189, 248, 0.42);
+      color: #38bdf8;
+    }}
+    html[data-theme="light"] .agent-deepdive-pill.blueprint-jump {{
+      color: #0284c7;
+      background: rgba(2, 132, 199, 0.08);
+    }}
+    .agent-deepdive-drawer {{
+      animation: fadeIn 0.24s ease;
+    }}
+
+    /* 3. Upgraded, Larger & Prominently Framed Corporate Logo Plates */
     .sc-twin-nav-lockup {{
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 11px;
       flex-wrap: nowrap;
-      max-width: 440px;
+      max-width: 490px;
     }}
     .sc-twin-logo-plate {{
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: 28px;
-      min-width: 28px;
-      max-width: 104px;
-      padding: 3px 8px;
-      border-radius: 7px;
+      height: 40px;
+      min-width: 44px;
+      max-width: 142px;
+      padding: 5px 11px;
+      border-radius: 10px;
       flex-shrink: 0;
       box-sizing: border-box;
       transition: transform 0.2s var(--ease-spring);
     }}
     .sc-twin-logo-plate.plate-light {{
       background: #ffffff;
-      border: 1px solid rgba(148, 163, 184, 0.36);
-      box-shadow: 0 2px 6px rgba(2, 6, 23, 0.20);
+      border: 1.5px solid rgba(148, 163, 184, 0.48);
+      box-shadow: 0 4px 12px rgba(2, 6, 23, 0.24);
     }}
     .sc-twin-logo-plate.plate-dark {{
       background: #0f172a;
-      border: 1px solid rgba(148, 163, 184, 0.30);
-      box-shadow: 0 2px 6px rgba(2, 6, 23, 0.28);
+      border: 1.5px solid rgba(148, 163, 184, 0.42);
+      box-shadow: 0 4px 12px rgba(2, 6, 23, 0.32);
     }}
     .sc-twin-logo-plate.plate-self {{
       background: transparent;
-      padding: 1px;
-      border-radius: 6px;
+      padding: 2px;
+      border-radius: 9px;
       overflow: hidden;
     }}
     .sc-twin-logo-plate img {{
-      max-height: 20px;
-      max-width: 88px;
+      max-height: 29px;
+      max-width: 118px;
       width: auto;
       height: auto;
       object-fit: contain;
       display: block;
     }}
     .sc-twin-logo-plate.size-lg {{
-      height: 40px;
-      max-width: 146px;
-      padding: 5px 12px;
-      border-radius: 10px;
+      height: 50px;
+      min-width: 56px;
+      max-width: 172px;
+      padding: 6px 13px;
+      border-radius: 12px;
     }}
     .sc-twin-logo-plate.size-lg img {{
-      max-height: 28px;
-      max-width: 122px;
+      max-height: 36px;
+      max-width: 144px;
     }}
+    .sc-twin-logo-plate.size-xl {{
+      height: 58px;
+      min-width: 66px;
+      max-width: 196px;
+      padding: 7px 15px;
+      border-radius: 14px;
+    }}
+    .sc-twin-logo-plate.size-xl img {{
+      max-height: 44px;
+      max-width: 164px;
+    }}
+    .sc-twin-logo-plate.size-hero {{
+      height: 70px;
+      min-width: 82px;
+      max-width: 234px;
+      padding: 9px 18px;
+      border-radius: 16px;
+    }}
+    .sc-twin-logo-plate.size-hero img {{
+      max-height: 52px;
+      max-width: 196px;
+    }}
+
+    .cfo-sc-emblem.has-twin-logo {{
+      width: auto !important;
+      height: auto !important;
+      min-width: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      overflow: visible !important;
+      box-shadow: none !important;
+    }}
+
     .sc-twin-nav-co {{
       font-family: var(--font-display);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 800;
       color: var(--text-primary);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 185px;
+      max-width: 195px;
     }}
     .sc-twin-nav-div {{
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 700;
-      padding: 2px 8px;
+      padding: 3px 9px;
       border-radius: 999px;
-      background: rgba(66, 133, 244, 0.14);
+      background: rgba(66, 133, 244, 0.15);
       color: var(--sc-cyan);
-      border: 1px solid rgba(66, 133, 244, 0.32);
+      border: 1px solid rgba(66, 133, 244, 0.38);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 175px;
+      max-width: 185px;
     }}
     .sc-twin-hero-cobrand {{
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      padding: 7px 16px 7px 9px;
-      margin-bottom: 18px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.76);
-      border: 1px solid var(--border-strong);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.26);
+      gap: 16px;
+      padding: 12px 24px 12px 14px;
+      margin-bottom: 24px;
+      border-radius: 22px;
+      background: rgba(15, 23, 42, 0.84);
+      border: 1.5px solid var(--border-strong);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+      text-align: left;
     }}
     html[data-theme="light"] .sc-twin-hero-cobrand {{
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      background: rgba(255, 255, 255, 0.94);
+      border-color: #cbd5e1;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.09);
     }}
     .sc-twin-context-bar {{
       margin: 0 auto 26px auto;
       padding: 18px 22px;
       border-radius: 18px;
       background: var(--bg-card);
-      border: 1px solid var(--border-strong);
+      border: 1.5px solid var(--border-strong);
       border-left: 5px solid var(--sc-cyan);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 18px;
       flex-wrap: wrap;
@@ -151,15 +401,15 @@ TWIN_CSS = f"""
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 7px 13px;
+      padding: 8px 14px;
       border-radius: 10px;
       font-family: var(--font-sans);
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 700;
       cursor: pointer;
       background: var(--bg-surface);
       color: var(--text-primary);
-      border: 1px solid var(--border-strong);
+      border: 1.5px solid var(--border-strong);
       transition: all 0.18s ease;
     }}
     .sc-twin-action-btn:hover {{
@@ -171,7 +421,7 @@ TWIN_CSS = f"""
       padding: 13px 18px;
       border-radius: 14px;
       background: var(--bg-card);
-      border: 1px solid var(--border-strong);
+      border: 1.5px solid var(--border-strong);
       border-left: 4px solid var(--sc-cyan);
       display: flex;
       align-items: center;
@@ -180,9 +430,13 @@ TWIN_CSS = f"""
       flex-wrap: wrap;
     }}
     .nav-pill-btn.twin-studio-pill {{
-      border: 1px solid rgba(66, 133, 244, 0.38);
-      background: rgba(66, 133, 244, 0.10);
-      font-weight: 700;
+      padding: 6px 10px;
+      min-width: 34px;
+      font-size: 13px;
+      opacity: 0.72;
+    }}
+    .nav-pill-btn.twin-studio-pill:hover {{
+      opacity: 1;
     }}
     {CSS_MARKER_END}
 """
@@ -204,25 +458,25 @@ def build_embedded_twins_js() -> str:
 
 def build_v2_modal_html() -> str:
     return """  <!-- =========================================================================
-       ENTERPRISE TWIN STUDIO MODAL V2 (DIVISION-AWARE + CAREER GROUNDED)
+       ENTERPRISE TWIN STUDIO MODAL V2.1 (MINIMAL, CLEAN + SAVED TAB)
        ========================================================================= -->
   <div id="enterpriseTwinModal" class="modal-overlay" style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(2,6,18,0.82); backdrop-filter:blur(16px); align-items:center; justify-content:center; padding:20px;">
-    <div class="modal-card" style="background:var(--bg-card); border:1px solid var(--border-strong); border-radius:24px; max-width:900px; width:100%; max-height:90vh; overflow-y:auto; padding:30px 32px; box-shadow:0 30px 90px rgba(0,0,0,0.65); position:relative; color:var(--text-primary);">
-      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:16px;">
+    <div class="modal-card" style="background:var(--bg-card); border:1.5px solid var(--border-strong); border-radius:24px; max-width:860px; width:100%; max-height:90vh; overflow-y:auto; padding:28px 30px; box-shadow:0 30px 90px rgba(0,0,0,0.65); position:relative; color:var(--text-primary);">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:18px;">
         <div>
-          <div style="font-size:11.5px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--g-blue); margin-bottom:4px;">
-            Enterprise Twin Studio · Gemini 3.1 Pro + 3.8 Flash
+          <div style="font-size:11px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--g-blue); margin-bottom:3px;">
+            Enterprise Portal Studio
           </div>
-          <h2 style="font-family:var(--font-display); font-size:23px; font-weight:800; color:var(--text-primary); margin:0;">
-            Tailor Supply Chain Portal to Any Company &amp; Division
+          <h2 style="font-family:var(--font-display); font-size:24px; font-weight:800; color:var(--text-primary); margin:0;">
+            Welcome to Supply Chain
           </h2>
-          <div style="font-size:13.5px; color:var(--text-secondary); margin-top:4px;">
-            Downloads the official corporate logo, adapts process names &amp; 60 job titles to career listings, and hides division-irrelevant agents while keeping all Demo AI Agents intact.
-          </div>
         </div>
-        <div style="display:flex; gap:8px; flex-shrink:0;">
+        <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+          <button type="button" id="modalToggleShowAllBtn" style="display:none;" class="sc-twin-action-btn" onclick="toggleTwinShowAllAgents()">
+            Show All 60 Agents
+          </button>
           <a id="openFullWelcomeStudioLink" href="/welcome" style="display:none; text-decoration:none;" class="sc-twin-action-btn">
-            ↗ Full Welcome Studio
+            ↗ Journey View
           </a>
           <button type="button" class="back-btn" style="padding:6px 14px; font-size:13px;" onclick="closeEnterpriseTwinModal()">
             ✕ Close
@@ -230,59 +484,64 @@ def build_v2_modal_html() -> str:
         </div>
       </div>
 
-      <!-- Intake Form -->
-      <div style="background:var(--bg-surface); border:1px solid var(--border-strong); border-radius:18px; padding:20px 22px; margin-bottom:22px;">
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-bottom:14px;">
+      <!-- Segmented Tabs: Create Portal vs Saved Portals -->
+      <div style="display:inline-flex; gap:6px; padding:5px; border-radius:999px; background:var(--bg-surface); border:1.5px solid var(--border-strong); margin-bottom:18px;">
+        <button type="button" id="modalTabCreateBtn" onclick="switchTwinModalTab('create')" style="padding:7px 16px; border-radius:999px; border:none; font-size:13px; font-weight:700; cursor:pointer; background:var(--g-blue); color:#fff;">
+          ✦ Enter Details
+        </button>
+        <button type="button" id="modalTabSavedBtn" onclick="switchTwinModalTab('saved')" style="padding:7px 16px; border-radius:999px; border:none; font-size:13px; font-weight:700; cursor:pointer; background:transparent; color:var(--text-secondary);">
+          🗂️ Saved Companies
+        </button>
+      </div>
+
+      <!-- Create Pane -->
+      <div id="modalCreatePane" style="background:var(--bg-surface); border:1.5px solid var(--border-strong); border-radius:18px; padding:20px 22px;">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:14px; margin-bottom:14px;">
           <div>
             <label style="display:block; font-size:11.5px; font-weight:700; color:var(--text-secondary); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">
               Company Name <span style="color:var(--g-red);">*</span>
             </label>
-            <input type="text" id="twinCompanyInput" class="twin-input-field" placeholder="e.g. ITC Limited, Aditya Birla Group, Unilever..." value="" style="width:100%; padding:10px 13px; border-radius:10px; background:var(--bg-card); color:var(--text-primary); border:1px solid var(--border-strong); font-size:14px;" />
+            <input type="text" id="twinCompanyInput" class="twin-input-field" placeholder="e.g. ITC Limited" value="" style="width:100%; padding:10px 13px; border-radius:10px; background:var(--bg-card); color:var(--text-primary); border:1.5px solid var(--border-strong); font-size:14px;" />
           </div>
           <div>
             <label style="display:block; font-size:11.5px; font-weight:700; color:var(--text-secondary); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">
-              Business Division / Org Unit
+              Division / Business Unit
             </label>
-            <input type="text" id="twinDivisionInput" class="twin-input-field" placeholder="e.g. Tobacco (ILTD & TM&D), UltraTech Cement, Foods..." value="" style="width:100%; padding:10px 13px; border-radius:10px; background:var(--bg-card); color:var(--text-primary); border:1px solid var(--border-strong); font-size:14px;" />
+            <input type="text" id="twinDivisionInput" class="twin-input-field" placeholder="e.g. Cigarettes &amp; Leaf Tobacco, Foods..." value="" style="width:100%; padding:10px 13px; border-radius:10px; background:var(--bg-card); color:var(--text-primary); border:1.5px solid var(--border-strong); font-size:14px;" />
           </div>
           <div>
             <label style="display:block; font-size:11.5px; font-weight:700; color:var(--text-secondary); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">
-              Primary Geography
+              Geography
             </label>
-            <input type="text" id="twinGeoInput" class="twin-input-field" placeholder="e.g. India, Global, North America..." value="India" style="width:100%; padding:10px 13px; border-radius:10px; background:var(--bg-card); color:var(--text-primary); border:1px solid var(--border-strong); font-size:14px;" />
+            <input type="text" id="twinGeoInput" class="twin-input-field" placeholder="e.g. India, Global" value="India" style="width:100%; padding:10px 13px; border-radius:10px; background:var(--bg-card); color:var(--text-primary); border:1.5px solid var(--border-strong); font-size:14px;" />
           </div>
         </div>
 
-        <div style="margin-bottom:14px;">
-          <label style="display:block; font-size:11.5px; font-weight:700; color:var(--text-secondary); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">
-            Optional Persona, Process Vocabulary or Custom Logo URL
-          </label>
-          <div style="display:grid; grid-template-columns: 2fr 1fr; gap:12px;">
-            <input type="text" id="twinFocusInput" class="twin-input-field" placeholder="e.g. Calls distribution TM&D, Wholesale Dealers (WD), SAP S/4HANA..." style="width:100%; padding:10px 13px; border-radius:10px; background:var(--bg-card); color:var(--text-primary); border:1px solid var(--border-strong); font-size:13.5px;" />
-            <input type="text" id="twinLogoUrlInput" class="twin-input-field" placeholder="Optional Logo HTTPS URL" style="width:100%; padding:10px 13px; border-radius:10px; background:var(--bg-card); color:var(--text-primary); border:1px solid var(--border-strong); font-size:13.5px;" />
-          </div>
+        <div style="display:grid; grid-template-columns: 2fr 1fr; gap:12px; margin-bottom:16px;">
+          <input type="text" id="twinFocusInput" class="twin-input-field" placeholder="Optional context (e.g. Wholesale Dealers, SAP S/4HANA)" style="width:100%; padding:10px 13px; border-radius:10px; background:var(--bg-card); color:var(--text-primary); border:1.5px solid var(--border-strong); font-size:13.5px;" />
+          <input type="text" id="twinLogoUrlInput" class="twin-input-field" placeholder="Optional Logo URL" style="width:100%; padding:10px 13px; border-radius:10px; background:var(--bg-card); color:var(--text-primary); border:1.5px solid var(--border-strong); font-size:13.5px;" />
         </div>
 
         <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
             <button type="button" onclick="executeTwinGeneration()" style="display:inline-flex; align-items:center; gap:8px; padding:11px 22px; border-radius:11px; background:var(--g-blue); color:#ffffff; font-family:var(--font-display); font-size:14px; font-weight:700; border:none; cursor:pointer;">
-              <span>✦ Synthesize &amp; Apply Company Portal</span>
+              <span>✦ Build Tailored Portal &rarr;</span>
             </button>
             <button type="button" class="sc-twin-action-btn" onclick="switchClientTwin('reset')">
-              ↺ Reset to Base Industry-Agnostic Portal (60 Agents)
+              ↺ Base Portal (60 Agents)
             </button>
           </div>
           <label style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:var(--text-secondary); cursor:pointer;">
             <input type="checkbox" id="twinForceRefreshCheckbox" />
-            <span>Force fresh re-synthesis</span>
+            <span>Fresh synthesis</span>
           </label>
         </div>
 
         <!-- Streaming Synthesis HUD -->
-        <div id="twinProgressHud" style="display:none; margin-top:16px; padding:16px; border-radius:12px; background:var(--bg-card); border:1px solid var(--border-strong);">
+        <div id="twinProgressHud" style="display:none; margin-top:16px; padding:16px; border-radius:12px; background:var(--bg-card); border:1.5px solid var(--border-strong);">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
             <span id="hudStatusText" style="font-family:var(--font-mono); font-size:12.5px; color:var(--g-blue); font-weight:700;">
-              Initializing Enterprise Twin Agent...
+              Synthesizing portal...
             </span>
             <span id="hudPercentText" style="font-family:var(--font-mono); font-size:12px; color:var(--g-green); font-weight:700;">0%</span>
           </div>
@@ -293,18 +552,17 @@ def build_v2_modal_html() -> str:
         </div>
       </div>
 
-      <!-- Instant Saved Company & Division Portals -->
-      <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-secondary); margin-bottom:10px;">
-        Saved Company &amp; Division Portals (Instant Launch):
+      <!-- Saved Companies Pane -->
+      <div id="modalSavedPane" style="display:none;">
+        <div id="modalSavedTwinsGrid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(255px, 1fr)); gap:12px;"></div>
       </div>
-      <div id="modalSavedTwinsGrid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(245px, 1fr)); gap:10px;"></div>
     </div>
   </div>"""
 
 
 def build_v2_engine_js(embedded_twins_js: str) -> str:
     return f"""    /* =========================================================================
-       ENTERPRISE TWIN STUDIO V2 — IMMACULATE ZERO-BREAKAGE OVERLAY ENGINE
+       ENTERPRISE TWIN STUDIO V2.1 — IMMACULATE ZERO-BREAKAGE OVERLAY ENGINE
        ========================================================================= */
     {embedded_twins_js}
 
@@ -312,6 +570,7 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
     let BASELINE_PERSONAS = null;
     let BASELINE_AGENTS = null;
     let BASELINE_VALUE_CHAINS = null;
+    let ORIG_CFO_EMBLEM_HTML = null;
     let CURRENT_TWIN = null;
     let TWIN_SHOW_ALL_60 = false;
     let STUDIO_BACKEND_AVAILABLE = false;
@@ -329,6 +588,10 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
       if (!BASELINE_PERSONAS) BASELINE_PERSONAS = JSON.parse(JSON.stringify(PERSONAS));
       if (!BASELINE_AGENTS) BASELINE_AGENTS = JSON.parse(JSON.stringify(AGENTS));
       if (!BASELINE_VALUE_CHAINS) BASELINE_VALUE_CHAINS = JSON.parse(JSON.stringify(VALUE_CHAINS));
+      if (ORIG_CFO_EMBLEM_HTML === null) {{
+        const emb = document.querySelector('.cfo-sc-emblem');
+        if (emb) ORIG_CFO_EMBLEM_HTML = emb.innerHTML;
+      }}
     }}
 
     function restoreCanonicalBaselines() {{
@@ -359,7 +622,7 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
       const plateCls = rawPlate === 'dark_plate' ? 'plate-dark' : (rawPlate === 'self_plated' ? 'plate-self' : 'plate-light');
       const mono = escTwinHtml(logo.monogram || (brand.canonical_name || 'SC').slice(0, 2).toUpperCase());
       if (!uri) {{
-        return `<span class="sc-twin-logo-plate plate-dark ${{sizeClass}}" style="font-family:var(--font-display); font-weight:800; font-size:12px; color:#fff;">${{mono}}</span>`;
+        return `<span class="sc-twin-logo-plate plate-dark ${{sizeClass}}" style="font-family:var(--font-display); font-weight:800; font-size:14px; color:#fff;">${{mono}}</span>`;
       }}
       return `<span class="sc-twin-logo-plate ${{plateCls}} ${{sizeClass}}"><img src="${{escTwinHtml(uri)}}" alt="${{escTwinHtml(brand.canonical_name || 'Company')}} logo" loading="eager" /></span>`;
     }}
@@ -372,16 +635,13 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
       if (!disp || !ctx) return '';
       return `
         <div class="sc-twin-agent-lens">
-          <div style="display:flex; align-items:center; gap:12px; flex:1; min-width:240px;">
-            ${{renderAdaptiveTwinLogoBadge(brand)}}
+          <div style="display:flex; align-items:center; gap:14px; flex:1; min-width:240px;">
+            ${{renderAdaptiveTwinLogoBadge(brand, 'size-lg')}}
             <div style="font-size:13.5px; line-height:1.5; color:var(--text-primary);">
-              <strong style="color:var(--sc-cyan);">${{escTwinHtml(disp)}} Operational Lens:</strong>
+              <strong style="color:var(--sc-cyan);">${{escTwinHtml(disp)}} Operational Context:</strong>
               <span> ${{escTwinHtml(ctx)}}</span>
             </div>
           </div>
-          <span style="font-size:11.5px; font-weight:700; color:var(--text-muted); white-space:nowrap;">
-            Core Demo Engine &amp; Data Preserved
-          </span>
         </div>
       `;
     }}
@@ -409,69 +669,31 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
     }}
 
     function mountTwinContextBar() {{
-      let bar = document.getElementById('twinActiveContextBar');
-      const orgSec = document.getElementById('orgChartSection');
-      const cfoWrap = orgSec ? orgSec.querySelector('.cfo-root-wrapper') : null;
-      if (!orgSec || !cfoWrap) return;
+      // Customer-facing front page: NEVER render `#twinActiveContextBar` ("Switch Company / Tailored Supply Chain Twin")
+      const existingBar = document.getElementById('twinActiveContextBar');
+      if (existingBar) existingBar.remove();
 
+      const modalToggleBtn = document.getElementById('modalToggleShowAllBtn');
       if (!CURRENT_TWIN) {{
-        if (bar) bar.remove();
         const heroBanner = document.getElementById('twinHeroCoBrandBanner');
         if (heroBanner) heroBanner.remove();
+        const heroLockup = document.querySelector('.hero-logo-lockup');
+        if (heroLockup) heroLockup.style.display = '';
+        if (modalToggleBtn) modalToggleBtn.style.display = 'none';
         return;
       }}
 
-      if (!bar) {{
-        bar = document.createElement('div');
-        bar.id = 'twinActiveContextBar';
-        bar.className = 'sc-twin-context-bar';
-        orgSec.insertBefore(bar, cfoWrap);
+      const hiddenCount = (CURRENT_TWIN.hidden_agent_ids || []).length;
+      if (modalToggleBtn) {{
+        if (hiddenCount > 0) {{
+          modalToggleBtn.style.display = 'inline-flex';
+          modalToggleBtn.textContent = TWIN_SHOW_ALL_60
+            ? `🎯 Focused View (${{60 - hiddenCount}}/60)`
+            : `👁️ Show All 60 Agents`;
+        }} else {{
+          modalToggleBtn.style.display = 'none';
+        }}
       }}
-
-      const brand = CURRENT_TWIN.brand || {{}};
-      const disp = CURRENT_TWIN.display_label || brand.canonical_name || CURRENT_TWIN.canonicalName || 'Enterprise';
-      const thesis = brand.executive_thesis || CURRENT_TWIN.executiveThesis || '';
-      const terms = CURRENT_TWIN.terminology_highlights || [];
-      const hiddenIds = CURRENT_TWIN.hidden_agent_ids || [];
-      const hiddenCount = hiddenIds.length;
-      const activeCount = 60 - (TWIN_SHOW_ALL_60 ? 0 : hiddenCount);
-
-      bar.innerHTML = `
-        <div style="display:flex; align-items:flex-start; gap:14px; flex:1; min-width:280px;">
-          ${{renderAdaptiveTwinLogoBadge(brand, 'size-lg')}}
-          <div>
-            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:4px;">
-              <span style="font-family:var(--font-display); font-size:17px; font-weight:800; color:var(--text-primary);">${{escTwinHtml(disp)}}</span>
-              <span style="font-size:11px; font-weight:700; padding:2px 9px; border-radius:999px; background:rgba(52,168,83,0.14); color:var(--g-green); border:1px solid rgba(52,168,83,0.34);">
-                ✓ Tailored Supply Chain Twin
-              </span>
-            </div>
-            ${{thesis ? `<div style="font-size:13.5px; color:var(--text-secondary); line-height:1.55; max-width:880px; margin-bottom:${{terms.length ? '8px' : '0'}};">${{escTwinHtml(thesis)}}</div>` : ''}}
-            ${{terms.length ? `<div style="display:flex; flex-wrap:wrap; gap:6px;">${{terms.map(t => `<span class="sc-twin-term-chip">${{escTwinHtml(t)}}</span>`).join('')}}</div>` : ''}}
-          </div>
-        </div>
-        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
-          <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end;">
-            ${{hiddenCount > 0 ? `
-              <button type="button" class="sc-twin-action-btn" onclick="toggleTwinShowAllAgents()" title="Toggle division-irrelevant agents">
-                ${{TWIN_SHOW_ALL_60
-                  ? `🎯 Filter to Relevant (${{60 - hiddenCount}}/60)`
-                  : `👁️ Showing ${{activeCount}}/60 Relevant (${{hiddenCount}} Hidden · Show All)`}}
-              </button>
-            ` : `
-              <span style="font-size:12px; font-weight:700; padding:7px 11px; border-radius:10px; background:var(--bg-surface); border:1px solid var(--border-subtle); color:var(--text-secondary);">
-                🎯 All 60/60 Agents Relevant
-              </span>
-            `}}
-            <button type="button" class="sc-twin-action-btn" onclick="openTwinStudioEntry(event)">
-              ⇄ Switch Company
-            </button>
-            <button type="button" class="sc-twin-action-btn" onclick="switchClientTwin('reset')">
-              ↺ Base Framework
-            </button>
-          </div>
-        </div>
-      `;
     }}
 
     function toggleTwinShowAllAgents() {{
@@ -539,8 +761,22 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
         }}
       }});
 
-      // Sync renamed Sub-Pillars & Persona titles onto Sub-Pillar items and Agent metadata
+      // 2B. Apply Optional Company-Tailored Agent Names (`custom_agent_name`) while keeping `canonicalName`
       const agRelMap = twinData.agent_relevance || {{}};
+      Object.keys(AGENTS).forEach(aid => {{
+        const baseAg = BASELINE_AGENTS[aid];
+        const origClean = typeof cleanAgentName === 'function' ? cleanAgentName(baseAg ? baseAg.name : AGENTS[aid].name) : AGENTS[aid].name;
+        AGENTS[aid].canonicalName = origClean;
+        const rel = agRelMap[aid];
+        if (rel) {{
+          if (rel.division_context) AGENTS[aid].twinDivisionContext = rel.division_context;
+          if (rel.custom_agent_name && String(rel.custom_agent_name).trim()) {{
+            AGENTS[aid].name = String(rel.custom_agent_name).trim();
+          }}
+        }}
+      }});
+
+      // Sync renamed Sub-Pillars, Persona titles, & tailored Agent names onto Sub-Pillar items
       Object.values(DEPARTMENTS).forEach(dept => {{
         (dept.subPillars || []).forEach(sp => {{
           (sp.items || []).forEach(it => {{
@@ -550,12 +786,9 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
             }}
             if (AGENTS[it.agentId]) {{
               AGENTS[it.agentId].subPillarName = sp.name;
+              it.agentName = AGENTS[it.agentId].name;
               if (PERSONAS[it.personaId]) {{
                 AGENTS[it.agentId].primaryPersonaName = PERSONAS[it.personaId].name;
-              }}
-              const rel = agRelMap[it.agentId];
-              if (rel && rel.division_context) {{
-                AGENTS[it.agentId].twinDivisionContext = rel.division_context;
               }}
             }}
           }});
@@ -596,7 +829,6 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
         }}
         (vc.stages || []).forEach(st => {{
           if (!AGENTS[st.agentId]) {{
-            // Remap gracefully to an active agent so clicking stage never fails
             const fallbackAg = Object.values(AGENTS)[0];
             if (fallbackAg) {{
               st.agentId = fallbackAg.id;
@@ -611,7 +843,7 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
         }});
       }});
 
-      // 5. Update Brand Accent, Navbar Medallion, Hero Title & CSCO Box
+      // 5. Update Brand Accent, 40px Navbar Logo Lockup, 70px Hero Showcase Card, & 58px CSCO Box Logo
       document.documentElement.style.setProperty('--sc-cyan', accent);
       const counts = updateNavbarAndTabCounts();
 
@@ -628,6 +860,8 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
 
       const heroContent = document.querySelector('.hero-content');
       const heroTitleEl = document.querySelector('.hero-title');
+      const heroLockup = document.querySelector('.hero-logo-lockup');
+      if (heroLockup) heroLockup.style.display = 'none';
       if (heroContent && heroTitleEl) {{
         let heroCobrand = document.getElementById('twinHeroCoBrandBanner');
         if (!heroCobrand) {{
@@ -637,20 +871,30 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
           heroContent.insertBefore(heroCobrand, heroTitleEl);
         }}
         heroCobrand.innerHTML = `
-          ${{renderAdaptiveTwinLogoBadge(brand)}}
-          <span style="font-family:var(--font-display); font-size:13.5px; font-weight:700; color:var(--text-primary);">
-            ${{escTwinHtml(dispLabel)}}
-          </span>
-          <span style="font-size:11.5px; font-weight:700; color:var(--g-green);">● Tailored View</span>
+          ${{renderAdaptiveTwinLogoBadge(brand, 'size-hero')}}
+          <div style="display:flex; flex-direction:column; gap:3px;">
+            <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:var(--text-primary); line-height:1.2;">
+              ${{escTwinHtml(cName)}}
+            </div>
+            ${{divName ? `<div style="font-size:13px; font-weight:700; color:var(--sc-cyan);">${{escTwinHtml(divName)}}</div>` : ''}}
+            <div style="font-size:11px; font-weight:700; color:var(--g-green); letter-spacing:0.04em; text-transform:uppercase;">
+              ● Powered by Gemini Enterprise
+            </div>
+          </div>
         `;
         heroTitleEl.innerHTML = `Agentic Transformation for <span class="gradient-word">${{escTwinHtml(cName)}} Supply Chain</span>`;
       }}
 
+      const cfoEmblemEl = document.querySelector('.cfo-sc-emblem');
+      if (cfoEmblemEl) {{
+        cfoEmblemEl.classList.add('has-twin-logo');
+        cfoEmblemEl.innerHTML = renderAdaptiveTwinLogoBadge(brand, 'size-xl');
+      }}
       const cfoTitleEl = document.querySelector('.cfo-box-title');
       const cfoSubEl = document.querySelector('.cfo-box-sub');
       if (cfoTitleEl) cfoTitleEl.textContent = brand.executive_title || `Chief Supply Chain Officer, ${{cName}}`;
       if (cfoSubEl) {{
-        cfoSubEl.textContent = `6 Core Operating Pillars · ${{counts.totalSp}} Sub-Pillars · ${{counts.pCount}} Corporate Roles · ${{counts.aCount}} Relevant AI Agents`;
+        cfoSubEl.textContent = `6 Core Operating Pillars · ${{counts.totalSp}} Sub-Pillars · ${{counts.pCount}} Corporate Roles · ${{counts.aCount}} AI Agents`;
       }}
       document.title = `${{dispLabel}} — Supply Chain Agentic Transformation`;
 
@@ -707,9 +951,17 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
         const cscoBadgeEl = document.querySelector('.nav-csco-badge');
         if (cscoBadgeEl) cscoBadgeEl.textContent = 'Office of the CSCO · Supply Chain';
 
+        const heroLockup = document.querySelector('.hero-logo-lockup');
+        if (heroLockup) heroLockup.style.display = '';
         const heroTitleEl = document.querySelector('.hero-title');
         if (heroTitleEl) {{
           heroTitleEl.innerHTML = 'Agentic Transformation for <span class="gradient-word">Supply Chain &amp; Demand</span>';
+        }}
+
+        const cfoEmblemEl = document.querySelector('.cfo-sc-emblem');
+        if (cfoEmblemEl && ORIG_CFO_EMBLEM_HTML !== null) {{
+          cfoEmblemEl.classList.remove('has-twin-logo');
+          cfoEmblemEl.innerHTML = ORIG_CFO_EMBLEM_HTML;
         }}
         const cfoTitleEl = document.querySelector('.cfo-box-title');
         const cfoSubEl = document.querySelector('.cfo-box-sub');
@@ -746,6 +998,24 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
         .catch(() => {{}});
     }}
 
+    function switchTwinModalTab(mode) {{
+      const createPane = document.getElementById('modalCreatePane');
+      const savedPane = document.getElementById('modalSavedPane');
+      const createBtn = document.getElementById('modalTabCreateBtn');
+      const savedBtn = document.getElementById('modalTabSavedBtn');
+      const isCreate = mode !== 'saved';
+      if (createPane) createPane.style.display = isCreate ? 'block' : 'none';
+      if (savedPane) savedPane.style.display = isCreate ? 'none' : 'block';
+      if (createBtn) {{
+        createBtn.style.background = isCreate ? 'var(--g-blue)' : 'transparent';
+        createBtn.style.color = isCreate ? '#fff' : 'var(--text-secondary)';
+      }}
+      if (savedBtn) {{
+        savedBtn.style.background = !isCreate ? 'var(--g-blue)' : 'transparent';
+        savedBtn.style.color = !isCreate ? '#fff' : 'var(--text-secondary)';
+      }}
+    }}
+
     function openTwinStudioEntry(ev) {{
       if (ev) ev.stopPropagation();
       if (window.__ENTERPRISE_STUDIO_SERVER__ || STUDIO_BACKEND_AVAILABLE) {{
@@ -759,6 +1029,7 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
       const m = document.getElementById('enterpriseTwinModal');
       if (m) {{
         m.style.display = 'flex';
+        switchTwinModalTab('create');
         populateModalSavedTwins();
       }}
     }}
@@ -778,11 +1049,11 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
             logo: {{ data_uri: it.logo_data_uri || '', plate_style: it.logo_plate_style || 'light_plate', monogram: it.logo_monogram || 'SC' }}
           }};
           return `
-            <button type="button" onclick="switchClientTwin('${{escTwinHtml(it.twin_slug)}}')" style="text-align:left; background:var(--bg-surface); border:1px solid var(--border-strong); border-radius:14px; padding:12px 14px; cursor:pointer; display:flex; align-items:center; gap:11px; color:var(--text-primary);">
-              ${{renderAdaptiveTwinLogoBadge(fakeBrand)}}
+            <button type="button" onclick="switchClientTwin('${{escTwinHtml(it.twin_slug)}}')" style="text-align:left; background:var(--bg-surface); border:1.5px solid var(--border-strong); border-radius:16px; padding:14px 16px; cursor:pointer; display:flex; align-items:center; gap:14px; color:var(--text-primary);">
+              ${{renderAdaptiveTwinLogoBadge(fakeBrand, 'size-lg')}}
               <div style="min-width:0; flex:1;">
-                <div style="font-size:13.5px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${{escTwinHtml(it.company_name)}}</div>
-                <div style="font-size:11.5px; color:var(--text-secondary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${{escTwinHtml(it.division_name || it.industry_sector || 'Enterprise')}} · ${{it.active_agents_count || 60}}/60 Agents</div>
+                <div style="font-size:14.5px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${{escTwinHtml(it.company_name)}}</div>
+                <div style="font-size:12px; color:var(--text-secondary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${{escTwinHtml(it.division_name || it.industry_sector || 'Enterprise')}} · ${{it.active_agents_count || 60}}/60 Agents</div>
               </div>
             </button>
           `;
@@ -869,13 +1140,13 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
           }}
         }})
         .catch(() => {{
-          // Offline / Static Zipline fallback: match closest embedded flagship twin or clean generic overlay
           const needle = (company + ' ' + division).toLowerCase();
           let matched = null;
           for (const [slug, ov] of Object.entries(EMBEDDED_TWINS_V2)) {{
             if (needle.includes('tobacco') && slug.includes('tobacco')) {{ matched = ov; break; }}
             if (needle.includes('cement') || needle.includes('ultratech')) {{ if (slug.includes('ultratech')) {{ matched = ov; break; }} }}
             if (needle.includes('hindalco') || needle.includes('metal')) {{ if (slug.includes('hindalco')) {{ matched = ov; break; }} }}
+            if (needle.includes('tata') && slug.includes('tata')) {{ matched = ov; break; }}
             if (needle.includes('itc') && slug.includes('foods')) matched = ov;
             if (needle.includes('unilever') && slug.includes('unilever')) {{ matched = ov; break; }}
           }}
@@ -973,34 +1244,31 @@ def upgrade_single_html_file(path: Path, is_periodic: bool = False, is_mindmap: 
         style_close = html.index("</style>")
         html = html[:style_close] + TWIN_CSS + "\n  " + html[style_close:]
 
-    # 2. Add `Company Twin` pill button in `<header class="navbar">` if not present
-    nav_btn_html = '      <button type="button" class="nav-pill-btn twin-studio-pill" onclick="openTwinStudioEntry(event)">Company Twin</button>\n'
-    if 'onclick="openTwinStudioEntry(event)"' not in html:
+    # 2. Add or update discreet `⇄` Portal Studio button in `<header class="navbar">`
+    old_nav_btn = '      <button type="button" class="nav-pill-btn twin-studio-pill" onclick="openTwinStudioEntry(event)">Company Twin</button>\n'
+    nav_btn_html = '      <button type="button" class="nav-pill-btn twin-studio-pill" onclick="openTwinStudioEntry(event)" title="Portal Studio" aria-label="Portal Studio">⇄</button>\n'
+    if old_nav_btn in html:
+        html = html.replace(old_nav_btn, nav_btn_html, 1)
+    elif 'onclick="openTwinStudioEntry(event)"' not in html:
         target_theme_btn = '      <button type="button" id="themeToggleBtn"'
         if target_theme_btn in html:
             html = html.replace(target_theme_btn, nav_btn_html + target_theme_btn, 1)
 
-    # 3. Inject subtle grounding badge inside `openPersonaPage` if not present
-    grounding_line = "${p.groundingSource ? `<div style=\"margin-top:5px; font-size:11.5px; font-weight:700; color:var(--sc-cyan);\">🔍 ${escTwinHtml(p.groundingSource)}</div>` : ''}"
-    if "p.groundingSource" not in html:
-        persona_sub_target = '<div style="font-size:15px; color:var(--text-secondary); font-weight:600;">${p.subPillarName || dept.name}</div>'
-        if persona_sub_target in html:
-            html = html.replace(persona_sub_target, persona_sub_target + "\n                " + grounding_line, 1)
+    # 3. Ensure meta groundingSource badge is NOT shown on customer-facing Persona pages
+    grounding_line = "\n                ${p.groundingSource ? `<div style=\"margin-top:5px; font-size:11.5px; font-weight:700; color:var(--sc-cyan);\">🔍 ${escTwinHtml(p.groundingSource)}</div>` : ''}"
+    if grounding_line in html:
+        html = html.replace(grounding_line, "")
 
     # 4. Inject 1-line `renderAgentTwinDivisionBanner(ag)` inside `openAgentPage` right below `.back-bar`
     if "renderAgentTwinDivisionBanner(ag)" not in html:
         fn_pos = html.index("function openAgentPage(")
         back_bar_pos = html.index('<div class="back-bar">', fn_pos)
-        # Find the closing of `.back-bar` right before the hero banner in openAgentPage
-        next_comment_pos = html.index("<!--", back_bar_pos + 250)
-        # Insert right before the comment following `.back-bar` if it's after persona-switcher-pills
         pills_pos = html.index('<div class="persona-switcher-pills">', back_bar_pos)
         close_after_pills = html.index("</div>\n          </div>", pills_pos) + len("</div>\n          </div>")
         html = html[:close_after_pills] + "\n          ${renderAgentTwinDivisionBanner(ag)}" + html[close_after_pills:]
 
     # 5. Replace `<div id="enterpriseTwinModal"...` block right before `GLOBAL EXECUTIVE ATTRIBUTION FOOTER`
     modal_start = html.index('<div id="enterpriseTwinModal"')
-    # Include preceding comment block if present
     comment_before = html.rfind("<!-- ===", max(0, modal_start - 260), modal_start)
     slice_modal_start = comment_before if comment_before != -1 else modal_start
     footer_anchor = html.index("GLOBAL EXECUTIVE ATTRIBUTION FOOTER", modal_start)
@@ -1022,9 +1290,8 @@ def upgrade_single_html_file(path: Path, is_periodic: bool = False, is_mindmap: 
         )
 
     last_script_close = html.rindex("</script>")
-    # Find the comment header immediately above the bottom Enterprise Twin JS block
-    if "ENTERPRISE TWIN STUDIO V2 — IMMACULATE" in html:
-        js_block_marker = html.rindex("ENTERPRISE TWIN STUDIO V2 — IMMACULATE", 0, last_script_close)
+    if "ENTERPRISE TWIN STUDIO V2" in html:
+        js_block_marker = html.rindex("ENTERPRISE TWIN STUDIO V2", 0, last_script_close)
     else:
         js_block_marker = html.rindex("ENTERPRISE TWIN CLIENT-SIDE SWITCHER", 0, last_script_close)
     js_comment_start = html.rfind("/*", 0, js_block_marker)

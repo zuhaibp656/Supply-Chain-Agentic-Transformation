@@ -78,6 +78,17 @@ def test_division_differentiation_and_smart_agent_hiding():
     assert 45 <= cement["active_agents_count"] < 60
     assert len(cement["hidden_agent_ids"]) == 60 - cement["active_agents_count"]
 
+    # Company/division-tailored agent names (`custom_agent_name`) populated where helpful, never on hidden agents
+    tobacco_custom_names = [
+        spec["custom_agent_name"]
+        for spec in tobacco["agent_relevance"].values()
+        if spec.get("custom_agent_name")
+    ]
+    assert len(tobacco_custom_names) >= 10
+    assert "TM&D WD Demand Sensing" in tobacco_custom_names
+    for hid in tobacco["hidden_agent_ids"]:
+        assert tobacco["agent_relevance"][hid].get("custom_agent_name", "") == ""
+
     # ITC Foods spans agri + ambient + chilled/dairy + modern trade, so all 60 agents remain relevant
     assert foods["active_agents_count"] == 60
     assert len(foods["hidden_agent_ids"]) == 0
@@ -96,12 +107,14 @@ def test_division_differentiation_and_smart_agent_hiding():
 def test_fastapi_welcome_hydration_and_sse_stream():
     client = TestClient(app)
 
-    # 1. Welcome Studio Front-Door
+    # 1. Welcome Studio Front-Door (Minimal Scroll & Fly-Up Journey + Saved Portals Tab)
     r_welcome = client.get("/")
     assert r_welcome.status_code == 200
     assert "Welcome to" in r_welcome.text
     assert "Supply Chain" in r_welcome.text
-    assert "initHeroSupplyChainCanvas" in r_welcome.text
+    assert "fly-up" in r_welcome.text
+    assert "Saved Portals" in r_welcome.text
+    assert "Quick-Fill" not in r_welcome.text
 
     # 2. Health Check & Strict Model Naming
     r_health = client.get("/api/v1/health")

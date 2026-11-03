@@ -257,22 +257,42 @@ assert.strictEqual(Object.keys(st.AGENTS).length, expectedActiveTobacco, `Expect
 assert.strictEqual(Object.keys(st.PERSONAS).length, 60 - itcTobacco.hidden_persona_ids.length, 'Expected paired hidden personas removed cleanly');
 assert(cfoTitle.textContent.includes('ITC'), 'CSCO title must reflect ITC Limited');
 assert(heroTitle.innerHTML.includes('ITC Limited'), 'Hero title must reflect ITC Limited');
+assert(!elementsById.has('twinActiveContextBar'), 'Customer-facing front page must NOT render #twinActiveContextBar');
 
-// Every active agent MUST retain its exact canonical demo name!
+// Every active agent MUST preserve its canonicalName AND apply custom_agent_name when provided!
+let customRenamedCount = 0;
 for (const [aid, ag] of Object.entries(st.AGENTS)) {
-  assert.strictEqual(ag.name, canonicalAgentNames[aid], `Agent ${aid} canonical demo name must NEVER be mutated!`);
+  const expectedCanon = canonicalAgentNames[aid].replace(/^\[[^\]]+\]\s*/, '').trim();
+  assert.strictEqual(ag.canonicalName, expectedCanon, `Agent ${aid} must preserve ag.canonicalName!`);
+  const rel = (itcTobacco.agent_relevance || {})[aid];
+  if (rel && rel.custom_agent_name) {
+    assert.strictEqual(ag.name, rel.custom_agent_name, `Agent ${aid} should display custom_agent_name`);
+    customRenamedCount += 1;
+  } else {
+    assert.strictEqual(ag.name, canonicalAgentNames[aid], `Agent ${aid} without custom_agent_name keeps canonical name`);
+  }
 }
+assert(customRenamedCount >= 10, `Expected >=10 company-tailored agent names for ITC Tobacco, got ${customRenamedCount}`);
 
 // Exercise all interactive sub-pages while 5 agents are hidden -> ZERO runtime errors!
 const samplePid = Object.keys(st.PERSONAS)[0];
 const sampleAid = Object.keys(st.AGENTS)[0];
 api.openPersonaPage(samplePid, false);
+const personaHtml = getOrCreateId('personaPageContent').innerHTML;
+assert(!personaHtml.includes('Est. Cost:'), 'Persona page must NOT show inline Est. Cost clutter');
+
 api.openAgentPage(sampleAid, false);
+const agentHtml = getOrCreateId('agentPageContent').innerHTML;
 assert(
-  getOrCreateId('pageAgent').innerHTML.includes('Operational Lens') ||
-  Boolean(st.AGENTS[sampleAid].twinDivisionContext),
+  agentHtml.includes('Operational Context') || Boolean(st.AGENTS[sampleAid].twinDivisionContext),
   'Agent detail page must carry division operational context while keeping core demo intact'
 );
+assert(!agentHtml.includes('Core Demo Engine Preserved'), 'Agent detail page must NOT show internal scaffolding text');
+assert(!agentHtml.includes('WHAT THIS AGENT DOES AT A GLANCE'), 'Duplicate paragraph/bullet wall must be removed from Agent page');
+assert(agentHtml.includes(`id="agentDeepBtn_cost_${sampleAid}"`), 'Agent page must include collapsed Cost & ROI pill');
+assert(agentHtml.includes(`id="agentDrawer_cost_${sampleAid}" class="agent-deepdive-drawer" style="display:none;"`), 'Cost & ROI drawer must be collapsed by default');
+assert(agentHtml.includes(`id="agentSingleSpecBody_${sampleAid}"`), '6-tab Enterprise Agent Contract must remain intact');
+
 if (api.openPeriodicTablePage) api.openPeriodicTablePage('all', null, false);
 if (api.openMindMapPage) api.openMindMapPage('all', null, false);
 if (api.openCostTabPage) api.openCostTabPage('all', null, false);
@@ -298,18 +318,21 @@ assert.strictEqual(Object.keys(st.AGENTS).length, ultraTech.active_agents_count,
 assert(!cfoTitle.textContent.includes('ITC'), 'Zero state leak from ITC into UltraTech');
 assert(heroTitle.innerHTML.includes('UltraTech') || heroTitle.innerHTML.includes('Aditya Birla'), 'Hero updated to UltraTech / Aditya Birla');
 
-// 5. Reset to Base Industry-Agnostic Framework -> 100% canonical 60/60 restored!
+// 5. Reset to Base Industry-Agnostic Framework -> 100% canonical 60/60 names & state restored!
 api.switchClientTwin('reset');
 st = api.getState();
 assert.strictEqual(st.CURRENT_TWIN, null, 'CURRENT_TWIN cleared on reset');
 assert.strictEqual(Object.keys(st.AGENTS).length, 60, 'All 60 canonical agents restored');
 assert.strictEqual(Object.keys(st.PERSONAS).length, 60, 'All 60 canonical personas restored');
+for (const [aid, ag] of Object.entries(st.AGENTS)) {
+  assert.strictEqual(ag.name, canonicalAgentNames[aid], `Reset must restore 100% canonical agent name for ${aid}`);
+}
 let totalSubPillars = 0;
 Object.values(st.DEPARTMENTS).forEach(d => { totalSubPillars += d.subPillars.length; });
 assert.strictEqual(totalSubPillars, 20, 'All 20 canonical sub-pillars restored');
 
-console.log('✅ ZERO-BREAKAGE DOM & STATE VERIFICATION PASSED 100%!');
+console.log('✅ ZERO-BREAKAGE DOM, UX CLARITY & TAILORED AGENT NAME VERIFICATION PASSED 100%!');
 console.log(`   - Canonical Baseline: 6 Pillars · 20 Sub-Pillars · 60 Personas · 60 Agents`);
-console.log(`   - ITC Tobacco & TM&D: ${expectedActiveTobacco}/60 Relevant Agents (${60 - expectedActiveTobacco} Irrelevant Cleanly Hidden)`);
-console.log(`   - UltraTech Cement:   ${ultraTech.active_agents_count}/60 Relevant Agents (${60 - ultraTech.active_agents_count} Irrelevant Cleanly Hidden)`);
-console.log(`   - Show All 60 Toggle + All 10 Subpages + Reset to Base Framework: 0 Errors, 0 Leaks`);
+console.log(`   - ITC Tobacco & TM&D: ${expectedActiveTobacco}/60 Relevant Agents (${customRenamedCount} Company-Tailored Agent Names, ${60 - expectedActiveTobacco} Hidden)`);
+console.log(`   - UltraTech Cement:   ${ultraTech.active_agents_count}/60 Relevant Agents (${60 - ultraTech.active_agents_count} Hidden)`);
+console.log(`   - Persona Inline Cost Removed + Agent Collapsed Deep-Dive Drawers + Reset to Base: 0 Errors, 0 Leaks`);

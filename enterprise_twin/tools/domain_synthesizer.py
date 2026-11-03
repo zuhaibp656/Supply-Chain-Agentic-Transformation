@@ -445,6 +445,91 @@ def _tailor_persona_title(canonical_name: str, arch_key: str, sp_custom_name: st
     return canonical_name
 
 
+def _tailor_agent_name(agent_id: str, canonical_name: str, arch_key: str) -> str:
+    """Returns a crisp 2-4 word company/division-tailored agent name when domain language improves clarity, else ''."""
+    if arch_key == "tobacco_tmd":
+        names = {
+            "demand_sensing_agent": "TM&D WD Demand Sensing",
+            "cpfr_sync_agent": "Wholesale Dealer Lift Sync",
+            "npi_demand_profiler": "Brand-Length & Capsule NPI Profiler",
+            "promo_lift_simulator": "Trade Scheme & Margin Simulator",
+            "field_beat_distributor_sync_agent": "WD Channel Allocation Copilot",
+            "trade_scheme_claims_reconciler": "TM&D Scheme Claim Auditor",
+            "sop_scenario_weaver": "ILTD-to-TM&D S&OP Weaver",
+            "tier_n_risk_sentinel": "ILTD Leaf & Packaging Risk Sentinel",
+            "commodity_index_advisor": "Virginia Leaf & Pulp Index Advisor",
+            "rfq_should_cost_agent": "Hinge-Lid & Filter Tow Should-Cost",
+            "finite_production_scheduler": "PMD Threshing & SMD Line Scheduler",
+            "line_schedule_optimizer": "High-Speed Maker-Packer Re-Sequencer",
+            "predictive_oee_sentinel": "SMD Maker-Packer OEE Sentinel",
+            "inline_yield_guardian": "Moisture, Draw & Print Vision QA",
+            "meio_safety_stock_agent": "Bonded Mother Depot Stock Agent",
+            "warehouse_slotting_agent": "Bonded Master-Case Slotting",
+            "load_consolidation_agent": "Bonded Container Load Consolidator",
+            "store_capacity_agent": "Wholesale Dealer Vault Capacity Agent",
+            "fleetflow_dispatch": "TM&D Beat & Primary Fleet Router",
+            "reverse_rma_optimizer": "Excise Trade Damage Sentinel",
+            "rti_balance_reconciler": "Bobbin, Crate & Pallet Reconciler",
+        }
+        return names.get(agent_id, "")
+
+    if arch_key == "cement_heavy_materials":
+        names = {
+            "demand_sensing_agent": "District Dealer & Infra Demand Sensing",
+            "promo_lift_simulator": "Dealer Lifting Slab & Rebate Simulator",
+            "sop_scenario_weaver": "Clinker-to-Grinding S&OP Weaver",
+            "network_twin_architect": "Primary Lead-Distance & Rail-Road Twin",
+            "commodity_index_advisor": "Petcoke & Thermal Coal Index Advisor",
+            "rfq_should_cost_agent": "Fly-Ash, Gypsum & PP Sack Should-Cost",
+            "finite_production_scheduler": "Kiln Campaign & Ball-Mill Scheduler",
+            "predictive_oee_sentinel": "Rotary Kiln & WHRS OEE Sentinel",
+            "inline_yield_guardian": "Blaine Fineness & Clinker Factor QA",
+            "meio_safety_stock_agent": "Clinker Silo & Godown Stock Agent",
+            "warehouse_slotting_agent": "Packer Bay & Rail Siding Slotting",
+            "load_consolidation_agent": "Rake & Bulk Clinker Consolidator",
+            "yard_dock_sequencer": "Bulker & Rail-Siding Yard Sequencer",
+            "store_capacity_agent": "C&F Godown & Dealer Capacity Agent",
+            "fleetflow_dispatch": "GPS Cement Truck & Site Rerouter",
+            "freight_bill_audit_agent": "PTP Ton-Km & Demurrage Bill Audit",
+            "intermodal_rail_linehaul_agent": "Empty Bulker & Rake Backhaul Planner",
+        }
+        return names.get(agent_id, "")
+
+    if arch_key == "metals_mining":
+        names = {
+            "demand_sensing_agent": "Auto Sheet & Can-Stock Demand Sensing",
+            "sop_scenario_weaver": "Smelter-to-Rolling Mill S&OP Weaver",
+            "commodity_index_advisor": "LME Metal, Alumina & Coke Advisor",
+            "carbon_scope3_ledger": "Low-Carbon Metal & EU CBAM Auditor",
+            "finite_production_scheduler": "Cast-House & Rolling Width Scheduler",
+            "predictive_oee_sentinel": "Potline & Rolling Mill OEE Sentinel",
+            "inline_yield_guardian": "Ultrasonic Coil Surface Vision QA",
+            "meio_safety_stock_agent": "Ingot, Slab & Coil Buffer Agent",
+            "warehouse_slotting_agent": "Overhead Crane Coil Bay Sequencer",
+            "load_consolidation_agent": "Heavy Coil & Rake Load Consolidator",
+            "rti_balance_reconciler": "Closed-Loop UBC Scrap & Stillage Ledger",
+            "intermodal_rail_linehaul_agent": "Captive Rake & Scrap Backhaul Planner",
+        }
+        return names.get(agent_id, "")
+
+    if arch_key == "fmcg_foods":
+        names = {
+            "demand_sensing_agent": "GT, MT & Q-Comm Demand Sensing",
+            "promo_lift_simulator": "GT/MT Scheme & Display ROI Simulator",
+            "sop_scenario_weaver": "Harvest-to-ICML S&OP Weaver",
+            "commodity_index_advisor": "Wheat, Spice & Edible Oil Advisor",
+            "finite_production_scheduler": "ICML Baking & Extrusion Scheduler",
+            "inline_yield_guardian": "FSSAI Seal & Pack Vision QA",
+            "meio_safety_stock_agent": "Mother Godown & CFA Safety Stock",
+            "warehouse_slotting_agent": "FEFO High-Bay CFA Slotting",
+            "cold_chain_auditor": "Dairy & Frozen Reefer Cold-Chain Auditor",
+            "dynamic_markdown_agent": "FEFO Shelf-Life Markdown Agent",
+        }
+        return names.get(agent_id, "")
+
+    return ""
+
+
 def synthesize_domain_twin(
     company_name: str,
     division_name: str = "",
@@ -540,11 +625,13 @@ def synthesize_domain_twin(
                 )
 
                 is_rel = aid not in hide_set
+                canon_ag_name = agents_cat.get(aid, {}).get("name", aid)
                 agent_relevance[aid] = AgentRelevanceSpec(
                     agent_id=aid,
                     dept_id=d_id,
                     sub_pillar_id=sp_id,
-                    canonical_name=agents_cat.get(aid, {}).get("name", aid),
+                    canonical_name=canon_ag_name,
+                    custom_agent_name=_tailor_agent_name(aid, canon_ag_name, arch_key) if is_rel else "",
                     is_relevant=is_rel,
                     division_context=(
                         f"Operates inside {disp} under '{sp_custom}', connecting {arch['erp'].split('·')[0].strip()} with deterministic optimization."

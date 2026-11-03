@@ -916,6 +916,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "demand_forecasting",
       "canonical_name": "Demand Sensing Agent",
+      "custom_agent_name": "District Dealer & Infra Demand Sensing",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'District Trade Dealer & Infra Project Demand', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -925,6 +926,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "demand_forecasting",
       "canonical_name": "Forecast Reconciliation",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'District Trade Dealer & Infra Project Demand', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -934,6 +936,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "demand_forecasting",
       "canonical_name": "NPI Demand Profiler",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'District Trade Dealer & Infra Project Demand', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -943,6 +946,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "trade_promotion",
       "canonical_name": "Promo ROI Simulator",
+      "custom_agent_name": "Dealer Lifting Slab & Rebate Simulator",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Dealer Lifting Slabs & Seasonal Rebate ROI', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -952,6 +956,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "trade_promotion",
       "canonical_name": "JBP Negotiation Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Dealer Lifting Slabs & Seasonal Rebate ROI', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -961,6 +966,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "trade_promotion",
       "canonical_name": "Deduction Audit Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Dealer Lifting Slabs & Seasonal Rebate ROI', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -970,6 +976,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "sop_ibp",
       "canonical_name": "Consensus & Gap Agent",
+      "custom_agent_name": "Clinker-to-Grinding S&OP Weaver",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker-to-Grinding S&OP & Rail-Road Mix', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -979,6 +986,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "sop_ibp",
       "canonical_name": "Digital War-Room Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker-to-Grinding S&OP & Rail-Road Mix', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -988,6 +996,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "sop_ibp",
       "canonical_name": "Executive Copilot",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker-to-Grinding S&OP & Rail-Road Mix', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -997,6 +1006,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "portfolio_sku",
       "canonical_name": "SKU Pruning Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'OPC / PPC / Composite Blend & Bag Portfolio', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1006,6 +1016,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "portfolio_sku",
       "canonical_name": "PIPO Run-Out Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'OPC / PPC / Composite Blend & Bag Portfolio', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1015,6 +1026,7 @@
       "dept_id": "demand_sop",
       "sub_pillar_id": "portfolio_sku",
       "canonical_name": "Cost-to-Serve Diagnostic",
+      "custom_agent_name": "Primary Lead-Distance & Rail-Road Twin",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'OPC / PPC / Composite Blend & Bag Portfolio', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1024,6 +1036,7 @@
       "dept_id": "sourcing_procurement",
       "sub_pillar_id": "supplier_network",
       "canonical_name": "Disruption Sensing Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Petcoke, Imported Coal, Fly-Ash & Slag Network', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1033,6 +1046,7 @@
       "dept_id": "sourcing_procurement",
       "sub_pillar_id": "supplier_network",
       "canonical_name": "Onboarding & Qual. Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Petcoke, Imported Coal, Fly-Ash & Slag Network', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1042,6 +1056,7 @@
       "dept_id": "sourcing_procurement",
       "sub_pillar_id": "supplier_network",
       "canonical_name": "ESG & Scope 3 Auditor",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Petcoke, Imported Coal, Fly-Ash & Slag Network', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1051,6 +1066,7 @@
       "dept_id": "sourcing_procurement",
       "sub_pillar_id": "material_packaging",
       "canonical_name": "Commodity Index Advisor",
+      "custom_agent_name": "Petcoke & Thermal Coal Index Advisor",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Fuel Linkage, Gypsum & PP Woven Sack Sourcing', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1060,6 +1076,7 @@
       "dept_id": "sourcing_procurement",
       "sub_pillar_id": "material_packaging",
       "canonical_name": "Dynamic Should-Cost Agent",
+      "custom_agent_name": "Fly-Ash, Gypsum & PP Sack Should-Cost",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Fuel Linkage, Gypsum & PP Woven Sack Sourcing', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1069,6 +1086,7 @@
       "dept_id": "sourcing_procurement",
       "sub_pillar_id": "material_packaging",
       "canonical_name": "Sustainable Packaging Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Fuel Linkage, Gypsum & PP Woven Sack Sourcing', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1078,6 +1096,7 @@
       "dept_id": "sourcing_procurement",
       "sub_pillar_id": "contract_po_mgmt",
       "canonical_name": "Contract Leakage Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Contract & PO Mgmt', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1087,6 +1106,7 @@
       "dept_id": "sourcing_procurement",
       "sub_pillar_id": "contract_po_mgmt",
       "canonical_name": "PO Expediting Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Contract & PO Mgmt', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1096,6 +1116,7 @@
       "dept_id": "sourcing_procurement",
       "sub_pillar_id": "contract_po_mgmt",
       "canonical_name": "Three-Way Match Dispute",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Contract & PO Mgmt', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1105,6 +1126,7 @@
       "dept_id": "manufacturing_prod",
       "sub_pillar_id": "production_scheduling",
       "canonical_name": "Changeover Optimizer",
+      "custom_agent_name": "Kiln Campaign & Ball-Mill Scheduler",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Kiln Campaign & Ball-Mill Grinding Scheduling', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1114,6 +1136,7 @@
       "dept_id": "manufacturing_prod",
       "sub_pillar_id": "production_scheduling",
       "canonical_name": "Disruption Re-sequencer",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Kiln Campaign & Ball-Mill Grinding Scheduling', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1123,6 +1146,7 @@
       "dept_id": "manufacturing_prod",
       "sub_pillar_id": "production_scheduling",
       "canonical_name": "Labor & Line Balancing",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Kiln Campaign & Ball-Mill Grinding Scheduling', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1132,6 +1156,7 @@
       "dept_id": "manufacturing_prod",
       "sub_pillar_id": "capacity_planning",
       "canonical_name": "Bottleneck Diagnostic",
+      "custom_agent_name": "Rotary Kiln & WHRS OEE Sentinel",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rotary Kiln OEE, Refractory & WHRS Power', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1141,6 +1166,7 @@
       "dept_id": "manufacturing_prod",
       "sub_pillar_id": "capacity_planning",
       "canonical_name": "Co-Packer Allocation",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rotary Kiln OEE, Refractory & WHRS Power', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1150,6 +1176,7 @@
       "dept_id": "manufacturing_prod",
       "sub_pillar_id": "capacity_planning",
       "canonical_name": "CapEx Simulator",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rotary Kiln OEE, Refractory & WHRS Power', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1159,6 +1186,7 @@
       "dept_id": "manufacturing_prod",
       "sub_pillar_id": "quality_compliance",
       "canonical_name": "Visual Defect Triager",
+      "custom_agent_name": "Blaine Fineness & Clinker Factor QA",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Blaine Fineness, Compressive Strength & BIS QA', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1168,6 +1196,7 @@
       "dept_id": "manufacturing_prod",
       "sub_pillar_id": "quality_compliance",
       "canonical_name": "Batch Record Auditor",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Blaine Fineness, Compressive Strength & BIS QA', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1177,6 +1206,7 @@
       "dept_id": "manufacturing_prod",
       "sub_pillar_id": "quality_compliance",
       "canonical_name": "RCA & CAPA Copilot",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Blaine Fineness, Compressive Strength & BIS QA', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1186,6 +1216,7 @@
       "dept_id": "inventory_warehouse",
       "sub_pillar_id": "positioning_optimization",
       "canonical_name": "Safety Stock Agent",
+      "custom_agent_name": "Clinker Silo & Godown Stock Agent",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker Silo, Grinding Unit & Godown Buffers', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1195,6 +1226,7 @@
       "dept_id": "inventory_warehouse",
       "sub_pillar_id": "positioning_optimization",
       "canonical_name": "SLOB Disposition Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker Silo, Grinding Unit & Godown Buffers', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1204,6 +1236,7 @@
       "dept_id": "inventory_warehouse",
       "sub_pillar_id": "positioning_optimization",
       "canonical_name": "Inter-Facility Rebalancer",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Clinker Silo, Grinding Unit & Godown Buffers', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1213,6 +1246,7 @@
       "dept_id": "inventory_warehouse",
       "sub_pillar_id": "warehouse_operations",
       "canonical_name": "Dynamic Slotting Agent",
+      "custom_agent_name": "Packer Bay & Rail Siding Slotting",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rail Siding Rake Loading & Packer Bay Slotting', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1222,6 +1256,7 @@
       "dept_id": "inventory_warehouse",
       "sub_pillar_id": "warehouse_operations",
       "canonical_name": "Dock-to-Stock Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rail Siding Rake Loading & Packer Bay Slotting', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1231,6 +1266,7 @@
       "dept_id": "inventory_warehouse",
       "sub_pillar_id": "warehouse_operations",
       "canonical_name": "Wave Fulfillment Copilot",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rail Siding Rake Loading & Packer Bay Slotting', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1240,6 +1276,7 @@
       "dept_id": "inventory_warehouse",
       "sub_pillar_id": "omnichannel_visibility",
       "canonical_name": "Phantom Inventory Sensor",
+      "custom_agent_name": "",
       "is_relevant": false,
       "division_context": "",
       "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
@@ -1249,6 +1286,7 @@
       "dept_id": "inventory_warehouse",
       "sub_pillar_id": "omnichannel_visibility",
       "canonical_name": "SFS / BOPIS Sourcing",
+      "custom_agent_name": "",
       "is_relevant": false,
       "division_context": "",
       "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
@@ -1258,6 +1296,7 @@
       "dept_id": "inventory_warehouse",
       "sub_pillar_id": "omnichannel_visibility",
       "canonical_name": "Returns Triage Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Dealer Portal & Infra Site Order Visibility', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1267,6 +1306,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "first_mid_mile",
       "canonical_name": "Load Consolidation",
+      "custom_agent_name": "Rake & Bulk Clinker Consolidator",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rail Rake Clinker Transfer & Bulk Bulker Hauls', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1276,6 +1316,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "first_mid_mile",
       "canonical_name": "Yard Disruption Agent",
+      "custom_agent_name": "Bulker & Rail-Siding Yard Sequencer",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Rail Rake Clinker Transfer & Bulk Bulker Hauls', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1285,6 +1326,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "first_mid_mile",
       "canonical_name": "Cold-Chain Auditor",
+      "custom_agent_name": "",
       "is_relevant": false,
       "division_context": "",
       "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
@@ -1294,6 +1336,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "store_replenishment",
       "canonical_name": "Aisle-Aligned Pallet",
+      "custom_agent_name": "",
       "is_relevant": false,
       "division_context": "",
       "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
@@ -1303,6 +1346,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "store_replenishment",
       "canonical_name": "Store Capacity Agent",
+      "custom_agent_name": "C&F Godown & Dealer Capacity Agent",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'C&F Godown & Exclusive Dealer Replenishment', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1312,6 +1356,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "store_replenishment",
       "canonical_name": "Curfew Orchestrator",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'C&F Godown & Exclusive Dealer Replenishment', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1321,6 +1366,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "last_mile_delivery",
       "canonical_name": "Geocoding Intelligence",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Direct-from-Plant Construction Site Delivery', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1330,6 +1376,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "last_mile_delivery",
       "canonical_name": "Courier Allocation",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Direct-from-Plant Construction Site Delivery', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1339,6 +1386,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "last_mile_delivery",
       "canonical_name": "Delivery Exception Copilot",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Direct-from-Plant Construction Site Delivery', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1348,6 +1396,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "route_carrier",
       "canonical_name": "Dynamic Rerouter",
+      "custom_agent_name": "GPS Cement Truck & Site Rerouter",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Primary Lead-Distance & Transporter Bill Audit', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1357,6 +1406,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "route_carrier",
       "canonical_name": "Routing Guide Compliance",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Primary Lead-Distance & Transporter Bill Audit', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1366,6 +1416,7 @@
       "dept_id": "logistics_fleet",
       "sub_pillar_id": "route_carrier",
       "canonical_name": "Freight Bill Audit Agent",
+      "custom_agent_name": "PTP Ton-Km & Demurrage Bill Audit",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Primary Lead-Distance & Transporter Bill Audit', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1375,6 +1426,7 @@
       "dept_id": "circular_enable",
       "sub_pillar_id": "returns_claims_mgmt",
       "canonical_name": "Return Fraud Sentinel",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Returns & Claims Mgmt', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1384,6 +1436,7 @@
       "dept_id": "circular_enable",
       "sub_pillar_id": "returns_claims_mgmt",
       "canonical_name": "Keep-It & Routing Advisor",
+      "custom_agent_name": "",
       "is_relevant": false,
       "division_context": "",
       "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
@@ -1393,6 +1446,7 @@
       "dept_id": "circular_enable",
       "sub_pillar_id": "returns_claims_mgmt",
       "canonical_name": "OS&D Freight Claims",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Returns & Claims Mgmt', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1402,6 +1456,7 @@
       "dept_id": "circular_enable",
       "sub_pillar_id": "expiry_markdowns",
       "canonical_name": "Dynamic Markdown Agent",
+      "custom_agent_name": "",
       "is_relevant": false,
       "division_context": "",
       "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
@@ -1411,6 +1466,7 @@
       "dept_id": "circular_enable",
       "sub_pillar_id": "expiry_markdowns",
       "canonical_name": "Short-Dated Redistributor",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Monsoon Silo Age & Monsoon Stock Rotation', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1420,6 +1476,7 @@
       "dept_id": "circular_enable",
       "sub_pillar_id": "expiry_markdowns",
       "canonical_name": "Food Waste & ESG Copilot",
+      "custom_agent_name": "",
       "is_relevant": false,
       "division_context": "",
       "hidden_reason": "Hidden for Cement & Bulk Materials fit: non-perishable bulk bags/bulkers via Rail Rakes, C&F godowns, and B2B dealers (no cold-chain, food expiry, retail…"
@@ -1429,6 +1486,7 @@
       "dept_id": "circular_enable",
       "sub_pillar_id": "pallet_tote_reclamation",
       "canonical_name": "RTI Balance Reconciler",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Pallet & Tote Reclamation', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1438,6 +1496,7 @@
       "dept_id": "circular_enable",
       "sub_pillar_id": "pallet_tote_reclamation",
       "canonical_name": "Milk-Run Consolidation",
+      "custom_agent_name": "Empty Bulker & Rake Backhaul Planner",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Pallet & Tote Reclamation', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1447,6 +1506,7 @@
       "dept_id": "circular_enable",
       "sub_pillar_id": "pallet_tote_reclamation",
       "canonical_name": "Sanitation & Health Agent",
+      "custom_agent_name": "",
       "is_relevant": true,
       "division_context": "Operates inside Aditya Birla Group — UltraTech Cement Division under 'Pallet & Tote Reclamation', connecting SAP S/4HANA with deterministic optimization.",
       "hidden_reason": ""
@@ -1497,7 +1557,12 @@
   "active_sub_pillars_count": 20,
   "grounding_citations": [
     {
-      "title": "Aditya Birla Group Official Brand & Operations Profile",
+      "title": "Aditya Birla Group — Corporate Operations Overview",
+      "url": "https://en.wikipedia.org/wiki/Aditya_Birla_Group",
+      "snippet": ""
+    },
+    {
+      "title": "Aditya Birla Group Official Brand Mark Source",
       "url": "https://adityabirla.com",
       "snippet": ""
     }
@@ -1516,7 +1581,7 @@
     "PPC / OPC — Pozzolana & Ordinary Portland Cement Blends",
     "C&F Godown — Clearing & Forwarding Dealer Warehouse"
   ],
-  "created_at": "2026-11-02T18:14:30.491354+00:00",
-  "updated_at": "2026-11-02T18:14:30.491354+00:00",
-  "generation_model": "Enterprise Twin Domain & Career Archetype Engine + Live Logo Resolver"
+  "created_at": "2026-11-02T20:24:12.854813+00:00",
+  "updated_at": "2026-11-02T20:24:12.854813+00:00",
+  "generation_model": "Enterprise Twin Career & Domain Engine + Live Web/Logo Grounding"
 }

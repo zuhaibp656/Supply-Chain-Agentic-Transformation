@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Supply Chain — Enterprise Twin Portal Studio</title>
+  <title>Welcome to Supply Chain — Enterprise Portal Studio</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050811'/%3E%3Cpolygon points='32,10 52,21 52,43 32,54 12,43 12,21' fill='rgba(0,210,255,0.18)' stroke='%2300d2ff' stroke-width='3'/%3E%3Cpath d='M32 10 L32 32 L52 21 M32 32 L12 21 M32 32 L32 54' stroke='%2334d399' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='32' cy='32' r='4.5' fill='%23ffffff'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Google+Sans+Display:wght@400;500;700;800&family=Google+Sans+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Display:wght@500;700;800&family=Google+Sans+Text:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
   <script>
     (function() {
       try {
@@ -20,55 +20,48 @@
   </script>
   <style>
     :root, html[data-theme="dark"] {
-      --bg-page: #080b12;
-      --bg-surface: #0f1522;
-      --bg-card: rgba(15, 22, 36, 0.84);
-      --bg-card-solid: #131b2b;
-      --bg-card-hover: rgba(24, 34, 54, 0.92);
-      --bg-input: rgba(8, 12, 22, 0.82);
-      --text-primary: #f1f5f9;
+      --bg-page: #070a12;
+      --bg-surface: #0e1525;
+      --bg-card: rgba(15, 23, 39, 0.88);
+      --bg-card-solid: #121c30;
+      --bg-input: rgba(8, 13, 24, 0.92);
+      --text-primary: #f8fafc;
       --text-secondary: #cbd5e1;
       --text-muted: #94a3b8;
-      --border-subtle: rgba(255, 255, 255, 0.09);
-      --border-strong: rgba(255, 255, 255, 0.16);
+      --border-subtle: rgba(148, 163, 184, 0.22);
+      --border-strong: rgba(148, 163, 184, 0.36);
       --g-blue: #4285f4;
       --g-green: #34a853;
-      --g-yellow: #fbbc04;
-      --g-red: #ea4335;
       --sc-cyan: #38bdf8;
       --sc-emerald: #10b981;
-      --sc-violet: #8b5cf6;
-      --shadow-elev: 0 24px 60px rgba(2, 6, 23, 0.55);
-      --font-sans: 'Google Sans Text', 'Google Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-display: 'Google Sans Display', 'Google Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow-card: 0 24px 64px rgba(2, 6, 23, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      --font-sans: 'Google Sans Text', 'Google Sans', 'Inter', -apple-system, sans-serif;
+      --font-display: 'Google Sans Display', 'Google Sans', 'Inter', -apple-system, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
-      --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     html[data-theme="light"] {
-      --bg-page: #f8fafc;
+      --bg-page: #f1f5fb;
       --bg-surface: #ffffff;
-      --bg-card: rgba(255, 255, 255, 0.90);
+      --bg-card: rgba(255, 255, 255, 0.95);
       --bg-card-solid: #ffffff;
-      --bg-card-hover: #f1f5f9;
-      --bg-input: #f8fafc;
+      --bg-input: #f8fafd;
       --text-primary: #0f172a;
       --text-secondary: #334155;
       --text-muted: #64748b;
-      --border-subtle: rgba(15, 23, 42, 0.10);
-      --border-strong: rgba(15, 23, 42, 0.18);
+      --border-subtle: #cbd5e1;
+      --border-strong: #94a3b8;
       --g-blue: #1a73e8;
       --g-green: #1e8e3e;
-      --g-yellow: #b06000;
-      --g-red: #c5221f;
       --sc-cyan: #0284c7;
       --sc-emerald: #059669;
-      --sc-violet: #6d28d9;
-      --shadow-elev: 0 20px 48px rgba(15, 23, 42, 0.08);
+      --shadow-card: 0 20px 50px rgba(15, 23, 42, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.9);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
+    html { scroll-behavior: smooth; }
+    body {
       min-height: 100vh;
       font-family: var(--font-sans);
       background: var(--bg-page);
@@ -77,7 +70,7 @@
       overflow-x: hidden;
     }
 
-    /* Ambient Supply Chain Canvas Backdrop */
+    /* Ambient 60fps Supply Chain Canvas */
     .studio-backdrop {
       position: fixed;
       inset: 0;
@@ -89,60 +82,57 @@
       position: absolute;
       inset: -15%;
       background:
-        radial-gradient(circle at 18% 22%, rgba(56, 189, 248, 0.13), transparent 44%),
-        radial-gradient(circle at 82% 20%, rgba(16, 185, 129, 0.11), transparent 42%),
+        radial-gradient(circle at 18% 24%, rgba(56, 189, 248, 0.14), transparent 44%),
+        radial-gradient(circle at 82% 22%, rgba(16, 185, 129, 0.11), transparent 42%),
         radial-gradient(circle at 50% 82%, rgba(66, 133, 244, 0.10), transparent 48%);
-      filter: blur(28px);
+      filter: blur(32px);
     }
-    html[data-theme="light"] .studio-aurora {
-      opacity: 0.55;
-    }
+    html[data-theme="light"] .studio-aurora { opacity: 0.55; }
     #heroSupplyChainCanvas {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-      opacity: 0.42;
+      opacity: 0.48;
     }
-    html[data-theme="light"] #heroSupplyChainCanvas {
-      opacity: 0.24;
-    }
+    html[data-theme="light"] #heroSupplyChainCanvas { opacity: 0.28; }
     .studio-vignette {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at center, rgba(8, 11, 18, 0.18) 0%, rgba(8, 11, 18, 0.72) 100%);
+      background: radial-gradient(ellipse at center, rgba(7, 10, 18, 0.14) 0%, rgba(7, 10, 18, 0.72) 100%);
     }
     html[data-theme="light"] .studio-vignette {
-      background: radial-gradient(ellipse at center, rgba(248, 250, 252, 0.30) 0%, rgba(248, 250, 252, 0.84) 100%);
+      background: radial-gradient(ellipse at center, rgba(241, 245, 251, 0.25) 0%, rgba(241, 245, 251, 0.85) 100%);
     }
 
-    /* Top Bar */
+    /* Minimal Top Navigation with Segmented Tabs */
     .studio-topbar {
       position: sticky;
       top: 0;
-      z-index: 40;
+      z-index: 50;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 32px;
-      background: rgba(8, 11, 18, 0.76);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border-subtle);
+      gap: 16px;
+      padding: 12px 32px;
+      background: rgba(7, 10, 18, 0.80);
+      backdrop-filter: blur(20px);
+      border-bottom: 1.5px solid var(--border-subtle);
     }
     html[data-theme="light"] .studio-topbar {
-      background: rgba(255, 255, 255, 0.84);
+      background: rgba(255, 255, 255, 0.88);
     }
     .brand-lockup {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
     .brand-hex {
       width: 34px;
       height: 34px;
-      border-radius: 9px;
-      background: linear-gradient(135deg, rgba(56,189,248,0.20), rgba(16,185,129,0.20));
-      border: 1px solid rgba(56,189,248,0.45);
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.22), rgba(16,185,129,0.20));
+      border: 1.5px solid rgba(56,189,248,0.50);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -154,637 +144,617 @@
       font-size: 15px;
       letter-spacing: -0.02em;
     }
-    .brand-sub {
-      font-size: 11.5px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-    .topbar-actions {
-      display: flex;
+
+    /* Segmented Mode Tabs */
+    .mode-tabs {
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 999px;
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-strong);
     }
-    .pill-link {
+    .mode-tab-btn {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 7px 14px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s var(--ease-spring);
+    }
+    .mode-tab-btn:hover { color: var(--text-primary); }
+    .mode-tab-btn.active {
+      background: var(--g-blue);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(66, 133, 244, 0.38);
+    }
+    .saved-count-pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 1px 7px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      color: inherit;
+    }
+    html[data-theme="light"] .mode-tab-btn:not(.active) .saved-count-pill {
+      background: rgba(15, 23, 42, 0.08);
+    }
+
+    .theme-btn {
+      padding: 8px 14px;
       border-radius: 999px;
       font-size: 12.5px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-secondary);
       background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      text-decoration: none;
+      border: 1.5px solid var(--border-subtle);
       cursor: pointer;
-      transition: all 0.2s var(--ease-spring);
+      transition: all 0.2s ease;
     }
-    .pill-link:hover {
+    .theme-btn:hover {
       border-color: var(--sc-cyan);
       color: var(--text-primary);
-      transform: translateY(-1px);
-    }
-    .pill-link.primary-ghost {
-      border-color: rgba(56, 189, 248, 0.42);
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.14), rgba(16, 185, 129, 0.10));
-      color: var(--text-primary);
     }
 
-    /* Main Container */
-    .studio-shell {
-      position: relative;
-      z-index: 5;
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 34px 28px 64px;
-    }
+    /* Tab Panes */
+    .studio-pane { display: none; position: relative; z-index: 5; }
+    .studio-pane.active { display: block; }
 
-    /* Hero Header */
-    .studio-hero {
+    /* =========================================================================
+       SCROLL & BOTTOM-UP FLY-IN JOURNEY ANIMATIONS
+       ========================================================================= */
+    .fly-up {
+      opacity: 0;
+      transform: translateY(58px) scale(0.985);
+      transition: opacity 0.82s var(--ease-spring), transform 0.82s var(--ease-spring);
+      will-change: opacity, transform;
+    }
+    .fly-up.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .delay-1 { transition-delay: 110ms; }
+    .delay-2 { transition-delay: 220ms; }
+    .delay-3 { transition-delay: 330ms; }
+
+    /* Stage 1: Minimal Clean Hero */
+    .journey-hero {
+      min-height: calc(82vh - 64px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      max-width: 900px;
-      margin: 0 auto 32px;
+      padding: 48px 24px 36px;
+      max-width: 920px;
+      margin: 0 auto;
     }
-    .hero-eyebrow {
+    .hero-kicker {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 5px 14px;
+      padding: 6px 15px;
       border-radius: 999px;
-      background: rgba(56, 189, 248, 0.10);
-      border: 1px solid rgba(56, 189, 248, 0.30);
+      background: rgba(56, 189, 248, 0.11);
+      border: 1.5px solid rgba(56, 189, 248, 0.36);
       color: var(--sc-cyan);
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      margin-bottom: 22px;
     }
     .hero-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--sc-emerald);
       box-shadow: 0 0 10px var(--sc-emerald);
+      animation: pulseDot 2s infinite;
     }
-    .studio-h1 {
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.65; }
+    }
+    .journey-h1 {
       font-family: var(--font-display);
-      font-size: clamp(32px, 4.4vw, 52px);
+      font-size: clamp(44px, 6.2vw, 76px);
       font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.10;
-      margin-bottom: 12px;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin-bottom: 16px;
     }
-    .studio-h1 .grad {
-      background: linear-gradient(95deg, #38bdf8 0%, #34d399 52%, #60a5fa 100%);
+    .journey-h1 .grad {
+      background: linear-gradient(135deg, #38bdf8 0%, #34d399 52%, #60a5fa 100%);
       -webkit-background-clip: text;
       background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: transparent;
     }
-    html[data-theme="light"] .studio-h1 .grad {
-      background: linear-gradient(95deg, #0284c7 0%, #059669 55%, #1d4ed8 100%);
+    html[data-theme="light"] .journey-h1 .grad {
+      background: linear-gradient(135deg, #1a73e8 0%, #059669 60%, #0284c7 100%);
       -webkit-background-clip: text;
       background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: transparent;
     }
-    .studio-lead {
-      font-size: 15.5px;
-      line-height: 1.62;
+    .journey-sub {
+      font-size: clamp(17px, 2vw, 21px);
       color: var(--text-secondary);
-      max-width: 790px;
-      margin: 0 auto;
+      font-weight: 500;
+      max-width: 560px;
+      margin-bottom: 34px;
     }
-
-    /* Two-column Workspace */
-    .studio-grid {
-      display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 24px;
-      align-items: start;
-    }
-    @media (max-width: 1040px) {
-      .studio-grid { grid-template-columns: 1fr; }
-    }
-
-    .glass-panel {
-      background: var(--bg-card);
-      backdrop-filter: blur(22px);
-      border: 1px solid var(--border-strong);
-      border-radius: 20px;
-      padding: 26px 28px;
-      box-shadow: var(--shadow-elev);
-    }
-
-    .panel-head {
+    .hero-actions {
       display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-begin {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--g-blue), #2563eb);
+      color: #ffffff;
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      cursor: pointer;
+      box-shadow: 0 14px 34px rgba(37, 99, 235, 0.42);
+      transition: transform 0.28s var(--ease-spring), box-shadow 0.28s var(--ease-spring);
+    }
+    .btn-begin:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 18px 42px rgba(37, 99, 235, 0.55);
+    }
+    .btn-ghost-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-size: 14.5px;
+      font-weight: 700;
+      border: 1.5px solid var(--border-strong);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s var(--ease-spring);
+    }
+    .btn-ghost-pill:hover {
+      border-color: var(--sc-cyan);
+      transform: translateY(-2px);
+    }
+    .scroll-cue {
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 2px;
+      height: 38px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--sc-cyan), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(0.75); opacity: 0.45; }
+      50% { transform: scaleY(1.1); opacity: 1; }
+    }
+
+    /* Journey Stage Sections */
+    .journey-stage {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 44px 24px 64px;
+    }
+    .stage-step-head {
+      display: flex;
+      align-items: center;
       gap: 12px;
       margin-bottom: 18px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--border-subtle);
     }
-    .panel-title {
+    .step-num-pill {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--sc-cyan);
+      border: 1.5px solid rgba(56, 189, 248, 0.40);
+      letter-spacing: 0.06em;
+    }
+    .stage-h2 {
       font-family: var(--font-display);
-      font-size: 19px;
+      font-size: clamp(24px, 3vw, 32px);
       font-weight: 800;
       letter-spacing: -0.02em;
     }
-    .panel-sub {
-      font-size: 12.5px;
-      color: var(--text-muted);
-      margin-top: 3px;
-    }
-    .panel-badge {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      color: var(--sc-emerald);
-      white-space: nowrap;
+
+    /* Crisp Architectural Box Card */
+    .journey-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(22px);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 24px;
+      padding: 30px 32px;
+      box-shadow: var(--shadow-card);
     }
 
-    /* Quick Presets Bar */
-    .preset-label {
-      font-size: 11px;
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 680px) {
+      .form-grid-2 { grid-template-columns: 1fr; }
+      .studio-topbar { padding: 12px 16px; flex-wrap: wrap; }
+    }
+    .field-block { margin-bottom: 16px; }
+    .field-label {
+      display: block;
+      font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-    .preset-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 20px;
-    }
-    .preset-chip {
-      font-size: 11.5px;
-      font-weight: 600;
-      padding: 6px 11px;
-      border-radius: 9px;
-      background: var(--bg-input);
-      border: 1px solid var(--border-subtle);
       color: var(--text-secondary);
-      cursor: pointer;
-      transition: all 0.18s ease;
-    }
-    .preset-chip:hover {
-      border-color: var(--sc-cyan);
-      color: var(--text-primary);
-      background: rgba(56, 189, 248, 0.10);
-    }
-
-    /* Form Controls */
-    .form-row-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-bottom: 14px;
-    }
-    @media (max-width: 640px) {
-      .form-row-2 { grid-template-columns: 1fr; }
-    }
-    .field-group {
-      margin-bottom: 14px;
-    }
-    .field-label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-secondary);
-      margin-bottom: 6px;
-    }
-    .field-hint {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--text-muted);
+      margin-bottom: 7px;
     }
     .sc-input, .sc-select, .sc-textarea {
       width: 100%;
-      padding: 11px 14px;
-      border-radius: 11px;
+      padding: 13px 16px;
+      border-radius: 13px;
+      border: 1.5px solid var(--border-strong);
       background: var(--bg-input);
-      border: 1px solid var(--border-strong);
       color: var(--text-primary);
       font-family: var(--font-sans);
-      font-size: 13.5px;
+      font-size: 15px;
+      font-weight: 500;
       outline: none;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .sc-input:focus, .sc-select:focus, .sc-textarea:focus {
       border-color: var(--sc-cyan);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
     }
-    .sc-textarea {
-      min-height: 74px;
-      resize: vertical;
-      line-height: 1.5;
-    }
+    .sc-textarea { min-height: 68px; resize: vertical; }
 
-    .div-suggestions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 7px;
-    }
-    .div-sug-pill {
-      font-size: 11px;
-      padding: 3px 9px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.09);
-      border: 1px solid rgba(56, 189, 248, 0.26);
-      color: var(--sc-cyan);
-      cursor: pointer;
-    }
-    .div-sug-pill:hover {
-      background: rgba(56, 189, 248, 0.18);
-    }
-
-    /* Advanced Accordion */
-    details.adv-drawer {
-      margin-bottom: 18px;
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      background: rgba(15, 23, 42, 0.26);
+    /* Minimal Optional Drawer */
+    .opt-drawer {
+      margin: 6px 0 20px;
+      border: 1.5px dashed var(--border-subtle);
+      border-radius: 14px;
       padding: 10px 14px;
+      background: rgba(15, 23, 42, 0.24);
     }
-    html[data-theme="light"] details.adv-drawer {
-      background: rgba(15, 23, 42, 0.02);
+    html[data-theme="light"] .opt-drawer {
+      background: rgba(241, 245, 249, 0.7);
     }
-    details.adv-drawer summary {
+    .opt-drawer summary {
       cursor: pointer;
-      font-size: 12.5px;
+      list-style: none;
+      font-size: 13px;
       font-weight: 700;
       color: var(--text-secondary);
-      list-style: none;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    details.adv-drawer summary::-webkit-details-marker { display: none; }
-    .adv-body {
-      padding-top: 12px;
-      margin-top: 10px;
-      border-top: 1px solid var(--border-subtle);
-    }
+    .opt-drawer summary::-webkit-details-marker { display: none; }
+    .opt-body { padding-top: 14px; }
 
     .checkbox-row {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 12px;
+      font-size: 12.5px;
       color: var(--text-secondary);
+      cursor: pointer;
       margin-top: 8px;
-      cursor: pointer;
     }
 
-    /* CTA Buttons */
-    .cta-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .btn-generate {
+    .btn-synthesize {
       width: 100%;
-      padding: 14px 20px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #2563eb 0%, #0284c7 52%, #059669 100%);
-      color: #ffffff;
+      padding: 16px 24px;
+      border-radius: 15px;
+      border: 1.5px solid rgba(255, 255, 255, 0.20);
+      cursor: pointer;
       font-family: var(--font-display);
-      font-size: 15px;
+      font-size: 16.5px;
       font-weight: 800;
-      letter-spacing: -0.01em;
-      border: 1px solid rgba(255,255,255,0.18);
-      cursor: pointer;
+      color: #ffffff;
+      background: linear-gradient(135deg, #2563eb 0%, #0284c7 52%, #059669 100%);
+      box-shadow: 0 14px 32px rgba(2, 132, 199, 0.36);
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      box-shadow: 0 10px 28px rgba(2, 132, 199, 0.34);
-      transition: transform 0.18s var(--ease-spring), box-shadow 0.18s ease, opacity 0.18s ease;
+      transition: transform 0.24s var(--ease-spring), box-shadow 0.24s var(--ease-spring);
     }
-    .btn-generate:hover:not(:disabled) {
-      transform: translateY(-1.5px);
-      box-shadow: 0 14px 34px rgba(2, 132, 199, 0.45);
+    .btn-synthesize:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(2, 132, 199, 0.48);
     }
-    .btn-generate:disabled {
-      opacity: 0.65;
-      cursor: wait;
+    .btn-synthesize:disabled { opacity: 0.65; cursor: wait; }
+
+    /* Stage 3: 3 Visual Flow Cards + Live Progress */
+    .flow-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
-    .btn-base-portal {
-      width: 100%;
-      padding: 11px 16px;
-      border-radius: 11px;
-      background: transparent;
-      border: 1px solid var(--border-strong);
-      color: var(--text-secondary);
-      font-size: 13px;
-      font-weight: 700;
-      text-align: center;
-      text-decoration: none;
+    @media (max-width: 720px) {
+      .flow-trio { grid-template-columns: 1fr; }
+    }
+    .flow-node-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 22px 20px;
+      box-shadow: var(--shadow-card);
+      transition: all 0.32s var(--ease-spring);
+      position: relative;
+      overflow: hidden;
+    }
+    .flow-node-card.running {
+      border-color: var(--sc-cyan);
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25), var(--shadow-card);
+      transform: translateY(-4px);
+    }
+    .flow-node-card.done {
+      border-color: var(--sc-emerald);
+    }
+    .flow-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(56, 189, 248, 0.13);
+      border: 1.5px solid rgba(56, 189, 248, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      transition: all 0.18s ease;
+      font-size: 20px;
+      margin-bottom: 14px;
     }
-    .btn-base-portal:hover {
-      border-color: var(--sc-cyan);
-      color: var(--text-primary);
-      background: rgba(56, 189, 248, 0.07);
+    .flow-node-card.done .flow-icon {
+      background: rgba(16, 185, 129, 0.16);
+      border-color: rgba(16, 185, 129, 0.45);
+    }
+    .flow-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--sc-cyan);
+      margin-bottom: 4px;
+    }
+    .flow-node-card.done .flow-kicker { color: var(--sc-emerald); }
+    .flow-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .flow-sub {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.45;
     }
 
-    /* Live 4-Stage SSE Synthesis Console */
+    /* Live Progress Bar Strip */
     #synthesisConsole {
       display: none;
       margin-top: 20px;
-      padding: 18px;
-      border-radius: 14px;
-      background: rgba(5, 10, 20, 0.88);
-      border: 1px solid rgba(56, 189, 248, 0.38);
+      padding: 20px 24px;
+      border-radius: 18px;
+      background: var(--bg-card);
+      border: 1.5px solid var(--sc-cyan);
+      box-shadow: var(--shadow-card);
     }
-    html[data-theme="light"] #synthesisConsole {
-      background: #f1f5f9;
-    }
-    #synthesisConsole.active {
-      display: block;
-    }
+    #synthesisConsole.active { display: block; }
     .synth-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
       margin-bottom: 10px;
     }
     .synth-status-title {
       font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--sc-cyan);
+      font-size: 15px;
+      font-weight: 700;
     }
     .synth-timer {
       font-family: var(--font-mono);
-      font-size: 11.5px;
-      color: var(--text-muted);
+      font-size: 12px;
+      color: var(--sc-cyan);
+      font-weight: 700;
     }
     .synth-bar-track {
       width: 100%;
       height: 8px;
       border-radius: 999px;
-      background: rgba(148, 163, 184, 0.18);
+      background: rgba(148, 163, 184, 0.20);
       overflow: hidden;
-      margin-bottom: 14px;
     }
     .synth-bar-fill {
       height: 100%;
-      width: 4%;
+      width: 6%;
       border-radius: 999px;
-      background: linear-gradient(90deg, #38bdf8, #34d399, #60a5fa);
-      transition: width 0.35s ease;
-    }
-    .synth-stages {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-    @media (max-width: 640px) {
-      .synth-stages { grid-template-columns: 1fr; }
-    }
-    .synth-step {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 10px;
-      border-radius: 8px;
-      font-size: 11.5px;
-      font-weight: 600;
-      color: var(--text-muted);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border-subtle);
-    }
-    .synth-step.running {
-      color: var(--sc-cyan);
-      border-color: rgba(56, 189, 248, 0.45);
-      background: rgba(56, 189, 248, 0.09);
-    }
-    .synth-step.done {
-      color: var(--sc-emerald);
-      border-color: rgba(16, 185, 129, 0.40);
-      background: rgba(16, 185, 129, 0.08);
-    }
-    .synth-log {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      line-height: 1.55;
-      color: var(--text-secondary);
-      max-height: 130px;
-      overflow-y: auto;
-      padding: 8px 10px;
-      border-radius: 8px;
-      background: rgba(2, 6, 23, 0.55);
-      border: 1px solid var(--border-subtle);
-    }
-    html[data-theme="light"] .synth-log {
-      background: #ffffff;
+      background: linear-gradient(90deg, #38bdf8, #10b981);
+      transition: width 0.35s var(--ease-spring);
     }
 
-    /* Optically Framed Logo Plates (Matches index.html 1:1) */
+    /* =========================================================================
+       TAB 2: SAVED COMPANIES & DIVISIONS (DEDICATED CLEAN GRID + LARGE LOGOS)
+       ========================================================================= */
+    .saved-shell {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 42px 24px 80px;
+    }
+    .saved-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .saved-search-wrap {
+      min-width: 290px;
+      flex: 0 1 380px;
+    }
+    .saved-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 18px;
+    }
+    .twin-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 20px 22px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      transition: transform 0.25s var(--ease-spring), border-color 0.25s ease;
+    }
+    .twin-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--sc-cyan);
+    }
+    .twin-id-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Prominent Optical Corporate Logo Plate (56px tall) */
     .sc-twin-logo-plate {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: 36px;
-      min-width: 36px;
-      max-width: 120px;
-      padding: 4px 10px;
-      border-radius: 8px;
+      height: 56px;
+      min-width: 64px;
+      max-width: 164px;
+      padding: 7px 14px;
+      border-radius: 13px;
       flex-shrink: 0;
-      box-sizing: border-box;
     }
     .sc-twin-logo-plate.plate-light {
       background: #ffffff;
-      border: 1px solid rgba(148, 163, 184, 0.38);
-      box-shadow: 0 2px 6px rgba(2, 6, 23, 0.18);
+      border: 1.5px solid rgba(148, 163, 184, 0.45);
+      box-shadow: 0 4px 14px rgba(2, 6, 23, 0.22);
     }
     .sc-twin-logo-plate.plate-dark {
       background: #0f172a;
-      border: 1px solid rgba(148, 163, 184, 0.30);
-      box-shadow: 0 2px 6px rgba(2, 6, 23, 0.28);
+      border: 1.5px solid rgba(148, 163, 184, 0.38);
+      box-shadow: 0 4px 14px rgba(2, 6, 23, 0.30);
     }
     .sc-twin-logo-plate.plate-self {
       background: transparent;
-      padding: 1px;
-      border-radius: 7px;
+      padding: 2px;
+      border-radius: 12px;
       overflow: hidden;
     }
     .sc-twin-logo-plate img {
-      max-height: 26px;
-      max-width: 102px;
+      max-height: 40px;
+      max-width: 136px;
       width: auto;
       height: auto;
       object-fit: contain;
       display: block;
     }
 
-    /* Right Column: Saved Portals Directory */
-    .saved-search {
-      margin-bottom: 14px;
-    }
-    .saved-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-height: 630px;
-      overflow-y: auto;
-      padding-right: 4px;
-    }
-    .twin-card {
-      padding: 15px 16px;
-      border-radius: 14px;
-      background: var(--bg-input);
-      border: 1px solid var(--border-subtle);
-      transition: all 0.2s var(--ease-spring);
-    }
-    .twin-card:hover {
-      border-color: rgba(56, 189, 248, 0.45);
-      transform: translateY(-1px);
-    }
-    .twin-card-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 9px;
-      flex-wrap: wrap;
-    }
-    .twin-id-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex: 1 1 260px;
-      min-width: 0;
-    }
     .twin-co-name {
       font-family: var(--font-display);
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 800;
-      color: var(--text-primary);
       line-height: 1.2;
+      margin-bottom: 5px;
     }
     .twin-div-pill {
       display: inline-block;
-      margin-top: 3px;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--sc-cyan);
-      background: rgba(56, 189, 248, 0.11);
-      border: 1px solid rgba(56, 189, 248, 0.28);
-      padding: 2px 8px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.32);
+      padding: 3px 10px;
       border-radius: 999px;
-    }
-    .twin-exec-line {
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin-bottom: 9px;
-      line-height: 1.45;
     }
     .twin-meta-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 10px;
       flex-wrap: wrap;
-      gap: 8px;
-      padding-top: 9px;
+      padding-top: 12px;
       border-top: 1px solid var(--border-subtle);
     }
     .twin-agent-count {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--sc-emerald);
     }
     .twin-card-btns {
       display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
     }
     .btn-sm {
-      padding: 5px 11px;
-      border-radius: 8px;
-      font-size: 11.5px;
+      padding: 7px 13px;
+      border-radius: 10px;
+      font-size: 12.5px;
       font-weight: 700;
-      border: 1px solid var(--border-strong);
-      background: var(--bg-card-solid);
+      border: 1.5px solid var(--border-strong);
+      background: var(--bg-surface);
       color: var(--text-primary);
       cursor: pointer;
       text-decoration: none;
-      transition: all 0.16s ease;
+      transition: all 0.18s ease;
     }
-    .btn-sm:hover {
-      border-color: var(--sc-cyan);
-    }
+    .btn-sm:hover { border-color: var(--sc-cyan); }
     .btn-sm.launch {
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.88), rgba(5, 150, 105, 0.88));
-      border-color: rgba(255,255,255,0.2);
-      color: #fff;
-    }
-
-    /* Architecture Assurance Strip */
-    .assurance-strip {
-      margin-top: 28px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-    @media (max-width: 960px) {
-      .assurance-strip { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 560px) {
-      .assurance-strip { grid-template-columns: 1fr; }
-    }
-    .assure-card {
-      padding: 14px 16px;
-      border-radius: 14px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-    }
-    .assure-kicker {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      font-weight: 700;
-      color: var(--sc-cyan);
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .assure-title {
-      font-family: var(--font-display);
-      font-size: 13.5px;
-      font-weight: 800;
-      margin-bottom: 3px;
-    }
-    .assure-desc {
-      font-size: 11.8px;
-      color: var(--text-muted);
-      line-height: 1.48;
+      background: var(--g-blue);
+      color: #ffffff;
+      border-color: transparent;
     }
 
     /* Fine-Tune Modal */
     .modal-mask {
+      display: none;
       position: fixed;
       inset: 0;
-      z-index: 90;
-      background: rgba(2, 6, 23, 0.72);
-      backdrop-filter: blur(8px);
-      display: none;
+      z-index: 100;
+      background: rgba(2, 6, 23, 0.76);
+      backdrop-filter: blur(10px);
       align-items: center;
       justify-content: center;
       padding: 20px;
@@ -792,94 +762,96 @@
     .modal-mask.open { display: flex; }
     .modal-box {
       width: 100%;
-      max-width: 600px;
+      max-width: 540px;
       background: var(--bg-card-solid);
-      border: 1px solid var(--border-strong);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: var(--shadow-elev);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow-card);
     }
   </style>
 </head>
 <body>
-  <!-- 60fps Supply Chain Kinetic Backdrop (Same Visual DNA as index.html) -->
+  <!-- 60fps Supply Chain Kinetic Backdrop -->
   <div class="studio-backdrop" aria-hidden="true">
     <div class="studio-aurora"></div>
     <canvas id="heroSupplyChainCanvas"></canvas>
     <div class="studio-vignette"></div>
   </div>
 
-  <!-- Top Navigation -->
+  <!-- Minimal Top Header with Segmented Mode Tabs -->
   <header class="studio-topbar">
     <div class="brand-lockup">
       <div class="brand-hex">⛓️</div>
-      <div>
-        <div class="brand-title">Gemini Enterprise · Supply Chain Transformation Studio</div>
-        <div class="brand-sub">Powered by Google ADK · Gemini 3.1 Pro + Gemini 3.8 Flash · Persistent Portal DB</div>
-      </div>
+      <div class="brand-title">Supply Chain Studio</div>
     </div>
-    <div class="topbar-actions">
-      <a href="/base?reset_twin=1" class="pill-link primary-ghost">🌐 Industry-Agnostic Base Portal (60 Agents)</a>
-      <a href="/periodic_table.html" class="pill-link">🧪 Periodic Table</a>
-      <a href="/mind_map.html" class="pill-link">🧠 360° Mind Map</a>
-      <button type="button" class="pill-link" id="themeToggleBtn" onclick="toggleStudioTheme()">☀️ Light / Dark</button>
-    </div>
+
+    <nav class="mode-tabs" aria-label="Studio Navigation">
+      <button type="button" class="mode-tab-btn active" id="tabCreateBtn" onclick="switchStudioTab('create')">
+        <span>✦ Create Portal</span>
+      </button>
+      <button type="button" class="mode-tab-btn" id="tabSavedBtn" onclick="switchStudioTab('saved')">
+        <span>🗂️ Saved Portals</span>
+        <span class="saved-count-pill" id="savedCountBadge">0</span>
+      </button>
+      <a href="/base?reset_twin=1" class="mode-tab-btn">
+        <span>🌐 Base Portal</span>
+      </a>
+    </nav>
+
+    <button type="button" class="theme-btn" onclick="toggleStudioTheme()">☀️ / 🌙</button>
   </header>
 
-  <main class="studio-shell">
-    <!-- Hero -->
-    <section class="studio-hero">
-      <div class="hero-eyebrow">
+  <!-- =========================================================================
+       PANE 1: SMOOTH VERTICAL SCROLL & FLY-IN JOURNEY (ZERO TEXT CLUTTER)
+       ========================================================================= -->
+  <main id="paneCreate" class="studio-pane active">
+    <!-- Stage 01: Viewport Hero -->
+    <section class="journey-hero">
+      <div class="hero-kicker fly-up is-visible">
         <span class="hero-dot"></span>
-        <span>Welcome to Supply Chain · Enterprise &amp; Division Portal Generator</span>
+        <span>Gemini Enterprise · Supply Chain</span>
       </div>
-      <h1 class="studio-h1">
+      <h1 class="journey-h1 fly-up is-visible delay-1">
         Welcome to <span class="grad">Supply Chain</span>
       </h1>
-      <p class="studio-lead">
-        Enter any enterprise and business division to dynamically tailor the entire Supply Chain Agentic Transformation experience — authentic corporate logo framing, real career job titles, division-specific process terminology, and smart agent relevance filtering — while keeping all <strong>60 live Vertex AI Demo Agent Engines</strong> intact.
+      <p class="journey-sub fly-up is-visible delay-2">
+        Tailor the agentic supply chain to your enterprise and division.
       </p>
+      <div class="hero-actions fly-up is-visible delay-3">
+        <button type="button" class="btn-begin" onclick="scrollToJourneyStep('stepOrg')">
+          <span>Start Journey</span>
+          <span>&darr;</span>
+        </button>
+        <button type="button" class="btn-ghost-pill" onclick="switchStudioTab('saved')">
+          <span>Saved Portals &rarr;</span>
+        </button>
+      </div>
+      <div class="scroll-cue fly-up is-visible delay-3" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
     </section>
 
-    <!-- Main Studio Grid -->
-    <section class="studio-grid">
-      <!-- Left Card: Generator Form + Live SSE Progress -->
-      <div class="glass-panel">
-        <div class="panel-head">
-          <div>
-            <h2 class="panel-title">Configure Company &amp; Division Portal</h2>
-            <p class="panel-sub">Grounds career job titles, SCOR sub-pillars &amp; division agent fit, then saves to DB for &lt;200ms replay.</p>
-          </div>
-          <span class="panel-badge">ADK + Google Search</span>
-        </div>
+    <!-- Stage 02: Fly-In Enterprise Input Card -->
+    <section id="stepOrg" class="journey-stage">
+      <div class="stage-step-head fly-up">
+        <span class="step-num-pill">STEP 01</span>
+        <h2 class="stage-h2">Your Enterprise</h2>
+      </div>
 
-        <div class="preset-label">Quick-Fill Conglomerate &amp; Division Examples</div>
-        <div class="preset-chips">
-          <button type="button" class="preset-chip" onclick="fillPreset('ITC Limited', 'Cigarettes & Leaf Tobacco (ILTD & TM&D)', 'India')">ITC · Tobacco &amp; TM&amp;D</button>
-          <button type="button" class="preset-chip" onclick="fillPreset('ITC Limited', 'Foods Division (Aashirvaad, Sunfeast & ICML)', 'India')">ITC · Foods &amp; ICML</button>
-          <button type="button" class="preset-chip" onclick="fillPreset('Aditya Birla Group', 'UltraTech Cement Division', 'India')">Aditya Birla · UltraTech Cement</button>
-          <button type="button" class="preset-chip" onclick="fillPreset('Aditya Birla Group', 'Hindalco Aluminium & Copper', 'India')">Aditya Birla · Hindalco Metals</button>
-          <button type="button" class="preset-chip" onclick="fillPreset('Unilever', 'Home & Personal Care', 'Global')">Unilever · Home &amp; Personal Care</button>
-          <button type="button" class="preset-chip" onclick="fillPreset('Tata Consumer Products', 'India Packaged Beverages & Foods', 'India')">Tata Consumer · Beverages &amp; Foods</button>
-          <button type="button" class="preset-chip" onclick="fillPreset('Reliance Retail', 'Smart Bazaar & Jiomart Grocery Supply Chain', 'India')">Reliance Retail · Grocery</button>
-          <button type="button" class="preset-chip" onclick="fillPreset('Pfizer', 'Global Biopharma & Sterile Cold Chain', 'Global')">Pfizer · Biopharma Cold Chain</button>
-        </div>
-
+      <div class="journey-card fly-up delay-1">
         <form id="twinGeneratorForm" onsubmit="handleGenerateSubmit(event)">
-          <div class="form-row-2">
+          <div class="form-grid-2">
             <div>
-              <label class="field-label" for="companyInput">
-                <span>Company / Conglomerate Name *</span>
-              </label>
-              <input id="companyInput" class="sc-input" type="text" required placeholder="e.g., ITC Limited, Aditya Birla Group, Nestlé" value="ITC Limited" oninput="updateDivisionSuggestions()" />
+              <label class="field-label" for="companyInput">Company Name *</label>
+              <input id="companyInput" class="sc-input" type="text" required placeholder="e.g., ITC Limited, Unilever, Aditya Birla" value="" />
             </div>
             <div>
-              <label class="field-label" for="geographyInput">
-                <span>Primary Operating Geography</span>
-              </label>
+              <label class="field-label" for="geographyInput">Primary Region</label>
               <select id="geographyInput" class="sc-select">
-                <option value="India" selected>India (National &amp; Regional Network)</option>
-                <option value="Global">Global Multi-Region</option>
+                <option value="India" selected>India</option>
+                <option value="Global">Global</option>
                 <option value="North America">North America</option>
                 <option value="Europe">Europe &amp; UK</option>
                 <option value="APAC & Middle East">APAC &amp; Middle East</option>
@@ -887,150 +859,131 @@
             </div>
           </div>
 
-          <div class="field-group">
-            <label class="field-label" for="divisionInput">
-              <span>Business Division / Organization Unit</span>
-              <span class="field-hint">Shapes job titles, processes &amp; hides irrelevant agents</span>
-            </label>
-            <input id="divisionInput" class="sc-input" type="text" placeholder="e.g., Cigarettes & Leaf Tobacco (ILTD & TM&D), UltraTech Cement, Foods Division" value="Cigarettes & Leaf Tobacco (ILTD & TM&D)" />
-            <div class="div-suggestions" id="divisionSuggestions"></div>
+          <div class="field-block">
+            <label class="field-label" for="divisionInput">Division / Business Unit</label>
+            <input id="divisionInput" class="sc-input" type="text" placeholder="Optional — e.g., Cigarettes & Leaf Tobacco (TM&D), UltraTech Cement, Foods" value="" />
           </div>
 
-          <details class="adv-drawer">
+          <details class="opt-drawer">
             <summary>
-              <span>⚙️ Optional: Persona / Terminology Hints &amp; Official Logo Override</span>
-              <span style="font-size:11px; color:var(--sc-cyan);">Expand ▾</span>
+              <span>+ Optional notes or logo override</span>
+              <span style="color:var(--sc-cyan); font-size:12px;">Expand ▾</span>
             </summary>
-            <div class="adv-body">
-              <div class="field-group">
-                <label class="field-label" for="notesInput">
-                  <span>Custom Terminology, Persona Titles or Process Focus</span>
-                  <span class="field-hint">Optional</span>
-                </label>
-                <textarea id="notesInput" class="sc-textarea" placeholder="e.g., Emphasize Wholesale Dealers (WDs), Leaf Threshing Plants, Excise Track & Trace, SAP S/4HANA IBP..."></textarea>
+            <div class="opt-body">
+              <div class="field-block">
+                <label class="field-label" for="notesInput">Terminology or Role Notes</label>
+                <textarea id="notesInput" class="sc-textarea" placeholder="Optional vocabulary, ERP systems, or channel focus..."></textarea>
               </div>
-              <div class="form-row-2" style="margin-bottom:4px;">
+              <div class="form-grid-2" style="margin-bottom:6px;">
                 <div>
-                  <label class="field-label" for="logoUrlInput">
-                    <span>Direct Logo URL (SVG/PNG)</span>
-                    <span class="field-hint">Auto-resolved if blank</span>
-                  </label>
-                  <input id="logoUrlInput" class="sc-input" type="text" placeholder="https://.../logo.svg (optional)" />
+                  <label class="field-label" for="logoUrlInput">Logo URL (SVG/PNG)</label>
+                  <input id="logoUrlInput" class="sc-input" type="text" placeholder="https://... (auto if blank)" />
                 </div>
                 <div>
-                  <label class="field-label" for="logoFileInput">
-                    <span>Or Upload Official Logo File</span>
-                    <span class="field-hint">SVG / PNG / WebP</span>
-                  </label>
+                  <label class="field-label" for="logoFileInput">Or Upload Logo</label>
                   <input id="logoFileInput" class="sc-input" type="file" accept=".svg,.png,.webp,.jpg,.jpeg" onchange="handleLogoFileSelect(event)" />
                 </div>
               </div>
               <label class="checkbox-row">
                 <input type="checkbox" id="forceRefreshCheck" />
-                <span>Force fresh AI research &amp; re-synthesis (bypass &lt;200ms saved database cache)</span>
+                <span>Force fresh AI synthesis (bypass saved cache)</span>
               </label>
             </div>
           </details>
 
-          <div class="cta-stack">
-            <button type="submit" class="btn-generate" id="generateSubmitBtn">
-              <span>⚡ Synthesize &amp; Launch Tailored Supply Chain Portal</span>
-            </button>
-            <a href="/base?reset_twin=1" class="btn-base-portal">
-              <span>Skip Customization — Open Industry-Agnostic Base Framework (All 60 Agents) →</span>
-            </a>
-          </div>
+          <button type="submit" class="btn-synthesize" id="generateSubmitBtn">
+            <span>✦ Synthesize Portal &rarr;</span>
+          </button>
         </form>
-
-        <!-- Live 4-Stage SSE Synthesis Progress Console -->
-        <div id="synthesisConsole">
-          <div class="synth-top">
-            <div class="synth-status-title" id="synthStatusHeadline">Initializing Enterprise Twin Agent...</div>
-            <div class="synth-timer" id="synthElapsedTimer">0.0s</div>
-          </div>
-          <div class="synth-bar-track">
-            <div class="synth-bar-fill" id="synthProgressBar"></div>
-          </div>
-          <div class="synth-stages">
-            <div class="synth-step" id="stLogo">1 · Official Corporate Logo &amp; Optical Plate</div>
-            <div class="synth-step" id="stCareer">2 · Career Titles &amp; Division Research</div>
-            <div class="synth-step" id="stPillars">3 · 6 Pillars, 20 Processes &amp; 60 Personas</div>
-            <div class="synth-step" id="stFilter">4 · Division Agent Filtering &amp; DB Save</div>
-          </div>
-          <div class="synth-log" id="synthLogBox"></div>
-        </div>
-      </div>
-
-      <!-- Right Card: Saved Portals in Persistent Database -->
-      <div class="glass-panel">
-        <div class="panel-head">
-          <div>
-            <h2 class="panel-title">Saved Company &amp; Division Portals</h2>
-            <p class="panel-sub">Persisted in Enterprise Twin Database — instant &lt;200ms launch &amp; shareable URLs.</p>
-          </div>
-          <span class="panel-badge" id="savedCountBadge">Loading...</span>
-        </div>
-
-        <div class="saved-search">
-          <input id="savedFilterInput" class="sc-input" type="text" placeholder="🔍 Search saved companies, divisions, or industries..." oninput="renderSavedTwinsList()" />
-        </div>
-
-        <div class="saved-list" id="savedTwinsContainer">
-          <div style="padding:24px; text-align:center; color:var(--text-muted); font-size:13px;">
-            Loading persisted Enterprise Portals...
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- Architectural Guarantees -->
-    <section class="assurance-strip">
-      <div class="assure-card">
-        <div class="assure-kicker">01 · Brand Authenticity</div>
-        <div class="assure-title">Official Logos Only — Never AI-Drawn</div>
-        <div class="assure-desc">Downloads verified SVG/PNG marks from Wikidata P154, Wikimedia Commons &amp; official domains with optical bbox trimming and adaptive contrast plates.</div>
+    <!-- Stage 03: Fly-In Visual Transformation Stream -->
+    <section id="stepFlow" class="journey-stage">
+      <div class="stage-step-head fly-up">
+        <span class="step-num-pill">STEP 02</span>
+        <h2 class="stage-h2">Live Portal Synthesis</h2>
       </div>
-      <div class="assure-card">
-        <div class="assure-kicker">02 · Grounded Org Lens</div>
-        <div class="assure-title">Real Career Job Titles &amp; Processes</div>
-        <div class="assure-desc">Adapts all 6 SCOR Pillars, 20 Sub-Pillars, 4 Cross-Pillar Journeys &amp; 60 Human Persona roles to match how that specific division actually hires and operates.</div>
+
+      <div class="flow-trio">
+        <div class="flow-node-card fly-up" id="stLogo">
+          <div class="flow-icon">🏷️</div>
+          <div class="flow-kicker">01 · BRAND</div>
+          <div class="flow-title">Official Identity</div>
+          <div class="flow-sub">Verified logo &amp; accent palette</div>
+        </div>
+
+        <div class="flow-node-card fly-up delay-1" id="stPillars">
+          <div class="flow-icon">🧭</div>
+          <div class="flow-kicker">02 · ORG &amp; FLOWS</div>
+          <div class="flow-title">Roles &amp; Processes</div>
+          <div class="flow-sub">60 career titles &amp; 20 workflows</div>
+        </div>
+
+        <div class="flow-node-card fly-up delay-2" id="stFilter">
+          <div class="flow-icon">✦</div>
+          <div class="flow-kicker">03 · AGENTS</div>
+          <div class="flow-title">Tailored AI Suite</div>
+          <div class="flow-sub">Company agent names &amp; fit</div>
+        </div>
       </div>
-      <div class="assure-card">
-        <div class="assure-kicker">03 · Smart Relevance</div>
-        <div class="assure-title">Cleanly Hides Irrelevant Agents</div>
-        <div class="assure-desc">Automatically hides inapplicable agents (e.g., frozen cold-chain for bulk cement or dry leaf tobacco) with zero broken links and a 1-click "Show All 60" toggle.</div>
-      </div>
-      <div class="assure-card">
-        <div class="assure-kicker">04 · Untouched Core Demos</div>
-        <div class="assure-title">All 60 Vertex AI Agent Engines Intact</div>
-        <div class="assure-desc">Every live demo agent name, Gemini Enterprise starter prompt, 4-stage SVG schematic, ROI model &amp; video playbook remains 100% deterministic.</div>
+
+      <div id="synthesisConsole">
+        <div class="synth-top">
+          <div class="synth-status-title" id="synthStatusHeadline">Synthesizing Enterprise Portal...</div>
+          <div class="synth-timer" id="synthElapsedTimer">0.0s</div>
+        </div>
+        <div class="synth-bar-track">
+          <div class="synth-bar-fill" id="synthProgressBar"></div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Quick Fine-Tune Modal -->
+  <!-- =========================================================================
+       PANE 2: SAVED PORTALS TAB (DEDICATED CLEAN GRID)
+       ========================================================================= -->
+  <section id="paneSaved" class="studio-pane">
+    <div class="saved-shell">
+      <div class="saved-header-bar">
+        <div>
+          <span class="step-num-pill">DATABASE</span>
+          <h2 class="stage-h2" style="margin-top:8px;">Saved Company &amp; Division Portals</h2>
+        </div>
+        <div class="saved-search-wrap">
+          <input id="savedFilterInput" class="sc-input" type="text" placeholder="🔍 Filter companies or divisions..." oninput="renderSavedTwinsList()" />
+        </div>
+      </div>
+
+      <div class="saved-grid" id="savedTwinsContainer">
+        <div style="padding:32px; color:var(--text-muted);">Loading saved portals...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fine-Tune Modal -->
   <div class="modal-mask" id="fineTuneModal">
     <div class="modal-box">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
-        <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800;" id="ftModalTitle">Fine-Tune Saved Portal</h3>
-        <button type="button" class="btn-sm" onclick="closeFineTuneModal()">✕ Close</button>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h3 style="font-family:var(--font-display); font-size:19px; font-weight:800;" id="ftModalTitle">Edit Saved Portal</h3>
+        <button type="button" class="btn-sm" onclick="closeFineTuneModal()">✕</button>
       </div>
       <input type="hidden" id="ftSlugInput" />
-      <div class="field-group">
-        <label class="field-label">Executive Leader Title (CSCO Box)</label>
+      <div class="field-block">
+        <label class="field-label">Executive Title (CSCO Box)</label>
         <input id="ftExecTitle" class="sc-input" type="text" />
       </div>
-      <div class="field-group">
-        <label class="field-label">Executive Transformation Thesis</label>
+      <div class="field-block">
+        <label class="field-label">Executive Thesis</label>
         <textarea id="ftExecThesis" class="sc-textarea"></textarea>
       </div>
-      <div class="field-group">
-        <label class="field-label">Override Official Logo URL (Optional)</label>
-        <input id="ftLogoUrl" class="sc-input" type="text" placeholder="Leave blank to keep current verified logo" />
+      <div class="field-block">
+        <label class="field-label">Override Logo URL (Optional)</label>
+        <input id="ftLogoUrl" class="sc-input" type="text" placeholder="Leave blank to keep verified logo" />
       </div>
-      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:18px;">
         <button type="button" class="btn-sm" onclick="closeFineTuneModal()">Cancel</button>
-        <button type="button" class="btn-sm launch" onclick="saveFineTuneChanges()">💾 Save &amp; Open Portal →</button>
+        <button type="button" class="btn-sm launch" onclick="saveFineTuneChanges()">Save &amp; Launch &rarr;</button>
       </div>
     </div>
   </div>
@@ -1038,38 +991,6 @@
   <script>
     let SAVED_TWINS = [];
     let UPLOADED_LOGO_DATA_URI = '';
-
-    const DIVISION_SUGGESTIONS_MAP = {
-      'itc': [
-        'Cigarettes & Leaf Tobacco (ILTD & TM&D)',
-        'Foods Division (Aashirvaad, Sunfeast & ICML)',
-        'Agri Business Division & e-Choupal',
-        'Paperboards & Specialty Papers Division (PSPD)',
-        'Personal Care Products Business'
-      ],
-      'aditya birla': [
-        'UltraTech Cement Division',
-        'Hindalco Aluminium & Copper',
-        'Grasim Pulp, Fibre & Chemicals',
-        'Aditya Birla Fashion & Retail (ABFRL)'
-      ],
-      'tata': [
-        'Tata Consumer Products (Beverages & Foods)',
-        'Tata Steel Flat & Long Products Supply Chain',
-        'Tata Motors Commercial & EV Supply Chain',
-        'Trent Retail (Westside & Zudio)'
-      ],
-      'unilever': [
-        'Home & Personal Care',
-        'Foods & Refreshment / Ice Cream Cold Chain',
-        'Hindustan Unilever (HUL) Shikhar & Samadhan Network'
-      ],
-      'reliance': [
-        'Smart Bazaar & JioMart Grocery Supply Chain',
-        'Reliance Trends & Fashion Lifestyle',
-        'Jamnagar Refining & Petrochemicals Polymers'
-      ]
-    };
 
     function escHtml(s) {
       return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -1082,27 +1003,42 @@
       try { localStorage.setItem('SC_PORTAL_THEME', next); } catch (e) {}
     }
 
-    function updateDivisionSuggestions() {
-      const co = (document.getElementById('companyInput').value || '').toLowerCase();
-      const box = document.getElementById('divisionSuggestions');
-      let list = [];
-      Object.keys(DIVISION_SUGGESTIONS_MAP).forEach(k => {
-        if (co.includes(k)) list = DIVISION_SUGGESTIONS_MAP[k];
-      });
-      if (!list.length) {
-        box.innerHTML = '';
-        return;
-      }
-      box.innerHTML = list.map(d =>
-        `<button type="button" class="div-sug-pill" onclick="document.getElementById('divisionInput').value=${JSON.stringify(d).replace(/"/g, '&quot;')}">${escHtml(d)}</button>`
-      ).join('');
+    function switchStudioTab(mode) {
+      const isSaved = mode === 'saved';
+      document.getElementById('paneCreate').classList.toggle('active', !isSaved);
+      document.getElementById('paneSaved').classList.toggle('active', isSaved);
+      document.getElementById('tabCreateBtn').classList.toggle('active', !isSaved);
+      document.getElementById('tabSavedBtn').classList.toggle('active', isSaved);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function fillPreset(co, div, geo) {
-      document.getElementById('companyInput').value = co;
-      document.getElementById('divisionInput').value = div;
-      document.getElementById('geographyInput').value = geo || 'Global';
-      updateDivisionSuggestions();
+    function scrollToJourneyStep(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (id === 'stepOrg') {
+        setTimeout(() => {
+          const inp = document.getElementById('companyInput');
+          if (inp) inp.focus({ preventScroll: true });
+        }, 520);
+      }
+    }
+
+    function initScrollReveal() {
+      const items = document.querySelectorAll('.fly-up:not(.is-visible)');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+      items.forEach(el => obs.observe(el));
     }
 
     function handleLogoFileSelect(ev) {
@@ -1122,7 +1058,7 @@
       const cls = mode === 'dark_plate' ? 'plate-dark' : (mode === 'self_plated' ? 'plate-self' : 'plate-light');
       if (!uri) {
         const mono = obj.monogram || obj.logo_monogram || String(companyName || 'SC').split(/\s+/).slice(0, 2).map(w => w[0] || '').join('').toUpperCase();
-        return `<span class="sc-twin-logo-plate plate-dark" style="font-family:var(--font-display); font-weight:800; font-size:12px; color:#fff;">${escHtml(mono)}</span>`;
+        return `<span class="sc-twin-logo-plate plate-dark" style="font-family:var(--font-display); font-weight:800; font-size:15px; color:#fff;">${escHtml(mono)}</span>`;
       }
       return `<span class="sc-twin-logo-plate ${cls}"><img src="${escHtml(uri)}" alt="${escHtml(companyName)} logo" /></span>`;
     }
@@ -1132,10 +1068,10 @@
         const resp = await fetch('/api/v1/twins');
         const data = await resp.json();
         SAVED_TWINS = Array.isArray(data.twins) ? data.twins : [];
-        document.getElementById('savedCountBadge').textContent = `${SAVED_TWINS.length} Saved in DB`;
+        document.getElementById('savedCountBadge').textContent = String(SAVED_TWINS.length);
         renderSavedTwinsList();
       } catch (err) {
-        document.getElementById('savedCountBadge').textContent = 'Offline';
+        document.getElementById('savedCountBadge').textContent = '0';
       }
     }
 
@@ -1144,44 +1080,33 @@
       const box = document.getElementById('savedTwinsContainer');
       const filtered = SAVED_TWINS.filter(t => {
         if (!q) return true;
-        const hay = `${t.display_label || ''} ${t.canonical_name || ''} ${t.company_name || ''} ${t.division_name || ''} ${t.industry_sector || ''} ${t.geography || ''}`.toLowerCase();
+        const hay = `${t.display_label || ''} ${t.canonical_name || ''} ${t.company_name || ''} ${t.division_name || ''} ${t.industry_sector || ''}`.toLowerCase();
         return hay.includes(q);
       });
 
       if (!filtered.length) {
-        box.innerHTML = `<div style="padding:22px; text-align:center; color:var(--text-muted); font-size:13px;">No matching saved portals yet — synthesize one on the left!</div>`;
+        box.innerHTML = `<div style="grid-column:1/-1; padding:32px; text-align:center; color:var(--text-muted);">No matching saved portals yet.</div>`;
         return;
       }
 
       box.innerHTML = filtered.map(t => {
         const active = t.active_agents_count || 60;
-        const hidden = Math.max(0, 60 - active);
-        const relText = hidden > 0
-          ? `🎯 ${active}/60 Relevant Agents · ${hidden} Hidden`
-          : `🎯 All 60/60 Agents Active`;
         const portalUrl = `/t/${encodeURIComponent(t.twin_slug)}`;
         return `
           <div class="twin-card">
-            <div class="twin-card-top">
-              <div class="twin-id-row">
-                ${renderLogoPlate(t, t.canonical_name || t.company_name)}
-                <div style="min-width:0;">
-                  <div class="twin-co-name">${escHtml(t.canonical_name || t.company_name)}</div>
-                  ${t.division_name ? `<span class="twin-div-pill">${escHtml(t.division_name)}</span>` : `<span class="twin-div-pill">Enterprise-Wide Supply Chain</span>`}
-                </div>
+            <div class="twin-id-row">
+              ${renderLogoPlate(t, t.canonical_name || t.company_name)}
+              <div style="min-width:0;">
+                <div class="twin-co-name">${escHtml(t.canonical_name || t.company_name)}</div>
+                <span class="twin-div-pill">${escHtml(t.division_name || 'Enterprise Supply Chain')}</span>
               </div>
-              <span style="font-size:11px; color:var(--text-muted); font-weight:600; text-align:right;">${escHtml(t.industry_sector || '')}</span>
-            </div>
-            <div class="twin-exec-line">
-              <strong>${escHtml(t.executive_title || 'Chief Supply Chain Officer')}</strong>
-              ${t.career_title_examples && t.career_title_examples.length ? `<br/><span style="color:var(--text-muted); font-size:11.3px;">Roles: ${escHtml(t.career_title_examples.slice(0, 3).join(' · '))}</span>` : ''}
             </div>
             <div class="twin-meta-row">
-              <span class="twin-agent-count">${escHtml(relText)}</span>
+              <span class="twin-agent-count">✦ ${active}/60 Agents Active</span>
               <div class="twin-card-btns">
-                <button type="button" class="btn-sm" onclick="copyTwinUrl('${escHtml(t.twin_slug)}', this)">🔗 Copy Link</button>
-                <button type="button" class="btn-sm" onclick="openFineTuneModal('${escHtml(t.twin_slug)}')">✏️ Edit</button>
-                <a class="btn-sm launch" href="${portalUrl}">Launch Portal →</a>
+                <button type="button" class="btn-sm" onclick="copyTwinUrl('${escHtml(t.twin_slug)}', this)">Copy Link</button>
+                <button type="button" class="btn-sm" onclick="openFineTuneModal('${escHtml(t.twin_slug)}')">Edit</button>
+                <a class="btn-sm launch" href="${portalUrl}">Launch &rarr;</a>
               </div>
             </div>
           </div>
@@ -1193,25 +1118,23 @@
       const full = `${window.location.origin}/t/${slug}`;
       if (navigator.clipboard) navigator.clipboard.writeText(full);
       const orig = btnEl.textContent;
-      btnEl.textContent = '✓ Copied!';
-      setTimeout(() => { btnEl.textContent = orig; }, 1600);
+      btnEl.textContent = '✓ Copied';
+      setTimeout(() => { btnEl.textContent = orig; }, 1400);
     }
 
     async function openFineTuneModal(slug) {
       try {
         const r = await fetch(`/api/v1/twins/${encodeURIComponent(slug)}`);
         const d = await r.json();
-        const ov = d.twin || {};
+        const ov = d.twin || d.overlay || {};
         const brand = ov.brand || {};
         document.getElementById('ftSlugInput').value = slug;
-        document.getElementById('ftModalTitle').textContent = `Fine-Tune: ${ov.display_label || slug}`;
+        document.getElementById('ftModalTitle').textContent = ov.display_label || slug;
         document.getElementById('ftExecTitle').value = brand.executive_title || '';
         document.getElementById('ftExecThesis').value = brand.executive_thesis || '';
         document.getElementById('ftLogoUrl').value = '';
         document.getElementById('fineTuneModal').classList.add('open');
-      } catch (e) {
-        alert('Could not load portal details: ' + e);
-      }
+      } catch (e) {}
     }
 
     function closeFineTuneModal() {
@@ -1232,33 +1155,28 @@
       });
       if (r.ok) {
         window.location.href = `/t/${encodeURIComponent(slug)}`;
-      } else {
-        alert('Failed to update portal.');
       }
     }
 
-    function updateStagePills(pct) {
+    function updateStageCards(pct) {
       const s1 = document.getElementById('stLogo');
-      const s2 = document.getElementById('stCareer');
-      const s3 = document.getElementById('stPillars');
-      const s4 = document.getElementById('stFilter');
-      [s1, s2, s3, s4].forEach(el => el.classList.remove('running', 'done'));
+      const s2 = document.getElementById('stPillars');
+      const s3 = document.getElementById('stFilter');
+      [s1, s2, s3].forEach(el => {
+        el.classList.add('is-visible');
+        el.classList.remove('running', 'done');
+      });
       if (pct >= 100) {
-        [s1, s2, s3, s4].forEach(el => el.classList.add('done'));
-      } else if (pct < 22) {
+        [s1, s2, s3].forEach(el => el.classList.add('done'));
+      } else if (pct < 38) {
         s1.classList.add('running');
-      } else if (pct < 42) {
+      } else if (pct < 85) {
         s1.classList.add('done');
         s2.classList.add('running');
-      } else if (pct < 86) {
-        s1.classList.add('done');
-        s2.classList.add('done');
-        s3.classList.add('running');
       } else {
         s1.classList.add('done');
         s2.classList.add('done');
-        s3.classList.add('done');
-        s4.classList.add('running');
+        s3.classList.add('running');
       }
     }
 
@@ -1275,28 +1193,20 @@
 
       const btn = document.getElementById('generateSubmitBtn');
       const consoleEl = document.getElementById('synthesisConsole');
-      const logBox = document.getElementById('synthLogBox');
       const bar = document.getElementById('synthProgressBar');
       const headline = document.getElementById('synthStatusHeadline');
       const timerEl = document.getElementById('synthElapsedTimer');
 
       btn.disabled = true;
       consoleEl.classList.add('active');
-      logBox.innerHTML = '';
-      bar.style.width = '6%';
-      updateStagePills(6);
+      bar.style.width = '8%';
+      updateStageCards(8);
+      scrollToJourneyStep('stepFlow');
 
       const t0 = performance.now();
       const timerId = setInterval(() => {
         timerEl.textContent = `${((performance.now() - t0) / 1000).toFixed(1)}s`;
       }, 100);
-
-      function appendLog(pct, msg, detail) {
-        const line = document.createElement('div');
-        line.innerHTML = `<span style="color:var(--sc-cyan);">[${String(pct).padStart(3, ' ')}%]</span> ${escHtml(msg)}${detail ? ` <span style="color:var(--text-muted);">— ${escHtml(detail)}</span>` : ''}`;
-        logBox.appendChild(line);
-        logBox.scrollTop = logBox.scrollHeight;
-      }
 
       try {
         const response = await fetch('/api/v1/twins/generate-stream', {
@@ -1331,16 +1241,11 @@
             const dataLine = block.split('\n').find(l => l.startsWith('data:'));
             if (!dataLine) continue;
             const payload = JSON.parse(dataLine.slice(5).trim());
-            if (payload.error) {
-              throw new Error(payload.error);
-            }
-            const pct = Number(payload.pct || 10);
-            bar.style.width = `${Math.min(100, Math.max(6, pct))}%`;
-            updateStagePills(pct);
-            if (payload.message) {
-              headline.textContent = payload.message;
-              appendLog(pct, payload.message, payload.detail || '');
-            }
+            if (payload.error) throw new Error(payload.error);
+            const pct = Number(payload.pct || 12);
+            bar.style.width = `${Math.min(100, Math.max(8, pct))}%`;
+            updateStageCards(pct);
+            if (payload.message) headline.textContent = payload.message;
             if (payload.stage === 'done' && payload.redirect_url) {
               redirectUrl = payload.redirect_url;
             }
@@ -1349,20 +1254,19 @@
 
         clearInterval(timerId);
         if (redirectUrl) {
-          headline.textContent = 'Launching Tailored Supply Chain Portal...';
-          setTimeout(() => { window.location.href = redirectUrl; }, 380);
+          headline.textContent = 'Opening Tailored Portal...';
+          setTimeout(() => { window.location.href = redirectUrl; }, 340);
         } else {
           btn.disabled = false;
         }
       } catch (err) {
         clearInterval(timerId);
         headline.textContent = 'Synthesis Error: ' + err.message;
-        appendLog(0, 'Error encountered', err.message);
         btn.disabled = false;
       }
     }
 
-    /* 60fps Isometric Supply Chain Tapestry Backdrop (Matches index.html) */
+    /* 60fps Isometric Supply Chain Tapestry Backdrop */
     function initHeroSupplyChainCanvas() {
       const canvas = document.getElementById('heroSupplyChainCanvas');
       if (!canvas) return;
@@ -1401,10 +1305,10 @@
         }
 
         const hubs = [
-          { x: w * 0.14, y: h * 0.24, col: '#10b981', label: 'DEMAND & S&OP HUB' },
-          { x: w * 0.16, y: h * 0.76, col: '#38bdf8', label: '3D WMS & FULFILLMENT' },
-          { x: w * 0.86, y: h * 0.22, col: '#fbbf24', label: 'SMART PLANT · TIER-N' },
-          { x: w * 0.85, y: h * 0.74, col: '#00d2ff', label: 'MULTI-MODAL HUB' }
+          { x: w * 0.13, y: h * 0.25, col: '#10b981', label: 'PLANNING HUB' },
+          { x: w * 0.15, y: h * 0.76, col: '#38bdf8', label: 'FULFILLMENT' },
+          { x: w * 0.87, y: h * 0.23, col: '#fbbf24', label: 'SMART PLANT' },
+          { x: w * 0.85, y: h * 0.75, col: '#00d2ff', label: 'LOGISTICS' }
         ];
 
         const streams = [
@@ -1437,14 +1341,14 @@
         });
 
         hubs.forEach(hb => {
-          ctx.beginPath(); ctx.arc(hb.x, hb.y, 44, 0, Math.PI * 2);
+          ctx.beginPath(); ctx.arc(hb.x, hb.y, 42, 0, Math.PI * 2);
           ctx.strokeStyle = hb.col + '22'; ctx.setLineDash([4, 6]); ctx.stroke(); ctx.setLineDash([]);
-          ctx.beginPath(); ctx.arc(hb.x, hb.y, 12, 0, Math.PI * 2);
+          ctx.beginPath(); ctx.arc(hb.x, hb.y, 11, 0, Math.PI * 2);
           ctx.fillStyle = '#081020'; ctx.fill();
           ctx.strokeStyle = hb.col; ctx.lineWidth = 2.4; ctx.stroke();
           ctx.fillStyle = hb.col;
           ctx.font = '700 9.5px "Google Sans", sans-serif';
-          ctx.fillText(hb.label, hb.x - 48, hb.y - 20);
+          ctx.fillText(hb.label, hb.x - 36, hb.y - 20);
         });
 
         requestAnimationFrame(renderFrame);
@@ -1453,9 +1357,10 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      updateDivisionSuggestions();
+      initScrollReveal();
       fetchSavedTwins();
       initHeroSupplyChainCanvas();
+      if (window.location.hash === '#saved') switchStudioTab('saved');
     });
   </script>
 </body>

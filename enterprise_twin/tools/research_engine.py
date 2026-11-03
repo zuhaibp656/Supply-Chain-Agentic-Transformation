@@ -257,10 +257,10 @@ STRICT INSTRUCTIONS:
 1. **Sub-Pillar Process Names (`custom_name`)**: Rename each sub-pillar (`<= 42 chars`) into the authentic operational process terminology used inside **{target_label}** (for example, if ITC Tobacco calls distribution 'TM&D & Wholesale Dealer Sync' or leaf sourcing 'ILTD Leaf & Packaging Sourcing', use that!). Keep it crisp, plain-English, and executive-ready.
 2. **Persona Job Titles (`title`)**: Replace generic SCOR persona names with authentic organizational job titles used at **{target_label}** (reflecting the hierarchy/titles in `discovered_career_titles`, e.g., 'Divisional Manager — TM&D Planning', 'Head of Clinker Grinding & Dispatch', 'Category Procurement Manager — Packaging & Leaf'). Do NOT prepend the company name to every job title—write it like a real corporate org chart title!
 3. **Persona Toil & Impact (`manual_toil`, `agentic_impact`, `summary`)**: Write 1 clear, grounded plain-English sentence each (`<= 190 chars`) using **{target_label}**'s real products, plants, channels, and ERP systems. Spell out domain abbreviations on first use if obscure.
-4. **Intelligent Agent Relevance Filtering (`is_relevant: true/false`)**:
-   - Do NOT change any agent's name (`canonical_agent_name` stays fixed).
+4. **Intelligent Agent Relevance Filtering & Optional Domain Agent Naming (`is_relevant`, `custom_agent_name`)**:
    - Set `"is_relevant": false` ONLY when an agent's physical domain genuinely does NOT apply to **{target_label}** (refer to `division_operational_profile`! E.g., hide `cold_chain_auditor` or `food_waste_esg_copilot` for non-refrigerated tobacco, cement, metals, automotive, or industrial machinery; hide `atp_order_promising_agent` / `keep_it_routing_advisor` / `planogram_merchandising_vision_auditor` if the division is pure B2B bulk industrial with zero retail stores/e-commerce; keep at least 5 of the 10 agents in this pillar `true`).
-   - For relevant agents (`is_relevant: true`), write `"division_context"`: 1 crisp sentence (`<= 180 chars`) explaining how that exact agent creates value for **{target_label}**.
+   - For relevant agents (`is_relevant: true`), optionally provide `"custom_agent_name"` (`2–4 words`, `<= 44 chars`) ONLY when **{target_label}**'s domain terminology genuinely makes the agent clearer and more resonant for executives (e.g., `'TM&D WD Demand Sensing'`, `'Rake & Clinker Load Optimizer'`, `'Bonded Depot Case Slotting'`). If the canonical agent name is already crisp and universal, leave `"custom_agent_name": ""`!
+   - For relevant agents, also write `"division_context"`: 1 crisp sentence (`<= 160 chars`) explaining how that agent creates value for **{target_label}**.
 
 Return ONLY valid JSON with this exact structure:
 {{
@@ -282,6 +282,7 @@ Return ONLY valid JSON with this exact structure:
   "agents": {{
     "<agent_id>": {{
       "is_relevant": true,
+      "custom_agent_name": "Optional 2-4 word tailored agent name or empty string",
       "division_context": "1 sentence explaining how this agent serves {target_label}",
       "hidden_reason": "Empty if relevant, else short reason hidden for division fit"
     }}
@@ -448,6 +449,7 @@ def synthesize_enterprise_twin_live(
                     dept_id=d_id,
                     sub_pillar_id=sp_id,
                     canonical_name=agents_cat.get(aid, {}).get("name", aid),
+                    custom_agent_name=ao_in.get("custom_agent_name") or "",
                     is_relevant=bool(ao_in.get("is_relevant", True)),
                     division_context=ao_in.get("division_context") or "",
                     hidden_reason=ao_in.get("hidden_reason") or "",

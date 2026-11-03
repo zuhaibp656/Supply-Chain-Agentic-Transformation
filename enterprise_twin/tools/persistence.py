@@ -171,24 +171,31 @@ def save_twin_spec(spec: TwinOverlaySpec, sync_cloud: bool = True) -> Dict[str, 
     return payload
 
 
+_MEMORY_MTIME: Dict[str, float] = {}
+
+
 def load_twin_spec(slug_or_company: str, division_name: Optional[str] = None) -> Optional[Dict[str, Any]]:
-    """Loads a saved v2 twin from memory -> local v2 disk -> GCS bucket."""
+    """Loads a saved v2 twin from memory (mtime-checked) -> local v2 disk -> GCS bucket."""
     if "--" in (slug_or_company or "") and not division_name:
         slug = re.sub(r"[^a-z0-9\-]+", "", slug_or_company.lower().strip())
     else:
         slug = slugify(slug_or_company, division_name)
 
-    if slug in _MEMORY_CACHE:
-        return _MEMORY_CACHE[slug]
-
     local_file = TWINS_V2_DIR / f"{slug}.json"
     if local_file.exists():
         try:
+            mtime = local_file.stat().st_mtime
+            if slug in _MEMORY_CACHE and _MEMORY_MTIME.get(slug) == mtime:
+                return _MEMORY_CACHE[slug]
             data = json.loads(local_file.read_text(encoding="utf-8"))
             _MEMORY_CACHE[slug] = data
+            _MEMORY_MTIME[slug] = mtime
             return data
         except Exception:
             pass
+
+    if slug in _MEMORY_CACHE:
+        return _MEMORY_CACHE[slug]
 
     # Check GCS bucket (covers portals generated dynamically on previous Cloud Run instances!)
     bucket = _get_gcs_bucket()

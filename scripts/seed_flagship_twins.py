@@ -18,6 +18,7 @@ FLAGSHIP_SEEDS = [
     ("Aditya Birla Group", "UltraTech Cement Division", "India"),
     ("Aditya Birla Group", "Hindalco Aluminium & Copper", "India & Global"),
     ("Unilever", "Home & Personal Care", "Global"),
+    ("Tata Consumer Products", "India Packaged Beverages & Foods", "India"),
 ]
 
 

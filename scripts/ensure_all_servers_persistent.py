@@ -266,6 +266,7 @@ def main() -> None:
         return
 
     check_urls = [
+        ("Enterprise Twin Studio (Primary 8095)", "http://127.0.0.1:8095/welcome"),
         ("Supply Chain Playbook (Primary 8899)", "http://127.0.0.1:8899/agent_testing_and_video_playbook.html"),
         ("Supply Chain Portal (Primary 8899)", "http://127.0.0.1:8899/index.html"),
         ("Supply Chain 101 Academy (8899)", "http://127.0.0.1:8899/supply_chain_101_interactive_academy.html"),
