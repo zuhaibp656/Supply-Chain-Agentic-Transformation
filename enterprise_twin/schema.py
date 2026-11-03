@@ -102,11 +102,44 @@ class CompanyBrandSpec(BaseModel):
     logo: LogoAssetSpec = Field(default_factory=LogoAssetSpec)
 
 
+VALID_WATERMARK_TYPES = {
+    "demand_wave",
+    "supplier_graph",
+    "factory_arm",
+    "warehouse_rack",
+    "corridor_lifo",
+    "conveyor_rack",
+}
+
+EXECUTIVE_PILLAR_PALETTE = [
+    "#2563eb",  # Royal Blue
+    "#7c3aed",  # Violet
+    "#ea580c",  # Burnt Orange
+    "#0284c7",  # Sky Teal
+    "#059669",  # Emerald
+    "#0d9488",  # Deep Teal
+    "#d97706",  # Warm Amber
+    "#4f46e5",  # Indigo
+]
+
+
 class PillarOverrideSpec(BaseModel):
     dept_id: str
     custom_name: str = ""
     custom_tagline: str = ""
     custom_subtitle: str = ""
+
+
+class CustomPillarSpec(BaseModel):
+    pillar_id: str = Field(description="URL/DOM-safe slug ID for this organization-specific Operating Pillar")
+    v_num: str = Field(default="01", description="2-digit sequence e.g. '01', '02', ..., '07'")
+    scor_badge: str = Field(default="01 · PILLAR", description="Short uppercase badge e.g. '01 · ILTD LEAF & AGRI'")
+    name: str = Field(description="Organization-authentic Operating Pillar name")
+    tagline: str = Field(default="", description="Short operational scope tagline")
+    subtitle: str = Field(default="", description="1-sentence executive description of how this pillar operates")
+    color: str = Field(default="#2563eb", description="Hex accent color")
+    watermark_type: str = Field(default="demand_wave", description="One of VALID_WATERMARK_TYPES")
+    sub_pillar_ids: List[str] = Field(default_factory=list, description="Assigned functional sub-pillar IDs from the 20-sub-pillar catalog")
 
 
 class SubPillarOverrideSpec(BaseModel):
@@ -160,6 +193,7 @@ class TwinOverlaySpec(BaseModel):
     division_name: str = ""
     display_label: str = ""
     brand: CompanyBrandSpec
+    custom_pillars: List[CustomPillarSpec] = Field(default_factory=list)
     pillar_overrides: Dict[str, PillarOverrideSpec] = Field(default_factory=dict)
     sub_pillar_overrides: Dict[str, SubPillarOverrideSpec] = Field(default_factory=dict)
     persona_overrides: Dict[str, PersonaOverrideSpec] = Field(default_factory=dict)
@@ -167,6 +201,7 @@ class TwinOverlaySpec(BaseModel):
     process_overrides: Dict[str, ProcessJourneyOverrideSpec] = Field(default_factory=dict)
     hidden_agent_ids: List[str] = Field(default_factory=list)
     hidden_persona_ids: List[str] = Field(default_factory=list)
+    active_pillars_count: int = 6
     active_agents_count: int = 60
     active_personas_count: int = 60
     active_sub_pillars_count: int = 20
@@ -178,8 +213,26 @@ class TwinOverlaySpec(BaseModel):
     generation_model: str = "Gemini 3.1 Pro + Gemini 3.8 Flash (Google Search Grounded)"
 
 
+def _infer_watermark_for_subpillars(sp_ids: List[str], fallback_idx: int = 0) -> str:
+    joined = " ".join(sp_ids)
+    if any(k in joined for k in ("supplier", "material", "contract")):
+        return "supplier_graph"
+    if any(k in joined for k in ("production", "capacity", "quality")):
+        return "factory_arm"
+    if any(k in joined for k in ("positioning", "warehouse", "omnichannel")):
+        return "warehouse_rack"
+    if any(k in joined for k in ("first_mid", "store_replenish", "last_mile", "route_carrier")):
+        return "corridor_lifo"
+    if any(k in joined for k in ("returns", "expiry", "pallet")):
+        return "conveyor_rack"
+    if any(k in joined for k in ("demand", "trade_promotion", "sop_ibp", "portfolio")):
+        return "demand_wave"
+    order = ["demand_wave", "supplier_graph", "factory_arm", "warehouse_rack", "corridor_lifo", "conveyor_rack"]
+    return order[fallback_idx % len(order)]
+
+
 def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
-    """Enforces strict catalog integrity so no view, drawer, or chart can ever break."""
+    """Enforces strict catalog integrity across 4–8 dynamic Operating Pillars so no view can ever break."""
     cat = load_canonical_catalog()
     depts = cat["departments"]
     personas_cat = cat["personas"]
@@ -198,12 +251,16 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
 
     # Build canonical lookup of sub-pillars -> [(agentId, personaId)]
     sp_items_map: Dict[str, List[Dict[str, str]]] = {}
+    sp_default_dept: Dict[str, str] = {}
     dept_agents_map: Dict[str, List[str]] = {d_id: [] for d_id in depts}
     agent_to_persona: Dict[str, str] = {}
+    ordered_all_sp_ids: List[str] = []
 
     for d_id, d_obj in depts.items():
         for sp in d_obj.get("subPillars", []):
             sp_id = sp["id"]
+            ordered_all_sp_ids.append(sp_id)
+            sp_default_dept[sp_id] = d_id
             sp_items_map[sp_id] = sp.get("items", [])
             for item in sp.get("items", []):
                 aid = item["agentId"]
@@ -211,7 +268,6 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
                 dept_agents_map[d_id].append(aid)
                 agent_to_persona[aid] = pid
 
-                # Ensure every sub-pillar has an override entry
                 if sp_id not in spec.sub_pillar_overrides:
                     spec.sub_pillar_overrides[sp_id] = SubPillarOverrideSpec(
                         sub_pillar_id=sp_id,
@@ -223,7 +279,6 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
                     spo = spec.sub_pillar_overrides[sp_id]
                     spo.custom_name = clean_ui_text(spo.custom_name or sp["name"], 64)
 
-                # Ensure every agent has a relevance entry
                 if aid not in spec.agent_relevance and aid in agents_cat:
                     spec.agent_relevance[aid] = AgentRelevanceSpec(
                         agent_id=aid,
@@ -234,7 +289,6 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
                         division_context=f"Supports {spec.display_label} across {spo.custom_name}.",
                     )
 
-                # Ensure every persona has a clean override entry
                 if pid in personas_cat and pid not in spec.persona_overrides:
                     p_base = personas_cat[pid]
                     dil0 = (p_base.get("dayInLife") or [{}])[0]
@@ -250,11 +304,15 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
                         agentic_impact=dil0.get("after", "Autonomous Gemini AI orchestration with governed write-back."),
                     )
 
-    # Safety Guardrail: Never allow an entire Operating Pillar (out of 6) to have 0 relevant agents!
-    # Every real supply chain has Planning, Sourcing, Operations/Make, Inventory, Logistics, and Returns/Governance.
-    # Keep at least 3 relevant agents per Pillar so the 6-Pillar Org Chart & Mind Map never collapse.
+    # Safety Guardrail: Keep at least 3 relevant agents per canonical domain so no functional area vanishes completely
     for d_id, aid_list in dept_agents_map.items():
-        rel_in_dept = [a for a in aid_list if spec.agent_relevance.get(a, AgentRelevanceSpec(agent_id=a, dept_id=d_id, sub_pillar_id="", canonical_name=a)).is_relevant]
+        rel_in_dept = [
+            a
+            for a in aid_list
+            if spec.agent_relevance.get(
+                a, AgentRelevanceSpec(agent_id=a, dept_id=d_id, sub_pillar_id="", canonical_name=a)
+            ).is_relevant
+        ]
         if len(rel_in_dept) < 3:
             for a in aid_list:
                 if a in spec.agent_relevance and not spec.agent_relevance[a].is_relevant:
@@ -293,12 +351,90 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
     spec.active_agents_count = len(agents_cat) - len(spec.hidden_agent_ids)
     spec.active_personas_count = len(personas_cat) - len(spec.hidden_persona_ids)
 
-    # Count active sub-pillars (sub-pillars with >= 1 relevant agent)
-    active_sp = 0
-    for sp_id, items in sp_items_map.items():
+    active_sp_ids: List[str] = []
+    for sp_id in ordered_all_sp_ids:
+        items = sp_items_map.get(sp_id, [])
         if any(it["agentId"] not in spec.hidden_agent_ids for it in items):
-            active_sp += 1
-    spec.active_sub_pillars_count = active_sp
+            active_sp_ids.append(sp_id)
+    spec.active_sub_pillars_count = len(active_sp_ids)
+
+    # Normalize & Validate Dynamic `custom_pillars` (4 to 8 authentic organization pillars)
+    raw_custom = list(spec.custom_pillars or [])
+    if not raw_custom:
+        # Materialize from `pillar_overrides` + canonical 6 pillars if `custom_pillars` wasn't supplied
+        for idx, (d_id, d_obj) in enumerate(depts.items()):
+            po = spec.pillar_overrides.get(d_id)
+            raw_custom.append(
+                CustomPillarSpec(
+                    pillar_id=d_id,
+                    v_num=f"0{idx + 1}",
+                    scor_badge=d_obj.get("scorBadge", f"0{idx + 1} · PILLAR"),
+                    name=(po.custom_name if po and po.custom_name else d_obj["name"]),
+                    tagline=(po.custom_tagline if po and po.custom_tagline else d_obj.get("tagline", "")),
+                    subtitle=(po.custom_subtitle if po and po.custom_subtitle else d_obj.get("subtitle", "")),
+                    color=d_obj.get("color", EXECUTIVE_PILLAR_PALETTE[idx % len(EXECUTIVE_PILLAR_PALETTE)]),
+                    watermark_type=d_obj.get("watermarkType", "demand_wave"),
+                    sub_pillar_ids=[sp["id"] for sp in d_obj.get("subPillars", [])],
+                )
+            )
+
+    # Deduplicate sub_pillar_ids across custom_pillars and ensure 100% coverage of all 20 sub-pillars
+    seen_sp: set[str] = set()
+    normalized_pillars: List[CustomPillarSpec] = []
+    seen_pids: set[str] = set()
+
+    for idx, cp in enumerate(raw_custom[:8]):
+        clean_sps = [s for s in cp.sub_pillar_ids if s in sp_items_map and s not in seen_sp]
+        seen_sp.update(clean_sps)
+        raw_pid = re.sub(r"[^a-z0-9_]+", "_", (cp.pillar_id or cp.name or f"pillar_{idx+1}").lower()).strip("_")[:40]
+        if not raw_pid or raw_pid in seen_pids:
+            raw_pid = f"pillar_{idx + 1}_{raw_pid[:24]}".strip("_")
+        seen_pids.add(raw_pid)
+        cp.pillar_id = raw_pid
+        cp.sub_pillar_ids = clean_sps
+        normalized_pillars.append(cp)
+
+    # Assign any unassigned canonical sub-pillars into the best-matching pillar so ZERO agents/personas are orphaned
+    missing_sps = [s for s in ordered_all_sp_ids if s not in seen_sp]
+    if missing_sps and normalized_pillars:
+        for ms in missing_sps:
+            def_dept = sp_default_dept.get(ms, "")
+            matched_cp = next((c for c in normalized_pillars if c.pillar_id == def_dept), None)
+            if not matched_cp:
+                wm = _infer_watermark_for_subpillars([ms])
+                matched_cp = next((c for c in normalized_pillars if c.watermark_type == wm), normalized_pillars[-1])
+            matched_cp.sub_pillar_ids.append(ms)
+
+    # Filter out any custom pillar that ended up with 0 active sub-pillars
+    final_pillars: List[CustomPillarSpec] = []
+    for cp in normalized_pillars:
+        has_active = any(
+            any(it["agentId"] not in spec.hidden_agent_ids for it in sp_items_map.get(s, []))
+            for s in cp.sub_pillar_ids
+        )
+        if cp.sub_pillar_ids and has_active:
+            final_pillars.append(cp)
+
+    # Re-sequence numbers, colors, watermarks, and clean text
+    for idx, cp in enumerate(final_pillars):
+        v_num = f"{idx + 1:02d}"
+        cp.v_num = v_num
+        cp.name = clean_ui_text(cp.name, 56) or f"Operating Pillar {v_num}"
+        raw_badge = clean_ui_text(cp.scor_badge, 34).upper()
+        if not raw_badge or not raw_badge[:2].isdigit():
+            short_tag = re.sub(r"[^A-Z0-9 &/-]", "", cp.name.upper()).strip()[:20].strip()
+            cp.scor_badge = f"{v_num} · {short_tag or 'OPERATIONS'}"
+        else:
+            parts = raw_badge.split("·", 1)
+            cp.scor_badge = f"{v_num} · {parts[1].strip()}" if len(parts) > 1 else f"{v_num} · {raw_badge}"
+        cp.tagline = clean_ui_text(cp.tagline, 72) or f"{spec.display_label} · {cp.name}"
+        cp.subtitle = clean_ui_text(cp.subtitle, 165) or f"Orchestrating {cp.name.lower()} across {spec.display_label}."
+        cp.color = clamp_brand_hex(cp.color, EXECUTIVE_PILLAR_PALETTE[idx % len(EXECUTIVE_PILLAR_PALETTE)])
+        if cp.watermark_type not in VALID_WATERMARK_TYPES:
+            cp.watermark_type = _infer_watermark_for_subpillars(cp.sub_pillar_ids, idx)
+
+    spec.custom_pillars = final_pillars
+    spec.active_pillars_count = len(final_pillars)
 
     # Ensure HTML-safe strings on brand thesis & title
     spec.brand.executive_title = clean_ui_text(spec.brand.executive_title, 115)
@@ -308,3 +444,4 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
     _ = html.escape(spec.display_label)
 
     return spec
+

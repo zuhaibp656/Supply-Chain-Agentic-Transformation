@@ -16,7 +16,7 @@
     "brand_accent": "#10b981",
     "brand_secondary": "#1e3a8a",
     "executive_title": "Chief Executive & Head of Foods Supply Chain (ICML, Agri & Omni-Trade), ITC Limited",
-    "executive_thesis": "Orchestrating ITC Limited — Foods Division (ICML & Agri)'s farmgate agri-sourcing, Integrated Consumer Goods Manufacturing & Logistics (ICML) plants, ambient & temperature-controlled Carrying & Forwarding Agents (CFAs), and omnichannel fulfillment across general trade kiranas…",
+    "executive_thesis": "ITC Limited (Indian conglomerate) — Orchestrating ITC Limited — Foods Division (ICML & Agri)'s farmgate agri-sourcing, Integrated Consumer Goods Manufacturing & Logistics (ICML) plants, ambient & temperature-controlled Carrying & Forwarding Agents (CFAs), and omnichannel…",
     "flagship_sites": "Integrated Consumer Goods Manufacturing & Logistics (ICML) Hubs (Kapurthala, Ranjangaon, Trichy, Uluberia, Medak) · Regional Mother Godowns & CFA Depots",
     "erp_systems": "SAP S/4HANA · SAP IBP · Distributor Management System (DMS) · e-Choupal Agri Procurement · Transport & Yard WMS",
     "logo": {
@@ -28,6 +28,112 @@
       "monogram": "ITC"
     }
   },
+  "custom_pillars": [
+    {
+      "pillar_id": "echoupal_agri_sourcing",
+      "v_num": "01",
+      "scor_badge": "01 · E-CHOUPAL AGRI",
+      "name": "e-Choupal Farmgate Agri & Packaging Sourcing",
+      "tagline": "ITC Limited — Foods Division (ICML & Agri) · Identity-preserved wheat…",
+      "subtitle": "Connects direct farmgate mandi procurement, commodity hedging, and food-grade laminate vendors.",
+      "color": "#7c3aed",
+      "watermark_type": "supplier_graph",
+      "sub_pillar_ids": [
+        "supplier_network",
+        "material_packaging",
+        "contract_po_mgmt"
+      ]
+    },
+    {
+      "pillar_id": "foods_ibp_demand",
+      "v_num": "02",
+      "scor_badge": "02 · FOODS IBP & PACKS",
+      "name": "Category Demand, Harvest S&OP & Pack Mix",
+      "tagline": "ITC Limited — Foods Division (ICML & Agri) · Regional taste profiles…",
+      "subtitle": "Aligns regional pack-size demand sensing with crop harvest windows and ICML line capacities.",
+      "color": "#2563eb",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "demand_forecasting",
+        "sop_ibp",
+        "portfolio_sku"
+      ]
+    },
+    {
+      "pillar_id": "icml_manufacturing",
+      "v_num": "03",
+      "scor_badge": "03 · ICML SMART PLANTS",
+      "name": "ICML Milling, Baking, Extrusion & FSSAI QA",
+      "tagline": "ITC Limited — Foods Division (ICML & Agri) · Automated food lines…",
+      "subtitle": "Schedules multi-category food lines across ICML hubs with zero-defect FSSAI food safety compliance.",
+      "color": "#ea580c",
+      "watermark_type": "factory_arm",
+      "sub_pillar_ids": [
+        "production_scheduling",
+        "capacity_planning",
+        "quality_compliance"
+      ]
+    },
+    {
+      "pillar_id": "cfa_mother_godowns",
+      "v_num": "04",
+      "scor_badge": "04 · MOTHER HUBS & CFAS",
+      "name": "FEFO Mother Godowns & CFA Warehouse Network",
+      "tagline": "ITC Limited — Foods Division (ICML & Agri) · First-Expired-First-Out…",
+      "subtitle": "Positions freshness-dated inventory across ICML mother hubs and regional Carrying & Forwarding Agents (CFAs).",
+      "color": "#0284c7",
+      "watermark_type": "warehouse_rack",
+      "sub_pillar_ids": [
+        "positioning_optimization",
+        "warehouse_operations"
+      ]
+    },
+    {
+      "pillar_id": "cold_ambient_linehaul",
+      "v_num": "05",
+      "scor_badge": "05 · REEFER & LINEHAUL",
+      "name": "Primary Multi-Axle & Dairy Cold-Chain Fleet",
+      "tagline": "ITC Limited — Foods Division (ICML & Agri) · ICML-to-CFA primary…",
+      "subtitle": "Governs multi-axle primary freight, reefer cold-chain integrity, and carrier bill auditing.",
+      "color": "#4f46e5",
+      "watermark_type": "corridor_lifo",
+      "sub_pillar_ids": [
+        "first_mid_mile",
+        "route_carrier"
+      ]
+    },
+    {
+      "pillar_id": "omnitrade_qcomm",
+      "v_num": "06",
+      "scor_badge": "06 · GT, MT & Q-COMM",
+      "name": "General Trade, Modern Trade & Quick-Commerce",
+      "tagline": "ITC Limited — Foods Division (ICML & Agri) · Kirana stockists, retail…",
+      "subtitle": "Drives trade promotion ROI, dark-store fill rates, and secondary beat replenishment.",
+      "color": "#059669",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "trade_promotion",
+        "omnichannel_visibility",
+        "store_replenishment",
+        "last_mile_delivery"
+      ]
+    },
+    {
+      "pillar_id": "freshness_plastic_loop",
+      "v_num": "07",
+      "scor_badge": "07 · FRESHNESS & ESG",
+      "name": "Shelf-Life Governance, Claims & Plastic Loop",
+      "tagline": "ITC Limited — Foods Division (ICML & Agri) · Near-expiry markdowns…",
+      "subtitle": "Prevents shelf-life write-offs, automates distributor damage claims, and tracks plastic neutrality.",
+      "color": "#0d9488",
+      "watermark_type": "conveyor_rack",
+      "sub_pillar_ids": [
+        "expiry_markdowns",
+        "returns_claims_mgmt",
+        "pallet_tote_reclamation"
+      ]
+    }
+  ],
   "pillar_overrides": {
     "demand_sop": {
       "dept_id": "demand_sop",
@@ -1536,6 +1642,7 @@
   },
   "hidden_agent_ids": [],
   "hidden_persona_ids": [],
+  "active_pillars_count": 7,
   "active_agents_count": 60,
   "active_personas_count": 60,
   "active_sub_pillars_count": 20,
@@ -1565,7 +1672,7 @@
     "e-Choupal — Direct Farmgate Identity-Preserved Sourcing",
     "GT / MT / Q-Comm — General Trade, Modern Trade & Quick Commerce"
   ],
-  "created_at": "2026-11-02T20:24:11.490179+00:00",
-  "updated_at": "2026-11-02T20:24:11.490179+00:00",
+  "created_at": "2026-11-03T06:13:43.545548+00:00",
+  "updated_at": "2026-11-03T06:13:43.545548+00:00",
   "generation_model": "Enterprise Twin Career & Domain Engine + Live Web/Logo Grounding"
 }

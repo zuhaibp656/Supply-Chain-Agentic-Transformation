@@ -24,6 +24,7 @@ from typing import Any, Callable, Dict, List, Optional, Tuple
 from enterprise_twin.schema import (
     AgentRelevanceSpec,
     CompanyBrandSpec,
+    CustomPillarSpec,
     GroundingCitation,
     PersonaOverrideSpec,
     PillarOverrideSpec,
@@ -42,10 +43,12 @@ ProgressCallback = Optional[Callable[[Dict[str, Any]], None]]
 
 DEEP_RESEARCH_MODELS = [
     os.environ.get("SC_TWIN_PRO_MODEL", "gemini-3.1-pro-preview"),
-    "gemini-3.8-flash",
+    "gemini-2.5-pro",
+    "gemini-2.5-flash",
 ]
 FAST_PILLAR_MODELS = [
-    os.environ.get("SC_TWIN_FLASH_MODEL", "gemini-3.8-flash"),
+    os.environ.get("SC_TWIN_FLASH_MODEL", "gemini-3-flash-preview"),
+    "gemini-2.5-flash",
     "gemini-3.1-pro-preview",
 ]
 
@@ -134,22 +137,36 @@ def _call_gemini_with_fallback(
     raise RuntimeError(f"Gemini synthesis unavailable: {last_err}")
 
 
+ALL_20_SUBPILLAR_IDS = [
+    "demand_forecasting", "trade_promotion", "sop_ibp", "portfolio_sku",
+    "supplier_network", "material_packaging", "contract_po",
+    "production_scheduling", "capacity_planning", "quality_compliance",
+    "positioning_optimization", "warehouse_operations", "omnichannel_visibility",
+    "first_mid_mile", "store_replenishment", "last_mile_delivery", "route_carrier",
+    "returns_claims", "expiry_markdowns", "pallet_tote",
+]
+
+
 def _stage1_corporate_and_career_dossier(
     company_name: str,
     division_name: str,
     geography: str,
     user_notes: str,
 ) -> Tuple[Dict[str, Any], List[GroundingCitation], str]:
-    """Uses Gemini 3.1 Pro + Google Search Grounding to research division structure & real career titles."""
+    """Uses Gemini 3.1 Pro + Google Search Grounding for deep operational & organizational pillar research."""
     target_desc = f"{company_name} ({division_name})" if division_name else company_name
-    prompt = f"""You are a Principal Supply Chain Organizational Strategist researching **{target_desc}** (Primary geography: {geography or 'Global'}).
+    prompt = f"""You are a Chief Supply Chain Strategist & Industry Operations Expert conducting an authoritative deep-dive into **{target_desc}** (Primary geography: {geography or 'Global'}).
 Additional user guidance: {user_notes or 'None'}
 
-Use Google Search to investigate:
-1. The exact supply chain, procurement, manufacturing, warehousing, and trade distribution structure of **{target_desc}** (including real division acronyms, plant/factory names, depot/dealer tiers, and ERP/WMS/TMS software stack).
-2. Authentic supply chain, planning, procurement, plant operations, logistics, and distribution **job titles** posted by **{company_name}** (especially for **{division_name or 'its core supply chain'}**) on LinkedIn Jobs, Naukri, Glassdoor/AmbitionBox, and official company career pages.
-3. The official corporate website domain and primary brand hex colors.
-4. Which physical supply chain characteristics apply vs. DO NOT apply to **{target_desc}** (for example: does this division require temperature-controlled cold-chain? Does it sell perishables/food with expiry dates? Does it run consumer retail stores with BOPIS/planograms, or B2B bulk/dealer/distributor channels?).
+Use Google Search to deeply investigate **{target_desc}** across annual reports, investor presentations, supply chain case studies, LinkedIn Jobs, Naukri, and official career portals:
+1. **How Their Operations Really Work**: Raw materials/feedstocks, upstream sourcing mechanisms (e.g. farmgate mandis, auctions, mines, tier-N suppliers), manufacturing processes (e.g. continuous kilns, smelters, batch formulation, high-speed lines, ICMLs), warehousing tiers (bonded godowns, silos, CFAs, mixing centers, cold rooms), primary/secondary transport (rail rakes, bulkers, container linehaul, urban vans), and downstream channels (Wholesale Dealers, General Trade, Modern Trade, Quick-Commerce, B2B OEMs).
+2. **Organization-Specific Operating Pillars (`4` to `8` Pillars)**:
+   - Do NOT force generic textbook SCOR names! Structure **`4` to `8` Operating Pillars** (`organization_pillars`) that reflect how **{target_desc}** actually organizes its supply chain!
+   - You MAY **combine** pillars (e.g. 5 pillars for a streamlined B2B industrial producer) OR **add specialized pillars** (e.g. 7 pillars when upstream Agri/Leaf/Mining Sourcing, Rail-Rake Primary Dispatch, or Trade Marketing & Distribution / RMC / Cold-Chain is a distinct executive pillar!).
+   - Partition ALL 20 functional `sub_pillar_ids` ({json.dumps(ALL_20_SUBPILLAR_IDS)}) cleanly across your `4` to `8` `organization_pillars` so every ID appears once.
+   - Choose `watermark_type` for each pillar from: `["demand_wave", "supplier_graph", "factory_arm", "warehouse_rack", "corridor_lifo", "conveyor_rack"]`.
+3. **Real Corporate Job Titles**: Authentic supply chain, procurement, manufacturing, warehouse, and distribution job titles posted by **{company_name}**.
+4. **Physical Relevance Profile**: Which physical/channel traits genuinely apply vs. do NOT apply (e.g. cold-chain, perishable food expiry, retail store planograms/BOPIS, D2C parcel e-commerce).
 
 Return ONLY a valid JSON object matching this exact structure (no markdown commentary outside JSON):
 {{
@@ -164,18 +181,30 @@ Return ONLY a valid JSON object matching this exact structure (no markdown comme
   "flagship_facilities": "4-5 real factories, plants, ports, or distribution hubs separated by ' · '",
   "erp_systems": "Real or industry-authentic ERP / planning / WMS / TMS systems separated by ' · '",
   "terminology_glossary": [
-    "Term 1 (e.g., TM&D — Trade Marketing & Distribution)",
+    "Term 1",
     "Term 2",
     "Term 3",
     "Term 4"
   ],
   "discovered_career_titles": [
-    "Real job title pattern 1 found in job listings",
+    "Real job title pattern 1",
     "Real job title pattern 2",
     "Real job title pattern 3",
     "Real job title pattern 4",
     "Real job title pattern 5",
     "Real job title pattern 6"
+  ],
+  "organization_pillars": [
+    {{
+      "pillar_id": "short_snake_slug",
+      "scor_badge": "01 · SHORT BADGE",
+      "name": "Company-Authentic Operating Pillar Name (<= 48 chars)",
+      "tagline": "Short scope tagline (<= 64 chars)",
+      "subtitle": "1 crisp sentence explaining how this pillar runs at this company (<= 150 chars)",
+      "color": "#2563eb",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": ["demand_forecasting", "sop_ibp", "portfolio_sku"]
+    }}
   ],
   "division_operational_profile": {{
     "has_cold_chain_perishables": false,
@@ -196,7 +225,7 @@ Return ONLY a valid JSON object matching this exact structure (no markdown comme
         prompt=prompt,
         use_google_search=True,
         json_mode=False,
-        max_tokens=4096,
+        max_tokens=6144,
     )
     parsed = _extract_json_obj(raw)
     if not parsed.get("canonical_company_name"):
@@ -490,12 +519,32 @@ def synthesize_enterprise_twin_live(
         "Checking WCAG brand contrast, 6-Pillar balance, persona links & persisting to BigQuery + GCS",
     )
 
+    custom_pillars: List[CustomPillarSpec] = []
+    org_pillars_in = dossier.get("organization_pillars") or []
+    if isinstance(org_pillars_in, list):
+        for idx, op in enumerate(org_pillars_in[:8]):
+            if isinstance(op, dict) and op.get("name"):
+                custom_pillars.append(
+                    CustomPillarSpec(
+                        pillar_id=str(op.get("pillar_id") or f"pillar_{idx + 1}"),
+                        v_num=f"{idx + 1:02d}",
+                        scor_badge=str(op.get("scor_badge") or f"{idx + 1:02d} · PILLAR"),
+                        name=str(op.get("name")),
+                        tagline=str(op.get("tagline") or ""),
+                        subtitle=str(op.get("subtitle") or ""),
+                        color=str(op.get("color") or ""),
+                        watermark_type=str(op.get("watermark_type") or "demand_wave"),
+                        sub_pillar_ids=[str(s) for s in (op.get("sub_pillar_ids") or [])],
+                    )
+                )
+
     spec = TwinOverlaySpec(
         twin_slug=twin_slug,
         company_name=company_name,
         canonical_name=canonical_co,
         division_name=clean_div,
         brand=brand_spec,
+        custom_pillars=custom_pillars,
         pillar_overrides=pillar_overrides,
         sub_pillar_overrides=sub_pillar_overrides,
         persona_overrides=persona_overrides,

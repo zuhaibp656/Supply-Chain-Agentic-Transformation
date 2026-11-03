@@ -649,12 +649,10 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
     function updateNavbarAndTabCounts() {{
       const pCount = Object.keys(PERSONAS).length;
       const aCount = Object.keys(AGENTS).length;
-      const navBtns = document.querySelectorAll('.nav-right .nav-pill-btn');
-      navBtns.forEach(btn => {{
-        const txt = btn.textContent || '';
-        if (txt.includes('Personas (')) btn.textContent = `Personas (${{pCount}}) ▾`;
-        if (txt.includes('Agents (')) btn.textContent = `Agents (${{aCount}}) ▾`;
-      }});
+      const pillarCount = Object.keys(DEPARTMENTS).length;
+
+      const rowEl = document.getElementById('deptRowContainer');
+      if (rowEl) rowEl.setAttribute('data-pillar-count', String(pillarCount));
 
       const allTabTag = document.querySelector('#verticalTabsNavBar button[data-vtab="all"] .v-tab-tag');
       let totalSp = 0;
@@ -665,7 +663,7 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
         if (tabTag) tabTag.textContent = `${{spLen}} Sub-Pillars · ${{d.personaIds.length}} Personas`;
       }});
       if (allTabTag) allTabTag.textContent = `${{totalSp}} Sub-Pillars · ${{pCount}} Personas`;
-      return {{ pCount, aCount, totalSp }};
+      return {{ pCount, aCount, totalSp, pillarCount }};
     }}
 
     function mountTwinContextBar() {{
@@ -724,12 +722,76 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
       const dispLabel = twinData.display_label || (divName ? `${{cName}} — ${{divName}}` : cName);
       const accent = brand.brand_accent || '#4285f4';
 
-      // 1. Apply Pillar & Sub-Pillar Process Renaming
+      // 1A. Reconstruct Dynamic Organization-Specific Operating Pillars (`4` to `8` Pillars) if provided
+      if (Array.isArray(twinData.custom_pillars) && twinData.custom_pillars.length >= 4) {{
+        const canonicalSpMap = {{}};
+        Object.values(BASELINE_DEPARTMENTS).forEach(bd => {{
+          (bd.subPillars || []).forEach(sp => {{
+            canonicalSpMap[sp.id] = JSON.parse(JSON.stringify(sp));
+          }});
+        }});
+
+        for (const k of Object.keys(DEPARTMENTS)) delete DEPARTMENTS[k];
+
+        twinData.custom_pillars.forEach((cp, idx) => {{
+          const pid = cp.pillar_id || (`pillar_${{idx + 1}}`);
+          const pColor = cp.color || '#2563eb';
+          const vNum = String(idx + 1).padStart(2, '0');
+          const builtSubPillars = (cp.sub_pillar_ids || [])
+            .map(spid => canonicalSpMap[spid] ? JSON.parse(JSON.stringify(canonicalSpMap[spid])) : null)
+            .filter(Boolean);
+
+          const builtPersonaIds = [];
+          const builtAgentIds = [];
+
+          builtSubPillars.forEach(sp => {{
+            sp.color = pColor;
+            (sp.items || []).forEach(it => {{
+              if (it.personaId && PERSONAS[it.personaId]) {{
+                PERSONAS[it.personaId].deptId = pid;
+                PERSONAS[it.personaId].subPillarColor = pColor;
+                if (!builtPersonaIds.includes(it.personaId)) builtPersonaIds.push(it.personaId);
+              }}
+              if (it.agentId && AGENTS[it.agentId]) {{
+                AGENTS[it.agentId].deptId = pid;
+                if (!builtAgentIds.includes(it.agentId)) builtAgentIds.push(it.agentId);
+              }}
+            }});
+          }});
+
+          DEPARTMENTS[pid] = {{
+            id: pid,
+            vNum,
+            scorBadge: cp.badge || `${{vNum}} · PILLAR`,
+            name: cp.name || `Pillar ${{idx + 1}}`,
+            tagline: cp.tagline || `${{dispLabel}} · ${{cp.name || 'Operations'}}`,
+            subtitle: cp.subtitle || '',
+            color: pColor,
+            watermarkType: cp.watermark_type || 'demand_wave',
+            subPillars: builtSubPillars,
+            personaIds: builtPersonaIds,
+            agentIds: builtAgentIds
+          }};
+        }});
+
+        const firstPid = Object.keys(DEPARTMENTS)[0];
+        Object.values(AGENTS).forEach(ag => {{
+          if (!DEPARTMENTS[ag.deptId] && firstPid) ag.deptId = firstPid;
+        }});
+        Object.values(PERSONAS).forEach(p => {{
+          if (!DEPARTMENTS[p.deptId] && firstPid) p.deptId = firstPid;
+        }});
+      }}
+
+      // 1B. Apply Pillar & Sub-Pillar Process Renaming
       const pOvMap = twinData.pillar_overrides || {{}};
       const spOvMap = twinData.sub_pillar_overrides || {{}};
       Object.values(DEPARTMENTS).forEach(dept => {{
         const po = pOvMap[dept.id];
         if (po) {{
+          if (po.custom_name && (!Array.isArray(twinData.custom_pillars) || twinData.custom_pillars.length < 4)) {{
+            dept.name = po.custom_name;
+          }}
           if (po.custom_tagline) dept.tagline = po.custom_tagline;
           if (po.custom_subtitle) dept.subtitle = po.custom_subtitle;
         }}
@@ -816,6 +878,11 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
         }});
       }}
 
+      // Reset selectedDeptId if previous pillar no longer exists in DEPARTMENTS
+      if (typeof selectedDeptId !== 'undefined' && selectedDeptId && !DEPARTMENTS[selectedDeptId]) {{
+        selectedDeptId = null;
+      }}
+
       // 4. Update 4 Cross-Pillar Process Journeys & Guard Any Stage Referencing a Hidden Agent
       const procMap = twinData.process_overrides || {{}};
       Object.values(VALUE_CHAINS).forEach(vc => {{
@@ -846,6 +913,11 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
       // 5. Update Brand Accent, 40px Navbar Logo Lockup, 70px Hero Showcase Card, & 58px CSCO Box Logo
       document.documentElement.style.setProperty('--sc-cyan', accent);
       const counts = updateNavbarAndTabCounts();
+
+      const orgSecTitle = document.querySelector('#orgChartSection .section-title');
+      if (orgSecTitle) {{
+        orgSecTitle.textContent = `${{cName}} Supply Chain — ${{counts.pillarCount}} Operating Pillars`;
+      }}
 
       const cscoBadgeEl = document.querySelector('.nav-csco-badge');
       if (cscoBadgeEl) {{
@@ -894,7 +966,7 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
       const cfoSubEl = document.querySelector('.cfo-box-sub');
       if (cfoTitleEl) cfoTitleEl.textContent = brand.executive_title || `Chief Supply Chain Officer, ${{cName}}`;
       if (cfoSubEl) {{
-        cfoSubEl.textContent = `6 Core Operating Pillars · ${{counts.totalSp}} Sub-Pillars · ${{counts.pCount}} Corporate Roles · ${{counts.aCount}} AI Agents`;
+        cfoSubEl.textContent = `${{counts.pillarCount}} Core Operating Pillars · ${{counts.totalSp}} Sub-Pillars · ${{counts.pCount}} Corporate Roles · ${{counts.aCount}} AI Agents`;
       }}
       document.title = `${{dispLabel}} — Supply Chain Agentic Transformation`;
 
@@ -922,11 +994,15 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
       }} else if (activeId === 'pagePeriodic' && typeof openPeriodicTablePage === 'function') {{
         openPeriodicTablePage('all', null, false);
       }} else if (activeId === 'pageMindMap' && typeof openMindMapPage === 'function') {{
-        openMindMapPage('all', null, false);
+        openMindMapPage('mindmap', null, null, false);
       }} else if (activeId === 'pageCost' && typeof openCostTabPage === 'function') {{
         openCostTabPage('all', null, false);
       }} else if (activeId === 'pageDirectory' && typeof openPersonasDirectoryPage === 'function') {{
-        openPersonasDirectoryPage('all', '', false, 'personas');
+        openPersonasDirectoryPage('all', '', false, currentDirMode || 'personas');
+      }} else if (activeId === 'pageEvidence' && typeof openEvidenceHubPage === 'function') {{
+        openEvidenceHubPage('all', false);
+      }} else if (activeId === 'pageValueChain' && typeof openProcessesHubPage === 'function') {{
+        openProcessesHubPage(false);
       }}
 
       try {{
@@ -939,6 +1015,7 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
         closeEnterpriseTwinModal();
         CURRENT_TWIN = null;
         TWIN_SHOW_ALL_60 = false;
+        if (typeof selectedDeptId !== 'undefined') selectedDeptId = null;
         try {{
           localStorage.removeItem('ACTIVE_ENTERPRISE_TWIN_V2');
           localStorage.removeItem('ACTIVE_ENTERPRISE_TWIN');
@@ -947,6 +1024,9 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
         restoreCanonicalBaselines();
         document.documentElement.style.setProperty('--sc-cyan', '#4285f4');
         updateNavbarAndTabCounts();
+
+        const orgSecTitle = document.querySelector('#orgChartSection .section-title');
+        if (orgSecTitle) orgSecTitle.textContent = 'Enterprise Supply Chain — 6 Core Operating Pillars';
 
         const cscoBadgeEl = document.querySelector('.nav-csco-badge');
         if (cscoBadgeEl) cscoBadgeEl.textContent = 'Office of the CSCO · Supply Chain';
@@ -990,9 +1070,10 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
       fetch(`/api/v1/twins/${{encodeURIComponent(clientKey)}}`)
         .then(r => r.ok ? r.json() : Promise.reject('not found'))
         .then(d => {{
-          if (d && d.overlay) {{
+          const ov = d && (d.twin || d.overlay);
+          if (ov) {{
             closeEnterpriseTwinModal();
-            applyBrowserTwin(d.overlay);
+            applyBrowserTwin(ov);
           }}
         }})
         .catch(() => {{}});
@@ -1048,12 +1129,13 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
             canonical_name: it.company_name,
             logo: {{ data_uri: it.logo_data_uri || '', plate_style: it.logo_plate_style || 'light_plate', monogram: it.logo_monogram || 'SC' }}
           }};
+          const pCnt = it.active_pillars_count || 6;
           return `
             <button type="button" onclick="switchClientTwin('${{escTwinHtml(it.twin_slug)}}')" style="text-align:left; background:var(--bg-surface); border:1.5px solid var(--border-strong); border-radius:16px; padding:14px 16px; cursor:pointer; display:flex; align-items:center; gap:14px; color:var(--text-primary);">
               ${{renderAdaptiveTwinLogoBadge(fakeBrand, 'size-lg')}}
               <div style="min-width:0; flex:1;">
                 <div style="font-size:14.5px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${{escTwinHtml(it.company_name)}}</div>
-                <div style="font-size:12px; color:var(--text-secondary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${{escTwinHtml(it.division_name || it.industry_sector || 'Enterprise')}} · ${{it.active_agents_count || 60}}/60 Agents</div>
+                <div style="font-size:12px; color:var(--text-secondary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${{escTwinHtml(it.division_name || it.industry_sector || 'Enterprise')}} · ${{pCnt}} Pillars · ${{it.active_agents_count || 60}}/60 Agents</div>
               </div>
             </button>
           `;
@@ -1068,6 +1150,7 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
         logo_data_uri: ((ov.brand || {{}}).logo || {{}}).data_uri,
         logo_plate_style: ((ov.brand || {{}}).logo || {{}}).plate_style,
         logo_monogram: ((ov.brand || {{}}).logo || {{}}).monogram,
+        active_pillars_count: ov.active_pillars_count || (ov.custom_pillars || []).length || 6,
         active_agents_count: ov.active_agents_count || 60
       }}));
       renderItems(localItems);
@@ -1146,6 +1229,8 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
             if (needle.includes('tobacco') && slug.includes('tobacco')) {{ matched = ov; break; }}
             if (needle.includes('cement') || needle.includes('ultratech')) {{ if (slug.includes('ultratech')) {{ matched = ov; break; }} }}
             if (needle.includes('hindalco') || needle.includes('metal')) {{ if (slug.includes('hindalco')) {{ matched = ov; break; }} }}
+            if (needle.includes('maruti') || needle.includes('auto') || needle.includes('motor')) {{ if (slug.includes('maruti')) {{ matched = ov; break; }} }}
+            if (needle.includes('wipro') || needle.includes('tech')) {{ if (slug.includes('wipro')) {{ matched = ov; break; }} }}
             if (needle.includes('tata') && slug.includes('tata')) {{ matched = ov; break; }}
             if (needle.includes('itc') && slug.includes('foods')) matched = ov;
             if (needle.includes('unilever') && slug.includes('unilever')) {{ matched = ov; break; }}

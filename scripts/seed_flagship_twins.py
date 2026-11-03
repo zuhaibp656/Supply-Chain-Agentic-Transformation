@@ -19,10 +19,15 @@ FLAGSHIP_SEEDS = [
     ("Aditya Birla Group", "Hindalco Aluminium & Copper", "India & Global"),
     ("Unilever", "Home & Personal Care", "Global"),
     ("Tata Consumer Products", "India Packaged Beverages & Foods", "India"),
+    ("Maruti Suzuki", "", "India"),
+    ("Wipro", "", "Global"),
 ]
 
 
 def main() -> None:
+    typo_path = ROOT / "data" / "twins" / "v2" / "itc-limited--trade-marketing.json"
+    if typo_path.exists():
+        typo_path.unlink()
     for co, div, geo in FLAGSHIP_SEEDS:
         res = run_enterprise_twin_agent(
             company_name=co,
@@ -34,6 +39,7 @@ def main() -> None:
         logo = ov["brand"]["logo"]
         print(
             f"[OK] {ov['twin_slug']} | {ov['display_label']} | "
+            f"pillars={ov.get('active_pillars_count', len(ov.get('custom_pillars', [])))} | "
             f"active={ov['active_agents_count']}/60 (hidden={len(ov['hidden_agent_ids'])}) | "
             f"logo={logo['source_type']} ({logo['plate_style']})"
         )

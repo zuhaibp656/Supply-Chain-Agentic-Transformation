@@ -16,7 +16,7 @@
     "brand_accent": "#38bdf8",
     "brand_secondary": "#0f172a",
     "executive_title": "Chief Supply Chain & Metal Operations Officer (Smelters, Rolling & Global Logistics), Aditya Birla Group",
-    "executive_thesis": "Coordinating Aditya Birla Group — Hindalco Aluminium & Copper's bauxite/copper ore supply, alumina refineries, captive power & smelting pots, flat-rolled and extrusion mills, ocean breakbulk/container exports, and closed-loop scrap recycling.",
+    "executive_thesis": "Aditya Birla Group (Indian Multinational Conglomerate pvt ltd) — Coordinating Aditya Birla Group — Hindalco Aluminium & Copper's bauxite/copper ore supply, alumina refineries, captive power & smelting pots, flat-rolled and extrusion mills, ocean breakbulk/container exports, and…",
     "flagship_sites": "Alumina Refineries & Aluminium/Copper Smelters · Flat-Rolled & Extrusion Downstream Plants · Port Export Terminals & Scrap Recycling Hubs",
     "erp_systems": "SAP S/4HANA · MES Coil & Cast-House Genealogy · LME Hedging & Commodity Risk · Rail/Ocean TMS",
     "logo": {
@@ -28,6 +28,88 @@
       "monogram": "AB"
     }
   },
+  "custom_pillars": [
+    {
+      "pillar_id": "mine_concentrate_sourcing",
+      "v_num": "01",
+      "scor_badge": "01 · MINE & CONCENTRATE",
+      "name": "Bauxite, Concentrate, Energy & Carbon Sourcing",
+      "tagline": "Aditya Birla Group — Hindalco Aluminium & Copper · Captive mines…",
+      "subtitle": "Secures ore, concentrate, pitch/anodes, and energy contracts hedged against LME metal indices.",
+      "color": "#7c3aed",
+      "watermark_type": "supplier_graph",
+      "sub_pillar_ids": [
+        "supplier_network",
+        "material_packaging",
+        "contract_po_mgmt"
+      ]
+    },
+    {
+      "pillar_id": "metal_ibp_margin_mix",
+      "v_num": "02",
+      "scor_badge": "02 · METAL IBP & ALLOYS",
+      "name": "Smelter-to-Mill S&OP, Alloy Mix & OEM Pricing",
+      "tagline": "Aditya Birla Group — Hindalco Aluminium & Copper · Auto sheet…",
+      "subtitle": "Optimizes hot-metal allocation across ingot, billet, wire-rod, and high-margin flat-rolled alloys.",
+      "color": "#2563eb",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "demand_forecasting",
+        "trade_promotion",
+        "sop_ibp",
+        "portfolio_sku"
+      ]
+    },
+    {
+      "pillar_id": "smelters_rolling_mills",
+      "v_num": "03",
+      "scor_badge": "03 · SMELTERS & ROLLING",
+      "name": "Refining, Potlines, Cast-House & Rolling Mills",
+      "tagline": "Aditya Birla Group — Hindalco Aluminium & Copper · Potline amperage…",
+      "subtitle": "Synchronizes cast-house melt schedules, hot/cold mill width sequences, and metallurgical surface QA.",
+      "color": "#ea580c",
+      "watermark_type": "factory_arm",
+      "sub_pillar_ids": [
+        "production_scheduling",
+        "capacity_planning",
+        "quality_compliance"
+      ]
+    },
+    {
+      "pillar_id": "coil_yards_oem_dispatch",
+      "v_num": "04",
+      "scor_badge": "04 · YARDS, RAIL & OEM",
+      "name": "Heavy Coil Yards, Captive Rakes & Global Dispatch",
+      "tagline": "Aditya Birla Group — Hindalco Aluminium & Copper · Overhead crane coil…",
+      "subtitle": "Unifies slab/coil yard positioning with heavy-haul rail, ocean breakbulk exports, and OEM Kanban delivery.",
+      "color": "#0284c7",
+      "watermark_type": "corridor_lifo",
+      "sub_pillar_ids": [
+        "positioning_optimization",
+        "warehouse_operations",
+        "omnichannel_visibility",
+        "first_mid_mile",
+        "store_replenishment",
+        "last_mile_delivery",
+        "route_carrier"
+      ]
+    },
+    {
+      "pillar_id": "closed_loop_scrap_cbam",
+      "v_num": "05",
+      "scor_badge": "05 · SCRAP & EU CBAM",
+      "name": "Closed-Loop UBC Scrap Remelt, Claims & Carbon",
+      "tagline": "Aditya Birla Group — Hindalco Aluminium & Copper · Customer stamping…",
+      "subtitle": "orchestrates closed-loop aluminium/copper scrap remelting, OEM surface claims, and EU CBAM carbon passports.",
+      "color": "#059669",
+      "watermark_type": "conveyor_rack",
+      "sub_pillar_ids": [
+        "expiry_markdowns",
+        "returns_claims_mgmt",
+        "pallet_tote_reclamation"
+      ]
+    }
+  ],
   "pillar_overrides": {
     "demand_sop": {
       "dept_id": "demand_sop",
@@ -1552,6 +1634,7 @@
     "outbound_lead_industrial_eng",
     "store_operations_omni_lead"
   ],
+  "active_pillars_count": 5,
   "active_agents_count": 53,
   "active_personas_count": 53,
   "active_sub_pillars_count": 20,
@@ -1581,7 +1664,7 @@
     "UBC — Used Beverage Can & Closed-Loop Scrap",
     "Coil, Billet, Wire-Rod & Foil Downstream Mix"
   ],
-  "created_at": "2026-11-02T20:24:14.139116+00:00",
-  "updated_at": "2026-11-02T20:24:14.139116+00:00",
+  "created_at": "2026-11-03T06:13:50.393755+00:00",
+  "updated_at": "2026-11-03T06:13:50.393755+00:00",
   "generation_model": "Enterprise Twin Career & Domain Engine + Live Web/Logo Grounding"
 }

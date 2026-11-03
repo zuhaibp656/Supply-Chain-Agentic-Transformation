@@ -16,7 +16,7 @@
     "brand_accent": "#0ea5e9",
     "brand_secondary": "#1e3a8a",
     "executive_title": "Divisional Chief Executive & Head of Supply Chain (ITD, ILTD & TM&D), ITC Limited",
-    "executive_thesis": "Synchronizing ITC Limited — Cigarettes & Leaf Tobacco (ILTD & TM&D)'s leaf tobacco auction procurement (ILTD), green-leaf threshing and high-speed cigarette making & packing plants (PMD/SMD), excise-bonded mother warehouses, and Trade Marketing & Distribution (TM&D) across…",
+    "executive_thesis": "ITC Limited (Indian conglomerate) — Synchronizing ITC Limited — Cigarettes & Leaf Tobacco (ILTD & TM&D)'s leaf tobacco auction procurement (ILTD), green-leaf threshing and high-speed cigarette making & packing plants (PMD/SMD), excise-bonded mother warehouses, and Trade…",
     "flagship_sites": "Bengaluru, Saharanpur, Munger, Kolkata (Kidderpore) & Ranjangaon Cigarette Plants · Chirala & Anaparti ILTD Leaf Threshing · National TM&D Mother Depots",
     "erp_systems": "SAP S/4HANA · SAP IBP · ILTD Leaf Auction Traceability · TM&D DMS (Distributor Management System) · Excise Bonded WMS",
     "logo": {
@@ -28,6 +28,112 @@
       "monogram": "ITC"
     }
   },
+  "custom_pillars": [
+    {
+      "pillar_id": "iltd_leaf_sourcing",
+      "v_num": "01",
+      "scor_badge": "01 · ILTD LEAF & AGRI",
+      "name": "ILTD Leaf Agronomy, Auction & Packaging",
+      "tagline": "ITC Limited — Cigarettes & Leaf Tobacco (ILTD & TM&D) · Flue-cured…",
+      "subtitle": "Governs grower crop trace, auction grade buying, acetate filter tow, and printed paperboard sourcing.",
+      "color": "#7c3aed",
+      "watermark_type": "supplier_graph",
+      "sub_pillar_ids": [
+        "supplier_network",
+        "material_packaging",
+        "contract_po_mgmt"
+      ]
+    },
+    {
+      "pillar_id": "tmd_demand_planning",
+      "v_num": "02",
+      "scor_badge": "02 · DEMAND & S&OP",
+      "name": "Brand-Length Demand & Divisional S&OP",
+      "tagline": "ITC Limited — Cigarettes & Leaf Tobacco (ILTD & TM&D) · Territory…",
+      "subtitle": "Synchronizes brand-length demand sensing across ILTD threshing capacity, cigarette factories, and TM&D branches.",
+      "color": "#2563eb",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "demand_forecasting",
+        "sop_ibp",
+        "portfolio_sku"
+      ]
+    },
+    {
+      "pillar_id": "pmd_smd_factories",
+      "v_num": "03",
+      "scor_badge": "03 · PMD & SMD PLANTS",
+      "name": "Primary Threshing & Cigarette Manufacturing",
+      "tagline": "ITC Limited — Cigarettes & Leaf Tobacco (ILTD & TM&D) · Green-leaf…",
+      "subtitle": "Runs finite line scheduling, maker-packer OEE reliability, and moisture/draw/print vision QA across cigarette factories.",
+      "color": "#ea580c",
+      "watermark_type": "factory_arm",
+      "sub_pillar_ids": [
+        "production_scheduling",
+        "capacity_planning",
+        "quality_compliance"
+      ]
+    },
+    {
+      "pillar_id": "bonded_warehousing",
+      "v_num": "04",
+      "scor_badge": "04 · BONDED GODOWNS",
+      "name": "Excise-Bonded Warehouses & Mother Depots",
+      "tagline": "ITC Limited — Cigarettes & Leaf Tobacco (ILTD & TM&D) · Factory bonded…",
+      "subtitle": "Optimizes multi-echelon stock norms and master-case slotting across excise-bonded mother warehouses.",
+      "color": "#0284c7",
+      "watermark_type": "warehouse_rack",
+      "sub_pillar_ids": [
+        "positioning_optimization",
+        "warehouse_operations",
+        "omnichannel_visibility"
+      ]
+    },
+    {
+      "pillar_id": "primary_linehaul",
+      "v_num": "05",
+      "scor_badge": "05 · PRIMARY LINEHAUL",
+      "name": "Containerized Factory-to-Depot Linehaul",
+      "tagline": "ITC Limited — Cigarettes & Leaf Tobacco (ILTD & TM&D) · GPS-sealed…",
+      "subtitle": "Coordinates high-security primary container dispatch from cigarette plants to regional mother depots.",
+      "color": "#4f46e5",
+      "watermark_type": "corridor_lifo",
+      "sub_pillar_ids": [
+        "first_mid_mile",
+        "route_carrier"
+      ]
+    },
+    {
+      "pillar_id": "tmd_wholesale_channel",
+      "v_num": "06",
+      "scor_badge": "06 · TM&D & WD CHANNEL",
+      "name": "TM&D Trade Schemes & Wholesale Dealers",
+      "tagline": "ITC Limited — Cigarettes & Leaf Tobacco (ILTD & TM&D) · Wholesale…",
+      "subtitle": "Steers trade scheme ROI, Wholesale Dealer vault replenishment, and urban/rural retail beat execution.",
+      "color": "#059669",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "trade_promotion",
+        "store_replenishment",
+        "last_mile_delivery"
+      ]
+    },
+    {
+      "pillar_id": "excise_circularity",
+      "v_num": "07",
+      "scor_badge": "07 · EXCISE & CIRCULAR",
+      "name": "Track-and-Trace, Claims & Paperboard Loop",
+      "tagline": "ITC Limited — Cigarettes & Leaf Tobacco (ILTD & TM&D) · Statutory…",
+      "subtitle": "Manages audited trade damage claims, batch freshness rotation, and closed-loop factory bobbin/pallet recovery.",
+      "color": "#0d9488",
+      "watermark_type": "conveyor_rack",
+      "sub_pillar_ids": [
+        "expiry_markdowns",
+        "returns_claims_mgmt",
+        "pallet_tote_reclamation"
+      ]
+    }
+  ],
   "pillar_overrides": {
     "demand_sop": {
       "dept_id": "demand_sop",
@@ -1548,6 +1654,7 @@
     "merchandising_store_ops_mgr",
     "omnichannel_fulfillment_dir"
   ],
+  "active_pillars_count": 7,
   "active_agents_count": 55,
   "active_personas_count": 55,
   "active_sub_pillars_count": 20,
@@ -1577,7 +1684,7 @@
     "PMD / SMD — Primary & Secondary Manufacturing",
     "WD — Exclusive Wholesale Dealer Network"
   ],
-  "created_at": "2026-11-02T20:24:10.671726+00:00",
-  "updated_at": "2026-11-02T20:24:10.671726+00:00",
+  "created_at": "2026-11-03T06:13:40.178555+00:00",
+  "updated_at": "2026-11-03T06:13:40.178555+00:00",
   "generation_model": "Enterprise Twin Career & Domain Engine + Live Web/Logo Grounding"
 }

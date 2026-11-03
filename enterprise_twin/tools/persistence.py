@@ -239,6 +239,7 @@ def list_saved_twins(include_cloud: bool = True) -> List[Dict[str, Any]]:
             "logo_data_uri": logo.get("data_uri", ""),
             "logo_plate_style": logo.get("plate_style", "light_plate"),
             "logo_monogram": logo.get("monogram", "SC"),
+            "active_pillars_count": data.get("active_pillars_count") or len(data.get("custom_pillars") or []) or 6,
             "active_agents_count": data.get("active_agents_count", 60),
             "hidden_agents_count": len(data.get("hidden_agent_ids") or []),
             "active_sub_pillars_count": data.get("active_sub_pillars_count", 20),

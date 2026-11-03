@@ -1091,6 +1091,7 @@
 
       box.innerHTML = filtered.map(t => {
         const active = t.active_agents_count || 60;
+        const pCount = t.active_pillars_count || 6;
         const portalUrl = `/t/${encodeURIComponent(t.twin_slug)}`;
         return `
           <div class="twin-card">
@@ -1102,7 +1103,7 @@
               </div>
             </div>
             <div class="twin-meta-row">
-              <span class="twin-agent-count">✦ ${active}/60 Agents Active</span>
+              <span class="twin-agent-count">✦ ${pCount} Pillars · ${active}/60 Agents</span>
               <div class="twin-card-btns">
                 <button type="button" class="btn-sm" onclick="copyTwinUrl('${escHtml(t.twin_slug)}', this)">Copy Link</button>
                 <button type="button" class="btn-sm" onclick="openFineTuneModal('${escHtml(t.twin_slug)}')">Edit</button>

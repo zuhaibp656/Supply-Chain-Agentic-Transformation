@@ -16,7 +16,7 @@
     "brand_accent": "#f59e0b",
     "brand_secondary": "#1e293b",
     "executive_title": "Chief Manufacturing & Supply Chain Officer (Integrated Units, Grinding & Bulk Logistics), Aditya Birla Group",
-    "executive_thesis": "Optimizing Aditya Birla Group — UltraTech Cement Division's limestone mines, pyro-processing rotary kilns, split-location Grinding Units (GUs), bulk coastal terminals, Indian Railways clinker/cement rakes, and primary/secondary road dispatch across thousands of channel dealers…",
+    "executive_thesis": "Aditya Birla Group (Indian Multinational Conglomerate pvt ltd) — Optimizing Aditya Birla Group — UltraTech Cement Division's limestone mines, pyro-processing rotary kilns, split-location Grinding Units (GUs), bulk coastal terminals, Indian Railways clinker/cement rakes, and…",
     "flagship_sites": "Integrated Limestone & Clinker Mother Plants · Regional Split Grinding Units (GUs) · Bulk Packing Terminals · Rail Siding & C&F Depots",
     "erp_systems": "SAP S/4HANA · Kiln APC & Historian · Rail Rake & GPS Fleet Control Tower · Dealer Order Portal",
     "logo": {
@@ -28,6 +28,112 @@
       "monogram": "AB"
     }
   },
+  "custom_pillars": [
+    {
+      "pillar_id": "clinker_sop_demand",
+      "v_num": "01",
+      "scor_badge": "01 · S&OP & BLEND MIX",
+      "name": "Integrated S&OP, Blend Mix & Infra Demand",
+      "tagline": "Aditya Birla Group — UltraTech Cement Division · District trade…",
+      "subtitle": "Balances regional construction demand against clinker kiln output, GU power tariffs, and rail-road economics.",
+      "color": "#2563eb",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "demand_forecasting",
+        "sop_ibp",
+        "portfolio_sku"
+      ]
+    },
+    {
+      "pillar_id": "mines_fuel_sourcing",
+      "v_num": "02",
+      "scor_badge": "02 · MINES, FUEL & BAGS",
+      "name": "Captive Limestone, Petcoke/Coal & Packaging",
+      "tagline": "Aditya Birla Group — UltraTech Cement Division · Calorific fuel mix…",
+      "subtitle": "Optimizes landed kcal fuel cost, power-plant fly-ash linkages, and moisture-proof bag procurement.",
+      "color": "#7c3aed",
+      "watermark_type": "supplier_graph",
+      "sub_pillar_ids": [
+        "supplier_network",
+        "material_packaging",
+        "contract_po_mgmt"
+      ]
+    },
+    {
+      "pillar_id": "kilns_grinding_units",
+      "v_num": "03",
+      "scor_badge": "03 · KILNS & GRINDING",
+      "name": "Pyro-Processing Kilns & Split Grinding Units",
+      "tagline": "Aditya Birla Group — UltraTech Cement Division · Rotary kiln…",
+      "subtitle": "Maximizes kiln thermal reliability, off-peak grinding schedules, and Blaine fineness / 28-day strength QA.",
+      "color": "#ea580c",
+      "watermark_type": "factory_arm",
+      "sub_pillar_ids": [
+        "production_scheduling",
+        "capacity_planning",
+        "quality_compliance"
+      ]
+    },
+    {
+      "pillar_id": "silos_packing_terminals",
+      "v_num": "04",
+      "scor_badge": "04 · SILOS & TERMINALS",
+      "name": "Clinker Silos, Bulk Terminals & Packer Bays",
+      "tagline": "Aditya Birla Group — UltraTech Cement Division · Multi-plant silo…",
+      "subtitle": "Controls clinker/cement silo inventory norms and automated rotary packer bay turnaround.",
+      "color": "#0284c7",
+      "watermark_type": "warehouse_rack",
+      "sub_pillar_ids": [
+        "positioning_optimization",
+        "warehouse_operations"
+      ]
+    },
+    {
+      "pillar_id": "rail_rake_bulk_haul",
+      "v_num": "05",
+      "scor_badge": "05 · RAIL RAKE & BULK",
+      "name": "Multi-Modal Rail Rakes & Primary Bulker Fleet",
+      "tagline": "Aditya Birla Group — UltraTech Cement Division · Railway siding rakes…",
+      "subtitle": "Minimizes primary lead distance, railway demurrage/wharfage, and bulk clinker transfer costs.",
+      "color": "#d97706",
+      "watermark_type": "corridor_lifo",
+      "sub_pillar_ids": [
+        "first_mid_mile",
+        "route_carrier"
+      ]
+    },
+    {
+      "pillar_id": "dealer_infra_channel",
+      "v_num": "06",
+      "scor_badge": "06 · DEALER & INFRA OPS",
+      "name": "Dealer Channel (UBS), Rebates & Direct-to-Site",
+      "tagline": "Aditya Birla Group — UltraTech Cement Division · C&F godowns, dealer…",
+      "subtitle": "Synchronizes dealer rebate schemes, C&F godown stock norms, and GPS-tracked site deliveries.",
+      "color": "#059669",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "trade_promotion",
+        "omnichannel_visibility",
+        "store_replenishment",
+        "last_mile_delivery"
+      ]
+    },
+    {
+      "pillar_id": "afr_green_circularity",
+      "v_num": "07",
+      "scor_badge": "07 · AFR & GREEN CEMENT",
+      "name": "AFR Co-Processing, Monsoon Rotation & Claims",
+      "tagline": "Aditya Birla Group — UltraTech Cement Division · Kiln waste…",
+      "subtitle": "Drives Alternative Fuel & Raw Material (AFR) substitution, monsoon stock rotation, and transit bag claims.",
+      "color": "#0d9488",
+      "watermark_type": "conveyor_rack",
+      "sub_pillar_ids": [
+        "expiry_markdowns",
+        "returns_claims_mgmt",
+        "pallet_tote_reclamation"
+      ]
+    }
+  ],
   "pillar_overrides": {
     "demand_sop": {
       "dept_id": "demand_sop",
@@ -1552,6 +1658,7 @@
     "outbound_lead_industrial_eng",
     "store_operations_omni_lead"
   ],
+  "active_pillars_count": 7,
   "active_agents_count": 53,
   "active_personas_count": 53,
   "active_sub_pillars_count": 20,
@@ -1577,11 +1684,11 @@
   ],
   "terminology_highlights": [
     "IU / GU — Integrated Clinker Unit & Split Grinding Unit",
-    "PTP /PKD — Primary Lead Distance & Rail-Road Mix",
+    "PTP / PKD — Primary Lead Distance & Rail-Road Mix",
     "PPC / OPC — Pozzolana & Ordinary Portland Cement Blends",
     "C&F Godown — Clearing & Forwarding Dealer Warehouse"
   ],
-  "created_at": "2026-11-02T20:24:12.854813+00:00",
-  "updated_at": "2026-11-02T20:24:12.854813+00:00",
+  "created_at": "2026-11-03T06:13:46.958604+00:00",
+  "updated_at": "2026-11-03T06:13:46.958604+00:00",
   "generation_model": "Enterprise Twin Career & Domain Engine + Live Web/Logo Grounding"
 }

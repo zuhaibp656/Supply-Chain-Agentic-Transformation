@@ -61,10 +61,33 @@ def test_division_differentiation_and_smart_agent_hiding():
     tobacco = load_twin_spec("itc-limited--cigarettes-leaf-tobacco-iltd-tm-d")
     foods = load_twin_spec("itc-limited--foods-division-icml-agri")
     cement = load_twin_spec("aditya-birla-group--ultratech-cement-division")
+    hindalco = load_twin_spec("aditya-birla-group--hindalco-aluminium-copper")
+    maruti = load_twin_spec("maruti-suzuki")
+    wipro = load_twin_spec("wipro")
 
     assert tobacco is not None
     assert foods is not None
     assert cement is not None
+    assert hindalco is not None
+    assert maruti is not None
+    assert wipro is not None
+
+    # Dynamic Organization-Specific Operating Pillars (5, 6, or 7 Pillars!)
+    assert tobacco["active_pillars_count"] == 7 and len(tobacco["custom_pillars"]) == 7
+    assert foods["active_pillars_count"] == 7 and len(foods["custom_pillars"]) == 7
+    assert cement["active_pillars_count"] == 7 and len(cement["custom_pillars"]) == 7
+    assert maruti["active_pillars_count"] == 7 and len(maruti["custom_pillars"]) == 7
+    assert hindalco["active_pillars_count"] == 5 and len(hindalco["custom_pillars"]) == 5
+    assert wipro["active_pillars_count"] == 5 and len(wipro["custom_pillars"]) == 5
+
+    # Verify custom_pillars partition 100% of active sub-pillars with zero orphans or duplicates
+    for spec in (tobacco, foods, cement, hindalco, maruti, wipro):
+        seen_sps = []
+        for cp in spec["custom_pillars"]:
+            assert len(cp["sub_pillar_ids"]) >= 1
+            seen_sps.extend(cp["sub_pillar_ids"])
+        assert len(seen_sps) == len(set(seen_sps)), f"Duplicate sub-pillars in {spec['twin_slug']}"
+        assert len(seen_sps) == 20, f"Expected all 20 canonical sub-pillars partitioned in {spec['twin_slug']}"
 
     # Division executive titles and adapted roles must differ between ITC Tobacco and ITC Foods
     assert tobacco["brand"]["executive_title"] != foods["brand"]["executive_title"]
