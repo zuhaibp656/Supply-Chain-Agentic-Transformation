@@ -14,6 +14,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import re
 import threading
@@ -26,6 +27,7 @@ from enterprise_twin.tools.gcp_auth import (
     DEFAULT_GCS_BUCKET,
     DEFAULT_PROJECT,
     get_gcp_credentials,
+    is_cloud_runtime,
 )
 
 TWINS_ROOT = Path(__file__).resolve().parent.parent.parent / "data" / "twins"
@@ -43,6 +45,8 @@ def slugify(company_name: str, division_name: Optional[str] = None) -> str:
 
 
 def _get_gcs_bucket():
+    if not is_cloud_runtime() and not os.environ.get("SC_TWIN_FORCE_CLOUD_SYNC"):
+        return None
     try:
         from google.cloud import storage
 
@@ -57,6 +61,8 @@ def _get_gcs_bucket():
 
 def _ensure_bigquery_table():
     global _BQ_TABLE_READY
+    if not is_cloud_runtime() and not os.environ.get("SC_TWIN_FORCE_CLOUD_SYNC"):
+        return None, ""
     try:
         from google.cloud import bigquery
 

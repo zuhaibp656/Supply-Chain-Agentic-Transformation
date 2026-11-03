@@ -1,16 +1,20 @@
-"""Intelligent Multi-Stage Supply Chain Research & Portal Synthesis Engine.
+"""Intelligent Multi-Stage Real-Time Supply Chain Research & Portal Synthesis Engine (`v2.2`).
 
-Orchestrates:
-  1. Official Corporate Logo Download & Optical Framing (`resolve_company_logo`)
-  2. Stage 1 — Deep Corporate, Division & Career Job-Board Grounding (`Gemini 3.1 Pro` + `GoogleSearch`)
-     Searches public LinkedIn job postings, Naukri listings, corporate `/careers` pages, and annual
-     reports via Google Search Grounding to extract authentic division terminology, facilities, ERPs,
-     and real organizational job titles.
-  3. Stage 2 — Parallel 6-Pillar Persona, Process & Agent Relevance Synthesis (`Gemini 3.8 Flash / 3.1 Pro`)
-     Runs 6 concurrent pillar specialists to adapt all 20 Sub-Pillars, all 60 Personas, 4 Cross-Pillar
-     Process Journeys, and evaluate all 60 Agents for division relevance (`is_relevant: true/false`),
-     hiding genuinely inapplicable agents while keeping canonical demo agent engines 100% intact.
-  4. Stage 3 — Zero-Breakage Schema Validation & Multi-Tier Persistence (Memory + Disk + GCS + BigQuery).
+For ANY company or organization entered by the user, executes real-time research:
+  1. Stage 1 — Live Corporate, Operations & Career Grounding (`Gemini 3.1 Pro` + `GoogleSearch`
+     + Wikipedia & Public Job-Board Signals):
+     Researches how the company/division actually operates, discovers its official web domain,
+     extracts real corporate job title patterns & facilities, and designs `4` to `8` bespoke
+     **Organization-Specific Operating Pillars** partitioning all 20 Supply Chain Sub-Pillars.
+  2. Official Corporate Logo Download & Optical Framing (`resolve_company_logo`):
+     Uses the discovered `official_domain` + Wikidata P154 + Wikimedia Commons + official site icons
+     to download and optically frame the authentic company logo.
+  3. Stage 2 — Parallel Custom-Pillar Synthesis (`Gemini 3 Flash`):
+     Runs concurrent specialists across each of the `4`–`8` bespoke Organization Pillars to tailor
+     all 20 Sub-Pillar process names, rewrite all 60 Personas into authentic corporate job roles &
+     daily workflows, and evaluate all 60 Core AI Agents (reusing relevant agents and cleanly hiding
+     inapplicable ones without ever inventing broken 61st+ agents).
+  4. Stage 3 — Zero-Breakage Schema Validation & Multi-Tier Persistence.
 """
 
 from __future__ import annotations
@@ -36,21 +40,50 @@ from enterprise_twin.schema import (
     make_twin_slug,
     validate_and_normalize_overlay,
 )
-from enterprise_twin.tools.gcp_auth import get_genai_client
+from enterprise_twin.tools.gcp_auth import get_genai_clients
 from enterprise_twin.tools.logo_resolver import resolve_company_logo
+from enterprise_twin.tools.public_web_career_miner import (
+    fetch_wikipedia_company_summary,
+    search_public_career_titles,
+)
 
 ProgressCallback = Optional[Callable[[Dict[str, Any]], None]]
 
+
+def _normalize_model_id(raw: str, default_id: str) -> str:
+    m = (raw or "").strip()
+    if not m or m in ("gemini-3.8-flash", "gemini-3.7-flash", "gemini-3-pro-preview"):
+        return default_id
+    return m
+
+
 DEEP_RESEARCH_MODELS = [
-    os.environ.get("SC_TWIN_PRO_MODEL", "gemini-3.1-pro-preview"),
+    _normalize_model_id(os.environ.get("SC_TWIN_PRO_MODEL", ""), "gemini-3.1-pro-preview"),
     "gemini-2.5-pro",
+    "gemini-3-flash-preview",
     "gemini-2.5-flash",
 ]
+
 FAST_PILLAR_MODELS = [
-    os.environ.get("SC_TWIN_FLASH_MODEL", "gemini-3-flash-preview"),
+    _normalize_model_id(os.environ.get("SC_TWIN_FLASH_MODEL", ""), "gemini-3-flash-preview"),
     "gemini-2.5-flash",
     "gemini-3.1-pro-preview",
 ]
+
+ALL_20_SUBPILLAR_IDS = [
+    "demand_forecasting", "trade_promotion", "sop_ibp", "portfolio_sku",
+    "supplier_network", "material_packaging", "contract_po",
+    "production_scheduling", "capacity_planning", "quality_compliance",
+    "positioning_optimization", "warehouse_operations", "omnichannel_visibility",
+    "first_mid_mile", "store_replenishment", "last_mile_delivery", "route_carrier",
+    "returns_claims", "expiry_markdowns", "pallet_tote",
+]
+
+SUBPILLAR_ALIASES = {
+    "contract_po_mgmt": "contract_po",
+    "returns_claims_mgmt": "returns_claims",
+    "pallet_tote_reclamation": "pallet_tote",
+}
 
 
 def _emit(cb: ProgressCallback, pct: int, stage: str, message: str, detail: str = "") -> None:
@@ -86,65 +119,126 @@ def _call_gemini_with_fallback(
     use_google_search: bool = False,
     json_mode: bool = False,
     max_tokens: int = 8192,
+    fast_thinking: bool = False,
 ) -> Tuple[str, List[GroundingCitation], str]:
-    """Calls Vertex AI Gemini (`global` endpoint for Gemini 3, fallback `us-central1` for 2.5)."""
+    """Calls Gemini across available auth clients (`gemini_api_key` / `vertex_iam`) and fallback models."""
     from google.genai import types
 
     last_err: Optional[Exception] = None
-    for model_id in models:
+    seen_models: List[str] = []
+    for m in models:
+        if m and m not in seen_models:
+            seen_models.append(m)
+
+    for model_id in seen_models:
         loc = "global" if model_id.startswith("gemini-3") else "us-central1"
-        try:
-            client = get_genai_client(location=loc)
-            cfg_kwargs: Dict[str, Any] = {
-                "max_output_tokens": max_tokens,
-                "temperature": 0.25,
-            }
-            if model_id.startswith("gemini-3"):
-                cfg_kwargs["thinking_config"] = types.ThinkingConfig(thinking_level="LOW")
-            if use_google_search:
-                cfg_kwargs["tools"] = [types.Tool(google_search=types.GoogleSearch())]
-            elif json_mode:
-                cfg_kwargs["response_mime_type"] = "application/json"
-
-            resp = client.models.generate_content(
-                model=model_id,
-                contents=prompt,
-                config=types.GenerateContentConfig(**cfg_kwargs),
-            )
-            text = resp.text or ""
-            citations: List[GroundingCitation] = []
+        client_candidates = get_genai_clients(location=loc, timeout_ms=80_000)
+        for auth_label, client in client_candidates:
             try:
-                cands = getattr(resp, "candidates", None) or []
-                if cands:
-                    gm = getattr(cands[0], "grounding_metadata", None)
-                    chunks = getattr(gm, "grounding_chunks", None) or []
-                    seen_urls = set()
-                    for ch in chunks:
-                        web = getattr(ch, "web", None)
-                        uri = getattr(web, "uri", "") if web else ""
-                        title = getattr(web, "title", "") if web else ""
-                        if uri and uri not in seen_urls:
-                            seen_urls.add(uri)
-                            citations.append(GroundingCitation(title=title or uri, url=uri))
-            except Exception:
-                pass
-            if text.strip():
-                return text, citations[:12], model_id
-        except Exception as e:
-            last_err = e
-            continue
+                cfg_kwargs: Dict[str, Any] = {
+                    "max_output_tokens": max_tokens,
+                    "temperature": 0.25,
+                }
+                if model_id.startswith("gemini-3"):
+                    lvl = "MINIMAL" if (fast_thinking and "flash" in model_id) else "LOW"
+                    try:
+                        cfg_kwargs["thinking_config"] = types.ThinkingConfig(thinking_level=lvl)
+                    except Exception:
+                        cfg_kwargs["thinking_config"] = types.ThinkingConfig(thinking_level="LOW")
+                if use_google_search:
+                    cfg_kwargs["tools"] = [types.Tool(google_search=types.GoogleSearch())]
+                elif json_mode:
+                    cfg_kwargs["response_mime_type"] = "application/json"
 
-    raise RuntimeError(f"Gemini synthesis unavailable: {last_err}")
+                resp = client.models.generate_content(
+                    model=model_id,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(**cfg_kwargs),
+                )
+                text = resp.text or ""
+                citations: List[GroundingCitation] = []
+                try:
+                    cands = getattr(resp, "candidates", None) or []
+                    if cands:
+                        gm = getattr(cands[0], "grounding_metadata", None)
+                        chunks = getattr(gm, "grounding_chunks", None) or []
+                        seen_urls = set()
+                        for ch in chunks:
+                            web = getattr(ch, "web", None)
+                            uri = getattr(web, "uri", "") if web else ""
+                            title = getattr(web, "title", "") if web else ""
+                            if uri and uri not in seen_urls:
+                                seen_urls.add(uri)
+                                citations.append(GroundingCitation(title=title or uri, url=uri))
+                except Exception:
+                    pass
+                if text.strip():
+                    return text, citations[:12], f"{model_id} ({auth_label})"
+            except Exception as e:
+                last_err = e
+                continue
+
+    raise RuntimeError(f"Gemini live synthesis unavailable: {last_err}")
 
 
-ALL_20_SUBPILLAR_IDS = [
-    "demand_forecasting", "trade_promotion", "sop_ibp", "portfolio_sku",
-    "supplier_network", "material_packaging", "contract_po",
-    "production_scheduling", "capacity_planning", "quality_compliance",
-    "positioning_optimization", "warehouse_operations", "omnichannel_visibility",
-    "first_mid_mile", "store_replenishment", "last_mile_delivery", "route_carrier",
-    "returns_claims", "expiry_markdowns", "pallet_tote",
-]
+def _normalize_org_pillars_partition(raw_pillars: Any, company_label: str) -> List[Dict[str, Any]]:
+    """Ensures `organization_pillars` has 4 to 8 bespoke pillars partitioning all 20 canonical sub-pillars."""
+    valid_set = set(ALL_20_SUBPILLAR_IDS)
+    palette = ["#2563eb", "#7c3aed", "#ea580c", "#0284c7", "#059669", "#4f46e5", "#0d9488", "#d97706"]
+    watermarks = ["demand_wave", "supplier_graph", "factory_arm", "warehouse_rack", "corridor_lifo", "conveyor_rack"]
+
+    cleaned: List[Dict[str, Any]] = []
+    assigned: set[str] = set()
+
+    if isinstance(raw_pillars, list):
+        for idx, p in enumerate(raw_pillars[:8]):
+            if not isinstance(p, dict) or not str(p.get("name") or "").strip():
+                continue
+            sp_list: List[str] = []
+            for raw_sp in (p.get("sub_pillar_ids") or []):
+                s = SUBPILLAR_ALIASES.get(str(raw_sp).strip(), str(raw_sp).strip())
+                if s in valid_set and s not in assigned:
+                    sp_list.append(s)
+                    assigned.add(s)
+            wm = str(p.get("watermark_type") or "").strip()
+            if wm not in watermarks:
+                wm = watermarks[idx % len(watermarks)]
+            col = clamp_brand_hex(str(p.get("color") or ""), palette[idx % len(palette)])
+            badge = str(p.get("scor_badge") or "").strip()
+            if not badge or "·" not in badge:
+                short_w = str(p["name"]).split(",")[0].split("&")[0].strip().upper()[:18]
+                badge = f"{len(cleaned) + 1:02d} · {short_w}"
+            else:
+                badge = f"{len(cleaned) + 1:02d} · {badge.split('·', 1)[1].strip()[:20].upper()}"
+
+            cleaned.append({
+                "pillar_id": re.sub(r"[^a-z0-9_]+", "_", str(p.get("pillar_id") or f"pillar_{len(cleaned)+1}").lower()).strip("_") or f"pillar_{len(cleaned)+1}",
+                "scor_badge": badge,
+                "name": str(p["name"]).strip()[:54],
+                "tagline": str(p.get("tagline") or f"{company_label} · {p['name']}").strip()[:84],
+                "subtitle": str(p.get("subtitle") or "").strip()[:175],
+                "color": col,
+                "watermark_type": wm,
+                "sub_pillar_ids": sp_list,
+            })
+
+    if len(cleaned) < 4:
+        return []
+
+    missing = [s for s in ALL_20_SUBPILLAR_IDS if s not in assigned]
+    for idx, m_sp in enumerate(missing):
+        # Assign missing sub-pillar to the custom pillar with the fewest sub-pillars so far
+        target_p = min(cleaned, key=lambda x: len(x["sub_pillar_ids"]))
+        target_p["sub_pillar_ids"].append(m_sp)
+
+    # Drop any empty pillar if >4 remain
+    non_empty = [c for c in cleaned if c["sub_pillar_ids"]]
+    if len(non_empty) >= 4:
+        for i, c in enumerate(non_empty):
+            tail = c["scor_badge"].split("·", 1)[1].strip() if "·" in c["scor_badge"] else "OPERATIONS"
+            c["scor_badge"] = f"{i + 1:02d} · {tail}"
+        return non_empty[:8]
+    return []
 
 
 def _stage1_corporate_and_career_dossier(
@@ -152,55 +246,68 @@ def _stage1_corporate_and_career_dossier(
     division_name: str,
     geography: str,
     user_notes: str,
+    wiki_hint: Dict[str, Any],
+    career_hints: List[str],
 ) -> Tuple[Dict[str, Any], List[GroundingCitation], str]:
-    """Uses Gemini 3.1 Pro + Google Search Grounding for deep operational & organizational pillar research."""
+    """Uses Gemini 3.1 Pro + Google Search Grounding for deep real-time company & pillar research."""
     target_desc = f"{company_name} ({division_name})" if division_name else company_name
-    prompt = f"""You are a Chief Supply Chain Strategist & Industry Operations Expert conducting an authoritative deep-dive into **{target_desc}** (Primary geography: {geography or 'Global'}).
-Additional user guidance: {user_notes or 'None'}
+    wiki_ctx = ""
+    if wiki_hint.get("extract"):
+        wiki_ctx = f"\nVerified Corporate Reference ({wiki_hint.get('canonical_title', company_name)}): {wiki_hint['extract'][:500]}"
+    if career_hints:
+        wiki_ctx += f"\nPublic Job Postings Spotted: {', '.join(career_hints[:6])}"
 
-Use Google Search to deeply investigate **{target_desc}** across annual reports, investor presentations, supply chain case studies, LinkedIn Jobs, Naukri, and official career portals:
-1. **How Their Operations Really Work**: Raw materials/feedstocks, upstream sourcing mechanisms (e.g. farmgate mandis, auctions, mines, tier-N suppliers), manufacturing processes (e.g. continuous kilns, smelters, batch formulation, high-speed lines, ICMLs), warehousing tiers (bonded godowns, silos, CFAs, mixing centers, cold rooms), primary/secondary transport (rail rakes, bulkers, container linehaul, urban vans), and downstream channels (Wholesale Dealers, General Trade, Modern Trade, Quick-Commerce, B2B OEMs).
-2. **Organization-Specific Operating Pillars (`4` to `8` Pillars)**:
-   - Do NOT force generic textbook SCOR names! Structure **`4` to `8` Operating Pillars** (`organization_pillars`) that reflect how **{target_desc}** actually organizes its supply chain!
-   - You MAY **combine** pillars (e.g. 5 pillars for a streamlined B2B industrial producer) OR **add specialized pillars** (e.g. 7 pillars when upstream Agri/Leaf/Mining Sourcing, Rail-Rake Primary Dispatch, or Trade Marketing & Distribution / RMC / Cold-Chain is a distinct executive pillar!).
-   - Partition ALL 20 functional `sub_pillar_ids` ({json.dumps(ALL_20_SUBPILLAR_IDS)}) cleanly across your `4` to `8` `organization_pillars` so every ID appears once.
+    prompt = f"""You are a Chief Supply Chain & Enterprise Operations Strategist conducting real-time research into **{target_desc}** (Geography: {geography or 'Global'}).
+Additional user context: {user_notes or 'None'}{wiki_ctx}
+
+Use Google Search to investigate **{target_desc}** in depth:
+1. **What {target_desc} Actually Does & How Its Operations Run**:
+   - Identify its true core business lines, physical or technology/infrastructure supply chain, procurement categories, manufacturing/staging/fulfillment nodes, distribution/delivery channels, and reverse/circular operations.
+   - Note: Even if **{target_desc}** is an IT/Cloud/Engineering Services enterprise (like Wipro, Infosys, TCS, Accenture), a hospital/pharma network, an airline, a bank/telecom, or a specialized manufacturer, analyze its REAL operational & supply chain backbone (e.g., global client data-center/edge hardware procurement, semiconductor/ODM/EMS partner operations, rack staging & integration hubs, forward stocking locations [FSL] for 4-hour SLA spares, global trade/IOR logistics, and RMA/ITAD e-waste circularity—OR if a specific consumer/industrial division was requested, model that exact division!).
+2. **Design `5` to `7` Bespoke Organization-Specific Operating Pillars (`organization_pillars`)**:
+   - NEVER output generic textbook SCOR names ("Planning & Strategy", "Sourcing & Procurement", "Manufacturing & Production")!
+   - Every single pillar `name`, `scor_badge`, `tagline`, and `subtitle` MUST be unmistakably specific to **{target_desc}**'s real business model, products/infrastructure, and terminology!
+   - Partition ALL 20 functional `sub_pillar_ids` ({json.dumps(ALL_20_SUBPILLAR_IDS)}) across your `5` to `7` `organization_pillars` so each of the 20 IDs appears once.
    - Choose `watermark_type` for each pillar from: `["demand_wave", "supplier_graph", "factory_arm", "warehouse_rack", "corridor_lifo", "conveyor_rack"]`.
-3. **Real Corporate Job Titles**: Authentic supply chain, procurement, manufacturing, warehouse, and distribution job titles posted by **{company_name}**.
-4. **Physical Relevance Profile**: Which physical/channel traits genuinely apply vs. do NOT apply (e.g. cold-chain, perishable food expiry, retail store planograms/BOPIS, D2C parcel e-commerce).
+3. **Real Corporate Website Domain & Job Titles**:
+   - Find the exact `official_domain` (e.g. `"wipro.com"`, `"asianpaints.com"`, `"nike.com"`, `"pfizer.com"`) so our logo engine can download their official brand mark.
+   - Extract `6` authentic supply chain, procurement, operations, planning, or logistics job titles used at **{company_name}**.
+4. **Physical & Channel Relevance Profile (`division_operational_profile`)**:
+   - Accurately flag which physical traits DO vs. DO NOT apply (e.g., refrigerated cold-chain perishables, grocery food expiry markdowns, brick-and-mortar retail store planograms, D2C parcel e-commerce) so inapplicable AI agents are cleanly hidden.
 
 Return ONLY a valid JSON object matching this exact structure (no markdown commentary outside JSON):
 {{
-  "canonical_company_name": "Official legal/brand name of the company",
-  "division_display_name": "Clean division or business unit name (empty string if enterprise-wide)",
-  "official_domain": "example.com",
-  "industry_sector": "Specific sector & division classification",
+  "canonical_company_name": "Official brand/legal name of the company",
+  "division_display_name": "Division name if specified, else concise primary business scope (or empty string)",
+  "official_domain": "companydomain.com",
+  "industry_sector": "Specific industry & operational classification",
   "brand_accent_hex": "#HEXCODE",
   "brand_secondary_hex": "#HEXCODE",
-  "executive_leader_title": "Authentic top supply chain / operations executive title for this company & division",
-  "executive_thesis": "2 crisp plain-English sentences describing how this company & division's end-to-end supply chain operates using authentic facilities, channels, and terminology.",
-  "flagship_facilities": "4-5 real factories, plants, ports, or distribution hubs separated by ' · '",
-  "erp_systems": "Real or industry-authentic ERP / planning / WMS / TMS systems separated by ' · '",
+  "executive_leader_title": "Authentic top Supply Chain / Operations / Procurement executive title at this company",
+  "executive_thesis": "2 crisp plain-English sentences describing how this company's end-to-end supply chain & operations work using real hubs, vendors, channels, and terminology.",
+  "flagship_facilities": "4-5 real plants, integration centers, hubs, campuses, or distribution regions separated by ' · '",
+  "erp_systems": "Real or industry-authentic ERP / sourcing / planning / WMS / TMS stack separated by ' · '",
   "terminology_glossary": [
-    "Term 1",
-    "Term 2",
-    "Term 3",
-    "Term 4"
+    "Term 1 — Plain-English meaning at this company",
+    "Term 2 — Plain-English meaning",
+    "Term 3 — Plain-English meaning",
+    "Term 4 — Plain-English meaning"
   ],
   "discovered_career_titles": [
-    "Real job title pattern 1",
-    "Real job title pattern 2",
-    "Real job title pattern 3",
-    "Real job title pattern 4",
-    "Real job title pattern 5",
-    "Real job title pattern 6"
+    "Authentic corporate job title 1",
+    "Authentic corporate job title 2",
+    "Authentic corporate job title 3",
+    "Authentic corporate job title 4",
+    "Authentic corporate job title 5",
+    "Authentic corporate job title 6"
   ],
   "organization_pillars": [
     {{
-      "pillar_id": "short_snake_slug",
-      "scor_badge": "01 · SHORT BADGE",
-      "name": "Company-Authentic Operating Pillar Name (<= 48 chars)",
-      "tagline": "Short scope tagline (<= 64 chars)",
-      "subtitle": "1 crisp sentence explaining how this pillar runs at this company (<= 150 chars)",
+      "pillar_id": "bespoke_snake_slug",
+      "scor_badge": "01 · SHORT DOMAIN TAG",
+      "name": "Company-Specific Operating Pillar Name (<= 48 chars)",
+      "tagline": "Specific scope tagline (<= 72 chars)",
+      "subtitle": "1 crisp sentence explaining what this pillar runs at this company (<= 155 chars)",
       "color": "#2563eb",
       "watermark_type": "demand_wave",
       "sub_pillar_ids": ["demand_forecasting", "sop_ibp", "portfolio_sku"]
@@ -211,48 +318,52 @@ Return ONLY a valid JSON object matching this exact structure (no markdown comme
     "has_food_expiry_markdowns": false,
     "has_retail_stores_bopis_planograms": false,
     "has_d2c_parcel_ecommerce": false,
-    "channel_model_summary": "Brief explanation of physical product & distribution channel model"
+    "channel_model_summary": "1 sentence describing physical goods/assets & fulfillment channels"
   }},
   "process_journeys": {{
-    "f2f": {{"title": "Company-authentic Forecast-to-Fulfill name", "subtitle": "1-sentence description"}},
-    "o2d": {{"title": "Company-authentic Order-to-Delivery name", "subtitle": "1-sentence description"}},
-    "s2p": {{"title": "Company-authentic Source-to-Pay name", "subtitle": "1-sentence description"}},
-    "p2r": {{"title": "Company-authentic Returns / Circularity name", "subtitle": "1-sentence description"}}
+    "f2f": {{"title": "Company-specific Forecast-to-Fulfill workflow title", "subtitle": "1-sentence description"}},
+    "o2d": {{"title": "Company-specific Order-to-Delivery workflow title", "subtitle": "1-sentence description"}},
+    "s2p": {{"title": "Company-specific Source-to-Pay workflow title", "subtitle": "1-sentence description"}},
+    "p2r": {{"title": "Company-specific Returns / Asset Circularity workflow title", "subtitle": "1-sentence description"}}
   }}
 }}"""
+
     raw, citations, used_model = _call_gemini_with_fallback(
         DEEP_RESEARCH_MODELS,
         prompt=prompt,
         use_google_search=True,
         json_mode=False,
-        max_tokens=6144,
+        max_tokens=8192,
+        fast_thinking=False,
     )
     parsed = _extract_json_obj(raw)
     if not parsed.get("canonical_company_name"):
-        raise RuntimeError("Stage 1 returned incomplete corporate dossier JSON")
+        raise RuntimeError(f"Stage 1 returned incomplete corporate dossier JSON (len={len(raw)})")
     return parsed, citations, used_model
 
 
-def _stage2_synthesize_single_pillar(
-    dept_id: str,
-    dept_obj: Dict[str, Any],
+def _stage2_synthesize_pillar_group(
+    pillar_idx: int,
+    pillar_meta: Dict[str, Any],
+    assigned_subpillars: List[Dict[str, Any]],
     personas_cat: Dict[str, Any],
     agents_cat: Dict[str, Any],
     dossier: Dict[str, Any],
     geography: str,
     user_notes: str,
 ) -> Dict[str, Any]:
-    """Synthesizes Sub-Pillar process names, Persona job titles/toils, and Agent relevance for 1 Pillar."""
+    """Tailors Sub-Pillars, Corporate Job Personas, and Agent Relevance for 1 custom Organization Pillar."""
     co = dossier.get("canonical_company_name", "Enterprise")
     div = dossier.get("division_display_name", "")
     target_label = f"{co} — {div}" if div else co
 
-    pillar_payload = {
-        "dept_id": dept_id,
-        "canonical_pillar_name": dept_obj["name"],
+    group_payload = {
+        "pillar_id": pillar_meta["pillar_id"],
+        "pillar_name": pillar_meta["name"],
+        "pillar_subtitle": pillar_meta.get("subtitle", ""),
         "sub_pillars": [],
     }
-    for sp in dept_obj.get("subPillars", []):
+    for sp in assigned_subpillars:
         sp_entry = {
             "sub_pillar_id": sp["id"],
             "canonical_sub_pillar_name": sp["name"],
@@ -270,50 +381,62 @@ def _stage2_synthesize_single_pillar(
                 "canonical_agent_name": a_meta.get("name", it.get("agentName", aid)),
                 "agent_function": it.get("desc", ""),
             })
-        pillar_payload["sub_pillars"].append(sp_entry)
+        group_payload["sub_pillars"].append(sp_entry)
 
-    prompt = f"""You are tailoring **Pillar {dept_obj['vNum']}: {dept_obj['name']}** of an Enterprise Supply Chain Portal specifically for **{target_label}** ({geography or 'Global'}).
+    compact_dossier = {
+        "company": target_label,
+        "industry_sector": dossier.get("industry_sector"),
+        "executive_thesis": dossier.get("executive_thesis"),
+        "flagship_facilities": dossier.get("flagship_facilities"),
+        "erp_systems": dossier.get("erp_systems"),
+        "terminology_glossary": dossier.get("terminology_glossary"),
+        "discovered_career_titles": dossier.get("discovered_career_titles"),
+        "division_operational_profile": dossier.get("division_operational_profile"),
+    }
 
-CORPORATE & CAREER RESEARCH DOSSIER:
-{json.dumps(dossier, ensure_ascii=False, indent=2)}
+    prompt = f"""You are tailoring **Operating Pillar {pillar_idx + 1} ({pillar_meta['name']})** of a bespoke Supply Chain & Operations Portal for **{target_label}** ({geography or 'Global'}).
+
+COMPANY RESEARCH DOSSIER:
+{json.dumps(compact_dossier, ensure_ascii=False, indent=2)}
 
 USER GUIDANCE: {user_notes or 'None'}
 
-CANONICAL PILLAR STRUCTURE TO ADAPT:
-{json.dumps(pillar_payload, ensure_ascii=False, indent=2)}
+ASSIGNED SUB-PILLARS, PERSONAS & CORE AI AGENTS TO ADAPT:
+{json.dumps(group_payload, ensure_ascii=False, indent=2)}
 
-STRICT INSTRUCTIONS:
-1. **Sub-Pillar Process Names (`custom_name`)**: Rename each sub-pillar (`<= 42 chars`) into the authentic operational process terminology used inside **{target_label}** (for example, if ITC Tobacco calls distribution 'TM&D & Wholesale Dealer Sync' or leaf sourcing 'ILTD Leaf & Packaging Sourcing', use that!). Keep it crisp, plain-English, and executive-ready.
-2. **Persona Job Titles (`title`)**: Replace generic SCOR persona names with authentic organizational job titles used at **{target_label}** (reflecting the hierarchy/titles in `discovered_career_titles`, e.g., 'Divisional Manager — TM&D Planning', 'Head of Clinker Grinding & Dispatch', 'Category Procurement Manager — Packaging & Leaf'). Do NOT prepend the company name to every job title—write it like a real corporate org chart title!
-3. **Persona Toil & Impact (`manual_toil`, `agentic_impact`, `summary`)**: Write 1 clear, grounded plain-English sentence each (`<= 190 chars`) using **{target_label}**'s real products, plants, channels, and ERP systems. Spell out domain abbreviations on first use if obscure.
-4. **Intelligent Agent Relevance Filtering & Optional Domain Agent Naming (`is_relevant`, `custom_agent_name`)**:
-   - Set `"is_relevant": false` ONLY when an agent's physical domain genuinely does NOT apply to **{target_label}** (refer to `division_operational_profile`! E.g., hide `cold_chain_auditor` or `food_waste_esg_copilot` for non-refrigerated tobacco, cement, metals, automotive, or industrial machinery; hide `atp_order_promising_agent` / `keep_it_routing_advisor` / `planogram_merchandising_vision_auditor` if the division is pure B2B bulk industrial with zero retail stores/e-commerce; keep at least 5 of the 10 agents in this pillar `true`).
-   - For relevant agents (`is_relevant: true`), optionally provide `"custom_agent_name"` (`2–4 words`, `<= 44 chars`) ONLY when **{target_label}**'s domain terminology genuinely makes the agent clearer and more resonant for executives (e.g., `'TM&D WD Demand Sensing'`, `'Rake & Clinker Load Optimizer'`, `'Bonded Depot Case Slotting'`). If the canonical agent name is already crisp and universal, leave `"custom_agent_name": ""`!
-   - For relevant agents, also write `"division_context"`: 1 crisp sentence (`<= 160 chars`) explaining how that agent creates value for **{target_label}**.
+CRITICAL INSTRUCTIONS:
+1. **Every Sub-Pillar Must Be Renamed (`sub_pillars`)**:
+   - Rewrite EVERY `sub_pillar_id` into authentic process terminology (`<= 42 chars`) used inside **{target_label}** (never leave generic textbook names if **{target_label}** has specific domain operations!).
+2. **Every Persona Must Become a Real Corporate Job Role at {co} (`personas`)**:
+   - Rewrite EVERY `persona_id`'s `title` into an authentic corporate org-chart job title that exists at **{co}** (aligned with `discovered_career_titles`, e.g., `'Global Head — Server & ODM Strategic Sourcing'`, `'Regional Manager — Tint & Depot Replenishment'`, `'Director — Cold-Chain GDP Logistics'`). Do NOT leave the canonical SCOR persona title unchanged, and do NOT just prefix `{co}` in front of a generic title!
+   - Write `summary`, `manual_toil`, and `agentic_impact` (`1 crisp plain-English sentence each, <= 185 chars`) referencing **{target_label}**'s real workflows, assets, facilities, and ERP systems.
+3. **Reuse & Filter the Fixed Pool of Core AI Agents (`agents`)**:
+   - Do NOT invent new agent IDs—evaluate each provided `agent_id`:
+   - Set `"is_relevant": false` when an agent's physical domain genuinely does NOT apply to **{target_label}** according to `division_operational_profile` (for example, set `false` on `cold_chain_auditor` or `food_waste_esg_copilot` for non-food/non-cold-chain companies like IT/tech, cement, paints, automotive, metals, apparel, or industrial equipment; set `false` on grocery/store-aisle agents like `planogram_merchandising_vision_auditor` or `aisle_aligned_pallet_agent` for B2B enterprises without retail stores; keep at least 60% of agents in this pillar `true`).
+   - Keep `"custom_agent_name": ""` when the canonical agent name already works cleanly, OR provide a crisp `2–4 word` domain agent name (`<= 42 chars`) when domain wording makes it much clearer for **{co}** leaders.
+   - Write `"division_context"` (`1 sentence, <= 155 chars`) explaining how this agent helps **{target_label}**.
 
-Return ONLY valid JSON with this exact structure:
+Return ONLY valid JSON matching this exact structure:
 {{
-  "pillar_tagline": "Short tailored pillar tagline (<= 48 chars)",
-  "pillar_subtitle": "1-sentence tailored pillar subtitle (<= 140 chars)",
   "sub_pillars": {{
-    "<sub_pillar_id>": "Custom Process Name"
+    "<sub_pillar_id>": "Company-Specific Sub-Pillar Name"
   }},
   "personas": {{
     "<persona_id>": {{
       "title": "Authentic Corporate Job Title",
-      "role": "Short 5-9 word operational scope",
-      "summary": "1-2 sentence mandate at {target_label}",
-      "manual_toil": "1 sentence manual pain point today",
-      "agentic_impact": "1 sentence outcome with Gemini AI",
-      "grounding_source": "Short note e.g. 'Aligned to {co} Supply Chain / Operations career roles'"
+      "role": "Concise 5-9 word operational mandate",
+      "summary": "1-sentence role mission at {target_label}",
+      "manual_toil": "1-sentence manual bottleneck today at {co}",
+      "agentic_impact": "1-sentence transformation with this AI agent",
+      "grounding_source": "Grounded in {co} Supply Chain & Operations roles"
     }}
   }},
   "agents": {{
     "<agent_id>": {{
       "is_relevant": true,
-      "custom_agent_name": "Optional 2-4 word tailored agent name or empty string",
-      "division_context": "1 sentence explaining how this agent serves {target_label}",
-      "hidden_reason": "Empty if relevant, else short reason hidden for division fit"
+      "custom_agent_name": "",
+      "division_context": "1-sentence operational value for {target_label}",
+      "hidden_reason": ""
     }}
   }}
 }}"""
@@ -323,7 +446,8 @@ Return ONLY valid JSON with this exact structure:
         prompt=prompt,
         use_google_search=False,
         json_mode=True,
-        max_tokens=6144,
+        max_tokens=8192,
+        fast_thinking=True,
     )
     return _extract_json_obj(raw)
 
@@ -336,11 +460,19 @@ def synthesize_enterprise_twin_live(
     custom_logo_input: str = "",
     progress_cb: ProgressCallback = None,
 ) -> TwinOverlaySpec:
-    """Runs the full Search-Grounded Multi-Model ADK pipeline and returns a validated `TwinOverlaySpec`."""
+    """Executes real-time web-researched company portal synthesis (`Gemini 3.1 Pro + GoogleSearch` + `Gemini 3 Flash`)."""
     cat = load_canonical_catalog()
     depts = cat["departments"]
     personas_cat = cat["personas"]
     agents_cat = cat["agents"]
+
+    # Map canonical sub-pillars & parent depts
+    sp_lookup: Dict[str, Dict[str, Any]] = {}
+    sp_parent_dept: Dict[str, str] = {}
+    for d_id, d_obj in depts.items():
+        for sp in d_obj.get("subPillars", []):
+            sp_lookup[sp["id"]] = sp
+            sp_parent_dept[sp["id"]] = d_id
 
     twin_slug = make_twin_slug(company_name, division_name)
     target_title = f"{company_name} ({division_name})" if division_name else company_name
@@ -349,8 +481,29 @@ def synthesize_enterprise_twin_live(
         progress_cb,
         10,
         "corporate_research",
-        f"Researching {target_title} supply chain & career ecosystem...",
-        "Querying Google Search Grounding (LinkedIn, Naukri, corporate career portals & annual filings) on Gemini 3.1 Pro",
+        f"Researching {target_title} operations, supply chain & job roles...",
+        "Running live Google Search Grounding + Wikipedia & public career discovery on Gemini 3.1 Pro",
+    )
+
+    # Fetch lightweight Wikipedia + public job hints in parallel while preparing Stage 1
+    with ThreadPoolExecutor(max_workers=2) as pre_pool:
+        fut_wp = pre_pool.submit(fetch_wikipedia_company_summary, company_name, division_name)
+        fut_jobs = pre_pool.submit(search_public_career_titles, company_name, division_name)
+        try:
+            wiki_hint = fut_wp.result(timeout=6.0)
+        except Exception:
+            wiki_hint = {}
+        try:
+            career_hints = fut_jobs.result(timeout=6.0)
+        except Exception:
+            career_hints = []
+
+    _emit(
+        progress_cb,
+        20,
+        "corporate_research",
+        f"Synthesizing bespoke Operating Pillars & career dossier for {target_title}...",
+        "Analyzing annual filings, facilities, ERP landscape & real organizational structure via Google Search",
     )
 
     dossier, citations, pro_model = _stage1_corporate_and_career_dossier(
@@ -358,23 +511,53 @@ def synthesize_enterprise_twin_live(
         division_name=division_name,
         geography=geography,
         user_notes=user_notes,
+        wiki_hint=wiki_hint,
+        career_hints=career_hints,
     )
 
-    canonical_co = dossier.get("canonical_company_name") or company_name
-    clean_div = dossier.get("division_display_name") if division_name else (dossier.get("division_display_name") or "")
-    if division_name and not clean_div:
-        clean_div = division_name
+    if wiki_hint.get("page_url") and not any(c.url == wiki_hint["page_url"] for c in citations):
+        citations.insert(
+            0,
+            GroundingCitation(
+                title=f"{wiki_hint.get('canonical_title', company_name)} — Corporate Profile",
+                url=wiki_hint["page_url"],
+            ),
+        )
 
-    official_domain = dossier.get("official_domain", "")
+    canonical_co = dossier.get("canonical_company_name") or wiki_hint.get("canonical_title") or company_name
+    clean_div = division_name.strip() or (dossier.get("division_display_name") or "").strip()
+    disp_label = f"{canonical_co} — {clean_div}" if clean_div else canonical_co
+
+    official_domain = (dossier.get("official_domain") or "").strip().lower()
+    official_domain = re.sub(r"^https?://(?:www\.)?", "", official_domain).split("/")[0].strip()
+
     accent_hex = clamp_brand_hex(dossier.get("brand_accent_hex", "#38bdf8"), "#38bdf8")
     sec_hex = dossier.get("brand_secondary_hex") or "#1e3a8a"
 
+    # Normalize custom 4-8 Organization Pillars
+    org_pillars = _normalize_org_pillars_partition(dossier.get("organization_pillars"), disp_label)
+    if not org_pillars:
+        # Build 6 company-specific pillars from canonical groups if LLM returned malformed array
+        org_pillars = [
+            {
+                "pillar_id": d_id,
+                "scor_badge": d_obj.get("scorBadge", f"{idx+1:02d} · PILLAR"),
+                "name": f"{canonical_co} {d_obj['name']}",
+                "tagline": f"{disp_label} · {d_obj.get('tagline', '')}",
+                "subtitle": d_obj.get("subtitle", ""),
+                "color": d_obj.get("color", "#2563eb"),
+                "watermark_type": "demand_wave",
+                "sub_pillar_ids": [sp["id"] for sp in d_obj.get("subPillars", [])],
+            }
+            for idx, (d_id, d_obj) in enumerate(depts.items())
+        ]
+
     _emit(
         progress_cb,
-        32,
+        38,
         "logo_framing",
-        f"Downloading & optically framing official {canonical_co} brand mark...",
-        f"Domain: {official_domain or 'Wikimedia / Wikidata P154'} · Discovered {len(dossier.get('discovered_career_titles') or [])} career role patterns",
+        f"Downloading & optically framing official {canonical_co} logo ({official_domain or 'Wikimedia'})...",
+        f"Designed {len(org_pillars)} bespoke Operating Pillars for {disp_label}",
     )
 
     logo_spec = resolve_company_logo(
@@ -384,105 +567,131 @@ def synthesize_enterprise_twin_live(
         brand_accent=accent_hex,
         brand_secondary=sec_hex,
     )
+    if logo_spec.source_url and not any(c.url == logo_spec.source_url for c in citations):
+        citations.append(
+            GroundingCitation(title=f"{canonical_co} Official Brand Mark", url=logo_spec.source_url)
+        )
 
+    n_pillars = len(org_pillars)
     _emit(
         progress_cb,
         48,
         "pillar_synthesis",
-        f"Tailoring 6 Operating Pillars, 20 Process Names & 60 Job Titles for {canonical_co}...",
-        "Running 6 parallel SCOR Pillar specialists to adapt roles, terminology & filter irrelevant agents",
+        f"Tailoring {n_pillars} Operating Pillars, 20 Sub-Pillars & 60 Job Roles for {canonical_co}...",
+        f"Running {n_pillars} parallel Gemini specialists to map corporate job titles & filter 60 AI agents",
     )
 
-    pillar_results: Dict[str, Dict[str, Any]] = {}
-    dept_items = list(depts.items())
+    merged_sp_map: Dict[str, str] = {}
+    merged_personas_map: Dict[str, Dict[str, Any]] = {}
+    merged_agents_map: Dict[str, Dict[str, Any]] = {}
     completed_count = 0
 
-    with ThreadPoolExecutor(max_workers=6) as pool:
-        future_to_dept = {
-            pool.submit(
-                _stage2_synthesize_single_pillar,
-                d_id,
-                d_obj,
+    with ThreadPoolExecutor(max_workers=min(8, n_pillars)) as pool:
+        future_to_meta = {}
+        for idx, p_meta in enumerate(org_pillars):
+            assigned_sps = [sp_lookup[sid] for sid in p_meta["sub_pillar_ids"] if sid in sp_lookup]
+            fut = pool.submit(
+                _stage2_synthesize_pillar_group,
+                idx,
+                p_meta,
+                assigned_sps,
                 personas_cat,
                 agents_cat,
                 dossier,
                 geography,
                 user_notes,
-            ): (d_id, d_obj["name"])
-            for d_id, d_obj in dept_items
-        }
-        for fut in as_completed(future_to_dept):
-            d_id, d_name = future_to_dept[fut]
+            )
+            future_to_meta[fut] = (idx, p_meta["name"])
+
+        for fut in as_completed(future_to_meta):
+            _, p_name = future_to_meta[fut]
             completed_count += 1
             try:
-                pillar_results[d_id] = fut.result()
+                pres = fut.result() or {}
+                if isinstance(pres.get("sub_pillars"), dict):
+                    merged_sp_map.update(pres["sub_pillars"])
+                if isinstance(pres.get("personas"), dict):
+                    merged_personas_map.update(pres["personas"])
+                if isinstance(pres.get("agents"), dict):
+                    merged_agents_map.update(pres["agents"])
             except Exception as e:
-                print(f"[ResearchEngine] Pillar {d_id} synthesis warning: {e}")
-                pillar_results[d_id] = {}
+                print(f"[ResearchEngine] Custom pillar '{p_name}' synthesis warning: {e}")
+
             _emit(
                 progress_cb,
-                48 + int((completed_count / 6.0) * 38),
+                48 + int((completed_count / float(max(1, n_pillars))) * 42),
                 "pillar_synthesis",
-                f"Synthesized Pillar {completed_count}/6: {d_name}",
-                f"Mapped corporate job titles, process labels & division agent relevance for {d_name}",
+                f"Synthesized Pillar {completed_count}/{n_pillars}: {p_name}",
+                f"Mapped {canonical_co} job titles, process workflows & smart agent relevance",
             )
 
-    # Assemble TwinOverlaySpec
+    # Assemble TwinOverlaySpec across all 20 sub-pillars & 60 personas/agents
     pillar_overrides: Dict[str, PillarOverrideSpec] = {}
     sub_pillar_overrides: Dict[str, SubPillarOverrideSpec] = {}
     persona_overrides: Dict[str, PersonaOverrideSpec] = {}
     agent_relevance: Dict[str, AgentRelevanceSpec] = {}
 
-    for d_id, d_obj in dept_items:
-        pres = pillar_results.get(d_id) or {}
+    for d_id, d_obj in depts.items():
         pillar_overrides[d_id] = PillarOverrideSpec(
             dept_id=d_id,
             custom_name=d_obj["name"],
-            custom_tagline=pres.get("pillar_tagline") or d_obj.get("tagline", ""),
-            custom_subtitle=pres.get("pillar_subtitle") or d_obj.get("subtitle", ""),
+            custom_tagline=f"{disp_label} · {d_obj.get('tagline', '')}",
+            custom_subtitle=d_obj.get("subtitle", ""),
         )
-        sp_map = pres.get("sub_pillars") or {}
-        p_map = pres.get("personas") or {}
-        a_map = pres.get("agents") or {}
-
         for sp in d_obj.get("subPillars", []):
             sp_id = sp["id"]
+            custom_sp_name = str(merged_sp_map.get(sp_id) or sp["name"]).strip()
             sub_pillar_overrides[sp_id] = SubPillarOverrideSpec(
                 sub_pillar_id=sp_id,
                 dept_id=d_id,
                 canonical_name=sp["name"],
-                custom_name=sp_map.get(sp_id) or sp["name"],
+                custom_name=custom_sp_name,
             )
             for it in sp.get("items", []):
                 pid = it["personaId"]
                 aid = it["agentId"]
                 p_base = personas_cat.get(pid, {})
                 dil0 = (p_base.get("dayInLife") or [{}])[0]
-                po_in = p_map.get(pid) or {}
+                po_in = merged_personas_map.get(pid) or {}
                 persona_overrides[pid] = PersonaOverrideSpec(
                     persona_id=pid,
                     dept_id=d_id,
                     sub_pillar_id=sp_id,
                     canonical_name=p_base.get("name", pid),
-                    title=po_in.get("title") or p_base.get("name", pid),
-                    role=po_in.get("role") or p_base.get("role", sp["name"]),
-                    summary=po_in.get("summary") or p_base.get("summary", ""),
-                    manual_toil=po_in.get("manual_toil") or dil0.get("before", ""),
-                    agentic_impact=po_in.get("agentic_impact") or dil0.get("after", ""),
-                    grounding_source=po_in.get("grounding_source") or f"Grounded in {canonical_co} career & ops roles",
+                    title=str(po_in.get("title") or f"Lead — {custom_sp_name}").strip(),
+                    role=str(po_in.get("role") or f"{custom_sp_name} · {disp_label}").strip(),
+                    summary=str(po_in.get("summary") or p_base.get("summary", "")).strip(),
+                    manual_toil=str(po_in.get("manual_toil") or dil0.get("before", "")).strip(),
+                    agentic_impact=str(po_in.get("agentic_impact") or dil0.get("after", "")).strip(),
+                    grounding_source=str(po_in.get("grounding_source") or f"Grounded in {canonical_co} career & ops roles").strip(),
                 )
 
-                ao_in = a_map.get(aid) or {}
+                ao_in = merged_agents_map.get(aid) or {}
                 agent_relevance[aid] = AgentRelevanceSpec(
                     agent_id=aid,
                     dept_id=d_id,
                     sub_pillar_id=sp_id,
                     canonical_name=agents_cat.get(aid, {}).get("name", aid),
-                    custom_agent_name=ao_in.get("custom_agent_name") or "",
+                    custom_agent_name=str(ao_in.get("custom_agent_name") or "").strip(),
                     is_relevant=bool(ao_in.get("is_relevant", True)),
-                    division_context=ao_in.get("division_context") or "",
-                    hidden_reason=ao_in.get("hidden_reason") or "",
+                    division_context=str(ao_in.get("division_context") or f"Supports {custom_sp_name} across {disp_label}.").strip(),
+                    hidden_reason=str(ao_in.get("hidden_reason") or "").strip(),
                 )
+
+    # Enforce physical & channel profile guardrails from Stage 1 research
+    op_prof = dossier.get("division_operational_profile") or {}
+    if isinstance(op_prof, dict):
+        if op_prof.get("has_cold_chain_perishables") is False and "cold_chain_auditor" in agent_relevance:
+            agent_relevance["cold_chain_auditor"].is_relevant = False
+            agent_relevance["cold_chain_auditor"].hidden_reason = "Filtered for operational fit: no refrigerated cold-chain perishables."
+        if op_prof.get("has_food_expiry_markdowns") is False and "food_waste_esg_copilot" in agent_relevance:
+            agent_relevance["food_waste_esg_copilot"].is_relevant = False
+            agent_relevance["food_waste_esg_copilot"].hidden_reason = "Filtered for operational fit: non-food product & operations portfolio."
+        if op_prof.get("has_retail_stores_bopis_planograms") is False and op_prof.get("has_d2c_parcel_ecommerce") is False:
+            for retail_aid in ("planogram_merchandising_vision_auditor", "keep_it_routing_advisor"):
+                if retail_aid in agent_relevance:
+                    agent_relevance[retail_aid].is_relevant = False
+                    agent_relevance[retail_aid].hidden_reason = "Filtered for operational fit: B2B / non-retail store channel model."
 
     proc_overrides: Dict[str, ProcessJourneyOverrideSpec] = {}
     pj_in = dossier.get("process_journeys") or {}
@@ -490,8 +699,8 @@ def synthesize_enterprise_twin_live(
         if vc_id in pj_in and isinstance(pj_in[vc_id], dict) and pj_in[vc_id].get("title"):
             proc_overrides[vc_id] = ProcessJourneyOverrideSpec(
                 vc_id=vc_id,
-                custom_title=pj_in[vc_id]["title"],
-                custom_subtitle=pj_in[vc_id].get("subtitle", ""),
+                custom_title=str(pj_in[vc_id]["title"]).strip(),
+                custom_subtitle=str(pj_in[vc_id].get("subtitle") or "").strip(),
             )
 
     brand_spec = CompanyBrandSpec(
@@ -500,43 +709,44 @@ def synthesize_enterprise_twin_live(
         division_name=clean_div,
         twin_slug=twin_slug,
         official_domain=official_domain,
-        industry_sector=dossier.get("industry_sector") or "Enterprise Supply Chain",
+        industry_sector=dossier.get("industry_sector") or "Enterprise Supply Chain & Operations",
         geography=geography or "Global",
         brand_accent=accent_hex,
         brand_secondary=sec_hex,
-        executive_title=dossier.get("executive_leader_title") or f"Chief Supply Chain Officer, {canonical_co}",
+        executive_title=dossier.get("executive_leader_title") or f"Chief Supply Chain & Operations Officer, {canonical_co}",
         executive_thesis=dossier.get("executive_thesis") or "",
         flagship_sites=dossier.get("flagship_facilities") or "",
-        erp_systems=dossier.get("erp_systems") or "SAP S/4HANA · SAP IBP · Enterprise WMS & TMS",
+        erp_systems=dossier.get("erp_systems") or "SAP S/4HANA · Cloud Supply Planning · Enterprise WMS & TMS",
         logo=logo_spec,
     )
 
     _emit(
         progress_cb,
-        92,
+        94,
         "integrity_validation",
-        "Validating zero-breakage DOM schema & saving to Enterprise Twin Database...",
-        "Checking WCAG brand contrast, 6-Pillar balance, persona links & persisting to BigQuery + GCS",
+        f"Validating {n_pillars}-Pillar DOM integrity & persisting {disp_label} portal...",
+        "Checking WCAG contrast, sub-pillar partition, corporate role links & saving to database",
     )
 
-    custom_pillars: List[CustomPillarSpec] = []
-    org_pillars_in = dossier.get("organization_pillars") or []
-    if isinstance(org_pillars_in, list):
-        for idx, op in enumerate(org_pillars_in[:8]):
-            if isinstance(op, dict) and op.get("name"):
-                custom_pillars.append(
-                    CustomPillarSpec(
-                        pillar_id=str(op.get("pillar_id") or f"pillar_{idx + 1}"),
-                        v_num=f"{idx + 1:02d}",
-                        scor_badge=str(op.get("scor_badge") or f"{idx + 1:02d} · PILLAR"),
-                        name=str(op.get("name")),
-                        tagline=str(op.get("tagline") or ""),
-                        subtitle=str(op.get("subtitle") or ""),
-                        color=str(op.get("color") or ""),
-                        watermark_type=str(op.get("watermark_type") or "demand_wave"),
-                        sub_pillar_ids=[str(s) for s in (op.get("sub_pillar_ids") or [])],
-                    )
-                )
+    custom_pillars: List[CustomPillarSpec] = [
+        CustomPillarSpec(
+            pillar_id=op["pillar_id"],
+            v_num=f"{idx + 1:02d}",
+            scor_badge=op["scor_badge"],
+            name=op["name"],
+            tagline=op["tagline"],
+            subtitle=op["subtitle"],
+            color=op["color"],
+            watermark_type=op["watermark_type"],
+            sub_pillar_ids=op["sub_pillar_ids"],
+        )
+        for idx, op in enumerate(org_pillars)
+    ]
+
+    discovered_titles = list(dossier.get("discovered_career_titles") or [])
+    for ch in career_hints:
+        if ch not in discovered_titles:
+            discovered_titles.append(ch)
 
     spec = TwinOverlaySpec(
         twin_slug=twin_slug,
@@ -550,9 +760,9 @@ def synthesize_enterprise_twin_live(
         persona_overrides=persona_overrides,
         agent_relevance=agent_relevance,
         process_overrides=proc_overrides,
-        grounding_citations=citations,
-        career_title_examples=(dossier.get("discovered_career_titles") or [])[:8],
+        grounding_citations=citations[:12],
+        career_title_examples=discovered_titles[:8],
         terminology_highlights=(dossier.get("terminology_glossary") or [])[:6],
-        generation_model=f"{pro_model} + Gemini 3.8 Flash (Google Search Grounded)",
+        generation_model=f"{pro_model} + Gemini 3 Flash (Google Search Grounded)",
     )
     return validate_and_normalize_overlay(spec)

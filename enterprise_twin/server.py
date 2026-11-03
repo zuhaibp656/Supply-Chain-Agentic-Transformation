@@ -339,10 +339,12 @@ async def api_generate_twin_stream(req: GenerateTwinRequest) -> StreamingRespons
                     "source": res["source"],
                     "twin_slug": ov["twin_slug"],
                     "display_label": ov["display_label"],
+                    "active_pillars_count": ov.get("active_pillars_count", 6),
                     "active_agents_count": ov["active_agents_count"],
                     "hidden_agents_count": len(ov.get("hidden_agent_ids") or []),
                     "redirect_url": f"/t/{ov['twin_slug']}",
-                    "message": f"Portal ready: {ov['display_label']} ({ov['active_agents_count']}/60 relevant agents)",
+                    "overlay": ov,
+                    "message": f"Portal ready: {ov['display_label']} ({ov.get('active_pillars_count', 6)} Pillars · {ov['active_agents_count']}/60 Agents)",
                 },
             )
         except Exception as exc:
@@ -354,7 +356,7 @@ async def api_generate_twin_stream(req: GenerateTwinRequest) -> StreamingRespons
     threading.Thread(target=worker, daemon=True).start()
 
     async def event_generator() -> AsyncGenerator[str, None]:
-        yield f"data: {json.dumps({'pct': 5, 'stage': 'accepted', 'message': f'Starting Enterprise Twin Studio for {req.company_name}...'})}\n\n"
+        yield f"data: {json.dumps({'pct': 5, 'stage': 'accepted', 'message': f'Starting live research & synthesis for {req.company_name}...'})}\n\n"
         while True:
             ev = await queue.get()
             yield f"data: {json.dumps(ev, ensure_ascii=False)}\n\n"
@@ -370,6 +372,18 @@ async def api_generate_twin_stream(req: GenerateTwinRequest) -> StreamingRespons
             "X-Accel-Buffering": "no",
         },
     )
+
+
+@app.get("/{asset_path:path}")
+async def serve_safe_static_asset(asset_path: str) -> FileResponse:
+    """Serves static HTML/CSS/JS/media files from PROJECT_ROOT while protecting dotfiles and source secrets."""
+    cleaned = asset_path.strip("/")
+    if not cleaned or cleaned.startswith(".") or "/." in cleaned or cleaned.startswith("enterprise_twin"):
+        raise HTTPException(status_code=404, detail="Not found")
+    candidate = (PROJECT_ROOT / cleaned).resolve()
+    if not str(candidate).startswith(str(PROJECT_ROOT.resolve())) or not candidate.is_file():
+        raise HTTPException(status_code=404, detail="Asset not found")
+    return FileResponse(str(candidate))
 
 
 def run_server(port: int = 8080, host: str = "0.0.0.0") -> None:

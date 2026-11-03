@@ -1,9 +1,11 @@
-"""Unified Google Cloud Auth Helper for Cloud Run, Vertex AI Agent Engine & Local CloudTop.
+"""Unified Google GenAI & Cloud Auth Helper for Cloud Run, Vertex AI & Local Studio.
 
-- In Cloud Run or Vertex AI Agent Engine containers: uses native default service account credentials.
-- On local CloudTop workstations: disables mTLS client-cert proxy (`GOOGLE_API_USE_CLIENT_CERTIFICATE=false`)
-  and loads Argolis credentials (`admin@zuhaibp.altostrat.com`) from `~/.config/gcloud/argolis_admin_adc.json`
-  (syncing fresh refresh tokens from `~/.config/gcloud/credentials.db` while ignoring VSCode's 681255809395 client).
+Supports seamless multi-mode authentication so live Gemini + Google Search Grounding ALWAYS runs:
+  1. In Cloud Run (`K_SERVICE`): uses native IAM Service Account on Vertex AI (`vertexai=True`),
+     with automatic fallback to `GEMINI_API_KEY` / `GOOGLE_API_KEY` if configured.
+  2. On local developer workstations: disables mTLS smartcard proxy (`GOOGLE_API_USE_CLIENT_CERTIFICATE=false`),
+     auto-loads `GEMINI_API_KEY` / `GOOGLE_API_KEY` from environment or local `.env` files (`vertexai=False`),
+     and also supports refreshed Vertex AI OAuth credentials (`argolis_admin_adc.json`).
 """
 
 from __future__ import annotations
@@ -12,7 +14,7 @@ import json
 import os
 from pathlib import Path
 import sqlite3
-from typing import Any, Optional, Tuple
+from typing import Any, List, Optional, Tuple
 
 DEFAULT_PROJECT = os.environ.get("GOOGLE_CLOUD_PROJECT", "zuhaibp-ai")
 DEFAULT_LOCATION = os.environ.get("GOOGLE_CLOUD_LOCATION", "us-central1")
@@ -21,6 +23,7 @@ DEFAULT_BQ_DATASET = os.environ.get("SC_TWIN_BQ_DATASET", "supply_chain_twin")
 DEFAULT_BQ_TABLE = os.environ.get("SC_TWIN_BQ_TABLE", "enterprise_portals")
 
 GCLOUD_DIR = Path.home() / ".config" / "gcloud"
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 
 
 def is_cloud_runtime() -> bool:
@@ -28,11 +31,53 @@ def is_cloud_runtime() -> bool:
     return bool(os.environ.get("K_SERVICE") or os.environ.get("CLOUD_RUN_JOB") or os.path.exists("/code/app"))
 
 
+def _parse_dotenv_file(env_path: Path) -> dict[str, str]:
+    out: dict[str, str] = {}
+    if not env_path.is_file():
+        return out
+    try:
+        for raw_line in env_path.read_text(encoding="utf-8", errors="ignore").splitlines():
+            line = raw_line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            k, v = line.split("=", 1)
+            k = k.strip()
+            v = v.strip().strip('"').strip("'")
+            if k and v and "your-api-key" not in v.lower():
+                out[k] = v
+    except Exception:
+        pass
+    return out
+
+
+def discover_gemini_api_key() -> Optional[str]:
+    """Finds a valid Gemini API key from env vars or local gitignored `.env` files."""
+    for env_var in ("SC_TWIN_GEMINI_API_KEY", "GEMINI_API_KEY", "GOOGLE_API_KEY"):
+        val = (os.environ.get(env_var) or "").strip()
+        if val and "your-api-key" not in val.lower():
+            return val
+
+    candidate_files = [
+        REPO_ROOT / "enterprise_twin" / ".env",
+        REPO_ROOT / ".env",
+        Path.home() / "high-code-agents" / "oil-and-gas-rig-navigator-agent" / ".env",
+        Path.home() / "high-code-agents" / "loadpilot-dispatch-agent" / ".env",
+    ]
+    for fp in candidate_files:
+        parsed = _parse_dotenv_file(fp)
+        for env_var in ("SC_TWIN_GEMINI_API_KEY", "GEMINI_API_KEY", "GOOGLE_API_KEY"):
+            val = parsed.get(env_var, "").strip()
+            if val:
+                os.environ.setdefault("GEMINI_API_KEY", val)
+                return val
+    return None
+
+
 def sync_local_argolis_adc(project: str = DEFAULT_PROJECT) -> Optional[Path]:
     """Syncs fresh Argolis OAuth refresh token on developer workstation if present."""
     if is_cloud_runtime():
         return None
-    os.environ.setdefault("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false")
+    os.environ["GOOGLE_API_USE_CLIENT_CERTIFICATE"] = "false"
     adc_path = GCLOUD_DIR / "argolis_admin_adc.json"
     db_path = GCLOUD_DIR / "credentials.db"
     if db_path.exists():
@@ -63,39 +108,6 @@ def sync_local_argolis_adc(project: str = DEFAULT_PROJECT) -> Optional[Path]:
     return adc_path if adc_path.exists() else None
 
 
-_CLI_TOKEN_CACHE: Tuple[float, Optional[str]] = (0.0, None)
-
-
-def _get_gcloud_cli_token() -> Optional[str]:
-    global _CLI_TOKEN_CACHE
-    import subprocess
-    import time
-
-    now = time.time()
-    if _CLI_TOKEN_CACHE[1] and (now - _CLI_TOKEN_CACHE[0]) < 900:
-        return _CLI_TOKEN_CACHE[1]
-    try:
-        env = os.environ.copy()
-        env["CLOUDSDK_METRICS_ENVIRONMENT"] = (
-            f"{env['CLOUDSDK_METRICS_ENVIRONMENT']} datacloud.antigravity"
-            if env.get("CLOUDSDK_METRICS_ENVIRONMENT")
-            else "datacloud.antigravity"
-        )
-        tok = subprocess.check_output(
-            ["gcloud", "auth", "print-access-token", "--account=admin@zuhaibp.altostrat.com"],
-            env=env,
-            stderr=subprocess.DEVNULL,
-            text=True,
-            timeout=6,
-        ).strip()
-        if tok:
-            _CLI_TOKEN_CACHE = (now, tok)
-            return tok
-    except Exception:
-        pass
-    return None
-
-
 def get_gcp_credentials(project: str = DEFAULT_PROJECT) -> Tuple[Optional[Any], str]:
     """Returns `(google.auth.credentials.Credentials, project_id)` for Vertex AI / BQ / GCS."""
     import google.auth
@@ -117,12 +129,6 @@ def get_gcp_credentials(project: str = DEFAULT_PROJECT) -> Tuple[Optional[Any], 
             except Exception:
                 pass
 
-        cli_tok = _get_gcloud_cli_token()
-        if cli_tok:
-            import google.oauth2.credentials
-
-            return google.oauth2.credentials.Credentials(token=cli_tok, quota_project_id=project), project
-
     try:
         creds, detected_proj = google.auth.default(
             scopes=["https://www.googleapis.com/auth/cloud-platform"]
@@ -132,18 +138,60 @@ def get_gcp_credentials(project: str = DEFAULT_PROJECT) -> Tuple[Optional[Any], 
         return None, project
 
 
-def get_genai_client(location: str = "global") -> Any:
-    """Builds a `google.genai.Client` routed to Vertex AI (`location='global'` for Gemini 3 series)."""
+def get_genai_clients(location: str = "global", timeout_ms: int = 90_000) -> List[Tuple[str, Any]]:
+    """Returns ordered `(auth_label, genai.Client)` candidates so live Gemini calls never fail needlessly."""
     from google import genai
     from google.genai import types
 
-    creds, project = get_gcp_credentials(DEFAULT_PROJECT)
-    kwargs: dict[str, Any] = {
-        "vertexai": True,
-        "project": project,
-        "location": location,
-        "http_options": types.HttpOptions(timeout=90_000),
-    }
-    if creds is not None:
-        kwargs["credentials"] = creds
-    return genai.Client(**kwargs)
+    if not is_cloud_runtime():
+        os.environ["GOOGLE_API_USE_CLIENT_CERTIFICATE"] = "false"
+
+    clients: List[Tuple[str, Any]] = []
+    api_key = discover_gemini_api_key()
+
+    if is_cloud_runtime():
+        # In Cloud Run / Agent Engine: try native IAM Vertex AI first, then API key if provided
+        creds, project = get_gcp_credentials(DEFAULT_PROJECT)
+        v_kwargs: dict[str, Any] = {
+            "vertexai": True,
+            "project": project,
+            "location": location,
+            "http_options": types.HttpOptions(timeout=timeout_ms),
+        }
+        if creds is not None:
+            v_kwargs["credentials"] = creds
+        clients.append(("vertex_iam", genai.Client(**v_kwargs)))
+        if api_key:
+            clients.append((
+                "gemini_api_key",
+                genai.Client(vertexai=False, api_key=api_key, http_options=types.HttpOptions(timeout=timeout_ms)),
+            ))
+    else:
+        # On local workstation: prefer direct Gemini API key (immune to CloudTop RAPT expiry), then Vertex OAuth
+        if api_key:
+            clients.append((
+                "gemini_api_key",
+                genai.Client(vertexai=False, api_key=api_key, http_options=types.HttpOptions(timeout=timeout_ms)),
+            ))
+        creds, project = get_gcp_credentials(DEFAULT_PROJECT)
+        if creds is not None:
+            clients.append((
+                "vertex_oauth",
+                genai.Client(
+                    vertexai=True,
+                    project=project,
+                    location=location,
+                    credentials=creds,
+                    http_options=types.HttpOptions(timeout=timeout_ms),
+                ),
+            ))
+
+    return clients
+
+
+def get_genai_client(location: str = "global") -> Any:
+    """Backwards-compatible helper returning the primary `genai.Client`."""
+    candidates = get_genai_clients(location=location)
+    if not candidates:
+        raise RuntimeError("No Gemini API key or Google Cloud credentials available.")
+    return candidates[0][1]

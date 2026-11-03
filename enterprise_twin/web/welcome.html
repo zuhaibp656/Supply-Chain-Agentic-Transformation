@@ -885,8 +885,8 @@
                 </div>
               </div>
               <label class="checkbox-row">
-                <input type="checkbox" id="forceRefreshCheck" />
-                <span>Force fresh AI synthesis (bypass saved cache)</span>
+                <input type="checkbox" id="forceRefreshCheck" checked />
+                <span>Run fresh real-time AI web &amp; career research (uncheck to reuse saved cache)</span>
               </label>
             </div>
           </details>
@@ -908,23 +908,23 @@
       <div class="flow-trio">
         <div class="flow-node-card fly-up" id="stLogo">
           <div class="flow-icon">🏷️</div>
-          <div class="flow-kicker">01 · BRAND</div>
-          <div class="flow-title">Official Identity</div>
-          <div class="flow-sub">Verified logo &amp; accent palette</div>
+          <div class="flow-kicker">01 · BRAND &amp; RESEARCH</div>
+          <div class="flow-title">Web &amp; Logo Discovery</div>
+          <div class="flow-sub">Live Google Search &amp; official mark</div>
         </div>
 
         <div class="flow-node-card fly-up delay-1" id="stPillars">
           <div class="flow-icon">🧭</div>
-          <div class="flow-kicker">02 · ORG &amp; FLOWS</div>
-          <div class="flow-title">Roles &amp; Processes</div>
-          <div class="flow-sub">60 career titles &amp; 20 workflows</div>
+          <div class="flow-kicker">02 · ORG PILLARS &amp; ROLES</div>
+          <div class="flow-title">Custom Pillars &amp; Jobs</div>
+          <div class="flow-sub">4–8 pillars, 20 flows &amp; 60 roles</div>
         </div>
 
         <div class="flow-node-card fly-up delay-2" id="stFilter">
           <div class="flow-icon">✦</div>
-          <div class="flow-kicker">03 · AGENTS</div>
-          <div class="flow-title">Tailored AI Suite</div>
-          <div class="flow-sub">Company agent names &amp; fit</div>
+          <div class="flow-kicker">03 · AGENT SELECTION</div>
+          <div class="flow-title">Smart Agent Fit</div>
+          <div class="flow-sub">Reuse &amp; filter 60 core AI agents</div>
         </div>
       </div>
 
@@ -936,6 +936,7 @@
         <div class="synth-bar-track">
           <div class="synth-bar-fill" id="synthProgressBar"></div>
         </div>
+        <div id="synthLiveLog" style="margin-top:14px; display:grid; gap:6px; font-size:12.5px; color:var(--text-secondary); line-height:1.5;"></div>
       </div>
     </section>
   </main>
@@ -1197,11 +1198,13 @@
       const bar = document.getElementById('synthProgressBar');
       const headline = document.getElementById('synthStatusHeadline');
       const timerEl = document.getElementById('synthElapsedTimer');
+      const liveLogEl = document.getElementById('synthLiveLog');
 
       btn.disabled = true;
       consoleEl.classList.add('active');
-      bar.style.width = '8%';
-      updateStageCards(8);
+      bar.style.width = '6%';
+      if (liveLogEl) liveLogEl.innerHTML = '';
+      updateStageCards(6);
       scrollToJourneyStep('stepFlow');
 
       const t0 = performance.now();
@@ -1246,7 +1249,14 @@
             const pct = Number(payload.pct || 12);
             bar.style.width = `${Math.min(100, Math.max(8, pct))}%`;
             updateStageCards(pct);
-            if (payload.message) headline.textContent = payload.message;
+            if (payload.message) {
+              headline.textContent = payload.message;
+              if (liveLogEl) {
+                const line = document.createElement('div');
+                line.innerHTML = `<span style="color:var(--g-green); font-weight:700;">[${pct}%]</span> <strong style="color:var(--text-primary);">${escHtml(payload.message)}</strong>${payload.detail ? ` <span style="color:var(--text-muted);">— ${escHtml(payload.detail)}</span>` : ''}`;
+                liveLogEl.appendChild(line);
+              }
+            }
             if (payload.stage === 'done' && payload.redirect_url) {
               redirectUrl = payload.redirect_url;
             }
@@ -1255,8 +1265,8 @@
 
         clearInterval(timerId);
         if (redirectUrl) {
-          headline.textContent = 'Opening Tailored Portal...';
-          setTimeout(() => { window.location.href = redirectUrl; }, 340);
+          headline.textContent = 'Opening Researched Portal...';
+          setTimeout(() => { window.location.href = redirectUrl; }, 450);
         } else {
           btn.disabled = false;
         }

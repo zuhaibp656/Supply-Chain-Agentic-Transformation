@@ -532,8 +532,8 @@ def build_v2_modal_html() -> str:
             </button>
           </div>
           <label style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:var(--text-secondary); cursor:pointer;">
-            <input type="checkbox" id="twinForceRefreshCheckbox" />
-            <span>Fresh synthesis</span>
+            <input type="checkbox" id="twinForceRefreshCheckbox" checked />
+            <span>Run live AI research</span>
           </label>
         </div>
 
@@ -762,7 +762,7 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
           DEPARTMENTS[pid] = {{
             id: pid,
             vNum,
-            scorBadge: cp.badge || `${{vNum}} · PILLAR`,
+            scorBadge: cp.scor_badge || cp.badge || `${{vNum}} · PILLAR`,
             name: cp.name || `Pillar ${{idx + 1}}`,
             tagline: cp.tagline || `${{dispLabel}} · ${{cp.name || 'Operations'}}`,
             subtitle: cp.subtitle || '',
@@ -1168,7 +1168,25 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
         .catch(() => {{}});
     }}
 
-    function executeTwinGeneration() {{
+    async function resolveTwinStudioApiBase() {{
+      try {{
+        const r0 = await fetch('/api/v1/health');
+        if (r0.ok) {{
+          const d0 = await r0.json();
+          if (d0 && d0.status === 'healthy') return '';
+        }}
+      }} catch (e) {{}}
+      try {{
+        const r1 = await fetch('http://localhost:8095/api/v1/health');
+        if (r1.ok) {{
+          const d1 = await r1.json();
+          if (d1 && d1.status === 'healthy') return 'http://localhost:8095';
+        }}
+      }} catch (e) {{}}
+      return null;
+    }}
+
+    async function executeTwinGeneration() {{
       const coEl = document.getElementById('twinCompanyInput');
       const divEl = document.getElementById('twinDivisionInput');
       const geoEl = document.getElementById('twinGeoInput');
@@ -1176,12 +1194,16 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
       const logoEl = document.getElementById('twinLogoUrlInput');
       const refreshEl = document.getElementById('twinForceRefreshCheckbox');
 
-      const company = (coEl ? coEl.value : '').trim() || 'ITC Limited';
+      const company = (coEl ? coEl.value : '').trim();
+      if (!company) {{
+        if (coEl) coEl.focus();
+        return;
+      }}
       const division = (divEl ? divEl.value : '').trim();
       const geography = (geoEl ? geoEl.value : '').trim() || 'Global';
       const notes = (focusEl ? focusEl.value : '').trim();
       const logoUrl = (logoEl ? logoEl.value : '').trim();
-      const forceRefresh = Boolean(refreshEl && refreshEl.checked);
+      const forceRefresh = refreshEl ? Boolean(refreshEl.checked) : true;
 
       const hud = document.getElementById('twinProgressHud');
       const hudStatus = document.getElementById('hudStatusText');
@@ -1191,66 +1213,78 @@ def build_v2_engine_js(embedded_twins_js: str) -> str:
       if (hud) hud.style.display = 'block';
       if (hudLog) hudLog.innerHTML = '';
 
-      const appendStep = (pct, msg, detail) => {{
-        if (hudStatus) hudStatus.textContent = msg;
+      const appendStep = (pct, msg, detail, isErr = false) => {{
+        if (hudStatus) {{
+          hudStatus.textContent = msg;
+          hudStatus.style.color = isErr ? 'var(--g-red)' : 'var(--g-blue)';
+        }}
         if (hudPct) hudPct.textContent = pct + '%';
         if (hudBar) hudBar.style.width = pct + '%';
         if (hudLog) {{
           const row = document.createElement('div');
-          row.innerHTML = `<span style="color:var(--g-green);">✓</span> ${{escTwinHtml(msg)}} ${{detail ? `<span style="color:var(--text-muted);">— ${{escTwinHtml(detail)}}</span>` : ''}}`;
+          row.innerHTML = `<span style="color:${{isErr ? 'var(--g-red)' : 'var(--g-green)'}}; font-weight:700;">[${{pct}}%]</span> ${{escTwinHtml(msg)}} ${{detail ? `<span style="color:var(--text-muted);">— ${{escTwinHtml(detail)}}</span>` : ''}}`;
           hudLog.appendChild(row);
         }}
       }};
 
-      fetch('/api/v1/generate-twin', {{
-        method: 'POST',
-        headers: {{ 'Content-Type': 'application/json' }},
-        body: JSON.stringify({{
-          company_name: company,
-          division_name: division,
-          geography: geography,
-          focus: notes,
-          custom_logo_input: logoUrl,
-          force_refresh: forceRefresh
-        }})
-      }})
-        .then(r => r.ok ? r.json() : Promise.reject('backend_offline'))
-        .then(data => {{
-          appendStep(100, `Portal ready for ${{data.display_label || company}}!`, `Source: ${{data.source}}`);
-          if (data.overlay) {{
-            applyBrowserTwin(data.overlay);
-            setTimeout(() => closeEnterpriseTwinModal(), 500);
-          }}
-        }})
-        .catch(() => {{
-          const needle = (company + ' ' + division).toLowerCase();
-          let matched = null;
-          for (const [slug, ov] of Object.entries(EMBEDDED_TWINS_V2)) {{
-            if (needle.includes('tobacco') && slug.includes('tobacco')) {{ matched = ov; break; }}
-            if (needle.includes('cement') || needle.includes('ultratech')) {{ if (slug.includes('ultratech')) {{ matched = ov; break; }} }}
-            if (needle.includes('hindalco') || needle.includes('metal')) {{ if (slug.includes('hindalco')) {{ matched = ov; break; }} }}
-            if (needle.includes('maruti') || needle.includes('auto') || needle.includes('motor')) {{ if (slug.includes('maruti')) {{ matched = ov; break; }} }}
-            if (needle.includes('wipro') || needle.includes('tech')) {{ if (slug.includes('wipro')) {{ matched = ov; break; }} }}
-            if (needle.includes('tata') && slug.includes('tata')) {{ matched = ov; break; }}
-            if (needle.includes('itc') && slug.includes('foods')) matched = ov;
-            if (needle.includes('unilever') && slug.includes('unilever')) {{ matched = ov; break; }}
-          }}
-          if (matched) {{
-            const clone = JSON.parse(JSON.stringify(matched));
-            clone.canonical_name = company;
-            clone.brand.canonical_name = company;
-            if (division) {{
-              clone.division_name = division;
-              clone.brand.division_name = division;
-              clone.display_label = `${{company}} — ${{division}}`;
-            }} else {{
-              clone.display_label = company;
-            }}
-            appendStep(100, `Applied embedded twin template for ${{clone.display_label}}`, 'Offline / Static Mode');
-            applyBrowserTwin(clone);
-            setTimeout(() => closeEnterpriseTwinModal(), 500);
-          }}
+      appendStep(5, `Connecting to Enterprise Twin Research Engine for ${{company}}...`, 'Gemini 3.1 Pro + Google Search Grounding');
+      const apiBase = await resolveTwinStudioApiBase();
+      if (apiBase === null) {{
+        appendStep(0, 'Live Research Server unreachable on this static host.', 'Open Enterprise Twin Studio (port 8095 / Cloud Run) to synthesize new companies in real time.', true);
+        return;
+      }}
+
+      try {{
+        const response = await fetch(`${{apiBase}}/api/v1/twins/generate-stream`, {{
+          method: 'POST',
+          headers: {{ 'Content-Type': 'application/json' }},
+          body: JSON.stringify({{
+            company_name: company,
+            division_name: division,
+            geography: geography,
+            focus: notes,
+            custom_logo_input: logoUrl,
+            force_refresh: forceRefresh
+          }})
         }});
+
+        if (!response.ok || !response.body) {{
+          throw new Error(`HTTP ${{response.status}}`);
+        }}
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let buf = '';
+        let finalPayload = null;
+
+        while (true) {{
+          const {{ value, done }} = await reader.read();
+          if (done) break;
+          buf += decoder.decode(value, {{ stream: true }});
+          const blocks = buf.split('\\n\\n');
+          buf = blocks.pop() || '';
+          for (const block of blocks) {{
+            const dataLine = block.split('\\n').find(l => l.startsWith('data:'));
+            if (!dataLine) continue;
+            const ev = JSON.parse(dataLine.slice(5).trim());
+            if (ev.error) throw new Error(ev.error);
+            const pct = Number(ev.pct || 10);
+            if (ev.message) appendStep(pct, ev.message, ev.detail || '');
+            if (ev.stage === 'done') finalPayload = ev;
+          }}
+        }}
+
+        if (finalPayload && finalPayload.overlay) {{
+          if (apiBase === '' && finalPayload.redirect_url) {{
+            setTimeout(() => {{ window.location.href = finalPayload.redirect_url; }}, 400);
+          }} else {{
+            applyBrowserTwin(finalPayload.overlay);
+            setTimeout(() => closeEnterpriseTwinModal(), 500);
+          }}
+        }}
+      }} catch (err) {{
+        appendStep(0, `Synthesis failed: ${{err.message || err}}`, 'Please retry.', true);
+      }}
     }}
 
     document.addEventListener('DOMContentLoaded', () => {{

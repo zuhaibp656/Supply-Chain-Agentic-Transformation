@@ -78,7 +78,9 @@ def test_division_differentiation_and_smart_agent_hiding():
     assert cement["active_pillars_count"] == 7 and len(cement["custom_pillars"]) == 7
     assert maruti["active_pillars_count"] == 7 and len(maruti["custom_pillars"]) == 7
     assert hindalco["active_pillars_count"] == 5 and len(hindalco["custom_pillars"]) == 5
-    assert wipro["active_pillars_count"] == 5 and len(wipro["custom_pillars"]) == 5
+    assert 4 <= wipro["active_pillars_count"] <= 8 and len(wipro["custom_pillars"]) == wipro["active_pillars_count"]
+    assert "Google Search Grounded" in wipro["generation_model"]
+    assert wipro["persona_overrides"]["demand_planner_forecaster"]["title"] != "Demand Planner / Forecaster"
 
     # Verify custom_pillars partition 100% of active sub-pillars with zero orphans or duplicates
     for spec in (tobacco, foods, cement, hindalco, maruti, wipro):

@@ -47,13 +47,15 @@ def run_enterprise_twin_agent(
 
     if not force_refresh and not custom_logo_input:
         cached = load_twin_spec(slug)
-        if cached and cached.get("schema_version") == "2.0":
+        gen_model = str((cached or {}).get("generation_model") or "")
+        is_live_grounded = "Google Search Grounded" in gen_model
+        if cached and cached.get("schema_version") == "2.0" and is_live_grounded:
             if progress_cb:
                 progress_cb({
                     "pct": 100,
                     "stage": "cache_hit",
                     "message": f"Loaded verified portal for {cached.get('display_label', company_name)} from Enterprise Twin Database!",
-                    "detail": f"Active Agents: {cached.get('active_agents_count', 60)}/60 · Instant <200ms database replay",
+                    "detail": f"{cached.get('active_pillars_count', 6)} Pillars · {cached.get('active_agents_count', 60)}/60 Agents · Instant database replay",
                 })
             return {
                 "status": "success",
