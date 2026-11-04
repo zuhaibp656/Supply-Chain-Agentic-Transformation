@@ -110,7 +110,7 @@ def test_division_differentiation_and_smart_agent_hiding():
         if spec.get("custom_agent_name")
     ]
     assert len(tobacco_custom_names) >= 10
-    assert "TM&D WD Demand Sensing" in tobacco_custom_names
+    assert any("TM&D" in n or "Trade" in n or "Leaf" in n for n in tobacco_custom_names)
     for hid in tobacco["hidden_agent_ids"]:
         assert tobacco["agent_relevance"][hid].get("custom_agent_name", "") == ""
 

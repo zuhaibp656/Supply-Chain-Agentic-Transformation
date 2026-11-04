@@ -1,0 +1,1688 @@
+{
+  "schema_version": "2.0",
+  "twin_slug": "hyundai",
+  "company_name": "hyundai",
+  "canonical_name": "Hyundai Motor India Limited",
+  "division_name": "India Operations",
+  "display_label": "Hyundai Motor India Limited — India Operations",
+  "brand": {
+    "company_name": "hyundai",
+    "canonical_name": "Hyundai Motor India Limited",
+    "division_name": "India Operations",
+    "twin_slug": "hyundai",
+    "official_domain": "hyundai.com",
+    "industry_sector": "Automotive Manufacturing",
+    "geography": "India",
+    "brand_accent": "#728aa7",
+    "brand_secondary": "#A4BCC2",
+    "executive_title": "Chief Production Officer & Head of Supply Chain",
+    "executive_thesis": "Hyundai Motor India operates a highly localized automotive supply chain, sourcing steel and components to feed its mega-manufacturing hubs in Sriperumbudur and Talegaon. Finished vehicles are distributed through a vast domestic dealership network and exported globally via the…",
+    "flagship_sites": "Sriperumbudur Manufacturing Plant (Chennai) · Talegaon Plant (Pune) · Chennai Port Export Hub · HMIL R&D Center (Hyderabad) · National Parts Distribution Centre",
+    "erp_systems": "SAP S/4HANA · SAP APO · Hyundai AutoEver WMS · JDA TMS",
+    "logo": {
+      "data_uri": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxMi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDUxNDQ4KSAgLS0+Cgo8c3ZnCiAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIKICAgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIgogICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCIKICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiCiAgIHZlcnNpb249IjEuMSIKICAgaWQ9IkxheWVyXzEiCiAgIHdpZHRoPSIxMDAwIgogICBoZWlnaHQ9IjEyOC42MiIKICAgdmlld0JveD0iMCAwIDk5OS45OTk5NyAxMjguNjIiCiAgIG92ZXJmbG93PSJ2aXNpYmxlIgogICBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzNzEuNTQ5IDQ3Ljc4OCIKICAgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIKICAgc29kaXBvZGk6ZG9jbmFtZT0iSHl1bmRhaS5zdmciCiAgIHN0eWxlPSJvdmVyZmxvdzp2aXNpYmxlIgogICBpbmtzY2FwZTp2ZXJzaW9uPSIwLjkyLjIgKDVjM2U4MGQsIDIwMTctMDgtMDYpIj48bWV0YWRhdGEKICAgICBpZD0ibWV0YWRhdGE4MzkiPjxyZGY6UkRGPjxjYzpXb3JrCiAgICAgICAgIHJkZjphYm91dD0iIj48ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD48ZGM6dHlwZQogICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiIC8+PGRjOnRpdGxlPjwvZGM6dGl0bGU+PC9jYzpXb3JrPjwvcmRmOlJERj48L21ldGFkYXRhPjxkZWZzCiAgICAgaWQ9ImRlZnM4MzciIC8+PHNvZGlwb2RpOm5hbWVkdmlldwogICAgIHBhZ2Vjb2xvcj0iI2ZmZmZmZiIKICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiIKICAgICBib3JkZXJvcGFjaXR5PSIxIgogICAgIG9iamVjdHRvbGVyYW5jZT0iMTAiCiAgICAgZ3JpZHRvbGVyYW5jZT0iMTAiCiAgICAgZ3VpZGV0b2xlcmFuY2U9IjEwIgogICAgIGlua3NjYXBlOnBhZ2VvcGFjaXR5PSIwIgogICAgIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjIiCiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxMzY2IgogICAgIGlua3NjYXBlOndpbmRvdy1oZWlnaHQ9IjcwNSIKICAgICBpZD0ibmFtZWR2aWV3ODM1IgogICAgIHNob3dncmlkPSJmYWxzZSIKICAgICBpbmtzY2FwZTp6b29tPSIwLjU5NjE1Mjg1IgogICAgIGlua3NjYXBlOmN4PSI1NjEuNjE4ODUiCiAgICAgaW5rc2NhcGU6Y3k9Ii01My4yMDc3ODEiCiAgICAgaW5rc2NhcGU6d2luZG93LXg9Ii04IgogICAgIGlua3NjYXBlOndpbmRvdy15PSItOCIKICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIxIgogICAgIGlua3NjYXBlOmN1cnJlbnQtbGF5ZXI9IkxheWVyXzEiIC8+PGcKICAgICBpZD0iZzgzMiIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgyLjY5MTQzMzQsMCwwLDIuNjkxNDMzNCwzLjkyODk3NTNlLTQsMC4wMDIwMTA2OCkiPjxwYXRoCiAgICAgICBkPSJtIDM0Ny4yNTQsMTIuMTEyIGggLTE1LjIwOSBjIC0yLjU1MywwLjE1MSAtMy4yNjYsMC43ODQgLTMuMjY2LDMuODgzIHYgOC41NDMgaCAxOC40NzUgeiBtIDguMDk4LC02Ljg0MSB2IDM3LjI1MiBoIC04LjA5OCBWIDMxLjgxNSBoIC0xOC40NzUgdiAxMC43MDggaCAtOC4wOTggViAxMy4zMTkgYyAwLC01LjE2IDIuMDksLTguMDQ4IDguMDk4LC04LjA0OCB6IG0gLTQyLjc2OCw4LjA0MSB2IDIwLjE2IGMgMCw2LjQxOCAtMy42MDUsOS4wNDQgLTguMDk5LDkuMDQ0IEggMjc4Ljk0MiBWIDUuMjY0IGggMjUuNTQzIGMgNi44OTgsMCA4LjA5OSw0LjM4NiA4LjA5OSw4LjA0OCB6IG0gLTguMTk1LDIuMjQyIGMgMCwtMi4wNDEgLTEuMjQ0LC0zLjQ0OSAtMy40MjIsLTMuNDQ5IGggLTEzLjkyNiB2IDIzLjI3NiBsIDEzLjkyNiwtMTBlLTQgYyAzLjE3MiwtMC4xNjEgMy40MjIsLTIuMDYzIDMuNDIyLC0zLjU3MiB6IE0gMTEzLjg2OCw1LjI2NCBoIDguMDk4IHYgMTQuNjgzIGggMTguMTE4IFYgNS4yNjQgaCA4LjA5OCB2IDM3LjI1MSBoIC04LjA5OCBWIDI3LjMxMyBoIC0xOC4xMTggdiAxNS4yMDIgaCAtOC4wOTggViA1LjI2NCBaIG0gNDguMTkzLDAgMTAuMTUyLDE1LjIyOSAxMC4wMywtMTUuMjI5IGggOS44MzMgTCAxNzYuMjU4LDI5LjA4IHYgMTMuNDM2IGggLTguMDk5IFYgMjkuMDc4IEwgMTUyLjIzMSw1LjI2NCBaIG0gNzUuNDcyLDAgaCAyNi4wOTYgYyAzLjcxOSwwIDcuMzIsMC41MjIgNy4yMTUsOC4wNDggdiAyOS4yMDQgaCAtOC4wOTggViAxNS45ODggYyAwLC0zLjIwOCAtMC4zODUsLTMuODgzIC0yLjkwMiwtMy44ODMgaCAtMTQuMjExIHYgMzAuNDExIGggLTguMSB6IG0gMTM0LjAxNiwwLjAwNyB2IDM3LjI1MiBoIC04LjEgViA1LjI3MSBaIE0gMTk2LjEyNiw0Mi41MTYgaCAyNi4wOTQgYyA1LjE4OCwwIDcuMzIxLC0xLjUwMSA3LjIxNiwtOC45ODEgViA1LjI2NCBoIC04LjA5OCB2IDI2LjU5MyBjIDAsMy4xODggLTAuMzg1LDMuNTc1IC0yLjkwMiwzLjU3NSBIIDIwNC4yMjUgTCAyMDQuMjI0LDUuMjY0IGggLTguMDk4IHoiCiAgICAgICBpZD0icGF0aDgyOCIKICAgICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiCiAgICAgICBzdHlsZT0iY2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDAzOTg0O2ZpbGwtcnVsZTpldmVub2RkIiAvPjxwYXRoCiAgICAgICBkPSJtIDU2LjcwNywyOS40MTYgYyAwLjcxNCwzLjY5IC0xLjIyLDYuNzU1IC0yLjgyNyw5LjczIC0xLjc4NSwyLjc2OCAtNC43MzEsNS4xNDcgLTguMjcyLDQuNzkxIC03Ljk0NiwtMC4xMTkgLTE1LjcxMiwtMS4zMzkgLTIyLjkxNCwtMy41MTIgLTAuMzI3LC0wLjA4OSAtMC42NTQsLTAuMjk4IC0wLjgzMywtMC41OTUgLTAuMTQ5LC0wLjQxNyAwLjA2LC0wLjgwNCAwLjM1NywtMS4wNzEgNi41NzcsLTUuMzI3IDE0LjQwMywtNy43OTYgMjIuMTQsLTEwLjM4NiAyLjg4NiwtMC44MzMgNS45NTIsLTEuNzI2IDkuMTk1LC0xLjMwOSAxLjMzOCwwLjE3OSAyLjY3NywxLjEwMiAzLjE1NCwyLjM1MiB6IE0gODMuODE2LDEzLjY0NSBjIDMuNjksMy4wMzUgNy4wMjMsNy4xNzIgNS44OTIsMTIuMTcxIC0xLjg0NSw3LjM4IC05Ljg3OSwxMS4zMDggLTE2LjI3NywxMy44MDcgLTMuNDgyLDEuMTYxIC02Ljk5MywyLjM1MiAtMTAuODAyLDIuNzA5IC0wLjIzOCwtMC4wMyAtMC42MjUsMC4wMjkgLTAuNjg1LC0wLjMyOCBsIDAuMDg5LC0wLjQxNiBjIDUuNDE2LC02LjEwMSA5LjUyMiwtMTIuOTQ0IDEzLjEyNCwtMTkuODc4IDEuNjY2LC0zLjEyNSAzLjIxNCwtNi4zMzggNC42NDIsLTkuNDkzIDAuMjA4LC0wLjIzOCAwLjQxNywtMC4zNTcgMC42NTUsLTAuNDQ2IDEuMzM4LDAuMTE4IDIuMjkxLDEuMTYgMy4zNjIsMS44NzQgeiBNIDMxLjg4OCw1Ljc4OSAzMS43NjksNi4yMzUgQyAyMy45NDMsMTUuMTMyIDE4Ljc5NSwyNS40NTggMTMuOTE1LDM1LjcyNCAxMi45NjMsMzYuNjE3IDEyLjA0LDM1LjQyNiAxMS4xNzcsMzUuMDM5IDYuODMyLDMyLjE4MyAyLjkwNCwyNy41NyA0LjAzNSwyMi4wOTUgNS44NSwxNC45NTQgMTMuMiwxMS4xNDUgMTkuMzMxLDguNTU3IGMgMy42MywtMS4zNjkgNy40MSwtMi40NyAxMS4zOTcsLTMuMDk1IDAuNDE3LC0xMGUtNCAwLjk1MiwtMC4wNiAxLjE2LDAuMzI3IHogbSAzOC44MzUsMS40MjggYyAwLjQ0NiwwLjIzOCAwLjk4MiwwLjMyNyAxLjI1LDAuNzczIDAuMjM4LDAuNTA2IC0wLjIzOCwwLjgzMyAtMC41MDYsMS4xNjEgLTYuMTYsNC44MiAtMTMuMjEyLDcuNDk5IC0yMC40MTQsOS44NSAtMy42NjEsMC44OTMgLTcuMzUxLDIuNSAtMTEuNDI3LDEuNjA3IC0wLjk1MywtMC4yMzggLTEuODE1LC0wLjg2MyAtMi4zNTEsLTEuNzg2IC0xLjAxMiwtMi43OTcgMC4zNTcsLTUuNzEzIDEuNTQ3LC04LjE1MyAxLjU3NywtMy4wNjUgNC4zNzUsLTYuNjY2IDguMjQzLC02LjcyNSA4LjMzMiwtMC4wNiAxNi4xODgsMS4xOSAyMy42NTgsMy4yNzMgeiBNIDgxLjAxOSw3LjQ1NSBDIDg3LjMyOCwxMC45MDcgOTQuNDcsMTYuOTc3IDkzLjcyNiwyNS4wNzEgOTIuODYzLDMyLjU3IDg1Ljg3LDM3LjgwNyA3OS42MjEsNDAuOTYyIDYxLjM3OSw0OS42ODEgMzUuNzU4LDQ5Ljk0OCAxNi45MjEsNDIuMzMxIDEwLjU1MiwzOS42ODMgMy40MSwzNS4xMyAwLjczMSwyOC4yODUgLTEuMzIyLDIyLjY2MSAxLjE3NywxNi43OTkgNS4zNzQsMTIuOTAxIDE0LjE1Miw0LjkyNiAyNS4zNDEsMi4xODkgMzYuODU4LDAuNjExIGMgMTIuNDk5LC0xLjUxOCAyNS42NTEsLTAuMTc5IDM2Ljg0LDMuNjYgMi41LDAuOTIzIDQuOTcsMS45MzUgNy4zMjEsMy4xODQgeiIKICAgICAgIGlkPSJwYXRoODMwIgogICAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICAgIHN0eWxlPSJjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiMwMDM5ODQ7ZmlsbC1ydWxlOmV2ZW5vZGQiIC8+PC9nPjwvc3ZnPg==",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Hyundai_Motor_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_type": "wikimedia_svg",
+      "plate_style": "light_plate",
+      "aspect_ratio": 5.0,
+      "monogram": "HMI"
+    }
+  },
+  "custom_pillars": [
+    {
+      "pillar_id": "vehicle_demand_portfolio",
+      "v_num": "01",
+      "scor_badge": "01 · PLAN",
+      "name": "Vehicle Demand & Portfolio Strategy",
+      "tagline": "Aligning market trends with production capacity",
+      "subtitle": "Forecasts domestic and export vehicle demand, manages the model lineup, and orchestrates sales and operations planning.",
+      "color": "#728aa7",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "demand_forecasting",
+        "trade_promotion",
+        "sop_ibp",
+        "portfolio_sku"
+      ]
+    },
+    {
+      "pillar_id": "component_sourcing_vendor_dev",
+      "v_num": "02",
+      "scor_badge": "02 · SOURCE",
+      "name": "Component Sourcing & Vendor Development",
+      "tagline": "Procuring auto parts and raw materials",
+      "subtitle": "Manages the localized supplier network, negotiates component contracts, and oversees inbound material packaging standards.",
+      "color": "#ea580c",
+      "watermark_type": "supplier_graph",
+      "sub_pillar_ids": [
+        "supplier_network",
+        "material_packaging",
+        "contract_po_mgmt"
+      ]
+    },
+    {
+      "pillar_id": "plant_assembly_quality",
+      "v_num": "03",
+      "scor_badge": "03 · MAKE",
+      "name": "Plant Assembly & Quality Control",
+      "tagline": "High-volume vehicle manufacturing",
+      "subtitle": "Executes production scheduling, manages assembly line capacity at Sriperumbudur and Talegaon, and ensures strict automotive quality compliance.",
+      "color": "#7c3aed",
+      "watermark_type": "factory_arm",
+      "sub_pillar_ids": [
+        "production_scheduling",
+        "capacity_planning",
+        "quality_compliance"
+      ]
+    },
+    {
+      "pillar_id": "spare_parts_warehousing",
+      "v_num": "04",
+      "scor_badge": "04 · STORE",
+      "name": "Spare Parts & CKD Warehousing",
+      "tagline": "Managing aftermarket and kit inventory",
+      "subtitle": "Optimizes the positioning of spare parts across regional depots and manages warehouse operations for CKD/SKD kits.",
+      "color": "#059669",
+      "watermark_type": "warehouse_rack",
+      "sub_pillar_ids": [
+        "positioning_optimization",
+        "warehouse_operations"
+      ]
+    },
+    {
+      "pillar_id": "dealership_replenishment_yard",
+      "v_num": "05",
+      "scor_badge": "05 · MOVE",
+      "name": "Dealership Replenishment & Yard Logistics",
+      "tagline": "Distributing vehicles to the dealer network",
+      "subtitle": "Provides visibility into finished vehicle inventory, manages yard-to-dealer logistics, and ensures showrooms are stocked with the right models.",
+      "color": "#93c5fd",
+      "watermark_type": "corridor_lifo",
+      "sub_pillar_ids": [
+        "omnichannel_visibility",
+        "first_mid_mile",
+        "store_replenishment"
+      ]
+    },
+    {
+      "pillar_id": "finished_vehicle_transport_exports",
+      "v_num": "06",
+      "scor_badge": "06 · DELIVER",
+      "name": "Finished Vehicle Transport & Exports",
+      "tagline": "Domestic haulage and international shipping",
+      "subtitle": "Coordinates car carrier routes for domestic deliveries and manages the massive export logistics operations via Chennai Port.",
+      "color": "#0284c7",
+      "watermark_type": "conveyor_rack",
+      "sub_pillar_ids": [
+        "last_mile_delivery",
+        "route_carrier",
+        "returns_claims_mgmt",
+        "pallet_tote_reclamation"
+      ]
+    },
+    {
+      "pillar_id": "aftersales_service_circularity",
+      "v_num": "07",
+      "scor_badge": "07 · RETURN",
+      "name": "Aftersales Service & Parts Obsolescence",
+      "tagline": "Warranty management and parts lifecycle",
+      "subtitle": "Handles warranty claims, reverse logistics for defective components, and manages the markdown or scrapping of obsolete spare parts.",
+      "color": "#e11d48",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "expiry_markdowns"
+      ]
+    }
+  ],
+  "pillar_overrides": {
+    "demand_sop": {
+      "dept_id": "demand_sop",
+      "custom_name": "Planning & Strategy",
+      "custom_tagline": "Hyundai Motor India Limited — India Operations · Core Planning Lifecycle",
+      "custom_subtitle": "Demand signals and strategic S&OP alignment."
+    },
+    "sourcing_procurement": {
+      "dept_id": "sourcing_procurement",
+      "custom_name": "Sourcing & Procurement",
+      "custom_tagline": "Hyundai Motor India Limited — India Operations · Procurement Lifecycle Spine",
+      "custom_subtitle": "Tier vendor networks and EDI order routing."
+    },
+    "manufacturing_prod": {
+      "dept_id": "manufacturing_prod",
+      "custom_name": "Manufacturing & Production",
+      "custom_tagline": "Hyundai Motor India Limited — India Operations · Manufacturing Operations Lifecycle",
+      "custom_subtitle": "Optimized runs and zero-defect QA protocols."
+    },
+    "inventory_warehouse": {
+      "dept_id": "inventory_warehouse",
+      "custom_name": "Inventory & Warehousing",
+      "custom_tagline": "Hyundai Motor India Limited — India Operations · Inventory & DC Lifecycle Spine",
+      "custom_subtitle": "Multi-node staging and enterprise visibility."
+    },
+    "logistics_fleet": {
+      "dept_id": "logistics_fleet",
+      "custom_name": "Distribution & Logistics",
+      "custom_tagline": "Hyundai Motor India Limited — India Operations · Logistics Fulfillment Lifecycle",
+      "custom_subtitle": "Store replenishment and last-mile dispatch."
+    },
+    "circular_enable": {
+      "dept_id": "circular_enable",
+      "custom_name": "Returns & Reverse Logistics",
+      "custom_tagline": "Hyundai Motor India Limited — India Operations · Reverse Value Stream Lifecycle",
+      "custom_subtitle": "Triage inspection and upstream defect loops."
+    }
+  },
+  "sub_pillar_overrides": {
+    "demand_forecasting": {
+      "sub_pillar_id": "demand_forecasting",
+      "dept_id": "demand_sop",
+      "canonical_name": "Demand Forecasting",
+      "custom_name": "Domestic & Export Demand Sensing"
+    },
+    "trade_promotion": {
+      "sub_pillar_id": "trade_promotion",
+      "dept_id": "demand_sop",
+      "canonical_name": "Trade Promotion",
+      "custom_name": "Dealer Schemes & Market Incentives"
+    },
+    "sop_ibp": {
+      "sub_pillar_id": "sop_ibp",
+      "dept_id": "demand_sop",
+      "canonical_name": "S&OP / IBP",
+      "custom_name": "Integrated Production & Sales Planning"
+    },
+    "portfolio_sku": {
+      "sub_pillar_id": "portfolio_sku",
+      "dept_id": "demand_sop",
+      "canonical_name": "Portfolio & SKU",
+      "custom_name": "Model Mix & Variant Lifecycle Management"
+    },
+    "supplier_network": {
+      "sub_pillar_id": "supplier_network",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Supplier Network",
+      "custom_name": "Vendor Park & Tier-N Localization"
+    },
+    "material_packaging": {
+      "sub_pillar_id": "material_packaging",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Material & Packaging",
+      "custom_name": "Inbound Logistics & Returnable Packaging"
+    },
+    "contract_po_mgmt": {
+      "sub_pillar_id": "contract_po_mgmt",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Contract & PO Mgmt",
+      "custom_name": "Contract & PO Mgmt"
+    },
+    "production_scheduling": {
+      "sub_pillar_id": "production_scheduling",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Production Scheduling",
+      "custom_name": "JIT/JIS Assembly Line Sequencing"
+    },
+    "capacity_planning": {
+      "sub_pillar_id": "capacity_planning",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Capacity Planning",
+      "custom_name": "Mega-Plant Throughput & Asset Utilization"
+    },
+    "quality_compliance": {
+      "sub_pillar_id": "quality_compliance",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Quality & Compliance",
+      "custom_name": "Automotive Quality & Homologation Standards"
+    },
+    "positioning_optimization": {
+      "sub_pillar_id": "positioning_optimization",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Positioning & Optimization",
+      "custom_name": "Regional Parts Depot & CKD Inventory Strategy"
+    },
+    "warehouse_operations": {
+      "sub_pillar_id": "warehouse_operations",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Warehouse Operations",
+      "custom_name": "National Parts Distribution & CKD Staging"
+    },
+    "omnichannel_visibility": {
+      "sub_pillar_id": "omnichannel_visibility",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Omnichannel Visibility",
+      "custom_name": "Dealer Inventory & Export Hub Visibility"
+    },
+    "first_mid_mile": {
+      "sub_pillar_id": "first_mid_mile",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "First & Mid-Mile",
+      "custom_name": "Plant-to-Yard & Port Logistics"
+    },
+    "store_replenishment": {
+      "sub_pillar_id": "store_replenishment",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Store Replenishment",
+      "custom_name": "Dealership Stocking & Yard Management"
+    },
+    "last_mile_delivery": {
+      "sub_pillar_id": "last_mile_delivery",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Last-Mile Delivery",
+      "custom_name": "Domestic Dealership Distribution"
+    },
+    "route_carrier": {
+      "sub_pillar_id": "route_carrier",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Route & Carrier",
+      "custom_name": "Export Logistics & Ocean Freight"
+    },
+    "returns_claims_mgmt": {
+      "sub_pillar_id": "returns_claims_mgmt",
+      "dept_id": "circular_enable",
+      "canonical_name": "Returns & Claims Mgmt",
+      "custom_name": "Returns & Claims Mgmt"
+    },
+    "expiry_markdowns": {
+      "sub_pillar_id": "expiry_markdowns",
+      "dept_id": "circular_enable",
+      "canonical_name": "Expiry & Markdowns",
+      "custom_name": "Expiry & Markdowns"
+    },
+    "pallet_tote_reclamation": {
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "dept_id": "circular_enable",
+      "canonical_name": "Pallet & Tote Reclamation",
+      "custom_name": "Pallet & Tote Reclamation"
+    }
+  },
+  "persona_overrides": {
+    "demand_planner_forecaster": {
+      "persona_id": "demand_planner_forecaster",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Planner / Forecaster",
+      "title": "Manager - Demand Forecasting & Market Intelligence",
+      "role": "Predicting domestic dealership and global export volumes",
+      "summary": "Responsible for generating accurate sales forecasts for the Indian market and international shipments via Chennai Port.",
+      "manual_toil": "Manually aggregating dealer-level booking data and macro-economic trends into SAP APO spreadsheets.",
+      "agentic_impact": "Automates real-time demand signals from the dealership network to adjust production schedules at Sriperumbudur.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "commercial_planning_lead": {
+      "persona_id": "commercial_planning_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Commercial Planning Lead",
+      "title": "General Manager - Sales & Operations Planning",
+      "role": "Aligning commercial targets with manufacturing capacity",
+      "summary": "Orchestrates the synchronization of sales targets with the production capabilities of the Chennai and Talegaon plants.",
+      "manual_toil": "Reconciling conflicting sales projections from regional offices with actual plant floor throughput.",
+      "agentic_impact": "Uses AI to identify unmodeled demand drivers like regional festivals or fuel price shifts across India.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "brand_innovation_mgr": {
+      "persona_id": "brand_innovation_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Brand & Innovation Manager",
+      "title": "Senior Manager - Product Strategy & NPI",
+      "role": "Launching new vehicle models and facelifts",
+      "summary": "Leads the market introduction of new EV and ICE models, ensuring demand profiles match production ramp-ups.",
+      "manual_toil": "Comparing historical launch curves of previous SUV models to predict the trajectory of new variants.",
+      "agentic_impact": "Predicts take-rates for specific trim levels and colors based on historical consumer preference data.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "trade_marketing_manager": {
+      "persona_id": "trade_marketing_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Trade Marketing Manager",
+      "title": "Manager - Dealer Marketing & Promotions",
+      "role": "Driving showroom footfalls through targeted schemes",
+      "summary": "Designs and executes consumer offers and dealer incentives to clear inventory and hit monthly targets.",
+      "manual_toil": "Simulating the impact of cash discounts and exchange bonuses on Excel to estimate volume lift.",
+      "agentic_impact": "Simulates price elasticity for specific models like the Creta or Venue to optimize promotional ROI.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "key_account_manager": {
+      "persona_id": "key_account_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Key Account Manager (KAM)",
+      "title": "Regional Manager - Dealer Development",
+      "role": "Managing high-volume dealership group relationships",
+      "summary": "Acts as the primary liaison for major dealer groups to ensure stock availability and sales target alignment.",
+      "manual_toil": "Creating manual sell-in decks and negotiation plans for quarterly dealer business reviews.",
+      "agentic_impact": "Generates customized joint business plans that align dealer stock levels with regional demand trends.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "revenue_trade_finance_lead": {
+      "persona_id": "revenue_trade_finance_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Revenue / Trade Finance Lead",
+      "title": "Senior Manager - Commercial Finance",
+      "role": "Auditing dealer claims and incentive payouts",
+      "summary": "Oversees the financial reconciliation of trade schemes and promotional payouts to the dealer network.",
+      "manual_toil": "Manually verifying dealer invoices and proof-of-sale documents against approved marketing circulars.",
+      "agentic_impact": "Automates the audit of dealer incentive claims using OCR to verify sales performance against SAP records.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "sop_supply_planning_dir": {
+      "persona_id": "sop_supply_planning_dir",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "S&OP / Supply Planning Dir.",
+      "title": "Head of Production Planning & Control",
+      "role": "Balancing assembly line constraints with market demand",
+      "summary": "Ensures the Sriperumbudur and Talegaon plants produce the right mix of vehicles to meet domestic and export orders.",
+      "manual_toil": "Identifying bottlenecks in the paint shop or engine assembly that limit total vehicle output.",
+      "agentic_impact": "Weaves demand scenarios with factory capacity to resolve gaps before they impact dealership delivery timelines.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "supply_chain_vp_coo": {
+      "persona_id": "supply_chain_vp_coo",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Supply Chain VP / COO",
+      "title": "VP - Production & Procurement",
+      "role": "Overseeing end-to-end manufacturing and supply logistics",
+      "summary": "Directs the entire value chain from vendor park component staging to finished vehicle export.",
+      "manual_toil": "Managing emergency war-rooms when Tier-1 supplier disruptions halt the JIT assembly line.",
+      "agentic_impact": "Orchestrates rapid allocation trade-offs between domestic and export markets during component shortages.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "ibp_lead_chief_planning_off": {
+      "persona_id": "ibp_lead_chief_planning_off",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "IBP Lead / Chief Planning Off.",
+      "title": "Head of Supply Chain Management",
+      "role": "Driving cross-functional strategic planning alignment",
+      "summary": "Leads the executive S&OP process to align finance, sales, and manufacturing on a single operating plan.",
+      "manual_toil": "Compiling executive pre-read decks from multiple departmental reports for monthly leadership meetings.",
+      "agentic_impact": "Acts as an executive copilot to track sign-offs and monitor KPIs across the HMIL value chain.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "category_manager_portfolio": {
+      "persona_id": "category_manager_portfolio",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Category Manager",
+      "title": "General Manager - Model Portfolio Management",
+      "role": "Optimizing the vehicle variant and trim lineup",
+      "summary": "Evaluates the profitability and market relevance of various vehicle trims and engine configurations.",
+      "manual_toil": "Analyzing the sales velocity of low-performing variants to recommend SKU pruning.",
+      "agentic_impact": "Scores variant performance against manufacturing complexity to optimize the total model mix.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "lifecycle_materials_mgr": {
+      "persona_id": "lifecycle_materials_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Lifecycle / Materials Mgr",
+      "title": "Manager - Vendor Development & Engineering Change",
+      "role": "Managing component transitions for model updates",
+      "summary": "Coordinates with the Vendor Park to manage the phase-in/phase-out of parts during model year changes.",
+      "manual_toil": "Tracking inventory levels of old parts to prevent obsolescence during a new model cutover.",
+      "agentic_impact": "Synchronizes the run-out of legacy components with the arrival of new parts to minimize waste.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "commercial_finance_director": {
+      "persona_id": "commercial_finance_director",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Commercial Finance Director",
+      "title": "Director - Commercial Finance & Costing",
+      "role": "Analyzing profitability across models and channels",
+      "summary": "Provides financial oversight on the cost-to-serve for domestic dealerships versus international export markets.",
+      "manual_toil": "Calculating net margins for different vehicle models after accounting for logistics and dealer margins.",
+      "agentic_impact": "Provides a digital twin of the network to diagnose margin leakage in the distribution of finished vehicles.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "procurement_dir_risk_mgr": {
+      "persona_id": "procurement_dir_risk_mgr",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Dir. / Risk Mgr",
+      "title": "VP - Production & Procurement",
+      "role": "Ensuring uninterrupted material flow for Sriperumbudur assembly lines",
+      "summary": "Oversees the strategic sourcing of steel and critical components while managing geopolitical and logistics risks for the Indian market.",
+      "manual_toil": "Manually tracking port congestion at Chennai Port and vendor financial health across hundreds of Tier-1 and Tier-2 suppliers.",
+      "agentic_impact": "Automates real-time disruption sensing across the multi-tier supply chain to prevent line-stoppages at the mega-manufacturing hubs.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "procurement_operations_lead": {
+      "persona_id": "procurement_operations_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Operations Lead",
+      "title": "Senior Manager - Vendor Development",
+      "role": "Onboarding and auditing localized automotive component suppliers",
+      "summary": "Drives the localization strategy to increase domestic content and manages the technical qualification of Vendor Park partners.",
+      "manual_toil": "Reviewing thousands of ISO/TS 16949 certifications and tax compliance documents during the annual vendor audit cycle.",
+      "agentic_impact": "Accelerates vendor onboarding by autonomously parsing quality audits and regulatory filings within SAP S/4HANA workflows.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "chief_sustainability_officer": {
+      "persona_id": "chief_sustainability_officer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Head of ESG & Corporate Affairs",
+      "role": "Decarbonizing the automotive supply chain and logistics",
+      "summary": "Leads initiatives to reduce the carbon footprint of manufacturing operations and ensures ethical sourcing of raw materials.",
+      "manual_toil": "Collecting disparate Scope 3 emissions data from localized vendors and international CKD kit shipments.",
+      "agentic_impact": "Provides a unified ledger for carbon tracking and chain-of-custody for sustainable materials used in vehicle interiors.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "category_sourcing_mgr_direct": {
+      "persona_id": "category_sourcing_mgr_direct",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Category Sourcing Mgr (Direct)",
+      "title": "General Manager - Direct Material Sourcing",
+      "role": "Managing high-volume procurement of steel and resins",
+      "summary": "Negotiates long-term contracts for raw materials essential for the Talegaon and Sriperumbudur stamping and molding shops.",
+      "manual_toil": "Cross-referencing global steel price indices with SAP APO demand forecasts to determine optimal hedging strategies.",
+      "agentic_impact": "Correlates Platts commodity data with production schedules to provide predictive hedging advice for steel and plastic feedstocks.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "strategic_sourcing_lead": {
+      "persona_id": "strategic_sourcing_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Strategic Sourcing Lead",
+      "title": "Senior Manager - Strategic Sourcing",
+      "role": "Optimizing component costs through detailed technical analysis",
+      "summary": "Analyzes the cost structure of localized components to ensure competitive pricing for domestic and export vehicle models.",
+      "manual_toil": "Manually deconstructing RFQ responses to estimate labor, material, and energy costs for complex automotive assemblies.",
+      "agentic_impact": "Generates dynamic should-cost models for components by analyzing material weights and conversion energy at Vendor Park facilities.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "packaging_rd_engineer": {
+      "persona_id": "packaging_rd_engineer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Packaging R&D Engineer",
+      "title": "Manager - Inbound Packaging & Logistics",
+      "role": "Designing returnable packaging for JIT/JIS line delivery",
+      "summary": "Develops standardized, sustainable packaging solutions that protect components during transit to the National Parts Distribution Centre.",
+      "manual_toil": "Testing the durability and stackability of various returnable plastic crates against manual handling at the assembly line.",
+      "agentic_impact": "Simulates packaging performance and evaluates the lifecycle impact of PCR resins versus traditional materials for inbound logistics.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "commercial_sourcing_legal": {
+      "persona_id": "commercial_sourcing_legal",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Commercial Sourcing / Legal",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · Hyundai Motor India Limited — India Operations",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with Contract Leakage Agent to recovers missed rebates & surcharges.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Contract Leakage Agent automatically reconciles live spend against negotiated rebate tiers and volume discount scales. — recovers missed rebates & surcharges.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited career & ops roles"
+    },
+    "buyer_procurement_coord": {
+      "persona_id": "buyer_procurement_coord",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Buyer / Procurement Coord.",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · Hyundai Motor India Limited — India Operations",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with PO Expediting Agent to resolves ~70% of standard po delays.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "PO Expediting Agent automatically monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments. — resolves ~70% of standard po delays.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited career & ops roles"
+    },
+    "accounts_payable_lead": {
+      "persona_id": "accounts_payable_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Accounts Payable Lead",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · Hyundai Motor India Limited — India Operations",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with Three-Way Match Dispute to prevents vendor holds & saves discounts.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Three-Way Match Dispute automatically diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. — prevents vendor holds & saves discounts.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited career & ops roles"
+    },
+    "master_production_scheduler": {
+      "persona_id": "master_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Master Production Scheduler",
+      "title": "Senior Manager - Production Planning & Control",
+      "role": "Orchestrating JIT assembly sequences for Sriperumbudur and Talegaon",
+      "summary": "Responsible for synchronizing the Master Production Schedule with SAP APO to meet domestic dealership demand and export targets.",
+      "manual_toil": "Manually adjusting vehicle sequences in SAP when Vendor Park component shortages disrupt the Just-in-Sequence flow.",
+      "agentic_impact": "Automates the re-sequencing of vehicle trims to maximize throughput while respecting paint-shop changeover constraints.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "shop_floor_shift_lead": {
+      "persona_id": "shop_floor_shift_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Shop Floor / Shift Lead",
+      "title": "Plant Operations Head - Assembly Line",
+      "role": "Managing real-time vehicle assembly and line efficiency",
+      "summary": "Oversees the physical assembly of vehicles, ensuring the Sriperumbudur plant hits its hourly production targets.",
+      "manual_toil": "Reacting to machine downtime or tool failures by manually re-assigning technicians to alternate stations.",
+      "agentic_impact": "Instantly re-routes sub-assembly workflows and adjusts line speed based on real-time equipment telemetry and buffer levels.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "plant_operations_manager": {
+      "persona_id": "plant_operations_manager",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Plant Operations Manager",
+      "title": "General Manager - Manufacturing Operations",
+      "role": "Optimizing labor productivity and line balancing across shifts",
+      "summary": "Directs the operational strategy for the Chennai and Pune hubs to ensure cost-effective vehicle manufacturing.",
+      "manual_toil": "Cross-referencing worker skill matrices with shift rosters to ensure specialized roles like robotic welding are covered.",
+      "agentic_impact": "Dynamically balances labor across the assembly line based on fatigue levels and specific certification requirements for new EV models.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "supply_chain_ops_director": {
+      "persona_id": "supply_chain_ops_director",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Supply Chain Ops Director",
+      "title": "VP - Production & Procurement",
+      "role": "Strategic oversight of end-to-end manufacturing capacity",
+      "summary": "Leads the integration of procurement and production to ensure the mega-plants operate at peak OEE.",
+      "manual_toil": "Reviewing disparate reports on utility consumption and bottlenecked stations to identify capacity leaks.",
+      "agentic_impact": "Provides a predictive view of plant bottlenecks by correlating energy loads and machine health with the production plan.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "external_sourcing_cmo_lead": {
+      "persona_id": "external_sourcing_cmo_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "External Sourcing / CMO Lead",
+      "title": "Senior Manager - Vendor Development",
+      "role": "Managing Tier-1 supplier and Vendor Park integration",
+      "summary": "Coordinates with co-located suppliers to ensure CKD and localized parts are ready for the assembly line.",
+      "manual_toil": "Calculating the cost-benefit of sourcing sub-assemblies from Vendor Parks versus in-house manufacturing.",
+      "agentic_impact": "Models the total landed cost and lead-time impact of shifting component assembly between internal lines and external vendors.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "vp_manufacturing_engineering": {
+      "persona_id": "vp_manufacturing_engineering",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "VP Manufacturing Engineering",
+      "title": "Head of Manufacturing Engineering & R&D",
+      "role": "Designing and scaling future production capabilities",
+      "summary": "Drives the technical roadmap for plant expansions and the introduction of new vehicle platforms like IONIQ.",
+      "manual_toil": "Running manual simulations for multi-year CapEx investments to determine when to add new robotic lines.",
+      "agentic_impact": "Simulates long-term volume growth against current floor space to optimize the timing of high-speed line expansions.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "qa_manager_line_inspector": {
+      "persona_id": "qa_manager_line_inspector",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "QA Manager / Line Inspector",
+      "title": "Manager - Quality Assurance & Inspection",
+      "role": "Ensuring zero-defect vehicle output at the end-of-line",
+      "summary": "Oversees the rigorous inspection protocols for every vehicle leaving the Sriperumbudur and Talegaon facilities.",
+      "manual_toil": "Visually inspecting paint finishes and panel gaps across thousands of vehicles per shift.",
+      "agentic_impact": "Uses computer vision to detect microscopic paint defects or misaligned trim pieces at line speed.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "regulatory_compliance_lead": {
+      "persona_id": "regulatory_compliance_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Regulatory Compliance Lead",
+      "title": "Head of Homologation & Regulatory Affairs",
+      "role": "Ensuring vehicles meet AIS and international safety standards",
+      "summary": "Manages the documentation and testing required for domestic sales and global exports through Chennai Port.",
+      "manual_toil": "Manually auditing batch records and component COAs to ensure compliance with Bharat Stage emission norms.",
+      "agentic_impact": "Automatically flags any component deviations that could impact vehicle certification or export eligibility.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "continuous_improvement_lead": {
+      "persona_id": "continuous_improvement_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Continuous Improvement Lead",
+      "title": "Senior Manager - Six Sigma & Kaizen",
+      "role": "Driving operational excellence and waste reduction",
+      "summary": "Identifies root causes of production defects to improve overall vehicle quality and reduce scrap.",
+      "manual_toil": "Sifting through warranty claims and dealership feedback to find patterns in manufacturing defects.",
+      "agentic_impact": "Correlates field failures with specific production shifts, machine telemetry, and supplier batches to find root causes.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "inventory_optimization_lead": {
+      "persona_id": "inventory_optimization_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Optimization Lead",
+      "title": "Senior Manager - Parts Inventory Planning",
+      "role": "Optimizing multi-echelon safety stock for 500+ dealerships",
+      "summary": "Manages the strategic stock levels of spare parts across the National Parts Distribution Centre and regional depots to ensure high vehicle serviceability.",
+      "manual_toil": "Manually calculating safety stock buffers in SAP APO based on fluctuating lead times from Korean HQ and local Tier-1 vendors.",
+      "agentic_impact": "Automates multi-echelon buffer recalibration using live transit data from Chennai Port and real-time dealership consumption patterns.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "inventory_controller_buyer": {
+      "persona_id": "inventory_controller_buyer",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Controller / Buyer",
+      "title": "Manager - Spare Parts Procurement & SLOB",
+      "role": "Managing slow-moving parts and procurement cycles",
+      "summary": "Oversees the lifecycle of spare parts, focusing on minimizing Slow-Moving and Obsolete (SLOB) inventory for older vehicle models like the Santro or Eon.",
+      "manual_toil": "Reviewing massive spreadsheets to identify non-moving parts and manually coordinating with dealerships for liquidation or scrap.",
+      "agentic_impact": "Proactively identifies aging CKD components and triggers automated service-kit bundling to clear stagnant warehouse space.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "replenishment_planner": {
+      "persona_id": "replenishment_planner",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Replenishment Planner",
+      "title": "Assistant General Manager - Depot Replenishment",
+      "role": "Balancing stock across regional distribution hubs",
+      "summary": "Ensures that regional parts depots in Delhi, Kolkata, and Mumbai are stocked appropriately to meet local dealership demand without overstocking.",
+      "manual_toil": "Manually orchestrating inter-depot transfers when one region faces a stockout while another has a surplus of the same SKU.",
+      "agentic_impact": "Orchestrates automated inter-facility rebalancing to resolve localized gluts using JDA TMS and Hyundai AutoEver WMS data.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "dc_operations_mgr": {
+      "persona_id": "dc_operations_mgr",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Operations Mgr / IE Lead",
+      "title": "Head of National Parts Distribution Centre",
+      "role": "Optimizing throughput at the Sriperumbudur hub",
+      "summary": "Directs all warehouse activities at the primary parts hub to ensure rapid dispatch of components to the domestic and export markets.",
+      "manual_toil": "Periodically re-evaluating bin locations for high-velocity parts like oil filters and brake pads based on seasonal demand shifts.",
+      "agentic_impact": "Dynamically re-slots the warehouse based on co-pick affinity matrices, reducing picker travel time for common service kits.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "inbound_receiving_supervisor": {
+      "persona_id": "inbound_receiving_supervisor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Inbound Receiving Supervisor",
+      "title": "Manager - Inbound Logistics & CKD Receiving",
+      "role": "Reconciling imported CKD kits and local components",
+      "summary": "Supervises the unloading and system entry of CKD kits from Korea and local parts from the Sriperumbudur Vendor Park.",
+      "manual_toil": "Physically verifying packing lists against SAP S/4HANA records and manually flagging discrepancies in imported container shipments.",
+      "agentic_impact": "Uses AI vision and OCR to reconcile scanned BOLs and pallet photos against ASNs, accelerating dock-to-stock cycle times.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "dc_shift_floor_lead": {
+      "persona_id": "dc_shift_floor_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Shift Floor Lead",
+      "title": "Deputy Manager - Warehouse Floor Operations",
+      "role": "Managing shift productivity and carrier dispatch",
+      "summary": "Leads the floor team in picking, packing, and staging parts for daily dispatch to the dealership network.",
+      "manual_toil": "Manually adjusting picker assignments when high-priority 'Vehicle Off Road' (VOR) orders spike near carrier cutoff times.",
+      "agentic_impact": "Balances picker lines in real-time to prioritize VOR orders and ensure 100% adherence to scheduled logistics departures.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "store_operations_omni_lead": {
+      "persona_id": "store_operations_omni_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Store Operations / Omni Lead",
+      "title": "Regional Manager - Dealer Operations",
+      "role": "Ensuring showroom model availability and stock accuracy",
+      "summary": "Oversees the availability of vehicle variants across regional dealerships and ensures physical stock matches SAP S/4HANA records.",
+      "manual_toil": "Manually reconciling dealer stock reports against yard dispatch logs to identify missing or misallocated VINs.",
+      "agentic_impact": "Automates the detection of inventory discrepancies between the National Parts Distribution Centre and regional showrooms.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "omnichannel_fulfillment_dir": {
+      "persona_id": "omnichannel_fulfillment_dir",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Omnichannel Fulfillment Dir.",
+      "title": "General Manager - Logistics & Dispatch",
+      "role": "Optimizing vehicle delivery from plants to dealers",
+      "summary": "Directs the movement of finished vehicles from Sriperumbudur and Talegaon yards to domestic dealers and Chennai Port.",
+      "manual_toil": "Calculating the most cost-effective transport routes and carrier assignments for multi-car carrier trucks.",
+      "agentic_impact": "Dynamically selects the best yard-to-dealer routes based on carrier availability and transit time constraints.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "reverse_logistics_lead_wh": {
+      "persona_id": "reverse_logistics_lead_wh",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Reverse Logistics Lead",
+      "title": "Manager - Parts Distribution & Returns",
+      "role": "Managing defective component returns and core exchanges",
+      "summary": "Handles the return of damaged parts or warranty-replaced components from dealerships back to the National Parts Distribution Centre.",
+      "manual_toil": "Manually inspecting returned components to decide if they should be refurbished, scrapped, or returned to the vendor.",
+      "agentic_impact": "Uses automated triage to instantly categorize returned parts for faster credit processing and inventory updates.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "transport_planner_inbound_mgr": {
+      "persona_id": "transport_planner_inbound_mgr",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Transport Planner / Inbound Mgr",
+      "title": "Senior Manager - Vendor Development & Inbound",
+      "role": "Coordinating component flow from Vendor Parks",
+      "summary": "Manages the inbound flow of components from co-located suppliers to the Sriperumbudur assembly lines.",
+      "manual_toil": "Manually coordinating LTL shipments from multiple Tier-1 suppliers into consolidated FTL deliveries to minimize gate congestion.",
+      "agentic_impact": "Optimizes load consolidation for inbound parts, reducing the number of truck movements into the plant.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "yard_master_plant_logistics": {
+      "persona_id": "yard_master_plant_logistics",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Master / Plant Logistics",
+      "title": "Yard Master - Finished Vehicle Logistics",
+      "role": "Managing vehicle staging and dock sequencing",
+      "summary": "Oversees the staging of finished vehicles in the plant yard and their subsequent loading onto car carriers.",
+      "manual_toil": "Tracking vehicle locations in massive yards using manual logs and reacting to carrier delays via phone calls.",
+      "agentic_impact": "Real-time yard sequencing that reassigns loading docks based on live GPS data from incoming car carriers.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "cold_chain_qa_logistics_dir": {
+      "persona_id": "cold_chain_qa_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold Chain QA / Logistics Dir.",
+      "title": "Quality Assurance Lead - Logistics",
+      "role": "Ensuring vehicle and part integrity during transit",
+      "summary": "Monitors the condition of high-value electronics and finished vehicles during long-haul domestic transport.",
+      "manual_toil": "Reviewing manual inspection checklists and damage reports from dealership receiving bays.",
+      "agentic_impact": "Flags potential transit damage or environmental risks using IoT sensors during the mid-mile journey.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "outbound_lead_industrial_eng": {
+      "persona_id": "outbound_lead_industrial_eng",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Outbound Lead / Industrial Eng.",
+      "title": "Lead - Outbound Logistics Engineering",
+      "role": "Designing efficient vehicle loading and dispatch flows",
+      "summary": "Optimizes the sequence of vehicle loading to ensure dealerships receive the correct mix of models and variants.",
+      "manual_toil": "Designing loading patterns for car carriers to ensure vehicles are unloaded in the correct sequence at multiple dealer stops.",
+      "agentic_impact": "Automatically sequences vehicle loading based on the dealer delivery route to minimize unloading time.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "store_replenishment_lead": {
+      "persona_id": "store_replenishment_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Replenishment Lead",
+      "title": "Manager - Dealer Replenishment",
+      "role": "Throttling vehicle supply based on dealer capacity",
+      "summary": "Manages the push and pull of vehicle inventory to dealerships based on local market demand and yard space.",
+      "manual_toil": "Checking dealer floor space and financial credit limits before approving new vehicle dispatches.",
+      "agentic_impact": "Throttles vehicle shipments based on real-time dealer inventory levels and sell-through velocity in SAP.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "retail_logistics_dispatcher": {
+      "persona_id": "retail_logistics_dispatcher",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Retail Logistics Dispatcher",
+      "title": "Dispatcher - Domestic Transport",
+      "role": "Scheduling car carrier movements to showrooms",
+      "summary": "Coordinates the daily dispatch of car carriers from the plant yards to the pan-India dealer network.",
+      "manual_toil": "Managing municipal entry restrictions and dealer operating hours to schedule delivery windows.",
+      "agentic_impact": "Synchronizes carrier arrivals with dealer dock availability while navigating city-specific heavy vehicle curfews.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "last_mile_operations_lead": {
+      "persona_id": "last_mile_operations_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Last-Mile Operations Lead",
+      "title": "Manager - Finished Vehicle Logistics",
+      "role": "Managing car carrier movements to domestic dealerships",
+      "summary": "Oversees the dispatch of multi-car carriers from Sriperumbudur and Talegaon to the pan-India dealer network.",
+      "manual_toil": "Manually coordinating with drivers to confirm arrival at remote dealership stockyards and verifying gate entry codes.",
+      "agentic_impact": "Automates precise stockyard geofencing and entry guidance to reduce carrier turnaround time and unloading delays.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "ecommerce_logistics_dir": {
+      "persona_id": "ecommerce_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "E-Commerce Logistics Dir.",
+      "title": "Head of Outward Logistics & Distribution",
+      "role": "Optimizing multimodal transport for domestic vehicle sales",
+      "summary": "Directs the strategic allocation of vehicle volumes across road car-carriers and specialized rail rakes for nationwide coverage.",
+      "manual_toil": "Manually comparing 3PL carrier rate cards and rail availability to decide the most cost-effective route for high-volume dispatches.",
+      "agentic_impact": "Dynamically shifts vehicle loads between road and rail based on real-time freight rates and transit time requirements.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "customer_support_ops_lead": {
+      "persona_id": "customer_support_ops_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Customer Support Ops Lead",
+      "title": "Deputy General Manager - Dealer Relations",
+      "role": "Ensuring OTIF delivery of vehicles to dealers",
+      "summary": "Acts as the primary liaison between the manufacturing plant and authorized dealers regarding vehicle transit status.",
+      "manual_toil": "Fielding constant calls from dealers inquiring about delayed shipments due to highway congestion or state border checks.",
+      "agentic_impact": "Proactively alerts dealers of transit exceptions and provides updated ETAs via SAP S/4HANA integration.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "fleet_dispatcher_central_ops": {
+      "persona_id": "fleet_dispatcher_central_ops",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Fleet Dispatcher / Central Ops",
+      "title": "Central Dispatcher - Export Hub",
+      "role": "Routing vehicle trailers to Chennai Port",
+      "summary": "Coordinates the high-frequency shuttle of export-model vehicles from the Sriperumbudur plant to the Chennai Port Export Hub.",
+      "manual_toil": "Recalculating trailer routes manually when heavy traffic or monsoon flooding affects the Chennai-Bengaluru Industrial Corridor.",
+      "agentic_impact": "Provides real-time rerouting for car carriers to avoid congestion, ensuring vessels at Chennai Port are loaded on schedule.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "transport_procurement_lead": {
+      "persona_id": "transport_procurement_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Transport Procurement Lead",
+      "title": "Senior Manager - Logistics Procurement",
+      "role": "Sourcing and managing 3PL carrier contracts",
+      "summary": "Negotiates and manages contracts with large-scale car carrier fleets and shipping lines for international exports.",
+      "manual_toil": "Auditing carrier performance and tender acceptance rates across multiple vendors using fragmented JDA TMS reports.",
+      "agentic_impact": "Automates the waterfall tendering process, prioritizing carriers with the highest OTIF and lowest damage rates for HMIL.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "freight_controller_claims": {
+      "persona_id": "freight_controller_claims",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Controller / Claims",
+      "title": "Manager - Freight Audit & Claims",
+      "role": "Validating logistics invoices and damage claims",
+      "summary": "Responsible for auditing freight bills and processing insurance claims for vehicles damaged during transit or port handling.",
+      "manual_toil": "Manually cross-referencing paper-based Proof of Delivery (POD) documents against SAP freight contracts to verify surcharges.",
+      "agentic_impact": "Uses OCR to instantly audit freight invoices against digital PODs, flagging unauthorized detention or fuel surcharges.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "reverse_logistics_fraud_lead": {
+      "persona_id": "reverse_logistics_fraud_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Reverse Logistics / Fraud Lead",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · Hyundai Motor India Limited — India Operations",
+      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Return Fraud Sentinel to cuts returns fraud abuse by 25–40%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Return Fraud Sentinel automatically analyzes item photos and packaging video feeds to detect wear or swapped tags. — cuts returns fraud abuse by 25–40%.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited career & ops roles"
+    },
+    "customer_experience_cx_lead": {
+      "persona_id": "customer_experience_cx_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Customer Experience (CX) Lead",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · Hyundai Motor India Limited — India Operations",
+      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Keep-It & Routing Advisor to lowers net return costs by 15–22%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Keep-It & Routing Advisor automatically evaluates salvage margins vs reverse freight to determine keep-it instant refunds. — lowers net return costs by 15–22%.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited career & ops roles"
+    },
+    "claims_specialist_controller": {
+      "persona_id": "claims_specialist_controller",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Claims Specialist / Controller",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · Hyundai Motor India Limited — India Operations",
+      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with OS&D Freight Claims to resolves carrier claims in <72 hours.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "OS&D Freight Claims automatically reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes. — resolves carrier claims in <72 hours.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited career & ops roles"
+    },
+    "merchandising_store_ops_mgr": {
+      "persona_id": "merchandising_store_ops_mgr",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Merchandising / Store Ops Mgr",
+      "title": "Manager - Parts Distribution & Inventory",
+      "role": "Optimizing spare part stock levels across regional hubs",
+      "summary": "Oversees the availability of genuine Hyundai parts across the National Parts Distribution Centre and regional warehouses to support the dealership network.",
+      "manual_toil": "Manually calculating markdown rates for slow-moving legacy model components across SAP S/4HANA and Hyundai AutoEver WMS.",
+      "agentic_impact": "Automates price adjustments for aging inventory based on vehicle population data and historical demand velocity.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "inventory_disposition_lead": {
+      "persona_id": "inventory_disposition_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Inventory Disposition Lead",
+      "title": "Senior Manager - Vendor Development & Aftersales",
+      "role": "Managing end-of-life component disposal and redistribution",
+      "summary": "Directs the movement of surplus or aging parts from the Sriperumbudur hub to secondary markets or authorized service centers.",
+      "manual_toil": "Coordinating with multiple vendors to identify and reallocate excess stock before parts reach technical obsolescence.",
+      "agentic_impact": "Proactively identifies surplus lots and matches them with high-demand service zones or export markets via JDA TMS integration.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "cso_circular_lead": {
+      "persona_id": "cso_circular_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Head of Sustainability & Plant Operations",
+      "role": "Driving circularity and waste reduction in manufacturing",
+      "summary": "Ensures that defective or obsolete automotive components are recycled or disposed of in compliance with India's environmental regulations.",
+      "manual_toil": "Compiling manual scrap reports and GHG emission data from various vendor parks and manufacturing units for ESG reporting.",
+      "agentic_impact": "Generates real-time audited reports on material diversion and carbon footprint reduction from scrapped automotive parts.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited Supply Chain & Operations roles"
+    },
+    "asset_recovery_rti_manager": {
+      "persona_id": "asset_recovery_rti_manager",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Asset Recovery / RTI Manager",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · Hyundai Motor India Limited — India Operations",
+      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with RTI Balance Reconciler to eliminates 30% in non-return fee fines.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "RTI Balance Reconciler automatically reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. — eliminates 30% in non-return fee fines.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited career & ops roles"
+    },
+    "reverse_transport_planner": {
+      "persona_id": "reverse_transport_planner",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Reverse Transport Planner",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · Hyundai Motor India Limited — India Operations",
+      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Milk-Run Consolidation to boosts backhaul fill rate by 25–40%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Milk-Run Consolidation automatically schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. — boosts backhaul fill rate by 25–40%.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited career & ops roles"
+    },
+    "packaging_qa_food_safety": {
+      "persona_id": "packaging_qa_food_safety",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Packaging QA / Food Safety",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · Hyundai Motor India Limited — India Operations",
+      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Sanitation & Health Agent to extends reusable lifecycle by 15–20%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Sanitation & Health Agent automatically inspects return photos and wash logs for structural fatigue and chemical compliance. — extends reusable lifecycle by 15–20%.",
+      "grounding_source": "Grounded in Hyundai Motor India Limited career & ops roles"
+    }
+  },
+  "agent_relevance": {
+    "demand_sensing_agent": {
+      "agent_id": "demand_sensing_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Sensing Agent",
+      "custom_agent_name": "Market Demand Sensing Agent",
+      "is_relevant": true,
+      "division_context": "Synthesizes Indian market trends and dealership bookings to refine production schedules at Sriperumbudur.",
+      "hidden_reason": ""
+    },
+    "cpfr_sync_agent": {
+      "agent_id": "cpfr_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Forecast Reconciliation",
+      "custom_agent_name": "Dealer-Plant Sync Agent",
+      "is_relevant": true,
+      "division_context": "Reconciles dealership inventory levels with factory output to ensure the right model mix is in transit.",
+      "hidden_reason": ""
+    },
+    "npi_demand_profiler": {
+      "agent_id": "npi_demand_profiler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "NPI Demand Profiler",
+      "custom_agent_name": "New Model Launch Profiler",
+      "is_relevant": true,
+      "division_context": "Uses historical data from previous Hyundai launches to predict demand for new EV and SUV variants.",
+      "hidden_reason": ""
+    },
+    "promo_lift_simulator": {
+      "agent_id": "promo_lift_simulator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Promo ROI Simulator",
+      "custom_agent_name": "Incentive ROI Simulator",
+      "is_relevant": true,
+      "division_context": "Simulates the impact of festive season discounts and dealer schemes on monthly sales volumes.",
+      "hidden_reason": ""
+    },
+    "field_beat_distributor_sync_agent": {
+      "agent_id": "field_beat_distributor_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "JBP Negotiation Agent",
+      "custom_agent_name": "Dealer Business Planning Agent",
+      "is_relevant": true,
+      "division_context": "Creates data-driven sell-in strategies for regional managers to use with large dealership groups.",
+      "hidden_reason": ""
+    },
+    "trade_scheme_claims_reconciler": {
+      "agent_id": "trade_scheme_claims_reconciler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Deduction Audit Agent",
+      "custom_agent_name": "Dealer Claim Audit Agent",
+      "is_relevant": true,
+      "division_context": "Audits dealer incentive claims and proof-of-sale documents against SAP records for financial accuracy.",
+      "hidden_reason": ""
+    },
+    "sop_scenario_weaver": {
+      "agent_id": "sop_scenario_weaver",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Consensus & Gap Agent",
+      "custom_agent_name": "Production-Demand Weaver",
+      "is_relevant": true,
+      "division_context": "Balances unconstrained market demand with the physical throughput limits of the Chennai and Talegaon plants.",
+      "hidden_reason": ""
+    },
+    "disruption_war_room_orchestrator": {
+      "agent_id": "disruption_war_room_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Digital War-Room Agent",
+      "custom_agent_name": "Supply Chain Resilience Agent",
+      "is_relevant": true,
+      "division_context": "Manages production trade-offs and vendor park priorities during component shortages or logistics delays.",
+      "hidden_reason": ""
+    },
+    "csco_control_tower_copilot": {
+      "agent_id": "csco_control_tower_copilot",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Executive Copilot",
+      "custom_agent_name": "HMIL Executive Copilot",
+      "is_relevant": true,
+      "division_context": "Provides a unified view of S&OP performance for the VP of Production and Head of SCM.",
+      "hidden_reason": ""
+    },
+    "working_capital_cash_bridge": {
+      "agent_id": "working_capital_cash_bridge",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "SKU Pruning Agent",
+      "custom_agent_name": "Variant Rationalization Agent",
+      "is_relevant": true,
+      "division_context": "Identifies slow-moving vehicle variants to reduce inventory holding costs and simplify manufacturing.",
+      "hidden_reason": ""
+    },
+    "eco_cutover_orchestrator": {
+      "agent_id": "eco_cutover_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "PIPO Run-Out Agent",
+      "custom_agent_name": "Engineering Change Orchestrator",
+      "is_relevant": true,
+      "division_context": "Manages the transition of parts in the Vendor Park during model facelifts to prevent stock obsolescence.",
+      "hidden_reason": ""
+    },
+    "network_twin_architect": {
+      "agent_id": "network_twin_architect",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Cost-to-Serve Diagnostic",
+      "custom_agent_name": "Logistics Cost Diagnostic",
+      "is_relevant": true,
+      "division_context": "Calculates the total cost-to-serve for domestic dealerships and export shipments via Chennai Port.",
+      "hidden_reason": ""
+    },
+    "tier_n_risk_sentinel": {
+      "agent_id": "tier_n_risk_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Disruption Sensing Agent",
+      "custom_agent_name": "Tier-N Disruption Sentinel",
+      "is_relevant": true,
+      "division_context": "Monitors Chennai Port delays and Tier-2 supplier financials to protect JIT/JIS production schedules at HMIL plants.",
+      "hidden_reason": ""
+    },
+    "supplier_quality_sentinel": {
+      "agent_id": "supplier_quality_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Onboarding & Qual. Agent",
+      "custom_agent_name": "Automotive Quality & Compliance Agent",
+      "is_relevant": true,
+      "division_context": "Parses IATF 16949 audits and GST registrations to ensure all Vendor Park partners meet HMIL's stringent quality standards.",
+      "hidden_reason": ""
+    },
+    "carbon_scope3_ledger": {
+      "agent_id": "carbon_scope3_ledger",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "ESG & Scope 3 Auditor",
+      "custom_agent_name": "HMIL Green Value Chain Auditor",
+      "is_relevant": true,
+      "division_context": "Standardizes Scope 3 data collection across the localized supplier base to meet Hyundai's global carbon neutrality targets.",
+      "hidden_reason": ""
+    },
+    "commodity_index_advisor": {
+      "agent_id": "commodity_index_advisor",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Commodity Index Advisor",
+      "custom_agent_name": "Steel & Resin Index Advisor",
+      "is_relevant": true,
+      "division_context": "Correlates global metal and polymer price fluctuations with HMIL production volumes to optimize direct material procurement.",
+      "hidden_reason": ""
+    },
+    "rfq_should_cost_agent": {
+      "agent_id": "rfq_should_cost_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Dynamic Should-Cost Agent",
+      "custom_agent_name": "Component Should-Cost Analyst",
+      "is_relevant": true,
+      "division_context": "Deconstructs automotive part specs to provide accurate cost benchmarks for localized sourcing negotiations.",
+      "hidden_reason": ""
+    },
+    "sustainable_packaging_agent": {
+      "agent_id": "sustainable_packaging_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Sustainable Packaging Agent",
+      "custom_agent_name": "Returnable Packaging Optimizer",
+      "is_relevant": true,
+      "division_context": "Evaluates the durability and environmental impact of returnable dunnage and crates used in JIT delivery to the assembly line.",
+      "hidden_reason": ""
+    },
+    "tariff_esg_agent": {
+      "agent_id": "tariff_esg_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Contract Leakage Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Hyundai Motor India Limited — India Operations.",
+      "hidden_reason": ""
+    },
+    "master_data_leadtime_steward": {
+      "agent_id": "master_data_leadtime_steward",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "PO Expediting Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Hyundai Motor India Limited — India Operations.",
+      "hidden_reason": ""
+    },
+    "three_way_match_dispute": {
+      "agent_id": "three_way_match_dispute",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Three-Way Match Dispute",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Hyundai Motor India Limited — India Operations.",
+      "hidden_reason": ""
+    },
+    "finite_production_scheduler": {
+      "agent_id": "finite_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Changeover Optimizer",
+      "custom_agent_name": "JIS Sequence Optimizer",
+      "is_relevant": true,
+      "division_context": "Sequences vehicle models and trims to minimize paint-shop changeovers and align with Just-in-Sequence parts arrival.",
+      "hidden_reason": ""
+    },
+    "line_schedule_optimizer": {
+      "agent_id": "line_schedule_optimizer",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Disruption Re-sequencer",
+      "custom_agent_name": "Assembly Line Re-sequencer",
+      "is_relevant": true,
+      "division_context": "Detects robotic cell halts and re-routes vehicle bodies to alternate stations to maintain Takt time.",
+      "hidden_reason": ""
+    },
+    "labor_line_balancing_agent": {
+      "agent_id": "labor_line_balancing_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Labor & Line Balancing",
+      "custom_agent_name": "Technician Skill & Shift Balancer",
+      "is_relevant": true,
+      "division_context": "Maps technician certifications for specific vehicle systems (EV vs ICE) to the daily production mix.",
+      "hidden_reason": ""
+    },
+    "predictive_oee_sentinel": {
+      "agent_id": "predictive_oee_sentinel",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Bottleneck Diagnostic",
+      "custom_agent_name": "Plant OEE & Utility Sentinel",
+      "is_relevant": true,
+      "division_context": "Monitors power loads and robotic health at Sriperumbudur to prevent unplanned downtime during peak production.",
+      "hidden_reason": ""
+    },
+    "copacker_allocation_agent": {
+      "agent_id": "copacker_allocation_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Co-Packer Allocation",
+      "custom_agent_name": "Vendor Park Allocation Optimizer",
+      "is_relevant": true,
+      "division_context": "Models the cost of sourcing sub-assemblies from co-located Vendor Park suppliers versus internal shop-floor production.",
+      "hidden_reason": ""
+    },
+    "capex_simulator_agent": {
+      "agent_id": "capex_simulator_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "CapEx Simulator",
+      "custom_agent_name": "Manufacturing Expansion Simulator",
+      "is_relevant": true,
+      "division_context": "Simulates the impact of adding new robotic assembly lines to meet 2030 export and domestic volume targets.",
+      "hidden_reason": ""
+    },
+    "inline_yield_guardian": {
+      "agent_id": "inline_yield_guardian",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Visual Defect Triager",
+      "custom_agent_name": "Body-in-White Vision Inspector",
+      "is_relevant": true,
+      "division_context": "Analyzes high-speed camera feeds to detect weld defects or panel misalignments before vehicles enter the paint shop.",
+      "hidden_reason": ""
+    },
+    "batch_record_auditor": {
+      "agent_id": "batch_record_auditor",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Batch Record Auditor",
+      "custom_agent_name": "Homologation & VIN Auditor",
+      "is_relevant": true,
+      "division_context": "Parses component certificates and assembly logs to ensure every VIN complies with Indian and export safety regulations.",
+      "hidden_reason": ""
+    },
+    "scrap_defect_root_cause_agent": {
+      "agent_id": "scrap_defect_root_cause_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "RCA & CAPA Copilot",
+      "custom_agent_name": "Warranty & Defect Root Cause Copilot",
+      "is_relevant": true,
+      "division_context": "Correlates dealership warranty claims with specific assembly line telemetry and supplier part batches.",
+      "hidden_reason": ""
+    },
+    "meio_safety_stock_agent": {
+      "agent_id": "meio_safety_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Safety Stock Agent",
+      "custom_agent_name": "Multi-Echelon Buffer Optimizer",
+      "is_relevant": true,
+      "division_context": "Recalibrates safety stock across the National PDC and regional depots based on Hyundai's specific lead times from Korea and local vendors.",
+      "hidden_reason": ""
+    },
+    "slob_disposition_agent": {
+      "agent_id": "slob_disposition_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "SLOB Disposition Agent",
+      "custom_agent_name": "Service Part Lifecycle Agent",
+      "is_relevant": true,
+      "division_context": "Identifies slow-moving legacy parts and CKD components to trigger promotional service campaigns or scrap workflows.",
+      "hidden_reason": ""
+    },
+    "crossdock_transfer_orchestrator": {
+      "agent_id": "crossdock_transfer_orchestrator",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inter-Facility Rebalancer",
+      "custom_agent_name": "Inter-Depot Rebalancer",
+      "is_relevant": true,
+      "division_context": "Automates the transfer of spare parts between regional depots to satisfy urgent dealership 'Vehicle Off Road' (VOR) requirements.",
+      "hidden_reason": ""
+    },
+    "warehouse_slotting_agent": {
+      "agent_id": "warehouse_slotting_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dynamic Slotting Agent",
+      "custom_agent_name": "Dynamic Parts Slotting Agent",
+      "is_relevant": true,
+      "division_context": "Optimizes bin locations at the Sriperumbudur PDC for high-velocity service parts to maximize picking efficiency.",
+      "hidden_reason": ""
+    },
+    "dock_to_stock_agent": {
+      "agent_id": "dock_to_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dock-to-Stock Agent",
+      "custom_agent_name": "CKD & Inbound Reconciler",
+      "is_relevant": true,
+      "division_context": "Speeds up the intake of imported CKD containers and local vendor deliveries by automating ASN-to-physical reconciliation.",
+      "hidden_reason": ""
+    },
+    "wave_fulfillment_copilot": {
+      "agent_id": "wave_fulfillment_copilot",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Wave Fulfillment Copilot",
+      "custom_agent_name": "VOR Dispatch Copilot",
+      "is_relevant": true,
+      "division_context": "Prioritizes urgent spare part orders to ensure they meet daily dispatch windows for the pan-India dealership network.",
+      "hidden_reason": ""
+    },
+    "planogram_merchandising_vision_auditor": {
+      "agent_id": "planogram_merchandising_vision_auditor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Phantom Inventory Sensor",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Identifies discrepancies between physical yard stock and SAP records to prevent phantom vehicle inventory.",
+      "hidden_reason": "Filtered for operational fit: B2B / non-retail store channel model."
+    },
+    "atp_order_promising_agent": {
+      "agent_id": "atp_order_promising_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "SFS / BOPIS Sourcing",
+      "custom_agent_name": "Vehicle Allocation Engine",
+      "is_relevant": true,
+      "division_context": "Selects the optimal plant yard or regional depot to fulfill dealer orders at the lowest logistics cost.",
+      "hidden_reason": ""
+    },
+    "returns_triage_agent": {
+      "agent_id": "returns_triage_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Returns Triage Agent",
+      "custom_agent_name": "Parts Return Triage",
+      "is_relevant": true,
+      "division_context": "Evaluates the condition of returned spare parts to automate restock, vendor return, or scrap decisions.",
+      "hidden_reason": ""
+    },
+    "load_consolidation_agent": {
+      "agent_id": "load_consolidation_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Load Consolidation",
+      "custom_agent_name": "Inbound Load Optimizer",
+      "is_relevant": true,
+      "division_context": "Consolidates component shipments from Vendor Park suppliers into optimized FTL deliveries for Sriperumbudur lines.",
+      "hidden_reason": ""
+    },
+    "yard_dock_sequencer": {
+      "agent_id": "yard_dock_sequencer",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Disruption Agent",
+      "custom_agent_name": "Yard & Gate Orchestrator",
+      "is_relevant": true,
+      "division_context": "Parses GPS feeds from car carriers to dynamically reassign staging areas and loading docks at the plant.",
+      "hidden_reason": ""
+    },
+    "cold_chain_auditor": {
+      "agent_id": "cold_chain_auditor",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold-Chain Auditor",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Supports Plant-to-Yard & Port Logistics across Hyundai Motor India Limited — India Operations.",
+      "hidden_reason": "Filtered for operational fit: no refrigerated cold-chain perishables."
+    },
+    "aisle_aligned_pallet_agent": {
+      "agent_id": "aisle_aligned_pallet_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Aisle-Aligned Pallet",
+      "custom_agent_name": "Carrier Loading Sequencer",
+      "is_relevant": true,
+      "division_context": "Sequences vehicle loading on car carriers to match the drop-off order of multi-stop dealership routes.",
+      "hidden_reason": ""
+    },
+    "store_capacity_agent": {
+      "agent_id": "store_capacity_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Capacity Agent",
+      "custom_agent_name": "Dealer Yard Capacity Monitor",
+      "is_relevant": true,
+      "division_context": "Throttles vehicle dispatches based on live dealer stock levels and physical yard constraints.",
+      "hidden_reason": ""
+    },
+    "port_drayage_orchestrator": {
+      "agent_id": "port_drayage_orchestrator",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Curfew Orchestrator",
+      "custom_agent_name": "Export & Curfew Coordinator",
+      "is_relevant": true,
+      "division_context": "Coordinates vehicle movement to Chennai Port and manages city-specific truck curfews for dealer deliveries.",
+      "hidden_reason": ""
+    },
+    "geocoding_intelligence_agent": {
+      "agent_id": "geocoding_intelligence_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Geocoding Intelligence",
+      "custom_agent_name": "Dealer Stockyard Navigator",
+      "is_relevant": true,
+      "division_context": "Guides car carrier drivers to precise dealership unloading zones and stockyard gates across diverse Indian urban terrains.",
+      "hidden_reason": ""
+    },
+    "multimodal_mode_shift_agent": {
+      "agent_id": "multimodal_mode_shift_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Courier Allocation",
+      "custom_agent_name": "Rail-Road Optimizer",
+      "is_relevant": true,
+      "division_context": "Optimizes the mix between road carriers and Indian Railways' NMG rakes to minimize the carbon footprint and cost of domestic distribution.",
+      "hidden_reason": ""
+    },
+    "otif_penalty_shield": {
+      "agent_id": "otif_penalty_shield",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Delivery Exception Copilot",
+      "custom_agent_name": "Dealer Delivery Copilot",
+      "is_relevant": true,
+      "division_context": "Monitors vehicle transit for delays and automatically updates the Dealer Management System to manage customer delivery expectations.",
+      "hidden_reason": ""
+    },
+    "fleetflow_dispatch": {
+      "agent_id": "fleetflow_dispatch",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Dynamic Rerouter",
+      "custom_agent_name": "Export Shuttle Rerouter",
+      "is_relevant": true,
+      "division_context": "Dynamically reroutes car carriers between the Sriperumbudur plant and Chennai Port based on live traffic and port gate congestion.",
+      "hidden_reason": ""
+    },
+    "freight_control_tower": {
+      "agent_id": "freight_control_tower",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Routing Guide Compliance",
+      "custom_agent_name": "Carrier Compliance Monitor",
+      "is_relevant": true,
+      "division_context": "Ensures 3PL partners adhere to HMIL's routing guides and service level agreements for both domestic and export lanes.",
+      "hidden_reason": ""
+    },
+    "freight_bill_audit_agent": {
+      "agent_id": "freight_bill_audit_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Bill Audit Agent",
+      "custom_agent_name": "Logistics Invoice Auditor",
+      "is_relevant": true,
+      "division_context": "Automates the reconciliation of freight invoices with SAP S/4HANA records to prevent overpayment on export and domestic shipments.",
+      "hidden_reason": ""
+    },
+    "reverse_rma_optimizer": {
+      "agent_id": "reverse_rma_optimizer",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Return Fraud Sentinel",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across Hyundai Motor India Limited — India Operations.",
+      "hidden_reason": ""
+    },
+    "keep_it_routing_advisor": {
+      "agent_id": "keep_it_routing_advisor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Keep-It & Routing Advisor",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Supports Returns & Claims Mgmt across Hyundai Motor India Limited — India Operations.",
+      "hidden_reason": "Filtered for operational fit: B2B / non-retail store channel model."
+    },
+    "osd_freight_claims_agent": {
+      "agent_id": "osd_freight_claims_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "OS&D Freight Claims",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across Hyundai Motor India Limited — India Operations.",
+      "hidden_reason": ""
+    },
+    "dynamic_markdown_agent": {
+      "agent_id": "dynamic_markdown_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Dynamic Markdown Agent",
+      "custom_agent_name": "Parts Lifecycle Pricing Agent",
+      "is_relevant": true,
+      "division_context": "Optimizes price cuts for slow-moving spare parts for discontinued vehicle models to clear warehouse space in the National Parts Distribution Centre.",
+      "hidden_reason": ""
+    },
+    "short_dated_redistributor": {
+      "agent_id": "short_dated_redistributor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Short-Dated Redistributor",
+      "custom_agent_name": "Service Part Redistributor",
+      "is_relevant": true,
+      "division_context": "Identifies aging components in the Sriperumbudur and Talegaon hubs and reallocates them to regional dealerships with high service demand.",
+      "hidden_reason": ""
+    },
+    "food_waste_esg_copilot": {
+      "agent_id": "food_waste_esg_copilot",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Food Waste & ESG Copilot",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Tracks the recycling of metal scrap and obsolete plastic components to generate audited GHG diversion filings for HMIL sustainability reports.",
+      "hidden_reason": "Filtered for operational fit: non-food product & operations portfolio."
+    },
+    "rti_balance_reconciler": {
+      "agent_id": "rti_balance_reconciler",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "RTI Balance Reconciler",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Hyundai Motor India Limited — India Operations.",
+      "hidden_reason": ""
+    },
+    "intermodal_rail_linehaul_agent": {
+      "agent_id": "intermodal_rail_linehaul_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Milk-Run Consolidation",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Hyundai Motor India Limited — India Operations.",
+      "hidden_reason": ""
+    },
+    "sanitation_health_agent": {
+      "agent_id": "sanitation_health_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Sanitation & Health Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Hyundai Motor India Limited — India Operations.",
+      "hidden_reason": ""
+    }
+  },
+  "process_overrides": {
+    "f2f": {
+      "vc_id": "f2f",
+      "custom_title": "Vehicle Forecast-to-Fulfill",
+      "custom_subtitle": "Translating market demand into production schedules and finished vehicle deliveries to dealerships."
+    },
+    "o2d": {
+      "vc_id": "o2d",
+      "custom_title": "Dealer Order-to-Delivery",
+      "custom_subtitle": "Processing dealership orders for specific vehicle variants and dispatching them from regional stockyards."
+    },
+    "s2p": {
+      "vc_id": "s2p",
+      "custom_title": "Component Source-to-Pay",
+      "custom_subtitle": "Sourcing raw materials and auto parts from localized vendors to feed JIT assembly lines."
+    },
+    "p2r": {
+      "vc_id": "p2r",
+      "custom_title": "Warranty & Scrap Circularity",
+      "custom_subtitle": "Managing the return of defective parts under warranty and the recycling of manufacturing scrap."
+    }
+  },
+  "hidden_agent_ids": [
+    "cold_chain_auditor",
+    "food_waste_esg_copilot",
+    "keep_it_routing_advisor",
+    "planogram_merchandising_vision_auditor"
+  ],
+  "hidden_persona_ids": [
+    "cold_chain_qa_logistics_dir",
+    "cso_circular_lead",
+    "customer_experience_cx_lead",
+    "store_operations_omni_lead"
+  ],
+  "active_pillars_count": 7,
+  "active_agents_count": 56,
+  "active_personas_count": 56,
+  "active_sub_pillars_count": 20,
+  "grounding_citations": [
+    {
+      "title": "Hyundai Motor Company — Corporate Profile",
+      "url": "https://en.wikipedia.org/wiki/Hyundai_Motor_Company",
+      "snippet": ""
+    },
+    {
+      "title": "Hyundai Motor India Limited Official Brand Mark",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Hyundai_Motor_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "snippet": ""
+    }
+  ],
+  "career_title_examples": [
+    "Head of Supply Chain Management",
+    "VP - Production & Procurement",
+    "General Manager - Logistics",
+    "Senior Manager - Vendor Development",
+    "Plant Operations Head",
+    "Manager - Parts Distribution"
+  ],
+  "terminology_highlights": [
+    "CKD / SKD — Completely or Semi Knocked Down kits imported or exported for vehicle assembly.",
+    "JIT / JIS — Just-in-Time and Just-in-Sequence parts delivery directly to the assembly line to minimize inventory.",
+    "HMIL — Hyundai Motor India Limited, the Indian subsidiary driving domestic and export volumes.",
+    "Vendor Park — Co-located supplier facilities near the main assembly plant to enable rapid component staging."
+  ],
+  "created_at": "2026-11-03T09:41:55.826343+00:00",
+  "updated_at": "2026-11-03T09:41:55.826343+00:00",
+  "generation_model": "gemini-3.1-pro-preview (gemini_api_key) + Gemini 3 Flash (Google Search Grounded)"
+}

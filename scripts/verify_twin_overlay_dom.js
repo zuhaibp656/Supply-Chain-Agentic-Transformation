@@ -251,9 +251,12 @@ assert(!html.includes('id="navPersonasQuickMenu"'), 'Personas navbar dropdown mu
 assert(!html.includes('id="navAgentsQuickMenu"'), 'Agents navbar dropdown must be removed');
 assert(html.includes('openProcessesHubPage(true, event)'), 'Processes navbar button must open Processes Hub');
 
-// 1. Verify Canonical Initial State
+// 1. Verify Canonical Initial State & Distinct Pillar Colors
 let st = api.getState();
 assert.strictEqual(Object.keys(st.DEPARTMENTS).length, 6, 'Expected 6 canonical pillars');
+const canonPillarColors = Object.values(st.DEPARTMENTS).map(d => d.color.toLowerCase());
+assert.strictEqual(new Set(canonPillarColors).size, 6, `Expected 6 distinct canonical pillar colors, got ${canonPillarColors.join(', ')}`);
+assert.strictEqual(st.DEPARTMENTS.circular_enable.color.toLowerCase(), '#e11d48', 'Pillar 06 (circular_enable) must use distinct #e11d48 Crimson Rose');
 assert.strictEqual(Object.keys(st.PERSONAS).length, 60, 'Expected 60 canonical personas');
 assert.strictEqual(Object.keys(st.AGENTS).length, 60, 'Expected 60 canonical agents');
 
@@ -261,13 +264,20 @@ assert.strictEqual(Object.keys(st.AGENTS).length, 60, 'Expected 60 canonical age
 api.applyBrowserTwin(itcTobacco);
 st = api.getState();
 assert.strictEqual(Object.keys(st.DEPARTMENTS).length, 7, 'Expected 7 dynamic Operating Pillars for ITC Tobacco & TM&D');
+const itcPillarColors = Object.values(st.DEPARTMENTS).map(d => d.color.toLowerCase());
+assert.strictEqual(new Set(itcPillarColors).size, 7, `Expected 7 distinct ITC Tobacco pillar colors, got ${itcPillarColors.join(', ')}`);
 const expectedActiveTobacco = itcTobacco.active_agents_count;
 assert.strictEqual(Object.keys(st.AGENTS).length, expectedActiveTobacco, `Expected ${expectedActiveTobacco} active agents for ITC Tobacco`);
 assert.strictEqual(Object.keys(st.PERSONAS).length, 60 - itcTobacco.hidden_persona_ids.length, 'Expected paired hidden personas removed cleanly');
-assert(cfoTitle.textContent.includes('ITC'), 'CSCO title must reflect ITC Limited');
+assert.strictEqual(cfoTitle.textContent, itcTobacco.brand.executive_title, 'CSCO title must match ITC executive_title');
 assert(cfoSub.textContent.includes('7 Core Operating Pillars'), 'CSCO subtitle must reflect 7 Core Operating Pillars');
 assert(heroTitle.innerHTML.includes('ITC Limited'), 'Hero title must reflect ITC Limited');
 assert(!elementsById.has('twinActiveContextBar'), 'Customer-facing front page must NOT render #twinActiveContextBar');
+assert(!html.includes('id="aiFunctionStackSection"'), 'Front page must NOT render AI in Supply Chain Function section');
+assert(html.includes('openArchitecturePage(true, event)'), 'Top navbar AI Stack tab must remain intact');
+assert(html.includes('function smoothGlideToElement('), 'Transform-immune smoothGlideToElement auto-scroll helper must exist');
+assert(html.includes('html[data-theme="light"] .dept-node:hover .dept-anim-meta'), 'Light Mode hover override for .dept-anim-meta must exist');
+assert(html.includes('--bg-elevated: #f3f7fd;'), 'Light Mode --bg-elevated variable must be defined');
 
 // Every active agent MUST preserve its canonicalName AND apply custom_agent_name when provided!
 let customRenamedCount = 0;
@@ -292,6 +302,8 @@ api.openPersonaPage(samplePid, false);
 const personaHtml = getOrCreateId('personaPageContent').innerHTML;
 assert(!personaHtml.includes('Est. Cost:'), 'Persona page must NOT show inline Est. Cost clutter');
 assert(personaHtml.includes('Back to 7 Pillars'), 'Persona back button must dynamically reflect 7 Pillars');
+assert(personaHtml.includes(`openProofForPersona('${samplePid}'`), 'Persona page must have clickable top & bottom impact boxes');
+assert(personaHtml.includes('sc-bottom-impact-bar sc-impact-link-box'), 'Persona page must include sleek clickable bottom impact box');
 
 api.openAgentPage(sampleAid, false);
 const agentHtml = getOrCreateId('agentPageContent').innerHTML;
@@ -301,6 +313,8 @@ assert(
 );
 assert(!agentHtml.includes('Core Demo Engine Preserved'), 'Agent detail page must NOT show internal scaffolding text');
 assert(!agentHtml.includes('WHAT THIS AGENT DOES AT A GLANCE'), 'Duplicate paragraph/bullet wall must be removed from Agent page');
+assert(agentHtml.includes(`openProofForAgent('${sampleAid}'`), 'Agent page must have clickable top & bottom impact boxes');
+assert(agentHtml.includes('sc-bottom-impact-bar sc-impact-link-box'), 'Agent page must include sleek clickable bottom impact box');
 assert(agentHtml.includes(`id="agentDeepBtn_cost_${sampleAid}"`), 'Agent page must include collapsed Cost & ROI pill');
 assert(agentHtml.includes(`id="agentDrawer_cost_${sampleAid}" class="agent-deepdive-drawer" style="display:none;"`), 'Cost & ROI drawer must be collapsed by default');
 assert(agentHtml.includes(`id="agentSingleSpecBody_${sampleAid}"`), '6-tab Enterprise Agent Contract must remain intact');
@@ -329,17 +343,39 @@ sandbox.switchCostSectionTab('simulator');
 costHtml = getOrCreateId('costPageContent').innerHTML;
 assert(costHtml.includes('Dynamic Scale Simulator'), 'Cost & ROI Step 3 must render interactive simulator');
 
-// Verify Progressive 3-Tab Case Studies Hub
-sandbox.switchEvidenceTab('cases');
+// Verify Navigation-Aligned 3-Tab Problem Data, Modeled ROI & Case Studies Hub (Persona + Agent)
+assert(!html.includes('5.5 hrs'), 'No cookie-cutter 5.5 hrs string may remain in index.html');
+assert(!html.includes('45 mins/day'), 'No cookie-cutter 45 mins/day string may remain in index.html');
+
+sandbox.openProofForPersona(samplePid);
 let evHtml = getOrCreateId('evidencePageContent').innerHTML;
-assert(evHtml.includes('sc-v22-cs-card'), 'Case Studies Tab 1 must render clean spacious case study cards');
-assert(!evHtml.includes('Pillar-by-Pillar Calibration Matrix'), 'Case Studies Tab 1 must NOT stack benchmark table');
+assert(evHtml.includes('id="evidenceFocusedSpotlight"'), 'Clicking Persona impact must open Focused Proof Spotlight');
+assert(evHtml.includes('01 · Backed Problem &amp; Cost Data'), 'Proof Spotlight must lead with Backed Problem & Cost Data');
+assert(evHtml.includes('02 · Potential Impact With Our Agent'), 'Proof Spotlight must show Modeled Agentic Potential');
+assert(evHtml.includes('sc-proof-target-focused'), 'Clicking Persona impact must highlight exact target row/card');
+assert(evHtml.includes('All 7 Pillars'), 'Evidence Hub navigation must dynamically align with 7 ITC Operating Pillars');
+assert(evHtml.includes('Sub-Pillars:'), 'Evidence Hub navigation must display Sub-Pillar row');
+assert(evHtml.includes('Personas &amp; Agents:'), 'Evidence Hub navigation must display Personas & Agents row');
+
+sandbox.openProofForAgent(sampleAid);
+evHtml = getOrCreateId('evidencePageContent').innerHTML;
+assert(evHtml.includes('id="evidenceFocusedSpotlight"'), 'Clicking Agent impact must open Focused Proof Spotlight');
+assert(evHtml.includes(`id="proofRow_${sampleAid}"`), 'Clicking Agent impact must render and highlight exact Agent row in Problem Data Matrix');
+assert(evHtml.includes('sc-proof-target-focused'), 'Clicking Agent impact must highlight exact target row');
+
+sandbox.currentEvidenceFocus = null;
+sandbox.currentEvidenceSubPillar = 'all';
+sandbox.openEvidenceHubPage('all', false, null, null, 'all');
 sandbox.switchEvidenceTab('benchmarks');
 evHtml = getOrCreateId('evidencePageContent').innerHTML;
-assert(evHtml.includes('Pillar-by-Pillar Calibration Matrix'), 'Case Studies Tab 2 must render benchmark matrix');
+assert(evHtml.includes('Backed Problem Cost Data vs. Modeled Agentic Impact'), 'Tab 1 must render Backed Problem Cost Data vs. Modeled Agentic Impact matrix');
+sandbox.switchEvidenceTab('cases');
+evHtml = getOrCreateId('evidencePageContent').innerHTML;
+assert(evHtml.includes('sc-v22-cs-card'), 'Tab 2 must render clean spacious reference case study cards');
+assert(!evHtml.includes('Backed Problem Cost Data vs. Modeled Agentic Impact'), 'Tab 2 must NOT stack benchmark table');
 sandbox.switchEvidenceTab('sources');
 evHtml = getOrCreateId('evidencePageContent').innerHTML;
-assert(evHtml.includes('Open Published Source'), 'Case Studies Tab 3 must render primary research sources');
+assert(evHtml.includes('Open Official Report / Data'), 'Tab 3 must render primary empirical data & research sources');
 
 // Verify Hierarchical Personas & Agents Directory + Dedicated Processes Hub
 api.openPersonasDirectoryPage('all', '', false, 'personas');
@@ -392,10 +428,50 @@ let totalSubPillars = 0;
 Object.values(st.DEPARTMENTS).forEach(d => { totalSubPillars += d.subPillars.length; });
 assert.strictEqual(totalSubPillars, 20, 'All 20 canonical sub-pillars restored');
 
-console.log('✅ ZERO-BREAKAGE V2.2 DOM, HIERARCHY & DYNAMIC PILLARS VERIFICATION PASSED 100%!');
-console.log(`   - Canonical Baseline: 6 Pillars · 20 Sub-Pillars · 60 Personas · 60 Agents`);
+// 6. Verify Distinct Pillar Colors (#e11d48 on Pillar 06), Home AI Stack removal, 60 Multi-Dimensional Impacts & Backed Problem Data Proofs
+assert(!html.includes('id="aiFunctionStackSection"'), 'Duplicate AI in Supply Chain Function section must be removed from #pageHome');
+const basePillarColors = Object.values(st.DEPARTMENTS).map(d => d.color.toLowerCase());
+assert.strictEqual(new Set(basePillarColors).size, 6, 'All 6 canonical Operating Pillars must have 6 distinct colors');
+assert.strictEqual(st.DEPARTMENTS.circular_enable.color.toLowerCase(), '#e11d48', 'Pillar 06 (Returns & Reverse Logistics) must use distinct Crimson Rose (#e11d48)');
+
+const personaList = Object.values(st.PERSONAS);
+const uniqueHeadlines = new Set(personaList.map(p => p.headlineStat));
+const uniqueDims = new Set(personaList.map(p => p.impactDimension));
+assert.strictEqual(uniqueHeadlines.size, 60, `All 60 Personas must have unique role-authentic headline stats (got ${uniqueHeadlines.size})`);
+assert(uniqueDims.size >= 8, `Personas must span >=8 distinct business impact dimensions (got ${uniqueDims.size})`);
+const serializedCore = JSON.stringify({ p: st.PERSONAS, a: st.AGENTS, vc: st.VALUE_CHAINS });
+assert(!serializedCore.includes('5.5 hrs'), 'Zero cookie-cutter "5.5 hrs" strings allowed anywhere in PERSONAS, AGENTS, or VALUE_CHAINS');
+assert(!serializedCore.includes('45 mins/day'), 'Zero cookie-cutter "45 mins/day" strings allowed anywhere in PERSONAS, AGENTS, or VALUE_CHAINS');
+
+// Verify Persona Top & Bottom Clickable Impact Boxes -> 3-Column Backed Problem & Cost Data Spotlight
+const apPersona = Object.values(st.PERSONAS).find(x => x.impactDimension === 'P2P Processing Cost');
+assert(apPersona, 'Expected AP Persona with P2P Processing Cost dimension');
+api.openPersonaPage(apPersona.id, false);
+const pPageHtml = getOrCreateId('personaPageContent').innerHTML;
+assert(pPageHtml.includes('P2P Processing Cost') && pPageHtml.includes('$15.20'), 'Accounts Payable Lead must display P2P Processing Cost ($15.20 -> $2.20/inv) impact');
+assert(pPageHtml.includes('sc-bottom-impact-bar sc-impact-link-box'), 'Persona page must render sleek clickable bottom impact bar');
+sandbox.openProofForPersona(apPersona.id, null);
+const pProofHtml = getOrCreateId('evidencePageContent').innerHTML;
+assert(pProofHtml.includes('evidenceFocusedSpotlight'), 'Clicking Persona impact box must render #evidenceFocusedSpotlight');
+assert((pProofHtml.includes('Backed Problem &amp; Cost Data') || pProofHtml.includes('Backed Problem & Cost Data')) && pProofHtml.includes('Potential Impact With Our Agent'), 'Spotlight must lead with Backed Problem & Cost Data + Modeled Agentic Potential');
+assert(pProofHtml.includes('$12.88') && pProofHtml.includes('$2.18'), 'Accounts Payable Lead proof must cite $12.88–$15.96 manual vs. $2.18 digital invoice benchmark');
+assert(pProofHtml.includes(`id="proofRow_${apPersona.primaryAgentId}" class="sc-proof-target-focused"`), 'Corresponding row in 60-Role Problem Data Matrix must be highlighted');
+
+// Verify Agent Top, Card & Bottom Clickable Impact Boxes -> Highlighted Problem Data Matrix Row
+const slottingAgent = Object.values(st.AGENTS).find(x => x.id.includes('slotting'));
+assert(slottingAgent, 'Expected Warehouse Slotting Agent');
+api.openAgentPage(slottingAgent.id, false);
+const aPageHtml = getOrCreateId('agentPageContent').innerHTML;
+assert(aPageHtml.includes(slottingAgent.impactDimension) && aPageHtml.includes('sc-bottom-impact-bar sc-impact-link-box'), 'Warehouse Slotting Agent must render multi-dimensional impact & bottom bar');
+sandbox.openProofForAgent(slottingAgent.id, null);
+const aProofHtml = getOrCreateId('evidencePageContent').innerHTML;
+assert(aProofHtml.includes('WERC') && aProofHtml.includes(`id="proofRow_${slottingAgent.id}" class="sc-proof-target-focused"`), 'Clicking Agent impact box must highlight Slotting proofRow with Georgia Tech & WERC empirical picker travel data');
+
+console.log('✅ ZERO-BREAKAGE V2.3 DOM, EMPIRICAL PROBLEM DATA PROOFS & MULTI-DIMENSIONAL IMPACTS PASSED 100%!');
+console.log(`   - Canonical Baseline: 6 Distinct-Color Pillars · 20 Sub-Pillars · 60 Personas · 60 Agents`);
+console.log(`   - Multi-Dimensional Impacts: 60/60 Unique Headline Stats across ${uniqueDims.size} Business Dimensions (0 '5.5 hrs' / '45 mins/day')`);
+console.log(`   - Backed Problem Data Hub: 60/60 Empirical Problem & Cost Benchmarks + Clickable Top/Bottom Impact Deep-Links`);
 console.log(`   - ITC Tobacco & TM&D: 7 Dynamic Pillars · ${expectedActiveTobacco}/60 Agents (${customRenamedCount} Tailored Names)`);
 console.log(`   - Hindalco Metals:    5 Dynamic Pillars · ${hindalco.active_agents_count}/60 Agents`);
 console.log(`   - UltraTech Cement:   7 Dynamic Pillars · ${ultraTech.active_agents_count}/60 Agents`);
-console.log(`   - Navbar Dropdowns Removed + Processes Hub + 3-Tab Case Studies + 3-Step Cost & ROI + Top-Bar Mind Map: 0 Errors`);
 

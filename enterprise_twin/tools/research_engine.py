@@ -183,8 +183,10 @@ def _call_gemini_with_fallback(
 
 def _normalize_org_pillars_partition(raw_pillars: Any, company_label: str) -> List[Dict[str, Any]]:
     """Ensures `organization_pillars` has 4 to 8 bespoke pillars partitioning all 20 canonical sub-pillars."""
+    from enterprise_twin.schema import EXECUTIVE_PILLAR_PALETTE, ensure_distinct_pillar_colors
+
     valid_set = set(ALL_20_SUBPILLAR_IDS)
-    palette = ["#2563eb", "#7c3aed", "#ea580c", "#0284c7", "#059669", "#4f46e5", "#0d9488", "#d97706"]
+    palette = EXECUTIVE_PILLAR_PALETTE
     watermarks = ["demand_wave", "supplier_graph", "factory_arm", "warehouse_rack", "corridor_lifo", "conveyor_rack"]
 
     cleaned: List[Dict[str, Any]] = []
@@ -234,10 +236,13 @@ def _normalize_org_pillars_partition(raw_pillars: Any, company_label: str) -> Li
     # Drop any empty pillar if >4 remain
     non_empty = [c for c in cleaned if c["sub_pillar_ids"]]
     if len(non_empty) >= 4:
+        non_empty = non_empty[:8]
+        distinct_cols = ensure_distinct_pillar_colors([c["color"] for c in non_empty])
         for i, c in enumerate(non_empty):
             tail = c["scor_badge"].split("·", 1)[1].strip() if "·" in c["scor_badge"] else "OPERATIONS"
             c["scor_badge"] = f"{i + 1:02d} · {tail}"
-        return non_empty[:8]
+            c["color"] = distinct_cols[i]
+        return non_empty
     return []
 
 

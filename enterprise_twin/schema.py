@@ -115,12 +115,47 @@ EXECUTIVE_PILLAR_PALETTE = [
     "#2563eb",  # Royal Blue
     "#7c3aed",  # Violet
     "#ea580c",  # Burnt Orange
-    "#0284c7",  # Sky Teal
-    "#059669",  # Emerald
-    "#0d9488",  # Deep Teal
-    "#d97706",  # Warm Amber
-    "#4f46e5",  # Indigo
+    "#0284c7",  # Cerulean Cyan
+    "#059669",  # Emerald Green
+    "#e11d48",  # Crimson Rose
+    "#ca8a04",  # Warm Gold
+    "#4f46e5",  # Deep Indigo
 ]
+
+
+def _hex_to_rgb(hex_color: str) -> tuple[int, int, int]:
+    h = (hex_color or "#2563eb").lstrip("#")
+    if len(h) != 6:
+        return (37, 99, 235)
+    return (int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16))
+
+
+def _rgb_dist(c1: str, c2: str) -> float:
+    r1, g1, b1 = _hex_to_rgb(c1)
+    r2, g2, b2 = _hex_to_rgb(c2)
+    # Perceptually weighted redmean RGB distance
+    rmean = (r1 + r2) / 2.0
+    dr, dg, db = r1 - r2, g1 - g2, b1 - b2
+    return (((2.0 + rmean / 256.0) * dr * dr) + 4.0 * dg * dg + ((2.0 + (255.0 - rmean) / 256.0) * db * db)) ** 0.5
+
+
+def ensure_distinct_pillar_colors(colors: List[str], min_dist: float = 165.0) -> List[str]:
+    """Guarantees every Operating Pillar in a portal view has a visually distinct color."""
+    assigned: List[str] = []
+    for idx, raw in enumerate(colors):
+        fallback = EXECUTIVE_PILLAR_PALETTE[idx % len(EXECUTIVE_PILLAR_PALETTE)]
+        cand = clamp_brand_hex(raw, fallback)
+        # Replace legacy teal #0d9488 when emerald #059669 or cyan #0284c7 is present, or any near-duplicate color
+        if cand.lower() == "#0d9488":
+            cand = "#e11d48"
+        if assigned and min(_rgb_dist(cand, prev) for prev in assigned) < min_dist:
+            best_col = max(
+                EXECUTIVE_PILLAR_PALETTE,
+                key=lambda p: min(_rgb_dist(p, prev) for prev in assigned),
+            )
+            cand = best_col
+        assigned.append(cand)
+    return assigned
 
 
 class PillarOverrideSpec(BaseModel):
@@ -416,6 +451,12 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
             final_pillars.append(cp)
 
     # Re-sequence numbers, colors, watermarks, and clean text
+    distinct_colors = ensure_distinct_pillar_colors(
+        [
+            cp.color or EXECUTIVE_PILLAR_PALETTE[i % len(EXECUTIVE_PILLAR_PALETTE)]
+            for i, cp in enumerate(final_pillars)
+        ]
+    )
     for idx, cp in enumerate(final_pillars):
         v_num = f"{idx + 1:02d}"
         cp.v_num = v_num
@@ -429,7 +470,7 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
             cp.scor_badge = f"{v_num} · {parts[1].strip()}" if len(parts) > 1 else f"{v_num} · {raw_badge}"
         cp.tagline = clean_ui_text(cp.tagline, 72) or f"{spec.display_label} · {cp.name}"
         cp.subtitle = clean_ui_text(cp.subtitle, 165) or f"Orchestrating {cp.name.lower()} across {spec.display_label}."
-        cp.color = clamp_brand_hex(cp.color, EXECUTIVE_PILLAR_PALETTE[idx % len(EXECUTIVE_PILLAR_PALETTE)])
+        cp.color = distinct_colors[idx]
         if cp.watermark_type not in VALID_WATERMARK_TYPES:
             cp.watermark_type = _infer_watermark_for_subpillars(cp.sub_pillar_ids, idx)
 
