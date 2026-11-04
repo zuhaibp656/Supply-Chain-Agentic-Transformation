@@ -1,0 +1,1684 @@
+{
+  "schema_version": "2.0",
+  "twin_slug": "suzuki--motorbikes",
+  "company_name": "Suzuki",
+  "canonical_name": "Suzuki Motorcycle India Private Limited",
+  "division_name": "Motorbikes",
+  "display_label": "Suzuki Motorcycle India Private Limited — Motorbikes",
+  "brand": {
+    "company_name": "Suzuki",
+    "canonical_name": "Suzuki Motorcycle India Private Limited",
+    "division_name": "Motorbikes",
+    "twin_slug": "suzuki--motorbikes",
+    "official_domain": "suzukimotorcycle.co.in",
+    "industry_sector": "Automotive / Two-Wheeler Manufacturing",
+    "geography": "India",
+    "brand_accent": "#729eca",
+    "brand_secondary": "#E31837",
+    "executive_title": "Vice President - Supply Chain Management",
+    "executive_thesis": "Suzuki Motorcycle India operates a highly synchronized supply chain centered around its Gurugram manufacturing hub, sourcing precision auto-components from a localized vendor base. The operation orchestrates just-in-time assembly, finished vehicle logistics to a vast dealership…",
+    "flagship_sites": "Kherki Dhaula Plant (Gurugram) · SMIPL National Parts Centre (NCR) · Regional Distribution Centers (West & South India) · Global Export Hub (Mundra Port)",
+    "erp_systems": "SAP S/4HANA · Dassault Systèmes DELMIA · Blue Yonder Luminate · SAP EWM",
+    "logo": {
+      "data_uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEbUlEQVR42r2XfUxVdRjHv79zzuXey7mAZuFS/vCFskQ0Et9iEmsuNYfRspoVisGmo0BAIKCIETUQLq8ulpsojE23XhaNEGKsTGfzrcgXLCvTWtq8xdvl3nvuyznn6Q9nxXi7v4vrt53tbOec53yes9/3+5wviAgBHapKjrwism9LI81mo0DrBPSQPjhE9pdfof6ISOqPiKSB6FjydHQFBMGICDxL/aaXHOm7od/8Y8w147NJCC57CywkhPlbz38AVSWloRHKvkZA1Sa8TZhzP+SavTDErWF3DUC9cJGcOQXQrvzo95cypaXAXJALZjSygAFoZISUuvfgbmoGNA28S4xcCLmhGlJ0FOMD0DTyHPkQLmstqH8A01qSCHN2JszpOwFJZFMC+I4dJ1d5FbTLP4ypFZSUCMPaOLhK3gE5HHwcMcsg11shzp83CkK4c+Lt7iH75i00kpw67ssBwPvZUei3biGsux2GuDV86uk9D/v6zfC0Hh7VMVOaWsh9sAX6r7/5303so7DUW+Ht+RJKeRXI7eaCMSTEQ7aWQ5gdzgTDqhVgQUF83Zz7FsPrE8FCLAjt/BTSI0u5nvcdO47hdU/B295Bghj1MAvtbIMpdTtXEXI44cx5HUplNSyH9sOcmwVIov8FNB36X/2jN6HvxElyZudDv2XjghHC74NcXQEhPBzOkjKop85MfO/cOTBufR6mHclgoaFsjApocIichcXwdnRxK86UkgzzG/nQr12H74uvoF39BTRsB5s5A+KiByCtWgFpSRQgCGxKI/J89Am5iktBDien+SyAZV8txCWLp2/F+u83yLE7F+qZc5zmIyE4NwumXWmAKLLpzQJNI/f7B+Cy1gGqysexMhaWeiuEiLkscIA7HJcukyMjB9rPV7kgmEVGcFkJjFueYVMD6Dqpl/qgnj4L7cpPoMEhsLBQiAsXwPDE4xDmz4PybiXcza3cGzRo0wbI5WVgM2ewMQBkt5P7UCs8Rz6AfuPmxJ909UrIpcXQbTY49xRAt/3JJ9fZ4ZBrK2FYG/evCpSDLaRU1YFGRvyfblkZML70AlxFJfB2dvPLNXU7zIV5YEYjE4R7ZwGiwOHDGhRrHRw7dsKcvwdyzV4wi8wF4G5qgX1jErS+70kIStzEwnqOwpAQzzcPvrsA+8anQSMOhH3eDmnFcj4r93rhO3129Cb0tB4mV1kFSFH4pttjqyFby+Fpa4dSUz/pP6MUswym13Yh6Ml1bFwZateuk3N3LtTe85xysyC49E34TpyEt619rEMufgjBhXkwJMSzqX1A1Uhp3A+ltmHSbvwCm3UPgnOzYdz63LiuOKkRqRf7yJm5h9t8brcswpSaAnPWq5PmhCmdkDweUiqscB9o9v/dix6EXFMBaWn0lAPJbyv2fX3q9r/COIlolEdkpMOcmQ5I0t0LJv/NCa7it+H5uG3cRGRprIe0PIbx6TGAQOnp6KKB6Nh/wqn9xRTSB4fof0vHRATNZiP7tjRy5BURqWrA8fxvZxpOk4kGrQUAAAAASUVORK5CYII=",
+      "source_url": "https://suzukimotorcycle.co.in",
+      "source_type": "google_hd_icon",
+      "plate_style": "light_plate",
+      "aspect_ratio": 1.0,
+      "monogram": "SMI"
+    }
+  },
+  "custom_pillars": [
+    {
+      "pillar_id": "market_portfolio_strategy",
+      "v_num": "01",
+      "scor_badge": "01 · PLAN",
+      "name": "Two-Wheeler Market & Portfolio Strategy",
+      "tagline": "Aligning product variants with Indian market demand",
+      "subtitle": "Manages the lifecycle, market positioning, and demand signals for Suzuki's scooter and motorcycle portfolio in India.",
+      "color": "#729eca",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "demand_forecasting",
+        "trade_promotion",
+        "portfolio_sku"
+      ]
+    },
+    {
+      "pillar_id": "integrated_business_planning",
+      "v_num": "02",
+      "scor_badge": "02 · S&OP",
+      "name": "SMIPL Integrated Business Planning",
+      "tagline": "Synchronizing sales forecasts with plant capacity",
+      "subtitle": "Balances dealership demand with the Gurugram plant's production capacity and component availability.",
+      "color": "#ea580c",
+      "watermark_type": "factory_arm",
+      "sub_pillar_ids": [
+        "sop_ibp",
+        "capacity_planning"
+      ]
+    },
+    {
+      "pillar_id": "auto_component_sourcing",
+      "v_num": "03",
+      "scor_badge": "03 · SOURCE",
+      "name": "Auto-Component Sourcing & Procurement",
+      "tagline": "Managing Tier-1 and Tier-2 supplier networks",
+      "subtitle": "Procures raw materials, OEM parts, and packaging while managing supplier contracts and vendor-managed inventory.",
+      "color": "#ef7f91",
+      "watermark_type": "supplier_graph",
+      "sub_pillar_ids": [
+        "supplier_network",
+        "material_packaging",
+        "contract_po_mgmt"
+      ]
+    },
+    {
+      "pillar_id": "gurugram_plant_assembly",
+      "v_num": "04",
+      "scor_badge": "04 · MAKE",
+      "name": "Gurugram Plant Assembly & Quality",
+      "tagline": "Lean manufacturing and vehicle assembly",
+      "subtitle": "Executes daily production schedules, shop-floor assembly, and rigorous quality compliance for all two-wheelers.",
+      "color": "#047857",
+      "watermark_type": "factory_arm",
+      "sub_pillar_ids": [
+        "production_scheduling",
+        "quality_compliance"
+      ]
+    },
+    {
+      "pillar_id": "finished_vehicle_logistics",
+      "v_num": "05",
+      "scor_badge": "05 · STAGE",
+      "name": "Finished Vehicle Logistics & Warehousing",
+      "tagline": "Managing yard inventory and regional distribution",
+      "subtitle": "Optimizes the positioning of finished motorcycles and scooters in plant yards and regional distribution centers.",
+      "color": "#7c3aed",
+      "watermark_type": "warehouse_rack",
+      "sub_pillar_ids": [
+        "positioning_optimization",
+        "warehouse_operations"
+      ]
+    },
+    {
+      "pillar_id": "dealership_distribution",
+      "v_num": "06",
+      "scor_badge": "06 · DELIVER",
+      "name": "Dealership Distribution & Dispatch",
+      "tagline": "Transporting vehicles to the dealer network",
+      "subtitle": "Coordinates primary and secondary transportation to ensure timely replenishment of Suzuki dealerships across India.",
+      "color": "#e11d48",
+      "watermark_type": "corridor_lifo",
+      "sub_pillar_ids": [
+        "first_mid_mile",
+        "store_replenishment",
+        "route_carrier",
+        "omnichannel_visibility"
+      ]
+    },
+    {
+      "pillar_id": "aftersales_spares_warranty",
+      "v_num": "07",
+      "scor_badge": "07 · RETURN",
+      "name": "Aftersales, Spares & Warranty",
+      "tagline": "Managing spare parts, warranties, and obsolescence",
+      "subtitle": "Handles the distribution of genuine spare parts, warranty claims, reverse logistics, and obsolescence markdowns.",
+      "color": "#d97706",
+      "watermark_type": "conveyor_rack",
+      "sub_pillar_ids": [
+        "last_mile_delivery",
+        "expiry_markdowns",
+        "returns_claims_mgmt",
+        "pallet_tote_reclamation"
+      ]
+    }
+  ],
+  "pillar_overrides": {
+    "demand_sop": {
+      "dept_id": "demand_sop",
+      "custom_name": "Planning & Strategy",
+      "custom_tagline": "Suzuki Motorcycle India Private Limited — Motorbikes · Core Planning Lifecycle",
+      "custom_subtitle": "Demand signals and strategic S&OP alignment."
+    },
+    "sourcing_procurement": {
+      "dept_id": "sourcing_procurement",
+      "custom_name": "Sourcing & Procurement",
+      "custom_tagline": "Suzuki Motorcycle India Private Limited — Motorbikes · Procurement Lifecycle Spine",
+      "custom_subtitle": "Tier vendor networks and EDI order routing."
+    },
+    "manufacturing_prod": {
+      "dept_id": "manufacturing_prod",
+      "custom_name": "Manufacturing & Production",
+      "custom_tagline": "Suzuki Motorcycle India Private Limited — Motorbikes · Manufacturing Operations Lifecycle",
+      "custom_subtitle": "Optimized runs and zero-defect QA protocols."
+    },
+    "inventory_warehouse": {
+      "dept_id": "inventory_warehouse",
+      "custom_name": "Inventory & Warehousing",
+      "custom_tagline": "Suzuki Motorcycle India Private Limited — Motorbikes · Inventory & DC Lifecycle Spine",
+      "custom_subtitle": "Multi-node staging and enterprise visibility."
+    },
+    "logistics_fleet": {
+      "dept_id": "logistics_fleet",
+      "custom_name": "Distribution & Logistics",
+      "custom_tagline": "Suzuki Motorcycle India Private Limited — Motorbikes · Logistics Fulfillment Lifecycle",
+      "custom_subtitle": "Store replenishment and last-mile dispatch."
+    },
+    "circular_enable": {
+      "dept_id": "circular_enable",
+      "custom_name": "Returns & Reverse Logistics",
+      "custom_tagline": "Suzuki Motorcycle India Private Limited — Motorbikes · Reverse Value Stream Lifecycle",
+      "custom_subtitle": "Triage inspection and upstream defect loops."
+    }
+  },
+  "sub_pillar_overrides": {
+    "demand_forecasting": {
+      "sub_pillar_id": "demand_forecasting",
+      "dept_id": "demand_sop",
+      "canonical_name": "Demand Forecasting",
+      "custom_name": "Two-Wheeler Demand & Market Sensing"
+    },
+    "trade_promotion": {
+      "sub_pillar_id": "trade_promotion",
+      "dept_id": "demand_sop",
+      "canonical_name": "Trade Promotion",
+      "custom_name": "Dealer Schemes & Sales Incentives"
+    },
+    "sop_ibp": {
+      "sub_pillar_id": "sop_ibp",
+      "dept_id": "demand_sop",
+      "canonical_name": "S&OP / IBP",
+      "custom_name": "SMIPL Demand & Supply Synchronization"
+    },
+    "portfolio_sku": {
+      "sub_pillar_id": "portfolio_sku",
+      "dept_id": "demand_sop",
+      "canonical_name": "Portfolio & SKU",
+      "custom_name": "Model Lifecycle & Variant Management"
+    },
+    "supplier_network": {
+      "sub_pillar_id": "supplier_network",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Supplier Network",
+      "custom_name": "Tier-1 & OEM Vendor Ecosystem"
+    },
+    "material_packaging": {
+      "sub_pillar_id": "material_packaging",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Material & Packaging",
+      "custom_name": "Direct Material & CKD Packaging"
+    },
+    "contract_po_mgmt": {
+      "sub_pillar_id": "contract_po_mgmt",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Contract & PO Mgmt",
+      "custom_name": "Contract & PO Mgmt"
+    },
+    "production_scheduling": {
+      "sub_pillar_id": "production_scheduling",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Production Scheduling",
+      "custom_name": "JIT Assembly & Line Sequencing"
+    },
+    "capacity_planning": {
+      "sub_pillar_id": "capacity_planning",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Capacity Planning",
+      "custom_name": "Gurugram Plant & Tier-1 Capacity Planning"
+    },
+    "quality_compliance": {
+      "sub_pillar_id": "quality_compliance",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Quality & Compliance",
+      "custom_name": "PDI & BS-VI Compliance Standards"
+    },
+    "positioning_optimization": {
+      "sub_pillar_id": "positioning_optimization",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Positioning & Optimization",
+      "custom_name": "Vehicle Stocking & Regional Rebalancing"
+    },
+    "warehouse_operations": {
+      "sub_pillar_id": "warehouse_operations",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Warehouse Operations",
+      "custom_name": "Plant Yard & National Parts Centre Ops"
+    },
+    "omnichannel_visibility": {
+      "sub_pillar_id": "omnichannel_visibility",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Omnichannel Visibility",
+      "custom_name": "Dealer Inventory & Reverse Logistics"
+    },
+    "first_mid_mile": {
+      "sub_pillar_id": "first_mid_mile",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "First & Mid-Mile",
+      "custom_name": "Inbound Component & Plant Logistics"
+    },
+    "store_replenishment": {
+      "sub_pillar_id": "store_replenishment",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Store Replenishment",
+      "custom_name": "Dealership & Spares Replenishment"
+    },
+    "last_mile_delivery": {
+      "sub_pillar_id": "last_mile_delivery",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Last-Mile Delivery",
+      "custom_name": "Dealer Network & Spares Distribution"
+    },
+    "route_carrier": {
+      "sub_pillar_id": "route_carrier",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Route & Carrier",
+      "custom_name": "Secondary Distribution & Carrier Mgmt"
+    },
+    "returns_claims_mgmt": {
+      "sub_pillar_id": "returns_claims_mgmt",
+      "dept_id": "circular_enable",
+      "canonical_name": "Returns & Claims Mgmt",
+      "custom_name": "Returns & Claims Mgmt"
+    },
+    "expiry_markdowns": {
+      "sub_pillar_id": "expiry_markdowns",
+      "dept_id": "circular_enable",
+      "canonical_name": "Expiry & Markdowns",
+      "custom_name": "Parts Obsolescence & Warranty Recovery"
+    },
+    "pallet_tote_reclamation": {
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "dept_id": "circular_enable",
+      "canonical_name": "Pallet & Tote Reclamation",
+      "custom_name": "Pallet & Tote Reclamation"
+    }
+  },
+  "persona_overrides": {
+    "demand_planner_forecaster": {
+      "persona_id": "demand_planner_forecaster",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Planner / Forecaster",
+      "title": "S&OP and Demand Planning Lead",
+      "role": "Orchestrating monthly production volumes for scooters and motorcycles",
+      "summary": "Aligns Gurugram plant production schedules with regional demand signals and macroeconomic trends across India.",
+      "manual_toil": "Manually reconciling dealership stock-out reports with SAP S/4HANA historical sales data and seasonal festive spikes.",
+      "agentic_impact": "Automates high-velocity demand sensing by integrating real-time POS data from the dealership network with weather and economic indicators.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "commercial_planning_lead": {
+      "persona_id": "commercial_planning_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Commercial Planning Lead",
+      "title": "General Manager - Sales Planning",
+      "role": "Bridging regional sales targets with manufacturing capacity",
+      "summary": "Ensures that commercial sales targets for flagship models like the Access 125 or Hayabusa are synchronized with supply chain constraints.",
+      "manual_toil": "Spending hours in cross-functional meetings to resolve discrepancies between regional sales forecasts and Gurugram plant output.",
+      "agentic_impact": "Uses Blue Yonder Luminate to automatically identify and reconcile unmodeled demand drivers across the national dealer network.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "brand_innovation_mgr": {
+      "persona_id": "brand_innovation_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Brand & Innovation Manager",
+      "title": "Product Marketing & Launch Manager",
+      "role": "Managing new model introductions and color refreshes",
+      "summary": "Oversees the market entry of new two-wheeler variants, ensuring marketing buzz translates into accurate initial stock placement.",
+      "manual_toil": "Guessing initial inventory requirements for new colorways or BS-VI compliant refreshes based on fragmented historical spreadsheets.",
+      "agentic_impact": "Profiles demand for new launches by matching technical attributes and price points to historical Suzuki model performance.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "trade_marketing_manager": {
+      "persona_id": "trade_marketing_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Trade Marketing Manager",
+      "title": "Manager - Dealer Development & Promotions",
+      "role": "Driving showroom footfall through regional trade schemes",
+      "summary": "Designs and executes promotional campaigns and exchange offers to move inventory across Suzuki's franchised dealerships.",
+      "manual_toil": "Simulating the impact of festive season discounts on regional inventory levels using static Excel models.",
+      "agentic_impact": "Simulates price elasticity and dealer-level lift to optimize the ROI of national and regional promotional spend.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "key_account_manager": {
+      "persona_id": "key_account_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Key Account Manager (KAM)",
+      "title": "Regional Sales Manager",
+      "role": "Managing primary sales to large dealership groups",
+      "summary": "Acts as the primary interface for major dealer principals, managing sell-in targets and joint business plans.",
+      "manual_toil": "Manually preparing performance decks and stock-replenishment calendars for quarterly dealer reviews.",
+      "agentic_impact": "Generates automated, data-driven sell-in stories and joint promotional calendars tailored to specific regional market dynamics.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "revenue_trade_finance_lead": {
+      "persona_id": "revenue_trade_finance_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Revenue / Trade Finance Lead",
+      "title": "Commercial Finance Manager",
+      "role": "Validating dealer claims and incentive payouts",
+      "summary": "Ensures that all trade discounts and dealer incentives are accurately audited and settled against sales performance.",
+      "manual_toil": "Physically auditing thousands of scanned dealer invoices and scheme circulars to prevent overpayment of incentives.",
+      "agentic_impact": "Uses OCR and automated logic to audit dealer claims against SAP EWM records, ensuring financial compliance and speed.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "sop_supply_planning_dir": {
+      "persona_id": "sop_supply_planning_dir",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "S&OP / Supply Planning Dir.",
+      "title": "S&OP and Demand Planning Lead",
+      "role": "Aligning dealership sales forecasts with Gurugram production",
+      "summary": "Orchestrates the monthly S&OP cycle to ensure the Gurugram plant's output matches nationwide dealership demand and export targets.",
+      "manual_toil": "Manually reconciling unconstrained dealership demand against SAP S/4HANA production constraints and component lead times.",
+      "agentic_impact": "Automates the reconciliation of sales forecasts with real-time factory bottleneck data to provide a feasible production plan.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "supply_chain_vp_coo": {
+      "persona_id": "supply_chain_vp_coo",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Supply Chain VP / COO",
+      "title": "Vice President - Manufacturing & Supply Chain",
+      "role": "Strategic oversight of end-to-end SMIPL operations",
+      "summary": "Directs the entire value chain from component procurement at Kherki Dhaula to finished vehicle dispatch across India and global markets.",
+      "manual_toil": "Managing emergency response meetings and manual allocation trade-offs during Tier-1 supplier disruptions or port delays.",
+      "agentic_impact": "Provides a digital war-room environment to simulate the impact of supply outages on vehicle delivery timelines and PDI schedules.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "ibp_lead_chief_planning_off": {
+      "persona_id": "ibp_lead_chief_planning_off",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "IBP Lead / Chief Planning Off.",
+      "title": "Head of Logistics & Vehicle Dispatch",
+      "role": "Optimizing finished vehicle flow and dealer fulfillment",
+      "summary": "Ensures the seamless movement of motorcycles from the Gurugram assembly lines to Regional Distribution Centers and the dealership network.",
+      "manual_toil": "Compiling complex pre-read decks for executive reviews by manually pulling data from Blue Yonder and SAP EWM.",
+      "agentic_impact": "Generates automated executive briefings and tracks cross-functional sign-offs on the integrated business plan.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "category_manager_portfolio": {
+      "persona_id": "category_manager_portfolio",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Category Manager",
+      "title": "Head of Portfolio Strategy",
+      "role": "Optimizing the mix of scooters and motorcycles",
+      "summary": "Evaluates the profitability and market relevance of every SKU in the Suzuki India portfolio, from the Avenis to the V-Strom.",
+      "manual_toil": "Analyzing the trade-off between manufacturing changeover costs at the Kherki Dhaula plant and low-volume variant sales.",
+      "agentic_impact": "Scores every model variant on velocity and production complexity to recommend SKU pruning or consolidation.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "lifecycle_materials_mgr": {
+      "persona_id": "lifecycle_materials_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Lifecycle / Materials Mgr",
+      "title": "Manager - Spare Parts Supply Chain",
+      "role": "Managing the transition of components and spares",
+      "summary": "Coordinates the phase-out of old parts and the introduction of new components during model year transitions or engineering changes.",
+      "manual_toil": "Manually tracking CKD kit arrivals and local vendor stock to time the cutover of new motorcycle specifications.",
+      "agentic_impact": "Orchestrates precise inventory run-out of old components to minimize obsolescence during engineering changeovers.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "commercial_finance_director": {
+      "persona_id": "commercial_finance_director",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Commercial Finance Director",
+      "title": "Vice President - Finance & Controlling",
+      "role": "Maximizing net margins across the vehicle portfolio",
+      "summary": "Oversees the financial health of the SMIPL operation, focusing on cost-to-serve and net-net margin per unit sold.",
+      "manual_toil": "Aggregating logistics costs from Mundra Port and regional centers to calculate true landed margins per model.",
+      "agentic_impact": "Provides a digital twin of the supply chain to calculate exact cost-to-serve for every vehicle delivered to any dealership in India.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "procurement_dir_risk_mgr": {
+      "persona_id": "procurement_dir_risk_mgr",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Dir. / Risk Mgr",
+      "title": "General Manager - Direct Procurement & Risk",
+      "role": "Securing high-precision component supply for Gurugram assembly",
+      "summary": "Oversees the strategic sourcing of critical engine and chassis components while mitigating risks across the multi-tier vendor base in the NCR region.",
+      "manual_toil": "Manually tracking vendor financial health and port congestion at Mundra for imported CKD kits using fragmented spreadsheets.",
+      "agentic_impact": "Automates real-time disruption sensing across the Tier-N supply chain to prevent assembly line stoppages at the Kherki Dhaula plant.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "procurement_operations_lead": {
+      "persona_id": "procurement_operations_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Operations Lead",
+      "title": "Manager - Vendor Development & Quality",
+      "role": "Ensuring Tier-1 supplier compliance and quality standards",
+      "summary": "Responsible for onboarding new component manufacturers and maintaining ISO/IATF quality standards across the localized vendor network.",
+      "manual_toil": "Verifying hundreds of quality audit reports and tax registration documents manually during the annual vendor re-validation cycle.",
+      "agentic_impact": "Instantly parses and validates supplier compliance filings against Suzuki’s global quality benchmarks and Indian regulatory requirements.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "chief_sustainability_officer": {
+      "persona_id": "chief_sustainability_officer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Head of Corporate Sustainability & ESG",
+      "role": "Driving decarbonization across the automotive value chain",
+      "summary": "Leads the initiative to reduce the carbon footprint of two-wheeler manufacturing and ensures ethical sourcing of raw materials.",
+      "manual_toil": "Collecting and standardizing Scope 3 emission data from diverse Tier-1 suppliers who use varying reporting formats.",
+      "agentic_impact": "Centralizes the ledger for carbon emissions and material certifications, providing a transparent view of the environmental impact per vehicle produced.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "category_sourcing_mgr_direct": {
+      "persona_id": "category_sourcing_mgr_direct",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Category Sourcing Mgr (Direct)",
+      "title": "Category Manager - Metals & Commodities",
+      "role": "Managing price volatility for aluminum and steel",
+      "summary": "Strategizes the procurement of raw materials and precision-machined parts while hedging against global commodity price fluctuations.",
+      "manual_toil": "Cross-referencing LME and local MCX price indices with SAP S/4HANA purchase orders to determine optimal buying windows.",
+      "agentic_impact": "Correlates global commodity trends with Gurugram production schedules to recommend data-driven hedging and procurement timing.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "strategic_sourcing_lead": {
+      "persona_id": "strategic_sourcing_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Strategic Sourcing Lead",
+      "title": "Strategic Sourcing Lead - Proprietary Parts",
+      "role": "Optimizing cost structures for specialized auto components",
+      "summary": "Analyzes the cost breakdown of proprietary parts to ensure competitive pricing from long-term OEM partners.",
+      "manual_toil": "Deconstructing complex RFQs for engine components into material, labor, and energy costs using legacy manual templates.",
+      "agentic_impact": "Generates dynamic should-cost models that account for fluctuating energy costs and resin weights in plastic fairings.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "packaging_rd_engineer": {
+      "persona_id": "packaging_rd_engineer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Packaging R&D Engineer",
+      "title": "Lead Engineer - Packaging & CKD Logistics",
+      "role": "Designing durable and sustainable transit packaging",
+      "summary": "Develops packaging solutions for domestic spare parts distribution and international CKD kit exports through Mundra Port.",
+      "manual_toil": "Testing the durability of new sustainable corrugate materials against the rigors of long-haul transit to Regional Distribution Centers.",
+      "agentic_impact": "Simulates packaging performance and evaluates PCR resin viability to meet Suzuki’s global sustainability targets without compromising part safety.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "commercial_sourcing_legal": {
+      "persona_id": "commercial_sourcing_legal",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Commercial Sourcing / Legal",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with Contract Leakage Agent to recovers missed rebates & surcharges.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Contract Leakage Agent automatically reconciles live spend against negotiated rebate tiers and volume discount scales. — recovers missed rebates & surcharges.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
+    },
+    "buyer_procurement_coord": {
+      "persona_id": "buyer_procurement_coord",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Buyer / Procurement Coord.",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with PO Expediting Agent to resolves ~70% of standard po delays.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "PO Expediting Agent automatically monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments. — resolves ~70% of standard po delays.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
+    },
+    "accounts_payable_lead": {
+      "persona_id": "accounts_payable_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Accounts Payable Lead",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with Three-Way Match Dispute to prevents vendor holds & saves discounts.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Three-Way Match Dispute automatically diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. — prevents vendor holds & saves discounts.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
+    },
+    "master_production_scheduler": {
+      "persona_id": "master_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Master Production Scheduler",
+      "title": "Plant Operations Head",
+      "role": "Orchestrating Gurugram assembly lines and CKD kit integration",
+      "summary": "Oversees the end-to-end production flow at the Kherki Dhaula plant to meet domestic and export demand targets.",
+      "manual_toil": "Manually adjusting assembly sequences in SAP S/4HANA when CKD shipments or local vendor components are delayed.",
+      "agentic_impact": "Automates the synchronization of JIT component arrivals with real-time assembly line changeover requirements.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "shop_floor_shift_lead": {
+      "persona_id": "shop_floor_shift_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Shop Floor / Shift Lead",
+      "title": "Manager - Assembly Line Operations",
+      "role": "Managing real-time shop floor throughput and labor",
+      "summary": "Directs shift-level activities on the motorcycle assembly lines to ensure daily production volume targets are met.",
+      "manual_toil": "Re-assigning technicians and re-routing work-in-progress manually when a specific assembly station faces a machine halt.",
+      "agentic_impact": "Instantly re-sequences the line flow to bypass bottlenecks while maintaining balanced cycle times across all stations.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "plant_operations_manager": {
+      "persona_id": "plant_operations_manager",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Plant Operations Manager",
+      "title": "Vice President - Manufacturing",
+      "role": "Optimizing plant-wide labor productivity and operational efficiency",
+      "summary": "Strategic leader responsible for the Gurugram plant's total output, safety standards, and labor cost management.",
+      "manual_toil": "Cross-referencing skill matrices and fatigue logs to assign certified mechanics to high-precision engine assembly tasks.",
+      "agentic_impact": "Dynamically balances labor across lines based on real-time fatigue data and specific model assembly certifications.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "supply_chain_ops_director": {
+      "persona_id": "supply_chain_ops_director",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Supply Chain Ops Director",
+      "title": "Plant Operations Head",
+      "role": "Maximizing Gurugram plant throughput and efficiency",
+      "summary": "Responsible for the operational excellence of the Kherki Dhaula manufacturing facility, focusing on JIT assembly and OEE.",
+      "manual_toil": "Diagnosing production bottlenecks and utility constraints across multiple assembly lines using fragmented DELMIA reports.",
+      "agentic_impact": "Identifies real-time bottlenecks in the assembly process and predicts maintenance needs to maintain high OEE.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "external_sourcing_cmo_lead": {
+      "persona_id": "external_sourcing_cmo_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "External Sourcing / CMO Lead",
+      "title": "General Manager - Direct Procurement",
+      "role": "Managing Tier-1 vendor capacity and VMI programs",
+      "summary": "Oversees the strategic sourcing of precision auto-components and manages the Vendor Managed Inventory (VMI) at SMIPL staging areas.",
+      "manual_toil": "Comparing internal manufacturing costs against CKD import costs and local vendor tolling agreements in spreadsheets.",
+      "agentic_impact": "Models the financial impact of shifting between local component sourcing and CKD imports based on demand volatility.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "vp_manufacturing_engineering": {
+      "persona_id": "vp_manufacturing_engineering",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "VP Manufacturing Engineering",
+      "title": "Manager - Spare Parts Supply Chain",
+      "role": "Scaling aftermarket parts availability and infrastructure",
+      "summary": "Plans the long-term capacity for the SMIPL National Parts Centre and regional warehouses to support the growing vehicle population.",
+      "manual_toil": "Simulating multi-year spare parts volume trends to justify warehouse expansions and new racking systems.",
+      "agentic_impact": "Simulates long-term volume growth to optimize the footprint of the National Parts Centre and regional hubs.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "qa_manager_line_inspector": {
+      "persona_id": "qa_manager_line_inspector",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "QA Manager / Line Inspector",
+      "title": "Head of Quality Assurance",
+      "role": "Ensuring zero-defect output and PDI readiness",
+      "summary": "Maintains the integrity of every two-wheeler leaving the line, focusing on both aesthetic finish and mechanical reliability.",
+      "manual_toil": "Visually inspecting paint finishes and weld points across thousands of units daily to identify micro-defects.",
+      "agentic_impact": "Utilizes high-speed vision AI to detect surface imperfections and assembly errors before vehicles reach the PDI stage.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "regulatory_compliance_lead": {
+      "persona_id": "regulatory_compliance_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Regulatory Compliance Lead",
+      "title": "Manager - Homologation & Compliance",
+      "role": "Ensuring BS-VI and global export regulatory adherence",
+      "summary": "Validates that every motorcycle meets Indian emission norms and international safety standards for export markets.",
+      "manual_toil": "Auditing thousands of batch records and emission test results to ensure compliance with ARAI and international mandates.",
+      "agentic_impact": "Automatically flags any deviation in engine tuning or emission parameters against the required BS-VI certification data.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "continuous_improvement_lead": {
+      "persona_id": "continuous_improvement_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Continuous Improvement Lead",
+      "title": "Manager - Kaizen & Process Excellence",
+      "role": "Driving long-term yield improvements and waste reduction",
+      "summary": "Leads Lean and Kaizen initiatives to reduce scrap rates and improve the overall efficiency of the Gurugram facility.",
+      "manual_toil": "Manually correlating dealership service complaints with specific production batches and vendor component lots.",
+      "agentic_impact": "Identifies the root cause of field failures by linking dealership warranty data to specific machine telemetry in Gurugram.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "inventory_optimization_lead": {
+      "persona_id": "inventory_optimization_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Optimization Lead",
+      "title": "S&OP and Demand Planning Lead",
+      "role": "Aligning Gurugram production with regional dealership demand",
+      "summary": "Orchestrates the flow of motorcycles from the Kherki Dhaula plant to Regional Distribution Centers across India.",
+      "manual_toil": "Manually calculating safety stock levels for high-demand models like the Access 125 across disparate regional nodes.",
+      "agentic_impact": "Automates multi-echelon stock positioning to ensure high vehicle availability while minimizing transit lead times.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "inventory_controller_buyer": {
+      "persona_id": "inventory_controller_buyer",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Controller / Buyer",
+      "title": "Manager - Spare Parts Supply Chain",
+      "role": "Managing lifecycle and availability of genuine parts",
+      "summary": "Oversees the inventory health of thousands of SKUs at the SMIPL National Parts Centre and regional hubs.",
+      "manual_toil": "Identifying slow-moving older model components and managing obsolescence risk for discontinued motorcycle variants.",
+      "agentic_impact": "Proactively identifies SLOB parts and suggests liquidation strategies or service kit bundling to clear warehouse space.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "replenishment_planner": {
+      "persona_id": "replenishment_planner",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Replenishment Planner",
+      "title": "Regional Distribution & Logistics Planner",
+      "role": "Balancing two-wheeler stock across the dealer network",
+      "summary": "Ensures that the right mix of scooters and motorcycles is distributed from RDCs to franchised dealerships.",
+      "manual_toil": "Coordinating manual stock transfers between dealers to resolve localized shortages of specific colors or variants.",
+      "agentic_impact": "Orchestrates automated inter-DC transfers to balance inventory gluts and prevent lost sales at the dealership level.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "dc_operations_mgr": {
+      "persona_id": "dc_operations_mgr",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Operations Mgr / IE Lead",
+      "title": "Head of Logistics & Vehicle Dispatch",
+      "role": "Optimizing plant yard and RDC throughput",
+      "summary": "Directs the physical movement and storage of finished units and spare parts at the Gurugram hub and Mundra export hub.",
+      "manual_toil": "Optimizing the layout of the National Parts Centre to reduce picking travel time for high-velocity spare parts.",
+      "agentic_impact": "Dynamically re-slots parts based on co-pick affinity, such as grouping oil filters with gaskets for service kits.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "inbound_receiving_supervisor": {
+      "persona_id": "inbound_receiving_supervisor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Inbound Receiving Supervisor",
+      "title": "Plant Operations Head - Inbound Logistics",
+      "role": "Managing component arrival and CKD kit intake",
+      "summary": "Supervises the receipt of precision auto-components from Tier-1 vendors and imported CKD kits for assembly.",
+      "manual_toil": "Reconciling physical component arrivals against SAP S/4HANA ASNs and vendor delivery notes manually.",
+      "agentic_impact": "Accelerates dock-to-stock cycles by using vision and OCR to instantly reconcile inbound parts against digital manifests.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "dc_shift_floor_lead": {
+      "persona_id": "dc_shift_floor_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Shift Floor Lead",
+      "title": "Warehouse Floor Supervisor - Spares Division",
+      "role": "Executing daily dispatch schedules for dealer orders",
+      "summary": "Manages the warehouse floor team to ensure spare parts orders are picked and packed for daily carrier pickups.",
+      "manual_toil": "Reassigning pickers manually when high-priority dealer 'Stock-Out' orders spike during a shift.",
+      "agentic_impact": "Balances picking lines in real-time to ensure all dealer orders meet the daily dispatch cutoff for regional logistics.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "store_operations_omni_lead": {
+      "persona_id": "store_operations_omni_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Store Operations / Omni Lead",
+      "title": "Dealer Network Operations Lead",
+      "role": "Monitoring dealership inventory health",
+      "summary": "Oversees the operational efficiency and inventory accuracy of the franchised Suzuki dealership network.",
+      "manual_toil": "Investigating discrepancies between reported dealer stock levels and actual vehicle availability for walk-in customers.",
+      "agentic_impact": "Identifies 'phantom inventory' at dealerships by correlating PDI completions with retail sales data to flag stock inaccuracies.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "omnichannel_fulfillment_dir": {
+      "persona_id": "omnichannel_fulfillment_dir",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Omnichannel Fulfillment Dir.",
+      "title": "S&OP and Demand Planning Lead",
+      "role": "Balancing supply with regional market demand",
+      "summary": "Aligns production output from Gurugram with regional demand signals to ensure the right models reach the right markets.",
+      "manual_toil": "Manually reallocating vehicle shipments between regions when demand spikes for specific models like the Hayabusa or V-Strom.",
+      "agentic_impact": "Optimizes the sourcing of vehicles for high-demand zones from the nearest RDC or plant to minimize lead times and costs.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "reverse_logistics_lead_wh": {
+      "persona_id": "reverse_logistics_lead_wh",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Reverse Logistics Lead",
+      "title": "Manager - Returns & Warranty Logistics",
+      "role": "Managing defective part returns and recalls",
+      "summary": "Coordinates the return of warranty-claimed parts and manages logistics for any necessary vehicle recalls or updates.",
+      "manual_toil": "Triage of returned components from dealerships to determine if they should be refurbished, scrapped, or sent to R&D.",
+      "agentic_impact": "Automates the triage of returned parts using scan data, accelerating the warranty settlement process for dealerships.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "transport_planner_inbound_mgr": {
+      "persona_id": "transport_planner_inbound_mgr",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Transport Planner / Inbound Mgr",
+      "title": "General Manager - Direct Procurement & Inbound",
+      "role": "Optimizing Tier-1 component flow to Gurugram plant",
+      "summary": "Oversees the synchronization of component arrivals from the localized vendor base to support JIT assembly at the Kherki Dhaula facility.",
+      "manual_toil": "Manually coordinating multiple LTL shipments from Manesar-based vendors into efficient milk-runs to reduce congestion at the plant gate.",
+      "agentic_impact": "Automates the consolidation of vendor parts into high-cube FTLs, reducing freight spend and stabilizing JIT production feeds.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "yard_master_plant_logistics": {
+      "persona_id": "yard_master_plant_logistics",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Master / Plant Logistics",
+      "title": "Plant Operations Head - Logistics & Yard",
+      "role": "Managing vehicle staging and dock flow",
+      "summary": "Directs the movement of finished two-wheelers from the assembly line to the staging yard for nationwide dispatch.",
+      "manual_toil": "Tracking truck arrival sequences and dock availability using manual logs and radio communication, leading to staging bottlenecks.",
+      "agentic_impact": "Dynamically reassigns loading docks based on real-time GPS feeds of incoming car-carriers to maximize vehicle throughput.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "cold_chain_qa_logistics_dir": {
+      "persona_id": "cold_chain_qa_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold Chain QA / Logistics Dir.",
+      "title": "Quality Assurance Lead - Logistics",
+      "role": "Ensuring vehicle and part integrity during transit",
+      "summary": "Maintains the physical quality standards of finished motorcycles and sensitive electronic components during the distribution process.",
+      "manual_toil": "Manually reviewing damage reports and filing claims for paint scratches or part degradation during long-haul transit to South India.",
+      "agentic_impact": "Monitors transit conditions and automates the claims process for logistics-related damages using digital inspection data.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "outbound_lead_industrial_eng": {
+      "persona_id": "outbound_lead_industrial_eng",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Outbound Lead / Industrial Eng.",
+      "title": "Head of Logistics & Vehicle Dispatch",
+      "role": "Optimizing outbound vehicle and spares loading",
+      "summary": "Responsible for the efficient loading of finished motorcycles and spare parts onto specialized multi-tier car carriers.",
+      "manual_toil": "Designing loading patterns for mixed loads of Gixxer and Access models to ensure maximum trailer utilization without damaging fairings.",
+      "agentic_impact": "Optimizes vehicle loading sequences to match dealership delivery orders while ensuring weight balance and safety compliance.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "store_replenishment_lead": {
+      "persona_id": "store_replenishment_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Replenishment Lead",
+      "title": "Manager - Spare Parts Supply Chain",
+      "role": "Managing regional parts center inventory levels",
+      "summary": "Ensures that Regional Distribution Centers and dealerships have the necessary SKU mix of genuine Suzuki parts and accessories.",
+      "manual_toil": "Calculating replenishment orders for hundreds of dealerships based on lagging sales reports and manual stock-takes.",
+      "agentic_impact": "Throttles spares replenishment based on live dealer consumption and backroom capacity to prevent overstocking of slow-moving parts.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "retail_logistics_dispatcher": {
+      "persona_id": "retail_logistics_dispatcher",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Retail Logistics Dispatcher",
+      "title": "Regional Logistics Coordinator",
+      "role": "Managing last-mile dealership delivery windows",
+      "summary": "Coordinates the final leg of delivery from Regional Distribution Centers to urban Suzuki dealerships across India.",
+      "manual_toil": "Navigating complex municipal entry curfews for heavy vehicles in cities like Mumbai, Delhi, and Bengaluru via manual scheduling.",
+      "agentic_impact": "Synchronizes truck arrival times with local city curfews and dealership unloading shifts to minimize detention charges.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "last_mile_operations_lead": {
+      "persona_id": "last_mile_operations_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Last-Mile Operations Lead",
+      "title": "Manager - Spare Parts Supply Chain",
+      "role": "Ensuring 98% fill rates for dealer spares",
+      "summary": "Oversees the flow of genuine Suzuki parts from the National Parts Centre to regional dealerships across India.",
+      "manual_toil": "Manually coordinating with 3PLs to track urgent 'Vehicle Off Road' (VOR) part shipments across complex Indian geographies.",
+      "agentic_impact": "Automates route optimization and geofencing to ensure critical spares reach service centers within 24 hours.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "ecommerce_logistics_dir": {
+      "persona_id": "ecommerce_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "E-Commerce Logistics Dir.",
+      "title": "Head of Logistics & Vehicle Dispatch",
+      "role": "Orchestrating finished vehicle and bulk parts movement",
+      "summary": "Directs the multimodal transport of motorcycles and bulk spares from the Gurugram plant to nationwide Regional Distribution Centers.",
+      "manual_toil": "Static allocation of transporters leading to underutilized truckloads and high freight costs during peak festive seasons.",
+      "agentic_impact": "Dynamically shifts between internal fleet and external carriers based on real-time SAP S/4HANA demand signals.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "customer_support_ops_lead": {
+      "persona_id": "customer_support_ops_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Customer Support Ops Lead",
+      "title": "National Service Manager",
+      "role": "Managing dealer service quality and parts availability",
+      "summary": "Leads the aftersales service strategy to ensure customer satisfaction through timely repairs and genuine part availability.",
+      "manual_toil": "Fielding constant calls from dealers regarding delayed spare parts for high-priority warranty repairs.",
+      "agentic_impact": "Proactively alerts dealers of transit delays and suggests alternative sourcing from nearby regional hubs.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "fleet_dispatcher_central_ops": {
+      "persona_id": "fleet_dispatcher_central_ops",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Fleet Dispatcher / Central Ops",
+      "title": "Central Dispatch Operations Lead",
+      "role": "Real-time tracking of nationwide vehicle movement",
+      "summary": "Monitors the movement of the entire outbound fleet from the Gurugram hub to the pan-India dealership network.",
+      "manual_toil": "Reacting to highway closures or monsoon-related delays by manually calling drivers and rerouting shipments via phone.",
+      "agentic_impact": "Provides real-time rerouting suggestions based on weather and traffic to ensure OTIF delivery of new motorcycle launches.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "transport_procurement_lead": {
+      "persona_id": "transport_procurement_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Transport Procurement Lead",
+      "title": "General Manager - Logistics Procurement",
+      "role": "Sourcing and managing carrier partnerships",
+      "summary": "Negotiates contracts and manages performance for the third-party logistics providers handling Suzuki's vehicle and parts distribution.",
+      "manual_toil": "Auditing carrier performance against SLAs using fragmented spreadsheets and manual delivery receipts.",
+      "agentic_impact": "Automates carrier selection based on historical OTIF performance and cost, ensuring the most reliable partners get priority loads.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "freight_controller_claims": {
+      "persona_id": "freight_controller_claims",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Controller / Claims",
+      "title": "Finance Manager - Logistics & Claims",
+      "role": "Auditing freight invoices and transit claims",
+      "summary": "Ensures financial accuracy in logistics operations by auditing freight bills and managing insurance claims for transit losses.",
+      "manual_toil": "Manually cross-referencing thousands of paper Proof of Delivery (POD) documents against SAP S/4HANA freight invoices.",
+      "agentic_impact": "Uses OCR to instantly audit freight bills against digital PODs, flagging discrepancies in fuel surcharges or detention fees.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "reverse_logistics_fraud_lead": {
+      "persona_id": "reverse_logistics_fraud_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Reverse Logistics / Fraud Lead",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
+      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Return Fraud Sentinel to cuts returns fraud abuse by 25–40%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Return Fraud Sentinel automatically analyzes item photos and packaging video feeds to detect wear or swapped tags. — cuts returns fraud abuse by 25–40%.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
+    },
+    "customer_experience_cx_lead": {
+      "persona_id": "customer_experience_cx_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Customer Experience (CX) Lead",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
+      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Keep-It & Routing Advisor to lowers net return costs by 15–22%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Keep-It & Routing Advisor automatically evaluates salvage margins vs reverse freight to determine keep-it instant refunds. — lowers net return costs by 15–22%.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
+    },
+    "claims_specialist_controller": {
+      "persona_id": "claims_specialist_controller",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Claims Specialist / Controller",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
+      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with OS&D Freight Claims to resolves carrier claims in <72 hours.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "OS&D Freight Claims automatically reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes. — resolves carrier claims in <72 hours.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
+    },
+    "merchandising_store_ops_mgr": {
+      "persona_id": "merchandising_store_ops_mgr",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Merchandising / Store Ops Mgr",
+      "title": "Zonal Manager - Aftersales & Spares",
+      "role": "Optimizing dealer inventory and parts turnover",
+      "summary": "Monitors dealer-level inventory of fast-moving and slow-moving parts to maintain healthy stock levels.",
+      "manual_toil": "Manually identifying slow-moving parts at dealerships that are nearing technical obsolescence or model phase-out.",
+      "agentic_impact": "Triggers automated stock rebalancing or promotional markdowns for aging parts via the dealer management system.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "inventory_disposition_lead": {
+      "persona_id": "inventory_disposition_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Inventory Disposition Lead",
+      "title": "Manager - Inventory Control & Planning",
+      "role": "Reducing dead stock and managing reverse logistics",
+      "summary": "Responsible for managing the lifecycle of spare parts and handling returns of defective components for warranty analysis.",
+      "manual_toil": "Reconciling physical returns of warranty-claimed parts against SAP EWM records to identify salvageable components.",
+      "agentic_impact": "Matches surplus slow-moving stock at one RDC with urgent demand at another to prevent total write-offs.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "cso_circular_lead": {
+      "persona_id": "cso_circular_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Head of Quality & Regulatory Compliance",
+      "role": "Ensuring environmental compliance in parts disposal",
+      "summary": "Oversees the sustainable disposal of scrapped parts and ensures compliance with India's Extended Producer Responsibility (EPR) norms.",
+      "manual_toil": "Compiling manual reports on the volume of metal and plastic scrap generated from warranty replacements for ESG audits.",
+      "agentic_impact": "Automates the tracking of scrapped components to generate audited environmental impact and recycling reports.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited Supply Chain & Operations roles"
+    },
+    "asset_recovery_rti_manager": {
+      "persona_id": "asset_recovery_rti_manager",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Asset Recovery / RTI Manager",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · Suzuki Motorcycle India Private Limited — Motorbikes",
+      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with RTI Balance Reconciler to eliminates 30% in non-return fee fines.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "RTI Balance Reconciler automatically reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. — eliminates 30% in non-return fee fines.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
+    },
+    "reverse_transport_planner": {
+      "persona_id": "reverse_transport_planner",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Reverse Transport Planner",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · Suzuki Motorcycle India Private Limited — Motorbikes",
+      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Milk-Run Consolidation to boosts backhaul fill rate by 25–40%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Milk-Run Consolidation automatically schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. — boosts backhaul fill rate by 25–40%.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
+    },
+    "packaging_qa_food_safety": {
+      "persona_id": "packaging_qa_food_safety",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Packaging QA / Food Safety",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · Suzuki Motorcycle India Private Limited — Motorbikes",
+      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Sanitation & Health Agent to extends reusable lifecycle by 15–20%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Sanitation & Health Agent automatically inspects return photos and wash logs for structural fatigue and chemical compliance. — extends reusable lifecycle by 15–20%.",
+      "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
+    }
+  },
+  "agent_relevance": {
+    "demand_sensing_agent": {
+      "agent_id": "demand_sensing_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Sensing Agent",
+      "custom_agent_name": "Market Velocity Sensor",
+      "is_relevant": true,
+      "division_context": "Synthesizes regional dealership sales speed and Indian festive cycles to refine Gurugram production plans.",
+      "hidden_reason": ""
+    },
+    "cpfr_sync_agent": {
+      "agent_id": "cpfr_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Forecast Reconciliation",
+      "custom_agent_name": "Dealer-Plant Sync Agent",
+      "is_relevant": true,
+      "division_context": "Reconciles regional sales forecasts with Kherki Dhaula plant capacity to prevent stock-outs of high-demand models.",
+      "hidden_reason": ""
+    },
+    "npi_demand_profiler": {
+      "agent_id": "npi_demand_profiler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "NPI Demand Profiler",
+      "custom_agent_name": "New Model Launch Profiler",
+      "is_relevant": true,
+      "division_context": "Predicts initial demand for new Suzuki variants by analyzing historical performance of similar engine displacements and price brackets.",
+      "hidden_reason": ""
+    },
+    "promo_lift_simulator": {
+      "agent_id": "promo_lift_simulator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Promo ROI Simulator",
+      "custom_agent_name": "Scheme ROI Simulator",
+      "is_relevant": true,
+      "division_context": "Models the impact of festive discounts and exchange bonuses on Suzuki scooter and motorcycle sales volumes.",
+      "hidden_reason": ""
+    },
+    "field_beat_distributor_sync_agent": {
+      "agent_id": "field_beat_distributor_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "JBP Negotiation Agent",
+      "custom_agent_name": "Dealer JBP Optimizer",
+      "is_relevant": true,
+      "division_context": "Creates data-backed replenishment and promotional plans for Suzuki's nationwide franchised dealership network.",
+      "hidden_reason": ""
+    },
+    "trade_scheme_claims_reconciler": {
+      "agent_id": "trade_scheme_claims_reconciler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Deduction Audit Agent",
+      "custom_agent_name": "Dealer Incentive Auditor",
+      "is_relevant": true,
+      "division_context": "Automates the verification of dealer incentive claims against actual vehicle dispatch and PDI records.",
+      "hidden_reason": ""
+    },
+    "sop_scenario_weaver": {
+      "agent_id": "sop_scenario_weaver",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Consensus & Gap Agent",
+      "custom_agent_name": "SMIPL Consensus Weaver",
+      "is_relevant": true,
+      "division_context": "Reconciles dealership demand with Gurugram plant capacity and component availability to create a unified production plan.",
+      "hidden_reason": ""
+    },
+    "disruption_war_room_orchestrator": {
+      "agent_id": "disruption_war_room_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Digital War-Room Agent",
+      "custom_agent_name": "Supply Chain Resilience Agent",
+      "is_relevant": true,
+      "division_context": "Simulates the impact of component shortages or logistics delays on vehicle dispatch schedules and dealership fulfillment.",
+      "hidden_reason": ""
+    },
+    "csco_control_tower_copilot": {
+      "agent_id": "csco_control_tower_copilot",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Executive Copilot",
+      "custom_agent_name": "Executive Planning Copilot",
+      "is_relevant": true,
+      "division_context": "Automates the creation of S&OP pre-read decks and tracks executive approvals across manufacturing and sales functions.",
+      "hidden_reason": ""
+    },
+    "working_capital_cash_bridge": {
+      "agent_id": "working_capital_cash_bridge",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "SKU Pruning Agent",
+      "custom_agent_name": "Model Rationalization Agent",
+      "is_relevant": true,
+      "division_context": "Identifies slow-moving motorcycle variants that tie up capital and increase changeover downtime at the assembly line.",
+      "hidden_reason": ""
+    },
+    "eco_cutover_orchestrator": {
+      "agent_id": "eco_cutover_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "PIPO Run-Out Agent",
+      "custom_agent_name": "Engineering Change Sync",
+      "is_relevant": true,
+      "division_context": "Manages the transition between old and new part versions to ensure zero-waste during Suzuki model refreshes.",
+      "hidden_reason": ""
+    },
+    "network_twin_architect": {
+      "agent_id": "network_twin_architect",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Cost-to-Serve Diagnostic",
+      "custom_agent_name": "Vehicle Cost-to-Serve Diagnostic",
+      "is_relevant": true,
+      "division_context": "Calculates the total logistics and manufacturing cost for every vehicle from the Gurugram plant to the final dealership.",
+      "hidden_reason": ""
+    },
+    "tier_n_risk_sentinel": {
+      "agent_id": "tier_n_risk_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Disruption Sensing Agent",
+      "custom_agent_name": "Supply Chain Resilience Sentinel",
+      "is_relevant": true,
+      "division_context": "Monitors Tier-1 and Tier-2 vendor stability and Mundra Port delays to protect the Kherki Dhaula JIT assembly schedule.",
+      "hidden_reason": ""
+    },
+    "supplier_quality_sentinel": {
+      "agent_id": "supplier_quality_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Onboarding & Qual. Agent",
+      "custom_agent_name": "Vendor Compliance & Quality Auditor",
+      "is_relevant": true,
+      "division_context": "Automates the verification of IATF 16949 certifications and GST filings for Suzuki’s localized component supplier base.",
+      "hidden_reason": ""
+    },
+    "carbon_scope3_ledger": {
+      "agent_id": "carbon_scope3_ledger",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "ESG & Scope 3 Auditor",
+      "custom_agent_name": "Automotive ESG Ledger",
+      "is_relevant": true,
+      "division_context": "Tracks the carbon footprint of raw steel and aluminum from extraction to the Gurugram plant gates for Scope 3 reporting.",
+      "hidden_reason": ""
+    },
+    "commodity_index_advisor": {
+      "agent_id": "commodity_index_advisor",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Commodity Index Advisor",
+      "custom_agent_name": "Metal & Resin Price Advisor",
+      "is_relevant": true,
+      "division_context": "Analyzes LME/MCX indices to advise the procurement team on hedging strategies for aluminum and specialized plastics.",
+      "hidden_reason": ""
+    },
+    "rfq_should_cost_agent": {
+      "agent_id": "rfq_should_cost_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Dynamic Should-Cost Agent",
+      "custom_agent_name": "Component Should-Cost Analyst",
+      "is_relevant": true,
+      "division_context": "Deconstructs OEM quotes for precision parts into raw material, conversion energy, and logistics costs for better negotiations.",
+      "hidden_reason": ""
+    },
+    "sustainable_packaging_agent": {
+      "agent_id": "sustainable_packaging_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Sustainable Packaging Agent",
+      "custom_agent_name": "CKD & Spares Packaging Optimizer",
+      "is_relevant": true,
+      "division_context": "Evaluates eco-friendly packaging materials for spare parts distribution, ensuring they meet Suzuki’s durability and runnability standards.",
+      "hidden_reason": ""
+    },
+    "tariff_esg_agent": {
+      "agent_id": "tariff_esg_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Contract Leakage Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Suzuki Motorcycle India Private Limited — Motorbikes.",
+      "hidden_reason": ""
+    },
+    "master_data_leadtime_steward": {
+      "agent_id": "master_data_leadtime_steward",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "PO Expediting Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Suzuki Motorcycle India Private Limited — Motorbikes.",
+      "hidden_reason": ""
+    },
+    "three_way_match_dispute": {
+      "agent_id": "three_way_match_dispute",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Three-Way Match Dispute",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Suzuki Motorcycle India Private Limited — Motorbikes.",
+      "hidden_reason": ""
+    },
+    "finite_production_scheduler": {
+      "agent_id": "finite_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Changeover Optimizer",
+      "custom_agent_name": "Model Changeover Optimizer",
+      "is_relevant": true,
+      "division_context": "Optimizes the transition between different motorcycle models on the same line to minimize downtime and tool resets.",
+      "hidden_reason": ""
+    },
+    "line_schedule_optimizer": {
+      "agent_id": "line_schedule_optimizer",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Disruption Re-sequencer",
+      "custom_agent_name": "Assembly Line Re-Sequencer",
+      "is_relevant": true,
+      "division_context": "Detects station-level halts and re-routes components to ensure the Gurugram plant maintains its daily dispatch schedule.",
+      "hidden_reason": ""
+    },
+    "labor_line_balancing_agent": {
+      "agent_id": "labor_line_balancing_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Labor & Line Balancing",
+      "custom_agent_name": "Technician Skill Balancer",
+      "is_relevant": true,
+      "division_context": "Matches certified technicians to specific assembly tasks like engine mounting or electrical harness fitting based on skill and fatigue.",
+      "hidden_reason": ""
+    },
+    "predictive_oee_sentinel": {
+      "agent_id": "predictive_oee_sentinel",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Bottleneck Diagnostic",
+      "custom_agent_name": "Gurugram Plant Diagnostic",
+      "is_relevant": true,
+      "division_context": "Monitors assembly line health and utility loads at the Kherki Dhaula plant to prevent production downtime.",
+      "hidden_reason": ""
+    },
+    "copacker_allocation_agent": {
+      "agent_id": "copacker_allocation_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Co-Packer Allocation",
+      "custom_agent_name": "CKD & Vendor Optimizer",
+      "is_relevant": true,
+      "division_context": "Evaluates the cost-benefit of local vendor production versus CKD kit imports for specific motorcycle models.",
+      "hidden_reason": ""
+    },
+    "capex_simulator_agent": {
+      "agent_id": "capex_simulator_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "CapEx Simulator",
+      "custom_agent_name": "Infrastructure Expansion Simulator",
+      "is_relevant": true,
+      "division_context": "Models the need for new assembly lines or warehouse expansions at the National Parts Centre based on 5-year demand trends.",
+      "hidden_reason": ""
+    },
+    "inline_yield_guardian": {
+      "agent_id": "inline_yield_guardian",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Visual Defect Triager",
+      "custom_agent_name": "Visual Finish & Weld Inspector",
+      "is_relevant": true,
+      "division_context": "Uses computer vision to inspect chassis welds and paint quality on the high-speed assembly line before final PDI.",
+      "hidden_reason": ""
+    },
+    "batch_record_auditor": {
+      "agent_id": "batch_record_auditor",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Batch Record Auditor",
+      "custom_agent_name": "BS-VI Compliance Auditor",
+      "is_relevant": true,
+      "division_context": "Parses engine test records and emission data to ensure every unit complies with Indian BS-VI regulatory standards.",
+      "hidden_reason": ""
+    },
+    "scrap_defect_root_cause_agent": {
+      "agent_id": "scrap_defect_root_cause_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "RCA & CAPA Copilot",
+      "custom_agent_name": "Warranty & Defect Root Cause Agent",
+      "is_relevant": true,
+      "division_context": "Correlates dealership warranty claims with Gurugram plant machine telemetry and vendor component batches to solve quality issues.",
+      "hidden_reason": ""
+    },
+    "meio_safety_stock_agent": {
+      "agent_id": "meio_safety_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Safety Stock Agent",
+      "custom_agent_name": "Regional Stock Optimizer",
+      "is_relevant": true,
+      "division_context": "Recalibrates safety stock for motorcycles at RDCs based on seasonal demand spikes and Gurugram plant production lead times.",
+      "hidden_reason": ""
+    },
+    "slob_disposition_agent": {
+      "agent_id": "slob_disposition_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "SLOB Disposition Agent",
+      "custom_agent_name": "Spares Lifecycle Agent",
+      "is_relevant": true,
+      "division_context": "Identifies slow-moving spare parts for older Suzuki models and triggers promotional service bundles for dealerships.",
+      "hidden_reason": ""
+    },
+    "crossdock_transfer_orchestrator": {
+      "agent_id": "crossdock_transfer_orchestrator",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inter-Facility Rebalancer",
+      "custom_agent_name": "Inter-Dealer Stock Rebalancer",
+      "is_relevant": true,
+      "division_context": "Automates the transfer of finished motorcycles between regional warehouses to satisfy urgent dealership demand.",
+      "hidden_reason": ""
+    },
+    "warehouse_slotting_agent": {
+      "agent_id": "warehouse_slotting_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dynamic Slotting Agent",
+      "custom_agent_name": "Dynamic Parts Slotting Agent",
+      "is_relevant": true,
+      "division_context": "Optimizes the storage of spare parts in the National Parts Centre based on frequency of dealer service orders.",
+      "hidden_reason": ""
+    },
+    "dock_to_stock_agent": {
+      "agent_id": "dock_to_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dock-to-Stock Agent",
+      "custom_agent_name": "Inbound Component Reconciler",
+      "is_relevant": true,
+      "division_context": "Speeds up the intake of vendor components and CKD kits by reconciling scans against SAP EWM purchase orders.",
+      "hidden_reason": ""
+    },
+    "wave_fulfillment_copilot": {
+      "agent_id": "wave_fulfillment_copilot",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Wave Fulfillment Copilot",
+      "custom_agent_name": "Dispatch Wave Copilot",
+      "is_relevant": true,
+      "division_context": "Manages the flow of spare parts picking to ensure all dealer orders are ready for the evening logistics dispatch.",
+      "hidden_reason": ""
+    },
+    "planogram_merchandising_vision_auditor": {
+      "agent_id": "planogram_merchandising_vision_auditor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Phantom Inventory Sensor",
+      "custom_agent_name": "Dealer Stock Integrity Sensor",
+      "is_relevant": true,
+      "division_context": "Identifies discrepancies between SAP inventory records and actual dealer stock by analyzing PDI and retail registration data.",
+      "hidden_reason": ""
+    },
+    "atp_order_promising_agent": {
+      "agent_id": "atp_order_promising_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "SFS / BOPIS Sourcing",
+      "custom_agent_name": "Regional Stock Allocator",
+      "is_relevant": true,
+      "division_context": "Allocates vehicle stock from the nearest RDC or plant to fulfill high-priority dealer orders at the lowest logistics cost.",
+      "hidden_reason": ""
+    },
+    "returns_triage_agent": {
+      "agent_id": "returns_triage_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Returns Triage Agent",
+      "custom_agent_name": "Warranty & Core Triage Agent",
+      "is_relevant": true,
+      "division_context": "Evaluates returned warranty parts to automate the decision between vendor return, scrap, or technical analysis at the Gurugram plant.",
+      "hidden_reason": ""
+    },
+    "load_consolidation_agent": {
+      "agent_id": "load_consolidation_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Load Consolidation",
+      "custom_agent_name": "JIT Milk-Run Optimizer",
+      "is_relevant": true,
+      "division_context": "Consolidates component shipments from NCR-based Tier-1 vendors into optimized milk-runs for the Gurugram assembly lines.",
+      "hidden_reason": ""
+    },
+    "yard_dock_sequencer": {
+      "agent_id": "yard_dock_sequencer",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Disruption Agent",
+      "custom_agent_name": "Plant Gate & Dock Sequencer",
+      "is_relevant": true,
+      "division_context": "Coordinates the arrival and docking of car-carriers at the Kherki Dhaula plant to prevent yard congestion and expedite dispatch.",
+      "hidden_reason": ""
+    },
+    "cold_chain_auditor": {
+      "agent_id": "cold_chain_auditor",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold-Chain Auditor",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Supports Inbound Component & Plant Logistics across Suzuki Motorcycle India Private Limited — Motorbikes.",
+      "hidden_reason": "Filtered for operational fit: no refrigerated cold-chain perishables."
+    },
+    "aisle_aligned_pallet_agent": {
+      "agent_id": "aisle_aligned_pallet_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Aisle-Aligned Pallet",
+      "custom_agent_name": "Spares Bin-Sequencing Agent",
+      "is_relevant": true,
+      "division_context": "Sequences spare parts picking at the National Parts Centre to match the storage layout of regional dealerships for faster put-away.",
+      "hidden_reason": ""
+    },
+    "store_capacity_agent": {
+      "agent_id": "store_capacity_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Capacity Agent",
+      "custom_agent_name": "Dealer Showroom Capacity Agent",
+      "is_relevant": true,
+      "division_context": "Throttles vehicle dispatches based on individual dealership floor space and back-of-house storage limits to prevent over-crowding.",
+      "hidden_reason": ""
+    },
+    "port_drayage_orchestrator": {
+      "agent_id": "port_drayage_orchestrator",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Curfew Orchestrator",
+      "custom_agent_name": "City Curfew & Entry Orchestrator",
+      "is_relevant": true,
+      "division_context": "Manages delivery schedules to urban dealerships by navigating municipal heavy-vehicle entry restrictions and dealer unloading hours.",
+      "hidden_reason": ""
+    },
+    "geocoding_intelligence_agent": {
+      "agent_id": "geocoding_intelligence_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Geocoding Intelligence",
+      "custom_agent_name": "Dealer Location Intelligence",
+      "is_relevant": true,
+      "division_context": "Optimizes delivery routes to remote dealerships by interpreting complex Indian addresses and local access restrictions.",
+      "hidden_reason": ""
+    },
+    "multimodal_mode_shift_agent": {
+      "agent_id": "multimodal_mode_shift_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Courier Allocation",
+      "custom_agent_name": "Spares Freight Optimizer",
+      "is_relevant": true,
+      "division_context": "Switches between air freight for VOR parts and road transport for stock replenishment to balance cost and speed.",
+      "hidden_reason": ""
+    },
+    "otif_penalty_shield": {
+      "agent_id": "otif_penalty_shield",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Delivery Exception Copilot",
+      "custom_agent_name": "Dealer Service Level Guard",
+      "is_relevant": true,
+      "division_context": "Detects delays in spare parts transit and notifies dealers to manage customer repair timelines effectively.",
+      "hidden_reason": ""
+    },
+    "fleetflow_dispatch": {
+      "agent_id": "fleetflow_dispatch",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Dynamic Rerouter",
+      "custom_agent_name": "National Route Navigator",
+      "is_relevant": true,
+      "division_context": "Recalculates long-haul routes for vehicle carriers across India, accounting for monsoon flooding, road closures, and bridge height limits.",
+      "hidden_reason": ""
+    },
+    "freight_control_tower": {
+      "agent_id": "freight_control_tower",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Routing Guide Compliance",
+      "custom_agent_name": "LSP Performance Monitor",
+      "is_relevant": true,
+      "division_context": "Tracks Logistics Service Provider (LSP) tender acceptance and OTIF rates to ensure compliance with Suzuki's routing guides.",
+      "hidden_reason": ""
+    },
+    "freight_bill_audit_agent": {
+      "agent_id": "freight_bill_audit_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Bill Audit Agent",
+      "custom_agent_name": "Freight & Toll Auditor",
+      "is_relevant": true,
+      "division_context": "Audits carrier invoices against digital PODs and FASTag data to verify freight charges, tolls, and detention claims.",
+      "hidden_reason": ""
+    },
+    "reverse_rma_optimizer": {
+      "agent_id": "reverse_rma_optimizer",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Return Fraud Sentinel",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across Suzuki Motorcycle India Private Limited — Motorbikes.",
+      "hidden_reason": ""
+    },
+    "keep_it_routing_advisor": {
+      "agent_id": "keep_it_routing_advisor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Keep-It & Routing Advisor",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across Suzuki Motorcycle India Private Limited — Motorbikes.",
+      "hidden_reason": ""
+    },
+    "osd_freight_claims_agent": {
+      "agent_id": "osd_freight_claims_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "OS&D Freight Claims",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across Suzuki Motorcycle India Private Limited — Motorbikes.",
+      "hidden_reason": ""
+    },
+    "dynamic_markdown_agent": {
+      "agent_id": "dynamic_markdown_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Dynamic Markdown Agent",
+      "custom_agent_name": "Slow-Moving Spares Optimizer",
+      "is_relevant": true,
+      "division_context": "Suggests dealer-level discounts on aging accessories or non-critical spares to clear inventory for newer models.",
+      "hidden_reason": ""
+    },
+    "short_dated_redistributor": {
+      "agent_id": "short_dated_redistributor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Short-Dated Redistributor",
+      "custom_agent_name": "Inter-Dealer Stock Balancer",
+      "is_relevant": true,
+      "division_context": "Redistributes slow-moving parts from one regional hub to another where demand is higher, preventing obsolescence.",
+      "hidden_reason": ""
+    },
+    "food_waste_esg_copilot": {
+      "agent_id": "food_waste_esg_copilot",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Food Waste & ESG Copilot",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Supports Parts Obsolescence & Warranty Recovery across Suzuki Motorcycle India Private Limited — Motorbikes.",
+      "hidden_reason": "Filtered for operational fit: non-food product & operations portfolio."
+    },
+    "rti_balance_reconciler": {
+      "agent_id": "rti_balance_reconciler",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "RTI Balance Reconciler",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Suzuki Motorcycle India Private Limited — Motorbikes.",
+      "hidden_reason": ""
+    },
+    "intermodal_rail_linehaul_agent": {
+      "agent_id": "intermodal_rail_linehaul_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Milk-Run Consolidation",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Suzuki Motorcycle India Private Limited — Motorbikes.",
+      "hidden_reason": ""
+    },
+    "sanitation_health_agent": {
+      "agent_id": "sanitation_health_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Sanitation & Health Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Suzuki Motorcycle India Private Limited — Motorbikes.",
+      "hidden_reason": ""
+    }
+  },
+  "process_overrides": {
+    "f2f": {
+      "vc_id": "f2f",
+      "custom_title": "Forecast-to-Fulfill (Two-Wheelers)",
+      "custom_subtitle": "Translating market demand for scooters and motorcycles into synchronized production and dealership fulfillment."
+    },
+    "o2d": {
+      "vc_id": "o2d",
+      "custom_title": "Order-to-Dispatch (Dealerships)",
+      "custom_subtitle": "Processing dealer indents and orchestrating outbound logistics via specialized car-carrier trucks."
+    },
+    "s2p": {
+      "vc_id": "s2p",
+      "custom_title": "Source-to-Pay (Auto Components)",
+      "custom_subtitle": "Sourcing precision components from Tier-1 suppliers, managing JIT deliveries, and executing vendor payments."
+    },
+    "p2r": {
+      "vc_id": "p2r",
+      "custom_title": "Parts-to-Resolution (Aftermarket)",
+      "custom_subtitle": "Managing the flow of genuine spare parts to service centers and processing warranty claims and defective returns."
+    }
+  },
+  "hidden_agent_ids": [
+    "cold_chain_auditor",
+    "food_waste_esg_copilot"
+  ],
+  "hidden_persona_ids": [
+    "cold_chain_qa_logistics_dir",
+    "cso_circular_lead"
+  ],
+  "active_pillars_count": 7,
+  "active_agents_count": 58,
+  "active_personas_count": 58,
+  "active_sub_pillars_count": 20,
+  "grounding_citations": [
+    {
+      "title": "Suzuki — Corporate Profile",
+      "url": "https://en.wikipedia.org/wiki/Suzuki",
+      "snippet": ""
+    },
+    {
+      "title": "Suzuki Motorcycle India Private Limited Official Brand Mark",
+      "url": "https://suzukimotorcycle.co.in",
+      "snippet": ""
+    }
+  ],
+  "career_title_examples": [
+    "Vice President - Manufacturing & Supply Chain",
+    "General Manager - Direct Procurement",
+    "Head of Logistics & Vehicle Dispatch",
+    "S&OP and Demand Planning Lead",
+    "Manager - Spare Parts Supply Chain",
+    "Plant Operations Head"
+  ],
+  "terminology_highlights": [
+    "CKD (Completely Knocked Down) — Kits of motorcycle parts imported or exported for local assembly.",
+    "JIT (Just-In-Time) — Inventory strategy aligning raw-material orders from suppliers directly with production schedules at the Gurugram plant.",
+    "VMI (Vendor Managed Inventory) — A model where tier-1 component suppliers manage inventory levels at Suzuki's staging areas.",
+    "PDI (Pre-Delivery Inspection) — Final quality and compliance checks performed on two-wheelers before dealership handover."
+  ],
+  "created_at": "2026-11-04T08:33:08.288311+00:00",
+  "updated_at": "2026-11-04T08:33:08.288311+00:00",
+  "generation_model": "gemini-3.1-pro-preview (gemini_api_key) + Gemini 3 Flash (Google Search Grounded)"
+}

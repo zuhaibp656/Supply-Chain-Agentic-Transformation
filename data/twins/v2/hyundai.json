@@ -96,7 +96,7 @@
       "name": "Dealership Replenishment & Yard Logistics",
       "tagline": "Distributing vehicles to the dealer network",
       "subtitle": "Provides visibility into finished vehicle inventory, manages yard-to-dealer logistics, and ensures showrooms are stocked with the right models.",
-      "color": "#93c5fd",
+      "color": "#e11d48",
       "watermark_type": "corridor_lifo",
       "sub_pillar_ids": [
         "omnichannel_visibility",
@@ -111,7 +111,7 @@
       "name": "Finished Vehicle Transport & Exports",
       "tagline": "Domestic haulage and international shipping",
       "subtitle": "Coordinates car carrier routes for domestic deliveries and manages the massive export logistics operations via Chennai Port.",
-      "color": "#0284c7",
+      "color": "#e11d48",
       "watermark_type": "conveyor_rack",
       "sub_pillar_ids": [
         "last_mile_delivery",
@@ -127,7 +127,7 @@
       "name": "Aftersales Service & Parts Obsolescence",
       "tagline": "Warranty management and parts lifecycle",
       "subtitle": "Handles warranty claims, reverse logistics for defective components, and manages the markdown or scrapping of obsolete spare parts.",
-      "color": "#e11d48",
+      "color": "#d97706",
       "watermark_type": "demand_wave",
       "sub_pillar_ids": [
         "expiry_markdowns"

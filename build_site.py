@@ -8069,7 +8069,7 @@ def build_html() -> str:
               </div>
               <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(6,182,212,0.3); border-radius:10px; padding:12px;">
                 <div style="font-size:11px; font-weight:700; color:#22d3ee; text-transform:uppercase;">Tier 2 · Regional DCs</div>
-                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Multi-echelon inventory pooling, regional safety stock $Z \cdot \sigma$, and transit pipeline buffering.</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Multi-echelon inventory pooling, regional safety stock $Z &middot; &sigma;, and transit pipeline buffering.</div>
               </div>
               <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(6,182,212,0.3); border-radius:10px; padding:12px;">
                 <div style="font-size:11px; font-weight:700; color:#22d3ee; text-transform:uppercase;">Tier 3 · Forward Fulfillment Hubs</div>
