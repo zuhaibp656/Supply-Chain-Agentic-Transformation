@@ -17,6 +17,8 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
+import re
+import signal
 import socket
 import subprocess
 import sys
@@ -27,6 +29,7 @@ HOME = Path.home()
 SC_DIR = HOME / "Supply_chain_Agentic_Transformation"
 FF_DIR = HOME / "high-code-agents" / "loadpilot-dispatch-agent"
 VENV_BIN = FF_DIR / ".venv" / "bin"
+DUAL_SERVE = SC_DIR / "scripts" / "dual_stack_serve.py"
 ADC_PATH = HOME / ".config" / "gcloud" / "argolis_admin_adc.json"
 SYSTEMD_USER_DIR = HOME / ".config" / "systemd" / "user"
 
@@ -36,44 +39,49 @@ SERVICES = [
         "desc": "Supply Chain Enterprise Twin Studio FastAPI + SSE Portal (Primary 8095)",
         "port": 8095,
         "cwd": SC_DIR,
-        "cmd": [str(VENV_BIN / "uvicorn"), "enterprise_twin.server:app", "--host", "0.0.0.0", "--port", "8095"],
+        "cmd": [str(VENV_BIN / "python3"), "-m", "enterprise_twin.server", "--host", "::", "--port", "8095"],
         "check_url": "http://127.0.0.1:8095/api/v1/health",
-        "requires_path": VENV_BIN / "uvicorn",
+        "dual_stack": True,
+        "requires_path": VENV_BIN / "python3",
     },
     {
         "unit": "sc-portal-8899",
         "desc": "Supply Chain Portal & Enterprise Twin Studio (Primary 8899)",
         "port": 8899,
         "cwd": SC_DIR,
-        "cmd": [str(VENV_BIN / "uvicorn"), "enterprise_twin.server:app", "--host", "0.0.0.0", "--port", "8899"],
+        "cmd": [str(VENV_BIN / "python3"), "-m", "enterprise_twin.server", "--host", "::", "--port", "8899"],
         "check_url": "http://127.0.0.1:8899/api/v1/health",
-        "requires_path": VENV_BIN / "uvicorn",
+        "dual_stack": True,
+        "requires_path": VENV_BIN / "python3",
     },
     {
         "unit": "sc-portal-8090",
         "desc": "Supply Chain Portal & Enterprise Twin Studio (Mirror 8090)",
         "port": 8090,
         "cwd": SC_DIR,
-        "cmd": [str(VENV_BIN / "uvicorn"), "enterprise_twin.server:app", "--host", "0.0.0.0", "--port", "8090"],
+        "cmd": [str(VENV_BIN / "python3"), "-m", "enterprise_twin.server", "--host", "::", "--port", "8090"],
         "check_url": "http://127.0.0.1:8090/api/v1/health",
-        "requires_path": VENV_BIN / "uvicorn",
+        "dual_stack": True,
+        "requires_path": VENV_BIN / "python3",
     },
     {
         "unit": "sc-portal-8000",
         "desc": "Supply Chain Portal & Enterprise Twin Studio (Mirror 8000)",
         "port": 8000,
         "cwd": SC_DIR,
-        "cmd": [str(VENV_BIN / "uvicorn"), "enterprise_twin.server:app", "--host", "0.0.0.0", "--port", "8000"],
+        "cmd": [str(VENV_BIN / "python3"), "-m", "enterprise_twin.server", "--host", "::", "--port", "8000"],
         "check_url": "http://127.0.0.1:8000/api/v1/health",
-        "requires_path": VENV_BIN / "uvicorn",
+        "dual_stack": True,
+        "requires_path": VENV_BIN / "python3",
     },
     {
         "unit": "sc-adk-8502",
         "desc": "Supply Chain ADK Web Runner (8502)",
         "port": 8502,
         "cwd": SC_DIR,
-        "cmd": [str(VENV_BIN / "adk"), "web", "agents", "--port", "8502", "--host", "0.0.0.0"],
+        "cmd": [str(VENV_BIN / "python3"), str(DUAL_SERVE), "--port", "8502", "adk", "web", "agents", "--port", "8502", "--host", "::"],
         "check_url": "http://127.0.0.1:8502/",
+        "dual_stack": True,
         "requires_path": VENV_BIN / "adk",
     },
     {
@@ -81,8 +89,9 @@ SERVICES = [
         "desc": "FleetFlow Control Tower FastAPI + UI (8085)",
         "port": 8085,
         "cwd": FF_DIR,
-        "cmd": [str(VENV_BIN / "uvicorn"), "app.fast_api_app:app", "--host", "0.0.0.0", "--port", "8085"],
+        "cmd": [str(VENV_BIN / "python3"), str(DUAL_SERVE), "--port", "8085", "uvicorn", "app.fast_api_app:app", "--host", "::", "--port", "8085"],
         "check_url": "http://127.0.0.1:8085/ui",
+        "dual_stack": True,
         "requires_path": VENV_BIN / "uvicorn",
     },
     {
@@ -90,8 +99,9 @@ SERVICES = [
         "desc": "FleetFlow Executive Deck & Static Assets (8080)",
         "port": 8080,
         "cwd": FF_DIR,
-        "cmd": ["/usr/bin/python3", "-m", "http.server", "8080", "--bind", "0.0.0.0", "--directory", str(FF_DIR)],
+        "cmd": ["/usr/bin/python3", str(DUAL_SERVE), "--port", "8080", "static-http", "--directory", str(FF_DIR)],
         "check_url": "http://127.0.0.1:8080/fleetflow_executive_presentation.html",
+        "dual_stack": True,
         "requires_path": FF_DIR,
     },
     {
@@ -99,17 +109,82 @@ SERVICES = [
         "desc": "FleetFlow ADK Web Runner (8501)",
         "port": 8501,
         "cwd": FF_DIR,
-        "cmd": [str(VENV_BIN / "adk"), "web", ".", "--port", "8501", "--host", "0.0.0.0"],
+        "cmd": [str(VENV_BIN / "python3"), str(DUAL_SERVE), "--port", "8501", "adk", "web", ".", "--port", "8501", "--host", "::"],
         "check_url": "http://127.0.0.1:8501/",
+        "dual_stack": True,
         "requires_path": VENV_BIN / "adk",
     },
 ]
 
 
-def is_port_open(port: int) -> bool:
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.settimeout(0.5)
-        return s.connect_ex(("127.0.0.1", port)) == 0
+def _proc_net_has_listen(proc_path: str, port: int) -> bool:
+    hex_port = f":{port:04X}"
+    try:
+        with open(proc_path, "r", encoding="utf-8", errors="ignore") as f:
+            next(f, None)
+            for line in f:
+                parts = line.split()
+                if len(parts) >= 4 and parts[3] == "0A" and parts[1].endswith(hex_port):
+                    return True
+    except OSError:
+        return True
+    return False
+
+
+def is_port_open(port: int, dual_stack: bool = True) -> bool:
+    if dual_stack and not (_proc_net_has_listen("/proc/net/tcp", port) and _proc_net_has_listen("/proc/net/tcp6", port)):
+        return False
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s4:
+        s4.settimeout(0.5)
+        v4_ok = s4.connect_ex(("127.0.0.1", port)) == 0
+    if not dual_stack:
+        return v4_ok
+    with socket.socket(socket.AF_INET6, socket.SOCK_STREAM) as s6:
+        s6.settimeout(0.5)
+        v6_ok = s6.connect_ex(("::1", port)) == 0
+    return v4_ok and v6_ok
+
+
+def reap_rogue_port_holder(port: int, unit: str | None = None, env: dict[str, str] | None = None) -> None:
+    """Terminates orphaned processes holding `port` outside the target systemd unit (never uses `fuser`)."""
+    allowed_pids: set[int] = set()
+    if unit and env:
+        try:
+            r = subprocess.run(
+                ["systemctl", "--user", "show", "-p", "MainPID", "--value", f"{unit}.service"],
+                env=env,
+                capture_output=True,
+                text=True,
+                timeout=4,
+            )
+            mpid = int((r.stdout or "0").strip() or "0")
+            if mpid > 0:
+                allowed_pids.add(mpid)
+        except Exception:
+            pass
+
+    try:
+        res = subprocess.run(
+            ["ss", "-H", "-tlnp", "sport", "=", f":{port}"],
+            capture_output=True,
+            text=True,
+            timeout=4,
+        )
+        killed = False
+        for m in re.finditer(r"pid=(\d+)", res.stdout or ""):
+            pid = int(m.group(1))
+            if pid > 1 and pid not in allowed_pids:
+                try:
+                    os.kill(pid, signal.SIGKILL)
+                    killed = True
+                except ProcessLookupError:
+                    pass
+                except PermissionError:
+                    pass
+        if killed:
+            time.sleep(0.25)
+    except Exception:
+        pass
 
 
 def build_env() -> dict[str, str]:
@@ -151,7 +226,10 @@ RestartSec=2
 WantedBy=default.target
 """
             unit_file = SYSTEMD_USER_DIR / f"{svc['unit']}.service"
-            unit_file.write_text(unit_text)
+            changed = (not unit_file.exists()) or (unit_file.read_text() != unit_text)
+            if changed:
+                unit_file.write_text(unit_text)
+            svc["_unit_changed"] = changed
 
         uid = os.getuid()
         env = os.environ.copy()
@@ -161,6 +239,7 @@ WantedBy=default.target
             req = svc.get("requires_path")
             if req and not Path(req).exists():
                 continue
+            reap_rogue_port_holder(svc["port"], svc["unit"], env)
             subprocess.run(
                 ["systemctl", "--user", "enable", "--now", f"{svc['unit']}.service"],
                 env=env,
@@ -168,7 +247,8 @@ WantedBy=default.target
                 timeout=8,
                 capture_output=True,
             )
-            if not is_port_open(svc["port"]):
+            if svc.get("_unit_changed") or not is_port_open(svc["port"], bool(svc.get("dual_stack", True))):
+                reap_rogue_port_holder(svc["port"], svc["unit"], env)
                 subprocess.run(
                     ["systemctl", "--user", "restart", f"{svc['unit']}.service"],
                     env=env,
@@ -191,7 +271,8 @@ def ensure_fallback_processes(quiet: bool = False) -> None:
         req = svc.get("requires_path")
         if req and not Path(req).exists():
             continue
-        if not is_port_open(svc["port"]):
+        if not is_port_open(svc["port"], bool(svc.get("dual_stack", True))):
+            reap_rogue_port_holder(svc["port"])
             logf = open(f"/tmp/{svc['unit']}.log", "ab")
             subprocess.Popen(
                 svc["cmd"],
@@ -238,24 +319,26 @@ def main() -> None:
         uid = os.getuid()
         env = os.environ.copy()
         env.setdefault("XDG_RUNTIME_DIR", f"/run/user/{uid}")
+        systemd_ok = True
         for svc in SERVICES:
             req = svc.get("requires_path")
             if req and not Path(req).exists():
                 continue
-            if not is_port_open(svc["port"]):
+            if not is_port_open(svc["port"], bool(svc.get("dual_stack", True))):
+                reap_rogue_port_holder(svc["port"], svc["unit"], env)
                 r = subprocess.run(
                     ["systemctl", "--user", "restart", f"{svc['unit']}.service"],
                     env=env,
                     capture_output=True,
                     timeout=8,
                 )
-                if r.returncode == 0:
-                    systemd_ok = True
+                if r.returncode != 0:
+                    systemd_ok = False
 
-    # Wait up to 6s for uvicorn / adk web to bind under systemd before falling back
-    for _ in range(12):
+    # Wait up to 12s for uvicorn / adk web to bind under systemd before falling back
+    for _ in range(24):
         if all(
-            is_port_open(s["port"])
+            is_port_open(s["port"], bool(s.get("dual_stack", True)))
             for s in SERVICES
             if not s.get("requires_path") or Path(s["requires_path"]).exists()
         ):
@@ -269,18 +352,21 @@ def main() -> None:
         return
 
     check_urls = [
-        ("Enterprise Twin Studio (Primary 8095)", "http://127.0.0.1:8095/welcome"),
-        ("Supply Chain Playbook (Primary 8899)", "http://127.0.0.1:8899/agent_testing_and_video_playbook.html"),
-        ("Supply Chain Portal (Primary 8899)", "http://127.0.0.1:8899/index.html"),
-        ("Supply Chain 101 Academy (8899)", "http://127.0.0.1:8899/supply_chain_101_interactive_academy.html"),
-        ("Cost & FinOps Deck (8899)", "http://127.0.0.1:8899/cost_analysis_presentation.html"),
-        ("Supply Chain Playbook (Mirror 8090)", "http://127.0.0.1:8090/agent_testing_and_video_playbook.html"),
-        ("Supply Chain Portal (Mirror 8090)", "http://127.0.0.1:8090/index.html"),
-        ("Supply Chain Playbook (Mirror 8000)", "http://127.0.0.1:8000/agent_testing_and_video_playbook.html"),
-        ("Supply Chain ADK Web (8502)", "http://127.0.0.1:8502/"),
-        ("FleetFlow Control Tower UI (8085)", "http://127.0.0.1:8085/ui"),
-        ("FleetFlow Exec Deck (8080)", "http://127.0.0.1:8080/fleetflow_executive_presentation.html"),
-        ("FleetFlow ADK Web (8501)", "http://127.0.0.1:8501/"),
+        ("Enterprise Twin Base Reset (localhost:8095)", "http://localhost:8095/base?reset_twin=1"),
+        ("Enterprise Twin Base Reset (127.0.0.1:8095)", "http://127.0.0.1:8095/base?reset_twin=1"),
+        ("Enterprise Twin Base Reset ([::1]:8095)", "http://[::1]:8095/base?reset_twin=1"),
+        ("Enterprise Twin Studio (Primary 8095)", "http://localhost:8095/welcome"),
+        ("Supply Chain Playbook (Primary 8899)", "http://localhost:8899/agent_testing_and_video_playbook.html"),
+        ("Supply Chain Portal (Primary 8899)", "http://localhost:8899/index.html"),
+        ("Supply Chain 101 Academy (8899)", "http://localhost:8899/supply_chain_101_interactive_academy.html"),
+        ("Cost & FinOps Deck (8899)", "http://localhost:8899/cost_analysis_presentation.html"),
+        ("Supply Chain Playbook (Mirror 8090)", "http://localhost:8090/agent_testing_and_video_playbook.html"),
+        ("Supply Chain Portal (Mirror 8090)", "http://localhost:8090/index.html"),
+        ("Supply Chain Playbook (Mirror 8000)", "http://localhost:8000/agent_testing_and_video_playbook.html"),
+        ("Supply Chain ADK Web (8502)", "http://localhost:8502/"),
+        ("FleetFlow Control Tower UI (8085)", "http://localhost:8085/ui"),
+        ("FleetFlow Exec Deck (8080)", "http://localhost:8080/fleetflow_executive_presentation.html"),
+        ("FleetFlow ADK Web (8501)", "http://localhost:8501/"),
     ]
     for label, url in check_urls:
         try:

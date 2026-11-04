@@ -386,15 +386,49 @@ async def serve_safe_static_asset(asset_path: str) -> FileResponse:
     return FileResponse(str(candidate))
 
 
-def run_server(port: int = 8080, host: str = "0.0.0.0") -> None:
+def run_server(port: int = 8080, host: str = "::") -> None:
+    import socket
     import uvicorn
 
-    uvicorn.run(app, host=host, port=port, log_level="info")
+    if host in ("::", "0.0.0.0", "dual", ""):
+        sockets: list[socket.socket] = []
+        try:
+            sock4 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock4.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            sock4.bind(("0.0.0.0", port))
+            sock4.listen(2048)
+            sockets.append(sock4)
+        except OSError:
+            pass
+
+        try:
+            sock6 = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+            sock6.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            sock6.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 1)
+            sock6.bind(("::", port))
+            sock6.listen(2048)
+            sockets.append(sock6)
+        except OSError:
+            if not sockets:
+                sock_dual = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+                sock_dual.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                sock_dual.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0)
+                sock_dual.bind(("::", port))
+                sock_dual.listen(2048)
+                sockets.append(sock_dual)
+
+        if sockets:
+            config = uvicorn.Config(app, host="0.0.0.0", port=port, log_level="info")
+            server = uvicorn.Server(config)
+            server.run(sockets=sockets)
+            return
+
+    uvicorn.run(app, host=host or "0.0.0.0", port=port, log_level="info")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Enterprise Twin Studio FastAPI Server")
     parser.add_argument("--port", type=int, default=int(os.environ.get("PORT", "8080")))
-    parser.add_argument("--host", type=str, default="0.0.0.0")
+    parser.add_argument("--host", type=str, default="::")
     args = parser.parse_args()
     run_server(port=args.port, host=args.host)
