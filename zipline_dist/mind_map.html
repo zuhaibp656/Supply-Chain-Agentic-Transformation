@@ -8866,6 +8866,60 @@
       }
     }
 
+
+    /* === ARCHITECTURAL DUOTONE VECTOR ICON SYSTEM (60 AGENTS + 60 PERSONAS + 20 SUB-PILLARS) === */
+    .ai-bot-square.sc-vec-agent-badge {
+      background: linear-gradient(145deg, color-mix(in srgb, var(--ic-accent, #6366f1) 24%, #131c31) 0%, color-mix(in srgb, var(--ic-accent, #6366f1) 9%, #0b1120) 100%) !important;
+      border: 1.5px solid color-mix(in srgb, var(--ic-accent, #6366f1) 56%, rgba(255, 255, 255, 0.14)) !important;
+      color: color-mix(in srgb, var(--ic-accent, #6366f1) 24%, #f8fafc) !important;
+      border-radius: 11px;
+      box-shadow: 0 5px 14px rgba(2, 6, 23, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+      padding: 0;
+      position: relative;
+    }
+    html[data-theme="light"] .ai-bot-square.sc-vec-agent-badge {
+      background: linear-gradient(145deg, color-mix(in srgb, var(--ic-accent, #4f46e5) 14%, #ffffff) 0%, color-mix(in srgb, var(--ic-accent, #4f46e5) 6%, #f8fafc) 100%) !important;
+      border: 1.5px solid color-mix(in srgb, var(--ic-accent, #4f46e5) 48%, #cbd5e1) !important;
+      color: color-mix(in srgb, var(--ic-accent, #4f46e5) 75%, #0f172a) !important;
+      box-shadow: 0 4px 11px color-mix(in srgb, var(--ic-accent, #4f46e5) 14%, rgba(15, 23, 42, 0.06)) !important;
+    }
+    .human-avatar-circle.sc-vec-persona-badge {
+      background: radial-gradient(circle at 30% 26%, color-mix(in srgb, var(--ic-accent, #2563eb) 26%, #182338) 0%, color-mix(in srgb, var(--ic-accent, #2563eb) 8%, #0c1322) 100%) !important;
+      border: 2px solid color-mix(in srgb, var(--ic-accent, #2563eb) 68%, rgba(255, 255, 255, 0.18)) !important;
+      color: color-mix(in srgb, var(--ic-accent, #2563eb) 22%, #f8fafc) !important;
+      box-shadow: 0 5px 14px rgba(2, 6, 23, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+      padding: 0;
+    }
+    html[data-theme="light"] .human-avatar-circle.sc-vec-persona-badge {
+      background: radial-gradient(circle at 30% 26%, color-mix(in srgb, var(--ic-accent, #2563eb) 15%, #ffffff) 0%, color-mix(in srgb, var(--ic-accent, #2563eb) 5%, #f1f5f9) 100%) !important;
+      border: 2px solid color-mix(in srgb, var(--ic-accent, #2563eb) 58%, #94a3b8) !important;
+      color: color-mix(in srgb, var(--ic-accent, #2563eb) 76%, #0f172a) !important;
+      box-shadow: 0 4px 11px color-mix(in srgb, var(--ic-accent, #2563eb) 14%, rgba(15, 23, 42, 0.06)) !important;
+    }
+    .ai-agent-chip-card {
+      border-color: color-mix(in srgb, var(--ag-accent, #6366f1) 42%, rgba(148, 163, 184, 0.22));
+    }
+    .ai-agent-chip-card:hover {
+      border-color: var(--ag-accent, #818cf8);
+      box-shadow: 0 14px 28px color-mix(in srgb, var(--ag-accent, #6366f1) 24%, rgba(2, 6, 23, 0.18));
+    }
+    .sc-vec-inline-svg {
+      display: inline-block;
+      vertical-align: -3px;
+      flex-shrink: 0;
+    }
+    .subpillar-box-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: color-mix(in srgb, var(--sp-color, #3b82f6) 14%, var(--bg-elevated));
+      border: 1px solid color-mix(in srgb, var(--sp-color, #3b82f6) 38%, transparent);
+      color: color-mix(in srgb, var(--sp-color, #3b82f6) 28%, var(--text-primary));
+    }
+
   </style>
 </head>
 <body>
@@ -67481,6 +67535,110 @@
        ANIMATED SUPPLY CHAIN STAGE GRAPHICS (CLEARLY VISIBLE IN EACH VERTICAL CARD,
        BRIGHTEN ON HOVER, AND CLICK-TO-EXPAND)
        ========================================================================= */
+
+    /* =========================================================================
+       BESPOKE ARCHITECTURAL VECTOR ICON REGISTRY (60 AGENTS + 60 PERSONAS + 20 SUB-PILLARS)
+       ========================================================================= */
+    const AGENT_VECTOR_SVGS = {"demand_sensing_agent": "<circle cx=\"19.5\" cy=\"9.5\" r=\"5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"var(--ic-accent)\" stroke-width=\"1.5\"/><circle cx=\"19.5\" cy=\"9.5\" r=\"2\" fill=\"var(--ic-accent)\"/><path d=\"M4.5 19.5L8.5 15.5L12 18L16 11.5L19.5 14L23.5 8.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M4.5 22.5H23.5\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" opacity=\"0.55\"/>", "cpfr_sync_agent": "<path d=\"M4.5 8.5H10.5L14 14L10.5 19.5H4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M23.5 8.5H17.5L14 14L17.5 19.5H23.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polygon points=\"14,9.5 18.5,14 14,18.5 9.5,14\" fill=\"var(--ic-accent)\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.75\"/><circle cx=\"14\" cy=\"14\" r=\"1.7\" fill=\"var(--ic-accent)\"/>", "npi_demand_profiler": "<path d=\"M5 21.5C9.5 21.5 10.5 17 13.5 13C16.5 9 18.5 7 23 6.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\"/><circle cx=\"8\" cy=\"11\" r=\"2.1\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"var(--ic-accent)\" stroke-width=\"1.4\"/><circle cx=\"12.5\" cy=\"8\" r=\"1.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"var(--ic-accent)\" stroke-width=\"1.4\"/><polygon points=\"22.5,4.8 23.6,7.2 26,7.6 24.1,9.3 24.6,11.7 22.5,10.4 20.4,11.7 20.9,9.3 19,7.6 21.4,7.2\" fill=\"var(--ic-accent)\"/>", "promo_lift_simulator": "<path d=\"M4.5 13.2V6.5H11.2L17.8 13.1L11.1 19.8L4.5 13.2Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><circle cx=\"8\" cy=\"10\" r=\"1.3\" fill=\"currentColor\"/><rect x=\"16.5\" y=\"16\" width=\"2.8\" height=\"6.5\" rx=\"1\" fill=\"currentColor\" opacity=\"0.45\"/><rect x=\"20.7\" y=\"9.5\" width=\"3\" height=\"13\" rx=\"1\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M19.8 7.5L22.2 5.2L24.6 7.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "field_beat_distributor_sync_agent": "<line x1=\"5\" y1=\"9.5\" x2=\"23\" y2=\"9.5\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><line x1=\"5\" y1=\"18.5\" x2=\"23\" y2=\"18.5\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><rect x=\"9\" y=\"6.7\" width=\"4.4\" height=\"5.6\" rx=\"1.5\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"15\" y=\"15.7\" width=\"4.4\" height=\"5.6\" rx=\"1.5\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M11.2 12.5L17.2 15.5\" stroke=\"var(--ic-accent)\" stroke-width=\"1.5\" stroke-dasharray=\"2 1.5\"/>", "trade_scheme_claims_reconciler": "<rect x=\"5\" y=\"5\" width=\"12.5\" height=\"16.5\" rx=\"2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.65\"/><line x1=\"8\" y1=\"9.2\" x2=\"14.5\" y2=\"9.2\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><line x1=\"8\" y1=\"12.8\" x2=\"12.5\" y2=\"12.8\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><circle cx=\"17.8\" cy=\"16.8\" r=\"4.5\" fill=\"var(--bg-card, #0f172a)\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\"/><path d=\"M16 16.8L17.3 18.1L19.8 15.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"21.1\" y1=\"20.1\" x2=\"23.8\" y2=\"22.8\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/>", "sop_scenario_weaver": "<circle cx=\"6.5\" cy=\"14\" r=\"2.6\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M9.1 14C13 14 13.5 7.5 18.5 7.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"2.2 1.8\"/><path d=\"M9.1 14H19\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2.1\"/><path d=\"M9.1 14C13 14 13.5 20.5 18.5 20.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"2.2 1.8\"/><circle cx=\"21\" cy=\"7.5\" r=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"21.5,11.3 24.3,14 21.5,16.7 18.7,14\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"21\" cy=\"20.5\" r=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/>", "disruption_war_room_orchestrator": "<circle cx=\"14\" cy=\"14\" r=\"8.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.7\"/><circle cx=\"14\" cy=\"14\" r=\"4.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.4\" stroke-dasharray=\"2.5 2\"/><line x1=\"14\" y1=\"4.2\" x2=\"14\" y2=\"8\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"14\" y1=\"20\" x2=\"14\" y2=\"23.8\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M14 14L20.2 8.2\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"18.8\" cy=\"9.5\" r=\"2\" fill=\"var(--ic-accent)\"/>", "csco_control_tower_copilot": "<rect x=\"5\" y=\"5\" width=\"7.5\" height=\"7.5\" rx=\"1.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"15.5\" y=\"5\" width=\"7.5\" height=\"7.5\" rx=\"1.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"5\" y=\"15.5\" width=\"7.5\" height=\"7.5\" rx=\"1.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><polygon points=\"19.2,14.5 21.2,18.2 24.5,19.2 21.2,20.2 19.2,23.8 17.2,20.2 14,19.2 17.2,18.2\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linejoin=\"round\"/>", "working_capital_cash_bridge": "<rect x=\"4.8\" y=\"6.5\" width=\"3.4\" height=\"15\" rx=\"1\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"9.8\" y=\"10\" width=\"3.4\" height=\"11.5\" rx=\"1\" fill=\"var(--ic-accent)\" fill-opacity=\"0.55\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"15.5\" y1=\"5.5\" x2=\"15.5\" y2=\"22.8\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-dasharray=\"2.5 2\"/><rect x=\"17.8\" y=\"16.5\" width=\"2.6\" height=\"5\" rx=\"0.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"0.55\"/><rect x=\"21.5\" y=\"18.5\" width=\"2.6\" height=\"3\" rx=\"0.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"0.55\"/><path d=\"M18 9.5L23 14.5M23 9.5L18 14.5\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"/>", "eco_cutover_orchestrator": "<path d=\"M4.5 8C10.5 8 13.5 20 23.5 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-dasharray=\"3 2\" stroke-linecap=\"round\"/><path d=\"M4.5 20C10.5 20 13.5 8 23.5 8\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2.1\" stroke-linecap=\"round\"/><circle cx=\"14\" cy=\"14\" r=\"3\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"M20.8 5.8L23.6 8L20.8 10.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "network_twin_architect": "<line x1=\"14\" y1=\"14\" x2=\"6.5\" y2=\"7.5\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"14\" y1=\"14\" x2=\"22\" y2=\"8\" stroke=\"var(--ic-accent)\" stroke-width=\"2\"/><line x1=\"14\" y1=\"14\" x2=\"7\" y2=\"21\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"14\" y1=\"14\" x2=\"21.5\" y2=\"20.5\" stroke=\"var(--ic-accent)\" stroke-width=\"2\"/><rect x=\"10.5\" y=\"10.5\" width=\"7\" height=\"7\" rx=\"2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"6.5\" cy=\"7.5\" r=\"2.1\" fill=\"currentColor\"/><circle cx=\"22\" cy=\"8\" r=\"2.3\" fill=\"var(--ic-accent)\"/><circle cx=\"7\" cy=\"21\" r=\"2.1\" fill=\"currentColor\"/><circle cx=\"21.5\" cy=\"20.5\" r=\"2.3\" fill=\"var(--ic-accent)\"/>", "tier_n_risk_sentinel": "<circle cx=\"14\" cy=\"6.2\" r=\"2.4\" fill=\"currentColor\"/><line x1=\"14\" y1=\"8.6\" x2=\"8.5\" y2=\"13.8\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"14\" y1=\"8.6\" x2=\"19.5\" y2=\"13.8\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"8.5\" cy=\"15.2\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"19.5\" cy=\"15.2\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"19.5\" y1=\"17.4\" x2=\"22\" y2=\"21.2\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\"/><polygon points=\"22,19.2 24.8,24 19.2,24\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linejoin=\"round\"/>", "supplier_quality_sentinel": "<path d=\"M14 4.5L21.5 7.5V13.8C21.5 18.5 18.3 21.8 14 23.5C9.7 21.8 6.5 18.5 6.5 13.8V7.5L14 4.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/><path d=\"M10.5 14.2L13 16.7L18 11.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "carbon_scope3_ledger": "<path d=\"M7 21C7 13 12 7 21.5 6.5C21.5 15.5 16.5 21 9.5 21H7Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.24\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/><path d=\"M7 21C11.5 16.5 15 13 19 9.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><circle cx=\"15\" cy=\"13.2\" r=\"1.6\" fill=\"currentColor\"/>", "commodity_index_advisor": "<line x1=\"8\" y1=\"6.5\" x2=\"8\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"6.3\" y=\"10\" width=\"3.4\" height=\"7\" rx=\"0.8\" fill=\"currentColor\"/><line x1=\"14\" y1=\"5.5\" x2=\"14\" y2=\"19.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"12.3\" y=\"8\" width=\"3.4\" height=\"6.5\" rx=\"0.8\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"20\" y1=\"8.5\" x2=\"20\" y2=\"22.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"18.3\" y=\"12.5\" width=\"3.4\" height=\"6.5\" rx=\"0.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.4\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"4.5\" y1=\"15.5\" x2=\"23.5\" y2=\"15.5\" stroke=\"var(--ic-accent)\" stroke-width=\"1.7\" stroke-dasharray=\"2.5 2\"/>", "rfq_should_cost_agent": "<rect x=\"5.5\" y=\"6\" width=\"8.5\" height=\"4\" rx=\"1\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"5.5\" y=\"11.8\" width=\"8.5\" height=\"4.5\" rx=\"1\" fill=\"var(--ic-accent)\" fill-opacity=\"0.4\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"5.5\" y=\"18\" width=\"8.5\" height=\"4\" rx=\"1\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/><path d=\"M17.5 6.5H22V21.5H17.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"17.5\" y1=\"14\" x2=\"22\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.6\"/>", "sustainable_packaging_agent": "<polygon points=\"14,5 22,9.5 14,14 6,9.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.26\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><polygon points=\"6,9.5 14,14 14,22.5 6,18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><polygon points=\"22,9.5 14,14 14,22.5 22,18\" fill=\"var(--ic-accent)\" fill-opacity=\"0.14\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><path d=\"M10 7.2L18 11.7\" stroke=\"var(--ic-accent)\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>", "tariff_esg_agent": "<rect x=\"5\" y=\"5\" width=\"12\" height=\"17.5\" rx=\"1.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.65\"/><line x1=\"8\" y1=\"9\" x2=\"14\" y2=\"9\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><line x1=\"8\" y1=\"12.5\" x2=\"12.5\" y2=\"12.5\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><path d=\"M15 21.5H18.5V17.5H21.5V13.5H24\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"23.2\" cy=\"10.2\" r=\"1.8\" fill=\"var(--ic-accent)\"/>", "master_data_leadtime_steward": "<circle cx=\"12.5\" cy=\"14\" r=\"7.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"1.75\"/><path d=\"M12.5 9.8V14L15.5 15.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M19.5 10.5L23 14L19.5 17.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "three_way_match_dispute": "<polygon points=\"14,6.5 22,20.5 6,20.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><rect x=\"11.6\" y=\"4.2\" width=\"4.8\" height=\"4.8\" rx=\"1.2\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"3.8\" y=\"18.2\" width=\"4.8\" height=\"4.8\" rx=\"1.2\" fill=\"var(--bg-card, #0f172a)\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"19.4\" y=\"18.2\" width=\"4.8\" height=\"4.8\" rx=\"1.2\" fill=\"var(--bg-card, #0f172a)\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"14\" cy=\"15.5\" r=\"2.1\" fill=\"var(--ic-accent)\"/>", "finite_production_scheduler": "<rect x=\"4.5\" y=\"6.5\" width=\"9.5\" height=\"3.8\" rx=\"1.2\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"11\" y=\"12.1\" width=\"10\" height=\"3.8\" rx=\"1.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.45\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"7.5\" y=\"17.7\" width=\"15.5\" height=\"3.8\" rx=\"1.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"15.8\" y1=\"5\" x2=\"15.8\" y2=\"23\" stroke=\"var(--ic-accent)\" stroke-width=\"1.5\" stroke-dasharray=\"2 2\"/>", "line_schedule_optimizer": "<line x1=\"4.5\" y1=\"10\" x2=\"12\" y2=\"10\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M15.5 8.2L19 11.8M19 8.2L15.5 11.8\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M9.5 10C12 10 12.5 18.5 15.5 18.5H23\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M20.5 16L23.2 18.5L20.5 21\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "labor_line_balancing_agent": "<line x1=\"5\" y1=\"19.5\" x2=\"23\" y2=\"19.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><polygon points=\"14,19.5 16.8,23.2 11.2,23.2\" fill=\"var(--ic-accent)\"/><rect x=\"6\" y=\"10\" width=\"3.8\" height=\"7.5\" rx=\"1.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"12.1\" y=\"9\" width=\"3.8\" height=\"8.5\" rx=\"1.2\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"18.2\" y=\"10\" width=\"3.8\" height=\"7.5\" rx=\"1.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/>", "predictive_oee_sentinel": "<rect x=\"5\" y=\"6\" width=\"18\" height=\"16\" rx=\"3\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.75\"/><path d=\"M7.5 14H10.5L12.3 9.2L15.2 18.8L17.2 12.5L18.8 14H20.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "copacker_allocation_agent": "<path d=\"M5 21V11.5L9 14V11.5L13 14V21H5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><path d=\"M13.5 15.5L18.5 10\" stroke=\"var(--ic-accent)\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><path d=\"M13.5 17.5L18.5 19.5\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><rect x=\"19\" y=\"7\" width=\"4.5\" height=\"4.5\" rx=\"1\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"19\" y=\"17.2\" width=\"4.5\" height=\"4.5\" rx=\"1\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/>", "capex_simulator_agent": "<path d=\"M5.5 21.5V6.5M5.5 21.5H23\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><path d=\"M6 19.5L22 7.5L22 18.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.24\"/><path d=\"M6 19.5L22 7.5\" stroke=\"var(--ic-accent)\" stroke-width=\"1.6\" stroke-dasharray=\"2.5 1.8\"/><path d=\"M6 19.5L22 13\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\"/><path d=\"M6 19.5L22 18.5\" stroke=\"var(--ic-accent)\" stroke-width=\"1.6\" stroke-dasharray=\"2.5 1.8\"/>", "inline_yield_guardian": "<path d=\"M6 9.5V6.5H9M22 9.5V6.5H19M6 18.5V21.5H9M22 18.5V21.5H19\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"10.2\" y=\"9.8\" width=\"7.6\" height=\"8.4\" rx=\"1.6\" fill=\"var(--ic-accent)\" fill-opacity=\"0.25\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"4.8\" y1=\"14\" x2=\"23.2\" y2=\"14\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/>", "batch_record_auditor": "<rect x=\"7.5\" y=\"4.8\" width=\"12.5\" height=\"16\" rx=\"1.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.5\"/><rect x=\"5.5\" y=\"7.2\" width=\"13\" height=\"16\" rx=\"1.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"M9.2 15.2L11.4 17.4L15.4 12.8\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2.1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "scrap_defect_root_cause_agent": "<line x1=\"4.5\" y1=\"14\" x2=\"20.5\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.85\" stroke-linecap=\"round\"/><line x1=\"8\" y1=\"8\" x2=\"11.5\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"14\" y1=\"8\" x2=\"17.5\" y2=\"14\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><line x1=\"8\" y1=\"20\" x2=\"11.5\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"14\" y1=\"20\" x2=\"17.5\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><polygon points=\"20.5,10.8 24.2,14 20.5,17.2\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linejoin=\"round\"/>", "meio_safety_stock_agent": "<rect x=\"11\" y=\"5\" width=\"6\" height=\"4.5\" rx=\"1.2\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"14\" y1=\"9.5\" x2=\"9\" y2=\"13\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"14\" y1=\"9.5\" x2=\"19\" y2=\"13\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"6\" y=\"13\" width=\"6\" height=\"4.2\" rx=\"1\" fill=\"var(--ic-accent)\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"16\" y=\"13\" width=\"6\" height=\"4.2\" rx=\"1\" fill=\"var(--ic-accent)\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"5\" y1=\"21.2\" x2=\"23\" y2=\"21.2\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/>", "slob_disposition_agent": "<path d=\"M7.5 6H17.5M7.5 22H17.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M8.5 6L12.5 14L8.5 22M16.5 6L12.5 14L16.5 22\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><path d=\"M17.5 14H23.2M20.8 11.5L23.4 14L20.8 16.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "crossdock_transfer_orchestrator": "<rect x=\"4.5\" y=\"9\" width=\"6\" height=\"10\" rx=\"1.4\" fill=\"var(--ic-accent)\" fill-opacity=\"0.26\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"17.5\" y=\"9\" width=\"6\" height=\"10\" rx=\"1.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M11.8 11.5H16.2M14.6 9.8L16.5 11.5L14.6 13.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M16.2 16.5H11.8M13.4 14.8L11.5 16.5L13.4 18.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "warehouse_slotting_agent": "<line x1=\"6\" y1=\"5.5\" x2=\"6\" y2=\"22.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><line x1=\"22\" y1=\"5.5\" x2=\"22\" y2=\"22.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><line x1=\"6\" y1=\"10.5\" x2=\"22\" y2=\"10.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"6\" y1=\"17\" x2=\"22\" y2=\"17\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"8.5\" y=\"11.8\" width=\"5\" height=\"4\" rx=\"0.9\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.3\"/><rect x=\"14.8\" y=\"11.8\" width=\"4.7\" height=\"4\" rx=\"0.9\" fill=\"var(--ic-accent)\" fill-opacity=\"0.45\" stroke=\"currentColor\" stroke-width=\"1.3\"/>", "dock_to_stock_agent": "<path d=\"M6 21.5V6.5H22V21.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"9.5\" y=\"13.5\" width=\"9\" height=\"8\" rx=\"1.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M14 19.5V9.5M11.2 12.2L14 9.2L16.8 12.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "wave_fulfillment_copilot": "<path d=\"M4.5 11.5C7 8.5 9.5 8.5 12 11.5C14.5 14.5 17 14.5 19.5 11.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M4.5 17C7 14 9.5 14 12 17C14.5 20 17 20 19.5 17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"22.2\" y1=\"6.5\" x2=\"22.2\" y2=\"21.5\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"22.2\" cy=\"8.5\" r=\"1.8\" fill=\"currentColor\"/>", "planogram_merchandising_vision_auditor": "<line x1=\"4.5\" y1=\"20\" x2=\"23.5\" y2=\"20\" stroke=\"currentColor\" stroke-width=\"1.85\" stroke-linecap=\"round\"/><rect x=\"5.8\" y=\"11\" width=\"4.2\" height=\"7.5\" rx=\"1\" fill=\"currentColor\" opacity=\"0.7\"/><rect x=\"11.8\" y=\"9.5\" width=\"4.8\" height=\"9\" rx=\"1\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"var(--ic-accent)\" stroke-width=\"1.6\" stroke-dasharray=\"2.2 1.6\"/><rect x=\"18.4\" y=\"12\" width=\"3.8\" height=\"6.5\" rx=\"1\" fill=\"currentColor\" opacity=\"0.7\"/><circle cx=\"14.2\" cy=\"6.2\" r=\"1.6\" fill=\"var(--ic-accent)\"/>", "atp_order_promising_agent": "<polygon points=\"7.5,10 11,14 7.5,18 4,14\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M11 14H18.5\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M11 14L17.5 7.8\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"2 2\"/><rect x=\"18.8\" y=\"10.8\" width=\"5\" height=\"6.4\" rx=\"1.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"18.8\" y=\"4.8\" width=\"4.2\" height=\"4.2\" rx=\"1\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" opacity=\"0.55\"/>", "returns_triage_agent": "<rect x=\"4.8\" y=\"10.2\" width=\"6.4\" height=\"6.4\" rx=\"1.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.25\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M11.2 13.4L16.5 8.5H22.8\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M11.2 13.4L16.5 18.5H21.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"2 2\" stroke-linecap=\"round\"/><path d=\"M20.5 6.4L23 8.5L20.5 10.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "load_consolidation_agent": "<rect x=\"4.2\" y=\"8\" width=\"14.5\" height=\"10\" rx=\"1.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"M18.7 11.5H22.2L23.8 14.5V18H18.7V11.5Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><rect x=\"6\" y=\"10\" width=\"4.8\" height=\"6.2\" rx=\"0.7\" fill=\"var(--ic-accent)\"/><rect x=\"12\" y=\"10\" width=\"4.8\" height=\"2.8\" rx=\"0.6\" fill=\"currentColor\" opacity=\"0.8\"/><rect x=\"12\" y=\"13.6\" width=\"4.8\" height=\"2.6\" rx=\"0.6\" fill=\"var(--ic-accent)\" fill-opacity=\"0.6\"/><circle cx=\"8.5\" cy=\"19.8\" r=\"1.8\" fill=\"currentColor\"/><circle cx=\"20.8\" cy=\"19.8\" r=\"1.8\" fill=\"currentColor\"/>", "yard_dock_sequencer": "<line x1=\"20.5\" y1=\"5.5\" x2=\"20.5\" y2=\"22.5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><rect x=\"15.5\" y=\"7\" width=\"5\" height=\"3.6\" rx=\"0.8\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.3\"/><rect x=\"15.5\" y=\"12.2\" width=\"5\" height=\"3.6\" rx=\"0.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\"/><rect x=\"15.5\" y=\"17.4\" width=\"5\" height=\"3.6\" rx=\"0.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.3\"/><path d=\"M5 14C9 14 10 8.8 14.5 8.8\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\"/><circle cx=\"5.5\" cy=\"14\" r=\"1.8\" fill=\"currentColor\"/>", "cold_chain_auditor": "<path d=\"M9.5 6.8V16.2C8.2 16.9 7.5 18.2 7.5 19.6C7.5 21.6 9.1 23.2 11.1 23.2C13.1 23.2 14.7 21.6 14.7 19.6C14.7 18.2 14 16.9 12.7 16.2V6.8C12.7 5.9 12 5.2 11.1 5.2C10.2 5.2 9.5 5.9 9.5 6.8Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.65\"/><circle cx=\"11.1\" cy=\"19.6\" r=\"1.8\" fill=\"var(--ic-accent)\"/><path d=\"M19.5 7.5V15.5M16 11.5H23M17 9L22 14M22 9L17 14\" stroke=\"var(--ic-accent)\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>", "aisle_aligned_pallet_agent": "<line x1=\"4.8\" y1=\"21.5\" x2=\"23.2\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"7.5\" y1=\"19.5\" x2=\"7.5\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"14\" y1=\"19.5\" x2=\"14\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"20.5\" y1=\"19.5\" x2=\"20.5\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"6.2\" y=\"15\" width=\"15.6\" height=\"4\" rx=\"0.9\" fill=\"currentColor\" opacity=\"0.7\"/><rect x=\"7.2\" y=\"10.4\" width=\"13.6\" height=\"3.8\" rx=\"0.9\" fill=\"var(--ic-accent)\" fill-opacity=\"0.45\" stroke=\"currentColor\" stroke-width=\"1.3\"/><rect x=\"8.5\" y=\"6\" width=\"11\" height=\"3.6\" rx=\"0.9\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.3\"/>", "store_capacity_agent": "<path d=\"M5.5 10.5L14 5.5L22.5 10.5V21.5H5.5V10.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><line x1=\"8\" y1=\"13\" x2=\"20\" y2=\"13\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-dasharray=\"2.4 1.8\"/><rect x=\"8.8\" y=\"15.2\" width=\"10.4\" height=\"4.2\" rx=\"0.9\" fill=\"var(--ic-accent)\"/>", "port_drayage_orchestrator": "<path d=\"M5 21.5V12.5H9.5V21.5M9.5 21.5V8.5H15V21.5M15 21.5V14.5H19.5V21.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><circle cx=\"20.2\" cy=\"8.2\" r=\"3.6\" fill=\"var(--bg-card, #0f172a)\" stroke=\"var(--ic-accent)\" stroke-width=\"1.7\"/><path d=\"M20.2 6.4V8.4L21.6 9.3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>", "geocoding_intelligence_agent": "<ellipse cx=\"14\" cy=\"20.8\" rx=\"6.8\" ry=\"2.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.25\" stroke=\"var(--ic-accent)\" stroke-width=\"1.4\"/><path d=\"M14 20C14 20 19.5 14.5 19.5 10.5C19.5 7.5 17 5 14 5C11 5 8.5 7.5 8.5 10.5C8.5 14.5 14 20 14 20Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/><circle cx=\"14\" cy=\"10.5\" r=\"2.1\" fill=\"currentColor\"/>", "multimodal_mode_shift_agent": "<rect x=\"4.5\" y=\"10.5\" width=\"6.5\" height=\"7\" rx=\"1.3\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M11 14L17.5 7.8H22.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M11 14H23\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2.1\" stroke-linecap=\"round\"/><path d=\"M11 14L17.5 20.2H22.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"23\" cy=\"14\" r=\"1.9\" fill=\"var(--ic-accent)\"/>", "otif_penalty_shield": "<path d=\"M12.5 5L19.5 7.8V13.5C19.5 17.8 16.5 21 12.5 22.6C8.5 21 5.5 17.8 5.5 13.5V7.8L12.5 5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><path d=\"M9.5 13.8L11.6 15.9L15.8 11.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M21 8.5C22.8 10.2 22.8 13.2 21 15\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>", "fleetflow_dispatch": "<circle cx=\"6.2\" cy=\"19.5\" r=\"2.2\" fill=\"currentColor\"/><circle cx=\"21.8\" cy=\"8.5\" r=\"2.2\" fill=\"var(--ic-accent)\"/><line x1=\"8\" y1=\"18.2\" x2=\"19.8\" y2=\"9.8\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"2 2\" opacity=\"0.5\"/><path d=\"M6.2 17.3C6.2 9.5 13 7 19.6 8.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2.1\" stroke-linecap=\"round\"/><path d=\"M13 13.2L15.8 16M15.8 13.2L13 16\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>", "freight_control_tower": "<rect x=\"5\" y=\"6\" width=\"18\" height=\"4\" rx=\"1.2\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"7.5\" y=\"12\" width=\"13\" height=\"4\" rx=\"1.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.38\" stroke=\"currentColor\" stroke-width=\"1.4\"/><rect x=\"10\" y=\"18\" width=\"8\" height=\"4\" rx=\"1.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/>", "freight_bill_audit_agent": "<path d=\"M6.5 5H17.5V22.5L15 20.8L12 22.5L9 20.8L6.5 22.5V5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><line x1=\"9.2\" y1=\"9.5\" x2=\"14.8\" y2=\"9.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"9.2\" y1=\"13\" x2=\"13.5\" y2=\"13\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"19.5\" cy=\"15.5\" r=\"3.8\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\"/><path d=\"M18 15.5L19.1 16.6L21.3 14.3\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "reverse_rma_optimizer": "<line x1=\"5.5\" y1=\"8\" x2=\"5.5\" y2=\"20\" stroke=\"currentColor\" stroke-width=\"1.8\"/><line x1=\"8.8\" y1=\"8\" x2=\"8.8\" y2=\"20\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"11.5\" y1=\"8\" x2=\"11.5\" y2=\"20\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M18.8 7L23.5 9V14C23.5 17.5 21.4 20.2 18.8 21.5C16.2 20.2 14.1 17.5 14.1 14V9L18.8 7Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.28\" stroke=\"var(--ic-accent)\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><line x1=\"17\" y1=\"12.2\" x2=\"20.6\" y2=\"15.8\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"/>", "keep_it_routing_advisor": "<polygon points=\"14,7.5 19.5,13 14,18.5 8.5,13\" fill=\"var(--ic-accent)\" fill-opacity=\"0.26\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"M4.5 13H8.5\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><path d=\"M19.5 13H23.5M21.5 10.8L23.7 13L21.5 15.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M14 18.5V23\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"2 1.8\" stroke-linecap=\"round\"/>", "osd_freight_claims_agent": "<rect x=\"7.5\" y=\"8.5\" width=\"13\" height=\"11\" rx=\"1.6\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.65\"/><path d=\"M12.5 8.5L11 12.2L14.5 13.5L13 17\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M4.8 8.5V5.5H7.8M23.2 8.5V5.5H20.2M4.8 19.5V22.5H7.8M23.2 19.5V22.5H20.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>", "dynamic_markdown_agent": "<rect x=\"4.8\" y=\"6\" width=\"18.4\" height=\"16\" rx=\"2.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"M8 10.2H12.5V13.8H16.8V17.5H20.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"20.2\" cy=\"17.5\" r=\"1.7\" fill=\"currentColor\"/>", "short_dated_redistributor": "<circle cx=\"10.8\" cy=\"14\" r=\"5.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"M10.8 10.8V14L13 15.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M16.8 11.5H23M20.5 9L23.2 11.5L20.5 14\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M16.8 17.5H21.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"2 2\" stroke-linecap=\"round\"/>", "food_waste_esg_copilot": "<path d=\"M14 5.5C18.7 5.5 22.5 9.3 22.5 14C22.5 18.7 18.7 22.5 14 22.5C9.3 22.5 5.5 18.7 5.5 14C5.5 11.2 6.9 8.7 9 7.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><path d=\"M6.2 6.8H9.5V10.1\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M11 16.5C11 12.5 14 10.5 17.5 10.5C17.5 14.5 15 16.8 11.8 16.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.35\" stroke=\"var(--ic-accent)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>", "rti_balance_reconciler": "<path d=\"M5.5 10H16.5L15.3 15H6.7L5.5 10Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M5.5 16.2H16.5L15.3 21.2H6.7L5.5 16.2Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M19.2 10.5C21 12.2 21 15.2 19.2 17\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><path d=\"M21.8 8.5C24.4 11.2 24.4 16.2 21.8 19\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.5\" stroke-linecap=\"round\" opacity=\"0.75\"/>", "intermodal_rail_linehaul_agent": "<path d=\"M6.5 10.5H20.5C22.2 10.5 23.2 11.8 23.2 14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><path d=\"M21.5 17.5H7.5C5.8 17.5 4.8 16.2 4.8 14\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M18.5 8.2L21 10.5L18.5 12.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M9.5 15.2L7 17.5L9.5 19.8\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"12.2\" y=\"12.4\" width=\"3.6\" height=\"3.2\" rx=\"0.7\" fill=\"var(--ic-accent)\"/>", "sanitation_health_agent": "<path d=\"M6 12.5H20L18.5 21H7.5L6 12.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><path d=\"M10.5 6.2C10.5 6.2 8.8 8.4 8.8 9.5C8.8 10.4 9.6 11.1 10.5 11.1C11.4 11.1 12.2 10.4 12.2 9.5C12.2 8.4 10.5 6.2 10.5 6.2Z\" fill=\"var(--ic-accent)\"/><path d=\"M17.5 5.2V9.8M15.2 7.5H19.8\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>"};
+    const PERSONA_VECTOR_SVGS = {"demand_planner_forecaster": "<rect x=\"5.5\" y=\"6.5\" width=\"17\" height=\"15\" rx=\"2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.65\"/><line x1=\"5.5\" y1=\"10.5\" x2=\"22.5\" y2=\"10.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M8.5 18L12 14.5L15.2 16.2L19.5 12.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "commercial_planning_lead": "<circle cx=\"11.2\" cy=\"14\" r=\"5.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.7\"/><circle cx=\"16.8\" cy=\"14\" r=\"5.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\"/><circle cx=\"14\" cy=\"14\" r=\"1.4\" fill=\"currentColor\"/>", "brand_innovation_mgr": "<line x1=\"8\" y1=\"6\" x2=\"8\" y2=\"22\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M8 6.8H19.5L17.2 10.8L19.5 14.8H8V6.8Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><circle cx=\"19.5\" cy=\"19.2\" r=\"2.2\" fill=\"var(--ic-accent)\"/>", "trade_marketing_manager": "<path d=\"M6.5 21.5V9.5L14 6L21.5 9.5V21.5H6.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><path d=\"M14 18.5V11M11.3 13.6L14 10.8L16.7 13.6\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "key_account_manager": "<rect x=\"5.2\" y=\"9.2\" width=\"17.6\" height=\"12\" rx=\"2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"M10.5 9.2V7.2C10.5 6.4 11.1 5.8 11.9 5.8H16.1C16.9 5.8 17.5 6.4 17.5 7.2V9.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"14\" cy=\"15.2\" r=\"2.3\" fill=\"var(--ic-accent)\"/>", "revenue_trade_finance_lead": "<line x1=\"14\" y1=\"6\" x2=\"14\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"6.5\" y1=\"9.5\" x2=\"21.5\" y2=\"9.5\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><polygon points=\"7.5,10 10.2,15.8 4.8,15.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"var(--ic-accent)\" stroke-width=\"1.4\" stroke-linejoin=\"round\"/><polygon points=\"20.5,10 23.2,15.8 17.8,15.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linejoin=\"round\"/><line x1=\"10\" y1=\"21.5\" x2=\"18\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>", "sop_supply_planning_dir": "<path d=\"M5.5 18.5C5.5 13.2 9.3 9 14 9C18.7 9 22.5 13.2 22.5 18.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><line x1=\"14\" y1=\"18.5\" x2=\"18.2\" y2=\"12.2\" stroke=\"var(--ic-accent)\" stroke-width=\"2.1\" stroke-linecap=\"round\"/><circle cx=\"14\" cy=\"18.5\" r=\"2.1\" fill=\"currentColor\"/>", "supply_chain_vp_coo": "<polygon points=\"11.5,10 16.5,10 18.2,22 9.8,22\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><circle cx=\"14\" cy=\"7.5\" r=\"2.1\" fill=\"var(--ic-accent)\"/><path d=\"M6 6.5L10.2 7.8M22 6.5L17.8 7.8\" stroke=\"var(--ic-accent)\" stroke-width=\"1.7\" stroke-linecap=\"round\"/>", "ibp_lead_chief_planning_off": "<circle cx=\"14\" cy=\"14\" r=\"8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.75\"/><ellipse cx=\"14\" cy=\"14\" rx=\"3.8\" ry=\"8\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.5\"/><line x1=\"6.2\" y1=\"14\" x2=\"21.8\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.5\"/>", "category_manager_portfolio": "<rect x=\"6\" y=\"6\" width=\"6.8\" height=\"6.8\" rx=\"1.4\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"15.2\" y=\"6\" width=\"6.8\" height=\"6.8\" rx=\"1.4\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"6\" y=\"15.2\" width=\"6.8\" height=\"6.8\" rx=\"1.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"15.2\" y=\"15.2\" width=\"6.8\" height=\"6.8\" rx=\"1.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"2 1.6\"/>", "lifecycle_materials_mgr": "<rect x=\"5.5\" y=\"6\" width=\"14\" height=\"16\" rx=\"1.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.65\"/><circle cx=\"12.5\" cy=\"12.5\" r=\"2.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M16.5 18H23M20.8 15.8L23.2 18L20.8 20.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "commercial_finance_director": "<circle cx=\"14\" cy=\"7.2\" r=\"2\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"13\" y1=\"9\" x2=\"8\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><line x1=\"15\" y1=\"9\" x2=\"20\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M9.5 16.5H18.5\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>", "procurement_dir_risk_mgr": "<path d=\"M5.5 14.5C5.5 9.8 9.3 6 14 6C18.7 6 22.5 9.8 22.5 14.5H5.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.25\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/><path d=\"M14 14.5V20.2C14 21.3 13.1 22.2 12 22.2C10.9 22.2 10 21.3 10 20.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.85\" stroke-linecap=\"round\"/>", "procurement_operations_lead": "<rect x=\"6.5\" y=\"6.8\" width=\"13\" height=\"15.2\" rx=\"1.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.65\"/><rect x=\"10.2\" y=\"4.8\" width=\"5.6\" height=\"3.2\" rx=\"1\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.3\"/><circle cx=\"19.5\" cy=\"17.5\" r=\"3.2\" fill=\"var(--ic-accent)\"/>", "chief_sustainability_officer": "<path d=\"M14 22C9.6 22 6 18.4 6 14C6 9.6 9.6 6 14 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><path d=\"M13 18C13 12.5 16.5 8.5 22 8C22 13.5 18.8 18 13 18Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"var(--ic-accent)\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/>", "category_sourcing_mgr_direct": "<polygon points=\"7.5,16.5 13,16.5 14.4,20.5 6.1,20.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.35\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/><polygon points=\"15,16.5 20.5,16.5 21.9,20.5 13.6,20.5\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/><path d=\"M6.5 12L11.5 8.5L15.5 11L21.5 6.8\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "strategic_sourcing_lead": "<circle cx=\"13\" cy=\"14.5\" r=\"7\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.7\"/><circle cx=\"13\" cy=\"14.5\" r=\"3.4\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.6\"/><path d=\"M15 12.5L22 5.5\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/>", "packaging_rd_engineer": "<path d=\"M6.5 6V22M6.5 8.5H16.5V11.5H10.5M6.5 19.5H14.5V16.5H10.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"16.5\" y=\"12.2\" width=\"5.2\" height=\"5.2\" rx=\"1\" fill=\"var(--ic-accent)\" fill-opacity=\"0.35\" stroke=\"var(--ic-accent)\" stroke-width=\"1.5\"/>", "commercial_sourcing_legal": "<path d=\"M14 5.5L19.5 14.5L16.8 21.5H11.2L8.5 14.5L14 5.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><line x1=\"14\" y1=\"5.5\" x2=\"14\" y2=\"14\" stroke=\"var(--ic-accent)\" stroke-width=\"1.7\"/><circle cx=\"14\" cy=\"14.5\" r=\"1.6\" fill=\"currentColor\"/>", "buyer_procurement_coord": "<line x1=\"11.5\" y1=\"5.2\" x2=\"16.5\" y2=\"5.2\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><circle cx=\"14\" cy=\"14.8\" r=\"7.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"1.75\"/><path d=\"M11 14.8L13.2 17L17.4 12.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "accounts_payable_lead": "<rect x=\"5\" y=\"7.5\" width=\"18\" height=\"13\" rx=\"2.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"1.7\"/><line x1=\"5\" y1=\"11.8\" x2=\"23\" y2=\"11.8\" stroke=\"var(--ic-accent)\" stroke-width=\"2.2\"/><line x1=\"8.5\" y1=\"16.5\" x2=\"13.5\" y2=\"16.5\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><circle cx=\"19\" cy=\"16.5\" r=\"1.6\" fill=\"var(--ic-accent)\"/>", "master_production_scheduler": "<circle cx=\"14\" cy=\"14\" r=\"6.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"M14 5.2V7.5M14 20.5V22.8M5.2 14H7.5M20.5 14H22.8M7.8 7.8L9.4 9.4M18.6 18.6L20.2 20.2M20.2 7.8L18.6 9.4M9.4 18.6L7.8 20.2\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><path d=\"M14 11V14L16.2 15.4\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>", "shop_floor_shift_lead": "<path d=\"M6.2 17.5C6.2 12.2 9.6 8.2 14 8.2C18.4 8.2 21.8 12.2 21.8 17.5H6.2Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.26\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/><line x1=\"14\" y1=\"6.8\" x2=\"14\" y2=\"12.5\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"4.8\" y1=\"19.8\" x2=\"23.2\" y2=\"19.8\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\"/>", "plant_operations_manager": "<path d=\"M5.5 21.5V12.5L10.8 9.2V12.5L16.2 9.2V12.5L22.5 9.2V21.5H5.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><rect x=\"9.2\" y=\"15.8\" width=\"3.5\" height=\"5.7\" fill=\"var(--ic-accent)\"/><rect x=\"15.5\" y=\"15.8\" width=\"3.5\" height=\"3.2\" fill=\"currentColor\" opacity=\"0.7\"/>", "supply_chain_ops_director": "<path d=\"M8.5 19.5L17.2 10.8C17 9.2 18.2 7.5 20 7.2L18.4 8.8L19.6 10L21.2 8.4C20.9 10.2 19.2 11.4 17.6 11.2L8.9 19.9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"8.2\" cy=\"19.8\" r=\"2.3\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\"/>", "external_sourcing_cmo_lead": "<polygon points=\"9.5,8.5 13.5,10.8 13.5,15.5 9.5,17.8 5.5,15.5 5.5,10.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.6\"/><polygon points=\"18.5,10.2 22.5,12.5 22.5,17.2 18.5,19.5 14.5,17.2 14.5,12.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.75\"/>", "vp_manufacturing_engineering": "<line x1=\"8.5\" y1=\"5.5\" x2=\"8.5\" y2=\"22\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\"/><line x1=\"5.5\" y1=\"8.2\" x2=\"22.5\" y2=\"8.2\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><line x1=\"18.5\" y1=\"8.2\" x2=\"18.5\" y2=\"13.5\" stroke=\"var(--ic-accent)\" stroke-width=\"1.6\"/><rect x=\"15.2\" y=\"13.8\" width=\"6.6\" height=\"6.2\" rx=\"1\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"currentColor\" stroke-width=\"1.5\"/>", "qa_manager_line_inspector": "<circle cx=\"14\" cy=\"14\" r=\"7.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.75\"/><polygon points=\"14,9.2 18.2,11.6 18.2,16.4 14,18.8 9.8,16.4 9.8,11.6\" fill=\"var(--ic-accent)\" fill-opacity=\"0.32\" stroke=\"var(--ic-accent)\" stroke-width=\"1.5\"/><circle cx=\"14\" cy=\"14\" r=\"1.6\" fill=\"currentColor\"/>", "regulatory_compliance_lead": "<path d=\"M11.5 6H16.5M12.5 6V11L7.5 19.8C7 20.7 7.6 21.8 8.7 21.8H19.3C20.4 21.8 21 20.7 20.5 19.8L15.5 11V6\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"9.6\" y1=\"17\" x2=\"18.4\" y2=\"17\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\"/>", "continuous_improvement_lead": "<line x1=\"5.5\" y1=\"8\" x2=\"22.5\" y2=\"8\" stroke=\"var(--ic-accent)\" stroke-width=\"1.4\" stroke-dasharray=\"2.2 1.8\"/><line x1=\"5.5\" y1=\"20\" x2=\"22.5\" y2=\"20\" stroke=\"var(--ic-accent)\" stroke-width=\"1.4\" stroke-dasharray=\"2.2 1.8\"/><path d=\"M6 15L10.5 11.5L14.5 16L18.5 12.2L22 14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "inventory_optimization_lead": "<rect x=\"6.5\" y=\"7\" width=\"6\" height=\"14\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\"/><rect x=\"6.5\" y=\"13\" width=\"6\" height=\"8\" rx=\"1.5\" fill=\"var(--ic-accent)\"/><rect x=\"15.5\" y=\"7\" width=\"6\" height=\"14\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\"/><rect x=\"15.5\" y=\"10.5\" width=\"6\" height=\"10.5\" rx=\"1.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.45\"/>", "inventory_controller_buyer": "<rect x=\"5.5\" y=\"6\" width=\"12.5\" height=\"15.5\" rx=\"1.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.65\"/><circle cx=\"18.5\" cy=\"17.2\" r=\"4.2\" fill=\"var(--bg-card, #0f172a)\" stroke=\"var(--ic-accent)\" stroke-width=\"1.75\"/><path d=\"M18.5 15V17.2L20 18.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>", "replenishment_planner": "<path d=\"M7.5 11.5C8.6 8.2 11.8 6.2 15.4 6.8C18.2 7.2 20.4 9.2 21.1 11.8\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M20.5 16.5C19.4 19.8 16.2 21.8 12.6 21.2C9.8 20.8 7.6 18.8 6.9 16.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><polygon points=\"21.8,9.2 22.2,12.8 18.8,11.8\" fill=\"var(--ic-accent)\"/><polygon points=\"6.2,18.8 5.8,15.2 9.2,16.2\" fill=\"currentColor\"/>", "dc_operations_mgr": "<path d=\"M5 11.5L14 6L23 11.5V21.5H5V11.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/><rect x=\"9.5\" y=\"13.5\" width=\"9\" height=\"8\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.6\"/><line x1=\"9.5\" y1=\"17.5\" x2=\"18.5\" y2=\"17.5\" stroke=\"var(--ic-accent)\" stroke-width=\"1.5\"/>", "inbound_receiving_supervisor": "<path d=\"M7.5 9.5H16.5L14.5 14H10.8L12 21.5H8.8L7.5 9.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.26\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><path d=\"M17.5 9.8L22.5 7.5M17.5 11.5H23M17.5 13.2L22.5 15.5\" stroke=\"var(--ic-accent)\" stroke-width=\"1.7\" stroke-linecap=\"round\"/>", "dc_shift_floor_lead": "<rect x=\"8.5\" y=\"6.8\" width=\"11\" height=\"8\" rx=\"1.4\" fill=\"var(--ic-accent)\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.65\"/><rect x=\"5\" y=\"17\" width=\"18\" height=\"4.2\" rx=\"2.1\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\"/><circle cx=\"8.5\" cy=\"19.1\" r=\"1\" fill=\"var(--ic-accent)\"/><circle cx=\"14\" cy=\"19.1\" r=\"1\" fill=\"var(--ic-accent)\"/><circle cx=\"19.5\" cy=\"19.1\" r=\"1\" fill=\"var(--ic-accent)\"/>", "store_operations_omni_lead": "<path d=\"M5.5 10.5L7.5 6.5H20.5L22.5 10.5H5.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M7 10.5V21H21V10.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\"/><circle cx=\"14\" cy=\"15.8\" r=\"2.4\" fill=\"var(--ic-accent)\"/>", "omnichannel_fulfillment_dir": "<rect x=\"6.5\" y=\"9.8\" width=\"13\" height=\"11.5\" rx=\"1.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"M10.2 9.8V8.2C10.2 6.5 11.5 5.2 13 5.2C14.5 5.2 15.8 6.5 15.8 8.2V9.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M15.5 15.5H23M20.8 13.3L23.2 15.5L20.8 17.7\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "reverse_logistics_lead_wh": "<polygon points=\"14,6.2 21.5,19.8 6.5,19.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><path d=\"M11.5 15.2L13.4 17.1L16.8 13.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "transport_planner_inbound_mgr": "<polygon points=\"14,6.2 21,10.2 14,14.2 7,10.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><polygon points=\"7,10.2 14,14.2 14,21.8 7,17.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><polygon points=\"21,10.2 14,14.2 14,21.8 21,17.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/>", "yard_master_plant_logistics": "<rect x=\"6\" y=\"12.5\" width=\"4.2\" height=\"9\" rx=\"1\" fill=\"currentColor\"/><path d=\"M8.5 14L21.5 7.5\" stroke=\"var(--ic-accent)\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"5\" y1=\"21.5\" x2=\"23\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>", "cold_chain_qa_logistics_dir": "<polygon points=\"14,5.2 21.5,9.6 21.5,18.4 14,22.8 6.5,18.4 6.5,9.6\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><path d=\"M14 9V19M9.7 11.5L18.3 16.5M18.3 11.5L9.7 16.5\" stroke=\"var(--ic-accent)\" stroke-width=\"1.7\" stroke-linecap=\"round\"/>", "outbound_lead_industrial_eng": "<path d=\"M6.5 7V19.5H21.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"10.2\" y=\"10.5\" width=\"9.5\" height=\"6.8\" rx=\"1.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.32\" stroke=\"var(--ic-accent)\" stroke-width=\"1.6\"/><circle cx=\"8\" cy=\"21.5\" r=\"1.4\" fill=\"currentColor\"/><circle cx=\"19.5\" cy=\"21.5\" r=\"1.4\" fill=\"currentColor\"/>", "store_replenishment_lead": "<line x1=\"7\" y1=\"6.5\" x2=\"7\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><line x1=\"21\" y1=\"6.5\" x2=\"21\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><rect x=\"9.5\" y=\"8\" width=\"9\" height=\"3.2\" rx=\"0.8\" fill=\"var(--ic-accent)\"/><rect x=\"9.5\" y=\"13\" width=\"9\" height=\"3.2\" rx=\"0.8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.45\"/><line x1=\"7\" y1=\"19.2\" x2=\"21\" y2=\"19.2\" stroke=\"currentColor\" stroke-width=\"1.5\"/>", "retail_logistics_dispatcher": "<circle cx=\"13\" cy=\"14\" r=\"7.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"1.75\"/><path d=\"M13 10.2V14H16.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M20.5 11.5L23.2 14L20.5 16.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "last_mile_operations_lead": "<polygon points=\"5.5,7.5 11,5.8 17,8.2 22.5,6.5 22.5,20.5 17,22.2 11,19.8 5.5,21.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><line x1=\"11\" y1=\"5.8\" x2=\"11\" y2=\"19.8\" stroke=\"currentColor\" stroke-width=\"1.3\"/><circle cx=\"17\" cy=\"14\" r=\"2.2\" fill=\"var(--ic-accent)\"/>", "ecommerce_logistics_dir": "<rect x=\"6.2\" y=\"7.2\" width=\"15.6\" height=\"13.6\" rx=\"2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"M11.5 7.2V13.2L14 11.8L16.5 13.2V7.2\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linejoin=\"round\"/>", "customer_support_ops_lead": "<path d=\"M6 7.5H22V17.5H12.5L8 21V17.5H6V7.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><path d=\"M11 12.5L13.2 14.6L17.5 10.5\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "fleet_dispatcher_central_ops": "<circle cx=\"14\" cy=\"14\" r=\"8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.75\"/><polygon points=\"17.8,10.2 15.4,15.4 10.2,17.8 12.6,12.6\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linejoin=\"round\"/>", "transport_procurement_lead": "<line x1=\"5\" y1=\"16.5\" x2=\"23\" y2=\"16.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M6.5 16.5C8.5 9.5 19.5 9.5 21.5 16.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\"/><line x1=\"9\" y1=\"16.5\" x2=\"9\" y2=\"20.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><line x1=\"19\" y1=\"16.5\" x2=\"19\" y2=\"20.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>", "freight_controller_claims": "<rect x=\"6\" y=\"5.8\" width=\"16\" height=\"16.4\" rx=\"2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.7\"/><rect x=\"9\" y=\"9\" width=\"10\" height=\"3.2\" rx=\"0.8\" fill=\"var(--ic-accent)\"/><line x1=\"9\" y1=\"15.2\" x2=\"13\" y2=\"15.2\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"15.5\" y1=\"15.2\" x2=\"19\" y2=\"15.2\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"9\" y1=\"18.4\" x2=\"19\" y2=\"18.4\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>", "reverse_logistics_fraud_lead": "<path d=\"M14 5.2L21.2 8V13.8C21.2 18.2 18.1 21.4 14 23C9.9 21.4 6.8 18.2 6.8 13.8V8L14 5.2Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><circle cx=\"14\" cy=\"12.5\" r=\"1.9\" fill=\"var(--ic-accent)\"/><line x1=\"14\" y1=\"14.4\" x2=\"14\" y2=\"17.8\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/>", "customer_experience_cx_lead": "<path d=\"M19.5 18.5H11.5C8.5 18.5 6.5 16.5 6.5 13.5C6.5 10.5 8.5 8.5 11.5 8.5H17.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M15.2 6.2L18 8.5L15.2 10.8\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"19.5\" cy=\"13.5\" r=\"2.1\" fill=\"var(--ic-accent)\"/>", "claims_specialist_controller": "<path d=\"M5.5 10.2H9.2L10.8 8H17.2L18.8 10.2H22.5V20.5H5.5V10.2Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><circle cx=\"14\" cy=\"15.2\" r=\"3\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\"/>", "merchandising_store_ops_mgr": "<path d=\"M8.5 5.8H19.5L21.5 11V21.5H6.5V11L8.5 5.8Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><circle cx=\"14\" cy=\"9.2\" r=\"1.4\" fill=\"currentColor\"/><path d=\"M10.5 17.5L17.5 13\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\"/>", "inventory_disposition_lead": "<circle cx=\"7.5\" cy=\"14\" r=\"2.4\" fill=\"currentColor\"/><path d=\"M10 14L19.5 8.5\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M10 14L19.5 19.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"2 2\" stroke-linecap=\"round\"/><rect x=\"19.5\" y=\"6.5\" width=\"3.6\" height=\"3.6\" rx=\"0.8\" fill=\"var(--ic-accent)\"/>", "cso_circular_lead": "<path d=\"M14 6.2L21.2 19H6.8L14 6.2Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><circle cx=\"14\" cy=\"14.5\" r=\"2.2\" fill=\"var(--ic-accent)\"/>", "asset_recovery_rti_manager": "<rect x=\"5.5\" y=\"9.5\" width=\"17\" height=\"10.5\" rx=\"1.6\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.75\"/><line x1=\"9.5\" y1=\"12.5\" x2=\"12.5\" y2=\"12.5\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><line x1=\"15.5\" y1=\"12.5\" x2=\"18.5\" y2=\"12.5\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>", "reverse_transport_planner": "<line x1=\"5.5\" y1=\"10.5\" x2=\"21.5\" y2=\"10.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M18.8 8L21.8 10.5L18.8 13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"22.5\" y1=\"17.5\" x2=\"6.5\" y2=\"17.5\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M9.2 15L6.2 17.5L9.2 20\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "packaging_qa_food_safety": "<circle cx=\"14\" cy=\"14\" r=\"8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.75\"/><path d=\"M14 8.8C14 8.8 10.5 13 10.5 15.2C10.5 17.1 12.1 18.6 14 18.6C15.9 18.6 17.5 17.1 17.5 15.2C17.5 13 14 8.8 14 8.8Z\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linejoin=\"round\"/>"};
+    const PERSONA_ID_BY_AGENT = {"demand_sensing_agent": "demand_planner_forecaster", "cpfr_sync_agent": "commercial_planning_lead", "npi_demand_profiler": "brand_innovation_mgr", "promo_lift_simulator": "trade_marketing_manager", "field_beat_distributor_sync_agent": "key_account_manager", "trade_scheme_claims_reconciler": "revenue_trade_finance_lead", "sop_scenario_weaver": "sop_supply_planning_dir", "disruption_war_room_orchestrator": "supply_chain_vp_coo", "csco_control_tower_copilot": "ibp_lead_chief_planning_off", "working_capital_cash_bridge": "category_manager_portfolio", "eco_cutover_orchestrator": "lifecycle_materials_mgr", "network_twin_architect": "commercial_finance_director", "tier_n_risk_sentinel": "procurement_dir_risk_mgr", "supplier_quality_sentinel": "procurement_operations_lead", "carbon_scope3_ledger": "chief_sustainability_officer", "commodity_index_advisor": "category_sourcing_mgr_direct", "rfq_should_cost_agent": "strategic_sourcing_lead", "sustainable_packaging_agent": "packaging_rd_engineer", "tariff_esg_agent": "commercial_sourcing_legal", "master_data_leadtime_steward": "buyer_procurement_coord", "three_way_match_dispute": "accounts_payable_lead", "finite_production_scheduler": "master_production_scheduler", "line_schedule_optimizer": "shop_floor_shift_lead", "labor_line_balancing_agent": "plant_operations_manager", "predictive_oee_sentinel": "supply_chain_ops_director", "copacker_allocation_agent": "external_sourcing_cmo_lead", "capex_simulator_agent": "vp_manufacturing_engineering", "inline_yield_guardian": "qa_manager_line_inspector", "batch_record_auditor": "regulatory_compliance_lead", "scrap_defect_root_cause_agent": "continuous_improvement_lead", "meio_safety_stock_agent": "inventory_optimization_lead", "slob_disposition_agent": "inventory_controller_buyer", "crossdock_transfer_orchestrator": "replenishment_planner", "warehouse_slotting_agent": "dc_operations_mgr", "dock_to_stock_agent": "inbound_receiving_supervisor", "wave_fulfillment_copilot": "dc_shift_floor_lead", "planogram_merchandising_vision_auditor": "store_operations_omni_lead", "atp_order_promising_agent": "omnichannel_fulfillment_dir", "returns_triage_agent": "reverse_logistics_lead_wh", "load_consolidation_agent": "transport_planner_inbound_mgr", "yard_dock_sequencer": "yard_master_plant_logistics", "cold_chain_auditor": "cold_chain_qa_logistics_dir", "aisle_aligned_pallet_agent": "outbound_lead_industrial_eng", "store_capacity_agent": "store_replenishment_lead", "port_drayage_orchestrator": "retail_logistics_dispatcher", "geocoding_intelligence_agent": "last_mile_operations_lead", "multimodal_mode_shift_agent": "ecommerce_logistics_dir", "otif_penalty_shield": "customer_support_ops_lead", "fleetflow_dispatch": "fleet_dispatcher_central_ops", "freight_control_tower": "transport_procurement_lead", "freight_bill_audit_agent": "freight_controller_claims", "reverse_rma_optimizer": "reverse_logistics_fraud_lead", "keep_it_routing_advisor": "customer_experience_cx_lead", "osd_freight_claims_agent": "claims_specialist_controller", "dynamic_markdown_agent": "merchandising_store_ops_mgr", "short_dated_redistributor": "inventory_disposition_lead", "food_waste_esg_copilot": "cso_circular_lead", "rti_balance_reconciler": "asset_recovery_rti_manager", "intermodal_rail_linehaul_agent": "reverse_transport_planner", "sanitation_health_agent": "packaging_qa_food_safety"};
+    const SUBPILLAR_VECTOR_SVGS = {"demand_forecasting": "<path d=\"M5 20.5H23M6.5 17L11 12.5L14.8 15L21.5 8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"21.5\" cy=\"8\" r=\"2.2\" fill=\"var(--ic-accent)\"/>", "trade_promotion": "<path d=\"M5.5 13.5V6.5H12.5L21 15L14 22L5.5 13.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/><circle cx=\"9.5\" cy=\"10.5\" r=\"1.5\" fill=\"currentColor\"/>", "sop_ibp": "<line x1=\"14\" y1=\"6\" x2=\"14\" y2=\"21.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><line x1=\"6\" y1=\"11\" x2=\"22\" y2=\"11\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"8\" cy=\"15.5\" r=\"2.2\" fill=\"var(--ic-accent)\"/><circle cx=\"20\" cy=\"15.5\" r=\"2.2\" fill=\"currentColor\"/>", "portfolio_sku": "<rect x=\"5.5\" y=\"5.5\" width=\"7.2\" height=\"7.2\" rx=\"1.5\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"15.3\" y=\"5.5\" width=\"7.2\" height=\"7.2\" rx=\"1.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"5.5\" y=\"15.3\" width=\"7.2\" height=\"7.2\" rx=\"1.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"15.3\" y=\"15.3\" width=\"7.2\" height=\"7.2\" rx=\"1.5\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"currentColor\" stroke-width=\"1.5\"/>", "supplier_network": "<circle cx=\"14\" cy=\"14\" r=\"3\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"14\" y1=\"11\" x2=\"14\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"11.4\" y1=\"15.5\" x2=\"7\" y2=\"19\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"16.6\" y1=\"15.5\" x2=\"21\" y2=\"19\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"14\" cy=\"5.5\" r=\"1.9\" fill=\"currentColor\"/><circle cx=\"6.5\" cy=\"19.5\" r=\"1.9\" fill=\"currentColor\"/><circle cx=\"21.5\" cy=\"19.5\" r=\"1.9\" fill=\"var(--ic-accent)\"/>", "material_packaging": "<polygon points=\"14,5.5 22,10 14,14.5 6,10\" fill=\"var(--ic-accent)\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><path d=\"M6 10V18.5L14 23L22 18.5V10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><line x1=\"14\" y1=\"14.5\" x2=\"14\" y2=\"23\" stroke=\"currentColor\" stroke-width=\"1.6\"/>", "contract_po_mgmt": "<rect x=\"6.5\" y=\"5\" width=\"15\" height=\"18\" rx=\"2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"1.75\"/><line x1=\"10\" y1=\"10\" x2=\"18\" y2=\"10\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"10\" y1=\"14\" x2=\"16\" y2=\"14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M13 18.2L14.8 20L18.5 16.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "production_scheduling": "<rect x=\"5\" y=\"6.5\" width=\"18\" height=\"15\" rx=\"2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.16\" stroke=\"currentColor\" stroke-width=\"1.7\"/><line x1=\"5\" y1=\"11\" x2=\"23\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"8\" y=\"13.5\" width=\"6.5\" height=\"2.4\" rx=\"0.8\" fill=\"var(--ic-accent)\"/><rect x=\"12\" y=\"17.2\" width=\"7.5\" height=\"2.4\" rx=\"0.8\" fill=\"currentColor\"/>", "capacity_planning": "<path d=\"M5 21.5V12L10.5 8.5V12L16 8.5V12L23 8V21.5H5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/>", "quality_compliance": "<path d=\"M14 5L21.5 8V14C21.5 18.4 18.3 21.6 14 23.2C9.7 21.6 6.5 18.4 6.5 14V8L14 5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/><path d=\"M10.8 14.2L13 16.4L17.6 11.6\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "positioning_optimization": "<circle cx=\"14\" cy=\"7.5\" r=\"2.4\" fill=\"var(--ic-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"7.5\" cy=\"19.5\" r=\"2.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"20.5\" cy=\"19.5\" r=\"2.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M12.5 9.6L8.8 17.2M15.5 9.6L19.2 17.2M10 19.5H18\" stroke=\"currentColor\" stroke-width=\"1.6\"/>", "warehouse_operations": "<path d=\"M5 11L14 5.5L23 11V21.5H5V11Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"/><line x1=\"9\" y1=\"14\" x2=\"19\" y2=\"14\" stroke=\"var(--ic-accent)\" stroke-width=\"1.8\"/><line x1=\"9\" y1=\"18\" x2=\"19\" y2=\"18\" stroke=\"currentColor\" stroke-width=\"1.6\"/>", "omnichannel_visibility": "<rect x=\"5\" y=\"7\" width=\"12.5\" height=\"10\" rx=\"1.6\" fill=\"var(--ic-accent)\" fill-opacity=\"0.2\" stroke=\"currentColor\" stroke-width=\"1.65\"/><rect x=\"15.5\" y=\"11\" width=\"7.5\" height=\"10.5\" rx=\"1.5\" fill=\"var(--bg-card, #0f172a)\" stroke=\"var(--ic-accent)\" stroke-width=\"1.7\"/>", "first_mid_mile": "<rect x=\"4.5\" y=\"8.5\" width=\"13.5\" height=\"9.5\" rx=\"1.4\" fill=\"var(--ic-accent)\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"M18 11.5H21.8L23.5 14.8V18H18V11.5Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><circle cx=\"8.5\" cy=\"19.8\" r=\"1.8\" fill=\"currentColor\"/><circle cx=\"20.5\" cy=\"19.8\" r=\"1.8\" fill=\"var(--ic-accent)\"/>", "store_replenishment": "<path d=\"M5.5 10.5L7.5 6.2H20.5L22.5 10.5H5.5Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.28\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linejoin=\"round\"/><rect x=\"7\" y=\"10.5\" width=\"14\" height=\"10.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\"/><rect x=\"11.5\" y=\"14.5\" width=\"5\" height=\"6.8\" fill=\"var(--ic-accent)\"/>", "last_mile_delivery": "<path d=\"M14 22C14 22 20 15.8 20 11C20 7.7 17.3 5 14 5C10.7 5 8 7.7 8 11C8 15.8 14 22 14 22Z\" fill=\"var(--ic-accent)\" fill-opacity=\"0.24\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/><circle cx=\"14\" cy=\"11\" r=\"2.3\" fill=\"var(--ic-accent)\"/>", "route_carrier": "<circle cx=\"7\" cy=\"19.5\" r=\"2.2\" fill=\"currentColor\"/><circle cx=\"21\" cy=\"8.5\" r=\"2.2\" fill=\"var(--ic-accent)\"/><path d=\"M7 17.3C7 11.5 12.5 14.5 18.8 8.8\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\"/>", "returns_claims_mgmt": "<path d=\"M9.5 9.5H17.5C20 9.5 21.8 11.3 21.8 13.8C21.8 16.3 20 18.1 17.5 18.1H8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.85\" stroke-linecap=\"round\"/><path d=\"M12 6.8L9 9.5L12 12.2\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "expiry_markdowns": "<circle cx=\"14\" cy=\"14\" r=\"8\" fill=\"var(--ic-accent)\" fill-opacity=\"0.18\" stroke=\"currentColor\" stroke-width=\"1.75\"/><path d=\"M14 9.5V14L17.2 16\" fill=\"none\" stroke=\"var(--ic-accent)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "pallet_tote_reclamation": "<rect x=\"6\" y=\"8\" width=\"16\" height=\"5\" rx=\"1.2\" fill=\"var(--ic-accent)\" fill-opacity=\"0.3\" stroke=\"currentColor\" stroke-width=\"1.65\"/><rect x=\"6\" y=\"15\" width=\"16\" height=\"5\" rx=\"1.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\"/>"};
+
+    function resolveEntityAccentColor(entity, fallback = '#3b82f6') {
+      if (!entity) return fallback;
+      if (entity.subPillarColor) return entity.subPillarColor;
+      if (entity.color) return entity.color;
+      if (entity.deptId && typeof DEPARTMENTS !== 'undefined' && DEPARTMENTS[entity.deptId]) {
+        return DEPARTMENTS[entity.deptId].color || fallback;
+      }
+      return fallback;
+    }
+
+    function getAgentSvgInner(agOrId) {
+      const ag = (typeof agOrId === 'string') ? (typeof AGENTS !== 'undefined' ? AGENTS[agOrId] : null) : agOrId;
+      const aid = (typeof agOrId === 'string') ? agOrId : (ag && ag.id) || '';
+      if (AGENT_VECTOR_SVGS[aid]) return AGENT_VECTOR_SVGS[aid];
+      return '<rect x="6" y="6" width="16" height="16" rx="3" fill="var(--ic-accent)" fill-opacity="0.22" stroke="currentColor" stroke-width="1.75"/><circle cx="14" cy="14" r="2.6" fill="var(--ic-accent)"/>';
+    }
+
+    function getPersonaSvgInner(pOrId) {
+      const p = (typeof pOrId === 'string') ? (typeof PERSONAS !== 'undefined' ? PERSONAS[pOrId] : null) : pOrId;
+      const pid = (typeof pOrId === 'string') ? pOrId : (p && p.id) || '';
+      if (PERSONA_VECTOR_SVGS[pid]) return PERSONA_VECTOR_SVGS[pid];
+      if (p && p.primaryAgentId) {
+        const mappedPid = PERSONA_ID_BY_AGENT[p.primaryAgentId];
+        if (mappedPid && PERSONA_VECTOR_SVGS[mappedPid]) return PERSONA_VECTOR_SVGS[mappedPid];
+      }
+      return '<circle cx="14" cy="10.5" r="3.4" fill="var(--ic-accent)" fill-opacity="0.28" stroke="currentColor" stroke-width="1.7"/><path d="M7.5 21C8.3 17.5 10.8 15.6 14 15.6C17.2 15.6 19.7 17.5 20.5 21" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>';
+    }
+
+    function getSubPillarSvgInner(spOrId) {
+      const sp = (typeof spOrId === 'object' && spOrId) ? spOrId : null;
+      const spId = (typeof spOrId === 'string') ? spOrId : (sp && sp.id) || '';
+      if (SUBPILLAR_VECTOR_SVGS[spId]) return SUBPILLAR_VECTOR_SVGS[spId];
+      // Smart semantic fallback for custom Enterprise Twin sub-pillars
+      const nm = ((sp && sp.name) || spId || '').toLowerCase();
+      if (nm.includes('demand') || nm.includes('forecast')) return SUBPILLAR_VECTOR_SVGS.demand_forecasting;
+      if (nm.includes('trade') || nm.includes('promo') || nm.includes('commercial')) return SUBPILLAR_VECTOR_SVGS.trade_promotion;
+      if (nm.includes('sourc') || nm.includes('procure') || nm.includes('supplier') || nm.includes('vendor')) return SUBPILLAR_VECTOR_SVGS.supplier_network;
+      if (nm.includes('contract') || nm.includes('po') || nm.includes('pay')) return SUBPILLAR_VECTOR_SVGS.contract_po_mgmt;
+      if (nm.includes('sched') || nm.includes('plant') || nm.includes('smelt') || nm.includes('kiln') || nm.includes('mfg') || nm.includes('prod')) return SUBPILLAR_VECTOR_SVGS.capacity_planning;
+      if (nm.includes('qual') || nm.includes('batch') || nm.includes('regulat') || nm.includes('cold')) return SUBPILLAR_VECTOR_SVGS.quality_compliance;
+      if (nm.includes('warehous') || nm.includes('slot') || nm.includes('dc') || nm.includes('fulfil')) return SUBPILLAR_VECTOR_SVGS.warehouse_operations;
+      if (nm.includes('invent') || nm.includes('stock') || nm.includes('meio')) return SUBPILLAR_VECTOR_SVGS.positioning_optimization;
+      if (nm.includes('store') || nm.includes('omni') || nm.includes('retail')) return SUBPILLAR_VECTOR_SVGS.store_replenishment;
+      if (nm.includes('fleet') || nm.includes('route') || nm.includes('freight') || nm.includes('rail') || nm.includes('logist')) return SUBPILLAR_VECTOR_SVGS.first_mid_mile;
+      if (nm.includes('return') || nm.includes('reverse') || nm.includes('circular') || nm.includes('esg')) return SUBPILLAR_VECTOR_SVGS.returns_claims_mgmt;
+      if (sp && Array.isArray(sp.items) && sp.items.length > 0 && sp.items[0].agentId) {
+        return getAgentSvgInner(sp.items[0].agentId);
+      }
+      return SUBPILLAR_VECTOR_SVGS.sop_ibp;
+    }
+
+    function renderAgentIconBadge(agOrId, sizePx = 44, customAccent = null) {
+      const ag = (typeof agOrId === 'string') ? (typeof AGENTS !== 'undefined' ? AGENTS[agOrId] : null) : agOrId;
+      const accent = customAccent || resolveEntityAccentColor(ag, '#6366f1');
+      const svgSize = Math.round(sizePx * 0.64);
+      const inner = getAgentSvgInner(agOrId);
+      return `<div class="ai-bot-square sc-vec-agent-badge" style="--ic-accent:${accent}; width:${sizePx}px; height:${sizePx}px; flex-shrink:0;" aria-hidden="true">` +
+        `<svg viewBox="0 0 28 28" width="${svgSize}" height="${svgSize}" fill="none" xmlns="http://www.w3.org/2000/svg">` +
+          `<path d="M2.5 6V2.5H6M25.5 22V25.5H22" stroke="var(--ic-accent)" stroke-width="1.15" stroke-linecap="round" opacity="0.5"/>` +
+          inner +
+        `</svg>` +
+      `</div>`;
+    }
+
+    function renderPersonaIconBadge(pOrId, sizePx = 48, customAccent = null) {
+      const p = (typeof pOrId === 'string') ? (typeof PERSONAS !== 'undefined' ? PERSONAS[pOrId] : null) : pOrId;
+      const accent = customAccent || resolveEntityAccentColor(p, '#2563eb');
+      const svgSize = Math.round(sizePx * 0.62);
+      const inner = getPersonaSvgInner(pOrId);
+      return `<div class="human-avatar-circle sc-vec-persona-badge" style="--ic-accent:${accent}; --dept-accent:${accent}; width:${sizePx}px; height:${sizePx}px; flex-shrink:0;" aria-hidden="true">` +
+        `<svg viewBox="0 0 28 28" width="${svgSize}" height="${svgSize}" fill="none" xmlns="http://www.w3.org/2000/svg">` +
+          `<circle cx="14" cy="14" r="12.3" stroke="var(--ic-accent)" stroke-width="0.9" stroke-dasharray="2.6 2.4" opacity="0.42"/>` +
+          inner +
+        `</svg>` +
+      `</div>`;
+    }
+
+    function renderInlineAgentSvg(agOrId, sizePx = 15, customAccent = null) {
+      const ag = (typeof agOrId === 'string') ? (typeof AGENTS !== 'undefined' ? AGENTS[agOrId] : null) : agOrId;
+      const accent = customAccent || resolveEntityAccentColor(ag, 'currentColor');
+      return `<svg class="sc-vec-inline-svg" style="--ic-accent:${accent};" viewBox="0 0 28 28" width="${sizePx}" height="${sizePx}" fill="none" aria-hidden="true">${getAgentSvgInner(agOrId)}</svg>`;
+    }
+
+    function renderInlinePersonaSvg(pOrId, sizePx = 15, customAccent = null) {
+      const p = (typeof pOrId === 'string') ? (typeof PERSONAS !== 'undefined' ? PERSONAS[pOrId] : null) : pOrId;
+      const accent = customAccent || resolveEntityAccentColor(p, 'currentColor');
+      return `<svg class="sc-vec-inline-svg" style="--ic-accent:${accent};" viewBox="0 0 28 28" width="${sizePx}" height="${sizePx}" fill="none" aria-hidden="true">${getPersonaSvgInner(pOrId)}</svg>`;
+    }
+
+    function renderSubPillarSvg(spOrId, sizePx = 20, customAccent = null) {
+      const sp = (typeof spOrId === 'object' && spOrId) ? spOrId : null;
+      const accent = customAccent || (sp && sp.color) || 'currentColor';
+      return `<svg class="sc-vec-inline-svg" style="--ic-accent:${accent};" viewBox="0 0 28 28" width="${sizePx}" height="${sizePx}" fill="none" aria-hidden="true">${getSubPillarSvgInner(spOrId)}</svg>`;
+    }
+
     function renderSupplyChainWatermarkSvg(watermarkType, color, cssClass = 'dept-stage-svg') {
       if (watermarkType === 'tmd_retail_network') {
         return `<svg viewBox="0 0 320 118" class="${cssClass}" aria-hidden="true">
@@ -69373,7 +69531,7 @@
       if (personasMenu) {
         let html = `
           <button type="button" class="nav-quick-item" style="color:var(--g-blue); font-weight:800;" onclick="openPersonasDirectoryPage('all', '', true, 'personas')">
-            <span>👥 Open Full Personas Directory (60)</span>
+            <span style="display:inline-flex;align-items:center;gap:7px;">Open Full Personas Directory (60)</span>
             <span>&rarr;</span>
           </button>
         `;
@@ -69384,7 +69542,7 @@
             if (!p) return;
             html += `
               <button type="button" class="nav-quick-item" onclick="openPersonaPage('${p.id}', true, event)">
-                <span>${p.icon} ${p.name}</span>
+                <span style="display:inline-flex;align-items:center;gap:8px;">${renderInlinePersonaSvg(p, 15, p.subPillarColor || d.color)} ${p.name}</span>
                 <span style="font-size:10.5px; color:${p.subPillarColor || d.color};">${p.subPillarName || ''} &rarr;</span>
               </button>
             `;
@@ -69396,7 +69554,7 @@
       if (agentsMenu) {
         let html = `
           <button type="button" class="nav-quick-item" style="color:var(--g-blue); font-weight:800;" onclick="openPersonasDirectoryPage('all', '', true, 'agents')">
-            <span>🤖 Open Full AI Agents Directory (60)</span>
+            <span style="display:inline-flex;align-items:center;gap:7px;">Open Full AI Agents Directory (60)</span>
             <span>&rarr;</span>
           </button>
         `;
@@ -69408,7 +69566,7 @@
             const cls = getAgentBuildClassification(ag);
             html += `
               <button type="button" class="nav-quick-item" onclick="openAgentPage('${ag.id}', true, event)">
-                <span>${ag.name}</span>
+                <span style="display:inline-flex;align-items:center;gap:8px;">${renderInlineAgentSvg(ag, 15, ag.subPillarColor || d.color)} ${cleanAgentName(ag.name)}</span>
                 <span style="font-size:10.5px; color:${cls.color};">${ag.subPillarName || cls.tier}</span>
               </button>
             `;
@@ -69498,13 +69656,13 @@
                       <span class="subpillar-step-num" style="--sp-color: ${sp.color};">
                         0${idx + 1} · SUB-PILLAR
                       </span>
-                      <div class="subpillar-box-icon">${sp.icon}</div>
+                      <div class="subpillar-box-icon" style="--sp-color:${sp.color};">${renderSubPillarSvg(sp, 20, sp.color)}</div>
                     </div>
                     <div class="subpillar-box-title">${sp.name}</div>
                   </div>
 
                   <div class="subpillar-box-cta" style="--sp-color: ${sp.color};">
-                    <span>👤 ${(sp.items || []).length} Personas</span>
+                    <span>${(sp.items || []).length} Personas</span>
                     <span>${isAct ? '▴ Hide' : '▾ Expand'}</span>
                   </div>
                 </button>
@@ -69523,7 +69681,7 @@
               <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:16px;">
                 <div style="display:flex; align-items:center; gap:10px;">
                   <span style="padding:4px 11px; border-radius:8px; background:${activeSubPillar.color}; color:#ffffff; font-size:11.5px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase;">
-                    ${activeSubPillar.icon} ${activeSubPillar.name}
+                    ${renderSubPillarSvg(activeSubPillar, 15, '#ffffff')} ${activeSubPillar.name}
                   </span>
                   <span style="font-size:14.5px; font-weight:700; color:var(--text-primary);">
                     Select a persona to open their daily journey &amp; AI agents
@@ -69543,9 +69701,7 @@
                          style="--dept-accent: ${activeSubPillar.color}; --stagger-idx: ${pIdx}; padding: 20px 22px;"
                          onclick="openPersonaPage('${p.id}', true, event)">
                       <div style="display:flex; align-items:center; gap:14px;">
-                        <div class="human-avatar-circle" style="--dept-accent: ${activeSubPillar.color}; width:48px; height:48px; font-size:22px;">
-                          ${p.icon}
-                        </div>
+                        ${renderPersonaIconBadge(p, 48, activeSubPillar.color)}
                         <div>
                           <div class="human-persona-title" style="font-size:17.5px;">${p.name}</div>
                           <div class="human-persona-sub" style="font-size:12.5px; margin-top:2px;">${activeSubPillar.name}</div>
@@ -69597,7 +69753,7 @@
                 <span>Back to ${Object.keys(DEPARTMENTS).length} Pillars (${dept.name})</span>
               </button>
               <button type="button" class="back-btn" onclick="openPersonasDirectoryPage('${p.deptId}', '', true, 'personas', event)">
-                <span>👤 All Personas</span>
+                <span>All Personas</span>
               </button>
             </div>
 
@@ -69610,7 +69766,7 @@
                           class="switch-pill ${pid === p.id ? 'active' : ''}"
                           style="${pid === p.id ? `background:${p.subPillarColor || dept.color}; border-color:${p.subPillarColor || dept.color}; color:#ffffff; font-weight:700;` : ''}"
                           onclick="openPersonaPage('${pid}', true, event)">
-                    ${other.icon} ${other.name}
+                    ${renderInlinePersonaSvg(other, 15, pid === p.id ? '#ffffff' : (other.subPillarColor || dept.color))} ${other.name}
                   </button>
                 `;
               }).join('')}
@@ -69622,9 +69778,7 @@
             ${renderSupplyChainWatermarkSvg(dept.watermarkType, dept.color, 'persona-header-sc-watermark')}
 
             <div style="position:relative; z-index:2; display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
-              <div class="human-avatar-circle" style="width:60px; height:60px; font-size:28px; --dept-accent:${dept.color};">
-                ${p.icon}
-              </div>
+              ${renderPersonaIconBadge(p, 60, p.subPillarColor || dept.color)}
               <div>
                 <h1 class="persona-page-title" style="margin-bottom:4px;">${p.name}</h1>
                 <div style="font-size:15px; color:var(--text-secondary); font-weight:600;">${p.subPillarName || dept.name}</div>
@@ -69707,7 +69861,7 @@
                       ${plugAgent ? `
                         <div class="persona-step-agent-box">
                           <div style="display:flex; align-items:center; gap:14px; flex:1; min-width:240px;">
-                            <div class="ai-bot-square" style="width:42px; height:42px; font-size:18px; flex-shrink:0;">✦</div>
+                            ${renderAgentIconBadge(plugAgent, 44, plugAgent.subPillarColor || dept.color)}
                             <div>
                               <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:4px;">
                                 <span style="font-family:var(--font-display); font-size:16.5px; font-weight:800; color:var(--text-primary);">
@@ -69769,7 +69923,7 @@
                           <span class="sc-flip-hint">↻ Flip for Info</span>
                         </div>
                         <div class="sc-flip-big-heading" style="font-size:21px;">
-                          <div class="ai-bot-square" style="width:42px; height:42px; font-size:18px; flex-shrink:0;">✦</div>
+                          ${renderAgentIconBadge(ag, 44, ag.subPillarColor || dept.color)}
                           <span>${cleanAgentName(ag.name)}</span>
                         </div>
                         <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap;">
@@ -71282,7 +71436,7 @@
                       <span class="sc-flip-hint">↻ Flip</span>
                     </div>
                     <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">🚦</div>
+                      <div class="sc-flip-icon-box"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><rect x="8" y="3.5" width="8" height="17" rx="3" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="8" r="1.4" fill="currentColor"/><circle cx="12" cy="12" r="1.4" fill="currentColor" opacity="0.65"/><circle cx="12" cy="16" r="1.4" fill="currentColor" opacity="0.4"/></svg></div>
                       <span>Escalation Rules</span>
                     </div>
                     <div class="sc-flip-bottom-pills">
@@ -71311,7 +71465,7 @@
                       <span class="sc-flip-hint">↻ Flip</span>
                     </div>
                     <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">🔒</div>
+                      <div class="sc-flip-icon-box"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><rect x="6" y="10.5" width="12" height="9.5" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V7.8C8.5 5.8 10 4.3 12 4.3C14 4.3 15.5 5.8 15.5 7.8V10.5" stroke="currentColor" stroke-width="1.8"/></svg></div>
                       <span>Hard Guardrails</span>
                     </div>
                     <div class="sc-flip-bottom-pills">
@@ -71581,7 +71735,7 @@
                       <span class="sc-flip-hint">↻ Flip</span>
                     </div>
                     <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">🎯</div>
+                      <div class="sc-flip-icon-box"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><circle cx="12" cy="12" r="7.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></div>
                       <span>Golden Eval Scenario</span>
                     </div>
                     <div class="sc-flip-bottom-pills">
@@ -71610,7 +71764,7 @@
                       <span class="sc-flip-hint">↻ Flip</span>
                     </div>
                     <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">✅</div>
+                      <div class="sc-flip-icon-box"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M6.5 12.5L10.2 16.2L17.8 8.2" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                       <span>Proof Obligations</span>
                     </div>
                     <div class="sc-flip-bottom-pills">
@@ -71638,7 +71792,7 @@
                       <span class="sc-flip-hint">↻ Flip</span>
                     </div>
                     <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">📜</div>
+                      <div class="sc-flip-icon-box"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><rect x="6" y="4.5" width="12" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><line x1="9" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="9" y1="13" x2="13.5" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
                       <span>Industry Standards</span>
                     </div>
                     <div class="sc-flip-bottom-pills">
@@ -71735,7 +71889,7 @@
                         class="switch-pill ${other.id === ag.id ? 'active' : ''}"
                         style="${other.id === ag.id ? `background:${dept.color}; border-color:${dept.color}; color:#ffffff; font-weight:700;` : ''}"
                         onclick="openAgentPage('${other.id}', true, event)">
-                  🤖 ${cleanAgentName(other.name)}
+                  ${renderInlineAgentSvg(other, 15, other.id === ag.id ? '#ffffff' : (other.subPillarColor || dept.color))} ${cleanAgentName(other.name)}
                 </button>
               `).join('')}
             </div>
@@ -71746,7 +71900,7 @@
           <div class="agent-hero-banner" style="padding: 26px 30px; margin-bottom: 20px;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; margin-bottom:20px;">
               <div style="display:flex; align-items:center; gap:15px;">
-                <div class="ai-bot-square" style="width:52px; height:52px; font-size:24px;">✦</div>
+                ${renderAgentIconBadge(ag, 54, ag.subPillarColor || dept.color)}
                 <div>
                   <h1 class="agent-title" style="font-size: clamp(25px, 2.8vw, 34px); margin: 0; line-height: 1.15;">${dispAgentName}</h1>
                   <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:5px;">
@@ -71805,7 +71959,7 @@
                       <span class="sc-flip-hint">↻ Flip</span>
                     </div>
                     <div class="sc-flip-big-heading" style="font-size:20px;">
-                      <div class="sc-flip-icon-box">✦</div>
+                      <div class="sc-flip-icon-box">${renderInlineAgentSvg(ag, 20, ag.subPillarColor || dept.color)}</div>
                       <span>How It Works</span>
                     </div>
                     <div class="sc-agent-card-brief">${shortSentence(ag.solution, 108)}</div>
@@ -71833,7 +71987,7 @@
                       <span class="sc-flip-hint sc-impact-cue">&#8599;</span>
                     </div>
                     <div class="sc-flip-big-heading" style="font-size:19.5px;">
-                      <div class="sc-flip-icon-box">🚀</div>
+                      <div class="sc-flip-icon-box"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 17L10 12L13.5 15.5L19.5 8.5M15 8.5H19.5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                       <span>${ag.badge || 'Modeled ROI'}</span>
                     </div>
                     <div class="sc-agent-card-brief" style="font-family:var(--font-mono); font-size:12.5px; font-weight:700;">${ag.baselineVsTarget || shortSentence(ag.outcome, 68)}</div>
@@ -72641,7 +72795,7 @@
                       <span class="sc-flip-hint">↻ Flip</span>
                     </div>
                     <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">📥</div>
+                      <div class="sc-flip-icon-box"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M12 4.5V14.5M8.5 11.2L12 14.8L15.5 11.2M5 17.5V19.5H19V17.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                       <span>Source Systems</span>
                     </div>
                     <div class="sc-flip-bottom-pills">
@@ -72669,7 +72823,7 @@
                       <span class="sc-flip-hint">↻ Flip</span>
                     </div>
                     <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">⚡</div>
+                      <div class="sc-flip-icon-box"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><polygon points="13,3.8 6.5,13 11.8,13 11,20.2 17.5,11 12.2,11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
                       <span>${activeStage.toilTime} &rarr; ${activeStage.afterTime}</span>
                     </div>
                     <div class="sc-flip-bottom-pills">
@@ -72697,7 +72851,7 @@
                       <span class="sc-flip-hint">↻ Flip</span>
                     </div>
                     <div class="sc-flip-big-heading">
-                      <div class="sc-flip-icon-box">🔗</div>
+                      <div class="sc-flip-icon-box"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M10 14L14 10M8.5 16.5L7 18C5.6 19.4 5.6 21.6 7 23M8.5 11.5L6.8 13.2C5.2 14.8 5.2 17.3 6.8 18.9C8.4 20.5 10.9 20.5 12.5 18.9L14.2 17.2M15.5 12.5L17.2 10.8C18.8 9.2 18.8 6.7 17.2 5.1C15.6 3.5 13.1 3.5 11.5 5.1L9.8 6.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
                       <span>Downstream Handoff</span>
                     </div>
                     <div class="sc-flip-bottom-pills">
@@ -72725,7 +72879,7 @@
                      style="--dept-accent: ${ownerDept.color}; padding: 14px 18px;"
                      onclick="openPersonaPage('${ownerPersona.id}', true, event)">
                   <div style="display:flex; align-items:center; gap:12px;">
-                    <div class="human-avatar-circle" style="--dept-accent: ${ownerDept.color}; width:42px; height:42px; font-size:20px;">${ownerPersona.icon}</div>
+                    ${renderPersonaIconBadge(ownerPersona, 44, ownerPersona.subPillarColor || ownerDept.color)}
                     <div>
                       <div class="human-persona-title" style="font-size:16px;">${ownerPersona.name}</div>
                       <div class="human-persona-sub" style="font-size:12px;">${ownerPersona.subPillarName || ownerDept.name}</div>
@@ -72737,10 +72891,10 @@
 
               ${stageAgent ? `
                 <div class="ai-agent-chip-card"
-                     style="padding: 14px 18px;"
+                     style="padding: 14px 18px; --ag-accent:${stageAgent.subPillarColor || ownerDept.color};"
                      onclick="openAgentPage('${stageAgent.id}', true, event)">
                   <div style="display:flex; align-items:center; gap:12px;">
-                    <div class="ai-bot-square" style="width:40px; height:40px;">✦</div>
+                    ${renderAgentIconBadge(stageAgent, 42, stageAgent.subPillarColor || ownerDept.color)}
                     <div>
                       <div class="ai-agent-chip-title" style="font-size:16px;">${cleanAgentName(stageAgent.name)}</div>
                       <div style="font-size:12px; color:var(--text-secondary); margin-top:2px;">${stageAgent.subPillarName || ownerDept.name}</div>
@@ -72862,9 +73016,9 @@
               </div>
               <div class="sc-dir-cards-subgrid">
                 ${uniAgents.map(ag => `
-                  <div class="ai-agent-chip-card" style="padding:20px 22px;" onclick="openAgentPage('${ag.id}', true, event)">
+                  <div class="ai-agent-chip-card" style="padding:20px 22px; --ag-accent:#6366f1;" onclick="openAgentPage('${ag.id}', true, event)">
                     <div style="display:flex; align-items:center; gap:14px; min-width:0;">
-                      <div class="ai-bot-square" style="width:44px; height:44px; font-size:18px; flex-shrink:0;">✦</div>
+                      ${renderAgentIconBadge(ag, 46, '#6366f1')}
                       <div style="min-width:0;">
                         <div class="ai-agent-chip-title" style="font-size:16.5px;">${cleanAgentName(ag.name)}</div>
                         <div style="font-size:12.5px; color:var(--text-secondary); margin-top:3px;">${ag.subPillarName || 'Cross-Pillar Core'}</div>
@@ -72908,9 +73062,9 @@
                   const cName = cleanAgentName(ag.name);
                   const subLabel = ag.subPillarName || dept.name;
                   return `
-                    <div class="ai-agent-chip-card" style="padding:20px 22px;" onclick="openAgentPage('${ag.id}', true, event)">
+                    <div class="ai-agent-chip-card" style="padding:20px 22px; --ag-accent:${ag.subPillarColor || dept.color};" onclick="openAgentPage('${ag.id}', true, event)">
                       <div style="display:flex; align-items:center; gap:14px; min-width:0;">
-                        <div class="ai-bot-square" style="width:44px; height:44px; font-size:18px; flex-shrink:0;">✦</div>
+                        ${renderAgentIconBadge(ag, 46, ag.subPillarColor || dept.color)}
                         <div style="min-width:0;">
                           <div style="font-size:11px; font-weight:800; color:${dept.color}; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:2px;">
                             ${subLabel}
@@ -72963,7 +73117,7 @@
                 return `
                   <div class="human-persona-card" style="--dept-accent: ${dept.color}; padding: 20px 22px;" onclick="openPersonaPage('${p.id}', true, event)">
                     <div style="display:flex; align-items:center; gap:14px; min-width:0;">
-                      <div class="human-avatar-circle" style="--dept-accent: ${dept.color}; flex-shrink:0;">${p.icon}</div>
+                      ${renderPersonaIconBadge(p, 46, p.subPillarColor || dept.color)}
                       <div style="min-width:0;">
                         <div style="font-size:11px; font-weight:800; color:${dept.color}; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:2px;">
                           ${subLabel}
@@ -73029,13 +73183,13 @@
               <button type="button"
                       class="sc-v22-tab-btn ${currentDirMode === 'personas' ? 'active' : ''}"
                       onclick="openPersonasDirectoryPage(currentDirDeptFilter === 'universal' ? 'all' : currentDirDeptFilter, currentDirSearch, false, 'personas', event)">
-                <span>👤 Personas</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;"><svg class="sc-vec-inline-svg" viewBox="0 0 28 28" width="15" height="15" fill="none"><circle cx="14" cy="10" r="3.6" stroke="currentColor" stroke-width="1.9"/><path d="M7 21.5C7.8 17.8 10.5 15.8 14 15.8C17.5 15.8 20.2 17.8 21 21.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg> Personas</span>
                 <span class="sc-v22-tab-count">${totalPersonas}</span>
               </button>
               <button type="button"
                       class="sc-v22-tab-btn ${currentDirMode === 'agents' ? 'active' : ''}"
                       onclick="openPersonasDirectoryPage(currentDirDeptFilter, currentDirSearch, false, 'agents', event)">
-                <span>✦ AI Agents</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;"><svg class="sc-vec-inline-svg" viewBox="0 0 28 28" width="15" height="15" fill="none"><rect x="6" y="6" width="16" height="16" rx="3.5" stroke="currentColor" stroke-width="1.9"/><circle cx="14" cy="14" r="2.6" fill="currentColor"/></svg> AI Agents</span>
                 <span class="sc-v22-tab-count">${totalAgents}</span>
               </button>
             </div>
@@ -73380,7 +73534,7 @@
           return `
             <button type="button" class="sc-fn-agent-link-chip" onclick="openAgentPage('${ag.id}', true, event)">
               <div style="display:flex; align-items:center; gap:10px; min-width:0;">
-                <div class="ai-bot-square" style="width:34px; height:34px; font-size:15px; flex-shrink:0;">✦</div>
+                ${renderAgentIconBadge(ag, 36, ag.subPillarColor || dept.color || tile.accent)}
                 <div style="min-width:0;">
                   <div style="font-family:var(--font-display); font-size:14.5px; font-weight:700; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
                     ${cleanAgentName(ag.name)}
@@ -73520,7 +73674,7 @@
                                 <span class="sc-flip-hint">↻ Flip</span>
                               </div>
                               <div class="sc-flip-big-heading" style="font-size:19px;">
-                                <div class="ai-bot-square" style="width:38px; height:38px; font-size:16px; flex-shrink:0;">✦</div>
+                                ${renderAgentIconBadge(ag, 40, ag.subPillarColor || dept.color)}
                                 <span>${cleanAgentName(ag.name)}</span>
                               </div>
                               <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
@@ -74619,7 +74773,7 @@
               <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
                 ${pOwner ? `
                   <button type="button" class="switch-pill" style="border-color:${grpColor}; color:${grpColor}; font-weight:700;" onclick="openPersonaPage('${pOwner.id}', true, event)">
-                    ${pOwner.icon} ${pOwner.name} &rarr;
+                    ${renderInlinePersonaSvg(pOwner, 15, grpColor)} ${pOwner.name} &rarr;
                   </button>
                 ` : ''}
                 <button type="button" class="agent-plug-btn" style="padding:9px 16px; font-size:13px;" onclick="openAgentPage('${ag.id}', true, event)">
@@ -74697,7 +74851,7 @@
                 return `
                   <div class="pt-subpillar-group" style="--sp-color:${sp.color || grp.color};">
                     <div class="pt-subpillar-title">
-                      <span>${sp.icon} ${sp.name}</span>
+                      <span style="display:inline-flex;align-items:center;gap:6px;">${renderSubPillarSvg(sp, 15, sp.color || grp.color)} ${sp.name}</span>
                       <span style="font-family:var(--font-mono); font-size:11px; color:${sp.color || grp.color};">${spItems.length}</span>
                     </div>
                     <div class="pt-subpillar-tiles">
@@ -74785,9 +74939,7 @@
           <aside class="pt-sidebar">
             <div class="pt-side-card" style="border-top: 4px solid ${selGrp.color};">
               <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:14px;">
-                <div class="pt-side-badge" style="background:${selGrp.color}; width:44px; height:44px; font-size:15px;">
-                  ${selMeta.sym}
-                </div>
+                ${renderAgentIconBadge(selAg, 46, selAg.subPillarColor || selGrp.color)}
                 <div>
                   <div style="font-family:var(--font-mono); font-size:11.5px; font-weight:800; color:${selGrp.color};">
                     A-${selMeta.code} · ${selAg.subPillarName || selMeta.subPillar || selDept.name}
@@ -74811,8 +74963,9 @@
               ${selPrimaryPersona ? `
                 <div style="padding:12px 14px; border-radius:12px; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-left:4px solid ${selGrp.color}; margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:8px; cursor:pointer;" onclick="openPersonaPage('${selPrimaryPersona.id}', true, event)">
                   <div>
-                    <div style="font-size:14px; font-weight:800; color:var(--text-primary);">
-                      ${selPrimaryPersona.icon} ${selPrimaryPersona.name}
+                    <div style="display:flex; align-items:center; gap:8px; font-size:14px; font-weight:800; color:var(--text-primary);">
+                      ${renderInlinePersonaSvg(selPrimaryPersona, 16, selGrp.color)}
+                      <span>${selPrimaryPersona.name}</span>
                     </div>
                     <div style="font-size:12px; color:var(--text-secondary); margin-top:2px;">
                       ${selPrimaryPersona.subPillarName || selDept.name}
@@ -75109,19 +75262,19 @@
                 </span>
                 <span style="color:var(--text-muted); font-weight:800;">&rarr;</span>
                 <span class="mm-crumb-step" style="border-color:${spAccent}55;">
-                  <span>${activeSubPillar ? activeSubPillar.icon : '📦'}</span>
+                  <span>${activeSubPillar ? renderSubPillarSvg(activeSubPillar, 15, spAccent) : ''}</span>
                   <span>${activeSubPillar ? activeSubPillar.name : ''}</span>
                 </span>
                 <span style="color:var(--text-muted); font-weight:800;">&rarr;</span>
                 <span class="mm-crumb-step" style="border-color:${spAccent}; background:${spAccent}14;">
-                  <span style="color:${spAccent};">✦</span>
+                  ${renderInlineAgentSvg(topAg, 15, spAccent)}
                   <span>${cleanAgentName(topAg.name)}</span>
                 </span>
               </div>
 
               <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
                 <button type="button" class="switch-pill" style="border-color:${spAccent}; color:${spAccent}; font-weight:800; padding:9px 15px;" onclick="openPersonaPage('${topPer.id}', true, event)">
-                  ${topPer.icon} ${topPer.name} &rarr;
+                  ${renderInlinePersonaSvg(topPer, 15, spAccent)} ${topPer.name} &rarr;
                 </button>
                 <button type="button" class="agent-plug-btn" style="padding:9px 16px; font-size:13px;" onclick="openAgentPage('${topAg.id}', true, event)">
                   <span>✦ Open ${cleanAgentName(topAg.name)} Studio</span>
@@ -75216,8 +75369,8 @@
                             style="--node-color:${nodeCol}; padding:18px;"
                             onclick="selectMindMapSubPillar('${sp.id}')">
                       <div style="display:flex; align-items:center; gap:14px;">
-                        <div style="width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:22px; background:${nodeCol}18; border:1px solid ${nodeCol}45; flex-shrink:0;">
-                          ${sp.icon}
+                        <div style="width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:${nodeCol}18; border:1px solid ${nodeCol}45; color:${nodeCol}; flex-shrink:0;">
+                          ${renderSubPillarSvg(sp, 22, nodeCol)}
                         </div>
                         <div>
                           <div style="font-family:var(--font-mono); font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:${nodeCol};">
@@ -75284,7 +75437,7 @@
                     <div class="mm-agent-neural-card ${isExpanded ? 'expanded' : ''}" style="--ag-color:${spAccent};">
                       <button type="button" class="mm-agent-neural-header" onclick="selectMindMapAgent('${ag.id}')">
                         <div style="display:flex; align-items:center; gap:14px;">
-                          <div class="ai-bot-square" style="width:44px; height:44px; font-size:18px; flex-shrink:0; background:${spAccent}18; color:${spAccent}; border-color:${spAccent}45;">✦</div>
+                          ${renderAgentIconBadge(ag, 46, spAccent)}
                           <div>
                             <div style="font-family:var(--font-display); font-size:17.5px; font-weight:800; color:var(--text-primary);">
                               ${cleanAgentName(ag.name)}
@@ -75310,9 +75463,7 @@
                         <!-- HARMONIZED HUMAN PERSONA CARD INSIDE THE AI AGENT -->
                         <div class="mm-expanded-persona-box" style="border-left: 4px solid ${spAccent} !important;">
                           <div style="display:flex; align-items:center; gap:14px;">
-                            <div class="human-avatar-circle" style="width:50px; height:50px; font-size:23px; --dept-accent:${spAccent};">
-                              ${p.icon}
-                            </div>
+                            ${renderPersonaIconBadge(p, 50, spAccent)}
                             <div>
                               <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:${spAccent};">
                                 Assigned Human Role
@@ -76002,7 +76153,7 @@
     }
 
     window.addEventListener('popstate', () => {
-      if (!window.location.hash) { window.location.hash = '#mindmap'; } handleUrlHash();
+      handleUrlHash();
     });
 
 
@@ -77030,7 +77181,7 @@
               <button type="button" class="switch-pill ${isAct ? 'active' : ''}"
                       style="${isAct ? `background:${col};border-color:${col};color:#ffffff;font-weight:800;` : ''}"
                       onclick="selectEvidenceSubPillar('${activeDeptObj.id}', '${sp.id}', event)">
-                ${sp.icon || '📦'} ${sp.name}
+                ${renderSubPillarSvg(sp, 14, isAct ? '#ffffff' : col)} ${sp.name}
               </button>
             `;
           }).join('')}
@@ -77050,7 +77201,7 @@
               <button type="button" class="switch-pill ${isFoc ? 'active' : ''}"
                       style="font-size:12px; padding:5px 11px; ${isFoc ? `background:${col};border-color:${col};color:#ffffff;font-weight:800;` : ''}"
                       onclick="openProofForPersona('${p.id}', event)">
-                ${p.icon} ${p.name}
+                ${renderInlinePersonaSvg(p, 14, isFoc ? '#ffffff' : col)} ${p.name}
               </button>
             `;
           }).join('')}
@@ -77062,7 +77213,7 @@
               <button type="button" class="switch-pill ${isFoc ? 'active' : ''}"
                       style="font-size:12px; padding:5px 11px; ${isFoc ? 'background:#10b981;border-color:#10b981;color:#ffffff;font-weight:800;' : ''}"
                       onclick="openProofForAgent('${ag.id}', event)">
-                ✦ ${cleanAgentName(ag.name)}
+                ${renderInlineAgentSvg(ag, 14, isFoc ? '#ffffff' : (ag.subPillarColor || '#10b981'))} ${cleanAgentName(ag.name)}
               </button>
             `;
           }).join('')}
@@ -77074,12 +77225,12 @@
       if (focusedEntity && focusedProof && focusedProof.caseStudy) {
         const isAgent = currentEvidenceFocus.kind === 'agent';
         const entityLabel = isAgent ? cleanAgentName(focusedEntity.name) : focusedEntity.name;
-        const entityIcon = isAgent ? '✦' : (focusedEntity.icon || '👤');
+        const spotAccent = (focusedSubPillar && focusedSubPillar.color) || (focusedDept && focusedDept.color) || '#10b981';
+        const entityIcon = isAgent ? renderAgentIconBadge(focusedEntity, 40, spotAccent) : renderPersonaIconBadge(focusedEntity, 40, spotAccent);
         const dimLabel = focusedProof.dimension || focusedEntity.impactDimension || 'Operational Impact';
         const headlineImpact = isAgent
           ? (focusedProof.agentBadge || focusedEntity.badge || 'Modeled ROI')
           : `${focusedEntity.headlineStat} (${focusedEntity.toilHoursBefore} → ${focusedEntity.toilHoursAfter})`;
-        const spotAccent = (focusedSubPillar && focusedSubPillar.color) || (focusedDept && focusedDept.color) || '#10b981';
         const cs = focusedProof.caseStudy;
 
         spotlightHtml = `
@@ -77090,15 +77241,18 @@
                   <span style="font-family:var(--font-mono); font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.07em; color:${spotAccent};">
                     ${focusedDept ? `${focusedDept.vNum} · ${focusedDept.name}` : 'Operating Pillar'}
                   </span>
-                  ${focusedSubPillar ? `<span style="color:var(--text-muted);">&rarr;</span><span style="font-family:var(--font-mono); font-size:11px; font-weight:800; color:var(--text-secondary);">${focusedSubPillar.icon || ''} ${focusedSubPillar.name}</span>` : ''}
+                  ${focusedSubPillar ? `<span style="color:var(--text-muted);">&rarr;</span><span style="display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono); font-size:11px; font-weight:800; color:var(--text-secondary);">${renderSubPillarSvg(focusedSubPillar, 13, spotAccent)} ${focusedSubPillar.name}</span>` : ''}
                   <span style="padding:2px 9px; border-radius:999px; font-family:var(--font-mono); font-size:10.5px; font-weight:800; background:${spotAccent}18; color:${spotAccent}; border:1px solid ${spotAccent}45;">
                     ${dimLabel}
                   </span>
                 </div>
                 <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-                  <h2 style="font-family:var(--font-display); font-size:clamp(20px, 2.2vw, 26px); font-weight:800; color:var(--text-primary); margin:0;">
-                    ${entityIcon} Problem Data &amp; Potential Impact — ${entityLabel}
-                  </h2>
+                  <div style="display:flex; align-items:center; gap:11px;">
+                    ${entityIcon}
+                    <h2 style="font-family:var(--font-display); font-size:clamp(20px, 2.2vw, 26px); font-weight:800; color:var(--text-primary); margin:0;">
+                      Problem Data &amp; Potential Impact — ${entityLabel}
+                    </h2>
+                  </div>
                   <span class="sc-impact-pill-link" style="pointer-events:none;">
                     ${isAgent ? '🚀' : '⚡'} ${headlineImpact}
                   </span>
@@ -77207,10 +77361,10 @@
                 <td style="padding:15px 12px; vertical-align:top; min-width:210px;">
                   <div style="font-family:var(--font-mono); font-size:10.5px; font-weight:800; color:${d.color}; text-transform:uppercase;">${d.vNum} · ${sp.name}</div>
                   <div style="font-weight:800; color:var(--text-primary); font-size:14px; margin-top:4px; cursor:pointer;" onclick="openPersonaPage('${p.id}', true, event)">
-                    ${p.icon || '👤'} ${p.name} &rarr;
+                    ${renderInlinePersonaSvg(p, 14, d ? d.color : 'currentColor')} ${p.name} &rarr;
                   </div>
                   <div style="font-size:12.5px; font-weight:700; color:#10b981; margin-top:3px; cursor:pointer;" onclick="openAgentPage('${ag.id}', true, event)">
-                    ✦ ${cleanAgentName(ag.name)} &rarr;
+                    ${renderInlineAgentSvg(ag, 14, isFoc ? '#ffffff' : (ag.subPillarColor || '#10b981'))} ${cleanAgentName(ag.name)} &rarr;
                   </div>
                   <span style="display:inline-block; margin-top:5px; padding:2px 8px; border-radius:999px; font-family:var(--font-mono); font-size:10px; font-weight:800; background:${d.color}18; color:${d.color}; border:1px solid ${d.color}40;">
                     ${pr.dimension || ag.impactDimension || 'ROI'}
@@ -77262,13 +77416,13 @@
 
         const personaChips = liveMeta.personas.slice(0, 4).map(p => `
           <button type="button" class="sc-tech-pill" onclick="openPersonaPage('${p.id}', true, event)" style="cursor:pointer; font-size:11.5px; font-weight:700; padding:4px 10px;">
-            ${p.icon || '👤'} ${p.name} &rarr;
+            ${renderInlinePersonaSvg(p, 14, p.subPillarColor || '#2563eb')} ${p.name} &rarr;
           </button>
         `).join('');
 
         const agentChips = liveMeta.agents.slice(0, 5).map(ag => `
           <button type="button" class="sc-tech-pill" onclick="openAgentPage('${ag.id}', true, event)" style="cursor:pointer; font-size:11.5px; font-weight:700; padding:4px 10px;">
-            ✦ ${cleanAgentName(ag.name)} &rarr;
+            ${renderInlineAgentSvg(ag, 14, isFoc ? '#ffffff' : (ag.subPillarColor || '#10b981'))} ${cleanAgentName(ag.name)} &rarr;
           </button>
         `).join('');
 
@@ -77355,7 +77509,7 @@
                 <span>Back to ${pillarCount} Operating Pillars</span>
               </button>
               <button type="button" class="back-btn" onclick="openPersonasDirectoryPage('all', '', true, 'personas', event)">
-                <span>👤 Personas</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;"><svg class="sc-vec-inline-svg" viewBox="0 0 28 28" width="15" height="15" fill="none"><circle cx="14" cy="10" r="3.6" stroke="currentColor" stroke-width="1.9"/><path d="M7 21.5C7.8 17.8 10.5 15.8 14 15.8C17.5 15.8 20.2 17.8 21 21.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg> Personas</span>
               </button>
               <button type="button" class="back-btn" onclick="openPersonasDirectoryPage('all', '', true, 'agents', event)">
                 <span>🤖 AI Agents (${agentCount})</span>
@@ -78284,7 +78438,6 @@
       if (typeof populateNavbarQuickMenus === 'function') populateNavbarQuickMenus();
       hydrateAssets();
       handleUrlHash();
-      if (!window.location.hash) openMindMapPage('all', null, false);
 
       // Check backend studio availability quietly
       fetch('/api/v1/health')
@@ -78333,6 +78486,14 @@
       } catch (e) {}
     });
 
+  </script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      if (!window.location.hash || window.location.hash === '#home') {
+        if (typeof openMindMapPage === 'function') openMindMapPage('mindmap', null, null, false);
+      }
+    });
   </script>
 </body>
 </html>

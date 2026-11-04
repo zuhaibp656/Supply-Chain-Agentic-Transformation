@@ -222,7 +222,10 @@ const inspectTail = `
     AGENTS,
     VALUE_CHAINS,
     CURRENT_TWIN,
-    TWIN_SHOW_ALL_60
+    TWIN_SHOW_ALL_60,
+    AGENT_VECTOR_SVGS: typeof AGENT_VECTOR_SVGS !== 'undefined' ? AGENT_VECTOR_SVGS : null,
+    PERSONA_VECTOR_SVGS: typeof PERSONA_VECTOR_SVGS !== 'undefined' ? PERSONA_VECTOR_SVGS : null,
+    SUBPILLAR_VECTOR_SVGS: typeof SUBPILLAR_VECTOR_SVGS !== 'undefined' ? SUBPILLAR_VECTOR_SVGS : null
   }),
   applyBrowserTwin,
   toggleTwinShowAllAgents,
@@ -463,15 +466,34 @@ assert(slottingAgent, 'Expected Warehouse Slotting Agent');
 api.openAgentPage(slottingAgent.id, false);
 const aPageHtml = getOrCreateId('agentPageContent').innerHTML;
 assert(aPageHtml.includes(slottingAgent.impactDimension) && aPageHtml.includes('sc-bottom-impact-bar sc-impact-link-box'), 'Warehouse Slotting Agent must render multi-dimensional impact & bottom bar');
+assert(aPageHtml.includes('sc-vec-agent-badge') && !aPageHtml.includes('>✦</div>'), 'Agent detail page must render bespoke vector SVG badge without ✦ clone');
 sandbox.openProofForAgent(slottingAgent.id, null);
 const aProofHtml = getOrCreateId('evidencePageContent').innerHTML;
 assert(aProofHtml.includes('WERC') && aProofHtml.includes(`id="proofRow_${slottingAgent.id}" class="sc-proof-target-focused"`), 'Clicking Agent impact box must highlight Slotting proofRow with Georgia Tech & WERC empirical picker travel data');
 
-console.log('✅ ZERO-BREAKAGE V2.3 DOM, EMPIRICAL PROBLEM DATA PROOFS & MULTI-DIMENSIONAL IMPACTS PASSED 100%!');
+// 7. Verify 140 Bespoke Vector Icons (60 Unique Agent SVGs + 60 Unique Persona SVGs + 20 Sub-Pillar SVGs) & Zero Clone Icons
+const iconState = api.getState();
+assert(iconState.AGENT_VECTOR_SVGS && Object.keys(iconState.AGENT_VECTOR_SVGS).length === 60, 'Expected 60 Agent vector SVG entries');
+assert.strictEqual(new Set(Object.values(iconState.AGENT_VECTOR_SVGS)).size, 60, 'All 60 AI Agents must have 60 distinct bespoke vector SVGs');
+assert(iconState.PERSONA_VECTOR_SVGS && Object.keys(iconState.PERSONA_VECTOR_SVGS).length === 60, 'Expected 60 Persona vector SVG entries');
+assert.strictEqual(new Set(Object.values(iconState.PERSONA_VECTOR_SVGS)).size, 60, 'All 60 Personas must have 60 distinct bespoke vector SVGs');
+assert(iconState.SUBPILLAR_VECTOR_SVGS && Object.keys(iconState.SUBPILLAR_VECTOR_SVGS).length === 20, 'Expected 20 Sub-Pillar vector SVG entries');
+assert(!html.includes('>✦</div>'), 'Zero hardcoded >✦</div> clone boxes allowed in index.html');
+
+api.openPersonasDirectoryPage('all', '', false, 'agents');
+const dirAgentsHtml = getOrCreateId('directoryPageContent').innerHTML;
+assert(dirAgentsHtml.includes('sc-vec-agent-badge') && dirAgentsHtml.includes('<svg'), 'Agents Directory must render bespoke vector SVG badges');
+api.openPersonasDirectoryPage('all', '', false, 'personas');
+const dirPersonasHtml = getOrCreateId('directoryPageContent').innerHTML;
+assert(dirPersonasHtml.includes('sc-vec-persona-badge') && dirPersonasHtml.includes('<svg'), 'Personas Directory must render bespoke vector SVG badges');
+
+console.log('✅ ZERO-BREAKAGE V2.4 DOM, 140 BESPOKE VECTOR ICONS, EMPIRICAL PROOFS & MULTI-DIMENSIONAL IMPACTS PASSED 100%!');
 console.log(`   - Canonical Baseline: 6 Distinct-Color Pillars · 20 Sub-Pillars · 60 Personas · 60 Agents`);
+console.log(`   - Bespoke Vector Icons: 60/60 Unique Agent SVGs + 60/60 Unique Persona SVGs + 20/20 Sub-Pillar SVGs (0 ✦ clones)`);
 console.log(`   - Multi-Dimensional Impacts: 60/60 Unique Headline Stats across ${uniqueDims.size} Business Dimensions (0 '5.5 hrs' / '45 mins/day')`);
 console.log(`   - Backed Problem Data Hub: 60/60 Empirical Problem & Cost Benchmarks + Clickable Top/Bottom Impact Deep-Links`);
 console.log(`   - ITC Tobacco & TM&D: 7 Dynamic Pillars · ${expectedActiveTobacco}/60 Agents (${customRenamedCount} Tailored Names)`);
 console.log(`   - Hindalco Metals:    5 Dynamic Pillars · ${hindalco.active_agents_count}/60 Agents`);
 console.log(`   - UltraTech Cement:   7 Dynamic Pillars · ${ultraTech.active_agents_count}/60 Agents`);
+
 
