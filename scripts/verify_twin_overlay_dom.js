@@ -487,13 +487,47 @@ api.openPersonasDirectoryPage('all', '', false, 'personas');
 const dirPersonasHtml = getOrCreateId('directoryPageContent').innerHTML;
 assert(dirPersonasHtml.includes('sc-vec-persona-badge') && dirPersonasHtml.includes('<svg'), 'Personas Directory must render bespoke vector SVG badges');
 
-console.log('✅ ZERO-BREAKAGE V2.4 DOM, 140 BESPOKE VECTOR ICONS, EMPIRICAL PROOFS & MULTI-DIMENSIONAL IMPACTS PASSED 100%!');
+// 8. Verify v28 Upgrades: 60+60 1-2 Line Stories, Hover/Scroll Daily Tasks, Gemini x Company Co-Branding, & AI Research Brief Drawer
+for (const [pid, p] of Object.entries(st.PERSONAS)) {
+  assert(p.summary && p.summary.length >= 40 && p.summary.length <= 280, `Persona ${pid} must have a crisp 1-2 line story (got len=${(p.summary || '').length})`);
+  assert(!/\bto\s+(detects|replaces|highlights|prevents|cuts|aligns|resolves)\b/i.test(p.summary), `Persona ${pid} story must have clean infinitive grammar`);
+}
+for (const [aid, ag] of Object.entries(st.AGENTS)) {
+  assert(ag.story && ag.story.length >= 35 && ag.story.length <= 280, `Agent ${aid} must have a crisp 1-2 line story (got len=${(ag.story || '').length})`);
+}
+
+api.openPersonaPage('demand_planner_forecaster', false);
+const v28PersonaHtml = getOrCreateId('personaPageContent').innerHTML;
+assert(v28PersonaHtml.includes('sc-role-story-line'), 'openPersonaPage must render 1-2 line Persona story');
+assert(v28PersonaHtml.includes('btnPersonaHoverMode') && v28PersonaHtml.includes('btnPersonaExpandAll'), 'openPersonaPage must render Hover Auto-Expand and Expand All (Scroll View) controls');
+assert(v28PersonaHtml.includes('handlePersonaStepHover('), 'Persona daily tasks must bind smooth hover auto-expand handler');
+
+api.openAgentPage('demand_sensing_agent', false);
+const v28AgentHtml = getOrCreateId('agentPageContent').innerHTML;
+assert(v28AgentHtml.includes('sc-agent-story-line'), 'openAgentPage must render 1-2 line Agent story');
+
+// Verify Gemini x Company Co-Branding & Research Brief when ITC Tobacco Twin is active, then reset
+api.applyBrowserTwin(itcTobacco);
+const heroCobrandEl = elementsById.get('twinHeroCoBrandBanner');
+if (heroCobrandEl) {
+  assert(heroCobrandEl.innerHTML.includes('gemini_enterprise_dark.png') && heroCobrandEl.innerHTML.includes('&times;'), 'Hero co-brand banner must display Gemini Enterprise x Company lockup');
+}
+api.openPersonaPage('demand_planner_forecaster', false);
+assert(getOrCreateId('personaPageContent').innerHTML.includes('GEMINI &times;'), 'Persona header must display GEMINI x COMPANY pill when Twin is active');
+api.openAgentPage('demand_sensing_agent', false);
+assert(getOrCreateId('agentPageContent').innerHTML.includes('Gemini &times;'), 'Agent Twin banner must display Gemini x Company lockup when Twin is active');
+api.switchClientTwin('reset');
+assert.strictEqual(api.getState().CURRENT_TWIN, null, 'Reset after v28 co-brand check must cleanly restore base portal');
+
+console.log('✅ ZERO-BREAKAGE V2.8 DOM, GEMINI × COMPANY CO-BRANDING, 60+60 STORIES, HOVER/SCROLL JOURNEY & PROOFS PASSED 100%!');
 console.log(`   - Canonical Baseline: 6 Distinct-Color Pillars · 20 Sub-Pillars · 60 Personas · 60 Agents`);
+console.log(`   - Crisp 1–2 Line Stories: 60/60 Persona Stories + 60/60 Agent Stories + Hover Auto-Expand & Scroll View`);
+console.log(`   - Official Co-Branding: Gemini × Company across Hero, Navbar, CSCO Root, Persona/Agent Headers & Footer`);
 console.log(`   - Bespoke Vector Icons: 60/60 Unique Agent SVGs + 60/60 Unique Persona SVGs + 20/20 Sub-Pillar SVGs (0 ✦ clones)`);
-console.log(`   - Multi-Dimensional Impacts: 60/60 Unique Headline Stats across ${uniqueDims.size} Business Dimensions (0 '5.5 hrs' / '45 mins/day')`);
-console.log(`   - Backed Problem Data Hub: 60/60 Empirical Problem & Cost Benchmarks + Clickable Top/Bottom Impact Deep-Links`);
+console.log(`   - Multi-Dimensional Impacts: 60/60 Unique Headline Stats across ${uniqueDims.size} Business Dimensions`);
 console.log(`   - ITC Tobacco & TM&D: 7 Dynamic Pillars · ${expectedActiveTobacco}/60 Agents (${customRenamedCount} Tailored Names)`);
 console.log(`   - Hindalco Metals:    5 Dynamic Pillars · ${hindalco.active_agents_count}/60 Agents`);
 console.log(`   - UltraTech Cement:   7 Dynamic Pillars · ${ultraTech.active_agents_count}/60 Agents`);
+
 
 

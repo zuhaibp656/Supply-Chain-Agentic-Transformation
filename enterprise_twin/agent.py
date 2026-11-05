@@ -153,6 +153,10 @@ try:
     class GlobalGemini(Gemini):
         @cached_property
         def api_client(self) -> genai.Client:
+            from enterprise_twin.tools.gcp_auth import get_genai_client, is_cloud_runtime
+
+            if not is_cloud_runtime():
+                return get_genai_client(location="global")
             return genai.Client(
                 vertexai=True,
                 project=os.environ.get("GOOGLE_CLOUD_PROJECT", "zuhaibp-ai"),

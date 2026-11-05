@@ -109,7 +109,11 @@ def sync_local_argolis_adc(project: str = DEFAULT_PROJECT) -> Optional[Path]:
 
 
 def get_gcp_credentials(project: str = DEFAULT_PROJECT) -> Tuple[Optional[Any], str]:
-    """Returns `(google.auth.credentials.Credentials, project_id)` for Vertex AI / BQ / GCS."""
+    """Returns `(google.auth.credentials.Credentials, project_id)` for Vertex AI / BQ / GCS.
+
+    On local developer workstations (`not is_cloud_runtime()`), uses a strict 4-second HTTP timeout
+    and avoids falling through to interactive `google.auth.default()` helpers that block on smartcard prompts.
+    """
     import google.auth
 
     if not is_cloud_runtime():
@@ -119,15 +123,23 @@ def get_gcp_credentials(project: str = DEFAULT_PROJECT) -> Tuple[Optional[Any], 
             try:
                 import google.oauth2.credentials
                 from google.auth.transport.requests import Request
+                import requests
+
+                class _BoundedTimeoutSession(requests.Session):
+                    def request(self, method, url, **kwargs):  # type: ignore[override]
+                        kwargs.setdefault("timeout", 4.0)
+                        return super().request(method, url, **kwargs)
 
                 creds = google.oauth2.credentials.Credentials.from_authorized_user_file(
                     str(adc_path),
                     scopes=["https://www.googleapis.com/auth/cloud-platform"],
                 )
-                creds.refresh(Request())
+                creds.refresh(Request(session=_BoundedTimeoutSession()))
                 return creds, project
             except Exception:
                 pass
+        if os.environ.get("SC_TWIN_ALLOW_LOCAL_ADC_DEFAULT") != "1":
+            return None, project
 
     try:
         creds, detected_proj = google.auth.default(
@@ -143,6 +155,8 @@ def get_genai_clients(location: str = "global", timeout_ms: int = 90_000) -> Lis
     from google import genai
     from google.genai import types
 
+    safe_timeout_ms = max(10_000, int(timeout_ms or 90_000))
+
     if not is_cloud_runtime():
         os.environ["GOOGLE_API_USE_CLIENT_CERTIFICATE"] = "false"
 
@@ -156,7 +170,7 @@ def get_genai_clients(location: str = "global", timeout_ms: int = 90_000) -> Lis
             "vertexai": True,
             "project": project,
             "location": location,
-            "http_options": types.HttpOptions(timeout=timeout_ms),
+            "http_options": types.HttpOptions(timeout=safe_timeout_ms),
         }
         if creds is not None:
             v_kwargs["credentials"] = creds
@@ -164,14 +178,14 @@ def get_genai_clients(location: str = "global", timeout_ms: int = 90_000) -> Lis
         if api_key:
             clients.append((
                 "gemini_api_key",
-                genai.Client(vertexai=False, api_key=api_key, http_options=types.HttpOptions(timeout=timeout_ms)),
+                genai.Client(vertexai=False, api_key=api_key, http_options=types.HttpOptions(timeout=safe_timeout_ms)),
             ))
     else:
-        # On local workstation: prefer direct Gemini API key (immune to CloudTop RAPT expiry), then Vertex OAuth
+        # On local workstation: prefer direct Gemini API key (immune to CloudTop RAPT expiry), then non-blocking Vertex OAuth
         if api_key:
             clients.append((
                 "gemini_api_key",
-                genai.Client(vertexai=False, api_key=api_key, http_options=types.HttpOptions(timeout=timeout_ms)),
+                genai.Client(vertexai=False, api_key=api_key, http_options=types.HttpOptions(timeout=safe_timeout_ms)),
             ))
         creds, project = get_gcp_credentials(DEFAULT_PROJECT)
         if creds is not None:
@@ -182,7 +196,7 @@ def get_genai_clients(location: str = "global", timeout_ms: int = 90_000) -> Lis
                     project=project,
                     location=location,
                     credentials=creds,
-                    http_options=types.HttpOptions(timeout=timeout_ms),
+                    http_options=types.HttpOptions(timeout=safe_timeout_ms),
                 ),
             ))
 

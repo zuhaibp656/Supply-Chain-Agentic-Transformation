@@ -1,19 +1,18 @@
-"""Intelligent Multi-Stage Real-Time Supply Chain Research & Portal Synthesis Engine (`v2.2`).
+"""Intelligent Multi-Stage Real-Time Supply Chain Research & Portal Synthesis Engine (`v2.3`).
 
 For ANY company or organization entered by the user, executes real-time research:
-  1. Stage 1 — Live Corporate, Operations & Career Grounding (`Gemini 3.1 Pro` + `GoogleSearch`
-     + Wikipedia & Public Job-Board Signals):
+  1. Stage 1 — Live Corporate, Operations & Career-Portal Grounding (`Gemini 3.1 Pro / 4 Argon` + `GoogleSearch`
+     + Corporate Career Portals, LinkedIn/Naukri/Glassdoor & Wikipedia Signals):
      Researches how the company/division actually operates, discovers its official web domain,
-     extracts real corporate job title patterns & facilities, and designs `4` to `8` bespoke
+     mines authentic corporate supply chain job titles & facilities, and designs `4` to `8` bespoke
      **Organization-Specific Operating Pillars** partitioning all 20 Supply Chain Sub-Pillars.
   2. Official Corporate Logo Download & Optical Framing (`resolve_company_logo`):
      Uses the discovered `official_domain` + Wikidata P154 + Wikimedia Commons + official site icons
-     to download and optically frame the authentic company logo.
-  3. Stage 2 — Parallel Custom-Pillar Synthesis (`Gemini 3 Flash`):
+     to download and optically frame the authentic company logo for `Gemini × Company` co-branding.
+  3. Stage 2 — Parallel Custom-Pillar Synthesis (`Gemini 3.8 Flash` parallel specialists):
      Runs concurrent specialists across each of the `4`–`8` bespoke Organization Pillars to tailor
-     all 20 Sub-Pillar process names, rewrite all 60 Personas into authentic corporate job roles &
-     daily workflows, and evaluate all 60 Core AI Agents (reusing relevant agents and cleanly hiding
-     inapplicable ones without ever inventing broken 61st+ agents).
+     all 20 Sub-Pillar process names, rewrite all 60 Personas with crisp 1–2 line daily stories,
+     and evaluate all 60 Core AI Agents with crisp 1–2 line agent value stories.
   4. Stage 3 — Zero-Breakage Schema Validation & Multi-Tier Persistence.
 """
 
@@ -274,9 +273,9 @@ Use Google Search to investigate **{target_desc}** in depth:
    - Every single pillar `name`, `scor_badge`, `tagline`, and `subtitle` MUST be unmistakably specific to **{target_desc}**'s real business model, products/infrastructure, and terminology!
    - Partition ALL 20 functional `sub_pillar_ids` ({json.dumps(ALL_20_SUBPILLAR_IDS)}) across your `5` to `7` `organization_pillars` so each of the 20 IDs appears once.
    - Choose `watermark_type` for each pillar from: `["demand_wave", "supplier_graph", "factory_arm", "warehouse_rack", "corridor_lifo", "conveyor_rack"]`.
-3. **Real Corporate Website Domain & Job Titles**:
-   - Find the exact `official_domain` (e.g. `"wipro.com"`, `"asianpaints.com"`, `"nike.com"`, `"pfizer.com"`) so our logo engine can download their official brand mark.
-   - Extract `6` authentic supply chain, procurement, operations, planning, or logistics job titles used at **{company_name}**.
+3. **Real Corporate Website Domain & Career-Portal Job Titles**:
+   - Find the exact `official_domain` (e.g. `"wipro.com"`, `"asianpaints.com"`, `"nike.com"`, `"pfizer.com"`) so our logo engine can download their official brand mark for `Gemini × Company` co-branding.
+   - Search corporate career portals (`careers.<domain>`), LinkedIn Jobs, Naukri, Glassdoor, and annual reports to extract `6` to `8` authentic supply chain, procurement, operations, planning, or logistics job titles hired at **{company_name}**.
 4. **Physical & Channel Relevance Profile (`division_operational_profile`)**:
    - Accurately flag which physical traits DO vs. DO NOT apply (e.g., refrigerated cold-chain perishables, grocery food expiry markdowns, brick-and-mortar retail store planograms, D2C parcel e-commerce) so inapplicable AI agents are cleanly hidden.
 
@@ -289,7 +288,7 @@ Return ONLY a valid JSON object matching this exact structure (no markdown comme
   "brand_accent_hex": "#HEXCODE",
   "brand_secondary_hex": "#HEXCODE",
   "executive_leader_title": "Authentic top Supply Chain / Operations / Procurement executive title at this company",
-  "executive_thesis": "2 crisp plain-English sentences describing how this company's end-to-end supply chain & operations work using real hubs, vendors, channels, and terminology.",
+  "executive_thesis": "2 crisp plain-English sentences telling the story of how this company's end-to-end supply chain & operations run using real hubs, vendors, channels, and terminology.",
   "flagship_facilities": "4-5 real plants, integration centers, hubs, campuses, or distribution regions separated by ' · '",
   "erp_systems": "Real or industry-authentic ERP / sourcing / planning / WMS / TMS stack separated by ' · '",
   "terminology_glossary": [
@@ -412,14 +411,15 @@ ASSIGNED SUB-PILLARS, PERSONAS & CORE AI AGENTS TO ADAPT:
 CRITICAL INSTRUCTIONS:
 1. **Every Sub-Pillar Must Be Renamed (`sub_pillars`)**:
    - Rewrite EVERY `sub_pillar_id` into authentic process terminology (`<= 42 chars`) used inside **{target_label}** (never leave generic textbook names if **{target_label}** has specific domain operations!).
-2. **Every Persona Must Become a Real Corporate Job Role at {co} (`personas`)**:
+2. **Every Persona Must Become a Real Corporate Job Role with a 1–2 Line Human Story (`personas`)**:
    - Rewrite EVERY `persona_id`'s `title` into an authentic corporate org-chart job title that exists at **{co}** (aligned with `discovered_career_titles`, e.g., `'Global Head — Server & ODM Strategic Sourcing'`, `'Regional Manager — Tint & Depot Replenishment'`, `'Director — Cold-Chain GDP Logistics'`). Do NOT leave the canonical SCOR persona title unchanged, and do NOT just prefix `{co}` in front of a generic title!
-   - Write `summary`, `manual_toil`, and `agentic_impact` (`1 crisp plain-English sentence each, <= 185 chars`) referencing **{target_label}**'s real workflows, assets, facilities, and ERP systems.
-3. **Reuse & Filter the Fixed Pool of Core AI Agents (`agents`)**:
+   - Write `summary` (`1–2 crisp plain-English sentences, <= 230 chars`) telling the clear story of what this person actually does every day at **{target_label}** without dense jargon.
+   - Write `manual_toil` and `agentic_impact` (`1 crisp plain-English sentence each, <= 190 chars`) referencing **{target_label}**'s real workflows, assets, facilities, and ERP systems.
+3. **Reuse & Filter the Fixed Pool of Core AI Agents with a 1–2 Line Agent Story (`agents`)**:
    - Do NOT invent new agent IDs—evaluate each provided `agent_id`:
    - Set `"is_relevant": false` when an agent's physical domain genuinely does NOT apply to **{target_label}** according to `division_operational_profile` (for example, set `false` on `cold_chain_auditor` or `food_waste_esg_copilot` for non-food/non-cold-chain companies like IT/tech, cement, paints, automotive, metals, apparel, or industrial equipment; set `false` on grocery/store-aisle agents like `planogram_merchandising_vision_auditor` or `aisle_aligned_pallet_agent` for B2B enterprises without retail stores; keep at least 60% of agents in this pillar `true`).
    - Keep `"custom_agent_name": ""` when the canonical agent name already works cleanly, OR provide a crisp `2–4 word` domain agent name (`<= 42 chars`) when domain wording makes it much clearer for **{co}** leaders.
-   - Write `"division_context"` (`1 sentence, <= 155 chars`) explaining how this agent helps **{target_label}**.
+   - Write `"division_context"` (`1–2 crisp plain-English sentences, <= 210 chars`) telling the clear story of what this AI agent does for **{target_label}**.
 
 Return ONLY valid JSON matching this exact structure:
 {{
@@ -430,17 +430,17 @@ Return ONLY valid JSON matching this exact structure:
     "<persona_id>": {{
       "title": "Authentic Corporate Job Title",
       "role": "Concise 5-9 word operational mandate",
-      "summary": "1-sentence role mission at {target_label}",
+      "summary": "1-2 sentence plain-English story of what this person does every day at {target_label}",
       "manual_toil": "1-sentence manual bottleneck today at {co}",
       "agentic_impact": "1-sentence transformation with this AI agent",
-      "grounding_source": "Grounded in {co} Supply Chain & Operations roles"
+      "grounding_source": "Grounded in {co} career portals & supply chain roles"
     }}
   }},
   "agents": {{
     "<agent_id>": {{
       "is_relevant": true,
       "custom_agent_name": "",
-      "division_context": "1-sentence operational value for {target_label}",
+      "division_context": "1-2 sentence plain-English story of what this AI agent does for {target_label}",
       "hidden_reason": ""
     }}
   }}
@@ -465,7 +465,7 @@ def synthesize_enterprise_twin_live(
     custom_logo_input: str = "",
     progress_cb: ProgressCallback = None,
 ) -> TwinOverlaySpec:
-    """Executes real-time web-researched company portal synthesis (`Gemini 3.1 Pro + GoogleSearch` + `Gemini 3 Flash`)."""
+    """Executes real-time web-researched company portal synthesis (`Gemini 3.1 Pro / 4 Argon` + `GoogleSearch` + `Gemini 3.8 Flash`)."""
     cat = load_canonical_catalog()
     depts = cat["departments"]
     personas_cat = cat["personas"]
@@ -486,8 +486,8 @@ def synthesize_enterprise_twin_live(
         progress_cb,
         10,
         "corporate_research",
-        f"Researching {target_title} operations, supply chain & job roles...",
-        "Running live Google Search Grounding + Wikipedia & public career discovery on Gemini 3.1 Pro",
+        f"Researching {target_title} supply chain, facilities & career portals...",
+        "Running live Google Search Grounding + LinkedIn/Naukri/corporate career mining on Gemini 3.1 Pro / 4 Argon",
     )
 
     # Fetch lightweight Wikipedia + public job hints in parallel while preparing Stage 1
@@ -583,7 +583,7 @@ def synthesize_enterprise_twin_live(
         48,
         "pillar_synthesis",
         f"Tailoring {n_pillars} Operating Pillars, 20 Sub-Pillars & 60 Job Roles for {canonical_co}...",
-        f"Running {n_pillars} parallel Gemini specialists to map corporate job titles & filter 60 AI agents",
+        f"Running {n_pillars} parallel Gemini 3.8 Flash specialists to write 2-line role & agent stories",
     )
 
     merged_sp_map: Dict[str, str] = {}
@@ -768,6 +768,6 @@ def synthesize_enterprise_twin_live(
         grounding_citations=citations[:12],
         career_title_examples=discovered_titles[:8],
         terminology_highlights=(dossier.get("terminology_glossary") or [])[:6],
-        generation_model=f"{pro_model} + Gemini 3 Flash (Google Search Grounded)",
+        generation_model="Gemini 3.1 Pro / 4 Argon + Gemini 3.8 Flash (Google Search Grounded)",
     )
     return validate_and_normalize_overlay(spec)

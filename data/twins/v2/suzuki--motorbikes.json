@@ -16,7 +16,7 @@
     "brand_accent": "#729eca",
     "brand_secondary": "#E31837",
     "executive_title": "Vice President - Supply Chain Management",
-    "executive_thesis": "Suzuki Motorcycle India operates a highly synchronized supply chain centered around its Gurugram manufacturing hub, sourcing precision auto-components from a localized vendor base. The operation orchestrates just-in-time assembly, finished vehicle logistics to a vast dealership…",
+    "executive_thesis": "Suzuki Motorcycle India operates a highly synchronized supply chain centered around its Gurugram manufacturing hub, sourcing precision auto-components from a localized vendor base. The operation orchestrates just-in-time assembly, finished vehicle logistics to a vast dealership.",
     "flagship_sites": "Kherki Dhaula Plant (Gurugram) · SMIPL National Parts Centre (NCR) · Regional Distribution Centers (West & South India) · Global Export Hub (Mundra Port)",
     "erp_systems": "SAP S/4HANA · Dassault Systèmes DELMIA · Blue Yonder Luminate · SAP EWM",
     "logo": {
@@ -518,9 +518,9 @@
       "canonical_name": "Commercial Sourcing / Legal",
       "title": "Lead — Contract & PO Mgmt",
       "role": "Contract & PO Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
-      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with Contract Leakage Agent to recovers missed rebates & surcharges.",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with Contract Leakage Agent to recover missed rebates & surcharges.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
-      "agentic_impact": "Contract Leakage Agent automatically reconciles live spend against negotiated rebate tiers and volume discount scales. — recovers missed rebates & surcharges.",
+      "agentic_impact": "Contract Leakage Agent automatically reconciles live spend against negotiated rebate tiers and volume discount scales — recovers missed rebates & surcharges.",
       "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
     },
     "buyer_procurement_coord": {
@@ -530,9 +530,9 @@
       "canonical_name": "Buyer / Procurement Coord.",
       "title": "Lead — Contract & PO Mgmt",
       "role": "Contract & PO Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
-      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with PO Expediting Agent to resolves ~70% of standard po delays.",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with PO Expediting Agent to resolve ~70% of standard po delays.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
-      "agentic_impact": "PO Expediting Agent automatically monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments. — resolves ~70% of standard po delays.",
+      "agentic_impact": "PO Expediting Agent automatically monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments — resolves ~70% of standard po delays.",
       "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
     },
     "accounts_payable_lead": {
@@ -542,9 +542,9 @@
       "canonical_name": "Accounts Payable Lead",
       "title": "Lead — Contract & PO Mgmt",
       "role": "Contract & PO Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
-      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with Three-Way Match Dispute to prevents vendor holds & saves discounts.",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with Three-Way Match Dispute to prevent vendor holds & saves discounts.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
-      "agentic_impact": "Three-Way Match Dispute automatically diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. — prevents vendor holds & saves discounts.",
+      "agentic_impact": "Three-Way Match Dispute automatically diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices — prevents vendor holds & saves discounts.",
       "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
     },
     "master_production_scheduler": {
@@ -914,9 +914,9 @@
       "canonical_name": "Reverse Logistics / Fraud Lead",
       "title": "Lead — Returns & Claims Mgmt",
       "role": "Returns & Claims Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
-      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Return Fraud Sentinel to cuts returns fraud abuse by 25–40%.",
+      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Return Fraud Sentinel to cut returns fraud abuse by 25–40%.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
-      "agentic_impact": "Return Fraud Sentinel automatically analyzes item photos and packaging video feeds to detect wear or swapped tags. — cuts returns fraud abuse by 25–40%.",
+      "agentic_impact": "Return Fraud Sentinel automatically analyzes item photos and packaging video feeds to detect wear or swapped tags — cuts returns fraud abuse by 25–40%.",
       "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
     },
     "customer_experience_cx_lead": {
@@ -928,7 +928,7 @@
       "role": "Returns & Claims Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
       "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Keep-It & Routing Advisor to lowers net return costs by 15–22%.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
-      "agentic_impact": "Keep-It & Routing Advisor automatically evaluates salvage margins vs reverse freight to determine keep-it instant refunds. — lowers net return costs by 15–22%.",
+      "agentic_impact": "Keep-It & Routing Advisor automatically evaluates salvage margins vs reverse freight to determine keep-it instant refunds — lowers net return costs by 15–22%.",
       "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
     },
     "claims_specialist_controller": {
@@ -938,9 +938,9 @@
       "canonical_name": "Claims Specialist / Controller",
       "title": "Lead — Returns & Claims Mgmt",
       "role": "Returns & Claims Mgmt · Suzuki Motorcycle India Private Limited — Motorbikes",
-      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with OS&D Freight Claims to resolves carrier claims in <72 hours.",
+      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with OS&D Freight Claims to resolve carrier claims in <72 hours.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
-      "agentic_impact": "OS&D Freight Claims automatically reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes. — resolves carrier claims in <72 hours.",
+      "agentic_impact": "OS&D Freight Claims automatically reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes — resolves carrier claims in <72 hours.",
       "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
     },
     "merchandising_store_ops_mgr": {
@@ -986,9 +986,9 @@
       "canonical_name": "Asset Recovery / RTI Manager",
       "title": "Lead — Pallet & Tote Reclamation",
       "role": "Pallet & Tote Reclamation · Suzuki Motorcycle India Private Limited — Motorbikes",
-      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with RTI Balance Reconciler to eliminates 30% in non-return fee fines.",
+      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with RTI Balance Reconciler to eliminate 30% in non-return fee fines.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
-      "agentic_impact": "RTI Balance Reconciler automatically reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. — eliminates 30% in non-return fee fines.",
+      "agentic_impact": "RTI Balance Reconciler automatically reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes — eliminates 30% in non-return fee fines.",
       "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
     },
     "reverse_transport_planner": {
@@ -998,9 +998,9 @@
       "canonical_name": "Reverse Transport Planner",
       "title": "Lead — Pallet & Tote Reclamation",
       "role": "Pallet & Tote Reclamation · Suzuki Motorcycle India Private Limited — Motorbikes",
-      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Milk-Run Consolidation to boosts backhaul fill rate by 25–40%.",
+      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Milk-Run Consolidation to boost backhaul fill rate by 25–40%.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
-      "agentic_impact": "Milk-Run Consolidation automatically schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. — boosts backhaul fill rate by 25–40%.",
+      "agentic_impact": "Milk-Run Consolidation automatically schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores — boosts backhaul fill rate by 25–40%.",
       "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
     },
     "packaging_qa_food_safety": {
@@ -1012,7 +1012,7 @@
       "role": "Pallet & Tote Reclamation · Suzuki Motorcycle India Private Limited — Motorbikes",
       "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Sanitation & Health Agent to extends reusable lifecycle by 15–20%.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
-      "agentic_impact": "Sanitation & Health Agent automatically inspects return photos and wash logs for structural fatigue and chemical compliance. — extends reusable lifecycle by 15–20%.",
+      "agentic_impact": "Sanitation & Health Agent automatically inspects return photos and wash logs for structural fatigue and chemical compliance — extends reusable lifecycle by 15–20%.",
       "grounding_source": "Grounded in Suzuki Motorcycle India Private Limited career & ops roles"
     }
   },
@@ -1680,5 +1680,5 @@
   ],
   "created_at": "2026-11-04T08:33:08.288311+00:00",
   "updated_at": "2026-11-04T08:33:08.288311+00:00",
-  "generation_model": "gemini-3.1-pro-preview (gemini_api_key) + Gemini 3 Flash (Google Search Grounded)"
+  "generation_model": "Gemini 3.1 Pro / 4 Argon + Gemini 3.8 Flash (Google Search Grounded)"
 }

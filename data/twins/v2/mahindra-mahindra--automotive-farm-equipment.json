@@ -1,0 +1,1689 @@
+{
+  "schema_version": "2.0",
+  "twin_slug": "mahindra-mahindra--automotive-farm-equipment",
+  "company_name": "Mahindra & Mahindra",
+  "canonical_name": "Mahindra & Mahindra Limited",
+  "division_name": "Automotive & Farm Equipment",
+  "display_label": "Mahindra & Mahindra Limited — Automotive & Farm Equipment",
+  "brand": {
+    "company_name": "Mahindra & Mahindra",
+    "canonical_name": "Mahindra & Mahindra Limited",
+    "division_name": "Automotive & Farm Equipment",
+    "twin_slug": "mahindra-mahindra--automotive-farm-equipment",
+    "official_domain": "mahindra.com",
+    "industry_sector": "Automotive & Agricultural Machinery Manufacturing",
+    "geography": "India",
+    "brand_accent": "#ef7f91",
+    "brand_secondary": "#212529",
+    "executive_title": "Chief Supply Chain Officer - Automotive & Farm Equipment Sectors",
+    "executive_thesis": "Mahindra & Mahindra operates a massive, complex manufacturing supply chain that sources thousands of components from Tier-1/Tier-2 suppliers to feed mega-plants like Chakan and Zaheerabad. The finished SUVs, commercial vehicles, and tractors are then distributed through an extensive network of regional stockyards and franchised dealerships across India and global markets.",
+    "flagship_sites": "Chakan (Pune) Mega Plant · Kandivali (Mumbai) Plant · Zaheerabad Tractor Facility · Igatpuri Engine Plant · Haridwar Manufacturing Unit",
+    "erp_systems": "SAP S/4HANA · SAP Ariba · Blue Yonder Luminate · Dassault Systèmes DELMIA",
+    "logo": {
+      "data_uri": "data:image/png;base64,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",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Mahindra_Electric_SUVs_Logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_type": "wikimedia_png",
+      "plate_style": "self_plated",
+      "aspect_ratio": 1.34,
+      "monogram": "MM"
+    }
+  },
+  "custom_pillars": [
+    {
+      "pillar_id": "auto_farm_demand_strategy",
+      "v_num": "01",
+      "scor_badge": "01 · PLAN",
+      "name": "Auto & Farm Demand Strategy",
+      "tagline": "Forecasting vehicle and tractor demand across global markets",
+      "subtitle": "Aligns product portfolios, sales promotions, and integrated business planning for SUVs and agricultural machinery.",
+      "color": "#ef7f91",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "demand_forecasting",
+        "trade_promotion",
+        "sop_ibp",
+        "portfolio_sku"
+      ]
+    },
+    {
+      "pillar_id": "direct_materials_sourcing",
+      "v_num": "02",
+      "scor_badge": "02 · SOURCE",
+      "name": "Direct Materials & Component Sourcing",
+      "tagline": "Managing Tier-1/Tier-2 automotive and farm equipment suppliers",
+      "subtitle": "Procures steel, electronics, tires, and sub-assemblies while managing supplier contracts and network resilience.",
+      "color": "#4b5563",
+      "watermark_type": "supplier_graph",
+      "sub_pillar_ids": [
+        "supplier_network",
+        "contract_po_mgmt"
+      ]
+    },
+    {
+      "pillar_id": "vehicle_tractor_assembly",
+      "v_num": "03",
+      "scor_badge": "03 · MAKE",
+      "name": "Vehicle & Tractor Assembly Operations",
+      "tagline": "Mega-plant manufacturing and quality control",
+      "subtitle": "Schedules production lines, manages plant capacity, ensures strict automotive quality compliance, and handles line-side packaging.",
+      "color": "#7c3aed",
+      "watermark_type": "factory_arm",
+      "sub_pillar_ids": [
+        "production_scheduling",
+        "capacity_planning",
+        "quality_compliance",
+        "material_packaging"
+      ]
+    },
+    {
+      "pillar_id": "yard_inventory_management",
+      "v_num": "04",
+      "scor_badge": "04 · STORE",
+      "name": "Yard Management & Spares Warehousing",
+      "tagline": "Finished vehicle stockyards and spare parts depots",
+      "subtitle": "Optimizes the positioning of finished vehicles in regional yards and manages spare parts warehousing and tote handling.",
+      "color": "#e11d48",
+      "watermark_type": "warehouse_rack",
+      "sub_pillar_ids": [
+        "positioning_optimization",
+        "warehouse_operations"
+      ]
+    },
+    {
+      "pillar_id": "dealership_distribution",
+      "v_num": "05",
+      "scor_badge": "05 · DELIVER",
+      "name": "Dealership Distribution & Outbound",
+      "tagline": "Moving vehicles from plant to dealer networks",
+      "subtitle": "Provides omnichannel visibility of vehicle inventory and manages the primary movement of units to regional dealerships.",
+      "color": "#0284c7",
+      "watermark_type": "corridor_lifo",
+      "sub_pillar_ids": [
+        "omnichannel_visibility",
+        "first_mid_mile",
+        "store_replenishment"
+      ]
+    },
+    {
+      "pillar_id": "fleet_routing_delivery",
+      "v_num": "06",
+      "scor_badge": "06 · ROUTE",
+      "name": "Carrier Routing & Final Dispatch",
+      "tagline": "Transport carrier management for heavy equipment",
+      "subtitle": "Coordinates specialized car carriers and flatbeds for the final delivery of vehicles and tractors to end-point dealers.",
+      "color": "#ca8a04",
+      "watermark_type": "conveyor_rack",
+      "sub_pillar_ids": [
+        "last_mile_delivery",
+        "route_carrier",
+        "returns_claims_mgmt",
+        "pallet_tote_reclamation"
+      ]
+    },
+    {
+      "pillar_id": "spares_warranty_circularity",
+      "v_num": "07",
+      "scor_badge": "07 · RETURN",
+      "name": "Spares Obsolescence & Warranty Returns",
+      "tagline": "Managing defective parts, warranties, and obsolete spares",
+      "subtitle": "Handles dealer warranty claims, reverse logistics for defective components, and markdowns on obsolete spare parts inventory.",
+      "color": "#059669",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "expiry_markdowns"
+      ]
+    }
+  ],
+  "pillar_overrides": {
+    "demand_sop": {
+      "dept_id": "demand_sop",
+      "custom_name": "Planning & Strategy",
+      "custom_tagline": "Mahindra & Mahindra Limited — Automotive & Farm Equipment · Core Planning Lifecycle",
+      "custom_subtitle": "Demand signals and strategic S&OP alignment."
+    },
+    "sourcing_procurement": {
+      "dept_id": "sourcing_procurement",
+      "custom_name": "Sourcing & Procurement",
+      "custom_tagline": "Mahindra & Mahindra Limited — Automotive & Farm Equipment · Procurement Lifecycle Spine",
+      "custom_subtitle": "Tier vendor networks and EDI order routing."
+    },
+    "manufacturing_prod": {
+      "dept_id": "manufacturing_prod",
+      "custom_name": "Manufacturing & Production",
+      "custom_tagline": "Mahindra & Mahindra Limited — Automotive & Farm Equipment · Manufacturing Operations Lifecycle",
+      "custom_subtitle": "Optimized runs and zero-defect QA protocols."
+    },
+    "inventory_warehouse": {
+      "dept_id": "inventory_warehouse",
+      "custom_name": "Inventory & Warehousing",
+      "custom_tagline": "Mahindra & Mahindra Limited — Automotive & Farm Equipment · Inventory & DC Lifecycle Spine",
+      "custom_subtitle": "Multi-node staging and enterprise visibility."
+    },
+    "logistics_fleet": {
+      "dept_id": "logistics_fleet",
+      "custom_name": "Distribution & Logistics",
+      "custom_tagline": "Mahindra & Mahindra Limited — Automotive & Farm Equipment · Logistics Fulfillment Lifecycle",
+      "custom_subtitle": "Store replenishment and last-mile dispatch."
+    },
+    "circular_enable": {
+      "dept_id": "circular_enable",
+      "custom_name": "Returns & Reverse Logistics",
+      "custom_tagline": "Mahindra & Mahindra Limited — Automotive & Farm Equipment · Reverse Value Stream Lifecycle",
+      "custom_subtitle": "Triage inspection and upstream defect loops."
+    }
+  },
+  "sub_pillar_overrides": {
+    "demand_forecasting": {
+      "sub_pillar_id": "demand_forecasting",
+      "dept_id": "demand_sop",
+      "canonical_name": "Demand Forecasting",
+      "custom_name": "AFS Market Intelligence & Demand Sensing"
+    },
+    "trade_promotion": {
+      "sub_pillar_id": "trade_promotion",
+      "dept_id": "demand_sop",
+      "canonical_name": "Trade Promotion",
+      "custom_name": "Dealer Schemes & Commercial Incentives"
+    },
+    "sop_ibp": {
+      "sub_pillar_id": "sop_ibp",
+      "dept_id": "demand_sop",
+      "canonical_name": "S&OP / IBP",
+      "custom_name": "Integrated Business Planning (IBP)"
+    },
+    "portfolio_sku": {
+      "sub_pillar_id": "portfolio_sku",
+      "dept_id": "demand_sop",
+      "canonical_name": "Portfolio & SKU",
+      "custom_name": "Variant Lifecycle & Platform Management"
+    },
+    "supplier_network": {
+      "sub_pillar_id": "supplier_network",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Supplier Network",
+      "custom_name": "Tier-N Supplier Ecosystem & Resilience"
+    },
+    "material_packaging": {
+      "sub_pillar_id": "material_packaging",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Material & Packaging",
+      "custom_name": "Line-Side Logistics & Kitting"
+    },
+    "contract_po_mgmt": {
+      "sub_pillar_id": "contract_po_mgmt",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Contract & PO Mgmt",
+      "custom_name": "Contract & PO Mgmt"
+    },
+    "production_scheduling": {
+      "sub_pillar_id": "production_scheduling",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Production Scheduling",
+      "custom_name": "Mixed-Model Line Sequencing"
+    },
+    "capacity_planning": {
+      "sub_pillar_id": "capacity_planning",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Capacity Planning",
+      "custom_name": "Mega-Plant Asset & Load Balancing"
+    },
+    "quality_compliance": {
+      "sub_pillar_id": "quality_compliance",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Quality & Compliance",
+      "custom_name": "Automotive Quality & PDI Compliance"
+    },
+    "positioning_optimization": {
+      "sub_pillar_id": "positioning_optimization",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Positioning & Optimization",
+      "custom_name": "Regional Stockyard & Spares Optimization"
+    },
+    "warehouse_operations": {
+      "sub_pillar_id": "warehouse_operations",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Warehouse Operations",
+      "custom_name": "Depot Operations & Spares Fulfillment"
+    },
+    "omnichannel_visibility": {
+      "sub_pillar_id": "omnichannel_visibility",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Omnichannel Visibility",
+      "custom_name": "Dealer Inventory & Booking Visibility"
+    },
+    "first_mid_mile": {
+      "sub_pillar_id": "first_mid_mile",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "First & Mid-Mile",
+      "custom_name": "Finished Goods Logistics & Yard Management"
+    },
+    "store_replenishment": {
+      "sub_pillar_id": "store_replenishment",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Store Replenishment",
+      "custom_name": "Regional Stockyard & Spare Parts Flow"
+    },
+    "last_mile_delivery": {
+      "sub_pillar_id": "last_mile_delivery",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Last-Mile Delivery",
+      "custom_name": "Dealer & Stockyard Outbound Logistics"
+    },
+    "route_carrier": {
+      "sub_pillar_id": "route_carrier",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Route & Carrier",
+      "custom_name": "Carrier Management & Freight Audit"
+    },
+    "returns_claims_mgmt": {
+      "sub_pillar_id": "returns_claims_mgmt",
+      "dept_id": "circular_enable",
+      "canonical_name": "Returns & Claims Mgmt",
+      "custom_name": "Returns & Claims Mgmt"
+    },
+    "expiry_markdowns": {
+      "sub_pillar_id": "expiry_markdowns",
+      "dept_id": "circular_enable",
+      "canonical_name": "Expiry & Markdowns",
+      "custom_name": "Spares Lifecycle & Obsolescence Management"
+    },
+    "pallet_tote_reclamation": {
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "dept_id": "circular_enable",
+      "canonical_name": "Pallet & Tote Reclamation",
+      "custom_name": "Pallet & Tote Reclamation"
+    }
+  },
+  "persona_overrides": {
+    "demand_planner_forecaster": {
+      "persona_id": "demand_planner_forecaster",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Planner / Forecaster",
+      "title": "Demand Planning Lead - FES",
+      "role": "Forecasting tractor demand across regional Indian markets",
+      "summary": "He analyzes monsoon patterns, crop cycles, and Krish-e data to predict tractor demand across diverse Indian agro-climatic zones.",
+      "manual_toil": "Manually reconciling disparate spreadsheets from regional sales offices with historical monsoon impact data.",
+      "agentic_impact": "Automates the synthesis of weather anomalies and rural sentiment to generate hyper-local demand signals.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "commercial_planning_lead": {
+      "persona_id": "commercial_planning_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Commercial Planning Lead",
+      "title": "Head of Commercial Planning - AD",
+      "role": "Aligning SUV sales targets with production capacity",
+      "summary": "She bridges the gap between the Automotive Division's sales ambitions and the actual production throughput of the Chakan and Kandivali plants.",
+      "manual_toil": "Spending hours in meetings trying to align dealer booking data with manufacturing lead times for popular SUVs like the XUV700.",
+      "agentic_impact": "Instantly identifies unmodeled demand drivers from digital bookings and dealership footfall to synchronize production.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "brand_innovation_mgr": {
+      "persona_id": "brand_innovation_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Brand & Innovation Manager",
+      "title": "Product Brand Manager - Automotive",
+      "role": "Managing launch demand for new vehicle platforms",
+      "summary": "He oversees the market introduction of new mHawk-powered SUVs and electric vehicle variants, ensuring launch stock matches consumer interest.",
+      "manual_toil": "Guessing initial stock requirements for new variants based on outdated historical launches of different vehicle classes.",
+      "agentic_impact": "Uses AI to match new SUV features and price points against historical 'lookalike' launches to optimize initial dealer stocking.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "trade_marketing_manager": {
+      "persona_id": "trade_marketing_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Trade Marketing Manager",
+      "title": "Manager - Trade Marketing & Dealer Relations",
+      "role": "Designing regional sales schemes and dealer incentives",
+      "summary": "She creates promotional schemes for tractors and commercial vehicles to drive off-take during festive seasons like Dhanteras.",
+      "manual_toil": "Calculating the potential impact of exchange bonuses and low-interest financing on regional sales volumes manually.",
+      "agentic_impact": "Simulates the ROI of different dealer incentive structures to maximize market share without eroding margins.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "key_account_manager": {
+      "persona_id": "key_account_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Key Account Manager (KAM)",
+      "title": "Regional Sales Manager - Institutional Sales",
+      "role": "Managing bulk orders for government and fleet buyers",
+      "summary": "He handles large-scale procurement contracts for state governments, aggregators, and large corporate farming entities.",
+      "manual_toil": "Creating manual pitch decks for bulk fleet sales that often ignore real-time inventory availability at regional stockyards.",
+      "agentic_impact": "Generates data-driven sell-in stories for institutional buyers based on real-time availability and customized configuration options.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "revenue_trade_finance_lead": {
+      "persona_id": "revenue_trade_finance_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Revenue / Trade Finance Lead",
+      "title": "Senior Manager - Commercial Finance",
+      "role": "Auditing dealer claims and promotional payouts",
+      "summary": "She ensures that dealer claims for retail incentives and trade discounts are valid and backed by actual sales performance.",
+      "manual_toil": "Physically verifying thousands of dealer claim documents and sales certificates against SAP S/4HANA records.",
+      "agentic_impact": "Uses OCR and AI to automatically audit dealer claims against proof-of-sale, reducing leakage in trade spend.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "sop_supply_planning_dir": {
+      "persona_id": "sop_supply_planning_dir",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "S&OP / Supply Planning Dir.",
+      "title": "Head of Supply Chain Management (SCM)",
+      "role": "Balancing unconstrained demand with plant constraints",
+      "summary": "He leads the monthly S&OP cycle to ensure that the demand from the field is met by the production capacity at Zaheerabad and Chakan.",
+      "manual_toil": "Negotiating with Plant Heads to resolve gaps between high SUV demand and engine production bottlenecks at Igatpuri.",
+      "agentic_impact": "Dynamically reconciles national demand with factory capacity limits to create a feasible, high-margin production plan.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "supply_chain_vp_coo": {
+      "persona_id": "supply_chain_vp_coo",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Supply Chain VP / COO",
+      "title": "VP - Strategic Sourcing & Operations",
+      "role": "Orchestrating response to major supply chain disruptions",
+      "summary": "He makes high-level decisions on component allocation and supplier shifts when global logistics or semiconductor shortages hit.",
+      "manual_toil": "Calling multiple Tier-1 suppliers and plant managers during a crisis to understand the impact of a part shortage.",
+      "agentic_impact": "Provides a digital war-room view to simulate the impact of supplier outages on final vehicle delivery dates.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "ibp_lead_chief_planning_off": {
+      "persona_id": "ibp_lead_chief_planning_off",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "IBP Lead / Chief Planning Off.",
+      "title": "Chief Planning Officer - AFS",
+      "role": "Driving cross-functional executive alignment",
+      "summary": "She ensures that Finance, Sales, and Manufacturing are all working toward the same strategic and financial goals for the AFS sector.",
+      "manual_toil": "Compiling executive summary decks for the monthly IBP meeting by chasing data from five different departments.",
+      "agentic_impact": "Automates the creation of executive pre-reads and tracks cross-functional sign-offs on the final consensus plan.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "category_manager_portfolio": {
+      "persona_id": "category_manager_portfolio",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Category Manager",
+      "title": "General Manager - Product Portfolio",
+      "role": "Optimizing the mix of vehicle variants and trims",
+      "summary": "He evaluates which vehicle variants (LX, AX, etc.) and tractor models are performing well and which should be discontinued.",
+      "manual_toil": "Analyzing the profitability of hundreds of SKU combinations across different engine types and trim levels.",
+      "agentic_impact": "Scores every variant based on sales velocity and manufacturing complexity to recommend SKU pruning for better margins.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "lifecycle_materials_mgr": {
+      "persona_id": "lifecycle_materials_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Lifecycle / Materials Mgr",
+      "title": "Senior Manager - Spares Supply Chain",
+      "role": "Managing transitions between old and new part versions",
+      "summary": "She manages the phase-out of legacy components as new mStallion engine updates or facelift models are introduced.",
+      "manual_toil": "Manually tracking inventory levels of old parts to ensure they are exhausted before switching to new engineering change orders.",
+      "agentic_impact": "Orchestrates the 'Phase-In Phase-Out' of components to minimize obsolete inventory during engineering cutovers.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "commercial_finance_director": {
+      "persona_id": "commercial_finance_director",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Commercial Finance Director",
+      "title": "Director - Commercial Finance & Costing",
+      "role": "Analyzing the total cost-to-serve for different regions",
+      "summary": "He calculates the net profitability of selling vehicles in different geographies, accounting for logistics, taxes, and dealer margins.",
+      "manual_toil": "Aggregating freight costs from regional stockyards and state-specific taxes to find the true margin per vehicle.",
+      "agentic_impact": "Provides a granular diagnostic of net-net margins across all vehicle models and regional distribution hubs.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "procurement_dir_risk_mgr": {
+      "persona_id": "procurement_dir_risk_mgr",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Dir. / Risk Mgr",
+      "title": "VP - Strategic Sourcing & Procurement",
+      "role": "Securing long-term supply for AD and FES platforms",
+      "summary": "He manages the procurement of high-value commodities like steel and semiconductors while mitigating risks across the global Tier-1 and Tier-2 supplier base for SUV and tractor production.",
+      "manual_toil": "Manually tracking global port congestion and vendor financial health across disparate SAP Ariba and news feeds to predict shortages.",
+      "agentic_impact": "Automated early-warning alerts for supply disruptions, allowing proactive shifting of production schedules at Chakan or Zaheerabad.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "procurement_operations_lead": {
+      "persona_id": "procurement_operations_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Operations Lead",
+      "title": "Head - Supplier Quality Assurance",
+      "role": "Ensuring zero-defect component delivery to mega-plants",
+      "summary": "She oversees the technical auditing and onboarding of component manufacturers to ensure every part meets the rigorous standards for mHawk and mStallion engines.",
+      "manual_toil": "Reviewing hundreds of ISO certifications and PPAP documents manually to ensure compliance before a new vendor is integrated into SAP S/4HANA.",
+      "agentic_impact": "Instant validation of supplier quality credentials and automated flagging of non-compliant parts before they reach the Igatpuri or Haridwar assembly lines.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "chief_sustainability_officer": {
+      "persona_id": "chief_sustainability_officer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Head - ESG & Corporate Sustainability",
+      "role": "Driving carbon neutrality across the automotive value chain",
+      "summary": "He focuses on decarbonizing the supply chain by tracking the carbon footprint of raw materials and ensuring ethical sourcing for Mahindra’s growing EV portfolio.",
+      "manual_toil": "Collecting manual carbon emission spreadsheets from hundreds of small-scale casting and forging suppliers across India.",
+      "agentic_impact": "Real-time visibility into Scope 3 emissions and automated verification of green-steel and sustainable rubber certifications.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "category_sourcing_mgr_direct": {
+      "persona_id": "category_sourcing_mgr_direct",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Category Sourcing Mgr (Direct)",
+      "title": "Category Manager - Steel & Castings",
+      "role": "Sourcing raw materials for engine and chassis parts",
+      "summary": "She manages the procurement of high-grade steel and aluminum for the Igatpuri engine plant and tractor foundries.",
+      "manual_toil": "Tracking global steel price indices and manually adjusting procurement volumes to hedge against market volatility.",
+      "agentic_impact": "Monitors global commodity markets to provide real-time hedging advice for steel and aluminum procurement.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "strategic_sourcing_lead": {
+      "persona_id": "strategic_sourcing_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Strategic Sourcing Lead",
+      "title": "VP - Strategic Sourcing & Procurement",
+      "role": "Optimizing the total cost of vehicle components",
+      "summary": "He leads the strategic sourcing team to negotiate long-term contracts for high-value aggregates like transmissions and electronics.",
+      "manual_toil": "Deconstructing complex supplier quotes for plastic molded parts and electronic ECUs to find 'should-cost' gaps.",
+      "agentic_impact": "Calculates dynamic 'should-cost' models for complex automotive parts based on current resin, metal, and energy prices.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "packaging_rd_engineer": {
+      "persona_id": "packaging_rd_engineer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Packaging R&D Engineer",
+      "title": "Lead Engineer - Packaging & Returnables",
+      "role": "Designing sustainable line-side packaging solutions",
+      "summary": "She designs the returnable racks and protective packaging used to transport components from Tier-1 suppliers to the assembly line.",
+      "manual_toil": "Evaluating the durability and cost of different returnable plastic crates versus traditional wooden dunnage.",
+      "agentic_impact": "Optimizes the use of returnable packaging systems to reduce waste and lower the carbon footprint of the inbound supply chain.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "commercial_sourcing_legal": {
+      "persona_id": "commercial_sourcing_legal",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Commercial Sourcing / Legal",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · Mahindra & Mahindra Limited — Automotive & Farm Equipment",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with Contract Leakage Agent to recover missed rebates & surcharges.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Contract Leakage Agent automatically reconciles live spend against negotiated rebate tiers and volume discount scales — recovers missed rebates & surcharges.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career & ops roles"
+    },
+    "buyer_procurement_coord": {
+      "persona_id": "buyer_procurement_coord",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Buyer / Procurement Coord.",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · Mahindra & Mahindra Limited — Automotive & Farm Equipment",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with PO Expediting Agent to resolve ~70% of standard po delays.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "PO Expediting Agent automatically monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments — resolves ~70% of standard po delays.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career & ops roles"
+    },
+    "accounts_payable_lead": {
+      "persona_id": "accounts_payable_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Accounts Payable Lead",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · Mahindra & Mahindra Limited — Automotive & Farm Equipment",
+      "summary": "Owns contract & po mgmt execution within Strategic Procurement—partnering with Three-Way Match Dispute to prevent vendor holds & saves discounts.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Three-Way Match Dispute automatically diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices — prevents vendor holds & saves discounts.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career & ops roles"
+    },
+    "master_production_scheduler": {
+      "persona_id": "master_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Master Production Scheduler",
+      "title": "Lead Scheduler - Automotive Division",
+      "role": "Optimizing multi-model assembly sequences for SUVs",
+      "summary": "He balances the production of XUV700 and Scorpio-N on shared lines at Chakan, ensuring paint shop constraints and engine availability match the daily build plan.",
+      "manual_toil": "Manually re-shuffling the production sequence in SAP S/4HANA when a specific mHawk engine variant or trim component is delayed.",
+      "agentic_impact": "Automates complex multi-model sequencing to maximize throughput while respecting paint shop color-batching and component constraints.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "shop_floor_shift_lead": {
+      "persona_id": "shop_floor_shift_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Shop Floor / Shift Lead",
+      "title": "Production Shift Manager - FES",
+      "role": "Managing tractor assembly line uptime and output",
+      "summary": "She oversees the tractor assembly lines at Zaheerabad, managing a large workforce to meet daily targets for different HP-range tractors and implements.",
+      "manual_toil": "Scrambling to re-assign technicians and adjust line speeds when a critical torque tool fails or a sub-assembly station falls behind.",
+      "agentic_impact": "Instantly re-calculates line balancing and workstation assignments to maintain Takt time despite equipment downtime or labor shortages.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "plant_operations_manager": {
+      "persona_id": "plant_operations_manager",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Plant Operations Manager",
+      "title": "Plant Head - Zaheerabad Facility",
+      "role": "Driving operational excellence and plant P&L",
+      "summary": "He is responsible for the entire tractor manufacturing ecosystem, from fabrication to final roll-out, ensuring safety, quality, and cost targets are met.",
+      "manual_toil": "Reviewing static shift reports to identify why labor costs spiked or why line efficiency dropped across different tractor platforms.",
+      "agentic_impact": "Dynamically aligns workforce skill matrices with real-time production requirements to optimize labor productivity and safety.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "supply_chain_ops_director": {
+      "persona_id": "supply_chain_ops_director",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Supply Chain Ops Director",
+      "title": "Head of Manufacturing Operations - AD",
+      "role": "Overseeing end-to-end vehicle assembly efficiency",
+      "summary": "She monitors the health of all automotive plants, focusing on OEE, bottleneck mitigation, and ensuring the Chakan mega-plant hits its monthly SUV volume.",
+      "manual_toil": "Aggregating data from DELMIA and SAP to identify which assembly station is the primary bottleneck for the new electric vehicle launches.",
+      "agentic_impact": "Provides real-time diagnostic alerts on assembly bottlenecks and predicts utility load spikes across the manufacturing campus.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "external_sourcing_cmo_lead": {
+      "persona_id": "external_sourcing_cmo_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "External Sourcing / CMO Lead",
+      "title": "GM - Aggregate Sourcing & Outsourcing",
+      "role": "Managing Tier-1 sub-assembly and job-work partners",
+      "summary": "He manages relationships with external partners who provide critical sub-assemblies like seats, dashboards, and tractor implements.",
+      "manual_toil": "Comparing internal manufacturing costs against vendor quotes for new tractor implement variants using manual spreadsheets.",
+      "agentic_impact": "Models the total landed cost of 'make vs buy' for vehicle aggregates, accounting for logistics and internal capacity constraints.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "vp_manufacturing_engineering": {
+      "persona_id": "vp_manufacturing_engineering",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "VP Manufacturing Engineering",
+      "title": "VP - Manufacturing Engineering & Capex",
+      "role": "Designing future-ready production lines and capacity",
+      "summary": "She plans the long-term expansion of Mahindra’s manufacturing footprint, including new EV assembly lines and robotic welding cells.",
+      "manual_toil": "Running manual simulations to justify multi-crore investments in new robotic paint booths or high-speed assembly lines.",
+      "agentic_impact": "Simulates multi-year demand scenarios to stress-test proposed plant layouts and CapEx investments before breaking ground.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "qa_manager_line_inspector": {
+      "persona_id": "qa_manager_line_inspector",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "QA Manager / Line Inspector",
+      "title": "Manager - Supplier Quality Assurance",
+      "role": "Ensuring zero-defect components reach the line",
+      "summary": "He ensures that every component, from mStallion engine blocks to plastic trims, meets Mahindra’s rigorous quality standards before assembly.",
+      "manual_toil": "Performing manual visual inspections and reviewing paper-based quality checklists for thousands of incoming parts daily.",
+      "agentic_impact": "Uses AI vision to detect surface defects on body panels and engine castings in real-time, preventing faulty parts from entering the line.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "regulatory_compliance_lead": {
+      "persona_id": "regulatory_compliance_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Regulatory Compliance Lead",
+      "title": "Head - Homologation & Regulatory Affairs",
+      "role": "Ensuring vehicle compliance with AIS and BS-VI norms",
+      "summary": "She manages the certification process for all vehicles, ensuring every SUV and tractor meets Indian and international safety and emission standards.",
+      "manual_toil": "Manually auditing build records and component certificates to ensure every vehicle batch complies with Bharat Stage VI (BS-VI) requirements.",
+      "agentic_impact": "Automatically audits digital build records and supplier COAs to ensure 100% compliance with environmental and safety regulations.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "continuous_improvement_lead": {
+      "persona_id": "continuous_improvement_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Continuous Improvement Lead",
+      "title": "Lead - Mahindra Excellence System (MES)",
+      "role": "Driving Kaizen and Lean across the shop floor",
+      "summary": "He leads the internal 'Mahindra Excellence System' to reduce waste, improve Takt time, and eliminate root causes of assembly defects.",
+      "manual_toil": "Correlating field failure data from dealerships with specific production batches and machine telemetry to find defect patterns.",
+      "agentic_impact": "Instantly links customer warranty claims to specific shift conditions or component lots to trigger rapid CAPA cycles.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "inventory_optimization_lead": {
+      "persona_id": "inventory_optimization_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Optimization Lead",
+      "title": "Senior Manager - Spares Supply Chain",
+      "role": "Optimizing multi-echelon spare parts availability for AD and FES",
+      "summary": "He ensures that critical mHawk engine components and tractor spares are positioned across regional depots to minimize vehicle-down time for customers.",
+      "manual_toil": "Manually adjusting safety stock levels in SAP S/4HANA based on erratic seasonal demand for tractor parts across different Indian states.",
+      "agentic_impact": "Automated recalibration of buffers using live lead-time data from Tier-1 suppliers to prevent stockouts of high-velocity SUV spares.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "inventory_controller_buyer": {
+      "persona_id": "inventory_controller_buyer",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Controller / Buyer",
+      "title": "Manager - Parts Inventory & SLOB Control",
+      "role": "Managing slow-moving and obsolete automotive and farm inventory",
+      "summary": "She monitors the lifecycle of parts for legacy vehicle models, ensuring that aging stock in regional warehouses doesn't become a financial liability.",
+      "manual_toil": "Sifting through massive Excel exports to identify non-moving tractor implements and engine gaskets across five flagship facilities.",
+      "agentic_impact": "AI-driven identification of SLOB inventory to trigger immediate liquidation through the Krish-e network or dealership service bundles.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "replenishment_planner": {
+      "persona_id": "replenishment_planner",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Replenishment Planner",
+      "title": "Regional Manager - Depot Replenishment",
+      "role": "Balancing vehicle and parts stock across regional stockyards",
+      "summary": "He coordinates the movement of finished SUVs and tractors from plants like Chakan and Zaheerabad to regional stockyards based on dealer demand signals.",
+      "manual_toil": "Manually orchestrating stock transfers between saturated and stock-out depots to meet month-end dealership sales targets.",
+      "agentic_impact": "Autonomous rebalancing of finished vehicle inventory across India to ensure the right SUV variants are available for immediate delivery.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "dc_operations_mgr": {
+      "persona_id": "dc_operations_mgr",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Operations Mgr / IE Lead",
+      "title": "Plant Head - Spares & Logistics (AD)",
+      "role": "Driving operational efficiency within central spare parts warehouses",
+      "summary": "She oversees the high-volume throughput of the central warehouse, ensuring that thousands of unique SKUs are picked and packed for global distribution.",
+      "manual_toil": "Using static warehouse maps that don't account for the high pick-frequency of common mStallion engine service kits.",
+      "agentic_impact": "Dynamic re-slotting of fast-moving spares based on co-pick affinity, significantly reducing the travel time for warehouse pickers.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "inbound_receiving_supervisor": {
+      "persona_id": "inbound_receiving_supervisor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Inbound Receiving Supervisor",
+      "title": "Inbound Logistics Lead - Kandivali Plant",
+      "role": "Managing the intake of components from Tier-1 and Tier-2 suppliers",
+      "summary": "He manages the daily arrival of hundreds of trucks carrying everything from sheet metal to electronic sensors for the Automotive Division.",
+      "manual_toil": "Physically reconciling paper-based ASNs against physical pallet counts and manually entering variances into SAP Ariba.",
+      "agentic_impact": "Instant reconciliation of supplier shipments using computer vision and automated ASN matching to accelerate dock-to-stock cycle times.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "dc_shift_floor_lead": {
+      "persona_id": "dc_shift_floor_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Shift Floor Lead",
+      "title": "Warehouse Shift Lead - Zaheerabad Facility",
+      "role": "Supervising floor-level fulfillment of tractor and engine parts",
+      "summary": "She manages the warehouse floor teams during peak shifts to ensure that all dealer orders are dispatched before the daily logistics cutoff.",
+      "manual_toil": "Reactively moving workers between picking zones when one line gets overwhelmed by a surge in FES implement orders.",
+      "agentic_impact": "Real-time labor balancing that predicts bottlenecks in the packing zone and redirects staff to protect dealership delivery timelines.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "store_operations_omni_lead": {
+      "persona_id": "store_operations_omni_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Store Operations / Omni Lead",
+      "title": "Head of Digital Sales & Dealer Experience",
+      "role": "Ensuring real-time vehicle availability for online bookings",
+      "summary": "They bridge the gap between digital bookings on the Mahindra SUV portal and physical stock at franchised dealerships to ensure customers get their XUV700 or Thar on time.",
+      "manual_toil": "Manually reconciling dealer stock reports with central SAP S/4HANA records to identify 'phantom' vehicles that are sold but still showing as available.",
+      "agentic_impact": "Automatically flags discrepancies between dealer gate-out events and digital inventory to prevent booking cancellations.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "omnichannel_fulfillment_dir": {
+      "persona_id": "omnichannel_fulfillment_dir",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Omnichannel Fulfillment Dir.",
+      "title": "General Manager - Vehicle Distribution",
+      "role": "Optimizing unit allocation from plants to regional stockyards",
+      "summary": "They oversee the movement of finished SUVs and tractors from Chakan or Zaheerabad to regional hubs, ensuring the right mix of mHawk and mStallion variants reaches high-demand zones.",
+      "manual_toil": "Calculating the most cost-effective stockyard to fulfill a specific dealer order based on transport lead times and carrier availability.",
+      "agentic_impact": "SFS / BOPIS Sourcing automatically selects lowest-cost fulfillment nodes based on store labor and parcel zones — lowers parcel costs & split rates.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "reverse_logistics_lead_wh": {
+      "persona_id": "reverse_logistics_lead_wh",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Reverse Logistics Lead",
+      "title": "Senior Manager - Spares Supply Chain",
+      "role": "Managing the return and refurbishment of core components",
+      "summary": "They manage the flow of defective or core parts back from dealerships to central warehouses for refurbishment or vendor warranty claims.",
+      "manual_toil": "Physically inspecting returned engine components and manually logging their condition into SAP to determine if they can be refurbished.",
+      "agentic_impact": "Uses visual AI to triage returned parts instantly, accelerating the credit cycle for dealers and the refurbishment of mHawk engines.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "transport_planner_inbound_mgr": {
+      "persona_id": "transport_planner_inbound_mgr",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Transport Planner / Inbound Mgr",
+      "title": "Manager - Outbound Logistics Planning",
+      "role": "Maximizing trailer utilization for vehicle transport",
+      "summary": "They coordinate with specialized car-carrier fleets to move finished vehicles from the Chakan mega-plant to dealerships across India.",
+      "manual_toil": "Manually planning the mix of SUVs and LCVs on a single trailer to maximize 'cube' without exceeding weight limits.",
+      "agentic_impact": "Optimizes load configurations for multi-model trailers, ensuring maximum vehicle density and reduced cost-per-unit shipped.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "yard_master_plant_logistics": {
+      "persona_id": "yard_master_plant_logistics",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Master / Plant Logistics",
+      "title": "Plant Logistics & Yard Master",
+      "role": "Orchestrating finished unit movement within plant yards",
+      "summary": "They manage the massive holding yards at plants like Kandivali, ensuring vehicles are staged correctly for carrier loading and gate-out.",
+      "manual_toil": "Walking the yard to locate specific VINs and manually re-assigning loading docks when carriers are delayed at the gate.",
+      "agentic_impact": "Dynamically re-sequences loading schedules based on real-time GPS tracking of incoming car-carriers and yard space availability.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "cold_chain_qa_logistics_dir": {
+      "persona_id": "cold_chain_qa_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold Chain QA / Logistics Dir.",
+      "title": "Quality Assurance Lead - Export Logistics",
+      "role": "Ensuring vehicle integrity during long-haul transit",
+      "summary": "They monitor the condition of vehicles during export and long-distance domestic transit, though they do not handle temperature-controlled perishables.",
+      "manual_toil": "Reviewing manual inspection sheets for transit damage or environmental exposure during sea freight.",
+      "agentic_impact": "Monitors IoT sensors for impact or moisture during transit to flag potential quality issues before the vehicle reaches the dealer.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "outbound_lead_industrial_eng": {
+      "persona_id": "outbound_lead_industrial_eng",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Outbound Lead / Industrial Eng.",
+      "title": "Lead - Spares Distribution Center Operations",
+      "role": "Optimizing the picking flow for spare parts",
+      "summary": "They design the workflow for the regional spare parts depots to ensure that critical components reach Krish-e centers and workshops rapidly.",
+      "manual_toil": "Manually sequencing pick lists to ensure that heavy tractor parts and small fasteners are packed in a logical order for dealer unpacking.",
+      "agentic_impact": "Sequences warehouse pick waves to match the storage layout of the receiving dealership, speeding up their shelf-stocking process.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "store_replenishment_lead": {
+      "persona_id": "store_replenishment_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Replenishment Lead",
+      "title": "Regional Manager - Dealer Replenishment",
+      "role": "Managing stock levels across the franchised network",
+      "summary": "They ensure that dealerships maintain the right inventory of fast-moving models and critical spares without overstocking their limited floor space.",
+      "manual_toil": "Throttling vehicle shipments to dealers who have reached their physical parking capacity or credit limits.",
+      "agentic_impact": "Automatically adjusts the flow of units based on live dealer sales velocity and real-time yard capacity at the dealership.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "retail_logistics_dispatcher": {
+      "persona_id": "retail_logistics_dispatcher",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Retail Logistics Dispatcher",
+      "title": "Dispatcher - Regional Distribution",
+      "role": "Scheduling final-mile deliveries to urban dealerships",
+      "summary": "They coordinate the final leg of delivery, ensuring car-carriers arrive at urban dealerships during permitted hours and when offloading staff are ready.",
+      "manual_toil": "Calling dealer managers to confirm they have space and staff available to receive a 10-car carrier shipment.",
+      "agentic_impact": "Synchronizes carrier arrival times with dealer shift schedules and local municipal entry restrictions for heavy vehicles.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "last_mile_operations_lead": {
+      "persona_id": "last_mile_operations_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Last-Mile Operations Lead",
+      "title": "General Manager - Outbound Logistics (AD & FES)",
+      "role": "Orchestrating vehicle transport from plants to dealerships",
+      "summary": "He manages the movement of finished SUVs and tractors from mega-plants like Chakan and Zaheerabad to a nationwide network of over 2,000 dealerships.",
+      "manual_toil": "Manually coordinating with car-carrier drivers to navigate narrow rural roads and dealership gate restrictions across diverse Indian geographies.",
+      "agentic_impact": "AI-driven geocoding ensures car-carriers avoid low-clearance bridges and reach dealership unloading zones without manual pilot-car assistance.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "ecommerce_logistics_dir": {
+      "persona_id": "ecommerce_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "E-Commerce Logistics Dir.",
+      "title": "Head of Spares Supply Chain & Distribution",
+      "role": "Managing rapid fulfillment of mHawk and mStallion parts",
+      "summary": "She oversees the distribution of critical spare parts for the Automotive and Farm sectors, ensuring dealerships and Krish-e centers maintain high service levels.",
+      "manual_toil": "Sifting through multiple 3PL rate cards and courier schedules to find the fastest route for urgent 'Vehicle Off Road' (VOR) part requests.",
+      "agentic_impact": "The agent dynamically selects between internal milk-runs and express couriers to minimize downtime for Mahindra tractor and SUV owners.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "customer_support_ops_lead": {
+      "persona_id": "customer_support_ops_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Customer Support Ops Lead",
+      "title": "Head of Customer Experience - Dealer Operations",
+      "role": "Ensuring transparent delivery timelines for dealer partners",
+      "summary": "He acts as the bridge between logistics and the dealer network, providing real-time visibility into vehicle transit status and expected arrival times.",
+      "manual_toil": "Fielding hundreds of calls from dealers inquiring about delayed shipments due to monsoon flooding or interstate border checks.",
+      "agentic_impact": "Proactively alerts dealers of transit delays and automatically updates the SAP S/4HANA delivery schedule with new Estimated Times of Arrival.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "fleet_dispatcher_central_ops": {
+      "persona_id": "fleet_dispatcher_central_ops",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Fleet Dispatcher / Central Ops",
+      "title": "Central Dispatch Manager - Automotive Division",
+      "role": "Optimizing multi-stop car carrier routing",
+      "summary": "She coordinates the loading and routing of specialized multi-car carriers to ensure efficient drop-offs across multiple regional stockyards.",
+      "manual_toil": "Recalculating routes on the fly when heavy vehicle restrictions or infrastructure projects block primary highway routes for large carriers.",
+      "agentic_impact": "Live rerouting accounts for bridge weight limits and height clearances specific to Mahindra’s double-decker car carriers.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "transport_procurement_lead": {
+      "persona_id": "transport_procurement_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Transport Procurement Lead",
+      "title": "VP - Strategic Sourcing & Logistics Procurement",
+      "role": "Managing carrier contracts and performance metrics",
+      "summary": "He negotiates with large-scale logistics providers and monitors their adherence to the Mahindra routing guide and service level agreements.",
+      "manual_toil": "Reviewing monthly performance spreadsheets to identify which carriers are consistently rejecting short-haul tractor delivery loads.",
+      "agentic_impact": "Automatically re-ranks carriers in the Blue Yonder system based on real-time OTIF performance and tender acceptance rates.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "freight_controller_claims": {
+      "persona_id": "freight_controller_claims",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Controller / Claims",
+      "title": "Senior Manager - Logistics Finance & Audit",
+      "role": "Validating freight invoices against delivery proof",
+      "summary": "She ensures that all freight billing for the thousands of vehicles shipped monthly is accurate and supported by digital Proof of Delivery (POD).",
+      "manual_toil": "Manually reconciling paper-based gate passes and PODs against SAP Ariba invoices to verify detention and fuel surcharge claims.",
+      "agentic_impact": "OCR-based auditing instantly flags discrepancies between contracted rates and carrier invoices, preventing overpayment on accessorial charges.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "reverse_logistics_fraud_lead": {
+      "persona_id": "reverse_logistics_fraud_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Reverse Logistics / Fraud Lead",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · Mahindra & Mahindra Limited — Automotive & Farm Equipment",
+      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Return Fraud Sentinel to cut returns fraud abuse by 25–40%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Return Fraud Sentinel automatically analyzes item photos and packaging video feeds to detect wear or swapped tags — cuts returns fraud abuse by 25–40%.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career & ops roles"
+    },
+    "customer_experience_cx_lead": {
+      "persona_id": "customer_experience_cx_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Customer Experience (CX) Lead",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · Mahindra & Mahindra Limited — Automotive & Farm Equipment",
+      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Keep-It & Routing Advisor to lowers net return costs by 15–22%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Keep-It & Routing Advisor automatically evaluates salvage margins vs reverse freight to determine keep-it instant refunds — lowers net return costs by 15–22%.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career & ops roles"
+    },
+    "claims_specialist_controller": {
+      "persona_id": "claims_specialist_controller",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Claims Specialist / Controller",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · Mahindra & Mahindra Limited — Automotive & Farm Equipment",
+      "summary": "Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with OS&D Freight Claims to resolve carrier claims in <72 hours.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "OS&D Freight Claims automatically reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes — resolves carrier claims in <72 hours.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career & ops roles"
+    },
+    "merchandising_store_ops_mgr": {
+      "persona_id": "merchandising_store_ops_mgr",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Merchandising / Store Ops Mgr",
+      "title": "Senior Manager - Spares Supply Chain",
+      "role": "Managing spare parts inventory health across regional depots",
+      "summary": "He oversees the stock levels of mHawk and mStallion engine components across Mahindra's regional spare parts warehouses to ensure high fill rates for dealerships.",
+      "manual_toil": "Manually reviewing SAP S/4HANA reports to identify slow-moving tractor parts before they reach technical obsolescence or phase-out.",
+      "agentic_impact": "Automates price adjustments for aging spare parts to clear warehouse space for newer SUV model components.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "inventory_disposition_lead": {
+      "persona_id": "inventory_disposition_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Inventory Disposition Lead",
+      "title": "Head - Spare Parts Inventory & Planning",
+      "role": "Optimizing stock disposition and inter-depot transfers",
+      "summary": "She coordinates the movement of slow-moving FES and AD spares between regional stockyards to minimize dead stock and maximize availability.",
+      "manual_toil": "Using spreadsheets to match excess inventory in Haridwar with demand spikes in southern regional depots.",
+      "agentic_impact": "Predictively redistributes near-obsolescence parts to high-demand service centers before they require deep markdowns.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "cso_circular_lead": {
+      "persona_id": "cso_circular_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Head - Sustainability & Circular Economy",
+      "role": "Driving zero-waste and component remanufacturing initiatives",
+      "summary": "He leads the 'Mahindra Re-use' program, focusing on the recovery of warranty-returned engines and transmissions for remanufacturing or recycling.",
+      "manual_toil": "Manually tracking the carbon footprint of scrapped metal and rubber components across multiple manufacturing units.",
+      "agentic_impact": "Generates real-time ESG reports on material diversion from landfills by tracking the lifecycle of returned mHawk engine blocks.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career portals & supply chain roles"
+    },
+    "asset_recovery_rti_manager": {
+      "persona_id": "asset_recovery_rti_manager",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Asset Recovery / RTI Manager",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · Mahindra & Mahindra Limited — Automotive & Farm Equipment",
+      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with RTI Balance Reconciler to eliminate 30% in non-return fee fines.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "RTI Balance Reconciler automatically reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes — eliminates 30% in non-return fee fines.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career & ops roles"
+    },
+    "reverse_transport_planner": {
+      "persona_id": "reverse_transport_planner",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Reverse Transport Planner",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · Mahindra & Mahindra Limited — Automotive & Farm Equipment",
+      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Milk-Run Consolidation to boost backhaul fill rate by 25–40%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Milk-Run Consolidation automatically schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores — boosts backhaul fill rate by 25–40%.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career & ops roles"
+    },
+    "packaging_qa_food_safety": {
+      "persona_id": "packaging_qa_food_safety",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Packaging QA / Food Safety",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · Mahindra & Mahindra Limited — Automotive & Farm Equipment",
+      "summary": "Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Sanitation & Health Agent to extends reusable lifecycle by 15–20%.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Sanitation & Health Agent automatically inspects return photos and wash logs for structural fatigue and chemical compliance — extends reusable lifecycle by 15–20%.",
+      "grounding_source": "Grounded in Mahindra & Mahindra Limited career & ops roles"
+    }
+  },
+  "agent_relevance": {
+    "demand_sensing_agent": {
+      "agent_id": "demand_sensing_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Sensing Agent",
+      "custom_agent_name": "AFS Market Pulse Agent",
+      "is_relevant": true,
+      "division_context": "Synthesizes rural monsoon data, tractor registration trends (Vahan), and SUV booking velocity to refine short-term forecasts.",
+      "hidden_reason": ""
+    },
+    "cpfr_sync_agent": {
+      "agent_id": "cpfr_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Forecast Reconciliation",
+      "custom_agent_name": "Dealer-Plant Sync Agent",
+      "is_relevant": true,
+      "division_context": "Reconciles dealer-level stock bookings with factory production schedules to identify gaps in SUV and tractor availability.",
+      "hidden_reason": ""
+    },
+    "npi_demand_profiler": {
+      "agent_id": "npi_demand_profiler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "NPI Demand Profiler",
+      "custom_agent_name": "New Launch Profiler",
+      "is_relevant": true,
+      "division_context": "Predicts demand for new EV platforms or SUV facelifts by comparing features and price-ladders against previous flagship launches.",
+      "hidden_reason": ""
+    },
+    "promo_lift_simulator": {
+      "agent_id": "promo_lift_simulator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Promo ROI Simulator",
+      "custom_agent_name": "Scheme ROI Simulator",
+      "is_relevant": true,
+      "division_context": "Simulates the impact of exchange bonuses, festive discounts, and low-EMI offers on regional tractor and SUV sales volumes.",
+      "hidden_reason": ""
+    },
+    "field_beat_distributor_sync_agent": {
+      "agent_id": "field_beat_distributor_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "JBP Negotiation Agent",
+      "custom_agent_name": "Dealer JBP Agent",
+      "is_relevant": true,
+      "division_context": "Collaborates with franchised dealerships to create joint business plans, aligning local marketing with national AFS production.",
+      "hidden_reason": ""
+    },
+    "trade_scheme_claims_reconciler": {
+      "agent_id": "trade_scheme_claims_reconciler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Deduction Audit Agent",
+      "custom_agent_name": "Dealer Claim Auditor",
+      "is_relevant": true,
+      "division_context": "Uses OCR to audit dealer incentive claims against retail sales certificates and SAP records to prevent overpayment.",
+      "hidden_reason": ""
+    },
+    "sop_scenario_weaver": {
+      "agent_id": "sop_scenario_weaver",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Consensus & Gap Agent",
+      "custom_agent_name": "Capacity-Demand Balancer",
+      "is_relevant": true,
+      "division_context": "Models 'what-if' scenarios to resolve conflicts between high market demand and engine/transmission plant constraints.",
+      "hidden_reason": ""
+    },
+    "disruption_war_room_orchestrator": {
+      "agent_id": "disruption_war_room_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Digital War-Room Agent",
+      "custom_agent_name": "Supply Crisis Orchestrator",
+      "is_relevant": true,
+      "division_context": "Evaluates the impact of Tier-1 supplier shortages on vehicle assembly lines at Chakan and Zaheerabad, suggesting allocation trade-offs.",
+      "hidden_reason": ""
+    },
+    "csco_control_tower_copilot": {
+      "agent_id": "csco_control_tower_copilot",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Executive Copilot",
+      "custom_agent_name": "AFS Executive Copilot",
+      "is_relevant": true,
+      "division_context": "Prepares executive summaries for AFS leadership, tracking KPIs across the Automotive and Farm Equipment sectors.",
+      "hidden_reason": ""
+    },
+    "working_capital_cash_bridge": {
+      "agent_id": "working_capital_cash_bridge",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "SKU Pruning Agent",
+      "custom_agent_name": "Variant Rationalization Agent",
+      "is_relevant": true,
+      "division_context": "Identifies low-performing vehicle trims and tractor variants to reduce manufacturing complexity and free up working capital.",
+      "hidden_reason": ""
+    },
+    "eco_cutover_orchestrator": {
+      "agent_id": "eco_cutover_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "PIPO Run-Out Agent",
+      "custom_agent_name": "Engineering Change Sync",
+      "is_relevant": true,
+      "division_context": "Manages the transition of components during vehicle facelifts or engine upgrades to ensure zero-waste part cutovers.",
+      "hidden_reason": ""
+    },
+    "network_twin_architect": {
+      "agent_id": "network_twin_architect",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Cost-to-Serve Diagnostic",
+      "custom_agent_name": "AFS Margin Diagnostic",
+      "is_relevant": true,
+      "division_context": "Calculates the total cost-to-serve for vehicles delivered from plants to regional stockyards and finally to dealerships.",
+      "hidden_reason": ""
+    },
+    "tier_n_risk_sentinel": {
+      "agent_id": "tier_n_risk_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Disruption Sensing Agent",
+      "custom_agent_name": "AFS Supply Chain Risk Sentinel",
+      "is_relevant": true,
+      "division_context": "Monitors global logistics bottlenecks and vendor financial stability to prevent production halts at the Chakan and Zaheerabad mega-plants.",
+      "hidden_reason": "Critical for automotive manufacturing where a single missing component can stop an entire assembly line."
+    },
+    "supplier_quality_sentinel": {
+      "agent_id": "supplier_quality_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Onboarding & Qual. Agent",
+      "custom_agent_name": "Automotive Quality & Compliance Agent",
+      "is_relevant": true,
+      "division_context": "Parses IATF 16949 and ISO audits for component suppliers, ensuring all parts for mHawk engines meet Mahindra's strict safety and performance standards.",
+      "hidden_reason": "Replaced food-safety context with automotive-specific quality standards like IATF 16949."
+    },
+    "carbon_scope3_ledger": {
+      "agent_id": "carbon_scope3_ledger",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "ESG & Scope 3 Auditor",
+      "custom_agent_name": "Mahindra Green-Sourcing Auditor",
+      "is_relevant": true,
+      "division_context": "Tracks the carbon intensity of steel, aluminum, and battery minerals, standardizing ESG reporting across the AD and FES supplier networks.",
+      "hidden_reason": "Essential for Mahindra's public commitment to carbon neutrality and sustainable manufacturing."
+    },
+    "commodity_index_advisor": {
+      "agent_id": "commodity_index_advisor",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Commodity Index Advisor",
+      "custom_agent_name": "Metal & Resin Market Advisor",
+      "is_relevant": true,
+      "division_context": "Tracks global steel, aluminum, and plastic resin indices to advise the sourcing team on the best time to lock in contracts.",
+      "hidden_reason": ""
+    },
+    "rfq_should_cost_agent": {
+      "agent_id": "rfq_should_cost_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Dynamic Should-Cost Agent",
+      "custom_agent_name": "Automotive Should-Cost Agent",
+      "is_relevant": true,
+      "division_context": "Deconstructs supplier quotes for vehicle components based on raw material weights, manufacturing energy, and labor rates.",
+      "hidden_reason": ""
+    },
+    "sustainable_packaging_agent": {
+      "agent_id": "sustainable_packaging_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Sustainable Packaging Agent",
+      "custom_agent_name": "Returnable Packaging Optimizer",
+      "is_relevant": true,
+      "division_context": "Evaluates the transition from single-use packaging to returnable steel racks and plastic bins to meet Mahindra's ESG goals.",
+      "hidden_reason": ""
+    },
+    "tariff_esg_agent": {
+      "agent_id": "tariff_esg_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Contract Leakage Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Mahindra & Mahindra Limited — Automotive & Farm Equipment.",
+      "hidden_reason": ""
+    },
+    "master_data_leadtime_steward": {
+      "agent_id": "master_data_leadtime_steward",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "PO Expediting Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Mahindra & Mahindra Limited — Automotive & Farm Equipment.",
+      "hidden_reason": ""
+    },
+    "three_way_match_dispute": {
+      "agent_id": "three_way_match_dispute",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Three-Way Match Dispute",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Mahindra & Mahindra Limited — Automotive & Farm Equipment.",
+      "hidden_reason": ""
+    },
+    "finite_production_scheduler": {
+      "agent_id": "finite_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Changeover Optimizer",
+      "custom_agent_name": "Mixed-Model Sequence Optimizer",
+      "is_relevant": true,
+      "division_context": "Optimizes the assembly sequence for SUVs and tractors on shared lines, balancing paint shop constraints with component availability from SAP Ariba.",
+      "hidden_reason": ""
+    },
+    "line_schedule_optimizer": {
+      "agent_id": "line_schedule_optimizer",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Disruption Re-sequencer",
+      "custom_agent_name": "Assembly Line Re-Sequencer",
+      "is_relevant": true,
+      "division_context": "Detects machine breakdowns or part shortages on the line and instantly re-routes the production flow to maintain Takt time.",
+      "hidden_reason": ""
+    },
+    "labor_line_balancing_agent": {
+      "agent_id": "labor_line_balancing_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Labor & Line Balancing",
+      "custom_agent_name": "Skill-Based Line Balancer",
+      "is_relevant": true,
+      "division_context": "Maps technician certifications and fatigue levels to specific assembly stations to ensure safe and efficient vehicle build-out.",
+      "hidden_reason": ""
+    },
+    "predictive_oee_sentinel": {
+      "agent_id": "predictive_oee_sentinel",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Bottleneck Diagnostic",
+      "custom_agent_name": "Plant Utility & OEE Sentinel",
+      "is_relevant": true,
+      "division_context": "Monitors energy consumption and machine health across Chakan and Zaheerabad to predict bottlenecks before they stop the line.",
+      "hidden_reason": ""
+    },
+    "copacker_allocation_agent": {
+      "agent_id": "copacker_allocation_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Co-Packer Allocation",
+      "custom_agent_name": "Aggregate Sourcing Optimizer",
+      "is_relevant": true,
+      "division_context": "Models the cost-benefit of in-house manufacturing versus outsourcing sub-assemblies like tractor implements to Tier-1 partners.",
+      "hidden_reason": ""
+    },
+    "capex_simulator_agent": {
+      "agent_id": "capex_simulator_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "CapEx Simulator",
+      "custom_agent_name": "Capacity Expansion Simulator",
+      "is_relevant": true,
+      "division_context": "Simulates future SUV and EV volume growth to determine when and where to invest in new assembly lines or robotic cells.",
+      "hidden_reason": ""
+    },
+    "inline_yield_guardian": {
+      "agent_id": "inline_yield_guardian",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Visual Defect Triager",
+      "custom_agent_name": "Visual Quality Guardian",
+      "is_relevant": true,
+      "division_context": "Analyzes high-speed camera feeds on the assembly line to detect paint defects, panel gaps, or missing fasteners in real-time.",
+      "hidden_reason": ""
+    },
+    "batch_record_auditor": {
+      "agent_id": "batch_record_auditor",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Batch Record Auditor",
+      "custom_agent_name": "Vehicle Build Record Auditor",
+      "is_relevant": true,
+      "division_context": "Automatically audits digital birth certificates and torque logs for every vehicle to ensure 100% compliance with safety standards.",
+      "hidden_reason": ""
+    },
+    "scrap_defect_root_cause_agent": {
+      "agent_id": "scrap_defect_root_cause_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "RCA & CAPA Copilot",
+      "custom_agent_name": "Warranty & Quality RCA Copilot",
+      "is_relevant": true,
+      "division_context": "Correlates dealership warranty claims with factory telemetry and supplier lot codes to identify the root cause of quality issues.",
+      "hidden_reason": ""
+    },
+    "meio_safety_stock_agent": {
+      "agent_id": "meio_safety_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Safety Stock Agent",
+      "custom_agent_name": "Spares Buffer Optimizer",
+      "is_relevant": true,
+      "division_context": "Recalibrates safety stock for critical engine and tractor components across Mahindra's multi-tier depot network using live demand variance.",
+      "hidden_reason": ""
+    },
+    "slob_disposition_agent": {
+      "agent_id": "slob_disposition_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "SLOB Disposition Agent",
+      "custom_agent_name": "Legacy Parts Disposition Agent",
+      "is_relevant": true,
+      "division_context": "Identifies slow-moving parts for older SUV and tractor models, suggesting service bundles or dealer promotions to clear aging inventory.",
+      "hidden_reason": ""
+    },
+    "crossdock_transfer_orchestrator": {
+      "agent_id": "crossdock_transfer_orchestrator",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inter-Facility Rebalancer",
+      "custom_agent_name": "Inter-Depot Stock Balancer",
+      "is_relevant": true,
+      "division_context": "Automates the transfer of finished vehicles and spares between regional stockyards to resolve localized gluts or shortages.",
+      "hidden_reason": ""
+    },
+    "warehouse_slotting_agent": {
+      "agent_id": "warehouse_slotting_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dynamic Slotting Agent",
+      "custom_agent_name": "Spares Slotting Optimizer",
+      "is_relevant": true,
+      "division_context": "Optimizes the layout of spare parts warehouses by placing frequently co-ordered items, like oil filters and gaskets, in adjacent bins.",
+      "hidden_reason": ""
+    },
+    "dock_to_stock_agent": {
+      "agent_id": "dock_to_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dock-to-Stock Agent",
+      "custom_agent_name": "Supplier ASN Reconciler",
+      "is_relevant": true,
+      "division_context": "Uses vision and data parsing to instantly reconcile inbound component shipments from Tier-1 suppliers against SAP purchase orders.",
+      "hidden_reason": ""
+    },
+    "wave_fulfillment_copilot": {
+      "agent_id": "wave_fulfillment_copilot",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Wave Fulfillment Copilot",
+      "custom_agent_name": "Dispatch Wave Copilot",
+      "is_relevant": true,
+      "division_context": "Dynamically manages warehouse picking waves to ensure that high-priority dealer orders for the AD and FES divisions meet carrier cutoffs.",
+      "hidden_reason": ""
+    },
+    "planogram_merchandising_vision_auditor": {
+      "agent_id": "planogram_merchandising_vision_auditor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Phantom Inventory Sensor",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Identifies 'phantom' vehicle inventory by cross-referencing dealer gate-out data with central SAP sales records to ensure digital booking accuracy.",
+      "hidden_reason": "Filtered for operational fit: B2B / non-retail store channel model."
+    },
+    "atp_order_promising_agent": {
+      "agent_id": "atp_order_promising_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "SFS / BOPIS Sourcing",
+      "custom_agent_name": "Multi-Node Unit Allocator",
+      "is_relevant": true,
+      "division_context": "Selects the best plant or regional stockyard to fulfill a customer's SUV or tractor order based on proximity and transport carrier availability.",
+      "hidden_reason": ""
+    },
+    "returns_triage_agent": {
+      "agent_id": "returns_triage_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Returns Triage Agent",
+      "custom_agent_name": "Spares Core Triage Agent",
+      "is_relevant": true,
+      "division_context": "Evaluates the condition of returned engine and transmission cores from dealerships to determine if they are fit for the Mahindra Remanufacturing program.",
+      "hidden_reason": ""
+    },
+    "load_consolidation_agent": {
+      "agent_id": "load_consolidation_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Load Consolidation",
+      "custom_agent_name": "Vehicle Carrier Load Optimizer",
+      "is_relevant": true,
+      "division_context": "Optimizes the mix of different vehicle models (e.g., Bolero vs. XUV) on a single trailer to maximize carrier capacity and reduce freight costs.",
+      "hidden_reason": ""
+    },
+    "yard_dock_sequencer": {
+      "agent_id": "yard_dock_sequencer",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Disruption Agent",
+      "custom_agent_name": "Plant Yard Disruption Agent",
+      "is_relevant": true,
+      "division_context": "Parses GPS feeds from car-carriers to dynamically re-assign loading bays at Chakan or Zaheerabad when transit delays occur.",
+      "hidden_reason": ""
+    },
+    "cold_chain_auditor": {
+      "agent_id": "cold_chain_auditor",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold-Chain Auditor",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Supports Finished Goods Logistics & Yard Management across Mahindra & Mahindra Limited — Automotive & Farm Equipment.",
+      "hidden_reason": "Filtered for operational fit: no refrigerated cold-chain perishables."
+    },
+    "aisle_aligned_pallet_agent": {
+      "agent_id": "aisle_aligned_pallet_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Aisle-Aligned Pallet",
+      "custom_agent_name": "Dealer-Ready Spares Sequencer",
+      "is_relevant": true,
+      "division_context": "Sequences spare parts picking at the DC so that items are packed according to the specific bin layout of the receiving dealership's workshop.",
+      "hidden_reason": ""
+    },
+    "store_capacity_agent": {
+      "agent_id": "store_capacity_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Capacity Agent",
+      "custom_agent_name": "Dealer Yard Capacity Agent",
+      "is_relevant": true,
+      "division_context": "Throttles vehicle shipments based on the physical parking limits of the dealership and their current retail sales velocity.",
+      "hidden_reason": ""
+    },
+    "port_drayage_orchestrator": {
+      "agent_id": "port_drayage_orchestrator",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Curfew Orchestrator",
+      "custom_agent_name": "Urban Delivery Orchestrator",
+      "is_relevant": true,
+      "division_context": "Coordinates vehicle carrier arrivals with city-specific 'no-entry' timings and dealer offloading staff availability.",
+      "hidden_reason": ""
+    },
+    "geocoding_intelligence_agent": {
+      "agent_id": "geocoding_intelligence_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Geocoding Intelligence",
+      "custom_agent_name": "Dealer Access Intelligence",
+      "is_relevant": true,
+      "division_context": "Interprets specific dealership gate constraints and rural road suitability for large car-carriers and tractor flatbeds across India.",
+      "hidden_reason": ""
+    },
+    "multimodal_mode_shift_agent": {
+      "agent_id": "multimodal_mode_shift_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Courier Allocation",
+      "custom_agent_name": "Spares Fulfillment Optimizer",
+      "is_relevant": true,
+      "division_context": "Routes mHawk/mStallion engine components and tractor spares across 3PLs and internal depots to meet urgent dealer service requirements.",
+      "hidden_reason": ""
+    },
+    "otif_penalty_shield": {
+      "agent_id": "otif_penalty_shield",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Delivery Exception Copilot",
+      "custom_agent_name": "Dealer Delivery Copilot",
+      "is_relevant": true,
+      "division_context": "Monitors vehicle shipments from Chakan/Zaheerabad and alerts dealers of delays, protecting Mahindra's dealer satisfaction scores.",
+      "hidden_reason": ""
+    },
+    "fleetflow_dispatch": {
+      "agent_id": "fleetflow_dispatch",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Dynamic Rerouter",
+      "custom_agent_name": "Mega-Carrier Rerouter",
+      "is_relevant": true,
+      "division_context": "Dynamically adjusts routes for multi-car transporters based on live Indian traffic, monsoon alerts, and heavy-vehicle road restrictions.",
+      "hidden_reason": ""
+    },
+    "freight_control_tower": {
+      "agent_id": "freight_control_tower",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Routing Guide Compliance",
+      "custom_agent_name": "Carrier Compliance Monitor",
+      "is_relevant": true,
+      "division_context": "Tracks carrier tender acceptance for AD and FES shipments, ensuring the most reliable transporters are prioritized in the routing guide.",
+      "hidden_reason": ""
+    },
+    "freight_bill_audit_agent": {
+      "agent_id": "freight_bill_audit_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Bill Audit Agent",
+      "custom_agent_name": "Logistics Invoice Auditor",
+      "is_relevant": true,
+      "division_context": "Audits freight bills against SAP S/4HANA contracts and digital PODs to eliminate manual errors in fuel and detention surcharges.",
+      "hidden_reason": ""
+    },
+    "reverse_rma_optimizer": {
+      "agent_id": "reverse_rma_optimizer",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Return Fraud Sentinel",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across Mahindra & Mahindra Limited — Automotive & Farm Equipment.",
+      "hidden_reason": ""
+    },
+    "keep_it_routing_advisor": {
+      "agent_id": "keep_it_routing_advisor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Keep-It & Routing Advisor",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Supports Returns & Claims Mgmt across Mahindra & Mahindra Limited — Automotive & Farm Equipment.",
+      "hidden_reason": "Filtered for operational fit: B2B / non-retail store channel model."
+    },
+    "osd_freight_claims_agent": {
+      "agent_id": "osd_freight_claims_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "OS&D Freight Claims",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across Mahindra & Mahindra Limited — Automotive & Farm Equipment.",
+      "hidden_reason": ""
+    },
+    "dynamic_markdown_agent": {
+      "agent_id": "dynamic_markdown_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Dynamic Markdown Agent",
+      "custom_agent_name": "Spares Obsolescence Optimizer",
+      "is_relevant": true,
+      "division_context": "Correlates the age of vehicle components with dealership demand to trigger price reductions on slow-moving legacy tractor and SUV spares.",
+      "hidden_reason": "Relevant for managing the financial impact of aging automotive and farm equipment spare parts."
+    },
+    "short_dated_redistributor": {
+      "agent_id": "short_dated_redistributor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Short-Dated Redistributor",
+      "custom_agent_name": "Inter-Depot Stock Balancer",
+      "is_relevant": true,
+      "division_context": "Identifies excess spare parts in regional depots and matches them with service centers facing stockouts before parts are written off.",
+      "hidden_reason": "Critical for Mahindra's extensive network of regional spare parts depots and dealerships."
+    },
+    "food_waste_esg_copilot": {
+      "agent_id": "food_waste_esg_copilot",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Food Waste & ESG Copilot",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Tracks the diversion of scrapped automotive components and warranty returns into recycling streams to generate audited sustainability reports.",
+      "hidden_reason": "Filtered for operational fit: non-food product & operations portfolio."
+    },
+    "rti_balance_reconciler": {
+      "agent_id": "rti_balance_reconciler",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "RTI Balance Reconciler",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Mahindra & Mahindra Limited — Automotive & Farm Equipment.",
+      "hidden_reason": ""
+    },
+    "intermodal_rail_linehaul_agent": {
+      "agent_id": "intermodal_rail_linehaul_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Milk-Run Consolidation",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Mahindra & Mahindra Limited — Automotive & Farm Equipment.",
+      "hidden_reason": ""
+    },
+    "sanitation_health_agent": {
+      "agent_id": "sanitation_health_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Sanitation & Health Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Mahindra & Mahindra Limited — Automotive & Farm Equipment.",
+      "hidden_reason": ""
+    }
+  },
+  "process_overrides": {
+    "f2f": {
+      "vc_id": "f2f",
+      "custom_title": "Vehicle & Tractor S&OP to Dealership Allocation",
+      "custom_subtitle": "Translating market demand for SUVs and farm equipment into production schedules and dealer allocations."
+    },
+    "o2d": {
+      "vc_id": "o2d",
+      "custom_title": "Dealer Order to Vehicle Dispatch & Handover",
+      "custom_subtitle": "Processing dealership orders, allocating stock from regional yards, and executing outbound carrier transport."
+    },
+    "s2p": {
+      "vc_id": "s2p",
+      "custom_title": "Component Sourcing to Tier-1 Supplier Payment",
+      "custom_subtitle": "Procuring raw materials and automotive sub-assemblies, managing quality intake, and settling supplier invoices."
+    },
+    "p2r": {
+      "vc_id": "p2r",
+      "custom_title": "Warranty Claims, Spares Reverse Logistics & End-of-Life",
+      "custom_subtitle": "Processing defective parts returned by dealerships, managing warranty payouts, and handling obsolete spares."
+    }
+  },
+  "hidden_agent_ids": [
+    "cold_chain_auditor",
+    "food_waste_esg_copilot",
+    "keep_it_routing_advisor",
+    "planogram_merchandising_vision_auditor"
+  ],
+  "hidden_persona_ids": [
+    "cold_chain_qa_logistics_dir",
+    "cso_circular_lead",
+    "customer_experience_cx_lead",
+    "store_operations_omni_lead"
+  ],
+  "active_pillars_count": 7,
+  "active_agents_count": 56,
+  "active_personas_count": 56,
+  "active_sub_pillars_count": 20,
+  "grounding_citations": [
+    {
+      "title": "Mahindra & Mahindra — Corporate Profile",
+      "url": "https://en.wikipedia.org/wiki/Mahindra_%26_Mahindra",
+      "snippet": ""
+    },
+    {
+      "title": "Mahindra & Mahindra Limited Official Brand Mark",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Mahindra_Electric_SUVs_Logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "snippet": ""
+    }
+  ],
+  "career_title_examples": [
+    "Head of Supply Chain Management (SCM)",
+    "VP - Strategic Sourcing & Procurement",
+    "Plant Head - Automotive Division",
+    "General Manager - Logistics & Outbound",
+    "Head - Supplier Quality Assurance",
+    "Demand Planning Lead - FES",
+    "Senior Manager - Spares Supply Chain"
+  ],
+  "terminology_highlights": [
+    "FES (Farm Equipment Sector) — The division responsible for manufacturing tractors and agricultural implements globally.",
+    "AD (Automotive Division) — The division producing SUVs, commercial vehicles, and electric vehicles.",
+    "mHawk / mStallion — Mahindra's proprietary diesel and gasoline engine families manufactured in-house.",
+    "Krish-e — Mahindra's Farming as a Service (FaaS) business offering agronomy advisory and equipment rental."
+  ],
+  "created_at": "2026-11-05T05:30:34.426435+00:00",
+  "updated_at": "2026-11-05T05:30:34.426435+00:00",
+  "generation_model": "Gemini 3.1 Pro / 4 Argon + Gemini 3.8 Flash (Google Search Grounded)"
+}

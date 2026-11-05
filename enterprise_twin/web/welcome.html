@@ -788,8 +788,8 @@
   <!-- Minimal Top Header with Segmented Mode Tabs -->
   <header class="studio-topbar">
     <div class="brand-lockup">
-      <div class="brand-hex">⛓️</div>
-      <div class="brand-title">Supply Chain Studio</div>
+      <div class="brand-hex">✦</div>
+      <div class="brand-title">Gemini &times; Enterprise Studio</div>
     </div>
 
     <nav class="mode-tabs" aria-label="Studio Navigation">
@@ -816,13 +816,13 @@
     <section class="journey-hero">
       <div class="hero-kicker fly-up is-visible">
         <span class="hero-dot"></span>
-        <span>Gemini Enterprise · Supply Chain</span>
+        <span>Gemini Enterprise &times; Your Company &middot; Supply Chain</span>
       </div>
       <h1 class="journey-h1 fly-up is-visible delay-1">
-        Welcome to <span class="grad">Supply Chain</span>
+        Gemini &times; <span class="grad">Your Supply Chain</span>
       </h1>
       <p class="journey-sub fly-up is-visible delay-2">
-        Tailor the agentic supply chain to your enterprise and division.
+        AI researches your company, career portals, facilities, and official brand mark to build a tailored agentic supply chain portal.
       </p>
       <div class="hero-actions fly-up is-visible delay-3">
         <button type="button" class="btn-begin" onclick="scrollToJourneyStep('stepOrg')">
@@ -851,7 +851,7 @@
           <div class="form-grid-2">
             <div>
               <label class="field-label" for="companyInput">Company Name *</label>
-              <input id="companyInput" class="sc-input" type="text" required placeholder="e.g., ITC Limited, Unilever, Aditya Birla" value="" />
+              <input id="companyInput" class="sc-input" type="text" required placeholder="e.g., ITC Limited, Unilever, Aditya Birla, Mahindra" value="" />
             </div>
             <div>
               <label class="field-label" for="geographyInput">Primary Region</label>
@@ -892,13 +892,13 @@
               </div>
               <label class="checkbox-row">
                 <input type="checkbox" id="forceRefreshCheck" checked />
-                <span>Run fresh real-time AI web &amp; career research (uncheck to reuse saved cache)</span>
+                <span>Run fresh real-time AI web &amp; career-portal research (uncheck to reuse saved cache)</span>
               </label>
             </div>
           </details>
 
           <button type="submit" class="btn-synthesize" id="generateSubmitBtn">
-            <span>✦ Synthesize Portal &rarr;</span>
+            <span>✦ Synthesize Gemini &times; Company Portal &rarr;</span>
           </button>
         </form>
       </div>
@@ -908,29 +908,29 @@
     <section id="stepFlow" class="journey-stage">
       <div class="stage-step-head fly-up">
         <span class="step-num-pill">STEP 02</span>
-        <h2 class="stage-h2">Live Portal Synthesis</h2>
+        <h2 class="stage-h2">AI Company &amp; Career-Portal Intelligence</h2>
       </div>
 
       <div class="flow-trio">
         <div class="flow-node-card fly-up" id="stLogo">
           <div class="flow-icon">🏷️</div>
-          <div class="flow-kicker">01 · BRAND &amp; RESEARCH</div>
-          <div class="flow-title">Web &amp; Logo Discovery</div>
-          <div class="flow-sub">Live Google Search &amp; official mark</div>
+          <div class="flow-kicker">01 &middot; GEMINI 3.1 PRO / 4 ARGON</div>
+          <div class="flow-title">Deep Web &amp; Co-Brand Logo</div>
+          <div class="flow-sub">Live Google Search grounds annual filings, plants, ERPs &amp; frames your official Gemini &times; Company mark.</div>
         </div>
 
         <div class="flow-node-card fly-up delay-1" id="stPillars">
           <div class="flow-icon">🧭</div>
-          <div class="flow-kicker">02 · ORG PILLARS &amp; ROLES</div>
-          <div class="flow-title">Custom Pillars &amp; Jobs</div>
-          <div class="flow-sub">4–8 pillars, 20 flows &amp; 60 roles</div>
+          <div class="flow-kicker">02 &middot; CAREER PORTALS &amp; ROLES</div>
+          <div class="flow-title">Job Portals &amp; Org Pillars</div>
+          <div class="flow-sub">Mines LinkedIn, Naukri, Glassdoor &amp; corporate careers to craft 4–8 custom pillars &amp; 60 role stories.</div>
         </div>
 
         <div class="flow-node-card fly-up delay-2" id="stFilter">
           <div class="flow-icon">✦</div>
-          <div class="flow-kicker">03 · AGENT SELECTION</div>
-          <div class="flow-title">Smart Agent Fit</div>
-          <div class="flow-sub">Reuse &amp; filter 60 core AI agents</div>
+          <div class="flow-kicker">03 &middot; GEMINI 3.8 FLASH</div>
+          <div class="flow-title">Smart 60-Agent Stories</div>
+          <div class="flow-sub">Parallel specialists write crisp 2-line agent stories and hide inapplicable channel agents.</div>
         </div>
       </div>
 
@@ -1112,14 +1112,20 @@
         const active = t.active_agents_count || 60;
         const pCount = t.active_pillars_count || 6;
         const portalUrl = `/t/${encodeURIComponent(t.twin_slug)}`;
+        const coName = t.canonical_name || t.company_name;
+        const thesis = t.executive_thesis || '';
         return `
           <div class="twin-card">
-            <div class="twin-id-row">
-              ${renderLogoPlate(t, t.canonical_name || t.company_name)}
-              <div style="min-width:0;">
-                <div class="twin-co-name">${escHtml(t.canonical_name || t.company_name)}</div>
-                <span class="twin-div-pill">${escHtml(t.division_name || 'Enterprise Supply Chain')}</span>
+            <div style="display:flex; flex-direction:column; gap:11px;">
+              <div class="twin-id-row">
+                ${renderLogoPlate(t, coName)}
+                <div style="min-width:0;">
+                  <div style="font-family:var(--font-mono); font-size:10.5px; font-weight:700; letter-spacing:0.06em; color:var(--sc-cyan); text-transform:uppercase; margin-bottom:3px;">✦ Gemini &times; ${escHtml(coName)}</div>
+                  <div class="twin-co-name">${escHtml(coName)}</div>
+                  <span class="twin-div-pill">${escHtml(t.division_name || 'Enterprise Supply Chain')}</span>
+                </div>
               </div>
+              ${thesis ? `<div style="font-size:12.5px; line-height:1.48; color:var(--text-secondary); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${escHtml(thesis)}</div>` : ''}
             </div>
             <div class="twin-meta-row">
               <span class="twin-agent-count">✦ ${pCount} Pillars · ${active}/60 Agents</span>

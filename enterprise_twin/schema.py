@@ -65,13 +65,21 @@ def clamp_brand_hex(hex_str: str, fallback: str = "#38bdf8") -> str:
     return f"#{r:02x}{g:02x}{b:02x}"
 
 
-def clean_ui_text(val: Optional[str], max_len: int = 280) -> str:
-    """Strips stray control chars/markdown fences so DOM injection never breaks layout."""
+def clean_ui_text(val: Optional[str], max_len: int = 340) -> str:
+    """Strips stray control chars/markdown fences and trims cleanly at sentence boundaries."""
     if not val:
         return ""
     s = re.sub(r"\s+", " ", str(val)).strip()
     s = s.replace("```", "").replace("<script", "").replace("</script", "")
     if len(s) > max_len:
+        window = s[:max_len]
+        # Prefer ending cleanly on a complete sentence if one finishes past 55% of max_len
+        for punct in (". ", "! ", "? "):
+            idx = window.rfind(punct)
+            if idx >= int(max_len * 0.55):
+                return window[: idx + 1].strip()
+        if window.endswith("."):
+            return window.strip()
         s = s[: max_len - 1].rsplit(" ", 1)[0].rstrip(".,;:") + "…"
     return s
 
@@ -357,22 +365,22 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
                     if len(rel_in_dept) >= 3:
                         break
 
-    # Clean all Persona & Agent strings
+    # Clean all Persona & Agent strings (2-line plain-English story budgets)
     for pid, po in spec.persona_overrides.items():
         p_base_name = personas_cat.get(pid, {}).get("name", pid)
-        po.title = clean_ui_text(po.title or p_base_name, 88)
-        po.role = clean_ui_text(po.role or p_base_name, 110)
-        po.summary = clean_ui_text(po.summary, 260)
-        po.manual_toil = clean_ui_text(po.manual_toil, 220)
-        po.agentic_impact = clean_ui_text(po.agentic_impact, 220)
-        po.grounding_source = clean_ui_text(po.grounding_source, 110)
+        po.title = clean_ui_text(po.title or p_base_name, 92)
+        po.role = clean_ui_text(po.role or p_base_name, 120)
+        po.summary = clean_ui_text(po.summary, 340)
+        po.manual_toil = clean_ui_text(po.manual_toil, 280)
+        po.agentic_impact = clean_ui_text(po.agentic_impact, 280)
+        po.grounding_source = clean_ui_text(po.grounding_source, 120)
 
     hidden_agents: List[str] = []
     hidden_personas: List[str] = []
     for aid, ar in spec.agent_relevance.items():
-        ar.division_context = clean_ui_text(ar.division_context, 220)
-        ar.hidden_reason = clean_ui_text(ar.hidden_reason, 160)
-        ar.custom_agent_name = clean_ui_text(ar.custom_agent_name, 54)
+        ar.division_context = clean_ui_text(ar.division_context, 300)
+        ar.hidden_reason = clean_ui_text(ar.hidden_reason, 175)
+        ar.custom_agent_name = clean_ui_text(ar.custom_agent_name, 56)
         if not ar.is_relevant or ar.custom_agent_name == ar.canonical_name:
             ar.custom_agent_name = ""
         if not ar.is_relevant:
@@ -468,8 +476,8 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
         else:
             parts = raw_badge.split("·", 1)
             cp.scor_badge = f"{v_num} · {parts[1].strip()}" if len(parts) > 1 else f"{v_num} · {raw_badge}"
-        cp.tagline = clean_ui_text(cp.tagline, 72) or f"{spec.display_label} · {cp.name}"
-        cp.subtitle = clean_ui_text(cp.subtitle, 165) or f"Orchestrating {cp.name.lower()} across {spec.display_label}."
+        cp.tagline = clean_ui_text(cp.tagline, 78) or f"{spec.display_label} · {cp.name}"
+        cp.subtitle = clean_ui_text(cp.subtitle, 190) or f"Orchestrating {cp.name.lower()} across {spec.display_label}."
         cp.color = distinct_colors[idx]
         if cp.watermark_type not in VALID_WATERMARK_TYPES:
             cp.watermark_type = _infer_watermark_for_subpillars(cp.sub_pillar_ids, idx)
@@ -478,10 +486,10 @@ def validate_and_normalize_overlay(spec: TwinOverlaySpec) -> TwinOverlaySpec:
     spec.active_pillars_count = len(final_pillars)
 
     # Ensure HTML-safe strings on brand thesis & title
-    spec.brand.executive_title = clean_ui_text(spec.brand.executive_title, 115)
-    spec.brand.executive_thesis = clean_ui_text(spec.brand.executive_thesis, 280)
-    spec.brand.flagship_sites = clean_ui_text(spec.brand.flagship_sites, 220)
-    spec.brand.erp_systems = clean_ui_text(spec.brand.erp_systems, 180)
+    spec.brand.executive_title = clean_ui_text(spec.brand.executive_title, 120)
+    spec.brand.executive_thesis = clean_ui_text(spec.brand.executive_thesis, 420)
+    spec.brand.flagship_sites = clean_ui_text(spec.brand.flagship_sites, 260)
+    spec.brand.erp_systems = clean_ui_text(spec.brand.erp_systems, 210)
     _ = html.escape(spec.display_label)
 
     return spec

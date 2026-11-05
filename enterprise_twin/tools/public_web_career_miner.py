@@ -65,8 +65,12 @@ def fetch_wikipedia_company_summary(company_name: str, division_name: str = "") 
 
 
 def search_public_career_titles(company_name: str, division_name: str = "") -> List[str]:
-    """Extracts real supply chain job titles for `company_name` from public search result titles."""
-    q = f'"{company_name}" {division_name} ("Supply Chain" OR "Procurement" OR "Logistics" OR "Planning" OR "Operations") (site:linkedin.com/jobs OR site:naukri.com OR careers)'
+    """Extracts real supply chain job titles for `company_name` from public career portals & job boards."""
+    q = (
+        f'"{company_name}" {division_name} '
+        f'("Supply Chain" OR "Procurement" OR "Logistics" OR "Demand Planning" OR "Manufacturing" OR "Warehouse" OR "Sourcing") '
+        f'(site:linkedin.com/jobs OR site:naukri.com OR site:indeed.com OR site:glassdoor.com OR careers)'
+    )
     ddg_url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(q)}"
     page = _http_text(ddg_url, timeout=5.5)
     if not page:
@@ -75,17 +79,21 @@ def search_public_career_titles(company_name: str, division_name: str = "") -> L
     raw_titles = re.findall(r'class="result__a"[^>]*>(.*?)</a>', page, flags=re.IGNORECASE | re.DOTALL)
     discovered: List[str] = []
     role_kw = re.compile(
-        r"\b(Manager|Director|Head|VP|Vice President|Lead|Executive|Officer|Planner|Controller|Engineer|Supervisor)\b",
+        r"\b(Manager|Director|Head|VP|Vice President|Lead|Executive|Officer|Planner|Controller|Engineer|Supervisor|Buyer|Specialist|Coordinator)\b",
         re.IGNORECASE,
     )
     for rt in raw_titles:
         clean = html.unescape(re.sub(r"<[^>]+>", "", rt)).strip()
-        # Strip trailing "- LinkedIn", "| Naukri.com", company suffixes
-        clean = re.split(r"\s+[\-\|\–]\s+(?:LinkedIn|Naukri|Glassdoor|Indeed|Jobs|Careers)", clean, flags=re.IGNORECASE)[0].strip()
-        clean = re.sub(rf"^.*?hiring\s+", "", clean, flags=re.IGNORECASE)
-        clean = re.sub(rf"\s+in\s+[A-Z][a-zA-Z\s,]+$", "", clean).strip()
-        if 12 <= len(clean) <= 84 and role_kw.search(clean) and clean not in discovered:
+        # Strip trailing "- LinkedIn", "| Naukri.com", "| Glassdoor", company suffixes
+        clean = re.split(
+            r"\s+[\-\|\–]\s+(?:LinkedIn|Naukri|Glassdoor|Indeed|Workday|Greenhouse|Lever|Jobs|Careers)",
+            clean,
+            flags=re.IGNORECASE,
+        )[0].strip()
+        clean = re.sub(r"^.*?hiring\s+", "", clean, flags=re.IGNORECASE)
+        clean = re.sub(r"\s+in\s+[A-Z][a-zA-Z\s,]+$", "", clean).strip()
+        if 10 <= len(clean) <= 86 and role_kw.search(clean) and clean not in discovered:
             discovered.append(clean)
-        if len(discovered) >= 6:
+        if len(discovered) >= 8:
             break
     return discovered
