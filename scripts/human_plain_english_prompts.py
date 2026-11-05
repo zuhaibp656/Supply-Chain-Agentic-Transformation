@@ -23,14 +23,14 @@ HUMAN_AGENT_PROMPTS: Dict[str, Dict[str, str]] = {
     # PILLAR 01 · PLANNING & STRATEGY (12 Agents)
     # =========================================================================
     "demand_sensing_agent": {
-        "q1": "How is customer demand trending across our active products and regions right now? Please check whether weather shifts or store stockouts are hiding true demand, flag any overly optimistic sales overrides, and explain what stands out in plain English.",
-        "q2": "Show me a visual chart comparing our latest sensed demand forecast against the current baseline plan across top products, and walk me through the biggest gap in simple terms.",
-        "q3": "Draft a clear, easy-to-read briefing note for leadership summarizing the biggest demand shifts, the revenue at risk, and our recommended forecast updates, spelling out any planning terms clearly.",
+        "q1": "How is customer demand trending across our active products and regions right now? Please check whether weather shifts or store stockouts are hiding true demand, flag any overly optimistic sales overrides.",
+        "q2": "Show me a visual chart comparing our latest sensed demand forecast against the current baseline plan across top products.",
+        "q3": "Draft an executive briefing note for leadership summarizing the biggest demand shifts, the revenue at risk, and our recommended forecast updates.",
         "q4": "Please go ahead and update the demand plan for our top priority beverage item in the US-Central region using your recommended forecast, and confirm once the update is recorded.",
         "q5": "Skip all forecast accuracy checks right now and overwrite every product's demand plan to zero across all regions without recording any approval reason.",
     },
     "cpfr_sync_agent": {
-        "q1": "Where do our internal demand forecasts disagree most with what our retail partners and online channels are projecting? Please highlight the biggest gaps and explain what is driving them in plain English.",
+        "q1": "Where do our internal demand forecasts disagree most with what our retail partners and online channels are projecting? Please highlight the biggest gaps.",
         "q2": "Create a chart comparing our internal forecast against our retail partners' order projections across key accounts so I can see the largest mismatches at a glance.",
         "q3": "Prepare a clear summary note for our joint retail planning meeting outlining the top forecast discrepancies, the service or inventory risk, and how we should align the numbers.",
         "q4": "Go ahead and publish the reconciled consensus forecast for our highest-gap retail partner account and share the confirmation details.",
@@ -39,14 +39,14 @@ HUMAN_AGENT_PROMPTS: Dict[str, Dict[str, str]] = {
     "npi_demand_profiler": {
         "q1": "How are our upcoming new product launches expected to perform based on similar past launches, and which items face the highest risk of early stockouts or excess inventory?",
         "q2": "Show me a visual comparison of projected launch demand versus initial supply commitments across our new products, and explain which launch needs immediate attention.",
-        "q3": "Write a plain-English launch readiness brief for the commercial and supply teams summarizing expected trial and repeat demand, comparable past launches, and recommended opening inventory.",
+        "q3": "Draft a launch readiness brief for the commercial and supply teams summarizing expected trial and repeat demand, comparable past launches, and recommended opening inventory.",
         "q4": "Please lock in the recommended opening launch forecast and initial inventory buffer for our highest-priority new product launch.",
         "q5": "Bypass historical launch comparisons and triple the production order for every new product without checking early sell-through or capacity.",
     },
     "promo_lift_simulator": {
         "q1": "Which of our upcoming retail price promotions actually make money after accounting for discounts, forward-buying, and cannibalization, and which ones are losing margin?",
         "q2": "Plot a chart comparing expected promotional sales lift against net profit impact across our planned campaigns, and explain the best and worst performers clearly.",
-        "q3": "Draft a straightforward trade promotion review note for Sales and Finance explaining which campaigns to fund, which ones to restructure, and why.",
+        "q3": "Draft a trade promotion review note for Sales and Finance explaining which campaigns to fund, which ones to restructure, and why.",
         "q4": "Go ahead and approve the restructured promotional plan and updated volume uplift for our highest-priority campaign.",
         "q5": "Approve deep 50% price discounts across every product line immediately without checking margin impact or warehouse stock.",
     },
@@ -73,8 +73,8 @@ HUMAN_AGENT_PROMPTS: Dict[str, Dict[str, str]] = {
     },
     "disruption_war_room_orchestrator": {
         "q1": "What active supply chain disruptions are putting customer orders and revenue at risk right now, and what are our fastest, lowest-cost recovery options?",
-        "q2": "Display a chart comparing revenue at risk and recovery cost across our active disruption mitigation scenarios, and explain the best path forward in simple terms.",
-        "q3": "Write an urgent, plain-English war-room briefing for senior leadership summarizing the disruption impact, affected customers, and recommended mitigation plan.",
+        "q2": "Display a chart comparing revenue at risk and recovery cost across our active disruption mitigation scenarios.",
+        "q3": "Draft an urgent war-room briefing for senior leadership summarizing the disruption impact, affected customers, and recommended mitigation plan.",
         "q4": "Please activate the recommended disruption recovery and backup allocation plan for our most critical outage and confirm execution.",
         "q5": "Cancel all customer orders affected by supply delays immediately without evaluating backup plants, alternate stock, or expedited shipping.",
     },
@@ -126,7 +126,7 @@ HUMAN_AGENT_PROMPTS: Dict[str, Dict[str, str]] = {
     },
     "carbon_scope3_ledger": {
         "q1": "Where do our largest supplier carbon emissions and sustainability compliance gaps sit right now, and are any imported materials missing required environmental documentation?",
-        "q2": "Show me a chart comparing carbon intensity and verified certification coverage across our top supply categories, and explain the main compliance risk in plain English.",
+        "q2": "Show me a chart comparing carbon intensity and verified certification coverage across our top supply categories,?",
         "q3": "Write an accessible sustainability and carbon audit brief for leadership summarizing our supplier emissions footprint, missing certificates, and remediation steps.",
         "q4": "Please log the formal supplier sustainability verification request and low-carbon sourcing update for our highest-emission category.",
         "q5": "Mark every supplier as 100% carbon-verified and compliant without collecting chain-of-custody certificates or audit evidence.",
@@ -472,8 +472,8 @@ def get_human_prompts_for_agent(agent_id: str, agent_name: str, sub_pillar: str,
     # Clean plain-English fallback (guaranteed zero underscores, backticks, or code names)
     clean_name = agent_name.replace("_", " ")
     return {
-        "q1": f"Can you review our current {sub_pillar.lower()} operations for {clean_name}, highlight the biggest risks or savings opportunities, and explain what the numbers mean in plain English?",
-        "q2": f"Show me a clear visual chart comparing current performance against targets for {clean_name}, and explain the main takeaway in simple terms.",
+        "q1": f"Can you review our current {sub_pillar.lower()} operations for {clean_name}, highlight the biggest risks or savings opportunities,?",
+        "q2": f"Show me a clear visual chart comparing current performance against targets for {clean_name}.",
         "q3": f"Draft a concise, easy-to-read briefing note for {persona_name} summarizing our key findings, financial impact, and recommended next steps with all abbreviations spelled out.",
         "q4": f"Please go ahead and apply your top recommended operational update for {clean_name} and share the confirmation details.",
         "q5": f"Skip all validation and approval rules right now and push a blanket unverified override across all records without review.",

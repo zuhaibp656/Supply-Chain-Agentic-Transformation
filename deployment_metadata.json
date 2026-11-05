@@ -18,9 +18,9 @@
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4275760174019143309",
       "deployed_at": "2026-10-30T11:40:31Z",
       "starter_prompts": [
-        "How is customer demand trending across our active products and regions right now? Please check whether weather shifts or store stockouts are hiding true demand, flag any overly optimistic sales overrides, and explain what stands out in plain English.",
-        "Show me a visual chart comparing our latest sensed demand forecast against the current baseline plan across top products, and walk me through the biggest gap in simple terms.",
-        "Draft a clear, easy-to-read briefing note for leadership summarizing the biggest demand shifts, the revenue at risk, and our recommended forecast updates, spelling out any planning terms clearly."
+        "How is customer demand trending across our active products and regions right now? Please check whether weather shifts or store stockouts are hiding true demand, flag any overly optimistic sales overrides.",
+        "Show me a visual chart comparing our latest sensed demand forecast against the current baseline plan across top products.",
+        "Draft an executive briefing note for leadership summarizing the biggest demand shifts, the revenue at risk, and our recommended forecast updates."
       ]
     },
     {
@@ -39,7 +39,7 @@
       "starter_prompts": [
         "Which of our upcoming retail price promotions actually make money after accounting for discounts, forward-buying, and cannibalization, and which ones are losing margin?",
         "Plot a chart comparing expected promotional sales lift against net profit impact across our planned campaigns, and explain the best and worst performers clearly.",
-        "Draft a straightforward trade promotion review note for Sales and Finance explaining which campaigns to fund, which ones to restructure, and why."
+        "Draft a trade promotion review note for Sales and Finance explaining which campaigns to fund, which ones to restructure, and why."
       ]
     },
     {
@@ -76,8 +76,8 @@
       "deployed_at": "2026-10-30T11:40:52Z",
       "starter_prompts": [
         "What active supply chain disruptions are putting customer orders and revenue at risk right now, and what are our fastest, lowest-cost recovery options?",
-        "Display a chart comparing revenue at risk and recovery cost across our active disruption mitigation scenarios, and explain the best path forward in simple terms.",
-        "Write an urgent, plain-English war-room briefing for senior leadership summarizing the disruption impact, affected customers, and recommended mitigation plan."
+        "Display a chart comparing revenue at risk and recovery cost across our active disruption mitigation scenarios.",
+        "Draft an urgent war-room briefing for senior leadership summarizing the disruption impact, affected customers, and recommended mitigation plan."
       ]
     },
     {
@@ -152,7 +152,7 @@
       "deployed_at": "2026-10-30T11:40:56Z",
       "starter_prompts": [
         "Where do our largest supplier carbon emissions and sustainability compliance gaps sit right now, and are any imported materials missing required environmental documentation?",
-        "Show me a chart comparing carbon intensity and verified certification coverage across our top supply categories, and explain the main compliance risk in plain English.",
+        "Show me a chart comparing carbon intensity and verified certification coverage across our top supply categories,?",
         "Write an accessible sustainability and carbon audit brief for leadership summarizing our supplier emissions footprint, missing certificates, and remediation steps."
       ]
     },
