@@ -8328,7 +8328,7 @@
       "shortDesc": "Simulates price elasticity, shelf lift, and incremental spend return.",
       "badge": "+15%–25% Promo Net ROI",
       "cadType": "demand_wave",
-      "videoSrc": "videos/demand_sensing_demo.mp4",
+      "videoSrc": "videos/promo_lift_simulator_demo.mp4",
       "hasPreloadedVideo": true,
       "systems": "Trade Promotion Management (TPM / CRM) · Commercial CRM & Trade Portal (MCP / API) · Supply Planning System (MCP / API) · BigQuery ML · Time-Series Forecasting Model · Operational SQL & Vector DB (On-Prem / Cloud) · Geospatial & Location Intelligence API",
       "solverStack": "BigQuery ML Causal Double-ML Uplift + Cross-SKU Cannibalization Matrix + Mathematical Optimization Solver (MILP / CP-SAT) Supply-Aware Price Shaper",
