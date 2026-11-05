@@ -10,3 +10,17 @@ agents/*/action-events.jsonl
 .env.*
 !.env.example
 enterprise_twin/.env
+
+# Personal Learning Materials (Uncoupled from Portal and Git)
+supply_chain_101_interactive_academy.html
+SUPPLY_CHAIN_101_MASTER_GUIDE.md
+docs/supply_chain_101_interactive_academy.html
+docs/SUPPLY_CHAIN_101_MASTER_GUIDE.md
+zipline_dist/supply_chain_101_interactive_academy.html
+zipline_dist/SUPPLY_CHAIN_101_MASTER_GUIDE.md
+dist/itc_limited/supply_chain_101_interactive_academy.html
+dist/itc_limited/SUPPLY_CHAIN_101_MASTER_GUIDE.md
+scripts/*101*
+scripts/course_data.py
+*supply_chain_101*
+*SUPPLY_CHAIN_101*
