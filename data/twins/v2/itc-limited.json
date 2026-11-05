@@ -1,0 +1,1671 @@
+{
+  "schema_version": "2.0",
+  "twin_slug": "itc-limited",
+  "company_name": "Itc_Limited",
+  "canonical_name": "ITC Limited",
+  "division_name": "FMCG, Agri-Business & Paperboards",
+  "display_label": "ITC Limited — FMCG, Agri-Business & Paperboards",
+  "brand": {
+    "company_name": "Itc_Limited",
+    "canonical_name": "ITC Limited",
+    "division_name": "FMCG, Agri-Business & Paperboards",
+    "twin_slug": "itc-limited",
+    "official_domain": "itcportal.com",
+    "industry_sector": "Diversified Conglomerate (FMCG, Agri, Paper)",
+    "geography": "Global",
+    "brand_accent": "#729cbd",
+    "brand_secondary": "#F2A900",
+    "executive_title": "Head of Supply Chain & Logistics - FMCG",
+    "executive_thesis": "ITC operates a massive, vertically integrated supply chain spanning direct-from-farmer agricultural sourcing via e-Choupal, large-scale paperboard manufacturing, and high-speed FMCG production. Its distribution engine leverages Integrated Consumer Goods Manufacturing and Logistics (ICML) facilities to serve millions of retail outlets across India.",
+    "flagship_sites": "ICML Panchal (West Bengal) · Bhadrachalam Paperboards Unit (Telangana) · ICML Kapurthala (Punjab) · Ranjangaon ICML (Maharashtra) · Munger Manufacturing Facility (Bihar)",
+    "erp_systems": "SAP S/4HANA · o9 Solutions (IBP) · SAP Ariba · Blue Yonder WMS · e-Choupal Agri-Platform",
+    "logo": {
+      "data_uri": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgd2lkdGg9IjI4OCIKICAgaGVpZ2h0PSIzMDAiCiAgIHZpZXdCb3g9IjAgMCAxNjMyIDE3MDEiCiAgIHZlcnNpb249IjEuMCIKICAgaWQ9InN2ZzIiCiAgIHNvZGlwb2RpOnZlcnNpb249IjAuMzIiCiAgIGlua3NjYXBlOnZlcnNpb249IjEuNC4yIChmNDMyN2Y0LCAyMDI1LTA1LTEzKSIKICAgc29kaXBvZGk6ZG9jbmFtZT0iSVRDX0xpbWl0ZWRfTG9nby5zdmciCiAgIGlua3NjYXBlOm91dHB1dF9leHRlbnNpb249Im9yZy5pbmtzY2FwZS5vdXRwdXQuc3ZnLmlua3NjYXBlIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIKICAgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4KICA8bWV0YWRhdGEKICAgICBpZD0ibWV0YWRhdGE0MyI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGRlZnMKICAgICBpZD0iZGVmczQxIj4KICAgIDxpbmtzY2FwZTpwZXJzcGVjdGl2ZQogICAgICAgc29kaXBvZGk6dHlwZT0iaW5rc2NhcGU6cGVyc3AzZCIKICAgICAgIGlua3NjYXBlOnZwX3g9IjAgOiAxMDYzLjEyNSA6IDEiCiAgICAgICBpbmtzY2FwZTp2cF95PSIwIDogMTAwMCA6IDAiCiAgICAgICBpbmtzY2FwZTp2cF96PSIyMDQwIDogMTA2My4xMjUgOiAxIgogICAgICAgaW5rc2NhcGU6cGVyc3AzZC1vcmlnaW49IjEwMjAgOiA3MDguNzUgOiAxIgogICAgICAgaWQ9InBlcnNwZWN0aXZlNDUiIC8+CiAgPC9kZWZzPgogIDxzb2RpcG9kaTpuYW1lZHZpZXcKICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSI2NjkiCiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSI2NDAiCiAgICAgaW5rc2NhcGU6cGFnZXNoYWRvdz0iMiIKICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMC4wIgogICAgIGd1aWRldG9sZXJhbmNlPSIxMC4wIgogICAgIGdyaWR0b2xlcmFuY2U9IjEwLjAiCiAgICAgb2JqZWN0dG9sZXJhbmNlPSIxMC4wIgogICAgIGJvcmRlcm9wYWNpdHk9IjEuMCIKICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiIKICAgICBwYWdlY29sb3I9IiNmZmZmZmYiCiAgICAgaWQ9ImJhc2UiCiAgICAgc2hvd2dyaWQ9ImZhbHNlIgogICAgIGlua3NjYXBlOnpvb209IjUuNjU2ODU0MyIKICAgICBpbmtzY2FwZTpjeD0iMTUzLjYxODk1IgogICAgIGlua3NjYXBlOmN5PSIxOTEuNTM3NTUiCiAgICAgaW5rc2NhcGU6d2luZG93LXg9IjEzOCIKICAgICBpbmtzY2FwZTp3aW5kb3cteT0iOTUiCiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0ic3ZnMiIKICAgICBpbmtzY2FwZTpzaG93cGFnZXNoYWRvdz0iMiIKICAgICBpbmtzY2FwZTpwYWdlY2hlY2tlcmJvYXJkPSIwIgogICAgIGlua3NjYXBlOmRlc2tjb2xvcj0iI2QxZDFkMSIgLz4KICA8cGF0aAogICAgIGQ9Ik0gODA4LjQ5LDE4LjUyIDcwNy45Miw2NjIuOTggYyAtMC4yNCwyLjI1IC0yLjQsMy41MSAtMy43LDUuMTYgTCAxNy43OSwxNDAzLjAyIFoiCiAgICAgaWQ9InBhdGg2IgogICAgIHN0eWxlPSJmaWxsOiMwNjJmNjIiCiAgICAgc29kaXBvZGk6bm9kZXR5cGVzPSJjY2NjYyIgLz4KICA8cGF0aAogICAgIGQ9Ik0gODI2LjM0LDE4LjQzIDE2MTcuNjksMTQwMy4zMSA5MjguMDIsNjY1Ljg5IGMgLTEuMjgsLTEuNzEgLTEuMDYsLTQuMDMgLTEuNDksLTYuMDEgeiIKICAgICBpZD0icGF0aDgiCiAgICAgc3R5bGU9ImZpbGw6IzA2MmY2MiIKICAgICBzb2RpcG9kaTpub2RldHlwZXM9ImNjY2NjIiAvPgogIDxwYXRoCiAgICAgZD0iTSA0NjIuOSw5NzkuMSA1OTYuNzYsOTc5LjAyIDM2NC44LDE0MDMuMTUgODUuMDMsMTQwMy4xNCBaIgogICAgIGlkPSJwYXRoMTAiCiAgICAgc3R5bGU9ImZpbGw6IzA2MmY2MiIKICAgICBzb2RpcG9kaTpub2RldHlwZXM9ImNjY2NjIiAvPgogIDxwYXRoCiAgICAgZD0ibSA2NDAuOTUsOTc5IDIzMy41OSwwLjAyIDIwLjc0LDE0MS4xMyAtNzcuMjcsMC4wMiAtMC4wMSwyODMgLTI0NC43MywwLjA0IDg0LjMsLTI4Mi4yMiBjIC0yNi4zNSwwLjAyIC01Mi42OSwwIC03OS4wNCwwLjAyIHoiCiAgICAgaWQ9InBhdGgxMiIKICAgICBzdHlsZT0iZmlsbDojMDYyZjYyIgogICAgIHNvZGlwb2RpOm5vZGV0eXBlcz0iY2NjY2NjY2NjIiAvPgogIDxwYXRoCiAgICAgZD0ibSA5NjkuMDksOTc5IDIwMy45MSwtMC4wMyAxMTQuMTIsMTI4LjAzIC0xNTguMjMsMC4wNCBjIC0xMC40NCwwLjI0IC0xOC4yOCwxMi43IC0xMy4zMSwyMi4xMSBsIDQ4LjM5LDg5LjgyIGMgNi4yOCwxMy45MSAyMC44LDIzLjQzIDM2LjA2LDIzLjY2IGwgMjA3LjUxLDAuMTQgMTQyLjA5LDE2MC4yMSAtNDcyLjYxLDAuMDEgYyAtNDQuMjMxOCwtMC4yOTI1IC01OC40NDU5LC0xNS4zNjkgLTY2Ljc2LC01Mi4xMyBsIC04MS41OCwtMzI3IGMgLTUuMDA0NzQsLTI2LjkxNDcyIDE1LjUxMTU5LC00NC45NjI3OSA0MC40MSwtNDQuODYgeiIKICAgICBpZD0icGF0aDEiCiAgICAgc3R5bGU9ImZpbGw6IzA2MmY2MjtmaWxsLW9wYWNpdHk6MSIKICAgICBzb2RpcG9kaTpub2RldHlwZXM9ImNjY2NjY2NjY2NjY2MiIC8+CiAgPGcKICAgICBpZD0iZzIiPgogICAgPHBhdGgKICAgICAgIGQ9Im0gMTE1NC4xOCwxNTA5LjExIGMgMTAuNDEsLTMuMTEgMjEuOTQsNS45OCAyMS4xMywxNi44NSAwLjA0LDEwLjIyIC0xMC41NSwxOC40NSAtMjAuNDUsMTYuMDIgLTguNDIsLTEuNjYgLTE0LjUyLC0xMC4zNSAtMTMuMTQsLTE4Ljg0IDAuNzIsLTYuNjUgNS45OSwtMTIuNDUgMTIuNDYsLTE0LjAzIHoiCiAgICAgICBpZD0icGF0aDIyIgogICAgICAgc3R5bGU9ImZpbGw6IzA2MmY2MiIgLz4KICAgIDxwYXRoCiAgICAgICBkPSJtIDgyNi4yLDE1MDkuMTUgYyA5LjQsLTIuODYgMjAuMTgsNC4xMSAyMS4yMiwxMy45MSAxLjc0LDkuNzEgLTYuNjgsMTkuNDMgLTE2LjQ5LDE5LjI4IC04LjU4LDAuMzYgLTE2LjUxLC02Ljc5IC0xNy4wOSwtMTUuMzQgLTAuOTQsLTcuOTQgNC42NCwtMTUuOTIgMTIuMzYsLTE3Ljg1IHoiCiAgICAgICBpZD0icGF0aDIwIgogICAgICAgc3R5bGU9ImZpbGw6IzA2MmY2MiIgLz4KICAgIDxwYXRoCiAgICAgICBkPSJtIDQzMC45NywxNTIzLjkzIGMgMTQuNDUsLTEyLjQ3IDMzLjc3LC0yMCA1MywtMTcuOTcgMTEuOTcsMC45OCAyMy40OSw1Ljc0IDMyLjkyLDEzLjE1IDIuOTQsMi4xNSA3LjE3LDQuOCAxMC42OCwyLjMxIDQuNTEsLTMuNzkgMy4xNCwtMTAuODggNy41MywtMTQuNzcgMS4zMywwLjggMy4yNiwxLjM5IDIuOTcsMy4zOCAwLjMxLDE5LjY0IDAuMjQsMzkuMzEgMC45Nyw1OC45NCAwLjA5LDIuNzMgLTAuMDksNS41MSAtMS4wOCw4LjExIC0xLjM5LC0wLjQ0IC0zLjMsLTAuNTYgLTMuNjIsLTIuMzEgLTMuMzEsLTkuMyAtNS44NiwtMTguOTMgLTEwLjIzLC0yNy44MiAtMy45LC03Ljc4IC04LjExLC0xNS41NCAtMTQuMDIsLTIxLjk5IC02LjcyLC03LjUxIC0xNS45MiwtMTMuMTUgLTI2LjA4LC0xNC4xNSAtMTMuMjQsLTEuMjQgLTI4LjIyLDIuNjQgLTM2LjI4LDEzLjkzIC01Ljg0LDguMDEgLTguMTYsMTcuODYgLTEwLjEzLDI3LjQgLTIuNTYsMTQuODMgLTMuMjksMjkuODkgLTQsNDQuOTEgLTAuMiwxOC42NiAwLjA2LDM3LjkxIDYuODcsNTUuNTcgMy44LDkuODQgMTAuMjIsMTkuMjEgMTkuOCwyNC4xNCAxMC4zNyw1LjQzIDIyLjY4LDQuNzYgMzMuOCwyLjM0IDEzLC0yLjc4IDI0LjgsLTEwLjk3IDMxLjUyLC0yMi41IDYuOCwtMTAuOTkgOC43OSwtMjQuMDUgOS40OCwtMzYuNzMgMi4zMSwtMC41OSA0LjY4LC0wLjQ3IDcuMDEsMCAwLjMzLDEuMzUgMS4xLDIuNjcgMC44Myw0LjE1IC0wLjgyLDkuMTkgLTIuNTMsMTguMzUgLTUuNjgsMjcuMDUgLTUuNzMsMTYuMjkgLTIwLjY3LDI4LjQ0IC0zNy4zMiwzMi4zIC0xMS43NSwyLjY3IC0yNC4xOSw0LjE3IC0zNi4wNCwxLjIyIC0xNCwtMy4zNyAtMjYuOTIsLTEwLjUzIC0zNy45LC0xOS43NiAtMy43NCwtMy4yMiAtNy4zLC02Ljc2IC05Ljc1LC0xMS4wOCAtNC4zNCwtNy40MSAtOS4wOSwtMTQuNjUgLTEyLjE4LC0yMi43MSAtOC4zMSwtMjEuMjMgLTguMjUsLTQ1LjU5IDAuMTgsLTY2Ljc3IDUuOSwtMTUuMTIgMTQuODcsLTI5LjIxIDI2Ljc1LC00MC4zNCB6IgogICAgICAgaWQ9InBhdGgxNiIKICAgICAgIHN0eWxlPSJmaWxsOiMwNjJmNjIiIC8+CiAgICA8cGF0aAogICAgICAgZD0ibSAxNTA5Ljk4LDE1MDcuNDMgYyAzLjcxLC0wLjI1IDcuNDIsLTEuMDYgMTEuMTYsLTAuNjIgMi4zNywwLjQ0IDMuOTgsMi43NCAzLjgzLDUuMTIgMC4wOCw0OS4zNCAwLjAzLDk4LjY5IDAuMDIsMTQ4LjAzIC0wLjE5LDUuMDcgLTAuMzYsMTEuNDUgNC41NCwxNC41MiA2LDMuMDEgMTMuMDEsMi4yNSAxOS41MiwyLjM2IDEuMTMsMS41NSAxLjM1LDQuMzIgLTEuMTQsNC40NiAtMTQuOTYsMC45OCAtMjkuOTUsMS41NSAtNDQuOTIsMi4yOSAtMi43NSwwLjMgLTYuMjcsLTAuNjQgLTYuODUsLTMuNzMgLTAuNDUsLTQuOTcgMC4xNCwtOS45OCAtMC4yMywtMTQuOTQgLTAuNDcsLTAuNjYgLTAuOTQsLTEuMjggLTEuNDEsLTEuODUgLTMuMzYsMy43NyAtNi40MSw3Ljg4IC0xMC40NCwxMS4wMSAtMTAuMzcsOC42NyAtMjQuNzksMTIuMjUgLTM3Ljk5LDkuMTkgLTE0LjM1LC0zLjA3IC0yNi4zNywtMTMuMzIgLTMzLjU0LC0yNS44NyAtOS42MiwtMTYuNzggLTEyLjEzLC0zNy42MSAtNi40LC01Ni4xMSA0Ljk3LC0xNS43NiAxNS43NiwtMjkuODIgMzAuMjksLTM3Ljg2IDEwLjU5LC01Ljg2IDIzLjQ3LC04LjM1IDM1LjIzLC00LjgxIDkuOSwyLjc5IDE3LjYzLDEwLjE0IDIzLjQyLDE4LjM2IDEuNTYsLTIuNDIgMC43LC01LjM1IDAuOCwtOC4wMSAtMC4xMSwtMTQgMC4wMSwtMjggLTAuMDEsLTQyIDAuMDgsLTQuNTMgLTIuOCwtOS4wNSAtNy4wOSwtMTAuNjEgLTYuMTEsLTIuMjcgLTEyLjc0LC0xLjQyIC0xOS4wOSwtMi4wNiAwLjA1LC0xLjU5IC0wLjUxLC0zLjY2IDEuNTIsLTQuMTYgMTIuOTMsLTAuOSAyNS44NSwtMS44NyAzOC43OCwtMi43MSBtIC01MS42Miw1Ni4wNCBjIC03LjYyLDIuMjEgLTEyLjg4LDguODggLTE1Ljk0LDE1Ljg5IC01LjYsMTIuNzUgLTYuNDIsMjYuOTEgLTYuODQsNDAuNjQgMC4yNyw5LjczIDAuNjEsMTkuNTQgMi42OSwyOS4wOSAxLjY5LDcuNTQgNC4zMywxNS4yMyA5Ljc0LDIwLjk3IDUuODMsNi4zMSAxNS4zNiw4LjcgMjMuNTcsNi40IDUuMywtMS42NiA5Ljg0LC01LjMzIDEyLjk5LC05Ljg2IDYuNzIsLTkuMzUgOS40MSwtMjAuOSAxMC43MywtMzIuMTYgMS40OCwtMTUuMzggMC45MywtMzEuMjQgLTMuODYsLTQ2LjAzIC0yLjgyLC04LjIyIC03LjA1LC0xNi40NyAtMTQuMjIsLTIxLjcgLTUuMzIsLTMuOTggLTEyLjUyLC01LjIxIC0xOC44NiwtMy4yNCB6IgogICAgICAgaWQ9InBhdGgxOCIKICAgICAgIHN0eWxlPSJmaWxsOiMwNjJmNjIiIC8+CiAgICA8cGF0aAogICAgICAgZD0ibSAxMjI5LjA2LDE1MTEuOTYgYyAwLjI3LC0zLjI4IDUuODUsLTMuMTcgNi4xMiwwLjA4IDAuMDMsMTQuNjQgLTAuMDQsMjkuMyAtMC4wMSw0My45NCAtMC40LDIuMTcgMS41Niw0LjEzIDMuNzIsMy45OSAxMC4zNywwLjE4IDIwLjc2LC0wLjE4IDMxLjEzLDAuMTUgMy4wOCwwLjIzIDMuNTUsNC43OCAwLjk5LDYuMTIgLTEwLjM3LC0wLjAzIC0yMC43NSwtMC4yIC0zMS4xMSwtMC4wMSAtMy4wMywtMC4xNiAtNS4wNCwyLjkgLTQuNzEsNS43MSAtMC4wNiwzMC4wMSAwLjAyLDYwLjAzIC0wLjAzLDkwLjA1IC0wLjIxLDUuNTggMS45MSwxMS45IDcuMTksMTQuNTYgNy42MywzLjcgMTcuOCwxLjc2IDIzLjA4LC01LjA0IDUuNTgsLTcuMiA3LC0xNi43IDYuOTcsLTI1LjU3IC0wLjI0LC0xLjY2IDAuNjQsLTMuMDUgMS40LC00LjQxIDEuNDYsMC4yMyAzLjQ4LC0wLjM2IDQuNCwxLjI1IDEuMzUsMS43NyAwLjUxLDQuMDkgMC40Nyw2LjE0IC0wLjgsMTEuMDIgLTQuMDYsMjIuNjUgLTEyLjI4LDMwLjQ3IC01LjYyLDUuNTYgLTEzLjY0LDguMDkgLTIxLjQxLDguMjEgLTkuMTksMC4xOCAtMTguNzYsLTEuMDQgLTI2LjgxLC01Ljc0IC03LjY3LC00LjM5IC0xMi45MywtMTIuOTcgLTEyLjc5LC0yMS44NyAwLjAzLC0yOC42NyAwLjAxLC01Ny4zNCAwLjAyLC04NiAtMC4yNywtMi40NyAwLjA4LC01LjY0IC0yLjE2LC03LjI2IC0yLjkxLC0xLjE2IC02LjIsLTAuMzkgLTkuMjUsLTAuNTggLTMuNDQsLTAuMyAtNy4yOSwxLjA5IC0xMC4yOSwtMS4wOSAtMC4xLC0yLjE0IDAuNCwtNS4yMSAzLjIxLC01LjAxIDE0LjQzLDEuMjYgMjcuODcsLTguNDQgMzQuMjQsLTIwLjkgNC4xNywtOC41MyA2LjQ3LC0xNy44NSA3LjkxLC0yNy4xOSB6IgogICAgICAgaWQ9InBhdGgyNCIKICAgICAgIHN0eWxlPSJmaWxsOiMwNjJmNjIiIC8+CiAgICA8cGF0aAogICAgICAgZD0ibSAyMTQuODMsMTUxMiBjIDQ5LjkzLDAuMDEgOTkuODYsLTAuMDIgMTQ5Ljc5LDAuMDEgLTAuMSwyMi43OCAwLjE1LDQ1LjU2IC0wLjEyLDY4LjMzIDAuMjEsMy4xOCAtMy44MywzLjgxIC01LjY3LDEuNzggLTIuNDgsLTE2LjcyIC03LjY4LC0zMy4xNiAtMTYuMzUsLTQ3LjcyIC0zLjk3LC02LjQ0IC05LjM2LC0xMi44NSAtMTcuMDEsLTE0Ljc1IC01Ljc0LC0xLjI2IC0xMS42NSwtMS45MyAtMTcuNTEsLTEuNTQgLTIuMTYsMS41MSAtMi4zNyw0LjQ3IC0yLjM4LDYuOSAwLjA2LDQ2LjY1IDAuMDEsOTMuMzEgMC4wMiwxMzkuOTYgLTAuMTksMy45OSAxLjk1LDguMDkgNS43Nyw5LjYxIDguNTMsMy42IDE4LjEsMi4zMiAyNi45Niw0LjM0IDAuNDIsMi4yMSAtMC40OSw0LjkgLTMuMjYsNC40MSAtMzAuNjgsMC4wNyAtNjEuMzcsLTAuMDIgLTkyLjA1LDAuMDUgLTEuNTYsLTAuMTIgLTMuNTgsMC4xOCAtNC41MSwtMS40IDAuMDMsLTAuODEgMC4xLC0yLjQ1IDAuMTMsLTMuMjYgOS45MywtMS42NSAyMC40OCwtMS43NSAyOS41OSwtNi41NiAyLjcsLTEuNDQgNS45LC0zLjYzIDUuNzUsLTcuMDcgMC4wMywtNDcuMzYgMC4wMSwtOTQuNzMgMC4wMSwtMTQyLjA5IDAuMTYsLTIgLTAuNTgsLTQuNzYgLTIuOTcsLTQuOTEgLTcuNDQsLTAuNDcgLTE1LjQsMC4xOCAtMjEuOTMsNC4xIC04LjE5LDUuNiAtMTMuMjgsMTQuNTEgLTE3LjU1LDIzLjI0IC01LjYxLDExLjM5IC04LjU0LDIzLjgzIC0xMS4xNSwzNi4xOCAtMC45NywyLjQ2IC0zLjkyLDEuODQgLTUuNTgsMC40OCAwLjAyLC0yMy4zNyAwLjAxLC00Ni43MyAwLjAyLC03MC4wOSB6IgogICAgICAgaWQ9InBhdGgyNiIKICAgICAgIHN0eWxlPSJmaWxsOiMwNjJmNjIiIC8+CiAgICA8cGF0aAogICAgICAgZD0ibSA4NS43MywxNTE3LjIyIGMgLTAuMjQsLTEuNzggLTAuMzEsLTQuNTIgMi4yLC00LjM1IDI4LjA0LC0wLjA0IDU2LjA5LC0wLjA1IDg0LjE0LC0wLjAxIDIuNTIsLTAuMiAyLjM2LDIuNTcgMi4xOSw0LjMzIC03Ljc1LDEuODIgLTE2LjE4LDEuMTMgLTIzLjUsNC42OCAtMy4wNCwxLjQ1IC01LjA0LDQuNzUgLTQuNzYsOC4xNSAwLjAxLDQ1LjM1IC0wLjAyLDkwLjY5IDAuMDEsMTM2LjA0IC0wLjI4LDMuOTUgMi43Miw3LjMxIDYuMyw4LjU2IDYuNTcsMi4zMyAxMy42NSwyLjYyIDIwLjUyLDMuNSAxLjY0LDAuNDkgMS44OCwyLjMzIDEuMzQsMy43NyAtMS4yNCwxLjU4IC0zLjM5LDEuMTggLTUuMTUsMS4zMSAtMjYuNjgsLTAuMDggLTUzLjM2LDAuMDIgLTgwLjA0LC0wLjA2IC0yLjQzLDAuMzcgLTQuMSwtMS43NyAtMy4yOCwtNC4wNCAxLjY2LC0xLjc1IDQuMjksLTEuMTEgNi40MywtMS41MyA1LjQ0LC0wLjc1IDExLjA3LC0xLjEyIDE2LjIsLTMuMjMgMy4zNCwtMS4zMSA1LjgsLTQuNjUgNS42NSwtOC4yOSAwLjA0LC00NS4zNyAwLjAxLC05MC43NCAwLjAxLC0xMzYuMSAwLjI2LC0zLjkzIC0yLjQ4LC03LjQ0IC02LjA3LC04LjczIC03LjEsLTIuNzIgLTE0Ljg2LC0yLjQxIC0yMi4xOSwtNCB6IgogICAgICAgaWQ9InBhdGgyOCIKICAgICAgIHN0eWxlPSJmaWxsOiMwNjJmNjIiIC8+CiAgICA8cGF0aAogICAgICAgZD0ibSA2MzguMiwxNTEzLjE5IGMgMjkuNTgsLTAuNDMgNTkuMiwtMC4wOCA4OC43OSwtMC4xOCAyLjc2LC0wLjc1IDQuMzMsMy41NSAxLjgsNC43NSAtOC40LDEuMjggLTE3LjMsMC42OSAtMjUuMzcsMy43NyAtNC4yOCwxLjUgLTYuNTcsNi4wNSAtNi4yNSwxMC40MiAwLjAyLDQ0LjM4IC0wLjA3LDg4Ljc3IDAuMDMsMTMzLjE1IC0wLjM0LDQuNyAzLDkuMDEgNy40OSwxMC4yMSA3LjkyLDIuMjUgMTYuMzEsMy4xOSAyNC40OSwxLjg5IDExLjM1LC0xLjQgMjMuNjMsLTMuNiAzMi4yMSwtMTEuODIgMTIuMywtMTEuODEgMTYuOTcsLTI5LjAyIDE5LjYsLTQ1LjMzIDAuNDgsLTIuMjEgMC4zLC01LjY3IDMsLTYuNDIgMi43NywwLjc0IDMuMDIsMy45NyAzLjAxLDYuMzUgMCwxOS42OSAtMC4wMSwzOS4zOCAwLjAxLDU5LjA4IDAuMzcsMS44NCAtMC45Nyw0LjAxIC0yLjk2LDQuMDMgLTQ1LjY3LDAuMTYgLTkxLjM1LDAuMzcgLTEzNy4wMywwLjI5IC0yLjk2LC0wLjE3IC02LjAzLDAuNDIgLTguOSwtMC4zOSAtMi4xOCwtMSAtMS4zNiwtNC41NyAwLjkxLC00LjY0IDYuODksLTEuMDQgMTQuMTIsLTEgMjAuNjYsLTMuNjcgMy44NSwtMS41MSA2LjIyLC01LjU2IDUuOTUsLTkuNjQgMCwtNDQuNjggLTAuMDIsLTg5LjM2IDAsLTEzNC4wNCAwLjI2LC00LjM1IC0yLjcyLC04LjQgLTYuOCwtOS43NiAtNi4zNiwtMi4xMiAtMTMuMTQsLTIuNDMgLTE5Ljc0LC0zLjI2IC0yLjUzLC0wLjExIC0yLjk4LC0zLjY2IC0wLjksLTQuNzkgeiIKICAgICAgIGlkPSJwYXRoMzAiCiAgICAgICBzdHlsZT0iZmlsbDojMDYyZjYyIiAvPgogICAgPHBhdGgKICAgICAgIGQ9Im0gOTQ5LjU1LDE1NjUuNTUgYyA2LjMxLC00LjQyIDEzLjc0LC03LjU3IDIxLjUzLC03LjggOS4xOSwtMC40MiAxOC45NCwxLjAyIDI2LjUyLDYuNiA2LjE4LDQuNTMgMTAuNDYsMTEuMzEgMTIuODUsMTguNTIgMC41NywxLjc5IDEuNSwzLjQzIDIuNTYsNSAyLjk3LC0yLjg5IDMuOTcsLTcuMDkgNi42NywtMTAuMTcgNS41MSwtNi42MiAxMi4wOCwtMTIuNTIgMTkuOSwtMTYuMjcgOS4zOCwtNC44IDIwLjQ5LC00LjQ1IDMwLjU0LC0yLjI3IDEzLjgxLDIuOTYgMjUuNjIsMTUuNSAyNS45NywyOS44OSAwLjQ1LDcuOTcgLTAuMTEsMTUuOTUgLTAuMDksMjMuOTMgLTAuOTIsMTcuMzMgLTAuNTMsMzQuNzEgLTEuNDMsNTIuMDQgLTAuMjksMy44IDAuODUsOC4xMyA0LjYsOS44OSA1LjY0LDIuNTkgMTIuMDEsMi45MSAxOC4wNiw0LjAyIDAuMzEsMS4zOCAwLjI3LDIuOCAtMC4wMyw0LjIxIC0xMy43MywwLjUyIC0yNy40OCwwLjA4IC00MS4yMSwwLjIzIC0xMS43NCwtMC4xNSAtMjMuNDksMC4yOCAtMzUuMjEsLTAuMjMgLTAuMzUsLTEuNDIgLTAuMzYsLTIuODQgMC4wMSwtNC4yMSA1Ljk1LC0xIDEyLjA4LC0xLjQzIDE3Ljc2LC0zLjU5IDMuMzQsLTEuMzIgNS41NiwtNC43NiA1LjM1LC04LjM1IDAuMjYsLTIzLjk5IC0wLjAxLC00Ny45OCAwLjEzLC03MS45NiAwLjYyLC02LjYzIDAuNDYsLTEzLjYzIC0yLjM5LC0xOS43NiAtMi4yMywtNC44MyAtNy4yNywtOC4xOSAtMTIuNjEsLTguMTQgLTcuODUsLTAuMzQgLTE1LjE0LDMuOTMgLTIwLjI1LDkuNjEgLTguNDYsOS40NyAtMTMuNTIsMjEuNjEgLTE1LjQ2LDM0LjA4IC0xLjg5LDguMjYgLTEuMjEsMTYuNzUgLTEuMzIsMjUuMTUgMC4wMywxMC4zNyAtMC4wNywyMC43NSAwLjAzLDMxLjEzIC0wLjE4LDMuNiAyLjE2LDYuOTUgNS40OCw4LjI4IDUuMjUsMi4xMSAxMSwyLjMgMTYuNDYsMy41OCAxLjU4LDAuODcgMS41NSwzLjI0IC0wLjA3LDQuMDkgLTEuOTMsMC40NiAtMy45MiwwLjI3IC01Ljg3LDAuMzIgLTIyLjM2LC0wLjA3IC00NC43MiwwLjA1IC02Ny4wOCwtMC4wMyAtMi4zNiwwLjYzIC00LjQ5LC0yLjI5IC0yLjcsLTQuMTMgNi40NSwtMi4wNCAxMy45MiwtMS4yNCAxOS43NywtNS4wOCA0LjIyLC0yLjk3IDMuMzMsLTguNjcgMy4zOCwtMTMuMTMgMC4wNCwtMjQgLTAuMTQsLTQ4IDAuMTIsLTcxLjk5IC0wLjQ4LC02LjY1IC0xLjUsLTE0LjE2IC02LjcsLTE4Ljg5IC00LjAxLC0zLjY3IC0xMCwtMy41IC0xNC44OSwtMi4wMyAtNy4yNSwyLjA2IC0xMi45OCw3LjQ2IC0xNy4yNCwxMy40NyAtNS4yNCw3LjYyIC05LjA4LDE2LjI2IC0xMC42LDI1LjQyIC0zLjkyLDE3Ljc0IC0yLjA1LDM1Ljk4IC0yLjQ5LDUzLjk4IC0wLjAxLDQuNjQgLTAuNzIsMTAuNzEgMy45NCwxMy41MSA1LjYxLDMuMDggMTIuMjUsMy4xNSAxOC40LDQuNDMgMC4yNSwwLjQ1IDAuNzMsMS4zNyAwLjk3LDEuODIgLTAuMjIsMC42IC0wLjY3LDEuOCAtMC44OSwyLjQgLTEwLjM0LDAuNTYgLTIwLjcxLDAuMSAtMzEuMDYsMC4yNSAtMTUuMzUsLTAuMDcgLTMwLjcxLDAuMTUgLTQ2LjA1LC0wLjEgLTIuNTksLTAuMDcgLTIuNTIsLTMuMDkgLTEuMTcsLTQuNTYgNi4zOSwtMC41NiAxMi45MiwtMS4wNCAxOS4wNiwtMy4wNCAzLjY5LC0xLjEyIDYuNSwtNC42OSA2LjE3LC04LjYyIDAuMDMsLTI5LjczIDAuMDYsLTU5LjQ3IDAsLTg5LjIgMC4xMiwtMy45NCAtMi45OSwtNy4yNCAtNi42MiwtOC4yOCAtNS4yNywtMS41OCAtMTAuNzksLTIuMDkgLTE2LjIzLC0yLjc3IC0zLjQxLC0wLjUgLTIuMDUsLTUuNzEgMC44LC01Ljc3IDE1LjAzLC0wLjU2IDMwLjA1LC0xLjM5IDQ1LjA3LC0yLjIgMy40MywtMC4zOCA3LjQ5LDEuNTMgNy44LDUuMzUgMC43NCw2Ljg3IC0wLjgxLDEzLjc4IC0wLjA4LDIwLjY4IDEuMiwyLjQ5IDMuMDksMC4wNCAzLjcxLC0xLjQ4IDMuNDMsLTcuNDEgOS42NSwtMTMuMDcgMTYuMTMsLTE3LjgzIHoiCiAgICAgICBpZD0icGF0aDMyIgogICAgICAgc3R5bGU9ImZpbGw6IzA2MmY2MiIgLz4KICAgIDxwYXRoCiAgICAgICBkPSJtIDEzMzMuMjQsMTU1OC4yMiBjIDE2LjQ4LC0yLjI4IDM0LjQ3LDIuMiA0Ni42NSwxMy44OSAxMS4zMSwxMC45NyAxNS40LDI3LjQ5IDE0LjYzLDQyLjgzIDAuMDksMS44NiAtMS41OSwzLjQ3IC0zLjQ2LDMuMDggLTI1LC0wLjEyIC00OS45OSwwLjE1IC03NC45OCwwLjIgLTIuNTEsMC4wMSAtMy4zMiwyLjc5IC0zLjM2LDQuODUgLTAuODcsMTIuOTIgLTAuMywyNi40MiA0Ljk2LDM4LjQ0IDMuNTIsOC4xNCAxMC42MywxNC44NiAxOS4zOCwxNi44OCAxMy41LDMuMDQgMjguODksLTAuNTcgMzguNTQsLTEwLjgxIDYuMTEsLTYuNCA5Ljk1LC0xNC43NSAxMS41NiwtMjMuNCAwLjI2LC0xLjg1IDEuNzEsLTMuOTUgMy44NiwtMy40NSAzLjQyLDAuNDkgMi4zOCw0Ljc0IDIuMjUsNy4xOSAtMi43MiwxNC40OSAtMTMuMTksMjcuMTYgLTI2LjgsMzIuNzkgLTE2LjgyLDcuMDMgLTM2Ljk3LDYuNzkgLTUzLjA1LC0yLjEyIC0xOCwtOS42IC0zMC40NCwtMjguNDggLTMyLjcxLC00OC42OSAtNC41MiwtMzIuNTMgMjAuMDMsLTY2LjM0IDUyLjUzLC03MS42OCBtIDMuMiw1LjM1IGMgLTUuMywxLjE0IC0xMC4wOSw0LjM4IC0xMy4xNyw4LjgzIC02Ljg5LDkuNzYgLTguMTEsMjIuMDIgLTkuNTksMzMuNTMgLTAuNTQsMi44OSAwLjc2LDcuMSA0LjM3LDYuODUgMTIuNjcsMC4xMyAyNS4zNCwwLjA0IDM4LjAxLDAuMDMgMy41LDAuMTEgNy45NSwtMC42OSA5LjE3LC00LjU0IDEuNjEsLTUuNTggMS41MSwtMTEuNDkgMS4xNywtMTcuMjMgLTAuNDIsLTcuOTYgLTIuMDYsLTE2LjYgLTcuOTYsLTIyLjQgLTUuNzYsLTUuNTkgLTE0LjQ1LC02LjM0IC0yMiwtNS4wNyB6IgogICAgICAgaWQ9InBhdGgzNCIKICAgICAgIHN0eWxlPSJmaWxsOiMwNjJmNjIiIC8+CiAgICA8cGF0aAogICAgICAgZD0ibSA4MjcuMDgsMTU2MC41OSBjIDUuMDEsLTAuMDQgOS45OSwtMS4wOSAxNC45OSwtMC42OSAyLjg5LDAuNDIgNC4yMiwzLjM1IDMuOTQsNi4wMyAwLjAzLDM0LjA1IC0wLjA2LDY4LjExIDAuMDIsMTAyLjE2IC0wLjE0LDMuNDMgMi41Nyw2LjI2IDUuNyw3LjI2IDYuMjMsMi4wMiAxMi44NSwyLjM3IDE5LjI2LDMuNTggMi4xOSwwLjgyIDEuNDMsNC42IC0wLjk1LDQuMzYgLTI1LjM0LDAuMTUgLTUwLjY5LDAuMDkgLTc2LjAyLDAuMDIgLTIuNSwwLjMzIC0yLjU2LC0yLjUyIC0yLjA1LC00LjE3IDUuOTMsLTEuNjcgMTEuOTMsLTMuMTIgMTcuOTEsLTQuNjMgNC4xOCwtMS4wOCA3LjIzLC01LjA5IDYuOTMsLTkuNDQgMC4wNiwtMjguNzMgMC4wMiwtNTcuNDYgLTAuMDEsLTg2LjE4IDAuMiwtMy44NyAtMi4yMywtNy41NCAtNS44MywtOC45MSAtNS42OCwtMi4wNyAtMTEuNzksLTIuMzcgLTE3LjcyLC0zLjIzIC0xLjc3LC0wLjUgLTEuMjgsLTIuNSAtMS41MywtMy44NCAyLjY0LC0xLjAzIDUuNDksLTEuMDMgOC4yOSwtMS4wNyA5LjAzLC0wLjE5IDE4LjAzLC0xLjA5IDI3LjA3LC0xLjI1IHoiCiAgICAgICBpZD0icGF0aDM2IgogICAgICAgc3R5bGU9ImZpbGw6IzA2MmY2MiIgLz4KICAgIDxwYXRoCiAgICAgICBkPSJtIDExMzUuMDQsMTU2MS41OSBjIDEwLjY1LC0wLjc4IDIxLjM0LC0wLjg5IDMxLjk4LC0xLjc5IDIuNzgsLTAuNDUgNi42MywwLjkxIDYuNTQsNC4yNyAwLjEyLDM0LjMzIDAsNjguNjcgMC4wNywxMDMgLTAuMTgsMy40NyAxLjksNi43OCA1LjE3LDguMDMgNi40MywyLjMzIDEzLjM2LDIuNTUgMjAuMDMsMy44NSAyLjQ3LDEuMjUgMC44MSw1LjA0IC0xLjc4LDQuMzkgLTI1LjA0LDAuMDIgLTUwLjA4LDAuMDggLTc1LjExLC0wLjAyIC0yLjI3LDAuMzggLTMuNTQsLTIuODQgLTEuNjksLTQuMDYgNS45OSwtMi40MyAxMi41MywtMy4wOCAxOC42MSwtNS4yMSAzLjcyLC0xLjI4IDUuODQsLTUuMTUgNS43NSwtOC45NCAwLjAzLC0yOC43NSAwLjAzLC01Ny40OSAwLC04Ni4yNCAwLjE5LC00LjA2IC0yLjUxLC03LjgzIC02LjM0LC05LjA5IC01LjU0LC0xLjggLTExLjQsLTIuMyAtMTcuMTYsLTIuOTUgLTEuNzUsLTAuNTggLTEuMzYsLTIuNjIgLTEuNTQsLTQgNS4wMSwtMS41IDEwLjMyLC0wLjc3IDE1LjQ3LC0xLjI0IHoiCiAgICAgICBpZD0icGF0aDM4IgogICAgICAgc3R5bGU9ImZpbGw6IzA2MmY2MiIgLz4KICA8L2c+Cjwvc3ZnPg==",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/ITC_Limited_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_type": "wikimedia_svg",
+      "plate_style": "light_plate",
+      "aspect_ratio": 0.96,
+      "monogram": "ITC"
+    }
+  },
+  "custom_pillars": [
+    {
+      "pillar_id": "fmcg_agri_demand_planning",
+      "v_num": "01",
+      "scor_badge": "01 · PLAN",
+      "name": "FMCG & Agri Demand Planning",
+      "tagline": "Omnichannel forecasting and portfolio strategy",
+      "subtitle": "Aligns market demand across diverse FMCG categories with integrated business planning and trade promotions.",
+      "color": "#729cbd",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "demand_forecasting",
+        "sop_ibp",
+        "portfolio_sku",
+        "trade_promotion"
+      ]
+    },
+    {
+      "pillar_id": "echoupal_direct_sourcing",
+      "v_num": "02",
+      "scor_badge": "02 · SOURCE",
+      "name": "e-Choupal & Direct Sourcing",
+      "tagline": "Agricultural and raw material procurement",
+      "subtitle": "Manages the vast supplier network of farmers and vendors for agri-commodities, tobacco, and packaging materials.",
+      "color": "#f2a900",
+      "watermark_type": "supplier_graph",
+      "sub_pillar_ids": [
+        "supplier_network",
+        "material_packaging",
+        "contract_po_mgmt"
+      ]
+    },
+    {
+      "pillar_id": "icml_manufacturing_quality",
+      "v_num": "03",
+      "scor_badge": "03 · MAKE",
+      "name": "ICML Manufacturing & Quality",
+      "tagline": "Integrated consumer goods production",
+      "subtitle": "Drives production scheduling, capacity utilization, and strict quality compliance across ITC's mega-factories.",
+      "color": "#10b981",
+      "watermark_type": "factory_arm",
+      "sub_pillar_ids": [
+        "production_scheduling",
+        "capacity_planning",
+        "quality_compliance"
+      ]
+    },
+    {
+      "pillar_id": "integrated_logistics_warehousing",
+      "v_num": "04",
+      "scor_badge": "04 · STORE",
+      "name": "Integrated Logistics & Warehousing",
+      "tagline": "Inventory positioning and facility operations",
+      "subtitle": "Optimizes warehouse operations, pallet management, and inventory positioning within ICMLs and regional hubs.",
+      "color": "#e11d48",
+      "watermark_type": "warehouse_rack",
+      "sub_pillar_ids": [
+        "warehouse_operations",
+        "positioning_optimization",
+        "omnichannel_visibility"
+      ]
+    },
+    {
+      "pillar_id": "tmd_retail_distribution",
+      "v_num": "05",
+      "scor_badge": "05 · DELIVER",
+      "name": "TM&D Retail Distribution",
+      "tagline": "General trade and modern retail fulfillment",
+      "subtitle": "Executes the massive logistics network delivering products to millions of retail outlets across India.",
+      "color": "#7c3aed",
+      "watermark_type": "conveyor_rack",
+      "sub_pillar_ids": [
+        "first_mid_mile",
+        "route_carrier",
+        "store_replenishment",
+        "last_mile_delivery",
+        "returns_claims_mgmt",
+        "pallet_tote_reclamation"
+      ]
+    },
+    {
+      "pillar_id": "fmcg_circularity_returns",
+      "v_num": "06",
+      "scor_badge": "06 · RETURN",
+      "name": "FMCG Circularity & Returns",
+      "tagline": "Reverse logistics and sustainability",
+      "subtitle": "Handles product returns, food expiry markdowns, and packaging circularity initiatives across the FMCG portfolio.",
+      "color": "#0284c7",
+      "watermark_type": "corridor_lifo",
+      "sub_pillar_ids": [
+        "expiry_markdowns"
+      ]
+    }
+  ],
+  "pillar_overrides": {
+    "demand_sop": {
+      "dept_id": "demand_sop",
+      "custom_name": "Planning & Strategy",
+      "custom_tagline": "ITC Limited — FMCG, Agri-Business & Paperboards · Core Planning Lifecycle",
+      "custom_subtitle": "Demand signals and strategic S&OP alignment."
+    },
+    "sourcing_procurement": {
+      "dept_id": "sourcing_procurement",
+      "custom_name": "Sourcing & Procurement",
+      "custom_tagline": "ITC Limited — FMCG, Agri-Business & Paperboards · Procurement Lifecycle Spine",
+      "custom_subtitle": "Tier vendor networks and EDI order routing."
+    },
+    "manufacturing_prod": {
+      "dept_id": "manufacturing_prod",
+      "custom_name": "Manufacturing & Production",
+      "custom_tagline": "ITC Limited — FMCG, Agri-Business & Paperboards · Manufacturing Operations Lifecycle",
+      "custom_subtitle": "Optimized runs and zero-defect QA protocols."
+    },
+    "inventory_warehouse": {
+      "dept_id": "inventory_warehouse",
+      "custom_name": "Inventory & Warehousing",
+      "custom_tagline": "ITC Limited — FMCG, Agri-Business & Paperboards · Inventory & DC Lifecycle Spine",
+      "custom_subtitle": "Multi-node staging and enterprise visibility."
+    },
+    "logistics_fleet": {
+      "dept_id": "logistics_fleet",
+      "custom_name": "Distribution & Logistics",
+      "custom_tagline": "ITC Limited — FMCG, Agri-Business & Paperboards · Logistics Fulfillment Lifecycle",
+      "custom_subtitle": "Store replenishment and last-mile dispatch."
+    },
+    "circular_enable": {
+      "dept_id": "circular_enable",
+      "custom_name": "Returns & Reverse Logistics",
+      "custom_tagline": "ITC Limited — FMCG, Agri-Business & Paperboards · Reverse Value Stream Lifecycle",
+      "custom_subtitle": "Triage inspection and upstream defect loops."
+    }
+  },
+  "sub_pillar_overrides": {
+    "demand_forecasting": {
+      "sub_pillar_id": "demand_forecasting",
+      "dept_id": "demand_sop",
+      "canonical_name": "Demand Forecasting",
+      "custom_name": "FMCG-Others Demand Sensing & Forecasting"
+    },
+    "trade_promotion": {
+      "sub_pillar_id": "trade_promotion",
+      "dept_id": "demand_sop",
+      "canonical_name": "Trade Promotion",
+      "custom_name": "TM&D Trade Schemes & Promotion Planning"
+    },
+    "sop_ibp": {
+      "sub_pillar_id": "sop_ibp",
+      "dept_id": "demand_sop",
+      "canonical_name": "S&OP / IBP",
+      "custom_name": "Integrated Business Planning (IBP) & S&OP"
+    },
+    "portfolio_sku": {
+      "sub_pillar_id": "portfolio_sku",
+      "dept_id": "demand_sop",
+      "canonical_name": "Portfolio & SKU",
+      "custom_name": "SKU Rationalization & Portfolio Lifecycle"
+    },
+    "supplier_network": {
+      "sub_pillar_id": "supplier_network",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Supplier Network",
+      "custom_name": "e-Choupal & Agri-Sourcing Network"
+    },
+    "material_packaging": {
+      "sub_pillar_id": "material_packaging",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Material & Packaging",
+      "custom_name": "Paperboards & Packaging Procurement"
+    },
+    "contract_po_mgmt": {
+      "sub_pillar_id": "contract_po_mgmt",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Contract & PO Mgmt",
+      "custom_name": "Contract & PO Mgmt"
+    },
+    "production_scheduling": {
+      "sub_pillar_id": "production_scheduling",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Production Scheduling",
+      "custom_name": "ICML Integrated Production & Logistics"
+    },
+    "capacity_planning": {
+      "sub_pillar_id": "capacity_planning",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Capacity Planning",
+      "custom_name": "Multi-Category Asset & Utility Planning"
+    },
+    "quality_compliance": {
+      "sub_pillar_id": "quality_compliance",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Quality & Compliance",
+      "custom_name": "FMCG Quality Assurance & Food Safety"
+    },
+    "positioning_optimization": {
+      "sub_pillar_id": "positioning_optimization",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Positioning & Optimization",
+      "custom_name": "Multi-Echelon Inventory Positioning"
+    },
+    "warehouse_operations": {
+      "sub_pillar_id": "warehouse_operations",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Warehouse Operations",
+      "custom_name": "ICML & Regional Hub Operations"
+    },
+    "omnichannel_visibility": {
+      "sub_pillar_id": "omnichannel_visibility",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Omnichannel Visibility",
+      "custom_name": "TM&D & E-Commerce Fulfillment"
+    },
+    "first_mid_mile": {
+      "sub_pillar_id": "first_mid_mile",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "First & Mid-Mile",
+      "custom_name": "ICML Inbound & Inter-Unit Logistics"
+    },
+    "store_replenishment": {
+      "sub_pillar_id": "store_replenishment",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Store Replenishment",
+      "custom_name": "General Trade & WD Replenishment"
+    },
+    "last_mile_delivery": {
+      "sub_pillar_id": "last_mile_delivery",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Last-Mile Delivery",
+      "custom_name": "Omnichannel & D2C Fulfillment"
+    },
+    "route_carrier": {
+      "sub_pillar_id": "route_carrier",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Route & Carrier",
+      "custom_name": "TM&D Freight & Carrier Management"
+    },
+    "returns_claims_mgmt": {
+      "sub_pillar_id": "returns_claims_mgmt",
+      "dept_id": "circular_enable",
+      "canonical_name": "Returns & Claims Mgmt",
+      "custom_name": "Returns & Claims Mgmt"
+    },
+    "expiry_markdowns": {
+      "sub_pillar_id": "expiry_markdowns",
+      "dept_id": "circular_enable",
+      "canonical_name": "Expiry & Markdowns",
+      "custom_name": "ICML Expiry & TM&D Reverse Logistics"
+    },
+    "pallet_tote_reclamation": {
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "dept_id": "circular_enable",
+      "canonical_name": "Pallet & Tote Reclamation",
+      "custom_name": "Pallet & Tote Reclamation"
+    }
+  },
+  "persona_overrides": {
+    "demand_planner_forecaster": {
+      "persona_id": "demand_planner_forecaster",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Planner / Forecaster",
+      "title": "Demand Planning Lead - Foods & Personal Care",
+      "role": "Orchestrating category-level demand signals across India",
+      "summary": "He manages the statistical baseline for diverse brands like Aashirvaad and Sunfeast, balancing seasonal spikes and regional consumption patterns.",
+      "manual_toil": "Manually cleaning POS data from millions of TM&D retail outlets and reconciling it with SAP S/4HANA historicals.",
+      "agentic_impact": "Automates the ingestion of weather and harvest data to predict rural demand surges for staples and snacks.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "commercial_planning_lead": {
+      "persona_id": "commercial_planning_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Commercial Planning Lead",
+      "title": "Branch Supply Chain Manager",
+      "role": "Syncing regional sales targets with logistics capacity",
+      "summary": "She bridges the gap between regional sales offices and ICML facilities to ensure stock availability across general trade and modern retail.",
+      "manual_toil": "Spending hours in spreadsheets trying to align e-commerce flash sale forecasts with standard retail replenishment cycles.",
+      "agentic_impact": "Synchronizes unmodeled demand drivers across channels to prevent stockouts during high-velocity festive periods.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "brand_innovation_mgr": {
+      "persona_id": "brand_innovation_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Brand & Innovation Manager",
+      "title": "Brand Manager - New Product Development",
+      "role": "Launching FMCG innovations from concept to shelf",
+      "summary": "He oversees the rollout of new SKU variants, ensuring that packaging and product attributes resonate with target consumer segments.",
+      "manual_toil": "Guessing initial launch volumes for NPIs by manually searching for similar historical product launches in SAP.",
+      "agentic_impact": "Uses AI to match new product attributes against historical 'lookalikes' to generate high-accuracy launch forecasts.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "trade_marketing_manager": {
+      "persona_id": "trade_marketing_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Trade Marketing Manager",
+      "title": "Trade Marketing & Distribution Head",
+      "role": "Maximizing retail visibility and promotion effectiveness",
+      "summary": "She designs trade schemes and consumer promotions to drive off-take across ITC's massive retail footprint.",
+      "manual_toil": "Using historical intuition to guess the lift of a 'Buy 1 Get 1' scheme on Bingo! snacks.",
+      "agentic_impact": "Simulates price elasticity and shelf lift to ensure every rupee of trade spend generates maximum ROI.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "key_account_manager": {
+      "persona_id": "key_account_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Key Account Manager (KAM)",
+      "title": "Key Account Manager - Modern Trade",
+      "role": "Managing relationships with large retail chains",
+      "summary": "He negotiates joint business plans with national retailers to secure premium shelf space for ITC brands.",
+      "manual_toil": "Creating customized PowerPoint decks for every retailer negotiation using fragmented sales data.",
+      "agentic_impact": "Automatically generates data-driven 'sell-in' stories and joint promotional calendars for retail partners.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "revenue_trade_finance_lead": {
+      "persona_id": "revenue_trade_finance_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Revenue / Trade Finance Lead",
+      "title": "Manager - Trade Claims & Reconciliations",
+      "role": "Validating trade spend and distributor claims",
+      "summary": "She ensures that all distributor claims for trade schemes are valid and backed by proof of performance.",
+      "manual_toil": "Physically auditing thousands of scanned invoices and paper circulars to verify promotion compliance.",
+      "agentic_impact": "Uses OCR and AI to automatically audit and reconcile trade scheme claims against digital performance data.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "sop_supply_planning_dir": {
+      "persona_id": "sop_supply_planning_dir",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "S&OP / Supply Planning Dir.",
+      "title": "Head of Supply Chain - FMCG",
+      "role": "Balancing unconstrained demand with ICML production",
+      "summary": "She leads the monthly S&OP cycle, ensuring that manufacturing at ICML Panchal and Kapurthala meets the national demand plan.",
+      "manual_toil": "Negotiating production trade-offs between different product categories when factory lines hit capacity bottlenecks.",
+      "agentic_impact": "Instantly reconciles demand gaps with real-time plant constraints to optimize the national production mix.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "supply_chain_vp_coo": {
+      "persona_id": "supply_chain_vp_coo",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Supply Chain VP / COO",
+      "title": "Chief Operating Officer - FMCG Businesses",
+      "role": "Steering enterprise-wide operational resilience",
+      "summary": "He makes high-level decisions on capital expenditure, ICML expansions, and strategic sourcing from the Agri-Business Division.",
+      "manual_toil": "Reviewing static reports to decide on co-packer shifts during unexpected supply chain disruptions or raw material shortages.",
+      "agentic_impact": "Simulates the financial impact of shifting production between ICMLs and third-party manufacturers during crises.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "ibp_lead_chief_planning_off": {
+      "persona_id": "ibp_lead_chief_planning_off",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "IBP Lead / Chief Planning Off.",
+      "title": "Head of Integrated Business Planning",
+      "role": "Driving cross-functional alignment and financial sync",
+      "summary": "She ensures that the 24-month rolling plan aligns with ITC’s financial targets and strategic growth pillars.",
+      "manual_toil": "Compiling massive pre-read decks for executive IBP meetings by chasing data from Finance, Sales, and Supply Chain.",
+      "agentic_impact": "Generates automated executive summaries and tracks digital sign-offs across all business unit heads.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "category_manager_portfolio": {
+      "persona_id": "category_manager_portfolio",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Category Manager",
+      "title": "Category Manager - Agri Business",
+      "role": "Optimizing the profitability of the agri-commodity portfolio",
+      "summary": "He manages the lifecycle of agri-products sourced via e-Choupal, focusing on margin optimization and inventory health.",
+      "manual_toil": "Manually calculating the cost-to-serve for low-velocity SKUs that clutter the distribution network.",
+      "agentic_impact": "Scores every SKU based on velocity and ICML changeover costs to recommend pruning of low-margin items.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "lifecycle_materials_mgr": {
+      "persona_id": "lifecycle_materials_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Lifecycle / Materials Mgr",
+      "title": "Materials Manager - Paperboards & Specialty Papers",
+      "role": "Managing packaging transitions and material run-outs",
+      "summary": "She coordinates the transition of packaging materials at the Bhadrachalam unit to minimize obsolescence during rebrands.",
+      "manual_toil": "Tracking old packaging inventory across multiple depots to time the cutover of new sustainable designs.",
+      "agentic_impact": "Orchestrates precise 'Phase-In Phase-Out' schedules to ensure zero waste of old packaging materials.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "commercial_finance_director": {
+      "persona_id": "commercial_finance_director",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Commercial Finance Director",
+      "title": "Finance Controller - TM&D",
+      "role": "Protecting margins across the distribution value chain",
+      "summary": "He analyzes the profitability of different trade channels, from small kirana stores to large modern trade accounts.",
+      "manual_toil": "Calculating net-net margins by manually subtracting complex trade discounts and logistics costs from gross sales.",
+      "agentic_impact": "Provides a real-time 'Cost-to-Serve' diagnostic across all ITC product packs and distribution channels.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "procurement_dir_risk_mgr": {
+      "persona_id": "procurement_dir_risk_mgr",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Dir. / Risk Mgr",
+      "title": "Procurement Manager - Agri Business",
+      "role": "Securing raw material flow for Agri-Business Division",
+      "summary": "He manages the procurement of wheat, soya, and spices directly from the e-Choupal network while hedging against volatile mandi prices and climate risks.",
+      "manual_toil": "Manually tracking weather patterns and crop yields across thousands of village choupals to predict supply shortfalls.",
+      "agentic_impact": "Automated sensing of regional disruptions allows for immediate redirection of sourcing to unaffected e-Choupal hubs.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "procurement_operations_lead": {
+      "persona_id": "procurement_operations_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Operations Lead",
+      "title": "Quality Assurance Lead - Agri Sourcing",
+      "role": "Ensuring farm-to-factory food safety compliance",
+      "summary": "She oversees the quality standards of incoming agri-commodities, ensuring every batch meets BRC and food-safety filings before entering ICML facilities.",
+      "manual_toil": "Reviewing physical lab reports and certification documents for thousands of smallholder farmer lots.",
+      "agentic_impact": "Instant validation of digital quality certificates speeds up the intake process at ITC collection centers.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "chief_sustainability_officer": {
+      "persona_id": "chief_sustainability_officer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Head of Sustainability - Paperboards & Specialty Papers",
+      "role": "Driving carbon-neutral and FSC-certified sourcing",
+      "summary": "He leads the 'Wealth Out of Waste' initiatives and ensures the Bhadrachalam unit maintains its world-class FSC chain-of-custody for paperboard products.",
+      "manual_toil": "Compiling Scope 3 emissions data from hundreds of logistics partners and social forestry plantations.",
+      "agentic_impact": "Real-time auditing of the social forestry supply chain provides a transparent carbon-sequestration ledger for ESG reporting.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "category_sourcing_mgr_direct": {
+      "persona_id": "category_sourcing_mgr_direct",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Category Sourcing Mgr (Direct)",
+      "title": "Category Manager - Direct Materials (FMCG)",
+      "role": "Optimizing spend for oils, grains, and ingredients",
+      "summary": "She manages the high-volume purchase of edible oils and grains, balancing SAP S/4HANA requirements with global commodity market fluctuations.",
+      "manual_toil": "Cross-referencing CBOT and local mandi prices against current inventory levels to time bulk purchases.",
+      "agentic_impact": "Predictive hedging advice ensures ITC locks in favorable rates for Aashirvaad and Sunfeast raw materials.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "strategic_sourcing_lead": {
+      "persona_id": "strategic_sourcing_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Strategic Sourcing Lead",
+      "title": "Sourcing Lead - Packaging & Print",
+      "role": "Managing packaging costs for diverse FMCG portfolios",
+      "summary": "He works with the Paperboards division and external vendors to source sustainable cartons and flexible laminates for the Foods and Personal Care businesses.",
+      "manual_toil": "Calculating the impact of resin price hikes on complex multi-layer laminate structures for snack packaging.",
+      "agentic_impact": "Dynamic should-cost models provide instant transparency into how raw material shifts affect final packaging unit costs.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "packaging_rd_engineer": {
+      "persona_id": "packaging_rd_engineer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Packaging R&D Engineer",
+      "title": "Packaging Development Manager - ICML",
+      "role": "Innovating sustainable and high-speed packaging solutions",
+      "summary": "She designs packaging that balances shelf-life requirements for perishables with ITC's commitment to plastic neutrality and high-speed ICML line runnability.",
+      "manual_toil": "Testing new PCR resin blends on production lines and manually calculating plastic tax liabilities.",
+      "agentic_impact": "Rapid simulation of barrier material performance ensures faster transition to recyclable packaging without compromising food safety.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "commercial_sourcing_legal": {
+      "persona_id": "commercial_sourcing_legal",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Commercial Sourcing / Legal",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · ITC Limited — FMCG, Agri-Business & Paperboards",
+      "summary": "Reconciles live spend against negotiated rebate tiers and volume discount scales.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Contract Leakage Agent automatically reconciles live spend against negotiated rebate tiers and volume discount scales — recovers missed rebates & surcharges.",
+      "grounding_source": "Grounded in ITC Limited career & ops roles"
+    },
+    "buyer_procurement_coord": {
+      "persona_id": "buyer_procurement_coord",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Buyer / Procurement Coord.",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · ITC Limited — FMCG, Agri-Business & Paperboards",
+      "summary": "Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "PO Expediting Agent automatically monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments — resolves ~70% of standard po delays.",
+      "grounding_source": "Grounded in ITC Limited career & ops roles"
+    },
+    "accounts_payable_lead": {
+      "persona_id": "accounts_payable_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Accounts Payable Lead",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · ITC Limited — FMCG, Agri-Business & Paperboards",
+      "summary": "Diagnoses price/quantity discrepancies across Purchase Orders (Purchase Orders (POs)), GRNs, and carrier invoices.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Three-Way Match Dispute automatically diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices — prevents vendor holds & saves discounts.",
+      "grounding_source": "Grounded in ITC Limited career & ops roles"
+    },
+    "master_production_scheduler": {
+      "persona_id": "master_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Master Production Scheduler",
+      "title": "ICML Production Planning Manager",
+      "role": "Synchronizing high-speed FMCG lines with regional logistics",
+      "summary": "He balances the production of Sunfeast biscuits and Aashirvaad atta across ICML lines to ensure fresh stock reaches regional warehouses with minimal freight cost.",
+      "manual_toil": "Manually calculating complex changeover sequences between different pack sizes and allergen-sensitive product variants in Excel.",
+      "agentic_impact": "Automated sequencing reduces washdown time between product runs, maximizing the high-speed throughput of ICML facilities.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "shop_floor_shift_lead": {
+      "persona_id": "shop_floor_shift_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Shop Floor / Shift Lead",
+      "title": "ICML Shift Lead - Foods",
+      "role": "Managing real-time line execution and workforce safety",
+      "summary": "She oversees the daily output of snacks and staples, managing a large workforce and ensuring machine uptime across multiple high-speed packaging lines.",
+      "manual_toil": "Scrambling to re-assign labor and materials when a primary packaging machine fails to prevent perishable WIP from spoiling.",
+      "agentic_impact": "Instant re-routing of work-in-progress to alternate lines ensures zero waste of perishable food materials during mechanical halts.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "plant_operations_manager": {
+      "persona_id": "plant_operations_manager",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Plant Operations Manager",
+      "title": "Factory Manager - ICML",
+      "role": "Driving operational excellence and ICML cost efficiency",
+      "summary": "He is responsible for the total P&L of the manufacturing unit, focusing on safety, sustainability, and meeting the aggressive volume targets of the FMCG-Others segment.",
+      "manual_toil": "Balancing shift rosters against skill certifications while trying to manage operator fatigue during peak seasonal demand.",
+      "agentic_impact": "Dynamic labor balancing aligns the most skilled operators with high-complexity runs, improving both safety and line speed.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "supply_chain_ops_director": {
+      "persona_id": "supply_chain_ops_director",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Supply Chain Ops Director",
+      "title": "Head of Supply Chain - Foods",
+      "role": "Optimizing end-to-end network capacity and service levels",
+      "summary": "She oversees the strategic flow of goods from e-Choupal sourcing hubs through ICMLs to the vast TM&D retail network.",
+      "manual_toil": "Reviewing disparate reports on boiler loads and cold storage limits to identify why a specific ICML is underperforming.",
+      "agentic_impact": "Real-time diagnostics flag utility bottlenecks like steam or refrigeration limits before they throttle total factory output.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "external_sourcing_cmo_lead": {
+      "persona_id": "external_sourcing_cmo_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "External Sourcing / CMO Lead",
+      "title": "Manager - Third Party Operations",
+      "role": "Managing co-packer relationships and outsourced production",
+      "summary": "He manages the network of Contract Manufacturing Organizations (CMOs) that supplement ITC's internal ICML capacity for niche or seasonal products.",
+      "manual_toil": "Comparing internal conversion costs against various third-party tolling fees to decide where to produce the next batch of snacks.",
+      "agentic_impact": "Algorithmic allocation ensures the most cost-effective mix of internal ICML production and external co-packing.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "vp_manufacturing_engineering": {
+      "persona_id": "vp_manufacturing_engineering",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "VP Manufacturing Engineering",
+      "title": "Head of Projects & Engineering",
+      "role": "Designing and scaling ITC's next-generation mega-factories",
+      "summary": "She leads the design of new ICML facilities and the installation of high-speed automated lines to support ITC's long-term growth in FMCG.",
+      "manual_toil": "Running manual simulations to justify multi-crore CapEx investments for new high-speed biscuit or personal care lines.",
+      "agentic_impact": "High-fidelity simulations prove which equipment configurations will best handle projected volume growth over the next five years.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "qa_manager_line_inspector": {
+      "persona_id": "qa_manager_line_inspector",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "QA Manager / Line Inspector",
+      "title": "Quality Assurance Manager",
+      "role": "Ensuring zero-defect packaging and food safety compliance",
+      "summary": "He ensures that every unit of Bingo! or Yippee! noodles leaving the factory meets ITC's stringent quality and labeling standards.",
+      "manual_toil": "Performing manual spot checks on high-speed lines to find misaligned labels or illegible batch codes.",
+      "agentic_impact": "AI vision systems catch every single packaging defect in real-time, preventing costly market recalls and protecting brand equity.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "regulatory_compliance_lead": {
+      "persona_id": "regulatory_compliance_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Regulatory Compliance Lead",
+      "title": "Lead - Regulatory & Food Safety",
+      "role": "Governing FSSAI compliance and audit readiness",
+      "summary": "She manages the documentation and compliance frameworks required for food safety and environmental regulations across all ITC manufacturing sites.",
+      "manual_toil": "Sifting through thousands of paper-based Batch Production Records to verify pasteurization temperatures during internal audits.",
+      "agentic_impact": "Automated auditing of digital batch records flags any CCP deviation instantly, ensuring 100% compliance with FSSAI standards.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "continuous_improvement_lead": {
+      "persona_id": "continuous_improvement_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Continuous Improvement Lead",
+      "title": "Manager - Operational Excellence",
+      "role": "Driving Lean Six Sigma and waste reduction initiatives",
+      "summary": "He analyzes production data to find the root cause of material waste and implements CAPA to improve overall ICML efficiency.",
+      "manual_toil": "Manually correlating consumer feedback from the TM&D network with specific ingredient lots from e-Choupal.",
+      "agentic_impact": "AI identifies the exact correlation between raw material batches and finished goods quality, drastically reducing scrap rates.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "inventory_optimization_lead": {
+      "persona_id": "inventory_optimization_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Optimization Lead",
+      "title": "Demand Planning Lead - FMCG",
+      "role": "Setting safety stock across the multi-tier network",
+      "summary": "Uses o9 Solutions to determine how much stock to hold at ICMLs versus regional mother godowns to prevent stockouts.",
+      "manual_toil": "Calculating safety stock levels using static spreadsheets that fail to account for volatile rural demand shifts.",
+      "agentic_impact": "Adjusts multi-echelon buffers automatically by analyzing live lead-time data from the TM&D distribution network.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "inventory_controller_buyer": {
+      "persona_id": "inventory_controller_buyer",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Controller / Buyer",
+      "title": "Supply Chain Manager - Foods",
+      "role": "Managing shelf-life and inventory health",
+      "summary": "Monitors the freshness of perishable food products across the supply chain to minimize waste and maximize retail availability.",
+      "manual_toil": "Manually tracking batch expiry dates for dairy and snacks to trigger clearance discounts or stock transfers.",
+      "agentic_impact": "Proactively identifies high-risk batches and suggests promotional bundles for the ITC Store or institutional buyers.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "replenishment_planner": {
+      "persona_id": "replenishment_planner",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Replenishment Planner",
+      "title": "Branch Supply Chain Manager",
+      "role": "Balancing stock between regional distribution centers",
+      "summary": "Ensures that regional warehouses have the right mix of ITC products to serve local retail outlets and wholesalers.",
+      "manual_toil": "Reviewing stock imbalances across branches and manually raising inter-depot transfer orders in SAP.",
+      "agentic_impact": "Orchestrates automated stock rebalancing between facilities to clear gluts in one region and fill gaps in another.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "dc_operations_mgr": {
+      "persona_id": "dc_operations_mgr",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Operations Mgr / IE Lead",
+      "title": "Factory Manager - ICML",
+      "role": "Optimizing integrated manufacturing and logistics throughput",
+      "summary": "Oversees the seamless transition of FMCG goods from production lines directly into the integrated warehouse for national distribution.",
+      "manual_toil": "Manually reconfiguring floor layouts in SAP S/4HANA to accommodate seasonal surges in Aashirvaad atta or Sunfeast biscuits.",
+      "agentic_impact": "Dynamically optimizes ICML storage zones based on real-time production schedules and high-velocity shipping lanes.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "inbound_receiving_supervisor": {
+      "persona_id": "inbound_receiving_supervisor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Inbound Receiving Supervisor",
+      "title": "Agri-Business Logistics Executive",
+      "role": "Managing inbound raw material and e-Choupal intake",
+      "summary": "Coordinates the arrival of bulk agricultural commodities from e-Choupal hubs into processing centers and paperboard units.",
+      "manual_toil": "Reconciling physical truck arrivals against paper-based gate passes and fragmented digital ASN records.",
+      "agentic_impact": "Automates the reconciliation of bulk agri-load photos and BOLs against SAP Ariba procurement orders.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "dc_shift_floor_lead": {
+      "persona_id": "dc_shift_floor_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Shift Floor Lead",
+      "title": "Warehouse Operations Manager",
+      "role": "Directing shift-level picking and dispatch execution",
+      "summary": "Manages the floor teams at regional hubs to ensure Trade Marketing & Distribution (TM&D) orders are fulfilled for retail dispatch.",
+      "manual_toil": "Constant manual intervention to reassign pickers when high-priority modern trade orders clash with general trade waves.",
+      "agentic_impact": "Balances labor across picking zones in real-time to ensure no TM&D truck misses its scheduled departure window.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "store_operations_omni_lead": {
+      "persona_id": "store_operations_omni_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Store Operations / Omni Lead",
+      "title": "E-Commerce Operations Lead",
+      "role": "Ensuring inventory accuracy for digital channels",
+      "summary": "Manages the availability of the full ITC portfolio on the 'ITC Store' and third-party quick-commerce platforms.",
+      "manual_toil": "Investigating discrepancies between digital 'in-stock' status and physical warehouse availability that lead to order cancellations.",
+      "agentic_impact": "Flags phantom inventory by detecting when items stop moving despite high digital demand signals.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "omnichannel_fulfillment_dir": {
+      "persona_id": "omnichannel_fulfillment_dir",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Omnichannel Fulfillment Dir.",
+      "title": "Trade Marketing & Distribution Head",
+      "role": "Optimizing the cost of reaching millions of outlets",
+      "summary": "Oversees the massive distribution engine that connects ITC factories to millions of kirana stores and modern retail outlets.",
+      "manual_toil": "Deciding which hub should fulfill large institutional or e-commerce orders based on fluctuating freight costs.",
+      "agentic_impact": "Selects the optimal fulfillment node by calculating the lowest-cost path across the ICML and hub network.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "reverse_logistics_lead_wh": {
+      "persona_id": "reverse_logistics_lead_wh",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Reverse Logistics Lead",
+      "title": "Returns & Quality Assurance Lead",
+      "role": "Processing market returns and damaged goods",
+      "summary": "Handles the flow of returned goods from the TM&D network, determining what can be salvaged, repackaged, or liquidated.",
+      "manual_toil": "Visually inspecting thousands of returned snack and personal care units to categorize damage types.",
+      "agentic_impact": "Uses image recognition to instantly triage returns into restock, repackage, or sustainable disposal categories.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "transport_planner_inbound_mgr": {
+      "persona_id": "transport_planner_inbound_mgr",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Transport Planner / Inbound Mgr",
+      "title": "Branch Supply Chain Manager",
+      "role": "Optimizing primary freight from ICMLs to regional warehouses",
+      "summary": "You manage the high-volume movement of FMCG-Others goods from integrated manufacturing hubs like ICML Panchal to a network of regional distribution centers.",
+      "manual_toil": "Manually calculating truck fill factors for mixed loads of heavy Aashirvaad atta and high-volume Bingo! snacks to avoid wasted air.",
+      "agentic_impact": "AI automatically maximizes FTL utilization by modeling weight and cube constraints across diverse product categories in SAP S/4HANA.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "yard_master_plant_logistics": {
+      "persona_id": "yard_master_plant_logistics",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Master / Plant Logistics",
+      "title": "Factory Logistics Manager - ICML",
+      "role": "Synchronizing factory output with outbound vehicle dispatch",
+      "summary": "You oversee the bustling yard operations at flagship facilities like Ranjangaon, ensuring trucks are loaded and dispatched as soon as products leave the line.",
+      "manual_toil": "Constant phone calls to gate security and production leads to re-prioritize loading docks when inbound trucks are delayed in traffic.",
+      "agentic_impact": "Real-time GPS feeds dynamically re-sequence dock assignments, ensuring the highest priority FMCG shipments depart first.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "cold_chain_qa_logistics_dir": {
+      "persona_id": "cold_chain_qa_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold Chain QA / Logistics Dir.",
+      "title": "Quality Assurance Manager - Frozen Foods",
+      "role": "Ensuring thermal integrity for Master Chef and dairy products",
+      "summary": "You protect the quality of ITC’s perishable portfolio, monitoring the temperature-controlled journey from factory cold stores to retail points.",
+      "manual_toil": "Reviewing fragmented data logs from third-party reefer providers to identify where temperature spikes occurred during transit.",
+      "agentic_impact": "Automated IoT monitoring flags thermal excursions instantly, triggering immediate corrective actions and simplifying carrier insurance claims.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "outbound_lead_industrial_eng": {
+      "persona_id": "outbound_lead_industrial_eng",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Outbound Lead / Industrial Eng.",
+      "title": "Warehouse Operations Lead",
+      "role": "Optimizing picking and packing for retail distribution",
+      "summary": "You design the workflow inside ITC's massive warehouses to ensure that orders for millions of kirana stores are packed efficiently.",
+      "manual_toil": "Designing pick paths that don't account for how products are actually stocked on the Wholesale Dealer's shelves.",
+      "agentic_impact": "AI sequences warehouse picking to match the delivery sequence, reducing unloading time at the distributor's point.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "store_replenishment_lead": {
+      "persona_id": "store_replenishment_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Replenishment Lead",
+      "title": "Trade Marketing & Distribution Head",
+      "role": "Managing stock flow to millions of retail outlets",
+      "summary": "You lead the engine that puts ITC products in every corner of India, balancing stock levels across a multi-tiered distribution network.",
+      "manual_toil": "Pushing inventory to distributors based on historical averages rather than real-time shelf velocity or warehouse capacity.",
+      "agentic_impact": "Intelligent replenishment throttles shipments based on live POS data and actual distributor storage limits to prevent overstocking.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "retail_logistics_dispatcher": {
+      "persona_id": "retail_logistics_dispatcher",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Retail Logistics Dispatcher",
+      "title": "Regional Logistics Coordinator",
+      "role": "Managing urban delivery windows and municipal restrictions",
+      "summary": "You coordinate the final leg of delivery into congested metro areas, navigating 'no-entry' timings and specific dealer receiving hours.",
+      "manual_toil": "Maintaining a complex mental map of city-specific truck entry bans and individual distributor lunch breaks.",
+      "agentic_impact": "The system automatically schedules deliveries to hit precise windows, avoiding municipal fines and distributor downtime.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "last_mile_operations_lead": {
+      "persona_id": "last_mile_operations_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Last-Mile Operations Lead",
+      "title": "D2C Operations Manager",
+      "role": "Executing direct-to-consumer fulfillment for ITC Store",
+      "summary": "You manage the growing 'ITC Store' e-commerce channel, ensuring that premium chocolates and personal care reach households directly.",
+      "manual_toil": "Correcting inaccurate customer addresses and providing directions to delivery partners in complex residential colonies.",
+      "agentic_impact": "Geocoding intelligence uses historical delivery data and aerial imagery to pinpoint exact drop-off locations for faster fulfillment.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "ecommerce_logistics_dir": {
+      "persona_id": "ecommerce_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "E-Commerce Logistics Dir.",
+      "title": "Head of E-Commerce Supply Chain",
+      "role": "Orchestrating multi-channel digital fulfillment",
+      "summary": "You oversee the logistics strategy for ITC's presence on quick-commerce, marketplaces, and the proprietary D2C platform.",
+      "manual_toil": "Manually deciding whether to use the internal TM&D fleet or a 3PL courier for a specific batch of e-commerce orders.",
+      "agentic_impact": "Dynamic courier allocation selects the best shipping method based on cost, speed, and real-time carrier performance.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "customer_support_ops_lead": {
+      "persona_id": "customer_support_ops_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Customer Support Ops Lead",
+      "title": "Customer Experience Lead - TM&D",
+      "role": "Managing communication for delivery exceptions",
+      "summary": "You are responsible for keeping distributors and D2C customers informed when their shipments are delayed or modified.",
+      "manual_toil": "Sending manual emails and SMS alerts only after a delivery has already been missed or delayed.",
+      "agentic_impact": "Proactive exception detection alerts customers the moment a delay is predicted, offering automated rescheduling options.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "fleet_dispatcher_central_ops": {
+      "persona_id": "fleet_dispatcher_central_ops",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Fleet Dispatcher / Central Ops",
+      "title": "Logistics Operations Manager",
+      "role": "Directing the movement of the dedicated TM&D fleet",
+      "summary": "You are the nerve center for ITC's distribution, ensuring that thousands of vehicles navigate India's complex road networks to reach Wholesale Dealers.",
+      "manual_toil": "Reacting to sudden monsoon flooding or road closures by manually calling drivers to suggest alternate rural routes.",
+      "agentic_impact": "Dynamic rerouting uses live traffic and weather data to keep the FMCG supply chain moving despite infrastructure disruptions.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "transport_procurement_lead": {
+      "persona_id": "transport_procurement_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Transport Procurement Lead",
+      "title": "Category Manager - Logistics Procurement",
+      "role": "Sourcing and managing carrier partnerships for TM&D",
+      "summary": "You negotiate contracts with hundreds of transporters and monitor their performance to ensure ITC's massive volume is moved cost-effectively.",
+      "manual_toil": "Sifting through spreadsheets to see which carriers are consistently rejecting loads or failing to meet OTIF targets.",
+      "agentic_impact": "A digital control tower automatically shifts volume to high-performing carriers based on real-time tender acceptance data.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "freight_controller_claims": {
+      "persona_id": "freight_controller_claims",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Controller / Claims",
+      "title": "Commercial Manager - Logistics",
+      "role": "Validating freight spend and managing billing disputes",
+      "summary": "You ensure that every rupee spent on transport is accurate, auditing invoices against contracts and proof-of-delivery documents.",
+      "manual_toil": "Manually matching thousands of physical Proof of Delivery (POD) notes against SAP freight invoices to verify detention charges.",
+      "agentic_impact": "OCR-powered auditing instantly validates PODs and contracts, flagging only the discrepancies for human review.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "reverse_logistics_fraud_lead": {
+      "persona_id": "reverse_logistics_fraud_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Reverse Logistics / Fraud Lead",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · ITC Limited — FMCG, Agri-Business & Paperboards",
+      "summary": "Analyzes item photos and packaging video feeds to detect wear or swapped tags.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Return Fraud Sentinel automatically analyzes item photos and packaging video feeds to detect wear or swapped tags — cuts returns fraud abuse by 25–40%.",
+      "grounding_source": "Grounded in ITC Limited career & ops roles"
+    },
+    "customer_experience_cx_lead": {
+      "persona_id": "customer_experience_cx_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Customer Experience (CX) Lead",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · ITC Limited — FMCG, Agri-Business & Paperboards",
+      "summary": "Evaluates salvage margins vs reverse freight to determine keep-it instant refunds.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Keep-It & Routing Advisor automatically evaluates salvage margins vs reverse freight to determine keep-it instant refunds — lowers net return costs by 15–22%.",
+      "grounding_source": "Grounded in ITC Limited career & ops roles"
+    },
+    "claims_specialist_controller": {
+      "persona_id": "claims_specialist_controller",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Claims Specialist / Controller",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · ITC Limited — FMCG, Agri-Business & Paperboards",
+      "summary": "Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "OS&D Freight Claims automatically reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes — resolves carrier claims in <72 hours.",
+      "grounding_source": "Grounded in ITC Limited career & ops roles"
+    },
+    "merchandising_store_ops_mgr": {
+      "persona_id": "merchandising_store_ops_mgr",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Merchandising / Store Ops Mgr",
+      "title": "Branch Supply Chain Manager",
+      "role": "Managing regional stock freshness and TM&D outlet replenishment",
+      "summary": "You oversee the flow of FMCG-Others products from regional depots to millions of retail outlets, ensuring stock rotation and minimizing market returns due to expiry.",
+      "manual_toil": "Manually tracking batch codes across thousands of general trade outlets to identify near-expiry Aashirvaad or Sunfeast stock.",
+      "agentic_impact": "Automates real-time price adjustments and stock liquidation triggers based on SAP S/4HANA batch data and regional sales velocity.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "inventory_disposition_lead": {
+      "persona_id": "inventory_disposition_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Inventory Disposition Lead",
+      "title": "Logistics Operations Manager - ICML",
+      "role": "Optimizing inventory health across integrated manufacturing hubs",
+      "summary": "You manage the disposition of short-dated inventory at ICML facilities, deciding whether to redistribute to high-velocity markets or institutional channels.",
+      "manual_toil": "Coordinating via phone and spreadsheets to find institutional buyers for bulk lots of near-expiry biscuits or snacks before they hit the cutoff.",
+      "agentic_impact": "Instantly matches short-dated ICML inventory with institutional demand or discount channels to maximize recovery value.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "cso_circular_lead": {
+      "persona_id": "cso_circular_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Sustainability Lead - Paperboards & Specialty Papers",
+      "role": "Driving plastic neutrality and food waste diversion targets",
+      "summary": "You lead ITC's 'Sustainability 2.0' goals, focusing on circular packaging for FMCG and ensuring organic waste from food units is diverted from landfills.",
+      "manual_toil": "Aggregating manual waste logs from diverse ICMLs and Bhadrachalam units to compile ESG reports for annual filings.",
+      "agentic_impact": "Provides a real-time dashboard of carbon diversion and circularity metrics by integrating data from e-Choupal and manufacturing nodes.",
+      "grounding_source": "Grounded in ITC Limited career portals & supply chain roles"
+    },
+    "asset_recovery_rti_manager": {
+      "persona_id": "asset_recovery_rti_manager",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Asset Recovery / RTI Manager",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · ITC Limited — FMCG, Agri-Business & Paperboards",
+      "summary": "Reconciles rfid portal scans with chep/peco statements to detect hoarding nodes.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "RTI Balance Reconciler automatically reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes — eliminates 30% in non-return fee fines.",
+      "grounding_source": "Grounded in ITC Limited career & ops roles"
+    },
+    "reverse_transport_planner": {
+      "persona_id": "reverse_transport_planner",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Reverse Transport Planner",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · ITC Limited — FMCG, Agri-Business & Paperboards",
+      "summary": "Schedules dynamic backhauls to collect empty roll cages and rpcs from retail stores.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Milk-Run Consolidation automatically schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores — boosts backhaul fill rate by 25–40%.",
+      "grounding_source": "Grounded in ITC Limited career & ops roles"
+    },
+    "packaging_qa_food_safety": {
+      "persona_id": "packaging_qa_food_safety",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Packaging QA / Food Safety",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · ITC Limited — FMCG, Agri-Business & Paperboards",
+      "summary": "Inspects return photos and wash logs for structural fatigue and chemical compliance.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Sanitation & Health Agent automatically inspects return photos and wash logs for structural fatigue and chemical compliance — extends reusable lifecycle by 15–20%.",
+      "grounding_source": "Grounded in ITC Limited career & ops roles"
+    }
+  },
+  "agent_relevance": {
+    "demand_sensing_agent": {
+      "agent_id": "demand_sensing_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Sensing Agent",
+      "custom_agent_name": "e-Choupal Demand Sensor",
+      "is_relevant": true,
+      "division_context": "Synthesizes rural POS velocity, weather patterns affecting agri-sourcing, and macro trends to refine FMCG demand.",
+      "hidden_reason": ""
+    },
+    "cpfr_sync_agent": {
+      "agent_id": "cpfr_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Forecast Reconciliation",
+      "custom_agent_name": "Channel Sync Copilot",
+      "is_relevant": true,
+      "division_context": "Identifies unmodeled demand drivers across ITC's e-store, modern trade, and the vast TM&D general trade network.",
+      "hidden_reason": ""
+    },
+    "npi_demand_profiler": {
+      "agent_id": "npi_demand_profiler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "NPI Demand Profiler",
+      "custom_agent_name": "FMCG Launch Profiler",
+      "is_relevant": true,
+      "division_context": "Matches new ITC product launches to historical performance of similar categories like Aashirvaad or Sunfeast variants.",
+      "hidden_reason": ""
+    },
+    "promo_lift_simulator": {
+      "agent_id": "promo_lift_simulator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Promo ROI Simulator",
+      "custom_agent_name": "Trade Scheme ROI Simulator",
+      "is_relevant": true,
+      "division_context": "Simulates price elasticity and incremental lift for ITC trade promotions to optimize marketing spend.",
+      "hidden_reason": ""
+    },
+    "field_beat_distributor_sync_agent": {
+      "agent_id": "field_beat_distributor_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "JBP Negotiation Agent",
+      "custom_agent_name": "TM&D Partner Sync",
+      "is_relevant": true,
+      "division_context": "Creates customized sell-in decks for ITC distributors and joint promotional calendars for key retail accounts.",
+      "hidden_reason": ""
+    },
+    "trade_scheme_claims_reconciler": {
+      "agent_id": "trade_scheme_claims_reconciler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Deduction Audit Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Audits scanned proof-of-performance documents from distributors using OCR to validate trade scheme claims.",
+      "hidden_reason": ""
+    },
+    "sop_scenario_weaver": {
+      "agent_id": "sop_scenario_weaver",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Consensus & Gap Agent",
+      "custom_agent_name": "ICML Capacity Balancer",
+      "is_relevant": true,
+      "division_context": "Reconciles unconstrained market demand with specific production bottleneck limits at ICML facilities.",
+      "hidden_reason": ""
+    },
+    "disruption_war_room_orchestrator": {
+      "agent_id": "disruption_war_room_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Digital War-Room Agent",
+      "custom_agent_name": "Supply Resilience Agent",
+      "is_relevant": true,
+      "division_context": "Evaluates trade-offs between ICML production and co-packer shifts during raw material shortages or logistics strikes.",
+      "hidden_reason": ""
+    },
+    "csco_control_tower_copilot": {
+      "agent_id": "csco_control_tower_copilot",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Executive Copilot",
+      "custom_agent_name": "Executive IBP Copilot",
+      "is_relevant": true,
+      "division_context": "Generates pre-read decks for ITC leadership and tracks cross-functional sign-offs for the integrated business plan.",
+      "hidden_reason": ""
+    },
+    "working_capital_cash_bridge": {
+      "agent_id": "working_capital_cash_bridge",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "SKU Pruning Agent",
+      "custom_agent_name": "SKU Profitability Scorer",
+      "is_relevant": true,
+      "division_context": "Scores SKU velocity against ICML changeover costs and shelf revenue to identify items for rationalization.",
+      "hidden_reason": ""
+    },
+    "eco_cutover_orchestrator": {
+      "agent_id": "eco_cutover_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "PIPO Run-Out Agent",
+      "custom_agent_name": "Packaging Transition Agent",
+      "is_relevant": true,
+      "division_context": "Orchestrates the run-out of old packaging materials at Bhadrachalam and ICMLs to sync with new product formulations.",
+      "hidden_reason": ""
+    },
+    "network_twin_architect": {
+      "agent_id": "network_twin_architect",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Cost-to-Serve Diagnostic",
+      "custom_agent_name": "Net-Net Margin Diagnostic",
+      "is_relevant": true,
+      "division_context": "Calculates the true cost-to-serve across different ITC pack sizes for Kirana, Modern Trade, and e-Commerce channels.",
+      "hidden_reason": ""
+    },
+    "tier_n_risk_sentinel": {
+      "agent_id": "tier_n_risk_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Disruption Sensing Agent",
+      "custom_agent_name": "e-Choupal Supply Sentinel",
+      "is_relevant": true,
+      "division_context": "Monitors multi-tier agri-feeds and weather disruptions across the e-Choupal network to protect ICML production schedules.",
+      "hidden_reason": ""
+    },
+    "supplier_quality_sentinel": {
+      "agent_id": "supplier_quality_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Onboarding & Qual. Agent",
+      "custom_agent_name": "Agri-Quality Compliance Agent",
+      "is_relevant": true,
+      "division_context": "Automates the verification of BRC and ISO food-safety filings for ITC's vast network of agri-vendors and packaging suppliers.",
+      "hidden_reason": ""
+    },
+    "carbon_scope3_ledger": {
+      "agent_id": "carbon_scope3_ledger",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "ESG & Scope 3 Auditor",
+      "custom_agent_name": "Social Forestry & ESG Auditor",
+      "is_relevant": true,
+      "division_context": "Tracks FSC certifications and carbon sequestration data across ITC’s social forestry and paperboard supply chains.",
+      "hidden_reason": ""
+    },
+    "commodity_index_advisor": {
+      "agent_id": "commodity_index_advisor",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Commodity Index Advisor",
+      "custom_agent_name": "Mandi & Global Index Advisor",
+      "is_relevant": true,
+      "division_context": "Correlates CBOT/Platts data with local Indian mandi prices to advise on hedging for wheat, soya, and edible oils.",
+      "hidden_reason": ""
+    },
+    "rfq_should_cost_agent": {
+      "agent_id": "rfq_should_cost_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Dynamic Should-Cost Agent",
+      "custom_agent_name": "Packaging Should-Cost Agent",
+      "is_relevant": true,
+      "division_context": "Deconstructs packaging costs for ITC’s diverse FMCG portfolio, factoring in resin weights and conversion energy at Paperboard units.",
+      "hidden_reason": ""
+    },
+    "sustainable_packaging_agent": {
+      "agent_id": "sustainable_packaging_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Sustainable Packaging Agent",
+      "custom_agent_name": "Circular Packaging Copilot",
+      "is_relevant": true,
+      "division_context": "Evaluates PCR resins and barrier materials for ITC's plastic-neutrality goals while ensuring runnability on high-speed ICML lines.",
+      "hidden_reason": ""
+    },
+    "tariff_esg_agent": {
+      "agent_id": "tariff_esg_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Contract Leakage Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across ITC Limited — FMCG, Agri-Business & Paperboards.",
+      "hidden_reason": ""
+    },
+    "master_data_leadtime_steward": {
+      "agent_id": "master_data_leadtime_steward",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "PO Expediting Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across ITC Limited — FMCG, Agri-Business & Paperboards.",
+      "hidden_reason": ""
+    },
+    "three_way_match_dispute": {
+      "agent_id": "three_way_match_dispute",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Three-Way Match Dispute",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across ITC Limited — FMCG, Agri-Business & Paperboards.",
+      "hidden_reason": ""
+    },
+    "finite_production_scheduler": {
+      "agent_id": "finite_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Changeover Optimizer",
+      "custom_agent_name": "ICML Changeover Optimizer",
+      "is_relevant": true,
+      "division_context": "Sequences FMCG production runs to minimize washdowns between different flavors and allergens, maximizing high-speed line utilization.",
+      "hidden_reason": ""
+    },
+    "line_schedule_optimizer": {
+      "agent_id": "line_schedule_optimizer",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Disruption Re-sequencer",
+      "custom_agent_name": "WIP Risk Re-sequencer",
+      "is_relevant": true,
+      "division_context": "Detects machine breakdowns and immediately re-routes perishable ingredients to functional lines to prevent food waste.",
+      "hidden_reason": ""
+    },
+    "labor_line_balancing_agent": {
+      "agent_id": "labor_line_balancing_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Labor & Line Balancing",
+      "custom_agent_name": "Shift Skill & Fatigue Balancer",
+      "is_relevant": true,
+      "division_context": "Matches operator certifications and fatigue levels to specific line speeds, ensuring safety and productivity across ITC's large workforce.",
+      "hidden_reason": ""
+    },
+    "predictive_oee_sentinel": {
+      "agent_id": "predictive_oee_sentinel",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Bottleneck Diagnostic",
+      "custom_agent_name": "ICML Utility & OEE Sentinel",
+      "is_relevant": true,
+      "division_context": "Monitors critical factory utilities like boilers and cold storage to predict and prevent throughput bottlenecks.",
+      "hidden_reason": ""
+    },
+    "copacker_allocation_agent": {
+      "agent_id": "copacker_allocation_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Co-Packer Allocation",
+      "custom_agent_name": "CMO & Toll-Manufacturing Optimizer",
+      "is_relevant": true,
+      "division_context": "Optimizes the split between ITC's internal ICML production and external contract manufacturers based on total landed cost.",
+      "hidden_reason": ""
+    },
+    "capex_simulator_agent": {
+      "agent_id": "capex_simulator_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "CapEx Simulator",
+      "custom_agent_name": "ICML Expansion Simulator",
+      "is_relevant": true,
+      "division_context": "Models the impact of new high-speed line investments against long-term demand forecasts for ITC's FMCG-Others portfolio.",
+      "hidden_reason": ""
+    },
+    "inline_yield_guardian": {
+      "agent_id": "inline_yield_guardian",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Visual Defect Triager",
+      "custom_agent_name": "High-Speed Visual Inspector",
+      "is_relevant": true,
+      "division_context": "Uses computer vision to inspect packaging integrity and label accuracy on high-speed FMCG lines at ICML facilities.",
+      "hidden_reason": ""
+    },
+    "batch_record_auditor": {
+      "agent_id": "batch_record_auditor",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Batch Record Auditor",
+      "custom_agent_name": "FSSAI Compliance Auditor",
+      "is_relevant": true,
+      "division_context": "Automatically scans batch records and COAs to ensure all food safety parameters and CCPs are met before release.",
+      "hidden_reason": ""
+    },
+    "scrap_defect_root_cause_agent": {
+      "agent_id": "scrap_defect_root_cause_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "RCA & CAPA Copilot",
+      "custom_agent_name": "Farm-to-Fork Quality Linker",
+      "is_relevant": true,
+      "division_context": "Correlates consumer complaints with specific e-Choupal ingredient lots and ICML machine telemetry to find root causes of defects.",
+      "hidden_reason": ""
+    },
+    "meio_safety_stock_agent": {
+      "agent_id": "meio_safety_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Safety Stock Agent",
+      "custom_agent_name": "Multi-Tier Buffer Agent",
+      "is_relevant": true,
+      "division_context": "Dynamically recalibrates stock levels across ICMLs, Mother Godowns, and Regional Depots to handle India's diverse demand patterns.",
+      "hidden_reason": ""
+    },
+    "slob_disposition_agent": {
+      "agent_id": "slob_disposition_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "SLOB Disposition Agent",
+      "custom_agent_name": "Freshness & SLOB Guard",
+      "is_relevant": true,
+      "division_context": "Monitors shelf-life for ITC's food portfolio, triggering early interventions for products nearing expiry to reduce waste.",
+      "hidden_reason": ""
+    },
+    "crossdock_transfer_orchestrator": {
+      "agent_id": "crossdock_transfer_orchestrator",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inter-Facility Rebalancer",
+      "custom_agent_name": "Inter-Depot Rebalancer",
+      "is_relevant": true,
+      "division_context": "Automates the movement of stock between regional hubs to ensure product availability for local Trade Marketing teams.",
+      "hidden_reason": ""
+    },
+    "warehouse_slotting_agent": {
+      "agent_id": "warehouse_slotting_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dynamic Slotting Agent",
+      "custom_agent_name": "ICML Slotting Optimizer",
+      "is_relevant": true,
+      "division_context": "Optimizes the placement of high-velocity FMCG brands like Bingo! and Sunfeast within ICML warehouses to minimize travel time for pickers.",
+      "hidden_reason": ""
+    },
+    "dock_to_stock_agent": {
+      "agent_id": "dock_to_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dock-to-Stock Agent",
+      "custom_agent_name": "Agri-Inbound Reconciler",
+      "is_relevant": true,
+      "division_context": "Speeds up the intake of raw materials from e-Choupal by automatically matching truck photos and weighbridge data to SAP purchase orders.",
+      "hidden_reason": ""
+    },
+    "wave_fulfillment_copilot": {
+      "agent_id": "wave_fulfillment_copilot",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Wave Fulfillment Copilot",
+      "custom_agent_name": "TM&D Dispatch Orchestrator",
+      "is_relevant": true,
+      "division_context": "Manages the high-volume picking waves required to keep ITC's massive fleet of secondary distribution trucks on schedule.",
+      "hidden_reason": ""
+    },
+    "planogram_merchandising_vision_auditor": {
+      "agent_id": "planogram_merchandising_vision_auditor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Phantom Inventory Sensor",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Supports TM&D & E-Commerce Fulfillment across ITC Limited — FMCG, Agri-Business & Paperboards.",
+      "hidden_reason": "ITC is primarily a manufacturer/distributor (TM&D) rather than a retailer with its own physical store aisles to audit via planogram vision."
+    },
+    "atp_order_promising_agent": {
+      "agent_id": "atp_order_promising_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "SFS / BOPIS Sourcing",
+      "custom_agent_name": "ITC Store Sourcing Logic",
+      "is_relevant": true,
+      "division_context": "Determines the best warehouse or hub to fulfill D2C orders from the ITC Store based on proximity and stock freshness.",
+      "hidden_reason": ""
+    },
+    "returns_triage_agent": {
+      "agent_id": "returns_triage_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Returns Triage Agent",
+      "custom_agent_name": "Market Return Classifier",
+      "is_relevant": true,
+      "division_context": "Automates the assessment of damaged or returned FMCG goods from the retail network to streamline the reverse logistics flow.",
+      "hidden_reason": ""
+    },
+    "load_consolidation_agent": {
+      "agent_id": "load_consolidation_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Load Consolidation",
+      "custom_agent_name": "ICML Multi-Category Optimizer",
+      "is_relevant": true,
+      "division_context": "Consolidates heavy staples like Aashirvaad with light snacks like Bingo! to maximize truck cube and weight utilization across ITC's diverse FMCG portfolio.",
+      "hidden_reason": ""
+    },
+    "yard_dock_sequencer": {
+      "agent_id": "yard_dock_sequencer",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Disruption Agent",
+      "custom_agent_name": "ICML Yard Flow Controller",
+      "is_relevant": true,
+      "division_context": "Synchronizes factory output with vehicle arrivals at ICML facilities, dynamically reassigning docks based on real-time production and transit delays.",
+      "hidden_reason": ""
+    },
+    "cold_chain_auditor": {
+      "agent_id": "cold_chain_auditor",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold-Chain Auditor",
+      "custom_agent_name": "Master Chef Thermal Guardian",
+      "is_relevant": true,
+      "division_context": "Monitors IoT sensors across the frozen food and dairy supply chain to ensure Master Chef and Aashirvaad Svasti products never break the cold chain.",
+      "hidden_reason": ""
+    },
+    "aisle_aligned_pallet_agent": {
+      "agent_id": "aisle_aligned_pallet_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Aisle-Aligned Pallet",
+      "custom_agent_name": "Distributor-Centric Load Sequencer",
+      "is_relevant": true,
+      "division_context": "Sequences warehouse picking to align with the storage layouts of ITC's Wholesale Dealers, speeding up the unloading and shelf-stocking process.",
+      "hidden_reason": ""
+    },
+    "store_capacity_agent": {
+      "agent_id": "store_capacity_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Capacity Agent",
+      "custom_agent_name": "WD Inventory Balancer",
+      "is_relevant": true,
+      "division_context": "Prevents stockouts and overstocking at Wholesale Dealers by analyzing live POS velocity and physical warehouse capacity before triggering replenishment.",
+      "hidden_reason": ""
+    },
+    "port_drayage_orchestrator": {
+      "agent_id": "port_drayage_orchestrator",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Curfew Orchestrator",
+      "custom_agent_name": "Urban Delivery Curfew Orchestrator",
+      "is_relevant": true,
+      "division_context": "Coordinates delivery schedules to navigate municipal 'no-entry' zones and specific receiving windows of urban retail distributors.",
+      "hidden_reason": ""
+    },
+    "geocoding_intelligence_agent": {
+      "agent_id": "geocoding_intelligence_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Geocoding Intelligence",
+      "custom_agent_name": "Last-Mile Location Intelligence",
+      "is_relevant": true,
+      "division_context": "Refines delivery accuracy for ITC Store D2C orders by interpreting complex Indian addresses and local landmarks using historical delivery data.",
+      "hidden_reason": ""
+    },
+    "multimodal_mode_shift_agent": {
+      "agent_id": "multimodal_mode_shift_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Courier Allocation",
+      "custom_agent_name": "Omnichannel Courier Allocator",
+      "is_relevant": true,
+      "division_context": "Dynamically selects between ITC's own fleet and third-party couriers for e-commerce orders to balance delivery speed with logistics costs.",
+      "hidden_reason": ""
+    },
+    "otif_penalty_shield": {
+      "agent_id": "otif_penalty_shield",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Delivery Exception Copilot",
+      "custom_agent_name": "Service Level Exception Agent",
+      "is_relevant": true,
+      "division_context": "Detects potential delivery failures in real-time and proactively communicates with ITC distributors or D2C customers to manage expectations.",
+      "hidden_reason": ""
+    },
+    "fleetflow_dispatch": {
+      "agent_id": "fleetflow_dispatch",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Dynamic Rerouter",
+      "custom_agent_name": "TM&D Route Navigator",
+      "is_relevant": true,
+      "division_context": "Optimizes multi-stop delivery routes for the TM&D fleet, accounting for India's unique road conditions, monsoon impacts, and local vehicle restrictions.",
+      "hidden_reason": ""
+    },
+    "freight_control_tower": {
+      "agent_id": "freight_control_tower",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Routing Guide Compliance",
+      "custom_agent_name": "Carrier Compliance Monitor",
+      "is_relevant": true,
+      "division_context": "Evaluates transporter performance across ITC's massive network, automatically adjusting load tenders based on OTIF reliability and cost-to-serve.",
+      "hidden_reason": ""
+    },
+    "freight_bill_audit_agent": {
+      "agent_id": "freight_bill_audit_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Bill Audit Agent",
+      "custom_agent_name": "Commercial Audit Copilot",
+      "is_relevant": true,
+      "division_context": "Uses OCR to reconcile digital and physical PODs against SAP S/4HANA rate cards, ensuring accurate payment for ITC's high-volume freight operations.",
+      "hidden_reason": ""
+    },
+    "reverse_rma_optimizer": {
+      "agent_id": "reverse_rma_optimizer",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Return Fraud Sentinel",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across ITC Limited — FMCG, Agri-Business & Paperboards.",
+      "hidden_reason": ""
+    },
+    "keep_it_routing_advisor": {
+      "agent_id": "keep_it_routing_advisor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Keep-It & Routing Advisor",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across ITC Limited — FMCG, Agri-Business & Paperboards.",
+      "hidden_reason": ""
+    },
+    "osd_freight_claims_agent": {
+      "agent_id": "osd_freight_claims_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "OS&D Freight Claims",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across ITC Limited — FMCG, Agri-Business & Paperboards.",
+      "hidden_reason": ""
+    },
+    "dynamic_markdown_agent": {
+      "agent_id": "dynamic_markdown_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Dynamic Markdown Agent",
+      "custom_agent_name": "FMCG Freshness & Pricing Optimizer",
+      "is_relevant": true,
+      "division_context": "Monitors batch-level expiry data in SAP S/4HANA to trigger promotional markdowns for TM&D distributors before products reach the 60-day expiry window.",
+      "hidden_reason": "Critical for ITC's high-volume food business where shelf-life management directly impacts the bottom line."
+    },
+    "short_dated_redistributor": {
+      "agent_id": "short_dated_redistributor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Short-Dated Redistributor",
+      "custom_agent_name": "ICML Inventory Recovery Bot",
+      "is_relevant": true,
+      "division_context": "Identifies slow-moving, short-dated stock at ICML Panchal or Kapurthala and re-routes it to high-demand urban clusters or institutional partners.",
+      "hidden_reason": "Leverages ITC's integrated manufacturing and logistics model to minimize freight costs during stock recovery."
+    },
+    "food_waste_esg_copilot": {
+      "agent_id": "food_waste_esg_copilot",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Food Waste & ESG Copilot",
+      "custom_agent_name": "Sustainability 2.0 Compliance Agent",
+      "is_relevant": true,
+      "division_context": "Tracks organic waste diversion at food plants and circular packaging loops at the Bhadrachalam Paperboards unit to automate BRSR reporting.",
+      "hidden_reason": "Directly supports ITC's public commitment to being carbon, water, and solid waste recycling positive."
+    },
+    "rti_balance_reconciler": {
+      "agent_id": "rti_balance_reconciler",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "RTI Balance Reconciler",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across ITC Limited — FMCG, Agri-Business & Paperboards.",
+      "hidden_reason": ""
+    },
+    "intermodal_rail_linehaul_agent": {
+      "agent_id": "intermodal_rail_linehaul_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Milk-Run Consolidation",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across ITC Limited — FMCG, Agri-Business & Paperboards.",
+      "hidden_reason": ""
+    },
+    "sanitation_health_agent": {
+      "agent_id": "sanitation_health_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Sanitation & Health Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across ITC Limited — FMCG, Agri-Business & Paperboards.",
+      "hidden_reason": ""
+    }
+  },
+  "process_overrides": {
+    "f2f": {
+      "vc_id": "f2f",
+      "custom_title": "Agri-to-FMCG Planning",
+      "custom_subtitle": "Translating consumer demand into agricultural sourcing and ICML production schedules."
+    },
+    "o2d": {
+      "vc_id": "o2d",
+      "custom_title": "TM&D Order Fulfillment",
+      "custom_subtitle": "Routing and delivering FMCG orders to millions of general trade and modern retail outlets."
+    },
+    "s2p": {
+      "vc_id": "s2p",
+      "custom_title": "e-Choupal Sourcing & Procurement",
+      "custom_subtitle": "Procuring raw agricultural commodities directly from farmers and settling payments."
+    },
+    "p2r": {
+      "vc_id": "p2r",
+      "custom_title": "FMCG Expiry & Packaging Circularity",
+      "custom_subtitle": "Managing expired food products and executing sustainable packaging recovery programs."
+    }
+  },
+  "hidden_agent_ids": [
+    "planogram_merchandising_vision_auditor"
+  ],
+  "hidden_persona_ids": [
+    "store_operations_omni_lead"
+  ],
+  "active_pillars_count": 6,
+  "active_agents_count": 59,
+  "active_personas_count": 59,
+  "active_sub_pillars_count": 20,
+  "grounding_citations": [
+    {
+      "title": "ITC Limited — Corporate Profile",
+      "url": "https://en.wikipedia.org/wiki/ITC_Limited",
+      "snippet": ""
+    },
+    {
+      "title": "ITC Limited Official Brand Mark",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/ITC_Limited_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "snippet": ""
+    }
+  ],
+  "career_title_examples": [
+    "Head of Supply Chain - Foods",
+    "Branch Supply Chain Manager",
+    "Procurement Manager - Agri Business",
+    "Factory Manager - ICML",
+    "Logistics Operations Manager",
+    "Demand Planning Lead",
+    "Trade Marketing & Distribution Head"
+  ],
+  "terminology_highlights": [
+    "e-Choupal — ITC's rural digital and physical network for direct agricultural sourcing from Indian farmers.",
+    "ICML — Integrated Consumer Goods Manufacturing and Logistics facilities that combine production and distribution to optimize freight.",
+    "TM&D — Trade Marketing & Distribution, the division responsible for ITC's vast retail reach across millions of general trade outlets.",
+    "FMCG-Others — The business segment encompassing foods, personal care, and stationery, distinct from the core tobacco business."
+  ],
+  "created_at": "2026-11-05T08:46:40.920830+00:00",
+  "updated_at": "2026-11-05T08:46:40.920830+00:00",
+  "generation_model": "Gemini 3.1 Pro / 4 Argon + Gemini 3.8 Flash (Google Search Grounded)"
+}
