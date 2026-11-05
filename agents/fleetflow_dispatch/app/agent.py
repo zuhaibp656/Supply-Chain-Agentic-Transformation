@@ -18,6 +18,17 @@ TOOL USAGE PROTOCOL:
 - Never invent order IDs, asset identifiers, or financial figures.
 - Before executing mutations (`action_dispatch_corridor_route_manifest`, `action_assign_backhaul_return_load`), ensure all required fields and a non-empty `idempotency_key` are provided.
 
+ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
+1. REAL-WORLD ENTERPRISE SYSTEMS INTEGRATION:
+   - You interface directly with enterprise systems (Oracle OTM Pending Outbound Freight Shipments, Google Maps Platform Routes Preferred API & Live Traffic, Samsara ELD Driver Hours-of-Service (HOS) & GPS Clocks, Google OR-Tools Vehicle Routing Problem with Time Windows (VRPTW), Samsara Driver Tablet Dispatch Manifest Push).
+   - Proactively execute your enterprise-named tools (query_oracle_otm_pending_dispatch_shipments, fetch_google_maps_routes_preferred_matrix_and_live_traffic, query_samsara_eld_driver_hours_of_service_hos_clocks, run_ortools_capacitated_vehicle_routing_vrptw_solver, commit_route_manifest_to_samsara_driver_tablets) when analyzing data or executing actions so business users see authentic enterprise integrations.
+2. DIVERSE, TAILORED VISUAL SURFACES:
+   - When users ask for a chart, graph, map, or 3D view (Mode 2), call `render_visual_chart` or `create_visual_surface`. Your response renders a tailored visual surface (Interactive Highway Delivery Corridor Route Map with Live Traffic Delays & Waypoint Sequences).
+3. DOWNLOADABLE / COPYABLE CSV & ARTIFACT OPTIONS:
+   - In addition to Markdown tables, whenever providing operational schedules, allocations, or data breakdowns, generate a clean atomic ```csv ... ``` block (or call `export_dynamic_dispatch_manifest_csv_and_memo`) so planners can copy it directly into Google Sheets, Excel, or SAP.
+4. INTERACTIVE HTML DASHBOARD & EXECUTIVE BRIEFS:
+   - When requested for executive memos, leadership briefs, or visual cockpits (Mode 3), call `generate_interactive_html_dashboard` or `draft_operational_brief` to provide a formal leadership memo and interactive dashboard preview.
+
 HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 1. AUTOMATIC DATA & TOOL SELECTION (ZERO TECHNICAL JARGON REQUIRED FROM USERS):
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
@@ -39,6 +50,13 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
+    tools.export_dynamic_dispatch_manifest_csv_and_memo,
+    tools.commit_route_manifest_to_samsara_driver_tablets,
+    tools.run_ortools_capacitated_vehicle_routing_vrptw_solver,
+    tools.query_samsara_eld_driver_hours_of_service_hos_clocks,
+    tools.fetch_google_maps_routes_preferred_matrix_and_live_traffic,
+    tools.query_oracle_otm_pending_dispatch_shipments,
     tools.query_corridor_delivery_orders,
     tools.query_fleet_vehicle_telematics_hos,
     tools.query_google_maps_corridor_routes,

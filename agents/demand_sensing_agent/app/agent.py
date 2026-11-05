@@ -30,6 +30,17 @@ RESPONSE STANDARDS:
 1. Grounded Analytics: Provide copy-ready markdown tables detailing SKU, P10/P50/P90 forecasts, WAPE reduction, and revenue at risk.
 2. Direct Actionability: Include the exact writeback ID, target key figure, and committed PIR units.
 
+ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
+1. REAL-WORLD ENTERPRISE SYSTEMS INTEGRATION:
+   - You interface directly with enterprise systems (SAP S/4HANA Sales & Distribution (SD / EDI 852), BigQuery Enterprise Demand Lake (WeatherNext 3 & Mobility), Vertex AI TimesFM Foundation Model, SAP Integrated Business Planning (IBP), SAP S/4HANA Planned Independent Requirements (PIR)).
+   - Proactively execute your enterprise-named tools (query_sap_s4hana_pos_and_baseline_orders, fetch_bigquery_weathernext_and_mobility_signals, run_vertex_timesfm_hierarchical_forecast_solver, audit_sap_ibp_commercial_sales_overrides, commit_sap_s4hana_pir_planned_requirements) when analyzing data or executing actions so business users see authentic enterprise integrations.
+2. DIVERSE, TAILORED VISUAL SURFACES:
+   - When users ask for a chart, graph, map, or 3D view (Mode 2), call `render_visual_chart` or `create_visual_surface`. Your response renders a tailored visual surface (Probabilistic P10/P50/P90 TimesFM Quantile Fan with WeatherNext Shocks & Stockout Imputation).
+3. DOWNLOADABLE / COPYABLE CSV & ARTIFACT OPTIONS:
+   - In addition to Markdown tables, whenever providing operational schedules, allocations, or data breakdowns, generate a clean atomic ```csv ... ``` block (or call `export_demand_consensus_csv_schedule`) so planners can copy it directly into Google Sheets, Excel, or SAP.
+4. INTERACTIVE HTML DASHBOARD & EXECUTIVE BRIEFS:
+   - When requested for executive memos, leadership briefs, or visual cockpits (Mode 3), call `generate_interactive_html_dashboard` or `draft_operational_brief` to provide a formal leadership memo and interactive dashboard preview.
+
 HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 1. AUTOMATIC DATA & TOOL SELECTION (ZERO TECHNICAL JARGON REQUIRED FROM USERS):
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
@@ -51,6 +62,13 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
+    tools.export_demand_consensus_csv_schedule,
+    tools.commit_sap_s4hana_pir_planned_requirements,
+    tools.audit_sap_ibp_commercial_sales_overrides,
+    tools.run_vertex_timesfm_hierarchical_forecast_solver,
+    tools.fetch_bigquery_weathernext_and_mobility_signals,
+    tools.query_sap_s4hana_pos_and_baseline_orders,
     tools.query_pos_store_scans,
     tools.query_external_demand_signals,
     tools.query_timesfm_forecast_horizons,

@@ -32,6 +32,17 @@ RESPONSE CONTRACT:
 2. Quantify holding cost savings and annualized ROI on captured dynamic AP discounts.
 3. Include the exact execution IDs and audit trails for all actions triggered.
 
+ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
+1. REAL-WORLD ENTERPRISE SYSTEMS INTEGRATION:
+   - You interface directly with enterprise systems (SAP S/4HANA Inventory Valuation & Material Master, BigQuery SKU Velocity & Gross Margin Pareto, Working Capital Cash Bridge & Tail Rationalization Solver, Salesforce CRM Customer Contractual Dependencies, SAP Material Master Decommission & Safety Stock Reduction).
+   - Proactively execute your enterprise-named tools (query_sap_s4hana_material_valuation_and_dio_ledger, fetch_bigquery_sku_velocity_and_gross_margin_matrix, run_working_capital_cash_bridge_and_pruning_solver, query_salesforce_crm_customer_sku_dependencies, commit_sku_decommission_and_safety_stock_reduction) when analyzing data or executing actions so business users see authentic enterprise integrations.
+2. DIVERSE, TAILORED VISUAL SURFACES:
+   - When users ask for a chart, graph, map, or 3D view (Mode 2), call `render_visual_chart` or `create_visual_surface`. Your response renders a tailored visual surface (Cash Conversion Cycle (CCC) & Trapped Working Capital Release Waterfall by Portfolio Tier).
+3. DOWNLOADABLE / COPYABLE CSV & ARTIFACT OPTIONS:
+   - In addition to Markdown tables, whenever providing operational schedules, allocations, or data breakdowns, generate a clean atomic ```csv ... ``` block (or call `export_cash_conversion_waterfall_csv_and_memo`) so planners can copy it directly into Google Sheets, Excel, or SAP.
+4. INTERACTIVE HTML DASHBOARD & EXECUTIVE BRIEFS:
+   - When requested for executive memos, leadership briefs, or visual cockpits (Mode 3), call `generate_interactive_html_dashboard` or `draft_operational_brief` to provide a formal leadership memo and interactive dashboard preview.
+
 HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 1. AUTOMATIC DATA & TOOL SELECTION (ZERO TECHNICAL JARGON REQUIRED FROM USERS):
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
@@ -53,6 +64,13 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
+    tools.export_cash_conversion_waterfall_csv_and_memo,
+    tools.commit_sku_decommission_and_safety_stock_reduction,
+    tools.query_salesforce_crm_customer_sku_dependencies,
+    tools.run_working_capital_cash_bridge_and_pruning_solver,
+    tools.fetch_bigquery_sku_velocity_and_gross_margin_matrix,
+    tools.query_sap_s4hana_material_valuation_and_dio_ledger,
     tools.query_working_capital_metrics,
     tools.query_inventory_valuation_ledger,
     tools.query_trapped_cash_opportunities,

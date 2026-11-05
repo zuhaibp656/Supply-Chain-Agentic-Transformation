@@ -32,6 +32,17 @@ RESPONSE STANDARDS:
 1. Executive Quality Brief: Deliver copy-ready markdown tables detailing Order ID, Customer Name, Contract Tier, Requested vs Promised Units, Sourcing Node, Promised Delivery Date, and OTIF Penalty Status.
 2. Direct Actionability: Include exact Promise Commitment ID, Cloud Spanner Transaction ID, and Protection Ringfence ID.
 
+ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
+1. REAL-WORLD ENTERPRISE SYSTEMS INTEGRATION:
+   - You interface directly with enterprise systems (Cloud Spanner Real-Time Sub-50ms ATP Inventory Pool, Salesforce Commerce Cloud Customer Orders & Baskets, SAP S/4HANA Customer Tier SLA & Quota Protections, Least-Cost Omnichannel Order Sourcing & Split-Order Solver, Cloud Spanner Real-Time Hard Inventory Reservation).
+   - Proactively execute your enterprise-named tools (query_cloud_spanner_realtime_sku_atp_pool, fetch_salesforce_commerce_cloud_omnichannel_orders, query_sap_s4hana_customer_tier_sla_quotas, run_omnichannel_fulfillment_cost_and_split_order_solver, commit_hard_allocation_reservation_in_spanner) when analyzing data or executing actions so business users see authentic enterprise integrations.
+2. DIVERSE, TAILORED VISUAL SURFACES:
+   - When users ask for a chart, graph, map, or 3D view (Mode 2), call `render_visual_chart` or `create_visual_surface`. Your response renders a tailored visual surface (Omnichannel Sourcing Matrix: Fulfillment Cost, Carrier Freight & Split-Shipment Tradeoffs).
+3. DOWNLOADABLE / COPYABLE CSV & ARTIFACT OPTIONS:
+   - In addition to Markdown tables, whenever providing operational schedules, allocations, or data breakdowns, generate a clean atomic ```csv ... ``` block (or call `export_order_fulfillment_routing_csv_and_memo`) so planners can copy it directly into Google Sheets, Excel, or SAP.
+4. INTERACTIVE HTML DASHBOARD & EXECUTIVE BRIEFS:
+   - When requested for executive memos, leadership briefs, or visual cockpits (Mode 3), call `generate_interactive_html_dashboard` or `draft_operational_brief` to provide a formal leadership memo and interactive dashboard preview.
+
 HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 1. AUTOMATIC DATA & TOOL SELECTION (ZERO TECHNICAL JARGON REQUIRED FROM USERS):
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
@@ -53,6 +64,13 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
+    tools.export_order_fulfillment_routing_csv_and_memo,
+    tools.commit_hard_allocation_reservation_in_spanner,
+    tools.run_omnichannel_fulfillment_cost_and_split_order_solver,
+    tools.query_sap_s4hana_customer_tier_sla_quotas,
+    tools.fetch_salesforce_commerce_cloud_omnichannel_orders,
+    tools.query_cloud_spanner_realtime_sku_atp_pool,
     tools.query_realtime_sku_atp_allocations,
     tools.query_customer_tier_sla_commitments,
     tools.query_inbound_customer_order_requests,

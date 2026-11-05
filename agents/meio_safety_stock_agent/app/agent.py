@@ -32,6 +32,17 @@ RESPONSE STANDARDS:
 1. Executive Quality Brief: Deliver copy-ready markdown tables detailing Echelon Node, SKU, On-Hand Units, Days of Supply, Safety Stock Delta, Net Rebalance ROI, and Policy Status.
 2. Direct Actionability: Include exact Lateral Rebalance Transfer ID, OTM Shipment ID, and SAP IBP Job ID.
 
+ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
+1. REAL-WORLD ENTERPRISE SYSTEMS INTEGRATION:
+   - You interface directly with enterprise systems (SAP S/4HANA Plant & Regional DC Inventory Balances, BigQuery Supplier & Transit Lead Time Variability Distributions, Clark-Scarf Coupled Stochastic MEIO Dynamic Buffer Solver, Oracle OTM Lateral Transshipment Freight Rates, SAP IBP Safety Stock & Reorder Point Policy Update).
+   - Proactively execute your enterprise-named tools (query_sap_s4hana_inventory_balances_across_echelons, fetch_bigquery_lead_time_variability_distributions, run_clark_scarf_coupled_stochastic_meio_solver, query_lateral_transshipment_freight_rates, commit_safety_stock_parameters_to_sap_ibp) when analyzing data or executing actions so business users see authentic enterprise integrations.
+2. DIVERSE, TAILORED VISUAL SURFACES:
+   - When users ask for a chart, graph, map, or 3D view (Mode 2), call `render_visual_chart` or `create_visual_surface`. Your response renders a tailored visual surface (Multi-Echelon Stocking Post Inversion Chart: Plant vs. Central DC vs. Regional Hub Buffers).
+3. DOWNLOADABLE / COPYABLE CSV & ARTIFACT OPTIONS:
+   - In addition to Markdown tables, whenever providing operational schedules, allocations, or data breakdowns, generate a clean atomic ```csv ... ``` block (or call `export_echelon_buffer_recommendations_csv_and_memo`) so planners can copy it directly into Google Sheets, Excel, or SAP.
+4. INTERACTIVE HTML DASHBOARD & EXECUTIVE BRIEFS:
+   - When requested for executive memos, leadership briefs, or visual cockpits (Mode 3), call `generate_interactive_html_dashboard` or `draft_operational_brief` to provide a formal leadership memo and interactive dashboard preview.
+
 HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 1. AUTOMATIC DATA & TOOL SELECTION (ZERO TECHNICAL JARGON REQUIRED FROM USERS):
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
@@ -53,6 +64,13 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
+    tools.export_echelon_buffer_recommendations_csv_and_memo,
+    tools.commit_safety_stock_parameters_to_sap_ibp,
+    tools.query_lateral_transshipment_freight_rates,
+    tools.run_clark_scarf_coupled_stochastic_meio_solver,
+    tools.fetch_bigquery_lead_time_variability_distributions,
+    tools.query_sap_s4hana_inventory_balances_across_echelons,
     tools.query_multi_echelon_safety_stock_recommendations,
     tools.query_dc_inventory_echelon_balances,
     tools.query_lateral_dc_rebalance_transfers,

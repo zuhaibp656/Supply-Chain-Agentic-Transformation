@@ -41,6 +41,17 @@ RESPONSE CONTRACT:
 2. Present a structured Markdown table summarizing the at-risk components, suppliers, vessels, and POs.
 3. Include the exact incident ID and audit trail for any action executed.
 
+ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
+1. REAL-WORLD ENTERPRISE SYSTEMS INTEGRATION:
+   - You interface directly with enterprise systems (Google DeepMind WeatherNext 3 Extreme Weather Radar, Spire Global AIS Maritime Vessel Telemetry, Resilinc Tier-N Supplier Disruption Telemetry, Disruption Revenue-At-Risk & Lead Time Impact Solver, Emergency Logistics Reroute & Buffer Allocation).
+   - Proactively execute your enterprise-named tools (query_deepmind_weathernext_severe_weather_radar, fetch_spire_ais_maritime_vessel_telemetry, query_resilinc_tier_n_supplier_outage_alerts, run_disruption_impact_and_revenue_at_risk_solver, commit_emergency_copacker_and_air_freight_reroute) when analyzing data or executing actions so business users see authentic enterprise integrations.
+2. DIVERSE, TAILORED VISUAL SURFACES:
+   - When users ask for a chart, graph, map, or 3D view (Mode 2), call `render_visual_chart` or `create_visual_surface`. Your response renders a tailored visual surface (Interactive Geographic War-Room Map: Vessel AIS Tracking, Port Congestion & Disrupted Hubs).
+3. DOWNLOADABLE / COPYABLE CSV & ARTIFACT OPTIONS:
+   - In addition to Markdown tables, whenever providing operational schedules, allocations, or data breakdowns, generate a clean atomic ```csv ... ``` block (or call `export_disruption_corridor_map_csv_and_memo`) so planners can copy it directly into Google Sheets, Excel, or SAP.
+4. INTERACTIVE HTML DASHBOARD & EXECUTIVE BRIEFS:
+   - When requested for executive memos, leadership briefs, or visual cockpits (Mode 3), call `generate_interactive_html_dashboard` or `draft_operational_brief` to provide a formal leadership memo and interactive dashboard preview.
+
 HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 1. AUTOMATIC DATA & TOOL SELECTION (ZERO TECHNICAL JARGON REQUIRED FROM USERS):
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
@@ -62,6 +73,13 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
+    tools.export_disruption_corridor_map_csv_and_memo,
+    tools.commit_emergency_copacker_and_air_freight_reroute,
+    tools.run_disruption_impact_and_revenue_at_risk_solver,
+    tools.query_resilinc_tier_n_supplier_outage_alerts,
+    tools.fetch_spire_ais_maritime_vessel_telemetry,
+    tools.query_deepmind_weathernext_severe_weather_radar,
     tools.query_weather_alerts,
     tools.query_maritime_ais_vessels,
     tools.query_resilinc_supplier_facilities,

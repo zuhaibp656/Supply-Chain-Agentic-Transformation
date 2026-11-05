@@ -16,7 +16,7 @@ from __future__ import annotations
 import json
 import pathlib
 
-ROOT = pathlib.Path(__file__).resolve().parent
+ROOT = pathlib.Path(__file__).resolve().parent.parent
 CFO_HTML = pathlib.Path("/tmp/cfo_site.html")
 OUT_HTML = ROOT / "index.html"
 
@@ -11916,7 +11916,7 @@ def main() -> None:
 
     # Synchronize scripts/build_site.py
     scripts_builder = OUT_HTML.parent / "scripts" / "build_site.py"
-    if scripts_builder.parent.exists():
+    if scripts_builder.parent.exists() and pathlib.Path(__file__).resolve() != scripts_builder.resolve():
         shutil.copy2(pathlib.Path(__file__).resolve(), scripts_builder)
         print(f"Synced scripts/build_site.py with master generator")
 

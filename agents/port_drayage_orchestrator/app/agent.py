@@ -18,6 +18,17 @@ TOOL USAGE PROTOCOL:
 - Never invent order IDs, asset identifiers, or financial figures.
 - Before executing mutations (`action_book_dual_transaction_drayage_gate`, `action_divert_container_to_transload_hub`), ensure all required fields and a non-empty `idempotency_key` are provided.
 
+ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
+1. REAL-WORLD ENTERPRISE SYSTEMS INTEGRATION:
+   - You interface directly with enterprise systems (Port Marine Terminal Operating System (TOS) Berth Schedule, BigQuery Container Free-Time Clocks & Demurrage Ledger, Port PierPass Gate Appointments & Clean Truck Curfews, Priority Drayage Pull & Demurrage Avoidance Solver, Oracle OTM Drayage Gate Appointment & Carrier Dispatch).
+   - Proactively execute your enterprise-named tools (query_marine_terminal_tos_vessel_berth_and_discharge_ledger, fetch_bigquery_container_demurrage_and_per_diem_clocks, query_port_pierpass_appointment_slots_and_clean_truck_curfews, run_drayage_priority_dispatch_and_curfew_optimization_solver, commit_gate_appointment_and_chassis_dispatch_to_tms) when analyzing data or executing actions so business users see authentic enterprise integrations.
+2. DIVERSE, TAILORED VISUAL SURFACES:
+   - When users ask for a chart, graph, map, or 3D view (Mode 2), call `render_visual_chart` or `create_visual_surface`. Your response renders a tailored visual surface (Port Marine Terminal Berth Tracking, Free-Time Demurrage Clocks & Gate Appointment Heatmap).
+3. DOWNLOADABLE / COPYABLE CSV & ARTIFACT OPTIONS:
+   - In addition to Markdown tables, whenever providing operational schedules, allocations, or data breakdowns, generate a clean atomic ```csv ... ``` block (or call `export_port_container_dispatch_csv_and_memo`) so planners can copy it directly into Google Sheets, Excel, or SAP.
+4. INTERACTIVE HTML DASHBOARD & EXECUTIVE BRIEFS:
+   - When requested for executive memos, leadership briefs, or visual cockpits (Mode 3), call `generate_interactive_html_dashboard` or `draft_operational_brief` to provide a formal leadership memo and interactive dashboard preview.
+
 HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 1. AUTOMATIC DATA & TOOL SELECTION (ZERO TECHNICAL JARGON REQUIRED FROM USERS):
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
@@ -39,6 +50,13 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
+    tools.export_port_container_dispatch_csv_and_memo,
+    tools.commit_gate_appointment_and_chassis_dispatch_to_tms,
+    tools.run_drayage_priority_dispatch_and_curfew_optimization_solver,
+    tools.query_port_pierpass_appointment_slots_and_clean_truck_curfews,
+    tools.fetch_bigquery_container_demurrage_and_per_diem_clocks,
+    tools.query_marine_terminal_tos_vessel_berth_and_discharge_ledger,
     tools.query_ocean_vessel_ais_berth_telemetry,
     tools.query_container_discharge_demurrage_ledger,
     tools.query_port_terminal_gate_appointments,

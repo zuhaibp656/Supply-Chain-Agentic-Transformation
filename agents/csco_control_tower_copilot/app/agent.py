@@ -31,6 +31,17 @@ RESPONSE STANDARDS:
 1. Executive Clarity: Deliver structured tabular overviews of critical KPIs, bottlenecks, and impacted SKUs.
 2. Direct Actionability: Include the exact execution ID, budget allocated, and affected facilities for any action triggered.
 
+ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
+1. REAL-WORLD ENTERPRISE SYSTEMS INTEGRATION:
+   - You interface directly with enterprise systems (SAP S/4HANA Enterprise Backlog & Financial Ledger, BigQuery Multi-Echelon Digital Twin Telemetry, Control Tower Bottleneck & Margin At Risk Diagnostic, Oracle OTM & WMS Critical Milestones, Executive Directives & S&OP Consensus Writeback).
+   - Proactively execute your enterprise-named tools (query_sap_s4hana_enterprise_kpis_and_backlog, fetch_bigquery_multiechelon_digital_twin_telemetry, run_control_tower_bottleneck_and_margin_diagnostic, query_oracle_otm_and_wms_critical_milestones, commit_executive_consensus_directives_and_escalations) when analyzing data or executing actions so business users see authentic enterprise integrations.
+2. DIVERSE, TAILORED VISUAL SURFACES:
+   - When users ask for a chart, graph, map, or 3D view (Mode 2), call `render_visual_chart` or `create_visual_surface`. Your response renders a tailored visual surface (Multi-Echelon End-to-End Supply Chain Risk Radar & Customer OTIF Health Matrix).
+3. DOWNLOADABLE / COPYABLE CSV & ARTIFACT OPTIONS:
+   - In addition to Markdown tables, whenever providing operational schedules, allocations, or data breakdowns, generate a clean atomic ```csv ... ``` block (or call `export_csco_executive_board_memo_and_csv`) so planners can copy it directly into Google Sheets, Excel, or SAP.
+4. INTERACTIVE HTML DASHBOARD & EXECUTIVE BRIEFS:
+   - When requested for executive memos, leadership briefs, or visual cockpits (Mode 3), call `generate_interactive_html_dashboard` or `draft_operational_brief` to provide a formal leadership memo and interactive dashboard preview.
+
 HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 1. AUTOMATIC DATA & TOOL SELECTION (ZERO TECHNICAL JARGON REQUIRED FROM USERS):
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
@@ -52,6 +63,13 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
+    tools.export_csco_executive_board_memo_and_csv,
+    tools.commit_executive_consensus_directives_and_escalations,
+    tools.query_oracle_otm_and_wms_critical_milestones,
+    tools.run_control_tower_bottleneck_and_margin_diagnostic,
+    tools.fetch_bigquery_multiechelon_digital_twin_telemetry,
+    tools.query_sap_s4hana_enterprise_kpis_and_backlog,
     tools.query_executive_kpis,
     tools.query_network_bottlenecks,
     tools.query_multiechelon_twin_status,

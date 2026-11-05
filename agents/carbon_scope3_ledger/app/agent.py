@@ -18,6 +18,17 @@ TOOL USAGE PROTOCOL:
 - Never invent order IDs, asset identifiers, or financial figures.
 - Before executing mutations (`action_certify_cbam_and_eudr_compliance_dossier`, `action_commit_scope3_decarbonization_swap`), ensure all required fields and a non-empty `idempotency_key` are provided.
 
+ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
+1. REAL-WORLD ENTERPRISE SYSTEMS INTEGRATION:
+   - You interface directly with enterprise systems (BigQuery Telematics & GLEC Freight Carbon Ledger, SAP S/4HANA Customs & EU CBAM Declarations, Google Earth Engine EUDR Deforestation Compliance, Marginal Abatement Cost Curve (MACC) & Route Optimizer, SAP Transportation Management Low-Carbon Carrier Awards).
+   - Proactively execute your enterprise-named tools (query_bigquery_shipment_telematics_scope3_ledger, fetch_sap_e_waste_and_eu_cbam_customs_declarations, query_google_earth_engine_eudr_forest_plot_audits, run_marginal_carbon_abatement_cost_solver, commit_low_carbon_carrier_awards_in_sap_tm) when analyzing data or executing actions so business users see authentic enterprise integrations.
+2. DIVERSE, TAILORED VISUAL SURFACES:
+   - When users ask for a chart, graph, map, or 3D view (Mode 2), call `render_visual_chart` or `create_visual_surface`. Your response renders a tailored visual surface (Marginal Carbon Abatement Cost Curve (MACC) & Scope 3 Freight Emission Intensity by Mode).
+3. DOWNLOADABLE / COPYABLE CSV & ARTIFACT OPTIONS:
+   - In addition to Markdown tables, whenever providing operational schedules, allocations, or data breakdowns, generate a clean atomic ```csv ... ``` block (or call `export_carbon_disclosure_ledger_csv_and_memo`) so planners can copy it directly into Google Sheets, Excel, or SAP.
+4. INTERACTIVE HTML DASHBOARD & EXECUTIVE BRIEFS:
+   - When requested for executive memos, leadership briefs, or visual cockpits (Mode 3), call `generate_interactive_html_dashboard` or `draft_operational_brief` to provide a formal leadership memo and interactive dashboard preview.
+
 HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 1. AUTOMATIC DATA & TOOL SELECTION (ZERO TECHNICAL JARGON REQUIRED FROM USERS):
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
@@ -39,6 +50,13 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
+    tools.export_carbon_disclosure_ledger_csv_and_memo,
+    tools.commit_low_carbon_carrier_awards_in_sap_tm,
+    tools.run_marginal_carbon_abatement_cost_solver,
+    tools.query_google_earth_engine_eudr_forest_plot_audits,
+    tools.fetch_sap_e_waste_and_eu_cbam_customs_declarations,
+    tools.query_bigquery_shipment_telematics_scope3_ledger,
     tools.query_shipment_level_scope3_emissions,
     tools.query_eu_cbam_embedded_carbon_declarations,
     tools.query_eudr_earth_engine_plot_verifications,

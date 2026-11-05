@@ -1,0 +1,1684 @@
+{
+  "schema_version": "2.0",
+  "twin_slug": "hdfc",
+  "company_name": "HDFC",
+  "canonical_name": "HDFC Bank Limited",
+  "division_name": "Enterprise Operations & Infrastructure",
+  "display_label": "HDFC Bank Limited — Enterprise Operations & Infrastructure",
+  "brand": {
+    "company_name": "HDFC",
+    "canonical_name": "HDFC Bank Limited",
+    "division_name": "Enterprise Operations & Infrastructure",
+    "twin_slug": "hdfc",
+    "official_domain": "hdfcbank.com",
+    "industry_sector": "Banking & Financial Services",
+    "geography": "India",
+    "brand_accent": "#729cc1",
+    "brand_secondary": "#ED232A",
+    "executive_title": "Group Head - Administration, Infrastructure & Procurement",
+    "executive_thesis": "HDFC Bank's enterprise operations manage a vast physical footprint of thousands of branches and ATMs alongside massive data center infrastructure. The procurement and logistics backbone ensures secure cash transit, rapid IT hardware deployment, and seamless direct-to-customer distribution of debit and credit cards.",
+    "flagship_sites": "Mumbai Corporate Headquarters · Chandivali Data Center · Pan-India Currency Chests · Regional Processing Centers (RPCs) · Centralized Card Issuance Hubs",
+    "erp_systems": "Oracle ERP Cloud · SAP Ariba · Finacle (Core Banking) · Ivalua",
+    "logo": {
+      "data_uri": "data:image/png;base64,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",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/HDFC-Life-Logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_type": "wikimedia_png",
+      "plate_style": "self_plated",
+      "aspect_ratio": 1.34,
+      "monogram": "HB"
+    }
+  },
+  "custom_pillars": [
+    {
+      "pillar_id": "network_strategy_demand",
+      "v_num": "01",
+      "scor_badge": "01 · PLAN",
+      "name": "Network Strategy & Footprint Planning",
+      "tagline": "Branch & IT capacity forecasting",
+      "subtitle": "Aligns business growth with physical branch expansion, ATM deployment, and data center capacity requirements.",
+      "color": "#729cc1",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "demand_forecasting",
+        "sop_ibp",
+        "capacity_planning"
+      ]
+    },
+    {
+      "pillar_id": "it_infrastructure_sourcing",
+      "v_num": "02",
+      "scor_badge": "02 · SOURCE",
+      "name": "IT & Infrastructure Procurement",
+      "tagline": "Strategic sourcing for banking tech",
+      "subtitle": "Manages vendor relationships and contracts for servers, ATMs, PoS terminals, and branch facility services.",
+      "color": "#ed232a",
+      "watermark_type": "supplier_graph",
+      "sub_pillar_ids": [
+        "supplier_network",
+        "portfolio_sku",
+        "contract_po_mgmt"
+      ]
+    },
+    {
+      "pillar_id": "branch_fitout_staging",
+      "v_num": "03",
+      "scor_badge": "03 · BUILD",
+      "name": "Branch Fit-out & Asset Staging",
+      "tagline": "Physical infrastructure deployment",
+      "subtitle": "Coordinates the staging, kitting, and quality compliance of hardware and fixtures for new branch launches.",
+      "color": "#ca8a04",
+      "watermark_type": "factory_arm",
+      "sub_pillar_ids": [
+        "production_scheduling",
+        "quality_compliance",
+        "material_packaging"
+      ]
+    },
+    {
+      "pillar_id": "cash_logistics_vault_ops",
+      "v_num": "04",
+      "scor_badge": "04 · VAULT",
+      "name": "Currency Chest & Vault Operations",
+      "tagline": "Secure cash inventory management",
+      "subtitle": "Optimizes the positioning and movement of physical cash across currency chests and the ATM network.",
+      "color": "#059669",
+      "watermark_type": "warehouse_rack",
+      "sub_pillar_ids": [
+        "warehouse_operations",
+        "positioning_optimization",
+        "omnichannel_visibility",
+        "first_mid_mile"
+      ]
+    },
+    {
+      "pillar_id": "card_dispatch_replenishment",
+      "v_num": "05",
+      "scor_badge": "05 · DELIVER",
+      "name": "Card Dispatch & Branch Replenishment",
+      "tagline": "Direct-to-customer & branch logistics",
+      "subtitle": "Manages the secure courier delivery of cards and cheque books to customers, and operational supplies to branches.",
+      "color": "#7c3aed",
+      "watermark_type": "corridor_lifo",
+      "sub_pillar_ids": [
+        "store_replenishment",
+        "last_mile_delivery",
+        "route_carrier"
+      ]
+    },
+    {
+      "pillar_id": "marketing_promotions",
+      "v_num": "06",
+      "scor_badge": "06 · PROMOTE",
+      "name": "Marketing Collateral & Campaigns",
+      "tagline": "Branch promotional supply chain",
+      "subtitle": "Distributes marketing materials, forms, and promotional displays across the national branch network.",
+      "color": "#0284c7",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "trade_promotion",
+        "expiry_markdowns"
+      ]
+    },
+    {
+      "pillar_id": "itad_vendor_claims",
+      "v_num": "07",
+      "scor_badge": "07 · RETURN",
+      "name": "ITAD & Vendor Claims",
+      "tagline": "Asset decommissioning & circularity",
+      "subtitle": "Handles the secure return, data wiping, and e-waste recycling of end-of-life banking hardware and ATMs.",
+      "color": "#ea580c",
+      "watermark_type": "conveyor_rack",
+      "sub_pillar_ids": [
+        "returns_claims_mgmt",
+        "pallet_tote_reclamation"
+      ]
+    }
+  ],
+  "pillar_overrides": {
+    "demand_sop": {
+      "dept_id": "demand_sop",
+      "custom_name": "Planning & Strategy",
+      "custom_tagline": "HDFC Bank Limited — Enterprise Operations & Infrastructure · Core Planning Lifecycle",
+      "custom_subtitle": "Demand signals and strategic S&OP alignment."
+    },
+    "sourcing_procurement": {
+      "dept_id": "sourcing_procurement",
+      "custom_name": "Sourcing & Procurement",
+      "custom_tagline": "HDFC Bank Limited — Enterprise Operations & Infrastructure · Procurement Lifecycle Spine",
+      "custom_subtitle": "Tier vendor networks and EDI order routing."
+    },
+    "manufacturing_prod": {
+      "dept_id": "manufacturing_prod",
+      "custom_name": "Manufacturing & Production",
+      "custom_tagline": "HDFC Bank Limited — Enterprise Operations & Infrastructure · Manufacturing Operations Lifecycle",
+      "custom_subtitle": "Optimized runs and zero-defect QA protocols."
+    },
+    "inventory_warehouse": {
+      "dept_id": "inventory_warehouse",
+      "custom_name": "Inventory & Warehousing",
+      "custom_tagline": "HDFC Bank Limited — Enterprise Operations & Infrastructure · Inventory & DC Lifecycle Spine",
+      "custom_subtitle": "Multi-node staging and enterprise visibility."
+    },
+    "logistics_fleet": {
+      "dept_id": "logistics_fleet",
+      "custom_name": "Distribution & Logistics",
+      "custom_tagline": "HDFC Bank Limited — Enterprise Operations & Infrastructure · Logistics Fulfillment Lifecycle",
+      "custom_subtitle": "Store replenishment and last-mile dispatch."
+    },
+    "circular_enable": {
+      "dept_id": "circular_enable",
+      "custom_name": "Returns & Reverse Logistics",
+      "custom_tagline": "HDFC Bank Limited — Enterprise Operations & Infrastructure · Reverse Value Stream Lifecycle",
+      "custom_subtitle": "Triage inspection and upstream defect loops."
+    }
+  },
+  "sub_pillar_overrides": {
+    "demand_forecasting": {
+      "sub_pillar_id": "demand_forecasting",
+      "dept_id": "demand_sop",
+      "canonical_name": "Demand Forecasting",
+      "custom_name": "Cash & Instrument Demand Forecasting"
+    },
+    "trade_promotion": {
+      "sub_pillar_id": "trade_promotion",
+      "dept_id": "demand_sop",
+      "canonical_name": "Trade Promotion",
+      "custom_name": "Branch Merchandising & Collateral Ops"
+    },
+    "sop_ibp": {
+      "sub_pillar_id": "sop_ibp",
+      "dept_id": "demand_sop",
+      "canonical_name": "S&OP / IBP",
+      "custom_name": "Integrated Operations & Service Planning"
+    },
+    "portfolio_sku": {
+      "sub_pillar_id": "portfolio_sku",
+      "dept_id": "demand_sop",
+      "canonical_name": "Portfolio & SKU",
+      "custom_name": "IT Asset Lifecycle & ATM Portfolio"
+    },
+    "supplier_network": {
+      "sub_pillar_id": "supplier_network",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Supplier Network",
+      "custom_name": "Strategic Vendor & Infrastructure Risk"
+    },
+    "material_packaging": {
+      "sub_pillar_id": "material_packaging",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Material & Packaging",
+      "custom_name": "Asset Procurement & Secure Logistics"
+    },
+    "contract_po_mgmt": {
+      "sub_pillar_id": "contract_po_mgmt",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Contract & PO Mgmt",
+      "custom_name": "Contract & PO Mgmt"
+    },
+    "production_scheduling": {
+      "sub_pillar_id": "production_scheduling",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Production Scheduling",
+      "custom_name": "Branch Staging & Hardware Sequencing"
+    },
+    "capacity_planning": {
+      "sub_pillar_id": "capacity_planning",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Capacity Planning",
+      "custom_name": "Infrastructure & Footprint Optimization"
+    },
+    "quality_compliance": {
+      "sub_pillar_id": "quality_compliance",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Quality & Compliance",
+      "custom_name": "Infrastructure Standards & RBI Compliance"
+    },
+    "positioning_optimization": {
+      "sub_pillar_id": "positioning_optimization",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Positioning & Optimization",
+      "custom_name": "Cash Liquidity & Buffer Optimization"
+    },
+    "warehouse_operations": {
+      "sub_pillar_id": "warehouse_operations",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Warehouse Operations",
+      "custom_name": "Currency Chest & Vault Management"
+    },
+    "omnichannel_visibility": {
+      "sub_pillar_id": "omnichannel_visibility",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Omnichannel Visibility",
+      "custom_name": "ATM & Branch Cash Visibility"
+    },
+    "first_mid_mile": {
+      "sub_pillar_id": "first_mid_mile",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "First & Mid-Mile",
+      "custom_name": "Secure Cash-in-Transit (CIT) Logistics"
+    },
+    "store_replenishment": {
+      "sub_pillar_id": "store_replenishment",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Store Replenishment",
+      "custom_name": "Store Replenishment"
+    },
+    "last_mile_delivery": {
+      "sub_pillar_id": "last_mile_delivery",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Last-Mile Delivery",
+      "custom_name": "Last-Mile Delivery"
+    },
+    "route_carrier": {
+      "sub_pillar_id": "route_carrier",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Route & Carrier",
+      "custom_name": "Route & Carrier"
+    },
+    "returns_claims_mgmt": {
+      "sub_pillar_id": "returns_claims_mgmt",
+      "dept_id": "circular_enable",
+      "canonical_name": "Returns & Claims Mgmt",
+      "custom_name": "Returns & Claims Mgmt"
+    },
+    "expiry_markdowns": {
+      "sub_pillar_id": "expiry_markdowns",
+      "dept_id": "circular_enable",
+      "canonical_name": "Expiry & Markdowns",
+      "custom_name": "IT Asset & Card Stock Lifecycle"
+    },
+    "pallet_tote_reclamation": {
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "dept_id": "circular_enable",
+      "canonical_name": "Pallet & Tote Reclamation",
+      "custom_name": "Pallet & Tote Reclamation"
+    }
+  },
+  "persona_overrides": {
+    "demand_planner_forecaster": {
+      "persona_id": "demand_planner_forecaster",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Planner / Forecaster",
+      "title": "Manager - Cash Logistics",
+      "role": "Optimizing physical currency liquidity across the network",
+      "summary": "He ensures that thousands of ATMs and currency chests across India have the exact amount of liquidity needed to meet daily withdrawal demands without holding excess idle cash.",
+      "manual_toil": "Manually aggregating withdrawal trends from Finacle and local branch reports into Excel to predict CIT schedules.",
+      "agentic_impact": "Automates cash replenishment triggers by sensing local festivals, salary cycles, and regional economic shifts in real-time.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "commercial_planning_lead": {
+      "persona_id": "commercial_planning_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Commercial Planning Lead",
+      "title": "AVP - Branch Operations & Expansion",
+      "role": "Scaling physical footprint to match market growth",
+      "summary": "She coordinates the rollout of new branches and Regional Processing Centers, ensuring the physical infrastructure aligns with the bank's customer acquisition targets.",
+      "manual_toil": "Reconciling real estate availability with retail banking growth forecasts across disparate regional spreadsheets.",
+      "agentic_impact": "Synchronizes branch opening timelines with IT hardware procurement and staffing readiness to ensure Day 1 operationality.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "brand_innovation_mgr": {
+      "persona_id": "brand_innovation_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Brand & Innovation Manager",
+      "title": "Product Manager - Cards & Digital Assets",
+      "role": "Managing lifecycle of physical financial instruments",
+      "summary": "He oversees the design and launch of new credit card variants and welcome kits, ensuring the Centralized Card Issuance Hubs are ready for high-volume mailers.",
+      "manual_toil": "Estimating initial card stock and packaging requirements for new product launches based on fragmented marketing data.",
+      "agentic_impact": "Profiles demand for new card launches by analyzing historical uptake of similar financial products and demographic trends.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "trade_marketing_manager": {
+      "persona_id": "trade_marketing_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Trade Marketing Manager",
+      "title": "AVP - Branch Branding & Customer Experience",
+      "role": "Standardizing physical marketing across 8,000+ branches",
+      "summary": "They oversee the deployment of physical posters, digital signage content, and account opening kits across the national branch network to ensure brand consistency.",
+      "manual_toil": "Manually tracking the installation status of regulatory posters and promotional standees across thousands of rural and urban branches via email and photos.",
+      "agentic_impact": "Simulates the impact of branch-level marketing spend on new account acquisitions and product cross-sell rates using historical footfall data.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "key_account_manager": {
+      "persona_id": "key_account_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Key Account Manager (KAM)",
+      "title": "Regional Manager - Branch Operations & Admin",
+      "role": "Managing vendor relationships for branch infrastructure",
+      "summary": "They coordinate with regional vendors and printers to ensure that every Regional Processing Center and branch has the necessary forms and marketing collateral.",
+      "manual_toil": "Negotiating print and distribution contracts with hundreds of local vendors without a unified view of regional demand or volume discounts.",
+      "agentic_impact": "Automates the creation of joint operational calendars with logistics partners to ensure collateral arrives before new product launches.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "revenue_trade_finance_lead": {
+      "persona_id": "revenue_trade_finance_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Revenue / Trade Finance Lead",
+      "title": "Manager - Vendor Payments & Audit",
+      "role": "Validating marketing service level agreements",
+      "summary": "They ensure that marketing vendors are paid accurately based on the verified delivery and installation of signage and promotional materials.",
+      "manual_toil": "Cross-referencing thousands of physical delivery notes and branch manager sign-offs against vendor invoices in SAP Ariba.",
+      "agentic_impact": "Uses OCR to instantly audit proof-of-performance photos and delivery receipts, flagging discrepancies in branch branding execution.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "sop_supply_planning_dir": {
+      "persona_id": "sop_supply_planning_dir",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "S&OP / Supply Planning Dir.",
+      "title": "Head - Enterprise Operations Planning",
+      "role": "Balancing service demand with back-office capacity",
+      "summary": "She leads the alignment between customer service requests and the processing capacity of Regional Processing Centers (RPCs) and currency chests.",
+      "manual_toil": "Identifying bottlenecks in document clearing and loan processing workflows during peak end-of-quarter surges.",
+      "agentic_impact": "Dynamically reallocates processing workloads across RPCs to prevent backlogs and ensure adherence to RBI turnaround times.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "supply_chain_vp_coo": {
+      "persona_id": "supply_chain_vp_coo",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Supply Chain VP / COO",
+      "title": "Vice President - Infrastructure & Administration",
+      "role": "Ensuring business continuity across the physical network",
+      "summary": "He manages the high-level response to operational disruptions, from CIT security incidents to data center outages, ensuring the bank remains functional.",
+      "manual_toil": "Coordinating emergency response teams and vendor shifts via phone and email during regional strikes or natural disasters.",
+      "agentic_impact": "Orchestrates a digital war-room to instantly reroute cash transit and IT support when primary routes or facilities are compromised.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "ibp_lead_chief_planning_off": {
+      "persona_id": "ibp_lead_chief_planning_off",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "IBP Lead / Chief Planning Off.",
+      "title": "Chief Operating Officer - Enterprise Ops",
+      "role": "Driving strategic operational excellence and governance",
+      "summary": "She provides executive oversight on large-scale infrastructure investments and ensures the bank's operational footprint supports long-term profitability.",
+      "manual_toil": "Reviewing massive monthly operational performance decks and tracking sign-offs from various regional heads.",
+      "agentic_impact": "Provides an executive-level view of network health, tracking Capex utilization and operational risk across all Indian states.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "category_manager_portfolio": {
+      "persona_id": "category_manager_portfolio",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Category Manager",
+      "title": "AVP - Branch Operations & Infrastructure",
+      "role": "Optimizing the physical asset mix across branches",
+      "summary": "She manages the deployment of PoS terminals and ATM models, ensuring the right technology is placed in high-traffic urban hubs versus rural branches.",
+      "manual_toil": "Analyzing spreadsheets to identify underperforming ATM kiosks and high-maintenance hardware that should be decommissioned.",
+      "agentic_impact": "Scores every hardware asset based on maintenance costs and transaction velocity to recommend the most cost-effective branch infrastructure mix.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "lifecycle_materials_mgr": {
+      "persona_id": "lifecycle_materials_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Lifecycle / Materials Mgr",
+      "title": "Manager - IT Asset Lifecycle",
+      "role": "Orchestrating large-scale hardware refresh cycles",
+      "summary": "He coordinates the transition from legacy desktop units to thin clients across thousands of branches, managing the buffer stock of new hardware.",
+      "manual_toil": "Coordinating with multiple RPCs to time the arrival of new hardware with the decommissioning of end-of-life assets to avoid service gaps.",
+      "agentic_impact": "Synchronizes the rollout of new IT assets with the disposal of old ones, minimizing storage costs at Regional Processing Centers.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "commercial_finance_director": {
+      "persona_id": "commercial_finance_director",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Commercial Finance Director",
+      "title": "Supply Chain Finance Manager",
+      "role": "Analyzing the total cost of ownership for operations",
+      "summary": "She calculates the net-net margin of banking services by factoring in the cost of cash logistics, ATM maintenance, and IT infrastructure depreciation.",
+      "manual_toil": "Manually blending data from Finacle and Oracle ERP Cloud to determine the true cost-to-serve for different branch formats.",
+      "agentic_impact": "Creates a digital twin of the bank's operational costs, providing instant visibility into the profitability of the ATM and branch network.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "procurement_dir_risk_mgr": {
+      "persona_id": "procurement_dir_risk_mgr",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Dir. / Risk Mgr",
+      "title": "Head - IT Procurement & Vendor Risk",
+      "role": "Securing the hardware backbone for banking continuity",
+      "summary": "He oversees the global sourcing of servers for the Chandivali Data Center and ensures critical hardware vendors meet RBI compliance and financial stability standards.",
+      "manual_toil": "Manually tracking global semiconductor shortages and port delays that impact the rollout of new ATMs and branch servers across India.",
+      "agentic_impact": "Automates real-time monitoring of multi-tier hardware suppliers to predict delivery delays before they impact branch opening timelines.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "procurement_operations_lead": {
+      "persona_id": "procurement_operations_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Operations Lead",
+      "title": "Vendor Management Specialist",
+      "role": "Onboarding and auditing critical infrastructure partners",
+      "summary": "She manages the rigorous onboarding process for Cash-in-Transit (CIT) providers and facility management firms, ensuring all tax and ISO certifications are current.",
+      "manual_toil": "Sifting through thousands of ISO certificates and tax registrations in SAP Ariba to ensure vendor compliance for Regional Processing Centers.",
+      "agentic_impact": "Instantly validates vendor credentials and audit filings, flagging expired certifications for critical security and logistics partners.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "chief_sustainability_officer": {
+      "persona_id": "chief_sustainability_officer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Head of ESG - Enterprise Operations",
+      "role": "Driving green banking through circular ITAD practices",
+      "summary": "He focuses on the bank's net-zero goals by managing the lifecycle of electronic waste and ensuring IT Asset Disposition (ITAD) partners follow environmental laws.",
+      "manual_toil": "Manually reconciling e-waste disposal certificates from various ITAD vendors to calculate the bank's Scope 3 carbon footprint.",
+      "agentic_impact": "Provides a centralized ledger of the chain-of-custody for every decommissioned server and ATM, automating ESG reporting for the annual report.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "category_sourcing_mgr_direct": {
+      "persona_id": "category_sourcing_mgr_direct",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Category Sourcing Mgr (Direct)",
+      "title": "Head - IT & Infrastructure Procurement",
+      "role": "Managing high-value hardware and fixture spend",
+      "summary": "He manages the procurement of servers, ATMs, and branch furniture, navigating global semiconductor trends to secure HDFC Bank's supply.",
+      "manual_toil": "Tracking global commodity prices for metals and plastics to negotiate better rates for branch signage and ATM enclosures.",
+      "agentic_impact": "AI monitors global market feeds to advise on the best timing for bulk hardware contracts and hedging against price spikes.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "strategic_sourcing_lead": {
+      "persona_id": "strategic_sourcing_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Strategic Sourcing Lead",
+      "title": "Manager - Vendor Management Specialist",
+      "role": "Analyzing total cost of ownership for branch assets",
+      "summary": "She deconstructs the cost of branch fit-out materials, from ATM kiosks to secure teller glass, to ensure the bank gets the best value.",
+      "manual_toil": "Manually breaking down complex vendor RFQs to understand the cost drivers of custom-built branch fixtures.",
+      "agentic_impact": "The agent provides a 'should-cost' model for infrastructure assets, allowing for data-driven negotiations with fit-out contractors.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "packaging_rd_engineer": {
+      "persona_id": "packaging_rd_engineer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Packaging R&D Engineer",
+      "title": "AVP - Logistics & Secure Distribution",
+      "role": "Designing secure transit for cards and currency",
+      "summary": "He designs the secure packaging and distribution workflows for debit cards, credit cards, and high-value financial instruments sent to customers.",
+      "manual_toil": "Testing different tamper-evident envelopes and courier packaging to reduce 'lost-in-transit' rates for sensitive documents.",
+      "agentic_impact": "AI evaluates the durability and security of card-mailing materials against courier handling data to minimize delivery failures.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "commercial_sourcing_legal": {
+      "persona_id": "commercial_sourcing_legal",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Commercial Sourcing / Legal",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · HDFC Bank Limited — Enterprise Operations & Infrastructure",
+      "summary": "Reconciles live spend against negotiated rebate tiers and volume discount scales.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Contract Leakage Agent automatically reconciles live spend against negotiated rebate tiers and volume discount scales — recovers missed rebates & surcharges.",
+      "grounding_source": "Grounded in HDFC Bank Limited career & ops roles"
+    },
+    "buyer_procurement_coord": {
+      "persona_id": "buyer_procurement_coord",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Buyer / Procurement Coord.",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · HDFC Bank Limited — Enterprise Operations & Infrastructure",
+      "summary": "Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "PO Expediting Agent automatically monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments — resolves ~70% of standard po delays.",
+      "grounding_source": "Grounded in HDFC Bank Limited career & ops roles"
+    },
+    "accounts_payable_lead": {
+      "persona_id": "accounts_payable_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Accounts Payable Lead",
+      "title": "Lead — Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt · HDFC Bank Limited — Enterprise Operations & Infrastructure",
+      "summary": "Diagnoses price/quantity discrepancies across Purchase Orders (Purchase Orders (POs)), GRNs, and carrier invoices.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
+      "agentic_impact": "Three-Way Match Dispute automatically diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices — prevents vendor holds & saves discounts.",
+      "grounding_source": "Grounded in HDFC Bank Limited career & ops roles"
+    },
+    "master_production_scheduler": {
+      "persona_id": "master_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Master Production Scheduler",
+      "title": "AVP - Infrastructure & Branch Rollout",
+      "role": "Orchestrating hardware staging for new branch launches",
+      "summary": "He manages the complex timeline of setting up new HDFC Bank branches, ensuring that server racks, ATMs, and teller counters arrive in the exact sequence needed for site engineers.",
+      "manual_toil": "Manually reconciling branch opening dates with vendor delivery schedules across thousands of pin codes in Excel.",
+      "agentic_impact": "AI optimizes the staging sequence to ensure high-priority 'Currency Chest' branches are equipped first without delaying standard retail outlets.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "shop_floor_shift_lead": {
+      "persona_id": "shop_floor_shift_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Shop Floor / Shift Lead",
+      "title": "Manager - Centralized Staging Hub",
+      "role": "Supervising IT asset kitting and pre-configuration",
+      "summary": "She oversees the physical staging area where Finacle-ready servers and networking gear are kitted into 'Branch-in-a-Box' units before being shipped to regional sites.",
+      "manual_toil": "Re-routing shipments manually when a specific hardware component is delayed or a site's civil work is stalled.",
+      "agentic_impact": "The agent detects delays in site readiness and automatically re-sequences the kitting queue to prioritize active construction sites.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "plant_operations_manager": {
+      "persona_id": "plant_operations_manager",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Plant Operations Manager",
+      "title": "Head - Infrastructure Operations",
+      "role": "Balancing technical labor for pan-India deployments",
+      "summary": "He ensures that the bank has enough certified technicians available to install IT infrastructure and security systems across the RPC and branch network.",
+      "manual_toil": "Matching technician skill sets and travel schedules to the fluctuating volume of hardware arrivals at regional hubs.",
+      "agentic_impact": "AI balances the deployment workload against technician certifications, preventing burnout during massive nationwide ATM refresh cycles.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "supply_chain_ops_director": {
+      "persona_id": "supply_chain_ops_director",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Supply Chain Ops Director",
+      "title": "Head - IT Infrastructure Operations",
+      "role": "Maximizing uptime of critical banking hardware",
+      "summary": "He manages the health and capacity of the Chandivali Data Center and the pan-India server network that powers Finacle and digital banking.",
+      "manual_toil": "Monitoring server loads and cooling efficiency manually to prevent hardware failures in high-density data environments.",
+      "agentic_impact": "Predicts hardware failure and capacity bottlenecks in data centers before they impact customer transactions.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "external_sourcing_cmo_lead": {
+      "persona_id": "external_sourcing_cmo_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "External Sourcing / CMO Lead",
+      "title": "Head - IT Procurement & Vendor Management",
+      "role": "Managing strategic technology and service partners",
+      "summary": "She manages relationships with external vendors for ATM maintenance, CIT services, and IT hardware, ensuring cost-effective service delivery.",
+      "manual_toil": "Comparing vendor performance metrics and contract pricing across hundreds of local service providers.",
+      "agentic_impact": "Models the cost-benefit of outsourcing specific back-office functions versus expanding internal Regional Processing Centers.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "vp_manufacturing_engineering": {
+      "persona_id": "vp_manufacturing_engineering",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "VP Manufacturing Engineering",
+      "title": "AVP - Infrastructure Engineering",
+      "role": "Designing the future of the physical bank network",
+      "summary": "He plans the technical specifications for new flagship facilities, ensuring they meet modern security and energy efficiency standards.",
+      "manual_toil": "Simulating the long-term power and space requirements for data center expansions using static growth models.",
+      "agentic_impact": "Simulates multi-year growth scenarios to determine when and where to build the next generation of currency chests and data hubs.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "qa_manager_line_inspector": {
+      "persona_id": "qa_manager_line_inspector",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "QA Manager / Line Inspector",
+      "title": "Manager - IT Asset Quality Assurance",
+      "role": "Verifying hardware integrity and security standards",
+      "summary": "She inspects incoming IT assets and ATM components to ensure they meet HDFC Bank’s strict security protocols and physical branding specifications.",
+      "manual_toil": "Physically checking serial numbers and tamper-evident seals on thousands of high-value devices arriving from OEMs.",
+      "agentic_impact": "Computer vision identifies cosmetic defects or damaged security seals on ATMs and servers before they leave the staging hub for the branch.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "regulatory_compliance_lead": {
+      "persona_id": "regulatory_compliance_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Regulatory Compliance Lead",
+      "title": "VP - Operational Risk & RBI Compliance",
+      "role": "Ensuring infrastructure meets central bank mandates",
+      "summary": "He ensures that every physical branch and currency chest adheres to RBI guidelines for security, cash handling, and data privacy infrastructure.",
+      "manual_toil": "Auditing hundreds of paper-based site readiness reports and vendor compliance certificates for every new branch opening.",
+      "agentic_impact": "AI automatically flags deviations in branch fit-out documentation that could lead to regulatory penalties or security vulnerabilities.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "continuous_improvement_lead": {
+      "persona_id": "continuous_improvement_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Continuous Improvement Lead",
+      "title": "Head - Infrastructure Strategy & ITAD",
+      "role": "Optimizing asset lifecycles and decommissioning",
+      "summary": "She analyzes the failure rates of branch hardware and manages the secure decommissioning of end-of-life assets through ITAD partners.",
+      "manual_toil": "Correlating hardware failure reports from branches with specific vendor batches to identify systemic quality issues.",
+      "agentic_impact": "The agent identifies root causes for hardware failures by linking branch maintenance tickets to original staging and vendor data.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "inventory_optimization_lead": {
+      "persona_id": "inventory_optimization_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Optimization Lead",
+      "title": "AVP - Cash Liquidity Planning",
+      "role": "Managing multi-echelon cash buffers across India",
+      "summary": "Strategically positions cash across thousands of chests and branches to minimize idle cash while preventing ATM stock-outs.",
+      "manual_toil": "Calculating safety stock levels for every ATM and branch using historical spreadsheets and manual demand forecasting.",
+      "agentic_impact": "Automates the recalibration of cash buffers across the network using live withdrawal data and local festival demand spikes.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "inventory_controller_buyer": {
+      "persona_id": "inventory_controller_buyer",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Controller / Buyer",
+      "title": "Manager - Cash Quality & Soiled Note Desk",
+      "role": "Managing the lifecycle of fit and unfit currency",
+      "summary": "Monitors the ratio of soiled to fit notes and coordinates with the RBI for the exchange of non-issuable currency.",
+      "manual_toil": "Manually identifying slow-moving high-denomination stock that needs to be re-circulated or returned to the central bank.",
+      "agentic_impact": "Triggers automated alerts for 'soiled note' accumulation, initiating secure returns to the RBI to free up vault space.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "replenishment_planner": {
+      "persona_id": "replenishment_planner",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Replenishment Planner",
+      "title": "Manager - ATM Replenishment & Rebalancing",
+      "role": "Orchestrating inter-chest cash transfers",
+      "summary": "Ensures that cash-heavy branches transfer surpluses to cash-starved ATMs through coordinated CIT movements.",
+      "manual_toil": "Manually planning inter-branch transfers to resolve localized cash gluts or shortages across the city.",
+      "agentic_impact": "Generates optimized inter-facility transfer orders to balance cash levels across the network without unnecessary CIT trips.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "dc_operations_mgr": {
+      "persona_id": "dc_operations_mgr",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Operations Mgr / IE Lead",
+      "title": "Manager - Currency Chest Operations",
+      "role": "Overseeing high-security bulk cash storage and sorting",
+      "summary": "Responsible for the physical security, RBI compliance, and sorting of bulk currency notes within regional chests to ensure quality supply for the network.",
+      "manual_toil": "Manually re-arranging vault storage based on note denominations and fitness levels to optimize pick speed for ATM replenishment.",
+      "agentic_impact": "Dynamically optimizes vault layout based on denomination demand spikes, reducing the time required to load CIT vans.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "inbound_receiving_supervisor": {
+      "persona_id": "inbound_receiving_supervisor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Inbound Receiving Supervisor",
+      "title": "Vault Inbound & Verification Supervisor",
+      "role": "Validating bulk cash remittances from RBI and branches",
+      "summary": "Manages the intake of cash consignments, ensuring that physical counts match digital manifests in Finacle and Oracle ERP systems.",
+      "manual_toil": "Reconciling physical cash bags and security seals against paper-based Advices and digital ASN records for every CIT arrival.",
+      "agentic_impact": "Instantly flags discrepancies between scanned security bag IDs and digital manifests to prevent leakage during the receiving process.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "dc_shift_floor_lead": {
+      "persona_id": "dc_shift_floor_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Shift Floor Lead",
+      "title": "Currency Chest Shift Lead",
+      "role": "Directing cash sorting and ATM cassette packing",
+      "summary": "Leads the floor team in sorting fit vs. unfit notes and preparing ATM cassettes for daily dispatch across the regional network.",
+      "manual_toil": "Balancing the workload of note-counting machine operators to meet strict CIT vehicle departure windows.",
+      "agentic_impact": "Real-time balancing of sorting lines to ensure all ATM cassettes are packed and sealed before the high-security transport cutoff.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "store_operations_omni_lead": {
+      "persona_id": "store_operations_omni_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Store Operations / Omni Lead",
+      "title": "AVP - Branch Operations & Cash Services",
+      "role": "Ensuring cash availability at the branch level",
+      "summary": "Oversees the daily operational readiness of branch cash counters and onsite ATMs for retail and corporate customers.",
+      "manual_toil": "Investigating 'phantom cash' discrepancies where ATM sensors report stock that isn't physically present or vice versa.",
+      "agentic_impact": "Identifies shrinkage or sensor errors by cross-referencing transaction logs with physical vault audits in real-time.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "omnichannel_fulfillment_dir": {
+      "persona_id": "omnichannel_fulfillment_dir",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Omnichannel Fulfillment Dir.",
+      "title": "Head - Secure Logistics & Card Issuance",
+      "role": "Directing the dispatch of cards and cash assets",
+      "summary": "Manages the high-security distribution of debit/credit cards and the strategic sourcing of CIT services for the bank.",
+      "manual_toil": "Selecting the most cost-effective courier or CIT route based on regional security zones and delivery urgency.",
+      "agentic_impact": "Selects the optimal fulfillment node for card dispatch or cash supply based on proximity and current security risk levels.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "reverse_logistics_lead_wh": {
+      "persona_id": "reverse_logistics_lead_wh",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Reverse Logistics Lead",
+      "title": "Manager - IT Asset Disposition (ITAD)",
+      "role": "Managing end-of-life ATM and server hardware",
+      "summary": "Oversees the secure decommissioning and recycling of end-of-life ATMs, servers, and employee devices across the bank.",
+      "manual_toil": "Manually triaging returned IT hardware to decide between refurbishment, parts harvesting, or secure e-waste disposal.",
+      "agentic_impact": "Automates the triage of decommissioned assets, ensuring data-wiping compliance and maximizing recovery value from e-waste.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "transport_planner_inbound_mgr": {
+      "persona_id": "transport_planner_inbound_mgr",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Transport Planner / Inbound Mgr",
+      "title": "Manager - Cash Logistics & CIT Planning",
+      "role": "Optimizing secure vehicle routes and loads",
+      "summary": "Coordinates the fleet of armored CIT vehicles to ensure timely and secure movement between chests and the ATM network.",
+      "manual_toil": "Consolidating multiple branch cash requests into a single armored van route to maximize vehicle utilization.",
+      "agentic_impact": "Optimizes CIT route planning by consolidating pickups and drops based on vehicle weight limits and security protocols.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "yard_master_plant_logistics": {
+      "persona_id": "yard_master_plant_logistics",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Master / Plant Logistics",
+      "title": "Security & Gate Lead - Regional Processing Center",
+      "role": "Managing secure vehicle entry and bay scheduling",
+      "summary": "Controls the flow of armored vehicles and delivery trucks at the high-security bays of Regional Processing Centers.",
+      "manual_toil": "Managing the queue of CIT vans at the vault gate and manually assigning them to secure loading bays.",
+      "agentic_impact": "Dynamically reassigns loading bays based on real-time GPS feeds of approaching armored vehicles to minimize exposure time.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "cold_chain_qa_logistics_dir": {
+      "persona_id": "cold_chain_qa_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold Chain QA / Logistics Dir.",
+      "title": "Director - Infrastructure Quality Assurance",
+      "role": "Ensuring facility and asset standards",
+      "summary": "Oversees the operational standards of physical infrastructure, including climate control for data centers and vault security.",
+      "manual_toil": "Manually reviewing environmental logs for data centers to ensure servers are within thermal limits.",
+      "agentic_impact": "Monitors IoT telemetry from data center cooling systems to flag thermal risks before they impact banking uptime.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "outbound_lead_industrial_eng": {
+      "persona_id": "outbound_lead_industrial_eng",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Outbound Lead / Industrial Eng.",
+      "title": "AVP - Centralized Card Issuance Hub",
+      "role": "Optimizing high-volume secure financial instrument dispatch",
+      "summary": "Oversees the high-security facility where thousands of debit and credit cards are personalized and prepared for pan-India distribution.",
+      "manual_toil": "Manually sequencing card batches to match regional courier pickup windows and specific branch sorting requirements.",
+      "agentic_impact": "Automates the sequencing of dispatch waves to ensure high-priority premium cards are processed first for immediate courier handover.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "store_replenishment_lead": {
+      "persona_id": "store_replenishment_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Replenishment Lead",
+      "title": "Manager - Branch Operations & Supplies",
+      "role": "Managing non-cash inventory for physical branches",
+      "summary": "Ensures that thousands of HDFC branches never run out of welcome kits, cheque books, and essential operational stationery.",
+      "manual_toil": "Reviewing manual requests from branch managers and guessing replenishment needs based on historical consumption.",
+      "agentic_impact": "Throttles supply shipments based on real-time branch storage capacity and actual kit issuance rates recorded in Finacle.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "retail_logistics_dispatcher": {
+      "persona_id": "retail_logistics_dispatcher",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Retail Logistics Dispatcher",
+      "title": "Regional Manager - Infrastructure & Administration",
+      "role": "Coordinating facility access and delivery schedules",
+      "summary": "Manages the logistics of getting IT hardware and branch supplies into high-traffic urban locations across India.",
+      "manual_toil": "Juggling municipal truck entry bans and branch security hours to schedule vendor deliveries without disrupting customers.",
+      "agentic_impact": "Dynamically aligns vendor delivery windows with local city curfews and branch-specific security guard shifts.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "last_mile_operations_lead": {
+      "persona_id": "last_mile_operations_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Last-Mile Operations Lead",
+      "title": "Head - Secure Logistics & Dispatch",
+      "role": "Ensuring successful first-time delivery of sensitive documents",
+      "summary": "Responsible for the final leg of delivery for high-value items like credit cards and PIN mailers to customer doorsteps.",
+      "manual_toil": "Sifting through failed delivery reports caused by complex Indian addresses and missing apartment gate codes.",
+      "agentic_impact": "Uses geocoding intelligence to provide couriers with precise entry points and delivery notes for complex residential societies.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "ecommerce_logistics_dir": {
+      "persona_id": "ecommerce_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "E-Commerce Logistics Dir.",
+      "title": "Vice President - Digital Banking Fulfillment",
+      "role": "Allocating card shipments across courier partners",
+      "summary": "Directs the strategy for D2C parcel movement, balancing speed and cost across Blue Dart, India Post, and private couriers.",
+      "manual_toil": "Manually assigning shipment volumes to different couriers based on static monthly rate cards and regional performance.",
+      "agentic_impact": "Instantly routes every card shipment to the best-performing courier for that specific pin code based on live OTIF data.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "customer_support_ops_lead": {
+      "persona_id": "customer_support_ops_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Customer Support Ops Lead",
+      "title": "AVP - Customer Experience (Operations)",
+      "role": "Managing delivery exceptions and customer communication",
+      "summary": "Handles the fallout when a customer's new credit card is delayed or returned to the RPC due to address issues.",
+      "manual_toil": "Reactively calling customers after a delivery has already failed to verify their address for a second attempt.",
+      "agentic_impact": "Detects delivery delays in real-time and automatically sends a secure link for the customer to update their landmark or schedule.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "fleet_dispatcher_central_ops": {
+      "persona_id": "fleet_dispatcher_central_ops",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Fleet Dispatcher / Central Ops",
+      "title": "Manager - Cash Logistics (CIT)",
+      "role": "Directing secure Cash-in-Transit vehicle movements",
+      "summary": "Monitors the movement of armored vehicles between Currency Chests and the ATM network to ensure liquidity.",
+      "manual_toil": "Rerouting CIT vans over the phone when they encounter unexpected road closures or heavy traffic in metro areas.",
+      "agentic_impact": "Recalculates secure transit routes instantly using live traffic and safety data to minimize time spent on the road.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "transport_procurement_lead": {
+      "persona_id": "transport_procurement_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Transport Procurement Lead",
+      "title": "Head - IT & Logistics Procurement",
+      "role": "Managing vendor contracts and service levels",
+      "summary": "Negotiates and monitors contracts with logistics providers, armored car services, and courier companies.",
+      "manual_toil": "Auditing monthly performance reports from dozens of vendors to see who is meeting their service level agreements.",
+      "agentic_impact": "Automatically shifts volume away from underperforming carriers to those consistently meeting HDFC's strict security and speed KPIs.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "freight_controller_claims": {
+      "persona_id": "freight_controller_claims",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Controller / Claims",
+      "title": "Manager - Vendor Payments & Audit",
+      "role": "Verifying logistics invoices against service delivery",
+      "summary": "Ensures that HDFC Bank only pays for logistics services that were actually rendered and documented.",
+      "manual_toil": "Manually matching thousands of physical Proof of Delivery (POD) slips against courier invoices and Oracle ERP records.",
+      "agentic_impact": "Uses OCR to ingest signed PODs and automatically flags any discrepancies or unauthorized surcharges on logistics bills.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "reverse_logistics_fraud_lead": {
+      "persona_id": "reverse_logistics_fraud_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Reverse Logistics / Fraud Lead",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · HDFC Bank Limited — Enterprise Operations & Infrastructure",
+      "summary": "Analyzes item photos and packaging video feeds to detect wear or swapped tags.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Return Fraud Sentinel automatically analyzes item photos and packaging video feeds to detect wear or swapped tags — cuts returns fraud abuse by 25–40%.",
+      "grounding_source": "Grounded in HDFC Bank Limited career & ops roles"
+    },
+    "customer_experience_cx_lead": {
+      "persona_id": "customer_experience_cx_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Customer Experience (CX) Lead",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · HDFC Bank Limited — Enterprise Operations & Infrastructure",
+      "summary": "Evaluates salvage margins vs reverse freight to determine keep-it instant refunds.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "Keep-It & Routing Advisor automatically evaluates salvage margins vs reverse freight to determine keep-it instant refunds — lowers net return costs by 15–22%.",
+      "grounding_source": "Grounded in HDFC Bank Limited career & ops roles"
+    },
+    "claims_specialist_controller": {
+      "persona_id": "claims_specialist_controller",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Claims Specialist / Controller",
+      "title": "Lead — Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt · HDFC Bank Limited — Enterprise Operations & Infrastructure",
+      "summary": "Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
+      "agentic_impact": "OS&D Freight Claims automatically reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes — resolves carrier claims in <72 hours.",
+      "grounding_source": "Grounded in HDFC Bank Limited career & ops roles"
+    },
+    "merchandising_store_ops_mgr": {
+      "persona_id": "merchandising_store_ops_mgr",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Merchandising / Store Ops Mgr",
+      "title": "Manager - Centralized Card Issuance Hub",
+      "role": "Managing inventory of unactivated financial instruments",
+      "summary": "They manage the high-security stock of debit and credit card plastics, ensuring that kits are dispatched to customers before the chip technology or branding expires.",
+      "manual_toil": "Monitoring card stock levels across multiple hubs and manually triggering reorders to avoid stockouts of premium card variants.",
+      "agentic_impact": "Correlates card issuance velocity with stock age to trigger automated redistribution of card plastics between regional hubs.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "inventory_disposition_lead": {
+      "persona_id": "inventory_disposition_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Inventory Disposition Lead",
+      "title": "Head - IT Asset Disposition (ITAD)",
+      "role": "Managing end-of-life for banking hardware",
+      "summary": "They oversee the secure decommissioning of ATMs, servers, and employee laptops, ensuring data security and environmental compliance.",
+      "manual_toil": "Manually identifying aging IT assets across branches that are nearing end-of-support and coordinating their secure collection and recycling.",
+      "agentic_impact": "Matches end-of-life hardware with certified e-waste recyclers and ensures all data destruction certificates are digitally reconciled.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "cso_circular_lead": {
+      "persona_id": "cso_circular_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "VP - Infrastructure & ESG Sustainability",
+      "role": "Driving green operations and e-waste reduction",
+      "summary": "They lead the bank's efforts to reduce paper waste and ensure that all decommissioned electronic infrastructure is handled according to ESG mandates.",
+      "manual_toil": "Compiling manual reports on paper reduction from digital banking shifts and e-waste diversion metrics for the annual sustainability report.",
+      "agentic_impact": "Aggregates ITAD logs and branch paper consumption data to generate real-time, audited GHG diversion filings for regulatory compliance.",
+      "grounding_source": "Grounded in HDFC Bank Limited career portals & supply chain roles"
+    },
+    "asset_recovery_rti_manager": {
+      "persona_id": "asset_recovery_rti_manager",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Asset Recovery / RTI Manager",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · HDFC Bank Limited — Enterprise Operations & Infrastructure",
+      "summary": "Reconciles rfid portal scans with chep/peco statements to detect hoarding nodes.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "RTI Balance Reconciler automatically reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes — eliminates 30% in non-return fee fines.",
+      "grounding_source": "Grounded in HDFC Bank Limited career & ops roles"
+    },
+    "reverse_transport_planner": {
+      "persona_id": "reverse_transport_planner",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Reverse Transport Planner",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · HDFC Bank Limited — Enterprise Operations & Infrastructure",
+      "summary": "Schedules dynamic backhauls to collect empty roll cages and rpcs from retail stores.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Milk-Run Consolidation automatically schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores — boosts backhaul fill rate by 25–40%.",
+      "grounding_source": "Grounded in HDFC Bank Limited career & ops roles"
+    },
+    "packaging_qa_food_safety": {
+      "persona_id": "packaging_qa_food_safety",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Packaging QA / Food Safety",
+      "title": "Lead — Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation · HDFC Bank Limited — Enterprise Operations & Infrastructure",
+      "summary": "Inspects return photos and wash logs for structural fatigue and chemical compliance.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
+      "agentic_impact": "Sanitation & Health Agent automatically inspects return photos and wash logs for structural fatigue and chemical compliance — extends reusable lifecycle by 15–20%.",
+      "grounding_source": "Grounded in HDFC Bank Limited career & ops roles"
+    }
+  },
+  "agent_relevance": {
+    "demand_sensing_agent": {
+      "agent_id": "demand_sensing_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Sensing Agent",
+      "custom_agent_name": "Liquidity & Cash Sensing Agent",
+      "is_relevant": true,
+      "division_context": "Analyzes local withdrawal patterns, salary dates, and regional festivals to predict cash demand for ATMs and Currency Chests.",
+      "hidden_reason": ""
+    },
+    "cpfr_sync_agent": {
+      "agent_id": "cpfr_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Forecast Reconciliation",
+      "custom_agent_name": "Network Growth Synchronizer",
+      "is_relevant": true,
+      "division_context": "Reconciles retail banking expansion plans with physical infrastructure readiness, including IT hardware and secure facility setup.",
+      "hidden_reason": ""
+    },
+    "npi_demand_profiler": {
+      "agent_id": "npi_demand_profiler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "NPI Demand Profiler",
+      "custom_agent_name": "Financial Product Launch Profiler",
+      "is_relevant": true,
+      "division_context": "Forecasts the logistics and card-issuance requirements for new credit card launches and banking product rollouts.",
+      "hidden_reason": ""
+    },
+    "promo_lift_simulator": {
+      "agent_id": "promo_lift_simulator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Promo ROI Simulator",
+      "custom_agent_name": "Branch Campaign ROI Simulator",
+      "is_relevant": true,
+      "division_context": "Simulates the lift in savings account openings and loan applications based on the placement and type of physical marketing collateral in branches.",
+      "hidden_reason": ""
+    },
+    "field_beat_distributor_sync_agent": {
+      "agent_id": "field_beat_distributor_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "JBP Negotiation Agent",
+      "custom_agent_name": "Collateral Logistics Sync",
+      "is_relevant": true,
+      "division_context": "Coordinates the dispatch of marketing kits and regulatory forms from central warehouses to the pan-India branch network and RPCs.",
+      "hidden_reason": ""
+    },
+    "trade_scheme_claims_reconciler": {
+      "agent_id": "trade_scheme_claims_reconciler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Deduction Audit Agent",
+      "custom_agent_name": "Marketing Vendor Audit Agent",
+      "is_relevant": true,
+      "division_context": "Audits vendor invoices against branch-level proof-of-installation photos for signage, posters, and ATM branding.",
+      "hidden_reason": ""
+    },
+    "sop_scenario_weaver": {
+      "agent_id": "sop_scenario_weaver",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Consensus & Gap Agent",
+      "custom_agent_name": "Service Capacity Balancer",
+      "is_relevant": true,
+      "division_context": "Matches customer service demand with the processing throughput of Regional Processing Centers to prevent document backlogs.",
+      "hidden_reason": ""
+    },
+    "disruption_war_room_orchestrator": {
+      "agent_id": "disruption_war_room_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Digital War-Room Agent",
+      "custom_agent_name": "Ops Continuity Orchestrator",
+      "is_relevant": true,
+      "division_context": "Manages real-time response to CIT security alerts or data center outages, rerouting resources to maintain banking services.",
+      "hidden_reason": ""
+    },
+    "csco_control_tower_copilot": {
+      "agent_id": "csco_control_tower_copilot",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Executive Copilot",
+      "custom_agent_name": "Enterprise Ops Executive Copilot",
+      "is_relevant": true,
+      "division_context": "Aggregates pan-India operational metrics for the COO, tracking infrastructure ROI and regulatory compliance across the network.",
+      "hidden_reason": ""
+    },
+    "working_capital_cash_bridge": {
+      "agent_id": "working_capital_cash_bridge",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "SKU Pruning Agent",
+      "custom_agent_name": "Asset ROI Optimizer",
+      "is_relevant": true,
+      "division_context": "Analyzes the maintenance costs and transaction yields of ATMs and PoS terminals to optimize the bank's capital expenditure on hardware.",
+      "hidden_reason": ""
+    },
+    "eco_cutover_orchestrator": {
+      "agent_id": "eco_cutover_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "PIPO Run-Out Agent",
+      "custom_agent_name": "Hardware Refresh Sync",
+      "is_relevant": true,
+      "division_context": "Manages the transition between old and new hardware generations across the branch network to minimize operational downtime.",
+      "hidden_reason": ""
+    },
+    "network_twin_architect": {
+      "agent_id": "network_twin_architect",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Cost-to-Serve Diagnostic",
+      "custom_agent_name": "Ops Cost-to-Serve Diagnostic",
+      "is_relevant": true,
+      "division_context": "Models the total cost of operating branches and ATMs, including cash logistics and IT support, to identify margin improvement opportunities.",
+      "hidden_reason": ""
+    },
+    "tier_n_risk_sentinel": {
+      "agent_id": "tier_n_risk_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Disruption Sensing Agent",
+      "custom_agent_name": "Infrastructure Risk Sentinel",
+      "is_relevant": true,
+      "division_context": "Monitors global supply chains for server components and ATM parts to prevent delays in HDFC Bank's digital and physical expansion.",
+      "hidden_reason": ""
+    },
+    "supplier_quality_sentinel": {
+      "agent_id": "supplier_quality_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Onboarding & Qual. Agent",
+      "custom_agent_name": "Vendor Compliance Auditor",
+      "is_relevant": true,
+      "division_context": "Automates the verification of ISO and security audits for Cash-in-Transit and ITAD vendors to ensure RBI regulatory compliance.",
+      "hidden_reason": ""
+    },
+    "carbon_scope3_ledger": {
+      "agent_id": "carbon_scope3_ledger",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "ESG & Scope 3 Auditor",
+      "custom_agent_name": "ITAD & E-Waste ESG Tracker",
+      "is_relevant": true,
+      "division_context": "Tracks the environmental impact and chain-of-custody for all decommissioned IT assets and branch infrastructure to meet Scope 3 targets.",
+      "hidden_reason": ""
+    },
+    "commodity_index_advisor": {
+      "agent_id": "commodity_index_advisor",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Commodity Index Advisor",
+      "custom_agent_name": "Capex Market Intelligence",
+      "is_relevant": true,
+      "division_context": "Monitors global raw material indices to advise the procurement team on the optimal timing for large-scale infrastructure and IT hardware buys.",
+      "hidden_reason": ""
+    },
+    "rfq_should_cost_agent": {
+      "agent_id": "rfq_should_cost_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Dynamic Should-Cost Agent",
+      "custom_agent_name": "Infrastructure Should-Cost Agent",
+      "is_relevant": true,
+      "division_context": "Analyzes the material and labor components of branch fit-out quotes to ensure competitive pricing from contractors and OEMs.",
+      "hidden_reason": ""
+    },
+    "sustainable_packaging_agent": {
+      "agent_id": "sustainable_packaging_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Sustainable Packaging Agent",
+      "custom_agent_name": "Secure Distribution Optimizer",
+      "is_relevant": true,
+      "division_context": "Evaluates the security and environmental impact of packaging used for direct-to-customer card and checkbook deliveries.",
+      "hidden_reason": ""
+    },
+    "tariff_esg_agent": {
+      "agent_id": "tariff_esg_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Contract Leakage Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across HDFC Bank Limited — Enterprise Operations & Infrastructure.",
+      "hidden_reason": ""
+    },
+    "master_data_leadtime_steward": {
+      "agent_id": "master_data_leadtime_steward",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "PO Expediting Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across HDFC Bank Limited — Enterprise Operations & Infrastructure.",
+      "hidden_reason": ""
+    },
+    "three_way_match_dispute": {
+      "agent_id": "three_way_match_dispute",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Three-Way Match Dispute",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across HDFC Bank Limited — Enterprise Operations & Infrastructure.",
+      "hidden_reason": ""
+    },
+    "finite_production_scheduler": {
+      "agent_id": "finite_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Changeover Optimizer",
+      "custom_agent_name": "Branch Rollout Sequencer",
+      "is_relevant": true,
+      "division_context": "Sequences the staging of IT hardware and branch fixtures based on site readiness and regional priority to ensure on-time branch launches.",
+      "hidden_reason": ""
+    },
+    "line_schedule_optimizer": {
+      "agent_id": "line_schedule_optimizer",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Disruption Re-sequencer",
+      "custom_agent_name": "Staging Disruption Re-router",
+      "is_relevant": true,
+      "division_context": "Re-prioritizes the kitting of IT assets at the central hub when branch construction schedules shift or logistics delays occur.",
+      "hidden_reason": ""
+    },
+    "labor_line_balancing_agent": {
+      "agent_id": "labor_line_balancing_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Labor & Line Balancing",
+      "custom_agent_name": "Technician Deployment Planner",
+      "is_relevant": true,
+      "division_context": "Matches certified infrastructure engineers to branch installation tasks based on location, skill level, and project urgency.",
+      "hidden_reason": ""
+    },
+    "predictive_oee_sentinel": {
+      "agent_id": "predictive_oee_sentinel",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Bottleneck Diagnostic",
+      "custom_agent_name": "Data Center Health Sentinel",
+      "is_relevant": true,
+      "division_context": "Monitors critical infrastructure like data center cooling and server loads to ensure 24/7 uptime for core banking systems.",
+      "hidden_reason": ""
+    },
+    "copacker_allocation_agent": {
+      "agent_id": "copacker_allocation_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Co-Packer Allocation",
+      "custom_agent_name": "Vendor Service Allocator",
+      "is_relevant": true,
+      "division_context": "Optimizes the allocation of tasks between internal processing centers and external BPO/CIT service providers based on cost and SLA.",
+      "hidden_reason": ""
+    },
+    "capex_simulator_agent": {
+      "agent_id": "capex_simulator_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "CapEx Simulator",
+      "custom_agent_name": "Infrastructure Capex Simulator",
+      "is_relevant": true,
+      "division_context": "Models the long-term financial and operational impact of building new flagship facilities versus upgrading existing branch infrastructure.",
+      "hidden_reason": ""
+    },
+    "inline_yield_guardian": {
+      "agent_id": "inline_yield_guardian",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Visual Defect Triager",
+      "custom_agent_name": "Asset Integrity Auditor",
+      "is_relevant": true,
+      "division_context": "Uses visual inspection to verify that ATMs and servers are free of damage and have correct HDFC Bank branding before dispatch.",
+      "hidden_reason": ""
+    },
+    "batch_record_auditor": {
+      "agent_id": "batch_record_auditor",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Batch Record Auditor",
+      "custom_agent_name": "Site Readiness Compliance Agent",
+      "is_relevant": true,
+      "division_context": "Parses branch fit-out checklists and vendor certifications to ensure every new facility meets RBI and internal security standards.",
+      "hidden_reason": ""
+    },
+    "scrap_defect_root_cause_agent": {
+      "agent_id": "scrap_defect_root_cause_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "RCA & CAPA Copilot",
+      "custom_agent_name": "Infrastructure Failure Analyst",
+      "is_relevant": true,
+      "division_context": "Correlates branch hardware failures with vendor batches and installation data to identify systemic infrastructure risks.",
+      "hidden_reason": ""
+    },
+    "meio_safety_stock_agent": {
+      "agent_id": "meio_safety_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Safety Stock Agent",
+      "custom_agent_name": "Cash Liquidity Buffer Agent",
+      "is_relevant": true,
+      "division_context": "Recalibrates cash safety stock levels across currency chests and ATMs using live withdrawal data and local holiday calendars to prevent stock-outs.",
+      "hidden_reason": ""
+    },
+    "slob_disposition_agent": {
+      "agent_id": "slob_disposition_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "SLOB Disposition Agent",
+      "custom_agent_name": "Soiled Note Lifecycle Agent",
+      "is_relevant": true,
+      "division_context": "Identifies accumulation of unfit or soiled currency and triggers automated workflows for secure return to the RBI to optimize vault space.",
+      "hidden_reason": ""
+    },
+    "crossdock_transfer_orchestrator": {
+      "agent_id": "crossdock_transfer_orchestrator",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inter-Facility Rebalancer",
+      "custom_agent_name": "Inter-Branch Cash Rebalancer",
+      "is_relevant": true,
+      "division_context": "Generates automated transfer orders to move surplus cash from high-deposit branches to high-withdrawal ATMs, reducing the need for external cash sourcing.",
+      "hidden_reason": ""
+    },
+    "warehouse_slotting_agent": {
+      "agent_id": "warehouse_slotting_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dynamic Slotting Agent",
+      "custom_agent_name": "Vault Denomination Optimizer",
+      "is_relevant": true,
+      "division_context": "Analyzes denomination withdrawal patterns to re-slot currency chest storage, placing high-demand notes closest to the packing stations for faster CIT loading.",
+      "hidden_reason": ""
+    },
+    "dock_to_stock_agent": {
+      "agent_id": "dock_to_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dock-to-Stock Agent",
+      "custom_agent_name": "Secure Remittance Validator",
+      "is_relevant": true,
+      "division_context": "Parses digital manifests and security bag scans to reconcile cash remittances from the RBI, flagging any seal or count variances immediately.",
+      "hidden_reason": ""
+    },
+    "wave_fulfillment_copilot": {
+      "agent_id": "wave_fulfillment_copilot",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Wave Fulfillment Copilot",
+      "custom_agent_name": "CIT Dispatch Orchestrator",
+      "is_relevant": true,
+      "division_context": "Balances the sorting and packing of ATM cassettes across shift teams to ensure all armored vehicles depart on their scheduled high-security routes.",
+      "hidden_reason": ""
+    },
+    "planogram_merchandising_vision_auditor": {
+      "agent_id": "planogram_merchandising_vision_auditor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Phantom Inventory Sensor",
+      "custom_agent_name": "ATM Phantom Cash Sensor",
+      "is_relevant": true,
+      "division_context": "Identifies discrepancies between ATM sensor data and transaction logs to flag potential mechanical jams or shrinkage anomalies.",
+      "hidden_reason": ""
+    },
+    "atp_order_promising_agent": {
+      "agent_id": "atp_order_promising_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "SFS / BOPIS Sourcing",
+      "custom_agent_name": "Secure Asset Sourcing Agent",
+      "is_relevant": true,
+      "division_context": "Selects the best fulfillment hub for dispatching debit cards or checkbooks based on customer location and courier serviceability zones.",
+      "hidden_reason": ""
+    },
+    "returns_triage_agent": {
+      "agent_id": "returns_triage_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Returns Triage Agent",
+      "custom_agent_name": "IT Asset Triage Agent",
+      "is_relevant": true,
+      "division_context": "Evaluates decommissioned ATM and IT hardware condition to triage for refurbishment, secure data destruction, or certified e-waste recycling.",
+      "hidden_reason": ""
+    },
+    "load_consolidation_agent": {
+      "agent_id": "load_consolidation_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Load Consolidation",
+      "custom_agent_name": "CIT Route Consolidator",
+      "is_relevant": true,
+      "division_context": "Consolidates cash delivery and pickup requests into optimized armored van routes, maximizing security and minimizing fuel costs.",
+      "hidden_reason": ""
+    },
+    "yard_dock_sequencer": {
+      "agent_id": "yard_dock_sequencer",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Disruption Agent",
+      "custom_agent_name": "Secure Bay Sequencer",
+      "is_relevant": true,
+      "division_context": "Parses GPS feeds from CIT vans to dynamically manage secure bay assignments at Currency Chests, reducing vehicle idling time in public areas.",
+      "hidden_reason": ""
+    },
+    "cold_chain_auditor": {
+      "agent_id": "cold_chain_auditor",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold-Chain Auditor",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Analyzes IoT telemetry from HDFC's Chandivali and regional data centers to flag thermal excursions that could threaten critical banking infrastructure.",
+      "hidden_reason": "Filtered for operational fit: no refrigerated cold-chain perishables."
+    },
+    "aisle_aligned_pallet_agent": {
+      "agent_id": "aisle_aligned_pallet_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Aisle-Aligned Pallet",
+      "custom_agent_name": "Dispatch Wave Sequencer",
+      "is_relevant": true,
+      "division_context": "Sequences the output of the Card Issuance Hub to ensure parcels are bundled by regional courier zones for faster RPC handover.",
+      "hidden_reason": ""
+    },
+    "store_capacity_agent": {
+      "agent_id": "store_capacity_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Capacity Agent",
+      "custom_agent_name": "Branch Inventory Throttler",
+      "is_relevant": true,
+      "division_context": "Monitors branch storage limits for welcome kits and stationery, preventing overstocking in small urban branch footprints.",
+      "hidden_reason": ""
+    },
+    "port_drayage_orchestrator": {
+      "agent_id": "port_drayage_orchestrator",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Curfew Orchestrator",
+      "custom_agent_name": "Branch Delivery Scheduler",
+      "is_relevant": true,
+      "division_context": "Coordinates supply deliveries to branches by navigating municipal 'No Entry' timings and local branch security hours.",
+      "hidden_reason": ""
+    },
+    "geocoding_intelligence_agent": {
+      "agent_id": "geocoding_intelligence_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Geocoding Intelligence",
+      "custom_agent_name": "Address Precision Engine",
+      "is_relevant": true,
+      "division_context": "Interprets complex Indian residential addresses to provide couriers with exact gate locations for card and cheque book delivery.",
+      "hidden_reason": ""
+    },
+    "multimodal_mode_shift_agent": {
+      "agent_id": "multimodal_mode_shift_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Courier Allocation",
+      "custom_agent_name": "Secure Courier Allocator",
+      "is_relevant": true,
+      "division_context": "Dynamically selects the best courier partner for each card shipment based on cost, security tier, and regional speed.",
+      "hidden_reason": ""
+    },
+    "otif_penalty_shield": {
+      "agent_id": "otif_penalty_shield",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Delivery Exception Copilot",
+      "custom_agent_name": "Dispatch Exception Copilot",
+      "is_relevant": true,
+      "division_context": "Identifies card delivery failures in real-time and triggers automated customer workflows to prevent 'Return to Origin' (RTO) events.",
+      "hidden_reason": ""
+    },
+    "fleetflow_dispatch": {
+      "agent_id": "fleetflow_dispatch",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Dynamic Rerouter",
+      "custom_agent_name": "CIT Route Optimizer",
+      "is_relevant": true,
+      "division_context": "Optimizes routes for armored cash-in-transit vehicles to ensure ATMs are replenished while minimizing exposure time.",
+      "hidden_reason": ""
+    },
+    "freight_control_tower": {
+      "agent_id": "freight_control_tower",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Routing Guide Compliance",
+      "custom_agent_name": "Logistics Compliance Monitor",
+      "is_relevant": true,
+      "division_context": "Tracks courier and CIT vendor performance against HDFC's strict security and delivery timelines to manage the routing guide.",
+      "hidden_reason": ""
+    },
+    "freight_bill_audit_agent": {
+      "agent_id": "freight_bill_audit_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Bill Audit Agent",
+      "custom_agent_name": "Logistics Invoice Auditor",
+      "is_relevant": true,
+      "division_context": "Automates the audit of courier and transport invoices by matching digital PODs and rate cards within the Ivalua/Oracle ecosystem.",
+      "hidden_reason": ""
+    },
+    "reverse_rma_optimizer": {
+      "agent_id": "reverse_rma_optimizer",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Return Fraud Sentinel",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across HDFC Bank Limited — Enterprise Operations & Infrastructure.",
+      "hidden_reason": ""
+    },
+    "keep_it_routing_advisor": {
+      "agent_id": "keep_it_routing_advisor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Keep-It & Routing Advisor",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across HDFC Bank Limited — Enterprise Operations & Infrastructure.",
+      "hidden_reason": ""
+    },
+    "osd_freight_claims_agent": {
+      "agent_id": "osd_freight_claims_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "OS&D Freight Claims",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across HDFC Bank Limited — Enterprise Operations & Infrastructure.",
+      "hidden_reason": ""
+    },
+    "dynamic_markdown_agent": {
+      "agent_id": "dynamic_markdown_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Dynamic Markdown Agent",
+      "custom_agent_name": "Card Stock Lifecycle Agent",
+      "is_relevant": true,
+      "division_context": "Monitors the age of unissued debit/credit card inventory and promotional kits to ensure usage before branding or chip technology becomes obsolete.",
+      "hidden_reason": ""
+    },
+    "short_dated_redistributor": {
+      "agent_id": "short_dated_redistributor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Short-Dated Redistributor",
+      "custom_agent_name": "IT Asset & Kit Redistributor",
+      "is_relevant": true,
+      "division_context": "Identifies surplus IT hardware or marketing forms in one region and reallocates them to high-demand branches to prevent waste.",
+      "hidden_reason": ""
+    },
+    "food_waste_esg_copilot": {
+      "agent_id": "food_waste_esg_copilot",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Food Waste & ESG Copilot",
+      "custom_agent_name": "",
+      "is_relevant": false,
+      "division_context": "Tracks the diversion of decommissioned ATMs and servers from landfills and monitors the reduction in physical form usage across the bank.",
+      "hidden_reason": "Filtered for operational fit: non-food product & operations portfolio."
+    },
+    "rti_balance_reconciler": {
+      "agent_id": "rti_balance_reconciler",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "RTI Balance Reconciler",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across HDFC Bank Limited — Enterprise Operations & Infrastructure.",
+      "hidden_reason": ""
+    },
+    "intermodal_rail_linehaul_agent": {
+      "agent_id": "intermodal_rail_linehaul_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Milk-Run Consolidation",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across HDFC Bank Limited — Enterprise Operations & Infrastructure.",
+      "hidden_reason": ""
+    },
+    "sanitation_health_agent": {
+      "agent_id": "sanitation_health_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Sanitation & Health Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across HDFC Bank Limited — Enterprise Operations & Infrastructure.",
+      "hidden_reason": ""
+    }
+  },
+  "process_overrides": {
+    "f2f": {
+      "vc_id": "f2f",
+      "custom_title": "Capacity-to-Branch",
+      "custom_subtitle": "Forecasting branch footfall and IT capacity to fulfilling infrastructure needs."
+    },
+    "o2d": {
+      "vc_id": "o2d",
+      "custom_title": "Issuance-to-Customer",
+      "custom_subtitle": "Processing card and cheque book requests through to secure courier delivery."
+    },
+    "s2p": {
+      "vc_id": "s2p",
+      "custom_title": "Source-to-Contract",
+      "custom_subtitle": "Sourcing IT hardware, ATM OEMs, and facility services through to vendor payment."
+    },
+    "p2r": {
+      "vc_id": "p2r",
+      "custom_title": "Decommission-to-Recycle",
+      "custom_subtitle": "Retiring old ATMs, PoS devices, and IT hardware for secure e-waste disposal."
+    }
+  },
+  "hidden_agent_ids": [
+    "cold_chain_auditor",
+    "food_waste_esg_copilot"
+  ],
+  "hidden_persona_ids": [
+    "cold_chain_qa_logistics_dir",
+    "cso_circular_lead"
+  ],
+  "active_pillars_count": 7,
+  "active_agents_count": 58,
+  "active_personas_count": 58,
+  "active_sub_pillars_count": 20,
+  "grounding_citations": [
+    {
+      "title": "HDFC Bank — Corporate Profile",
+      "url": "https://en.wikipedia.org/wiki/HDFC_Bank",
+      "snippet": ""
+    },
+    {
+      "title": "HDFC Bank Limited Official Brand Mark",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/HDFC-Life-Logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "snippet": ""
+    }
+  ],
+  "career_title_examples": [
+    "Head - IT Procurement",
+    "Vice President - Infrastructure & Administration",
+    "Manager - Cash Logistics",
+    "Vendor Management Specialist",
+    "AVP - Branch Operations",
+    "Supply Chain Finance Manager"
+  ],
+  "terminology_highlights": [
+    "Currency Chest — Authorized branches that hold bulk cash on behalf of the RBI to supply ATMs and local branches.",
+    "RPC (Regional Processing Center) — Back-office hubs that handle document processing, clearing, and operational workflows.",
+    "Cash-in-Transit (CIT) — Secure logistics operations for moving physical currency between chests, branches, and ATMs.",
+    "ITAD (IT Asset Disposition) — Secure decommissioning and e-waste recycling of end-of-life servers, ATMs, and employee devices."
+  ],
+  "created_at": "2026-11-05T07:03:55.317259+00:00",
+  "updated_at": "2026-11-05T07:03:55.317259+00:00",
+  "generation_model": "Gemini 3.1 Pro / 4 Argon + Gemini 3.8 Flash (Google Search Grounded)"
+}
