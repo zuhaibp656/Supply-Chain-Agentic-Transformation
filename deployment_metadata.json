@@ -12,16 +12,11 @@
       "section": "01 \u00b7 Planning & Strategy | Demand Forecasting",
       "display_name": "Demand Sensing Agent (01 \u00b7 Planning & Strategy \u00b7 Demand Forecasting)",
       "ge_display_name": "Demand Sensing Agent (01 \u00b7 Planning & Strategy \u00b7 Demand Forecasting)",
-      "description": "[01 \u00b7 Planning & Strategy \u00b7 Demand Forecasting] Demand Sensing Agent \u2014 Synthesizes POS velocity, weather anomalies, and macro trends. Outcome: Detects demand shifts 7\u201314 days earlier.",
+      "description": "[01 \u00b7 Planning & Strategy \u00b7 Demand Forecasting] Demand Sensing Agent \u2014 Synthesizes POS velocity, weather anomalies, and macro trends. Outcome: Fuses daily POS sell-through, weather ensembles, and stockout imputation to cut short-horizon WAPE by 20%\u201335% and reduce safety-stock buffers.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6872242617594150912",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4275760174019143309",
-      "deployed_at": "2026-10-30T11:40:31Z",
-      "starter_prompts": [
-        "How is customer demand trending across our active products and regions right now? Please check whether weather shifts or store stockouts are hiding true demand, flag any overly optimistic sales overrides.",
-        "Show me a visual chart comparing our latest sensed demand forecast against the current baseline plan across top products.",
-        "Draft an executive briefing note for leadership summarizing the biggest demand shifts, the revenue at risk, and our recommended forecast updates."
-      ]
+      "deployed_at": "2026-10-30T11:40:31Z"
     },
     {
       "agent_id": "promo_lift_simulator",
@@ -31,16 +26,11 @@
       "section": "01 \u00b7 Planning & Strategy | Trade Promotion",
       "display_name": "Promo ROI Simulator (01 \u00b7 Planning & Strategy \u00b7 Trade Promotion)",
       "ge_display_name": "Promo ROI Simulator (01 \u00b7 Planning & Strategy \u00b7 Trade Promotion)",
-      "description": "[01 \u00b7 Planning & Strategy \u00b7 Trade Promotion] Promo ROI Simulator \u2014 Simulates price elasticity, shelf lift, and incremental spend return. Outcome: Prevents break-even trade leakage.",
+      "description": "[01 \u00b7 Planning & Strategy \u00b7 Trade Promotion] Promo ROI Simulator \u2014 Simulates price elasticity, shelf lift, and incremental spend return. Outcome: Simulates baseline cannibalization, post-promo dip, and incremental gross margin before trade funds are committed\u2014blocking unprofitable events.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2077472519979270144",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/7230495950759747643",
-      "deployed_at": "2026-10-30T11:40:47Z",
-      "starter_prompts": [
-        "Which of our upcoming retail price promotions actually make money after accounting for discounts, forward-buying, and cannibalization, and which ones are losing margin?",
-        "Plot a chart comparing expected promotional sales lift against net profit impact across our planned campaigns, and explain the best and worst performers clearly.",
-        "Draft a trade promotion review note for Sales and Finance explaining which campaigns to fund, which ones to restructure, and why."
-      ]
+      "deployed_at": "2026-10-30T11:40:47Z"
     },
     {
       "agent_id": "sop_scenario_weaver",
@@ -50,16 +40,11 @@
       "section": "01 \u00b7 Planning & Strategy | S&OP / IBP",
       "display_name": "Consensus & Gap Agent (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
       "ge_display_name": "Consensus & Gap Agent (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
-      "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Consensus & Gap Agent \u2014 Reconciles unconstrained demand with factory plant bottleneck limits. Outcome: Highlights margin-dilutive imbalances.",
+      "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Consensus & Gap Agent \u2014 Reconciles unconstrained demand with factory plant bottleneck limits. Outcome: Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority).",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8086384929635565568",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9189674696747625515",
-      "deployed_at": "2026-10-30T11:41:02Z",
-      "starter_prompts": [
-        "Where does customer demand exceed our factory and supplier capacity over the next planning cycle, and what is the most profitable way to close those supply gaps?",
-        "Show me a visual comparison of unconstrained customer demand versus available plant capacity and compare the margin impact of our main recovery options.",
-        "Draft an executive Sales and Operations Planning decision brief explaining our top capacity bottlenecks, the trade-offs between overtime, co-packing, and allocation, and your recommended plan."
-      ]
+      "deployed_at": "2026-10-30T11:41:02Z"
     },
     {
       "agent_id": "disruption_war_room_orchestrator",
@@ -69,16 +54,11 @@
       "section": "01 \u00b7 Planning & Strategy | S&OP / IBP",
       "display_name": "Digital War-Room Agent (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
       "ge_display_name": "Digital War-Room Agent (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
-      "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Digital War-Room Agent \u2014 Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Rapid OTIF impact scenario brief.",
+      "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Digital War-Room Agent \u2014 Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1211217885989437440",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4685464268735078343",
-      "deployed_at": "2026-10-30T11:40:52Z",
-      "starter_prompts": [
-        "What active supply chain disruptions are putting customer orders and revenue at risk right now, and what are our fastest, lowest-cost recovery options?",
-        "Display a chart comparing revenue at risk and recovery cost across our active disruption mitigation scenarios.",
-        "Draft an urgent war-room briefing for senior leadership summarizing the disruption impact, affected customers, and recommended mitigation plan."
-      ]
+      "deployed_at": "2026-10-30T11:40:52Z"
     },
     {
       "agent_id": "csco_control_tower_copilot",
@@ -88,16 +68,11 @@
       "section": "01 \u00b7 Planning & Strategy | S&OP / IBP",
       "display_name": "Executive Copilot (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
       "ge_display_name": "Executive Copilot (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
-      "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Executive Copilot \u2014 Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Reduces deck preparation by days.",
+      "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Executive Copilot \u2014 Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand\u2014turning 5-day analyst deck cycles into instant executive action.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2865587061606318080",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4015823380636158533",
-      "deployed_at": "2026-10-30T11:41:23Z",
-      "starter_prompts": [
-        "Give me an end-to-end health check of our supply chain right now\u2014how are service levels, inventory cash, fulfillment costs, and cross-functional risks trending, and what needs leadership attention today?",
-        "Show me an executive chart comparing current performance against targets across our key supply chain scorecards, and explain the biggest off-track area clearly.",
-        "Prepare a concise executive pre-read memo for our weekly leadership review highlighting top operational risks, financial exposure, and decisions awaiting sign-off."
-      ]
+      "deployed_at": "2026-10-30T11:41:23Z"
     },
     {
       "agent_id": "working_capital_cash_bridge",
@@ -107,16 +82,11 @@
       "section": "01 \u00b7 Planning & Strategy | Portfolio & SKU",
       "display_name": "SKU Pruning Agent (01 \u00b7 Planning & Strategy \u00b7 Portfolio & SKU)",
       "ge_display_name": "SKU Pruning Agent (01 \u00b7 Planning & Strategy \u00b7 Portfolio & SKU)",
-      "description": "[01 \u00b7 Planning & Strategy \u00b7 Portfolio & SKU] SKU Pruning Agent \u2014 Scores velocity, plant changeover cost, and shelf revenue yield. Outcome: Unlocks tail working capital.",
+      "description": "[01 \u00b7 Planning & Strategy \u00b7 Portfolio & SKU] SKU Pruning Agent \u2014 Scores velocity, plant changeover cost, and shelf revenue yield. Outcome: Scores every SKU on true net contribution after carrying, changeover, and obsolescence cost\u2014unlocking trapped working capital from the long tail.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5833474609206263808",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/14094336958774128849",
-      "deployed_at": "2026-10-30T11:40:48Z",
-      "starter_prompts": [
-        "Which slow-moving or complex products in our catalog are tying up working capital and hurting factory efficiency without earning enough margin to justify keeping them?",
-        "Show me a chart comparing product revenue contribution against inventory cash tied up and changeover cost so we can see the clearest candidates for portfolio cleanup.",
-        "Draft a clear portfolio simplification brief for Commercial and Finance leaders explaining which underperforming items to phase out and how much cash and line capacity we will free up."
-      ]
+      "deployed_at": "2026-10-30T11:40:48Z"
     },
     {
       "agent_id": "tier_n_risk_sentinel",
@@ -126,16 +96,11 @@
       "section": "02 \u00b7 Sourcing & Procurement | Supplier Network",
       "display_name": "Disruption Sensing Agent (02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network)",
       "ge_display_name": "Disruption Sensing Agent (02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network)",
-      "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network] Disruption Sensing Agent \u2014 Monitors multi-tier supply feeds, port delays, and vendor financials. Outcome: 2\u20133 week advance disruption warning.",
+      "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network] Disruption Sensing Agent \u2014 Monitors multi-tier supply feeds, port delays, and vendor financials. Outcome: Continuously monitors sub-tier financial, geopolitical, weather, and port signals\u2014triggering alternate allocations weeks before line stoppage.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5121890474918936576",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/6167693086894539620",
-      "deployed_at": "2026-10-30T11:40:28Z",
-      "starter_prompts": [
-        "Are any of our direct or upstream raw-material suppliers facing port delays, weather disruptions, or financial distress right now, and which of our products are exposed?",
-        "Show me a visual chart ranking our highest-risk supplier exposures by revenue at risk and recovery lead time, and explain the biggest vulnerability clearly.",
-        "Prepare a clear supplier risk briefing note for Procurement leadership summarizing the threatened materials, affected plants, and backup sourcing options."
-      ]
+      "deployed_at": "2026-10-30T11:40:28Z"
     },
     {
       "agent_id": "carbon_scope3_ledger",
@@ -145,16 +110,11 @@
       "section": "02 \u00b7 Sourcing & Procurement | Supplier Network",
       "display_name": "ESG & Scope 3 Auditor (02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network)",
       "ge_display_name": "ESG & Scope 3 Auditor (02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network)",
-      "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network] ESG & Scope 3 Auditor \u2014 Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. Outcome: Automates Scope 3 disclosure audits.",
+      "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network] ESG & Scope 3 Auditor \u2014 Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. Outcome: Replaces coarse spend-based averages with primary supplier + lane emissions\u2014preventing EU CBAM penalties and cutting external assurance fees.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1067102697913581568",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/12043431535905541673",
-      "deployed_at": "2026-10-30T11:40:56Z",
-      "starter_prompts": [
-        "Where do our largest supplier carbon emissions and sustainability compliance gaps sit right now, and are any imported materials missing required environmental documentation?",
-        "Show me a chart comparing carbon intensity and verified certification coverage across our top supply categories,?",
-        "Write an accessible sustainability and carbon audit brief for leadership summarizing our supplier emissions footprint, missing certificates, and remediation steps."
-      ]
+      "deployed_at": "2026-10-30T11:40:56Z"
     },
     {
       "agent_id": "rfq_should_cost_agent",
@@ -164,16 +124,11 @@
       "section": "02 \u00b7 Sourcing & Procurement | Material & Packaging",
       "display_name": "Dynamic Should-Cost Agent (02 \u00b7 Sourcing & Procurement \u00b7 Material & Packaging)",
       "ge_display_name": "Dynamic Should-Cost Agent (02 \u00b7 Sourcing & Procurement \u00b7 Material & Packaging)",
-      "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Material & Packaging] Dynamic Should-Cost Agent \u2014 Deconstructs packaging specs (resin weight, corrugate, conversion energy). Outcome: Fact-based margin leverage in RFPs.",
+      "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Material & Packaging] Dynamic Should-Cost Agent \u2014 Deconstructs packaging specs (resin weight, corrugate, conversion energy). Outcome: Decomposes every supplier quote into raw material, conversion, energy, logistics, and margin\u2014arming buyers with hard clean-sheet leverage.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/7647283965966942208",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/18006815538360774894",
-      "deployed_at": "2026-10-30T11:43:26Z",
-      "starter_prompts": [
-        "Are our suppliers' latest price quotes fair when compared against underlying raw material, energy, and manufacturing costs, or are some bids overpriced?",
-        "Show me a chart comparing supplier bid prices against our calculated fair should-cost benchmark across open quotes, and highlight where we have the most negotiation leverage.",
-        "Prepare a clear negotiation fact-pack memo for our sourcing buyer breaking down why specific supplier quotes are above fair market cost and what counter-offer to make."
-      ]
+      "deployed_at": "2026-10-30T11:43:26Z"
     },
     {
       "agent_id": "three_way_match_dispute",
@@ -183,16 +138,11 @@
       "section": "02 \u00b7 Sourcing & Procurement | Contract & PO Mgmt",
       "display_name": "Three-Way Match Dispute (02 \u00b7 Sourcing & Procurement \u00b7 Contract & PO Mgmt)",
       "ge_display_name": "Three-Way Match Dispute (02 \u00b7 Sourcing & Procurement \u00b7 Contract & PO Mgmt)",
-      "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Contract & PO Mgmt] Three-Way Match Dispute \u2014 Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. Outcome: Prevents vendor holds & saves discounts.",
+      "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Contract & PO Mgmt] Three-Way Match Dispute \u2014 Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. Outcome: Reconciles PO, Goods Receipt (ASN/GRN), and Invoice line variances automatically\u2014capturing early-payment discounts and cutting AP unit cost by 80%.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/994356809596665856",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/3963067958567898860",
-      "deployed_at": "2026-10-30T11:43:06Z",
-      "starter_prompts": [
-        "Can you check our open supplier invoices against purchase orders and warehouse receiving counts to show where vendors overbilled us on unit price or short-shipped quantities?",
-        "Show me a chart comparing supplier invoice amounts against verified purchase order and dock receipt values so the largest overcharges stand out clearly.",
-        "Draft a clear Accounts Payable audit memo detailing each price or quantity mismatch, the exact overcharge amount to deduct, and the verified amount safe to pay."
-      ]
+      "deployed_at": "2026-10-30T11:43:06Z"
     },
     {
       "agent_id": "finite_production_scheduler",
@@ -202,16 +152,11 @@
       "section": "03 \u00b7 Manufacturing & Production | Production Scheduling",
       "display_name": "Changeover Optimizer (03 \u00b7 Manufacturing & Production \u00b7 Production Scheduling)",
       "ge_display_name": "Changeover Optimizer (03 \u00b7 Manufacturing & Production \u00b7 Production Scheduling)",
-      "description": "[03 \u00b7 Manufacturing & Production \u00b7 Production Scheduling] Changeover Optimizer \u2014 Sequences allergen, kosher, and packaging runs to minimize washdowns. Outcome: Cuts sanitation downtime by 15\u201325%.",
+      "description": "[03 \u00b7 Manufacturing & Production \u00b7 Production Scheduling] Changeover Optimizer \u2014 Sequences allergen, kosher, and packaging runs to minimize washdowns. Outcome: Solves finite-capacity campaign wheels across allergens, colors, and pack formats\u2014cutting sanitation/changeover downtime by 15%\u201325%.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8139317618419957760",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/16838162618721244143",
-      "deployed_at": "2026-10-30T11:43:42Z",
-      "starter_prompts": [
-        "How can we sequence our upcoming production runs across flavours, allergens, and pack sizes to cut sanitation washdown downtime while still hitting every customer ship date?",
-        "Show me a chart comparing total changeover and washdown hours between our current production schedule and the optimized run sequence across lines.",
-        "Write a clear production scheduling brief for Plant Operations explaining the recommended run order, hours gained back, and allergen safety compliance."
-      ]
+      "deployed_at": "2026-10-30T11:43:42Z"
     },
     {
       "agent_id": "predictive_oee_sentinel",
@@ -221,16 +166,11 @@
       "section": "03 \u00b7 Manufacturing & Production | Capacity Planning",
       "display_name": "Bottleneck Diagnostic (03 \u00b7 Manufacturing & Production \u00b7 Capacity Planning)",
       "ge_display_name": "Bottleneck Diagnostic (03 \u00b7 Manufacturing & Production \u00b7 Capacity Planning)",
-      "description": "[03 \u00b7 Manufacturing & Production \u00b7 Capacity Planning] Bottleneck Diagnostic \u2014 Assesses CIP utilities, boiler loads, and cold storage holding limits. Outcome: Flags facility constraints 3\u20136 mos out.",
+      "description": "[03 \u00b7 Manufacturing & Production \u00b7 Capacity Planning] Bottleneck Diagnostic \u2014 Assesses CIP utilities, boiler loads, and cold storage holding limits. Outcome: Combines PLC telemetry with 6-month Rough-Cut Capacity Planning (RCCP) to prevent unplanned breakdowns and expose plant bottlenecks months ahead.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/4659145613206618112",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/12855910931272362848",
-      "deployed_at": "2026-10-30T11:43:56Z",
-      "starter_prompts": [
-        "What is actually capping our factory output right now\u2014is it machine reliability, sanitation utilities, steam/boiler limits, or cold-room storage space?",
-        "Plot a chart comparing capacity utilization and downtime losses across our production lines and plant utilities so the true bottleneck is obvious.",
-        "Write a plain-English plant bottleneck diagnostic brief for Operations leadership explaining what is limiting output and the highest-return fixes."
-      ]
+      "deployed_at": "2026-10-30T11:43:56Z"
     },
     {
       "agent_id": "inline_yield_guardian",
@@ -240,16 +180,11 @@
       "section": "03 \u00b7 Manufacturing & Production | Quality & Compliance",
       "display_name": "Visual Defect Triager (03 \u00b7 Manufacturing & Production \u00b7 Quality & Compliance)",
       "ge_display_name": "Visual Defect Triager (03 \u00b7 Manufacturing & Production \u00b7 Quality & Compliance)",
-      "description": "[03 \u00b7 Manufacturing & Production \u00b7 Quality & Compliance] Visual Defect Triager \u2014 Inspects high-speed video frames for crimped seals, lot codes, and labels. Outcome: Prevents full pallet scrap & holds.",
+      "description": "[03 \u00b7 Manufacturing & Production \u00b7 Quality & Compliance] Visual Defect Triager \u2014 Inspects high-speed video frames for crimped seals, lot codes, and labels. Outcome: Detects seal, fill, label, and surface defects inline in milliseconds\u2014halting drift before whole pallets turn into scrap or rework.",
       "model": "gemini-3.8-flash",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2816047465705242624",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/14928798980920927172",
-      "deployed_at": "2026-10-30T11:43:31Z",
-      "starter_prompts": [
-        "What packaging, seal, label, or fill-weight defects are our high-speed vision cameras catching on the lines today, and which line needs immediate adjustment to stop scrap?",
-        "Show me a chart comparing defect rates by defect type and production line against quality thresholds so we can see where scrap is spiking.",
-        "Draft a clear quality triage note for line inspectors and maintenance explaining the top defect pattern, affected lot numbers, and recommended machine adjustment."
-      ]
+      "deployed_at": "2026-10-30T11:43:31Z"
     },
     {
       "agent_id": "meio_safety_stock_agent",
@@ -259,16 +194,11 @@
       "section": "04 \u00b7 Inventory & Warehousing | Positioning & Optimization",
       "display_name": "Safety Stock Agent (04 \u00b7 Inventory & Warehousing \u00b7 Positioning & Optimization)",
       "ge_display_name": "Safety Stock Agent (04 \u00b7 Inventory & Warehousing \u00b7 Positioning & Optimization)",
-      "description": "[04 \u00b7 Inventory & Warehousing \u00b7 Positioning & Optimization] Safety Stock Agent \u2014 Recalibrates multi-echelon buffers using live lead-time and demand variance. Outcome: Cuts working capital by 10\u201318%.",
+      "description": "[04 \u00b7 Inventory & Warehousing \u00b7 Positioning & Optimization] Safety Stock Agent \u2014 Recalibrates multi-echelon buffers using live lead-time and demand variance. Outcome: Simultaneously optimizes safety stocks across plants, central hubs, and regional DCs\u2014freeing 12%\u201322% in working capital while lifting fill rates.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/9178085626807844864",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9879109757966221077",
-      "deployed_at": "2026-10-30T11:44:04Z",
-      "starter_prompts": [
-        "Where are we holding too much buffer inventory across our distribution centers versus risking stockouts because supplier lead times or demand volatility changed?",
-        "Show me a chart comparing current safety stock levels against mathematically optimal targets across key products and warehouses.",
-        "Prepare a clear inventory optimization note for Planning and Finance explaining how much working capital we can unlock while maintaining or improving customer fill rates."
-      ]
+      "deployed_at": "2026-10-30T11:44:04Z"
     },
     {
       "agent_id": "warehouse_slotting_agent",
@@ -278,16 +208,11 @@
       "section": "04 \u00b7 Inventory & Warehousing | Warehouse Operations",
       "display_name": "Dynamic Slotting Agent (04 \u00b7 Inventory & Warehousing \u00b7 Warehouse Operations)",
       "ge_display_name": "Dynamic Slotting Agent (04 \u00b7 Inventory & Warehousing \u00b7 Warehouse Operations)",
-      "description": "[04 \u00b7 Inventory & Warehousing \u00b7 Warehouse Operations] Dynamic Slotting Agent \u2014 Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting. Outcome: Reduces picker transit time by 15\u201330%.",
+      "description": "[04 \u00b7 Inventory & Warehousing \u00b7 Warehouse Operations] Dynamic Slotting Agent \u2014 Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting. Outcome: Re-slots fast-moving and co-ordered SKUs into ergonomic golden zones and optimizes TSP pick paths\u2014boosting DC throughput with $0 automation CapEx.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6594019996278456320",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/680853864033816982",
-      "deployed_at": "2026-10-30T11:43:50Z",
-      "starter_prompts": [
-        "Are our fastest-selling items and frequently co-ordered products stored in convenient golden-zone pick bins, or are warehouse pickers wasting hours walking to back aisles?",
-        "Create a chart comparing item pick frequency against current bin travel distance across warehouse zones to highlight the best re-slotting wins.",
-        "Draft an easy-to-follow slotting improvement brief for Warehouse Operations showing which items to swap into fast-pick bins and how much picker travel time it saves."
-      ]
+      "deployed_at": "2026-10-30T11:43:50Z"
     },
     {
       "agent_id": "atp_order_promising_agent",
@@ -297,16 +222,11 @@
       "section": "04 \u00b7 Inventory & Warehousing | Omnichannel Visibility",
       "display_name": "SFS / BOPIS Sourcing (04 \u00b7 Inventory & Warehousing \u00b7 Omnichannel Visibility)",
       "ge_display_name": "SFS / BOPIS Sourcing (04 \u00b7 Inventory & Warehousing \u00b7 Omnichannel Visibility)",
-      "description": "[04 \u00b7 Inventory & Warehousing \u00b7 Omnichannel Visibility] SFS / BOPIS Sourcing \u2014 Selects lowest-cost fulfillment nodes based on store labor and parcel zones. Outcome: Lowers parcel costs & split rates.",
+      "description": "[04 \u00b7 Inventory & Warehousing \u00b7 Omnichannel Visibility] SFS / BOPIS Sourcing \u2014 Selects lowest-cost fulfillment nodes based on store labor and parcel zones. Outcome: Routes every e-commerce and BOPIS order to the DC or store that maximizes net order margin across parcel zone cost, split risk, and markdown avoidance.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8558136990602625024",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/6469216377587188453",
-      "deployed_at": "2026-10-30T11:43:49Z",
-      "starter_prompts": [
-        "Across our warehouses and ship-from-store locations, what is the most profitable way to fulfill incoming online and omnichannel orders on time without draining store shelf stock?",
-        "Display a chart comparing parcel shipping cost, store labor availability, and delivery speed across candidate fulfillment locations for active order clusters.",
-        "Prepare a clear omnichannel fulfillment summary explaining how orders are being routed across distribution centers, ship-from-store, and curbside pickup to protect margin."
-      ]
+      "deployed_at": "2026-10-30T11:43:49Z"
     },
     {
       "agent_id": "load_consolidation_agent",
@@ -316,16 +236,11 @@
       "section": "05 \u00b7 Distribution & Logistics | First & Mid-Mile",
       "display_name": "Load Consolidation (05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile)",
       "ge_display_name": "Load Consolidation (05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile)",
-      "description": "[05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile] Load Consolidation \u2014 Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling. Outcome: 12\u201318% higher trailer fill rate.",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile] Load Consolidation \u2014 Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling. Outcome: Solves 3D bin-packing, bridge-formula axle weights, and LIFO stop unloading order\u2014shipping the same volume in 10%\u201315% fewer trucks.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/3771936486614630400",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/17846204712745878596",
-      "deployed_at": "2026-10-30T11:45:55Z",
-      "starter_prompts": [
-        "Where are we paying expensive less-than-truckload rates on partial shipments along the same corridor that could be combined into full multi-stop truckloads within weight and volume limits?",
-        "Show me a chart comparing trailer cube and weight utilization plus total freight cost before and after consolidating partial shipments.",
-        "Draft a clear load-consolidation plan for Transportation Planners detailing which shipments to combine, stop order, trailer fill percentage, and freight savings."
-      ]
+      "deployed_at": "2026-10-30T11:45:55Z"
     },
     {
       "agent_id": "cold_chain_auditor",
@@ -335,16 +250,11 @@
       "section": "05 \u00b7 Distribution & Logistics | First & Mid-Mile",
       "display_name": "Cold-Chain Auditor (05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile)",
       "ge_display_name": "Cold-Chain Auditor (05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile)",
-      "description": "[05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile] Cold-Chain Auditor \u2014 Analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims. Outcome: Prevents perishable food spoilage.",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile] Cold-Chain Auditor \u2014 Analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims. Outcome: Monitors continuous IoT temperature/humidity and calculates Mean Kinetic Temperature (MKT) in transit\u2014intervening before perishable or pharma loads spoil.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8706771171468640256",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/5823400487531018226",
-      "deployed_at": "2026-10-30T11:46:52Z",
-      "starter_prompts": [
-        "Which of our refrigerated shipments experienced temperature spikes recently, and which lots are scientifically safe to release into inventory versus needing quarantine and a carrier spoilage claim?",
-        "Show me a visual chart comparing the effective thermal exposure of each refrigerated shipment against its maximum safe stability limit, and point out which loads crossed the limit.",
-        "Prepare a clear quality and claims summary for our Cold-Chain and Quality leads covering the affected shipments, safe lot releases, and carrier claims to file."
-      ]
+      "deployed_at": "2026-10-30T11:46:52Z"
     },
     {
       "agent_id": "port_drayage_orchestrator",
@@ -354,16 +264,11 @@
       "section": "05 \u00b7 Distribution & Logistics | Store Replenishment",
       "display_name": "Curfew Orchestrator (05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment)",
       "ge_display_name": "Curfew Orchestrator (05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment)",
-      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment] Curfew Orchestrator \u2014 Coordinates municipal delivery curfews and store dock shift schedules dynamically. Outcome: 98%+ on-time store window compliance.",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment] Curfew Orchestrator \u2014 Coordinates municipal delivery curfews and store dock shift schedules dynamically. Outcome: Aligns store dispatch times, EV/low-noise tractor assignment, and urban curfew/school-zone rules to eliminate municipal fines and refused drops.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8652727975940194304",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/200992941311882772",
-      "deployed_at": "2026-10-30T11:46:36Z",
-      "starter_prompts": [
-        "Which upcoming urban store and hub deliveries conflict with city noise curfews, truck-restriction windows, or store receiving shift hours, and how should we re-time them?",
-        "Create a chart comparing planned truck arrival windows against municipal curfew hours and store dock staffing windows across active routes.",
-        "Draft a clear dispatch coordination brief for Retail Logistics explaining which route departure times to shift so we avoid municipal fines and missed delivery windows."
-      ]
+      "deployed_at": "2026-10-30T11:46:36Z"
     },
     {
       "agent_id": "geocoding_intelligence_agent",
@@ -373,16 +278,11 @@
       "section": "05 \u00b7 Distribution & Logistics | Last-Mile Delivery",
       "display_name": "Geocoding Intelligence (05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery)",
       "ge_display_name": "Geocoding Intelligence (05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery)",
-      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery] Geocoding Intelligence \u2014 Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers. Outcome: Drops failed deliveries by 30\u201345%.",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery] Geocoding Intelligence \u2014 Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers. Outcome: Validates address rooftop/loading-bay coordinates and driver access notes before dispatch\u2014eliminating $15\u2013$18 failed-delivery redelivery costs.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/9127857736627781632",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/7088606266716503770",
-      "deployed_at": "2026-10-30T11:46:51Z",
-      "starter_prompts": [
-        "Which delivery addresses on today's last-mile routes have inaccurate map pins, missing gate codes, or tricky loading-zone access that cause failed first-attempt deliveries?",
-        "Show me a chart comparing first-attempt delivery failure rates and driver dwell minutes before and after correcting rooftop drop pins and access instructions.",
-        "Prepare a clear last-mile operations brief highlighting the highest-friction delivery locations, verified drop coordinates, and driver guidance updates."
-      ]
+      "deployed_at": "2026-10-30T11:46:51Z"
     },
     {
       "agent_id": "fleetflow_dispatch",
@@ -392,16 +292,11 @@
       "section": "05 \u00b7 Distribution & Logistics | Route & Carrier",
       "display_name": "Dynamic Rerouter (05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier)",
       "ge_display_name": "Dynamic Rerouter (05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier)",
-      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier] Dynamic Rerouter \u2014 Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits. Outcome: Cuts fleet fuel usage by 6\u201310%.",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier] Dynamic Rerouter \u2014 Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits. Outcome: Continuously re-solves multi-stop Vehicle Routing (VRP) against live traffic, weather, and driver Hours-of-Service (HOS) to cut fuel and empty miles.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1064147210658119680",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9502278280664039255",
-      "deployed_at": "2026-10-30T11:46:56Z",
-      "starter_prompts": [
-        "Are live highway accidents, severe weather, or low-bridge restrictions delaying any of our active multi-stop truck routes right now, and what is the safest, fastest reroute?",
-        "Display a chart comparing projected route delay minutes, fuel cost, and arrival times between current highway paths and recommended dynamic reroutes.",
-        "Prepare a concise dispatch action note for Fleet Ops detailing the affected trucks, highway hazards avoided, driver hours compliance, and updated arrival times."
-      ]
+      "deployed_at": "2026-10-30T11:46:56Z"
     },
     {
       "agent_id": "freight_bill_audit_agent",
@@ -411,16 +306,11 @@
       "section": "05 \u00b7 Distribution & Logistics | Route & Carrier",
       "display_name": "Freight Bill Audit Agent (05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier)",
       "ge_display_name": "Freight Bill Audit Agent (05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier)",
-      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier] Freight Bill Audit Agent \u2014 Extracts signed PODs and rate contracts via OCR to audit accessorial surcharges. Outcome: Captures 3\u20137% in overbilled fees.",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier] Freight Bill Audit Agent \u2014 Extracts signed PODs and rate contracts via OCR to audit accessorial surcharges. Outcome: Audits 100% of carrier EDI 210/PDF freight invoices against contracted rate tables, DOE fuel indices, and GPS arrival timestamps before payment.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8272173807427387392",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/7289375159680767377",
-      "deployed_at": "2026-10-30T11:47:01Z",
-      "starter_prompts": [
-        "Can you review our recent carrier freight bills and tell me where we are being overcharged on fuel surcharges, detention fees, duplicate bills, or contract rates\u2014and how much we can recover?",
-        "Plot a clear chart comparing billed carrier invoice amounts against our audited contract rates across recent shipments so the biggest overcharges stand out.",
-        "Write a straightforward freight audit memo for Finance and Transportation detailing the billing errors uncovered, total dollar savings, and dispute actions needed."
-      ]
+      "deployed_at": "2026-10-30T11:47:01Z"
     },
     {
       "agent_id": "reverse_rma_optimizer",
@@ -430,16 +320,11 @@
       "section": "06 \u00b7 Returns & Reverse Logistics | Returns & Claims Mgmt",
       "display_name": "Return Fraud Sentinel (06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt)",
       "ge_display_name": "Return Fraud Sentinel (06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt)",
-      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt] Return Fraud Sentinel \u2014 Analyzes item photos and packaging video feeds to detect wear or swapped tags. Outcome: Cuts returns fraud abuse by 25\u201340%.",
+      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt] Return Fraud Sentinel \u2014 Analyzes item photos and packaging video feeds to detect wear or swapped tags. Outcome: Scores return requests against serial history, account abuse patterns, and item telemetry\u2014blocking fraudulent RMAs without friction for loyal buyers.",
       "model": "gemini-3.8-flash",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5468667646226464768",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/2869479596817501852",
-      "deployed_at": "2026-10-30T11:47:11Z",
-      "starter_prompts": [
-        "Are there suspicious patterns in recent e-commerce return requests\u2014such as swapped tags, empty-box claims, or repeat wardrobing\u2014that we should flag for manual inspection before issuing instant refunds?",
-        "Show me a chart comparing return fraud risk scores and dollar exposure across flagged return claims versus legitimate customer returns.",
-        "Draft a balanced return-protection summary for Reverse Logistics and Customer Experience explaining how high-risk claims are routed to inspection without slowing honest customers."
-      ]
+      "deployed_at": "2026-10-30T11:47:11Z"
     },
     {
       "agent_id": "dynamic_markdown_agent",
@@ -449,16 +334,11 @@
       "section": "06 \u00b7 Returns & Reverse Logistics | Expiry & Markdowns",
       "display_name": "Dynamic Markdown Agent (06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns)",
       "ge_display_name": "Dynamic Markdown Agent (06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns)",
-      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns] Dynamic Markdown Agent \u2014 Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts. Outcome: Cuts perishable scrap by 20\u201335%.",
+      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns] Dynamic Markdown Agent \u2014 Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts. Outcome: Triggers shallow, early price-elasticity markdowns synced to lot sell-by dates and local store velocity\u2014clearing stock at higher margin with less waste.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1501011767675846656",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/11982871860095077801",
-      "deployed_at": "2026-10-30T11:47:10Z",
-      "starter_prompts": [
-        "Which fresh or dated products on store shelves are selling too slowly to clear before their expiration dates, and what timely price markdown will sell them through while protecting margin?",
-        "Plot a chart comparing remaining days to expiry against daily sell-through velocity and projected revenue recovery with dynamic markdowns versus full-waste write-offs.",
-        "Draft a clear store merchandising note recommending exact markdown tiers for near-expiry items to prevent food waste and protect store profit."
-      ]
+      "deployed_at": "2026-10-30T11:47:10Z"
     },
     {
       "agent_id": "rti_balance_reconciler",
@@ -468,17 +348,12 @@
       "section": "06 \u00b7 Returns & Reverse Logistics | Pallet & Tote Reclamation",
       "display_name": "RTI Balance Reconciler (06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation)",
       "ge_display_name": "RTI Balance Reconciler (06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation)",
-      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation] RTI Balance Reconciler \u2014 Reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. Outcome: Eliminates 30% in non-return fee fines.",
+      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation] RTI Balance Reconciler \u2014 Reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. Outcome: Reconciles serialized pallet, tote, rack, and keg balances across plants, DCs, and customers\u2014slashing pool rental fines and replacement CapEx.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6794993129649864704",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/16699165381032264857",
-      "deployed_at": "2026-10-30T11:48:48Z",
-      "starter_prompts": [
-        "Where are our reusable pallets, plastic totes, and roll cages getting stuck or lost across retail stores and partner hubs, causing unnecessary rental fees and replacement purchases?",
-        "Show me a chart comparing outbound reusable asset shipments against actual returns and unreturned dwell balances across partner locations.",
-        "Draft a clear asset-recovery memo for Logistics and Account Management identifying which locations are holding excess pallets or totes and how much rental cost we can save."
-      ]
+      "deployed_at": "2026-10-30T11:48:48Z"
     }
   ],
-  "updated_at": "2026-10-30T11:50:27Z"
+  "updated_at": "2026-11-05T07:11:52Z"
 }

@@ -398,6 +398,26 @@ def get_token() -> str | None:
         return _TOKEN_OVERRIDE
     if os.environ.get("GCP_ACCESS_TOKEN"):
         return os.environ["GCP_ACCESS_TOKEN"]
+    # 1. Proactively check access_tokens.db for valid admin@zuhaibp.altostrat.com token
+    tokens_db = GCLOUD_DIR / "access_tokens.db"
+    if tokens_db.exists():
+        try:
+            conn = sqlite3.connect(str(tokens_db))
+            cur = conn.cursor()
+            cur.execute("SELECT access_token FROM access_tokens WHERE token_expiry > datetime('now') ORDER BY rowid DESC")
+            for (candidate_tok,) in cur.fetchall():
+                try:
+                    url = f"https://oauth2.googleapis.com/tokeninfo?access_token={candidate_tok}"
+                    with urllib.request.urlopen(url, timeout=3) as resp:
+                        info = json.load(resp)
+                        if "zuhaibp.altostrat.com" in info.get("email", ""):
+                            conn.close()
+                            return candidate_tok
+                except Exception:
+                    continue
+            conn.close()
+        except Exception:
+            pass
     adc_p = GCLOUD_DIR / "argolis_admin_adc.json"
     if adc_p.exists():
         try:
