@@ -149,14 +149,14 @@ if (PROJECT_ROOT / "data" / "twins" / "logos").exists():
     )
 
 
-@app.get("/", response_class=HTMLResponse)
-@app.get("/welcome", response_class=HTMLResponse)
+@app.api_route("/", methods=["GET", "HEAD"], response_class=HTMLResponse)
+@app.api_route("/welcome", methods=["GET", "HEAD"], response_class=HTMLResponse)
 async def serve_welcome_studio() -> HTMLResponse:
     return HTMLResponse(content=_read_cached_html(WELCOME_HTML_PATH))
 
 
-@app.get("/base", response_class=HTMLResponse)
-@app.get("/index.html", response_class=HTMLResponse)
+@app.api_route("/base", methods=["GET", "HEAD"], response_class=HTMLResponse)
+@app.api_route("/index.html", methods=["GET", "HEAD"], response_class=HTMLResponse)
 async def serve_base_or_query_portal(twin: Optional[str] = Query(default=None)) -> HTMLResponse:
     spec = None
     if twin and twin not in ("base", "reset"):
@@ -164,7 +164,7 @@ async def serve_base_or_query_portal(twin: Optional[str] = Query(default=None)) 
     return HTMLResponse(content=_hydrate_portal_html("index.html", twin_spec=spec, inject_base_href=False))
 
 
-@app.get("/t/{twin_slug}", response_class=HTMLResponse)
+@app.api_route("/t/{twin_slug}", methods=["GET", "HEAD"], response_class=HTMLResponse)
 async def serve_tailored_company_portal(twin_slug: str) -> HTMLResponse:
     spec = load_twin_spec(twin_slug)
     if not spec:
@@ -181,29 +181,29 @@ async def serve_tailored_company_portal(twin_slug: str) -> HTMLResponse:
     return HTMLResponse(content=_hydrate_portal_html("index.html", twin_spec=spec, inject_base_href=True))
 
 
-@app.get("/periodic_table.html", response_class=HTMLResponse)
+@app.api_route("/periodic_table.html", methods=["GET", "HEAD"], response_class=HTMLResponse)
 async def serve_periodic_table(twin: Optional[str] = Query(default=None)) -> HTMLResponse:
     spec = load_twin_spec(twin) if twin and twin not in ("base", "reset") else None
     return HTMLResponse(content=_hydrate_portal_html("periodic_table.html", twin_spec=spec))
 
 
-@app.get("/mind_map.html", response_class=HTMLResponse)
+@app.api_route("/mind_map.html", methods=["GET", "HEAD"], response_class=HTMLResponse)
 async def serve_mind_map(twin: Optional[str] = Query(default=None)) -> HTMLResponse:
     spec = load_twin_spec(twin) if twin and twin not in ("base", "reset") else None
     return HTMLResponse(content=_hydrate_portal_html("mind_map.html", twin_spec=spec))
 
 
-@app.get("/cost_analysis_presentation.html")
+@app.api_route("/cost_analysis_presentation.html", methods=["GET", "HEAD"])
 async def serve_cost_deck() -> FileResponse:
     return FileResponse(str(PORTAL_HTML_FILES["cost_analysis_presentation.html"]))
 
 
-@app.get("/agent_testing_and_video_playbook.html")
+@app.api_route("/agent_testing_and_video_playbook.html", methods=["GET", "HEAD"])
 async def serve_playbook() -> FileResponse:
     return FileResponse(str(PORTAL_HTML_FILES["agent_testing_and_video_playbook.html"]))
 
 
-@app.get("/supply_chain_101_interactive_academy.html")
+@app.api_route("/supply_chain_101_interactive_academy.html", methods=["GET", "HEAD"])
 async def serve_academy() -> FileResponse:
     return FileResponse(str(PORTAL_HTML_FILES["supply_chain_101_interactive_academy.html"]))
 
@@ -374,7 +374,7 @@ async def api_generate_twin_stream(req: GenerateTwinRequest) -> StreamingRespons
     )
 
 
-@app.get("/{asset_path:path}")
+@app.api_route("/{asset_path:path}", methods=["GET", "HEAD"])
 async def serve_safe_static_asset(asset_path: str) -> FileResponse:
     """Serves static HTML/CSS/JS/media files from PROJECT_ROOT while protecting dotfiles and source secrets."""
     cleaned = asset_path.strip("/")
@@ -386,49 +386,16 @@ async def serve_safe_static_asset(asset_path: str) -> FileResponse:
     return FileResponse(str(candidate))
 
 
-def run_server(port: int = 8080, host: str = "::") -> None:
-    import socket
+def run_server(port: int = 8080, host: str = "0.0.0.0") -> None:
     import uvicorn
 
-    if host in ("::", "0.0.0.0", "dual", ""):
-        sockets: list[socket.socket] = []
-        try:
-            sock4 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock4.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-            sock4.bind(("0.0.0.0", port))
-            sock4.listen(2048)
-            sockets.append(sock4)
-        except OSError:
-            pass
-
-        try:
-            sock6 = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
-            sock6.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-            sock6.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 1)
-            sock6.bind(("::", port))
-            sock6.listen(2048)
-            sockets.append(sock6)
-        except OSError:
-            if not sockets:
-                sock_dual = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
-                sock_dual.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-                sock_dual.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0)
-                sock_dual.bind(("::", port))
-                sock_dual.listen(2048)
-                sockets.append(sock_dual)
-
-        if sockets:
-            config = uvicorn.Config(app, host="0.0.0.0", port=port, log_level="info")
-            server = uvicorn.Server(config)
-            server.run(sockets=sockets)
-            return
-
-    uvicorn.run(app, host=host or "0.0.0.0", port=port, log_level="info")
+    bind_host = "0.0.0.0" if host in ("", "::", "dual") else host
+    uvicorn.run(app, host=bind_host, port=port, log_level="info")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Enterprise Twin Studio FastAPI Server")
     parser.add_argument("--port", type=int, default=int(os.environ.get("PORT", "8080")))
-    parser.add_argument("--host", type=str, default="::")
+    parser.add_argument("--host", type=str, default="0.0.0.0")
     args = parser.parse_args()
     run_server(port=args.port, host=args.host)
