@@ -59,7 +59,7 @@ def list_systems() -> Dict[str, Any]:
             },
             {
                         "id": "retail_link_chargeback_portal",
-                        "name": "Walmart Retail Link / Target Partners Online Deduction Feed",
+                        "name": "Cymbal Retail Retail Link / Target Partners Online Deduction Feed",
                         "protocol": "EDI 812 / Portal API",
                         "tables": [
                                     "retailer_otif_chargeback_deductions"

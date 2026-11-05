@@ -212,7 +212,7 @@ class DemandSensingAgent:
         lines = [
             "### 🌊 PulseCast Demand Sensing & TimesFM Quantile Briefing",
             "",
-            "> **Executive Summary**: Identified unseasonable heatwave surge (+28.5% category lift) in US-Central via **Google DeepMind WeatherNext 3** paired with severe POS stockout censorship at Kroger. Imputed true latent demand in BigQuery and generated 14-day P10/P50/P90 quantile fans using **Vertex AI TimesFM** (WAPE reduced to **5.2%**). Neutralized chronic commercial optimism bias (-4.2% FVA) and committed updated PIR directly to **SAP IBP**.",
+            "> **Executive Summary**: Identified unseasonable heatwave surge (+28.5% category lift) in US-Central via **Google DeepMind WeatherNext 3** paired with severe POS stockout censorship at Apex Hypermarket. Imputed true latent demand in BigQuery and generated 14-day P10/P50/P90 quantile fans using **Vertex AI TimesFM** (WAPE reduced to **5.2%**). Neutralized chronic commercial optimism bias (-4.2% FVA) and committed updated PIR directly to **SAP IBP**.",
             "",
             "#### 📊 Sensed Demand & TimesFM Horizon Ledger (Atomic Copy-Ready Table)",
             "",

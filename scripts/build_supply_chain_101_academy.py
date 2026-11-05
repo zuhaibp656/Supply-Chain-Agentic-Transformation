@@ -32,7 +32,7 @@ FLASHCARDS = [
         "cat": "planning",
         "top15": True,
         "hook": "Real-time data of what shoppers are actually buying at the checkout counter today.",
-        "plain": "When a cashier scans an item at Walmart or Target, that's a POS scan. If a manufacturer only looks at what Walmart's warehouse orders (instead of daily POS store scans), they are blind to real customer demand by 2 to 4 weeks.",
+        "plain": "When a cashier scans an item at Cymbal Retail or Target, that's a POS scan. If a manufacturer only looks at what Cymbal Retail's warehouse orders (instead of daily POS store scans), they are blind to real customer demand by 2 to 4 weeks.",
         "example": "During a sudden Texas heatwave, POS scans for sports drinks jump +35% on Friday, even though the retailer hasn't placed a new warehouse order yet.",
         "customer_tip": "Say: 'Our Demand Sensing Agent reads daily POS scans + weather to catch demand spikes 14 days before legacy ERP orders arrive.'"
     },
@@ -81,9 +81,9 @@ FLASHCARDS = [
         "full": "Collaborative Planning, Forecasting & Replenishment",
         "cat": "planning",
         "top15": False,
-        "hook": "When a brand (like Pepsi) and a retailer (like Walmart) share data to plan together.",
-        "plain": "Instead of guessing what Walmart will order, the manufacturer and retailer share their forecasts and store inventory data every week so shelves stay full without overstocking warehouses.",
-        "example": "Walmart's forecast says 580,000 units, while the brand's internal forecast says 500,000. Our CPFR Sync Agent reconciles the gap using daily POS store scans.",
+        "hook": "When a brand (like Pepsi) and a retailer (like Cymbal Retail) share data to plan together.",
+        "plain": "Instead of guessing what Cymbal Retail will order, the manufacturer and retailer share their forecasts and store inventory data every week so shelves stay full without overstocking warehouses.",
+        "example": "Cymbal Retail's forecast says 580,000 units, while the brand's internal forecast says 500,000. Our CPFR Sync Agent reconciles the gap using daily POS store scans.",
         "customer_tip": "Show the Collaborative CPFR & POS Harmonizer (`cpfr_sync_agent`) whenever a customer sells through big retail chains."
     },
     {
@@ -380,7 +380,7 @@ FLASHCARDS = [
         "hook": "Boxes cross straight from the receiving dock to the shipping dock without ever being put away in racks.",
         "plain": "Putting pallets up into high-bay racks and picking them down later costs time and labor. In Cross-Docking, an inbound container arrives at Door #4, pallets are sorted on the floor, and loaded directly onto outbound store trucks at Doors #18–#22 within 2 hours!",
         "example": "Our Cross-Dock Flow Orchestrator (`crossdock_transfer_orchestrator`) matches late inbound trailers to waiting outbound store trucks in real time.",
-        "customer_tip": "Retailers like Walmart and Home Depot love Cross-Docking because it slashes warehouse handling costs and speeds up flow."
+        "customer_tip": "Retailers like Cymbal Retail and Home Depot love Cross-Docking because it slashes warehouse handling costs and speeds up flow."
     },
     {
         "term": "Dock-to-Stock & Wave Picking",
@@ -471,7 +471,7 @@ FLASHCARDS = [
         "top15": False,
         "hook": "BOL = legal shipping ticket on the truck; ASN = digital heads-up sent before arrival; ePOD = signed delivery receipt.",
         "plain": "1. **BOL**: The legal contract between shipper and carrier listing what's on the truck. 2. **ASN (EDI 856)**: Electronic message sent to the receiving warehouse ahead of time listing exact pallet barcodes on the incoming truck. 3. **ePOD**: Digital signature, GPS timestamp, and photo proving the load was delivered intact.",
-        "example": "When Walmart claims a truck arrived late, our OTIF Penalty Shield (`otif_penalty_shield`) pulls the ASN, GPS geofence ping, and signed ePOD to dispute false chargebacks automatically.",
+        "example": "When Cymbal Retail claims a truck arrived late, our OTIF Penalty Shield (`otif_penalty_shield`) pulls the ASN, GPS geofence ping, and signed ePOD to dispute false chargebacks automatically.",
         "customer_tip": "Also mention **EDI 204** (Load Tender to a carrier) and **EDI 214** (Carrier Shipment Status update)."
     },
     {
@@ -512,7 +512,7 @@ FLASHCARDS = [
         "cat": "governance",
         "top15": True,
         "hook": "Did the shipment arrive ON TIME (within the appointment window) AND IN FULL (100% of ordered cases)?",
-        "plain": "Big retailers (Walmart, Target, Kroger, Amazon) grade every supplier on OTIF. If Walmart orders 1,000 cases for Tuesday between 8 AM–10 AM, and you deliver 980 cases on time (98% fill) OR 1,000 cases at 2 PM (late), that order is 0% OTIF — and the retailer deducts a 3% penalty ('chargeback') straight off your invoice!",
+        "plain": "Big retailers (Cymbal Retail, Target, Apex Hypermarket, Amazon) grade every supplier on OTIF. If Cymbal Retail orders 1,000 cases for Tuesday between 8 AM–10 AM, and you deliver 980 cases on time (98% fill) OR 1,000 cases at 2 PM (late), that order is 0% OTIF — and the retailer deducts a 3% penalty ('chargeback') straight off your invoice!",
         "example": "Our OTIF Penalty Shield (`otif_penalty_shield`) predicts orders at risk of missing OTIF 48 hours early to expedite them, and builds evidence dossiers to dispute unfair retailer fines.",
         "customer_tip": "Ask any Consumer Goods or Retail supplier: 'How much are you losing annually in retailer OTIF chargebacks?' — it's almost always millions of dollars."
     },
@@ -605,7 +605,7 @@ CUSTOMER_DECODER = [
         "question": "“When a major demand shift or plant constraint hits mid-month, how many days does it take your team to simulate the margin vs. service trade-off?”"
     },
     {
-        "complaint": "“Walmart and Target are killing us with OTIF chargeback penalties every month.”",
+        "complaint": "“Cymbal Retail and Target are killing us with OTIF chargeback penalties every month.”",
         "meaning": "Shipments are arriving late or short (failing On-Time In-Full), AND when the carrier actually arrived on time, the team lacks automated GPS/ePOD proof to dispute unfair retailer deductions.",
         "agents": "OTIF Penalty Shield (`otif_penalty_shield`), ATP Order Promising Agent (`atp_order_promising_agent`), Yard & Dock Sequencer (`yard_dock_sequencer`)",
         "question": "“What percentage of your OTIF deductions are preventable late shipments vs. unfair retailer deductions that you don't have the bandwidth to dispute with ePOD/GPS evidence?”"
@@ -681,7 +681,7 @@ QUIZ_QUESTIONS = [
         "explain": "Correct! WAPE (Weighted Absolute Percentage Error) measures forecast error (lower is better). FVA (Forecast Value Added) measures whether human edits improved the forecast — Negative FVA means human overrides hurt accuracy! Show them the **Demand Sensing Agent** (`demand_sensing_agent`)."
     },
     {
-        "q": "2. Walmart fines your customer $250,000 a month in 'OTIF Chargebacks.' What does OTIF mean?",
+        "q": "2. Cymbal Retail fines your customer $250,000 a month in 'OTIF Chargebacks.' What does OTIF mean?",
         "options": [
             "Over-Time In Factory — paying factory workers overtime.",
             "On-Time In-Full — delivering 100% of the ordered quantity within the exact scheduled delivery appointment window.",

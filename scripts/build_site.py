@@ -16,7 +16,7 @@ from __future__ import annotations
 import json
 import pathlib
 
-ROOT = pathlib.Path(__file__).resolve().parent
+ROOT = pathlib.Path(__file__).resolve().parent.parent
 CFO_HTML = pathlib.Path("/tmp/cfo_site.html")
 OUT_HTML = ROOT / "index.html"
 
@@ -5280,7 +5280,7 @@ def build_html() -> str:
             <label style="display:block; font-size:12px; font-weight:700; color:#cbd5e1; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">
               Company Name <span style="color:#f43f5e;">*</span>
             </label>
-            <input type="text" id="twinCompanyInput" class="twin-input-field" placeholder="e.g. Caterpillar, Boeing, BMW, Walmart, L'Oréal, Tesla..." value="" />
+            <input type="text" id="twinCompanyInput" class="twin-input-field" placeholder="e.g. Caterpillar, Boeing, BMW, Cymbal Retail, L'Oréal, Tesla..." value="" />
           </div>
 
           <div>
@@ -11916,7 +11916,7 @@ def main() -> None:
 
     # Synchronize scripts/build_site.py
     scripts_builder = OUT_HTML.parent / "scripts" / "build_site.py"
-    if scripts_builder.parent.exists():
+    if scripts_builder.parent.exists() and scripts_builder.resolve() != pathlib.Path(__file__).resolve():
         shutil.copy2(pathlib.Path(__file__).resolve(), scripts_builder)
         print(f"Synced scripts/build_site.py with master generator")
 

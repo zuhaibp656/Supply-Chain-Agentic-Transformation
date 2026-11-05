@@ -132,7 +132,7 @@ SUBPILLAR_EMPIRICAL_DATA: dict[str, dict[str, str]] = {
         "costMetric": "$2.27/mile trucking cost · 24%–32% unused trailer cube · $1.1B+ detention fees",
         "finding": "Weight-only load planning ships 25%+ air, uncoordinated plant yards incur $75–$150/hr carrier detention after 2 hours, and reefer excursions spoil 2%–5% of cold-chain loads.",
         "url": "https://truckingresearch.org/atri-research/operational-costs-of-trucking/",
-        "altUrl": "https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Walmart-Awarded-the-2023-INFORMS-Edelman-Award",
+        "altUrl": "https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Cymbal Retail-Awarded-the-2023-INFORMS-Edelman-Award",
     },
     "store_replenishment": {
         "org": "McKinsey Retail Operations & Grocery Replenishment Benchmark",

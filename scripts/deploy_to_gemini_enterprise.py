@@ -260,7 +260,7 @@ def _detect_agent_model_and_class(agent_dir: Path, aid: str) -> tuple[str, str]:
 
 
 def _build_playbook_starter_prompts(agent_id: str, website_name: str, sub_pillar: str, persona_name: str) -> List[str]:
-    """Builds 4 natural, plain-English human starter prompts (zero table/tool/code jargon) aligned with the Playbook."""
+    """Builds 3 natural, plain-English human starter prompts (zero table/tool/code jargon) aligned with Playbook Test Modes 1, 2, and 3."""
     from human_plain_english_prompts import get_human_prompts_for_agent
 
     hp = get_human_prompts_for_agent(
@@ -269,7 +269,7 @@ def _build_playbook_starter_prompts(agent_id: str, website_name: str, sub_pillar
         sub_pillar=sub_pillar,
         persona_name=persona_name,
     )
-    return [hp["q1"], hp["q2"], hp["q3"], hp["q4"]]
+    return [hp["q1"], hp["q2"], hp["q3"]]
 
 
 def build_all_60_agents_config() -> Dict[str, Dict[str, Any]]:

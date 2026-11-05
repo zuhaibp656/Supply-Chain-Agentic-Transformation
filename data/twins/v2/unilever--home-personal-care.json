@@ -806,7 +806,7 @@
       "canonical_name": "Store Replenishment Lead",
       "title": "Customer Supply Chain Manager",
       "role": "Managing inventory flow to major retail accounts",
-      "summary": "Collaborates with retailers like Walmart or Carrefour to ensure Home & Personal Care SKUs are always in stock during trade promotions.",
+      "summary": "Collaborates with retailers like Cymbal Retail or Carrefour to ensure Home & Personal Care SKUs are always in stock during trade promotions.",
       "manual_toil": "Overriding automated replenishment orders when store backrooms are full or when POS data shows a sudden spike in detergent sales.",
       "agentic_impact": "Throttles replenishment based on live POS velocity and actual backroom capacity, preventing 'over-stock' and 'out-of-stock' scenarios.",
       "grounding_source": "Grounded in Unilever PLC career portals & supply chain roles"

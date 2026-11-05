@@ -16,7 +16,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6872242617594150912",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4275760174019143309",
-      "deployed_at": "2026-10-30T11:40:31Z"
+      "deployed_at": "2026-10-30T11:40:31Z",
+      "starter_prompts": [
+        "How is customer demand trending across our active products and regions right now? Please check whether weather shifts or store stockouts are hiding true demand, flag any overly optimistic sales overrides, and explain what stands out in plain English.",
+        "Show me a visual chart comparing our latest sensed demand forecast against the current baseline plan across top products, and walk me through the biggest gap in simple terms.",
+        "Draft a clear, easy-to-read briefing note for leadership summarizing the biggest demand shifts, the revenue at risk, and our recommended forecast updates, spelling out any planning terms clearly."
+      ]
     },
     {
       "agent_id": "promo_lift_simulator",
@@ -30,7 +35,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2077472519979270144",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/7230495950759747643",
-      "deployed_at": "2026-10-30T11:40:47Z"
+      "deployed_at": "2026-10-30T11:40:47Z",
+      "starter_prompts": [
+        "Which of our upcoming retail price promotions actually make money after accounting for discounts, forward-buying, and cannibalization, and which ones are losing margin?",
+        "Plot a chart comparing expected promotional sales lift against net profit impact across our planned campaigns, and explain the best and worst performers clearly.",
+        "Draft a straightforward trade promotion review note for Sales and Finance explaining which campaigns to fund, which ones to restructure, and why."
+      ]
     },
     {
       "agent_id": "sop_scenario_weaver",
@@ -44,7 +54,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8086384929635565568",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9189674696747625515",
-      "deployed_at": "2026-10-30T11:41:02Z"
+      "deployed_at": "2026-10-30T11:41:02Z",
+      "starter_prompts": [
+        "Where does customer demand exceed our factory and supplier capacity over the next planning cycle, and what is the most profitable way to close those supply gaps?",
+        "Show me a visual comparison of unconstrained customer demand versus available plant capacity and compare the margin impact of our main recovery options.",
+        "Draft an executive Sales and Operations Planning decision brief explaining our top capacity bottlenecks, the trade-offs between overtime, co-packing, and allocation, and your recommended plan."
+      ]
     },
     {
       "agent_id": "disruption_war_room_orchestrator",
@@ -58,7 +73,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1211217885989437440",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4685464268735078343",
-      "deployed_at": "2026-10-30T11:40:52Z"
+      "deployed_at": "2026-10-30T11:40:52Z",
+      "starter_prompts": [
+        "What active supply chain disruptions are putting customer orders and revenue at risk right now, and what are our fastest, lowest-cost recovery options?",
+        "Display a chart comparing revenue at risk and recovery cost across our active disruption mitigation scenarios, and explain the best path forward in simple terms.",
+        "Write an urgent, plain-English war-room briefing for senior leadership summarizing the disruption impact, affected customers, and recommended mitigation plan."
+      ]
     },
     {
       "agent_id": "csco_control_tower_copilot",
@@ -72,7 +92,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2865587061606318080",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4015823380636158533",
-      "deployed_at": "2026-10-30T11:41:23Z"
+      "deployed_at": "2026-10-30T11:41:23Z",
+      "starter_prompts": [
+        "Give me an end-to-end health check of our supply chain right now\u2014how are service levels, inventory cash, fulfillment costs, and cross-functional risks trending, and what needs leadership attention today?",
+        "Show me an executive chart comparing current performance against targets across our key supply chain scorecards, and explain the biggest off-track area clearly.",
+        "Prepare a concise executive pre-read memo for our weekly leadership review highlighting top operational risks, financial exposure, and decisions awaiting sign-off."
+      ]
     },
     {
       "agent_id": "working_capital_cash_bridge",
@@ -86,7 +111,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5833474609206263808",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/14094336958774128849",
-      "deployed_at": "2026-10-30T11:40:48Z"
+      "deployed_at": "2026-10-30T11:40:48Z",
+      "starter_prompts": [
+        "Which slow-moving or complex products in our catalog are tying up working capital and hurting factory efficiency without earning enough margin to justify keeping them?",
+        "Show me a chart comparing product revenue contribution against inventory cash tied up and changeover cost so we can see the clearest candidates for portfolio cleanup.",
+        "Draft a clear portfolio simplification brief for Commercial and Finance leaders explaining which underperforming items to phase out and how much cash and line capacity we will free up."
+      ]
     },
     {
       "agent_id": "tier_n_risk_sentinel",
@@ -100,7 +130,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5121890474918936576",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/6167693086894539620",
-      "deployed_at": "2026-10-30T11:40:28Z"
+      "deployed_at": "2026-10-30T11:40:28Z",
+      "starter_prompts": [
+        "Are any of our direct or upstream raw-material suppliers facing port delays, weather disruptions, or financial distress right now, and which of our products are exposed?",
+        "Show me a visual chart ranking our highest-risk supplier exposures by revenue at risk and recovery lead time, and explain the biggest vulnerability clearly.",
+        "Prepare a clear supplier risk briefing note for Procurement leadership summarizing the threatened materials, affected plants, and backup sourcing options."
+      ]
     },
     {
       "agent_id": "carbon_scope3_ledger",
@@ -114,7 +149,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1067102697913581568",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/12043431535905541673",
-      "deployed_at": "2026-10-30T11:40:56Z"
+      "deployed_at": "2026-10-30T11:40:56Z",
+      "starter_prompts": [
+        "Where do our largest supplier carbon emissions and sustainability compliance gaps sit right now, and are any imported materials missing required environmental documentation?",
+        "Show me a chart comparing carbon intensity and verified certification coverage across our top supply categories, and explain the main compliance risk in plain English.",
+        "Write an accessible sustainability and carbon audit brief for leadership summarizing our supplier emissions footprint, missing certificates, and remediation steps."
+      ]
     },
     {
       "agent_id": "rfq_should_cost_agent",
@@ -128,7 +168,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/7647283965966942208",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/18006815538360774894",
-      "deployed_at": "2026-10-30T11:43:26Z"
+      "deployed_at": "2026-10-30T11:43:26Z",
+      "starter_prompts": [
+        "Are our suppliers' latest price quotes fair when compared against underlying raw material, energy, and manufacturing costs, or are some bids overpriced?",
+        "Show me a chart comparing supplier bid prices against our calculated fair should-cost benchmark across open quotes, and highlight where we have the most negotiation leverage.",
+        "Prepare a clear negotiation fact-pack memo for our sourcing buyer breaking down why specific supplier quotes are above fair market cost and what counter-offer to make."
+      ]
     },
     {
       "agent_id": "three_way_match_dispute",
@@ -142,7 +187,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/994356809596665856",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/3963067958567898860",
-      "deployed_at": "2026-10-30T11:43:06Z"
+      "deployed_at": "2026-10-30T11:43:06Z",
+      "starter_prompts": [
+        "Can you check our open supplier invoices against purchase orders and warehouse receiving counts to show where vendors overbilled us on unit price or short-shipped quantities?",
+        "Show me a chart comparing supplier invoice amounts against verified purchase order and dock receipt values so the largest overcharges stand out clearly.",
+        "Draft a clear Accounts Payable audit memo detailing each price or quantity mismatch, the exact overcharge amount to deduct, and the verified amount safe to pay."
+      ]
     },
     {
       "agent_id": "finite_production_scheduler",
@@ -156,7 +206,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8139317618419957760",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/16838162618721244143",
-      "deployed_at": "2026-10-30T11:43:42Z"
+      "deployed_at": "2026-10-30T11:43:42Z",
+      "starter_prompts": [
+        "How can we sequence our upcoming production runs across flavours, allergens, and pack sizes to cut sanitation washdown downtime while still hitting every customer ship date?",
+        "Show me a chart comparing total changeover and washdown hours between our current production schedule and the optimized run sequence across lines.",
+        "Write a clear production scheduling brief for Plant Operations explaining the recommended run order, hours gained back, and allergen safety compliance."
+      ]
     },
     {
       "agent_id": "predictive_oee_sentinel",
@@ -170,7 +225,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/4659145613206618112",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/12855910931272362848",
-      "deployed_at": "2026-10-30T11:43:56Z"
+      "deployed_at": "2026-10-30T11:43:56Z",
+      "starter_prompts": [
+        "What is actually capping our factory output right now\u2014is it machine reliability, sanitation utilities, steam/boiler limits, or cold-room storage space?",
+        "Plot a chart comparing capacity utilization and downtime losses across our production lines and plant utilities so the true bottleneck is obvious.",
+        "Write a plain-English plant bottleneck diagnostic brief for Operations leadership explaining what is limiting output and the highest-return fixes."
+      ]
     },
     {
       "agent_id": "inline_yield_guardian",
@@ -184,7 +244,12 @@
       "model": "gemini-3.8-flash",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2816047465705242624",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/14928798980920927172",
-      "deployed_at": "2026-10-30T11:43:31Z"
+      "deployed_at": "2026-10-30T11:43:31Z",
+      "starter_prompts": [
+        "What packaging, seal, label, or fill-weight defects are our high-speed vision cameras catching on the lines today, and which line needs immediate adjustment to stop scrap?",
+        "Show me a chart comparing defect rates by defect type and production line against quality thresholds so we can see where scrap is spiking.",
+        "Draft a clear quality triage note for line inspectors and maintenance explaining the top defect pattern, affected lot numbers, and recommended machine adjustment."
+      ]
     },
     {
       "agent_id": "meio_safety_stock_agent",
@@ -198,7 +263,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/9178085626807844864",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9879109757966221077",
-      "deployed_at": "2026-10-30T11:44:04Z"
+      "deployed_at": "2026-10-30T11:44:04Z",
+      "starter_prompts": [
+        "Where are we holding too much buffer inventory across our distribution centers versus risking stockouts because supplier lead times or demand volatility changed?",
+        "Show me a chart comparing current safety stock levels against mathematically optimal targets across key products and warehouses.",
+        "Prepare a clear inventory optimization note for Planning and Finance explaining how much working capital we can unlock while maintaining or improving customer fill rates."
+      ]
     },
     {
       "agent_id": "warehouse_slotting_agent",
@@ -212,7 +282,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6594019996278456320",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/680853864033816982",
-      "deployed_at": "2026-10-30T11:43:50Z"
+      "deployed_at": "2026-10-30T11:43:50Z",
+      "starter_prompts": [
+        "Are our fastest-selling items and frequently co-ordered products stored in convenient golden-zone pick bins, or are warehouse pickers wasting hours walking to back aisles?",
+        "Create a chart comparing item pick frequency against current bin travel distance across warehouse zones to highlight the best re-slotting wins.",
+        "Draft an easy-to-follow slotting improvement brief for Warehouse Operations showing which items to swap into fast-pick bins and how much picker travel time it saves."
+      ]
     },
     {
       "agent_id": "atp_order_promising_agent",
@@ -226,7 +301,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8558136990602625024",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/6469216377587188453",
-      "deployed_at": "2026-10-30T11:43:49Z"
+      "deployed_at": "2026-10-30T11:43:49Z",
+      "starter_prompts": [
+        "Across our warehouses and ship-from-store locations, what is the most profitable way to fulfill incoming online and omnichannel orders on time without draining store shelf stock?",
+        "Display a chart comparing parcel shipping cost, store labor availability, and delivery speed across candidate fulfillment locations for active order clusters.",
+        "Prepare a clear omnichannel fulfillment summary explaining how orders are being routed across distribution centers, ship-from-store, and curbside pickup to protect margin."
+      ]
     },
     {
       "agent_id": "load_consolidation_agent",
@@ -240,7 +320,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/3771936486614630400",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/17846204712745878596",
-      "deployed_at": "2026-10-30T11:45:55Z"
+      "deployed_at": "2026-10-30T11:45:55Z",
+      "starter_prompts": [
+        "Where are we paying expensive less-than-truckload rates on partial shipments along the same corridor that could be combined into full multi-stop truckloads within weight and volume limits?",
+        "Show me a chart comparing trailer cube and weight utilization plus total freight cost before and after consolidating partial shipments.",
+        "Draft a clear load-consolidation plan for Transportation Planners detailing which shipments to combine, stop order, trailer fill percentage, and freight savings."
+      ]
     },
     {
       "agent_id": "cold_chain_auditor",
@@ -254,7 +339,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8706771171468640256",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/5823400487531018226",
-      "deployed_at": "2026-10-30T11:46:52Z"
+      "deployed_at": "2026-10-30T11:46:52Z",
+      "starter_prompts": [
+        "Which of our refrigerated shipments experienced temperature spikes recently, and which lots are scientifically safe to release into inventory versus needing quarantine and a carrier spoilage claim?",
+        "Show me a visual chart comparing the effective thermal exposure of each refrigerated shipment against its maximum safe stability limit, and point out which loads crossed the limit.",
+        "Prepare a clear quality and claims summary for our Cold-Chain and Quality leads covering the affected shipments, safe lot releases, and carrier claims to file."
+      ]
     },
     {
       "agent_id": "port_drayage_orchestrator",
@@ -268,7 +358,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8652727975940194304",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/200992941311882772",
-      "deployed_at": "2026-10-30T11:46:36Z"
+      "deployed_at": "2026-10-30T11:46:36Z",
+      "starter_prompts": [
+        "Which upcoming urban store and hub deliveries conflict with city noise curfews, truck-restriction windows, or store receiving shift hours, and how should we re-time them?",
+        "Create a chart comparing planned truck arrival windows against municipal curfew hours and store dock staffing windows across active routes.",
+        "Draft a clear dispatch coordination brief for Retail Logistics explaining which route departure times to shift so we avoid municipal fines and missed delivery windows."
+      ]
     },
     {
       "agent_id": "geocoding_intelligence_agent",
@@ -282,7 +377,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/9127857736627781632",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/7088606266716503770",
-      "deployed_at": "2026-10-30T11:46:51Z"
+      "deployed_at": "2026-10-30T11:46:51Z",
+      "starter_prompts": [
+        "Which delivery addresses on today's last-mile routes have inaccurate map pins, missing gate codes, or tricky loading-zone access that cause failed first-attempt deliveries?",
+        "Show me a chart comparing first-attempt delivery failure rates and driver dwell minutes before and after correcting rooftop drop pins and access instructions.",
+        "Prepare a clear last-mile operations brief highlighting the highest-friction delivery locations, verified drop coordinates, and driver guidance updates."
+      ]
     },
     {
       "agent_id": "fleetflow_dispatch",
@@ -296,7 +396,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1064147210658119680",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9502278280664039255",
-      "deployed_at": "2026-10-30T11:46:56Z"
+      "deployed_at": "2026-10-30T11:46:56Z",
+      "starter_prompts": [
+        "Are live highway accidents, severe weather, or low-bridge restrictions delaying any of our active multi-stop truck routes right now, and what is the safest, fastest reroute?",
+        "Display a chart comparing projected route delay minutes, fuel cost, and arrival times between current highway paths and recommended dynamic reroutes.",
+        "Prepare a concise dispatch action note for Fleet Ops detailing the affected trucks, highway hazards avoided, driver hours compliance, and updated arrival times."
+      ]
     },
     {
       "agent_id": "freight_bill_audit_agent",
@@ -310,7 +415,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8272173807427387392",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/7289375159680767377",
-      "deployed_at": "2026-10-30T11:47:01Z"
+      "deployed_at": "2026-10-30T11:47:01Z",
+      "starter_prompts": [
+        "Can you review our recent carrier freight bills and tell me where we are being overcharged on fuel surcharges, detention fees, duplicate bills, or contract rates\u2014and how much we can recover?",
+        "Plot a clear chart comparing billed carrier invoice amounts against our audited contract rates across recent shipments so the biggest overcharges stand out.",
+        "Write a straightforward freight audit memo for Finance and Transportation detailing the billing errors uncovered, total dollar savings, and dispute actions needed."
+      ]
     },
     {
       "agent_id": "reverse_rma_optimizer",
@@ -324,7 +434,12 @@
       "model": "gemini-3.8-flash",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5468667646226464768",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/2869479596817501852",
-      "deployed_at": "2026-10-30T11:47:11Z"
+      "deployed_at": "2026-10-30T11:47:11Z",
+      "starter_prompts": [
+        "Are there suspicious patterns in recent e-commerce return requests\u2014such as swapped tags, empty-box claims, or repeat wardrobing\u2014that we should flag for manual inspection before issuing instant refunds?",
+        "Show me a chart comparing return fraud risk scores and dollar exposure across flagged return claims versus legitimate customer returns.",
+        "Draft a balanced return-protection summary for Reverse Logistics and Customer Experience explaining how high-risk claims are routed to inspection without slowing honest customers."
+      ]
     },
     {
       "agent_id": "dynamic_markdown_agent",
@@ -338,7 +453,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1501011767675846656",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/11982871860095077801",
-      "deployed_at": "2026-10-30T11:47:10Z"
+      "deployed_at": "2026-10-30T11:47:10Z",
+      "starter_prompts": [
+        "Which fresh or dated products on store shelves are selling too slowly to clear before their expiration dates, and what timely price markdown will sell them through while protecting margin?",
+        "Plot a chart comparing remaining days to expiry against daily sell-through velocity and projected revenue recovery with dynamic markdowns versus full-waste write-offs.",
+        "Draft a clear store merchandising note recommending exact markdown tiers for near-expiry items to prevent food waste and protect store profit."
+      ]
     },
     {
       "agent_id": "rti_balance_reconciler",
@@ -352,7 +472,12 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6794993129649864704",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/16699165381032264857",
-      "deployed_at": "2026-10-30T11:48:48Z"
+      "deployed_at": "2026-10-30T11:48:48Z",
+      "starter_prompts": [
+        "Where are our reusable pallets, plastic totes, and roll cages getting stuck or lost across retail stores and partner hubs, causing unnecessary rental fees and replacement purchases?",
+        "Show me a chart comparing outbound reusable asset shipments against actual returns and unreturned dwell balances across partner locations.",
+        "Draft a clear asset-recovery memo for Logistics and Account Management identifying which locations are holding excess pallets or totes and how much rental cost we can save."
+      ]
     }
   ],
   "updated_at": "2026-10-30T11:50:27Z"

@@ -20,7 +20,7 @@ def create_order_promising_chart_spec(
         "description": "PromiseGuard Sub-50ms Spanner ATP & Strategic Tier Quota Protection",
         "title": {
             "text": "PromiseGuard Real-Time Order Promising & ATP Inventory Pools",
-            "subtitle": "Spanner Real-Time Stock Sub-15ms · Kroger Strategic Tier 1 Quota Protected (20,000 Units)",
+            "subtitle": "Spanner Real-Time Stock Sub-15ms · Apex Hypermarket Strategic Tier 1 Quota Protected (20,000 Units)",
             "anchor": "start",
             "fontSize": 14,
             "subtitleFontSize": 11,

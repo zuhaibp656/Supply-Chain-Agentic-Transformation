@@ -384,7 +384,7 @@ new_content = new_content.replace(
 conn_anchor = "circular_enable: [\n          'SAP S/4HANA SD, QM, EHS & CO-PA',"
 conn_replacement = """trade_mkt_dist: [
           'DMS (Distributor Management Systems)', 'Field SFA Mobile Handhelds (Sales Force Automation)',
-          'Google Maps Platform Routes & Fleet Engine', 'Modern Trade Key Account Portals (Walmart/Target/Reliance)',
+          'Google Maps Platform Routes & Fleet Engine', 'Modern Trade Key Account Portals (Cymbal Retail/Target/Reliance)',
           'Quick-Commerce Portals (Blinkit/Zepto/Instacart)', 'SAP S/4HANA SD / Billing (VF01/VF04)',
           'Circana / NielsenIQ Retail Scanner Feeds', 'Secondary Sales EDI 852 & GST Tax Ledgers'
         ],

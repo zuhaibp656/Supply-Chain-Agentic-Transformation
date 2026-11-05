@@ -21,16 +21,16 @@ def test_list_systems():
 
 
 def test_query_retailer_edi852_pos():
-    res = tools.query_retailer_edi852_pos(retailer="Kroger")
+    res = tools.query_retailer_edi852_pos(retailer="Apex Hypermarket")
     assert res["total"] > 0
     record = res["rows"][0]
-    assert record["retailer"] == "Kroger"
+    assert record["retailer"] == "Apex Hypermarket"
     assert record["store_book_inventory"] > 0
     assert record["daily_scan_units"] == 0  # Zero scans indicates potential phantom issue
 
 
 def test_query_retailer_edi830_forecasts():
-    res = tools.query_retailer_edi830_forecasts(retailer="Walmart")
+    res = tools.query_retailer_edi830_forecasts(retailer="Cymbal Retail")
     assert res["total"] > 0
     record = res["rows"][0]
     assert record["bullwhip_variance_ratio"] > 1.2
@@ -38,7 +38,7 @@ def test_query_retailer_edi830_forecasts():
 
 
 def test_query_phantom_inventory_anomalies():
-    res = tools.query_phantom_inventory_anomalies(store_id="STORE-KROGER-ATL-209")
+    res = tools.query_phantom_inventory_anomalies(store_id="STORE-APEX-ATL-209")
     assert res["total"] > 0
     record = res["rows"][0]
     assert record["consecutive_zero_scan_days"] >= 4
@@ -47,7 +47,7 @@ def test_query_phantom_inventory_anomalies():
 
 
 def test_query_joint_cpfr_packets():
-    res = tools.query_joint_cpfr_packets(retailer="Walmart")
+    res = tools.query_joint_cpfr_packets(retailer="Cymbal Retail")
     assert res["total"] > 0
     record = res["rows"][0]
     assert record["variance_gap_units"] > 50000
@@ -59,7 +59,7 @@ def test_quality_gate_blocks_out_of_bounds_replenishment():
     # Missing idempotency key
     res = agent.execute_tool(
         "action_dispatch_vmi_replenishment_order",
-        retailer="Walmart",
+        retailer="Cymbal Retail",
         sku_id="SKU-TEST",
         target_dc="DC-TEST",
         order_quantity_units=5000,
@@ -70,7 +70,7 @@ def test_quality_gate_blocks_out_of_bounds_replenishment():
     # Out of bounds quantity (>500,000)
     res2 = agent.execute_tool(
         "action_dispatch_vmi_replenishment_order",
-        retailer="Walmart",
+        retailer="Cymbal Retail",
         sku_id="SKU-TEST",
         target_dc="DC-TEST",
         order_quantity_units=750000,
@@ -82,7 +82,7 @@ def test_quality_gate_blocks_out_of_bounds_replenishment():
 
 def test_end_to_end_scenario_execution():
     agent = CpfrSyncAgent()
-    query = "Harmonize retailer EDI 852 feeds, detect Kroger store phantom inventory stockout, dispatch audit, and trigger VMI order."
+    query = "Harmonize retailer EDI 852 feeds, detect Apex Hypermarket store phantom inventory stockout, dispatch audit, and trigger VMI order."
     result = agent.run_scenario(query)
     assert result["status"] == "success"
     assert result["findings_count"] >= 3

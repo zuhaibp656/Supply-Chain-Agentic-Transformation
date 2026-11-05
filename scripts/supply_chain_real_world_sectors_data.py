@@ -2,7 +2,7 @@
 """Data for Supply Chain 101 Academy:
 1. QUICK_ABBREVIATIONS_TABLE: Top 18 Supply Chain Abbreviations spelled out in plain words with real-world company examples.
 2. STAGES_DATA: All 7 Supply Chain Stages with real-world company examples and every abbreviation spelled out in full.
-3. SECTOR_CASE_STUDIES: 8 Iconic Real-World Industry Sectors (Unilever/Nestlé/ITC, Apple/Samsung, Toyota/Tesla, Pfizer/Novo Nordisk, Walmart/Amazon, Zara/Nike, Amul/Sysco/McDonald's, BASF/Tata Steel/Caterpillar) showing end-to-end supply chain execution across all 7 stages.
+3. SECTOR_CASE_STUDIES: 8 Iconic Real-World Industry Sectors (Unilever/Nestlé/ITC, Apple/Samsung, Toyota/Tesla, Pfizer/Novo Nordisk, Cymbal Retail/Amazon, Zara/Nike, Amul/Sysco/McDonald's, BASF/Tata Steel/Caterpillar) showing end-to-end supply chain execution across all 7 stages.
 """
 
 from __future__ import annotations
@@ -12,7 +12,7 @@ QUICK_ABBREVIATIONS_TABLE = [
         "code": "OTIF",
         "full": "On-Time In-Full",
         "simple": "Did 100% of the boxes the customer ordered arrive inside the exact promised delivery window? (Not late, and not missing a single box).",
-        "example": "Walmart requires suppliers like Procter & Gamble and Kraft Heinz to hit 98% OTIF (On-Time In-Full), or Walmart deducts a 3% penalty fine from their invoice.",
+        "example": "Cymbal Retail requires suppliers like Cymbal Personal Care and Cymbal Foods Global to hit 98% OTIF (On-Time In-Full), or Cymbal Retail deducts a 3% penalty fine from their invoice.",
     },
     {
         "code": "DIO",
@@ -30,7 +30,7 @@ QUICK_ABBREVIATIONS_TABLE = [
         "code": "DPO",
         "full": "Days Payable Outstanding",
         "simple": "How many days your company waits before paying its own raw material suppliers (higher keeps cash in your bank account longer).",
-        "example": "Global giants like Walmart, Amazon, and Apple negotiate 60 to 90 days DPO (Days Payable Outstanding) with their suppliers.",
+        "example": "Global giants like Cymbal Retail, Amazon, and Apple negotiate 60 to 90 days DPO (Days Payable Outstanding) with their suppliers.",
     },
     {
         "code": "CCC",
@@ -42,13 +42,13 @@ QUICK_ABBREVIATIONS_TABLE = [
         "code": "SKU",
         "full": "Stock Keeping Unit",
         "simple": "A unique barcode/code for one specific product flavor and package size (a 500ml Coke bottle and a 2-Liter Coke bottle are two different SKUs).",
-        "example": "A typical Walmart Supercenter carries ~120,000 SKUs (Stock Keeping Units), while Costco intentionally carries only ~4,000 high-volume SKUs to keep warehouse costs ultra-low.",
+        "example": "A typical Cymbal Retail Supercenter carries ~120,000 SKUs (Stock Keeping Units), while Omni Wholesale Club intentionally carries only ~4,000 high-volume SKUs to keep warehouse costs ultra-low.",
     },
     {
         "code": "POS",
         "full": "Point of Sale",
         "simple": "Cash-register or online checkout barcode scans showing what shoppers are actually buying right now today.",
-        "example": "Zara and PepsiCo read daily POS (Point of Sale) checkout scans from thousands of stores so they spot trending items immediately instead of waiting for monthly warehouse reports.",
+        "example": "Zara and Cymbal Beverage Global read daily POS (Point of Sale) checkout scans from thousands of stores so they spot trending items immediately instead of waiting for monthly warehouse reports.",
     },
     {
         "code": "S&OP / IBP",
@@ -96,7 +96,7 @@ QUICK_ABBREVIATIONS_TABLE = [
         "code": "FEFO / FIFO / LIFO",
         "full": "First-Expired First-Out / First-In First-Out / Last-In First-Out",
         "simple": "FEFO ships the earliest expiration date first; FIFO ships the oldest arrived pallet first; LIFO loads Stop #1 last at the rear truck doors so it unloads first.",
-        "example": "Pfizer vaccines & Amul milk use FEFO; Apple & Sony electronics use FIFO; Sysco & PepsiCo multi-stop delivery trucks load pallets using LIFO.",
+        "example": "Pfizer vaccines & Amul milk use FEFO; Apple & Sony electronics use FIFO; Sysco & Cymbal Beverage Global multi-stop delivery trucks load pallets using LIFO.",
     },
     {
         "code": "ATP",
@@ -108,7 +108,7 @@ QUICK_ABBREVIATIONS_TABLE = [
         "code": "FTL vs. LTL",
         "full": "Full Truckload vs. Less-Than-Truckload",
         "simple": "FTL means booking an entire 53-foot semi-truck just for your company's pallets; LTL means paying for just 2 or 3 pallet spaces shared with other companies' freight.",
-        "example": "Shipping 26 pallets of Tide detergent from a P&G factory to Walmart uses cheap FTL (Full Truckload); shipping 2 pallets of spare parts to a repair shop uses LTL (Less-Than-Truckload).",
+        "example": "Shipping 26 pallets of Tide detergent from a P&G factory to Cymbal Retail uses cheap FTL (Full Truckload); shipping 2 pallets of spare parts to a repair shop uses LTL (Less-Than-Truckload).",
     },
     {
         "code": "RMA",
@@ -124,7 +124,7 @@ STAGES_DATA = [
         "title": "Stage 0 · 📈 Demand Planning, Sensing & S&OP (The Brain of the Supply Chain)",
         "whyExists": "Because buying raw materials and running factories takes weeks or months (called Lead Time), a company cannot wait until you walk into a store to start making a product. Planning is the 'brain' that predicts what customers will buy, where, and when — and aligns Sales, Factories, Warehouses, and Finance around a single plan.",
         "analogy": "🍽️ Everyday Analogy: Like a restaurant head chef checking Friday reservation bookings, local weather, and last month's popular dishes before deciding how much fish and produce to buy for the weekend.",
-        "realWorld": "<strong>🛒 Walmart &amp; PepsiCo:</strong> Share daily <strong>POS (Point of Sale — cash-register barcode scans)</strong> across 4,700+ US stores via <strong>CPFR (Collaborative Planning, Forecasting &amp; Replenishment)</strong> and combine them with 14-day weather forecasts (a warm weekend spikes Gatorade &amp; ice cream demand by +25%).<br/><strong>👗 Zara (Inditex):</strong> Store managers and daily <strong>POS (Point of Sale)</strong> checkout terminals send real-time demand signals to headquarters in Spain twice a week, keeping forecast error — <strong>WAPE (Weighted Absolute Percentage Error)</strong> — under 8%.<br/><strong>🍦 Unilever:</strong> Uses AI demand sensing across 190 countries during monthly <strong>S&amp;OP (Sales &amp; Operations Planning)</strong> to eliminate human forecast padding — <strong>FVA (Forecast Value Added)</strong>.",
+        "realWorld": "<strong>🛒 Cymbal Retail &amp; Cymbal Beverage Global:</strong> Share daily <strong>POS (Point of Sale — cash-register barcode scans)</strong> across 4,700+ US stores via <strong>CPFR (Collaborative Planning, Forecasting &amp; Replenishment)</strong> and combine them with 14-day weather forecasts (a warm weekend spikes Gatorade &amp; ice cream demand by +25%).<br/><strong>👗 Zara (Inditex):</strong> Store managers and daily <strong>POS (Point of Sale)</strong> checkout terminals send real-time demand signals to headquarters in Spain twice a week, keeping forecast error — <strong>WAPE (Weighted Absolute Percentage Error)</strong> — under 8%.<br/><strong>🍦 Unilever:</strong> Uses AI demand sensing across 190 countries during monthly <strong>S&amp;OP (Sales &amp; Operations Planning)</strong> to eliminate human forecast padding — <strong>FVA (Forecast Value Added)</strong>.",
         "story": "1. Forecasters pull historical sales, daily store checkout scans (<strong>POS — Point of Sale</strong>), weather forecasts, and upcoming promotions.<br/>2. They generate a baseline demand forecast for each product item (<strong>SKU — Stock Keeping Unit</strong>) and measure forecast error (<strong>WAPE — Weighted Absolute Percentage Error</strong>) and whether human edits helped or hurt (<strong>FVA — Forecast Value Added</strong>).<br/>3. In the monthly <strong>S&amp;OP (Sales &amp; Operations Planning)</strong> meeting, Sales, Operations, and Finance resolve factory capacity gaps and lock a 'One-Number Plan'.",
         "personas": "Demand Planner / Forecaster, S&OP (Sales & Operations Planning) / IBP (Integrated Business Planning) Director, Trade Promotion Manager, New Product Introduction (NPI) Planner",
         "docs": "Baseline Statistical Forecast, Consensus S&OP (Sales & Operations Planning) Demand Plan, Promotion Lift Calendar, Retailer CPFR (Collaborative Planning, Forecasting & Replenishment) Forecast",
@@ -176,7 +176,7 @@ STAGES_DATA = [
         "title": "Stage 4 · 📦 Local Fulfillment Center — FDC (Inside the 4 Walls of the Warehouse)",
         "whyExists": "When a retail store or online shopper places an order, boxes must be unloaded, put away in rack bins, picked accurately, packed onto store-friendly pallets, and staged at outbound dock doors within hours.",
         "analogy": "🛒 Everyday Analogy: Like organizing a giant supermarket backroom so fast-selling drinks sit right by the door at waist height, oldest milk is grabbed first, and outgoing carts are lined up by delivery route.",
-        "realWorld": "<strong>📦 Amazon Fulfillment Centers:</strong> Use robotic pods and dynamic <strong>WMS (Warehouse Management System)</strong> <strong>Slotting</strong> to place fast-selling items at waist height ('Golden Zone'), while its <strong>ATP (Available-to-Promise)</strong> engine checks stock in under 50 milliseconds at checkout.<br/><strong>🛒 Walmart Cross-Docking Hubs:</strong> Incoming full truckloads of paper towels or produce from suppliers are unloaded at Inbound Dock Door #4 and rolled straight across the warehouse floor onto Outbound Dock Door #42 in under 4 hours (<strong>Cross-Docking</strong>) without ever sitting on a storage shelf!<br/><strong>🥗 Sysco &amp; Amul Cold-Chain Warehouses:</strong> Enforce strict <strong>FEFO (First-Expired, First-Out)</strong> barcode rules on handheld scanners so workers always pick the earliest-expiring dairy and meat batches first.",
+        "realWorld": "<strong>📦 Amazon Fulfillment Centers:</strong> Use robotic pods and dynamic <strong>WMS (Warehouse Management System)</strong> <strong>Slotting</strong> to place fast-selling items at waist height ('Golden Zone'), while its <strong>ATP (Available-to-Promise)</strong> engine checks stock in under 50 milliseconds at checkout.<br/><strong>🛒 Cymbal Retail Cross-Docking Hubs:</strong> Incoming full truckloads of paper towels or produce from suppliers are unloaded at Inbound Dock Door #4 and rolled straight across the warehouse floor onto Outbound Dock Door #42 in under 4 hours (<strong>Cross-Docking</strong>) without ever sitting on a storage shelf!<br/><strong>🥗 Sysco &amp; Amul Cold-Chain Warehouses:</strong> Enforce strict <strong>FEFO (First-Expired, First-Out)</strong> barcode rules on handheld scanners so workers always pick the earliest-expiring dairy and meat batches first.",
         "story": "1. Inbound trucks are sequenced to unloading doors (<strong>Yard &amp; Dock Management</strong>) and pallets are scanned via a <strong>GRN (Goods Receipt Note)</strong> into sellable inventory (<strong>Dock-to-Stock</strong>).<br/>2. The <strong>WMS (Warehouse Management System)</strong> assigns each item (<strong>SKU — Stock Keeping Unit</strong>) to an optimal rack bin (<strong>Slotting</strong>) and groups customer orders into picking waves (<strong>Wave Picking</strong>) following <strong>FEFO (First-Expired, First-Out)</strong> or <strong>FIFO (First-In, First-Out)</strong>.<br/>3. Or, if demand is urgent, incoming pallets bypass storage racks completely and roll straight across the floor to an outbound truck (<strong>Cross-Docking</strong>).<br/>4. Meanwhile, the <strong>ATP (Available-to-Promise)</strong> engine commits exact delivery dates to customer orders in milliseconds.",
         "personas": "Warehouse Operations Manager, Slotting & Wave Picking Supervisor, Order Promising (ATP — Available-to-Promise) Specialist, Yard & Dock Coordinator",
         "docs": "GRN (Goods Receipt Note), Putaway & Pick Wave List, Cross-Dock Flow Manifest, ATP (Available-to-Promise) Order Confirmation",
@@ -202,7 +202,7 @@ STAGES_DATA = [
         "title": "Stage 6 · 🛒 Customer Delivery (OTIF), Retail Execution, Reverse Returns (RMA) & ESG",
         "whyExists": "The final mile — and the reverse loop back! Products must arrive On-Time In-Full (OTIF), get stocked properly on store shelves, handle customer returns (RMA) profitably when items come back, and report carbon emissions (Scope 3) and working capital (Cash Conversion Cycle) to leadership.",
         "analogy": "🔄 Everyday Analogy: Like delivering an online grocery order inside the exact 1-hour window with a timestamped photo receipt — and handling refunds or bottle recycling afterward.",
-        "realWorld": "<strong>🛒 Walmart &amp; Target Supplier Compliance:</strong> Enforce a strict 98% <strong>OTIF (On-Time In-Full)</strong> rule. Suppliers like Kraft Heinz and Unilever capture GPS geofence arrival + signed <strong>ePOD (Electronic Proof of Delivery)</strong> to dispute invalid retail chargebacks.<br/><strong>📦 Amazon &amp; Best Buy Reverse Logistics:</strong> Process millions of customer returns via <strong>RMA (Return Merchandise Authorization)</strong>. For a $12 phone case where return shipping + inspection costs $14, Amazon's AI triggers a <strong>'Keep-It'</strong> refund (refunding the customer without paying to ship the item back).<br/><strong>🌍 Unilever, Nestl\u00e9 &amp; Tata Steel:</strong> Track <strong>TM&amp;D (Trade Marketing &amp; Distribution)</strong> store vans in emerging markets, manage <strong>CCC (Cash Conversion Cycle = DIO + DSO &minus; DPO)</strong> for the CFO, and report <strong>Scope 3 Carbon</strong>, <strong>CBAM (Carbon Border Adjustment Mechanism)</strong>, and <strong>EUDR (EU Deforestation Regulation)</strong> compliance.",
+        "realWorld": "<strong>🛒 Cymbal Retail &amp; Target Supplier Compliance:</strong> Enforce a strict 98% <strong>OTIF (On-Time In-Full)</strong> rule. Suppliers like Cymbal Foods Global and Unilever capture GPS geofence arrival + signed <strong>ePOD (Electronic Proof of Delivery)</strong> to dispute invalid retail chargebacks.<br/><strong>📦 Amazon &amp; Best Buy Reverse Logistics:</strong> Process millions of customer returns via <strong>RMA (Return Merchandise Authorization)</strong>. For a $12 phone case where return shipping + inspection costs $14, Amazon's AI triggers a <strong>'Keep-It'</strong> refund (refunding the customer without paying to ship the item back).<br/><strong>🌍 Unilever, Nestl\u00e9 &amp; Tata Steel:</strong> Track <strong>TM&amp;D (Trade Marketing &amp; Distribution)</strong> store vans in emerging markets, manage <strong>CCC (Cash Conversion Cycle = DIO + DSO &minus; DPO)</strong> for the CFO, and report <strong>Scope 3 Carbon</strong>, <strong>CBAM (Carbon Border Adjustment Mechanism)</strong>, and <strong>EUDR (EU Deforestation Regulation)</strong> compliance.",
         "story": "1. The truck arrives at the customer dock within the scheduled window, delivers 100% of ordered cases — achieving <strong>OTIF (On-Time In-Full)</strong> — and captures a signed <strong>ePOD (Electronic Proof of Delivery)</strong>.<br/>2. If a retailer unfairly deducts a 3% OTIF penalty or claims <strong>OS&amp;D (Over, Short &amp; Damaged)</strong>, the team uses GPS + ePOD + dock photos to win back the chargeback.<br/>3. Field sales vans replenish local stores via <strong>TM&amp;D (Trade Marketing &amp; Distribution)</strong> and audit shelf compliance (<strong>Planogram</strong>).<br/>4. When customers initiate a return via <strong>RMA (Return Merchandise Authorization)</strong>, AI calculates whether to refund without return (<strong>'Keep-It'</strong>) or route to refurbishment, while the Control Tower tracks <strong>Scope 3 Carbon</strong> (<strong>CBAM / EUDR</strong>) and <strong>CCC (Cash Conversion Cycle = DIO + DSO &minus; DPO)</strong>.",
         "personas": "Customer OTIF (On-Time In-Full) & Chargeback Lead, Reverse Logistics / RMA (Return Merchandise Authorization) Manager, Trade Marketing & Distribution (TM&D) Lead, Chief Supply Chain Officer (CSCO), Sustainability & ESG Officer",
         "docs": "ePOD (Electronic Proof of Delivery), OTIF (On-Time In-Full) Dispute Dossier, RMA (Return Merchandise Authorization), Scope 3 Carbon & CBAM / EUDR Certificate",
@@ -219,7 +219,7 @@ SECTOR_CASE_STUDIES = [
         "id": "fmcg",
         "btn": "1 · 🛒 FMCG & Consumer Goods (Unilever, Nestlé, ITC)",
         "sector": "Sector 1 · Fast-Moving Consumer Goods (FMCG / Packaged Food & Personal Care)",
-        "companies": "Unilever (Dove, Magnum, Knorr) · Nestlé (Nescafé, KitKat, Purina) · ITC Limited (Aashirvaad, Sunfeast) · Procter & Gamble (Tide, Pampers)",
+        "companies": "Unilever (Dove, Magnum, Knorr) · Nestlé (Nescafé, KitKat, Purina) · ITC Limited (Aashirvaad, Sunfeast) · Cymbal Personal Care (Tide, Pampers)",
         "color": "#1A73E8",
         "bg": "#E8F0FE",
         "headline": "High-Volume Make-to-Stock (MTS), Multi-Tier Warehouses (RDC → FDC), and Millions of Retail Stores",
@@ -239,7 +239,7 @@ SECTOR_CASE_STUDIES = [
             ("Stage 3 · Regional Hub (RDC)", "Full truckloads move from factories to 5–8 giant <strong>RDCs (Regional Distribution Centers)</strong>. Planners run <strong>MEIO (Multi-Echelon Inventory Optimization)</strong> math to hold lean central safety stock and redistribute short-dated batches before they become <strong>SLOB (Slow-Moving &amp; Obsolete Stock)</strong>."),
             ("Stage 4 · Local Warehouse (FDC)", "Regional hubs replenish 40–80 local <strong>FDCs (Fulfillment Distribution Centers)</strong> near major cities. Warehouse <strong>WMS (Warehouse Management System)</strong> scanners enforce strict <strong>FEFO (First-Expired, First-Out)</strong> so older food/personal-care batches always ship first."),
             ("Stage 5 · Fleet & Transit", "Uses consolidated 53-foot <strong>FTL (Full Truckload)</strong> and intermodal rail for long-haul factory-to-RDC moves, and packs multi-stop city delivery trucks using <strong>3D LIFO (Last-In, First-Out)</strong> load plans."),
-            ("Stage 6 · Customer Delivery & OTIF", "Delivers to big-box chains (Walmart, Carrefour, Reliance) hitting 98% <strong>OTIF (On-Time In-Full)</strong> with <strong>ePOD (Electronic Proof of Delivery)</strong>, while dispatching thousands of <strong>TM&amp;D (Trade Marketing &amp; Distribution)</strong> beat vans to replenish millions of neighborhood mom-and-pop stores."),
+            ("Stage 6 · Customer Delivery & OTIF", "Delivers to big-box chains (Cymbal Retail, Carrefour, Reliance) hitting 98% <strong>OTIF (On-Time In-Full)</strong> with <strong>ePOD (Electronic Proof of Delivery)</strong>, while dispatching thousands of <strong>TM&amp;D (Trade Marketing &amp; Distribution)</strong> beat vans to replenish millions of neighborhood mom-and-pop stores."),
         ],
         "agents": "Demand Sensing (`demand_sensing_agent`), Promo Lift Simulator (`promo_lift_simulator`), MEIO Safety Stock (`meio_safety_stock_agent`), Short-Dated Redistributor (`short_dated_redistributor`), TM&D Beat Optimizer (`tmd_beat_optimizer`), EUDR Compliance (`eudr_deforestation_verifier`)",
     },
@@ -329,14 +329,14 @@ SECTOR_CASE_STUDIES = [
     },
     {
         "id": "retail",
-        "btn": "5 · 📦 Big-Box Retail & E-Commerce (Walmart, Amazon)",
+        "btn": "5 · 📦 Big-Box Retail & E-Commerce (Cymbal Retail, Amazon)",
         "sector": "Sector 5 · Omnichannel Big-Box Retail & High-Velocity E-Commerce",
-        "companies": "Walmart (4,700+ US Stores & 210+ DCs) · Amazon (Robotic Fulfillment Network) · Target · Costco · Home Depot",
+        "companies": "Cymbal Retail (4,700+ US Stores & 210+ DCs) · Amazon (Robotic Fulfillment Network) · Target · Omni Wholesale Club · Home Depot",
         "color": "#1E8E3E",
         "bg": "#E6F4EA",
-        "headline": "Walmart Cross-Docking (<4hr Flow-Through), Amazon Robotic WMS Slotting, Sub-50ms ATP, and Keep-It Returns",
-        "overview": "Walmart and Amazon built the two most famous logistics networks in history. Walmart pioneered 'Cross-Docking' — where supplier trucks unload at one side of a distribution center and pallets roll straight across the floor onto store-bound trucks in under 4 hours without sitting in storage racks — plus strict 98% On-Time In-Full (OTIF) supplier rules. Amazon pioneered robotic Warehouse Management System (WMS) slotting, algorithmic Available-to-Promise (ATP) same-day delivery, and automated Return Merchandise Authorization (RMA) triage.",
-        "metrics": "<strong>Strategy:</strong> High-Velocity <code>Cross-Docking</code> + Robotic <code>WMS</code> Slotting + <code>CPFR</code> &nbsp;|&nbsp; <strong>Walmart <code>OTIF</code> Mandate:</strong> 98% On-Time In-Full &nbsp;|&nbsp; <strong>Amazon <code>CCC</code> (Cash Conversion Cycle):</strong> <strong>&minus;25 to &minus;35 Days (Negative!)</strong> &nbsp;|&nbsp; <strong><code>DIO</code> (Days Inventory Outstanding):</strong> ~32–40 Days",
+        "headline": "Cymbal Retail Cross-Docking (<4hr Flow-Through), Amazon Robotic WMS Slotting, Sub-50ms ATP, and Keep-It Returns",
+        "overview": "Cymbal Retail and Amazon built the two most famous logistics networks in history. Cymbal Retail pioneered 'Cross-Docking' — where supplier trucks unload at one side of a distribution center and pallets roll straight across the floor onto store-bound trucks in under 4 hours without sitting in storage racks — plus strict 98% On-Time In-Full (OTIF) supplier rules. Amazon pioneered robotic Warehouse Management System (WMS) slotting, algorithmic Available-to-Promise (ATP) same-day delivery, and automated Return Merchandise Authorization (RMA) triage.",
+        "metrics": "<strong>Strategy:</strong> High-Velocity <code>Cross-Docking</code> + Robotic <code>WMS</code> Slotting + <code>CPFR</code> &nbsp;|&nbsp; <strong>Cymbal Retail <code>OTIF</code> Mandate:</strong> 98% On-Time In-Full &nbsp;|&nbsp; <strong>Amazon <code>CCC</code> (Cash Conversion Cycle):</strong> <strong>&minus;25 to &minus;35 Days (Negative!)</strong> &nbsp;|&nbsp; <strong><code>DIO</code> (Days Inventory Outstanding):</strong> ~32–40 Days",
         "svgNodes": [
             ("🤝 1. 10,000+ Vendors (CPFR)", "Joint POS Forecast & POs", "98% OTIF Rule"),
             ("⚡ 2. Cross-Dock / Import DC", "Unload → Transfer in <4 hrs", "Yard & Dock Sequencer"),
@@ -347,9 +347,9 @@ SECTOR_CASE_STUDIES = [
         "stages": [
             ("Stage 0 · Plan & Joint CPFR", "Shares live store and website checkout data (<strong>POS — Point of Sale</strong>) with thousands of suppliers through <strong>CPFR (Collaborative Planning, Forecasting &amp; Replenishment)</strong> portals so vendors automatically replenish stock before shelves run low."),
             ("Stage 1 · Source & 3-Way Match", "Negotiates massive volume pricing and 60–90 day payment terms (<strong>DPO — Days Payable Outstanding</strong>). Automated <strong>3-Way Match</strong> compares millions of <strong>POs (Purchase Orders)</strong> against dock <strong>GRNs (Goods Receipt Notes)</strong> and vendor invoices."),
-            ("Stage 2 · Private-Label Co-Packers", "For private brands (Walmart Great Value, Costco Kirkland, Amazon Basics), orchestrates external contract manufacturers (<strong>Co-Packers</strong>) with strict quality and cost-breakdown standards."),
+            ("Stage 2 · Private-Label Co-Packers", "For private brands (Cymbal Retail Great Value, Omni Wholesale Club Kirkland, Amazon Basics), orchestrates external contract manufacturers (<strong>Co-Packers</strong>) with strict quality and cost-breakdown standards."),
             ("Stage 3 · Import Hubs & Regional Cross-Docks", "Ocean containers from Asia are pulled from ports via <strong>Port Drayage</strong> into coastal Import DCs and routed through regional <strong>Cross-Dock</strong> hubs where pallets transfer from inbound to outbound trucks in under 4 hours."),
-            ("Stage 4 · Robotic Fulfillment Center (FDC)", "Inside Amazon and Walmart e-commerce <strong>FDCs (Fulfillment Distribution Centers)</strong>, <strong>WMS (Warehouse Management System)</strong> algorithms place top-selling <strong>SKUs (Stock Keeping Units)</strong> in waist-high bins (<strong>Slotting</strong>), release balanced <strong>Wave Picking</strong> batches, and promise exact delivery dates via <strong>ATP (Available-to-Promise)</strong>."),
+            ("Stage 4 · Robotic Fulfillment Center (FDC)", "Inside Amazon and Cymbal Retail e-commerce <strong>FDCs (Fulfillment Distribution Centers)</strong>, <strong>WMS (Warehouse Management System)</strong> algorithms place top-selling <strong>SKUs (Stock Keeping Units)</strong> in waist-high bins (<strong>Slotting</strong>), release balanced <strong>Wave Picking</strong> batches, and promise exact delivery dates via <strong>ATP (Available-to-Promise)</strong>."),
             ("Stage 5 · Dedicated Private Fleet & Last Mile", "Runs thousands of company-owned 53-foot tractors (<strong>FTL — Full Truckload</strong>) between hubs and local delivery vans for doorstep drop-offs, capturing photo <strong>ePOD (Electronic Proof of Delivery)</strong>."),
             ("Stage 6 · OTIF Enforcement & RMA Returns", "Enforces 98% <strong>OTIF (On-Time In-Full)</strong> on incoming vendor trucks, and uses <strong>Keep-It vs. Return-It</strong> AI on customer <strong>RMAs (Return Merchandise Authorizations)</strong> so the company never spends $12 shipping back an $8 item."),
         ],

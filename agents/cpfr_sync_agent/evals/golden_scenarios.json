@@ -2,7 +2,7 @@
   {
     "scenario_id": "SCENARIO-CPFR-01",
     "name": "Phantom Inventory Detection & VMI Replenishment Dispatch",
-    "query": "Harmonize retailer EDI 852 feeds, detect Kroger store phantom inventory stockout, dispatch store cycle count audit, and trigger Walmart VMI replenishment order.",
+    "query": "Harmonize retailer EDI 852 feeds, detect Apex Hypermarket store phantom inventory stockout, dispatch store cycle count audit, and trigger Cymbal Retail VMI replenishment order.",
     "expected_proof_obligations": [
       "Query retailer EDI 852 daily store scan records",
       "Query retailer EDI 830 forward order forecasts and bullwhip volatility",

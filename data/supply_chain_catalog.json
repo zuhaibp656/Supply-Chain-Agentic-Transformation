@@ -5897,7 +5897,7 @@
               {
                 "override_id": "OVR-SALES-202610-01",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
-                "sales_account": "Key Account Walmart",
+                "sales_account": "Key Account Cymbal",
                 "planner_id": "REP-JOHNSON-CENTRAL",
                 "statistical_baseline_units": 262000,
                 "sales_override_units": 340000,
@@ -5910,7 +5910,7 @@
               {
                 "override_id": "OVR-SALES-202610-02",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
-                "sales_account": "Key Account Costco",
+                "sales_account": "Key Account Omni Club",
                 "planner_id": "REP-PATEL-WEST",
                 "statistical_baseline_units": 135000,
                 "sales_override_units": 142000,
@@ -5923,7 +5923,7 @@
               {
                 "override_id": "OVR-SALES-202610-16",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
-                "sales_account": "Key Account Walmart",
+                "sales_account": "Key Account Cymbal",
                 "planner_id": "REP-JOHNSON-CENTRAL",
                 "statistical_baseline_units": 217460,
                 "sales_override_units": 312800,
@@ -5936,7 +5936,7 @@
               {
                 "override_id": "OVR-SALES-202610-24",
                 "sku_id": "SKU-BEV-OATMILK-1L",
-                "sales_account": "Key Account Costco",
+                "sales_account": "Key Account Omni Club",
                 "planner_id": "REP-PATEL-WEST",
                 "statistical_baseline_units": 124200,
                 "sales_override_units": 110760,
@@ -5949,7 +5949,7 @@
               {
                 "override_id": "OVR-SALES-202610-30",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
-                "sales_account": "Key Account Walmart",
+                "sales_account": "Key Account Cymbal",
                 "planner_id": "REP-JOHNSON-CENTRAL",
                 "statistical_baseline_units": 311780,
                 "sales_override_units": 404600,
@@ -5962,7 +5962,7 @@
               {
                 "override_id": "OVR-SALES-202610-38",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
-                "sales_account": "Key Account Costco",
+                "sales_account": "Key Account Omni Club",
                 "planner_id": "REP-PATEL-WEST",
                 "statistical_baseline_units": 160650,
                 "sales_override_units": 177500,
@@ -5993,8 +5993,8 @@
             ],
             "rows": [
               {
-                "store_id": "STORE-WALMART-DAL-104",
-                "retailer": "Walmart",
+                "store_id": "STORE-CYMBAL-DAL-104",
+                "retailer": "Cymbal Retail",
                 "region": "US-CENTRAL",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "category": "Hydration Beverages",
@@ -6005,8 +6005,8 @@
                 "scan_date": "2026-10-16"
               },
               {
-                "store_id": "STORE-KROGER-ATL-209",
-                "retailer": "Kroger",
+                "store_id": "STORE-APEX-ATL-209",
+                "retailer": "Apex Hypermarket",
                 "region": "US-SOUTHEAST",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "category": "Hydration Beverages",
@@ -6018,7 +6018,7 @@
               },
               {
                 "store_id": "STORE-TARGET-CHI-088",
-                "retailer": "Target",
+                "retailer": "Summit Stores",
                 "region": "US-MIDWEST",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
                 "category": "Health Snacks",
@@ -6041,8 +6041,8 @@
                 "scan_date": "2026-10-16"
               },
               {
-                "store_id": "STORE-COSTCO-LAX-412",
-                "retailer": "Costco",
+                "store_id": "STORE-OMNI_WHOLESALE-LAX-412",
+                "retailer": "Omni Wholesale Club",
                 "region": "US-WEST",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
                 "category": "Health Snacks",
@@ -6188,7 +6188,7 @@
           "mutationStatus": "BIAS_DAMPENED_APPLIED",
           "vegaChartTitle": "Demand Sensing Agent",
           "vegaChartMark": "layered-combo",
-          "markdownResponse": "### 🌊 PulseCast Demand Sensing & TimesFM Quantile Briefing\n\n> **Executive Summary**: Identified unseasonable heatwave surge (+28.5% category lift) in US-Central via **Google DeepMind WeatherNext 3** paired with severe POS stockout censorship at Kroger. Imputed true latent demand in BigQuery and generated 14-day P10/P50/P90 quantile fans using **Vertex AI TimesFM** (WAPE reduced to **5.2%**). Neutralized chronic commercial optimism bias (-4.2% FVA) and committed updated PIR directly to **SAP IBP**.\n\n#### 📊 Sensed Demand & TimesFM Horizon Ledger (Atomic Copy-Ready Table)\n\n| SKU ID | Region | Weather Trigger | TimesFM P50 | Baseline ERP | WAPE % | Revenue at Risk |\n|:---|:---|:---|---:|---:|---:|---:|\n| `SKU-BEV-ISOTONIC-32OZ` | US-CENTRAL | WeatherNext Heatwave (+6.8°C) | 298,000 | 262,000 | 5.2% | $180,000 |\n| `SKU-SNACK-PROTEIN-BAR` | US-MIDWEST | Maps Marathon Lift (+19.0%) | 142,000 | 135,000 | 4.8% | $35,000 |\n| `SKU-BEV-ELECTROLYTE-500ML` | EU-UK | Retail Promo Carryover | 105,000 | 98,000 | 6.1% | $42,000 |\n\n#### ⚡ Autonomous Writebacks & Bias Governance Executed\n\n- **FVA Sales Bias Dampened**: `FVA-DAMPEN-43C92615` | Override ID: `OVR-SALES-202610-01` | Dampened To: **298,000** units | Status: `BIAS_DAMPENED_APPLIED`\n- **SAP IBP Key Figure Committed**: `IBP-PIR-5EEF3A8C` | SKU: `SKU-BEV-ISOTONIC-32OZ` | Key Figure: `CONSENSUS_DEMAND_SAMPLED_P50` | Units: **298,000** | Status: `IBP_COMMITTED_SUCCESS`\n\n### 🔗 Connected Systems & Data Foundation\n- **BigQuery Enterprise Demand Lake**: Ingesting daily EDI 852 store scans and censured sales imputation.\n- **Google DeepMind WeatherNext 3**: Real-time atmospheric temperature and precipitation anomaly forecasting.\n- **Vertex AI TimesFM**: High-throughput zero-shot foundation model generating calibrated quantile fans.\n- **SAP IBP & Apigee**: BAPI_PIR_CHANGE writeback protocol updating Planned Independent Requirements.",
+          "markdownResponse": "### 🌊 PulseCast Demand Sensing & TimesFM Quantile Briefing\n\n> **Executive Summary**: Identified unseasonable heatwave surge (+28.5% category lift) in US-Central via **Google DeepMind WeatherNext 3** paired with severe POS stockout censorship at Apex Hypermarket. Imputed true latent demand in BigQuery and generated 14-day P10/P50/P90 quantile fans using **Vertex AI TimesFM** (WAPE reduced to **5.2%**). Neutralized chronic commercial optimism bias (-4.2% FVA) and committed updated PIR directly to **SAP IBP**.\n\n#### 📊 Sensed Demand & TimesFM Horizon Ledger (Atomic Copy-Ready Table)\n\n| SKU ID | Region | Weather Trigger | TimesFM P50 | Baseline ERP | WAPE % | Revenue at Risk |\n|:---|:---|:---|---:|---:|---:|---:|\n| `SKU-BEV-ISOTONIC-32OZ` | US-CENTRAL | WeatherNext Heatwave (+6.8°C) | 298,000 | 262,000 | 5.2% | $180,000 |\n| `SKU-SNACK-PROTEIN-BAR` | US-MIDWEST | Maps Marathon Lift (+19.0%) | 142,000 | 135,000 | 4.8% | $35,000 |\n| `SKU-BEV-ELECTROLYTE-500ML` | EU-UK | Retail Promo Carryover | 105,000 | 98,000 | 6.1% | $42,000 |\n\n#### ⚡ Autonomous Writebacks & Bias Governance Executed\n\n- **FVA Sales Bias Dampened**: `FVA-DAMPEN-43C92615` | Override ID: `OVR-SALES-202610-01` | Dampened To: **298,000** units | Status: `BIAS_DAMPENED_APPLIED`\n- **SAP IBP Key Figure Committed**: `IBP-PIR-5EEF3A8C` | SKU: `SKU-BEV-ISOTONIC-32OZ` | Key Figure: `CONSENSUS_DEMAND_SAMPLED_P50` | Units: **298,000** | Status: `IBP_COMMITTED_SUCCESS`\n\n### 🔗 Connected Systems & Data Foundation\n- **BigQuery Enterprise Demand Lake**: Ingesting daily EDI 852 store scans and censured sales imputation.\n- **Google DeepMind WeatherNext 3**: Real-time atmospheric temperature and precipitation anomaly forecasting.\n- **Vertex AI TimesFM**: High-throughput zero-shot foundation model generating calibrated quantile fans.\n- **SAP IBP & Apigee**: BAPI_PIR_CHANGE writeback protocol updating Planned Independent Requirements.",
           "mutationReceipt": {
             "dampen_id": "FVA-DAMPEN-43C92615",
             "override_id": "OVR-SALES-202610-01",
@@ -6604,7 +6604,7 @@
           {
             "scenario_id": "SCENARIO-PULSECAST-01",
             "name": "Heatwave Demand Shock & Out-of-Stock Imputation",
-            "query": "Detect unseasonable weather demand surge in US-Central, impute Kroger store stockout censorship, and commit updated TimesFM P50 forecast to SAP IBP.",
+            "query": "Detect unseasonable weather demand surge in US-Central, impute Apex Hypermarket store stockout censorship, and commit updated TimesFM P50 forecast to SAP IBP.",
             "expected_proof_obligations": [
               "Query POS store scans with stockout censorship flag true",
               "Query WeatherNext 3 external heatwave surge anomaly",
@@ -6696,8 +6696,8 @@
             ],
             "rows": [
               {
-                "packet_id": "CPFR-PKT-202611-WMT",
-                "retailer": "Walmart",
+                "packet_id": "CPFR-PKT-202611-CYM",
+                "retailer": "Cymbal Retail",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "retailer_forecast_units": 620000,
                 "manufacturer_unconstrained_units": 540000,
@@ -6709,8 +6709,8 @@
                 "rationale": "Retailer forecast reflects unadjusted bullwhip order swing; harmonized consensus aligns with actual POS scan velocity."
               },
               {
-                "packet_id": "CPFR-PKT-202611-TGT",
-                "retailer": "Target",
+                "packet_id": "CPFR-PKT-202611-SMT",
+                "retailer": "Summit Stores",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
                 "retailer_forecast_units": 280000,
                 "manufacturer_unconstrained_units": 270000,
@@ -6722,8 +6722,8 @@
                 "rationale": "High consensus alignment with confirmed flyer circular."
               },
               {
-                "packet_id": "CPFR-PKT-202611-WMT-R029EB",
-                "retailer": "Walmart",
+                "packet_id": "CPFR-PKT-202611-CYM-R029EB",
+                "retailer": "Cymbal Retail",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "retailer_forecast_units": 775000,
                 "manufacturer_unconstrained_units": 464400,
@@ -6735,8 +6735,8 @@
                 "rationale": "Retailer forecast reflects unadjusted bullwhip order swing; harmonized consensus aligns with actual POS scan velocity."
               },
               {
-                "packet_id": "CPFR-PKT-202611-TGT-R0312E",
-                "retailer": "Target",
+                "packet_id": "CPFR-PKT-202611-SMT-R0312E",
+                "retailer": "Summit Stores",
                 "sku_id": "SKU-BEV-OATMILK-1L",
                 "retailer_forecast_units": 299600,
                 "manufacturer_unconstrained_units": 288900,
@@ -6748,8 +6748,8 @@
                 "rationale": "High consensus alignment with confirmed flyer circular."
               },
               {
-                "packet_id": "CPFR-PKT-202611-WMT-R04A0E",
-                "retailer": "Walmart",
+                "packet_id": "CPFR-PKT-202611-CYM-R04A0E",
+                "retailer": "Cymbal Retail",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
                 "retailer_forecast_units": 663400,
                 "manufacturer_unconstrained_units": 421200,
@@ -6761,8 +6761,8 @@
                 "rationale": "Retailer forecast reflects unadjusted bullwhip order swing; harmonized consensus aligns with actual POS scan velocity."
               },
               {
-                "packet_id": "CPFR-PKT-202611-TGT-R056C5",
-                "retailer": "Target",
+                "packet_id": "CPFR-PKT-202611-SMT-R056C5",
+                "retailer": "Summit Stores",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
                 "retailer_forecast_units": 218400,
                 "manufacturer_unconstrained_units": 224100,
@@ -6793,8 +6793,8 @@
             ],
             "rows": [
               {
-                "forecast_id": "EDI830-WMT-202611",
-                "retailer": "Walmart",
+                "forecast_id": "EDI830-CYM-202611",
+                "retailer": "Cymbal Retail",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "horizon_weeks": 12,
                 "current_week_order_units": 125000,
@@ -6804,8 +6804,8 @@
                 "consensus_status": "DIVERGENT_EXCEPTION"
               },
               {
-                "forecast_id": "EDI830-TGT-202611",
-                "retailer": "Target",
+                "forecast_id": "EDI830-SMT-202611",
+                "retailer": "Summit Stores",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
                 "horizon_weeks": 12,
                 "current_week_order_units": 65000,
@@ -6816,7 +6816,7 @@
               },
               {
                 "forecast_id": "EDI830-WMT-202626",
-                "retailer": "Walmart",
+                "retailer": "Cymbal Retail",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "horizon_weeks": 13,
                 "current_week_order_units": 156250,
@@ -6827,7 +6827,7 @@
               },
               {
                 "forecast_id": "EDI830-TGT-202633",
-                "retailer": "Target",
+                "retailer": "Summit Stores",
                 "sku_id": "SKU-BEV-OATMILK-1L",
                 "horizon_weeks": 14,
                 "current_week_order_units": 59800,
@@ -6838,7 +6838,7 @@
               },
               {
                 "forecast_id": "EDI830-WMT-202640",
-                "retailer": "Walmart",
+                "retailer": "Cymbal Retail",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
                 "horizon_weeks": 10,
                 "current_week_order_units": 148750,
@@ -6849,7 +6849,7 @@
               },
               {
                 "forecast_id": "EDI830-TGT-202647",
-                "retailer": "Target",
+                "retailer": "Summit Stores",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
                 "horizon_weeks": 9,
                 "current_week_order_units": 55900,
@@ -6880,8 +6880,8 @@
             "rows": [
               {
                 "edi_record_id": "EDI852-20261016-01",
-                "retailer": "Walmart",
-                "store_id": "STORE-WALMART-DAL-104",
+                "retailer": "Cymbal Retail",
+                "store_id": "STORE-CYMBAL-DAL-104",
                 "region": "US-CENTRAL",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "scan_date": "2026-10-16",
@@ -6892,8 +6892,8 @@
               },
               {
                 "edi_record_id": "EDI852-20261016-02",
-                "retailer": "Kroger",
-                "store_id": "STORE-KROGER-ATL-209",
+                "retailer": "Apex Hypermarket",
+                "store_id": "STORE-APEX-ATL-209",
                 "region": "US-SOUTHEAST",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "scan_date": "2026-10-16",
@@ -6904,7 +6904,7 @@
               },
               {
                 "edi_record_id": "EDI852-20261016-03",
-                "retailer": "Target",
+                "retailer": "Summit Stores",
                 "store_id": "STORE-TARGET-CHI-088",
                 "region": "US-MIDWEST",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
@@ -6916,8 +6916,8 @@
               },
               {
                 "edi_record_id": "EDI852-20261016-23",
-                "retailer": "Walmart",
-                "store_id": "STORE-WALMART-DAL-126",
+                "retailer": "Cymbal Retail",
+                "store_id": "STORE-CYMBAL_RETAIL-DAL-126",
                 "region": "US-CENTRAL",
                 "sku_id": "SKU-BEV-OATMILK-1L",
                 "scan_date": "2026-10-21",
@@ -6928,8 +6928,8 @@
               },
               {
                 "edi_record_id": "EDI852-20261016-31",
-                "retailer": "Kroger",
-                "store_id": "STORE-KROGER-ATL-238",
+                "retailer": "Apex Hypermarket",
+                "store_id": "STORE-APEX_HYPERMARKET-ATL-238",
                 "region": "US-SOUTHEAST",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
                 "scan_date": "2026-10-24",
@@ -6940,7 +6940,7 @@
               },
               {
                 "edi_record_id": "EDI852-20261016-39",
-                "retailer": "Target",
+                "retailer": "Summit Stores",
                 "store_id": "STORE-TARGET-CHI-124",
                 "region": "US-MIDWEST",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
@@ -6972,9 +6972,9 @@
             ],
             "rows": [
               {
-                "anomaly_id": "PHANTOM-KROGER-ATL-01",
-                "store_id": "STORE-KROGER-ATL-209",
-                "retailer": "Kroger",
+                "anomaly_id": "PHANTOM-APEX-ATL-01",
+                "store_id": "STORE-APEX-ATL-209",
+                "retailer": "Apex Hypermarket",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "book_inventory_units": 380,
                 "consecutive_zero_scan_days": 4,
@@ -6985,9 +6985,9 @@
                 "status": "UNRESOLVED_PHANTOM_STOCKOUT"
               },
               {
-                "anomaly_id": "PHANTOM-WALMART-DAL-02",
-                "store_id": "STORE-WALMART-DAL-104",
-                "retailer": "Walmart",
+                "anomaly_id": "PHANTOM-CYMBAL-DAL-02",
+                "store_id": "STORE-CYMBAL-DAL-104",
+                "retailer": "Cymbal Retail",
                 "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
                 "book_inventory_units": 150,
                 "consecutive_zero_scan_days": 3,
@@ -6998,9 +6998,9 @@
                 "status": "UNRESOLVED_PHANTOM_STOCKOUT"
               },
               {
-                "anomaly_id": "PHANTOM-KROGER-ATL-16",
-                "store_id": "STORE-KROGER-ATL-224",
-                "retailer": "Kroger",
+                "anomaly_id": "PHANTOM-APEX_HYPERMARKET-ATL-16",
+                "store_id": "STORE-APEX_HYPERMARKET-ATL-224",
+                "retailer": "Apex Hypermarket",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "book_inventory_units": 429,
                 "consecutive_zero_scan_days": 5,
@@ -7011,9 +7011,9 @@
                 "status": "UNRESOLVED_PHANTOM_STOCKOUT"
               },
               {
-                "anomaly_id": "PHANTOM-WALMART-DAL-24",
-                "store_id": "STORE-WALMART-DAL-126",
-                "retailer": "Walmart",
+                "anomaly_id": "PHANTOM-CYMBAL_RETAIL-DAL-24",
+                "store_id": "STORE-CYMBAL_RETAIL-DAL-126",
+                "retailer": "Cymbal Retail",
                 "sku_id": "SKU-BEV-OATMILK-1L",
                 "book_inventory_units": 138,
                 "consecutive_zero_scan_days": 4,
@@ -7024,9 +7024,9 @@
                 "status": "UNRESOLVED_PHANTOM_STOCKOUT"
               },
               {
-                "anomaly_id": "PHANTOM-KROGER-ATL-30",
-                "store_id": "STORE-KROGER-ATL-238",
-                "retailer": "Kroger",
+                "anomaly_id": "PHANTOM-APEX_HYPERMARKET-ATL-30",
+                "store_id": "STORE-APEX_HYPERMARKET-ATL-238",
+                "retailer": "Apex Hypermarket",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
                 "book_inventory_units": 429,
                 "consecutive_zero_scan_days": 3,
@@ -7037,9 +7037,9 @@
                 "status": "UNRESOLVED_PHANTOM_STOCKOUT"
               },
               {
-                "anomaly_id": "PHANTOM-WALMART-DAL-38",
-                "store_id": "STORE-WALMART-DAL-140",
-                "retailer": "Walmart",
+                "anomaly_id": "PHANTOM-CYMBAL_RETAIL-DAL-38",
+                "store_id": "STORE-CYMBAL_RETAIL-DAL-140",
+                "retailer": "Cymbal Retail",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
                 "book_inventory_units": 178,
                 "consecutive_zero_scan_days": 4,
@@ -7060,12 +7060,12 @@
           "mutationStatus": "STORE_AUDIT_DISPATCHED",
           "vegaChartTitle": "Forecast Reconciliation",
           "vegaChartMark": "layered-combo",
-          "markdownResponse": "### 📡 ChannelSync Collaborative CPFR & POS Harmonizer Briefing\n\n> **Executive Summary**: Harmonized multi-retailer daily EDI 852 scan feeds across Walmart, Kroger, and Target via **Cloud Dataflow** and **BigQuery**. Flagged a critical **phantom inventory stockout at Kroger Atlanta** (4 consecutive days of zero scans masked by 380 units of ghost book inventory, leaking $2,451/day). Reconciled Walmart's **80,000-unit bullwhip forecast divergence** down to realistic POS consumption velocity, and autonomously dispatched a **95,000-unit VMI replenishment order (EDI 855)** to DC Dallas, lifting retail On-Shelf Availability (OSA) by **+3.8 points**.\n\n#### 📊 Multi-Retailer CPFR Reconciliation Ledger (Atomic Copy-Ready Table)\n\n| Retailer | Store / DC | SKU ID | Daily Scans | Book Stock | Anomaly Status | CPFR Consensus | VMI Order Units | Retail OSA % |\n|:---|:---|:---|---:|---:|:---|---:|---:|---:|\n| `Walmart` | `DC-DALLAS-CENTRAL` | `SKU-BEV-ISOTONIC-32OZ` | 1,840 | 420 | `ALIGNED_FLOW` | 580,000 | **95,000** | 98.2% |\n| `Kroger` | `STORE-KROGER-ATL-209` | `SKU-BEV-ISOTONIC-32OZ` | 0 | 380 | `PHANTOM_STOCKOUT` | 42,000 | **Audit Triggered** | 84.5% (Depleted) |\n| `Target` | `DC-CHICAGO-MIDWEST` | `SKU-SNACK-PROTEIN-BAR` | 1,280 | 310 | `STABLE_CONSENSUS` | 275,000 | **45,000** | 96.8% |\n\n#### ⚡ Automated CPFR Dispatches & Physical Audits Executed\n\n- **Store Phantom Stockout Audit Dispatched**: `AUDIT-TASK-94134425` | Store: `STORE-KROGER-ATL-209` | Retailer: `Kroger` | Due Date: `2026-10-18` | Status: `STORE_AUDIT_DISPATCHED`\n- **VMI Replenishment Order Dispatched (EDI 855)**: `VMI-PO-C8CF3A6E` | Retailer: `Walmart` | SKU: `SKU-BEV-ISOTONIC-32OZ` | Quantity: **95,000** units | Target: `DC-DALLAS-CENTRAL` | Status: `VMI_PO_TRANSMITTED_EDI855`\n\n### 🔗 Connected Systems & EDI Integration Stack\n- **Cloud Dataflow EDI Pipeline**: High-throughput AS2/SFTP ingestion normalizing EDI 852 (POS) and EDI 830 (Forecasts).\n- **BigQuery Zero-Scan Poisson Model**: Anomaly detection isolating phantom inventory and ghost shelf stock.\n- **SAP IBP Collaborative Planning**: Real-time CPFR exception workbench harmonizing retailer vs supplier forecasts.\n- **Vendor Managed Inventory (VMI) Gateway**: Automated EDI 855 purchase order generation directly to 3PL logistics.",
+          "markdownResponse": "### 📡 ChannelSync Collaborative CPFR & POS Harmonizer Briefing\n\n> **Executive Summary**: Harmonized multi-retailer daily EDI 852 scan feeds across Cymbal Retail, Apex Hypermarket, and Target via **Cloud Dataflow** and **BigQuery**. Flagged a critical **phantom inventory stockout at Apex Hypermarket Atlanta** (4 consecutive days of zero scans masked by 380 units of ghost book inventory, leaking $2,451/day). Reconciled Cymbal Retail's **80,000-unit bullwhip forecast divergence** down to realistic POS consumption velocity, and autonomously dispatched a **95,000-unit VMI replenishment order (EDI 855)** to DC Dallas, lifting retail On-Shelf Availability (OSA) by **+3.8 points**.\n\n#### 📊 Multi-Retailer CPFR Reconciliation Ledger (Atomic Copy-Ready Table)\n\n| Retailer | Store / DC | SKU ID | Daily Scans | Book Stock | Anomaly Status | CPFR Consensus | VMI Order Units | Retail OSA % |\n|:---|:---|:---|---:|---:|:---|---:|---:|---:|\n| `Cymbal Retail` | `DC-DALLAS-CENTRAL` | `SKU-BEV-ISOTONIC-32OZ` | 1,840 | 420 | `ALIGNED_FLOW` | 580,000 | **95,000** | 98.2% |\n| `Apex Hypermarket` | `STORE-APEX-ATL-209` | `SKU-BEV-ISOTONIC-32OZ` | 0 | 380 | `PHANTOM_STOCKOUT` | 42,000 | **Audit Triggered** | 84.5% (Depleted) |\n| `Summit Stores` | `DC-CHICAGO-MIDWEST` | `SKU-SNACK-PROTEIN-BAR` | 1,280 | 310 | `STABLE_CONSENSUS` | 275,000 | **45,000** | 96.8% |\n\n#### ⚡ Automated CPFR Dispatches & Physical Audits Executed\n\n- **Store Phantom Stockout Audit Dispatched**: `AUDIT-TASK-94134425` | Store: `STORE-APEX-ATL-209` | Retailer: `Apex Hypermarket` | Due Date: `2026-10-18` | Status: `STORE_AUDIT_DISPATCHED`\n- **VMI Replenishment Order Dispatched (EDI 855)**: `VMI-PO-C8CF3A6E` | Retailer: `Cymbal Retail` | SKU: `SKU-BEV-ISOTONIC-32OZ` | Quantity: **95,000** units | Target: `DC-DALLAS-CENTRAL` | Status: `VMI_PO_TRANSMITTED_EDI855`\n\n### 🔗 Connected Systems & EDI Integration Stack\n- **Cloud Dataflow EDI Pipeline**: High-throughput AS2/SFTP ingestion normalizing EDI 852 (POS) and EDI 830 (Forecasts).\n- **BigQuery Zero-Scan Poisson Model**: Anomaly detection isolating phantom inventory and ghost shelf stock.\n- **SAP IBP Collaborative Planning**: Real-time CPFR exception workbench harmonizing retailer vs supplier forecasts.\n- **Vendor Managed Inventory (VMI) Gateway**: Automated EDI 855 purchase order generation directly to 3PL logistics.",
           "mutationReceipt": {
             "audit_id": "AUDIT-TASK-94134425",
-            "anomaly_id": "PHANTOM-KROGER-ATL-01",
-            "store_id": "STORE-KROGER-ATL-209",
-            "retailer": "Kroger",
+            "anomaly_id": "PHANTOM-APEX-ATL-01",
+            "store_id": "STORE-APEX-ATL-209",
+            "retailer": "Apex Hypermarket",
             "sku_id": "SKU-BEV-ISOTONIC-32OZ",
             "expected_audit_date": "2026-10-18",
             "status": "STORE_AUDIT_DISPATCHED",
@@ -7483,7 +7483,7 @@
           {
             "scenario_id": "SCENARIO-CPFR-01",
             "name": "Phantom Inventory Detection & VMI Replenishment Dispatch",
-            "query": "Harmonize retailer EDI 852 feeds, detect Kroger store phantom inventory stockout, dispatch store cycle count audit, and trigger Walmart VMI replenishment order.",
+            "query": "Harmonize retailer EDI 852 feeds, detect Apex Hypermarket store phantom inventory stockout, dispatch store cycle count audit, and trigger Cymbal Retail VMI replenishment order.",
             "expected_proof_obligations": [
               "Query retailer EDI 852 daily store scan records",
               "Query retailer EDI 830 forward order forecasts and bullwhip volatility",
@@ -7824,7 +7824,7 @@
               {
                 "ramp_id": "RAMP-02",
                 "npi_sku_id": "SKU-NPI-OAT-VANILLA-1L",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "committed_doors_wk1": 980,
                 "committed_doors_wk8": 1540,
                 "pipe_fill_cases_per_door": 14,
@@ -7833,7 +7833,7 @@
               {
                 "ramp_id": "RAMP-03",
                 "npi_sku_id": "SKU-NPI-KEFIR-MANGO-6PK",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "committed_doors_wk1": 1150,
                 "committed_doors_wk8": 1680,
                 "pipe_fill_cases_per_door": 16,
@@ -7842,7 +7842,7 @@
               {
                 "ramp_id": "RAMP-04",
                 "npi_sku_id": "SKU-NPI-BAR-PEANUT-24CT",
-                "customer_id": "CUST-COSTCO-US04",
+                "customer_id": "CUST-OMNI-US04",
                 "committed_doors_wk1": 580,
                 "committed_doors_wk8": 620,
                 "pipe_fill_cases_per_door": 48,
@@ -8563,7 +8563,7 @@
               {
                 "campaign_id": "CMP-202611-BOGO",
                 "name": "BOGO Hydration Blitz",
-                "retailer": "Walmart",
+                "retailer": "Cymbal Retail",
                 "channel": "Retail Stores & Omnichannel",
                 "start_date": "2026-11-05",
                 "end_date": "2026-11-18",
@@ -8576,7 +8576,7 @@
               {
                 "campaign_id": "CMP-202611-PROT20",
                 "name": "20% Off Protein Snack Pack",
-                "retailer": "Costco",
+                "retailer": "Omni Wholesale Club",
                 "channel": "Club Warehouse",
                 "start_date": "2026-11-10",
                 "end_date": "2026-11-24",
@@ -8589,7 +8589,7 @@
               {
                 "campaign_id": "CMP-202611-ELECTRO",
                 "name": "Bundle & Save Electrolytes",
-                "retailer": "Target",
+                "retailer": "Summit Stores",
                 "channel": "Retail Stores",
                 "start_date": "2026-11-12",
                 "end_date": "2026-11-26",
@@ -8602,7 +8602,7 @@
               {
                 "campaign_id": "CMP-202611-BOGO-R03025",
                 "name": "BOGO Hydration Blitz",
-                "retailer": "Walmart",
+                "retailer": "Cymbal Retail",
                 "channel": "Retail Stores & Omnichannel",
                 "start_date": "2026-11-21",
                 "end_date": "2026-11-21",
@@ -8615,7 +8615,7 @@
               {
                 "campaign_id": "CMP-202611-PROT49",
                 "name": "20% Off Protein Snack Pack",
-                "retailer": "Costco",
+                "retailer": "Omni Wholesale Club",
                 "channel": "Club Warehouse",
                 "start_date": "2026-11-24",
                 "end_date": "2026-11-24",
@@ -8628,7 +8628,7 @@
               {
                 "campaign_id": "CMP-202611-ELECTRO-R05A1C",
                 "name": "Bundle & Save Electrolytes",
-                "retailer": "Target",
+                "retailer": "Summit Stores",
                 "channel": "Retail Stores",
                 "start_date": "2026-11-27",
                 "end_date": "2026-11-27",
@@ -8720,7 +8720,7 @@
           "mutationStatus": "PROMO_MECHANIC_RESHAPED",
           "vegaChartTitle": "Promo ROI Simulator",
           "vegaChartMark": "bar",
-          "markdownResponse": "### 🎯 ElasticityIQ Demand Shaping & Promo Briefing\n\n> **Executive Summary**: Evaluated Walmart Q4 *BOGO Hydration Blitz* using **BigQuery ML Double-ML** causal inference. Identified that an uncoordinated 25% discount would trigger **26,000 units of sister-SKU cannibalization** ($26,100 brand margin loss) and deplete DC Dallas stock below safety buffer (elevated stockout risk). Reshaped campaign to a **20% bundle paired with surplus Electrolyte 500ml stock**, protecting inventory and delivering **48,000 net incremental units** with **+$83,000 net profit (+22% trade spend ROI)**.\n\n#### 📊 Promotional Lift & Cannibalization Decomposition (Atomic Copy-Ready Table)\n\n| Campaign Name | Target SKU | Base Price | Promo Discount | Gross Lift | Cannibalization | Net Incremental | Net Margin Gain | Double-ML P-Value |\n|:---|:---|---:|---:|---:|---:|---:|---:|:---|\n| `BOGO Hydration Blitz` | `SKU-BEV-ISOTONIC-32OZ` | $2.99 | 20.0% (Reshaped) | 85,000 | -26,000 | **+48,000** | **+$83,000** | `p = 0.002` (Stat Sig) |\n| `20% Off Protein Snack` | `SKU-SNACK-PROTEIN-BAR` | $3.49 | 20.0% | 42,000 | -8,500 | **+29,000** | **+$68,250** | `p = 0.001` (Stat Sig) |\n| `Bundle & Save Electrolyte` | `SKU-BEV-ELECTROLYTE-500ML` | $3.99 | 15.0% | 31,000 | -4,200 | **+24,000** | **+$69,900** | `p = 0.004` (Stat Sig) |\n\n#### ⚡ Trade Promotion Decisions & System Locks Executed\n\n- **Promotional Mechanic Reshaped**: `PROMO-SHAPE-4732C531` | Campaign: `CMP-202611-BOGO` | Discount: **20.0%** | Bundle SKU: `SKU-BEV-ELECTROLYTE-500ML` | Status: `PROMO_MECHANIC_RESHAPED`\n- **SAP TPM & Salesforce Calendar Locked**: `TPM-LOCK-5AF2B78C` | Net Lift: **48,000** units | Trade Spend: **$110,000.00** | Status: `TPM_CALENDAR_LOCKED_ACTIVE`\n\n### 🔗 Connected Systems & Causal Engine\n- **BigQuery ML Double-ML Causal Models**: Partially Linear Regression (PLR) estimating unconfounded price elasticity.\n- **AlloyDB pgvector Multi-Echelon Stock Buffer**: Real-time checking of warehouse available-to-promise inventory.\n- **SAP Trade Promotion Management (TPM)**: Automated calendar lock synchronizing retailer promotion baseline curves.\n- **Salesforce Consumer Goods Cloud**: Mobile field sales execution and retail store planogram alignment.",
+          "markdownResponse": "### 🎯 ElasticityIQ Demand Shaping & Promo Briefing\n\n> **Executive Summary**: Evaluated Cymbal Retail Q4 *BOGO Hydration Blitz* using **BigQuery ML Double-ML** causal inference. Identified that an uncoordinated 25% discount would trigger **26,000 units of sister-SKU cannibalization** ($26,100 brand margin loss) and deplete DC Dallas stock below safety buffer (elevated stockout risk). Reshaped campaign to a **20% bundle paired with surplus Electrolyte 500ml stock**, protecting inventory and delivering **48,000 net incremental units** with **+$83,000 net profit (+22% trade spend ROI)**.\n\n#### 📊 Promotional Lift & Cannibalization Decomposition (Atomic Copy-Ready Table)\n\n| Campaign Name | Target SKU | Base Price | Promo Discount | Gross Lift | Cannibalization | Net Incremental | Net Margin Gain | Double-ML P-Value |\n|:---|:---|---:|---:|---:|---:|---:|---:|:---|\n| `BOGO Hydration Blitz` | `SKU-BEV-ISOTONIC-32OZ` | $2.99 | 20.0% (Reshaped) | 85,000 | -26,000 | **+48,000** | **+$83,000** | `p = 0.002` (Stat Sig) |\n| `20% Off Protein Snack` | `SKU-SNACK-PROTEIN-BAR` | $3.49 | 20.0% | 42,000 | -8,500 | **+29,000** | **+$68,250** | `p = 0.001` (Stat Sig) |\n| `Bundle & Save Electrolyte` | `SKU-BEV-ELECTROLYTE-500ML` | $3.99 | 15.0% | 31,000 | -4,200 | **+24,000** | **+$69,900** | `p = 0.004` (Stat Sig) |\n\n#### ⚡ Trade Promotion Decisions & System Locks Executed\n\n- **Promotional Mechanic Reshaped**: `PROMO-SHAPE-4732C531` | Campaign: `CMP-202611-BOGO` | Discount: **20.0%** | Bundle SKU: `SKU-BEV-ELECTROLYTE-500ML` | Status: `PROMO_MECHANIC_RESHAPED`\n- **SAP TPM & Salesforce Calendar Locked**: `TPM-LOCK-5AF2B78C` | Net Lift: **48,000** units | Trade Spend: **$110,000.00** | Status: `TPM_CALENDAR_LOCKED_ACTIVE`\n\n### 🔗 Connected Systems & Causal Engine\n- **BigQuery ML Double-ML Causal Models**: Partially Linear Regression (PLR) estimating unconfounded price elasticity.\n- **AlloyDB pgvector Multi-Echelon Stock Buffer**: Real-time checking of warehouse available-to-promise inventory.\n- **SAP Trade Promotion Management (TPM)**: Automated calendar lock synchronizing retailer promotion baseline curves.\n- **Salesforce Consumer Goods Cloud**: Mobile field sales execution and retail store planogram alignment.",
           "mutationReceipt": {
             "shape_id": "PROMO-SHAPE-4732C531",
             "campaign_id": "CMP-202611-BOGO",
@@ -9133,7 +9133,7 @@
           {
             "scenario_id": "SCENARIO-ELASTICITY-01",
             "name": "Promotional Cannibalization & Stockout Prevention",
-            "query": "Simulate BOGO Hydration Blitz promo in Walmart, isolate sister-SKU cannibalization, detect DC stockout risk, and reshape mechanic to 20% bundle.",
+            "query": "Simulate BOGO Hydration Blitz promo in Cymbal Retail, isolate sister-SKU cannibalization, detect DC stockout risk, and reshape mechanic to 20% bundle.",
             "expected_proof_obligations": [
               "Query planned promotional campaigns for BOGO Hydration Blitz",
               "Query BigQuery ML Double-ML causal price elasticity",
@@ -36692,7 +36692,7 @@
                 "wave_id": "WAVE-CHI-1400",
                 "carrier_scac": "CRYX",
                 "dock_door": "CHI-DOOR-12",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "otif_penalty_if_missed_usd": 5197.5,
                 "trailer_staged": true
               },
@@ -36708,7 +36708,7 @@
                 "wave_id": "WAVE-CHI-1700",
                 "carrier_scac": "BNSF",
                 "dock_door": "CHI-DOOR-19",
-                "customer_id": "CUST-COSTCO-US04",
+                "customer_id": "CUST-OMNI-US04",
                 "otif_penalty_if_missed_usd": 2968.0,
                 "trailer_staged": true
               },
@@ -36732,7 +36732,7 @@
                 "wave_id": "WAVE-ATL-1500",
                 "carrier_scac": "JBHT",
                 "dock_door": "ATL-DOOR-03",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "otif_penalty_if_missed_usd": 2667.0,
                 "trailer_staged": true
               }
@@ -38255,8 +38255,8 @@
             ],
             "rows": [
               {
-                "customer_id": "CUST-KROGER-CORP",
-                "customer_name": "Kroger National Distribution",
+                "customer_id": "CUST-APEX-CORP",
+                "customer_name": "Apex Hypermarket National Distribution",
                 "contract_tier": "TIER_1_STRATEGIC",
                 "minimum_fill_rate_sla_pct": 98.5,
                 "on_time_in_full_otif_sla_pct": 97.0,
@@ -38275,8 +38275,8 @@
                 "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
               },
               {
-                "customer_id": "CUST-KROGER-CORP-R02D18",
-                "customer_name": "Kroger National Distribution",
+                "customer_id": "CUST-APEX-CORP-R02D18",
+                "customer_name": "Apex Hypermarket National Distribution",
                 "contract_tier": "TIER_1_STRATEGIC",
                 "minimum_fill_rate_sla_pct": 90.62,
                 "on_time_in_full_otif_sla_pct": 83.42,
@@ -38295,8 +38295,8 @@
                 "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
               },
               {
-                "customer_id": "CUST-KROGER-CORP-R04B33",
-                "customer_name": "Kroger National Distribution",
+                "customer_id": "CUST-APEX-CORP-R04B33",
+                "customer_name": "Apex Hypermarket National Distribution",
                 "contract_tier": "TIER_1_STRATEGIC",
                 "minimum_fill_rate_sla_pct": 99.6,
                 "on_time_in_full_otif_sla_pct": 75.66,
@@ -38335,7 +38335,7 @@
             "rows": [
               {
                 "order_id": "ORD-20261022-8841",
-                "customer_id": "CUST-KROGER-CORP",
+                "customer_id": "CUST-APEX-CORP",
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
                 "requested_units": 8000,
                 "requested_delivery_date": "2026-10-24T12:00:00Z",
@@ -38357,7 +38357,7 @@
               },
               {
                 "order_id": "ORD-20261022-8856",
-                "customer_id": "CUST-COSTCO-US04",
+                "customer_id": "CUST-OMNI-US04",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "requested_units": 6640,
                 "requested_delivery_date": "2026-10-24T12:00:00Z",
@@ -38423,7 +38423,7 @@
               {
                 "decision_id": "OP-DEC-20261022-001",
                 "order_id": "ORD-20261022-8841",
-                "customer_id": "CUST-KROGER-CORP",
+                "customer_id": "CUST-APEX-CORP",
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
                 "promised_units": 8000,
                 "promised_fulfillment_node": "CDC-CHICAGO-01",
@@ -38436,7 +38436,7 @@
               {
                 "decision_id": "OP-DEC-20261022-009",
                 "order_id": "ORD-20261022-8849",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "sku_id": "SKU-XYZ-204",
                 "promised_units": 6640,
                 "promised_fulfillment_node": "CDC-CHICAGO-01",
@@ -38449,7 +38449,7 @@
               {
                 "decision_id": "OP-DEC-20261022-016",
                 "order_id": "ORD-20261022-8856",
-                "customer_id": "CUST-COSTCO-US04",
+                "customer_id": "CUST-OMNI-US04",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "promised_units": 6640,
                 "promised_fulfillment_node": "CDC-CHICAGO-01",
@@ -38608,14 +38608,14 @@
           "mutationStatus": "TIER1_ALLOCATION_RINGFENCED",
           "vegaChartTitle": "PromiseGuard Real-Time Order Promising & ATP Inventory Pools",
           "vegaChartMark": "bar",
-          "markdownResponse": "### 🤝 PromiseGuard Real-Time Order Promising & ATP Briefing\n\n> **Executive Summary**: Sub-50ms Cloud Spanner evaluation successfully committed high-value inbound order `ORD-20261022-8841` (**8,000 units** of Barista Organic Oat Milk 1L) for strategic account **Kroger National Distribution** (Tier 1 Strategic, 98.5% fill rate SLA). Ingested global stock across Central and Regional DCs with **14.8 ms Spanner query latency**. While local RDC Dallas held only 3,300 uncommitted units, PromiseGuard dynamically allocated the full 8,000 units from **CDC Chicago Tier 1 Protected Quota** (where 20,000 units are ringfenced). Guaranteed delivery by **Oct 24, 2026 at 10:00 AM** (2 hours ahead of contractual cutoff), completely neutralizing a **$2,500/day OTIF penalty** risk.\n\n#### 📊 Inbound Order Promising & Sourcing Evaluation (Atomic Copy-Ready Table)\n\n| Order ID | Customer Account | Contract Tier | Requested Units | Promised Units | Sourcing Node | Promised Delivery | OTIF Risk | Status |\n|:---|:---|:---|---:|---:|:---|:---|---:|:---|\n| `ORD-8841` | **Kroger National** | `TIER_1_STRATEGIC` | 8,000 units | **8,000 units** | `CDC-CHICAGO-01` | **2026-10-24 10:00 AM** | **$0.00 (Neutralized)** | `ATP_COMMITTED` |\n| `ORD-8842` | Lone Star Co-op | `TIER_3_STANDARD` | 1,200 units | 1,200 units | `RDC-DALLAS-02` | 2026-10-24 03:00 PM | $0.00 (Nominal) | `ATP_CONFIRMED` |\n\n#### ⚡ Automated Spanner Reservations & Tier Quota Ringfences Executed\n\n- **Tier 1 Allocation Ringfenced**: `TIER-RINGFENCE-19208698` | SKU: `SKU-BEV-OATMILK-ORIGINAL-1L` | Node: `CDC-CHICAGO-01` | Reserved Quota: **20,000 units** | Status: `TIER1_ALLOCATION_RINGFENCED`\n- **Binding ATP Promise Committed**: `PROMISE-COMMIT-6CA9EED9` | Order: `ORD-20261022-8841` | Node: `CDC-CHICAGO-01` | Units: **8,000** | Spanner Txn: `SPAN-TXN-A9EED9` | Status: `ATP_PROMISE_COMMITTED`\n\n### 🔗 Connected Systems & Order Promising Architecture\n- **Google Cloud Spanner**: Globally distributed, strongly consistent real-time ATP/CTP inventory engine (<20ms).\n- **SAP S/4HANA Sales & Distribution (SD)**: Customer master, contractual allocation tiers, and pricing schedules.\n- **Enterprise OMS / Pub/Sub**: Event-driven omnichannel order orchestration with sub-second order promising.\n- **Google OR-Tools Sourcing Optimizer**: Cost-to-serve, multi-stop linehaul routing, and SLA constraint solving.",
+          "markdownResponse": "### 🤝 PromiseGuard Real-Time Order Promising & ATP Briefing\n\n> **Executive Summary**: Sub-50ms Cloud Spanner evaluation successfully committed high-value inbound order `ORD-20261022-8841` (**8,000 units** of Barista Organic Oat Milk 1L) for strategic account **Apex Hypermarket National Distribution** (Tier 1 Strategic, 98.5% fill rate SLA). Ingested global stock across Central and Regional DCs with **14.8 ms Spanner query latency**. While local RDC Dallas held only 3,300 uncommitted units, PromiseGuard dynamically allocated the full 8,000 units from **CDC Chicago Tier 1 Protected Quota** (where 20,000 units are ringfenced). Guaranteed delivery by **Oct 24, 2026 at 10:00 AM** (2 hours ahead of contractual cutoff), completely neutralizing a **$2,500/day OTIF penalty** risk.\n\n#### 📊 Inbound Order Promising & Sourcing Evaluation (Atomic Copy-Ready Table)\n\n| Order ID | Customer Account | Contract Tier | Requested Units | Promised Units | Sourcing Node | Promised Delivery | OTIF Risk | Status |\n|:---|:---|:---|---:|---:|:---|:---|---:|:---|\n| `ORD-8841` | **Apex Hypermarket National** | `TIER_1_STRATEGIC` | 8,000 units | **8,000 units** | `CDC-CHICAGO-01` | **2026-10-24 10:00 AM** | **$0.00 (Neutralized)** | `ATP_COMMITTED` |\n| `ORD-8842` | Lone Star Co-op | `TIER_3_STANDARD` | 1,200 units | 1,200 units | `RDC-DALLAS-02` | 2026-10-24 03:00 PM | $0.00 (Nominal) | `ATP_CONFIRMED` |\n\n#### ⚡ Automated Spanner Reservations & Tier Quota Ringfences Executed\n\n- **Tier 1 Allocation Ringfenced**: `TIER-RINGFENCE-19208698` | SKU: `SKU-BEV-OATMILK-ORIGINAL-1L` | Node: `CDC-CHICAGO-01` | Reserved Quota: **20,000 units** | Status: `TIER1_ALLOCATION_RINGFENCED`\n- **Binding ATP Promise Committed**: `PROMISE-COMMIT-6CA9EED9` | Order: `ORD-20261022-8841` | Node: `CDC-CHICAGO-01` | Units: **8,000** | Spanner Txn: `SPAN-TXN-A9EED9` | Status: `ATP_PROMISE_COMMITTED`\n\n### 🔗 Connected Systems & Order Promising Architecture\n- **Google Cloud Spanner**: Globally distributed, strongly consistent real-time ATP/CTP inventory engine (<20ms).\n- **SAP S/4HANA Sales & Distribution (SD)**: Customer master, contractual allocation tiers, and pricing schedules.\n- **Enterprise OMS / Pub/Sub**: Event-driven omnichannel order orchestration with sub-second order promising.\n- **Google OR-Tools Sourcing Optimizer**: Cost-to-serve, multi-stop linehaul routing, and SLA constraint solving.",
           "mutationReceipt": {
             "protection_id": "TIER-RINGFENCE-19208698",
             "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
             "network_node_id": "CDC-CHICAGO-01",
             "reserve_quantity": 20000,
             "status": "TIER1_ALLOCATION_RINGFENCED",
-            "rationale": "Ringfencing 20,000 units at Central DC Chicago exclusively for strategic Tier 1 accounts (Kroger SLA 98.5% fill rate, avoiding $2,500/day OTIF penalty).",
+            "rationale": "Ringfencing 20,000 units at Central DC Chicago exclusively for strategic Tier 1 accounts (Apex Hypermarket SLA 98.5% fill rate, avoiding $2,500/day OTIF penalty).",
             "idempotency_key": "TIER1-RING-20261022-01"
           }
         }
@@ -39025,9 +39025,9 @@
         "evalScenarios": [
           {
             "scenario_id": "GOLDEN-ORDER-PROMISING-001",
-            "name": "Kroger Strategic Tier 1 ATP Commitment and OTIF Penalty Avoidance",
-            "description": "Evaluate high-value order ORD-8841 (8,000 units Oat Milk 1L) for Kroger National Distribution via Cloud Spanner (14.8ms latency), protect 20,000-unit Tier 1 reserved quota at CDC Chicago, commit binding delivery date for Oct 24 at 10:00 AM, and avoid $2,500/day OTIF penalty.",
-            "input_query": "Evaluate inbound customer order ORD-20261022-8841 from Kroger, execute sub-50ms Spanner ATP check, ringfence Tier 1 strategic allocation reserve, and commit binding delivery date.",
+            "name": "Apex Hypermarket Strategic Tier 1 ATP Commitment and OTIF Penalty Avoidance",
+            "description": "Evaluate high-value order ORD-8841 (8,000 units Oat Milk 1L) for Apex Hypermarket National Distribution via Cloud Spanner (14.8ms latency), protect 20,000-unit Tier 1 reserved quota at CDC Chicago, commit binding delivery date for Oct 24 at 10:00 AM, and avoid $2,500/day OTIF penalty.",
+            "input_query": "Evaluate inbound customer order ORD-20261022-8841 from Apex Hypermarket, execute sub-50ms Spanner ATP check, ringfence Tier 1 strategic allocation reserve, and commit binding delivery date.",
             "expected_tools": [
               "query_realtime_sku_atp_allocations",
               "query_customer_tier_sla_commitments",
@@ -39038,7 +39038,7 @@
             ],
             "expected_verifications": {
               "order_id": "ORD-20261022-8841",
-              "customer_id": "CUST-KROGER-CORP",
+              "customer_id": "CUST-APEX-CORP",
               "promised_fulfillment_node": "CDC-CHICAGO-01",
               "atp_reserved_qty": 8000,
               "promise_status": "ATP_PROMISE_COMMITTED",
@@ -41841,7 +41841,7 @@
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
                 "lot_id": "LOT-AUST-9071",
                 "origin_id": "FDC-XYZ-DALLAS",
-                "dest_id": "CUST-KROGER-US01",
+                "dest_id": "CUST-APEX-US01",
                 "hourly_temps_c": [
                   4.0,
                   4.2,
@@ -42599,7 +42599,7 @@
               },
               {
                 "planogram_id": "PLG-KROG-C02",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "sku_id": "SKU-BEV-OATMILK-1L",
                 "store_aisle": "CHILL-02",
                 "bay_seq": 4,
@@ -42608,7 +42608,7 @@
               },
               {
                 "planogram_id": "PLG-KROG-C03",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
                 "store_aisle": "CHILL-03",
                 "bay_seq": 1,
@@ -42617,7 +42617,7 @@
               },
               {
                 "planogram_id": "PLG-COST-B08",
-                "customer_id": "CUST-COSTCO-US04",
+                "customer_id": "CUST-OMNI-US04",
                 "sku_id": "SKU-XYZ-204",
                 "store_aisle": "CLUB-BAY-08",
                 "bay_seq": 1,
@@ -42671,7 +42671,7 @@
               {
                 "order_line_id": "SLN-804",
                 "store_order_id": "SO-STR-KROG-219",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "facility_id": "FDC-XYZ-DALLAS",
                 "sku_id": "SKU-BEV-OATMILK-1L",
                 "ordered_cases": 30,
@@ -42680,7 +42680,7 @@
               {
                 "order_line_id": "SLN-805",
                 "store_order_id": "SO-STR-KROG-219",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "facility_id": "FDC-XYZ-DALLAS",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
                 "ordered_cases": 28,
@@ -42689,7 +42689,7 @@
               {
                 "order_line_id": "SLN-806",
                 "store_order_id": "SO-STR-COST-305",
-                "customer_id": "CUST-COSTCO-US04",
+                "customer_id": "CUST-OMNI-US04",
                 "facility_id": "RDC-XYZ-CHICAGO",
                 "sku_id": "SKU-XYZ-204",
                 "ordered_cases": 40,
@@ -43364,7 +43364,7 @@
               },
               {
                 "store_id": "STR-KROG-ATL-108",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "storage_zone": "WALKIN_COOLER_2_8C",
                 "max_pallet_bays": 14,
                 "occupied_pallet_bays": 12,
@@ -43373,7 +43373,7 @@
               },
               {
                 "store_id": "STR-KROG-DAL-119",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "storage_zone": "WALKIN_COOLER_2_8C",
                 "max_pallet_bays": 16,
                 "occupied_pallet_bays": 11,
@@ -43382,7 +43382,7 @@
               },
               {
                 "store_id": "STR-COST-CHI-007",
-                "customer_id": "CUST-COSTCO-US04",
+                "customer_id": "CUST-OMNI-US04",
                 "storage_zone": "STEEL_RACK_FLOOR",
                 "max_pallet_bays": 60,
                 "occupied_pallet_bays": 54,
@@ -44774,8 +44774,8 @@
               },
               {
                 "stop_id": "STP-DAL-402",
-                "customer_id": "CUST-KROGER-US01",
-                "site_name": "Kroger Mockingbird Mixed-Use Plaza",
+                "customer_id": "CUST-APEX-US01",
+                "site_name": "Apex Hypermarket Mockingbird Mixed-Use Plaza",
                 "rooftop_lat": 32.8371,
                 "rooftop_lon": -96.7745,
                 "truck_size_limit": "53FT_REAR_ALLEY_GATE_CODE",
@@ -44810,8 +44810,8 @@
               },
               {
                 "stop_id": "STP-CHI-406",
-                "customer_id": "CUST-COSTCO-US04",
-                "site_name": "Costco Lincoln Park Club Receiving",
+                "customer_id": "CUST-OMNI-US04",
+                "site_name": "Omni Wholesale Club Lincoln Park Club Receiving",
                 "rooftop_lat": 41.9298,
                 "rooftop_lon": -87.6655,
                 "truck_size_limit": "53FT_SOUTH_APRON_SWING",
@@ -46224,7 +46224,7 @@
       "cadType": "corridor_lifo",
       "videoSrc": "videos/o2d_suite_demo.mp4",
       "hasPreloadedVideo": true,
-      "systems": "Retail Customer POS Portal (EDI / MCP) / Target / Kroger OTIF Portals · Enterprise ERP (MCP / On-Prem DB) SD & FI-AR · Real-Time Carrier Visibility (MCP / API) GPS · Google Maps Geofencing · Document AI · BigQuery · Operational SQL & Vector DB (On-Prem / Cloud)",
+      "systems": "Retail Customer POS Portal (EDI / MCP) / Target / Apex Hypermarket OTIF Portals · Enterprise ERP (MCP / On-Prem DB) SD & FI-AR · Real-Time Carrier Visibility (MCP / API) GPS · Google Maps Geofencing · Document AI · BigQuery · Operational SQL & Vector DB (On-Prem / Cloud)",
       "solverStack": "BigQuery ML 72-Hr MABD Breach Predictor + Mathematical Optimization Solver (MILP / CP-SAT) Penalty-vs-Expedite NPV Solver + Document AI Dispute Assembler",
       "apiWriteback": "ERP Order Management (SD / MCP) Alternate-DC Order Re-Allocation & Automated Retailer Portal Dispute Submission via MCP / REST / On-Prem Gateway",
       "subAgents": [
@@ -46360,7 +46360,7 @@
               },
               {
                 "order_id": "SO-WMT-20261022-889",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "order_value_usd": 327600.0,
                 "mabd_window_utc": "2026-10-25T14:00:00Z",
                 "otif_penalty_pct": 3.39,
@@ -46368,7 +46368,7 @@
               },
               {
                 "order_id": "SO-WMT-20261022-896",
-                "customer_id": "CUST-COSTCO-US04",
+                "customer_id": "CUST-OMNI-US04",
                 "order_value_usd": 386400.0,
                 "mabd_window_utc": "2026-10-25T14:00:00Z",
                 "otif_penalty_pct": 3.57,
@@ -46493,14 +46493,14 @@
               },
               {
                 "deduction_id": "DED-RET01-44918",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "shipment_id": "SHP-WMT-4020",
                 "claimed_reason": "LATE_ARRIVAL_PAST_MABD",
                 "deducted_amount_usd": 7843.5
               },
               {
                 "deduction_id": "DED-RET01-44925",
-                "customer_id": "CUST-COSTCO-US04",
+                "customer_id": "CUST-OMNI-US04",
                 "shipment_id": "SHP-WMT-4027",
                 "claimed_reason": "LATE_ARRIVAL_PAST_MABD",
                 "deducted_amount_usd": 10111.5
@@ -46537,7 +46537,7 @@
           "mutationStatus": "OTIF_SLA_RESCUE_EXECUTED",
           "vegaChartTitle": "OTIFShield Penalty Prevention & Chargeback Recovery",
           "vegaChartMark": "layered-combo",
-          "markdownResponse": "### ✦ OTIFShield — Customer SLA Rescue & Chargeback Dispute Agent — Executive Operations Brief\n\n> **Executive Summary**: Executed deterministic multi-signal optimization and ERP/WMS/TMS write-backs across **06 · Return & Enable**.\n\n#### 📊 Operational Telemetry & Solver Output (Copy-Ready Table)\n\n| Dimension | Metric Value | Secondary KPI | Execution Mode |\n|:---|---:|---:|:---|\n| `BigBox Retail #01 (OTIFShield)` | **99.2** | 22050 | `OPTIMIZED_CVRPTW` |\n| `National Grocer #02 (OTIFShield)` | **98.9** | 16800 | `OPTIMIZED_CVRPTW` |\n| `Reactive Post-Mortem Baseline` | **93.4** | 0 | `LEGACY_STATIC` |\n\n#### ⚡ Autonomous Write-Backs & Actions Executed\n\n- **Action Executed**: `OTIF-RSC-0CA3068F` | Status: `OTIF_SLA_RESCUE_EXECUTED` | Rationale: Predicted 78% MABD breach risk 72 hours early; spent $650 on priority dock wave release to avoid a $12,600 (3% COGS) retail OTIF chargeback.\n- **Action Executed**: `OTIF-DSP-7C673239` | Status: `CHARGEBACK_DISPUTE_SUBMITTED` | Rationale: Auto-compiled Google Maps geofence gate entry (14:12 UTC vs 16:00 UTC MABD cutoff), EDI 856 ASN, and signed ePOD to overturn invalid $9,450 late-arrival chargeback.\n\n### 🔗 Connected Enterprise Systems\n- **Vertex AI 72-Hour Customer MABD & OTIF Breach Risk Scorer** (`BigQuery ML / Spanner`)\n- **Walmart Retail Link / Target Partners Online Deduction Feed** (`EDI 812 / Portal API`)\n- **Google Maps Geofence + EDI 856 ASN + Signed ePOD Evidence Compiler** (`Document AI / GIS`)\n- **SAP S/4HANA SD Priority Wave & Alternate Hub Split-Ship Broker** (`OData v4`)",
+          "markdownResponse": "### ✦ OTIFShield — Customer SLA Rescue & Chargeback Dispute Agent — Executive Operations Brief\n\n> **Executive Summary**: Executed deterministic multi-signal optimization and ERP/WMS/TMS write-backs across **06 · Return & Enable**.\n\n#### 📊 Operational Telemetry & Solver Output (Copy-Ready Table)\n\n| Dimension | Metric Value | Secondary KPI | Execution Mode |\n|:---|---:|---:|:---|\n| `BigBox Retail #01 (OTIFShield)` | **99.2** | 22050 | `OPTIMIZED_CVRPTW` |\n| `National Grocer #02 (OTIFShield)` | **98.9** | 16800 | `OPTIMIZED_CVRPTW` |\n| `Reactive Post-Mortem Baseline` | **93.4** | 0 | `LEGACY_STATIC` |\n\n#### ⚡ Autonomous Write-Backs & Actions Executed\n\n- **Action Executed**: `OTIF-RSC-0CA3068F` | Status: `OTIF_SLA_RESCUE_EXECUTED` | Rationale: Predicted 78% MABD breach risk 72 hours early; spent $650 on priority dock wave release to avoid a $12,600 (3% COGS) retail OTIF chargeback.\n- **Action Executed**: `OTIF-DSP-7C673239` | Status: `CHARGEBACK_DISPUTE_SUBMITTED` | Rationale: Auto-compiled Google Maps geofence gate entry (14:12 UTC vs 16:00 UTC MABD cutoff), EDI 856 ASN, and signed ePOD to overturn invalid $9,450 late-arrival chargeback.\n\n### 🔗 Connected Enterprise Systems\n- **Vertex AI 72-Hour Customer MABD & OTIF Breach Risk Scorer** (`BigQuery ML / Spanner`)\n- **Cymbal Retail Retail Link / Target Partners Online Deduction Feed** (`EDI 812 / Portal API`)\n- **Google Maps Geofence + EDI 856 ASN + Signed ePOD Evidence Compiler** (`Document AI / GIS`)\n- **SAP S/4HANA SD Priority Wave & Alternate Hub Split-Ship Broker** (`OData v4`)",
           "mutationReceipt": {
             "dispatch_execution_id": "OTIF-RSC-0CA3068F",
             "order_id": "SO-WMT-20261022-881",
@@ -46707,7 +46707,7 @@
           },
           {
             "id": "retail_link_chargeback_portal",
-            "name": "Walmart Retail Link / Target Partners Online Deduction Feed",
+            "name": "Cymbal Retail Retail Link / Target Partners Online Deduction Feed",
             "protocol": "EDI 812 / Portal API",
             "tables": [
               "retailer_otif_chargeback_deductions"
@@ -49464,7 +49464,7 @@
               },
               {
                 "rma_id": "RMA-20261022-516",
-                "customer_id": "CUST-COSTCO-US04",
+                "customer_id": "CUST-OMNI-US04",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "units": 13,
                 "retail_value_usd": 8256.0,
@@ -50827,7 +50827,7 @@
       "cadType": "circular_loop",
       "videoSrc": "videos/o2d_suite_demo.mp4",
       "hasPreloadedVideo": true,
-      "systems": "Retail Customer POS Portal (EDI / MCP) / Target / Kroger OTIF Portals · Enterprise ERP (MCP / On-Prem DB) SD & FI-AR · Real-Time Carrier Visibility (MCP / API) GPS · Google Maps Geofencing · Document AI · BigQuery · Operational SQL & Vector DB (On-Prem / Cloud)",
+      "systems": "Retail Customer POS Portal (EDI / MCP) / Target / Apex Hypermarket OTIF Portals · Enterprise ERP (MCP / On-Prem DB) SD & FI-AR · Real-Time Carrier Visibility (MCP / API) GPS · Google Maps Geofencing · Document AI · BigQuery · Operational SQL & Vector DB (On-Prem / Cloud)",
       "solverStack": "BigQuery ML 72-Hr MABD Breach Predictor + Mathematical Optimization Solver (MILP / CP-SAT) Penalty-vs-Expedite NPV Solver + Document AI Dispute Assembler",
       "apiWriteback": "ERP Order Management (SD / MCP) Alternate-DC Order Re-Allocation & Automated Retailer Portal Dispute Submission via MCP / REST / On-Prem Gateway",
       "subAgents": [
@@ -52408,7 +52408,7 @@
             "rows": [
               {
                 "dc_lot_id": "SDL-401",
-                "target_customer_id": "CUST-KROGER-US01",
+                "target_customer_id": "CUST-APEX-US01",
                 "transit_days": 1,
                 "freight_cost_usd": 680.0
               },
@@ -52426,7 +52426,7 @@
               },
               {
                 "dc_lot_id": "SDL-404",
-                "target_customer_id": "CUST-COSTCO-US04",
+                "target_customer_id": "CUST-OMNI-US04",
                 "transit_days": 1,
                 "freight_cost_usd": 840.0
               },
@@ -52473,7 +52473,7 @@
               },
               {
                 "channel_id": "CHN-FAST-FOODSERVICE",
-                "customer_id": "CUST-KROGER-US01",
+                "customer_id": "CUST-APEX-US01",
                 "min_mrsl_pct": 50.0,
                 "price_realization_pct_of_list": 84.0,
                 "tax_deduction_multiplier": 0.0
@@ -53990,7 +53990,7 @@
                 "overdue_units_past_grace": 580
               },
               {
-                "custodian_id": "CUST-KROGER-US01",
+                "custodian_id": "CUST-APEX-US01",
                 "asset_type": "IFCO_FOLDING_RPC_TOTE",
                 "net_unreturned_units": 1360,
                 "free_grace_days": 18,
@@ -54011,14 +54011,14 @@
                 "overdue_units_past_grace": 74
               },
               {
-                "custodian_id": "CUST-COSTCO-US04",
+                "custodian_id": "CUST-OMNI-US04",
                 "asset_type": "PECO_BLOCK_PALLET",
                 "net_unreturned_units": 110,
                 "free_grace_days": 21,
                 "overdue_units_past_grace": 0
               },
               {
-                "custodian_id": "CUST-KROGER-US01",
+                "custodian_id": "CUST-APEX-US01",
                 "asset_type": "INSULATED_DAIRY_ROLLCAGE",
                 "net_unreturned_units": 270,
                 "free_grace_days": 14,
@@ -54054,7 +54054,7 @@
                 "ledger_id": "RTI-SCAN-02",
                 "asset_type": "IFCO_FOLDING_RPC_TOTE",
                 "origin_facility_id": "FDC-XYZ-DALLAS",
-                "custodian_id": "CUST-KROGER-US01",
+                "custodian_id": "CUST-APEX-US01",
                 "dispatched_90d": 9200,
                 "returned_90d": 7840,
                 "avg_dwell_days": 31
@@ -54081,7 +54081,7 @@
                 "ledger_id": "RTI-SCAN-05",
                 "asset_type": "PECO_BLOCK_PALLET",
                 "origin_facility_id": "RDC-XYZ-CHICAGO",
-                "custodian_id": "CUST-COSTCO-US04",
+                "custodian_id": "CUST-OMNI-US04",
                 "dispatched_90d": 3600,
                 "returned_90d": 3490,
                 "avg_dwell_days": 14
@@ -54090,7 +54090,7 @@
                 "ledger_id": "RTI-SCAN-06",
                 "asset_type": "INSULATED_DAIRY_ROLLCAGE",
                 "origin_facility_id": "FDC-XYZ-ATLANTA",
-                "custodian_id": "CUST-KROGER-US01",
+                "custodian_id": "CUST-APEX-US01",
                 "dispatched_90d": 1420,
                 "returned_90d": 1150,
                 "avg_dwell_days": 34
@@ -54121,7 +54121,7 @@
               },
               {
                 "sweep_id": "SWP-702",
-                "custodian_id": "CUST-KROGER-US01",
+                "custodian_id": "CUST-APEX-US01",
                 "asset_type": "IFCO_FOLDING_RPC_TOTE",
                 "lost_fee_exposure_usd": 15080.0,
                 "backhaul_sweep_cost_usd": 380.0,
@@ -54145,7 +54145,7 @@
               },
               {
                 "sweep_id": "SWP-705",
-                "custodian_id": "CUST-COSTCO-US04",
+                "custodian_id": "CUST-OMNI-US04",
                 "asset_type": "PECO_BLOCK_PALLET",
                 "lost_fee_exposure_usd": 0.0,
                 "backhaul_sweep_cost_usd": 0.0,
@@ -54153,7 +54153,7 @@
               },
               {
                 "sweep_id": "SWP-706",
-                "custodian_id": "CUST-KROGER-US01",
+                "custodian_id": "CUST-APEX-US01",
                 "asset_type": "INSULATED_DAIRY_ROLLCAGE",
                 "lost_fee_exposure_usd": 88150.0,
                 "backhaul_sweep_cost_usd": 710.0,

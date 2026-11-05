@@ -2,7 +2,7 @@
   {
     "scenario_id": "SCENARIO-PULSECAST-01",
     "name": "Heatwave Demand Shock & Out-of-Stock Imputation",
-    "query": "Detect unseasonable weather demand surge in US-Central, impute Kroger store stockout censorship, and commit updated TimesFM P50 forecast to SAP IBP.",
+    "query": "Detect unseasonable weather demand surge in US-Central, impute Apex Hypermarket store stockout censorship, and commit updated TimesFM P50 forecast to SAP IBP.",
     "expected_proof_obligations": [
       "Query POS store scans with stockout censorship flag true",
       "Query WeatherNext 3 external heatwave surge anomaly",

@@ -31,7 +31,7 @@ def test_query_realtime_sku_atp_allocations():
 
 
 def test_query_customer_tier_sla_commitments():
-    res = tools.query_customer_tier_sla_commitments(customer_id="CUST-KROGER-CORP")
+    res = tools.query_customer_tier_sla_commitments(customer_id="CUST-APEX-CORP")
     assert res["total"] > 0
     record = res["rows"][0]
     assert record["contract_tier"] == "TIER_1_STRATEGIC"
@@ -43,7 +43,7 @@ def test_query_inbound_customer_order_requests():
     res = tools.query_inbound_customer_order_requests(order_id="ORD-20261022-8841")
     assert res["total"] > 0
     record = res["rows"][0]
-    assert record["customer_id"] == "CUST-KROGER-CORP"
+    assert record["customer_id"] == "CUST-APEX-CORP"
     assert record["requested_units"] == 8000
 
 
@@ -85,7 +85,7 @@ def test_quality_gate_blocks_invalid_inputs():
 
 def test_end_to_end_scenario_execution():
     agent = DynamicOrderPromisingAtp()
-    query = "Evaluate inbound customer order ORD-20261022-8841 from Kroger, execute sub-50ms Spanner ATP check, ringfence Tier 1 strategic allocation reserve, and commit binding delivery date."
+    query = "Evaluate inbound customer order ORD-20261022-8841 from Apex Hypermarket, execute sub-50ms Spanner ATP check, ringfence Tier 1 strategic allocation reserve, and commit binding delivery date."
     result = agent.run_scenario(query)
     assert result["status"] == "success"
     assert result["findings_count"] >= 3
@@ -111,7 +111,7 @@ def test_end_to_end_scenario_execution():
     markdown = result["markdown"]
     assert "### 🤝 PromiseGuard Real-Time Order Promising & ATP Briefing" in markdown
     assert "| Order ID | Customer Account | Contract Tier |" in markdown
-    assert "Kroger National" in markdown
+    assert "Apex Hypermarket National" in markdown
     assert "Tier 1 Allocation Ringfenced" in markdown
     assert "Binding ATP Promise Committed" in markdown
 

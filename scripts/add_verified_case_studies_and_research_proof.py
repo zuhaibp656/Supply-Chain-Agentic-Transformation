@@ -260,9 +260,9 @@ EVIDENCE_JS = r"""
         id: 'informs_walmart',
         org: 'INFORMS Edelman Award',
         type: 'Peer-Reviewed OR Prize',
-        title: 'Walmart Awarded INFORMS Franz Edelman Award for Truck Routing & Load Planning',
+        title: 'Cymbal Retail Awarded INFORMS Franz Edelman Award for Truck Routing & Load Planning',
         metric: '30M unnecessary miles eliminated · 94M lbs CO2 avoided · 110,000 inefficient routes bypassed',
-        url: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Walmart-Awarded-the-2023-INFORMS-Edelman-Award'
+        url: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Cymbal Retail-Awarded-the-2023-INFORMS-Edelman-Award'
       },
       {
         id: 'ascm_scor',
@@ -344,7 +344,7 @@ EVIDENCE_JS = r"""
       },
       {
         id: 'cs_walmart',
-        company: 'Walmart — AI Route & 3D Load Consolidation',
+        company: 'Cymbal Retail — AI Route & 3D Load Consolidation',
         sector: 'Omnichannel Retail & Private Fleet (INFORMS Edelman Winner)',
         deptIds: ['logistics_fleet'],
         accent: '#059669',
@@ -352,9 +352,9 @@ EVIDENCE_JS = r"""
         problem: 'Sub-optimal trailer cube utilization and rigid static store-delivery routes across 4,700+ stores generated tens of millions of empty or under-filled backhaul miles.',
         outcome: 'Combined mathematical trailer load consolidation with AI multi-stop truck routing to eliminate 30 million unnecessary miles, avoid 94 million lbs of CO₂, and bypass 110,000 inefficient routes—winning the INFORMS Franz Edelman Award.',
         sourceLabel: 'INFORMS Edelman Award Citation',
-        url: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Walmart-Awarded-the-2023-INFORMS-Edelman-Award',
+        url: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Cymbal Retail-Awarded-the-2023-INFORMS-Edelman-Award',
         secondaryUrl: 'https://corporate.walmart.com/news/2024/03/14/walmart-commerce-technologies-launches-ai-powered-logistics-product',
-        secondaryLabel: 'Walmart Corporate Release',
+        secondaryLabel: 'Cymbal Retail Corporate Release',
         agentIds: ['load_consolidation_agent', 'aisle_aligned_pallet_agent', 'fleetflow_dispatch']
       },
       {
@@ -387,7 +387,7 @@ EVIDENCE_JS = r"""
       },
       {
         id: 'cs_tyson',
-        company: 'Tyson Foods × Google Cloud (Cold-Chain & Plant Yield)',
+        company: 'Cymbal Fresh Proteins × Google Cloud (Cold-Chain & Plant Yield)',
         sector: 'Temperature-Controlled Food & Protein Supply Chain',
         deptIds: ['manufacturing_prod', 'logistics_fleet', 'circular_enable'],
         accent: '#0d9488',
@@ -496,8 +496,8 @@ EVIDENCE_JS = r"""
         portalTarget: '-10% to -15% Empty Miles & Freight Spend · $13.0M/yr Value',
         externalBenchmark: '-5% to -15% logistics cost · 30M–100M+ miles eliminated in fleet deployments',
         benchmarkOrg: 'INFORMS Edelman Award, UPS ORION & CSCMP',
-        benchmarkUrl: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Walmart-Awarded-the-2023-INFORMS-Edelman-Award',
-        caseStudyName: 'Walmart (30M Miles Saved) & UPS ORION ($300M–$400M/yr)',
+        benchmarkUrl: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Cymbal Retail-Awarded-the-2023-INFORMS-Edelman-Award',
+        caseStudyName: 'Cymbal Retail (30M Miles Saved) & UPS ORION ($300M–$400M/yr)',
         caseStudyUrl: 'https://www.ups.com/us/en/Focus-Areas/innovation-driven/orion.page'
       },
       {
@@ -509,7 +509,7 @@ EVIDENCE_JS = r"""
         externalBenchmark: '16.9% return burden ($890B NRF) · -25% to -35% fresh shrink · 70%–90% Scope 3 visibility',
         benchmarkOrg: 'NRF Returns Report, GHG Protocol & EU CBAM',
         benchmarkUrl: 'https://nrf.com/media-center/press-releases/nrf-and-happy-returns-report-2024-retail-returns-total-890-billion',
-        caseStudyName: 'Carrefour × Google Cloud & Tyson Foods Cold-Chain',
+        caseStudyName: 'Carrefour × Google Cloud & Cymbal Fresh Proteins Cold-Chain',
         caseStudyUrl: 'https://cloud.google.com/customers/carrefourtaiwan'
       }
     ];
@@ -591,7 +591,7 @@ EVIDENCE_JS = r"""
         benchOrg: 'WEF Global Lighthouse Report — Zero-Defect Manufacturing',
         benchStat: 'Inline machine-vision inspection and automated electronic Batch Record (eBR) review cut factory defect & scrap rates by 35%–80%.',
         benchUrl: 'https://reports.weforum.org/docs/WEF_Global_Lighthouse_Network_2026.pdf',
-        caseTitle: 'Tyson Foods & Global Lighthouse Vision QA Deployments',
+        caseTitle: 'Cymbal Fresh Proteins & Global Lighthouse Vision QA Deployments',
         caseStat: 'Real-time computer vision and automated CAPA root-cause correlation catch seal/surface defects on the line and cut quality quarantine holds from weeks to hours.',
         caseUrl: 'https://cloud.google.com/transform/tyson-foods-turns-chicken-feed-and-filets-into-data-riches'
       },
@@ -622,16 +622,16 @@ EVIDENCE_JS = r"""
       'First & Mid-Mile': {
         benchOrg: 'INFORMS Franz Edelman Operations Research Benchmark',
         benchStat: '3D axle-legal load consolidation, yard dock sequencing, and continuous reefer telemetry cut linehaul miles by 8%–15% and eliminate detention fees.',
-        benchUrl: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Walmart-Awarded-the-2023-INFORMS-Edelman-Award',
-        caseTitle: 'Walmart (30M Miles Saved) & Tyson Cold-Chain Telemetry',
-        caseStat: 'Walmart eliminated 30M miles & 94M lbs CO₂ via OR-driven load and route planning; Tyson unified reefer cold-chain monitoring on Google Cloud.',
-        caseUrl: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Walmart-Awarded-the-2023-INFORMS-Edelman-Award'
+        benchUrl: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Cymbal Retail-Awarded-the-2023-INFORMS-Edelman-Award',
+        caseTitle: 'Cymbal Retail (30M Miles Saved) & Tyson Cold-Chain Telemetry',
+        caseStat: 'Cymbal Retail eliminated 30M miles & 94M lbs CO₂ via OR-driven load and route planning; Tyson unified reefer cold-chain monitoring on Google Cloud.',
+        caseUrl: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Cymbal Retail-Awarded-the-2023-INFORMS-Edelman-Award'
       },
       'Store Replenishment': {
         benchOrg: 'McKinsey Retail Replenishment & Urban Logistics Study',
         benchStat: 'Aisle-aligned pallet building and backroom capacity-aware replenishment cut store unloading labor by 20%–35% and prevent municipal curfew fines.',
         benchUrl: 'https://www.mckinsey.com/industries/industrials/our-insights/distribution-blog/ai-is-transforming-distribution-supply-chains-turning-margin-pressure-into-a-competitive-advantage',
-        caseTitle: 'Walmart Commerce Technologies & Carrefour Store Replenishment',
+        caseTitle: 'Cymbal Retail Commerce Technologies & Carrefour Store Replenishment',
         caseStat: 'AI store-ready palletization and automated replenishment synchronize DC dispatch waves with store backroom space and local delivery windows.',
         caseUrl: 'https://corporate.walmart.com/news/2024/03/14/walmart-commerce-technologies-launches-ai-powered-logistics-product'
       },
@@ -655,7 +655,7 @@ EVIDENCE_JS = r"""
         benchOrg: 'National Retail Federation (NRF) — $890B Retail Returns Report',
         benchStat: 'Retail returns total $890B (16.9% of sales) with $80B–$101B (~9%–13.7%) tied to return fraud/abuse; AI Keep-It & RMA triage lifts net recovery by 20%–40%.',
         benchUrl: 'https://nrf.com/media-center/press-releases/nrf-and-happy-returns-report-2024-retail-returns-total-890-billion',
-        caseTitle: 'Walmart & Omnichannel Retail Reverse Logistics Optimization',
+        caseTitle: 'Cymbal Retail & Omnichannel Retail Reverse Logistics Optimization',
         caseStat: 'Automated RMA serial verification, Keep-It margin math, and OS&D carrier claim evidence packets stop unprofitable reverse shipping.',
         caseUrl: 'https://corporate.walmart.com/news/2024/03/14/walmart-commerce-technologies-launches-ai-powered-logistics-product'
       },
@@ -663,7 +663,7 @@ EVIDENCE_JS = r"""
         benchOrg: 'McKinsey Fresh Retail & Perishable Shrink Benchmark',
         benchStat: 'Dynamic price-elasticity markdowns and FEFO inter-store redistribution reduce perishable expiry shrink and write-offs by 25%–35%.',
         benchUrl: 'https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/supply-chain-4-0-in-consumer-goods',
-        caseTitle: 'Carrefour & Tyson Foods × Google Cloud Perishable AI',
+        caseTitle: 'Carrefour & Cymbal Fresh Proteins × Google Cloud Perishable AI',
         caseStat: 'AI shelf-life monitoring and timely electronic shelf-label markdowns clear short-dated lots at higher gross margin while diverting surplus to food-recovery partners.',
         caseUrl: 'https://cloud.google.com/customers/carrefourtaiwan'
       },
@@ -671,9 +671,9 @@ EVIDENCE_JS = r"""
         benchOrg: 'GHG Protocol Circular Scope 3 & EU CBAM Compliance',
         benchStat: 'Closed-loop Returnable Transport Item (RTI) ledgers and milk-run backhauls cut 10%–20% annual pallet/tote shrinkage and lower Scope 3 packaging emissions.',
         benchUrl: 'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en',
-        caseTitle: 'Walmart Backhaul Consolidation & GS1 Wash-Cycle Governance',
+        caseTitle: 'Cymbal Retail Backhaul Consolidation & GS1 Wash-Cycle Governance',
         caseStat: 'Utilizes empty store-return trailers for pallet/tote reclamation while enforcing food/pharma sanitation cycle limits on every serialized asset.',
-        caseUrl: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Walmart-Awarded-the-2023-INFORMS-Edelman-Award'
+        caseUrl: 'https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Cymbal Retail-Awarded-the-2023-INFORMS-Edelman-Award'
       }
     };
 
@@ -805,7 +805,7 @@ EVIDENCE_JS = r"""
               <div>
                 <div style="font-weight:800; color:var(--text-primary); font-size:14px;">04–06 · Warehouse, Fleet &amp; $890B Returns</div>
                 <div style="font-size:12.5px; color:var(--text-secondary); margin-top:4px; line-height:1.5;">
-                  FM Logistic gained <strong>&gt;10%</strong> pick route efficiency ($0 capex); Walmart cut <strong>30M miles</strong>; UPS ORION saves <strong>$300M–$400M/yr</strong>; NRF cites <strong>$890B</strong> returns.
+                  FM Logistic gained <strong>&gt;10%</strong> pick route efficiency ($0 capex); Cymbal Retail cut <strong>30M miles</strong>; UPS ORION saves <strong>$300M–$400M/yr</strong>; NRF cites <strong>$890B</strong> returns.
                 </div>
               </div>
               <a href="https://cloud.google.com/blog/products/ai-machine-learning/how-fm-logistic-tackled-the-traveling-salesman-problem-at-warehouse-scale-with-alphaevolve" target="_blank" rel="noopener noreferrer" class="sc-ext-link-pill">FM Logistic × Google Cloud &#8599;</a>
@@ -1035,9 +1035,9 @@ EVIDENCE_JS = r"""
             <div>
               <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-secondary);">Warehouse, Fleet &amp; $890B Returns</div>
               <div style="font-family:var(--font-display); font-size:28px; font-weight:800; color:#10b981; margin:4px 0;">&gt;10% to 15%</div>
-              <div style="font-size:12.5px; color:var(--text-secondary); line-height:1.5;">FM Logistic pick efficiency (&gt;10%), Walmart (<strong>30M miles</strong>), UPS (<strong>$300M+</strong>).</div>
+              <div style="font-size:12.5px; color:var(--text-secondary); line-height:1.5;">FM Logistic pick efficiency (&gt;10%), Cymbal Retail (<strong>30M miles</strong>), UPS (<strong>$300M+</strong>).</div>
             </div>
-            <a href="https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Walmart-Awarded-the-2023-INFORMS-Edelman-Award" target="_blank" rel="noopener noreferrer" class="sc-ext-link-pill" style="font-size:11.5px;">INFORMS Edelman &#8599;</a>
+            <a href="https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Cymbal Retail-Awarded-the-2023-INFORMS-Edelman-Award" target="_blank" rel="noopener noreferrer" class="sc-ext-link-pill" style="font-size:11.5px;">INFORMS Edelman &#8599;</a>
           </div>
         </div>
 
@@ -1246,11 +1246,11 @@ def update_cost_presentation_deck(path: Path) -> None:
 
           <div style="background:rgba(15,23,42,0.85);padding:14px;border-radius:10px;border:1px solid var(--border-subtle);">
             <div class="kpi-label" style="color:#34d399;">Warehouse, Fleet &amp; $890B Returns</div>
-            <div style="font-weight:700;margin:5px 0;font-size:13.5px;">FM Logistic, Walmart, UPS &amp; NRF</div>
-            <p class="kpi-foot" style="margin-bottom:8px;">FM Logistic <strong>&gt;10%</strong> pick route gain ($0 capex); Walmart <strong>30M miles</strong> saved; UPS ORION <strong>$300M–$400M/yr</strong>; NRF <strong>$890B</strong> returns.</p>
+            <div style="font-weight:700;margin:5px 0;font-size:13.5px;">FM Logistic, Cymbal Retail, UPS &amp; NRF</div>
+            <p class="kpi-foot" style="margin-bottom:8px;">FM Logistic <strong>&gt;10%</strong> pick route gain ($0 capex); Cymbal Retail <strong>30M miles</strong> saved; UPS ORION <strong>$300M–$400M/yr</strong>; NRF <strong>$890B</strong> returns.</p>
             <a href="https://cloud.google.com/blog/products/ai-machine-learning/how-fm-logistic-tackled-the-traveling-salesman-problem-at-warehouse-scale-with-alphaevolve" target="_blank" rel="noopener noreferrer" style="color:#34d399;font-size:12px;font-weight:700;text-decoration:none;">FM Logistic &#8599;</a>
             &nbsp;·&nbsp;
-            <a href="https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Walmart-Awarded-the-2023-INFORMS-Edelman-Award" target="_blank" rel="noopener noreferrer" style="color:#34d399;font-size:12px;font-weight:700;text-decoration:none;">Walmart OR &#8599;</a>
+            <a href="https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Cymbal Retail-Awarded-the-2023-INFORMS-Edelman-Award" target="_blank" rel="noopener noreferrer" style="color:#34d399;font-size:12px;font-weight:700;text-decoration:none;">Cymbal Retail OR &#8599;</a>
           </div>
         </div>
       </div>"""

@@ -24,7 +24,7 @@ def test_query_planned_promo_campaigns():
     res = tools.query_planned_promo_campaigns(campaign_id="CMP-202611-BOGO")
     assert res["total"] > 0
     record = res["rows"][0]
-    assert record["retailer"] == "Walmart"
+    assert record["retailer"] == "Cymbal Retail"
     assert record["trade_spend_usd"] > 50000
 
 

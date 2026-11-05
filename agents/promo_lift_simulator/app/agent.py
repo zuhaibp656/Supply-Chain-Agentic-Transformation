@@ -210,7 +210,7 @@ class PromoLiftSimulatorAgent:
         lines = [
             "### 🎯 ElasticityIQ Demand Shaping & Promo Briefing",
             "",
-            "> **Executive Summary**: Evaluated Walmart Q4 *BOGO Hydration Blitz* using **BigQuery ML Double-ML** causal inference. Identified that an uncoordinated 25% discount would trigger **26,000 units of sister-SKU cannibalization** ($26,100 brand margin loss) and deplete DC Dallas stock below safety buffer (elevated stockout risk). Reshaped campaign to a **20% bundle paired with surplus Electrolyte 500ml stock**, protecting inventory and delivering **48,000 net incremental units** with **+$83,000 net profit (+22% trade spend ROI)**.",
+            "> **Executive Summary**: Evaluated Cymbal Retail Q4 *BOGO Hydration Blitz* using **BigQuery ML Double-ML** causal inference. Identified that an uncoordinated 25% discount would trigger **26,000 units of sister-SKU cannibalization** ($26,100 brand margin loss) and deplete DC Dallas stock below safety buffer (elevated stockout risk). Reshaped campaign to a **20% bundle paired with surplus Electrolyte 500ml stock**, protecting inventory and delivering **48,000 net incremental units** with **+$83,000 net profit (+22% trade spend ROI)**.",
             "",
             "#### 📊 Promotional Lift & Cannibalization Decomposition (Atomic Copy-Ready Table)",
             "",

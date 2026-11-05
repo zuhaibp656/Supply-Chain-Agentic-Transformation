@@ -50,14 +50,14 @@ WORKFLOW_SIMULATORS = {
     "sop": {
         "title": "1 · Monthly S&OP (Sales & Operations Planning — 5 Steps)",
         "subtitle": "How a company aligns Sales forecasts, Factory capacity, and Finance budgets every month so everyone works from one plan:",
-        "company_case": "🌍 Real-World Company Spotlight: How Unilever, PepsiCo & Mondelēz Run Monthly S&OP Across 190+ Countries",
-        "company_summary": "Every month, consumer giants like Unilever (Dove soap, Magnum ice cream) and PepsiCo align 100,000+ store checkout feeds with 300+ factories so a heatwave in Europe or a Super Bowl promotion in the US never leaves supermarket shelves empty.",
+        "company_case": "🌍 Real-World Company Spotlight: How Unilever, Cymbal Beverage Global & Mondelēz Run Monthly S&OP Across 190+ Countries",
+        "company_summary": "Every month, consumer giants like Unilever (Dove soap, Magnum ice cream) and Cymbal Beverage Global align 100,000+ store checkout feeds with 300+ factories so a heatwave in Europe or a Super Bowl promotion in the US never leaves supermarket shelves empty.",
         "steps": [
             {
                 "badge": "Step 1 · Data Gathering",
                 "title": "Pull Past Sales, POS (Point of Sale — store checkout scans) & Weather",
                 "plain": "Collect what retail stores actually sold at the cash register last month, plus upcoming price promotions and local weather forecasts.",
-                "real_world": "PepsiCo & Unilever pull daily Point of Sale (POS) scanner data from Walmart, Tesco, and Carrefour plus 14-day weather forecasts (because a +5°C warmer weekend spikes cold beverage & ice cream sales by +28%).",
+                "real_world": "Cymbal Beverage Global & Unilever pull daily Point of Sale (POS) scanner data from Cymbal Retail, Tesco, and Carrefour plus 14-day weather forecasts (because a +5°C warmer weekend spikes cold beverage & ice cream sales by +28%).",
                 "manual": "Analysts spend 5 days downloading CSV spreadsheets and fixing broken Excel formulas.",
                 "ai": "Demand Sensing Agent pulls live POS (Point of Sale) scans & weather automatically in seconds.",
             },
@@ -89,7 +89,7 @@ WORKFLOW_SIMULATORS = {
                 "badge": "Step 5 · Executive Sign-Off",
                 "title": "Lock the One-Number Plan into ERP (Enterprise Resource Planning)",
                 "plain": "Leadership approves the final plan and publishes firm production & buying targets into ERP (Enterprise Resource Planning — corporate software like SAP).",
-                "real_world": "Once the Chief Supply Chain Officer (CSCO) and Chief Financial Officer (CFO) sign off at Procter & Gamble, SAP ERP automatically releases raw material Purchase Orders (POs) and factory build schedules worldwide.",
+                "real_world": "Once the Chief Supply Chain Officer (CSCO) and Chief Financial Officer (CFO) sign off at Cymbal Personal Care, SAP ERP automatically releases raw material Purchase Orders (POs) and factory build schedules worldwide.",
                 "manual": "Manual re-keying into ERP takes days; the plan is already stale before execution starts.",
                 "ai": "1-click governed write-back locks the consensus plan across ERP (Head Office), MES (Factory), and WMS (Warehouse).",
             },
@@ -98,7 +98,7 @@ WORKFLOW_SIMULATORS = {
     "match3": {
         "title": "2 · Paying Suppliers: The 3-Way Invoice Match (4 Steps)",
         "subtitle": "How Procurement & Accounts Payable make sure the company never overpays a supplier bill by matching 3 documents (PO + GRN + Invoice):",
-        "company_case": "🌍 Real-World Company Spotlight: How Toyota, Target & Walmart Verify Millions of Supplier Invoices Without Overpaying",
+        "company_case": "🌍 Real-World Company Spotlight: How Toyota, Target & Cymbal Retail Verify Millions of Supplier Invoices Without Overpaying",
         "company_summary": "Large manufacturers and retailers receive 50,000+ supplier invoices every week. By strictly matching Document #1 (Purchase Order / PO), Document #2 (Warehouse Goods Receipt Note / GRN), and Document #3 (Vendor Invoice), they prevent tens of millions in billing errors and short-shipments.",
         "steps": [
             {
@@ -121,7 +121,7 @@ WORKFLOW_SIMULATORS = {
                 "badge": "Step 3 · Document #3 (Invoice)",
                 "title": "Compare Supplier Invoice Against PO (Purchase Order) & GRN (Goods Receipt Note)",
                 "plain": "The vendor billed $10,500 (1,000 units @ $10.50) — both unit price (+$0.50 higher) and quantity (+40 missing units) are wrong!",
-                "real_world": "In fast-moving consumer goods (Unilever / Kraft Heinz), resin or packaging vendors frequently bill outdated price tiers or full truckload quantities even when 2 pallets were left behind at the factory.",
+                "real_world": "In fast-moving consumer goods (Unilever / Cymbal Foods Global), resin or packaging vendors frequently bill outdated price tiers or full truckload quantities even when 2 pallets were left behind at the factory.",
                 "manual": "Invoice sits blocked in an exception queue for weeks while teams argue over email.",
                 "ai": "Pinpoints the exact $500 price variance + $400 short-shipment discrepancy ($900 total overcharge).",
             },
@@ -129,7 +129,7 @@ WORKFLOW_SIMULATORS = {
                 "badge": "Step 4 · Auto-Debit & Release",
                 "title": "Issue Automated Debit Memo & Pay the Exact Verified Amount ($9,600)",
                 "plain": "Block the $900 overcharge, send an automated debit memo with dock scan proof, and pay the valid $9,600 (960 units @ $10.00) on time.",
-                "real_world": "Walmart and Amazon automatically deduct short-shipped quantities via an electronic Debit Memo with attached GRN (Goods Receipt Note) barcode logs and release the exact $9,600 payment on the agreed DPO (Days Payable Outstanding) date.",
+                "real_world": "Cymbal Retail and Amazon automatically deduct short-shipped quantities via an electronic Debit Memo with attached GRN (Goods Receipt Note) barcode logs and release the exact $9,600 payment on the agreed DPO (Days Payable Outstanding) date.",
                 "manual": "Late payment causes supplier credit hold, or rubber-stamping causes a $900 cash loss.",
                 "ai": "Issues a signed debit memo and releases the exact verified payment amount on time.",
             },
@@ -145,7 +145,7 @@ WORKFLOW_SIMULATORS = {
                 "badge": "Step 1 · Yard & Dock Arrival",
                 "title": "Assign Incoming Truck to the Best Unloading Dock Door",
                 "plain": "A supplier truck arrives at the security gate and needs an open dock door near the rack zone where its goods belong.",
-                "real_world": "At Walmart and DHL mega-hubs with 150+ dock doors, live GPS telematics assigns an incoming refrigerated dairy truck to Cold-Dock Door #14 zero minutes after arrival so the driver never waits in line.",
+                "real_world": "At Cymbal Retail and DHL mega-hubs with 150+ dock doors, live GPS telematics assigns an incoming refrigerated dairy truck to Cold-Dock Door #14 zero minutes after arrival so the driver never waits in line.",
                 "manual": "Trucks wait 3 hours in yard queues, triggering $150/hr carrier detention penalties.",
                 "ai": "Yard & Dock Sequencer assigns the optimal door dynamically from live GPS arrival time.",
             },
@@ -186,14 +186,14 @@ WORKFLOW_SIMULATORS = {
     "otif_flow": {
         "title": "4 · Customer Order to On-Time In-Full (OTIF) Delivery (5 Steps)",
         "subtitle": "How a customer order is promised, routed, tracked, and delivered On-Time In-Full (OTIF) without retailer penalty fines:",
-        "company_case": "🌍 Real-World Company Spotlight: How P&G, Kraft Heinz & Unilever Hit Walmart's Strict 98% OTIF (On-Time In-Full) Mandate",
-        "company_summary": "Big retailers like Walmart, Target, and Kroger fine suppliers 3% of the order value if a truck arrives outside its 2-hour appointment window or is missing even a few cases. Here is how top companies achieve 98%+ OTIF (On-Time In-Full):",
+        "company_case": "🌍 Real-World Company Spotlight: How P&G, Cymbal Foods Global & Unilever Hit Cymbal Retail's Strict 98% OTIF (On-Time In-Full) Mandate",
+        "company_summary": "Big retailers like Cymbal Retail, Target, and Apex Hypermarket fine suppliers 3% of the order value if a truck arrives outside its 2-hour appointment window or is missing even a few cases. Here is how top companies achieve 98%+ OTIF (On-Time In-Full):",
         "steps": [
             {
                 "badge": "Step 1 · Order Promising (ATP)",
                 "title": "Promise an Accurate Delivery Date Using ATP (Available-to-Promise)",
                 "plain": "Check real-time ATP (Available-to-Promise — uncommitted sellable stock) across warehouses and reserve stock for high-priority orders.",
-                "real_world": "When Walmart places a 5,000-case order with Procter & Gamble (Tide detergent), P&G's ATP (Available-to-Promise) rules protect strategic retail buffer so a small spot order doesn't accidentally drain Walmart's stock.",
+                "real_world": "When Cymbal Retail places a 5,000-case order with Cymbal Personal Care (Tide detergent), P&G's ATP (Available-to-Promise) rules protect strategic retail buffer so a small spot order doesn't accidentally drain Cymbal Retail's stock.",
                 "manual": "First-come-first-served rules let low-margin orders drain VIP customer stock.",
                 "ai": "ATP Order Promising Agent allocates stock from the best warehouse node in under 50 milliseconds.",
             },
@@ -217,7 +217,7 @@ WORKFLOW_SIMULATORS = {
                 "badge": "Step 4 · Delivery & ePOD",
                 "title": "Arrive Inside Appointment Window & Capture ePOD (Electronic Proof of Delivery)",
                 "plain": "Deliver 100% of ordered cases on time — achieving OTIF (On-Time In-Full) — and capture timestamped GPS + ePOD (Electronic Proof of Delivery).",
-                "real_world": "When a FedEx, UPS, or JB Hunt driver backs into a Kroger dock at 08:14 AM for an 08:00–10:00 AM window, geofence GPS + a tablet signature creates an tamper-proof ePOD (Electronic Proof of Delivery) and BOL (Bill of Lading) archive.",
+                "real_world": "When a FedEx, UPS, or JB Hunt driver backs into a Apex Hypermarket dock at 08:14 AM for an 08:00–10:00 AM window, geofence GPS + a tablet signature creates an tamper-proof ePOD (Electronic Proof of Delivery) and BOL (Bill of Lading) archive.",
                 "manual": "Paper delivery slips get lost in truck cabs, leaving no proof when retailers claim late arrival.",
                 "ai": "Automatically archives signed ePOD (Electronic Proof of Delivery), BOL (Bill of Lading), and GPS timestamps.",
             },
@@ -225,7 +225,7 @@ WORKFLOW_SIMULATORS = {
                 "badge": "Step 5 · Freight Audit & Claims",
                 "title": "Audit Carrier Freight Bill & Dispute Unfair OTIF (On-Time In-Full) Fines",
                 "plain": "Verify carrier freight bills against contract rate tables and automatically dispute invalid retailer OTIF (On-Time In-Full) chargeback fines.",
-                "real_world": "When a retailer's automated system mistakenly deducts a $45,000 OTIF (On-Time In-Full) penalty even though the truck arrived at the gate on time, Kraft Heinz / Unilever submit the GPS + ASN (Advance Ship Notice) + ePOD dossier to recover 100% of the fine.",
+                "real_world": "When a retailer's automated system mistakenly deducts a $45,000 OTIF (On-Time In-Full) penalty even though the truck arrived at the gate on time, Cymbal Foods Global / Unilever submit the GPS + ASN (Advance Ship Notice) + ePOD dossier to recover 100% of the fine.",
                 "manual": "Companies lose 2%–3% of revenue to unchallenged retail chargebacks and carrier billing errors.",
                 "ai": "Freight Bill Audit & OTIF Penalty Shield recover overcharges and invalid fines automatically.",
             },
@@ -246,7 +246,7 @@ GOOGLE_PILLAR_META = [
 
 PILLAR_REAL_WORLD_EXAMPLES = {
     "demand_sop": (
-        "<strong>Unilever, PepsiCo &amp; Zara:</strong> Unilever and PepsiCo ingest daily <strong>POS (Point of Sale — store checkout barcode scans)</strong> from Walmart and Tesco plus local weather forecasts to adjust production before weekend heatwaves hit, while Zara uses daily store checkout signals to update garment forecasts twice a week and avoid the Bullwhip Effect."
+        "<strong>Unilever, Cymbal Beverage Global &amp; Zara:</strong> Unilever and Cymbal Beverage Global ingest daily <strong>POS (Point of Sale — store checkout barcode scans)</strong> from Cymbal Retail and Tesco plus local weather forecasts to adjust production before weekend heatwaves hit, while Zara uses daily store checkout signals to update garment forecasts twice a week and avoid the Bullwhip Effect."
     ),
     "sourcing_procurement": (
         "<strong>Apple, Toyota &amp; Nestl\u00e9:</strong> Apple and Toyota map every <strong>BOM (Bill of Materials — product recipe)</strong> across Tier-1 (Foxconn/Denso) and Tier-2/3 raw wafer and lithium suppliers, benchmark supplier <strong>RFQ (Request for Quotation)</strong> bids against live commodity indices, and run automated <strong>3-Way Match</strong> (matching the <strong>PO — Purchase Order</strong>, <strong>GRN — Goods Receipt Note</strong>, and Invoice) before releasing cash."
@@ -255,7 +255,7 @@ PILLAR_REAL_WORLD_EXAMPLES = {
         "<strong>Tesla, Pfizer &amp; Amul Dairy:</strong> Tesla and Toyota track real-time factory machine <strong>OEE (Overall Equipment Effectiveness — uptime, speed &amp; quality %)</strong> via vibration sensors to stop unplanned line breakdowns; Pfizer audits digital <strong>eBHR (Electronic Batch History Records)</strong> and <strong>COA (Certificates of Analysis)</strong> for rapid vaccine release; and Amul optimizes <strong>CIP (Clean-in-Place)</strong> pipe washes between dairy batches."
     ),
     "logistics_fleet": (
-        "<strong>Walmart, Maersk, Sysco &amp; FedEx:</strong> Sysco and Coca-Cola pack multi-stop delivery trailers in <strong>3D LIFO (Last-In, First-Out)</strong> stop sequence so Stop #1 sits right at the rear doors; Maersk and Nike orchestrate ocean port drayage to avoid daily container <strong>Demurrage</strong> fines; and Walmart tracks truck <strong>ELD (Electronic Logging Device)</strong> driving hours and <strong>ePOD (Electronic Proof of Delivery)</strong> to protect 98% <strong>OTIF (On-Time In-Full)</strong> delivery."
+        "<strong>Cymbal Retail, Maersk, Sysco &amp; FedEx:</strong> Sysco and Coca-Cola pack multi-stop delivery trailers in <strong>3D LIFO (Last-In, First-Out)</strong> stop sequence so Stop #1 sits right at the rear doors; Maersk and Nike orchestrate ocean port drayage to avoid daily container <strong>Demurrage</strong> fines; and Cymbal Retail tracks truck <strong>ELD (Electronic Logging Device)</strong> driving hours and <strong>ePOD (Electronic Proof of Delivery)</strong> to protect 98% <strong>OTIF (On-Time In-Full)</strong> delivery."
     ),
     "inventory_warehouse": (
         "<strong>Amazon, Target &amp; McKesson Pharma:</strong> Amazon and DHL dynamically re-slot fast-selling <strong>SKUs (Stock Keeping Units)</strong> into waist-high Golden-Zone bins inside their <strong>WMS (Warehouse Management System)</strong>; McKesson and Amul enforce strict <strong>FEFO (First-Expired, First-Out)</strong> wave picking so short-dated medicine and milk never expire in the warehouse; and Procter &amp; Gamble uses <strong>MEIO (Multi-Echelon Inventory Optimization)</strong> to cut <strong>DIO (Days Inventory Outstanding)</strong>."
@@ -2008,9 +2008,9 @@ def build_google_linear_academy() -> None:
               </tr>
               <tr>
                 <td style="font-weight:700;">📣 2. Sales &amp; Marketing</td>
-                <td>Runs price promotions, signs retail deals (Walmart, Target, Amazon), and promises delivery dates.</td>
+                <td>Runs price promotions, signs retail deals (Cymbal Retail, Target, Amazon), and promises delivery dates.</td>
                 <td>If Sales runs a 20%-off promotion without telling Supply Chain, stores run out of stock! Supply Chain meets with Sales every month in <strong>S&amp;OP (Sales &amp; Operations Planning)</strong> to match factory output with sales deals.</td>
-                <td style="background:#F8FAFD;"><strong>🥔 PepsiCo (Frito-Lay):</strong> Before Super Bowl Sunday, Marketing plans a nationwide Doritos display at Walmart. Supply Chain ramps up potato &amp; corn frying lines 4 weeks early so 5,000 stores don’t run empty on game day.</td>
+                <td style="background:#F8FAFD;"><strong>🥔 Cymbal Beverage Global (Frito-Lay):</strong> Before Super Bowl Sunday, Marketing plans a nationwide Doritos display at Cymbal Retail. Supply Chain ramps up potato &amp; corn frying lines 4 weeks early so 5,000 stores don’t run empty on game day.</td>
               </tr>
               <tr style="background:#E8F0FE;">
                 <td style="font-weight:800; color:#1A73E8;">⚙️ 3. THE SUPPLY CHAIN<br/><span style="font-size:13px; color:#174EA6;">Led by CSCO (Chief Supply Chain Officer)</span></td>
@@ -2050,7 +2050,7 @@ def build_google_linear_academy() -> None:
                 <td style="font-weight:800; color:#1E8E3E;">🎯 1. High Service<br/>(Never Run Out)</td>
                 <td><strong>Sales &amp; Retail Customers</strong><br/>Demand 98%+ <strong>OTIF (On-Time In-Full — delivering the exact quantity ordered inside the exact time window)</strong>.</td>
                 <td>To never run out, you pile up mountains of extra backup stock in every warehouse — tying up tens of millions of dollars in cash!</td>
-                <td style="background:#F8FAFD;"><strong>🛒 Walmart &amp; Target</strong> fine suppliers like Kraft Heinz or Colgate <strong>3% of the invoice value</strong> whenever a truck arrives late or short on cases (an <strong>OTIF penalty</strong>).</td>
+                <td style="background:#F8FAFD;"><strong>🛒 Cymbal Retail &amp; Target</strong> fine suppliers like Cymbal Foods Global or Colgate <strong>3% of the invoice value</strong> whenever a truck arrives late or short on cases (an <strong>OTIF penalty</strong>).</td>
                 <td><strong>Demand Sensing &amp; ATP (Available-to-Promise) Agents</strong> predict exact local demand and protect VIP stock.</td>
               </tr>
               <tr>
@@ -2207,7 +2207,7 @@ def build_google_linear_academy() -> None:
                 <td style="font-weight:700; color:#1A73E8;">📡 2. Information Signal Flow</td>
                 <td><strong>Upstream (&larr;)</strong><br/>Customer &rarr; Supplier</td>
                 <td>Store checkout barcode scans (<strong>POS — Point of Sale</strong>), customer orders, and forecasts moving backward to tell factories what to make next.</td>
-                <td style="background:#F8FAFD;"><strong>🛒 Walmart Retail Link:</strong> Every time a shopper scans a bottle of Tide detergent at checkout, Walmart’s computer sends that live <strong>POS (Point of Sale)</strong> signal straight back to Procter &amp; Gamble’s factory.</td>
+                <td style="background:#F8FAFD;"><strong>🛒 Cymbal Retail Retail Link:</strong> Every time a shopper scans a bottle of Tide detergent at checkout, Cymbal Retail’s computer sends that live <strong>POS (Point of Sale)</strong> signal straight back to Procter &amp; Gamble’s factory.</td>
               </tr>
               <tr>
                 <td style="font-weight:700; color:#E8710A;">💰 3. Money &amp; Cash Flow</td>
@@ -2266,7 +2266,7 @@ def build_google_linear_academy() -> None:
                 <td><strong>Transportation Management System</strong></td>
                 <td>🚚 Outside on the Road, Ocean &amp; Air</td>
                 <td>Books trucking and ocean carriers, plans multi-stop delivery routes, tracks live truck GPS, and audits freight bills. <em>(Oracle OTM, Blue Yonder TMS)</em></td>
-                <td style="background:#F8FAFD;"><strong>🥤 PepsiCo &amp; 🛒 Walmart</strong> use <strong>TMS</strong> platforms to route 10,000+ highway trucks daily, consolidate loads, and track live GPS arrival times.</td>
+                <td style="background:#F8FAFD;"><strong>🥤 Cymbal Beverage Global &amp; 🛒 Cymbal Retail</strong> use <strong>TMS</strong> platforms to route 10,000+ highway trucks daily, consolidate loads, and track live GPS arrival times.</td>
               </tr>
             </tbody>
           </table>
@@ -2469,7 +2469,7 @@ def build_google_linear_academy() -> None:
           <button type="button" class="g-btn" onclick="showSectorCase(1, this)">2 · 📱 Smartphones &amp; Tech (Apple, Samsung)</button>
           <button type="button" class="g-btn" onclick="showSectorCase(2, this)">3 · 🚗 Automotive &amp; EVs (Toyota, Tesla)</button>
           <button type="button" class="g-btn" onclick="showSectorCase(3, this)">4 · 💊 Pharma &amp; Vaccines (Pfizer, Novo Nordisk)</button>
-          <button type="button" class="g-btn" onclick="showSectorCase(4, this)">5 · 📦 Retail &amp; E-Commerce (Walmart, Amazon)</button>
+          <button type="button" class="g-btn" onclick="showSectorCase(4, this)">5 · 📦 Retail &amp; E-Commerce (Cymbal Retail, Amazon)</button>
           <button type="button" class="g-btn" onclick="showSectorCase(5, this)">6 · 👗 Fast Fashion &amp; Shoes (Zara, Nike)</button>
           <button type="button" class="g-btn" onclick="showSectorCase(6, this)">7 · 🥛 Fresh Dairy &amp; Food (Amul, McDonald's)</button>
           <button type="button" class="g-btn" onclick="showSectorCase(7, this)">8 · ⚙️ Industrial &amp; Heavy (Caterpillar, BASF)</button>
@@ -2663,7 +2663,7 @@ def build_google_linear_academy() -> None:
             <rect x="620" y="20" width="280" height="100" rx="14" fill="#E8F0FE" stroke="#1A73E8" stroke-width="2"/>
             <text x="760" y="50" text-anchor="middle" fill="#1A73E8" font-size="15" font-weight="800">3. LIFO (Last-In, First-Out)</text>
             <text x="760" y="78" text-anchor="middle" fill="#202124" font-size="13.5" font-weight="600">🚚 Load Delivery Stop #1 LAST</text>
-            <text x="760" y="102" text-anchor="middle" fill="#5F6368" font-size="12">Sysco Food Trucks, UPS, PepsiCo</text>
+            <text x="760" y="102" text-anchor="middle" fill="#5F6368" font-size="12">Sysco Food Trucks, UPS, Cymbal Beverage Global</text>
           </svg>
           <div class="g-table-wrap">
             <table class="g-table">
@@ -2671,7 +2671,7 @@ def build_google_linear_academy() -> None:
               <tbody>
                 <tr><td><strong style="color:#D93025;">FEFO</strong></td><td><strong>First-Expired, First-Out</strong></td><td>Always ship the batch whose expiration date is closest so nothing spoils in the warehouse.</td><td style="background:#F8FAFD;"><strong>🥛 Amul Dairy &amp; 💊 Pfizer:</strong> A yogurt pallet expiring May 10 is always shipped before a pallet expiring May 18, even if the May 10 pallet arrived later.</td><td><code>short_dated_redistributor</code> &amp; <code>dynamic_markdown_agent</code></td></tr>
                 <tr><td><strong style="color:#1E8E3E;">FIFO</strong></td><td><strong>First-In, First-Out</strong></td><td>Ship the pallet that arrived earliest so boxes don’t gather dust or packaging wear in the back of the rack.</td><td style="background:#F8FAFD;"><strong>🛋️ IKEA &amp; 📱 Samsung:</strong> TVs and bookshelves don’t expire like milk, so warehouses ship the oldest arrived batch first so boxes stay fresh.</td><td><code>warehouse_slotting_agent</code></td></tr>
-                <tr><td><strong style="color:#1A73E8;">LIFO</strong></td><td><strong>Last-In, First-Out</strong></td><td>When loading a multi-stop delivery truck, put Stop #3 in the nose first and Stop #1 at the rear doors last.</td><td style="background:#F8FAFD;"><strong>🚛 Sysco &amp; PepsiCo Route Trucks:</strong> If a truck delivers to 4 restaurants at 6 AM, 7 AM, 8 AM, and 9 AM, the 6 AM restaurant’s pallets are loaded <strong>LAST (LIFO)</strong> right against the rear doors.</td><td><code>load_consolidation_agent</code> (CubeMaster 3D)</td></tr>
+                <tr><td><strong style="color:#1A73E8;">LIFO</strong></td><td><strong>Last-In, First-Out</strong></td><td>When loading a multi-stop delivery truck, put Stop #3 in the nose first and Stop #1 at the rear doors last.</td><td style="background:#F8FAFD;"><strong>🚛 Sysco &amp; Cymbal Beverage Global Route Trucks:</strong> If a truck delivers to 4 restaurants at 6 AM, 7 AM, 8 AM, and 9 AM, the 6 AM restaurant’s pallets are loaded <strong>LAST (LIFO)</strong> right against the rear doors.</td><td><code>load_consolidation_agent</code> (CubeMaster 3D)</td></tr>
               </tbody>
             </table>
           </div>
@@ -2722,7 +2722,7 @@ def build_google_linear_academy() -> None:
             <table class="g-table">
               <thead><tr><th style="width:130px;">Term</th><th style="width:220px;">Full Name Spelled Out</th><th>Why Customers Care</th><th style="width:350px;">🌍 Real-World Company Examples</th></tr></thead>
               <tbody>
-                <tr><td><strong>Scope 1 &amp; 2</strong></td><td><strong>Direct Fuel &amp; Purchased Electricity</strong></td><td>Emissions from burning fuel in your own buildings/trucks (Scope 1) and buying utility power (Scope 2).</td><td style="background:#F8FAFD;"><strong>📦 Amazon &amp; 🥤 PepsiCo</strong> deploy Rivian electric delivery vans and rooftop warehouse solar panels to cut Scope 1 and Scope 2 emissions.</td></tr>
+                <tr><td><strong>Scope 1 &amp; 2</strong></td><td><strong>Direct Fuel &amp; Purchased Electricity</strong></td><td>Emissions from burning fuel in your own buildings/trucks (Scope 1) and buying utility power (Scope 2).</td><td style="background:#F8FAFD;"><strong>📦 Amazon &amp; 🥤 Cymbal Beverage Global</strong> deploy Rivian electric delivery vans and rooftop warehouse solar panels to cut Scope 1 and Scope 2 emissions.</td></tr>
                 <tr><td><strong style="color:#1E8E3E;">Scope 3</strong></td><td><strong>Value Chain Emissions (Suppliers + Freight)</strong></td><td>Makes up 80–90% of a product company’s total carbon footprint! Tracked by our <code>carbon_scope3_ledger</code> agent.</td><td style="background:#F8FAFD;"><strong>🧴 Unilever &amp; 📱 Apple:</strong> Over 85% of an iPhone’s or Dove soap bar’s carbon comes from upstream raw material suppliers and cargo flights (<strong>Scope 3</strong>).</td></tr>
                 <tr><td><strong>CBAM &amp; EUDR</strong></td><td><strong>Carbon Border Adjustment Mechanism &amp; EU Deforestation Regulation</strong></td><td>European laws that tax carbon-heavy steel/aluminum imports (<strong>CBAM</strong>) and block coffee, cocoa, palm oil, or paper from deforested land (<strong>EUDR</strong>).</td><td style="background:#F8FAFD;"><strong>🍫 Nestlé, Ferrero (Nutella) &amp; ⚙️ Tata Steel:</strong> Must provide satellite GPS farm polygons for every cocoa/coffee shipment entering Europe (<strong>EUDR</strong>) and verified steel furnace carbon certificates (<strong>CBAM</strong>).</td></tr>
               </tbody>

@@ -2253,9 +2253,9 @@ NEW_EVIDENCE_HUB_BLOCK = """    let currentEvidenceTab = 'cases'; // 'cases' | '
               <div>
                 <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-secondary);">Warehouse &amp; Fleet</div>
                 <div style="font-family:var(--font-display); font-size:28px; font-weight:800; color:#10b981; margin:6px 0;">&gt;10% to 15%</div>
-                <div style="font-size:13px; color:var(--text-secondary); line-height:1.5;">Pick efficiency (FM Logistic), Walmart (30M mi), UPS ($300M+).</div>
+                <div style="font-size:13px; color:var(--text-secondary); line-height:1.5;">Pick efficiency (FM Logistic), Cymbal Retail (30M mi), UPS ($300M+).</div>
               </div>
-              <a href="https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Walmart-Awarded-the-2023-INFORMS-Edelman-Award" target="_blank" rel="noopener noreferrer" class="sc-ext-link-pill" style="font-size:11.5px; margin-top:10px;">INFORMS Edelman &#8599;</a>
+              <a href="https://www.informs.org/News-Room/INFORMS-Releases/Awards-Releases/Operations-Research-Enhances-Retail-Truck-Routing-and-Load-Planning-Cymbal Retail-Awarded-the-2023-INFORMS-Edelman-Award" target="_blank" rel="noopener noreferrer" class="sc-ext-link-pill" style="font-size:11.5px; margin-top:10px;">INFORMS Edelman &#8599;</a>
             </div>
           </div>
         </div>

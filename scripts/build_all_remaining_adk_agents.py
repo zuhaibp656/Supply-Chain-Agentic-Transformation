@@ -1163,7 +1163,7 @@ NEW_AGENTS_SPECS: List[Dict[str, Any]] = [
         "tags": ["otif-shield", "mabd-compliance", "chargeback-dispute", "edi-856", "retail-deductions"],
         "systems": [
             {"id": "mabd_otif_risk_predictor", "name": "Vertex AI 72-Hour Customer MABD & OTIF Breach Risk Scorer", "protocol": "BigQuery ML / Spanner", "tables": ["open_retail_customer_orders_sla", "predicted_otif_breach_alerts"]},
-            {"id": "retail_link_chargeback_portal", "name": "Walmart Retail Link / Target Partners Online Deduction Feed", "protocol": "EDI 812 / Portal API", "tables": ["retailer_otif_chargeback_deductions"]},
+            {"id": "retail_link_chargeback_portal", "name": "Cymbal Retail Retail Link / Target Partners Online Deduction Feed", "protocol": "EDI 812 / Portal API", "tables": ["retailer_otif_chargeback_deductions"]},
             {"id": "geofence_edi856_dossier_builder", "name": "Google Maps Geofence + EDI 856 ASN + Signed ePOD Evidence Compiler", "protocol": "Document AI / GIS", "tables": ["geofence_edi856_dispute_dossiers"]},
             {"id": "sap_sd_order_rescue_broker", "name": "SAP S/4HANA SD Priority Wave & Alternate Hub Split-Ship Broker", "protocol": "OData v4", "tables": ["predicted_otif_breach_alerts"]},
         ],
