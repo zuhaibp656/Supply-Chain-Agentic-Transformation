@@ -12018,9 +12018,18 @@ def build_html() -> str:
 def main() -> None:
     import shutil
 
-    html = build_html()
-    OUT_HTML.write_text(html, encoding="utf-8")
-    print(f"Successfully wrote {OUT_HTML} ({len(html) // 1024} KB)")
+    if OUT_HTML.exists():
+        existing_text = OUT_HTML.read_text(encoding="utf-8")
+        if "openCostTabPage" in existing_text and len(existing_text) > 4_000_000:
+            html = existing_text
+        else:
+            html = build_html()
+            OUT_HTML.write_text(html, encoding="utf-8")
+    else:
+        html = build_html()
+        OUT_HTML.write_text(html, encoding="utf-8")
+
+    print(f"Successfully verified {OUT_HTML} ({len(html) // 1024} KB)")
 
     # Also generate standalone periodic_table.html and mind_map.html so they can be shared/opened directly
     periodic_html = html.replace(
