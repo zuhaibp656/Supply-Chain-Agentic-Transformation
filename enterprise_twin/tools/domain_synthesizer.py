@@ -936,8 +936,8 @@ def synthesize_domain_twin(
         pillar_overrides[d_id] = PillarOverrideSpec(
             dept_id=d_id,
             custom_name=d_obj["name"],
-            custom_tagline=f"{disp} · {d_obj.get('tagline', d_obj['name'])}",
-            custom_subtitle=f"Tailored for {disp}: {d_obj.get('subtitle', '')}",
+            custom_tagline=d_obj.get("tagline", d_obj["name"]),
+            custom_subtitle=d_obj.get("subtitle", ""),
         )
         for sp in d_obj.get("subPillars", []):
             sp_id = sp["id"]
@@ -955,21 +955,24 @@ def synthesize_domain_twin(
                 dil0 = (p_base.get("dayInLife") or [{}])[0]
 
                 custom_title = _tailor_persona_title(p_base.get("name", pid), arch_key, sp_custom)
+                base_story = p_base.get("story") or p_base.get("summary") or f"Owns day-to-day {sp_custom.lower()} decisions and cross-functional execution."
                 persona_overrides[pid] = PersonaOverrideSpec(
                     persona_id=pid,
                     dept_id=d_id,
                     sub_pillar_id=sp_id,
                     canonical_name=p_base.get("name", pid),
                     title=custom_title,
-                    role=f"{sp_custom} · {disp}",
-                    summary=f"Leads {sp_custom.lower()} across {disp} ({arch['sites_tpl'].split('·')[0].strip()} and network nodes). {p_base.get('summary', '')}",
+                    role=sp_custom,
+                    summary=base_story,
                     manual_toil=dil0.get("before", "Manual spreadsheet reconciliation across siloed plant, depot, and ERP extracts."),
                     agentic_impact=dil0.get("after", "Autonomous Gemini AI sensing, optimization, and governed SAP/ERP execution."),
                     grounding_source=f"Aligned to {clean_co} ({arch['sector'].split('·')[0].strip()}) org hierarchy",
                 )
 
                 is_rel = aid not in hide_set
-                canon_ag_name = agents_cat.get(aid, {}).get("name", aid)
+                ag_base = agents_cat.get(aid, {})
+                canon_ag_name = ag_base.get("name", aid)
+                ag_story = ag_base.get("story") or ag_base.get("shortDesc") or ""
                 agent_relevance[aid] = AgentRelevanceSpec(
                     agent_id=aid,
                     dept_id=d_id,
@@ -977,11 +980,7 @@ def synthesize_domain_twin(
                     canonical_name=canon_ag_name,
                     custom_agent_name=_tailor_agent_name(aid, canon_ag_name, arch_key) if is_rel else "",
                     is_relevant=is_rel,
-                    division_context=(
-                        f"Operates inside {disp} under '{sp_custom}', connecting {arch['erp'].split('·')[0].strip()} with deterministic optimization."
-                        if is_rel
-                        else ""
-                    ),
+                    division_context=ag_story if is_rel else "",
                     hidden_reason="" if is_rel else arch.get("hide_reason", "Filtered for division operational fit."),
                 )
 

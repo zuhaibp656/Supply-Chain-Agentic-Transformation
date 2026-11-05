@@ -1174,7 +1174,7 @@
       "name": "Demand Planner / Forecaster",
       "role": "Demand Forecasting · Planning & Strategy",
       "mandate": "Leads demand forecasting across Planning & Strategy: synthesizes pos velocity, weather anomalies, and macro trends.",
-      "summary": "Day-to-day owner of Demand Forecasting who synthesizes Point-of-Sale (POS) velocity, weather anomalies, and macro trends.",
+      "summary": "Synthesizes Point-of-Sale (Point-of-Sale (POS)) velocity, weather anomalies, and macro trends.",
       "focusAreas": [
         "Demand Forecasting",
         "Demand Sensing Agent",
@@ -1238,7 +1238,7 @@
         }
       ],
       "impactDimension": "Forecast Accuracy",
-      "story": "Day-to-day owner of Demand Forecasting who synthesizes Point-of-Sale (POS) velocity, weather anomalies, and macro trends."
+      "story": "Synthesizes Point-of-Sale (Point-of-Sale (POS)) velocity, weather anomalies, and macro trends."
     },
     "commercial_planning_lead": {
       "id": "commercial_planning_lead",
@@ -1250,7 +1250,7 @@
       "name": "Commercial Planning Lead",
       "role": "Demand Forecasting · Planning & Strategy",
       "mandate": "Leads demand forecasting across Planning & Strategy: identifies unmodeled drivers across ecommerce and retail channels.",
-      "summary": "Leads day-to-day Demand Forecasting decisions across the network—identifies unmodeled drivers across ecommerce and retail channels.",
+      "summary": "Identifies unmodeled drivers across e-commerce and retail channels.",
       "focusAreas": [
         "Demand Forecasting",
         "Forecast Reconciliation",
@@ -1314,7 +1314,7 @@
         }
       ],
       "impactDimension": "Forecast Alignment",
-      "story": "Leads day-to-day Demand Forecasting decisions across the network—identifies unmodeled drivers across ecommerce and retail channels."
+      "story": "Identifies unmodeled drivers across e-commerce and retail channels."
     },
     "brand_innovation_mgr": {
       "id": "brand_innovation_mgr",
@@ -1326,7 +1326,7 @@
       "name": "Brand & Innovation Manager",
       "role": "Demand Forecasting · Planning & Strategy",
       "mandate": "Leads demand forecasting across Planning & Strategy: matches launch packaging and attributes to historical lookalikes.",
-      "summary": "Leads day-to-day Demand Forecasting decisions across the network—matches launch packaging and attributes to historical lookalikes.",
+      "summary": "Matches launch packaging and attributes to historical lookalikes.",
       "focusAreas": [
         "Demand Forecasting",
         "NPI Demand Profiler",
@@ -1390,7 +1390,7 @@
         }
       ],
       "impactDimension": "Launch Accuracy",
-      "story": "Leads day-to-day Demand Forecasting decisions across the network—matches launch packaging and attributes to historical lookalikes."
+      "story": "Matches launch packaging and attributes to historical lookalikes."
     },
     "trade_marketing_manager": {
       "id": "trade_marketing_manager",
@@ -1402,7 +1402,7 @@
       "name": "Trade Marketing Manager",
       "role": "Trade Promotion · Planning & Strategy",
       "mandate": "Leads trade promotion across Planning & Strategy: simulates price elasticity, shelf lift, and incremental spend return.",
-      "summary": "Leads day-to-day Trade Promotion decisions across the network—simulates price elasticity, shelf lift, and incremental spend return.",
+      "summary": "Simulates price elasticity, shelf lift, and incremental spend return.",
       "focusAreas": [
         "Trade Promotion",
         "Promo ROI Simulator",
@@ -1466,7 +1466,7 @@
         }
       ],
       "impactDimension": "Revenue & Margin",
-      "story": "Leads day-to-day Trade Promotion decisions across the network—simulates price elasticity, shelf lift, and incremental spend return."
+      "story": "Simulates price elasticity, shelf lift, and incremental spend return."
     },
     "key_account_manager": {
       "id": "key_account_manager",
@@ -1478,7 +1478,7 @@
       "name": "Key Account Manager (KAM)",
       "role": "Trade Promotion · Planning & Strategy",
       "mandate": "Leads trade promotion across Planning & Strategy: creates customized sell-in story decks and joint promotional calendars.",
-      "summary": "Leads day-to-day Trade Promotion decisions across the network—creates customized sell-in story decks and joint promotional calendars.",
+      "summary": "Creates customized sell-in story decks and joint promotional calendars.",
       "focusAreas": [
         "Trade Promotion",
         "JBP Negotiation Agent",
@@ -1542,7 +1542,7 @@
         }
       ],
       "impactDimension": "Commercial Margin",
-      "story": "Leads day-to-day Trade Promotion decisions across the network—creates customized sell-in story decks and joint promotional calendars."
+      "story": "Creates customized sell-in story decks and joint promotional calendars."
     },
     "revenue_trade_finance_lead": {
       "id": "revenue_trade_finance_lead",
@@ -1554,7 +1554,7 @@
       "name": "Revenue / Trade Finance Lead",
       "role": "Trade Promotion · Planning & Strategy",
       "mandate": "Leads trade promotion across Planning & Strategy: audits scanned proof-of-performance circulars and invoices via ocr.",
-      "summary": "Day-to-day owner of Trade Promotion who audits scanned proof-of-performance circulars and invoices via ocr. Partners with Deduction Audit Agent to replace manual spreadsheet firefighting with proactive AI recommendations (-65% Invalid.",
+      "summary": "Audits scanned proof-of-performance circulars and invoices via OCR.",
       "focusAreas": [
         "Trade Promotion",
         "Deduction Audit Agent",
@@ -1618,7 +1618,7 @@
         }
       ],
       "impactDimension": "Cost & Leakage",
-      "story": "Day-to-day owner of Trade Promotion who audits scanned proof-of-performance circulars and invoices via ocr. Partners with Deduction Audit Agent to replace manual spreadsheet firefighting with proactive AI recommendations (-65% Invalid."
+      "story": "Audits scanned proof-of-performance circulars and invoices via OCR."
     },
     "sop_supply_planning_dir": {
       "id": "sop_supply_planning_dir",
@@ -1630,7 +1630,7 @@
       "name": "S&OP / Supply Planning Dir.",
       "role": "S&OP / IBP · Planning & Strategy",
       "mandate": "Leads s&op / ibp across Planning & Strategy: reconciles unconstrained demand with factory plant bottleneck limits.",
-      "summary": "Day-to-day owner of S&OP / IBP who reconciles unconstrained demand with factory plant bottleneck limits. Partners with Consensus & Gap Agent to replace manual spreadsheet firefighting with proactive AI recommendations (+2.2 pts Plan.",
+      "summary": "Reconciles unconstrained demand with factory plant bottleneck limits.",
       "focusAreas": [
         "S&OP / IBP",
         "Consensus & Gap Agent",
@@ -1694,7 +1694,7 @@
         }
       ],
       "impactDimension": "EBITDA & Margin",
-      "story": "Day-to-day owner of S&OP / IBP who reconciles unconstrained demand with factory plant bottleneck limits. Partners with Consensus & Gap Agent to replace manual spreadsheet firefighting with proactive AI recommendations (+2.2 pts Plan."
+      "story": "Reconciles unconstrained demand with factory plant bottleneck limits."
     },
     "supply_chain_vp_coo": {
       "id": "supply_chain_vp_coo",
@@ -1706,7 +1706,7 @@
       "name": "Supply Chain VP / COO",
       "role": "S&OP / IBP · Planning & Strategy",
       "mandate": "Leads s&op / ibp across Planning & Strategy: evaluates co-packer shifts and allocation trade-offs during supply outages.",
-      "summary": "Leads day-to-day S&OP / IBP decisions across the network—evaluates co-packer shifts and allocation trade-offs during supply outages.",
+      "summary": "Evaluates co-packer shifts and allocation trade-offs during supply outages.",
       "focusAreas": [
         "S&OP / IBP",
         "Digital War-Room Agent",
@@ -1770,7 +1770,7 @@
         }
       ],
       "impactDimension": "Risk & OTIF",
-      "story": "Leads day-to-day S&OP / IBP decisions across the network—evaluates co-packer shifts and allocation trade-offs during supply outages."
+      "story": "Evaluates co-packer shifts and allocation trade-offs during supply outages."
     },
     "ibp_lead_chief_planning_off": {
       "id": "ibp_lead_chief_planning_off",
@@ -1782,7 +1782,7 @@
       "name": "IBP Lead / Chief Planning Off.",
       "role": "S&OP / IBP · Planning & Strategy",
       "mandate": "Leads s&op / ibp across Planning & Strategy: generates pre-read decks and tracks sign-offs across cross-functional leads.",
-      "summary": "Leads day-to-day S&OP / IBP decisions across the network—generates pre-read decks and tracks sign-offs across cross-functional leads.",
+      "summary": "Generates pre-read decks and tracks sign-offs across cross-functional leads.",
       "focusAreas": [
         "S&OP / IBP",
         "Executive Copilot",
@@ -1846,7 +1846,7 @@
         }
       ],
       "impactDimension": "Decision Speed",
-      "story": "Leads day-to-day S&OP / IBP decisions across the network—generates pre-read decks and tracks sign-offs across cross-functional leads."
+      "story": "Generates pre-read decks and tracks sign-offs across cross-functional leads."
     },
     "category_manager_portfolio": {
       "id": "category_manager_portfolio",
@@ -1858,7 +1858,7 @@
       "name": "Category Manager",
       "role": "Portfolio & SKU · Planning & Strategy",
       "mandate": "Leads portfolio & sku across Planning & Strategy: scores velocity, plant changeover cost, and shelf revenue yield.",
-      "summary": "Leads day-to-day Portfolio & SKU decisions across the network—scores velocity, plant changeover cost, and shelf revenue yield.",
+      "summary": "Scores velocity, plant changeover cost, and shelf revenue yield.",
       "focusAreas": [
         "Portfolio & SKU",
         "SKU Pruning Agent",
@@ -1922,7 +1922,7 @@
         }
       ],
       "impactDimension": "Working Capital",
-      "story": "Leads day-to-day Portfolio & SKU decisions across the network—scores velocity, plant changeover cost, and shelf revenue yield."
+      "story": "Scores velocity, plant changeover cost, and shelf revenue yield."
     },
     "lifecycle_materials_mgr": {
       "id": "lifecycle_materials_mgr",
@@ -1934,7 +1934,7 @@
       "name": "Lifecycle / Materials Mgr",
       "role": "Portfolio & SKU · Planning & Strategy",
       "mandate": "Leads portfolio & sku across Planning & Strategy: orchestrates transition buffers to sync packaging and formulation cuts.",
-      "summary": "Leads day-to-day Portfolio & SKU decisions across the network—orchestrates transition buffers to sync packaging and formulation cuts.",
+      "summary": "Orchestrates transition buffers to sync packaging and formulation cuts.",
       "focusAreas": [
         "Portfolio & SKU",
         "PIPO Run-Out Agent",
@@ -1998,7 +1998,7 @@
         }
       ],
       "impactDimension": "Write-Off Avoidance",
-      "story": "Leads day-to-day Portfolio & SKU decisions across the network—orchestrates transition buffers to sync packaging and formulation cuts."
+      "story": "Orchestrates transition buffers to sync packaging and formulation cuts."
     },
     "commercial_finance_director": {
       "id": "commercial_finance_director",
@@ -2010,7 +2010,7 @@
       "name": "Commercial Finance Director",
       "role": "Portfolio & SKU · Planning & Strategy",
       "mandate": "Leads portfolio & sku across Planning & Strategy: calculates net-net margin across club, grocery, and ecommerce packs.",
-      "summary": "Leads day-to-day Portfolio & SKU decisions across the network—calculates net-net margin across club, grocery, and ecommerce packs.",
+      "summary": "Calculates net-net margin across club, grocery, and e-commerce packs.",
       "focusAreas": [
         "Portfolio & SKU",
         "Cost-to-Serve Diagnostic",
@@ -2074,7 +2074,7 @@
         }
       ],
       "impactDimension": "Cost-to-Serve",
-      "story": "Leads day-to-day Portfolio & SKU decisions across the network—calculates net-net margin across club, grocery, and ecommerce packs."
+      "story": "Calculates net-net margin across club, grocery, and e-commerce packs."
     },
     "procurement_dir_risk_mgr": {
       "id": "procurement_dir_risk_mgr",
@@ -2086,7 +2086,7 @@
       "name": "Procurement Dir. / Risk Mgr",
       "role": "Supplier Network · Sourcing & Procurement",
       "mandate": "Leads supplier network across Sourcing & Procurement: monitors multi-tier supply feeds, port delays, and vendor financials.",
-      "summary": "Day-to-day owner of Supplier Network who monitors multi-tier supply feeds, port delays, and vendor financials. Partners with Disruption Sensing Agent to replace manual spreadsheet firefighting with proactive AI recommendations (21-Day.",
+      "summary": "Monitors multi-tier supply feeds, port delays, and vendor financials.",
       "focusAreas": [
         "Supplier Network",
         "Disruption Sensing Agent",
@@ -2150,7 +2150,7 @@
         }
       ],
       "impactDimension": "Supply Continuity",
-      "story": "Day-to-day owner of Supplier Network who monitors multi-tier supply feeds, port delays, and vendor financials. Partners with Disruption Sensing Agent to replace manual spreadsheet firefighting with proactive AI recommendations (21-Day."
+      "story": "Monitors multi-tier supply feeds, port delays, and vendor financials."
     },
     "procurement_operations_lead": {
       "id": "procurement_operations_lead",
@@ -2162,7 +2162,7 @@
       "name": "Procurement Operations Lead",
       "role": "Supplier Network · Sourcing & Procurement",
       "mandate": "Leads supplier network across Sourcing & Procurement: parses brc/iso audits, food-safety filings, and tax registrations.",
-      "summary": "Leads day-to-day Supplier Network decisions across the network—parses brc/iso audits, food-safety filings, and tax registrations. Partners with Onboarding & Qual.",
+      "summary": "Parses BRC/ISO audits, food-safety filings, and tax registrations.",
       "focusAreas": [
         "Supplier Network",
         "Onboarding & Qual. Agent",
@@ -2226,7 +2226,7 @@
         }
       ],
       "impactDimension": "Cycle & Compliance",
-      "story": "Leads day-to-day Supplier Network decisions across the network—parses brc/iso audits, food-safety filings, and tax registrations. Partners with Onboarding & Qual."
+      "story": "Parses BRC/ISO audits, food-safety filings, and tax registrations."
     },
     "chief_sustainability_officer": {
       "id": "chief_sustainability_officer",
@@ -2238,7 +2238,7 @@
       "name": "Chief Sustainability Officer",
       "role": "Supplier Network · Sourcing & Procurement",
       "mandate": "Leads supplier network across Sourcing & Procurement: standardizes chain-of-custody certificates (rspo/fsc) and packaging lcas.",
-      "summary": "Leads day-to-day Supplier Network decisions across the network—standardizes chain-of-custody certificates (rspo/fsc) and packaging lcas.",
+      "summary": "Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs.",
       "focusAreas": [
         "Supplier Network",
         "ESG & Scope 3 Auditor",
@@ -2302,7 +2302,7 @@
         }
       ],
       "impactDimension": "Compliance & Cost",
-      "story": "Leads day-to-day Supplier Network decisions across the network—standardizes chain-of-custody certificates (rspo/fsc) and packaging lcas."
+      "story": "Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs."
     },
     "category_sourcing_mgr_direct": {
       "id": "category_sourcing_mgr_direct",
@@ -2314,7 +2314,7 @@
       "name": "Category Sourcing Mgr (Direct)",
       "role": "Material & Packaging · Sourcing & Procurement",
       "mandate": "Leads material & packaging across Sourcing & Procurement: correlates cbot/platts feedstocks with depletion to advise hedging.",
-      "summary": "Leads day-to-day Material & Packaging decisions across the network—correlates cbot/platts feedstocks with depletion to advise hedging.",
+      "summary": "Correlates CBOT/Platts feedstocks with depletion to advise hedging.",
       "focusAreas": [
         "Material & Packaging",
         "Commodity Index Advisor",
@@ -2378,7 +2378,7 @@
         }
       ],
       "impactDimension": "Direct Material Spend",
-      "story": "Leads day-to-day Material & Packaging decisions across the network—correlates cbot/platts feedstocks with depletion to advise hedging."
+      "story": "Correlates CBOT/Platts feedstocks with depletion to advise hedging."
     },
     "strategic_sourcing_lead": {
       "id": "strategic_sourcing_lead",
@@ -2390,7 +2390,7 @@
       "name": "Strategic Sourcing Lead",
       "role": "Material & Packaging · Sourcing & Procurement",
       "mandate": "Leads material & packaging across Sourcing & Procurement: deconstructs packaging specs (resin weight, corrugate, conversion energy).",
-      "summary": "Leads day-to-day Material & Packaging decisions across the network—deconstructs packaging specs (resin weight, corrugate, conversion energy).",
+      "summary": "Deconstructs packaging specs (resin weight, corrugate, conversion energy).",
       "focusAreas": [
         "Material & Packaging",
         "Dynamic Should-Cost Agent",
@@ -2454,7 +2454,7 @@
         }
       ],
       "impactDimension": "Negotiation Savings",
-      "story": "Leads day-to-day Material & Packaging decisions across the network—deconstructs packaging specs (resin weight, corrugate, conversion energy)."
+      "story": "Deconstructs packaging specs (resin weight, corrugate, conversion energy)."
     },
     "packaging_rd_engineer": {
       "id": "packaging_rd_engineer",
@@ -2466,7 +2466,7 @@
       "name": "Packaging R&D Engineer",
       "role": "Material & Packaging · Sourcing & Procurement",
       "mandate": "Leads material & packaging across Sourcing & Procurement: evaluates pcr resins and barrier materials against line runnability & taxes.",
-      "summary": "Leads day-to-day Material & Packaging decisions across the network—evaluates pcr resins and barrier materials against line runnability & taxes.",
+      "summary": "Evaluates PCR resins and barrier materials against line runnability & taxes.",
       "focusAreas": [
         "Material & Packaging",
         "Sustainable Packaging Agent",
@@ -2530,7 +2530,7 @@
         }
       ],
       "impactDimension": "Tax & Material Cost",
-      "story": "Leads day-to-day Material & Packaging decisions across the network—evaluates pcr resins and barrier materials against line runnability & taxes."
+      "story": "Evaluates PCR resins and barrier materials against line runnability & taxes."
     },
     "commercial_sourcing_legal": {
       "id": "commercial_sourcing_legal",
@@ -2542,7 +2542,7 @@
       "name": "Commercial Sourcing / Legal",
       "role": "Contract & PO Mgmt · Sourcing & Procurement",
       "mandate": "Leads contract & po mgmt across Sourcing & Procurement: reconciles live spend against negotiated rebate tiers and volume discount scales.",
-      "summary": "Day-to-day owner of Contract & PO Mgmt who reconciles live spend against negotiated rebate tiers and volume discount scales.",
+      "summary": "Reconciles live spend against negotiated rebate tiers and volume discount scales.",
       "focusAreas": [
         "Contract & PO Mgmt",
         "Contract Leakage Agent",
@@ -2606,7 +2606,7 @@
         }
       ],
       "impactDimension": "Spend Recovery",
-      "story": "Day-to-day owner of Contract & PO Mgmt who reconciles live spend against negotiated rebate tiers and volume discount scales."
+      "story": "Reconciles live spend against negotiated rebate tiers and volume discount scales."
     },
     "buyer_procurement_coord": {
       "id": "buyer_procurement_coord",
@@ -2618,7 +2618,7 @@
       "name": "Buyer / Procurement Coord.",
       "role": "Contract & PO Mgmt · Sourcing & Procurement",
       "mandate": "Leads contract & po mgmt across Sourcing & Procurement: monitors edi 855/856 delay feeds and orchestrates supplier split-shipments.",
-      "summary": "Day-to-day owner of Contract & PO Mgmt who monitors edi 855/856 delay feeds and orchestrates supplier split-shipments.",
+      "summary": "Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments.",
       "focusAreas": [
         "Contract & PO Mgmt",
         "PO Expediting Agent",
@@ -2682,7 +2682,7 @@
         }
       ],
       "impactDimension": "Expedite Avoidance",
-      "story": "Day-to-day owner of Contract & PO Mgmt who monitors edi 855/856 delay feeds and orchestrates supplier split-shipments."
+      "story": "Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments."
     },
     "accounts_payable_lead": {
       "id": "accounts_payable_lead",
@@ -2694,7 +2694,7 @@
       "name": "Accounts Payable Lead",
       "role": "Contract & PO Mgmt · Sourcing & Procurement",
       "mandate": "Leads contract & po mgmt across Sourcing & Procurement: diagnoses price/quantity discrepancies across pos, grns, and carrier invoices.",
-      "summary": "Leads day-to-day Contract & PO Mgmt decisions across the network—diagnoses price/quantity discrepancies across Point-of-Sale (POS), grns, and carrier invoices.",
+      "summary": "Diagnoses price/quantity discrepancies across Purchase Orders (Purchase Orders (POs)), GRNs, and carrier invoices.",
       "focusAreas": [
         "Contract & PO Mgmt",
         "Three-Way Match Dispute",
@@ -2758,7 +2758,7 @@
         }
       ],
       "impactDimension": "P2P Processing Cost",
-      "story": "Leads day-to-day Contract & PO Mgmt decisions across the network—diagnoses price/quantity discrepancies across Point-of-Sale (POS), grns, and carrier invoices."
+      "story": "Diagnoses price/quantity discrepancies across Purchase Orders (Purchase Orders (POs)), GRNs, and carrier invoices."
     },
     "master_production_scheduler": {
       "id": "master_production_scheduler",
@@ -2770,7 +2770,7 @@
       "name": "Master Production Scheduler",
       "role": "Production Scheduling · Manufacturing & Production",
       "mandate": "Leads production scheduling across Manufacturing & Production: sequences allergen, kosher, and packaging runs to minimize washdowns.",
-      "summary": "Leads day-to-day Production Scheduling decisions across the network—sequences allergen, kosher, and packaging runs to minimize washdowns.",
+      "summary": "Sequences allergen, kosher, and packaging runs to minimize washdowns.",
       "focusAreas": [
         "Production Scheduling",
         "Changeover Optimizer",
@@ -2834,7 +2834,7 @@
         }
       ],
       "impactDimension": "Plant OEE & Yield",
-      "story": "Leads day-to-day Production Scheduling decisions across the network—sequences allergen, kosher, and packaging runs to minimize washdowns."
+      "story": "Sequences allergen, kosher, and packaging runs to minimize washdowns."
     },
     "shop_floor_shift_lead": {
       "id": "shop_floor_shift_lead",
@@ -2846,7 +2846,7 @@
       "name": "Shop Floor / Shift Lead",
       "role": "Production Scheduling · Manufacturing & Production",
       "mandate": "Leads production scheduling across Manufacturing & Production: detects machine halts and re-routes perishable wip to alternate lines.",
-      "summary": "Leads day-to-day Production Scheduling decisions across the network—detects machine halts and re-routes perishable wip to alternate lines.",
+      "summary": "Detects machine halts and re-routes perishable WIP to alternate lines.",
       "focusAreas": [
         "Production Scheduling",
         "Disruption Re-sequencer",
@@ -2910,7 +2910,7 @@
         }
       ],
       "impactDimension": "Schedule Resilience",
-      "story": "Leads day-to-day Production Scheduling decisions across the network—detects machine halts and re-routes perishable wip to alternate lines."
+      "story": "Detects machine halts and re-routes perishable WIP to alternate lines."
     },
     "plant_operations_manager": {
       "id": "plant_operations_manager",
@@ -2922,7 +2922,7 @@
       "name": "Plant Operations Manager",
       "role": "Production Scheduling · Manufacturing & Production",
       "mandate": "Leads production scheduling across Manufacturing & Production: maps shift skill certifications and fatigue constraints to line speeds.",
-      "summary": "Leads day-to-day Production Scheduling decisions across the network—maps shift skill certifications and fatigue constraints to line speeds.",
+      "summary": "Maps shift skill certifications and fatigue constraints to line speeds.",
       "focusAreas": [
         "Production Scheduling",
         "Labor & Line Balancing",
@@ -2986,7 +2986,7 @@
         }
       ],
       "impactDimension": "Labor Efficiency",
-      "story": "Leads day-to-day Production Scheduling decisions across the network—maps shift skill certifications and fatigue constraints to line speeds."
+      "story": "Maps shift skill certifications and fatigue constraints to line speeds."
     },
     "supply_chain_ops_director": {
       "id": "supply_chain_ops_director",
@@ -2998,7 +2998,7 @@
       "name": "Supply Chain Ops Director",
       "role": "Capacity Planning · Manufacturing & Production",
       "mandate": "Leads capacity planning across Manufacturing & Production: assesses cip utilities, boiler loads, and cold storage holding limits.",
-      "summary": "Leads day-to-day Capacity Planning decisions across the network—assesses cip utilities, boiler loads, and cold storage holding limits.",
+      "summary": "Assesses CIP utilities, boiler loads, and cold storage holding limits.",
       "focusAreas": [
         "Capacity Planning",
         "Bottleneck Diagnostic",
@@ -3062,7 +3062,7 @@
         }
       ],
       "impactDimension": "Uptime & Capacity",
-      "story": "Leads day-to-day Capacity Planning decisions across the network—assesses cip utilities, boiler loads, and cold storage holding limits."
+      "story": "Assesses CIP utilities, boiler loads, and cold storage holding limits."
     },
     "external_sourcing_cmo_lead": {
       "id": "external_sourcing_cmo_lead",
@@ -3074,7 +3074,7 @@
       "name": "External Sourcing / CMO Lead",
       "role": "Capacity Planning · Manufacturing & Production",
       "mandate": "Leads capacity planning across Manufacturing & Production: models internal conversion costs against co-packer tolling agreements.",
-      "summary": "Leads day-to-day Capacity Planning decisions across the network—models internal conversion costs against co-packer tolling agreements.",
+      "summary": "Models internal conversion costs against co-packer tolling agreements.",
       "focusAreas": [
         "Capacity Planning",
         "Co-Packer Allocation",
@@ -3138,7 +3138,7 @@
         }
       ],
       "impactDimension": "Gross Margin / COGS",
-      "story": "Leads day-to-day Capacity Planning decisions across the network—models internal conversion costs against co-packer tolling agreements."
+      "story": "Models internal conversion costs against co-packer tolling agreements."
     },
     "vp_manufacturing_engineering": {
       "id": "vp_manufacturing_engineering",
@@ -3150,7 +3150,7 @@
       "name": "VP Manufacturing Engineering",
       "role": "Capacity Planning · Manufacturing & Production",
       "mandate": "Leads capacity planning across Manufacturing & Production: simulates multi-year volume trends to test high-speed line expansions.",
-      "summary": "Leads day-to-day Capacity Planning decisions across the network—simulates multi-year volume trends to test high-speed line expansions.",
+      "summary": "Simulates multi-year volume trends to test high-speed line expansions.",
       "focusAreas": [
         "Capacity Planning",
         "CapEx Simulator",
@@ -3214,7 +3214,7 @@
         }
       ],
       "impactDimension": "Capital Efficiency",
-      "story": "Leads day-to-day Capacity Planning decisions across the network—simulates multi-year volume trends to test high-speed line expansions."
+      "story": "Simulates multi-year volume trends to test high-speed line expansions."
     },
     "qa_manager_line_inspector": {
       "id": "qa_manager_line_inspector",
@@ -3226,7 +3226,7 @@
       "name": "QA Manager / Line Inspector",
       "role": "Quality & Compliance · Manufacturing & Production",
       "mandate": "Leads quality & compliance across Manufacturing & Production: inspects high-speed video frames for crimped seals, lot codes, and labels.",
-      "summary": "Leads day-to-day Quality & Compliance decisions across the network—inspects high-speed video frames for crimped seals, lot codes, and labels.",
+      "summary": "Inspects high-speed video frames for crimped seals, lot codes, and labels.",
       "focusAreas": [
         "Quality & Compliance",
         "Visual Defect Triager",
@@ -3290,7 +3290,7 @@
         }
       ],
       "impactDimension": "Scrap & Yield",
-      "story": "Leads day-to-day Quality & Compliance decisions across the network—inspects high-speed video frames for crimped seals, lot codes, and labels."
+      "story": "Inspects high-speed video frames for crimped seals, lot codes, and labels."
     },
     "regulatory_compliance_lead": {
       "id": "regulatory_compliance_lead",
@@ -3302,7 +3302,7 @@
       "name": "Regulatory Compliance Lead",
       "role": "Quality & Compliance · Manufacturing & Production",
       "mandate": "Leads quality & compliance across Manufacturing & Production: parses bpr and coa documents to flag pasteurization & ccp deviations.",
-      "summary": "Leads day-to-day Quality & Compliance decisions across the network—parses bpr and coa documents to flag pasteurization & ccp deviations.",
+      "summary": "Parses BPR and COA documents to flag pasteurization & CCP deviations.",
       "focusAreas": [
         "Quality & Compliance",
         "Batch Record Auditor",
@@ -3366,7 +3366,7 @@
         }
       ],
       "impactDimension": "Working Capital & QA",
-      "story": "Leads day-to-day Quality & Compliance decisions across the network—parses bpr and coa documents to flag pasteurization & ccp deviations."
+      "story": "Parses BPR and COA documents to flag pasteurization & CCP deviations."
     },
     "continuous_improvement_lead": {
       "id": "continuous_improvement_lead",
@@ -3378,7 +3378,7 @@
       "name": "Continuous Improvement Lead",
       "role": "Quality & Compliance · Manufacturing & Production",
       "mandate": "Leads quality & compliance across Manufacturing & Production: correlates consumer complaints with ingredient lots and machine telemetry.",
-      "summary": "Leads day-to-day Quality & Compliance decisions across the network—correlates consumer complaints with ingredient lots and machine telemetry.",
+      "summary": "Correlates consumer complaints with ingredient lots and machine telemetry.",
       "focusAreas": [
         "Quality & Compliance",
         "RCA & CAPA Copilot",
@@ -3442,7 +3442,7 @@
         }
       ],
       "impactDimension": "Repeat Defect Reduction",
-      "story": "Leads day-to-day Quality & Compliance decisions across the network—correlates consumer complaints with ingredient lots and machine telemetry."
+      "story": "Correlates consumer complaints with ingredient lots and machine telemetry."
     },
     "inventory_optimization_lead": {
       "id": "inventory_optimization_lead",
@@ -3454,7 +3454,7 @@
       "name": "Inventory Optimization Lead",
       "role": "Positioning & Optimization · Inventory & Warehousing",
       "mandate": "Leads positioning & optimization across Inventory & Warehousing: recalibrates multi-echelon buffers using live lead-time and demand variance.",
-      "summary": "Leads day-to-day Positioning & Optimization decisions across the network—recalibrates multi-echelon buffers using live lead-time and demand variance.",
+      "summary": "Recalibrates multi-echelon buffers using live lead-time and demand variance.",
       "focusAreas": [
         "Positioning & Optimization",
         "Safety Stock Agent",
@@ -3518,7 +3518,7 @@
         }
       ],
       "impactDimension": "Working Capital",
-      "story": "Leads day-to-day Positioning & Optimization decisions across the network—recalibrates multi-echelon buffers using live lead-time and demand variance."
+      "story": "Recalibrates multi-echelon buffers using live lead-time and demand variance."
     },
     "inventory_controller_buyer": {
       "id": "inventory_controller_buyer",
@@ -3530,7 +3530,7 @@
       "name": "Inventory Controller / Buyer",
       "role": "Positioning & Optimization · Inventory & Warehousing",
       "mandate": "Leads positioning & optimization across Inventory & Warehousing: analyzes shelf-life risk and triggers promotional bundles or liquidations.",
-      "summary": "Leads day-to-day Positioning & Optimization decisions across the network—analyzes shelf-life risk and triggers promotional bundles or liquidations.",
+      "summary": "Analyzes shelf-life risk and triggers promotional bundles or liquidations.",
       "focusAreas": [
         "Positioning & Optimization",
         "SLOB Disposition Agent",
@@ -3594,7 +3594,7 @@
         }
       ],
       "impactDimension": "Write-Off Recovery",
-      "story": "Leads day-to-day Positioning & Optimization decisions across the network—analyzes shelf-life risk and triggers promotional bundles or liquidations."
+      "story": "Analyzes shelf-life risk and triggers promotional bundles or liquidations."
     },
     "replenishment_planner": {
       "id": "replenishment_planner",
@@ -3606,7 +3606,7 @@
       "name": "Replenishment Planner",
       "role": "Positioning & Optimization · Inventory & Warehousing",
       "mandate": "Leads positioning & optimization across Inventory & Warehousing: generates automated inter-dc and store transfers to balance localized gluts.",
-      "summary": "Leads day-to-day Positioning & Optimization decisions across the network—generates automated inter-dc and store transfers to balance localized gluts.",
+      "summary": "Generates automated inter-DC and store transfers to balance localized gluts.",
       "focusAreas": [
         "Positioning & Optimization",
         "Inter-Facility Rebalancer",
@@ -3670,7 +3670,7 @@
         }
       ],
       "impactDimension": "Service & Stockouts",
-      "story": "Leads day-to-day Positioning & Optimization decisions across the network—generates automated inter-dc and store transfers to balance localized gluts."
+      "story": "Generates automated inter-DC and store transfers to balance localized gluts."
     },
     "dc_operations_mgr": {
       "id": "dc_operations_mgr",
@@ -3682,7 +3682,7 @@
       "name": "DC Operations Mgr / IE Lead",
       "role": "Warehouse Operations · Inventory & Warehousing",
       "mandate": "Leads warehouse operations across Inventory & Warehousing: evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting.",
-      "summary": "Leads day-to-day Warehouse Operations decisions across the network—evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting.",
+      "summary": "Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting.",
       "focusAreas": [
         "Warehouse Operations",
         "Dynamic Slotting Agent",
@@ -3746,7 +3746,7 @@
         }
       ],
       "impactDimension": "Warehouse Efficiency",
-      "story": "Leads day-to-day Warehouse Operations decisions across the network—evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting."
+      "story": "Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting."
     },
     "inbound_receiving_supervisor": {
       "id": "inbound_receiving_supervisor",
@@ -3758,7 +3758,7 @@
       "name": "Inbound Receiving Supervisor",
       "role": "Warehouse Operations · Inventory & Warehousing",
       "mandate": "Leads warehouse operations across Inventory & Warehousing: parses scanned bols and pallet photos to reconcile open asn variances.",
-      "summary": "Leads day-to-day Warehouse Operations decisions across the network—parses scanned bols and pallet photos to reconcile open asn variances.",
+      "summary": "Parses scanned BOLs and pallet photos to reconcile open ASN variances.",
       "focusAreas": [
         "Warehouse Operations",
         "Dock-to-Stock Agent",
@@ -3822,7 +3822,7 @@
         }
       ],
       "impactDimension": "Receiving Throughput",
-      "story": "Leads day-to-day Warehouse Operations decisions across the network—parses scanned bols and pallet photos to reconcile open asn variances."
+      "story": "Parses scanned BOLs and pallet photos to reconcile open ASN variances."
     },
     "dc_shift_floor_lead": {
       "id": "dc_shift_floor_lead",
@@ -3834,7 +3834,7 @@
       "name": "DC Shift Floor Lead",
       "role": "Warehouse Operations · Inventory & Warehousing",
       "mandate": "Leads warehouse operations across Inventory & Warehousing: balances picker lines dynamically to protect carrier pickup cutoff times.",
-      "summary": "Day-to-day owner of Warehouse Operations who balances picker lines dynamically to protect carrier pickup cutoff times.",
+      "summary": "Balances picker lines dynamically to protect carrier pickup cutoff times.",
       "focusAreas": [
         "Warehouse Operations",
         "Wave Fulfillment Copilot",
@@ -3898,7 +3898,7 @@
         }
       ],
       "impactDimension": "Dispatch & Labor",
-      "story": "Day-to-day owner of Warehouse Operations who balances picker lines dynamically to protect carrier pickup cutoff times."
+      "story": "Balances picker lines dynamically to protect carrier pickup cutoff times."
     },
     "store_operations_omni_lead": {
       "id": "store_operations_omni_lead",
@@ -3910,7 +3910,7 @@
       "name": "Store Operations / Omni Lead",
       "role": "Omnichannel Visibility · Inventory & Warehousing",
       "mandate": "Leads omnichannel visibility across Inventory & Warehousing: identifies shrinkage anomalies when on-hand stock stops scanning at pos.",
-      "summary": "Leads day-to-day Omnichannel Visibility decisions across the network—identifies shrinkage anomalies when on-hand stock stops scanning at Point-of-Sale (POS).",
+      "summary": "Identifies shrinkage anomalies when on-hand stock stops scanning at Point-of-Sale (Point-of-Sale (POS)).",
       "focusAreas": [
         "Omnichannel Visibility",
         "Phantom Inventory Sensor",
@@ -3974,7 +3974,7 @@
         }
       ],
       "impactDimension": "On-Shelf Availability",
-      "story": "Leads day-to-day Omnichannel Visibility decisions across the network—identifies shrinkage anomalies when on-hand stock stops scanning at Point-of-Sale (POS)."
+      "story": "Identifies shrinkage anomalies when on-hand stock stops scanning at Point-of-Sale (Point-of-Sale (POS))."
     },
     "omnichannel_fulfillment_dir": {
       "id": "omnichannel_fulfillment_dir",
@@ -3986,7 +3986,7 @@
       "name": "Omnichannel Fulfillment Dir.",
       "role": "Omnichannel Visibility · Inventory & Warehousing",
       "mandate": "Leads omnichannel visibility across Inventory & Warehousing: selects lowest-cost fulfillment nodes based on store labor and parcel zones.",
-      "summary": "Leads day-to-day Omnichannel Visibility decisions across the network—selects lowest-cost fulfillment nodes based on store labor and parcel zones.",
+      "summary": "Selects lowest-cost fulfillment nodes based on store labor and parcel zones.",
       "focusAreas": [
         "Omnichannel Visibility",
         "SFS / BOPIS Sourcing",
@@ -4050,7 +4050,7 @@
         }
       ],
       "impactDimension": "Fulfillment Margin",
-      "story": "Leads day-to-day Omnichannel Visibility decisions across the network—selects lowest-cost fulfillment nodes based on store labor and parcel zones."
+      "story": "Selects lowest-cost fulfillment nodes based on store labor and parcel zones."
     },
     "reverse_logistics_lead_wh": {
       "id": "reverse_logistics_lead_wh",
@@ -4062,7 +4062,7 @@
       "name": "Reverse Logistics Lead",
       "role": "Omnichannel Visibility · Inventory & Warehousing",
       "mandate": "Leads omnichannel visibility across Inventory & Warehousing: evaluates item condition scans to triage restock, vendor return, or liquidation.",
-      "summary": "Leads day-to-day Omnichannel Visibility decisions across the network—evaluates item condition scans to triage restock, vendor return, or liquidation.",
+      "summary": "Evaluates item condition scans to triage restock, vendor return, or liquidation.",
       "focusAreas": [
         "Omnichannel Visibility",
         "Returns Triage Agent",
@@ -4126,7 +4126,7 @@
         }
       ],
       "impactDimension": "Resale Velocity",
-      "story": "Leads day-to-day Omnichannel Visibility decisions across the network—evaluates item condition scans to triage restock, vendor return, or liquidation."
+      "story": "Evaluates item condition scans to triage restock, vendor return, or liquidation."
     },
     "transport_planner_inbound_mgr": {
       "id": "transport_planner_inbound_mgr",
@@ -4138,7 +4138,7 @@
       "name": "Transport Planner / Inbound Mgr",
       "role": "First & Mid-Mile · Distribution & Logistics",
       "mandate": "Leads first & mid-mile across Distribution & Logistics: consolidates vendor ltls into multi-stop ftl linehauls via cube & weight modeling.",
-      "summary": "Leads day-to-day First & Mid-Mile decisions across the network—consolidates vendor ltls into multi-stop ftl linehauls via cube & weight modeling.",
+      "summary": "Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling.",
       "focusAreas": [
         "First & Mid-Mile",
         "Load Consolidation",
@@ -4202,7 +4202,7 @@
         }
       ],
       "impactDimension": "Fleet & Freight Cost",
-      "story": "Leads day-to-day First & Mid-Mile decisions across the network—consolidates vendor ltls into multi-stop ftl linehauls via cube & weight modeling."
+      "story": "Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling."
     },
     "yard_master_plant_logistics": {
       "id": "yard_master_plant_logistics",
@@ -4214,7 +4214,7 @@
       "name": "Yard Master / Plant Logistics",
       "role": "First & Mid-Mile · Distribution & Logistics",
       "mandate": "Leads first & mid-mile across Distribution & Logistics: parses gps & gate feeds to flag delays and reassign dock staging doors dynamically.",
-      "summary": "Leads day-to-day First & Mid-Mile decisions across the network—parses gps & gate feeds to flag delays and reassign dock staging doors dynamically.",
+      "summary": "Parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically.",
       "focusAreas": [
         "First & Mid-Mile",
         "Yard Disruption Agent",
@@ -4278,7 +4278,7 @@
         }
       ],
       "impactDimension": "Detention & Flow",
-      "story": "Leads day-to-day First & Mid-Mile decisions across the network—parses gps & gate feeds to flag delays and reassign dock staging doors dynamically."
+      "story": "Parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically."
     },
     "cold_chain_qa_logistics_dir": {
       "id": "cold_chain_qa_logistics_dir",
@@ -4290,7 +4290,7 @@
       "name": "Cold Chain QA / Logistics Dir.",
       "role": "First & Mid-Mile · Distribution & Logistics",
       "mandate": "Leads first & mid-mile across Distribution & Logistics: analyzes reefer iot telemetry to flag thermal excursions and file carrier claims.",
-      "summary": "Leads day-to-day First & Mid-Mile decisions across the network—analyzes reefer iot telemetry to flag thermal excursions and file carrier claims.",
+      "summary": "Analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims.",
       "focusAreas": [
         "First & Mid-Mile",
         "Cold-Chain Auditor",
@@ -4354,7 +4354,7 @@
         }
       ],
       "impactDimension": "Spoilage & QA Risk",
-      "story": "Leads day-to-day First & Mid-Mile decisions across the network—analyzes reefer iot telemetry to flag thermal excursions and file carrier claims."
+      "story": "Analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims."
     },
     "outbound_lead_industrial_eng": {
       "id": "outbound_lead_industrial_eng",
@@ -4366,7 +4366,7 @@
       "name": "Outbound Lead / Industrial Eng.",
       "role": "Store Replenishment · Distribution & Logistics",
       "mandate": "Leads store replenishment across Distribution & Logistics: sequences dc pick waves to match individual store planograms and shelf layouts.",
-      "summary": "Leads day-to-day Store Replenishment decisions across the network—sequences dc pick waves to match individual store planograms and shelf layouts.",
+      "summary": "Sequences DC pick waves to match individual store planograms and shelf layouts.",
       "focusAreas": [
         "Store Replenishment",
         "Aisle-Aligned Pallet",
@@ -4430,7 +4430,7 @@
         }
       ],
       "impactDimension": "Store Labor Cost",
-      "story": "Leads day-to-day Store Replenishment decisions across the network—sequences dc pick waves to match individual store planograms and shelf layouts."
+      "story": "Sequences DC pick waves to match individual store planograms and shelf layouts."
     },
     "store_replenishment_lead": {
       "id": "store_replenishment_lead",
@@ -4442,7 +4442,7 @@
       "name": "Store Replenishment Lead",
       "role": "Store Replenishment · Distribution & Logistics",
       "mandate": "Leads store replenishment across Distribution & Logistics: throttles push replenishment based on store backroom limits and live pos velocity.",
-      "summary": "Leads day-to-day Store Replenishment decisions across the network—throttles push replenishment based on store backroom limits and live Point-of-Sale (POS) velocity.",
+      "summary": "Throttles push replenishment based on store backroom limits and live Point-of-Sale (Point-of-Sale (POS)) velocity.",
       "focusAreas": [
         "Store Replenishment",
         "Store Capacity Agent",
@@ -4506,7 +4506,7 @@
         }
       ],
       "impactDimension": "Backroom Efficiency",
-      "story": "Leads day-to-day Store Replenishment decisions across the network—throttles push replenishment based on store backroom limits and live Point-of-Sale (POS) velocity."
+      "story": "Throttles push replenishment based on store backroom limits and live Point-of-Sale (Point-of-Sale (POS)) velocity."
     },
     "retail_logistics_dispatcher": {
       "id": "retail_logistics_dispatcher",
@@ -4518,7 +4518,7 @@
       "name": "Retail Logistics Dispatcher",
       "role": "Store Replenishment · Distribution & Logistics",
       "mandate": "Leads store replenishment across Distribution & Logistics: coordinates municipal delivery curfews and store dock shift schedules dynamically.",
-      "summary": "Day-to-day owner of Store Replenishment who coordinates municipal delivery curfews and store dock shift schedules dynamically.",
+      "summary": "Coordinates municipal delivery curfews and store dock shift schedules dynamically.",
       "focusAreas": [
         "Store Replenishment",
         "Curfew Orchestrator",
@@ -4582,7 +4582,7 @@
         }
       ],
       "impactDimension": "Compliance & OTIF",
-      "story": "Day-to-day owner of Store Replenishment who coordinates municipal delivery curfews and store dock shift schedules dynamically."
+      "story": "Coordinates municipal delivery curfews and store dock shift schedules dynamically."
     },
     "last_mile_operations_lead": {
       "id": "last_mile_operations_lead",
@@ -4594,7 +4594,7 @@
       "name": "Last-Mile Operations Lead",
       "role": "Last-Mile Delivery · Distribution & Logistics",
       "mandate": "Leads last-mile delivery across Distribution & Logistics: interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers.",
-      "summary": "Leads day-to-day Last-Mile Delivery decisions across the network—interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers.",
+      "summary": "Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers.",
       "focusAreas": [
         "Last-Mile Delivery",
         "Geocoding Intelligence",
@@ -4658,7 +4658,7 @@
         }
       ],
       "impactDimension": "Last-Mile Cost",
-      "story": "Leads day-to-day Last-Mile Delivery decisions across the network—interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers."
+      "story": "Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers."
     },
     "ecommerce_logistics_dir": {
       "id": "ecommerce_logistics_dir",
@@ -4670,7 +4670,7 @@
       "name": "E-Commerce Logistics Dir.",
       "role": "Last-Mile Delivery · Distribution & Logistics",
       "mandate": "Leads last-mile delivery across Distribution & Logistics: routes parcels dynamically across internal fleet, 3pl, and gig couriers by rate card.",
-      "summary": "Day-to-day owner of Last-Mile Delivery who routes parcels dynamically across internal fleet, Third-Party Logistics (3PL), and gig couriers by rate card.",
+      "summary": "Routes parcels dynamically across internal fleet, Third-Party Logistics (3PL), and gig couriers by rate card.",
       "focusAreas": [
         "Last-Mile Delivery",
         "Courier Allocation",
@@ -4734,7 +4734,7 @@
         }
       ],
       "impactDimension": "Parcel & Shipping Spend",
-      "story": "Day-to-day owner of Last-Mile Delivery who routes parcels dynamically across internal fleet, Third-Party Logistics (3PL), and gig couriers by rate card."
+      "story": "Routes parcels dynamically across internal fleet, Third-Party Logistics (3PL), and gig couriers by rate card."
     },
     "customer_support_ops_lead": {
       "id": "customer_support_ops_lead",
@@ -4746,7 +4746,7 @@
       "name": "Customer Support Ops Lead",
       "role": "Last-Mile Delivery · Distribution & Logistics",
       "mandate": "Leads last-mile delivery across Distribution & Logistics: detects en-route exceptions and updates customers proactively with reschedule links.",
-      "summary": "Leads day-to-day Last-Mile Delivery decisions across the network—detects en-route exceptions and updates customers proactively with reschedule links.",
+      "summary": "Detects en-route exceptions and updates customers proactively with reschedule links.",
       "focusAreas": [
         "Last-Mile Delivery",
         "Delivery Exception Copilot",
@@ -4810,7 +4810,7 @@
         }
       ],
       "impactDimension": "Support & OTIF Cost",
-      "story": "Leads day-to-day Last-Mile Delivery decisions across the network—detects en-route exceptions and updates customers proactively with reschedule links."
+      "story": "Detects en-route exceptions and updates customers proactively with reschedule links."
     },
     "fleet_dispatcher_central_ops": {
       "id": "fleet_dispatcher_central_ops",
@@ -4822,7 +4822,7 @@
       "name": "Fleet Dispatcher / Central Ops",
       "role": "Route & Carrier · Distribution & Logistics",
       "mandate": "Leads route & carrier across Distribution & Logistics: recalculates multi-stop routes using live google maps traffic, radar, and bridge limits.",
-      "summary": "Leads day-to-day Route & Carrier decisions across the network—recalculates multi-stop routes using live google maps traffic, radar, and bridge limits.",
+      "summary": "Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits.",
       "focusAreas": [
         "Route & Carrier",
         "Dynamic Rerouter",
@@ -4886,7 +4886,7 @@
         }
       ],
       "impactDimension": "Fuel & Fleet Efficiency",
-      "story": "Leads day-to-day Route & Carrier decisions across the network—recalculates multi-stop routes using live google maps traffic, radar, and bridge limits."
+      "story": "Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits."
     },
     "transport_procurement_lead": {
       "id": "transport_procurement_lead",
@@ -4898,7 +4898,7 @@
       "name": "Transport Procurement Lead",
       "role": "Route & Carrier · Distribution & Logistics",
       "mandate": "Leads route & carrier across Distribution & Logistics: tracks carrier tender acceptance & otif to reprioritize waterfall routing guides.",
-      "summary": "Day-to-day owner of Route & Carrier who tracks carrier tender acceptance & On-Time In-Full (OTIF) to reprioritize waterfall routing guides.",
+      "summary": "Tracks carrier tender acceptance & On-Time In-Full (OTIF) to reprioritize waterfall routing guides.",
       "focusAreas": [
         "Route & Carrier",
         "Routing Guide Compliance",
@@ -4962,7 +4962,7 @@
         }
       ],
       "impactDimension": "Contract vs. Spot Spend",
-      "story": "Day-to-day owner of Route & Carrier who tracks carrier tender acceptance & On-Time In-Full (OTIF) to reprioritize waterfall routing guides."
+      "story": "Tracks carrier tender acceptance & On-Time In-Full (OTIF) to reprioritize waterfall routing guides."
     },
     "freight_controller_claims": {
       "id": "freight_controller_claims",
@@ -4974,7 +4974,7 @@
       "name": "Freight Controller / Claims",
       "role": "Route & Carrier · Distribution & Logistics",
       "mandate": "Leads route & carrier across Distribution & Logistics: extracts signed pods and rate contracts via ocr to audit accessorial surcharges.",
-      "summary": "Leads day-to-day Route & Carrier decisions across the network—extracts signed pods and rate contracts via ocr to audit accessorial surcharges.",
+      "summary": "Extracts signed pods and rate contracts via OCR to audit accessorial surcharges.",
       "focusAreas": [
         "Route & Carrier",
         "Freight Bill Audit Agent",
@@ -5038,7 +5038,7 @@
         }
       ],
       "impactDimension": "Freight Spend Recovery",
-      "story": "Leads day-to-day Route & Carrier decisions across the network—extracts signed pods and rate contracts via ocr to audit accessorial surcharges."
+      "story": "Extracts signed pods and rate contracts via OCR to audit accessorial surcharges."
     },
     "reverse_logistics_fraud_lead": {
       "id": "reverse_logistics_fraud_lead",
@@ -5050,7 +5050,7 @@
       "name": "Reverse Logistics / Fraud Lead",
       "role": "Returns & Claims Mgmt · Returns & Reverse Logistics",
       "mandate": "Leads returns & claims mgmt across Returns & Reverse Logistics: analyzes item photos and packaging video feeds to detect wear or swapped tags.",
-      "summary": "Leads day-to-day Returns & Claims Mgmt decisions across the network—analyzes item photos and packaging video feeds to detect wear or swapped tags.",
+      "summary": "Analyzes item photos and packaging video feeds to detect wear or swapped tags.",
       "focusAreas": [
         "Returns & Claims Mgmt",
         "Return Fraud Sentinel",
@@ -5114,7 +5114,7 @@
         }
       ],
       "impactDimension": "Fraud & Margin Protection",
-      "story": "Leads day-to-day Returns & Claims Mgmt decisions across the network—analyzes item photos and packaging video feeds to detect wear or swapped tags."
+      "story": "Analyzes item photos and packaging video feeds to detect wear or swapped tags."
     },
     "customer_experience_cx_lead": {
       "id": "customer_experience_cx_lead",
@@ -5126,7 +5126,7 @@
       "name": "Customer Experience (CX) Lead",
       "role": "Returns & Claims Mgmt · Returns & Reverse Logistics",
       "mandate": "Leads returns & claims mgmt across Returns & Reverse Logistics: evaluates salvage margins vs reverse freight to determine keep-it instant refunds.",
-      "summary": "Leads day-to-day Returns & Claims Mgmt decisions across the network—evaluates salvage margins vs reverse freight to determine keep-it instant refunds.",
+      "summary": "Evaluates salvage margins vs reverse freight to determine keep-it instant refunds.",
       "focusAreas": [
         "Returns & Claims Mgmt",
         "Keep-It & Routing Advisor",
@@ -5190,7 +5190,7 @@
         }
       ],
       "impactDimension": "Net Return Recovery",
-      "story": "Leads day-to-day Returns & Claims Mgmt decisions across the network—evaluates salvage margins vs reverse freight to determine keep-it instant refunds."
+      "story": "Evaluates salvage margins vs reverse freight to determine keep-it instant refunds."
     },
     "claims_specialist_controller": {
       "id": "claims_specialist_controller",
@@ -5202,7 +5202,7 @@
       "name": "Claims Specialist / Controller",
       "role": "Returns & Claims Mgmt · Returns & Reverse Logistics",
       "mandate": "Leads returns & claims mgmt across Returns & Reverse Logistics: reconciles ebols, dock damage logs, and carrier contracts to auto-file disputes.",
-      "summary": "Day-to-day owner of Returns & Claims Mgmt who reconciles ebols, dock damage logs, and carrier contracts to auto-file disputes.",
+      "summary": "Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes.",
       "focusAreas": [
         "Returns & Claims Mgmt",
         "OS&D Freight Claims",
@@ -5266,7 +5266,7 @@
         }
       ],
       "impactDimension": "Claims Recovery",
-      "story": "Day-to-day owner of Returns & Claims Mgmt who reconciles ebols, dock damage logs, and carrier contracts to auto-file disputes."
+      "story": "Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes."
     },
     "merchandising_store_ops_mgr": {
       "id": "merchandising_store_ops_mgr",
@@ -5278,7 +5278,7 @@
       "name": "Merchandising / Store Ops Mgr",
       "role": "Expiry & Markdowns · Returns & Reverse Logistics",
       "mandate": "Leads expiry & markdowns across Returns & Reverse Logistics: correlates days-to-expiry (dte) with sales velocity to trigger esl shelf price cuts.",
-      "summary": "Leads day-to-day Expiry & Markdowns decisions across the network—correlates days-to-expiry (dte) with sales velocity to trigger esl shelf price cuts.",
+      "summary": "Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts.",
       "focusAreas": [
         "Expiry & Markdowns",
         "Dynamic Markdown Agent",
@@ -5342,7 +5342,7 @@
         }
       ],
       "impactDimension": "Shrink & Gross Margin",
-      "story": "Leads day-to-day Expiry & Markdowns decisions across the network—correlates days-to-expiry (dte) with sales velocity to trigger esl shelf price cuts."
+      "story": "Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts."
     },
     "inventory_disposition_lead": {
       "id": "inventory_disposition_lead",
@@ -5354,7 +5354,7 @@
       "name": "Inventory Disposition Lead",
       "role": "Expiry & Markdowns · Returns & Reverse Logistics",
       "mandate": "Leads expiry & markdowns across Returns & Reverse Logistics: matches near-date dc lots with discounters or food banks before acceptance cutoffs.",
-      "summary": "Leads day-to-day Expiry & Markdowns decisions across the network—matches near-date dc lots with discounters or food banks before acceptance cutoffs.",
+      "summary": "Matches near-date DC lots with discounters or food banks before acceptance cutoffs.",
       "focusAreas": [
         "Expiry & Markdowns",
         "Short-Dated Redistributor",
@@ -5418,7 +5418,7 @@
         }
       ],
       "impactDimension": "Write-Off Avoidance",
-      "story": "Leads day-to-day Expiry & Markdowns decisions across the network—matches near-date dc lots with discounters or food banks before acceptance cutoffs."
+      "story": "Matches near-date DC lots with discounters or food banks before acceptance cutoffs."
     },
     "cso_circular_lead": {
       "id": "cso_circular_lead",
@@ -5430,7 +5430,7 @@
       "name": "Chief Sustainability Officer",
       "role": "Expiry & Markdowns · Returns & Reverse Logistics",
       "mandate": "Leads expiry & markdowns across Returns & Reverse Logistics: aggregates store shrink and organic haul logs to generate audited ghg diversion filings.",
-      "summary": "Leads day-to-day Expiry & Markdowns decisions across the network—aggregates store shrink and organic haul logs to generate audited ghg diversion filings.",
+      "summary": "Aggregates store shrink and organic haul logs to generate audited ghg diversion filings.",
       "focusAreas": [
         "Expiry & Markdowns",
         "Food Waste & ESG Copilot",
@@ -5494,7 +5494,7 @@
         }
       ],
       "impactDimension": "Tax & ESG Value",
-      "story": "Leads day-to-day Expiry & Markdowns decisions across the network—aggregates store shrink and organic haul logs to generate audited ghg diversion filings."
+      "story": "Aggregates store shrink and organic haul logs to generate audited ghg diversion filings."
     },
     "asset_recovery_rti_manager": {
       "id": "asset_recovery_rti_manager",
@@ -5506,7 +5506,7 @@
       "name": "Asset Recovery / RTI Manager",
       "role": "Pallet & Tote Reclamation · Returns & Reverse Logistics",
       "mandate": "Leads pallet & tote reclamation across Returns & Reverse Logistics: reconciles rfid portal scans with chep/peco statements to detect hoarding nodes.",
-      "summary": "Day-to-day owner of Pallet & Tote Reclamation who reconciles rfid portal scans with chep/peco statements to detect hoarding nodes.",
+      "summary": "Reconciles rfid portal scans with chep/peco statements to detect hoarding nodes.",
       "focusAreas": [
         "Pallet & Tote Reclamation",
         "RTI Balance Reconciler",
@@ -5570,7 +5570,7 @@
         }
       ],
       "impactDimension": "Asset CapEx & Fines",
-      "story": "Day-to-day owner of Pallet & Tote Reclamation who reconciles rfid portal scans with chep/peco statements to detect hoarding nodes."
+      "story": "Reconciles rfid portal scans with chep/peco statements to detect hoarding nodes."
     },
     "reverse_transport_planner": {
       "id": "reverse_transport_planner",
@@ -5582,7 +5582,7 @@
       "name": "Reverse Transport Planner",
       "role": "Pallet & Tote Reclamation · Returns & Reverse Logistics",
       "mandate": "Leads pallet & tote reclamation across Returns & Reverse Logistics: schedules dynamic backhauls to collect empty roll cages and rpcs from retail stores.",
-      "summary": "Day-to-day owner of Pallet & Tote Reclamation who schedules dynamic backhauls to collect empty roll cages and rpcs from retail stores.",
+      "summary": "Schedules dynamic backhauls to collect empty roll cages and rpcs from retail stores.",
       "focusAreas": [
         "Pallet & Tote Reclamation",
         "Milk-Run Consolidation",
@@ -5646,7 +5646,7 @@
         }
       ],
       "impactDimension": "Backhaul Efficiency",
-      "story": "Day-to-day owner of Pallet & Tote Reclamation who schedules dynamic backhauls to collect empty roll cages and rpcs from retail stores."
+      "story": "Schedules dynamic backhauls to collect empty roll cages and rpcs from retail stores."
     },
     "packaging_qa_food_safety": {
       "id": "packaging_qa_food_safety",
@@ -5658,7 +5658,7 @@
       "name": "Packaging QA / Food Safety",
       "role": "Pallet & Tote Reclamation · Returns & Reverse Logistics",
       "mandate": "Leads pallet & tote reclamation across Returns & Reverse Logistics: inspects return photos and wash logs for structural fatigue and chemical compliance.",
-      "summary": "Leads day-to-day Pallet & Tote Reclamation decisions across the network—inspects return photos and wash logs for structural fatigue and chemical compliance.",
+      "summary": "Inspects return photos and wash logs for structural fatigue and chemical compliance.",
       "focusAreas": [
         "Pallet & Tote Reclamation",
         "Sanitation & Health Agent",
@@ -5722,7 +5722,7 @@
         }
       ],
       "impactDimension": "Asset Life & QA",
-      "story": "Leads day-to-day Pallet & Tote Reclamation decisions across the network—inspects return photos and wash logs for structural fatigue and chemical compliance."
+      "story": "Inspects return photos and wash logs for structural fatigue and chemical compliance."
     }
   },
   "agents": {
@@ -6624,7 +6624,7 @@
       },
       "impactDimension": "Forecast Accuracy",
       "baselineVsTarget": "38% SKU WAPE → 24% Sensed WAPE",
-      "story": "Synthesizes POS velocity, weather anomalies, and macro trends. Delivers verified operational impact (-20%–35% Short-Term WAPE) with governed human-in-the-loop write-back."
+      "story": "Fuses daily Point-of-Sale (POS) sell-through, weather ensembles, and stockout imputation to cut short-horizon WAPE by 20%–35% and reduce safety-stock buffers."
     },
     "cpfr_sync_agent": {
       "id": "cpfr_sync_agent",
@@ -7504,7 +7504,7 @@
       },
       "impactDimension": "Forecast Alignment",
       "baselineVsTarget": "19% Channel Variance → <6% Aligned Plan",
-      "story": "Identifies unmodeled drivers across eCommerce and retail channels. Increases Retail On-Shelf Availability (OSA) by 3.8 points and cuts bullwhip order variance by 29%."
+      "story": "Reconciles retailer EDI 830 forecasts against commercial & supply baselines, eliminating systematic bias and cutting stockout/overstock swings."
     },
     "npi_demand_profiler": {
       "id": "npi_demand_profiler",
@@ -8319,7 +8319,7 @@
       },
       "impactDimension": "Launch Accuracy",
       "baselineVsTarget": "52% 90-Day Error → 34% Analog Fit",
-      "story": "Matches launch packaging and attributes to historical lookalikes. Delivers verified operational impact (-30% Launch Forecast Error) with governed human-in-the-loop write-back."
+      "story": "Clusters new SKU attributes against historical lookalikes and updates early Point-of-Sale (POS) velocity curves in week 1–4 to prevent launch stockouts or dead stock."
     },
     "promo_lift_simulator": {
       "id": "promo_lift_simulator",
@@ -9154,7 +9154,7 @@
       },
       "impactDimension": "Revenue & Margin",
       "baselineVsTarget": "62% Losing Promos → Pre-Validated Lift",
-      "story": "Simulates price elasticity, shelf lift, and incremental spend return. Boosts net trade spend ROI by 22% and prevents promotional stockouts and post-promo bullwhip troughs."
+      "story": "Simulates baseline cannibalization, post-promo dip, and incremental gross margin before trade funds are committed—blocking unprofitable events."
     },
     "field_beat_distributor_sync_agent": {
       "id": "field_beat_distributor_sync_agent",
@@ -9931,7 +9931,7 @@
       },
       "impactDimension": "Commercial Margin",
       "baselineVsTarget": "4–6 wk JBP Cycles → Live Margin Scenarios",
-      "story": "Creates customized sell-in story decks and joint promotional calendars. Drives +18.4% distributor case fill rate, eliminates out-of-stock pitches, and boosts daily productive store calls per FSO by 22%."
+      "story": "Optimizes joint retailer-manufacturer volume, funding tiers, and display slotting simultaneously so trade investment grows net contribution."
     },
     "trade_scheme_claims_reconciler": {
       "id": "trade_scheme_claims_reconciler",
@@ -10716,7 +10716,7 @@
       },
       "impactDimension": "Cost & Leakage",
       "baselineVsTarget": "4.5% Claim Leakage → 94% Auto-Audited",
-      "story": "Audits scanned proof-of-performance circulars and invoices via OCR. Compresses distributor claim settlement from 45 days to <2 hours with 99.8% dispute-free payouts, saving $6.8M in fraudulent or unearned claim leakages."
+      "story": "Cross-matches retailer deduction claims against contracted scan dates, Point-of-Sale (POS) lift, and proof-of-performance—recovering invalid chargebacks."
     },
     "sop_scenario_weaver": {
       "id": "sop_scenario_weaver",
@@ -11563,7 +11563,7 @@
       },
       "impactDimension": "EBITDA & Margin",
       "baselineVsTarget": "18d S&OP Cycle → Margin-Optimal Lock",
-      "story": "Reconciles unconstrained demand with factory plant bottleneck limits. Compresses S&OP consensus from 21 days to a live 45-minute executive steering session while protecting gross margin (+180 bps) and OTIF."
+      "story": "Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority)."
     },
     "disruption_war_room_orchestrator": {
       "id": "disruption_war_room_orchestrator",
@@ -12767,7 +12767,7 @@
       },
       "impactDimension": "Risk & OTIF",
       "baselineVsTarget": "72h Crisis Triage → <30m Playbook Lock",
-      "story": "Evaluates co-packer shifts and allocation trade-offs during supply outages. Cuts emergency spot/air expedite spend by 62% and preserves 99.1% OTIF continuity across all 6 supply chain verticals during major disruptions."
+      "story": "Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF."
     },
     "csco_control_tower_copilot": {
       "id": "csco_control_tower_copilot",
@@ -13850,7 +13850,7 @@
       },
       "impactDimension": "Decision Speed",
       "baselineVsTarget": "5d Board Pack Prep → Live Root-Cause Twin",
-      "story": "Generates pre-read decks and tracks sign-offs across cross-functional leads. Delivers verified operational impact (-85% Executive Latency) with governed human-in-the-loop write-back."
+      "story": "Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand—turning 5-day analyst deck cycles into instant executive action."
     },
     "working_capital_cash_bridge": {
       "id": "working_capital_cash_bridge",
@@ -14820,7 +14820,7 @@
       },
       "impactDimension": "Working Capital",
       "baselineVsTarget": "34% Low-GMROI Tail → Pruned High-Velocity Mix",
-      "story": "Scores velocity, plant changeover cost, and shelf revenue yield. Unlocks $42M+ in Free Cash Flow per $1B revenue and compresses the enterprise Cash-to-Cash cycle by 9.4 days."
+      "story": "Scores every SKU on true net contribution after carrying, changeover, and obsolescence cost—unlocking trapped working capital from the long tail."
     },
     "eco_cutover_orchestrator": {
       "id": "eco_cutover_orchestrator",
@@ -15562,7 +15562,7 @@
       },
       "impactDimension": "Write-Off Avoidance",
       "baselineVsTarget": "2.4% PIPO Write-Offs → Zero-Waste Run-Out",
-      "story": "Orchestrates transition buffers to sync packaging and formulation cuts. Reduces ECO obsolete component write-offs by 58% and accelerates New Product Introduction (NPI) time-to-volume by 3 weeks."
+      "story": "Synchronizes old-component run-out with new-artwork/BOM ramp-up across plants and DCs to eliminate stranded packaging and obsolete inventory."
     },
     "network_twin_architect": {
       "id": "network_twin_architect",
@@ -16288,7 +16288,7 @@
       },
       "impactDimension": "Cost-to-Serve",
       "baselineVsTarget": "14% Negative-Margin Lanes → Optimized MOQ & Nodes",
-      "story": "Calculates net-net margin across Club, Grocery, and eCommerce packs. Expands net contribution margin by +240 bps and cuts total network landed logistics cost by 11.5%."
+      "story": "Computes granular SKU-customer-lane cost-to-serve and re-optimizes MOQs, pallet tiers, and DC sourcing assignments to restore pocket margin."
     },
     "tier_n_risk_sentinel": {
       "id": "tier_n_risk_sentinel",
@@ -17203,7 +17203,7 @@
       },
       "impactDimension": "Supply Continuity",
       "baselineVsTarget": "Tier-2+ Blindspots → Mapped Sub-Tier Shield",
-      "story": "Monitors multi-tier supply feeds, port delays, and vendor financials. Detects and mitigates sub-tier disruptions 11 days earlier with zero factory line-stop hours."
+      "story": "Continuously monitors sub-tier financial, geopolitical, weather, and port signals—triggering alternate allocations weeks before line stoppage."
     },
     "supplier_quality_sentinel": {
       "id": "supplier_quality_sentinel",
@@ -18229,7 +18229,7 @@
       },
       "impactDimension": "Cycle & Compliance",
       "baselineVsTarget": "4–6 wk Onboarding → <36h Automated Vetting",
-      "story": "Parses BRC/ISO audits, food-safety filings, and tax registrations. Reduces inbound supplier defect escapes (PPM) by 64% and recovers 95%+ of Cost of Poor Quality (COPQ)."
+      "story": "Automates ISO/HACCP certificate verification, financial health scoring, and sanctions screening—cutting vendor qualification from weeks to hours."
     },
     "carbon_scope3_ledger": {
       "id": "carbon_scope3_ledger",
@@ -18989,7 +18989,7 @@
       },
       "impactDimension": "Compliance & Cost",
       "baselineVsTarget": "Spend-Factor Estimates → SKU-Level Primary Ledger",
-      "story": "Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness."
+      "story": "Replaces coarse spend-based averages with primary supplier + lane emissions—preventing EU CBAM penalties and cutting external assurance fees."
     },
     "commodity_index_advisor": {
       "id": "commodity_index_advisor",
@@ -19803,7 +19803,7 @@
       },
       "impactDimension": "Direct Material Spend",
       "baselineVsTarget": "Spot Peak Buying → Index-Timed Forward Locks",
-      "story": "Correlates CBOT/Platts feedstocks with depletion to advise hedging. Delivers 6.8% direct material savings and compresses RFQ bid analysis from 3 weeks to 15 minutes."
+      "story": "Tracks LME, resin, pulp, energy, and agri-commodity curves against BOM exposure to recommend optimal forward-contract split and index clauses."
     },
     "rfq_should_cost_agent": {
       "id": "rfq_should_cost_agent",
@@ -20724,7 +20724,7 @@
       },
       "impactDimension": "Negotiation Savings",
       "baselineVsTarget": "Opaque Vendor Quotes → Clean-Sheet Should-Cost",
-      "story": "Deconstructs packaging specs. Delivers 6.8% direct material savings and compresses RFQ bid analysis from 3 weeks to 15 minutes."
+      "story": "Decomposes every supplier quote into raw material, conversion, energy, logistics, and margin—arming buyers with hard clean-sheet leverage."
     },
     "sustainable_packaging_agent": {
       "id": "sustainable_packaging_agent",
@@ -21537,7 +21537,7 @@
       },
       "impactDimension": "Tax & Material Cost",
       "baselineVsTarget": "EPR Penalty Exposure → Lightweight Recyclable Spec",
-      "story": "Evaluates PCR resins and barrier materials against line runnability & taxes. Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness."
+      "story": "Balances resin/fiber cost, crush/barrier physics, and country-by-country EPR/PPWR eco-modulation fees to lower total packaging cost."
     },
     "tariff_esg_agent": {
       "id": "tariff_esg_agent",
@@ -22433,7 +22433,7 @@
       },
       "impactDimension": "Spend Recovery",
       "baselineVsTarget": "3.8% Contract Leakage → 100% Tier & Clause Capture",
-      "story": "Reconciles live spend against negotiated rebate tiers and volume discount scales. Achieves 99.6% customs and contract audit accuracy while recovering 100% of earned supplier rebates."
+      "story": "Audits live Purchase Orders (POs) and invoices against master PDF contract tiers, volume rebates, and de-escalation clauses to stop off-contract value leakage."
     },
     "master_data_leadtime_steward": {
       "id": "master_data_leadtime_steward",
@@ -23422,7 +23422,7 @@
       },
       "impactDimension": "Expedite Avoidance",
       "baselineVsTarget": "Stale Static Lead Times → 70% Auto-Resolved POs",
-      "story": "Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments. Achieves 99.8% master data accuracy across ERP, WMS, and TMS—eliminating false MRP exceptions and boosting planner adoption across all 26 personas."
+      "story": "Continuously recalibrates ERP vendor lead times and autonomously resolves ~70% of routine PO acknowledgments and date slips before expedite crises."
     },
     "three_way_match_dispute": {
       "id": "three_way_match_dispute",
@@ -24232,7 +24232,7 @@
       },
       "impactDimension": "P2P Processing Cost",
       "baselineVsTarget": "24% Blocked Invoices → 93% Touchless 3-Way Match",
-      "story": "Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. Achieves 99.6% customs and contract audit accuracy while recovering 100% of earned supplier rebates."
+      "story": "Reconciles PO, Goods Receipt (ASN/GRN), and Invoice line variances automatically—capturing early-payment discounts and cutting AP unit cost by 80%."
     },
     "finite_production_scheduler": {
       "id": "finite_production_scheduler",
@@ -25278,7 +25278,7 @@
       },
       "impactDimension": "Plant OEE & Yield",
       "baselineVsTarget": "18% Washout Runtime Loss → Campaign-Sequenced OEE",
-      "story": "Sequences allergen, kosher, and packaging runs to minimize washdowns. Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25%."
+      "story": "Solves finite-capacity campaign wheels across allergens, colors, and pack formats—cutting sanitation/changeover downtime by 15%–25%."
     },
     "line_schedule_optimizer": {
       "id": "line_schedule_optimizer",
@@ -26324,7 +26324,7 @@
       },
       "impactDimension": "Schedule Resilience",
       "baselineVsTarget": "3.5h Line-Down Chaos → <3m Margin-Safe Resequence",
-      "story": "Detects machine halts and re-routes perishable WIP to alternate lines. Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25%."
+      "story": "Re-optimizes shift schedules in under 3 minutes when a filler trips or raw material arrives late—minimizing lost cases and missed dispatch waves."
     },
     "labor_line_balancing_agent": {
       "id": "labor_line_balancing_agent",
@@ -27136,7 +27136,7 @@
       },
       "impactDimension": "Labor Efficiency",
       "baselineVsTarget": "14% Overtime Premium → Skill-Balanced Crewing",
-      "story": "Maps shift skill certifications and fatigue constraints to line speeds. Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25%."
+      "story": "Matches certified operator skills, absenteeism signals, and ergonomic rotation rules to live line schedules—cutting overtime and micro-stoppages."
     },
     "predictive_oee_sentinel": {
       "id": "predictive_oee_sentinel",
@@ -28144,7 +28144,7 @@
       },
       "impactDimension": "Uptime & Capacity",
       "baselineVsTarget": "11% Unplanned Stops → 90-Day Bottleneck Shield",
-      "story": "Assesses CIP utilities, boiler loads, and cold storage holding limits. Lifts plant Overall Equipment Effectiveness (OEE) by +14.2 points and cuts unplanned line stops by 48%."
+      "story": "Combines PLC telemetry with 6-month Rough-Cut Capacity Planning (RCCP) to prevent unplanned breakdowns and expose plant bottlenecks months ahead."
     },
     "copacker_allocation_agent": {
       "id": "copacker_allocation_agent",
@@ -28953,7 +28953,7 @@
       },
       "impactDimension": "Gross Margin / COGS",
       "baselineVsTarget": "16% Tolling Penalty → Landed-Margin Optimal Split",
-      "story": "Models internal conversion costs against co-packer tolling agreements. Compresses S&OP consensus from 21 days to a live 45-minute executive steering session while protecting gross margin (+180 bps) and OTIF."
+      "story": "Allocates SKUs across internal plants and external CMOs by optimizing conversion fees, component freight, MOQ tiers, and delivered gross margin."
     },
     "capex_simulator_agent": {
       "id": "capex_simulator_agent",
@@ -29732,7 +29732,7 @@
       },
       "impactDimension": "Capital Efficiency",
       "baselineVsTarget": "Static Spreadsheet IRR → Monte-Carlo Network ROIC",
-      "story": "Simulates multi-year volume trends to test high-speed line expansions. Expands net contribution margin by +240 bps and cuts total network landed logistics cost by 11.5%."
+      "story": "Stress-tests new line, automation, and plant investments across stochastic demand, tariff, and OEE scenarios before committing board capital."
     },
     "inline_yield_guardian": {
       "id": "inline_yield_guardian",
@@ -30626,7 +30626,7 @@
       },
       "impactDimension": "Scrap & Yield",
       "baselineVsTarget": "3.6% Line Defect Scrap → <1.8% Closed-Loop Yield",
-      "story": "Inspects high-speed video frames for crimped seals, lot codes, and labels. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes."
+      "story": "Detects seal, fill, label, and surface defects inline in milliseconds—halting drift before whole pallets turn into scrap or rework."
     },
     "batch_record_auditor": {
       "id": "batch_record_auditor",
@@ -31410,7 +31410,7 @@
       },
       "impactDimension": "Working Capital & QA",
       "baselineVsTarget": "12d Quarantine Lockup → Review-by-Exception (<24h)",
-      "story": "Parses BPR and COA documents to flag pasteurization & CCP deviations. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes."
+      "story": "Audits electronic/scanned batch records, LIMS lab results, and sterilization logs automatically—freeing millions in quarantined finished goods."
     },
     "scrap_defect_root_cause_agent": {
       "id": "scrap_defect_root_cause_agent",
@@ -32376,7 +32376,7 @@
       },
       "impactDimension": "Repeat Defect Reduction",
       "baselineVsTarget": "21d 5-Why Investigation → 4h Multi-Variate RCA",
-      "story": "Correlates consumer complaints with ingredient lots and machine telemetry. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes."
+      "story": "Correlates supplier raw-material lots, ambient humidity, operator shifts, and machine parameters to isolate true root causes and prevent repeat scrap."
     },
     "meio_safety_stock_agent": {
       "id": "meio_safety_stock_agent",
@@ -33274,7 +33274,7 @@
       },
       "impactDimension": "Working Capital",
       "baselineVsTarget": "Static Single-DC Buffers → Multi-Echelon Optimal Stock",
-      "story": "Recalibrates multi-echelon buffers using live lead-time and demand variance. Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate."
+      "story": "Simultaneously optimizes safety stocks across plants, central hubs, and regional DCs—freeing 12%–22% in working capital while lifting fill rates."
     },
     "slob_disposition_agent": {
       "id": "slob_disposition_agent",
@@ -34033,7 +34033,7 @@
       },
       "impactDimension": "Write-Off Recovery",
       "baselineVsTarget": "2.8% Obsolescence Write-Off → Early Margin Recovery",
-      "story": "Analyzes shelf-life risk and triggers promotional bundles or liquidations. Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate."
+      "story": "Flags slow-moving and aging lots 60–90 days earlier and ranks inter-DC transfer, promo bundling, or secondary channels to avoid write-offs."
     },
     "crossdock_transfer_orchestrator": {
       "id": "crossdock_transfer_orchestrator",
@@ -34943,7 +34943,7 @@
       },
       "impactDimension": "Service & Stockouts",
       "baselineVsTarget": "Imbalanced Regional DCs → Pre-Positioned Hub Balance",
-      "story": "Generates automated inter-DC and store transfers to balance localized gluts. Delivers verified operational impact (-35%–50% Lost-Sale Stockouts) with governed human-in-the-loop write-back."
+      "story": "Balances inventory imbalances across regional DCs before stockouts hit—weighing transfer freight cost against saved gross margin and OTIF penalties."
     },
     "warehouse_slotting_agent": {
       "id": "warehouse_slotting_agent",
@@ -35842,7 +35842,7 @@
       },
       "impactDimension": "Warehouse Efficiency",
       "baselineVsTarget": "55% Aisle Walk Waste → Velocity & Affinity Slotted",
-      "story": "Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting. Reduces picker travel distance by 28% and boosts Units Picked Per Hour (UPH) by 24%."
+      "story": "Re-slots fast-moving and co-ordered SKUs into ergonomic golden zones and optimizes TSP pick paths—boosting DC throughput with $0 automation CapEx."
     },
     "dock_to_stock_agent": {
       "id": "dock_to_stock_agent",
@@ -36622,7 +36622,7 @@
       },
       "impactDimension": "Receiving Throughput",
       "baselineVsTarget": "14h Staging Congestion → 75m ASN-Directed Putaway",
-      "story": "Parses scanned BOLs and pallet photos to reconcile open ASN variances. Cuts trailer yard turnaround time by 41% and reduces carrier detention payouts by 82%."
+      "story": "Prioritizes inbound trailers holding stockout/backorder SKUs and directs instant putaway or cross-docking—clearing receiving bottlenecks."
     },
     "wave_fulfillment_copilot": {
       "id": "wave_fulfillment_copilot",
@@ -37410,7 +37410,7 @@
       },
       "impactDimension": "Dispatch & Labor",
       "baselineVsTarget": "Missed 4PM Carrier Cutoffs → Dynamic Wave Re-Balancing",
-      "story": "Balances picker lines dynamically to protect carrier pickup cutoff times. Reduces picker travel distance by 28% and boosts Units Picked Per Hour (UPH) by 24%."
+      "story": "Monitors pick, sort, and pack-wall queues in real time—re-prioritizing waves and labor zones so every carrier trailer departs on time in full."
     },
     "planogram_merchandising_vision_auditor": {
       "id": "planogram_merchandising_vision_auditor",
@@ -38186,7 +38186,7 @@
       },
       "impactDimension": "On-Shelf Availability",
       "baselineVsTarget": "11% Ghost Inventory → 98.5% Shelf Accuracy",
-      "story": "Identifies shrinkage anomalies when on-hand stock stops scanning at POS. Delivers 98.7% planogram audit accuracy, compresses audit cycles from weeks to sub-seconds, and prevents $4.2M in unearned retailer visibility payouts."
+      "story": "Detects zero-scan Point-of-Sale (POS) velocity anomalies and shelf gaps to eliminate phantom inventory—lifting on-shelf availability and stopping BOPIS cancels."
     },
     "atp_order_promising_agent": {
       "id": "atp_order_promising_agent",
@@ -39054,7 +39054,7 @@
       },
       "impactDimension": "Fulfillment Margin",
       "baselineVsTarget": "19% Split-Order Rate → Margin-Optimal Node Promise",
-      "story": "Selects lowest-cost fulfillment nodes based on store labor and parcel zones. Cuts split shipments by 34% while sustaining 98.7% On-Time In-Full (OTIF) delivery."
+      "story": "Routes every e-commerce and BOPIS order to the DC or store that maximizes net order margin across parcel zone cost, split risk, and markdown avoidance."
     },
     "returns_triage_agent": {
       "id": "returns_triage_agent",
@@ -39812,7 +39812,7 @@
       },
       "impactDimension": "Resale Velocity",
       "baselineVsTarget": "9d Return Quarantine → <24h Grade-A Resale Live",
-      "story": "Evaluates item condition scans to triage restock, vendor return, or liquidation. Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend."
+      "story": "Grades returned items at first touch and immediately restores Grade-A stock to sellable ATP—capturing full-price resale before seasonal markdowns."
     },
     "load_consolidation_agent": {
       "id": "load_consolidation_agent",
@@ -40652,7 +40652,7 @@
       },
       "impactDimension": "Fleet & Freight Cost",
       "baselineVsTarget": "28% Unused Trailer Air → Axle-Legal 3D Multi-Stop",
-      "story": "Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling. Achieves 92% 3D trailer and container cube utilization with 100% LIFO and highway axle compliance—zero dock re-handling."
+      "story": "Solves 3D bin-packing, bridge-formula axle weights, and LIFO stop unloading order—shipping the same volume in 10%–15% fewer trucks."
     },
     "yard_dock_sequencer": {
       "id": "yard_dock_sequencer",
@@ -41524,7 +41524,7 @@
       },
       "impactDimension": "Detention & Flow",
       "baselineVsTarget": "$110/hr Gate Wait Fees → <35m Sequenced Turnaround",
-      "story": "Parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically. Cuts trailer yard turnaround time by 41% and reduces carrier detention payouts by 82%."
+      "story": "Synchronizes live carrier GPS ETAs, yard jockey moves, and dock door crew capacity to eliminate gate queues, detention fees, and plant starvation."
     },
     "cold_chain_auditor": {
       "id": "cold_chain_auditor",
@@ -42382,7 +42382,7 @@
       },
       "impactDimension": "Spoilage & QA Risk",
       "baselineVsTarget": "3.2% Excursion Rejection → Live MKT Intervention",
-      "story": "Analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims. Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically."
+      "story": "Monitors continuous IoT temperature/humidity and calculates Mean Kinetic Temperature (MKT) in transit—intervening before perishable or pharma loads spoil."
     },
     "aisle_aligned_pallet_agent": {
       "id": "aisle_aligned_pallet_agent",
@@ -43149,7 +43149,7 @@
       },
       "impactDimension": "Store Labor Cost",
       "baselineVsTarget": "Mixed-Aisle Sort Chaos → Aisle-Pure Roll-Off Pallets",
-      "story": "Sequences DC pick waves to match individual store planograms and shelf layouts. Reduces total air cargo spend by 28%, eliminates volumetric weight penalties by 21%, and achieves 99.6% cold-chain tarmac connection compliance."
+      "story": "Builds DC pallets sequenced to each store's exact planogram aisle layout and case crush physics—slashing in-store restocking labor by 20%–35%."
     },
     "store_capacity_agent": {
       "id": "store_capacity_agent",
@@ -43919,7 +43919,7 @@
       },
       "impactDimension": "Backroom Efficiency",
       "baselineVsTarget": "Congested Store Backrooms → Cubic-Paced Delivery Waves",
-      "story": "Throttles push replenishment based on store backroom limits and live POS velocity. Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate."
+      "story": "Caps and paces DC replenishment dispatches against each store's live backroom cubic capacity and receiving labor—preventing overflow and damage."
     },
     "port_drayage_orchestrator": {
       "id": "port_drayage_orchestrator",
@@ -44696,7 +44696,7 @@
       },
       "impactDimension": "Compliance & OTIF",
       "baselineVsTarget": "Curfew Fines & Refusals → Noise/EV/Window Sequenced",
-      "story": "Coordinates municipal delivery curfews and store dock shift schedules dynamically. Slashes port demurrage and container detention fees by 67% and cuts factory-to-port-to-DC lead-time variability by 38%."
+      "story": "Aligns store dispatch times, EV/low-noise tractor assignment, and urban curfew/school-zone rules to eliminate municipal fines and refused drops."
     },
     "geocoding_intelligence_agent": {
       "id": "geocoding_intelligence_agent",
@@ -45452,7 +45452,7 @@
       },
       "impactDimension": "Last-Mile Cost",
       "baselineVsTarget": "6.4% Failed-Drop Re-Runs → Rooftop & Gate-Pin Verified",
-      "story": "Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers. Reduces daily road fleet dispatch cost by 19.4% and route mileage by 21.8% with 99.4% time-window adherence."
+      "story": "Validates address rooftop/loading-bay coordinates and driver access notes before dispatch—eliminating $15–$18 failed-delivery redelivery costs."
     },
     "multimodal_mode_shift_agent": {
       "id": "multimodal_mode_shift_agent",
@@ -46213,7 +46213,7 @@
       },
       "impactDimension": "Parcel & Shipping Spend",
       "baselineVsTarget": "Static Carrier Overpay → Dynamic Rate- & SLA-Shopped",
-      "story": "Routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card. Cuts total global factory-to-DC transportation and expedite cost by 24% while maintaining 99.2% customer product availability."
+      "story": "Dynamically selects the lowest-cost parcel, regional courier, crowdsourced, or LTL mode per order that still hits the promised customer delivery date."
     },
     "otif_penalty_shield": {
       "id": "otif_penalty_shield",
@@ -46970,7 +46970,7 @@
       },
       "impactDimension": "Support & OTIF Cost",
       "baselineVsTarget": "38% Inbound WISMO Calls → Proactive Exception Rescue",
-      "story": "Detects en-route exceptions and updates customers proactively with reschedule links. Cuts retailer OTIF fines and shortage deductions by 78% and lifts key-account OTIF compliance to 98.9%."
+      "story": "Detects mid-route parcel and retail-delivery delays early, triggers carrier rescue or proactive customer self-rescheduling, and cuts WISMO cost."
     },
     "fleetflow_dispatch": {
       "id": "fleetflow_dispatch",
@@ -47763,7 +47763,7 @@
       },
       "impactDimension": "Fuel & Fleet Efficiency",
       "baselineVsTarget": "Out-of-Route & Traffic Burn → Live VRP + HOS Rerouting",
-      "story": "Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits. Reduces daily road fleet dispatch cost by 19.4% and route mileage by 21.8% with 99.4% time-window adherence."
+      "story": "Continuously re-solves multi-stop Vehicle Routing (VRP) against live traffic, weather, and driver Hours-of-Service (HOS) to cut fuel and empty miles."
     },
     "freight_control_tower": {
       "id": "freight_control_tower",
@@ -48548,7 +48548,7 @@
       },
       "impactDimension": "Contract vs. Spot Spend",
       "baselineVsTarget": "22% Tender Rejection Leak → 94% Routing-Guide Compliance",
-      "story": "Tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides. Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically."
+      "story": "Predicts primary carrier tender rejections by lane and cascades early to contracted Tier-2/3 carriers before loads leak onto expensive spot markets."
     },
     "freight_bill_audit_agent": {
       "id": "freight_bill_audit_agent",
@@ -49323,7 +49323,7 @@
       },
       "impactDimension": "Freight Spend Recovery",
       "baselineVsTarget": "5.6% EDI 210 Billing Errors → 100% Line-by-Line Tariff Audit",
-      "story": "Extracts signed PODs and rate contracts via OCR to audit accessorial surcharges. Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically."
+      "story": "Audits 100% of carrier EDI 210/PDF freight invoices against contracted rate tables, DOE fuel indices, and GPS arrival timestamps before payment."
     },
     "reverse_rma_optimizer": {
       "id": "reverse_rma_optimizer",
@@ -50058,7 +50058,7 @@
       },
       "impactDimension": "Fraud & Margin Protection",
       "baselineVsTarget": "13.7% Abusive/Fraud RMAs → Serial- & Risk-Gated RMA",
-      "story": "Analyzes item photos and packaging video feeds to detect wear or swapped tags. Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend."
+      "story": "Scores return requests against serial history, account abuse patterns, and item telemetry—blocking fraudulent RMAs without friction for loyal buyers."
     },
     "keep_it_routing_advisor": {
       "id": "keep_it_routing_advisor",
@@ -50816,7 +50816,7 @@
       },
       "impactDimension": "Net Return Recovery",
       "baselineVsTarget": "Negative-Margin Return Shipping → Profit-Optimal RMA Routing",
-      "story": "Evaluates salvage margins vs reverse freight to determine keep-it instant refunds. Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend."
+      "story": "Calculates reverse shipping + grading cost vs. resale recovery in real time—routing items to store, refurb hub, outlet, or Keep-It credit."
     },
     "osd_freight_claims_agent": {
       "id": "osd_freight_claims_agent",
@@ -51589,7 +51589,7 @@
       },
       "impactDimension": "Claims Recovery",
       "baselineVsTarget": "38% Missed Claim Windows → <48h Filed Evidence Packets",
-      "story": "Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes. Cuts retailer OTIF fines and shortage deductions by 78% and lifts key-account OTIF compliance to 98.9%."
+      "story": "Assembles dock damage photos, signed BOL exceptions, and SKU invoice values into compliant carrier claim packets within hours of unloading."
     },
     "dynamic_markdown_agent": {
       "id": "dynamic_markdown_agent",
@@ -52342,7 +52342,7 @@
       },
       "impactDimension": "Shrink & Gross Margin",
       "baselineVsTarget": "4.6% Fresh Write-Offs → Elasticity-Timed Clearance",
-      "story": "Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts. Boosts net trade spend ROI by 22% and prevents promotional stockouts and post-promo bullwhip troughs."
+      "story": "Triggers shallow, early price-elasticity markdowns synced to lot sell-by dates and local store velocity—clearing stock at higher margin with less waste."
     },
     "short_dated_redistributor": {
       "id": "short_dated_redistributor",
@@ -53087,7 +53087,7 @@
       },
       "impactDimension": "Write-Off Avoidance",
       "baselineVsTarget": "FEFO Shelf-Life Rejections → High-Velocity Channel Match",
-      "story": "Matches near-date DC lots with discounters or food banks before acceptance cutoffs. Delivers verified operational impact (Diverts 30%–45% At-Risk Lots) with governed human-in-the-loop write-back."
+      "story": "Matches short-dated DC lots at risk of customer shelf-life rejection to fast-turning stores, foodservice channels, or tax-advantaged donations."
     },
     "food_waste_esg_copilot": {
       "id": "food_waste_esg_copilot",
@@ -53830,7 +53830,7 @@
       },
       "impactDimension": "Tax & ESG Value",
       "baselineVsTarget": "Unclaimed Donation Credits → Automated Upcycle & Tax Ledger",
-      "story": "Aggregates store shrink and organic haul logs to generate audited GHG diversion filings. Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness."
+      "story": "Routes unsellable organics to highest circular tier (donation tax credits, upcycling, feed, digester) and automates Scope 3 waste reporting."
     },
     "rti_balance_reconciler": {
       "id": "rti_balance_reconciler",
@@ -54610,7 +54610,7 @@
       },
       "impactDimension": "Asset CapEx & Fines",
       "baselineVsTarget": "15% Annual RTI Shrinkage → Serialized Pool Reconciliation",
-      "story": "Reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. Delivers verified operational impact (-25%–35% RTI Replacement Cost) with governed human-in-the-loop write-back."
+      "story": "Reconciles serialized pallet, tote, rack, and keg balances across plants, DCs, and customers—slashing pool rental fines and replacement CapEx."
     },
     "intermodal_rail_linehaul_agent": {
       "id": "intermodal_rail_linehaul_agent",
@@ -55386,7 +55386,7 @@
       },
       "impactDimension": "Backhaul Efficiency",
       "baselineVsTarget": "36% Empty Return Trailers → Consolidated Milk-Run Sweeps",
-      "story": "Schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. Lowers long-haul linehaul cost by 34%, cuts corridor Scope-3 CO2e emissions by 68%, and reduces rail ramp storage fees by 76%."
+      "story": "Pairs empty outbound store/DC return legs with pallet stacks, collapsible totes, and consolidated RMAs—eliminating dedicated reverse freight."
     },
     "sanitation_health_agent": {
       "id": "sanitation_health_agent",
@@ -56150,7 +56150,7 @@
       },
       "impactDimension": "Asset Life & QA",
       "baselineVsTarget": "Premature Scrapping & QA Risk → Cycle-Verified Wash & Repair",
-      "story": "Inspects return photos and wash logs for structural fatigue and chemical compliance. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes."
+      "story": "Enforces wash-temperature, allergen segregation, and structural cycle limits on every reusable container—extending asset life while guaranteeing safety."
     }
   },
   "valueChains": {

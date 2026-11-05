@@ -816,7 +816,7 @@
     <section class="journey-hero">
       <div class="hero-kicker fly-up is-visible">
         <span class="hero-dot"></span>
-        <span>Gemini Enterprise &times; Your Company &middot; Supply Chain</span>
+        <span>Agentic Supply Chain Studio</span>
       </div>
       <h1 class="journey-h1 fly-up is-visible delay-1">
         Gemini &times; <span class="grad">Your Supply Chain</span>
@@ -1113,22 +1113,17 @@
         const pCount = t.active_pillars_count || 6;
         const portalUrl = `/t/${encodeURIComponent(t.twin_slug)}`;
         const coName = t.canonical_name || t.company_name;
-        const thesis = t.executive_thesis || '';
         return `
           <div class="twin-card">
-            <div style="display:flex; flex-direction:column; gap:11px;">
-              <div class="twin-id-row">
-                ${renderLogoPlate(t, coName)}
-                <div style="min-width:0;">
-                  <div style="font-family:var(--font-mono); font-size:10.5px; font-weight:700; letter-spacing:0.06em; color:var(--sc-cyan); text-transform:uppercase; margin-bottom:3px;">✦ Gemini &times; ${escHtml(coName)}</div>
-                  <div class="twin-co-name">${escHtml(coName)}</div>
-                  <span class="twin-div-pill">${escHtml(t.division_name || 'Enterprise Supply Chain')}</span>
-                </div>
+            <div class="twin-id-row">
+              ${renderLogoPlate(t, coName)}
+              <div style="min-width:0;">
+                <div class="twin-co-name">${escHtml(coName)}</div>
+                <span class="twin-div-pill">${escHtml(t.division_name || 'Enterprise Supply Chain')}</span>
               </div>
-              ${thesis ? `<div style="font-size:12.5px; line-height:1.48; color:var(--text-secondary); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${escHtml(thesis)}</div>` : ''}
             </div>
             <div class="twin-meta-row">
-              <span class="twin-agent-count">✦ ${pCount} Pillars · ${active}/60 Agents</span>
+              <span class="twin-agent-count">${pCount} Pillars &middot; ${active}/60 Agents</span>
               <div class="twin-card-btns">
                 <button type="button" class="btn-sm" onclick="copyTwinUrl('${escHtml(t.twin_slug)}', this)">Copy Link</button>
                 <button type="button" class="btn-sm" onclick="openFineTuneModal('${escHtml(t.twin_slug)}')">Edit</button>

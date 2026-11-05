@@ -34,7 +34,7 @@
       "v_num": "01",
       "scor_badge": "01 · MODEL & VARIANT S&OP",
       "name": "Model-Variant Demand, Trim Mix & Launch IBP",
-      "tagline": "Maruti Suzuki · Dealer booking velocity, EV/ICE trim mix & new model…",
+      "tagline": "Dealer booking velocity, EV/ICE trim mix & new model",
       "subtitle": "Aligns regional dealership bookings and model/color/trim mix with multi-plant assembly capacity.",
       "color": "#2563eb",
       "watermark_type": "demand_wave",
@@ -49,7 +49,7 @@
       "v_num": "02",
       "scor_badge": "02 · VENDOR PARK & SOURCING",
       "name": "Tier-1/2/3 Vendor Localization, Chips & Tooling",
-      "tagline": "Maruti Suzuki · JIS supplier parks, steel/aluminium coils…",
+      "tagline": "JIS supplier parks, steel/aluminium coils",
       "subtitle": "Governs multi-tier component risk, sheet-metal/alloy indexing, and automated vendor scheduling agreements.",
       "color": "#ea580c",
       "watermark_type": "supplier_graph",
@@ -64,7 +64,7 @@
       "v_num": "03",
       "scor_badge": "03 · PRESS, PAINT & ASSEMBLY",
       "name": "Mixed-Model Line Sequencing, Paint-Shop & QA",
-      "tagline": "Maruti Suzuki · Color-batch paint optimization, weld robotics OEE &…",
+      "tagline": "Color-batch paint optimization, weld robotics OEE &",
       "subtitle": "Sequences mixed-model assembly lines at takt-time while minimizing paint-shop purge waste and defects.",
       "color": "#059669",
       "watermark_type": "factory_arm",
@@ -79,7 +79,7 @@
       "v_num": "04",
       "scor_badge": "04 · GENUINE PARTS & YARDS",
       "name": "Genuine Spare-Parts Depots & Vehicle Stockyards",
-      "tagline": "Maruti Suzuki · VOR spare-parts MEIO, high-bay bin slotting & VIN yard…",
+      "tagline": "VOR spare-parts MEIO, high-bay bin slotting & VIN yard",
       "subtitle": "Optimizes regional spare-parts fill rates and finished-vehicle factory stockyard staging.",
       "color": "#7c3aed",
       "watermark_type": "warehouse_rack",
@@ -94,7 +94,7 @@
       "v_num": "05",
       "scor_badge": "05 · AUTO-RAKE & CARRIERS",
       "name": "Rail Auto-Wagons, Car-Carrier Trailers & Export",
-      "tagline": "Maruti Suzuki · Bi-level rail rakes, port Ro-Ro drayage & transporter…",
+      "tagline": "Bi-level rail rakes, port Ro-Ro drayage & transporter",
       "subtitle": "Maximizes rail share via dedicated auto-wagons and optimizes multi-car trailer load consolidation.",
       "color": "#e11d48",
       "watermark_type": "corridor_lifo",
@@ -108,7 +108,7 @@
       "v_num": "06",
       "scor_badge": "06 · DEALER & SERVICE NETWORK",
       "name": "Dealership Vehicle Allocation, Schemes & VOR Parts",
-      "tagline": "Maruti Suzuki · Dealer wholesale dispatch, exchange schemes & workshop…",
+      "tagline": "Dealer wholesale dispatch, exchange schemes & workshop",
       "subtitle": "Coordinates dealer inventory allocation, retail finance/exchange schemes, and rapid workshop parts delivery.",
       "color": "#e11d48",
       "watermark_type": "demand_wave",
@@ -123,7 +123,7 @@
       "v_num": "07",
       "scor_badge": "07 · WARRANTY & STEEL RACKS",
       "name": "Warranty Part Recovery, Remanufacturing & Racks",
-      "tagline": "Maruti Suzuki · Failed-part RMA root cause, transit damage &…",
+      "tagline": "Failed-part RMA root cause, transit damage &",
       "subtitle": "Tracks returnable vendor steel racks/dunnage, transit scratch claims, and warranty part remanufacturing.",
       "color": "#d97706",
       "watermark_type": "conveyor_rack",
@@ -138,38 +138,38 @@
     "demand_sop": {
       "dept_id": "demand_sop",
       "custom_name": "Planning & Strategy",
-      "custom_tagline": "Maruti Suzuki · Core Planning Lifecycle",
-      "custom_subtitle": "Tailored for Maruti Suzuki: Demand signals and strategic S&OP alignment."
+      "custom_tagline": "Core Planning Lifecycle",
+      "custom_subtitle": "Demand signals and strategic S&OP alignment."
     },
     "sourcing_procurement": {
       "dept_id": "sourcing_procurement",
       "custom_name": "Sourcing & Procurement",
-      "custom_tagline": "Maruti Suzuki · Procurement Lifecycle Spine",
-      "custom_subtitle": "Tailored for Maruti Suzuki: Tier vendor networks and EDI order routing."
+      "custom_tagline": "Procurement Lifecycle Spine",
+      "custom_subtitle": "Tier vendor networks and EDI order routing."
     },
     "manufacturing_prod": {
       "dept_id": "manufacturing_prod",
       "custom_name": "Manufacturing & Production",
-      "custom_tagline": "Maruti Suzuki · Manufacturing Operations Lifecycle",
-      "custom_subtitle": "Tailored for Maruti Suzuki: Optimized runs and zero-defect QA protocols."
+      "custom_tagline": "Manufacturing Operations Lifecycle",
+      "custom_subtitle": "Optimized runs and zero-defect QA protocols."
     },
     "inventory_warehouse": {
       "dept_id": "inventory_warehouse",
       "custom_name": "Inventory & Warehousing",
-      "custom_tagline": "Maruti Suzuki · Inventory & DC Lifecycle Spine",
-      "custom_subtitle": "Tailored for Maruti Suzuki: Multi-node staging and enterprise visibility."
+      "custom_tagline": "Inventory & DC Lifecycle Spine",
+      "custom_subtitle": "Multi-node staging and enterprise visibility."
     },
     "logistics_fleet": {
       "dept_id": "logistics_fleet",
       "custom_name": "Distribution & Logistics",
-      "custom_tagline": "Maruti Suzuki · Logistics Fulfillment Lifecycle",
-      "custom_subtitle": "Tailored for Maruti Suzuki: Store replenishment and last-mile dispatch."
+      "custom_tagline": "Logistics Fulfillment Lifecycle",
+      "custom_subtitle": "Store replenishment and last-mile dispatch."
     },
     "circular_enable": {
       "dept_id": "circular_enable",
       "custom_name": "Returns & Reverse Logistics",
-      "custom_tagline": "Maruti Suzuki · Reverse Value Stream Lifecycle",
-      "custom_subtitle": "Tailored for Maruti Suzuki: Triage inspection and upstream defect loops."
+      "custom_tagline": "Reverse Value Stream Lifecycle",
+      "custom_subtitle": "Triage inspection and upstream defect loops."
     }
   },
   "sub_pillar_overrides": {
@@ -301,8 +301,8 @@
       "sub_pillar_id": "demand_forecasting",
       "canonical_name": "Demand Planner / Forecaster",
       "title": "Demand Planner / Forecaster",
-      "role": "Regional Dealership Booking & Trim-Mix Sensing · Maruti Suzuki",
-      "summary": "Leads regional dealership booking & trim-mix sensing across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns demand forecasting execution within Supply Chain Planning & Strategy—partnering with Demand Sensing.",
+      "role": "Regional Dealership Booking & Trim-Mix Sensing",
+      "summary": "Synthesizes Point-of-Sale (POS) velocity, weather anomalies, and macro trends.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose demand forecasting variances and exceptions across regions.",
       "agentic_impact": "Demand Sensing Agent automatically synthesizes POS velocity, weather anomalies, and macro trends — detects demand shifts 7–14 days earlier.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -313,8 +313,8 @@
       "sub_pillar_id": "demand_forecasting",
       "canonical_name": "Commercial Planning Lead",
       "title": "Commercial Planning Lead",
-      "role": "Regional Dealership Booking & Trim-Mix Sensing · Maruti Suzuki",
-      "summary": "Leads regional dealership booking & trim-mix sensing across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns demand forecasting execution within Supply Chain Planning & Strategy—partnering with Forecast.",
+      "role": "Regional Dealership Booking & Trim-Mix Sensing",
+      "summary": "Owns demand forecasting execution—identifies unmodeled drivers across ecommerce and retail channels.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose demand forecasting variances and exceptions across regions.",
       "agentic_impact": "Forecast Reconciliation automatically identifies unmodeled drivers across eCommerce and retail channels — replaces black-box variance models.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -325,8 +325,8 @@
       "sub_pillar_id": "demand_forecasting",
       "canonical_name": "Brand & Innovation Manager",
       "title": "Brand & Innovation Manager",
-      "role": "Regional Dealership Booking & Trim-Mix Sensing · Maruti Suzuki",
-      "summary": "Leads regional dealership booking & trim-mix sensing across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns demand forecasting execution within Supply Chain Planning & Strategy—partnering with NPI Demand Profiler.",
+      "role": "Regional Dealership Booking & Trim-Mix Sensing",
+      "summary": "Owns demand forecasting execution—matches launch packaging and attributes to historical lookalikes.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose demand forecasting variances and exceptions across regions.",
       "agentic_impact": "NPI Demand Profiler automatically matches launch packaging and attributes to historical lookalikes — cuts 90-day launch forecast errors.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -337,8 +337,8 @@
       "sub_pillar_id": "trade_promotion",
       "canonical_name": "Trade Marketing Manager",
       "title": "Trade Marketing Manager",
-      "role": "Festive Exchange Schemes & Dealer Incentive ROI · Maruti Suzuki",
-      "summary": "Leads festive exchange schemes & dealer incentive roi across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns trade promotion execution within Supply Chain Planning & Strategy—partnering with Promo ROI Simulator.",
+      "role": "Festive Exchange Schemes & Dealer Incentive ROI",
+      "summary": "Owns trade promotion execution—simulates price elasticity, shelf lift, and incremental spend return.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose trade promotion variances and exceptions across regions.",
       "agentic_impact": "Promo ROI Simulator automatically simulates price elasticity, shelf lift, and incremental spend return — prevents break-even trade leakage.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -349,8 +349,8 @@
       "sub_pillar_id": "trade_promotion",
       "canonical_name": "Key Account Manager (KAM)",
       "title": "Key Account Manager (KAM)",
-      "role": "Festive Exchange Schemes & Dealer Incentive ROI · Maruti Suzuki",
-      "summary": "Leads festive exchange schemes & dealer incentive roi across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns trade promotion execution within Supply Chain Planning & Strategy—partnering with JBP Negotiation Agent.",
+      "role": "Festive Exchange Schemes & Dealer Incentive ROI",
+      "summary": "Owns trade promotion execution—creates customized sell-in story decks and joint promotional calendars.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose trade promotion variances and exceptions across regions.",
       "agentic_impact": "JBP Negotiation Agent automatically creates customized sell-in story decks and joint promotional calendars — aligns buyer margins and volume goals.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -361,8 +361,8 @@
       "sub_pillar_id": "trade_promotion",
       "canonical_name": "Revenue / Trade Finance Lead",
       "title": "Revenue / Trade Finance Lead",
-      "role": "Festive Exchange Schemes & Dealer Incentive ROI · Maruti Suzuki",
-      "summary": "Leads festive exchange schemes & dealer incentive roi across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns trade promotion execution within Supply Chain Planning & Strategy—partnering with Deduction Audit Agent.",
+      "role": "Festive Exchange Schemes & Dealer Incentive ROI",
+      "summary": "Audits scanned proof-of-performance circulars and invoices via ocr.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose trade promotion variances and exceptions across regions.",
       "agentic_impact": "Deduction Audit Agent automatically audits scanned proof-of-performance circulars and invoices via OCR — resolves claim disputes in hours.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -373,8 +373,8 @@
       "sub_pillar_id": "sop_ibp",
       "canonical_name": "S&OP / Supply Planning Dir.",
       "title": "S&OP / Supply Planning Dir.",
-      "role": "Multi-Plant Vehicle & Powertrain S&OP · Maruti Suzuki",
-      "summary": "Leads multi-plant vehicle & powertrain s&op across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns s&op / ibp execution within Supply Chain Planning & Strategy—partnering with Consensus & Gap Agent to highlight.",
+      "role": "Multi-Plant Vehicle & Powertrain S&OP",
+      "summary": "Reconciles unconstrained demand with factory plant bottleneck limits.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose s&op / ibp variances and exceptions across regions.",
       "agentic_impact": "Consensus & Gap Agent automatically reconciles unconstrained demand with factory plant bottleneck limits — highlights margin-dilutive imbalances.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -385,8 +385,8 @@
       "sub_pillar_id": "sop_ibp",
       "canonical_name": "Supply Chain VP / COO",
       "title": "Supply Chain VP / COO",
-      "role": "Multi-Plant Vehicle & Powertrain S&OP · Maruti Suzuki",
-      "summary": "Leads multi-plant vehicle & powertrain s&op across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns s&op / ibp execution within Supply Chain Planning & Strategy—partnering with Digital War-Room Agent to rapid otif.",
+      "role": "Multi-Plant Vehicle & Powertrain S&OP",
+      "summary": "Owns s&op / ibp execution—evaluates co-packer shifts and allocation trade-offs during supply outages.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose s&op / ibp variances and exceptions across regions.",
       "agentic_impact": "Digital War-Room Agent automatically evaluates co-packer shifts and allocation trade-offs during supply outages — rapid otif impact scenario brief.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -397,8 +397,8 @@
       "sub_pillar_id": "sop_ibp",
       "canonical_name": "IBP Lead / Chief Planning Off.",
       "title": "IBP Lead / Chief Planning Off.",
-      "role": "Multi-Plant Vehicle & Powertrain S&OP · Maruti Suzuki",
-      "summary": "Leads multi-plant vehicle & powertrain s&op across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns s&op / ibp execution within Supply Chain Planning & Strategy—partnering with Executive Copilot to reduce deck.",
+      "role": "Multi-Plant Vehicle & Powertrain S&OP",
+      "summary": "Owns s&op / ibp execution—generates pre-read decks and tracks sign-offs across cross-functional leads.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose s&op / ibp variances and exceptions across regions.",
       "agentic_impact": "Executive Copilot automatically generates pre-read decks and tracks sign-offs across cross-functional leads — reduces deck preparation by days.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -409,8 +409,8 @@
       "sub_pillar_id": "portfolio_sku",
       "canonical_name": "Category Manager",
       "title": "Category Manager",
-      "role": "Model-Variant, Color & Trim Rationalization · Maruti Suzuki",
-      "summary": "Leads model-variant, color & trim rationalization across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns portfolio & sku execution within Supply Chain Planning & Strategy—partnering with SKU Pruning Agent to.",
+      "role": "Model-Variant, Color & Trim Rationalization",
+      "summary": "Owns portfolio & sku execution—scores velocity, plant changeover cost, and shelf revenue yield.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose portfolio & sku variances and exceptions across regions.",
       "agentic_impact": "SKU Pruning Agent automatically scores velocity, plant changeover cost, and shelf revenue yield — unlocks tail working capital.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -421,8 +421,8 @@
       "sub_pillar_id": "portfolio_sku",
       "canonical_name": "Lifecycle / Materials Mgr",
       "title": "Lifecycle / Materials Mgr",
-      "role": "Model-Variant, Color & Trim Rationalization · Maruti Suzuki",
-      "summary": "Leads model-variant, color & trim rationalization across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns portfolio & sku execution within Supply Chain Planning & Strategy—partnering with PIPO Run-Out Agent to.",
+      "role": "Model-Variant, Color & Trim Rationalization",
+      "summary": "Owns portfolio & sku execution—orchestrates transition buffers to sync packaging and formulation cuts.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose portfolio & sku variances and exceptions across regions.",
       "agentic_impact": "PIPO Run-Out Agent automatically orchestrates transition buffers to sync packaging and formulation cuts — eliminates stranded write-offs.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -433,8 +433,8 @@
       "sub_pillar_id": "portfolio_sku",
       "canonical_name": "Commercial Finance Director",
       "title": "Commercial Finance Director",
-      "role": "Model-Variant, Color & Trim Rationalization · Maruti Suzuki",
-      "summary": "Leads model-variant, color & trim rationalization across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns portfolio & sku execution within Supply Chain Planning & Strategy—partnering with Cost-to-Serve Diagnostic.",
+      "role": "Model-Variant, Color & Trim Rationalization",
+      "summary": "Owns portfolio & sku execution—calculates net-net margin across club, grocery, and ecommerce packs.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose portfolio & sku variances and exceptions across regions.",
       "agentic_impact": "Cost-to-Serve Diagnostic automatically calculates net-net margin across Club, Grocery, and eCommerce packs — re-engineers moq and pack rules.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -445,8 +445,8 @@
       "sub_pillar_id": "supplier_network",
       "canonical_name": "Procurement Dir. / Risk Mgr",
       "title": "Procurement Dir. / Risk Mgr",
-      "role": "Tier-1/2/3 Vendor Park & Semiconductor Risk · Maruti Suzuki",
-      "summary": "Leads tier-1/2/3 vendor park & semiconductor risk across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns supplier network execution within Strategic Procurement—partnering with Disruption Sensing Agent to 2–3.",
+      "role": "Tier-1/2/3 Vendor Park & Semiconductor Risk",
+      "summary": "Monitors multi-tier supply feeds, port delays, and vendor financials.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose supplier network variances and exceptions across regions.",
       "agentic_impact": "Disruption Sensing Agent automatically monitors multi-tier supply feeds, port delays, and vendor financials — 2–3 week advance disruption warning.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -457,8 +457,8 @@
       "sub_pillar_id": "supplier_network",
       "canonical_name": "Procurement Operations Lead",
       "title": "Procurement Operations Lead",
-      "role": "Tier-1/2/3 Vendor Park & Semiconductor Risk · Maruti Suzuki",
-      "summary": "Leads tier-1/2/3 vendor park & semiconductor risk across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns supplier network execution within Strategic Procurement—partnering with Onboarding & Qual. Agent to cut.",
+      "role": "Tier-1/2/3 Vendor Park & Semiconductor Risk",
+      "summary": "Owns supplier network execution—parses brc/iso audits, food-safety filings, and tax registrations.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose supplier network variances and exceptions across regions.",
       "agentic_impact": "Onboarding & Qual. Agent automatically parses BRC/ISO audits, food-safety filings, and tax registrations — cuts onboarding from weeks to <48h.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -469,8 +469,8 @@
       "sub_pillar_id": "supplier_network",
       "canonical_name": "Chief Sustainability Officer",
       "title": "Chief Sustainability Officer",
-      "role": "Tier-1/2/3 Vendor Park & Semiconductor Risk · Maruti Suzuki",
-      "summary": "Leads tier-1/2/3 vendor park & semiconductor risk across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns supplier network execution within Strategic Procurement—partnering with ESG & Scope 3 Auditor to automate.",
+      "role": "Tier-1/2/3 Vendor Park & Semiconductor Risk",
+      "summary": "Owns supplier network execution—standardizes chain-of-custody certificates (rspo/fsc) and packaging lcas.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose supplier network variances and exceptions across regions.",
       "agentic_impact": "ESG & Scope 3 Auditor automatically standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs — automates scope 3 disclosure audits.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -481,8 +481,8 @@
       "sub_pillar_id": "material_packaging",
       "canonical_name": "Category Sourcing Mgr (Direct)",
       "title": "Category Sourcing Mgr (Direct)",
-      "role": "Auto-Grade Steel, Aluminium & Tooling Should-Cost · Maruti Suzuki",
-      "summary": "Leads auto-grade steel, aluminium & tooling should-cost across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns material & packaging execution within Strategic Procurement—partnering with Commodity Index Advisor.",
+      "role": "Auto-Grade Steel, Aluminium & Tooling Should-Cost",
+      "summary": "Owns material & packaging execution—correlates cbot/platts feedstocks with depletion to advise hedging.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose material & packaging variances and exceptions across regions.",
       "agentic_impact": "Commodity Index Advisor automatically correlates CBOT/Platts feedstocks with depletion to advise hedging — optimizes forward-contract windows.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -493,8 +493,8 @@
       "sub_pillar_id": "material_packaging",
       "canonical_name": "Strategic Sourcing Lead",
       "title": "Strategic Sourcing Lead",
-      "role": "Auto-Grade Steel, Aluminium & Tooling Should-Cost · Maruti Suzuki",
-      "summary": "Leads auto-grade steel, aluminium & tooling should-cost across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns material & packaging execution within Strategic Procurement—partnering with Dynamic Should-Cost Agent.",
+      "role": "Auto-Grade Steel, Aluminium & Tooling Should-Cost",
+      "summary": "Owns material & packaging execution—deconstructs packaging specs (resin weight, corrugate, conversion energy).",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose material & packaging variances and exceptions across regions.",
       "agentic_impact": "Dynamic Should-Cost Agent automatically deconstructs packaging specs (resin weight, corrugate, conversion energy) — fact-based margin leverage in rfps.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -505,8 +505,8 @@
       "sub_pillar_id": "material_packaging",
       "canonical_name": "Packaging R&D Engineer",
       "title": "Packaging R&D Engineer",
-      "role": "Auto-Grade Steel, Aluminium & Tooling Should-Cost · Maruti Suzuki",
-      "summary": "Leads auto-grade steel, aluminium & tooling should-cost across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns material & packaging execution within Strategic Procurement—partnering with Sustainable Packaging.",
+      "role": "Auto-Grade Steel, Aluminium & Tooling Should-Cost",
+      "summary": "Owns material & packaging execution—evaluates pcr resins and barrier materials against line runnability & taxes.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose material & packaging variances and exceptions across regions.",
       "agentic_impact": "Sustainable Packaging Agent automatically evaluates PCR resins and barrier materials against line runnability & taxes — mitigates epr and landfill taxation.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -517,8 +517,8 @@
       "sub_pillar_id": "contract_po_mgmt",
       "canonical_name": "Commercial Sourcing / Legal",
       "title": "Commercial Sourcing / Legal",
-      "role": "Contract & PO Mgmt · Maruti Suzuki",
-      "summary": "Leads contract & po mgmt across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns contract & po mgmt execution within Strategic Procurement—partnering with Contract Leakage Agent to recover missed rebates &.",
+      "role": "Contract & PO Mgmt",
+      "summary": "Reconciles live spend against negotiated rebate tiers and volume discount scales.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
       "agentic_impact": "Contract Leakage Agent automatically reconciles live spend against negotiated rebate tiers and volume discount scales — recovers missed rebates & surcharges.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -529,8 +529,8 @@
       "sub_pillar_id": "contract_po_mgmt",
       "canonical_name": "Buyer / Procurement Coord.",
       "title": "Buyer / Procurement Coord.",
-      "role": "Contract & PO Mgmt · Maruti Suzuki",
-      "summary": "Leads contract & po mgmt across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns contract & po mgmt execution within Strategic Procurement—partnering with PO Expediting Agent to resolve ~70% of standard po delays.",
+      "role": "Contract & PO Mgmt",
+      "summary": "Monitors edi 855/856 delay feeds and orchestrates supplier split-shipments.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
       "agentic_impact": "PO Expediting Agent automatically monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments — resolves ~70% of standard po delays.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -541,8 +541,8 @@
       "sub_pillar_id": "contract_po_mgmt",
       "canonical_name": "Accounts Payable Lead",
       "title": "Accounts Payable Lead",
-      "role": "Contract & PO Mgmt · Maruti Suzuki",
-      "summary": "Leads contract & po mgmt across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns contract & po mgmt execution within Strategic Procurement—partnering with Three-Way Match Dispute to prevent vendor holds & saves.",
+      "role": "Contract & PO Mgmt",
+      "summary": "Owns contract & po mgmt execution—diagnoses price/quantity discrepancies across Point-of-Sale (POS), grns, and carrier invoices.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions.",
       "agentic_impact": "Three-Way Match Dispute automatically diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices — prevents vendor holds & saves discounts.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -553,8 +553,8 @@
       "sub_pillar_id": "production_scheduling",
       "canonical_name": "Master Production Scheduler",
       "title": "Master Production Scheduler",
-      "role": "Mixed-Model Takt & Paint-Batch Sequencing · Maruti Suzuki",
-      "summary": "Leads mixed-model takt & paint-batch sequencing across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns production scheduling execution within Intelligent Shop Floor—partnering with Changeover Optimizer to cut.",
+      "role": "Mixed-Model Takt & Paint-Batch Sequencing",
+      "summary": "Owns production scheduling execution—sequences allergen, kosher, and packaging runs to minimize washdowns.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose production scheduling variances and exceptions across regions.",
       "agentic_impact": "Changeover Optimizer automatically sequences allergen, kosher, and packaging runs to minimize washdowns — cuts sanitation downtime by 15–25%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -565,8 +565,8 @@
       "sub_pillar_id": "production_scheduling",
       "canonical_name": "Shop Floor / Shift Lead",
       "title": "Shop Floor / Shift Lead",
-      "role": "Mixed-Model Takt & Paint-Batch Sequencing · Maruti Suzuki",
-      "summary": "Leads mixed-model takt & paint-batch sequencing across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns production scheduling execution within Intelligent Shop Floor—partnering with Disruption Re-sequencer to line.",
+      "role": "Mixed-Model Takt & Paint-Batch Sequencing",
+      "summary": "Owns production scheduling execution—detects machine halts and re-routes perishable wip to alternate lines.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose production scheduling variances and exceptions across regions.",
       "agentic_impact": "Disruption Re-sequencer automatically detects machine halts and re-routes perishable WIP to alternate lines — line reallocation in <3 minutes.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -577,8 +577,8 @@
       "sub_pillar_id": "production_scheduling",
       "canonical_name": "Plant Operations Manager",
       "title": "Plant Operations Manager",
-      "role": "Mixed-Model Takt & Paint-Batch Sequencing · Maruti Suzuki",
-      "summary": "Leads mixed-model takt & paint-batch sequencing across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns production scheduling execution within Intelligent Shop Floor—partnering with Labor & Line Balancing to.",
+      "role": "Mixed-Model Takt & Paint-Batch Sequencing",
+      "summary": "Owns production scheduling execution—maps shift skill certifications and fatigue constraints to line speeds.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose production scheduling variances and exceptions across regions.",
       "agentic_impact": "Labor & Line Balancing automatically maps shift skill certifications and fatigue constraints to line speeds — prevents certified skill bottlenecks.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -589,8 +589,8 @@
       "sub_pillar_id": "capacity_planning",
       "canonical_name": "Supply Chain Ops Director",
       "title": "Supply Chain Ops Director",
-      "role": "Weld/Press Robotics OEE & Shift Manning · Maruti Suzuki",
-      "summary": "Leads weld/press robotics oee & shift manning across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns capacity planning execution within Intelligent Shop Floor—partnering with Bottleneck Diagnostic to flag.",
+      "role": "Weld/Press Robotics OEE & Shift Manning",
+      "summary": "Owns capacity planning execution—assesses cip utilities, boiler loads, and cold storage holding limits.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose capacity planning variances and exceptions across regions.",
       "agentic_impact": "Bottleneck Diagnostic automatically assesses CIP utilities, boiler loads, and cold storage holding limits — flags facility constraints 3–6 mos out.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -601,8 +601,8 @@
       "sub_pillar_id": "capacity_planning",
       "canonical_name": "External Sourcing / CMO Lead",
       "title": "External Sourcing / CMO Lead",
-      "role": "Weld/Press Robotics OEE & Shift Manning · Maruti Suzuki",
-      "summary": "Leads weld/press robotics oee & shift manning across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns capacity planning execution within Intelligent Shop Floor—partnering with Co-Packer Allocation to optimize net.",
+      "role": "Weld/Press Robotics OEE & Shift Manning",
+      "summary": "Owns capacity planning execution—models internal conversion costs against co-packer tolling agreements.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose capacity planning variances and exceptions across regions.",
       "agentic_impact": "Co-Packer Allocation automatically models internal conversion costs against co-packer tolling agreements — optimizes net gross margin per case.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -613,8 +613,8 @@
       "sub_pillar_id": "capacity_planning",
       "canonical_name": "VP Manufacturing Engineering",
       "title": "VP Manufacturing Engineering",
-      "role": "Weld/Press Robotics OEE & Shift Manning · Maruti Suzuki",
-      "summary": "Leads weld/press robotics oee & shift manning across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns capacity planning execution within Intelligent Shop Floor—partnering with CapEx Simulator to delivers.",
+      "role": "Weld/Press Robotics OEE & Shift Manning",
+      "summary": "Owns capacity planning execution—simulates multi-year volume trends to test high-speed line expansions.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose capacity planning variances and exceptions across regions.",
       "agentic_impact": "CapEx Simulator automatically simulates multi-year volume trends to test high-speed line expansions — delivers defensible board capex roi.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -625,8 +625,8 @@
       "sub_pillar_id": "quality_compliance",
       "canonical_name": "QA Manager / Line Inspector",
       "title": "QA Manager / Line Inspector",
-      "role": "End-of-Line Vision, Torque & PPAP Traceability · Maruti Suzuki",
-      "summary": "Leads end-of-line vision, torque & ppap traceability across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns quality & compliance execution within Intelligent Shop Floor—partnering with Visual Defect Triager to.",
+      "role": "End-of-Line Vision, Torque & PPAP Traceability",
+      "summary": "Owns quality & compliance execution—inspects high-speed video frames for crimped seals, lot codes, and labels.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose quality & compliance variances and exceptions across regions.",
       "agentic_impact": "Visual Defect Triager automatically inspects high-speed video frames for crimped seals, lot codes, and labels — prevents full pallet scrap & holds.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -637,8 +637,8 @@
       "sub_pillar_id": "quality_compliance",
       "canonical_name": "Regulatory Compliance Lead",
       "title": "Regulatory Compliance Lead",
-      "role": "End-of-Line Vision, Torque & PPAP Traceability · Maruti Suzuki",
-      "summary": "Leads end-of-line vision, torque & ppap traceability across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns quality & compliance execution within Intelligent Shop Floor—partnering with Batch Record Auditor to.",
+      "role": "End-of-Line Vision, Torque & PPAP Traceability",
+      "summary": "Owns quality & compliance execution—parses bpr and coa documents to flag pasteurization & ccp deviations.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose quality & compliance variances and exceptions across regions.",
       "agentic_impact": "Batch Record Auditor automatically parses BPR and COA documents to flag pasteurization & CCP deviations — 60–80% faster batch release review.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -649,8 +649,8 @@
       "sub_pillar_id": "quality_compliance",
       "canonical_name": "Continuous Improvement Lead",
       "title": "Continuous Improvement Lead",
-      "role": "End-of-Line Vision, Torque & PPAP Traceability · Maruti Suzuki",
-      "summary": "Leads end-of-line vision, torque & ppap traceability across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns quality & compliance execution within Intelligent Shop Floor—partnering with RCA & CAPA Copilot to.",
+      "role": "End-of-Line Vision, Torque & PPAP Traceability",
+      "summary": "Owns quality & compliance execution—correlates consumer complaints with ingredient lots and machine telemetry.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose quality & compliance variances and exceptions across regions.",
       "agentic_impact": "RCA & CAPA Copilot automatically correlates consumer complaints with ingredient lots and machine telemetry — speeds 5-why investigation closures.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -661,8 +661,8 @@
       "sub_pillar_id": "positioning_optimization",
       "canonical_name": "Inventory Optimization Lead",
       "title": "Inventory Optimization Lead",
-      "role": "Genuine Parts Depot & Regional Stockyard MEIO · Maruti Suzuki",
-      "summary": "Leads genuine parts depot & regional stockyard meio across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns positioning & optimization execution within Dynamic Fulfillment—partnering with Safety Stock Agent to.",
+      "role": "Genuine Parts Depot & Regional Stockyard MEIO",
+      "summary": "Owns positioning & optimization execution—recalibrates multi-echelon buffers using live lead-time and demand variance.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose positioning & optimization variances and exceptions across regions.",
       "agentic_impact": "Safety Stock Agent automatically recalibrates multi-echelon buffers using live lead-time and demand variance — cuts working capital by 10–18%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -673,8 +673,8 @@
       "sub_pillar_id": "positioning_optimization",
       "canonical_name": "Inventory Controller / Buyer",
       "title": "Inventory Controller / Buyer",
-      "role": "Genuine Parts Depot & Regional Stockyard MEIO · Maruti Suzuki",
-      "summary": "Leads genuine parts depot & regional stockyard meio across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns positioning & optimization execution within Dynamic Fulfillment—partnering with SLOB Disposition Agent to.",
+      "role": "Genuine Parts Depot & Regional Stockyard MEIO",
+      "summary": "Owns positioning & optimization execution—analyzes shelf-life risk and triggers promotional bundles or liquidations.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose positioning & optimization variances and exceptions across regions.",
       "agentic_impact": "SLOB Disposition Agent automatically analyzes shelf-life risk and triggers promotional bundles or liquidations — prevents expired stock write-offs.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -685,8 +685,8 @@
       "sub_pillar_id": "positioning_optimization",
       "canonical_name": "Replenishment Planner",
       "title": "Replenishment Planner",
-      "role": "Genuine Parts Depot & Regional Stockyard MEIO · Maruti Suzuki",
-      "summary": "Leads genuine parts depot & regional stockyard meio across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns positioning & optimization execution within Dynamic Fulfillment—partnering with Inter-Facility Rebalancer.",
+      "role": "Genuine Parts Depot & Regional Stockyard MEIO",
+      "summary": "Owns positioning & optimization execution—generates automated inter-dc and store transfers to balance localized gluts.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose positioning & optimization variances and exceptions across regions.",
       "agentic_impact": "Inter-Facility Rebalancer automatically generates automated inter-DC and store transfers to balance localized gluts — eliminates regional out-of-stocks.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -697,8 +697,8 @@
       "sub_pillar_id": "warehouse_operations",
       "canonical_name": "DC Operations Mgr / IE Lead",
       "title": "DC Operations Mgr / IE Lead",
-      "role": "Parts High-Bay Slotting & VIN Yard Dispatch · Maruti Suzuki",
-      "summary": "Leads parts high-bay slotting & vin yard dispatch across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns warehouse operations execution within Dynamic Fulfillment—partnering with Dynamic Slotting Agent to reduce.",
+      "role": "Parts High-Bay Slotting & VIN Yard Dispatch",
+      "summary": "Owns warehouse operations execution—evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose warehouse operations variances and exceptions across regions.",
       "agentic_impact": "Dynamic Slotting Agent automatically evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting — reduces picker transit time by 15–30%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -709,8 +709,8 @@
       "sub_pillar_id": "warehouse_operations",
       "canonical_name": "Inbound Receiving Supervisor",
       "title": "Inbound Receiving Supervisor",
-      "role": "Parts High-Bay Slotting & VIN Yard Dispatch · Maruti Suzuki",
-      "summary": "Leads parts high-bay slotting & vin yard dispatch across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns warehouse operations execution within Dynamic Fulfillment—partnering with Dock-to-Stock Agent to dock.",
+      "role": "Parts High-Bay Slotting & VIN Yard Dispatch",
+      "summary": "Owns warehouse operations execution—parses scanned bols and pallet photos to reconcile open asn variances.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose warehouse operations variances and exceptions across regions.",
       "agentic_impact": "Dock-to-Stock Agent automatically parses scanned BOLs and pallet photos to reconcile open ASN variances — dock turnaround in minutes vs. hours.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -721,8 +721,8 @@
       "sub_pillar_id": "warehouse_operations",
       "canonical_name": "DC Shift Floor Lead",
       "title": "DC Shift Floor Lead",
-      "role": "Parts High-Bay Slotting & VIN Yard Dispatch · Maruti Suzuki",
-      "summary": "Leads parts high-bay slotting & vin yard dispatch across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns warehouse operations execution within Dynamic Fulfillment—partnering with Wave Fulfillment Copilot to.",
+      "role": "Parts High-Bay Slotting & VIN Yard Dispatch",
+      "summary": "Balances picker lines dynamically to protect carrier pickup cutoff times.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose warehouse operations variances and exceptions across regions.",
       "agentic_impact": "Wave Fulfillment Copilot automatically balances picker lines dynamically to protect carrier pickup cutoff times — prevents missed dispatch windows (otif).",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -733,8 +733,8 @@
       "sub_pillar_id": "omnichannel_visibility",
       "canonical_name": "Store Operations / Omni Lead",
       "title": "Store Operations / Omni Lead",
-      "role": "Dealer Booking-to-VIN & Workshop Parts ATP · Maruti Suzuki",
-      "summary": "Leads dealer booking-to-vin & workshop parts atp across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns omnichannel visibility execution within Dynamic Fulfillment—partnering with Phantom Inventory Sensor to.",
+      "role": "Dealer Booking-to-VIN & Workshop Parts ATP",
+      "summary": "Owns omnichannel visibility execution—identifies shrinkage anomalies when on-hand stock stops scanning at Point-of-Sale (POS).",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose omnichannel visibility variances and exceptions across regions.",
       "agentic_impact": "Phantom Inventory Sensor automatically identifies shrinkage anomalies when on-hand stock stops scanning at POS — triggers targeted floor cycle counts.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -745,8 +745,8 @@
       "sub_pillar_id": "omnichannel_visibility",
       "canonical_name": "Omnichannel Fulfillment Dir.",
       "title": "Omnichannel Fulfillment Dir.",
-      "role": "Dealer Booking-to-VIN & Workshop Parts ATP · Maruti Suzuki",
-      "summary": "Leads dealer booking-to-vin & workshop parts atp across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns omnichannel visibility execution within Dynamic Fulfillment—partnering with SFS / BOPIS Sourcing to lowers.",
+      "role": "Dealer Booking-to-VIN & Workshop Parts ATP",
+      "summary": "Owns omnichannel visibility execution—selects lowest-cost fulfillment nodes based on store labor and parcel zones.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose omnichannel visibility variances and exceptions across regions.",
       "agentic_impact": "SFS / BOPIS Sourcing automatically selects lowest-cost fulfillment nodes based on store labor and parcel zones — lowers parcel costs & split rates.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -757,8 +757,8 @@
       "sub_pillar_id": "omnichannel_visibility",
       "canonical_name": "Reverse Logistics Lead",
       "title": "Reverse Logistics Lead",
-      "role": "Dealer Booking-to-VIN & Workshop Parts ATP · Maruti Suzuki",
-      "summary": "Leads dealer booking-to-vin & workshop parts atp across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns omnichannel visibility execution within Dynamic Fulfillment—partnering with Returns Triage Agent to restocks.",
+      "role": "Dealer Booking-to-VIN & Workshop Parts ATP",
+      "summary": "Owns omnichannel visibility execution—evaluates item condition scans to triage restock, vendor return, or liquidation.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose omnichannel visibility variances and exceptions across regions.",
       "agentic_impact": "Returns Triage Agent automatically evaluates item condition scans to triage restock, vendor return, or liquidation — restocks sellable returns within 24h.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -769,8 +769,8 @@
       "sub_pillar_id": "first_mid_mile",
       "canonical_name": "Transport Planner / Inbound Mgr",
       "title": "Transport Planner / Inbound Mgr",
-      "role": "Rail Auto-Rake & Ro-Ro Port Export Linehaul · Maruti Suzuki",
-      "summary": "Leads rail auto-rake & ro-ro port export linehaul across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns first & mid-mile execution within End-to-End Fulfillment—partnering with Load Consolidation to 12–18%.",
+      "role": "Rail Auto-Rake & Ro-Ro Port Export Linehaul",
+      "summary": "Owns first & mid-mile execution—consolidates vendor ltls into multi-stop ftl linehauls via cube & weight modeling.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose first & mid-mile variances and exceptions across regions.",
       "agentic_impact": "Load Consolidation automatically consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling — 12–18% higher trailer fill rate.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -781,8 +781,8 @@
       "sub_pillar_id": "first_mid_mile",
       "canonical_name": "Yard Master / Plant Logistics",
       "title": "Yard Master / Plant Logistics",
-      "role": "Rail Auto-Rake & Ro-Ro Port Export Linehaul · Maruti Suzuki",
-      "summary": "Leads rail auto-rake & ro-ro port export linehaul across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns first & mid-mile execution within End-to-End Fulfillment—partnering with Yard Disruption Agent to.",
+      "role": "Rail Auto-Rake & Ro-Ro Port Export Linehaul",
+      "summary": "Owns first & mid-mile execution—parses gps & gate feeds to flag delays and reassign dock staging doors dynamically.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose first & mid-mile variances and exceptions across regions.",
       "agentic_impact": "Yard Disruption Agent automatically parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically — eliminates demurrage & line starvation.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -793,8 +793,8 @@
       "sub_pillar_id": "first_mid_mile",
       "canonical_name": "Cold Chain QA / Logistics Dir.",
       "title": "Cold Chain QA / Logistics Dir.",
-      "role": "Rail Auto-Rake & Ro-Ro Port Export Linehaul · Maruti Suzuki",
-      "summary": "Leads rail auto-rake & ro-ro port export linehaul across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns first & mid-mile execution within End-to-End Fulfillment—partnering with Cold-Chain Auditor to prevent.",
+      "role": "Rail Auto-Rake & Ro-Ro Port Export Linehaul",
+      "summary": "Owns first & mid-mile execution—analyzes reefer iot telemetry to flag thermal excursions and file carrier claims.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose first & mid-mile variances and exceptions across regions.",
       "agentic_impact": "Cold-Chain Auditor automatically analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims — prevents perishable food spoilage.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -805,8 +805,8 @@
       "sub_pillar_id": "store_replenishment",
       "canonical_name": "Outbound Lead / Industrial Eng.",
       "title": "Outbound Lead / Industrial Eng.",
-      "role": "Dealership Stock & Workshop VOR Replenishment · Maruti Suzuki",
-      "summary": "Leads dealership stock & workshop vor replenishment across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns store replenishment execution within End-to-End Fulfillment—partnering with Aisle-Aligned Pallet to cut.",
+      "role": "Dealership Stock & Workshop VOR Replenishment",
+      "summary": "Owns store replenishment execution—sequences dc pick waves to match individual store planograms and shelf layouts.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose store replenishment variances and exceptions across regions.",
       "agentic_impact": "Aisle-Aligned Pallet automatically sequences DC pick waves to match individual store planograms and shelf layouts — cuts store stocking labor by 20–35%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -817,8 +817,8 @@
       "sub_pillar_id": "store_replenishment",
       "canonical_name": "Store Replenishment Lead",
       "title": "Store Replenishment Lead",
-      "role": "Dealership Stock & Workshop VOR Replenishment · Maruti Suzuki",
-      "summary": "Leads dealership stock & workshop vor replenishment across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns store replenishment execution within End-to-End Fulfillment—partnering with Store Capacity Agent to.",
+      "role": "Dealership Stock & Workshop VOR Replenishment",
+      "summary": "Owns store replenishment execution—throttles push replenishment based on store backroom limits and live Point-of-Sale (POS) velocity.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose store replenishment variances and exceptions across regions.",
       "agentic_impact": "Store Capacity Agent automatically throttles push replenishment based on store backroom limits and live POS velocity — reduces backroom stock by 25%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -829,8 +829,8 @@
       "sub_pillar_id": "store_replenishment",
       "canonical_name": "Retail Logistics Dispatcher",
       "title": "Retail Logistics Dispatcher",
-      "role": "Dealership Stock & Workshop VOR Replenishment · Maruti Suzuki",
-      "summary": "Leads dealership stock & workshop vor replenishment across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns store replenishment execution within End-to-End Fulfillment—partnering with Curfew Orchestrator to 98%+.",
+      "role": "Dealership Stock & Workshop VOR Replenishment",
+      "summary": "Coordinates municipal delivery curfews and store dock shift schedules dynamically.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose store replenishment variances and exceptions across regions.",
       "agentic_impact": "Curfew Orchestrator automatically coordinates municipal delivery curfews and store dock shift schedules dynamically — 98%+ on-time store window compliance.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -841,8 +841,8 @@
       "sub_pillar_id": "last_mile_delivery",
       "canonical_name": "Last-Mile Operations Lead",
       "title": "Last-Mile Operations Lead",
-      "role": "Multi-Car Carrier & City Parts Milk-Run Routing · Maruti Suzuki",
-      "summary": "Leads multi-car carrier & city parts milk-run routing across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns last-mile delivery execution within End-to-End Fulfillment—partnering with Geocoding Intelligence to.",
+      "role": "Multi-Car Carrier & City Parts Milk-Run Routing",
+      "summary": "Owns last-mile delivery execution—interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose last-mile delivery variances and exceptions across regions.",
       "agentic_impact": "Geocoding Intelligence automatically interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers — drops failed deliveries by 30–45%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -853,8 +853,8 @@
       "sub_pillar_id": "last_mile_delivery",
       "canonical_name": "E-Commerce Logistics Dir.",
       "title": "E-Commerce Logistics Dir.",
-      "role": "Multi-Car Carrier & City Parts Milk-Run Routing · Maruti Suzuki",
-      "summary": "Leads multi-car carrier & city parts milk-run routing across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns last-mile delivery execution within End-to-End Fulfillment—partnering with Courier Allocation to lowers.",
+      "role": "Multi-Car Carrier & City Parts Milk-Run Routing",
+      "summary": "Routes parcels dynamically across internal fleet, Third-Party Logistics (3PL), and gig couriers by rate card.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose last-mile delivery variances and exceptions across regions.",
       "agentic_impact": "Courier Allocation automatically routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card — lowers last-mile cost by 8–14%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -865,8 +865,8 @@
       "sub_pillar_id": "last_mile_delivery",
       "canonical_name": "Customer Support Ops Lead",
       "title": "Customer Support Ops Lead",
-      "role": "Multi-Car Carrier & City Parts Milk-Run Routing · Maruti Suzuki",
-      "summary": "Leads multi-car carrier & city parts milk-run routing across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns last-mile delivery execution within End-to-End Fulfillment—partnering with Delivery Exception Copilot.",
+      "role": "Multi-Car Carrier & City Parts Milk-Run Routing",
+      "summary": "Owns last-mile delivery execution—detects en-route exceptions and updates customers proactively with reschedule links.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose last-mile delivery variances and exceptions across regions.",
       "agentic_impact": "Delivery Exception Copilot automatically detects en-route exceptions and updates customers proactively with reschedule links — decreases wismo calls by up to 60%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -877,8 +877,8 @@
       "sub_pillar_id": "route_carrier",
       "canonical_name": "Fleet Dispatcher / Central Ops",
       "title": "Fleet Dispatcher / Central Ops",
-      "role": "Car-Carrier Fleet & Freight Detention Audit · Maruti Suzuki",
-      "summary": "Leads car-carrier fleet & freight detention audit across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns route & carrier execution within End-to-End Fulfillment—partnering with Dynamic Rerouter to cut fleet fuel.",
+      "role": "Car-Carrier Fleet & Freight Detention Audit",
+      "summary": "Owns route & carrier execution—recalculates multi-stop routes using live google maps traffic, radar, and bridge limits.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose route & carrier variances and exceptions across regions.",
       "agentic_impact": "Dynamic Rerouter automatically recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits — cuts fleet fuel usage by 6–10%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -889,8 +889,8 @@
       "sub_pillar_id": "route_carrier",
       "canonical_name": "Transport Procurement Lead",
       "title": "Transport Procurement Lead",
-      "role": "Car-Carrier Fleet & Freight Detention Audit · Maruti Suzuki",
-      "summary": "Leads car-carrier fleet & freight detention audit across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns route & carrier execution within End-to-End Fulfillment—partnering with Routing Guide Compliance to reduce.",
+      "role": "Car-Carrier Fleet & Freight Detention Audit",
+      "summary": "Tracks carrier tender acceptance & On-Time In-Full (OTIF) to reprioritize waterfall routing guides.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose route & carrier variances and exceptions across regions.",
       "agentic_impact": "Routing Guide Compliance automatically tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides — reduces spot freight by 15–20%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -901,8 +901,8 @@
       "sub_pillar_id": "route_carrier",
       "canonical_name": "Freight Controller / Claims",
       "title": "Freight Controller / Claims",
-      "role": "Car-Carrier Fleet & Freight Detention Audit · Maruti Suzuki",
-      "summary": "Leads car-carrier fleet & freight detention audit across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns route & carrier execution within End-to-End Fulfillment—partnering with Freight Bill Audit Agent to.",
+      "role": "Car-Carrier Fleet & Freight Detention Audit",
+      "summary": "Owns route & carrier execution—extracts signed pods and rate contracts via ocr to audit accessorial surcharges.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose route & carrier variances and exceptions across regions.",
       "agentic_impact": "Freight Bill Audit Agent automatically extracts signed PODs and rate contracts via OCR to audit accessorial surcharges — captures 3–7% in overbilled fees.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -913,8 +913,8 @@
       "sub_pillar_id": "returns_claims_mgmt",
       "canonical_name": "Reverse Logistics / Fraud Lead",
       "title": "Reverse Logistics / Fraud Lead",
-      "role": "Returns & Claims Mgmt · Maruti Suzuki",
-      "summary": "Leads returns & claims mgmt across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Return Fraud Sentinel to cut returns fraud.",
+      "role": "Returns & Claims Mgmt",
+      "summary": "Owns returns & claims mgmt execution—analyzes item photos and packaging video feeds to detect wear or swapped tags.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
       "agentic_impact": "Return Fraud Sentinel automatically analyzes item photos and packaging video feeds to detect wear or swapped tags — cuts returns fraud abuse by 25–40%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -925,8 +925,8 @@
       "sub_pillar_id": "returns_claims_mgmt",
       "canonical_name": "Customer Experience (CX) Lead",
       "title": "Customer Experience (CX) Lead",
-      "role": "Returns & Claims Mgmt · Maruti Suzuki",
-      "summary": "Leads returns & claims mgmt across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with Keep-It & Routing Advisor to lowers net.",
+      "role": "Returns & Claims Mgmt",
+      "summary": "Owns returns & claims mgmt execution—evaluates salvage margins vs reverse freight to determine keep-it instant refunds.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
       "agentic_impact": "Keep-It & Routing Advisor automatically evaluates salvage margins vs reverse freight to determine keep-it instant refunds — lowers net return costs by 15–22%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -937,8 +937,8 @@
       "sub_pillar_id": "returns_claims_mgmt",
       "canonical_name": "Claims Specialist / Controller",
       "title": "Claims Specialist / Controller",
-      "role": "Returns & Claims Mgmt · Maruti Suzuki",
-      "summary": "Leads returns & claims mgmt across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns returns & claims mgmt execution within Circularity & Value Recovery—partnering with OS&D Freight Claims to resolve carrier.",
+      "role": "Returns & Claims Mgmt",
+      "summary": "Reconciles ebols, dock damage logs, and carrier contracts to auto-file disputes.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions.",
       "agentic_impact": "OS&D Freight Claims automatically reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes — resolves carrier claims in <72 hours.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -949,8 +949,8 @@
       "sub_pillar_id": "expiry_markdowns",
       "canonical_name": "Merchandising / Store Ops Mgr",
       "title": "Merchandising / Store Ops Mgr",
-      "role": "Model-Year Changeover & Slow-Moving Parts Clearance · Maruti Suzuki",
-      "summary": "Leads model-year changeover & slow-moving parts clearance across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns expiry & markdowns execution within Circularity & Value Recovery—partnering with Dynamic Markdown.",
+      "role": "Model-Year Changeover & Slow-Moving Parts Clearance",
+      "summary": "Owns expiry & markdowns execution—correlates days-to-expiry (dte) with sales velocity to trigger esl shelf price cuts.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose expiry & markdowns variances and exceptions across regions.",
       "agentic_impact": "Dynamic Markdown Agent automatically correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts — cuts perishable scrap by 20–35%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -961,8 +961,8 @@
       "sub_pillar_id": "expiry_markdowns",
       "canonical_name": "Inventory Disposition Lead",
       "title": "Inventory Disposition Lead",
-      "role": "Model-Year Changeover & Slow-Moving Parts Clearance · Maruti Suzuki",
-      "summary": "Leads model-year changeover & slow-moving parts clearance across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns expiry & markdowns execution within Circularity & Value Recovery—partnering with Short-Dated.",
+      "role": "Model-Year Changeover & Slow-Moving Parts Clearance",
+      "summary": "Owns expiry & markdowns execution—matches near-date dc lots with discounters or food banks before acceptance cutoffs.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose expiry & markdowns variances and exceptions across regions.",
       "agentic_impact": "Short-Dated Redistributor automatically matches near-date DC lots with discounters or food banks before acceptance cutoffs — diverts bulk perishables from landfill.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -973,8 +973,8 @@
       "sub_pillar_id": "expiry_markdowns",
       "canonical_name": "Chief Sustainability Officer",
       "title": "Chief Sustainability Officer",
-      "role": "Model-Year Changeover & Slow-Moving Parts Clearance · Maruti Suzuki",
-      "summary": "Leads model-year changeover & slow-moving parts clearance across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns expiry & markdowns execution within Circularity & Value Recovery—partnering with Food Waste & ESG.",
+      "role": "Model-Year Changeover & Slow-Moving Parts Clearance",
+      "summary": "Owns expiry & markdowns execution—aggregates store shrink and organic haul logs to generate audited ghg diversion filings.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose expiry & markdowns variances and exceptions across regions.",
       "agentic_impact": "Food Waste & ESG Copilot automatically aggregates store shrink and organic haul logs to generate audited GHG diversion filings — automates annual circularity reporting.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -985,8 +985,8 @@
       "sub_pillar_id": "pallet_tote_reclamation",
       "canonical_name": "Asset Recovery / RTI Manager",
       "title": "Asset Recovery / RTI Manager",
-      "role": "Pallet & Tote Reclamation · Maruti Suzuki",
-      "summary": "Leads pallet & tote reclamation across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with RTI Balance Reconciler to eliminate.",
+      "role": "Pallet & Tote Reclamation",
+      "summary": "Reconciles rfid portal scans with chep/peco statements to detect hoarding nodes.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
       "agentic_impact": "RTI Balance Reconciler automatically reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes — eliminates 30% in non-return fee fines.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -997,8 +997,8 @@
       "sub_pillar_id": "pallet_tote_reclamation",
       "canonical_name": "Reverse Transport Planner",
       "title": "Reverse Transport Planner",
-      "role": "Pallet & Tote Reclamation · Maruti Suzuki",
-      "summary": "Leads pallet & tote reclamation across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Milk-Run Consolidation to boost.",
+      "role": "Pallet & Tote Reclamation",
+      "summary": "Schedules dynamic backhauls to collect empty roll cages and rpcs from retail stores.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
       "agentic_impact": "Milk-Run Consolidation automatically schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores — boosts backhaul fill rate by 25–40%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -1009,8 +1009,8 @@
       "sub_pillar_id": "pallet_tote_reclamation",
       "canonical_name": "Packaging QA / Food Safety",
       "title": "Packaging QA / Food Safety",
-      "role": "Pallet & Tote Reclamation · Maruti Suzuki",
-      "summary": "Leads pallet & tote reclamation across Maruti Suzuki (Integrated Press, Weld, Paint & Final Assembly Plants and network nodes). Owns pallet & tote reclamation execution within Circularity & Value Recovery—partnering with Sanitation & Health Agent to extends.",
+      "role": "Pallet & Tote Reclamation",
+      "summary": "Owns pallet & tote reclamation execution—inspects return photos and wash logs for structural fatigue and chemical compliance.",
       "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions.",
       "agentic_impact": "Sanitation & Health Agent automatically inspects return photos and wash logs for structural fatigue and chemical compliance — extends reusable lifecycle by 15–20%.",
       "grounding_source": "Aligned to Maruti Suzuki (Automotive & Mobility Manufacturing) org hierarchy"
@@ -1024,7 +1024,7 @@
       "canonical_name": "Demand Sensing Agent",
       "custom_agent_name": "Dealer Booking & Trim-Mix Sensing",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Regional Dealership Booking & Trim-Mix Sensing', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "cpfr_sync_agent": {
@@ -1034,7 +1034,7 @@
       "canonical_name": "Forecast Reconciliation",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Regional Dealership Booking & Trim-Mix Sensing', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "npi_demand_profiler": {
@@ -1044,7 +1044,7 @@
       "canonical_name": "NPI Demand Profiler",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Regional Dealership Booking & Trim-Mix Sensing', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "promo_lift_simulator": {
@@ -1054,7 +1054,7 @@
       "canonical_name": "Promo ROI Simulator",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Festive Exchange Schemes & Dealer Incentive ROI', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "field_beat_distributor_sync_agent": {
@@ -1064,7 +1064,7 @@
       "canonical_name": "JBP Negotiation Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Festive Exchange Schemes & Dealer Incentive ROI', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "trade_scheme_claims_reconciler": {
@@ -1074,7 +1074,7 @@
       "canonical_name": "Deduction Audit Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Festive Exchange Schemes & Dealer Incentive ROI', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "sop_scenario_weaver": {
@@ -1084,7 +1084,7 @@
       "canonical_name": "Consensus & Gap Agent",
       "custom_agent_name": "Multi-Plant Vehicle & Powertrain S&OP",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Multi-Plant Vehicle & Powertrain S&OP', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "disruption_war_room_orchestrator": {
@@ -1094,7 +1094,7 @@
       "canonical_name": "Digital War-Room Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Multi-Plant Vehicle & Powertrain S&OP', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "csco_control_tower_copilot": {
@@ -1104,7 +1104,7 @@
       "canonical_name": "Executive Copilot",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Multi-Plant Vehicle & Powertrain S&OP', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "working_capital_cash_bridge": {
@@ -1114,7 +1114,7 @@
       "canonical_name": "SKU Pruning Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Model-Variant, Color & Trim Rationalization', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "eco_cutover_orchestrator": {
@@ -1124,7 +1124,7 @@
       "canonical_name": "PIPO Run-Out Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Model-Variant, Color & Trim Rationalization', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "network_twin_architect": {
@@ -1134,7 +1134,7 @@
       "canonical_name": "Cost-to-Serve Diagnostic",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Model-Variant, Color & Trim Rationalization', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "tier_n_risk_sentinel": {
@@ -1144,7 +1144,7 @@
       "canonical_name": "Disruption Sensing Agent",
       "custom_agent_name": "Vendor Park & Semiconductor Sentinel",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Tier-1/2/3 Vendor Park & Semiconductor Risk', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "supplier_quality_sentinel": {
@@ -1154,7 +1154,7 @@
       "canonical_name": "Onboarding & Qual. Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Tier-1/2/3 Vendor Park & Semiconductor Risk', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "carbon_scope3_ledger": {
@@ -1164,7 +1164,7 @@
       "canonical_name": "ESG & Scope 3 Auditor",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Tier-1/2/3 Vendor Park & Semiconductor Risk', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "commodity_index_advisor": {
@@ -1174,7 +1174,7 @@
       "canonical_name": "Commodity Index Advisor",
       "custom_agent_name": "Auto-Steel, Alloy & Chip Index Advisor",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Auto-Grade Steel, Aluminium & Tooling Should-Cost', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "rfq_should_cost_agent": {
@@ -1184,7 +1184,7 @@
       "canonical_name": "Dynamic Should-Cost Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Auto-Grade Steel, Aluminium & Tooling Should-Cost', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "sustainable_packaging_agent": {
@@ -1194,7 +1194,7 @@
       "canonical_name": "Sustainable Packaging Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Auto-Grade Steel, Aluminium & Tooling Should-Cost', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "tariff_esg_agent": {
@@ -1204,7 +1204,7 @@
       "canonical_name": "Contract Leakage Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Contract & PO Mgmt', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "master_data_leadtime_steward": {
@@ -1214,7 +1214,7 @@
       "canonical_name": "PO Expediting Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Contract & PO Mgmt', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "three_way_match_dispute": {
@@ -1224,7 +1224,7 @@
       "canonical_name": "Three-Way Match Dispute",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Contract & PO Mgmt', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "finite_production_scheduler": {
@@ -1234,7 +1234,7 @@
       "canonical_name": "Changeover Optimizer",
       "custom_agent_name": "Mixed-Model Takt & Paint Sequencer",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Mixed-Model Takt & Paint-Batch Sequencing', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "line_schedule_optimizer": {
@@ -1244,7 +1244,7 @@
       "canonical_name": "Disruption Re-sequencer",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Mixed-Model Takt & Paint-Batch Sequencing', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "labor_line_balancing_agent": {
@@ -1254,7 +1254,7 @@
       "canonical_name": "Labor & Line Balancing",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Mixed-Model Takt & Paint-Batch Sequencing', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "predictive_oee_sentinel": {
@@ -1264,7 +1264,7 @@
       "canonical_name": "Bottleneck Diagnostic",
       "custom_agent_name": "Weld/Press Robotics OEE Sentinel",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Weld/Press Robotics OEE & Shift Manning', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "copacker_allocation_agent": {
@@ -1274,7 +1274,7 @@
       "canonical_name": "Co-Packer Allocation",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Weld/Press Robotics OEE & Shift Manning', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "capex_simulator_agent": {
@@ -1284,7 +1284,7 @@
       "canonical_name": "CapEx Simulator",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Weld/Press Robotics OEE & Shift Manning', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "inline_yield_guardian": {
@@ -1294,7 +1294,7 @@
       "canonical_name": "Visual Defect Triager",
       "custom_agent_name": "End-of-Line Vision & Torque QA",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'End-of-Line Vision, Torque & PPAP Traceability', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "batch_record_auditor": {
@@ -1304,7 +1304,7 @@
       "canonical_name": "Batch Record Auditor",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'End-of-Line Vision, Torque & PPAP Traceability', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "scrap_defect_root_cause_agent": {
@@ -1314,7 +1314,7 @@
       "canonical_name": "RCA & CAPA Copilot",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'End-of-Line Vision, Torque & PPAP Traceability', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "meio_safety_stock_agent": {
@@ -1324,7 +1324,7 @@
       "canonical_name": "Safety Stock Agent",
       "custom_agent_name": "Genuine Parts & VOR Depot Stock Agent",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Genuine Parts Depot & Regional Stockyard MEIO', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "slob_disposition_agent": {
@@ -1334,7 +1334,7 @@
       "canonical_name": "SLOB Disposition Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Genuine Parts Depot & Regional Stockyard MEIO', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "crossdock_transfer_orchestrator": {
@@ -1344,7 +1344,7 @@
       "canonical_name": "Inter-Facility Rebalancer",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Genuine Parts Depot & Regional Stockyard MEIO', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "warehouse_slotting_agent": {
@@ -1354,7 +1354,7 @@
       "canonical_name": "Dynamic Slotting Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Parts High-Bay Slotting & VIN Yard Dispatch', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "dock_to_stock_agent": {
@@ -1364,7 +1364,7 @@
       "canonical_name": "Dock-to-Stock Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Parts High-Bay Slotting & VIN Yard Dispatch', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "wave_fulfillment_copilot": {
@@ -1374,7 +1374,7 @@
       "canonical_name": "Wave Fulfillment Copilot",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Parts High-Bay Slotting & VIN Yard Dispatch', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "planogram_merchandising_vision_auditor": {
@@ -1394,7 +1394,7 @@
       "canonical_name": "SFS / BOPIS Sourcing",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Dealer Booking-to-VIN & Workshop Parts ATP', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "returns_triage_agent": {
@@ -1404,7 +1404,7 @@
       "canonical_name": "Returns Triage Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Dealer Booking-to-VIN & Workshop Parts ATP', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "load_consolidation_agent": {
@@ -1414,7 +1414,7 @@
       "canonical_name": "Load Consolidation",
       "custom_agent_name": "Auto-Rake & Car-Carrier Consolidator",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Rail Auto-Rake & Ro-Ro Port Export Linehaul', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "yard_dock_sequencer": {
@@ -1424,7 +1424,7 @@
       "canonical_name": "Yard Disruption Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Rail Auto-Rake & Ro-Ro Port Export Linehaul', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "cold_chain_auditor": {
@@ -1454,7 +1454,7 @@
       "canonical_name": "Store Capacity Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Dealership Stock & Workshop VOR Replenishment', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "port_drayage_orchestrator": {
@@ -1464,7 +1464,7 @@
       "canonical_name": "Curfew Orchestrator",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Dealership Stock & Workshop VOR Replenishment', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "geocoding_intelligence_agent": {
@@ -1474,7 +1474,7 @@
       "canonical_name": "Geocoding Intelligence",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Multi-Car Carrier & City Parts Milk-Run Routing', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "multimodal_mode_shift_agent": {
@@ -1484,7 +1484,7 @@
       "canonical_name": "Courier Allocation",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Multi-Car Carrier & City Parts Milk-Run Routing', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "otif_penalty_shield": {
@@ -1494,7 +1494,7 @@
       "canonical_name": "Delivery Exception Copilot",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Multi-Car Carrier & City Parts Milk-Run Routing', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "fleetflow_dispatch": {
@@ -1504,7 +1504,7 @@
       "canonical_name": "Dynamic Rerouter",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Car-Carrier Fleet & Freight Detention Audit', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "freight_control_tower": {
@@ -1514,7 +1514,7 @@
       "canonical_name": "Routing Guide Compliance",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Car-Carrier Fleet & Freight Detention Audit', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "freight_bill_audit_agent": {
@@ -1524,7 +1524,7 @@
       "canonical_name": "Freight Bill Audit Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Car-Carrier Fleet & Freight Detention Audit', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "reverse_rma_optimizer": {
@@ -1534,7 +1534,7 @@
       "canonical_name": "Return Fraud Sentinel",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Returns & Claims Mgmt', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "keep_it_routing_advisor": {
@@ -1554,7 +1554,7 @@
       "canonical_name": "OS&D Freight Claims",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Returns & Claims Mgmt', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "dynamic_markdown_agent": {
@@ -1574,7 +1574,7 @@
       "canonical_name": "Short-Dated Redistributor",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Model-Year Changeover & Slow-Moving Parts Clearance', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "food_waste_esg_copilot": {
@@ -1594,7 +1594,7 @@
       "canonical_name": "RTI Balance Reconciler",
       "custom_agent_name": "Vendor Steel Rack & Dunnage Ledger",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Pallet & Tote Reclamation', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "intermodal_rail_linehaul_agent": {
@@ -1604,7 +1604,7 @@
       "canonical_name": "Milk-Run Consolidation",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Pallet & Tote Reclamation', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     },
     "sanitation_health_agent": {
@@ -1614,7 +1614,7 @@
       "canonical_name": "Sanitation & Health Agent",
       "custom_agent_name": "",
       "is_relevant": true,
-      "division_context": "Operates inside Maruti Suzuki under 'Pallet & Tote Reclamation', connecting SAP S/4HANA Automotive with deterministic optimization.",
+      "division_context": "",
       "hidden_reason": ""
     }
   },
