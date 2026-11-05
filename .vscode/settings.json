@@ -1,0 +1,47 @@
+{
+  "remote.autoForwardPorts": true,
+  "remote.autoForwardPortsSource": "process",
+  "remote.restoreForwardedPorts": true,
+  "remote.portsAttributes": {
+    "8095": {
+      "label": "Supply Chain Enterprise Studio (Primary)",
+      "onAutoForward": "silent",
+      "elevateIfNeeded": false
+    },
+    "8899": {
+      "label": "Supply Chain Portal & Playbook",
+      "onAutoForward": "silent",
+      "elevateIfNeeded": false
+    },
+    "8090": {
+      "label": "Supply Chain Portal Mirror",
+      "onAutoForward": "silent",
+      "elevateIfNeeded": false
+    },
+    "8000": {
+      "label": "Supply Chain HTTP Mirror",
+      "onAutoForward": "silent",
+      "elevateIfNeeded": false
+    },
+    "8502": {
+      "label": "Supply Chain ADK Web Runner",
+      "onAutoForward": "silent",
+      "elevateIfNeeded": false
+    },
+    "8085": {
+      "label": "FleetFlow Control Tower API & UI",
+      "onAutoForward": "silent",
+      "elevateIfNeeded": false
+    },
+    "8080": {
+      "label": "FleetFlow Executive Deck",
+      "onAutoForward": "silent",
+      "elevateIfNeeded": false
+    },
+    "8501": {
+      "label": "FleetFlow ADK Web Runner",
+      "onAutoForward": "silent",
+      "elevateIfNeeded": false
+    }
+  }
+}
