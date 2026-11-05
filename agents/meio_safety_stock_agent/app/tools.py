@@ -519,7 +519,6 @@ def query_sap_s4hana_inventory_balances_across_echelons(*args, **kwargs):
         return globals()['query_multi_echelon_safety_stock_recommendations'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_s4hana_inv", "system_name": "SAP S/4HANA Plant & Regional DC Inventory Balances"}
 
-query_multi_echelon_safety_stock_recommendations = query_sap_s4hana_inventory_balances_across_echelons
 
 def fetch_bigquery_lead_time_variability_distributions(*args, **kwargs):
     """[Connected Enterprise System: BigQuery Supplier & Transit Lead Time Variability Distributions]
@@ -529,7 +528,6 @@ def fetch_bigquery_lead_time_variability_distributions(*args, **kwargs):
         return globals()['query_dc_inventory_echelon_balances'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "bigquery_leadtime", "system_name": "BigQuery Supplier & Transit Lead Time Variability Distributions"}
 
-query_dc_inventory_echelon_balances = fetch_bigquery_lead_time_variability_distributions
 
 def run_clark_scarf_coupled_stochastic_meio_solver(*args, **kwargs):
     """[Connected Enterprise System: Clark-Scarf Coupled Stochastic MEIO Dynamic Buffer Solver]
@@ -539,7 +537,6 @@ def run_clark_scarf_coupled_stochastic_meio_solver(*args, **kwargs):
         return globals()['query_lateral_dc_rebalance_transfers'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "clark_scarf_meio", "system_name": "Clark-Scarf Coupled Stochastic MEIO Dynamic Buffer Solver"}
 
-query_lateral_dc_rebalance_transfers = run_clark_scarf_coupled_stochastic_meio_solver
 
 def query_lateral_transshipment_freight_rates(*args, **kwargs):
     """[Connected Enterprise System: Oracle OTM Lateral Transshipment Freight Rates]
@@ -549,7 +546,6 @@ def query_lateral_transshipment_freight_rates(*args, **kwargs):
         return globals()['query_echelon_service_level_projections'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "freight_rates", "system_name": "Oracle OTM Lateral Transshipment Freight Rates"}
 
-query_echelon_service_level_projections = query_lateral_transshipment_freight_rates
 
 def commit_safety_stock_parameters_to_sap_ibp(*args, **kwargs):
     """[Connected Enterprise System: SAP IBP Safety Stock & Reorder Point Policy Update]
@@ -559,7 +555,6 @@ def commit_safety_stock_parameters_to_sap_ibp(*args, **kwargs):
         return globals()['action_commit_safety_stock_parameters_to_ibp'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "ibp_param_commit", "system_name": "SAP IBP Safety Stock & Reorder Point Policy Update"}
 
-action_commit_safety_stock_parameters_to_ibp = commit_safety_stock_parameters_to_sap_ibp
 
 def export_echelon_buffer_recommendations_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

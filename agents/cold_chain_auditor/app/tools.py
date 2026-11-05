@@ -388,7 +388,6 @@ def query_samsara_iot_reefer_telematics_and_temp_loggers(*args, **kwargs):
         return globals()['query_samsara_reefer_telematics'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "samsara_reefer", "system_name": "Samsara IoT Reefer Telematics & Wireless Temp Probes"}
 
-query_samsara_reefer_telematics = query_samsara_iot_reefer_telematics_and_temp_loggers
 
 def fetch_oracle_otm_perishable_shipment_specs(*args, **kwargs):
     """[Connected Enterprise System: Oracle OTM Temperature-Controlled Shipment Manifests]
@@ -398,7 +397,6 @@ def fetch_oracle_otm_perishable_shipment_specs(*args, **kwargs):
         return globals()['query_perishable_shipment_specs'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "otm_perishable", "system_name": "Oracle OTM Temperature-Controlled Shipment Manifests"}
 
-query_perishable_shipment_specs = fetch_oracle_otm_perishable_shipment_specs
 
 def run_mean_kinetic_temperature_mkt_and_shelf_life_decay_solver(*args, **kwargs):
     """[Connected Enterprise System: Mean Kinetic Temperature (MKT) & Shelf-Life Decay Engine]
@@ -408,7 +406,6 @@ def run_mean_kinetic_temperature_mkt_and_shelf_life_decay_solver(*args, **kwargs
         return globals()['query_temperature_excursion_logs'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "mkt_decay_solver", "system_name": "Mean Kinetic Temperature (MKT) & Shelf-Life Decay Engine"}
 
-query_temperature_excursion_logs = run_mean_kinetic_temperature_mkt_and_shelf_life_decay_solver
 
 def query_carrier_contractual_temp_compliance_tariffs(*args, **kwargs):
     """[Connected Enterprise System: Carrier Contractual Temperature SLA & Spoilage Tariffs]
@@ -418,7 +415,6 @@ def query_carrier_contractual_temp_compliance_tariffs(*args, **kwargs):
         return globals()['query_carrier_contract_penalties'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "carrier_tariffs", "system_name": "Carrier Contractual Temperature SLA & Spoilage Tariffs"}
 
-query_carrier_contract_penalties = query_carrier_contractual_temp_compliance_tariffs
 
 def commit_carrier_spoilage_chargeback_debit_in_sap(*args, **kwargs):
     """[Connected Enterprise System: SAP Automated Carrier Chargeback Debit Memo Generation]
@@ -428,7 +424,6 @@ def commit_carrier_spoilage_chargeback_debit_in_sap(*args, **kwargs):
         return globals()['action_issue_carrier_chargeback_claim'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_chargeback", "system_name": "SAP Automated Carrier Chargeback Debit Memo Generation"}
 
-action_issue_carrier_chargeback_claim = commit_carrier_spoilage_chargeback_debit_in_sap
 
 def export_temperature_excursion_timeline_csv_and_claim(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

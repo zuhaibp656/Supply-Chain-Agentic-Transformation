@@ -19,7 +19,7 @@ def create_warehouse_slotting_chart_spec(
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "SlotMaster 3D Warehouse Velocity Slotting & Picker Travel Reduction",
         "title": {
-            "text": "SlotMaster 3D Warehouse Picker Travel Reduction (RDC Dallas)",
+            "text": "SlotMaster 3D Warehouse Picker Travel Reduction (RDC Delhi NCR (Gurugram))",
             "subtitle": "Fast-Mover Oat Milk Relocated from Mezzanine Aisle 14 to Golden Zone Aisle 02 (-84.5% Travel)",
             "anchor": "start",
             "fontSize": 14,

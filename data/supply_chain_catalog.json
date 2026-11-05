@@ -5970,7 +5970,7 @@
               {
                 "override_id": "OVR-SALES-202610-02",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
-                "sales_account": "Key Account Omni Club",
+                "sales_account": "Key Account Reliance Wholesale",
                 "planner_id": "REP-PATEL-WEST",
                 "statistical_baseline_units": 135000,
                 "sales_override_units": 142000,
@@ -5996,7 +5996,7 @@
               {
                 "override_id": "OVR-SALES-202610-24",
                 "sku_id": "SKU-BEV-OATMILK-1L",
-                "sales_account": "Key Account Omni Club",
+                "sales_account": "Key Account Reliance Wholesale",
                 "planner_id": "REP-PATEL-WEST",
                 "statistical_baseline_units": 124200,
                 "sales_override_units": 110760,
@@ -6022,7 +6022,7 @@
               {
                 "override_id": "OVR-SALES-202610-38",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
-                "sales_account": "Key Account Omni Club",
+                "sales_account": "Key Account Reliance Wholesale",
                 "planner_id": "REP-PATEL-WEST",
                 "statistical_baseline_units": 160650,
                 "sales_override_units": 177500,
@@ -6066,7 +6066,7 @@
               },
               {
                 "store_id": "STORE-APEX-ATL-209",
-                "retailer": "Apex Hypermarket",
+                "retailer": "DMart (Avenue Supermarts)",
                 "region": "US-SOUTHEAST",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "category": "Hydration Beverages",
@@ -6102,7 +6102,7 @@
               },
               {
                 "store_id": "STORE-OMNI_WHOLESALE-LAX-412",
-                "retailer": "Omni Wholesale Club",
+                "retailer": "Reliance Retail & Wholesale",
                 "region": "US-WEST",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
                 "category": "Health Snacks",
@@ -6248,7 +6248,7 @@
           "mutationStatus": "BIAS_DAMPENED_APPLIED",
           "vegaChartTitle": "Demand Sensing Agent",
           "vegaChartMark": "layered-combo",
-          "markdownResponse": "### 🌊 PulseCast Demand Sensing & TimesFM Quantile Briefing\n\n> **Executive Summary**: Identified unseasonable heatwave surge (+28.5% category lift) in US-Central via **Google DeepMind WeatherNext 3** paired with severe POS stockout censorship at Apex Hypermarket. Imputed true latent demand in BigQuery and generated 14-day P10/P50/P90 quantile fans using **Vertex AI TimesFM** (WAPE reduced to **5.2%**). Neutralized chronic commercial optimism bias (-4.2% FVA) and committed updated PIR directly to **SAP IBP**.\n\n#### 📊 Sensed Demand & TimesFM Horizon Ledger (Atomic Copy-Ready Table)\n\n| SKU ID | Region | Weather Trigger | TimesFM P50 | Baseline ERP | WAPE % | Revenue at Risk |\n|:---|:---|:---|---:|---:|---:|---:|\n| `SKU-BEV-ISOTONIC-32OZ` | US-CENTRAL | WeatherNext Heatwave (+6.8°C) | 298,000 | 262,000 | 5.2% | $180,000 |\n| `SKU-SNACK-PROTEIN-BAR` | US-MIDWEST | Maps Marathon Lift (+19.0%) | 142,000 | 135,000 | 4.8% | $35,000 |\n| `SKU-BEV-ELECTROLYTE-500ML` | EU-UK | Retail Promo Carryover | 105,000 | 98,000 | 6.1% | $42,000 |\n\n#### ⚡ Autonomous Writebacks & Bias Governance Executed\n\n- **FVA Sales Bias Dampened**: `FVA-DAMPEN-43C92615` | Override ID: `OVR-SALES-202610-01` | Dampened To: **298,000** units | Status: `BIAS_DAMPENED_APPLIED`\n- **SAP IBP Key Figure Committed**: `IBP-PIR-5EEF3A8C` | SKU: `SKU-BEV-ISOTONIC-32OZ` | Key Figure: `CONSENSUS_DEMAND_SAMPLED_P50` | Units: **298,000** | Status: `IBP_COMMITTED_SUCCESS`\n\n### 🔗 Connected Systems & Data Foundation\n- **BigQuery Enterprise Demand Lake**: Ingesting daily EDI 852 store scans and censured sales imputation.\n- **Google DeepMind WeatherNext 3**: Real-time atmospheric temperature and precipitation anomaly forecasting.\n- **Vertex AI TimesFM**: High-throughput zero-shot foundation model generating calibrated quantile fans.\n- **SAP IBP & Apigee**: BAPI_PIR_CHANGE writeback protocol updating Planned Independent Requirements.",
+          "markdownResponse": "### 🌊 PulseCast Demand Sensing & TimesFM Quantile Briefing\n\n> **Executive Summary**: Identified unseasonable heatwave surge (+28.5% category lift) in Western Corridor (Mumbai & Pune) via **Google DeepMind WeatherNext 3** paired with severe POS stockout censorship at DMart (Avenue Supermarts). Imputed true latent demand in BigQuery and generated 14-day P10/P50/P90 quantile fans using **Vertex AI TimesFM** (WAPE reduced to **5.2%**). Neutralized chronic commercial optimism bias (-4.2% FVA) and committed updated PIR directly to **SAP IBP**.\n\n#### 📊 Sensed Demand & TimesFM Horizon Ledger (Atomic Copy-Ready Table)\n\n| SKU ID | Region | Weather Trigger | TimesFM P50 | Baseline ERP | WAPE % | Revenue at Risk |\n|:---|:---|:---|---:|---:|---:|---:|\n| `SKU-BEV-ISOTONIC-32OZ` | US-CENTRAL | WeatherNext Heatwave (+6.8°C) | 298,000 | 262,000 | 5.2% | $180,000 |\n| `SKU-SNACK-PROTEIN-BAR` | US-MIDWEST | Maps Marathon Lift (+19.0%) | 142,000 | 135,000 | 4.8% | $35,000 |\n| `SKU-BEV-ELECTROLYTE-500ML` | EU-UK | Retail Promo Carryover | 105,000 | 98,000 | 6.1% | $42,000 |\n\n#### ⚡ Autonomous Writebacks & Bias Governance Executed\n\n- **FVA Sales Bias Dampened**: `FVA-DAMPEN-43C92615` | Override ID: `OVR-SALES-202610-01` | Dampened To: **298,000** units | Status: `BIAS_DAMPENED_APPLIED`\n- **SAP IBP Key Figure Committed**: `IBP-PIR-5EEF3A8C` | SKU: `SKU-BEV-ISOTONIC-32OZ` | Key Figure: `CONSENSUS_DEMAND_SAMPLED_P50` | Units: **298,000** | Status: `IBP_COMMITTED_SUCCESS`\n\n### 🔗 Connected Systems & Data Foundation\n- **BigQuery Enterprise Demand Lake**: Ingesting daily EDI 852 store scans and censured sales imputation.\n- **Google DeepMind WeatherNext 3**: Real-time atmospheric temperature and precipitation anomaly forecasting.\n- **Vertex AI TimesFM**: High-throughput zero-shot foundation model generating calibrated quantile fans.\n- **SAP IBP & Apigee**: BAPI_PIR_CHANGE writeback protocol updating Planned Independent Requirements.",
           "mutationReceipt": {
             "dampen_id": "FVA-DAMPEN-43C92615",
             "override_id": "OVR-SALES-202610-01",
@@ -6664,7 +6664,7 @@
           {
             "scenario_id": "SCENARIO-PULSECAST-01",
             "name": "Heatwave Demand Shock & Out-of-Stock Imputation",
-            "query": "Detect unseasonable weather demand surge in US-Central, impute Apex Hypermarket store stockout censorship, and commit updated TimesFM P50 forecast to SAP IBP.",
+            "query": "Detect unseasonable weather demand surge in Western Corridor (Mumbai & Pune), impute DMart (Avenue Supermarts) store stockout censorship, and commit updated TimesFM P50 forecast to SAP IBP.",
             "expected_proof_obligations": [
               "Query POS store scans with stockout censorship flag true",
               "Query WeatherNext 3 external heatwave surge anomaly",
@@ -6952,7 +6952,7 @@
               },
               {
                 "edi_record_id": "EDI852-20261016-02",
-                "retailer": "Apex Hypermarket",
+                "retailer": "DMart (Avenue Supermarts)",
                 "store_id": "STORE-APEX-ATL-209",
                 "region": "US-SOUTHEAST",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
@@ -6988,7 +6988,7 @@
               },
               {
                 "edi_record_id": "EDI852-20261016-31",
-                "retailer": "Apex Hypermarket",
+                "retailer": "DMart (Avenue Supermarts)",
                 "store_id": "STORE-APEX_HYPERMARKET-ATL-238",
                 "region": "US-SOUTHEAST",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
@@ -7034,7 +7034,7 @@
               {
                 "anomaly_id": "PHANTOM-APEX-ATL-01",
                 "store_id": "STORE-APEX-ATL-209",
-                "retailer": "Apex Hypermarket",
+                "retailer": "DMart (Avenue Supermarts)",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "book_inventory_units": 380,
                 "consecutive_zero_scan_days": 4,
@@ -7060,7 +7060,7 @@
               {
                 "anomaly_id": "PHANTOM-APEX_HYPERMARKET-ATL-16",
                 "store_id": "STORE-APEX_HYPERMARKET-ATL-224",
-                "retailer": "Apex Hypermarket",
+                "retailer": "DMart (Avenue Supermarts)",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "book_inventory_units": 429,
                 "consecutive_zero_scan_days": 5,
@@ -7086,7 +7086,7 @@
               {
                 "anomaly_id": "PHANTOM-APEX_HYPERMARKET-ATL-30",
                 "store_id": "STORE-APEX_HYPERMARKET-ATL-238",
-                "retailer": "Apex Hypermarket",
+                "retailer": "DMart (Avenue Supermarts)",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
                 "book_inventory_units": 429,
                 "consecutive_zero_scan_days": 3,
@@ -7120,12 +7120,12 @@
           "mutationStatus": "STORE_AUDIT_DISPATCHED",
           "vegaChartTitle": "Forecast Reconciliation",
           "vegaChartMark": "layered-combo",
-          "markdownResponse": "### 📡 ChannelSync Collaborative CPFR & POS Harmonizer Briefing\n\n> **Executive Summary**: Harmonized multi-retailer daily EDI 852 scan feeds across Cymbal Retail, Apex Hypermarket, and Target via **Cloud Dataflow** and **BigQuery**. Flagged a critical **phantom inventory stockout at Apex Hypermarket Atlanta** (4 consecutive days of zero scans masked by 380 units of ghost book inventory, leaking $2,451/day). Reconciled Cymbal Retail's **80,000-unit bullwhip forecast divergence** down to realistic POS consumption velocity, and autonomously dispatched a **95,000-unit VMI replenishment order (EDI 855)** to DC Dallas, lifting retail On-Shelf Availability (OSA) by **+3.8 points**.\n\n#### 📊 Multi-Retailer CPFR Reconciliation Ledger (Atomic Copy-Ready Table)\n\n| Retailer | Store / DC | SKU ID | Daily Scans | Book Stock | Anomaly Status | CPFR Consensus | VMI Order Units | Retail OSA % |\n|:---|:---|:---|---:|---:|:---|---:|---:|---:|\n| `Cymbal Retail` | `DC-DALLAS-CENTRAL` | `SKU-BEV-ISOTONIC-32OZ` | 1,840 | 420 | `ALIGNED_FLOW` | 580,000 | **95,000** | 98.2% |\n| `Apex Hypermarket` | `STORE-APEX-ATL-209` | `SKU-BEV-ISOTONIC-32OZ` | 0 | 380 | `PHANTOM_STOCKOUT` | 42,000 | **Audit Triggered** | 84.5% (Depleted) |\n| `Summit Stores` | `DC-CHICAGO-MIDWEST` | `SKU-SNACK-PROTEIN-BAR` | 1,280 | 310 | `STABLE_CONSENSUS` | 275,000 | **45,000** | 96.8% |\n\n#### ⚡ Automated CPFR Dispatches & Physical Audits Executed\n\n- **Store Phantom Stockout Audit Dispatched**: `AUDIT-TASK-94134425` | Store: `STORE-APEX-ATL-209` | Retailer: `Apex Hypermarket` | Due Date: `2026-10-18` | Status: `STORE_AUDIT_DISPATCHED`\n- **VMI Replenishment Order Dispatched (EDI 855)**: `VMI-PO-C8CF3A6E` | Retailer: `Cymbal Retail` | SKU: `SKU-BEV-ISOTONIC-32OZ` | Quantity: **95,000** units | Target: `DC-DALLAS-CENTRAL` | Status: `VMI_PO_TRANSMITTED_EDI855`\n\n### 🔗 Connected Systems & EDI Integration Stack\n- **Cloud Dataflow EDI Pipeline**: High-throughput AS2/SFTP ingestion normalizing EDI 852 (POS) and EDI 830 (Forecasts).\n- **BigQuery Zero-Scan Poisson Model**: Anomaly detection isolating phantom inventory and ghost shelf stock.\n- **SAP IBP Collaborative Planning**: Real-time CPFR exception workbench harmonizing retailer vs supplier forecasts.\n- **Vendor Managed Inventory (VMI) Gateway**: Automated EDI 855 purchase order generation directly to 3PL logistics.",
+          "markdownResponse": "### 📡 ChannelSync Collaborative CPFR & POS Harmonizer Briefing\n\n> **Executive Summary**: Harmonized multi-retailer daily EDI 852 scan feeds across Cymbal Retail, DMart (Avenue Supermarts), and Target via **Cloud Dataflow** and **BigQuery**. Flagged a critical **phantom inventory stockout at DMart (Avenue Supermarts) Atlanta** (4 consecutive days of zero scans masked by 380 units of ghost book inventory, leaking $2,451/day). Reconciled Cymbal Retail's **80,000-unit bullwhip forecast divergence** down to realistic POS consumption velocity, and autonomously dispatched a **95,000-unit VMI replenishment order (EDI 855)** to DC Dallas, lifting retail On-Shelf Availability (OSA) by **+3.8 points**.\n\n#### 📊 Multi-Retailer CPFR Reconciliation Ledger (Atomic Copy-Ready Table)\n\n| Retailer | Store / DC | SKU ID | Daily Scans | Book Stock | Anomaly Status | CPFR Consensus | VMI Order Units | Retail OSA % |\n|:---|:---|:---|---:|---:|:---|---:|---:|---:|\n| `Cymbal Retail` | `DC-DALLAS-CENTRAL` | `SKU-BEV-ISOTONIC-32OZ` | 1,840 | 420 | `ALIGNED_FLOW` | 580,000 | **95,000** | 98.2% |\n| `DMart (Avenue Supermarts)` | `STORE-APEX-ATL-209` | `SKU-BEV-ISOTONIC-32OZ` | 0 | 380 | `PHANTOM_STOCKOUT` | 42,000 | **Audit Triggered** | 84.5% (Depleted) |\n| `Summit Stores` | `DC-CHICAGO-MIDWEST` | `SKU-SNACK-PROTEIN-BAR` | 1,280 | 310 | `STABLE_CONSENSUS` | 275,000 | **45,000** | 96.8% |\n\n#### ⚡ Automated CPFR Dispatches & Physical Audits Executed\n\n- **Store Phantom Stockout Audit Dispatched**: `AUDIT-TASK-94134425` | Store: `STORE-APEX-ATL-209` | Retailer: `DMart (Avenue Supermarts)` | Due Date: `2026-10-18` | Status: `STORE_AUDIT_DISPATCHED`\n- **VMI Replenishment Order Dispatched (EDI 855)**: `VMI-PO-C8CF3A6E` | Retailer: `Cymbal Retail` | SKU: `SKU-BEV-ISOTONIC-32OZ` | Quantity: **95,000** units | Target: `DC-DALLAS-CENTRAL` | Status: `VMI_PO_TRANSMITTED_EDI855`\n\n### 🔗 Connected Systems & EDI Integration Stack\n- **Cloud Dataflow EDI Pipeline**: High-throughput AS2/SFTP ingestion normalizing EDI 852 (POS) and EDI 830 (Forecasts).\n- **BigQuery Zero-Scan Poisson Model**: Anomaly detection isolating phantom inventory and ghost shelf stock.\n- **SAP IBP Collaborative Planning**: Real-time CPFR exception workbench harmonizing retailer vs supplier forecasts.\n- **Vendor Managed Inventory (VMI) Gateway**: Automated EDI 855 purchase order generation directly to 3PL logistics.",
           "mutationReceipt": {
             "audit_id": "AUDIT-TASK-94134425",
             "anomaly_id": "PHANTOM-APEX-ATL-01",
             "store_id": "STORE-APEX-ATL-209",
-            "retailer": "Apex Hypermarket",
+            "retailer": "DMart (Avenue Supermarts)",
             "sku_id": "SKU-BEV-ISOTONIC-32OZ",
             "expected_audit_date": "2026-10-18",
             "status": "STORE_AUDIT_DISPATCHED",
@@ -7543,7 +7543,7 @@
           {
             "scenario_id": "SCENARIO-CPFR-01",
             "name": "Phantom Inventory Detection & VMI Replenishment Dispatch",
-            "query": "Harmonize retailer EDI 852 feeds, detect Apex Hypermarket store phantom inventory stockout, dispatch store cycle count audit, and trigger Cymbal Retail VMI replenishment order.",
+            "query": "Harmonize retailer EDI 852 feeds, detect DMart (Avenue Supermarts) store phantom inventory stockout, dispatch store cycle count audit, and trigger Cymbal Retail VMI replenishment order.",
             "expected_proof_obligations": [
               "Query retailer EDI 852 daily store scan records",
               "Query retailer EDI 830 forward order forecasts and bullwhip volatility",
@@ -8636,7 +8636,7 @@
               {
                 "campaign_id": "CMP-202611-PROT20",
                 "name": "20% Off Protein Snack Pack",
-                "retailer": "Omni Wholesale Club",
+                "retailer": "Reliance Retail & Wholesale",
                 "channel": "Club Warehouse",
                 "start_date": "2026-11-10",
                 "end_date": "2026-11-24",
@@ -8675,7 +8675,7 @@
               {
                 "campaign_id": "CMP-202611-PROT49",
                 "name": "20% Off Protein Snack Pack",
-                "retailer": "Omni Wholesale Club",
+                "retailer": "Reliance Retail & Wholesale",
                 "channel": "Club Warehouse",
                 "start_date": "2026-11-24",
                 "end_date": "2026-11-24",
@@ -11990,10 +11990,10 @@
                 "timestamp": "2026-10-15T18:30:00Z",
                 "source": "Reuters Global Logistics Wire",
                 "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
-                "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Port of Antwerp docks, freezing customs release and crane shifts.",
+                "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Mundra Sea Port (Adani Ports) docks, freezing customs release and crane shifts.",
                 "entities_extracted": {
                   "ports": [
-                    "Port of Antwerp",
+                    "Mundra Sea Port (Adani Ports)",
                     "BEANR"
                   ],
                   "carriers": [
@@ -12030,10 +12030,10 @@
                 "timestamp": "2026-10-15T18:30:00Z",
                 "source": "Reuters Global Logistics Wire",
                 "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
-                "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Port of Antwerp docks, freezing customs release and crane shifts.",
+                "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Mundra Sea Port (Adani Ports) docks, freezing customs release and crane shifts.",
                 "entities_extracted": {
                   "ports": [
-                    "Port of Antwerp",
+                    "Mundra Sea Port (Adani Ports)",
                     "BEANR"
                   ],
                   "carriers": [
@@ -12070,10 +12070,10 @@
                 "timestamp": "2026-10-15T18:30:00Z",
                 "source": "Reuters Global Logistics Wire",
                 "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
-                "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Port of Antwerp docks, freezing customs release and crane shifts.",
+                "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Mundra Sea Port (Adani Ports) docks, freezing customs release and crane shifts.",
                 "entities_extracted": {
                   "ports": [
-                    "Port of Antwerp",
+                    "Mundra Sea Port (Adani Ports)",
                     "BEANR"
                   ],
                   "carriers": [
@@ -12149,7 +12149,7 @@
                 "supplier_name": "Antwerp Terminal Stevedoring Co",
                 "tier_level": 1,
                 "parent_tier1_vendor": "DIRECT",
-                "facility_name": "Port of Antwerp Quay 1700",
+                "facility_name": "Mundra Sea Port (Adani Ports) Quay 1700",
                 "country": "Belgium",
                 "lat": 51.27,
                 "lon": 4.29,
@@ -12183,7 +12183,7 @@
                 "supplier_name": "Antwerp Terminal Stevedoring Co",
                 "tier_level": 1,
                 "parent_tier1_vendor": "DIRECT",
-                "facility_name": "Port of Antwerp Quay 1700",
+                "facility_name": "Mundra Sea Port (Adani Ports) Quay 1700",
                 "country": "Belgium",
                 "lat": 51.228,
                 "lon": 4.239,
@@ -12217,7 +12217,7 @@
                 "supplier_name": "Antwerp Terminal Stevedoring Co",
                 "tier_level": 1,
                 "parent_tier1_vendor": "DIRECT",
-                "facility_name": "Port of Antwerp Quay 1700",
+                "facility_name": "Mundra Sea Port (Adani Ports) Quay 1700",
                 "country": "Belgium",
                 "lat": 51.312,
                 "lon": 4.341,
@@ -12357,11 +12357,11 @@
           "mutationStatus": "created",
           "vegaChartTitle": "StormShield · War Room Disruption Risk & Expedite Infographic",
           "vegaChartMark": "multi-panel-vconcat",
-          "markdownResponse": "### ⚡ Crisis Briefing: Super Typhoon Gaemi & Antwerp Port Multi-Modal Response\n\nCorrelated **3 multi-tier disruption vectors** across meteorological radars, satellite AIS telemetry, and Tier-1/2 fab statuses. **$15.4M** in pipeline inventory was at immediate risk with only **4.5 days** of buffer stock remaining at assembly plants. Autonomous War Room created and emergency freight shift dispatched.\n\n### 📋 Disrupted Inventory & Remediation Schedule\n\n| PO Number | Material SKU | Supplier Name | Tier | Origin / Transit | Delay (Hours) | Mitigation Action | Expedite Status |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| `PO-450091281` | `SKU-BATTERY-MEB-01` | Taiwan Adv Packaging | Tier 2 | Kaohsiung / EVER GLOBE | +126h (5.2d) | Fast-Track Air Charter (C-17) | **DISPATCHED** |\n| `PO-450091285` | `SKU-INVERTER-HV-800V` | Delta Power Systems | Tier 1 | Taichung / EVER GLOBE | +126h (5.2d) | Fast-Track Air Charter (C-17) | **DISPATCHED** |\n| `PO-450091304` | `SKU-TI-FORGING-W52` | Global Wafer Fab | Tier 3 | Hsinchu / EVER GLOBE | +126h (5.2d) | Re-allocate from EU buffer | **ALLOCATED** |\n| `PO-450089100` | `SKU-STERILE-VIAL-10ML` | EuroPharma Glass | Tier 1 | Antwerp / MAERSK MOLLER | +114h (4.8d) | Reroute via Rotterdam Corridor | **IN TRANSIT** |\n\n### 🚀 Executed Autonomous Playbooks\n\n1. **War Room Initialized**: Incident `INC-WR-3850172F` registered with cross-functional triage.\n2. **Emergency Air Freight Dispatched**: Order `EXP-450091281-AIR` approved for critical EV battery modules to avoid line-down halt.\n\n### 🔗 Connected Systems & Data Sources\n\n* **WeatherNext 3 Numerical Radar**: Forecast bounding box `23.5°N - 25.5°N, 120.0°E - 123.0°E` (Typhoon Gaemi Sustained Winds 145 kts).\n* **Spire Global Maritime AIS**: Real-time position tracking vessel `EVER GLOBE` (IMO `9811000`) anchored for weather evasion.\n* **Resilinc EventWatch AI**: Tier-2 supplier facility exposure confirmed for `Taiwan Adv Packaging Fab 2`.\n* **SAP S/4HANA Supply Chain Execution**: Purchasing Document `PO-450091281` flagged for expedited goods receipt.\n\n### 🛡️ Compliance & Verification Audit\n\n* **Pre-execution Idempotency Key**: `GAEMI-ANTWERP-20261016` (Verified)\n* **CSCO Delegated Authority Limit**: Approved under $500,000 threshold ($42,000 air charter expense)\n* **Audit Signature**: `sha256:7f83b2e9d41c8f4201be91456a094`\n",
+          "markdownResponse": "### ⚡ Crisis Briefing: Super Typhoon Gaemi & Mundra Port Multi-Modal Response\n\nCorrelated **3 multi-tier disruption vectors** across meteorological radars, satellite AIS telemetry, and Tier-1/2 fab statuses. **$15.4M** in pipeline inventory was at immediate risk with only **4.5 days** of buffer stock remaining at assembly plants. Autonomous War Room created and emergency freight shift dispatched.\n\n### 📋 Disrupted Inventory & Remediation Schedule\n\n| PO Number | Material SKU | Supplier Name | Tier | Origin / Transit | Delay (Hours) | Mitigation Action | Expedite Status |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| `PO-450091281` | `SKU-BATTERY-MEB-01` | Taiwan Adv Packaging | Tier 2 | Kaohsiung / EVER GLOBE | +126h (5.2d) | Fast-Track Air Charter (C-17) | **DISPATCHED** |\n| `PO-450091285` | `SKU-INVERTER-HV-800V` | Delta Power Systems | Tier 1 | Taichung / EVER GLOBE | +126h (5.2d) | Fast-Track Air Charter (C-17) | **DISPATCHED** |\n| `PO-450091304` | `SKU-TI-FORGING-W52` | Global Wafer Fab | Tier 3 | Hsinchu / EVER GLOBE | +126h (5.2d) | Re-allocate from EU buffer | **ALLOCATED** |\n| `PO-450089100` | `SKU-STERILE-VIAL-10ML` | EuroPharma Glass | Tier 1 | Antwerp / MAERSK MOLLER | +114h (4.8d) | Reroute via Rotterdam Corridor | **IN TRANSIT** |\n\n### 🚀 Executed Autonomous Playbooks\n\n1. **War Room Initialized**: Incident `INC-WR-3850172F` registered with cross-functional triage.\n2. **Emergency Air Freight Dispatched**: Order `EXP-450091281-AIR` approved for critical EV battery modules to avoid line-down halt.\n\n### 🔗 Connected Systems & Data Sources\n\n* **WeatherNext 3 Numerical Radar**: Forecast bounding box `23.5°N - 25.5°N, 120.0°E - 123.0°E` (Typhoon Gaemi Sustained Winds 145 kts).\n* **Spire Global Maritime AIS**: Real-time position tracking vessel `EVER GLOBE` (IMO `9811000`) anchored for weather evasion.\n* **Resilinc EventWatch AI**: Tier-2 supplier facility exposure confirmed for `Taiwan Adv Packaging Fab 2`.\n* **SAP S/4HANA Supply Chain Execution**: Purchasing Document `PO-450091281` flagged for expedited goods receipt.\n\n### 🛡️ Compliance & Verification Audit\n\n* **Pre-execution Idempotency Key**: `GAEMI-ANTWERP-20261016` (Verified)\n* **CSCO Delegated Authority Limit**: Approved under $500,000 threshold ($42,000 air charter expense)\n* **Audit Signature**: `sha256:7f83b2e9d41c8f4201be91456a094`\n",
           "mutationReceipt": {
             "status": "created",
             "incident_id": "INC-WR-3850172F",
-            "audit_trail": "War room 'Super Typhoon Gaemi & Antwerp Port Disruption Multi-Modal Response' initialized [INC-WR-3850172F] with severity CRITICAL. Lead assigned to Director of Global Supply Chain."
+            "audit_trail": "War room 'Super Typhoon Gaemi & Mundra Port Disruption Multi-Modal Response' initialized [INC-WR-3850172F] with severity CRITICAL. Lead assigned to Director of Global Supply Chain."
           }
         }
       },
@@ -12800,8 +12800,8 @@
           },
           {
             "scenario_id": "SCENARIO-ANTWERP-DOCK-STRIKE",
-            "name": "Port of Antwerp Wildcat Dockworker Strike",
-            "input_query": "Reuters reports 72-hour wildcat union strike across Port of Antwerp docks. Check inbound maritime vessels carrying active pharmaceutical ingredients, assess days of buffer inventory, and assemble war room mitigation.",
+            "name": "Mundra Sea Port (Adani Ports) Wildcat Dockworker Strike",
+            "input_query": "Reuters reports 72-hour wildcat union strike across Mundra Sea Port (Adani Ports) docks. Check inbound maritime vessels carrying active pharmaceutical ingredients, assess days of buffer inventory, and assemble war room mitigation.",
             "expected_tools": [
               "query_news_disruptions",
               "query_maritime_ais_vessels",
@@ -12810,7 +12810,7 @@
             ],
             "ground_truth_assertions": {
               "news_signal_id": "NEWS-9014",
-              "affected_port": "Port of Antwerp",
+              "affected_port": "Mundra Sea Port (Adani Ports)",
               "delayed_vessel": "MAERSK MC-KINNEY MOLLER",
               "at_risk_po": "PO-450089100",
               "impacted_sku": "SKU-STERILE-VIAL-10ML",
@@ -13036,7 +13036,7 @@
                 "max_authorized_budget_usd": 1500000,
                 "actions": [
                   "Charter 2x Boeing 777F cargo flights from Taipei to Frankfurt for 12,000 PMIC chips",
-                  "Trigger lateral stock transfer of 200 battery modules from Chicago Mega-Hub to Ontario DC",
+                  "Trigger lateral stock transfer of 200 battery modules from Bhiwandi Mega-Hub (Mumbai) to Sanand Multi-Modal Logistics DC (Gujarat)",
                   "Re-sequence assembly line shifts at Stuttgart Plant to preserve high-margin EV production"
                 ],
                 "expected_roi": "$7.2M line-down penalty avoided for $650k expedite freight investment"
@@ -13060,7 +13060,7 @@
                 "max_authorized_budget_usd": 1290000,
                 "actions": [
                   "Charter 2x Boeing 777F cargo flights from Taipei to Frankfurt for 12,000 PMIC chips",
-                  "Trigger lateral stock transfer of 200 battery modules from Chicago Mega-Hub to Ontario DC",
+                  "Trigger lateral stock transfer of 200 battery modules from Bhiwandi Mega-Hub (Mumbai) to Sanand Multi-Modal Logistics DC (Gujarat)",
                   "Re-sequence assembly line shifts at Stuttgart Plant to preserve high-margin EV production"
                 ],
                 "expected_roi": "$7.2M line-down penalty avoided for $650k expedite freight investment"
@@ -13084,7 +13084,7 @@
                 "max_authorized_budget_usd": 1785000,
                 "actions": [
                   "Charter 2x Boeing 777F cargo flights from Taipei to Frankfurt for 12,000 PMIC chips",
-                  "Trigger lateral stock transfer of 200 battery modules from Chicago Mega-Hub to Ontario DC",
+                  "Trigger lateral stock transfer of 200 battery modules from Bhiwandi Mega-Hub (Mumbai) to Sanand Multi-Modal Logistics DC (Gujarat)",
                   "Re-sequence assembly line shifts at Stuttgart Plant to preserve high-margin EV production"
                 ],
                 "expected_roi": "$7.2M line-down penalty avoided for $650k expedite freight investment"
@@ -13452,7 +13452,7 @@
           "mutationStatus": "executed",
           "vegaChartTitle": "TowerMind · CSCO Multi-Echelon Control Tower Cockpit",
           "vegaChartMark": "multi-panel-vconcat",
-          "markdownResponse": "### 🌐 Executive Briefing: Global Multi-Echelon Bottleneck & Line-Down Mitigation\n\nAutonomous scan correlated **3 critical choke points** across EMEA and North America. Identified **$13.4M** total revenue exposure across in-flight battery assemblies and HVAC compressors. Approved playbook dispatched under CSCO delegation authority ($650,000 allocated) and lateral stock rebalancing initiated.\n\n### 📊 Enterprise Bottleneck & Capacity Triage\n\n| Bottleneck ID | Location / Facility | Type | Revenue at Risk ($) | Transit Delay (Days) | Remediation Playbook | Budget ($) | Status |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| `BN-SUEZ-041` | Red Sea / Suez Chokepoint | Geopolitical Reroute | $7,200,000 | +14.5d | Intermodal Air Expedite | $650,000 | **DISPATCHED** |\n| `BN-FRANKFURT-012` | Frankfurt Airport Cargo T2 | Air Freight Congestion | $3,800,000 | +4.2d | Direct Ramp Transfer | $120,000 | **ACTIVE** |\n| `BN-DALLAS-089` | Dallas Cross-Dock Hub | Warehouse Labor Limit | $2,400,000 | +3.8d | Dynamic AMR Re-Slotting | $85,000 | **SCHEDULED** |\n\n### 🚀 Executed Executive Actions\n\n1. **Playbook Execution (`EXEC-PB-0FA7187B`)**: Dispatched intermodal air expedite for 8 stranded vessels avoiding line-down at Stuttgart.\n2. **Lateral Inventory Rebalancing (`REBAL-BATTERY-001`)**: Transferred 200 EV battery modules from Central US Mega-Hub to European staging.\n\n### 🔗 Connected Systems & Data Feeds\n\n* **SAP S/4HANA Multi-Echelon Twin**: Node telemetry synchronized for 4 echelons (Raw Materials, Hubs, Forward DCs, Plants).\n* **Blue Yonder TMS Transit Engine**: Cape of Good Hope transit delay calculated at +14.5 days.\n* **Manhattan Associates WMS**: Dallas cross-dock outbound dock door utilization tracked at 94%.\n\n### 🛡️ CSCO Governance & Authority Audit\n\n* **CSCO Delegated Expenditure Gate**: $650,000 (Within authorized $2,000,000 threshold)\n* **Pre-execution Idempotency**: `EXEC-SUEZ-STUTTGART-20261016` (Verified)\n* **Tamper-Evident HMAC Signature**: `sha256:4a92c81e7d03...`\n",
+          "markdownResponse": "### 🌐 Executive Briefing: Global Multi-Echelon Bottleneck & Line-Down Mitigation\n\nAutonomous scan correlated **3 critical choke points** across EMEA and North America. Identified **$13.4M** total revenue exposure across in-flight battery assemblies and HVAC compressors. Approved playbook dispatched under CSCO delegation authority ($650,000 allocated) and lateral stock rebalancing initiated.\n\n### 📊 Enterprise Bottleneck & Capacity Triage\n\n| Bottleneck ID | Location / Facility | Type | Revenue at Risk ($) | Transit Delay (Days) | Remediation Playbook | Budget ($) | Status |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| `BN-SUEZ-041` | Red Sea / Suez Chokepoint | Geopolitical Reroute | $7,200,000 | +14.5d | Intermodal Air Expedite | $650,000 | **DISPATCHED** |\n| `BN-FRANKFURT-012` | Mumbai Chhatrapati Shivaji Cargo Terminal (BOM) | Air Freight Congestion | $3,800,000 | +4.2d | Direct Ramp Transfer | $120,000 | **ACTIVE** |\n| `BN-DALLAS-089` | Gurugram Bilaspur Cross-Dock Hub (Delhi NCR) | Warehouse Labor Limit | $2,400,000 | +3.8d | Dynamic AMR Re-Slotting | $85,000 | **SCHEDULED** |\n\n### 🚀 Executed Executive Actions\n\n1. **Playbook Execution (`EXEC-PB-0FA7187B`)**: Dispatched intermodal air expedite for 8 stranded vessels avoiding line-down at Stuttgart.\n2. **Lateral Inventory Rebalancing (`REBAL-BATTERY-001`)**: Transferred 200 EV battery modules from Bhiwandi Western Mega-Hub (Mumbai) to European staging.\n\n### 🔗 Connected Systems & Data Feeds\n\n* **SAP S/4HANA Multi-Echelon Twin**: Node telemetry synchronized for 4 echelons (Raw Materials, Hubs, Forward DCs, Plants).\n* **Blue Yonder TMS Transit Engine**: Cape of Good Hope transit delay calculated at +14.5 days.\n* **Manhattan Associates WMS**: Dallas cross-dock outbound dock door utilization tracked at 94%.\n\n### 🛡️ CSCO Governance & Authority Audit\n\n* **CSCO Delegated Expenditure Gate**: $650,000 (Within authorized $2,000,000 threshold)\n* **Pre-execution Idempotency**: `EXEC-SUEZ-STUTTGART-20261016` (Verified)\n* **Tamper-Evident HMAC Signature**: `sha256:4a92c81e7d03...`\n",
           "mutationReceipt": {
             "status": "executed",
             "execution_id": "EXEC-PB-0FA7187B",
@@ -13879,7 +13879,7 @@
               "chokepoint_revenue_at_risk_usd": 7200000,
               "at_risk_plant": "NODE-PLANT-GERMANY",
               "plant_safety_stock_health": "CRITICAL_BUFFER_BREACH",
-              "recommended_action": "Execute PLAYBOOK-INTERMODAL-AIR-EXPEDITE and rebalance stock from Chicago Mega-Hub"
+              "recommended_action": "Execute PLAYBOOK-INTERMODAL-AIR-EXPEDITE and rebalance stock from Bhiwandi Mega-Hub (Mumbai)"
             },
             "eval_models": {
               "fast_execution_model": "gemini-3.8-flash",
@@ -32507,8 +32507,8 @@
             ],
             "rows": [
               {
-                "dc_id": "CDC-CHICAGO-01",
-                "dc_name": "Midwest Central Distribution Center",
+                "dc_id": "CDC-MUMBAI-01",
+                "dc_name": "Bhiwandi Western Mega Distribution Center (Mumbai MMR)",
                 "echelon_tier": "TIER_1_CENTRAL_DC",
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
                 "on_hand_inventory_units": 68400,
@@ -32519,8 +32519,8 @@
                 "inventory_status": "SURPLUS_AVAILABLE_FOR_REBALANCE"
               },
               {
-                "dc_id": "RDC-DALLAS-02",
-                "dc_name": "South Regional Distribution Center",
+                "dc_id": "RDC-DELHI-02",
+                "dc_name": "Gurugram Northern Regional Distribution Center (Delhi NCR)",
                 "echelon_tier": "TIER_2_REGIONAL_DC",
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
                 "on_hand_inventory_units": 7200,
@@ -32531,8 +32531,8 @@
                 "inventory_status": "STOCKOUT_ALERT_IMMINENT"
               },
               {
-                "dc_id": "RDC-ATLANTA-03",
-                "dc_name": "Southeast Regional Distribution Center",
+                "dc_id": "RDC-BENGALURU-03",
+                "dc_name": "Nelamangala Southern Regional Distribution Center (Bengaluru)",
                 "echelon_tier": "TIER_2_REGIONAL_DC",
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
                 "on_hand_inventory_units": 24500,
@@ -32543,8 +32543,8 @@
                 "inventory_status": "BALANCED_HEALTHY"
               },
               {
-                "dc_id": "CDC-CHICAGO-23",
-                "dc_name": "Midwest Central Distribution Center",
+                "dc_id": "CDC-MUMBAI-23",
+                "dc_name": "Bhiwandi Western Mega Distribution Center (Mumbai MMR)",
                 "echelon_tier": "TIER_1_CENTRAL_DC",
                 "sku_id": "SKU-BEV-OATMILK-1L",
                 "on_hand_inventory_units": 81396,
@@ -32555,8 +32555,8 @@
                 "inventory_status": "SURPLUS_AVAILABLE_FOR_REBALANCE"
               },
               {
-                "dc_id": "RDC-DALLAS-31",
-                "dc_name": "South Regional Distribution Center",
+                "dc_id": "RDC-DELHI-31",
+                "dc_name": "Gurugram Northern Regional Distribution Center (Delhi NCR)",
                 "echelon_tier": "TIER_2_REGIONAL_DC",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
                 "on_hand_inventory_units": 6192,
@@ -32567,8 +32567,8 @@
                 "inventory_status": "STOCKOUT_ALERT_IMMINENT"
               },
               {
-                "dc_id": "RDC-ATLANTA-39",
-                "dc_name": "Southeast Regional Distribution Center",
+                "dc_id": "RDC-BENGALURU-39",
+                "dc_name": "Nelamangala Southern Regional Distribution Center (Bengaluru)",
                 "echelon_tier": "TIER_2_REGIONAL_DC",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
                 "on_hand_inventory_units": 27685,
@@ -32600,7 +32600,7 @@
               {
                 "projection_id": "SL-PROJ-202610-001",
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
-                "network_node_id": "RDC-DALLAS-02",
+                "network_node_id": "RDC-DELHI-02",
                 "days_of_supply_baseline": 3.8,
                 "stockout_probability_without_rebalance_pct": 34.2,
                 "stockout_probability_with_rebalance_pct": 0.8,
@@ -32611,7 +32611,7 @@
               {
                 "projection_id": "SL-PROJ-202610-009",
                 "sku_id": "SKU-XYZ-204",
-                "network_node_id": "RDC-DALLAS-10",
+                "network_node_id": "RDC-DELHWestern Dedicated Freight Corridor (WDFC)",
                 "days_of_supply_baseline": 4.52,
                 "stockout_probability_without_rebalance_pct": 29.41,
                 "stockout_probability_with_rebalance_pct": 0.664,
@@ -32622,7 +32622,7 @@
               {
                 "projection_id": "SL-PROJ-202610-016",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
-                "network_node_id": "RDC-DALLAS-17",
+                "network_node_id": "RDC-DELHI-17",
                 "days_of_supply_baseline": 4.29,
                 "stockout_probability_without_rebalance_pct": 36.59,
                 "stockout_probability_with_rebalance_pct": 0.856,
@@ -32633,7 +32633,7 @@
               {
                 "projection_id": "SL-PROJ-202610-023",
                 "sku_id": "SKU-BEV-OATMILK-1L",
-                "network_node_id": "RDC-DALLAS-24",
+                "network_node_id": "RDC-DELHI-24",
                 "days_of_supply_baseline": 3.15,
                 "stockout_probability_without_rebalance_pct": 42.75,
                 "stockout_probability_with_rebalance_pct": 0.99,
@@ -32644,7 +32644,7 @@
               {
                 "projection_id": "SL-PROJ-202610-030",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
-                "network_node_id": "RDC-DALLAS-31",
+                "network_node_id": "RDC-DELHI-31",
                 "days_of_supply_baseline": 3.27,
                 "stockout_probability_without_rebalance_pct": 36.59,
                 "stockout_probability_with_rebalance_pct": 0.904,
@@ -32655,7 +32655,7 @@
               {
                 "projection_id": "SL-PROJ-202610-037",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
-                "network_node_id": "RDC-DALLAS-38",
+                "network_node_id": "RDC-DELHI-38",
                 "days_of_supply_baseline": 4.29,
                 "stockout_probability_without_rebalance_pct": 40.7,
                 "stockout_probability_with_rebalance_pct": 0.736,
@@ -32687,8 +32687,8 @@
               {
                 "transfer_id": "REBAL-TRANSFER-202610-001",
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
-                "source_dc_id": "CDC-CHICAGO-01",
-                "destination_dc_id": "RDC-DALLAS-02",
+                "source_dc_id": "CDC-MUMBAI-01",
+                "destination_dc_id": "RDC-DELHI-02",
                 "quantity_transferred_units": 6500,
                 "transport_mode": "DEDICATED_DRY_VAN_REBALANCE",
                 "freight_cost_usd": 1420.0,
@@ -32700,8 +32700,8 @@
               {
                 "transfer_id": "REBAL-TRANSFER-202610-009",
                 "sku_id": "SKU-XYZ-204",
-                "source_dc_id": "CDC-CHICAGO-09",
-                "destination_dc_id": "RDC-DALLAS-10",
+                "source_dc_id": "CDC-MUMBAI-09",
+                "destination_dc_id": "RDC-DELHWestern Dedicated Freight Corridor (WDFC)",
                 "quantity_transferred_units": 5590,
                 "transport_mode": "DEDICATED_DRY_VAN_REBALANCE",
                 "freight_cost_usd": 1107.6,
@@ -32713,8 +32713,8 @@
               {
                 "transfer_id": "REBAL-TRANSFER-202610-016",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
-                "source_dc_id": "CDC-CHICAGO-16",
-                "destination_dc_id": "RDC-DALLAS-17",
+                "source_dc_id": "CDC-MUMBAI-16",
+                "destination_dc_id": "RDC-DELHI-17",
                 "quantity_transferred_units": 5395,
                 "transport_mode": "DEDICATED_DRY_VAN_REBALANCE",
                 "freight_cost_usd": 1519.4,
@@ -32726,8 +32726,8 @@
               {
                 "transfer_id": "REBAL-TRANSFER-202610-023",
                 "sku_id": "SKU-BEV-OATMILK-1L",
-                "source_dc_id": "CDC-CHICAGO-23",
-                "destination_dc_id": "RDC-DALLAS-24",
+                "source_dc_id": "CDC-MUMBAI-23",
+                "destination_dc_id": "RDC-DELHI-24",
                 "quantity_transferred_units": 7735,
                 "transport_mode": "DEDICATED_DRY_VAN_REBALANCE",
                 "freight_cost_usd": 1178.6,
@@ -32739,8 +32739,8 @@
               {
                 "transfer_id": "REBAL-TRANSFER-202610-030",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
-                "source_dc_id": "CDC-CHICAGO-30",
-                "destination_dc_id": "RDC-DALLAS-31",
+                "source_dc_id": "CDC-MUMBAI-30",
+                "destination_dc_id": "RDC-DELHI-31",
                 "quantity_transferred_units": 8125,
                 "transport_mode": "DEDICATED_DRY_VAN_REBALANCE",
                 "freight_cost_usd": 1221.2,
@@ -32752,8 +32752,8 @@
               {
                 "transfer_id": "REBAL-TRANSFER-202610-037",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
-                "source_dc_id": "CDC-CHICAGO-37",
-                "destination_dc_id": "RDC-DALLAS-38",
+                "source_dc_id": "CDC-MUMBAI-37",
+                "destination_dc_id": "RDC-DELHI-38",
                 "quantity_transferred_units": 5980,
                 "transport_mode": "DEDICATED_DRY_VAN_REBALANCE",
                 "freight_cost_usd": 1221.2,
@@ -32790,7 +32790,7 @@
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
                 "sku_description": "Barista Organic Oat Milk 1L Tetra",
                 "echelon_tier": "TIER_1_CENTRAL_DC",
-                "network_node_id": "CDC-CHICAGO-01",
+                "network_node_id": "CDC-MUMBAI-01",
                 "current_safety_stock_units": 45000,
                 "recommended_safety_stock_units": 32000,
                 "safety_stock_delta_units": -13000,
@@ -32805,7 +32805,7 @@
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
                 "sku_description": "Barista Organic Oat Milk 1L Tetra",
                 "echelon_tier": "TIER_2_REGIONAL_DC",
-                "network_node_id": "RDC-DALLAS-02",
+                "network_node_id": "RDC-DELHI-02",
                 "current_safety_stock_units": 8500,
                 "recommended_safety_stock_units": 14200,
                 "safety_stock_delta_units": 5700,
@@ -32820,7 +32820,7 @@
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "sku_description": "Barista Organic Oat Milk 1L Tetra",
                 "echelon_tier": "TIER_1_CENTRAL_DC",
-                "network_node_id": "CDC-CHICAGO-16",
+                "network_node_id": "CDC-MUMBAI-16",
                 "current_safety_stock_units": 56250,
                 "recommended_safety_stock_units": 40000,
                 "safety_stock_delta_units": -10790,
@@ -32835,7 +32835,7 @@
                 "sku_id": "SKU-BEV-OATMILK-1L",
                 "sku_description": "Barista Organic Oat Milk 1L Tetra",
                 "echelon_tier": "TIER_2_REGIONAL_DC",
-                "network_node_id": "RDC-DALLAS-24",
+                "network_node_id": "RDC-DELHI-24",
                 "current_safety_stock_units": 10625,
                 "recommended_safety_stock_units": 17750,
                 "safety_stock_delta_units": 7125,
@@ -32850,7 +32850,7 @@
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
                 "sku_description": "Barista Organic Oat Milk 1L Tetra",
                 "echelon_tier": "TIER_1_CENTRAL_DC",
-                "network_node_id": "CDC-CHICAGO-30",
+                "network_node_id": "CDC-MUMBAI-30",
                 "current_safety_stock_units": 38700,
                 "recommended_safety_stock_units": 34240,
                 "safety_stock_delta_units": -15470,
@@ -32865,7 +32865,7 @@
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
                 "sku_description": "Barista Organic Oat Milk 1L Tetra",
                 "echelon_tier": "TIER_2_REGIONAL_DC",
-                "network_node_id": "RDC-DALLAS-38",
+                "network_node_id": "RDC-DELHI-38",
                 "current_safety_stock_units": 10115,
                 "recommended_safety_stock_units": 11786,
                 "safety_stock_delta_units": 4731,
@@ -32886,16 +32886,16 @@
           "mutationStatus": "LATERAL_REBALANCE_DISPATCHED",
           "vegaChartTitle": "EchelonFlow Multi-Echelon Stock & Safety Buffer Positioning",
           "vegaChartMark": "layered-combo",
-          "markdownResponse": "### 📦 EchelonFlow Multi-Echelon Inventory Optimization (MEIO) Briefing\n\n> **Executive Summary**: Executed Clark-Scarf multi-echelon stochastic inventory rebalancing across the fulfillment network for **Barista Organic Oat Milk 1L Tetra**. Identified an acute imbalance: **RDC Dallas (Tier 2)** was operating at critical risk with only **3.8 days of supply** and a **34.2% stockout probability** ($18,500 at-risk sales margin), while **CDC Chicago (Tier 1)** held a substantial surplus of **68,400 units (28.5 days of supply)**. Dispatched a **6,500-unit lateral transshipment** from Chicago to Dallas via dedicated dry van ($1,420 freight cost, delivering **13.0x net ROI** and securing a **98.6% customer SLA**). Simultaneously updated SAP IBP safety stock policy, reducing central pooling buffer from 45,000 to 32,000 units to unlock **$38,480 in working capital**.\n\n#### 📊 Multi-Echelon Stock Positions & Rebalance Telemetry (Atomic Copy-Ready Table)\n\n| Echelon Node | Node Tier | On-Hand Stock | Days of Supply | Optimal Buffer | Delta Units | Rebalance Action | Stockout Risk |\n|:---|:---|---:|---:|---:|---:|:---|:---|\n| `CDC-CHICAGO-01` | Central DC (Tier 1) | 68,400 units | 28.5 days | 32,000 units | **-13,000 units** | `DISPATCH_LATERAL_SOURCE` | 0.2% (Protected) |\n| `RDC-DALLAS-02` | Regional DC (Tier 2) | 7,200 units | **3.8 days** | 14,200 units | **+6,500 units** | `LATERAL_TRANSFER_RECEIPT` | **0.8% (Averted from 34.2%)** |\n| `RDC-ATLANTA-03` | Regional DC (Tier 2) | 24,500 units | 18.2 days | 11,000 units | 0 units | `MAINTAIN_CURRENT_POLICY` | 1.1% (In-Spec) |\n| `FDC-AUSTIN-04` | Forward DC (Tier 3) | 4,100 units | 12.0 days | 4,500 units | 0 units | `MAINTAIN_CURRENT_POLICY` | 1.4% (In-Spec) |\n\n#### ⚡ Automated Logistics & SAP IBP Policy Mutations Executed\n\n- **Lateral Transshipment Dispatched**: `REBAL-TRF-9A95179E` | From: `CDC-CHICAGO-01` ➔ To: `RDC-DALLAS-02` | Qty: **6,500 units** | OTM ID: `OTM-SHP-95179E` | Status: `LATERAL_REBALANCE_DISPATCHED`\n- **SAP IBP Safety Stock Policy Updated**: `MEIO-POL-13DEA677` | Tier: `TIER_1_CENTRAL_DC` | SKU: `SKU-BEV-OATMILK-ORIGINAL-1L` | New Buffer: **32,000 units** | IBP Job: `IBP-JOB-DEA677` | Status: `MEIO_SAFETY_STOCK_POLICY_UPDATED`\n\n### 🔗 Connected Systems & Optimization Architecture\n- **SAP IBP for MEIO**: Clark-Scarf stochastic multi-echelon positioning and service level target synchronization.\n- **Manhattan Active WMS**: Real-time perpetual inventory balances, dock receipts, and allocated order queues.\n- **Oracle OTM Lateral Dispatcher**: Automated freight rating, carrier dispatch, and cross-DC EDI 204 tender.\n- **BigQuery ML Monte Carlo Engine**: Stochastic simulation of lead-time variance and stockout probability curves.",
+          "markdownResponse": "### 📦 EchelonFlow Multi-Echelon Inventory Optimization (MEIO) Briefing\n\n> **Executive Summary**: Executed Clark-Scarf multi-echelon stochastic inventory rebalancing across the fulfillment network for **Barista Organic Oat Milk 1L Tetra**. Identified an acute imbalance: **RDC Delhi NCR (Gurugram) (Tier 2)** was operating at critical risk with only **3.8 days of supply** and a **34.2% stockout probability** ($18,500 at-risk sales margin), while **CDC Mumbai (Bhiwandi) (Tier 1)** held a substantial surplus of **68,400 units (28.5 days of supply)**. Dispatched a **6,500-unit lateral transshipment** from Mumbai (Bhiwandi) to Delhi NCR (Gurugram) via dedicated dry van ($1,420 freight cost, delivering **13.0x net ROI** and securing a **98.6% customer SLA**). Simultaneously updated SAP IBP safety stock policy, reducing central pooling buffer from 45,000 to 32,000 units to unlock **$38,480 in working capital**.\n\n#### 📊 Multi-Echelon Stock Positions & Rebalance Telemetry (Atomic Copy-Ready Table)\n\n| Echelon Node | Node Tier | On-Hand Stock | Days of Supply | Optimal Buffer | Delta Units | Rebalance Action | Stockout Risk |\n|:---|:---|---:|---:|---:|---:|:---|:---|\n| `CDC-MUMBAI-01` | Central DC (Tier 1) | 68,400 units | 28.5 days | 32,000 units | **-13,000 units** | `DISPATCH_LATERAL_SOURCE` | 0.2% (Protected) |\n| `RDC-DELHI-02` | Regional DC (Tier 2) | 7,200 units | **3.8 days** | 14,200 units | **+6,500 units** | `LATERAL_TRANSFER_RECEIPT` | **0.8% (Averted from 34.2%)** |\n| `RDC-BENGALURU-03` | Regional DC (Tier 2) | 24,500 units | 18.2 days | 11,000 units | 0 units | `MAINTAIN_CURRENT_POLICY` | 1.1% (In-Spec) |\n| `FDC-HYDERABAD-04` | Forward DC (Tier 3) | 4,100 units | 12.0 days | 4,500 units | 0 units | `MAINTAIN_CURRENT_POLICY` | 1.4% (In-Spec) |\n\n#### ⚡ Automated Logistics & SAP IBP Policy Mutations Executed\n\n- **Lateral Transshipment Dispatched**: `REBAL-TRF-9A95179E` | From: `CDC-MUMBAI-01` ➔ To: `RDC-DELHI-02` | Qty: **6,500 units** | OTM ID: `OTM-SHP-95179E` | Status: `LATERAL_REBALANCE_DISPATCHED`\n- **SAP IBP Safety Stock Policy Updated**: `MEIO-POL-13DEA677` | Tier: `TIER_1_CENTRAL_DC` | SKU: `SKU-BEV-OATMILK-ORIGINAL-1L` | New Buffer: **32,000 units** | IBP Job: `IBP-JOB-DEA677` | Status: `MEIO_SAFETY_STOCK_POLICY_UPDATED`\n\n### 🔗 Connected Systems & Optimization Architecture\n- **SAP IBP for MEIO**: Clark-Scarf stochastic multi-echelon positioning and service level target synchronization.\n- **Manhattan Active WMS**: Real-time perpetual inventory balances, dock receipts, and allocated order queues.\n- **Oracle OTM Lateral Dispatcher**: Automated freight rating, carrier dispatch, and cross-DC EDI 204 tender.\n- **BigQuery ML Monte Carlo Engine**: Stochastic simulation of lead-time variance and stockout probability curves.",
           "mutationReceipt": {
             "rebalance_transfer_id": "REBAL-TRF-9A95179E",
-            "source_dc_id": "CDC-CHICAGO-01",
-            "destination_dc_id": "RDC-DALLAS-02",
+            "source_dc_id": "CDC-MUMBAI-01",
+            "destination_dc_id": "RDC-DELHI-02",
             "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
             "transfer_quantity_units": 6500,
             "otm_shipment_id": "OTM-SHP-95179E",
             "status": "LATERAL_REBALANCE_DISPATCHED",
-            "rationale": "RDC Dallas stock dropped to 3.8 days of supply (34.2% stockout probability). Dispatching 6,500 units from surplus stock at CDC Chicago avoids $18,500 in lost margin against $1,420 freight cost (13.0x ROI).",
+            "rationale": "RDC Delhi NCR (Gurugram) stock dropped to 3.8 days of supply (34.2% stockout probability). Dispatching 6,500 units from surplus stock at CDC Mumbai (Bhiwandi) avoids $18,500 in lost margin against $1,420 freight cost (13.0x ROI).",
             "idempotency_key": "REBAL-ORD-20261022-01"
           }
         }
@@ -33307,8 +33307,8 @@
           {
             "scenario_id": "GOLDEN-MEIO-ALLOCATOR-001",
             "name": "Clark-Scarf Multi-Echelon Rebalancing and Downstream Stockout Prevention",
-            "description": "Detect imminent stockout at RDC Dallas (3.8 days of supply, 34.2% stockout probability), identify 68,400-unit surplus at CDC Chicago, dispatch 6,500-unit lateral transshipment ($1,420 freight vs $18,500 avoided stockout loss, 13.0x ROI), and update SAP IBP safety stock policy freeing $38,480 in working capital.",
-            "input_query": "Audit multi-echelon inventory positions for SKU-BEV-OATMILK-ORIGINAL-1L, resolve downstream stockout risk at RDC Dallas via lateral transshipment, and update SAP IBP safety stock parameters.",
+            "description": "Detect imminent stockout at RDC Delhi NCR (Gurugram) (3.8 days of supply, 34.2% stockout probability), identify 68,400-unit surplus at CDC Mumbai (Bhiwandi), dispatch 6,500-unit lateral transshipment ($1,420 freight vs $18,500 avoided stockout loss, 13.0x ROI), and update SAP IBP safety stock policy freeing $38,480 in working capital.",
+            "input_query": "Audit multi-echelon inventory positions for SKU-BEV-OATMILK-ORIGINAL-1L, resolve downstream stockout risk at RDC Delhi NCR (Gurugram) via lateral transshipment, and update SAP IBP safety stock parameters.",
             "expected_tools": [
               "query_multi_echelon_safety_stock_recommendations",
               "query_dc_inventory_echelon_balances",
@@ -33318,8 +33318,8 @@
               "action_update_echelon_safety_stock_policy"
             ],
             "expected_verifications": {
-              "source_dc_id": "CDC-CHICAGO-01",
-              "destination_dc_id": "RDC-DALLAS-02",
+              "source_dc_id": "CDC-MUMBAI-01",
+              "destination_dc_id": "RDC-DELHI-02",
               "transfer_quantity_units": 6500,
               "rebalance_status": "LATERAL_REBALANCE_DISPATCHED",
               "policy_status": "MEIO_SAFETY_STOCK_POLICY_UPDATED"
@@ -34345,7 +34345,7 @@
                 "manifest_id": "XDOCK-MNF-20261022-041",
                 "inbound_trailer_id": "TRL-INB-SWIFT-9921",
                 "supplier_id": "SUP-OATLY-PLANT-01",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "inbound_door_id": "DOOR-INBOUND-04",
                 "total_pallets_count": 24,
                 "eligible_flowthrough_pallets": 18,
@@ -34363,7 +34363,7 @@
                 "manifest_id": "XDOCK-MNF-20261022-049",
                 "inbound_trailer_id": "TRL-INB-SWIFT-9929",
                 "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "inbound_door_id": "DOOR-INBOUND-12",
                 "total_pallets_count": 21,
                 "eligible_flowthrough_pallets": 15,
@@ -34381,7 +34381,7 @@
                 "manifest_id": "XDOCK-MNF-20261022-056",
                 "inbound_trailer_id": "TRL-INB-SWIFT-9936",
                 "supplier_id": "SUP-XYZ-T1-SILICONCORE",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "inbound_door_id": "DOOR-INBOUND-19",
                 "total_pallets_count": 21,
                 "eligible_flowthrough_pallets": 14,
@@ -34399,7 +34399,7 @@
                 "manifest_id": "XDOCK-MNF-20261022-063",
                 "inbound_trailer_id": "TRL-INB-SWIFT-9943",
                 "supplier_id": "SUP-XYZ-T1-ECORESIN",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "inbound_door_id": "DOOR-INBOUND-26",
                 "total_pallets_count": 21,
                 "eligible_flowthrough_pallets": 15,
@@ -34417,7 +34417,7 @@
                 "manifest_id": "XDOCK-MNF-20261022-070",
                 "inbound_trailer_id": "TRL-INB-SWIFT-9950",
                 "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "inbound_door_id": "DOOR-INBOUND-33",
                 "total_pallets_count": 22,
                 "eligible_flowthrough_pallets": 21,
@@ -34435,7 +34435,7 @@
                 "manifest_id": "XDOCK-MNF-20261022-077",
                 "inbound_trailer_id": "TRL-INB-SWIFT-9957",
                 "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "inbound_door_id": "DOOR-INBOUND-40",
                 "total_pallets_count": 19,
                 "eligible_flowthrough_pallets": 22,
@@ -34472,7 +34472,7 @@
               {
                 "bay_id": "BAY-OUTBOUND-12",
                 "outbound_trailer_id": "TRL-OUT-JB-HUNT-4481",
-                "carrier_name": "J.B. Hunt Transport",
+                "carrier_name": "V-Trans Logistics Transport",
                 "destination_dc": "RDC-HOUSTON-05",
                 "route_code": "RTE-TX-SOUTH-HOU-01",
                 "current_pallet_load_count": 16,
@@ -34484,8 +34484,8 @@
               {
                 "bay_id": "BAY-OUTBOUND-14",
                 "outbound_trailer_id": "TRL-OUT-SCHNEIDER-8820",
-                "carrier_name": "Schneider National",
-                "destination_dc": "FDC-AUSTIN-04",
+                "carrier_name": "Delhivery Supply Chain",
+                "destination_dc": "FDC-HYDERABAD-04",
                 "route_code": "RTE-TX-CENTRAL-ATX-02",
                 "current_pallet_load_count": 18,
                 "max_pallet_capacity": 26,
@@ -34496,7 +34496,7 @@
               {
                 "bay_id": "BAY-OUTBOUND-27",
                 "outbound_trailer_id": "TRL-OUT-JB-HUNT-4496",
-                "carrier_name": "J.B. Hunt Transport",
+                "carrier_name": "V-Trans Logistics Transport",
                 "destination_dc": "RDC-XYZ-CHICAGO",
                 "route_code": "RTE-TX-SOUTH-HOU-01",
                 "current_pallet_load_count": 12,
@@ -34508,7 +34508,7 @@
               {
                 "bay_id": "BAY-OUTBOUND-36",
                 "outbound_trailer_id": "TRL-OUT-SCHNEIDER-8842",
-                "carrier_name": "Schneider National",
+                "carrier_name": "Delhivery Supply Chain",
                 "destination_dc": "FDC-XYZ-DALLAS",
                 "route_code": "RTE-TX-CENTRAL-ATX-02",
                 "current_pallet_load_count": 21,
@@ -34520,7 +34520,7 @@
               {
                 "bay_id": "BAY-OUTBOUND-41",
                 "outbound_trailer_id": "TRL-OUT-JB-HUNT-4510",
-                "carrier_name": "J.B. Hunt Transport",
+                "carrier_name": "V-Trans Logistics Transport",
                 "destination_dc": "FDC-XYZ-ATLANTA",
                 "route_code": "RTE-TX-SOUTH-HOU-01",
                 "current_pallet_load_count": 14,
@@ -34532,7 +34532,7 @@
               {
                 "bay_id": "BAY-OUTBOUND-50",
                 "outbound_trailer_id": "TRL-OUT-SCHNEIDER-8856",
-                "carrier_name": "Schneider National",
+                "carrier_name": "Delhivery Supply Chain",
                 "destination_dc": "RDC-XYZ-FRANKFURT",
                 "route_code": "RTE-TX-CENTRAL-ATX-02",
                 "current_pallet_load_count": 20,
@@ -34552,7 +34552,7 @@
           "mutationStatus": "CROSSDOCK_TRANSFER_DISPATCHED",
           "vegaChartTitle": "CrossDockFlow Inbound-to-Outbound Direct Pallet Transfer",
           "vegaChartMark": "layered-combo",
-          "markdownResponse": "### 🔄 CrossDockFlow Real-Time Cross-Dock & Flow-Through Briefing\n\n> **Executive Summary**: Successfully orchestrated real-time door-to-door cross-dock synchronization for **Swift Transportation inbound shipment `SHP-SWIFT-20261022-9921`** carrying 24 pallets of organic beverage SKUs at **Door Inbound 04**. Using live carrier arrival milestones and outbound trailer availability, routed **18 eligible flow-through pallets** directly across the dock floor into outbound retail linehauls without rack putaway staging. Dispatched **4 high-priority pallets directly into J.B. Hunt Bay 12 (Houston RDC)**, achieving an average dwell time of **18.5 minutes** (compared to 145 minutes for staged storage), eliminating **2 labor touches per pallet (66.7% labor touch reduction)**, and routing remaining evening lots safely to Buffer Lane B.\n\n#### 📊 Inbound-to-Outbound Dock Transfer & Dwell Telemetry (Atomic Copy-Ready Table)\n\n| Inbound Door | Outbound Bay | Destination Route | Pallets Handled | Dwell Time | Labor Touches | Flow-Through Mode | Status |\n|:---|:---|:---|---:|---:|---:|:---|:---|\n| `DOOR-04` | `BAY-12` | Houston RDC (J.B. Hunt) | 10 pallets | **18.5 min** | **1 touch (was 3)** | `DIRECT_FLOWTHROUGH` | `COMPLETED` |\n| `DOOR-04` | `BAY-14` | Austin FDC (Schneider) | 8 pallets | **22.0 min** | **1 touch (was 3)** | `DIRECT_FLOWTHROUGH` | `IN_PROGRESS` |\n| `DOOR-04` | Buffer Lane B | San Antonio (Evening) | 6 pallets | 145.0 min | 3 touches | `BUFFER_STAGED` | `HELD_IN_BUFFER` |\n\n#### ⚡ Automated Door-to-Door Forklift Missions Executed\n\n- **Direct Cross-Dock Transfer Dispatched**: `XDOCK-TRF-8D87AE6A` | From: `DOOR-INBOUND-04` ➔ To: `BAY-OUTBOUND-12` | Pallets: **4** | Mission: `FL-MISSION-87AE6A` | Status: `CROSSDOCK_TRANSFER_DISPATCHED`\n- **Pallet Staging Buffer Hold**: `XDOCK-HOLD-C089EDA6` | Pallet: `PLT-OAT-9921-05` | Location: `STAGING-BUFFER-LANE-B` | Reason: `EVENING_DEPARTURE_TRAILER_UNAVAILABLE` | Status: `PALLET_HELD_IN_STAGING`\n\n### 🔗 Connected Systems & Dock Flow Architecture\n- **Manhattan Active WMS Cross-Dock Sorter**: Automated inbound-to-outbound pallet matching and wave prioritization.\n- **Carrier EDI 214 & Google Maps Fleet Engine**: Precise trailer geofence milestone tracking and dock door reservation.\n- **Industrial IoT Forklift Telemetry**: RFID pallet tag tracking, path routing, and dwell time monitoring.\n- **SAP EWM Dock & Yard Integration**: Outbound trailer departure scheduling and seal verification.",
+          "markdownResponse": "### 🔄 CrossDockFlow Real-Time Cross-Dock & Flow-Through Briefing\n\n> **Executive Summary**: Successfully orchestrated real-time door-to-door cross-dock synchronization for **TCI Freight Express inbound shipment `SHP-SWIFT-20261022-9921`** carrying 24 pallets of organic beverage SKUs at **Door Inbound 04**. Using live carrier arrival milestones and outbound trailer availability, routed **18 eligible flow-through pallets** directly across the dock floor into outbound retail linehauls without rack putaway staging. Dispatched **4 high-priority pallets directly into V-Trans Logistics Bay 12 (Houston RDC)**, achieving an average dwell time of **18.5 minutes** (compared to 145 minutes for staged storage), eliminating **2 labor touches per pallet (66.7% labor touch reduction)**, and routing remaining evening lots safely to Buffer Lane B.\n\n#### 📊 Inbound-to-Outbound Dock Transfer & Dwell Telemetry (Atomic Copy-Ready Table)\n\n| Inbound Door | Outbound Bay | Destination Route | Pallets Handled | Dwell Time | Labor Touches | Flow-Through Mode | Status |\n|:---|:---|:---|---:|---:|---:|:---|:---|\n| `DOOR-04` | `BAY-12` | Houston RDC (V-Trans Logistics) | 10 pallets | **18.5 min** | **1 touch (was 3)** | `DIRECT_FLOWTHROUGH` | `COMPLETED` |\n| `DOOR-04` | `BAY-14` | Austin FDC (Schneider) | 8 pallets | **22.0 min** | **1 touch (was 3)** | `DIRECT_FLOWTHROUGH` | `IN_PROGRESS` |\n| `DOOR-04` | Buffer Lane B | San Antonio (Evening) | 6 pallets | 145.0 min | 3 touches | `BUFFER_STAGED` | `HELD_IN_BUFFER` |\n\n#### ⚡ Automated Door-to-Door Forklift Missions Executed\n\n- **Direct Cross-Dock Transfer Dispatched**: `XDOCK-TRF-8D87AE6A` | From: `DOOR-INBOUND-04` ➔ To: `BAY-OUTBOUND-12` | Pallets: **4** | Mission: `FL-MISSION-87AE6A` | Status: `CROSSDOCK_TRANSFER_DISPATCHED`\n- **Pallet Staging Buffer Hold**: `XDOCK-HOLD-C089EDA6` | Pallet: `PLT-OAT-9921-05` | Location: `STAGING-BUFFER-LANE-B` | Reason: `EVENING_DEPARTURE_TRAILER_UNAVAILABLE` | Status: `PALLET_HELD_IN_STAGING`\n\n### 🔗 Connected Systems & Dock Flow Architecture\n- **Manhattan Active WMS Cross-Dock Sorter**: Automated inbound-to-outbound pallet matching and wave prioritization.\n- **Carrier EDI 214 & Google Maps Fleet Engine**: Precise trailer geofence milestone tracking and dock door reservation.\n- **Industrial IoT Forklift Telemetry**: RFID pallet tag tracking, path routing, and dwell time monitoring.\n- **SAP EWM Dock & Yard Integration**: Outbound trailer departure scheduling and seal verification.",
           "mutationReceipt": {
             "transfer_dispatch_id": "XDOCK-TRF-8D87AE6A",
             "inbound_manifest_id": "XDOCK-MNF-20261022-041",
@@ -34567,7 +34567,7 @@
             "pallet_count": 4,
             "wms_forklift_mission_id": "FL-MISSION-87AE6A",
             "status": "CROSSDOCK_TRANSFER_DISPATCHED",
-            "rationale": "Inbound Swift trailer at Door 04 synchronized with outbound J.B. Hunt trailer at Bay 12 (Houston RDC). Direct cross-dock transfer of 4 pallets avoids rack putaway, holding dwell time to 18.5 min and saving 2 touches per pallet.",
+            "rationale": "Inbound Swift trailer at Door 04 synchronized with outbound V-Trans Logistics trailer at Bay 12 (Houston RDC). Direct cross-dock transfer of 4 pallets avoids rack putaway, holding dwell time to 18.5 min and saving 2 touches per pallet.",
             "idempotency_key": "XDOCK-DISP-20261022-01"
           }
         }
@@ -34976,7 +34976,7 @@
           {
             "scenario_id": "GOLDEN-CROSSDOCK-FLOW-001",
             "name": "Inbound Carrier Milestone Sync and Direct Door-to-Door Cross-Dock Transfer",
-            "description": "Synchronize Swift inbound delivery at Door Inbound 04 with outbound J.B. Hunt trailer at Bay 12, dispatch direct cross-dock transfer for 4 pallets avoiding staging (18.5 min dwell time, saving 2 touches per pallet), and route evening lot to staging buffer lane B.",
+            "description": "Synchronize Swift inbound delivery at Door Inbound 04 with outbound V-Trans Logistics trailer at Bay 12, dispatch direct cross-dock transfer for 4 pallets avoiding staging (18.5 min dwell time, saving 2 touches per pallet), and route evening lot to staging buffer lane B.",
             "input_query": "Synchronize inbound shipment SHP-SWIFT-20261022-9921 at Door Inbound 04, dispatch direct cross-dock transfers into outbound retail linehauls, and buffer non-immediate pallets.",
             "expected_tools": [
               "query_inbound_outbound_crossdock_manifests",
@@ -35076,7 +35076,7 @@
             "rows": [
               {
                 "telemetry_id": "AMR-TEL-20261022-001",
-                "dc_id": "RDC-DALLAS-02",
+                "dc_id": "RDC-DELHI-02",
                 "amr_id": "AMR-KION-BOT-07",
                 "wave_id": "WAVE-20261022-AM-01",
                 "average_picker_speed_m_s": 1.4,
@@ -35089,7 +35089,7 @@
               },
               {
                 "telemetry_id": "AMR-TEL-20261022-002",
-                "dc_id": "RDC-DALLAS-02",
+                "dc_id": "RDC-DELHI-02",
                 "amr_id": "AMR-KION-BOT-12",
                 "wave_id": "WAVE-20261022-AM-01",
                 "average_picker_speed_m_s": 1.5,
@@ -35366,7 +35366,7 @@
             "rows": [
               {
                 "wave_id": "WAVE-20261022-AM-01",
-                "dc_id": "RDC-DALLAS-02",
+                "dc_id": "RDC-DELHI-02",
                 "zone_id": "ZONE-BULK-MEZZANINE",
                 "allocated_orders_count": 450,
                 "total_pick_lines": 1820,
@@ -35379,7 +35379,7 @@
               },
               {
                 "wave_id": "WAVE-20261022-AM-02",
-                "dc_id": "RDC-DALLAS-02",
+                "dc_id": "RDC-DELHI-02",
                 "zone_id": "ZONE-GOLDEN-FLOW-RACK",
                 "allocated_orders_count": 620,
                 "total_pick_lines": 3100,
@@ -35451,9 +35451,9 @@
           "status": "success",
           "actionId": "ACT-VERIFIED",
           "mutationStatus": "RELOCATION_TASK_DISPATCHED",
-          "vegaChartTitle": "SlotMaster 3D Warehouse Picker Travel Reduction (RDC Dallas)",
+          "vegaChartTitle": "SlotMaster 3D Warehouse Picker Travel Reduction (RDC Delhi NCR (Gurugram))",
           "vegaChartMark": "bar",
-          "markdownResponse": "### 🏗️ SlotMaster 3D Warehouse Velocity Slotting & Wave Optimization Briefing\n\n> **Executive Summary**: Comprehensive 3D warehouse slotting telemetry at **RDC Dallas (South Regional DC)** diagnosed severe picker travel inefficiency and mezzanine congestion. Fast-mover **Barista Organic Oat Milk 1L** (840 lines/day) was improperly slotted on overhead mezzanine shelves in **Aisle 14** (142 meters from pack stations), forcing AMR bots and pickers to spend **68.2% of shift time walking** and generating aisle gridlock (congestion score 0.84). Dispatched a high-priority WMS physical relocation task moving Oat Milk to **Aisle 02 Golden Zone** (22 meters from pack), cutting travel distance by **84.5% (-120m per pick)** and eliminating **100.8 km of walking per day (412 annual labor hours saved)**. Concurrently throttled concurrent pickers in Zone Bulk Mezzanine from 16 down to 10 to clear traffic jams.\n\n#### 📊 3D Velocity Slotting & Picker Travel Impact (Atomic Copy-Ready Table)\n\n| Product SKU | Velocity Class | Current Bin Location | Recommended Golden Bin | Baseline Walk | Optimized Walk | Daily Travel Saved | Ergonomic Status |\n|:---|:---|:---|:---|---:|---:|---:|:---|\n| `SKU-BEV-OATMILK-1L` | **Tier A (840 lines/day)** | Aisle 14 Shelf 04 (High) | **Aisle 02 Shelf 02 (Golden)** | 142.0 m | **22.0 m** | **100.8 km/day** | `ERGONOMIC_WAIST_HEIGHT` |\n| `SKU-BEV-ALMOND-1L` | Tier B (310 lines/day) | Aisle 05 Shelf 02 (Golden) | Aisle 05 Shelf 02 (Golden) | 45.0 m | 45.0 m | 0.0 km/day | `OPTIMALLY_SLOTTED` |\n| `SKU-BEV-SOY-1L` | Tier B (280 lines/day) | Aisle 11 Shelf 03 (High) | Aisle 06 Shelf 02 (Golden) | 88.0 m | 35.0 m | 28.5 km/day | `PENDING_PHASE_2` |\n\n#### ⚡ Automated WMS Move Tickets & Wave Release Controls Executed\n\n- **WMS Stock Relocation Task Dispatched**: `SLOT-RELOC-C2A8941D` | SKU: `SKU-BEV-OATMILK-ORIGINAL-1L` | From: `BIN-AISLE-14-SHELF-04-HIGH` ➔ To: `BIN-AISLE-02-SHELF-02-GOLDEN` | Ticket: `WMS-MOV-A8941D` | Status: `RELOCATION_TASK_DISPATCHED`\n- **Wave Release Profile Rebalanced**: `WAVE-THROT-7B95F743` | Wave: `WAVE-20261022-AM-01` | Zone: `ZONE-BULK-MEZZANINE` | Picker Cap: **10 pickers** | Status: `WAVE_PROFILE_REBALANCED`\n\n### 🔗 Connected Intralogistics & Robotic Swarm Architecture\n- **Manhattan Active WMS 3D Slotting**: Real-time velocity heatmap, cubic utilization, and pick frequency profiling.\n- **KION / Dematic AMR Controller**: VDA 5050 autonomous mobile robot fleet dispatch, pathing, and collision avoidance.\n- **Blue Yonder Wave Engine**: Dynamic order batching, zone picker caps, and bottleneck pacing.\n- **OSHA Ergonomic Standard Module**: Elimination of overhead reach and deep-bend heavy SKU lifting injuries.",
+          "markdownResponse": "### 🏗️ SlotMaster 3D Warehouse Velocity Slotting & Wave Optimization Briefing\n\n> **Executive Summary**: Comprehensive 3D warehouse slotting telemetry at **RDC Delhi NCR (Gurugram) (South Regional DC)** diagnosed severe picker travel inefficiency and mezzanine congestion. Fast-mover **Barista Organic Oat Milk 1L** (840 lines/day) was improperly slotted on overhead mezzanine shelves in **Aisle 14** (142 meters from pack stations), forcing AMR bots and pickers to spend **68.2% of shift time walking** and generating aisle gridlock (congestion score 0.84). Dispatched a high-priority WMS physical relocation task moving Oat Milk to **Aisle 02 Golden Zone** (22 meters from pack), cutting travel distance by **84.5% (-120m per pick)** and eliminating **100.8 km of walking per day (412 annual labor hours saved)**. Concurrently throttled concurrent pickers in Zone Bulk Mezzanine from 16 down to 10 to clear traffic jams.\n\n#### 📊 3D Velocity Slotting & Picker Travel Impact (Atomic Copy-Ready Table)\n\n| Product SKU | Velocity Class | Current Bin Location | Recommended Golden Bin | Baseline Walk | Optimized Walk | Daily Travel Saved | Ergonomic Status |\n|:---|:---|:---|:---|---:|---:|---:|:---|\n| `SKU-BEV-OATMILK-1L` | **Tier A (840 lines/day)** | Aisle 14 Shelf 04 (High) | **Aisle 02 Shelf 02 (Golden)** | 142.0 m | **22.0 m** | **100.8 km/day** | `ERGONOMIC_WAIST_HEIGHT` |\n| `SKU-BEV-ALMOND-1L` | Tier B (310 lines/day) | Aisle 05 Shelf 02 (Golden) | Aisle 05 Shelf 02 (Golden) | 45.0 m | 45.0 m | 0.0 km/day | `OPTIMALLY_SLOTTED` |\n| `SKU-BEV-SOY-1L` | Tier B (280 lines/day) | Aisle 11 Shelf 03 (High) | Aisle 06 Shelf 02 (Golden) | 88.0 m | 35.0 m | 28.5 km/day | `PENDING_PHASE_2` |\n\n#### ⚡ Automated WMS Move Tickets & Wave Release Controls Executed\n\n- **WMS Stock Relocation Task Dispatched**: `SLOT-RELOC-C2A8941D` | SKU: `SKU-BEV-OATMILK-ORIGINAL-1L` | From: `BIN-AISLE-14-SHELF-04-HIGH` ➔ To: `BIN-AISLE-02-SHELF-02-GOLDEN` | Ticket: `WMS-MOV-A8941D` | Status: `RELOCATION_TASK_DISPATCHED`\n- **Wave Release Profile Rebalanced**: `WAVE-THROT-7B95F743` | Wave: `WAVE-20261022-AM-01` | Zone: `ZONE-BULK-MEZZANINE` | Picker Cap: **10 pickers** | Status: `WAVE_PROFILE_REBALANCED`\n\n### 🔗 Connected Intralogistics & Robotic Swarm Architecture\n- **Manhattan Active WMS 3D Slotting**: Real-time velocity heatmap, cubic utilization, and pick frequency profiling.\n- **KION / Dematic AMR Controller**: VDA 5050 autonomous mobile robot fleet dispatch, pathing, and collision avoidance.\n- **Blue Yonder Wave Engine**: Dynamic order batching, zone picker caps, and bottleneck pacing.\n- **OSHA Ergonomic Standard Module**: Elimination of overhead reach and deep-bend heavy SKU lifting injuries.",
           "mutationReceipt": {
             "relocation_task_id": "SLOT-RELOC-C2A8941D",
             "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
@@ -35876,7 +35876,7 @@
             "scenario_id": "GOLDEN-SLOTTING-OPTIMIZER-001",
             "name": "Fast-Mover Golden Zone Relocation and Wave Congestion Throttling",
             "description": "Identify fast-mover Oat Milk slotted in mezzanine Aisle 14 (142m walk, 68.2% travel time), dispatch WMS relocation task to Aisle 02 Golden Zone (22m walk, saving 100.8 km of walking daily and 412 labor hours annually), and throttle Bulk Mezzanine wave release from 16 to 10 pickers to eliminate gridlock.",
-            "input_query": "Audit 3D warehouse slotting for fast-moving beverage SKUs at RDC Dallas, eliminate excessive picker travel, and rebalance congested wave release profiles.",
+            "input_query": "Audit 3D warehouse slotting for fast-moving beverage SKUs at RDC Delhi NCR (Gurugram), eliminate excessive picker travel, and rebalance congested wave release profiles.",
             "expected_tools": [
               "query_warehouse_slotting_velocity_tiers",
               "query_amr_picker_travel_telemetry",
@@ -38316,7 +38316,7 @@
             "rows": [
               {
                 "customer_id": "CUST-APEX-CORP",
-                "customer_name": "Apex Hypermarket National Distribution",
+                "customer_name": "DMart (Avenue Supermarts) National Distribution",
                 "contract_tier": "TIER_1_STRATEGIC",
                 "minimum_fill_rate_sla_pct": 98.5,
                 "on_time_in_full_otif_sla_pct": 97.0,
@@ -38336,7 +38336,7 @@
               },
               {
                 "customer_id": "CUST-APEX-CORP-R02D18",
-                "customer_name": "Apex Hypermarket National Distribution",
+                "customer_name": "DMart (Avenue Supermarts) National Distribution",
                 "contract_tier": "TIER_1_STRATEGIC",
                 "minimum_fill_rate_sla_pct": 90.62,
                 "on_time_in_full_otif_sla_pct": 83.42,
@@ -38356,7 +38356,7 @@
               },
               {
                 "customer_id": "CUST-APEX-CORP-R04B33",
-                "customer_name": "Apex Hypermarket National Distribution",
+                "customer_name": "DMart (Avenue Supermarts) National Distribution",
                 "contract_tier": "TIER_1_STRATEGIC",
                 "minimum_fill_rate_sla_pct": 99.6,
                 "on_time_in_full_otif_sla_pct": 75.66,
@@ -38486,7 +38486,7 @@
                 "customer_id": "CUST-APEX-CORP",
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
                 "promised_units": 8000,
-                "promised_fulfillment_node": "CDC-CHICAGO-01",
+                "promised_fulfillment_node": "CDC-MUMBAI-01",
                 "allocated_tier": "TIER_1_STRATEGIC_RESERVED",
                 "estimated_transit_hours": 18.0,
                 "promised_delivery_date": "2026-10-24T10:00:00Z",
@@ -38499,7 +38499,7 @@
                 "customer_id": "CUST-APEX-US01",
                 "sku_id": "SKU-XYZ-204",
                 "promised_units": 6640,
-                "promised_fulfillment_node": "CDC-CHICAGO-01",
+                "promised_fulfillment_node": "CDC-MUMBAI-01",
                 "allocated_tier": "TIER_1_STRATEGIC_RESERVED",
                 "estimated_transit_hours": 15.48,
                 "promised_delivery_date": "2026-10-24T10:00:00Z",
@@ -38512,7 +38512,7 @@
                 "customer_id": "CUST-OMNI-US04",
                 "sku_id": "SKU-BEV-ISOTONIC-32OZ",
                 "promised_units": 6640,
-                "promised_fulfillment_node": "CDC-CHICAGO-01",
+                "promised_fulfillment_node": "CDC-MUMBAI-01",
                 "allocated_tier": "TIER_1_STRATEGIC_RESERVED",
                 "estimated_transit_hours": 20.34,
                 "promised_delivery_date": "2026-10-24T10:00:00Z",
@@ -38525,7 +38525,7 @@
                 "customer_id": "CUST-XYZ-TIER1-AUTOWORKS",
                 "sku_id": "SKU-BEV-OATMILK-1L",
                 "promised_units": 10000,
-                "promised_fulfillment_node": "CDC-CHICAGO-01",
+                "promised_fulfillment_node": "CDC-MUMBAI-01",
                 "allocated_tier": "TIER_1_STRATEGIC_RESERVED",
                 "estimated_transit_hours": 15.48,
                 "promised_delivery_date": "2026-10-24T10:00:00Z",
@@ -38538,7 +38538,7 @@
                 "customer_id": "CUST-MEDLINE-BIO01",
                 "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
                 "promised_units": 8560,
-                "promised_fulfillment_node": "CDC-CHICAGO-01",
+                "promised_fulfillment_node": "CDC-MUMBAI-01",
                 "allocated_tier": "TIER_1_STRATEGIC_RESERVED",
                 "estimated_transit_hours": 22.5,
                 "promised_delivery_date": "2026-10-24T10:00:00Z",
@@ -38551,7 +38551,7 @@
                 "customer_id": "CUST-XYZ-TIER2-METROCPG",
                 "sku_id": "SKU-SNACK-PROTEIN-BAR",
                 "promised_units": 8560,
-                "promised_fulfillment_node": "CDC-CHICAGO-01",
+                "promised_fulfillment_node": "CDC-MUMBAI-01",
                 "allocated_tier": "TIER_1_STRATEGIC_RESERVED",
                 "estimated_transit_hours": 19.26,
                 "promised_delivery_date": "2026-10-24T10:00:00Z",
@@ -38581,7 +38581,7 @@
             "rows": [
               {
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
-                "network_node_id": "CDC-CHICAGO-01",
+                "network_node_id": "CDC-MUMBAI-01",
                 "node_type": "CENTRAL_DC",
                 "total_physical_on_hand_units": 68400,
                 "allocated_committed_units": 14200,
@@ -38594,7 +38594,7 @@
               },
               {
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
-                "network_node_id": "RDC-DALLAS-02",
+                "network_node_id": "RDC-DELHI-02",
                 "node_type": "REGIONAL_DC",
                 "total_physical_on_hand_units": 13700,
                 "allocated_committed_units": 5400,
@@ -38607,7 +38607,7 @@
               },
               {
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R022DB",
-                "network_node_id": "CDC-CHICAGO-16",
+                "network_node_id": "CDC-MUMBAI-16",
                 "node_type": "CENTRAL_DC",
                 "total_physical_on_hand_units": 77292,
                 "allocated_committed_units": 11076,
@@ -38620,7 +38620,7 @@
               },
               {
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R03710",
-                "network_node_id": "RDC-DALLAS-24",
+                "network_node_id": "RDC-DELHI-24",
                 "node_type": "REGIONAL_DC",
                 "total_physical_on_hand_units": 16303,
                 "allocated_committed_units": 6102,
@@ -38633,7 +38633,7 @@
               },
               {
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R04911",
-                "network_node_id": "CDC-CHICAGO-30",
+                "network_node_id": "CDC-MUMBAI-30",
                 "node_type": "CENTRAL_DC",
                 "total_physical_on_hand_units": 81396,
                 "allocated_committed_units": 12212,
@@ -38646,7 +38646,7 @@
               },
               {
                 "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R05C32",
-                "network_node_id": "RDC-DALLAS-38",
+                "network_node_id": "RDC-DELHI-38",
                 "node_type": "REGIONAL_DC",
                 "total_physical_on_hand_units": 11782,
                 "allocated_committed_units": 6750,
@@ -38668,14 +38668,14 @@
           "mutationStatus": "TIER1_ALLOCATION_RINGFENCED",
           "vegaChartTitle": "PromiseGuard Real-Time Order Promising & ATP Inventory Pools",
           "vegaChartMark": "bar",
-          "markdownResponse": "### 🤝 PromiseGuard Real-Time Order Promising & ATP Briefing\n\n> **Executive Summary**: Sub-50ms Cloud Spanner evaluation successfully committed high-value inbound order `ORD-20261022-8841` (**8,000 units** of Barista Organic Oat Milk 1L) for strategic account **Apex Hypermarket National Distribution** (Tier 1 Strategic, 98.5% fill rate SLA). Ingested global stock across Central and Regional DCs with **14.8 ms Spanner query latency**. While local RDC Dallas held only 3,300 uncommitted units, PromiseGuard dynamically allocated the full 8,000 units from **CDC Chicago Tier 1 Protected Quota** (where 20,000 units are ringfenced). Guaranteed delivery by **Oct 24, 2026 at 10:00 AM** (2 hours ahead of contractual cutoff), completely neutralizing a **$2,500/day OTIF penalty** risk.\n\n#### 📊 Inbound Order Promising & Sourcing Evaluation (Atomic Copy-Ready Table)\n\n| Order ID | Customer Account | Contract Tier | Requested Units | Promised Units | Sourcing Node | Promised Delivery | OTIF Risk | Status |\n|:---|:---|:---|---:|---:|:---|:---|---:|:---|\n| `ORD-8841` | **Apex Hypermarket National** | `TIER_1_STRATEGIC` | 8,000 units | **8,000 units** | `CDC-CHICAGO-01` | **2026-10-24 10:00 AM** | **$0.00 (Neutralized)** | `ATP_COMMITTED` |\n| `ORD-8842` | Lone Star Co-op | `TIER_3_STANDARD` | 1,200 units | 1,200 units | `RDC-DALLAS-02` | 2026-10-24 03:00 PM | $0.00 (Nominal) | `ATP_CONFIRMED` |\n\n#### ⚡ Automated Spanner Reservations & Tier Quota Ringfences Executed\n\n- **Tier 1 Allocation Ringfenced**: `TIER-RINGFENCE-19208698` | SKU: `SKU-BEV-OATMILK-ORIGINAL-1L` | Node: `CDC-CHICAGO-01` | Reserved Quota: **20,000 units** | Status: `TIER1_ALLOCATION_RINGFENCED`\n- **Binding ATP Promise Committed**: `PROMISE-COMMIT-6CA9EED9` | Order: `ORD-20261022-8841` | Node: `CDC-CHICAGO-01` | Units: **8,000** | Spanner Txn: `SPAN-TXN-A9EED9` | Status: `ATP_PROMISE_COMMITTED`\n\n### 🔗 Connected Systems & Order Promising Architecture\n- **Google Cloud Spanner**: Globally distributed, strongly consistent real-time ATP/CTP inventory engine (<20ms).\n- **SAP S/4HANA Sales & Distribution (SD)**: Customer master, contractual allocation tiers, and pricing schedules.\n- **Enterprise OMS / Pub/Sub**: Event-driven omnichannel order orchestration with sub-second order promising.\n- **Google OR-Tools Sourcing Optimizer**: Cost-to-serve, multi-stop linehaul routing, and SLA constraint solving.",
+          "markdownResponse": "### 🤝 PromiseGuard Real-Time Order Promising & ATP Briefing\n\n> **Executive Summary**: Sub-50ms Cloud Spanner evaluation successfully committed high-value inbound order `ORD-20261022-8841` (**8,000 units** of Barista Organic Oat Milk 1L) for strategic account **DMart (Avenue Supermarts) National Distribution** (Tier 1 Strategic, 98.5% fill rate SLA). Ingested global stock across Central and Regional DCs with **14.8 ms Spanner query latency**. While local RDC Delhi NCR (Gurugram) held only 3,300 uncommitted units, PromiseGuard dynamically allocated the full 8,000 units from **CDC Mumbai (Bhiwandi) Tier 1 Protected Quota** (where 20,000 units are ringfenced). Guaranteed delivery by **Oct 24, 2026 at 10:00 AM** (2 hours ahead of contractual cutoff), completely neutralizing a **$2,500/day OTIF penalty** risk.\n\n#### 📊 Inbound Order Promising & Sourcing Evaluation (Atomic Copy-Ready Table)\n\n| Order ID | Customer Account | Contract Tier | Requested Units | Promised Units | Sourcing Node | Promised Delivery | OTIF Risk | Status |\n|:---|:---|:---|---:|---:|:---|:---|---:|:---|\n| `ORD-8841` | **DMart (Avenue Supermarts) National** | `TIER_1_STRATEGIC` | 8,000 units | **8,000 units** | `CDC-MUMBAI-01` | **2026-10-24 10:00 AM** | **$0.00 (Neutralized)** | `ATP_COMMITTED` |\n| `ORD-8842` | Lone Star Co-op | `TIER_3_STANDARD` | 1,200 units | 1,200 units | `RDC-DELHI-02` | 2026-10-24 03:00 PM | $0.00 (Nominal) | `ATP_CONFIRMED` |\n\n#### ⚡ Automated Spanner Reservations & Tier Quota Ringfences Executed\n\n- **Tier 1 Allocation Ringfenced**: `TIER-RINGFENCE-19208698` | SKU: `SKU-BEV-OATMILK-ORIGINAL-1L` | Node: `CDC-MUMBAI-01` | Reserved Quota: **20,000 units** | Status: `TIER1_ALLOCATION_RINGFENCED`\n- **Binding ATP Promise Committed**: `PROMISE-COMMIT-6CA9EED9` | Order: `ORD-20261022-8841` | Node: `CDC-MUMBAI-01` | Units: **8,000** | Spanner Txn: `SPAN-TXN-A9EED9` | Status: `ATP_PROMISE_COMMITTED`\n\n### 🔗 Connected Systems & Order Promising Architecture\n- **Google Cloud Spanner**: Globally distributed, strongly consistent real-time ATP/CTP inventory engine (<20ms).\n- **SAP S/4HANA Sales & Distribution (SD)**: Customer master, contractual allocation tiers, and pricing schedules.\n- **Enterprise OMS / Pub/Sub**: Event-driven omnichannel order orchestration with sub-second order promising.\n- **Google OR-Tools Sourcing Optimizer**: Cost-to-serve, multi-stop linehaul routing, and SLA constraint solving.",
           "mutationReceipt": {
             "protection_id": "TIER-RINGFENCE-19208698",
             "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
-            "network_node_id": "CDC-CHICAGO-01",
+            "network_node_id": "CDC-MUMBAI-01",
             "reserve_quantity": 20000,
             "status": "TIER1_ALLOCATION_RINGFENCED",
-            "rationale": "Ringfencing 20,000 units at Central DC Chicago exclusively for strategic Tier 1 accounts (Apex Hypermarket SLA 98.5% fill rate, avoiding $2,500/day OTIF penalty).",
+            "rationale": "Ringfencing 20,000 units at Central DC Chicago exclusively for strategic Tier 1 accounts (DMart (Avenue Supermarts) SLA 98.5% fill rate, avoiding $2,500/day OTIF penalty).",
             "idempotency_key": "TIER1-RING-20261022-01"
           }
         }
@@ -39085,9 +39085,9 @@
         "evalScenarios": [
           {
             "scenario_id": "GOLDEN-ORDER-PROMISING-001",
-            "name": "Apex Hypermarket Strategic Tier 1 ATP Commitment and OTIF Penalty Avoidance",
-            "description": "Evaluate high-value order ORD-8841 (8,000 units Oat Milk 1L) for Apex Hypermarket National Distribution via Cloud Spanner (14.8ms latency), protect 20,000-unit Tier 1 reserved quota at CDC Chicago, commit binding delivery date for Oct 24 at 10:00 AM, and avoid $2,500/day OTIF penalty.",
-            "input_query": "Evaluate inbound customer order ORD-20261022-8841 from Apex Hypermarket, execute sub-50ms Spanner ATP check, ringfence Tier 1 strategic allocation reserve, and commit binding delivery date.",
+            "name": "DMart (Avenue Supermarts) Strategic Tier 1 ATP Commitment and OTIF Penalty Avoidance",
+            "description": "Evaluate high-value order ORD-8841 (8,000 units Oat Milk 1L) for DMart (Avenue Supermarts) National Distribution via Cloud Spanner (14.8ms latency), protect 20,000-unit Tier 1 reserved quota at CDC Mumbai (Bhiwandi), commit binding delivery date for Oct 24 at 10:00 AM, and avoid $2,500/day OTIF penalty.",
+            "input_query": "Evaluate inbound customer order ORD-20261022-8841 from DMart (Avenue Supermarts), execute sub-50ms Spanner ATP check, ringfence Tier 1 strategic allocation reserve, and commit binding delivery date.",
             "expected_tools": [
               "query_realtime_sku_atp_allocations",
               "query_customer_tier_sla_commitments",
@@ -39099,7 +39099,7 @@
             "expected_verifications": {
               "order_id": "ORD-20261022-8841",
               "customer_id": "CUST-APEX-CORP",
-              "promised_fulfillment_node": "CDC-CHICAGO-01",
+              "promised_fulfillment_node": "CDC-MUMBAI-01",
               "atp_reserved_qty": 8000,
               "promise_status": "ATP_PROMISE_COMMITTED",
               "protection_status": "TIER1_ALLOCATION_RINGFENCED"
@@ -40787,7 +40787,7 @@
                 "record_id": "DET-RISK-20261022-01",
                 "trailer_id": "TRL-SWIFT-7741",
                 "carrier_id": "CARRIER-SWIFT-TRANS",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "current_dwell_minutes": 85.0,
                 "free_detention_threshold_minutes": 120.0,
                 "minutes_until_penalty": 35.0,
@@ -40800,7 +40800,7 @@
                 "record_id": "DET-RISK-20261022-09",
                 "trailer_id": "TRL-SWIFT-7749",
                 "carrier_id": "CAR-CRYOEXP-REEFER",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "current_dwell_minutes": 106.25,
                 "free_detention_threshold_minutes": 99.6,
                 "minutes_until_penalty": 43.75,
@@ -40813,7 +40813,7 @@
                 "record_id": "DET-RISK-20261022-16",
                 "trailer_id": "TRL-SWIFT-7756",
                 "carrier_id": "CAR-XPO-LTL",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "current_dwell_minutes": 73.1,
                 "free_detention_threshold_minutes": 142.8,
                 "minutes_until_penalty": 29.05,
@@ -40826,7 +40826,7 @@
                 "record_id": "DET-RISK-20261022-23",
                 "trailer_id": "TRL-SWIFT-7763",
                 "carrier_id": "CAR-BNSF-RAIL",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "current_dwell_minutes": 96.05,
                 "free_detention_threshold_minutes": 93.6,
                 "minutes_until_penalty": 41.65,
@@ -40839,7 +40839,7 @@
                 "record_id": "DET-RISK-20261022-30",
                 "trailer_id": "TRL-SWIFT-7770",
                 "carrier_id": "CAR-MAERSK-OCEAN",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "current_dwell_minutes": 101.15,
                 "free_detention_threshold_minutes": 103.2,
                 "minutes_until_penalty": 30.1,
@@ -40852,7 +40852,7 @@
                 "record_id": "DET-RISK-20261022-37",
                 "trailer_id": "TRL-SWIFT-7777",
                 "carrier_id": "CAR-LH-AIRCARGO",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "current_dwell_minutes": 73.1,
                 "free_detention_threshold_minutes": 150.0,
                 "minutes_until_penalty": 43.75,
@@ -41048,7 +41048,7 @@
               {
                 "trailer_id": "TRL-SWIFT-7741",
                 "carrier_id": "CARRIER-SWIFT-TRANS",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "yard_id": "YARD-DALLAS-02",
                 "current_slot_id": "SLOT-STAGING-SOUTH-44",
                 "geofence_entry_timestamp": "2026-10-22T04:20:00Z",
@@ -41061,7 +41061,7 @@
               {
                 "trailer_id": "TRL-JB-HUNT-1204",
                 "carrier_id": "CARRIER-JB-HUNT",
-                "carrier_name": "J.B. Hunt Transport",
+                "carrier_name": "V-Trans Logistics Transport",
                 "yard_id": "YARD-DALLAS-02",
                 "current_slot_id": "SLOT-STAGING-NORTH-12",
                 "geofence_entry_timestamp": "2026-10-22T05:10:00Z",
@@ -41074,7 +41074,7 @@
               {
                 "trailer_id": "TRL-SWIFT-7756",
                 "carrier_id": "CAR-XPO-LTL",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "yard_id": "YARD-DALLAS-17",
                 "current_slot_id": "SLOT-STAGING-SOUTH-59",
                 "geofence_entry_timestamp": "2026-10-22T04:20:00Z",
@@ -41087,7 +41087,7 @@
               {
                 "trailer_id": "TRL-JB-HUNT-1226",
                 "carrier_id": "CAR-BNSF-RAIL",
-                "carrier_name": "J.B. Hunt Transport",
+                "carrier_name": "V-Trans Logistics Transport",
                 "yard_id": "YARD-DALLAS-24",
                 "current_slot_id": "SLOT-STAGING-NORTH-34",
                 "geofence_entry_timestamp": "2026-10-22T05:10:00Z",
@@ -41100,7 +41100,7 @@
               {
                 "trailer_id": "TRL-SWIFT-7770",
                 "carrier_id": "CAR-MAERSK-OCEAN",
-                "carrier_name": "Swift Transportation",
+                "carrier_name": "TCI Freight Express",
                 "yard_id": "YARD-DALLAS-31",
                 "current_slot_id": "SLOT-STAGING-SOUTH-73",
                 "geofence_entry_timestamp": "2026-10-22T04:20:00Z",
@@ -41113,7 +41113,7 @@
               {
                 "trailer_id": "TRL-JB-HUNT-1240",
                 "carrier_id": "CAR-LH-AIRCARGO",
-                "carrier_name": "J.B. Hunt Transport",
+                "carrier_name": "V-Trans Logistics Transport",
                 "yard_id": "YARD-DALLAS-38",
                 "current_slot_id": "SLOT-STAGING-NORTH-48",
                 "geofence_entry_timestamp": "2026-10-22T05:10:00Z",
@@ -41134,7 +41134,7 @@
           "mutationStatus": "SPOTTER_MOVE_DISPATCHED",
           "vegaChartTitle": "YardPulse Trailer Turnaround & Detention Demurrage Shield",
           "vegaChartMark": "layered-combo",
-          "markdownResponse": "### 🚛 YardPulse Yard Gate & Turnaround Demurrage Shield Briefing\n\n> **Executive Summary**: Real-time trailer geofencing powered by **Google Maps Fleet Engine** at **Dallas Distribution Center Yard 02** flagged an acute demurrage risk on **Swift Transportation trailer `TRL-SWIFT-7741`**. The trailer had accumulated **85.0 minutes of dwell** in Slot South 44, leaving only **35 minutes** before breaching the carrier's **120-minute free detention threshold** ($85.00/hour demurrage charge). YardPulse dynamically dispatched terminal tractor **`SPOTTER-HOSTLER-03`** under high-priority expedite, moving the trailer to ready **Door Crossdock 08**. Unloading crew Delta-02 was assigned, completing turnaround at **95.0 minutes (25 minutes ahead of cutoff)** and saving **$255.00 in accessorial detention penalties**.\n\n#### 📊 Inbound Trailer Turnaround & Demurrage Risk Telemetry (Atomic Copy-Ready Table)\n\n| Trailer ID | Carrier Name | Current Yard Slot | Assigned Dock Door | Dwell Time | Free Time Remaining | Expedite Action | Detention Penalty Avoided |\n|:---|:---|:---|:---|---:|---:|:---|---:|\n| `TRL-SWIFT-7741` | Swift Transportation | Slot South 44 | **Door Crossdock 08** | **85.0 min** | **35.0 min** | `SPOTTER_EXPEDITE_DISPATCHED` | **$255.00 (Neutralized)** |\n| `TRL-JB-HUNT-1204` | J.B. Hunt | Slot North 12 | Door Outbound 14 | 35.0 min | 85.0 min | `ON_SCHEDULE_LOADING` | $0.00 (In-Spec) |\n| `TRL-SCHNEIDER-882` | Schneider National | Slot West 06 | Door Inbound 02 | 48.0 min | 72.0 min | `ON_SCHEDULE_UNLOAD` | $0.00 (In-Spec) |\n\n#### ⚡ Automated Yard Spotter Moves & Demurrage Shield Actions Executed\n\n- **Yard Spotter Hostler Dispatched**: `YARD-MOVE-66095D8E` | Trailer: `TRL-SWIFT-7741` | From: `SLOT-STAGING-SOUTH-44` ➔ To: `DOOR-CROSSDOCK-08` | Tractor: `SPOTTER-HOSTLER-03` | Job: `HOSTLER-JOB-095D8E` | Status: `SPOTTER_MOVE_DISPATCHED`\n- **Carrier Detention Alert Neutralized**: `DET-RESOLV-1DFEA825` | Trailer: `TRL-SWIFT-7741` | Carrier: `CARRIER-SWIFT-TRANS` | Turnaround: **95.0 min** | Fee Avoided: **$255.00** | Status: `DETENTION_PENALTY_NEUTRALIZED`\n\n### 🔗 Connected Yard & Fleet Engine Infrastructure\n- **Google Maps Fleet Engine**: Sub-second GPS geofence arrival detection, gate wait queues, and yard map layers.\n- **Kalmar / TICO Hostler Telematics**: Automated task dispatch, optimal tractor routing, and hook-and-drop confirmation.\n- **SAP EWM Yard Management**: Real-time dock door clearance, crew scheduling, and bill-of-lading closing.\n- **Carrier Demurrage Rule Engine**: Contractual 2-hour detention threshold monitoring and automated accessorial audit.",
+          "markdownResponse": "### 🚛 YardPulse Yard Gate & Turnaround Demurrage Shield Briefing\n\n> **Executive Summary**: Real-time trailer geofencing powered by **Google Maps Fleet Engine** at **Dallas Distribution Center Yard 02** flagged an acute demurrage risk on **TCI Freight Express trailer `TRL-SWIFT-7741`**. The trailer had accumulated **85.0 minutes of dwell** in Slot South 44, leaving only **35 minutes** before breaching the carrier's **120-minute free detention threshold** ($85.00/hour demurrage charge). YardPulse dynamically dispatched terminal tractor **`SPOTTER-HOSTLER-03`** under high-priority expedite, moving the trailer to ready **Door Crossdock 08**. Unloading crew Delta-02 was assigned, completing turnaround at **95.0 minutes (25 minutes ahead of cutoff)** and saving **$255.00 in accessorial detention penalties**.\n\n#### 📊 Inbound Trailer Turnaround & Demurrage Risk Telemetry (Atomic Copy-Ready Table)\n\n| Trailer ID | Carrier Name | Current Yard Slot | Assigned Dock Door | Dwell Time | Free Time Remaining | Expedite Action | Detention Penalty Avoided |\n|:---|:---|:---|:---|---:|---:|:---|---:|\n| `TRL-SWIFT-7741` | TCI Freight Express | Slot South 44 | **Door Crossdock 08** | **85.0 min** | **35.0 min** | `SPOTTER_EXPEDITE_DISPATCHED` | **$255.00 (Neutralized)** |\n| `TRL-JB-HUNT-1204` | V-Trans Logistics | Slot North 12 | Door Outbound 14 | 35.0 min | 85.0 min | `ON_SCHEDULE_LOADING` | $0.00 (In-Spec) |\n| `TRL-SCHNEIDER-882` | Delhivery Supply Chain | Slot West 06 | Door Inbound 02 | 48.0 min | 72.0 min | `ON_SCHEDULE_UNLOAD` | $0.00 (In-Spec) |\n\n#### ⚡ Automated Yard Spotter Moves & Demurrage Shield Actions Executed\n\n- **Yard Spotter Hostler Dispatched**: `YARD-MOVE-66095D8E` | Trailer: `TRL-SWIFT-7741` | From: `SLOT-STAGING-SOUTH-44` ➔ To: `DOOR-CROSSDOCK-08` | Tractor: `SPOTTER-HOSTLER-03` | Job: `HOSTLER-JOB-095D8E` | Status: `SPOTTER_MOVE_DISPATCHED`\n- **Carrier Detention Alert Neutralized**: `DET-RESOLV-1DFEA825` | Trailer: `TRL-SWIFT-7741` | Carrier: `CARRIER-SWIFT-TRANS` | Turnaround: **95.0 min** | Fee Avoided: **$255.00** | Status: `DETENTION_PENALTY_NEUTRALIZED`\n\n### 🔗 Connected Yard & Fleet Engine Infrastructure\n- **Google Maps Fleet Engine**: Sub-second GPS geofence arrival detection, gate wait queues, and yard map layers.\n- **Kalmar / TICO Hostler Telematics**: Automated task dispatch, optimal tractor routing, and hook-and-drop confirmation.\n- **SAP EWM Yard Management**: Real-time dock door clearance, crew scheduling, and bill-of-lading closing.\n- **Carrier Demurrage Rule Engine**: Contractual 2-hour detention threshold monitoring and automated accessorial audit.",
           "mutationReceipt": {
             "move_id": "YARD-MOVE-66095D8E",
             "trailer_id": "TRL-SWIFT-7741",
@@ -44835,7 +44835,7 @@
               {
                 "stop_id": "STP-DAL-402",
                 "customer_id": "CUST-APEX-US01",
-                "site_name": "Apex Hypermarket Mockingbird Mixed-Use Plaza",
+                "site_name": "DMart (Avenue Supermarts) Mockingbird Mixed-Use Plaza",
                 "rooftop_lat": 32.8371,
                 "rooftop_lon": -96.7745,
                 "truck_size_limit": "53FT_REAR_ALLEY_GATE_CODE",
@@ -44871,7 +44871,7 @@
               {
                 "stop_id": "STP-CHI-406",
                 "customer_id": "CUST-OMNI-US04",
-                "site_name": "Omni Wholesale Club Lincoln Park Club Receiving",
+                "site_name": "Reliance Retail & Wholesale Lincoln Park Club Receiving",
                 "rooftop_lat": 41.9298,
                 "rooftop_lon": -87.6655,
                 "truck_size_limit": "53FT_SOUTH_APRON_SWING",
@@ -46284,7 +46284,7 @@
       "cadType": "corridor_lifo",
       "videoSrc": "videos/o2d_suite_demo.mp4",
       "hasPreloadedVideo": true,
-      "systems": "Retail Customer POS Portal (EDI / MCP) / Target / Apex Hypermarket OTIF Portals · Enterprise ERP (MCP / On-Prem DB) SD & FI-AR · Real-Time Carrier Visibility (MCP / API) GPS · Google Maps Geofencing · Document AI · BigQuery · Operational SQL & Vector DB (On-Prem / Cloud)",
+      "systems": "Retail Customer POS Portal (EDI / MCP) / Target / DMart (Avenue Supermarts) OTIF Portals · Enterprise ERP (MCP / On-Prem DB) SD & FI-AR · Real-Time Carrier Visibility (MCP / API) GPS · Google Maps Geofencing · Document AI · BigQuery · Operational SQL & Vector DB (On-Prem / Cloud)",
       "solverStack": "BigQuery ML 72-Hr MABD Breach Predictor + Mathematical Optimization Solver (MILP / CP-SAT) Penalty-vs-Expedite NPV Solver + Document AI Dispute Assembler",
       "apiWriteback": "ERP Order Management (SD / MCP) Alternate-DC Order Re-Allocation & Automated Retailer Portal Dispute Submission via MCP / REST / On-Prem Gateway",
       "subAgents": [
@@ -47389,14 +47389,14 @@
           "mutationStatus": "CORRIDOR_ROUTE_DISPATCHED",
           "vegaChartTitle": "FleetFlow Corridor Route Optimization & Deadhead Reduction",
           "vegaChartMark": "layered-combo",
-          "markdownResponse": "### ✦ FleetFlow — Google Maps Corridor Route & Fleet Dispatch Studio — Executive Operations Brief\n\n> **Executive Summary**: Executed deterministic multi-signal optimization and ERP/WMS/TMS write-backs across **05 · Deliver**.\n\n#### 📊 Operational Telemetry & Solver Output (Copy-Ready Table)\n\n| Dimension | Metric Value | Secondary KPI | Execution Mode |\n|:---|---:|---:|:---|\n| `I-35 Dallas➔San Antonio` | **462.5** | 91.4 | `OPTIMIZED_CVRPTW` |\n| `I-35 Legacy Postcode` | **574.0** | 67.0 | `LEGACY_STATIC` |\n| `I-45 Dallas➔Houston` | **388.0** | 89.2 | `OPTIMIZED_CVRPTW` |\n| `I-10 Houston➔El Paso` | **1190.0** | 93.8 | `OPTIMIZED_CVRPTW` |\n\n#### ⚡ Autonomous Write-Backs & Actions Executed\n\n- **Action Executed**: `FF-DISP-5CE0787F` | Status: `CORRIDOR_ROUTE_DISPATCHED` | Rationale: OR-Tools CVRPTW + Google Maps Routes Preferred solved 3-stop I-35 corridor route (18,450 kg / 72.3 m3) cutting stem distance by 19.4% with 99.4% SLA confidence.\n- **Action Executed**: `FF-BKH-CD884A35` | Status: `BACKHAUL_RETURN_ASSIGNED` | Rationale: Matched returning 24t tractor TRK-24T-TX08 with 22-pallet vendor backhaul in San Antonio, eliminating 274 empty return miles and saving $1,480.\n\n### 🔗 Connected Enterprise Systems\n- **Google Maps Platform Routes Preferred & Live Traffic Matrix API** (`gRPC / REST v2`)\n- **Google OR-Tools Capacitated Vehicle Routing (CVRPTW) Engine** (`C++ / Python Solver SDK`)\n- **Samsara ELD & Google Maps Fleet Engine Vehicle Telemetry** (`Webhook / MQTT`)\n- **Blue Yonder TMS Backhaul & Deadhead Elimination Broker** (`OData / EDI 204`)",
+          "markdownResponse": "### ✦ FleetFlow — Google Maps Corridor Route & Fleet Dispatch Studio — Executive Operations Brief\n\n> **Executive Summary**: Executed deterministic multi-signal optimization and ERP/WMS/TMS write-backs across **05 · Deliver**.\n\n#### 📊 Operational Telemetry & Solver Output (Copy-Ready Table)\n\n| Dimension | Metric Value | Secondary KPI | Execution Mode |\n|:---|---:|---:|:---|\n| `NH-48 Mumbai➔Pune➔Bengaluru` | **462.5** | 91.4 | `OPTIMIZED_CVRPTW` |\n| `NH-48 Legacy Waybill Route` | **574.0** | 67.0 | `LEGACY_STATIC` |\n| `Mumbai-Pune Expressway & Chakan Corridor` | **388.0** | 89.2 | `OPTIMIZED_CVRPTW` |\n| `Western DFC Dadri➔JNPT Freight Rail` | **1190.0** | 93.8 | `OPTIMIZED_CVRPTW` |\n\n#### ⚡ Autonomous Write-Backs & Actions Executed\n\n- **Action Executed**: `FF-DISP-5CE0787F` | Status: `CORRIDOR_ROUTE_DISPATCHED` | Rationale: OR-Tools CVRPTW + Google Maps Routes Preferred solved 3-stop NH-48 Western Corridor corridor route (18,450 kg / 72.3 m3) cutting stem distance by 19.4% with 99.4% SLA confidence.\n- **Action Executed**: `FF-BKH-CD884A35` | Status: `BACKHAUL_RETURN_ASSIGNED` | Rationale: Matched returning 24t tractor TRK-24T-TX08 with 22-pallet vendor backhaul in San Antonio, eliminating 274 empty return miles and saving $1,480.\n\n### 🔗 Connected Enterprise Systems\n- **Google Maps Platform Routes Preferred & Live Traffic Matrix API** (`gRPC / REST v2`)\n- **Google OR-Tools Capacitated Vehicle Routing (CVRPTW) Engine** (`C++ / Python Solver SDK`)\n- **Samsara ELD & Google Maps Fleet Engine Vehicle Telemetry** (`Webhook / MQTT`)\n- **Blue Yonder TMS Backhaul & Deadhead Elimination Broker** (`OData / EDI 204`)",
           "mutationReceipt": {
             "dispatch_execution_id": "FF-DISP-5CE0787F",
             "route_id": "RTE-I35-20261022-01",
             "vehicle_id": "TRK-24T-TX08",
             "corridor_id": "CORR-I35-TEX",
             "stop_count": 3,
-            "rationale": "OR-Tools CVRPTW + Google Maps Routes Preferred solved 3-stop I-35 corridor route (18,450 kg / 72.3 m3) cutting stem distance by 19.4% with 99.4% SLA confidence.",
+            "rationale": "OR-Tools CVRPTW + Google Maps Routes Preferred solved 3-stop NH-48 Western Corridor corridor route (18,450 kg / 72.3 m3) cutting stem distance by 19.4% with 99.4% SLA confidence.",
             "status": "CORRIDOR_ROUTE_DISPATCHED",
             "idempotency_key": "FF-DISP-20261022-01"
           }
@@ -49452,42 +49452,42 @@
                 "disposition_id": "DISP-501",
                 "rma_id": "RMA-20261022-501",
                 "routing_path": "DIRECT_REGIONAL_FDC_RESTOCK",
-                "target_facility_id": "FDC-AUSTIN-02",
+                "target_facility_id": "FDC-HYDERABAD-02",
                 "central_return_touch_bypassed": true
               },
               {
                 "disposition_id": "DISP-509",
                 "rma_id": "RMA-20261022-509",
                 "routing_path": "DIRECT_REGIONAL_FDC_RESTOCK",
-                "target_facility_id": "FDC-AUSTIN-10",
+                "target_facility_id": "FDC-HYDERABAD-10",
                 "central_return_touch_bypassed": true
               },
               {
                 "disposition_id": "DISP-516",
                 "rma_id": "RMA-20261022-516",
                 "routing_path": "DIRECT_REGIONAL_FDC_RESTOCK",
-                "target_facility_id": "FDC-AUSTIN-17",
+                "target_facility_id": "FDC-HYDERABAD-17",
                 "central_return_touch_bypassed": true
               },
               {
                 "disposition_id": "DISP-523",
                 "rma_id": "RMA-20261022-523",
                 "routing_path": "DIRECT_REGIONAL_FDC_RESTOCK",
-                "target_facility_id": "FDC-AUSTIN-24",
+                "target_facility_id": "FDC-HYDERABAD-24",
                 "central_return_touch_bypassed": false
               },
               {
                 "disposition_id": "DISP-530",
                 "rma_id": "RMA-20261022-530",
                 "routing_path": "DIRECT_REGIONAL_FDC_RESTOCK",
-                "target_facility_id": "FDC-AUSTIN-31",
+                "target_facility_id": "FDC-HYDERABAD-31",
                 "central_return_touch_bypassed": true
               },
               {
                 "disposition_id": "DISP-537",
                 "rma_id": "RMA-20261022-537",
                 "routing_path": "DIRECT_REGIONAL_FDC_RESTOCK",
-                "target_facility_id": "FDC-AUSTIN-38",
+                "target_facility_id": "FDC-HYDERABAD-38",
                 "central_return_touch_bypassed": true
               }
             ],
@@ -49691,7 +49691,7 @@
             "dispatch_execution_id": "RMA-LOOP-20AF3E56",
             "rma_id": "RMA-20261022-501",
             "optical_grade": "GRADE_A_FACTORY_SEAL_INTACT",
-            "target_facility_id": "FDC-AUSTIN-02",
+            "target_facility_id": "FDC-HYDERABAD-02",
             "backhaul_vehicle_id": "TRK-12T-TX14",
             "rationale": "Gemini 3.8 Flash verified factory tamper seal intact (Grade A); routed 12 units directly to Austin FDC-02 for immediate resale via returning truck TRK-12T-TX14, recovering 94% value ($9,024) and saving $420 LTL freight.",
             "status": "RMA_DISPOSITION_AND_BACKHAUL_LOCKED",
@@ -50887,7 +50887,7 @@
       "cadType": "circular_loop",
       "videoSrc": "videos/o2d_suite_demo.mp4",
       "hasPreloadedVideo": true,
-      "systems": "Retail Customer POS Portal (EDI / MCP) / Target / Apex Hypermarket OTIF Portals · Enterprise ERP (MCP / On-Prem DB) SD & FI-AR · Real-Time Carrier Visibility (MCP / API) GPS · Google Maps Geofencing · Document AI · BigQuery · Operational SQL & Vector DB (On-Prem / Cloud)",
+      "systems": "Retail Customer POS Portal (EDI / MCP) / Target / DMart (Avenue Supermarts) OTIF Portals · Enterprise ERP (MCP / On-Prem DB) SD & FI-AR · Real-Time Carrier Visibility (MCP / API) GPS · Google Maps Geofencing · Document AI · BigQuery · Operational SQL & Vector DB (On-Prem / Cloud)",
       "solverStack": "BigQuery ML 72-Hr MABD Breach Predictor + Mathematical Optimization Solver (MILP / CP-SAT) Penalty-vs-Expedite NPV Solver + Document AI Dispute Assembler",
       "apiWriteback": "ERP Order Management (SD / MCP) Alternate-DC Order Re-Allocation & Automated Retailer Portal Dispute Submission via MCP / REST / On-Prem Gateway",
       "subAgents": [
@@ -53297,7 +53297,7 @@
               },
               {
                 "partner_id": "DIV-IL-BIOGAS05",
-                "partner_name": "Midwest Circular Depack & Biogas RNG",
+                "partner_name": "Northern Logistics Corridor (Delhi NCR & Haryana) Circular Depack & Biogas RNG",
                 "epa_tier": "TIER_4_ANAEROBIC_DIGESTION",
                 "has_depackager": true,
                 "distance_from_hub_km": 29,
@@ -55008,7 +55008,7 @@
           "mutationStatus": "EDI404_RAIL_TENDER_ACCEPTED",
           "vegaChartTitle": "IntermodalSync OTR-to-Rail Cost & Carbon Reduction",
           "vegaChartMark": "layered-combo",
-          "markdownResponse": "### ✦ IntermodalSync — Factory-to-DC Intermodal Rail, Barge & Linehaul Orchestrator — Executive Operations Brief\n\n> **Executive Summary**: Executed deterministic multi-signal optimization and ERP/WMS/TMS write-backs across **05 · Deliver**.\n\n#### 📊 Operational Telemetry & Solver Output (Copy-Ready Table)\n\n| Dimension | Metric Value | Secondary KPI | Execution Mode |\n|:---|---:|---:|:---|\n| `LAX➔CHI (COFC Rail)` | **2890** | 890 | `OPTIMIZED_CVRPTW` |\n| `LAX➔CHI (OTR Truck)` | **4650** | 2815 | `LEGACY_STATIC` |\n| `SAV➔MEM (CSX Rail)` | **1420** | 410 | `OPTIMIZED_CVRPTW` |\n| `SAV➔MEM (OTR Truck)` | **2350** | 1290 | `LEGACY_STATIC` |\n\n#### ⚡ Autonomous Write-Backs & Actions Executed\n\n- **Action Executed**: `RAIL-404-5ECFA9DC` | Status: `EDI404_RAIL_TENDER_ACCEPTED` | Rationale: Chicago Joliet RDC has 14.5 days of supply buffer; converting 2,015-mile linehaul from OTR truck to BNSF double-stack COFC rail saves $1,760 (-37.8%) and cuts Scope-3 CO2e by 68.4%.\n- **Action Executed**: `RAIL-DRAY-C3EC7046` | Status: `RAMP_CRANE_DRAYAGE_SYNCHRONIZED` | Rationale: Synchronized J.B. Hunt drayage tractor JBHT-DRAY-CHI42 and chassis TRAC-53-8821 with BNSF Joliet crane grounding at 15:30 UTC, eliminating rail ramp storage fees.\n\n### 🔗 Connected Enterprise Systems\n- **Railinc Car Location Message (CLM) & Class-I Rail EDI 404/417 Gateway** (`EDI 404 / 417 / REST`)\n- **Google OR-Tools OTR-to-Rail Intermodal Mode Conversion Solver** (`Python MILP SDK`)\n- **BNSF / Union Pacific / CSX Intermodal Ramp Cut-Off & Crane Scheduler** (`REST API / Webhook`)\n- **GLEC v3.0 Intermodal Rail vs OTR Truck Carbon Intensity Ledger** (`BigQuery SQL / JSON`)",
+          "markdownResponse": "### ✦ IntermodalSync — Factory-to-DC Intermodal Rail, Barge & Linehaul Orchestrator — Executive Operations Brief\n\n> **Executive Summary**: Executed deterministic multi-signal optimization and ERP/WMS/TMS write-backs across **05 · Deliver**.\n\n#### 📊 Operational Telemetry & Solver Output (Copy-Ready Table)\n\n| Dimension | Metric Value | Secondary KPI | Execution Mode |\n|:---|---:|---:|:---|\n| `LAX➔CHI (COFC Rail)` | **2890** | 890 | `OPTIMIZED_CVRPTW` |\n| `LAX➔CHI (OTR Truck)` | **4650** | 2815 | `LEGACY_STATIC` |\n| `SAV➔MEM (CSX Rail)` | **1420** | 410 | `OPTIMIZED_CVRPTW` |\n| `SAV➔MEM (OTR Truck)` | **2350** | 1290 | `LEGACY_STATIC` |\n\n#### ⚡ Autonomous Write-Backs & Actions Executed\n\n- **Action Executed**: `RAIL-404-5ECFA9DC` | Status: `EDI404_RAIL_TENDER_ACCEPTED` | Rationale: Chicago Joliet RDC has 14.5 days of supply buffer; converting 2,015-mile linehaul from OTR truck to BNSF double-stack COFC rail saves $1,760 (-37.8%) and cuts Scope-3 CO2e by 68.4%.\n- **Action Executed**: `RAIL-DRAY-C3EC7046` | Status: `RAMP_CRANE_DRAYAGE_SYNCHRONIZED` | Rationale: Synchronized V-Trans Logistics drayage tractor JBHT-DRAY-CHI42 and chassis TRAC-53-8821 with BNSF Joliet crane grounding at 15:30 UTC, eliminating rail ramp storage fees.\n\n### 🔗 Connected Enterprise Systems\n- **Railinc Car Location Message (CLM) & Class-I Rail EDI 404/417 Gateway** (`EDI 404 / 417 / REST`)\n- **Google OR-Tools OTR-to-Rail Intermodal Mode Conversion Solver** (`Python MILP SDK`)\n- **BNSF / Union Pacific / CSX Intermodal Ramp Cut-Off & Crane Scheduler** (`REST API / Webhook`)\n- **GLEC v3.0 Intermodal Rail vs OTR Truck Carbon Intensity Ledger** (`BigQuery SQL / JSON`)",
           "mutationReceipt": {
             "dispatch_execution_id": "RAIL-404-5ECFA9DC",
             "shipment_id": "SHP-IM-LA-CHI-701",

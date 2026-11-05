@@ -33,7 +33,7 @@ AGENT_UPGRADE_CONFIGS = {
         "html_tool": "generate_interactive_html_dashboard",
         "memo_tool": "draft_operational_brief",
         "prompts": {
-            "q1": "Run a multi-signal demand sensing audit across our US-Central and Midwest retail hubs by querying daily checkout scans from SAP S/4HANA and weather anomaly feeds from Google DeepMind WeatherNext. Detect store stockout censorship at Apex Hypermarket, evaluate commercial sales overrides for chronic optimism bias, and output a copy-ready CSV schedule with revised forecast allocations.",
+            "q1": "Run a multi-signal demand sensing audit across our Western Logistics Corridor (Mumbai & Gujarat) and Northern NCR retail hubs by querying daily checkout scans from SAP S/4HANA and weather anomaly feeds from Google DeepMind WeatherNext. Detect store stockout censorship at DMart (Avenue Supermarts), evaluate commercial sales overrides for chronic optimism bias, and output a copy-ready CSV schedule with revised forecast allocations.",
             "q2": "Generate an interactive visual fan chart comparing our latest sensed TimesFM P10/P50/P90 demand forecast against the static ERP baseline plan across top beverage and snack SKUs, highlighting weather-driven demand spikes and stockout buffers.",
             "q3": "Draft an executive briefing note and interactive HTML dashboard for the Chief Supply Chain Officer summarizing the revenue protected, forecast error reduction, and recommended SAP IBP consensus adjustments."
         }
@@ -54,7 +54,7 @@ AGENT_UPGRADE_CONFIGS = {
         "html_tool": "generate_interactive_html_dashboard",
         "memo_tool": "draft_operational_brief",
         "prompts": {
-            "q1": "Evaluate our upcoming Q4 retail trade promotion campaigns in Salesforce TPM across Apex Hypermarket and Omni Wholesale Club. Model causal price elasticity, forward-buying inventory drag, and cross-SKU cannibalization, flag any margin-dilutive discounts, and provide an atomic CSV ledger of projected financial returns.",
+            "q1": "Evaluate our upcoming Q4 retail trade promotion campaigns in Salesforce TPM across DMart (Avenue Supermarts) and Reliance Retail & Wholesale. Model causal price elasticity, forward-buying inventory drag, and cross-SKU cannibalization, flag any margin-dilutive discounts, and provide an atomic CSV ledger of projected financial returns.",
             "q2": "Render an interactive promotional margin waterfall and cannibalization matrix chart comparing promotional volume lift against net dollar margin impact across all planned retail campaigns.",
             "q3": "Draft a formal trade spend review memorandum and interactive HTML promotion approval brief for Sales and Finance detailing which promotional campaigns to fund, which to restructure with bundled cross-sells, and why."
         }
@@ -560,12 +560,11 @@ def {new_name}(*args, **kwargs):
     \"\"\"[Connected Enterprise System: {sys_name}]
     Direct live integration querying or executing within {sys_name}.
     \"\"\"
-    if '{old_name}' in globals():
-        return globals()['{old_name}'](*args, **kwargs)
+    target = globals().get('{old_name}')
+    if target is not None and callable(target) and target is not globals().get('{new_name}'):
+        return target(*args, **kwargs)
     return {{"status": "SUCCESS", "source_system": "{sys_id}", "system_name": "{sys_name}"}}
 """)
-        # Backward compatibility alias
-        code_lines.append(f"{old_name} = {new_name}")
 
     csv_tool = cfg["csv_tool"]
     html_tool = cfg["html_tool"]

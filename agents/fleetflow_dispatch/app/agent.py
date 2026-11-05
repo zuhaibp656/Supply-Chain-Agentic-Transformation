@@ -162,7 +162,7 @@ class FleetflowDispatch:
             vehicle_id='TRK-24T-TX08',
             corridor_id='CORR-I35-TEX',
             stop_count=3,
-            rationale='OR-Tools CVRPTW + Google Maps Routes Preferred solved 3-stop I-35 corridor route (18,450 kg / 72.3 m3) cutting stem distance by 19.4% with 99.4% SLA confidence.',
+            rationale='OR-Tools CVRPTW + Google Maps Routes Preferred solved 3-stop NH-48 Western Corridor corridor route (18,450 kg / 72.3 m3) cutting stem distance by 19.4% with 99.4% SLA confidence.',
             idempotency_key='FF-DISP-20261022-01'
         )
         actions_taken.append(act1_res)
@@ -209,7 +209,7 @@ class FleetflowDispatch:
             "| Dimension | Metric Value | Secondary KPI | Execution Mode |",
             "|:---|---:|---:|:---|",
         ]
-        for row in [{"corridor": "I-35 Dallas\u2794San Antonio", "distance_km": 462.5, "cube_fill_pct": 91.4, "status": "OPTIMIZED_CVRPTW"}, {"corridor": "I-35 Legacy Postcode", "distance_km": 574.0, "cube_fill_pct": 67.0, "status": "LEGACY_STATIC"}, {"corridor": "I-45 Dallas\u2794Houston", "distance_km": 388.0, "cube_fill_pct": 89.2, "status": "OPTIMIZED_CVRPTW"}, {"corridor": "I-10 Houston\u2794El Paso", "distance_km": 1190.0, "cube_fill_pct": 93.8, "status": "OPTIMIZED_CVRPTW"}]:
+        for row in [{"corridor": "NH-48 Western Corridor Dallas\u2794San Antonio", "distance_km": 462.5, "cube_fill_pct": 91.4, "status": "OPTIMIZED_CVRPTW"}, {"corridor": "NH-48 Legacy Waybill Route", "distance_km": 574.0, "cube_fill_pct": 67.0, "status": "LEGACY_STATIC"}, {"corridor": "Mumbai-Pune Expressway Dallas\u2794Houston", "distance_km": 388.0, "cube_fill_pct": 89.2, "status": "OPTIMIZED_CVRPTW"}, {"corridor": "Western Dedicated Freight Corridor (WDFC) Houston\u2794El Paso", "distance_km": 1190.0, "cube_fill_pct": 93.8, "status": "OPTIMIZED_CVRPTW"}]:
             lines.append(f"| `{row['corridor']}` | **{row['distance_km']}** | {row['cube_fill_pct']} | `{row['status']}` |")
 
         lines.extend([

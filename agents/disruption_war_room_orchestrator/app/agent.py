@@ -192,7 +192,7 @@ class DisruptionWarRoomAgent:
         if findings:
             incident = self.execute_tool(
                 "action_create_war_room_incident",
-                title="Super Typhoon Gaemi & Antwerp Port Disruption Multi-Modal Response",
+                title="Super Typhoon Gaemi & Mundra Port Disruption Multi-Modal Response",
                 severity="CRITICAL",
                 affected_lanes=["TRANS-PACIFIC-01", "INTRA-ASIA-NORTH", "EUROPE-FEEDER"],
                 action_plan="Instantiate cross-functional War Room. Reroute delayed vessel containers and trigger air expedite for line-down MCUs.",
@@ -220,7 +220,7 @@ class DisruptionWarRoomAgent:
 
         # Formulate atomic copy-ready markdown table & response
         markdown_response = (
-            "### ⚡ Crisis Briefing: Super Typhoon Gaemi & Antwerp Port Multi-Modal Response\n\n"
+            "### ⚡ Crisis Briefing: Super Typhoon Gaemi & Mundra Port Multi-Modal Response\n\n"
             "Correlated **3 multi-tier disruption vectors** across meteorological radars, satellite AIS telemetry, "
             "and Tier-1/2 fab statuses. **$15.4M** in pipeline inventory was at immediate risk with only **4.5 days** of buffer stock remaining at assembly plants. "
             "Autonomous War Room created and emergency freight shift dispatched.\n\n"

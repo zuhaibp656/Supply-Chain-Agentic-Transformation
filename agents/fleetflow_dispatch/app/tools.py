@@ -506,7 +506,6 @@ def query_oracle_otm_pending_dispatch_shipments(*args, **kwargs):
         return globals()['query_corridor_delivery_orders'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "otm_shipments", "system_name": "Oracle OTM Pending Outbound Freight Shipments"}
 
-query_corridor_delivery_orders = query_oracle_otm_pending_dispatch_shipments
 
 def fetch_google_maps_routes_preferred_matrix_and_live_traffic(*args, **kwargs):
     """[Connected Enterprise System: Google Maps Platform Routes Preferred API & Live Traffic]
@@ -516,7 +515,6 @@ def fetch_google_maps_routes_preferred_matrix_and_live_traffic(*args, **kwargs):
         return globals()['query_fleet_vehicle_telematics_hos'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "google_maps_routes", "system_name": "Google Maps Platform Routes Preferred API & Live Traffic"}
 
-query_fleet_vehicle_telematics_hos = fetch_google_maps_routes_preferred_matrix_and_live_traffic
 
 def query_samsara_eld_driver_hours_of_service_hos_clocks(*args, **kwargs):
     """[Connected Enterprise System: Samsara ELD Driver Hours-of-Service (HOS) & GPS Clocks]
@@ -526,7 +524,6 @@ def query_samsara_eld_driver_hours_of_service_hos_clocks(*args, **kwargs):
         return globals()['query_google_maps_corridor_routes'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "samsara_eld", "system_name": "Samsara ELD Driver Hours-of-Service (HOS) & GPS Clocks"}
 
-query_google_maps_corridor_routes = query_samsara_eld_driver_hours_of_service_hos_clocks
 
 def run_ortools_capacitated_vehicle_routing_vrptw_solver(*args, **kwargs):
     """[Connected Enterprise System: Google OR-Tools Vehicle Routing Problem with Time Windows (VRPTW)]
@@ -536,7 +533,6 @@ def run_ortools_capacitated_vehicle_routing_vrptw_solver(*args, **kwargs):
         return globals()['query_backhaul_consolidation_opportunities'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "ortools_vrp", "system_name": "Google OR-Tools Vehicle Routing Problem with Time Windows (VRPTW)"}
 
-query_backhaul_consolidation_opportunities = run_ortools_capacitated_vehicle_routing_vrptw_solver
 
 def commit_route_manifest_to_samsara_driver_tablets(*args, **kwargs):
     """[Connected Enterprise System: Samsara Driver Tablet Dispatch Manifest Push]
@@ -546,7 +542,6 @@ def commit_route_manifest_to_samsara_driver_tablets(*args, **kwargs):
         return globals()['action_dispatch_dynamic_reroute'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "driver_tablet", "system_name": "Samsara Driver Tablet Dispatch Manifest Push"}
 
-action_dispatch_dynamic_reroute = commit_route_manifest_to_samsara_driver_tablets
 
 def export_dynamic_dispatch_manifest_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

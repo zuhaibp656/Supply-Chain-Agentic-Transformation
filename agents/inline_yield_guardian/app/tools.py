@@ -518,7 +518,6 @@ def query_highres_optical_inspection_camera_frames(*args, **kwargs):
         return globals()['query_camera_vision_inspection_frames'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "optical_camera", "system_name": "High-Resolution Optical Line Camera Inspection Frames"}
 
-query_camera_vision_inspection_frames = query_highres_optical_inspection_camera_frames
 
 def fetch_gemini_vision_defect_classification_stream(*args, **kwargs):
     """[Connected Enterprise System: Gemini 3.8 Flash Multimodal Defect Classifier]
@@ -528,7 +527,6 @@ def fetch_gemini_vision_defect_classification_stream(*args, **kwargs):
         return globals()['query_vision_defect_classification_results'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "gemini_vision", "system_name": "Gemini 3.8 Flash Multimodal Defect Classifier"}
 
-query_vision_defect_classification_results = fetch_gemini_vision_defect_classification_stream
 
 def query_siemens_mes_ebhr_batch_record_deviations(*args, **kwargs):
     """[Connected Enterprise System: Siemens Opcenter MES Electronic Batch Records (eBHR)]
@@ -538,7 +536,6 @@ def query_siemens_mes_ebhr_batch_record_deviations(*args, **kwargs):
         return globals()['query_ebhr_batch_record_deviations'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "siemens_ebhr", "system_name": "Siemens Opcenter MES Electronic Batch Records (eBHR)"}
 
-query_ebhr_batch_record_deviations = query_siemens_mes_ebhr_batch_record_deviations
 
 def run_inline_defect_clustering_and_root_cause_solver(*args, **kwargs):
     """[Connected Enterprise System: Defect Spatial Clustering & Heatmap Diagnostic]
@@ -548,7 +545,6 @@ def run_inline_defect_clustering_and_root_cause_solver(*args, **kwargs):
         return globals()['query_pneumatic_reject_gate_events'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "root_cause_solver", "system_name": "Defect Spatial Clustering & Heatmap Diagnostic"}
 
-query_pneumatic_reject_gate_events = run_inline_defect_clustering_and_root_cause_solver
 
 def commit_pneumatic_diverter_reject_gate_action(*args, **kwargs):
     """[Connected Enterprise System: High-Speed Pneumatic Reject Gate Actuation]
@@ -558,7 +554,6 @@ def commit_pneumatic_diverter_reject_gate_action(*args, **kwargs):
         return globals()['action_trip_pneumatic_reject_diverter'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "diverter_gate", "system_name": "High-Speed Pneumatic Reject Gate Actuation"}
 
-action_trip_pneumatic_reject_diverter = commit_pneumatic_diverter_reject_gate_action
 
 def export_defect_inspection_map_csv_and_ncr(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

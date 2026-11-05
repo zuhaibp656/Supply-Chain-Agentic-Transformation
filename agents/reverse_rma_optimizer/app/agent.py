@@ -160,7 +160,7 @@ class ReverseRmaOptimizer:
             "action_assign_rma_disposition_and_backhaul",
             rma_id='RMA-20261022-501',
             optical_grade='GRADE_A_FACTORY_SEAL_INTACT',
-            target_facility_id='FDC-AUSTIN-02',
+            target_facility_id='FDC-HYDERABAD-02',
             backhaul_vehicle_id='TRK-12T-TX14',
             rationale='Gemini 3.8 Flash verified factory tamper seal intact (Grade A); routed 12 units directly to Austin FDC-02 for immediate resale via returning truck TRK-12T-TX14, recovering 94% value ($9,024) and saving $420 LTL freight.',
             idempotency_key='RMA-LOOP-20261022-01'

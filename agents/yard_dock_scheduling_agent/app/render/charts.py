@@ -10,7 +10,7 @@ def create_yard_dock_chart_spec(
     if not data_points:
         data_points = [
             {"trailer": "TRL-SWIFT-7741", "carrier": "Swift", "dwell_minutes": 85.0, "threshold_minutes": 120.0, "status": "EXPEDITED_AT_RISK"},
-            {"trailer": "TRL-JB-HUNT-1204", "carrier": "J.B. Hunt", "dwell_minutes": 35.0, "threshold_minutes": 120.0, "status": "IN_SPEC_HEALTHY"},
+            {"trailer": "TRL-JB-HUNT-1204", "carrier": "V-Trans Logistics", "dwell_minutes": 35.0, "threshold_minutes": 120.0, "status": "IN_SPEC_HEALTHY"},
             {"trailer": "TRL-SCHNEIDER-882", "carrier": "Schneider", "dwell_minutes": 48.0, "threshold_minutes": 120.0, "status": "IN_SPEC_HEALTHY"},
             {"trailer": "TRL-KNIGHT-3319", "carrier": "Knight-Swift", "dwell_minutes": 62.0, "threshold_minutes": 120.0, "status": "IN_SPEC_HEALTHY"},
         ]

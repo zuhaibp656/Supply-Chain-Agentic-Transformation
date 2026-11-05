@@ -9,7 +9,7 @@ def create_risk_donut_spec(width: int = 560, height: int = 220) -> Dict[str, Any
     """Generates an executive donut chart of at-risk pipeline value by hazard vector."""
     data = [
         {"hazard": "Super Typhoon Gaemi (Taiwan Strait)", "value_m": 8.4, "share": "54.5%"},
-        {"hazard": "Antwerp Port Labor Strike (Europe Feeder)", "value_m": 4.2, "share": "27.3%"},
+        {"hazard": "Mundra Port Labor Strike (Europe Feeder)", "value_m": 4.2, "share": "27.3%"},
         {"hazard": "Tier-2 Semiconductor Fab Outage", "value_m": 2.8, "share": "18.2%"},
     ]
     return {

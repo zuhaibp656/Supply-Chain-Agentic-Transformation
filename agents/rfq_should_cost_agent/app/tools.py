@@ -514,7 +514,6 @@ def query_sap_ariba_supplier_rfq_bids_and_bom(*args, **kwargs):
         return globals()['query_material_should_cost_bom'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_ariba_rfq", "system_name": "SAP Ariba RFQ Bids & Bill of Materials"}
 
-query_material_should_cost_bom = query_sap_ariba_supplier_rfq_bids_and_bom
 
 def fetch_london_metal_exchange_and_icis_commodity_indices(*args, **kwargs):
     """[Connected Enterprise System: London Metal Exchange (LME) & ICIS Resin Spot Benchmarks]
@@ -524,7 +523,6 @@ def fetch_london_metal_exchange_and_icis_commodity_indices(*args, **kwargs):
         return globals()['query_commodity_index_rates'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "commodity_indices", "system_name": "London Metal Exchange (LME) & ICIS Resin Spot Benchmarks"}
 
-query_commodity_index_rates = fetch_london_metal_exchange_and_icis_commodity_indices
 
 def run_parametric_should_cost_bottom_up_solver(*args, **kwargs):
     """[Connected Enterprise System: Bottom-Up Parametric Should-Cost Teardown Solver]
@@ -534,7 +532,6 @@ def run_parametric_should_cost_bottom_up_solver(*args, **kwargs):
         return globals()['query_supplier_rfq_bids'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "should_cost_solver", "system_name": "Bottom-Up Parametric Should-Cost Teardown Solver"}
 
-query_supplier_rfq_bids = run_parametric_should_cost_bottom_up_solver
 
 def run_combinatorial_volume_award_optimizer(*args, **kwargs):
     """[Connected Enterprise System: Combinatorial Sourcing Volume Award Optimizer]
@@ -544,7 +541,6 @@ def run_combinatorial_volume_award_optimizer(*args, **kwargs):
         return globals()['query_combinatorial_award_scenarios'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "combinatorial_award", "system_name": "Combinatorial Sourcing Volume Award Optimizer"}
 
-query_combinatorial_award_scenarios = run_combinatorial_volume_award_optimizer
 
 def commit_negotiated_pricing_to_sap_contracts(*args, **kwargs):
     """[Connected Enterprise System: SAP Outline Agreements & Purchase Info Records (PIR)]
@@ -554,7 +550,6 @@ def commit_negotiated_pricing_to_sap_contracts(*args, **kwargs):
         return globals()['action_award_supplier_contract_allocation'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_contract_write", "system_name": "SAP Outline Agreements & Purchase Info Records (PIR)"}
 
-action_award_supplier_contract_allocation = commit_negotiated_pricing_to_sap_contracts
 
 def export_should_cost_teardown_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

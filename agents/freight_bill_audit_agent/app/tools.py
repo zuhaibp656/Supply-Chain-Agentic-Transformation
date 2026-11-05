@@ -385,7 +385,6 @@ def query_carrier_edi210_freight_invoices(*args, **kwargs):
         return globals()['query_carrier_freight_invoices'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "carrier_edi210", "system_name": "Carrier EDI 210 Electronic Motor Freight Invoices"}
 
-query_carrier_freight_invoices = query_carrier_edi210_freight_invoices
 
 def fetch_oracle_otm_contractual_rate_tariffs(*args, **kwargs):
     """[Connected Enterprise System: Oracle OTM Contractual Baseline Freight Tariffs & Fuel Pegs]
@@ -395,7 +394,6 @@ def fetch_oracle_otm_contractual_rate_tariffs(*args, **kwargs):
         return globals()['query_otm_contract_rate_tariffs'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "otm_tariffs", "system_name": "Oracle OTM Contractual Baseline Freight Tariffs & Fuel Pegs"}
 
-query_otm_contract_rate_tariffs = fetch_oracle_otm_contractual_rate_tariffs
 
 def query_samsara_gps_actual_miles_and_detention_telemetry(*args, **kwargs):
     """[Connected Enterprise System: Samsara GPS Geofenced Detention & Distance Telemetry]
@@ -405,7 +403,6 @@ def query_samsara_gps_actual_miles_and_detention_telemetry(*args, **kwargs):
         return globals()['query_gps_detention_and_mileage_logs'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "samsara_telemetry", "system_name": "Samsara GPS Geofenced Detention & Distance Telemetry"}
 
-query_gps_detention_and_mileage_logs = query_samsara_gps_actual_miles_and_detention_telemetry
 
 def run_freight_rate_overcharge_and_accessorial_dispute_solver(*args, **kwargs):
     """[Connected Enterprise System: Freight Overcharge & Accessorial Variance Diagnostic]
@@ -415,7 +412,6 @@ def run_freight_rate_overcharge_and_accessorial_dispute_solver(*args, **kwargs):
         return globals()['query_audit_discrepancy_ledger'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "audit_solver", "system_name": "Freight Overcharge & Accessorial Variance Diagnostic"}
 
-query_audit_discrepancy_ledger = run_freight_rate_overcharge_and_accessorial_dispute_solver
 
 def commit_carrier_overcharge_credit_memo_to_sap(*args, **kwargs):
     """[Connected Enterprise System: SAP Automated Carrier Overcharge Debit & Dispute Claim]
@@ -425,7 +421,6 @@ def commit_carrier_overcharge_credit_memo_to_sap(*args, **kwargs):
         return globals()['action_post_freight_debit_memo'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_credit_memo", "system_name": "SAP Automated Carrier Overcharge Debit & Dispute Claim"}
 
-action_post_freight_debit_memo = commit_carrier_overcharge_credit_memo_to_sap
 
 def export_freight_audit_discrepancy_csv_and_claim(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

@@ -155,23 +155,23 @@ class EchelonInventoryAllocator:
             findings.append({"domain": "dc_inventory_echelon_balances", "records": balances["rows"]})
 
         # 3. Query Service Level Projections
-        projections = self.execute_tool("query_echelon_service_level_projections", network_node_id="RDC-DALLAS-02")
+        projections = self.execute_tool("query_echelon_service_level_projections", network_node_id="RDC-DELHI-02")
         if projections.get("total", 0) > 0:
             findings.append({"domain": "echelon_service_level_projections", "records": projections["rows"]})
 
         # 4. Query Existing Lateral Transfers
-        transfers = self.execute_tool("query_lateral_dc_rebalance_transfers", destination_dc_id="RDC-DALLAS-02")
+        transfers = self.execute_tool("query_lateral_dc_rebalance_transfers", destination_dc_id="RDC-DELHI-02")
         if transfers.get("total", 0) > 0:
             findings.append({"domain": "lateral_dc_rebalance_transfers", "records": transfers["rows"]})
 
         # 5. Dispatch Lateral Rebalancing Transshipment Order
         rebal_res = self.execute_tool(
             "action_execute_lateral_dc_rebalance",
-            source_dc_id="CDC-CHICAGO-01",
-            destination_dc_id="RDC-DALLAS-02",
+            source_dc_id="CDC-MUMBAI-01",
+            destination_dc_id="RDC-DELHI-02",
             sku_id="SKU-BEV-OATMILK-ORIGINAL-1L",
             transfer_quantity=6500,
-            rationale="RDC Dallas stock dropped to 3.8 days of supply (34.2% stockout probability). Dispatching 6,500 units from surplus stock at CDC Chicago avoids $18,500 in lost margin against $1,420 freight cost (13.0x ROI).",
+            rationale="RDC Delhi NCR (Gurugram) stock dropped to 3.8 days of supply (34.2% stockout probability). Dispatching 6,500 units from surplus stock at CDC Mumbai (Bhiwandi) avoids $18,500 in lost margin against $1,420 freight cost (13.0x ROI).",
             idempotency_key="REBAL-ORD-20261022-01"
         )
         actions_taken.append(rebal_res)
@@ -216,16 +216,16 @@ class EchelonInventoryAllocator:
         lines = [
             "### 📦 EchelonFlow Multi-Echelon Inventory Optimization (MEIO) Briefing",
             "",
-            "> **Executive Summary**: Executed Clark-Scarf multi-echelon stochastic inventory rebalancing across the fulfillment network for **Barista Organic Oat Milk 1L Tetra**. Identified an acute imbalance: **RDC Dallas (Tier 2)** was operating at critical risk with only **3.8 days of supply** and a **34.2% stockout probability** ($18,500 at-risk sales margin), while **CDC Chicago (Tier 1)** held a substantial surplus of **68,400 units (28.5 days of supply)**. Dispatched a **6,500-unit lateral transshipment** from Chicago to Dallas via dedicated dry van ($1,420 freight cost, delivering **13.0x net ROI** and securing a **98.6% customer SLA**). Simultaneously updated SAP IBP safety stock policy, reducing central pooling buffer from 45,000 to 32,000 units to unlock **$38,480 in working capital**.",
+            "> **Executive Summary**: Executed Clark-Scarf multi-echelon stochastic inventory rebalancing across the fulfillment network for **Barista Organic Oat Milk 1L Tetra**. Identified an acute imbalance: **RDC Delhi NCR (Gurugram) (Tier 2)** was operating at critical risk with only **3.8 days of supply** and a **34.2% stockout probability** ($18,500 at-risk sales margin), while **CDC Mumbai (Bhiwandi) (Tier 1)** held a substantial surplus of **68,400 units (28.5 days of supply)**. Dispatched a **6,500-unit lateral transshipment** from Mumbai (Bhiwandi) to Delhi NCR (Gurugram) via dedicated dry van ($1,420 freight cost, delivering **13.0x net ROI** and securing a **98.6% customer SLA**). Simultaneously updated SAP IBP safety stock policy, reducing central pooling buffer from 45,000 to 32,000 units to unlock **$38,480 in working capital**.",
             "",
             "#### 📊 Multi-Echelon Stock Positions & Rebalance Telemetry (Atomic Copy-Ready Table)",
             "",
             "| Echelon Node | Node Tier | On-Hand Stock | Days of Supply | Optimal Buffer | Delta Units | Rebalance Action | Stockout Risk |",
             "|:---|:---|---:|---:|---:|---:|:---|:---|",
-            "| `CDC-CHICAGO-01` | Central DC (Tier 1) | 68,400 units | 28.5 days | 32,000 units | **-13,000 units** | `DISPATCH_LATERAL_SOURCE` | 0.2% (Protected) |",
-            "| `RDC-DALLAS-02` | Regional DC (Tier 2) | 7,200 units | **3.8 days** | 14,200 units | **+6,500 units** | `LATERAL_TRANSFER_RECEIPT` | **0.8% (Averted from 34.2%)** |",
-            "| `RDC-ATLANTA-03` | Regional DC (Tier 2) | 24,500 units | 18.2 days | 11,000 units | 0 units | `MAINTAIN_CURRENT_POLICY` | 1.1% (In-Spec) |",
-            "| `FDC-AUSTIN-04` | Forward DC (Tier 3) | 4,100 units | 12.0 days | 4,500 units | 0 units | `MAINTAIN_CURRENT_POLICY` | 1.4% (In-Spec) |",
+            "| `CDC-MUMBAI-01` | Central DC (Tier 1) | 68,400 units | 28.5 days | 32,000 units | **-13,000 units** | `DISPATCH_LATERAL_SOURCE` | 0.2% (Protected) |",
+            "| `RDC-DELHI-02` | Regional DC (Tier 2) | 7,200 units | **3.8 days** | 14,200 units | **+6,500 units** | `LATERAL_TRANSFER_RECEIPT` | **0.8% (Averted from 34.2%)** |",
+            "| `RDC-BENGALURU-03` | Regional DC (Tier 2) | 24,500 units | 18.2 days | 11,000 units | 0 units | `MAINTAIN_CURRENT_POLICY` | 1.1% (In-Spec) |",
+            "| `FDC-HYDERABAD-04` | Forward DC (Tier 3) | 4,100 units | 12.0 days | 4,500 units | 0 units | `MAINTAIN_CURRENT_POLICY` | 1.4% (In-Spec) |",
             "",
             "#### ⚡ Automated Logistics & SAP IBP Policy Mutations Executed",
             ""

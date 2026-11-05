@@ -148,12 +148,12 @@ class WarehouseSlottingOptimizer:
             findings.append({"domain": "warehouse_slotting_velocity_tiers", "records": tiers["rows"]})
 
         # 2. Query AMR Picker Travel Telemetry
-        telemetry = self.execute_tool("query_amr_picker_travel_telemetry", dc_id="RDC-DALLAS-02")
+        telemetry = self.execute_tool("query_amr_picker_travel_telemetry", dc_id="RDC-DELHI-02")
         if telemetry.get("total", 0) > 0:
             findings.append({"domain": "amr_picker_travel_telemetry", "records": telemetry["rows"]})
 
         # 3. Query Wave Release Allocations
-        waves = self.execute_tool("query_wave_release_order_allocations", dc_id="RDC-DALLAS-02")
+        waves = self.execute_tool("query_wave_release_order_allocations", dc_id="RDC-DELHI-02")
         if waves.get("total", 0) > 0:
             findings.append({"domain": "wave_release_order_allocations", "records": waves["rows"]})
 
@@ -216,7 +216,7 @@ class WarehouseSlottingOptimizer:
         lines = [
             "### 🏗️ SlotMaster 3D Warehouse Velocity Slotting & Wave Optimization Briefing",
             "",
-            "> **Executive Summary**: Comprehensive 3D warehouse slotting telemetry at **RDC Dallas (South Regional DC)** diagnosed severe picker travel inefficiency and mezzanine congestion. Fast-mover **Barista Organic Oat Milk 1L** (840 lines/day) was improperly slotted on overhead mezzanine shelves in **Aisle 14** (142 meters from pack stations), forcing AMR bots and pickers to spend **68.2% of shift time walking** and generating aisle gridlock (congestion score 0.84). Dispatched a high-priority WMS physical relocation task moving Oat Milk to **Aisle 02 Golden Zone** (22 meters from pack), cutting travel distance by **84.5% (-120m per pick)** and eliminating **100.8 km of walking per day (412 annual labor hours saved)**. Concurrently throttled concurrent pickers in Zone Bulk Mezzanine from 16 down to 10 to clear traffic jams.",
+            "> **Executive Summary**: Comprehensive 3D warehouse slotting telemetry at **RDC Delhi NCR (Gurugram) (South Regional DC)** diagnosed severe picker travel inefficiency and mezzanine congestion. Fast-mover **Barista Organic Oat Milk 1L** (840 lines/day) was improperly slotted on overhead mezzanine shelves in **Aisle 14** (142 meters from pack stations), forcing AMR bots and pickers to spend **68.2% of shift time walking** and generating aisle gridlock (congestion score 0.84). Dispatched a high-priority WMS physical relocation task moving Oat Milk to **Aisle 02 Golden Zone** (22 meters from pack), cutting travel distance by **84.5% (-120m per pick)** and eliminating **100.8 km of walking per day (412 annual labor hours saved)**. Concurrently throttled concurrent pickers in Zone Bulk Mezzanine from 16 down to 10 to clear traffic jams.",
             "",
             "#### 📊 3D Velocity Slotting & Picker Travel Impact (Atomic Copy-Ready Table)",
             "",

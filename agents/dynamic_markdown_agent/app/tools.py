@@ -372,7 +372,6 @@ def query_sap_s4hana_short_dated_inventory_and_lot_batches(*args, **kwargs):
         return globals()['query_short_dated_inventory_batches'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_batches", "system_name": "SAP S/4HANA Batch Management & Shelf-Life Expiry Dates"}
 
-query_short_dated_inventory_batches = query_sap_s4hana_short_dated_inventory_and_lot_batches
 
 def fetch_bigquery_price_elasticity_and_sell_through_velocity(*args, **kwargs):
     """[Connected Enterprise System: BigQuery Markdown Elasticity & Sell-Through Velocity]
@@ -382,7 +381,6 @@ def fetch_bigquery_price_elasticity_and_sell_through_velocity(*args, **kwargs):
         return globals()['query_markdown_price_elasticity'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "bigquery_elasticity", "system_name": "BigQuery Markdown Elasticity & Sell-Through Velocity"}
 
-query_markdown_price_elasticity = fetch_bigquery_price_elasticity_and_sell_through_velocity
 
 def run_optimal_markdown_depth_and_liquidation_timing_solver(*args, **kwargs):
     """[Connected Enterprise System: Dynamic Markdown Depth & Liquidation Timing Optimizer]
@@ -392,7 +390,6 @@ def run_optimal_markdown_depth_and_liquidation_timing_solver(*args, **kwargs):
         return globals()['query_optimal_markdown_schedules'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "markdown_solver", "system_name": "Dynamic Markdown Depth & Liquidation Timing Optimizer"}
 
-query_optimal_markdown_schedules = run_optimal_markdown_depth_and_liquidation_timing_solver
 
 def query_food_bank_donation_and_tax_credit_rules(*args, **kwargs):
     """[Connected Enterprise System: Food Bank Donation & Charitable Tax Recovery Framework]
@@ -402,7 +399,6 @@ def query_food_bank_donation_and_tax_credit_rules(*args, **kwargs):
         return globals()['query_donation_liquidation_channels'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "tax_rules", "system_name": "Food Bank Donation & Charitable Tax Recovery Framework"}
 
-query_donation_liquidation_channels = query_food_bank_donation_and_tax_credit_rules
 
 def commit_pos_promotional_markdown_to_sap_retail(*args, **kwargs):
     """[Connected Enterprise System: SAP Retail Dynamic Promotional Price Updates]
@@ -412,7 +408,6 @@ def commit_pos_promotional_markdown_to_sap_retail(*args, **kwargs):
         return globals()['action_publish_markdown_price_change'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_pricing_write", "system_name": "SAP Retail Dynamic Promotional Price Updates"}
 
-action_publish_markdown_price_change = commit_pos_promotional_markdown_to_sap_retail
 
 def export_markdown_schedule_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

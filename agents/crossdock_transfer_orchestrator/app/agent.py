@@ -173,7 +173,7 @@ class CrossdockTransferOrchestrator:
                 inbound_door_id=target_mnf["inbound_door_id"],
                 outbound_bay_id="BAY-OUTBOUND-12",
                 pallet_ids=flow_pallets,
-                rationale="Inbound Swift trailer at Door 04 synchronized with outbound J.B. Hunt trailer at Bay 12 (Houston RDC). Direct cross-dock transfer of 4 pallets avoids rack putaway, holding dwell time to 18.5 min and saving 2 touches per pallet.",
+                rationale="Inbound Swift trailer at Door 04 synchronized with outbound V-Trans Logistics trailer at Bay 12 (Houston RDC). Direct cross-dock transfer of 4 pallets avoids rack putaway, holding dwell time to 18.5 min and saving 2 touches per pallet.",
                 idempotency_key="XDOCK-DISP-20261022-01"
             )
             actions_taken.append(dispatch_res)
@@ -215,13 +215,13 @@ class CrossdockTransferOrchestrator:
         lines = [
             "### 🔄 CrossDockFlow Real-Time Cross-Dock & Flow-Through Briefing",
             "",
-            "> **Executive Summary**: Successfully orchestrated real-time door-to-door cross-dock synchronization for **Swift Transportation inbound shipment `SHP-SWIFT-20261022-9921`** carrying 24 pallets of organic beverage SKUs at **Door Inbound 04**. Using live carrier arrival milestones and outbound trailer availability, routed **18 eligible flow-through pallets** directly across the dock floor into outbound retail linehauls without rack putaway staging. Dispatched **4 high-priority pallets directly into J.B. Hunt Bay 12 (Houston RDC)**, achieving an average dwell time of **18.5 minutes** (compared to 145 minutes for staged storage), eliminating **2 labor touches per pallet (66.7% labor touch reduction)**, and routing remaining evening lots safely to Buffer Lane B.",
+            "> **Executive Summary**: Successfully orchestrated real-time door-to-door cross-dock synchronization for **TCI Freight Express inbound shipment `SHP-SWIFT-20261022-9921`** carrying 24 pallets of organic beverage SKUs at **Door Inbound 04**. Using live carrier arrival milestones and outbound trailer availability, routed **18 eligible flow-through pallets** directly across the dock floor into outbound retail linehauls without rack putaway staging. Dispatched **4 high-priority pallets directly into V-Trans Logistics Bay 12 (Houston RDC)**, achieving an average dwell time of **18.5 minutes** (compared to 145 minutes for staged storage), eliminating **2 labor touches per pallet (66.7% labor touch reduction)**, and routing remaining evening lots safely to Buffer Lane B.",
             "",
             "#### 📊 Inbound-to-Outbound Dock Transfer & Dwell Telemetry (Atomic Copy-Ready Table)",
             "",
             "| Inbound Door | Outbound Bay | Destination Route | Pallets Handled | Dwell Time | Labor Touches | Flow-Through Mode | Status |",
             "|:---|:---|:---|---:|---:|---:|:---|:---|",
-            "| `DOOR-04` | `BAY-12` | Houston RDC (J.B. Hunt) | 10 pallets | **18.5 min** | **1 touch (was 3)** | `DIRECT_FLOWTHROUGH` | `COMPLETED` |",
+            "| `DOOR-04` | `BAY-12` | Houston RDC (V-Trans Logistics) | 10 pallets | **18.5 min** | **1 touch (was 3)** | `DIRECT_FLOWTHROUGH` | `COMPLETED` |",
             "| `DOOR-04` | `BAY-14` | Austin FDC (Schneider) | 8 pallets | **22.0 min** | **1 touch (was 3)** | `DIRECT_FLOWTHROUGH` | `IN_PROGRESS` |",
             "| `DOOR-04` | Buffer Lane B | San Antonio (Evening) | 6 pallets | 145.0 min | 3 touches | `BUFFER_STAGED` | `HELD_IN_BUFFER` |",
             "",

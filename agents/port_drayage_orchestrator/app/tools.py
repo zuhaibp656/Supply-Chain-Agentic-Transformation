@@ -504,7 +504,6 @@ def query_marine_terminal_tos_vessel_berth_and_discharge_ledger(*args, **kwargs)
         return globals()['query_ocean_vessel_ais_berth_telemetry'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "terminal_tos", "system_name": "Port Marine Terminal Operating System (TOS) Berth Schedule"}
 
-query_ocean_vessel_ais_berth_telemetry = query_marine_terminal_tos_vessel_berth_and_discharge_ledger
 
 def fetch_bigquery_container_demurrage_and_per_diem_clocks(*args, **kwargs):
     """[Connected Enterprise System: BigQuery Container Free-Time Clocks & Demurrage Ledger]
@@ -514,7 +513,6 @@ def fetch_bigquery_container_demurrage_and_per_diem_clocks(*args, **kwargs):
         return globals()['query_container_discharge_demurrage_ledger'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "bigquery_demurrage", "system_name": "BigQuery Container Free-Time Clocks & Demurrage Ledger"}
 
-query_container_discharge_demurrage_ledger = fetch_bigquery_container_demurrage_and_per_diem_clocks
 
 def query_port_pierpass_appointment_slots_and_clean_truck_curfews(*args, **kwargs):
     """[Connected Enterprise System: Port PierPass Gate Appointments & Clean Truck Curfews]
@@ -524,7 +522,6 @@ def query_port_pierpass_appointment_slots_and_clean_truck_curfews(*args, **kwarg
         return globals()['query_port_terminal_gate_appointments'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "port_curfews", "system_name": "Port PierPass Gate Appointments & Clean Truck Curfews"}
 
-query_port_terminal_gate_appointments = query_port_pierpass_appointment_slots_and_clean_truck_curfews
 
 def run_drayage_priority_dispatch_and_curfew_optimization_solver(*args, **kwargs):
     """[Connected Enterprise System: Priority Drayage Pull & Demurrage Avoidance Solver]
@@ -534,7 +531,6 @@ def run_drayage_priority_dispatch_and_curfew_optimization_solver(*args, **kwargs
         return globals()['query_drayage_chassis_transload_allocations'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "drayage_solver", "system_name": "Priority Drayage Pull & Demurrage Avoidance Solver"}
 
-query_drayage_chassis_transload_allocations = run_drayage_priority_dispatch_and_curfew_optimization_solver
 
 def commit_gate_appointment_and_chassis_dispatch_to_tms(*args, **kwargs):
     """[Connected Enterprise System: Oracle OTM Drayage Gate Appointment & Carrier Dispatch]
@@ -544,7 +540,6 @@ def commit_gate_appointment_and_chassis_dispatch_to_tms(*args, **kwargs):
         return globals()['action_book_terminal_gate_appointment'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "tms_dray_commit", "system_name": "Oracle OTM Drayage Gate Appointment & Carrier Dispatch"}
 
-action_book_terminal_gate_appointment = commit_gate_appointment_and_chassis_dispatch_to_tms
 
 def export_port_container_dispatch_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

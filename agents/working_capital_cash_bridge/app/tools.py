@@ -518,7 +518,6 @@ def query_sap_s4hana_material_valuation_and_dio_ledger(*args, **kwargs):
         return globals()['query_working_capital_metrics'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_s4hana", "system_name": "SAP S/4HANA Inventory Valuation & Material Master"}
 
-query_working_capital_metrics = query_sap_s4hana_material_valuation_and_dio_ledger
 
 def fetch_bigquery_sku_velocity_and_gross_margin_matrix(*args, **kwargs):
     """[Connected Enterprise System: BigQuery SKU Velocity & Gross Margin Pareto]
@@ -528,7 +527,6 @@ def fetch_bigquery_sku_velocity_and_gross_margin_matrix(*args, **kwargs):
         return globals()['query_inventory_valuation_ledger'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "bigquery_velocity", "system_name": "BigQuery SKU Velocity & Gross Margin Pareto"}
 
-query_inventory_valuation_ledger = fetch_bigquery_sku_velocity_and_gross_margin_matrix
 
 def run_working_capital_cash_bridge_and_pruning_solver(*args, **kwargs):
     """[Connected Enterprise System: Working Capital Cash Bridge & Tail Rationalization Solver]
@@ -538,7 +536,6 @@ def run_working_capital_cash_bridge_and_pruning_solver(*args, **kwargs):
         return globals()['query_trapped_cash_opportunities'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "cash_bridge_solver", "system_name": "Working Capital Cash Bridge & Tail Rationalization Solver"}
 
-query_trapped_cash_opportunities = run_working_capital_cash_bridge_and_pruning_solver
 
 def query_salesforce_crm_customer_sku_dependencies(*args, **kwargs):
     """[Connected Enterprise System: Salesforce CRM Customer Contractual Dependencies]
@@ -548,7 +545,6 @@ def query_salesforce_crm_customer_sku_dependencies(*args, **kwargs):
         return globals()['query_ap_supplier_discount_invoices'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "salesforce_deps", "system_name": "Salesforce CRM Customer Contractual Dependencies"}
 
-query_ap_supplier_discount_invoices = query_salesforce_crm_customer_sku_dependencies
 
 def commit_sku_decommission_and_safety_stock_reduction(*args, **kwargs):
     """[Connected Enterprise System: SAP Material Master Decommission & Safety Stock Reduction]
@@ -558,7 +554,6 @@ def commit_sku_decommission_and_safety_stock_reduction(*args, **kwargs):
         return globals()['action_execute_working_capital_unlock'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "decommission_commit", "system_name": "SAP Material Master Decommission & Safety Stock Reduction"}
 
-action_execute_working_capital_unlock = commit_sku_decommission_and_safety_stock_reduction
 
 def export_cash_conversion_waterfall_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

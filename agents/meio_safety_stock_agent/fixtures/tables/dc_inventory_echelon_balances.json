@@ -1,7 +1,7 @@
 [
   {
-    "dc_id": "CDC-CHICAGO-01",
-    "dc_name": "Midwest Central Distribution Center",
+    "dc_id": "CDC-MUMBAI-01",
+    "dc_name": "Bhiwandi Western Mega Distribution Center (Mumbai MMR)",
     "echelon_tier": "TIER_1_CENTRAL_DC",
     "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
     "on_hand_inventory_units": 68400,
@@ -12,8 +12,8 @@
     "inventory_status": "SURPLUS_AVAILABLE_FOR_REBALANCE"
   },
   {
-    "dc_id": "RDC-DALLAS-02",
-    "dc_name": "South Regional Distribution Center",
+    "dc_id": "RDC-DELHI-02",
+    "dc_name": "Gurugram Northern Regional Distribution Center (Delhi NCR)",
     "echelon_tier": "TIER_2_REGIONAL_DC",
     "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
     "on_hand_inventory_units": 7200,
@@ -24,8 +24,8 @@
     "inventory_status": "STOCKOUT_ALERT_IMMINENT"
   },
   {
-    "dc_id": "RDC-ATLANTA-03",
-    "dc_name": "Southeast Regional Distribution Center",
+    "dc_id": "RDC-BENGALURU-03",
+    "dc_name": "Nelamangala Southern Regional Distribution Center (Bengaluru)",
     "echelon_tier": "TIER_2_REGIONAL_DC",
     "sku_id": "SKU-BEV-OATMILK-ORIGINAL-1L",
     "on_hand_inventory_units": 24500,
@@ -36,8 +36,8 @@
     "inventory_status": "BALANCED_HEALTHY"
   },
   {
-    "dc_id": "CDC-CHICAGO-23",
-    "dc_name": "Midwest Central Distribution Center",
+    "dc_id": "CDC-MUMBAI-23",
+    "dc_name": "Bhiwandi Western Mega Distribution Center (Mumbai MMR)",
     "echelon_tier": "TIER_1_CENTRAL_DC",
     "sku_id": "SKU-BEV-OATMILK-1L",
     "on_hand_inventory_units": 81396,
@@ -48,8 +48,8 @@
     "inventory_status": "SURPLUS_AVAILABLE_FOR_REBALANCE"
   },
   {
-    "dc_id": "RDC-DALLAS-31",
-    "dc_name": "South Regional Distribution Center",
+    "dc_id": "RDC-DELHI-31",
+    "dc_name": "Gurugram Northern Regional Distribution Center (Delhi NCR)",
     "echelon_tier": "TIER_2_REGIONAL_DC",
     "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
     "on_hand_inventory_units": 6192,
@@ -60,8 +60,8 @@
     "inventory_status": "STOCKOUT_ALERT_IMMINENT"
   },
   {
-    "dc_id": "RDC-ATLANTA-39",
-    "dc_name": "Southeast Regional Distribution Center",
+    "dc_id": "RDC-BENGALURU-39",
+    "dc_name": "Nelamangala Southern Regional Distribution Center (Bengaluru)",
     "echelon_tier": "TIER_2_REGIONAL_DC",
     "sku_id": "SKU-SNACK-PROTEIN-BAR",
     "on_hand_inventory_units": 27685,
@@ -72,8 +72,8 @@
     "inventory_status": "BALANCED_HEALTHY"
   },
   {
-    "dc_id": "CDC-CHICAGO-44",
-    "dc_name": "Midwest Central Distribution Center",
+    "dc_id": "CDC-MUMBAI-44",
+    "dc_name": "Bhiwandi Western Mega Distribution Center (Mumbai MMR)",
     "echelon_tier": "TIER_1_CENTRAL_DC",
     "sku_id": "SKU-XYZ-309",
     "on_hand_inventory_units": 56772,
@@ -84,8 +84,8 @@
     "inventory_status": "SURPLUS_AVAILABLE_FOR_REBALANCE"
   },
   {
-    "dc_id": "RDC-DALLAS-52",
-    "dc_name": "South Regional Distribution Center",
+    "dc_id": "RDC-DELHI-52",
+    "dc_name": "Gurugram Northern Regional Distribution Center (Delhi NCR)",
     "echelon_tier": "TIER_2_REGIONAL_DC",
     "sku_id": "SKU-XYZ-412",
     "on_hand_inventory_units": 6624,

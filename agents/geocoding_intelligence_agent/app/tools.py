@@ -381,7 +381,6 @@ def query_salesforce_crm_customer_delivery_addresses(*args, **kwargs):
         return globals()['query_unresolved_address_records'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "salesforce_address", "system_name": "Salesforce CRM Customer Ship-To Delivery Records"}
 
-query_unresolved_address_records = query_salesforce_crm_customer_delivery_addresses
 
 def fetch_google_maps_geocoding_and_rooftop_coordinates(*args, **kwargs):
     """[Connected Enterprise System: Google Maps Platform Geocoding & Rooftop Coordinates API]
@@ -391,7 +390,6 @@ def fetch_google_maps_geocoding_and_rooftop_coordinates(*args, **kwargs):
         return globals()['query_google_geocoding_matches'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "google_geocoding", "system_name": "Google Maps Platform Geocoding & Rooftop Coordinates API"}
 
-query_google_geocoding_matches = fetch_google_maps_geocoding_and_rooftop_coordinates
 
 def run_spatial_h3_cluster_and_curbside_access_solver(*args, **kwargs):
     """[Connected Enterprise System: Uber H3 Spatial Clustering & Loading Dock Access Engine]
@@ -401,7 +399,6 @@ def run_spatial_h3_cluster_and_curbside_access_solver(*args, **kwargs):
         return globals()['query_h3_spatial_clusters'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "spatial_h3", "system_name": "Uber H3 Spatial Clustering & Loading Dock Access Engine"}
 
-query_h3_spatial_clusters = run_spatial_h3_cluster_and_curbside_access_solver
 
 def query_access_restrictions_dock_height_and_gate_codes(*args, **kwargs):
     """[Connected Enterprise System: Commercial Delivery Restrictions & Bay Clearances]
@@ -411,7 +408,6 @@ def query_access_restrictions_dock_height_and_gate_codes(*args, **kwargs):
         return globals()['query_delivery_access_constraints'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "dock_restrictions", "system_name": "Commercial Delivery Restrictions & Bay Clearances"}
 
-query_delivery_access_constraints = query_access_restrictions_dock_height_and_gate_codes
 
 def commit_rooftop_pin_and_time_window_to_salesforce(*args, **kwargs):
     """[Connected Enterprise System: Salesforce CRM Verified Lat/Lng & Delivery Window Commit]
@@ -421,7 +417,6 @@ def commit_rooftop_pin_and_time_window_to_salesforce(*args, **kwargs):
         return globals()['action_commit_verified_coordinates_to_crm'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "crm_geocode_commit", "system_name": "Salesforce CRM Verified Lat/Lng & Delivery Window Commit"}
 
-action_commit_verified_coordinates_to_crm = commit_rooftop_pin_and_time_window_to_salesforce
 
 def export_geocoded_delivery_stops_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

@@ -376,7 +376,6 @@ def query_rfid_dock_portal_pallet_scan_telemetry(*args, **kwargs):
         return globals()['query_dock_rfid_pallet_scans'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "rfid_portals", "system_name": "Warehouse RFID Dock Portal Pallet Scan Telemetry"}
 
-query_dock_rfid_pallet_scans = query_rfid_dock_portal_pallet_scan_telemetry
 
 def fetch_chep_and_peco_reusable_asset_master_ledger(*args, **kwargs):
     """[Connected Enterprise System: CHEP & PECO Reusable Asset Master Exchange Ledger]
@@ -386,7 +385,6 @@ def fetch_chep_and_peco_reusable_asset_master_ledger(*args, **kwargs):
         return globals()['query_chep_peco_exchange_statements'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "chep_peco_ledger", "system_name": "CHEP & PECO Reusable Asset Master Exchange Ledger"}
 
-query_chep_peco_exchange_statements = fetch_chep_and_peco_reusable_asset_master_ledger
 
 def query_retail_customer_unreturned_pallet_dwell_days(*args, **kwargs):
     """[Connected Enterprise System: Retail Customer Unreturned Pallet Dwell Time Records]
@@ -396,7 +394,6 @@ def query_retail_customer_unreturned_pallet_dwell_days(*args, **kwargs):
         return globals()['query_customer_dwell_balance_ledger'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "customer_dwell", "system_name": "Retail Customer Unreturned Pallet Dwell Time Records"}
 
-query_customer_dwell_balance_ledger = query_retail_customer_unreturned_pallet_dwell_days
 
 def run_rti_demurrage_and_reverse_reclamation_solver(*args, **kwargs):
     """[Connected Enterprise System: RTI Demurrage Variance & Reverse Logistics Reclamation Solver]
@@ -406,7 +403,6 @@ def run_rti_demurrage_and_reverse_reclamation_solver(*args, **kwargs):
         return globals()['query_reverse_reclamation_routes'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "reconciliation_solver", "system_name": "RTI Demurrage Variance & Reverse Logistics Reclamation Solver"}
 
-query_reverse_reclamation_routes = run_rti_demurrage_and_reverse_reclamation_solver
 
 def commit_unreturned_pallet_chargeback_to_sap_billing(*args, **kwargs):
     """[Connected Enterprise System: SAP Automated Customer RTI Demurrage Chargeback Posting]
@@ -416,7 +412,6 @@ def commit_unreturned_pallet_chargeback_to_sap_billing(*args, **kwargs):
         return globals()['action_issue_customer_pallet_chargeback'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_billing_debit", "system_name": "SAP Automated Customer RTI Demurrage Chargeback Posting"}
 
-action_issue_customer_pallet_chargeback = commit_unreturned_pallet_chargeback_to_sap_billing
 
 def export_pallet_reconciliation_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

@@ -9,10 +9,10 @@ def create_order_promising_chart_spec(
     """Generates a Real-Time ATP Allocation & Tier Quota Protection chart."""
     if not data_points:
         data_points = [
-            {"node": "CDC Chicago (Tier 1)", "tier1_reserved": 20000, "uncommitted_atp": 34200, "committed_allocated": 14200},
-            {"node": "RDC Dallas (Tier 2)", "tier1_reserved": 5000, "uncommitted_atp": 3300, "committed_allocated": 5400},
-            {"node": "RDC Atlanta (Tier 2)", "tier1_reserved": 8000, "uncommitted_atp": 12400, "committed_allocated": 4100},
-            {"node": "FDC Austin (Tier 3)", "tier1_reserved": 1500, "uncommitted_atp": 1800, "committed_allocated": 800},
+            {"node": "CDC Mumbai (Bhiwandi) (Tier 1)", "tier1_reserved": 20000, "uncommitted_atp": 34200, "committed_allocated": 14200},
+            {"node": "RDC Delhi NCR (Gurugram) (Tier 2)", "tier1_reserved": 5000, "uncommitted_atp": 3300, "committed_allocated": 5400},
+            {"node": "RDC Bengaluru (Nelamangala) (Tier 2)", "tier1_reserved": 8000, "uncommitted_atp": 12400, "committed_allocated": 4100},
+            {"node": "FDC Hyderabad (Shamshabad) (Tier 3)", "tier1_reserved": 1500, "uncommitted_atp": 1800, "committed_allocated": 800},
         ]
 
     return {
@@ -20,7 +20,7 @@ def create_order_promising_chart_spec(
         "description": "PromiseGuard Sub-50ms Spanner ATP & Strategic Tier Quota Protection",
         "title": {
             "text": "PromiseGuard Real-Time Order Promising & ATP Inventory Pools",
-            "subtitle": "Spanner Real-Time Stock Sub-15ms · Apex Hypermarket Strategic Tier 1 Quota Protected (20,000 Units)",
+            "subtitle": "Spanner Real-Time Stock Sub-15ms · DMart (Avenue Supermarts) Strategic Tier 1 Quota Protected (20,000 Units)",
             "anchor": "start",
             "fontSize": 14,
             "subtitleFontSize": 11,

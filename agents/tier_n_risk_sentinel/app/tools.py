@@ -512,7 +512,6 @@ def query_spanner_graph_subtier_supplier_lineage(*args, **kwargs):
         return globals()['query_subtier_network_nodes'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "spanner_graph", "system_name": "Cloud Spanner Graph Multi-Tier BOM Lineage"}
 
-query_subtier_network_nodes = query_spanner_graph_subtier_supplier_lineage
 
 def fetch_dun_bradstreet_financial_health_ratings(*args, **kwargs):
     """[Connected Enterprise System: Dun & Bradstreet Financial Health & Credit Ratings]
@@ -522,7 +521,6 @@ def fetch_dun_bradstreet_financial_health_ratings(*args, **kwargs):
         return globals()['query_active_disruption_threats'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "dnb_health", "system_name": "Dun & Bradstreet Financial Health & Credit Ratings"}
 
-query_active_disruption_threats = fetch_dun_bradstreet_financial_health_ratings
 
 def query_bigquery_geopolitical_and_port_risk_indices(*args, **kwargs):
     """[Connected Enterprise System: BigQuery Geopolitical & Port Strike Threat Indices]
@@ -532,7 +530,6 @@ def query_bigquery_geopolitical_and_port_risk_indices(*args, **kwargs):
         return globals()['query_bom_revenue_lineage'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "bigquery_risk", "system_name": "BigQuery Geopolitical & Port Strike Threat Indices"}
 
-query_bom_revenue_lineage = query_bigquery_geopolitical_and_port_risk_indices
 
 def run_tier_n_bom_revenue_vulnerability_solver(*args, **kwargs):
     """[Connected Enterprise System: Tier-N Revenue Vulnerability & Single-Source Detector]
@@ -542,7 +539,6 @@ def run_tier_n_bom_revenue_vulnerability_solver(*args, **kwargs):
         return globals()['query_mitigation_playbook_options'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "vulnerability_solver", "system_name": "Tier-N Revenue Vulnerability & Single-Source Detector"}
 
-query_mitigation_playbook_options = run_tier_n_bom_revenue_vulnerability_solver
 
 def commit_dual_sourcing_allocation_to_sap_ariba(*args, **kwargs):
     """[Connected Enterprise System: SAP Ariba Dual-Sourcing Allocation & Safety Stock Order]
@@ -552,7 +548,6 @@ def commit_dual_sourcing_allocation_to_sap_ariba(*args, **kwargs):
         return globals()['action_trigger_dual_source_mitigation'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "ariba_dual_source", "system_name": "SAP Ariba Dual-Sourcing Allocation & Safety Stock Order"}
 
-action_trigger_dual_source_mitigation = commit_dual_sourcing_allocation_to_sap_ariba
 
 def export_supplier_network_graph_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

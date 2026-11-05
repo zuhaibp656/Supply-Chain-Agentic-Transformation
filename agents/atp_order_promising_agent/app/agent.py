@@ -15,7 +15,7 @@ _INSTRUCTION = """You are PromiseGuard, the Real-Time Dynamic ATP Order Promisin
 PRIMARY OBJECTIVE:
 Provide sub-50ms Available-to-Promise (ATP) and Capable-to-Promise (CTP) commitments for omnichannel customer order streams.
 Ingest real-time global inventory balances from Google Cloud Spanner with sub-20ms strong consistency.
-Enforce contractual customer allocation tiers, ringfencing strategic Tier 1 customer quotas (e.g. Apex Hypermarket, Cymbal Retail)
+Enforce contractual customer allocation tiers, ringfencing strategic Tier 1 customer quotas (e.g. DMart (Avenue Supermarts), Cymbal Retail)
 so high-velocity standard or spot B2B orders do not cannibalize critical contract SLA inventory.
 Route orders to the lowest-cost, highest-fill-rate DC node, commit binding delivery dates,
 and log inventory reservations across Cloud Spanner and enterprise OMS.
@@ -186,9 +186,9 @@ class DynamicOrderPromisingAtp:
         ringfence_res = self.execute_tool(
             "action_protect_tier1_allocation_reserve",
             sku_id="SKU-BEV-OATMILK-ORIGINAL-1L",
-            network_node_id="CDC-CHICAGO-01",
+            network_node_id="CDC-MUMBAI-01",
             reserve_quantity=20000,
-            rationale="Ringfencing 20,000 units at Central DC Chicago exclusively for strategic Tier 1 accounts (Apex Hypermarket SLA 98.5% fill rate, avoiding $2,500/day OTIF penalty).",
+            rationale="Ringfencing 20,000 units at Central DC Chicago exclusively for strategic Tier 1 accounts (DMart (Avenue Supermarts) SLA 98.5% fill rate, avoiding $2,500/day OTIF penalty).",
             idempotency_key="TIER1-RING-20261022-01"
         )
         actions_taken.append(ringfence_res)
@@ -200,10 +200,10 @@ class DynamicOrderPromisingAtp:
                 "action_commit_dynamic_order_promise",
                 order_id=target_ord["order_id"],
                 customer_id=target_ord["customer_id"],
-                promised_fulfillment_node="CDC-CHICAGO-01",
+                promised_fulfillment_node="CDC-MUMBAI-01",
                 promised_delivery_date="2026-10-24T10:00:00Z",
                 atp_reserved_qty=target_ord["requested_units"],
-                rationale="Committed 8,000 units from Tier 1 reserved quota at CDC Chicago. 18-hour linehaul transit guarantees on-time delivery by Oct 24, 10:00 AM (2 hours ahead of 12:00 PM cutoff).",
+                rationale="Committed 8,000 units from Tier 1 reserved quota at CDC Mumbai (Bhiwandi). 18-hour linehaul transit guarantees on-time delivery by Oct 24, 10:00 AM (2 hours ahead of 12:00 PM cutoff).",
                 idempotency_key="PROMISE-ORD-20261022-8841"
             )
             actions_taken.append(promise_res)
@@ -234,14 +234,14 @@ class DynamicOrderPromisingAtp:
         lines = [
             "### 🤝 PromiseGuard Real-Time Order Promising & ATP Briefing",
             "",
-            "> **Executive Summary**: Sub-50ms Cloud Spanner evaluation successfully committed high-value inbound order `ORD-20261022-8841` (**8,000 units** of Barista Organic Oat Milk 1L) for strategic account **Apex Hypermarket National Distribution** (Tier 1 Strategic, 98.5% fill rate SLA). Ingested global stock across Central and Regional DCs with **14.8 ms Spanner query latency**. While local RDC Dallas held only 3,300 uncommitted units, PromiseGuard dynamically allocated the full 8,000 units from **CDC Chicago Tier 1 Protected Quota** (where 20,000 units are ringfenced). Guaranteed delivery by **Oct 24, 2026 at 10:00 AM** (2 hours ahead of contractual cutoff), completely neutralizing a **$2,500/day OTIF penalty** risk.",
+            "> **Executive Summary**: Sub-50ms Cloud Spanner evaluation successfully committed high-value inbound order `ORD-20261022-8841` (**8,000 units** of Barista Organic Oat Milk 1L) for strategic account **DMart (Avenue Supermarts) National Distribution** (Tier 1 Strategic, 98.5% fill rate SLA). Ingested global stock across Central and Regional DCs with **14.8 ms Spanner query latency**. While local RDC Delhi NCR (Gurugram) held only 3,300 uncommitted units, PromiseGuard dynamically allocated the full 8,000 units from **CDC Mumbai (Bhiwandi) Tier 1 Protected Quota** (where 20,000 units are ringfenced). Guaranteed delivery by **Oct 24, 2026 at 10:00 AM** (2 hours ahead of contractual cutoff), completely neutralizing a **$2,500/day OTIF penalty** risk.",
             "",
             "#### 📊 Inbound Order Promising & Sourcing Evaluation (Atomic Copy-Ready Table)",
             "",
             "| Order ID | Customer Account | Contract Tier | Requested Units | Promised Units | Sourcing Node | Promised Delivery | OTIF Risk | Status |",
             "|:---|:---|:---|---:|---:|:---|:---|---:|:---|",
-            "| `ORD-8841` | **Apex Hypermarket National** | `TIER_1_STRATEGIC` | 8,000 units | **8,000 units** | `CDC-CHICAGO-01` | **2026-10-24 10:00 AM** | **$0.00 (Neutralized)** | `ATP_COMMITTED` |",
-            "| `ORD-8842` | Lone Star Co-op | `TIER_3_STANDARD` | 1,200 units | 1,200 units | `RDC-DALLAS-02` | 2026-10-24 03:00 PM | $0.00 (Nominal) | `ATP_CONFIRMED` |",
+            "| `ORD-8841` | **DMart (Avenue Supermarts) National** | `TIER_1_STRATEGIC` | 8,000 units | **8,000 units** | `CDC-MUMBAI-01` | **2026-10-24 10:00 AM** | **$0.00 (Neutralized)** | `ATP_COMMITTED` |",
+            "| `ORD-8842` | Lone Star Co-op | `TIER_3_STANDARD` | 1,200 units | 1,200 units | `RDC-DELHI-02` | 2026-10-24 03:00 PM | $0.00 (Nominal) | `ATP_CONFIRMED` |",
             "",
             "#### ⚡ Automated Spanner Reservations & Tier Quota Ringfences Executed",
             ""

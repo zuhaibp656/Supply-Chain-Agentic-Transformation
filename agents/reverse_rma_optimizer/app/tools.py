@@ -504,7 +504,6 @@ def query_salesforce_service_cloud_customer_rma_requests(*args, **kwargs):
         return globals()['query_customer_rma_intake_requests'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "salesforce_rma", "system_name": "Salesforce Service Cloud Customer Return Requests (RMA)"}
 
-query_customer_rma_intake_requests = query_salesforce_service_cloud_customer_rma_requests
 
 def fetch_customer_historical_return_frequency_and_fraud_scores(*args, **kwargs):
     """[Connected Enterprise System: BigQuery Customer Return Frequency & Serialized Claims]
@@ -514,7 +513,6 @@ def fetch_customer_historical_return_frequency_and_fraud_scores(*args, **kwargs)
         return globals()['query_multimodal_vision_grading_results'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "fraud_history", "system_name": "BigQuery Customer Return Frequency & Serialized Claims"}
 
-query_multimodal_vision_grading_results = fetch_customer_historical_return_frequency_and_fraud_scores
 
 def run_multimodal_return_fraud_and_routing_solver(*args, **kwargs):
     """[Connected Enterprise System: Multi-Modal Return Fraud Score & Circular Routing Solver]
@@ -524,7 +522,6 @@ def run_multimodal_return_fraud_and_routing_solver(*args, **kwargs):
         return globals()['query_fleet_backhaul_pickup_slots'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "routing_solver", "system_name": "Multi-Modal Return Fraud Score & Circular Routing Solver"}
 
-query_fleet_backhaul_pickup_slots = run_multimodal_return_fraud_and_routing_solver
 
 def query_fleet_backhaul_pallet_collection_slots(*args, **kwargs):
     """[Connected Enterprise System: FleetFlow Backhaul Capacity & Collection Time Slots]
@@ -534,7 +531,6 @@ def query_fleet_backhaul_pallet_collection_slots(*args, **kwargs):
         return globals()['query_circular_disposition_routing_ledger'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "backhaul_fleet", "system_name": "FleetFlow Backhaul Capacity & Collection Time Slots"}
 
-query_circular_disposition_routing_ledger = query_fleet_backhaul_pallet_collection_slots
 
 def commit_rma_disposition_and_restocking_fee_in_salesforce(*args, **kwargs):
     """[Connected Enterprise System: Salesforce CRM Automated Disposition & Restocking Rules]
@@ -544,7 +540,6 @@ def commit_rma_disposition_and_restocking_fee_in_salesforce(*args, **kwargs):
         return globals()['action_issue_rma_disposition_authorization'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "crm_disposition", "system_name": "Salesforce CRM Automated Disposition & Restocking Rules"}
 
-action_issue_rma_disposition_authorization = commit_rma_disposition_and_restocking_fee_in_salesforce
 
 def export_rma_disposition_manifest_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

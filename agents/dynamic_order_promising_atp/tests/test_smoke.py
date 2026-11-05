@@ -24,7 +24,7 @@ def test_list_systems():
 def test_query_realtime_sku_atp_allocations():
     res = tools.query_realtime_sku_atp_allocations(sku_id="SKU-BEV-OATMILK-ORIGINAL-1L")
     assert res["total"] > 0
-    chicago = [r for r in res["rows"] if r["network_node_id"] == "CDC-CHICAGO-01"][0]
+    chicago = [r for r in res["rows"] if r["network_node_id"] == "CDC-MUMBAI-01"][0]
     assert chicago["realtime_uncommitted_atp_units"] == 34200
     assert chicago["tier1_contract_reserved_units"] >= 20000
     assert chicago["spanner_query_latency_ms"] < 20.0
@@ -51,7 +51,7 @@ def test_query_order_promising_routing_decisions():
     res = tools.query_order_promising_routing_decisions(order_id="ORD-20261022-8841")
     assert res["total"] > 0
     record = res["rows"][0]
-    assert record["promised_fulfillment_node"] == "CDC-CHICAGO-01"
+    assert record["promised_fulfillment_node"] == "CDC-MUMBAI-01"
     assert record["otif_penalty_risk_usd"] == 0.0
 
 
@@ -85,7 +85,7 @@ def test_quality_gate_blocks_invalid_inputs():
 
 def test_end_to_end_scenario_execution():
     agent = DynamicOrderPromisingAtp()
-    query = "Evaluate inbound customer order ORD-20261022-8841 from Apex Hypermarket, execute sub-50ms Spanner ATP check, ringfence Tier 1 strategic allocation reserve, and commit binding delivery date."
+    query = "Evaluate inbound customer order ORD-20261022-8841 from DMart (Avenue Supermarts), execute sub-50ms Spanner ATP check, ringfence Tier 1 strategic allocation reserve, and commit binding delivery date."
     result = agent.run_scenario(query)
     assert result["status"] == "success"
     assert result["findings_count"] >= 3
@@ -111,7 +111,7 @@ def test_end_to_end_scenario_execution():
     markdown = result["markdown"]
     assert "### 🤝 PromiseGuard Real-Time Order Promising & ATP Briefing" in markdown
     assert "| Order ID | Customer Account | Contract Tier |" in markdown
-    assert "Apex Hypermarket National" in markdown
+    assert "DMart (Avenue Supermarts) National" in markdown
     assert "Tier 1 Allocation Ringfenced" in markdown
     assert "Binding ATP Promise Committed" in markdown
 

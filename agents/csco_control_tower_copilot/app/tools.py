@@ -540,7 +540,6 @@ def query_sap_s4hana_enterprise_kpis_and_backlog(*args, **kwargs):
         return globals()['query_executive_kpis'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_s4hana", "system_name": "SAP S/4HANA Enterprise Backlog & Financial Ledger"}
 
-query_executive_kpis = query_sap_s4hana_enterprise_kpis_and_backlog
 
 def fetch_bigquery_multiechelon_digital_twin_telemetry(*args, **kwargs):
     """[Connected Enterprise System: BigQuery Multi-Echelon Digital Twin Telemetry]
@@ -550,7 +549,6 @@ def fetch_bigquery_multiechelon_digital_twin_telemetry(*args, **kwargs):
         return globals()['query_multiechelon_twin_status'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "bigquery_twin", "system_name": "BigQuery Multi-Echelon Digital Twin Telemetry"}
 
-query_multiechelon_twin_status = fetch_bigquery_multiechelon_digital_twin_telemetry
 
 def run_control_tower_bottleneck_and_margin_diagnostic(*args, **kwargs):
     """[Connected Enterprise System: Control Tower Bottleneck & Margin At Risk Diagnostic]
@@ -560,7 +558,6 @@ def run_control_tower_bottleneck_and_margin_diagnostic(*args, **kwargs):
         return globals()['query_network_bottlenecks'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "bottleneck_engine", "system_name": "Control Tower Bottleneck & Margin At Risk Diagnostic"}
 
-query_network_bottlenecks = run_control_tower_bottleneck_and_margin_diagnostic
 
 def query_oracle_otm_and_wms_critical_milestones(*args, **kwargs):
     """[Connected Enterprise System: Oracle OTM & WMS Critical Milestones]
@@ -570,7 +567,6 @@ def query_oracle_otm_and_wms_critical_milestones(*args, **kwargs):
         return globals()['query_cross_erp_order_backlog'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "oracle_otm", "system_name": "Oracle OTM & WMS Critical Milestones"}
 
-query_cross_erp_order_backlog = query_oracle_otm_and_wms_critical_milestones
 
 def commit_executive_consensus_directives_and_escalations(*args, **kwargs):
     """[Connected Enterprise System: Executive Directives & S&OP Consensus Writeback]
@@ -580,7 +576,6 @@ def commit_executive_consensus_directives_and_escalations(*args, **kwargs):
         return globals()['action_trigger_cross_pillar_directive'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "exec_decision", "system_name": "Executive Directives & S&OP Consensus Writeback"}
 
-action_trigger_cross_pillar_directive = commit_executive_consensus_directives_and_escalations
 
 def export_csco_executive_board_memo_and_csv(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

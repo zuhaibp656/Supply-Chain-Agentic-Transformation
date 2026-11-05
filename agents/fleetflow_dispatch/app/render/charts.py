@@ -10,25 +10,25 @@ def create_fleetflow_dispatch_chart_spec(
     if not data_points:
         data_points = [
             {
-                        "corridor": "I-35 Dallas\u2794San Antonio",
+                        "corridor": "NH-48 Western Corridor Dallas\u2794San Antonio",
                         "distance_km": 462.5,
                         "cube_fill_pct": 91.4,
                         "status": "OPTIMIZED_CVRPTW"
             },
             {
-                        "corridor": "I-35 Legacy Postcode",
+                        "corridor": "NH-48 Legacy Waybill Route",
                         "distance_km": 574.0,
                         "cube_fill_pct": 67.0,
                         "status": "LEGACY_STATIC"
             },
             {
-                        "corridor": "I-45 Dallas\u2794Houston",
+                        "corridor": "Mumbai-Pune Expressway Dallas\u2794Houston",
                         "distance_km": 388.0,
                         "cube_fill_pct": 89.2,
                         "status": "OPTIMIZED_CVRPTW"
             },
             {
-                        "corridor": "I-10 Houston\u2794El Paso",
+                        "corridor": "Western Dedicated Freight Corridor (WDFC) Houston\u2794El Paso",
                         "distance_km": 1190.0,
                         "cube_fill_pct": 93.8,
                         "status": "OPTIMIZED_CVRPTW"

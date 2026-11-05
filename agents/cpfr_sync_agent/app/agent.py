@@ -13,7 +13,7 @@ from .render.surfaces import build_cpfr_surface
 _INSTRUCTION = """You are ChannelSync, the Collaborative CPFR & POS Harmonizer for the Office of the CSCO and Retail Account Lead.
 
 PRIMARY OBJECTIVE:
-Eliminate the bullwhip effect and phantom store inventory across major retail channels (Cymbal Retail, Apex Hypermarket, Target).
+Eliminate the bullwhip effect and phantom store inventory across major retail channels (Cymbal Retail, DMart (Avenue Supermarts), Target).
 Ingest multi-retailer EDI 852 daily store scans via Cloud Dataflow, detect store-level zero-scan anomalies hiding phantom stockouts,
 and reconcile divergent EDI 830 purchase forecasts into an automated Vendor Managed Inventory (VMI) order.
 
@@ -144,7 +144,7 @@ class CpfrSyncAgent:
         actions_taken = []
 
         # 1. Inspect Retailer Daily POS Scans
-        pos_data = self.execute_tool("query_retailer_edi852_pos", retailer="Apex Hypermarket")
+        pos_data = self.execute_tool("query_retailer_edi852_pos", retailer="DMart (Avenue Supermarts)")
         if pos_data.get("total", 0) > 0:
             findings.append({"domain": "retailer_edi852_pos", "records": pos_data["rows"]})
 
@@ -216,14 +216,14 @@ class CpfrSyncAgent:
         lines = [
             "### 📡 ChannelSync Collaborative CPFR & POS Harmonizer Briefing",
             "",
-            "> **Executive Summary**: Harmonized multi-retailer daily EDI 852 scan feeds across Cymbal Retail, Apex Hypermarket, and Target via **Cloud Dataflow** and **BigQuery**. Flagged a critical **phantom inventory stockout at Apex Hypermarket Atlanta** (4 consecutive days of zero scans masked by 380 units of ghost book inventory, leaking $2,451/day). Reconciled Cymbal Retail's **80,000-unit bullwhip forecast divergence** down to realistic POS consumption velocity, and autonomously dispatched a **95,000-unit VMI replenishment order (EDI 855)** to DC Dallas, lifting retail On-Shelf Availability (OSA) by **+3.8 points**.",
+            "> **Executive Summary**: Harmonized multi-retailer daily EDI 852 scan feeds across Cymbal Retail, DMart (Avenue Supermarts), and Target via **Cloud Dataflow** and **BigQuery**. Flagged a critical **phantom inventory stockout at DMart (Avenue Supermarts) Atlanta** (4 consecutive days of zero scans masked by 380 units of ghost book inventory, leaking $2,451/day). Reconciled Cymbal Retail's **80,000-unit bullwhip forecast divergence** down to realistic POS consumption velocity, and autonomously dispatched a **95,000-unit VMI replenishment order (EDI 855)** to DC Dallas, lifting retail On-Shelf Availability (OSA) by **+3.8 points**.",
             "",
             "#### 📊 Multi-Retailer CPFR Reconciliation Ledger (Atomic Copy-Ready Table)",
             "",
             "| Retailer | Store / DC | SKU ID | Daily Scans | Book Stock | Anomaly Status | CPFR Consensus | VMI Order Units | Retail OSA % |",
             "|:---|:---|:---|---:|---:|:---|---:|---:|---:|",
             "| `Cymbal Retail` | `DC-DALLAS-CENTRAL` | `SKU-BEV-ISOTONIC-32OZ` | 1,840 | 420 | `ALIGNED_FLOW` | 580,000 | **95,000** | 98.2% |",
-            "| `Apex Hypermarket` | `STORE-APEX-ATL-209` | `SKU-BEV-ISOTONIC-32OZ` | 0 | 380 | `PHANTOM_STOCKOUT` | 42,000 | **Audit Triggered** | 84.5% (Depleted) |",
+            "| `DMart (Avenue Supermarts)` | `STORE-APEX-ATL-209` | `SKU-BEV-ISOTONIC-32OZ` | 0 | 380 | `PHANTOM_STOCKOUT` | 42,000 | **Audit Triggered** | 84.5% (Depleted) |",
             "| `Summit Stores` | `DC-CHICAGO-MIDWEST` | `SKU-SNACK-PROTEIN-BAR` | 1,280 | 310 | `STABLE_CONSENSUS` | 275,000 | **45,000** | 96.8% |",
             "",
             "#### ⚡ Automated CPFR Dispatches & Physical Audits Executed",

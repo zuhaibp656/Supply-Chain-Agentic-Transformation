@@ -510,7 +510,6 @@ def query_salesforce_crm_trade_promotions_and_coop_agreements(*args, **kwargs):
         return globals()['query_planned_promo_campaigns'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "salesforce_crm", "system_name": "Salesforce CRM Trade Promotion Management (TPM)"}
 
-query_planned_promo_campaigns = query_salesforce_crm_trade_promotions_and_coop_agreements
 
 def fetch_bigquery_point_of_sale_historical_lifts(*args, **kwargs):
     """[Connected Enterprise System: BigQuery Retail Point-of-Sale Lake]
@@ -520,7 +519,6 @@ def fetch_bigquery_point_of_sale_historical_lifts(*args, **kwargs):
         return globals()['query_causal_promo_elasticity'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "bigquery_pos", "system_name": "BigQuery Retail Point-of-Sale Lake"}
 
-query_causal_promo_elasticity = fetch_bigquery_point_of_sale_historical_lifts
 
 def run_causal_elasticity_and_cannibalization_solver(*args, **kwargs):
     """[Connected Enterprise System: Vertex AI Causal Elasticity & Cannibalization Solver]
@@ -530,7 +528,6 @@ def run_causal_elasticity_and_cannibalization_solver(*args, **kwargs):
         return globals()['query_cross_sku_cannibalization'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "causal_ml", "system_name": "Vertex AI Causal Elasticity & Cannibalization Solver"}
 
-query_cross_sku_cannibalization = run_causal_elasticity_and_cannibalization_solver
 
 def audit_warehouse_promo_inventory_readiness(*args, **kwargs):
     """[Connected Enterprise System: Warehouse Inventory & Pallet Availability]
@@ -540,7 +537,6 @@ def audit_warehouse_promo_inventory_readiness(*args, **kwargs):
         return globals()['query_warehouse_promo_availability'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "warehouse_wms", "system_name": "Warehouse Inventory & Pallet Availability"}
 
-query_warehouse_promo_availability = audit_warehouse_promo_inventory_readiness
 
 def commit_salesforce_trade_spend_and_sap_pricing(*args, **kwargs):
     """[Connected Enterprise System: SAP S/4HANA Pricing & Trade Spend Ledger]
@@ -550,7 +546,6 @@ def commit_salesforce_trade_spend_and_sap_pricing(*args, **kwargs):
         return globals()['action_approve_promotional_pricing'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_pricing", "system_name": "SAP S/4HANA Pricing & Trade Spend Ledger"}
 
-action_approve_promotional_pricing = commit_salesforce_trade_spend_and_sap_pricing
 
 def export_promo_roi_waterfall_csv_ledger(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

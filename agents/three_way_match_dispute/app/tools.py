@@ -394,7 +394,6 @@ def query_sap_s4hana_po_line_schedules(*args, **kwargs):
         return globals()['query_sap_po_line_schedules'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_po_ledger", "system_name": "SAP S/4HANA Purchase Order (EKKO/EKPO) Line Schedules"}
 
-query_sap_po_line_schedules = query_sap_s4hana_po_line_schedules
 
 def fetch_manhattan_wms_dock_grn_receipts(*args, **kwargs):
     """[Connected Enterprise System: Manhattan WMS Dock Barcode Goods Receipt Notes (GRN)]
@@ -404,7 +403,6 @@ def fetch_manhattan_wms_dock_grn_receipts(*args, **kwargs):
         return globals()['query_wms_grn_dock_receipts'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "wms_grn_dock", "system_name": "Manhattan WMS Dock Barcode Goods Receipt Notes (GRN)"}
 
-query_wms_grn_dock_receipts = fetch_manhattan_wms_dock_grn_receipts
 
 def query_ap_edi810_vendor_invoice_headers(*args, **kwargs):
     """[Connected Enterprise System: Accounts Payable EDI 810 / Document AI Invoices]
@@ -414,7 +412,6 @@ def query_ap_edi810_vendor_invoice_headers(*args, **kwargs):
         return globals()['query_ap_vendor_invoice_headers'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "ap_invoice_ocr", "system_name": "Accounts Payable EDI 810 / Document AI Invoices"}
 
-query_ap_vendor_invoice_headers = query_ap_edi810_vendor_invoice_headers
 
 def run_three_way_match_variance_and_early_pay_solver(*args, **kwargs):
     """[Connected Enterprise System: 3-Way Match Quantity, Unit Price & Payment Term Solver]
@@ -424,7 +421,6 @@ def run_three_way_match_variance_and_early_pay_solver(*args, **kwargs):
         return globals()['query_three_way_match_dispute_ledger'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "variance_solver", "system_name": "3-Way Match Quantity, Unit Price & Payment Term Solver"}
 
-query_three_way_match_dispute_ledger = run_three_way_match_variance_and_early_pay_solver
 
 def action_issue_sap_miro_debit_memo_and_release(*args, **kwargs):
     """[Connected Enterprise System: SAP MIRO Automated Debit Memo Posting & Invoice Release]
@@ -434,7 +430,6 @@ def action_issue_sap_miro_debit_memo_and_release(*args, **kwargs):
         return globals()['action_issue_sap_debit_memo_and_release'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_miro_debit", "system_name": "SAP MIRO Automated Debit Memo Posting & Invoice Release"}
 
-action_issue_sap_debit_memo_and_release = action_issue_sap_miro_debit_memo_and_release
 
 def export_ap_debit_memo_csv_and_remittance(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

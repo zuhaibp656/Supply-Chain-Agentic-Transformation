@@ -80,7 +80,7 @@ def test_quality_gate_blocks_invalid_mutation():
 
 def test_end_to_end_scenario_execution():
     agent = DemandSensingAgent()
-    query = "Detect heatwave surge in US-Central, impute Apex Hypermarket stockouts, and commit TimesFM P50 forecast to SAP IBP."
+    query = "Detect heatwave surge in Western Corridor (Mumbai & Pune), impute DMart (Avenue Supermarts) stockouts, and commit TimesFM P50 forecast to SAP IBP."
     result = agent.run_scenario(query)
     assert result["status"] == "success"
     assert result["findings_count"] >= 3

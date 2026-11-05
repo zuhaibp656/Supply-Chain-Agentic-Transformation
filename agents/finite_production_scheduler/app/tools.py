@@ -514,7 +514,6 @@ def query_sap_ppds_production_order_backlog(*args, **kwargs):
         return globals()['query_production_orders_backlog'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_ppds", "system_name": "SAP PP/DS Planned Production Orders & Due Dates"}
 
-query_production_orders_backlog = query_sap_ppds_production_order_backlog
 
 def fetch_siemens_opcenter_mes_workcenter_status(*args, **kwargs):
     """[Connected Enterprise System: Siemens Opcenter MES Plant Machine Work Centers]
@@ -524,7 +523,6 @@ def fetch_siemens_opcenter_mes_workcenter_status(*args, **kwargs):
         return globals()['query_changeover_matrix_rules'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "siemens_mes", "system_name": "Siemens Opcenter MES Plant Machine Work Centers"}
 
-query_changeover_matrix_rules = fetch_siemens_opcenter_mes_workcenter_status
 
 def query_sap_s4hana_tooling_and_changeover_matrix(*args, **kwargs):
     """[Connected Enterprise System: SAP Material Master Sequence-Dependent Tooling Matrix]
@@ -534,7 +532,6 @@ def query_sap_s4hana_tooling_and_changeover_matrix(*args, **kwargs):
         return globals()['query_plant_line_workcenters'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "changeover_matrix", "system_name": "SAP Material Master Sequence-Dependent Tooling Matrix"}
 
-query_plant_line_workcenters = query_sap_s4hana_tooling_and_changeover_matrix
 
 def run_ortools_cp_sat_finite_capacity_scheduler(*args, **kwargs):
     """[Connected Enterprise System: Google OR-Tools CP-SAT Finite Capacity Scheduling Solver]
@@ -544,7 +541,6 @@ def run_ortools_cp_sat_finite_capacity_scheduler(*args, **kwargs):
         return globals()['query_optimized_sequence_schedule'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "ortools_cpsat", "system_name": "Google OR-Tools CP-SAT Finite Capacity Scheduling Solver"}
 
-query_optimized_sequence_schedule = run_ortools_cp_sat_finite_capacity_scheduler
 
 def commit_dispatch_sequence_to_siemens_mes(*args, **kwargs):
     """[Connected Enterprise System: Siemens Opcenter MES Job Dispatch Execution Queue]
@@ -554,7 +550,6 @@ def commit_dispatch_sequence_to_siemens_mes(*args, **kwargs):
         return globals()['action_commit_optimized_schedule_to_mes'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "mes_dispatch", "system_name": "Siemens Opcenter MES Job Dispatch Execution Queue"}
 
-action_commit_optimized_schedule_to_mes = commit_dispatch_sequence_to_siemens_mes
 
 def export_production_dispatch_gantt_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

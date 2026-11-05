@@ -508,7 +508,6 @@ def query_siemens_mes_machine_plc_telemetry(*args, **kwargs):
         return globals()['query_plant_machine_telemetry'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "siemens_plc", "system_name": "Siemens S7 PLC & SCADA High-Frequency Machine Telemetry"}
 
-query_plant_machine_telemetry = query_siemens_mes_machine_plc_telemetry
 
 def fetch_bigquery_plant_oee_timeseries_history(*args, **kwargs):
     """[Connected Enterprise System: BigQuery Plant Historical OEE & Sensor Timeseries]
@@ -518,7 +517,6 @@ def fetch_bigquery_plant_oee_timeseries_history(*args, **kwargs):
         return globals()['query_oee_breakdown_metrics'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "bigquery_oee", "system_name": "BigQuery Plant Historical OEE & Sensor Timeseries"}
 
-query_oee_breakdown_metrics = fetch_bigquery_plant_oee_timeseries_history
 
 def run_six_big_losses_and_anomaly_detection_solver(*args, **kwargs):
     """[Connected Enterprise System: Overall Equipment Effectiveness (OEE) Six Big Losses Diagnostic]
@@ -528,7 +526,6 @@ def run_six_big_losses_and_anomaly_detection_solver(*args, **kwargs):
         return globals()['query_predictive_maintenance_anomalies'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "six_losses_solver", "system_name": "Overall Equipment Effectiveness (OEE) Six Big Losses Diagnostic"}
 
-query_predictive_maintenance_anomalies = run_six_big_losses_and_anomaly_detection_solver
 
 def query_sap_pm_spare_parts_inventory(*args, **kwargs):
     """[Connected Enterprise System: SAP PM Plant Maintenance & Critical Spare Parts Ledger]
@@ -538,7 +535,6 @@ def query_sap_pm_spare_parts_inventory(*args, **kwargs):
         return globals()['query_spare_parts_inventory_status'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_pm_spares", "system_name": "SAP PM Plant Maintenance & Critical Spare Parts Ledger"}
 
-query_spare_parts_inventory_status = query_sap_pm_spare_parts_inventory
 
 def commit_sap_pm_work_order_and_predictive_schedule(*args, **kwargs):
     """[Connected Enterprise System: SAP PM Automated Maintenance Work Order Generation]
@@ -548,7 +544,6 @@ def commit_sap_pm_work_order_and_predictive_schedule(*args, **kwargs):
         return globals()['action_schedule_predictive_work_order'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_pm_workorder", "system_name": "SAP PM Automated Maintenance Work Order Generation"}
 
-action_schedule_predictive_work_order = commit_sap_pm_work_order_and_predictive_schedule
 
 def export_oee_pareto_breakdown_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

@@ -504,7 +504,6 @@ def query_oracle_otm_outbound_shipment_carton_manifests(*args, **kwargs):
         return globals()['query_outbound_shipment_carton_dimensions'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "oracle_otm_manifest", "system_name": "Oracle OTM Outbound Shipments & Carton Manifests"}
 
-query_outbound_shipment_carton_dimensions = query_oracle_otm_outbound_shipment_carton_manifests
 
 def fetch_trailer_and_intermodal_container_geometry_specs(*args, **kwargs):
     """[Connected Enterprise System: 53ft Reefer & Intermodal Trailer Geometry Specs]
@@ -514,7 +513,6 @@ def fetch_trailer_and_intermodal_container_geometry_specs(*args, **kwargs):
         return globals()['query_trailer_bay_geometry_specs'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "trailer_specs", "system_name": "53ft Reefer & Intermodal Trailer Geometry Specs"}
 
-query_trailer_bay_geometry_specs = fetch_trailer_and_intermodal_container_geometry_specs
 
 def run_3d_lifo_voxel_cube_and_axle_weight_solver(*args, **kwargs):
     """[Connected Enterprise System: 3D LIFO Voxel Packing & Axle Weight Center-of-Gravity Solver]
@@ -524,7 +522,6 @@ def run_3d_lifo_voxel_cube_and_axle_weight_solver(*args, **kwargs):
         return globals()['query_lifo_3d_voxel_load_plans'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "voxel_3d_solver", "system_name": "3D LIFO Voxel Packing & Axle Weight Center-of-Gravity Solver"}
 
-query_lifo_3d_voxel_load_plans = run_3d_lifo_voxel_cube_and_axle_weight_solver
 
 def query_bridge_law_and_dot_crush_compliance_limits(*args, **kwargs):
     """[Connected Enterprise System: Federal Bridge Law & DOT Axle Load Regulations]
@@ -534,7 +531,6 @@ def query_bridge_law_and_dot_crush_compliance_limits(*args, **kwargs):
         return globals()['query_axle_weight_crush_audit_logs'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "dot_bridge_law", "system_name": "Federal Bridge Law & DOT Axle Load Regulations"}
 
-query_axle_weight_crush_audit_logs = query_bridge_law_and_dot_crush_compliance_limits
 
 def commit_load_plan_and_door_manifest_to_otm(*args, **kwargs):
     """[Connected Enterprise System: Oracle OTM Load Tender & Dock Door Manifest Commit]
@@ -544,7 +540,6 @@ def commit_load_plan_and_door_manifest_to_otm(*args, **kwargs):
         return globals()['action_commit_load_plan_to_tms'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "otm_load_commit", "system_name": "Oracle OTM Load Tender & Dock Door Manifest Commit"}
 
-action_commit_load_plan_to_tms = commit_load_plan_and_door_manifest_to_otm
 
 def export_3d_trailer_loading_manifest_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

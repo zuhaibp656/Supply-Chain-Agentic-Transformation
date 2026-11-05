@@ -521,7 +521,6 @@ def query_manhattan_active_wms_slot_locations_and_velocity(*args, **kwargs):
         return globals()['query_warehouse_slotting_velocity_tiers'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "manhattan_wms", "system_name": "Manhattan Active WMS 3D Bin Locations & Velocity Tiers"}
 
-query_warehouse_slotting_velocity_tiers = query_manhattan_active_wms_slot_locations_and_velocity
 
 def fetch_amr_robot_and_picker_travel_telemetry(*args, **kwargs):
     """[Connected Enterprise System: AMR Robotics & Manual Picker Travel Telemetry]
@@ -531,7 +530,6 @@ def fetch_amr_robot_and_picker_travel_telemetry(*args, **kwargs):
         return globals()['query_amr_picker_travel_telemetry'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "amr_telemetry", "system_name": "AMR Robotics & Manual Picker Travel Telemetry"}
 
-query_amr_picker_travel_telemetry = fetch_amr_robot_and_picker_travel_telemetry
 
 def run_3d_golden_zone_slotting_and_travel_reduction_solver(*args, **kwargs):
     """[Connected Enterprise System: 3D Golden-Zone Ergonomic & Congestion-Aware Slotting Solver]
@@ -541,7 +539,6 @@ def run_3d_golden_zone_slotting_and_travel_reduction_solver(*args, **kwargs):
         return globals()['query_wave_release_order_allocations'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "slotting_solver", "system_name": "3D Golden-Zone Ergonomic & Congestion-Aware Slotting Solver"}
 
-query_wave_release_order_allocations = run_3d_golden_zone_slotting_and_travel_reduction_solver
 
 def query_wms_wave_release_order_queue(*args, **kwargs):
     """[Connected Enterprise System: WMS Order Wave Release Queue & Batch Profiles]
@@ -551,7 +548,6 @@ def query_wms_wave_release_order_queue(*args, **kwargs):
         return globals()['query_slot_reassignment_recommendations'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "wave_release", "system_name": "WMS Order Wave Release Queue & Batch Profiles"}
 
-query_slot_reassignment_recommendations = query_wms_wave_release_order_queue
 
 def commit_slot_moves_to_manhattan_wms(*args, **kwargs):
     """[Connected Enterprise System: Manhattan Active WMS Automated Slot Move Execution]
@@ -561,7 +557,6 @@ def commit_slot_moves_to_manhattan_wms(*args, **kwargs):
         return globals()['action_commit_slotting_moves_to_wms'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "wms_slot_commit", "system_name": "Manhattan Active WMS Automated Slot Move Execution"}
 
-action_commit_slotting_moves_to_wms = commit_slot_moves_to_manhattan_wms
 
 def export_warehouse_rack_elevation_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

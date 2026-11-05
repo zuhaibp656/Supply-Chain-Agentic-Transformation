@@ -515,7 +515,6 @@ def query_cloud_spanner_realtime_sku_atp_pool(*args, **kwargs):
         return globals()['query_realtime_sku_atp_allocations'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "spanner_atp", "system_name": "Cloud Spanner Real-Time Sub-50ms ATP Inventory Pool"}
 
-query_realtime_sku_atp_allocations = query_cloud_spanner_realtime_sku_atp_pool
 
 def fetch_salesforce_commerce_cloud_omnichannel_orders(*args, **kwargs):
     """[Connected Enterprise System: Salesforce Commerce Cloud Customer Orders & Baskets]
@@ -525,7 +524,6 @@ def fetch_salesforce_commerce_cloud_omnichannel_orders(*args, **kwargs):
         return globals()['query_customer_tier_sla_commitments'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "salesforce_commerce", "system_name": "Salesforce Commerce Cloud Customer Orders & Baskets"}
 
-query_customer_tier_sla_commitments = fetch_salesforce_commerce_cloud_omnichannel_orders
 
 def query_sap_s4hana_customer_tier_sla_quotas(*args, **kwargs):
     """[Connected Enterprise System: SAP S/4HANA Customer Tier SLA & Quota Protections]
@@ -535,7 +533,6 @@ def query_sap_s4hana_customer_tier_sla_quotas(*args, **kwargs):
         return globals()['query_inbound_customer_order_requests'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_customer_sla", "system_name": "SAP S/4HANA Customer Tier SLA & Quota Protections"}
 
-query_inbound_customer_order_requests = query_sap_s4hana_customer_tier_sla_quotas
 
 def run_omnichannel_fulfillment_cost_and_split_order_solver(*args, **kwargs):
     """[Connected Enterprise System: Least-Cost Omnichannel Order Sourcing & Split-Order Solver]
@@ -545,7 +542,6 @@ def run_omnichannel_fulfillment_cost_and_split_order_solver(*args, **kwargs):
         return globals()['query_order_promising_routing_decisions'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "fulfillment_solver", "system_name": "Least-Cost Omnichannel Order Sourcing & Split-Order Solver"}
 
-query_order_promising_routing_decisions = run_omnichannel_fulfillment_cost_and_split_order_solver
 
 def commit_hard_allocation_reservation_in_spanner(*args, **kwargs):
     """[Connected Enterprise System: Cloud Spanner Real-Time Hard Inventory Reservation]
@@ -555,7 +551,6 @@ def commit_hard_allocation_reservation_in_spanner(*args, **kwargs):
         return globals()['action_commit_order_promising_reservation'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "hard_reservation", "system_name": "Cloud Spanner Real-Time Hard Inventory Reservation"}
 
-action_commit_order_promising_reservation = commit_hard_allocation_reservation_in_spanner
 
 def export_order_fulfillment_routing_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

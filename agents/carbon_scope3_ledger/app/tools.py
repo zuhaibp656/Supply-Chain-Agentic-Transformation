@@ -502,7 +502,6 @@ def query_bigquery_shipment_telematics_scope3_ledger(*args, **kwargs):
         return globals()['query_shipment_level_scope3_emissions'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "bigquery_ghg", "system_name": "BigQuery Telematics & GLEC Freight Carbon Ledger"}
 
-query_shipment_level_scope3_emissions = query_bigquery_shipment_telematics_scope3_ledger
 
 def fetch_sap_e_waste_and_eu_cbam_customs_declarations(*args, **kwargs):
     """[Connected Enterprise System: SAP S/4HANA Customs & EU CBAM Declarations]
@@ -512,7 +511,6 @@ def fetch_sap_e_waste_and_eu_cbam_customs_declarations(*args, **kwargs):
         return globals()['query_eu_cbam_embedded_carbon_declarations'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_customs", "system_name": "SAP S/4HANA Customs & EU CBAM Declarations"}
 
-query_eu_cbam_embedded_carbon_declarations = fetch_sap_e_waste_and_eu_cbam_customs_declarations
 
 def query_google_earth_engine_eudr_forest_plot_audits(*args, **kwargs):
     """[Connected Enterprise System: Google Earth Engine EUDR Deforestation Compliance]
@@ -522,7 +520,6 @@ def query_google_earth_engine_eudr_forest_plot_audits(*args, **kwargs):
         return globals()['query_eudr_earth_engine_plot_verifications'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "earth_engine", "system_name": "Google Earth Engine EUDR Deforestation Compliance"}
 
-query_eudr_earth_engine_plot_verifications = query_google_earth_engine_eudr_forest_plot_audits
 
 def run_marginal_carbon_abatement_cost_solver(*args, **kwargs):
     """[Connected Enterprise System: Marginal Abatement Cost Curve (MACC) & Route Optimizer]
@@ -532,7 +529,6 @@ def run_marginal_carbon_abatement_cost_solver(*args, **kwargs):
         return globals()['query_low_carbon_carrier_and_supplier_swaps'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "abatement_solver", "system_name": "Marginal Abatement Cost Curve (MACC) & Route Optimizer"}
 
-query_low_carbon_carrier_and_supplier_swaps = run_marginal_carbon_abatement_cost_solver
 
 def commit_low_carbon_carrier_awards_in_sap_tm(*args, **kwargs):
     """[Connected Enterprise System: SAP Transportation Management Low-Carbon Carrier Awards]
@@ -542,7 +538,6 @@ def commit_low_carbon_carrier_awards_in_sap_tm(*args, **kwargs):
         return globals()['action_commit_low_carbon_carrier_swap'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "green_award", "system_name": "SAP Transportation Management Low-Carbon Carrier Awards"}
 
-action_commit_low_carbon_carrier_swap = commit_low_carbon_carrier_awards_in_sap_tm
 
 def export_carbon_disclosure_ledger_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

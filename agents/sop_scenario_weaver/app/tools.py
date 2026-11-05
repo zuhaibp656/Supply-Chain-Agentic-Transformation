@@ -511,7 +511,6 @@ def query_sap_ibp_unconstrained_demand_plan(*args, **kwargs):
         return globals()['query_unconstrained_demand_gaps'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_ibp", "system_name": "SAP IBP Unconstrained Demand Plan"}
 
-query_unconstrained_demand_gaps = query_sap_ibp_unconstrained_demand_plan
 
 def fetch_siemens_mes_plant_capacity_envelopes(*args, **kwargs):
     """[Connected Enterprise System: Siemens Opcenter MES Plant Capacity Envelopes]
@@ -521,7 +520,6 @@ def fetch_siemens_mes_plant_capacity_envelopes(*args, **kwargs):
         return globals()['query_plant_line_capacities'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "siemens_mes", "system_name": "Siemens Opcenter MES Plant Capacity Envelopes"}
 
-query_plant_line_capacities = fetch_siemens_mes_plant_capacity_envelopes
 
 def query_sap_ariba_supplier_component_allocations(*args, **kwargs):
     """[Connected Enterprise System: SAP Ariba Supplier Component Allocations]
@@ -531,7 +529,6 @@ def query_sap_ariba_supplier_component_allocations(*args, **kwargs):
         return globals()['query_supplier_allocations'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_ariba", "system_name": "SAP Ariba Supplier Component Allocations"}
 
-query_supplier_allocations = query_sap_ariba_supplier_component_allocations
 
 def run_ortools_constrained_sop_scenario_solver(*args, **kwargs):
     """[Connected Enterprise System: Google OR-Tools Constrained S&OP Scenario Optimizer]
@@ -541,7 +538,6 @@ def run_ortools_constrained_sop_scenario_solver(*args, **kwargs):
         return globals()['query_sop_scenario_evaluations'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "ortools_sop", "system_name": "Google OR-Tools Constrained S&OP Scenario Optimizer"}
 
-query_sop_scenario_evaluations = run_ortools_constrained_sop_scenario_solver
 
 def commit_reconciled_sop_consensus_to_sap_ibp(*args, **kwargs):
     """[Connected Enterprise System: SAP IBP Consensus Demand & Supply Key Figures]
@@ -551,7 +547,6 @@ def commit_reconciled_sop_consensus_to_sap_ibp(*args, **kwargs):
         return globals()['action_publish_constrained_sop_scenario'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "ibp_commit", "system_name": "SAP IBP Consensus Demand & Supply Key Figures"}
 
-action_publish_constrained_sop_scenario = commit_reconciled_sop_consensus_to_sap_ibp
 
 def export_sop_tradeoff_matrix_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

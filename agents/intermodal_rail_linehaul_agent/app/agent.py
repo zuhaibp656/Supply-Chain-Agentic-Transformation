@@ -156,7 +156,7 @@ class IntermodalRailLinehaulAgent:
             ramp_id='LPC_JOLIET_CHI',
             drayage_tractor_id='JBHT-DRAY-CHI42',
             chassis_id='TRAC-53-8821',
-            rationale='Synchronized J.B. Hunt drayage tractor JBHT-DRAY-CHI42 and chassis TRAC-53-8821 with BNSF Joliet crane grounding at 15:30 UTC, eliminating rail ramp storage fees.',
+            rationale='Synchronized V-Trans Logistics drayage tractor JBHT-DRAY-CHI42 and chassis TRAC-53-8821 with BNSF Joliet crane grounding at 15:30 UTC, eliminating rail ramp storage fees.',
             idempotency_key='RAIL-DRAY-20261022-01'
         )
         actions_taken.append(act2_res)

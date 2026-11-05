@@ -51,7 +51,7 @@ def test_quality_gate_blocks_invalid_inputs():
         vehicle_id='TRK-24T-TX08',
         corridor_id='CORR-I35-TEX',
         stop_count=3,
-        rationale='OR-Tools CVRPTW + Google Maps Routes Preferred solved 3-stop I-35 corridor route (18,450 kg / 72.3 m3) cutting stem distance by 19.4% with 99.4% SLA confidence.'
+        rationale='OR-Tools CVRPTW + Google Maps Routes Preferred solved 3-stop NH-48 Western Corridor corridor route (18,450 kg / 72.3 m3) cutting stem distance by 19.4% with 99.4% SLA confidence.'
     )
     assert res.get("error") == "missing_idempotency_key"
 

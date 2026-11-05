@@ -25,7 +25,7 @@ def test_query_yard_trailer_geofence_status():
     res = tools.query_yard_trailer_geofence_status(trailer_id="TRL-SWIFT-7741")
     assert res["total"] > 0
     record = res["rows"][0]
-    assert record["carrier_name"] == "Swift Transportation"
+    assert record["carrier_name"] == "TCI Freight Express"
     assert record["dwell_time_in_yard_minutes"] == 85.0
     assert record["status"] == "AT_RISK_OF_DETENTION"
 

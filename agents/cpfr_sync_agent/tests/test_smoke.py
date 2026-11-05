@@ -21,10 +21,10 @@ def test_list_systems():
 
 
 def test_query_retailer_edi852_pos():
-    res = tools.query_retailer_edi852_pos(retailer="Apex Hypermarket")
+    res = tools.query_retailer_edi852_pos(retailer="DMart (Avenue Supermarts)")
     assert res["total"] > 0
     record = res["rows"][0]
-    assert record["retailer"] == "Apex Hypermarket"
+    assert record["retailer"] == "DMart (Avenue Supermarts)"
     assert record["store_book_inventory"] > 0
     assert record["daily_scan_units"] == 0  # Zero scans indicates potential phantom issue
 
@@ -82,7 +82,7 @@ def test_quality_gate_blocks_out_of_bounds_replenishment():
 
 def test_end_to_end_scenario_execution():
     agent = CpfrSyncAgent()
-    query = "Harmonize retailer EDI 852 feeds, detect Apex Hypermarket store phantom inventory stockout, dispatch audit, and trigger VMI order."
+    query = "Harmonize retailer EDI 852 feeds, detect DMart (Avenue Supermarts) store phantom inventory stockout, dispatch audit, and trigger VMI order."
     result = agent.run_scenario(query)
     assert result["status"] == "success"
     assert result["findings_count"] >= 3

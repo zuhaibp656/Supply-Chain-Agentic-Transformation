@@ -519,7 +519,6 @@ def query_sap_s4hana_pos_and_baseline_orders(*args, **kwargs):
         return globals()['query_pos_store_scans'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_s4hana", "system_name": "SAP S/4HANA Sales & Distribution (SD / EDI 852)"}
 
-query_pos_store_scans = query_sap_s4hana_pos_and_baseline_orders
 
 def fetch_bigquery_weathernext_and_mobility_signals(*args, **kwargs):
     """[Connected Enterprise System: BigQuery Enterprise Demand Lake (WeatherNext 3 & Mobility)]
@@ -529,7 +528,6 @@ def fetch_bigquery_weathernext_and_mobility_signals(*args, **kwargs):
         return globals()['query_external_demand_signals'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "bigquery_lake", "system_name": "BigQuery Enterprise Demand Lake (WeatherNext 3 & Mobility)"}
 
-query_external_demand_signals = fetch_bigquery_weathernext_and_mobility_signals
 
 def run_vertex_timesfm_hierarchical_forecast_solver(*args, **kwargs):
     """[Connected Enterprise System: Vertex AI TimesFM Foundation Model]
@@ -539,7 +537,6 @@ def run_vertex_timesfm_hierarchical_forecast_solver(*args, **kwargs):
         return globals()['query_timesfm_forecast_horizons'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "timesfm", "system_name": "Vertex AI TimesFM Foundation Model"}
 
-query_timesfm_forecast_horizons = run_vertex_timesfm_hierarchical_forecast_solver
 
 def audit_sap_ibp_commercial_sales_overrides(*args, **kwargs):
     """[Connected Enterprise System: SAP Integrated Business Planning (IBP)]
@@ -549,7 +546,6 @@ def audit_sap_ibp_commercial_sales_overrides(*args, **kwargs):
         return globals()['query_fva_sales_bias'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_ibp", "system_name": "SAP Integrated Business Planning (IBP)"}
 
-query_fva_sales_bias = audit_sap_ibp_commercial_sales_overrides
 
 def commit_sap_s4hana_pir_planned_requirements(*args, **kwargs):
     """[Connected Enterprise System: SAP S/4HANA Planned Independent Requirements (PIR)]
@@ -559,7 +555,6 @@ def commit_sap_s4hana_pir_planned_requirements(*args, **kwargs):
         return globals()['action_commit_ibp_pir_change'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "sap_pir", "system_name": "SAP S/4HANA Planned Independent Requirements (PIR)"}
 
-action_commit_ibp_pir_change = commit_sap_s4hana_pir_planned_requirements
 
 def export_demand_consensus_csv_schedule(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

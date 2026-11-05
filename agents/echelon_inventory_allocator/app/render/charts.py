@@ -9,10 +9,10 @@ def create_echelon_inventory_chart_spec(
     """Generates a Multi-Echelon Stock Distribution & Rebalance chart."""
     if not data_points:
         data_points = [
-            {"node": "CDC Chicago (Tier 1)", "current_stock": 68400, "optimal_safety_stock": 32000, "status": "SURPLUS_POOL"},
-            {"node": "RDC Dallas (Tier 2)", "current_stock": 7200, "optimal_safety_stock": 14200, "status": "DEFICIT_REBALANCED"},
-            {"node": "RDC Atlanta (Tier 2)", "current_stock": 24500, "optimal_safety_stock": 11000, "status": "BALANCED_HEALTHY"},
-            {"node": "FDC Austin (Tier 3)", "current_stock": 4100, "optimal_safety_stock": 4500, "status": "BALANCED_HEALTHY"},
+            {"node": "CDC Mumbai (Bhiwandi) (Tier 1)", "current_stock": 68400, "optimal_safety_stock": 32000, "status": "SURPLUS_POOL"},
+            {"node": "RDC Delhi NCR (Gurugram) (Tier 2)", "current_stock": 7200, "optimal_safety_stock": 14200, "status": "DEFICIT_REBALANCED"},
+            {"node": "RDC Bengaluru (Nelamangala) (Tier 2)", "current_stock": 24500, "optimal_safety_stock": 11000, "status": "BALANCED_HEALTHY"},
+            {"node": "FDC Hyderabad (Shamshabad) (Tier 3)", "current_stock": 4100, "optimal_safety_stock": 4500, "status": "BALANCED_HEALTHY"},
         ]
 
     return {
@@ -20,7 +20,7 @@ def create_echelon_inventory_chart_spec(
         "description": "EchelonFlow Multi-Echelon Stochastic Inventory Allocation Telemetry",
         "title": {
             "text": "EchelonFlow Multi-Echelon Stock & Safety Buffer Positioning",
-            "subtitle": "Clark-Scarf Stochastic Pooling · CDC Surplus Rebalanced to RDC Dallas (+6,500 Units)",
+            "subtitle": "Clark-Scarf Stochastic Pooling · CDC Surplus Rebalanced to RDC Delhi NCR (Gurugram) (+6,500 Units)",
             "anchor": "start",
             "fontSize": 14,
             "subtitleFontSize": 11,

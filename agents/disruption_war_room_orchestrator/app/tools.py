@@ -522,7 +522,6 @@ def query_deepmind_weathernext_severe_weather_radar(*args, **kwargs):
         return globals()['query_weather_alerts'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "weathernext", "system_name": "Google DeepMind WeatherNext 3 Extreme Weather Radar"}
 
-query_weather_alerts = query_deepmind_weathernext_severe_weather_radar
 
 def fetch_spire_ais_maritime_vessel_telemetry(*args, **kwargs):
     """[Connected Enterprise System: Spire Global AIS Maritime Vessel Telemetry]
@@ -532,7 +531,6 @@ def fetch_spire_ais_maritime_vessel_telemetry(*args, **kwargs):
         return globals()['query_maritime_ais_vessels'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "spire_ais", "system_name": "Spire Global AIS Maritime Vessel Telemetry"}
 
-query_maritime_ais_vessels = fetch_spire_ais_maritime_vessel_telemetry
 
 def query_resilinc_tier_n_supplier_outage_alerts(*args, **kwargs):
     """[Connected Enterprise System: Resilinc Tier-N Supplier Disruption Telemetry]
@@ -542,7 +540,6 @@ def query_resilinc_tier_n_supplier_outage_alerts(*args, **kwargs):
         return globals()['query_resilinc_supplier_facilities'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "resilinc", "system_name": "Resilinc Tier-N Supplier Disruption Telemetry"}
 
-query_resilinc_supplier_facilities = query_resilinc_tier_n_supplier_outage_alerts
 
 def run_disruption_impact_and_revenue_at_risk_solver(*args, **kwargs):
     """[Connected Enterprise System: Disruption Revenue-At-Risk & Lead Time Impact Solver]
@@ -552,7 +549,6 @@ def run_disruption_impact_and_revenue_at_risk_solver(*args, **kwargs):
         return globals()['query_news_disruptions'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "impact_engine", "system_name": "Disruption Revenue-At-Risk & Lead Time Impact Solver"}
 
-query_news_disruptions = run_disruption_impact_and_revenue_at_risk_solver
 
 def commit_emergency_copacker_and_air_freight_reroute(*args, **kwargs):
     """[Connected Enterprise System: Emergency Logistics Reroute & Buffer Allocation]
@@ -562,7 +558,6 @@ def commit_emergency_copacker_and_air_freight_reroute(*args, **kwargs):
         return globals()['action_declare_war_room_disruption'](*args, **kwargs)
     return {"status": "SUCCESS", "source_system": "emergency_reroute", "system_name": "Emergency Logistics Reroute & Buffer Allocation"}
 
-action_declare_war_room_disruption = commit_emergency_copacker_and_air_freight_reroute
 
 def export_disruption_corridor_map_csv_and_memo(target_id: str = "", format_type: str = "csv") -> dict:
     """Generate an atomic, copyable CSV data schedule for Google Sheets or Excel import.

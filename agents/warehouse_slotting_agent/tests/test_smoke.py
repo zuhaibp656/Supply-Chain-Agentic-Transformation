@@ -31,7 +31,7 @@ def test_query_warehouse_slotting_velocity_tiers():
 
 
 def test_query_amr_picker_travel_telemetry():
-    res = tools.query_amr_picker_travel_telemetry(dc_id="RDC-DALLAS-02")
+    res = tools.query_amr_picker_travel_telemetry(dc_id="RDC-DELHI-02")
     assert res["total"] > 0
     record = res["rows"][0]
     assert record["amr_id"] == "AMR-KION-BOT-07"
@@ -39,7 +39,7 @@ def test_query_amr_picker_travel_telemetry():
 
 
 def test_query_wave_release_order_allocations():
-    res = tools.query_wave_release_order_allocations(dc_id="RDC-DALLAS-02")
+    res = tools.query_wave_release_order_allocations(dc_id="RDC-DELHI-02")
     assert res["total"] > 0
     bulk_zone = [r for r in res["rows"] if r["zone_id"] == "ZONE-BULK-MEZZANINE"][0]
     assert bulk_zone["wave_congestion_score"] == 0.84
@@ -83,7 +83,7 @@ def test_quality_gate_blocks_invalid_inputs():
 
 def test_end_to_end_scenario_execution():
     agent = WarehouseSlottingOptimizer()
-    query = "Audit 3D warehouse slotting for fast-moving beverage SKUs at RDC Dallas, eliminate excessive picker travel, and rebalance congested wave release profiles."
+    query = "Audit 3D warehouse slotting for fast-moving beverage SKUs at RDC Delhi NCR (Gurugram), eliminate excessive picker travel, and rebalance congested wave release profiles."
     result = agent.run_scenario(query)
     assert result["status"] == "success"
     assert result["findings_count"] >= 3
