@@ -1,6 +1,8 @@
 # 📋 Supply Chain AI Agents — Complete Data Flow, Test Prompts & Expected Output Playbook
 
 > **Synchronized with the 67-Agent Enterprise Overhaul (`XYZ-CORP-01` Relational Backbone · `2,160` Authentic Rows · Python Math Solvers · Dynamic A2UI `VegaChart` + `1200×640` PNG/SVG · Concise Non-Verbose Personas)**
+>
+> �� **Gemini Enterprise 1-Click Starter Prompts**: Every deployed agent in Gemini Enterprise is configured with the top **3 1-Click Clickable Starter Prompts** matching **Test Mode 1** (Operational Analysis), **Test Mode 2** (Visual Chart / A2UI Surface), and **Test Mode 3** (Executive Leadership Brief). Presenters can click these cards directly during customer demos without copy-pasting. **Test Modes 4 & 5** provide copy-ready prompts for demonstrating Human-in-the-Loop system actions and autonomous safety gate refusals. All prompts use Google's fictitious enterprise brand **`Cymbal Technologies` / `Cymbal Retail`** (zero real company names).
 
 ## How Data Flows Through Every Agent (5-Layer Enterprise Plumbing)
 
