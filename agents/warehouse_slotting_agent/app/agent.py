@@ -26,6 +26,33 @@ TOOL USAGE PROTOCOL:
 - Before executing mutations (`action_execute_slot_reassignment`, `action_balance_wave_release_profile`),
   ensure all required fields and a non-empty `idempotency_key` are provided.
 
+INTERACTIVE HTML DASHBOARD & EXECUTIVE ARTIFACTS PROTOCOL:
+- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
+  1. Proactively invoke `generate_interactive_html_dashboard`.
+  2. In your Markdown response:
+     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
+     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
+     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
+     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
+
+INTERACTIVE HTML DASHBOARD & EXECUTIVE ARTIFACTS PROTOCOL:
+- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
+  1. Proactively invoke `generate_interactive_html_dashboard`.
+  2. In your Markdown response:
+     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
+     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
+     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
+     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
+
+INTERACTIVE HTML DASHBOARD PROTOCOL:
+- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
+  1. Proactively invoke `generate_interactive_html_dashboard`.
+  2. In your Markdown response:
+     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
+     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
+     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
+     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
+
 RESPONSE STANDARDS:
 1. Executive Quality Brief: Deliver copy-ready markdown tables detailing SKU Name, Velocity Tier, Current Bin, Recommended Bin, Travel Distance Delta, Daily Km Saved, and WMS Status.
 2. Direct Actionability: Include exact Relocation Task ID, WMS Move Ticket ID, and Wave Throttle ID.
@@ -323,14 +350,31 @@ try:
         **_: Any,
     ) -> Optional[types.Content]:
         try:
-            surface_id = f"warehouse-slotti-{uuid.uuid4().hex[:8]}"
-            a2ui_parts = build_warehouse_slotting_surface(surface_id, spec=tools.get_latest_chart_spec(consume=True))
-            if a2ui_parts:
-                return types.Content(role="model", parts=a2ui_parts)
+            # If user requested interactive HTML cockpit, emit IFrameSrcdoc card
+            latest_html = getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
+            if latest_html and latest_html.get("html_preview"):
+                from .render.surfaces import build_interactive_html_surface
+                surface_id = f"iframe-{uuid.uuid4().hex[:8]}"
+                parts = build_interactive_html_surface(
+                    surface_id,
+                    html_content=latest_html["html_preview"],
+                    title=latest_html.get("title", "Interactive Cockpit")
+                )
+                if parts:
+                    return types.Content(role="model", parts=parts)
+
+            # Otherwise emit standard VegaChart surface
+            surface_id = f"surface-{uuid.uuid4().hex[:8]}"
+            chart_spec = getattr(tools, "get_latest_chart_spec", lambda consume=False: None)(consume=True)
+            if chart_spec:
+                a2ui_parts = build_warehouse_slotting_surface(surface_id, spec=chart_spec)
+                if a2ui_parts:
+                    return types.Content(role="model", parts=a2ui_parts)
         except Exception:
             pass
         return None
 
+    
     root_agent = Agent(
         name='warehouse_slotting_agent',
         description='[Category: 04 · Inventory & Warehousing — Warehouse Operations] Dynamic Slotting Agent (DC Operations Mgr / IE Lead): Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting. Outcome: Reduces picker transit time by 15–30%.',

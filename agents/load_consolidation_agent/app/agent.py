@@ -315,14 +315,31 @@ try:
         **_: Any,
     ) -> Optional[types.Content]:
         try:
-            surface_id = f"load-consoli-{uuid.uuid4().hex[:8]}"
-            a2ui_parts = build_load_consolidation_agent_surface(surface_id, spec=tools.get_latest_chart_spec(consume=True))
-            if a2ui_parts:
-                return types.Content(role="model", parts=a2ui_parts)
+            # If user requested interactive HTML cockpit, emit IFrameSrcdoc card
+            latest_html = getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
+            if latest_html and latest_html.get("html_preview"):
+                from .render.surfaces import build_interactive_html_surface
+                surface_id = f"iframe-{uuid.uuid4().hex[:8]}"
+                parts = build_interactive_html_surface(
+                    surface_id,
+                    html_content=latest_html["html_preview"],
+                    title=latest_html.get("title", "Interactive Cockpit")
+                )
+                if parts:
+                    return types.Content(role="model", parts=parts)
+
+            # Otherwise emit standard VegaChart surface
+            surface_id = f"surface-{uuid.uuid4().hex[:8]}"
+            chart_spec = getattr(tools, "get_latest_chart_spec", lambda consume=False: None)(consume=True)
+            if chart_spec:
+                a2ui_parts = build_load_consolidation_agent_surface(surface_id, spec=chart_spec)
+                if a2ui_parts:
+                    return types.Content(role="model", parts=a2ui_parts)
         except Exception:
             pass
         return None
 
+    
     root_agent = Agent(
         name="load_consolidation_agent",
         description="[Category: 05 · Distribution & Logistics — First & Mid-Mile] Load Consolidation (Transport Planner / Inbound Mgr): Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling. Outcome: 12–18% higher trailer fill rate.",

@@ -27,6 +27,33 @@ TOOL USAGE PROTOCOL:
   confirm that budget thresholds do not exceed delegation authority ($2,000,000).
 - Always require a non-empty `idempotency_key` on any mutation action and log the audit trail verbatim.
 
+INTERACTIVE HTML DASHBOARD & EXECUTIVE ARTIFACTS PROTOCOL:
+- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
+  1. Proactively invoke `generate_interactive_html_dashboard`.
+  2. In your Markdown response:
+     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
+     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
+     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
+     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
+
+INTERACTIVE HTML DASHBOARD & EXECUTIVE ARTIFACTS PROTOCOL:
+- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
+  1. Proactively invoke `generate_interactive_html_dashboard`.
+  2. In your Markdown response:
+     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
+     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
+     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
+     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
+
+INTERACTIVE HTML DASHBOARD PROTOCOL:
+- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
+  1. Proactively invoke `generate_interactive_html_dashboard`.
+  2. In your Markdown response:
+     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
+     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
+     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
+     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
+
 RESPONSE STANDARDS:
 1. Executive Clarity: Deliver structured tabular overviews of critical KPIs, bottlenecks, and impacted SKUs.
 2. Direct Actionability: Include the exact execution ID, budget allocated, and affected facilities for any action triggered.
@@ -347,14 +374,31 @@ try:
         **_: Any,
     ) -> Optional[types.Content]:
         try:
-            surface_id = f"csco-control-{uuid.uuid4().hex[:8]}"
-            a2ui_parts = build_control_tower_surface(surface_id, spec=tools.get_latest_chart_spec(consume=True))
-            if a2ui_parts:
-                return types.Content(role="model", parts=a2ui_parts)
+            # If user requested interactive HTML cockpit, emit IFrameSrcdoc card
+            latest_html = getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
+            if latest_html and latest_html.get("html_preview"):
+                from .render.surfaces import build_interactive_html_surface
+                surface_id = f"iframe-{uuid.uuid4().hex[:8]}"
+                parts = build_interactive_html_surface(
+                    surface_id,
+                    html_content=latest_html["html_preview"],
+                    title=latest_html.get("title", "Interactive Cockpit")
+                )
+                if parts:
+                    return types.Content(role="model", parts=parts)
+
+            # Otherwise emit standard VegaChart surface
+            surface_id = f"surface-{uuid.uuid4().hex[:8]}"
+            chart_spec = getattr(tools, "get_latest_chart_spec", lambda consume=False: None)(consume=True)
+            if chart_spec:
+                a2ui_parts = build_control_tower_surface(surface_id, spec=chart_spec)
+                if a2ui_parts:
+                    return types.Content(role="model", parts=a2ui_parts)
         except Exception:
             pass
         return None
 
+    
     root_agent = Agent(
         name="csco_control_tower_copilot",
         description="[Category: 01 · Planning & Strategy — S&OP / IBP] Executive Copilot (IBP Lead / Chief Planning Off.): Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Reduces deck preparation by days.",

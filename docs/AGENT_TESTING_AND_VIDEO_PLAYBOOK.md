@@ -8,19 +8,22 @@
 > 3. **The 3-Step Execution Flow**: How the agent ingests data, solves constraints, and executes safe writebacks.
 > 4. **3 Realistic High-Impact Business Prompts**: Authentic plain-English questions you can paste directly into Gemini Enterprise or the local ADK chat.
 
+- **🟢 Live in Gemini Enterprise**: 25 agents deployed to Vertex AI Reasoning Engine.
+- **⚪ In Catalog**: 35 agents specified across all SCOR pillars.
+
 ---
 
 ## 01 · Planning & Strategy (12 Agents)
 *Demand Forecasting, Trade Promotion, S&OP / IBP, Portfolio & SKU*
 
 ### #01 · Demand Sensing Agent (`demand_sensing_agent`)
-- **Sub-Pillar**: Demand Forecasting | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: Demand Planner / Forecaster · **ROI Benchmark**: `-20%–35% Short-Term WAPE` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $1.77T/yr global stockout & overstock distortion · 32%–45% manual SKU-week WAPE. Retailers & CPGs lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly ERP forecasts that miss POS, promo, and weather shifts.
-- **The AI Solution**: Synthesizes POS velocity, weather anomalies, and macro trends.
-- **Quantified Outcome**: Fuses daily POS sell-through, weather ensembles, and stockout imputation to cut short-horizon WAPE by 20%–35% and reduce safety-stock buffers.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -49,13 +52,13 @@ python3 scripts/test_agent_demo.py demand_sensing_agent
 ---
 
 ### #02 · Forecast Reconciliation (`cpfr_sync_agent`)
-- **Sub-Pillar**: Demand Forecasting | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: Commercial Planning Lead · **ROI Benchmark**: `-40%–55% CPFR Variance` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $1.77T/yr global stockout & overstock distortion · 32%–45% manual SKU-week WAPE. Retailers & CPGs lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly ERP forecasts that miss POS, promo, and weather shifts.
-- **The AI Solution**: Identifies unmodeled drivers across eCommerce and retail channels.
-- **Quantified Outcome**: Reconciles retailer EDI 830 forecasts against commercial & supply baselines, eliminating systematic bias and cutting stockout/overstock swings.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -84,13 +87,13 @@ python3 scripts/test_agent_demo.py cpfr_sync_agent
 ---
 
 ### #03 · NPI Demand Profiler (`npi_demand_profiler`)
-- **Sub-Pillar**: Demand Forecasting | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: Brand & Innovation Manager · **ROI Benchmark**: `-30% Launch Forecast Error` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $1.77T/yr global stockout & overstock distortion · 32%–45% manual SKU-week WAPE. Retailers & CPGs lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly ERP forecasts that miss POS, promo, and weather shifts.
-- **The AI Solution**: Matches launch packaging and attributes to historical lookalikes.
-- **Quantified Outcome**: Clusters new SKU attributes against historical lookalikes and updates early POS velocity curves in week 1–4 to prevent launch stockouts or dead stock.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -119,13 +122,13 @@ python3 scripts/test_agent_demo.py npi_demand_profiler
 ---
 
 ### #04 · Promo ROI Simulator (`promo_lift_simulator`)
-- **Sub-Pillar**: Trade Promotion | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: Trade Marketing Manager · **ROI Benchmark**: `+15%–25% Promo Net ROI` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 59%–67% of CPG trade promotions fail to break even · 4%–7% revenue leaked. Trade spend is typically the #2 P&L line item (15%–25% of gross sales), yet 59%–67% of promotions lose money due to subsidized baseline volume, forward-buying, and unverified retailer deductions.
-- **The AI Solution**: Simulates price elasticity, shelf lift, and incremental spend return.
-- **Quantified Outcome**: Simulates baseline cannibalization, post-promo dip, and incremental gross margin before trade funds are committed—blocking unprofitable events.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -154,13 +157,13 @@ python3 scripts/test_agent_demo.py promo_lift_simulator
 ---
 
 ### #05 · JBP Negotiation Agent (`field_beat_distributor_sync_agent`)
-- **Sub-Pillar**: Trade Promotion | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: Key Account Manager (KAM) · **ROI Benchmark**: `+2–4 pts JBP Margin` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 59%–67% of CPG trade promotions fail to break even · 4%–7% revenue leaked. Trade spend is typically the #2 P&L line item (15%–25% of gross sales), yet 59%–67% of promotions lose money due to subsidized baseline volume, forward-buying, and unverified retailer deductions.
-- **The AI Solution**: Creates customized sell-in story decks and joint promotional calendars.
-- **Quantified Outcome**: Optimizes joint retailer-manufacturer volume, funding tiers, and display slotting simultaneously so trade investment grows net contribution.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -189,13 +192,13 @@ python3 scripts/test_agent_demo.py field_beat_distributor_sync_agent
 ---
 
 ### #06 · Deduction Audit Agent (`trade_scheme_claims_reconciler`)
-- **Sub-Pillar**: Trade Promotion | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: Revenue / Trade Finance Lead · **ROI Benchmark**: `Recovers 1.5%–3% Trade Spend` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 59%–67% of CPG trade promotions fail to break even · 4%–7% revenue leaked. Trade spend is typically the #2 P&L line item (15%–25% of gross sales), yet 59%–67% of promotions lose money due to subsidized baseline volume, forward-buying, and unverified retailer deductions.
-- **The AI Solution**: Audits scanned proof-of-performance circulars and invoices via OCR.
-- **Quantified Outcome**: Cross-matches retailer deduction claims against contracted scan dates, POS lift, and proof-of-performance—recovering invalid chargebacks.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -224,13 +227,13 @@ python3 scripts/test_agent_demo.py trade_scheme_claims_reconciler
 ---
 
 ### #07 · Consensus & Gap Agent (`sop_scenario_weaver`)
-- **Sub-Pillar**: S&OP / IBP | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: S&OP / Supply Planning Dir. · **ROI Benchmark**: `+1.5–3 pts EBITDA Protection` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 2–4 week manual S&OP reconciliation lag · 2%–4% EBITDA lost to siloed plans. Disconnected sales, plant, and finance spreadsheets take 15–22 business days to reconcile each month, forcing costly expedite freight and margin-dilutive allocation trade-offs.
-- **The AI Solution**: Reconciles unconstrained demand with factory plant bottleneck limits.
-- **Quantified Outcome**: Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority).
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -259,13 +262,13 @@ python3 scripts/test_agent_demo.py sop_scenario_weaver
 ---
 
 ### #08 · Digital War-Room Agent (`disruption_war_room_orchestrator`)
-- **Sub-Pillar**: S&OP / IBP | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: Supply Chain VP / COO · **ROI Benchmark**: `Protects 97%+ Strategic OTIF` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 2–4 week manual S&OP reconciliation lag · 2%–4% EBITDA lost to siloed plans. Disconnected sales, plant, and finance spreadsheets take 15–22 business days to reconcile each month, forcing costly expedite freight and margin-dilutive allocation trade-offs.
-- **The AI Solution**: Evaluates co-packer shifts and allocation trade-offs during supply outages.
-- **Quantified Outcome**: Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -294,13 +297,13 @@ python3 scripts/test_agent_demo.py disruption_war_room_orchestrator
 ---
 
 ### #09 · Executive Copilot (`csco_control_tower_copilot`)
-- **Sub-Pillar**: S&OP / IBP | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: IBP Lead / Chief Planning Off. · **ROI Benchmark**: `-85% Executive Latency` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 2–4 week manual S&OP reconciliation lag · 2%–4% EBITDA lost to siloed plans. Disconnected sales, plant, and finance spreadsheets take 15–22 business days to reconcile each month, forcing costly expedite freight and margin-dilutive allocation trade-offs.
-- **The AI Solution**: Generates pre-read decks and tracks sign-offs across cross-functional leads.
-- **Quantified Outcome**: Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand—turning 5-day analyst deck cycles into instant executive action.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -329,13 +332,13 @@ python3 scripts/test_agent_demo.py csco_control_tower_copilot
 ---
 
 ### #10 · SKU Pruning Agent (`working_capital_cash_bridge`)
-- **Sub-Pillar**: Portfolio & SKU | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: Category Manager · **ROI Benchmark**: `Frees 12%–20% Tail Capital` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: Bottom 30%–50% of SKUs generate <5% of profit while trapping 25%+ of inventory. Unpruned long-tail SKUs, uncoordinated PIPO engineering cutovers, and static MOQs inflate changeover losses, obsolescence write-offs (1.5%–3% of COGS), and cost-to-serve.
-- **The AI Solution**: Scores velocity, plant changeover cost, and shelf revenue yield.
-- **Quantified Outcome**: Scores every SKU on true net contribution after carrying, changeover, and obsolescence cost—unlocking trapped working capital from the long tail.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -364,13 +367,13 @@ python3 scripts/test_agent_demo.py working_capital_cash_bridge
 ---
 
 ### #11 · PIPO Run-Out Agent (`eco_cutover_orchestrator`)
-- **Sub-Pillar**: Portfolio & SKU | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: Lifecycle / Materials Mgr · **ROI Benchmark**: `-60%–80% Obsolescence Scrap` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: Bottom 30%–50% of SKUs generate <5% of profit while trapping 25%+ of inventory. Unpruned long-tail SKUs, uncoordinated PIPO engineering cutovers, and static MOQs inflate changeover losses, obsolescence write-offs (1.5%–3% of COGS), and cost-to-serve.
-- **The AI Solution**: Orchestrates transition buffers to sync packaging and formulation cuts.
-- **Quantified Outcome**: Synchronizes old-component run-out with new-artwork/BOM ramp-up across plants and DCs to eliminate stranded packaging and obsolete inventory.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -399,13 +402,13 @@ python3 scripts/test_agent_demo.py eco_cutover_orchestrator
 ---
 
 ### #12 · Cost-to-Serve Diagnostic (`network_twin_architect`)
-- **Sub-Pillar**: Portfolio & SKU | **Pillar**: 01 · Planning & Strategy
-- **Primary Human Persona**: Commercial Finance Director · **ROI Benchmark**: `-6%–11% Network Cost-to-Serve` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 01 · Planning & Strategy
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: Bottom 30%–50% of SKUs generate <5% of profit while trapping 25%+ of inventory. Unpruned long-tail SKUs, uncoordinated PIPO engineering cutovers, and static MOQs inflate changeover losses, obsolescence write-offs (1.5%–3% of COGS), and cost-to-serve.
-- **The AI Solution**: Calculates net-net margin across Club, Grocery, and eCommerce packs.
-- **Quantified Outcome**: Computes granular SKU-customer-lane cost-to-serve and re-optimizes MOQs, pallet tiers, and DC sourcing assignments to restore pocket margin.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🛒 SAP S/4HANA (SD/MM)**: Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts.
@@ -437,13 +440,13 @@ python3 scripts/test_agent_demo.py network_twin_architect
 *Supplier Network, Material & Packaging, Contract & PO Management*
 
 ### #13 · Disruption Sensing Agent (`tier_n_risk_sentinel`)
-- **Sub-Pillar**: Supplier Network | **Pillar**: 02 · Sourcing & Procurement
-- **Primary Human Persona**: Procurement Dir. / Risk Mgr · **ROI Benchmark**: `-55% Disruption Downtime` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 02 · Sourcing & Procurement
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 42% of 1 year's EBITDA lost per decade to shocks · 65%+ originate in Tier-2+. Over 65% of supply disruptions originate in unmapped Tier-2/Tier-3 sub-suppliers, while manual supplier qualification and Scope 3 audits stall sourcing agility for 4–8 weeks.
-- **The AI Solution**: Monitors multi-tier supply feeds, port delays, and vendor financials.
-- **Quantified Outcome**: Continuously monitors sub-tier financial, geopolitical, weather, and port signals—triggering alternate allocations weeks before line stoppage.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🤝 SAP Ariba**: Manages supplier master agreements, active RFQ bid sheets, and multi-tier vendor compliance records.
@@ -472,13 +475,13 @@ python3 scripts/test_agent_demo.py tier_n_risk_sentinel
 ---
 
 ### #14 · Onboarding & Qual. Agent (`supplier_quality_sentinel`)
-- **Sub-Pillar**: Supplier Network | **Pillar**: 02 · Sourcing & Procurement
-- **Primary Human Persona**: Procurement Operations Lead · **ROI Benchmark**: `-80% Onboarding Cycle Time` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 02 · Sourcing & Procurement
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 42% of 1 year's EBITDA lost per decade to shocks · 65%+ originate in Tier-2+. Over 65% of supply disruptions originate in unmapped Tier-2/Tier-3 sub-suppliers, while manual supplier qualification and Scope 3 audits stall sourcing agility for 4–8 weeks.
-- **The AI Solution**: Parses BRC/ISO audits, food-safety filings, and tax registrations.
-- **Quantified Outcome**: Automates ISO/HACCP certificate verification, financial health scoring, and sanctions screening—cutting vendor qualification from weeks to hours.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🤝 SAP Ariba**: Manages supplier master agreements, active RFQ bid sheets, and multi-tier vendor compliance records.
@@ -507,13 +510,13 @@ python3 scripts/test_agent_demo.py supplier_quality_sentinel
 ---
 
 ### #15 · ESG & Scope 3 Auditor (`carbon_scope3_ledger`)
-- **Sub-Pillar**: Supplier Network | **Pillar**: 02 · Sourcing & Procurement
-- **Primary Human Persona**: Chief Sustainability Officer · **ROI Benchmark**: `100% Audit-Ready Scope 3` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 02 · Sourcing & Procurement
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 42% of 1 year's EBITDA lost per decade to shocks · 65%+ originate in Tier-2+. Over 65% of supply disruptions originate in unmapped Tier-2/Tier-3 sub-suppliers, while manual supplier qualification and Scope 3 audits stall sourcing agility for 4–8 weeks.
-- **The AI Solution**: Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs.
-- **Quantified Outcome**: Replaces coarse spend-based averages with primary supplier + lane emissions—preventing EU CBAM penalties and cutting external assurance fees.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🤝 SAP Ariba**: Manages supplier master agreements, active RFQ bid sheets, and multi-tier vendor compliance records.
@@ -542,13 +545,13 @@ python3 scripts/test_agent_demo.py carbon_scope3_ledger
 ---
 
 ### #16 · Commodity Index Advisor (`commodity_index_advisor`)
-- **Sub-Pillar**: Material & Packaging | **Pillar**: 02 · Sourcing & Procurement
-- **Primary Human Persona**: Category Sourcing Mgr (Direct) · **ROI Benchmark**: `-4%–8% Direct Material Spend` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 02 · Sourcing & Procurement
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 6%–14% supplier quote variance vs. clean-sheet · rising EU EPR/PPWR fees. Without live commodity index decomposition and clean-sheet BOM models, buyers overpay by 5%–12% on direct materials and face escalating Extended Producer Responsibility (EPR) packaging levies.
-- **The AI Solution**: Correlates CBOT/Platts feedstocks with depletion to advise hedging.
-- **Quantified Outcome**: Tracks LME, resin, pulp, energy, and agri-commodity curves against BOM exposure to recommend optimal forward-contract split and index clauses.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🤝 SAP Ariba**: Manages supplier master agreements, active RFQ bid sheets, and multi-tier vendor compliance records.
@@ -577,13 +580,13 @@ python3 scripts/test_agent_demo.py commodity_index_advisor
 ---
 
 ### #17 · Dynamic Should-Cost Agent (`rfq_should_cost_agent`)
-- **Sub-Pillar**: Material & Packaging | **Pillar**: 02 · Sourcing & Procurement
-- **Primary Human Persona**: Strategic Sourcing Lead · **ROI Benchmark**: `5%–10% RFP Spend Savings` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 02 · Sourcing & Procurement
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 6%–14% supplier quote variance vs. clean-sheet · rising EU EPR/PPWR fees. Without live commodity index decomposition and clean-sheet BOM models, buyers overpay by 5%–12% on direct materials and face escalating Extended Producer Responsibility (EPR) packaging levies.
-- **The AI Solution**: Deconstructs packaging specs (resin weight, corrugate, conversion energy).
-- **Quantified Outcome**: Decomposes every supplier quote into raw material, conversion, energy, logistics, and margin—arming buyers with hard clean-sheet leverage.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🤝 SAP Ariba**: Manages supplier master agreements, active RFQ bid sheets, and multi-tier vendor compliance records.
@@ -612,13 +615,13 @@ python3 scripts/test_agent_demo.py rfq_should_cost_agent
 ---
 
 ### #18 · Sustainable Packaging Agent (`sustainable_packaging_agent`)
-- **Sub-Pillar**: Material & Packaging | **Pillar**: 02 · Sourcing & Procurement
-- **Primary Human Persona**: Packaging R&D Engineer · **ROI Benchmark**: `-15%–25% EPR & Spec Cost` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 02 · Sourcing & Procurement
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 6%–14% supplier quote variance vs. clean-sheet · rising EU EPR/PPWR fees. Without live commodity index decomposition and clean-sheet BOM models, buyers overpay by 5%–12% on direct materials and face escalating Extended Producer Responsibility (EPR) packaging levies.
-- **The AI Solution**: Evaluates PCR resins and barrier materials against line runnability & taxes.
-- **Quantified Outcome**: Balances resin/fiber cost, crush/barrier physics, and country-by-country EPR/PPWR eco-modulation fees to lower total packaging cost.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🤝 SAP Ariba**: Manages supplier master agreements, active RFQ bid sheets, and multi-tier vendor compliance records.
@@ -647,13 +650,13 @@ python3 scripts/test_agent_demo.py sustainable_packaging_agent
 ---
 
 ### #19 · Contract Leakage Agent (`tariff_esg_agent`)
-- **Sub-Pillar**: Contract & PO Mgmt | **Pillar**: 02 · Sourcing & Procurement
-- **Primary Human Persona**: Commercial Sourcing / Legal · **ROI Benchmark**: `Recovers 2%–4% Addressable Spend` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 02 · Sourcing & Procurement
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $12.88–$15.96 per manual invoice vs. $2.18 digital · 3%–5% contract leakage. Enterprises lose 3%–5% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.
-- **The AI Solution**: Reconciles live spend against negotiated rebate tiers and volume discount scales.
-- **Quantified Outcome**: Audits live POs and invoices against master PDF contract tiers, volume rebates, and de-escalation clauses to stop off-contract value leakage.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🤝 SAP Ariba**: Manages supplier master agreements, active RFQ bid sheets, and multi-tier vendor compliance records.
@@ -682,13 +685,13 @@ python3 scripts/test_agent_demo.py tariff_esg_agent
 ---
 
 ### #20 · PO Expediting Agent (`master_data_leadtime_steward`)
-- **Sub-Pillar**: Contract & PO Mgmt | **Pillar**: 02 · Sourcing & Procurement
-- **Primary Human Persona**: Buyer / Procurement Coord. · **ROI Benchmark**: `-35%–50% Expedite Freight` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 02 · Sourcing & Procurement
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $12.88–$15.96 per manual invoice vs. $2.18 digital · 3%–5% contract leakage. Enterprises lose 3%–5% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.
-- **The AI Solution**: Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments.
-- **Quantified Outcome**: Continuously recalibrates ERP vendor lead times and autonomously resolves ~70% of routine PO acknowledgments and date slips before expedite crises.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🤝 SAP Ariba**: Manages supplier master agreements, active RFQ bid sheets, and multi-tier vendor compliance records.
@@ -717,13 +720,13 @@ python3 scripts/test_agent_demo.py master_data_leadtime_steward
 ---
 
 ### #21 · Three-Way Match Dispute (`three_way_match_dispute`)
-- **Sub-Pillar**: Contract & PO Mgmt | **Pillar**: 02 · Sourcing & Procurement
-- **Primary Human Persona**: Accounts Payable Lead · **ROI Benchmark**: `-80% Invoice Exception Cost` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 02 · Sourcing & Procurement
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $12.88–$15.96 per manual invoice vs. $2.18 digital · 3%–5% contract leakage. Enterprises lose 3%–5% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.
-- **The AI Solution**: Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices.
-- **Quantified Outcome**: Reconciles PO, Goods Receipt (ASN/GRN), and Invoice line variances automatically—capturing early-payment discounts and cutting AP unit cost by 80%.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🤝 SAP Ariba**: Manages supplier master agreements, active RFQ bid sheets, and multi-tier vendor compliance records.
@@ -755,13 +758,13 @@ python3 scripts/test_agent_demo.py three_way_match_dispute
 *Production Scheduling, Capacity Planning, Quality & Compliance*
 
 ### #22 · Changeover Optimizer (`finite_production_scheduler`)
-- **Sub-Pillar**: Production Scheduling | **Pillar**: 03 · Manufacturing & Production
-- **Primary Human Persona**: Master Production Scheduler · **ROI Benchmark**: `+4–7 pts Line OEE Lift` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 03 · Manufacturing & Production
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 12%–22% scheduled runtime lost to changeovers & reactive line re-sequencing. Sequence-blind ERP schedules trigger excessive allergen/color washouts, uncertified shift bottlenecks, and hours of manual schedule rebuilding whenever a machine or material slips.
-- **The AI Solution**: Sequences allergen, kosher, and packaging runs to minimize washdowns.
-- **Quantified Outcome**: Solves finite-capacity campaign wheels across allergens, colors, and pack formats—cutting sanitation/changeover downtime by 15%–25%.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **⚙️ Siemens Opcenter MES**: Live plant machine work center status, run rates, job dispatch queues, and maintenance schedules.
@@ -790,13 +793,13 @@ python3 scripts/test_agent_demo.py finite_production_scheduler
 ---
 
 ### #23 · Disruption Re-sequencer (`line_schedule_optimizer`)
-- **Sub-Pillar**: Production Scheduling | **Pillar**: 03 · Manufacturing & Production
-- **Primary Human Persona**: Shop Floor / Shift Lead · **ROI Benchmark**: `-40% Disruption Output Loss` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 03 · Manufacturing & Production
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 12%–22% scheduled runtime lost to changeovers & reactive line re-sequencing. Sequence-blind ERP schedules trigger excessive allergen/color washouts, uncertified shift bottlenecks, and hours of manual schedule rebuilding whenever a machine or material slips.
-- **The AI Solution**: Detects machine halts and re-routes perishable WIP to alternate lines.
-- **Quantified Outcome**: Re-optimizes shift schedules in under 3 minutes when a filler trips or raw material arrives late—minimizing lost cases and missed dispatch waves.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **⚙️ Siemens Opcenter MES**: Live plant machine work center status, run rates, job dispatch queues, and maintenance schedules.
@@ -825,13 +828,13 @@ python3 scripts/test_agent_demo.py line_schedule_optimizer
 ---
 
 ### #24 · Labor & Line Balancing (`labor_line_balancing_agent`)
-- **Sub-Pillar**: Production Scheduling | **Pillar**: 03 · Manufacturing & Production
-- **Primary Human Persona**: Plant Operations Manager · **ROI Benchmark**: `+8%–12% Direct Labor Output` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 03 · Manufacturing & Production
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 12%–22% scheduled runtime lost to changeovers & reactive line re-sequencing. Sequence-blind ERP schedules trigger excessive allergen/color washouts, uncertified shift bottlenecks, and hours of manual schedule rebuilding whenever a machine or material slips.
-- **The AI Solution**: Maps shift skill certifications and fatigue constraints to line speeds.
-- **Quantified Outcome**: Matches certified operator skills, absenteeism signals, and ergonomic rotation rules to live line schedules—cutting overtime and micro-stoppages.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **⚙️ Siemens Opcenter MES**: Live plant machine work center status, run rates, job dispatch queues, and maintenance schedules.
@@ -860,13 +863,13 @@ python3 scripts/test_agent_demo.py labor_line_balancing_agent
 ---
 
 ### #25 · Bottleneck Diagnostic (`predictive_oee_sentinel`)
-- **Sub-Pillar**: Capacity Planning | **Pillar**: 03 · Manufacturing & Production
-- **Primary Human Persona**: Supply Chain Ops Director · **ROI Benchmark**: `-30%–45% Unplanned Stops` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 03 · Manufacturing & Production
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 5%–20% of manufacturing capacity lost to unplanned downtime ($50B+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%–25% unit cost penalty) and poorly targeted CapEx expansions.
-- **The AI Solution**: Assesses CIP utilities, boiler loads, and cold storage holding limits.
-- **Quantified Outcome**: Combines PLC telemetry with 6-month Rough-Cut Capacity Planning (RCCP) to prevent unplanned breakdowns and expose plant bottlenecks months ahead.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **⚙️ Siemens Opcenter MES**: Live plant machine work center status, run rates, job dispatch queues, and maintenance schedules.
@@ -895,13 +898,13 @@ python3 scripts/test_agent_demo.py predictive_oee_sentinel
 ---
 
 ### #26 · Co-Packer Allocation (`copacker_allocation_agent`)
-- **Sub-Pillar**: Capacity Planning | **Pillar**: 03 · Manufacturing & Production
-- **Primary Human Persona**: External Sourcing / CMO Lead · **ROI Benchmark**: `-8%–14% External Tolling Cost` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 03 · Manufacturing & Production
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 5%–20% of manufacturing capacity lost to unplanned downtime ($50B+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%–25% unit cost penalty) and poorly targeted CapEx expansions.
-- **The AI Solution**: Models internal conversion costs against co-packer tolling agreements.
-- **Quantified Outcome**: Allocates SKUs across internal plants and external CMOs by optimizing conversion fees, component freight, MOQ tiers, and delivered gross margin.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **⚙️ Siemens Opcenter MES**: Live plant machine work center status, run rates, job dispatch queues, and maintenance schedules.
@@ -930,13 +933,13 @@ python3 scripts/test_agent_demo.py copacker_allocation_agent
 ---
 
 ### #27 · CapEx Simulator (`capex_simulator_agent`)
-- **Sub-Pillar**: Capacity Planning | **Pillar**: 03 · Manufacturing & Production
-- **Primary Human Persona**: VP Manufacturing Engineering · **ROI Benchmark**: `Avoids 15%–25% Idle CapEx` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 03 · Manufacturing & Production
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 5%–20% of manufacturing capacity lost to unplanned downtime ($50B+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%–25% unit cost penalty) and poorly targeted CapEx expansions.
-- **The AI Solution**: Simulates multi-year volume trends to test high-speed line expansions.
-- **Quantified Outcome**: Stress-tests new line, automation, and plant investments across stochastic demand, tariff, and OEE scenarios before committing board capital.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **⚙️ Siemens Opcenter MES**: Live plant machine work center status, run rates, job dispatch queues, and maintenance schedules.
@@ -965,13 +968,13 @@ python3 scripts/test_agent_demo.py capex_simulator_agent
 ---
 
 ### #28 · Visual Defect Triager (`inline_yield_guardian`)
-- **Sub-Pillar**: Quality & Compliance | **Pillar**: 03 · Manufacturing & Production
-- **Primary Human Persona**: QA Manager / Line Inspector · **ROI Benchmark**: `-35%–50% Quality Scrap` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 03 · Manufacturing & Production
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: COPQ erodes 3%–8% of manufacturing COGS · 7–18 days manual batch QA hold. End-of-line sampling catches defects only after full pallets are produced, while manual paper/PDF batch record review traps finished goods in quarantine for 1–2+ weeks.
-- **The AI Solution**: Inspects high-speed video frames for crimped seals, lot codes, and labels.
-- **Quantified Outcome**: Detects seal, fill, label, and surface defects inline in milliseconds—halting drift before whole pallets turn into scrap or rework.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **⚙️ Siemens Opcenter MES**: Live plant machine work center status, run rates, job dispatch queues, and maintenance schedules.
@@ -1000,13 +1003,13 @@ python3 scripts/test_agent_demo.py inline_yield_guardian
 ---
 
 ### #29 · Batch Record Auditor (`batch_record_auditor`)
-- **Sub-Pillar**: Quality & Compliance | **Pillar**: 03 · Manufacturing & Production
-- **Primary Human Persona**: Regulatory Compliance Lead · **ROI Benchmark**: `-70% Batch Release Lead Time` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 03 · Manufacturing & Production
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: COPQ erodes 3%–8% of manufacturing COGS · 7–18 days manual batch QA hold. End-of-line sampling catches defects only after full pallets are produced, while manual paper/PDF batch record review traps finished goods in quarantine for 1–2+ weeks.
-- **The AI Solution**: Parses BPR and COA documents to flag pasteurization & CCP deviations.
-- **Quantified Outcome**: Audits electronic/scanned batch records, LIMS lab results, and sterilization logs automatically—freeing millions in quarantined finished goods.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **⚙️ Siemens Opcenter MES**: Live plant machine work center status, run rates, job dispatch queues, and maintenance schedules.
@@ -1035,13 +1038,13 @@ python3 scripts/test_agent_demo.py batch_record_auditor
 ---
 
 ### #30 · RCA & CAPA Copilot (`scrap_defect_root_cause_agent`)
-- **Sub-Pillar**: Quality & Compliance | **Pillar**: 03 · Manufacturing & Production
-- **Primary Human Persona**: Continuous Improvement Lead · **ROI Benchmark**: `-40%–55% Repeat Quality Loss` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 03 · Manufacturing & Production
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: COPQ erodes 3%–8% of manufacturing COGS · 7–18 days manual batch QA hold. End-of-line sampling catches defects only after full pallets are produced, while manual paper/PDF batch record review traps finished goods in quarantine for 1–2+ weeks.
-- **The AI Solution**: Correlates consumer complaints with ingredient lots and machine telemetry.
-- **Quantified Outcome**: Correlates supplier raw-material lots, ambient humidity, operator shifts, and machine parameters to isolate true root causes and prevent repeat scrap.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **⚙️ Siemens Opcenter MES**: Live plant machine work center status, run rates, job dispatch queues, and maintenance schedules.
@@ -1073,13 +1076,13 @@ python3 scripts/test_agent_demo.py scrap_defect_root_cause_agent
 *Positioning & Optimization (MEIO), 3D Warehouse Operations, Omnichannel ATP*
 
 ### #31 · Safety Stock Agent (`meio_safety_stock_agent`)
-- **Sub-Pillar**: Positioning & Optimization | **Pillar**: 04 · Inventory & Warehousing
-- **Primary Human Persona**: Inventory Optimization Lead · **ROI Benchmark**: `-12%–22% Safety Stock Capital` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 04 · Inventory & Warehousing
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 25%–32% annual inventory carrying cost · 20%–35% excess single-node buffer. Static ERP reorder rules buffer each DC independently—trapping 20%–35% excess working capital in slow movers while fast-moving regional hubs still suffer stockouts.
-- **The AI Solution**: Recalibrates multi-echelon buffers using live lead-time and demand variance.
-- **Quantified Outcome**: Simultaneously optimizes safety stocks across plants, central hubs, and regional DCs—freeing 12%–22% in working capital while lifting fill rates.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **📦 Manhattan Active WMS**: Real-time bin/aisle slotting, picker travel telemetry, wave release queues, and dock door schedules.
@@ -1108,13 +1111,13 @@ python3 scripts/test_agent_demo.py meio_safety_stock_agent
 ---
 
 ### #32 · SLOB Disposition Agent (`slob_disposition_agent`)
-- **Sub-Pillar**: Positioning & Optimization | **Pillar**: 04 · Inventory & Warehousing
-- **Primary Human Persona**: Inventory Controller / Buyer · **ROI Benchmark**: `+25%–40% Aged Stock Recovery` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 04 · Inventory & Warehousing
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 25%–32% annual inventory carrying cost · 20%–35% excess single-node buffer. Static ERP reorder rules buffer each DC independently—trapping 20%–35% excess working capital in slow movers while fast-moving regional hubs still suffer stockouts.
-- **The AI Solution**: Analyzes shelf-life risk and triggers promotional bundles or liquidations.
-- **Quantified Outcome**: Flags slow-moving and aging lots 60–90 days earlier and ranks inter-DC transfer, promo bundling, or secondary channels to avoid write-offs.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **📦 Manhattan Active WMS**: Real-time bin/aisle slotting, picker travel telemetry, wave release queues, and dock door schedules.
@@ -1143,13 +1146,13 @@ python3 scripts/test_agent_demo.py slob_disposition_agent
 ---
 
 ### #33 · Inter-Facility Rebalancer (`crossdock_transfer_orchestrator`)
-- **Sub-Pillar**: Positioning & Optimization | **Pillar**: 04 · Inventory & Warehousing
-- **Primary Human Persona**: Replenishment Planner · **ROI Benchmark**: `-35%–50% Lost-Sale Stockouts` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 04 · Inventory & Warehousing
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 25%–32% annual inventory carrying cost · 20%–35% excess single-node buffer. Static ERP reorder rules buffer each DC independently—trapping 20%–35% excess working capital in slow movers while fast-moving regional hubs still suffer stockouts.
-- **The AI Solution**: Generates automated inter-DC and store transfers to balance localized gluts.
-- **Quantified Outcome**: Balances inventory imbalances across regional DCs before stockouts hit—weighing transfer freight cost against saved gross margin and OTIF penalties.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **📦 Manhattan Active WMS**: Real-time bin/aisle slotting, picker travel telemetry, wave release queues, and dock door schedules.
@@ -1178,13 +1181,13 @@ python3 scripts/test_agent_demo.py crossdock_transfer_orchestrator
 ---
 
 ### #34 · Dynamic Slotting Agent (`warehouse_slotting_agent`)
-- **Sub-Pillar**: Warehouse Operations | **Pillar**: 04 · Inventory & Warehousing
-- **Primary Human Persona**: DC Operations Mgr / IE Lead · **ROI Benchmark**: `-15%–28% Picker Travel Time` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 04 · Inventory & Warehousing
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: Order picking = 50%–55% of DC operating cost · ~55% of picker time is walking. Static warehouse slotting, congested receiving docks (6–24h dock-to-stock lag), and rigid wave releases waste over half of floor labor in unproductive travel and overtime.
-- **The AI Solution**: Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting.
-- **Quantified Outcome**: Re-slots fast-moving and co-ordered SKUs into ergonomic golden zones and optimizes TSP pick paths—boosting DC throughput with $0 automation CapEx.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **📦 Manhattan Active WMS**: Real-time bin/aisle slotting, picker travel telemetry, wave release queues, and dock door schedules.
@@ -1213,13 +1216,13 @@ python3 scripts/test_agent_demo.py warehouse_slotting_agent
 ---
 
 ### #35 · Dock-to-Stock Agent (`dock_to_stock_agent`)
-- **Sub-Pillar**: Warehouse Operations | **Pillar**: 04 · Inventory & Warehousing
-- **Primary Human Persona**: Inbound Receiving Supervisor · **ROI Benchmark**: `-75% Dock-to-Stock Latency` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 04 · Inventory & Warehousing
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: Order picking = 50%–55% of DC operating cost · ~55% of picker time is walking. Static warehouse slotting, congested receiving docks (6–24h dock-to-stock lag), and rigid wave releases waste over half of floor labor in unproductive travel and overtime.
-- **The AI Solution**: Parses scanned BOLs and pallet photos to reconcile open ASN variances.
-- **Quantified Outcome**: Prioritizes inbound trailers holding stockout/backorder SKUs and directs instant putaway or cross-docking—clearing receiving bottlenecks.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **📦 Manhattan Active WMS**: Real-time bin/aisle slotting, picker travel telemetry, wave release queues, and dock door schedules.
@@ -1248,13 +1251,13 @@ python3 scripts/test_agent_demo.py dock_to_stock_agent
 ---
 
 ### #36 · Wave Fulfillment Copilot (`wave_fulfillment_copilot`)
-- **Sub-Pillar**: Warehouse Operations | **Pillar**: 04 · Inventory & Warehousing
-- **Primary Human Persona**: DC Shift Floor Lead · **ROI Benchmark**: `-30% DC Rush Overtime` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 04 · Inventory & Warehousing
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: Order picking = 50%–55% of DC operating cost · ~55% of picker time is walking. Static warehouse slotting, congested receiving docks (6–24h dock-to-stock lag), and rigid wave releases waste over half of floor labor in unproductive travel and overtime.
-- **The AI Solution**: Balances picker lines dynamically to protect carrier pickup cutoff times.
-- **Quantified Outcome**: Monitors pick, sort, and pack-wall queues in real time—re-prioritizing waves and labor zones so every carrier trailer departs on time in full.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **📦 Manhattan Active WMS**: Real-time bin/aisle slotting, picker travel telemetry, wave release queues, and dock door schedules.
@@ -1283,13 +1286,13 @@ python3 scripts/test_agent_demo.py wave_fulfillment_copilot
 ---
 
 ### #37 · Phantom Inventory Sensor (`planogram_merchandising_vision_auditor`)
-- **Sub-Pillar**: Omnichannel Visibility | **Pillar**: 04 · Inventory & Warehousing
-- **Primary Human Persona**: Store Operations / Omni Lead · **ROI Benchmark**: `+2.5%–4% On-Shelf Sales Lift` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 04 · Inventory & Warehousing
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 8%–15% store inventory record inaccuracy · 2.1x parcel cost on split orders. Phantom store stock triggers 6%–12% BOPIS/Ship-From-Store cancellations and costly multi-node split shipments, while sellable returns sit un-restocked for 5–14 days.
-- **The AI Solution**: Identifies shrinkage anomalies when on-hand stock stops scanning at POS.
-- **Quantified Outcome**: Detects zero-scan POS velocity anomalies and shelf gaps to eliminate phantom inventory—lifting on-shelf availability and stopping BOPIS cancels.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **📦 Manhattan Active WMS**: Real-time bin/aisle slotting, picker travel telemetry, wave release queues, and dock door schedules.
@@ -1318,13 +1321,13 @@ python3 scripts/test_agent_demo.py planogram_merchandising_vision_auditor
 ---
 
 ### #38 · SFS / BOPIS Sourcing (`atp_order_promising_agent`)
-- **Sub-Pillar**: Omnichannel Visibility | **Pillar**: 04 · Inventory & Warehousing
-- **Primary Human Persona**: Omnichannel Fulfillment Dir. · **ROI Benchmark**: `-15%–25% Parcel & Split Cost` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 04 · Inventory & Warehousing
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 8%–15% store inventory record inaccuracy · 2.1x parcel cost on split orders. Phantom store stock triggers 6%–12% BOPIS/Ship-From-Store cancellations and costly multi-node split shipments, while sellable returns sit un-restocked for 5–14 days.
-- **The AI Solution**: Selects lowest-cost fulfillment nodes based on store labor and parcel zones.
-- **Quantified Outcome**: Routes every e-commerce and BOPIS order to the DC or store that maximizes net order margin across parcel zone cost, split risk, and markdown avoidance.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **📦 Manhattan Active WMS**: Real-time bin/aisle slotting, picker travel telemetry, wave release queues, and dock door schedules.
@@ -1353,13 +1356,13 @@ python3 scripts/test_agent_demo.py atp_order_promising_agent
 ---
 
 ### #39 · Returns Triage Agent (`returns_triage_agent`)
-- **Sub-Pillar**: Omnichannel Visibility | **Pillar**: 04 · Inventory & Warehousing
-- **Primary Human Persona**: Reverse Logistics Lead · **ROI Benchmark**: `+18%–30% Full-Price Recovery` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 04 · Inventory & Warehousing
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 8%–15% store inventory record inaccuracy · 2.1x parcel cost on split orders. Phantom store stock triggers 6%–12% BOPIS/Ship-From-Store cancellations and costly multi-node split shipments, while sellable returns sit un-restocked for 5–14 days.
-- **The AI Solution**: Evaluates item condition scans to triage restock, vendor return, or liquidation.
-- **Quantified Outcome**: Grades returned items at first touch and immediately restores Grade-A stock to sellable ATP—capturing full-price resale before seasonal markdowns.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **📦 Manhattan Active WMS**: Real-time bin/aisle slotting, picker travel telemetry, wave release queues, and dock door schedules.
@@ -1391,13 +1394,13 @@ python3 scripts/test_agent_demo.py returns_triage_agent
 *First & Mid-Mile, Store Replenishment, Last-Mile Delivery, Route & Carrier*
 
 ### #40 · Load Consolidation (`load_consolidation_agent`)
-- **Sub-Pillar**: First & Mid-Mile | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: Transport Planner / Inbound Mgr · **ROI Benchmark**: `+12%–18% Cube · -10% Trucks` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $2.27/mile trucking cost · 24%–32% unused trailer cube · $1.1B+ detention fees. Weight-only load planning ships 25%+ air, uncoordinated plant yards incur $75–$150/hr carrier detention after 2 hours, and reefer excursions spoil 2%–5% of cold-chain loads.
-- **The AI Solution**: Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling.
-- **Quantified Outcome**: Solves 3D bin-packing, bridge-formula axle weights, and LIFO stop unloading order—shipping the same volume in 10%–15% fewer trucks.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1426,13 +1429,13 @@ python3 scripts/test_agent_demo.py load_consolidation_agent
 ---
 
 ### #41 · Yard Disruption Agent (`yard_dock_sequencer`)
-- **Sub-Pillar**: First & Mid-Mile | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: Yard Master / Plant Logistics · **ROI Benchmark**: `-60%–75% Yard Demurrage` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $2.27/mile trucking cost · 24%–32% unused trailer cube · $1.1B+ detention fees. Weight-only load planning ships 25%+ air, uncoordinated plant yards incur $75–$150/hr carrier detention after 2 hours, and reefer excursions spoil 2%–5% of cold-chain loads.
-- **The AI Solution**: Parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically.
-- **Quantified Outcome**: Synchronizes live carrier GPS ETAs, yard jockey moves, and dock door crew capacity to eliminate gate queues, detention fees, and plant starvation.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1461,13 +1464,13 @@ python3 scripts/test_agent_demo.py yard_dock_sequencer
 ---
 
 ### #42 · Cold-Chain Auditor (`cold_chain_auditor`)
-- **Sub-Pillar**: First & Mid-Mile | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: Cold Chain QA / Logistics Dir. · **ROI Benchmark**: `-50%–70% Cold-Chain Claims` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $2.27/mile trucking cost · 24%–32% unused trailer cube · $1.1B+ detention fees. Weight-only load planning ships 25%+ air, uncoordinated plant yards incur $75–$150/hr carrier detention after 2 hours, and reefer excursions spoil 2%–5% of cold-chain loads.
-- **The AI Solution**: Analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims.
-- **Quantified Outcome**: Monitors continuous IoT temperature/humidity and calculates Mean Kinetic Temperature (MKT) in transit—intervening before perishable or pharma loads spoil.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1496,13 +1499,13 @@ python3 scripts/test_agent_demo.py cold_chain_auditor
 ---
 
 ### #43 · Aisle-Aligned Pallet (`aisle_aligned_pallet_agent`)
-- **Sub-Pillar**: Store Replenishment | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: Outbound Lead / Industrial Eng. · **ROI Benchmark**: `-20%–35% Store Unload Labor` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: In-store handling = ~50% of retail supply chain labor · 18%–28% backroom overflow. Mixed-aisle DC pallets force store associates to sort cases multiple times on the sales floor, while backroom-blind pushes and municipal noise/curfew violations erode store margin.
-- **The AI Solution**: Sequences DC pick waves to match individual store planograms and shelf layouts.
-- **Quantified Outcome**: Builds DC pallets sequenced to each store's exact planogram aisle layout and case crush physics—slashing in-store restocking labor by 20%–35%.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1531,13 +1534,13 @@ python3 scripts/test_agent_demo.py aisle_aligned_pallet_agent
 ---
 
 ### #44 · Store Capacity Agent (`store_capacity_agent`)
-- **Sub-Pillar**: Store Replenishment | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: Store Replenishment Lead · **ROI Benchmark**: `-25% Backroom Congestion` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: In-store handling = ~50% of retail supply chain labor · 18%–28% backroom overflow. Mixed-aisle DC pallets force store associates to sort cases multiple times on the sales floor, while backroom-blind pushes and municipal noise/curfew violations erode store margin.
-- **The AI Solution**: Throttles push replenishment based on store backroom limits and live POS velocity.
-- **Quantified Outcome**: Caps and paces DC replenishment dispatches against each store's live backroom cubic capacity and receiving labor—preventing overflow and damage.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1566,13 +1569,13 @@ python3 scripts/test_agent_demo.py store_capacity_agent
 ---
 
 ### #45 · Curfew Orchestrator (`port_drayage_orchestrator`)
-- **Sub-Pillar**: Store Replenishment | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: Retail Logistics Dispatcher · **ROI Benchmark**: `-80% Curfew & Slot Penalties` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: In-store handling = ~50% of retail supply chain labor · 18%–28% backroom overflow. Mixed-aisle DC pallets force store associates to sort cases multiple times on the sales floor, while backroom-blind pushes and municipal noise/curfew violations erode store margin.
-- **The AI Solution**: Coordinates municipal delivery curfews and store dock shift schedules dynamically.
-- **Quantified Outcome**: Aligns store dispatch times, EV/low-noise tractor assignment, and urban curfew/school-zone rules to eliminate municipal fines and refused drops.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1601,13 +1604,13 @@ python3 scripts/test_agent_demo.py port_drayage_orchestrator
 ---
 
 ### #46 · Geocoding Intelligence (`geocoding_intelligence_agent`)
-- **Sub-Pillar**: Last-Mile Delivery | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: Last-Mile Operations Lead · **ROI Benchmark**: `-30%–45% Failed Deliveries` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: Last-mile = 53% of total shipping cost · $15–$18 cost per failed delivery. 4%–8% of e-commerce parcels fail first-attempt delivery due to bad rooftop geocodes, static carrier selection overpays on parcel zones, and WISMO calls drive 35%–45% of support tickets.
-- **The AI Solution**: Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers.
-- **Quantified Outcome**: Validates address rooftop/loading-bay coordinates and driver access notes before dispatch—eliminating $15–$18 failed-delivery redelivery costs.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1636,13 +1639,13 @@ python3 scripts/test_agent_demo.py geocoding_intelligence_agent
 ---
 
 ### #47 · Courier Allocation (`multimodal_mode_shift_agent`)
-- **Sub-Pillar**: Last-Mile Delivery | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: E-Commerce Logistics Dir. · **ROI Benchmark**: `-8%–14% Parcel & Courier Spend` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: Last-mile = 53% of total shipping cost · $15–$18 cost per failed delivery. 4%–8% of e-commerce parcels fail first-attempt delivery due to bad rooftop geocodes, static carrier selection overpays on parcel zones, and WISMO calls drive 35%–45% of support tickets.
-- **The AI Solution**: Routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card.
-- **Quantified Outcome**: Dynamically selects the lowest-cost parcel, regional courier, crowdsourced, or LTL mode per order that still hits the promised customer delivery date.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1671,13 +1674,13 @@ python3 scripts/test_agent_demo.py multimodal_mode_shift_agent
 ---
 
 ### #48 · Delivery Exception Copilot (`otif_penalty_shield`)
-- **Sub-Pillar**: Last-Mile Delivery | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: Customer Support Ops Lead · **ROI Benchmark**: `-50%–65% WISMO & Chargebacks` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: Last-mile = 53% of total shipping cost · $15–$18 cost per failed delivery. 4%–8% of e-commerce parcels fail first-attempt delivery due to bad rooftop geocodes, static carrier selection overpays on parcel zones, and WISMO calls drive 35%–45% of support tickets.
-- **The AI Solution**: Detects en-route exceptions and updates customers proactively with reschedule links.
-- **Quantified Outcome**: Detects mid-route parcel and retail-delivery delays early, triggers carrier rescue or proactive customer self-rescheduling, and cuts WISMO cost.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1706,13 +1709,13 @@ python3 scripts/test_agent_demo.py otif_penalty_shield
 ---
 
 ### #49 · Dynamic Rerouter (`fleetflow_dispatch`)
-- **Sub-Pillar**: Route & Carrier | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: Fleet Dispatcher / Central Ops · **ROI Benchmark**: `-6%–11% Fleet Miles & Fuel` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 20%+ empty/out-of-route miles · 12%–25% spot premium · 3%–8% invoice error rate. Static dispatch routes burn excess fuel in weather/traffic corridors, primary tender rejections spike spot rates by 15%–25%, and 3%–8% of EDI 210 freight bills contain unverified accessorial or tariff errors.
-- **The AI Solution**: Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits.
-- **Quantified Outcome**: Continuously re-solves multi-stop Vehicle Routing (VRP) against live traffic, weather, and driver Hours-of-Service (HOS) to cut fuel and empty miles.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1741,13 +1744,13 @@ python3 scripts/test_agent_demo.py fleetflow_dispatch
 ---
 
 ### #50 · Routing Guide Compliance (`freight_control_tower`)
-- **Sub-Pillar**: Route & Carrier | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: Transport Procurement Lead · **ROI Benchmark**: `-15%–22% Spot Freight Spend` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 20%+ empty/out-of-route miles · 12%–25% spot premium · 3%–8% invoice error rate. Static dispatch routes burn excess fuel in weather/traffic corridors, primary tender rejections spike spot rates by 15%–25%, and 3%–8% of EDI 210 freight bills contain unverified accessorial or tariff errors.
-- **The AI Solution**: Tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides.
-- **Quantified Outcome**: Predicts primary carrier tender rejections by lane and cascades early to contracted Tier-2/3 carriers before loads leak onto expensive spot markets.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1776,13 +1779,13 @@ python3 scripts/test_agent_demo.py freight_control_tower
 ---
 
 ### #51 · Freight Bill Audit Agent (`freight_bill_audit_agent`)
-- **Sub-Pillar**: Route & Carrier | **Pillar**: 05 · Distribution & Logistics
-- **Primary Human Persona**: Freight Controller / Claims · **ROI Benchmark**: `Recovers 3%–7% Freight Spend` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 05 · Distribution & Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 20%+ empty/out-of-route miles · 12%–25% spot premium · 3%–8% invoice error rate. Static dispatch routes burn excess fuel in weather/traffic corridors, primary tender rejections spike spot rates by 15%–25%, and 3%–8% of EDI 210 freight bills contain unverified accessorial or tariff errors.
-- **The AI Solution**: Extracts signed PODs and rate contracts via OCR to audit accessorial surcharges.
-- **Quantified Outcome**: Audits 100% of carrier EDI 210/PDF freight invoices against contracted rate tables, DOE fuel indices, and GPS arrival timestamps before payment.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🚚 Oracle OTM**: Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments.
@@ -1814,13 +1817,13 @@ python3 scripts/test_agent_demo.py freight_bill_audit_agent
 *Returns & Claims Management, Expiry & Markdowns, Pallet & Tote Reclamation*
 
 ### #52 · Return Fraud Sentinel (`reverse_rma_optimizer`)
-- **Sub-Pillar**: Returns & Claims Mgmt | **Pillar**: 06 · Returns & Reverse Logistics
-- **Primary Human Persona**: Reverse Logistics / Fraud Lead · **ROI Benchmark**: `-25%–40% Return Fraud Loss` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 06 · Returns & Reverse Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $890B annual returns (16.9% of sales) · $101B fraud · 20%–65% COGS reverse cost. Processing a return costs 20%–65% of an item's original value—shipping low-margin goods back destroys net margin, while $101B in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.
-- **The AI Solution**: Analyzes item photos and packaging video feeds to detect wear or swapped tags.
-- **Quantified Outcome**: Scores return requests against serial history, account abuse patterns, and item telemetry—blocking fraudulent RMAs without friction for loyal buyers.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🔄 SAP Customer Returns (SD/LE)**: Automated customer RMA intake, warranty claims, and credit memo release processing.
@@ -1849,13 +1852,13 @@ python3 scripts/test_agent_demo.py reverse_rma_optimizer
 ---
 
 ### #53 · Keep-It & Routing Advisor (`keep_it_routing_advisor`)
-- **Sub-Pillar**: Returns & Claims Mgmt | **Pillar**: 06 · Returns & Reverse Logistics
-- **Primary Human Persona**: Customer Experience (CX) Lead · **ROI Benchmark**: `+15%–22% Net Return Margin` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 06 · Returns & Reverse Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $890B annual returns (16.9% of sales) · $101B fraud · 20%–65% COGS reverse cost. Processing a return costs 20%–65% of an item's original value—shipping low-margin goods back destroys net margin, while $101B in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.
-- **The AI Solution**: Evaluates salvage margins vs reverse freight to determine keep-it instant refunds.
-- **Quantified Outcome**: Calculates reverse shipping + grading cost vs. resale recovery in real time—routing items to store, refurb hub, outlet, or Keep-It credit.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🔄 SAP Customer Returns (SD/LE)**: Automated customer RMA intake, warranty claims, and credit memo release processing.
@@ -1884,13 +1887,13 @@ python3 scripts/test_agent_demo.py keep_it_routing_advisor
 ---
 
 ### #54 · OS&D Freight Claims (`osd_freight_claims_agent`)
-- **Sub-Pillar**: Returns & Claims Mgmt | **Pillar**: 06 · Returns & Reverse Logistics
-- **Primary Human Persona**: Claims Specialist / Controller · **ROI Benchmark**: `2x Faster OS&D Cash Recovery` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 06 · Returns & Reverse Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: $890B annual returns (16.9% of sales) · $101B fraud · 20%–65% COGS reverse cost. Processing a return costs 20%–65% of an item's original value—shipping low-margin goods back destroys net margin, while $101B in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.
-- **The AI Solution**: Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes.
-- **Quantified Outcome**: Assembles dock damage photos, signed BOL exceptions, and SKU invoice values into compliant carrier claim packets within hours of unloading.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🔄 SAP Customer Returns (SD/LE)**: Automated customer RMA intake, warranty claims, and credit memo release processing.
@@ -1919,13 +1922,13 @@ python3 scripts/test_agent_demo.py osd_freight_claims_agent
 ---
 
 ### #55 · Dynamic Markdown Agent (`dynamic_markdown_agent`)
-- **Sub-Pillar**: Expiry & Markdowns | **Pillar**: 06 · Returns & Reverse Logistics
-- **Primary Human Persona**: Merchandising / Store Ops Mgr · **ROI Benchmark**: `-22%–35% Expiry Shrink` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 06 · Returns & Reverse Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 2.5%–6.0% of grocery sales lost to shrink · $408B+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.
-- **The AI Solution**: Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts.
-- **Quantified Outcome**: Triggers shallow, early price-elasticity markdowns synced to lot sell-by dates and local store velocity—clearing stock at higher margin with less waste.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🔄 SAP Customer Returns (SD/LE)**: Automated customer RMA intake, warranty claims, and credit memo release processing.
@@ -1954,13 +1957,13 @@ python3 scripts/test_agent_demo.py dynamic_markdown_agent
 ---
 
 ### #56 · Short-Dated Redistributor (`short_dated_redistributor`)
-- **Sub-Pillar**: Expiry & Markdowns | **Pillar**: 06 · Returns & Reverse Logistics
-- **Primary Human Persona**: Inventory Disposition Lead · **ROI Benchmark**: `Diverts 30%–45% At-Risk Lots` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 06 · Returns & Reverse Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 2.5%–6.0% of grocery sales lost to shrink · $408B+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.
-- **The AI Solution**: Matches near-date DC lots with discounters or food banks before acceptance cutoffs.
-- **Quantified Outcome**: Matches short-dated DC lots at risk of customer shelf-life rejection to fast-turning stores, foodservice channels, or tax-advantaged donations.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🔄 SAP Customer Returns (SD/LE)**: Automated customer RMA intake, warranty claims, and credit memo release processing.
@@ -1989,13 +1992,13 @@ python3 scripts/test_agent_demo.py short_dated_redistributor
 ---
 
 ### #57 · Food Waste & ESG Copilot (`food_waste_esg_copilot`)
-- **Sub-Pillar**: Expiry & Markdowns | **Pillar**: 06 · Returns & Reverse Logistics
-- **Primary Human Persona**: Chief Sustainability Officer · **ROI Benchmark**: `-75% ESG Reporting Cost` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 06 · Returns & Reverse Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 2.5%–6.0% of grocery sales lost to shrink · $408B+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.
-- **The AI Solution**: Aggregates store shrink and organic haul logs to generate audited GHG diversion filings.
-- **Quantified Outcome**: Routes unsellable organics to highest circular tier (donation tax credits, upcycling, feed, digester) and automates Scope 3 waste reporting.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🔄 SAP Customer Returns (SD/LE)**: Automated customer RMA intake, warranty claims, and credit memo release processing.
@@ -2024,13 +2027,13 @@ python3 scripts/test_agent_demo.py food_waste_esg_copilot
 ---
 
 ### #58 · RTI Balance Reconciler (`rti_balance_reconciler`)
-- **Sub-Pillar**: Pallet & Tote Reclamation | **Pillar**: 06 · Returns & Reverse Logistics
-- **Primary Human Persona**: Asset Recovery / RTI Manager · **ROI Benchmark**: `-25%–35% RTI Replacement Cost` · 📦 **High-Code ADK Package**
+- **Status**: 🟢 Live in Gemini Enterprise | **Sub-Pillar**: Core Operations | **Pillar**: 06 · Returns & Reverse Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 10%–20% annual pallet/tote pool loss · 28%–40% empty store-return backhauls. Unreconciled pallet/tote ledgers trigger millions in pool non-return fines and replacement CapEx, while returning store fleets haul empty air and manual wash logs risk food-safety recalls.
-- **The AI Solution**: Reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes.
-- **Quantified Outcome**: Reconciles serialized pallet, tote, rack, and keg balances across plants, DCs, and customers—slashing pool rental fines and replacement CapEx.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🔄 SAP Customer Returns (SD/LE)**: Automated customer RMA intake, warranty claims, and credit memo release processing.
@@ -2059,13 +2062,13 @@ python3 scripts/test_agent_demo.py rti_balance_reconciler
 ---
 
 ### #59 · Milk-Run Consolidation (`intermodal_rail_linehaul_agent`)
-- **Sub-Pillar**: Pallet & Tote Reclamation | **Pillar**: 06 · Returns & Reverse Logistics
-- **Primary Human Persona**: Reverse Transport Planner · **ROI Benchmark**: `-20%–30% Reverse Haul Cost` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 06 · Returns & Reverse Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 10%–20% annual pallet/tote pool loss · 28%–40% empty store-return backhauls. Unreconciled pallet/tote ledgers trigger millions in pool non-return fines and replacement CapEx, while returning store fleets haul empty air and manual wash logs risk food-safety recalls.
-- **The AI Solution**: Schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores.
-- **Quantified Outcome**: Pairs empty outbound store/DC return legs with pallet stacks, collapsible totes, and consolidated RMAs—eliminating dedicated reverse freight.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🔄 SAP Customer Returns (SD/LE)**: Automated customer RMA intake, warranty claims, and credit memo release processing.
@@ -2094,13 +2097,13 @@ python3 scripts/test_agent_demo.py intermodal_rail_linehaul_agent
 ---
 
 ### #60 · Sanitation & Health Agent (`sanitation_health_agent`)
-- **Sub-Pillar**: Pallet & Tote Reclamation | **Pillar**: 06 · Returns & Reverse Logistics
-- **Primary Human Persona**: Packaging QA / Food Safety · **ROI Benchmark**: `Zero Sanitation Recall Breaches` · 📦 **High-Code ADK Package**
+- **Status**: ⚪ Catalog Specification | **Sub-Pillar**: Core Operations | **Pillar**: 06 · Returns & Reverse Logistics
+- **Primary Human Persona**: Supply Chain Leader · **ROI Benchmark**: `High ROI`
 
 #### 🎯 1. Real-World Business Use Case
-- **The Business Problem**: 10%–20% annual pallet/tote pool loss · 28%–40% empty store-return backhauls. Unreconciled pallet/tote ledgers trigger millions in pool non-return fines and replacement CapEx, while returning store fleets haul empty air and manual wash logs risk food-safety recalls.
-- **The AI Solution**: Inspects return photos and wash logs for structural fatigue and chemical compliance.
-- **Quantified Outcome**: Enforces wash-temperature, allergen segregation, and structural cycle limits on every reusable container—extending asset life while guaranteeing safety.
+- **The Business Problem**: Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in Core Operations.
+- **The AI Solution**: Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.
+- **Quantified Outcome**: Reduces operational cycle time by 25%–40% and cuts manual planning toil.
 
 #### 🔌 2. Connected Enterprise Systems & Data Sources
 - **🔄 SAP Customer Returns (SD/LE)**: Automated customer RMA intake, warranty claims, and credit memo release processing.

@@ -5013,6 +5013,10 @@ def build_html() -> str:
         <div class="nav-quick-menu" id="navAgentsQuickMenu"></div>
       </div>
 
+      <a href="agent_testing_and_video_playbook.html" class="nav-pill-btn" style="background:rgba(52,211,153,0.15); color:#34d399; border-color:rgba(52,211,153,0.35); text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+        <span>🟢</span>
+        <span style="font-weight:700;">Playbook (25 Live in GE)</span>
+      </a>
       <button type="button" class="nav-pill-btn" onclick="openPeriodicTablePage('all', null, true)">Periodic Table</button>
       <button type="button" class="nav-pill-btn" onclick="openMindMapPage('all', null, true)">Mind Map</button>
       <button type="button" id="themeToggleBtn" class="nav-pill-btn theme-toggle-btn" onclick="togglePortalTheme()" title="Switch between Light and Dark Theme">
@@ -10787,12 +10791,35 @@ def build_html() -> str:
           `;
         }).join('');
       } else {
-        const visibleGroups = PERIODIC_GROUPS.filter(g => currentPeriodicFilter === 'all' || g.id === currentPeriodicFilter);
+        const DEPLOYED_SET = new Set([
+          'demand_sensing_agent', 'promo_lift_simulator', 'csco_control_tower_copilot',
+          'sop_scenario_weaver', 'disruption_war_room_orchestrator', 'working_capital_cash_bridge',
+          'tier_n_risk_sentinel', 'carbon_scope3_ledger', 'rfq_should_cost_agent',
+          'three_way_match_dispute', 'finite_production_scheduler', 'predictive_oee_sentinel',
+          'inline_yield_guardian', 'meio_safety_stock_agent', 'warehouse_slotting_agent',
+          'atp_order_promising_agent', 'load_consolidation_agent', 'cold_chain_auditor',
+          'port_drayage_orchestrator', 'geocoding_intelligence_agent', 'fleetflow_dispatch',
+          'freight_bill_audit_agent', 'reverse_rma_optimizer', 'dynamic_markdown_agent',
+          'rti_balance_reconciler'
+        ]);
+
+        const visibleGroups = (currentPeriodicFilter === 'deployed' || currentPeriodicFilter === 'catalog')
+          ? PERIODIC_GROUPS
+          : PERIODIC_GROUPS.filter(g => currentPeriodicFilter === 'all' || g.id === currentPeriodicFilter);
+
         leftColumnHtml = visibleGroups.map(grp => {
-          const grpAgents = Object.entries(PERIODIC_AGENT_META)
+          let grpAgents = Object.entries(PERIODIC_AGENT_META)
             .filter(([_, m]) => m.group === grp.id)
             .map(([aid, m]) => ({ ag: AGENTS[aid], m }))
             .filter(x => x.ag);
+
+          if (currentPeriodicFilter === 'deployed') {
+            grpAgents = grpAgents.filter(x => DEPLOYED_SET.has(x.ag.id));
+          } else if (currentPeriodicFilter === 'catalog') {
+            grpAgents = grpAgents.filter(x => !DEPLOYED_SET.has(x.ag.id));
+          }
+
+          if (grpAgents.length === 0) return '';
           const expandedItem = grpAgents.find(x => x.ag.id === currentExpandedInlineId);
 
           return `
@@ -10805,16 +10832,17 @@ def build_html() -> str:
               <div class="pt-tiles-row">
                 ${grpAgents.map(({ ag, m }) => {
                   const isSel = ag.id === selAg.id;
+                  const isDeployed = DEPLOYED_SET.has(ag.id);
                   return `
                     <div class="pt-tile ${isSel ? 'active' : ''}"
                          style="--tile-color:${grp.color}; --dot-color:${m.layerColor};"
                          onclick="handlePeriodicTileClick('${ag.id}')">
                       <div class="pt-tile-top">
                         <span>${m.code}</span>
-                        <span class="pt-tile-trig" title="${m.trigger}">${m.trigIcon}</span>
+                        <span class="pt-tile-trig" title="${isDeployed ? 'Live in Gemini Enterprise' : m.trigger}">${isDeployed ? '🟢' : m.trigIcon}</span>
                       </div>
                       <div class="pt-tile-title">${m.short}</div>
-                      <div class="pt-tile-dot" title="${m.layer}"></div>
+                      <div class="pt-tile-dot" title="${isDeployed ? 'Live in Gemini Enterprise' : m.layer}"></div>
                     </div>
                   `;
                 }).join('')}
@@ -10833,6 +10861,10 @@ def build_html() -> str:
             <span>Back to Home &amp; CSCO Org Chart</span>
           </button>
           <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+            <a href="agent_testing_and_video_playbook.html" class="switch-pill" style="border-color:rgba(52,211,153,0.45); color:#34d399; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+              <span>🟢</span>
+              <span style="font-weight:700;">Open Live Playbook &rarr;</span>
+            </a>
             <button type="button" class="switch-pill" style="border-color:rgba(16,185,129,0.45); color:#2e8b57;" onclick="openMindMapPage('mindmap', null, null, true)">
               🧠 Switch to Neural Mind Map &rarr;
             </button>
@@ -10845,16 +10877,26 @@ def build_html() -> str:
             The Periodic Table of Agents
           </h1>
           <p style="font-size:15px; color:var(--text-secondary); line-height:1.6; max-width:960px;">
-            Enterprise catalog of 32 autonomous AI agents across 7 SCOR domains and 26 personas. Click any tile to inspect solvers, ERP write-backs, and human-in-the-loop controls.
+            Enterprise catalog of 32 autonomous AI agents across 7 SCOR domains and 26 personas. Filter by live deployment status in Gemini Enterprise or inspect solvers, ERP write-backs, and human-in-the-loop controls.
           </p>
         </div>
 
-        <!-- Clean Pill Tabs -->
+        <!-- Clean Pill Tabs with Prominent Live Filter -->
         <div class="pt-top-tabs">
           <button type="button" class="pt-tab-btn ${currentPeriodicFilter === 'all' ? 'active' : ''}"
                   onclick="currentExpandedInlineId = null; openPeriodicTablePage('all', '${selAg.id}', false)">
             <span>All Domains</span>
             <span class="pt-tab-count">32</span>
+          </button>
+          <button type="button" class="pt-tab-btn ${currentPeriodicFilter === 'deployed' ? 'active' : ''}" style="border-color:rgba(52,211,153,0.4); color:#34d399;"
+                  onclick="currentExpandedInlineId = null; openPeriodicTablePage('deployed', '${selAg.id}', false)">
+            <span>🟢 Deployed in GE</span>
+            <span class="pt-tab-count" style="background:rgba(52,211,153,0.2); color:#34d399;">25</span>
+          </button>
+          <button type="button" class="pt-tab-btn ${currentPeriodicFilter === 'catalog' ? 'active' : ''}"
+                  onclick="currentExpandedInlineId = null; openPeriodicTablePage('catalog', '${selAg.id}', false)">
+            <span>⚪ In Catalog</span>
+            <span class="pt-tab-count">35</span>
           </button>
           ${PERIODIC_GROUPS.map(g => `
             <button type="button" class="pt-tab-btn ${currentPeriodicFilter === g.id ? 'active' : ''}"
@@ -10876,9 +10918,13 @@ def build_html() -> str:
             <h2 style="font-family:var(--font-display); font-size:18px; font-weight:700; color:var(--text-primary); margin-bottom:0;">
               ${currentPeriodicFilter === 'by_persona'
                 ? 'Persona-to-Agent Mapping (26 Supply Chain Roles)'
-                : (currentPeriodicFilter === 'all'
-                    ? 'All 7 SCOR Domains &amp; Universal Core'
-                    : (PERIODIC_GROUPS.find(g => g.id === currentPeriodicFilter)?.title || 'Domain Agents'))}
+                : (currentPeriodicFilter === 'deployed'
+                    ? '🟢 Active Reasoning Engines Deployed in Gemini Enterprise (25 Agents)'
+                    : (currentPeriodicFilter === 'catalog'
+                        ? '⚪ Planned Agents In Catalog (35 Agents)'
+                        : (currentPeriodicFilter === 'all'
+                            ? 'All 7 SCOR Domains &amp; Universal Core'
+                            : (PERIODIC_GROUPS.find(g => g.id === currentPeriodicFilter)?.title || 'Domain Agents'))))}
             </h2>
           </div>
           <div class="pt-stat-badges">

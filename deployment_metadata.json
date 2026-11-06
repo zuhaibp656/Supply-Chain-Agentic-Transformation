@@ -15,8 +15,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 Demand Forecasting] Demand Sensing Agent \u2014 Synthesizes POS velocity, weather anomalies, and macro trends. Outcome: Fuses daily POS sell-through, weather ensembles, and stockout imputation to cut short-horizon WAPE by 20%\u201335% and reduce safety-stock buffers.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6872242617594150912",
-      "gemini_enterprise_agent": "",
-      "deployed_at": "2026-11-06T07:47:49Z"
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4275760174019143309",
+      "deployed_at": "2026-11-06T08:15:24Z"
     },
     {
       "agent_id": "promo_lift_simulator",
@@ -29,8 +29,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 Trade Promotion] Promo ROI Simulator \u2014 Simulates price elasticity, shelf lift, and incremental spend return. Outcome: Simulates baseline cannibalization, post-promo dip, and incremental gross margin before trade funds are committed\u2014blocking unprofitable events.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2077472519979270144",
-      "gemini_enterprise_agent": "",
-      "deployed_at": "2026-11-06T07:48:00Z"
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/7230495950759747643",
+      "deployed_at": "2026-11-06T08:15:50Z"
     },
     {
       "agent_id": "sop_scenario_weaver",
@@ -43,8 +43,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Consensus & Gap Agent \u2014 Reconciles unconstrained demand with factory plant bottleneck limits. Outcome: Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority).",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8086384929635565568",
-      "gemini_enterprise_agent": "",
-      "deployed_at": "2026-11-06T07:47:34Z"
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9189674696747625515",
+      "deployed_at": "2026-11-06T08:15:50Z"
     },
     {
       "agent_id": "disruption_war_room_orchestrator",
@@ -57,8 +57,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Digital War-Room Agent \u2014 Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1211217885989437440",
-      "gemini_enterprise_agent": "",
-      "deployed_at": "2026-11-06T07:47:32Z"
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4685464268735078343",
+      "deployed_at": "2026-11-06T08:15:41Z"
     },
     {
       "agent_id": "csco_control_tower_copilot",
@@ -71,8 +71,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Executive Copilot \u2014 Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand\u2014turning 5-day analyst deck cycles into instant executive action.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2865587061606318080",
-      "gemini_enterprise_agent": "",
-      "deployed_at": "2026-11-06T07:47:46Z"
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4015823380636158533",
+      "deployed_at": "2026-11-06T08:15:14Z"
     },
     {
       "agent_id": "working_capital_cash_bridge",
@@ -85,8 +85,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 Portfolio & SKU] SKU Pruning Agent \u2014 Scores velocity, plant changeover cost, and shelf revenue yield. Outcome: Scores every SKU on true net contribution after carrying, changeover, and obsolescence cost\u2014unlocking trapped working capital from the long tail.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5833474609206263808",
-      "gemini_enterprise_agent": "",
-      "deployed_at": "2026-11-06T07:49:54Z"
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/14094336958774128849",
+      "deployed_at": "2026-11-06T08:18:03Z"
     },
     {
       "agent_id": "tier_n_risk_sentinel",
@@ -99,8 +99,8 @@
       "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network] Disruption Sensing Agent \u2014 Monitors multi-tier supply feeds, port delays, and vendor financials. Outcome: Continuously monitors sub-tier financial, geopolitical, weather, and port signals\u2014triggering alternate allocations weeks before line stoppage.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5121890474918936576",
-      "gemini_enterprise_agent": "",
-      "deployed_at": "2026-11-06T07:50:48Z"
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/6167693086894539620",
+      "deployed_at": "2026-11-06T08:18:11Z"
     },
     {
       "agent_id": "carbon_scope3_ledger",
@@ -113,8 +113,8 @@
       "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network] ESG & Scope 3 Auditor \u2014 Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. Outcome: Replaces coarse spend-based averages with primary supplier + lane emissions\u2014preventing EU CBAM penalties and cutting external assurance fees.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1067102697913581568",
-      "gemini_enterprise_agent": "",
-      "deployed_at": "2026-11-06T07:50:47Z"
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/12043431535905541673",
+      "deployed_at": "2026-11-06T08:18:46Z"
     },
     {
       "agent_id": "rfq_should_cost_agent",
@@ -127,8 +127,8 @@
       "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Material & Packaging] Dynamic Should-Cost Agent \u2014 Deconstructs packaging specs (resin weight, corrugate, conversion energy). Outcome: Decomposes every supplier quote into raw material, conversion, energy, logistics, and margin\u2014arming buyers with hard clean-sheet leverage.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/7647283965966942208",
-      "gemini_enterprise_agent": "",
-      "deployed_at": "2026-11-06T07:50:55Z"
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/18006815538360774894",
+      "deployed_at": "2026-11-06T08:18:32Z"
     },
     {
       "agent_id": "three_way_match_dispute",
@@ -141,8 +141,8 @@
       "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Contract & PO Mgmt] Three-Way Match Dispute \u2014 Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. Outcome: Reconciles PO, Goods Receipt (ASN/GRN), and Invoice line variances automatically\u2014capturing early-payment discounts and cutting AP unit cost by 80%.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/994356809596665856",
-      "gemini_enterprise_agent": "",
-      "deployed_at": "2026-11-06T07:50:52Z"
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/3963067958567898860",
+      "deployed_at": "2026-11-06T08:18:34Z"
     },
     {
       "agent_id": "finite_production_scheduler",
@@ -156,7 +156,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8139317618419957760",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/16838162618721244143",
-      "deployed_at": "2026-10-30T11:43:42Z"
+      "deployed_at": "2026-11-06T08:20:59Z"
     },
     {
       "agent_id": "predictive_oee_sentinel",
@@ -170,7 +170,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/4659145613206618112",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/12855910931272362848",
-      "deployed_at": "2026-11-05T13:48:57Z"
+      "deployed_at": "2026-11-06T08:21:26Z"
     },
     {
       "agent_id": "inline_yield_guardian",
@@ -184,7 +184,7 @@
       "model": "gemini-3.8-flash",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2816047465705242624",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/14928798980920927172",
-      "deployed_at": "2026-11-05T13:51:55Z"
+      "deployed_at": "2026-11-06T08:21:30Z"
     },
     {
       "agent_id": "meio_safety_stock_agent",
@@ -198,7 +198,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/9178085626807844864",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9879109757966221077",
-      "deployed_at": "2026-11-05T13:54:35Z"
+      "deployed_at": "2026-11-06T08:21:28Z"
     },
     {
       "agent_id": "warehouse_slotting_agent",
@@ -212,7 +212,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6594019996278456320",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/680853864033816982",
-      "deployed_at": "2026-10-30T11:43:50Z"
+      "deployed_at": "2026-11-06T08:21:35Z"
     },
     {
       "agent_id": "atp_order_promising_agent",
@@ -226,7 +226,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8558136990602625024",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/6469216377587188453",
-      "deployed_at": "2026-11-05T13:57:30Z"
+      "deployed_at": "2026-11-06T08:24:05Z"
     },
     {
       "agent_id": "load_consolidation_agent",
@@ -240,7 +240,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/3771936486614630400",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/17846204712745878596",
-      "deployed_at": "2026-11-05T14:00:09Z"
+      "deployed_at": "2026-11-06T08:24:05Z"
     },
     {
       "agent_id": "cold_chain_auditor",
@@ -254,7 +254,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8706771171468640256",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/5823400487531018226",
-      "deployed_at": "2026-10-30T11:46:52Z"
+      "deployed_at": "2026-11-06T08:24:24Z"
     },
     {
       "agent_id": "port_drayage_orchestrator",
@@ -268,7 +268,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8652727975940194304",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/200992941311882772",
-      "deployed_at": "2026-10-30T11:46:36Z"
+      "deployed_at": "2026-11-06T08:24:27Z"
     },
     {
       "agent_id": "geocoding_intelligence_agent",
@@ -282,7 +282,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/9127857736627781632",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/7088606266716503770",
-      "deployed_at": "2026-10-30T11:46:51Z"
+      "deployed_at": "2026-11-06T08:24:03Z"
     },
     {
       "agent_id": "fleetflow_dispatch",
@@ -296,7 +296,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1064147210658119680",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9502278280664039255",
-      "deployed_at": "2026-11-05T14:02:52Z"
+      "deployed_at": "2026-11-06T08:27:01Z"
     },
     {
       "agent_id": "freight_bill_audit_agent",
@@ -310,7 +310,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8272173807427387392",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/7289375159680767377",
-      "deployed_at": "2026-10-30T11:47:01Z"
+      "deployed_at": "2026-11-06T08:26:57Z"
     },
     {
       "agent_id": "reverse_rma_optimizer",
@@ -324,7 +324,7 @@
       "model": "gemini-3.8-flash",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5468667646226464768",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/2869479596817501852",
-      "deployed_at": "2026-11-05T14:05:32Z"
+      "deployed_at": "2026-11-06T08:26:54Z"
     },
     {
       "agent_id": "dynamic_markdown_agent",
@@ -338,7 +338,7 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1501011767675846656",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/11982871860095077801",
-      "deployed_at": "2026-10-30T11:47:10Z"
+      "deployed_at": "2026-11-06T08:27:20Z"
     },
     {
       "agent_id": "rti_balance_reconciler",
@@ -352,8 +352,8 @@
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6794993129649864704",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/16699165381032264857",
-      "deployed_at": "2026-10-30T11:48:48Z"
+      "deployed_at": "2026-11-06T08:27:07Z"
     }
   ],
-  "updated_at": "2026-11-06T07:50:55Z"
+  "updated_at": "2026-11-06T08:29:02Z"
 }

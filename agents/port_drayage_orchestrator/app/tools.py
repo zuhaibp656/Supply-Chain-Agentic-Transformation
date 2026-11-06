@@ -1,5 +1,15 @@
-"""Deterministic and fixture-backed tools for PortWatch — Global Ocean Vessel, Container Stowage & Port Drayage Orchestrator."""
 from __future__ import annotations
+_LATEST_INTERACTIVE_HTML: dict | None = None
+
+def get_latest_interactive_html(consume: bool = False) -> dict | None:
+    global _LATEST_INTERACTIVE_HTML
+    res = _LATEST_INTERACTIVE_HTML
+    if consume:
+        _LATEST_INTERACTIVE_HTML = None
+    return res
+
+
+
 import hashlib
 import json
 import os
@@ -586,50 +596,31 @@ def export_port_container_dispatch_csv_and_memo(target_id: str = "", format_type
     }
 
 
-def generate_interactive_html_dashboard(title: str = "Curfew Orchestrator Interactive Cockpit") -> dict:
+
+
+_LATEST_INTERACTIVE_HTML: dict | None = None
+
+def get_latest_interactive_html(consume: bool = False) -> dict | None:
+    global _LATEST_INTERACTIVE_HTML
+    res = _LATEST_INTERACTIVE_HTML
+    if consume:
+        _LATEST_INTERACTIVE_HTML = None
+    return res
+
+def generate_interactive_html_dashboard(title: str = "DrayFlow Ocean Port & Intermodal Drayage Studio Interactive Cockpit") -> dict:
     """Generate a self-contained interactive HTML dashboard view with visual surface.
     Allows business users to inspect visual graphs, spatial maps, or 3D layouts directly in a browser.
     """
-    html_markup = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{title}</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f19; color: #f8fafc; padding: 24px; margin: 0; }
-    .card { background: #131b2e; border: 1px solid #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
-    h1 { font-size: 20px; font-weight: 700; color: #00d2ff; margin-top: 0; }
-    .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 20px; }
-    .metric-box { background: #1a243b; padding: 14px; border-radius: 8px; border-left: 4px solid #00d2ff; }
-    .metric-val { font-size: 24px; font-weight: 700; color: #ffffff; }
-    .metric-lbl { font-size: 12px; color: #94a3b8; text-transform: uppercase; margin-top: 4px; }
-    .visual-stage { min-height: 280px; display: flex; align-items: center; justify-content: center; background: #080c14; border: 1px dashed #334155; border-radius: 8px; font-size: 14px; color: #38bdf8; text-align: center; padding: 20px; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h1>✦ {title} · Live Enterprise Cockpit</h1>
-    <p style="color:#94a3b8; font-size:13.5px;">Connected Systems: SAP S/4HANA · Salesforce TPM · BigQuery Lake · Google AI</p>
-    <div class="metric-grid">
-      <div class="metric-box"><div class="metric-val">99.4%</div><div class="metric-lbl">Target SLA</div></div>
-      <div class="metric-box"><div class="metric-val">-24.2%</div><div class="metric-lbl">Variance Reduced</div></div>
-      <div class="metric-box"><div class="metric-val">$1.45M</div><div class="metric-lbl">Working Capital Unlocked</div></div>
-      <div class="metric-box"><div class="metric-val">45 Min</div><div class="metric-lbl">Resolution Speed</div></div>
-    </div>
-    <div class="visual-stage">
-      <div>
-        <div style="font-size:32px; margin-bottom:10px;">📊</div>
-        <strong>Port Marine Terminal Berth Tracking, Free-Time Demurrage Clocks & Gate Appointment Heatmap</strong><br>
-        <span style="color:#64748b; font-size:12px;">Interactive telemetry rendered via Vertex AI Reasoning Engine</span>
-      </div>
-    </div>
-  </div>
-</body>
-</html>"""
-    return {
+    global _LATEST_INTERACTIVE_HTML
+    from .render.interactive_html import generate_interactive_cockpit_html
+    html_markup = generate_interactive_cockpit_html(title=title)
+    result = {
         "status": "SUCCESS",
         "title": title,
         "format": "html",
+        "html_code": html_markup,
         "html_preview": html_markup,
-        "ready_to_view": True
+        "ready_to_view": True,
     }
+    _LATEST_INTERACTIVE_HTML = result
+    return result

@@ -227,16 +227,32 @@ try:
         callback_context: Optional[CallbackContext] = None,
         **_: Any,
     ) -> Optional[types.Content]:
-        """Emits a blast-radius-protected A2UI v0.9 VegaChart card reflecting live turn tool state."""
         try:
-            surface_id = f"cold-chain-a-{uuid.uuid4().hex[:8]}"
-            a2ui_parts = build_cold_chain_auditor_surface(surface_id, spec=tools.get_latest_chart_spec())
-            if a2ui_parts:
-                return types.Content(role="model", parts=a2ui_parts)
+            # If user requested interactive HTML cockpit, emit IFrameSrcdoc card
+            latest_html = getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
+            if latest_html and latest_html.get("html_preview"):
+                from .render.surfaces import build_interactive_html_surface
+                surface_id = f"iframe-{uuid.uuid4().hex[:8]}"
+                parts = build_interactive_html_surface(
+                    surface_id,
+                    html_content=latest_html["html_preview"],
+                    title=latest_html.get("title", "Interactive Cockpit")
+                )
+                if parts:
+                    return types.Content(role="model", parts=parts)
+
+            # Otherwise emit standard VegaChart surface
+            surface_id = f"surface-{uuid.uuid4().hex[:8]}"
+            chart_spec = getattr(tools, "get_latest_chart_spec", lambda consume=False: None)(consume=True)
+            if chart_spec:
+                a2ui_parts = build_cold_chain_auditor_surface(surface_id, spec=chart_spec)
+                if a2ui_parts:
+                    return types.Content(role="model", parts=a2ui_parts)
         except Exception:
             pass
         return None
 
+    
     root_agent = Agent(
         name=AGENT_ID,
         description=AGENT_DESCRIPTION,
