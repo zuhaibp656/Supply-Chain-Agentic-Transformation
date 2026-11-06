@@ -77,7 +77,7 @@
         "shipment_id": "SHP-XYZ-9088",
         "container_or_truck_id": "TRK-T17-WEST-01",
         "scope3_emissions_kg_co2e": 412.8,
-        "rma_ticket_id": "RMA-20261022-501",
+        "rma_ticket_id": "Return Merchandise Authorization (RMA)-20261022-501",
         "end_to_end_status": "DELIVERED_RMA_BACKHAUL_MATCHED"
       },
       {
@@ -156,7 +156,7 @@
     {
       "filename": "XYZ_Corp_03_Make_Plant_OEE_Production_and_Vision_QA.xlsx",
       "path": "demo_data/xyz_corporation/excel/XYZ_Corp_03_Make_Plant_OEE_Production_and_Vision_QA.xlsx",
-      "title": "03 \u00b7 MAKE \u2014 Plant OEE Telemetry, Job-Shop Schedules & Inline Vision QA",
+      "title": "03 \u00b7 MAKE \u2014 Plant Overall Equipment Effectiveness (OEE) Telemetry, Job-Shop Schedules & Inline Vision QA",
       "pillar": "03 \u00b7 Make",
       "format": "XLSX",
       "sheets": [
@@ -173,7 +173,7 @@
     {
       "filename": "XYZ_Corp_04_Fulfill_MEIO_3D_Slotting_and_Spanner_ATP.xlsx",
       "path": "demo_data/xyz_corporation/excel/XYZ_Corp_04_Fulfill_MEIO_3D_Slotting_and_Spanner_ATP.xlsx",
-      "title": "04 \u00b7 FULFILL \u2014 Clark-Scarf MEIO, 3D Warehouse Slotting, Spanner ATP & Yard",
+      "title": "04 \u00b7 FULFILL \u2014 Clark-Scarf Multi-Echelon Inventory Optimization (MEIO), 3D Warehouse Slotting, Spanner ATP & Yard",
       "pillar": "04 \u00b7 Fulfill",
       "format": "XLSX",
       "sheets": [
@@ -190,7 +190,7 @@
     {
       "filename": "XYZ_Corp_05_Deliver_MultiModal_Fleet_3D_LIFO_and_TMD.xlsx",
       "path": "demo_data/xyz_corporation/excel/XYZ_Corp_05_Deliver_MultiModal_Fleet_3D_LIFO_and_TMD.xlsx",
-      "title": "05 \u00b7 DELIVER \u2014 FleetFlow Corridors, CubeMaster 3D LIFO, Ocean/Air/Rail & TM&D",
+      "title": "05 \u00b7 DELIVER \u2014 FleetFlow Corridors, CubeMaster 3D LIFO, Ocean/Air/Rail & Trade Marketing & Distribution (TM&D)",
       "pillar": "05 \u00b7 Deliver",
       "format": "XLSX",
       "sheets": [
@@ -207,7 +207,7 @@
     {
       "filename": "XYZ_Corp_06_Return_RMA_OTIF_Shield_and_Scope3_CBAM.xlsx",
       "path": "demo_data/xyz_corporation/excel/XYZ_Corp_06_Return_RMA_OTIF_Shield_and_Scope3_CBAM.xlsx",
-      "title": "06 \u00b7 RETURN & ENABLE \u2014 Circular RMA Grading, OTIF Disputes & ISO 14083 Scope-3",
+      "title": "06 \u00b7 RETURN & ENABLE \u2014 Circular Return Merchandise Authorization (RMA) Grading, On-Time In-Full (OTIF) Disputes & ISO 14083 Scope-3",
       "pillar": "06 \u00b7 Return & Enable",
       "format": "XLSX",
       "sheets": [
@@ -256,9 +256,9 @@
     {
       "filename": "XYZ_Corp_EU_CBAM_Embedded_Carbon_and_EUDR_Certificate.pdf",
       "path": "demo_data/xyz_corporation/pdfs/XYZ_Corp_EU_CBAM_Embedded_Carbon_and_EUDR_Certificate.pdf",
-      "title": "EU CBAM EMBEDDED CARBON & EUDR DUE DILIGENCE CERTIFICATE",
-      "doc_code": "ESG-CBAM-2026-882",
-      "pillar": "06 \u00b7 Return & Enable (EcoChain Scope-3 & CBAM Ledger)",
+      "title": "EU Carbon Border Adjustment Mechanism (CBAM) EMBEDDED CARBON & European Union Deforestation Regulation (EUDR) DUE DILIGENCE CERTIFICATE",
+      "doc_code": "ESG-Carbon Border Adjustment Mechanism (CBAM)-2026-882",
+      "pillar": "06 \u00b7 Return & Enable (EcoChain Scope-3 & Carbon Border Adjustment Mechanism (CBAM) Ledger)",
       "format": "PDF",
       "pages": 2,
       "size_kb": 319.2
@@ -278,7 +278,7 @@
       "path": "demo_data/xyz_corporation/pdfs/XYZ_Corp_Transporter_Lorry_Receipt_Challan_and_POD_SHP9088.pdf",
       "title": "TRANSPORTER LORRY RECEIPT (LR CHALLAN), 3D LOAD & DIGITAL POD",
       "doc_code": "LR-POD-SHP-9088",
-      "pillar": "05 \u00b7 Deliver / 06 \u00b7 Return (FleetFlow, CubeMaster 3D & OTIF Shield)",
+      "pillar": "05 \u00b7 Deliver / 06 \u00b7 Return (FleetFlow, CubeMaster 3D & On-Time In-Full (OTIF) Shield)",
       "format": "PDF",
       "pages": 2,
       "size_kb": 323.9
@@ -312,7 +312,7 @@
     {
       "filename": "XYZ_03_ReturnLoop_RMA_Optical_Grading_Scan.png",
       "path": "demo_data/xyz_corporation/images/XYZ_03_ReturnLoop_RMA_Optical_Grading_Scan.png",
-      "title": "ReturnLoop Multimodal RMA Grading & Backhaul Match",
+      "title": "ReturnLoop Multimodal Return Merchandise Authorization (RMA) Grading & Backhaul Match",
       "pillar": "06 \u00b7 Return & Enable",
       "agent_id": "reverse_rma_optimizer"
     },
@@ -320,7 +320,7 @@
       "filename": "XYZ_04_ShelfVision_Retail_Planogram_Audit.png",
       "path": "demo_data/xyz_corporation/images/XYZ_04_ShelfVision_Retail_Planogram_Audit.png",
       "title": "ShelfVision Retail Store Planogram & OOS Gap Detection",
-      "pillar": "05 \u00b7 Deliver (TM&D)",
+      "pillar": "05 \u00b7 Deliver (Trade Marketing & Distribution (TM&D))",
       "agent_id": "planogram_merchandising_vision_auditor"
     },
     {
@@ -333,7 +333,7 @@
     {
       "filename": "XYZ_06_EcoChain_EUDR_Satellite_Deforestation_Scan.png",
       "path": "demo_data/xyz_corporation/images/XYZ_06_EcoChain_EUDR_Satellite_Deforestation_Scan.png",
-      "title": "EcoChain Earth Engine EUDR Satellite Polygon Scan",
+      "title": "EcoChain Earth Engine European Union Deforestation Regulation (EUDR) Satellite Polygon Scan",
       "pillar": "06 \u00b7 Return & Enable",
       "agent_id": "carbon_scope3_ledger"
     },
@@ -377,14 +377,14 @@
     {
       "filename": "XYZ_Corp_Circular_RMA_and_ISO14083_ESG_Compliance_Manual.docx",
       "path": "demo_data/xyz_corporation/docs/XYZ_Corp_Circular_RMA_and_ISO14083_ESG_Compliance_Manual.docx",
-      "title": "XYZ Global Industries Corp \u2014 Circular RMA Grading, CBAM & EUDR Compliance Manual",
+      "title": "XYZ Global Industries Corp \u2014 Circular Return Merchandise Authorization (RMA) Grading, Carbon Border Adjustment Mechanism (CBAM) & European Union Deforestation Regulation (EUDR) Compliance Manual",
       "format": "DOCX",
       "size_kb": 1.4
     },
     {
       "filename": "XYZ_Corp_Unstructured_Customer_and_Carrier_Emails.eml",
       "path": "demo_data/xyz_corporation/docs/XYZ_Corp_Unstructured_Customer_and_Carrier_Emails.eml",
-      "title": "Unstructured Customer Rush Order, RMA Pickup & Typhoon Carrier Alert Emails",
+      "title": "Unstructured Customer Rush Order, Return Merchandise Authorization (RMA) Pickup & Typhoon Carrier Alert Emails",
       "format": "EML",
       "size_kb": 1.3
     },

@@ -275,14 +275,31 @@ Use Google Search to investigate **{target_desc}** in depth:
    - Choose `watermark_type` for each pillar from: `["demand_wave", "supplier_graph", "factory_arm", "warehouse_rack", "corridor_lifo", "conveyor_rack"]`.
 3. **Real Corporate Website Domain & Career-Portal Job Titles**:
    - Find the exact `official_domain` (e.g. `"wipro.com"`, `"asianpaints.com"`, `"nike.com"`, `"pfizer.com"`) so our logo engine can download their official brand mark for `Gemini × Company` co-branding.
-   - Search corporate career portals (`careers.<domain>`), LinkedIn Jobs, Naukri, Glassdoor, and annual reports to extract `6` to `8` authentic supply chain, procurement, operations, planning, or logistics job titles hired at **{company_name}**.
-4. **Physical & Channel Relevance Profile (`division_operational_profile`)**:
+   - Search corporate career portals (`careers.<domain>`), LinkedIn Jobs, Naukri, Glassdoor, and annual reports to extract `6` to `8` authentic supply chain, procurement, operations, planning, or logistics job titles hired4. **Physical & Channel Relevance Profile (`division_operational_profile`)**:
    - Accurately flag which physical traits DO vs. DO NOT apply (e.g., refrigerated cold-chain perishables, grocery food expiry markdowns, brick-and-mortar retail store planograms, D2C parcel e-commerce) so inapplicable AI agents are cleanly hidden.
+5. **CRITICAL MANDATE — DIVISION CANONICALIZATION**:
+   - Users frequently input informal colloquial shorthand or abbreviations (e.g. 'e-commerce' for Amazon, 'two wheeler' for Suzuki, 'TM&D' for ITC). DO NOT just echo raw user text! Conduct Google Search to identify and return the OFFICIAL formal corporate subsidiary, division, or operating entity name with all acronyms spelled out (e.g. 'Worldwide Amazon Stores & Consumer Fulfillment', 'Suzuki Motorcycle Division (Two-Wheelers)', 'Trade Marketing & Distribution (TM&D)'). Return this in `canonical_division_name`.
+6. **CRITICAL MANDATE — SPELL OUT ALL ABBREVIATIONS & ACRONYMS IN FULL**:
+   - NEVER leave raw domain acronyms unexplained anywhere! Business stakeholders and executives must understand every term without guessing.
+   - Whenever an acronym is used, ALWAYS provide the full expanded form alongside or preceding the acronym.
+   - Examples:
+     * 'Supply Chain Optimization Technologies (SCOT)' (NEVER just 'SCOT')
+     * 'Carbon Border Adjustment Mechanism (CBAM)' (NEVER just 'CBAM')
+     * 'Trade Marketing & Distribution (TM&D)' (NEVER just 'TM&D')
+     * 'On-Time In-Full (OTIF)' (NEVER just 'OTIF')
+     * 'Fulfillment Center (FC)' (NEVER just 'FC')
+     * 'Amazon Transportation Services (ATS)' (NEVER just 'ATS')
+     * 'Return Merchandise Authorization (RMA)' (NEVER just 'RMA')
+     * 'Overall Equipment Effectiveness (OEE)' (NEVER just 'OEE')
+     * 'European Union Deforestation Regulation (EUDR)' (NEVER just 'EUDR')
+     * 'Corporate Sustainability Reporting Directive (CSRD)' (NEVER just 'CSRD')
+   - In every pillar name, scor_badge, tagline, subtitle, agent title, workflow name, executive thesis, manual toil, and proof point, spell out all abbreviations!
 
 Return ONLY a valid JSON object matching this exact structure (no markdown commentary outside JSON):
-{{
+{
   "canonical_company_name": "Official brand/legal name of the company",
-  "division_display_name": "Division name if specified, else concise primary business scope (or empty string)",
+  "canonical_division_name": "Official formal division/subsidiary name with all acronyms spelled out (or empty string if not applicable)",
+  "division_display_name": "Concise official business scope display name",
   "official_domain": "companydomain.com",
   "industry_sector": "Specific industry & operational classification",
   "brand_accent_hex": "#HEXCODE",
@@ -296,6 +313,7 @@ Return ONLY a valid JSON object matching this exact structure (no markdown comme
     "Term 2 — Plain-English meaning",
     "Term 3 — Plain-English meaning",
     "Term 4 — Plain-English meaning"
+  ], 4 — Plain-English meaning"
   ],
   "discovered_career_titles": [
     "Authentic corporate job title 1",

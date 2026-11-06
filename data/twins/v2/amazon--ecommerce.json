@@ -1,0 +1,1680 @@
+{
+  "schema_version": "2.0",
+  "twin_slug": "amazon--ecommerce",
+  "company_name": "Amazon",
+  "canonical_name": "Amazon Seller Services Private Limited",
+  "division_name": "Worldwide Amazon Stores & Consumer Fulfillment",
+  "display_label": "Amazon \u2014 Worldwide Amazon Stores & Consumer Fulfillment",
+  "brand": {
+    "company_name": "Amazon",
+    "canonical_name": "Amazon Seller Services Private Limited",
+    "division_name": "Worldwide Amazon Stores & Consumer Fulfillment",
+    "twin_slug": "amazon--ecommerce",
+    "official_domain": "amazon.in",
+    "industry_sector": "E-commerce & Logistics",
+    "geography": "India",
+    "brand_accent": "#ff9900",
+    "brand_secondary": "#232F3E",
+    "executive_title": "Vice President, Customer Fulfilment, Amazon India",
+    "executive_thesis": "Amazon India operates a massive e-commerce logistics network powered by SCOT (Supply Chain Optimization Technologies) to predict demand and position inventory across dozens of Fulfillment Centers. Orders flow through Amazon Transportation Services (ATS) sort centers and are delivered via Amazon Logistics (AMZL) delivery stations, Delivery Service Partners (DSPs), and local 'I Have Space' kirana stores.",
+    "flagship_sites": "BOM5 Fulfillment Center (Bhiwandi) \u00b7 DEL4 Fulfillment Center (Gurugram) \u00b7 BLR8 Fulfillment Center (Bengaluru) \u00b7 HYD13 Fulfillment Center (Hyderabad) \u00b7 Amazon Transportation Services (ATS) Sortation Center Network",
+    "erp_systems": "Amazon SCOT (Supply Chain Optimization Technologies) \u00b7 AFT (Amazon Fulfillment Technologies) \u00b7 AWS Cloud Infrastructure \u00b7 Coupa (Indirect Procurement)",
+    "logo": {
+      "data_uri": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBDcmVhdGVkIHdpdGggSW5rc2NhcGUgKGh0dHA6Ly93d3cuaW5rc2NhcGUub3JnLykgLS0+CjxzdmcgaWQ9InN2Zzg0MiIgd2lkdGg9IjM5OC42MW1tIiBoZWlnaHQ9IjEzMy40OW1tIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzOTguNjEgMTMzLjQ5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIGlkPSJsYXllcjEiPgogICAgPHBhdGggaWQ9IlNoYXBlIiBkPSJtMTkuNDkgNzAuNzg1Yy0zLjg2IDAtNy4yNTc5LTAuODQyNy0xMC4xOTQtMi41MjgxLTIuOTM1OC0xLjczOTYtNS4yMTkyLTQuMTMxOC02Ljg1MDItNy4xNzY2LTEuNjMxLTMuMDk4NC0yLjQ0NjUtNi42NTk0LTIuNDQ2NS0xMC42ODMgMC00LjgzODYgMS4xOTYxLTkuMDc5MiAzLjU4ODItMTIuNzIxIDIuNDQ2NS0zLjY0MjcgNS44OTg3LTYuNDQyNyAxMC4zNTctOC40IDQuNTEyNC0xLjk1NjggOS43ODYtMi45MzU1IDE1LjgyMS0yLjkzNTUgMi43NzI3IDAgNS4wMjg5IDAuMTkwMSA2Ljc2ODcgMC41NzA5di0xLjcxMjVjMC00LjEzMi0wLjc2MTItNy4yMDM4LTIuMjgzNC05LjIxNTMtMS41MjIzLTIuMDY1OS0zLjgzMjktMy4wOTg5LTYuOTMxOC0zLjA5ODktNS4wMDE3IDAtOC4yMDkzIDIuNjM2OC05LjYyMjggNy45MTAzLTAuNDM0OSAxLjUyMjMtMS4zMzE5IDIuMTc0Ny0yLjY5MTEgMS45NTcybC0xMS4wOTEtMS45NTcyYy0wLjgxNTUzLTAuMTYzMS0xLjM4NjQtMC41MTY1LTEuNzEyNi0xLjA2MDEtMC4yNzE4Mi0wLjU0MzctMC4yOTkwMS0xLjI3NzYtMC4wODE1LTIuMjAxOCAxLjQxMzUtNS41NDU0IDQuNDAzNy05Ljg0MDQgOC45NzA0LTEyLjg4NSA0LjYyMTItMy4wOTg5IDEwLjQxMS00LjY0ODMgMTcuMzctNC42NDgzIDguMjYzNyAwIDE0LjU0MyAyLjIyOSAxOC44MzggNi42ODcxIDQuMzQ5NCA0LjQ1OCA2LjUyMzkgMTAuOTU1IDYuNTIzOSAxOS40OTF2NDEuMDE5YzAgMC41OTc5LTAuMjE3MiAxLjExNDEtMC42NTIxIDEuNTQ5LTAuMzgwNyAwLjM4MDctMC44NzAzIDAuNTcwOC0xLjQ2ODIgMC41NzA4aC0xMC42MDFjLTEuMzA0OCAwLTIuMTIwMi0wLjcwNjgtMi40NDY0LTIuMTE5OGwtMS42MzEtNy42NjU2aC0wLjY1MjRjLTEuNDY3OSAzLjU4OC0zLjY2OTcgNi4zNjA0LTYuNjA1NSA4LjMxNzctMi44ODE0IDEuOTU3My02LjMwNjUgMi45MzU5LTEwLjI3NSAyLjkzNTl6bS0xLjcxMjYtMjIuMzQ1YzAgMi44ODE4IDAuNzM0IDUuMTkyMiAyLjIwMTkgNi45MzE4IDEuNTIyMyAxLjY4NTQgMy41NjEgMi41MjgxIDYuMTE2MiAyLjUyODEgMy4zNzA3IDAgNS45NTMxLTEuNDk1MyA3Ljc0NzItNC40ODU0IDEuNzk0MS0zLjA0NDMgMi42OTEyLTcuMzkzOCAyLjY5MTItMTMuMDQ4di00LjMyMjRjLTEuNTIyMy0wLjI3MTgtMi45NjMtMC40MDc4LTQuMzIyMi0wLjQwNzgtNC40NTggMC03Ljk5MTggMS4xNjg4LTEwLjYwMSAzLjUwNjgtMi41NTUyIDIuMjgzMy0zLjgzMjkgNS4zODIzLTMuODMyOSA5LjI5NjR6bTQ2LjE1Ny00NC44NTJjMC0wLjU5ODAzIDAuMTkwNy0xLjA4NzMgMC41NzA5LTEuNDY3OSAwLjQzNDktMC40MzQ5NSAwLjk1MTUtMC42NTI0IDEuNTQ5NS0wLjY1MjRoMTAuNzY1YzAuNTk3OSAwIDEuMDg3NSAwLjE5MDI2IDEuNDY3NyAwLjU3MDgzIDAuNDM1NCAwLjM4MDU4IDAuNzA2OCAwLjg5NzA0IDAuODE1NiAxLjU0OTRsMS42MzEzIDcuOTkxOGgwLjY1MjFjMS40NjgyLTMuNzUxMiAzLjU2MDktNi42MDU1IDYuMjc5Ny04LjU2MjcgMi43NzI0LTIuMDExNiA2LjAzNDQtMy4wMTczIDkuNzg1NC0zLjAxNzMgNC4wMjMgMCA3LjQ3NiAxLjA2MDEgMTAuMzU3IDMuMTgwNCAyLjkzNiAyLjEyMDMgNS4xOTIgNS4xMzc2IDYuNzY5IDkuMDUxOWgwLjY1MmMyLjM5Mi00LjEzMTggNS4wODQtNy4yMDM1IDguMDc0LTkuMjE1MXM2LjMzMy0zLjAxNzMgMTAuMDMtMy4wMTczYzQuMDIzIDAgNy41MDMgMS4wODczIDEwLjQzOCAzLjI2MTkgMi45OTEgMi4xNzQ3IDUuMjc0IDUuMjczNiA2Ljg1IDkuMjk2NiAxLjU3NyA0LjAyMzIgMi4zNjYgOC43ODAyIDIuMzY2IDE0LjI3MXY0MC4zNjdjMCAwLjU5NzktMC4yMTggMS4xMTQxLTAuNjUzIDEuNTQ5LTAuMzgxIDAuMzgwNy0wLjg3IDAuNTcwOC0xLjQ2OCAwLjU3MDhoLTEzLjA0OGMtMC41OTggMC0xLjExNC0wLjE5MDEtMS41NDktMC41NzA4LTAuMzgxLTAuNDM0OS0wLjU3MS0wLjk1MTEtMC41NzEtMS41NDl2LTM5LjA2M2MwLTMuOTY4OC0wLjc2MS03LjAxMzEtMi4yODMtOS4xMzM0LTEuNTIzLTIuMTIwMi0zLjcyNC0zLjE4MDQtNi42MDYtMy4xODA0LTMuMTUzIDAtNS41NzIgMS4yNTA0LTcuMjU4IDMuNzUxMy0xLjYzMSAyLjUwMDgtMi40NDYgNi4xMTYxLTIuNDQ2IDEwLjg0NnYzNi43NzljMCAwLjU5NzktMC4yMTggMS4xMTQxLTAuNjUzIDEuNTQ5LTAuMzggMC4zODA3LTAuODcgMC41NzA4LTEuNDY4IDAuNTcwOGgtMTMuMDQ4Yy0wLjU5NyAwLTEuMTE0LTAuMTkwMS0xLjU0OS0wLjU3MDgtMC4zODEtMC40MzQ5LTAuNTcwOS0wLjk1MTEtMC41NzA5LTEuNTQ5di0zOS4wNjNjMC0zLjk2ODgtMC43NjA5LTcuMDEzMS0yLjI4MzMtOS4xMzM0LTEuNTIyNC0yLjEyMDItMy43MjQtMy4xODA0LTYuNjA1Mi0zLjE4MDQtMy4xNTM3IDAtNS41NzMgMS4yNTA0LTcuMjU4NCAzLjc1MTMtMS42MzA3IDIuNTAwOC0yLjQ0NjQgNi4xMTYxLTIuNDQ2NCAxMC44NDZ2MzYuNzc5YzAgMC41OTc5LTAuMjE3MiAxLjExNDEtMC42NTIxIDEuNTQ5LTAuMzgwNyAwLjM4MDctMC44NzAzIDAuNTcwOC0xLjQ2ODIgMC41NzA4aC0xMy4wNDhjLTAuNTk4IDAtMS4xMTQ2LTAuMTkwMS0xLjU0OTUtMC41NzA4LTAuMzgwMi0wLjQzNDktMC41NzA5LTAuOTUxMS0wLjU3MDktMS41NDl6bTk3LjUzMyA0Ni44MDljMC00LjgzODYgMS4xOTctOS4wNzkyIDMuNTg5LTEyLjcyMSAyLjQ0Ni0zLjY0MjcgNS44OTgtNi40NDI3IDEwLjM1Ny04LjQgNC41MTItMS45NTY4IDkuNzg2LTIuOTM1NSAxNS44Mi0yLjkzNTUgMi43NzMgMCA1LjAyOSAwLjE5MDEgNi43NjkgMC41NzA5di0xLjcxMjVjMC00LjEzMi0wLjc2Mi03LjIwMzgtMi4yODQtOS4yMTUzLTEuNTIyLTIuMDY1OS0zLjgzMi0zLjA5ODktNi45MzEtMy4wOTg5LTUuMDAyIDAtOC4yMSAyLjYzNjgtOS42MjMgNy45MTAzLTAuNDM1IDEuNTIyMy0xLjMzMiAyLjE3NDctMi42OTEgMS45NTcybC0xMS4wOTEtMS45NTcyYy0wLjgxNi0wLjE2MzEtMS4zODctMC41MTY1LTEuNzEzLTEuMDYwMS0wLjI3MS0wLjU0MzctMC4yOTktMS4yNzc2LTAuMDgxLTIuMjAxOCAxLjQxMy01LjU0NTQgNC40MDMtOS44NDA0IDguOTcxLTEyLjg4NSA0LjYyLTMuMDk4OSAxMC40MS00LjY0ODMgMTcuMzY5LTQuNjQ4MyA4LjI2NCAwIDE0LjU0MyAyLjIyOSAxOC44MzggNi42ODcxIDQuMzQ5IDQuNDU4IDYuNTI0IDEwLjk1NSA2LjUyNCAxOS40OTF2NDEuMDE5YzAgMC41OTc5LTAuMjE3IDEuMTE0MS0wLjY1MiAxLjU0OS0wLjM4MSAwLjM4MDctMC44NyAwLjU3MDgtMS40NjggMC41NzA4aC0xMC42MDFjLTEuMzA1IDAtMi4xMjEtMC43MDY4LTIuNDQ3LTIuMTE5OGwtMS42MzEtNy42NjU2aC0wLjY1MmMtMS40NjggMy41ODgtMy42NyA2LjM2MDQtNi42MDYgOC4zMTc3LTIuODgxIDEuOTU3My02LjMwNiAyLjkzNTktMTAuMjc1IDIuOTM1OXMtNy4yNTgtMC44NDI3LTEwLjE5NC0yLjUyODFjLTIuOTM2LTEuNzM5Ni01LjIxOS00LjEzMTgtNi44NS03LjE3NjYtMS42MzEtMy4wOTg0LTIuNDQ3LTYuNjU5NC0yLjQ0Ny0xMC42ODN6bTE3Ljc3OS0xLjk1NzNjMCAyLjg4MTggMC43MzMgNS4xOTIyIDIuMjAxIDYuOTMxOCAxLjUyMiAxLjY4NTQgMy41NjEgMi41MjgxIDYuMTE2IDIuNTI4MSAzLjM3MSAwIDUuOTUzLTEuNDk1MyA3Ljc0OC00LjQ4NTQgMS43OTMtMy4wNDQzIDIuNjkxLTcuMzkzOCAyLjY5MS0xMy4wNDh2LTQuMzIyNGMtMS41MjMtMC4yNzE4LTIuOTYzLTAuNDA3OC00LjMyMy0wLjQwNzgtNC40NTcgMC03Ljk5MSAxLjE2ODgtMTAuNjAxIDMuNTA2OC0yLjU1NSAyLjI4MzMtMy44MzIgNS4zODIzLTMuODMyIDkuMjk2NHptNDQuODUyIDguODg5MWMwLTEuMTk1OSAwLjMyNi0yLjIyOTIgMC45NzgtMy4wOTlsMjcuODktMzkuMDYyaC0yNi4wOTZjLTAuNTk4IDAtMS4xMTQtMC4xOTAzLTEuNTQ5LTAuNTcwOC0wLjM4MS0wLjQzNS0wLjU3MS0wLjk1MTQtMC41NzEtMS41NDk1di05LjQ1OTdjMC0wLjU5ODAzIDAuMTktMS4wODczIDAuNTcxLTEuNDY3OSAwLjQzNS0wLjQzNDk1IDAuOTUxLTAuNjUyNCAxLjU0OS0wLjY1MjRoNDIuODk1YzAuNTk5IDAgMS4wODggMC4yMTc0NSAxLjQ2OCAwLjY1MjQgMC40MzUgMC4zODA1NyAwLjY1MiAwLjg2OTg0IDAuNjUyIDEuNDY3OXY5Ljg2NzVjMCAxLjE5Ni0wLjMyNiAyLjIyOS0wLjk3OCAzLjA5ODlsLTI1LjI4MSAzNC43NGMxLjUyMy0wLjI3MTQgMy4wNzItMC40MDczIDQuNjQ5LTAuNDA3MyAzLjkxNSAwIDcuNTAzIDAuMzUzMSAxMC43NjUgMS4wNTk5IDMuMzE2IDAuNjUyNiA2Ljc0MSAxLjczOTYgMTAuMjc1IDMuMjYyIDEuMjUgMC41NDM3IDEuODc1IDEuNDY3NyAxLjg3NSAyLjc3Mjl2OS4zNzgxYzAgMC44Njk4LTAuMjcxIDEuNDY3Ny0wLjgxNSAxLjc5MzgtMC41NDQgMC4yNzE5LTEuMjIzIDAuMjQ0OC0yLjAzOS0wLjA4MTMtNC4wNzctMS41MjI0LTcuNjkzLTIuNTgyMy0xMC44NDYtMy4xODA3LTMuMDk5LTAuNjUyMS02LjQ5Ny0wLjk3ODctMTAuMTk0LTAuOTc4N3MtNy4yMyAwLjMyNjYtMTAuNzY0IDAuOTc4N2MtMy40OCAwLjY1MjYtNy4zMzkgMS43MTI1LTExLjU4IDMuMTgwNy0wLjgxNiAwLjI3MTktMS40OTUgMC4yNzE5LTIuMDM5IDAtMC41NDMtMC4zMjY2LTAuODE1LTAuODk3NC0wLjgxNS0xLjcxMjV6bTUyLjY4MS0yMS45MzdjMC02LjYzMjMgMS4yNzctMTIuNjQgMy44MzItMTguMDIyIDIuNTU2LTUuNDM2NiA2LjA2Mi05LjY3NzIgMTAuNTItMTIuNzIyIDQuNTEzLTMuMDk4OSA5LjUxNC00LjY0ODMgMTUuMDA1LTQuNjQ4M3MxMC41NDcgMS41NDk0IDE1LjAwNSA0LjY0ODNjNC41MTMgMy4wNDQ1IDguMDQ3IDcuMjg1MSAxMC42MDIgMTIuNzIyIDIuNjA5IDUuMzgyMyAzLjkxNCAxMS4zOSAzLjkxNCAxOC4wMjIgMCA2LjYzMjktMS4zMDUgMTIuNjY4LTMuOTE0IDE4LjEwNC0yLjU1NSA1LjM4MjMtNi4wODkgOS42MjI5LTEwLjYwMiAxMi43MjItNC40NTggMy4wNDQyLTkuNDU5IDQuNTY2Ni0xNS4wMDUgNC41NjY2LTUuNTQ1IDAtMTAuNDkyLTEuNTIyNC0xNS4wMDUtNC41NjY2LTQuNDU4LTMuMDk5LTcuOTY0LTcuMzM5Ni0xMC41Mi0xMi43MjItMi41NTUtNS40MzY1LTMuODMyLTExLjQ3MS0zLjgzMi0xOC4xMDR6bTE3Ljk0IDBjMCA2LjkwNDcgMC45NzkgMTIuMjMzIDIuOTM2IDE1Ljk4NCAxLjk1OCAzLjY5NjkgNC43ODQgNS41NDU0IDguNDgxIDUuNTQ1NHM2LjU1Mi0xLjg0ODUgOC41NjMtNS41NDU0YzIuMDEyLTMuNzUxIDMuMDE3LTkuMDc5MiAzLjAxNy0xNS45ODQgMC02LjkwNDItMS4wMDUtMTIuMjA1LTMuMDE3LTE1LjkwMi0yLjAxMS0zLjc1MTQtNC44NjYtNS42MjctOC41NjMtNS42MjdzLTYuNTIzIDEuODc1Ni04LjQ4MSA1LjYyN2MtMS45NTcgMy42OTY4LTIuOTM2IDguOTk3Ni0yLjkzNiAxNS45MDJ6bTQ5Ljc0NS0zMS44MDRjMC0wLjU5ODAzIDAuMTkxLTEuMDg3MyAwLjU3Mi0xLjQ2NzkgMC40MzUtMC40MzQ5NSAwLjk1MS0wLjY1MjQgMS41NDktMC42NTI0aDEwLjc2NGMwLjU5OCAwIDEuMDg4IDAuMTkwMjYgMS40NjggMC41NzA4MyAwLjQzNSAwLjM4MDU4IDAuNzA3IDAuODk3MDQgMC44MTYgMS41NDk0bDEuNjMxIDcuOTkxOGgwLjY1MmMxLjQ2OC0zLjY5NjkgMy42MTUtNi41NTExIDYuNDQzLTguNTYyNyAyLjg4MS0yLjAxMTYgNi4yNTItMy4wMTczIDEwLjExMi0zLjAxNzMgNC4xMzEgMCA3LjY5MiAxLjA4NzMgMTAuNjgyIDMuMjYxOSAzLjA0NSAyLjE3NDcgNS4zODMgNS4yNzM2IDcuMDE0IDkuMjk2NiAxLjYzMSA0LjAyMzIgMi40NDYgOC43ODAyIDIuNDQ2IDE0LjI3MXY0MC4zNjdjMCAwLjU5NzktMC4yMTcgMS4xMTQxLTAuNjUyIDEuNTQ5LTAuMzggMC4zODA3LTAuODcgMC41NzA4LTEuNDY4IDAuNTcwOGgtMTMuMDQ4Yy0wLjU5OCAwLTEuMTE0LTAuMTkwMS0xLjU0OS0wLjU3MDgtMC4zODEtMC40MzQ5LTAuNTcxLTAuOTUxMS0wLjU3MS0xLjU0OXYtMzkuMDYzYzAtMy45Njg4LTAuODE2LTcuMDEzMS0yLjQ0Ny05LjEzMzQtMS42MzEtMi4xMjAyLTMuOTQxLTMuMTgwNC02LjkzMS0zLjE4MDQtMy4zMTcgMC01Ljg0NSAxLjI1MDQtNy41ODQgMy43NTEzLTEuNzQgMi41MDA4LTIuNjEgNi4xMTYxLTIuNjEgMTAuODQ2djM2Ljc3OWMwIDAuNTk3OS0wLjIxNyAxLjExNDEtMC42NTIgMS41NDktMC4zODEgMC4zODA3LTAuODcgMC41NzA4LTEuNDY4IDAuNTcwOGgtMTMuMDQ4Yy0wLjU5OCAwLTEuMTE0LTAuMTkwMS0xLjU0OS0wLjU3MDgtMC4zODEtMC40MzQ5LTAuNTcyLTAuOTUxMS0wLjU3Mi0xLjU0OXoiIGZpbGw9IiMxNzFkMjciLz4KICAgIDxwYXRoIGlkPSJQYXRoIiBkPSJtNDUuMzQzIDc4LjY5M2MtMS4wMzMgMC44MTU3LTEuMjUwNSAyLjE3NDUtMC42NTI0IDQuMDc3NiAwLjU0MzYgMS42ODU1IDEuODIxMiAzLjc3ODIgMy44MzI4IDYuMjc5MiA4LjEwMDQgMTAuMDA0IDE3Ljc1IDE4LjMyMSAyOC45NSAyNC45NTRzMjMuMTg4IDExLjUyNiAzNS45NjQgMTQuNjc5YzEyLjgzIDMuMjA3IDI1LjkzMiA0LjgxMSAzOS4zMDYgNC44MTEgMTcuMTI2IDAgMzMuNDM2LTIuNSA0OC45My03LjUwMiAxNS40OTQtNC45NDggMjguNDM0LTExLjkwNyAzOC44MTgtMjAuODc3IDMuNjQyLTMuMjA3IDUuNDY0LTUuNzYyNiA1LjQ2NC03LjY2NTggMC0wLjcwNjctMC4yOTktMS40MTM1LTAuODk3LTIuMTIwMy0wLjgxNi0wLjgxNTEtMS43OTUtMS4wODctMi45MzYtMC44MTUxLTEuMTQyIDAuMjcxNC0yLjc0NiAwLjk1MTEtNC44MTIgMi4wMzg1LTkuOTQ5IDUuMjE5Ny0yMi4wNzIgOS4zNzc3LTM2LjM3MSAxMi40NzctMTQuMjQzIDMuMTU0LTI5LjExMyA0LjczLTQ0LjYwNyA0LjczLTE5LjE5MSAwLTM3LjczLTIuNjA5LTU1LjYxNy03LjgyOS0xNy44ODYtNS4yMTktMzMuNzM0LTEzLjM3NC00Ny41NDMtMjQuNDY0LTIuMDExNS0xLjU3NjUtMy42NDI3LTIuNTgyOC00Ljg5My0zLjAxNzctMS4xOTYtMC40MzQ5LTIuMTc0Ni0wLjM1MzEtMi45MzU3IDAuMjQ0OHoiIGZpbGw9IiNmZjYyMDEiLz4KICAgIDxwYXRoIGlkPSJwYXRoNiIgZD0ibTIyNi41NCA4Mi43NzVjLTEuMTQyIDEuMDg3NS0xLjQ0MSAyLjIyOTItMC44OTcgMy40MjU2IDAuMzggMC44Njk3IDEuMTE0IDEuMzU4OCAyLjIwMiAxLjQ2NzcgMS4wODcgMC4xNjMgMi42MzYgMC4wNTQyIDQuNjQ4LTAuMzI2MSAzLjI2Mi0wLjcwNjcgNi42Ni0xLjE5NjMgMTAuMTkzLTEuNDY4MiAzLjUzNC0wLjIxNzIgNi42MDYtMC4xNjMgOS4yMTYgMC4xNjMgMi42MSAwLjM4MDcgNC4yNCAxLjAzMzMgNC44OTMgMS45NTczIDAuOTc5IDEuNDY4MiAwLjYyNSA0LjU2NjctMS4wNjEgOS4yOTY5LTEuNjMgNC43Mjk3LTMuODU5IDkuMzIzNy02LjY4NyAxMy43ODItMS4wODcgMS43OTQtMS43MzkgMy4yMDctMS45NTcgNC4yNDEtMC4yMTcgMS4wMzMgMC4wNTUgMS45MDIgMC44MTYgMi42MDkgMC40ODkgMC40ODkgMS4wMzMgMC43MzQgMS42MzEgMC43MzQgMS41NzcgMCAzLjg2LTEuMzg2IDYuODUtNC4xNTkgNS4zODItNC42NzUgOS4xNi0xMC4yMjEgMTEuMzM2LTE2LjYzNiAxLjE5NS0zLjMxNjYgMS45MjktNi43OTU4IDIuMjAxLTEwLjQzOCAwLjI3Mi0zLjY0MjItMC4xMzYtNi4yNTIxLTEuMjIzLTcuODI4Ny0xLjAzMy0xLjUyMjQtMy4zMTctMi43NzI5LTYuODUtMy43NTEtMy40OC0wLjk3ODctNi45ODYtMS40NjgzLTEwLjUyLTEuNDY4My02LjkwNSAwLTEzLjQ1NiAxLjYzMTMtMTkuNjUzIDQuODkzMy0yLjI4NCAxLjI1MDUtMy45OTYgMi40MTkyLTUuMTM4IDMuNTA2MnoiIGZpbGw9IiNmZjYyMDEiLz4KICA8L2c+Cjwvc3ZnPg==",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_type": "wikimedia_svg",
+      "plate_style": "light_plate",
+      "aspect_ratio": 2.99,
+      "monogram": "ASS"
+    },
+    "display_label": "Amazon \u2014 Worldwide Amazon Stores & Consumer Fulfillment"
+  },
+  "custom_pillars": [
+    {
+      "pillar_id": "scot_selection_planning",
+      "v_num": "01",
+      "scor_badge": "01 \u00b7 Supply Chain Optimization Technologies (SCOT) PLANNING",
+      "name": "Supply Chain Optimization Technologies (SCOT) & Selection Planning",
+      "tagline": "Demand forecasting and inventory placement",
+      "subtitle": "Leverages Amazon's proprietary Supply Chain Optimization Technologies (SCOT) engine to predict regional demand, plan events like Great Indian Festival, and optimize SKU selection.",
+      "color": "#ff9900",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "demand_forecasting",
+        "sop_ibp",
+        "portfolio_sku",
+        "trade_promotion"
+      ]
+    },
+    {
+      "pillar_id": "vendor_seller_sourcing",
+      "v_num": "02",
+      "scor_badge": "02 \u00b7 VENDOR NETWORK",
+      "name": "Vendor & Seller Sourcing",
+      "tagline": "Retail procurement and seller onboarding",
+      "subtitle": "Manages relationships with 1P vendors and 3P sellers, negotiating contracts, and sourcing sustainable packaging materials.",
+      "color": "#868c94",
+      "watermark_type": "supplier_graph",
+      "sub_pillar_ids": [
+        "supplier_network",
+        "material_packaging",
+        "contract_po_mgmt"
+      ]
+    },
+    {
+      "pillar_id": "fc_inbound_capacity",
+      "v_num": "03",
+      "scor_badge": "03 \u00b7 Fulfillment Center (FC) CAPACITY",
+      "name": "FC Inbound & Capacity Planning",
+      "tagline": "Fulfillment center labor and space optimization",
+      "subtitle": "Schedules inbound freight, plans Fulfillment Center (FC) labor capacity (production scheduling), and ensures quality compliance for received goods.",
+      "color": "#146eb4",
+      "watermark_type": "factory_arm",
+      "sub_pillar_ids": [
+        "capacity_planning",
+        "production_scheduling",
+        "quality_compliance"
+      ]
+    },
+    {
+      "pillar_id": "aft_fulfillment_ops",
+      "v_num": "04",
+      "scor_badge": "04 \u00b7 AFT OPERATIONS",
+      "name": "AFT & Fulfillment Center Operations",
+      "tagline": "Stow, pick, pack, and inventory positioning",
+      "subtitle": "Executes core warehouse operations using Amazon Fulfillment Technologies (AFT) to optimize inventory positioning and omnichannel visibility.",
+      "color": "#e11d48",
+      "watermark_type": "warehouse_rack",
+      "sub_pillar_ids": [
+        "positioning_optimization",
+        "warehouse_operations",
+        "omnichannel_visibility"
+      ]
+    },
+    {
+      "pillar_id": "ats_middle_mile",
+      "v_num": "05",
+      "scor_badge": "05 \u00b7 Amazon Transportation Services (ATS) SORTATION",
+      "name": "Amazon Transportation Services (ATS) & Middle Mile Sortation",
+      "tagline": "Linehaul and sort center network",
+      "subtitle": "Manages Amazon Transportation Services (ATS) for first and middle-mile logistics, sortation via pallets/totes, and Amazon Fresh store replenishment.",
+      "color": "#7c3aed",
+      "watermark_type": "conveyor_rack",
+      "sub_pillar_ids": [
+        "first_mid_mile",
+        "store_replenishment",
+        "returns_claims_mgmt",
+        "pallet_tote_reclamation"
+      ]
+    },
+    {
+      "pillar_id": "amzl_last_mile",
+      "v_num": "06",
+      "scor_badge": "06 \u00b7 Amazon Logistics (AMZL) DELIVERY",
+      "name": "Amazon Logistics (AMZL) & Last Mile Delivery",
+      "tagline": "Delivery stations and Delivery Service Partner (DSP) routing",
+      "subtitle": "Orchestrates the final mile through Amazon Logistics (AMZL), optimizing carrier routes for Delivery Service Partners (DSPs) and I Have Space partners.",
+      "color": "#059669",
+      "watermark_type": "corridor_lifo",
+      "sub_pillar_ids": [
+        "last_mile_delivery",
+        "route_carrier"
+      ]
+    },
+    {
+      "pillar_id": "reverse_recommerce",
+      "v_num": "07",
+      "scor_badge": "07 \u00b7 RE-COMMERCE",
+      "name": "Reverse Logistics & Re-commerce",
+      "tagline": "Returns processing and grocery markdowns",
+      "subtitle": "Handles customer returns, seller claims, liquidation of unfulfillable inventory, and expiry markdowns for Amazon Fresh perishables.",
+      "color": "#ea580c",
+      "watermark_type": "demand_wave",
+      "sub_pillar_ids": [
+        "expiry_markdowns"
+      ]
+    }
+  ],
+  "pillar_overrides": {
+    "demand_sop": {
+      "dept_id": "demand_sop",
+      "custom_name": "Planning & Strategy",
+      "custom_tagline": "Amazon Seller Services Private Limited \u2014 ecommerce \u00b7 Core Planning Lifecycle",
+      "custom_subtitle": "Demand signals and strategic S&OP alignment."
+    },
+    "sourcing_procurement": {
+      "dept_id": "sourcing_procurement",
+      "custom_name": "Sourcing & Procurement",
+      "custom_tagline": "Amazon Seller Services Private Limited \u2014 ecommerce \u00b7 Procurement Lifecycle Spine",
+      "custom_subtitle": "Tier vendor networks and EDI order routing."
+    },
+    "manufacturing_prod": {
+      "dept_id": "manufacturing_prod",
+      "custom_name": "Manufacturing & Production",
+      "custom_tagline": "Amazon Seller Services Private Limited \u2014 ecommerce \u00b7 Manufacturing Operations Lifecycle",
+      "custom_subtitle": "Optimized runs and zero-defect QA protocols."
+    },
+    "inventory_warehouse": {
+      "dept_id": "inventory_warehouse",
+      "custom_name": "Inventory & Warehousing",
+      "custom_tagline": "Amazon Seller Services Private Limited \u2014 ecommerce \u00b7 Inventory & DC Lifecycle Spine",
+      "custom_subtitle": "Multi-node staging and enterprise visibility."
+    },
+    "logistics_fleet": {
+      "dept_id": "logistics_fleet",
+      "custom_name": "Distribution & Logistics",
+      "custom_tagline": "Amazon Seller Services Private Limited \u2014 ecommerce \u00b7 Logistics Fulfillment Lifecycle",
+      "custom_subtitle": "Store replenishment and last-mile dispatch."
+    },
+    "circular_enable": {
+      "dept_id": "circular_enable",
+      "custom_name": "Returns & Reverse Logistics",
+      "custom_tagline": "Amazon Seller Services Private Limited \u2014 ecommerce \u00b7 Reverse Value Stream Lifecycle",
+      "custom_subtitle": "Triage inspection and upstream defect loops."
+    }
+  },
+  "sub_pillar_overrides": {
+    "demand_forecasting": {
+      "sub_pillar_id": "demand_forecasting",
+      "dept_id": "demand_sop",
+      "canonical_name": "Demand Forecasting",
+      "custom_name": "Supply Chain Optimization Technologies (SCOT) Regional Demand Sensing"
+    },
+    "trade_promotion": {
+      "sub_pillar_id": "trade_promotion",
+      "dept_id": "demand_sop",
+      "canonical_name": "Trade Promotion",
+      "custom_name": "Great Indian Festival & Deal Strategy"
+    },
+    "sop_ibp": {
+      "sub_pillar_id": "sop_ibp",
+      "dept_id": "demand_sop",
+      "canonical_name": "S&OP / IBP",
+      "custom_name": "Network Capacity & Event Planning"
+    },
+    "portfolio_sku": {
+      "sub_pillar_id": "portfolio_sku",
+      "dept_id": "demand_sop",
+      "canonical_name": "Portfolio & SKU",
+      "custom_name": "Selection & Inventory Health"
+    },
+    "supplier_network": {
+      "sub_pillar_id": "supplier_network",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Supplier Network",
+      "custom_name": "1P Vendor & 3P Seller Ecosystem"
+    },
+    "material_packaging": {
+      "sub_pillar_id": "material_packaging",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Material & Packaging",
+      "custom_name": "Sustainable Packaging & Consumables"
+    },
+    "contract_po_mgmt": {
+      "sub_pillar_id": "contract_po_mgmt",
+      "dept_id": "sourcing_procurement",
+      "canonical_name": "Contract & PO Mgmt",
+      "custom_name": "Contract & PO Mgmt"
+    },
+    "production_scheduling": {
+      "sub_pillar_id": "production_scheduling",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Production Scheduling",
+      "custom_name": "FC Inbound & Labor Production Scheduling"
+    },
+    "capacity_planning": {
+      "sub_pillar_id": "capacity_planning",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Capacity Planning",
+      "custom_name": "FC Storage & Network Capacity Planning"
+    },
+    "quality_compliance": {
+      "sub_pillar_id": "quality_compliance",
+      "dept_id": "manufacturing_prod",
+      "canonical_name": "Quality & Compliance",
+      "custom_name": "Inbound Quality & Seller Compliance (IQ)"
+    },
+    "positioning_optimization": {
+      "sub_pillar_id": "positioning_optimization",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Positioning & Optimization",
+      "custom_name": "Supply Chain Optimization Technologies (SCOT) Inventory Placement & Buffer Mgmt"
+    },
+    "warehouse_operations": {
+      "sub_pillar_id": "warehouse_operations",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Warehouse Operations",
+      "custom_name": "AFT Fulfillment & Fulfillment Center (FC) Floor Execution"
+    },
+    "omnichannel_visibility": {
+      "sub_pillar_id": "omnichannel_visibility",
+      "dept_id": "inventory_warehouse",
+      "canonical_name": "Omnichannel Visibility",
+      "custom_name": "Amazon Fresh & Last-Mile Network Visibility"
+    },
+    "first_mid_mile": {
+      "sub_pillar_id": "first_mid_mile",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "First & Mid-Mile",
+      "custom_name": "Amazon Transportation Services (ATS) Linehaul & Inbound Sortation"
+    },
+    "store_replenishment": {
+      "sub_pillar_id": "store_replenishment",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Store Replenishment",
+      "custom_name": "Amazon Fresh & Kirana Node Replenishment"
+    },
+    "last_mile_delivery": {
+      "sub_pillar_id": "last_mile_delivery",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Last-Mile Delivery",
+      "custom_name": "Amazon Logistics (AMZL) Delivery Station & IHS Operations"
+    },
+    "route_carrier": {
+      "sub_pillar_id": "route_carrier",
+      "dept_id": "logistics_fleet",
+      "canonical_name": "Route & Carrier",
+      "custom_name": "Amazon Transportation Services (ATS) Middle-Mile & Delivery Service Partner (DSP) Carrier Management"
+    },
+    "returns_claims_mgmt": {
+      "sub_pillar_id": "returns_claims_mgmt",
+      "dept_id": "circular_enable",
+      "canonical_name": "Returns & Claims Mgmt",
+      "custom_name": "Returns & Claims Mgmt"
+    },
+    "expiry_markdowns": {
+      "sub_pillar_id": "expiry_markdowns",
+      "dept_id": "circular_enable",
+      "canonical_name": "Expiry & Markdowns",
+      "custom_name": "Amazon Fresh Expiry & Liquidations"
+    },
+    "pallet_tote_reclamation": {
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "dept_id": "circular_enable",
+      "canonical_name": "Pallet & Tote Reclamation",
+      "custom_name": "Pallet & Tote Reclamation"
+    }
+  },
+  "persona_overrides": {
+    "demand_planner_forecaster": {
+      "persona_id": "demand_planner_forecaster",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Planner / Forecaster",
+      "title": "Instock Manager",
+      "role": "Optimizing regional inventory availability and Supply Chain Optimization Technologies (SCOT) inputs",
+      "summary": "Manages inventory health and availability across India's regional FCs, ensuring that Supply Chain Optimization Technologies (SCOT) algorithms accurately reflect local demand spikes and seasonal shifts.",
+      "manual_toil": "Manually adjusting Supply Chain Optimization Technologies (SCOT) overrides for local holidays and weather disruptions across dozens of Indian pin codes.",
+      "agentic_impact": "Automates the synthesis of hyper-local signals to refine Supply Chain Optimization Technologies (SCOT)'s regional placement logic without manual intervention.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "commercial_planning_lead": {
+      "persona_id": "commercial_planning_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Commercial Planning Lead",
+      "title": "Program Manager - Amazon Transportation Services",
+      "role": "Syncing middle-mile capacity with commercial demand",
+      "summary": "Coordinates between retail category teams and the Amazon Transportation Services (ATS) sortation network to ensure transportation capacity matches forecasted order volumes.",
+      "manual_toil": "Reconciling disparate spreadsheets from category managers with Amazon Transportation Services (ATS) sort center throughput limits during peak weeks.",
+      "agentic_impact": "Provides a unified view of unmodeled demand drivers to proactively adjust Amazon Transportation Services (ATS) line-haul schedules.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "brand_innovation_mgr": {
+      "persona_id": "brand_innovation_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Brand & Innovation Manager",
+      "title": "Vendor Manager - Retail",
+      "role": "Launching new selection and managing vendor relationships",
+      "summary": "Onboards new brands and selection to the India marketplace, focusing on high-velocity categories and Amazon Fresh expansion.",
+      "manual_toil": "Guessing initial buy quantities for new-to-market Indian brands based on weak historical lookalikes.",
+      "agentic_impact": "Uses AI to match new SKU attributes against millions of global data points for precise Day-1 inventory positioning.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "trade_marketing_manager": {
+      "persona_id": "trade_marketing_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Trade Marketing Manager",
+      "title": "Marketing Manager - Events & Deals",
+      "role": "Driving traffic and conversion during peak events",
+      "summary": "Designs promotional strategies for major events like Prime Day and the Great Indian Festival to maximize customer engagement.",
+      "manual_toil": "Manually simulating the potential lift of Lightning Deals across thousands of participating sellers.",
+      "agentic_impact": "Simulates price elasticity and promo ROI to recommend the most effective deal structures for peak events.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "key_account_manager": {
+      "persona_id": "key_account_manager",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Key Account Manager (KAM)",
+      "title": "Strategic Account Manager - Marketplace",
+      "role": "Growing top-tier sellers on the Amazon India platform",
+      "summary": "Works with large brand owners to optimize their FBA (Fulfillment by Amazon) strategy and promotional participation.",
+      "manual_toil": "Creating customized business review decks for sellers to justify increased inventory stowing.",
+      "agentic_impact": "Generates data-driven Joint Business Plans that align seller inventory with Amazon's regional demand forecasts.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "revenue_trade_finance_lead": {
+      "persona_id": "revenue_trade_finance_lead",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Revenue / Trade Finance Lead",
+      "title": "Accounts Receivable Specialist - Vendor Central",
+      "role": "Managing vendor payments and deduction reconciliation",
+      "summary": "Ensures accurate financial settlement with vendors, managing disputes related to shortages or promotional co-op fees.",
+      "manual_toil": "Auditing thousands of vendor invoices against Fulfillment Center (FC) receive records and promotional agreements.",
+      "agentic_impact": "Automates the audit of proof-of-performance for vendor-funded promotions using OCR and Supply Chain Optimization Technologies (SCOT) data.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "sop_supply_planning_dir": {
+      "persona_id": "sop_supply_planning_dir",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "S&OP / Supply Planning Dir.",
+      "title": "Supply Chain Optimization Lead",
+      "role": "Orchestrating end-to-end network flow and Fulfillment Center (FC) constraints",
+      "summary": "Leads the strategic alignment of Fulfillment Center (FC) storage capacity with inbound vendor shipments to prevent network congestion.",
+      "manual_toil": "Balancing unconstrained seller inbound requests against physical pallet limits at BOM5 and DEL4 facilities.",
+      "agentic_impact": "Simulates network-wide flow scenarios to identify bottleneck Fulfillment Centers (FCs) before they hit critical capacity.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "supply_chain_vp_coo": {
+      "persona_id": "supply_chain_vp_coo",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Supply Chain VP / COO",
+      "title": "Director - Amazon Logistics (AMZL)",
+      "role": "Governing last-mile delivery and network resilience",
+      "summary": "Oversees the entire last-mile ecosystem in India, including Delivery Stations, Delivery Service Partners (DSPs), and the 'I Have Space' kirana network.",
+      "manual_toil": "Triaging delivery disruptions during monsoon seasons or regional infrastructure outages via manual war rooms.",
+      "agentic_impact": "Instantly re-routes delivery volumes across the Amazon Logistics (AMZL) and IHS network during large-scale logistics disruptions.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "ibp_lead_chief_planning_off": {
+      "persona_id": "ibp_lead_chief_planning_off",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "IBP Lead / Chief Planning Off.",
+      "title": "Capacity Planning Manager",
+      "role": "Long-term infrastructure and peak-season readiness",
+      "summary": "Plans the multi-year expansion of India's Fulfillment Center (FC) and Sort Center footprint to support the growth of the Great Indian Festival.",
+      "manual_toil": "Compiling executive pre-read decks for quarterly capacity reviews across multiple business units.",
+      "agentic_impact": "Generates real-time executive insights on network utilization and capital expenditure ROI for new facility launches.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "category_manager_portfolio": {
+      "persona_id": "category_manager_portfolio",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Category Manager",
+      "title": "Category Manager - Amazon Fresh",
+      "role": "Maximizing selection yield and minimizing perishables waste",
+      "summary": "Curates the selection for Amazon Fresh, balancing high-velocity essentials with regional specialty items.",
+      "manual_toil": "Reviewing thousands of low-velocity SKUs to identify candidates for selection pruning or markdown.",
+      "agentic_impact": "Scores every SKU on shelf-life, storage cost, and customer demand to optimize the Fresh selection mix.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "lifecycle_materials_mgr": {
+      "persona_id": "lifecycle_materials_mgr",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Lifecycle / Materials Mgr",
+      "title": "Operations Manager - Fulfillment Center",
+      "role": "Managing inventory lifecycle and facility throughput",
+      "summary": "Responsible for the day-to-day operational efficiency of a flagship Fulfillment Center (FC) like HYD13, focusing on stow and pick accuracy.",
+      "manual_toil": "Managing the physical transition of old packaging or seasonal inventory to clear bin space for new arrivals.",
+      "agentic_impact": "Orchestrates the run-out of old inventory to perfectly time the inbound of new selection without bin congestion.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "commercial_finance_director": {
+      "persona_id": "commercial_finance_director",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Commercial Finance Director",
+      "title": "Finance Manager - Supply Chain & Logistics",
+      "role": "Auditing cost-to-serve and fulfillment margins",
+      "summary": "Analyzes the financial performance of the logistics network, focusing on shipping costs and Fulfillment Center (FC) operational expenses.",
+      "manual_toil": "Calculating the net margin for heavy/bulky items versus small parcels across different delivery speeds.",
+      "agentic_impact": "Provides a granular cost-to-serve diagnostic for every SKU, accounting for middle-mile and last-mile variables.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "procurement_dir_risk_mgr": {
+      "persona_id": "procurement_dir_risk_mgr",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Dir. / Risk Mgr",
+      "title": "Risk Manager - Amazon Transportation Services",
+      "role": "Mitigating disruptions across the India middle-mile network",
+      "summary": "He monitors the stability of thousands of trucking partners and line-haul vendors that connect Amazon India sort centers to the last-mile delivery stations.",
+      "manual_toil": "Manually tracking regional strike notices, fuel price volatility, and vendor financial health across dozens of Indian states.",
+      "agentic_impact": "Automates real-time risk sensing across the Amazon Transportation Services (ATS) network to proactively reroute freight before vendor failures occur.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "procurement_operations_lead": {
+      "persona_id": "procurement_operations_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Procurement Operations Lead",
+      "title": "Vendor Manager - Amazon Fresh & Retail",
+      "role": "Ensuring 1P vendor compliance and food safety",
+      "summary": "She manages the onboarding and quality audits for direct retail vendors, specifically focusing on FSSAI compliance for Amazon Fresh selections.",
+      "manual_toil": "Chasing vendors for updated ISO/BRC certificates and tax registrations via fragmented email threads and Coupa uploads.",
+      "agentic_impact": "Instantly validates seller credentials and food safety filings against Indian regulatory databases to accelerate selection launch.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "chief_sustainability_officer": {
+      "persona_id": "chief_sustainability_officer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Program Manager - Sustainability & ESG India",
+      "role": "Driving Ship-in-Own-Container (SIOC) and plastic-free goals",
+      "summary": "He leads initiatives to eliminate single-use plastics across India Fulfillment Centers (FCs) and tracks the carbon footprint of the massive Amazon Logistics (AMZL) delivery fleet.",
+      "manual_toil": "Aggregating Scope 3 emission data from hundreds of Delivery Service Partners and packaging suppliers into static spreadsheets.",
+      "agentic_impact": "Creates a live Scope 3 ledger that correlates every package shipped from BOM5 or DEL4 with its specific carbon and plastic impact.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "category_sourcing_mgr_direct": {
+      "persona_id": "category_sourcing_mgr_direct",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Category Sourcing Mgr (Direct)",
+      "title": "Instock Manager - Consumables & Packaging",
+      "role": "Optimizing inventory levels for Fulfillment Center (FC) packaging materials",
+      "summary": "She ensures that every Fulfillment Center (FC) from Bengaluru to Gurugram has enough corrugate, tape, and dunnage to meet Supply Chain Optimization Technologies (SCOT)-predicted demand peaks.",
+      "manual_toil": "Manually adjusting procurement orders for packaging based on fluctuating paper and resin prices in the Indian market.",
+      "agentic_impact": "Uses AI to hedge packaging procurement by correlating global commodity indices with Amazon India's high-velocity demand cycles.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "strategic_sourcing_lead": {
+      "persona_id": "strategic_sourcing_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Strategic Sourcing Lead",
+      "title": "Supply Chain Optimization Lead - Procurement",
+      "role": "Negotiating cost-effective and scalable sourcing contracts",
+      "summary": "He deconstructs the cost of logistics assets and packaging to ensure Amazon India maintains its 'Low Price' leadership through efficient sourcing.",
+      "manual_toil": "Building complex 'should-cost' models for custom Amazon-branded boxes and mailers using outdated resin and energy benchmarks.",
+      "agentic_impact": "Provides dynamic should-cost transparency for every RFQ, ensuring Amazon pays a fair price based on real-time material weights and conversion costs.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "packaging_rd_engineer": {
+      "persona_id": "packaging_rd_engineer",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Packaging R&D Engineer",
+      "title": "Packaging Program Manager - Customer Experience",
+      "role": "Designing frustration-free and sustainable delivery materials",
+      "summary": "She designs and tests new packaging formats that can survive the rigorous India middle-mile while minimizing environmental impact.",
+      "manual_toil": "Running manual lab tests and runnability trials on Fulfillment Center (FC) packing lines for every new recycled-content mailer prototype.",
+      "agentic_impact": "Simulates the runnability and durability of PCR resins and sustainable barriers before they ever hit the BOM5 or HYD13 packing lines.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "commercial_sourcing_legal": {
+      "persona_id": "commercial_sourcing_legal",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Commercial Sourcing / Legal",
+      "title": "Lead \u2014 Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt \u00b7 Amazon Seller Services Private Limited \u2014 ecommerce",
+      "summary": "Drafts and negotiates master service agreements (MSAs), SLA terms, and compliance covenants with global suppliers. Streamlines legal contract review and redlining while safeguarding enterprise intellectual property and liability.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions. Planners spend hours exporting multi-system spreadsheets, running broken VLOOKUPs, and chasing email updates across departments, causing 2\u20133 week\u2026",
+      "agentic_impact": "Contract Leakage Agent automatically reconciles live spend against negotiated rebate tiers and volume discount scales \u2014 recovers missed rebates & surcharges.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career & ops roles"
+    },
+    "buyer_procurement_coord": {
+      "persona_id": "buyer_procurement_coord",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Buyer / Procurement Coord.",
+      "title": "Lead \u2014 Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt \u00b7 Amazon Seller Services Private Limited \u2014 ecommerce",
+      "summary": "Manages operational purchase order creation, confirmation tracking, and vendor delivery promises. Communicates daily with suppliers to expedite urgent material requisitions and update ERP delivery dates.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions. Planners spend hours exporting multi-system spreadsheets, running broken VLOOKUPs, and chasing email updates across departments, causing 2\u20133 week\u2026",
+      "agentic_impact": "PO Expediting Agent automatically monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments \u2014 resolves ~70% of standard po delays.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career & ops roles"
+    },
+    "accounts_payable_lead": {
+      "persona_id": "accounts_payable_lead",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Accounts Payable Lead",
+      "title": "Lead \u2014 Contract & PO Mgmt",
+      "role": "Contract & PO Mgmt \u00b7 Amazon Seller Services Private Limited \u2014 ecommerce",
+      "summary": "Governs the 3-way matching process between purchase orders, receiving dock receipts, and supplier invoices. Resolves quantity and price discrepancies to prevent vendor payment holds and capture early-payment cash discounts.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose contract & po mgmt variances and exceptions across regions. Planners spend hours exporting multi-system spreadsheets, running broken VLOOKUPs, and chasing email updates across departments, causing 2\u20133 week\u2026",
+      "agentic_impact": "Three-Way Match Dispute automatically diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices \u2014 prevents vendor holds & saves discounts.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career & ops roles"
+    },
+    "master_production_scheduler": {
+      "persona_id": "master_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Master Production Scheduler",
+      "title": "Instock Manager, Amazon Fresh",
+      "role": "Scheduling perishable inbound and expiry-based stowing",
+      "summary": "She ensures that high-velocity grocery items are scheduled for inbound in a way that maximizes shelf life and minimizes waste in cold-chain FCs.",
+      "manual_toil": "Manually sequencing inbound trucks to avoid temperature-controlled dock congestion and allergen cross-contamination.",
+      "agentic_impact": "Optimizes the inbound dock schedule to prioritize perishable goods and minimize cold-chain exposure time.",
+      "grounding_source": "Grounded in Amazon Instock Manager and Amazon Fresh operations."
+    },
+    "shop_floor_shift_lead": {
+      "persona_id": "shop_floor_shift_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Shop Floor / Shift Lead",
+      "title": "Operations Manager - Fulfillment Center",
+      "role": "Managing real-time Fulfillment Center (FC) floor flow and disruptions",
+      "summary": "He manages the daily shift floor at major FCs, re-routing labor and inventory when conveyor belts fail or inbound surges occur.",
+      "manual_toil": "Scrambling to re-assign associates from stowing to picking when a specific zone's automation goes offline.",
+      "agentic_impact": "Detects mechanical halts in real-time and automatically re-routes inbound work-in-progress to functional stow zones.",
+      "grounding_source": "Grounded in Amazon Fulfillment Center (FC) Operations Manager job descriptions."
+    },
+    "plant_operations_manager": {
+      "persona_id": "plant_operations_manager",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Plant Operations Manager",
+      "title": "Area Manager, Inbound Operations",
+      "role": "Balancing associate labor with inbound volume",
+      "summary": "She manages hundreds of associates, ensuring that labor hours match the volume of incoming freight from Amazon Transportation Services.",
+      "manual_toil": "Cross-referencing associate skill certifications with shift schedules to ensure enough 'Problem Solvers' are on the dock.",
+      "agentic_impact": "Dynamically balances labor across inbound docks based on real-time truck arrival data and associate fatigue levels.",
+      "grounding_source": "Grounded in Amazon Area Manager career paths."
+    },
+    "supply_chain_ops_director": {
+      "persona_id": "supply_chain_ops_director",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Supply Chain Ops Director",
+      "title": "Director, Supply Chain Optimization (Supply Chain Optimization Technologies (SCOT))",
+      "role": "Optimizing regional inventory placement and Fulfillment Center (FC) utilization",
+      "summary": "He oversees the Supply Chain Optimization Technologies (SCOT) engine's output to ensure inventory is positioned close to customers in hubs like BOM5 and DEL4 while managing regional storage constraints.",
+      "manual_toil": "Manually reconciling AWS-based capacity forecasts with physical utility and cold-chain limits at Amazon Fresh-enabled FCs.",
+      "agentic_impact": "Automates the identification of storage bottlenecks across the India network to prevent inbound gate-keeping.",
+      "grounding_source": "Grounded in Amazon Supply Chain Optimization Technologies (SCOT) and Supply Chain Optimization Lead roles."
+    },
+    "external_sourcing_cmo_lead": {
+      "persona_id": "external_sourcing_cmo_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "External Sourcing / CMO Lead",
+      "title": "Vendor Manager - Retail & Marketplace",
+      "role": "Managing high-volume vendor inbound and selection",
+      "summary": "She manages large-scale vendor relationships, balancing the cost of direct retail procurement against third-party seller fulfillment fees.",
+      "manual_toil": "Calculating the trade-offs between internal fulfillment costs and external logistics provider rates during peak sale events.",
+      "agentic_impact": "Models the most cost-effective inbound route for high-velocity selection using real-time conversion data.",
+      "grounding_source": "Grounded in Amazon Retail Vendor Manager career profiles."
+    },
+    "vp_manufacturing_engineering": {
+      "persona_id": "vp_manufacturing_engineering",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "VP Manufacturing Engineering",
+      "title": "Regional Manager, Amazon Fulfillment Technologies",
+      "role": "Scaling Fulfillment Center (FC) automation and physical infrastructure",
+      "summary": "He leads the deployment of high-speed sortation and conveyor systems across the Amazon Transportation Services (ATS) network to handle multi-year volume growth.",
+      "manual_toil": "Running static simulations for CapEx requests to expand conveyor lines or robotic stow zones in Bengaluru and Hyderabad.",
+      "agentic_impact": "Simulates multi-year Prime Day volume surges to stress-test automated stow and pick line expansions.",
+      "grounding_source": "Grounded in Amazon Fulfillment Technologies (AFT) leadership roles."
+    },
+    "qa_manager_line_inspector": {
+      "persona_id": "qa_manager_line_inspector",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "QA Manager / Line Inspector",
+      "title": "Quality Assurance Manager, Inbound",
+      "role": "Ensuring seller inventory meets Amazon standards",
+      "summary": "He oversees the inspection of incoming seller goods to ensure they are not damaged and comply with Amazon's strict packaging requirements.",
+      "manual_toil": "Visually auditing thousands of inbound packages for label accuracy and physical damage during peak intake.",
+      "agentic_impact": "Uses computer vision to flag mislabeled or damaged seller inventory before it enters the automated stow system.",
+      "grounding_source": "Grounded in Amazon Quality Assurance and Inbound Problem Solve roles."
+    },
+    "regulatory_compliance_lead": {
+      "persona_id": "regulatory_compliance_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Regulatory Compliance Lead",
+      "title": "Compliance Manager, Food & Product Safety",
+      "role": "Auditing FSSAI and safety documentation",
+      "summary": "She ensures all inbound food and hazardous materials comply with Indian regulations like FSSAI and Amazon's safety protocols.",
+      "manual_toil": "Reviewing paper-based or PDF Certificates of Analysis and FSSAI licenses for every new grocery SKU.",
+      "agentic_impact": "Automatically parses compliance documents to flag expiry or regulatory deviations before inventory is stowed.",
+      "grounding_source": "Grounded in Amazon Regulatory Compliance and Food Safety roles."
+    },
+    "continuous_improvement_lead": {
+      "persona_id": "continuous_improvement_lead",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Continuous Improvement Lead",
+      "title": "Program Manager, ACES (Amazon Customer Excellence System)",
+      "role": "Driving root-cause analysis for defects",
+      "summary": "He uses Six Sigma methodologies to identify why certain inventory lots result in high customer return rates or damage.",
+      "manual_toil": "Manually correlating customer feedback data with specific inbound batches and Fulfillment Center (FC) stow locations.",
+      "agentic_impact": "Connects customer 'Damaged' complaints directly to specific inbound shifts or machine telemetry to find the root cause.",
+      "grounding_source": "Grounded in Amazon ACES Program Manager roles."
+    },
+    "inventory_optimization_lead": {
+      "persona_id": "inventory_optimization_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Optimization Lead",
+      "title": "Supply Chain Optimization Lead",
+      "role": "Optimizing multi-echelon inventory across regional Fulfillment Center (FC) nodes",
+      "summary": "You manage the flow of millions of SKUs across India's Fulfillment Center (FC) network, ensuring Supply Chain Optimization Technologies (SCOT) algorithms maintain high regional in-stock rates while minimizing middle-mile costs.",
+      "manual_toil": "Manually overriding Supply Chain Optimization Technologies (SCOT) safety stock levels during major sales events like Great Indian Festival due to unpredictable lead-time spikes.",
+      "agentic_impact": "Automated multi-echelon buffer recalibration that reacts instantly to Amazon Transportation Services (ATS) sortation delays and local demand surges.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "inventory_controller_buyer": {
+      "persona_id": "inventory_controller_buyer",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inventory Controller / Buyer",
+      "title": "Instock Manager",
+      "role": "Managing vendor procurement and inventory health metrics",
+      "summary": "You are responsible for inventory health, focusing on reducing aged stock and managing the lifecycle of products from inbound to customer delivery.",
+      "manual_toil": "Sifting through massive SLOB reports to identify Amazon Fresh perishables nearing expiry or slow-moving electronics in BOM5.",
+      "agentic_impact": "Real-time identification of shelf-life risks with automated triggers for Lightning Deals or liquidation workflows.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "replenishment_planner": {
+      "persona_id": "replenishment_planner",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Replenishment Planner",
+      "title": "Capacity Planning Manager",
+      "role": "Balancing inventory across the national Fulfillment Center (FC) network",
+      "summary": "You orchestrate the movement of inventory between large Fulfillment Centers (FCs) like DEL4 and BLR8 to ensure products are as close to the customer as possible.",
+      "manual_toil": "Manually calculating inter-FC transfer volumes when one region is overstocked while another faces a stockout.",
+      "agentic_impact": "Autonomous generation of inter-facility rebalancing orders to optimize regional utilization and reduce 'out-of-region' shipping.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "dc_operations_mgr": {
+      "persona_id": "dc_operations_mgr",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Operations Mgr / IE Lead",
+      "title": "Operations Manager - Fulfillment Center",
+      "role": "Driving Fulfillment Center (FC) throughput and operational excellence",
+      "summary": "You lead a massive team at a flagship facility like HYD13, focusing on safety, quality, and meeting the daily ship-out targets.",
+      "manual_toil": "Analyzing heat maps and pick-path inefficiencies to manually reorganize high-velocity items in the stowage area.",
+      "agentic_impact": "Dynamic slotting recommendations based on co-pick affinity, significantly reducing picker travel time across the Fulfillment Center (FC) floor.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "inbound_receiving_supervisor": {
+      "persona_id": "inbound_receiving_supervisor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Inbound Receiving Supervisor",
+      "title": "Inbound Operations Area Manager",
+      "role": "Streamlining dock-to-stock cycles for seller inventory",
+      "summary": "You oversee the receiving docks where thousands of seller shipments arrive daily, ensuring rapid reconciliation and stowing into AFT.",
+      "manual_toil": "Reconciling physical pallet counts against digital ASNs and troubleshooting missing items from seller inbound shipments.",
+      "agentic_impact": "Instant reconciliation of scanned BOLs and pallet photos to close ASN variances without manual data entry.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "dc_shift_floor_lead": {
+      "persona_id": "dc_shift_floor_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "DC Shift Floor Lead",
+      "title": "Process Associate - Lead",
+      "role": "Managing real-time floor productivity and wave flow",
+      "summary": "You coordinate the floor teams during a shift, ensuring that picking and packing stations are balanced to meet Amazon Transportation Services (ATS) truck departure times.",
+      "manual_toil": "Constantly reassigning associates between pick and pack lines to clear bottlenecks before the next carrier cutoff.",
+      "agentic_impact": "A wave fulfillment copilot that dynamically rebalances labor to protect critical 'Ship-By' times for Prime orders.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "store_operations_omni_lead": {
+      "persona_id": "store_operations_omni_lead",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Store Operations / Omni Lead",
+      "title": "Program Manager - IHS & Amazon Fresh",
+      "role": "Managing hyper-local fulfillment and kirana partnerships",
+      "summary": "You oversee the 'I Have Space' (IHS) program and Amazon Fresh points, ensuring local inventory is accurate for rapid last-mile delivery.",
+      "manual_toil": "Investigating inventory discrepancies at local kirana points where physical stock doesn't match the digital record.",
+      "agentic_impact": "Automated detection of phantom inventory at local nodes by analyzing scan-out patterns and POS anomalies.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "omnichannel_fulfillment_dir": {
+      "persona_id": "omnichannel_fulfillment_dir",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Omnichannel Fulfillment Dir.",
+      "title": "Director - Amazon Transportation Services (ATS)",
+      "role": "Optimizing the end-to-end fulfillment and delivery cost",
+      "summary": "You lead the strategy for how orders move from Fulfillment Centers (FCs) through sort centers to the final delivery station or IHS partner.",
+      "manual_toil": "Evaluating which fulfillment node should serve a specific pin code to minimize shipping costs while meeting the Prime promise.",
+      "agentic_impact": "Real-time sourcing logic that selects the optimal Fulfillment Center (FC) or local station based on live labor capacity and parcel zone costs.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "reverse_logistics_lead_wh": {
+      "persona_id": "reverse_logistics_lead_wh",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Reverse Logistics Lead",
+      "title": "Reverse Logistics Specialist",
+      "role": "Managing the returns lifecycle and asset recovery",
+      "summary": "You manage the flow of returned items back into the Fulfillment Center (FC), determining if they can be resold, refurbished, or must be liquidated.",
+      "manual_toil": "Manually inspecting returned items to decide if they meet the 'New' grade for restocking or require vendor return.",
+      "agentic_impact": "AI-driven triage that uses return scans and photos to instantly route items to restock, repair, or liquidation channels.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "transport_planner_inbound_mgr": {
+      "persona_id": "transport_planner_inbound_mgr",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Transport Planner / Inbound Mgr",
+      "title": "Program Manager - Amazon Transportation Services",
+      "role": "Optimizing middle-mile linehaul efficiency across India",
+      "summary": "Manages the flow of goods from regional Fulfillment Centers (FCs) like BOM5 and DEL4 into the Amazon Transportation Services (ATS) sortation network, ensuring high vehicle utilization across the middle-mile.",
+      "manual_toil": "Manually calculating load factors for hundreds of vendor LTL shipments to build efficient multi-stop FTL routes in the Amazon Transportation Services (ATS) network.",
+      "agentic_impact": "Automates the consolidation of fragmented vendor shipments into high-density linehauls using real-time cube and weight modeling.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "yard_master_plant_logistics": {
+      "persona_id": "yard_master_plant_logistics",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Master / Plant Logistics",
+      "title": "Transportation Operations Specialist",
+      "role": "Managing yard flow and dock scheduling",
+      "summary": "Oversees the physical movement of trailers at major Sort Centers, coordinating gate entries and dock assignments to prevent bottlenecks.",
+      "manual_toil": "Tracking trailer GPS pings and gate logs manually to reassign dock doors when linehaul trucks are delayed by Indian highway traffic.",
+      "agentic_impact": "Dynamically re-sequences dock staging based on live GPS feeds to minimize trailer dwell time and sortation delays.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "cold_chain_qa_logistics_dir": {
+      "persona_id": "cold_chain_qa_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold Chain QA / Logistics Dir.",
+      "title": "Operations Manager - Amazon Fresh Logistics",
+      "role": "Ensuring thermal integrity for perishable goods",
+      "summary": "Leads the cold-chain logistics for Amazon Fresh, monitoring temperature-controlled transport from specialized Fulfillment Centers (FCs) to local delivery stations.",
+      "manual_toil": "Reviewing thousands of reefer IoT data points post-trip to identify thermal excursions and manually filing claims against third-party carriers.",
+      "agentic_impact": "Provides real-time auditing of reefer telemetry to flag excursions instantly and automate the carrier claim documentation process.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "outbound_lead_industrial_eng": {
+      "persona_id": "outbound_lead_industrial_eng",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Outbound Lead / Industrial Eng.",
+      "title": "Operations Manager - Fulfillment Center Outbound",
+      "role": "Optimizing sortation for downstream node efficiency",
+      "summary": "Designs the outbound flow from Fulfillment Centers (FCs) like BLR8 to ensure that pallets and totes are organized for rapid processing at the next node.",
+      "manual_toil": "Manually configuring pick waves to ensure that items for specific Amazon Fresh zones or IHS partners are grouped together on pallets.",
+      "agentic_impact": "Sequences Fulfillment Center (FC) pick waves to align with the specific shelf layouts of Amazon Fresh stores, reducing 'put-away' time at the destination.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "store_replenishment_lead": {
+      "persona_id": "store_replenishment_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Replenishment Lead",
+      "title": "Instock Manager - Amazon Fresh",
+      "role": "Balancing inventory levels at physical nodes",
+      "summary": "Ensures that Amazon Fresh physical locations and dark stores have the right inventory levels based on hyper-local demand and shelf capacity.",
+      "manual_toil": "Cross-referencing live POS data with backroom storage limits to manually throttle or push replenishment orders from the Fulfillment Center (FC).",
+      "agentic_impact": "Throttles replenishment automatically by syncing live POS velocity with actual backroom cubic capacity to prevent overstocking.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "retail_logistics_dispatcher": {
+      "persona_id": "retail_logistics_dispatcher",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Retail Logistics Dispatcher",
+      "title": "Capacity Planning Manager",
+      "role": "Navigating urban delivery constraints and curfews",
+      "summary": "Coordinates the timing of middle-mile arrivals at urban delivery stations and Amazon Fresh stores, navigating complex municipal traffic rules.",
+      "manual_toil": "Updating delivery schedules daily to account for varying municipal truck curfews and local dock labor shifts across different Indian metros.",
+      "agentic_impact": "Orchestrates dispatch times dynamically to ensure trucks arrive exactly when local curfews lift and dock crews are ready.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "last_mile_operations_lead": {
+      "persona_id": "last_mile_operations_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Last-Mile Operations Lead",
+      "title": "Operations Manager - Amazon Logistics (AMZL) Delivery Station",
+      "role": "Managing hyper-local delivery station throughput and Delivery Service Partner (DSP) performance",
+      "summary": "Oversees the daily sortation and dispatch of thousands of parcels from delivery stations to local pin codes via Delivery Service Partners (DSPs) and 'I Have Space' kirana partners.",
+      "manual_toil": "Manually clarifying ambiguous Indian addresses and gate access codes for new delivery associates during peak morning dispatch.",
+      "agentic_impact": "Automates address resolution and entry-point guidance using historical delivery data and aerial imagery to reduce 'Undeliverable' scans.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "ecommerce_logistics_dir": {
+      "persona_id": "ecommerce_logistics_dir",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "E-Commerce Logistics Dir.",
+      "title": "Director - Amazon Transportation Services (ATS)",
+      "role": "Optimizing multimodal parcel flow across the India network",
+      "summary": "Strategizes the movement of inventory from regional Fulfillment Centers (FCs) like BOM5 and DEL4 through sort centers to the final mile, balancing speed and cost.",
+      "manual_toil": "Analyzing rate cards and capacity constraints across internal Amazon Transportation Services (ATS) fleets and external 3PLs to handle seasonal spikes like the Great Indian Festival.",
+      "agentic_impact": "Dynamically shifts parcel volume between internal Amazon Logistics (AMZL) fleets and external couriers based on real-time cost-to-serve and delivery speed targets.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "customer_support_ops_lead": {
+      "persona_id": "customer_support_ops_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Customer Support Ops Lead",
+      "title": "Program Manager - Last Mile Customer Experience",
+      "role": "Ensuring high On-Time In-Full (OTIF) and proactive exception management",
+      "summary": "Focuses on the 'Perfect Order' metric by identifying delivery friction points and managing the communication loop for delayed shipments.",
+      "manual_toil": "Sifting through transit delay logs to identify which customers need proactive rescheduling links after a vehicle breakdown or weather event.",
+      "agentic_impact": "Detects en-route anomalies instantly and triggers automated customer notifications with self-service rescheduling options via the Amazon app.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "fleet_dispatcher_central_ops": {
+      "persona_id": "fleet_dispatcher_central_ops",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Fleet Dispatcher / Central Ops",
+      "title": "Transportation Operations Specialist",
+      "role": "Real-time routing and middle-mile fleet dispatching",
+      "summary": "Monitors the movement of line-haul trucks between sort centers and delivery stations, ensuring drivers navigate India's complex traffic and infrastructure.",
+      "manual_toil": "Calling drivers to reroute them around sudden road closures, monsoon flooding, or bridge height restrictions not captured by standard GPS.",
+      "agentic_impact": "Recalculates multi-stop line-haul routes using live traffic and Amazon-specific road constraints to maintain strict arrival windows at sort centers.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "transport_procurement_lead": {
+      "persona_id": "transport_procurement_lead",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Transport Procurement Lead",
+      "title": "Capacity Planning Manager",
+      "role": "Securing and auditing carrier capacity and compliance",
+      "summary": "Manages relationships with large-scale trucking partners and Delivery Service Partners (DSPs), ensuring they adhere to Amazon\u2019s strict safety and performance standards.",
+      "manual_toil": "Tracking carrier tender acceptance rates across dozens of lanes to manually adjust the routing guide when primary partners fail to provide trucks.",
+      "agentic_impact": "Automatically reprioritizes the routing guide based on real-time On-Time In-Full (OTIF) performance and tender acceptance, ensuring the most reliable carriers get the volume.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "freight_controller_claims": {
+      "persona_id": "freight_controller_claims",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Controller / Claims",
+      "title": "Finance Operations Manager - Transportation",
+      "role": "Auditing freight spend and managing carrier claims",
+      "summary": "Reconciles transportation invoices against signed Proof of Delivery (POD) documents to ensure Amazon India only pays for successfully completed trips.",
+      "manual_toil": "Manually cross-referencing paper PODs and digital logs to verify accessorial charges like detention or fuel surcharges from third-party carriers.",
+      "agentic_impact": "Uses OCR to extract data from signed PODs and automatically audits them against Coupa rate contracts to flag overcharges instantly.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "reverse_logistics_fraud_lead": {
+      "persona_id": "reverse_logistics_fraud_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Reverse Logistics / Fraud Lead",
+      "title": "Lead \u2014 Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt \u00b7 Amazon Seller Services Private Limited \u2014 ecommerce",
+      "summary": "Directs customer return authorization policies, warranty validation, and return fraud prevention. Implements computer vision and return history scoring to identify serial fraud claims and wardrobing abuse.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions. Planners spend hours exporting multi-system spreadsheets, running broken VLOOKUPs, and chasing email updates across departments, causing 2\u20133 week\u2026",
+      "agentic_impact": "Return Fraud Sentinel automatically analyzes item photos and packaging video feeds to detect wear or swapped tags \u2014 cuts returns fraud abuse by 25\u201340%.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career & ops roles"
+    },
+    "customer_experience_cx_lead": {
+      "persona_id": "customer_experience_cx_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Customer Experience (CX) Lead",
+      "title": "Lead \u2014 Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt \u00b7 Amazon Seller Services Private Limited \u2014 ecommerce",
+      "summary": "Designs customer-friendly return, exchange, and instant refund policies that protect brand loyalty. Coordinates 'keep-it' salvage recommendations to eliminate costly reverse shipping on low-value items.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions. Planners spend hours exporting multi-system spreadsheets, running broken VLOOKUPs, and chasing email updates across departments, causing 2\u20133 week\u2026",
+      "agentic_impact": "Keep-It & Routing Advisor automatically evaluates salvage margins vs reverse freight to determine keep-it instant refunds \u2014 lowers net return costs by 15\u201322%.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career & ops roles"
+    },
+    "claims_specialist_controller": {
+      "persona_id": "claims_specialist_controller",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Claims Specialist / Controller",
+      "title": "Lead \u2014 Returns & Claims Mgmt",
+      "role": "Returns & Claims Mgmt \u00b7 Amazon Seller Services Private Limited \u2014 ecommerce",
+      "summary": "Manages commercial freight damage claims, Over-Short-and-Damage (OS&D) settlements, and vendor chargebacks. Resolves discrepancies between electronic bills of lading and dock receiving damage logs.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose returns & claims mgmt variances and exceptions across regions. Planners spend hours exporting multi-system spreadsheets, running broken VLOOKUPs, and chasing email updates across departments, causing 2\u20133 week\u2026",
+      "agentic_impact": "OS&D Freight Claims automatically reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes \u2014 resolves carrier claims in <72 hours.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career & ops roles"
+    },
+    "merchandising_store_ops_mgr": {
+      "persona_id": "merchandising_store_ops_mgr",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Merchandising / Store Ops Mgr",
+      "title": "Program Manager - Amazon Fresh Operations",
+      "role": "Optimizing perishable inventory velocity and markdown execution",
+      "summary": "Manages the lifecycle of Amazon Fresh inventory across India's dark stores, ensuring high-quality produce while minimizing waste through strategic pricing.",
+      "manual_toil": "Manually tracking shelf-life data across multiple delivery stations and updating prices in the AFT system to clear near-expiry stock.",
+      "agentic_impact": "Automates real-time price adjustments based on Supply Chain Optimization Technologies (SCOT) demand signals and Days-to-Expiry (DTE) metrics to maximize recovery.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "inventory_disposition_lead": {
+      "persona_id": "inventory_disposition_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Inventory Disposition Lead",
+      "title": "Operations Manager - Fulfillment Center (Returns)",
+      "role": "Directing unfulfillable inventory to optimal recovery channels",
+      "summary": "Oversees the flow of customer returns and damaged goods at major Fulfillment Centers (FCs) like BOM5 and DEL4, deciding between liquidation, return-to-vendor, or donation.",
+      "manual_toil": "Sifting through massive spreadsheets of unfulfillable inventory to identify batches suitable for third-party liquidators or NGO partners.",
+      "agentic_impact": "Instantly matches short-dated or damaged lots with the highest-value recovery channel before items lose all residual value.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "cso_circular_lead": {
+      "persona_id": "cso_circular_lead",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Chief Sustainability Officer",
+      "title": "Program Manager - Sustainability & Circular Economy",
+      "role": "Driving zero-waste initiatives across the India logistics network",
+      "summary": "Leads initiatives to reduce the carbon footprint of Amazon India's logistics by diverting waste from landfills and managing the 'I Have Space' sustainability impact.",
+      "manual_toil": "Aggregating disparate waste logs from dozens of Fulfillment Centers (FCs) and Amazon Transportation Services (ATS) sort centers to compile quarterly ESG reports for India operations.",
+      "agentic_impact": "Provides a real-time dashboard of GHG diversion by tracking every kilogram of organic waste and liquidated inventory through the network.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career portals & supply chain roles"
+    },
+    "asset_recovery_rti_manager": {
+      "persona_id": "asset_recovery_rti_manager",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Asset Recovery / RTI Manager",
+      "title": "Lead \u2014 Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation \u00b7 Amazon Seller Services Private Limited \u2014 ecommerce",
+      "summary": "Manages reusable transport items (RTIs)\u2014including reusable plastic totes, pallets, and cryogenic containers. Tracks asset cycles and minimizes loss across customer supply loops.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions. Planners spend hours exporting multi-system spreadsheets, running broken VLOOKUPs, and chasing email updates across departments, causing 2\u20133 week\u2026",
+      "agentic_impact": "RTI Balance Reconciler automatically reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes \u2014 eliminates 30% in non-return fee fines.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career & ops roles"
+    },
+    "reverse_transport_planner": {
+      "persona_id": "reverse_transport_planner",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Reverse Transport Planner",
+      "title": "Lead \u2014 Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation \u00b7 Amazon Seller Services Private Limited \u2014 ecommerce",
+      "summary": "Plans cost-effective return shipping, backhaul consolidation, and regional return consolidation center (RCC) routing. Integrates empty backhaul trailers into primary freight routes to cut return shipping expenses.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions. Planners spend hours exporting multi-system spreadsheets, running broken VLOOKUPs, and chasing email updates across departments, causing 2\u20133 week\u2026",
+      "agentic_impact": "Milk-Run Consolidation automatically schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores \u2014 boosts backhaul fill rate by 25\u201340%.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career & ops roles"
+    },
+    "packaging_qa_food_safety": {
+      "persona_id": "packaging_qa_food_safety",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Packaging QA / Food Safety",
+      "title": "Lead \u2014 Pallet & Tote Reclamation",
+      "role": "Pallet & Tote Reclamation \u00b7 Amazon Seller Services Private Limited \u2014 ecommerce",
+      "summary": "Audits return packaging integrity, food contact safety compliance, and hazardous material return transport. Enforces sanitary handling standards to prevent contamination in circular packaging loops.",
+      "manual_toil": "Manually pulls ERP, WMS/TMS, and portal spreadsheets to diagnose pallet & tote reclamation variances and exceptions across regions. Planners spend hours exporting multi-system spreadsheets, running broken VLOOKUPs, and chasing email updates across departments, causing 2\u20133 week\u2026",
+      "agentic_impact": "Sanitation & Health Agent automatically inspects return photos and wash logs for structural fatigue and chemical compliance \u2014 extends reusable lifecycle by 15\u201320%.",
+      "grounding_source": "Grounded in Amazon Seller Services Private Limited career & ops roles"
+    }
+  },
+  "agent_relevance": {
+    "demand_sensing_agent": {
+      "agent_id": "demand_sensing_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Demand Sensing Agent",
+      "custom_agent_name": "Supply Chain Optimization Technologies (SCOT) Regional Pulse Agent",
+      "is_relevant": true,
+      "division_context": "Synthesizes India-specific signals like Diwali shopping patterns, monsoon delays, and local cricket match schedules to refine FC-level demand forecasts.",
+      "hidden_reason": ""
+    },
+    "cpfr_sync_agent": {
+      "agent_id": "cpfr_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "Forecast Reconciliation",
+      "custom_agent_name": "Category-Logistics Sync",
+      "is_relevant": true,
+      "division_context": "Reconciles high-level retail category sales targets with Amazon Transportation Services (ATS) transportation capacity to ensure the middle-mile can handle the 'Great Indian Festival' surge.",
+      "hidden_reason": ""
+    },
+    "npi_demand_profiler": {
+      "agent_id": "npi_demand_profiler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "demand_forecasting",
+      "canonical_name": "NPI Demand Profiler",
+      "custom_agent_name": "New Selection Profiler",
+      "is_relevant": true,
+      "division_context": "Predicts the launch velocity of new marketplace selection by comparing attributes against millions of existing SKUs in the Amazon India catalog.",
+      "hidden_reason": ""
+    },
+    "promo_lift_simulator": {
+      "agent_id": "promo_lift_simulator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Promo ROI Simulator",
+      "custom_agent_name": "Deal ROI Simulator",
+      "is_relevant": true,
+      "division_context": "Simulates the incremental unit lift and Fulfillment Center (FC) labor impact of 'Lightning Deals' and 'Deal of the Day' during major sales events.",
+      "hidden_reason": ""
+    },
+    "field_beat_distributor_sync_agent": {
+      "agent_id": "field_beat_distributor_sync_agent",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "JBP Negotiation Agent",
+      "custom_agent_name": "Seller JBP Agent",
+      "is_relevant": true,
+      "division_context": "Creates data-backed growth plans for top marketplace sellers, aligning their production with Amazon's forecasted regional demand.",
+      "hidden_reason": ""
+    },
+    "trade_scheme_claims_reconciler": {
+      "agent_id": "trade_scheme_claims_reconciler",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "trade_promotion",
+      "canonical_name": "Deduction Audit Agent",
+      "custom_agent_name": "Vendor Audit Agent",
+      "is_relevant": true,
+      "division_context": "Automatically reconciles vendor co-op marketing claims against actual on-site placement and sales performance data.",
+      "hidden_reason": ""
+    },
+    "sop_scenario_weaver": {
+      "agent_id": "sop_scenario_weaver",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Consensus & Gap Agent",
+      "custom_agent_name": "FC Capacity Optimizer",
+      "is_relevant": true,
+      "division_context": "Simulates how unconstrained seller inbound shipments will impact bin availability at major hubs like BOM5 and DEL4 during peak periods.",
+      "hidden_reason": ""
+    },
+    "disruption_war_room_orchestrator": {
+      "agent_id": "disruption_war_room_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Digital War-Room Agent",
+      "custom_agent_name": "Network Resilience Agent",
+      "is_relevant": true,
+      "division_context": "Evaluates trade-offs and re-routes shipments between Amazon Transportation Services (ATS) sort centers when regional infrastructure or weather events disrupt the standard flow.",
+      "hidden_reason": ""
+    },
+    "csco_control_tower_copilot": {
+      "agent_id": "csco_control_tower_copilot",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "sop_ibp",
+      "canonical_name": "Executive Copilot",
+      "custom_agent_name": "Peak Readiness Copilot",
+      "is_relevant": true,
+      "division_context": "Tracks cross-functional sign-offs for peak season readiness and generates executive summaries on network health for Amazon India leadership.",
+      "hidden_reason": ""
+    },
+    "working_capital_cash_bridge": {
+      "agent_id": "working_capital_cash_bridge",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "SKU Pruning Agent",
+      "custom_agent_name": "Inventory Health Scorer",
+      "is_relevant": true,
+      "division_context": "Identifies 'Aged Inventory' in Fulfillment Centers (FCs) and suggests liquidations or markdowns to free up space for higher-velocity selection.",
+      "hidden_reason": ""
+    },
+    "eco_cutover_orchestrator": {
+      "agent_id": "eco_cutover_orchestrator",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "PIPO Run-Out Agent",
+      "custom_agent_name": "Selection Transition Agent",
+      "is_relevant": true,
+      "division_context": "Manages the transition between old and new product versions in the Fulfillment Center (FC), ensuring 'First-In-First-Out' logic is maintained during packaging updates.",
+      "hidden_reason": ""
+    },
+    "network_twin_architect": {
+      "agent_id": "network_twin_architect",
+      "dept_id": "demand_sop",
+      "sub_pillar_id": "portfolio_sku",
+      "canonical_name": "Cost-to-Serve Diagnostic",
+      "custom_agent_name": "Cost-to-Serve Engine",
+      "is_relevant": true,
+      "division_context": "Calculates the total fulfillment cost for every order, including Fulfillment Center (FC) labor, Amazon Transportation Services (ATS) line-haul, and Amazon Logistics (AMZL) last-mile delivery fees.",
+      "hidden_reason": ""
+    },
+    "tier_n_risk_sentinel": {
+      "agent_id": "tier_n_risk_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Disruption Sensing Agent",
+      "custom_agent_name": "Amazon Transportation Services (ATS) Network Risk Sentinel",
+      "is_relevant": true,
+      "division_context": "Monitors multi-tier logistics vendors and port delays at Nhava Sheva to predict impacts on Amazon India's middle-mile sortation flow.",
+      "hidden_reason": ""
+    },
+    "supplier_quality_sentinel": {
+      "agent_id": "supplier_quality_sentinel",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "Onboarding & Qual. Agent",
+      "custom_agent_name": "FSSAI & Compliance Sentinel",
+      "is_relevant": true,
+      "division_context": "Automatically parses FSSAI filings and BRC audits for Amazon Fresh vendors to ensure 100% food safety compliance across India FCs.",
+      "hidden_reason": ""
+    },
+    "carbon_scope3_ledger": {
+      "agent_id": "carbon_scope3_ledger",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "supplier_network",
+      "canonical_name": "ESG & Scope 3 Auditor",
+      "custom_agent_name": "India ESG & Scope 3 Ledger",
+      "is_relevant": true,
+      "division_context": "Standardizes carbon data from Delivery Service Partners (DSPs) and packaging suppliers to track Amazon India's progress toward net-zero and plastic-free delivery.",
+      "hidden_reason": ""
+    },
+    "commodity_index_advisor": {
+      "agent_id": "commodity_index_advisor",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Commodity Index Advisor",
+      "custom_agent_name": "Packaging Feedstock Advisor",
+      "is_relevant": true,
+      "division_context": "Correlates global paper and resin indices with Amazon India's packaging depletion rates to advise on strategic procurement timing.",
+      "hidden_reason": ""
+    },
+    "rfq_should_cost_agent": {
+      "agent_id": "rfq_should_cost_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Dynamic Should-Cost Agent",
+      "custom_agent_name": "Packaging Should-Cost Agent",
+      "is_relevant": true,
+      "division_context": "Deconstructs Amazon-branded packaging specs into raw material, energy, and conversion costs to optimize RFQ negotiations with Indian vendors.",
+      "hidden_reason": ""
+    },
+    "sustainable_packaging_agent": {
+      "agent_id": "sustainable_packaging_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "material_packaging",
+      "canonical_name": "Sustainable Packaging Agent",
+      "custom_agent_name": "SIOC & Sustainability Agent",
+      "is_relevant": true,
+      "division_context": "Evaluates the durability and runnability of recycled materials against Amazon's 'Ship-in-Own-Container' standards for the India network.",
+      "hidden_reason": ""
+    },
+    "tariff_esg_agent": {
+      "agent_id": "tariff_esg_agent",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Contract Leakage Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Amazon Seller Services Private Limited \u2014 ecommerce.",
+      "hidden_reason": ""
+    },
+    "master_data_leadtime_steward": {
+      "agent_id": "master_data_leadtime_steward",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "PO Expediting Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Amazon Seller Services Private Limited \u2014 ecommerce.",
+      "hidden_reason": ""
+    },
+    "three_way_match_dispute": {
+      "agent_id": "three_way_match_dispute",
+      "dept_id": "sourcing_procurement",
+      "sub_pillar_id": "contract_po_mgmt",
+      "canonical_name": "Three-Way Match Dispute",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Contract & PO Mgmt across Amazon Seller Services Private Limited \u2014 ecommerce.",
+      "hidden_reason": ""
+    },
+    "finite_production_scheduler": {
+      "agent_id": "finite_production_scheduler",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Changeover Optimizer",
+      "custom_agent_name": "Inbound Dock & Fresh Scheduler",
+      "is_relevant": true,
+      "division_context": "Sequences inbound trucks to prioritize Amazon Fresh perishables and high-demand electronics while minimizing dock congestion.",
+      "hidden_reason": ""
+    },
+    "line_schedule_optimizer": {
+      "agent_id": "line_schedule_optimizer",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Disruption Re-sequencer",
+      "custom_agent_name": "FC Flow Re-Sequencer",
+      "is_relevant": true,
+      "division_context": "Detects conveyor jams or stow-zone outages and re-routes inbound inventory to alternate paths within the Fulfillment Center (FC).",
+      "hidden_reason": ""
+    },
+    "labor_line_balancing_agent": {
+      "agent_id": "labor_line_balancing_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "production_scheduling",
+      "canonical_name": "Labor & Line Balancing",
+      "custom_agent_name": "Associate Labor Balancer",
+      "is_relevant": true,
+      "division_context": "Maps associate certifications (e.g., forklift, problem solve) to real-time inbound volume to ensure optimal dock-to-stow speeds.",
+      "hidden_reason": ""
+    },
+    "predictive_oee_sentinel": {
+      "agent_id": "predictive_oee_sentinel",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Bottleneck Diagnostic",
+      "custom_agent_name": "FC Utility & Cold-Chain Sentinel",
+      "is_relevant": true,
+      "division_context": "Monitors Fulfillment Center (FC) infrastructure like cold storage compressors and automated sorter power loads to prevent facility-wide downtime.",
+      "hidden_reason": ""
+    },
+    "copacker_allocation_agent": {
+      "agent_id": "copacker_allocation_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "Co-Packer Allocation",
+      "custom_agent_name": "Vendor vs. FBA Cost Modeler",
+      "is_relevant": true,
+      "division_context": "Compares the cost of internal Amazon fulfillment against third-party logistics or vendor-shipped models for specific product categories.",
+      "hidden_reason": ""
+    },
+    "capex_simulator_agent": {
+      "agent_id": "capex_simulator_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "capacity_planning",
+      "canonical_name": "CapEx Simulator",
+      "custom_agent_name": "FC Expansion Simulator",
+      "is_relevant": true,
+      "division_context": "Simulates the impact of adding new robotic stow zones or high-speed sortation lines at flagship facilities like HYD13.",
+      "hidden_reason": ""
+    },
+    "inline_yield_guardian": {
+      "agent_id": "inline_yield_guardian",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Visual Defect Triager",
+      "custom_agent_name": "Inbound Defect Vision Agent",
+      "is_relevant": true,
+      "division_context": "Analyzes high-speed camera feeds on inbound conveyors to identify damaged seller items or unreadable ASIN labels.",
+      "hidden_reason": ""
+    },
+    "batch_record_auditor": {
+      "agent_id": "batch_record_auditor",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "Batch Record Auditor",
+      "custom_agent_name": "FSSAI & Safety Document Auditor",
+      "is_relevant": true,
+      "division_context": "Parses digital compliance records to ensure inbound grocery and chemical products meet Indian safety standards.",
+      "hidden_reason": ""
+    },
+    "scrap_defect_root_cause_agent": {
+      "agent_id": "scrap_defect_root_cause_agent",
+      "dept_id": "manufacturing_prod",
+      "sub_pillar_id": "quality_compliance",
+      "canonical_name": "RCA & CAPA Copilot",
+      "custom_agent_name": "Returns & Damage RCA Copilot",
+      "is_relevant": true,
+      "division_context": "Correlates customer return reasons with specific inbound batches and Fulfillment Center (FC) handling telemetry to reduce damage rates.",
+      "hidden_reason": ""
+    },
+    "meio_safety_stock_agent": {
+      "agent_id": "meio_safety_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Safety Stock Agent",
+      "custom_agent_name": "Supply Chain Optimization Technologies (SCOT) Buffer Optimizer",
+      "is_relevant": true,
+      "division_context": "Recalibrates safety stock across India's regional Fulfillment Centers (FCs) by analyzing Amazon Transportation Services (ATS) transit variances and seasonal demand spikes like Diwali.",
+      "hidden_reason": ""
+    },
+    "slob_disposition_agent": {
+      "agent_id": "slob_disposition_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "SLOB Disposition Agent",
+      "custom_agent_name": "Inventory Health & Freshness Agent",
+      "is_relevant": true,
+      "division_context": "Monitors Amazon Fresh expiry dates and slow-moving electronics to trigger automated markdowns or liquidation in the Amazon Seller Central ecosystem.",
+      "hidden_reason": ""
+    },
+    "crossdock_transfer_orchestrator": {
+      "agent_id": "crossdock_transfer_orchestrator",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "positioning_optimization",
+      "canonical_name": "Inter-Facility Rebalancer",
+      "custom_agent_name": "Inter-FC Rebalancer",
+      "is_relevant": true,
+      "division_context": "Orchestrates inventory transfers between flagship Fulfillment Centers (FCs) like BOM5 and DEL4 to ensure high regional utilization and lower shipping costs.",
+      "hidden_reason": ""
+    },
+    "warehouse_slotting_agent": {
+      "agent_id": "warehouse_slotting_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dynamic Slotting Agent",
+      "custom_agent_name": "AFT Dynamic Slotting Agent",
+      "is_relevant": true,
+      "division_context": "Optimizes the stowage layout within Amazon Fulfillment Centers (FCs) by analyzing co-purchase data to minimize picker travel time and maximize UPH (Units Per Hour).",
+      "hidden_reason": ""
+    },
+    "dock_to_stock_agent": {
+      "agent_id": "dock_to_stock_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Dock-to-Stock Agent",
+      "custom_agent_name": "Inbound ASN Reconciler",
+      "is_relevant": true,
+      "division_context": "Accelerates the receiving process by automatically matching scanned seller shipments against digital ASNs to identify discrepancies instantly.",
+      "hidden_reason": ""
+    },
+    "wave_fulfillment_copilot": {
+      "agent_id": "wave_fulfillment_copilot",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "warehouse_operations",
+      "canonical_name": "Wave Fulfillment Copilot",
+      "custom_agent_name": "FC Throughput Copilot",
+      "is_relevant": true,
+      "division_context": "Monitors real-time picking and packing rates to dynamically reassign labor, ensuring all orders meet Amazon Transportation Services (ATS) sortation center departure windows.",
+      "hidden_reason": ""
+    },
+    "planogram_merchandising_vision_auditor": {
+      "agent_id": "planogram_merchandising_vision_auditor",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Phantom Inventory Sensor",
+      "custom_agent_name": "IHS & Fresh Inventory Sensor",
+      "is_relevant": true,
+      "division_context": "Identifies inventory shrinkage and 'phantom' stock at Amazon Fresh stores and 'I Have Space' kirana partner locations.",
+      "hidden_reason": ""
+    },
+    "atp_order_promising_agent": {
+      "agent_id": "atp_order_promising_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "SFS / BOPIS Sourcing",
+      "custom_agent_name": "Prime Promise Sourcing Agent",
+      "is_relevant": true,
+      "division_context": "Determines the fastest and cheapest fulfillment node (FC vs. Local Station) to meet the customer's delivery promise based on live network capacity.",
+      "hidden_reason": ""
+    },
+    "returns_triage_agent": {
+      "agent_id": "returns_triage_agent",
+      "dept_id": "inventory_warehouse",
+      "sub_pillar_id": "omnichannel_visibility",
+      "canonical_name": "Returns Triage Agent",
+      "custom_agent_name": "Returns Disposition Agent",
+      "is_relevant": true,
+      "division_context": "Automates the grading of customer returns at the Fulfillment Center (FC), instantly deciding whether to restock as 'New', move to 'Warehouse Deals', or liquidate.",
+      "hidden_reason": ""
+    },
+    "load_consolidation_agent": {
+      "agent_id": "load_consolidation_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Load Consolidation",
+      "custom_agent_name": "Amazon Transportation Services (ATS) Linehaul Optimizer",
+      "is_relevant": true,
+      "division_context": "Consolidates vendor and FC-to-Sort-Center shipments into high-density FTL routes to maximize Amazon Transportation Services (ATS) fleet utilization across India.",
+      "hidden_reason": ""
+    },
+    "yard_dock_sequencer": {
+      "agent_id": "yard_dock_sequencer",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Yard Disruption Agent",
+      "custom_agent_name": "Sort Center Yard Orchestrator",
+      "is_relevant": true,
+      "division_context": "Monitors incoming linehaul GPS data to dynamically reassign dock doors at Amazon Sort Centers, preventing gate congestion.",
+      "hidden_reason": ""
+    },
+    "cold_chain_auditor": {
+      "agent_id": "cold_chain_auditor",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "first_mid_mile",
+      "canonical_name": "Cold-Chain Auditor",
+      "custom_agent_name": "Fresh Thermal Integrity Guard",
+      "is_relevant": true,
+      "division_context": "Analyzes IoT sensor data from Amazon Fresh reefer trucks to detect temperature breaches and automate carrier accountability.",
+      "hidden_reason": ""
+    },
+    "aisle_aligned_pallet_agent": {
+      "agent_id": "aisle_aligned_pallet_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Aisle-Aligned Pallet",
+      "custom_agent_name": "Fresh Store-Ready Palletizer",
+      "is_relevant": true,
+      "division_context": "Directs Fulfillment Center (FC) pick waves so that outbound pallets for Amazon Fresh stores are organized by aisle, speeding up shelf replenishment.",
+      "hidden_reason": ""
+    },
+    "store_capacity_agent": {
+      "agent_id": "store_capacity_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Store Capacity Agent",
+      "custom_agent_name": "Node Capacity Balancer",
+      "is_relevant": true,
+      "division_context": "Prevents congestion at Amazon Fresh backrooms by adjusting replenishment flow based on real-time sales and physical storage limits.",
+      "hidden_reason": ""
+    },
+    "port_drayage_orchestrator": {
+      "agent_id": "port_drayage_orchestrator",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "store_replenishment",
+      "canonical_name": "Curfew Orchestrator",
+      "custom_agent_name": "Urban Curfew Navigator",
+      "is_relevant": true,
+      "division_context": "Synchronizes Amazon Transportation Services (ATS) truck arrivals with city-specific 'No-Entry' timings and local delivery station labor shifts across India.",
+      "hidden_reason": ""
+    },
+    "geocoding_intelligence_agent": {
+      "agent_id": "geocoding_intelligence_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Geocoding Intelligence",
+      "custom_agent_name": "India Address Intelligence",
+      "is_relevant": true,
+      "division_context": "Interprets complex Indian landmarks, gate codes, and neighborhood-specific delivery notes to provide precise 'last-meter' guidance for Amazon Logistics (AMZL) drivers.",
+      "hidden_reason": ""
+    },
+    "multimodal_mode_shift_agent": {
+      "agent_id": "multimodal_mode_shift_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Courier Allocation",
+      "custom_agent_name": "Amazon Transportation Services (ATS) Courier Allocator",
+      "is_relevant": true,
+      "division_context": "Optimizes the allocation of parcels between Amazon's internal Amazon Transportation Services (ATS) fleet, Delivery Service Partners (DSPs), and external 3PLs based on real-time rate cards and regional capacity.",
+      "hidden_reason": ""
+    },
+    "otif_penalty_shield": {
+      "agent_id": "otif_penalty_shield",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "last_mile_delivery",
+      "canonical_name": "Delivery Exception Copilot",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Monitors Amazon Logistics (AMZL) delivery progress in real-time, identifying potential misses and proactively offering customers rescheduling options to protect the CX score.",
+      "hidden_reason": ""
+    },
+    "fleetflow_dispatch": {
+      "agent_id": "fleetflow_dispatch",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Dynamic Rerouter",
+      "custom_agent_name": "Amazon Middle-Mile Rerouter",
+      "is_relevant": true,
+      "division_context": "Adjusts line-haul truck routes between Fulfillment Centers (FCs) and Sort Centers based on live India traffic data, weather alerts, and vehicle-specific road restrictions.",
+      "hidden_reason": ""
+    },
+    "freight_control_tower": {
+      "agent_id": "freight_control_tower",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Routing Guide Compliance",
+      "custom_agent_name": "Carrier Compliance Monitor",
+      "is_relevant": true,
+      "division_context": "Tracks Delivery Service Partner (DSP) and 3PL tender acceptance and on-time performance to ensure the Amazon Transportation Services (ATS) routing guide is always utilizing the most reliable partners.",
+      "hidden_reason": ""
+    },
+    "freight_bill_audit_agent": {
+      "agent_id": "freight_bill_audit_agent",
+      "dept_id": "logistics_fleet",
+      "sub_pillar_id": "route_carrier",
+      "canonical_name": "Freight Bill Audit Agent",
+      "custom_agent_name": "Transportation Audit Agent",
+      "is_relevant": true,
+      "division_context": "Audits carrier invoices against digital PODs and Coupa contracts to eliminate overbilling on fuel surcharges and detention fees for the India network.",
+      "hidden_reason": ""
+    },
+    "reverse_rma_optimizer": {
+      "agent_id": "reverse_rma_optimizer",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Return Fraud Sentinel",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across Amazon Seller Services Private Limited \u2014 ecommerce.",
+      "hidden_reason": ""
+    },
+    "keep_it_routing_advisor": {
+      "agent_id": "keep_it_routing_advisor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "Keep-It & Routing Advisor",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across Amazon Seller Services Private Limited \u2014 ecommerce.",
+      "hidden_reason": ""
+    },
+    "osd_freight_claims_agent": {
+      "agent_id": "osd_freight_claims_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "returns_claims_mgmt",
+      "canonical_name": "OS&D Freight Claims",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Returns & Claims Mgmt across Amazon Seller Services Private Limited \u2014 ecommerce.",
+      "hidden_reason": ""
+    },
+    "dynamic_markdown_agent": {
+      "agent_id": "dynamic_markdown_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Dynamic Markdown Agent",
+      "custom_agent_name": "Fresh Velocity Pricing Engine",
+      "is_relevant": true,
+      "division_context": "Monitors Amazon Fresh inventory in real-time, correlating DTE with local demand to trigger automated markdowns on the Amazon India app.",
+      "hidden_reason": ""
+    },
+    "short_dated_redistributor": {
+      "agent_id": "short_dated_redistributor",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Short-Dated Redistributor",
+      "custom_agent_name": "FC Inventory Recovery Matcher",
+      "is_relevant": true,
+      "division_context": "Identifies near-expiry lots in Fulfillment Centers (FCs) like BLR8 and HYD13, automatically routing them to liquidation partners or food banks before they become unsellable.",
+      "hidden_reason": ""
+    },
+    "food_waste_esg_copilot": {
+      "agent_id": "food_waste_esg_copilot",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "expiry_markdowns",
+      "canonical_name": "Food Waste & ESG Copilot",
+      "custom_agent_name": "Amazon India Waste Diversion Copilot",
+      "is_relevant": true,
+      "division_context": "Aggregates organic waste data from Amazon Fresh dark stores and Fulfillment Centers (FCs) to generate audited sustainability reports for Amazon\u2019s Climate Pledge.",
+      "hidden_reason": ""
+    },
+    "rti_balance_reconciler": {
+      "agent_id": "rti_balance_reconciler",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "RTI Balance Reconciler",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Amazon Seller Services Private Limited \u2014 ecommerce.",
+      "hidden_reason": ""
+    },
+    "intermodal_rail_linehaul_agent": {
+      "agent_id": "intermodal_rail_linehaul_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Milk-Run Consolidation",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Amazon Seller Services Private Limited \u2014 ecommerce.",
+      "hidden_reason": ""
+    },
+    "sanitation_health_agent": {
+      "agent_id": "sanitation_health_agent",
+      "dept_id": "circular_enable",
+      "sub_pillar_id": "pallet_tote_reclamation",
+      "canonical_name": "Sanitation & Health Agent",
+      "custom_agent_name": "",
+      "is_relevant": true,
+      "division_context": "Supports Pallet & Tote Reclamation across Amazon Seller Services Private Limited \u2014 ecommerce.",
+      "hidden_reason": ""
+    }
+  },
+  "process_overrides": {
+    "f2f": {
+      "vc_id": "f2f",
+      "custom_title": "Supply Chain Optimization Technologies (SCOT) Forecast-to-Placement",
+      "custom_subtitle": "Predicting regional demand and positioning inventory across the Indian Fulfillment Center (FC) network."
+    },
+    "o2d": {
+      "vc_id": "o2d",
+      "custom_title": "Click-to-Doorstep Fulfillment",
+      "custom_subtitle": "Processing customer orders through AFT, sorting via Amazon Transportation Services (ATS), and delivering via Amazon Logistics (AMZL)."
+    },
+    "s2p": {
+      "vc_id": "s2p",
+      "custom_title": "Vendor & Seller Onboarding-to-Pay",
+      "custom_subtitle": "Sourcing retail inventory and managing 3P seller financial settlements."
+    },
+    "p2r": {
+      "vc_id": "p2r",
+      "custom_title": "Customer Returns & Re-commerce",
+      "custom_subtitle": "Managing reverse logistics, grading returned items, and processing seller claims."
+    }
+  },
+  "hidden_agent_ids": [],
+  "hidden_persona_ids": [],
+  "active_pillars_count": 7,
+  "active_agents_count": 60,
+  "active_personas_count": 60,
+  "active_sub_pillars_count": 20,
+  "grounding_citations": [
+    {
+      "title": "E-commerce \u2014 Corporate Profile",
+      "url": "https://en.wikipedia.org/wiki/E-commerce",
+      "snippet": ""
+    },
+    {
+      "title": "Amazon Seller Services Private Limited Official Brand Mark",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "snippet": ""
+    }
+  ],
+  "career_title_examples": [
+    "Instock Manager",
+    "Operations Manager - Fulfillment Center",
+    "Program Manager - Amazon Transportation Services",
+    "Vendor Manager - Retail",
+    "Supply Chain Optimization Lead",
+    "Transportation Operations Specialist",
+    "Capacity Planning Manager"
+  ],
+  "terminology_highlights": [
+    "FC (Fulfillment Center) \u2014 Massive warehouse facilities where seller and retail inventory is stowed, picked, packed, and shipped.",
+    "Supply Chain Optimization Technologies (SCOT) \u2014 Supply Chain Optimization Technologies, Amazon's proprietary AI engine for forecasting demand and automating inventory placement.",
+    "AMZL (Amazon Logistics) \u2014 The last-mile delivery network managing delivery stations, Delivery Service Partners (DSPs), and independent contractors.",
+    "IHS (I Have Space) \u2014 A hyper-local program partnering with neighborhood kirana stores for last-mile delivery and pickup."
+  ],
+  "created_at": "2026-11-06T09:31:36.680608+00:00",
+  "updated_at": "2026-11-06T09:31:36.680608+00:00",
+  "generation_model": "Gemini 3.1 Pro / 4 Argon + Gemini 3.8 Flash (Google Search Grounded)"
+}

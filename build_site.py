@@ -74,7 +74,7 @@ def build_html() -> str:
     agents_js = json.dumps(cat_data["agents"], indent=2, ensure_ascii=False)
 
     html = """<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -5019,6 +5019,10 @@ def build_html() -> str:
       </a>
       <button type="button" class="nav-pill-btn" onclick="openPeriodicTablePage('all', null, true)">Periodic Table</button>
       <button type="button" class="nav-pill-btn" onclick="openMindMapPage('all', null, true)">Mind Map</button>
+      <button type="button" id="glossaryNavBtn" class="nav-pill-btn" onclick="openAbbreviationGlossaryModal()" title="View full expansions of all supply chain acronyms (SCOT, CBAM, TM&D, OTIF, etc.)" style="background:rgba(56,189,248,0.12); color:#0284c7; border-color:rgba(56,189,248,0.4); display:inline-flex; align-items:center; gap:6px;">
+        <span>📖</span>
+        <span style="font-weight:700;">Full Form Glossary</span>
+      </button>
       <button type="button" id="themeToggleBtn" class="nav-pill-btn theme-toggle-btn" onclick="togglePortalTheme()" title="Switch between Light and Dark Theme">
         <span id="themeToggleIcon">☀️</span>
         <span id="themeToggleLabel">Light Theme</span>
@@ -7715,18 +7719,24 @@ def build_html() -> str:
     }
 
     function togglePortalTheme() {
-      const cur = document.documentElement.getAttribute('data-theme') || 'dark';
-      applyPortalTheme(cur === 'light' ? 'dark' : 'light');
+      const cur = document.documentElement.getAttribute('data-theme') || 'light';
+      const nextTheme = cur === 'light' ? 'dark' : 'light';
+      try {
+        localStorage.setItem('sc_user_explicit_theme', nextTheme);
+        localStorage.setItem('sc_portal_theme', nextTheme);
+      } catch (e) {}
+      applyPortalTheme(nextTheme);
     }
 
     function initPortalTheme() {
-      let saved = 'dark';
+      let saved = 'light';
       try {
         const params = new URLSearchParams(window.location.search);
         if (params.get('theme') === 'light' || params.get('theme') === 'dark') {
           saved = params.get('theme');
         } else {
-          saved = localStorage.getItem('sc_portal_theme') || 'dark';
+          const userExplicit = localStorage.getItem('sc_user_explicit_theme');
+          saved = userExplicit === 'dark' ? 'dark' : 'light';
         }
       } catch (e) {}
       applyPortalTheme(saved);
@@ -8048,7 +8058,7 @@ def build_html() -> str:
               <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(168,85,247,0.3); border-radius:10px; padding:12px;">
                 <div style="font-size:11px; font-weight:700; color:#c084fc; text-transform:uppercase; letter-spacing:0.05em;">Stage 5 &middot; SRM Governance</div>
                 <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Supplier Relationship (SRM)</div>
-                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Automated PPAP compliance, OTIF audit scorecarding, Tier-N supplier visibility &amp; ESG/CBAM validation.</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Automated PPAP (Production Part Approval Process) compliance, On-Time In-Full (OTIF) audit scorecarding, Tier-N supplier visibility &amp; ESG / Carbon Border Adjustment Mechanism (CBAM) validation.</div>
               </div>
             </div>
           </div>
@@ -8285,7 +8295,7 @@ def build_html() -> str:
               </div>
               <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:12px;">
                 <div style="font-size:11px; font-weight:700; color:#34d399; text-transform:uppercase;">Stage 5 · Scope 3 ESG</div>
-                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">CBAM &amp; Audit Trail</div>
+                <div style="font-weight:700; color:#fff; font-size:13px; margin:4px 0 6px;">Carbon Border Adjustment Mechanism (CBAM) &amp; Audit Trail</div>
                 <div style="font-size:12px; color:#94a3b8; line-height:1.45;">Automated emissions ledger tracking avoided carbon and circularity ratio for SEC / EU CSRD compliance.</div>
               </div>
             </div>
@@ -8534,7 +8544,7 @@ def build_html() -> str:
             { icon: '↩️', name: '2. Fleet Backhaul RMA', sub: 'Zero-Deadhead Pickup' },
             { icon: '🔍', name: '3. Vision RMA Grading', sub: 'Restock vs Harvest' },
             { icon: '♻️', name: '4. Circular Re-Commerce', sub: 'Margin Recovery' },
-            { icon: '🌿', name: '5. Scope 3 & CBAM Ledger', sub: 'Audit-Ready Carbon' }
+            { icon: '🌿', name: '5. Scope 3 & Carbon Border Adjustment Mechanism (CBAM) Ledger', sub: 'Audit-Ready Carbon' }
           ]
         }
       };
@@ -11745,8 +11755,8 @@ def build_html() -> str:
         AGENTS[aid] = JSON.parse(JSON.stringify(BASELINE_AGENTS[aid]));
       }
 
-      // 3. Apply Persona Overrides from ADK Agent
-      const pOverrides = twinData.personaOverrides || {};
+      // 3. Apply Persona Overrides from ADK Agent or Twin JSON
+      const pOverrides = twinData.personaOverrides || twinData.persona_overrides || {};
       for (let pid in pOverrides) {
         if (PERSONAS[pid]) {
           const po = pOverrides[pid];
@@ -11754,20 +11764,26 @@ def build_html() -> str:
           if (po.role) PERSONAS[pid].role = po.role;
           if (po.summary) PERSONAS[pid].summary = po.summary;
           if (po.mandate && !po.summary) PERSONAS[pid].summary = po.mandate;
-          if (po.manualToil && PERSONAS[pid].dayInLife && PERSONAS[pid].dayInLife.length > 0) {
-            PERSONAS[pid].dayInLife[0].before = po.manualToil;
+          const toil = po.manual_toil || po.manualToil;
+          if (toil && PERSONAS[pid].dayInLife && PERSONAS[pid].dayInLife.length > 0) {
+            PERSONAS[pid].dayInLife[0].before = toil;
           }
-          if (po.agenticImpact && PERSONAS[pid].dayInLife && PERSONAS[pid].dayInLife.length > 0) {
-            PERSONAS[pid].dayInLife[0].after = po.agenticImpact;
+          const impact = po.agentic_impact || po.agenticImpact;
+          if (impact && PERSONAS[pid].dayInLife && PERSONAS[pid].dayInLife.length > 0) {
+            PERSONAS[pid].dayInLife[0].after = impact;
           }
         }
       }
 
-      // 4. Apply Agent Overrides from ADK Agent
-      const aOverrides = twinData.agentOverrides || {};
+      // 4. Apply Agent Overrides from ADK Agent or Twin JSON
+      const aOverrides = twinData.agentOverrides || twinData.agent_overrides || twinData.agent_relevance || {};
       for (let aid in aOverrides) {
         if (AGENTS[aid]) {
           const ao = aOverrides[aid];
+          const cName = ao.custom_agent_name || ao.customName;
+          if (cName) AGENTS[aid].name = cName;
+          if (ao.division_context) AGENTS[aid].purpose = ao.division_context;
+          if (ao.is_relevant === false) AGENTS[aid].isFilteredOut = true;
           if (ao.systems) AGENTS[aid].systems = ao.systems;
           if (ao.problemDetails) AGENTS[aid].problemDetails = ao.problemDetails;
           if (ao.solutionDetails) AGENTS[aid].solutionDetails = ao.solutionDetails;
@@ -12050,6 +12066,403 @@ def build_html() -> str:
       } catch (e) {}
     });
   </script>
+
+  <!-- =========================================================================
+       SUPPLY CHAIN ABBREVIATION & TERMINOLOGY GUIDE MODAL (EXECUTIVE GLOSSARY)
+       ========================================================================= -->
+  <div id="abbreviationGlossaryModal" class="modal-backdrop" style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(0,0,0,0.78); backdrop-filter:blur(10px); align-items:center; justify-content:center; padding:20px;">
+    <div style="background:var(--bg-card, #0f172a); border:1px solid rgba(56,189,248,0.35); border-radius:18px; width:100%; max-width:980px; max-height:88vh; display:flex; flex-direction:column; box-shadow:0 25px 60px rgba(0,0,0,0.6); overflow:hidden;">
+      
+      <!-- Modal Header -->
+      <div style="padding:20px 26px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:flex-start; gap:16px; background:rgba(56,189,248,0.04);">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="font-size:22px;">📖</span>
+            <h3 style="font-family:var(--font-display, inherit); font-size:20px; font-weight:800; color:var(--text-primary, #f8fafc); margin:0;">
+              Executive Supply Chain Abbreviation &amp; Terminology Guide
+            </h3>
+          </div>
+          <p style="font-size:13.5px; color:var(--text-secondary, #94a3b8); margin:6px 0 0; line-height:1.5;">
+            Every supply chain, regulatory, and enterprise twin acronym explained in full plain English—so non-technical stakeholders and executives never have to guess.
+          </p>
+        </div>
+        <button type="button" onclick="closeAbbreviationGlossaryModal()" style="background:rgba(255,255,255,0.08); border:none; color:var(--text-secondary, #94a3b8); width:32px; height:32px; border-radius:50%; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center;" title="Close (Esc)">&times;</button>
+      </div>
+
+      <!-- Search & Category Filters -->
+      <div style="padding:16px 26px; border-bottom:1px solid rgba(255,255,255,0.06); display:flex; flex-wrap:wrap; gap:12px; align-items:center; background:rgba(0,0,0,0.15);">
+        <div style="position:relative; flex:1; min-width:260px;">
+          <input type="text" id="glossarySearchInput" oninput="renderFilteredGlossary()" placeholder="Search acronym (e.g. SCOT, CBAM, TM&amp;D, OTIF, RMA, OEE)..." style="width:100%; padding:10px 14px 10px 36px; border-radius:10px; border:1px solid rgba(56,189,248,0.3); background:rgba(15,23,42,0.9); color:var(--text-primary, #fff); font-size:13.5px; outline:none;" />
+          <span style="position:absolute; left:12px; top:11px; font-size:14px; color:#64748b;">🔍</span>
+        </div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+          <button type="button" class="glossary-filter-pill active" onclick="setGlossaryCategory('all', this)" style="padding:6px 12px; border-radius:20px; font-size:12px; font-weight:700; cursor:pointer; border:1px solid #38bdf8; background:#38bdf8; color:#0f172a;">All Terms</button>
+          <button type="button" class="glossary-filter-pill" onclick="setGlossaryCategory('Planning', this)" style="padding:6px 12px; border-radius:20px; font-size:12px; font-weight:700; cursor:pointer; border:1px solid rgba(255,255,255,0.12); background:transparent; color:var(--text-secondary, #94a3b8);">Planning &amp; AI</button>
+          <button type="button" class="glossary-filter-pill" onclick="setGlossaryCategory('Logistics', this)" style="padding:6px 12px; border-radius:20px; font-size:12px; font-weight:700; cursor:pointer; border:1px solid rgba(255,255,255,0.12); background:transparent; color:var(--text-secondary, #94a3b8);">Logistics</button>
+          <button type="button" class="glossary-filter-pill" onclick="setGlossaryCategory('Regulatory', this)" style="padding:6px 12px; border-radius:20px; font-size:12px; font-weight:700; cursor:pointer; border:1px solid rgba(255,255,255,0.12); background:transparent; color:var(--text-secondary, #94a3b8);">Regulatory &amp; ESG</button>
+        </div>
+      </div>
+
+      <!-- Grid of Abbreviations -->
+      <div id="glossaryCardsContainer" style="padding:22px 26px; overflow-y:auto; display:grid; grid-template-columns:repeat(auto-fill, minmax(380px, 1fr)); gap:14px; flex:1;">
+        <!-- Rendered dynamically -->
+      </div>
+      
+      <!-- Footer Note -->
+      <div style="padding:12px 26px; border-top:1px solid rgba(255,255,255,0.06); font-size:12px; color:var(--text-secondary, #94a3b8); display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.12);">
+        <span>Mandate: All enterprise twins, cards, badges, and case studies automatically display the full form alongside acronyms.</span>
+        <button type="button" onclick="closeAbbreviationGlossaryModal()" style="padding:6px 14px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.06); color:var(--text-primary, #fff); font-size:12px; font-weight:700; cursor:pointer;">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const SC_ABBREVIATIONS = [
+  {
+    "abbr": "SCOT",
+    "full_name": "Supply Chain Optimization Technologies (SCOT)",
+    "expansion": "Supply Chain Optimization Technologies",
+    "category": "E-Commerce & AI Demand Placement",
+    "definition": "Amazon's proprietary machine learning and mathematical optimization suite that automates multi-echelon demand forecasting, automated procurement, and regional inventory placement across fulfillment centers."
+  },
+  {
+    "abbr": "CBAM",
+    "full_name": "Carbon Border Adjustment Mechanism (CBAM)",
+    "expansion": "Carbon Border Adjustment Mechanism",
+    "category": "Regulatory & Global Trade ESG",
+    "definition": "The European Union's landmark climate policy tariff requiring importers of carbon-intensive goods (steel, cement, aluminum, fertilizer, electricity, hydrogen) to buy CBAM certificates reflecting their embedded Scope 1 and Scope 2 emissions."
+  },
+  {
+    "abbr": "TM&D",
+    "full_name": "Trade Marketing & Distribution (TM&D)",
+    "expansion": "Trade Marketing & Distribution",
+    "category": "FMCG / CPG Distribution Channels",
+    "definition": "The dedicated field sales, wholesale distributor management, and retail outlet execution arm responsible for secondary replenishment, beat planning, and point-of-sale visibility."
+  },
+  {
+    "abbr": "TMD",
+    "full_name": "Trade Marketing & Distribution (TM&D)",
+    "expansion": "Trade Marketing & Distribution",
+    "category": "FMCG / CPG Distribution Channels",
+    "definition": "Alternate abbreviation for Trade Marketing & Distribution."
+  },
+  {
+    "abbr": "ILTD",
+    "full_name": "India Leaf Tobacco Division (ILTD)",
+    "expansion": "India Leaf Tobacco Division",
+    "category": "Agri-Sourcing & Primary Processing",
+    "definition": "ITC's primary leaf procurement, grower partnership, and redrying operations division managing farmer relationships, crop grading, and bonded storage."
+  },
+  {
+    "abbr": "SMIPL",
+    "full_name": "Suzuki Motorcycle India Private Limited (SMIPL)",
+    "expansion": "Suzuki Motorcycle India Private Limited",
+    "category": "Automotive OEM & Two-Wheelers",
+    "definition": "Suzuki Motor Corporation's wholly owned two-wheeler manufacturing subsidiary in India, operating assembly plants in Gurugram and nationwide dealership networks."
+  },
+  {
+    "abbr": "OTIF",
+    "full_name": "On-Time In-Full (OTIF)",
+    "expansion": "On-Time In-Full",
+    "category": "Service Level & Customer Fulfillment",
+    "definition": "The premier supply chain delivery KPI measuring the exact percentage of orders delivered to the customer on the agreed date with complete requested quantities and zero split-shipment defects."
+  },
+  {
+    "abbr": "RMA",
+    "full_name": "Return Merchandise Authorization (RMA)",
+    "expansion": "Return Merchandise Authorization",
+    "category": "Reverse Logistics & Customer Service",
+    "definition": "The official authorization and tracking record that initiates a product return, warranty evaluation, credit issuance, or reverse grading workflow."
+  },
+  {
+    "abbr": "OEE",
+    "full_name": "Overall Equipment Effectiveness (OEE)",
+    "expansion": "Overall Equipment Effectiveness",
+    "category": "Manufacturing & Plant Reliability",
+    "definition": "The gold-standard manufacturing metric multiplying plant equipment Availability \u00d7 Performance rate \u00d7 Quality yield to quantify true asset productivity."
+  },
+  {
+    "abbr": "CSRD",
+    "full_name": "Corporate Sustainability Reporting Directive (CSRD)",
+    "expansion": "Corporate Sustainability Reporting Directive",
+    "category": "ESG Compliance & Disclosure",
+    "definition": "EU directive requiring large enterprises to audit and publicly disclose double-materiality environmental, social, and supply-chain carbon governance metrics."
+  },
+  {
+    "abbr": "EUDR",
+    "full_name": "European Union Deforestation Regulation (EUDR)",
+    "expansion": "European Union Deforestation Regulation",
+    "category": "ESG & Commodity Due Diligence",
+    "definition": "European Union regulation prohibiting the import or sale of commodities (cattle, cocoa, coffee, oil palm, rubber, soya, wood) linked to deforestation after December 2020, mandating plot-level GPS polygon geolocation."
+  },
+  {
+    "abbr": "ATS",
+    "full_name": "Amazon Transportation Services (ATS)",
+    "expansion": "Amazon Transportation Services",
+    "category": "Middle-Mile Logistics & Linehaul",
+    "definition": "Amazon's dedicated middle-mile logistics network moving freight between vendor facilities, fulfillment centers, sortation centers, air hubs, and delivery stations."
+  },
+  {
+    "abbr": "AMZL",
+    "full_name": "Amazon Logistics (AMZL)",
+    "expansion": "Amazon Logistics",
+    "category": "Last-Mile Delivery",
+    "definition": "Amazon's proprietary last-mile delivery network operating out of regional delivery stations through Delivery Service Partners (DSPs) and Flex drivers."
+  },
+  {
+    "abbr": "DSP",
+    "full_name": "Delivery Service Partner (DSP)",
+    "expansion": "Delivery Service Partner",
+    "category": "Last-Mile Delivery Ecosystem",
+    "definition": "Independent contracted logistics business owners who operate branded delivery van fleets to execute last-mile doorstep parcel deliveries for Amazon."
+  },
+  {
+    "abbr": "MEIO",
+    "full_name": "Multi-Echelon Inventory Optimization (MEIO)",
+    "expansion": "Multi-Echelon Inventory Optimization",
+    "category": "Inventory Theory & Network Buffers",
+    "definition": "A mathematical planning technique that models inventory across all network tiers simultaneously (plants, central DCs, regional hubs, stores) to place safety buffers at minimum holding cost."
+  },
+  {
+    "abbr": "PPAP",
+    "full_name": "Production Part Approval Process (PPAP)",
+    "expansion": "Production Part Approval Process",
+    "category": "Supplier Quality & Sourcing",
+    "definition": "The automotive and aerospace industry standard process establishing that a supplier's manufacturing process can consistently produce parts meeting all engineering specifications during actual production runs."
+  },
+  {
+    "abbr": "S&OP",
+    "full_name": "Sales and Operations Planning (S&OP)",
+    "expansion": "Sales and Operations Planning",
+    "category": "Integrated Planning & Consensus",
+    "definition": "The monthly executive consensus process balancing customer commercial demand with operational supply capacity, manufacturing constraints, and financial targets."
+  },
+  {
+    "abbr": "IBP",
+    "full_name": "Integrated Business Planning (IBP)",
+    "expansion": "Integrated Business Planning",
+    "category": "Integrated Planning & Enterprise Finance",
+    "definition": "The advanced evolution of S&OP integrating product portfolios, operational supply chains, multi-year strategic plans, and enterprise financial P&Ls into one continuous plan."
+  },
+  {
+    "abbr": "SCOR",
+    "full_name": "Supply Chain Operations Reference (SCOR)",
+    "expansion": "Supply Chain Operations Reference",
+    "category": "Industry Standard Framework",
+    "definition": "The global standard process reference model developed by the Association for Supply Chain Management (ASCM) categorizing end-to-end supply chains into Plan, Source, Make, Deliver, Return, and Enable."
+  },
+  {
+    "abbr": "ASN",
+    "full_name": "Advance Shipping Notice (ASN)",
+    "expansion": "Advance Shipping Notice",
+    "category": "Inbound Warehouse & EDI",
+    "definition": "An electronic data transmission (EDI 856) sent by a supplier prior to cargo arrival detailing shipment contents, purchase order line items, lot codes, carrier details, and estimated time of arrival."
+  },
+  {
+    "abbr": "BOM",
+    "full_name": "Bill of Materials (BOM)",
+    "expansion": "Bill of Materials",
+    "category": "Manufacturing & Product Structure",
+    "definition": "A comprehensive list of raw materials, sub-assemblies, components, packaging, and quantities required to manufacture an end product."
+  },
+  {
+    "abbr": "EDI",
+    "full_name": "Electronic Data Interchange (EDI)",
+    "expansion": "Electronic Data Interchange",
+    "category": "B2B Transaction Automation",
+    "definition": "Standardized computer-to-computer exchange of business transaction documents between enterprise trading partners (e.g. POs, ASNs, Invoices, STOs)."
+  },
+  {
+    "abbr": "VMI",
+    "full_name": "Vendor-Managed Inventory (VMI)",
+    "expansion": "Vendor-Managed Inventory",
+    "category": "Collaborative Replenishment",
+    "definition": "A collaborative supply chain model where the supplier takes full operational responsibility for monitoring and replenishing stock at the customer's warehouse or plant within agreed minimum/maximum bands."
+  },
+  {
+    "abbr": "DIO",
+    "full_name": "Days Inventory Outstanding (DIO)",
+    "expansion": "Days Inventory Outstanding",
+    "category": "Working Capital & Cash Conversion",
+    "definition": "Financial efficiency metric indicating the average number of days an enterprise holds inventory before turning it into sales."
+  },
+  {
+    "abbr": "DPO",
+    "full_name": "Days Payable Outstanding (DPO)",
+    "expansion": "Days Payable Outstanding",
+    "category": "Working Capital & Procurement",
+    "definition": "Financial metric showing the average number of days a company takes to pay its suppliers and trade vendors."
+  },
+  {
+    "abbr": "DSO",
+    "full_name": "Days Sales Outstanding (DSO)",
+    "expansion": "Days Sales Outstanding",
+    "category": "Working Capital & Receivables",
+    "definition": "Financial metric measuring the average number of days it takes a company to collect cash receivables after completing a commercial sale."
+  },
+  {
+    "abbr": "ATP",
+    "full_name": "Available-to-Promise (ATP)",
+    "expansion": "Available-to-Promise",
+    "category": "Order Commitment & Allocation",
+    "definition": "Real-time enterprise calculation of uncommitted inventory and planned production available to quote confirmed delivery dates to incoming customer orders."
+  },
+  {
+    "abbr": "CTP",
+    "full_name": "Capable-to-Promise (CTP)",
+    "expansion": "Capable-to-Promise",
+    "category": "Dynamic Production Commitment",
+    "definition": "An advanced order quoting process that dynamically commits unallocated manufacturing capacity, raw material availability, and machine time for orders exceeding on-hand inventory."
+  },
+  {
+    "abbr": "TCO",
+    "full_name": "Total Cost of Ownership (TCO)",
+    "expansion": "Total Cost of Ownership",
+    "category": "Strategic Sourcing & Cost Analysis",
+    "definition": "Comprehensive evaluation of the true landed cost of a purchased component or equipment over its entire lifecycle, including purchase price, freight, duties, quality failures, downtime, and disposal."
+  },
+  {
+    "abbr": "SRM",
+    "full_name": "Supplier Relationship Management (SRM)",
+    "expansion": "Supplier Relationship Management",
+    "category": "Procurement Strategy & Governance",
+    "definition": "Systematic enterprise approach to managing supplier relationships, scorecard performance, joint innovation, risk mitigation, and contractual governance."
+  },
+  {
+    "abbr": "TMS",
+    "full_name": "Transportation Management System (TMS)",
+    "expansion": "Transportation Management System",
+    "category": "Freight & Fleet Execution",
+    "definition": "Software platform that manages carrier contracting, route planning, freight audit, load tendering, shipment tracking, and yard logistics."
+  },
+  {
+    "abbr": "WMS",
+    "full_name": "Warehouse Management System (WMS)",
+    "expansion": "Warehouse Management System",
+    "category": "Distribution Center Operations",
+    "definition": "Software application controlling daily warehouse operations including receiving, put-away, slotting, wave picking, packing, and dispatch."
+  },
+  {
+    "abbr": "MRP",
+    "full_name": "Material Requirements Planning (MRP)",
+    "expansion": "Material Requirements Planning",
+    "category": "Production Scheduling & Purchasing",
+    "definition": "Time-phased calculation determining what materials to order, how much to order, and when to order based on BOM explosions, lead times, and Master Production Schedules."
+  },
+  {
+    "abbr": "LIFO",
+    "full_name": "Last-In, First-Out (LIFO)",
+    "expansion": "Last-In, First-Out",
+    "category": "Truck Loading & Inventory Method",
+    "definition": "Inventory and vehicle load planning principle where items loaded last into a trailer are delivered first along multi-stop delivery routes to eliminate reshuffling."
+  },
+  {
+    "abbr": "FIFO",
+    "full_name": "First-In, First-Out (FIFO)",
+    "expansion": "First-In, First-Out",
+    "category": "Perishables & Batch Rotation",
+    "definition": "Inventory stock rotation rule where the oldest acquired batches are consumed or dispatched first to eliminate spoilage and obsolescence."
+  },
+  {
+    "abbr": "3PL",
+    "full_name": "Third-Party Logistics (3PL)",
+    "expansion": "Third-Party Logistics",
+    "category": "Outsourced Logistics",
+    "definition": "External logistics service provider contracted to manage warehousing, transportation, packaging, and freight distribution."
+  },
+  {
+    "abbr": "4PL",
+    "full_name": "Fourth-Party Logistics (4PL)",
+    "expansion": "Fourth-Party Logistics",
+    "category": "Lead Logistics Partner",
+    "definition": "An overarching integrator that oversees, manages, and orchestrates an enterprise's entire logistics network, including multiple 3PLs and carriers."
+  },
+  {
+    "abbr": "FC",
+    "full_name": "Fulfillment Center (FC)",
+    "expansion": "Fulfillment Center",
+    "category": "E-Commerce Fulfillment",
+    "definition": "High-velocity distribution facility designed specifically for receiving inventory, robotic stowage, pick-pack-ship operations, and parcel carrier sorting."
+  }
+];
+    let activeGlossaryCategory = 'all';
+
+    function openAbbreviationGlossaryModal() {
+      const m = document.getElementById('abbreviationGlossaryModal');
+      if (m) {
+        m.style.display = 'flex';
+        renderFilteredGlossary();
+        setTimeout(() => {
+          const inp = document.getElementById('glossarySearchInput');
+          if (inp) inp.focus();
+        }, 50);
+      }
+    }
+
+    function closeAbbreviationGlossaryModal() {
+      const m = document.getElementById('abbreviationGlossaryModal');
+      if (m) m.style.display = 'none';
+    }
+
+    function setGlossaryCategory(cat, btn) {
+      activeGlossaryCategory = cat;
+      document.querySelectorAll('.glossary-filter-pill').forEach(b => {
+        b.style.background = 'transparent';
+        b.style.color = 'var(--text-secondary, #94a3b8)';
+        b.style.borderColor = 'rgba(255,255,255,0.12)';
+      });
+      if (btn) {
+        btn.style.background = '#38bdf8';
+        btn.style.color = '#0f172a';
+        btn.style.borderColor = '#38bdf8';
+      }
+      renderFilteredGlossary();
+    }
+
+    function renderFilteredGlossary() {
+      const container = document.getElementById('glossaryCardsContainer');
+      if (!container) return;
+      const q = (document.getElementById('glossarySearchInput')?.value || '').trim().toLowerCase();
+
+      const filtered = SC_ABBREVIATIONS.filter(item => {
+        const matchesCat = activeGlossaryCategory === 'all' || item.category.toLowerCase().includes(activeGlossaryCategory.toLowerCase());
+        const matchesQuery = !q || item.abbr.toLowerCase().includes(q) || item.full_name.toLowerCase().includes(q) || item.definition.toLowerCase().includes(q);
+        return matchesCat && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:40px; color:#94a3b8;">No abbreviations match your search query.</div>';
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => `
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px 18px; display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <span style="font-size:12px; font-weight:800; font-family:var(--font-mono, monospace); background:rgba(56,189,248,0.15); color:#38bdf8; border:1px solid rgba(56,189,248,0.3); border-radius:6px; padding:3px 8px;">
+              ${item.abbr}
+            </span>
+            <span style="font-size:11px; color:#94a3b8; font-weight:600;">
+              ${item.category}
+            </span>
+          </div>
+          <div style="font-size:14.5px; font-weight:700; color:var(--text-primary, #f8fafc); line-height:1.35;">
+            ${item.full_name}
+          </div>
+          <div style="font-size:12.5px; color:var(--text-secondary, #94a3b8); line-height:1.55;">
+            ${item.definition}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAbbreviationGlossaryModal();
+      }
+    });
+  </script>
+
 </body>
 </html>
 """
@@ -12064,16 +12477,8 @@ def build_html() -> str:
 def main() -> None:
     import shutil
 
-    if OUT_HTML.exists():
-        existing_text = OUT_HTML.read_text(encoding="utf-8")
-        if "openCostTabPage" in existing_text and len(existing_text) > 4_000_000:
-            html = existing_text
-        else:
-            html = build_html()
-            OUT_HTML.write_text(html, encoding="utf-8")
-    else:
-        html = build_html()
-        OUT_HTML.write_text(html, encoding="utf-8")
+    html = build_html()
+    OUT_HTML.write_text(html, encoding="utf-8")
 
     print(f"Successfully verified {OUT_HTML} ({len(html) // 1024} KB)")
 
