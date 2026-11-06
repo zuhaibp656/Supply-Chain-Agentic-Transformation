@@ -15,8 +15,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 Demand Forecasting] Demand Sensing Agent \u2014 Synthesizes POS velocity, weather anomalies, and macro trends. Outcome: Fuses daily POS sell-through, weather ensembles, and stockout imputation to cut short-horizon WAPE by 20%\u201335% and reduce safety-stock buffers.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6872242617594150912",
-      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4275760174019143309",
-      "deployed_at": "2026-11-05T13:28:08Z"
+      "gemini_enterprise_agent": "",
+      "deployed_at": "2026-11-06T07:47:49Z"
     },
     {
       "agent_id": "promo_lift_simulator",
@@ -29,8 +29,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 Trade Promotion] Promo ROI Simulator \u2014 Simulates price elasticity, shelf lift, and incremental spend return. Outcome: Simulates baseline cannibalization, post-promo dip, and incremental gross margin before trade funds are committed\u2014blocking unprofitable events.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2077472519979270144",
-      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/7230495950759747643",
-      "deployed_at": "2026-10-30T11:40:47Z"
+      "gemini_enterprise_agent": "",
+      "deployed_at": "2026-11-06T07:48:00Z"
     },
     {
       "agent_id": "sop_scenario_weaver",
@@ -43,8 +43,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Consensus & Gap Agent \u2014 Reconciles unconstrained demand with factory plant bottleneck limits. Outcome: Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority).",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8086384929635565568",
-      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9189674696747625515",
-      "deployed_at": "2026-11-05T13:31:28Z"
+      "gemini_enterprise_agent": "",
+      "deployed_at": "2026-11-06T07:47:34Z"
     },
     {
       "agent_id": "disruption_war_room_orchestrator",
@@ -57,8 +57,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Digital War-Room Agent \u2014 Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1211217885989437440",
-      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4685464268735078343",
-      "deployed_at": "2026-11-05T13:34:31Z"
+      "gemini_enterprise_agent": "",
+      "deployed_at": "2026-11-06T07:47:32Z"
     },
     {
       "agent_id": "csco_control_tower_copilot",
@@ -71,8 +71,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Executive Copilot \u2014 Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand\u2014turning 5-day analyst deck cycles into instant executive action.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2865587061606318080",
-      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4015823380636158533",
-      "deployed_at": "2026-11-05T13:37:24Z"
+      "gemini_enterprise_agent": "",
+      "deployed_at": "2026-11-06T07:47:46Z"
     },
     {
       "agent_id": "working_capital_cash_bridge",
@@ -85,8 +85,8 @@
       "description": "[01 \u00b7 Planning & Strategy \u00b7 Portfolio & SKU] SKU Pruning Agent \u2014 Scores velocity, plant changeover cost, and shelf revenue yield. Outcome: Scores every SKU on true net contribution after carrying, changeover, and obsolescence cost\u2014unlocking trapped working capital from the long tail.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5833474609206263808",
-      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/14094336958774128849",
-      "deployed_at": "2026-10-30T11:40:48Z"
+      "gemini_enterprise_agent": "",
+      "deployed_at": "2026-11-06T07:49:54Z"
     },
     {
       "agent_id": "tier_n_risk_sentinel",
@@ -99,8 +99,8 @@
       "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network] Disruption Sensing Agent \u2014 Monitors multi-tier supply feeds, port delays, and vendor financials. Outcome: Continuously monitors sub-tier financial, geopolitical, weather, and port signals\u2014triggering alternate allocations weeks before line stoppage.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5121890474918936576",
-      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/6167693086894539620",
-      "deployed_at": "2026-11-05T13:40:04Z"
+      "gemini_enterprise_agent": "",
+      "deployed_at": "2026-11-06T07:50:48Z"
     },
     {
       "agent_id": "carbon_scope3_ledger",
@@ -113,8 +113,8 @@
       "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Supplier Network] ESG & Scope 3 Auditor \u2014 Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. Outcome: Replaces coarse spend-based averages with primary supplier + lane emissions\u2014preventing EU CBAM penalties and cutting external assurance fees.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1067102697913581568",
-      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/12043431535905541673",
-      "deployed_at": "2026-11-05T13:43:15Z"
+      "gemini_enterprise_agent": "",
+      "deployed_at": "2026-11-06T07:50:47Z"
     },
     {
       "agent_id": "rfq_should_cost_agent",
@@ -127,8 +127,8 @@
       "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Material & Packaging] Dynamic Should-Cost Agent \u2014 Deconstructs packaging specs (resin weight, corrugate, conversion energy). Outcome: Decomposes every supplier quote into raw material, conversion, energy, logistics, and margin\u2014arming buyers with hard clean-sheet leverage.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/7647283965966942208",
-      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/18006815538360774894",
-      "deployed_at": "2026-11-05T13:46:27Z"
+      "gemini_enterprise_agent": "",
+      "deployed_at": "2026-11-06T07:50:55Z"
     },
     {
       "agent_id": "three_way_match_dispute",
@@ -141,8 +141,8 @@
       "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Contract & PO Mgmt] Three-Way Match Dispute \u2014 Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. Outcome: Reconciles PO, Goods Receipt (ASN/GRN), and Invoice line variances automatically\u2014capturing early-payment discounts and cutting AP unit cost by 80%.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/994356809596665856",
-      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/3963067958567898860",
-      "deployed_at": "2026-10-30T11:43:06Z"
+      "gemini_enterprise_agent": "",
+      "deployed_at": "2026-11-06T07:50:52Z"
     },
     {
       "agent_id": "finite_production_scheduler",
@@ -355,5 +355,5 @@
       "deployed_at": "2026-10-30T11:48:48Z"
     }
   ],
-  "updated_at": "2026-11-05T14:05:37Z"
+  "updated_at": "2026-11-06T07:50:55Z"
 }

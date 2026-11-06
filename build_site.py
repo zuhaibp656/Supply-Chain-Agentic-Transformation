@@ -7647,7 +7647,7 @@ def build_html() -> str:
        ========================================================================= */
     let selectedDeptId = null;
     let lastPersonaId = 'demand_planning_dir';
-    let stageViewMode = 'video'; // 'cad' | 'video'
+    let stageViewMode = 'cad'; // 'cad' | 'video'
     const customVideos = {};
     const customVcVideos = {};
 
