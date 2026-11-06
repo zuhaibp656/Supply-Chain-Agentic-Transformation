@@ -39,6 +39,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_active_trade_promotion_schemes,
     tools.query_distributor_secondary_claim_submissions,
     tools.query_claim_anomaly_audit_findings,

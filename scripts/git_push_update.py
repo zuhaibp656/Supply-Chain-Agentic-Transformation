@@ -15,6 +15,7 @@ def run(cmd):
 
 # Add changed core files, agents, docs, zipline, scripts, and deployment metadata
 paths_to_add = [
+    "README.md",
     "agents",
     "scripts",
     "docs",
@@ -36,6 +37,6 @@ paths_to_add = [
 for p in paths_to_add:
     run(["git", "add", p])
 
-run(["git", "commit", "-m", "Elevate 25 showcase agents with native interactive HTML dashboards, A2UI IFrameSrcdoc, and deployed filters"])
+run(["git", "commit", "-m", "Publish 60 ASCM SCOR AI Agents: dedicated executive READMEs, interactive HTML cockpits, and unified 60-agent catalog"])
 run(["git", "push", "origin", "main"])
 print("SUCCESSFULLY COMMITTED AND PUSHED TO GITHUB MAIN!", flush=True)

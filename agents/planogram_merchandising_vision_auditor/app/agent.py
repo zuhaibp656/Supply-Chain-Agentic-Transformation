@@ -39,6 +39,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_store_shelf_vision_audit_captures,
     tools.query_contracted_planogram_templates,
     tools.query_shelf_compliance_scoring_ledger,

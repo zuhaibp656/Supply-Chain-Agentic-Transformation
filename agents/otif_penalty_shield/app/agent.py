@@ -39,6 +39,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_open_retail_customer_orders_sla,
     tools.query_predicted_otif_breach_alerts,
     tools.query_retailer_otif_chargeback_deductions,

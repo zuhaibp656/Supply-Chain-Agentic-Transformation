@@ -39,6 +39,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_in_transit_multimodal_telemetry,
     tools.query_cold_chain_thermal_excursion_alerts,
     tools.query_carrier_edi210_freight_invoices,

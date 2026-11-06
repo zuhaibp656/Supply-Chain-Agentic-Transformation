@@ -52,6 +52,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_material_master_records,
     tools.query_leadtime_drift_anomalies,
     tools.query_cubiscan_dimension_discrepancies,

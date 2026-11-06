@@ -39,6 +39,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_distributor_dms_live_inventory,
     tools.query_fso_daily_beat_store_outlets,
     tools.query_pitch_to_stock_substitution_rules,

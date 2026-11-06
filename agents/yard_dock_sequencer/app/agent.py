@@ -52,6 +52,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_yard_trailer_geofence_status,
     tools.query_yard_spotter_move_tasks,
     tools.query_dock_door_turnaround_schedules,

@@ -35,3 +35,34 @@ def build_labor_line_balancing_agent_surface(
             )
         ),
     ]
+
+
+def build_interactive_html_surface(
+    surface_id: str,
+    html_content: str,
+    title: str = "Interactive Cockpit",
+    height: int = 720,
+) -> list[Any]:
+    """Renders a self-contained interactive web application inside an A2UI IFrameSrcdoc Card."""
+    parts = [
+        wrap_a2ui_part(build_create_surface(surface_id)),
+        wrap_a2ui_part(build_update_data_model(surface_id, {"title": title})),
+        wrap_a2ui_part(build_update_components(
+            surface_id,
+            [
+                {
+                    "id": "root",
+                    "component": "Card",
+                    "child": "iframe-view",
+                },
+                {
+                    "id": "iframe-view",
+                    "component": "IFrameSrcdoc",
+                    "height": height,
+                    "htmlContent": html_content,
+                    "title": title,
+                },
+            ]
+        )),
+    ]
+    return parts

@@ -52,6 +52,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_inbound_outbound_crossdock_manifests,
     tools.query_inbound_carrier_eta_milestones,
     tools.query_outbound_trailer_bay_assignments,

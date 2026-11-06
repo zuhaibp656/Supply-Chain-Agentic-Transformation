@@ -39,6 +39,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_intermodal_corridor_shipments,
     tools.query_railinc_edi417_train_consists,
     tools.query_rail_ramp_cutoff_and_drayage,

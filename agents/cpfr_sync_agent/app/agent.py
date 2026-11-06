@@ -50,6 +50,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_retailer_edi852_pos,
     tools.query_retailer_edi830_forecasts,
     tools.query_phantom_inventory_anomalies,

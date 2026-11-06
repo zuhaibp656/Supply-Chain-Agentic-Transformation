@@ -53,6 +53,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_scrap_loss_pareto_records,
     tools.query_batch_process_parameter_correlations,
     tools.query_scrap_financial_cost_ledger,

@@ -365,3 +365,31 @@ ALL_TOOLS: List[Callable[..., Any]] = [
     action_release_palletizer_layer_sequence,
     action_update_sku_top_cap_stack_rule,
 ]
+
+
+_LATEST_INTERACTIVE_HTML = None
+
+def get_latest_interactive_html(consume: bool = False) -> dict | None:
+    global _LATEST_INTERACTIVE_HTML
+    data = _LATEST_INTERACTIVE_HTML
+    if consume:
+        _LATEST_INTERACTIVE_HTML = None
+    return data
+
+def generate_interactive_html_dashboard(title: str = "Aisle-Aligned Pallet Interactive Cockpit") -> dict:
+    """Generate a self-contained interactive HTML dashboard view with visual surface.
+    Allows business users to inspect visual graphs, spatial maps, or 3D layouts directly in a browser.
+    """
+    global _LATEST_INTERACTIVE_HTML
+    from .render.interactive_html import generate_interactive_cockpit_html
+    html_markup = generate_interactive_cockpit_html(title=title)
+    result = {
+        "status": "SUCCESS",
+        "title": title,
+        "format": "html",
+        "html_code": html_markup,
+        "html_preview": html_markup,
+        "ready_to_view": True,
+    }
+    _LATEST_INTERACTIVE_HTML = result
+    return result

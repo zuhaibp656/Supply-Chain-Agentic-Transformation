@@ -39,6 +39,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_factory_gate_outbound_pos,
     tools.query_multimodal_corridor_rate_tariff_matrix,
     tools.query_dynamic_mode_split_recommendations,

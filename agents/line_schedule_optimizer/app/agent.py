@@ -51,6 +51,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_production_orders_backlog,
     tools.query_changeover_matrix_rules,
     tools.query_plant_line_workcenters,

@@ -51,6 +51,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_contract_clause_obligations,
     tools.query_supplier_rebate_accruals,
     tools.query_hs_tariff_classifications,

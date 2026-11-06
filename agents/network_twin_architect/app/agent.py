@@ -39,6 +39,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_network_facility_nodes_and_leases,
     tools.query_sku_customer_cost_to_serve_matrix,
     tools.query_center_of_gravity_milp_scenarios,

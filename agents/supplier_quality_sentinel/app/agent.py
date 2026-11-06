@@ -52,6 +52,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 """
 
 _AVAILABLE_TOOLS = [
+    tools.generate_interactive_html_dashboard,
     tools.query_supplier_coa_inspections,
     tools.query_spc_cpk_drift_metrics,
     tools.query_quality_deviation_tickets,
