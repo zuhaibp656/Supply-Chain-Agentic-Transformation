@@ -13,29 +13,23 @@ def run(cmd):
         print(f"Command failed with code {res.returncode}", flush=True)
         sys.exit(res.returncode)
 
-# Add changed core files, agents, docs, zipline, scripts, and deployment metadata
+# Add changed core files directly to avoid recursive deep scanning of huge zip bundles
 paths_to_add = [
     "README.md",
-    "agents",
-    "scripts",
-    "docs",
-    "data",
-    "index.html",
-    "periodic_table.html",
-    "mind_map.html",
-    "agent_testing_and_video_playbook.html",
-    "AGENT_TESTING_AND_VIDEO_PLAYBOOK.md",
-    "deployment_metadata.json",
-    "zipline_dist",
-    "supply_chain_zipline_bundle.zip",
-    "Supply_Chain_Agentic_Portal.zip",
-    "Zipline_Supply_Chain_Agentic_Portal.zip",
-    "zipline",
-    ".gitignore",
+    "agents/README.md",
+    "scripts/build_all_60_agent_readmes_and_renderers.py",
+    "scripts/git_push_update.py",
 ]
 
 for p in paths_to_add:
     run(["git", "add", p])
+
+# Add all 60 agent READMEs and newly generated renderers directly via glob
+run(["git", "add", "agents/*/README.md"])
+run(["git", "add", "agents/*/app/render/interactive_html.py"])
+run(["git", "add", "agents/*/app/render/surfaces.py"])
+run(["git", "add", "agents/*/app/tools.py"])
+run(["git", "add", "agents/*/app/agent.py"])
 
 run(["git", "commit", "-m", "Publish 60 ASCM SCOR AI Agents: dedicated executive READMEs, interactive HTML cockpits, and unified 60-agent catalog"])
 run(["git", "push", "origin", "main"])
