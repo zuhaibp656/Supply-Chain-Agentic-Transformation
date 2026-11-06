@@ -477,11 +477,17 @@ def export_ap_debit_memo_csv_and_remittance(target_id: str = "", format_type: st
         csv_lines.append(f"{rid},{name},{base},{opt},{delta},OPTIMIZED_VERIFIED")
 
     csv_payload = "\n".join(csv_lines)
+    from .render.publish import publish_csv_export
+    pub = publish_csv_export(csv_payload, "three_way_match_dispute")
+    download_url = pub["url"]
     return {
         "status": "SUCCESS",
         "format": "csv",
         "title": "Three-Way Match Dispute — Atomic Export Schedule",
         "row_count": len(csv_lines) - 1,
+        "download_url": download_url,
+        "csv_url": download_url,
+        "message": f"Downloadable CSV published to Cloud Storage: {download_url}",
         "csv_content": csv_payload
     }
 
@@ -503,11 +509,17 @@ def generate_interactive_html_dashboard(title: str = "MatchGuard AP 3-Way Match 
     """
     global _LATEST_INTERACTIVE_HTML
     from .render.interactive_html import generate_interactive_cockpit_html
+    from .render.publish import publish_interactive_html
     html_markup = generate_interactive_cockpit_html(title=title)
+    pub = publish_interactive_html(html_markup, "three_way_match_dispute", title)
+    view_url = pub["url"]
     result = {
         "status": "SUCCESS",
         "title": title,
         "format": "html",
+        "view_url": view_url,
+        "direct_link": view_url,
+        "message": f"Interactive HTML dashboard published to Cloud Storage: {view_url}",
         "html_code": html_markup,
         "html_preview": html_markup,
         "ready_to_view": True,

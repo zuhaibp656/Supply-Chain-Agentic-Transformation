@@ -597,9 +597,15 @@ def export_should_cost_teardown_csv_and_memo(target_id: str = "", format_type: s
         csv_lines.append(f"{rid},{name},{base},{opt},{delta},OPTIMIZED_VERIFIED")
 
     csv_payload = "\n".join(csv_lines)
+    from .render.publish import publish_csv_export
+    pub = publish_csv_export(csv_payload, "rfq_should_cost_agent")
+    download_url = pub["url"]
     return {
         "status": "SUCCESS",
         "format": "csv",
+        "download_url": download_url,
+        "csv_url": download_url,
+        "message": f"Downloadable CSV published to Cloud Storage: {download_url}",
         "title": "Dynamic Should-Cost Agent — Atomic Export Schedule",
         "row_count": len(csv_lines) - 1,
         "csv_content": csv_payload
@@ -617,17 +623,23 @@ def get_latest_interactive_html(consume: bool = False) -> dict | None:
         _LATEST_INTERACTIVE_HTML = None
     return res
 
-def generate_interactive_html_dashboard(title: str = "SourcePulse Parametric Should-Cost Studio Interactive Cockpit") -> dict:
+def generate_interactive_html_dashboard(title: str = "Interactive Cockpit") -> dict:
     """Generate a self-contained interactive HTML dashboard view with visual surface.
     Allows business users to inspect visual graphs, spatial maps, or 3D layouts directly in a browser.
     """
     global _LATEST_INTERACTIVE_HTML
     from .render.interactive_html import generate_interactive_cockpit_html
+    from .render.publish import publish_interactive_html
     html_markup = generate_interactive_cockpit_html(title=title)
+    pub = publish_interactive_html(html_markup, "rfq_should_cost_agent", title)
+    view_url = pub["url"]
     result = {
         "status": "SUCCESS",
         "title": title,
         "format": "html",
+        "view_url": view_url,
+        "direct_link": view_url,
+        "message": f"Interactive HTML dashboard published to Cloud Storage: {view_url}",
         "html_code": html_markup,
         "html_preview": html_markup,
         "ready_to_view": True,
