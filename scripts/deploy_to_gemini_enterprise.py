@@ -275,6 +275,39 @@ def _build_playbook_starter_prompts(agent_id: str, website_name: str, sub_pillar
     return [hp["q1"], hp["q2"], hp["q3"]]
 
 
+def _expand_domain_abbreviations(text: str) -> str:
+    """Expands cryptic domain abbreviations on first use for clarity in Gemini Enterprise."""
+    subs = [
+        ("PO/GRN/Invoice", "Purchase Order (PO), Goods Receipt Note (GRN), and Invoice"),
+        ("POs, GRNs,", "Purchase Orders (POs), Goods Receipt Notes (GRNs),"),
+        ("POs,", "Purchase Orders (POs),"),
+        ("GRNs,", "Goods Receipt Notes (GRNs),"),
+        ("ASN/GRN", "Advance Shipping Notice (ASN) / Goods Receipt Note (GRN)"),
+        ("AP unit cost", "Accounts Payable (AP) unit cost"),
+        ("AP discrepancy", "Accounts Payable (AP) discrepancy"),
+        ("customer OTIF", "customer On-Time In-Full (OTIF)"),
+        ("OTIF compliance", "On-Time In-Full (OTIF) compliance"),
+        ("S&OP / IBP", "Sales & Operations Planning (S&OP) / Integrated Business Planning (IBP)"),
+        ("S&OP consensus", "Sales and Operations Planning (S&OP) consensus"),
+        ("OEE breakdown", "Overall Equipment Effectiveness (OEE) breakdown"),
+        ("Plant OEE", "Plant Overall Equipment Effectiveness (OEE)"),
+        ("MEIO", "Multi-Echelon Inventory Optimization (MEIO)"),
+        ("CFA depots", "Carrying & Forwarding Agent (CFA) depots"),
+        ("CFAs", "Carrying & Forwarding Agents (CFAs)"),
+        ("RTI asset", "Reusable Transport Item (RTI) asset"),
+        ("CBAM tax", "Carbon Border Adjustment Mechanism (CBAM) tax"),
+        ("EUDR", "European Union Deforestation Regulation (EUDR)"),
+        ("WMS", "Warehouse Management System (WMS)"),
+        ("TMS", "Transportation Management System (TMS)"),
+        ("MES", "Manufacturing Execution System (MES)"),
+    ]
+    res = text
+    for old, new in subs:
+        if old in res and new not in res:
+            res = res.replace(old, new)
+    return res
+
+
 def build_all_60_agents_config() -> Dict[str, Dict[str, Any]]:
     """Builds deployment specs for all 60 catalog agents using `<Website Name> (<Pillar> · <Sub-Pillar>)`."""
     cat_path = ROOT / "data" / "supply_chain_catalog.json"
@@ -311,6 +344,7 @@ def build_all_60_agents_config() -> Dict[str, Dict[str, Any]]:
         desc = f"[{bracket_label}] {website_name} — {short_desc}"
         if outcome and outcome not in desc:
             desc = f"{desc} Outcome: {outcome}"
+        desc = _expand_domain_abbreviations(desc)
 
         legacy_list = list(LEGACY_NAMES_BY_ID.get(aid, []))
         for candidate in (

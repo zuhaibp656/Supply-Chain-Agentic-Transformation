@@ -40,7 +40,7 @@
       "section": "01 \u00b7 Planning & Strategy | S&OP / IBP",
       "display_name": "Consensus & Gap Agent (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
       "ge_display_name": "Consensus & Gap Agent (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
-      "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Consensus & Gap Agent \u2014 Reconciles unconstrained demand with factory plant bottleneck limits. Outcome: Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority).",
+      "description": "[01 \u00b7 Planning & Strategy \u00b7 Sales & Operations Planning (S&OP) / Integrated Business Planning (IBP)] Consensus & Gap Agent \u2014 Reconciles unconstrained demand with factory plant bottleneck limits. Outcome: Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority).",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8086384929635565568",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9189674696747625515",
@@ -54,7 +54,7 @@
       "section": "01 \u00b7 Planning & Strategy | S&OP / IBP",
       "display_name": "Digital War-Room Agent (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
       "ge_display_name": "Digital War-Room Agent (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
-      "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Digital War-Room Agent \u2014 Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF.",
+      "description": "[01 \u00b7 Planning & Strategy \u00b7 Sales & Operations Planning (S&OP) / Integrated Business Planning (IBP)] Digital War-Room Agent \u2014 Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1211217885989437440",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4685464268735078343",
@@ -68,7 +68,7 @@
       "section": "01 \u00b7 Planning & Strategy | S&OP / IBP",
       "display_name": "Executive Copilot (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
       "ge_display_name": "Executive Copilot (01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP)",
-      "description": "[01 \u00b7 Planning & Strategy \u00b7 S&OP / IBP] Executive Copilot \u2014 Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand\u2014turning 5-day analyst deck cycles into instant executive action.",
+      "description": "[01 \u00b7 Planning & Strategy \u00b7 Sales & Operations Planning (S&OP) / Integrated Business Planning (IBP)] Executive Copilot \u2014 Generates pre-read decks and tracks sign-offs across cross-functional leads. Outcome: Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand\u2014turning 5-day analyst deck cycles into instant executive action.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2865587061606318080",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4015823380636158533",
@@ -138,7 +138,7 @@
       "section": "02 \u00b7 Sourcing & Procurement | Contract & PO Mgmt",
       "display_name": "Three-Way Match Dispute (02 \u00b7 Sourcing & Procurement \u00b7 Contract & PO Mgmt)",
       "ge_display_name": "Three-Way Match Dispute (02 \u00b7 Sourcing & Procurement \u00b7 Contract & PO Mgmt)",
-      "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Contract & PO Mgmt] Three-Way Match Dispute \u2014 Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. Outcome: Reconciles PO, Goods Receipt (ASN/GRN), and Invoice line variances automatically\u2014capturing early-payment discounts and cutting AP unit cost by 80%.",
+      "description": "[02 \u00b7 Sourcing & Procurement \u00b7 Contract & PO Mgmt] Three-Way Match Dispute \u2014 Diagnoses price/quantity discrepancies across Purchase Orders (POs), Goods Receipt Notes (GRNs), and carrier invoices. Outcome: Reconciles PO, Goods Receipt (Advance Shipping Notice (ASN) / Goods Receipt Note (GRN)), and Invoice line variances automatically\u2014capturing early-payment discounts and cutting Accounts Payable (AP) unit cost by 80%.",
       "model": "gemini-3.1-pro-preview",
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/994356809596665856",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/3963067958567898860",
@@ -355,5 +355,5 @@
       "deployed_at": "2026-11-06T08:27:07Z"
     }
   ],
-  "updated_at": "2026-11-06T10:13:02Z"
+  "updated_at": "2026-11-06T10:25:21Z"
 }
