@@ -37,9 +37,9 @@ def create_demand_sensing_spec(
     return {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "PulseCast Multi-Signal Demand Sensing & TimesFM Quantile Fan Chart",
-        "width": "container",
+        "width": 620,
         "height": 380,
-        "background": "#0b0f19",
+        "background": "#ffffff",
         "padding": {"top": 16, "left": 18, "right": 18, "bottom": 16},
         "data": {"values": data_points},
         "layer": [
@@ -69,7 +69,7 @@ def create_demand_sensing_spec(
             {
                 "mark": {
                     "type": "line",
-                    "color": "#ffffff",
+                    "color": "#0f172a",
                     "strokeWidth": 2,
                     "strokeDash": [4, 4]
                 },
@@ -100,9 +100,9 @@ def create_demand_sensing_spec(
         ],
         "config": {
             "axis": {
-                "labelColor": "#94a3b8",
-                "titleColor": "#cbd5e1",
-                "gridColor": "#1e293b",
+                "labelColor": "#475569",
+                "titleColor": "#1e293b",
+                "gridColor": "#e2e8f0",
                 "labelFontSize": 11,
                 "titleFontSize": 12
             },

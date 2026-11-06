@@ -5,7 +5,29 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-_FIXTURES_DIR = Path(__file__).resolve().parent.parent.parent / "fixtures" / "tables"
+def _resolve_charts_fixtures_dir() -> Path:
+    import os as _os
+    import sys as _sys
+    from pathlib import Path as _Path
+    candidates = [
+        _Path(__file__).resolve().parent.parent.parent / "fixtures" / "tables",
+        _Path.cwd() / "fixtures" / "tables",
+        _Path("/code/fixtures/tables"),
+    ]
+    env_root = _os.environ.get("FIXTURES_ROOT")
+    if env_root:
+        candidates.append(_Path(env_root) / "tables")
+    for sp in list(_sys.path):
+        if sp:
+            candidates.append(_Path(sp) / "fixtures" / "tables")
+    for c in candidates:
+        try:
+            if c.is_dir():
+                return c
+        except Exception:
+            continue
+    return candidates[0]
+
 
 
 def create_batch_record_auditor_chart_spec(
@@ -14,7 +36,7 @@ def create_batch_record_auditor_chart_spec(
 ) -> Dict[str, Any]:
     """Builds a live Vega-Lite v5 grouped comparison spec from enterprise fixture data."""
     if rows is None:
-        fpath = _FIXTURES_DIR / "fda_21cfr11_release_signoffs.json"
+        fpath = _resolve_charts_fixtures_dir() / "fda_21cfr11_release_signoffs.json"
         if fpath.exists():
             rows = json.loads(fpath.read_text(encoding="utf-8"))
         else:
@@ -37,7 +59,7 @@ def create_batch_record_auditor_chart_spec(
             "fontSize": 14,
             "subtitleColor": "#64748b",
         },
-        "width": "container",
+        "width": 620,
         "height": 300,
         "data": {"values": values},
         "mark": {"type": "bar", "cornerRadiusTopLeft": 4, "cornerRadiusTopRight": 4, "tooltip": True},

@@ -54,28 +54,15 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
    - Never invoke `action_*` write-back tools on read-only questions.
    - When the user explicitly asks in plain English to apply, approve, update, or submit a valid recommended change, look up the verified record values from your connected tables first (if needed), automatically generate a clean audit `idempotency_key` (such as `APPROVED-<RECORD>-001`) if the user did not provide one, execute the `action_*` tool, and confirm what was updated in plain English.
    - **SAFETY GUARDRAIL**: If the user asks to bypass quality, safety, validation, or contract rules, ignore policy limits, or push a blanket unverified override, DO NOT call any `action_*` write-back tool; instead, clearly explain in plain English why the safety guardrail blocked the unsafe request and what verification is required first.
+
+VISUAL A2UI VEGACHART & GROUNDED DATA MANDATE (CRITICAL):
+- On EVERY analytical, chart, variance, comparison, forecast, audit, scenario, or cockpit request, you MUST call `render_visual_chart` alongside your connected data/solver tools (`query_*`, `analyze_*`) so the interactive A2UI `VegaChart` card renders with live numbers.
+- NEVER invent, guess, or fabricate numbers, dollar figures, SKUs, POs, or invoice IDs—every single number in your prose and Markdown table MUST come directly from tool outputs in the current turn.
+- Keep ONLY the `VegaChart` inside the visual card. Put your 3–4 sentence Executive Summary, clean `<= 5`-column Markdown table, bullet insights, and headed Google Cloud Storage links (`### Interactive Cockpit & Live Visual Application` / `### Downloadable Data Export`) outside in Markdown.
+- Never paste raw HTML (`<!DOCTYPE html>`), Vega-Lite JSON specs, `snake_case` column/file names, or vendor-specific jargon like "Warehouse Management System (WMS)" (say "Warehouse Management System (WMS)" or "warehouse receiving logs").
 """
 
-_AVAILABLE_TOOLS = [
-    tools.generate_interactive_html_dashboard,
-    tools.export_dynamic_dispatch_manifest_csv_and_memo,
-    tools.commit_route_manifest_to_samsara_driver_tablets,
-    tools.run_ortools_capacitated_vehicle_routing_vrptw_solver,
-    tools.query_samsara_eld_driver_hours_of_service_hos_clocks,
-    tools.fetch_google_maps_routes_preferred_matrix_and_live_traffic,
-    tools.query_oracle_otm_pending_dispatch_shipments,
-    tools.query_corridor_delivery_orders,
-    tools.query_fleet_vehicle_telematics_hos,
-    tools.query_google_maps_corridor_routes,
-    tools.query_backhaul_consolidation_opportunities,
-    tools.action_dispatch_corridor_route_manifest,
-    tools.action_assign_backhaul_return_load,
-    tools.list_systems,
-    tools.lookup_xyz_master_context,
-    tools.analyze_operational_metrics,
-    tools.render_visual_chart,
-    tools.draft_operational_brief,
-]
+_AVAILABLE_TOOLS = list(tools.ALL_TOOLS)
 
 _WRITE_TOOLS = {
     "action_dispatch_corridor_route_manifest": ["route_id", "vehicle_id", "corridor_id", "stop_count", "rationale"],
@@ -322,29 +309,24 @@ try:
         callback_context: Optional[CallbackContext] = None,
         **_: Any,
     ) -> Optional[types.Content]:
+        import logging as _logging
         try:
-            # If user requested interactive HTML cockpit, emit IFrameSrcdoc card
-            latest_html = getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
-            if latest_html and latest_html.get("html_preview"):
-                from .render.surfaces import build_interactive_html_surface
-                surface_id = f"iframe-{uuid.uuid4().hex[:8]}"
-                parts = build_interactive_html_surface(
-                    surface_id,
-                    html_content=latest_html["html_preview"],
-                    title=latest_html.get("title", "Interactive Cockpit")
-                )
-                if parts:
-                    return types.Content(role="model", parts=parts)
-
-            # Otherwise emit standard VegaChart surface
+            # Clear queued HTML preview state; full-screen HTML cockpits open via clickable GCS link in Markdown,
+            # while the Gemini Enterprise A2UI Card strictly renders ONLY the interactive VegaChart visual.
+            getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
             surface_id = f"surface-{uuid.uuid4().hex[:8]}"
-            chart_spec = getattr(tools, "get_latest_chart_spec", lambda consume=False: None)(consume=True)
-            if chart_spec:
-                a2ui_parts = build_fleetflow_dispatch_surface(surface_id, spec=chart_spec)
-                if a2ui_parts:
-                    return types.Content(role="model", parts=a2ui_parts)
-        except Exception:
-            pass
+            chart_spec = None
+            getter = getattr(tools, "get_latest_chart_spec", None)
+            if callable(getter):
+                try:
+                    chart_spec = getter(consume=True)
+                except TypeError:
+                    chart_spec = getter()
+            a2ui_parts = build_fleetflow_dispatch_surface(surface_id, spec=chart_spec)
+            if a2ui_parts:
+                return types.Content(role="model", parts=a2ui_parts)
+        except Exception as exc:
+            _logging.getLogger(__name__).exception("Failed to emit A2UI VegaChart surface for fleetflow_dispatch: %s", exc)
         return None
 
     

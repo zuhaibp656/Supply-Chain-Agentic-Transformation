@@ -35,9 +35,9 @@ def create_promo_elasticity_spec(
     return {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "ElasticityIQ Causal Promotional Lift vs Cannibalization Matrix",
-        "width": "container",
+        "width": 620,
         "height": 380,
-        "background": "#0b0f19",
+        "background": "#ffffff",
         "padding": {"top": 16, "left": 18, "right": 18, "bottom": 16},
         "data": {"values": promo_data},
         "mark": {"type": "bar", "cornerRadius": 4},
@@ -55,8 +55,8 @@ def create_promo_elasticity_spec(
                 "field": "impact_usd",
                 "type": "quantitative",
                 "axis": {
-                    "gridColor": "#1e293b",
-                    "labelColor": "#94a3b8",
+                    "gridColor": "#e2e8f0",
+                    "labelColor": "#475569",
                     "title": "Net Economic Impact ($ USD)"
                 }
             },

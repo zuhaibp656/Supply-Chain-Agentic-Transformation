@@ -41,9 +41,9 @@ def create_should_cost_spec(
     return {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "SourcePulse Parametric Should-Cost vs Supplier RFQ Bid Breakdown",
-        "width": "container",
+        "width": 620,
         "height": 380,
-        "background": "#0b0f19",
+        "background": "#ffffff",
         "padding": {"top": 16, "left": 18, "right": 18, "bottom": 16},
         "data": {"values": cost_data},
         "mark": {"type": "bar", "cornerRadiusTop": 4},
@@ -61,8 +61,8 @@ def create_should_cost_spec(
                 "field": "cost_usd",
                 "type": "quantitative",
                 "axis": {
-                    "gridColor": "#1e293b",
-                    "labelColor": "#94a3b8",
+                    "gridColor": "#e2e8f0",
+                    "labelColor": "#475569",
                     "title": "Unit Cost ($ USD / Unit)"
                 }
             },

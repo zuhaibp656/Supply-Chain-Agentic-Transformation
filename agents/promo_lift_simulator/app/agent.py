@@ -25,32 +25,8 @@ TOOL USAGE PROTOCOL:
 - Before executing mutations (`action_shape_promotional_mechanic`, `action_lock_tpm_calendar`),
   ensure all required fields and non-empty `idempotency_key` are provided.
 
-INTERACTIVE HTML DASHBOARD & EXECUTIVE ARTIFACTS PROTOCOL:
-- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
-  1. Proactively invoke `generate_interactive_html_dashboard`.
-  2. In your Markdown response:
-     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
-     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
-     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
-     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
 
-INTERACTIVE HTML DASHBOARD & EXECUTIVE ARTIFACTS PROTOCOL:
-- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
-  1. Proactively invoke `generate_interactive_html_dashboard`.
-  2. In your Markdown response:
-     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
-     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
-     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
-     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
 
-INTERACTIVE HTML DASHBOARD PROTOCOL:
-- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
-  1. Proactively invoke `generate_interactive_html_dashboard`.
-  2. In your Markdown response:
-     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
-     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
-     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
-     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
 
 RESPONSE STANDARDS:
 1. Executive Clarity: Deliver copy-ready markdown tables detailing Gross Lift, Cannibalization Loss, Net Incremental Units, and Margin Gain.
@@ -92,28 +68,15 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
    - Never invoke `action_*` write-back tools on read-only questions.
    - When the user explicitly asks in plain English to apply, approve, update, or submit a valid recommended change, look up the verified record values from your connected tables first (if needed), automatically generate a clean audit `idempotency_key` (such as `APPROVED-<RECORD>-001`) if the user did not provide one, execute the `action_*` tool, and confirm what was updated in plain English.
    - **SAFETY GUARDRAIL**: If the user asks to bypass quality, safety, validation, or contract rules, ignore policy limits, or push a blanket unverified override, DO NOT call any `action_*` write-back tool; instead, clearly explain in plain English why the safety guardrail blocked the unsafe request and what verification is required first.
+
+VISUAL A2UI VEGACHART & GROUNDED DATA MANDATE (CRITICAL):
+- On EVERY analytical, chart, variance, comparison, forecast, audit, scenario, or cockpit request, you MUST call `render_visual_chart` alongside your connected data/solver tools (`query_*`, `analyze_*`) so the interactive A2UI `VegaChart` card renders with live numbers.
+- NEVER invent, guess, or fabricate numbers, dollar figures, SKUs, POs, or invoice IDs—every single number in your prose and Markdown table MUST come directly from tool outputs in the current turn.
+- Keep ONLY the `VegaChart` inside the visual card. Put your 3–4 sentence Executive Summary, clean `<= 5`-column Markdown table, bullet insights, and headed Google Cloud Storage links (`### Interactive Cockpit & Live Visual Application` / `### Downloadable Data Export`) outside in Markdown.
+- Never paste raw HTML (`<!DOCTYPE html>`), Vega-Lite JSON specs, `snake_case` column/file names, or vendor-specific jargon like "Warehouse Management System (WMS)" (say "Warehouse Management System (WMS)" or "warehouse receiving logs").
 """
 
-_AVAILABLE_TOOLS = [
-    tools.generate_interactive_html_dashboard,
-    tools.export_promo_roi_waterfall_csv_ledger,
-    tools.commit_salesforce_trade_spend_and_sap_pricing,
-    tools.audit_warehouse_promo_inventory_readiness,
-    tools.run_causal_elasticity_and_cannibalization_solver,
-    tools.fetch_bigquery_point_of_sale_historical_lifts,
-    tools.query_salesforce_crm_trade_promotions_and_coop_agreements,
-    tools.query_planned_promo_campaigns,
-    tools.query_causal_promo_elasticity,
-    tools.query_cross_sku_cannibalization,
-    tools.query_warehouse_promo_availability,
-    tools.action_shape_promotional_mechanic,
-    tools.action_lock_tpm_calendar,
-    tools.list_systems,
-    tools.lookup_xyz_master_context,
-    tools.analyze_operational_metrics,
-    tools.render_visual_chart,
-    tools.draft_operational_brief,
-]
+_AVAILABLE_TOOLS = list(tools.ALL_TOOLS)
 
 _WRITE_TOOLS = {
     "action_shape_promotional_mechanic": ["campaign_id", "adjusted_discount_pct", "bundle_sku", "rationale"],
@@ -350,29 +313,24 @@ try:
         callback_context: Optional[CallbackContext] = None,
         **_: Any,
     ) -> Optional[types.Content]:
+        import logging as _logging
         try:
-            # If user requested interactive HTML cockpit, emit IFrameSrcdoc card
-            latest_html = getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
-            if latest_html and latest_html.get("html_preview"):
-                from .render.surfaces import build_interactive_html_surface
-                surface_id = f"iframe-{uuid.uuid4().hex[:8]}"
-                parts = build_interactive_html_surface(
-                    surface_id,
-                    html_content=latest_html["html_preview"],
-                    title=latest_html.get("title", "Interactive Cockpit")
-                )
-                if parts:
-                    return types.Content(role="model", parts=parts)
-
-            # Otherwise emit standard VegaChart surface
+            # Clear queued HTML preview state; full-screen HTML cockpits open via clickable GCS link in Markdown,
+            # while the Gemini Enterprise A2UI Card strictly renders ONLY the interactive VegaChart visual.
+            getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
             surface_id = f"surface-{uuid.uuid4().hex[:8]}"
-            chart_spec = getattr(tools, "get_latest_chart_spec", lambda consume=False: None)(consume=True)
-            if chart_spec:
-                a2ui_parts = build_promo_surface(surface_id, spec=chart_spec)
-                if a2ui_parts:
-                    return types.Content(role="model", parts=a2ui_parts)
-        except Exception:
-            pass
+            chart_spec = None
+            getter = getattr(tools, "get_latest_chart_spec", None)
+            if callable(getter):
+                try:
+                    chart_spec = getter(consume=True)
+                except TypeError:
+                    chart_spec = getter()
+            a2ui_parts = build_promo_surface(surface_id, spec=chart_spec)
+            if a2ui_parts:
+                return types.Content(role="model", parts=a2ui_parts)
+        except Exception as exc:
+            _logging.getLogger(__name__).exception("Failed to emit A2UI VegaChart surface for promo_lift_simulator: %s", exc)
         return None
 
     

@@ -29,9 +29,9 @@ def create_cpfr_sync_spec(
     return {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "ChannelSync Retailer EDI 852 POS Harmonization & Phantom Inventory Detection",
-        "width": "container",
+        "width": 620,
         "height": 380,
-        "background": "#0b0f19",
+        "background": "#ffffff",
         "padding": {"top": 16, "left": 18, "right": 18, "bottom": 16},
         "data": {"values": channel_data},
         "layer": [
@@ -80,9 +80,9 @@ def create_cpfr_sync_spec(
         ],
         "config": {
             "axis": {
-                "labelColor": "#94a3b8",
-                "titleColor": "#cbd5e1",
-                "gridColor": "#1e293b",
+                "labelColor": "#475569",
+                "titleColor": "#1e293b",
+                "gridColor": "#e2e8f0",
                 "labelFontSize": 11,
                 "titleFontSize": 12
             },

@@ -26,32 +26,8 @@ TOOL USAGE PROTOCOL:
 - Before executing mutations (`action_execute_slot_reassignment`, `action_balance_wave_release_profile`),
   ensure all required fields and a non-empty `idempotency_key` are provided.
 
-INTERACTIVE HTML DASHBOARD & EXECUTIVE ARTIFACTS PROTOCOL:
-- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
-  1. Proactively invoke `generate_interactive_html_dashboard`.
-  2. In your Markdown response:
-     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
-     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
-     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
-     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
 
-INTERACTIVE HTML DASHBOARD & EXECUTIVE ARTIFACTS PROTOCOL:
-- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
-  1. Proactively invoke `generate_interactive_html_dashboard`.
-  2. In your Markdown response:
-     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
-     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
-     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
-     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
 
-INTERACTIVE HTML DASHBOARD PROTOCOL:
-- When the user asks to "make an interactive HTML", "generate an interactive dashboard", "show cockpit", or requests visual web artifacts:
-  1. Proactively invoke `generate_interactive_html_dashboard`.
-  2. In your Markdown response:
-     - Begin with a 3–4 sentence Plain-English Executive Summary explaining the current operational situation and key metrics.
-     - Include a clean Markdown summary table (<= 5 columns) with plain-English column headers.
-     - Output the complete, standalone, copyable ```html <!DOCTYPE html> ... ``` code block containing the entire self-contained interactive application so the user can easily copy or save it as a standalone HTML file.
-     - Note to the user that the live interactive application is also rendering directly inside the Gemini Enterprise canvas side panel via A2UI.
 
 RESPONSE STANDARDS:
 1. Executive Quality Brief: Deliver copy-ready markdown tables detailing SKU Name, Velocity Tier, Current Bin, Recommended Bin, Travel Distance Delta, Daily Km Saved, and WMS Status.
@@ -59,7 +35,7 @@ RESPONSE STANDARDS:
 
 ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
 1. REAL-WORLD ENTERPRISE SYSTEMS INTEGRATION:
-   - You interface directly with enterprise systems (Manhattan Active WMS 3D Bin Locations & Velocity Tiers, AMR Robotics & Manual Picker Travel Telemetry, 3D Golden-Zone Ergonomic & Congestion-Aware Slotting Solver, WMS Order Wave Release Queue & Batch Profiles, Manhattan Active WMS Automated Slot Move Execution).
+   - You interface directly with enterprise systems (Warehouse Management System (WMS) 3D Bin Locations & Velocity Tiers, AMR Robotics & Manual Picker Travel Telemetry, 3D Golden-Zone Ergonomic & Congestion-Aware Slotting Solver, WMS Order Wave Release Queue & Batch Profiles, Warehouse Management System (WMS) Automated Slot Move Execution).
    - Proactively execute your enterprise-named tools (query_manhattan_active_wms_slot_locations_and_velocity, fetch_amr_robot_and_picker_travel_telemetry, run_3d_golden_zone_slotting_and_travel_reduction_solver, query_wms_wave_release_order_queue, commit_slot_moves_to_manhattan_wms) when analyzing data or executing actions so business users see authentic enterprise integrations.
 2. DIVERSE, TAILORED VISUAL SURFACES:
    - When users ask for a chart, graph, comparison, or breakdown, call `render_visual_chart`. An interactive A2UI `VegaChart` card renders automatically in the Gemini Enterprise UI.
@@ -93,28 +69,15 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
    - Never invoke `action_*` write-back tools on read-only questions.
    - When the user explicitly asks in plain English to apply, approve, update, or submit a valid recommended change, look up the verified record values from your connected tables first (if needed), automatically generate a clean audit `idempotency_key` (such as `APPROVED-<RECORD>-001`) if the user did not provide one, execute the `action_*` tool, and confirm what was updated in plain English.
    - **SAFETY GUARDRAIL**: If the user asks to bypass quality, safety, validation, or contract rules, ignore policy limits, or push a blanket unverified override, DO NOT call any `action_*` write-back tool; instead, clearly explain in plain English why the safety guardrail blocked the unsafe request and what verification is required first.
+
+VISUAL A2UI VEGACHART & GROUNDED DATA MANDATE (CRITICAL):
+- On EVERY analytical, chart, variance, comparison, forecast, audit, scenario, or cockpit request, you MUST call `render_visual_chart` alongside your connected data/solver tools (`query_*`, `analyze_*`) so the interactive A2UI `VegaChart` card renders with live numbers.
+- NEVER invent, guess, or fabricate numbers, dollar figures, SKUs, POs, or invoice IDs—every single number in your prose and Markdown table MUST come directly from tool outputs in the current turn.
+- Keep ONLY the `VegaChart` inside the visual card. Put your 3–4 sentence Executive Summary, clean `<= 5`-column Markdown table, bullet insights, and headed Google Cloud Storage links (`### Interactive Cockpit & Live Visual Application` / `### Downloadable Data Export`) outside in Markdown.
+- Never paste raw HTML (`<!DOCTYPE html>`), Vega-Lite JSON specs, `snake_case` column/file names, or vendor-specific jargon like "Warehouse Management System (WMS)" (say "Warehouse Management System (WMS)" or "warehouse receiving logs").
 """
 
-_AVAILABLE_TOOLS = [
-    tools.generate_interactive_html_dashboard,
-    tools.export_warehouse_rack_elevation_csv_and_memo,
-    tools.commit_slot_moves_to_manhattan_wms,
-    tools.query_wms_wave_release_order_queue,
-    tools.run_3d_golden_zone_slotting_and_travel_reduction_solver,
-    tools.fetch_amr_robot_and_picker_travel_telemetry,
-    tools.query_manhattan_active_wms_slot_locations_and_velocity,
-    tools.query_warehouse_slotting_velocity_tiers,
-    tools.query_amr_picker_travel_telemetry,
-    tools.query_wave_release_order_allocations,
-    tools.query_slot_reassignment_recommendations,
-    tools.action_execute_slot_reassignment,
-    tools.action_balance_wave_release_profile,
-    tools.list_systems,
-    tools.lookup_xyz_master_context,
-    tools.analyze_operational_metrics,
-    tools.render_visual_chart,
-    tools.draft_operational_brief,
-]
+_AVAILABLE_TOOLS = list(tools.ALL_TOOLS)
 
 _WRITE_TOOLS = {
     "action_execute_slot_reassignment": ["sku_id", "current_bin_id", "target_bin_id", "priority", "rationale"],
@@ -291,7 +254,7 @@ class WarehouseSlottingOptimizer:
         lines.extend([
             "",
             "### 🔗 Connected Intralogistics & Robotic Swarm Architecture",
-            "- **Manhattan Active WMS 3D Slotting**: Real-time velocity heatmap, cubic utilization, and pick frequency profiling.",
+            "- **Warehouse Management System (WMS) 3D Slotting**: Real-time velocity heatmap, cubic utilization, and pick frequency profiling.",
             "- **KION / Dematic AMR Controller**: VDA 5050 autonomous mobile robot fleet dispatch, pathing, and collision avoidance.",
             "- **Blue Yonder Wave Engine**: Dynamic order batching, zone picker caps, and bottleneck pacing.",
             "- **OSHA Ergonomic Standard Module**: Elimination of overhead reach and deep-bend heavy SKU lifting injuries."
@@ -356,29 +319,24 @@ try:
         callback_context: Optional[CallbackContext] = None,
         **_: Any,
     ) -> Optional[types.Content]:
+        import logging as _logging
         try:
-            # If user requested interactive HTML cockpit, emit IFrameSrcdoc card
-            latest_html = getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
-            if latest_html and latest_html.get("html_preview"):
-                from .render.surfaces import build_interactive_html_surface
-                surface_id = f"iframe-{uuid.uuid4().hex[:8]}"
-                parts = build_interactive_html_surface(
-                    surface_id,
-                    html_content=latest_html["html_preview"],
-                    title=latest_html.get("title", "Interactive Cockpit")
-                )
-                if parts:
-                    return types.Content(role="model", parts=parts)
-
-            # Otherwise emit standard VegaChart surface
+            # Clear queued HTML preview state; full-screen HTML cockpits open via clickable GCS link in Markdown,
+            # while the Gemini Enterprise A2UI Card strictly renders ONLY the interactive VegaChart visual.
+            getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
             surface_id = f"surface-{uuid.uuid4().hex[:8]}"
-            chart_spec = getattr(tools, "get_latest_chart_spec", lambda consume=False: None)(consume=True)
-            if chart_spec:
-                a2ui_parts = build_warehouse_slotting_surface(surface_id, spec=chart_spec)
-                if a2ui_parts:
-                    return types.Content(role="model", parts=a2ui_parts)
-        except Exception:
-            pass
+            chart_spec = None
+            getter = getattr(tools, "get_latest_chart_spec", None)
+            if callable(getter):
+                try:
+                    chart_spec = getter(consume=True)
+                except TypeError:
+                    chart_spec = getter()
+            a2ui_parts = build_warehouse_slotting_surface(surface_id, spec=chart_spec)
+            if a2ui_parts:
+                return types.Content(role="model", parts=a2ui_parts)
+        except Exception as exc:
+            _logging.getLogger(__name__).exception("Failed to emit A2UI VegaChart surface for warehouse_slotting_agent: %s", exc)
         return None
 
     

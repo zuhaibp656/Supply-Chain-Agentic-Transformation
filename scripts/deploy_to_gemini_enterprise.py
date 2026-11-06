@@ -609,42 +609,40 @@ def deploy_agent_engine(
             del sys.modules[mod_name]
 
     sys.path.insert(0, str(agent_dir))
-    try:
-        mod = importlib.import_module("app.agent")
-        root_agent = getattr(mod, "root_agent")
-        app_cls = getattr(mod, spec["app_class"])
-    except Exception as e:
-        raise RuntimeError(f"Failed to load agent {agent_id}: {e}") from e
-    finally:
-        if str(agent_dir) in sys.path:
-            sys.path.remove(str(agent_dir))
-
-    if dry_run:
-        state_file = agent_dir / ".reasoning_engine_id"
-        cached = state_file.read_text().strip() if state_file.exists() else f"projects/{project}/locations/{region}/reasoningEngines/NEW-{agent_id}"
-        mode = "IN-PLACE UPDATE" if state_file.exists() else "NEW CREATE"
-        print(f"[DRY-RUN {mode}] {spec['app_class']} -> '{display_name}' | model={spec['model']} | re={cached.split('/')[-1]}")
-        return cached
-
-    import google.auth
-    import vertexai
-    from vertexai import agent_engines
-
-    creds = get_credentials()
-    google.auth.default = lambda *a, **k: (creds, project)
-    vertexai.init(project=project, location=region, staging_bucket=f"gs://{staging_bucket}", credentials=creds)
-
-    adk_app = app_cls(agent=root_agent)
-    env_vars = {
-        "GOOGLE_GENAI_USE_VERTEXAI": "TRUE",
-        "SC_AGENT_ID": agent_id,
-        "SC_AGENT_CATEGORY": spec.get("category", spec["section"]),
-        "SC_MODEL": spec["model"],
-    }
-
     prev_cwd = os.getcwd()
-    os.chdir(agent_dir)
     try:
+        try:
+            mod = importlib.import_module("app.agent")
+            root_agent = getattr(mod, "root_agent")
+            app_cls = getattr(mod, spec["app_class"])
+        except Exception as e:
+            raise RuntimeError(f"Failed to load agent {agent_id}: {e}") from e
+
+        if dry_run:
+            state_file = agent_dir / ".reasoning_engine_id"
+            cached = state_file.read_text().strip() if state_file.exists() else f"projects/{project}/locations/{region}/reasoningEngines/NEW-{agent_id}"
+            mode = "IN-PLACE UPDATE" if state_file.exists() else "NEW CREATE"
+            print(f"[DRY-RUN {mode}] {spec['app_class']} -> '{display_name}' | model={spec['model']} | re={cached.split('/')[-1]}")
+            return cached
+
+        import google.auth
+        import vertexai
+        from vertexai import agent_engines
+
+        creds = get_credentials()
+        google.auth.default = lambda *a, **k: (creds, project)
+        vertexai.init(project=project, location=region, staging_bucket=f"gs://{staging_bucket}", credentials=creds)
+
+        os.chdir(agent_dir)
+        adk_app = app_cls(agent=root_agent)
+        env_vars = {
+            "GOOGLE_GENAI_USE_VERTEXAI": "TRUE",
+            "SC_MEDIA_BUCKET": f"{project}-supply-chain-media",
+            "SC_AGENT_ID": agent_id,
+            "SC_AGENT_CATEGORY": spec.get("category", spec["section"]),
+            "SC_MODEL": spec["model"],
+        }
+
         extra_packages = ["app"]
         if (agent_dir / "fixtures").exists():
             extra_packages.append("fixtures")
@@ -708,6 +706,8 @@ def deploy_agent_engine(
         return res
     finally:
         os.chdir(prev_cwd)
+        while str(agent_dir) in sys.path:
+            sys.path.remove(str(agent_dir))
 
 
 def register_gemini_enterprise(
@@ -904,6 +904,8 @@ def main() -> None:
                     )
                 except Exception as e:
                     print(f"[{agent_id}] ERROR deploying Reasoning Engine: {e}")
+                    if len(targets) == 1 and not args.dry_run:
+                        sys.exit(1)
                     if not args.dry_run:
                         continue
             else:
