@@ -275,7 +275,8 @@ Use Google Search to investigate **{target_desc}** in depth:
    - Choose `watermark_type` for each pillar from: `["demand_wave", "supplier_graph", "factory_arm", "warehouse_rack", "corridor_lifo", "conveyor_rack"]`.
 3. **Real Corporate Website Domain & Career-Portal Job Titles**:
    - Find the exact `official_domain` (e.g. `"wipro.com"`, `"asianpaints.com"`, `"nike.com"`, `"pfizer.com"`) so our logo engine can download their official brand mark for `Gemini × Company` co-branding.
-   - Search corporate career portals (`careers.<domain>`), LinkedIn Jobs, Naukri, Glassdoor, and annual reports to extract `6` to `8` authentic supply chain, procurement, operations, planning, or logistics job titles hired4. **Physical & Channel Relevance Profile (`division_operational_profile`)**:
+   - Search corporate career portals (`careers.<domain>`), LinkedIn Jobs, Naukri, Glassdoor, and annual reports to extract `6` to `8` authentic supply chain, procurement, operations, planning, or logistics job titles hired by **{target_desc}**.
+4. **Physical & Channel Relevance Profile (`division_operational_profile`)**:
    - Accurately flag which physical traits DO vs. DO NOT apply (e.g., refrigerated cold-chain perishables, grocery food expiry markdowns, brick-and-mortar retail store planograms, D2C parcel e-commerce) so inapplicable AI agents are cleanly hidden.
 5. **CRITICAL MANDATE — DIVISION CANONICALIZATION**:
    - Users frequently input informal colloquial shorthand or abbreviations (e.g. 'e-commerce' for Amazon, 'two wheeler' for Suzuki, 'TM&D' for ITC). DO NOT just echo raw user text! Conduct Google Search to identify and return the OFFICIAL formal corporate subsidiary, division, or operating entity name with all acronyms spelled out (e.g. 'Worldwide Amazon Stores & Consumer Fulfillment', 'Suzuki Motorcycle Division (Two-Wheelers)', 'Trade Marketing & Distribution (TM&D)'). Return this in `canonical_division_name`.
@@ -296,7 +297,7 @@ Use Google Search to investigate **{target_desc}** in depth:
    - In every pillar name, scor_badge, tagline, subtitle, agent title, workflow name, executive thesis, manual toil, and proof point, spell out all abbreviations!
 
 Return ONLY a valid JSON object matching this exact structure (no markdown commentary outside JSON):
-{
+{{
   "canonical_company_name": "Official brand/legal name of the company",
   "canonical_division_name": "Official formal division/subsidiary name with all acronyms spelled out (or empty string if not applicable)",
   "division_display_name": "Concise official business scope display name",
@@ -313,7 +314,6 @@ Return ONLY a valid JSON object matching this exact structure (no markdown comme
     "Term 2 — Plain-English meaning",
     "Term 3 — Plain-English meaning",
     "Term 4 — Plain-English meaning"
-  ], 4 — Plain-English meaning"
   ],
   "discovered_career_titles": [
     "Authentic corporate job title 1",

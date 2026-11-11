@@ -198,6 +198,8 @@ def latest_ready_jetski_session() -> str | None:
 
 def reap_rogue_port_holder(port: int, unit: str | None = None, env: dict[str, str] | None = None) -> None:
     """Terminates orphaned processes holding `port` outside the target systemd unit (never uses `fuser`)."""
+    if not _proc_net_has_listen("/proc/net/tcp", port) and not _proc_net_has_listen("/proc/net/tcp6", port):
+        return
     allowed_pids: set[int] = set()
     if unit and env:
         try:
