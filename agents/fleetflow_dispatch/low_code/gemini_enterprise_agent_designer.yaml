@@ -1,0 +1,63 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: fleetflow_dispatch
+  display_name: "Dynamic Rerouter"
+  build_tier: "High-Code"
+  category: "05 \u00b7 Distribution & Logistics \u2014 Route & Carrier"
+  primary_persona: "Fleet Dispatcher / Central Ops"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_backhaul_consolidation_opportunities
+      uri: "bq://zuhaibp-ai.supply_chain_twin.backhaul_consolidation_opportunities"
+      source_system: "Blue Yonder TMS Backhaul & Deadhead Elimination Broker"
+      protocol: "OData / EDI 204"
+    - id: bq_supply_chain_twin_corridor_delivery_orders
+      uri: "bq://zuhaibp-ai.supply_chain_twin.corridor_delivery_orders"
+      source_system: "Google OR-Tools Capacitated Vehicle Routing (CVRPTW) Engine"
+      protocol: "C++ / Python Solver SDK"
+    - id: bq_supply_chain_twin_fleet_vehicle_telematics_hos
+      uri: "bq://zuhaibp-ai.supply_chain_twin.fleet_vehicle_telematics_hos"
+      source_system: "Samsara ELD & Google Maps Fleet Engine Vehicle Telemetry"
+      protocol: "Webhook / MQTT"
+    - id: bq_supply_chain_twin_google_maps_corridor_routes
+      uri: "bq://zuhaibp-ai.supply_chain_twin.google_maps_corridor_routes"
+      source_system: "Google Maps Platform Routes Preferred & Live Traffic Matrix API"
+      protocol: "gRPC / REST v2"
+  data_source_tools:
+    - inspect_google_maps_fleetflow_dispatch_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_tms_backhaul_consolidation_opportunities
+    - query_ortools_corridor_delivery_orders
+    - query_google_maps_fleet_vehicle_telematics_hos
+    - query_corridor_delivery_orders
+    - query_fleet_vehicle_telematics_hos
+    - query_google_maps_corridor_routes
+    - query_backhaul_consolidation_opportunities
+    - query_oracle_otm_pending_dispatch_shipments
+    - fetch_google_maps_routes_preferred_matrix_and_live_traffic
+    - query_samsara_eld_driver_hours_of_service_hos_clocks
+    - run_ortools_capacitated_vehicle_routing_vrptw_solver
+    - render_fleetflow_dispatch_a2ui_chart_and_canvas
+    - draft_fleetflow_dispatch_stakeholder_decision_memo
+    - export_dynamic_dispatch_manifest_csv_and_memo
+    - publish_fleetflow_dispatch_interactive_cockpit_to_gcs
+    - action_dispatch_corridor_route_manifest
+    - action_assign_backhaul_return_load
+    - commit_route_manifest_to_samsara_driver_tablets
+  starter_prompts:
+    - "Dynamically dispatch and route our delivery fleet across the Delhi NCR and Mumbai-Pune expressways. Account for live highway congestion, toll corridors, and driver duty hours to minimize empty miles, and output a turn-by-turn dispatch manifest."
+    - "Generate an interactive multi-stop delivery corridor route map visual with color-coded traffic congestion overlays, customer waypoint stop sequences, and driver rest stops."
+    - "Draft a daily fleet dispatch operational memorandum and interactive full-screen route control board for the Fleet Operations Manager detailing mileage reductions, fuel savings, and on-time arrival forecasts."
+    - "Please push the validated turn-by-turn dynamic reroute to our most delayed active truck and update customer arrival estimates."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

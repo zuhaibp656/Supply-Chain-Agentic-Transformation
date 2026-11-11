@@ -1,0 +1,623 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Cold-Chain Auditor \u2014 Data-Source Connector & Solver API",
+    "version": "2.0.0",
+    "description": "Declarative OpenAPI 3.0.3 tool definitions for Cold-Chain Auditor (Hybrid Tier) mapped 1-to-1 to actual enterprise data sources."
+  },
+  "servers": [
+    {
+      "url": "https://sc-enterprise-portal-zuhaibp-ai.a.run.app"
+    }
+  ],
+  "paths": {
+    "/v1/agents/cold_chain_auditor/tools/inspect_iot_telematics_cold_chain_auditor_data_sources": {
+      "get": {
+        "operationId": "inspect_iot_telematics_cold_chain_auditor_data_sources",
+        "summary": "Execute inspect iot telematics cold chain auditor data sources on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/query_sap_s4hana_master_data_backbone": {
+      "get": {
+        "operationId": "query_sap_s4hana_master_data_backbone",
+        "summary": "Execute query sap s4hana master data backbone on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/query_qa_gdp_cold_chain_sku_stability_specs": {
+      "get": {
+        "operationId": "query_qa_gdp_cold_chain_sku_stability_specs",
+        "summary": "Execute query qa gdp cold chain sku stability specs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/query_tms_qa_disposition_claims_ledger": {
+      "get": {
+        "operationId": "query_tms_qa_disposition_claims_ledger",
+        "summary": "Execute query tms qa disposition claims ledger on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/query_iot_telematics_reefer_iot_temp_telemetry": {
+      "get": {
+        "operationId": "query_iot_telematics_reefer_iot_temp_telemetry",
+        "summary": "Execute query iot telematics reefer iot temp telemetry on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/query_tms_thermal_excursion_incidents": {
+      "get": {
+        "operationId": "query_tms_thermal_excursion_incidents",
+        "summary": "Execute query tms thermal excursion incidents on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/query_reefer_iot_temp_telemetry": {
+      "get": {
+        "operationId": "query_reefer_iot_temp_telemetry",
+        "summary": "Execute query reefer iot temp telemetry on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/query_cold_chain_sku_stability_specs": {
+      "get": {
+        "operationId": "query_cold_chain_sku_stability_specs",
+        "summary": "Execute query cold chain sku stability specs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/query_thermal_excursion_incidents": {
+      "get": {
+        "operationId": "query_thermal_excursion_incidents",
+        "summary": "Execute query thermal excursion incidents on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/query_qa_disposition_claims_ledger": {
+      "get": {
+        "operationId": "query_qa_disposition_claims_ledger",
+        "summary": "Execute query qa disposition claims ledger on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/query_samsara_iot_reefer_telematics_and_temp_loggers": {
+      "get": {
+        "operationId": "query_samsara_iot_reefer_telematics_and_temp_loggers",
+        "summary": "Execute query samsara iot reefer telematics and temp loggers on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/fetch_oracle_otm_perishable_shipment_specs": {
+      "get": {
+        "operationId": "fetch_oracle_otm_perishable_shipment_specs",
+        "summary": "Execute fetch oracle otm perishable shipment specs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/query_carrier_contractual_temp_compliance_tariffs": {
+      "get": {
+        "operationId": "query_carrier_contractual_temp_compliance_tariffs",
+        "summary": "Execute query carrier contractual temp compliance tariffs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/analyze_arrhenius_mkt_excursions": {
+      "get": {
+        "operationId": "analyze_arrhenius_mkt_excursions",
+        "summary": "Execute analyze arrhenius mkt excursions on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/run_mean_kinetic_temperature_mkt_and_shelf_life_decay_solver": {
+      "get": {
+        "operationId": "run_mean_kinetic_temperature_mkt_and_shelf_life_decay_solver",
+        "summary": "Execute run mean kinetic temperature mkt and shelf life decay solver on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/render_cold_chain_auditor_a2ui_chart_and_canvas": {
+      "get": {
+        "operationId": "render_cold_chain_auditor_a2ui_chart_and_canvas",
+        "summary": "Execute render cold chain auditor a2ui chart and canvas on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/draft_gdp_quarantine_and_spoilage_claim": {
+      "get": {
+        "operationId": "draft_gdp_quarantine_and_spoilage_claim",
+        "summary": "Execute draft gdp quarantine and spoilage claim on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/export_temperature_excursion_timeline_csv_and_claim": {
+      "get": {
+        "operationId": "export_temperature_excursion_timeline_csv_and_claim",
+        "summary": "Execute export temperature excursion timeline csv and claim on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/publish_cold_chain_auditor_interactive_cockpit_to_gcs": {
+      "get": {
+        "operationId": "publish_cold_chain_auditor_interactive_cockpit_to_gcs",
+        "summary": "Execute publish cold chain auditor interactive cockpit to gcs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/action_post_wms_mkt_usage_decision": {
+      "post": {
+        "operationId": "action_post_wms_mkt_usage_decision",
+        "summary": "Execute action post wms mkt usage decision on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/action_file_carrier_reefer_spoilage_claim": {
+      "post": {
+        "operationId": "action_file_carrier_reefer_spoilage_claim",
+        "summary": "Execute action file carrier reefer spoilage claim on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/cold_chain_auditor/tools/commit_carrier_spoilage_chargeback_debit_in_sap": {
+      "post": {
+        "operationId": "commit_carrier_spoilage_chargeback_debit_in_sap",
+        "summary": "Execute commit carrier spoilage chargeback debit in sap on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

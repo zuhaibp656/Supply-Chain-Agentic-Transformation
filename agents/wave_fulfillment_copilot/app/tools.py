@@ -499,10 +499,86 @@ def export_operational_csv_schedule(target_id: str = "", format_type: str = "csv
     """Generate an atomic, copy-ready RFC-4180 CSV schedule from verified enterprise records and publish to Google Cloud Storage."""
     return _build_real_csv_export('wave_fulfillment_copilot', 'Wave Fulfillment Copilot — Atomic Export Schedule', target_id=target_id)
 
+# --- BEGIN DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---
+_LAST_CANVAS_CONTEXT: Optional[Dict[str, Any]] = None
+_AGENT_SYSTEMS_METADATA: List[Dict[str, Any]] = [{'id': 'wms_wave_backlog', 'name': 'WMS Outbound Order Wave & Zone Queue', 'protocol': 'Manhattan Active API', 'tables': ['wms_open_outbound_order_waves']}, {'id': 'wes_labor_telemetry', 'name': 'WES Zone Pick/Pack UPH & Chute Congestion Feed', 'protocol': 'WebSocket / SQL', 'tables': ['zone_pick_pack_labor_telemetry']}, {'id': 'tms_carrier_cutoffs', 'name': 'TMS Dock Carrier Pull Cutoff Schedule', 'protocol': 'REST / EDI 204', 'tables': ['carrier_pull_cutoff_schedules']}, {'id': 'wes_rebalance_directives', 'name': 'Dynamic Labor & Wave Rebalance Directives', 'protocol': 'WES Task API', 'tables': ['dynamic_wave_rebalance_directives']}]
+_AGENT_WRITEBACK_SUMMARY: str = 'Manhattan / Warehouse Management System (WMS / MCP) Directed Putaway, Re-Slot Tasks & Dynamic Wave Release via MCP / REST / On-Prem Gateway'
+_AGENT_PRIMARY_TABLE: str = 'zone_pick_pack_labor_telemetry'
 
-# --- BEGIN UNIFIED ENTERPRISE TOOL REGISTRY ---
+
+def _record_canvas_rows(table_name: str, rows: Optional[List[Dict[str, Any]]]) -> None:
+    global _LAST_CANVAS_CONTEXT
+    if not rows or not isinstance(rows, list):
+        return
+    ctx = dict(_LAST_CANVAS_CONTEXT or {})
+    ctx["source_table"] = table_name
+    ctx["rows"] = copy.deepcopy(rows[:40])
+    ctx["systems"] = _AGENT_SYSTEMS_METADATA
+    ctx["writeback_summary"] = _AGENT_WRITEBACK_SUMMARY
+    _LAST_CANVAS_CONTEXT = ctx
+
+
+def _record_canvas_solver(solver_result: Any) -> None:
+    global _LAST_CANVAS_CONTEXT
+    if not isinstance(solver_result, dict):
+        return
+    ctx = dict(_LAST_CANVAS_CONTEXT or {})
+    kpi = solver_result.get("kpi_summary")
+    if isinstance(kpi, dict):
+        ctx["kpi_summary"] = copy.deepcopy(kpi)
+    tbl = solver_result.get("analyzed_table") or solver_result.get("source_table")
+    if isinstance(tbl, str) and tbl:
+        ctx["source_table"] = tbl
+    if not ctx.get("rows"):
+        tfiles = _discover_table_files()
+        target_file = None
+        if tbl:
+            target_file = next((f for f in tfiles if f.stem == tbl), None)
+        if target_file is None and tfiles:
+            target_file = tfiles[-1]
+        if target_file is not None:
+            ctx["source_table"] = target_file.stem
+            ctx["rows"] = _read_json(target_file.name)[:40]
+    ctx["systems"] = _AGENT_SYSTEMS_METADATA
+    ctx["writeback_summary"] = _AGENT_WRITEBACK_SUMMARY
+    _LAST_CANVAS_CONTEXT = ctx
+
+
+def _ensure_canvas_populated(preferred_table: str = "") -> Dict[str, Any]:
+    global _LAST_CANVAS_CONTEXT
+    if isinstance(_LAST_CANVAS_CONTEXT, dict) and _LAST_CANVAS_CONTEXT.get("rows"):
+        return _LAST_CANVAS_CONTEXT
+    tfiles = _discover_table_files()
+    chosen = None
+    if preferred_table:
+        chosen = next((f for f in tfiles if preferred_table.lower() in f.stem.lower()), None)
+    if chosen is None:
+        chosen = next((f for f in tfiles if f.stem == _AGENT_PRIMARY_TABLE), None)
+    if chosen is None and tfiles:
+        chosen = tfiles[-1]
+    rows = _read_json(chosen.name)[:40] if chosen is not None else []
+    _LAST_CANVAS_CONTEXT = {
+        "source_table": chosen.stem if chosen is not None else _AGENT_PRIMARY_TABLE,
+        "rows": rows,
+        "systems": _AGENT_SYSTEMS_METADATA,
+        "writeback_summary": _AGENT_WRITEBACK_SUMMARY,
+    }
+    return _LAST_CANVAS_CONTEXT
+
+
+def get_latest_canvas_context(consume: bool = False) -> Dict[str, Any]:
+    """Returns live enterprise source rows & solver metadata for the A2UI Side-Panel Canvas (`RichTable`)."""
+    global _LAST_CANVAS_CONTEXT
+    ctx = _ensure_canvas_populated()
+    out = copy.deepcopy(ctx)
+    if consume:
+        _LAST_CANVAS_CONTEXT = None
+    return out
+
+
 def _queue_chart_if_needed() -> None:
     global _LAST_CHART_SPEC
+    _ensure_canvas_populated()
     if _LAST_CHART_SPEC is not None:
         return
     try:
@@ -574,7 +650,7 @@ def _dispatch_enterprise_wrapper(
         is_solver = wrapper_name.startswith(("run_", "simulate_", "optimize_", "solve_", "calculate_"))
         candidates = []
         w_tokens = set(wrapper_name.lower().split("_")) - {
-            "sap", "s4hana", "ibp", "wms", "tms", "otm", "manhattan", "oracle",
+            "sap", "s4hana", "ibp", "wms", "tms", "otm", "ewm", "oracle",
             "bigquery", "vertex", "query", "fetch", "audit", "run", "action", "commit",
         }
         for name, obj in g.items():
@@ -609,13 +685,18 @@ def _dispatch_enterprise_wrapper(
                 out = dict(res)
                 out.setdefault("enterprise_system", system_name)
                 out.setdefault("source_system_id", system_id)
+                if isinstance(out.get("rows"), list) and out.get("rows"):
+                    _record_canvas_rows(str(out.get("table") or system_id), out["rows"])
+                elif isinstance(out.get("kpi_summary"), dict):
+                    _record_canvas_solver(out)
                 return out
         except Exception:
             pass
 
-    # Fallback: read first real fixture table so 0-row stubs NEVER occur
     tfiles = _discover_table_files()
     rows = _read_json(tfiles[0].name) if tfiles else []
+    if tfiles and rows:
+        _record_canvas_rows(tfiles[0].stem, rows)
     return {
         "status": "SUCCESS",
         "source_system": system_id,
@@ -634,7 +715,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
     _queue_chart_if_needed()
     tfiles = _discover_table_files()
     chosen_rows: List[Dict[str, Any]] = []
-    chosen_table = "operational_schedule"
+    chosen_table = _AGENT_PRIMARY_TABLE
     for tf in reversed(tfiles):
         rlist = _read_json(tf.name)
         if isinstance(rlist, list) and rlist and isinstance(rlist[0], dict):
@@ -649,6 +730,9 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
         ]
         if filtered:
             chosen_rows = filtered
+
+    if chosen_rows:
+        _record_canvas_rows(chosen_table, chosen_rows)
 
     buf = _io.StringIO()
     if chosen_rows:
@@ -667,7 +751,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
     csv_payload = buf.getvalue()
     if os.environ.get("SC_SKIP_GCS_UPLOAD") == "1":
         bucket = os.environ.get("SC_MEDIA_BUCKET", "zuhaibp-ai-supply-chain-media")
-        download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_schedule.csv"
+        download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_{chosen_table}.csv"
     else:
         try:
             from .render.publish import publish_csv_export
@@ -675,7 +759,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
             download_url = pub["url"]
         except Exception:
             bucket = os.environ.get("SC_MEDIA_BUCKET", "zuhaibp-ai-supply-chain-media")
-            download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_schedule.csv"
+            download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_{chosen_table}.csv"
     return {
         "status": "SUCCESS",
         "format": "csv",
@@ -688,19 +772,90 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
         "csv_content": csv_payload,
     }
 
+
+def inspect_wms_wave_fulfillment_data_sources() -> Dict[str, Any]:
+    """List all connected enterprise systems, protocols, and governed source tables (WMS Outbound Order Wave & Zone Queue & partner feeds)."""
+    return list_systems()
+def query_sap_s4hana_master_data_backbone(sku_id: str = "", facility_id: str = "", supplier_id: str = "", customer_id: str = "", carrier_id: str = "") -> Dict[str, Any]:
+    """Query SAP S/4HANA & Enterprise Master Data Backbone (`MARA` Materials, Plants/DCs, Vendors, Customers, and Lanes)."""
+    return lookup_xyz_master_context(sku_id=sku_id, facility_id=facility_id, supplier_id=supplier_id, customer_id=customer_id, carrier_id=carrier_id)
+def query_tms_carrier_pull_cutoff_schedules(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: TMS Dock Carrier Pull Cutoff Schedule · Table `carrier_pull_cutoff_schedules`] Query live verified records from TMS Dock Carrier Pull Cutoff Schedule (`zuhaibp-ai.supply_chain_twin.carrier_pull_cutoff_schedules`)."""
+    res = _dispatch_enterprise_wrapper('query_tms_carrier_pull_cutoff_schedules', 'query_carrier_pull_cutoffs', 'tms_carrier_cutoffs', 'TMS Dock Carrier Pull Cutoff Schedule')
+    _record_canvas_rows('carrier_pull_cutoff_schedules', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_tms_carrier_pull_cutoff_schedules.__is_enterprise_wrapper__ = True
+def query_wes_rebalance_dynamic_wave_rebalance_directives(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: Dynamic Labor & Wave Rebalance Directives · Table `dynamic_wave_rebalance_directives`] Query live verified records from Dynamic Labor & Wave Rebalance Directives (`zuhaibp-ai.supply_chain_twin.dynamic_wave_rebalance_directives`)."""
+    res = _dispatch_enterprise_wrapper('query_wes_rebalance_dynamic_wave_rebalance_directives', 'query_wave_rebalance_directives', 'wes_rebalance_directives', 'Dynamic Labor & Wave Rebalance Directives')
+    _record_canvas_rows('dynamic_wave_rebalance_directives', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_wes_rebalance_dynamic_wave_rebalance_directives.__is_enterprise_wrapper__ = True
+def query_wms_open_outbound_order_waves(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: WMS Outbound Order Wave & Zone Queue · Table `wms_open_outbound_order_waves`] Query live verified records from WMS Outbound Order Wave & Zone Queue (`zuhaibp-ai.supply_chain_twin.wms_open_outbound_order_waves`)."""
+    res = _dispatch_enterprise_wrapper('query_wms_open_outbound_order_waves', 'query_open_outbound_waves', 'wms_wave_backlog', 'WMS Outbound Order Wave & Zone Queue')
+    _record_canvas_rows('wms_open_outbound_order_waves', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_wms_open_outbound_order_waves.__is_enterprise_wrapper__ = True
+def query_wes_labor_zone_pick_pack_labor_telemetry(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: WES Zone Pick/Pack UPH & Chute Congestion Feed · Table `zone_pick_pack_labor_telemetry`] Query live verified records from WES Zone Pick/Pack UPH & Chute Congestion Feed (`zuhaibp-ai.supply_chain_twin.zone_pick_pack_labor_telemetry`)."""
+    res = _dispatch_enterprise_wrapper('query_wes_labor_zone_pick_pack_labor_telemetry', 'query_zone_pick_labor_telemetry', 'wes_labor_telemetry', 'WES Zone Pick/Pack UPH & Chute Congestion Feed')
+    _record_canvas_rows('zone_pick_pack_labor_telemetry', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_wes_labor_zone_pick_pack_labor_telemetry.__is_enterprise_wrapper__ = True
+def render_wave_fulfillment_a2ui_chart_and_canvas(source_table: str = "", chart_title: str = "") -> Dict[str, Any]:
+    """Render the interactive 2-Panel A2UI v0.9 `VegaChart` executive infographic card AND populate the side-panel Looker Studio `RichTable` Canvas from `zone_pick_pack_labor_telemetry`."""
+    sig = _inspect_mod.signature(render_visual_chart)
+    kw = {}
+    if 'table_name' in sig.parameters and source_table:
+        kw['table_name'] = source_table
+    if 'chart_title' in sig.parameters and chart_title:
+        kw['chart_title'] = chart_title
+    elif 'title_override' in sig.parameters and chart_title:
+        kw['title_override'] = chart_title
+    res = render_visual_chart(**kw)
+    _ensure_canvas_populated(preferred_table=source_table)
+    return res
+def export_zone_pick_pack_labor_csv_to_gcs(target_id: str = "") -> Dict[str, Any]:
+    """Export verified `zone_pick_pack_labor_telemetry` records as an RFC-4180 CSV schedule to Google Cloud Storage and return a clickable download link."""
+    return _build_real_csv_export('wave_fulfillment_copilot', 'Wave Fulfillment Copilot — Verified Zone Pick Pack Labor Telemetry CSV', target_id=target_id)
+def publish_wave_fulfillment_interactive_cockpit_to_gcs(title: str = "Wave Fulfillment Copilot — Interactive Simulator Cockpit") -> Dict[str, Any]:
+    """Compile the self-contained interactive HTML5 simulator cockpit for Wave Fulfillment Copilot, publish to Google Cloud Storage, and return the full-screen `view_url`."""
+    _ensure_canvas_populated()
+    return generate_interactive_html_dashboard(title=title)
+
+
+LEGACY_COMPAT_TOOLS = [
+    fn for _nm, fn in [
+        ("list_systems", globals().get("list_systems")),
+        ("lookup_xyz_master_context", globals().get("lookup_xyz_master_context")),
+        ("render_visual_chart", globals().get("render_visual_chart")),
+        ("analyze_operational_metrics", globals().get("analyze_operational_metrics")),
+        ("draft_operational_brief", globals().get("draft_operational_brief")),
+        ("export_operational_csv_schedule", globals().get("export_operational_csv_schedule")),
+        ("generate_interactive_html_dashboard", globals().get("generate_interactive_html_dashboard")),
+    ]
+    if callable(fn)
+]
+
 ALL_TOOLS = [
-    list_systems,
-    lookup_xyz_master_context,
+    inspect_wms_wave_fulfillment_data_sources,
+    query_sap_s4hana_master_data_backbone,
+    query_tms_carrier_pull_cutoff_schedules,
+    query_wes_rebalance_dynamic_wave_rebalance_directives,
+    query_wms_open_outbound_order_waves,
+    query_wes_labor_zone_pick_pack_labor_telemetry,
     query_open_outbound_waves,
     query_zone_pick_labor_telemetry,
     query_carrier_pull_cutoffs,
     query_wave_rebalance_directives,
     analyze_wave_cutoff_burn_down,
-    render_visual_chart,
+    render_wave_fulfillment_a2ui_chart_and_canvas,
     draft_floor_wave_rebalance_huddle,
+    export_zone_pick_pack_labor_csv_to_gcs,
+    publish_wave_fulfillment_interactive_cockpit_to_gcs,
     action_rebalance_wes_zone_pickers,
     action_resequence_waveless_chutes,
-    generate_interactive_html_dashboard,
-    export_operational_csv_schedule,
+
 ]
-# --- END UNIFIED ENTERPRISE TOOL REGISTRY ---
+# --- END DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---

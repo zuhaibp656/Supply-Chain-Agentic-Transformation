@@ -1,0 +1,430 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Disruption Re-sequencer \u2014 Data-Source Connector & Solver API",
+    "version": "2.0.0",
+    "description": "Declarative OpenAPI 3.0.3 tool definitions for Disruption Re-sequencer (High-Code Tier) mapped 1-to-1 to actual enterprise data sources."
+  },
+  "servers": [
+    {
+      "url": "https://sc-enterprise-portal-zuhaibp-ai.a.run.app"
+    }
+  ],
+  "paths": {
+    "/v1/agents/line_schedule_optimizer/tools/inspect_ortools_line_schedule_optimizer_data_sources": {
+      "get": {
+        "operationId": "inspect_ortools_line_schedule_optimizer_data_sources",
+        "summary": "Execute inspect ortools line schedule optimizer data sources on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/query_sap_s4hana_master_data_backbone": {
+      "get": {
+        "operationId": "query_sap_s4hana_master_data_backbone",
+        "summary": "Execute query sap s4hana master data backbone on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/query_ortools_optimized_sequence_schedule": {
+      "get": {
+        "operationId": "query_ortools_optimized_sequence_schedule",
+        "summary": "Execute query ortools optimized sequence schedule on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/query_sap_ppds_production_orders_backlog": {
+      "get": {
+        "operationId": "query_sap_ppds_production_orders_backlog",
+        "summary": "Execute query sap ppds production orders backlog on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/query_production_orders_backlog": {
+      "get": {
+        "operationId": "query_production_orders_backlog",
+        "summary": "Execute query production orders backlog on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/query_changeover_matrix_rules": {
+      "get": {
+        "operationId": "query_changeover_matrix_rules",
+        "summary": "Execute query changeover matrix rules on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/query_plant_line_workcenters": {
+      "get": {
+        "operationId": "query_plant_line_workcenters",
+        "summary": "Execute query plant line workcenters on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/query_optimized_sequence_schedule": {
+      "get": {
+        "operationId": "query_optimized_sequence_schedule",
+        "summary": "Execute query optimized sequence schedule on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/run_line_schedule_optimizer_constraint_and_variance_solver": {
+      "get": {
+        "operationId": "run_line_schedule_optimizer_constraint_and_variance_solver",
+        "summary": "Execute run line schedule optimizer constraint and variance solver on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/render_line_schedule_optimizer_a2ui_chart_and_canvas": {
+      "get": {
+        "operationId": "render_line_schedule_optimizer_a2ui_chart_and_canvas",
+        "summary": "Execute render line schedule optimizer a2ui chart and canvas on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/draft_line_schedule_optimizer_stakeholder_decision_memo": {
+      "get": {
+        "operationId": "draft_line_schedule_optimizer_stakeholder_decision_memo",
+        "summary": "Execute draft line schedule optimizer stakeholder decision memo on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/export_production_orders_backlog_csv_to_gcs": {
+      "get": {
+        "operationId": "export_production_orders_backlog_csv_to_gcs",
+        "summary": "Execute export production orders backlog csv to gcs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/publish_line_schedule_optimizer_interactive_cockpit_to_gcs": {
+      "get": {
+        "operationId": "publish_line_schedule_optimizer_interactive_cockpit_to_gcs",
+        "summary": "Execute publish line schedule optimizer interactive cockpit to gcs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/action_solve_and_lock_finite_sequence": {
+      "post": {
+        "operationId": "action_solve_and_lock_finite_sequence",
+        "summary": "Execute action solve and lock finite sequence on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/line_schedule_optimizer/tools/action_dispatch_sap_ppds_sequence": {
+      "post": {
+        "operationId": "action_dispatch_sap_ppds_sequence",
+        "summary": "Execute action dispatch sap ppds sequence on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

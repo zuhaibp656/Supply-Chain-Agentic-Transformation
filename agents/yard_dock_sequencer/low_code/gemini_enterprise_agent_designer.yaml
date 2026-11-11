@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: yard_dock_sequencer
+  display_name: "Yard Disruption Agent"
+  build_tier: "Hybrid"
+  category: "05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile"
+  primary_persona: "Yard Master / Plant Logistics"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_carrier_detention_risk_records
+      uri: "bq://zuhaibp-ai.supply_chain_twin.carrier_detention_risk_records"
+      source_system: "Carrier Accessorial & Demurrage Free-Time Contract Ledger"
+      protocol: "PostgreSQL / REST / 2-Hour Free Time Rule Engine"
+    - id: bq_supply_chain_twin_dock_door_turnaround_schedules
+      uri: "bq://zuhaibp-ai.supply_chain_twin.dock_door_turnaround_schedules"
+      source_system: "SAP EWM / Manhattan Yard Management Dock Door Scheduler"
+      protocol: "REST / OpenAPI v3 / Turnaround Cadence Matrix"
+    - id: bq_supply_chain_twin_yard_spotter_move_tasks
+      uri: "bq://zuhaibp-ai.supply_chain_twin.yard_spotter_move_tasks"
+      source_system: "Kalmar / TICO Terminal Tractor Yard Spotter Telematics"
+      protocol: "J1939 CAN / MQTT / Real-Time Hostler Move Dispatch"
+    - id: bq_supply_chain_twin_yard_trailer_geofence_status
+      uri: "bq://zuhaibp-ai.supply_chain_twin.yard_trailer_geofence_status"
+      source_system: "Google Maps Fleet Engine Yard Geofence & Inbound ETA Stream"
+      protocol: "Fleet Engine gRPC / Real-Time Trailer GPS Geofence"
+  data_source_tools:
+    - inspect_google_maps_yard_dock_sequencer_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_tms_carrier_detention_risk_records
+    - query_sap_ewm_dock_door_turnaround_schedules
+    - query_hostler_spotter_yard_spotter_move_tasks
+    - query_google_maps_yard_trailer_geofence_status
+    - query_yard_trailer_geofence_status
+    - query_yard_spotter_move_tasks
+    - query_dock_door_turnaround_schedules
+    - query_carrier_detention_risk_records
+    - run_yard_dock_sequencer_constraint_and_variance_solver
+    - render_yard_dock_sequencer_a2ui_chart_and_canvas
+    - draft_yard_dock_sequencer_stakeholder_decision_memo
+    - export_yard_trailer_geofence_status_csv_to_gcs
+    - publish_yard_dock_sequencer_interactive_cockpit_to_gcs
+    - action_dispatch_yard_spotter_move
+    - action_resolve_carrier_detention_alert
+  starter_prompts:
+    - "Which inbound and outbound trucks in our yard or en route are delayed or queuing for dock doors, and how should we reassign doors to avoid carrier detention penalties?"
+    - "Create a chart comparing truck dwell times, carrier detention risk, and dock door utilization across our active yard schedule."
+    - "Write a concise yard-dispatch brief for the Yard Master listing urgent dock door reassignments, priority live-loads, and detention fees avoided."
+    - "Go ahead and reassign the delayed priority trailer to the open fast-turn dock door and notify the yard crew."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

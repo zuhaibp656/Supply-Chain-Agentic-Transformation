@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: supplier_quality_sentinel
+  display_name: "Onboarding & Qual. Agent"
+  build_tier: "Low-Code"
+  category: "02 \u00b7 Sourcing & Procurement \u2014 Supplier Network"
+  primary_persona: "Procurement Operations Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_cost_of_poor_quality_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.cost_of_poor_quality_ledger"
+      source_system: "SAP S/4HANA Finance Cost of Poor Quality (COPQ) Ledger"
+      protocol: "BAPI_ACC_DOCUMENT_POST / EDI 812"
+    - id: bq_supply_chain_twin_quality_deviation_tickets
+      uri: "bq://zuhaibp-ai.supply_chain_twin.quality_deviation_tickets"
+      source_system: "TrackWise / ETQ Reliance Enterprise 8D CAPA Engine"
+      protocol: "REST / OpenAPI v3"
+    - id: bq_supply_chain_twin_spc_cpk_drift_metrics
+      uri: "bq://zuhaibp-ai.supply_chain_twin.spc_cpk_drift_metrics"
+      source_system: "Supplier MES Statistical Process Control (SPC) Sensor Lake"
+      protocol: "BigQuery / MQTT Machine Telemetry Pub/Sub"
+    - id: bq_supply_chain_twin_supplier_coa_inspections
+      uri: "bq://zuhaibp-ai.supply_chain_twin.supplier_coa_inspections"
+      source_system: "SAP S/4HANA Quality Management (QM)"
+      protocol: "BAPI_INSPLOT_SETUSAGEDECISION / OData v4"
+  data_source_tools:
+    - inspect_sap_s4hana_supplier_quality_sentinel_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_sap_s4hana_cost_of_poor_quality_ledger
+    - query_trackwise_etq_quality_deviation_tickets
+    - query_mes_scada_spc_cpk_drift_metrics
+    - query_sap_s4hana_supplier_coa_inspections
+    - query_supplier_coa_inspections
+    - query_spc_cpk_drift_metrics
+    - query_quality_deviation_tickets
+    - query_cost_of_poor_quality_ledger
+    - run_supplier_quality_sentinel_constraint_and_variance_solver
+    - render_supplier_quality_sentinel_a2ui_chart_and_canvas
+    - draft_supplier_quality_sentinel_stakeholder_decision_memo
+    - export_supplier_coa_inspections_csv_to_gcs
+    - publish_supplier_quality_sentinel_interactive_cockpit_to_gcs
+    - action_quarantine_inspection_lot
+    - action_trigger_8d_capa_debit
+  starter_prompts:
+    - "How do our suppliers look on quality audits, food-safety certifications, and recent defect rates, and are any vendors close to failing compliance or expiring certifications?"
+    - "Plot a chart comparing supplier quality scores and defect rates across active vendors so I can quickly spot who needs corrective action."
+    - "Draft a clear quality and onboarding review note for Procurement and Quality Assurance detailing which suppliers are fully cleared and which require corrective plans."
+    - "Please issue the formal corrective action request and conditional hold for our highest-risk non-compliant supplier."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

@@ -46,7 +46,7 @@ ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
    - You interface directly with enterprise systems (Google DeepMind WeatherNext 3 Extreme Weather Radar, Spire Global AIS Maritime Vessel Telemetry, Resilinc Tier-N Supplier Disruption Telemetry, Disruption Revenue-At-Risk & Lead Time Impact Solver, Emergency Logistics Reroute & Buffer Allocation).
    - Proactively execute your enterprise-named tools (query_deepmind_weathernext_severe_weather_radar, fetch_spire_ais_maritime_vessel_telemetry, query_resilinc_tier_n_supplier_outage_alerts, run_disruption_impact_and_revenue_at_risk_solver, commit_emergency_copacker_and_air_freight_reroute) when analyzing data or executing actions so business users see authentic enterprise integrations.
 2. DIVERSE, TAILORED VISUAL SURFACES:
-   - When users ask for a chart, graph, comparison, or breakdown, call `render_visual_chart`. An interactive A2UI `VegaChart` card renders automatically in the Gemini Enterprise UI.
+   - When users ask for a chart, graph, comparison, or breakdown, call `render_disruption_war_room_a2ui_chart_and_canvas`. An interactive A2UI `VegaChart` card renders automatically in the Gemini Enterprise UI.
 3. DOWNLOADABLE CSV ARTIFACTS (DIRECT CLOUD STORAGE DOWNLOAD LINKS):
    - Whenever providing operational schedules, allocations, audit reconciliations, or data breakdowns, call your export tool. It automatically uploads the RFC-4180 CSV manifest to Google Cloud Storage.
    - Present the direct downloadable link clearly with an explicit heading:
@@ -54,7 +54,7 @@ ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
      - 📥 **[Download Atomic Schedule CSV ↗](<download_url>)**: Clickable download ready for Excel or Google Sheets.
      (Never dump raw text or instruct the user to copy-paste).
 4. INTERACTIVE HTML WEB DASHBOARDS & VISUAL COCKPITS (FULL-SCREEN ASSETS):
-   - When the user asks for an HTML infographic, interactive web page, cockpit, or visual application (just like FleetFlow), call `generate_interactive_html_dashboard`. It compiles a self-contained interactive web application, publishes it to Google Cloud Storage, and returns a browser-openable URL.
+   - When the user asks for an HTML infographic, interactive web page, cockpit, or visual application (just like FleetFlow), call `publish_disruption_war_room_interactive_cockpit_to_gcs`. It compiles a self-contained interactive web application, publishes it to Google Cloud Storage, and returns a browser-openable URL.
    - Present the direct clickable link clearly with an explicit heading:
      ### Interactive Cockpit & Live Visual Application
      - 🌐 **[Open Interactive Cockpit (Full-Screen) ↗](<view_url>)**: Click to launch the full-screen interactive web application with live scenario sliders, drill-downs, and simulation.
@@ -62,7 +62,7 @@ ENTERPRISE SYSTEMS & REAL-WORLD WORKFLOW EXECUTION:
 HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 1. AUTOMATIC DATA & TOOL SELECTION (ZERO TECHNICAL JARGON REQUIRED FROM USERS):
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
-   - Whenever a user asks an analytical or operational question, proactively call your connected `query_*` tools, `lookup_xyz_master_context`, and deterministic Python solver (`analyze_operational_metrics`) behind the scenes to pull the relevant data and compute exact numbers—never estimate math mentally.
+   - Whenever a user asks an analytical or operational question, proactively call your connected `query_*` tools, `query_sap_s4hana_master_data_backbone`, and deterministic Python solver (`analyze_operational_metrics`) behind the scenes to pull the relevant data and compute exact numbers—never estimate math mentally.
    - Never mention internal JSON filenames, `snake_case` table/column names, or Python function names in your user-facing answer; refer to data sources in natural business terms (e.g., "store checkout scans", "warehouse receiving logs", "refrigerated trailer sensors", "carrier freight contracts").
 2. CLEAR, BALANCED MEDIUM-LENGTH PLAIN-ENGLISH EXPLANATION:
    - Write in warm, natural, easy-to-follow business English with a balanced medium-length explanation—neither cryptic 1–2 sentence shorthand nor overly long walls of text—because readers may not know domain shorthand.
@@ -78,11 +78,13 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
    - When the user explicitly asks in plain English to apply, approve, update, or submit a valid recommended change, look up the verified record values from your connected tables first (if needed), automatically generate a clean audit `idempotency_key` (such as `APPROVED-<RECORD>-001`) if the user did not provide one, execute the `action_*` tool, and confirm what was updated in plain English.
    - **SAFETY GUARDRAIL**: If the user asks to bypass quality, safety, validation, or contract rules, ignore policy limits, or push a blanket unverified override, DO NOT call any `action_*` write-back tool; instead, clearly explain in plain English why the safety guardrail blocked the unsafe request and what verification is required first.
 
-VISUAL A2UI VEGACHART & GROUNDED DATA MANDATE (CRITICAL):
-- On EVERY analytical, chart, variance, comparison, forecast, audit, scenario, or cockpit request, you MUST call `render_visual_chart` alongside your connected data/solver tools (`query_*`, `analyze_*`) so the interactive A2UI `VegaChart` card renders with live numbers.
-- NEVER invent, guess, or fabricate numbers, dollar figures, SKUs, POs, or invoice IDs—every single number in your prose and Markdown table MUST come directly from tool outputs in the current turn.
-- Keep ONLY the `VegaChart` inside the visual card. Put your 3–4 sentence Executive Summary, clean `<= 5`-column Markdown table, bullet insights, and headed Google Cloud Storage links (`### Interactive Cockpit & Live Visual Application` / `### Downloadable Data Export`) outside in Markdown.
-- Never paste raw HTML (`<!DOCTYPE html>`), Vega-Lite JSON specs, `snake_case` column/file names, or vendor-specific jargon like "Warehouse Management System (WMS)" (say "Warehouse Management System (WMS)" or "warehouse receiving logs").
+VISUAL A2UI v0.9 DUAL-SURFACE & ACTUAL DATA-SOURCE TOOL MANDATE (CRITICAL):
+- BUILD TIER: **Hybrid** · Connected Data-Source Tools: `inspect_weathernext_disruption_war_room_data_sources, query_sap_s4hana_master_data_backbone, query_servicenow_warroom_incident_war_rooms, query_google_news_news_disruptions, query_weather_alerts, query_maritime_ais_vessels, query_resilinc_supplier_facilities, query_news_disruptions`.
+- On EVERY analytical, chart, variance, comparison, forecast, audit, scenario, or cockpit request, proactively execute your data-source-specific `query_*` / `fetch_*` tools, deterministic solver (`run_*` / `analyze_*`), and `render_disruption_war_room_a2ui_chart_and_canvas` so Gemini Enterprise renders BOTH:
+  1. **Inline A2UI `Card` (`VegaChart` ONLY)**: A 2-Panel Executive Vega-Lite v5 Infographic (Top: Baseline vs. Target/Verified Actual with Mean Reference Rule; Bottom: Signed `Δ` Variance Strip). Keep ONLY the `VegaChart` inside the inline card!
+  2. **Side-Panel A2UI `Canvas` (`RichTable` + Action Buttons + Expansion Panels)**: Automatically attached in the side panel so business users can sort/filter live source rows in Looker Studio and click quick-action buttons.
+- Outside the card in Markdown, present: (a) a warm 3–4 sentence Plain-English Executive Summary (spelling out every abbreviation on first use), (b) a clean `<= 5`-column Markdown summary table ready to copy into Google Sheets, (c) 3–4 concise driver & action bullets, and (d) headed Cloud Storage links (`### Interactive Cockpit & Live Visual Application` via `publish_disruption_war_room_interactive_cockpit_to_gcs` / `### Downloadable Data Export`) when requested.
+- NEVER invent numbers, SKUs, POs, or invoice IDs, and NEVER paste raw HTML (`<!DOCTYPE html>`), Vega-Lite JSON, or `snake_case` internal filenames in user-facing prose.
 """
 
 _AVAILABLE_TOOLS = list(tools.ALL_TOOLS)
@@ -292,20 +294,11 @@ try:
         llm_request: Optional[LlmRequest] = None,
         **_: Any,
     ) -> None:
-        if llm_request is None or not llm_request.contents:
+        """Sanitizes prior A2UI wire parts and intercepts synthetic Canvas button clicks."""
+        if llm_request is None:
             return None
-        for content in llm_request.contents:
-            if not content.parts:
-                continue
-            cleaned: List[types.Part] = []
-            for part in content.parts:
-                if getattr(part, "inline_data", None) is not None:
-                    continue
-                t = getattr(part, "text", None)
-                if t and A2A_DATA_PART_OPEN_TAG in t:
-                    continue
-                cleaned.append(part)
-            content.parts = cleaned or [types.Part(text="[Visual Chart Surface Rendered in UI]")]
+        from .render.a2ui_builder import sanitize_history_and_intercept_actions
+        sanitize_history_and_intercept_actions(llm_request)
         return None
 
     def _append_verified_report(
@@ -341,8 +334,6 @@ try:
     ) -> Optional[types.Content]:
         import logging as _logging
         try:
-            # Clear queued HTML preview state; full-screen HTML cockpits open via clickable GCS link in Markdown,
-            # while the Gemini Enterprise A2UI Card strictly renders ONLY the interactive VegaChart visual.
             getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
             surface_id = f"surface-{uuid.uuid4().hex[:8]}"
             chart_spec = None
@@ -352,11 +343,15 @@ try:
                     chart_spec = getter(consume=True)
                 except TypeError:
                     chart_spec = getter()
-            a2ui_parts = build_disruption_surface(surface_id, spec=chart_spec)
+            canvas_ctx = None
+            ctx_getter = getattr(tools, "get_latest_canvas_context", None)
+            if callable(ctx_getter):
+                canvas_ctx = ctx_getter(consume=True)
+            a2ui_parts = build_disruption_surface(surface_id, spec=chart_spec, canvas_context=canvas_ctx, include_canvas=True)
             if a2ui_parts:
                 return types.Content(role="model", parts=a2ui_parts)
         except Exception as exc:
-            _logging.getLogger(__name__).exception("Failed to emit A2UI VegaChart surface for disruption_war_room_orchestrator: %s", exc)
+            _logging.getLogger(__name__).exception("Failed to emit A2UI surfaces for disruption_war_room_orchestrator: %s", exc)
         return None
 
     

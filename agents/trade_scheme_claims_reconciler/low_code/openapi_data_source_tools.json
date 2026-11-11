@@ -1,0 +1,488 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Deduction Audit Agent \u2014 Data-Source Connector & Solver API",
+    "version": "2.0.0",
+    "description": "Declarative OpenAPI 3.0.3 tool definitions for Deduction Audit Agent (Low-Code Tier) mapped 1-to-1 to actual enterprise data sources."
+  },
+  "servers": [
+    {
+      "url": "https://sc-enterprise-portal-zuhaibp-ai.a.run.app"
+    }
+  ],
+  "paths": {
+    "/v1/agents/trade_scheme_claims_reconciler/tools/inspect_trade_scheme_trade_scheme_claims_reconciler_data_sources": {
+      "get": {
+        "operationId": "inspect_trade_scheme_trade_scheme_claims_reconciler_data_sources",
+        "summary": "Execute inspect trade scheme trade scheme claims reconciler data sources on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/query_sap_s4hana_master_data_backbone": {
+      "get": {
+        "operationId": "query_sap_s4hana_master_data_backbone",
+        "summary": "Execute query sap s4hana master data backbone on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/query_trade_scheme_active_trade_promotion_schemes": {
+      "get": {
+        "operationId": "query_trade_scheme_active_trade_promotion_schemes",
+        "summary": "Execute query trade scheme active trade promotion schemes on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/query_bigquery_claim_anomaly_audit_findings": {
+      "get": {
+        "operationId": "query_bigquery_claim_anomaly_audit_findings",
+        "summary": "Execute query bigquery claim anomaly audit findings on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/query_dms_secondary_distributor_secondary_claim_submissions": {
+      "get": {
+        "operationId": "query_dms_secondary_distributor_secondary_claim_submissions",
+        "summary": "Execute query dms secondary distributor secondary claim submissions on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/query_sap_s4hana_sap_fi_credit_note_settlements": {
+      "get": {
+        "operationId": "query_sap_s4hana_sap_fi_credit_note_settlements",
+        "summary": "Execute query sap s4hana sap fi credit note settlements on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/query_active_trade_promotion_schemes": {
+      "get": {
+        "operationId": "query_active_trade_promotion_schemes",
+        "summary": "Execute query active trade promotion schemes on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/query_distributor_secondary_claim_submissions": {
+      "get": {
+        "operationId": "query_distributor_secondary_claim_submissions",
+        "summary": "Execute query distributor secondary claim submissions on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/query_claim_anomaly_audit_findings": {
+      "get": {
+        "operationId": "query_claim_anomaly_audit_findings",
+        "summary": "Execute query claim anomaly audit findings on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/query_sap_fi_credit_note_settlements": {
+      "get": {
+        "operationId": "query_sap_fi_credit_note_settlements",
+        "summary": "Execute query sap fi credit note settlements on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/run_trade_scheme_claims_reconciler_constraint_and_variance_solver": {
+      "get": {
+        "operationId": "run_trade_scheme_claims_reconciler_constraint_and_variance_solver",
+        "summary": "Execute run trade scheme claims reconciler constraint and variance solver on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/render_trade_scheme_claims_reconciler_a2ui_chart_and_canvas": {
+      "get": {
+        "operationId": "render_trade_scheme_claims_reconciler_a2ui_chart_and_canvas",
+        "summary": "Execute render trade scheme claims reconciler a2ui chart and canvas on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/draft_trade_scheme_claims_reconciler_stakeholder_decision_memo": {
+      "get": {
+        "operationId": "draft_trade_scheme_claims_reconciler_stakeholder_decision_memo",
+        "summary": "Execute draft trade scheme claims reconciler stakeholder decision memo on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/export_sap_fi_credit_note_csv_to_gcs": {
+      "get": {
+        "operationId": "export_sap_fi_credit_note_csv_to_gcs",
+        "summary": "Execute export sap fi credit note csv to gcs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/publish_trade_scheme_claims_reconciler_interactive_cockpit_to_gcs": {
+      "get": {
+        "operationId": "publish_trade_scheme_claims_reconciler_interactive_cockpit_to_gcs",
+        "summary": "Execute publish trade scheme claims reconciler interactive cockpit to gcs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/action_flag_phantom_invoice_for_audit_hold": {
+      "post": {
+        "operationId": "action_flag_phantom_invoice_for_audit_hold",
+        "summary": "Execute action flag phantom invoice for audit hold on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/trade_scheme_claims_reconciler/tools/action_post_sap_fi_trade_credit_note": {
+      "post": {
+        "operationId": "action_post_sap_fi_trade_credit_note",
+        "summary": "Execute action post sap fi trade credit note on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

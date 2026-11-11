@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: eco_cutover_orchestrator
+  display_name: "PIPO Run-Out Agent"
+  build_tier: "High-Code"
+  category: "01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU"
+  primary_persona: "Lifecycle / Materials Mgr"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_eco_optimal_cutover_schedules
+      uri: "bq://zuhaibp-ai.supply_chain_twin.eco_optimal_cutover_schedules"
+      source_system: "Google OR-Tools Dynamic BOM Phase-In / Phase-Out Cutover Solver"
+      protocol: "Python MILP SDK"
+    - id: bq_supply_chain_twin_erp_bom_effectivity_sync_audit
+      uri: "bq://zuhaibp-ai.supply_chain_twin.erp_bom_effectivity_sync_audit"
+      source_system: "SAP Ariba Open Supplier Purchase Order Revision Cutover Engine"
+      protocol: "cXML / REST"
+    - id: bq_supply_chain_twin_multi_plant_predecessor_inventory_runout
+      uri: "bq://zuhaibp-ai.supply_chain_twin.multi_plant_predecessor_inventory_runout"
+      source_system: "SAP S/4HANA MM/PP Multi-Plant WIP & Open Supplier PO Runout Ledger"
+      protocol: "OData v4 / BAPI"
+    - id: bq_supply_chain_twin_plm_engineering_change_orders
+      uri: "bq://zuhaibp-ai.supply_chain_twin.plm_engineering_change_orders"
+      source_system: "Siemens Teamcenter / PTC Windchill PLM Engineering Change (ECO) Feed"
+      protocol: "REST / Webhook"
+  data_source_tools:
+    - inspect_mes_scada_eco_cutover_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_ortools_eco_optimal_cutover_schedules
+    - query_sap_ariba_erp_bom_effectivity_sync_audit
+    - query_sap_s4hana_multi_plant_predecessor_inventory_runout
+    - query_mes_scada_plm_engineering_change_orders
+    - query_plm_engineering_change_orders
+    - query_multi_plant_predecessor_inventory_runout
+    - query_eco_optimal_cutover_schedules
+    - query_erp_bom_effectivity_sync_audit
+    - run_eco_cutover_constraint_and_variance_solver
+    - render_eco_cutover_a2ui_chart_and_canvas
+    - draft_eco_cutover_stakeholder_decision_memo
+    - export_plm_engineering_change_orders_csv_to_gcs
+    - publish_eco_cutover_interactive_cockpit_to_gcs
+    - action_lock_multi_plant_eco_effectivity_dates
+    - action_modify_open_supplier_po_revision
+  starter_prompts:
+    - "How are our upcoming packaging and formula changeovers tracking, and where do we risk scrapping old materials or delaying the new version's launch date?"
+    - "Create a chart comparing remaining old-version material run-out dates against target new-version launch dates across plants, and explain where the transition gap is widest."
+    - "Write a clear transition plan summary for Manufacturing, Procurement, and Marketing showing the recommended cutover dates and how we avoid material write-offs."
+    - "Please update the official phase-in and phase-out cutover date for our highest-risk transition item to minimize scrap while protecting supply."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

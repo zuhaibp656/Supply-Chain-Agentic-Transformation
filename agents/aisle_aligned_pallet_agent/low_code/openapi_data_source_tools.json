@@ -1,0 +1,488 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Aisle-Aligned Pallet \u2014 Data-Source Connector & Solver API",
+    "version": "2.0.0",
+    "description": "Declarative OpenAPI 3.0.3 tool definitions for Aisle-Aligned Pallet (High-Code Tier) mapped 1-to-1 to actual enterprise data sources."
+  },
+  "servers": [
+    {
+      "url": "https://sc-enterprise-portal-zuhaibp-ai.a.run.app"
+    }
+  ],
+  "paths": {
+    "/v1/agents/aisle_aligned_pallet_agent/tools/inspect_wms_aisle_aligned_pallet_data_sources": {
+      "get": {
+        "operationId": "inspect_wms_aisle_aligned_pallet_data_sources",
+        "summary": "Execute inspect wms aisle aligned pallet data sources on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/query_sap_s4hana_master_data_backbone": {
+      "get": {
+        "operationId": "query_sap_s4hana_master_data_backbone",
+        "summary": "Execute query sap s4hana master data backbone on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/query_pack_engineering_case_crush_and_stacking_physics": {
+      "get": {
+        "operationId": "query_pack_engineering_case_crush_and_stacking_physics",
+        "summary": "Execute query pack engineering case crush and stacking physics on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/query_amrs_palletizer_pallet_layer_build_sequences": {
+      "get": {
+        "operationId": "query_amrs_palletizer_pallet_layer_build_sequences",
+        "summary": "Execute query amrs palletizer pallet layer build sequences on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/query_blueyonder_store_retail_store_aisle_bay_planograms": {
+      "get": {
+        "operationId": "query_blueyonder_store_retail_store_aisle_bay_planograms",
+        "summary": "Execute query blueyonder store retail store aisle bay planograms on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/query_wms_store_order_case_lines": {
+      "get": {
+        "operationId": "query_wms_store_order_case_lines",
+        "summary": "Execute query wms store order case lines on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/query_store_order_case_lines": {
+      "get": {
+        "operationId": "query_store_order_case_lines",
+        "summary": "Execute query store order case lines on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/query_retail_store_planograms": {
+      "get": {
+        "operationId": "query_retail_store_planograms",
+        "summary": "Execute query retail store planograms on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/query_case_crush_stacking_physics": {
+      "get": {
+        "operationId": "query_case_crush_stacking_physics",
+        "summary": "Execute query case crush stacking physics on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/query_pallet_layer_build_sequences": {
+      "get": {
+        "operationId": "query_pallet_layer_build_sequences",
+        "summary": "Execute query pallet layer build sequences on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/analyze_aisle_pallet_layer_physics": {
+      "get": {
+        "operationId": "analyze_aisle_pallet_layer_physics",
+        "summary": "Execute analyze aisle pallet layer physics on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/render_aisle_aligned_pallet_a2ui_chart_and_canvas": {
+      "get": {
+        "operationId": "render_aisle_aligned_pallet_a2ui_chart_and_canvas",
+        "summary": "Execute render aisle aligned pallet a2ui chart and canvas on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/draft_store_ready_pallet_manifest": {
+      "get": {
+        "operationId": "draft_store_ready_pallet_manifest",
+        "summary": "Execute draft store ready pallet manifest on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/export_store_order_case_lines_csv_to_gcs": {
+      "get": {
+        "operationId": "export_store_order_case_lines_csv_to_gcs",
+        "summary": "Execute export store order case lines csv to gcs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/publish_aisle_aligned_pallet_interactive_cockpit_to_gcs": {
+      "get": {
+        "operationId": "publish_aisle_aligned_pallet_interactive_cockpit_to_gcs",
+        "summary": "Execute publish aisle aligned pallet interactive cockpit to gcs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/action_release_palletizer_layer_sequence": {
+      "post": {
+        "operationId": "action_release_palletizer_layer_sequence",
+        "summary": "Execute action release palletizer layer sequence on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/aisle_aligned_pallet_agent/tools/action_update_sku_top_cap_stack_rule": {
+      "post": {
+        "operationId": "action_update_sku_top_cap_stack_rule",
+        "summary": "Execute action update sku top cap stack rule on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

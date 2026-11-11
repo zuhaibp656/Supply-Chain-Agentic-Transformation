@@ -1,0 +1,65 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: freight_bill_audit_agent
+  display_name: "Freight Bill Audit Agent"
+  build_tier: "Low-Code"
+  category: "05 \u00b7 Distribution & Logistics \u2014 Route & Carrier"
+  primary_persona: "Freight Controller / Claims"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_contracted_lane_rate_and_fsc_tables
+      uri: "bq://zuhaibp-ai.supply_chain_twin.contracted_lane_rate_and_fsc_tables"
+      source_system: "Contracted Lane Rate & DOE Diesel FSC Tariff Engine"
+      protocol: "SQL / Tariff API"
+    - id: bq_supply_chain_twin_edi210_carrier_freight_invoices
+      uri: "bq://zuhaibp-ai.supply_chain_twin.edi210_carrier_freight_invoices"
+      source_system: "Carrier EDI 210 Freight Invoice Intake"
+      protocol: "EDI X12 210 / AS2"
+    - id: bq_supply_chain_twin_epod_gps_detention_verifications
+      uri: "bq://zuhaibp-ai.supply_chain_twin.epod_gps_detention_verifications"
+      source_system: "Geofence Gate-In/Gate-Out & ePOD Timestamp Verifier"
+      protocol: "REST / Telematics SQL"
+    - id: bq_supply_chain_twin_freight_overcharge_audit_adjustments
+      uri: "bq://zuhaibp-ai.supply_chain_twin.freight_overcharge_audit_adjustments"
+      source_system: "Freight Audit & Payment (FAP) Short-Pay Ledger"
+      protocol: "IDoc / BAPI_ACC_DOCUMENT_POST"
+  data_source_tools:
+    - inspect_tms_freight_bill_audit_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_tms_contracted_lane_rate_and_fsc_tables
+    - query_tms_edi210_carrier_freight_invoices
+    - query_mes_scada_epod_gps_detention_verifications
+    - query_sap_s4hana_freight_overcharge_audit_adjustments
+    - query_edi210_freight_invoices
+    - query_contracted_lane_fsc_tariffs
+    - query_gps_detention_verifications
+    - query_freight_overcharge_adjustments
+    - query_carrier_edi210_freight_invoices
+    - fetch_oracle_otm_contractual_rate_tariffs
+    - query_samsara_gps_actual_miles_and_detention_telemetry
+    - analyze_edi210_tariff_and_fsc_variance
+    - run_freight_rate_overcharge_and_accessorial_dispute_solver
+    - render_freight_bill_audit_a2ui_chart_and_canvas
+    - draft_edi210_short_pay_remittance_notice
+    - export_freight_audit_discrepancy_csv_and_claim
+    - publish_freight_bill_audit_interactive_cockpit_to_gcs
+    - action_approve_short_pay_voucher
+    - action_transmit_edi210_dispute_code
+    - commit_carrier_overcharge_credit_memo_to_sap
+  starter_prompts:
+    - "Audit incoming motor carrier freight bills across our linehaul corridors in the Western and Northern logistics networks by cross-checking carrier invoices against contractual rate cards and GPS transit records. Identify unapproved accessorial charges, route distance overstatements, and inaccurate diesel fuel surcharge adjustments, and generate a freight discrepancy ledger."
+    - "Render an interactive freight overcharge variance waterfall chart illustrating billed versus contractual freight costs across base freight, fuel surcharges, detention, and accessorial fees."
+    - "Draft a formal carrier freight dispute claim letter and interactive full-screen freight audit review brief detailing disputed invoice amounts, evidence records, and net payable balances."
+    - "Please file the automated overcharge adjustment on the flagged carrier freight bill and approve the verified net balance for payment."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

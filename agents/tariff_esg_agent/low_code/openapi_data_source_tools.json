@@ -1,0 +1,488 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Contract Leakage Agent \u2014 Data-Source Connector & Solver API",
+    "version": "2.0.0",
+    "description": "Declarative OpenAPI 3.0.3 tool definitions for Contract Leakage Agent (Low-Code Tier) mapped 1-to-1 to actual enterprise data sources."
+  },
+  "servers": [
+    {
+      "url": "https://sc-enterprise-portal-zuhaibp-ai.a.run.app"
+    }
+  ],
+  "paths": {
+    "/v1/agents/tariff_esg_agent/tools/inspect_alloydb_tariff_esg_data_sources": {
+      "get": {
+        "operationId": "inspect_alloydb_tariff_esg_data_sources",
+        "summary": "Execute inspect alloydb tariff esg data sources on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/query_sap_s4hana_master_data_backbone": {
+      "get": {
+        "operationId": "query_sap_s4hana_master_data_backbone",
+        "summary": "Execute query sap s4hana master data backbone on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/query_alloydb_contract_clause_obligations": {
+      "get": {
+        "operationId": "query_alloydb_contract_clause_obligations",
+        "summary": "Execute query alloydb contract clause obligations on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/query_customs_tariff_cross_border_duty_impact": {
+      "get": {
+        "operationId": "query_customs_tariff_cross_border_duty_impact",
+        "summary": "Execute query customs tariff cross border duty impact on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/query_customs_tariff_hs_tariff_classifications": {
+      "get": {
+        "operationId": "query_customs_tariff_hs_tariff_classifications",
+        "summary": "Execute query customs tariff hs tariff classifications on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/query_alloydb_supplier_rebate_accruals": {
+      "get": {
+        "operationId": "query_alloydb_supplier_rebate_accruals",
+        "summary": "Execute query alloydb supplier rebate accruals on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/query_contract_clause_obligations": {
+      "get": {
+        "operationId": "query_contract_clause_obligations",
+        "summary": "Execute query contract clause obligations on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/query_supplier_rebate_accruals": {
+      "get": {
+        "operationId": "query_supplier_rebate_accruals",
+        "summary": "Execute query supplier rebate accruals on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/query_hs_tariff_classifications": {
+      "get": {
+        "operationId": "query_hs_tariff_classifications",
+        "summary": "Execute query hs tariff classifications on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/query_cross_border_duty_impact": {
+      "get": {
+        "operationId": "query_cross_border_duty_impact",
+        "summary": "Execute query cross border duty impact on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/run_tariff_esg_constraint_and_variance_solver": {
+      "get": {
+        "operationId": "run_tariff_esg_constraint_and_variance_solver",
+        "summary": "Execute run tariff esg constraint and variance solver on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/render_tariff_esg_a2ui_chart_and_canvas": {
+      "get": {
+        "operationId": "render_tariff_esg_a2ui_chart_and_canvas",
+        "summary": "Execute render tariff esg a2ui chart and canvas on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/draft_tariff_esg_stakeholder_decision_memo": {
+      "get": {
+        "operationId": "draft_tariff_esg_stakeholder_decision_memo",
+        "summary": "Execute draft tariff esg stakeholder decision memo on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/export_supplier_rebate_accruals_csv_to_gcs": {
+      "get": {
+        "operationId": "export_supplier_rebate_accruals_csv_to_gcs",
+        "summary": "Execute export supplier rebate accruals csv to gcs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/publish_tariff_esg_interactive_cockpit_to_gcs": {
+      "get": {
+        "operationId": "publish_tariff_esg_interactive_cockpit_to_gcs",
+        "summary": "Execute publish tariff esg interactive cockpit to gcs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/action_lock_hs_tariff_classification": {
+      "post": {
+        "operationId": "action_lock_hs_tariff_classification",
+        "summary": "Execute action lock hs tariff classification on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/tariff_esg_agent/tools/action_issue_supplier_rebate_debit_memo": {
+      "post": {
+        "operationId": "action_issue_supplier_rebate_debit_memo",
+        "summary": "Execute action issue supplier rebate debit memo on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

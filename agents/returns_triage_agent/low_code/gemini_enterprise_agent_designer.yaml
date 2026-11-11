@@ -1,0 +1,59 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: returns_triage_agent
+  display_name: "Returns Triage Agent"
+  build_tier: "Hybrid"
+  category: "04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility"
+  primary_persona: "Reverse Logistics Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_omnichannel_return_parcel_intake
+      uri: "bq://zuhaibp-ai.supply_chain_twin.omnichannel_return_parcel_intake"
+      source_system: "Omnichannel RMA & BORIS Parcel Intake Queue"
+      protocol: "REST / OMS Webhook"
+    - id: bq_supply_chain_twin_optical_condition_grading_scans
+      uri: "bq://zuhaibp-ai.supply_chain_twin.optical_condition_grading_scans"
+      source_system: "Returns Bench Vision & Tamper-Seal Grading Logs"
+      protocol: "Edge Vision API"
+    - id: bq_supply_chain_twin_returns_disposition_routing_queue
+      uri: "bq://zuhaibp-ai.supply_chain_twin.returns_disposition_routing_queue"
+      source_system: "24-Hour Returns Disposition Routing Ledger"
+      protocol: "WMS Putaway / RTV API"
+    - id: bq_supply_chain_twin_sku_refurb_and_resale_economics
+      uri: "bq://zuhaibp-ai.supply_chain_twin.sku_refurb_and_resale_economics"
+      source_system: "SKU Refurbishment, RTV & Salvage Margin Matrix"
+      protocol: "SQL / ERP Costing"
+  data_source_tools:
+    - inspect_oms_rma_returns_triage_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_oms_rma_omnichannel_return_parcel_intake
+    - query_vision_grading_optical_condition_grading_scans
+    - query_wms_returns_disposition_routing_queue
+    - query_omnichannel_return_intake
+    - query_optical_grading_scans
+    - query_sku_resale_economics
+    - query_returns_routing_queue
+    - analyze_returns_grade_recovery
+    - render_returns_triage_a2ui_chart_and_canvas
+    - draft_vendor_rtv_and_restock_manifest
+    - export_sku_refurb_resale_economics_csv_to_gcs
+    - publish_returns_triage_interactive_cockpit_to_gcs
+    - action_route_return_to_wms_disposition
+    - action_submit_vendor_rtv_debit_claim
+  starter_prompts:
+    - "Looking at incoming customer returns across our hubs, which items are in clean condition to restock immediately versus needing vendor return credit, refurbishment, or liquidation?"
+    - "Show me a chart comparing return volumes and net value recovered across restock, refurbishment, vendor credit, and liquidation paths."
+    - "Draft a clear reverse-logistics triage summary for Warehouse and Merchandising teams showing how returned inventory is graded and how much value we recover."
+    - "Go ahead and post the restock and vendor-return disposition routing for our highest-value inspected return batch."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

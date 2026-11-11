@@ -1,0 +1,64 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: rfq_should_cost_agent
+  display_name: "Dynamic Should-Cost Agent"
+  build_tier: "High-Code"
+  category: "02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging"
+  primary_persona: "Strategic Sourcing Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_award_allocation_scenarios
+      uri: "bq://zuhaibp-ai.supply_chain_twin.award_allocation_scenarios"
+      source_system: "Google OR-Tools Combinatorial Dual-Source Award Optimizer"
+      protocol: "OR-Tools MILP Integer Solver"
+    - id: bq_supply_chain_twin_commodity_index_rates
+      uri: "bq://zuhaibp-ai.supply_chain_twin.commodity_index_rates"
+      source_system: "BigQuery Direct Materials & Commodity Index Lake"
+      protocol: "BigQuery SQL / Cortex Sourcing Data Foundation"
+    - id: bq_supply_chain_twin_material_should_cost_bom
+      uri: "bq://zuhaibp-ai.supply_chain_twin.material_should_cost_bom"
+      source_system: "BigQuery Direct Materials & Commodity Index Lake"
+      protocol: "BigQuery SQL / Cortex Sourcing Data Foundation"
+    - id: bq_supply_chain_twin_supplier_rfq_bids
+      uri: "bq://zuhaibp-ai.supply_chain_twin.supplier_rfq_bids"
+      source_system: "Google Document AI Multi-Bid Quote Ingestion Vault"
+      protocol: "Document AI Form/Table Parser API"
+  data_source_tools:
+    - inspect_bigquery_rfq_should_cost_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_ortools_award_allocation_scenarios
+    - query_bigquery_commodity_index_rates
+    - query_bigquery_material_should_cost_bom
+    - query_edi_docai_supplier_rfq_bids
+    - query_material_should_cost_bom
+    - query_commodity_index_rates
+    - query_supplier_rfq_bids
+    - query_combinatorial_award_scenarios
+    - query_sap_ariba_supplier_rfq_bids_and_bom
+    - fetch_london_metal_exchange_and_icis_commodity_indices
+    - run_parametric_should_cost_bottom_up_solver
+    - run_combinatorial_volume_award_optimizer
+    - render_rfq_should_cost_a2ui_chart_and_canvas
+    - draft_rfq_should_cost_stakeholder_decision_memo
+    - export_should_cost_teardown_csv_and_memo
+    - publish_rfq_should_cost_interactive_cockpit_to_gcs
+    - action_award_supplier_contract
+    - action_challenge_vendor_outlier
+    - commit_negotiated_pricing_to_sap_contracts
+  starter_prompts:
+    - "Conduct a bottom-up should-cost teardown on incoming supplier bids for corrugated boxes and polymer laminate packaging across our Pune and Sanand supplier clusters. Deconstruct quotes into raw material resin, electricity, machine conversion time, and fair supplier margin, flag unearned price premiums, and output an actionable variance table."
+    - "Plot an interactive should-cost teardown waterfall chart contrasting supplier quoted prices with our bottom-up engineering baseline cost across raw material, direct labor, overhead, and margin."
+    - "Draft an executive category negotiation memo and interactive full-screen should-cost dossier for procurement buyers outlining line-item negotiation targets and volume split recommendations."
+    - "Please send out the counter-offer target price update for the most overpriced supplier bid and confirm once recorded."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

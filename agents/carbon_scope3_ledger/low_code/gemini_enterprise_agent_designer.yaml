@@ -1,0 +1,63 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: carbon_scope3_ledger
+  display_name: "ESG & Scope 3 Auditor"
+  build_tier: "Low-Code"
+  category: "02 \u00b7 Sourcing & Procurement \u2014 Supplier Network"
+  primary_persona: "Chief Sustainability Officer"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_eu_cbam_embedded_carbon_declarations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.eu_cbam_embedded_carbon_declarations"
+      source_system: "EU Carbon Border Adjustment Mechanism (CBAM) Embedded Carbon Engine"
+      protocol: "XML / REST API"
+    - id: bq_supply_chain_twin_eudr_earth_engine_plot_verifications
+      uri: "bq://zuhaibp-ai.supply_chain_twin.eudr_earth_engine_plot_verifications"
+      source_system: "Google Earth Engine Satellite Polygon Deforestation Verifier (EUDR)"
+      protocol: "Earth Engine Python API"
+    - id: bq_supply_chain_twin_low_carbon_carrier_and_supplier_swaps
+      uri: "bq://zuhaibp-ai.supply_chain_twin.low_carbon_carrier_and_supplier_swaps"
+      source_system: "OR-Tools Low-Carbon Carrier & Smelter Swap Optimizer"
+      protocol: "Python MILP"
+    - id: bq_supply_chain_twin_shipment_level_scope3_emissions
+      uri: "bq://zuhaibp-ai.supply_chain_twin.shipment_level_scope3_emissions"
+      source_system: "ISO 14083 & GLEC Framework v3.0 Primary Telemetry Carbon Ledger"
+      protocol: "BigQuery SQL / Python"
+  data_source_tools:
+    - inspect_iso14083_glec_carbon_scope3_ledger_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_weathernext_eudr_earth_engine_plot_verifications
+    - query_tms_low_carbon_carrier_and_supplier_swaps
+    - query_iso14083_glec_shipment_level_scope3_emissions
+    - query_shipment_level_scope3_emissions
+    - query_eu_cbam_embedded_carbon_declarations
+    - query_eudr_earth_engine_plot_verifications
+    - query_low_carbon_carrier_and_supplier_swaps
+    - query_bigquery_shipment_telematics_scope3_ledger
+    - fetch_sap_e_waste_and_eu_cbam_customs_declarations
+    - query_google_earth_engine_eudr_forest_plot_audits
+    - run_marginal_carbon_abatement_cost_solver
+    - render_carbon_scope3_ledger_a2ui_chart_and_canvas
+    - draft_carbon_scope3_ledger_stakeholder_decision_memo
+    - export_carbon_disclosure_ledger_csv_and_memo
+    - publish_carbon_scope3_ledger_interactive_cockpit_to_gcs
+    - action_certify_cbam_and_eudr_compliance_dossier
+    - action_commit_scope3_decarbonization_swap
+    - commit_low_carbon_carrier_awards_in_sap_tm
+  starter_prompts:
+    - "Audit our Scope-3 transportation and supplier carbon emissions across our freight corridors connecting Mundra port, Bhiwandi, and Delhi NCR. Identify high-emission transport lanes, evaluate modal shifts to Indian Railways, calculate Carbon Border Adjustment Mechanism (CBAM) tax liabilities, and output an auditable carbon ledger."
+    - "Render an interactive Marginal Abatement Cost Curve (MACC) chart illustrating carbon reduction potential in metric tons versus cost per ton across rail conversion, alternative biofuels, and green carrier awards."
+    - "Draft an executive sustainability compliance brief and interactive full-screen carbon disclosure dossier for ESG auditors and Procurement leadership detailing progress toward net-zero targets."
+    - "Please log the formal supplier sustainability verification request and low-carbon sourcing update for our highest-emission category."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

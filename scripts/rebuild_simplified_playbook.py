@@ -253,6 +253,19 @@ def generate_playbook() -> None:
             roi_badge = expand_terms(ag.get("badge") or baseline_vs_target or "Verified Enterprise ROI")
             solver_stack = expand_terms(ag.get("solverStack") or "Google ADK + Deterministic Python Optimization + Vertex AI Gemini")
             api_writeback = expand_terms(ag.get("apiWriteback") or "Governed ERP / WMS Action Write-Back with Pre-Execution Quality Gates")
+            build_tier = str(ag.get("buildTier") or "High-Code")
+            adk_impl = ag.get("adkImplementation") if isinstance(ag.get("adkImplementation"), dict) else {}
+            tool_names = [str(t) for t in (adk_impl.get("toolNames") or []) if t]
+            low_code_bundle = (
+                str(adk_impl.get("lowCodeBundle"))
+                if adk_impl.get("lowCodeBundle")
+                else f"agents/{ag_id}/low_code/gemini_enterprise_agent_designer.yaml"
+            )
+            openapi_spec_path = (
+                str(adk_impl.get("openApiToolsSpec"))
+                if adk_impl.get("openApiToolsSpec")
+                else f"agents/{ag_id}/low_code/openapi_data_source_tools.json"
+            )
 
             raw_sub_agents = ag.get("subAgents") if isinstance(ag.get("subAgents"), list) else []
             sub_agents = [
@@ -298,18 +311,18 @@ def generate_playbook() -> None:
 
             prompts_list = [
                 {"tag": "Operational Diagnostic & Data Table", "text": q1},
-                {"tag": "Interactive Visual Chart (VegaChart)", "text": q2},
+                {"tag": "Dual-Surface A2UI (2-Panel VegaChart + RichTable Canvas)", "text": q2},
                 {"tag": "Executive Memo & Full-Screen Cockpit", "text": q3},
                 {"tag": "Governed Write-Back Approval", "text": q4},
                 {"tag": "Safety Guardrail Verification (Blocks Unsafe Override)", "text": q5},
             ]
 
             connectors = extract_agent_connectors(ag, dept_id)
-            dep_tag = f"🟢 Live in Gemini Enterprise (`{ge_short}`)" if is_deployed else "⚪ Local ADK + Catalog Specification"
+            dep_tag = f"🟢 Live in Gemini Enterprise (`{ge_short}`)" if is_deployed else "⚪ Local ADK + Low-Code Bundle"
 
             md_lines.extend([
                 f"### #{agent_idx:02d} · {name} (`{ag_id}`)",
-                f"- **Deployment Status**: {dep_tag} | **Sub-Pillar**: {sp_name} | **Pillar**: {pillar_title}",
+                f"- **Deployment Status**: {dep_tag} | **Build Tier**: `{build_tier}` | **Sub-Pillar**: {sp_name} | **Pillar**: {pillar_title}",
                 f"- **Primary Business Persona**: {persona_name} · **Impact Benchmark**: `{roi_badge}`",
                 "",
                 "#### 🎯 1. Real-World Business Problem & AI Solution",
@@ -317,10 +330,13 @@ def generate_playbook() -> None:
                 f"- **Agentic AI Solution**: {solution}",
                 f"- **Quantified Business Outcome**: {outcome}" + (f" (`{baseline_vs_target}`)" if baseline_vs_target else ""),
                 "",
-                "#### 🔌 2. Connected Enterprise Systems & Solver Stack",
+                "#### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack",
                 f"- **Optimization & Reasoning Stack**: {solver_stack}",
                 f"- **Governed Write-Back**: {api_writeback}",
+                f"- **High-Code ADK Package**: `agents/{ag_id}` | **Low-Code Bundle**: `{low_code_bundle}` & `{openapi_spec_path}`",
             ])
+            if tool_names:
+                md_lines.append("- **Data-Source-Named Tools**: " + ", ".join(f"`{t}`" for t in tool_names))
             for sys_icon, sys_desc in connectors:
                 md_lines.append(f"- **{sys_icon}**: {sys_desc}")
 
@@ -328,7 +344,7 @@ def generate_playbook() -> None:
                 "",
                 "#### 💬 3. Plain-English Business Prompts (Copy & Paste into Gemini Enterprise)",
                 f"1. **Operational Diagnostic**: `{q1}`",
-                f"2. **Interactive Visual Chart**: `{q2}`",
+                f"2. **Interactive Visual Chart & Canvas**: `{q2}`",
                 f"3. **Executive Briefing & Cockpit**: `{q3}`",
                 f"4. **Governed Write-Back Approval**: `{q4}`",
                 f"5. **Safety Guardrail Test**: `{q5}`",
@@ -347,6 +363,10 @@ def generate_playbook() -> None:
                 "pillar_color": pillar_color,
                 "sub_pillar": sp_name,
                 "persona": persona_name,
+                "build_tier": build_tier,
+                "tool_names": tool_names,
+                "low_code_bundle": low_code_bundle,
+                "openapi_spec_path": openapi_spec_path,
                 "is_deployed": is_deployed,
                 "re_id": re_short,
                 "ge_id": ge_short,
@@ -960,6 +980,14 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
       <button class="pb-btn" onclick="setStatusFilter('catalog', this)">⚪ Catalog &amp; Local ADK (__CATALOG_ONLY_COUNT__)</button>
     </div>
 
+    <div class="pb-filter-group" id="tierFilterGroup">
+      <span style="font-size:12px; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-right:4px;">Tier:</span>
+      <button class="pb-btn active" onclick="setTierFilter('all', this)">All Tiers</button>
+      <button class="pb-btn" onclick="setTierFilter('High-Code', this)">⚡ High-Code ADK</button>
+      <button class="pb-btn" onclick="setTierFilter('Hybrid', this)">🔗 Hybrid ADK + BQML</button>
+      <button class="pb-btn" onclick="setTierFilter('Low-Code', this)">🧩 Low-Code Designer</button>
+    </div>
+
     <div class="pb-filter-group" id="pillarFilterGroup">
       <span style="font-size:12px; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-right:4px;">Pillar:</span>
       <button class="pb-btn active" onclick="setPillarFilter('all', this)">All Pillars</button>
@@ -973,7 +1001,7 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
 
     <div class="pb-search-box">
       <span class="pb-search-icon">🔍</span>
-      <input type="text" class="pb-search-input" id="searchBox" placeholder="Search agent, persona, sub-pillar, or keyword..." oninput="handleSearch(this.value)">
+      <input type="text" class="pb-search-input" id="searchBox" placeholder="Search agent, data-source tool, persona, or keyword..." oninput="handleSearch(this.value)">
     </div>
   </div>
 
@@ -986,6 +1014,7 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
   <script>
     const AGENTS = __AGENTS_JSON__;
     let currentStatusFilter = 'all';
+    let currentTierFilter = 'all';
     let currentPillarFilter = 'all';
     let currentSearchQuery = '';
     let currentSelectedId = AGENTS.length > 0 ? AGENTS[0].id : null;
@@ -1059,11 +1088,13 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
       const filtered = AGENTS.filter(ag => {
         if (currentStatusFilter === 'deployed' && !ag.is_deployed) return false;
         if (currentStatusFilter === 'catalog' && ag.is_deployed) return false;
+        if (currentTierFilter !== 'all' && (ag.build_tier || 'High-Code') !== currentTierFilter) return false;
         if (currentPillarFilter !== 'all' && ag.dept_id !== currentPillarFilter) return false;
         if (currentSearchQuery) {
           const q = currentSearchQuery.toLowerCase();
           const haystack = [
-            ag.name, ag.id, ag.persona, ag.sub_pillar, ag.pillar_title, ag.problem, ag.solution
+            ag.name, ag.id, ag.persona, ag.sub_pillar, ag.pillar_title, ag.problem, ag.solution, ag.build_tier,
+            (ag.tool_names || []).join(' ')
           ].join(' ').toLowerCase();
           if (!haystack.includes(q)) return false;
         }
@@ -1088,7 +1119,7 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
 
         const statusTag = ag.is_deployed
           ? '<span class="pb-status-badge live"><span class="pb-status-dot"></span> Live in GE</span>'
-          : '<span class="pb-status-badge catalog">Local ADK</span>';
+          : '<span class="pb-status-badge catalog">' + escapeHtml(ag.build_tier || 'High-Code') + '</span>';
 
         item.innerHTML = `
           <div class="pb-item-header">
@@ -1097,6 +1128,8 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
           </div>
           <div class="pb-item-meta">
             <span style="color:${ag.pillar_color}; font-weight:700;">${escapeHtml(ag.sub_pillar)}</span>
+            <span>&bull;</span>
+            <span>${escapeHtml(ag.build_tier || 'High-Code')}</span>
             <span>&bull;</span>
             <span>👤 ${escapeHtml(ag.persona)}</span>
           </div>
@@ -1126,7 +1159,9 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
 
       const statusBanner = ag.is_deployed
         ? `<span class="pb-status-badge live" style="font-size:12px; padding:5px 12px;"><span class="pb-status-dot"></span> Live in Gemini Enterprise (Engine ${escapeHtml(ag.re_id)})</span>`
-        : `<span class="pb-status-badge catalog" style="font-size:12px; padding:5px 12px;">⚪ Local ADK Package Ready (Catalog)</span>`;
+        : `<span class="pb-status-badge catalog" style="font-size:12px; padding:5px 12px;">⚪ ADK + Low-Code Bundle Ready</span>`;
+
+      const tierChip = `<span class="pb-stat-chip" style="font-weight:700;">⚙️ Tier: ${escapeHtml(ag.build_tier || 'High-Code')}</span>`;
 
       const connectorsHtml = (ag.connectors || []).map(c => `
         <div class="pb-system-pill">
@@ -1134,6 +1169,17 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
           <span class="pb-system-desc">${escapeHtml(c[1])}</span>
         </div>
       `).join('');
+
+      const toolsHtml = (ag.tool_names && ag.tool_names.length)
+        ? `<div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--border-subtle);">
+             <div style="font-size:12px; font-weight:800; font-family:var(--font-mono); text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">
+               Data-Source-Named Enterprise Tools (${ag.tool_names.length} Registered Functions):
+             </div>
+             <div style="display:flex; flex-wrap:wrap; gap:6px;">
+               ${ag.tool_names.map(t => `<code style="font-family:var(--font-mono); font-size:12px; padding:3px 8px; border-radius:6px; background:var(--chip-bg); border:1px solid var(--border-subtle); color:var(--text-primary);">${escapeHtml(t)}</code>`).join('')}
+             </div>
+           </div>`
+        : '';
 
       const subAgentsHtml = (ag.sub_agents && ag.sub_agents.length)
         ? `<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:10px; margin-top:14px;">
@@ -1170,6 +1216,7 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
               <span class="pb-stat-chip" style="color:${ag.pillar_color}; border-color:${ag.pillar_color}55; font-weight:700;">#${String(ag.idx).padStart(2, '0')} · ${escapeHtml(ag.pillar_title)}</span>
               <span class="pb-stat-chip" style="font-weight:700;">${escapeHtml(ag.sub_pillar)}</span>
+              ${tierChip}
               ${statusBanner}
             </div>
             <span class="pb-stat-chip live" style="font-weight:700; font-size:13.5px;">
@@ -1180,7 +1227,9 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
           <div class="pb-hero-persona">
             <span>👤 Primary Persona: <strong>${escapeHtml(ag.persona)}</strong></span>
             <span>&bull;</span>
-            <span>ADK Package: <code>agents/${escapeHtml(ag.id)}</code></span>
+            <span>High-Code ADK: <code>agents/${escapeHtml(ag.id)}</code></span>
+            <span>&bull;</span>
+            <span>Low-Code Designer: <code>${escapeHtml(ag.low_code_bundle || ('agents/' + ag.id + '/low_code/gemini_enterprise_agent_designer.yaml'))}</code></span>
             ${ag.ge_id ? `<span>&bull;</span><span>Gemini Enterprise ID: <code>${escapeHtml(ag.ge_id)}</code></span>` : ''}
           </div>
         </div>
@@ -1204,21 +1253,23 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
           </div>
         </div>
 
-        <!-- 2. Connected Enterprise Systems -->
+        <!-- 2. Connected Enterprise Systems & Data-Source Tools -->
         <div class="pb-content-card">
-          <div class="pb-section-title">🔌 2 · Connected Enterprise Systems &amp; Data Feeds</div>
+          <div class="pb-section-title">🔌 2 · Connected Enterprise Systems &amp; Data-Source-Named Tools</div>
           <div class="pb-systems-grid">
             ${connectorsHtml}
           </div>
+          ${toolsHtml}
         </div>
 
         <!-- 3. Execution Architecture -->
         <div class="pb-content-card" style="border-left: 4px solid var(--google-blue);">
-          <div class="pb-section-title">🔄 3 · Specialist Sub-Agent Pipeline, Solver &amp; Safe Write-Back</div>
+          <div class="pb-section-title">🔄 3 · High-Code + Low-Code Architecture, Solver &amp; Dual-Surface A2UI v0.9</div>
           <div style="font-size:14.5px; color:var(--text-secondary); line-height:1.65; display:flex; flex-direction:column; gap:6px;">
+            <div><strong>Build Tier (${escapeHtml(ag.build_tier || 'High-Code')}):</strong> Python ADK Orchestrator (<code>agents/${escapeHtml(ag.id)}/app/</code>) + Declarative Gemini Enterprise Agent Designer YAML &amp; OpenAPI 3.0.3 Connectors (<code>${escapeHtml(ag.openapi_spec_path || ('agents/' + ag.id + '/low_code/openapi_data_source_tools.json'))}</code>).</div>
             <div><strong>Mathematical &amp; AI Reasoning Stack:</strong> ${escapeHtml(ag.solver_stack)}</div>
             <div><strong>Governed System Write-Back:</strong> ${escapeHtml(ag.api_writeback)}</div>
-            <div><strong>Visual Surface Standard:</strong> Renders interactive A2UI v0.9 <code>VegaChart</code> cards alongside plain-English summaries, <code>&lt;= 5</code>-column Google Sheets-ready tables, and Cloud Storage links.</div>
+            <div><strong>Dual-Surface A2UI v0.9 Standard:</strong> (1) <strong>Inline Chat <code>Card</code></strong> rendering a 2-Panel Executive <code>VegaChart</code> Infographic (Baseline vs. Target + Signed <code>&Delta;</code> Variance Strip), and (2) <strong>Side-Panel <code>Canvas</code></strong> opening a Looker Studio <code>RichTable</code>, collapsible <code>MaterialExpansionPanel</code> cards, and 1-click <code>MaterialButton</code> quick actions.</div>
           </div>
           ${subAgentsHtml}
         </div>
@@ -1248,6 +1299,13 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
     function setStatusFilter(status, btn) {
       currentStatusFilter = status;
       document.querySelectorAll('#statusFilterGroup .pb-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderRoster();
+    }
+
+    function setTierFilter(tier, btn) {
+      currentTierFilter = tier;
+      document.querySelectorAll('#tierFilterGroup .pb-btn').forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
       renderRoster();
     }

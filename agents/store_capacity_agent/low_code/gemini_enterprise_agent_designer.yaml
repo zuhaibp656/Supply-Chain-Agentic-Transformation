@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: store_capacity_agent
+  display_name: "Store Capacity Agent"
+  build_tier: "High-Code"
+  category: "05 \u00b7 Distribution & Logistics \u2014 Store Replenishment"
+  primary_persona: "Store Replenishment Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_live_store_pos_and_onhand_stock
+      uri: "bq://zuhaibp-ai.supply_chain_twin.live_store_pos_and_onhand_stock"
+      source_system: "Real-Time Store POS Sell-Through & Shelf OSA Feed"
+      protocol: "EDI 852 / Streaming SQL"
+    - id: bq_supply_chain_twin_scheduled_dc_replenishment_drops
+      uri: "bq://zuhaibp-ai.supply_chain_twin.scheduled_dc_replenishment_drops"
+      source_system: "DC-to-Store Scheduled Replenishment Push Queue"
+      protocol: "BAPI_STO_CREATE / OData"
+    - id: bq_supply_chain_twin_store_backroom_bay_capacities
+      uri: "bq://zuhaibp-ai.supply_chain_twin.store_backroom_bay_capacities"
+      source_system: "Store Backroom Ambient & Chiller Bay Capacity Registry"
+      protocol: "REST / Edge Vision"
+    - id: bq_supply_chain_twin_throttled_store_delivery_releases
+      uri: "bq://zuhaibp-ai.supply_chain_twin.throttled_store_delivery_releases"
+      source_system: "Capacity-Smoothed Store Delivery Release Plan"
+      protocol: "REST / WMS Wave API"
+  data_source_tools:
+    - inspect_iot_telematics_store_capacity_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_pos_perpetual_live_store_pos_and_onhand_stock
+    - query_drp_replenishment_scheduled_dc_replenishment_drops
+    - query_iot_telematics_store_backroom_bay_capacities
+    - query_throttled_release_throttled_store_delivery_releases
+    - query_store_backroom_capacities
+    - query_live_store_pos_and_osa
+    - query_scheduled_dc_drops
+    - query_throttled_store_releases
+    - analyze_backroom_overflow_and_osa_throttle
+    - render_store_capacity_a2ui_chart_and_canvas
+    - draft_store_replenishment_throttle_advisory
+    - export_throttled_store_delivery_releases_csv_to_gcs
+    - publish_store_capacity_interactive_cockpit_to_gcs
+    - action_throttle_dc_store_wave_release
+    - action_rebalance_store_delivery_window
+  starter_prompts:
+    - "Which retail stores are about to get overwhelmed with more replenishment pallets than their backrooms can physically hold, and where should we throttle or smooth deliveries?"
+    - "Show me a chart comparing scheduled inbound replenishment volume against store backroom capacity and daily shelf sell-through across flagged stores."
+    - "Write a clear store replenishment note explaining which deliveries to meter or reschedule so backrooms stay safe and fast-selling shelves stay stocked."
+    - "Go ahead and adjust the outbound store replenishment push quantities for the most congested store backrooms."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

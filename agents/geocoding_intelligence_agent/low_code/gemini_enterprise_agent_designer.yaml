@@ -1,0 +1,65 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: geocoding_intelligence_agent
+  display_name: "Geocoding Intelligence"
+  build_tier: "Hybrid"
+  category: "05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery"
+  primary_persona: "Last-Mile Operations Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_commercial_stop_rooftop_addresses
+      uri: "bq://zuhaibp-ai.supply_chain_twin.commercial_stop_rooftop_addresses"
+      source_system: "Commercial Customer Postal Rooftop Address Book"
+      protocol: "REST / Geocoding API"
+    - id: bq_supply_chain_twin_driver_gps_dwell_and_entry_logs
+      uri: "bq://zuhaibp-ai.supply_chain_twin.driver_gps_dwell_and_entry_logs"
+      source_system: "Driver Handset GPS Breadcrumb & ePOD Scan Lake"
+      protocol: "gRPC / GeoJSON SQL"
+    - id: bq_supply_chain_twin_first_attempt_delivery_improvements
+      uri: "bq://zuhaibp-ai.supply_chain_twin.first_attempt_delivery_improvements"
+      source_system: "Last-Mile Dwell & First-Attempt Delivery Ledger"
+      protocol: "SQL / TMS Analytics"
+    - id: bq_supply_chain_twin_verified_dock_pin_geofences
+      uri: "bq://zuhaibp-ai.supply_chain_twin.verified_dock_pin_geofences"
+      source_system: "Verified Truck Apron & Receiving Dock Geofence Master"
+      protocol: "PostGIS / OData"
+  data_source_tools:
+    - inspect_oms_address_geocoding_intelligence_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_oms_address_commercial_stop_rooftop_addresses
+    - query_telematics_driver_driver_gps_dwell_and_entry_logs
+    - query_last_mile_first_attempt_delivery_improvements
+    - query_wms_verified_dock_pin_geofences
+    - query_commercial_rooftop_addresses
+    - query_driver_gps_dwell_clusters
+    - query_verified_dock_geofences
+    - query_fadr_dwell_improvements
+    - query_salesforce_crm_customer_delivery_addresses
+    - fetch_google_maps_geocoding_and_rooftop_coordinates
+    - query_access_restrictions_dock_height_and_gate_codes
+    - analyze_rooftop_to_dock_haversine_drift
+    - run_spatial_h3_cluster_and_curbside_access_solver
+    - render_geocoding_intelligence_a2ui_chart_and_canvas
+    - draft_driver_dock_navigation_card
+    - export_geocoded_delivery_stops_csv_and_memo
+    - publish_geocoding_intelligence_interactive_cockpit_to_gcs
+    - action_publish_verified_dock_pin_to_tms
+    - action_attach_stop_equipment_restriction
+    - commit_rooftop_pin_and_time_window_to_salesforce
+  starter_prompts:
+    - "Validate and cleanse ambiguous customer and retailer delivery addresses across congested urban markets in Mumbai, Bengaluru, and Delhi NCR. Pinpoint exact delivery gate and loading-dock coordinates, flag narrow-lane vehicle restrictions, and output verified location details."
+    - "Generate an interactive rooftop geocoding map and accuracy distribution visual displaying delivery address density clusters, rooftop versus street-level precision ratings, and dock pins."
+    - "Draft a last-mile delivery quality brief and interactive full-screen geocoding validation dashboard for Dispatch Operations detailing address match rates, delivery failure preventions, and routing improvements."
+    - "Go ahead and publish the verified loading-dock coordinates and access instructions for our highest-failure delivery zone."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: intermodal_rail_linehaul_agent
+  display_name: "Milk-Run Consolidation"
+  build_tier: "High-Code"
+  category: "06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation"
+  primary_persona: "Reverse Transport Planner"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_intermodal_corridor_shipments
+      uri: "bq://zuhaibp-ai.supply_chain_twin.intermodal_corridor_shipments"
+      source_system: "Google OR-Tools OTR-to-Rail Intermodal Mode Conversion Solver"
+      protocol: "Python MILP SDK"
+    - id: bq_supply_chain_twin_otr_to_rail_mode_conversion_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.otr_to_rail_mode_conversion_ledger"
+      source_system: "GLEC v3.0 Intermodal Rail vs OTR Truck Carbon Intensity Ledger"
+      protocol: "BigQuery SQL / JSON"
+    - id: bq_supply_chain_twin_rail_ramp_cutoff_and_drayage
+      uri: "bq://zuhaibp-ai.supply_chain_twin.rail_ramp_cutoff_and_drayage"
+      source_system: "BNSF / Union Pacific / CSX Intermodal Ramp Cut-Off & Crane Scheduler"
+      protocol: "REST API / Webhook"
+    - id: bq_supply_chain_twin_railinc_edi417_train_consists
+      uri: "bq://zuhaibp-ai.supply_chain_twin.railinc_edi417_train_consists"
+      source_system: "Railinc Car Location Message (CLM) & Class-I Rail EDI 404/417 Gateway"
+      protocol: "EDI 404 / 417 / REST"
+  data_source_tools:
+    - inspect_mes_scada_intermodal_rail_linehaul_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_intermodal_lane_intermodal_corridor_shipments
+    - query_glec_rail_otr_to_rail_mode_conversion_ledger
+    - query_ramp_crane_rail_ramp_cutoff_and_drayage
+    - query_mes_scada_railinc_edi417_train_consists
+    - query_intermodal_corridor_shipments
+    - query_railinc_edi417_train_consists
+    - query_rail_ramp_cutoff_and_drayage
+    - query_otr_to_rail_mode_conversion_ledger
+    - run_intermodal_rail_linehaul_constraint_and_variance_solver
+    - render_intermodal_rail_linehaul_a2ui_chart_and_canvas
+    - draft_intermodal_rail_linehaul_stakeholder_decision_memo
+    - export_railinc_edi417_train_consists_csv_to_gcs
+    - publish_intermodal_rail_linehaul_interactive_cockpit_to_gcs
+    - action_tender_edi404_rail_intermodal_bill
+    - action_synchronize_ramp_crane_drayage_slot
+  starter_prompts:
+    - "Which outbound delivery trucks returning empty from stores can collect stacked empty totes, pallets, and roll cages on their backhaul trip so we stop running empty miles?"
+    - "Plot a chart comparing empty backhaul miles eliminated, asset recovery volume, and fuel savings across candidate milk-run return routes."
+    - "Write a practical backhaul dispatch plan for Reverse Transport Planners showing which returning trucks should pick up empty totes and cages at which stops."
+    - "Go ahead and assign the consolidated empty-tote backhaul pickup stops to our returning store delivery route."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

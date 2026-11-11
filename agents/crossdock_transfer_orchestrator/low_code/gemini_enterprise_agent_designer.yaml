@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: crossdock_transfer_orchestrator
+  display_name: "Inter-Facility Rebalancer"
+  build_tier: "High-Code"
+  category: "04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization"
+  primary_persona: "Replenishment Planner"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_crossdock_dwell_time_records
+      uri: "bq://zuhaibp-ai.supply_chain_twin.crossdock_dwell_time_records"
+      source_system: "Intralogistics RFID / Forklift Telemetry Dwell Time Ledger"
+      protocol: "MQTT / Industrial IoT Dwell & Touch Counter"
+    - id: bq_supply_chain_twin_inbound_carrier_eta_milestones
+      uri: "bq://zuhaibp-ai.supply_chain_twin.inbound_carrier_eta_milestones"
+      source_system: "Carrier EDI 214 / Fleet Engine Inbound Milestone Geofencing"
+      protocol: "EDI 214 / Google Maps Fleet Engine Webhook"
+    - id: bq_supply_chain_twin_inbound_outbound_crossdock_manifests
+      uri: "bq://zuhaibp-ai.supply_chain_twin.inbound_outbound_crossdock_manifests"
+      source_system: "SAP EWM / Warehouse Management System (WMS) Dynamic Cross-Dock & Flow-Through Engine"
+      protocol: "REST / OpenAPI v3 / Real-Time Door-to-Door Routing"
+    - id: bq_supply_chain_twin_outbound_trailer_bay_assignments
+      uri: "bq://zuhaibp-ai.supply_chain_twin.outbound_trailer_bay_assignments"
+      source_system: "SAP EWM / Outbound Store Replenishment Wave Ledger"
+      protocol: "OData v4 / Real-Time Dock Bay Availability"
+  data_source_tools:
+    - inspect_sap_ewm_crossdock_transfer_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_iot_telematics_crossdock_dwell_time_records
+    - query_tms_inbound_carrier_eta_milestones
+    - query_sap_ewm_inbound_outbound_crossdock_manifests
+    - query_sap_ewm_outbound_trailer_bay_assignments
+    - query_inbound_outbound_crossdock_manifests
+    - query_inbound_carrier_eta_milestones
+    - query_outbound_trailer_bay_assignments
+    - query_crossdock_dwell_time_records
+    - run_crossdock_transfer_constraint_and_variance_solver
+    - render_crossdock_transfer_a2ui_chart_and_canvas
+    - draft_crossdock_transfer_stakeholder_decision_memo
+    - export_outbound_trailer_bay_assignments_csv_to_gcs
+    - publish_crossdock_transfer_interactive_cockpit_to_gcs
+    - action_dispatch_direct_crossdock_transfer
+    - action_hold_pallet_for_staging_buffer
+  starter_prompts:
+    - "Do we have products stocked out in one regional warehouse while sitting in excess at another hub nearby, and which inter-warehouse transfers make financial sense after freight cost?"
+    - "Show me a chart comparing regional stockout exposure against nearby surplus inventory and net margin saved after transfer freight."
+    - "Write a clear inventory rebalancing summary for Replenishment Planners listing which stock transfers to run between hubs and the customer orders they will save."
+    - "Please create and release the recommended lateral stock transfer order between our surplus and stocked-out distribution centers."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

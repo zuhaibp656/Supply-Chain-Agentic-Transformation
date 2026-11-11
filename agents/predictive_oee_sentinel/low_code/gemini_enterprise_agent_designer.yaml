@@ -1,0 +1,64 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: predictive_oee_sentinel
+  display_name: "Bottleneck Diagnostic"
+  build_tier: "Hybrid"
+  category: "03 \u00b7 Manufacturing & Production \u2014 Capacity Planning"
+  primary_persona: "Supply Chain Ops Director"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_oee_breakdown_metrics
+      uri: "bq://zuhaibp-ai.supply_chain_twin.oee_breakdown_metrics"
+      source_system: "Siemens Opcenter MES Execution Lake"
+      protocol: "OPC UA / OData v4 / MQTT Pub/Sub"
+    - id: bq_supply_chain_twin_plant_machine_telemetry
+      uri: "bq://zuhaibp-ai.supply_chain_twin.plant_machine_telemetry"
+      source_system: "OSIsoft PI Historian Vibration & Current Sensor Lake"
+      protocol: "BigQuery Time-Series / PI Web API REST"
+    - id: bq_supply_chain_twin_predictive_maintenance_anomalies
+      uri: "bq://zuhaibp-ai.supply_chain_twin.predictive_maintenance_anomalies"
+      source_system: "OSIsoft PI Historian Vibration & Current Sensor Lake"
+      protocol: "BigQuery Time-Series / PI Web API REST"
+    - id: bq_supply_chain_twin_spare_parts_inventory_status
+      uri: "bq://zuhaibp-ai.supply_chain_twin.spare_parts_inventory_status"
+      source_system: "SAP S/4HANA Materials Management (MM) Spare Parts Crib"
+      protocol: "BAPI_RESERVATION_CREATE1"
+  data_source_tools:
+    - inspect_mes_scada_predictive_oee_sentinel_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_mes_scada_oee_breakdown_metrics
+    - query_osisoft_pi_plant_machine_telemetry
+    - query_osisoft_pi_predictive_maintenance_anomalies
+    - query_sap_s4hana_spare_parts_inventory_status
+    - query_plant_machine_telemetry
+    - query_oee_breakdown_metrics
+    - query_predictive_maintenance_anomalies
+    - query_spare_parts_inventory_status
+    - query_siemens_mes_machine_plc_telemetry
+    - fetch_bigquery_plant_oee_timeseries_history
+    - query_sap_pm_spare_parts_inventory
+    - run_six_big_losses_and_anomaly_detection_solver
+    - render_predictive_oee_sentinel_a2ui_chart_and_canvas
+    - draft_predictive_oee_sentinel_stakeholder_decision_memo
+    - export_oee_pareto_breakdown_csv_and_memo
+    - publish_predictive_oee_sentinel_interactive_cockpit_to_gcs
+    - action_dispatch_preventive_work_order
+    - action_reserve_spare_parts
+    - commit_sap_pm_work_order_and_predictive_schedule
+  starter_prompts:
+    - "Diagnose line micro-stoppages and equipment degradation across our high-speed packaging machines at our Sanand and Haridwar plants. Isolate the Six Big Losses (unplanned downtime, speed loss, minor stops), verify critical spare parts availability, and output an equipment anomaly log."
+    - "Render an interactive Overall Equipment Effectiveness (OEE) breakdown waterfall and loss Pareto chart decomposing planned production time into Availability, Performance, and Quality components across each work center."
+    - "Draft an executive plant maintenance briefing and interactive full-screen OEE diagnostic dashboard for the Plant Director recommending planned predictive maintenance intervals and spare parts replenishment."
+    - "Go ahead and schedule the preventive maintenance and utility load adjustment on our #1 bottleneck asset."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

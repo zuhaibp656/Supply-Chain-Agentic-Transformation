@@ -1,0 +1,64 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: sop_scenario_weaver
+  display_name: "Consensus & Gap Agent"
+  build_tier: "High-Code"
+  category: "01 \u00b7 Planning & Strategy \u2014 S&OP / IBP"
+  primary_persona: "S&OP / Supply Planning Dir."
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_plant_line_capacities
+      uri: "bq://zuhaibp-ai.supply_chain_twin.plant_line_capacities"
+      source_system: "Cloud Spanner S&OP Supply Network Constraint Graph"
+      protocol: "Spanner Graph SQL / Vertex AI Agent Engine"
+    - id: bq_supply_chain_twin_sop_scenario_tradeoffs
+      uri: "bq://zuhaibp-ai.supply_chain_twin.sop_scenario_tradeoffs"
+      source_system: "Google OR-Tools Mixed-Integer Linear Programming (MILP) Solver"
+      protocol: "Native C++ / Python MILP Optimization Engine"
+    - id: bq_supply_chain_twin_sop_unconstrained_demand
+      uri: "bq://zuhaibp-ai.supply_chain_twin.sop_unconstrained_demand"
+      source_system: "BigQuery Cortex S&OP P&L & Cash Bridge"
+      protocol: "BigQuery SQL / Cortex Framework"
+    - id: bq_supply_chain_twin_supplier_component_allocations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.supplier_component_allocations"
+      source_system: "Cloud Spanner S&OP Supply Network Constraint Graph"
+      protocol: "Spanner Graph SQL / Vertex AI Agent Engine"
+  data_source_tools:
+    - inspect_cloud_spanner_sop_scenario_weaver_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_cloud_spanner_plant_line_capacities
+    - query_ortools_sop_scenario_tradeoffs
+    - query_bigquery_sop_unconstrained_demand
+    - query_cloud_spanner_supplier_component_allocations
+    - query_unconstrained_demand_gaps
+    - query_plant_line_capacities
+    - query_supplier_allocations
+    - query_sop_scenario_evaluations
+    - query_sap_ibp_unconstrained_demand_plan
+    - fetch_siemens_mes_plant_capacity_envelopes
+    - query_sap_ariba_supplier_component_allocations
+    - run_ortools_constrained_sop_scenario_solver
+    - render_sop_scenario_weaver_a2ui_chart_and_canvas
+    - draft_sop_scenario_weaver_stakeholder_decision_memo
+    - export_sop_tradeoff_matrix_csv_and_memo
+    - publish_sop_scenario_weaver_interactive_cockpit_to_gcs
+    - action_commit_mps_consensus_plan
+    - action_lock_sop_financial_bridge
+    - commit_reconciled_sop_consensus_to_sap_ibp
+  starter_prompts:
+    - "Reconcile our unconstrained commercial demand against factory capacity constraints across our plants in Haridwar, Pune, and Sanand. Evaluate three operating scenarios (Overtime vs. External Co-Packer vs. Priority Allocation) and provide an executive capacity tradeoff matrix."
+    - "Plot an interactive S&OP scenario trade-off frontier chart displaying margin contribution against customer fulfillment percentage across our baseline, overtime, and co-packer supply plans."
+    - "Draft a monthly Sales and Operations Planning (S&OP) consensus alignment memorandum and interactive full-screen review pack for the Executive S&OP committee outlining the recommended operating plan and supply commitments."
+    - "Go ahead and lock in the recommended balanced Sales and Operations Planning scenario for the upcoming cycle and confirm the update."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

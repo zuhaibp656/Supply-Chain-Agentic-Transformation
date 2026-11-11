@@ -1,0 +1,63 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: port_drayage_orchestrator
+  display_name: "Curfew Orchestrator"
+  build_tier: "Hybrid"
+  category: "05 \u00b7 Distribution & Logistics \u2014 Store Replenishment"
+  primary_persona: "Retail Logistics Dispatcher"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_container_discharge_demurrage_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.container_discharge_demurrage_ledger"
+      source_system: "CargoWise One Global Ocean Container & LFD Demurrage Ledger"
+      protocol: "EDI 315 / XML"
+    - id: bq_supply_chain_twin_drayage_chassis_transload_allocations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.drayage_chassis_transload_allocations"
+      source_system: "Google OR-Tools Bipartite Drayage & Transload Allocation Solver"
+      protocol: "Python MILP SDK"
+    - id: bq_supply_chain_twin_ocean_vessel_ais_berth_telemetry
+      uri: "bq://zuhaibp-ai.supply_chain_twin.ocean_vessel_ais_berth_telemetry"
+      source_system: "Spire Maritime Satellite AIS & Google DeepMind WeatherNext 3 Feed"
+      protocol: "GraphQL / gRPC Stream"
+    - id: bq_supply_chain_twin_port_terminal_gate_appointments
+      uri: "bq://zuhaibp-ai.supply_chain_twin.port_terminal_gate_appointments"
+      source_system: "Port of LA/LB PierPASS & Rotterdam Terminal Gate Appointment API"
+      protocol: "REST / Webhook"
+  data_source_tools:
+    - inspect_weathernext_port_drayage_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_cargowise_ocean_container_discharge_demurrage_ledger
+    - query_drayage_transload_drayage_chassis_transload_allocations
+    - query_weathernext_ocean_vessel_ais_berth_telemetry
+    - query_ocean_vessel_ais_berth_telemetry
+    - query_container_discharge_demurrage_ledger
+    - query_port_terminal_gate_appointments
+    - query_drayage_chassis_transload_allocations
+    - query_marine_terminal_tos_vessel_berth_and_discharge_ledger
+    - fetch_bigquery_container_demurrage_and_per_diem_clocks
+    - query_port_pierpass_appointment_slots_and_clean_truck_curfews
+    - run_drayage_priority_dispatch_and_curfew_optimization_solver
+    - render_port_drayage_a2ui_chart_and_canvas
+    - draft_port_drayage_stakeholder_decision_memo
+    - export_port_container_dispatch_csv_and_memo
+    - publish_port_drayage_interactive_cockpit_to_gcs
+    - action_book_dual_transaction_drayage_gate
+    - action_divert_container_to_transload_hub
+    - commit_gate_appointment_and_chassis_dispatch_to_tms
+  starter_prompts:
+    - "Optimize import container drayage between Jawaharlal Nehru Port (JNPT / Nhava Sheva) and our inland container depots in Bhiwandi and Panvel. Prioritize container evacuation before demurrage free-time expires, comply with city night-entry curfew windows, and output an optimized drayage dispatch schedule."
+    - "Render an interactive port container demurrage timeline and gate appointment heatmap illustrating free-time expiration risk across all queued shipping containers."
+    - "Draft a port logistics operations memo and interactive full-screen demurrage shield dashboard for International Logistics leadership detailing container pull priorities and fee avoidances."
+    - "Please apply the curfew-compliant departure and dock appointment schedule update for our affected Mumbai and Panvel routes."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

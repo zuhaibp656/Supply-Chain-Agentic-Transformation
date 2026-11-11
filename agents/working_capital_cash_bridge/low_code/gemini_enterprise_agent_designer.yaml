@@ -1,0 +1,63 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: working_capital_cash_bridge
+  display_name: "SKU Pruning Agent"
+  build_tier: "Low-Code"
+  category: "01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU"
+  primary_persona: "Category Manager"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_inventory_valuation_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.inventory_valuation_ledger"
+      source_system: "SAP S/4HANA Finance & Material Ledger (ACDOCA)"
+      protocol: "SAP Financial BAPI / RFC / OData"
+    - id: bq_supply_chain_twin_supplier_ap_invoices
+      uri: "bq://zuhaibp-ai.supply_chain_twin.supplier_ap_invoices"
+      source_system: "Dynamic Supplier AP Discounting & Working Capital Portal"
+      protocol: "REST API / Cloud SQL"
+    - id: bq_supply_chain_twin_trapped_cash_opportunities
+      uri: "bq://zuhaibp-ai.supply_chain_twin.trapped_cash_opportunities"
+      source_system: "Dynamic Supplier AP Discounting & Working Capital Portal"
+      protocol: "REST API / Cloud SQL"
+    - id: bq_supply_chain_twin_working_capital_metrics
+      uri: "bq://zuhaibp-ai.supply_chain_twin.working_capital_metrics"
+      source_system: "Global Treasury Management & Cash Forecasting System"
+      protocol: "SWIFT / REST API"
+  data_source_tools:
+    - inspect_sap_s4hana_working_capital_cash_bridge_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_edi_docai_supplier_ap_invoices
+    - query_edi_docai_trapped_cash_opportunities
+    - query_corporate_treasury_working_capital_metrics
+    - query_working_capital_metrics
+    - query_inventory_valuation_ledger
+    - query_trapped_cash_opportunities
+    - query_ap_supplier_discount_invoices
+    - query_sap_s4hana_material_valuation_and_dio_ledger
+    - fetch_bigquery_sku_velocity_and_gross_margin_matrix
+    - query_salesforce_crm_customer_sku_dependencies
+    - run_working_capital_cash_bridge_and_pruning_solver
+    - render_working_capital_cash_bridge_a2ui_chart_and_canvas
+    - draft_working_capital_cash_bridge_stakeholder_decision_memo
+    - export_cash_conversion_waterfall_csv_and_memo
+    - publish_working_capital_cash_bridge_interactive_cockpit_to_gcs
+    - action_rebalance_working_capital_buffer
+    - action_trigger_dynamic_ap_discounting
+    - commit_sku_decommission_and_safety_stock_reduction
+  starter_prompts:
+    - "Perform a working capital cash bridge analysis across our active product catalog and regional depots in Mumbai, Delhi NCR, and Bengaluru. Identify negative-margin tail products with high days inventory outstanding, calculate trapped cash, and generate an actionable inventory release schedule."
+    - "Render an interactive working capital cash release waterfall chart breaking down trapped cash across raw materials, work-in-progress, and finished goods, illustrating potential liquidity unlocked by pruning tail products."
+    - "Draft a formal portfolio rationalization brief and interactive full-screen executive cash memo for the Chief Financial Officer and Commercial Leads outlining recommended product phase-outs and safety stock adjustments."
+    - "Go ahead and initiate the phase-out and rationalization workflow for the lowest-performing tail product in our review."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

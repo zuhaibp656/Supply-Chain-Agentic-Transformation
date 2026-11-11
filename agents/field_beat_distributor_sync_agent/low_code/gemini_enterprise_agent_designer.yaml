@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: field_beat_distributor_sync_agent
+  display_name: "JBP Negotiation Agent"
+  build_tier: "Low-Code"
+  category: "01 \u00b7 Planning & Strategy \u2014 Trade Promotion"
+  primary_persona: "Key Account Manager (KAM)"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_distributor_dms_live_inventory
+      uri: "bq://zuhaibp-ai.supply_chain_twin.distributor_dms_live_inventory"
+      source_system: "Enterprise Distributor Management System (DMS) Real-Time Stock Ledger"
+      protocol: "REST API / Webhook"
+    - id: bq_supply_chain_twin_fso_daily_beat_store_outlets
+      uri: "bq://zuhaibp-ai.supply_chain_twin.fso_daily_beat_store_outlets"
+      source_system: "Sales Force Automation (SFA) + Google Maps Beat Route Sequencer"
+      protocol: "gRPC / Mobile Sync"
+    - id: bq_supply_chain_twin_pitch_to_stock_substitution_rules
+      uri: "bq://zuhaibp-ai.supply_chain_twin.pitch_to_stock_substitution_rules"
+      source_system: "Vertex AI Pitch-to-Stock Dynamic SKU Substitution Engine"
+      protocol: "Python / BigQuery ML"
+    - id: bq_supply_chain_twin_primary_replenishment_auto_orders
+      uri: "bq://zuhaibp-ai.supply_chain_twin.primary_replenishment_auto_orders"
+      source_system: "SAP S/4HANA SD Primary Factory-to-Distributor Auto-Replenishment"
+      protocol: "OData v4 / IDoc"
+  data_source_tools:
+    - inspect_dms_distributor_field_beat_distributor_sync_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_dms_distributor_distributor_dms_live_inventory
+    - query_google_maps_fso_daily_beat_store_outlets
+    - query_pitch_stock_pitch_to_stock_substitution_rules
+    - query_sap_s4hana_primary_replenishment_auto_orders
+    - query_distributor_dms_live_inventory
+    - query_fso_daily_beat_store_outlets
+    - query_pitch_to_stock_substitution_rules
+    - query_primary_replenishment_auto_orders
+    - run_field_beat_distributor_sync_constraint_and_variance_solver
+    - render_field_beat_distributor_sync_a2ui_chart_and_canvas
+    - draft_field_beat_distributor_sync_stakeholder_decision_memo
+    - export_primary_replenishment_auto_orders_csv_to_gcs
+    - publish_field_beat_distributor_sync_interactive_cockpit_to_gcs
+    - action_push_fso_dynamic_beat_and_pitch_list
+    - action_trigger_distributor_primary_replenishment
+  starter_prompts:
+    - "How are our regional distributors and field sales territories performing against our joint business targets, and where is distributor stock piling up versus running short?"
+    - "Show me a chart comparing distributor sell-in orders against actual retail sell-through across regions, and explain where channel inventory is out of balance."
+    - "Prepare a clear joint business planning summary we can use in our next distributor review covering volume progress, channel health, and recommended order adjustments."
+    - "Please apply the recommended replenishment and joint business plan update for our top priority distributor territory."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

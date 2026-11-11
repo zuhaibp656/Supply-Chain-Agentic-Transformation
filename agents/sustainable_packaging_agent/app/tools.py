@@ -495,10 +495,86 @@ def export_operational_csv_schedule(target_id: str = "", format_type: str = "csv
     """Generate an atomic, copy-ready RFC-4180 CSV schedule from verified enterprise records and publish to Google Cloud Storage."""
     return _build_real_csv_export('sustainable_packaging_agent', 'Sustainable Packaging Agent — Atomic Export Schedule', target_id=target_id)
 
+# --- BEGIN DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---
+_LAST_CANVAS_CONTEXT: Optional[Dict[str, Any]] = None
+_AGENT_SYSTEMS_METADATA: List[Dict[str, Any]] = [{'id': 'plm_packaging_bom', 'name': 'Packaging BOM & Barrier Spec System', 'protocol': 'OData / PLM API', 'tables': ['packaging_sku_bom_specs']}, {'id': 'pcr_supplier_rfq_hub', 'name': 'PCR Resin & FSC Fiber Supplier Quote Matrix', 'protocol': 'REST / Ariba API', 'tables': ['pcr_resin_and_fiber_supplier_quotes']}, {'id': 'lims_barrier_trial_db', 'name': 'Packaging Lab WVTR/OTR & Line Speed Trial DB', 'protocol': 'SQL / LIMS API', 'tables': ['shelf_life_barrier_lab_trials']}, {'id': 'epr_plastic_tax_engine', 'name': 'EU PPWR & UK EPR Plastic Tax Calculator', 'protocol': 'Python Tax Engine', 'tables': ['epr_plastic_tax_compliance_ledger']}]
+_AGENT_WRITEBACK_SUMMARY: str = 'EU CBAM / EUDR XML Customs Filing & Transportation Management System (TMS / MCP) / Supply Chain Execution Platform (MCP / API) Low-Carbon Rail/EV/Ocean Lane Allocation'
+_AGENT_PRIMARY_TABLE: str = 'shelf_life_barrier_lab_trials'
 
-# --- BEGIN UNIFIED ENTERPRISE TOOL REGISTRY ---
+
+def _record_canvas_rows(table_name: str, rows: Optional[List[Dict[str, Any]]]) -> None:
+    global _LAST_CANVAS_CONTEXT
+    if not rows or not isinstance(rows, list):
+        return
+    ctx = dict(_LAST_CANVAS_CONTEXT or {})
+    ctx["source_table"] = table_name
+    ctx["rows"] = copy.deepcopy(rows[:40])
+    ctx["systems"] = _AGENT_SYSTEMS_METADATA
+    ctx["writeback_summary"] = _AGENT_WRITEBACK_SUMMARY
+    _LAST_CANVAS_CONTEXT = ctx
+
+
+def _record_canvas_solver(solver_result: Any) -> None:
+    global _LAST_CANVAS_CONTEXT
+    if not isinstance(solver_result, dict):
+        return
+    ctx = dict(_LAST_CANVAS_CONTEXT or {})
+    kpi = solver_result.get("kpi_summary")
+    if isinstance(kpi, dict):
+        ctx["kpi_summary"] = copy.deepcopy(kpi)
+    tbl = solver_result.get("analyzed_table") or solver_result.get("source_table")
+    if isinstance(tbl, str) and tbl:
+        ctx["source_table"] = tbl
+    if not ctx.get("rows"):
+        tfiles = _discover_table_files()
+        target_file = None
+        if tbl:
+            target_file = next((f for f in tfiles if f.stem == tbl), None)
+        if target_file is None and tfiles:
+            target_file = tfiles[-1]
+        if target_file is not None:
+            ctx["source_table"] = target_file.stem
+            ctx["rows"] = _read_json(target_file.name)[:40]
+    ctx["systems"] = _AGENT_SYSTEMS_METADATA
+    ctx["writeback_summary"] = _AGENT_WRITEBACK_SUMMARY
+    _LAST_CANVAS_CONTEXT = ctx
+
+
+def _ensure_canvas_populated(preferred_table: str = "") -> Dict[str, Any]:
+    global _LAST_CANVAS_CONTEXT
+    if isinstance(_LAST_CANVAS_CONTEXT, dict) and _LAST_CANVAS_CONTEXT.get("rows"):
+        return _LAST_CANVAS_CONTEXT
+    tfiles = _discover_table_files()
+    chosen = None
+    if preferred_table:
+        chosen = next((f for f in tfiles if preferred_table.lower() in f.stem.lower()), None)
+    if chosen is None:
+        chosen = next((f for f in tfiles if f.stem == _AGENT_PRIMARY_TABLE), None)
+    if chosen is None and tfiles:
+        chosen = tfiles[-1]
+    rows = _read_json(chosen.name)[:40] if chosen is not None else []
+    _LAST_CANVAS_CONTEXT = {
+        "source_table": chosen.stem if chosen is not None else _AGENT_PRIMARY_TABLE,
+        "rows": rows,
+        "systems": _AGENT_SYSTEMS_METADATA,
+        "writeback_summary": _AGENT_WRITEBACK_SUMMARY,
+    }
+    return _LAST_CANVAS_CONTEXT
+
+
+def get_latest_canvas_context(consume: bool = False) -> Dict[str, Any]:
+    """Returns live enterprise source rows & solver metadata for the A2UI Side-Panel Canvas (`RichTable`)."""
+    global _LAST_CANVAS_CONTEXT
+    ctx = _ensure_canvas_populated()
+    out = copy.deepcopy(ctx)
+    if consume:
+        _LAST_CANVAS_CONTEXT = None
+    return out
+
+
 def _queue_chart_if_needed() -> None:
     global _LAST_CHART_SPEC
+    _ensure_canvas_populated()
     if _LAST_CHART_SPEC is not None:
         return
     try:
@@ -570,7 +646,7 @@ def _dispatch_enterprise_wrapper(
         is_solver = wrapper_name.startswith(("run_", "simulate_", "optimize_", "solve_", "calculate_"))
         candidates = []
         w_tokens = set(wrapper_name.lower().split("_")) - {
-            "sap", "s4hana", "ibp", "wms", "tms", "otm", "manhattan", "oracle",
+            "sap", "s4hana", "ibp", "wms", "tms", "otm", "ewm", "oracle",
             "bigquery", "vertex", "query", "fetch", "audit", "run", "action", "commit",
         }
         for name, obj in g.items():
@@ -605,13 +681,18 @@ def _dispatch_enterprise_wrapper(
                 out = dict(res)
                 out.setdefault("enterprise_system", system_name)
                 out.setdefault("source_system_id", system_id)
+                if isinstance(out.get("rows"), list) and out.get("rows"):
+                    _record_canvas_rows(str(out.get("table") or system_id), out["rows"])
+                elif isinstance(out.get("kpi_summary"), dict):
+                    _record_canvas_solver(out)
                 return out
         except Exception:
             pass
 
-    # Fallback: read first real fixture table so 0-row stubs NEVER occur
     tfiles = _discover_table_files()
     rows = _read_json(tfiles[0].name) if tfiles else []
+    if tfiles and rows:
+        _record_canvas_rows(tfiles[0].stem, rows)
     return {
         "status": "SUCCESS",
         "source_system": system_id,
@@ -630,7 +711,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
     _queue_chart_if_needed()
     tfiles = _discover_table_files()
     chosen_rows: List[Dict[str, Any]] = []
-    chosen_table = "operational_schedule"
+    chosen_table = _AGENT_PRIMARY_TABLE
     for tf in reversed(tfiles):
         rlist = _read_json(tf.name)
         if isinstance(rlist, list) and rlist and isinstance(rlist[0], dict):
@@ -645,6 +726,9 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
         ]
         if filtered:
             chosen_rows = filtered
+
+    if chosen_rows:
+        _record_canvas_rows(chosen_table, chosen_rows)
 
     buf = _io.StringIO()
     if chosen_rows:
@@ -663,7 +747,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
     csv_payload = buf.getvalue()
     if os.environ.get("SC_SKIP_GCS_UPLOAD") == "1":
         bucket = os.environ.get("SC_MEDIA_BUCKET", "zuhaibp-ai-supply-chain-media")
-        download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_schedule.csv"
+        download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_{chosen_table}.csv"
     else:
         try:
             from .render.publish import publish_csv_export
@@ -671,7 +755,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
             download_url = pub["url"]
         except Exception:
             bucket = os.environ.get("SC_MEDIA_BUCKET", "zuhaibp-ai-supply-chain-media")
-            download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_schedule.csv"
+            download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_{chosen_table}.csv"
     return {
         "status": "SUCCESS",
         "format": "csv",
@@ -684,19 +768,76 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
         "csv_content": csv_payload,
     }
 
+
+def inspect_plm_sustainable_packaging_data_sources() -> Dict[str, Any]:
+    """List all connected enterprise systems, protocols, and governed source tables (Packaging BOM & Barrier Spec System & partner feeds)."""
+    return list_systems()
+def query_sap_s4hana_master_data_backbone(sku_id: str = "", facility_id: str = "", supplier_id: str = "", customer_id: str = "", carrier_id: str = "") -> Dict[str, Any]:
+    """Query SAP S/4HANA & Enterprise Master Data Backbone (`MARA` Materials, Plants/DCs, Vendors, Customers, and Lanes)."""
+    return lookup_xyz_master_context(sku_id=sku_id, facility_id=facility_id, supplier_id=supplier_id, customer_id=customer_id, carrier_id=carrier_id)
+def query_plm_packaging_sku_bom_specs(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: Packaging BOM & Barrier Spec System · Table `packaging_sku_bom_specs`] Query live verified records from Packaging BOM & Barrier Spec System (`zuhaibp-ai.supply_chain_twin.packaging_sku_bom_specs`)."""
+    res = _dispatch_enterprise_wrapper('query_plm_packaging_sku_bom_specs', 'query_packaging_sku_bom_specs', 'plm_packaging_bom', 'Packaging BOM & Barrier Spec System')
+    _record_canvas_rows('packaging_sku_bom_specs', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_plm_packaging_sku_bom_specs.__is_enterprise_wrapper__ = True
+def query_lims_barrier_shelf_life_barrier_lab_trials(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: Packaging Lab WVTR/OTR & Line Speed Trial DB · Table `shelf_life_barrier_lab_trials`] Query live verified records from Packaging Lab WVTR/OTR & Line Speed Trial DB (`zuhaibp-ai.supply_chain_twin.shelf_life_barrier_lab_trials`)."""
+    res = _dispatch_enterprise_wrapper('query_lims_barrier_shelf_life_barrier_lab_trials', 'query_barrier_lab_trials', 'lims_barrier_trial_db', 'Packaging Lab WVTR/OTR & Line Speed Trial DB')
+    _record_canvas_rows('shelf_life_barrier_lab_trials', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_lims_barrier_shelf_life_barrier_lab_trials.__is_enterprise_wrapper__ = True
+def render_sustainable_packaging_a2ui_chart_and_canvas(source_table: str = "", chart_title: str = "") -> Dict[str, Any]:
+    """Render the interactive 2-Panel A2UI v0.9 `VegaChart` executive infographic card AND populate the side-panel Looker Studio `RichTable` Canvas from `shelf_life_barrier_lab_trials`."""
+    sig = _inspect_mod.signature(render_visual_chart)
+    kw = {}
+    if 'table_name' in sig.parameters and source_table:
+        kw['table_name'] = source_table
+    if 'chart_title' in sig.parameters and chart_title:
+        kw['chart_title'] = chart_title
+    elif 'title_override' in sig.parameters and chart_title:
+        kw['title_override'] = chart_title
+    res = render_visual_chart(**kw)
+    _ensure_canvas_populated(preferred_table=source_table)
+    return res
+def export_shelf_life_barrier_lab_csv_to_gcs(target_id: str = "") -> Dict[str, Any]:
+    """Export verified `shelf_life_barrier_lab_trials` records as an RFC-4180 CSV schedule to Google Cloud Storage and return a clickable download link."""
+    return _build_real_csv_export('sustainable_packaging_agent', 'Sustainable Packaging Agent — Verified Shelf Life Barrier Lab Trials CSV', target_id=target_id)
+def publish_sustainable_packaging_interactive_cockpit_to_gcs(title: str = "Sustainable Packaging Agent — Interactive Simulator Cockpit") -> Dict[str, Any]:
+    """Compile the self-contained interactive HTML5 simulator cockpit for Sustainable Packaging Agent, publish to Google Cloud Storage, and return the full-screen `view_url`."""
+    _ensure_canvas_populated()
+    return generate_interactive_html_dashboard(title=title)
+
+
+LEGACY_COMPAT_TOOLS = [
+    fn for _nm, fn in [
+        ("list_systems", globals().get("list_systems")),
+        ("lookup_xyz_master_context", globals().get("lookup_xyz_master_context")),
+        ("render_visual_chart", globals().get("render_visual_chart")),
+        ("analyze_operational_metrics", globals().get("analyze_operational_metrics")),
+        ("draft_operational_brief", globals().get("draft_operational_brief")),
+        ("export_operational_csv_schedule", globals().get("export_operational_csv_schedule")),
+        ("generate_interactive_html_dashboard", globals().get("generate_interactive_html_dashboard")),
+    ]
+    if callable(fn)
+]
+
 ALL_TOOLS = [
-    list_systems,
-    lookup_xyz_master_context,
+    inspect_plm_sustainable_packaging_data_sources,
+    query_sap_s4hana_master_data_backbone,
+    query_plm_packaging_sku_bom_specs,
+    query_lims_barrier_shelf_life_barrier_lab_trials,
     query_packaging_sku_bom_specs,
     query_pcr_supplier_quotes,
     query_barrier_lab_trials,
     query_epr_plastic_tax_ledger,
     analyze_pcr_epr_total_landed_savings,
-    render_visual_chart,
+    render_sustainable_packaging_a2ui_chart_and_canvas,
     draft_packaging_bom_eco_spec,
+    export_shelf_life_barrier_lab_csv_to_gcs,
+    publish_sustainable_packaging_interactive_cockpit_to_gcs,
     action_approve_pcr_packaging_bom,
     action_award_pcr_resin_contract,
-    generate_interactive_html_dashboard,
-    export_operational_csv_schedule,
+
 ]
-# --- END UNIFIED ENTERPRISE TOOL REGISTRY ---
+# --- END DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---

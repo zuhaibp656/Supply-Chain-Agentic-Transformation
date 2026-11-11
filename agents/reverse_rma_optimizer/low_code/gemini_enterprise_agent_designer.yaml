@@ -1,0 +1,63 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: reverse_rma_optimizer
+  display_name: "Return Fraud Sentinel"
+  build_tier: "Hybrid"
+  category: "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt"
+  primary_persona: "Reverse Logistics / Fraud Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_circular_disposition_routing_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.circular_disposition_routing_ledger"
+      source_system: "OR-Tools Circular Recovery Margin Solver (Restock vs Refurb vs Harvest)"
+      protocol: "Python MILP"
+    - id: bq_supply_chain_twin_customer_rma_intake_requests
+      uri: "bq://zuhaibp-ai.supply_chain_twin.customer_rma_intake_requests"
+      source_system: "SAP S/4HANA Returns & Customer RMA Intake Portal"
+      protocol: "REST / OData v4"
+    - id: bq_supply_chain_twin_fleet_backhaul_pickup_slots
+      uri: "bq://zuhaibp-ai.supply_chain_twin.fleet_backhaul_pickup_slots"
+      source_system: "FleetFlow Returning Delivery Truck Backhaul Milk-Run Matcher"
+      protocol: "Google Maps CVRPTW"
+    - id: bq_supply_chain_twin_multimodal_vision_grading_results
+      uri: "bq://zuhaibp-ai.supply_chain_twin.multimodal_vision_grading_results"
+      source_system: "Vertex AI Gemini 3.8 Flash Optical RMA Condition & Seal Grader"
+      protocol: "gRPC Multimodal API"
+  data_source_tools:
+    - inspect_gemini_38_reverse_rma_optimizer_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_sap_s4hana_customer_rma_intake_requests
+    - query_fleetflow_backhaul_fleet_backhaul_pickup_slots
+    - query_gemini_38_multimodal_vision_grading_results
+    - query_customer_rma_intake_requests
+    - query_multimodal_vision_grading_results
+    - query_fleet_backhaul_pickup_slots
+    - query_circular_disposition_routing_ledger
+    - query_salesforce_service_cloud_customer_rma_requests
+    - fetch_customer_historical_return_frequency_and_fraud_scores
+    - query_fleet_backhaul_pallet_collection_slots
+    - run_multimodal_return_fraud_and_routing_solver
+    - render_reverse_rma_optimizer_a2ui_chart_and_canvas
+    - draft_reverse_rma_optimizer_stakeholder_decision_memo
+    - export_rma_disposition_manifest_csv_and_memo
+    - publish_reverse_rma_optimizer_interactive_cockpit_to_gcs
+    - action_assign_rma_disposition_and_backhaul
+    - action_issue_instant_customer_rma_credit_or_swap
+    - commit_rma_disposition_and_restocking_fee_in_salesforce
+  starter_prompts:
+    - "Screen incoming customer return authorizations across our regional return centers in Bhiwandi and Gurgaon. Detect return anomalies and wardrobing patterns, optimize reverse routing between local restock, refurbish, and liquidation, and output a reverse disposition table."
+    - "Render an interactive customer return fraud risk distribution and circular disposition matrix chart categorizing claims by fraud risk level and net recovery value."
+    - "Draft an executive reverse logistics policy memo and interactive full-screen return fraud audit report for the Customer Experience and Reverse Logistics Directors detailing fraud savings and disposition recovery rates."
+    - "Please route the highest-risk flagged return claim to physical dock inspection before releasing refund credit."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

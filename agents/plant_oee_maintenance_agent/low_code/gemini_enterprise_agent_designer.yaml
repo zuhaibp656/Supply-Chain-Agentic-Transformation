@@ -1,0 +1,55 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: plant_oee_maintenance_agent
+  display_name: "Plant Oee Maintenance Agent"
+  build_tier: "High-Code"
+  category: "Supply Chain Operations"
+  primary_persona: "Supply Chain Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_oee_breakdown_metrics
+      uri: "bq://zuhaibp-ai.supply_chain_twin.oee_breakdown_metrics"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+    - id: bq_supply_chain_twin_plant_machine_telemetry
+      uri: "bq://zuhaibp-ai.supply_chain_twin.plant_machine_telemetry"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+    - id: bq_supply_chain_twin_predictive_maintenance_anomalies
+      uri: "bq://zuhaibp-ai.supply_chain_twin.predictive_maintenance_anomalies"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+    - id: bq_supply_chain_twin_spare_parts_inventory_status
+      uri: "bq://zuhaibp-ai.supply_chain_twin.spare_parts_inventory_status"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+  data_source_tools:
+    - inspect_bigquery_plant_oee_maintenance_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_bigquery_oee_breakdown_metrics
+    - query_bigquery_plant_machine_telemetry
+    - query_bigquery_predictive_maintenance_anomalies
+    - query_bigquery_spare_parts_inventory_status
+    - query_plant_machine_telemetry
+    - query_oee_breakdown_metrics
+    - query_predictive_maintenance_anomalies
+    - query_spare_parts_inventory_status
+    - run_plant_oee_maintenance_constraint_and_variance_solver
+    - render_plant_oee_maintenance_a2ui_chart_and_canvas
+    - draft_plant_oee_maintenance_stakeholder_decision_memo
+    - export_spare_parts_inventory_status_csv_to_gcs
+    - publish_plant_oee_maintenance_interactive_cockpit_to_gcs
+    - action_dispatch_preventive_work_order
+    - action_reserve_spare_parts
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

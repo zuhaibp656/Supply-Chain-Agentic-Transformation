@@ -1,0 +1,62 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: demand_sensing_agent
+  display_name: "Demand Sensing Agent"
+  build_tier: "Hybrid"
+  category: "01 \u00b7 Planning & Strategy \u2014 Demand Forecasting"
+  primary_persona: "Demand Planner / Forecaster"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_external_signals_weathernext
+      uri: "bq://zuhaibp-ai.supply_chain_twin.external_signals_weathernext"
+      source_system: "BigQuery Enterprise Demand Lake"
+      protocol: "BigQuery SQL / Cloud Dataflow Streaming"
+    - id: bq_supply_chain_twin_fva_sales_bias
+      uri: "bq://zuhaibp-ai.supply_chain_twin.fva_sales_bias"
+      source_system: "SAP Integrated Business Planning (IBP)"
+      protocol: "OData v4 / BAPI_PIR_CHANGE / RFC"
+    - id: bq_supply_chain_twin_pos_store_scans
+      uri: "bq://zuhaibp-ai.supply_chain_twin.pos_store_scans"
+      source_system: "BigQuery Enterprise Demand Lake"
+      protocol: "BigQuery SQL / Cloud Dataflow Streaming"
+    - id: bq_supply_chain_twin_timesfm_quantile_horizons
+      uri: "bq://zuhaibp-ai.supply_chain_twin.timesfm_quantile_horizons"
+      source_system: "Vertex AI TimesFM Zero-Shot & Fine-Tuned Quantile Forecaster"
+      protocol: "Vertex AI Prediction Endpoint (P10/P50/P90)"
+  data_source_tools:
+    - inspect_bigquery_demand_sensing_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_bigquery_pos_store_scans
+    - query_vertex_timesfm_timesfm_quantile_horizons
+    - query_pos_store_scans
+    - query_external_demand_signals
+    - query_timesfm_forecast_horizons
+    - query_fva_sales_bias
+    - query_sap_s4hana_pos_and_baseline_orders
+    - fetch_bigquery_weathernext_and_mobility_signals
+    - audit_sap_ibp_commercial_sales_overrides
+    - run_vertex_timesfm_hierarchical_forecast_solver
+    - render_demand_sensing_a2ui_chart_and_canvas
+    - draft_demand_sensing_stakeholder_decision_memo
+    - export_demand_consensus_csv_schedule
+    - publish_demand_sensing_interactive_cockpit_to_gcs
+    - action_commit_ibp_pir_change
+    - action_suppress_fva_bias
+    - commit_sap_s4hana_pir_planned_requirements
+  starter_prompts:
+    - "Run a demand sensing audit across our Western Logistics Corridor (Mumbai and Gujarat) and Northern NCR retail hubs. Detect store stockout censorship at retail partners like DMart, evaluate commercial sales overrides for chronic optimism bias, and output a copy-ready schedule with revised forecast allocations."
+    - "Generate an interactive visual fan chart comparing our latest sensed demand forecast against the baseline operating plan across top beverage and snack products, highlighting weather-driven demand spikes and buffer needs."
+    - "Draft an executive briefing note and interactive full-screen dashboard for the Chief Supply Chain Officer summarizing revenue protected, forecast error reduction, and recommended consensus adjustments."
+    - "Please go ahead and update the demand plan for our top priority beverage item in the Western Corridor (Mumbai and Pune) region using your recommended forecast, and confirm once the update is recorded."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

@@ -1,0 +1,64 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: load_consolidation_agent
+  display_name: "Load Consolidation"
+  build_tier: "High-Code"
+  category: "05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile"
+  primary_persona: "Transport Planner / Inbound Mgr"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_axle_weight_crush_audit_logs
+      uri: "bq://zuhaibp-ai.supply_chain_twin.axle_weight_crush_audit_logs"
+      source_system: "Dock Scale & Crush-Pressure Physics Verification Engine"
+      protocol: "IoT Weighbridge / REST"
+    - id: bq_supply_chain_twin_lifo_3d_voxel_load_plans
+      uri: "bq://zuhaibp-ai.supply_chain_twin.lifo_3d_voxel_load_plans"
+      source_system: "Google OR-Tools 3D Extreme-Point & Guillotine Bin Packing Solver"
+      protocol: "C++ / Python 3D Voxel Engine"
+    - id: bq_supply_chain_twin_outbound_shipment_carton_dimensions
+      uri: "bq://zuhaibp-ai.supply_chain_twin.outbound_shipment_carton_dimensions"
+      source_system: "SAP EWM & Material Master 3D Carton Geometry & Fragility Feed"
+      protocol: "OData v4 / BAPI"
+    - id: bq_supply_chain_twin_trailer_bay_geometry_specs
+      uri: "bq://zuhaibp-ai.supply_chain_twin.trailer_bay_geometry_specs"
+      source_system: "Fleet Trailer Bay & DOT Axle-Weight Compliance Registry"
+      protocol: "REST / JSON"
+  data_source_tools:
+    - inspect_ortools_load_consolidation_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_wms_axle_weight_crush_audit_logs
+    - query_ortools_lifo_3d_voxel_load_plans
+    - query_sap_ewm_outbound_shipment_carton_dimensions
+    - query_tms_trailer_bay_geometry_specs
+    - query_outbound_shipment_carton_dimensions
+    - query_trailer_bay_geometry_specs
+    - query_lifo_3d_voxel_load_plans
+    - query_axle_weight_crush_audit_logs
+    - query_oracle_otm_outbound_shipment_carton_manifests
+    - fetch_trailer_and_intermodal_container_geometry_specs
+    - query_bridge_law_and_dot_crush_compliance_limits
+    - run_3d_lifo_voxel_cube_and_axle_weight_solver
+    - render_load_consolidation_a2ui_chart_and_canvas
+    - draft_load_consolidation_stakeholder_decision_memo
+    - export_3d_trailer_loading_manifest_csv_and_memo
+    - publish_load_consolidation_interactive_cockpit_to_gcs
+    - action_commit_3d_lifo_load_plan
+    - action_resequence_dock_staging_lanes
+    - commit_load_plan_and_door_manifest_to_otm
+  starter_prompts:
+    - "Build an optimized 3D truckload consolidation plan for multi-stop linehaul shipments traveling the Western Corridor from Mumbai to Ahmedabad. Calculate packing that enforces last-in first-out unloading sequence, respects highway axle weight limits, eliminates transit crush damage, and output an atomic loading manifest."
+    - "Generate an interactive 3D isometric trailer loading visualization showing carton placement by stop, deck tier height, and axle weight distribution."
+    - "Draft a shipping supervisor loading instruction sheet and interactive full-screen 3D load consolidation dossier detailing trailer cube utilization, fuel savings, and road safety compliance."
+    - "Please release the consolidated multi-stop full-truckload plan to the transportation system and confirm the booking reference."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

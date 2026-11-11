@@ -1,0 +1,58 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: sustainable_packaging_agent
+  display_name: "Sustainable Packaging Agent"
+  build_tier: "Hybrid"
+  category: "02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging"
+  primary_persona: "Packaging R&D Engineer"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_epr_plastic_tax_compliance_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.epr_plastic_tax_compliance_ledger"
+      source_system: "EU PPWR & UK EPR Plastic Tax Calculator"
+      protocol: "Python Tax Engine"
+    - id: bq_supply_chain_twin_packaging_sku_bom_specs
+      uri: "bq://zuhaibp-ai.supply_chain_twin.packaging_sku_bom_specs"
+      source_system: "Packaging BOM & Barrier Spec System"
+      protocol: "OData / PLM API"
+    - id: bq_supply_chain_twin_pcr_resin_and_fiber_supplier_quotes
+      uri: "bq://zuhaibp-ai.supply_chain_twin.pcr_resin_and_fiber_supplier_quotes"
+      source_system: "PCR Resin & FSC Fiber Supplier Quote Matrix"
+      protocol: "REST / Ariba API"
+    - id: bq_supply_chain_twin_shelf_life_barrier_lab_trials
+      uri: "bq://zuhaibp-ai.supply_chain_twin.shelf_life_barrier_lab_trials"
+      source_system: "Packaging Lab WVTR/OTR & Line Speed Trial DB"
+      protocol: "SQL / LIMS API"
+  data_source_tools:
+    - inspect_plm_sustainable_packaging_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_plm_packaging_sku_bom_specs
+    - query_lims_barrier_shelf_life_barrier_lab_trials
+    - query_packaging_sku_bom_specs
+    - query_pcr_supplier_quotes
+    - query_barrier_lab_trials
+    - query_epr_plastic_tax_ledger
+    - analyze_pcr_epr_total_landed_savings
+    - render_sustainable_packaging_a2ui_chart_and_canvas
+    - draft_packaging_bom_eco_spec
+    - export_shelf_life_barrier_lab_csv_to_gcs
+    - publish_sustainable_packaging_interactive_cockpit_to_gcs
+    - action_approve_pcr_packaging_bom
+    - action_award_pcr_resin_contract
+  starter_prompts:
+    - "How do our proposed recycled and eco-friendly packaging options compare on cost, factory line speed, product shelf-life protection, and plastic tax savings?"
+    - "Display a chart comparing total landed cost, recycled content, and line compatibility across candidate packaging materials, and explain the best choice clearly."
+    - "Write a plain-English packaging recommendation brief for Research and Development and Procurement comparing our top sustainable options and net cost impact."
+    - "Please approve the recommended recycled packaging specification trial for our highest-benefit product line."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

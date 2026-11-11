@@ -1,0 +1,63 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: three_way_match_dispute
+  display_name: "Three-Way Match Dispute"
+  build_tier: "Low-Code"
+  category: "02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt"
+  primary_persona: "Accounts Payable Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_ap_vendor_invoice_headers
+      uri: "bq://zuhaibp-ai.supply_chain_twin.ap_vendor_invoice_headers"
+      source_system: "AP Vendor Invoice Capture & EDI 810 Header"
+      protocol: "Document OCR / EDI 810"
+    - id: bq_supply_chain_twin_sap_po_line_schedules
+      uri: "bq://zuhaibp-ai.supply_chain_twin.sap_po_line_schedules"
+      source_system: "ERP Purchase Order (EKKO/EKPO) Ledger"
+      protocol: "OData v4 / BAPI_PO_GETDETAIL"
+    - id: bq_supply_chain_twin_three_way_match_dispute_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.three_way_match_dispute_ledger"
+      source_system: "AP 3-Way Match Variance & Debit Memo Ledger"
+      protocol: "BAPI_INCOMINGINVOICE_PARK"
+    - id: bq_supply_chain_twin_wms_grn_dock_receipts
+      uri: "bq://zuhaibp-ai.supply_chain_twin.wms_grn_dock_receipts"
+      source_system: "WMS Dock Barcode Goods Receipt Notes (GRN)"
+      protocol: "REST / EDI 861"
+  data_source_tools:
+    - inspect_sap_s4hana_three_way_match_dispute_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_edi_docai_ap_vendor_invoice_headers
+    - query_edi_docai_three_way_match_dispute_ledger
+    - query_sap_po_line_schedules
+    - query_wms_grn_dock_receipts
+    - query_ap_vendor_invoice_headers
+    - query_three_way_match_dispute_ledger
+    - query_sap_s4hana_po_line_schedules
+    - fetch_sap_ewm_dock_grn_receipts
+    - query_ap_edi810_vendor_invoice_headers
+    - analyze_three_way_match_variances
+    - run_three_way_match_variance_and_early_pay_solver
+    - render_three_way_match_dispute_a2ui_chart_and_canvas
+    - draft_vendor_debit_memo_notice
+    - export_ap_debit_memo_csv_and_remittance
+    - publish_three_way_match_dispute_interactive_cockpit_to_gcs
+    - action_issue_sap_debit_memo_and_release
+    - action_place_qm_dispute_block
+    - action_issue_sap_miro_debit_memo_and_release
+  starter_prompts:
+    - "Audit our pending vendor invoices across our Bhiwandi distribution center and Bengaluru fulfillment hub by matching purchase orders against dock receiving goods receipts and supplier invoices. Detect price creep, unapproved freight surcharges, and short-shipped quantities, calculate early-payment cash discount capture deadlines, and generate an accounts payable discrepancy schedule."
+    - "Render an interactive visual variance comparison chart highlighting disputed amounts by category (unapproved price variance, missing dock receipts, accessorial overcharges) versus early-payment discount savings captured."
+    - "Draft a formal vendor debit memo and remittance advice document along with an interactive full-screen dispute cockpit for Finance and Procurement detailing line-item deductions, approved payable balances, and enterprise posting references."
+    - "Go ahead and issue the automated debit memo for the top overbilled invoice and release the verified net amount for payment."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

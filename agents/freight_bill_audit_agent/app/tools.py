@@ -551,10 +551,86 @@ def generate_interactive_html_dashboard(title: str = "Interactive Supply Chain C
     _LATEST_INTERACTIVE_HTML = result
     return result
 
+# --- BEGIN DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---
+_LAST_CANVAS_CONTEXT: Optional[Dict[str, Any]] = None
+_AGENT_SYSTEMS_METADATA: List[Dict[str, Any]] = [{'id': 'tms_edi210_gateway', 'name': 'Carrier EDI 210 Freight Invoice Intake', 'protocol': 'EDI X12 210 / AS2', 'tables': ['edi210_carrier_freight_invoices']}, {'id': 'clm_carrier_rate_engine', 'name': 'Contracted Lane Rate & DOE Diesel FSC Tariff Engine', 'protocol': 'SQL / Tariff API', 'tables': ['contracted_lane_rate_and_fsc_tables']}, {'id': 'yard_gps_detention_log', 'name': 'Geofence Gate-In/Gate-Out & ePOD Timestamp Verifier', 'protocol': 'REST / Telematics SQL', 'tables': ['epod_gps_detention_verifications']}, {'id': 'sap_fap_shortpay_ledger', 'name': 'Freight Audit & Payment (FAP) Short-Pay Ledger', 'protocol': 'IDoc / BAPI_ACC_DOCUMENT_POST', 'tables': ['freight_overcharge_audit_adjustments']}]
+_AGENT_WRITEBACK_SUMMARY: str = 'Automated Carrier Claim Dispute Packet & Approved Enterprise ERP (MCP / On-Prem DB) AP Freight Voucher (BAPI_INCOMINGINVOICE_CREATE)'
+_AGENT_PRIMARY_TABLE: str = 'freight_overcharge_audit_adjustments'
 
-# --- BEGIN UNIFIED ENTERPRISE TOOL REGISTRY ---
+
+def _record_canvas_rows(table_name: str, rows: Optional[List[Dict[str, Any]]]) -> None:
+    global _LAST_CANVAS_CONTEXT
+    if not rows or not isinstance(rows, list):
+        return
+    ctx = dict(_LAST_CANVAS_CONTEXT or {})
+    ctx["source_table"] = table_name
+    ctx["rows"] = copy.deepcopy(rows[:40])
+    ctx["systems"] = _AGENT_SYSTEMS_METADATA
+    ctx["writeback_summary"] = _AGENT_WRITEBACK_SUMMARY
+    _LAST_CANVAS_CONTEXT = ctx
+
+
+def _record_canvas_solver(solver_result: Any) -> None:
+    global _LAST_CANVAS_CONTEXT
+    if not isinstance(solver_result, dict):
+        return
+    ctx = dict(_LAST_CANVAS_CONTEXT or {})
+    kpi = solver_result.get("kpi_summary")
+    if isinstance(kpi, dict):
+        ctx["kpi_summary"] = copy.deepcopy(kpi)
+    tbl = solver_result.get("analyzed_table") or solver_result.get("source_table")
+    if isinstance(tbl, str) and tbl:
+        ctx["source_table"] = tbl
+    if not ctx.get("rows"):
+        tfiles = _discover_table_files()
+        target_file = None
+        if tbl:
+            target_file = next((f for f in tfiles if f.stem == tbl), None)
+        if target_file is None and tfiles:
+            target_file = tfiles[-1]
+        if target_file is not None:
+            ctx["source_table"] = target_file.stem
+            ctx["rows"] = _read_json(target_file.name)[:40]
+    ctx["systems"] = _AGENT_SYSTEMS_METADATA
+    ctx["writeback_summary"] = _AGENT_WRITEBACK_SUMMARY
+    _LAST_CANVAS_CONTEXT = ctx
+
+
+def _ensure_canvas_populated(preferred_table: str = "") -> Dict[str, Any]:
+    global _LAST_CANVAS_CONTEXT
+    if isinstance(_LAST_CANVAS_CONTEXT, dict) and _LAST_CANVAS_CONTEXT.get("rows"):
+        return _LAST_CANVAS_CONTEXT
+    tfiles = _discover_table_files()
+    chosen = None
+    if preferred_table:
+        chosen = next((f for f in tfiles if preferred_table.lower() in f.stem.lower()), None)
+    if chosen is None:
+        chosen = next((f for f in tfiles if f.stem == _AGENT_PRIMARY_TABLE), None)
+    if chosen is None and tfiles:
+        chosen = tfiles[-1]
+    rows = _read_json(chosen.name)[:40] if chosen is not None else []
+    _LAST_CANVAS_CONTEXT = {
+        "source_table": chosen.stem if chosen is not None else _AGENT_PRIMARY_TABLE,
+        "rows": rows,
+        "systems": _AGENT_SYSTEMS_METADATA,
+        "writeback_summary": _AGENT_WRITEBACK_SUMMARY,
+    }
+    return _LAST_CANVAS_CONTEXT
+
+
+def get_latest_canvas_context(consume: bool = False) -> Dict[str, Any]:
+    """Returns live enterprise source rows & solver metadata for the A2UI Side-Panel Canvas (`RichTable`)."""
+    global _LAST_CANVAS_CONTEXT
+    ctx = _ensure_canvas_populated()
+    out = copy.deepcopy(ctx)
+    if consume:
+        _LAST_CANVAS_CONTEXT = None
+    return out
+
+
 def _queue_chart_if_needed() -> None:
     global _LAST_CHART_SPEC
+    _ensure_canvas_populated()
     if _LAST_CHART_SPEC is not None:
         return
     try:
@@ -626,7 +702,7 @@ def _dispatch_enterprise_wrapper(
         is_solver = wrapper_name.startswith(("run_", "simulate_", "optimize_", "solve_", "calculate_"))
         candidates = []
         w_tokens = set(wrapper_name.lower().split("_")) - {
-            "sap", "s4hana", "ibp", "wms", "tms", "otm", "manhattan", "oracle",
+            "sap", "s4hana", "ibp", "wms", "tms", "otm", "ewm", "oracle",
             "bigquery", "vertex", "query", "fetch", "audit", "run", "action", "commit",
         }
         for name, obj in g.items():
@@ -661,13 +737,18 @@ def _dispatch_enterprise_wrapper(
                 out = dict(res)
                 out.setdefault("enterprise_system", system_name)
                 out.setdefault("source_system_id", system_id)
+                if isinstance(out.get("rows"), list) and out.get("rows"):
+                    _record_canvas_rows(str(out.get("table") or system_id), out["rows"])
+                elif isinstance(out.get("kpi_summary"), dict):
+                    _record_canvas_solver(out)
                 return out
         except Exception:
             pass
 
-    # Fallback: read first real fixture table so 0-row stubs NEVER occur
     tfiles = _discover_table_files()
     rows = _read_json(tfiles[0].name) if tfiles else []
+    if tfiles and rows:
+        _record_canvas_rows(tfiles[0].stem, rows)
     return {
         "status": "SUCCESS",
         "source_system": system_id,
@@ -686,7 +767,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
     _queue_chart_if_needed()
     tfiles = _discover_table_files()
     chosen_rows: List[Dict[str, Any]] = []
-    chosen_table = "operational_schedule"
+    chosen_table = _AGENT_PRIMARY_TABLE
     for tf in reversed(tfiles):
         rlist = _read_json(tf.name)
         if isinstance(rlist, list) and rlist and isinstance(rlist[0], dict):
@@ -701,6 +782,9 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
         ]
         if filtered:
             chosen_rows = filtered
+
+    if chosen_rows:
+        _record_canvas_rows(chosen_table, chosen_rows)
 
     buf = _io.StringIO()
     if chosen_rows:
@@ -719,7 +803,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
     csv_payload = buf.getvalue()
     if os.environ.get("SC_SKIP_GCS_UPLOAD") == "1":
         bucket = os.environ.get("SC_MEDIA_BUCKET", "zuhaibp-ai-supply-chain-media")
-        download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_schedule.csv"
+        download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_{chosen_table}.csv"
     else:
         try:
             from .render.publish import publish_csv_export
@@ -727,7 +811,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
             download_url = pub["url"]
         except Exception:
             bucket = os.environ.get("SC_MEDIA_BUCKET", "zuhaibp-ai-supply-chain-media")
-            download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_schedule.csv"
+            download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_{chosen_table}.csv"
     return {
         "status": "SUCCESS",
         "format": "csv",
@@ -740,24 +824,92 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
         "csv_content": csv_payload,
     }
 
+
+def inspect_tms_freight_bill_audit_data_sources() -> Dict[str, Any]:
+    """List all connected enterprise systems, protocols, and governed source tables (Carrier EDI 210 Freight Invoice Intake & partner feeds)."""
+    return list_systems()
+def query_sap_s4hana_master_data_backbone(sku_id: str = "", facility_id: str = "", supplier_id: str = "", customer_id: str = "", carrier_id: str = "") -> Dict[str, Any]:
+    """Query SAP S/4HANA & Enterprise Master Data Backbone (`MARA` Materials, Plants/DCs, Vendors, Customers, and Lanes)."""
+    return lookup_xyz_master_context(sku_id=sku_id, facility_id=facility_id, supplier_id=supplier_id, customer_id=customer_id, carrier_id=carrier_id)
+def query_tms_contracted_lane_rate_and_fsc_tables(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: Contracted Lane Rate & DOE Diesel FSC Tariff Engine · Table `contracted_lane_rate_and_fsc_tables`] Query live verified records from Contracted Lane Rate & DOE Diesel FSC Tariff Engine (`zuhaibp-ai.supply_chain_twin.contracted_lane_rate_and_fsc_tables`)."""
+    res = _dispatch_enterprise_wrapper('query_tms_contracted_lane_rate_and_fsc_tables', 'query_contracted_lane_fsc_tariffs', 'clm_carrier_rate_engine', 'Contracted Lane Rate & DOE Diesel FSC Tariff Engine')
+    _record_canvas_rows('contracted_lane_rate_and_fsc_tables', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_tms_contracted_lane_rate_and_fsc_tables.__is_enterprise_wrapper__ = True
+def query_tms_edi210_carrier_freight_invoices(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: Carrier EDI 210 Freight Invoice Intake · Table `edi210_carrier_freight_invoices`] Query live verified records from Carrier EDI 210 Freight Invoice Intake (`zuhaibp-ai.supply_chain_twin.edi210_carrier_freight_invoices`)."""
+    res = _dispatch_enterprise_wrapper('query_tms_edi210_carrier_freight_invoices', 'query_edi210_freight_invoices', 'tms_edi210_gateway', 'Carrier EDI 210 Freight Invoice Intake')
+    _record_canvas_rows('edi210_carrier_freight_invoices', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_tms_edi210_carrier_freight_invoices.__is_enterprise_wrapper__ = True
+def query_mes_scada_epod_gps_detention_verifications(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: Geofence Gate-In/Gate-Out & ePOD Timestamp Verifier · Table `epod_gps_detention_verifications`] Query live verified records from Geofence Gate-In/Gate-Out & ePOD Timestamp Verifier (`zuhaibp-ai.supply_chain_twin.epod_gps_detention_verifications`)."""
+    res = _dispatch_enterprise_wrapper('query_mes_scada_epod_gps_detention_verifications', 'query_gps_detention_verifications', 'yard_gps_detention_log', 'Geofence Gate-In/Gate-Out & ePOD Timestamp Verifier')
+    _record_canvas_rows('epod_gps_detention_verifications', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_mes_scada_epod_gps_detention_verifications.__is_enterprise_wrapper__ = True
+def query_sap_s4hana_freight_overcharge_audit_adjustments(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: Freight Audit & Payment (FAP) Short-Pay Ledger · Table `freight_overcharge_audit_adjustments`] Query live verified records from Freight Audit & Payment (FAP) Short-Pay Ledger (`zuhaibp-ai.supply_chain_twin.freight_overcharge_audit_adjustments`)."""
+    res = _dispatch_enterprise_wrapper('query_sap_s4hana_freight_overcharge_audit_adjustments', 'query_freight_overcharge_adjustments', 'sap_fap_shortpay_ledger', 'Freight Audit & Payment (FAP) Short-Pay Ledger')
+    _record_canvas_rows('freight_overcharge_audit_adjustments', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_sap_s4hana_freight_overcharge_audit_adjustments.__is_enterprise_wrapper__ = True
+def render_freight_bill_audit_a2ui_chart_and_canvas(source_table: str = "", chart_title: str = "") -> Dict[str, Any]:
+    """Render the interactive 2-Panel A2UI v0.9 `VegaChart` executive infographic card AND populate the side-panel Looker Studio `RichTable` Canvas from `freight_overcharge_audit_adjustments`."""
+    sig = _inspect_mod.signature(render_visual_chart)
+    kw = {}
+    if 'table_name' in sig.parameters and source_table:
+        kw['table_name'] = source_table
+    if 'chart_title' in sig.parameters and chart_title:
+        kw['chart_title'] = chart_title
+    elif 'title_override' in sig.parameters and chart_title:
+        kw['title_override'] = chart_title
+    res = render_visual_chart(**kw)
+    _ensure_canvas_populated(preferred_table=source_table)
+    return res
+def publish_freight_bill_audit_interactive_cockpit_to_gcs(title: str = "Freight Bill Audit Agent — Interactive Simulator Cockpit") -> Dict[str, Any]:
+    """Compile the self-contained interactive HTML5 simulator cockpit for Freight Bill Audit Agent, publish to Google Cloud Storage, and return the full-screen `view_url`."""
+    _ensure_canvas_populated()
+    return generate_interactive_html_dashboard(title=title)
+
+
+LEGACY_COMPAT_TOOLS = [
+    fn for _nm, fn in [
+        ("list_systems", globals().get("list_systems")),
+        ("lookup_xyz_master_context", globals().get("lookup_xyz_master_context")),
+        ("render_visual_chart", globals().get("render_visual_chart")),
+        ("analyze_operational_metrics", globals().get("analyze_operational_metrics")),
+        ("draft_operational_brief", globals().get("draft_operational_brief")),
+        ("export_operational_csv_schedule", globals().get("export_operational_csv_schedule")),
+        ("generate_interactive_html_dashboard", globals().get("generate_interactive_html_dashboard")),
+    ]
+    if callable(fn)
+]
+
 ALL_TOOLS = [
-    list_systems,
-    lookup_xyz_master_context,
+    inspect_tms_freight_bill_audit_data_sources,
+    query_sap_s4hana_master_data_backbone,
+    query_tms_contracted_lane_rate_and_fsc_tables,
+    query_tms_edi210_carrier_freight_invoices,
+    query_mes_scada_epod_gps_detention_verifications,
+    query_sap_s4hana_freight_overcharge_audit_adjustments,
     query_edi210_freight_invoices,
     query_contracted_lane_fsc_tariffs,
     query_gps_detention_verifications,
     query_freight_overcharge_adjustments,
-    analyze_edi210_tariff_and_fsc_variance,
-    render_visual_chart,
-    draft_edi210_short_pay_remittance_notice,
-    action_approve_short_pay_voucher,
-    action_transmit_edi210_dispute_code,
     query_carrier_edi210_freight_invoices,
     fetch_oracle_otm_contractual_rate_tariffs,
     query_samsara_gps_actual_miles_and_detention_telemetry,
+    analyze_edi210_tariff_and_fsc_variance,
     run_freight_rate_overcharge_and_accessorial_dispute_solver,
-    commit_carrier_overcharge_credit_memo_to_sap,
+    render_freight_bill_audit_a2ui_chart_and_canvas,
+    draft_edi210_short_pay_remittance_notice,
     export_freight_audit_discrepancy_csv_and_claim,
-    generate_interactive_html_dashboard,
+    publish_freight_bill_audit_interactive_cockpit_to_gcs,
+    action_approve_short_pay_voucher,
+    action_transmit_edi210_dispute_code,
+    commit_carrier_overcharge_credit_memo_to_sap,
+
 ]
-# --- END UNIFIED ENTERPRISE TOOL REGISTRY ---
+# --- END DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---

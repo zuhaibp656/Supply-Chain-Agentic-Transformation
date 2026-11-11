@@ -1,0 +1,66 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: disruption_war_room_orchestrator
+  display_name: "Digital War-Room Agent"
+  build_tier: "Hybrid"
+  category: "01 \u00b7 Planning & Strategy \u2014 S&OP / IBP"
+  primary_persona: "Supply Chain VP / COO"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_incident_war_rooms
+      uri: "bq://zuhaibp-ai.supply_chain_twin.incident_war_rooms"
+      source_system: "Enterprise Incident War Room & Ops Desk"
+      protocol: "REST API / Webhook"
+    - id: bq_supply_chain_twin_maritime_ais_vessels
+      uri: "bq://zuhaibp-ai.supply_chain_twin.maritime_ais_vessels"
+      source_system: "Spire Global Satellite AIS Maritime Feed"
+      protocol: "Streaming GeoJSON / AIS Hub"
+    - id: bq_supply_chain_twin_news_disruptions
+      uri: "bq://zuhaibp-ai.supply_chain_twin.news_disruptions"
+      source_system: "Global Trade & Natural Disaster News Ingestion"
+      protocol: "RSS / PubSub / Vertex AI NLP"
+    - id: bq_supply_chain_twin_supplier_facilities
+      uri: "bq://zuhaibp-ai.supply_chain_twin.supplier_facilities"
+      source_system: "Resilinc Multi-Tier Supplier Risk Intelligence"
+      protocol: "Spanner Graph / REST API"
+    - id: bq_supply_chain_twin_weather_alerts
+      uri: "bq://zuhaibp-ai.supply_chain_twin.weather_alerts"
+      source_system: "Google WeatherNext 3 & NOAA APIs"
+      protocol: "REST API"
+  data_source_tools:
+    - inspect_weathernext_disruption_war_room_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_servicenow_warroom_incident_war_rooms
+    - query_google_news_news_disruptions
+    - query_weather_alerts
+    - query_maritime_ais_vessels
+    - query_resilinc_supplier_facilities
+    - query_news_disruptions
+    - query_deepmind_weathernext_severe_weather_radar
+    - fetch_spire_ais_maritime_vessel_telemetry
+    - query_resilinc_tier_n_supplier_outage_alerts
+    - run_disruption_impact_and_revenue_at_risk_solver
+    - render_disruption_war_room_a2ui_chart_and_canvas
+    - draft_disruption_war_room_stakeholder_decision_memo
+    - export_disruption_corridor_map_csv_and_memo
+    - publish_disruption_war_room_interactive_cockpit_to_gcs
+    - action_create_war_room_incident
+    - action_dispatch_expedite_remediation
+    - commit_emergency_copacker_and_air_freight_reroute
+  starter_prompts:
+    - "Scan our major inbound shipping corridors connecting Nhava Sheva (JNPT) and Mundra ports to our inland distribution centers in Bhiwandi and Delhi NCR. Identify delayed shipments and impacted production orders, calculate revenue at risk, and output an incident ledger."
+    - "Generate an interactive geographic war-room map visualizing active vessel routes, impacted ports, and disrupted supplier facilities with color-coded delay severity bands."
+    - "Draft an emergency war-room leadership briefing note and interactive full-screen crisis dashboard recommending expedited transfers and alternate co-packer activations to safeguard customer On-Time In-Full (OTIF)."
+    - "Please activate the recommended disruption recovery and backup allocation plan for our most critical outage and confirm execution."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

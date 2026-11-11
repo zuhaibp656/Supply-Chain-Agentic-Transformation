@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: scrap_defect_root_cause_agent
+  display_name: "RCA & CAPA Copilot"
+  build_tier: "Hybrid"
+  category: "03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance"
+  primary_persona: "Continuous Improvement Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_batch_process_parameter_correlations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.batch_process_parameter_correlations"
+      source_system: "MES Batch Execution Sensor Multivariate Telemetry"
+      protocol: "TimesFM / BigQuery ML Regression Engine"
+    - id: bq_supply_chain_twin_scada_setpoint_recommendations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.scada_setpoint_recommendations"
+      source_system: "SCADA / Rockwell FactoryTalk Recipe Setpoint Bridge"
+      protocol: "EtherNet/IP / OPC UA Setpoint Writeback"
+    - id: bq_supply_chain_twin_scrap_financial_cost_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.scrap_financial_cost_ledger"
+      source_system: "SAP S/4HANA Controlling (CO) Scrap & Yield Variance Ledger"
+      protocol: "BAPI_ACC_DOCUMENT_POST / OData v4"
+    - id: bq_supply_chain_twin_scrap_loss_pareto_records
+      uri: "bq://zuhaibp-ai.supply_chain_twin.scrap_loss_pareto_records"
+      source_system: "Siemens Opcenter MES Scrap Loss Pareto Lake"
+      protocol: "BigQuery Analytics / OPC UA Machine Telemetry"
+  data_source_tools:
+    - inspect_mes_scada_scrap_defect_root_cause_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_mes_scada_batch_process_parameter_correlations
+    - query_mes_scada_scada_setpoint_recommendations
+    - query_sap_s4hana_scrap_financial_cost_ledger
+    - query_mes_scada_scrap_loss_pareto_records
+    - query_scrap_loss_pareto_records
+    - query_batch_process_parameter_correlations
+    - query_scrap_financial_cost_ledger
+    - query_scada_setpoint_recommendations
+    - run_scrap_defect_root_cause_constraint_and_variance_solver
+    - render_scrap_defect_root_cause_a2ui_chart_and_canvas
+    - draft_scrap_defect_root_cause_stakeholder_decision_memo
+    - export_scrap_loss_pareto_records_csv_to_gcs
+    - publish_scrap_defect_root_cause_interactive_cockpit_to_gcs
+    - action_update_scada_recipe_setpoints
+    - action_post_scrap_variance_adjustment
+  starter_prompts:
+    - "Why did scrap and customer quality complaints spike recently\u2014does the pattern trace back to a specific raw ingredient supplier lot, shift, or machine setting?"
+    - "Show me a chart correlating defect and complaint rates across ingredient lots and machine operating conditions to pinpoint the primary root cause."
+    - "Draft a plain-English root-cause and corrective action report for Quality and Plant Engineering explaining what caused the defect spike and how to prevent recurrence."
+    - "Go ahead and open the formal corrective and preventive action workflow tied to the identified root-cause lot and machine setting."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

@@ -1,0 +1,65 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: rti_balance_reconciler
+  display_name: "RTI Balance Reconciler"
+  build_tier: "Low-Code"
+  category: "06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation"
+  primary_persona: "Asset Recovery / RTI Manager"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_chep_peco_rental_and_lost_fee_tariffs
+      uri: "bq://zuhaibp-ai.supply_chain_twin.chep_peco_rental_and_lost_fee_tariffs"
+      source_system: "Pooler Daily Demurrage & Lost-Asset Replacement Tariffs"
+      protocol: "SQL / CLM"
+    - id: bq_supply_chain_twin_retailer_distributor_rti_balances
+      uri: "bq://zuhaibp-ai.supply_chain_twin.retailer_distributor_rti_balances"
+      source_system: "Customer & Distributor RTI Custody Balance Subledger"
+      protocol: "EDI 856 / SQL"
+    - id: bq_supply_chain_twin_rti_pool_dispatch_and_return_scans
+      uri: "bq://zuhaibp-ai.supply_chain_twin.rti_pool_dispatch_and_return_scans"
+      source_system: "RFID / BLE Pooled Asset Dispatch & Return Scan Stream"
+      protocol: "EPCIS 2.0 / REST"
+    - id: bq_supply_chain_twin_rti_reclamation_and_sweep_orders
+      uri: "bq://zuhaibp-ai.supply_chain_twin.rti_reclamation_and_sweep_orders"
+      source_system: "Empty Trailer Backhaul Sweep & Deposit Debit Queue"
+      protocol: "REST / TMS API"
+  data_source_tools:
+    - inspect_iot_telematics_rti_balance_reconciler_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_chep_ifco_chep_peco_rental_and_lost_fee_tariffs
+    - query_partner_rti_retailer_distributor_rti_balances
+    - query_iot_telematics_rti_pool_dispatch_and_return_scans
+    - query_tms_rti_reclamation_and_sweep_orders
+    - query_rti_dispatch_return_scans
+    - query_retailer_rti_custody_balances
+    - query_rti_demurrage_and_lost_tariffs
+    - query_rti_reclamation_sweep_orders
+    - query_rfid_dock_portal_pallet_scan_telemetry
+    - fetch_chep_and_peco_reusable_asset_master_ledger
+    - query_retail_customer_unreturned_pallet_dwell_days
+    - analyze_rti_demurrage_and_sweep_roi
+    - run_rti_demurrage_and_reverse_reclamation_solver
+    - render_rti_balance_reconciler_a2ui_chart_and_canvas
+    - draft_rti_custody_reconciliation_and_debit_notice
+    - export_pallet_reconciliation_csv_and_memo
+    - publish_rti_balance_reconciler_interactive_cockpit_to_gcs
+    - action_book_tms_empty_rti_backhaul_sweep
+    - action_issue_unreturned_rti_deposit_debit
+    - commit_unreturned_pallet_chargeback_to_sap_billing
+  starter_prompts:
+    - "Audit reusable transport items\u2014such as pallets, plastic crates, and roll cages\u2014across our distribution hubs in Bhiwandi, Dharuhera, and Bengaluru. Identify unreturned pallet balances accumulating at retail customer fulfillment centers beyond agreed dwell periods, calculate demurrage liabilities, and output a customer asset reconciliation table."
+    - "Generate an interactive reusable asset velocity loop and unreturned dwell time chart highlighting customer facilities with severe pallet retention delays and missing asset fees."
+    - "Draft an executive reusable asset audit memorandum and interactive full-screen pallet reconciliation dossier for Logistics and Billing leadership detailing outstanding pallet counts, collection orders, and recovery chargebacks."
+    - "Please issue the reusable asset reconciliation notice and return pickup request for the partner node holding the largest overdue container balance."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

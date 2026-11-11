@@ -1,0 +1,62 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: atp_order_promising_agent
+  display_name: "SFS / BOPIS Sourcing"
+  build_tier: "Hybrid"
+  category: "04 \u00b7 Inventory & Warehousing \u2014 Omnichannel Visibility"
+  primary_persona: "Omnichannel Fulfillment Dir."
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_customer_tier_sla_commitments
+      uri: "bq://zuhaibp-ai.supply_chain_twin.customer_tier_sla_commitments"
+      source_system: "SAP S/4HANA Sales & Distribution Customer Allocation Ledger"
+      protocol: "OData v4 / Real-Time Tier Quota Guard"
+    - id: bq_supply_chain_twin_inbound_customer_order_requests
+      uri: "bq://zuhaibp-ai.supply_chain_twin.inbound_customer_order_requests"
+      source_system: "Enterprise OMS / EDI 850 Order Ingestion Event Stream"
+      protocol: "Cloud Pub/Sub / Kafka / Sub-Second Order Event Capture"
+    - id: bq_supply_chain_twin_order_promising_routing_decisions
+      uri: "bq://zuhaibp-ai.supply_chain_twin.order_promising_routing_decisions"
+      source_system: "Google OR-Tools Omnichannel Sourcing & Promising Optimizer"
+      protocol: "REST API / Cost-to-Serve & SLA Fulfillment Router"
+    - id: bq_supply_chain_twin_realtime_sku_atp_allocations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.realtime_sku_atp_allocations"
+      source_system: "Google Cloud Spanner Global Real-Time ATP / CTP Engine"
+      protocol: "Spanner gRPC / Sub-20ms Strong Consistency Query"
+  data_source_tools:
+    - inspect_cloud_spanner_atp_order_promising_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_edi_docai_inbound_customer_order_requests
+    - query_fulfillment_routing_order_promising_routing_decisions
+    - query_realtime_sku_atp_allocations
+    - query_customer_tier_sla_commitments
+    - query_inbound_customer_order_requests
+    - query_order_promising_routing_decisions
+    - query_cloud_spanner_realtime_sku_atp_pool
+    - fetch_salesforce_commerce_cloud_omnichannel_orders
+    - query_sap_s4hana_customer_tier_sla_quotas
+    - run_omnichannel_fulfillment_cost_and_split_order_solver
+    - render_atp_order_promising_a2ui_chart_and_canvas
+    - draft_atp_order_promising_stakeholder_decision_memo
+    - export_order_fulfillment_routing_csv_and_memo
+    - publish_atp_order_promising_interactive_cockpit_to_gcs
+    - action_commit_dynamic_order_promise
+    - action_protect_tier1_allocation_reserve
+    - commit_hard_allocation_reservation_in_spanner
+  starter_prompts:
+    - "Evaluate incoming high-priority retail orders across our fulfillment centers in Bhiwandi, Delhi NCR, and Bengaluru. Determine optimal order routing between mother godowns, carrying and forwarding depots, and dark stores to eliminate split shipments while protecting delivery promises."
+    - "Render an interactive omnichannel fulfillment cost and routing matrix chart comparing delivery speed and margin impact across alternate fulfillment nodes."
+    - "Draft an omnichannel order promising executive memo and interactive full-screen order routing brief for Customer Operations leadership outlining fulfillment decisions and delivery protections."
+    - "Please apply the optimized fulfillment node routing rule for our highest-cost e-commerce order cluster."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

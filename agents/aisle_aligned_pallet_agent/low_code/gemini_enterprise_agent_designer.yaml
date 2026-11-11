@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: aisle_aligned_pallet_agent
+  display_name: "Aisle-Aligned Pallet"
+  build_tier: "High-Code"
+  category: "05 \u00b7 Distribution & Logistics \u2014 Store Replenishment"
+  primary_persona: "Outbound Lead / Industrial Eng."
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_case_crush_and_stacking_physics
+      uri: "bq://zuhaibp-ai.supply_chain_twin.case_crush_and_stacking_physics"
+      source_system: "SKU Case Crush Index & Stacking Physics Matrix"
+      protocol: "SQL / CAD Twin"
+    - id: bq_supply_chain_twin_pallet_layer_build_sequences
+      uri: "bq://zuhaibp-ai.supply_chain_twin.pallet_layer_build_sequences"
+      source_system: "Robotic & Voice-Pick Layer Build Sequencer"
+      protocol: "OPC-UA / REST"
+    - id: bq_supply_chain_twin_retail_store_aisle_bay_planograms
+      uri: "bq://zuhaibp-ai.supply_chain_twin.retail_store_aisle_bay_planograms"
+      source_system: "Retailer Store-Specific Aisle & Bay Planogram Engine"
+      protocol: "REST / Planogram XML"
+    - id: bq_supply_chain_twin_store_order_case_lines
+      uri: "bq://zuhaibp-ai.supply_chain_twin.store_order_case_lines"
+      source_system: "WMS Store Replenishment Case Pick Queue"
+      protocol: "REST / OData v4"
+  data_source_tools:
+    - inspect_wms_aisle_aligned_pallet_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_pack_engineering_case_crush_and_stacking_physics
+    - query_amrs_palletizer_pallet_layer_build_sequences
+    - query_blueyonder_store_retail_store_aisle_bay_planograms
+    - query_wms_store_order_case_lines
+    - query_store_order_case_lines
+    - query_retail_store_planograms
+    - query_case_crush_stacking_physics
+    - query_pallet_layer_build_sequences
+    - analyze_aisle_pallet_layer_physics
+    - render_aisle_aligned_pallet_a2ui_chart_and_canvas
+    - draft_store_ready_pallet_manifest
+    - export_store_order_case_lines_csv_to_gcs
+    - publish_aisle_aligned_pallet_interactive_cockpit_to_gcs
+    - action_release_palletizer_layer_sequence
+    - action_update_sku_top_cap_stack_rule
+  starter_prompts:
+    - "How can we build store-bound pallets by supermarket aisle layout and crush strength so store crews spend far less time sorting boxes and fragile items never get crushed?"
+    - "Plot a chart comparing store restocking labor minutes and case-damage rates between standard mixed pallets and aisle-aligned pallet builds."
+    - "Draft a practical outbound pallet-building brief for Distribution Center and Store Ops leads showing the stability, damage reduction, and store labor savings."
+    - "Please activate the store aisle-aligned pallet stacking sequence for our upcoming retail replenishment wave."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

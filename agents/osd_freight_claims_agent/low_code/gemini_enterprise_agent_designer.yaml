@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: osd_freight_claims_agent
+  display_name: "OS&D Freight Claims"
+  build_tier: "Low-Code"
+  category: "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt"
+  primary_persona: "Claims Specialist / Controller"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_carrier_carmack_liability_rules
+      uri: "bq://zuhaibp-ai.supply_chain_twin.carrier_carmack_liability_rules"
+      source_system: "Carmack Amendment & Carrier Limitation-of-Liability Matrix"
+      protocol: "SQL / CLM Rules"
+    - id: bq_supply_chain_twin_dock_osd_exception_inspections
+      uri: "bq://zuhaibp-ai.supply_chain_twin.dock_osd_exception_inspections"
+      source_system: "Receiving Dock OS&D Exception & Photo Evidence Portal"
+      protocol: "Vision AI / REST"
+    - id: bq_supply_chain_twin_inbound_outbound_ebol_manifests
+      uri: "bq://zuhaibp-ai.supply_chain_twin.inbound_outbound_ebol_manifests"
+      source_system: "Electronic Bill of Lading (eBOL) & Seal Registry"
+      protocol: "EDI 211 / 856 / REST"
+    - id: bq_supply_chain_twin_osd_carrier_claim_dossiers
+      uri: "bq://zuhaibp-ai.supply_chain_twin.osd_carrier_claim_dossiers"
+      source_system: "Carrier OS&D Claim Filing & Recovery Ledger"
+      protocol: "EDI 920 / Portal API"
+  data_source_tools:
+    - inspect_tms_osd_freight_claims_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_tms_carrier_carmack_liability_rules
+    - query_wms_dock_osd_exception_inspections
+    - query_tms_inbound_outbound_ebol_manifests
+    - query_tms_osd_carrier_claim_dossiers
+    - query_ebol_seal_manifests
+    - query_dock_osd_inspections
+    - query_carmack_liability_rules
+    - query_osd_claim_dossiers
+    - analyze_carmack_liability_and_recovery
+    - render_osd_freight_claims_a2ui_chart_and_canvas
+    - draft_carmack_osd_freight_claim_packet
+    - export_osd_carrier_claim_dossiers_csv_to_gcs
+    - publish_osd_freight_claims_interactive_cockpit_to_gcs
+    - action_transmit_edi920_carrier_claim
+    - action_trigger_origin_dc_slc_audit
+  starter_prompts:
+    - "Which recent shipments arrived with crushed pallets, wet cartons, or missing cases at the receiving dock, and do we have the signed delivery receipts and photos needed to win carrier claims?"
+    - "Show me a chart comparing damaged and short-shipped cargo value by carrier and lane alongside claim recovery readiness."
+    - "Prepare a complete cargo-damage claim summary for Claims and Finance listing the documented losses, carrier liability evidence, and filing deadlines."
+    - "Please transmit the documented freight damage claim package for our largest verified carrier loss before the filing window closes."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

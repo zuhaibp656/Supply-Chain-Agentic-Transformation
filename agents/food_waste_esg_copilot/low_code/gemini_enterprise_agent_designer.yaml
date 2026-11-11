@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: food_waste_esg_copilot
+  display_name: "Food Waste & ESG Copilot"
+  build_tier: "Low-Code"
+  category: "06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns"
+  primary_persona: "Chief Sustainability Officer"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_anaerobic_digestion_and_compost_rates
+      uri: "bq://zuhaibp-ai.supply_chain_twin.anaerobic_digestion_and_compost_rates"
+      source_system: "Landfill Tipping vs. Digester/Feed Hauling Economics"
+      protocol: "SQL / ESG Ledger"
+    - id: bq_supply_chain_twin_epa_hierarchy_diversion_partners
+      uri: "bq://zuhaibp-ai.supply_chain_twin.epa_hierarchy_diversion_partners"
+      source_system: "Certified Upcycling, Feed & Anaerobic Digester Registry"
+      protocol: "REST / Permit API"
+    - id: bq_supply_chain_twin_facility_organic_spoilage_streams
+      uri: "bq://zuhaibp-ai.supply_chain_twin.facility_organic_spoilage_streams"
+      source_system: "Plant & DC Organic Spoilage Weighbridge Stream"
+      protocol: "OPC-UA / SQL"
+    - id: bq_supply_chain_twin_zero_waste_scope3_impact_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.zero_waste_scope3_impact_ledger"
+      source_system: "CSRD ESRS E5 & Scope 3 Cat 5 Methane Avoidance Ledger"
+      protocol: "SQL / Audit Trail"
+  data_source_tools:
+    - inspect_mes_scada_food_waste_esg_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_circular_economics_anaerobic_digestion_and_compost_rates
+    - query_epa_upcycling_epa_hierarchy_diversion_partners
+    - query_mes_scada_facility_organic_spoilage_streams
+    - query_csrd_esrs_zero_waste_scope3_impact_ledger
+    - query_facility_organic_spoilage_streams
+    - query_epa_diversion_partners
+    - query_digestion_and_compost_economics
+    - query_zero_waste_scope3_ledger
+    - analyze_epa_hierarchy_waste_diversion
+    - render_food_waste_esg_a2ui_chart_and_canvas
+    - draft_csrd_esrs_e5_circularity_disclosure
+    - export_zero_waste_scope3_impact_csv_to_gcs
+    - publish_food_waste_esg_interactive_cockpit_to_gcs
+    - action_dispatch_circular_depackaging_load
+    - action_post_scope3_cat5_methane_credit
+  starter_prompts:
+    - "How much unsellable organic and food waste are our stores and hubs diverting away from landfills into donation, animal feed, composting, or bio-energy, and how does that reduce emissions?"
+    - "Create a chart comparing organic waste tonnage diverted by recovery pathway and the resulting greenhouse-gas emissions avoided across facilities."
+    - "Prepare an audit-ready sustainability summary for our Chief Sustainability Officer covering landfill diversion rates, avoided emissions, and verified hauler manifests."
+    - "Go ahead and lock the verified quarterly organic diversion and emissions report entry for our audited facilities."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

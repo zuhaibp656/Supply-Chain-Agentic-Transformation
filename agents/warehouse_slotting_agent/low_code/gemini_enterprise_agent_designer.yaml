@@ -1,0 +1,62 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: warehouse_slotting_agent
+  display_name: "Dynamic Slotting Agent"
+  build_tier: "High-Code"
+  category: "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations"
+  primary_persona: "DC Operations Mgr / IE Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_amr_picker_travel_telemetry
+      uri: "bq://zuhaibp-ai.supply_chain_twin.amr_picker_travel_telemetry"
+      source_system: "KION / Dematic Autonomous Mobile Robot (AMR) Swarm Controller"
+      protocol: "VDA 5050 / WebSocket / Real-Time Travel Telemetry"
+    - id: bq_supply_chain_twin_slot_reassignment_recommendations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.slot_reassignment_recommendations"
+      source_system: "OSHA Ergonomic Golden Zone & Replenishment Task Ledger"
+      protocol: "PostgreSQL / REST / Golden Zone Biometrics"
+    - id: bq_supply_chain_twin_warehouse_slotting_velocity_tiers
+      uri: "bq://zuhaibp-ai.supply_chain_twin.warehouse_slotting_velocity_tiers"
+      source_system: "SAP EWM / Warehouse Management System (WMS) 3D Slotting & Heatmap Module"
+      protocol: "REST / OpenAPI v3 / Dynamic Velocity Slotting"
+    - id: bq_supply_chain_twin_wave_release_order_allocations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.wave_release_order_allocations"
+      source_system: "Blue Yonder / Manhattan Wave Planning & Release Sequencer"
+      protocol: "REST API / Event Stream / Real-Time Aisle Throttle"
+  data_source_tools:
+    - inspect_sap_ewm_warehouse_slotting_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_kion_amr_amr_picker_travel_telemetry
+    - query_ergonomic_pick_slot_reassignment_recommendations
+    - query_warehouse_slotting_velocity_tiers
+    - query_amr_picker_travel_telemetry
+    - query_wave_release_order_allocations
+    - query_slot_reassignment_recommendations
+    - query_sap_ewm_slot_locations_and_velocity
+    - fetch_amr_robot_and_picker_travel_telemetry
+    - query_wms_wave_release_order_queue
+    - run_3d_golden_zone_slotting_and_travel_reduction_solver
+    - render_warehouse_slotting_a2ui_chart_and_canvas
+    - draft_warehouse_slotting_stakeholder_decision_memo
+    - export_warehouse_rack_elevation_csv_and_memo
+    - publish_warehouse_slotting_interactive_cockpit_to_gcs
+    - action_execute_slot_reassignment
+    - action_balance_wave_release_profile
+    - commit_slot_moves_to_sap_ewm
+  starter_prompts:
+    - "Re-slot our high-bay automated warehouse in Bhiwandi (Mumbai) by evaluating product order velocity, carton dimensions, and worker travel paths. Identify fast-moving items trapped in upper rack tiers, calculate travel distance reduction, and output an actionable slot-move schedule."
+    - "Generate an interactive 3D warehouse rack elevation and velocity heatmap visual showing SKU positioning across golden picking zones, overhead storage, and aisle congestion tiers."
+    - "Draft a warehouse operations briefing note and interactive full-screen slotting visualizer for the DC General Manager detailing labor travel hours saved, ergonomic improvements, and wave completion speedups."
+    - "Go ahead and queue the off-peak bin re-slotting moves for our top velocity mis-slotted items."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

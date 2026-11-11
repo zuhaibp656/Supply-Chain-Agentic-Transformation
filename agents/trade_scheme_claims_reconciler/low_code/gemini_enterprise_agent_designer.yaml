@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: trade_scheme_claims_reconciler
+  display_name: "Deduction Audit Agent"
+  build_tier: "Low-Code"
+  category: "01 \u00b7 Planning & Strategy \u2014 Trade Promotion"
+  primary_persona: "Revenue / Trade Finance Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_active_trade_promotion_schemes
+      uri: "bq://zuhaibp-ai.supply_chain_twin.active_trade_promotion_schemes"
+      source_system: "Enterprise Trade Promotion Management (TPM) Circular & Slab Rule Engine"
+      protocol: "REST / JSON"
+    - id: bq_supply_chain_twin_claim_anomaly_audit_findings
+      uri: "bq://zuhaibp-ai.supply_chain_twin.claim_anomaly_audit_findings"
+      source_system: "BigQuery ML Anomaly & Split-Invoice Leakage Detector"
+      protocol: "BigQuery SQL"
+    - id: bq_supply_chain_twin_distributor_secondary_claim_submissions
+      uri: "bq://zuhaibp-ai.supply_chain_twin.distributor_secondary_claim_submissions"
+      source_system: "Distributor Secondary Billing & Scheme Claim Submission Portal"
+      protocol: "OData / REST"
+    - id: bq_supply_chain_twin_sap_fi_credit_note_settlements
+      uri: "bq://zuhaibp-ai.supply_chain_twin.sap_fi_credit_note_settlements"
+      source_system: "SAP S/4HANA FI Accounts Receivable Automated Credit Memo BAPI"
+      protocol: "RFC / OData v4"
+  data_source_tools:
+    - inspect_trade_scheme_trade_scheme_claims_reconciler_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_trade_scheme_active_trade_promotion_schemes
+    - query_bigquery_claim_anomaly_audit_findings
+    - query_dms_secondary_distributor_secondary_claim_submissions
+    - query_sap_s4hana_sap_fi_credit_note_settlements
+    - query_active_trade_promotion_schemes
+    - query_distributor_secondary_claim_submissions
+    - query_claim_anomaly_audit_findings
+    - query_sap_fi_credit_note_settlements
+    - run_trade_scheme_claims_reconciler_constraint_and_variance_solver
+    - render_trade_scheme_claims_reconciler_a2ui_chart_and_canvas
+    - draft_trade_scheme_claims_reconciler_stakeholder_decision_memo
+    - export_sap_fi_credit_note_csv_to_gcs
+    - publish_trade_scheme_claims_reconciler_interactive_cockpit_to_gcs
+    - action_flag_phantom_invoice_for_audit_hold
+    - action_post_sap_fi_trade_credit_note
+  starter_prompts:
+    - "Can you review our open retailer promotional deduction claims and tell me which claims match verified store promotions versus unauthorized over-deductions we should dispute?"
+    - "Generate a chart comparing claimed retailer deductions against verified promotional performance across accounts so I can see where leakage is highest."
+    - "Draft a clear deduction audit memo for Finance and Sales detailing the invalid claims uncovered, the recoverable dollar amount, and our dispute plan."
+    - "Please submit the formal dispute claim for the largest unauthorized retailer deduction and clear the verified portion for settlement."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

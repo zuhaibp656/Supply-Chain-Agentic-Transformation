@@ -1,0 +1,623 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "RTI Balance Reconciler \u2014 Data-Source Connector & Solver API",
+    "version": "2.0.0",
+    "description": "Declarative OpenAPI 3.0.3 tool definitions for RTI Balance Reconciler (Low-Code Tier) mapped 1-to-1 to actual enterprise data sources."
+  },
+  "servers": [
+    {
+      "url": "https://sc-enterprise-portal-zuhaibp-ai.a.run.app"
+    }
+  ],
+  "paths": {
+    "/v1/agents/rti_balance_reconciler/tools/inspect_iot_telematics_rti_balance_reconciler_data_sources": {
+      "get": {
+        "operationId": "inspect_iot_telematics_rti_balance_reconciler_data_sources",
+        "summary": "Execute inspect iot telematics rti balance reconciler data sources on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/query_sap_s4hana_master_data_backbone": {
+      "get": {
+        "operationId": "query_sap_s4hana_master_data_backbone",
+        "summary": "Execute query sap s4hana master data backbone on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/query_chep_ifco_chep_peco_rental_and_lost_fee_tariffs": {
+      "get": {
+        "operationId": "query_chep_ifco_chep_peco_rental_and_lost_fee_tariffs",
+        "summary": "Execute query chep ifco chep peco rental and lost fee tariffs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/query_partner_rti_retailer_distributor_rti_balances": {
+      "get": {
+        "operationId": "query_partner_rti_retailer_distributor_rti_balances",
+        "summary": "Execute query partner rti retailer distributor rti balances on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/query_iot_telematics_rti_pool_dispatch_and_return_scans": {
+      "get": {
+        "operationId": "query_iot_telematics_rti_pool_dispatch_and_return_scans",
+        "summary": "Execute query iot telematics rti pool dispatch and return scans on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/query_tms_rti_reclamation_and_sweep_orders": {
+      "get": {
+        "operationId": "query_tms_rti_reclamation_and_sweep_orders",
+        "summary": "Execute query tms rti reclamation and sweep orders on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/query_rti_dispatch_return_scans": {
+      "get": {
+        "operationId": "query_rti_dispatch_return_scans",
+        "summary": "Execute query rti dispatch return scans on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/query_retailer_rti_custody_balances": {
+      "get": {
+        "operationId": "query_retailer_rti_custody_balances",
+        "summary": "Execute query retailer rti custody balances on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/query_rti_demurrage_and_lost_tariffs": {
+      "get": {
+        "operationId": "query_rti_demurrage_and_lost_tariffs",
+        "summary": "Execute query rti demurrage and lost tariffs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/query_rti_reclamation_sweep_orders": {
+      "get": {
+        "operationId": "query_rti_reclamation_sweep_orders",
+        "summary": "Execute query rti reclamation sweep orders on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/query_rfid_dock_portal_pallet_scan_telemetry": {
+      "get": {
+        "operationId": "query_rfid_dock_portal_pallet_scan_telemetry",
+        "summary": "Execute query rfid dock portal pallet scan telemetry on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/fetch_chep_and_peco_reusable_asset_master_ledger": {
+      "get": {
+        "operationId": "fetch_chep_and_peco_reusable_asset_master_ledger",
+        "summary": "Execute fetch chep and peco reusable asset master ledger on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/query_retail_customer_unreturned_pallet_dwell_days": {
+      "get": {
+        "operationId": "query_retail_customer_unreturned_pallet_dwell_days",
+        "summary": "Execute query retail customer unreturned pallet dwell days on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/analyze_rti_demurrage_and_sweep_roi": {
+      "get": {
+        "operationId": "analyze_rti_demurrage_and_sweep_roi",
+        "summary": "Execute analyze rti demurrage and sweep roi on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/run_rti_demurrage_and_reverse_reclamation_solver": {
+      "get": {
+        "operationId": "run_rti_demurrage_and_reverse_reclamation_solver",
+        "summary": "Execute run rti demurrage and reverse reclamation solver on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/render_rti_balance_reconciler_a2ui_chart_and_canvas": {
+      "get": {
+        "operationId": "render_rti_balance_reconciler_a2ui_chart_and_canvas",
+        "summary": "Execute render rti balance reconciler a2ui chart and canvas on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/draft_rti_custody_reconciliation_and_debit_notice": {
+      "get": {
+        "operationId": "draft_rti_custody_reconciliation_and_debit_notice",
+        "summary": "Execute draft rti custody reconciliation and debit notice on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/export_pallet_reconciliation_csv_and_memo": {
+      "get": {
+        "operationId": "export_pallet_reconciliation_csv_and_memo",
+        "summary": "Execute export pallet reconciliation csv and memo on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/publish_rti_balance_reconciler_interactive_cockpit_to_gcs": {
+      "get": {
+        "operationId": "publish_rti_balance_reconciler_interactive_cockpit_to_gcs",
+        "summary": "Execute publish rti balance reconciler interactive cockpit to gcs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/action_book_tms_empty_rti_backhaul_sweep": {
+      "post": {
+        "operationId": "action_book_tms_empty_rti_backhaul_sweep",
+        "summary": "Execute action book tms empty rti backhaul sweep on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/action_issue_unreturned_rti_deposit_debit": {
+      "post": {
+        "operationId": "action_issue_unreturned_rti_deposit_debit",
+        "summary": "Execute action issue unreturned rti deposit debit on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/rti_balance_reconciler/tools/commit_unreturned_pallet_chargeback_to_sap_billing": {
+      "post": {
+        "operationId": "commit_unreturned_pallet_chargeback_to_sap_billing",
+        "summary": "Execute commit unreturned pallet chargeback to sap billing on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

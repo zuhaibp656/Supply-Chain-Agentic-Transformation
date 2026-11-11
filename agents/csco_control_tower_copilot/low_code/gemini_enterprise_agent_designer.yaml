@@ -1,0 +1,67 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: csco_control_tower_copilot
+  display_name: "Executive Copilot"
+  build_tier: "Low-Code"
+  category: "01 \u00b7 Planning & Strategy \u2014 S&OP / IBP"
+  primary_persona: "IBP Lead / Chief Planning Off."
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_cross_erp_order_backlog
+      uri: "bq://zuhaibp-ai.supply_chain_twin.cross_erp_order_backlog"
+      source_system: "SAP S/4HANA Enterprise Resource Planning (ERP)"
+      protocol: "OData v4 / RFC / CDC PubSub"
+    - id: bq_supply_chain_twin_executive_playbooks
+      uri: "bq://zuhaibp-ai.supply_chain_twin.executive_playbooks"
+      source_system: "CSCO Executive Decision & Playbook Engine"
+      protocol: "REST API / Event Driven Webhook"
+    - id: bq_supply_chain_twin_multiechelon_twin_status
+      uri: "bq://zuhaibp-ai.supply_chain_twin.multiechelon_twin_status"
+      source_system: "BigQuery Multi-Echelon Enterprise Digital Twin"
+      protocol: "BigQuery SQL / Vertex AI Feature Store"
+    - id: bq_supply_chain_twin_network_bottlenecks
+      uri: "bq://zuhaibp-ai.supply_chain_twin.network_bottlenecks"
+      source_system: "BigQuery Multi-Echelon Enterprise Digital Twin"
+      protocol: "BigQuery SQL / Vertex AI Feature Store"
+    - id: bq_supply_chain_twin_sc_kpi_summary
+      uri: "bq://zuhaibp-ai.supply_chain_twin.sc_kpi_summary"
+      source_system: "Google Looker Semantic Metric Governance Layer"
+      protocol: "LookML semantic API"
+  data_source_tools:
+    - inspect_bigquery_csco_control_tower_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_executive_orchestrator_executive_playbooks
+    - query_bigquery_network_bottlenecks
+    - query_looker_governance_sc_kpi_summary
+    - query_executive_kpis
+    - query_network_bottlenecks
+    - query_multiechelon_twin_status
+    - query_cross_erp_order_backlog
+    - query_sap_s4hana_enterprise_kpis_and_backlog
+    - fetch_bigquery_multiechelon_digital_twin_telemetry
+    - query_oracle_otm_and_wms_critical_milestones
+    - run_control_tower_bottleneck_and_margin_diagnostic
+    - render_csco_control_tower_a2ui_chart_and_canvas
+    - draft_csco_control_tower_stakeholder_decision_memo
+    - export_csco_executive_board_memo_and_csv
+    - publish_csco_control_tower_interactive_cockpit_to_gcs
+    - action_execute_executive_playbook
+    - action_rebalance_network_allocation
+    - commit_executive_consensus_directives_and_escalations
+  starter_prompts:
+    - "Provide an executive health audit across our primary operating hubs in India (Bhiwandi, Haridwar, Bengaluru, and Pune). Identify our top operational choke points, calculate total revenue at risk, and output an executive bottleneck matrix."
+    - "Generate an interactive multi-echelon supply chain risk radar and operational health visualization illustrating On-Time In-Full (OTIF) compliance, manufacturing bottlenecks, and inventory buffer health across all operating regions."
+    - "Draft an executive board briefing memo and interactive full-screen CSCO cockpit summarizing our critical operational decisions, working capital unlocks, and recommended cross-functional directives."
+    - "Please record executive sign-off on the top priority cross-functional action item and route the directive to the owning teams."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: multimodal_mode_shift_agent
+  display_name: "Courier Allocation"
+  build_tier: "High-Code"
+  category: "05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery"
+  primary_persona: "E-Commerce Logistics Dir."
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_dynamic_mode_split_recommendations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.dynamic_mode_split_recommendations"
+      source_system: "Google OR-Tools Multi-Modal Cost / Carbon / Stockout Pareto MILP"
+      protocol: "Python MILP SDK"
+    - id: bq_supply_chain_twin_factory_gate_outbound_pos
+      uri: "bq://zuhaibp-ai.supply_chain_twin.factory_gate_outbound_pos"
+      source_system: "SAP IBP & Cloud Spanner Downstream Hub Stockout Exposure Feed"
+      protocol: "OData v4 / Spanner SQL"
+    - id: bq_supply_chain_twin_in_transit_mode_diversion_triggers
+      uri: "bq://zuhaibp-ai.supply_chain_twin.in_transit_mode_diversion_triggers"
+      source_system: "Dubai / LAX / Singapore Sea-Air Transshipment Hub Orchestrator"
+      protocol: "EDI 315 / ONE Record"
+    - id: bq_supply_chain_twin_multimodal_corridor_rate_tariff_matrix
+      uri: "bq://zuhaibp-ai.supply_chain_twin.multimodal_corridor_rate_tariff_matrix"
+      source_system: "CargoWise & Xeneta Multi-Modal Spot/Contract Tariff & Transit Matrix"
+      protocol: "REST API"
+  data_source_tools:
+    - inspect_ortools_multimodal_mode_shift_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_ortools_dynamic_mode_split_recommendations
+    - query_sap_ibp_factory_gate_outbound_pos
+    - query_mid_route_in_transit_mode_diversion_triggers
+    - query_global_corridor_multimodal_corridor_rate_tariff_matrix
+    - query_factory_gate_outbound_pos
+    - query_multimodal_corridor_rate_tariff_matrix
+    - query_dynamic_mode_split_recommendations
+    - query_in_transit_mode_diversion_triggers
+    - run_multimodal_mode_shift_constraint_and_variance_solver
+    - render_multimodal_mode_shift_a2ui_chart_and_canvas
+    - draft_multimodal_mode_shift_stakeholder_decision_memo
+    - export_multimodal_corridor_rate_tariff_csv_to_gcs
+    - publish_multimodal_mode_shift_interactive_cockpit_to_gcs
+    - action_execute_dynamic_mode_split_booking
+    - action_trigger_mid_route_sea_air_upgrade
+  starter_prompts:
+    - "Across today's outbound e-commerce and parcel shipments, how should we split volume between our own vans, regional parcel carriers, and gig couriers to hit delivery promises at the lowest cost?"
+    - "Plot a chart comparing per-package delivery cost and on-time performance across internal fleet, national parcel, and local courier options by delivery zone."
+    - "Draft a clear carrier allocation summary for E-Commerce Logistics explaining the recommended parcel split, peak surcharge avoidance, and total cost savings."
+    - "Please lock in the optimized carrier and courier allocation rules for today's outbound parcel wave."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

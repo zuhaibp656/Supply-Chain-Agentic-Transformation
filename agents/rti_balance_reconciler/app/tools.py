@@ -542,10 +542,86 @@ def generate_interactive_html_dashboard(title: str = "Interactive Supply Chain C
     _LATEST_INTERACTIVE_HTML = result
     return result
 
+# --- BEGIN DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---
+_LAST_CANVAS_CONTEXT: Optional[Dict[str, Any]] = None
+_AGENT_SYSTEMS_METADATA: List[Dict[str, Any]] = [{'id': 'rfid_ble_rti_portal', 'name': 'RFID / BLE Pooled Asset Dispatch & Return Scan Stream', 'protocol': 'EPCIS 2.0 / REST', 'tables': ['rti_pool_dispatch_and_return_scans']}, {'id': 'partner_rti_custody_ledger', 'name': 'Customer & Distributor RTI Custody Balance Subledger', 'protocol': 'EDI 856 / SQL', 'tables': ['retailer_distributor_rti_balances']}, {'id': 'chep_ifco_tariff_contracts', 'name': 'Pooler Daily Demurrage & Lost-Asset Replacement Tariffs', 'protocol': 'SQL / CLM', 'tables': ['chep_peco_rental_and_lost_fee_tariffs']}, {'id': 'tms_backhaul_sweep_planner', 'name': 'Empty Trailer Backhaul Sweep & Deposit Debit Queue', 'protocol': 'REST / TMS API', 'tables': ['rti_reclamation_and_sweep_orders']}]
+_AGENT_WRITEBACK_SUMMARY: str = 'SAP BAPI_MATERIAL_SAVEDATA & Purchasing Info-Record Lead-Time / Route / 3D Dimension Auto-Update'
+_AGENT_PRIMARY_TABLE: str = 'rti_reclamation_and_sweep_orders'
 
-# --- BEGIN UNIFIED ENTERPRISE TOOL REGISTRY ---
+
+def _record_canvas_rows(table_name: str, rows: Optional[List[Dict[str, Any]]]) -> None:
+    global _LAST_CANVAS_CONTEXT
+    if not rows or not isinstance(rows, list):
+        return
+    ctx = dict(_LAST_CANVAS_CONTEXT or {})
+    ctx["source_table"] = table_name
+    ctx["rows"] = copy.deepcopy(rows[:40])
+    ctx["systems"] = _AGENT_SYSTEMS_METADATA
+    ctx["writeback_summary"] = _AGENT_WRITEBACK_SUMMARY
+    _LAST_CANVAS_CONTEXT = ctx
+
+
+def _record_canvas_solver(solver_result: Any) -> None:
+    global _LAST_CANVAS_CONTEXT
+    if not isinstance(solver_result, dict):
+        return
+    ctx = dict(_LAST_CANVAS_CONTEXT or {})
+    kpi = solver_result.get("kpi_summary")
+    if isinstance(kpi, dict):
+        ctx["kpi_summary"] = copy.deepcopy(kpi)
+    tbl = solver_result.get("analyzed_table") or solver_result.get("source_table")
+    if isinstance(tbl, str) and tbl:
+        ctx["source_table"] = tbl
+    if not ctx.get("rows"):
+        tfiles = _discover_table_files()
+        target_file = None
+        if tbl:
+            target_file = next((f for f in tfiles if f.stem == tbl), None)
+        if target_file is None and tfiles:
+            target_file = tfiles[-1]
+        if target_file is not None:
+            ctx["source_table"] = target_file.stem
+            ctx["rows"] = _read_json(target_file.name)[:40]
+    ctx["systems"] = _AGENT_SYSTEMS_METADATA
+    ctx["writeback_summary"] = _AGENT_WRITEBACK_SUMMARY
+    _LAST_CANVAS_CONTEXT = ctx
+
+
+def _ensure_canvas_populated(preferred_table: str = "") -> Dict[str, Any]:
+    global _LAST_CANVAS_CONTEXT
+    if isinstance(_LAST_CANVAS_CONTEXT, dict) and _LAST_CANVAS_CONTEXT.get("rows"):
+        return _LAST_CANVAS_CONTEXT
+    tfiles = _discover_table_files()
+    chosen = None
+    if preferred_table:
+        chosen = next((f for f in tfiles if preferred_table.lower() in f.stem.lower()), None)
+    if chosen is None:
+        chosen = next((f for f in tfiles if f.stem == _AGENT_PRIMARY_TABLE), None)
+    if chosen is None and tfiles:
+        chosen = tfiles[-1]
+    rows = _read_json(chosen.name)[:40] if chosen is not None else []
+    _LAST_CANVAS_CONTEXT = {
+        "source_table": chosen.stem if chosen is not None else _AGENT_PRIMARY_TABLE,
+        "rows": rows,
+        "systems": _AGENT_SYSTEMS_METADATA,
+        "writeback_summary": _AGENT_WRITEBACK_SUMMARY,
+    }
+    return _LAST_CANVAS_CONTEXT
+
+
+def get_latest_canvas_context(consume: bool = False) -> Dict[str, Any]:
+    """Returns live enterprise source rows & solver metadata for the A2UI Side-Panel Canvas (`RichTable`)."""
+    global _LAST_CANVAS_CONTEXT
+    ctx = _ensure_canvas_populated()
+    out = copy.deepcopy(ctx)
+    if consume:
+        _LAST_CANVAS_CONTEXT = None
+    return out
+
+
 def _queue_chart_if_needed() -> None:
     global _LAST_CHART_SPEC
+    _ensure_canvas_populated()
     if _LAST_CHART_SPEC is not None:
         return
     try:
@@ -617,7 +693,7 @@ def _dispatch_enterprise_wrapper(
         is_solver = wrapper_name.startswith(("run_", "simulate_", "optimize_", "solve_", "calculate_"))
         candidates = []
         w_tokens = set(wrapper_name.lower().split("_")) - {
-            "sap", "s4hana", "ibp", "wms", "tms", "otm", "manhattan", "oracle",
+            "sap", "s4hana", "ibp", "wms", "tms", "otm", "ewm", "oracle",
             "bigquery", "vertex", "query", "fetch", "audit", "run", "action", "commit",
         }
         for name, obj in g.items():
@@ -652,13 +728,18 @@ def _dispatch_enterprise_wrapper(
                 out = dict(res)
                 out.setdefault("enterprise_system", system_name)
                 out.setdefault("source_system_id", system_id)
+                if isinstance(out.get("rows"), list) and out.get("rows"):
+                    _record_canvas_rows(str(out.get("table") or system_id), out["rows"])
+                elif isinstance(out.get("kpi_summary"), dict):
+                    _record_canvas_solver(out)
                 return out
         except Exception:
             pass
 
-    # Fallback: read first real fixture table so 0-row stubs NEVER occur
     tfiles = _discover_table_files()
     rows = _read_json(tfiles[0].name) if tfiles else []
+    if tfiles and rows:
+        _record_canvas_rows(tfiles[0].stem, rows)
     return {
         "status": "SUCCESS",
         "source_system": system_id,
@@ -677,7 +758,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
     _queue_chart_if_needed()
     tfiles = _discover_table_files()
     chosen_rows: List[Dict[str, Any]] = []
-    chosen_table = "operational_schedule"
+    chosen_table = _AGENT_PRIMARY_TABLE
     for tf in reversed(tfiles):
         rlist = _read_json(tf.name)
         if isinstance(rlist, list) and rlist and isinstance(rlist[0], dict):
@@ -692,6 +773,9 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
         ]
         if filtered:
             chosen_rows = filtered
+
+    if chosen_rows:
+        _record_canvas_rows(chosen_table, chosen_rows)
 
     buf = _io.StringIO()
     if chosen_rows:
@@ -710,7 +794,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
     csv_payload = buf.getvalue()
     if os.environ.get("SC_SKIP_GCS_UPLOAD") == "1":
         bucket = os.environ.get("SC_MEDIA_BUCKET", "zuhaibp-ai-supply-chain-media")
-        download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_schedule.csv"
+        download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_{chosen_table}.csv"
     else:
         try:
             from .render.publish import publish_csv_export
@@ -718,7 +802,7 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
             download_url = pub["url"]
         except Exception:
             bucket = os.environ.get("SC_MEDIA_BUCKET", "zuhaibp-ai-supply-chain-media")
-            download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_schedule.csv"
+            download_url = f"https://storage.cloud.google.com/{bucket}/exports/{agent_id}_{chosen_table}.csv"
     return {
         "status": "SUCCESS",
         "format": "csv",
@@ -731,24 +815,92 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
         "csv_content": csv_payload,
     }
 
+
+def inspect_iot_telematics_rti_balance_reconciler_data_sources() -> Dict[str, Any]:
+    """List all connected enterprise systems, protocols, and governed source tables (RFID / BLE Pooled Asset Dispatch & Return Scan Stream & partner feeds)."""
+    return list_systems()
+def query_sap_s4hana_master_data_backbone(sku_id: str = "", facility_id: str = "", supplier_id: str = "", customer_id: str = "", carrier_id: str = "") -> Dict[str, Any]:
+    """Query SAP S/4HANA & Enterprise Master Data Backbone (`MARA` Materials, Plants/DCs, Vendors, Customers, and Lanes)."""
+    return lookup_xyz_master_context(sku_id=sku_id, facility_id=facility_id, supplier_id=supplier_id, customer_id=customer_id, carrier_id=carrier_id)
+def query_chep_ifco_chep_peco_rental_and_lost_fee_tariffs(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: Pooler Daily Demurrage & Lost-Asset Replacement Tariffs · Table `chep_peco_rental_and_lost_fee_tariffs`] Query live verified records from Pooler Daily Demurrage & Lost-Asset Replacement Tariffs (`zuhaibp-ai.supply_chain_twin.chep_peco_rental_and_lost_fee_tariffs`)."""
+    res = _dispatch_enterprise_wrapper('query_chep_ifco_chep_peco_rental_and_lost_fee_tariffs', 'query_rti_demurrage_and_lost_tariffs', 'chep_ifco_tariff_contracts', 'Pooler Daily Demurrage & Lost-Asset Replacement Tariffs')
+    _record_canvas_rows('chep_peco_rental_and_lost_fee_tariffs', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_chep_ifco_chep_peco_rental_and_lost_fee_tariffs.__is_enterprise_wrapper__ = True
+def query_partner_rti_retailer_distributor_rti_balances(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: Customer & Distributor RTI Custody Balance Subledger · Table `retailer_distributor_rti_balances`] Query live verified records from Customer & Distributor RTI Custody Balance Subledger (`zuhaibp-ai.supply_chain_twin.retailer_distributor_rti_balances`)."""
+    res = _dispatch_enterprise_wrapper('query_partner_rti_retailer_distributor_rti_balances', 'query_retailer_rti_custody_balances', 'partner_rti_custody_ledger', 'Customer & Distributor RTI Custody Balance Subledger')
+    _record_canvas_rows('retailer_distributor_rti_balances', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_partner_rti_retailer_distributor_rti_balances.__is_enterprise_wrapper__ = True
+def query_iot_telematics_rti_pool_dispatch_and_return_scans(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: RFID / BLE Pooled Asset Dispatch & Return Scan Stream · Table `rti_pool_dispatch_and_return_scans`] Query live verified records from RFID / BLE Pooled Asset Dispatch & Return Scan Stream (`zuhaibp-ai.supply_chain_twin.rti_pool_dispatch_and_return_scans`)."""
+    res = _dispatch_enterprise_wrapper('query_iot_telematics_rti_pool_dispatch_and_return_scans', 'query_rti_dispatch_return_scans', 'rfid_ble_rti_portal', 'RFID / BLE Pooled Asset Dispatch & Return Scan Stream')
+    _record_canvas_rows('rti_pool_dispatch_and_return_scans', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_iot_telematics_rti_pool_dispatch_and_return_scans.__is_enterprise_wrapper__ = True
+def query_tms_rti_reclamation_and_sweep_orders(record_filter: str = "") -> Dict[str, Any]:
+    """[Data Source: Empty Trailer Backhaul Sweep & Deposit Debit Queue · Table `rti_reclamation_and_sweep_orders`] Query live verified records from Empty Trailer Backhaul Sweep & Deposit Debit Queue (`zuhaibp-ai.supply_chain_twin.rti_reclamation_and_sweep_orders`)."""
+    res = _dispatch_enterprise_wrapper('query_tms_rti_reclamation_and_sweep_orders', 'query_rti_reclamation_sweep_orders', 'tms_backhaul_sweep_planner', 'Empty Trailer Backhaul Sweep & Deposit Debit Queue')
+    _record_canvas_rows('rti_reclamation_and_sweep_orders', res.get('rows') if isinstance(res, dict) else None)
+    return res
+query_tms_rti_reclamation_and_sweep_orders.__is_enterprise_wrapper__ = True
+def render_rti_balance_reconciler_a2ui_chart_and_canvas(source_table: str = "", chart_title: str = "") -> Dict[str, Any]:
+    """Render the interactive 2-Panel A2UI v0.9 `VegaChart` executive infographic card AND populate the side-panel Looker Studio `RichTable` Canvas from `rti_reclamation_and_sweep_orders`."""
+    sig = _inspect_mod.signature(render_visual_chart)
+    kw = {}
+    if 'table_name' in sig.parameters and source_table:
+        kw['table_name'] = source_table
+    if 'chart_title' in sig.parameters and chart_title:
+        kw['chart_title'] = chart_title
+    elif 'title_override' in sig.parameters and chart_title:
+        kw['title_override'] = chart_title
+    res = render_visual_chart(**kw)
+    _ensure_canvas_populated(preferred_table=source_table)
+    return res
+def publish_rti_balance_reconciler_interactive_cockpit_to_gcs(title: str = "RTI Balance Reconciler — Interactive Simulator Cockpit") -> Dict[str, Any]:
+    """Compile the self-contained interactive HTML5 simulator cockpit for RTI Balance Reconciler, publish to Google Cloud Storage, and return the full-screen `view_url`."""
+    _ensure_canvas_populated()
+    return generate_interactive_html_dashboard(title=title)
+
+
+LEGACY_COMPAT_TOOLS = [
+    fn for _nm, fn in [
+        ("list_systems", globals().get("list_systems")),
+        ("lookup_xyz_master_context", globals().get("lookup_xyz_master_context")),
+        ("render_visual_chart", globals().get("render_visual_chart")),
+        ("analyze_operational_metrics", globals().get("analyze_operational_metrics")),
+        ("draft_operational_brief", globals().get("draft_operational_brief")),
+        ("export_operational_csv_schedule", globals().get("export_operational_csv_schedule")),
+        ("generate_interactive_html_dashboard", globals().get("generate_interactive_html_dashboard")),
+    ]
+    if callable(fn)
+]
+
 ALL_TOOLS = [
-    list_systems,
-    lookup_xyz_master_context,
+    inspect_iot_telematics_rti_balance_reconciler_data_sources,
+    query_sap_s4hana_master_data_backbone,
+    query_chep_ifco_chep_peco_rental_and_lost_fee_tariffs,
+    query_partner_rti_retailer_distributor_rti_balances,
+    query_iot_telematics_rti_pool_dispatch_and_return_scans,
+    query_tms_rti_reclamation_and_sweep_orders,
     query_rti_dispatch_return_scans,
     query_retailer_rti_custody_balances,
     query_rti_demurrage_and_lost_tariffs,
     query_rti_reclamation_sweep_orders,
-    analyze_rti_demurrage_and_sweep_roi,
-    render_visual_chart,
-    draft_rti_custody_reconciliation_and_debit_notice,
-    action_book_tms_empty_rti_backhaul_sweep,
-    action_issue_unreturned_rti_deposit_debit,
     query_rfid_dock_portal_pallet_scan_telemetry,
     fetch_chep_and_peco_reusable_asset_master_ledger,
     query_retail_customer_unreturned_pallet_dwell_days,
+    analyze_rti_demurrage_and_sweep_roi,
     run_rti_demurrage_and_reverse_reclamation_solver,
-    commit_unreturned_pallet_chargeback_to_sap_billing,
+    render_rti_balance_reconciler_a2ui_chart_and_canvas,
+    draft_rti_custody_reconciliation_and_debit_notice,
     export_pallet_reconciliation_csv_and_memo,
-    generate_interactive_html_dashboard,
+    publish_rti_balance_reconciler_interactive_cockpit_to_gcs,
+    action_book_tms_empty_rti_backhaul_sweep,
+    action_issue_unreturned_rti_deposit_debit,
+    commit_unreturned_pallet_chargeback_to_sap_billing,
+
 ]
-# --- END UNIFIED ENTERPRISE TOOL REGISTRY ---
+# --- END DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---

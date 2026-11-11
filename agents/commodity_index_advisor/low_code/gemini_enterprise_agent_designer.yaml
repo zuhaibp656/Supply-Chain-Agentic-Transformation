@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: commodity_index_advisor
+  display_name: "Commodity Index Advisor"
+  build_tier: "Hybrid"
+  category: "02 \u00b7 Sourcing & Procurement \u2014 Material & Packaging"
+  primary_persona: "Category Sourcing Mgr (Direct)"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_commodity_hedge_collar_positions
+      uri: "bq://zuhaibp-ai.supply_chain_twin.commodity_hedge_collar_positions"
+      source_system: "Commodity Treasury Collar & Forward Buy Book"
+      protocol: "REST / Treasury API"
+    - id: bq_supply_chain_twin_market_futures_index_feeds
+      uri: "bq://zuhaibp-ai.supply_chain_twin.market_futures_index_feeds"
+      source_system: "LME / CBOT / ICIS Commodity Futures Feed"
+      protocol: "FIX / REST Market API"
+    - id: bq_supply_chain_twin_raw_material_feedstock_exposures
+      uri: "bq://zuhaibp-ai.supply_chain_twin.raw_material_feedstock_exposures"
+      source_system: "Enterprise Raw Material Feedstock Exposure Ledger"
+      protocol: "OData v4 / SQL"
+    - id: bq_supply_chain_twin_supplier_escalator_pass_through_clauses
+      uri: "bq://zuhaibp-ai.supply_chain_twin.supplier_escalator_pass_through_clauses"
+      source_system: "Contract Pass-Through & Escalator Formula Repository"
+      protocol: "Vector + Relational SQL"
+  data_source_tools:
+    - inspect_sap_ariba_commodity_index_advisor_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_treasury_hedge_commodity_hedge_collar_positions
+    - query_market_commodity_market_futures_index_feeds
+    - query_sap_ariba_raw_material_feedstock_exposures
+    - query_clm_index_supplier_escalator_pass_through_clauses
+    - query_raw_material_feedstock_exposures
+    - query_market_futures_index_feeds
+    - query_supplier_escalator_clauses
+    - query_commodity_hedge_positions
+    - analyze_commodity_var_and_passthrough
+    - render_commodity_index_advisor_a2ui_chart_and_canvas
+    - draft_index_deflation_clawback_notice
+    - export_supplier_escalator_pass_through_csv_to_gcs
+    - publish_commodity_index_advisor_interactive_cockpit_to_gcs
+    - action_lock_forward_hedge_tranche
+    - action_issue_index_clause_adjustment
+  starter_prompts:
+    - "How are raw material and packaging commodity market prices moving compared to our current contract rates, and should we lock in forward hedges or wait?"
+    - "Create a chart comparing live commodity market trends against our budgeted contract prices and inventory coverage across key feedstocks."
+    - "Draft a clear market advisory note for Procurement and Treasury explaining recent commodity price swings, our cost exposure, and recommended hedging coverage."
+    - "Go ahead and submit the recommended forward price hedge recommendation for our most exposed raw material category."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

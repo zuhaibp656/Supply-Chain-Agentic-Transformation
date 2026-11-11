@@ -1,0 +1,55 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: dynamic_order_promising_atp
+  display_name: "Dynamic Order Promising Atp"
+  build_tier: "High-Code"
+  category: "Supply Chain Operations"
+  primary_persona: "Supply Chain Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_customer_tier_sla_commitments
+      uri: "bq://zuhaibp-ai.supply_chain_twin.customer_tier_sla_commitments"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+    - id: bq_supply_chain_twin_inbound_customer_order_requests
+      uri: "bq://zuhaibp-ai.supply_chain_twin.inbound_customer_order_requests"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+    - id: bq_supply_chain_twin_order_promising_routing_decisions
+      uri: "bq://zuhaibp-ai.supply_chain_twin.order_promising_routing_decisions"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+    - id: bq_supply_chain_twin_realtime_sku_atp_allocations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.realtime_sku_atp_allocations"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+  data_source_tools:
+    - inspect_bigquery_dynamic_order_promising_atp_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_bigquery_customer_tier_sla_commitments
+    - query_bigquery_inbound_customer_order_requests
+    - query_bigquery_order_promising_routing_decisions
+    - query_bigquery_realtime_sku_atp_allocations
+    - query_realtime_sku_atp_allocations
+    - query_customer_tier_sla_commitments
+    - query_inbound_customer_order_requests
+    - query_order_promising_routing_decisions
+    - run_dynamic_order_promising_atp_constraint_and_variance_solver
+    - render_dynamic_order_promising_atp_a2ui_chart_and_canvas
+    - draft_dynamic_order_promising_atp_stakeholder_decision_memo
+    - export_realtime_sku_atp_allocations_csv_to_gcs
+    - publish_dynamic_order_promising_atp_interactive_cockpit_to_gcs
+    - action_commit_dynamic_order_promise
+    - action_protect_tier1_allocation_reserve
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

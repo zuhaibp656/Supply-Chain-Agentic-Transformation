@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: labor_line_balancing_agent
+  display_name: "Labor & Line Balancing"
+  build_tier: "High-Code"
+  category: "03 \u00b7 Manufacturing & Production \u2014 Production Scheduling"
+  primary_persona: "Plant Operations Manager"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_balanced_shift_staffing_rosters
+      uri: "bq://zuhaibp-ai.supply_chain_twin.balanced_shift_staffing_rosters"
+      source_system: "Balanced Shift Workstation Roster Ledger"
+      protocol: "MES Dispatch API"
+    - id: bq_supply_chain_twin_ergonomic_fatigue_and_overtime_log
+      uri: "bq://zuhaibp-ai.supply_chain_twin.ergonomic_fatigue_and_overtime_log"
+      source_system: "Ergonomic Fatigue & Consecutive Overtime Monitor"
+      protocol: "SQL / Timeclock API"
+    - id: bq_supply_chain_twin_operator_skill_certification_matrix
+      uri: "bq://zuhaibp-ai.supply_chain_twin.operator_skill_certification_matrix"
+      source_system: "Workforce Skill Certification & Badge Matrix"
+      protocol: "HRIS API / SQL"
+    - id: bq_supply_chain_twin_shift_station_cycle_times
+      uri: "bq://zuhaibp-ai.supply_chain_twin.shift_station_cycle_times"
+      source_system: "MES Station Cycle-Time & Takt Telemetry"
+      protocol: "OPC-UA / REST"
+  data_source_tools:
+    - inspect_mes_scada_labor_line_balancing_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_mes_scada_balanced_shift_staffing_rosters
+    - query_ehs_fatigue_ergonomic_fatigue_and_overtime_log
+    - query_hrms_skill_operator_skill_certification_matrix
+    - query_mes_scada_shift_station_cycle_times
+    - query_shift_station_cycle_times
+    - query_operator_skill_matrix
+    - query_ergonomic_fatigue_logs
+    - query_balanced_shift_rosters
+    - analyze_takt_bottlenecks_and_balancing
+    - render_labor_line_balancing_a2ui_chart_and_canvas
+    - draft_shift_handoff_staffing_brief
+    - export_shift_station_cycle_times_csv_to_gcs
+    - publish_labor_line_balancing_interactive_cockpit_to_gcs
+    - action_publish_mes_shift_rebalance
+    - action_enforce_ergonomic_rotation
+  starter_prompts:
+    - "Do we have the right mix of certified operators assigned across shifts and packaging lines today, or are staffing gaps and overtime fatigue slowing down output?"
+    - "Show me a chart comparing required operator staffing and skill coverage against actual shift assignments across our production lines."
+    - "Prepare a clear shift staffing summary for the Plant Manager highlighting operator bottlenecks, overtime fatigue risks, and recommended cross-line reassignments."
+    - "Please apply the recommended certified-operator shift rebalancing plan to eliminate our primary line staffing bottleneck."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

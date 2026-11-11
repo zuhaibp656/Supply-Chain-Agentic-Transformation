@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: sanitation_health_agent
+  display_name: "Sanitation & Health Agent"
+  build_tier: "Hybrid"
+  category: "06 \u00b7 Returns & Reverse Logistics \u2014 Pallet & Tote Reclamation"
+  primary_persona: "Packaging QA / Food Safety"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_atp_bioluminescence_swab_tests
+      uri: "bq://zuhaibp-ai.supply_chain_twin.atp_bioluminescence_swab_tests"
+      source_system: "LIMS ATP Bioluminescence & Allergen Swab System"
+      protocol: "REST / LIMS SQL"
+    - id: bq_supply_chain_twin_reusable_container_rfid_wash_logs
+      uri: "bq://zuhaibp-ai.supply_chain_twin.reusable_container_rfid_wash_logs"
+      source_system: "Automated Wash Tunnel Thermal & Caustic PLC Historian"
+      protocol: "OPC-UA / FSMA Log"
+    - id: bq_supply_chain_twin_structural_vision_damage_inspections
+      uri: "bq://zuhaibp-ai.supply_chain_twin.structural_vision_damage_inspections"
+      source_system: "3D Laser Warp, Crack & RFID Cycle-Life Inspector"
+      protocol: "gRPC / Vision Edge"
+    - id: bq_supply_chain_twin_wash_quarantine_release_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.wash_quarantine_release_ledger"
+      source_system: "WMS Clean-Asset Release & Retirement Quarantine Gate"
+      protocol: "BAPI_EQUI_CHANGE / REST"
+  data_source_tools:
+    - inspect_mes_scada_sanitation_health_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_qa_atp_atp_bioluminescence_swab_tests
+    - query_mes_scada_reusable_container_rfid_wash_logs
+    - query_iot_telematics_structural_vision_damage_inspections
+    - query_wms_wash_quarantine_release_ledger
+    - query_container_rfid_wash_logs
+    - query_atp_bioluminescence_swabs
+    - query_structural_vision_inspections
+    - query_wash_quarantine_release_ledger
+    - analyze_fsma_sanitation_and_cycle_fatigue
+    - render_sanitation_health_a2ui_chart_and_canvas
+    - draft_fsma_sanitation_hold_and_cull_certificate
+    - export_wash_quarantine_release_ledger_csv_to_gcs
+    - publish_sanitation_health_interactive_cockpit_to_gcs
+    - action_lock_sanitation_hold_rewash_batch
+    - action_retire_fatigued_containers_to_regrind
+  starter_prompts:
+    - "Are all returned reusable totes, crates, and pallets passing structural crack inspections and wash-cycle temperature and sanitizer checks before going back into food contact?"
+    - "Show me a chart comparing wash-tunnel temperature and sanitizer compliance plus structural damage rates across inspected return container batches."
+    - "Prepare a clear food-safety and container quality summary listing batches cleared for reuse and any cracked or under-sanitized lots quarantined for re-wash or recycling."
+    - "Please release the verified sanitized tote batch to production staging and quarantine the failed wash-cycle lot for re-sanitation."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

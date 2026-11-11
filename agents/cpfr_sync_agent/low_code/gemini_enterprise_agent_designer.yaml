@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: cpfr_sync_agent
+  display_name: "Forecast Reconciliation"
+  build_tier: "Low-Code"
+  category: "01 \u00b7 Planning & Strategy \u2014 Demand Forecasting"
+  primary_persona: "Commercial Planning Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_joint_cpfr_consensus_packets
+      uri: "bq://zuhaibp-ai.supply_chain_twin.joint_cpfr_consensus_packets"
+      source_system: "SAP IBP Collaborative Planning & CPFR Consensus Bridge"
+      protocol: "OData v4 / BAPI_CPFR_RECONCILE"
+    - id: bq_supply_chain_twin_retailer_edi830_order_forecasts
+      uri: "bq://zuhaibp-ai.supply_chain_twin.retailer_edi830_order_forecasts"
+      source_system: "Cloud Dataflow Retailer EDI 852 / 830 Ingestion"
+      protocol: "AS2 / SFTP / Cloud PubSub"
+    - id: bq_supply_chain_twin_retailer_edi852_daily_pos
+      uri: "bq://zuhaibp-ai.supply_chain_twin.retailer_edi852_daily_pos"
+      source_system: "Cloud Dataflow Retailer EDI 852 / 830 Ingestion"
+      protocol: "AS2 / SFTP / Cloud PubSub"
+    - id: bq_supply_chain_twin_store_phantom_inventory_anomalies
+      uri: "bq://zuhaibp-ai.supply_chain_twin.store_phantom_inventory_anomalies"
+      source_system: "BigQuery Zero-Scan Phantom Inventory Anomaly Detector"
+      protocol: "BigQuery SQL / Poisson Process Outlier Model"
+  data_source_tools:
+    - inspect_cloud_dataflow_cpfr_sync_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_sap_ibp_joint_cpfr_consensus_packets
+    - query_cloud_dataflow_retailer_edi830_order_forecasts
+    - query_cloud_dataflow_retailer_edi852_daily_pos
+    - query_bigquery_store_phantom_inventory_anomalies
+    - query_retailer_edi852_pos
+    - query_retailer_edi830_forecasts
+    - query_phantom_inventory_anomalies
+    - query_joint_cpfr_packets
+    - run_cpfr_sync_constraint_and_variance_solver
+    - render_cpfr_sync_a2ui_chart_and_canvas
+    - draft_cpfr_sync_stakeholder_decision_memo
+    - export_store_phantom_inventory_anomalies_csv_to_gcs
+    - publish_cpfr_sync_interactive_cockpit_to_gcs
+    - action_dispatch_vmi_replenishment_order
+    - action_flag_retail_phantom_audit
+  starter_prompts:
+    - "Where do our internal demand forecasts disagree most with what our retail partners and online channels are projecting? Please highlight the biggest gaps."
+    - "Create a chart comparing our internal forecast against our retail partners' order projections across key accounts so I can see the largest mismatches at a glance."
+    - "Prepare a clear summary note for our joint retail planning meeting outlining the top forecast discrepancies, the service or inventory risk, and how we should align the numbers."
+    - "Go ahead and publish the reconciled consensus forecast for our highest-gap retail partner account and share the confirmation details."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

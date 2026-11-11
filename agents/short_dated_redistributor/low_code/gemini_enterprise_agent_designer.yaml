@@ -1,0 +1,58 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: short_dated_redistributor
+  display_name: "Short-Dated Redistributor"
+  build_tier: "High-Code"
+  category: "06 \u00b7 Returns & Reverse Logistics \u2014 Expiry & Markdowns"
+  primary_persona: "Inventory Disposition Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_lane_transfer_cost_and_transit_days
+      uri: "bq://zuhaibp-ai.supply_chain_twin.lane_transfer_cost_and_transit_days"
+      source_system: "Inter-DC & Secondary Buyer Reefer/Dry Lane Matrix"
+      protocol: "REST / Rate API"
+    - id: bq_supply_chain_twin_secondary_buyer_and_foodbank_rules
+      uri: "bq://zuhaibp-ai.supply_chain_twin.secondary_buyer_and_foodbank_rules"
+      source_system: "Retailer MRSL, Closeout & IRC \u00a7170(e)(3) Channel Matrix"
+      protocol: "SQL / Tax Engine"
+    - id: bq_supply_chain_twin_short_dated_dc_inventory_lots
+      uri: "bq://zuhaibp-ai.supply_chain_twin.short_dated_dc_inventory_lots"
+      source_system: "WMS Batch Expiry & MRSL Breach Radar"
+      protocol: "BAPI_BATCH_GET_DETAIL / SQL"
+    - id: bq_supply_chain_twin_short_dated_diversion_allocations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.short_dated_diversion_allocations"
+      source_system: "Short-Dated Lot Diversion & Tax Recovery Ledger"
+      protocol: "OData / ERP STO"
+  data_source_tools:
+    - inspect_wms_short_dated_redistributor_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_tms_lane_transfer_cost_and_transit_days
+    - query_wms_short_dated_dc_inventory_lots
+    - query_short_dated_dc_lots
+    - query_secondary_channel_mrsl_rules
+    - query_lane_transfer_costs
+    - query_short_dated_diversion_allocations
+    - analyze_mrsl_channel_matching_netback
+    - render_short_dated_redistributor_a2ui_chart_and_canvas
+    - draft_short_dated_liquidation_and_170e3_memo
+    - export_short_dated_diversion_allocations_csv_to_gcs
+    - publish_short_dated_redistributor_interactive_cockpit_to_gcs
+    - action_allocate_short_dated_secondary_order
+    - action_execute_irc170e3_foodbank_donation
+  starter_prompts:
+    - "Which warehouse lots are approaching retailer minimum shelf-life cutoffs and should be redirected now to discount outlets or regional food banks before they become unsellable?"
+    - "Show me a chart comparing short-dated lot value, days remaining before cutoff, and recovery value across discount resale and tax-advantaged food-bank donation."
+    - "Write a clear disposition summary for Inventory Control and Sustainability detailing which near-date lots to reallocate to secondary buyers or community food banks."
+    - "Please release the secondary-channel and food-bank allocation order for our most urgent short-dated warehouse lot."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

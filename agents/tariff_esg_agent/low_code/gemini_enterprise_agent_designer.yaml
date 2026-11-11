@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: tariff_esg_agent
+  display_name: "Contract Leakage Agent"
+  build_tier: "Low-Code"
+  category: "02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt"
+  primary_persona: "Commercial Sourcing / Legal"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_contract_clause_obligations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.contract_clause_obligations"
+      source_system: "AlloyDB pgvector Legal Contract & MSA Clause RAG"
+      protocol: "AlloyDB SQL / pgvector cosine embeddings"
+    - id: bq_supply_chain_twin_cross_border_duty_impact
+      uri: "bq://zuhaibp-ai.supply_chain_twin.cross_border_duty_impact"
+      source_system: "Global Customs & WCO Harmonized System Database"
+      protocol: "USITC / EU TARIC / CROSS Rulings API"
+    - id: bq_supply_chain_twin_hs_tariff_classifications
+      uri: "bq://zuhaibp-ai.supply_chain_twin.hs_tariff_classifications"
+      source_system: "Global Customs & WCO Harmonized System Database"
+      protocol: "USITC / EU TARIC / CROSS Rulings API"
+    - id: bq_supply_chain_twin_supplier_rebate_accruals
+      uri: "bq://zuhaibp-ai.supply_chain_twin.supplier_rebate_accruals"
+      source_system: "AlloyDB pgvector Legal Contract & MSA Clause RAG"
+      protocol: "AlloyDB SQL / pgvector cosine embeddings"
+  data_source_tools:
+    - inspect_alloydb_tariff_esg_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_alloydb_contract_clause_obligations
+    - query_customs_tariff_cross_border_duty_impact
+    - query_customs_tariff_hs_tariff_classifications
+    - query_alloydb_supplier_rebate_accruals
+    - query_contract_clause_obligations
+    - query_supplier_rebate_accruals
+    - query_hs_tariff_classifications
+    - query_cross_border_duty_impact
+    - run_tariff_esg_constraint_and_variance_solver
+    - render_tariff_esg_a2ui_chart_and_canvas
+    - draft_tariff_esg_stakeholder_decision_memo
+    - export_supplier_rebate_accruals_csv_to_gcs
+    - publish_tariff_esg_interactive_cockpit_to_gcs
+    - action_lock_hs_tariff_classification
+    - action_issue_supplier_rebate_debit_memo
+  starter_prompts:
+    - "Where are we leaving money on the table by missing volume rebates, buying off-contract, or paying outdated supplier pricing tiers across active agreements?"
+    - "Show me a chart comparing contracted pricing and earned volume rebates against actual invoiced spend across major suppliers, and point out the biggest leakage."
+    - "Draft a clear contract value recovery memo for Sourcing and Legal summarizing missed rebates, off-contract spend, and how much money we can reclaim."
+    - "Go ahead and file the volume rebate true-up claim and purchasing redirect for our largest contract leakage account."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

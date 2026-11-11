@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: slob_disposition_agent
+  display_name: "SLOB Disposition Agent"
+  build_tier: "Hybrid"
+  category: "04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization"
+  primary_persona: "Inventory Controller / Buyer"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_aging_inventory_dos_balances
+      uri: "bq://zuhaibp-ai.supply_chain_twin.aging_inventory_dos_balances"
+      source_system: "ERP/WMS Lot Aging & Days-of-Supply (DOS) Ledger"
+      protocol: "OData / SQL"
+    - id: bq_supply_chain_twin_disposition_channel_recovery_rates
+      uri: "bq://zuhaibp-ai.supply_chain_twin.disposition_channel_recovery_rates"
+      source_system: "Multi-Channel SLOB Recovery Rate Engine"
+      protocol: "Python MILP"
+    - id: bq_supply_chain_twin_sku_holding_and_writeoff_economics
+      uri: "bq://zuhaibp-ai.supply_chain_twin.sku_holding_and_writeoff_economics"
+      source_system: "Inventory Carrying Cost & E&O Reserve Ledger"
+      protocol: "SAP FI-AA / SQL"
+    - id: bq_supply_chain_twin_slob_liquidation_and_bundle_orders
+      uri: "bq://zuhaibp-ai.supply_chain_twin.slob_liquidation_and_bundle_orders"
+      source_system: "SLOB Bundle, Lateral Transfer & Liquidation Queue"
+      protocol: "REST / EDI 940"
+  data_source_tools:
+    - inspect_sap_ewm_slob_disposition_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_sap_ewm_aging_inventory_dos_balances
+    - query_channel_recovery_disposition_channel_recovery_rates
+    - query_fin_holding_sku_holding_and_writeoff_economics
+    - query_slob_execution_slob_liquidation_and_bundle_orders
+    - query_aging_inventory_dos
+    - query_sku_holding_economics
+    - query_disposition_recovery_rates
+    - query_slob_disposition_orders
+    - analyze_slob_expiry_and_cash_recovery
+    - render_slob_disposition_a2ui_chart_and_canvas
+    - draft_slob_reserve_release_memo
+    - export_slob_liquidation_bundle_orders_csv_to_gcs
+    - publish_slob_disposition_interactive_cockpit_to_gcs
+    - action_execute_slob_disposition_order
+    - action_update_eo_inventory_reserve
+  starter_prompts:
+    - "Which slow-moving or aging inventory lots in our warehouses are at risk of expiring or becoming obsolete, and what is the highest-recovery way to clear them?"
+    - "Plot a chart comparing aging inventory value and remaining shelf life against expected cash recovery across promo bundling, discount channels, and liquidation."
+    - "Draft a practical inventory disposition plan for Merchandising and Finance recommending how to clear at-risk stock while recovering maximum margin."
+    - "Go ahead and trigger the promotional bundle and secondary-channel clearance workflow for our highest-value aging lot."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

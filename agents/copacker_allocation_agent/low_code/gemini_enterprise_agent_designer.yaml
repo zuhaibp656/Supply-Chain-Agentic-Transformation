@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: copacker_allocation_agent
+  display_name: "Co-Packer Allocation"
+  build_tier: "High-Code"
+  category: "03 \u00b7 Manufacturing & Production \u2014 Capacity Planning"
+  primary_persona: "External Sourcing / CMO Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_cmo_network_tolling_contracts
+      uri: "bq://zuhaibp-ai.supply_chain_twin.cmo_network_tolling_contracts"
+      source_system: "Contract Manufacturer (CMO) Tolling & Tier Tariffs"
+      protocol: "Ariba SCC / EDI 850"
+    - id: bq_supply_chain_twin_cmo_production_allocation_orders
+      uri: "bq://zuhaibp-ai.supply_chain_twin.cmo_production_allocation_orders"
+      source_system: "Subcontracting PO (ME2O) & Component Drop-Ship Ledger"
+      protocol: "BAPI_PO_CREATE1"
+    - id: bq_supply_chain_twin_internal_plant_line_utilization
+      uri: "bq://zuhaibp-ai.supply_chain_twin.internal_plant_line_utilization"
+      source_system: "Internal Plant Line Utilization & Overtime Engine"
+      protocol: "OData / PP-PI"
+    - id: bq_supply_chain_twin_sku_make_vs_buy_landed_economics
+      uri: "bq://zuhaibp-ai.supply_chain_twin.sku_make_vs_buy_landed_economics"
+      source_system: "SKU Landed Make-vs-Buy Cost-to-Serve Model"
+      protocol: "Python MILP"
+  data_source_tools:
+    - inspect_sap_s4hana_copacker_allocation_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_ariba_cmo_cmo_network_tolling_contracts
+    - query_cmo_po_cmo_production_allocation_orders
+    - query_sap_s4hana_internal_plant_line_utilization
+    - query_milp_make_sku_make_vs_buy_landed_economics
+    - query_internal_plant_utilization
+    - query_cmo_tolling_contracts
+    - query_make_vs_buy_economics
+    - query_cmo_allocation_orders
+    - analyze_make_vs_buy_cmo_split
+    - render_copacker_allocation_a2ui_chart_and_canvas
+    - draft_cmo_tolling_dispatch_schedule
+    - export_sku_make_vs_buy_csv_to_gcs
+    - publish_copacker_allocation_interactive_cockpit_to_gcs
+    - action_release_cmo_subcontract_po
+    - action_trigger_component_dropship_kit
+  starter_prompts:
+    - "Given our internal plant capacity and conversion costs versus external co-packer fees and freight, which products should we build in-house and which should go to contract manufacturers?"
+    - "Show me a chart comparing all-in unit cost between internal production and external co-packers across candidate product families."
+    - "Draft a clear make-versus-buy recommendation memo for Manufacturing and Sourcing leaders showing the optimal co-packer volume split and net cost savings."
+    - "Please release the recommended volume allocation update to our qualified external co-packer partner."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

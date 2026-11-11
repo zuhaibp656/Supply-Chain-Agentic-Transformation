@@ -1,76 +1,80 @@
-# Deployable Supply Chain AI Agents (Argolis & Vertex AI Agent Engine)
+# Deployable Supply Chain AI Agents — High-Code ADK, Hybrid & Low-Code Gemini Enterprise Architecture
 
-This directory serves as the engineering launchpad and decoupled deployment foundation for the **32 Supply Chain & Demand AI Agents** defined in the [Supply Chain Agentic Transformation Blueprint](../SUPPLY_CHAIN_AGENTIC_BLUEPRINT.md).
+Every Supply Chain AI Agent is engineered with **100% Data-Source-Named Tools**, **Dual-Surface A2UI v0.9 Visual Storytelling**, and **Dual High-Code + Low-Code Deployment Artifacts**:
 
----
+- **High-Code Tier (`21` Agents)**: Full Google ADK Python orchestrators (`agents/<id>/app/`) with OR-Tools MILP/CP-SAT/VRPTW solvers, multi-table deterministic joins, and governed ERP/WMS/TMS write-backs.
+- **Hybrid Tier (`22` Agents)**: Google ADK + BigQuery ML / Vertex AI TimesFM / Cloud Spanner Graph + declarative OpenAPI connectors (`agents/<id>/low_code/`).
+- **Low-Code Tier (`17` Agents)**: Ready-to-import **Gemini Enterprise Agent Designer** YAML specifications (`agents/<id>/low_code/gemini_enterprise_agent_designer.yaml`) + OpenAPI 3.0.3 data-source connector schemas (`openapi_data_source_tools.json`), backed by executable ADK packages.
+- **25 Live Curated Showcase Agents**: Deployed in-place on Vertex AI Reasoning Engine (`zuhaibp-ai`, `us-central1`) and registered in Gemini Enterprise (`gemini-enterprise-zuhaibp_1784012666241`).
 
-## 1. Architectural Model: Decoupled Agent Topology
+## Dual-Surface A2UI v0.9 Visual Architecture (FDE/ACE Validated)
+1. **Inline Chat `Card` (`VegaChart` Only)**: Renders a 2-Panel Executive Vega-Lite v5 Infographic (Grouped Baseline vs. Target/Verified Actual with Mean Reference Rule + Synchronized Diverging `Δ` Variance Strip) while keeping plain-English prose, `<= 5`-column Google Sheets tables, and Cloud Storage links cleanly outside in Markdown.
+2. **Side-Panel `Canvas` (`autoOpen: false`)**: Renders a compact chat launcher chip opening Gemini Enterprise's resizable right-hand Canvas containing:
+   - Interactive `MaterialButton` quick-action triggers (`Audit Top Outliers`, `Draft Decision Memo`) with synthetic turn interception.
+   - Collapsible `MaterialExpansionPanel` cards detailing Connected Enterprise Data Sources, Solver Math, and Write-Back Governance.
+   - Native Looker Studio `RichTable` (`tableData.spec = {}`) populated with coerced `DOUBLE` & `STRING` columns from the live enterprise source tables.
 
-```
-┌──────────────────────────────────────┐          ┌──────────────────────────────────────┐
-│         FRONTEND PRESENTATION        │          │        BACKEND REASONING ENGINE      │
-│                                      │  REST    │                                      │
-│  • Zipline Web Hosting (go/zipline)  │ ───────▶ │  • Argolis GCP Project Environment   │
-│  • 60fps Kinetic SVG/Canvas          │ ◀─────── │  • Vertex AI Agent Engine (ADK)      │
-│  • macOS Genie Drill-Downs           │          │  • Cloud Run Containerized Services  │
-│  • Interactive 3D CAD Simulators     │          │  • Google OR-Tools Solvers & BigQuery│
-└──────────────────────────────────────┘          └──────────────────────────────────────┘
-```
+## Complete 60-Agent Data-Source Tool & Tier Matrix
 
-1. **Frontend (Zipline / Static / Cloud Run)**:
-   - Contains zero hardcoded business logic or API keys.
-   - Hosted effortlessly on **Zipline** (`go/zipline`) as a client-side bundle or as a Cloud Run lightweight static web app.
-   - Dispatches autonomous customization requests to the backend agent via `POST /api/v1/generate-twin`.
-
-2. **Backend Agent Engine (Argolis GCP / Cloud Run)**:
-   - Houses the high-code Python agents, autonomous corporate research scrapers, and deterministic mathematical solvers.
-   - Deployable to **Vertex AI Reasoning Engine** (`reasoning_engines.ReasoningEngine.create` / `remote_engine.update`) or containerized on **Cloud Run** in the Argolis environment.
-
----
-
-## 2. Agent Catalog & Deployment Roadmap
-
-The 32 agents will be progressively implemented, tested locally, and deployed to Argolis:
-
-### Universal Cross-Persona Core (4 Agents)
-- `csco_control_tower_copilot`: Looker Semantic Layer + BigQuery / Spanner Graph NL2SQL.
-- `disruption_war_room_orchestrator`: WeatherNext 3 probabilistic ensembles + OR-Tools MILP mode rerouter.
-- `master_data_leadtime_steward`: Bayesian lead-time estimator + SAP BAPI auto-healer.
-- `working_capital_cash_bridge`: Cash-Conversion-Cycle (CCC) DSI/DSO/DPO optimizer.
-
-### Domain-Specific Swarms (28 Agents)
-- **01 · Plan (Demand & S&OP)**: `demand_sensing_agent` (TimesFM), `sop_scenario_weaver` (MILP), `promo_lift_simulator` (Double-ML), `cpfr_sync_agent` (EDI 852).
-- **02 · Source (Procurement & Risk)**: `rfq_should_cost_agent` (BOM tear-down), `tier_n_risk_sentinel` (Spanner Graph), `tariff_esg_agent` (HS legal RAG), `supplier_quality_sentinel` (8D CAPA).
-- **03 · Make (Manufacturing & OEE)**: `line_schedule_optimizer` (CP-SAT), `predictive_oee_sentinel` (PLC FFT vibration), `inline_yield_guardian` (Vision SPC), `eco_cutover_orchestrator` (eBOM burn-down).
-- **04 · Fulfill (Inventory & Warehousing)**: `meio_safety_stock_agent` (Guaranteed-Service), `warehouse_slotting_agent` (3D Golden-Zone), `atp_order_promising_agent` (Global ATP), `yard_dock_sequencer` (Hostler routing), `crossdock_transfer_orchestrator` (Flow-through).
-- **05 · Deliver (Multi-Modal Logistics)**: `fleetflow_dispatch` (CVRPTW), `load_consolidation_agent` (3D Guillotine LIFO), `freight_control_tower` (Telemetry audit), `port_drayage_orchestrator` (Demurrage), `air_cargo_uld_optimizer` (3D ULD contour), `intermodal_rail_linehaul_agent` (Railinc EDI), `multimodal_mode_shift_agent` (Pareto modal split).
-- **06 · Return & Enable (Circular & ESG)**: `otif_penalty_shield` (72-hr MABD rescue), `reverse_rma_optimizer` (Backhaul CVRPTW), `carbon_scope3_ledger` (ISO-14083), `network_twin_architect` (Cost-to-Serve).
-
----
-
-## 3. Vertex AI Reasoning Engine Deployment Pattern
-
-When deploying to Argolis via Vertex AI Agent Engine, follow the canonical in-place update rule to prevent duplicate endpoints:
-
-```python
-import vertexai
-from vertexai.preview import reasoning_engines
-
-vertexai.init(project="YOUR_ARGOLIS_PROJECT_ID", location="us-central1")
-
-# In-place deployment / update
-remote_agent = reasoning_engines.ReasoningEngine.create(
-    reasoning_engines.LangchainAgent(
-        model="gemini-3-pro-preview",
-        tools=[or_tools_solver, sap_bapi_connector, weather_next_sensor],
-    ),
-    requirements=[
-        "google-cloud-aiplatform",
-        "ortools",
-        "requests",
-        "pydantic",
-    ],
-    display_name="DemandSensingAgent-v1",
-    description="Multi-Signal Demand Sensing with TimesFM & WeatherNext 3",
-)
-```
+| # | Agent ID | Build Tier | Primary Data-Source Tools | Low-Code Spec |
+| :--- | :--- | :--- | :--- | :--- |
+| 01 | `aisle_aligned_pallet_agent` | **High-Code** | `inspect_wms_aisle_aligned_pallet_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_pack_engineering_case_crush_and_stacking_physics`, `query_amrs_palletizer_pallet_layer_build_sequences` | `agents/aisle_aligned_pallet_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 02 | `atp_order_promising_agent` | **Hybrid** | `inspect_cloud_spanner_atp_order_promising_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_edi_docai_inbound_customer_order_requests`, `query_fulfillment_routing_order_promising_routing_decisions` | `agents/atp_order_promising_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 03 | `batch_record_auditor` | **Low-Code** | `inspect_mes_scada_batch_record_auditor_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_veeva_qms_batch_deviation_capa_records`, `query_sap_s4hana_fda_21cfr11_release_signoffs` | `agents/batch_record_auditor/low_code/gemini_enterprise_agent_designer.yaml` |
+| 04 | `capex_simulator_agent` | **High-Code** | `inspect_mes_scada_capex_simulator_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_capex_engineering_automation_capex_project_proposals`, `query_fin_dcf_capex_dcf_npv_simulation_ledger` | `agents/capex_simulator_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 05 | `carbon_scope3_ledger` | **Low-Code** | `inspect_iso14083_glec_carbon_scope3_ledger_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_weathernext_eudr_earth_engine_plot_verifications`, `query_tms_low_carbon_carrier_and_supplier_swaps` | `agents/carbon_scope3_ledger/low_code/gemini_enterprise_agent_designer.yaml` |
+| 06 | `cold_chain_auditor` | **Hybrid** | `inspect_iot_telematics_cold_chain_auditor_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_qa_gdp_cold_chain_sku_stability_specs`, `query_tms_qa_disposition_claims_ledger` | `agents/cold_chain_auditor/low_code/gemini_enterprise_agent_designer.yaml` |
+| 07 | `commodity_index_advisor` | **Hybrid** | `inspect_sap_ariba_commodity_index_advisor_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_treasury_hedge_commodity_hedge_collar_positions`, `query_market_commodity_market_futures_index_feeds` | `agents/commodity_index_advisor/low_code/gemini_enterprise_agent_designer.yaml` |
+| 08 | `copacker_allocation_agent` | **High-Code** | `inspect_sap_s4hana_copacker_allocation_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_ariba_cmo_cmo_network_tolling_contracts`, `query_cmo_po_cmo_production_allocation_orders` | `agents/copacker_allocation_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 09 | `cpfr_sync_agent` | **Low-Code** | `inspect_cloud_dataflow_cpfr_sync_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_sap_ibp_joint_cpfr_consensus_packets`, `query_cloud_dataflow_retailer_edi830_order_forecasts` | `agents/cpfr_sync_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 10 | `crossdock_transfer_orchestrator` | **High-Code** | `inspect_sap_ewm_crossdock_transfer_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_iot_telematics_crossdock_dwell_time_records`, `query_tms_inbound_carrier_eta_milestones` | `agents/crossdock_transfer_orchestrator/low_code/gemini_enterprise_agent_designer.yaml` |
+| 11 | `csco_control_tower_copilot` | **Low-Code** | `inspect_bigquery_csco_control_tower_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_executive_orchestrator_executive_playbooks`, `query_bigquery_network_bottlenecks` | `agents/csco_control_tower_copilot/low_code/gemini_enterprise_agent_designer.yaml` |
+| 12 | `demand_sensing_agent` | **Hybrid** | `inspect_bigquery_demand_sensing_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_bigquery_pos_store_scans`, `query_vertex_timesfm_timesfm_quantile_horizons` | `agents/demand_sensing_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 13 | `disruption_war_room_orchestrator` | **Hybrid** | `inspect_weathernext_disruption_war_room_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_servicenow_warroom_incident_war_rooms`, `query_google_news_news_disruptions` | `agents/disruption_war_room_orchestrator/low_code/gemini_enterprise_agent_designer.yaml` |
+| 14 | `dock_to_stock_agent` | **Hybrid** | `inspect_edi_docai_dock_stock_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_wms_dock_barcode_pallet_scan_logs`, `query_wms_dock_to_stock_turnaround_ledger` | `agents/dock_to_stock_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 15 | `dynamic_markdown_agent` | **Hybrid** | `inspect_store_lot_dynamic_markdown_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_vertex_price_dte_price_elasticity_curves`, `query_pricer_esl_esl_markdown_schedule_recommendations` | `agents/dynamic_markdown_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 16 | `eco_cutover_orchestrator` | **High-Code** | `inspect_mes_scada_eco_cutover_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_ortools_eco_optimal_cutover_schedules`, `query_sap_ariba_erp_bom_effectivity_sync_audit` | `agents/eco_cutover_orchestrator/low_code/gemini_enterprise_agent_designer.yaml` |
+| 17 | `field_beat_distributor_sync_agent` | **Low-Code** | `inspect_dms_distributor_field_beat_distributor_sync_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_dms_distributor_distributor_dms_live_inventory`, `query_google_maps_fso_daily_beat_store_outlets` | `agents/field_beat_distributor_sync_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 18 | `finite_production_scheduler` | **High-Code** | `inspect_ortools_finite_production_scheduler_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_ortools_optimized_sequence_schedule`, `query_production_orders_backlog` | `agents/finite_production_scheduler/low_code/gemini_enterprise_agent_designer.yaml` |
+| 19 | `fleetflow_dispatch` | **High-Code** | `inspect_google_maps_fleetflow_dispatch_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_tms_backhaul_consolidation_opportunities`, `query_ortools_corridor_delivery_orders` | `agents/fleetflow_dispatch/low_code/gemini_enterprise_agent_designer.yaml` |
+| 20 | `food_waste_esg_copilot` | **Low-Code** | `inspect_mes_scada_food_waste_esg_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_circular_economics_anaerobic_digestion_and_compost_rates`, `query_epa_upcycling_epa_hierarchy_diversion_partners` | `agents/food_waste_esg_copilot/low_code/gemini_enterprise_agent_designer.yaml` |
+| 21 | `freight_bill_audit_agent` | **Low-Code** | `inspect_tms_freight_bill_audit_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_tms_contracted_lane_rate_and_fsc_tables`, `query_tms_edi210_carrier_freight_invoices` | `agents/freight_bill_audit_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 22 | `freight_control_tower` | **Low-Code** | `inspect_iot_telematics_freight_control_tower_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_edi_docai_carrier_edi210_freight_invoices`, `query_iot_telematics_cold_chain_thermal_excursion_alerts` | `agents/freight_control_tower/low_code/gemini_enterprise_agent_designer.yaml` |
+| 23 | `geocoding_intelligence_agent` | **Hybrid** | `inspect_oms_address_geocoding_intelligence_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_oms_address_commercial_stop_rooftop_addresses`, `query_telematics_driver_driver_gps_dwell_and_entry_logs` | `agents/geocoding_intelligence_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 24 | `inline_yield_guardian` | **Hybrid** | `inspect_inline_vision_inline_yield_guardian_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_inline_vision_camera_vision_inspection_frames`, `query_sap_s4hana_ebhr_batch_record_deviations` | `agents/inline_yield_guardian/low_code/gemini_enterprise_agent_designer.yaml` |
+| 25 | `intermodal_rail_linehaul_agent` | **High-Code** | `inspect_mes_scada_intermodal_rail_linehaul_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_intermodal_lane_intermodal_corridor_shipments`, `query_glec_rail_otr_to_rail_mode_conversion_ledger` | `agents/intermodal_rail_linehaul_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 26 | `keep_it_routing_advisor` | **High-Code** | `inspect_oms_self_keep_it_routing_advisor_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_trust_risk_customer_fraud_and_ltv_scores`, `query_oms_self_low_asp_return_requests` | `agents/keep_it_routing_advisor/low_code/gemini_enterprise_agent_designer.yaml` |
+| 27 | `labor_line_balancing_agent` | **High-Code** | `inspect_mes_scada_labor_line_balancing_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_mes_scada_balanced_shift_staffing_rosters`, `query_ehs_fatigue_ergonomic_fatigue_and_overtime_log` | `agents/labor_line_balancing_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 28 | `line_schedule_optimizer` | **High-Code** | `inspect_ortools_line_schedule_optimizer_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_ortools_optimized_sequence_schedule`, `query_sap_ppds_production_orders_backlog` | `agents/line_schedule_optimizer/low_code/gemini_enterprise_agent_designer.yaml` |
+| 29 | `load_consolidation_agent` | **High-Code** | `inspect_ortools_load_consolidation_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_wms_axle_weight_crush_audit_logs`, `query_ortools_lifo_3d_voxel_load_plans` | `agents/load_consolidation_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 30 | `master_data_leadtime_steward` | **Low-Code** | `inspect_sap_s4hana_master_data_leadtime_steward_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_sap_s4hana_bom_routing_leadtimes`, `query_cubiscan_3d_dimension_audit_scans` | `agents/master_data_leadtime_steward/low_code/gemini_enterprise_agent_designer.yaml` |
+| 31 | `meio_safety_stock_agent` | **High-Code** | `inspect_sap_ibp_meio_safety_stock_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_sap_ewm_dc_inventory_echelon_balances`, `query_bigquery_echelon_service_level_projections` | `agents/meio_safety_stock_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 32 | `multimodal_mode_shift_agent` | **High-Code** | `inspect_ortools_multimodal_mode_shift_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_ortools_dynamic_mode_split_recommendations`, `query_sap_ibp_factory_gate_outbound_pos` | `agents/multimodal_mode_shift_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 33 | `network_twin_architect` | **High-Code** | `inspect_ortools_network_twin_architect_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_sap_ibp_center_of_gravity_milp_scenarios`, `query_ortools_network_facility_nodes_and_leases` | `agents/network_twin_architect/low_code/gemini_enterprise_agent_designer.yaml` |
+| 34 | `npi_demand_profiler` | **Hybrid** | `inspect_plm_npi_demand_profiler_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_bigquery_historical_lookalike_analog_skus`, `query_sap_ibp_npi_90day_forecast_allocations` | `agents/npi_demand_profiler/low_code/gemini_enterprise_agent_designer.yaml` |
+| 35 | `osd_freight_claims_agent` | **Low-Code** | `inspect_tms_osd_freight_claims_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_tms_carrier_carmack_liability_rules`, `query_wms_dock_osd_exception_inspections` | `agents/osd_freight_claims_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 36 | `otif_penalty_shield` | **Low-Code** | `inspect_edi_docai_otif_penalty_shield_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_google_maps_geofence_edi856_dispute_dossiers`, `query_edi_docai_open_retail_customer_orders_sla` | `agents/otif_penalty_shield/low_code/gemini_enterprise_agent_designer.yaml` |
+| 37 | `planogram_merchandising_vision_auditor` | **Hybrid** | `inspect_gemini_38_planogram_merchandising_vision_auditor_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_trade_planogram_contracted_planogram_templates`, `query_sfa_instore_merchandising_corrective_tasks` | `agents/planogram_merchandising_vision_auditor/low_code/gemini_enterprise_agent_designer.yaml` |
+| 38 | `port_drayage_orchestrator` | **Hybrid** | `inspect_weathernext_port_drayage_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_cargowise_ocean_container_discharge_demurrage_ledger`, `query_drayage_transload_drayage_chassis_transload_allocations` | `agents/port_drayage_orchestrator/low_code/gemini_enterprise_agent_designer.yaml` |
+| 39 | `predictive_oee_sentinel` | **Hybrid** | `inspect_mes_scada_predictive_oee_sentinel_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_mes_scada_oee_breakdown_metrics`, `query_osisoft_pi_plant_machine_telemetry` | `agents/predictive_oee_sentinel/low_code/gemini_enterprise_agent_designer.yaml` |
+| 40 | `promo_lift_simulator` | **Hybrid** | `inspect_sap_s4hana_promo_lift_simulator_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_bigquery_causal_promo_elasticity`, `query_bigquery_cross_sku_cannibalization` | `agents/promo_lift_simulator/low_code/gemini_enterprise_agent_designer.yaml` |
+| 41 | `returns_triage_agent` | **Hybrid** | `inspect_oms_rma_returns_triage_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_oms_rma_omnichannel_return_parcel_intake`, `query_vision_grading_optical_condition_grading_scans` | `agents/returns_triage_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 42 | `reverse_rma_optimizer` | **Hybrid** | `inspect_gemini_38_reverse_rma_optimizer_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_sap_s4hana_customer_rma_intake_requests`, `query_fleetflow_backhaul_fleet_backhaul_pickup_slots` | `agents/reverse_rma_optimizer/low_code/gemini_enterprise_agent_designer.yaml` |
+| 43 | `rfq_should_cost_agent` | **High-Code** | `inspect_bigquery_rfq_should_cost_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_ortools_award_allocation_scenarios`, `query_bigquery_commodity_index_rates` | `agents/rfq_should_cost_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 44 | `rti_balance_reconciler` | **Low-Code** | `inspect_iot_telematics_rti_balance_reconciler_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_chep_ifco_chep_peco_rental_and_lost_fee_tariffs`, `query_partner_rti_retailer_distributor_rti_balances` | `agents/rti_balance_reconciler/low_code/gemini_enterprise_agent_designer.yaml` |
+| 45 | `sanitation_health_agent` | **Hybrid** | `inspect_mes_scada_sanitation_health_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_qa_atp_atp_bioluminescence_swab_tests`, `query_mes_scada_reusable_container_rfid_wash_logs` | `agents/sanitation_health_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 46 | `scrap_defect_root_cause_agent` | **Hybrid** | `inspect_mes_scada_scrap_defect_root_cause_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_mes_scada_batch_process_parameter_correlations`, `query_mes_scada_scada_setpoint_recommendations` | `agents/scrap_defect_root_cause_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 47 | `short_dated_redistributor` | **High-Code** | `inspect_wms_short_dated_redistributor_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_tms_lane_transfer_cost_and_transit_days`, `query_wms_short_dated_dc_inventory_lots` | `agents/short_dated_redistributor/low_code/gemini_enterprise_agent_designer.yaml` |
+| 48 | `slob_disposition_agent` | **Hybrid** | `inspect_sap_ewm_slob_disposition_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_sap_ewm_aging_inventory_dos_balances`, `query_channel_recovery_disposition_channel_recovery_rates` | `agents/slob_disposition_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 49 | `sop_scenario_weaver` | **High-Code** | `inspect_cloud_spanner_sop_scenario_weaver_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_cloud_spanner_plant_line_capacities`, `query_ortools_sop_scenario_tradeoffs` | `agents/sop_scenario_weaver/low_code/gemini_enterprise_agent_designer.yaml` |
+| 50 | `store_capacity_agent` | **High-Code** | `inspect_iot_telematics_store_capacity_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_pos_perpetual_live_store_pos_and_onhand_stock`, `query_drp_replenishment_scheduled_dc_replenishment_drops` | `agents/store_capacity_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 51 | `supplier_quality_sentinel` | **Low-Code** | `inspect_sap_s4hana_supplier_quality_sentinel_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_sap_s4hana_cost_of_poor_quality_ledger`, `query_trackwise_etq_quality_deviation_tickets` | `agents/supplier_quality_sentinel/low_code/gemini_enterprise_agent_designer.yaml` |
+| 52 | `sustainable_packaging_agent` | **Hybrid** | `inspect_plm_sustainable_packaging_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_plm_packaging_sku_bom_specs`, `query_lims_barrier_shelf_life_barrier_lab_trials` | `agents/sustainable_packaging_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 53 | `tariff_esg_agent` | **Low-Code** | `inspect_alloydb_tariff_esg_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_alloydb_contract_clause_obligations`, `query_customs_tariff_cross_border_duty_impact` | `agents/tariff_esg_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 54 | `three_way_match_dispute` | **Low-Code** | `inspect_sap_s4hana_three_way_match_dispute_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_edi_docai_ap_vendor_invoice_headers`, `query_edi_docai_three_way_match_dispute_ledger` | `agents/three_way_match_dispute/low_code/gemini_enterprise_agent_designer.yaml` |
+| 55 | `tier_n_risk_sentinel` | **Hybrid** | `inspect_cloud_spanner_tier_n_risk_sentinel_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_weathernext_active_disruption_threats`, `query_cloud_spanner_bom_finished_good_lineage` | `agents/tier_n_risk_sentinel/low_code/gemini_enterprise_agent_designer.yaml` |
+| 56 | `trade_scheme_claims_reconciler` | **Low-Code** | `inspect_trade_scheme_trade_scheme_claims_reconciler_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_trade_scheme_active_trade_promotion_schemes`, `query_bigquery_claim_anomaly_audit_findings` | `agents/trade_scheme_claims_reconciler/low_code/gemini_enterprise_agent_designer.yaml` |
+| 57 | `warehouse_slotting_agent` | **High-Code** | `inspect_sap_ewm_warehouse_slotting_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_kion_amr_amr_picker_travel_telemetry`, `query_ergonomic_pick_slot_reassignment_recommendations` | `agents/warehouse_slotting_agent/low_code/gemini_enterprise_agent_designer.yaml` |
+| 58 | `wave_fulfillment_copilot` | **High-Code** | `inspect_wms_wave_fulfillment_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_tms_carrier_pull_cutoff_schedules`, `query_wes_rebalance_dynamic_wave_rebalance_directives` | `agents/wave_fulfillment_copilot/low_code/gemini_enterprise_agent_designer.yaml` |
+| 59 | `working_capital_cash_bridge` | **Low-Code** | `inspect_sap_s4hana_working_capital_cash_bridge_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_edi_docai_supplier_ap_invoices`, `query_edi_docai_trapped_cash_opportunities` | `agents/working_capital_cash_bridge/low_code/gemini_enterprise_agent_designer.yaml` |
+| 60 | `yard_dock_sequencer` | **Hybrid** | `inspect_google_maps_yard_dock_sequencer_data_sources`, `query_sap_s4hana_master_data_backbone`, `query_tms_carrier_detention_risk_records`, `query_sap_ewm_dock_door_turnaround_schedules` | `agents/yard_dock_sequencer/low_code/gemini_enterprise_agent_designer.yaml` |

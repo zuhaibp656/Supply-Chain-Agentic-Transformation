@@ -1,0 +1,64 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: tier_n_risk_sentinel
+  display_name: "Disruption Sensing Agent"
+  build_tier: "Hybrid"
+  category: "02 \u00b7 Sourcing & Procurement \u2014 Supplier Network"
+  primary_persona: "Procurement Dir. / Risk Mgr"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_active_disruption_threats
+      uri: "bq://zuhaibp-ai.supply_chain_twin.active_disruption_threats"
+      source_system: "Google DeepMind WeatherNext 3 & Geopolitical Threat Feed"
+      protocol: "PubSub Streaming / Earth Engine Geospatial GIS"
+    - id: bq_supply_chain_twin_bom_finished_good_lineage
+      uri: "bq://zuhaibp-ai.supply_chain_twin.bom_finished_good_lineage"
+      source_system: "Cloud Spanner Multi-Tier Supply Network Knowledge Graph"
+      protocol: "Spanner Graph SQL / Vertex AI GNN"
+    - id: bq_supply_chain_twin_mitigation_playbook_options
+      uri: "bq://zuhaibp-ai.supply_chain_twin.mitigation_playbook_options"
+      source_system: "Multi-Echelon Inventory Optimization (MEIO) Safety Buffer Gateway"
+      protocol: "REST / Event-Driven Webhook"
+    - id: bq_supply_chain_twin_subtier_supplier_network
+      uri: "bq://zuhaibp-ai.supply_chain_twin.subtier_supplier_network"
+      source_system: "Cloud Spanner Multi-Tier Supply Network Knowledge Graph"
+      protocol: "Spanner Graph SQL / Vertex AI GNN"
+  data_source_tools:
+    - inspect_cloud_spanner_tier_n_risk_sentinel_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_weathernext_active_disruption_threats
+    - query_cloud_spanner_bom_finished_good_lineage
+    - query_meio_buffer_mitigation_playbook_options
+    - query_cloud_spanner_subtier_supplier_network
+    - query_subtier_network_nodes
+    - query_active_disruption_threats
+    - query_bom_revenue_lineage
+    - query_mitigation_playbook_options
+    - query_spanner_graph_subtier_supplier_lineage
+    - fetch_dun_bradstreet_financial_health_ratings
+    - query_bigquery_geopolitical_and_port_risk_indices
+    - run_tier_n_bom_revenue_vulnerability_solver
+    - render_tier_n_risk_sentinel_a2ui_chart_and_canvas
+    - draft_tier_n_risk_sentinel_stakeholder_decision_memo
+    - export_supplier_network_graph_csv_and_memo
+    - publish_tier_n_risk_sentinel_interactive_cockpit_to_gcs
+    - action_dispatch_dual_source_po_split
+    - action_surge_meio_safety_buffer
+    - commit_dual_sourcing_allocation_to_sap_ariba
+  starter_prompts:
+    - "Trace our multi-tier supplier network across our primary packaging and raw material vendors in Gujarat, Maharashtra, and Tamil Nadu. Detect single-source dependencies, identify suppliers facing financial or operational shutdown risk, calculate downstream revenue at risk, and output an actionable risk ledger."
+    - "Generate an interactive multi-tier supplier network graph and risk radar visualizing tier-1 to tier-3 nodes, highlighting sole-source bottlenecks, geographic concentration, and operational risk tiers."
+    - "Draft an executive supplier resilience briefing and interactive full-screen supply network audit report detailing secondary qualification timelines and recommended safety stock buffers for critical components."
+    - "Go ahead and trigger the backup dual-source allocation for our highest-risk material exposure and confirm once placed."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

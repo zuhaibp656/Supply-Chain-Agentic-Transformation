@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: otif_penalty_shield
+  display_name: "Delivery Exception Copilot"
+  build_tier: "Low-Code"
+  category: "05 \u00b7 Distribution & Logistics \u2014 Last-Mile Delivery"
+  primary_persona: "Customer Support Ops Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_geofence_edi856_dispute_dossiers
+      uri: "bq://zuhaibp-ai.supply_chain_twin.geofence_edi856_dispute_dossiers"
+      source_system: "Google Maps Geofence + EDI 856 ASN + Signed ePOD Evidence Compiler"
+      protocol: "Document AI / GIS"
+    - id: bq_supply_chain_twin_open_retail_customer_orders_sla
+      uri: "bq://zuhaibp-ai.supply_chain_twin.open_retail_customer_orders_sla"
+      source_system: "Vertex AI 72-Hour Customer MABD & OTIF Breach Risk Scorer"
+      protocol: "BigQuery ML / Spanner"
+    - id: bq_supply_chain_twin_predicted_otif_breach_alerts
+      uri: "bq://zuhaibp-ai.supply_chain_twin.predicted_otif_breach_alerts"
+      source_system: "SAP S/4HANA SD Priority Wave & Alternate Hub Split-Ship Broker"
+      protocol: "OData v4"
+    - id: bq_supply_chain_twin_retailer_otif_chargeback_deductions
+      uri: "bq://zuhaibp-ai.supply_chain_twin.retailer_otif_chargeback_deductions"
+      source_system: "Cymbal Retail Retail Link / Target Partners Online Deduction Feed"
+      protocol: "EDI 812 / Portal API"
+  data_source_tools:
+    - inspect_edi_docai_otif_penalty_shield_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_google_maps_geofence_edi856_dispute_dossiers
+    - query_edi_docai_open_retail_customer_orders_sla
+    - query_sap_s4hana_predicted_otif_breach_alerts
+    - query_retail_link_retailer_otif_chargeback_deductions
+    - query_open_retail_customer_orders_sla
+    - query_predicted_otif_breach_alerts
+    - query_retailer_otif_chargeback_deductions
+    - query_geofence_edi856_dispute_dossiers
+    - run_otif_penalty_shield_constraint_and_variance_solver
+    - render_otif_penalty_shield_a2ui_chart_and_canvas
+    - draft_otif_penalty_shield_stakeholder_decision_memo
+    - export_retailer_otif_chargeback_deductions_csv_to_gcs
+    - publish_otif_penalty_shield_interactive_cockpit_to_gcs
+    - action_execute_otif_sla_rescue_intervention
+    - action_submit_chargeback_dispute_dossier
+  starter_prompts:
+    - "Which customer shipments currently in transit are running late due to weather, traffic, or hub delays, and what proactive updates or recovery actions should we trigger right now?"
+    - "Show me a chart comparing shipment delay risk, retailer On-Time In-Full penalty exposure, and customer impact across active in-transit loads."
+    - "Write a clear customer-care and logistics exception summary listing delayed orders, updated arrival windows, and proactive customer reschedule actions."
+    - "Go ahead and send the proactive updated delivery window notification and reschedule link for our highest-risk delayed shipment."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

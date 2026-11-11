@@ -1,0 +1,64 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: promo_lift_simulator
+  display_name: "Promo ROI Simulator"
+  build_tier: "Hybrid"
+  category: "01 \u00b7 Planning & Strategy \u2014 Trade Promotion"
+  primary_persona: "Trade Marketing Manager"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_causal_promo_elasticity
+      uri: "bq://zuhaibp-ai.supply_chain_twin.causal_promo_elasticity"
+      source_system: "BigQuery ML Causal Double-ML Elasticity Engine"
+      protocol: "BigQuery ML / Vertex AI Feature Store"
+    - id: bq_supply_chain_twin_cross_sku_cannibalization
+      uri: "bq://zuhaibp-ai.supply_chain_twin.cross_sku_cannibalization"
+      source_system: "BigQuery ML Causal Double-ML Elasticity Engine"
+      protocol: "BigQuery ML / Vertex AI Feature Store"
+    - id: bq_supply_chain_twin_planned_promo_campaigns
+      uri: "bq://zuhaibp-ai.supply_chain_twin.planned_promo_campaigns"
+      source_system: "SAP Trade Promotion Management & Salesforce Consumer Goods Cloud"
+      protocol: "OData v4 / Salesforce REST API"
+    - id: bq_supply_chain_twin_warehouse_promo_availability
+      uri: "bq://zuhaibp-ai.supply_chain_twin.warehouse_promo_availability"
+      source_system: "AlloyDB PostgreSQL Multi-Echelon Stock Buffer"
+      protocol: "AlloyDB pgvector / MEIO Twin SQL"
+  data_source_tools:
+    - inspect_sap_s4hana_promo_lift_simulator_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_bigquery_causal_promo_elasticity
+    - query_bigquery_cross_sku_cannibalization
+    - query_sap_s4hana_planned_promo_campaigns
+    - query_alloydb_warehouse_promo_availability
+    - query_planned_promo_campaigns
+    - query_causal_promo_elasticity
+    - query_cross_sku_cannibalization
+    - query_warehouse_promo_availability
+    - query_salesforce_crm_trade_promotions_and_coop_agreements
+    - fetch_bigquery_point_of_sale_historical_lifts
+    - audit_warehouse_promo_inventory_readiness
+    - run_causal_elasticity_and_cannibalization_solver
+    - render_promo_lift_simulator_a2ui_chart_and_canvas
+    - draft_promo_lift_simulator_stakeholder_decision_memo
+    - export_promo_roi_waterfall_csv_ledger
+    - publish_promo_lift_simulator_interactive_cockpit_to_gcs
+    - action_shape_promotional_mechanic
+    - action_lock_tpm_calendar
+    - commit_salesforce_trade_spend_and_sap_pricing
+  starter_prompts:
+    - "Evaluate our upcoming festive season retail trade promotion campaigns across DMart and Reliance Retail. Model causal price elasticity, forward-buying inventory drag, and product cannibalization, flag any margin-dilutive discounts, and provide an atomic ledger of projected financial returns."
+    - "Render an interactive promotional margin waterfall and cannibalization matrix chart comparing promotional volume lift against net margin impact across all planned retail campaigns."
+    - "Draft a formal trade spend review memorandum and interactive full-screen promotion approval brief for Sales and Finance detailing which promotional campaigns to fund, which to restructure with bundled cross-sells, and why."
+    - "Go ahead and approve the restructured promotional plan and updated volume uplift for our highest-priority campaign."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

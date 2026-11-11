@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: freight_control_tower
+  display_name: "Routing Guide Compliance"
+  build_tier: "Low-Code"
+  category: "05 \u00b7 Distribution & Logistics \u2014 Route & Carrier"
+  primary_persona: "Transport Procurement Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_carrier_edi210_freight_invoices
+      uri: "bq://zuhaibp-ai.supply_chain_twin.carrier_edi210_freight_invoices"
+      source_system: "Google Cloud Document AI & EDI 210 3-Way Freight Invoice Auditor"
+      protocol: "gRPC / EDI 210"
+    - id: bq_supply_chain_twin_cold_chain_thermal_excursion_alerts
+      uri: "bq://zuhaibp-ai.supply_chain_twin.cold_chain_thermal_excursion_alerts"
+      source_system: "Project44 / FourKites Real-Time GPS & Cold-Chain IoT Stream"
+      protocol: "Webhook / REST v4"
+    - id: bq_supply_chain_twin_freight_audit_discrepancy_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.freight_audit_discrepancy_ledger"
+      source_system: "SAP S/4HANA TM/AP Automated Freight Settlement & Debit Memo Engine"
+      protocol: "OData v4"
+    - id: bq_supply_chain_twin_in_transit_multimodal_telemetry
+      uri: "bq://zuhaibp-ai.supply_chain_twin.in_transit_multimodal_telemetry"
+      source_system: "Project44 / FourKites Real-Time GPS & Cold-Chain IoT Stream"
+      protocol: "Webhook / REST v4"
+  data_source_tools:
+    - inspect_iot_telematics_freight_control_tower_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_edi_docai_carrier_edi210_freight_invoices
+    - query_iot_telematics_cold_chain_thermal_excursion_alerts
+    - query_sap_s4hana_freight_audit_discrepancy_ledger
+    - query_iot_telematics_in_transit_multimodal_telemetry
+    - query_in_transit_multimodal_telemetry
+    - query_cold_chain_thermal_excursion_alerts
+    - query_carrier_edi210_freight_invoices
+    - query_freight_audit_discrepancy_ledger
+    - run_freight_control_tower_constraint_and_variance_solver
+    - render_freight_control_tower_a2ui_chart_and_canvas
+    - draft_freight_control_tower_stakeholder_decision_memo
+    - export_transit_multimodal_telemetry_csv_to_gcs
+    - publish_freight_control_tower_interactive_cockpit_to_gcs
+    - action_reroute_in_transit_reefer_shipment
+    - action_issue_freight_audit_debit_adjustment
+  starter_prompts:
+    - "Which contracted trucking carriers are rejecting load tenders or missing on-time delivery targets on key lanes, forcing us into expensive spot-market trucks?"
+    - "Show me a chart comparing contracted tender acceptance rates, On-Time In-Full reliability, and spot-market cost leakage across our primary freight lanes."
+    - "Draft a clear carrier routing-guide review memo for Transportation Procurement identifying underperforming carriers and recommending backup waterfall changes."
+    - "Go ahead and reprioritize the lane routing guide to promote our high-performing backup carrier on the worst-leaking corridor."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

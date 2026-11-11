@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: network_twin_architect
+  display_name: "Cost-to-Serve Diagnostic"
+  build_tier: "High-Code"
+  category: "01 \u00b7 Planning & Strategy \u2014 Portfolio & SKU"
+  primary_persona: "Commercial Finance Director"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_center_of_gravity_milp_scenarios
+      uri: "bq://zuhaibp-ai.supply_chain_twin.center_of_gravity_milp_scenarios"
+      source_system: "SAP IBP & S/4HANA Sourcing Rules & Customer Territory Master"
+      protocol: "OData v4"
+    - id: bq_supply_chain_twin_network_facility_nodes_and_leases
+      uri: "bq://zuhaibp-ai.supply_chain_twin.network_facility_nodes_and_leases"
+      source_system: "Google OR-Tools Capacitated Facility Location & Territory MILP"
+      protocol: "C++ / Python MILP"
+    - id: bq_supply_chain_twin_network_stress_test_simulations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.network_stress_test_simulations"
+      source_system: "Macro Tariff & Port Disruption Network Stress-Test Simulator"
+      protocol: "Python Monte Carlo + MILP"
+    - id: bq_supply_chain_twin_sku_customer_cost_to_serve_matrix
+      uri: "bq://zuhaibp-ai.supply_chain_twin.sku_customer_cost_to_serve_matrix"
+      source_system: "BigQuery Activity-Based Cost-to-Serve (CTS) & Margin Waterfall Engine"
+      protocol: "BigQuery SQL"
+  data_source_tools:
+    - inspect_ortools_network_twin_architect_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_sap_ibp_center_of_gravity_milp_scenarios
+    - query_ortools_network_facility_nodes_and_leases
+    - query_tariff_port_network_stress_test_simulations
+    - query_bigquery_sku_customer_cost_to_serve_matrix
+    - query_network_facility_nodes_and_leases
+    - query_sku_customer_cost_to_serve_matrix
+    - query_center_of_gravity_milp_scenarios
+    - query_network_stress_test_simulations
+    - run_network_twin_architect_constraint_and_variance_solver
+    - render_network_twin_architect_a2ui_chart_and_canvas
+    - draft_network_twin_architect_stakeholder_decision_memo
+    - export_sku_customer_cost_serve_csv_to_gcs
+    - publish_network_twin_architect_interactive_cockpit_to_gcs
+    - action_publish_network_territory_realignment
+    - action_update_cost_to_serve_order_policy
+  starter_prompts:
+    - "When we include warehousing, handling, freight, and returns, which customer channels and pack formats are genuinely profitable to serve and which ones are quietly losing margin?"
+    - "Show me a chart comparing gross revenue against true net margin after fulfillment and freight costs across our main channels and accounts."
+    - "Draft a plain-English cost-to-serve summary for Commercial and Supply Chain leadership explaining where fulfillment costs are eroding profit and how order policies should change."
+    - "Please apply the recommended minimum order quantity and fulfillment routing policy update for the highest cost-to-serve account."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

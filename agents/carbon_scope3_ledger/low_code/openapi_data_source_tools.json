@@ -1,0 +1,565 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "ESG & Scope 3 Auditor \u2014 Data-Source Connector & Solver API",
+    "version": "2.0.0",
+    "description": "Declarative OpenAPI 3.0.3 tool definitions for ESG & Scope 3 Auditor (Low-Code Tier) mapped 1-to-1 to actual enterprise data sources."
+  },
+  "servers": [
+    {
+      "url": "https://sc-enterprise-portal-zuhaibp-ai.a.run.app"
+    }
+  ],
+  "paths": {
+    "/v1/agents/carbon_scope3_ledger/tools/inspect_iso14083_glec_carbon_scope3_ledger_data_sources": {
+      "get": {
+        "operationId": "inspect_iso14083_glec_carbon_scope3_ledger_data_sources",
+        "summary": "Execute inspect iso14083 glec carbon scope3 ledger data sources on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/query_sap_s4hana_master_data_backbone": {
+      "get": {
+        "operationId": "query_sap_s4hana_master_data_backbone",
+        "summary": "Execute query sap s4hana master data backbone on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/query_weathernext_eudr_earth_engine_plot_verifications": {
+      "get": {
+        "operationId": "query_weathernext_eudr_earth_engine_plot_verifications",
+        "summary": "Execute query weathernext eudr earth engine plot verifications on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/query_tms_low_carbon_carrier_and_supplier_swaps": {
+      "get": {
+        "operationId": "query_tms_low_carbon_carrier_and_supplier_swaps",
+        "summary": "Execute query tms low carbon carrier and supplier swaps on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/query_iso14083_glec_shipment_level_scope3_emissions": {
+      "get": {
+        "operationId": "query_iso14083_glec_shipment_level_scope3_emissions",
+        "summary": "Execute query iso14083 glec shipment level scope3 emissions on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/query_shipment_level_scope3_emissions": {
+      "get": {
+        "operationId": "query_shipment_level_scope3_emissions",
+        "summary": "Execute query shipment level scope3 emissions on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/query_eu_cbam_embedded_carbon_declarations": {
+      "get": {
+        "operationId": "query_eu_cbam_embedded_carbon_declarations",
+        "summary": "Execute query eu cbam embedded carbon declarations on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/query_eudr_earth_engine_plot_verifications": {
+      "get": {
+        "operationId": "query_eudr_earth_engine_plot_verifications",
+        "summary": "Execute query eudr earth engine plot verifications on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/query_low_carbon_carrier_and_supplier_swaps": {
+      "get": {
+        "operationId": "query_low_carbon_carrier_and_supplier_swaps",
+        "summary": "Execute query low carbon carrier and supplier swaps on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/query_bigquery_shipment_telematics_scope3_ledger": {
+      "get": {
+        "operationId": "query_bigquery_shipment_telematics_scope3_ledger",
+        "summary": "Execute query bigquery shipment telematics scope3 ledger on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/fetch_sap_e_waste_and_eu_cbam_customs_declarations": {
+      "get": {
+        "operationId": "fetch_sap_e_waste_and_eu_cbam_customs_declarations",
+        "summary": "Execute fetch sap e waste and eu cbam customs declarations on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/query_google_earth_engine_eudr_forest_plot_audits": {
+      "get": {
+        "operationId": "query_google_earth_engine_eudr_forest_plot_audits",
+        "summary": "Execute query google earth engine eudr forest plot audits on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/run_marginal_carbon_abatement_cost_solver": {
+      "get": {
+        "operationId": "run_marginal_carbon_abatement_cost_solver",
+        "summary": "Execute run marginal carbon abatement cost solver on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/render_carbon_scope3_ledger_a2ui_chart_and_canvas": {
+      "get": {
+        "operationId": "render_carbon_scope3_ledger_a2ui_chart_and_canvas",
+        "summary": "Execute render carbon scope3 ledger a2ui chart and canvas on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/draft_carbon_scope3_ledger_stakeholder_decision_memo": {
+      "get": {
+        "operationId": "draft_carbon_scope3_ledger_stakeholder_decision_memo",
+        "summary": "Execute draft carbon scope3 ledger stakeholder decision memo on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/export_carbon_disclosure_ledger_csv_and_memo": {
+      "get": {
+        "operationId": "export_carbon_disclosure_ledger_csv_and_memo",
+        "summary": "Execute export carbon disclosure ledger csv and memo on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/publish_carbon_scope3_ledger_interactive_cockpit_to_gcs": {
+      "get": {
+        "operationId": "publish_carbon_scope3_ledger_interactive_cockpit_to_gcs",
+        "summary": "Execute publish carbon scope3 ledger interactive cockpit to gcs on connected enterprise data source",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional plain-English SKU, PO, Invoice, Facility, or Region filter."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/action_certify_cbam_and_eudr_compliance_dossier": {
+      "post": {
+        "operationId": "action_certify_cbam_and_eudr_compliance_dossier",
+        "summary": "Execute action certify cbam and eudr compliance dossier on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/action_commit_scope3_decarbonization_swap": {
+      "post": {
+        "operationId": "action_commit_scope3_decarbonization_swap",
+        "summary": "Execute action commit scope3 decarbonization swap on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/carbon_scope3_ledger/tools/commit_low_carbon_carrier_awards_in_sap_tm": {
+      "post": {
+        "operationId": "commit_low_carbon_carrier_awards_in_sap_tm",
+        "summary": "Execute commit low carbon carrier awards in sap tm on connected enterprise data source",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Verified structured enterprise dataset & solver output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: wave_fulfillment_copilot
+  display_name: "Wave Fulfillment Copilot"
+  build_tier: "High-Code"
+  category: "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations"
+  primary_persona: "DC Shift Floor Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_carrier_pull_cutoff_schedules
+      uri: "bq://zuhaibp-ai.supply_chain_twin.carrier_pull_cutoff_schedules"
+      source_system: "TMS Dock Carrier Pull Cutoff Schedule"
+      protocol: "REST / EDI 204"
+    - id: bq_supply_chain_twin_dynamic_wave_rebalance_directives
+      uri: "bq://zuhaibp-ai.supply_chain_twin.dynamic_wave_rebalance_directives"
+      source_system: "Dynamic Labor & Wave Rebalance Directives"
+      protocol: "WES Task API"
+    - id: bq_supply_chain_twin_wms_open_outbound_order_waves
+      uri: "bq://zuhaibp-ai.supply_chain_twin.wms_open_outbound_order_waves"
+      source_system: "WMS Outbound Order Wave & Zone Queue"
+      protocol: "Manhattan Active API"
+    - id: bq_supply_chain_twin_zone_pick_pack_labor_telemetry
+      uri: "bq://zuhaibp-ai.supply_chain_twin.zone_pick_pack_labor_telemetry"
+      source_system: "WES Zone Pick/Pack UPH & Chute Congestion Feed"
+      protocol: "WebSocket / SQL"
+  data_source_tools:
+    - inspect_wms_wave_fulfillment_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_tms_carrier_pull_cutoff_schedules
+    - query_wes_rebalance_dynamic_wave_rebalance_directives
+    - query_wms_open_outbound_order_waves
+    - query_wes_labor_zone_pick_pack_labor_telemetry
+    - query_open_outbound_waves
+    - query_zone_pick_labor_telemetry
+    - query_carrier_pull_cutoffs
+    - query_wave_rebalance_directives
+    - analyze_wave_cutoff_burn_down
+    - render_wave_fulfillment_a2ui_chart_and_canvas
+    - draft_floor_wave_rebalance_huddle
+    - export_zone_pick_pack_labor_csv_to_gcs
+    - publish_wave_fulfillment_interactive_cockpit_to_gcs
+    - action_rebalance_wes_zone_pickers
+    - action_resequence_waveless_chutes
+  starter_prompts:
+    - "How are our active warehouse picking and packing waves progressing against today's carrier departure cutoffs, and which zones need labor rebalanced right now?"
+    - "Plot a chart comparing remaining pick-wave workload against available labor capacity and carrier cutoff countdowns across warehouse zones."
+    - "Draft a quick floor-action note for Shift Leads detailing which zones are falling behind cutoff, how many pickers to move, and which customer orders to prioritize."
+    - "Go ahead and rebalance zone picker assignments and reprioritize the at-risk outbound wave so we make the carrier cutoff."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

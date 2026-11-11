@@ -1,0 +1,64 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: meio_safety_stock_agent
+  display_name: "Safety Stock Agent"
+  build_tier: "High-Code"
+  category: "04 \u00b7 Inventory & Warehousing \u2014 Positioning & Optimization"
+  primary_persona: "Inventory Optimization Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_dc_inventory_echelon_balances
+      uri: "bq://zuhaibp-ai.supply_chain_twin.dc_inventory_echelon_balances"
+      source_system: "SAP EWM / Warehouse Management System (WMS) Enterprise DC Inventory Ledger"
+      protocol: "REST / OpenAPI v3 / Real-Time Perpetual Inventory Feed"
+    - id: bq_supply_chain_twin_echelon_service_level_projections
+      uri: "bq://zuhaibp-ai.supply_chain_twin.echelon_service_level_projections"
+      source_system: "BigQuery ML Stochastic Service Level & Stockout Risk Model"
+      protocol: "BigQuery SQL / Vertex AI TimesFM Monte Carlo Engine"
+    - id: bq_supply_chain_twin_lateral_dc_rebalance_transfers
+      uri: "bq://zuhaibp-ai.supply_chain_twin.lateral_dc_rebalance_transfers"
+      source_system: "Oracle OTM / Carrier Fleet Lateral Transshipment Dispatcher"
+      protocol: "EDI 204 / REST API / Inter-DC Rebalance Dispatch"
+    - id: bq_supply_chain_twin_multi_echelon_safety_stock_recommendations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.multi_echelon_safety_stock_recommendations"
+      source_system: "SAP Integrated Business Planning (IBP) for MEIO / Clark-Scarf Engine"
+      protocol: "OData v4 / RFC / Multi-Echelon Stochastic Optimization"
+  data_source_tools:
+    - inspect_sap_ibp_meio_safety_stock_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_sap_ewm_dc_inventory_echelon_balances
+    - query_bigquery_echelon_service_level_projections
+    - query_tms_lateral_dc_rebalance_transfers
+    - query_sap_ibp_multi_echelon_safety_stock_recommendations
+    - query_multi_echelon_safety_stock_recommendations
+    - query_dc_inventory_echelon_balances
+    - query_lateral_dc_rebalance_transfers
+    - query_echelon_service_level_projections
+    - query_sap_s4hana_inventory_balances_across_echelons
+    - fetch_bigquery_lead_time_variability_distributions
+    - query_lateral_transshipment_freight_rates
+    - run_clark_scarf_coupled_stochastic_meio_solver
+    - render_meio_safety_stock_a2ui_chart_and_canvas
+    - draft_meio_safety_stock_stakeholder_decision_memo
+    - export_echelon_buffer_recommendations_csv_and_memo
+    - publish_meio_safety_stock_interactive_cockpit_to_gcs
+    - action_execute_lateral_dc_rebalance
+    - action_update_echelon_safety_stock_policy
+    - commit_safety_stock_parameters_to_sap_ibp
+  starter_prompts:
+    - "Optimize our multi-echelon inventory buffers across our mother godowns in Bhiwandi and Nagpur and regional depots in Delhi NCR, Kolkata, and Bengaluru. Calculate safety stock buffers to guarantee 99.2% customer on-time fulfillment while minimizing trapped working capital, and generate a stock rebalancing schedule."
+    - "Render an interactive multi-echelon stocking post visualization comparing current inventory positioning against the optimized posture across each supply echelon."
+    - "Draft an inventory strategy memorandum and interactive full-screen inventory health report for the Inventory Director outlining recommended reorder points, lateral transfers, and freed working capital."
+    - "Please update the safety stock and reorder targets for our most imbalanced distribution center item and confirm the change."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

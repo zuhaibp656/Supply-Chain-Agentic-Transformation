@@ -1,0 +1,58 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: line_schedule_optimizer
+  display_name: "Disruption Re-sequencer"
+  build_tier: "High-Code"
+  category: "03 \u00b7 Manufacturing & Production \u2014 Production Scheduling"
+  primary_persona: "Shop Floor / Shift Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_changeover_matrix_rules
+      uri: "bq://zuhaibp-ai.supply_chain_twin.changeover_matrix_rules"
+      source_system: "Allergen & Color Cleaning-in-Place (CIP) Changeover Matrix Vault"
+      protocol: "PostgreSQL / AlloyDB Static Rules"
+    - id: bq_supply_chain_twin_optimized_sequence_schedule
+      uri: "bq://zuhaibp-ai.supply_chain_twin.optimized_sequence_schedule"
+      source_system: "Google OR-Tools CP-SAT Finite Capacity Scheduling Engine"
+      protocol: "Python OR-Tools / C++ CP-SAT MIP Engine"
+    - id: bq_supply_chain_twin_plant_line_workcenters
+      uri: "bq://zuhaibp-ai.supply_chain_twin.plant_line_workcenters"
+      source_system: "Shopfloor Aseptic Line Workcenter Registry"
+      protocol: "Siemens Opcenter MES / SAP Work Centers"
+    - id: bq_supply_chain_twin_production_orders_backlog
+      uri: "bq://zuhaibp-ai.supply_chain_twin.production_orders_backlog"
+      source_system: "SAP S/4HANA Production Planning & Detailed Scheduling (PP/DS)"
+      protocol: "BAPI_PRODORD_CHANGE_STATUS / OData v4"
+  data_source_tools:
+    - inspect_ortools_line_schedule_optimizer_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_ortools_optimized_sequence_schedule
+    - query_sap_ppds_production_orders_backlog
+    - query_production_orders_backlog
+    - query_changeover_matrix_rules
+    - query_plant_line_workcenters
+    - query_optimized_sequence_schedule
+    - run_line_schedule_optimizer_constraint_and_variance_solver
+    - render_line_schedule_optimizer_a2ui_chart_and_canvas
+    - draft_line_schedule_optimizer_stakeholder_decision_memo
+    - export_production_orders_backlog_csv_to_gcs
+    - publish_line_schedule_optimizer_interactive_cockpit_to_gcs
+    - action_solve_and_lock_finite_sequence
+    - action_dispatch_sap_ppds_sequence
+  starter_prompts:
+    - "We have unexpected machine slowdowns and stops on the shop floor\u2014which work-in-progress batches are at risk of spoiling or missing customer cutoffs, and which alternate lines can take them?"
+    - "Create a chart comparing remaining batch shelf-life windows against alternate production line availability and recovery output."
+    - "Draft a crisp shift-handover recovery note for shop-floor supervisors detailing which halted batches to reroute, to which lines, and in what order."
+    - "Go ahead and reroute the highest-risk halted batch to the qualified alternate production line and confirm the updated schedule."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

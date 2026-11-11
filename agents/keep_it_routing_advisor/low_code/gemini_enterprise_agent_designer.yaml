@@ -1,0 +1,59 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: keep_it_routing_advisor
+  display_name: "Keep-It & Routing Advisor"
+  build_tier: "High-Code"
+  category: "06 \u00b7 Returns & Reverse Logistics \u2014 Returns & Claims Mgmt"
+  primary_persona: "Customer Experience (CX) Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_customer_fraud_and_ltv_scores
+      uri: "bq://zuhaibp-ai.supply_chain_twin.customer_fraud_and_ltv_scores"
+      source_system: "Customer LTV & Return Abuse Risk Scoring Engine"
+      protocol: "gRPC / Feature Store"
+    - id: bq_supply_chain_twin_keep_it_instant_refund_decisions
+      uri: "bq://zuhaibp-ai.supply_chain_twin.keep_it_instant_refund_decisions"
+      source_system: "Returnless Refund vs. Physical RMA Routing Ledger"
+      protocol: "REST / Refund Webhook"
+    - id: bq_supply_chain_twin_low_asp_return_requests
+      uri: "bq://zuhaibp-ai.supply_chain_twin.low_asp_return_requests"
+      source_system: "Omnichannel RMA Initiation Portal"
+      protocol: "REST / GraphQL"
+    - id: bq_supply_chain_twin_reverse_shipping_and_processing_costs
+      uri: "bq://zuhaibp-ai.supply_chain_twin.reverse_shipping_and_processing_costs"
+      source_system: "Zone-Based Reverse Parcel & Touch Cost Calculator"
+      protocol: "Carrier Rate API / SQL"
+  data_source_tools:
+    - inspect_oms_self_keep_it_routing_advisor_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_trust_risk_customer_fraud_and_ltv_scores
+    - query_oms_self_low_asp_return_requests
+    - query_reverse_parcel_reverse_shipping_and_processing_costs
+    - query_low_asp_return_requests
+    - query_reverse_shipping_costs
+    - query_customer_fraud_ltv_scores
+    - query_keep_it_routing_decisions
+    - analyze_keep_it_economic_breakeven
+    - render_keep_it_routing_advisor_a2ui_chart_and_canvas
+    - draft_returnless_refund_policy_audit_memo
+    - export_reverse_shipping_processing_costs_csv_to_gcs
+    - publish_keep_it_routing_advisor_interactive_cockpit_to_gcs
+    - action_issue_keep_it_instant_refund
+    - action_enforce_physical_drop_verification
+  starter_prompts:
+    - "For which low-price or bulky customer returns does reverse shipping and warehouse processing cost more than we could ever recover by bringing the item back?"
+    - "Create a chart comparing net resale recovery value against reverse shipping and handling cost across active return categories."
+    - "Write a clear return-economics brief for Customer Experience and Finance showing when instant keep-it or local donation beats shipping items back."
+    - "Go ahead and apply the keep-it or local charity routing rule for the return item where reverse freight exceeds salvage value."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

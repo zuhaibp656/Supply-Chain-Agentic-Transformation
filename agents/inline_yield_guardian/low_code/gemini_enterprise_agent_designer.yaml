@@ -1,0 +1,64 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: inline_yield_guardian
+  display_name: "Visual Defect Triager"
+  build_tier: "Hybrid"
+  category: "03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance"
+  primary_persona: "QA Manager / Line Inspector"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_camera_vision_inspection_frames
+      uri: "bq://zuhaibp-ai.supply_chain_twin.camera_vision_inspection_frames"
+      source_system: "High-Speed Industrial Optical Inspection Camera Array"
+      protocol: "GigE Vision / GenICam / RTSP 120 FPS Stream"
+    - id: bq_supply_chain_twin_ebhr_batch_record_deviations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.ebhr_batch_record_deviations"
+      source_system: "Veeva Vault QualityOne / SAP QM Electronic Batch Record (eBHR)"
+      protocol: "REST / OpenAPI v3 / 21 CFR Part 11 Audit Trail"
+    - id: bq_supply_chain_twin_pneumatic_reject_gate_events
+      uri: "bq://zuhaibp-ai.supply_chain_twin.pneumatic_reject_gate_events"
+      source_system: "Line 01 High-Speed Solenoid Pneumatic Reject Diverter"
+      protocol: "Modbus TCP / Industrial Ethernet IO-Link"
+    - id: bq_supply_chain_twin_vision_defect_classification_results
+      uri: "bq://zuhaibp-ai.supply_chain_twin.vision_defect_classification_results"
+      source_system: "Gemini 3.8 Flash Multimodal Defect Classifier"
+      protocol: "Vertex AI Live Vision / Sub-50ms Inference"
+  data_source_tools:
+    - inspect_inline_vision_inline_yield_guardian_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_inline_vision_camera_vision_inspection_frames
+    - query_sap_s4hana_ebhr_batch_record_deviations
+    - query_sap_s4hana_pneumatic_reject_gate_events
+    - query_gemini_flash_vision_defect_classification_results
+    - query_camera_vision_inspection_frames
+    - query_vision_defect_classification_results
+    - query_ebhr_batch_record_deviations
+    - query_pneumatic_reject_gate_events
+    - query_highres_optical_inspection_camera_frames
+    - fetch_gemini_vision_defect_classification_stream
+    - query_siemens_mes_ebhr_batch_record_deviations
+    - run_inline_defect_clustering_and_root_cause_solver
+    - render_inline_yield_guardian_a2ui_chart_and_canvas
+    - draft_inline_yield_guardian_stakeholder_decision_memo
+    - export_defect_inspection_map_csv_and_ncr
+    - publish_inline_yield_guardian_interactive_cockpit_to_gcs
+    - action_trigger_pneumatic_reject_diverter
+    - action_log_ebhr_quality_deviation
+    - commit_pneumatic_diverter_reject_gate_action
+  starter_prompts:
+    - "Analyze high-speed optical vision inspection images across our bottling and packaging lines in our Haridwar plant. Detect container seal misalignments, packaging tears, and lot-code print defects, calculate batch yield impact, and output a quality inspection classification log."
+    - "Generate an interactive visual defect spatial heatmap and bounding box distribution illustrating defect concentration zones across line speeds and container geometries."
+    - "Draft a formal Non-Conformance Report (NCR) and interactive full-screen batch quality dossier for Quality Assurance and Plant Management detailing root-cause findings and automated reject gate calibrations."
+    - "Go ahead and place the affected defective sub-lot on quality hold and log the line parameter adjustment request."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

@@ -1,0 +1,59 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: dock_to_stock_agent
+  display_name: "Dock-to-Stock Agent"
+  build_tier: "Hybrid"
+  category: "04 \u00b7 Inventory & Warehousing \u2014 Warehouse Operations"
+  primary_persona: "Inbound Receiving Supervisor"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_dock_barcode_pallet_scan_logs
+      uri: "bq://zuhaibp-ai.supply_chain_twin.dock_barcode_pallet_scan_logs"
+      source_system: "Receiving Dock GS1-128 Barcode & Vision Arch Logs"
+      protocol: "MQTT / WMS RF"
+    - id: bq_supply_chain_twin_dock_to_stock_turnaround_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.dock_to_stock_turnaround_ledger"
+      source_system: "Directed Putaway & Dock-to-Stock Cycle Ledger"
+      protocol: "WMS Task Engine"
+    - id: bq_supply_chain_twin_edi856_inbound_asn_manifests
+      uri: "bq://zuhaibp-ai.supply_chain_twin.edi856_inbound_asn_manifests"
+      source_system: "Inbound EDI 856 Advance Ship Notice (ASN) Stream"
+      protocol: "AS2 / X12 EDI 856"
+    - id: bq_supply_chain_twin_wms_putaway_bin_capacities
+      uri: "bq://zuhaibp-ai.supply_chain_twin.wms_putaway_bin_capacities"
+      source_system: "WMS Temperature-Zoned Putaway Bin Topology"
+      protocol: "Manhattan WMS API"
+  data_source_tools:
+    - inspect_edi_docai_dock_stock_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_wms_dock_barcode_pallet_scan_logs
+    - query_wms_dock_to_stock_turnaround_ledger
+    - query_edi_docai_edi856_inbound_asn_manifests
+    - query_edi856_inbound_asns
+    - query_dock_pallet_scan_logs
+    - query_wms_putaway_bins
+    - query_dock_to_stock_ledger
+    - analyze_asn_reconciliation_and_putaway
+    - render_dock_stock_a2ui_chart_and_canvas
+    - draft_inbound_asn_discrepancy_report
+    - export_wms_putaway_bin_capacities_csv_to_gcs
+    - publish_dock_stock_interactive_cockpit_to_gcs
+    - action_dispatch_directed_putaway_tasks
+    - action_log_asn_short_receipt_exception
+  starter_prompts:
+    - "Which inbound trucks and unloaded pallets at our receiving docks have mismatches against advance shipping notices or are stuck waiting to be put away into sellable stock?"
+    - "Show me a chart comparing dock-to-stock putaway cycle times and quantity variances across recent inbound shipments."
+    - "Prepare a clear receiving exception summary for the Inbound Dock Supervisor highlighting discrepant shipments, urgent out-of-stock items on the dock, and priority putaway tasks."
+    - "Please post the verified goods receipt reconciliation and priority putaway directive for our delayed high-priority inbound receipt."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

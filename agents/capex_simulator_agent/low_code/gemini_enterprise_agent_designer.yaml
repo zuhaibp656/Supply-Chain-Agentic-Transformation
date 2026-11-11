@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: capex_simulator_agent
+  display_name: "CapEx Simulator"
+  build_tier: "High-Code"
+  category: "03 \u00b7 Manufacturing & Production \u2014 Capacity Planning"
+  primary_persona: "VP Manufacturing Engineering"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_automation_capex_project_proposals
+      uri: "bq://zuhaibp-ai.supply_chain_twin.automation_capex_project_proposals"
+      source_system: "OEM Automation & Line Expansion Quote Book"
+      protocol: "SAP IM / Ariba"
+    - id: bq_supply_chain_twin_capex_dcf_npv_simulation_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.capex_dcf_npv_simulation_ledger"
+      source_system: "Corporate Treasury WACC & DCF Valuation Ledger"
+      protocol: "Python DCF Engine"
+    - id: bq_supply_chain_twin_five_year_volume_growth_scenarios
+      uri: "bq://zuhaibp-ai.supply_chain_twin.five_year_volume_growth_scenarios"
+      source_system: "5-Year Long-Range Volume & Margin Scenarios"
+      protocol: "IBP Strategic Plan"
+    - id: bq_supply_chain_twin_plant_bottleneck_capacity_constraints
+      uri: "bq://zuhaibp-ai.supply_chain_twin.plant_bottleneck_capacity_constraints"
+      source_system: "Multi-Plant Bottleneck & OEE Ceiling Registry"
+      protocol: "SQL / Historian"
+  data_source_tools:
+    - inspect_mes_scada_capex_simulator_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_capex_engineering_automation_capex_project_proposals
+    - query_fin_dcf_capex_dcf_npv_simulation_ledger
+    - query_ibp_long_five_year_volume_growth_scenarios
+    - query_mes_scada_plant_bottleneck_capacity_constraints
+    - query_plant_bottleneck_constraints
+    - query_automation_capex_proposals
+    - query_five_year_volume_scenarios
+    - query_capex_dcf_npv_ledger
+    - analyze_capex_portfolio_dcf_irr
+    - render_capex_simulator_a2ui_chart_and_canvas
+    - draft_cfo_capital_appropriation_memo
+    - export_plant_bottleneck_capacity_constraints_csv_to_gcs
+    - publish_capex_simulator_interactive_cockpit_to_gcs
+    - action_submit_sap_im_capex_appropriation
+    - action_defer_subhurdle_capex_proposal
+  starter_prompts:
+    - "Looking at multi-year demand growth across regions, when will our existing factories run out of capacity, and which capital equipment expansion gives the strongest financial payback?"
+    - "Display a chart comparing multi-year capacity shortfall, capital investment cost, and net present value across our proposed line expansion options."
+    - "Prepare an executive capital investment memo for Engineering and Finance comparing the proposed factory expansion options, payback timeline, and risk."
+    - "Please advance the top-ranked line expansion business case into the formal capital stage-gate review queue."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

@@ -1,0 +1,55 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: inline_quality_inspection_agent
+  display_name: "Inline Quality Inspection Agent"
+  build_tier: "High-Code"
+  category: "Supply Chain Operations"
+  primary_persona: "Supply Chain Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_camera_vision_inspection_frames
+      uri: "bq://zuhaibp-ai.supply_chain_twin.camera_vision_inspection_frames"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+    - id: bq_supply_chain_twin_ebhr_batch_record_deviations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.ebhr_batch_record_deviations"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+    - id: bq_supply_chain_twin_pneumatic_reject_gate_events
+      uri: "bq://zuhaibp-ai.supply_chain_twin.pneumatic_reject_gate_events"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+    - id: bq_supply_chain_twin_vision_defect_classification_results
+      uri: "bq://zuhaibp-ai.supply_chain_twin.vision_defect_classification_results"
+      source_system: "BigQuery Supply Chain Twin"
+      protocol: "BigQuery SQL"
+  data_source_tools:
+    - inspect_bigquery_inline_quality_inspection_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_bigquery_camera_vision_inspection_frames
+    - query_bigquery_ebhr_batch_record_deviations
+    - query_bigquery_pneumatic_reject_gate_events
+    - query_bigquery_vision_defect_classification_results
+    - query_camera_vision_inspection_frames
+    - query_vision_defect_classification_results
+    - query_ebhr_batch_record_deviations
+    - query_pneumatic_reject_gate_events
+    - run_inline_quality_inspection_constraint_and_variance_solver
+    - render_inline_quality_inspection_a2ui_chart_and_canvas
+    - draft_inline_quality_inspection_stakeholder_decision_memo
+    - export_vision_defect_classification_results_csv_to_gcs
+    - publish_inline_quality_inspection_interactive_cockpit_to_gcs
+    - action_trigger_pneumatic_reject_diverter
+    - action_log_ebhr_quality_deviation
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

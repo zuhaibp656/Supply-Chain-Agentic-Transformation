@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: npi_demand_profiler
+  display_name: "NPI Demand Profiler"
+  build_tier: "Hybrid"
+  category: "01 \u00b7 Planning & Strategy \u2014 Demand Forecasting"
+  primary_persona: "Brand & Innovation Manager"
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_historical_lookalike_analog_skus
+      uri: "bq://zuhaibp-ai.supply_chain_twin.historical_lookalike_analog_skus"
+      source_system: "Syndicated Retail POS Lookalike Panel Lake"
+      protocol: "SQL / Vector Cosine Index"
+    - id: bq_supply_chain_twin_npi_90day_forecast_allocations
+      uri: "bq://zuhaibp-ai.supply_chain_twin.npi_90day_forecast_allocations"
+      source_system: "Integrated Business Planning (IBP) NPI Consensus"
+      protocol: "BAPI_PIR_CHANGE / REST"
+    - id: bq_supply_chain_twin_npi_launch_sku_catalog
+      uri: "bq://zuhaibp-ai.supply_chain_twin.npi_launch_sku_catalog"
+      source_system: "Enterprise PLM & NPI Launch Gate Registry"
+      protocol: "REST / OData v4"
+    - id: bq_supply_chain_twin_retail_distribution_door_ramps
+      uri: "bq://zuhaibp-ai.supply_chain_twin.retail_distribution_door_ramps"
+      source_system: "Retailer Planogram Reset & Pipe-Fill Schedule"
+      protocol: "EDI 830 / Portal API"
+  data_source_tools:
+    - inspect_plm_npi_demand_profiler_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_bigquery_historical_lookalike_analog_skus
+    - query_sap_ibp_npi_90day_forecast_allocations
+    - query_plm_npi_launch_sku_catalog
+    - query_retail_door_retail_distribution_door_ramps
+    - query_npi_launch_sku_catalog
+    - query_historical_lookalike_analogs
+    - query_retail_distribution_door_ramps
+    - query_npi_90day_forecast_allocations
+    - analyze_npi_bass_diffusion_ramp
+    - render_npi_demand_profiler_a2ui_chart_and_canvas
+    - draft_npi_consensus_launch_brief
+    - export_retail_distribution_door_ramps_csv_to_gcs
+    - publish_npi_demand_profiler_interactive_cockpit_to_gcs
+    - action_commit_npi_ibp_launch_curve
+    - action_stage_initial_dc_pipefill
+  starter_prompts:
+    - "How are our upcoming new product launches expected to perform based on similar past launches, and which items face the highest risk of early stockouts or excess inventory?"
+    - "Show me a visual comparison of projected launch demand versus initial supply commitments across our new products, and explain which launch needs immediate attention."
+    - "Draft a launch readiness brief for the commercial and supply teams summarizing expected trial and repeat demand, comparable past launches, and recommended opening inventory."
+    - "Please lock in the recommended opening launch forecast and initial inventory buffer for our highest-priority new product launch."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

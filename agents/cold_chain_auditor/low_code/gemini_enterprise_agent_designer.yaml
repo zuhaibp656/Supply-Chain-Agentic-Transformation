@@ -1,0 +1,65 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: cold_chain_auditor
+  display_name: "Cold-Chain Auditor"
+  build_tier: "Hybrid"
+  category: "05 \u00b7 Distribution & Logistics \u2014 First & Mid-Mile"
+  primary_persona: "Cold Chain QA / Logistics Dir."
+spec:
+  model_routing:
+    default_model: gemini-3.1-pro-preview
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_cold_chain_sku_stability_specs
+      uri: "bq://zuhaibp-ai.supply_chain_twin.cold_chain_sku_stability_specs"
+      source_system: "GDP & FSMA SKU Arrhenius Stability Registry"
+      protocol: "21 CFR Part 11 SQL"
+    - id: bq_supply_chain_twin_qa_disposition_claims_ledger
+      uri: "bq://zuhaibp-ai.supply_chain_twin.qa_disposition_claims_ledger"
+      source_system: "Cold-Chain QA Lot Release & Carrier Spoilage Ledger"
+      protocol: "BAPI_INSPLOT_SETUSAGEDECISION"
+    - id: bq_supply_chain_twin_reefer_iot_temp_telemetry
+      uri: "bq://zuhaibp-ai.supply_chain_twin.reefer_iot_temp_telemetry"
+      source_system: "Reefer BLE Multi-Zone Thermal Telemetry Cloud"
+      protocol: "MQTT / REST Streaming"
+    - id: bq_supply_chain_twin_thermal_excursion_incidents
+      uri: "bq://zuhaibp-ai.supply_chain_twin.thermal_excursion_incidents"
+      source_system: "In-Transit Reefer Door & Defrost Excursion Log"
+      protocol: "EDI 214 / Event Stream"
+  data_source_tools:
+    - inspect_iot_telematics_cold_chain_auditor_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_qa_gdp_cold_chain_sku_stability_specs
+    - query_tms_qa_disposition_claims_ledger
+    - query_iot_telematics_reefer_iot_temp_telemetry
+    - query_tms_thermal_excursion_incidents
+    - query_reefer_iot_temp_telemetry
+    - query_cold_chain_sku_stability_specs
+    - query_thermal_excursion_incidents
+    - query_qa_disposition_claims_ledger
+    - query_samsara_iot_reefer_telematics_and_temp_loggers
+    - fetch_oracle_otm_perishable_shipment_specs
+    - query_carrier_contractual_temp_compliance_tariffs
+    - analyze_arrhenius_mkt_excursions
+    - run_mean_kinetic_temperature_mkt_and_shelf_life_decay_solver
+    - render_cold_chain_auditor_a2ui_chart_and_canvas
+    - draft_gdp_quarantine_and_spoilage_claim
+    - export_temperature_excursion_timeline_csv_and_claim
+    - publish_cold_chain_auditor_interactive_cockpit_to_gcs
+    - action_post_wms_mkt_usage_decision
+    - action_file_carrier_reefer_spoilage_claim
+    - commit_carrier_spoilage_chargeback_debit_in_sap
+  starter_prompts:
+    - "Audit our refrigerated reefer shipments carrying dairy, beverages, and sensitive goods across the Mumbai-Pune-Bengaluru corridor. Detect temperature excursions exceeding contractual setpoints, calculate shelf-life degradation, and output an auditable cold-chain excursion log."
+    - "Generate an interactive continuous thermal telemetry chart illustrating reefer temperature over transit time with safe operating threshold bands, defrost cycles, and violation periods."
+    - "Draft a formal carrier cargo claim and interactive full-screen cold chain quality audit report for Logistics and Legal summarizing thermal violations, estimated spoilage, and contractual chargeback amounts."
+    - "Go ahead and record the safe quality release for the verified shipment and file the carrier spoilage claim for the mechanical reefer failure."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

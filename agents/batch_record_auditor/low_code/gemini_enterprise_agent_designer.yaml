@@ -1,0 +1,60 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: batch_record_auditor
+  display_name: "Batch Record Auditor"
+  build_tier: "Low-Code"
+  category: "03 \u00b7 Manufacturing & Production \u2014 Quality & Compliance"
+  primary_persona: "Regulatory Compliance Lead"
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_batch_deviation_capa_records
+      uri: "bq://zuhaibp-ai.supply_chain_twin.batch_deviation_capa_records"
+      source_system: "Enterprise QMS Deviation & CAPA Registry"
+      protocol: "Veeva Vault REST API"
+    - id: bq_supply_chain_twin_fda_21cfr11_release_signoffs
+      uri: "bq://zuhaibp-ai.supply_chain_twin.fda_21cfr11_release_signoffs"
+      source_system: "SAP QM Usage Decision (UD) & Release Ledger"
+      protocol: "BAPI_INSPLOT_SETUSAGEDECISION"
+    - id: bq_supply_chain_twin_lims_coa_micro_and_chem_assays
+      uri: "bq://zuhaibp-ai.supply_chain_twin.lims_coa_micro_and_chem_assays"
+      source_system: "LIMS Microbiology, Endotoxin & Chemical Assay DB"
+      protocol: "HL7 / LIMS SQL"
+    - id: bq_supply_chain_twin_mes_ebhr_critical_control_points
+      uri: "bq://zuhaibp-ai.supply_chain_twin.mes_ebhr_critical_control_points"
+      source_system: "MES Electronic Batch History Record (eBHR) Historian"
+      protocol: "21 CFR Part 11 OPC-UA"
+  data_source_tools:
+    - inspect_mes_scada_batch_record_auditor_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_veeva_qms_batch_deviation_capa_records
+    - query_sap_s4hana_fda_21cfr11_release_signoffs
+    - query_lims_micro_lims_coa_micro_and_chem_assays
+    - query_mes_scada_mes_ebhr_critical_control_points
+    - query_mes_ebhr_ccps
+    - query_lims_coa_assays
+    - query_batch_deviation_capas
+    - query_fda_release_signoffs
+    - analyze_ebhr_review_by_exception
+    - render_batch_record_auditor_a2ui_chart_and_canvas
+    - draft_21cfr11_capa_and_release_certificate
+    - export_mes_ebhr_critical_control_csv_to_gcs
+    - publish_batch_record_auditor_interactive_cockpit_to_gcs
+    - action_post_sap_qm_usage_decision
+    - action_open_veeva_capa_investigation
+  starter_prompts:
+    - "Can you audit our recent production batch records and lab certificates to tell me which batches passed every critical safety check cleanly and which ones have deviations blocking release?"
+    - "Create a chart comparing recorded batch processing parameters (such as pasteurization temperature and hold time) against regulatory limits across active lots."
+    - "Write a clear regulatory compliance review summary for Quality Assurance listing batches ready for fast release and detailing any critical deviations requiring investigation."
+    - "Please record the electronic batch release approval for the fully compliant lot and quarantine the deviating batch for investigation."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.

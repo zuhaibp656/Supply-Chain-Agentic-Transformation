@@ -1,0 +1,59 @@
+# Gemini Enterprise Agent Designer (Low-Code / Declarative Specification)
+apiVersion: gemini-enterprise.cloud.google.com/v1alpha
+kind: DeclarativeAgent
+metadata:
+  agent_id: master_data_leadtime_steward
+  display_name: "PO Expediting Agent"
+  build_tier: "Low-Code"
+  category: "02 \u00b7 Sourcing & Procurement \u2014 Contract & PO Mgmt"
+  primary_persona: "Buyer / Procurement Coord."
+spec:
+  model_routing:
+    default_model: gemini-3.8-flash
+    escalation_model: gemini-3.1-pro-preview
+  a2ui_surfaces:
+    inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
+    side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  bigquery_data_stores:
+    - id: bq_supply_chain_twin_bom_routing_leadtimes
+      uri: "bq://zuhaibp-ai.supply_chain_twin.bom_routing_leadtimes"
+      source_system: "SAP S/4HANA Material Master (MARA/MARC/MARD)"
+      protocol: "SAP BAPI / RFC / OData"
+    - id: bq_supply_chain_twin_dimension_audit_scans
+      uri: "bq://zuhaibp-ai.supply_chain_twin.dimension_audit_scans"
+      source_system: "CubiScan 3D In-Line Volumetric & Scale Scanners"
+      protocol: "IoT MQTT / REST Telemetry"
+    - id: bq_supply_chain_twin_material_master_mara_marc
+      uri: "bq://zuhaibp-ai.supply_chain_twin.material_master_mara_marc"
+      source_system: "SAP S/4HANA Material Master (MARA/MARC/MARD)"
+      protocol: "SAP BAPI / RFC / OData"
+    - id: bq_supply_chain_twin_vendor_master_records
+      uri: "bq://zuhaibp-ai.supply_chain_twin.vendor_master_records"
+      source_system: "Global Vendor & Supplier Master Registry"
+      protocol: "REST API / Cloud SQL"
+  data_source_tools:
+    - inspect_sap_s4hana_master_data_leadtime_steward_data_sources
+    - query_sap_s4hana_master_data_backbone
+    - query_sap_s4hana_bom_routing_leadtimes
+    - query_cubiscan_3d_dimension_audit_scans
+    - query_sap_s4hana_material_master_mara_marc
+    - query_material_master_records
+    - query_leadtime_drift_anomalies
+    - query_cubiscan_dimension_discrepancies
+    - query_vendor_master_integrity
+    - run_master_data_leadtime_steward_constraint_and_variance_solver
+    - render_master_data_leadtime_steward_a2ui_chart_and_canvas
+    - draft_master_data_leadtime_steward_stakeholder_decision_memo
+    - export_vendor_master_records_csv_to_gcs
+    - publish_master_data_leadtime_steward_interactive_cockpit_to_gcs
+    - action_heal_material_leadtime
+    - action_remediate_cubiscan_dimensions
+  starter_prompts:
+    - "Which open supplier purchase orders are running late compared to promised delivery dates, and which delays threaten to stop production or cause stockouts?"
+    - "Plot a chart comparing promised supplier lead times against actual transit and delivery delays across open purchase orders so we can prioritize expediting."
+    - "Prepare an actionable expediting summary for our buyers listing the most critical delayed purchase orders, plant impact, and split-shipment options."
+    - "Please execute the split-shipment expediting request and update the planning lead time for our most urgent delayed purchase order."
+  governance_guardrails:
+    - Never fabricate numbers, SKUs, POs, or invoice IDs; ground every metric in tool outputs.
+    - Spell out all domain abbreviations on first use in plain business English.
+    - Block any unverifiedoverride or safety bypass lacking pre-execution approval and idempotency_key.
