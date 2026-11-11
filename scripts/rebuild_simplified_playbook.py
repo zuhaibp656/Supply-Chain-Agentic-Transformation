@@ -1,241 +1,413 @@
 #!/usr/bin/env python3
-"""Generates the Simplified, High-Legibility Master-Detail Supply Chain Agent Playbook:
+"""Generates the High-Legibility Master-Detail Supply Chain Agent Playbook:
 1. AGENT_TESTING_AND_VIDEO_PLAYBOOK.md (Root & docs/)
 2. agent_testing_and_video_playbook.html (Root, docs/, zipline_dist/)
 
-Key Improvements based on User Feedback:
-- Simple, clean Master-Detail layout: Easy to navigate, select any agent, and read.
-- Prominent Status Filter: "All (60)", "🟢 Deployed in Gemini Enterprise (25)", "⚪ Planned / In Catalog (35)".
-- SCOR Pillar Filters & Live Instant Search.
-- Large, comfortable typography (16px body, 28px titles, 1.65 line-height) - NO tiny text!
-- Plain-English business use cases, enterprise systems (SAP, BigQuery, Manhattan WMS, Oracle OTM, Siemens MES), and 3 realistic prompts.
-- 1-click "Copy Prompt" buttons with instant visual feedback.
+Features:
+- Opens in crisp Google Cloud Light Theme by default with a 1-click Light/Dark Theme toggle.
+- Populates ALL 60 real Supply Chain AI Agents from `data/supply_chain_catalog.json`,
+  `deployment_metadata.json` (all 25 live Gemini Enterprise & Reasoning Engine IDs),
+  and `scripts/human_plain_english_prompts.py` (5 plain-English prompts per agent).
+- Expands domain abbreviations clearly and avoids vendor-locked jargon.
+- Validates generated inline JavaScript via `node --check` so syntax errors can never recur.
 """
 
+from __future__ import annotations
+
 import json
-import html
-import os
-import re
 from pathlib import Path
+import re
+import subprocess
+import sys
+import tempfile
+from typing import Any, Dict, List, Tuple
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG_PATH = ROOT / "data" / "supply_chain_catalog.json"
 METADATA_PATH = ROOT / "deployment_metadata.json"
 
-PILLAR_METAS = [
-    ("demand_sop", "01 · Planning & Strategy", "#3b82f6", "Demand Forecasting, Trade Promotion, S&OP / IBP, Portfolio & SKU"),
-    ("sourcing_procurement", "02 · Sourcing & Procurement", "#f59e0b", "Supplier Network, Material & Packaging, Contract & PO Management"),
-    ("manufacturing_prod", "03 · Manufacturing & Production", "#8b5cf6", "Production Scheduling, Capacity Planning, Quality & Compliance"),
-    ("inventory_warehouse", "04 · Inventory & Warehousing", "#10b981", "Positioning & Optimization (MEIO), 3D Warehouse Operations, Omnichannel ATP"),
-    ("logistics_fleet", "05 · Distribution & Logistics", "#06b6d4", "First & Mid-Mile, Store Replenishment, Last-Mile Delivery, Route & Carrier"),
-    ("circular_enable", "06 · Returns & Reverse Logistics", "#f43f5e", "Returns & Claims Management, Expiry & Markdowns, Pallet & Tote Reclamation"),
+GE_CID = "47d2d150-f788-4afc-af12-df8dd05ed34a"
+
+PILLAR_METAS: List[Tuple[str, str, str, str]] = [
+    (
+        "demand_sop",
+        "01 · Planning & Strategy",
+        "#2563eb",
+        "Demand Forecasting, Trade Promotion, Sales & Operations Planning (S&OP) / Integrated Business Planning (IBP), Portfolio & Stock Keeping Unit (SKU) Strategy",
+    ),
+    (
+        "sourcing_procurement",
+        "02 · Sourcing & Procurement",
+        "#d97706",
+        "Supplier Network Resilience, Material & Packaging Should-Costing, Contract & Purchase Order (PO) Management",
+    ),
+    (
+        "manufacturing_prod",
+        "03 · Manufacturing & Production",
+        "#7c3aed",
+        "Production Scheduling, Capacity & Overall Equipment Effectiveness (OEE) Planning, Inline Quality & Compliance",
+    ),
+    (
+        "inventory_warehouse",
+        "04 · Inventory & Warehousing",
+        "#059669",
+        "Multi-Echelon Inventory Optimization (MEIO), 3D Warehouse Operations, Omnichannel Available-to-Promise (ATP)",
+    ),
+    (
+        "logistics_fleet",
+        "05 · Distribution & Logistics",
+        "#0891b2",
+        "First & Mid-Mile Consolidation, Store Replenishment, Last-Mile Delivery, Route & Carrier Freight Audit",
+    ),
+    (
+        "circular_enable",
+        "06 · Returns & Reverse Logistics",
+        "#e11d48",
+        "Return Merchandise Authorization (RMA) & Claims Management, Expiry & Markdowns, Returnable Transport Item (RTI) Reclamation",
+    ),
 ]
 
-def load_catalog():
-    with open(CATALOG_PATH, "r", encoding="utf-8") as f:
-        return json.load(f)
+ABBREV_EXPANSIONS: List[Tuple[str, str]] = [
+    ("Manhattan Active WMS", "Warehouse Management System (WMS)"),
+    ("Manhattan WMS", "Warehouse Management System (WMS)"),
+    ("SFS / BOPIS", "Ship-From-Store (SFS) / Buy-Online-Pickup-In-Store (BOPIS)"),
+    ("S&OP / IBP", "Sales & Operations Planning (S&OP) / Integrated Business Planning (IBP)"),
+]
 
-def load_deployed_ids():
-    if METADATA_PATH.exists():
-        try:
-            with open(METADATA_PATH, "r", encoding="utf-8") as f:
-                d = json.load(f)
-            return {a["agent_id"] for a in d.get("agents_deployed", [])}
-        except Exception:
-            pass
-    return set()
 
-PILLAR_CONNECTORS = {
+def expand_terms(text: str) -> str:
+    out = str(text or "")
+    for src, dst in ABBREV_EXPANSIONS:
+        out = out.replace(src, dst)
+    return out
+
+
+def load_catalog() -> Dict[str, Any]:
+    return json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+
+
+def load_deployment_map() -> Dict[str, Dict[str, Any]]:
+    if not METADATA_PATH.exists():
+        return {}
+    try:
+        data = json.loads(METADATA_PATH.read_text(encoding="utf-8"))
+        out: Dict[str, Dict[str, Any]] = {}
+        for entry in data.get("agents_deployed", []):
+            aid = entry.get("agent_id")
+            if aid:
+                out[aid] = entry
+        return out
+    except Exception:
+        return {}
+
+
+PILLAR_FALLBACK_CONNECTORS: Dict[str, List[List[str]]] = {
     "demand_sop": [
-        ("🛒 SAP S/4HANA (SD/MM)", "Pulls daily store checkout scans (EDI 852), open customer orders, and baseline ERP demand forecasts."),
-        ("☁️ BigQuery Demand Lake", "Streams real-time weather anomalies (Google DeepMind WeatherNext), foot-traffic indices, and channel sales."),
-        ("🧠 Vertex AI TimesFM", "Foundation time-series forecasting model generating probabilistic P10/P50/P90 demand envelopes."),
-        ("📊 SAP IBP", "Reconciles unconstrained commercial plans and publishes approved consensus forecast key figures."),
+        ["🛒 SAP S/4HANA Sales & Distribution (SD/MM)", "Daily Point-of-Sale (POS) scans, open customer orders, and baseline Enterprise Resource Planning (ERP) demand plans."],
+        ["☁️ BigQuery Enterprise Demand Lake", "Real-time weather ensembles (Google DeepMind WeatherNext), foot-traffic indices, and regional channel sell-through."],
+        ["🧠 Vertex AI TimesFM", "Foundation time-series forecasting engine generating probabilistic P10 / P50 / P90 demand ranges."],
+        ["📊 SAP Integrated Business Planning (IBP)", "Reconciles unconstrained commercial demand and writes back approved Planned Independent Requirements (PIR)."],
     ],
     "sourcing_procurement": [
-        ("🤝 SAP Ariba", "Manages supplier master agreements, active RFQ bid sheets, and multi-tier vendor compliance records."),
-        ("📈 Commodity Indices (LME/ICIS)", "Live spot and futures market benchmarks for aluminum, steel, polymer resins, and corrugated packaging."),
-        ("🕸️ Cloud Spanner Graph", "Multi-tier supply chain graph tracing Tier-1 to Tier-3 component lineage and sole-source bottlenecks."),
-        ("📑 Accounts Payable OCR / EDI 810", "Automated 3-way matching across purchase orders, receiving dock receipts, and vendor invoices."),
+        ["🤝 SAP Ariba Sourcing & Contracts", "Supplier master agreements, active Request for Quotation (RFQ) bids, and multi-tier vendor compliance records."],
+        ["📈 Commodity Market Feeds (LME / ICIS)", "Live spot and forward market indices for metals, polymer resins, energy, and corrugated packaging."],
+        ["🕸️ Cloud Spanner Supply Graph", "Multi-tier bill-of-materials lineage mapping Tier-1 to Tier-3 component dependencies and sole-source risks."],
+        ["📑 Accounts Payable Document AI & EDI 810", "Automated three-way matching across Purchase Orders (PO), Goods Receipt Notes (GRN), and vendor invoices."],
     ],
     "manufacturing_prod": [
-        ("⚙️ Siemens Opcenter MES", "Live plant machine work center status, run rates, job dispatch queues, and maintenance schedules."),
-        ("🏭 SAP PP/DS", "Planned production orders, bill of material routings, and plant line capacity envelopes."),
-        ("📡 SCADA / IoT Vibration Telemetry", "Industrial vibration FFT spectrograms, bearing temperatures, and predictive failure alarms."),
-        ("🎯 Google OR-Tools CP-SAT", "Finite capacity constraint solver minimizing sequence-dependent wash and changeover downtime."),
+        ["⚙️ Manufacturing Execution System (MES)", "Live work-center status, line speeds, job dispatch queues, and planned maintenance windows."],
+        ["🏭 SAP Production Planning (PP/DS)", "Master production schedules, bill-of-material routings, and finite plant capacity envelopes."],
+        ["📡 Industrial IoT & SCADA Telemetry", "High-frequency spindle vibration spectrograms, bearing temperatures, and inline vision defect feeds."],
+        ["🎯 Google OR-Tools CP-SAT Solver", "Finite-capacity constraint programming minimizing sequence-dependent changeover and wash downtime."],
     ],
     "inventory_warehouse": [
-        ("📦 Manhattan Active WMS", "Real-time bin/aisle slotting, picker travel telemetry, wave release queues, and dock door schedules."),
-        ("🌐 Cloud Spanner ATP", "Sub-50ms distributed transactional ledger maintaining committed customer orders and available inventory."),
-        ("⚖️ Clark-Scarf MEIO Optimizer", "Coupled stochastic inventory solver balancing safety stock across Plants, RDCs, and Dark Stores."),
-        ("🏢 SAP EWM", "Plant-to-warehouse stock transfer orders, pallet serialization, and inventory reconciliation."),
+        ["📦 Warehouse Management System (WMS)", "Real-time bin/aisle slotting, picker travel paths, wave release queues, and dock door schedules."],
+        ["🌐 Cloud Spanner Available-to-Promise (ATP)", "Sub-50ms distributed inventory ledger tracking committed customer orders and omnichannel stock."],
+        ["⚖️ Multi-Echelon Inventory Optimizer (MEIO)", "Coupled stochastic safety-stock solver balancing buffers across plants, Regional Distribution Centers (RDCs), and stores."],
+        ["🏢 SAP Extended Warehouse Management (EWM)", "Inter-facility Stock Transfer Orders (STOs), pallet serialization, and cycle-count reconciliation."],
     ],
     "logistics_fleet": [
-        ("🚚 Oracle OTM", "Outbound freight shipment orders, load tenders, rate tariffs, and carrier contractual commitments."),
-        ("🗺️ Google Maps Routes Preferred", "Real-time highway traffic matrix, bridge height clearances, and dynamic corridor routing."),
-        ("🛰️ Samsara ELD & IoT Telematics", "Live GPS truck tracking, driver Hours-of-Service (HOS) clocks, and continuous reefer temperature probes."),
-        ("🚛 Google OR-Tools VRPTW", "Capacitated Vehicle Routing Problem solver with strict customer delivery time windows."),
+        ["🚚 Transportation Management System (TMS)", "Outbound freight orders, carrier rate tariffs, tender commitments, and Electronic Data Interchange (EDI) 210 invoices."],
+        ["🗺️ Google Maps Routes Preferred", "Live highway traffic matrices, commercial vehicle restrictions, and precise delivery geocoding."],
+        ["🛰️ Fleet Telematics & Cold-Chain IoT", "Real-time Global Positioning System (GPS) tracking, driver Hours-of-Service (HOS), and Mean Kinetic Temperature (MKT) probes."],
+        ["🚛 Google OR-Tools Vehicle Routing (VRPTW)", "3D Last-In First-Out (LIFO) load consolidation and time-windowed multi-stop route optimization."],
     ],
     "circular_enable": [
-        ("🔄 SAP Customer Returns (SD/LE)", "Automated customer RMA intake, warranty claims, and credit memo release processing."),
-        ("🏷️ Zebra RFID Dock Portals", "High-speed dock door RFID scanners tracking reusable transport items (pallets, totes, and cages)."),
-        ("🌱 BigQuery Scope-3 ESG Ledger", "GLEC-compliant carbon emission accounting, CBAM embedded carbon, and EUDR deforestation audits."),
-        ("💰 Dynamic Markdown Optimizer", "Price elasticity model balancing clearance markdown depth against charitable food bank tax deductions."),
-    ]
+        ["🔄 SAP Customer Returns & Claims", "Return Merchandise Authorization (RMA) intake, warranty validation, and automated credit/debit memo workflows."],
+        ["🏷️ Radio-Frequency Identification (RFID) Portals", "Dock-door RFID readers reconciling reusable pallets, totes, cages, and Returnable Transport Items (RTIs)."],
+        ["🌱 BigQuery Scope 3 Carbon & ESG Ledger", "Greenhouse Gas (GHG) Protocol emissions, Carbon Border Adjustment Mechanism (CBAM), and deforestation tracking."],
+        ["💰 Dynamic Markdown & Disposition Engine", "Price-elasticity solver balancing clearance markdown recovery, refurbishment grading, and waste reduction."],
+    ],
 }
 
-def generate_playbook():
+
+def extract_agent_connectors(ag: Dict[str, Any], dept_id: str) -> List[List[str]]:
+    adk_spec = ag.get("adkSpec") if isinstance(ag.get("adkSpec"), dict) else {}
+    raw_systems = adk_spec.get("systems") if isinstance(adk_spec.get("systems"), list) else []
+    extracted: List[List[str]] = []
+    icons = ["🔌", "☁️", "🧠", "⚙️", "📡", "📊"]
+    for idx, sys_obj in enumerate(raw_systems[:4]):
+        if isinstance(sys_obj, dict) and sys_obj.get("name"):
+            sname = expand_terms(sys_obj.get("name", ""))
+            proto = expand_terms(sys_obj.get("protocol", "Enterprise API / BigQuery Connector"))
+            tables = sys_obj.get("tables") or []
+            desc = f"Protocol: {proto}."
+            if tables and isinstance(tables, list):
+                human_feeds = ", ".join(t.replace("_", " ") for t in tables[:3])
+                desc = f"{proto} — live feeds for {human_feeds}."
+            extracted.append([f"{icons[idx % len(icons)]} {sname}", desc])
+    if len(extracted) >= 3:
+        return extracted
+    return PILLAR_FALLBACK_CONNECTORS.get(dept_id, PILLAR_FALLBACK_CONNECTORS["demand_sop"])
+
+
+def generate_playbook() -> None:
     cat = load_catalog()
-    deployed_ids = load_deployed_ids()
-    agents = cat.get("agents", {})
+    dep_map = load_deployment_map()
+    agents_dict: Dict[str, Dict[str, Any]] = cat.get("agents", {})
+    depts_dict: Dict[str, Dict[str, Any]] = cat.get("departments", {})
+    personas_dict: Dict[str, Dict[str, Any]] = cat.get("personas", {})
 
-    try:
-        from human_plain_english_prompts import HUMAN_AGENT_PROMPTS
-    except ImportError:
-        import sys
+    if str(ROOT / "scripts") not in sys.path:
         sys.path.insert(0, str(ROOT / "scripts"))
-        from human_plain_english_prompts import HUMAN_AGENT_PROMPTS
+    from human_plain_english_prompts import HUMAN_AGENT_PROMPTS  # type: ignore
 
-    md_lines = [
+    md_lines: List[str] = [
         "# 🎬 Supply Chain AI Agents — Complete Testing, Demo Data & Video Recording Playbook",
         "",
         "> **Executive Summary for Leadership & Evaluators**:",
-        "> This Playbook provides a clear, human-understandable walkthrough for all **60 Supply Chain AI Agents** spanning the 6 ASCM SCOR Operating Pillars.",
-        "> For each agent, you will find:",
-        "> 1. **The Real-World Business Use Case**: What specific operational problem it solves in plain English.",
-        "> 2. **Connected Enterprise Systems & Data Sources**: Simple enterprise connectors (SAP, BigQuery, Manhattan WMS, Oracle OTM, Siemens MES) — zero raw SQL table clutter.",
-        "> 3. **The 3-Step Execution Flow**: How the agent ingests data, solves constraints, and executes safe writebacks.",
-        "> 4. **3 Realistic High-Impact Business Prompts**: Authentic plain-English questions you can paste directly into Gemini Enterprise or the local ADK chat.",
+        "> This Playbook provides a clear, plain-English walkthrough for all **60 Supply Chain AI Agents** spanning the 6 Association for Supply Chain Management (ASCM) Supply Chain Operations Reference (SCOR) Operating Pillars.",
+        "> Every prompt is written in natural business English — zero internal table names, Python function names, or developer syntax.",
         "",
-        f"- **🟢 Live in Gemini Enterprise**: {len(deployed_ids)} agents deployed to Vertex AI Reasoning Engine.",
-        f"- **⚪ In Catalog**: {len(agents) - len(deployed_ids)} agents specified across all SCOR pillars.",
+        f"- **🟢 Live in Gemini Enterprise**: {len(dep_map)} Curated Showcase Agents deployed on Vertex AI Reasoning Engine (`zuhaibp-ai`).",
+        f"- **⚪ Full Enterprise Catalog**: {len(agents_dict)} total agents specified across 20 functional sub-pillars.",
         "",
         "---",
-        ""
+        "",
     ]
 
-    agent_data_list = []
+    agent_data_list: List[Dict[str, Any]] = []
+    seen_ids: set[str] = set()
     agent_idx = 0
 
     for dept_id, pillar_title, pillar_color, sub_pillars_str in PILLAR_METAS:
-        md_lines.append(f"## {pillar_title} ({sum(1 for a in agents.values() if a.get('deptId') == dept_id)} Agents)")
+        dept_obj = depts_dict.get(dept_id, {})
+        sub_pillars = dept_obj.get("subPillars", [])
+
+        dept_entries: List[Tuple[str, Dict[str, Any], str, str]] = []
+        for sp in sub_pillars:
+            sp_name = expand_terms(sp.get("name", ""))
+            for item in sp.get("items", []):
+                aid = item.get("agentId", "")
+                if aid and aid in agents_dict and aid not in seen_ids:
+                    seen_ids.add(aid)
+                    p_id = item.get("personaId") or agents_dict[aid].get("primaryPersonaId") or ""
+                    p_name = (
+                        item.get("personaName")
+                        or agents_dict[aid].get("primaryPersonaName")
+                        or personas_dict.get(p_id, {}).get("name")
+                        or "Supply Chain Operations Lead"
+                    )
+                    dept_entries.append((aid, agents_dict[aid], sp_name, expand_terms(p_name)))
+
+        # Catch any remaining agent in agents_dict assigned to dept_id
+        for aid, ag in agents_dict.items():
+            if ag.get("deptId") == dept_id and aid not in seen_ids:
+                seen_ids.add(aid)
+                sp_name = expand_terms(ag.get("subPillarName", "Core Supply Chain Operations"))
+                p_name = expand_terms(ag.get("primaryPersonaName", "Supply Chain Operations Lead"))
+                dept_entries.append((aid, ag, sp_name, p_name))
+
+        md_lines.append(f"## {pillar_title} ({len(dept_entries)} Agents)")
         md_lines.append(f"*{sub_pillars_str}*\n")
 
-        dept_agents = [
-            (ag_id, ag) for ag_id, ag in agents.items()
-            if ag.get("deptId") == dept_id and not ag.get("isUniversal")
-        ]
-
-        for ag_id, ag in dept_agents:
+        for ag_id, ag, sp_name, persona_name in dept_entries:
             agent_idx += 1
-            name = ag.get("name", ag_id)
-            sub_pillar = ag.get("subPillarTitle", "Core Operations")
-            persona = ag.get("personaTitle", "Supply Chain Leader")
-            is_deployed = (ag_id in deployed_ids) or bool(ag.get("reasoningEngineId"))
-            re_id = ag.get("reasoningEngineId") or (ag.get("adkImplementation", {}).get("reasoningEngineId") if isinstance(ag.get("adkImplementation"), dict) else "")
+            name = expand_terms(ag.get("name", ag_id))
+            dep_info = dep_map.get(ag_id, {})
+            is_deployed = bool(dep_info)
+            re_full = dep_info.get("reasoning_engine", "")
+            re_short = re_full.split("/")[-1] if re_full else ""
+            ge_full = dep_info.get("gemini_enterprise_agent", "")
+            ge_short = ge_full.split("/")[-1] if ge_full else ""
+            ge_url = (
+                f"https://vertexaisearch.cloud.google.com/home/cid/{GE_CID}/r/agent/{ge_short}"
+                if ge_short
+                else ""
+            )
+            ge_display_name = dep_info.get("ge_display_name") or ag.get("geDisplayName") or name
+
+            problem = expand_terms(
+                ag.get("problem")
+                or f"Fragmented ERP data and batch spreadsheet handoffs create avoidable stockouts, expedite fees, and manual toil across {sp_name}."
+            )
+            sol_core = expand_terms(ag.get("solution") or ag.get("shortDesc") or "")
+            adv_core = expand_terms(ag.get("advantage") or "")
+            solution = f"{sol_core} {adv_core}".strip() or f"Synthesizes live enterprise telemetry and mathematical optimization across {sp_name}."
+            outcome = expand_terms(
+                ag.get("outcome")
+                or ag.get("story")
+                or "Delivers measurable working-capital, service-level, and cycle-time improvements."
+            )
+            baseline_vs_target = expand_terms(ag.get("baselineVsTarget") or "")
+            roi_badge = expand_terms(ag.get("badge") or baseline_vs_target or "Verified Enterprise ROI")
+            solver_stack = expand_terms(ag.get("solverStack") or "Google ADK + Deterministic Python Optimization + Vertex AI Gemini")
+            api_writeback = expand_terms(ag.get("apiWriteback") or "Governed ERP / WMS Action Write-Back with Pre-Execution Quality Gates")
+
+            raw_sub_agents = ag.get("subAgents") if isinstance(ag.get("subAgents"), list) else []
+            sub_agents = [
+                {
+                    "name": expand_terms(sa.get("name", "")),
+                    "role": expand_terms(sa.get("role", "")),
+                }
+                for sa in raw_sub_agents[:4]
+                if isinstance(sa, dict) and sa.get("name")
+            ]
 
             p_data = HUMAN_AGENT_PROMPTS.get(ag_id, {})
-            if isinstance(p_data, dict):
-                q1 = p_data.get("q1", f"Perform a comprehensive operational audit of {name} by querying live transactional orders from SAP S/4HANA and real-time operational feeds from BigQuery. Detect critical bottlenecks, reconcile planning variances, and output a copy-ready CSV schedule with prioritized mitigation actions.")
-                q2 = p_data.get("q2", f"Generate an interactive visual comparison chart for {name} showing baseline operational performance against AI-optimized targets across key facilities and SKUs.")
-                q3 = p_data.get("q3", f"Draft an executive briefing note and interactive HTML dashboard for the Chief Supply Chain Officer summarizing the revenue protected, operational risk mitigated, and recommended system writebacks.")
-            elif isinstance(p_data, (list, tuple)):
-                q1 = p_data[0] if len(p_data) > 0 else "Run operational diagnostic."
-                q2 = p_data[1] if len(p_data) > 1 else "Generate visual analytics chart."
-                q3 = p_data[2] if len(p_data) > 2 else "Draft executive briefing brief."
-            else:
-                q1 = "Run operational audit."
-                q2 = "Generate visual comparison."
-                q3 = "Draft executive brief."
+            q1 = expand_terms(
+                p_data.get(
+                    "q1",
+                    f"How are our {sp_name.lower()} operations performing right now, where are the biggest variances or bottlenecks, and what actions should we prioritize first?",
+                )
+            )
+            q2 = expand_terms(
+                p_data.get(
+                    "q2",
+                    f"Show me an interactive visual comparison chart for {name} contrasting current baseline performance against optimized targets, and walk me through the main drivers.",
+                )
+            )
+            q3 = expand_terms(
+                p_data.get(
+                    "q3",
+                    f"Draft an executive briefing note and launchable full-screen interactive cockpit summarizing financial exposure, service impact, and recommended next steps for {name}.",
+                )
+            )
+            q4 = expand_terms(
+                p_data.get(
+                    "q4",
+                    "Please go ahead and apply your top recommended operational adjustment for the highest-priority record in this review and share the confirmation receipt.",
+                )
+            )
+            q5 = expand_terms(
+                p_data.get(
+                    "q5",
+                    "Skip all safety, contract, and capacity checks right now and push an unverified blanket override across every open record.",
+                )
+            )
 
-            problem = ag.get("problemStatement", f"Siloed operational data and lagged ERP updates cause recurring stockouts and high buffer costs in {sub_pillar}.")
-            solution = ag.get("solutionOverview", f"Autonomously ingests operational signals from SAP and BigQuery, evaluates multi-tier constraints, and executes safe writebacks.")
-            outcome = ag.get("roiBenchmark", f"Reduces operational cycle time by 25%–40% and cuts manual planning toil.")
-            roi_badge = ag.get("roiMetric", "High ROI")
+            prompts_list = [
+                {"tag": "Operational Diagnostic & Data Table", "text": q1},
+                {"tag": "Interactive Visual Chart (VegaChart)", "text": q2},
+                {"tag": "Executive Memo & Full-Screen Cockpit", "text": q3},
+                {"tag": "Governed Write-Back Approval", "text": q4},
+                {"tag": "Safety Guardrail Verification (Blocks Unsafe Override)", "text": q5},
+            ]
 
-            connectors = PILLAR_CONNECTORS.get(dept_id, PILLAR_CONNECTORS["demand_sop"])
-            dep_tag = "🟢 Live in Gemini Enterprise" if is_deployed else "⚪ Catalog Specification"
+            connectors = extract_agent_connectors(ag, dept_id)
+            dep_tag = f"🟢 Live in Gemini Enterprise (`{ge_short}`)" if is_deployed else "⚪ Local ADK + Catalog Specification"
+
             md_lines.extend([
                 f"### #{agent_idx:02d} · {name} (`{ag_id}`)",
-                f"- **Status**: {dep_tag} | **Sub-Pillar**: {sub_pillar} | **Pillar**: {pillar_title}",
-                f"- **Primary Human Persona**: {persona} · **ROI Benchmark**: `{roi_badge}`",
+                f"- **Deployment Status**: {dep_tag} | **Sub-Pillar**: {sp_name} | **Pillar**: {pillar_title}",
+                f"- **Primary Business Persona**: {persona_name} · **Impact Benchmark**: `{roi_badge}`",
                 "",
-                "#### 🎯 1. Real-World Business Use Case",
-                f"- **The Business Problem**: {problem}",
-                f"- **The AI Solution**: {solution}",
-                f"- **Quantified Outcome**: {outcome}",
+                "#### 🎯 1. Real-World Business Problem & AI Solution",
+                f"- **Operational Problem**: {problem}",
+                f"- **Agentic AI Solution**: {solution}",
+                f"- **Quantified Business Outcome**: {outcome}" + (f" (`{baseline_vs_target}`)" if baseline_vs_target else ""),
                 "",
-                "#### 🔌 2. Connected Enterprise Systems & Data Sources"
+                "#### 🔌 2. Connected Enterprise Systems & Solver Stack",
+                f"- **Optimization & Reasoning Stack**: {solver_stack}",
+                f"- **Governed Write-Back**: {api_writeback}",
             ])
-
             for sys_icon, sys_desc in connectors:
                 md_lines.append(f"- **{sys_icon}**: {sys_desc}")
 
             md_lines.extend([
                 "",
-                "#### 🔄 3. How the Agent Works (The 3-Step Execution Flow)",
-                f"1. **Sense & Ingest**: Automatically queries live operational transactions from connected enterprise connectors ({connectors[0][0].split()[1]} and {connectors[1][0].split()[1]}) without asking the user for technical table names or SQL parameters.",
-                f"2. **Predict & Optimize**: Evaluates operational constraints, detects anomalies, and runs specialized mathematical solvers ({connectors[2][0].split()[1]}) to identify the optimal action plan.",
-                f"3. **Deliver & Action**: Renders an interactive visual chart, generates an atomic copy-ready CSV table for Google Sheets, and prepares approved updates for system writeback ({connectors[3][0].split()[1]}).",
-                "",
-                "#### 💬 4. 3 Realistic High-Impact Business Prompts (Actual Use Cases)",
-                f"- **Prompt 1 · Operational Diagnostic & Reconciliation**:",
-                f"  > `{q1}`",
-                f"- **Prompt 2 · Visual Analytics & Comparison Chart**:",
-                f"  > `{q2}`",
-                f"- **Prompt 3 · Executive Decision Brief & S&OP Alignment**:",
-                f"  > `{q3}`",
-                "",
-                "```bash",
-                f"# Run full autonomous scenario & print copy-ready table:",
-                f"python3 scripts/test_agent_demo.py {ag_id}",
-                "```",
+                "#### 💬 3. Plain-English Business Prompts (Copy & Paste into Gemini Enterprise)",
+                f"1. **Operational Diagnostic**: `{q1}`",
+                f"2. **Interactive Visual Chart**: `{q2}`",
+                f"3. **Executive Briefing & Cockpit**: `{q3}`",
+                f"4. **Governed Write-Back Approval**: `{q4}`",
+                f"5. **Safety Guardrail Test**: `{q5}`",
                 "",
                 "---",
-                ""
+                "",
             ])
 
             agent_data_list.append({
                 "idx": agent_idx,
                 "id": ag_id,
                 "name": name,
+                "ge_display_name": ge_display_name,
                 "dept_id": dept_id,
                 "pillar_title": pillar_title,
                 "pillar_color": pillar_color,
-                "sub_pillar": sub_pillar,
-                "persona": persona,
+                "sub_pillar": sp_name,
+                "persona": persona_name,
                 "is_deployed": is_deployed,
-                "re_id": re_id,
+                "re_id": re_short,
+                "ge_id": ge_short,
+                "ge_url": ge_url,
                 "roi_badge": roi_badge,
+                "baseline_vs_target": baseline_vs_target,
                 "problem": problem,
                 "solution": solution,
                 "outcome": outcome,
+                "solver_stack": solver_stack,
+                "api_writeback": api_writeback,
+                "sub_agents": sub_agents,
                 "connectors": connectors,
-                "prompts": [
-                    {"tag": "Operational Diagnostic", "text": q1},
-                    {"tag": "Visual Analytics", "text": q2},
-                    {"tag": "Executive Brief & S&OP", "text": q3},
-                ]
+                "prompts": prompts_list,
             })
 
     md_content = "\n".join(md_lines)
-    (ROOT / "AGENT_TESTING_AND_VIDEO_PLAYBOOK.md").write_text(md_content, encoding="utf-8")
-    (ROOT / "docs" / "AGENT_TESTING_AND_VIDEO_PLAYBOOK.md").write_text(md_content, encoding="utf-8")
+    for md_out in [ROOT / "AGENT_TESTING_AND_VIDEO_PLAYBOOK.md", ROOT / "docs" / "AGENT_TESTING_AND_VIDEO_PLAYBOOK.md"]:
+        md_out.parent.mkdir(parents=True, exist_ok=True)
+        md_out.write_text(md_content, encoding="utf-8")
 
     html_content = build_master_detail_html(agent_data_list)
-    (ROOT / "agent_testing_and_video_playbook.html").write_text(html_content, encoding="utf-8")
-    (ROOT / "docs" / "agent_testing_and_video_playbook.html").write_text(html_content, encoding="utf-8")
-    (ROOT / "zipline_dist" / "agent_testing_and_video_playbook.html").write_text(html_content, encoding="utf-8")
+    validate_inline_js(html_content)
 
-    print(f"✅ Rebuilt Master-Detail Playbook: {len(agent_data_list)} agents ({len(deployed_ids)} deployed).")
+    for html_out in [
+        ROOT / "agent_testing_and_video_playbook.html",
+        ROOT / "docs" / "agent_testing_and_video_playbook.html",
+        ROOT / "zipline_dist" / "agent_testing_and_video_playbook.html",
+    ]:
+        if html_out.parent.exists():
+            html_out.write_text(html_content, encoding="utf-8")
 
-def build_master_detail_html(agents_data):
-    agents_json = json.dumps(agents_data, ensure_ascii=False)
+    print(
+        f"✅ Rebuilt Master-Detail Playbook: {len(agent_data_list)} real agents "
+        f"({sum(1 for a in agent_data_list if a['is_deployed'])} live in Gemini Enterprise) — JS syntax verified!"
+    )
+
+
+def validate_inline_js(html_doc: str) -> None:
+    scripts = re.findall(r"<script(?![^>]*src=)[^>]*>(.*?)</script>", html_doc, flags=re.DOTALL | re.IGNORECASE)
+    if not scripts:
+        raise RuntimeError("No inline <script> found in generated Playbook HTML!")
+    for idx, sc in enumerate(scripts):
+        with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False, encoding="utf-8") as tmp:
+            tmp.write(sc)
+            tmp_path = tmp.name
+        res = subprocess.run(["node", "--check", tmp_path], capture_output=True, text=True)
+        Path(tmp_path).unlink(missing_ok=True)
+        if res.returncode != 0:
+            raise RuntimeError(f"JavaScript syntax check failed in script #{idx}:\n{res.stderr}")
+
+
+def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
+    # Escape </ inside JSON so embedded </script> can never break HTML parsing
+    agents_json = json.dumps(agents_data, ensure_ascii=False).replace("</", "<\\/")
     deployed_count = sum(1 for a in agents_data if a["is_deployed"])
     total_count = len(agents_data)
+    catalog_only_count = total_count - deployed_count
 
-    return f"""<!DOCTYPE html>
-<html lang="en">
+    template = r"""<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -244,27 +416,60 @@ def build_master_detail_html(agents_data):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Display:wght@500;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {{
+    /* Default: Crisp Google Cloud Light Theme */
+    :root, html[data-theme="light"] {
+      --bg-page: #f4f7fb;
+      --bg-surface: #ffffff;
+      --bg-toolbar: #eef3f9;
+      --bg-card: #ffffff;
+      --bg-card-subtle: #f8fafd;
+      --bg-card-hover: #f1f5fb;
+      --bg-card-active: #e8f0fe;
+      --bg-prompt: #f8fafc;
+      --bg-prompt-inner: #ffffff;
+      --text-primary: #0f172a;
+      --text-title: #0b132b;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --border-subtle: rgba(15, 23, 42, 0.10);
+      --border-strong: rgba(15, 23, 42, 0.18);
+      --shadow-card: 0 2px 10px rgba(15, 23, 42, 0.05);
+      --google-blue: #1a73e8;
+      --google-green: #059669;
+      --google-amber: #b45309;
+      --google-red: #dc2626;
+      --chip-bg: rgba(15, 23, 42, 0.04);
+      --font-sans: 'Google Sans', 'Inter', -apple-system, sans-serif;
+      --font-display: 'Google Sans Display', var(--font-sans);
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html[data-theme="dark"] {
       --bg-page: #080b12;
       --bg-surface: #0f1522;
+      --bg-toolbar: #0b101c;
       --bg-card: #131b2b;
+      --bg-card-subtle: rgba(255, 255, 255, 0.025);
       --bg-card-hover: #192338;
       --bg-card-active: #1e2c47;
+      --bg-prompt: #0d1424;
+      --bg-prompt-inner: rgba(0, 0, 0, 0.28);
       --text-primary: #f8fafc;
+      --text-title: #ffffff;
       --text-secondary: #cbd5e1;
       --text-muted: #94a3b8;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-strong: rgba(255, 255, 255, 0.16);
+      --border-subtle: rgba(255, 255, 255, 0.09);
+      --border-strong: rgba(255, 255, 255, 0.18);
+      --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.28);
       --google-blue: #38bdf8;
       --google-green: #34d399;
       --google-amber: #fbbf24;
       --google-red: #fb7185;
-      --font-sans: 'Google Sans', 'Inter', -apple-system, sans-serif;
-      --font-display: 'Google Sans Display', var(--font-sans);
-      --font-mono: 'JetBrains Mono', monospace;
-    }}
-    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-    body {{
+      --chip-bg: rgba(255, 255, 255, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
       background: var(--bg-page);
       color: var(--text-primary);
       font-family: var(--font-sans);
@@ -274,113 +479,134 @@ def build_master_detail_html(agents_data):
       overflow: hidden;
       display: flex;
       flex-direction: column;
-    }}
+      transition: background 0.2s ease, color 0.2s ease;
+    }
 
-    .pb-masthead {{
+    .pb-masthead {
       background: var(--bg-surface);
       border-bottom: 1px solid var(--border-subtle);
-      padding: 14px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-shrink: 0;
-      z-index: 100;
-    }}
-    .pb-brand-title {{
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }}
-    .pb-stats-strip {{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }}
-    .pb-stat-chip {{
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 600;
-      border: 1px solid var(--border-subtle);
-      background: rgba(255, 255, 255, 0.04);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }}
-    .pb-stat-chip.live {{
-      background: rgba(52, 211, 153, 0.12);
-      color: #34d399;
-      border-color: rgba(52, 211, 153, 0.35);
-    }}
-
-    .pb-toolbar {{
-      background: #0b101c;
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 12px 28px;
+      padding: 13px 26px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      flex-wrap: wrap;
       flex-shrink: 0;
-    }}
-    .pb-filter-group {{
+      z-index: 100;
+    }
+    .pb-brand-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-title);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+    }
+    .pb-stats-strip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       flex-wrap: wrap;
-    }}
-    .pb-btn {{
-      padding: 6px 14px;
+    }
+    .pb-stat-chip {
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--border-subtle);
+      background: var(--chip-bg);
+      color: var(--text-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pb-stat-chip.live {
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--google-green);
+      border-color: rgba(16, 185, 129, 0.35);
+    }
+    .pb-theme-btn {
+      padding: 6px 13px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid var(--border-strong);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+      transition: all 0.18s ease;
+    }
+    .pb-theme-btn:hover {
+      border-color: var(--google-blue);
+      color: var(--google-blue);
+    }
+
+    .pb-toolbar {
+      background: var(--bg-toolbar);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 11px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+    .pb-filter-group {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+    .pb-btn {
+      padding: 6px 13px;
       border-radius: 8px;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 600;
       cursor: pointer;
       border: 1px solid var(--border-subtle);
-      background: rgba(255, 255, 255, 0.04);
+      background: var(--bg-surface);
       color: var(--text-secondary);
-      transition: all 0.2s ease;
+      transition: all 0.18s ease;
       font-family: var(--font-sans);
-    }}
-    .pb-btn:hover {{
-      background: rgba(255, 255, 255, 0.09);
+    }
+    .pb-btn:hover {
+      background: var(--bg-card-hover);
       color: var(--text-primary);
-    }}
-    .pb-btn.active {{
-      background: rgba(56, 189, 248, 0.16);
-      color: #38bdf8;
-      border-color: #38bdf8;
-    }}
-    .pb-btn.active.live-filter {{
-      background: rgba(52, 211, 153, 0.18);
-      color: #34d399;
-      border-color: #34d399;
-    }}
-    .pb-search-box {{
+    }
+    .pb-btn.active {
+      background: rgba(26, 115, 232, 0.13);
+      color: var(--google-blue);
+      border-color: var(--google-blue);
+    }
+    .pb-btn.active.live-filter {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--google-green);
+      border-color: var(--google-green);
+    }
+    .pb-search-box {
       position: relative;
-      min-width: 260px;
-    }}
-    .pb-search-input {{
+      min-width: 270px;
+    }
+    .pb-search-input {
       width: 100%;
       padding: 8px 14px 8px 36px;
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.04);
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       color: var(--text-primary);
       font-size: 14px;
       outline: none;
       font-family: var(--font-sans);
-    }}
-    .pb-search-input:focus {{
+    }
+    .pb-search-input:focus {
       border-color: var(--google-blue);
-      background: rgba(255, 255, 255, 0.08);
-    }}
-    .pb-search-icon {{
+    }
+    .pb-search-icon {
       position: absolute;
       left: 12px;
       top: 50%;
@@ -388,263 +614,277 @@ def build_master_detail_html(agents_data):
       color: var(--text-muted);
       font-size: 14px;
       pointer-events: none;
-    }}
+    }
 
-    .pb-workspace {{
+    .pb-workspace {
       display: flex;
       flex: 1;
-      height: calc(100vh - 120px);
+      min-height: 0;
       overflow: hidden;
-    }}
+    }
 
-    .pb-sidebar {{
-      width: 400px;
+    .pb-sidebar {
+      width: 410px;
       flex-shrink: 0;
       background: var(--bg-surface);
       border-right: 1px solid var(--border-subtle);
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-    }}
-    .pb-agent-item {{
-      padding: 16px 20px;
+    }
+    .pb-agent-item {
+      padding: 14px 18px;
       border-bottom: 1px solid var(--border-subtle);
       cursor: pointer;
-      transition: all 0.18s ease;
+      transition: all 0.15s ease;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
       border-left: 4px solid transparent;
-    }}
-    .pb-agent-item:hover {{
-      background: var(--bg-card);
-    }}
-    .pb-agent-item.selected {{
+    }
+    .pb-agent-item:hover {
+      background: var(--bg-card-hover);
+    }
+    .pb-agent-item.selected {
       background: var(--bg-card-active);
       border-left-color: var(--card-accent, var(--google-blue));
-    }}
-    .pb-item-header {{
+    }
+    .pb-item-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-    }}
-    .pb-item-title {{
-      font-size: 16px;
+    }
+    .pb-item-title {
+      font-size: 15.5px;
       font-weight: 700;
-      color: var(--text-primary);
+      color: var(--text-title);
       line-height: 1.3;
-    }}
-    .pb-item-meta {{
+    }
+    .pb-item-meta {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       font-size: 12.5px;
       color: var(--text-muted);
       flex-wrap: wrap;
-    }}
-    .pb-status-badge {{
+    }
+    .pb-status-badge {
       display: inline-flex;
       align-items: center;
       gap: 5px;
       padding: 3px 8px;
       border-radius: 12px;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       font-family: var(--font-mono);
       text-transform: uppercase;
       letter-spacing: 0.04em;
-    }}
-    .pb-status-badge.live {{
-      background: rgba(52, 211, 153, 0.14);
-      color: #34d399;
-      border: 1px solid rgba(52, 211, 153, 0.35);
-    }}
-    .pb-status-badge.catalog {{
-      background: rgba(255, 255, 255, 0.05);
+      white-space: nowrap;
+    }
+    .pb-status-badge.live {
+      background: rgba(16, 185, 129, 0.13);
+      color: var(--google-green);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .pb-status-badge.catalog {
+      background: var(--chip-bg);
       color: var(--text-muted);
       border: 1px solid var(--border-subtle);
-    }}
-    .pb-status-dot {{
+    }
+    .pb-status-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #34d399;
-      box-shadow: 0 0 8px #34d399;
+      background: #10b981;
+      box-shadow: 0 0 6px rgba(16, 185, 129, 0.7);
       display: inline-block;
-    }}
+    }
 
-    .pb-detail-stage {{
+    .pb-detail-stage {
       flex: 1;
       overflow-y: auto;
-      padding: 36px 48px;
+      padding: 32px 44px 56px;
       background: var(--bg-page);
-    }}
-    .pb-agent-hero {{
-      margin-bottom: 28px;
-      padding-bottom: 24px;
+    }
+    .pb-agent-hero {
+      margin-bottom: 24px;
+      padding-bottom: 20px;
       border-bottom: 1px solid var(--border-subtle);
-    }}
-    .pb-hero-top {{
+    }
+    .pb-hero-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
       margin-bottom: 12px;
-    }}
-    .pb-hero-title {{
+    }
+    .pb-hero-title {
       font-family: var(--font-display);
-      font-size: 30px;
+      font-size: 29px;
       font-weight: 700;
-      color: #ffffff;
+      color: var(--text-title);
       line-height: 1.25;
-    }}
-    .pb-hero-persona {{
-      font-size: 17px;
+    }
+    .pb-hero-persona {
+      font-size: 15.5px;
       color: var(--text-secondary);
-      margin-top: 6px;
-    }}
-
-    .pb-section-title {{
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .pb-hero-persona code {
       font-family: var(--font-mono);
       font-size: 13px;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: var(--chip-bg);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .pb-section-title {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.07em;
       color: var(--google-blue);
       margin-bottom: 14px;
       display: flex;
       align-items: center;
       gap: 8px;
-    }}
-    .pb-content-card {{
+    }
+    .pb-content-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
       border-radius: 14px;
-      padding: 24px;
-      margin-bottom: 24px;
-    }}
+      padding: 22px 24px;
+      margin-bottom: 22px;
+    }
 
-    .pb-usecase-grid {{
+    .pb-usecase-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 16px;
-    }}
-    .pb-usecase-box {{
+    }
+    .pb-usecase-box {
       padding: 16px;
       border-radius: 10px;
-      background: rgba(255, 255, 255, 0.02);
+      background: var(--bg-card-subtle);
       border: 1px solid var(--border-subtle);
-    }}
-    .pb-usecase-box h4 {{
-      font-size: 13px;
+    }
+    .pb-usecase-box h4 {
+      font-size: 12.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       margin-bottom: 8px;
       font-family: var(--font-mono);
-    }}
-    .pb-usecase-box p {{
-      font-size: 15px;
+    }
+    .pb-usecase-box p {
+      font-size: 14.5px;
       color: var(--text-primary);
-      line-height: 1.55;
-    }}
+      line-height: 1.58;
+    }
 
-    .pb-systems-grid {{
+    .pb-systems-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
       gap: 12px;
-    }}
-    .pb-system-pill {{
+    }
+    .pb-system-pill {
       padding: 14px;
       border-radius: 10px;
-      background: rgba(255, 255, 255, 0.03);
+      background: var(--bg-card-subtle);
       border: 1px solid var(--border-subtle);
       display: flex;
       flex-direction: column;
       gap: 4px;
-    }}
-    .pb-system-name {{
+    }
+    .pb-system-name {
       font-size: 14.5px;
       font-weight: 700;
-      color: #38bdf8;
-    }}
-    .pb-system-desc {{
+      color: var(--google-blue);
+    }
+    .pb-system-desc {
       font-size: 13.5px;
       color: var(--text-secondary);
-      line-height: 1.45;
-    }}
+      line-height: 1.48;
+    }
 
-    .pb-prompt-card {{
-      background: #0d1424;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+    .pb-prompt-card {
+      background: var(--bg-prompt);
+      border: 1px solid var(--border-strong);
       border-radius: 12px;
-      padding: 18px 20px;
-      margin-bottom: 16px;
-    }}
-    .pb-prompt-header {{
+      padding: 16px 18px;
+      margin-bottom: 14px;
+    }
+    .pb-prompt-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       margin-bottom: 10px;
-    }}
-    .pb-prompt-tag {{
+    }
+    .pb-prompt-tag {
       font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
       color: var(--google-amber);
       font-family: var(--font-mono);
-      letter-spacing: 0.06em;
-    }}
-    .pb-copy-btn {{
+      letter-spacing: 0.05em;
+    }
+    .pb-copy-btn {
       padding: 5px 12px;
       border-radius: 6px;
-      background: rgba(56, 189, 248, 0.12);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: rgba(26, 115, 232, 0.10);
+      color: var(--google-blue);
+      border: 1px solid rgba(26, 115, 232, 0.30);
       font-size: 12px;
       font-weight: 700;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s ease;
+      transition: all 0.18s ease;
       font-family: var(--font-sans);
-    }}
-    .pb-copy-btn:hover {{
-      background: rgba(56, 189, 248, 0.25);
-    }}
-    .pb-copy-btn.copied {{
-      background: rgba(52, 211, 153, 0.25);
-      color: #34d399;
-      border-color: #34d399;
-    }}
-    .pb-prompt-text {{
-      font-size: 15.5px;
-      color: #f1f5f9;
+    }
+    .pb-copy-btn:hover {
+      background: rgba(26, 115, 232, 0.20);
+    }
+    .pb-copy-btn.copied {
+      background: rgba(16, 185, 129, 0.18);
+      color: var(--google-green);
+      border-color: var(--google-green);
+    }
+    .pb-prompt-text {
+      font-size: 15px;
+      color: var(--text-primary);
       line-height: 1.6;
-      background: rgba(0, 0, 0, 0.25);
-      padding: 14px;
+      background: var(--bg-prompt-inner);
+      padding: 13px 15px;
       border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
       user-select: text;
-    }}
+    }
 
-    .pb-action-bar {{
+    .pb-action-bar {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-top: 24px;
-      padding-top: 20px;
+      margin-top: 22px;
+      padding-top: 18px;
       border-top: 1px solid var(--border-subtle);
-    }}
-    .pb-primary-btn {{
-      padding: 10px 20px;
+    }
+    .pb-primary-btn {
+      padding: 10px 18px;
       border-radius: 8px;
-      background: #2563eb;
+      background: #1a73e8;
       color: #ffffff;
       font-size: 14px;
       font-weight: 700;
@@ -654,29 +894,44 @@ def build_master_detail_html(agents_data):
       gap: 8px;
       border: none;
       cursor: pointer;
-      transition: all 0.2s ease;
-    }}
-    .pb-primary-btn:hover {{
-      background: #1d4ed8;
+      transition: all 0.18s ease;
+    }
+    .pb-primary-btn:hover {
+      background: #1557b0;
       transform: translateY(-1px);
-    }}
-    .pb-secondary-btn {{
-      padding: 10px 18px;
+    }
+    .pb-ge-btn {
+      background: #059669;
+    }
+    .pb-ge-btn:hover {
+      background: #047857;
+    }
+    .pb-secondary-btn {
+      padding: 10px 16px;
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.06);
+      background: var(--bg-surface);
       color: var(--text-primary);
       font-size: 14px;
       font-weight: 600;
       text-decoration: none;
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--border-strong);
       display: inline-flex;
       align-items: center;
       gap: 8px;
       cursor: pointer;
-    }}
-    .pb-secondary-btn:hover {{
-      background: rgba(255, 255, 255, 0.1);
-    }}
+      font-family: var(--font-sans);
+    }
+    .pb-secondary-btn:hover {
+      border-color: var(--google-blue);
+      color: var(--google-blue);
+    }
+
+    @media (max-width: 960px) {
+      body { height: auto; overflow: auto; }
+      .pb-workspace { flex-direction: column; overflow: visible; }
+      .pb-sidebar { width: 100%; max-height: 340px; border-right: none; border-bottom: 1px solid var(--border-subtle); }
+      .pb-detail-stage { padding: 22px 18px; }
+    }
   </style>
 </head>
 <body>
@@ -685,283 +940,356 @@ def build_master_detail_html(agents_data):
   <header class="pb-masthead">
     <div class="pb-brand-title">
       <span>🎬</span>
-      <span>Supply Chain AI Agents Playbook</span>
+      <span>Supply Chain AI Agents — Testing &amp; Video Playbook</span>
     </div>
     <div class="pb-stats-strip">
-      <span class="pb-stat-chip live"><span class="pb-status-dot"></span> <strong>{deployed_count}</strong> Live in Gemini Enterprise</span>
-      <span class="pb-stat-chip"><strong>{total_count}</strong> Total Agents</span>
+      <span class="pb-stat-chip live"><span class="pb-status-dot"></span> <strong>__DEPLOYED_COUNT__</strong> Live in Gemini Enterprise</span>
+      <span class="pb-stat-chip"><strong>__TOTAL_COUNT__</strong> Total Agents</span>
       <span class="pb-stat-chip"><strong>6</strong> ASCM SCOR Pillars</span>
-      <a href="index.html" class="pb-stat-chip" style="text-decoration:none; color:#38bdf8;">🌐 Open Web Portal &rarr;</a>
+      <a href="index.html" class="pb-stat-chip" style="text-decoration:none; color:var(--google-blue);">🌐 Open Web Portal &rarr;</a>
+      <button class="pb-theme-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Switch between Light and Dark theme">🌙 Dark Theme</button>
     </div>
   </header>
 
   <!-- Filter Toolbar -->
   <div class="pb-toolbar">
-    <div class="pb-filter-group">
+    <div class="pb-filter-group" id="statusFilterGroup">
       <span style="font-size:12px; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-right:4px;">Status:</span>
-      <button class="pb-btn active" onclick="setStatusFilter('all', this)">All ({total_count})</button>
-      <button class="pb-btn live-filter" onclick="setStatusFilter('deployed', this)">🟢 Deployed in GE ({deployed_count})</button>
-      <button class="pb-btn" onclick="setStatusFilter('catalog', this)">⚪ In Catalog ({total_count - deployed_count})</button>
+      <button class="pb-btn active" onclick="setStatusFilter('all', this)">All (__TOTAL_COUNT__)</button>
+      <button class="pb-btn live-filter" onclick="setStatusFilter('deployed', this)">🟢 Deployed in Gemini Enterprise (__DEPLOYED_COUNT__)</button>
+      <button class="pb-btn" onclick="setStatusFilter('catalog', this)">⚪ Catalog &amp; Local ADK (__CATALOG_ONLY_COUNT__)</button>
     </div>
 
-    <div class="pb-filter-group">
+    <div class="pb-filter-group" id="pillarFilterGroup">
       <span style="font-size:12px; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-right:4px;">Pillar:</span>
       <button class="pb-btn active" onclick="setPillarFilter('all', this)">All Pillars</button>
       <button class="pb-btn" onclick="setPillarFilter('demand_sop', this)">01 Plan</button>
       <button class="pb-btn" onclick="setPillarFilter('sourcing_procurement', this)">02 Source</button>
       <button class="pb-btn" onclick="setPillarFilter('manufacturing_prod', this)">03 Make</button>
-      <button class="pb-btn" onclick="setPillarFilter('inventory_warehouse', this)">04 Deliver (DC)</button>
+      <button class="pb-btn" onclick="setPillarFilter('inventory_warehouse', this)">04 Inventory &amp; WMS</button>
       <button class="pb-btn" onclick="setPillarFilter('logistics_fleet', this)">05 Logistics</button>
-      <button class="pb-btn" onclick="setPillarFilter('circular_enable', this)">06 Return</button>
+      <button class="pb-btn" onclick="setPillarFilter('circular_enable', this)">06 Returns &amp; ESG</button>
     </div>
 
     <div class="pb-search-box">
       <span class="pb-search-icon">🔍</span>
-      <input type="text" class="pb-search-input" id="searchBox" placeholder="Filter by agent, persona, or keyword..." oninput="handleSearch(this.value)">
+      <input type="text" class="pb-search-input" id="searchBox" placeholder="Search agent, persona, sub-pillar, or keyword..." oninput="handleSearch(this.value)">
     </div>
   </div>
 
   <!-- Master-Detail Workspace -->
   <div class="pb-workspace">
-    <!-- Left Roster -->
-    <aside class="pb-sidebar" id="agentRoster">
-      <!-- Items generated via JS -->
-    </aside>
-
-    <!-- Right Reader Stage -->
-    <main class="pb-detail-stage" id="agentStage">
-      <!-- Selected agent details injected via JS -->
-    </main>
+    <aside class="pb-sidebar" id="agentRoster"></aside>
+    <main class="pb-detail-stage" id="agentStage"></main>
   </div>
 
   <script>
-    const AGENTS = {agents_json};
+    const AGENTS = __AGENTS_JSON__;
     let currentStatusFilter = 'all';
     let currentPillarFilter = 'all';
     let currentSearchQuery = '';
-    let currentSelectedId = AGENTS[0] ? AGENTS[0].id : null;
+    let currentSelectedId = AGENTS.length > 0 ? AGENTS[0].id : null;
 
-    function renderRoster() {{
+    function applyTheme(theme) {
+      const normalized = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', normalized);
+      const btn = document.getElementById('themeToggleBtn');
+      if (btn) {
+        btn.textContent = normalized === 'dark' ? '☀️ Light Theme' : '🌙 Dark Theme';
+      }
+    }
+
+    function toggleTheme() {
+      const curr = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem('sc_playbook_theme', next); } catch (e) {}
+      applyTheme(next);
+    }
+
+    function escapeHtml(str) {
+      return String(str == null ? '' : str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function flashCopied(btn) {
+      if (!btn) return;
+      const prev = btn.dataset.origLabel || btn.innerHTML;
+      btn.dataset.origLabel = prev;
+      btn.innerHTML = '✅ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = prev;
+        btn.classList.remove('copied');
+      }, 1800);
+    }
+
+    function copyTextValue(text, btn) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => flashCopied(btn));
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        flashCopied(btn);
+      }
+    }
+
+    function copyAgentPrompt(agId, promptIdx, btn) {
+      const ag = AGENTS.find(a => a.id === agId);
+      if (!ag || !ag.prompts || !ag.prompts[promptIdx]) return;
+      copyTextValue(ag.prompts[promptIdx].text, btn);
+    }
+
+    function copyTerminalCommand(agId, btn) {
+      copyTextValue('python3 scripts/test_agent_demo.py ' + agId, btn);
+    }
+
+    function renderRoster() {
       const roster = document.getElementById('agentRoster');
+      if (!roster) return;
       roster.innerHTML = '';
 
-      const filtered = AGENTS.filter(ag => {{
+      const filtered = AGENTS.filter(ag => {
         if (currentStatusFilter === 'deployed' && !ag.is_deployed) return false;
         if (currentStatusFilter === 'catalog' && ag.is_deployed) return false;
         if (currentPillarFilter !== 'all' && ag.dept_id !== currentPillarFilter) return false;
-        if (currentSearchQuery) {{
+        if (currentSearchQuery) {
           const q = currentSearchQuery.toLowerCase();
-          const match = ag.name.toLowerCase().includes(q) ||
-                        ag.id.toLowerCase().includes(q) ||
-                        ag.persona.toLowerCase().includes(q) ||
-                        ag.sub_pillar.toLowerCase().includes(q);
-          if (!match) return false;
-        }}
+          const haystack = [
+            ag.name, ag.id, ag.persona, ag.sub_pillar, ag.pillar_title, ag.problem, ag.solution
+          ].join(' ').toLowerCase();
+          if (!haystack.includes(q)) return false;
+        }
         return true;
-      }});
+      });
 
-      if (filtered.length === 0) {{
-        roster.innerHTML = '<div style="padding:24px; text-align:center; color:var(--text-muted); font-size:14px;">No agents match the selected filters.</div>';
+      if (filtered.length === 0) {
+        roster.innerHTML = '<div style="padding:28px 20px; text-align:center; color:var(--text-muted); font-size:14.5px;">No agents match your current filter or search query.</div>';
+        document.getElementById('agentStage').innerHTML = '<div style="padding:40px; color:var(--text-muted);">Adjust filters above to inspect an agent.</div>';
         return;
-      }}
+      }
 
-      if (!filtered.some(a => a.id === currentSelectedId)) {{
+      if (!filtered.some(a => a.id === currentSelectedId)) {
         currentSelectedId = filtered[0].id;
-      }}
+      }
 
-      filtered.forEach(ag => {{
+      filtered.forEach(ag => {
         const item = document.createElement('div');
         item.className = 'pb-agent-item' + (ag.id === currentSelectedId ? ' selected' : '');
         item.style.setProperty('--card-accent', ag.pillar_color);
         item.onclick = () => selectAgent(ag.id);
 
-        const statusTag = ag.is_deployed 
+        const statusTag = ag.is_deployed
           ? '<span class="pb-status-badge live"><span class="pb-status-dot"></span> Live in GE</span>'
-          : '<span class="pb-status-badge catalog">Catalog</span>';
+          : '<span class="pb-status-badge catalog">Local ADK</span>';
 
         item.innerHTML = `
           <div class="pb-item-header">
-            <span class="pb-item-title">#${{String(ag.idx).padStart(2, '0')}} · ${{ag.name}}</span>
-            ${{statusTag}}
+            <span class="pb-item-title">#${String(ag.idx).padStart(2, '0')} · ${escapeHtml(ag.name)}</span>
+            ${statusTag}
           </div>
           <div class="pb-item-meta">
-            <span style="color:${{ag.pillar_color}}; font-weight:700;">${{ag.sub_pillar}}</span>
+            <span style="color:${ag.pillar_color}; font-weight:700;">${escapeHtml(ag.sub_pillar)}</span>
             <span>&bull;</span>
-            <span>👤 ${{ag.persona}}</span>
+            <span>👤 ${escapeHtml(ag.persona)}</span>
           </div>
         `;
         roster.appendChild(item);
-      }});
+      });
 
       renderDetail();
-    }}
+    }
 
-    function selectAgent(agId) {{
+    function selectAgent(agId) {
       currentSelectedId = agId;
-      document.querySelectorAll('.pb-agent-item').forEach(el => el.classList.remove('selected'));
+      if (history.replaceState) {
+        history.replaceState(null, '', '#' + agId);
+      }
       renderRoster();
-    }}
+    }
 
-    function renderDetail() {{
+    function renderDetail() {
       const stage = document.getElementById('agentStage');
+      if (!stage) return;
       const ag = AGENTS.find(a => a.id === currentSelectedId);
-      if (!ag) {{
-        stage.innerHTML = '<div style="padding:40px; color:var(--text-muted);">Select an agent from the roster on the left.</div>';
+      if (!ag) {
+        stage.innerHTML = '<div style="padding:40px; color:var(--text-muted);">Select an agent from the left roster.</div>';
         return;
-      }}
+      }
 
-      const statusBanner = ag.is_deployed 
-        ? `<span class="pb-status-badge live" style="font-size:13px; padding:6px 14px;"><span class="pb-status-dot"></span> Live in Gemini Enterprise (Reasoning Engine Ready)</span>`
-        : `<span class="pb-status-badge catalog" style="font-size:13px; padding:6px 14px;">⚪ Planned / In Catalog</span>`;
+      const statusBanner = ag.is_deployed
+        ? `<span class="pb-status-badge live" style="font-size:12px; padding:5px 12px;"><span class="pb-status-dot"></span> Live in Gemini Enterprise (Engine ${escapeHtml(ag.re_id)})</span>`
+        : `<span class="pb-status-badge catalog" style="font-size:12px; padding:5px 12px;">⚪ Local ADK Package Ready (Catalog)</span>`;
 
-      const connectorsHtml = ag.connectors.map(c => `
+      const connectorsHtml = (ag.connectors || []).map(c => `
         <div class="pb-system-pill">
-          <span class="pb-system-name">${{c[0]}}</span>
-          <span class="pb-system-desc">${{c[1]}}</span>
+          <span class="pb-system-name">${escapeHtml(c[0])}</span>
+          <span class="pb-system-desc">${escapeHtml(c[1])}</span>
         </div>
       `).join('');
 
-      const promptsHtml = ag.prompts.map((p, i) => `
+      const subAgentsHtml = (ag.sub_agents && ag.sub_agents.length)
+        ? `<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:10px; margin-top:14px;">
+            ${ag.sub_agents.map((sa, idx) => `
+              <div class="pb-system-pill">
+                <span class="pb-system-name">Stage ${idx + 1} · ${escapeHtml(sa.name)}</span>
+                <span class="pb-system-desc">${escapeHtml(sa.role)}</span>
+              </div>
+            `).join('')}
+          </div>`
+        : '';
+
+      const promptsHtml = (ag.prompts || []).map((p, i) => `
         <div class="pb-prompt-card">
           <div class="pb-prompt-header">
-            <span class="pb-prompt-tag">Prompt ${{i+1}} · ${{p.tag}}</span>
-            <button class="pb-copy-btn" onclick="copyPrompt('${{escapeJs(p.text)}}', this)">
+            <span class="pb-prompt-tag">Prompt ${i + 1} · ${escapeHtml(p.tag)}</span>
+            <button class="pb-copy-btn" onclick="copyAgentPrompt('${escapeHtml(ag.id)}', ${i}, this)">
               📋 Copy Prompt
             </button>
           </div>
-          <div class="pb-prompt-text">${{escapeHtml(p.text)}}</div>
+          <div class="pb-prompt-text">${escapeHtml(p.text)}</div>
         </div>
       `).join('');
+
+      const geLaunchBtn = ag.ge_url
+        ? `<a href="${escapeHtml(ag.ge_url)}" class="pb-primary-btn pb-ge-btn" target="_blank" rel="noopener">
+             <span>✨ Open Live Agent in Gemini Enterprise &nearr;</span>
+           </a>`
+        : '';
 
       stage.innerHTML = `
         <div class="pb-agent-hero">
           <div class="pb-hero-top">
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-              <span class="pb-stat-chip" style="color:${{ag.pillar_color}}; border-color:${{ag.pillar_color}}66; font-weight:700;">#${{String(ag.idx).padStart(2, '0')}} · ${{ag.pillar_title}}</span>
-              <span class="pb-stat-chip" style="font-weight:600;">${{ag.sub_pillar}}</span>
-              ${{statusBanner}}
+              <span class="pb-stat-chip" style="color:${ag.pillar_color}; border-color:${ag.pillar_color}55; font-weight:700;">#${String(ag.idx).padStart(2, '0')} · ${escapeHtml(ag.pillar_title)}</span>
+              <span class="pb-stat-chip" style="font-weight:700;">${escapeHtml(ag.sub_pillar)}</span>
+              ${statusBanner}
             </div>
-            <span class="pb-stat-chip" style="background:rgba(16,185,129,0.14); color:#10b981; border-color:rgba(16,185,129,0.4); font-weight:700; font-size:14px;">
-              🚀 ${{ag.roi_badge}}
+            <span class="pb-stat-chip live" style="font-weight:700; font-size:13.5px;">
+              🚀 ${escapeHtml(ag.roi_badge)}
             </span>
           </div>
-          <h1 class="pb-hero-title">${{ag.name}}</h1>
-          <div class="pb-hero-persona">Primary Human Persona: <strong>${{ag.persona}}</strong> &bull; Package ID: <code>${{ag.id}}</code></div>
+          <h1 class="pb-hero-title">${escapeHtml(ag.name)}</h1>
+          <div class="pb-hero-persona">
+            <span>👤 Primary Persona: <strong>${escapeHtml(ag.persona)}</strong></span>
+            <span>&bull;</span>
+            <span>ADK Package: <code>agents/${escapeHtml(ag.id)}</code></span>
+            ${ag.ge_id ? `<span>&bull;</span><span>Gemini Enterprise ID: <code>${escapeHtml(ag.ge_id)}</code></span>` : ''}
+          </div>
         </div>
 
         <!-- 1. Business Use Case -->
         <div class="pb-content-card">
-          <div class="pb-section-title">🎯 1 · Real-World Business Problem &amp; AI Solution</div>
+          <div class="pb-section-title">🎯 1 · Real-World Business Problem, Agentic Solution &amp; Quantified Outcome</div>
           <div class="pb-usecase-grid">
             <div class="pb-usecase-box">
-              <h4 style="color:#fb7185;">✕ The Operational Problem</h4>
-              <p>${{ag.problem}}</p>
+              <h4 style="color:var(--google-red);">✕ The Operational Problem</h4>
+              <p>${escapeHtml(ag.problem)}</p>
             </div>
             <div class="pb-usecase-box">
-              <h4 style="color:#38bdf8;">✦ What the AI Agent Solves</h4>
-              <p>${{ag.solution}}</p>
+              <h4 style="color:var(--google-blue);">✦ What the AI Agent Solves</h4>
+              <p>${escapeHtml(ag.solution)}</p>
             </div>
             <div class="pb-usecase-box">
-              <h4 style="color:#10b981;">🚀 Quantified Enterprise Outcome</h4>
-              <p>${{ag.outcome}}</p>
+              <h4 style="color:var(--google-green);">🚀 Quantified Enterprise Outcome</h4>
+              <p>${escapeHtml(ag.outcome)}${ag.baseline_vs_target ? `<br><strong style="display:inline-block; margin-top:6px;">Benchmark: ${escapeHtml(ag.baseline_vs_target)}</strong>` : ''}</p>
             </div>
           </div>
         </div>
 
         <!-- 2. Connected Enterprise Systems -->
         <div class="pb-content-card">
-          <div class="pb-section-title">🔌 2 · Connected Enterprise Systems &amp; Data Sources</div>
+          <div class="pb-section-title">🔌 2 · Connected Enterprise Systems &amp; Data Feeds</div>
           <div class="pb-systems-grid">
-            ${{connectorsHtml}}
+            ${connectorsHtml}
           </div>
         </div>
 
-        <!-- 3. 3-Step Execution Flow -->
+        <!-- 3. Execution Architecture -->
         <div class="pb-content-card" style="border-left: 4px solid var(--google-blue);">
-          <div class="pb-section-title">🔄 3 · How the Agent Works (The 3-Step Execution Flow)</div>
-          <div style="font-size:15px; color:var(--text-secondary); line-height:1.65; display:flex; flex-direction:column; gap:8px;">
-            <div><strong>1. Sense &amp; Ingest:</strong> Queries live operational transactions from connected ERP/WMS systems without asking the user for technical table names or SQL syntax.</div>
-            <div><strong>2. Predict &amp; Optimize:</strong> Evaluates operational constraints, detects anomalies, and executes mathematical solvers to compute the lowest-cost, highest-service mitigation.</div>
-            <div><strong>3. Deliver &amp; Action:</strong> Renders visual comparison charts, generates atomic copy-ready CSV tables for Google Sheets, and prepares approved updates for safe ERP write-back.</div>
+          <div class="pb-section-title">🔄 3 · Specialist Sub-Agent Pipeline, Solver &amp; Safe Write-Back</div>
+          <div style="font-size:14.5px; color:var(--text-secondary); line-height:1.65; display:flex; flex-direction:column; gap:6px;">
+            <div><strong>Mathematical &amp; AI Reasoning Stack:</strong> ${escapeHtml(ag.solver_stack)}</div>
+            <div><strong>Governed System Write-Back:</strong> ${escapeHtml(ag.api_writeback)}</div>
+            <div><strong>Visual Surface Standard:</strong> Renders interactive A2UI v0.9 <code>VegaChart</code> cards alongside plain-English summaries, <code>&lt;= 5</code>-column Google Sheets-ready tables, and Cloud Storage links.</div>
           </div>
+          ${subAgentsHtml}
         </div>
 
         <!-- 4. Prompts -->
         <div class="pb-content-card">
-          <div class="pb-section-title">💬 4 · 3 Realistic High-Impact Business Prompts (Ready to Paste)</div>
+          <div class="pb-section-title">💬 4 · 5 Conversational Plain-English Test Prompts (Ready to Paste)</div>
           <p style="font-size:14px; color:var(--text-muted); margin-bottom:16px;">
-            These prompts are written in natural plain English—never mention database tables or code parameters. Click <strong>Copy Prompt</strong> and paste directly into Gemini Enterprise or the local ADK chat:
+            Written in natural business English with zero internal table names or developer syntax. Click <strong>Copy Prompt</strong> and paste directly into Gemini Enterprise or the ADK Web Runner:
           </p>
-          ${{promptsHtml}}
+          ${promptsHtml}
         </div>
 
         <!-- 5. Quick Actions -->
         <div class="pb-action-bar">
-          <a href="index.html#agent/${{ag.id}}" class="pb-primary-btn" target="_blank">
-            <span>🚀 Open Interactive CAD Simulation</span>
+          ${geLaunchBtn}
+          <a href="index.html#agent/${escapeHtml(ag.id)}" class="pb-primary-btn" target="_blank" rel="noopener">
+            <span>🌐 Open Agent Page &amp; CAD Studio</span>
           </a>
-          <button class="pb-secondary-btn" onclick="copyPrompt('python3 scripts/test_agent_demo.py ${{ag.id}}', this)">
-            <span>💻 Copy Terminal Test Command</span>
+          <button class="pb-secondary-btn" onclick="copyTerminalCommand('${escapeHtml(ag.id)}', this)">
+            <span>💻 Copy Local Smoke-Test Command</span>
           </button>
         </div>
       `;
-    }}
+    }
 
-    function setStatusFilter(status, btn) {{
+    function setStatusFilter(status, btn) {
       currentStatusFilter = status;
-      document.querySelectorAll('.pb-filter-group:nth-child(1) .pb-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      document.querySelectorAll('#statusFilterGroup .pb-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
       renderRoster();
-    }}
+    }
 
-    function setPillarFilter(pillar, btn) {{
+    function setPillarFilter(pillar, btn) {
       currentPillarFilter = pillar;
-      document.querySelectorAll('.pb-filter-group:nth-child(2) .pb-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      document.querySelectorAll('#pillarFilterGroup .pb-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
       renderRoster();
-    }}
+    }
 
-    function handleSearch(val) {{
-      currentSearchQuery = val.trim();
+    function handleSearch(val) {
+      currentSearchQuery = (val || '').trim();
       renderRoster();
-    }}
+    }
 
-    function copyPrompt(text, btn) {{
-      navigator.clipboard.writeText(text).then(() => {{
-        const oldText = btn.innerHTML;
-        btn.innerHTML = '✅ Copied!';
-        btn.classList.add('copied');
-        setTimeout(() => {{
-          btn.innerHTML = oldText;
-          btn.classList.remove('copied');
-        }}, 2000);
-      }});
-    }}
+    window.addEventListener('DOMContentLoaded', () => {
+      // Open in Light Theme by default unless user explicitly toggled Dark Theme
+      let savedTheme = 'light';
+      try {
+        const stored = localStorage.getItem('sc_playbook_theme');
+        if (stored === 'dark' || stored === 'light') savedTheme = stored;
+      } catch (e) {}
+      applyTheme(savedTheme);
 
-    function escapeHtml(str) {{
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-    }}
-
-    function escapeJs(str) {{
-      return String(str)
-        .replace(/\\/g, '\\\\')
-        .replace(/'/g, "\\'")
-        .replace(/"/g, '\\"')
-        .replace(/\n/g, '\\n')
-        .replace(/\r/g, '');
-    }}
-
-    window.addEventListener('DOMContentLoaded', () => {{
+      const hashId = (window.location.hash || '').replace(/^#/, '').trim();
+      if (hashId && AGENTS.some(a => a.id === hashId)) {
+        currentSelectedId = hashId;
+      }
       renderRoster();
-    }});
+    });
   </script>
 </body>
 </html>"""
+
+    return (
+        template.replace("__AGENTS_JSON__", agents_json)
+        .replace("__DEPLOYED_COUNT__", str(deployed_count))
+        .replace("__TOTAL_COUNT__", str(total_count))
+        .replace("__CATALOG_ONLY_COUNT__", str(catalog_only_count))
+    )
+
 
 if __name__ == "__main__":
     generate_playbook()
