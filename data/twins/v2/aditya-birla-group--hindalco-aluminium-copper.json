@@ -10,7 +10,7 @@
     "canonical_name": "Aditya Birla Group",
     "division_name": "Hindalco Aluminium & Copper",
     "twin_slug": "aditya-birla-group--hindalco-aluminium-copper",
-    "official_domain": "",
+    "official_domain": "hindalco.com",
     "industry_sector": "Metals & Industrial Materials · Smelting, Rolling Mills & Global Coil Logistics",
     "geography": "India & Global",
     "brand_accent": "#38bdf8",
@@ -42,6 +42,29 @@
         "supplier_network",
         "material_packaging",
         "contract_po_mgmt"
+      ],
+      "provenance_rationale": "Hindalco's upstream cost structure depends on captive bauxite mines in Jharkhand, Odisha, and Chhattisgarh alongside imported copper concentrates at Dahej, calcined petroleum coke, coal tar pitch, and captive thermal/renewable power contracts.",
+      "company_evidence_signals": [
+        "Captive bauxite mines feeding Utkal, Muri, Renukoot & Belagavi alumina refineries",
+        "Birla Copper Dahej port jetty importing global copper concentrates",
+        "LME-indexed commodity, anode carbon & captive energy procurement"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hindalco Industries Official Operations & Businesses",
+          "url": "https://www.hindalco.com/businesses",
+          "snippet": ""
+        },
+        {
+          "title": "Hindalco Integrated Annual Report & Sustainability Disclosures",
+          "url": "https://www.hindalco.com/investor-centre/reports-and-presentations",
+          "snippet": ""
+        },
+        {
+          "title": "Aditya Birla Group — Metals & Manufacturing Footprint",
+          "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -58,6 +81,29 @@
         "trade_promotion",
         "sop_ibp",
         "portfolio_sku"
+      ],
+      "provenance_rationale": "Hindalco and Novelis actively balance primary hot metal between commodity London Metal Exchange (LME) ingots/billets and value-added flat-rolled products (FRP), battery foils, extrusions, and copper rods based on downstream contribution margins.",
+      "company_evidence_signals": [
+        "Value-Added Products (VAP) & Flat-Rolled Products (FRP) margin mix strategy",
+        "Automotive, Aerospace, EV Battery Enclosure & Beverage Can OEM contracts",
+        "Integrated Sales & Operations Planning (S&OP) across Upstream & Downstream Aluminium"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hindalco Industries Official Operations & Businesses",
+          "url": "https://www.hindalco.com/businesses",
+          "snippet": ""
+        },
+        {
+          "title": "Hindalco Integrated Annual Report & Sustainability Disclosures",
+          "url": "https://www.hindalco.com/investor-centre/reports-and-presentations",
+          "snippet": ""
+        },
+        {
+          "title": "Aditya Birla Group — Metals & Manufacturing Footprint",
+          "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -73,6 +119,29 @@
         "production_scheduling",
         "capacity_planning",
         "quality_compliance"
+      ],
+      "provenance_rationale": "Hindalco runs continuous-process alumina refineries (Utkal, Renukoot), high-amperage electrolytic smelting potlines (Mahan, Aditya, Hirakud, Renukoot), continuous copper smelting/CCR rods (Dahej), and precision rolling/extrusion plants (Hirakud FRP, Silvassa, Taloja).",
+      "company_evidence_signals": [
+        "Mahan, Aditya, Hirakud & Renukoot aluminium smelters and Utkal Alumina refinery",
+        "Dahej Birla Copper smelter & continuous-cast copper rod (CCR) mills",
+        "Hirakud Flat-Rolled Products (FRP), Mouda battery foil & Silvassa extrusion plants"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hindalco Industries Official Operations & Businesses",
+          "url": "https://www.hindalco.com/businesses",
+          "snippet": ""
+        },
+        {
+          "title": "Hindalco Integrated Annual Report & Sustainability Disclosures",
+          "url": "https://www.hindalco.com/investor-centre/reports-and-presentations",
+          "snippet": ""
+        },
+        {
+          "title": "Aditya Birla Group — Metals & Manufacturing Footprint",
+          "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -92,13 +161,36 @@
         "store_replenishment",
         "last_mile_delivery",
         "route_carrier"
+      ],
+      "provenance_rationale": "Moving multi-ton aluminium coils, billets, alumina bulk rakes, and copper cathodes requires overhead crane coil yards, Indian Railways captive rakes (BTAP/BOXN), coastal/export breakbulk vessels, and Just-in-Time (JIT) automotive OEM deliveries.",
+      "company_evidence_signals": [
+        "Captive BTAP alumina tank wagons & coal/metal rail rakes",
+        "Dahej captive port terminal & global coil export container/breakbulk logistics",
+        "Overhead-crane heavy coil yards & automotive OEM Kanban fulfillment"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hindalco Industries Official Operations & Businesses",
+          "url": "https://www.hindalco.com/businesses",
+          "snippet": ""
+        },
+        {
+          "title": "Hindalco Integrated Annual Report & Sustainability Disclosures",
+          "url": "https://www.hindalco.com/investor-centre/reports-and-presentations",
+          "snippet": ""
+        },
+        {
+          "title": "Aditya Birla Group — Metals & Manufacturing Footprint",
+          "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited",
+          "snippet": ""
+        }
       ]
     },
     {
       "pillar_id": "closed_loop_scrap_cbam",
       "v_num": "05",
-      "scor_badge": "05 · SCRAP & EU CBAM",
-      "name": "Closed-Loop UBC Scrap Remelt, Claims & Carbon",
+      "scor_badge": "05 · SCRAP & CARBON",
+      "name": "Closed-Loop Scrap Remelt, Claims & Carbon (CBAM)",
       "tagline": "Customer stamping",
       "subtitle": "orchestrates closed-loop aluminium/copper scrap remelting, OEM surface claims, and EU CBAM carbon passports.",
       "color": "#e11d48",
@@ -107,6 +199,29 @@
         "expiry_markdowns",
         "returns_claims_mgmt",
         "pallet_tote_reclamation"
+      ],
+      "provenance_rationale": "Through Novelis and Hindalco's domestic recycling investments (such as the Odisha/Gujarat aluminium & copper recycling facilities), closed-loop scrap remelting and batch-level carbon intensity passports are central to meeting EU Carbon Border Adjustment Mechanism (CBAM) rules.",
+      "company_evidence_signals": [
+        "Novelis world-scale Used Beverage Can (UBC) & automotive closed-loop aluminium recycling",
+        "Panoli/Pakhajan copper & e-waste recycling and downstream remelt furnaces",
+        "Batch-level Scope 1/2/3 carbon intensity tracking for European export compliance"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hindalco Industries Official Operations & Businesses",
+          "url": "https://www.hindalco.com/businesses",
+          "snippet": ""
+        },
+        {
+          "title": "Hindalco Integrated Annual Report & Sustainability Disclosures",
+          "url": "https://www.hindalco.com/investor-centre/reports-and-presentations",
+          "snippet": ""
+        },
+        {
+          "title": "Aditya Birla Group — Metals & Manufacturing Footprint",
+          "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited",
+          "snippet": ""
+        }
       ]
     }
   ],
@@ -1638,15 +1753,26 @@
   "active_agents_count": 53,
   "active_personas_count": 53,
   "active_sub_pillars_count": 20,
+  "architecture_methodology_note": "Hindalco Industries (Aditya Birla Group) operates an integrated mine-to-metal value chain disclosed across its Integrated Annual Reports: captive bauxite/coal mining & copper concentrate imports (01), LME-linked smelter-to-mill alloy allocation (02), alumina refining, potline smelting & downstream rolling/extrusion (03), heavy rail-rake & port coil logistics (04), and closed-loop beverage-can/automotive scrap remelting with European Union Carbon Border Adjustment Mechanism…",
   "grounding_citations": [
     {
-      "title": "Aditya Birla Group — Corporate Operations Overview",
-      "url": "https://en.wikipedia.org/wiki/Aditya_Birla_Group",
+      "title": "Hindalco Industries Official Operations & Businesses",
+      "url": "https://www.hindalco.com/businesses",
       "snippet": ""
     },
     {
-      "title": "Aditya Birla Group Official Brand Mark Source",
-      "url": "https://adityabirla.com",
+      "title": "Hindalco Integrated Annual Report & Sustainability Disclosures",
+      "url": "https://www.hindalco.com/investor-centre/reports-and-presentations",
+      "snippet": ""
+    },
+    {
+      "title": "Aditya Birla Group — Metals & Manufacturing Footprint",
+      "url": "https://www.adityabirla.com/businesses/companies/hindalco-industries-limited",
+      "snippet": ""
+    },
+    {
+      "title": "Hindalco Industries — Corporate Profile (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hindalco_Industries",
       "snippet": ""
     }
   ],

@@ -17,11 +17,23 @@ import io
 import json
 from pathlib import Path
 import re
+import socket
 from typing import Optional, Tuple
 import urllib.parse
 import urllib.request
 
 from enterprise_twin.schema import LogoAssetSpec
+
+_ORIG_GETADDRINFO = socket.getaddrinfo
+
+
+def _ipv4_preferred_getaddrinfo(*args, **kwargs):
+    res = _ORIG_GETADDRINFO(*args, **kwargs)
+    v4 = [r for r in res if r[0] == socket.AF_INET]
+    return v4 if v4 else res
+
+
+socket.getaddrinfo = _ipv4_preferred_getaddrinfo
 
 LOGOS_CACHE_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "twins" / "logos"
 LOGOS_CACHE_DIR.mkdir(parents=True, exist_ok=True)

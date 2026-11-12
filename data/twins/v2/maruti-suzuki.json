@@ -10,7 +10,7 @@
     "canonical_name": "Maruti Suzuki",
     "division_name": "",
     "twin_slug": "maruti-suzuki",
-    "official_domain": "",
+    "official_domain": "marutisuzuki.com",
     "industry_sector": "Automotive & Mobility Manufacturing · Multi-Tier Supplier JIS, Assembly & Dealer Network",
     "geography": "India",
     "brand_accent": "#2563eb",
@@ -42,6 +42,29 @@
         "demand_forecasting",
         "sop_ibp",
         "portfolio_sku"
+      ],
+      "provenance_rationale": "MSIL synchronizes production across 18+ passenger models and hundreds of Petrol, Smart Hybrid, Strong Hybrid, S-CNG, and e-Vitara EV trims for Arena, NEXA, Commercial, and 100-country export markets.",
+      "company_evidence_signals": [
+        "Multi-powertrain (Petrol, S-CNG, Strong Hybrid & EV) trim-level demand sensing",
+        "Separate ARENA, NEXA & Commercial channel order-bank S&OP",
+        "Global export demand balancing across Africa, Latin America, Middle East & Japan"
+      ],
+      "verification_sources": [
+        {
+          "title": "Maruti Suzuki — Manufacturing Facilities, Rail Logistics & Sustainability",
+          "url": "https://www.marutisuzuki.com/corporate/about-us",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Integrated Annual Reports & Investor Presentations",
+          "url": "https://www.marutisuzuki.com/corporate/investors/company-reports",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Corporate & Supply Chain Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Maruti_Suzuki",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -57,6 +80,29 @@
         "supplier_network",
         "material_packaging",
         "contract_po_mgmt"
+      ],
+      "provenance_rationale": "MSIL pioneered localized Japanese-style supplier parks and joint-venture Tier-1 vendors within a 100km radius of Gurugram/Manesar and Hansalpur delivering on hourly Just-in-Time (JIT) and Just-in-Sequence (JIS) schedules.",
+      "company_evidence_signals": [
+        "High-localization Tier-1/2 vendor parks at Manesar, Kharkhoda & Hansalpur (Gujarat)",
+        "Hourly Just-in-Time (JIT) / Just-in-Sequence (JIS) seats, wiring harnesses & bumpers",
+        "Steel coil blanking, semiconductor allocation & vendor tooling capacity tracking"
+      ],
+      "verification_sources": [
+        {
+          "title": "Maruti Suzuki — Manufacturing Facilities, Rail Logistics & Sustainability",
+          "url": "https://www.marutisuzuki.com/corporate/about-us",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Integrated Annual Reports & Investor Presentations",
+          "url": "https://www.marutisuzuki.com/corporate/investors/company-reports",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Corporate & Supply Chain Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Maruti_Suzuki",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -72,6 +118,29 @@
         "production_scheduling",
         "capacity_planning",
         "quality_compliance"
+      ],
+      "provenance_rationale": "Across Gurugram, Manesar, Suzuki Motor Gujarat (Hansalpur — with India's first in-plant railway siding), and Kharkhoda, MSIL runs sub-minute takt-time mixed-model assembly lines.",
+      "company_evidence_signals": [
+        "Manesar, Gurugram, Hansalpur (Gujarat) & Kharkhoda mega-manufacturing plants",
+        "Sub-60-second takt-time mixed-model Weld, Paint, Engine & Final Assembly lines",
+        "Suzuki Production System (SPS) zero-defect poka-yoke & inline vision QA"
+      ],
+      "verification_sources": [
+        {
+          "title": "Maruti Suzuki — Manufacturing Facilities, Rail Logistics & Sustainability",
+          "url": "https://www.marutisuzuki.com/corporate/about-us",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Integrated Annual Reports & Investor Presentations",
+          "url": "https://www.marutisuzuki.com/corporate/investors/company-reports",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Corporate & Supply Chain Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Maruti_Suzuki",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -87,6 +156,29 @@
         "positioning_optimization",
         "warehouse_operations",
         "omnichannel_visibility"
+      ],
+      "provenance_rationale": "Maruti Suzuki Genuine Parts (MSGP) and Genuine Accessories flow through automated mother warehouses and regional parts depots supporting 4,500+ service touchpoints across India.",
+      "company_evidence_signals": [
+        "Maruti Suzuki Genuine Parts (MSGP) national & regional parts warehouses",
+        "High-capacity plant VIN dispatch yards & port staging zones",
+        "Multi-echelon service-part inventory across fast-moving maintenance & body parts"
+      ],
+      "verification_sources": [
+        {
+          "title": "Maruti Suzuki — Manufacturing Facilities, Rail Logistics & Sustainability",
+          "url": "https://www.marutisuzuki.com/corporate/about-us",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Integrated Annual Reports & Investor Presentations",
+          "url": "https://www.marutisuzuki.com/corporate/investors/company-reports",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Corporate & Supply Chain Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Maruti_Suzuki",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -101,21 +193,67 @@
       "sub_pillar_ids": [
         "first_mid_mile",
         "route_carrier"
+      ],
+      "provenance_rationale": "MSIL holds India's first Automobile Freight Train Operator (AFTO) license and commissioned in-plant Gati Shakti railway sidings at Gujarat (Hansalpur) and Manesar to ship over 400,000+ cars/year by rail alongside Mundra/Pipavav/Mumbai port exports.",
+      "company_evidence_signals": [
+        "In-plant railway sidings at Hansalpur (Gujarat) & Manesar under AFTO license",
+        "High-capacity double-decker BCACBM rail auto-wagons & car-carrier trailers",
+        "Mundra, Pipavav & Kamarajar Port Roll-on/Roll-off (Ro-Ro) vehicle exports"
+      ],
+      "verification_sources": [
+        {
+          "title": "Maruti Suzuki — Manufacturing Facilities, Rail Logistics & Sustainability",
+          "url": "https://www.marutisuzuki.com/corporate/about-us",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Integrated Annual Reports & Investor Presentations",
+          "url": "https://www.marutisuzuki.com/corporate/investors/company-reports",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Corporate & Supply Chain Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Maruti_Suzuki",
+          "snippet": ""
+        }
       ]
     },
     {
       "pillar_id": "dealer_allocation_vor",
       "v_num": "06",
-      "scor_badge": "06 · DEALER & SERVICE NETWORK",
-      "name": "Dealership Vehicle Allocation, Schemes & VOR Parts",
+      "scor_badge": "06 · ARENA/NEXA & VOR",
+      "name": "Dealership Allocation & Vehicle-Off-Road (VOR) Parts",
       "tagline": "Dealer wholesale dispatch, exchange schemes & workshop",
       "subtitle": "Coordinates dealer inventory allocation, retail finance/exchange schemes, and rapid workshop parts delivery.",
-      "color": "#e11d48",
+      "color": "#ca8a04",
       "watermark_type": "demand_wave",
       "sub_pillar_ids": [
         "trade_promotion",
         "store_replenishment",
         "last_mile_delivery"
+      ],
+      "provenance_rationale": "Coordinates wholesale vehicle dispatch and urgent Vehicle-Off-Road (VOR) spare-parts deliveries across 3,800+ ARENA/NEXA sales outlets and 5,000+ authorized service workshops.",
+      "company_evidence_signals": [
+        "3,800+ ARENA, NEXA & Commercial dealerships + 5,000+ service workshops",
+        "Priority Vehicle-Off-Road (VOR) air/express spare-parts dispatch",
+        "Regional festive retail scheme & True Value exchange coordination"
+      ],
+      "verification_sources": [
+        {
+          "title": "Maruti Suzuki — Manufacturing Facilities, Rail Logistics & Sustainability",
+          "url": "https://www.marutisuzuki.com/corporate/about-us",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Integrated Annual Reports & Investor Presentations",
+          "url": "https://www.marutisuzuki.com/corporate/investors/company-reports",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Corporate & Supply Chain Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Maruti_Suzuki",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -125,12 +263,35 @@
       "name": "Warranty Part Recovery, Remanufacturing & Racks",
       "tagline": "Failed-part RMA root cause, transit damage &",
       "subtitle": "Tracks returnable vendor steel racks/dunnage, transit scratch claims, and warranty part remanufacturing.",
-      "color": "#d97706",
+      "color": "#0284c7",
       "watermark_type": "conveyor_rack",
       "sub_pillar_ids": [
         "expiry_markdowns",
         "returns_claims_mgmt",
         "pallet_tote_reclamation"
+      ],
+      "provenance_rationale": "MSIL operates closed-loop returnable steel component racks/bins with Tier-1 suppliers and runs Maruti Suzuki Toyotsu India (MSTI) in Noida for scientific end-of-life vehicle scrapping and recycling.",
+      "company_evidence_signals": [
+        "Maruti Suzuki Toyotsu India (MSTI) government-certified vehicle scrapping unit",
+        "Closed-loop returnable steel pallets & collapsible poly-bins across vendor parks",
+        "Warranty failed-part return diagnostics & DPF/hybrid-battery circularity"
+      ],
+      "verification_sources": [
+        {
+          "title": "Maruti Suzuki — Manufacturing Facilities, Rail Logistics & Sustainability",
+          "url": "https://www.marutisuzuki.com/corporate/about-us",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Integrated Annual Reports & Investor Presentations",
+          "url": "https://www.marutisuzuki.com/corporate/investors/company-reports",
+          "snippet": ""
+        },
+        {
+          "title": "Maruti Suzuki — Corporate & Supply Chain Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Maruti_Suzuki",
+          "snippet": ""
+        }
       ]
     }
   ],
@@ -1660,15 +1821,21 @@
   "active_agents_count": 54,
   "active_personas_count": 54,
   "active_sub_pillars_count": 20,
+  "architecture_methodology_note": "Maruti Suzuki India Limited (MSIL) operates India's highest-volume passenger-vehicle supply chain (~2M+ vehicles/year), structured around its Annual & Sustainability Reports: Multi-Channel Arena/NEXA/Export IBP (01), Localized Vendor Park & Joint-Venture Sourcing (02), Gurugram/Manesar/Hansalpur/Kharkhoda Mixed-Model Production (03), Genuine Parts & Stockyards (04), Captive Rail Auto-Wagons & Port Exports (05), Arena/NEXA Dealership & Vehicle-Off-Road Parts (06), and…",
   "grounding_citations": [
     {
-      "title": "Maruti Suzuki — Corporate Operations Overview",
-      "url": "https://en.wikipedia.org/wiki/Maruti_Suzuki",
+      "title": "Maruti Suzuki — Manufacturing Facilities, Rail Logistics & Sustainability",
+      "url": "https://www.marutisuzuki.com/corporate/about-us",
       "snippet": ""
     },
     {
-      "title": "Maruti Suzuki Official Brand Mark Source",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Maruti_Suzuki_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "title": "Maruti Suzuki — Integrated Annual Reports & Investor Presentations",
+      "url": "https://www.marutisuzuki.com/corporate/investors/company-reports",
+      "snippet": ""
+    },
+    {
+      "title": "Maruti Suzuki — Corporate & Supply Chain Profile (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maruti_Suzuki",
       "snippet": ""
     }
   ],

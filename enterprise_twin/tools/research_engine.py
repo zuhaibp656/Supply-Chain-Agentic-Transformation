@@ -212,6 +212,18 @@ def _normalize_org_pillars_partition(raw_pillars: Any, company_label: str) -> Li
             else:
                 badge = f"{len(cleaned) + 1:02d} · {badge.split('·', 1)[1].strip()[:20].upper()}"
 
+            raw_signals = p.get("company_evidence_signals") or []
+            clean_signals = [str(x).strip()[:140] for x in raw_signals if str(x).strip()][:5]
+            raw_sources = p.get("verification_sources") or []
+            clean_sources: List[Dict[str, str]] = []
+            for rs in raw_sources[:4]:
+                if isinstance(rs, dict) and str(rs.get("url") or "").startswith("http"):
+                    clean_sources.append({
+                        "title": str(rs.get("title") or rs["url"]).strip()[:110],
+                        "url": str(rs["url"]).strip(),
+                        "snippet": str(rs.get("snippet") or "").strip()[:180],
+                    })
+
             cleaned.append({
                 "pillar_id": re.sub(r"[^a-z0-9_]+", "_", str(p.get("pillar_id") or f"pillar_{len(cleaned)+1}").lower()).strip("_") or f"pillar_{len(cleaned)+1}",
                 "scor_badge": badge,
@@ -221,6 +233,9 @@ def _normalize_org_pillars_partition(raw_pillars: Any, company_label: str) -> Li
                 "color": col,
                 "watermark_type": wm,
                 "sub_pillar_ids": sp_list,
+                "provenance_rationale": str(p.get("provenance_rationale") or "").strip()[:420],
+                "company_evidence_signals": clean_signals,
+                "verification_sources": clean_sources,
             })
 
     if len(cleaned) < 4:
@@ -268,9 +283,13 @@ Use Google Search to investigate **{target_desc}** in depth:
 1. **What {target_desc} Actually Does & How Its Operations Run**:
    - Identify its true core business lines, physical or technology/infrastructure supply chain, procurement categories, manufacturing/staging/fulfillment nodes, distribution/delivery channels, and reverse/circular operations.
    - Note: Even if **{target_desc}** is an IT/Cloud/Engineering Services enterprise (like Wipro, Infosys, TCS, Accenture), a hospital/pharma network, an airline, a bank/telecom, or a specialized manufacturer, analyze its REAL operational & supply chain backbone (e.g., global client data-center/edge hardware procurement, semiconductor/ODM/EMS partner operations, rack staging & integration hubs, forward stocking locations [FSL] for 4-hour SLA spares, global trade/IOR logistics, and RMA/ITAD e-waste circularity—OR if a specific consumer/industrial division was requested, model that exact division!).
-2. **Design `5` to `7` Bespoke Organization-Specific Operating Pillars (`organization_pillars`)**:
+2. **Design `5` to `7` Bespoke Organization-Specific Operating Pillars (`organization_pillars`) — WITH AUDITED COMPANY PROVENANCE**:
    - NEVER output generic textbook SCOR names ("Planning & Strategy", "Sourcing & Procurement", "Manufacturing & Production")!
    - Every single pillar `name`, `scor_badge`, `tagline`, and `subtitle` MUST be unmistakably specific to **{target_desc}**'s real business model, products/infrastructure, and terminology!
+   - **CRITICAL PROVENANCE REQUIREMENT**: For EVERY pillar in `organization_pillars`, you MUST explain HOW we know **{target_desc}** actually operates this way:
+     * `provenance_rationale`: 2–3 plain-English sentences citing **{target_desc}**'s real annual-report business segments, manufacturing/sourcing model, distribution network, or public disclosures that justify this pillar.
+     * `company_evidence_signals`: 3–4 concrete, real **{target_desc}** plants, subsidiaries, platforms, distribution programs, or channels anchored to this pillar (never generic placeholders or other companies!).
+     * `verification_sources`: 1–3 real HTTPS URLs (from **{target_desc}**'s official domain, annual/integrated/sustainability reports, investor relations, or grounded search results) verifying this pillar.
    - Partition ALL 20 functional `sub_pillar_ids` ({json.dumps(ALL_20_SUBPILLAR_IDS)}) across your `5` to `7` `organization_pillars` so each of the 20 IDs appears once.
    - Choose `watermark_type` for each pillar from: `["demand_wave", "supplier_graph", "factory_arm", "warehouse_rack", "corridor_lifo", "conveyor_rack"]`.
 3. **Real Corporate Website Domain & Career-Portal Job Titles**:
@@ -280,21 +299,9 @@ Use Google Search to investigate **{target_desc}** in depth:
    - Accurately flag which physical traits DO vs. DO NOT apply (e.g., refrigerated cold-chain perishables, grocery food expiry markdowns, brick-and-mortar retail store planograms, D2C parcel e-commerce) so inapplicable AI agents are cleanly hidden.
 5. **CRITICAL MANDATE — DIVISION CANONICALIZATION**:
    - Users frequently input informal colloquial shorthand or abbreviations (e.g. 'e-commerce' for Amazon, 'two wheeler' for Suzuki, 'TM&D' for ITC). DO NOT just echo raw user text! Conduct Google Search to identify and return the OFFICIAL formal corporate subsidiary, division, or operating entity name with all acronyms spelled out (e.g. 'Worldwide Amazon Stores & Consumer Fulfillment', 'Suzuki Motorcycle Division (Two-Wheelers)', 'Trade Marketing & Distribution (TM&D)'). Return this in `canonical_division_name`.
-6. **CRITICAL MANDATE — SPELL OUT ALL ABBREVIATIONS & ACRONYMS IN FULL**:
-   - NEVER leave raw domain acronyms unexplained anywhere! Business stakeholders and executives must understand every term without guessing.
-   - Whenever an acronym is used, ALWAYS provide the full expanded form alongside or preceding the acronym.
-   - Examples:
-     * 'Supply Chain Optimization Technologies (SCOT)' (NEVER just 'SCOT')
-     * 'Carbon Border Adjustment Mechanism (CBAM)' (NEVER just 'CBAM')
-     * 'Trade Marketing & Distribution (TM&D)' (NEVER just 'TM&D')
-     * 'On-Time In-Full (OTIF)' (NEVER just 'OTIF')
-     * 'Fulfillment Center (FC)' (NEVER just 'FC')
-     * 'Amazon Transportation Services (ATS)' (NEVER just 'ATS')
-     * 'Return Merchandise Authorization (RMA)' (NEVER just 'RMA')
-     * 'Overall Equipment Effectiveness (OEE)' (NEVER just 'OEE')
-     * 'European Union Deforestation Regulation (EUDR)' (NEVER just 'EUDR')
-     * 'Corporate Sustainability Reporting Directive (CSRD)' (NEVER just 'CSRD')
-   - In every pillar name, scor_badge, tagline, subtitle, agent title, workflow name, executive thesis, manual toil, and proof point, spell out all abbreviations!
+6. **CRITICAL MANDATE — SPELL OUT ALL ABBREVIATIONS & NEVER INVENT UNVERIFIED FINANCIAL NUMBERS**:
+   - NEVER leave raw domain acronyms unexplained anywhere! Always provide the full expanded form alongside or preceding the acronym (e.g. 'Supply Chain Optimization Technologies (SCOT)', 'Trade Marketing & Distribution (TM&D)', 'On-Time In-Full (OTIF)', 'Fulfillment Center (FC)', 'Overall Equipment Effectiveness (OEE)').
+   - NEVER fabricate or guess internal dollar/currency savings or unverified KPI numbers for **{target_desc}**!
 
 Return ONLY a valid JSON object matching this exact structure (no markdown commentary outside JSON):
 {{
@@ -307,6 +314,7 @@ Return ONLY a valid JSON object matching this exact structure (no markdown comme
   "brand_secondary_hex": "#HEXCODE",
   "executive_leader_title": "Authentic top Supply Chain / Operations / Procurement executive title at this company",
   "executive_thesis": "2 crisp plain-English sentences telling the story of how this company's end-to-end supply chain & operations run using real hubs, vendors, channels, and terminology.",
+  "architecture_methodology_note": "2-3 sentences summarizing how these bespoke Operating Pillars were derived directly from this company's reported business segments, manufacturing/fulfillment footprint, and public supply chain disclosures.",
   "flagship_facilities": "4-5 real plants, integration centers, hubs, campuses, or distribution regions separated by ' · '",
   "erp_systems": "Real or industry-authentic ERP / sourcing / planning / WMS / TMS stack separated by ' · '",
   "terminology_glossary": [
@@ -332,7 +340,16 @@ Return ONLY a valid JSON object matching this exact structure (no markdown comme
       "subtitle": "1 crisp sentence explaining what this pillar runs at this company (<= 155 chars)",
       "color": "#2563eb",
       "watermark_type": "demand_wave",
-      "sub_pillar_ids": ["demand_forecasting", "sop_ibp", "portfolio_sku"]
+      "sub_pillar_ids": ["demand_forecasting", "sop_ibp", "portfolio_sku"],
+      "provenance_rationale": "2-3 sentences explaining how we know this company runs this pillar based on its real segments, plants, or annual disclosures.",
+      "company_evidence_signals": [
+        "Real company plant / division / platform 1",
+        "Real company program / logistics network 2",
+        "Real company channel / sourcing model 3"
+      ],
+      "verification_sources": [
+        {{"title": "Official Corporate / Annual Report Source", "url": "https://www.companydomain.com"}}
+      ]
     }}
   ],
   "division_operational_profile": {{
@@ -433,11 +450,12 @@ CRITICAL INSTRUCTIONS:
    - Rewrite EVERY `persona_id`'s `title` into an authentic corporate org-chart job title that exists at **{co}** (aligned with `discovered_career_titles`, e.g., `'Global Head — Server & ODM Strategic Sourcing'`, `'Regional Manager — Tint & Depot Replenishment'`, `'Director — Cold-Chain GDP Logistics'`). Do NOT leave the canonical SCOR persona title unchanged, and do NOT just prefix `{co}` in front of a generic title!
    - Write `summary` (`1–2 crisp plain-English sentences, <= 230 chars`) telling the clear story of what this person actually does every day at **{target_label}** without dense jargon.
    - Write `manual_toil` and `agentic_impact` (`1 crisp plain-English sentence each, <= 190 chars`) referencing **{target_label}**'s real workflows, assets, facilities, and ERP systems.
+   - **STRICT NUMBER GUARDRAIL**: NEVER invent or claim unverified company-specific dollar/rupee/euro savings (like `$50M` or `₹120 Cr`) or internal company KPIs! Keep impact statements strictly qualitative or use defensible generic percentage ranges (e.g., `15%–30% faster cycle time`) and never mention other companies!
 3. **Reuse & Filter the Fixed Pool of Core AI Agents with a 1–2 Line Agent Story (`agents`)**:
    - Do NOT invent new agent IDs—evaluate each provided `agent_id`:
    - Set `"is_relevant": false` when an agent's physical domain genuinely does NOT apply to **{target_label}** according to `division_operational_profile` (for example, set `false` on `cold_chain_auditor` or `food_waste_esg_copilot` for non-food/non-cold-chain companies like IT/tech, cement, paints, automotive, metals, apparel, or industrial equipment; set `false` on grocery/store-aisle agents like `planogram_merchandising_vision_auditor` or `aisle_aligned_pallet_agent` for B2B enterprises without retail stores; keep at least 60% of agents in this pillar `true`).
    - Keep `"custom_agent_name": ""` when the canonical agent name already works cleanly, OR provide a crisp `2–4 word` domain agent name (`<= 42 chars`) when domain wording makes it much clearer for **{co}** leaders.
-   - Write `"division_context"` (`1–2 crisp plain-English sentences, <= 210 chars`) telling the clear story of what this AI agent does for **{target_label}**.
+   - Write `"division_context"` (`1–2 crisp plain-English sentences, <= 210 chars`) telling the clear story of what this AI agent does for **{target_label}** without inventing unverified dollar figures.
 
 Return ONLY valid JSON matching this exact structure:
 {{
@@ -449,8 +467,8 @@ Return ONLY valid JSON matching this exact structure:
       "title": "Authentic Corporate Job Title",
       "role": "Concise 5-9 word operational mandate",
       "summary": "1-2 sentence plain-English story of what this person does every day at {target_label}",
-      "manual_toil": "1-sentence manual bottleneck today at {co}",
-      "agentic_impact": "1-sentence transformation with this AI agent",
+      "manual_toil": "1-sentence manual bottleneck today at {co} (no fabricated dollar numbers)",
+      "agentic_impact": "1-sentence transformation with this AI agent (generic % range or workflow outcome only)",
       "grounding_source": "Grounded in {co} career portals & supply chain roles"
     }}
   }},
@@ -538,21 +556,28 @@ def synthesize_enterprise_twin_live(
         career_hints=career_hints,
     )
 
-    if wiki_hint.get("page_url") and not any(c.url == wiki_hint["page_url"] for c in citations):
-        citations.insert(
-            0,
-            GroundingCitation(
-                title=f"{wiki_hint.get('canonical_title', company_name)} — Corporate Profile",
-                url=wiki_hint["page_url"],
-            ),
-        )
-
     canonical_co = dossier.get("canonical_company_name") or wiki_hint.get("canonical_title") or company_name
-    clean_div = division_name.strip() or (dossier.get("division_display_name") or "").strip()
+    clean_div = (dossier.get("canonical_division_name") or division_name or dossier.get("division_display_name") or "").strip()
     disp_label = f"{canonical_co} — {clean_div}" if clean_div else canonical_co
 
     official_domain = (dossier.get("official_domain") or "").strip().lower()
     official_domain = re.sub(r"^https?://(?:www\.)?", "", official_domain).split("/")[0].strip()
+
+    if official_domain and not any(official_domain in c.url for c in citations):
+        citations.insert(
+            0,
+            GroundingCitation(
+                title=f"{canonical_co} — Official Corporate Portal ({official_domain})",
+                url=f"https://www.{official_domain}",
+            ),
+        )
+    if wiki_hint.get("page_url") and not any(c.url == wiki_hint["page_url"] for c in citations):
+        citations.append(
+            GroundingCitation(
+                title=f"{wiki_hint.get('canonical_title', canonical_co)} — Corporate Operations Profile",
+                url=wiki_hint["page_url"],
+            )
+        )
 
     accent_hex = clamp_brand_hex(dossier.get("brand_accent_hex", "#38bdf8"), "#38bdf8")
     sec_hex = dossier.get("brand_secondary_hex") or "#1e3a8a"
@@ -560,7 +585,6 @@ def synthesize_enterprise_twin_live(
     # Normalize custom 4-8 Organization Pillars
     org_pillars = _normalize_org_pillars_partition(dossier.get("organization_pillars"), disp_label)
     if not org_pillars:
-        # Build 6 company-specific pillars from canonical groups if LLM returned malformed array
         org_pillars = [
             {
                 "pillar_id": d_id,
@@ -571,6 +595,9 @@ def synthesize_enterprise_twin_live(
                 "color": d_obj.get("color", "#2563eb"),
                 "watermark_type": "demand_wave",
                 "sub_pillar_ids": [sp["id"] for sp in d_obj.get("subPillars", [])],
+                "provenance_rationale": f"Derived from {canonical_co}'s core {d_obj['name'].lower()} operations across {dossier.get('flagship_facilities') or geography}.",
+                "company_evidence_signals": [s.strip() for s in (dossier.get("flagship_facilities") or "").split("·") if s.strip()][:3],
+                "verification_sources": [{"title": f"{canonical_co} Official Portal", "url": f"https://www.{official_domain}"}] if official_domain else [],
             }
             for idx, (d_id, d_obj) in enumerate(depts.items())
         ]
@@ -751,25 +778,50 @@ def synthesize_enterprise_twin_live(
         "Checking WCAG contrast, sub-pillar partition, corporate role links & saving to database",
     )
 
-    custom_pillars: List[CustomPillarSpec] = [
-        CustomPillarSpec(
-            pillar_id=op["pillar_id"],
-            v_num=f"{idx + 1:02d}",
-            scor_badge=op["scor_badge"],
-            name=op["name"],
-            tagline=op["tagline"],
-            subtitle=op["subtitle"],
-            color=op["color"],
-            watermark_type=op["watermark_type"],
-            sub_pillar_ids=op["sub_pillar_ids"],
+    fallback_sources = [GroundingCitation(title=c.title, url=c.url, snippet=c.snippet) for c in citations[:3]]
+    custom_pillars: List[CustomPillarSpec] = []
+    for idx, op in enumerate(org_pillars):
+        p_sources = [
+            GroundingCitation(title=s["title"], url=s["url"], snippet=s.get("snippet", ""))
+            for s in (op.get("verification_sources") or [])
+            if isinstance(s, dict) and s.get("url")
+        ]
+        if not p_sources:
+            p_sources = fallback_sources[:2]
+        p_signals = list(op.get("company_evidence_signals") or [])
+        if not p_signals and brand_spec.flagship_sites:
+            p_signals = [x.strip() for x in brand_spec.flagship_sites.split("·") if x.strip()][:3]
+        p_rat = op.get("provenance_rationale") or (
+            f"Grounded in {disp_label}'s operating model ({brand_spec.industry_sector}) across {brand_spec.flagship_sites or geography}, "
+            f"partitioning {', '.join(op['sub_pillar_ids'])} into a dedicated operating pillar."
         )
-        for idx, op in enumerate(org_pillars)
-    ]
+        custom_pillars.append(
+            CustomPillarSpec(
+                pillar_id=op["pillar_id"],
+                v_num=f"{idx + 1:02d}",
+                scor_badge=op["scor_badge"],
+                name=op["name"],
+                tagline=op["tagline"],
+                subtitle=op["subtitle"],
+                color=op["color"],
+                watermark_type=op["watermark_type"],
+                sub_pillar_ids=op["sub_pillar_ids"],
+                provenance_rationale=p_rat,
+                company_evidence_signals=p_signals,
+                verification_sources=p_sources,
+            )
+        )
 
     discovered_titles = list(dossier.get("discovered_career_titles") or [])
     for ch in career_hints:
         if ch not in discovered_titles:
             discovered_titles.append(ch)
+
+    meth_note = str(dossier.get("architecture_methodology_note") or "").strip() or (
+        f"Curated {len(custom_pillars)} Operating Pillars for {disp_label} by mapping its public business segments, "
+        f"manufacturing/distribution footprint ({brand_spec.flagship_sites or geography}), and corporate supply chain roles "
+        f"onto the 20 canonical ASCM SCOR functional sub-pillars while filtering out physically inapplicable workflows."
+    )
 
     spec = TwinOverlaySpec(
         twin_slug=twin_slug,
@@ -783,6 +835,7 @@ def synthesize_enterprise_twin_live(
         persona_overrides=persona_overrides,
         agent_relevance=agent_relevance,
         process_overrides=proc_overrides,
+        architecture_methodology_note=meth_note,
         grounding_citations=citations[:12],
         career_title_examples=discovered_titles[:8],
         terminology_highlights=(dossier.get("terminology_glossary") or [])[:6],

@@ -43,6 +43,29 @@
         "sop_ibp",
         "portfolio_sku",
         "trade_promotion"
+      ],
+      "provenance_rationale": "Pfizer Global Supply synchronizes epidemiological/seasonal demand (vaccines, anti-infectives, respiratory), oncology/specialty patient starts, tender commitments, and multi-country clinical trial supply.",
+      "company_evidence_signals": [
+        "Epidemiological vaccine & seasonal therapeutic demand sensing across 180+ markets",
+        "Oncology, Specialty Care & New Molecular Entity (NME) launch S&OP",
+        "Country-specific regulatory pack/artwork SKU complexity governance"
+      ],
+      "verification_sources": [
+        {
+          "title": "Pfizer Global Supply (PGS) — Manufacturing & Supply Chain",
+          "url": "https://www.pfizer.com/about/programs-policies/pfizer-global-supply",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Inc. — SEC Form 10-K & Annual Review",
+          "url": "https://investors.pfizer.com/Financials/Annual-Reports/default.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Careers — Global Supply, Manufacturing & Logistics",
+          "url": "https://www.pfizer.com/about/careers",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -58,6 +81,29 @@
         "supplier_network",
         "material_packaging",
         "contract_po_mgmt"
+      ],
+      "provenance_rationale": "Secures FDA/EMA-qualified Active Pharmaceutical Ingredients (APIs), biologics cell-culture media, lipid nanoparticles, USP Type-I borosilicate vials, stoppers, and External Supply Contract Manufacturing Organizations (CMOs).",
+      "company_evidence_signals": [
+        "Qualified Active Pharmaceutical Ingredient (API), biologics media & excipient suppliers",
+        "Sterile primary glass vials, pre-filled syringes & External Supply CMO governance",
+        "Multi-tier regulatory change-notification & geopolitical dual-sourcing resilience"
+      ],
+      "verification_sources": [
+        {
+          "title": "Pfizer Global Supply (PGS) — Manufacturing & Supply Chain",
+          "url": "https://www.pfizer.com/about/programs-policies/pfizer-global-supply",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Inc. — SEC Form 10-K & Annual Review",
+          "url": "https://investors.pfizer.com/Financials/Annual-Reports/default.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Careers — Global Supply, Manufacturing & Logistics",
+          "url": "https://www.pfizer.com/about/careers",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -73,6 +119,29 @@
         "production_scheduling",
         "capacity_planning",
         "quality_compliance"
+      ],
+      "provenance_rationale": "PGS operates ~35+ internal cGMP manufacturing sites globally (including Kalamazoo, Puurs, Freiburg, Ringaskiddy, Andover, Sanford, Grange Castle) across sterile injectables, biologics, mRNA, and oral solid dose.",
+      "company_evidence_signals": [
+        "Flagship cGMP sites including Kalamazoo (US), Puurs (Belgium), Ringaskiddy & Grange Castle (Ireland)",
+        "Aseptic sterile fill-finish, bioreactor suites & continuous oral-solid-dose (OSD) lines",
+        "21 CFR Part 11 electronic Batch Record (eBR) & Quality Person (QP) release by exception"
+      ],
+      "verification_sources": [
+        {
+          "title": "Pfizer Global Supply (PGS) — Manufacturing & Supply Chain",
+          "url": "https://www.pfizer.com/about/programs-policies/pfizer-global-supply",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Inc. — SEC Form 10-K & Annual Review",
+          "url": "https://investors.pfizer.com/Financials/Annual-Reports/default.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Careers — Global Supply, Manufacturing & Logistics",
+          "url": "https://www.pfizer.com/about/careers",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -88,6 +157,29 @@
         "positioning_optimization",
         "warehouse_operations",
         "omnichannel_visibility"
+      ],
+      "provenance_rationale": "Finished drug products require Good Distribution Practice (GDP) regional logistics centers (such as Memphis, Pleasant Prairie, Karlsruhe, Zaventem, Singapore) spanning ambient (15–25°C), refrigerated (2–8°C), and ultra-cold (-80°C) zones.",
+      "company_evidence_signals": [
+        "GDP-validated Logistics Centers spanning 15–25°C, 2–8°C & -80°C ultra-cold freezers",
+        "FEFO remaining-shelf-life (RSL) country registration & tender allocation",
+        "Global serialization & aggregation (GS1 EPCIS) under US DSCSA & EU FMD"
+      ],
+      "verification_sources": [
+        {
+          "title": "Pfizer Global Supply (PGS) — Manufacturing & Supply Chain",
+          "url": "https://www.pfizer.com/about/programs-policies/pfizer-global-supply",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Inc. — SEC Form 10-K & Annual Review",
+          "url": "https://investors.pfizer.com/Financials/Annual-Reports/default.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Careers — Global Supply, Manufacturing & Logistics",
+          "url": "https://www.pfizer.com/about/careers",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -104,6 +196,29 @@
         "route_carrier",
         "last_mile_delivery",
         "store_replenishment"
+      ],
+      "provenance_rationale": "PGS Digital Control Towers monitor active thermal air-cargo containers, IoT GPS/temperature loggers, customs pharmaceutical green-lanes, and specialty wholesaler/hospital direct deliveries.",
+      "company_evidence_signals": [
+        "Validated IATA CEIV Pharma air-cargo corridors & phase-change thermal shippers",
+        "Real-time IoT temperature-excursion stability budget & lane risk telemetry",
+        "Wholesaler (McKesson/Cencora/Cardinal), hospital & specialty-pharmacy OTIF delivery"
+      ],
+      "verification_sources": [
+        {
+          "title": "Pfizer Global Supply (PGS) — Manufacturing & Supply Chain",
+          "url": "https://www.pfizer.com/about/programs-policies/pfizer-global-supply",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Inc. — SEC Form 10-K & Annual Review",
+          "url": "https://investors.pfizer.com/Financials/Annual-Reports/default.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Careers — Global Supply, Manufacturing & Logistics",
+          "url": "https://www.pfizer.com/about/careers",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -119,6 +234,29 @@
         "expiry_markdowns",
         "returns_claims_mgmt",
         "pallet_tote_reclamation"
+      ],
+      "provenance_rationale": "Strict GxP recall readiness, wholesaler short-dated credit/return verification, reusable phase-change thermal shipper reclamation, and certified pharmaceutical destruction.",
+      "company_evidence_signals": [
+        "Serialized DSCSA saleable-returns verification & anti-counterfeit quarantine",
+        "Reusable VIP/phase-change thermal container reverse backhaul & re-qualification",
+        "Short-dated hospital/wholesaler lot tracking & audited destruction certificates"
+      ],
+      "verification_sources": [
+        {
+          "title": "Pfizer Global Supply (PGS) — Manufacturing & Supply Chain",
+          "url": "https://www.pfizer.com/about/programs-policies/pfizer-global-supply",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Inc. — SEC Form 10-K & Annual Review",
+          "url": "https://investors.pfizer.com/Financials/Annual-Reports/default.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "Pfizer Careers — Global Supply, Manufacturing & Logistics",
+          "url": "https://www.pfizer.com/about/careers",
+          "snippet": ""
+        }
       ]
     }
   ],
@@ -1642,15 +1780,26 @@
   "active_agents_count": 57,
   "active_personas_count": 57,
   "active_sub_pillars_count": 20,
+  "architecture_methodology_note": "Pfizer Global Supply (PGS) structures its pharmaceutical and biopharma operations around GxP-regulated end-to-end pillars documented in Pfizer's 10-K & PGS disclosures: Commercial & Clinical Trial Demand Planning (01), Active Pharmaceutical Ingredient (API) & Sterile Excipient Sourcing (02), cGMP Biopharma Manufacturing & Batch Release (03), GDP Cold/Ultra-Cold Distribution (04), Serialized DSCSA/EU-FMD Healthcare Delivery (05), and Regulated Reverse/Expiry Governance (06).",
   "grounding_citations": [
     {
-      "title": "Pfizer — Corporate Profile",
-      "url": "https://en.wikipedia.org/wiki/Pfizer",
+      "title": "Pfizer Global Supply (PGS) — Manufacturing & Supply Chain",
+      "url": "https://www.pfizer.com/about/programs-policies/pfizer-global-supply",
       "snippet": ""
     },
     {
-      "title": "Pfizer Inc. Official Brand Mark",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Pfizer_%282021%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "title": "Pfizer Inc. — SEC Form 10-K & Annual Review",
+      "url": "https://investors.pfizer.com/Financials/Annual-Reports/default.aspx",
+      "snippet": ""
+    },
+    {
+      "title": "Pfizer Careers — Global Supply, Manufacturing & Logistics",
+      "url": "https://www.pfizer.com/about/careers",
+      "snippet": ""
+    },
+    {
+      "title": "Pfizer — Corporate & Global Supply Profile (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pfizer",
       "snippet": ""
     }
   ],

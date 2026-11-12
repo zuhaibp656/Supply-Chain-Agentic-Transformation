@@ -10,7 +10,7 @@
     "canonical_name": "ITC Limited",
     "division_name": "Foods Division (ICML & Agri)",
     "twin_slug": "itc-limited--foods-division-icml-agri",
-    "official_domain": "",
+    "official_domain": "itcportal.com",
     "industry_sector": "FMCG · Packaged Foods, Staples, Snacks & Agri-Sourcing",
     "geography": "India",
     "brand_accent": "#10b981",
@@ -42,6 +42,29 @@
         "supplier_network",
         "material_packaging",
         "contract_po_mgmt"
+      ],
+      "provenance_rationale": "ITC Foods sources Sharbati/regional wheat varieties for Aashirvaad, chipping-grade potatoes for Bingo!, chillies/turmeric for Sunrise, and fruit pulp for B Natural directly via e-Choupal and Farmer Producer Organizations (FPOs).",
+      "company_evidence_signals": [
+        "Identity-preserved wheat grading & blending via e-Choupal for Aashirvaad Atta",
+        "Chipping-grade potato & IPM residue-free spice sourcing (Guntur/Mandsaur)",
+        "Food-grade multi-layer flexible laminates from ITC Packaging & Printing"
+      ],
+      "verification_sources": [
+        {
+          "title": "ITC Limited — Branded Packaged Foods Business",
+          "url": "https://www.itcportal.com/businesses/fmcg/foods.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — e-Choupal Farmgate Wheat, Spices & Potato Sourcing",
+          "url": "https://www.itcportal.com/businesses/agri-business/agri-commodities-and-rural-services.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — Integrated Annual & Sustainability Report",
+          "url": "https://www.itcportal.com/sustainability/sustainability-integrated-report.aspx",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -57,13 +80,36 @@
         "demand_forecasting",
         "sop_ibp",
         "portfolio_sku"
+      ],
+      "provenance_rationale": "Balances daily staple replenishment (Atta, Salt, Dairy, Spices) with impulse/festive packs (Sunfeast Dark Fantasy, Bingo!, Candyman, Gift Boxes) across price-point SKUs (measurable working-capital and margin/10 packs to 10kg family packs).",
+      "company_evidence_signals": [
+        "Small-pack (general trade) vs. large family-pack (modern trade/e-comm) mix IBP",
+        "Seasonal summer beverage (B Natural) & festive gifting demand sensing",
+        "Rabi wheat harvest procurement-to-silo storage capacity alignment"
+      ],
+      "verification_sources": [
+        {
+          "title": "ITC Limited — Branded Packaged Foods Business",
+          "url": "https://www.itcportal.com/businesses/fmcg/foods.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — e-Choupal Farmgate Wheat, Spices & Potato Sourcing",
+          "url": "https://www.itcportal.com/businesses/agri-business/agri-commodities-and-rural-services.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — Integrated Annual & Sustainability Report",
+          "url": "https://www.itcportal.com/sustainability/sustainability-integrated-report.aspx",
+          "snippet": ""
+        }
       ]
     },
     {
       "pillar_id": "icml_manufacturing",
       "v_num": "03",
-      "scor_badge": "03 · ICML SMART PLANTS",
-      "name": "ICML Milling, Baking, Extrusion & FSSAI QA",
+      "scor_badge": "03 · ICML FOODS PLANTS",
+      "name": "ICML Milling, Baking, Extrusion & FSSAI Quality",
       "tagline": "Automated food lines",
       "subtitle": "Schedules multi-category food lines across ICML hubs with zero-defect FSSAI food safety compliance.",
       "color": "#059669",
@@ -72,12 +118,35 @@
         "production_scheduling",
         "capacity_planning",
         "quality_compliance"
+      ],
+      "provenance_rationale": "ITC's Integrated Consumer Goods Manufacturing & Logistics (ICML) plants (Malur, Kapurthala, Panchla, Uluberia, Ranjangaon, Trichy, Medak, Khordha) house automatedchakki atta mills, biscuit ovens, noodle fryers, and snack extruders.",
+      "company_evidence_signals": [
+        "11+ Integrated Consumer Goods Manufacturing & Logistics (ICML) food complexes",
+        "Allergen/flavor changeover sequencing across biscuit ovens & snack extruders",
+        "Food Safety and Standards Authority of India (FSSAI) & HACCP batch lab release"
+      ],
+      "verification_sources": [
+        {
+          "title": "ITC Limited — Branded Packaged Foods Business",
+          "url": "https://www.itcportal.com/businesses/fmcg/foods.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — e-Choupal Farmgate Wheat, Spices & Potato Sourcing",
+          "url": "https://www.itcportal.com/businesses/agri-business/agri-commodities-and-rural-services.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — Integrated Annual & Sustainability Report",
+          "url": "https://www.itcportal.com/sustainability/sustainability-integrated-report.aspx",
+          "snippet": ""
+        }
       ]
     },
     {
       "pillar_id": "cfa_mother_godowns",
       "v_num": "04",
-      "scor_badge": "04 · MOTHER HUBS & CFAS",
+      "scor_badge": "04 · FEFO & CFA DEPOTS",
       "name": "FEFO Mother Godowns & CFA Warehouse Network",
       "tagline": "First-Expired-First-Out",
       "subtitle": "Positions freshness-dated inventory across ICML mother hubs and regional Carrying & Forwarding Agents (CFAs).",
@@ -86,6 +155,29 @@
       "sub_pillar_ids": [
         "positioning_optimization",
         "warehouse_operations"
+      ],
+      "provenance_rationale": "High-volume, low-unit-price foods (high cube snacks vs. heavy dense atta bags) require co-located ICML Automated Storage & Retrieval Systems (AS/RS) and state-level Carry & Forwarding Agent (CFA) depots.",
+      "company_evidence_signals": [
+        "First-Expired, First-Out (FEFO) batch slotting for 3-to-9-month shelf-life foods",
+        "Co-loading optimization of dense Aashirvaad Atta with high-cube Bingo! cartons",
+        "Regional Carry & Forwarding Agent (CFA) & cold-room dairy/frozen hubs"
+      ],
+      "verification_sources": [
+        {
+          "title": "ITC Limited — Branded Packaged Foods Business",
+          "url": "https://www.itcportal.com/businesses/fmcg/foods.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — e-Choupal Farmgate Wheat, Spices & Potato Sourcing",
+          "url": "https://www.itcportal.com/businesses/agri-business/agri-commodities-and-rural-services.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — Integrated Annual & Sustainability Report",
+          "url": "https://www.itcportal.com/sustainability/sustainability-integrated-report.aspx",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -100,6 +192,29 @@
       "sub_pillar_ids": [
         "first_mid_mile",
         "route_carrier"
+      ],
+      "provenance_rationale": "ITC Foods operates dual linehaul networks: high-cube ambient multi-axle trucks/rail containers for dry staples & snacks, and -18°C / +4°C refrigerated reefer vehicles for Aashirvaad Dairy & ITC Master Chef frozen foods.",
+      "company_evidence_signals": [
+        "High-cube container trucks co-loading light snacks & heavy staple bags",
+        "-18°C frozen (ITC Master Chef) & chilled (Aashirvaad Svasti Dairy) cold chain",
+        "Coastal & rail multi-modal green freight corridors"
+      ],
+      "verification_sources": [
+        {
+          "title": "ITC Limited — Branded Packaged Foods Business",
+          "url": "https://www.itcportal.com/businesses/fmcg/foods.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — e-Choupal Farmgate Wheat, Spices & Potato Sourcing",
+          "url": "https://www.itcportal.com/businesses/agri-business/agri-commodities-and-rural-services.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — Integrated Annual & Sustainability Report",
+          "url": "https://www.itcportal.com/sustainability/sustainability-integrated-report.aspx",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -109,13 +224,36 @@
       "name": "General Trade, Modern Trade & Quick-Commerce",
       "tagline": "Kirana stockists, retail",
       "subtitle": "Drives trade promotion ROI, dark-store fill rates, and secondary beat replenishment.",
-      "color": "#e11d48",
+      "color": "#ea580c",
       "watermark_type": "demand_wave",
       "sub_pillar_ids": [
         "trade_promotion",
         "omnichannel_visibility",
         "store_replenishment",
         "last_mile_delivery"
+      ],
+      "provenance_rationale": "Reaches millions of kirana stores via ITC Unati & Wholesale Distributors while fulfilling strict On-Time In-Full (OTIF) slot windows at Modern Trade chains and 10-minute Quick-Commerce dark stores.",
+      "company_evidence_signals": [
+        "ITC Unati digital B2B app & rural/urban distributor beat sync",
+        "Quick-Commerce (Blinkit/Instamart/Zepto) dark-store fill-rate & slot promising",
+        "Retailer trade-scheme & Modern Trade deduction reconciliation"
+      ],
+      "verification_sources": [
+        {
+          "title": "ITC Limited — Branded Packaged Foods Business",
+          "url": "https://www.itcportal.com/businesses/fmcg/foods.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — e-Choupal Farmgate Wheat, Spices & Potato Sourcing",
+          "url": "https://www.itcportal.com/businesses/agri-business/agri-commodities-and-rural-services.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — Integrated Annual & Sustainability Report",
+          "url": "https://www.itcportal.com/sustainability/sustainability-integrated-report.aspx",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -125,12 +263,34 @@
       "name": "Shelf-Life Governance, Claims & Plastic Loop",
       "tagline": "Near-expiry markdowns",
       "subtitle": "Prevents shelf-life write-offs, automates distributor damage claims, and tracks plastic neutrality.",
-      "color": "#d97706",
+      "color": "#2563eb",
       "watermark_type": "conveyor_rack",
       "sub_pillar_ids": [
         "expiry_markdowns",
         "returns_claims_mgmt",
         "pallet_tote_reclamation"
+      ],
+      "provenance_rationale": "Short shelf-life on whole-wheat atta, dairy, and baked snacks requires proactive mid-life stock rebalancing to prevent market expiry returns, alongside ITC's 100% Plastic-Neutral multi-layer laminate recovery.",
+      "company_evidence_signals": [
+        "Proactive remaining-shelf-life (RSL) redistribution & dynamic clearance",
+        "100% Plastic-Neutral multi-layer laminate EPR collection & recyclable mono-films"
+      ],
+      "verification_sources": [
+        {
+          "title": "ITC Limited — Branded Packaged Foods Business",
+          "url": "https://www.itcportal.com/businesses/fmcg/foods.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — e-Choupal Farmgate Wheat, Spices & Potato Sourcing",
+          "url": "https://www.itcportal.com/businesses/agri-business/agri-commodities-and-rural-services.aspx",
+          "snippet": ""
+        },
+        {
+          "title": "ITC Limited — Integrated Annual & Sustainability Report",
+          "url": "https://www.itcportal.com/sustainability/sustainability-integrated-report.aspx",
+          "snippet": ""
+        }
       ]
     }
   ],
@@ -1646,15 +1806,26 @@
   "active_agents_count": 60,
   "active_personas_count": 60,
   "active_sub_pillars_count": 20,
+  "architecture_methodology_note": "ITC Foods (Aashirvaad, Sunfeast, Bingo!, YiPPee!, B Natural, Sunrise, ITC Master Chef) runs a farm-to-plate architecture disclosed in ITC's FMCG-Others filings: e-Choupal Farmgate Agri Sourcing (01), Harvest-Coupled Category IBP (02), Integrated Consumer Goods Manufacturing & Logistics (ICML) Milling/Baking/Extrusion (03), First-Expired First-Out (FEFO) Mother Godowns & Carry-and-Forward Depots (04), Ambient & Dairy/Frozen Reefer Linehaul (05), General/Modern/Quick-Commerce…",
   "grounding_citations": [
     {
-      "title": "ITC Limited — Corporate Operations Overview",
-      "url": "https://en.wikipedia.org/wiki/ITC_Limited",
+      "title": "ITC Limited — Branded Packaged Foods Business",
+      "url": "https://www.itcportal.com/businesses/fmcg/foods.aspx",
       "snippet": ""
     },
     {
-      "title": "ITC Limited Official Brand Mark Source",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/ITC_Limited_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "title": "ITC Limited — e-Choupal Farmgate Wheat, Spices & Potato Sourcing",
+      "url": "https://www.itcportal.com/businesses/agri-business/agri-commodities-and-rural-services.aspx",
+      "snippet": ""
+    },
+    {
+      "title": "ITC Limited — Integrated Annual & Sustainability Report",
+      "url": "https://www.itcportal.com/sustainability/sustainability-integrated-report.aspx",
+      "snippet": ""
+    },
+    {
+      "title": "ITC Limited — Corporate Profile (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/ITC_Limited",
       "snippet": ""
     }
   ],

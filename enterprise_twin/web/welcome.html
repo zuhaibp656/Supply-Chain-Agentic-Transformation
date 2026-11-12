@@ -15,12 +15,12 @@
         var urlTheme = params.get('theme');
         var saved = (urlTheme === 'light' || urlTheme === 'dark')
           ? urlTheme
-          : (localStorage.getItem('sc_portal_theme') || localStorage.getItem('SC_PORTAL_THEME') || 'dark');
+          : (localStorage.getItem('sc_portal_theme') || localStorage.getItem('SC_PORTAL_THEME') || 'light');
         document.documentElement.setAttribute('data-theme', saved);
         localStorage.setItem('sc_portal_theme', saved);
         localStorage.setItem('SC_PORTAL_THEME', saved);
       } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
   </script>

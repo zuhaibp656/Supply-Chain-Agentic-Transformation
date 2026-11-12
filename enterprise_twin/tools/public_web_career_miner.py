@@ -11,9 +11,21 @@ from __future__ import annotations
 import html
 import json
 import re
+import socket
 from typing import Any, Dict, List
 import urllib.parse
 import urllib.request
+
+_ORIG_GETADDRINFO = socket.getaddrinfo
+
+
+def _ipv4_preferred_getaddrinfo(*args, **kwargs):
+    res = _ORIG_GETADDRINFO(*args, **kwargs)
+    v4 = [r for r in res if r[0] == socket.AF_INET]
+    return v4 if v4 else res
+
+
+socket.getaddrinfo = _ipv4_preferred_getaddrinfo
 
 USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 
@@ -29,39 +41,55 @@ def _http_text(url: str, timeout: float = 5.0) -> str:
 
 def fetch_wikipedia_company_summary(company_name: str, division_name: str = "") -> Dict[str, Any]:
     """Fetches real corporate summary & article URL from English Wikipedia REST/Action API."""
-    q = f"{company_name} {division_name}".strip() if division_name and len(division_name) < 24 else company_name
-    params = urllib.parse.urlencode({
-        "action": "query",
-        "list": "search",
-        "srsearch": f"{q} company",
-        "srlimit": "2",
-        "format": "json",
-    })
-    raw = _http_text(f"https://en.wikipedia.org/w/api.php?{params}")
-    if not raw:
+    clean_co = (company_name or "").strip()
+    if not clean_co:
         return {}
-    try:
-        hits = ((json.loads(raw).get("query") or {}).get("search")) or []
-        if not hits:
-            return {}
-        title = hits[0]["title"]
-    except Exception:
-        return {}
-
-    sum_url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{urllib.parse.quote(title.replace(' ', '_'))}"
-    sum_raw = _http_text(sum_url)
-    if not sum_raw:
-        return {}
-    try:
-        data = json.loads(sum_raw)
-        return {
-            "canonical_title": data.get("title", company_name),
-            "extract": (data.get("extract") or "").strip(),
-            "description": (data.get("description") or "").strip(),
-            "page_url": ((data.get("content_urls") or {}).get("desktop") or {}).get("page", ""),
-        }
-    except Exception:
-        return {}
+    # Search strictly on the company entity name (avoiding division words like "Procurement" that match non-company articles)
+    queries = [f'"{clean_co}" (company OR corporation OR conglomerate OR Limited OR Inc)', f"{clean_co} company"]
+    corp_markers = (
+        "company", "corporation", "conglomerate", "multinational", "manufacturer",
+        "retailer", "enterprise", "headquartered", "founded", "listed", "subsidiary", "bank", "pharmaceutical",
+    )
+    for sq in queries:
+        params = urllib.parse.urlencode({
+            "action": "query",
+            "list": "search",
+            "srsearch": sq,
+            "srlimit": "5",
+            "format": "json",
+        })
+        raw = _http_text(f"https://en.wikipedia.org/w/api.php?{params}")
+        if not raw:
+            continue
+        try:
+            hits = ((json.loads(raw).get("query") or {}).get("search")) or []
+        except Exception:
+            hits = []
+        for hit in hits:
+            title = str(hit.get("title") or "").strip()
+            if not title or "disambiguation" in title.lower():
+                continue
+            sum_url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{urllib.parse.quote(title.replace(' ', '_'))}"
+            sum_raw = _http_text(sum_url)
+            if not sum_raw:
+                continue
+            try:
+                data = json.loads(sum_raw)
+                if data.get("type") == "disambiguation":
+                    continue
+                ext = (data.get("extract") or "").strip()
+                desc = (data.get("description") or "").strip()
+                combined_low = f"{title} {desc} {ext}".lower()
+                if any(k in combined_low for k in corp_markers):
+                    return {
+                        "canonical_title": data.get("title", clean_co),
+                        "extract": ext,
+                        "description": desc,
+                        "page_url": ((data.get("content_urls") or {}).get("desktop") or {}).get("page", ""),
+                    }
+            except Exception:
+                continue
+    return {}
 
 
 def search_public_career_titles(company_name: str, division_name: str = "") -> List[str]:

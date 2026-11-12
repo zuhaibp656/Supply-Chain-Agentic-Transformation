@@ -43,6 +43,29 @@
         "trade_promotion",
         "sop_ibp",
         "portfolio_sku"
+      ],
+      "provenance_rationale": "HMIL balances domestic SUV/sedan trim demand (Creta, Venue, Exter, Verna, IONIQ/EVs) across 1,350+ sales outlets with left-hand and right-hand drive export orders to 80+ countries.",
+      "company_evidence_signals": [
+        "Multi-market domestic + 80-country export order-to-production S&OP",
+        "Variant, powertrain (Petrol/Diesel/Turbo/CNG/EV) & exterior color mix forecasting",
+        "Festive bookings & new model SOP (Start of Production) ramp planning"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hyundai Motor India — Manufacturing, Exports & Corporate Overview",
+          "url": "https://www.hyundai.com/in/en/hyundai-story/hyundai-motor-india",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Investor Relations & Annual Filings",
+          "url": "https://www.hyundai.com/in/en/investor-relations",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Corporate & Plant Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Hyundai_Motor_India",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -58,6 +81,29 @@
         "supplier_network",
         "material_packaging",
         "contract_po_mgmt"
+      ],
+      "provenance_rationale": "HMIL anchors high localization through its Irungattukottai (Chennai) supplier park alongside Hyundai MOBIS modules, automotive-grade steel coils, semiconductors, and localized EV battery packs.",
+      "company_evidence_signals": [
+        "Chennai Tier-1/Tier-2 automotive vendor park & JIS (Just-in-Sequence) modules",
+        "Automotive steel, semiconductor & localized EV battery-pack sourcing",
+        "Supplier tooling amortization, PPAP quality & purchase-order scheduling"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hyundai Motor India — Manufacturing, Exports & Corporate Overview",
+          "url": "https://www.hyundai.com/in/en/hyundai-story/hyundai-motor-india",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Investor Relations & Annual Filings",
+          "url": "https://www.hyundai.com/in/en/investor-relations",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Corporate & Plant Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Hyundai_Motor_India",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -73,6 +119,29 @@
         "production_scheduling",
         "capacity_planning",
         "quality_compliance"
+      ],
+      "provenance_rationale": "HMIL's Sriperumbudur (Chennai) integrated plants and Talegaon (Maharashtra) facility run flexible multi-model body welding lines, robotic paint shops, engine/transmission shops, and zero-defect end-of-line testing.",
+      "company_evidence_signals": [
+        "Sriperumbudur (Chennai) Plant 1 & Plant 2 + Talegaon (Pune) manufacturing hub",
+        "Mixed-model robotic Body-in-White (BIW), color-batched Paint Shop & Final Assembly",
+        "Inline vision geometry, shower-test & dynamic test-track QA"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hyundai Motor India — Manufacturing, Exports & Corporate Overview",
+          "url": "https://www.hyundai.com/in/en/hyundai-story/hyundai-motor-india",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Investor Relations & Annual Filings",
+          "url": "https://www.hyundai.com/in/en/investor-relations",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Corporate & Plant Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Hyundai_Motor_India",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -87,6 +156,29 @@
       "sub_pillar_ids": [
         "positioning_optimization",
         "warehouse_operations"
+      ],
+      "provenance_rationale": "Hyundai MOBIS India manages national and regional parts distribution centers plus Completely Knocked Down (CKD) export packing centers to keep dealer service bays stocked nationwide.",
+      "company_evidence_signals": [
+        "Hyundai MOBIS Central & Regional Parts Distribution Centers (PDCs)",
+        "Completely Knocked Down (CKD) export consolidation & corrosion-proof packing",
+        "Multi-echelon safety stock across fast-moving service parts & collision panels"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hyundai Motor India — Manufacturing, Exports & Corporate Overview",
+          "url": "https://www.hyundai.com/in/en/hyundai-story/hyundai-motor-india",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Investor Relations & Annual Filings",
+          "url": "https://www.hyundai.com/in/en/investor-relations",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Corporate & Plant Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Hyundai_Motor_India",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -96,12 +188,35 @@
       "name": "Dealership Replenishment & Yard Logistics",
       "tagline": "Distributing vehicles to the dealer network",
       "subtitle": "Provides visibility into finished vehicle inventory, manages yard-to-dealer logistics, and ensures showrooms are stocked with the right models.",
-      "color": "#e11d48",
+      "color": "#0284c7",
       "watermark_type": "corridor_lifo",
       "sub_pillar_ids": [
         "omnichannel_visibility",
         "first_mid_mile",
         "store_replenishment"
+      ],
+      "provenance_rationale": "Finished vehicles move from plant VIN stockyards through regional yards to 1,350+ dealerships using VIN-level Click-to-Buy visibility and automated dealer wholesale allocation.",
+      "company_evidence_signals": [
+        "RFID/GPS plant VIN stockyards & Pre-Delivery Inspection (PDI) bays",
+        "Click-to-Buy omnichannel VIN visibility across 1,350+ dealerships",
+        "Automated dealer workshop parts replenishment & Vehicle-Off-Road (VOR) express orders"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hyundai Motor India — Manufacturing, Exports & Corporate Overview",
+          "url": "https://www.hyundai.com/in/en/hyundai-story/hyundai-motor-india",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Investor Relations & Annual Filings",
+          "url": "https://www.hyundai.com/in/en/investor-relations",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Corporate & Plant Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Hyundai_Motor_India",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -118,6 +233,29 @@
         "route_carrier",
         "returns_claims_mgmt",
         "pallet_tote_reclamation"
+      ],
+      "provenance_rationale": "As one of India's top passenger-vehicle exporters, HMIL combines Indian Railways BCACBM auto-rakes, hydraulic car-carrier trailers, and Roll-on/Roll-off (Ro-Ro) vessels out of Chennai/Kamarajar Port.",
+      "company_evidence_signals": [
+        "Chennai & Kamarajar (Ennore) Port Roll-on/Roll-off (Ro-Ro) ocean vehicle exports",
+        "Dedicated railway auto-rakes (BCACBM) & multi-car trailer fleet",
+        "Returnable steel component racks, collapsible bins & transit damage claims"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hyundai Motor India — Manufacturing, Exports & Corporate Overview",
+          "url": "https://www.hyundai.com/in/en/hyundai-story/hyundai-motor-india",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Investor Relations & Annual Filings",
+          "url": "https://www.hyundai.com/in/en/investor-relations",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Corporate & Plant Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Hyundai_Motor_India",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -127,10 +265,32 @@
       "name": "Aftersales Service & Parts Obsolescence",
       "tagline": "Warranty management and parts lifecycle",
       "subtitle": "Handles warranty claims, reverse logistics for defective components, and manages the markdown or scrapping of obsolete spare parts.",
-      "color": "#d97706",
+      "color": "#ca8a04",
       "watermark_type": "demand_wave",
       "sub_pillar_ids": [
         "expiry_markdowns"
+      ],
+      "provenance_rationale": "Managing model-generational spare-parts phase-out, warranty defective-part root-cause teardowns, catalytic/bumper recycling, and EV lithium-ion battery second-life governance.",
+      "company_evidence_signals": [
+        "End-of-Production (EOP) 10-year spare-parts lifecycle & obsolescence control",
+        "Warranty failed-part return diagnostics & EV battery circularity"
+      ],
+      "verification_sources": [
+        {
+          "title": "Hyundai Motor India — Manufacturing, Exports & Corporate Overview",
+          "url": "https://www.hyundai.com/in/en/hyundai-story/hyundai-motor-india",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Investor Relations & Annual Filings",
+          "url": "https://www.hyundai.com/in/en/investor-relations",
+          "snippet": ""
+        },
+        {
+          "title": "Hyundai Motor India — Corporate & Plant Profile (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Hyundai_Motor_India",
+          "snippet": ""
+        }
       ]
     }
   ],
@@ -1656,15 +1816,21 @@
   "active_agents_count": 56,
   "active_personas_count": 56,
   "active_sub_pillars_count": 20,
+  "architecture_methodology_note": "Hyundai Motor India Limited (HMIL) structures its supply chain around its Sriperumbudur (Chennai) and Talegaon mega-plants and Hyundai MOBIS parts network: Domestic & Export Model-Trim IBP (01), Tier-1/2 Vendor Park & EV Component Sourcing (02), Press/Body/Paint/Trim-Chassis-Final Assembly (03), MOBIS Genuine Parts & CKD Warehousing (04), Stockyard & Dealer Allocation (05), Rail Auto-Rakes, Car-Carriers & Chennai Port Roll-on/Roll-off Exports (06), and Warranty/Battery…",
   "grounding_citations": [
     {
-      "title": "Hyundai Motor Company — Corporate Profile",
-      "url": "https://en.wikipedia.org/wiki/Hyundai_Motor_Company",
+      "title": "Hyundai Motor India — Manufacturing, Exports & Corporate Overview",
+      "url": "https://www.hyundai.com/in/en/hyundai-story/hyundai-motor-india",
       "snippet": ""
     },
     {
-      "title": "Hyundai Motor India Limited Official Brand Mark",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Hyundai_Motor_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "title": "Hyundai Motor India — Investor Relations & Annual Filings",
+      "url": "https://www.hyundai.com/in/en/investor-relations",
+      "snippet": ""
+    },
+    {
+      "title": "Hyundai Motor India — Corporate & Plant Profile (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hyundai_Motor_India",
       "snippet": ""
     }
   ],

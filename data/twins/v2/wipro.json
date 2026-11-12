@@ -43,6 +43,29 @@
         "sop_ibp",
         "portfolio_sku",
         "trade_promotion"
+      ],
+      "provenance_rationale": "Wipro's IT asset and infrastructure supply chain is driven by lateral/campus hiring waves across 230,000+ employees, new client Offshore Development Center (ODC) wins, laptop refresh cycles, and data-center/AI GPU rack rollouts.",
+      "company_evidence_signals": [
+        "Workforce onboarding & 3–4 year laptop refresh forecasting across 65+ countries",
+        "Client Offshore Development Center (ODC) & FullStride Cloud deal ramp S&OP",
+        "Standardized persona hardware catalog (Developer, AI/ML Engineer, Consultant)"
+      ],
+      "verification_sources": [
+        {
+          "title": "Wipro Limited — About Us, FullStride Cloud & Global Operations",
+          "url": "https://www.wipro.com/about-us/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Integrated Annual Reports & Form 20-F Filings",
+          "url": "https://www.wipro.com/investors/annual-reports/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Ecological Sustainability & Net-Zero Supply Chain",
+          "url": "https://www.wipro.com/sustainability/",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -58,6 +81,29 @@
         "supplier_network",
         "material_packaging",
         "contract_po_mgmt"
+      ],
+      "provenance_rationale": "Global Procurement manages strategic OEM contracts with Dell, HP, Lenovo, Apple, Cisco, Nvidia/cloud providers, telecom carriers, and facility management partners.",
+      "company_evidence_signals": [
+        "Global enterprise agreements with tier-1 PC, networking, server & cloud OEMs",
+        "Lead-time & allocation tracking for AI servers, switches & high-spec workstations",
+        "3-way purchase-order, serial-receipt & software license entitlement reconciliation"
+      ],
+      "verification_sources": [
+        {
+          "title": "Wipro Limited — About Us, FullStride Cloud & Global Operations",
+          "url": "https://www.wipro.com/about-us/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Integrated Annual Reports & Form 20-F Filings",
+          "url": "https://www.wipro.com/investors/annual-reports/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Ecological Sustainability & Net-Zero Supply Chain",
+          "url": "https://www.wipro.com/sustainability/",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -73,6 +119,29 @@
         "production_scheduling",
         "capacity_planning",
         "quality_compliance"
+      ],
+      "provenance_rationale": "Before deployment to client ODCs or edge sites, endpoints and server racks undergo zero-touch Autopilot/MDM OS imaging, InfoSec EDR/DLP hardening, burn-in testing, and rack cabling.",
+      "company_evidence_signals": [
+        "Zero-Touch OS imaging, InfoSec security agent hardening & client VDI/ODC buildouts",
+        "Data-center & edge server rack integration, burn-in QA & asset-tag serialization",
+        "Engineering lab & 5G/embedded hardware prototype rig staging"
+      ],
+      "verification_sources": [
+        {
+          "title": "Wipro Limited — About Us, FullStride Cloud & Global Operations",
+          "url": "https://www.wipro.com/about-us/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Integrated Annual Reports & Form 20-F Filings",
+          "url": "https://www.wipro.com/investors/annual-reports/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Ecological Sustainability & Net-Zero Supply Chain",
+          "url": "https://www.wipro.com/sustainability/",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -89,6 +158,29 @@
         "positioning_optimization",
         "omnichannel_visibility",
         "store_replenishment"
+      ],
+      "provenance_rationale": "Wipro manages serialized IT asset depots, Tech Lounge walk-in swap bars, and bonded Special Economic Zone (SEZ) / STPI hardware inventories across major campuses (Sarjapur/Kodathi Bengaluru, Hyderabad, Pune, Chennai, Noida, London, Dallas).",
+      "company_evidence_signals": [
+        "Kodathi/Sarjapur (Bengaluru), Hyderabad, Pune, Chennai & global delivery campuses",
+        "SEZ / STPI customs-bonded IT asset registers & walk-in Tech Lounge swap buffers",
+        "Real-time CMDB / ServiceNow Hardware Asset Management (HAM) tracking"
+      ],
+      "verification_sources": [
+        {
+          "title": "Wipro Limited — About Us, FullStride Cloud & Global Operations",
+          "url": "https://www.wipro.com/about-us/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Integrated Annual Reports & Form 20-F Filings",
+          "url": "https://www.wipro.com/investors/annual-reports/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Ecological Sustainability & Net-Zero Supply Chain",
+          "url": "https://www.wipro.com/sustainability/",
+          "snippet": ""
+        }
       ]
     },
     {
@@ -104,21 +196,67 @@
         "first_mid_mile",
         "last_mile_delivery",
         "route_carrier"
+      ],
+      "provenance_rationale": "Ships encrypted laptops to hybrid employees' doorsteps and dispatches high-value server/network racks to global client sites using Importer of Record (IOR) customs clearance and shock-monitored air/road couriers.",
+      "company_evidence_signals": [
+        "Direct-to-employee encrypted laptop courier dispatch & onboarding SLA tracking",
+        "Cross-border Importer of Record (IOR) customs clearance for global client sites",
+        "High-value air-freight & white-glove data-center rack delivery"
+      ],
+      "verification_sources": [
+        {
+          "title": "Wipro Limited — About Us, FullStride Cloud & Global Operations",
+          "url": "https://www.wipro.com/about-us/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Integrated Annual Reports & Form 20-F Filings",
+          "url": "https://www.wipro.com/investors/annual-reports/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Ecological Sustainability & Net-Zero Supply Chain",
+          "url": "https://www.wipro.com/sustainability/",
+          "snippet": ""
+        }
       ]
     },
     {
       "pillar_id": "itad_asset_circularity",
       "v_num": "06",
-      "scor_badge": "06 · CIRCULAR",
-      "name": "ITAD & Asset Circularity",
+      "scor_badge": "06 · ITAD & CIRCULARITY",
+      "name": "IT Asset Disposition (ITAD) & E-Waste Circularity",
       "tagline": "Managing e-waste and license expirations",
       "subtitle": "Handles the return of leased equipment, warranty claims, software license expirations, and secure e-waste recycling.",
-      "color": "#7c3aed",
+      "color": "#e11d48",
       "watermark_type": "conveyor_rack",
       "sub_pillar_ids": [
         "expiry_markdowns",
         "returns_claims_mgmt",
         "pallet_tote_reclamation"
+      ],
+      "provenance_rationale": "Attrited employee laptop reverse-pickups, lease-return scheduling, NIST 800-88 cryptographic data wiping, OEM warranty recovery, and certified R2/e-Stewards/CPCB e-waste recycling anchor Wipro's Net-Zero Scope 3 commitments.",
+      "company_evidence_signals": [
+        "Automated reverse-courier laptop retrieval upon employee offboarding or refresh",
+        "NIST 800-88 data sanitization certificates, lease-return avoidance & e-waste recycling",
+        "Supplier Scope 3 emissions ledger aligned with Wipro's Net-Zero SBTi targets"
+      ],
+      "verification_sources": [
+        {
+          "title": "Wipro Limited — About Us, FullStride Cloud & Global Operations",
+          "url": "https://www.wipro.com/about-us/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Integrated Annual Reports & Form 20-F Filings",
+          "url": "https://www.wipro.com/investors/annual-reports/",
+          "snippet": ""
+        },
+        {
+          "title": "Wipro Limited — Ecological Sustainability & Net-Zero Supply Chain",
+          "url": "https://www.wipro.com/sustainability/",
+          "snippet": ""
+        }
       ]
     }
   ],
@@ -1638,15 +1776,26 @@
   "active_agents_count": 59,
   "active_personas_count": 59,
   "active_sub_pillars_count": 20,
+  "architecture_methodology_note": "Wipro Limited's global IT Services, Cloud Infrastructure (FullStride), and Global Delivery Campus operations run a specialized technology & workplace supply chain documented in Wipro's Integrated Annual Reports: Workforce/Project IT Demand Planning (01), Global OEM Hardware, Silicon & SaaS Procurement (02), Staging, Image Provisioning & Rack Integration (03), SEZ/Global Campus & Asset Warehousing (04), Cross-Border IOR/EOR Customs & Zero-Touch Employee Shipping (05), and…",
   "grounding_citations": [
     {
-      "title": "Wipro — Corporate Profile",
-      "url": "https://en.wikipedia.org/wiki/Wipro",
+      "title": "Wipro Limited — About Us, FullStride Cloud & Global Operations",
+      "url": "https://www.wipro.com/about-us/",
       "snippet": ""
     },
     {
-      "title": "Wipro Limited Official Brand Mark",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Wipro_new_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "title": "Wipro Limited — Integrated Annual Reports & Form 20-F Filings",
+      "url": "https://www.wipro.com/investors/annual-reports/",
+      "snippet": ""
+    },
+    {
+      "title": "Wipro Limited — Ecological Sustainability & Net-Zero Supply Chain",
+      "url": "https://www.wipro.com/sustainability/",
+      "snippet": ""
+    },
+    {
+      "title": "Wipro — Corporate Profile (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wipro",
       "snippet": ""
     }
   ],
