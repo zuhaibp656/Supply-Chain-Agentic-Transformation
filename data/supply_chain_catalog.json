@@ -5812,8 +5812,8 @@
           "role": "Scores commercial sales overrides & strips systematic bias in Operational SQL & Vector DB (On-Prem / Cloud)"
         }
       ],
-      "problem": "$1.77T/yr global stockout & overstock distortion \u00b7 32%\u201345% manual SKU-week WAPE. Retailers & CPGs lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly ERP forecasts that miss POS, promo, and weather shifts.",
-      "solution": "Synthesizes POS velocity, weather anomalies, and macro trends.",
+      "problem": "$1.77T/yr global stockout & overstock distortion \u00b7 32%\u201345% manual Stock Keeping Unit (SKU)-week Weighted Absolute Percentage Error (WAPE). Retailers & Consumer Packaged Goods (CPG) firms lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly Enterprise Resource Planning (ERP) forecasts that miss Point-of-Sale (POS), promo, and weather shifts.",
+      "solution": "Continuously ingests daily Point-of-Sale (POS) checkout scans, Google Cloud Cortex Framework semantic views, and WeatherNext climate ensembles to impute stockout censorship and generate calibrated P10/P50/P90 demand forecasts. Audits commercial sales overrides for Forecast Value Added (FVA) bias and writes verified Planned Independent Requirements (PIR) back to Enterprise Resource Planning (ERP).",
       "advantage": "Cuts Weighted Absolute Percentage Error (WAPE) by 6.4 points, eliminates systematic sales bias, and feeds live uncertainty distributions directly into MEIO safety-stock solvers.",
       "adkImplementation": {
         "packageDir": "agents/demand_sensing_agent",
@@ -6727,7 +6727,8 @@
       },
       "impactDimension": "Forecast Accuracy",
       "baselineVsTarget": "38% SKU WAPE \u2192 24% Sensed WAPE",
-      "story": "Fuses daily Point-of-Sale (POS) sell-through, weather ensembles, and stockout imputation to cut short-horizon WAPE by 20%\u201335% and reduce safety-stock buffers."
+      "story": "Fuses daily Point-of-Sale (POS) sell-through, weather ensembles, and stockout imputation to cut short-horizon WAPE by 20%\u201335% and reduce safety-stock buffers.",
+      "agenticExecution": "Continuously ingests daily Point-of-Sale (POS) checkout scans, Google Cloud Cortex Framework semantic views, and WeatherNext climate ensembles to impute stockout censorship and generate calibrated P10/P50/P90 demand forecasts. Audits commercial sales overrides for Forecast Value Added (FVA) bias and writes verified Planned Independent Requirements (PIR) back to Enterprise Resource Planning (ERP)."
     },
     "cpfr_sync_agent": {
       "id": "cpfr_sync_agent",
@@ -6755,8 +6756,8 @@
           "role": "Reconciles retailer order forecast vs. internal sell-through & Google Maps store catchments"
         }
       ],
-      "problem": "$1.77T/yr global stockout & overstock distortion \u00b7 32%\u201345% manual SKU-week WAPE. Retailers & CPGs lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly ERP forecasts that miss POS, promo, and weather shifts.",
-      "solution": "Identifies unmodeled drivers across eCommerce and retail channels.",
+      "problem": "$1.77T/yr global stockout & overstock distortion \u00b7 32%\u201345% manual Stock Keeping Unit (SKU)-week Weighted Absolute Percentage Error (WAPE). Retailers & Consumer Packaged Goods (CPG) firms lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly Enterprise Resource Planning (ERP) forecasts that miss Point-of-Sale (POS), promo, and weather shifts.",
+      "solution": "Harmonizes retailer Electronic Data Interchange (EDI 852) sell-through feeds, e-commerce cart velocity, and distributor stock ledgers via Google Cloud Cortex Framework data products. Decomposes forecast gaps by channel driver, reconciles retailer vs. internal demand baselines, and publishes consensus replenishment schedules directly to collaborative planning portals.",
       "advantage": "Increases Retail On-Shelf Availability (OSA) by 3.8 points and cuts bullwhip order variance by 29%.",
       "adkImplementation": {
         "packageDir": "agents/cpfr_sync_agent",
@@ -7646,7 +7647,8 @@
       },
       "impactDimension": "Forecast Alignment",
       "baselineVsTarget": "19% Channel Variance \u2192 <6% Aligned Plan",
-      "story": "Reconciles retailer EDI 830 forecasts against commercial & supply baselines, eliminating systematic bias and cutting stockout/overstock swings."
+      "story": "Reconciles retailer EDI 830 forecasts against commercial & supply baselines, eliminating systematic bias and cutting stockout/overstock swings.",
+      "agenticExecution": "Harmonizes retailer Electronic Data Interchange (EDI 852) sell-through feeds, e-commerce cart velocity, and distributor stock ledgers via Google Cloud Cortex Framework data products. Decomposes forecast gaps by channel driver, reconciles retailer vs. internal demand baselines, and publishes consensus replenishment schedules directly to collaborative planning portals."
     },
     "npi_demand_profiler": {
       "id": "npi_demand_profiler",
@@ -7674,8 +7676,8 @@
           "role": "Scores commercial sales overrides & strips systematic bias in Operational SQL & Vector DB (On-Prem / Cloud)"
         }
       ],
-      "problem": "$1.77T/yr global stockout & overstock distortion \u00b7 32%\u201345% manual SKU-week WAPE. Retailers & CPGs lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly ERP forecasts that miss POS, promo, and weather shifts.",
-      "solution": "Matches launch packaging and attributes to historical lookalikes.",
+      "problem": "$1.77T/yr global stockout & overstock distortion \u00b7 32%\u201345% manual Stock Keeping Unit (SKU)-week Weighted Absolute Percentage Error (WAPE). Retailers & Consumer Packaged Goods (CPG) firms lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly Enterprise Resource Planning (ERP) forecasts that miss Point-of-Sale (POS), promo, and weather shifts.",
+      "solution": "Embeds New Product Introduction (NPI) packaging, price-tier, and formulation attributes using multimodal embeddings to match launches against historical Stock Keeping Unit (SKU) lookalike curves. Updates early-read trial and repeat velocity weekly via Bayesian updating and dynamically recalibrates initial 90-day factory and distribution center allocation quantities.",
       "advantage": "Cuts Weighted Absolute Percentage Error (WAPE) by 6.4 points, eliminates systematic sales bias, and feeds live uncertainty distributions directly into MEIO safety-stock solvers.",
       "adkImplementation": {
         "packageDir": "agents/npi_demand_profiler",
@@ -8500,7 +8502,8 @@
       },
       "impactDimension": "Launch Accuracy",
       "baselineVsTarget": "52% 90-Day Error \u2192 34% Analog Fit",
-      "story": "Clusters new SKU attributes against historical lookalikes and updates early Point-of-Sale (POS) velocity curves in week 1\u20134 to prevent launch stockouts or dead stock."
+      "story": "Clusters new SKU attributes against historical lookalikes and updates early Point-of-Sale (POS) velocity curves in week 1\u20134 to prevent launch stockouts or dead stock.",
+      "agenticExecution": "Embeds New Product Introduction (NPI) packaging, price-tier, and formulation attributes using multimodal embeddings to match launches against historical Stock Keeping Unit (SKU) lookalike curves. Updates early-read trial and repeat velocity weekly via Bayesian updating and dynamically recalibrates initial 90-day factory and distribution center allocation quantities."
     },
     "promo_lift_simulator": {
       "id": "promo_lift_simulator",
@@ -8529,7 +8532,7 @@
         }
       ],
       "problem": "59%\u201367% of CPG trade promotions fail to break even \u00b7 4%\u20137% revenue leaked. Trade spend is typically the #2 P&L line item (15%\u201325% of gross sales), yet 59%\u201367% of promotions lose money due to subsidized baseline volume, forward-buying, and unverified retailer deductions.",
-      "solution": "Simulates price elasticity, shelf lift, and incremental spend return.",
+      "solution": "Ingests historical trade promotion calendars, retail scanner price elasticity curves, and competitor markdown feeds to separate true incremental volume from pantry-loading and halo cannibalization. Simulates net-margin trade-offs across discount depths before funding lock and blocks unprofitable promotional events prior to customer sign-off.",
       "advantage": "Boosts net trade spend ROI by 22% and prevents promotional stockouts and post-promo bullwhip troughs.",
       "adkImplementation": {
         "packageDir": "agents/promo_lift_simulator",
@@ -9382,7 +9385,8 @@
       },
       "impactDimension": "Revenue & Margin",
       "baselineVsTarget": "62% Losing Promos \u2192 Pre-Validated Lift",
-      "story": "Simulates baseline cannibalization, post-promo dip, and incremental gross margin before trade funds are committed\u2014blocking unprofitable events."
+      "story": "Simulates baseline cannibalization, post-promo dip, and incremental gross margin before trade funds are committed\u2014blocking unprofitable events.",
+      "agenticExecution": "Ingests historical trade promotion calendars, retail scanner price elasticity curves, and competitor markdown feeds to separate true incremental volume from pantry-loading and halo cannibalization. Simulates net-margin trade-offs across discount depths before funding lock and blocks unprofitable promotional events prior to customer sign-off."
     },
     "field_beat_distributor_sync_agent": {
       "id": "field_beat_distributor_sync_agent",
@@ -9443,7 +9447,7 @@
         }
       ],
       "problem": "59%\u201367% of CPG trade promotions fail to break even \u00b7 4%\u20137% revenue leaked. Trade spend is typically the #2 P&L line item (15%\u201325% of gross sales), yet 59%\u201367% of promotions lose money due to subsidized baseline volume, forward-buying, and unverified retailer deductions.",
-      "solution": "Creates customized sell-in story decks and joint promotional calendars.",
+      "solution": "Synchronizes Distributor Management System (DMS) secondary sales, field-rep beat visit telemetry, and outlet stock-out signals across urban and rural retail territories. Scores outlet reorder propensity, sequences high-conversion daily beat routes, and pushes suggested primary-to-secondary replenishment orders to distributor portals.",
       "advantage": "Drives +18.4% distributor case fill rate, eliminates out-of-stock pitches, and boosts daily productive store calls per FSO by 22%.",
       "adkImplementation": {
         "packageDir": "agents/field_beat_distributor_sync_agent",
@@ -10198,7 +10202,8 @@
       },
       "impactDimension": "Commercial Margin",
       "baselineVsTarget": "4\u20136 wk JBP Cycles \u2192 Live Margin Scenarios",
-      "story": "Optimizes joint retailer-manufacturer volume, funding tiers, and display slotting simultaneously so trade investment grows net contribution."
+      "story": "Optimizes joint retailer-manufacturer volume, funding tiers, and display slotting simultaneously so trade investment grows net contribution.",
+      "agenticExecution": "Synchronizes Distributor Management System (DMS) secondary sales, field-rep beat visit telemetry, and outlet stock-out signals across urban and rural retail territories. Scores outlet reorder propensity, sequences high-conversion daily beat routes, and pushes suggested primary-to-secondary replenishment orders to distributor portals."
     },
     "trade_scheme_claims_reconciler": {
       "id": "trade_scheme_claims_reconciler",
@@ -10259,7 +10264,7 @@
         }
       ],
       "problem": "59%\u201367% of CPG trade promotions fail to break even \u00b7 4%\u20137% revenue leaked. Trade spend is typically the #2 P&L line item (15%\u201325% of gross sales), yet 59%\u201367% of promotions lose money due to subsidized baseline volume, forward-buying, and unverified retailer deductions.",
-      "solution": "Audits scanned proof-of-performance circulars and invoices via OCR.",
+      "solution": "Cross-matches distributor trade-scheme deduction claims against contracted slab thresholds, verified secondary Point-of-Sale (POS) off-take, and proof-of-execution display photos. Flags duplicate, off-window, or inflated rebate lines automatically and posts net-verified credit settlements directly into Enterprise Resource Planning (ERP) finance ledgers.",
       "advantage": "Compresses distributor claim settlement from 45 days to <2 hours with 99.8% dispute-free payouts, saving $6.8M in fraudulent or unearned claim leakages.",
       "adkImplementation": {
         "packageDir": "agents/trade_scheme_claims_reconciler",
@@ -11022,7 +11027,8 @@
       },
       "impactDimension": "Cost & Leakage",
       "baselineVsTarget": "4.5% Claim Leakage \u2192 94% Auto-Audited",
-      "story": "Cross-matches retailer deduction claims against contracted scan dates, Point-of-Sale (POS) lift, and proof-of-performance\u2014recovering invalid chargebacks."
+      "story": "Cross-matches retailer deduction claims against contracted scan dates, Point-of-Sale (POS) lift, and proof-of-performance\u2014recovering invalid chargebacks.",
+      "agenticExecution": "Cross-matches distributor trade-scheme deduction claims against contracted slab thresholds, verified secondary Point-of-Sale (POS) off-take, and proof-of-execution display photos. Flags duplicate, off-window, or inflated rebate lines automatically and posts net-verified credit settlements directly into Enterprise Resource Planning (ERP) finance ledgers."
     },
     "sop_scenario_weaver": {
       "id": "sop_scenario_weaver",
@@ -11051,7 +11057,7 @@
         }
       ],
       "problem": "2\u20134 week manual S&OP reconciliation lag \u00b7 2%\u20134% EBITDA lost to siloed plans. Disconnected sales, plant, and finance spreadsheets take 15\u201322 business days to reconcile each month, forcing costly expedite freight and margin-dilutive allocation trade-offs.",
-      "solution": "Reconciles unconstrained demand with factory plant bottleneck limits.",
+      "solution": "Pulls unconstrained commercial demand, finite factory line capacities, supplier lead-time constraints, and working-capital targets from Google Cloud Cortex Framework into a Mixed-Integer Linear Programming (MILP) solver. Generates Pareto-optimal Sales and Operations Planning (S&OP) trade-off scenarios and writes the executive-approved consensus plan back to Integrated Business Planning (IBP).",
       "advantage": "Compresses S&OP consensus from 21 days to a live 45-minute executive steering session while protecting gross margin (+180 bps) and OTIF.",
       "adkImplementation": {
         "packageDir": "agents/sop_scenario_weaver",
@@ -11916,7 +11922,8 @@
       },
       "impactDimension": "EBITDA & Margin",
       "baselineVsTarget": "18d S&OP Cycle \u2192 Margin-Optimal Lock",
-      "story": "Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority)."
+      "story": "Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority).",
+      "agenticExecution": "Pulls unconstrained commercial demand, finite factory line capacities, supplier lead-time constraints, and working-capital targets from Google Cloud Cortex Framework into a Mixed-Integer Linear Programming (MILP) solver. Generates Pareto-optimal Sales and Operations Planning (S&OP) trade-off scenarios and writes the executive-approved consensus plan back to Integrated Business Planning (IBP)."
     },
     "disruption_war_room_orchestrator": {
       "id": "disruption_war_room_orchestrator",
@@ -11982,7 +11989,7 @@
         }
       ],
       "problem": "2\u20134 week manual S&OP reconciliation lag \u00b7 2%\u20134% EBITDA lost to siloed plans. Disconnected sales, plant, and finance spreadsheets take 15\u201322 business days to reconcile each month, forcing costly expedite freight and margin-dilutive allocation trade-offs.",
-      "solution": "Evaluates co-packer shifts and allocation trade-offs during supply outages.",
+      "solution": "Monitors global weather radar, port congestion, geopolitical advisories, and multi-tier supplier telemetry 24/7 to map revenue-at-risk across affected Bills of Materials (BOM) and customer orders. Convenes autonomous sub-agents to simulate alternate sourcing, air/rail mode shifts, and buffer reallocations\u2014staging 1-click recovery playbooks for war-room sign-off.",
       "advantage": "Cuts emergency spot/air expedite spend by 62% and preserves 99.1% OTIF continuity across all 6 supply chain verticals during major disruptions.",
       "adkImplementation": {
         "packageDir": "agents/disruption_war_room_orchestrator",
@@ -13163,7 +13170,8 @@
       },
       "impactDimension": "Risk & OTIF",
       "baselineVsTarget": "72h Crisis Triage \u2192 <30m Playbook Lock",
-      "story": "Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF."
+      "story": "Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF.",
+      "agenticExecution": "Monitors global weather radar, port congestion, geopolitical advisories, and multi-tier supplier telemetry 24/7 to map revenue-at-risk across affected Bills of Materials (BOM) and customer orders. Convenes autonomous sub-agents to simulate alternate sourcing, air/rail mode shifts, and buffer reallocations\u2014staging 1-click recovery playbooks for war-room sign-off."
     },
     "csco_control_tower_copilot": {
       "id": "csco_control_tower_copilot",
@@ -13229,7 +13237,7 @@
         }
       ],
       "problem": "2\u20134 week manual S&OP reconciliation lag \u00b7 2%\u20134% EBITDA lost to siloed plans. Disconnected sales, plant, and finance spreadsheets take 15\u201322 business days to reconcile each month, forcing costly expedite freight and margin-dilutive allocation trade-offs.",
-      "solution": "Generates pre-read decks and tracks sign-offs across cross-functional leads.",
+      "solution": "Unifies cross-pillar telemetry spanning forecast error, supplier risk, plant Overall Equipment Effectiveness (OEE), Multi-Echelon Inventory Optimization (MEIO), and On-Time In-Full (OTIF) delivery in BigQuery. Diagnoses root-cause margin and cash-conversion leaks across divisions, simulates executive what-if interventions, and dispatches governed actions to domain agents.",
       "advantage": "Compresses cross-functional root-cause analysis from 5 days to 90 seconds and empowers all 26 supply chain personas with governed, zero-hallucination decision intelligence.",
       "adkImplementation": {
         "packageDir": "agents/csco_control_tower_copilot",
@@ -14291,7 +14299,8 @@
       },
       "impactDimension": "Decision Speed",
       "baselineVsTarget": "5d Board Pack Prep \u2192 Live Root-Cause Twin",
-      "story": "Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand\u2014turning 5-day analyst deck cycles into instant executive action."
+      "story": "Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand\u2014turning 5-day analyst deck cycles into instant executive action.",
+      "agenticExecution": "Unifies cross-pillar telemetry spanning forecast error, supplier risk, plant Overall Equipment Effectiveness (OEE), Multi-Echelon Inventory Optimization (MEIO), and On-Time In-Full (OTIF) delivery in BigQuery. Diagnoses root-cause margin and cash-conversion leaks across divisions, simulates executive what-if interventions, and dispatches governed actions to domain agents."
     },
     "working_capital_cash_bridge": {
       "id": "working_capital_cash_bridge",
@@ -14357,7 +14366,7 @@
         }
       ],
       "problem": "Bottom 30%\u201350% of SKUs generate <5% of profit while trapping 25%+ of inventory. Unpruned long-tail SKUs, uncoordinated PIPO engineering cutovers, and static MOQs inflate changeover losses, obsolescence write-offs (1.5%\u20133% of COGS), and cost-to-serve.",
-      "solution": "Scores velocity, plant changeover cost, and shelf revenue yield.",
+      "solution": "Evaluates every Stock Keeping Unit (SKU) across gross-margin contribution, demand volatility, working-capital tie-up, and shared raw-material dependencies using Cortex financial and inventory views. Identifies margin-dilutive long-tail items for rationalization, simulates phase-out markdown vs. component reuse paths, and stages Master Data lifecycle locks.",
       "advantage": "Unlocks $42M+ in Free Cash Flow per $1B revenue and compresses the enterprise Cash-to-Cash cycle by 9.4 days.",
       "adkImplementation": {
         "packageDir": "agents/working_capital_cash_bridge",
@@ -15306,7 +15315,8 @@
       },
       "impactDimension": "Working Capital",
       "baselineVsTarget": "34% Low-GMROI Tail \u2192 Pruned High-Velocity Mix",
-      "story": "Scores every SKU on true net contribution after carrying, changeover, and obsolescence cost\u2014unlocking trapped working capital from the long tail."
+      "story": "Scores every SKU on true net contribution after carrying, changeover, and obsolescence cost\u2014unlocking trapped working capital from the long tail.",
+      "agenticExecution": "Evaluates every Stock Keeping Unit (SKU) across gross-margin contribution, demand volatility, working-capital tie-up, and shared raw-material dependencies using Cortex financial and inventory views. Identifies margin-dilutive long-tail items for rationalization, simulates phase-out markdown vs. component reuse paths, and stages Master Data lifecycle locks."
     },
     "eco_cutover_orchestrator": {
       "id": "eco_cutover_orchestrator",
@@ -15335,7 +15345,7 @@
         }
       ],
       "problem": "Bottom 30%\u201350% of SKUs generate <5% of profit while trapping 25%+ of inventory. Unpruned long-tail SKUs, uncoordinated PIPO engineering cutovers, and static MOQs inflate changeover losses, obsolescence write-offs (1.5%\u20133% of COGS), and cost-to-serve.",
-      "solution": "Orchestrates transition buffers to sync packaging and formulation cuts.",
+      "solution": "Tracks Engineering Change Orders (ECO), expiring component lots, open supplier Purchase Orders (PO), and factory work-in-progress across multi-level Bills of Materials (BOM). Solves for the zero-obsolescence cutover date that exhausts legacy stock without starving production lines and updates ERP BOM effectivity windows automatically.",
       "advantage": "Reduces ECO obsolete component write-offs by 58% and accelerates New Product Introduction (NPI) time-to-volume by 3 weeks.",
       "adkImplementation": {
         "packageDir": "agents/eco_cutover_orchestrator",
@@ -16087,7 +16097,8 @@
       },
       "impactDimension": "Write-Off Avoidance",
       "baselineVsTarget": "2.4% PIPO Write-Offs \u2192 Zero-Waste Run-Out",
-      "story": "Synchronizes old-component run-out with new-artwork/BOM ramp-up across plants and DCs to eliminate stranded packaging and obsolete inventory."
+      "story": "Synchronizes old-component run-out with new-artwork/BOM ramp-up across plants and DCs to eliminate stranded packaging and obsolete inventory.",
+      "agenticExecution": "Tracks Engineering Change Orders (ECO), expiring component lots, open supplier Purchase Orders (PO), and factory work-in-progress across multi-level Bills of Materials (BOM). Solves for the zero-obsolescence cutover date that exhausts legacy stock without starving production lines and updates ERP BOM effectivity windows automatically."
     },
     "network_twin_architect": {
       "id": "network_twin_architect",
@@ -16116,7 +16127,7 @@
         }
       ],
       "problem": "Bottom 30%\u201350% of SKUs generate <5% of profit while trapping 25%+ of inventory. Unpruned long-tail SKUs, uncoordinated PIPO engineering cutovers, and static MOQs inflate changeover losses, obsolescence write-offs (1.5%\u20133% of COGS), and cost-to-serve.",
-      "solution": "Calculates net-net margin across Club, Grocery, and eCommerce packs.",
+      "solution": "Builds a geospatial digital twin of factories, Mother Godowns, Regional Distribution Centers (RDC), and customer demand clusters weighted by freight tariffs, labor rates, and tax regimes. Runs facility-location and lane-flow optimization under demand growth or disruption shocks, outputting multi-year capital and network realignment blueprints.",
       "advantage": "Expands net contribution margin by +240 bps and cuts total network landed logistics cost by 11.5%.",
       "adkImplementation": {
         "packageDir": "agents/network_twin_architect",
@@ -16852,7 +16863,8 @@
       },
       "impactDimension": "Cost-to-Serve",
       "baselineVsTarget": "14% Negative-Margin Lanes \u2192 Optimized MOQ & Nodes",
-      "story": "Computes granular SKU-customer-lane cost-to-serve and re-optimizes MOQs, pallet tiers, and DC sourcing assignments to restore pocket margin."
+      "story": "Computes granular SKU-customer-lane cost-to-serve and re-optimizes MOQs, pallet tiers, and DC sourcing assignments to restore pocket margin.",
+      "agenticExecution": "Builds a geospatial digital twin of factories, Mother Godowns, Regional Distribution Centers (RDC), and customer demand clusters weighted by freight tariffs, labor rates, and tax regimes. Runs facility-location and lane-flow optimization under demand growth or disruption shocks, outputting multi-year capital and network realignment blueprints."
     },
     "tier_n_risk_sentinel": {
       "id": "tier_n_risk_sentinel",
@@ -16881,7 +16893,7 @@
         }
       ],
       "problem": "42% of 1 year's EBITDA lost per decade to shocks \u00b7 65%+ originate in Tier-2+. Over 65% of supply disruptions originate in unmapped Tier-2/Tier-3 sub-suppliers, while manual supplier qualification and Scope 3 audits stall sourcing agility for 4\u20138 weeks.",
-      "solution": "Monitors multi-tier supply feeds, port delays, and vendor financials.",
+      "solution": "Traverses multi-hop supplier dependency graphs across Tier-1 vendors, Tier-2 sub-assemblers, and Tier-3 raw-material processors linked with seismic, financial, and port disruption feeds. Pinpoints hidden single-source bottlenecks before factory starvation occurs and triggers dual-source Request for Quotation (RFQ) or safety-stock buffer actions.",
       "advantage": "Detects and mitigates sub-tier disruptions 11 days earlier with zero factory line-stop hours.",
       "adkImplementation": {
         "packageDir": "agents/tier_n_risk_sentinel",
@@ -17814,7 +17826,8 @@
       },
       "impactDimension": "Supply Continuity",
       "baselineVsTarget": "Tier-2+ Blindspots \u2192 Mapped Sub-Tier Shield",
-      "story": "Continuously monitors sub-tier financial, geopolitical, weather, and port signals\u2014triggering alternate allocations weeks before line stoppage."
+      "story": "Continuously monitors sub-tier financial, geopolitical, weather, and port signals\u2014triggering alternate allocations weeks before line stoppage.",
+      "agenticExecution": "Traverses multi-hop supplier dependency graphs across Tier-1 vendors, Tier-2 sub-assemblers, and Tier-3 raw-material processors linked with seismic, financial, and port disruption feeds. Pinpoints hidden single-source bottlenecks before factory starvation occurs and triggers dual-source Request for Quotation (RFQ) or safety-stock buffer actions."
     },
     "supplier_quality_sentinel": {
       "id": "supplier_quality_sentinel",
@@ -17843,7 +17856,7 @@
         }
       ],
       "problem": "42% of 1 year's EBITDA lost per decade to shocks \u00b7 65%+ originate in Tier-2+. Over 65% of supply disruptions originate in unmapped Tier-2/Tier-3 sub-suppliers, while manual supplier qualification and Scope 3 audits stall sourcing agility for 4\u20138 weeks.",
-      "solution": "Parses BRC/ISO audits, food-safety filings, and tax registrations.",
+      "solution": "Ingests incoming inspection Certificates of Analysis (COA), lot defect trends, and shop-floor Non-Conformance Reports (NCR) across raw-material and packaging vendors. Predicts lot-level quality drift before dock receipt, places automated Quality Management (QM) quarantine blocks on suspect batches, and issues Cost of Poor Quality (COPQ) supplier corrective actions.",
       "advantage": "Reduces inbound supplier defect escapes (PPM) by 64% and recovers 95%+ of Cost of Poor Quality (COPQ).",
       "adkImplementation": {
         "packageDir": "agents/supplier_quality_sentinel",
@@ -18879,7 +18892,8 @@
       },
       "impactDimension": "Cycle & Compliance",
       "baselineVsTarget": "4\u20136 wk Onboarding \u2192 <36h Automated Vetting",
-      "story": "Automates ISO/HACCP certificate verification, financial health scoring, and sanctions screening\u2014cutting vendor qualification from weeks to hours."
+      "story": "Automates ISO/HACCP certificate verification, financial health scoring, and sanctions screening\u2014cutting vendor qualification from weeks to hours.",
+      "agenticExecution": "Ingests incoming inspection Certificates of Analysis (COA), lot defect trends, and shop-floor Non-Conformance Reports (NCR) across raw-material and packaging vendors. Predicts lot-level quality drift before dock receipt, places automated Quality Management (QM) quarantine blocks on suspect batches, and issues Cost of Poor Quality (COPQ) supplier corrective actions."
     },
     "carbon_scope3_ledger": {
       "id": "carbon_scope3_ledger",
@@ -18908,7 +18922,7 @@
         }
       ],
       "problem": "42% of 1 year's EBITDA lost per decade to shocks \u00b7 65%+ originate in Tier-2+. Over 65% of supply disruptions originate in unmapped Tier-2/Tier-3 sub-suppliers, while manual supplier qualification and Scope 3 audits stall sourcing agility for 4\u20138 weeks.",
-      "solution": "Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs.",
+      "solution": "Aggregates shipment-level weight, multi-modal transport distance, supplier primary energy mix, and Bill of Materials (BOM) lineage via Google Cloud Cortex Framework sustainability views. Calculates auditable Greenhouse Gas (GHG) Scope-3 and Carbon Border Adjustment Mechanism (CBAM) emissions per SKU and generates compliant regulatory disclosure dossiers.",
       "advantage": "Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness.",
       "adkImplementation": {
         "packageDir": "agents/carbon_scope3_ledger",
@@ -19684,7 +19698,8 @@
       },
       "impactDimension": "Compliance & Cost",
       "baselineVsTarget": "Spend-Factor Estimates \u2192 SKU-Level Primary Ledger",
-      "story": "Replaces coarse spend-based averages with primary supplier + lane emissions\u2014preventing EU CBAM penalties and cutting external assurance fees."
+      "story": "Replaces coarse spend-based averages with primary supplier + lane emissions\u2014preventing EU CBAM penalties and cutting external assurance fees.",
+      "agenticExecution": "Aggregates shipment-level weight, multi-modal transport distance, supplier primary energy mix, and Bill of Materials (BOM) lineage via Google Cloud Cortex Framework sustainability views. Calculates auditable Greenhouse Gas (GHG) Scope-3 and Carbon Border Adjustment Mechanism (CBAM) emissions per SKU and generates compliant regulatory disclosure dossiers."
     },
     "commodity_index_advisor": {
       "id": "commodity_index_advisor",
@@ -19713,7 +19728,7 @@
         }
       ],
       "problem": "6%\u201314% supplier quote variance vs. clean-sheet \u00b7 rising EU EPR/PPWR fees. Without live commodity index decomposition and clean-sheet BOM models, buyers overpay by 5%\u201312% on direct materials and face escalating Extended Producer Responsibility (EPR) packaging levies.",
-      "solution": "Correlates CBOT/Platts feedstocks with depletion to advise hedging.",
+      "solution": "Tracks live London Metal Exchange (LME), resin, agricultural, energy, and currency forward curves alongside ERP raw-material exposure and supplier indexation clauses. Quantifies purchase-price variance risk across upcoming quarters, recommends optimal physical forward-buy vs. financial hedge split windows, and alerts category buyers.",
       "advantage": "Delivers 6.8% direct material savings and compresses RFQ bid analysis from 3 weeks to 15 minutes.",
       "adkImplementation": {
         "packageDir": "agents/commodity_index_advisor",
@@ -20537,7 +20552,8 @@
       },
       "impactDimension": "Direct Material Spend",
       "baselineVsTarget": "Spot Peak Buying \u2192 Index-Timed Forward Locks",
-      "story": "Tracks LME, resin, pulp, energy, and agri-commodity curves against BOM exposure to recommend optimal forward-contract split and index clauses."
+      "story": "Tracks LME, resin, pulp, energy, and agri-commodity curves against BOM exposure to recommend optimal forward-contract split and index clauses.",
+      "agenticExecution": "Tracks live London Metal Exchange (LME), resin, agricultural, energy, and currency forward curves alongside ERP raw-material exposure and supplier indexation clauses. Quantifies purchase-price variance risk across upcoming quarters, recommends optimal physical forward-buy vs. financial hedge split windows, and alerts category buyers."
     },
     "rfq_should_cost_agent": {
       "id": "rfq_should_cost_agent",
@@ -20566,7 +20582,7 @@
         }
       ],
       "problem": "6%\u201314% supplier quote variance vs. clean-sheet \u00b7 rising EU EPR/PPWR fees. Without live commodity index decomposition and clean-sheet BOM models, buyers overpay by 5%\u201312% on direct materials and face escalating Extended Producer Responsibility (EPR) packaging levies.",
-      "solution": "Deconstructs packaging specs (resin weight, corrugate, conversion energy).",
+      "solution": "Decomposes supplier Request for Quotation (RFQ) bids into raw-material market indices, machine cycle times, packaging specs, labor rates, and freight lanes using parametric clean-sheet models. Highlights line-by-line vendor margin markups above fair should-cost corridors and drafts data-backed negotiation counter-offers ready for sourcing sign-off.",
       "advantage": "Delivers 6.8% direct material savings and compresses RFQ bid analysis from 3 weeks to 15 minutes.",
       "adkImplementation": {
         "packageDir": "agents/rfq_should_cost_agent",
@@ -21505,7 +21521,8 @@
       },
       "impactDimension": "Negotiation Savings",
       "baselineVsTarget": "Opaque Vendor Quotes \u2192 Clean-Sheet Should-Cost",
-      "story": "Decomposes every supplier quote into raw material, conversion, energy, logistics, and margin\u2014arming buyers with hard clean-sheet leverage."
+      "story": "Decomposes every supplier quote into raw material, conversion, energy, logistics, and margin\u2014arming buyers with hard clean-sheet leverage.",
+      "agenticExecution": "Decomposes supplier Request for Quotation (RFQ) bids into raw-material market indices, machine cycle times, packaging specs, labor rates, and freight lanes using parametric clean-sheet models. Highlights line-by-line vendor margin markups above fair should-cost corridors and drafts data-backed negotiation counter-offers ready for sourcing sign-off."
     },
     "sustainable_packaging_agent": {
       "id": "sustainable_packaging_agent",
@@ -21534,7 +21551,7 @@
         }
       ],
       "problem": "6%\u201314% supplier quote variance vs. clean-sheet \u00b7 rising EU EPR/PPWR fees. Without live commodity index decomposition and clean-sheet BOM models, buyers overpay by 5%\u201312% on direct materials and face escalating Extended Producer Responsibility (EPR) packaging levies.",
-      "solution": "Evaluates PCR resins and barrier materials against line runnability & taxes.",
+      "solution": "Evaluates primary and corrugated secondary packaging specifications against crush-strength physics, pallet cube efficiency, Extended Producer Responsibility (EPR) fees, and resin costs. Simulates lightweighting and recycled-content substitutions that pass transit drop tests while lowering per-unit material cost and plastic tax liability.",
       "advantage": "Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness.",
       "adkImplementation": {
         "packageDir": "agents/sustainable_packaging_agent",
@@ -22353,7 +22370,8 @@
       },
       "impactDimension": "Tax & Material Cost",
       "baselineVsTarget": "EPR Penalty Exposure \u2192 Lightweight Recyclable Spec",
-      "story": "Balances resin/fiber cost, crush/barrier physics, and country-by-country EPR/PPWR eco-modulation fees to lower total packaging cost."
+      "story": "Balances resin/fiber cost, crush/barrier physics, and country-by-country EPR/PPWR eco-modulation fees to lower total packaging cost.",
+      "agenticExecution": "Evaluates primary and corrugated secondary packaging specifications against crush-strength physics, pallet cube efficiency, Extended Producer Responsibility (EPR) fees, and resin costs. Simulates lightweighting and recycled-content substitutions that pass transit drop tests while lowering per-unit material cost and plastic tax liability."
     },
     "tariff_esg_agent": {
       "id": "tariff_esg_agent",
@@ -22382,7 +22400,7 @@
         }
       ],
       "problem": "$12.88\u2013$15.96 per manual invoice vs. $2.18 digital \u00b7 3%\u20135% contract leakage. Enterprises lose 3%\u20135% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.",
-      "solution": "Reconciles live spend against negotiated rebate tiers and volume discount scales.",
+      "solution": "Parses supplier Master Service Agreements (MSA), Harmonized System (HS) customs classifications, Free Trade Agreement rules of origin, and forced-labor/deforestation screening feeds. Flags tariff engineering savings and non-compliant contract clauses automatically, placing Global Trade Services (GTS) holds on unverified cross-border shipments.",
       "advantage": "Achieves 99.6% customs and contract audit accuracy while recovering 100% of earned supplier rebates.",
       "adkImplementation": {
         "packageDir": "agents/tariff_esg_agent",
@@ -23288,7 +23306,8 @@
       },
       "impactDimension": "Spend Recovery",
       "baselineVsTarget": "3.8% Contract Leakage \u2192 100% Tier & Clause Capture",
-      "story": "Audits live Purchase Orders (POs) and invoices against master PDF contract tiers, volume rebates, and de-escalation clauses to stop off-contract value leakage."
+      "story": "Audits live Purchase Orders (POs) and invoices against master PDF contract tiers, volume rebates, and de-escalation clauses to stop off-contract value leakage.",
+      "agenticExecution": "Parses supplier Master Service Agreements (MSA), Harmonized System (HS) customs classifications, Free Trade Agreement rules of origin, and forced-labor/deforestation screening feeds. Flags tariff engineering savings and non-compliant contract clauses automatically, placing Global Trade Services (GTS) holds on unverified cross-border shipments."
     },
     "master_data_leadtime_steward": {
       "id": "master_data_leadtime_steward",
@@ -23354,7 +23373,7 @@
         }
       ],
       "problem": "$12.88\u2013$15.96 per manual invoice vs. $2.18 digital \u00b7 3%\u20135% contract leakage. Enterprises lose 3%\u20135% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.",
-      "solution": "Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments.",
+      "solution": "Continuously compares static Enterprise Resource Planning (ERP) planned lead times, Minimum Order Quantities (MOQ), and rounding profiles against actual historical Purchase Order-to-dock receipt timestamps. Detects systematic vendor lead-time drift and stages governed SAP Material Master (`MARC`) parameter updates so planning solvers never run on stale assumptions.",
       "advantage": "Achieves 99.8% master data accuracy across ERP, WMS, and TMS\u2014eliminating false MRP exceptions and boosting planner adoption across all 26 personas.",
       "adkImplementation": {
         "packageDir": "agents/master_data_leadtime_steward",
@@ -24314,7 +24333,8 @@
       },
       "impactDimension": "Expedite Avoidance",
       "baselineVsTarget": "Stale Static Lead Times \u2192 70% Auto-Resolved POs",
-      "story": "Continuously recalibrates ERP vendor lead times and autonomously resolves ~70% of routine PO acknowledgments and date slips before expedite crises."
+      "story": "Continuously recalibrates ERP vendor lead times and autonomously resolves ~70% of routine PO acknowledgments and date slips before expedite crises.",
+      "agenticExecution": "Continuously compares static Enterprise Resource Planning (ERP) planned lead times, Minimum Order Quantities (MOQ), and rounding profiles against actual historical Purchase Order-to-dock receipt timestamps. Detects systematic vendor lead-time drift and stages governed SAP Material Master (`MARC`) parameter updates so planning solvers never run on stale assumptions."
     },
     "three_way_match_dispute": {
       "id": "three_way_match_dispute",
@@ -24343,7 +24363,7 @@
         }
       ],
       "problem": "$12.88\u2013$15.96 per manual invoice vs. $2.18 digital \u00b7 3%\u20135% contract leakage. Enterprises lose 3%\u20135% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.",
-      "solution": "Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices.",
+      "solution": "Cross-examines Enterprise Resource Planning (ERP) Purchase Orders (PO), Warehouse Management System (WMS) barcode Goods Receipt Notes (GRN), and vendor invoices line by line via Cortex data products. Isolates unit-price creep, short-shipped quantities, and unapproved freight surcharges, parks automated debit memos, and releases verified net payables in time to capture early-pay discounts.",
       "advantage": "Achieves 99.6% customs and contract audit accuracy while recovering 100% of earned supplier rebates.",
       "adkImplementation": {
         "packageDir": "agents/three_way_match_dispute",
@@ -25169,7 +25189,8 @@
       },
       "impactDimension": "P2P Processing Cost",
       "baselineVsTarget": "24% Blocked Invoices \u2192 93% Touchless 3-Way Match",
-      "story": "Reconciles PO, Goods Receipt (ASN/GRN), and Invoice line variances automatically\u2014capturing early-payment discounts and cutting AP unit cost by 80%."
+      "story": "Reconciles PO, Goods Receipt (ASN/GRN), and Invoice line variances automatically\u2014capturing early-payment discounts and cutting AP unit cost by 80%.",
+      "agenticExecution": "Cross-examines Enterprise Resource Planning (ERP) Purchase Orders (PO), Warehouse Management System (WMS) barcode Goods Receipt Notes (GRN), and vendor invoices line by line via Cortex data products. Isolates unit-price creep, short-shipped quantities, and unapproved freight surcharges, parks automated debit memos, and releases verified net payables in time to capture early-pay discounts."
     },
     "finite_production_scheduler": {
       "id": "finite_production_scheduler",
@@ -25198,7 +25219,7 @@
         }
       ],
       "problem": "12%\u201322% scheduled runtime lost to changeovers & reactive line re-sequencing. Sequence-blind ERP schedules trigger excessive allergen/color washouts, uncertified shift bottlenecks, and hours of manual schedule rebuilding whenever a machine or material slips.",
-      "solution": "Sequences allergen, kosher, and packaging runs to minimize washdowns.",
+      "solution": "Ingests open customer priorities, component availability, sequence-dependent allergen/color changeover matrices, and shift labor calendars into a Constraint Programming (CP-SAT) job-shop solver. Generates conflict-free finite line schedules that minimize washdown downtime and publishes executable dispatch sequences to the Manufacturing Execution System (MES).",
       "advantage": "Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25% (GE Appliances Brilliant Factory benchmark).",
       "adkImplementation": {
         "packageDir": "agents/finite_production_scheduler",
@@ -26256,7 +26277,8 @@
       },
       "impactDimension": "Plant OEE & Yield",
       "baselineVsTarget": "18% Washout Runtime Loss \u2192 Campaign-Sequenced OEE",
-      "story": "Solves finite-capacity campaign wheels across allergens, colors, and pack formats\u2014cutting sanitation/changeover downtime by 15%\u201325%."
+      "story": "Solves finite-capacity campaign wheels across allergens, colors, and pack formats\u2014cutting sanitation/changeover downtime by 15%\u201325%.",
+      "agenticExecution": "Ingests open customer priorities, component availability, sequence-dependent allergen/color changeover matrices, and shift labor calendars into a Constraint Programming (CP-SAT) job-shop solver. Generates conflict-free finite line schedules that minimize washdown downtime and publishes executable dispatch sequences to the Manufacturing Execution System (MES)."
     },
     "line_schedule_optimizer": {
       "id": "line_schedule_optimizer",
@@ -26285,7 +26307,7 @@
         }
       ],
       "problem": "12%\u201322% scheduled runtime lost to changeovers & reactive line re-sequencing. Sequence-blind ERP schedules trigger excessive allergen/color washouts, uncertified shift bottlenecks, and hours of manual schedule rebuilding whenever a machine or material slips.",
-      "solution": "Detects machine halts and re-routes perishable WIP to alternate lines.",
+      "solution": "Synchronizes real-time filling, packaging, and assembly line speeds with upstream batch readiness and downstream packaging material staging across plant work centers. Dynamically re-sequences campaigns when machine micro-stops or rush orders occur, protecting throughput and preventing WIP starvation without manual whiteboard rescheduling.",
       "advantage": "Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25% (GE Appliances Brilliant Factory benchmark).",
       "adkImplementation": {
         "packageDir": "agents/line_schedule_optimizer",
@@ -27337,7 +27359,8 @@
       },
       "impactDimension": "Schedule Resilience",
       "baselineVsTarget": "3.5h Line-Down Chaos \u2192 <3m Margin-Safe Resequence",
-      "story": "Re-optimizes shift schedules in under 3 minutes when a filler trips or raw material arrives late\u2014minimizing lost cases and missed dispatch waves."
+      "story": "Re-optimizes shift schedules in under 3 minutes when a filler trips or raw material arrives late\u2014minimizing lost cases and missed dispatch waves.",
+      "agenticExecution": "Synchronizes real-time filling, packaging, and assembly line speeds with upstream batch readiness and downstream packaging material staging across plant work centers. Dynamically re-sequences campaigns when machine micro-stops or rush orders occur, protecting throughput and preventing WIP starvation without manual whiteboard rescheduling."
     },
     "labor_line_balancing_agent": {
       "id": "labor_line_balancing_agent",
@@ -27366,7 +27389,7 @@
         }
       ],
       "problem": "12%\u201322% scheduled runtime lost to changeovers & reactive line re-sequencing. Sequence-blind ERP schedules trigger excessive allergen/color washouts, uncertified shift bottlenecks, and hours of manual schedule rebuilding whenever a machine or material slips.",
-      "solution": "Maps shift skill certifications and fatigue constraints to line speeds.",
+      "solution": "Combines shift attendance rosters, operator skill-certification matrices, ergonomic rotation rules, and hourly production takt-time targets across manufacturing lines. Solves optimal station-by-station crew assignments at shift start and dynamically reallocates cross-trained operators mid-shift to eliminate bottleneck station queues.",
       "advantage": "Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25% (GE Appliances Brilliant Factory benchmark).",
       "adkImplementation": {
         "packageDir": "agents/labor_line_balancing_agent",
@@ -28188,7 +28211,8 @@
       },
       "impactDimension": "Labor Efficiency",
       "baselineVsTarget": "14% Overtime Premium \u2192 Skill-Balanced Crewing",
-      "story": "Matches certified operator skills, absenteeism signals, and ergonomic rotation rules to live line schedules\u2014cutting overtime and micro-stoppages."
+      "story": "Matches certified operator skills, absenteeism signals, and ergonomic rotation rules to live line schedules\u2014cutting overtime and micro-stoppages.",
+      "agenticExecution": "Combines shift attendance rosters, operator skill-certification matrices, ergonomic rotation rules, and hourly production takt-time targets across manufacturing lines. Solves optimal station-by-station crew assignments at shift start and dynamically reallocates cross-trained operators mid-shift to eliminate bottleneck station queues."
     },
     "predictive_oee_sentinel": {
       "id": "predictive_oee_sentinel",
@@ -28217,7 +28241,7 @@
         }
       ],
       "problem": "5%\u201320% of manufacturing capacity lost to unplanned downtime ($50B+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%\u201325% unit cost penalty) and poorly targeted CapEx expansions.",
-      "solution": "Assesses CIP utilities, boiler loads, and cold storage holding limits.",
+      "solution": "Streams high-frequency spindle vibration spectrograms, motor current draw, bearing thermal sensors, and SCADA fault codes to detect early equipment degradation signatures. Predicts Remaining Useful Life (RUL) days ahead of catastrophic breakdown and schedules targeted maintenance work orders inside planned changeover windows to protect Overall Equipment Effectiveness (OEE).",
       "advantage": "Lifts plant Overall Equipment Effectiveness (OEE) by +14.2 points and cuts unplanned line stops by 48%.",
       "adkImplementation": {
         "packageDir": "agents/predictive_oee_sentinel",
@@ -29243,7 +29267,8 @@
       },
       "impactDimension": "Uptime & Capacity",
       "baselineVsTarget": "11% Unplanned Stops \u2192 90-Day Bottleneck Shield",
-      "story": "Combines PLC telemetry with 6-month Rough-Cut Capacity Planning (RCCP) to prevent unplanned breakdowns and expose plant bottlenecks months ahead."
+      "story": "Combines PLC telemetry with 6-month Rough-Cut Capacity Planning (RCCP) to prevent unplanned breakdowns and expose plant bottlenecks months ahead.",
+      "agenticExecution": "Streams high-frequency spindle vibration spectrograms, motor current draw, bearing thermal sensors, and SCADA fault codes to detect early equipment degradation signatures. Predicts Remaining Useful Life (RUL) days ahead of catastrophic breakdown and schedules targeted maintenance work orders inside planned changeover windows to protect Overall Equipment Effectiveness (OEE)."
     },
     "copacker_allocation_agent": {
       "id": "copacker_allocation_agent",
@@ -29272,7 +29297,7 @@
         }
       ],
       "problem": "5%\u201320% of manufacturing capacity lost to unplanned downtime ($50B+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%\u201325% unit cost penalty) and poorly targeted CapEx expansions.",
-      "solution": "Models internal conversion costs against co-packer tolling agreements.",
+      "solution": "Consolidates external contract-manufacturer tolling fees, yield loss rates, minimum volume commitments, quality scores, and outbound freight distances to regional depots. Solves optimal make-vs-buy and co-packer volume allocations across plants and dispatches synchronized subcontracting Purchase Orders (PO) and component transfer schedules.",
       "advantage": "Compresses S&OP consensus from 21 days to a live 45-minute executive steering session while protecting gross margin (+180 bps) and OTIF.",
       "adkImplementation": {
         "packageDir": "agents/copacker_allocation_agent",
@@ -30091,7 +30116,8 @@
       },
       "impactDimension": "Gross Margin / COGS",
       "baselineVsTarget": "16% Tolling Penalty \u2192 Landed-Margin Optimal Split",
-      "story": "Allocates SKUs across internal plants and external CMOs by optimizing conversion fees, component freight, MOQ tiers, and delivered gross margin."
+      "story": "Allocates SKUs across internal plants and external CMOs by optimizing conversion fees, component freight, MOQ tiers, and delivered gross margin.",
+      "agenticExecution": "Consolidates external contract-manufacturer tolling fees, yield loss rates, minimum volume commitments, quality scores, and outbound freight distances to regional depots. Solves optimal make-vs-buy and co-packer volume allocations across plants and dispatches synchronized subcontracting Purchase Orders (PO) and component transfer schedules."
     },
     "capex_simulator_agent": {
       "id": "capex_simulator_agent",
@@ -30120,7 +30146,7 @@
         }
       ],
       "problem": "5%\u201320% of manufacturing capacity lost to unplanned downtime ($50B+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%\u201325% unit cost penalty) and poorly targeted CapEx expansions.",
-      "solution": "Simulates multi-year volume trends to test high-speed line expansions.",
+      "solution": "Models multi-year line utilization, seasonal peak bottlenecks, automation throughput gains, and Weighted Average Cost of Capital (WACC) hurdles across the manufacturing footprint. Runs Monte Carlo demand stress-tests to compare brownfield debottlenecking vs. greenfield line Capital Expenditure (CapEx) payback and Net Present Value (NPV).",
       "advantage": "Expands net contribution margin by +240 bps and cuts total network landed logistics cost by 11.5%.",
       "adkImplementation": {
         "packageDir": "agents/capex_simulator_agent",
@@ -30909,7 +30935,8 @@
       },
       "impactDimension": "Capital Efficiency",
       "baselineVsTarget": "Static Spreadsheet IRR \u2192 Monte-Carlo Network ROIC",
-      "story": "Stress-tests new line, automation, and plant investments across stochastic demand, tariff, and OEE scenarios before committing board capital."
+      "story": "Stress-tests new line, automation, and plant investments across stochastic demand, tariff, and OEE scenarios before committing board capital.",
+      "agenticExecution": "Models multi-year line utilization, seasonal peak bottlenecks, automation throughput gains, and Weighted Average Cost of Capital (WACC) hurdles across the manufacturing footprint. Runs Monte Carlo demand stress-tests to compare brownfield debottlenecking vs. greenfield line Capital Expenditure (CapEx) payback and Net Present Value (NPV)."
     },
     "inline_yield_guardian": {
       "id": "inline_yield_guardian",
@@ -30938,7 +30965,7 @@
         }
       ],
       "problem": "COPQ erodes 3%\u20138% of manufacturing COGS \u00b7 7\u201318 days manual batch QA hold. End-of-line sampling catches defects only after full pallets are produced, while manual paper/PDF batch record review traps finished goods in quarantine for 1\u20132+ weeks.",
-      "solution": "Inspects high-speed video frames for crimped seals, lot codes, and labels.",
+      "solution": "Runs real-time multimodal computer vision over high-speed line cameras paired with fill-weight checkweighers and seal-integrity sensors to catch micro-defects in milliseconds. Triggers pneumatic diverter gates on non-conforming units immediately and correlates defect clusters back to upstream temperature, torque, or film-tension drift.",
       "advantage": "Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.",
       "adkImplementation": {
         "packageDir": "agents/inline_yield_guardian",
@@ -31850,7 +31877,8 @@
       },
       "impactDimension": "Scrap & Yield",
       "baselineVsTarget": "3.6% Line Defect Scrap \u2192 <1.8% Closed-Loop Yield",
-      "story": "Detects seal, fill, label, and surface defects inline in milliseconds\u2014halting drift before whole pallets turn into scrap or rework."
+      "story": "Detects seal, fill, label, and surface defects inline in milliseconds\u2014halting drift before whole pallets turn into scrap or rework.",
+      "agenticExecution": "Runs real-time multimodal computer vision over high-speed line cameras paired with fill-weight checkweighers and seal-integrity sensors to catch micro-defects in milliseconds. Triggers pneumatic diverter gates on non-conforming units immediately and correlates defect clusters back to upstream temperature, torque, or film-tension drift."
     },
     "batch_record_auditor": {
       "id": "batch_record_auditor",
@@ -31879,7 +31907,7 @@
         }
       ],
       "problem": "COPQ erodes 3%\u20138% of manufacturing COGS \u00b7 7\u201318 days manual batch QA hold. End-of-line sampling catches defects only after full pallets are produced, while manual paper/PDF batch record review traps finished goods in quarantine for 1\u20132+ weeks.",
-      "solution": "Parses BPR and COA documents to flag pasteurization & CCP deviations.",
+      "solution": "Reviews Electronic Batch Manufacturing Records (eBMR), inline Quality Assurance (QA) test results, equipment calibration logs, and Standard Operating Procedure (SOP) tolerances automatically. Implements Review-by-Exception\u2014clearing 100%-compliant batches for immediate warehouse release while routing parameter deviations with root-cause packets to QA leads.",
       "advantage": "Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.",
       "adkImplementation": {
         "packageDir": "agents/batch_record_auditor",
@@ -32673,7 +32701,8 @@
       },
       "impactDimension": "Working Capital & QA",
       "baselineVsTarget": "12d Quarantine Lockup \u2192 Review-by-Exception (<24h)",
-      "story": "Audits electronic/scanned batch records, LIMS lab results, and sterilization logs automatically\u2014freeing millions in quarantined finished goods."
+      "story": "Audits electronic/scanned batch records, LIMS lab results, and sterilization logs automatically\u2014freeing millions in quarantined finished goods.",
+      "agenticExecution": "Reviews Electronic Batch Manufacturing Records (eBMR), inline Quality Assurance (QA) test results, equipment calibration logs, and Standard Operating Procedure (SOP) tolerances automatically. Implements Review-by-Exception\u2014clearing 100%-compliant batches for immediate warehouse release while routing parameter deviations with root-cause packets to QA leads."
     },
     "scrap_defect_root_cause_agent": {
       "id": "scrap_defect_root_cause_agent",
@@ -32702,7 +32731,7 @@
         }
       ],
       "problem": "COPQ erodes 3%\u20138% of manufacturing COGS \u00b7 7\u201318 days manual batch QA hold. End-of-line sampling catches defects only after full pallets are produced, while manual paper/PDF batch record review traps finished goods in quarantine for 1\u20132+ weeks.",
-      "solution": "Correlates consumer complaints with ingredient lots and machine telemetry.",
+      "solution": "Correlates shop-floor scrap tallies, rework codes, ambient plant humidity/temperature, raw-material supplier lot IDs, and PLC machine setpoints across historical production runs. Isolates the exact multi-variable interaction driving yield loss and recommends verified golden-batch parameter setpoints to line supervisors.",
       "advantage": "Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.",
       "adkImplementation": {
         "packageDir": "agents/scrap_defect_root_cause_agent",
@@ -33678,7 +33707,8 @@
       },
       "impactDimension": "Repeat Defect Reduction",
       "baselineVsTarget": "21d 5-Why Investigation \u2192 4h Multi-Variate RCA",
-      "story": "Correlates supplier raw-material lots, ambient humidity, operator shifts, and machine parameters to isolate true root causes and prevent repeat scrap."
+      "story": "Correlates supplier raw-material lots, ambient humidity, operator shifts, and machine parameters to isolate true root causes and prevent repeat scrap.",
+      "agenticExecution": "Correlates shop-floor scrap tallies, rework codes, ambient plant humidity/temperature, raw-material supplier lot IDs, and PLC machine setpoints across historical production runs. Isolates the exact multi-variable interaction driving yield loss and recommends verified golden-batch parameter setpoints to line supervisors."
     },
     "meio_safety_stock_agent": {
       "id": "meio_safety_stock_agent",
@@ -33707,7 +33737,7 @@
         }
       ],
       "problem": "25%\u201332% annual inventory carrying cost \u00b7 20%\u201335% excess single-node buffer. Static ERP reorder rules buffer each DC independently\u2014trapping 20%\u201335% excess working capital in slow movers while fast-moving regional hubs still suffer stockouts.",
-      "solution": "Recalibrates multi-echelon buffers using live lead-time and demand variance.",
+      "solution": "Models coupled demand variance and replenishment lead-time uncertainty across factories, Mother Godowns, Regional Distribution Centers (RDC), and forward depots using stochastic Multi-Echelon Inventory Optimization (MEIO). Rebalances safety-stock buffers upstream vs. downstream to hit target service levels with minimal working capital and writes optimal reorder points back to ERP.",
       "advantage": "Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate.",
       "adkImplementation": {
         "packageDir": "agents/meio_safety_stock_agent",
@@ -34623,7 +34653,8 @@
       },
       "impactDimension": "Working Capital",
       "baselineVsTarget": "Static Single-DC Buffers \u2192 Multi-Echelon Optimal Stock",
-      "story": "Simultaneously optimizes safety stocks across plants, central hubs, and regional DCs\u2014freeing 12%\u201322% in working capital while lifting fill rates."
+      "story": "Simultaneously optimizes safety stocks across plants, central hubs, and regional DCs\u2014freeing 12%\u201322% in working capital while lifting fill rates.",
+      "agenticExecution": "Models coupled demand variance and replenishment lead-time uncertainty across factories, Mother Godowns, Regional Distribution Centers (RDC), and forward depots using stochastic Multi-Echelon Inventory Optimization (MEIO). Rebalances safety-stock buffers upstream vs. downstream to hit target service levels with minimal working capital and writes optimal reorder points back to ERP."
     },
     "slob_disposition_agent": {
       "id": "slob_disposition_agent",
@@ -34652,7 +34683,7 @@
         }
       ],
       "problem": "25%\u201332% annual inventory carrying cost \u00b7 20%\u201335% excess single-node buffer. Static ERP reorder rules buffer each DC independently\u2014trapping 20%\u201335% excess working capital in slow movers while fast-moving regional hubs still suffer stockouts.",
-      "solution": "Analyzes shelf-life risk and triggers promotional bundles or liquidations.",
+      "solution": "Monitors batch aging, shelf-life decay, Days Inventory Outstanding (DIO), and regional sell-through velocity to flag Slow-Moving and Obsolete (SLOB) stock weeks before write-off. Ranks lateral inter-depot transfers, promotional bundling, B2B secondary liquidation, and markdown recovery paths by net cash recovery and triggers approved disposition orders.",
       "advantage": "Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate.",
       "adkImplementation": {
         "packageDir": "agents/slob_disposition_agent",
@@ -35421,7 +35452,8 @@
       },
       "impactDimension": "Write-Off Recovery",
       "baselineVsTarget": "2.8% Obsolescence Write-Off \u2192 Early Margin Recovery",
-      "story": "Flags slow-moving and aging lots 60\u201390 days earlier and ranks inter-DC transfer, promo bundling, or secondary channels to avoid write-offs."
+      "story": "Flags slow-moving and aging lots 60\u201390 days earlier and ranks inter-DC transfer, promo bundling, or secondary channels to avoid write-offs.",
+      "agenticExecution": "Monitors batch aging, shelf-life decay, Days Inventory Outstanding (DIO), and regional sell-through velocity to flag Slow-Moving and Obsolete (SLOB) stock weeks before write-off. Ranks lateral inter-depot transfers, promotional bundling, B2B secondary liquidation, and markdown recovery paths by net cash recovery and triggers approved disposition orders."
     },
     "crossdock_transfer_orchestrator": {
       "id": "crossdock_transfer_orchestrator",
@@ -35450,7 +35482,7 @@
         }
       ],
       "problem": "25%\u201332% annual inventory carrying cost \u00b7 20%\u201335% excess single-node buffer. Static ERP reorder rules buffer each DC independently\u2014trapping 20%\u201335% excess working capital in slow movers while fast-moving regional hubs still suffer stockouts.",
-      "solution": "Generates automated inter-DC and store transfers to balance localized gluts.",
+      "solution": "Matches inbound supplier Advance Shipping Notices (ASN) and ocean/highway arrival ETAs against urgent outbound store and customer backorders in real time. Diverts high-priority pallets directly from receiving doors to outbound staging lanes\u2014bypassing put-away storage and cutting dock-to-dispatch cycle times.",
       "advantage": "Slashes cross-dock terminal dwell time by 52%, eliminates double putaway/pick handling on 38% of volume, and accelerates port/rail-to-customer lead times by 1.8 days.",
       "adkImplementation": {
         "packageDir": "agents/crossdock_transfer_orchestrator",
@@ -36370,7 +36402,8 @@
       },
       "impactDimension": "Service & Stockouts",
       "baselineVsTarget": "Imbalanced Regional DCs \u2192 Pre-Positioned Hub Balance",
-      "story": "Balances inventory imbalances across regional DCs before stockouts hit\u2014weighing transfer freight cost against saved gross margin and OTIF penalties."
+      "story": "Balances inventory imbalances across regional DCs before stockouts hit\u2014weighing transfer freight cost against saved gross margin and OTIF penalties.",
+      "agenticExecution": "Matches inbound supplier Advance Shipping Notices (ASN) and ocean/highway arrival ETAs against urgent outbound store and customer backorders in real time. Diverts high-priority pallets directly from receiving doors to outbound staging lanes\u2014bypassing put-away storage and cutting dock-to-dispatch cycle times."
     },
     "warehouse_slotting_agent": {
       "id": "warehouse_slotting_agent",
@@ -36399,7 +36432,7 @@
         }
       ],
       "problem": "Order picking = 50%\u201355% of DC operating cost \u00b7 ~55% of picker time is walking. Static warehouse slotting, congested receiving docks (6\u201324h dock-to-stock lag), and rigid wave releases waste over half of floor labor in unproductive travel and overtime.",
-      "solution": "Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting.",
+      "solution": "Analyzes SKU pick velocity, order co-affinity pairs, case dimensions, crushability constraints, and ergonomic golden-zone heights across 3D warehouse rack topologies. Computes congestion-free dynamic re-slotting moves during off-peak windows and dispatches prioritized put-away and interleaving tasks to the Warehouse Management System (WMS).",
       "advantage": "Reduces picker travel distance by 28% and boosts Units Picked Per Hour (UPH) by 24%.",
       "adkImplementation": {
         "packageDir": "agents/warehouse_slotting_agent",
@@ -37312,7 +37345,8 @@
       },
       "impactDimension": "Warehouse Efficiency",
       "baselineVsTarget": "55% Aisle Walk Waste \u2192 Velocity & Affinity Slotted",
-      "story": "Re-slots fast-moving and co-ordered SKUs into ergonomic golden zones and optimizes TSP pick paths\u2014boosting DC throughput with $0 automation CapEx."
+      "story": "Re-slots fast-moving and co-ordered SKUs into ergonomic golden zones and optimizes TSP pick paths\u2014boosting DC throughput with $0 automation CapEx.",
+      "agenticExecution": "Analyzes SKU pick velocity, order co-affinity pairs, case dimensions, crushability constraints, and ergonomic golden-zone heights across 3D warehouse rack topologies. Computes congestion-free dynamic re-slotting moves during off-peak windows and dispatches prioritized put-away and interleaving tasks to the Warehouse Management System (WMS)."
     },
     "dock_to_stock_agent": {
       "id": "dock_to_stock_agent",
@@ -37341,7 +37375,7 @@
         }
       ],
       "problem": "Order picking = 50%\u201355% of DC operating cost \u00b7 ~55% of picker time is walking. Static warehouse slotting, congested receiving docks (6\u201324h dock-to-stock lag), and rigid wave releases waste over half of floor labor in unproductive travel and overtime.",
-      "solution": "Parses scanned BOLs and pallet photos to reconcile open ASN variances.",
+      "solution": "Ingests inbound carrier appointments, barcode/vision pallet scans, Purchase Order (PO) tolerances, and put-away bin availability at the receiving dock. Automates ASN-to-receipt verification, assigns optimal directed put-away locations immediately upon scan, and clears compliant stock into Available-to-Promise (ATP) inventory in minutes.",
       "advantage": "Cuts trailer yard turnaround time by 41% and reduces carrier detention payouts by 82%.",
       "adkImplementation": {
         "packageDir": "agents/dock_to_stock_agent",
@@ -38129,7 +38163,8 @@
       },
       "impactDimension": "Receiving Throughput",
       "baselineVsTarget": "14h Staging Congestion \u2192 75m ASN-Directed Putaway",
-      "story": "Prioritizes inbound trailers holding stockout/backorder SKUs and directs instant putaway or cross-docking\u2014clearing receiving bottlenecks."
+      "story": "Prioritizes inbound trailers holding stockout/backorder SKUs and directs instant putaway or cross-docking\u2014clearing receiving bottlenecks.",
+      "agenticExecution": "Ingests inbound carrier appointments, barcode/vision pallet scans, Purchase Order (PO) tolerances, and put-away bin availability at the receiving dock. Automates ASN-to-receipt verification, assigns optimal directed put-away locations immediately upon scan, and clears compliant stock into Available-to-Promise (ATP) inventory in minutes."
     },
     "wave_fulfillment_copilot": {
       "id": "wave_fulfillment_copilot",
@@ -38158,7 +38193,7 @@
         }
       ],
       "problem": "Order picking = 50%\u201355% of DC operating cost \u00b7 ~55% of picker time is walking. Static warehouse slotting, congested receiving docks (6\u201324h dock-to-stock lag), and rigid wave releases waste over half of floor labor in unproductive travel and overtime.",
-      "solution": "Balances picker lines dynamically to protect carrier pickup cutoff times.",
+      "solution": "Continuously balances e-commerce and retail replenishment order cutoffs, carrier departure deadlines, pick-zone congestion, and pack-station labor capacity across the fulfillment floor. Releases dynamic, workload-leveled pick waves and re-routes picker batches in real time so 100% of carrier pull times are met without end-of-shift overtime spikes.",
       "advantage": "Reduces picker travel distance by 28% and boosts Units Picked Per Hour (UPH) by 24%.",
       "adkImplementation": {
         "packageDir": "agents/wave_fulfillment_copilot",
@@ -38956,7 +38991,8 @@
       },
       "impactDimension": "Dispatch & Labor",
       "baselineVsTarget": "Missed 4PM Carrier Cutoffs \u2192 Dynamic Wave Re-Balancing",
-      "story": "Monitors pick, sort, and pack-wall queues in real time\u2014re-prioritizing waves and labor zones so every carrier trailer departs on time in full."
+      "story": "Monitors pick, sort, and pack-wall queues in real time\u2014re-prioritizing waves and labor zones so every carrier trailer departs on time in full.",
+      "agenticExecution": "Continuously balances e-commerce and retail replenishment order cutoffs, carrier departure deadlines, pick-zone congestion, and pack-station labor capacity across the fulfillment floor. Releases dynamic, workload-leveled pick waves and re-routes picker batches in real time so 100% of carrier pull times are met without end-of-shift overtime spikes."
     },
     "planogram_merchandising_vision_auditor": {
       "id": "planogram_merchandising_vision_auditor",
@@ -39017,7 +39053,7 @@
         }
       ],
       "problem": "8%\u201315% store inventory record inaccuracy \u00b7 2.1x parcel cost on split orders. Phantom store stock triggers 6%\u201312% BOPIS/Ship-From-Store cancellations and costly multi-node split shipments, while sellable returns sit un-restocked for 5\u201314 days.",
-      "solution": "Identifies shrinkage anomalies when on-hand stock stops scanning at POS.",
+      "solution": "Analyzes mobile shelf photos captured by field merchandisers using Gemini multimodal vision to verify SKU facings, eye-level share-of-shelf, price tags, and promo POSM compliance. Flags phantom stockouts where backroom inventory exists on store ledgers and dispatches instant shelf-restocking tasks to store staff.",
       "advantage": "Delivers 98.7% planogram audit accuracy, compresses audit cycles from weeks to sub-seconds, and prevents $4.2M in unearned retailer visibility payouts.",
       "adkImplementation": {
         "packageDir": "agents/planogram_merchandising_vision_auditor",
@@ -39771,7 +39807,8 @@
       },
       "impactDimension": "On-Shelf Availability",
       "baselineVsTarget": "11% Ghost Inventory \u2192 98.5% Shelf Accuracy",
-      "story": "Detects zero-scan Point-of-Sale (POS) velocity anomalies and shelf gaps to eliminate phantom inventory\u2014lifting on-shelf availability and stopping BOPIS cancels."
+      "story": "Detects zero-scan Point-of-Sale (POS) velocity anomalies and shelf gaps to eliminate phantom inventory\u2014lifting on-shelf availability and stopping BOPIS cancels.",
+      "agenticExecution": "Analyzes mobile shelf photos captured by field merchandisers using Gemini multimodal vision to verify SKU facings, eye-level share-of-shelf, price tags, and promo POSM compliance. Flags phantom stockouts where backroom inventory exists on store ledgers and dispatches instant shelf-restocking tasks to store staff."
     },
     "atp_order_promising_agent": {
       "id": "atp_order_promising_agent",
@@ -39800,7 +39837,7 @@
         }
       ],
       "problem": "8%\u201315% store inventory record inaccuracy \u00b7 2.1x parcel cost on split orders. Phantom store stock triggers 6%\u201312% BOPIS/Ship-From-Store cancellations and costly multi-node split shipments, while sellable returns sit un-restocked for 5\u201314 days.",
-      "solution": "Selects lowest-cost fulfillment nodes based on store labor and parcel zones.",
+      "solution": "Evaluates real-time omnichannel inventory across distribution centers, dark stores, and retail backrooms alongside parcel shipping zones, split-shipment costs, and customer tier SLAs. Selects the highest-margin Ship-From-Store (SFS), Buy-Online-Pickup-In-Store (BOPIS), or depot fulfillment node in under 50ms while protecting strategic channel allocations.",
       "advantage": "Cuts split shipments by 34% while sustaining 98.7% On-Time In-Full (OTIF) delivery.",
       "adkImplementation": {
         "packageDir": "agents/atp_order_promising_agent",
@@ -40682,7 +40719,8 @@
       },
       "impactDimension": "Fulfillment Margin",
       "baselineVsTarget": "19% Split-Order Rate \u2192 Margin-Optimal Node Promise",
-      "story": "Routes every e-commerce and BOPIS order to the DC or store that maximizes net order margin across parcel zone cost, split risk, and markdown avoidance."
+      "story": "Routes every e-commerce and BOPIS order to the DC or store that maximizes net order margin across parcel zone cost, split risk, and markdown avoidance.",
+      "agenticExecution": "Evaluates real-time omnichannel inventory across distribution centers, dark stores, and retail backrooms alongside parcel shipping zones, split-shipment costs, and customer tier SLAs. Selects the highest-margin Ship-From-Store (SFS), Buy-Online-Pickup-In-Store (BOPIS), or depot fulfillment node in under 50ms while protecting strategic channel allocations."
     },
     "returns_triage_agent": {
       "id": "returns_triage_agent",
@@ -40711,7 +40749,7 @@
         }
       ],
       "problem": "8%\u201315% store inventory record inaccuracy \u00b7 2.1x parcel cost on split orders. Phantom store stock triggers 6%\u201312% BOPIS/Ship-From-Store cancellations and costly multi-node split shipments, while sellable returns sit un-restocked for 5\u201314 days.",
-      "solution": "Evaluates item condition scans to triage restock, vendor return, or liquidation.",
+      "solution": "Inspects returned parcel condition photos, reason codes, warranty entitlements, and current regional resale demand the moment an RMA is initiated or scanned at the dock. Routes Grade-A items directly to high-velocity fulfillment centers instead of central return depots\u2014recovering full-price resale velocity before seasonal markdowns.",
       "advantage": "Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend.",
       "adkImplementation": {
         "packageDir": "agents/returns_triage_agent",
@@ -41477,7 +41515,8 @@
       },
       "impactDimension": "Resale Velocity",
       "baselineVsTarget": "9d Return Quarantine \u2192 <24h Grade-A Resale Live",
-      "story": "Grades returned items at first touch and immediately restores Grade-A stock to sellable ATP\u2014capturing full-price resale before seasonal markdowns."
+      "story": "Grades returned items at first touch and immediately restores Grade-A stock to sellable ATP\u2014capturing full-price resale before seasonal markdowns.",
+      "agenticExecution": "Inspects returned parcel condition photos, reason codes, warranty entitlements, and current regional resale demand the moment an RMA is initiated or scanned at the dock. Routes Grade-A items directly to high-velocity fulfillment centers instead of central return depots\u2014recovering full-price resale velocity before seasonal markdowns."
     },
     "load_consolidation_agent": {
       "id": "load_consolidation_agent",
@@ -41506,7 +41545,7 @@
         }
       ],
       "problem": "$2.27/mile trucking cost \u00b7 24%\u201332% unused trailer cube \u00b7 $1.1B+ detention fees. Weight-only load planning ships 25%+ air, uncoordinated plant yards incur $75\u2013$150/hr carrier detention after 2 hours, and reefer excursions spoil 2%\u20135% of cold-chain loads.",
-      "solution": "Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling.",
+      "solution": "Pools Less-Than-Truckload (LTL) orders sharing compatible delivery windows and corridors into multi-stop Full-Truckload (FTL) dispatches using a 3D Last-In-First-Out (LIFO) bin-packing solver. Enforces axle-weight, stackability, and stop-sequence unloading rules while publishing visual 3D load diagrams to dock loaders and Transportation Management Systems (TMS).",
       "advantage": "Achieves 92% 3D trailer and container cube utilization with 100% LIFO and highway axle compliance\u2014zero dock re-handling.",
       "adkImplementation": {
         "packageDir": "agents/load_consolidation_agent",
@@ -42364,7 +42403,8 @@
       },
       "impactDimension": "Fleet & Freight Cost",
       "baselineVsTarget": "28% Unused Trailer Air \u2192 Axle-Legal 3D Multi-Stop",
-      "story": "Solves 3D bin-packing, bridge-formula axle weights, and LIFO stop unloading order\u2014shipping the same volume in 10%\u201315% fewer trucks."
+      "story": "Solves 3D bin-packing, bridge-formula axle weights, and LIFO stop unloading order\u2014shipping the same volume in 10%\u201315% fewer trucks.",
+      "agenticExecution": "Pools Less-Than-Truckload (LTL) orders sharing compatible delivery windows and corridors into multi-stop Full-Truckload (FTL) dispatches using a 3D Last-In-First-Out (LIFO) bin-packing solver. Enforces axle-weight, stackability, and stop-sequence unloading rules while publishing visual 3D load diagrams to dock loaders and Transportation Management Systems (TMS)."
     },
     "yard_dock_sequencer": {
       "id": "yard_dock_sequencer",
@@ -42393,7 +42433,7 @@
         }
       ],
       "problem": "$2.27/mile trucking cost \u00b7 24%\u201332% unused trailer cube \u00b7 $1.1B+ detention fees. Weight-only load planning ships 25%+ air, uncoordinated plant yards incur $75\u2013$150/hr carrier detention after 2 hours, and reefer excursions spoil 2%\u20135% of cold-chain loads.",
-      "solution": "Parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically.",
+      "solution": "Fuses GPS gate-arrival geofences, live dock-door turnaround telemetry, forklift crew availability, and carrier detention-fee clocks across plant and distribution yards. Dynamically assigns incoming trailers to optimal doors, sequences yard-jockey hostling moves, and eliminates gate queues and carrier demurrage penalties.",
       "advantage": "Cuts trailer yard turnaround time by 41% and reduces carrier detention payouts by 82%.",
       "adkImplementation": {
         "packageDir": "agents/yard_dock_sequencer",
@@ -43275,7 +43315,8 @@
       },
       "impactDimension": "Detention & Flow",
       "baselineVsTarget": "$110/hr Gate Wait Fees \u2192 <35m Sequenced Turnaround",
-      "story": "Synchronizes live carrier GPS ETAs, yard jockey moves, and dock door crew capacity to eliminate gate queues, detention fees, and plant starvation."
+      "story": "Synchronizes live carrier GPS ETAs, yard jockey moves, and dock door crew capacity to eliminate gate queues, detention fees, and plant starvation.",
+      "agenticExecution": "Fuses GPS gate-arrival geofences, live dock-door turnaround telemetry, forklift crew availability, and carrier detention-fee clocks across plant and distribution yards. Dynamically assigns incoming trailers to optimal doors, sequences yard-jockey hostling moves, and eliminates gate queues and carrier demurrage penalties."
     },
     "cold_chain_auditor": {
       "id": "cold_chain_auditor",
@@ -43304,7 +43345,7 @@
         }
       ],
       "problem": "$2.27/mile trucking cost \u00b7 24%\u201332% unused trailer cube \u00b7 $1.1B+ detention fees. Weight-only load planning ships 25%+ air, uncoordinated plant yards incur $75\u2013$150/hr carrier detention after 2 hours, and reefer excursions spoil 2%\u20135% of cold-chain loads.",
-      "solution": "Analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims.",
+      "solution": "Streams multi-zone Bluetooth/cellular reefer temperature, door-open events, and compressor health logs into an Arrhenius Mean Kinetic Temperature (MKT) shelf-life solver. Distinguishes harmless defrost spikes from true thermal excursions in transit, triggers driver setpoint corrections, and quarantines compromised lots prior to customer delivery.",
       "advantage": "Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically.",
       "adkImplementation": {
         "packageDir": "agents/cold_chain_auditor",
@@ -44182,7 +44223,8 @@
       },
       "impactDimension": "Spoilage & QA Risk",
       "baselineVsTarget": "3.2% Excursion Rejection \u2192 Live MKT Intervention",
-      "story": "Monitors continuous IoT temperature/humidity and calculates Mean Kinetic Temperature (MKT) in transit\u2014intervening before perishable or pharma loads spoil."
+      "story": "Monitors continuous IoT temperature/humidity and calculates Mean Kinetic Temperature (MKT) in transit\u2014intervening before perishable or pharma loads spoil.",
+      "agenticExecution": "Streams multi-zone Bluetooth/cellular reefer temperature, door-open events, and compressor health logs into an Arrhenius Mean Kinetic Temperature (MKT) shelf-life solver. Distinguishes harmless defrost spikes from true thermal excursions in transit, triggers driver setpoint corrections, and quarantines compromised lots prior to customer delivery."
     },
     "aisle_aligned_pallet_agent": {
       "id": "aisle_aligned_pallet_agent",
@@ -44211,7 +44253,7 @@
         }
       ],
       "problem": "In-store handling = ~50% of retail supply chain labor \u00b7 18%\u201328% backroom overflow. Mixed-aisle DC pallets force store associates to sort cases multiple times on the sales floor, while backroom-blind pushes and municipal noise/curfew violations erode store margin.",
-      "solution": "Sequences DC pick waves to match individual store planograms and shelf layouts.",
+      "solution": "Combines store aisle planogram maps, case dimensions, compressive strength limits, and axle-weight rules inside a 3D mixed-case palletization solver. Generates stable, aisle-friendly layer patterns for robotic palletizers and voice-pickers so store crews roll pallets straight to shelves with minimal backroom sorting.",
       "advantage": "Reduces total air cargo spend by 28%, eliminates volumetric weight penalties by 21%, and achieves 99.6% cold-chain tarmac connection compliance.",
       "adkImplementation": {
         "packageDir": "agents/aisle_aligned_pallet_agent",
@@ -44988,7 +45030,8 @@
       },
       "impactDimension": "Store Labor Cost",
       "baselineVsTarget": "Mixed-Aisle Sort Chaos \u2192 Aisle-Pure Roll-Off Pallets",
-      "story": "Builds DC pallets sequenced to each store's exact planogram aisle layout and case crush physics\u2014slashing in-store restocking labor by 20%\u201335%."
+      "story": "Builds DC pallets sequenced to each store's exact planogram aisle layout and case crush physics\u2014slashing in-store restocking labor by 20%\u201335%.",
+      "agenticExecution": "Combines store aisle planogram maps, case dimensions, compressive strength limits, and axle-weight rules inside a 3D mixed-case palletization solver. Generates stable, aisle-friendly layer patterns for robotic palletizers and voice-pickers so store crews roll pallets straight to shelves with minimal backroom sorting."
     },
     "store_capacity_agent": {
       "id": "store_capacity_agent",
@@ -45017,7 +45060,7 @@
         }
       ],
       "problem": "In-store handling = ~50% of retail supply chain labor \u00b7 18%\u201328% backroom overflow. Mixed-aisle DC pallets force store associates to sort cases multiple times on the sales floor, while backroom-blind pushes and municipal noise/curfew violations erode store margin.",
-      "solution": "Throttles push replenishment based on store backroom limits and live POS velocity.",
+      "solution": "Tracks retail backroom cubic utilization, cooler/freezer door capacity, store receiving crew hours, and promotional delivery surges across every store format. Throttles and smooths non-urgent replenishment deliveries ahead of peak drops so store backrooms never gridlock and shelf-stocking labor stays productive.",
       "advantage": "Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate.",
       "adkImplementation": {
         "packageDir": "agents/store_capacity_agent",
@@ -45797,7 +45840,8 @@
       },
       "impactDimension": "Backroom Efficiency",
       "baselineVsTarget": "Congested Store Backrooms \u2192 Cubic-Paced Delivery Waves",
-      "story": "Caps and paces DC replenishment dispatches against each store's live backroom cubic capacity and receiving labor\u2014preventing overflow and damage."
+      "story": "Caps and paces DC replenishment dispatches against each store's live backroom cubic capacity and receiving labor\u2014preventing overflow and damage.",
+      "agenticExecution": "Tracks retail backroom cubic utilization, cooler/freezer door capacity, store receiving crew hours, and promotional delivery surges across every store format. Throttles and smooths non-urgent replenishment deliveries ahead of peak drops so store backrooms never gridlock and shelf-stocking labor stays productive."
     },
     "port_drayage_orchestrator": {
       "id": "port_drayage_orchestrator",
@@ -45826,7 +45870,7 @@
         }
       ],
       "problem": "In-store handling = ~50% of retail supply chain labor \u00b7 18%\u201328% backroom overflow. Mixed-aisle DC pallets force store associates to sort cases multiple times on the sales floor, while backroom-blind pushes and municipal noise/curfew violations erode store margin.",
-      "solution": "Coordinates municipal delivery curfews and store dock shift schedules dynamically.",
+      "solution": "Synchronizes ocean vessel berthing updates, terminal container availability, port Last Free Day (LFD) demurrage clocks, municipal no-entry truck curfews, and drayage chassis pools. Books optimal terminal gate appointments and sequences night-window depot drops to eliminate port storage fees and urban curfew fines.",
       "advantage": "Slashes port demurrage and container detention fees by 67% and cuts factory-to-port-to-DC lead-time variability by 38%.",
       "adkImplementation": {
         "packageDir": "agents/port_drayage_orchestrator",
@@ -46619,7 +46663,8 @@
       },
       "impactDimension": "Compliance & OTIF",
       "baselineVsTarget": "Curfew Fines & Refusals \u2192 Noise/EV/Window Sequenced",
-      "story": "Aligns store dispatch times, EV/low-noise tractor assignment, and urban curfew/school-zone rules to eliminate municipal fines and refused drops."
+      "story": "Aligns store dispatch times, EV/low-noise tractor assignment, and urban curfew/school-zone rules to eliminate municipal fines and refused drops.",
+      "agenticExecution": "Synchronizes ocean vessel berthing updates, terminal container availability, port Last Free Day (LFD) demurrage clocks, municipal no-entry truck curfews, and drayage chassis pools. Books optimal terminal gate appointments and sequences night-window depot drops to eliminate port storage fees and urban curfew fines."
     },
     "geocoding_intelligence_agent": {
       "id": "geocoding_intelligence_agent",
@@ -46648,7 +46693,7 @@
         }
       ],
       "problem": "Last-mile = 53% of total shipping cost \u00b7 $15\u2013$18 cost per failed delivery. 4%\u20138% of e-commerce parcels fail first-attempt delivery due to bad rooftop geocodes, static carrier selection overpays on parcel zones, and WISMO calls drive 35%\u201345% of support tickets.",
-      "solution": "Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers.",
+      "solution": "Cleanses messy unstructured delivery addresses using historical driver GPS breadcrumb traces, loading-bay geofence polygons, vehicle height/weight restrictions, and store receiving hours. Pins exact dock-door coordinates and turnaround service times so last-mile routing engines prevent failed deliveries and urban re-attempt miles.",
       "advantage": "Reduces daily road fleet dispatch cost by 19.4% and route mileage by 21.8% with 99.4% time-window adherence.",
       "adkImplementation": {
         "packageDir": "agents/geocoding_intelligence_agent",
@@ -47424,7 +47469,8 @@
       },
       "impactDimension": "Last-Mile Cost",
       "baselineVsTarget": "6.4% Failed-Drop Re-Runs \u2192 Rooftop & Gate-Pin Verified",
-      "story": "Validates address rooftop/loading-bay coordinates and driver access notes before dispatch\u2014eliminating $15\u2013$18 failed-delivery redelivery costs."
+      "story": "Validates address rooftop/loading-bay coordinates and driver access notes before dispatch\u2014eliminating $15\u2013$18 failed-delivery redelivery costs.",
+      "agenticExecution": "Cleanses messy unstructured delivery addresses using historical driver GPS breadcrumb traces, loading-bay geofence polygons, vehicle height/weight restrictions, and store receiving hours. Pins exact dock-door coordinates and turnaround service times so last-mile routing engines prevent failed deliveries and urban re-attempt miles."
     },
     "multimodal_mode_shift_agent": {
       "id": "multimodal_mode_shift_agent",
@@ -47453,7 +47499,7 @@
         }
       ],
       "problem": "Last-mile = 53% of total shipping cost \u00b7 $15\u2013$18 cost per failed delivery. 4%\u20138% of e-commerce parcels fail first-attempt delivery due to bad rooftop geocodes, static carrier selection overpays on parcel zones, and WISMO calls drive 35%\u201345% of support tickets.",
-      "solution": "Routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card.",
+      "solution": "Evaluates lane-by-lane shipment urgency, downstream safety-stock coverage, carbon budgets, and spot vs. contracted tariffs across air, ocean, intermodal rail, and road fleet modes. Shifts non-critical air expedites to ocean/rail while selectively upgrading stockout-critical lots\u2014cutting total landed freight cost and Scope-3 transport emissions.",
       "advantage": "Cuts total global factory-to-DC transportation and expedite cost by 24% while maintaining 99.2% customer product availability.",
       "adkImplementation": {
         "packageDir": "agents/multimodal_mode_shift_agent",
@@ -48224,7 +48270,8 @@
       },
       "impactDimension": "Parcel & Shipping Spend",
       "baselineVsTarget": "Static Carrier Overpay \u2192 Dynamic Rate- & SLA-Shopped",
-      "story": "Dynamically selects the lowest-cost parcel, regional courier, crowdsourced, or LTL mode per order that still hits the promised customer delivery date."
+      "story": "Dynamically selects the lowest-cost parcel, regional courier, crowdsourced, or LTL mode per order that still hits the promised customer delivery date.",
+      "agenticExecution": "Evaluates lane-by-lane shipment urgency, downstream safety-stock coverage, carbon budgets, and spot vs. contracted tariffs across air, ocean, intermodal rail, and road fleet modes. Shifts non-critical air expedites to ocean/rail while selectively upgrading stockout-critical lots\u2014cutting total landed freight cost and Scope-3 transport emissions."
     },
     "otif_penalty_shield": {
       "id": "otif_penalty_shield",
@@ -48253,7 +48300,7 @@
         }
       ],
       "problem": "Last-mile = 53% of total shipping cost \u00b7 $15\u2013$18 cost per failed delivery. 4%\u20138% of e-commerce parcels fail first-attempt delivery due to bad rooftop geocodes, static carrier selection overpays on parcel zones, and WISMO calls drive 35%\u201345% of support tickets.",
-      "solution": "Detects en-route exceptions and updates customers proactively with reschedule links.",
+      "solution": "Monitors open key-account orders against retailer Must-Arrive-By-Date (MABD) windows, pick-wave progress, and live highway/weather transit delays. Quantifies impending On-Time In-Full (OTIF) chargeback exposure per order and triggers proactive inventory reallocation, carrier expedites, or appointment re-slotting before penalties trigger.",
       "advantage": "Cuts retailer OTIF fines and shortage deductions by 78% and lifts key-account OTIF compliance to 98.9%.",
       "adkImplementation": {
         "packageDir": "agents/otif_penalty_shield",
@@ -49020,7 +49067,8 @@
       },
       "impactDimension": "Support & OTIF Cost",
       "baselineVsTarget": "38% Inbound WISMO Calls \u2192 Proactive Exception Rescue",
-      "story": "Detects mid-route parcel and retail-delivery delays early, triggers carrier rescue or proactive customer self-rescheduling, and cuts WISMO cost."
+      "story": "Detects mid-route parcel and retail-delivery delays early, triggers carrier rescue or proactive customer self-rescheduling, and cuts WISMO cost.",
+      "agenticExecution": "Monitors open key-account orders against retailer Must-Arrive-By-Date (MABD) windows, pick-wave progress, and live highway/weather transit delays. Quantifies impending On-Time In-Full (OTIF) chargeback exposure per order and triggers proactive inventory reallocation, carrier expedites, or appointment re-slotting before penalties trigger."
     },
     "fleetflow_dispatch": {
       "id": "fleetflow_dispatch",
@@ -49049,7 +49097,7 @@
         }
       ],
       "problem": "20%+ empty/out-of-route miles \u00b7 12%\u201325% spot premium \u00b7 3%\u20138% invoice error rate. Static dispatch routes burn excess fuel in weather/traffic corridors, primary tender rejections spike spot rates by 15%\u201325%, and 3%\u20138% of EDI 210 freight bills contain unverified accessorial or tariff errors.",
-      "solution": "Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits.",
+      "solution": "Solves dynamic Capacitated Vehicle Routing Problems with Time Windows (CVRPTW) over live traffic, Hours-of-Service (HOS) driver logs, EV/diesel range, and backhaul opportunities. Continuously re-optimizes multi-stop dispatch manifests in response to live road disruptions and pushes turn-by-turn updates to driver telematics.",
       "advantage": "Reduces daily road fleet dispatch cost by 19.4% and route mileage by 21.8% with 99.4% time-window adherence.",
       "adkImplementation": {
         "packageDir": "agents/fleetflow_dispatch",
@@ -49858,7 +49906,8 @@
       },
       "impactDimension": "Fuel & Fleet Efficiency",
       "baselineVsTarget": "Out-of-Route & Traffic Burn \u2192 Live VRP + HOS Rerouting",
-      "story": "Continuously re-solves multi-stop Vehicle Routing (VRP) against live traffic, weather, and driver Hours-of-Service (HOS) to cut fuel and empty miles."
+      "story": "Continuously re-solves multi-stop Vehicle Routing (VRP) against live traffic, weather, and driver Hours-of-Service (HOS) to cut fuel and empty miles.",
+      "agenticExecution": "Solves dynamic Capacitated Vehicle Routing Problems with Time Windows (CVRPTW) over live traffic, Hours-of-Service (HOS) driver logs, EV/diesel range, and backhaul opportunities. Continuously re-optimizes multi-stop dispatch manifests in response to live road disruptions and pushes turn-by-turn updates to driver telematics."
     },
     "freight_control_tower": {
       "id": "freight_control_tower",
@@ -49887,7 +49936,7 @@
         }
       ],
       "problem": "20%+ empty/out-of-route miles \u00b7 12%\u201325% spot premium \u00b7 3%\u20138% invoice error rate. Static dispatch routes burn excess fuel in weather/traffic corridors, primary tender rejections spike spot rates by 15%\u201325%, and 3%\u20138% of EDI 210 freight bills contain unverified accessorial or tariff errors.",
-      "solution": "Tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides.",
+      "solution": "Unifies satellite AIS ocean tracking, air cargo milestones, rail Electronic Data Interchange (EDI 404/214), and ELD truck GPS telemetry into a single predictive ETA control tower. Filters out harmless ping noise, flags true downstream stockout or SLA breaches days early, and orchestrates carrier re-routing or cross-dock diversions.",
       "advantage": "Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically.",
       "adkImplementation": {
         "packageDir": "agents/freight_control_tower",
@@ -50682,7 +50731,8 @@
       },
       "impactDimension": "Contract vs. Spot Spend",
       "baselineVsTarget": "22% Tender Rejection Leak \u2192 94% Routing-Guide Compliance",
-      "story": "Predicts primary carrier tender rejections by lane and cascades early to contracted Tier-2/3 carriers before loads leak onto expensive spot markets."
+      "story": "Predicts primary carrier tender rejections by lane and cascades early to contracted Tier-2/3 carriers before loads leak onto expensive spot markets.",
+      "agenticExecution": "Unifies satellite AIS ocean tracking, air cargo milestones, rail Electronic Data Interchange (EDI 404/214), and ELD truck GPS telemetry into a single predictive ETA control tower. Filters out harmless ping noise, flags true downstream stockout or SLA breaches days early, and orchestrates carrier re-routing or cross-dock diversions."
     },
     "freight_bill_audit_agent": {
       "id": "freight_bill_audit_agent",
@@ -50711,7 +50761,7 @@
         }
       ],
       "problem": "20%+ empty/out-of-route miles \u00b7 12%\u201325% spot premium \u00b7 3%\u20138% invoice error rate. Static dispatch routes burn excess fuel in weather/traffic corridors, primary tender rejections spike spot rates by 15%\u201325%, and 3%\u20138% of EDI 210 freight bills contain unverified accessorial or tariff errors.",
-      "solution": "Extracts signed PODs and rate contracts via OCR to audit accessorial surcharges.",
+      "solution": "Audits carrier Electronic Data Interchange (EDI 210) and PDF freight invoices line by line against contracted lane rate tables, Department of Energy (DOE) fuel-surcharge matrices, and verified GPS detention logs. Blocks duplicate billings, phantom accessorials, and weight-class errors automatically while releasing verified net freight payables to finance.",
       "advantage": "Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically.",
       "adkImplementation": {
         "packageDir": "agents/freight_bill_audit_agent",
@@ -51506,7 +51556,8 @@
       },
       "impactDimension": "Freight Spend Recovery",
       "baselineVsTarget": "5.6% EDI 210 Billing Errors \u2192 100% Line-by-Line Tariff Audit",
-      "story": "Audits 100% of carrier EDI 210/PDF freight invoices against contracted rate tables, DOE fuel indices, and GPS arrival timestamps before payment."
+      "story": "Audits 100% of carrier EDI 210/PDF freight invoices against contracted rate tables, DOE fuel indices, and GPS arrival timestamps before payment.",
+      "agenticExecution": "Audits carrier Electronic Data Interchange (EDI 210) and PDF freight invoices line by line against contracted lane rate tables, Department of Energy (DOE) fuel-surcharge matrices, and verified GPS detention logs. Blocks duplicate billings, phantom accessorials, and weight-class errors automatically while releasing verified net freight payables to finance."
     },
     "reverse_rma_optimizer": {
       "id": "reverse_rma_optimizer",
@@ -51535,7 +51586,7 @@
         }
       ],
       "problem": "$890B annual returns (16.9% of sales) \u00b7 $101B fraud \u00b7 20%\u201365% COGS reverse cost. Processing a return costs 20%\u201365% of an item's original value\u2014shipping low-margin goods back destroys net margin, while $101B in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.",
-      "solution": "Analyzes item photos and packaging video feeds to detect wear or swapped tags.",
+      "solution": "Evaluates customer Return Merchandise Authorization (RMA) requests using order history, serial-number telemetry, optical return-scan photos, and SKU refurbishment economics. Detects wardrobing or return fraud, pre-grades legitimate returns into restock, refurbish, or recycle streams, and consolidates reverse backhaul pickups.",
       "advantage": "Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend.",
       "adkImplementation": {
         "packageDir": "agents/reverse_rma_optimizer",
@@ -52286,7 +52337,8 @@
       },
       "impactDimension": "Fraud & Margin Protection",
       "baselineVsTarget": "13.7% Abusive/Fraud RMAs \u2192 Serial- & Risk-Gated RMA",
-      "story": "Scores return requests against serial history, account abuse patterns, and item telemetry\u2014blocking fraudulent RMAs without friction for loyal buyers."
+      "story": "Scores return requests against serial history, account abuse patterns, and item telemetry\u2014blocking fraudulent RMAs without friction for loyal buyers.",
+      "agenticExecution": "Evaluates customer Return Merchandise Authorization (RMA) requests using order history, serial-number telemetry, optical return-scan photos, and SKU refurbishment economics. Detects wardrobing or return fraud, pre-grades legitimate returns into restock, refurbish, or recycle streams, and consolidates reverse backhaul pickups."
     },
     "keep_it_routing_advisor": {
       "id": "keep_it_routing_advisor",
@@ -52315,7 +52367,7 @@
         }
       ],
       "problem": "$890B annual returns (16.9% of sales) \u00b7 $101B fraud \u00b7 20%\u201365% COGS reverse cost. Processing a return costs 20%\u201365% of an item's original value\u2014shipping low-margin goods back destroys net margin, while $101B in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.",
-      "solution": "Evaluates salvage margins vs reverse freight to determine keep-it instant refunds.",
+      "solution": "Calculates real-time unit recovery margin at the moment a customer initiates a return\u2014weighing reverse parcel shipping cost, grading labor, restocking markdown, and fraud score against item value. Automatically issues keep-it refunds or local charity/hub drop-offs when reverse logistics costs exceed recoverable net value.",
       "advantage": "Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend.",
       "adkImplementation": {
         "packageDir": "agents/keep_it_routing_advisor",
@@ -53081,7 +53133,8 @@
       },
       "impactDimension": "Net Return Recovery",
       "baselineVsTarget": "Negative-Margin Return Shipping \u2192 Profit-Optimal RMA Routing",
-      "story": "Calculates reverse shipping + grading cost vs. resale recovery in real time\u2014routing items to store, refurb hub, outlet, or Keep-It credit."
+      "story": "Calculates reverse shipping + grading cost vs. resale recovery in real time\u2014routing items to store, refurb hub, outlet, or Keep-It credit.",
+      "agenticExecution": "Calculates real-time unit recovery margin at the moment a customer initiates a return\u2014weighing reverse parcel shipping cost, grading labor, restocking markdown, and fraud score against item value. Automatically issues keep-it refunds or local charity/hub drop-offs when reverse logistics costs exceed recoverable net value."
     },
     "osd_freight_claims_agent": {
       "id": "osd_freight_claims_agent",
@@ -53110,7 +53163,7 @@
         }
       ],
       "problem": "$890B annual returns (16.9% of sales) \u00b7 $101B fraud \u00b7 20%\u201365% COGS reverse cost. Processing a return costs 20%\u201365% of an item's original value\u2014shipping low-margin goods back destroys net margin, while $101B in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.",
-      "solution": "Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes.",
+      "solution": "Cross-matches dock receiving Over, Short, and Damaged (OS&D) exception photos, seal-integrity logs, Electronic Proof of Delivery (ePOD) signatures, and carrier Carmack/tariff liability windows. Compiles timestamped forensic evidence packets automatically and files legally compliant carrier loss-and-damage claims before contractual filing deadlines expire.",
       "advantage": "Cuts retailer OTIF fines and shortage deductions by 78% and lifts key-account OTIF compliance to 98.9%.",
       "adkImplementation": {
         "packageDir": "agents/osd_freight_claims_agent",
@@ -53893,7 +53946,8 @@
       },
       "impactDimension": "Claims Recovery",
       "baselineVsTarget": "38% Missed Claim Windows \u2192 <48h Filed Evidence Packets",
-      "story": "Assembles dock damage photos, signed BOL exceptions, and SKU invoice values into compliant carrier claim packets within hours of unloading."
+      "story": "Assembles dock damage photos, signed BOL exceptions, and SKU invoice values into compliant carrier claim packets within hours of unloading.",
+      "agenticExecution": "Cross-matches dock receiving Over, Short, and Damaged (OS&D) exception photos, seal-integrity logs, Electronic Proof of Delivery (ePOD) signatures, and carrier Carmack/tariff liability windows. Compiles timestamped forensic evidence packets automatically and files legally compliant carrier loss-and-damage claims before contractual filing deadlines expire."
     },
     "dynamic_markdown_agent": {
       "id": "dynamic_markdown_agent",
@@ -53922,7 +53976,7 @@
         }
       ],
       "problem": "2.5%\u20136.0% of grocery sales lost to shrink \u00b7 $408B+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.",
-      "solution": "Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts.",
+      "solution": "Tracks batch-level remaining shelf life, local store sell-through elasticity, competitor pricing, and incoming replenishment schedules across perishable and seasonal assortments. Computes daily stepped markdown curves that clear aging inventory smoothly at maximum gross margin before expiration or end-of-season write-off.",
       "advantage": "Boosts net trade spend ROI by 22% and prevents promotional stockouts and post-promo bullwhip troughs.",
       "adkImplementation": {
         "packageDir": "agents/dynamic_markdown_agent",
@@ -54691,7 +54745,8 @@
       },
       "impactDimension": "Shrink & Gross Margin",
       "baselineVsTarget": "4.6% Fresh Write-Offs \u2192 Elasticity-Timed Clearance",
-      "story": "Triggers shallow, early price-elasticity markdowns synced to lot sell-by dates and local store velocity\u2014clearing stock at higher margin with less waste."
+      "story": "Triggers shallow, early price-elasticity markdowns synced to lot sell-by dates and local store velocity\u2014clearing stock at higher margin with less waste.",
+      "agenticExecution": "Tracks batch-level remaining shelf life, local store sell-through elasticity, competitor pricing, and incoming replenishment schedules across perishable and seasonal assortments. Computes daily stepped markdown curves that clear aging inventory smoothly at maximum gross margin before expiration or end-of-season write-off."
     },
     "short_dated_redistributor": {
       "id": "short_dated_redistributor",
@@ -54720,7 +54775,7 @@
         }
       ],
       "problem": "2.5%\u20136.0% of grocery sales lost to shrink \u00b7 $408B+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.",
-      "solution": "Matches near-date DC lots with discounters or food banks before acceptance cutoffs.",
+      "solution": "Scans lot-level expiration dates (FEFO) across regional depots and slow-moving outlets, matching short-dated stock against nearby high-velocity stores or institutional buyers. Executes profitable lateral stock transfers while sufficient shelf-life runway remains\u2014preventing dump-bin distress sales and landfill disposal.",
       "advantage": "Slashes cross-dock terminal dwell time by 52%, eliminates double putaway/pick handling on 38% of volume, and accelerates port/rail-to-customer lead times by 1.8 days.",
       "adkImplementation": {
         "packageDir": "agents/short_dated_redistributor",
@@ -55471,7 +55526,8 @@
       },
       "impactDimension": "Write-Off Avoidance",
       "baselineVsTarget": "FEFO Shelf-Life Rejections \u2192 High-Velocity Channel Match",
-      "story": "Matches short-dated DC lots at risk of customer shelf-life rejection to fast-turning stores, foodservice channels, or tax-advantaged donations."
+      "story": "Matches short-dated DC lots at risk of customer shelf-life rejection to fast-turning stores, foodservice channels, or tax-advantaged donations.",
+      "agenticExecution": "Scans lot-level expiration dates (FEFO) across regional depots and slow-moving outlets, matching short-dated stock against nearby high-velocity stores or institutional buyers. Executes profitable lateral stock transfers while sufficient shelf-life runway remains\u2014preventing dump-bin distress sales and landfill disposal."
     },
     "food_waste_esg_copilot": {
       "id": "food_waste_esg_copilot",
@@ -55500,7 +55556,7 @@
         }
       ],
       "problem": "2.5%\u20136.0% of grocery sales lost to shrink \u00b7 $408B+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.",
-      "solution": "Aggregates store shrink and organic haul logs to generate audited GHG diversion filings.",
+      "solution": "Monitors cold-room dwell, store markdown velocity, and unsold fresh/ambient lots approaching commercial cutoff dates across manufacturing plants, depots, and supermarkets. Automates tax-deductible food-bank donations, animal-feed upcycling, or anaerobic digestion routing while logging verified Scope-3 waste-diversion credits.",
       "advantage": "Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness.",
       "adkImplementation": {
         "packageDir": "agents/food_waste_esg_copilot",
@@ -56253,7 +56309,8 @@
       },
       "impactDimension": "Tax & ESG Value",
       "baselineVsTarget": "Unclaimed Donation Credits \u2192 Automated Upcycle & Tax Ledger",
-      "story": "Routes unsellable organics to highest circular tier (donation tax credits, upcycling, feed, digester) and automates Scope 3 waste reporting."
+      "story": "Routes unsellable organics to highest circular tier (donation tax credits, upcycling, feed, digester) and automates Scope 3 waste reporting.",
+      "agenticExecution": "Monitors cold-room dwell, store markdown velocity, and unsold fresh/ambient lots approaching commercial cutoff dates across manufacturing plants, depots, and supermarkets. Automates tax-deductible food-bank donations, animal-feed upcycling, or anaerobic digestion routing while logging verified Scope-3 waste-diversion credits."
     },
     "rti_balance_reconciler": {
       "id": "rti_balance_reconciler",
@@ -56319,7 +56376,7 @@
         }
       ],
       "problem": "10%\u201320% annual pallet/tote pool loss \u00b7 28%\u201340% empty store-return backhauls. Unreconciled pallet/tote ledgers trigger millions in pool non-return fines and replacement CapEx, while returning store fleets haul empty air and manual wash logs risk food-safety recalls.",
-      "solution": "Reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes.",
+      "solution": "Reconciles serialized pallet, foldable crate, keg, and cold-chain tote dispatches against distributor, store, and carrier return scans across closed-loop asset pools. Pinpoints high-shrinkage partner nodes, schedules empty-asset backhaul sweeps on returning fleet trucks, and bills unreturned asset deposits automatically.",
       "advantage": "Achieves 99.8% master data accuracy across ERP, WMS, and TMS\u2014eliminating false MRP exceptions and boosting planner adoption across all 26 personas.",
       "adkImplementation": {
         "packageDir": "agents/rti_balance_reconciler",
@@ -57082,7 +57139,8 @@
       },
       "impactDimension": "Asset CapEx & Fines",
       "baselineVsTarget": "15% Annual RTI Shrinkage \u2192 Serialized Pool Reconciliation",
-      "story": "Reconciles serialized pallet, tote, rack, and keg balances across plants, DCs, and customers\u2014slashing pool rental fines and replacement CapEx."
+      "story": "Reconciles serialized pallet, tote, rack, and keg balances across plants, DCs, and customers\u2014slashing pool rental fines and replacement CapEx.",
+      "agenticExecution": "Reconciles serialized pallet, foldable crate, keg, and cold-chain tote dispatches against distributor, store, and carrier return scans across closed-loop asset pools. Pinpoints high-shrinkage partner nodes, schedules empty-asset backhaul sweeps on returning fleet trucks, and bills unreturned asset deposits automatically."
     },
     "intermodal_rail_linehaul_agent": {
       "id": "intermodal_rail_linehaul_agent",
@@ -57111,7 +57169,7 @@
         }
       ],
       "problem": "10%\u201320% annual pallet/tote pool loss \u00b7 28%\u201340% empty store-return backhauls. Unreconciled pallet/tote ledgers trigger millions in pool non-return fines and replacement CapEx, while returning store fleets haul empty air and manual wash logs risk food-safety recalls.",
-      "solution": "Schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores.",
+      "solution": "Tracks Class-I / Dedicated Freight Corridor rail schedules, ramp dwell times, container chassis pools, and highway linehaul spot rates across long-haul corridors. Dynamically shifts replenishment lanes between over-the-road trucking and intermodal rail while orchestrating origin/destination drayage handoffs without missed cutoffs.",
       "advantage": "Lowers long-haul linehaul cost by 34%, cuts corridor Scope-3 CO2e emissions by 68%, and reduces rail ramp storage fees by 76%.",
       "adkImplementation": {
         "packageDir": "agents/intermodal_rail_linehaul_agent",
@@ -57897,7 +57955,8 @@
       },
       "impactDimension": "Backhaul Efficiency",
       "baselineVsTarget": "36% Empty Return Trailers \u2192 Consolidated Milk-Run Sweeps",
-      "story": "Pairs empty outbound store/DC return legs with pallet stacks, collapsible totes, and consolidated RMAs\u2014eliminating dedicated reverse freight."
+      "story": "Pairs empty outbound store/DC return legs with pallet stacks, collapsible totes, and consolidated RMAs\u2014eliminating dedicated reverse freight.",
+      "agenticExecution": "Tracks Class-I / Dedicated Freight Corridor rail schedules, ramp dwell times, container chassis pools, and highway linehaul spot rates across long-haul corridors. Dynamically shifts replenishment lanes between over-the-road trucking and intermodal rail while orchestrating origin/destination drayage handoffs without missed cutoffs."
     },
     "sanitation_health_agent": {
       "id": "sanitation_health_agent",
@@ -57926,7 +57985,7 @@
         }
       ],
       "problem": "10%\u201320% annual pallet/tote pool loss \u00b7 28%\u201340% empty store-return backhauls. Unreconciled pallet/tote ledgers trigger millions in pool non-return fines and replacement CapEx, while returning store fleets haul empty air and manual wash logs risk food-safety recalls.",
-      "solution": "Inspects return photos and wash logs for structural fatigue and chemical compliance.",
+      "solution": "Audits Clean-in-Place (CIP) chemical concentration, wash temperature/flow curves, ATP bioluminescence swab logs, and allergen sequence rules across reusable totes, tankers, and lines. Blocks asset or line release automatically if any sanitation cycle falls below microbiological thresholds and triggers targeted re-wash protocols.",
       "advantage": "Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.",
       "adkImplementation": {
         "packageDir": "agents/sanitation_health_agent",
@@ -58700,7 +58759,8 @@
       },
       "impactDimension": "Asset Life & QA",
       "baselineVsTarget": "Premature Scrapping & QA Risk \u2192 Cycle-Verified Wash & Repair",
-      "story": "Enforces wash-temperature, allergen segregation, and structural cycle limits on every reusable container\u2014extending asset life while guaranteeing safety."
+      "story": "Enforces wash-temperature, allergen segregation, and structural cycle limits on every reusable container\u2014extending asset life while guaranteeing safety.",
+      "agenticExecution": "Audits Clean-in-Place (CIP) chemical concentration, wash temperature/flow curves, ATP bioluminescence swab logs, and allergen sequence rules across reusable totes, tankers, and lines. Blocks asset or line release automatically if any sanitation cycle falls below microbiological thresholds and triggers targeted re-wash protocols."
     }
   },
   "valueChains": {

@@ -17,8 +17,8 @@
 - **Primary Business Persona**: Demand Planner / Forecaster · **Impact Benchmark**: `-20%–35% Short-Term WAPE`
 
 #### 🎯 1. Real-World Business Problem & AI Solution
-- **Operational Problem**: $1.77T/yr global stockout & overstock distortion · 32%–45% manual SKU-week WAPE. Retailers & CPGs lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly ERP forecasts that miss POS, promo, and weather shifts.
-- **Agentic AI Solution**: Synthesizes POS velocity, weather anomalies, and macro trends. Cuts Weighted Absolute Percentage Error (WAPE) by 6.4 points, eliminates systematic sales bias, and feeds live uncertainty distributions directly into MEIO safety-stock solvers.
+- **Operational Problem**: $1.77T/yr global stockout & overstock distortion · 32%–45% manual Stock Keeping Unit (SKU)-week Weighted Absolute Percentage Error (WAPE). Retailers & Consumer Packaged Goods (CPG) firms lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly Enterprise Resource Planning (ERP) forecasts that miss Point-of-Sale (POS), promo, and weather shifts.
+- **Agentic AI Solution**: Continuously ingests daily Point-of-Sale (POS) checkout scans, Google Cloud Cortex Framework semantic views, and WeatherNext climate ensembles to impute stockout censorship and generate calibrated P10/P50/P90 demand forecasts. Audits commercial sales overrides for Forecast Value Added (FVA) bias and writes verified Planned Independent Requirements (PIR) back to Enterprise Resource Planning (ERP). Cuts Weighted Absolute Percentage Error (WAPE) by 6.4 points, eliminates systematic sales bias, and feeds live uncertainty distributions directly into MEIO safety-stock solvers.
 - **Quantified Business Outcome**: Fuses daily POS sell-through, weather ensembles, and stockout imputation to cut short-horizon WAPE by 20%–35% and reduce safety-stock buffers. (`38% SKU WAPE → 24% Sensed WAPE`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -45,8 +45,8 @@
 - **Primary Business Persona**: Commercial Planning Lead · **Impact Benchmark**: `-40%–55% CPFR Variance`
 
 #### 🎯 1. Real-World Business Problem & AI Solution
-- **Operational Problem**: $1.77T/yr global stockout & overstock distortion · 32%–45% manual SKU-week WAPE. Retailers & CPGs lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly ERP forecasts that miss POS, promo, and weather shifts.
-- **Agentic AI Solution**: Identifies unmodeled drivers across eCommerce and retail channels. Increases Retail On-Shelf Availability (OSA) by 3.8 points and cuts bullwhip order variance by 29%.
+- **Operational Problem**: $1.77T/yr global stockout & overstock distortion · 32%–45% manual Stock Keeping Unit (SKU)-week Weighted Absolute Percentage Error (WAPE). Retailers & Consumer Packaged Goods (CPG) firms lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly Enterprise Resource Planning (ERP) forecasts that miss Point-of-Sale (POS), promo, and weather shifts.
+- **Agentic AI Solution**: Harmonizes retailer Electronic Data Interchange (EDI 852) sell-through feeds, e-commerce cart velocity, and distributor stock ledgers via Google Cloud Cortex Framework data products. Decomposes forecast gaps by channel driver, reconciles retailer vs. internal demand baselines, and publishes consensus replenishment schedules directly to collaborative planning portals. Increases Retail On-Shelf Availability (OSA) by 3.8 points and cuts bullwhip order variance by 29%.
 - **Quantified Business Outcome**: Reconciles retailer EDI 830 forecasts against commercial & supply baselines, eliminating systematic bias and cutting stockout/overstock swings. (`19% Channel Variance → <6% Aligned Plan`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -73,8 +73,8 @@
 - **Primary Business Persona**: Brand & Innovation Manager · **Impact Benchmark**: `-30% Launch Forecast Error`
 
 #### 🎯 1. Real-World Business Problem & AI Solution
-- **Operational Problem**: $1.77T/yr global stockout & overstock distortion · 32%–45% manual SKU-week WAPE. Retailers & CPGs lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly ERP forecasts that miss POS, promo, and weather shifts.
-- **Agentic AI Solution**: Matches launch packaging and attributes to historical lookalikes. Cuts Weighted Absolute Percentage Error (WAPE) by 6.4 points, eliminates systematic sales bias, and feeds live uncertainty distributions directly into MEIO safety-stock solvers.
+- **Operational Problem**: $1.77T/yr global stockout & overstock distortion · 32%–45% manual Stock Keeping Unit (SKU)-week Weighted Absolute Percentage Error (WAPE). Retailers & Consumer Packaged Goods (CPG) firms lose $1.77 Trillion annually ($1.2T stockouts + $562B overstocks) due to lagged monthly Enterprise Resource Planning (ERP) forecasts that miss Point-of-Sale (POS), promo, and weather shifts.
+- **Agentic AI Solution**: Embeds New Product Introduction (NPI) packaging, price-tier, and formulation attributes using multimodal embeddings to match launches against historical Stock Keeping Unit (SKU) lookalike curves. Updates early-read trial and repeat velocity weekly via Bayesian updating and dynamically recalibrates initial 90-day factory and distribution center allocation quantities. Cuts Weighted Absolute Percentage Error (WAPE) by 6.4 points, eliminates systematic sales bias, and feeds live uncertainty distributions directly into MEIO safety-stock solvers.
 - **Quantified Business Outcome**: Clusters new SKU attributes against historical lookalikes and updates early POS velocity curves in week 1–4 to prevent launch stockouts or dead stock. (`52% 90-Day Error → 34% Analog Fit`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -102,7 +102,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 59%–67% of CPG trade promotions fail to break even · 4%–7% revenue leaked. Trade spend is typically the #2 P&L line item (15%–25% of gross sales), yet 59%–67% of promotions lose money due to subsidized baseline volume, forward-buying, and unverified retailer deductions.
-- **Agentic AI Solution**: Simulates price elasticity, shelf lift, and incremental spend return. Boosts net trade spend ROI by 22% and prevents promotional stockouts and post-promo bullwhip troughs.
+- **Agentic AI Solution**: Ingests historical trade promotion calendars, retail scanner price elasticity curves, and competitor markdown feeds to separate true incremental volume from pantry-loading and halo cannibalization. Simulates net-margin trade-offs across discount depths before funding lock and blocks unprofitable promotional events prior to customer sign-off. Boosts net trade spend ROI by 22% and prevents promotional stockouts and post-promo bullwhip troughs.
 - **Quantified Business Outcome**: Simulates baseline cannibalization, post-promo dip, and incremental gross margin before trade funds are committed—blocking unprofitable events. (`62% Losing Promos → Pre-Validated Lift`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -130,7 +130,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 59%–67% of CPG trade promotions fail to break even · 4%–7% revenue leaked. Trade spend is typically the #2 P&L line item (15%–25% of gross sales), yet 59%–67% of promotions lose money due to subsidized baseline volume, forward-buying, and unverified retailer deductions.
-- **Agentic AI Solution**: Creates customized sell-in story decks and joint promotional calendars. Drives +18.4% distributor case fill rate, eliminates out-of-stock pitches, and boosts daily productive store calls per FSO by 22%.
+- **Agentic AI Solution**: Synchronizes Distributor Management System (DMS) secondary sales, field-rep beat visit telemetry, and outlet stock-out signals across urban and rural retail territories. Scores outlet reorder propensity, sequences high-conversion daily beat routes, and pushes suggested primary-to-secondary replenishment orders to distributor portals. Drives +18.4% distributor case fill rate, eliminates out-of-stock pitches, and boosts daily productive store calls per FSO by 22%.
 - **Quantified Business Outcome**: Optimizes joint retailer-manufacturer volume, funding tiers, and display slotting simultaneously so trade investment grows net contribution. (`4–6 wk JBP Cycles → Live Margin Scenarios`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -158,7 +158,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 59%–67% of CPG trade promotions fail to break even · 4%–7% revenue leaked. Trade spend is typically the #2 P&L line item (15%–25% of gross sales), yet 59%–67% of promotions lose money due to subsidized baseline volume, forward-buying, and unverified retailer deductions.
-- **Agentic AI Solution**: Audits scanned proof-of-performance circulars and invoices via OCR. Compresses distributor claim settlement from 45 days to <2 hours with 99.8% dispute-free payouts, saving $6.8M in fraudulent or unearned claim leakages.
+- **Agentic AI Solution**: Cross-matches distributor trade-scheme deduction claims against contracted slab thresholds, verified secondary Point-of-Sale (POS) off-take, and proof-of-execution display photos. Flags duplicate, off-window, or inflated rebate lines automatically and posts net-verified credit settlements directly into Enterprise Resource Planning (ERP) finance ledgers. Compresses distributor claim settlement from 45 days to <2 hours with 99.8% dispute-free payouts, saving $6.8M in fraudulent or unearned claim leakages.
 - **Quantified Business Outcome**: Cross-matches retailer deduction claims against contracted scan dates, POS lift, and proof-of-performance—recovering invalid chargebacks. (`4.5% Claim Leakage → 94% Auto-Audited`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -186,7 +186,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 2–4 week manual S&OP reconciliation lag · 2%–4% EBITDA lost to siloed plans. Disconnected sales, plant, and finance spreadsheets take 15–22 business days to reconcile each month, forcing costly expedite freight and margin-dilutive allocation trade-offs.
-- **Agentic AI Solution**: Reconciles unconstrained demand with factory plant bottleneck limits. Compresses S&OP consensus from 21 days to a live 45-minute executive steering session while protecting gross margin (+180 bps) and OTIF.
+- **Agentic AI Solution**: Pulls unconstrained commercial demand, finite factory line capacities, supplier lead-time constraints, and working-capital targets from Google Cloud Cortex Framework into a Mixed-Integer Linear Programming (MILP) solver. Generates Pareto-optimal Sales and Operations Planning (S&OP) trade-off scenarios and writes the executive-approved consensus plan back to Integrated Business Planning (IBP). Compresses S&OP consensus from 21 days to a live 45-minute executive steering session while protecting gross margin (+180 bps) and OTIF.
 - **Quantified Business Outcome**: Translates supply-demand gaps into margin-optimal constrained scenarios (overtime vs. co-packer vs. air freight vs. customer priority). (`18d S&OP Cycle → Margin-Optimal Lock`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -214,7 +214,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 2–4 week manual S&OP reconciliation lag · 2%–4% EBITDA lost to siloed plans. Disconnected sales, plant, and finance spreadsheets take 15–22 business days to reconcile each month, forcing costly expedite freight and margin-dilutive allocation trade-offs.
-- **Agentic AI Solution**: Evaluates co-packer shifts and allocation trade-offs during supply outages. Cuts emergency spot/air expedite spend by 62% and preserves 99.1% OTIF continuity across all 6 supply chain verticals during major disruptions.
+- **Agentic AI Solution**: Monitors global weather radar, port congestion, geopolitical advisories, and multi-tier supplier telemetry 24/7 to map revenue-at-risk across affected Bills of Materials (BOM) and customer orders. Convenes autonomous sub-agents to simulate alternate sourcing, air/rail mode shifts, and buffer reallocations—staging 1-click recovery playbooks for war-room sign-off. Cuts emergency spot/air expedite spend by 62% and preserves 99.1% OTIF continuity across all 6 supply chain verticals during major disruptions.
 - **Quantified Business Outcome**: Maps port, plant, or supplier shocks to affected customer orders in minutes and executes the lowest-cost mitigation playbook to protect OTIF. (`72h Crisis Triage → <30m Playbook Lock`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -242,7 +242,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 2–4 week manual S&OP reconciliation lag · 2%–4% EBITDA lost to siloed plans. Disconnected sales, plant, and finance spreadsheets take 15–22 business days to reconcile each month, forcing costly expedite freight and margin-dilutive allocation trade-offs.
-- **Agentic AI Solution**: Generates pre-read decks and tracks sign-offs across cross-functional leads. Compresses cross-functional root-cause analysis from 5 days to 90 seconds and empowers all 26 supply chain personas with governed, zero-hallucination decision intelligence.
+- **Agentic AI Solution**: Unifies cross-pillar telemetry spanning forecast error, supplier risk, plant Overall Equipment Effectiveness (OEE), Multi-Echelon Inventory Optimization (MEIO), and On-Time In-Full (OTIF) delivery in BigQuery. Diagnoses root-cause margin and cash-conversion leaks across divisions, simulates executive what-if interventions, and dispatches governed actions to domain agents. Compresses cross-functional root-cause analysis from 5 days to 90 seconds and empowers all 26 supply chain personas with governed, zero-hallucination decision intelligence.
 - **Quantified Business Outcome**: Synthesizes cross-pillar service, cash-to-cash, and cost variances on demand—turning 5-day analyst deck cycles into instant executive action. (`5d Board Pack Prep → Live Root-Cause Twin`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -270,7 +270,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: Bottom 30%–50% of SKUs generate <5% of profit while trapping 25%+ of inventory. Unpruned long-tail SKUs, uncoordinated PIPO engineering cutovers, and static MOQs inflate changeover losses, obsolescence write-offs (1.5%–3% of COGS), and cost-to-serve.
-- **Agentic AI Solution**: Scores velocity, plant changeover cost, and shelf revenue yield. Unlocks $42M+ in Free Cash Flow per $1B revenue and compresses the enterprise Cash-to-Cash cycle by 9.4 days.
+- **Agentic AI Solution**: Evaluates every Stock Keeping Unit (SKU) across gross-margin contribution, demand volatility, working-capital tie-up, and shared raw-material dependencies using Cortex financial and inventory views. Identifies margin-dilutive long-tail items for rationalization, simulates phase-out markdown vs. component reuse paths, and stages Master Data lifecycle locks. Unlocks $42M+ in Free Cash Flow per $1B revenue and compresses the enterprise Cash-to-Cash cycle by 9.4 days.
 - **Quantified Business Outcome**: Scores every SKU on true net contribution after carrying, changeover, and obsolescence cost—unlocking trapped working capital from the long tail. (`34% Low-GMROI Tail → Pruned High-Velocity Mix`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -297,7 +297,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: Bottom 30%–50% of SKUs generate <5% of profit while trapping 25%+ of inventory. Unpruned long-tail SKUs, uncoordinated PIPO engineering cutovers, and static MOQs inflate changeover losses, obsolescence write-offs (1.5%–3% of COGS), and cost-to-serve.
-- **Agentic AI Solution**: Orchestrates transition buffers to sync packaging and formulation cuts. Reduces ECO obsolete component write-offs by 58% and accelerates New Product Introduction (NPI) time-to-volume by 3 weeks.
+- **Agentic AI Solution**: Tracks Engineering Change Orders (ECO), expiring component lots, open supplier Purchase Orders (PO), and factory work-in-progress across multi-level Bills of Materials (BOM). Solves for the zero-obsolescence cutover date that exhausts legacy stock without starving production lines and updates ERP BOM effectivity windows automatically. Reduces ECO obsolete component write-offs by 58% and accelerates New Product Introduction (NPI) time-to-volume by 3 weeks.
 - **Quantified Business Outcome**: Synchronizes old-component run-out with new-artwork/BOM ramp-up across plants and DCs to eliminate stranded packaging and obsolete inventory. (`2.4% PIPO Write-Offs → Zero-Waste Run-Out`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -325,7 +325,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: Bottom 30%–50% of SKUs generate <5% of profit while trapping 25%+ of inventory. Unpruned long-tail SKUs, uncoordinated PIPO engineering cutovers, and static MOQs inflate changeover losses, obsolescence write-offs (1.5%–3% of COGS), and cost-to-serve.
-- **Agentic AI Solution**: Calculates net-net margin across Club, Grocery, and eCommerce packs. Expands net contribution margin by +240 bps and cuts total network landed logistics cost by 11.5%.
+- **Agentic AI Solution**: Builds a geospatial digital twin of factories, Mother Godowns, Regional Distribution Centers (RDC), and customer demand clusters weighted by freight tariffs, labor rates, and tax regimes. Runs facility-location and lane-flow optimization under demand growth or disruption shocks, outputting multi-year capital and network realignment blueprints. Expands net contribution margin by +240 bps and cuts total network landed logistics cost by 11.5%.
 - **Quantified Business Outcome**: Computes granular SKU-customer-lane cost-to-serve and re-optimizes MOQs, pallet tiers, and DC sourcing assignments to restore pocket margin. (`14% Negative-Margin Lanes → Optimized MOQ & Nodes`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -356,7 +356,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 42% of 1 year's EBITDA lost per decade to shocks · 65%+ originate in Tier-2+. Over 65% of supply disruptions originate in unmapped Tier-2/Tier-3 sub-suppliers, while manual supplier qualification and Scope 3 audits stall sourcing agility for 4–8 weeks.
-- **Agentic AI Solution**: Monitors multi-tier supply feeds, port delays, and vendor financials. Detects and mitigates sub-tier disruptions 11 days earlier with zero factory line-stop hours.
+- **Agentic AI Solution**: Traverses multi-hop supplier dependency graphs across Tier-1 vendors, Tier-2 sub-assemblers, and Tier-3 raw-material processors linked with seismic, financial, and port disruption feeds. Pinpoints hidden single-source bottlenecks before factory starvation occurs and triggers dual-source Request for Quotation (RFQ) or safety-stock buffer actions. Detects and mitigates sub-tier disruptions 11 days earlier with zero factory line-stop hours.
 - **Quantified Business Outcome**: Continuously monitors sub-tier financial, geopolitical, weather, and port signals—triggering alternate allocations weeks before line stoppage. (`Tier-2+ Blindspots → Mapped Sub-Tier Shield`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -384,7 +384,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 42% of 1 year's EBITDA lost per decade to shocks · 65%+ originate in Tier-2+. Over 65% of supply disruptions originate in unmapped Tier-2/Tier-3 sub-suppliers, while manual supplier qualification and Scope 3 audits stall sourcing agility for 4–8 weeks.
-- **Agentic AI Solution**: Parses BRC/ISO audits, food-safety filings, and tax registrations. Reduces inbound supplier defect escapes (PPM) by 64% and recovers 95%+ of Cost of Poor Quality (COPQ).
+- **Agentic AI Solution**: Ingests incoming inspection Certificates of Analysis (COA), lot defect trends, and shop-floor Non-Conformance Reports (NCR) across raw-material and packaging vendors. Predicts lot-level quality drift before dock receipt, places automated Quality Management (QM) quarantine blocks on suspect batches, and issues Cost of Poor Quality (COPQ) supplier corrective actions. Reduces inbound supplier defect escapes (PPM) by 64% and recovers 95%+ of Cost of Poor Quality (COPQ).
 - **Quantified Business Outcome**: Automates ISO/HACCP certificate verification, financial health scoring, and sanctions screening—cutting vendor qualification from weeks to hours. (`4–6 wk Onboarding → <36h Automated Vetting`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -412,7 +412,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 42% of 1 year's EBITDA lost per decade to shocks · 65%+ originate in Tier-2+. Over 65% of supply disruptions originate in unmapped Tier-2/Tier-3 sub-suppliers, while manual supplier qualification and Scope 3 audits stall sourcing agility for 4–8 weeks.
-- **Agentic AI Solution**: Standardizes chain-of-custody certificates (RSPO/FSC) and packaging LCAs. Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness.
+- **Agentic AI Solution**: Aggregates shipment-level weight, multi-modal transport distance, supplier primary energy mix, and Bill of Materials (BOM) lineage via Google Cloud Cortex Framework sustainability views. Calculates auditable Greenhouse Gas (GHG) Scope-3 and Carbon Border Adjustment Mechanism (CBAM) emissions per SKU and generates compliant regulatory disclosure dossiers. Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness.
 - **Quantified Business Outcome**: Replaces coarse spend-based averages with primary supplier + lane emissions—preventing EU CBAM penalties and cutting external assurance fees. (`Spend-Factor Estimates → SKU-Level Primary Ledger`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -440,7 +440,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 6%–14% supplier quote variance vs. clean-sheet · rising EU EPR/PPWR fees. Without live commodity index decomposition and clean-sheet BOM models, buyers overpay by 5%–12% on direct materials and face escalating Extended Producer Responsibility (EPR) packaging levies.
-- **Agentic AI Solution**: Correlates CBOT/Platts feedstocks with depletion to advise hedging. Delivers 6.8% direct material savings and compresses RFQ bid analysis from 3 weeks to 15 minutes.
+- **Agentic AI Solution**: Tracks live London Metal Exchange (LME), resin, agricultural, energy, and currency forward curves alongside ERP raw-material exposure and supplier indexation clauses. Quantifies purchase-price variance risk across upcoming quarters, recommends optimal physical forward-buy vs. financial hedge split windows, and alerts category buyers. Delivers 6.8% direct material savings and compresses RFQ bid analysis from 3 weeks to 15 minutes.
 - **Quantified Business Outcome**: Tracks LME, resin, pulp, energy, and agri-commodity curves against BOM exposure to recommend optimal forward-contract split and index clauses. (`Spot Peak Buying → Index-Timed Forward Locks`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -468,7 +468,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 6%–14% supplier quote variance vs. clean-sheet · rising EU EPR/PPWR fees. Without live commodity index decomposition and clean-sheet BOM models, buyers overpay by 5%–12% on direct materials and face escalating Extended Producer Responsibility (EPR) packaging levies.
-- **Agentic AI Solution**: Deconstructs packaging specs (resin weight, corrugate, conversion energy). Delivers 6.8% direct material savings and compresses RFQ bid analysis from 3 weeks to 15 minutes.
+- **Agentic AI Solution**: Decomposes supplier Request for Quotation (RFQ) bids into raw-material market indices, machine cycle times, packaging specs, labor rates, and freight lanes using parametric clean-sheet models. Highlights line-by-line vendor margin markups above fair should-cost corridors and drafts data-backed negotiation counter-offers ready for sourcing sign-off. Delivers 6.8% direct material savings and compresses RFQ bid analysis from 3 weeks to 15 minutes.
 - **Quantified Business Outcome**: Decomposes every supplier quote into raw material, conversion, energy, logistics, and margin—arming buyers with hard clean-sheet leverage. (`Opaque Vendor Quotes → Clean-Sheet Should-Cost`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -496,7 +496,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 6%–14% supplier quote variance vs. clean-sheet · rising EU EPR/PPWR fees. Without live commodity index decomposition and clean-sheet BOM models, buyers overpay by 5%–12% on direct materials and face escalating Extended Producer Responsibility (EPR) packaging levies.
-- **Agentic AI Solution**: Evaluates PCR resins and barrier materials against line runnability & taxes. Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness.
+- **Agentic AI Solution**: Evaluates primary and corrugated secondary packaging specifications against crush-strength physics, pallet cube efficiency, Extended Producer Responsibility (EPR) fees, and resin costs. Simulates lightweighting and recycled-content substitutions that pass transit drop tests while lowering per-unit material cost and plastic tax liability. Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness.
 - **Quantified Business Outcome**: Balances resin/fiber cost, crush/barrier physics, and country-by-country EPR/PPWR eco-modulation fees to lower total packaging cost. (`EPR Penalty Exposure → Lightweight Recyclable Spec`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -524,7 +524,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: $12.88–$15.96 per manual invoice vs. $2.18 digital · 3%–5% contract leakage. Enterprises lose 3%–5% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.
-- **Agentic AI Solution**: Reconciles live spend against negotiated rebate tiers and volume discount scales. Achieves 99.6% customs and contract audit accuracy while recovering 100% of earned supplier rebates.
+- **Agentic AI Solution**: Parses supplier Master Service Agreements (MSA), Harmonized System (HS) customs classifications, Free Trade Agreement rules of origin, and forced-labor/deforestation screening feeds. Flags tariff engineering savings and non-compliant contract clauses automatically, placing Global Trade Services (GTS) holds on unverified cross-border shipments. Achieves 99.6% customs and contract audit accuracy while recovering 100% of earned supplier rebates.
 - **Quantified Business Outcome**: Audits live POs and invoices against master PDF contract tiers, volume rebates, and de-escalation clauses to stop off-contract value leakage. (`3.8% Contract Leakage → 100% Tier & Clause Capture`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -552,7 +552,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: $12.88–$15.96 per manual invoice vs. $2.18 digital · 3%–5% contract leakage. Enterprises lose 3%–5% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.
-- **Agentic AI Solution**: Monitors EDI 855/856 delay feeds and orchestrates supplier split-shipments. Achieves 99.8% master data accuracy across ERP, WMS, and TMS—eliminating false MRP exceptions and boosting planner adoption across all 26 personas.
+- **Agentic AI Solution**: Continuously compares static Enterprise Resource Planning (ERP) planned lead times, Minimum Order Quantities (MOQ), and rounding profiles against actual historical Purchase Order-to-dock receipt timestamps. Detects systematic vendor lead-time drift and stages governed SAP Material Master (`MARC`) parameter updates so planning solvers never run on stale assumptions. Achieves 99.8% master data accuracy across ERP, WMS, and TMS—eliminating false MRP exceptions and boosting planner adoption across all 26 personas.
 - **Quantified Business Outcome**: Continuously recalibrates ERP vendor lead times and autonomously resolves ~70% of routine PO acknowledgments and date slips before expedite crises. (`Stale Static Lead Times → 70% Auto-Resolved POs`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -579,7 +579,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: $12.88–$15.96 per manual invoice vs. $2.18 digital · 3%–5% contract leakage. Enterprises lose 3%–5% of contracted savings to uncaptured volume rebates, off-contract price creep, missed 2/10 Net 30 early-pay discounts, and manual 3-way match holds.
-- **Agentic AI Solution**: Diagnoses price/quantity discrepancies across POs, GRNs, and carrier invoices. Achieves 99.6% customs and contract audit accuracy while recovering 100% of earned supplier rebates.
+- **Agentic AI Solution**: Cross-examines Enterprise Resource Planning (ERP) Purchase Orders (PO), Warehouse Management System (WMS) barcode Goods Receipt Notes (GRN), and vendor invoices line by line via Cortex data products. Isolates unit-price creep, short-shipped quantities, and unapproved freight surcharges, parks automated debit memos, and releases verified net payables in time to capture early-pay discounts. Achieves 99.6% customs and contract audit accuracy while recovering 100% of earned supplier rebates.
 - **Quantified Business Outcome**: Reconciles PO, Goods Receipt (ASN/GRN), and Invoice line variances automatically—capturing early-payment discounts and cutting AP unit cost by 80%. (`24% Blocked Invoices → 93% Touchless 3-Way Match`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -610,7 +610,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 12%–22% scheduled runtime lost to changeovers & reactive line re-sequencing. Sequence-blind ERP schedules trigger excessive allergen/color washouts, uncertified shift bottlenecks, and hours of manual schedule rebuilding whenever a machine or material slips.
-- **Agentic AI Solution**: Sequences allergen, kosher, and packaging runs to minimize washdowns. Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25% (GE Appliances Brilliant Factory benchmark).
+- **Agentic AI Solution**: Ingests open customer priorities, component availability, sequence-dependent allergen/color changeover matrices, and shift labor calendars into a Constraint Programming (CP-SAT) job-shop solver. Generates conflict-free finite line schedules that minimize washdown downtime and publishes executable dispatch sequences to the Manufacturing Execution System (MES). Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25% (GE Appliances Brilliant Factory benchmark).
 - **Quantified Business Outcome**: Solves finite-capacity campaign wheels across allergens, colors, and pack formats—cutting sanitation/changeover downtime by 15%–25%. (`18% Washout Runtime Loss → Campaign-Sequenced OEE`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -638,7 +638,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 12%–22% scheduled runtime lost to changeovers & reactive line re-sequencing. Sequence-blind ERP schedules trigger excessive allergen/color washouts, uncertified shift bottlenecks, and hours of manual schedule rebuilding whenever a machine or material slips.
-- **Agentic AI Solution**: Detects machine halts and re-routes perishable WIP to alternate lines. Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25% (GE Appliances Brilliant Factory benchmark).
+- **Agentic AI Solution**: Synchronizes real-time filling, packaging, and assembly line speeds with upstream batch readiness and downstream packaging material staging across plant work centers. Dynamically re-sequences campaigns when machine micro-stops or rush orders occur, protecting throughput and preventing WIP starvation without manual whiteboard rescheduling. Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25% (GE Appliances Brilliant Factory benchmark).
 - **Quantified Business Outcome**: Re-optimizes shift schedules in under 3 minutes when a filler trips or raw material arrives late—minimizing lost cases and missed dispatch waves. (`3.5h Line-Down Chaos → <3m Margin-Safe Resequence`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -666,7 +666,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 12%–22% scheduled runtime lost to changeovers & reactive line re-sequencing. Sequence-blind ERP schedules trigger excessive allergen/color washouts, uncertified shift bottlenecks, and hours of manual schedule rebuilding whenever a machine or material slips.
-- **Agentic AI Solution**: Maps shift skill certifications and fatigue constraints to line speeds. Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25% (GE Appliances Brilliant Factory benchmark).
+- **Agentic AI Solution**: Combines shift attendance rosters, operator skill-certification matrices, ergonomic rotation rules, and hourly production takt-time targets across manufacturing lines. Solves optimal station-by-station crew assignments at shift start and dynamically reallocates cross-trained operators mid-shift to eliminate bottleneck station queues. Reduces sequence-dependent changeover downtime by 32% and cuts customer backorders by 25% (GE Appliances Brilliant Factory benchmark).
 - **Quantified Business Outcome**: Matches certified operator skills, absenteeism signals, and ergonomic rotation rules to live line schedules—cutting overtime and micro-stoppages. (`14% Overtime Premium → Skill-Balanced Crewing`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -694,7 +694,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 5%–20% of manufacturing capacity lost to unplanned downtime ($50B+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%–25% unit cost penalty) and poorly targeted CapEx expansions.
-- **Agentic AI Solution**: Assesses CIP utilities, boiler loads, and cold storage holding limits. Lifts plant Overall Equipment Effectiveness (OEE) by +14.2 points and cuts unplanned line stops by 48%.
+- **Agentic AI Solution**: Streams high-frequency spindle vibration spectrograms, motor current draw, bearing thermal sensors, and SCADA fault codes to detect early equipment degradation signatures. Predicts Remaining Useful Life (RUL) days ahead of catastrophic breakdown and schedules targeted maintenance work orders inside planned changeover windows to protect Overall Equipment Effectiveness (OEE). Lifts plant Overall Equipment Effectiveness (OEE) by +14.2 points and cuts unplanned line stops by 48%.
 - **Quantified Business Outcome**: Combines PLC telemetry with 6-month Rough-Cut Capacity Planning (RCCP) to prevent unplanned breakdowns and expose plant bottlenecks months ahead. (`11% Unplanned Stops → 90-Day Bottleneck Shield`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -722,7 +722,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 5%–20% of manufacturing capacity lost to unplanned downtime ($50B+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%–25% unit cost penalty) and poorly targeted CapEx expansions.
-- **Agentic AI Solution**: Models internal conversion costs against co-packer tolling agreements. Compresses S&OP consensus from 21 days to a live 45-minute executive steering session while protecting gross margin (+180 bps) and OTIF.
+- **Agentic AI Solution**: Consolidates external contract-manufacturer tolling fees, yield loss rates, minimum volume commitments, quality scores, and outbound freight distances to regional depots. Solves optimal make-vs-buy and co-packer volume allocations across plants and dispatches synchronized subcontracting Purchase Orders (PO) and component transfer schedules. Compresses S&OP consensus from 21 days to a live 45-minute executive steering session while protecting gross margin (+180 bps) and OTIF.
 - **Quantified Business Outcome**: Allocates SKUs across internal plants and external CMOs by optimizing conversion fees, component freight, MOQ tiers, and delivered gross margin. (`16% Tolling Penalty → Landed-Margin Optimal Split`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -750,7 +750,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 5%–20% of manufacturing capacity lost to unplanned downtime ($50B+/yr). Late detection of OEE bottlenecks forces reactive external co-packer allocation (+12%–25% unit cost penalty) and poorly targeted CapEx expansions.
-- **Agentic AI Solution**: Simulates multi-year volume trends to test high-speed line expansions. Expands net contribution margin by +240 bps and cuts total network landed logistics cost by 11.5%.
+- **Agentic AI Solution**: Models multi-year line utilization, seasonal peak bottlenecks, automation throughput gains, and Weighted Average Cost of Capital (WACC) hurdles across the manufacturing footprint. Runs Monte Carlo demand stress-tests to compare brownfield debottlenecking vs. greenfield line Capital Expenditure (CapEx) payback and Net Present Value (NPV). Expands net contribution margin by +240 bps and cuts total network landed logistics cost by 11.5%.
 - **Quantified Business Outcome**: Stress-tests new line, automation, and plant investments across stochastic demand, tariff, and OEE scenarios before committing board capital. (`Static Spreadsheet IRR → Monte-Carlo Network ROIC`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -778,7 +778,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: COPQ erodes 3%–8% of manufacturing COGS · 7–18 days manual batch QA hold. End-of-line sampling catches defects only after full pallets are produced, while manual paper/PDF batch record review traps finished goods in quarantine for 1–2+ weeks.
-- **Agentic AI Solution**: Inspects high-speed video frames for crimped seals, lot codes, and labels. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.
+- **Agentic AI Solution**: Runs real-time multimodal computer vision over high-speed line cameras paired with fill-weight checkweighers and seal-integrity sensors to catch micro-defects in milliseconds. Triggers pneumatic diverter gates on non-conforming units immediately and correlates defect clusters back to upstream temperature, torque, or film-tension drift. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.
 - **Quantified Business Outcome**: Detects seal, fill, label, and surface defects inline in milliseconds—halting drift before whole pallets turn into scrap or rework. (`3.6% Line Defect Scrap → <1.8% Closed-Loop Yield`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -806,7 +806,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: COPQ erodes 3%–8% of manufacturing COGS · 7–18 days manual batch QA hold. End-of-line sampling catches defects only after full pallets are produced, while manual paper/PDF batch record review traps finished goods in quarantine for 1–2+ weeks.
-- **Agentic AI Solution**: Parses BPR and COA documents to flag pasteurization & CCP deviations. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.
+- **Agentic AI Solution**: Reviews Electronic Batch Manufacturing Records (eBMR), inline Quality Assurance (QA) test results, equipment calibration logs, and Standard Operating Procedure (SOP) tolerances automatically. Implements Review-by-Exception—clearing 100%-compliant batches for immediate warehouse release while routing parameter deviations with root-cause packets to QA leads. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.
 - **Quantified Business Outcome**: Audits electronic/scanned batch records, LIMS lab results, and sterilization logs automatically—freeing millions in quarantined finished goods. (`12d Quarantine Lockup → Review-by-Exception (<24h)`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -834,7 +834,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: COPQ erodes 3%–8% of manufacturing COGS · 7–18 days manual batch QA hold. End-of-line sampling catches defects only after full pallets are produced, while manual paper/PDF batch record review traps finished goods in quarantine for 1–2+ weeks.
-- **Agentic AI Solution**: Correlates consumer complaints with ingredient lots and machine telemetry. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.
+- **Agentic AI Solution**: Correlates shop-floor scrap tallies, rework codes, ambient plant humidity/temperature, raw-material supplier lot IDs, and PLC machine setpoints across historical production runs. Isolates the exact multi-variable interaction driving yield loss and recommends verified golden-batch parameter setpoints to line supervisors. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.
 - **Quantified Business Outcome**: Correlates supplier raw-material lots, ambient humidity, operator shifts, and machine parameters to isolate true root causes and prevent repeat scrap. (`21d 5-Why Investigation → 4h Multi-Variate RCA`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -865,7 +865,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 25%–32% annual inventory carrying cost · 20%–35% excess single-node buffer. Static ERP reorder rules buffer each DC independently—trapping 20%–35% excess working capital in slow movers while fast-moving regional hubs still suffer stockouts.
-- **Agentic AI Solution**: Recalibrates multi-echelon buffers using live lead-time and demand variance. Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate.
+- **Agentic AI Solution**: Models coupled demand variance and replenishment lead-time uncertainty across factories, Mother Godowns, Regional Distribution Centers (RDC), and forward depots using stochastic Multi-Echelon Inventory Optimization (MEIO). Rebalances safety-stock buffers upstream vs. downstream to hit target service levels with minimal working capital and writes optimal reorder points back to ERP. Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate.
 - **Quantified Business Outcome**: Simultaneously optimizes safety stocks across plants, central hubs, and regional DCs—freeing 12%–22% in working capital while lifting fill rates. (`Static Single-DC Buffers → Multi-Echelon Optimal Stock`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -893,7 +893,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 25%–32% annual inventory carrying cost · 20%–35% excess single-node buffer. Static ERP reorder rules buffer each DC independently—trapping 20%–35% excess working capital in slow movers while fast-moving regional hubs still suffer stockouts.
-- **Agentic AI Solution**: Analyzes shelf-life risk and triggers promotional bundles or liquidations. Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate.
+- **Agentic AI Solution**: Monitors batch aging, shelf-life decay, Days Inventory Outstanding (DIO), and regional sell-through velocity to flag Slow-Moving and Obsolete (SLOB) stock weeks before write-off. Ranks lateral inter-depot transfers, promotional bundling, B2B secondary liquidation, and markdown recovery paths by net cash recovery and triggers approved disposition orders. Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate.
 - **Quantified Business Outcome**: Flags slow-moving and aging lots 60–90 days earlier and ranks inter-DC transfer, promo bundling, or secondary channels to avoid write-offs. (`2.8% Obsolescence Write-Off → Early Margin Recovery`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -921,7 +921,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 25%–32% annual inventory carrying cost · 20%–35% excess single-node buffer. Static ERP reorder rules buffer each DC independently—trapping 20%–35% excess working capital in slow movers while fast-moving regional hubs still suffer stockouts.
-- **Agentic AI Solution**: Generates automated inter-DC and store transfers to balance localized gluts. Slashes cross-dock terminal dwell time by 52%, eliminates double putaway/pick handling on 38% of volume, and accelerates port/rail-to-customer lead times by 1.8 days.
+- **Agentic AI Solution**: Matches inbound supplier Advance Shipping Notices (ASN) and ocean/highway arrival ETAs against urgent outbound store and customer backorders in real time. Diverts high-priority pallets directly from receiving doors to outbound staging lanes—bypassing put-away storage and cutting dock-to-dispatch cycle times. Slashes cross-dock terminal dwell time by 52%, eliminates double putaway/pick handling on 38% of volume, and accelerates port/rail-to-customer lead times by 1.8 days.
 - **Quantified Business Outcome**: Balances inventory imbalances across regional DCs before stockouts hit—weighing transfer freight cost against saved gross margin and OTIF penalties. (`Imbalanced Regional DCs → Pre-Positioned Hub Balance`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -949,7 +949,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: Order picking = 50%–55% of DC operating cost · ~55% of picker time is walking. Static warehouse slotting, congested receiving docks (6–24h dock-to-stock lag), and rigid wave releases waste over half of floor labor in unproductive travel and overtime.
-- **Agentic AI Solution**: Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting. Reduces picker travel distance by 28% and boosts Units Picked Per Hour (UPH) by 24%.
+- **Agentic AI Solution**: Analyzes SKU pick velocity, order co-affinity pairs, case dimensions, crushability constraints, and ergonomic golden-zone heights across 3D warehouse rack topologies. Computes congestion-free dynamic re-slotting moves during off-peak windows and dispatches prioritized put-away and interleaving tasks to the Warehouse Management System (WMS). Reduces picker travel distance by 28% and boosts Units Picked Per Hour (UPH) by 24%.
 - **Quantified Business Outcome**: Re-slots fast-moving and co-ordered SKUs into ergonomic golden zones and optimizes TSP pick paths—boosting DC throughput with $0 automation CapEx. (`55% Aisle Walk Waste → Velocity & Affinity Slotted`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -977,7 +977,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: Order picking = 50%–55% of DC operating cost · ~55% of picker time is walking. Static warehouse slotting, congested receiving docks (6–24h dock-to-stock lag), and rigid wave releases waste over half of floor labor in unproductive travel and overtime.
-- **Agentic AI Solution**: Parses scanned BOLs and pallet photos to reconcile open ASN variances. Cuts trailer yard turnaround time by 41% and reduces carrier detention payouts by 82%.
+- **Agentic AI Solution**: Ingests inbound carrier appointments, barcode/vision pallet scans, Purchase Order (PO) tolerances, and put-away bin availability at the receiving dock. Automates ASN-to-receipt verification, assigns optimal directed put-away locations immediately upon scan, and clears compliant stock into Available-to-Promise (ATP) inventory in minutes. Cuts trailer yard turnaround time by 41% and reduces carrier detention payouts by 82%.
 - **Quantified Business Outcome**: Prioritizes inbound trailers holding stockout/backorder SKUs and directs instant putaway or cross-docking—clearing receiving bottlenecks. (`14h Staging Congestion → 75m ASN-Directed Putaway`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1005,7 +1005,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: Order picking = 50%–55% of DC operating cost · ~55% of picker time is walking. Static warehouse slotting, congested receiving docks (6–24h dock-to-stock lag), and rigid wave releases waste over half of floor labor in unproductive travel and overtime.
-- **Agentic AI Solution**: Balances picker lines dynamically to protect carrier pickup cutoff times. Reduces picker travel distance by 28% and boosts Units Picked Per Hour (UPH) by 24%.
+- **Agentic AI Solution**: Continuously balances e-commerce and retail replenishment order cutoffs, carrier departure deadlines, pick-zone congestion, and pack-station labor capacity across the fulfillment floor. Releases dynamic, workload-leveled pick waves and re-routes picker batches in real time so 100% of carrier pull times are met without end-of-shift overtime spikes. Reduces picker travel distance by 28% and boosts Units Picked Per Hour (UPH) by 24%.
 - **Quantified Business Outcome**: Monitors pick, sort, and pack-wall queues in real time—re-prioritizing waves and labor zones so every carrier trailer departs on time in full. (`Missed 4PM Carrier Cutoffs → Dynamic Wave Re-Balancing`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1033,7 +1033,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 8%–15% store inventory record inaccuracy · 2.1x parcel cost on split orders. Phantom store stock triggers 6%–12% BOPIS/Ship-From-Store cancellations and costly multi-node split shipments, while sellable returns sit un-restocked for 5–14 days.
-- **Agentic AI Solution**: Identifies shrinkage anomalies when on-hand stock stops scanning at POS. Delivers 98.7% planogram audit accuracy, compresses audit cycles from weeks to sub-seconds, and prevents $4.2M in unearned retailer visibility payouts.
+- **Agentic AI Solution**: Analyzes mobile shelf photos captured by field merchandisers using Gemini multimodal vision to verify SKU facings, eye-level share-of-shelf, price tags, and promo POSM compliance. Flags phantom stockouts where backroom inventory exists on store ledgers and dispatches instant shelf-restocking tasks to store staff. Delivers 98.7% planogram audit accuracy, compresses audit cycles from weeks to sub-seconds, and prevents $4.2M in unearned retailer visibility payouts.
 - **Quantified Business Outcome**: Detects zero-scan POS velocity anomalies and shelf gaps to eliminate phantom inventory—lifting on-shelf availability and stopping BOPIS cancels. (`11% Ghost Inventory → 98.5% Shelf Accuracy`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1061,7 +1061,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 8%–15% store inventory record inaccuracy · 2.1x parcel cost on split orders. Phantom store stock triggers 6%–12% BOPIS/Ship-From-Store cancellations and costly multi-node split shipments, while sellable returns sit un-restocked for 5–14 days.
-- **Agentic AI Solution**: Selects lowest-cost fulfillment nodes based on store labor and parcel zones. Cuts split shipments by 34% while sustaining 98.7% On-Time In-Full (OTIF) delivery.
+- **Agentic AI Solution**: Evaluates real-time omnichannel inventory across distribution centers, dark stores, and retail backrooms alongside parcel shipping zones, split-shipment costs, and customer tier SLAs. Selects the highest-margin Ship-From-Store (SFS), Buy-Online-Pickup-In-Store (BOPIS), or depot fulfillment node in under 50ms while protecting strategic channel allocations. Cuts split shipments by 34% while sustaining 98.7% On-Time In-Full (OTIF) delivery.
 - **Quantified Business Outcome**: Routes every e-commerce and BOPIS order to the DC or store that maximizes net order margin across parcel zone cost, split risk, and markdown avoidance. (`19% Split-Order Rate → Margin-Optimal Node Promise`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1089,7 +1089,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 8%–15% store inventory record inaccuracy · 2.1x parcel cost on split orders. Phantom store stock triggers 6%–12% BOPIS/Ship-From-Store cancellations and costly multi-node split shipments, while sellable returns sit un-restocked for 5–14 days.
-- **Agentic AI Solution**: Evaluates item condition scans to triage restock, vendor return, or liquidation. Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend.
+- **Agentic AI Solution**: Inspects returned parcel condition photos, reason codes, warranty entitlements, and current regional resale demand the moment an RMA is initiated or scanned at the dock. Routes Grade-A items directly to high-velocity fulfillment centers instead of central return depots—recovering full-price resale velocity before seasonal markdowns. Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend.
 - **Quantified Business Outcome**: Grades returned items at first touch and immediately restores Grade-A stock to sellable ATP—capturing full-price resale before seasonal markdowns. (`9d Return Quarantine → <24h Grade-A Resale Live`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1120,7 +1120,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: $2.27/mile trucking cost · 24%–32% unused trailer cube · $1.1B+ detention fees. Weight-only load planning ships 25%+ air, uncoordinated plant yards incur $75–$150/hr carrier detention after 2 hours, and reefer excursions spoil 2%–5% of cold-chain loads.
-- **Agentic AI Solution**: Consolidates vendor LTLs into multi-stop FTL linehauls via cube & weight modeling. Achieves 92% 3D trailer and container cube utilization with 100% LIFO and highway axle compliance—zero dock re-handling.
+- **Agentic AI Solution**: Pools Less-Than-Truckload (LTL) orders sharing compatible delivery windows and corridors into multi-stop Full-Truckload (FTL) dispatches using a 3D Last-In-First-Out (LIFO) bin-packing solver. Enforces axle-weight, stackability, and stop-sequence unloading rules while publishing visual 3D load diagrams to dock loaders and Transportation Management Systems (TMS). Achieves 92% 3D trailer and container cube utilization with 100% LIFO and highway axle compliance—zero dock re-handling.
 - **Quantified Business Outcome**: Solves 3D bin-packing, bridge-formula axle weights, and LIFO stop unloading order—shipping the same volume in 10%–15% fewer trucks. (`28% Unused Trailer Air → Axle-Legal 3D Multi-Stop`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1148,7 +1148,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: $2.27/mile trucking cost · 24%–32% unused trailer cube · $1.1B+ detention fees. Weight-only load planning ships 25%+ air, uncoordinated plant yards incur $75–$150/hr carrier detention after 2 hours, and reefer excursions spoil 2%–5% of cold-chain loads.
-- **Agentic AI Solution**: Parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically. Cuts trailer yard turnaround time by 41% and reduces carrier detention payouts by 82%.
+- **Agentic AI Solution**: Fuses GPS gate-arrival geofences, live dock-door turnaround telemetry, forklift crew availability, and carrier detention-fee clocks across plant and distribution yards. Dynamically assigns incoming trailers to optimal doors, sequences yard-jockey hostling moves, and eliminates gate queues and carrier demurrage penalties. Cuts trailer yard turnaround time by 41% and reduces carrier detention payouts by 82%.
 - **Quantified Business Outcome**: Synchronizes live carrier GPS ETAs, yard jockey moves, and dock door crew capacity to eliminate gate queues, detention fees, and plant starvation. (`$110/hr Gate Wait Fees → <35m Sequenced Turnaround`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1176,7 +1176,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: $2.27/mile trucking cost · 24%–32% unused trailer cube · $1.1B+ detention fees. Weight-only load planning ships 25%+ air, uncoordinated plant yards incur $75–$150/hr carrier detention after 2 hours, and reefer excursions spoil 2%–5% of cold-chain loads.
-- **Agentic AI Solution**: Analyzes reefer IoT telemetry to flag thermal excursions and file carrier claims. Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically.
+- **Agentic AI Solution**: Streams multi-zone Bluetooth/cellular reefer temperature, door-open events, and compressor health logs into an Arrhenius Mean Kinetic Temperature (MKT) shelf-life solver. Distinguishes harmless defrost spikes from true thermal excursions in transit, triggers driver setpoint corrections, and quarantines compromised lots prior to customer delivery. Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically.
 - **Quantified Business Outcome**: Monitors continuous IoT temperature/humidity and calculates Mean Kinetic Temperature (MKT) in transit—intervening before perishable or pharma loads spoil. (`3.2% Excursion Rejection → Live MKT Intervention`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1204,7 +1204,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: In-store handling = ~50% of retail supply chain labor · 18%–28% backroom overflow. Mixed-aisle DC pallets force store associates to sort cases multiple times on the sales floor, while backroom-blind pushes and municipal noise/curfew violations erode store margin.
-- **Agentic AI Solution**: Sequences DC pick waves to match individual store planograms and shelf layouts. Reduces total air cargo spend by 28%, eliminates volumetric weight penalties by 21%, and achieves 99.6% cold-chain tarmac connection compliance.
+- **Agentic AI Solution**: Combines store aisle planogram maps, case dimensions, compressive strength limits, and axle-weight rules inside a 3D mixed-case palletization solver. Generates stable, aisle-friendly layer patterns for robotic palletizers and voice-pickers so store crews roll pallets straight to shelves with minimal backroom sorting. Reduces total air cargo spend by 28%, eliminates volumetric weight penalties by 21%, and achieves 99.6% cold-chain tarmac connection compliance.
 - **Quantified Business Outcome**: Builds DC pallets sequenced to each store's exact planogram aisle layout and case crush physics—slashing in-store restocking labor by 20%–35%. (`Mixed-Aisle Sort Chaos → Aisle-Pure Roll-Off Pallets`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1232,7 +1232,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: In-store handling = ~50% of retail supply chain labor · 18%–28% backroom overflow. Mixed-aisle DC pallets force store associates to sort cases multiple times on the sales floor, while backroom-blind pushes and municipal noise/curfew violations erode store margin.
-- **Agentic AI Solution**: Throttles push replenishment based on store backroom limits and live POS velocity. Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate.
+- **Agentic AI Solution**: Tracks retail backroom cubic utilization, cooler/freezer door capacity, store receiving crew hours, and promotional delivery surges across every store format. Throttles and smooths non-urgent replenishment deliveries ahead of peak drops so store backrooms never gridlock and shelf-stocking labor stays productive. Releases 18% of inventory working capital while sustaining a 99.4% customer line-fill rate.
 - **Quantified Business Outcome**: Caps and paces DC replenishment dispatches against each store's live backroom cubic capacity and receiving labor—preventing overflow and damage. (`Congested Store Backrooms → Cubic-Paced Delivery Waves`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1260,7 +1260,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: In-store handling = ~50% of retail supply chain labor · 18%–28% backroom overflow. Mixed-aisle DC pallets force store associates to sort cases multiple times on the sales floor, while backroom-blind pushes and municipal noise/curfew violations erode store margin.
-- **Agentic AI Solution**: Coordinates municipal delivery curfews and store dock shift schedules dynamically. Slashes port demurrage and container detention fees by 67% and cuts factory-to-port-to-DC lead-time variability by 38%.
+- **Agentic AI Solution**: Synchronizes ocean vessel berthing updates, terminal container availability, port Last Free Day (LFD) demurrage clocks, municipal no-entry truck curfews, and drayage chassis pools. Books optimal terminal gate appointments and sequences night-window depot drops to eliminate port storage fees and urban curfew fines. Slashes port demurrage and container detention fees by 67% and cuts factory-to-port-to-DC lead-time variability by 38%.
 - **Quantified Business Outcome**: Aligns store dispatch times, EV/low-noise tractor assignment, and urban curfew/school-zone rules to eliminate municipal fines and refused drops. (`Curfew Fines & Refusals → Noise/EV/Window Sequenced`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1288,7 +1288,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: Last-mile = 53% of total shipping cost · $15–$18 cost per failed delivery. 4%–8% of e-commerce parcels fail first-attempt delivery due to bad rooftop geocodes, static carrier selection overpays on parcel zones, and WISMO calls drive 35%–45% of support tickets.
-- **Agentic AI Solution**: Interprets gate codes, apartment delivery notes, and aerial imagery to guide drivers. Reduces daily road fleet dispatch cost by 19.4% and route mileage by 21.8% with 99.4% time-window adherence.
+- **Agentic AI Solution**: Cleanses messy unstructured delivery addresses using historical driver GPS breadcrumb traces, loading-bay geofence polygons, vehicle height/weight restrictions, and store receiving hours. Pins exact dock-door coordinates and turnaround service times so last-mile routing engines prevent failed deliveries and urban re-attempt miles. Reduces daily road fleet dispatch cost by 19.4% and route mileage by 21.8% with 99.4% time-window adherence.
 - **Quantified Business Outcome**: Validates address rooftop/loading-bay coordinates and driver access notes before dispatch—eliminating $15–$18 failed-delivery redelivery costs. (`6.4% Failed-Drop Re-Runs → Rooftop & Gate-Pin Verified`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1316,7 +1316,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: Last-mile = 53% of total shipping cost · $15–$18 cost per failed delivery. 4%–8% of e-commerce parcels fail first-attempt delivery due to bad rooftop geocodes, static carrier selection overpays on parcel zones, and WISMO calls drive 35%–45% of support tickets.
-- **Agentic AI Solution**: Routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card. Cuts total global factory-to-DC transportation and expedite cost by 24% while maintaining 99.2% customer product availability.
+- **Agentic AI Solution**: Evaluates lane-by-lane shipment urgency, downstream safety-stock coverage, carbon budgets, and spot vs. contracted tariffs across air, ocean, intermodal rail, and road fleet modes. Shifts non-critical air expedites to ocean/rail while selectively upgrading stockout-critical lots—cutting total landed freight cost and Scope-3 transport emissions. Cuts total global factory-to-DC transportation and expedite cost by 24% while maintaining 99.2% customer product availability.
 - **Quantified Business Outcome**: Dynamically selects the lowest-cost parcel, regional courier, crowdsourced, or LTL mode per order that still hits the promised customer delivery date. (`Static Carrier Overpay → Dynamic Rate- & SLA-Shopped`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1344,7 +1344,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: Last-mile = 53% of total shipping cost · $15–$18 cost per failed delivery. 4%–8% of e-commerce parcels fail first-attempt delivery due to bad rooftop geocodes, static carrier selection overpays on parcel zones, and WISMO calls drive 35%–45% of support tickets.
-- **Agentic AI Solution**: Detects en-route exceptions and updates customers proactively with reschedule links. Cuts retailer OTIF fines and shortage deductions by 78% and lifts key-account OTIF compliance to 98.9%.
+- **Agentic AI Solution**: Monitors open key-account orders against retailer Must-Arrive-By-Date (MABD) windows, pick-wave progress, and live highway/weather transit delays. Quantifies impending On-Time In-Full (OTIF) chargeback exposure per order and triggers proactive inventory reallocation, carrier expedites, or appointment re-slotting before penalties trigger. Cuts retailer OTIF fines and shortage deductions by 78% and lifts key-account OTIF compliance to 98.9%.
 - **Quantified Business Outcome**: Detects mid-route parcel and retail-delivery delays early, triggers carrier rescue or proactive customer self-rescheduling, and cuts WISMO cost. (`38% Inbound WISMO Calls → Proactive Exception Rescue`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1372,7 +1372,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 20%+ empty/out-of-route miles · 12%–25% spot premium · 3%–8% invoice error rate. Static dispatch routes burn excess fuel in weather/traffic corridors, primary tender rejections spike spot rates by 15%–25%, and 3%–8% of EDI 210 freight bills contain unverified accessorial or tariff errors.
-- **Agentic AI Solution**: Recalculates multi-stop routes using live Google Maps traffic, radar, and bridge limits. Reduces daily road fleet dispatch cost by 19.4% and route mileage by 21.8% with 99.4% time-window adherence.
+- **Agentic AI Solution**: Solves dynamic Capacitated Vehicle Routing Problems with Time Windows (CVRPTW) over live traffic, Hours-of-Service (HOS) driver logs, EV/diesel range, and backhaul opportunities. Continuously re-optimizes multi-stop dispatch manifests in response to live road disruptions and pushes turn-by-turn updates to driver telematics. Reduces daily road fleet dispatch cost by 19.4% and route mileage by 21.8% with 99.4% time-window adherence.
 - **Quantified Business Outcome**: Continuously re-solves multi-stop Vehicle Routing (VRP) against live traffic, weather, and driver Hours-of-Service (HOS) to cut fuel and empty miles. (`Out-of-Route & Traffic Burn → Live VRP + HOS Rerouting`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1400,7 +1400,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 20%+ empty/out-of-route miles · 12%–25% spot premium · 3%–8% invoice error rate. Static dispatch routes burn excess fuel in weather/traffic corridors, primary tender rejections spike spot rates by 15%–25%, and 3%–8% of EDI 210 freight bills contain unverified accessorial or tariff errors.
-- **Agentic AI Solution**: Tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides. Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically.
+- **Agentic AI Solution**: Unifies satellite AIS ocean tracking, air cargo milestones, rail Electronic Data Interchange (EDI 404/214), and ELD truck GPS telemetry into a single predictive ETA control tower. Filters out harmless ping noise, flags true downstream stockout or SLA breaches days early, and orchestrates carrier re-routing or cross-dock diversions. Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically.
 - **Quantified Business Outcome**: Predicts primary carrier tender rejections by lane and cascades early to contracted Tier-2/3 carriers before loads leak onto expensive spot markets. (`22% Tender Rejection Leak → 94% Routing-Guide Compliance`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1428,7 +1428,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 20%+ empty/out-of-route miles · 12%–25% spot premium · 3%–8% invoice error rate. Static dispatch routes burn excess fuel in weather/traffic corridors, primary tender rejections spike spot rates by 15%–25%, and 3%–8% of EDI 210 freight bills contain unverified accessorial or tariff errors.
-- **Agentic AI Solution**: Extracts signed PODs and rate contracts via OCR to audit accessorial surcharges. Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically.
+- **Agentic AI Solution**: Audits carrier Electronic Data Interchange (EDI 210) and PDF freight invoices line by line against contracted lane rate tables, Department of Energy (DOE) fuel-surcharge matrices, and verified GPS detention logs. Blocks duplicate billings, phantom accessorials, and weight-class errors automatically while releasing verified net freight payables to finance. Cuts multi-modal in-transit excursions by 74% and recovers 100% of invalid detention, demurrage, and rate overcharges automatically.
 - **Quantified Business Outcome**: Audits 100% of carrier EDI 210/PDF freight invoices against contracted rate tables, DOE fuel indices, and GPS arrival timestamps before payment. (`5.6% EDI 210 Billing Errors → 100% Line-by-Line Tariff Audit`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1459,7 +1459,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: $890B annual returns (16.9% of sales) · $101B fraud · 20%–65% COGS reverse cost. Processing a return costs 20%–65% of an item's original value—shipping low-margin goods back destroys net margin, while $101B in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.
-- **Agentic AI Solution**: Analyzes item photos and packaging video feeds to detect wear or swapped tags. Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend.
+- **Agentic AI Solution**: Evaluates customer Return Merchandise Authorization (RMA) requests using order history, serial-number telemetry, optical return-scan photos, and SKU refurbishment economics. Detects wardrobing or return fraud, pre-grades legitimate returns into restock, refurbish, or recycle streams, and consolidates reverse backhaul pickups. Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend.
 - **Quantified Business Outcome**: Scores return requests against serial history, account abuse patterns, and item telemetry—blocking fraudulent RMAs without friction for loyal buyers. (`13.7% Abusive/Fraud RMAs → Serial- & Risk-Gated RMA`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1487,7 +1487,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: $890B annual returns (16.9% of sales) · $101B fraud · 20%–65% COGS reverse cost. Processing a return costs 20%–65% of an item's original value—shipping low-margin goods back destroys net margin, while $101B in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.
-- **Agentic AI Solution**: Evaluates salvage margins vs reverse freight to determine keep-it instant refunds. Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend.
+- **Agentic AI Solution**: Calculates real-time unit recovery margin at the moment a customer initiates a return—weighing reverse parcel shipping cost, grading labor, restocking markdown, and fraud score against item value. Automatically issues keep-it refunds or local charity/hub drop-offs when reverse logistics costs exceed recoverable net value. Increases net margin recovery on returned goods by 31% and eliminates 68% of dedicated return LTL freight spend.
 - **Quantified Business Outcome**: Calculates reverse shipping + grading cost vs. resale recovery in real time—routing items to store, refurb hub, outlet, or Keep-It credit. (`Negative-Margin Return Shipping → Profit-Optimal RMA Routing`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1515,7 +1515,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: $890B annual returns (16.9% of sales) · $101B fraud · 20%–65% COGS reverse cost. Processing a return costs 20%–65% of an item's original value—shipping low-margin goods back destroys net margin, while $101B in fraudulent/wardrobed returns and missed OS&D windows leak straight from EBIT.
-- **Agentic AI Solution**: Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes. Cuts retailer OTIF fines and shortage deductions by 78% and lifts key-account OTIF compliance to 98.9%.
+- **Agentic AI Solution**: Cross-matches dock receiving Over, Short, and Damaged (OS&D) exception photos, seal-integrity logs, Electronic Proof of Delivery (ePOD) signatures, and carrier Carmack/tariff liability windows. Compiles timestamped forensic evidence packets automatically and files legally compliant carrier loss-and-damage claims before contractual filing deadlines expire. Cuts retailer OTIF fines and shortage deductions by 78% and lifts key-account OTIF compliance to 98.9%.
 - **Quantified Business Outcome**: Assembles dock damage photos, signed BOL exceptions, and SKU invoice values into compliant carrier claim packets within hours of unloading. (`38% Missed Claim Windows → <48h Filed Evidence Packets`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1543,7 +1543,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 2.5%–6.0% of grocery sales lost to shrink · $408B+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.
-- **Agentic AI Solution**: Correlates days-to-expiry (DTE) with sales velocity to trigger ESL shelf price cuts. Boosts net trade spend ROI by 22% and prevents promotional stockouts and post-promo bullwhip troughs.
+- **Agentic AI Solution**: Tracks batch-level remaining shelf life, local store sell-through elasticity, competitor pricing, and incoming replenishment schedules across perishable and seasonal assortments. Computes daily stepped markdown curves that clear aging inventory smoothly at maximum gross margin before expiration or end-of-season write-off. Boosts net trade spend ROI by 22% and prevents promotional stockouts and post-promo bullwhip troughs.
 - **Quantified Business Outcome**: Triggers shallow, early price-elasticity markdowns synced to lot sell-by dates and local store velocity—clearing stock at higher margin with less waste. (`4.6% Fresh Write-Offs → Elasticity-Timed Clearance`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1571,7 +1571,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 2.5%–6.0% of grocery sales lost to shrink · $408B+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.
-- **Agentic AI Solution**: Matches near-date DC lots with discounters or food banks before acceptance cutoffs. Slashes cross-dock terminal dwell time by 52%, eliminates double putaway/pick handling on 38% of volume, and accelerates port/rail-to-customer lead times by 1.8 days.
+- **Agentic AI Solution**: Scans lot-level expiration dates (FEFO) across regional depots and slow-moving outlets, matching short-dated stock against nearby high-velocity stores or institutional buyers. Executes profitable lateral stock transfers while sufficient shelf-life runway remains—preventing dump-bin distress sales and landfill disposal. Slashes cross-dock terminal dwell time by 52%, eliminates double putaway/pick handling on 38% of volume, and accelerates port/rail-to-customer lead times by 1.8 days.
 - **Quantified Business Outcome**: Matches short-dated DC lots at risk of customer shelf-life rejection to fast-turning stores, foodservice channels, or tax-advantaged donations. (`FEFO Shelf-Life Rejections → High-Velocity Channel Match`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1599,7 +1599,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 2.5%–6.0% of grocery sales lost to shrink · $408B+ annual food value lost. Flat, late manual markdowns (e.g., 50% off on final day) sacrifice gross margin without clearing short-dated lots in time, driving 3%+ perishable write-offs and landfill disposal fees.
-- **Agentic AI Solution**: Aggregates store shrink and organic haul logs to generate audited GHG diversion filings. Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness.
+- **Agentic AI Solution**: Monitors cold-room dwell, store markdown velocity, and unsold fresh/ambient lots approaching commercial cutoff dates across manufacturing plants, depots, and supermarkets. Automates tax-deductible food-bank donations, animal-feed upcycling, or anaerobic digestion routing while logging verified Scope-3 waste-diversion credits. Reduces Scope-3 freight carbon intensity by 24% without increasing logistics spend and guarantees 100% EU CBAM/EUDR audit readiness.
 - **Quantified Business Outcome**: Routes unsellable organics to highest circular tier (donation tax credits, upcycling, feed, digester) and automates Scope 3 waste reporting. (`Unclaimed Donation Credits → Automated Upcycle & Tax Ledger`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1627,7 +1627,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 10%–20% annual pallet/tote pool loss · 28%–40% empty store-return backhauls. Unreconciled pallet/tote ledgers trigger millions in pool non-return fines and replacement CapEx, while returning store fleets haul empty air and manual wash logs risk food-safety recalls.
-- **Agentic AI Solution**: Reconciles RFID portal scans with CHEP/PECO statements to detect hoarding nodes. Achieves 99.8% master data accuracy across ERP, WMS, and TMS—eliminating false MRP exceptions and boosting planner adoption across all 26 personas.
+- **Agentic AI Solution**: Reconciles serialized pallet, foldable crate, keg, and cold-chain tote dispatches against distributor, store, and carrier return scans across closed-loop asset pools. Pinpoints high-shrinkage partner nodes, schedules empty-asset backhaul sweeps on returning fleet trucks, and bills unreturned asset deposits automatically. Achieves 99.8% master data accuracy across ERP, WMS, and TMS—eliminating false MRP exceptions and boosting planner adoption across all 26 personas.
 - **Quantified Business Outcome**: Reconciles serialized pallet, tote, rack, and keg balances across plants, DCs, and customers—slashing pool rental fines and replacement CapEx. (`15% Annual RTI Shrinkage → Serialized Pool Reconciliation`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1655,7 +1655,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 10%–20% annual pallet/tote pool loss · 28%–40% empty store-return backhauls. Unreconciled pallet/tote ledgers trigger millions in pool non-return fines and replacement CapEx, while returning store fleets haul empty air and manual wash logs risk food-safety recalls.
-- **Agentic AI Solution**: Schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. Lowers long-haul linehaul cost by 34%, cuts corridor Scope-3 CO2e emissions by 68%, and reduces rail ramp storage fees by 76%.
+- **Agentic AI Solution**: Tracks Class-I / Dedicated Freight Corridor rail schedules, ramp dwell times, container chassis pools, and highway linehaul spot rates across long-haul corridors. Dynamically shifts replenishment lanes between over-the-road trucking and intermodal rail while orchestrating origin/destination drayage handoffs without missed cutoffs. Lowers long-haul linehaul cost by 34%, cuts corridor Scope-3 CO2e emissions by 68%, and reduces rail ramp storage fees by 76%.
 - **Quantified Business Outcome**: Pairs empty outbound store/DC return legs with pallet stacks, collapsible totes, and consolidated RMAs—eliminating dedicated reverse freight. (`36% Empty Return Trailers → Consolidated Milk-Run Sweeps`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
@@ -1683,7 +1683,7 @@
 
 #### 🎯 1. Real-World Business Problem & AI Solution
 - **Operational Problem**: 10%–20% annual pallet/tote pool loss · 28%–40% empty store-return backhauls. Unreconciled pallet/tote ledgers trigger millions in pool non-return fines and replacement CapEx, while returning store fleets haul empty air and manual wash logs risk food-safety recalls.
-- **Agentic AI Solution**: Inspects return photos and wash logs for structural fatigue and chemical compliance. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.
+- **Agentic AI Solution**: Audits Clean-in-Place (CIP) chemical concentration, wash temperature/flow curves, ATP bioluminescence swab logs, and allergen sequence rules across reusable totes, tankers, and lines. Blocks asset or line release automatically if any sanitation cycle falls below microbiological thresholds and triggers targeted re-wash protocols. Slashes in-plant scrap and rework costs by 44% and compresses quality batch release from 48 hours to 5 minutes.
 - **Quantified Business Outcome**: Enforces wash-temperature, allergen segregation, and structural cycle limits on every reusable container—extending asset life while guaranteeing safety. (`Premature Scrapping & QA Risk → Cycle-Verified Wash & Repair`)
 
 #### 🔌 2. Connected Enterprise Systems, Data-Source Tools & Solver Stack
