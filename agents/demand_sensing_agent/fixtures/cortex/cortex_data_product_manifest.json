@@ -1,0 +1,71 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "demand_sensing_agent",
+  "cortex_module": "Cortex Supply Chain & Order-to-Cash + K9 External Signals (WeatherNext & Trends)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.external_signals_weathernext_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.external_signals_weathernext_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_external_signals_weathernext"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_external_signals_weathernext",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_fva_sales_bias",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_pos_store_scans",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_timesfm_quantile_horizons"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "VBRK",
+    "VBRP",
+    "MARA",
+    "MARC",
+    "KNA1",
+    "PBIM/PBED"
+  ],
+  "k9_external_signal_enrichment": [
+    "Google Trends Demand Index",
+    "NOAA / WeatherNext Forecast Ensembles",
+    "Regional Holiday Calendar"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "signal_id": "Signal ID",
+    "provider": "Provider",
+    "region": "Region",
+    "event_type": "Event Type",
+    "temperature_anomaly_celsius": "Temperature Anomaly Celsius",
+    "precipitation_anomaly_mm": "Precipitation Anomaly Mm",
+    "projected_category_surge_pct": "Projected Category Surge (%)",
+    "impacted_category": "Impacted Category",
+    "confidence_score": "Confidence Score",
+    "valid_from": "Valid From",
+    "override_id": "Override ID",
+    "sku_id": "SKU ID",
+    "sales_account": "Sales Account",
+    "planner_id": "Planner ID",
+    "statistical_baseline_units": "Statistical Baseline Units",
+    "sales_override_units": "Sales Override Units",
+    "override_lift_pct": "Override Lift (%)",
+    "historical_fva_pct": "Historical Fva (%)",
+    "bias_classification": "Bias Classification",
+    "recommended_dampened_units": "Recommended Dampened Units",
+    "store_id": "Store ID",
+    "retailer": "Retailer",
+    "category": "Category",
+    "daily_scan_units": "Daily Scan Units",
+    "on_shelf_inventory": "On Shelf Inventory",
+    "stockout_flag": "Stockout Flag",
+    "censored_demand_imputed_units": "Censored Demand Imputed Units",
+    "scan_date": "Scan Date"
+  }
+}

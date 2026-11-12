@@ -483,6 +483,34 @@
           }
         }
       }
+    },
+    "/cortex/v7/dataProducts/sanitation_health_agent": {
+      "get": {
+        "operationId": "query_cortex_sanitation_health_agent_data_products",
+        "summary": "Query Google Cloud Cortex Framework (v7) BigQuery semantic data product (`cortex_dp_atp_bioluminescence_swab_tests`).",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Harmonized Cortex v7 Data Product records"
+          }
+        }
+      }
     }
+  },
+  "x-google-cloud-cortex-framework": {
+    "version": "v7",
+    "module": "Cortex Returns Management, Claims Settlement & Sustainability Ledger (SD / QM / ESG)",
+    "data_product_view": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_atp_bioluminescence_swab_tests",
+    "official_solution_url": "https://cloud.google.com/solutions/cortex",
+    "official_docs_url": "https://cloud.google.com/cortex/docs/overview"
   }
 }

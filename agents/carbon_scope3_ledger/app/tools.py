@@ -971,6 +971,32 @@ def publish_carbon_scope3_ledger_interactive_cockpit_to_gcs(title: str = "ESG & 
     return generate_interactive_html_dashboard(title=title)
 
 
+
+
+
+
+
+# --- BEGIN GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+from .cortex_dataprod import query_cortex_semantic_data_product as _query_cortex_semantic_dp
+
+_sc_list = globals().get("SYSTEM_CONNECTORS")
+if isinstance(_sc_list, list) and not any(isinstance(_c, dict) and _c.get("id") == "google_cloud_cortex_v7" for _c in _sc_list):
+    _sc_list.insert(0, {
+        "id": "google_cloud_cortex_v7",
+        "name": "Google Cloud Cortex Framework (v7) Data Products",
+        "protocol": "Dataform SQLX / BigQuery Data Product / cortex-kc-sync",
+        "tables": ["cortex_dp_eu_cbam_embedded_carbon_declarations", "cortex_dp_eudr_earth_engine_plot_verifications", "cortex_dp_low_carbon_carrier_and_supplier_swaps", "cortex_dp_shipment_level_scope3_emissions"],
+    })
+
+
+def query_cortex_carbon_scope3_ledger_data_products(record_filter: str = "") -> Dict[str, Any]:
+    """[Google Cloud Cortex Framework v7 · `zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_eu_cbam_embedded_carbon_declarations`] Query harmonized, CDC-deduplicated BigQuery semantic data products (SAP/ERP/WMS + K9 external signals via Dataform & Dataplex Knowledge Catalog)."""
+    res = _query_cortex_semantic_dp(_read_json, _discover_table_files, record_filter=record_filter)
+    if isinstance(res, dict) and res.get("rows") and callable(globals().get("_record_canvas_rows")):
+        _record_canvas_rows(str(res.get("source_table") or "eu_cbam_embedded_carbon_declarations"), res.get("rows"))
+    return res
+# --- END GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+
 LEGACY_COMPAT_TOOLS = [
     fn for _nm, fn in [
         ("list_systems", globals().get("list_systems")),
@@ -987,6 +1013,7 @@ LEGACY_COMPAT_TOOLS = [
 ALL_TOOLS = [
     inspect_iso14083_glec_carbon_scope3_ledger_data_sources,
     query_sap_s4hana_master_data_backbone,
+    query_cortex_carbon_scope3_ledger_data_products,
     query_weathernext_eudr_earth_engine_plot_verifications,
     query_tms_low_carbon_carrier_and_supplier_swaps,
     query_iso14083_glec_shipment_level_scope3_emissions,

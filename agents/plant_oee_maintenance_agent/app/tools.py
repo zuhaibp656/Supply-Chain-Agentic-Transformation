@@ -951,6 +951,32 @@ def publish_plant_oee_maintenance_interactive_cockpit_to_gcs(title: str = "Plant
     return generate_interactive_html_dashboard(title=title)
 
 
+
+
+
+
+
+# --- BEGIN GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+from .cortex_dataprod import query_cortex_semantic_data_product as _query_cortex_semantic_dp
+
+_sc_list = globals().get("SYSTEM_CONNECTORS")
+if isinstance(_sc_list, list) and not any(isinstance(_c, dict) and _c.get("id") == "google_cloud_cortex_v7" for _c in _sc_list):
+    _sc_list.insert(0, {
+        "id": "google_cloud_cortex_v7",
+        "name": "Google Cloud Cortex Framework (v7) Data Products",
+        "protocol": "Dataform SQLX / BigQuery Data Product / cortex-kc-sync",
+        "tables": ["cortex_dp_oee_breakdown_metrics", "cortex_dp_plant_machine_telemetry", "cortex_dp_predictive_maintenance_anomalies", "cortex_dp_spare_parts_inventory_status"],
+    })
+
+
+def query_cortex_plant_oee_maintenance_agent_data_products(record_filter: str = "") -> Dict[str, Any]:
+    """[Google Cloud Cortex Framework v7 · `zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_oee_breakdown_metrics`] Query harmonized, CDC-deduplicated BigQuery semantic data products (SAP/ERP/WMS + K9 external signals via Dataform & Dataplex Knowledge Catalog)."""
+    res = _query_cortex_semantic_dp(_read_json, _discover_table_files, record_filter=record_filter)
+    if isinstance(res, dict) and res.get("rows") and callable(globals().get("_record_canvas_rows")):
+        _record_canvas_rows(str(res.get("source_table") or "oee_breakdown_metrics"), res.get("rows"))
+    return res
+# --- END GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+
 LEGACY_COMPAT_TOOLS = [
     fn for _nm, fn in [
         ("list_systems", globals().get("list_systems")),
@@ -967,6 +993,7 @@ LEGACY_COMPAT_TOOLS = [
 ALL_TOOLS = [
     inspect_bigquery_plant_oee_maintenance_data_sources,
     query_sap_s4hana_master_data_backbone,
+    query_cortex_plant_oee_maintenance_agent_data_products,
     query_bigquery_oee_breakdown_metrics,
     query_bigquery_plant_machine_telemetry,
     query_bigquery_predictive_maintenance_anomalies,

@@ -1,0 +1,71 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "working_capital_cash_bridge",
+  "cortex_module": "Cortex Supply Chain & Order-to-Cash + K9 External Signals (WeatherNext & Trends)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.inventory_valuation_ledger_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.inventory_valuation_ledger_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_inventory_valuation_ledger"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_inventory_valuation_ledger",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_supplier_ap_invoices",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_trapped_cash_opportunities",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_working_capital_metrics"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "VBRK",
+    "VBRP",
+    "MARA",
+    "MARC",
+    "KNA1",
+    "PBIM/PBED"
+  ],
+  "k9_external_signal_enrichment": [
+    "Google Trends Demand Index",
+    "NOAA / WeatherNext Forecast Ensembles",
+    "Regional Holiday Calendar"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "valuation_area": "Valuation Area",
+    "valuation_class": "Valuation Class",
+    "material_id": "Material ID",
+    "material_description": "Material Description",
+    "total_stock_units": "Total Stock Units",
+    "standard_cost_per_unit_usd": "Standard Cost Per Unit (USD)",
+    "total_inventory_valuation_usd": "Total Inventory Valuation (USD)",
+    "days_of_supply": "Days Of Supply",
+    "target_days_of_supply": "Target Days Of Supply",
+    "excess_stock_units": "Excess Stock Units",
+    "invoice_id": "Invoice ID",
+    "vendor_id": "Vendor ID",
+    "vendor_name": "Vendor Name",
+    "invoice_amount_usd": "Invoice Amount (USD)",
+    "invoice_date": "Invoice Date",
+    "standard_net_due_date": "Standard Net Due Date",
+    "early_discount_terms": "Early Discount Terms",
+    "discount_deadline_date": "Discount Deadline Date",
+    "discount_pct": "Discount (%)",
+    "cash_discount_amount_usd": "Cash Discount Amount (USD)",
+    "opportunity_id": "Opportunity ID",
+    "category": "Category",
+    "priority_rank": "Priority Rank",
+    "cash_freed_usd": "Cash Freed (USD)",
+    "current_days_of_supply": "Current Days Of Supply",
+    "recommended_target_days_of_supply": "Recommended Target Days Of Supply",
+    "recommended_reduction_units": "Recommended Reduction Units",
+    "annual_holding_cost_saving_usd": "Annual Holding Cost Saving (USD)"
+  }
+}

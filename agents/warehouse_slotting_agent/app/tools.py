@@ -984,6 +984,32 @@ def publish_warehouse_slotting_interactive_cockpit_to_gcs(title: str = "Dynamic 
     return generate_interactive_html_dashboard(title=title)
 
 
+
+
+
+
+
+# --- BEGIN GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+from .cortex_dataprod import query_cortex_semantic_data_product as _query_cortex_semantic_dp
+
+_sc_list = globals().get("SYSTEM_CONNECTORS")
+if isinstance(_sc_list, list) and not any(isinstance(_c, dict) and _c.get("id") == "google_cloud_cortex_v7" for _c in _sc_list):
+    _sc_list.insert(0, {
+        "id": "google_cloud_cortex_v7",
+        "name": "Google Cloud Cortex Framework (v7) Data Products",
+        "protocol": "Dataform SQLX / BigQuery Data Product / cortex-kc-sync",
+        "tables": ["cortex_dp_amr_picker_travel_telemetry", "cortex_dp_slot_reassignment_recommendations", "cortex_dp_warehouse_slotting_velocity_tiers", "cortex_dp_wave_release_order_allocations"],
+    })
+
+
+def query_cortex_warehouse_slotting_agent_data_products(record_filter: str = "") -> Dict[str, Any]:
+    """[Google Cloud Cortex Framework v7 · `zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_amr_picker_travel_telemetry`] Query harmonized, CDC-deduplicated BigQuery semantic data products (SAP/ERP/WMS + K9 external signals via Dataform & Dataplex Knowledge Catalog)."""
+    res = _query_cortex_semantic_dp(_read_json, _discover_table_files, record_filter=record_filter)
+    if isinstance(res, dict) and res.get("rows") and callable(globals().get("_record_canvas_rows")):
+        _record_canvas_rows(str(res.get("source_table") or "amr_picker_travel_telemetry"), res.get("rows"))
+    return res
+# --- END GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+
 LEGACY_COMPAT_TOOLS = [
     fn for _nm, fn in [
         ("list_systems", globals().get("list_systems")),
@@ -1000,6 +1026,7 @@ LEGACY_COMPAT_TOOLS = [
 ALL_TOOLS = [
     inspect_sap_ewm_warehouse_slotting_data_sources,
     query_sap_s4hana_master_data_backbone,
+    query_cortex_warehouse_slotting_agent_data_products,
     query_kion_amr_amr_picker_travel_telemetry,
     query_ergonomic_pick_slot_reassignment_recommendations,
     query_warehouse_slotting_velocity_tiers,

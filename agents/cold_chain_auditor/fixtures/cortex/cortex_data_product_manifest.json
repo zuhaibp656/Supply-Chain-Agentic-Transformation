@@ -1,0 +1,60 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "cold_chain_auditor",
+  "cortex_module": "Cortex Order Fulfillment, Delivery Performance (OTIF) & Transportation (SD / TM)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.cold_chain_sku_stability_specs_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.cold_chain_sku_stability_specs_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_cold_chain_sku_stability_specs"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_cold_chain_sku_stability_specs",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_qa_disposition_claims_ledger",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_reefer_iot_temp_telemetry",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_thermal_excursion_incidents"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "LIKP",
+    "LIPS",
+    "VTTK",
+    "VTTP",
+    "VBAK",
+    "VBAP",
+    "KNA1"
+  ],
+  "k9_external_signal_enrichment": [
+    "WeatherNext Corridor Disruption Alerts",
+    "Port & Highway Congestion Feeds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "sku_id": "SKU ID",
+    "temp_band_label": "Temp Band Label",
+    "max_continuous_temp_c": "Max Continuous Temp C",
+    "max_mkt_allowed_c": "Max Mkt Allowed C",
+    "max_excursion_minutes": "Max Excursion Minutes",
+    "activation_energy_kj_mol": "Activation Energy Kj Mol",
+    "cargo_lot_value_usd": "Cargo Lot Value (USD)",
+    "shipment_id": "Shipment ID",
+    "computed_mkt_c": "Computed Mkt C",
+    "qa_decision": "Qa Decision",
+    "value_saved_or_claimed_usd": "Value Saved Or Claimed (USD)",
+    "trailer_id": "Trailer ID",
+    "carrier_id": "Carrier ID",
+    "lot_id": "Lot ID",
+    "origin_id": "Origin ID",
+    "dest_id": "Dest ID",
+    "hourly_temps_c": "Hourly Temps C",
+    "peak_temp_c": "Peak Temp C",
+    "minutes_above_upper_spec": "Minutes Above Upper Spec"
+  }
+}

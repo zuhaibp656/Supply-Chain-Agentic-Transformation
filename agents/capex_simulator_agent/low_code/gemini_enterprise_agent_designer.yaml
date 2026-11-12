@@ -14,6 +14,13 @@ spec:
   a2ui_surfaces:
     inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
     side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  cortex_framework:
+    version: v7
+    module: "Cortex Production Planning, Shop-Floor Execution & Quality Management (PP / QM)"
+    data_product_view: "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_automation_capex_project_proposals"
+    orchestration: "Dataform SQLX + Dataplex Knowledge Catalog (cortex-kc-sync)"
+    official_solution_url: "https://cloud.google.com/solutions/cortex"
+    official_docs_url: "https://cloud.google.com/cortex/docs/overview"
   bigquery_data_stores:
     - id: bq_supply_chain_twin_automation_capex_project_proposals
       uri: "bq://zuhaibp-ai.supply_chain_twin.automation_capex_project_proposals"
@@ -32,6 +39,7 @@ spec:
       source_system: "Multi-Plant Bottleneck & OEE Ceiling Registry"
       protocol: "SQL / Historian"
   data_source_tools:
+    - query_cortex_capex_simulator_agent_data_products
     - inspect_mes_scada_capex_simulator_data_sources
     - query_sap_s4hana_master_data_backbone
     - query_capex_engineering_automation_capex_project_proposals

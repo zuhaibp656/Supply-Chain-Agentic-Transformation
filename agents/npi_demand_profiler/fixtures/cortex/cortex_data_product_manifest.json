@@ -1,0 +1,66 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "npi_demand_profiler",
+  "cortex_module": "Cortex Supply Chain & Order-to-Cash + K9 External Signals (WeatherNext & Trends)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.historical_lookalike_analog_skus_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.historical_lookalike_analog_skus_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_historical_lookalike_analog_skus"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_historical_lookalike_analog_skus",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_npi_90day_forecast_allocations",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_npi_launch_sku_catalog",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_retail_distribution_door_ramps"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "VBRK",
+    "VBRP",
+    "MARA",
+    "MARC",
+    "KNA1",
+    "PBIM/PBED"
+  ],
+  "k9_external_signal_enrichment": [
+    "Google Trends Demand Index",
+    "NOAA / WeatherNext Forecast Ensembles",
+    "Regional Holiday Calendar"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "analog_id": "Analog ID",
+    "npi_sku_id": "Npi SKU ID",
+    "lookalike_sku_id": "Lookalike SKU ID",
+    "cosine_similarity": "Cosine Similarity",
+    "bass_p_innovation": "Bass P Innovation",
+    "bass_q_imitation": "Bass Q Imitation",
+    "realized_units_per_store_week": "Realized Units Per Store Week",
+    "repeat_purchase_pct": "Repeat Purchase (%)",
+    "alloc_id": "Alloc ID",
+    "facility_id": "Facility ID",
+    "sales_pitch_units": "Sales Pitch Units",
+    "modeled_p50_units": "Modeled P50 Units",
+    "modeled_p90_units": "Modeled P90 Units",
+    "cannibalization_drag_pct": "Cannibalization Drag (%)",
+    "stranded_working_cap_avoided_usd": "Stranded Working Cap Avoided (USD)",
+    "product_name": "Product Name",
+    "parent_family_sku": "Parent Family SKU",
+    "plant_id": "Plant ID",
+    "launch_date": "Launch Date",
+    "unit_price_usd": "Unit Price (USD)",
+    "gross_margin_pct": "Gross Margin (%)",
+    "sales_pitch_90d_units": "Sales Pitch 90D Units",
+    "launch_status": "Launch Status"
+  }
+}

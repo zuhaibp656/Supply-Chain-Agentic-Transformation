@@ -454,6 +454,34 @@
           }
         }
       }
+    },
+    "/cortex/v7/dataProducts/master_data_leadtime_steward": {
+      "get": {
+        "operationId": "query_cortex_master_data_leadtime_steward_data_products",
+        "summary": "Query Google Cloud Cortex Framework (v7) BigQuery semantic data product (`cortex_dp_bom_routing_leadtimes`).",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Harmonized Cortex v7 Data Product records"
+          }
+        }
+      }
     }
+  },
+  "x-google-cloud-cortex-framework": {
+    "version": "v7",
+    "module": "Cortex Source-to-Pay, Procurement & Accounts Payable (SAP ECC / S/4HANA / Ariba)",
+    "data_product_view": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_bom_routing_leadtimes",
+    "official_solution_url": "https://cloud.google.com/solutions/cortex",
+    "official_docs_url": "https://cloud.google.com/cortex/docs/overview"
   }
 }

@@ -617,7 +617,7 @@ def build_explorer_canvas_parts(
     )
 
     panel_specs = [
-        ("p1", "1. Connected Enterprise Data Sources & Feeds", sys_text, True),
+        ("p1", "1. Enterprise Sources & Cortex v7 Data Products", sys_text, True),
         ("p2", "2. Deterministic Solver & Variance Summary", solver_text, True),
         ("p3", "3. Governed Write-Back & Safety Gate", gov_text, False),
     ]

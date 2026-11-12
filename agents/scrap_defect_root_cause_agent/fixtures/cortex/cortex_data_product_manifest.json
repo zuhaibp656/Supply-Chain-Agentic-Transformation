@@ -1,0 +1,69 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "scrap_defect_root_cause_agent",
+  "cortex_module": "Cortex Production Planning, Shop-Floor Execution & Quality Management (PP / QM)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.batch_process_parameter_correlations_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.batch_process_parameter_correlations_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_batch_process_parameter_correlations"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_batch_process_parameter_correlations",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_scada_setpoint_recommendations",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_scrap_financial_cost_ledger",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_scrap_loss_pareto_records"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "AFKO",
+    "AFPO",
+    "AUFK",
+    "MAST",
+    "STPO",
+    "QALS",
+    "QAVE",
+    "MARC"
+  ],
+  "k9_external_signal_enrichment": [
+    "Plant Shift & Energy Tariff Windows",
+    "Ambient Humidity & Thermal Telemetry"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "correlation_id": "Correlation ID",
+    "defect_id": "Defect ID",
+    "parameter_name": "Parameter Name",
+    "nominal_setpoint": "Nominal Setpoint",
+    "actual_observed_mean": "Actual Observed Mean",
+    "upper_tolerance_limit": "Upper Tolerance Limit",
+    "lower_tolerance_limit": "Lower Tolerance Limit",
+    "pearson_correlation_coefficient": "Pearson Correlation Coefficient",
+    "p_value": "P Value",
+    "root_cause_finding": "Root Cause Finding",
+    "recommendation_id": "Recommendation ID",
+    "asset_id": "Asset ID",
+    "recipe_name": "Recipe Name",
+    "parameter_adjustments": "Parameter Adjustments",
+    "projected_scrap_rate_after_pct": "Projected Scrap Rate After (%)",
+    "projected_cost_savings_per_shift_usd": "Projected Cost Savings Per Shift (USD)",
+    "scada_tag_group": "Scada Tag Group",
+    "status": "Status",
+    "ledger_id": "Ledger ID",
+    "production_order_id": "Production Order ID",
+    "material_id": "Material ID",
+    "scrap_quantity_pieces": "Scrap Quantity Pieces",
+    "unit_material_cost_usd": "Unit Material Cost (USD)",
+    "unit_conversion_cost_usd": "Unit Conversion Cost (USD)",
+    "total_scrap_financial_loss_usd": "Total Scrap Financial Loss (USD)",
+    "sap_cost_center": "Sap Cost Center",
+    "gl_account": "Gl Account"
+  }
+}

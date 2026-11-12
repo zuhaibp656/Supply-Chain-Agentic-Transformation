@@ -502,6 +502,34 @@
           }
         }
       }
+    },
+    "/cortex/v7/dataProducts/finite_production_scheduler": {
+      "get": {
+        "operationId": "query_cortex_finite_production_scheduler_data_products",
+        "summary": "Query Google Cloud Cortex Framework (v7) BigQuery semantic data product (`cortex_dp_changeover_matrix_rules`).",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Harmonized Cortex v7 Data Product records"
+          }
+        }
+      }
     }
+  },
+  "x-google-cloud-cortex-framework": {
+    "version": "v7",
+    "module": "Cortex Production Planning, Shop-Floor Execution & Quality Management (PP / QM)",
+    "data_product_view": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_changeover_matrix_rules",
+    "official_solution_url": "https://cloud.google.com/solutions/cortex",
+    "official_docs_url": "https://cloud.google.com/cortex/docs/overview"
   }
 }

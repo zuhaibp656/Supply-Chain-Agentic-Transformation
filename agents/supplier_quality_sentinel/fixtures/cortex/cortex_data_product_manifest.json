@@ -1,0 +1,68 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "supplier_quality_sentinel",
+  "cortex_module": "Cortex Source-to-Pay, Procurement & Accounts Payable (SAP ECC / S/4HANA / Ariba)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.cost_of_poor_quality_ledger_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.cost_of_poor_quality_ledger_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_cost_of_poor_quality_ledger"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_cost_of_poor_quality_ledger",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_quality_deviation_tickets",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_spc_cpk_drift_metrics",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_supplier_coa_inspections"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "EKKO",
+    "EKPO",
+    "EKET",
+    "MKPF",
+    "MSEG",
+    "RBKP",
+    "RSEG",
+    "LFA1",
+    "TCURX"
+  ],
+  "k9_external_signal_enrichment": [
+    "Currency Exchange Rates (TCURR/TCURX)",
+    "Commodity Spot Benchmarks"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "copq_id": "Copq ID",
+    "ticket_id": "Ticket ID",
+    "supplier_id": "Supplier ID",
+    "supplier_name": "Supplier Name",
+    "scrap_material_cost_usd": "Scrap Material Cost (USD)",
+    "sorting_inspection_labor_usd": "Sorting Inspection Labor (USD)",
+    "production_line_downtime_cost_usd": "Production Line Downtime Cost (USD)",
+    "total_copq_amount_usd": "Total Copq Amount (USD)",
+    "recovery_status": "Recovery Status",
+    "sap_debit_memo_number": "Sap Debit Memo Number",
+    "inspection_lot_id": "Inspection Lot ID",
+    "part_number": "Part Number",
+    "defect_category": "Defect Category",
+    "severity": "Severity",
+    "containment_action": "Containment Action",
+    "trackwise_capa_id": "Trackwise Capa ID",
+    "eight_d_status": "Eight D Status",
+    "metric_id": "Metric ID",
+    "production_line": "Production Line",
+    "sample_timestamp": "Sample Timestamp",
+    "target_nominal": "Target Nominal",
+    "usl": "Usl",
+    "lsl": "Lsl",
+    "mean_observed": "Mean Observed",
+    "standard_deviation": "Standard Deviation"
+  }
+}

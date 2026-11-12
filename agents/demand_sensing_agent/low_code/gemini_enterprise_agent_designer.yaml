@@ -14,6 +14,13 @@ spec:
   a2ui_surfaces:
     inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
     side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  cortex_framework:
+    version: v7
+    module: "Cortex Supply Chain & Order-to-Cash + K9 External Signals (WeatherNext & Trends)"
+    data_product_view: "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_external_signals_weathernext"
+    orchestration: "Dataform SQLX + Dataplex Knowledge Catalog (cortex-kc-sync)"
+    official_solution_url: "https://cloud.google.com/solutions/cortex"
+    official_docs_url: "https://cloud.google.com/cortex/docs/overview"
   bigquery_data_stores:
     - id: bq_supply_chain_twin_external_signals_weathernext
       uri: "bq://zuhaibp-ai.supply_chain_twin.external_signals_weathernext"
@@ -32,6 +39,7 @@ spec:
       source_system: "Vertex AI TimesFM Zero-Shot & Fine-Tuned Quantile Forecaster"
       protocol: "Vertex AI Prediction Endpoint (P10/P50/P90)"
   data_source_tools:
+    - query_cortex_demand_sensing_agent_data_products
     - inspect_bigquery_demand_sensing_data_sources
     - query_sap_s4hana_master_data_backbone
     - query_bigquery_pos_store_scans

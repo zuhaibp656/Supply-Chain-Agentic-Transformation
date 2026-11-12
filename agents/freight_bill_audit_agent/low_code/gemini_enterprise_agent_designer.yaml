@@ -14,6 +14,13 @@ spec:
   a2ui_surfaces:
     inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
     side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  cortex_framework:
+    version: v7
+    module: "Cortex Order Fulfillment, Delivery Performance (OTIF) & Transportation (SD / TM)"
+    data_product_view: "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_contracted_lane_rate_and_fsc_tables"
+    orchestration: "Dataform SQLX + Dataplex Knowledge Catalog (cortex-kc-sync)"
+    official_solution_url: "https://cloud.google.com/solutions/cortex"
+    official_docs_url: "https://cloud.google.com/cortex/docs/overview"
   bigquery_data_stores:
     - id: bq_supply_chain_twin_contracted_lane_rate_and_fsc_tables
       uri: "bq://zuhaibp-ai.supply_chain_twin.contracted_lane_rate_and_fsc_tables"
@@ -32,6 +39,7 @@ spec:
       source_system: "Freight Audit & Payment (FAP) Short-Pay Ledger"
       protocol: "IDoc / BAPI_ACC_DOCUMENT_POST"
   data_source_tools:
+    - query_cortex_freight_bill_audit_agent_data_products
     - inspect_tms_freight_bill_audit_data_sources
     - query_sap_s4hana_master_data_backbone
     - query_tms_contracted_lane_rate_and_fsc_tables

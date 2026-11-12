@@ -1,0 +1,69 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "warehouse_slotting_agent",
+  "cortex_module": "Cortex Inventory Management, Slow-Moving Stock & Extended Warehouse (MM / EWM)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.amr_picker_travel_telemetry_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.amr_picker_travel_telemetry_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_amr_picker_travel_telemetry"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_amr_picker_travel_telemetry",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_slot_reassignment_recommendations",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_warehouse_slotting_velocity_tiers",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_wave_release_order_allocations"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "MARD",
+    "MCHB",
+    "MKPF",
+    "MSEG",
+    "LQUA",
+    "LIKP",
+    "LIPS",
+    "MBEW"
+  ],
+  "k9_external_signal_enrichment": [
+    "Lead-Time Variability History",
+    "Regional Stockout Risk Signals"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "telemetry_id": "Telemetry ID",
+    "dc_id": "Dc ID",
+    "amr_id": "Amr ID",
+    "wave_id": "Wave ID",
+    "average_picker_speed_m_s": "Average Picker Speed M S",
+    "total_travel_distance_km": "Total Travel Distance Km",
+    "travel_time_pct": "Travel Time (%)",
+    "pick_time_pct": "Pick Time (%)",
+    "congestion_wait_pct": "Congestion Wait (%)",
+    "bottleneck_aisle": "Bottleneck Aisle",
+    "recommendation_id": "Recommendation ID",
+    "sku_id": "SKU ID",
+    "current_bin_id": "Current Bin ID",
+    "recommended_bin_id": "Recommended Bin ID",
+    "priority": "Priority",
+    "estimated_picker_travel_reduction_pct": "Estimated Picker Travel Reduction (%)",
+    "annual_labor_hours_saved": "Annual Labor Hours Saved",
+    "ergonomic_risk_reduction": "Ergonomic Risk Reduction",
+    "reassignment_labor_minutes": "Reassignment Labor Minutes",
+    "status": "Status",
+    "sku_name": "SKU Name",
+    "velocity_tier": "Velocity Tier",
+    "pick_frequency_lines_per_day": "Pick Frequency Lines Per Day",
+    "distance_to_pack_station_m": "Distance To Pack Station M",
+    "recommended_distance_m": "Recommended Distance M",
+    "daily_travel_saving_km": "Daily Travel Saving Km",
+    "ergonomic_pick_zone": "Ergonomic Pick Zone"
+  }
+}

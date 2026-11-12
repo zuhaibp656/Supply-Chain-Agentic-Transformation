@@ -1,0 +1,65 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "sustainable_packaging_agent",
+  "cortex_module": "Cortex Source-to-Pay, Procurement & Accounts Payable (SAP ECC / S/4HANA / Ariba)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.epr_plastic_tax_compliance_ledger_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.epr_plastic_tax_compliance_ledger_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_epr_plastic_tax_compliance_ledger"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_epr_plastic_tax_compliance_ledger",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_packaging_sku_bom_specs",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_pcr_resin_and_fiber_supplier_quotes",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_shelf_life_barrier_lab_trials"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "EKKO",
+    "EKPO",
+    "EKET",
+    "MKPF",
+    "MSEG",
+    "RBKP",
+    "RSEG",
+    "LFA1",
+    "TCURX"
+  ],
+  "k9_external_signal_enrichment": [
+    "Currency Exchange Rates (TCURR/TCURX)",
+    "Commodity Spot Benchmarks"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "epr_id": "Epr ID",
+    "pack_spec_id": "Pack Spec ID",
+    "baseline_virgin_tons": "Baseline Virgin Tons",
+    "optimized_virgin_tons": "Optimized Virgin Tons",
+    "epr_tax_avoided_usd": "Epr Tax Avoided (USD)",
+    "lightweighting_material_saved_usd": "Lightweighting Material Saved (USD)",
+    "net_annual_benefit_usd": "Net Annual Benefit (USD)",
+    "tco2e_avoided": "Tco2E Avoided",
+    "sku_id": "SKU ID",
+    "material_type": "Material Type",
+    "current_pcr_pct": "Current Pcr (%)",
+    "target_pcr_pct": "Target Pcr (%)",
+    "gram_weight_g": "Gram Weight G",
+    "optimized_gram_weight_g": "Optimized Gram Weight G",
+    "annual_units_m": "Annual Units M",
+    "quote_id": "Quote ID",
+    "supplier_id": "Supplier ID",
+    "fda_efsa_food_grade": "Fda Efsa Food Grade",
+    "virgin_cost_per_ton_usd": "Virgin Cost Per Ton (USD)",
+    "pcr_blend_cost_per_ton_usd": "Pcr Blend Cost Per Ton (USD)",
+    "lead_time_days": "Lead Time Days",
+    "carbon_reduction_pct": "Carbon Reduction (%)"
+  }
+}

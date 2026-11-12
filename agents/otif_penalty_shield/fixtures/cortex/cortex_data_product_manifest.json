@@ -1,0 +1,60 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "otif_penalty_shield",
+  "cortex_module": "Cortex Order Fulfillment, Delivery Performance (OTIF) & Transportation (SD / TM)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.geofence_edi856_dispute_dossiers_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.geofence_edi856_dispute_dossiers_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_geofence_edi856_dispute_dossiers"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_geofence_edi856_dispute_dossiers",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_open_retail_customer_orders_sla",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_predicted_otif_breach_alerts",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_retailer_otif_chargeback_deductions"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "LIKP",
+    "LIPS",
+    "VTTK",
+    "VTTP",
+    "VBAK",
+    "VBAP",
+    "KNA1"
+  ],
+  "k9_external_signal_enrichment": [
+    "WeatherNext Corridor Disruption Alerts",
+    "Port & Highway Congestion Feeds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "dossier_id": "Dossier ID",
+    "deduction_id": "Deduction ID",
+    "mabd_cutoff_utc": "Mabd Cutoff Utc",
+    "google_maps_geofence_entry_utc": "Google Maps Geofence Entry Utc",
+    "edi856_asn_timestamp": "Edi856 Asn Timestamp",
+    "epod_signature_verified": "Epod Signature Verified",
+    "win_probability": "Win Probability",
+    "order_id": "Order ID",
+    "customer_id": "Customer ID",
+    "order_value_usd": "Order Value (USD)",
+    "mabd_window_utc": "Mabd Window Utc",
+    "otif_penalty_pct": "OTIF Penalty (%)",
+    "potential_fine_usd": "Potential Fine (USD)",
+    "alert_id": "Alert ID",
+    "breach_probability": "Breach Probability",
+    "root_cause": "Root Cause",
+    "rescue_option": "Rescue Option",
+    "rescue_cost_usd": "Rescue Cost (USD)",
+    "net_penalty_saved_usd": "Net Penalty Saved (USD)"
+  }
+}

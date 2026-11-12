@@ -1,0 +1,71 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "sop_scenario_weaver",
+  "cortex_module": "Cortex Supply Chain & Order-to-Cash + K9 External Signals (WeatherNext & Trends)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.plant_line_capacities_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.plant_line_capacities_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_plant_line_capacities"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_plant_line_capacities",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_sop_scenario_tradeoffs",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_sop_unconstrained_demand",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_supplier_component_allocations"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "VBRK",
+    "VBRP",
+    "MARA",
+    "MARC",
+    "KNA1",
+    "PBIM/PBED"
+  ],
+  "k9_external_signal_enrichment": [
+    "Google Trends Demand Index",
+    "NOAA / WeatherNext Forecast Ensembles",
+    "Regional Holiday Calendar"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "facility_id": "Facility ID",
+    "line_id": "Line ID",
+    "process_type": "Process Type",
+    "standard_rate_units_per_hr": "Standard Rate Units Per Hr",
+    "current_shifts_per_week": "Current Shifts Per Week",
+    "max_shifts_per_week": "Max Shifts Per Week",
+    "utilization_pct": "Utilization (%)",
+    "is_bottleneck": "Is Bottleneck",
+    "overtime_cost_per_shift_usd": "Overtime Cost Per Shift (USD)",
+    "changeover_hours_per_sku": "Changeover Hours Per SKU",
+    "scenario_id": "Scenario ID",
+    "name": "Name",
+    "description": "Description",
+    "revenue_usd": "Revenue (USD)",
+    "gross_margin_usd": "Gross Margin (USD)",
+    "gross_margin_pct": "Gross Margin (%)",
+    "otif_delivery_pct": "OTIF Delivery (%)",
+    "stockout_risk_usd": "Stockout Risk (USD)",
+    "overtime_cost_usd": "Overtime Cost (USD)",
+    "trapped_working_capital_usd": "Trapped Working Capital (USD)",
+    "plan_month": "Plan Month",
+    "business_unit": "Business Unit",
+    "product_family": "Product Family",
+    "unconstrained_demand_units": "Unconstrained Demand Units",
+    "constrained_supply_units": "Constrained Supply Units",
+    "gap_units": "Gap Units",
+    "unmet_revenue_usd": "Unmet Revenue (USD)",
+    "primary_bottleneck": "Primary Bottleneck"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "short_dated_redistributor",
+  "cortex_module": "Cortex Returns Management, Claims Settlement & Sustainability Ledger (SD / QM / ESG)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.lane_transfer_cost_and_transit_days_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.lane_transfer_cost_and_transit_days_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_lane_transfer_cost_and_transit_days"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_lane_transfer_cost_and_transit_days",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_secondary_buyer_and_foodbank_rules",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_short_dated_dc_inventory_lots",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_short_dated_diversion_allocations"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "LIKP",
+    "QMEL",
+    "MCHB",
+    "RBKP"
+  ],
+  "k9_external_signal_enrichment": [
+    "Scope-3 Emission Factors",
+    "Regional Cold-Chain / Shelf-Life Thresholds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "dc_lot_id": "Dc Lot ID",
+    "target_customer_id": "Target Customer ID",
+    "transit_days": "Transit Days",
+    "freight_cost_usd": "Freight Cost (USD)",
+    "channel_id": "Channel ID",
+    "customer_id": "Customer ID",
+    "min_mrsl_pct": "Min Mrsl (%)",
+    "price_realization_pct_of_list": "Price Realization (%) Of List",
+    "tax_deduction_multiplier": "Tax Deduction Multiplier",
+    "facility_id": "Facility ID",
+    "sku_id": "SKU ID",
+    "cases_on_hand": "Cases On Hand",
+    "total_shelf_life_days": "Total Shelf Life Days",
+    "remaining_days": "Remaining Days",
+    "remaining_life_pct": "Remaining Life (%)",
+    "inventory_cogs_usd": "Inventory Cogs (USD)"
+  }
+}

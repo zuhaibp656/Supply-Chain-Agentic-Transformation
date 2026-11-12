@@ -870,6 +870,32 @@ def publish_geocoding_intelligence_interactive_cockpit_to_gcs(title: str = "Geoc
     return generate_interactive_html_dashboard(title=title)
 
 
+
+
+
+
+
+# --- BEGIN GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+from .cortex_dataprod import query_cortex_semantic_data_product as _query_cortex_semantic_dp
+
+_sc_list = globals().get("SYSTEM_CONNECTORS")
+if isinstance(_sc_list, list) and not any(isinstance(_c, dict) and _c.get("id") == "google_cloud_cortex_v7" for _c in _sc_list):
+    _sc_list.insert(0, {
+        "id": "google_cloud_cortex_v7",
+        "name": "Google Cloud Cortex Framework (v7) Data Products",
+        "protocol": "Dataform SQLX / BigQuery Data Product / cortex-kc-sync",
+        "tables": ["cortex_dp_commercial_stop_rooftop_addresses", "cortex_dp_driver_gps_dwell_and_entry_logs", "cortex_dp_first_attempt_delivery_improvements", "cortex_dp_verified_dock_pin_geofences"],
+    })
+
+
+def query_cortex_geocoding_intelligence_agent_data_products(record_filter: str = "") -> Dict[str, Any]:
+    """[Google Cloud Cortex Framework v7 · `zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_commercial_stop_rooftop_addresses`] Query harmonized, CDC-deduplicated BigQuery semantic data products (SAP/ERP/WMS + K9 external signals via Dataform & Dataplex Knowledge Catalog)."""
+    res = _query_cortex_semantic_dp(_read_json, _discover_table_files, record_filter=record_filter)
+    if isinstance(res, dict) and res.get("rows") and callable(globals().get("_record_canvas_rows")):
+        _record_canvas_rows(str(res.get("source_table") or "commercial_stop_rooftop_addresses"), res.get("rows"))
+    return res
+# --- END GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+
 LEGACY_COMPAT_TOOLS = [
     fn for _nm, fn in [
         ("list_systems", globals().get("list_systems")),
@@ -886,6 +912,7 @@ LEGACY_COMPAT_TOOLS = [
 ALL_TOOLS = [
     inspect_oms_address_geocoding_intelligence_data_sources,
     query_sap_s4hana_master_data_backbone,
+    query_cortex_geocoding_intelligence_agent_data_products,
     query_oms_address_commercial_stop_rooftop_addresses,
     query_telematics_driver_driver_gps_dwell_and_entry_logs,
     query_last_mile_first_attempt_delivery_improvements,

@@ -819,6 +819,32 @@ def publish_dock_stock_interactive_cockpit_to_gcs(title: str = "Dock-to-Stock Ag
     return generate_interactive_html_dashboard(title=title)
 
 
+
+
+
+
+
+# --- BEGIN GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+from .cortex_dataprod import query_cortex_semantic_data_product as _query_cortex_semantic_dp
+
+_sc_list = globals().get("SYSTEM_CONNECTORS")
+if isinstance(_sc_list, list) and not any(isinstance(_c, dict) and _c.get("id") == "google_cloud_cortex_v7" for _c in _sc_list):
+    _sc_list.insert(0, {
+        "id": "google_cloud_cortex_v7",
+        "name": "Google Cloud Cortex Framework (v7) Data Products",
+        "protocol": "Dataform SQLX / BigQuery Data Product / cortex-kc-sync",
+        "tables": ["cortex_dp_dock_barcode_pallet_scan_logs", "cortex_dp_dock_to_stock_turnaround_ledger", "cortex_dp_edi856_inbound_asn_manifests", "cortex_dp_wms_putaway_bin_capacities"],
+    })
+
+
+def query_cortex_dock_to_stock_agent_data_products(record_filter: str = "") -> Dict[str, Any]:
+    """[Google Cloud Cortex Framework v7 · `zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_dock_barcode_pallet_scan_logs`] Query harmonized, CDC-deduplicated BigQuery semantic data products (SAP/ERP/WMS + K9 external signals via Dataform & Dataplex Knowledge Catalog)."""
+    res = _query_cortex_semantic_dp(_read_json, _discover_table_files, record_filter=record_filter)
+    if isinstance(res, dict) and res.get("rows") and callable(globals().get("_record_canvas_rows")):
+        _record_canvas_rows(str(res.get("source_table") or "dock_barcode_pallet_scan_logs"), res.get("rows"))
+    return res
+# --- END GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+
 LEGACY_COMPAT_TOOLS = [
     fn for _nm, fn in [
         ("list_systems", globals().get("list_systems")),
@@ -835,6 +861,7 @@ LEGACY_COMPAT_TOOLS = [
 ALL_TOOLS = [
     inspect_edi_docai_dock_stock_data_sources,
     query_sap_s4hana_master_data_backbone,
+    query_cortex_dock_to_stock_agent_data_products,
     query_wms_dock_barcode_pallet_scan_logs,
     query_wms_dock_to_stock_turnaround_ledger,
     query_edi_docai_edi856_inbound_asn_manifests,

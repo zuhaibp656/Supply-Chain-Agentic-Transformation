@@ -1,0 +1,66 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "commodity_index_advisor",
+  "cortex_module": "Cortex Source-to-Pay, Procurement & Accounts Payable (SAP ECC / S/4HANA / Ariba)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.commodity_hedge_collar_positions_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.commodity_hedge_collar_positions_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_commodity_hedge_collar_positions"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_commodity_hedge_collar_positions",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_market_futures_index_feeds",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_raw_material_feedstock_exposures",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_supplier_escalator_pass_through_clauses"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "EKKO",
+    "EKPO",
+    "EKET",
+    "MKPF",
+    "MSEG",
+    "RBKP",
+    "RSEG",
+    "LFA1",
+    "TCURX"
+  ],
+  "k9_external_signal_enrichment": [
+    "Currency Exchange Rates (TCURR/TCURX)",
+    "Commodity Spot Benchmarks"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "position_id": "Position ID",
+    "commodity_code": "Commodity Code",
+    "instrument": "Instrument",
+    "current_hedge_pct": "Current Hedge (%)",
+    "recommended_hedge_pct": "Recommended Hedge (%)",
+    "strike_floor_usd": "Strike Floor (USD)",
+    "strike_cap_usd": "Strike Cap (USD)",
+    "projected_savings_usd": "Projected Savings (USD)",
+    "index_code": "Index Code",
+    "spot_usd": "Spot (USD)",
+    "fwd_3m_usd": "Fwd 3M (USD)",
+    "fwd_6m_usd": "Fwd 6M (USD)",
+    "curve_structure": "Curve Structure",
+    "volatility_30d_pct": "Volatility 30D (%)",
+    "buy_signal": "Buy Signal",
+    "exposure_id": "Exposure ID",
+    "affected_sku_id": "Affected SKU ID",
+    "plant_id": "Plant ID",
+    "annual_tonnage_mt": "Annual Tonnage Mt",
+    "budget_price_per_mt_usd": "Budget Price Per Mt (USD)",
+    "spot_price_per_mt_usd": "Spot Price Per Mt (USD)",
+    "hedge_coverage_pct": "Hedge Coverage (%)",
+    "unhedged_var_95_usd": "Unhedged Var 95 (USD)"
+  }
+}

@@ -378,6 +378,7 @@ def generate_playbook() -> None:
                 "outcome": outcome,
                 "solver_stack": solver_stack,
                 "api_writeback": api_writeback,
+                "how_it_works": ag.get("howItWorks") or {},
                 "sub_agents": sub_agents,
                 "connectors": connectors,
                 "prompts": prompts_list,
@@ -946,6 +947,105 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
       color: var(--google-blue);
     }
 
+    /* Dual-View 4-Stage Runtime Architecture inside Playbook */
+    .pb-arch-toggle-group {
+      display: inline-flex;
+      background: var(--bg-toolbar);
+      border: 1px solid var(--border-strong);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 3px;
+    }
+    .pb-arch-toggle-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+    .pb-arch-toggle-btn.active {
+      background: var(--google-blue);
+      color: #ffffff;
+    }
+    .pb-hw-trigger {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 14px;
+      padding: 11px 15px;
+      margin-bottom: 14px;
+      border-radius: 10px;
+      background: var(--bg-card-active);
+      border: 1px solid var(--border-strong);
+      border-left: 4px solid var(--google-blue);
+    }
+    .pb-hw-grid {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) 20px minmax(210px, 1.15fr) 20px minmax(215px, 1.18fr) 20px minmax(190px, 1.05fr);
+      gap: 8px;
+      align-items: stretch;
+      margin-bottom: 12px;
+    }
+    .pb-hw-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--google-blue);
+      font-size: 17px;
+    }
+    .pb-hw-col {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-subtle);
+      border-top: 3px solid var(--col-accent, var(--google-blue));
+      border-radius: 12px;
+      padding: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 0;
+    }
+    .pb-hw-kicker {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--col-accent, var(--google-blue));
+    }
+    .pb-hw-title {
+      font-family: var(--font-display);
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text-title);
+      line-height: 1.3;
+    }
+    .pb-hw-item {
+      font-size: 12px;
+      line-height: 1.42;
+      padding: 7px 9px;
+      border-radius: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+    }
+    .pb-hw-ba {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 10px;
+      align-items: stretch;
+    }
+    @media (max-width: 1180px) {
+      .pb-hw-grid { grid-template-columns: 1fr; }
+      .pb-hw-arrow { transform: rotate(90deg); }
+      .pb-hw-ba { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 960px) {
       body { height: auto; overflow: auto; }
       .pb-workspace { flex-direction: column; overflow: visible; }
@@ -966,6 +1066,8 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
       <span class="pb-stat-chip live"><span class="pb-status-dot"></span> <strong>__DEPLOYED_COUNT__</strong> Live in Gemini Enterprise</span>
       <span class="pb-stat-chip"><strong>__TOTAL_COUNT__</strong> Total Agents</span>
       <span class="pb-stat-chip"><strong>6</strong> ASCM SCOR Pillars</span>
+      <a href="https://cloud.google.com/solutions/cortex" target="_blank" rel="noopener" class="pb-stat-chip" style="text-decoration:none; color:var(--google-blue);" title="Powered by Google Cloud Cortex Framework v7 BigQuery &amp; Dataform Data Products">🧱 Cortex Framework v7 ↗</a>
+      <a href="https://cloud.google.com/cortex/docs/overview" target="_blank" rel="noopener" class="pb-stat-chip" style="text-decoration:none; color:var(--text-secondary);" title="Official Google Cloud Cortex Framework Documentation">📘 Cortex Docs ↗</a>
       <a href="index.html" class="pb-stat-chip" style="text-decoration:none; color:var(--google-blue);">🌐 Open Web Portal &rarr;</a>
       <button class="pb-theme-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Switch between Light and Dark theme">🌙 Dark Theme</button>
     </div>
@@ -1192,6 +1294,91 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
           </div>`
         : '';
 
+      const hw = ag.how_it_works || {};
+      const hwTrigger = hw.trigger || ('Live ' + ag.sub_pillar + ' event arrives or ' + ag.persona + ' requests an optimization check');
+      const hwInputs = (hw.inputs && hw.inputs.length) ? hw.inputs : ['Live enterprise event & order signals', 'ERP master data & inventory balances', 'Contract tolerances & SLA bounds'];
+      const hwSteps = (hw.steps && hw.steps.length) ? hw.steps : (ag.sub_agents || []).map(sa => ({ title: sa.name, detail: sa.role }));
+      const hwReads = (hw.readsFrom && hw.readsFrom.length) ? hw.readsFrom : (ag.connectors || []).map(c => c[0]);
+      const hwWrites = (hw.writesTo && hw.writesTo.length) ? hw.writesTo : ['⚡ ' + ag.api_writeback, '📊 Dual-Surface A2UI (2-Panel VegaChart & RichTable Canvas)'];
+      const hwOutputs = (hw.outputs && hw.outputs.length) ? hw.outputs : ['Governed execution schedule & action receipt', '2-Panel VegaChart card + Looker Studio RichTable Canvas', 'Target ROI: ' + ag.roi_badge];
+      const hwShield = hw.shieldNote || 'Masks sensitive pricing & Personal Identifiable Information (PII) via Model Armor and validates tolerance bounds before reasoning.';
+      const hwHuman = hw.humanCheckpoint || ('Escalates out-of-bounds variances or high-value commitments directly to ' + ag.persona + ' before committing.');
+      const hwBefore = hw.exampleBefore || ag.problem;
+      const hwAfter = hw.exampleAfter || (ag.outcome + (ag.baseline_vs_target ? ' (' + ag.baseline_vs_target + ')' : ''));
+      const isDetailedArch = (window.pbArchViewMode !== 'stack');
+
+      const fourStageHtml = `
+        <div id="pbArchDetailedPane" style="display:${isDetailedArch ? 'block' : 'none'};">
+          <div class="pb-hw-trigger" style="border-left-color:${ag.pillar_color};">
+            <span class="pb-stat-chip" style="font-family:var(--font-mono); font-size:10.5px; font-weight:800; color:var(--google-blue);">⚡ TRIGGERED WHEN</span>
+            <span style="flex:1 1 280px; font-size:13.5px; font-weight:700; color:var(--text-title);">${escapeHtml(hwTrigger)}</span>
+            <span class="pb-stat-chip" style="font-size:11.5px; font-weight:700;">${escapeHtml(ag.build_tier || 'High-Code')} · Gemini Enterprise</span>
+          </div>
+          <div class="pb-hw-grid">
+            <div class="pb-hw-col" style="--col-accent:${ag.pillar_color};">
+              <div class="pb-hw-kicker">1. WHAT IT TAKES</div>
+              <div class="pb-hw-title">Inputs &amp; Guardrail Check</div>
+              <div class="pb-hw-item" style="font-weight:700; color:var(--google-blue);">${escapeHtml(hw.personaIcon || '👤')} ${escapeHtml(ag.persona)}</div>
+              ${hwInputs.map(inp => `<div class="pb-hw-item">${escapeHtml(inp)}</div>`).join('')}
+              <div class="pb-hw-item" style="margin-top:auto; font-size:11.3px; font-weight:600; color:var(--google-blue);">🔒 ${escapeHtml(hwShield)}</div>
+            </div>
+            <div class="pb-hw-arrow">&rarr;</div>
+            <div class="pb-hw-col" style="--col-accent:#7c3aed;">
+              <div class="pb-hw-kicker">2. WHAT IT DOES (STEP-BY-STEP)</div>
+              <div class="pb-hw-title">${escapeHtml(ag.name)} (${escapeHtml(ag.build_tier || 'High-Code')})</div>
+              ${hwSteps.map((st, idx) => `
+                <div class="pb-hw-item">
+                  <div style="font-weight:800; font-size:12px; margin-bottom:2px; color:var(--text-title);">0${idx + 1} · ${escapeHtml(st.title || ('Stage ' + (idx + 1)))}</div>
+                  <div style="font-size:11.5px; color:var(--text-secondary);">${escapeHtml(st.detail || '')}</div>
+                </div>
+              `).join('')}
+            </div>
+            <div class="pb-hw-arrow">&rarr;</div>
+            <div class="pb-hw-col" style="--col-accent:#0891b2;">
+              <div class="pb-hw-kicker">3. SYSTEMS CONNECTED</div>
+              <div class="pb-hw-title">Reads vs. Updates</div>
+              <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--google-blue);">📖 READS FROM (Read-Only Context)</div>
+              ${hwReads.map(r => `<div class="pb-hw-item" style="font-weight:600;">${escapeHtml(r)}</div>`).join('')}
+              <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--google-green); margin-top:4px;">✍️ UPDATES / NOTIFIES</div>
+              ${hwWrites.map(w => `<div class="pb-hw-item" style="font-weight:600; border-color:rgba(16,185,129,0.35);">${escapeHtml(w)}</div>`).join('')}
+            </div>
+            <div class="pb-hw-arrow">&rarr;</div>
+            <div class="pb-hw-col" style="--col-accent:#059669;">
+              <div class="pb-hw-kicker">4. WHAT IT PRODUCES</div>
+              <div class="pb-hw-title">Outputs &amp; Human Sign-Off</div>
+              ${hwOutputs.map(o => `<div class="pb-hw-item"><strong style="color:var(--google-green);">✓</strong> ${escapeHtml(o)}</div>`).join('')}
+              <div class="pb-hw-item" style="margin-top:auto; border-left:3px solid var(--google-amber);">
+                <div style="font-size:11px; font-weight:800; color:var(--google-amber); margin-bottom:2px;">🛡️ Human-in-the-Loop (HITL) Sign-Off</div>
+                <div style="font-size:11.4px; color:var(--text-secondary);">${escapeHtml(hwHuman)}</div>
+              </div>
+            </div>
+          </div>
+          <div class="pb-hw-ba">
+            <div class="pb-hw-item" style="border-left:4px solid #64748b; padding:10px 12px;">
+              <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:3px;">BEFORE AGENT (RAW BOTTLENECK)</div>
+              <div style="font-size:12.5px; font-weight:600;">${escapeHtml(hwBefore)}</div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:center; font-size:16px;">⚡</div>
+            <div class="pb-hw-item" style="border-left:4px solid var(--google-green); padding:10px 12px;">
+              <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--google-green); margin-bottom:3px;">AFTER AGENT (VERIFIED OUTPUT)</div>
+              <div style="font-size:12.5px; font-weight:600;">${escapeHtml(hwAfter)}</div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      const stackSummaryHtml = `
+        <div id="pbArchStackPane" style="display:${!isDetailedArch ? 'block' : 'none'};">
+          <div style="font-size:14.5px; color:var(--text-secondary); line-height:1.65; display:flex; flex-direction:column; gap:6px;">
+            <div><strong>Build Tier (${escapeHtml(ag.build_tier || 'High-Code')}):</strong> Python ADK Orchestrator (<code>agents/${escapeHtml(ag.id)}/app/</code>) + Declarative Gemini Enterprise Agent Designer YAML &amp; OpenAPI 3.0.3 Connectors (<code>${escapeHtml(ag.openapi_spec_path || ('agents/' + ag.id + '/low_code/openapi_data_source_tools.json'))}</code>).</div>
+            <div><strong>Mathematical &amp; AI Reasoning Stack:</strong> ${escapeHtml(ag.solver_stack)}</div>
+            <div><strong>Governed System Write-Back:</strong> ${escapeHtml(ag.api_writeback)}</div>
+            <div><strong>Dual-Surface A2UI v0.9 Standard:</strong> (1) <strong>Inline Chat <code>Card</code></strong> rendering a 2-Panel Executive <code>VegaChart</code> Infographic (Baseline vs. Target + Signed <code>&Delta;</code> Variance Strip), and (2) <strong>Side-Panel <code>Canvas</code></strong> opening a Looker Studio <code>RichTable</code>, collapsible <code>MaterialExpansionPanel</code> cards, and 1-click <code>MaterialButton</code> quick actions.</div>
+          </div>
+          ${subAgentsHtml}
+        </div>
+      `;
+
       const promptsHtml = (ag.prompts || []).map((p, i) => `
         <div class="pb-prompt-card">
           <div class="pb-prompt-header">
@@ -1262,16 +1449,17 @@ def build_master_detail_html(agents_data: List[Dict[str, Any]]) -> str:
           ${toolsHtml}
         </div>
 
-        <!-- 3. Execution Architecture -->
-        <div class="pb-content-card" style="border-left: 4px solid var(--google-blue);">
-          <div class="pb-section-title">🔄 3 · High-Code + Low-Code Architecture, Solver &amp; Dual-Surface A2UI v0.9</div>
-          <div style="font-size:14.5px; color:var(--text-secondary); line-height:1.65; display:flex; flex-direction:column; gap:6px;">
-            <div><strong>Build Tier (${escapeHtml(ag.build_tier || 'High-Code')}):</strong> Python ADK Orchestrator (<code>agents/${escapeHtml(ag.id)}/app/</code>) + Declarative Gemini Enterprise Agent Designer YAML &amp; OpenAPI 3.0.3 Connectors (<code>${escapeHtml(ag.openapi_spec_path || ('agents/' + ag.id + '/low_code/openapi_data_source_tools.json'))}</code>).</div>
-            <div><strong>Mathematical &amp; AI Reasoning Stack:</strong> ${escapeHtml(ag.solver_stack)}</div>
-            <div><strong>Governed System Write-Back:</strong> ${escapeHtml(ag.api_writeback)}</div>
-            <div><strong>Dual-Surface A2UI v0.9 Standard:</strong> (1) <strong>Inline Chat <code>Card</code></strong> rendering a 2-Panel Executive <code>VegaChart</code> Infographic (Baseline vs. Target + Signed <code>&Delta;</code> Variance Strip), and (2) <strong>Side-Panel <code>Canvas</code></strong> opening a Looker Studio <code>RichTable</code>, collapsible <code>MaterialExpansionPanel</code> cards, and 1-click <code>MaterialButton</code> quick actions.</div>
+        <!-- 3. Execution Architecture (Dual-View Toggle!) -->
+        <div class="pb-content-card" style="border-left: 4px solid ${ag.pillar_color};">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+            <div class="pb-section-title" style="margin-bottom:0;">🔄 3 · How This Agent Works — End-to-End Runtime Architecture</div>
+            <div class="pb-arch-toggle-group">
+              <button type="button" class="pb-arch-toggle-btn ${isDetailedArch ? 'active' : ''}" onclick="window.pbArchViewMode='detailed'; renderDetail();">📋 4-Stage Architecture</button>
+              <button type="button" class="pb-arch-toggle-btn ${!isDetailedArch ? 'active' : ''}" onclick="window.pbArchViewMode='stack'; renderDetail();">🔄 Tech Stack &amp; Sub-Agents</button>
+            </div>
           </div>
-          ${subAgentsHtml}
+          ${fourStageHtml}
+          ${stackSummaryHtml}
         </div>
 
         <!-- 4. Prompts -->

@@ -14,6 +14,13 @@ spec:
   a2ui_surfaces:
     inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
     side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  cortex_framework:
+    version: v7
+    module: "Cortex Production Planning, Shop-Floor Execution & Quality Management (PP / QM)"
+    data_product_view: "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_oee_breakdown_metrics"
+    orchestration: "Dataform SQLX + Dataplex Knowledge Catalog (cortex-kc-sync)"
+    official_solution_url: "https://cloud.google.com/solutions/cortex"
+    official_docs_url: "https://cloud.google.com/cortex/docs/overview"
   bigquery_data_stores:
     - id: bq_supply_chain_twin_oee_breakdown_metrics
       uri: "bq://zuhaibp-ai.supply_chain_twin.oee_breakdown_metrics"
@@ -32,6 +39,7 @@ spec:
       source_system: "SAP S/4HANA Materials Management (MM) Spare Parts Crib"
       protocol: "BAPI_RESERVATION_CREATE1"
   data_source_tools:
+    - query_cortex_predictive_oee_sentinel_data_products
     - inspect_mes_scada_predictive_oee_sentinel_data_sources
     - query_sap_s4hana_master_data_backbone
     - query_mes_scada_oee_breakdown_metrics

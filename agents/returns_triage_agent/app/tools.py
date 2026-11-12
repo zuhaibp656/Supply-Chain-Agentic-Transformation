@@ -817,6 +817,32 @@ def publish_returns_triage_interactive_cockpit_to_gcs(title: str = "Returns Tria
     return generate_interactive_html_dashboard(title=title)
 
 
+
+
+
+
+
+# --- BEGIN GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+from .cortex_dataprod import query_cortex_semantic_data_product as _query_cortex_semantic_dp
+
+_sc_list = globals().get("SYSTEM_CONNECTORS")
+if isinstance(_sc_list, list) and not any(isinstance(_c, dict) and _c.get("id") == "google_cloud_cortex_v7" for _c in _sc_list):
+    _sc_list.insert(0, {
+        "id": "google_cloud_cortex_v7",
+        "name": "Google Cloud Cortex Framework (v7) Data Products",
+        "protocol": "Dataform SQLX / BigQuery Data Product / cortex-kc-sync",
+        "tables": ["cortex_dp_omnichannel_return_parcel_intake", "cortex_dp_optical_condition_grading_scans", "cortex_dp_returns_disposition_routing_queue", "cortex_dp_sku_refurb_and_resale_economics"],
+    })
+
+
+def query_cortex_returns_triage_agent_data_products(record_filter: str = "") -> Dict[str, Any]:
+    """[Google Cloud Cortex Framework v7 · `zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_omnichannel_return_parcel_intake`] Query harmonized, CDC-deduplicated BigQuery semantic data products (SAP/ERP/WMS + K9 external signals via Dataform & Dataplex Knowledge Catalog)."""
+    res = _query_cortex_semantic_dp(_read_json, _discover_table_files, record_filter=record_filter)
+    if isinstance(res, dict) and res.get("rows") and callable(globals().get("_record_canvas_rows")):
+        _record_canvas_rows(str(res.get("source_table") or "omnichannel_return_parcel_intake"), res.get("rows"))
+    return res
+# --- END GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
+
 LEGACY_COMPAT_TOOLS = [
     fn for _nm, fn in [
         ("list_systems", globals().get("list_systems")),
@@ -833,6 +859,7 @@ LEGACY_COMPAT_TOOLS = [
 ALL_TOOLS = [
     inspect_oms_rma_returns_triage_data_sources,
     query_sap_s4hana_master_data_backbone,
+    query_cortex_returns_triage_agent_data_products,
     query_oms_rma_omnichannel_return_parcel_intake,
     query_vision_grading_optical_condition_grading_scans,
     query_wms_returns_disposition_routing_queue,

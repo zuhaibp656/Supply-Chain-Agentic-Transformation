@@ -1,0 +1,61 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "port_drayage_orchestrator",
+  "cortex_module": "Cortex Order Fulfillment, Delivery Performance (OTIF) & Transportation (SD / TM)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.container_discharge_demurrage_ledger_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.container_discharge_demurrage_ledger_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_container_discharge_demurrage_ledger"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_container_discharge_demurrage_ledger",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_drayage_chassis_transload_allocations",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_ocean_vessel_ais_berth_telemetry",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_port_terminal_gate_appointments"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "LIKP",
+    "LIPS",
+    "VTTK",
+    "VTTP",
+    "VBAK",
+    "VBAP",
+    "KNA1"
+  ],
+  "k9_external_signal_enrichment": [
+    "WeatherNext Corridor Disruption Alerts",
+    "Port & Highway Congestion Feeds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "container_id": "Container ID",
+    "vessel_imo": "Vessel Imo",
+    "size_type": "Size Type",
+    "stowage_tier": "Stowage Tier",
+    "last_free_day": "Last Free Day",
+    "daily_demurrage_usd": "Daily Demurrage (USD)",
+    "downstream_stockout_risk": "Downstream Stockout Risk",
+    "allocation_id": "Allocation ID",
+    "drayage_carrier_id": "Drayage Carrier ID",
+    "chassis_pool_id": "Chassis Pool ID",
+    "routing_decision": "Routing Decision",
+    "demurrage_avoided_usd": "Demurrage Avoided (USD)",
+    "transit_days_saved": "Transit Days Saved",
+    "vessel_name": "Vessel Name",
+    "service_loop": "Service Loop",
+    "port_of_discharge": "Port Of Discharge",
+    "carrier_published_eta": "Carrier Published Eta",
+    "ai_predicted_berth_eta": "Ai Predicted Berth Eta",
+    "weathernext_swell_delay_hrs": "Weathernext Swell Delay Hrs",
+    "containers_onboard": "Containers Onboard"
+  }
+}

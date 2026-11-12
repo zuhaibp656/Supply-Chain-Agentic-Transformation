@@ -9283,6 +9283,119 @@
     }
     /* === END SC_V28_COBRAND_AND_STORIES_CSS === */
 
+    /* === BEGIN DUAL-VIEW AGENT RUNTIME ARCHITECTURE CSS === */
+    .sc-arch-header-bar { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px 16px; margin-bottom: 14px; }
+    .sc-arch-header-right { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .sc-arch-view-toggle { display: inline-flex; align-items: center; background: rgba(15, 23, 42, 0.55); border: 1.5px solid rgba(148, 163, 184, 0.32); border-radius: 999px; padding: 3px; gap: 3px; }
+    html[data-theme="light"] .sc-arch-view-toggle { background: #eef3fb; border-color: #c5daf8; }
+    .sc-arch-toggle-btn { border: none; background: transparent; color: var(--text-secondary); font-family: var(--font-sans); font-size: 12px; font-weight: 700; padding: 6px 13px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.18s ease; white-space: nowrap; }
+    .sc-arch-toggle-btn:hover { color: var(--text-primary); }
+    .sc-arch-toggle-btn.is-active { background: var(--arch-accent, #2563eb); color: #ffffff !important; box-shadow: 0 2px 10px rgba(37, 99, 235, 0.28); }
+    .sc-hw-trigger-bar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; padding: 11px 16px; border-radius: 12px; background: rgba(37, 99, 235, 0.10); border: 1px solid rgba(96, 165, 250, 0.28); border-left: 4px solid var(--arch-accent, #2563eb); margin-bottom: 14px; }
+    html[data-theme="light"] .sc-hw-trigger-bar { background: #f3f7fe; border-color: #d2e3fc; border-left: 4px solid var(--arch-accent, #1a73e8); }
+    .sc-hw-trigger-badge { font-family: var(--font-mono); font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 999px; background: rgba(56, 189, 248, 0.18); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.35); white-space: nowrap; }
+    html[data-theme="light"] .sc-hw-trigger-badge { background: #e8f0fe; color: #1967d2; border-color: #aecbfa; }
+    .sc-hw-trigger-text { font-size: 13.2px; font-weight: 600; color: var(--text-primary); flex: 1; min-width: 240px; line-height: 1.4; }
+    .sc-hw-tier-tag { font-family: var(--font-mono); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 8px; background: rgba(255, 255, 255, 0.06); border: 1px solid var(--border-subtle); color: var(--text-secondary); white-space: nowrap; }
+    html[data-theme="light"] .sc-hw-tier-tag { background: #ffffff; border-color: #dadce0; color: #3c4043; }
+    .sc-hw-pipeline { display: grid; grid-template-columns: 1.02fr auto 1.24fr auto 1.08fr auto 1.06fr; gap: 10px; align-items: stretch; }
+    .sc-hw-flow-arrow { display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--arch-accent, #38bdf8); opacity: 0.85; user-select: none; padding: 0 2px; }
+    @media (max-width: 1200px) { .sc-hw-pipeline { grid-template-columns: 1fr; } .sc-hw-flow-arrow { transform: rotate(90deg); height: 20px; } }
+    .sc-hw-stage-card { background: rgba(15, 23, 42, 0.62); border: 1px solid rgba(148, 163, 184, 0.22); border-top: 3px solid var(--stage-accent, #3b82f6); border-radius: 14px; padding: 14px 15px; display: flex; flex-direction: column; gap: 9px; min-width: 0; }
+    html[data-theme="light"] .sc-hw-stage-card { background: #ffffff; border-color: #e2e8f0; border-top: 3px solid var(--stage-accent, #1a73e8); box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04); }
+    .sc-hw-stage-brain { background: linear-gradient(180deg, rgba(30, 41, 59, 0.82) 0%, rgba(15, 23, 42, 0.72) 100%); }
+    html[data-theme="light"] .sc-hw-stage-brain { background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%); }
+    .sc-hw-kicker { font-family: var(--font-mono); font-size: 10.5px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--stage-accent, #38bdf8); }
+    html[data-theme="light"] .sc-hw-kicker { color: var(--stage-accent, #1967d2); }
+    .sc-hw-stage-title { font-family: var(--font-display); font-size: 15px; font-weight: 800; color: var(--text-primary); line-height: 1.28; margin: 0; }
+    .sc-hw-persona-pill { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; padding: 4px 10px; border-radius: 999px; font-size: 11.8px; font-weight: 700; background: rgba(56, 189, 248, 0.13); border: 1px solid rgba(56, 189, 248, 0.30); color: var(--text-primary); }
+    html[data-theme="light"] .sc-hw-persona-pill { background: #f1f5fb; border-color: #d2e3fc; color: #1e293b; }
+    .sc-hw-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
+    .sc-hw-list li { display: flex; align-items: flex-start; gap: 7px; font-size: 12.6px; line-height: 1.44; color: var(--text-secondary); }
+    html[data-theme="light"] .sc-hw-list li { color: #334155; }
+    .sc-hw-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--stage-accent, #3b82f6); margin-top: 6px; flex-shrink: 0; }
+    .sc-hw-check { color: #10b981; font-weight: 900; font-size: 13px; line-height: 1.3; flex-shrink: 0; }
+    html[data-theme="light"] .sc-hw-check { color: #0d652d; }
+    .sc-hw-mini-shield { margin-top: auto; padding-top: 8px; border-top: 1px dashed rgba(148, 163, 184, 0.25); font-size: 11.4px; line-height: 1.4; color: var(--text-muted); }
+    html[data-theme="light"] .sc-hw-mini-shield { border-top-color: #cbd5e1; color: #5f6368; }
+    .sc-hw-steps-stack { display: flex; flex-direction: column; gap: 8px; }
+    .sc-hw-step-card { display: flex; align-items: flex-start; gap: 9px; padding: 9px 11px; border-radius: 10px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(148, 163, 184, 0.18); }
+    html[data-theme="light"] .sc-hw-step-card { background: #f8fafd; border-color: #e2e8f0; }
+    .sc-hw-step-num { width: 23px; height: 23px; border-radius: 7px; background: var(--step-badge-bg, #2563eb); color: #ffffff; font-family: var(--font-mono); font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .sc-hw-step-title { font-size: 12.8px; font-weight: 800; color: var(--text-primary); line-height: 1.3; margin-bottom: 2px; }
+    .sc-hw-step-detail { font-size: 11.8px; color: var(--text-secondary); line-height: 1.4; }
+    .sc-hw-io-split { display: flex; flex-direction: column; gap: 10px; }
+    .sc-hw-io-group { display: flex; flex-direction: column; gap: 6px; }
+    .sc-hw-io-label { font-family: var(--font-mono); font-size: 10.2px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+    .sc-hw-read-label { color: #38bdf8; }
+    html[data-theme="light"] .sc-hw-read-label { color: #0277bd; }
+    .sc-hw-write-label { color: #34d399; }
+    html[data-theme="light"] .sc-hw-write-label { color: #0d652d; }
+    .sc-hw-chip-stack { display: flex; flex-direction: column; gap: 5px; }
+    .sc-hw-read-chip, .sc-hw-write-chip { font-size: 11.9px; font-weight: 600; line-height: 1.35; padding: 6px 9px; border-radius: 8px; word-break: break-word; }
+    .sc-hw-read-chip { background: rgba(56, 189, 248, 0.11); border: 1px solid rgba(56, 189, 248, 0.28); color: #e0f2fe; }
+    html[data-theme="light"] .sc-hw-read-chip { background: #f0f7ff; border-color: #c2e0ff; color: #0f172a; }
+    .sc-hw-write-chip { background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(52, 211, 153, 0.30); color: #d1fae5; }
+    html[data-theme="light"] .sc-hw-write-chip { background: #ecfdf5; border-color: #a7f3d0; color: #064e3b; }
+    .sc-hw-human-box { margin-top: auto; padding: 9px 11px; border-radius: 10px; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(251, 191, 36, 0.34); }
+    html[data-theme="light"] .sc-hw-human-box { background: #fef7e0; border-color: #fde293; }
+    .sc-hw-human-title { font-size: 11.2px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #fbbf24; margin-bottom: 3px; }
+    html[data-theme="light"] .sc-hw-human-title { color: #b06000; }
+    .sc-hw-human-text { font-size: 11.6px; line-height: 1.42; color: #fef3c7; }
+    html[data-theme="light"] .sc-hw-human-text { color: #4a3800; }
+    .sc-hw-ba-strip { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: stretch; margin-top: 12px; }
+    @media (max-width: 960px) { .sc-hw-ba-strip { grid-template-columns: 1fr; } .sc-hw-ba-arrow { margin: 0 auto; transform: rotate(90deg); } }
+    .sc-hw-ba-col { padding: 12px 14px; border-radius: 11px; border: 1px solid var(--border-subtle); }
+    .sc-hw-ba-before { background: rgba(30, 41, 59, 0.65); border-left: 4px solid #64748b; }
+    html[data-theme="light"] .sc-hw-ba-before { background: #f8f9fa; border-color: #e2e8f0; border-left: 4px solid #5f6368; }
+    .sc-hw-ba-after { background: rgba(16, 185, 129, 0.13); border-color: rgba(52, 211, 153, 0.32); border-left: 4px solid #10b981; }
+    html[data-theme="light"] .sc-hw-ba-after { background: #e6f4ea; border-color: #ceead6; border-left: 4px solid #137333; }
+    .sc-hw-ba-kicker { font-family: var(--font-mono); font-size: 10px; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 4px; color: #94a3b8; }
+    html[data-theme="light"] .sc-hw-ba-kicker { color: #5f6368; }
+    .sc-hw-ba-after .sc-hw-ba-kicker { color: #34d399; }
+    html[data-theme="light"] .sc-hw-ba-after .sc-hw-ba-kicker { color: #0d652d; }
+    .sc-hw-ba-text { font-size: 12.6px; line-height: 1.46; color: var(--text-primary); font-weight: 600; }
+    .sc-hw-ba-arrow { display: flex; align-items: center; justify-content: center; font-size: 15px; color: var(--arch-accent, #38bdf8); background: rgba(56, 189, 248, 0.14); border: 1px solid rgba(56, 189, 248, 0.34); width: 34px; height: 34px; align-self: center; border-radius: 50%; flex-shrink: 0; }
+    html[data-theme="light"] .sc-hw-ba-arrow { background: #e8f0fe; border-color: #c5daf8; color: #1a73e8; }
+    /* === END DUAL-VIEW AGENT RUNTIME ARCHITECTURE CSS === */
+    /* === GOOGLE CLOUD CORTEX FRAMEWORK 1-LINE DATA FOUNDATION PILL === */
+    .sc-cortex-oneliner {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(26, 115, 232, 0.07);
+      border: 1px solid rgba(26, 115, 232, 0.24);
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--text-secondary);
+      max-width: 100%;
+    }
+    html[data-theme="dark"] .sc-cortex-oneliner {
+      background: rgba(56, 189, 248, 0.09);
+      border-color: rgba(56, 189, 248, 0.28);
+    }
+    .sc-cortex-oneliner strong {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+    .sc-cortex-oneliner a {
+      color: var(--g-blue, #1a73e8);
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    html[data-theme="dark"] .sc-cortex-oneliner a {
+      color: #38bdf8;
+    }
+    .sc-cortex-oneliner a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
@@ -9377,6 +9490,7 @@
       <div class="section-header" style="margin-bottom: 32px;">
         <h2 class="section-title">Enterprise Supply Chain — 6 Core Operating Pillars</h2>
         <p class="section-subtitle">Select a Pillar to view its Sub-Pillars, then click any Sub-Pillar to explore its Personas.</p>
+        <div class="sc-cortex-oneliner"><span>🧱 <strong>Data Foundation:</strong> Powered by <strong>Google Cloud Cortex Framework (v7)</strong> — pre-built Dataform &amp; BigQuery semantic data products harmonizing raw Enterprise Resource Planning (ERP), Warehouse Management System (WMS), and supply chain signals for AI agents.</span><a href="https://cloud.google.com/solutions/cortex" target="_blank" rel="noopener">About Cortex ↗</a><span style="opacity:0.45;">·</span><a href="https://cloud.google.com/cortex/docs/overview" target="_blank" rel="noopener">Official Docs ↗</a></div>
       </div>
 
       <!-- 6-Pillar Interactive Master Navigation Tab Bar -->
@@ -71784,6 +71898,91 @@
       return words.length <= 4 ? s : words.slice(0, 4).join(' ');
     }
 
+    window.__agentArchViewMode = 'detailed';
+
+    function setAgentArchViewMode(mode) {
+      window.__agentArchViewMode = (mode === 'diagram') ? 'diagram' : 'detailed';
+      document.querySelectorAll('.sc-arch-pane-detailed').forEach(el => {
+        el.style.display = (window.__agentArchViewMode === 'detailed') ? 'block' : 'none';
+      });
+      document.querySelectorAll('.sc-arch-pane-diagram').forEach(el => {
+        el.style.display = (window.__agentArchViewMode === 'diagram') ? 'block' : 'none';
+      });
+      document.querySelectorAll('.sc-arch-toggle-btn').forEach(btn => {
+        const m = btn.getAttribute('data-arch-mode');
+        btn.classList.toggle('is-active', m === window.__agentArchViewMode);
+      });
+    }
+
+    function deriveAgentRuntimeArchitecture(ag, dept, cls, cleanName, sysArr, subs, solverLabel, writebackFull, shortCadence) {
+      const hw = ag.howItWorks || {};
+      const personaObj = (typeof PERSONAS !== 'undefined' && Array.isArray(PERSONAS))
+        ? PERSONAS.find(p => p.id === ag.personaId)
+        : null;
+      const personaRole = (ag.adkSpec && ag.adkSpec.primaryPersona)
+        || (personaObj && personaObj.role)
+        || ag.persona
+        || 'Supply Chain Operations Lead';
+      const specSystems = (ag.adkSpec && Array.isArray(ag.adkSpec.systems)) ? ag.adkSpec.systems : [];
+      const sys1 = sysArr[0] || 'Enterprise ERP & Order Backbone';
+      const sys2 = sysArr[1] || 'Live Warehouse / Logistics Telemetry';
+      const sys3 = sysArr[2] || 'Partner EDI & External Risk Signals';
+
+      const trigger = (hw.trigger && hw.trigger.length > 25)
+        ? hw.trigger
+        : `${shortCadence} — fires automatically when a live ${sys1} event, threshold breach, or ${personaRole} scenario query arrives`;
+
+      const inputs = (Array.isArray(hw.inputs) && hw.inputs.length >= 3)
+        ? hw.inputs.slice(0, 3)
+        : [
+            specSystems[0] ? `${toOpenTechLabel(specSystems[0].name)} (${toOpenTechLabel(specSystems[0].feeds || 'live operational records')})` : `${sys1} live transaction & order state`,
+            specSystems[1] ? `${toOpenTechLabel(specSystems[1].name)} (${toOpenTechLabel(specSystems[1].feeds || 'real-time telemetry')})` : `${sys2} real-time inventory & capacity telemetry`,
+            `Master data tolerances, service-level targets & policy thresholds for ${ag.subPillarName || dept.title}`
+          ];
+
+      const steps = (Array.isArray(hw.steps) && hw.steps.length >= 3 && hw.steps[0] && hw.steps[0].title)
+        ? hw.steps.slice(0, 3)
+        : [
+            { title: subs[0] ? subs[0].name : 'Harmonize & Validate Live Signals', detail: (subs[0] && subs[0].role) ? subs[0].role : `Normalizes incoming records across ${sys1} and ${sys2}, stripping stale or duplicate anomalies.` },
+            { title: subs[1] ? subs[1].name : 'Optimize Constraints & Quantify Trade-Offs', detail: `${subs[1] && subs[1].role ? subs[1].role + ' — p' : 'P'}owered by ${solverLabel} to rank cost, service, and margin impact.` },
+            { title: subs[2] ? subs[2].name : 'Enforce Policy Gate & Stage Action Payload', detail: (subs[2] && subs[2].role) ? subs[2].role : `Verifies delegation limits and prepares governed execution payloads for ${writebackFull}.` }
+          ];
+
+      const readsFrom = (Array.isArray(hw.readsFrom) && hw.readsFrom.length >= 2)
+        ? hw.readsFrom.slice(0, 4)
+        : [sys1, sys2, sys3].filter(Boolean);
+
+      const writesTo = (Array.isArray(hw.writesTo) && hw.writesTo.length >= 2)
+        ? hw.writesTo.slice(0, 3)
+        : [
+            writebackFull,
+            `Dual-Surface A2UI v0.9 (2-Panel VegaChart + Looker Studio RichTable Canvas)`,
+            `${personaRole} Action Queue & Immutable Audit Trail`
+          ];
+
+      const outputs = (Array.isArray(hw.outputs) && hw.outputs.length >= 3)
+        ? hw.outputs.slice(0, 3)
+        : [
+            `Ranked, constraint-verified action schedule (&le;5-column copy-ready decision table)`,
+            `Inline 2-Panel Executive VegaChart Infographic + Side-Panel Looker RichTable`,
+            `Target operational outcome (${ag.badge || 'Verified ROI'}): ${ag.baselineVsTarget || ag.desc || 'measurable cycle-time and margin improvement'}`
+          ];
+
+      const humanCheckpoint = (hw.humanCheckpoint && hw.humanCheckpoint.length > 20)
+        ? hw.humanCheckpoint
+        : `Auto-stages routine recommendations within policy bounds; requires explicit ${personaRole} one-click approval before committing high-impact overrides via ${writebackFull.split('(')[0].trim()}.`;
+
+      const firstSentence = (txt) => {
+        const s = String(txt || '').trim();
+        const m = s.match(/^[^.!?]+[.!?]/);
+        return m ? m[0].trim() : s;
+      };
+      const exampleBefore = hw.exampleBefore || firstSentence(ag.problemStatement) || `Manual spreadsheet triage across ${sys1} and ${sys2} delays exception response and leaks margin.`;
+      const exampleAfter = hw.exampleAfter || `${ag.baselineVsTarget ? ag.baselineVsTarget + ' — ' : ''}${firstSentence(ag.outcomeStatement || ag.desc)}`;
+
+      return { personaRole, trigger, inputs, steps, readsFrom, writesTo, outputs, humanCheckpoint, exampleBefore, exampleAfter };
+    }
+
     function renderSimpleAgentArchitectureDiagram(ag, dept) {
       const adk = ag.adkImplementation || {};
       const spec = ag.adkSpec || {};
@@ -71804,7 +72003,8 @@
         ? ag.subAgents.slice(0, 3)
         : [
             { name: 'Data Validator', role: 'Checks live signals' },
-            { name: 'Optimization Engine', role: 'Selects best action' }
+            { name: 'Optimization Engine', role: 'Selects best action' },
+            { name: 'Governed Dispatcher', role: 'Enforces policy & stages write-back' }
           ];
       const subs = rawSubs.map(sa => ({
         name: toOpenTechLabel(sa.name),
@@ -71819,43 +72019,168 @@
       const solverLabel = toOpenTechLabel(ag.solverStack || 'OR-Tools + Gemini');
       const writebackFull = toOpenTechLabel(ag.apiWriteback || 'ERP / WMS Update');
 
+      const rt = deriveAgentRuntimeArchitecture(
+        ag, dept, cls, cleanName, sysArr, subs, solverLabel, writebackFull, shortCadence
+      );
+
       const svgBody = renderFullTopologySvg(topology, {
         ag, dept, cls, cleanName,
         sys1, sys2,
         tables, subs, solverLabel, writebackFull
       });
 
+      const curMode = (window.__agentArchViewMode === 'diagram') ? 'diagram' : 'detailed';
+      const esc = (v) => String(v == null ? '' : v)
+        .replace(/&(?!(?:amp|lt|gt|quot|#39|le|ge|rarr|mdash|bull);)/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
       return `
-        <div class="simple-arch-card">
-          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+        <div class="simple-arch-card" style="--arch-accent:${dept.color};">
+          <div class="sc-arch-header-bar">
             <div>
               <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:${dept.color}; margin-bottom:3px;">
-                ${tMeta.badge}
+                ${tMeta.badge} &bull; ${esc(cls.label)}
               </div>
-              <h2 style="font-family:var(--font-display); font-size:23px; font-weight:800; color:var(--text-primary); margin:0;">
-                Execution Flow — ${cleanName}
+              <h2 style="font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text-primary); margin:0;">
+                How This Agent Works &mdash; End-to-End Runtime Architecture
               </h2>
             </div>
-            <span class="sc-spec-count-badge" style="font-size:11.5px;">
-              ⏱️ ${shortCadence}
-            </span>
+
+            <div class="sc-arch-header-right">
+              <span class="sc-spec-count-badge" style="font-size:11.5px;">
+                ⏱️ ${esc(shortCadence)}
+              </span>
+              <div class="sc-arch-view-toggle" role="tablist" aria-label="Architecture View Mode">
+                <button type="button"
+                        class="sc-arch-toggle-btn ${curMode === 'detailed' ? 'is-active' : ''}"
+                        data-arch-mode="detailed"
+                        onclick="setAgentArchViewMode('detailed')">
+                  <span>📋</span>
+                  <span>4-Stage Architecture</span>
+                </button>
+                <button type="button"
+                        class="sc-arch-toggle-btn ${curMode === 'diagram' ? 'is-active' : ''}"
+                        data-arch-mode="diagram"
+                        onclick="setAgentArchViewMode('diagram')">
+                  <span>🔀</span>
+                  <span>Visual Flow Diagram</span>
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div class="ag-flow-canvas-wrap">
-            <svg class="ag-flow-svg" viewBox="0 0 1120 288">
-              <defs>
-                <marker id="arrowAccent_${ag.id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1 L 10 5 L 0 9 z" fill="${dept.color}" />
-                </marker>
-                <marker id="arrowGreen_${ag.id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
-                </marker>
-                <marker id="arrowCyan_${ag.id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8" />
-                </marker>
-              </defs>
-              ${svgBody}
-            </svg>
+          <div data-arch-pane="detailed" class="sc-arch-pane-detailed" style="display:${curMode === 'detailed' ? 'block' : 'none'};">
+            <div class="sc-hw-trigger-bar">
+              <span class="sc-hw-trigger-badge">⚡ TRIGGERED WHEN</span>
+              <span class="sc-hw-trigger-text">${esc(rt.trigger)}</span>
+              <span class="sc-hw-tier-tag">${esc(cls.platform)}</span>
+            </div>
+
+            <div class="sc-hw-pipeline">
+              <div class="sc-hw-stage-card" style="--stage-accent:${dept.color};">
+                <div class="sc-hw-kicker">1. WHAT IT TAKES</div>
+                <h3 class="sc-hw-stage-title">Inputs &amp; Guardrail Check</h3>
+                <div class="sc-hw-persona-pill">👤 ${esc(rt.personaRole)}</div>
+                <ul class="sc-hw-list">
+                  ${rt.inputs.map(inp => `<li><span class="sc-hw-dot"></span><span>${esc(inp)}</span></li>`).join('')}
+                </ul>
+                <div class="sc-hw-mini-shield">
+                  🔒 <strong>Model Armor:</strong> Masks vendor pricing, contract rates &amp; Personal Identifiable Information (PII) before reasoning.
+                </div>
+              </div>
+
+              <div class="sc-hw-flow-arrow" aria-hidden="true">&rarr;</div>
+
+              <div class="sc-hw-stage-card sc-hw-stage-brain" style="--stage-accent:${cls.color || dept.color}; --step-badge-bg:${cls.color || dept.color};">
+                <div class="sc-hw-kicker">2. WHAT IT DOES (STEP-BY-STEP)</div>
+                <h3 class="sc-hw-stage-title">${esc(cleanName)}</h3>
+                <div class="sc-hw-steps-stack">
+                  ${rt.steps.map((st, idx) => `
+                    <div class="sc-hw-step-card">
+                      <div class="sc-hw-step-num">0${idx + 1}</div>
+                      <div style="min-width:0;">
+                        <div class="sc-hw-step-title">${esc(st.title)}</div>
+                        <div class="sc-hw-step-detail">${esc(st.detail)}</div>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+              <div class="sc-hw-flow-arrow" aria-hidden="true">&rarr;</div>
+
+              <div class="sc-hw-stage-card" style="--stage-accent:#0284c7;">
+                <div class="sc-hw-kicker">3. SYSTEMS CONNECTED</div>
+                <h3 class="sc-hw-stage-title">Reads vs. Updates</h3>
+                <div class="sc-hw-io-split">
+                  <div class="sc-hw-io-group">
+                    <div class="sc-hw-io-label sc-hw-read-label">📖 READS FROM (Read-Only)</div>
+                    <div class="sc-hw-chip-stack">
+                      ${rt.readsFrom.map(r => `<div class="sc-hw-read-chip">🔌 ${esc(r)}</div>`).join('')}
+                    </div>
+                  </div>
+                  <div class="sc-hw-io-group">
+                    <div class="sc-hw-io-label sc-hw-write-label">✍️ UPDATES / NOTIFIES</div>
+                    <div class="sc-hw-chip-stack">
+                      ${rt.writesTo.map(w => `<div class="sc-hw-write-chip">⚡ ${esc(w)}</div>`).join('')}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sc-hw-flow-arrow" aria-hidden="true">&rarr;</div>
+
+              <div class="sc-hw-stage-card" style="--stage-accent:#059669;">
+                <div class="sc-hw-kicker">4. WHAT IT PRODUCES</div>
+                <h3 class="sc-hw-stage-title">Outputs &amp; Human Sign-Off</h3>
+                <ul class="sc-hw-list">
+                  ${rt.outputs.map(out => `<li><span class="sc-hw-check">✓</span><span>${esc(out)}</span></li>`).join('')}
+                </ul>
+                <div class="sc-hw-human-box">
+                  <div class="sc-hw-human-title">🛡️ Human-in-the-Loop (HITL) Sign-Off</div>
+                  <div class="sc-hw-human-text">${esc(rt.humanCheckpoint)}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sc-cortex-oneliner" style="display:flex; justify-content:space-between; width:100%; border-radius:11px; margin-top:12px; margin-bottom:2px; padding:8px 14px; font-size:12.5px;">
+              <span>🧱 <strong>Cortex Engine:</strong> Harmonizes raw ERP &amp; Warehouse Management System (WMS) feeds via <strong>Google Cloud Cortex Framework (v7)</strong> BigQuery Data Products.</span>
+              <span style="display:inline-flex; gap:10px; align-items:center;">
+                <a href="https://cloud.google.com/solutions/cortex" target="_blank" rel="noopener">Cortex Solution ↗</a>
+                <a href="https://cloud.google.com/cortex/docs/overview" target="_blank" rel="noopener">Official Docs ↗</a>
+              </span>
+            </div>
+            <div class="sc-hw-ba-strip">
+              <div class="sc-hw-ba-col sc-hw-ba-before">
+                <div class="sc-hw-ba-kicker">BEFORE AGENT (RAW INPUT &amp; BOTTLENECK)</div>
+                <div class="sc-hw-ba-text">${esc(rt.exampleBefore)}</div>
+              </div>
+              <div class="sc-hw-ba-arrow" aria-hidden="true">⚡</div>
+              <div class="sc-hw-ba-col sc-hw-ba-after">
+                <div class="sc-hw-ba-kicker">AFTER AGENT (VERIFIED OUTPUT)</div>
+                <div class="sc-hw-ba-text">${esc(rt.exampleAfter)}</div>
+              </div>
+            </div>
+          </div>
+
+          <div data-arch-pane="diagram" class="sc-arch-pane-diagram" style="display:${curMode === 'diagram' ? 'block' : 'none'};">
+            <div class="ag-flow-canvas-wrap">
+              <svg class="ag-flow-svg" viewBox="0 0 1120 288">
+                <defs>
+                  <marker id="arrowAccent_${ag.id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="${dept.color}" />
+                  </marker>
+                  <marker id="arrowGreen_${ag.id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+                  </marker>
+                  <marker id="arrowCyan_${ag.id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8" />
+                  </marker>
+                </defs>
+                ${svgBody}
+              </svg>
+            </div>
           </div>
         </div>
       `;
@@ -74524,6 +74849,8 @@ function openValueChainPage(vcId, pushHash = true, ev = null) {
               </div>
             </div>
           </div>
+
+          <div class="sc-cortex-oneliner" style="display:flex; width:100%; border-radius:12px; margin:10px 0 12px; padding:9px 16px;"><span>🧱 <strong>Semantic Data Foundation:</strong> All 60 agents query <strong>Google Cloud Cortex Framework (v7)</strong> Dataform &amp; BigQuery data products synced with Dataplex Knowledge Catalog — eliminating raw ERP schema drift.</span><a href="https://cloud.google.com/solutions/cortex" target="_blank" rel="noopener">Cortex Overview ↗</a><span style="opacity:0.45;">·</span><a href="https://cloud.google.com/cortex/docs/overview" target="_blank" rel="noopener">Architecture Docs ↗</a></div>
 
           <!-- FOUNDATION SYSTEMS & OPERATIONAL TELEMETRY INPUTS -->
           <div class="sc-fn-foundation-rows">
@@ -79587,6 +79914,13 @@ function openValueChainPage(vcId, pushHash = true, ev = null) {
 
   <script>
     const SC_ABBREVIATIONS = [
+  {
+    "abbr": "CORTEX (v7)",
+    "full_name": "Google Cloud Cortex Framework (Version 7)",
+    "expansion": "Google Cloud Cortex Framework — Enterprise Data Foundation & Data Product Accelerator",
+    "category": "Google Cloud Data & AI Foundation",
+    "definition": "Open-source Google Cloud accelerator using BigQuery, Dataform (SQLX), and Dataplex Knowledge Catalog (cortex-kc-sync) to transform raw SAP ECC, SAP S/4HANA, SAP Business Data Cloud (BDC), and supply chain feeds into trusted, agent-ready semantic data products."
+  },
   {
     "abbr": "SCOT",
     "full_name": "Supply Chain Optimization Technologies (SCOT)",

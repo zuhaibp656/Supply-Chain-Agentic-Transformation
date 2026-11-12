@@ -1,0 +1,58 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "network_twin_architect",
+  "cortex_module": "Cortex Supply Chain & Order-to-Cash + K9 External Signals (WeatherNext & Trends)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.center_of_gravity_milp_scenarios_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.center_of_gravity_milp_scenarios_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_center_of_gravity_milp_scenarios"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_center_of_gravity_milp_scenarios",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_network_facility_nodes_and_leases",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_network_stress_test_simulations",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_sku_customer_cost_to_serve_matrix"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "VBRK",
+    "VBRP",
+    "MARA",
+    "MARC",
+    "KNA1",
+    "PBIM/PBED"
+  ],
+  "k9_external_signal_enrichment": [
+    "Google Trends Demand Index",
+    "NOAA / WeatherNext Forecast Ensembles",
+    "Regional Holiday Calendar"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "scenario_id": "Scenario ID",
+    "scenario_name": "Scenario Name",
+    "stem_miles_reduction_pct": "Stem Miles Reduction (%)",
+    "annual_net_savings_usd": "Annual Net Savings (USD)",
+    "1_day_ground_coverage_pct": "1 Day Ground Coverage (%)",
+    "facility_id": "Facility ID",
+    "facility_type": "Facility Type",
+    "annual_lease_usd": "Annual Lease (USD)",
+    "capacity_pallets_yr": "Capacity Pallets Yr",
+    "handling_cost_per_pallet_usd": "Handling Cost Per Pallet (USD)",
+    "utilization_pct": "Utilization (%)",
+    "stress_test_id": "Stress Test ID",
+    "shock_event": "Shock Event",
+    "recommended_shift": "Recommended Shift",
+    "duty_and_freight_saved_usd": "Duty And Freight Saved (USD)"
+  }
+}

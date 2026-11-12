@@ -1,0 +1,54 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "dynamic_markdown_agent",
+  "cortex_module": "Cortex Returns Management, Claims Settlement & Sustainability Ledger (SD / QM / ESG)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.dte_price_elasticity_curves_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.dte_price_elasticity_curves_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_dte_price_elasticity_curves"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_dte_price_elasticity_curves",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_esl_markdown_schedule_recommendations",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_markdown_margin_vs_shrink_ledger",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_perishable_store_lot_expiries"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "LIKP",
+    "QMEL",
+    "MCHB",
+    "RBKP"
+  ],
+  "k9_external_signal_enrichment": [
+    "Scope-3 Emission Factors",
+    "Regional Cold-Chain / Shelf-Life Thresholds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "sku_id": "SKU ID",
+    "price_elasticity_beta": "Price Elasticity Beta",
+    "lift_at_15pct_off": "Lift At 15(%) Off",
+    "lift_at_30pct_off": "Lift At 30(%) Off",
+    "lift_at_50pct_off": "Lift At 50(%) Off",
+    "disposal_fee_per_unit_usd": "Disposal Fee Per Unit (USD)",
+    "lot_store_id": "Lot Store ID",
+    "optimal_markdown_pct": "Optimal Markdown (%)",
+    "new_esl_price_usd": "New Esl Price (USD)",
+    "projected_units_cleared": "Projected Units Cleared",
+    "unsold_donate_units": "Unsold Donate Units",
+    "no_action_net_revenue_usd": "No Action Net Revenue (USD)",
+    "esl_optimized_revenue_usd": "Esl Optimized Revenue (USD)",
+    "shrink_units_avoided": "Shrink Units Avoided"
+  }
+}

@@ -14,6 +14,13 @@ spec:
   a2ui_surfaces:
     inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
     side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  cortex_framework:
+    version: v7
+    module: "Cortex Supply Chain & Order-to-Cash + K9 External Signals (WeatherNext & Trends)"
+    data_product_view: "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_inventory_valuation_ledger"
+    orchestration: "Dataform SQLX + Dataplex Knowledge Catalog (cortex-kc-sync)"
+    official_solution_url: "https://cloud.google.com/solutions/cortex"
+    official_docs_url: "https://cloud.google.com/cortex/docs/overview"
   bigquery_data_stores:
     - id: bq_supply_chain_twin_inventory_valuation_ledger
       uri: "bq://zuhaibp-ai.supply_chain_twin.inventory_valuation_ledger"
@@ -32,6 +39,7 @@ spec:
       source_system: "Global Treasury Management & Cash Forecasting System"
       protocol: "SWIFT / REST API"
   data_source_tools:
+    - query_cortex_working_capital_cash_bridge_data_products
     - inspect_sap_s4hana_working_capital_cash_bridge_data_sources
     - query_sap_s4hana_master_data_backbone
     - query_edi_docai_supplier_ap_invoices

@@ -1,0 +1,62 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "fleetflow_dispatch",
+  "cortex_module": "Cortex Order Fulfillment, Delivery Performance (OTIF) & Transportation (SD / TM)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.backhaul_consolidation_opportunities_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.backhaul_consolidation_opportunities_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_backhaul_consolidation_opportunities"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_backhaul_consolidation_opportunities",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_corridor_delivery_orders",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_fleet_vehicle_telematics_hos",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_google_maps_corridor_routes"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "LIKP",
+    "LIPS",
+    "VTTK",
+    "VTTP",
+    "VBAK",
+    "VBAP",
+    "KNA1"
+  ],
+  "k9_external_signal_enrichment": [
+    "WeatherNext Corridor Disruption Alerts",
+    "Port & Highway Congestion Feeds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "backhaul_id": "Backhaul ID",
+    "origin_hub": "Origin Hub",
+    "destination_dc": "Destination Dc",
+    "weight_kg": "Weight Kg",
+    "pallets": "Pallets",
+    "deadhead_miles_eliminated": "Deadhead Miles Eliminated",
+    "net_freight_savings_usd": "Net Freight Savings (USD)",
+    "order_id": "Order ID",
+    "corridor_id": "Corridor ID",
+    "customer_hub": "Customer Hub",
+    "stop_sequence": "Stop Sequence",
+    "cube_m3": "Cube M3",
+    "time_window": "Time Window",
+    "sla_tier": "Sla Tier",
+    "vehicle_id": "Vehicle ID",
+    "vehicle_class": "Vehicle Class",
+    "max_payload_kg": "Max Payload Kg",
+    "max_cube_m3": "Max Cube M3",
+    "driver_hos_remaining_hrs": "Driver Hos Remaining Hrs",
+    "fuel_type": "Fuel Type",
+    "current_status": "Current Status"
+  }
+}

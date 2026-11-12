@@ -1,0 +1,58 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "eco_cutover_orchestrator",
+  "cortex_module": "Cortex Supply Chain & Order-to-Cash + K9 External Signals (WeatherNext & Trends)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.eco_optimal_cutover_schedules_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.eco_optimal_cutover_schedules_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_eco_optimal_cutover_schedules"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_eco_optimal_cutover_schedules",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_erp_bom_effectivity_sync_audit",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_multi_plant_predecessor_inventory_runout",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_plm_engineering_change_orders"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "VBRK",
+    "VBRP",
+    "MARA",
+    "MARC",
+    "KNA1",
+    "PBIM/PBED"
+  ],
+  "k9_external_signal_enrichment": [
+    "Google Trends Demand Index",
+    "NOAA / WeatherNext Forecast Ensembles",
+    "Regional Holiday Calendar"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "schedule_id": "Schedule ID",
+    "eco_id": "Eco ID",
+    "optimal_effectivity_date": "Optimal Effectivity Date",
+    "supplier_po_converted_to_rev_c": "Supplier PO Converted To Rev C",
+    "obsolete_scrap_writeoff_usd": "Obsolete Scrap Writeoff (USD)",
+    "scrap_avoided_usd": "Scrap Avoided (USD)",
+    "sync_id": "Sync ID",
+    "open_po_id": "Open PO ID",
+    "sap_bom_status": "Sap Bom Status",
+    "npi_launch_on_time": "Npi Launch On Time",
+    "plant_id": "Plant ID",
+    "predecessor_on_hand_units": "Predecessor On Hand Units",
+    "open_supplier_po_units": "Open Supplier PO Units",
+    "daily_burn_rate_units": "Daily Burn Rate Units",
+    "uncoordinated_scrap_exposure_usd": "Uncoordinated Scrap Exposure (USD)"
+  }
+}

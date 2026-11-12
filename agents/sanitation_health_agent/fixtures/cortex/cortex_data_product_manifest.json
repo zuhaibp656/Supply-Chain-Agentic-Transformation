@@ -1,0 +1,57 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "sanitation_health_agent",
+  "cortex_module": "Cortex Returns Management, Claims Settlement & Sustainability Ledger (SD / QM / ESG)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.atp_bioluminescence_swab_tests_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.atp_bioluminescence_swab_tests_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_atp_bioluminescence_swab_tests"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_atp_bioluminescence_swab_tests",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_reusable_container_rfid_wash_logs",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_structural_vision_damage_inspections",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_wash_quarantine_release_ledger"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "LIKP",
+    "QMEL",
+    "MCHB",
+    "RBKP"
+  ],
+  "k9_external_signal_enrichment": [
+    "Scope-3 Emission Factors",
+    "Regional Cold-Chain / Shelf-Life Thresholds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "swab_id": "Swab ID",
+    "wash_batch_id": "Wash Batch ID",
+    "measured_atp_rlu": "Measured ATP Rlu",
+    "max_allowed_atp_rlu": "Max Allowed ATP Rlu",
+    "allergen_elisa_negative": "Allergen Elisa Negative",
+    "microbial_hold": "Microbial Hold",
+    "facility_id": "Facility ID",
+    "asset_lot_rfid": "Asset Lot Rfid",
+    "asset_type": "Asset Type",
+    "units_washed": "Units Washed",
+    "rinse_temp_c": "Rinse Temp C",
+    "caustic_conc_pct": "Caustic Conc (%)",
+    "contact_time_sec": "Contact Time Sec",
+    "avg_rfid_trip_cycles": "Avg Rfid Trip Cycles",
+    "max_rated_cycles": "Max Rated Cycles",
+    "hinge_or_wall_cracked_units": "Hinge Or Wall Cracked Units",
+    "dimensional_warp_mm": "Dimensional Warp Mm"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "trade_scheme_claims_reconciler",
+  "cortex_module": "Cortex Supply Chain & Order-to-Cash + K9 External Signals (WeatherNext & Trends)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.active_trade_promotion_schemes_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.active_trade_promotion_schemes_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_active_trade_promotion_schemes"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_active_trade_promotion_schemes",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_claim_anomaly_audit_findings",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_distributor_secondary_claim_submissions",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_sap_fi_credit_note_settlements"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "VBRK",
+    "VBRP",
+    "MARA",
+    "MARC",
+    "KNA1",
+    "PBIM/PBED"
+  ],
+  "k9_external_signal_enrichment": [
+    "Google Trends Demand Index",
+    "NOAA / WeatherNext Forecast Ensembles",
+    "Regional Holiday Calendar"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "scheme_id": "Scheme ID",
+    "scheme_name": "Scheme Name",
+    "min_slab_cases": "Min Slab Cases",
+    "rebate_pct": "Rebate (%)",
+    "requires_shelfvision_pass": "Requires Shelfvision Pass",
+    "valid_window": "Valid Window",
+    "audit_id": "Audit ID",
+    "claim_id": "Claim ID",
+    "flagged_invoices": "Flagged Invoices",
+    "anomaly_type": "Anomaly Type",
+    "disallowed_leakage_usd": "Disallowed Leakage (USD)",
+    "verified_net_payout_usd": "Verified Net Payout (USD)",
+    "distributor_id": "Distributor ID",
+    "submitted_invoices_count": "Submitted Invoices Count",
+    "claimed_amount_usd": "Claimed Amount (USD)"
+  }
+}

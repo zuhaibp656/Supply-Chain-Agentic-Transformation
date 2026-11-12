@@ -1,0 +1,60 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "intermodal_rail_linehaul_agent",
+  "cortex_module": "Cortex Returns Management, Claims Settlement & Sustainability Ledger (SD / QM / ESG)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.intermodal_corridor_shipments_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.intermodal_corridor_shipments_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_intermodal_corridor_shipments"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_intermodal_corridor_shipments",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_otr_to_rail_mode_conversion_ledger",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_rail_ramp_cutoff_and_drayage",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_railinc_edi417_train_consists"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "LIKP",
+    "QMEL",
+    "MCHB",
+    "RBKP"
+  ],
+  "k9_external_signal_enrichment": [
+    "Scope-3 Emission Factors",
+    "Regional Cold-Chain / Shelf-Life Thresholds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "shipment_id": "Shipment ID",
+    "origin_hub": "Origin Hub",
+    "dest_dc": "Dest Dc",
+    "distance_miles": "Distance Miles",
+    "otr_truck_cost_usd": "Otr Truck Cost (USD)",
+    "cofc_rail_cost_usd": "Cofc Rail Cost (USD)",
+    "dest_dc_days_of_supply": "Dest Dc Days Of Supply",
+    "recommended_mode": "Recommended Mode",
+    "corridor_lane": "Corridor Lane",
+    "containers_converted": "Containers Converted",
+    "cost_savings_pct": "Cost Savings (%)",
+    "total_usd_saved": "Total (USD) Saved",
+    "co2e_reduction_pct": "Co2E Reduction (%)",
+    "tonnes_co2e_avoided": "Tonnes Co2E Avoided",
+    "ramp_id": "Ramp ID",
+    "crane_grounding_utc": "Crane Grounding Utc",
+    "free_time_hours": "Free Time Hours",
+    "assigned_dray_tractor": "Assigned Dray Tractor",
+    "chassis_id": "Chassis ID",
+    "zero_storage_dwell_verified": "Zero Storage Dwell Verified"
+  }
+}

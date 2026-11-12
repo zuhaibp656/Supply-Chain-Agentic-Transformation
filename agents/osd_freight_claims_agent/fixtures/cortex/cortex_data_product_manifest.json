@@ -1,0 +1,59 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "osd_freight_claims_agent",
+  "cortex_module": "Cortex Returns Management, Claims Settlement & Sustainability Ledger (SD / QM / ESG)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.carrier_carmack_liability_rules_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.carrier_carmack_liability_rules_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_carrier_carmack_liability_rules"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_carrier_carmack_liability_rules",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_dock_osd_exception_inspections",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_inbound_outbound_ebol_manifests",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_osd_carrier_claim_dossiers"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "LIKP",
+    "QMEL",
+    "MCHB",
+    "RBKP"
+  ],
+  "k9_external_signal_enrichment": [
+    "Scope-3 Emission Factors",
+    "Regional Cold-Chain / Shelf-Life Thresholds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "carrier_id": "Carrier ID",
+    "liability_regime": "Liability Regime",
+    "max_liability_per_lb_usd": "Max Liability Per Lb (USD)",
+    "max_load_cap_usd": "Max Load Cap (USD)",
+    "concealed_notice_days": "Concealed Notice Days",
+    "osd_id": "Osd ID",
+    "ebol_id": "Ebol ID",
+    "exception_type": "Exception Type",
+    "short_cases": "Short Cases",
+    "damaged_cases": "Damaged Cases",
+    "arrival_seal_intact": "Arrival Seal Intact",
+    "driver_signed_epod_exception": "Driver Signed Epod Exception",
+    "photo_evidence_count": "Photo Evidence Count",
+    "shipment_id": "Shipment ID",
+    "sku_id": "SKU ID",
+    "shipped_cases": "Shipped Cases",
+    "origin_seal_no": "Origin Seal No",
+    "invoice_unit_value_usd": "Invoice Unit Value (USD)",
+    "shipper_load_count_slc": "Shipper Load Count Slc"
+  }
+}

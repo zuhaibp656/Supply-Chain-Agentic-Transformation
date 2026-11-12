@@ -14,6 +14,13 @@ spec:
   a2ui_surfaces:
     inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
     side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  cortex_framework:
+    version: v7
+    module: "Cortex Production Planning, Shop-Floor Execution & Quality Management (PP / QM)"
+    data_product_view: "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_batch_deviation_capa_records"
+    orchestration: "Dataform SQLX + Dataplex Knowledge Catalog (cortex-kc-sync)"
+    official_solution_url: "https://cloud.google.com/solutions/cortex"
+    official_docs_url: "https://cloud.google.com/cortex/docs/overview"
   bigquery_data_stores:
     - id: bq_supply_chain_twin_batch_deviation_capa_records
       uri: "bq://zuhaibp-ai.supply_chain_twin.batch_deviation_capa_records"
@@ -32,6 +39,7 @@ spec:
       source_system: "MES Electronic Batch History Record (eBHR) Historian"
       protocol: "21 CFR Part 11 OPC-UA"
   data_source_tools:
+    - query_cortex_batch_record_auditor_data_products
     - inspect_mes_scada_batch_record_auditor_data_sources
     - query_sap_s4hana_master_data_backbone
     - query_veeva_qms_batch_deviation_capa_records

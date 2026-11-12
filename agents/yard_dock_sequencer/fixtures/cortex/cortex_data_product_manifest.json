@@ -1,0 +1,67 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "yard_dock_sequencer",
+  "cortex_module": "Cortex Order Fulfillment, Delivery Performance (OTIF) & Transportation (SD / TM)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.carrier_detention_risk_records_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.carrier_detention_risk_records_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_carrier_detention_risk_records"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_carrier_detention_risk_records",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_dock_door_turnaround_schedules",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_yard_spotter_move_tasks",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_yard_trailer_geofence_status"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "LIKP",
+    "LIPS",
+    "VTTK",
+    "VTTP",
+    "VBAK",
+    "VBAP",
+    "KNA1"
+  ],
+  "k9_external_signal_enrichment": [
+    "WeatherNext Corridor Disruption Alerts",
+    "Port & Highway Congestion Feeds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "record_id": "Record ID",
+    "trailer_id": "Trailer ID",
+    "carrier_id": "Carrier ID",
+    "carrier_name": "Carrier Name",
+    "current_dwell_minutes": "Current Dwell Minutes",
+    "free_detention_threshold_minutes": "Free Detention Threshold Minutes",
+    "minutes_until_penalty": "Minutes Until Penalty",
+    "hourly_detention_rate_usd": "Hourly Detention Rate (USD)",
+    "projected_detention_penalty_usd": "Projected Detention Penalty (USD)",
+    "turnaround_sla_status": "Turnaround Sla Status",
+    "door_id": "Door ID",
+    "facility_zone": "Facility Zone",
+    "assigned_trailer_id": "Assigned Trailer ID",
+    "door_status": "Door Status",
+    "target_dock_time": "Target Dock Time",
+    "scheduled_unload_duration_minutes": "Scheduled Unload Duration Minutes",
+    "forklift_crew_assigned": "Forklift Crew Assigned",
+    "door_clearance_status": "Door Clearance Status",
+    "task_id": "Task ID",
+    "spotter_truck_id": "Spotter Truck ID",
+    "operator_name": "Operator Name",
+    "pickup_slot": "Pickup Slot",
+    "target_door": "Target Door",
+    "priority": "Priority",
+    "estimated_move_minutes": "Estimated Move Minutes",
+    "status": "Status"
+  }
+}

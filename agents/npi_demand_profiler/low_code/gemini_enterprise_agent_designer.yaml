@@ -14,6 +14,13 @@ spec:
   a2ui_surfaces:
     inline_card: VegaChart (2-Panel Executive Comparison + Signed Variance Strip)
     side_panel_canvas: Looker Studio RichTable (spec={}) + MaterialExpansionPanels + Quick-Action Buttons
+  cortex_framework:
+    version: v7
+    module: "Cortex Supply Chain & Order-to-Cash + K9 External Signals (WeatherNext & Trends)"
+    data_product_view: "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_historical_lookalike_analog_skus"
+    orchestration: "Dataform SQLX + Dataplex Knowledge Catalog (cortex-kc-sync)"
+    official_solution_url: "https://cloud.google.com/solutions/cortex"
+    official_docs_url: "https://cloud.google.com/cortex/docs/overview"
   bigquery_data_stores:
     - id: bq_supply_chain_twin_historical_lookalike_analog_skus
       uri: "bq://zuhaibp-ai.supply_chain_twin.historical_lookalike_analog_skus"
@@ -32,6 +39,7 @@ spec:
       source_system: "Retailer Planogram Reset & Pipe-Fill Schedule"
       protocol: "EDI 830 / Portal API"
   data_source_tools:
+    - query_cortex_npi_demand_profiler_data_products
     - inspect_plm_npi_demand_profiler_data_sources
     - query_sap_s4hana_master_data_backbone
     - query_bigquery_historical_lookalike_analog_skus

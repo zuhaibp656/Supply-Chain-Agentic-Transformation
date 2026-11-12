@@ -1,0 +1,56 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "keep_it_routing_advisor",
+  "cortex_module": "Cortex Returns Management, Claims Settlement & Sustainability Ledger (SD / QM / ESG)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.customer_fraud_and_ltv_scores_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.customer_fraud_and_ltv_scores_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_customer_fraud_and_ltv_scores"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_customer_fraud_and_ltv_scores",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_keep_it_instant_refund_decisions",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_low_asp_return_requests",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_reverse_shipping_and_processing_costs"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "LIKP",
+    "QMEL",
+    "MCHB",
+    "RBKP"
+  ],
+  "k9_external_signal_enrichment": [
+    "Scope-3 Emission Factors",
+    "Regional Cold-Chain / Shelf-Life Thresholds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "rma_req_id": "RMA Req ID",
+    "customer_ltv_usd": "Customer Ltv (USD)",
+    "return_rate_12m_pct": "Return Rate 12M (%)",
+    "fraud_abuse_score": "Fraud Abuse Score",
+    "keep_it_claims_12m": "Keep It Claims 12M",
+    "eligibility_gate": "Eligibility Gate",
+    "routing_decision": "Routing Decision",
+    "physical_return_cost_usd": "Physical Return Cost (USD)",
+    "expected_salvage_usd": "Expected Salvage (USD)",
+    "net_savings_from_keep_it_usd": "Net Savings From Keep It (USD)",
+    "sku_id": "SKU ID",
+    "buyer_segment": "Buyer Segment",
+    "return_qty": "Return Qty",
+    "item_paid_price_usd": "Item Paid Price (USD)",
+    "unit_cogs_usd": "Unit Cogs (USD)",
+    "return_reason": "Return Reason"
+  }
+}

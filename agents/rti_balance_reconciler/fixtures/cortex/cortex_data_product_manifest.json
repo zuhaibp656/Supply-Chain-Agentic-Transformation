@@ -1,0 +1,53 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "rti_balance_reconciler",
+  "cortex_module": "Cortex Returns Management, Claims Settlement & Sustainability Ledger (SD / QM / ESG)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.chep_peco_rental_and_lost_fee_tariffs_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.chep_peco_rental_and_lost_fee_tariffs_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_chep_peco_rental_and_lost_fee_tariffs"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_chep_peco_rental_and_lost_fee_tariffs",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_retailer_distributor_rti_balances",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_rti_pool_dispatch_and_return_scans",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_rti_reclamation_and_sweep_orders"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "LIKP",
+    "QMEL",
+    "MCHB",
+    "RBKP"
+  ],
+  "k9_external_signal_enrichment": [
+    "Scope-3 Emission Factors",
+    "Regional Cold-Chain / Shelf-Life Thresholds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "asset_type": "Asset Type",
+    "daily_demurrage_usd": "Daily Demurrage (USD)",
+    "lost_replacement_fee_usd": "Lost Replacement Fee (USD)",
+    "units_per_53ft_backhaul": "Units Per 53Ft Backhaul",
+    "custodian_id": "Custodian ID",
+    "net_unreturned_units": "Net Unreturned Units",
+    "free_grace_days": "Free Grace Days",
+    "overdue_units_past_grace": "Overdue Units Past Grace",
+    "ledger_id": "Ledger ID",
+    "origin_facility_id": "Origin Facility ID",
+    "dispatched_90d": "Dispatched 90D",
+    "returned_90d": "Returned 90D",
+    "avg_dwell_days": "Avg Dwell Days"
+  }
+}

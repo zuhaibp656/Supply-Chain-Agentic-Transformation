@@ -1,0 +1,56 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "food_waste_esg_copilot",
+  "cortex_module": "Cortex Returns Management, Claims Settlement & Sustainability Ledger (SD / QM / ESG)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.anaerobic_digestion_and_compost_rates_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.anaerobic_digestion_and_compost_rates_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_anaerobic_digestion_and_compost_rates"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_anaerobic_digestion_and_compost_rates",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_epa_hierarchy_diversion_partners",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_facility_organic_spoilage_streams",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_zero_waste_scope3_impact_ledger"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "LIKP",
+    "QMEL",
+    "MCHB",
+    "RBKP"
+  ],
+  "k9_external_signal_enrichment": [
+    "Scope-3 Emission Factors",
+    "Regional Cold-Chain / Shelf-Life Thresholds"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "stream_id": "Stream ID",
+    "landfill_tipping_plus_haul_mt_usd": "Landfill Tipping Plus Haul Mt (USD)",
+    "circular_net_cost_or_credit_mt_usd": "Circular Net Cost Or Credit Mt (USD)",
+    "packaging_recycled_mt": "Packaging Recycled Mt",
+    "partner_id": "Partner ID",
+    "partner_name": "Partner Name",
+    "epa_tier": "Epa Tier",
+    "has_depackager": "Has Depackager",
+    "distance_from_hub_km": "Distance From Hub Km",
+    "methane_avoided_tco2e_per_mt": "Methane Avoided Tco2E Per Mt",
+    "facility_id": "Facility ID",
+    "material_stream": "Material Stream",
+    "tonnage_mt": "Tonnage Mt",
+    "packaged_flag": "Packaged Flag",
+    "moisture_pct": "Moisture (%)",
+    "protein_dry_pct": "Protein Dry (%)"
+  }
+}

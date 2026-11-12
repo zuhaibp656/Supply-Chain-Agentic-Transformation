@@ -483,6 +483,34 @@
           }
         }
       }
+    },
+    "/cortex/v7/dataProducts/osd_freight_claims_agent": {
+      "get": {
+        "operationId": "query_cortex_osd_freight_claims_agent_data_products",
+        "summary": "Query Google Cloud Cortex Framework (v7) BigQuery semantic data product (`cortex_dp_carrier_carmack_liability_rules`).",
+        "parameters": [
+          {
+            "name": "record_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Harmonized Cortex v7 Data Product records"
+          }
+        }
+      }
     }
+  },
+  "x-google-cloud-cortex-framework": {
+    "version": "v7",
+    "module": "Cortex Returns Management, Claims Settlement & Sustainability Ledger (SD / QM / ESG)",
+    "data_product_view": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_carrier_carmack_liability_rules",
+    "official_solution_url": "https://cloud.google.com/solutions/cortex",
+    "official_docs_url": "https://cloud.google.com/cortex/docs/overview"
   }
 }

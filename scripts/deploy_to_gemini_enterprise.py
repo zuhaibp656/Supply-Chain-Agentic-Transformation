@@ -34,6 +34,14 @@ import urllib.request
 from pathlib import Path
 from typing import Any, Dict, List
 
+import socket as _socket_mod
+_orig_getaddrinfo = _socket_mod.getaddrinfo
+def _ipv4_only_getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
+    if family == 0:
+        family = _socket_mod.AF_INET
+    return _orig_getaddrinfo(host, port, family, type, proto, flags)
+_socket_mod.getaddrinfo = _ipv4_only_getaddrinfo
+
 os.environ["GOOGLE_API_USE_CLIENT_CERTIFICATE"] = "false"
 ROOT = Path(__file__).resolve().parent.parent
 GCLOUD_DIR = Path.home() / ".config" / "gcloud"
@@ -393,6 +401,19 @@ def sync_gcloud_db_to_argolis_adc(project: str) -> None:
     Guards against CloudTop VSCode's credential_file_override client_id (681255809395-...),
     which stores @google.com tokens under the active account label.
     """
+    adc_existing = GCLOUD_DIR / "argolis_admin_adc.json"
+    if adc_existing.exists():
+        try:
+            import google.oauth2.credentials
+            from google.auth.transport.requests import Request
+            c_chk = google.oauth2.credentials.Credentials.from_authorized_user_file(
+                str(adc_existing), scopes=["https://www.googleapis.com/auth/cloud-platform"]
+            )
+            c_chk.refresh(Request())
+            if c_chk.token:
+                return
+        except Exception:
+            pass
     db_path = GCLOUD_DIR / "credentials.db"
     if not db_path.exists():
         return
@@ -432,7 +453,21 @@ def get_token() -> str | None:
         return _TOKEN_OVERRIDE
     if os.environ.get("GCP_ACCESS_TOKEN"):
         return os.environ["GCP_ACCESS_TOKEN"]
-    # 1. Proactively check access_tokens.db for valid admin@zuhaibp.altostrat.com token
+    # 1. Prioritize argolis_admin_adc.json (fresh 32555940559 Argolis OAuth refresh_token)
+    adc_p = GCLOUD_DIR / "argolis_admin_adc.json"
+    if adc_p.exists():
+        try:
+            import google.oauth2.credentials
+            from google.auth.transport.requests import Request
+            c = google.oauth2.credentials.Credentials.from_authorized_user_file(
+                str(adc_p), scopes=["https://www.googleapis.com/auth/cloud-platform"]
+            )
+            c.refresh(Request())
+            if c.token:
+                return c.token
+        except Exception:
+            pass
+    # 2. Fallback: check access_tokens.db for valid admin@zuhaibp.altostrat.com token
     tokens_db = GCLOUD_DIR / "access_tokens.db"
     if tokens_db.exists():
         try:
@@ -450,18 +485,6 @@ def get_token() -> str | None:
                 except Exception:
                     continue
             conn.close()
-        except Exception:
-            pass
-    adc_p = GCLOUD_DIR / "argolis_admin_adc.json"
-    if adc_p.exists():
-        try:
-            import google.oauth2.credentials
-            from google.auth.transport.requests import Request
-            c = google.oauth2.credentials.Credentials.from_authorized_user_file(
-                str(adc_p), scopes=["https://www.googleapis.com/auth/cloud-platform"]
-            )
-            c.refresh(Request())
-            return c.token
         except Exception:
             pass
     try:

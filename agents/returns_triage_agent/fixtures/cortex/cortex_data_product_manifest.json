@@ -1,0 +1,57 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "returns_triage_agent",
+  "cortex_module": "Cortex Inventory Management, Slow-Moving Stock & Extended Warehouse (MM / EWM)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.omnichannel_return_parcel_intake_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.omnichannel_return_parcel_intake_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_omnichannel_return_parcel_intake"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_omnichannel_return_parcel_intake",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_optical_condition_grading_scans",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_returns_disposition_routing_queue",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_sku_refurb_and_resale_economics"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "MARD",
+    "MCHB",
+    "MKPF",
+    "MSEG",
+    "LQUA",
+    "LIKP",
+    "LIPS",
+    "MBEW"
+  ],
+  "k9_external_signal_enrichment": [
+    "Lead-Time Variability History",
+    "Regional Stockout Risk Signals"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "rma_id": "RMA ID",
+    "sku_id": "SKU ID",
+    "facility_id": "Facility ID",
+    "return_channel": "Return Channel",
+    "units": "Units",
+    "return_reason": "Return Reason",
+    "retail_value_usd": "Retail Value (USD)",
+    "tamper_seal_intact": "Tamper Seal Intact",
+    "cosmetic_score_100": "Cosmetic Score 100",
+    "cold_chain_compromised": "Cold Chain Compromised",
+    "assigned_grade": "Assigned Grade",
+    "disposition_path": "Disposition Path",
+    "legacy_salvage_usd": "Legacy Salvage (USD)",
+    "optimized_recovery_usd": "Optimized Recovery (USD)",
+    "turnaround_hrs": "Turnaround Hrs"
+  }
+}

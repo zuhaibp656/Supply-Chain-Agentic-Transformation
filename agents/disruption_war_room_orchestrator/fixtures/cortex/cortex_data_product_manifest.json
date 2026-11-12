@@ -1,0 +1,69 @@
+{
+  "framework": "Google Cloud Cortex Framework",
+  "version": "v7",
+  "official_solution_url": "https://cloud.google.com/solutions/cortex",
+  "official_docs_url": "https://cloud.google.com/cortex/docs/overview",
+  "agent_id": "disruption_war_room_orchestrator",
+  "cortex_module": "Cortex Supply Chain & Order-to-Cash + K9 External Signals (WeatherNext & Trends)",
+  "orchestration_engine": "Google Cloud Dataform (SQLX) + BigQuery + Dataplex Knowledge Catalog (cortex-kc-sync)",
+  "medallion_architecture": {
+    "raw_cdc_layer": "bq://zuhaibp-ai.cortex_raw_cdc.incident_war_rooms_cdc",
+    "data_foundation_layer": "bq://zuhaibp-ai.cortex_data_foundation.incident_war_rooms_conformed",
+    "data_product_layer": "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_incident_war_rooms"
+  },
+  "data_product_views": [
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_incident_war_rooms",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_maritime_ais_vessels",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_news_disruptions",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_supplier_facilities",
+    "bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_weather_alerts"
+  ],
+  "sap_and_enterprise_ddic_lineage": [
+    "VBAK",
+    "VBAP",
+    "VBRK",
+    "VBRP",
+    "MARA",
+    "MARC",
+    "KNA1",
+    "PBIM/PBED"
+  ],
+  "k9_external_signal_enrichment": [
+    "Google Trends Demand Index",
+    "NOAA / WeatherNext Forecast Ensembles",
+    "Regional Holiday Calendar"
+  ],
+  "standardizations_applied": [
+    "Incremental Change Data Capture (CDC) deduplication on primary keys",
+    "Currency decimal scaling (SAP TCURX) & multi-currency USD/INR normalization",
+    "UTC to Indian Standard Time (IST) / Plant local timezone alignment",
+    "Dataplex Knowledge Catalog (cortex-kc-sync) business-term field annotations"
+  ],
+  "semantic_field_dictionary": {
+    "incident_id": "Incident ID",
+    "title": "Title",
+    "severity": "Severity",
+    "created_at": "Created At",
+    "status": "Status",
+    "owner": "Owner",
+    "affected_lanes": "Affected Lanes",
+    "action_plan": "Action Plan",
+    "recovered_cost_usd": "Recovered Cost (USD)",
+    "vessel_imo": "Vessel Imo",
+    "vessel_name": "Vessel Name",
+    "carrier": "Carrier",
+    "current_lat": "Current Lat",
+    "current_lon": "Current Lon",
+    "speed_knots": "Speed Knots",
+    "destination_port": "Destination Port",
+    "scheduled_eta": "Scheduled Eta",
+    "projected_delayed_eta": "Projected Delayed Eta",
+    "delay_hours": "Delay Hours",
+    "signal_id": "Signal ID",
+    "timestamp": "Timestamp",
+    "source": "Source",
+    "headline": "Headline",
+    "summary": "Summary",
+    "entities_extracted": "Entities Extracted"
+  }
+}
