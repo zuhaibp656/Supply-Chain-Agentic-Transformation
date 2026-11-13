@@ -890,7 +890,7 @@ def generate_interactive_cockpit_html(
       const esc = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
       const lines = [cols.map(c => esc(c.label)).join(',')];
       rows.forEach(r => lines.push(cols.map(c => esc(r[c.key])).join(',')));
-      const blob = new Blob([lines.join('\n')], {{type: 'text/csv;charset=utf-8;'}});
+      const blob = new Blob([lines.join(String.fromCharCode(10))], {{type: 'text/csv;charset=utf-8;'}});
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = D.agent_id + '_' + D.raw_table + '.csv';

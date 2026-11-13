@@ -396,6 +396,8 @@ try:
 
 
 
+
+
     root_agent = Agent(
         name="planogram_merchandising_vision_auditor",
         description="[Category: 04 · Inventory & Warehousing — Omnichannel Visibility] Phantom Inventory Sensor (Store Operations / Omni Lead): Identifies shrinkage anomalies when on-hand stock stops scanning at POS. Outcome: Triggers targeted floor cycle counts.",

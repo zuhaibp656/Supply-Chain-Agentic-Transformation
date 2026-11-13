@@ -432,6 +432,8 @@ try:
 
 
 
+
+
     root_agent = Agent(
         name="echelon_inventory_allocator",
         description="[Category: 04 · Inventory & Warehousing — Positioning & Optimization] Safety Stock Agent (Inventory Optimization Lead): Recalibrates multi-echelon buffers using live lead-time and demand variance. Outcome: Cuts working capital by 10–18%.",

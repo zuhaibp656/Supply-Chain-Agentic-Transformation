@@ -426,6 +426,8 @@ try:
 
 
 
+
+
     root_agent = Agent(
         name="inline_quality_inspection_agent",
         description="[Category: 03 · Manufacturing & Production — Quality & Compliance] Visual Defect Triager (QA Manager / Line Inspector): Inspects high-speed video frames for crimped seals, lot codes, and labels. Outcome: Prevents full pallet scrap & holds.",

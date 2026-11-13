@@ -396,6 +396,8 @@ try:
 
 
 
+
+
     root_agent = Agent(
         name="field_beat_distributor_sync_agent",
         description="[Category: 01 · Planning & Strategy — Trade Promotion] JBP Negotiation Agent (Key Account Manager (KAM)): Creates customized sell-in story decks and joint promotional calendars. Outcome: Aligns buyer margins and volume goals.",

@@ -404,6 +404,8 @@ try:
 
 
 
+
+
     root_agent = Agent(
         name='warehouse_slotting_optimizer',
         description='[Category: 04 · Inventory & Warehousing — Warehouse Operations] Dynamic Slotting Agent (DC Operations Mgr / IE Lead): Evaluates co-pick affinity matrices to recommend fast-pick zone re-slotting. Outcome: Reduces picker transit time by 15–30%.',

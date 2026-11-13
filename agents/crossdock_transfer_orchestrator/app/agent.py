@@ -403,6 +403,8 @@ try:
 
 
 
+
+
     root_agent = Agent(
         name='crossdock_transfer_orchestrator',
         description='[Category: 04 · Inventory & Warehousing — Positioning & Optimization] Inter-Facility Rebalancer (Replenishment Planner): Generates automated inter-DC and store transfers to balance localized gluts. Outcome: Eliminates regional out-of-stocks.',

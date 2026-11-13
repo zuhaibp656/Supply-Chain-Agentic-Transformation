@@ -430,6 +430,8 @@ try:
 
 
 
+
+
     root_agent = Agent(
         name="dynamic_order_promising_atp",
         description="[Category: 04 · Inventory & Warehousing — Omnichannel Visibility] SFS / BOPIS Sourcing (Omnichannel Fulfillment Dir.): Selects lowest-cost fulfillment nodes based on store labor and parcel zones. Outcome: Lowers parcel costs & split rates.",

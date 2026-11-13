@@ -410,6 +410,8 @@ try:
 
 
 
+
+
     root_agent = Agent(
         name='scrap_defect_root_cause_agent',
         description='[Category: 03 · Manufacturing & Production — Quality & Compliance] RCA & CAPA Copilot (Continuous Improvement Lead): Correlates consumer complaints with ingredient lots and machine telemetry. Outcome: Speeds 5-Why investigation closures.',
