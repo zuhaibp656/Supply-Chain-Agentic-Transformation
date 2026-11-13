@@ -78,5 +78,245 @@
     "strike_floor_usd": 2850.0,
     "strike_cap_usd": 3050.0,
     "projected_savings_usd": 62000
+  },
+  {
+    "position_id": "HDG-2026-67",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "instrument": "HOLD_SWAP",
+    "current_hedge_pct": 30.09,
+    "recommended_hedge_pct": 78.78,
+    "strike_floor_usd": 1242.68,
+    "strike_cap_usd": 1343.87,
+    "projected_savings_usd": 445789
+  },
+  {
+    "position_id": "HDG-2026-75",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "instrument": "ZERO_COST_COLLAR",
+    "current_hedge_pct": 48.25,
+    "recommended_hedge_pct": 67.24,
+    "strike_floor_usd": 1464.57,
+    "strike_cap_usd": 2234.32,
+    "projected_savings_usd": 228688
+  },
+  {
+    "position_id": "HDG-2026-83",
+    "commodity_code": "LME-COPPER-GRADE-A",
+    "instrument": "ZERO_COST_COLLAR",
+    "current_hedge_pct": 47.89,
+    "recommended_hedge_pct": 73.66,
+    "strike_floor_usd": 8397.17,
+    "strike_cap_usd": 7807.81,
+    "projected_savings_usd": 281044
+  },
+  {
+    "position_id": "HDG-2026-91",
+    "commodity_code": "LME-ALUMINUM-P1020",
+    "instrument": "HOLD_SWAP",
+    "current_hedge_pct": 24.32,
+    "recommended_hedge_pct": 54.96,
+    "strike_floor_usd": 5808.94,
+    "strike_cap_usd": 6121.38,
+    "projected_savings_usd": 323655
+  },
+  {
+    "position_id": "HDG-2026-99",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "instrument": "CALL_SPREAD_COLLAR",
+    "current_hedge_pct": 46.53,
+    "recommended_hedge_pct": 73.49,
+    "strike_floor_usd": 239.99,
+    "strike_cap_usd": 293.37,
+    "projected_savings_usd": 108881
+  },
+  {
+    "position_id": "HDG-2026-107",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "instrument": "CALL_SPREAD_COLLAR",
+    "current_hedge_pct": 29.68,
+    "recommended_hedge_pct": 59.45,
+    "strike_floor_usd": 950.2,
+    "strike_cap_usd": 1053.56,
+    "projected_savings_usd": 58297
+  },
+  {
+    "position_id": "HDG-2026-115",
+    "commodity_code": "LME-ALUMINUM-P1020",
+    "instrument": "TRANCHE_FORWARD",
+    "current_hedge_pct": 47.23,
+    "recommended_hedge_pct": 78.01,
+    "strike_floor_usd": 8734.46,
+    "strike_cap_usd": 10404.97,
+    "projected_savings_usd": 188671
+  },
+  {
+    "position_id": "HDG-2026-123",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "instrument": "HOLD_SWAP",
+    "current_hedge_pct": 65.01,
+    "recommended_hedge_pct": 80.56,
+    "strike_floor_usd": 2778.81,
+    "strike_cap_usd": 3640.68,
+    "projected_savings_usd": 58533
+  },
+  {
+    "position_id": "HDG-2026-123",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "instrument": "CALL_SPREAD_COLLAR",
+    "current_hedge_pct": 34.95,
+    "recommended_hedge_pct": 85.07,
+    "strike_floor_usd": 1791.35,
+    "strike_cap_usd": 1309.17,
+    "projected_savings_usd": 535414
+  },
+  {
+    "position_id": "HDG-2026-131",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "instrument": "ZERO_COST_COLLAR",
+    "current_hedge_pct": 42.65,
+    "recommended_hedge_pct": 73.64,
+    "strike_floor_usd": 1817.62,
+    "strike_cap_usd": 2397.06,
+    "projected_savings_usd": 257165
+  },
+  {
+    "position_id": "HDG-2026-139",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "instrument": "CALL_SPREAD_COLLAR",
+    "current_hedge_pct": 55.55,
+    "recommended_hedge_pct": 87.38,
+    "strike_floor_usd": 12118.74,
+    "strike_cap_usd": 12396.51,
+    "projected_savings_usd": 365728
+  },
+  {
+    "position_id": "HDG-2026-147",
+    "commodity_code": "ICIS-RPET-FOODGRADE-US",
+    "instrument": "TRANCHE_FORWARD",
+    "current_hedge_pct": 25.53,
+    "recommended_hedge_pct": 56.76,
+    "strike_floor_usd": 2498.63,
+    "strike_cap_usd": 2526.02,
+    "projected_savings_usd": 142104
+  },
+  {
+    "position_id": "HDG-2026-155",
+    "commodity_code": "ICIS-RPET-FOODGRADE-US",
+    "instrument": "6M_FIXED_FORWARD_LOCK",
+    "current_hedge_pct": 45.69,
+    "recommended_hedge_pct": 55.11,
+    "strike_floor_usd": 167.56,
+    "strike_cap_usd": 143.48,
+    "projected_savings_usd": 53706
+  },
+  {
+    "position_id": "HDG-2026-163",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "instrument": "6M_FIXED_FORWARD_LOCK",
+    "current_hedge_pct": 38.19,
+    "recommended_hedge_pct": 82.17,
+    "strike_floor_usd": 1288.65,
+    "strike_cap_usd": 1420.99,
+    "projected_savings_usd": 107425
+  },
+  {
+    "position_id": "HDG-2026-171",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "instrument": "ZERO_COST_COLLAR",
+    "current_hedge_pct": 48.51,
+    "recommended_hedge_pct": 80.34,
+    "strike_floor_usd": 6653.31,
+    "strike_cap_usd": 8040.5,
+    "projected_savings_usd": 100795
+  },
+  {
+    "position_id": "HDG-2026-179",
+    "commodity_code": "FAST-LITHIUM-CARB-BG",
+    "instrument": "CALL_SPREAD_COLLAR",
+    "current_hedge_pct": 75.06,
+    "recommended_hedge_pct": 75.82,
+    "strike_floor_usd": 2493.25,
+    "strike_cap_usd": 2791.56,
+    "projected_savings_usd": 76410
+  },
+  {
+    "position_id": "HDG-2026-179",
+    "commodity_code": "EU-NAT-GAS-TTF-GLASS",
+    "instrument": "ZERO_COST_COLLAR",
+    "current_hedge_pct": 34.14,
+    "recommended_hedge_pct": 68.35,
+    "strike_floor_usd": 936.3,
+    "strike_cap_usd": 957.73,
+    "projected_savings_usd": 263995
+  },
+  {
+    "position_id": "HDG-2026-187",
+    "commodity_code": "FAST-LITHIUM-CARB-BG",
+    "instrument": "ZERO_COST_COLLAR",
+    "current_hedge_pct": 37.74,
+    "recommended_hedge_pct": 80.57,
+    "strike_floor_usd": 1884.14,
+    "strike_cap_usd": 2316.03,
+    "projected_savings_usd": 304141
+  },
+  {
+    "position_id": "HDG-2026-195",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "instrument": "ZERO_COST_COLLAR",
+    "current_hedge_pct": 47.02,
+    "recommended_hedge_pct": 70.44,
+    "strike_floor_usd": 20533.38,
+    "strike_cap_usd": 17503.91,
+    "projected_savings_usd": 746598
+  },
+  {
+    "position_id": "HDG-2026-203",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "instrument": "CALL_SPREAD_COLLAR",
+    "current_hedge_pct": 25.66,
+    "recommended_hedge_pct": 67.82,
+    "strike_floor_usd": 3771.84,
+    "strike_cap_usd": 3791.51,
+    "projected_savings_usd": 195948
+  },
+  {
+    "position_id": "HDG-2026-211",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "instrument": "6M_FIXED_FORWARD_LOCK",
+    "current_hedge_pct": 42.87,
+    "recommended_hedge_pct": 74.71,
+    "strike_floor_usd": 262.58,
+    "strike_cap_usd": 246.2,
+    "projected_savings_usd": 112258
+  },
+  {
+    "position_id": "HDG-2026-219",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "instrument": "6M_FIXED_FORWARD_LOCK",
+    "current_hedge_pct": 38.11,
+    "recommended_hedge_pct": 66.98,
+    "strike_floor_usd": 1447.05,
+    "strike_cap_usd": 1410.96,
+    "projected_savings_usd": 94482
+  },
+  {
+    "position_id": "HDG-2026-227",
+    "commodity_code": "LME-ALUMINUM-P1020",
+    "instrument": "HOLD_SWAP",
+    "current_hedge_pct": 50.74,
+    "recommended_hedge_pct": 85.54,
+    "strike_floor_usd": 9304.7,
+    "strike_cap_usd": 10435.04,
+    "projected_savings_usd": 179733
+  },
+  {
+    "position_id": "HDG-2026-235",
+    "commodity_code": "LME-COPPER-GRADE-A",
+    "instrument": "CALL_SPREAD_COLLAR",
+    "current_hedge_pct": 56.24,
+    "recommended_hedge_pct": 75.97,
+    "strike_floor_usd": 1990.43,
+    "strike_cap_usd": 2549.98,
+    "projected_savings_usd": 55382
   }
 ]

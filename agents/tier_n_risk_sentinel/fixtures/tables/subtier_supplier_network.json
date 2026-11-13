@@ -96,5 +96,299 @@
     "parent_tier_nodes": [],
     "single_source_chokepoint": true,
     "current_lead_time_days": 69
+  },
+  {
+    "node_id": "NODE-BALL-US-67",
+    "supplier_name": "Cymbal Retail",
+    "tier_level": 1,
+    "component_provided": "ORE-BAUXITE-METALLURGICAL",
+    "facility_country": "US",
+    "facility_city": "Kolkata-Haringhata",
+    "parent_tier_nodes": [
+      "NODE-ALCOA-SMELT-IS",
+      "NODE-HYDRO-SMELT-NO"
+    ],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 7
+  },
+  {
+    "node_id": "NODE-ALCOA-SMELT-IS-19",
+    "supplier_name": "Summit Stores",
+    "tier_level": 2,
+    "component_provided": "ORE-BAUXITE-METALLURGICAL",
+    "facility_country": "AU",
+    "facility_city": "Broomfield, CO",
+    "parent_tier_nodes": [
+      "NODE-WEIPA-BAUXITE-AU"
+    ],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 27
+  },
+  {
+    "node_id": "NODE-WEIPA-BAUXITE-AU-20",
+    "supplier_name": "Omni Wholesale Club",
+    "tier_level": 4,
+    "component_provided": "CHEM-ELECTROLYTE-LIPF6",
+    "facility_country": "Delhi-NCR",
+    "facility_city": "Cape York, Queensland",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 49
+  },
+  {
+    "node_id": "NODE-SHOWA-SALT-JP-21",
+    "supplier_name": "Ball Metal Packaging",
+    "tier_level": 3,
+    "component_provided": "COMP-CAN-ALUM-330ML",
+    "facility_country": "Kolkata-Haringhata",
+    "facility_city": "Bengaluru-Hosur",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 47
+  },
+  {
+    "node_id": "NODE-BALL-US-124",
+    "supplier_name": "Showa Denko Chemical Specialty",
+    "tier_level": 1,
+    "component_provided": "ORE-BAUXITE-METALLURGICAL",
+    "facility_country": "Delhi-NCR",
+    "facility_city": "Kawasaki, Kanagawa",
+    "parent_tier_nodes": [
+      "NODE-ALCOA-SMELT-IS",
+      "NODE-HYDRO-SMELT-NO"
+    ],
+    "single_source_chokepoint": false,
+    "current_lead_time_days": 19
+  },
+  {
+    "node_id": "NODE-ALCOA-SMELT-IS-R05103",
+    "supplier_name": "Alcoa International Smelter",
+    "tier_level": 2,
+    "component_provided": "CHEM-ELECTROLYTE-LIPF6",
+    "facility_country": "JP",
+    "facility_city": "Hyderabad-Shamshabad",
+    "parent_tier_nodes": [
+      "NODE-WEIPA-BAUXITE-AU"
+    ],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 24
+  },
+  {
+    "node_id": "NODE-WEIPA-BAUXITE-AU-R06E7B-24",
+    "supplier_name": "Alcoa International Smelter",
+    "tier_level": 5,
+    "component_provided": "RAW-ALUM-INGOT-P1020A",
+    "facility_country": "Mumbai-Bhiwandi",
+    "facility_city": "Ahmedabad-Sanand",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 27
+  },
+  {
+    "node_id": "NODE-SHOWA-SALT-JP-R074C118",
+    "supplier_name": "Cymbal Retail",
+    "tier_level": 3,
+    "component_provided": "COMP-CAN-ALUM-330ML",
+    "facility_country": "Ahmedabad-Sanand",
+    "facility_city": "Reykjavik",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 93
+  },
+  {
+    "node_id": "NODE-BALL-US-123",
+    "supplier_name": "Weipa Bauxite Mining & Refinery",
+    "tier_level": 1,
+    "component_provided": "ORE-BAUXITE-METALLURGICAL",
+    "facility_country": "Ahmedabad-Sanand",
+    "facility_city": "Mumbai-Bhiwandi",
+    "parent_tier_nodes": [
+      "NODE-ALCOA-SMELT-IS",
+      "NODE-HYDRO-SMELT-NO"
+    ],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 24
+  },
+  {
+    "node_id": "NODE-ALCOA-SMELT-IS-27",
+    "supplier_name": "Apex Hypermarket",
+    "tier_level": 2,
+    "component_provided": "RAW-ALUM-INGOT-P1020A",
+    "facility_country": "Kolkata-Haringhata",
+    "facility_city": "Kawasaki, Kanagawa",
+    "parent_tier_nodes": [
+      "NODE-WEIPA-BAUXITE-AU"
+    ],
+    "single_source_chokepoint": false,
+    "current_lead_time_days": 32
+  },
+  {
+    "node_id": "NODE-WEIPA-BAUXITE-AU-28",
+    "supplier_name": "Cymbal Retail",
+    "tier_level": 4,
+    "component_provided": "ORE-BAUXITE-METALLURGICAL",
+    "facility_country": "Kolkata-Haringhata",
+    "facility_city": "Reykjavik",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 29
+  },
+  {
+    "node_id": "NODE-SHOWA-SALT-JP-29",
+    "supplier_name": "Alcoa International Smelter",
+    "tier_level": 3,
+    "component_provided": "COMP-CAN-ALUM-330ML",
+    "facility_country": "US",
+    "facility_city": "Chennai-Port",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 43
+  },
+  {
+    "node_id": "NODE-BALL-US-180",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 1,
+    "component_provided": "ORE-BAUXITE-METALLURGICAL",
+    "facility_country": "Delhi-NCR",
+    "facility_city": "Hyderabad-Shamshabad",
+    "parent_tier_nodes": [
+      "NODE-ALCOA-SMELT-IS",
+      "NODE-HYDRO-SMELT-NO"
+    ],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 31
+  },
+  {
+    "node_id": "NODE-ALCOA-SMELT-IS-R05159",
+    "supplier_name": "Ball Metal Packaging",
+    "tier_level": 2,
+    "component_provided": "CHEM-ELECTROLYTE-LIPF6",
+    "facility_country": "JP",
+    "facility_city": "Delhi-NCR",
+    "parent_tier_nodes": [
+      "NODE-WEIPA-BAUXITE-AU"
+    ],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 24
+  },
+  {
+    "node_id": "NODE-WEIPA-BAUXITE-AU-R06E7B-32",
+    "supplier_name": "Cymbal Retail",
+    "tier_level": 5,
+    "component_provided": "RAW-ALUM-INGOT-P1020A",
+    "facility_country": "Delhi-NCR",
+    "facility_city": "Ahmedabad-Sanand",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 71
+  },
+  {
+    "node_id": "NODE-SHOWA-SALT-JP-R074C174",
+    "supplier_name": "Summit Stores",
+    "tier_level": 3,
+    "component_provided": "ORE-BAUXITE-METALLURGICAL",
+    "facility_country": "JP",
+    "facility_city": "Broomfield, CO",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 76
+  },
+  {
+    "node_id": "NODE-BALL-US-179",
+    "supplier_name": "DMart Avenue",
+    "tier_level": 1,
+    "component_provided": "RAW-ALUM-INGOT-P1020A",
+    "facility_country": "Delhi-NCR",
+    "facility_city": "Ahmedabad-Sanand",
+    "parent_tier_nodes": [
+      "NODE-ALCOA-SMELT-IS",
+      "NODE-HYDRO-SMELT-NO"
+    ],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 18
+  },
+  {
+    "node_id": "NODE-ALCOA-SMELT-IS-35",
+    "supplier_name": "Showa Denko Chemical Specialty",
+    "tier_level": 2,
+    "component_provided": "COMP-CAN-ALUM-330ML",
+    "facility_country": "US",
+    "facility_city": "Cape York, Queensland",
+    "parent_tier_nodes": [
+      "NODE-WEIPA-BAUXITE-AU"
+    ],
+    "single_source_chokepoint": false,
+    "current_lead_time_days": 19
+  },
+  {
+    "node_id": "NODE-WEIPA-BAUXITE-AU-36",
+    "supplier_name": "Summit Stores",
+    "tier_level": 4,
+    "component_provided": "ORE-BAUXITE-METALLURGICAL",
+    "facility_country": "Chennai-Port",
+    "facility_city": "Cape York, Queensland",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 55
+  },
+  {
+    "node_id": "NODE-SHOWA-SALT-JP-37",
+    "supplier_name": "Alcoa International Smelter",
+    "tier_level": 3,
+    "component_provided": "COMP-CAN-ALUM-330ML",
+    "facility_country": "US",
+    "facility_city": "Ahmedabad-Sanand",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 27
+  },
+  {
+    "node_id": "NODE-BALL-US-236",
+    "supplier_name": "Summit Stores",
+    "tier_level": 1,
+    "component_provided": "CHEM-ELECTROLYTE-LIPF6",
+    "facility_country": "Pune-Chakan",
+    "facility_city": "Kawasaki, Kanagawa",
+    "parent_tier_nodes": [
+      "NODE-ALCOA-SMELT-IS",
+      "NODE-HYDRO-SMELT-NO"
+    ],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 20
+  },
+  {
+    "node_id": "NODE-ALCOA-SMELT-IS-R05215",
+    "supplier_name": "Apex Hypermarket",
+    "tier_level": 2,
+    "component_provided": "RAW-ALUM-INGOT-P1020A",
+    "facility_country": "US",
+    "facility_city": "Hyderabad-Shamshabad",
+    "parent_tier_nodes": [
+      "NODE-WEIPA-BAUXITE-AU"
+    ],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 53
+  },
+  {
+    "node_id": "NODE-WEIPA-BAUXITE-AU-R06E7B-40",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 5,
+    "component_provided": "ORE-BAUXITE-METALLURGICAL",
+    "facility_country": "US",
+    "facility_city": "Hyderabad-Shamshabad",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 51
+  },
+  {
+    "node_id": "NODE-SHOWA-SALT-JP-R074C230",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 3,
+    "component_provided": "CHEM-ELECTROLYTE-LIPF6",
+    "facility_country": "JP",
+    "facility_city": "Ahmedabad-Sanand",
+    "parent_tier_nodes": [],
+    "single_source_chokepoint": true,
+    "current_lead_time_days": 69
   }
 ]

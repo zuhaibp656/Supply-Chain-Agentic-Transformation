@@ -2,7 +2,7 @@
   {
     "shipment_id": "SHP-REEF-8841",
     "carrier_id": "PRIME-REEFER-INC",
-    "corridor": "I-80 Omaha\u2794Chicago",
+    "corridor": "I-80 Omaha➔Chicago",
     "cargo_type": "CHILLED_PROTEIN_2C",
     "setpoint_c": 2.0,
     "current_temp_c": 5.4,
@@ -12,7 +12,7 @@
   {
     "shipment_id": "SHP-REEF-8849",
     "carrier_id": "CAR-CRYOEXP-REEFER",
-    "corridor": "I-80 Omaha\u2794Chicago",
+    "corridor": "I-80 Omaha➔Chicago",
     "cargo_type": "CHILLED_PROTEIN_2C",
     "setpoint_c": 2.14,
     "current_temp_c": 5.78,
@@ -22,7 +22,7 @@
   {
     "shipment_id": "SHP-REEF-8856",
     "carrier_id": "CAR-XPO-LTL",
-    "corridor": "I-80 Omaha\u2794Chicago",
+    "corridor": "I-80 Omaha➔Chicago",
     "cargo_type": "CHILLED_PROTEIN_2C",
     "setpoint_c": 1.72,
     "current_temp_c": 4.21,
@@ -32,7 +32,7 @@
   {
     "shipment_id": "SHP-REEF-8863",
     "carrier_id": "CAR-BNSF-RAIL",
-    "corridor": "I-80 Omaha\u2794Chicago",
+    "corridor": "I-80 Omaha➔Chicago",
     "cargo_type": "CHILLED_PROTEIN_2C",
     "setpoint_c": 2.14,
     "current_temp_c": 4.48,
@@ -42,7 +42,7 @@
   {
     "shipment_id": "SHP-REEF-8870",
     "carrier_id": "CAR-MAERSK-OCEAN",
-    "corridor": "I-80 Omaha\u2794Chicago",
+    "corridor": "I-80 Omaha➔Chicago",
     "cargo_type": "CHILLED_PROTEIN_2C",
     "setpoint_c": 1.56,
     "current_temp_c": 4.48,
@@ -52,7 +52,7 @@
   {
     "shipment_id": "SHP-REEF-8877",
     "carrier_id": "CAR-LH-AIRCARGO",
-    "corridor": "I-80 Omaha\u2794Chicago",
+    "corridor": "I-80 Omaha➔Chicago",
     "cargo_type": "CHILLED_PROTEIN_2C",
     "setpoint_c": 1.72,
     "current_temp_c": 4.21,
@@ -62,7 +62,7 @@
   {
     "shipment_id": "SHP-REEF-8884",
     "carrier_id": "CAR-JBHT-FTL",
-    "corridor": "I-80 Omaha\u2794Chicago",
+    "corridor": "I-80 Omaha➔Chicago",
     "cargo_type": "CHILLED_PROTEIN_2C",
     "setpoint_c": 2.14,
     "current_temp_c": 4.97,
@@ -72,11 +72,251 @@
   {
     "shipment_id": "SHP-REEF-8891",
     "carrier_id": "CAR-CRYOEXP-REEFER",
-    "corridor": "I-80 Omaha\u2794Chicago",
+    "corridor": "I-80 Omaha➔Chicago",
     "cargo_type": "CHILLED_PROTEIN_2C",
     "setpoint_c": 2.14,
     "current_temp_c": 6.75,
     "compressor_status": "COOLANT_PRESSURE_DROP",
     "time_to_excursion_mins": 48
+  },
+  {
+    "shipment_id": "SHP-REEF-8907",
+    "carrier_id": "Cymbal Retail",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 1.0,
+    "current_temp_c": 2.63,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 30
+  },
+  {
+    "shipment_id": "SHP-REEF-8922",
+    "carrier_id": "PRIME-REEFER-INC",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 2.94,
+    "current_temp_c": 7.9,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 63
+  },
+  {
+    "shipment_id": "SHP-REEF-8936",
+    "carrier_id": "Reliance Retail",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 1.94,
+    "current_temp_c": 5.37,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 77
+  },
+  {
+    "shipment_id": "SHP-REEF-8950",
+    "carrier_id": "CAR-JBHT-FTL",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 1.43,
+    "current_temp_c": 2.25,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 22
+  },
+  {
+    "shipment_id": "SHP-REEF-8964",
+    "carrier_id": "Apex Hypermarket",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 0.72,
+    "current_temp_c": 1.77,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 24
+  },
+  {
+    "shipment_id": "SHP-REEF-8978",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 2.31,
+    "current_temp_c": 5.71,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 60
+  },
+  {
+    "shipment_id": "SHP-REEF-8992",
+    "carrier_id": "Apex Hypermarket",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 3.22,
+    "current_temp_c": 8.34,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 70
+  },
+  {
+    "shipment_id": "SHP-REEF-9006",
+    "carrier_id": "Omni Wholesale Club",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 3.45,
+    "current_temp_c": 10.26,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 60
+  },
+  {
+    "shipment_id": "SHP-REEF-8963",
+    "carrier_id": "Reliance Retail",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 2.15,
+    "current_temp_c": 4.49,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 44
+  },
+  {
+    "shipment_id": "SHP-REEF-8978",
+    "carrier_id": "Omni Wholesale Club",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 1.81,
+    "current_temp_c": 5.28,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 42
+  },
+  {
+    "shipment_id": "SHP-REEF-8992",
+    "carrier_id": "Omni Wholesale Club",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 0.84,
+    "current_temp_c": 1.76,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 29
+  },
+  {
+    "shipment_id": "SHP-REEF-9006",
+    "carrier_id": "CAR-LH-AIRCARGO",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 2.37,
+    "current_temp_c": 4.57,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 46
+  },
+  {
+    "shipment_id": "SHP-REEF-9020",
+    "carrier_id": "DMart Avenue",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 0.71,
+    "current_temp_c": 2.13,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 24
+  },
+  {
+    "shipment_id": "SHP-REEF-9034",
+    "carrier_id": "CAR-JBHT-FTL",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 2.1,
+    "current_temp_c": 3.67,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 51
+  },
+  {
+    "shipment_id": "SHP-REEF-9048",
+    "carrier_id": "Apex Hypermarket",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 2.14,
+    "current_temp_c": 3.8,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 59
+  },
+  {
+    "shipment_id": "SHP-REEF-9062",
+    "carrier_id": "Summit Stores",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 2.97,
+    "current_temp_c": 8.71,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 50
+  },
+  {
+    "shipment_id": "SHP-REEF-9019",
+    "carrier_id": "CAR-XPO-LTL",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 0.92,
+    "current_temp_c": 2.78,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 24
+  },
+  {
+    "shipment_id": "SHP-REEF-9034",
+    "carrier_id": "Cymbal Retail",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 1.54,
+    "current_temp_c": 4.69,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 35
+  },
+  {
+    "shipment_id": "SHP-REEF-9048",
+    "carrier_id": "CAR-JBHT-FTL",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 2.59,
+    "current_temp_c": 5.47,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 104
+  },
+  {
+    "shipment_id": "SHP-REEF-9062",
+    "carrier_id": "PRIME-REEFER-INC",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 2.76,
+    "current_temp_c": 7.11,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 59
+  },
+  {
+    "shipment_id": "SHP-REEF-9076",
+    "carrier_id": "CAR-JBHT-FTL",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 1.23,
+    "current_temp_c": 2.7,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 30
+  },
+  {
+    "shipment_id": "SHP-REEF-9090",
+    "carrier_id": "CAR-JBHT-FTL",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 1.94,
+    "current_temp_c": 4.5,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 51
+  },
+  {
+    "shipment_id": "SHP-REEF-9104",
+    "carrier_id": "Omni Wholesale Club",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 1.06,
+    "current_temp_c": 2.86,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 38
+  },
+  {
+    "shipment_id": "SHP-REEF-9118",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "corridor": "I-80 Omaha➔Chicago",
+    "cargo_type": "CHILLED_PROTEIN_2C",
+    "setpoint_c": 1.7,
+    "current_temp_c": 4.45,
+    "compressor_status": "COOLANT_PRESSURE_DROP",
+    "time_to_excursion_mins": 38
   }
 ]

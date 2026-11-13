@@ -182,5 +182,557 @@
       "SKU-STERILE-VIAL-10ML",
       "SKU-API-LIPID-NP"
     ]
+  },
+  {
+    "vessel_imo": 11772499,
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "Summit Stores",
+    "current_lat": 23.6932,
+    "current_lon": 120.9331,
+    "speed_knots": 0.48,
+    "destination_port": "BEANR (Antwerp)",
+    "scheduled_eta": "2026-10-22T08:00:00Z",
+    "projected_delayed_eta": "2026-10-27T14:00:00Z",
+    "delay_hours": 156,
+    "status": "SLOW_STEAMING_STRIKE_AVOIDANCE",
+    "manifest_teu": 24705,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": 4995283,
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "Evergreen Line",
+    "current_lat": 51.0274,
+    "current_lon": 3.4972,
+    "speed_knots": 7.85,
+    "destination_port": "BEANR (Antwerp)",
+    "scheduled_eta": "2026-10-16T12:00:00Z",
+    "projected_delayed_eta": "2026-10-21T06:00:00Z",
+    "delay_hours": 55,
+    "status": "SLOW_STEAMING_STRIKE_AVOIDANCE",
+    "manifest_teu": 9576,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
+  },
+  {
+    "vessel_imo": "9811095",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Cymbal Retail",
+    "current_lat": 23.5827,
+    "current_lon": 120.9279,
+    "speed_knots": 0.2,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-10-24T08:00:00Z",
+    "projected_delayed_eta": "2026-10-29T14:00:00Z",
+    "delay_hours": 70,
+    "status": "SLOW_STEAMING_STRIKE_AVOIDANCE",
+    "manifest_teu": 10407,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": "9778941",
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "Cymbal Retail",
+    "current_lat": 51.1842,
+    "current_lon": 3.0772,
+    "speed_knots": 7.31,
+    "destination_port": "BEANR (Antwerp)",
+    "scheduled_eta": "2026-10-18T12:00:00Z",
+    "projected_delayed_eta": "2026-10-23T06:00:00Z",
+    "delay_hours": 52,
+    "status": "SLOW_STEAMING_STRIKE_AVOIDANCE",
+    "manifest_teu": 7365,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
+  },
+  {
+    "vessel_imo": "9811123",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Apex Hypermarket",
+    "current_lat": 23.9662,
+    "current_lon": 120.579,
+    "speed_knots": 0.72,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-10-26T08:00:00Z",
+    "projected_delayed_eta": "2026-10-31T14:00:00Z",
+    "delay_hours": 187,
+    "status": "SLOW_STEAMING_STRIKE_AVOIDANCE",
+    "manifest_teu": 27105,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": "9778969",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Omni Wholesale Club",
+    "current_lat": 51.2611,
+    "current_lon": 2.902,
+    "speed_knots": 13.96,
+    "destination_port": "BEANR (Antwerp)",
+    "scheduled_eta": "2026-10-20T12:00:00Z",
+    "projected_delayed_eta": "2026-10-25T06:00:00Z",
+    "delay_hours": 121,
+    "status": "SLOW_STEAMING_STRIKE_AVOIDANCE",
+    "manifest_teu": 11870,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
+  },
+  {
+    "vessel_imo": "9811151",
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "Summit Stores",
+    "current_lat": 23.938,
+    "current_lon": 121.1718,
+    "speed_knots": 0.38,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-10-28T08:00:00Z",
+    "projected_delayed_eta": "2026-11-02T14:00:00Z",
+    "delay_hours": 125,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 12418,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": "9778997",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Cymbal Retail",
+    "current_lat": 51.5094,
+    "current_lon": 3.635,
+    "speed_knots": 9.12,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-10-22T12:00:00Z",
+    "projected_delayed_eta": "2026-10-27T06:00:00Z",
+    "delay_hours": 60,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 7970,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
+  },
+  {
+    "vessel_imo": 4911639,
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "Summit Stores",
+    "current_lat": 24.1571,
+    "current_lon": 120.982,
+    "speed_knots": 0.26,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-10-30T08:00:00Z",
+    "projected_delayed_eta": "2026-11-04T14:00:00Z",
+    "delay_hours": 74,
+    "status": "SLOW_STEAMING_STRIKE_AVOIDANCE",
+    "manifest_teu": 11893,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": 9177233,
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "DMart Avenue",
+    "current_lat": 51.1392,
+    "current_lon": 3.2291,
+    "speed_knots": 14.45,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-10-24T12:00:00Z",
+    "projected_delayed_eta": "2026-10-29T06:00:00Z",
+    "delay_hours": 123,
+    "status": "SLOW_STEAMING_STRIKE_AVOIDANCE",
+    "manifest_teu": 18243,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
+  },
+  {
+    "vessel_imo": "9811151",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Maersk Line",
+    "current_lat": 23.7401,
+    "current_lon": 120.9388,
+    "speed_knots": 0.49,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-11-01T08:00:00Z",
+    "projected_delayed_eta": "2026-11-06T14:00:00Z",
+    "delay_hours": 112,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 16033,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": "9778997",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Apex Hypermarket",
+    "current_lat": 51.4465,
+    "current_lon": 3.1544,
+    "speed_knots": 11.49,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-10-26T12:00:00Z",
+    "projected_delayed_eta": "2026-10-31T06:00:00Z",
+    "delay_hours": 76,
+    "status": "SLOW_STEAMING_STRIKE_AVOIDANCE",
+    "manifest_teu": 11259,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
+  },
+  {
+    "vessel_imo": "9811179",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Maersk Line",
+    "current_lat": 23.7019,
+    "current_lon": 121.1233,
+    "speed_knots": 0.34,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-11-03T08:00:00Z",
+    "projected_delayed_eta": "2026-11-08T14:00:00Z",
+    "delay_hours": 96,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 13420,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": "9779025",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Maersk Line",
+    "current_lat": 51.1217,
+    "current_lon": 2.9886,
+    "speed_knots": 19.96,
+    "destination_port": "BEANR (Antwerp)",
+    "scheduled_eta": "2026-10-07T12:00:00Z",
+    "projected_delayed_eta": "2026-10-12T06:00:00Z",
+    "delay_hours": 145,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 18886,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
+  },
+  {
+    "vessel_imo": "9811207",
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "Cymbal Retail",
+    "current_lat": 24.2687,
+    "current_lon": 121.1144,
+    "speed_knots": 0.48,
+    "destination_port": "BEANR (Antwerp)",
+    "scheduled_eta": "2026-10-15T08:00:00Z",
+    "projected_delayed_eta": "2026-10-20T14:00:00Z",
+    "delay_hours": 110,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 16214,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": "9779053",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Summit Stores",
+    "current_lat": 51.3997,
+    "current_lon": 3.4725,
+    "speed_knots": 14.33,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-10-09T12:00:00Z",
+    "projected_delayed_eta": "2026-10-14T06:00:00Z",
+    "delay_hours": 61,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 8987,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
+  },
+  {
+    "vessel_imo": 4972976,
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "Reliance Retail",
+    "current_lat": 23.9935,
+    "current_lon": 121.0031,
+    "speed_knots": 0.18,
+    "destination_port": "BEANR (Antwerp)",
+    "scheduled_eta": "2026-10-17T08:00:00Z",
+    "projected_delayed_eta": "2026-10-22T14:00:00Z",
+    "delay_hours": 63,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 8067,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": 6748185,
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "Reliance Retail",
+    "current_lat": 51.4792,
+    "current_lon": 3.1548,
+    "speed_knots": 12.3,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-10-11T12:00:00Z",
+    "projected_delayed_eta": "2026-10-16T06:00:00Z",
+    "delay_hours": 80,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 15283,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
+  },
+  {
+    "vessel_imo": "9811207",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Reliance Retail",
+    "current_lat": 24.1045,
+    "current_lon": 120.6469,
+    "speed_knots": 0.67,
+    "destination_port": "BEANR (Antwerp)",
+    "scheduled_eta": "2026-10-19T08:00:00Z",
+    "projected_delayed_eta": "2026-10-24T14:00:00Z",
+    "delay_hours": 262,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 36885,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": "9779053",
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "Reliance Retail",
+    "current_lat": 50.9715,
+    "current_lon": 2.9639,
+    "speed_knots": 12.12,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-10-13T12:00:00Z",
+    "projected_delayed_eta": "2026-10-18T06:00:00Z",
+    "delay_hours": 87,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 14633,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
+  },
+  {
+    "vessel_imo": "9811235",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Maersk Line",
+    "current_lat": 23.9926,
+    "current_lon": 120.5764,
+    "speed_knots": 0.24,
+    "destination_port": "USLAX (Los Angeles)",
+    "scheduled_eta": "2026-10-21T08:00:00Z",
+    "projected_delayed_eta": "2026-10-26T14:00:00Z",
+    "delay_hours": 75,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 9592,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": "9779081",
+    "vessel_name": "EVER GLOBE",
+    "carrier": "Reliance Retail",
+    "current_lat": 51.1235,
+    "current_lon": 3.5737,
+    "speed_knots": 18.0,
+    "destination_port": "BEANR (Antwerp)",
+    "scheduled_eta": "2026-10-15T12:00:00Z",
+    "projected_delayed_eta": "2026-10-20T06:00:00Z",
+    "delay_hours": 163,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 18985,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
+  },
+  {
+    "vessel_imo": "9811263",
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "Omni Wholesale Club",
+    "current_lat": 24.2706,
+    "current_lon": 121.1748,
+    "speed_knots": 0.39,
+    "destination_port": "BEANR (Antwerp)",
+    "scheduled_eta": "2026-10-23T08:00:00Z",
+    "projected_delayed_eta": "2026-10-28T14:00:00Z",
+    "delay_hours": 116,
+    "status": "ANCHORED_WEATHER_EVASION",
+    "manifest_teu": 12131,
+    "at_risk_purchase_orders": [
+      "PO-450091281",
+      "PO-450091285",
+      "PO-450091304"
+    ],
+    "impacted_skus": [
+      "SKU-BATTERY-MEB-01",
+      "SKU-INVERTER-HV-800V",
+      "SKU-TI-FORGING-W52"
+    ]
+  },
+  {
+    "vessel_imo": "9779109",
+    "vessel_name": "MAERSK MC-KINNEY MOLLER",
+    "carrier": "Maersk Line",
+    "current_lat": 51.7553,
+    "current_lon": 3.2406,
+    "speed_knots": 8.67,
+    "destination_port": "BEANR (Antwerp)",
+    "scheduled_eta": "2026-10-17T12:00:00Z",
+    "projected_delayed_eta": "2026-10-22T06:00:00Z",
+    "delay_hours": 33,
+    "status": "SLOW_STEAMING_STRIKE_AVOIDANCE",
+    "manifest_teu": 5546,
+    "at_risk_purchase_orders": [
+      "PO-450089100",
+      "PO-450089144"
+    ],
+    "impacted_skus": [
+      "SKU-STERILE-VIAL-10ML",
+      "SKU-API-LIPID-NP"
+    ]
   }
 ]

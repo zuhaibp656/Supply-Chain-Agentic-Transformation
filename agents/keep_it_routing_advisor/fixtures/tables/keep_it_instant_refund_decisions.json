@@ -54,5 +54,173 @@
     "physical_return_cost_usd": 24.7,
     "expected_salvage_usd": 5.2,
     "net_savings_from_keep_it_usd": 19.5
+  },
+  {
+    "rma_req_id": "KPR-3067",
+    "routing_decision": "KEEP_IT_INSTANT_REFUND",
+    "physical_return_cost_usd": 20.5,
+    "expected_salvage_usd": 0.1,
+    "net_savings_from_keep_it_usd": 25.06
+  },
+  {
+    "rma_req_id": "KPR-3075",
+    "routing_decision": "ISSUE_PREPAID_RMA_LABEL",
+    "physical_return_cost_usd": 16.2,
+    "expected_salvage_usd": 3.45,
+    "net_savings_from_keep_it_usd": 15.48
+  },
+  {
+    "rma_req_id": "KPR-3083",
+    "routing_decision": "KEEP_IT_DISPOSE_COLD_PACK",
+    "physical_return_cost_usd": 37.02,
+    "expected_salvage_usd": 907.03,
+    "net_savings_from_keep_it_usd": 0.1
+  },
+  {
+    "rma_req_id": "KPR-3091",
+    "routing_decision": "KEEP_IT_DISPOSE_COLD_PACK",
+    "physical_return_cost_usd": 25.25,
+    "expected_salvage_usd": 0.1,
+    "net_savings_from_keep_it_usd": 33.02
+  },
+  {
+    "rma_req_id": "KPR-3099",
+    "routing_decision": "KEEP_IT_CHARITY_QR_DONATE",
+    "physical_return_cost_usd": 16.48,
+    "expected_salvage_usd": 11.61,
+    "net_savings_from_keep_it_usd": 6.04
+  },
+  {
+    "rma_req_id": "KPR-3107",
+    "routing_decision": "KEEP_IT_DISPOSE_COLD_PACK",
+    "physical_return_cost_usd": 36.52,
+    "expected_salvage_usd": 0.1,
+    "net_savings_from_keep_it_usd": 0.1
+  },
+  {
+    "rma_req_id": "KPR-3115",
+    "routing_decision": "KEEP_IT_CHARITY_QR_DONATE",
+    "physical_return_cost_usd": 21.29,
+    "expected_salvage_usd": 220.52,
+    "net_savings_from_keep_it_usd": 0.1
+  },
+  {
+    "rma_req_id": "KPR-3123",
+    "routing_decision": "REQUIRE_COUNTER_PHOTO_AND_DROP",
+    "physical_return_cost_usd": 29.73,
+    "expected_salvage_usd": 5.64,
+    "net_savings_from_keep_it_usd": 28.35
+  },
+  {
+    "rma_req_id": "KPR-3123",
+    "routing_decision": "ISSUE_PREPAID_RMA_LABEL",
+    "physical_return_cost_usd": 12.06,
+    "expected_salvage_usd": 0.1,
+    "net_savings_from_keep_it_usd": 10.54
+  },
+  {
+    "rma_req_id": "KPR-3131",
+    "routing_decision": "REQUIRE_COUNTER_PHOTO_AND_DROP",
+    "physical_return_cost_usd": 15.38,
+    "expected_salvage_usd": 2.79,
+    "net_savings_from_keep_it_usd": 11.37
+  },
+  {
+    "rma_req_id": "KPR-3139",
+    "routing_decision": "REQUIRE_COUNTER_PHOTO_AND_DROP",
+    "physical_return_cost_usd": 20.1,
+    "expected_salvage_usd": 467.41,
+    "net_savings_from_keep_it_usd": 0.1
+  },
+  {
+    "rma_req_id": "KPR-3147",
+    "routing_decision": "ISSUE_PREPAID_RMA_LABEL",
+    "physical_return_cost_usd": 35.25,
+    "expected_salvage_usd": 0.1,
+    "net_savings_from_keep_it_usd": 36.37
+  },
+  {
+    "rma_req_id": "KPR-3155",
+    "routing_decision": "ISSUE_PREPAID_RMA_LABEL",
+    "physical_return_cost_usd": 17.1,
+    "expected_salvage_usd": 11.43,
+    "net_savings_from_keep_it_usd": 5.3
+  },
+  {
+    "rma_req_id": "KPR-3163",
+    "routing_decision": "KEEP_IT_CHARITY_QR_DONATE",
+    "physical_return_cost_usd": 28.73,
+    "expected_salvage_usd": 0.1,
+    "net_savings_from_keep_it_usd": 0.1
+  },
+  {
+    "rma_req_id": "KPR-3171",
+    "routing_decision": "KEEP_IT_CHARITY_QR_DONATE",
+    "physical_return_cost_usd": 27.75,
+    "expected_salvage_usd": 443.35,
+    "net_savings_from_keep_it_usd": 0.1
+  },
+  {
+    "rma_req_id": "KPR-3179",
+    "routing_decision": "KEEP_IT_DISPOSE_COLD_PACK",
+    "physical_return_cost_usd": 23.17,
+    "expected_salvage_usd": 5.25,
+    "net_savings_from_keep_it_usd": 18.84
+  },
+  {
+    "rma_req_id": "KPR-3179",
+    "routing_decision": "KEEP_IT_INSTANT_REFUND",
+    "physical_return_cost_usd": 11.11,
+    "expected_salvage_usd": 0.1,
+    "net_savings_from_keep_it_usd": 11.7
+  },
+  {
+    "rma_req_id": "KPR-3187",
+    "routing_decision": "KEEP_IT_INSTANT_REFUND",
+    "physical_return_cost_usd": 19.36,
+    "expected_salvage_usd": 4.43,
+    "net_savings_from_keep_it_usd": 13.79
+  },
+  {
+    "rma_req_id": "KPR-3195",
+    "routing_decision": "REQUIRE_COUNTER_PHOTO_AND_DROP",
+    "physical_return_cost_usd": 33.64,
+    "expected_salvage_usd": 847.39,
+    "net_savings_from_keep_it_usd": 0.1
+  },
+  {
+    "rma_req_id": "KPR-3203",
+    "routing_decision": "KEEP_IT_INSTANT_REFUND",
+    "physical_return_cost_usd": 31.53,
+    "expected_salvage_usd": 0.1,
+    "net_savings_from_keep_it_usd": 32.65
+  },
+  {
+    "rma_req_id": "KPR-3211",
+    "routing_decision": "KEEP_IT_INSTANT_REFUND",
+    "physical_return_cost_usd": 15.06,
+    "expected_salvage_usd": 9.98,
+    "net_savings_from_keep_it_usd": 3.86
+  },
+  {
+    "rma_req_id": "KPR-3219",
+    "routing_decision": "REQUIRE_COUNTER_PHOTO_AND_DROP",
+    "physical_return_cost_usd": 29.48,
+    "expected_salvage_usd": 0.1,
+    "net_savings_from_keep_it_usd": 0.1
+  },
+  {
+    "rma_req_id": "KPR-3227",
+    "routing_decision": "KEEP_IT_INSTANT_REFUND",
+    "physical_return_cost_usd": 35.4,
+    "expected_salvage_usd": 458.97,
+    "net_savings_from_keep_it_usd": 0.1
+  },
+  {
+    "rma_req_id": "KPR-3235",
+    "routing_decision": "KEEP_IT_DISPOSE_COLD_PACK",
+    "physical_return_cost_usd": 40.62,
+    "expected_salvage_usd": 8.11,
+    "net_savings_from_keep_it_usd": 23.58
   }
 ]

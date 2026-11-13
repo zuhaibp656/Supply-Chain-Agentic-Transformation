@@ -1,7 +1,7 @@
 [
   {
     "shipment_id": "SHP-GLB-20261022-301",
-    "corridor": "Rotterdam\u2794Duisburg",
+    "corridor": "Rotterdam➔Duisburg",
     "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
     "payload_tonnes": 42.0,
     "distance_km": 215.0,
@@ -11,7 +11,7 @@
   },
   {
     "shipment_id": "SHP-GLB-20261022-309",
-    "corridor": "Rotterdam\u2794Duisburg",
+    "corridor": "Rotterdam➔Duisburg",
     "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
     "payload_tonnes": 38.64,
     "distance_km": 268.75,
@@ -21,7 +21,7 @@
   },
   {
     "shipment_id": "SHP-GLB-20261022-316",
-    "corridor": "Rotterdam\u2794Duisburg",
+    "corridor": "Rotterdam➔Duisburg",
     "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
     "payload_tonnes": 34.86,
     "distance_km": 167.7,
@@ -31,7 +31,7 @@
   },
   {
     "shipment_id": "SHP-GLB-20261022-323",
-    "corridor": "Rotterdam\u2794Duisburg",
+    "corridor": "Rotterdam➔Duisburg",
     "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
     "payload_tonnes": 49.98,
     "distance_km": 178.45,
@@ -41,7 +41,7 @@
   },
   {
     "shipment_id": "SHP-GLB-20261022-330",
-    "corridor": "Rotterdam\u2794Duisburg",
+    "corridor": "Rotterdam➔Duisburg",
     "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
     "payload_tonnes": 34.86,
     "distance_km": 255.85,
@@ -51,7 +51,7 @@
   },
   {
     "shipment_id": "SHP-GLB-20261022-337",
-    "corridor": "Rotterdam\u2794Duisburg",
+    "corridor": "Rotterdam➔Duisburg",
     "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
     "payload_tonnes": 34.86,
     "distance_km": 178.45,
@@ -61,7 +61,7 @@
   },
   {
     "shipment_id": "SHP-GLB-20261022-344",
-    "corridor": "Rotterdam\u2794Duisburg",
+    "corridor": "Rotterdam➔Duisburg",
     "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
     "payload_tonnes": 38.64,
     "distance_km": 230.05,
@@ -71,12 +71,252 @@
   },
   {
     "shipment_id": "SHP-GLB-20261022-351",
-    "corridor": "Rotterdam\u2794Duisburg",
+    "corridor": "Rotterdam➔Duisburg",
     "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
     "payload_tonnes": 32.76,
     "distance_km": 184.9,
     "wtw_co2e_kg": 230.62,
     "glec_intensity_g_tkm": 24.28,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-367",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 16.19,
+    "distance_km": 86.02,
+    "wtw_co2e_kg": 88.68,
+    "glec_intensity_g_tkm": 7.95,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-382",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 53.87,
+    "distance_km": 402.37,
+    "wtw_co2e_kg": 338.91,
+    "glec_intensity_g_tkm": 33.61,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-396",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 43.46,
+    "distance_km": 216.47,
+    "wtw_co2e_kg": 282.82,
+    "glec_intensity_g_tkm": 27.73,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-410",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 39.21,
+    "distance_km": 143.8,
+    "wtw_co2e_kg": 168.2,
+    "glec_intensity_g_tkm": 11.34,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-424",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 16.49,
+    "distance_km": 134.88,
+    "wtw_co2e_kg": 102.88,
+    "glec_intensity_g_tkm": 8.07,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-438",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 29.34,
+    "distance_km": 139.21,
+    "wtw_co2e_kg": 107.3,
+    "glec_intensity_g_tkm": 16.71,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-452",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 21.64,
+    "distance_km": 117.13,
+    "wtw_co2e_kg": 76.25,
+    "glec_intensity_g_tkm": 10.72,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-466",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 39.2,
+    "distance_km": 191.93,
+    "wtw_co2e_kg": 259.66,
+    "glec_intensity_g_tkm": 34.25,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-423",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 31.29,
+    "distance_km": 170.15,
+    "wtw_co2e_kg": 134.8,
+    "glec_intensity_g_tkm": 16.26,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-438",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 34.46,
+    "distance_km": 260.77,
+    "wtw_co2e_kg": 188.18,
+    "glec_intensity_g_tkm": 22.44,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-452",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 44.43,
+    "distance_km": 184.17,
+    "wtw_co2e_kg": 260.52,
+    "glec_intensity_g_tkm": 32.52,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-466",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 84.49,
+    "distance_km": 268.85,
+    "wtw_co2e_kg": 350.06,
+    "glec_intensity_g_tkm": 27.13,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-480",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 42.4,
+    "distance_km": 350.2,
+    "wtw_co2e_kg": 310.5,
+    "glec_intensity_g_tkm": 30.27,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-494",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 35.61,
+    "distance_km": 212.65,
+    "wtw_co2e_kg": 172.54,
+    "glec_intensity_g_tkm": 23.35,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-508",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 28.21,
+    "distance_km": 202.84,
+    "wtw_co2e_kg": 111.83,
+    "glec_intensity_g_tkm": 13.66,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-522",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 29.37,
+    "distance_km": 224.04,
+    "wtw_co2e_kg": 262.31,
+    "glec_intensity_g_tkm": 27.44,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-479",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 18.99,
+    "distance_km": 81.09,
+    "wtw_co2e_kg": 76.13,
+    "glec_intensity_g_tkm": 8.0,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-494",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 62.49,
+    "distance_km": 332.4,
+    "wtw_co2e_kg": 355.09,
+    "glec_intensity_g_tkm": 29.93,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-508",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 47.65,
+    "distance_km": 246.98,
+    "wtw_co2e_kg": 242.61,
+    "glec_intensity_g_tkm": 32.2,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-522",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 45.51,
+    "distance_km": 191.84,
+    "wtw_co2e_kg": 211.02,
+    "glec_intensity_g_tkm": 13.77,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-536",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 24.14,
+    "distance_km": 165.33,
+    "wtw_co2e_kg": 165.91,
+    "glec_intensity_g_tkm": 18.21,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-550",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 37.71,
+    "distance_km": 256.23,
+    "wtw_co2e_kg": 218.34,
+    "glec_intensity_g_tkm": 29.51,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-564",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 36.9,
+    "distance_km": 221.01,
+    "wtw_co2e_kg": 138.52,
+    "glec_intensity_g_tkm": 14.49,
+    "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
+  },
+  {
+    "shipment_id": "SHP-GLB-20261022-578",
+    "corridor": "Rotterdam➔Duisburg",
+    "mode": "ELECTRIC_BARGE_AND_EV_TRUCK",
+    "payload_tonnes": 40.66,
+    "distance_km": 267.86,
+    "wtw_co2e_kg": 289.07,
+    "glec_intensity_g_tkm": 40.07,
     "assurance_level": "ISO_14083_PRIMARY_VERIFIED"
   }
 ]

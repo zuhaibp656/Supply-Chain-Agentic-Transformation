@@ -32,10 +32,10 @@
     {
       "pillar_id": "hpc_demand_portfolio",
       "v_num": "01",
-      "scor_badge": "01 · PLAN",
-      "name": "FMCG Demand & Brand Portfolio Strategy",
-      "tagline": "Aligning consumer trends with SKU rationalization",
-      "subtitle": "Manages the forecasting, trade promotions, and S&OP processes for thousands of home and personal care SKUs across global markets.",
+      "scor_badge": "01 · SC PLANNING & S&OP",
+      "name": "Supply Chain Planning (MSO & SU Planning)",
+      "tagline": "Unilever 'Planning' Team · SAP APO/S1P & Kinaxis Concurrent S&OP",
+      "subtitle": "Aligns Multi-country Sales Organisation (MSO) demand with Sourcing Unit (SU) weekly master schedules.",
       "color": "#0056a9",
       "watermark_type": "demand_wave",
       "sub_pillar_ids": [
@@ -44,26 +44,41 @@
         "sop_ibp",
         "portfolio_sku"
       ],
-      "provenance_rationale": "Unilever plans demand and Revenue Growth Management (RGM) across 30 Power Brands (Dove, Sunsilk, Vaseline, Lux, Lifebuoy, Surf Excel/OMO, Comfort, Domestos) spanning sachets, bottles, pouches, and premium e-commerce formats.",
+      "pillar_naming_basis": "Named verbatim after Unilever's official 'Planning' team on careers.unilever.com/en/supply-chain ('Our forecasting and supply and demand planning teams...') and internal 'MSO' (Multi-country Sales Organisation) & 'SU Planning' (Sourcing Unit) units in Unilever Req ID R-1191017.",
+      "provenance_rationale": "Unilever's Supply Chain Careers portal explicitly designates 'Planning' as its first core Supply Chain team, bridging Category/Customer Strategy & Planning (MSO) with factory-level Sourcing Unit (SU) supply planners across Home Care and Personal Care hubs like Port Sunlight.",
       "company_evidence_signals": [
-        "Power Brands S&OP across Home Care (OMO/Surf) & Personal Care (Dove/Lux/Vaseline)",
-        "Weather-linked skincare/haircare/laundry POS demand sensing & promo ROI modeling",
-        "Pack-price architecture from emerging-market sachets to premium refill formats"
+        "Official 'Planning' & 'Customer Strategy & Planning' teams on careers.unilever.com",
+        "Daily Prov1/Prov2 forecasts & Master Production Schedules in SAP APO, SAP S1P & Kinaxis",
+        "Innovation Phase-In/Phase-Out (PIPO) trial scheduling across Home & Personal Care Sourcing Units"
+      ],
+      "jd_proof_items": [
+        {
+          "job_title": "Home Care Supply Planner — Port Sunlight Factories (Req ID: R-1191017)",
+          "internal_org_unit": "Business Function: Supply Chain, Planning (SU Planning & MSO)",
+          "process_clues_from_jd": "Unilever's live Port Sunlight JD mandates weekly Master Production Schedules, daily Prov1 & Prov2 forecasts, and raw/pack call-offs in SAP APO and SAP S1P across the Unilever Sulphonation Plant, Home Care Sourcing Units (HC SUs), bottle suppliers, and UK/EU Distribution Centres, sitting on the UMS Customer Service & Agility Pillar.",
+          "jd_verification_url": "https://careers.unilever.com/en/job/port-sunlight/supply-planner/34155/102906219136",
+          "live_search_url": "https://careers.unilever.com/en/search-jobs/Supply%20Chain%20Planning/34155/1"
+        }
       ],
       "verification_sources": [
         {
-          "title": "Unilever — Supply Chain, Operations & Partnering with Suppliers",
-          "url": "https://www.unilever.com/suppliers/",
+          "title": "Live Unilever JD: Home Care Supply Planner — Port Sunlight (Req R-1191017)",
+          "url": "https://careers.unilever.com/en/job/port-sunlight/supply-planner/34155/102906219136",
           "snippet": ""
         },
         {
-          "title": "Unilever — Annual Report & Accounts (Beauty, Personal Care & Home Care)",
-          "url": "https://www.unilever.com/investors/annual-report-and-accounts/",
+          "title": "Unilever Supply Chain Careers — Official 'Our Teams: Planning' Page",
+          "url": "https://careers.unilever.com/en/supply-chain",
           "snippet": ""
         },
         {
-          "title": "Unilever — Sustainability: Climate, Nature & Plastics",
-          "url": "https://www.unilever.com/sustainability/",
+          "title": "Unilever Customer Strategy & Planning Career Hub",
+          "url": "https://careers.unilever.com/en/customer-strategy-and-planning",
+          "snippet": ""
+        },
+        {
+          "title": "Live 'Supply Chain Planning' Job Descriptions at Unilever PLC",
+          "url": "https://www.linkedin.com/jobs/search/?keywords=%22Unilever+PLC%22+%22Supply+Chain+Planning%22",
           "snippet": ""
         }
       ]
@@ -71,10 +86,10 @@
     {
       "pillar_id": "chemicals_packaging_sourcing",
       "v_num": "02",
-      "scor_badge": "02 · SOURCE",
-      "name": "Chemicals & Sustainable Packaging Sourcing",
-      "tagline": "Procuring raw materials and PCR plastics",
-      "subtitle": "Oversees the global supplier network for surfactants, fragrances, and sustainable packaging materials, managing contracts and purchase orders.",
+      "scor_badge": "02 · PROCUREMENT",
+      "name": "Procurement — Raw, Pack, Capex & Utilities",
+      "tagline": "Unilever 'Procurement' Function · Should-Cost, TCO & Sustainable Buying",
+      "subtitle": "Governs global surfactants, oleochemicals, PCR packaging, MRO, and decarbonized utilities buying.",
       "color": "#007a33",
       "watermark_type": "supplier_graph",
       "sub_pillar_ids": [
@@ -82,26 +97,41 @@
         "material_packaging",
         "contract_po_mgmt"
       ],
-      "provenance_rationale": "HPC procurement centers on linear alkylbenzene (LAB)/Clean Future biosurfactants, palm-kernel oleochemicals (monitored via satellite for zero deforestation), soda ash, fragrances, and Post-Consumer Recycled (PCR) HDPE bottles.",
+      "pillar_naming_basis": "Named verbatim after Unilever's official 'Procurement' team on careers.unilever.com/en/supply-chain and Unilever's 'Function: Procurement' job requisitions (such as Req ID R-1188872 in Rotterdam HQ).",
+      "provenance_rationale": "Unilever organizes buying centrally under 'Function: Procurement' spanning Raw & Packaging Materials (surfactants, betaines, oleochemicals, recycled HDPE bottles) and Global Capex/Utilities/MRO—partnering with Business Units, Engineering, Sustainability, and Global Business Services (GBS).",
       "company_evidence_signals": [
-        "Deforestation-free palm/palm-kernel oleochemicals verified via satellite geolocation",
-        "Clean Future lower-carbon surfactants, soda ash, enzymes & fragrance compounds",
-        "Post-Consumer Recycled (PCR) HDPE bottles, pumps & mono-material pouches"
+        "Official 'Procurement' function across Rotterdam HQ, Singapore, Mumbai & Hoboken hubs",
+        "Should-cost, Total-Cost-of-Ownership (TCO) & specification harmonisation standards",
+        "Deforestation-free palm oleochemicals, renewable Power Purchase Agreements (PPAs) & biomass sourcing"
+      ],
+      "jd_proof_items": [
+        {
+          "job_title": "Capex, Utilities, MRO Procurement Director — Rotterdam HQ (Req ID: R-1188872)",
+          "internal_org_unit": "Function: Procurement (Reports to Head of Indirects, Global Scope)",
+          "process_clues_from_jd": "Unilever's live Rotterdam JD details how Procurement operates internally: establishing should-cost, Total-Cost-of-Ownership (TCO), and lifecycle-cost standards across equipment, materials, and utilities; rationalising fragmented site-level MRO parts; and executing renewable PPAs and sustainability-linked supplier scorecards.",
+          "jd_verification_url": "https://careers.unilever.com/en/job/rotterdam/capex-utilities-mro-procurement-director/34155/102948893920",
+          "live_search_url": "https://careers.unilever.com/en/search-jobs/Procurement/34155/1"
+        }
       ],
       "verification_sources": [
         {
-          "title": "Unilever — Supply Chain, Operations & Partnering with Suppliers",
+          "title": "Live Unilever JD: Procurement Director — Rotterdam HQ (Req R-1188872)",
+          "url": "https://careers.unilever.com/en/job/rotterdam/capex-utilities-mro-procurement-director/34155/102948893920",
+          "snippet": ""
+        },
+        {
+          "title": "Unilever Live 'Procurement' Job Descriptions & Requisitions",
+          "url": "https://careers.unilever.com/en/search-jobs/Procurement/34155/1",
+          "snippet": ""
+        },
+        {
+          "title": "Unilever Partnering with Suppliers & Responsible Sourcing Portal",
           "url": "https://www.unilever.com/suppliers/",
           "snippet": ""
         },
         {
-          "title": "Unilever — Annual Report & Accounts (Beauty, Personal Care & Home Care)",
-          "url": "https://www.unilever.com/investors/annual-report-and-accounts/",
-          "snippet": ""
-        },
-        {
-          "title": "Unilever — Sustainability: Climate, Nature & Plastics",
-          "url": "https://www.unilever.com/sustainability/",
+          "title": "Live 'Procurement' Job Descriptions at Unilever PLC",
+          "url": "https://www.linkedin.com/jobs/search/?keywords=%22Unilever+PLC%22+%22Procurement%22",
           "snippet": ""
         }
       ]
@@ -109,10 +139,10 @@
     {
       "pillar_id": "hpc_manufacturing_quality",
       "v_num": "03",
-      "scor_badge": "03 · MAKE",
-      "name": "HPC Blending & Filling Operations",
-      "tagline": "High-speed manufacturing and quality control",
-      "subtitle": "Schedules production and manages capacity across Unilever-owned mega-factories and third-party co-packers while ensuring strict cosmetic and chemical quality.",
+      "scor_badge": "03 · UMS SOURCING UNITS",
+      "name": "Manufacturing & Engineering (UMS Sourcing Units)",
+      "tagline": "280+ Sourcing Units · Unilever Manufacturing System (UMS) & WCM",
+      "subtitle": "Runs continuous chemical sulfonation/betaines processing and high-speed HPC liquid/powder lines.",
       "color": "#f072b7",
       "watermark_type": "factory_arm",
       "sub_pillar_ids": [
@@ -120,26 +150,41 @@
         "capacity_planning",
         "quality_compliance"
       ],
-      "provenance_rationale": "Unilever operates multiple World Economic Forum (WEF) Digital Lighthouse factories globally (such as Dapada, Sonepat, Khamgaon, Port Sunlight, Hefei, Dubai, Indaiatuba) running continuous sulfonation, batch mixing, and high-speed liquid/powder filling.",
+      "pillar_naming_basis": "Named verbatim after Unilever's official 'Manufacturing and Engineering' team on careers.unilever.com/en/supply-chain, its internal factory designation 'Sourcing Units (SU)', and 'Unilever Manufacturing System (UMS)' in Req ID R-1186116.",
+      "provenance_rationale": "Unilever operates 280+ global factories—internally called Sourcing Units (SUs), such as Port Sunlight, Jefferson City (largest North America Personal Care Liquids & Betaines plant), Dapada, and Khamgaon—governed by standardized Unilever Manufacturing System (UMS) and World Class Manufacturing (WCM) pillars.",
       "company_evidence_signals": [
-        "WEF Digital Lighthouse HPC factories with digital-twin process control",
-        "Clean-in-Place (CIP) sequence optimization across multi-fragrance shampoo/lotion mixers",
-        "Inline fill-weight, torque, pH/viscosity & GMP microbiological quality release"
+        "280+ Unilever Sourcing Units (SUs) & WEF Fourth Industrial Revolution (4IR) Digital Factories",
+        "Unilever Manufacturing System (UMS) & Process Safety Management (PSM / LOTO) execution",
+        "In-house Sulphonation & Betaines chemical processing coupled with automated liquid filling lines"
+      ],
+      "jd_proof_items": [
+        {
+          "job_title": "Senior Manufacturing Manager — Processing & Betaines (Req ID: R-1186116)",
+          "internal_org_unit": "Beauty, Wellbeing & Personal Care Sourcing Unit — Jefferson City, MO (Reports to Factory Director)",
+          "process_clues_from_jd": "Unilever's live Jefferson City JD reveals internal plant hierarchy (Factory Director -> Manufacturing Manager -> Manufacturing Business Leads & Area Leads) running automated Personal Care Liquids processing and Betaines feedstock reactors under Unilever Manufacturing System (UMS) principles, tracking batch cycle time, waste, and asset utilization.",
+          "jd_verification_url": "https://careers.unilever.com/en/job/jefferson-city/senior-manufacturing-manager/34155/98473598496",
+          "live_search_url": "https://careers.unilever.com/en/search-jobs/Manufacturing/34155/1"
+        }
       ],
       "verification_sources": [
         {
-          "title": "Unilever — Supply Chain, Operations & Partnering with Suppliers",
-          "url": "https://www.unilever.com/suppliers/",
+          "title": "Live Unilever JD: Senior Manufacturing Manager — Personal Care Liquids (Req R-1186116)",
+          "url": "https://careers.unilever.com/en/job/jefferson-city/senior-manufacturing-manager/34155/98473598496",
           "snippet": ""
         },
         {
-          "title": "Unilever — Annual Report & Accounts (Beauty, Personal Care & Home Care)",
-          "url": "https://www.unilever.com/investors/annual-report-and-accounts/",
+          "title": "Unilever Live 'Manufacturing & Engineering' Job Descriptions",
+          "url": "https://careers.unilever.com/en/search-jobs/Manufacturing/34155/1",
           "snippet": ""
         },
         {
-          "title": "Unilever — Sustainability: Climate, Nature & Plastics",
-          "url": "https://www.unilever.com/sustainability/",
+          "title": "Unilever Supply Chain Digital & AI Talent Transformation Brief",
+          "url": "https://www.unilever.com/news/news-search/2025/how-were-future-proofing-talent-across-our-supply-chain/",
+          "snippet": ""
+        },
+        {
+          "title": "Live 'Manufacturing & Engineering' Job Descriptions at Unilever PLC",
+          "url": "https://www.linkedin.com/jobs/search/?keywords=%22Unilever+PLC%22+%22Manufacturing+%26+Engineering%22",
           "snippet": ""
         }
       ]
@@ -147,10 +192,10 @@
     {
       "pillar_id": "global_distribution_inventory",
       "v_num": "04",
-      "scor_badge": "04 · STAGE",
-      "name": "Global Distribution & Inventory Positioning",
-      "tagline": "Optimizing FMCG stock across regional hubs",
-      "subtitle": "Manages warehouse operations and inventory positioning to ensure omnichannel visibility of finished goods from factory gates to regional distribution centers.",
+      "scor_badge": "04 · LOGISTICS & LOP",
+      "name": "Logistics Operations Planning (LOP) & Warehousing",
+      "tagline": "200+ Warehouses · MTCP/LTCP Capacity, 3PL DCs & Cost-to-Serve (C2S)",
+      "subtitle": "Governs warehouse occupation, 3PL distribution centers, SITU dispatch waves, and stock positioning.",
       "color": "#ffb81c",
       "watermark_type": "warehouse_rack",
       "sub_pillar_ids": [
@@ -158,26 +203,41 @@
         "warehouse_operations",
         "omnichannel_visibility"
       ],
-      "provenance_rationale": "Finished HPC cases flow from specialized liquid/powder factories through automated mega-distribution centers and regional cross-docks into retail, distributor, and e-commerce fulfillment nodes.",
+      "pillar_naming_basis": "Named verbatim after Unilever's official 'Logistics' team on careers.unilever.com/en/supply-chain ('With over 200 warehouses...') and internal 'LOP' (Logistics Operations Planning) team in Req ID R-1190849.",
+      "provenance_rationale": "Unilever manages 200+ Distribution Centres (DCs) and external 3PL warehouses through dedicated Logistics Operations Planning (LOP) teams that run Medium/Long-Term Capacity Planning (MTCP/LTCP), daily SITU dispatch curves, and Cost-to-Serve (C2S) optimization.",
       "company_evidence_signals": [
-        "Automated high-bay distribution centers & co-packing display-pallet assembly",
-        "Multi-echelon safety stock across high-velocity laundry & long-tail beauty SKUs",
-        "Omnichannel Available-to-Promise (ATP) for retail key accounts & D2C/Quick-Commerce"
+        "200+ Unilever Distribution Centres (DCs) & external Third-Party Logistics (3PL) hubs",
+        "MTCP / LTCP (Medium- & Long-Term Storage/Dispatch Capacity Planning) & daily SITU flow control",
+        "Internal Cost-to-Serve (C2S) tool & Business Unit warehouse occupation governance"
+      ],
+      "jd_proof_items": [
+        {
+          "job_title": "Logistics Operation Planning Analyst — LOP (Req ID: R-1190849)",
+          "internal_org_unit": "Supply Chain — Logistics (Reports to International Logistics & LOP Manager)",
+          "process_clues_from_jd": "Unilever's live Distribution Center JD exposes exact internal logistics workflows: running short/medium/long-term storage & dispatch capacity plans (MTCP/LTCP), directing daily sales-curve & dispatch capacity (SITU), managing external 3PL stocks and Direct Dispatch, and leading Cost-to-Serve (C2S) workshops using SAP, SQL, Power BI, and Python.",
+          "jd_verification_url": "https://careers.unilever.com/en/job/santiago/logistics-operation-planning-analyst/34155/102870888432",
+          "live_search_url": "https://careers.unilever.com/en/search-jobs/Logistics/34155/1"
+        }
       ],
       "verification_sources": [
         {
-          "title": "Unilever — Supply Chain, Operations & Partnering with Suppliers",
-          "url": "https://www.unilever.com/suppliers/",
+          "title": "Live Unilever JD: Logistics Operation Planning Analyst — LOP (Req R-1190849)",
+          "url": "https://careers.unilever.com/en/job/santiago/logistics-operation-planning-analyst/34155/102870888432",
           "snippet": ""
         },
         {
-          "title": "Unilever — Annual Report & Accounts (Beauty, Personal Care & Home Care)",
-          "url": "https://www.unilever.com/investors/annual-report-and-accounts/",
+          "title": "Unilever Live 'Logistics & Warehouse' Job Descriptions",
+          "url": "https://careers.unilever.com/en/search-jobs/Logistics/34155/1",
           "snippet": ""
         },
         {
-          "title": "Unilever — Sustainability: Climate, Nature & Plastics",
-          "url": "https://www.unilever.com/sustainability/",
+          "title": "LinkedIn Live Unilever Warehouse & Logistics Operations JDs",
+          "url": "https://www.linkedin.com/jobs/search/?keywords=%22Unilever%22+%22Logistics%22",
+          "snippet": ""
+        },
+        {
+          "title": "Live 'Logistics Operations Planning & Warehousing' Job Descriptions at Unilever PLC",
+          "url": "https://www.linkedin.com/jobs/search/?keywords=%22Unilever+PLC%22+%22Logistics+Operations+Planning++%26+Warehousing%22",
           "snippet": ""
         }
       ]
@@ -185,10 +245,10 @@
     {
       "pillar_id": "retail_d2c_logistics",
       "v_num": "05",
-      "scor_badge": "05 · DELIVER",
-      "name": "Retail Replenishment & D2C Logistics",
-      "tagline": "Delivering to hypermarkets, drugstores, and homes",
-      "subtitle": "Executes the physical movement of goods, managing freight carriers for store replenishment and last-mile delivery for prestige beauty D2C orders.",
+      "scor_badge": "05 · CUSTOMER OPS & FLEET",
+      "name": "Customer Operations, Transport & Freight Network",
+      "tagline": "Customer Operations Hub · Road, Ocean, Air Freight & OTIF Delivery",
+      "subtitle": "Integrates Customer Operations service planning with multi-modal road, ocean, and air transport.",
       "color": "#e11d48",
       "watermark_type": "corridor_lifo",
       "sub_pillar_ids": [
@@ -197,26 +257,41 @@
         "last_mile_delivery",
         "route_carrier"
       ],
-      "provenance_rationale": "Synchronizes full-truckload palletized deliveries to modern retail DCs (VMI/CPFR), digitized e-B2B distributor apps (such as Shikhar in India) serving millions of general-trade stores, and rapid e-commerce dark-store drops.",
+      "pillar_naming_basis": "Named verbatim after Unilever's internal 'Customer Operations' organization and 'Logistics Procurement' transportation/freight function explicitly detailed in Unilever Req ID R-1189117 (Hoboken US HQ).",
+      "provenance_rationale": "Unilever's Customer Operations and Transport teams link factory/DC dispatch with retail customer replenishment (Modern Trade VMI/CPFR, e-B2B Shikhar, Quick-Commerce), contracting road, intermodal, pallet-pooling, ocean, and air freight with fuel-indexation and OTIF SLA governance.",
       "company_evidence_signals": [
-        "Collaborative VMI/CPFR replenishment & On-Time In-Full (OTIF) with global retailers",
-        "Digitized e-B2B retailer ordering & route-to-market fleet optimization",
-        "Heavy liquid detergent weight-vs-cube trailer co-loading & EV/LNG low-carbon transport"
+        "Dedicated 'Customer Operations' & 'Customer Development' retail fulfillment interface",
+        "Multi-modal Road, Ocean Freight, Air Freight & Pallet-Pooling tender cost models",
+        "Fuel-indexing mechanisms, carrier capacity SLAs & low-carbon transport decarbonization"
+      ],
+      "jd_proof_items": [
+        {
+          "job_title": "Logistics Procurement Manager North America (Req ID: R-1189117)",
+          "internal_org_unit": "Procurement × Customer Operations, Supply Chain & Logistics — Hoboken US HQ",
+          "process_clues_from_jd": "Unilever's live Hoboken JD details how transport & fulfillment are run across the network: partnering directly with Customer Operations, Supply Chain, Logistics, factories, and markets across transportation, warehousing, pallets, ocean freight, and air freight using freight cost models, fuel-indexing mechanisms, and digital logistics pipelines.",
+          "jd_verification_url": "https://careers.unilever.com/en/job/hoboken/logistics-procurement-manager-north-america/34155/102808841952",
+          "live_search_url": "https://careers.unilever.com/en/search-jobs/Customer%20Operations/34155/1"
+        }
       ],
       "verification_sources": [
         {
-          "title": "Unilever — Supply Chain, Operations & Partnering with Suppliers",
-          "url": "https://www.unilever.com/suppliers/",
+          "title": "Live Unilever JD: Logistics & Freight Manager — Hoboken HQ (Req R-1189117)",
+          "url": "https://careers.unilever.com/en/job/hoboken/logistics-procurement-manager-north-america/34155/102808841952",
           "snippet": ""
         },
         {
-          "title": "Unilever — Annual Report & Accounts (Beauty, Personal Care & Home Care)",
-          "url": "https://www.unilever.com/investors/annual-report-and-accounts/",
+          "title": "Unilever Live 'Customer Operations & Customer Development' Jobs",
+          "url": "https://careers.unilever.com/en/search-jobs/Customer%20Operations/34155/1",
           "snippet": ""
         },
         {
-          "title": "Unilever — Sustainability: Climate, Nature & Plastics",
-          "url": "https://www.unilever.com/sustainability/",
+          "title": "LinkedIn Live Unilever Customer Operations & Transport JDs",
+          "url": "https://www.linkedin.com/jobs/search/?keywords=%22Unilever%22+%22Customer+Operations%22",
+          "snippet": ""
+        },
+        {
+          "title": "Live 'Customer Operations' Job Descriptions at Unilever PLC",
+          "url": "https://www.linkedin.com/jobs/search/?keywords=%22Unilever+PLC%22+%22Customer+Operations%22",
           "snippet": ""
         }
       ]
@@ -224,10 +299,10 @@
     {
       "pillar_id": "reverse_circularity",
       "v_num": "06",
-      "scor_badge": "06 · RETURN",
-      "name": "Reverse Logistics & Asset Circularity",
-      "tagline": "Managing returns, shelf-life, and reusable assets",
-      "subtitle": "Handles consumer returns, manages cosmetic/chemical expiry markdowns, and oversees the circulation of pallets and reusable transport totes.",
+      "scor_badge": "06 · QMS, SHE & CIRCULAR",
+      "name": "Quality (QMS), SHE & Obsoletes Circularity",
+      "tagline": "Global QMS (SAP Quality One), SHE & Obsoletes / Plastic Circularity",
+      "subtitle": "Governs Global QMS stock holds/retrievals, Obsoletes & Write-Offs, pallet loops, and PCR plastics.",
       "color": "#00a3e0",
       "watermark_type": "conveyor_rack",
       "sub_pillar_ids": [
@@ -235,25 +310,41 @@
         "returns_claims_mgmt",
         "pallet_tote_reclamation"
       ],
-      "provenance_rationale": "Governs seasonal/promotional gift-pack phase-outs, cosmetic PAO/shelf-life rotation, CHEP/pooled pallet loops, and Unilever's global commitment to cut virgin plastic and collect more plastic than sold.",
+      "pillar_naming_basis": "Named verbatim after Unilever's official 'Quality' and 'Safety, Health and Environment (SHE)' teams on careers.unilever.com/en/supply-chain, 'Global QMS' in Req ID R-1191539, and 'Obsoletes & Write-Offs' in Req ID R-1191017.",
+      "provenance_rationale": "On careers.unilever.com/en/supply-chain, 'Quality' and 'Safety, Health and Environment' sit as dedicated Supply Chain pillars governing SAP/Quality One CAPA, affected-stock retrieval, expired material waste compliance (ISO 14001), obsolete provision write-offs, pooled pallets, and Unilever's global plastic-packaging circularity.",
       "company_evidence_signals": [
-        "Virgin-plastic reduction, refill stations & PCR plastic collection partnerships",
-        "Pooled pallet reclamation & promotional gift-pack markdown/clearance governance"
+        "Official 'Quality' & 'Safety, Health and Environment (SHE)' Supply Chain teams",
+        "Global QMS & SAP / Quality One non-conformance, CAPA & affected-stock retrieval",
+        "Obsoletes/write-offs governance (Req R-1191017), pallet pooling (Req R-1189117) & PCR plastic circularity"
+      ],
+      "jd_proof_items": [
+        {
+          "job_title": "Quality Team Lead — QMS & Supplier Improvement (Req ID: R-1191539)",
+          "internal_org_unit": "Supply Chain — Quality & SHE (Sourcing Unit QMS &QM-Supplier Pillar)",
+          "process_clues_from_jd": "Unilever's live Sourcing Unit Quality JD mandates operating Global QMS, Category GMP, CAPA, change control, and quality master data in SAP / Quality One; tracking chemical/material expiry dates and regulated waste disposal (ISO 14001); and supporting affected-stock identification, quarantine status, and retrieval.",
+          "jd_verification_url": "https://careers.unilever.com/en/job/ho-chi-minh-city/quality-team-lead-qms-and-supplier-improvement/34155/103199511552",
+          "live_search_url": "https://careers.unilever.com/en/search-jobs/Quality%20Supply%20Chain/34155/1"
+        }
       ],
       "verification_sources": [
         {
-          "title": "Unilever — Supply Chain, Operations & Partnering with Suppliers",
-          "url": "https://www.unilever.com/suppliers/",
+          "title": "Live Unilever JD: Quality Team Lead — QMS & Supplier Improvement (Req R-1191539)",
+          "url": "https://careers.unilever.com/en/job/ho-chi-minh-city/quality-team-lead-qms-and-supplier-improvement/34155/103199511552",
           "snippet": ""
         },
         {
-          "title": "Unilever — Annual Report & Accounts (Beauty, Personal Care & Home Care)",
-          "url": "https://www.unilever.com/investors/annual-report-and-accounts/",
+          "title": "Unilever Live 'Quality & SHE' Supply Chain Job Descriptions",
+          "url": "https://careers.unilever.com/en/search-jobs/Quality%20Supply%20Chain/34155/1",
           "snippet": ""
         },
         {
-          "title": "Unilever — Sustainability: Climate, Nature & Plastics",
-          "url": "https://www.unilever.com/sustainability/",
+          "title": "Unilever Sustainability — Plastic Packaging & Waste Circularity",
+          "url": "https://www.unilever.com/sustainability/plastics/",
+          "snippet": ""
+        },
+        {
+          "title": "Live 'Quality' Job Descriptions at Unilever PLC",
+          "url": "https://www.linkedin.com/jobs/search/?keywords=%22Unilever+PLC%22+%22Quality%22",
           "snippet": ""
         }
       ]
@@ -1777,26 +1868,26 @@
   "active_agents_count": 58,
   "active_personas_count": 58,
   "active_sub_pillars_count": 20,
-  "architecture_methodology_note": "Unilever's Beauty, Wellbeing, Personal Care & Home Care (HPC) supply chain reflects its Power Brands & Compass/Google Cloud disclosures: Customer-Connected POS & Promo Planning (01), Surfactant/Oleochemical & Clean-Future Packaging Sourcing (02), WEF Lighthouse Blending & High-Speed Filling Plants (03), Multi-Echelon Ultra-Fulfillment Centers (04), Customer-Collaborative Retail & Quick-Commerce Logistics (05), and Plastic/Refill/Return Circularity (06).",
+  "architecture_methodology_note": "Every pillar below is named directly after Unilever's official Supply Chain teams published on careers.unilever.com/en/supply-chain ('Planning', 'Procurement', 'Manufacturing and Engineering', 'Logistics', 'Quality', 'Safety, Health and Environment') and verified against live Unilever Job Descriptions (Req IDs R-1191017, R-1188872, R-1186116, R-1190849, R-1189117, R-1191539) detailing internal Sourcing Units (SU), Unilever Manufacturing System (UMS), SAP APO/S1P, and LOP…",
   "grounding_citations": [
     {
-      "title": "Unilever — Supply Chain, Operations & Partnering with Suppliers",
-      "url": "https://www.unilever.com/suppliers/",
+      "title": "Unilever Supply Chain Careers — Official 'Our Teams' Breakdown",
+      "url": "https://careers.unilever.com/en/supply-chain",
       "snippet": ""
     },
     {
-      "title": "Unilever — Annual Report & Accounts (Beauty, Personal Care & Home Care)",
+      "title": "Unilever Live Supply Chain Job Requisitions & JDs",
+      "url": "https://careers.unilever.com/en/search-jobs/Supply%20Chain/34155/1",
+      "snippet": ""
+    },
+    {
+      "title": "Unilever Customer Strategy & Planning Career Hub",
+      "url": "https://careers.unilever.com/en/customer-strategy-and-planning",
+      "snippet": ""
+    },
+    {
+      "title": "Unilever Annual Report & Accounts",
       "url": "https://www.unilever.com/investors/annual-report-and-accounts/",
-      "snippet": ""
-    },
-    {
-      "title": "Unilever — Sustainability: Climate, Nature & Plastics",
-      "url": "https://www.unilever.com/sustainability/",
-      "snippet": ""
-    },
-    {
-      "title": "Unilever — Corporate & Operations Profile (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Unilever",
       "snippet": ""
     }
   ],
@@ -1816,6 +1907,6 @@
     "Trade Promotions — Strategic discounts and marketing funds allocated to retail partners to drive volume and secure premium shelf space."
   ],
   "created_at": "2026-11-05T05:50:48.746487+00:00",
-  "updated_at": "2026-11-12T13:14:27.280445+00:00",
+  "updated_at": "2026-11-12T14:24:40.696926+00:00",
   "generation_model": "Gemini 3.1 Pro / 4 Argon + Gemini 3.8 Flash (Google Search Grounded)"
 }

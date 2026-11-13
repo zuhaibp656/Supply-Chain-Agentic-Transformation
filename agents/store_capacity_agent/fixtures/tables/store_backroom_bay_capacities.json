@@ -70,5 +70,221 @@
     "occupied_pallet_bays": 11,
     "inbound_scheduled_pallets": 5,
     "receiving_dock_hrs_cap": 4.0
+  },
+  {
+    "store_id": "STR-MEGA-DAL-080",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "storage_zone": "STEEL_RACK_FLOOR",
+    "max_pallet_bays": 20,
+    "occupied_pallet_bays": 19,
+    "inbound_scheduled_pallets": 7,
+    "receiving_dock_hrs_cap": 4.04
+  },
+  {
+    "store_id": "STR-MEGA-CHI-095",
+    "customer_id": "Apex Hypermarket",
+    "storage_zone": "WALKIN_COOLER_2_8C",
+    "max_pallet_bays": 29,
+    "occupied_pallet_bays": 32,
+    "inbound_scheduled_pallets": 9,
+    "receiving_dock_hrs_cap": 5.9
+  },
+  {
+    "store_id": "STR-KROG-ATL-188",
+    "customer_id": "Reliance Retail",
+    "storage_zone": "WALKIN_COOLER_2_8C",
+    "max_pallet_bays": 7,
+    "occupied_pallet_bays": 8,
+    "inbound_scheduled_pallets": 3,
+    "receiving_dock_hrs_cap": 2.3
+  },
+  {
+    "store_id": "STR-KROG-DAL-206",
+    "customer_id": "CUST-APEX-US01",
+    "storage_zone": "AMBIENT_BACKROOM",
+    "max_pallet_bays": 19,
+    "occupied_pallet_bays": 18,
+    "inbound_scheduled_pallets": 5,
+    "receiving_dock_hrs_cap": 7.29
+  },
+  {
+    "store_id": "STR-COST-CHI-101",
+    "customer_id": "Cymbal Retail",
+    "storage_zone": "STEEL_RACK_FLOOR",
+    "max_pallet_bays": 26,
+    "occupied_pallet_bays": 20,
+    "inbound_scheduled_pallets": 6,
+    "receiving_dock_hrs_cap": 4.22
+  },
+  {
+    "store_id": "STR-METR-MUM-132",
+    "customer_id": "CUST-OMNI-US04",
+    "storage_zone": "URBAN_DARKSTORE_COOL",
+    "max_pallet_bays": 5,
+    "occupied_pallet_bays": 4,
+    "inbound_scheduled_pallets": 2,
+    "receiving_dock_hrs_cap": 2.08
+  },
+  {
+    "store_id": "STR-MEGA-ATL-153",
+    "customer_id": "Reliance Retail",
+    "storage_zone": "AMBIENT_BACKROOM",
+    "max_pallet_bays": 24,
+    "occupied_pallet_bays": 13,
+    "inbound_scheduled_pallets": 6,
+    "receiving_dock_hrs_cap": 4.59
+  },
+  {
+    "store_id": "STR-KROG-CHI-257",
+    "customer_id": "Omni Wholesale Club",
+    "storage_zone": "AMBIENT_BACKROOM",
+    "max_pallet_bays": 13,
+    "occupied_pallet_bays": 15,
+    "inbound_scheduled_pallets": 7,
+    "receiving_dock_hrs_cap": 4.95
+  },
+  {
+    "store_id": "STR-MEGA-DAL-136",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "storage_zone": "STEEL_RACK_FLOOR",
+    "max_pallet_bays": 18,
+    "occupied_pallet_bays": 18,
+    "inbound_scheduled_pallets": 6,
+    "receiving_dock_hrs_cap": 4.35
+  },
+  {
+    "store_id": "STR-MEGA-CHI-151",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "storage_zone": "URBAN_DARKSTORE_COOL",
+    "max_pallet_bays": 26,
+    "occupied_pallet_bays": 25,
+    "inbound_scheduled_pallets": 8,
+    "receiving_dock_hrs_cap": 4.38
+  },
+  {
+    "store_id": "STR-KROG-ATL-244",
+    "customer_id": "Omni Wholesale Club",
+    "storage_zone": "AMBIENT_BACKROOM",
+    "max_pallet_bays": 19,
+    "occupied_pallet_bays": 14,
+    "inbound_scheduled_pallets": 8,
+    "receiving_dock_hrs_cap": 5.07
+  },
+  {
+    "store_id": "STR-KROG-DAL-262",
+    "customer_id": "CUST-APEX-US01",
+    "storage_zone": "URBAN_DARKSTORE_COOL",
+    "max_pallet_bays": 13,
+    "occupied_pallet_bays": 9,
+    "inbound_scheduled_pallets": 4,
+    "receiving_dock_hrs_cap": 4.85
+  },
+  {
+    "store_id": "STR-COST-CHI-157",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "storage_zone": "URBAN_DARKSTORE_COOL",
+    "max_pallet_bays": 86,
+    "occupied_pallet_bays": 84,
+    "inbound_scheduled_pallets": 17,
+    "receiving_dock_hrs_cap": 13.39
+  },
+  {
+    "store_id": "STR-METR-MUM-188",
+    "customer_id": "CUST-OMNI-US04",
+    "storage_zone": "AMBIENT_BACKROOM",
+    "max_pallet_bays": 14,
+    "occupied_pallet_bays": 11,
+    "inbound_scheduled_pallets": 5,
+    "receiving_dock_hrs_cap": 4.15
+  },
+  {
+    "store_id": "STR-MEGA-ATL-209",
+    "customer_id": "Cymbal Retail",
+    "storage_zone": "WALKIN_COOLER_2_8C",
+    "max_pallet_bays": 34,
+    "occupied_pallet_bays": 28,
+    "inbound_scheduled_pallets": 8,
+    "receiving_dock_hrs_cap": 7.7
+  },
+  {
+    "store_id": "STR-KROG-CHI-313",
+    "customer_id": "Reliance Retail",
+    "storage_zone": "WALKIN_COOLER_2_8C",
+    "max_pallet_bays": 18,
+    "occupied_pallet_bays": 14,
+    "inbound_scheduled_pallets": 7,
+    "receiving_dock_hrs_cap": 6.36
+  },
+  {
+    "store_id": "STR-MEGA-DAL-192",
+    "customer_id": "Reliance Retail",
+    "storage_zone": "STEEL_RACK_FLOOR",
+    "max_pallet_bays": 21,
+    "occupied_pallet_bays": 25,
+    "inbound_scheduled_pallets": 9,
+    "receiving_dock_hrs_cap": 4.86
+  },
+  {
+    "store_id": "STR-MEGA-CHI-207",
+    "customer_id": "DMart Avenue",
+    "storage_zone": "URBAN_DARKSTORE_COOL",
+    "max_pallet_bays": 20,
+    "occupied_pallet_bays": 23,
+    "inbound_scheduled_pallets": 6,
+    "receiving_dock_hrs_cap": 4.37
+  },
+  {
+    "store_id": "STR-KROG-ATL-300",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "storage_zone": "AMBIENT_BACKROOM",
+    "max_pallet_bays": 17,
+    "occupied_pallet_bays": 20,
+    "inbound_scheduled_pallets": 7,
+    "receiving_dock_hrs_cap": 5.4
+  },
+  {
+    "store_id": "STR-KROG-DAL-318",
+    "customer_id": "DMart Avenue",
+    "storage_zone": "WALKIN_COOLER_2_8C",
+    "max_pallet_bays": 16,
+    "occupied_pallet_bays": 11,
+    "inbound_scheduled_pallets": 3,
+    "receiving_dock_hrs_cap": 3.97
+  },
+  {
+    "store_id": "STR-COST-CHI-213",
+    "customer_id": "Cymbal Retail",
+    "storage_zone": "STEEL_RACK_FLOOR",
+    "max_pallet_bays": 45,
+    "occupied_pallet_bays": 44,
+    "inbound_scheduled_pallets": 11,
+    "receiving_dock_hrs_cap": 5.62
+  },
+  {
+    "store_id": "STR-METR-MUM-244",
+    "customer_id": "DMart Avenue",
+    "storage_zone": "URBAN_DARKSTORE_COOL",
+    "max_pallet_bays": 14,
+    "occupied_pallet_bays": 13,
+    "inbound_scheduled_pallets": 5,
+    "receiving_dock_hrs_cap": 5.48
+  },
+  {
+    "store_id": "STR-MEGA-ATL-265",
+    "customer_id": "Apex Hypermarket",
+    "storage_zone": "AMBIENT_BACKROOM",
+    "max_pallet_bays": 24,
+    "occupied_pallet_bays": 16,
+    "inbound_scheduled_pallets": 6,
+    "receiving_dock_hrs_cap": 5.88
+  },
+  {
+    "store_id": "STR-KROG-CHI-369",
+    "customer_id": "CUST-OMNI-US04",
+    "storage_zone": "WALKIN_COOLER_2_8C",
+    "max_pallet_bays": 16,
+    "occupied_pallet_bays": 16,
+    "inbound_scheduled_pallets": 7,
+    "receiving_dock_hrs_cap": 5.37
   }
 ]

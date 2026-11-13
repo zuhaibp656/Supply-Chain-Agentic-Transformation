@@ -70,5 +70,221 @@
     "door_open_minutes": 9,
     "degree_minutes_above_spec": 0.0,
     "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-867",
+    "shipment_id": "SHP-XYZ-9251",
+    "root_cause": "TARMAC_ULD_TRANSFER_EXPOSURE",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 40,
+    "degree_minutes_above_spec": 78.33,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-875",
+    "shipment_id": "SHP-XYZ-9317",
+    "root_cause": "DEFROST_CYCLE_SPIKE",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 16,
+    "degree_minutes_above_spec": 2746.25,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-883",
+    "shipment_id": "SHP-XYZ-9348",
+    "root_cause": "TEXAS_MIDDAY_DOCK_WAIT",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 30,
+    "degree_minutes_above_spec": 71.83,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-891",
+    "shipment_id": "SHP-XYZ-9402",
+    "root_cause": "TARMAC_ULD_TRANSFER_EXPOSURE",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 6,
+    "degree_minutes_above_spec": 76.41,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-899",
+    "shipment_id": "SHP-XYZ-9434",
+    "root_cause": "TARMAC_ULD_TRANSFER_EXPOSURE",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 12,
+    "degree_minutes_above_spec": 1497.07,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-907",
+    "shipment_id": "SHP-XYZ-9463",
+    "root_cause": "REEFER_FUEL_STARVATION_SHUTOFF",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 21,
+    "degree_minutes_above_spec": 90.45,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-915",
+    "shipment_id": "SHP-XYZ-9318",
+    "root_cause": "REEFER_FUEL_STARVATION_SHUTOFF",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 6,
+    "degree_minutes_above_spec": 0.1,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-923",
+    "shipment_id": "SHP-XYZ-9406",
+    "root_cause": "CROSSDOCK_DOOR_STAGING_DELAY",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 7,
+    "degree_minutes_above_spec": 0.1,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-923",
+    "shipment_id": "SHP-XYZ-9307",
+    "root_cause": "COMPRESSOR_EXPANSION_VALVE_FAIL",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 49,
+    "degree_minutes_above_spec": 110.96,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-931",
+    "shipment_id": "SHP-XYZ-9373",
+    "root_cause": "COMPRESSOR_EXPANSION_VALVE_FAIL",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 17,
+    "degree_minutes_above_spec": 1744.31,
+    "carrier_fault_flag": true
+  },
+  {
+    "incident_id": "EXC-2026-939",
+    "shipment_id": "SHP-XYZ-9404",
+    "root_cause": "COMPRESSOR_EXPANSION_VALVE_FAIL",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 35,
+    "degree_minutes_above_spec": 57.41,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-947",
+    "shipment_id": "SHP-XYZ-9458",
+    "root_cause": "DEFROST_CYCLE_SPIKE",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 5,
+    "degree_minutes_above_spec": 59.92,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-955",
+    "shipment_id": "SHP-XYZ-9490",
+    "root_cause": "REEFER_FUEL_STARVATION_SHUTOFF",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 12,
+    "degree_minutes_above_spec": 1510.11,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-963",
+    "shipment_id": "SHP-XYZ-9519",
+    "root_cause": "DEFROST_CYCLE_SPIKE",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 29,
+    "degree_minutes_above_spec": 143.25,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-971",
+    "shipment_id": "SHP-XYZ-9374",
+    "root_cause": "NONE_NOMINAL_TRANSIT",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 5,
+    "degree_minutes_above_spec": 0.1,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-979",
+    "shipment_id": "SHP-XYZ-9462",
+    "root_cause": "TEXAS_MIDDAY_DOCK_WAIT",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 11,
+    "degree_minutes_above_spec": 0.1,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-979",
+    "shipment_id": "SHP-XYZ-9363",
+    "root_cause": "TARMAC_ULD_TRANSFER_EXPOSURE",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 25,
+    "degree_minutes_above_spec": 61.98,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-987",
+    "shipment_id": "SHP-XYZ-9429",
+    "root_cause": "TEXAS_MIDDAY_DOCK_WAIT",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 14,
+    "degree_minutes_above_spec": 1860.09,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-995",
+    "shipment_id": "SHP-XYZ-9460",
+    "root_cause": "CROSSDOCK_DOOR_STAGING_DELAY",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 53,
+    "degree_minutes_above_spec": 97.0,
+    "carrier_fault_flag": true
+  },
+  {
+    "incident_id": "EXC-2026-1003",
+    "shipment_id": "SHP-XYZ-9514",
+    "root_cause": "REEFER_FUEL_STARVATION_SHUTOFF",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 5,
+    "degree_minutes_above_spec": 60.5,
+    "carrier_fault_flag": true
+  },
+  {
+    "incident_id": "EXC-2026-1011",
+    "shipment_id": "SHP-XYZ-9546",
+    "root_cause": "TEXAS_MIDDAY_DOCK_WAIT",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 18,
+    "degree_minutes_above_spec": 2320.92,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-1019",
+    "shipment_id": "SHP-XYZ-9575",
+    "root_cause": "TARMAC_ULD_TRANSFER_EXPOSURE",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 46,
+    "degree_minutes_above_spec": 178.85,
+    "carrier_fault_flag": true
+  },
+  {
+    "incident_id": "EXC-2026-1027",
+    "shipment_id": "SHP-XYZ-9430",
+    "root_cause": "DEFROST_CYCLE_SPIKE",
+    "reefer_compressor_fault": false,
+    "door_open_minutes": 5,
+    "degree_minutes_above_spec": 0.1,
+    "carrier_fault_flag": false
+  },
+  {
+    "incident_id": "EXC-2026-1035",
+    "shipment_id": "SHP-XYZ-9518",
+    "root_cause": "COMPRESSOR_EXPANSION_VALVE_FAIL",
+    "reefer_compressor_fault": true,
+    "door_open_minutes": 7,
+    "degree_minutes_above_spec": 0.1,
+    "carrier_fault_flag": false
   }
 ]

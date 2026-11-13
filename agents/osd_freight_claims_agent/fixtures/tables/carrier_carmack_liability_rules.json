@@ -54,5 +54,173 @@
     "max_liability_per_lb_usd": 25.0,
     "max_load_cap_usd": 75000.0,
     "concealed_notice_days": 5
+  },
+  {
+    "carrier_id": "CAR-JBHT-FTL-18",
+    "liability_regime": "MONTREAL_CONVENTION_22_SDR_KG",
+    "max_liability_per_lb_usd": 27.39,
+    "max_load_cap_usd": 123111.86,
+    "concealed_notice_days": 5
+  },
+  {
+    "carrier_id": "CAR-XPO-LTL-19",
+    "liability_regime": "NMFC_RELEASED_VALUE_CAP",
+    "max_liability_per_lb_usd": 24.38,
+    "max_load_cap_usd": 80580.88,
+    "concealed_notice_days": 8
+  },
+  {
+    "carrier_id": "CAR-CRYOEXP-REEFER-20",
+    "liability_regime": "NMFC_RELEASED_VALUE_CAP",
+    "max_liability_per_lb_usd": 54.37,
+    "max_load_cap_usd": 246808.77,
+    "concealed_notice_days": 6
+  },
+  {
+    "carrier_id": "CAR-BNSF-RAIL-21",
+    "liability_regime": "MITA_INTERMODAL_CIRCULAR",
+    "max_liability_per_lb_usd": 33.95,
+    "max_load_cap_usd": 124029.59,
+    "concealed_notice_days": 6
+  },
+  {
+    "carrier_id": "CAR-LH-AIRCARGO-22",
+    "liability_regime": "CARMACK_FULL_INVOICE_VALUE",
+    "max_liability_per_lb_usd": 7.46,
+    "max_load_cap_usd": 122297.59,
+    "concealed_notice_days": 6
+  },
+  {
+    "carrier_id": "CAR-MAERSK-OCEAN-23",
+    "liability_regime": "CARMACK_FULL_INVOICE_VALUE",
+    "max_liability_per_lb_usd": 11.57,
+    "max_load_cap_usd": 109346.79,
+    "concealed_notice_days": 4
+  },
+  {
+    "carrier_id": "CAR-JBHT-DEDICATED-24",
+    "liability_regime": "COGSA_500_PER_PACKAGE",
+    "max_liability_per_lb_usd": 25.62,
+    "max_load_cap_usd": 103121.57,
+    "concealed_notice_days": 5
+  },
+  {
+    "carrier_id": "CAR-XPO-EXPEDITE-25",
+    "liability_regime": "CARMACK_FULL_INVOICE_VALUE",
+    "max_liability_per_lb_usd": 15.55,
+    "max_load_cap_usd": 39143.9,
+    "concealed_notice_days": 3
+  },
+  {
+    "carrier_id": "CAR-JBHT-FTL-26",
+    "liability_regime": "CARMACK_FULL_INVOICE_VALUE",
+    "max_liability_per_lb_usd": 38.71,
+    "max_load_cap_usd": 142254.53,
+    "concealed_notice_days": 8
+  },
+  {
+    "carrier_id": "CAR-XPO-LTL-27",
+    "liability_regime": "NMFC_RELEASED_VALUE_CAP",
+    "max_liability_per_lb_usd": 12.62,
+    "max_load_cap_usd": 32090.28,
+    "concealed_notice_days": 4
+  },
+  {
+    "carrier_id": "CAR-CRYOEXP-REEFER-28",
+    "liability_regime": "CARMACK_FULL_INVOICE_VALUE",
+    "max_liability_per_lb_usd": 42.62,
+    "max_load_cap_usd": 164441.18,
+    "concealed_notice_days": 5
+  },
+  {
+    "carrier_id": "CAR-BNSF-RAIL-29",
+    "liability_regime": "CARMACK_FULL_INVOICE_VALUE",
+    "max_liability_per_lb_usd": 9.84,
+    "max_load_cap_usd": 64025.88,
+    "concealed_notice_days": 3
+  },
+  {
+    "carrier_id": "CAR-LH-AIRCARGO-30",
+    "liability_regime": "CARMACK_FULL_INVOICE_VALUE",
+    "max_liability_per_lb_usd": 11.77,
+    "max_load_cap_usd": 184629.63,
+    "concealed_notice_days": 10
+  },
+  {
+    "carrier_id": "CAR-MAERSK-OCEAN-31",
+    "liability_regime": "COGSA_500_PER_PACKAGE",
+    "max_liability_per_lb_usd": 11.61,
+    "max_load_cap_usd": 90537.36,
+    "concealed_notice_days": 4
+  },
+  {
+    "carrier_id": "CAR-JBHT-DEDICATED-32",
+    "liability_regime": "MONTREAL_CONVENTION_22_SDR_KG",
+    "max_liability_per_lb_usd": 41.65,
+    "max_load_cap_usd": 136315.22,
+    "concealed_notice_days": 7
+  },
+  {
+    "carrier_id": "CAR-XPO-EXPEDITE-33",
+    "liability_regime": "COGSA_500_PER_PACKAGE",
+    "max_liability_per_lb_usd": 27.28,
+    "max_load_cap_usd": 83691.76,
+    "concealed_notice_days": 5
+  },
+  {
+    "carrier_id": "CAR-JBHT-FTL-34",
+    "liability_regime": "MITA_INTERMODAL_CIRCULAR",
+    "max_liability_per_lb_usd": 14.93,
+    "max_load_cap_usd": 67232.96,
+    "concealed_notice_days": 2
+  },
+  {
+    "carrier_id": "CAR-XPO-LTL-35",
+    "liability_regime": "NMFC_RELEASED_VALUE_CAP",
+    "max_liability_per_lb_usd": 16.44,
+    "max_load_cap_usd": 47244.34,
+    "concealed_notice_days": 5
+  },
+  {
+    "carrier_id": "CAR-CRYOEXP-REEFER-36",
+    "liability_regime": "CARMACK_REEFER_SPOILAGE_ENDORSEMENT",
+    "max_liability_per_lb_usd": 31.02,
+    "max_load_cap_usd": 133167.26,
+    "concealed_notice_days": 5
+  },
+  {
+    "carrier_id": "CAR-BNSF-RAIL-37",
+    "liability_regime": "CARMACK_REEFER_SPOILAGE_ENDORSEMENT",
+    "max_liability_per_lb_usd": 30.35,
+    "max_load_cap_usd": 160957.41,
+    "concealed_notice_days": 7
+  },
+  {
+    "carrier_id": "CAR-LH-AIRCARGO-38",
+    "liability_regime": "CARMACK_FULL_INVOICE_VALUE",
+    "max_liability_per_lb_usd": 25.82,
+    "max_load_cap_usd": 337017.82,
+    "concealed_notice_days": 23
+  },
+  {
+    "carrier_id": "CAR-MAERSK-OCEAN-39",
+    "liability_regime": "MONTREAL_CONVENTION_22_SDR_KG",
+    "max_liability_per_lb_usd": 9.91,
+    "max_load_cap_usd": 101145.3,
+    "concealed_notice_days": 2
+  },
+  {
+    "carrier_id": "CAR-JBHT-DEDICATED-40",
+    "liability_regime": "COGSA_500_PER_PACKAGE",
+    "max_liability_per_lb_usd": 24.57,
+    "max_load_cap_usd": 118927.78,
+    "concealed_notice_days": 5
+  },
+  {
+    "carrier_id": "CAR-XPO-EXPEDITE-41",
+    "liability_regime": "MONTREAL_CONVENTION_22_SDR_KG",
+    "max_liability_per_lb_usd": 12.0,
+    "max_load_cap_usd": 36466.71,
+    "concealed_notice_days": 3
   }
 ]

@@ -10,7 +10,7 @@
     "veeva_ticket_id": "VEEVA-QMS-DEV-99214",
     "sap_qm_notification": "100084920",
     "status": "LOGGED_REJECTED_CONTAINED",
-    "root_cause_summary": "Induction sealer heating head temperature dropped below 178\u00b0C momentarily during line restart."
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
   },
   {
     "deviation_id": "DEV-EBHR-20261022-052",
@@ -23,7 +23,7 @@
     "veeva_ticket_id": "VEEVA-QMS-DEV-99222",
     "sap_qm_notification": "100084920",
     "status": "LOGGED_REJECTED_CONTAINED",
-    "root_cause_summary": "Induction sealer heating head temperature dropped below 178\u00b0C momentarily during line restart."
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
   },
   {
     "deviation_id": "DEV-EBHR-20261022-059",
@@ -36,7 +36,7 @@
     "veeva_ticket_id": "VEEVA-QMS-DEV-99229",
     "sap_qm_notification": "100084920",
     "status": "LOGGED_REJECTED_CONTAINED",
-    "root_cause_summary": "Induction sealer heating head temperature dropped below 178\u00b0C momentarily during line restart."
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
   },
   {
     "deviation_id": "DEV-EBHR-20261022-066",
@@ -49,7 +49,7 @@
     "veeva_ticket_id": "VEEVA-QMS-DEV-99236",
     "sap_qm_notification": "100084920",
     "status": "LOGGED_REJECTED_CONTAINED",
-    "root_cause_summary": "Induction sealer heating head temperature dropped below 178\u00b0C momentarily during line restart."
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
   },
   {
     "deviation_id": "DEV-EBHR-20261022-073",
@@ -62,7 +62,7 @@
     "veeva_ticket_id": "VEEVA-QMS-DEV-99243",
     "sap_qm_notification": "100084920",
     "status": "LOGGED_REJECTED_CONTAINED",
-    "root_cause_summary": "Induction sealer heating head temperature dropped below 178\u00b0C momentarily during line restart."
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
   },
   {
     "deviation_id": "DEV-EBHR-20261022-080",
@@ -75,7 +75,7 @@
     "veeva_ticket_id": "VEEVA-QMS-DEV-99250",
     "sap_qm_notification": "100084920",
     "status": "LOGGED_REJECTED_CONTAINED",
-    "root_cause_summary": "Induction sealer heating head temperature dropped below 178\u00b0C momentarily during line restart."
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
   },
   {
     "deviation_id": "DEV-EBHR-20261022-087",
@@ -88,7 +88,7 @@
     "veeva_ticket_id": "VEEVA-QMS-DEV-99257",
     "sap_qm_notification": "100084920",
     "status": "LOGGED_REJECTED_CONTAINED",
-    "root_cause_summary": "Induction sealer heating head temperature dropped below 178\u00b0C momentarily during line restart."
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
   },
   {
     "deviation_id": "DEV-EBHR-20261022-094",
@@ -101,6 +101,318 @@
     "veeva_ticket_id": "VEEVA-QMS-DEV-99264",
     "sap_qm_notification": "100084920",
     "status": "LOGGED_REJECTED_CONTAINED",
-    "root_cause_summary": "Induction sealer heating head temperature dropped below 178\u00b0C momentarily during line restart."
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-110",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-18",
+    "station_id": "STATION-VISION-LINE01-ENTRY-18",
+    "incident_timestamp": "2026-10-20T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99280",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-125",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R01392",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R01AFD-19",
+    "incident_timestamp": "2026-10-21T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99295",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-139",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R02DAD-20",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R021EB-20",
+    "incident_timestamp": "2026-10-22T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99309",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-153",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R03BE87",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R03B8A-21",
+    "incident_timestamp": "2026-10-23T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99323",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-167",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R04FD97",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R04340",
+    "incident_timestamp": "2026-10-24T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99337",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-181",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R056E108",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R051FF-23",
+    "incident_timestamp": "2026-10-25T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99351",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-195",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R06273",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R062D111",
+    "incident_timestamp": "2026-10-26T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99365",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-209",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R0759C-25",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R07D7C-25",
+    "incident_timestamp": "2026-10-27T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99379",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-166",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-26",
+    "station_id": "STATION-VISION-LINE01-ENTRY-26",
+    "incident_timestamp": "2026-10-28T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99336",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-181",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R01448",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R01AFD-27",
+    "incident_timestamp": "2026-10-29T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99351",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-195",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R02DAD-28",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R021EB-28",
+    "incident_timestamp": "2026-10-30T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99365",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-209",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R03BE143",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R03B8A-29",
+    "incident_timestamp": "2026-10-31T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99379",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-223",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R04FD153",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R04396",
+    "incident_timestamp": "2026-11-01T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99393",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-237",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R056E164",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R051FF-31",
+    "incident_timestamp": "2026-10-12T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99407",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-251",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R06329",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R062D167",
+    "incident_timestamp": "2026-10-13T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99421",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-265",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R0759C-33",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R07D7C-33",
+    "incident_timestamp": "2026-10-14T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99435",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-222",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-34",
+    "station_id": "STATION-VISION-LINE01-ENTRY-34",
+    "incident_timestamp": "2026-10-15T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99392",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-237",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R01504",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R01AFD-35",
+    "incident_timestamp": "2026-10-16T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99407",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-251",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R02DAD-36",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R021EB-36",
+    "incident_timestamp": "2026-10-17T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99421",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-265",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R03BE199",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R03B8A-37",
+    "incident_timestamp": "2026-10-18T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99435",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-279",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R04FD209",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R04452",
+    "incident_timestamp": "2026-10-19T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99449",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-293",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R056E220",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R051FF-39",
+    "incident_timestamp": "2026-10-20T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99463",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-307",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R06385",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R062D223",
+    "incident_timestamp": "2026-10-21T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99477",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
+  },
+  {
+    "deviation_id": "DEV-EBHR-20261022-321",
+    "batch_number": "BATCH-OAT-2026W42-01",
+    "product_id": "SKU-BEV-OATMILK-ORIGINAL-1L-R0759C-41",
+    "station_id": "STATION-VISION-LINE01-ENTRY-R07D7C-41",
+    "incident_timestamp": "2026-10-22T04:45:12Z",
+    "deviation_type": "SEAL_INTEGRITY_BREACH",
+    "severity": "CRITICAL_CONTAINMENT",
+    "veeva_ticket_id": "VEEVA-QMS-DEV-99491",
+    "sap_qm_notification": "100084920",
+    "status": "LOGGED_REJECTED_CONTAINED",
+    "root_cause_summary": "Induction sealer heating head temperature dropped below 178°C momentarily during line restart."
   }
 ]

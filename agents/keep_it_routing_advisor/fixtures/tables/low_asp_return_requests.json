@@ -71,5 +71,224 @@
     "item_paid_price_usd": 22.8,
     "unit_cogs_usd": 11.4,
     "return_reason": "LATE_DELIVERY_EVENT_PASSED"
+  },
+  {
+    "rma_req_id": "KPR-3067",
+    "sku_id": "SKU-XYZ-625",
+    "buyer_segment": "B2B_MRO_DISTRIBUTOR",
+    "return_qty": 2,
+    "item_paid_price_usd": 41.22,
+    "unit_cogs_usd": 24.47,
+    "return_reason": "SIZE_SPEC_MISMATCH"
+  },
+  {
+    "rma_req_id": "KPR-3075",
+    "sku_id": "SKU-XYZ-625",
+    "buyer_segment": "D2C_REPEAT_BUYER",
+    "return_qty": 1,
+    "item_paid_price_usd": 18.35,
+    "unit_cogs_usd": 11.92,
+    "return_reason": "CLAIMED_DAMAGED_NO_PHOTO"
+  },
+  {
+    "rma_req_id": "KPR-3083",
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "buyer_segment": "D2C_REPEAT_BUYER",
+    "return_qty": 1,
+    "item_paid_price_usd": 376.39,
+    "unit_cogs_usd": 158.23,
+    "return_reason": "CHANGED_MIND_UNOPENED"
+  },
+  {
+    "rma_req_id": "KPR-3091",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "buyer_segment": "B2B_MRO_DISTRIBUTOR",
+    "return_qty": 1,
+    "item_paid_price_usd": 18.35,
+    "unit_cogs_usd": 7.42,
+    "return_reason": "CLAIMED_DAMAGED_NO_PHOTO"
+  },
+  {
+    "rma_req_id": "KPR-3099",
+    "sku_id": "SKU-XYZ-412",
+    "buyer_segment": "B2B_CLINIC_BUYER",
+    "return_qty": 1,
+    "item_paid_price_usd": 33.25,
+    "unit_cogs_usd": 17.83,
+    "return_qty_weight_kg": 4.2,
+    "return_reason": "WARM_ICE_PACK_ON_ARRIVAL"
+  },
+  {
+    "rma_req_id": "KPR-3107",
+    "sku_id": "SKU-XYZ-625",
+    "buyer_segment": "D2C_REPEAT_BUYER",
+    "return_qty": 1,
+    "item_paid_price_usd": 40.72,
+    "unit_cogs_usd": 18.62,
+    "return_reason": "WARM_ICE_PACK_ON_ARRIVAL"
+  },
+  {
+    "rma_req_id": "KPR-3115",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "buyer_segment": "D2C_REPEAT_BUYER",
+    "return_qty": 4,
+    "item_paid_price_usd": 375.73,
+    "unit_cogs_usd": 202.4,
+    "return_reason": "CHANGED_MIND_UNOPENED"
+  },
+  {
+    "rma_req_id": "KPR-3123",
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "buyer_segment": "B2B_MRO_DISTRIBUTOR",
+    "return_qty": 1,
+    "item_paid_price_usd": 11.69,
+    "unit_cogs_usd": 6.88,
+    "return_reason": "OUTER_CARTON_DENTED"
+  },
+  {
+    "rma_req_id": "KPR-3123",
+    "sku_id": "SKU-XYZ-625",
+    "buyer_segment": "D2C_GROCERY_APP",
+    "return_qty": 1,
+    "item_paid_price_usd": 12.26,
+    "unit_cogs_usd": 6.1,
+    "return_reason": "ORDERED_WRONG_GATEWAY"
+  },
+  {
+    "rma_req_id": "KPR-3131",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "buyer_segment": "D2C_SUBSCRIPTION_VIP",
+    "return_qty": 1,
+    "item_paid_price_usd": 18.26,
+    "unit_cogs_usd": 9.14,
+    "return_reason": "SIZE_SPEC_MISMATCH"
+  },
+  {
+    "rma_req_id": "KPR-3139",
+    "sku_id": "SKU-XYZ-412",
+    "buyer_segment": "D2C_SUBSCRIPTION_VIP",
+    "return_qty": 1,
+    "item_paid_price_usd": 521.49,
+    "unit_cogs_usd": 246.99,
+    "return_reason": "OUTER_CARTON_DENTED"
+  },
+  {
+    "rma_req_id": "KPR-3147",
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "buyer_segment": "D2C_SUBSCRIPTION_VIP",
+    "return_qty": 1,
+    "item_paid_price_usd": 22.31,
+    "unit_cogs_usd": 9.2,
+    "return_reason": "CLAIMED_DAMAGED_NO_PHOTO"
+  },
+  {
+    "rma_req_id": "KPR-3155",
+    "sku_id": "SKU-XYZ-625",
+    "buyer_segment": "NEW_GUEST_CHECKOUT",
+    "return_qty": 1,
+    "item_paid_price_usd": 45.2,
+    "unit_cogs_usd": 23.46,
+    "return_qty_weight_kg": 4.2,
+    "return_reason": "OUTER_CARTON_DENTED"
+  },
+  {
+    "rma_req_id": "KPR-3163",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "buyer_segment": "D2C_REPEAT_BUYER",
+    "return_qty": 3,
+    "item_paid_price_usd": 88.7,
+    "unit_cogs_usd": 47.47,
+    "return_reason": "FLAVOR_PREFERENCE_SWAP"
+  },
+  {
+    "rma_req_id": "KPR-3171",
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "buyer_segment": "B2B_MRO_DISTRIBUTOR",
+    "return_qty": 4,
+    "item_paid_price_usd": 364.19,
+    "unit_cogs_usd": 192.01,
+    "return_reason": "WARM_ICE_PACK_ON_ARRIVAL"
+  },
+  {
+    "rma_req_id": "KPR-3179",
+    "sku_id": "SKU-XYZ-412",
+    "buyer_segment": "B2B_MRO_DISTRIBUTOR",
+    "return_qty": 1,
+    "item_paid_price_usd": 11.29,
+    "unit_cogs_usd": 5.52,
+    "return_reason": "ORDERED_WRONG_GATEWAY"
+  },
+  {
+    "rma_req_id": "KPR-3179",
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "buyer_segment": "B2B_CLINIC_BUYER",
+    "return_qty": 1,
+    "item_paid_price_usd": 41.15,
+    "unit_cogs_usd": 21.54,
+    "return_reason": "OUTER_CARTON_DENTED"
+  },
+  {
+    "rma_req_id": "KPR-3187",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "buyer_segment": "D2C_PRIME_MEMBER",
+    "return_qty": 1,
+    "item_paid_price_usd": 15.33,
+    "unit_cogs_usd": 9.08,
+    "return_reason": "LATE_DELIVERY_EVENT_PASSED"
+  },
+  {
+    "rma_req_id": "KPR-3195",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "buyer_segment": "D2C_REPEAT_BUYER",
+    "return_qty": 2,
+    "item_paid_price_usd": 542.84,
+    "unit_cogs_usd": 238.76,
+    "return_reason": "ORDERED_WRONG_GATEWAY"
+  },
+  {
+    "rma_req_id": "KPR-3203",
+    "sku_id": "SKU-SEMI-9900-X1",
+    "buyer_segment": "NEW_GUEST_CHECKOUT",
+    "return_qty": 1,
+    "item_paid_price_usd": 44.47,
+    "unit_cogs_usd": 17.98,
+    "return_reason": "LATE_DELIVERY_EVENT_PASSED"
+  },
+  {
+    "rma_req_id": "KPR-3211",
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "buyer_segment": "B2B_CLINIC_BUYER",
+    "return_qty": 1,
+    "item_paid_price_usd": 20.5,
+    "unit_cogs_usd": 13.21,
+    "return_qty_weight_kg": 4.2,
+    "return_reason": "CHANGED_MIND_UNOPENED"
+  },
+  {
+    "rma_req_id": "KPR-3219",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "buyer_segment": "D2C_REPEAT_BUYER",
+    "return_qty": 1,
+    "item_paid_price_usd": 36.18,
+    "unit_cogs_usd": 20.75,
+    "return_reason": "CLAIMED_DAMAGED_NO_PHOTO"
+  },
+  {
+    "rma_req_id": "KPR-3227",
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "buyer_segment": "D2C_SUBSCRIPTION_VIP",
+    "return_qty": 2,
+    "item_paid_price_usd": 180.45,
+    "unit_cogs_usd": 96.36,
+    "return_reason": "ORDERED_WRONG_GATEWAY"
+  },
+  {
+    "rma_req_id": "KPR-3235",
+    "sku_id": "SKU-XYZ-625",
+    "buyer_segment": "D2C_REPEAT_BUYER",
+    "return_qty": 1,
+    "item_paid_price_usd": 29.24,
+    "unit_cogs_usd": 13.63,
+    "return_reason": "ORDERED_WRONG_GATEWAY"
   }
 ]

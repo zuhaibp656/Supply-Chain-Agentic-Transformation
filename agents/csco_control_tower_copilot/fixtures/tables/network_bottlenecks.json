@@ -159,5 +159,488 @@
     ],
     "root_cause": "35% weekend shift absenteeism combined with surging inbound holiday volume.",
     "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-SUEZ-107",
+    "location": "Ahmedabad-Sanand",
+    "region": "Kolkata-Haringhata",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 8436768,
+    "delay_days": 15.27,
+    "affected_vessels_count": 8,
+    "impacted_skus": [
+      "SKU-BATTERY-MODULE-800V",
+      "SKU-SOLAR-INVERTER-3KW",
+      "SKU-SEMICON-PMIC-12"
+    ],
+    "impacted_plants": [
+      "PLANT-STUTTGART-01",
+      "PLANT-ROTTERDAM-DC"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-PHARMA-COLD-CHAIN-GUARD"
+  },
+  {
+    "bottleneck_id": "BN-DALLAS-162",
+    "location": "Pune-Chakan",
+    "region": "Ahmedabad-Sanand",
+    "bottleneck_type": "WAREHOUSE_LABOR_CAPACITY",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 3033201,
+    "delay_days": 3.98,
+    "affected_vessels_count": 1,
+    "impacted_skus": [
+      "SKU-HVAC-COMPRESSOR-V4",
+      "SKU-BEARING-HUB-W9"
+    ],
+    "impacted_plants": [
+      "DC-DALLAS-CENTRAL",
+      "PLANT-AUSTIN-02"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-FRANKFURT-092",
+    "location": "Ahmedabad-Sanand",
+    "region": "NORTH_AMERICA",
+    "bottleneck_type": "WAREHOUSE_LABOR_CAPACITY",
+    "severity": "HIGH",
+    "revenue_impact_usd": 5382780,
+    "delay_days": 6.56,
+    "affected_vessels_count": 1,
+    "impacted_skus": [
+      "SKU-API-LIPID-NP",
+      "SKU-BIOLOGIC-ENZYME-100"
+    ],
+    "impacted_plants": [
+      "PLANT-BASEL-03"
+    ],
+    "root_cause": "35% weekend shift absenteeism combined with surging inbound holiday volume.",
+    "mitigation_playbook_ref": "PLAYBOOK-PHARMA-COLD-CHAIN-GUARD"
+  },
+  {
+    "bottleneck_id": "BN-SUEZ-150",
+    "location": "Bengaluru-Hosur",
+    "region": "Chennai-Port",
+    "bottleneck_type": "AIR_FREIGHT_CONGESTION",
+    "severity": "HIGH",
+    "revenue_impact_usd": 13096935,
+    "delay_days": 21.47,
+    "affected_vessels_count": 14,
+    "impacted_skus": [
+      "SKU-BATTERY-MODULE-800V",
+      "SKU-SOLAR-INVERTER-3KW",
+      "SKU-SEMICON-PMIC-12"
+    ],
+    "impacted_plants": [
+      "PLANT-STUTTGART-01",
+      "PLANT-ROTTERDAM-DC"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-INTERMODAL-AIR-EXPEDITE"
+  },
+  {
+    "bottleneck_id": "BN-DALLAS-212",
+    "location": "Hyderabad-Shamshabad",
+    "region": "Chennai-Port",
+    "bottleneck_type": "AIR_FREIGHT_CONGESTION",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 3219281,
+    "delay_days": 5.08,
+    "affected_vessels_count": 1,
+    "impacted_skus": [
+      "SKU-HVAC-COMPRESSOR-V4",
+      "SKU-BEARING-HUB-W9"
+    ],
+    "impacted_plants": [
+      "DC-DALLAS-CENTRAL",
+      "PLANT-AUSTIN-02"
+    ],
+    "root_cause": "Cold-chain reefer staging capacity deficit during customs clearance backlog.",
+    "mitigation_playbook_ref": "PLAYBOOK-PHARMA-COLD-CHAIN-GUARD"
+  },
+  {
+    "bottleneck_id": "BN-FRANKFURT-149",
+    "location": "Delhi-NCR",
+    "region": "NORTH_AMERICA",
+    "bottleneck_type": "WAREHOUSE_LABOR_CAPACITY",
+    "severity": "HIGH",
+    "revenue_impact_usd": 2924228,
+    "delay_days": 5.01,
+    "affected_vessels_count": 2,
+    "impacted_skus": [
+      "SKU-API-LIPID-NP",
+      "SKU-BIOLOGIC-ENZYME-100"
+    ],
+    "impacted_plants": [
+      "PLANT-BASEL-03"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-INTERMODAL-AIR-EXPEDITE"
+  },
+  {
+    "bottleneck_id": "BN-SUEZ-192",
+    "location": "Delhi-NCR",
+    "region": "Delhi-NCR",
+    "bottleneck_type": "AIR_FREIGHT_CONGESTION",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 4204622,
+    "delay_days": 9.3,
+    "affected_vessels_count": 5,
+    "impacted_skus": [
+      "SKU-BATTERY-MODULE-800V",
+      "SKU-SOLAR-INVERTER-3KW",
+      "SKU-SEMICON-PMIC-12"
+    ],
+    "impacted_plants": [
+      "PLANT-STUTTGART-01",
+      "PLANT-ROTTERDAM-DC"
+    ],
+    "root_cause": "Cold-chain reefer staging capacity deficit during customs clearance backlog.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-DALLAS-254",
+    "location": "Bengaluru-Hosur",
+    "region": "Mumbai-Bhiwandi",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 1473938,
+    "delay_days": 2.39,
+    "affected_vessels_count": 5,
+    "impacted_skus": [
+      "SKU-HVAC-COMPRESSOR-V4",
+      "SKU-BEARING-HUB-W9"
+    ],
+    "impacted_plants": [
+      "DC-DALLAS-CENTRAL",
+      "PLANT-AUSTIN-02"
+    ],
+    "root_cause": "35% weekend shift absenteeism combined with surging inbound holiday volume.",
+    "mitigation_playbook_ref": "PLAYBOOK-PHARMA-COLD-CHAIN-GUARD"
+  },
+  {
+    "bottleneck_id": "BN-SUEZ-163",
+    "location": "Bengaluru-Hosur",
+    "region": "Kolkata-Haringhata",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "HIGH",
+    "revenue_impact_usd": 8136333,
+    "delay_days": 16.62,
+    "affected_vessels_count": 9,
+    "impacted_skus": [
+      "SKU-BATTERY-MODULE-800V",
+      "SKU-SOLAR-INVERTER-3KW",
+      "SKU-SEMICON-PMIC-12"
+    ],
+    "impacted_plants": [
+      "PLANT-STUTTGART-01",
+      "PLANT-ROTTERDAM-DC"
+    ],
+    "root_cause": "Cold-chain reefer staging capacity deficit during customs clearance backlog.",
+    "mitigation_playbook_ref": "PLAYBOOK-INTERMODAL-AIR-EXPEDITE"
+  },
+  {
+    "bottleneck_id": "BN-DALLAS-218",
+    "location": "Hyderabad-Shamshabad",
+    "region": "Chennai-Port",
+    "bottleneck_type": "AIR_FREIGHT_CONGESTION",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 4031637,
+    "delay_days": 6.12,
+    "affected_vessels_count": 1,
+    "impacted_skus": [
+      "SKU-HVAC-COMPRESSOR-V4",
+      "SKU-BEARING-HUB-W9"
+    ],
+    "impacted_plants": [
+      "DC-DALLAS-CENTRAL",
+      "PLANT-AUSTIN-02"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-INTERMODAL-AIR-EXPEDITE"
+  },
+  {
+    "bottleneck_id": "BN-FRANKFURT-148",
+    "location": "Mumbai-Bhiwandi",
+    "region": "Mumbai-Bhiwandi",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "HIGH",
+    "revenue_impact_usd": 4306575,
+    "delay_days": 5.66,
+    "affected_vessels_count": 1,
+    "impacted_skus": [
+      "SKU-API-LIPID-NP",
+      "SKU-BIOLOGIC-ENZYME-100"
+    ],
+    "impacted_plants": [
+      "PLANT-BASEL-03"
+    ],
+    "root_cause": "35% weekend shift absenteeism combined with surging inbound holiday volume.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-SUEZ-206",
+    "location": "Frankfurt Airport Cargo Terminal 2",
+    "region": "Chennai-Port",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 4278329,
+    "delay_days": 6.1,
+    "affected_vessels_count": 4,
+    "impacted_skus": [
+      "SKU-BATTERY-MODULE-800V",
+      "SKU-SOLAR-INVERTER-3KW",
+      "SKU-SEMICON-PMIC-12"
+    ],
+    "impacted_plants": [
+      "PLANT-STUTTGART-01",
+      "PLANT-ROTTERDAM-DC"
+    ],
+    "root_cause": "Cold-chain reefer staging capacity deficit during customs clearance backlog.",
+    "mitigation_playbook_ref": "PLAYBOOK-PHARMA-COLD-CHAIN-GUARD"
+  },
+  {
+    "bottleneck_id": "BN-DALLAS-268",
+    "location": "Red Sea / Suez Canal Maritime Chokepoint",
+    "region": "Kolkata-Haringhata",
+    "bottleneck_type": "AIR_FREIGHT_CONGESTION",
+    "severity": "HIGH",
+    "revenue_impact_usd": 3045544,
+    "delay_days": 4.6,
+    "affected_vessels_count": 1,
+    "impacted_skus": [
+      "SKU-HVAC-COMPRESSOR-V4",
+      "SKU-BEARING-HUB-W9"
+    ],
+    "impacted_plants": [
+      "DC-DALLAS-CENTRAL",
+      "PLANT-AUSTIN-02"
+    ],
+    "root_cause": "35% weekend shift absenteeism combined with surging inbound holiday volume.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-FRANKFURT-205",
+    "location": "Delhi-NCR",
+    "region": "Delhi-NCR",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 2311174,
+    "delay_days": 4.37,
+    "affected_vessels_count": 2,
+    "impacted_skus": [
+      "SKU-API-LIPID-NP",
+      "SKU-BIOLOGIC-ENZYME-100"
+    ],
+    "impacted_plants": [
+      "PLANT-BASEL-03"
+    ],
+    "root_cause": "35% weekend shift absenteeism combined with surging inbound holiday volume.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-SUEZ-248",
+    "location": "Dallas Regional Cross-Dock Hub",
+    "region": "Mumbai-Bhiwandi",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 6092163,
+    "delay_days": 11.6,
+    "affected_vessels_count": 6,
+    "impacted_skus": [
+      "SKU-BATTERY-MODULE-800V",
+      "SKU-SOLAR-INVERTER-3KW",
+      "SKU-SEMICON-PMIC-12"
+    ],
+    "impacted_plants": [
+      "PLANT-STUTTGART-01",
+      "PLANT-ROTTERDAM-DC"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-DALLAS-310",
+    "location": "Frankfurt Airport Cargo Terminal 2",
+    "region": "Mumbai-Bhiwandi",
+    "bottleneck_type": "AIR_FREIGHT_CONGESTION",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 1765315,
+    "delay_days": 3.05,
+    "affected_vessels_count": 5,
+    "impacted_skus": [
+      "SKU-HVAC-COMPRESSOR-V4",
+      "SKU-BEARING-HUB-W9"
+    ],
+    "impacted_plants": [
+      "DC-DALLAS-CENTRAL",
+      "PLANT-AUSTIN-02"
+    ],
+    "root_cause": "35% weekend shift absenteeism combined with surging inbound holiday volume.",
+    "mitigation_playbook_ref": "PLAYBOOK-PHARMA-COLD-CHAIN-GUARD"
+  },
+  {
+    "bottleneck_id": "BN-SUEZ-219",
+    "location": "Dallas Regional Cross-Dock Hub",
+    "region": "Pune-Chakan",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "HIGH",
+    "revenue_impact_usd": 3975098,
+    "delay_days": 9.82,
+    "affected_vessels_count": 4,
+    "impacted_skus": [
+      "SKU-BATTERY-MODULE-800V",
+      "SKU-SOLAR-INVERTER-3KW",
+      "SKU-SEMICON-PMIC-12"
+    ],
+    "impacted_plants": [
+      "PLANT-STUTTGART-01",
+      "PLANT-ROTTERDAM-DC"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-DALLAS-274",
+    "location": "Hyderabad-Shamshabad",
+    "region": "Mumbai-Bhiwandi",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "HIGH",
+    "revenue_impact_usd": 2304545,
+    "delay_days": 3.35,
+    "affected_vessels_count": 1,
+    "impacted_skus": [
+      "SKU-HVAC-COMPRESSOR-V4",
+      "SKU-BEARING-HUB-W9"
+    ],
+    "impacted_plants": [
+      "DC-DALLAS-CENTRAL",
+      "PLANT-AUSTIN-02"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-FRANKFURT-204",
+    "location": "Pune-Chakan",
+    "region": "EMEA",
+    "bottleneck_type": "WAREHOUSE_LABOR_CAPACITY",
+    "severity": "HIGH",
+    "revenue_impact_usd": 1596167,
+    "delay_days": 1.97,
+    "affected_vessels_count": 1,
+    "impacted_skus": [
+      "SKU-API-LIPID-NP",
+      "SKU-BIOLOGIC-ENZYME-100"
+    ],
+    "impacted_plants": [
+      "PLANT-BASEL-03"
+    ],
+    "root_cause": "Cold-chain reefer staging capacity deficit during customs clearance backlog.",
+    "mitigation_playbook_ref": "PLAYBOOK-INTERMODAL-AIR-EXPEDITE"
+  },
+  {
+    "bottleneck_id": "BN-SUEZ-262",
+    "location": "Hyderabad-Shamshabad",
+    "region": "Pune-Chakan",
+    "bottleneck_type": "WAREHOUSE_LABOR_CAPACITY",
+    "severity": "HIGH",
+    "revenue_impact_usd": 10356090,
+    "delay_days": 15.55,
+    "affected_vessels_count": 10,
+    "impacted_skus": [
+      "SKU-BATTERY-MODULE-800V",
+      "SKU-SOLAR-INVERTER-3KW",
+      "SKU-SEMICON-PMIC-12"
+    ],
+    "impacted_plants": [
+      "PLANT-STUTTGART-01",
+      "PLANT-ROTTERDAM-DC"
+    ],
+    "root_cause": "Cold-chain reefer staging capacity deficit during customs clearance backlog.",
+    "mitigation_playbook_ref": "PLAYBOOK-INTERMODAL-AIR-EXPEDITE"
+  },
+  {
+    "bottleneck_id": "BN-DALLAS-324",
+    "location": "Red Sea / Suez Canal Maritime Chokepoint",
+    "region": "Pune-Chakan",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 2159570,
+    "delay_days": 4.89,
+    "affected_vessels_count": 1,
+    "impacted_skus": [
+      "SKU-HVAC-COMPRESSOR-V4",
+      "SKU-BEARING-HUB-W9"
+    ],
+    "impacted_plants": [
+      "DC-DALLAS-CENTRAL",
+      "PLANT-AUSTIN-02"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-FRANKFURT-261",
+    "location": "Delhi-NCR",
+    "region": "Delhi-NCR",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "HIGH",
+    "revenue_impact_usd": 3441646,
+    "delay_days": 5.88,
+    "affected_vessels_count": 2,
+    "impacted_skus": [
+      "SKU-API-LIPID-NP",
+      "SKU-BIOLOGIC-ENZYME-100"
+    ],
+    "impacted_plants": [
+      "PLANT-BASEL-03"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-SUEZ-304",
+    "location": "Hyderabad-Shamshabad",
+    "region": "Bengaluru-Hosur",
+    "bottleneck_type": "WAREHOUSE_LABOR_CAPACITY",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 7916636,
+    "delay_days": 18.41,
+    "affected_vessels_count": 10,
+    "impacted_skus": [
+      "SKU-BATTERY-MODULE-800V",
+      "SKU-SOLAR-INVERTER-3KW",
+      "SKU-SEMICON-PMIC-12"
+    ],
+    "impacted_plants": [
+      "PLANT-STUTTGART-01",
+      "PLANT-ROTTERDAM-DC"
+    ],
+    "root_cause": "Cold-chain reefer staging capacity deficit during customs clearance backlog.",
+    "mitigation_playbook_ref": "PLAYBOOK-DYNAMIC-AMR-SLOTTING"
+  },
+  {
+    "bottleneck_id": "BN-DALLAS-366",
+    "location": "Mumbai-Bhiwandi",
+    "region": "NORTH_AMERICA",
+    "bottleneck_type": "GEOPOLITICAL_TRANSIT_REROUTE",
+    "severity": "CRITICAL",
+    "revenue_impact_usd": 880694,
+    "delay_days": 1.24,
+    "affected_vessels_count": 2,
+    "impacted_skus": [
+      "SKU-HVAC-COMPRESSOR-V4",
+      "SKU-BEARING-HUB-W9"
+    ],
+    "impacted_plants": [
+      "DC-DALLAS-CENTRAL",
+      "PLANT-AUSTIN-02"
+    ],
+    "root_cause": "Vessels re-routed around Cape of Good Hope due to naval security advisory.",
+    "mitigation_playbook_ref": "PLAYBOOK-PHARMA-COLD-CHAIN-GUARD"
   }
 ]

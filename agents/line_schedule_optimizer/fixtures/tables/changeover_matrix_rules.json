@@ -78,5 +78,245 @@
     "changeover_cost_usd": 1130.5,
     "waste_rinse_water_liters": 1428,
     "regulatory_standard": "ORGANIC_COLOR_CARRYOVER"
+  },
+  {
+    "rule_id": "CO-RULE-ALLERGEN-CLEANOUT-18",
+    "from_product_family": "BEVERAGE_OAT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE",
+    "changeover_type": "LIGHT_SANITATION_LINE_FLUSH",
+    "setup_duration_hours": 2.64,
+    "changeover_cost_usd": 1470.97,
+    "waste_rinse_water_liters": 1745,
+    "regulatory_standard": "ORGANIC_COLOR_CARRYOVER"
+  },
+  {
+    "rule_id": "CO-RULE-COLOR-WASH-19",
+    "from_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "LIGHT_SANITATION_LINE_FLUSH",
+    "setup_duration_hours": 2.04,
+    "changeover_cost_usd": 914.52,
+    "waste_rinse_water_liters": 977,
+    "regulatory_standard": "ORGANIC_COLOR_CARRYOVER"
+  },
+  {
+    "rule_id": "CO-RULE-LIKE-TO-LIKE-20",
+    "from_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "to_product_family": "BEVERAGE_OAT_BASE",
+    "changeover_type": "HOT_WATER_RINSE_ORGANIC_PURGE",
+    "setup_duration_hours": 0.36,
+    "changeover_cost_usd": 138.23,
+    "waste_rinse_water_liters": 208,
+    "regulatory_standard": "STANDARD_GMP"
+  },
+  {
+    "rule_id": "CO-RULE-ALLERGEN-CLEANOUT-R0359B-21",
+    "from_product_family": "BEVERAGE_OAT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE",
+    "changeover_type": "LIGHT_SANITATION_LINE_FLUSH",
+    "setup_duration_hours": 2.7,
+    "changeover_cost_usd": 1595.57,
+    "waste_rinse_water_liters": 1338,
+    "regulatory_standard": "FDA_FALCPA_TREE_NUT_PROTOCOL"
+  },
+  {
+    "rule_id": "CO-RULE-COLOR-WASH-R04D127",
+    "from_product_family": "BEVERAGE_OAT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "HOT_WATER_RINSE_ORGANIC_PURGE",
+    "setup_duration_hours": 2.22,
+    "changeover_cost_usd": 804.07,
+    "waste_rinse_water_liters": 1413,
+    "regulatory_standard": "STANDARD_GMP"
+  },
+  {
+    "rule_id": "CO-RULE-LIKE-TO-LIKE-R0528B-23",
+    "from_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "LIGHT_SANITATION_LINE_FLUSH",
+    "setup_duration_hours": 0.31,
+    "changeover_cost_usd": 125.49,
+    "waste_rinse_water_liters": 173,
+    "regulatory_standard": "STANDARD_GMP"
+  },
+  {
+    "rule_id": "CO-RULE-ALLERGEN-CLEANOUT-R06E2A-24",
+    "from_product_family": "BEVERAGE_NUT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE",
+    "changeover_type": "LIGHT_SANITATION_LINE_FLUSH",
+    "setup_duration_hours": 3.7,
+    "changeover_cost_usd": 1269.97,
+    "waste_rinse_water_liters": 2075,
+    "regulatory_standard": "STANDARD_GMP"
+  },
+  {
+    "rule_id": "CO-RULE-COLOR-WASH-R0780B-25",
+    "from_product_family": "BEVERAGE_NUT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "HOT_WATER_RINSE_ORGANIC_PURGE",
+    "setup_duration_hours": 2.8,
+    "changeover_cost_usd": 1409.11,
+    "waste_rinse_water_liters": 2045,
+    "regulatory_standard": "FDA_FALCPA_TREE_NUT_PROTOCOL"
+  },
+  {
+    "rule_id": "CO-RULE-ALLERGEN-CLEANOUT-26",
+    "from_product_family": "BEVERAGE_NUT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE",
+    "changeover_type": "LIGHT_SANITATION_LINE_FLUSH",
+    "setup_duration_hours": 4.53,
+    "changeover_cost_usd": 1878.1,
+    "waste_rinse_water_liters": 2798,
+    "regulatory_standard": "FDA_FALCPA_TREE_NUT_PROTOCOL"
+  },
+  {
+    "rule_id": "CO-RULE-COLOR-WASH-27",
+    "from_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "to_product_family": "BEVERAGE_OAT_BASE",
+    "changeover_type": "HOT_WATER_RINSE_ORGANIC_PURGE",
+    "setup_duration_hours": 3.64,
+    "changeover_cost_usd": 1002.55,
+    "waste_rinse_water_liters": 1355,
+    "regulatory_standard": "ORGANIC_COLOR_CARRYOVER"
+  },
+  {
+    "rule_id": "CO-RULE-LIKE-TO-LIKE-28",
+    "from_product_family": "BEVERAGE_OAT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "DEEP_ALLERGEN_CIP_WASH_ATP_SWAB",
+    "setup_duration_hours": 0.24,
+    "changeover_cost_usd": 101.98,
+    "waste_rinse_water_liters": 112,
+    "regulatory_standard": "FDA_FALCPA_TREE_NUT_PROTOCOL"
+  },
+  {
+    "rule_id": "CO-RULE-ALLERGEN-CLEANOUT-R0359B-29",
+    "from_product_family": "BEVERAGE_OAT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "LIGHT_SANITATION_LINE_FLUSH",
+    "setup_duration_hours": 1.77,
+    "changeover_cost_usd": 851.75,
+    "waste_rinse_water_liters": 809,
+    "regulatory_standard": "STANDARD_GMP"
+  },
+  {
+    "rule_id": "CO-RULE-COLOR-WASH-R04D183",
+    "from_product_family": "BEVERAGE_OAT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "HOT_WATER_RINSE_ORGANIC_PURGE",
+    "setup_duration_hours": 3.25,
+    "changeover_cost_usd": 1042.08,
+    "waste_rinse_water_liters": 2049,
+    "regulatory_standard": "FDA_FALCPA_TREE_NUT_PROTOCOL"
+  },
+  {
+    "rule_id": "CO-RULE-LIKE-TO-LIKE-R0528B-31",
+    "from_product_family": "BEVERAGE_NUT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "HOT_WATER_RINSE_ORGANIC_PURGE",
+    "setup_duration_hours": 0.25,
+    "changeover_cost_usd": 108.32,
+    "waste_rinse_water_liters": 159,
+    "regulatory_standard": "FDA_FALCPA_TREE_NUT_PROTOCOL"
+  },
+  {
+    "rule_id": "CO-RULE-ALLERGEN-CLEANOUT-R06E2A-32",
+    "from_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "to_product_family": "BEVERAGE_OAT_BASE",
+    "changeover_type": "LIGHT_SANITATION_LINE_FLUSH",
+    "setup_duration_hours": 1.79,
+    "changeover_cost_usd": 789.32,
+    "waste_rinse_water_liters": 1470,
+    "regulatory_standard": "FDA_FALCPA_TREE_NUT_PROTOCOL"
+  },
+  {
+    "rule_id": "CO-RULE-COLOR-WASH-R0780B-33",
+    "from_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "DEEP_ALLERGEN_CIP_WASH_ATP_SWAB",
+    "setup_duration_hours": 1.88,
+    "changeover_cost_usd": 1225.09,
+    "waste_rinse_water_liters": 1110,
+    "regulatory_standard": "FDA_FALCPA_TREE_NUT_PROTOCOL"
+  },
+  {
+    "rule_id": "CO-RULE-ALLERGEN-CLEANOUT-34",
+    "from_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "HOT_WATER_RINSE_ORGANIC_PURGE",
+    "setup_duration_hours": 6.37,
+    "changeover_cost_usd": 2955.07,
+    "waste_rinse_water_liters": 4169,
+    "regulatory_standard": "STANDARD_GMP"
+  },
+  {
+    "rule_id": "CO-RULE-COLOR-WASH-35",
+    "from_product_family": "BEVERAGE_NUT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "LIGHT_SANITATION_LINE_FLUSH",
+    "setup_duration_hours": 2.02,
+    "changeover_cost_usd": 622.97,
+    "waste_rinse_water_liters": 1018,
+    "regulatory_standard": "ORGANIC_COLOR_CARRYOVER"
+  },
+  {
+    "rule_id": "CO-RULE-LIKE-TO-LIKE-36",
+    "from_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "DEEP_ALLERGEN_CIP_WASH_ATP_SWAB",
+    "setup_duration_hours": 0.3,
+    "changeover_cost_usd": 129.12,
+    "waste_rinse_water_liters": 185,
+    "regulatory_standard": "STANDARD_GMP"
+  },
+  {
+    "rule_id": "CO-RULE-ALLERGEN-CLEANOUT-R0359B-37",
+    "from_product_family": "BEVERAGE_OAT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE",
+    "changeover_type": "LIGHT_SANITATION_LINE_FLUSH",
+    "setup_duration_hours": 1.73,
+    "changeover_cost_usd": 1042.3,
+    "waste_rinse_water_liters": 998,
+    "regulatory_standard": "ORGANIC_COLOR_CARRYOVER"
+  },
+  {
+    "rule_id": "CO-RULE-COLOR-WASH-R04D239",
+    "from_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "DEEP_ALLERGEN_CIP_WASH_ATP_SWAB",
+    "setup_duration_hours": 3.12,
+    "changeover_cost_usd": 1008.23,
+    "waste_rinse_water_liters": 1531,
+    "regulatory_standard": "ORGANIC_COLOR_CARRYOVER"
+  },
+  {
+    "rule_id": "CO-RULE-LIKE-TO-LIKE-R0528B-39",
+    "from_product_family": "BEVERAGE_NUT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "DEEP_ALLERGEN_CIP_WASH_ATP_SWAB",
+    "setup_duration_hours": 0.16,
+    "changeover_cost_usd": 75.13,
+    "waste_rinse_water_liters": 135,
+    "regulatory_standard": "STANDARD_GMP"
+  },
+  {
+    "rule_id": "CO-RULE-ALLERGEN-CLEANOUT-R06E2A-40",
+    "from_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "DEEP_ALLERGEN_CIP_WASH_ATP_SWAB",
+    "setup_duration_hours": 2.09,
+    "changeover_cost_usd": 1087.44,
+    "waste_rinse_water_liters": 1201,
+    "regulatory_standard": "FDA_FALCPA_TREE_NUT_PROTOCOL"
+  },
+  {
+    "rule_id": "CO-RULE-COLOR-WASH-R0780B-41",
+    "from_product_family": "BEVERAGE_OAT_BASE",
+    "to_product_family": "BEVERAGE_OAT_BASE_DARK",
+    "changeover_type": "LIGHT_SANITATION_LINE_FLUSH",
+    "setup_duration_hours": 2.21,
+    "changeover_cost_usd": 1007.3,
+    "waste_rinse_water_liters": 1545,
+    "regulatory_standard": "FDA_FALCPA_TREE_NUT_PROTOCOL"
   }
 ]

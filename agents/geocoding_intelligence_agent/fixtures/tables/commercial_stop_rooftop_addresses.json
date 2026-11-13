@@ -70,5 +70,221 @@
     "rooftop_lon": -96.6389,
     "truck_size_limit": "48FT_LIFTGATE_REQUIRED",
     "failed_attempts_90d": 5
+  },
+  {
+    "stop_id": "STP-CHI-467",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "site_name": "MegaMart Magnificent Mile Urban Underground",
+    "rooftop_lat": 41.6767,
+    "rooftop_lon": -87.8094,
+    "truck_size_limit": "EV_VAN_BEFORE_10AM_CURFEW",
+    "failed_attempts_90d": 6
+  },
+  {
+    "stop_id": "STP-DAL-475",
+    "customer_id": "CUST-APEX-US01",
+    "site_name": "MedCore Uniklinik Campus Cryo Receiving",
+    "rooftop_lat": 32.6608,
+    "rooftop_lon": -96.5369,
+    "truck_size_limit": "LOADING_TUNNEL_WEST_RAMP",
+    "failed_attempts_90d": 3
+  },
+  {
+    "stop_id": "STP-FRA-483",
+    "customer_id": "CUST-XYZ-TIER2-METROCPG",
+    "site_name": "EuroAuto Werk 4 Powertrain Gate B",
+    "rooftop_lat": 50.0169,
+    "rooftop_lon": 8.6101,
+    "truck_size_limit": "48FT_LIFTGATE_REQUIRED",
+    "failed_attempts_90d": 10
+  },
+  {
+    "stop_id": "STP-ATL-491",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "site_name": "MegaMart Midtown Multi-Level Mall",
+    "rooftop_lat": 33.86,
+    "rooftop_lon": -84.0843,
+    "truck_size_limit": "48FT_LIFTGATE_REQUIRED",
+    "failed_attempts_90d": 11
+  },
+  {
+    "stop_id": "STP-MUM-499",
+    "customer_id": "Cymbal Retail",
+    "site_name": "DMart (Avenue Supermarts) Mockingbird Mixed-Use Plaza",
+    "rooftop_lat": 18.7078,
+    "rooftop_lon": 72.673,
+    "truck_size_limit": "53FT_REAR_ALLEY_GATE_CODE",
+    "failed_attempts_90d": 5
+  },
+  {
+    "stop_id": "STP-CHI-507",
+    "customer_id": "DMart Avenue",
+    "site_name": "Reliance Retail & Wholesale Lincoln Park Club Receiving",
+    "rooftop_lat": 42.2471,
+    "rooftop_lon": -87.6293,
+    "truck_size_limit": "26FT_STRAIGHT_MAX_12FT6_CLEARANCE",
+    "failed_attempts_90d": 1
+  },
+  {
+    "stop_id": "STP-STU-515",
+    "customer_id": "Omni Wholesale Club",
+    "site_name": "DMart (Avenue Supermarts) Mockingbird Mixed-Use Plaza",
+    "rooftop_lat": 48.7359,
+    "rooftop_lon": 9.1163,
+    "truck_size_limit": "PHARMA_BAY_NORTH_WING_ONLY",
+    "failed_attempts_90d": 6
+  },
+  {
+    "stop_id": "STP-DAL-523",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "site_name": "MegaMart Midtown Multi-Level Mall",
+    "rooftop_lat": 33.065,
+    "rooftop_lon": -96.64,
+    "truck_size_limit": "JIT_GATE_B7_TRANSPONDER",
+    "failed_attempts_90d": 3
+  },
+  {
+    "stop_id": "STP-CHI-523",
+    "customer_id": "Apex Hypermarket",
+    "site_name": "ValueMax Garland Strip Center",
+    "rooftop_lat": 42.1286,
+    "rooftop_lon": -87.8682,
+    "truck_size_limit": "EV_VAN_BEFORE_10AM_CURFEW",
+    "failed_attempts_90d": 8
+  },
+  {
+    "stop_id": "STP-DAL-531",
+    "customer_id": "Cymbal Retail",
+    "site_name": "EuroAuto Werk 4 Powertrain Gate B",
+    "rooftop_lat": 32.7234,
+    "rooftop_lon": -97.0696,
+    "truck_size_limit": "48FT_LIFTGATE_REQUIRED",
+    "failed_attempts_90d": 4
+  },
+  {
+    "stop_id": "STP-FRA-539",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "site_name": "DMart (Avenue Supermarts) Mockingbird Mixed-Use Plaza",
+    "rooftop_lat": 50.08,
+    "rooftop_lon": 8.3625,
+    "truck_size_limit": "LOADING_TUNNEL_WEST_RAMP",
+    "failed_attempts_90d": 5
+  },
+  {
+    "stop_id": "STP-ATL-547",
+    "customer_id": "Summit Stores",
+    "site_name": "MegaMart Magnificent Mile Urban Underground",
+    "rooftop_lat": 34.1181,
+    "rooftop_lon": -84.5424,
+    "truck_size_limit": "LOADING_TUNNEL_WEST_RAMP",
+    "failed_attempts_90d": 4
+  },
+  {
+    "stop_id": "STP-MUM-555",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "site_name": "MedCore Uniklinik Campus Cryo Receiving",
+    "rooftop_lat": 19.2794,
+    "rooftop_lon": 72.8458,
+    "truck_size_limit": "48FT_LIFTGATE_REQUIRED",
+    "failed_attempts_90d": 14
+  },
+  {
+    "stop_id": "STP-CHI-563",
+    "customer_id": "Summit Stores",
+    "site_name": "ValueMax Garland Strip Center",
+    "rooftop_lat": 41.9987,
+    "rooftop_lon": -87.6308,
+    "truck_size_limit": "53FT_REAR_ALLEY_GATE_CODE",
+    "failed_attempts_90d": 2
+  },
+  {
+    "stop_id": "STP-STU-571",
+    "customer_id": "Apex Hypermarket",
+    "site_name": "EuroAuto Werk 4 Powertrain Gate B",
+    "rooftop_lat": 48.4396,
+    "rooftop_lon": 9.1528,
+    "truck_size_limit": "JIT_GATE_B7_TRANSPONDER",
+    "failed_attempts_90d": 6
+  },
+  {
+    "stop_id": "STP-DAL-579",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "site_name": "DMart (Avenue Supermarts) Mockingbird Mixed-Use Plaza",
+    "rooftop_lat": 33.1325,
+    "rooftop_lon": -96.638,
+    "truck_size_limit": "53FT_REAR_ALLEY_GATE_CODE",
+    "failed_attempts_90d": 5
+  },
+  {
+    "stop_id": "STP-CHI-579",
+    "customer_id": "CUST-APEX-US01",
+    "site_name": "Reliance Retail & Wholesale Lincoln Park Club Receiving",
+    "rooftop_lat": 42.1422,
+    "rooftop_lon": -87.3504,
+    "truck_size_limit": "53FT_REAR_ALLEY_GATE_CODE",
+    "failed_attempts_90d": 11
+  },
+  {
+    "stop_id": "STP-DAL-587",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "site_name": "ValueMax Garland Strip Center",
+    "rooftop_lat": 32.8977,
+    "rooftop_lon": -96.9366,
+    "truck_size_limit": "48FT_LIFTGATE_REQUIRED",
+    "failed_attempts_90d": 5
+  },
+  {
+    "stop_id": "STP-FRA-595",
+    "customer_id": "CUST-XYZ-TIER1-MEGAMART",
+    "site_name": "DMart (Avenue Supermarts) Mockingbird Mixed-Use Plaza",
+    "rooftop_lat": 49.8885,
+    "rooftop_lon": 8.4211,
+    "truck_size_limit": "53FT_SOUTH_APRON_SWING",
+    "failed_attempts_90d": 8
+  },
+  {
+    "stop_id": "STP-ATL-603",
+    "customer_id": "DMart Avenue",
+    "site_name": "ValueMax Garland Strip Center",
+    "rooftop_lat": 33.5966,
+    "rooftop_lon": -84.3355,
+    "truck_size_limit": "53FT_SOUTH_APRON_SWING",
+    "failed_attempts_90d": 9
+  },
+  {
+    "stop_id": "STP-MUM-611",
+    "customer_id": "Reliance Retail",
+    "site_name": "MegaMart Midtown Multi-Level Mall",
+    "rooftop_lat": 19.2322,
+    "rooftop_lon": 72.9,
+    "truck_size_limit": "53FT_SOUTH_APRON_SWING",
+    "failed_attempts_90d": 8
+  },
+  {
+    "stop_id": "STP-CHI-619",
+    "customer_id": "CUST-ALDI-OUTLET-US09",
+    "site_name": "EuroAuto Werk 4 Powertrain Gate B",
+    "rooftop_lat": 41.7419,
+    "rooftop_lon": -87.798,
+    "truck_size_limit": "EV_VAN_BEFORE_10AM_CURFEW",
+    "failed_attempts_90d": 2
+  },
+  {
+    "stop_id": "STP-STU-627",
+    "customer_id": "CUST-MEDLINE-BIO01",
+    "site_name": "MegaMart Midtown Multi-Level Mall",
+    "rooftop_lat": 49.0461,
+    "rooftop_lon": 9.0873,
+    "truck_size_limit": "JIT_GATE_B7_TRANSPONDER",
+    "failed_attempts_90d": 2
+  },
+  {
+    "stop_id": "STP-DAL-635",
+    "customer_id": "Omni Wholesale Club",
+    "site_name": "Reliance Retail & Wholesale Lincoln Park Club Receiving",
+    "rooftop_lat": 33.2404,
+    "rooftop_lon": -96.403,
+    "truck_size_limit": "JIT_GATE_B7_TRANSPONDER",
+    "failed_attempts_90d": 2
   }
 ]

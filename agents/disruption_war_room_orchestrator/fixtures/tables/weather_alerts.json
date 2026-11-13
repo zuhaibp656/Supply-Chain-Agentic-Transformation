@@ -126,5 +126,389 @@
       "GULF-COAST-FEEDER",
       "PANAMA-TRANSIT"
     ]
+  },
+  {
+    "alert_id": "WX-2026-0878",
+    "event_type": "HURRICANE",
+    "severity": "CRITICAL",
+    "region": "Pune-Chakan",
+    "lat": 24.8514,
+    "lon": 121.2916,
+    "radius_km": 351,
+    "effective_start": "2026-10-13T00:00:00Z",
+    "effective_end": "2026-10-16T18:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0892",
+    "event_type": "HURRICANE",
+    "severity": "CRITICAL",
+    "region": "Mumbai-Bhiwandi",
+    "lat": 27.8128,
+    "lon": -84.9404,
+    "radius_km": 280,
+    "effective_start": "2026-10-15T06:00:00Z",
+    "effective_end": "2026-10-18T12:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0907",
+    "event_type": "TYPHOON",
+    "severity": "WARNING",
+    "region": "Chennai-Port",
+    "lat": 24.9049,
+    "lon": 121.5999,
+    "radius_km": 293,
+    "effective_start": "2026-10-15T00:00:00Z",
+    "effective_end": "2026-10-18T18:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0928",
+    "event_type": "HURRICANE",
+    "severity": "WARNING",
+    "region": "Chennai-Port",
+    "lat": 27.6841,
+    "lon": -84.9067,
+    "radius_km": 174,
+    "effective_start": "2026-10-17T06:00:00Z",
+    "effective_end": "2026-10-20T12:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0841X-22",
+    "event_type": "TYPHOON",
+    "severity": "CRITICAL",
+    "region": "Chennai-Port",
+    "lat": 25.0666,
+    "lon": 121.2888,
+    "radius_km": 517,
+    "effective_start": "2026-10-17T00:00:00Z",
+    "effective_end": "2026-10-20T18:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0956",
+    "event_type": "HURRICANE",
+    "severity": "WARNING",
+    "region": "Gulf of Mexico",
+    "lat": 27.5867,
+    "lon": -85.2691,
+    "radius_km": 108,
+    "effective_start": "2026-10-19T06:00:00Z",
+    "effective_end": "2026-10-22T12:00:00Z",
+    "impact_summary": "Category 4 Super Typhoon winds >140kt causing port closures at Keelung and Kaohsiung, halting air cargo out of TPE.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0855X-24",
+    "event_type": "HURRICANE",
+    "severity": "WARNING",
+    "region": "Kolkata-Haringhata",
+    "lat": 24.7621,
+    "lon": 121.9076,
+    "radius_km": 405,
+    "effective_start": "2026-10-19T00:00:00Z",
+    "effective_end": "2026-10-22T18:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0984",
+    "event_type": "TYPHOON",
+    "severity": "CRITICAL",
+    "region": "Bengaluru-Hosur",
+    "lat": 27.4415,
+    "lon": -84.8106,
+    "radius_km": 209,
+    "effective_start": "2026-10-21T06:00:00Z",
+    "effective_end": "2026-10-24T12:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0934",
+    "event_type": "HURRICANE",
+    "severity": "CRITICAL",
+    "region": "Gulf of Mexico",
+    "lat": 24.831,
+    "lon": 121.4081,
+    "radius_km": 335,
+    "effective_start": "2026-10-21T00:00:00Z",
+    "effective_end": "2026-10-24T18:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0948",
+    "event_type": "HURRICANE",
+    "severity": "CRITICAL",
+    "region": "Chennai-Port",
+    "lat": 27.7992,
+    "lon": -85.5187,
+    "radius_km": 276,
+    "effective_start": "2026-10-23T06:00:00Z",
+    "effective_end": "2026-10-26T12:00:00Z",
+    "impact_summary": "Category 4 Super Typhoon winds >140kt causing port closures at Keelung and Kaohsiung, halting air cargo out of TPE.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0963",
+    "event_type": "TYPHOON",
+    "severity": "WARNING",
+    "region": "Mumbai-Bhiwandi",
+    "lat": 24.6023,
+    "lon": 121.2353,
+    "radius_km": 412,
+    "effective_start": "2026-10-23T00:00:00Z",
+    "effective_end": "2026-10-26T18:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0984",
+    "event_type": "TYPHOON",
+    "severity": "CRITICAL",
+    "region": "East China Sea / Taiwan Strait",
+    "lat": 27.4226,
+    "lon": -85.0732,
+    "radius_km": 237,
+    "effective_start": "2026-10-25T06:00:00Z",
+    "effective_end": "2026-10-28T12:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0841X-30",
+    "event_type": "HURRICANE",
+    "severity": "CRITICAL",
+    "region": "East China Sea / Taiwan Strait",
+    "lat": 24.9679,
+    "lon": 121.7449,
+    "radius_km": 545,
+    "effective_start": "2026-10-25T00:00:00Z",
+    "effective_end": "2026-10-28T18:00:00Z",
+    "impact_summary": "Category 4 Super Typhoon winds >140kt causing port closures at Keelung and Kaohsiung, halting air cargo out of TPE.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-1012",
+    "event_type": "HURRICANE",
+    "severity": "CRITICAL",
+    "region": "Pune-Chakan",
+    "lat": 27.6464,
+    "lon": -84.8134,
+    "radius_km": 317,
+    "effective_start": "2026-10-06T06:00:00Z",
+    "effective_end": "2026-10-09T12:00:00Z",
+    "impact_summary": "Category 4 Super Typhoon winds >140kt causing port closures at Keelung and Kaohsiung, halting air cargo out of TPE.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0855X-32",
+    "event_type": "HURRICANE",
+    "severity": "WARNING",
+    "region": "Mumbai-Bhiwandi",
+    "lat": 24.7692,
+    "lon": 121.2974,
+    "radius_km": 462,
+    "effective_start": "2026-10-06T00:00:00Z",
+    "effective_end": "2026-10-09T18:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-1040",
+    "event_type": "TYPHOON",
+    "severity": "CRITICAL",
+    "region": "Bengaluru-Hosur",
+    "lat": 27.2901,
+    "lon": -85.0993,
+    "radius_km": 244,
+    "effective_start": "2026-10-08T06:00:00Z",
+    "effective_end": "2026-10-11T12:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0990",
+    "event_type": "HURRICANE",
+    "severity": "CRITICAL",
+    "region": "Ahmedabad-Sanand",
+    "lat": 24.8341,
+    "lon": 121.5247,
+    "radius_km": 441,
+    "effective_start": "2026-10-08T00:00:00Z",
+    "effective_end": "2026-10-11T18:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-1004",
+    "event_type": "TYPHOON",
+    "severity": "CRITICAL",
+    "region": "Kolkata-Haringhata",
+    "lat": 27.23,
+    "lon": -85.327,
+    "radius_km": 240,
+    "effective_start": "2026-10-10T06:00:00Z",
+    "effective_end": "2026-10-13T12:00:00Z",
+    "impact_summary": "Category 4 Super Typhoon winds >140kt causing port closures at Keelung and Kaohsiung, halting air cargo out of TPE.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-1019",
+    "event_type": "TYPHOON",
+    "severity": "CRITICAL",
+    "region": "Ahmedabad-Sanand",
+    "lat": 24.4271,
+    "lon": 121.0752,
+    "radius_km": 214,
+    "effective_start": "2026-10-10T00:00:00Z",
+    "effective_end": "2026-10-13T18:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-1040",
+    "event_type": "HURRICANE",
+    "severity": "WARNING",
+    "region": "Kolkata-Haringhata",
+    "lat": 27.4629,
+    "lon": -85.5463,
+    "radius_km": 442,
+    "effective_start": "2026-10-12T06:00:00Z",
+    "effective_end": "2026-10-15T12:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0841X-38",
+    "event_type": "HURRICANE",
+    "severity": "WARNING",
+    "region": "Chennai-Port",
+    "lat": 24.7804,
+    "lon": 121.4955,
+    "radius_km": 397,
+    "effective_start": "2026-10-12T00:00:00Z",
+    "effective_end": "2026-10-15T18:00:00Z",
+    "impact_summary": "Tropical storm strengthening into Category 2 Hurricane, impacting maritime shipping to Port of Tampa and Houston Ship Channel.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-1068",
+    "event_type": "HURRICANE",
+    "severity": "CRITICAL",
+    "region": "Hyderabad-Shamshabad",
+    "lat": 27.568,
+    "lon": -85.3143,
+    "radius_km": 152,
+    "effective_start": "2026-10-14T06:00:00Z",
+    "effective_end": "2026-10-17T12:00:00Z",
+    "impact_summary": "Category 4 Super Typhoon winds >140kt causing port closures at Keelung and Kaohsiung, halting air cargo out of TPE.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-0855X-40",
+    "event_type": "HURRICANE",
+    "severity": "CRITICAL",
+    "region": "Chennai-Port",
+    "lat": 24.8937,
+    "lon": 121.3074,
+    "radius_km": 311,
+    "effective_start": "2026-10-14T00:00:00Z",
+    "effective_end": "2026-10-17T18:00:00Z",
+    "impact_summary": "Category 4 Super Typhoon winds >140kt causing port closures at Keelung and Kaohsiung, halting air cargo out of TPE.",
+    "affected_corridors": [
+      "TRANS-PACIFIC-01",
+      "INTRA-ASIA-NORTH"
+    ]
+  },
+  {
+    "alert_id": "WX-2026-1096",
+    "event_type": "TYPHOON",
+    "severity": "CRITICAL",
+    "region": "Hyderabad-Shamshabad",
+    "lat": 27.3053,
+    "lon": -84.8243,
+    "radius_km": 83,
+    "effective_start": "2026-10-16T06:00:00Z",
+    "effective_end": "2026-10-19T12:00:00Z",
+    "impact_summary": "Category 4 Super Typhoon winds >140kt causing port closures at Keelung and Kaohsiung, halting air cargo out of TPE.",
+    "affected_corridors": [
+      "GULF-COAST-FEEDER",
+      "PANAMA-TRANSIT"
+    ]
   }
 ]

@@ -62,5 +62,197 @@
     "lines_per_picker_hr": 92.0,
     "hourly_zone_capacity_lines": 460.0,
     "pack_chute_utilization_pct": 35.0
+  },
+  {
+    "zone_id": "ZONE-CHILL-68",
+    "facility_id": "Pune-Chakan",
+    "active_pickers": 3,
+    "lines_per_picker_hr": 48.0,
+    "hourly_zone_capacity_lines": 238.0,
+    "pack_chute_utilization_pct": 99.8
+  },
+  {
+    "zone_id": "ZONE-DRY-74",
+    "facility_id": "Hyderabad-Shamshabad",
+    "active_pickers": 10,
+    "lines_per_picker_hr": 161.75,
+    "hourly_zone_capacity_lines": 1078.96,
+    "pack_chute_utilization_pct": 77.47
+  },
+  {
+    "zone_id": "ZONE-BULK-84",
+    "facility_id": "Kolkata-Haringhata",
+    "active_pickers": 3,
+    "lines_per_picker_hr": 39.93,
+    "hourly_zone_capacity_lines": 245.08,
+    "pack_chute_utilization_pct": 45.69
+  },
+  {
+    "zone_id": "ZONE-EACH-90",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "active_pickers": 4,
+    "lines_per_picker_hr": 49.32,
+    "hourly_zone_capacity_lines": 358.9,
+    "pack_chute_utilization_pct": 91.96
+  },
+  {
+    "zone_id": "ZONE-RESERVE-99",
+    "facility_id": "Pune-Chakan",
+    "active_pickers": 4,
+    "lines_per_picker_hr": 54.61,
+    "hourly_zone_capacity_lines": 265.22,
+    "pack_chute_utilization_pct": 42.46
+  },
+  {
+    "zone_id": "ZONE-FAST-102",
+    "facility_id": "Delhi-NCR",
+    "active_pickers": 7,
+    "lines_per_picker_hr": 152.43,
+    "hourly_zone_capacity_lines": 837.37,
+    "pack_chute_utilization_pct": 78.47
+  },
+  {
+    "zone_id": "ZONE-GDP-109",
+    "facility_id": "Hyderabad-Shamshabad",
+    "active_pickers": 2,
+    "lines_per_picker_hr": 42.96,
+    "hourly_zone_capacity_lines": 113.74,
+    "pack_chute_utilization_pct": 97.96
+  },
+  {
+    "zone_id": "ZONE-AMBIENT-118",
+    "facility_id": "Kolkata-Haringhata",
+    "active_pickers": 4,
+    "lines_per_picker_hr": 70.7,
+    "hourly_zone_capacity_lines": 425.69,
+    "pack_chute_utilization_pct": 28.95
+  },
+  {
+    "zone_id": "ZONE-CHILL-124",
+    "facility_id": "Ahmedabad-Sanand",
+    "active_pickers": 9,
+    "lines_per_picker_hr": 144.0,
+    "hourly_zone_capacity_lines": 897.82,
+    "pack_chute_utilization_pct": 80.63
+  },
+  {
+    "zone_id": "ZONE-DRY-130",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "active_pickers": 8,
+    "lines_per_picker_hr": 106.39,
+    "hourly_zone_capacity_lines": 771.56,
+    "pack_chute_utilization_pct": 74.65
+  },
+  {
+    "zone_id": "ZONE-BULK-140",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "active_pickers": 4,
+    "lines_per_picker_hr": 44.83,
+    "hourly_zone_capacity_lines": 399.34,
+    "pack_chute_utilization_pct": 42.77
+  },
+  {
+    "zone_id": "ZONE-EACH-146",
+    "facility_id": "Ahmedabad-Sanand",
+    "active_pickers": 11,
+    "lines_per_picker_hr": 150.07,
+    "hourly_zone_capacity_lines": 1003.82,
+    "pack_chute_utilization_pct": 99.8
+  },
+  {
+    "zone_id": "ZONE-RESERVE-155",
+    "facility_id": "Pune-Chakan",
+    "active_pickers": 6,
+    "lines_per_picker_hr": 65.81,
+    "hourly_zone_capacity_lines": 494.84,
+    "pack_chute_utilization_pct": 34.37
+  },
+  {
+    "zone_id": "ZONE-FAST-158",
+    "facility_id": "Mumbai-Bhiwandi",
+    "active_pickers": 2,
+    "lines_per_picker_hr": 50.3,
+    "hourly_zone_capacity_lines": 300.9,
+    "pack_chute_utilization_pct": 71.7
+  },
+  {
+    "zone_id": "ZONE-GDP-165",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "active_pickers": 3,
+    "lines_per_picker_hr": 52.47,
+    "hourly_zone_capacity_lines": 214.36,
+    "pack_chute_utilization_pct": 81.36
+  },
+  {
+    "zone_id": "ZONE-AMBIENT-174",
+    "facility_id": "Kolkata-Haringhata",
+    "active_pickers": 4,
+    "lines_per_picker_hr": 65.39,
+    "hourly_zone_capacity_lines": 355.19,
+    "pack_chute_utilization_pct": 36.53
+  },
+  {
+    "zone_id": "ZONE-CHILL-180",
+    "facility_id": "Bengaluru-Hosur",
+    "active_pickers": 3,
+    "lines_per_picker_hr": 35.66,
+    "hourly_zone_capacity_lines": 232.34,
+    "pack_chute_utilization_pct": 91.11
+  },
+  {
+    "zone_id": "ZONE-DRY-186",
+    "facility_id": "Chennai-Port",
+    "active_pickers": 5,
+    "lines_per_picker_hr": 78.24,
+    "hourly_zone_capacity_lines": 734.52,
+    "pack_chute_utilization_pct": 84.92
+  },
+  {
+    "zone_id": "ZONE-BULK-196",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "active_pickers": 7,
+    "lines_per_picker_hr": 64.11,
+    "hourly_zone_capacity_lines": 409.86,
+    "pack_chute_utilization_pct": 43.08
+  },
+  {
+    "zone_id": "ZONE-EACH-202",
+    "facility_id": "Kolkata-Haringhata",
+    "active_pickers": 3,
+    "lines_per_picker_hr": 50.31,
+    "hourly_zone_capacity_lines": 318.15,
+    "pack_chute_utilization_pct": 99.8
+  },
+  {
+    "zone_id": "ZONE-RESERVE-211",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "active_pickers": 5,
+    "lines_per_picker_hr": 77.31,
+    "hourly_zone_capacity_lines": 575.86,
+    "pack_chute_utilization_pct": 41.35
+  },
+  {
+    "zone_id": "ZONE-FAST-214",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "active_pickers": 5,
+    "lines_per_picker_hr": 84.37,
+    "hourly_zone_capacity_lines": 682.72,
+    "pack_chute_utilization_pct": 93.42
+  },
+  {
+    "zone_id": "ZONE-GDP-221",
+    "facility_id": "Mumbai-Bhiwandi",
+    "active_pickers": 2,
+    "lines_per_picker_hr": 45.36,
+    "hourly_zone_capacity_lines": 129.53,
+    "pack_chute_utilization_pct": 88.8
+  },
+  {
+    "zone_id": "ZONE-AMBIENT-230",
+    "facility_id": "Chennai-Port",
+    "active_pickers": 6,
+    "lines_per_picker_hr": 145.42,
+    "hourly_zone_capacity_lines": 725.33,
+    "pack_chute_utilization_pct": 37.35
   }
 ]

@@ -106,5 +106,329 @@
     "defect_severity": "CONFORMING",
     "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
     "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-00907",
+    "frame_id": "FRAME-CAM01-20261022-00907",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.64,
+    "bounding_box_normalized": [
+      0.42,
+      0.14,
+      0.48,
+      0.18
+    ],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Radial breach (1.8mm) detected on induction heat-seal foil membrane along top carton flange.",
+    "action_triggered": "DIVERT_PNEUMATIC_REJECT_BIN_01"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-00915",
+    "frame_id": "FRAME-CAM01-20261022-00915",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.67,
+    "bounding_box_normalized": [],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-00936",
+    "frame_id": "FRAME-CAM01-20261022-00936",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 1.21,
+    "bounding_box_normalized": [
+      0.35,
+      0.13,
+      0.54,
+      0.14
+    ],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-00951",
+    "frame_id": "FRAME-CAM01-20261022-00951",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.97,
+    "bounding_box_normalized": [],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-00964",
+    "frame_id": "FRAME-CAM01-20261022-00964",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.88,
+    "bounding_box_normalized": [
+      0.47,
+      0.11,
+      0.41,
+      0.22
+    ],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-00979",
+    "frame_id": "FRAME-CAM01-20261022-00979",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.57,
+    "bounding_box_normalized": [],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Radial breach (1.8mm) detected on induction heat-seal foil membrane along top carton flange.",
+    "action_triggered": "DIVERT_PNEUMATIC_REJECT_BIN_01"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-00992",
+    "frame_id": "FRAME-CAM01-20261022-00992",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.77,
+    "bounding_box_normalized": [
+      0.36,
+      0.18,
+      0.4,
+      0.22
+    ],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Radial breach (1.8mm) detected on induction heat-seal foil membrane along top carton flange.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01007",
+    "frame_id": "FRAME-CAM01-20261022-01007",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 1.4,
+    "bounding_box_normalized": [],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-00963",
+    "frame_id": "FRAME-CAM01-20261022-00963",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.79,
+    "bounding_box_normalized": [
+      0.42,
+      0.14,
+      0.48,
+      0.18
+    ],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "DIVERT_PNEUMATIC_REJECT_BIN_01"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-00971",
+    "frame_id": "FRAME-CAM01-20261022-00971",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.78,
+    "bounding_box_normalized": [],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Radial breach (1.8mm) detected on induction heat-seal foil membrane along top carton flange.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-00992",
+    "frame_id": "FRAME-CAM01-20261022-00992",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.65,
+    "bounding_box_normalized": [
+      0.35,
+      0.13,
+      0.54,
+      0.14
+    ],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Radial breach (1.8mm) detected on induction heat-seal foil membrane along top carton flange.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01007",
+    "frame_id": "FRAME-CAM01-20261022-01007",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.44,
+    "bounding_box_normalized": [],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01020",
+    "frame_id": "FRAME-CAM01-20261022-01020",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.69,
+    "bounding_box_normalized": [
+      0.47,
+      0.11,
+      0.41,
+      0.22
+    ],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01035",
+    "frame_id": "FRAME-CAM01-20261022-01035",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.64,
+    "bounding_box_normalized": [],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Radial breach (1.8mm) detected on induction heat-seal foil membrane along top carton flange.",
+    "action_triggered": "DIVERT_PNEUMATIC_REJECT_BIN_01"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01048",
+    "frame_id": "FRAME-CAM01-20261022-01048",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.62,
+    "bounding_box_normalized": [
+      0.36,
+      0.18,
+      0.4,
+      0.22
+    ],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01063",
+    "frame_id": "FRAME-CAM01-20261022-01063",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.98,
+    "bounding_box_normalized": [],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Radial breach (1.8mm) detected on induction heat-seal foil membrane along top carton flange.",
+    "action_triggered": "DIVERT_PNEUMATIC_REJECT_BIN_01"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01019",
+    "frame_id": "FRAME-CAM01-20261022-01019",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.71,
+    "bounding_box_normalized": [
+      0.42,
+      0.14,
+      0.48,
+      0.18
+    ],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01027",
+    "frame_id": "FRAME-CAM01-20261022-01027",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.99,
+    "bounding_box_normalized": [],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "DIVERT_PNEUMATIC_REJECT_BIN_01"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01048",
+    "frame_id": "FRAME-CAM01-20261022-01048",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.44,
+    "bounding_box_normalized": [
+      0.35,
+      0.13,
+      0.54,
+      0.14
+    ],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "DIVERT_PNEUMATIC_REJECT_BIN_01"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01063",
+    "frame_id": "FRAME-CAM01-20261022-01063",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.69,
+    "bounding_box_normalized": [],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Radial breach (1.8mm) detected on induction heat-seal foil membrane along top carton flange.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01076",
+    "frame_id": "FRAME-CAM01-20261022-01076",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.6,
+    "bounding_box_normalized": [
+      0.47,
+      0.11,
+      0.41,
+      0.22
+    ],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "DIVERT_PNEUMATIC_REJECT_BIN_01"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01091",
+    "frame_id": "FRAME-CAM01-20261022-01091",
+    "defect_type": "NONE_CONFORMING",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.6,
+    "bounding_box_normalized": [],
+    "defect_severity": "CONFORMING",
+    "defect_description": "Radial breach (1.8mm) detected on induction heat-seal foil membrane along top carton flange.",
+    "action_triggered": "PASS_TO_DOWNSTREAM_PACKER"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01104",
+    "frame_id": "FRAME-CAM01-20261022-01104",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.66,
+    "bounding_box_normalized": [
+      0.36,
+      0.18,
+      0.4,
+      0.22
+    ],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Radial breach (1.8mm) detected on induction heat-seal foil membrane along top carton flange.",
+    "action_triggered": "DIVERT_PNEUMATIC_REJECT_BIN_01"
+  },
+  {
+    "classification_id": "CLS-FLASH-VISION-20261022-01119",
+    "frame_id": "FRAME-CAM01-20261022-01119",
+    "defect_type": "INDUCTION_FOIL_SEAL_TEAR_MICRO_LEAK",
+    "vision_model": "gemini-3.8-flash",
+    "confidence_score": 0.66,
+    "bounding_box_normalized": [],
+    "defect_severity": "CRITICAL_CONTAMINATION_RISK",
+    "defect_description": "Hermetic seal intact, barcode readable, zero particulate or cosmetic blemish.",
+    "action_triggered": "DIVERT_PNEUMATIC_REJECT_BIN_01"
   }
 ]

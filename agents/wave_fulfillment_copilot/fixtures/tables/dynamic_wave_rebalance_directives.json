@@ -78,5 +78,245 @@
     "baseline_hours_needed": 0.85,
     "rebalanced_hours_needed": 1.41,
     "cutoff_buffer_min": 209.0
+  },
+  {
+    "directive_id": "WREB-67",
+    "wave_id": "WAVE-CHI-1466",
+    "from_zone": "ZONE-AMBIENT-03",
+    "to_zone": "ZONE-DRY-01",
+    "pickers_shifted": 5,
+    "baseline_hours_needed": 5.37,
+    "rebalanced_hours_needed": 2.59,
+    "cutoff_buffer_min": 22.83
+  },
+  {
+    "directive_id": "WREB-75",
+    "wave_id": "WAVE-DAL-1503",
+    "from_zone": "ZONE-AMBIENT-03",
+    "to_zone": "DEFER_30MIN",
+    "pickers_shifted": 2,
+    "baseline_hours_needed": 2.48,
+    "rebalanced_hours_needed": 1.76,
+    "cutoff_buffer_min": 12.74
+  },
+  {
+    "directive_id": "WREB-83",
+    "wave_id": "WAVE-FRA-1680",
+    "from_zone": "PACK-FLOAT-ATL",
+    "to_zone": "ZONE-GDP-01",
+    "pickers_shifted": 3,
+    "baseline_hours_needed": 3.99,
+    "rebalanced_hours_needed": 1.8,
+    "cutoff_buffer_min": 39.54
+  },
+  {
+    "directive_id": "WREB-91",
+    "wave_id": "WAVE-ATL-1587",
+    "from_zone": "ZONE-RESERVE-05",
+    "to_zone": "DEFER_45MIN",
+    "pickers_shifted": 2,
+    "baseline_hours_needed": 4.23,
+    "rebalanced_hours_needed": 3.62,
+    "cutoff_buffer_min": 49.88
+  },
+  {
+    "directive_id": "WREB-99",
+    "wave_id": "WAVE-CHI-1624",
+    "from_zone": "ZONE-AMBIENT-03",
+    "to_zone": "DEFER_30MIN",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 1.07,
+    "rebalanced_hours_needed": 1.33,
+    "cutoff_buffer_min": 79.22
+  },
+  {
+    "directive_id": "WREB-107",
+    "wave_id": "WAVE-CHI-1801",
+    "from_zone": "ZONE-RESERVE-05",
+    "to_zone": "ZONE-EACH-03",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 0.79,
+    "rebalanced_hours_needed": 2.1,
+    "cutoff_buffer_min": 130.76
+  },
+  {
+    "directive_id": "WREB-115",
+    "wave_id": "WAVE-DAL-1908",
+    "from_zone": "ZONE-BULK-04",
+    "to_zone": "ZONE-DRY-01",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 1.49,
+    "rebalanced_hours_needed": 2.45,
+    "cutoff_buffer_min": 304.26
+  },
+  {
+    "directive_id": "WREB-123",
+    "wave_id": "WAVE-FRA-2015",
+    "from_zone": "NONE",
+    "to_zone": "ZONE-FAST-01",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 0.41,
+    "rebalanced_hours_needed": 0.87,
+    "cutoff_buffer_min": 130.46
+  },
+  {
+    "directive_id": "WREB-123",
+    "wave_id": "WAVE-CHI-1522",
+    "from_zone": "ZONE-AMBIENT-03",
+    "to_zone": "ZONE-FAST-01",
+    "pickers_shifted": 5,
+    "baseline_hours_needed": 3.73,
+    "rebalanced_hours_needed": 2.13,
+    "cutoff_buffer_min": 14.08
+  },
+  {
+    "directive_id": "WREB-131",
+    "wave_id": "WAVE-DAL-1559",
+    "from_zone": "ZONE-BULK-04",
+    "to_zone": "DEFER_45MIN",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 1.5,
+    "rebalanced_hours_needed": 0.93,
+    "cutoff_buffer_min": 7.08
+  },
+  {
+    "directive_id": "WREB-139",
+    "wave_id": "WAVE-FRA-1736",
+    "from_zone": "ZONE-BULK-04",
+    "to_zone": "ZONE-EACH-03",
+    "pickers_shifted": 3,
+    "baseline_hours_needed": 3.98,
+    "rebalanced_hours_needed": 2.04,
+    "cutoff_buffer_min": 46.48
+  },
+  {
+    "directive_id": "WREB-147",
+    "wave_id": "WAVE-ATL-1643",
+    "from_zone": "NONE",
+    "to_zone": "DEFER_30MIN",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 2.34,
+    "rebalanced_hours_needed": 1.75,
+    "cutoff_buffer_min": 23.89
+  },
+  {
+    "directive_id": "WREB-155",
+    "wave_id": "WAVE-CHI-1680",
+    "from_zone": "ZONE-RESERVE-05",
+    "to_zone": "DEFER_45MIN",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 2.48,
+    "rebalanced_hours_needed": 2.16,
+    "cutoff_buffer_min": 197.18
+  },
+  {
+    "directive_id": "WREB-163",
+    "wave_id": "WAVE-CHI-1857",
+    "from_zone": "ZONE-RESERVE-05",
+    "to_zone": "DEFER_45MIN",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 1.28,
+    "rebalanced_hours_needed": 2.94,
+    "cutoff_buffer_min": 224.74
+  },
+  {
+    "directive_id": "WREB-171",
+    "wave_id": "WAVE-DAL-1964",
+    "from_zone": "ZONE-RESERVE-05",
+    "to_zone": "ZONE-FAST-01",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 0.99,
+    "rebalanced_hours_needed": 2.48,
+    "cutoff_buffer_min": 271.69
+  },
+  {
+    "directive_id": "WREB-179",
+    "wave_id": "WAVE-FRA-2071",
+    "from_zone": "ZONE-BULK-04",
+    "to_zone": "ZONE-CHILL-02",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 0.79,
+    "rebalanced_hours_needed": 1.69,
+    "cutoff_buffer_min": 255.54
+  },
+  {
+    "directive_id": "WREB-179",
+    "wave_id": "WAVE-CHI-1578",
+    "from_zone": "PACK-FLOAT-ATL",
+    "to_zone": "DEFER_45MIN",
+    "pickers_shifted": 6,
+    "baseline_hours_needed": 4.74,
+    "rebalanced_hours_needed": 2.91,
+    "cutoff_buffer_min": 22.4
+  },
+  {
+    "directive_id": "WREB-187",
+    "wave_id": "WAVE-DAL-1615",
+    "from_zone": "ZONE-AMBIENT-03",
+    "to_zone": "ZONE-GDP-01",
+    "pickers_shifted": 2,
+    "baseline_hours_needed": 2.01,
+    "rebalanced_hours_needed": 1.75,
+    "cutoff_buffer_min": 15.04
+  },
+  {
+    "directive_id": "WREB-195",
+    "wave_id": "WAVE-FRA-1792",
+    "from_zone": "NONE",
+    "to_zone": "DEFER_45MIN",
+    "pickers_shifted": 2,
+    "baseline_hours_needed": 2.09,
+    "rebalanced_hours_needed": 1.64,
+    "cutoff_buffer_min": 26.29
+  },
+  {
+    "directive_id": "WREB-203",
+    "wave_id": "WAVE-ATL-1699",
+    "from_zone": "ZONE-RESERVE-05",
+    "to_zone": "ZONE-EACH-03",
+    "pickers_shifted": 2,
+    "baseline_hours_needed": 3.73,
+    "rebalanced_hours_needed": 3.06,
+    "cutoff_buffer_min": 45.42
+  },
+  {
+    "directive_id": "WREB-211",
+    "wave_id": "WAVE-CHI-1736",
+    "from_zone": "ZONE-RESERVE-05",
+    "to_zone": "ZONE-DRY-01",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 0.68,
+    "rebalanced_hours_needed": 0.67,
+    "cutoff_buffer_min": 49.57
+  },
+  {
+    "directive_id": "WREB-219",
+    "wave_id": "WAVE-CHI-1913",
+    "from_zone": "ZONE-AMBIENT-03",
+    "to_zone": "DEFER_30MIN",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 0.52,
+    "rebalanced_hours_needed": 1.28,
+    "cutoff_buffer_min": 108.16
+  },
+  {
+    "directive_id": "WREB-227",
+    "wave_id": "WAVE-DAL-2020",
+    "from_zone": "ZONE-RESERVE-05",
+    "to_zone": "ZONE-DRY-01",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 0.59,
+    "rebalanced_hours_needed": 1.21,
+    "cutoff_buffer_min": 150.48
+  },
+  {
+    "directive_id": "WREB-235",
+    "wave_id": "WAVE-FRA-2127",
+    "from_zone": "PACK-FLOAT-ATL",
+    "to_zone": "DEFER_45MIN",
+    "pickers_shifted": 1,
+    "baseline_hours_needed": 0.8,
+    "rebalanced_hours_needed": 1.4,
+    "cutoff_buffer_min": 183.65
   }
 ]

@@ -78,5 +78,245 @@
     "new_cycle_sec": 33.5,
     "line_efficiency_after_pct": 95.1,
     "shift_overtime_saved_usd": 490.0
+  },
+  {
+    "move_id": "BAL-SHF-67",
+    "line_id": "LINE-ASEPTIC-A67",
+    "operator_id": "OP-AUS-170",
+    "from_station": "STN-STU-TEST-02",
+    "to_station": "STN-AUS-FILL-01",
+    "new_cycle_sec": 20.21,
+    "line_efficiency_after_pct": 89.78,
+    "shift_overtime_saved_usd": 970.75
+  },
+  {
+    "move_id": "BAL-SHF-75",
+    "line_id": "LINE-ASEPTIC-A74",
+    "operator_id": "OP-AUS-191",
+    "from_station": "STN-STU-TEST-02",
+    "to_station": "STN-AUS-FILL-01",
+    "new_cycle_sec": 53.66,
+    "line_efficiency_after_pct": 87.66,
+    "shift_overtime_saved_usd": 2014.28
+  },
+  {
+    "move_id": "BAL-SHF-83",
+    "line_id": "LINE-LASER-B82",
+    "operator_id": "OP-STU-285",
+    "from_station": "STN-BLR-SMT-01",
+    "to_station": "STN-STU-WELD-01",
+    "new_cycle_sec": 77.88,
+    "line_efficiency_after_pct": 92.06,
+    "shift_overtime_saved_usd": 2930.32
+  },
+  {
+    "move_id": "BAL-SHF-91",
+    "line_id": "LINE-IOT-C88",
+    "operator_id": "OP-BLR-389",
+    "from_station": "STN-BLR-BOX-02",
+    "to_station": "STN-AUS-CAP-02",
+    "new_cycle_sec": 26.03,
+    "line_efficiency_after_pct": 97.15,
+    "shift_overtime_saved_usd": 818.66
+  },
+  {
+    "move_id": "BAL-SHF-99",
+    "line_id": "LINE-ASEPTIC-A95",
+    "operator_id": "OP-AUS-216",
+    "from_station": "STN-AUS-CAP-02",
+    "to_station": "STN-AUS-FILL-01",
+    "new_cycle_sec": 55.64,
+    "line_efficiency_after_pct": 84.9,
+    "shift_overtime_saved_usd": 804.58
+  },
+  {
+    "move_id": "BAL-SHF-107",
+    "line_id": "LINE-ASEPTIC-A102",
+    "operator_id": "OP-AUS-236",
+    "from_station": "STN-STU-TEST-02",
+    "to_station": "STN-AUS-PACK-03",
+    "new_cycle_sec": 21.47,
+    "line_efficiency_after_pct": 99.8,
+    "shift_overtime_saved_usd": 292.85
+  },
+  {
+    "move_id": "BAL-SHF-115",
+    "line_id": "LINE-LASER-B110",
+    "operator_id": "OP-STU-327",
+    "from_station": "STN-STU-TEST-02",
+    "to_station": "STN-BLR-BOX-02",
+    "new_cycle_sec": 29.93,
+    "line_efficiency_after_pct": 92.58,
+    "shift_overtime_saved_usd": 334.33
+  },
+  {
+    "move_id": "BAL-SHF-123",
+    "line_id": "LINE-IOT-C116",
+    "operator_id": "OP-BLR-426",
+    "from_station": "STN-STU-WELD-01",
+    "to_station": "STN-BLR-BOX-02",
+    "new_cycle_sec": 46.26,
+    "line_efficiency_after_pct": 99.8,
+    "shift_overtime_saved_usd": 614.91
+  },
+  {
+    "move_id": "BAL-SHF-123",
+    "line_id": "LINE-ASEPTIC-A123",
+    "operator_id": "OP-AUS-226",
+    "from_station": "STN-STU-TEST-02",
+    "to_station": "STN-BLR-SMT-01",
+    "new_cycle_sec": 35.32,
+    "line_efficiency_after_pct": 93.25,
+    "shift_overtime_saved_usd": 1621.08
+  },
+  {
+    "move_id": "BAL-SHF-131",
+    "line_id": "LINE-ASEPTIC-A130",
+    "operator_id": "OP-AUS-247",
+    "from_station": "STN-BLR-BOX-02",
+    "to_station": "STN-AUS-PACK-03",
+    "new_cycle_sec": 26.01,
+    "line_efficiency_after_pct": 87.72,
+    "shift_overtime_saved_usd": 894.9
+  },
+  {
+    "move_id": "BAL-SHF-139",
+    "line_id": "LINE-LASER-B138",
+    "operator_id": "OP-STU-341",
+    "from_station": "STN-STU-TEST-02",
+    "to_station": "STN-AUS-FILL-01",
+    "new_cycle_sec": 30.01,
+    "line_efficiency_after_pct": 99.8,
+    "shift_overtime_saved_usd": 1233.67
+  },
+  {
+    "move_id": "BAL-SHF-147",
+    "line_id": "LINE-IOT-C144",
+    "operator_id": "OP-BLR-445",
+    "from_station": "STN-AUS-PAL-04",
+    "to_station": "STN-BLR-BOX-02",
+    "new_cycle_sec": 36.05,
+    "line_efficiency_after_pct": 86.16,
+    "shift_overtime_saved_usd": 1152.8
+  },
+  {
+    "move_id": "BAL-SHF-155",
+    "line_id": "LINE-ASEPTIC-A151",
+    "operator_id": "OP-AUS-272",
+    "from_station": "STN-BLR-BOX-02",
+    "to_station": "STN-AUS-PACK-03",
+    "new_cycle_sec": 24.89,
+    "line_efficiency_after_pct": 92.81,
+    "shift_overtime_saved_usd": 396.81
+  },
+  {
+    "move_id": "BAL-SHF-163",
+    "line_id": "LINE-ASEPTIC-A158",
+    "operator_id": "OP-AUS-292",
+    "from_station": "STN-BLR-BOX-02",
+    "to_station": "STN-AUS-PACK-03",
+    "new_cycle_sec": 31.88,
+    "line_efficiency_after_pct": 99.8,
+    "shift_overtime_saved_usd": 436.74
+  },
+  {
+    "move_id": "BAL-SHF-171",
+    "line_id": "LINE-LASER-B166",
+    "operator_id": "OP-STU-383",
+    "from_station": "STN-AUS-CAP-02",
+    "to_station": "STN-BLR-SMT-01",
+    "new_cycle_sec": 57.3,
+    "line_efficiency_after_pct": 87.59,
+    "shift_overtime_saved_usd": 615.88
+  },
+  {
+    "move_id": "BAL-SHF-179",
+    "line_id": "LINE-IOT-C172",
+    "operator_id": "OP-BLR-482",
+    "from_station": "STN-AUS-CAP-02",
+    "to_station": "STN-STU-WELD-01",
+    "new_cycle_sec": 15.54,
+    "line_efficiency_after_pct": 83.11,
+    "shift_overtime_saved_usd": 182.5
+  },
+  {
+    "move_id": "BAL-SHF-179",
+    "line_id": "LINE-ASEPTIC-A179",
+    "operator_id": "OP-AUS-282",
+    "from_station": "STN-BLR-BOX-02",
+    "to_station": "STN-BLR-BOX-02",
+    "new_cycle_sec": 50.0,
+    "line_efficiency_after_pct": 99.8,
+    "shift_overtime_saved_usd": 2456.08
+  },
+  {
+    "move_id": "BAL-SHF-187",
+    "line_id": "LINE-ASEPTIC-A186",
+    "operator_id": "OP-AUS-303",
+    "from_station": "STN-AUS-CAP-02",
+    "to_station": "STN-BLR-SMT-01",
+    "new_cycle_sec": 52.26,
+    "line_efficiency_after_pct": 90.41,
+    "shift_overtime_saved_usd": 1895.71
+  },
+  {
+    "move_id": "BAL-SHF-195",
+    "line_id": "LINE-LASER-B194",
+    "operator_id": "OP-STU-397",
+    "from_station": "STN-BLR-SMT-01",
+    "to_station": "STN-AUS-PACK-03",
+    "new_cycle_sec": 26.6,
+    "line_efficiency_after_pct": 84.83,
+    "shift_overtime_saved_usd": 1089.55
+  },
+  {
+    "move_id": "BAL-SHF-203",
+    "line_id": "LINE-IOT-C200",
+    "operator_id": "OP-BLR-501",
+    "from_station": "STN-AUS-PAL-04",
+    "to_station": "STN-STU-WELD-01",
+    "new_cycle_sec": 21.69,
+    "line_efficiency_after_pct": 99.14,
+    "shift_overtime_saved_usd": 728.33
+  },
+  {
+    "move_id": "BAL-SHF-211",
+    "line_id": "LINE-ASEPTIC-A207",
+    "operator_id": "OP-AUS-328",
+    "from_station": "STN-AUS-CAP-02",
+    "to_station": "STN-AUS-PACK-03",
+    "new_cycle_sec": 33.11,
+    "line_efficiency_after_pct": 99.8,
+    "shift_overtime_saved_usd": 597.13
+  },
+  {
+    "move_id": "BAL-SHF-219",
+    "line_id": "LINE-ASEPTIC-A214",
+    "operator_id": "OP-AUS-348",
+    "from_station": "STN-AUS-FILL-01",
+    "to_station": "STN-BLR-SMT-01",
+    "new_cycle_sec": 33.55,
+    "line_efficiency_after_pct": 99.8,
+    "shift_overtime_saved_usd": 476.11
+  },
+  {
+    "move_id": "BAL-SHF-227",
+    "line_id": "LINE-LASER-B222",
+    "operator_id": "OP-STU-439",
+    "from_station": "STN-AUS-FILL-01",
+    "to_station": "STN-BLR-SMT-01",
+    "new_cycle_sec": 61.97,
+    "line_efficiency_after_pct": 99.8,
+    "shift_overtime_saved_usd": 810.76
+  },
+  {
+    "move_id": "BAL-SHF-235",
+    "line_id": "LINE-IOT-C228",
+    "operator_id": "OP-BLR-538",
+    "from_station": "STN-STU-WELD-01",
+    "to_station": "STN-AUS-CAP-02",
+    "new_cycle_sec": 19.69,
+    "line_efficiency_after_pct": 99.8,
+    "shift_overtime_saved_usd": 239.59
   }
 ]

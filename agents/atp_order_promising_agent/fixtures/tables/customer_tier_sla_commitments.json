@@ -78,5 +78,245 @@
     "otif_penalty_fee_per_late_day_usd": 0.126,
     "reserved_allocation_quota_units": 6,
     "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-18",
+    "customer_name": "Omni Wholesale Club",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 99.33,
+    "on_time_in_full_otif_sla_pct": 99.8,
+    "otif_penalty_fee_per_late_day_usd": 2499.8597,
+    "reserved_allocation_quota_units": 12645,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-19",
+    "customer_name": "Omni Wholesale Club",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 99.8,
+    "on_time_in_full_otif_sla_pct": 89.38,
+    "otif_penalty_fee_per_late_day_usd": 0.1462,
+    "reserved_allocation_quota_units": 1,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-R02D98",
+    "customer_name": "Reliance Retail",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 81.66,
+    "on_time_in_full_otif_sla_pct": 75.59,
+    "otif_penalty_fee_per_late_day_usd": 2500.2055,
+    "reserved_allocation_quota_units": 22775,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-R03FEF-21",
+    "customer_name": "Reliance Retail",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 99.8,
+    "on_time_in_full_otif_sla_pct": 82.58,
+    "otif_penalty_fee_per_late_day_usd": 0.2977,
+    "reserved_allocation_quota_units": 6,
+    "status": "PROTECTED_STRATEGIC_TIER"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-R04B127",
+    "customer_name": "Omni Wholesale Club",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 91.85,
+    "on_time_in_full_otif_sla_pct": 83.08,
+    "otif_penalty_fee_per_late_day_usd": 2499.9151,
+    "reserved_allocation_quota_units": 9687,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-R05248",
+    "customer_name": "Omni Wholesale Club",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 64.2,
+    "on_time_in_full_otif_sla_pct": 99.8,
+    "otif_penalty_fee_per_late_day_usd": -0.2303,
+    "reserved_allocation_quota_units": 1,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-R06A171",
+    "customer_name": "Omni Wholesale Club",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 80.67,
+    "on_time_in_full_otif_sla_pct": 99.8,
+    "otif_penalty_fee_per_late_day_usd": 2500.026,
+    "reserved_allocation_quota_units": 8657,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-R07A205",
+    "customer_name": "Summit Stores",
+    "contract_tier": "TIER_1_STRATEGIC",
+    "minimum_fill_rate_sla_pct": 70.11,
+    "on_time_in_full_otif_sla_pct": 99.8,
+    "otif_penalty_fee_per_late_day_usd": 0.0597,
+    "reserved_allocation_quota_units": 8,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-26",
+    "customer_name": "DMart (Avenue Supermarts) National Distribution",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 87.55,
+    "on_time_in_full_otif_sla_pct": 99.8,
+    "otif_penalty_fee_per_late_day_usd": 2500.2506,
+    "reserved_allocation_quota_units": 17360,
+    "status": "PROTECTED_STRATEGIC_TIER"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-27",
+    "customer_name": "Cymbal Retail",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 91.52,
+    "on_time_in_full_otif_sla_pct": 92.95,
+    "otif_penalty_fee_per_late_day_usd": -0.2963,
+    "reserved_allocation_quota_units": 1,
+    "status": "PROTECTED_STRATEGIC_TIER"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-R02D154",
+    "customer_name": "Summit Stores",
+    "contract_tier": "TIER_1_STRATEGIC",
+    "minimum_fill_rate_sla_pct": 92.05,
+    "on_time_in_full_otif_sla_pct": 79.3,
+    "otif_penalty_fee_per_late_day_usd": 2499.6474,
+    "reserved_allocation_quota_units": 15392,
+    "status": "PROTECTED_STRATEGIC_TIER"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-R03FEF-29",
+    "customer_name": "Summit Stores",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 99.8,
+    "on_time_in_full_otif_sla_pct": 75.28,
+    "otif_penalty_fee_per_late_day_usd": -0.1875,
+    "reserved_allocation_quota_units": 5,
+    "status": "PROTECTED_STRATEGIC_TIER"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-R04B183",
+    "customer_name": "DMart (Avenue Supermarts) National Distribution",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 99.8,
+    "on_time_in_full_otif_sla_pct": 72.23,
+    "otif_penalty_fee_per_late_day_usd": 2499.6953,
+    "reserved_allocation_quota_units": 24140,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-R05304",
+    "customer_name": "Summit Stores",
+    "contract_tier": "TIER_1_STRATEGIC",
+    "minimum_fill_rate_sla_pct": 80.1,
+    "on_time_in_full_otif_sla_pct": 99.35,
+    "otif_penalty_fee_per_late_day_usd": -0.1153,
+    "reserved_allocation_quota_units": 2,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-R06A227",
+    "customer_name": "Cymbal Retail",
+    "contract_tier": "TIER_1_STRATEGIC",
+    "minimum_fill_rate_sla_pct": 82.47,
+    "on_time_in_full_otif_sla_pct": 99.8,
+    "otif_penalty_fee_per_late_day_usd": 2500.1966,
+    "reserved_allocation_quota_units": 20281,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-R07A261",
+    "customer_name": "Lone Star Organic Grocers Co-op",
+    "contract_tier": "TIER_1_STRATEGIC",
+    "minimum_fill_rate_sla_pct": 67.87,
+    "on_time_in_full_otif_sla_pct": 99.8,
+    "otif_penalty_fee_per_late_day_usd": 0.2623,
+    "reserved_allocation_quota_units": 4,
+    "status": "PROTECTED_STRATEGIC_TIER"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-34",
+    "customer_name": "Apex Hypermarket",
+    "contract_tier": "TIER_1_STRATEGIC",
+    "minimum_fill_rate_sla_pct": 91.05,
+    "on_time_in_full_otif_sla_pct": 81.77,
+    "otif_penalty_fee_per_late_day_usd": 2499.9647,
+    "reserved_allocation_quota_units": 11609,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-35",
+    "customer_name": "Lone Star Organic Grocers Co-op",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 96.79,
+    "on_time_in_full_otif_sla_pct": 85.53,
+    "otif_penalty_fee_per_late_day_usd": 0.1029,
+    "reserved_allocation_quota_units": 1,
+    "status": "PROTECTED_STRATEGIC_TIER"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-R02D210",
+    "customer_name": "DMart (Avenue Supermarts) National Distribution",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 77.91,
+    "on_time_in_full_otif_sla_pct": 95.26,
+    "otif_penalty_fee_per_late_day_usd": 2500.1039,
+    "reserved_allocation_quota_units": 29421,
+    "status": "PROTECTED_STRATEGIC_TIER"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-R03FEF-37",
+    "customer_name": "DMart (Avenue Supermarts) National Distribution",
+    "contract_tier": "TIER_1_STRATEGIC",
+    "minimum_fill_rate_sla_pct": 88.26,
+    "on_time_in_full_otif_sla_pct": 73.58,
+    "otif_penalty_fee_per_late_day_usd": -0.0371,
+    "reserved_allocation_quota_units": 4,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-R04B239",
+    "customer_name": "Cymbal Retail",
+    "contract_tier": "TIER_1_STRATEGIC",
+    "minimum_fill_rate_sla_pct": 99.8,
+    "on_time_in_full_otif_sla_pct": 75.78,
+    "otif_penalty_fee_per_late_day_usd": 2499.7012,
+    "reserved_allocation_quota_units": 6783,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-R05360",
+    "customer_name": "DMart Avenue",
+    "contract_tier": "TIER_3_STANDARD",
+    "minimum_fill_rate_sla_pct": 64.18,
+    "on_time_in_full_otif_sla_pct": 86.44,
+    "otif_penalty_fee_per_late_day_usd": -0.0177,
+    "reserved_allocation_quota_units": 3,
+    "status": "PROTECTED_STRATEGIC_TIER"
+  },
+  {
+    "customer_id": "CUST-APEX-CORP-R06A283",
+    "customer_name": "Apex Hypermarket",
+    "contract_tier": "TIER_1_STRATEGIC",
+    "minimum_fill_rate_sla_pct": 93.22,
+    "on_time_in_full_otif_sla_pct": 99.8,
+    "otif_penalty_fee_per_late_day_usd": 2500.2443,
+    "reserved_allocation_quota_units": 8961,
+    "status": "PROTECTED_STRATEGIC_TIER"
+  },
+  {
+    "customer_id": "CUST-REGIONAL-ORGANIC-COOP-R07A317",
+    "customer_name": "Apex Hypermarket",
+    "contract_tier": "TIER_1_STRATEGIC",
+    "minimum_fill_rate_sla_pct": 73.06,
+    "on_time_in_full_otif_sla_pct": 93.0,
+    "otif_penalty_fee_per_late_day_usd": 0.4558,
+    "reserved_allocation_quota_units": 5,
+    "status": "UNCOMMITTED_FIRST_COME_FIRST_SERVE"
   }
 ]

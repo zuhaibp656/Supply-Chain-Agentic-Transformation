@@ -134,5 +134,413 @@
     ],
     "daily_revenue_impact_usd": 441600,
     "buffer_days_on_hand": 9.46
+  },
+  {
+    "supplier_id": "VEND-10558",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 2,
+    "parent_tier1_vendor": "Apex Hypermarket",
+    "facility_name": "Hsinchu Fab 4 Advanced Packaging",
+    "country": "Belgium",
+    "lat": 24.4713,
+    "lon": 120.7424,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 749695,
+    "buffer_days_on_hand": 3.6
+  },
+  {
+    "supplier_id": "VEND-30284",
+    "supplier_name": "Summit Stores",
+    "tier_level": 1,
+    "parent_tier1_vendor": "Apex Hypermarket",
+    "facility_name": "Kolkata-Haringhata",
+    "country": "Taiwan",
+    "lat": 51.4605,
+    "lon": 4.4355,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 333978,
+    "buffer_days_on_hand": 8.57
+  },
+  {
+    "supplier_id": "VEND-10587",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 2,
+    "parent_tier1_vendor": "Cymbal Retail",
+    "facility_name": "Chennai-Port",
+    "country": "Taiwan",
+    "lat": 24.4159,
+    "lon": 120.9818,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 866071,
+    "buffer_days_on_hand": 3.78
+  },
+  {
+    "supplier_id": "VEND-30320",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 1,
+    "parent_tier1_vendor": "Reliance Retail",
+    "facility_name": "Pune-Chakan",
+    "country": "Taiwan",
+    "lat": 51.1356,
+    "lon": 4.0609,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 501858,
+    "buffer_days_on_hand": 11.18
+  },
+  {
+    "supplier_id": "VEND-10615",
+    "supplier_name": "Summit Stores",
+    "tier_level": 2,
+    "parent_tier1_vendor": "DMart Avenue",
+    "facility_name": "Pune-Chakan",
+    "country": "Taiwan",
+    "lat": 24.9189,
+    "lon": 120.7714,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 598000,
+    "buffer_days_on_hand": 2.89
+  },
+  {
+    "supplier_id": "VEND-30348",
+    "supplier_name": "Cymbal Retail",
+    "tier_level": 1,
+    "parent_tier1_vendor": "Reliance Retail",
+    "facility_name": "Bengaluru-Hosur",
+    "country": "Taiwan",
+    "lat": 51.0631,
+    "lon": 4.5392,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 263858,
+    "buffer_days_on_hand": 5.08
+  },
+  {
+    "supplier_id": "VEND-10643",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 2,
+    "parent_tier1_vendor": "Omni Wholesale Club",
+    "facility_name": "Bengaluru-Hosur",
+    "country": "Taiwan",
+    "lat": 24.716,
+    "lon": 120.8236,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 1588150,
+    "buffer_days_on_hand": 8.36
+  },
+  {
+    "supplier_id": "VEND-30376",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 1,
+    "parent_tier1_vendor": "DIRECT",
+    "facility_name": "Delhi-NCR",
+    "country": "Taiwan",
+    "lat": 51.6017,
+    "lon": 4.1135,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 499521,
+    "buffer_days_on_hand": 13.6
+  },
+  {
+    "supplier_id": "VEND-10614",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 2,
+    "parent_tier1_vendor": "Reliance Retail",
+    "facility_name": "Delhi-NCR",
+    "country": "Belgium",
+    "lat": 25.0113,
+    "lon": 120.9632,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 1205043,
+    "buffer_days_on_hand": 3.73
+  },
+  {
+    "supplier_id": "VEND-30340",
+    "supplier_name": "Omni Wholesale Club",
+    "tier_level": 1,
+    "parent_tier1_vendor": "Summit Stores",
+    "facility_name": "Hsinchu Fab 4 Advanced Packaging",
+    "country": "Belgium",
+    "lat": 51.1989,
+    "lon": 4.5079,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 464334,
+    "buffer_days_on_hand": 10.77
+  },
+  {
+    "supplier_id": "VEND-10643",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 2,
+    "parent_tier1_vendor": "DMart Avenue",
+    "facility_name": "Delhi-NCR",
+    "country": "Taiwan",
+    "lat": 24.9925,
+    "lon": 120.5656,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 1649367,
+    "buffer_days_on_hand": 5.75
+  },
+  {
+    "supplier_id": "VEND-30376",
+    "supplier_name": "Taiwan Micro-Power Semiconductor Corp",
+    "tier_level": 1,
+    "parent_tier1_vendor": "Omni Wholesale Club",
+    "facility_name": "Ahmedabad-Sanand",
+    "country": "Taiwan",
+    "lat": 51.0683,
+    "lon": 4.5701,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 255706,
+    "buffer_days_on_hand": 6.16
+  },
+  {
+    "supplier_id": "VEND-10671",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 2,
+    "parent_tier1_vendor": "Apex Hypermarket",
+    "facility_name": "Pune-Chakan",
+    "country": "Belgium",
+    "lat": 24.7301,
+    "lon": 120.9968,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 546991,
+    "buffer_days_on_hand": 3.39
+  },
+  {
+    "supplier_id": "VEND-30404",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 1,
+    "parent_tier1_vendor": "DMart Avenue",
+    "facility_name": "Bengaluru-Hosur",
+    "country": "Taiwan",
+    "lat": 50.9826,
+    "lon": 4.2861,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 267646,
+    "buffer_days_on_hand": 6.01
+  },
+  {
+    "supplier_id": "VEND-10699",
+    "supplier_name": "Taiwan Micro-Power Semiconductor Corp",
+    "tier_level": 2,
+    "parent_tier1_vendor": "Omni Wholesale Club",
+    "facility_name": "Hyderabad-Shamshabad",
+    "country": "Belgium",
+    "lat": 24.9481,
+    "lon": 121.1328,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 983034,
+    "buffer_days_on_hand": 4.86
+  },
+  {
+    "supplier_id": "VEND-30432",
+    "supplier_name": "Summit Stores",
+    "tier_level": 1,
+    "parent_tier1_vendor": "Cymbal Retail",
+    "facility_name": "Delhi-NCR",
+    "country": "Belgium",
+    "lat": 51.4098,
+    "lon": 4.3289,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 236608,
+    "buffer_days_on_hand": 4.9
+  },
+  {
+    "supplier_id": "VEND-10670",
+    "supplier_name": "Taiwan Micro-Power Semiconductor Corp",
+    "tier_level": 2,
+    "parent_tier1_vendor": "Reliance Retail",
+    "facility_name": "Hsinchu Fab 4 Advanced Packaging",
+    "country": "Taiwan",
+    "lat": 24.8605,
+    "lon": 121.1914,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 489159,
+    "buffer_days_on_hand": 1.8
+  },
+  {
+    "supplier_id": "VEND-30396",
+    "supplier_name": "DMart Avenue",
+    "tier_level": 1,
+    "parent_tier1_vendor": "Apex Hypermarket",
+    "facility_name": "Ahmedabad-Sanand",
+    "country": "Belgium",
+    "lat": 51.5736,
+    "lon": 4.4591,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 568598,
+    "buffer_days_on_hand": 14.18
+  },
+  {
+    "supplier_id": "VEND-10699",
+    "supplier_name": "Cymbal Retail",
+    "tier_level": 2,
+    "parent_tier1_vendor": "Cymbal Retail",
+    "facility_name": "Hyderabad-Shamshabad",
+    "country": "Belgium",
+    "lat": 25.026,
+    "lon": 121.0906,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 999979,
+    "buffer_days_on_hand": 4.17
+  },
+  {
+    "supplier_id": "VEND-30432",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 1,
+    "parent_tier1_vendor": "DMart Avenue",
+    "facility_name": "Mumbai-Bhiwandi",
+    "country": "Belgium",
+    "lat": 51.2984,
+    "lon": 4.4697,
+    "criticality": "HIGH_SINGLE_SOURCE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 502745,
+    "buffer_days_on_hand": 8.3
+  },
+  {
+    "supplier_id": "VEND-10727",
+    "supplier_name": "Omni Wholesale Club",
+    "tier_level": 2,
+    "parent_tier1_vendor": "DIRECT",
+    "facility_name": "Mundra Sea Port (Adani Ports) Quay 1700",
+    "country": "Taiwan",
+    "lat": 24.6866,
+    "lon": 121.2097,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 750294,
+    "buffer_days_on_hand": 4.2
+  },
+  {
+    "supplier_id": "VEND-30460",
+    "supplier_name": "Cymbal Retail",
+    "tier_level": 1,
+    "parent_tier1_vendor": "Apex Hypermarket",
+    "facility_name": "Kolkata-Haringhata",
+    "country": "Belgium",
+    "lat": 51.3086,
+    "lon": 4.4682,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 262575,
+    "buffer_days_on_hand": 5.61
+  },
+  {
+    "supplier_id": "VEND-10755",
+    "supplier_name": "Cymbal Retail",
+    "tier_level": 2,
+    "parent_tier1_vendor": "Reliance Retail",
+    "facility_name": "Kolkata-Haringhata",
+    "country": "Belgium",
+    "lat": 24.9027,
+    "lon": 120.801,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Microcontroller MCU-800V",
+      "SiC Gate Driver IC"
+    ],
+    "daily_revenue_impact_usd": 464888,
+    "buffer_days_on_hand": 2.16
+  },
+  {
+    "supplier_id": "VEND-30488",
+    "supplier_name": "Reliance Retail",
+    "tier_level": 1,
+    "parent_tier1_vendor": "DIRECT",
+    "facility_name": "Kolkata-Haringhata",
+    "country": "Taiwan",
+    "lat": 51.123,
+    "lon": 4.2173,
+    "criticality": "MEDIUM_MULTI_GATE",
+    "affected_components": [
+      "Sterile Vial Containers",
+      "Lipid Nanoparticles Excipients"
+    ],
+    "daily_revenue_impact_usd": 205116,
+    "buffer_days_on_hand": 4.3
   }
 ]

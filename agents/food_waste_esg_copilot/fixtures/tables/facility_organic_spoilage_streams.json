@@ -70,5 +70,221 @@
     "packaged_flag": true,
     "moisture_pct": 6.0,
     "protein_dry_pct": 1.0
+  },
+  {
+    "stream_id": "ORG-STR-167",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "material_stream": "SHORT_LIFE_CULTURED_DAIRY_CULLS",
+    "tonnage_mt": 85.61,
+    "packaged_flag": false,
+    "moisture_pct": 69.98,
+    "protein_dry_pct": 17.09
+  },
+  {
+    "stream_id": "ORG-STR-175",
+    "facility_id": "Pune-Chakan",
+    "material_stream": "SHORT_LIFE_CULTURED_DAIRY_CULLS",
+    "tonnage_mt": 12.03,
+    "packaged_flag": true,
+    "moisture_pct": 82.11,
+    "protein_dry_pct": 3.23
+  },
+  {
+    "stream_id": "ORG-STR-183",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "material_stream": "COLD_EXCURSION_KEFIR_TRAYS",
+    "tonnage_mt": 13.8,
+    "packaged_flag": false,
+    "moisture_pct": 97.93,
+    "protein_dry_pct": 5.63
+  },
+  {
+    "stream_id": "ORG-STR-191",
+    "facility_id": "Hyderabad-Shamshabad",
+    "material_stream": "COLD_EXCURSION_KEFIR_TRAYS",
+    "tonnage_mt": 16.31,
+    "packaged_flag": false,
+    "moisture_pct": 14.65,
+    "protein_dry_pct": 31.4
+  },
+  {
+    "stream_id": "ORG-STR-199",
+    "facility_id": "Hyderabad-Shamshabad",
+    "material_stream": "SPENT_OAT_MASH_SLURRY",
+    "tonnage_mt": 34.74,
+    "packaged_flag": false,
+    "moisture_pct": 99.8,
+    "protein_dry_pct": 0.5
+  },
+  {
+    "stream_id": "ORG-STR-207",
+    "facility_id": "CMO-XYZ-DALLAS",
+    "material_stream": "EXPIRED_PACKAGED_OATMILK_CASES",
+    "tonnage_mt": 25.04,
+    "packaged_flag": false,
+    "moisture_pct": 67.63,
+    "protein_dry_pct": 1.93
+  },
+  {
+    "stream_id": "ORG-STR-215",
+    "facility_id": "Bengaluru-Hosur",
+    "material_stream": "DAMAGED_ELECTROLYTE_POWDER_POUCHES",
+    "tonnage_mt": 14.2,
+    "packaged_flag": false,
+    "moisture_pct": 96.35,
+    "protein_dry_pct": 6.46
+  },
+  {
+    "stream_id": "ORG-STR-223",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "material_stream": "PROTEIN_BAR_TRIM_SCRAP",
+    "tonnage_mt": 10.02,
+    "packaged_flag": false,
+    "moisture_pct": 6.27,
+    "protein_dry_pct": 1.1
+  },
+  {
+    "stream_id": "ORG-STR-223",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "material_stream": "CRUSHED_ISOTONIC_BEVERAGE_PALLETS",
+    "tonnage_mt": 141.93,
+    "packaged_flag": false,
+    "moisture_pct": 72.91,
+    "protein_dry_pct": 18.15
+  },
+  {
+    "stream_id": "ORG-STR-231",
+    "facility_id": "Ahmedabad-Sanand",
+    "material_stream": "SPENT_OAT_MASH_SLURRY",
+    "tonnage_mt": 24.13,
+    "packaged_flag": true,
+    "moisture_pct": 86.92,
+    "protein_dry_pct": 3.23
+  },
+  {
+    "stream_id": "ORG-STR-239",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "material_stream": "CIP_FRUIT_PUREE_FLUSH_SOLIDS",
+    "tonnage_mt": 23.62,
+    "packaged_flag": false,
+    "moisture_pct": 79.44,
+    "protein_dry_pct": 6.7
+  },
+  {
+    "stream_id": "ORG-STR-247",
+    "facility_id": "PLANT-XYZ-AUSTIN",
+    "material_stream": "DAMAGED_ELECTROLYTE_POWDER_POUCHES",
+    "tonnage_mt": 23.02,
+    "packaged_flag": false,
+    "moisture_pct": 12.71,
+    "protein_dry_pct": 28.68
+  },
+  {
+    "stream_id": "ORG-STR-255",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "material_stream": "COLD_EXCURSION_KEFIR_TRAYS",
+    "tonnage_mt": 37.75,
+    "packaged_flag": false,
+    "moisture_pct": 93.9,
+    "protein_dry_pct": 0.5
+  },
+  {
+    "stream_id": "ORG-STR-263",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "material_stream": "DAMAGED_ELECTROLYTE_POWDER_POUCHES",
+    "tonnage_mt": 12.34,
+    "packaged_flag": true,
+    "moisture_pct": 74.34,
+    "protein_dry_pct": 2.18
+  },
+  {
+    "stream_id": "ORG-STR-271",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "material_stream": "COLD_EXCURSION_KEFIR_TRAYS",
+    "tonnage_mt": 27.01,
+    "packaged_flag": true,
+    "moisture_pct": 70.04,
+    "protein_dry_pct": 7.34
+  },
+  {
+    "stream_id": "ORG-STR-279",
+    "facility_id": "Bengaluru-Hosur",
+    "material_stream": "PROTEIN_BAR_TRIM_SCRAP",
+    "tonnage_mt": 9.33,
+    "packaged_flag": false,
+    "moisture_pct": 5.95,
+    "protein_dry_pct": 1.13
+  },
+  {
+    "stream_id": "ORG-STR-279",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "material_stream": "SPENT_OAT_MASH_SLURRY",
+    "tonnage_mt": 72.87,
+    "packaged_flag": false,
+    "moisture_pct": 83.82,
+    "protein_dry_pct": 16.93
+  },
+  {
+    "stream_id": "ORG-STR-287",
+    "facility_id": "PLANT-XYZ-AUSTIN",
+    "material_stream": "SPENT_OAT_MASH_SLURRY",
+    "tonnage_mt": 24.57,
+    "packaged_flag": false,
+    "moisture_pct": 74.79,
+    "protein_dry_pct": 2.83
+  },
+  {
+    "stream_id": "ORG-STR-295",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "material_stream": "EXPIRED_PACKAGED_OATMILK_CASES",
+    "tonnage_mt": 11.86,
+    "packaged_flag": false,
+    "moisture_pct": 88.87,
+    "protein_dry_pct": 7.92
+  },
+  {
+    "stream_id": "ORG-STR-303",
+    "facility_id": "Mumbai-Bhiwandi",
+    "material_stream": "SPENT_OAT_MASH_SLURRY",
+    "tonnage_mt": 30.2,
+    "packaged_flag": false,
+    "moisture_pct": 15.5,
+    "protein_dry_pct": 33.92
+  },
+  {
+    "stream_id": "ORG-STR-311",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "material_stream": "DAMAGED_ELECTROLYTE_POWDER_POUCHES",
+    "tonnage_mt": 26.86,
+    "packaged_flag": false,
+    "moisture_pct": 80.55,
+    "protein_dry_pct": 0.5
+  },
+  {
+    "stream_id": "ORG-STR-319",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "material_stream": "CIP_FRUIT_PUREE_FLUSH_SOLIDS",
+    "tonnage_mt": 20.18,
+    "packaged_flag": true,
+    "moisture_pct": 80.63,
+    "protein_dry_pct": 1.81
+  },
+  {
+    "stream_id": "ORG-STR-327",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "material_stream": "SHORT_LIFE_CULTURED_DAIRY_CULLS",
+    "tonnage_mt": 15.75,
+    "packaged_flag": false,
+    "moisture_pct": 72.47,
+    "protein_dry_pct": 6.06
+  },
+  {
+    "stream_id": "ORG-STR-335",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "material_stream": "EXPIRED_PACKAGED_OATMILK_CASES",
+    "tonnage_mt": 17.27,
+    "packaged_flag": false,
+    "moisture_pct": 6.16,
+    "protein_dry_pct": 1.06
   }
 ]

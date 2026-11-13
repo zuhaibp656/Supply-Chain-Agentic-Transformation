@@ -78,5 +78,245 @@
     "arrival_seal_intact": false,
     "driver_signed_epod_exception": true,
     "photo_evidence_count": 5
+  },
+  {
+    "osd_id": "OSD-967",
+    "ebol_id": "EBOL-2026-4476",
+    "exception_type": "BROKEN_SEAL_SHORTAGE",
+    "short_cases": 1,
+    "damaged_cases": 82,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 5
+  },
+  {
+    "osd_id": "OSD-975",
+    "ebol_id": "EBOL-2026-4498",
+    "exception_type": "SHORTAGE_PILFERAGE_TERMINAL",
+    "short_cases": 13,
+    "damaged_cases": 4,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 6
+  },
+  {
+    "osd_id": "OSD-983",
+    "ebol_id": "EBOL-2026-4519",
+    "exception_type": "WATER_WET_TRAILER_ROOF_LEAK",
+    "short_cases": 1,
+    "damaged_cases": 262,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 4
+  },
+  {
+    "osd_id": "OSD-991",
+    "ebol_id": "EBOL-2026-4538",
+    "exception_type": "BROKEN_SEAL_SHORTAGE",
+    "short_cases": 1,
+    "damaged_cases": 9,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": false,
+    "photo_evidence_count": 9
+  },
+  {
+    "osd_id": "OSD-999",
+    "ebol_id": "EBOL-2026-4562",
+    "exception_type": "SHORTAGE_SEAL_INTACT_SHIPPER_LOAD",
+    "short_cases": 1,
+    "damaged_cases": 134,
+    "arrival_seal_intact": false,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 6
+  },
+  {
+    "osd_id": "OSD-1007",
+    "ebol_id": "EBOL-2026-4580",
+    "exception_type": "CONCEALED_SHOCK_CRUSH_REPORTED_48H",
+    "short_cases": 1,
+    "damaged_cases": 2,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": false,
+    "photo_evidence_count": 8
+  },
+  {
+    "osd_id": "OSD-1015",
+    "ebol_id": "EBOL-2026-4598",
+    "exception_type": "WATER_WET_TRAILER_ROOF_LEAK",
+    "short_cases": 17,
+    "damaged_cases": 1,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 3
+  },
+  {
+    "osd_id": "OSD-1023",
+    "ebol_id": "EBOL-2026-4619",
+    "exception_type": "REEFER_SPOILAGE_TEMP_ABUSE",
+    "short_cases": 100,
+    "damaged_cases": 19,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 8
+  },
+  {
+    "osd_id": "OSD-1023",
+    "ebol_id": "EBOL-2026-4532",
+    "exception_type": "CRUSHED_PALLETS_FORKLIFT_PUNCTURE",
+    "short_cases": 1,
+    "damaged_cases": 88,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 7
+  },
+  {
+    "osd_id": "OSD-1031",
+    "ebol_id": "EBOL-2026-4554",
+    "exception_type": "REEFER_SPOILAGE_TEMP_ABUSE",
+    "short_cases": 11,
+    "damaged_cases": 3,
+    "arrival_seal_intact": false,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 3
+  },
+  {
+    "osd_id": "OSD-1039",
+    "ebol_id": "EBOL-2026-4575",
+    "exception_type": "CONCEALED_SHOCK_CRUSH_REPORTED_48H",
+    "short_cases": 1,
+    "damaged_cases": 588,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 12
+  },
+  {
+    "osd_id": "OSD-1047",
+    "ebol_id": "EBOL-2026-4594",
+    "exception_type": "REEFER_SPOILAGE_TEMP_ABUSE",
+    "short_cases": 1,
+    "damaged_cases": 5,
+    "arrival_seal_intact": false,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 7
+  },
+  {
+    "osd_id": "OSD-1055",
+    "ebol_id": "EBOL-2026-4618",
+    "exception_type": "REEFER_SPOILAGE_TEMP_ABUSE",
+    "short_cases": 1,
+    "damaged_cases": 107,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 6
+  },
+  {
+    "osd_id": "OSD-1063",
+    "ebol_id": "EBOL-2026-4636",
+    "exception_type": "SHORTAGE_SEAL_INTACT_SHIPPER_LOAD",
+    "short_cases": 1,
+    "damaged_cases": 3,
+    "arrival_seal_intact": false,
+    "driver_signed_epod_exception": false,
+    "photo_evidence_count": 10
+  },
+  {
+    "osd_id": "OSD-1071",
+    "ebol_id": "EBOL-2026-4654",
+    "exception_type": "WATER_WET_TRAILER_ROOF_LEAK",
+    "short_cases": 14,
+    "damaged_cases": 1,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": false,
+    "photo_evidence_count": 2
+  },
+  {
+    "osd_id": "OSD-1079",
+    "ebol_id": "EBOL-2026-4675",
+    "exception_type": "CRUSHED_PALLETS_FORKLIFT_PUNCTURE",
+    "short_cases": 62,
+    "damaged_cases": 15,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": false,
+    "photo_evidence_count": 5
+  },
+  {
+    "osd_id": "OSD-1079",
+    "ebol_id": "EBOL-2026-4588",
+    "exception_type": "SHORTAGE_SEAL_INTACT_SHIPPER_LOAD",
+    "short_cases": 1,
+    "damaged_cases": 134,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 8
+  },
+  {
+    "osd_id": "OSD-1087",
+    "ebol_id": "EBOL-2026-4610",
+    "exception_type": "CRUSHED_PALLETS_FORKLIFT_PUNCTURE",
+    "short_cases": 7,
+    "damaged_cases": 2,
+    "arrival_seal_intact": false,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 2
+  },
+  {
+    "osd_id": "OSD-1095",
+    "ebol_id": "EBOL-2026-4631",
+    "exception_type": "CRUSHED_PALLETS_FORKLIFT_PUNCTURE",
+    "short_cases": 1,
+    "damaged_cases": 360,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 8
+  },
+  {
+    "osd_id": "OSD-1103",
+    "ebol_id": "EBOL-2026-4650",
+    "exception_type": "BROKEN_SEAL_SHORTAGE",
+    "short_cases": 1,
+    "damaged_cases": 4,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 5
+  },
+  {
+    "osd_id": "OSD-1111",
+    "ebol_id": "EBOL-2026-4674",
+    "exception_type": "SHORTAGE_SEAL_INTACT_SHIPPER_LOAD",
+    "short_cases": 1,
+    "damaged_cases": 95,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": false,
+    "photo_evidence_count": 5
+  },
+  {
+    "osd_id": "OSD-1119",
+    "ebol_id": "EBOL-2026-4692",
+    "exception_type": "REEFER_SPOILAGE_TEMP_ABUSE",
+    "short_cases": 1,
+    "damaged_cases": 1,
+    "arrival_seal_intact": false,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 4
+  },
+  {
+    "osd_id": "OSD-1127",
+    "ebol_id": "EBOL-2026-4710",
+    "exception_type": "CRUSHED_PALLETS_FORKLIFT_PUNCTURE",
+    "short_cases": 9,
+    "damaged_cases": 1,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 2
+  },
+  {
+    "osd_id": "OSD-1135",
+    "ebol_id": "EBOL-2026-4731",
+    "exception_type": "REEFER_SPOILAGE_TEMP_ABUSE",
+    "short_cases": 52,
+    "damaged_cases": 13,
+    "arrival_seal_intact": true,
+    "driver_signed_epod_exception": true,
+    "photo_evidence_count": 3
   }
 ]

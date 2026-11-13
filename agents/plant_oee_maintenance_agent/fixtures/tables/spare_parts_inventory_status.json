@@ -130,5 +130,401 @@
     "lead_time_days": 6,
     "supplier_id": "SUP-XYZ-T1-ALUWELD",
     "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7080",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 2,
+    "reserved_quantity": 1,
+    "available_quantity": 1,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 570.17,
+    "lead_time_days": 9,
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-81",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 6,
+    "reserved_quantity": 1,
+    "available_quantity": 6,
+    "safety_stock_threshold": 2,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 360.59,
+    "lead_time_days": 9,
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7109",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 1,
+    "reserved_quantity": 2,
+    "available_quantity": 1,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 515.62,
+    "lead_time_days": 10,
+    "supplier_id": "VEND-PARKER-HANNIFIN",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-117",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 6,
+    "reserved_quantity": 7,
+    "available_quantity": 7,
+    "safety_stock_threshold": 2,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 256.43,
+    "lead_time_days": 8,
+    "supplier_id": "Reliance Retail",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7137",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 5,
+    "reserved_quantity": 1,
+    "available_quantity": 4,
+    "safety_stock_threshold": 2,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 2528.15,
+    "lead_time_days": 20,
+    "supplier_id": "Apex Hypermarket",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-145",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 4,
+    "reserved_quantity": 1,
+    "available_quantity": 2,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 158.06,
+    "lead_time_days": 2,
+    "supplier_id": "Cymbal Retail",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7165",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 4,
+    "reserved_quantity": 5,
+    "available_quantity": 4,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 1643.83,
+    "lead_time_days": 26,
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-173",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 3,
+    "reserved_quantity": 5,
+    "available_quantity": 4,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 271.58,
+    "lead_time_days": 5,
+    "supplier_id": "DMart Avenue",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7136",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 4,
+    "reserved_quantity": 1,
+    "available_quantity": 3,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 1396.52,
+    "lead_time_days": 19,
+    "supplier_id": "VEND-SKF-BEARINGS-US",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-137",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 3,
+    "reserved_quantity": 1,
+    "available_quantity": 3,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 186.65,
+    "lead_time_days": 4,
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7165",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 2,
+    "reserved_quantity": 3,
+    "available_quantity": 2,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 715.17,
+    "lead_time_days": 16,
+    "supplier_id": "VEND-SKF-BEARINGS-US",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-173",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 7,
+    "reserved_quantity": 7,
+    "available_quantity": 9,
+    "safety_stock_threshold": 3,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 285.78,
+    "lead_time_days": 10,
+    "supplier_id": "Reliance Retail",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7193",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 2,
+    "reserved_quantity": 1,
+    "available_quantity": 1,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 647.56,
+    "lead_time_days": 7,
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-201",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 4,
+    "reserved_quantity": 1,
+    "available_quantity": 3,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 192.98,
+    "lead_time_days": 3,
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7221",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 5,
+    "reserved_quantity": 6,
+    "available_quantity": 5,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 1422.37,
+    "lead_time_days": 29,
+    "supplier_id": "VEND-SKF-BEARINGS-US",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-229",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 2,
+    "reserved_quantity": 4,
+    "available_quantity": 3,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 249.38,
+    "lead_time_days": 4,
+    "supplier_id": "Omni Wholesale Club",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7192",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 3,
+    "reserved_quantity": 1,
+    "available_quantity": 2,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 1193.34,
+    "lead_time_days": 17,
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-193",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 4,
+    "reserved_quantity": 1,
+    "available_quantity": 5,
+    "safety_stock_threshold": 2,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 293.73,
+    "lead_time_days": 7,
+    "supplier_id": "Cymbal Retail",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7221",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 2,
+    "reserved_quantity": 3,
+    "available_quantity": 2,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 841.63,
+    "lead_time_days": 14,
+    "supplier_id": "VEND-SKF-BEARINGS-US",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-229",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 6,
+    "reserved_quantity": 7,
+    "available_quantity": 7,
+    "safety_stock_threshold": 2,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 361.22,
+    "lead_time_days": 8,
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7249",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 5,
+    "reserved_quantity": 1,
+    "available_quantity": 3,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 1626.68,
+    "lead_time_days": 16,
+    "supplier_id": "Omni Wholesale Club",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-257",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 4,
+    "reserved_quantity": 1,
+    "available_quantity": 5,
+    "safety_stock_threshold": 2,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 254.18,
+    "lead_time_days": 4,
+    "supplier_id": "Apex Hypermarket",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-BEARING-CERAMIC-7277",
+    "description": "High-Precision Angular Contact Ceramic Spindle Bearing (7014-C-P4A)",
+    "compatible_assets": [
+      "ASSET-MILLING-CNC-04",
+      "ASSET-MILLING-CNC-05"
+    ],
+    "stock_on_hand": 2,
+    "reserved_quantity": 4,
+    "available_quantity": 2,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-04-A12",
+    "unit_cost_usd": 903.94,
+    "lead_time_days": 16,
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "stock_status": "IN_STOCK_READY"
+  },
+  {
+    "part_number": "PART-SPARE-HYD-SEAL-KIT-285",
+    "description": "FKM Viton Hydraulic Cylinder Seal Kit for 200T Clamping Unit",
+    "compatible_assets": [
+      "ASSET-INJECTION-MOLD-02"
+    ],
+    "stock_on_hand": 2,
+    "reserved_quantity": 3,
+    "available_quantity": 2,
+    "safety_stock_threshold": 1,
+    "storage_bin": "BIN-AUSTIN-CRIB-02-B08",
+    "unit_cost_usd": 153.58,
+    "lead_time_days": 3,
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "stock_status": "IN_STOCK_READY"
   }
 ]

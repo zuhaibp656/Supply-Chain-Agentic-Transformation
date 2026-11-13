@@ -37,10 +37,13 @@ from typing import Any, Dict, List
 import socket as _socket_mod
 _orig_getaddrinfo = _socket_mod.getaddrinfo
 def _ipv4_only_getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
-    if family == 0:
-        family = _socket_mod.AF_INET
-    return _orig_getaddrinfo(host, port, family, type, proto, flags)
+    return _orig_getaddrinfo(host, port, _socket_mod.AF_INET, type, proto, flags)
 _socket_mod.getaddrinfo = _ipv4_only_getaddrinfo
+try:
+    import urllib3.util.connection as _u3_conn
+    _u3_conn.allowed_gai_family = lambda: _socket_mod.AF_INET
+except Exception:
+    pass
 
 os.environ["GOOGLE_API_USE_CLIENT_CERTIFICATE"] = "false"
 ROOT = Path(__file__).resolve().parent.parent
@@ -592,6 +595,46 @@ def ensure_bucket(project: str, region: str, name: str) -> str:
     return name
 
 
+def _add_iam_binding(policy: dict, role: str, member: str) -> bool:
+    for b in policy.setdefault("bindings", []):
+        if b.get("role") == role:
+            if member in b.get("members", []):
+                return False
+            b.setdefault("members", []).append(member)
+            return True
+    policy["bindings"].append({"role": role, "members": [member]})
+    return True
+
+
+def ensure_media_bucket_and_runtime_iam(project: str, media_bucket: str) -> str:
+    """FleetFlow-pattern IAM: ensures runtime service account can upload HTML/CSV to media_bucket
+    AND sign V4 inline URLs (`roles/iam.serviceAccountTokenCreator` on itself).
+    """
+    sa_email = f"loadpilot-agent@{project}.iam.gserviceaccount.com"
+    try:
+        pnum = api("GET", f"https://cloudresourcemanager.googleapis.com/v1/projects/{project}", project=project)["projectNumber"]
+        re_agent = f"serviceAccount:service-{pnum}@gcp-sa-aiplatform-re.iam.gserviceaccount.com"
+        compute_sa = f"serviceAccount:{pnum}-compute@developer.gserviceaccount.com"
+        runtime_member = f"serviceAccount:{sa_email}"
+
+        bpol = api("GET", f"https://storage.googleapis.com/storage/v1/b/{media_bucket}/iam?optionsRequestedPolicyVersion=3", project=project)
+        changed = False
+        for m in (runtime_member, re_agent, compute_sa):
+            changed |= _add_iam_binding(bpol, "roles/storage.objectAdmin", m)
+        if changed:
+            api("PUT", f"https://storage.googleapis.com/storage/v1/b/{media_bucket}/iam", body=bpol, project=project)
+            print(f"[OK] Granted roles/storage.objectAdmin on gs://{media_bucket} to runtime & RE service accounts")
+
+        sa_res = f"https://iam.googleapis.com/v1/projects/{project}/serviceAccounts/{sa_email}"
+        spol = api("POST", f"{sa_res}:getIamPolicy", body={}, project=project)
+        if _add_iam_binding(spol, "roles/iam.serviceAccountTokenCreator", runtime_member):
+            api("POST", f"{sa_res}:setIamPolicy", body={"policy": spol}, project=project)
+        print(f"[OK] Runtime SA ready for V4 inline HTML signing: {sa_email}")
+    except Exception as e:
+        print(f"[WARN] Media IAM check note: {e}")
+    return sa_email
+
+
 REQUIREMENTS = [
     "google-cloud-aiplatform[agent_engines,adk]>=1.160.0",
     "google-adk>=2.6.0,<3.0.0",
@@ -680,6 +723,7 @@ def deploy_agent_engine(
             env_vars=env_vars,
             resource_limits={"cpu": "2", "memory": "4Gi"},
             min_instances=1,
+            service_account=f"loadpilot-agent@{project}.iam.gserviceaccount.com",
         )
 
         state_file = agent_dir / ".reasoning_engine_id"
@@ -868,6 +912,7 @@ def main() -> None:
         enable_apis(args.project)
         ensure_bucket(args.project, args.region, staging_bucket)
         ensure_bucket(args.project, args.region, media_bucket)
+        ensure_media_bucket_and_runtime_iam(args.project, media_bucket)
 
     if args.parallel > 1 and len(targets) > 1 and not args.dry_run and not args.skip_engine:
         from concurrent.futures import ThreadPoolExecutor, as_completed

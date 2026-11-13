@@ -125,3 +125,47 @@ def search_public_career_titles(company_name: str, division_name: str = "") -> L
         if len(discovered) >= 8:
             break
     return discovered
+
+
+def mine_public_job_descriptions(company_name: str, division_name: str = "") -> List[Dict[str, str]]:
+    """Extracts public Supply Chain job postings, URLs, and JD process snippets revealing internal org units & tools."""
+    q = (
+        f'"{company_name}" {division_name} '
+        f'("Supply Chain" OR "Procurement" OR "Logistics" OR "Planning" OR "Manufacturing" OR "Warehouse") '
+        f'("Responsibilities" OR "SAP" OR "Kinaxis" OR "Blue Yonder" OR "WMS" OR "S&OP") '
+        f'(site:linkedin.com/jobs OR site:naukri.com OR site:indeed.com OR careers)'
+    )
+    ddg_url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(q)}"
+    page = _http_text(ddg_url, timeout=6.0)
+    if not page:
+        return []
+
+    blocks = re.findall(
+        r'<a[^>]*class="result__a"[^>]*href="([^"]+)"[^>]*>(.*?)</a>.*?(?:<a[^>]*class="result__snippet"[^>]*>(.*?)</a>|<div[^>]*class="result__snippet"[^>]*>(.*?)</div>)',
+        page,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    results: List[Dict[str, str]] = []
+    for raw_href, raw_title, snip1, snip2 in blocks:
+        url = html.unescape(raw_href)
+        m_uddg = re.search(r"uddg=([^&]+)", url)
+        if m_uddg:
+            url = urllib.parse.unquote(m_uddg.group(1))
+        title = html.unescape(re.sub(r"<[^>]+>", "", raw_title)).strip()
+        title = re.split(
+            r"\s+[\-\|\–]\s+(?:LinkedIn|Naukri|Glassdoor|Indeed|Jobs|Careers)",
+            title,
+            flags=re.IGNORECASE,
+        )[0].strip()
+        snippet = html.unescape(re.sub(r"<[^>]+>", " ", snip1 or snip2 or "")).strip()
+        snippet = re.sub(r"\s+", " ", snippet)
+        if title and url.startswith("http") and len(snippet) >= 25:
+            results.append({
+                "job_title": title[:110],
+                "url": url,
+                "snippet": snippet[:320],
+            })
+        if len(results) >= 8:
+            break
+    return results
+

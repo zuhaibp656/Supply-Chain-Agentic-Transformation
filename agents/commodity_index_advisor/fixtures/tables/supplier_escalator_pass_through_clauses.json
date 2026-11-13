@@ -78,5 +78,245 @@
     "supplier_requested_hike_pct": 0.0,
     "formula_verified_hike_pct": -2.6,
     "overcharge_exposure_usd": 74000
+  },
+  {
+    "clause_id": "CLS-IND-67",
+    "supplier_id": "Apex Hypermarket",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "index_weight_in_price_pct": 72.97,
+    "deadband_corridor_pct": 5.34,
+    "supplier_requested_hike_pct": 9.91,
+    "formula_verified_hike_pct": 5.38,
+    "overcharge_exposure_usd": 96187
+  },
+  {
+    "clause_id": "CLS-IND-75",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "commodity_code": "FAST-LITHIUM-CARB-BG",
+    "index_weight_in_price_pct": 60.79,
+    "deadband_corridor_pct": 4.21,
+    "supplier_requested_hike_pct": 0.5,
+    "formula_verified_hike_pct": 0.5,
+    "overcharge_exposure_usd": 200479
+  },
+  {
+    "clause_id": "CLS-IND-83",
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "commodity_code": "ICIS-RPET-FOODGRADE-US",
+    "index_weight_in_price_pct": 40.93,
+    "deadband_corridor_pct": 4.6,
+    "supplier_requested_hike_pct": 0.5,
+    "formula_verified_hike_pct": 0.5,
+    "overcharge_exposure_usd": 377724
+  },
+  {
+    "clause_id": "CLS-IND-91",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "commodity_code": "EU-NAT-GAS-TTF-GLASS",
+    "index_weight_in_price_pct": 62.38,
+    "deadband_corridor_pct": 4.67,
+    "supplier_requested_hike_pct": 10.81,
+    "formula_verified_hike_pct": 6.04,
+    "overcharge_exposure_usd": 126915
+  },
+  {
+    "clause_id": "CLS-IND-99",
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "index_weight_in_price_pct": 60.4,
+    "deadband_corridor_pct": 5.81,
+    "supplier_requested_hike_pct": 10.1,
+    "formula_verified_hike_pct": 8.53,
+    "overcharge_exposure_usd": 94190
+  },
+  {
+    "clause_id": "CLS-IND-107",
+    "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
+    "commodity_code": "LME-ALUMINUM-P1020",
+    "index_weight_in_price_pct": 49.73,
+    "deadband_corridor_pct": 5.01,
+    "supplier_requested_hike_pct": 9.62,
+    "formula_verified_hike_pct": 5.72,
+    "overcharge_exposure_usd": 110391
+  },
+  {
+    "clause_id": "CLS-IND-115",
+    "supplier_id": "DMart Avenue",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "index_weight_in_price_pct": 63.8,
+    "deadband_corridor_pct": 3.58,
+    "supplier_requested_hike_pct": 8.03,
+    "formula_verified_hike_pct": 6.31,
+    "overcharge_exposure_usd": 108147
+  },
+  {
+    "clause_id": "CLS-IND-123",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "commodity_code": "CBOT-MILLING-OATS",
+    "index_weight_in_price_pct": 44.11,
+    "deadband_corridor_pct": 5.8,
+    "supplier_requested_hike_pct": 0.5,
+    "formula_verified_hike_pct": 0.5,
+    "overcharge_exposure_usd": 106639
+  },
+  {
+    "clause_id": "CLS-IND-123",
+    "supplier_id": "Cymbal Retail",
+    "commodity_code": "CBOT-MILLING-OATS",
+    "index_weight_in_price_pct": 72.72,
+    "deadband_corridor_pct": 4.91,
+    "supplier_requested_hike_pct": 9.94,
+    "formula_verified_hike_pct": 6.89,
+    "overcharge_exposure_usd": 227810
+  },
+  {
+    "clause_id": "CLS-IND-131",
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "commodity_code": "EU-NAT-GAS-TTF-GLASS",
+    "index_weight_in_price_pct": 77.3,
+    "deadband_corridor_pct": 3.56,
+    "supplier_requested_hike_pct": 0.5,
+    "formula_verified_hike_pct": 0.5,
+    "overcharge_exposure_usd": 499804
+  },
+  {
+    "clause_id": "CLS-IND-139",
+    "supplier_id": "Summit Stores",
+    "commodity_code": "LME-ALUMINUM-P1020",
+    "index_weight_in_price_pct": 44.02,
+    "deadband_corridor_pct": 5.37,
+    "supplier_requested_hike_pct": 0.5,
+    "formula_verified_hike_pct": 0.5,
+    "overcharge_exposure_usd": 422105
+  },
+  {
+    "clause_id": "CLS-IND-147",
+    "supplier_id": "Cymbal Retail",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "index_weight_in_price_pct": 48.94,
+    "deadband_corridor_pct": 3.32,
+    "supplier_requested_hike_pct": 11.45,
+    "formula_verified_hike_pct": 8.1,
+    "overcharge_exposure_usd": 190046
+  },
+  {
+    "clause_id": "CLS-IND-155",
+    "supplier_id": "Apex Hypermarket",
+    "commodity_code": "ICIS-RPET-FOODGRADE-US",
+    "index_weight_in_price_pct": 64.01,
+    "deadband_corridor_pct": 4.4,
+    "supplier_requested_hike_pct": 9.7,
+    "formula_verified_hike_pct": 8.59,
+    "overcharge_exposure_usd": 161357
+  },
+  {
+    "clause_id": "CLS-IND-163",
+    "supplier_id": "SUP-XYZ-T1-SCHOTTCRYO",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "index_weight_in_price_pct": 55.42,
+    "deadband_corridor_pct": 4.78,
+    "supplier_requested_hike_pct": 8.11,
+    "formula_verified_hike_pct": 6.32,
+    "overcharge_exposure_usd": 127587
+  },
+  {
+    "clause_id": "CLS-IND-171",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "commodity_code": "CBOT-MILLING-OATS",
+    "index_weight_in_price_pct": 53.93,
+    "deadband_corridor_pct": 3.6,
+    "supplier_requested_hike_pct": 8.46,
+    "formula_verified_hike_pct": 5.95,
+    "overcharge_exposure_usd": 221226
+  },
+  {
+    "clause_id": "CLS-IND-179",
+    "supplier_id": "Reliance Retail",
+    "commodity_code": "CBOT-MILLING-OATS",
+    "index_weight_in_price_pct": 33.95,
+    "deadband_corridor_pct": 6.07,
+    "supplier_requested_hike_pct": 0.5,
+    "formula_verified_hike_pct": 0.5,
+    "overcharge_exposure_usd": 126449
+  },
+  {
+    "clause_id": "CLS-IND-179",
+    "supplier_id": "Reliance Retail",
+    "commodity_code": "ICIS-RPET-FOODGRADE-US",
+    "index_weight_in_price_pct": 57.08,
+    "deadband_corridor_pct": 4.46,
+    "supplier_requested_hike_pct": 9.26,
+    "formula_verified_hike_pct": 5.71,
+    "overcharge_exposure_usd": 358604
+  },
+  {
+    "clause_id": "CLS-IND-187",
+    "supplier_id": "Omni Wholesale Club",
+    "commodity_code": "CME-WHEY-ISOLATE-80",
+    "index_weight_in_price_pct": 70.67,
+    "deadband_corridor_pct": 4.65,
+    "supplier_requested_hike_pct": 0.5,
+    "formula_verified_hike_pct": 0.5,
+    "overcharge_exposure_usd": 417893
+  },
+  {
+    "clause_id": "CLS-IND-195",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "commodity_code": "FAST-LITHIUM-CARB-BG",
+    "index_weight_in_price_pct": 41.05,
+    "deadband_corridor_pct": 4.18,
+    "supplier_requested_hike_pct": 0.5,
+    "formula_verified_hike_pct": 0.5,
+    "overcharge_exposure_usd": 281367
+  },
+  {
+    "clause_id": "CLS-IND-203",
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "commodity_code": "EU-NAT-GAS-TTF-GLASS",
+    "index_weight_in_price_pct": 55.71,
+    "deadband_corridor_pct": 3.65,
+    "supplier_requested_hike_pct": 12.67,
+    "formula_verified_hike_pct": 7.15,
+    "overcharge_exposure_usd": 77034
+  },
+  {
+    "clause_id": "CLS-IND-211",
+    "supplier_id": "Reliance Retail",
+    "commodity_code": "ICIS-RPET-FOODGRADE-US",
+    "index_weight_in_price_pct": 63.33,
+    "deadband_corridor_pct": 5.56,
+    "supplier_requested_hike_pct": 10.63,
+    "formula_verified_hike_pct": 8.38,
+    "overcharge_exposure_usd": 113546
+  },
+  {
+    "clause_id": "CLS-IND-219",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "commodity_code": "ICIS-RPET-FOODGRADE-US",
+    "index_weight_in_price_pct": 57.63,
+    "deadband_corridor_pct": 4.97,
+    "supplier_requested_hike_pct": 8.62,
+    "formula_verified_hike_pct": 5.48,
+    "overcharge_exposure_usd": 191105
+  },
+  {
+    "clause_id": "CLS-IND-227",
+    "supplier_id": "Reliance Retail",
+    "commodity_code": "SGX-TSR20-NAT-RUBBER",
+    "index_weight_in_price_pct": 66.42,
+    "deadband_corridor_pct": 4.09,
+    "supplier_requested_hike_pct": 8.36,
+    "formula_verified_hike_pct": 5.12,
+    "overcharge_exposure_usd": 164391
+  },
+  {
+    "clause_id": "CLS-IND-235",
+    "supplier_id": "Reliance Retail",
+    "commodity_code": "FAST-LITHIUM-CARB-BG",
+    "index_weight_in_price_pct": 40.25,
+    "deadband_corridor_pct": 4.93,
+    "supplier_requested_hike_pct": 0.5,
+    "formula_verified_hike_pct": 0.5,
+    "overcharge_exposure_usd": 42245
   }
 ]

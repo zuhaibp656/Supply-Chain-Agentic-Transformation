@@ -29,6 +29,7 @@ from enterprise_twin.schema import (
     CompanyBrandSpec,
     CustomPillarSpec,
     GroundingCitation,
+    JobDescriptionProofItem,
     PersonaOverrideSpec,
     PillarOverrideSpec,
     ProcessJourneyOverrideSpec,
@@ -43,6 +44,7 @@ from enterprise_twin.tools.gcp_auth import get_genai_clients
 from enterprise_twin.tools.logo_resolver import resolve_company_logo
 from enterprise_twin.tools.public_web_career_miner import (
     fetch_wikipedia_company_summary,
+    mine_public_job_descriptions,
     search_public_career_titles,
 )
 
@@ -214,6 +216,17 @@ def _normalize_org_pillars_partition(raw_pillars: Any, company_label: str) -> Li
 
             raw_signals = p.get("company_evidence_signals") or []
             clean_signals = [str(x).strip()[:140] for x in raw_signals if str(x).strip()][:5]
+            raw_jds = p.get("jd_proof_items") or []
+            clean_jds: List[Dict[str, str]] = []
+            for rj in raw_jds[:3]:
+                if isinstance(rj, dict) and str(rj.get("job_title") or "").strip():
+                    clean_jds.append({
+                        "job_title": str(rj["job_title"]).strip()[:115],
+                        "internal_org_unit": str(rj.get("internal_org_unit") or p["name"]).strip()[:120],
+                        "process_clues_from_jd": str(rj.get("process_clues_from_jd") or "").strip()[:440],
+                        "jd_verification_url": str(rj.get("jd_verification_url") or "").strip(),
+                        "live_search_url": str(rj.get("live_search_url") or "").strip(),
+                    })
             raw_sources = p.get("verification_sources") or []
             clean_sources: List[Dict[str, str]] = []
             for rs in raw_sources[:4]:
@@ -233,8 +246,10 @@ def _normalize_org_pillars_partition(raw_pillars: Any, company_label: str) -> Li
                 "color": col,
                 "watermark_type": wm,
                 "sub_pillar_ids": sp_list,
+                "pillar_naming_basis": str(p.get("pillar_naming_basis") or "").strip()[:400],
                 "provenance_rationale": str(p.get("provenance_rationale") or "").strip()[:420],
                 "company_evidence_signals": clean_signals,
+                "jd_proof_items": clean_jds,
                 "verification_sources": clean_sources,
             })
 
@@ -243,11 +258,9 @@ def _normalize_org_pillars_partition(raw_pillars: Any, company_label: str) -> Li
 
     missing = [s for s in ALL_20_SUBPILLAR_IDS if s not in assigned]
     for idx, m_sp in enumerate(missing):
-        # Assign missing sub-pillar to the custom pillar with the fewest sub-pillars so far
         target_p = min(cleaned, key=lambda x: len(x["sub_pillar_ids"]))
         target_p["sub_pillar_ids"].append(m_sp)
 
-    # Drop any empty pillar if >4 remain
     non_empty = [c for c in cleaned if c["sub_pillar_ids"]]
     if len(non_empty) >= 4:
         non_empty = non_empty[:8]
@@ -267,41 +280,46 @@ def _stage1_corporate_and_career_dossier(
     user_notes: str,
     wiki_hint: Dict[str, Any],
     career_hints: List[str],
+    jd_snippets: Optional[List[Dict[str, str]]] = None,
 ) -> Tuple[Dict[str, Any], List[GroundingCitation], str]:
-    """Uses Gemini 3.1 Pro + Google Search Grounding for deep real-time company & pillar research."""
+    """Uses Gemini 3.1 Pro + Google Search Grounding for deep real-time company, career-team & JD research."""
     target_desc = f"{company_name} ({division_name})" if division_name else company_name
     wiki_ctx = ""
     if wiki_hint.get("extract"):
         wiki_ctx = f"\nVerified Corporate Reference ({wiki_hint.get('canonical_title', company_name)}): {wiki_hint['extract'][:500]}"
     if career_hints:
         wiki_ctx += f"\nPublic Job Postings Spotted: {', '.join(career_hints[:6])}"
+    if jd_snippets:
+        wiki_ctx += "\nLive Public Job Description Excerpts Spotted:\n" + "\n".join(
+            f"  - {j['job_title']} ({j['url']}): {j['snippet']}" for j in jd_snippets[:6]
+        )
 
-    prompt = f"""You are a Chief Supply Chain & Enterprise Operations Strategist conducting real-time research into **{target_desc}** (Geography: {geography or 'Global'}).
+    prompt = f"""You are a Chief Supply Chain & Enterprise Operations Strategist conducting forensic real-time research into **{target_desc}** (Geography: {geography or 'Global'}).
 Additional user context: {user_notes or 'None'}{wiki_ctx}
 
-Use Google Search to investigate **{target_desc}** in depth:
-1. **What {target_desc} Actually Does & How Its Operations Run**:
-   - Identify its true core business lines, physical or technology/infrastructure supply chain, procurement categories, manufacturing/staging/fulfillment nodes, distribution/delivery channels, and reverse/circular operations.
-   - Note: Even if **{target_desc}** is an IT/Cloud/Engineering Services enterprise (like Wipro, Infosys, TCS, Accenture), a hospital/pharma network, an airline, a bank/telecom, or a specialized manufacturer, analyze its REAL operational & supply chain backbone (e.g., global client data-center/edge hardware procurement, semiconductor/ODM/EMS partner operations, rack staging & integration hubs, forward stocking locations [FSL] for 4-hour SLA spares, global trade/IOR logistics, and RMA/ITAD e-waste circularity—OR if a specific consumer/industrial division was requested, model that exact division!).
-2. **Design `5` to `7` Bespoke Organization-Specific Operating Pillars (`organization_pillars`) — WITH AUDITED COMPANY PROVENANCE**:
-   - NEVER output generic textbook SCOR names ("Planning & Strategy", "Sourcing & Procurement", "Manufacturing & Production")!
-   - Every single pillar `name`, `scor_badge`, `tagline`, and `subtitle` MUST be unmistakably specific to **{target_desc}**'s real business model, products/infrastructure, and terminology!
-   - **CRITICAL PROVENANCE REQUIREMENT**: For EVERY pillar in `organization_pillars`, you MUST explain HOW we know **{target_desc}** actually operates this way:
-     * `provenance_rationale`: 2–3 plain-English sentences citing **{target_desc}**'s real annual-report business segments, manufacturing/sourcing model, distribution network, or public disclosures that justify this pillar.
-     * `company_evidence_signals`: 3–4 concrete, real **{target_desc}** plants, subsidiaries, platforms, distribution programs, or channels anchored to this pillar (never generic placeholders or other companies!).
-     * `verification_sources`: 1–3 real HTTPS URLs (from **{target_desc}**'s official domain, annual/integrated/sustainability reports, investor relations, or grounded search results) verifying this pillar.
+Use Google Search to investigate **{target_desc}**'s official Supply Chain Careers portal (`careers.<domain>`), live Job Descriptions (JDs) on LinkedIn/Naukri/Workday/TalentBrew, and Integrated Annual Reports:
+1. **How {target_desc} Actually Names Its Internal Supply Chain Teams & Runs Operations**:
+   - Search specifically for `{company_name} supply chain careers teams`, `{company_name} supply chain job description SAP`, and `{company_name} annual report operations supply chain`.
+   - Extract the **VERBATIM internal department/team names** used by **{target_desc}** (for example: Unilever's Career Portal explicitly names `Planning`, `Procurement`, `Manufacturing & Engineering (Sourcing Units / UMS)`, `Logistics (LOP)`, `Customer Operations`, and `Quality (QMS) / SHE`; Amazon names `Supply Chain Optimization Technologies (SCOT)`, `Amazon Fulfillment Technologies (AFT)`, `Amazon Transportation Services (ATS)`, `Amazon Logistics (AMZL)`; ITC names `India Leaf Tobacco Division (ILTD)`, `e-Choupal`, `Integrated Consumer Goods Manufacturing & Logistics (ICML)`, `Trade Marketing & Distribution (TM&D)`).
+2. **Design `5` to `7` Operating Pillars (`organization_pillars`) — ANCHORED STRICTLY IN VERBATIM INTERNAL TEAMS & JOB DESCRIPTIONS**:
+   - **NEVER invent generic or poetic AI labels** (like "FMCG Demand & Brand Portfolio Strategy")! Every pillar `name` MUST be anchored directly to **{target_desc}**'s real internal career-portal teams, operating units, or job-requisition business functions!
+   - **SOLID, NON-DERIVED PROOF PER PILLAR (MANDATORY)**:
+     * `pillar_naming_basis`: Cite the **exact official team name, Career Portal category, Job Posting Business Function, or Annual Report Operating Unit** that justifies this exact pillar name.
+     * `jd_proof_items`: Provide 1–2 real **{target_desc}** Supply Chain / Operations job postings for THIS specific pillar (`job_title`, `internal_org_unit`, `process_clues_from_jd`, `jd_verification_url`), detailing the **insider processes, internal acronyms, and ERP/APS/WMS tools** (e.g., SAP APO/S1P/MM/SD/EWM, Kinaxis, Blue Yonder, Manhattan WMS) written by hiring managers in the JD!
+     * `provenance_rationale`: 2–3 concrete sentences explaining how **{target_desc}** runs this pillar across its real plants, warehouses, and channels.
+     * `company_evidence_signals`: 3–4 concrete, real **{target_desc}** plants, subsidiaries, systems, or programs for this pillar.
+     * `verification_sources`: **1–3 DISTINCT, PILLAR-SPECIFIC HTTPS URLs** (e.g., the specific career team page, specific JD URL, or specific operational deep-dive page for THIS pillar — **NEVER copy-paste the exact same generic homepage URLs across all pillars!**).
    - Partition ALL 20 functional `sub_pillar_ids` ({json.dumps(ALL_20_SUBPILLAR_IDS)}) across your `5` to `7` `organization_pillars` so each of the 20 IDs appears once.
    - Choose `watermark_type` for each pillar from: `["demand_wave", "supplier_graph", "factory_arm", "warehouse_rack", "corridor_lifo", "conveyor_rack"]`.
 3. **Real Corporate Website Domain & Career-Portal Job Titles**:
-   - Find the exact `official_domain` (e.g. `"wipro.com"`, `"asianpaints.com"`, `"nike.com"`, `"pfizer.com"`) so our logo engine can download their official brand mark for `Gemini × Company` co-branding.
-   - Search corporate career portals (`careers.<domain>`), LinkedIn Jobs, Naukri, Glassdoor, and annual reports to extract `6` to `8` authentic supply chain, procurement, operations, planning, or logistics job titles hired by **{target_desc}**.
+   - Find the exact `official_domain` (e.g. `"unilever.com"`, `"asianpaints.com"`, `"wipro.com"`, `"pfizer.com"`).
+   - Extract `6` to `8` authentic supply chain, procurement, planning, manufacturing, or logistics job titles hired by **{target_desc}**.
 4. **Physical & Channel Relevance Profile (`division_operational_profile`)**:
-   - Accurately flag which physical traits DO vs. DO NOT apply (e.g., refrigerated cold-chain perishables, grocery food expiry markdowns, brick-and-mortar retail store planograms, D2C parcel e-commerce) so inapplicable AI agents are cleanly hidden.
-5. **CRITICAL MANDATE — DIVISION CANONICALIZATION**:
-   - Users frequently input informal colloquial shorthand or abbreviations (e.g. 'e-commerce' for Amazon, 'two wheeler' for Suzuki, 'TM&D' for ITC). DO NOT just echo raw user text! Conduct Google Search to identify and return the OFFICIAL formal corporate subsidiary, division, or operating entity name with all acronyms spelled out (e.g. 'Worldwide Amazon Stores & Consumer Fulfillment', 'Suzuki Motorcycle Division (Two-Wheelers)', 'Trade Marketing & Distribution (TM&D)'). Return this in `canonical_division_name`.
-6. **CRITICAL MANDATE — SPELL OUT ALL ABBREVIATIONS & NEVER INVENT UNVERIFIED FINANCIAL NUMBERS**:
-   - NEVER leave raw domain acronyms unexplained anywhere! Always provide the full expanded form alongside or preceding the acronym (e.g. 'Supply Chain Optimization Technologies (SCOT)', 'Trade Marketing & Distribution (TM&D)', 'On-Time In-Full (OTIF)', 'Fulfillment Center (FC)', 'Overall Equipment Effectiveness (OEE)').
-   - NEVER fabricate or guess internal dollar/currency savings or unverified KPI numbers for **{target_desc}**!
+   - Accurately flag which physical traits DO vs. DO NOT apply (refrigerated cold-chain perishables, grocery food expiry markdowns, brick-and-mortar retail store planograms, D2C parcel e-commerce).
+5. **CRITICAL MANDATE — DIVISION CANONICALIZATION, EXPANDED ABBREVIATIONS & NO FABRICATED NUMBERS**:
+   - Return the OFFICIAL formal corporate subsidiary/division name with all acronyms spelled out in `canonical_division_name`.
+   - Always spell out domain acronyms on first use (e.g. 'Unilever Manufacturing System (UMS)', 'Trade Marketing & Distribution (TM&D)', 'On-Time In-Full (OTIF)').
+   - NEVER fabricate or guess internal dollar/currency savings or unverified KPI numbers!
 
 Return ONLY a valid JSON object matching this exact structure (no markdown commentary outside JSON):
 {{
@@ -314,9 +332,9 @@ Return ONLY a valid JSON object matching this exact structure (no markdown comme
   "brand_secondary_hex": "#HEXCODE",
   "executive_leader_title": "Authentic top Supply Chain / Operations / Procurement executive title at this company",
   "executive_thesis": "2 crisp plain-English sentences telling the story of how this company's end-to-end supply chain & operations run using real hubs, vendors, channels, and terminology.",
-  "architecture_methodology_note": "2-3 sentences summarizing how these bespoke Operating Pillars were derived directly from this company's reported business segments, manufacturing/fulfillment footprint, and public supply chain disclosures.",
+  "architecture_methodology_note": "2-3 sentences explaining how these Operating Pillars map directly to the company's official Career-Portal Supply Chain teams, hiring-manager Job Descriptions (JDs), and disclosed operating units.",
   "flagship_facilities": "4-5 real plants, integration centers, hubs, campuses, or distribution regions separated by ' · '",
-  "erp_systems": "Real or industry-authentic ERP / sourcing / planning / WMS / TMS stack separated by ' · '",
+  "erp_systems": "Real ERP / sourcing / planning / WMS / TMS stack cited in company JDs separated by ' · '",
   "terminology_glossary": [
     "Term 1 — Plain-English meaning at this company",
     "Term 2 — Plain-English meaning",
@@ -334,21 +352,30 @@ Return ONLY a valid JSON object matching this exact structure (no markdown comme
   "organization_pillars": [
     {{
       "pillar_id": "bespoke_snake_slug",
-      "scor_badge": "01 · SHORT DOMAIN TAG",
-      "name": "Company-Specific Operating Pillar Name (<= 48 chars)",
+      "scor_badge": "01 · OFFICIAL TEAM TAG",
+      "name": "Official Internal Team / Operating Pillar Name (<= 48 chars)",
       "tagline": "Specific scope tagline (<= 72 chars)",
       "subtitle": "1 crisp sentence explaining what this pillar runs at this company (<= 155 chars)",
       "color": "#2563eb",
       "watermark_type": "demand_wave",
       "sub_pillar_ids": ["demand_forecasting", "sop_ibp", "portfolio_sku"],
-      "provenance_rationale": "2-3 sentences explaining how we know this company runs this pillar based on its real segments, plants, or annual disclosures.",
+      "pillar_naming_basis": "Exact Career-Portal team name, JD Business Function, or Annual Report Operating Unit this pillar is named after.",
+      "provenance_rationale": "2-3 concrete sentences explaining how this team operates across real facilities and channels.",
       "company_evidence_signals": [
-        "Real company plant / division / platform 1",
+        "Real company plant / division / internal system 1",
         "Real company program / logistics network 2",
         "Real company channel / sourcing model 3"
       ],
+      "jd_proof_items": [
+        {{
+          "job_title": "Exact Job Title Posted by Company for This Pillar",
+          "internal_org_unit": "Exact Department / Business Function in JD",
+          "process_clues_from_jd": "2 sentences summarizing the internal workflows, ERP/APS modules, and operational cadences disclosed in this JD.",
+          "jd_verification_url": "https://careers.companydomain.com/..."
+        }}
+      ],
       "verification_sources": [
-        {{"title": "Official Corporate / Annual Report Source", "url": "https://www.companydomain.com"}}
+        {{"title": "Specific Career Team / Operational Deep-Dive Page for This Pillar", "url": "https://careers.companydomain.com/supply-chain"}}
       ]
     }}
   ],
@@ -526,10 +553,11 @@ def synthesize_enterprise_twin_live(
         "Running live Google Search Grounding + LinkedIn/Naukri/corporate career mining on Gemini 3.1 Pro / 4 Argon",
     )
 
-    # Fetch lightweight Wikipedia + public job hints in parallel while preparing Stage 1
-    with ThreadPoolExecutor(max_workers=2) as pre_pool:
+    # Fetch lightweight Wikipedia + public job titles + live JD excerpts in parallel while preparing Stage 1
+    with ThreadPoolExecutor(max_workers=3) as pre_pool:
         fut_wp = pre_pool.submit(fetch_wikipedia_company_summary, company_name, division_name)
         fut_jobs = pre_pool.submit(search_public_career_titles, company_name, division_name)
+        fut_jds = pre_pool.submit(mine_public_job_descriptions, company_name, division_name)
         try:
             wiki_hint = fut_wp.result(timeout=6.0)
         except Exception:
@@ -538,13 +566,17 @@ def synthesize_enterprise_twin_live(
             career_hints = fut_jobs.result(timeout=6.0)
         except Exception:
             career_hints = []
+        try:
+            jd_snippets = fut_jds.result(timeout=6.5)
+        except Exception:
+            jd_snippets = []
 
     _emit(
         progress_cb,
         20,
         "corporate_research",
         f"Synthesizing bespoke Operating Pillars & career dossier for {target_title}...",
-        "Analyzing annual filings, facilities, ERP landscape & real organizational structure via Google Search",
+        "Analyzing annual filings, Supply Chain career teams & live Job Descriptions (JDs) via Google Search",
     )
 
     dossier, citations, pro_model = _stage1_corporate_and_career_dossier(
@@ -554,6 +586,7 @@ def synthesize_enterprise_twin_live(
         user_notes=user_notes,
         wiki_hint=wiki_hint,
         career_hints=career_hints,
+        jd_snippets=jd_snippets,
     )
 
     canonical_co = dossier.get("canonical_company_name") or wiki_hint.get("canonical_title") or company_name
@@ -795,6 +828,20 @@ def synthesize_enterprise_twin_live(
             f"Grounded in {disp_label}'s operating model ({brand_spec.industry_sector}) across {brand_spec.flagship_sites or geography}, "
             f"partitioning {', '.join(op['sub_pillar_ids'])} into a dedicated operating pillar."
         )
+        p_jds = [
+            JobDescriptionProofItem(
+                job_title=j["job_title"],
+                internal_org_unit=j.get("internal_org_unit", op["name"]),
+                process_clues_from_jd=j.get("process_clues_from_jd", ""),
+                jd_verification_url=j.get("jd_verification_url", ""),
+                live_search_url=j.get("live_search_url", ""),
+            )
+            for j in (op.get("jd_proof_items") or [])
+            if isinstance(j, dict) and j.get("job_title")
+        ]
+        p_naming = str(op.get("pillar_naming_basis") or "").strip() or (
+            f"Named directly after {canonical_co}'s internal '{op['name']}' supply chain function and job requisitions."
+        )
         custom_pillars.append(
             CustomPillarSpec(
                 pillar_id=op["pillar_id"],
@@ -806,8 +853,10 @@ def synthesize_enterprise_twin_live(
                 color=op["color"],
                 watermark_type=op["watermark_type"],
                 sub_pillar_ids=op["sub_pillar_ids"],
+                pillar_naming_basis=p_naming,
                 provenance_rationale=p_rat,
                 company_evidence_signals=p_signals,
+                jd_proof_items=p_jds,
                 verification_sources=p_sources,
             )
         )

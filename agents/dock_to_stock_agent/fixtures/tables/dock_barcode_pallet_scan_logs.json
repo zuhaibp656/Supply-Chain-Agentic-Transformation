@@ -70,5 +70,221 @@
     "sscc_label_read_pct": 100.0,
     "variance_cases": 0,
     "scan_exception": "CLEAN_COLD_PRIORITY"
+  },
+  {
+    "scan_id": "SCN-DOCK-67",
+    "asn_id": "ASN-2026-8867",
+    "scanned_pallets": 19,
+    "scanned_cases": 1045,
+    "sscc_label_read_pct": 99.8,
+    "variance_cases": 1,
+    "scan_exception": "SHORT_8_CASES_CARTON_OPEN"
+  },
+  {
+    "scan_id": "SCN-DOCK-75",
+    "asn_id": "ASN-2026-8875",
+    "scanned_pallets": 13,
+    "scanned_cases": 738,
+    "sscc_label_read_pct": 99.8,
+    "variance_cases": 1,
+    "scan_exception": "SHORT_1_PALLET_60_CASES"
+  },
+  {
+    "scan_id": "SCN-DOCK-83",
+    "asn_id": "ASN-2026-8883",
+    "scanned_pallets": 6,
+    "scanned_cases": 245,
+    "sscc_label_read_pct": 98.31,
+    "variance_cases": 1,
+    "scan_exception": "SHORT_1_PALLET_60_CASES"
+  },
+  {
+    "scan_id": "SCN-DOCK-91",
+    "asn_id": "ASN-2026-8891",
+    "scanned_pallets": 17,
+    "scanned_cases": 170,
+    "sscc_label_read_pct": 99.8,
+    "variance_cases": 1,
+    "scan_exception": "RELABLED_1_TORN_SSCC"
+  },
+  {
+    "scan_id": "SCN-DOCK-99",
+    "asn_id": "ASN-2026-8899",
+    "scanned_pallets": 26,
+    "scanned_cases": 1315,
+    "sscc_label_read_pct": 91.86,
+    "variance_cases": 1,
+    "scan_exception": "RELABLED_1_TORN_SSCC"
+  },
+  {
+    "scan_id": "SCN-DOCK-107",
+    "asn_id": "ASN-2026-8907",
+    "scanned_pallets": 13,
+    "scanned_cases": 911,
+    "sscc_label_read_pct": 99.8,
+    "variance_cases": 1,
+    "scan_exception": "SHORT_1_PALLET_60_CASES"
+  },
+  {
+    "scan_id": "SCN-DOCK-115",
+    "asn_id": "ASN-2026-8915",
+    "scanned_pallets": 20,
+    "scanned_cases": 1517,
+    "sscc_label_read_pct": 87.24,
+    "variance_cases": 1,
+    "scan_exception": "RELABLED_1_TORN_SSCC"
+  },
+  {
+    "scan_id": "SCN-DOCK-123",
+    "asn_id": "ASN-2026-8923",
+    "scanned_pallets": 13,
+    "scanned_cases": 1017,
+    "sscc_label_read_pct": 83.12,
+    "variance_cases": 1,
+    "scan_exception": "CLEAN_MATCH"
+  },
+  {
+    "scan_id": "SCN-DOCK-123",
+    "asn_id": "ASN-2026-8923",
+    "scanned_pallets": 15,
+    "scanned_cases": 943,
+    "sscc_label_read_pct": 82.14,
+    "variance_cases": 1,
+    "scan_exception": "CLEAN_MATCH"
+  },
+  {
+    "scan_id": "SCN-DOCK-131",
+    "asn_id": "ASN-2026-8931",
+    "scanned_pallets": 7,
+    "scanned_cases": 564,
+    "sscc_label_read_pct": 95.37,
+    "variance_cases": 1,
+    "scan_exception": "SHORT_1_PALLET_60_CASES"
+  },
+  {
+    "scan_id": "SCN-DOCK-139",
+    "asn_id": "ASN-2026-8939",
+    "scanned_pallets": 7,
+    "scanned_cases": 266,
+    "sscc_label_read_pct": 99.8,
+    "variance_cases": 1,
+    "scan_exception": "RELABLED_1_TORN_SSCC"
+  },
+  {
+    "scan_id": "SCN-DOCK-147",
+    "asn_id": "ASN-2026-8947",
+    "scanned_pallets": 7,
+    "scanned_cases": 99,
+    "sscc_label_read_pct": 99.59,
+    "variance_cases": 1,
+    "scan_exception": "RELABLED_1_TORN_SSCC"
+  },
+  {
+    "scan_id": "SCN-DOCK-155",
+    "asn_id": "ASN-2026-8955",
+    "scanned_pallets": 13,
+    "scanned_cases": 737,
+    "sscc_label_read_pct": 82.93,
+    "variance_cases": 1,
+    "scan_exception": "CROSSDOCK_FLOWTHROUGH"
+  },
+  {
+    "scan_id": "SCN-DOCK-163",
+    "asn_id": "ASN-2026-8963",
+    "scanned_pallets": 11,
+    "scanned_cases": 573,
+    "sscc_label_read_pct": 99.8,
+    "variance_cases": 1,
+    "scan_exception": "CLEAN_COLD_PRIORITY"
+  },
+  {
+    "scan_id": "SCN-DOCK-171",
+    "asn_id": "ASN-2026-8971",
+    "scanned_pallets": 15,
+    "scanned_cases": 1829,
+    "sscc_label_read_pct": 99.8,
+    "variance_cases": 1,
+    "scan_exception": "CLEAN_MATCH"
+  },
+  {
+    "scan_id": "SCN-DOCK-179",
+    "asn_id": "ASN-2026-8979",
+    "scanned_pallets": 12,
+    "scanned_cases": 808,
+    "sscc_label_read_pct": 99.8,
+    "variance_cases": 1,
+    "scan_exception": "SHORT_1_PALLET_60_CASES"
+  },
+  {
+    "scan_id": "SCN-DOCK-179",
+    "asn_id": "ASN-2026-8979",
+    "scanned_pallets": 10,
+    "scanned_cases": 599,
+    "sscc_label_read_pct": 98.45,
+    "variance_cases": 1,
+    "scan_exception": "CLEAN_MATCH"
+  },
+  {
+    "scan_id": "SCN-DOCK-187",
+    "asn_id": "ASN-2026-8987",
+    "scanned_pallets": 15,
+    "scanned_cases": 924,
+    "sscc_label_read_pct": 95.68,
+    "variance_cases": 1,
+    "scan_exception": "RELABLED_1_TORN_SSCC"
+  },
+  {
+    "scan_id": "SCN-DOCK-195",
+    "asn_id": "ASN-2026-8995",
+    "scanned_pallets": 9,
+    "scanned_cases": 274,
+    "sscc_label_read_pct": 99.8,
+    "variance_cases": 1,
+    "scan_exception": "SHORT_8_CASES_CARTON_OPEN"
+  },
+  {
+    "scan_id": "SCN-DOCK-203",
+    "asn_id": "ASN-2026-9003",
+    "scanned_pallets": 10,
+    "scanned_cases": 133,
+    "sscc_label_read_pct": 87.53,
+    "variance_cases": 1,
+    "scan_exception": "CLEAN_MATCH"
+  },
+  {
+    "scan_id": "SCN-DOCK-211",
+    "asn_id": "ASN-2026-9011",
+    "scanned_pallets": 24,
+    "scanned_cases": 1455,
+    "sscc_label_read_pct": 93.13,
+    "variance_cases": 1,
+    "scan_exception": "RELABLED_1_TORN_SSCC"
+  },
+  {
+    "scan_id": "SCN-DOCK-219",
+    "asn_id": "ASN-2026-9019",
+    "scanned_pallets": 9,
+    "scanned_cases": 669,
+    "sscc_label_read_pct": 83.1,
+    "variance_cases": 1,
+    "scan_exception": "SHORT_1_PALLET_60_CASES"
+  },
+  {
+    "scan_id": "SCN-DOCK-227",
+    "asn_id": "ASN-2026-9027",
+    "scanned_pallets": 15,
+    "scanned_cases": 1078,
+    "sscc_label_read_pct": 89.67,
+    "variance_cases": 1,
+    "scan_exception": "SHORT_1_PALLET_60_CASES"
+  },
+  {
+    "scan_id": "SCN-DOCK-235",
+    "asn_id": "ASN-2026-9035",
+    "scanned_pallets": 12,
+    "scanned_cases": 944,
+    "sscc_label_read_pct": 90.58,
+    "variance_cases": 1,
+    "scan_exception": "RELABLED_1_TORN_SSCC"
   }
 ]

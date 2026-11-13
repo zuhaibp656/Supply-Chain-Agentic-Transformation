@@ -62,5 +62,197 @@
     "lost_fee_exposure_usd": 8990.0,
     "backhaul_sweep_cost_usd": 310.0,
     "reclamation_action": "URBAN_REVERSE_VAN_SWEEP"
+  },
+  {
+    "sweep_id": "SWP-767",
+    "custodian_id": "CUST-XYZ-TIER1-MEGAMART-18",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "lost_fee_exposure_usd": 8497.64,
+    "backhaul_sweep_cost_usd": 214.41,
+    "reclamation_action": "REEFER_DEADHEAD_SWEEP_DISPATCH"
+  },
+  {
+    "sweep_id": "SWP-775",
+    "custodian_id": "CUST-APEX-US74",
+    "asset_type": "VAQTEC_VIP_CRYO_SHIPPER",
+    "lost_fee_exposure_usd": 14624.31,
+    "backhaul_sweep_cost_usd": 319.36,
+    "reclamation_action": "COLLAPSED_RPC_BACKHAUL_PICKUP"
+  },
+  {
+    "sweep_id": "SWP-783",
+    "custodian_id": "CUST-MEDLINE-BIO81",
+    "asset_type": "PECO_BLOCK_PALLET",
+    "lost_fee_exposure_usd": 84288.63,
+    "backhaul_sweep_cost_usd": 1015.4,
+    "reclamation_action": "SWEEP_OR_45D_DEPOSIT_INVOICE"
+  },
+  {
+    "sweep_id": "SWP-791",
+    "custodian_id": "CUST-XYZ-TIER1-AUTOWORKS-21",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "lost_fee_exposure_usd": 63835.81,
+    "backhaul_sweep_cost_usd": 811.37,
+    "reclamation_action": "URBAN_REVERSE_VAN_SWEEP"
+  },
+  {
+    "sweep_id": "SWP-799",
+    "custodian_id": "CUST-OMNI-US98",
+    "asset_type": "PECO_BLOCK_PALLET",
+    "lost_fee_exposure_usd": 0.1,
+    "backhaul_sweep_cost_usd": 0.1,
+    "reclamation_action": "WITHIN_GRACE_NO_ACTION"
+  },
+  {
+    "sweep_id": "SWP-807",
+    "custodian_id": "CUST-APEX-US102",
+    "asset_type": "AUTO_STEEL_STILLAGE_RACK",
+    "lost_fee_exposure_usd": 51987.69,
+    "backhaul_sweep_cost_usd": 376.92,
+    "reclamation_action": "PRIORITY_COURIER_CRYO_RECOVERY"
+  },
+  {
+    "sweep_id": "SWP-815",
+    "custodian_id": "CUST-ALDI-OUTLET-US117",
+    "asset_type": "CHEP_48X40_BLUE_PALLET",
+    "lost_fee_exposure_usd": 14403.71,
+    "backhaul_sweep_cost_usd": 354.03,
+    "reclamation_action": "REEFER_DEADHEAD_SWEEP_DISPATCH"
+  },
+  {
+    "sweep_id": "SWP-823",
+    "custodian_id": "CUST-XYZ-TIER2-METROCPG-25",
+    "asset_type": "AUTO_STEEL_STILLAGE_RACK",
+    "lost_fee_exposure_usd": 4661.18,
+    "backhaul_sweep_cost_usd": 141.61,
+    "reclamation_action": "REEFER_DEADHEAD_SWEEP_DISPATCH"
+  },
+  {
+    "sweep_id": "SWP-823",
+    "custodian_id": "CUST-XYZ-TIER1-MEGAMART-26",
+    "asset_type": "CHEP_48X40_BLUE_PALLET",
+    "lost_fee_exposure_usd": 29670.77,
+    "backhaul_sweep_cost_usd": 639.96,
+    "reclamation_action": "SWEEP_OR_45D_DEPOSIT_INVOICE"
+  },
+  {
+    "sweep_id": "SWP-831",
+    "custodian_id": "CUST-APEX-US130",
+    "asset_type": "AUTO_STEEL_STILLAGE_RACK",
+    "lost_fee_exposure_usd": 8853.26,
+    "backhaul_sweep_cost_usd": 232.11,
+    "reclamation_action": "WITHIN_GRACE_NO_ACTION"
+  },
+  {
+    "sweep_id": "SWP-839",
+    "custodian_id": "CUST-MEDLINE-BIO137",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "lost_fee_exposure_usd": 26397.27,
+    "backhaul_sweep_cost_usd": 347.37,
+    "reclamation_action": "MILKRUN_RETURN_LOOP_LOCK"
+  },
+  {
+    "sweep_id": "SWP-847",
+    "custodian_id": "CUST-XYZ-TIER1-AUTOWORKS-29",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "lost_fee_exposure_usd": 76844.83,
+    "backhaul_sweep_cost_usd": 979.77,
+    "reclamation_action": "DEDICATED_EMPTY_BACKHAUL_SWEEP"
+  },
+  {
+    "sweep_id": "SWP-855",
+    "custodian_id": "CUST-OMNI-US154",
+    "asset_type": "AUTO_STEEL_STILLAGE_RACK",
+    "lost_fee_exposure_usd": 0.1,
+    "backhaul_sweep_cost_usd": 0.1,
+    "reclamation_action": "SWEEP_OR_45D_DEPOSIT_INVOICE"
+  },
+  {
+    "sweep_id": "SWP-863",
+    "custodian_id": "CUST-APEX-US158",
+    "asset_type": "PECO_BLOCK_PALLET",
+    "lost_fee_exposure_usd": 67536.7,
+    "backhaul_sweep_cost_usd": 597.91,
+    "reclamation_action": "WITHIN_GRACE_NO_ACTION"
+  },
+  {
+    "sweep_id": "SWP-871",
+    "custodian_id": "CUST-ALDI-OUTLET-US173",
+    "asset_type": "VAQTEC_VIP_CRYO_SHIPPER",
+    "lost_fee_exposure_usd": 15565.02,
+    "backhaul_sweep_cost_usd": 423.74,
+    "reclamation_action": "REEFER_DEADHEAD_SWEEP_DISPATCH"
+  },
+  {
+    "sweep_id": "SWP-879",
+    "custodian_id": "CUST-XYZ-TIER2-METROCPG-33",
+    "asset_type": "INSULATED_DAIRY_ROLLCAGE",
+    "lost_fee_exposure_usd": 9535.82,
+    "backhaul_sweep_cost_usd": 245.5,
+    "reclamation_action": "REEFER_DEADHEAD_SWEEP_DISPATCH"
+  },
+  {
+    "sweep_id": "SWP-879",
+    "custodian_id": "CUST-XYZ-TIER1-MEGAMART-34",
+    "asset_type": "IFCO_FOLDING_RPC_TOTE",
+    "lost_fee_exposure_usd": 19788.7,
+    "backhaul_sweep_cost_usd": 406.68,
+    "reclamation_action": "PRIORITY_COURIER_CRYO_RECOVERY"
+  },
+  {
+    "sweep_id": "SWP-887",
+    "custodian_id": "CUST-APEX-US186",
+    "asset_type": "VAQTEC_VIP_CRYO_SHIPPER",
+    "lost_fee_exposure_usd": 14078.88,
+    "backhaul_sweep_cost_usd": 359.92,
+    "reclamation_action": "DEDICATED_EMPTY_BACKHAUL_SWEEP"
+  },
+  {
+    "sweep_id": "SWP-895",
+    "custodian_id": "CUST-MEDLINE-BIO193",
+    "asset_type": "CHEP_48X40_BLUE_PALLET",
+    "lost_fee_exposure_usd": 77021.68,
+    "backhaul_sweep_cost_usd": 916.24,
+    "reclamation_action": "SWEEP_OR_45D_DEPOSIT_INVOICE"
+  },
+  {
+    "sweep_id": "SWP-903",
+    "custodian_id": "CUST-XYZ-TIER1-AUTOWORKS-37",
+    "asset_type": "VAQTEC_VIP_CRYO_SHIPPER",
+    "lost_fee_exposure_usd": 45980.11,
+    "backhaul_sweep_cost_usd": 567.63,
+    "reclamation_action": "WITHIN_GRACE_NO_ACTION"
+  },
+  {
+    "sweep_id": "SWP-911",
+    "custodian_id": "CUST-OMNI-US210",
+    "asset_type": "INSULATED_DAIRY_ROLLCAGE",
+    "lost_fee_exposure_usd": 0.1,
+    "backhaul_sweep_cost_usd": 0.1,
+    "reclamation_action": "WITHIN_GRACE_NO_ACTION"
+  },
+  {
+    "sweep_id": "SWP-919",
+    "custodian_id": "CUST-APEX-US214",
+    "asset_type": "AUTO_STEEL_STILLAGE_RACK",
+    "lost_fee_exposure_usd": 72445.32,
+    "backhaul_sweep_cost_usd": 527.25,
+    "reclamation_action": "COLLAPSED_RPC_BACKHAUL_PICKUP"
+  },
+  {
+    "sweep_id": "SWP-927",
+    "custodian_id": "CUST-ALDI-OUTLET-US229",
+    "asset_type": "AUTO_STEEL_STILLAGE_RACK",
+    "lost_fee_exposure_usd": 10209.57,
+    "backhaul_sweep_cost_usd": 298.94,
+    "reclamation_action": "SWEEP_OR_45D_DEPOSIT_INVOICE"
+  },
+  {
+    "sweep_id": "SWP-935",
+    "custodian_id": "CUST-XYZ-TIER2-METROCPG-41",
+    "asset_type": "CHEP_48X40_BLUE_PALLET",
+    "lost_fee_exposure_usd": 4589.5,
+    "backhaul_sweep_cost_usd": 155.72,
+    "reclamation_action": "MILKRUN_RETURN_LOOP_LOCK"
   }
 ]

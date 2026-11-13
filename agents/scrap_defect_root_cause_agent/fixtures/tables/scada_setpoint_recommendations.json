@@ -15,7 +15,7 @@
         "parameter_name": "Barrel Zone 4 Temperature",
         "current_val": 248.5,
         "recommended_val": 235.0,
-        "unit": "\u00b0C",
+        "unit": "°C",
         "delta": -13.5
       }
     ],
@@ -40,7 +40,7 @@
         "parameter_name": "Barrel Zone 4 Temperature",
         "current_val": 248.5,
         "recommended_val": 235.0,
-        "unit": "\u00b0C",
+        "unit": "°C",
         "delta": -13.5
       }
     ],
@@ -65,7 +65,7 @@
         "parameter_name": "Barrel Zone 4 Temperature",
         "current_val": 248.5,
         "recommended_val": 235.0,
-        "unit": "\u00b0C",
+        "unit": "°C",
         "delta": -13.5
       }
     ],
@@ -90,7 +90,7 @@
         "parameter_name": "Barrel Zone 4 Temperature",
         "current_val": 248.5,
         "recommended_val": 235.0,
-        "unit": "\u00b0C",
+        "unit": "°C",
         "delta": -13.5
       }
     ],
@@ -115,7 +115,7 @@
         "parameter_name": "Barrel Zone 4 Temperature",
         "current_val": 248.5,
         "recommended_val": 235.0,
-        "unit": "\u00b0C",
+        "unit": "°C",
         "delta": -13.5
       }
     ],
@@ -140,7 +140,7 @@
         "parameter_name": "Barrel Zone 4 Temperature",
         "current_val": 248.5,
         "recommended_val": 235.0,
-        "unit": "\u00b0C",
+        "unit": "°C",
         "delta": -13.5
       }
     ],
@@ -165,7 +165,7 @@
         "parameter_name": "Barrel Zone 4 Temperature",
         "current_val": 248.5,
         "recommended_val": 235.0,
-        "unit": "\u00b0C",
+        "unit": "°C",
         "delta": -13.5
       }
     ],
@@ -190,12 +190,612 @@
         "parameter_name": "Barrel Zone 4 Temperature",
         "current_val": 248.5,
         "recommended_val": 235.0,
-        "unit": "\u00b0C",
+        "unit": "°C",
         "delta": -13.5
       }
     ],
     "projected_scrap_rate_after_pct": 2.5,
     "projected_cost_savings_per_shift_usd": 3062.5,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-18",
+    "asset_id": "ASSET-INJECTION-MOLD-68",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 0.5,
+    "projected_cost_savings_per_shift_usd": 3375.11,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R0154A-19",
+    "asset_id": "ASSET-INJECTION-MOLD-83",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.61,
+    "projected_cost_savings_per_shift_usd": 2778.84,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R028DC-20",
+    "asset_id": "ASSET-INJECTION-MOLD-97",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.29,
+    "projected_cost_savings_per_shift_usd": 1246.77,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R03A9F-21",
+    "asset_id": "ASSET-INJECTION-MOLD-111",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.36,
+    "projected_cost_savings_per_shift_usd": 2817.67,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R04DB98",
+    "asset_id": "ASSET-INJECTION-MOLD-125",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.43,
+    "projected_cost_savings_per_shift_usd": 2149.4,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R05F4F-23",
+    "asset_id": "ASSET-INJECTION-MOLD-139",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.55,
+    "projected_cost_savings_per_shift_usd": 775.01,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R06D139",
+    "asset_id": "ASSET-INJECTION-MOLD-153",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.26,
+    "projected_cost_savings_per_shift_usd": 1161.85,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R0766E-25",
+    "asset_id": "ASSET-INJECTION-MOLD-167",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.69,
+    "projected_cost_savings_per_shift_usd": 4100.73,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-26",
+    "asset_id": "ASSET-INJECTION-MOLD-124",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 0.5,
+    "projected_cost_savings_per_shift_usd": 2551.85,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R0154A-27",
+    "asset_id": "ASSET-INJECTION-MOLD-139",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.21,
+    "projected_cost_savings_per_shift_usd": 2435.99,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R028DC-28",
+    "asset_id": "ASSET-INJECTION-MOLD-153",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.74,
+    "projected_cost_savings_per_shift_usd": 1470.57,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R03A9F-29",
+    "asset_id": "ASSET-INJECTION-MOLD-167",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.11,
+    "projected_cost_savings_per_shift_usd": 2373.85,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R04DB154",
+    "asset_id": "ASSET-INJECTION-MOLD-181",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.58,
+    "projected_cost_savings_per_shift_usd": 3734.01,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R05F4F-31",
+    "asset_id": "ASSET-INJECTION-MOLD-195",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.59,
+    "projected_cost_savings_per_shift_usd": 1329.64,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R06D195",
+    "asset_id": "ASSET-INJECTION-MOLD-209",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.77,
+    "projected_cost_savings_per_shift_usd": 3453.57,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R0766E-33",
+    "asset_id": "ASSET-INJECTION-MOLD-223",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.34,
+    "projected_cost_savings_per_shift_usd": 3176.56,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-34",
+    "asset_id": "ASSET-INJECTION-MOLD-180",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 0.5,
+    "projected_cost_savings_per_shift_usd": 2701.28,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R0154A-35",
+    "asset_id": "ASSET-INJECTION-MOLD-195",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.82,
+    "projected_cost_savings_per_shift_usd": 2398.91,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R028DC-36",
+    "asset_id": "ASSET-INJECTION-MOLD-209",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.36,
+    "projected_cost_savings_per_shift_usd": 2538.85,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R03A9F-37",
+    "asset_id": "ASSET-INJECTION-MOLD-223",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.19,
+    "projected_cost_savings_per_shift_usd": 3121.74,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R04DB210",
+    "asset_id": "ASSET-INJECTION-MOLD-237",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.34,
+    "projected_cost_savings_per_shift_usd": 3120.47,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R05F4F-39",
+    "asset_id": "ASSET-INJECTION-MOLD-251",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.1,
+    "projected_cost_savings_per_shift_usd": 1636.45,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R06D251",
+    "asset_id": "ASSET-INJECTION-MOLD-265",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.3,
+    "projected_cost_savings_per_shift_usd": 2014.04,
+    "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
+    "status": "READY_FOR_PLC_WRITEBACK"
+  },
+  {
+    "recommendation_id": "REC-SETPOINT-IMM-02-FLASH-R0766E-41",
+    "asset_id": "ASSET-INJECTION-MOLD-279",
+    "recipe_name": "TETHERED_CAP_PP_HIGH_SPEED_V4",
+    "parameter_adjustments": [
+      {
+        "parameter_name": "Injection Holding Pressure",
+        "current_val": 945.0,
+        "recommended_val": 820.0,
+        "unit": "bar",
+        "delta": -125.0
+      },
+      {
+        "parameter_name": "Barrel Zone 4 Temperature",
+        "current_val": 248.5,
+        "recommended_val": 235.0,
+        "unit": "°C",
+        "delta": -13.5
+      }
+    ],
+    "projected_scrap_rate_after_pct": 2.89,
+    "projected_cost_savings_per_shift_usd": 2333.14,
     "scada_tag_group": "TAG_GRP_INJECTION_MOLD_HYD_02",
     "status": "READY_FOR_PLC_WRITEBACK"
   }

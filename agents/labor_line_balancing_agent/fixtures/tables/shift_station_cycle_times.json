@@ -78,5 +78,245 @@
     "operators_assigned": 3,
     "bottleneck_flag": false,
     "hourly_cases_lost": 0
+  },
+  {
+    "station_id": "STN-AUS-FILL-67",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "line_id": "LINE-ASEPTIC-A67",
+    "takt_time_sec": 52.21,
+    "actual_cycle_sec": 65.04,
+    "operators_assigned": 2,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 198
+  },
+  {
+    "station_id": "STN-AUS-CAP-75",
+    "plant_id": "Delhi-NCR",
+    "line_id": "LINE-ASEPTIC-A74",
+    "takt_time_sec": 57.82,
+    "actual_cycle_sec": 66.33,
+    "operators_assigned": 3,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 1
+  },
+  {
+    "station_id": "STN-AUS-PACK-83",
+    "plant_id": "Kolkata-Haringhata",
+    "line_id": "LINE-ASEPTIC-A81",
+    "takt_time_sec": 33.87,
+    "actual_cycle_sec": 36.06,
+    "operators_assigned": 2,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 92
+  },
+  {
+    "station_id": "STN-AUS-PAL-91",
+    "plant_id": "Ahmedabad-Sanand",
+    "line_id": "LINE-ASEPTIC-A88",
+    "takt_time_sec": 68.34,
+    "actual_cycle_sec": 40.32,
+    "operators_assigned": 5,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 1
+  },
+  {
+    "station_id": "STN-STU-WELD-95",
+    "plant_id": "Kolkata-Haringhata",
+    "line_id": "LINE-LASER-B96",
+    "takt_time_sec": 69.85,
+    "actual_cycle_sec": 73.91,
+    "operators_assigned": 2,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 36
+  },
+  {
+    "station_id": "STN-STU-TEST-103",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "line_id": "LINE-LASER-B103",
+    "takt_time_sec": 85.52,
+    "actual_cycle_sec": 74.03,
+    "operators_assigned": 4,
+    "bottleneck_flag": true,
+    "hourly_cases_lost": 1
+  },
+  {
+    "station_id": "STN-BLR-SMT-109",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "line_id": "LINE-IOT-C109",
+    "takt_time_sec": 33.63,
+    "actual_cycle_sec": 37.81,
+    "operators_assigned": 2,
+    "bottleneck_flag": true,
+    "hourly_cases_lost": 107
+  },
+  {
+    "station_id": "STN-BLR-BOX-117",
+    "plant_id": "PLANT-XYZ-BENGALURU",
+    "line_id": "LINE-IOT-C116",
+    "takt_time_sec": 42.11,
+    "actual_cycle_sec": 31.03,
+    "operators_assigned": 3,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 1
+  },
+  {
+    "station_id": "STN-AUS-FILL-123",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "line_id": "LINE-ASEPTIC-A123",
+    "takt_time_sec": 38.22,
+    "actual_cycle_sec": 58.2,
+    "operators_assigned": 2,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 122
+  },
+  {
+    "station_id": "STN-AUS-CAP-131",
+    "plant_id": "PLANT-XYZ-AUSTIN",
+    "line_id": "LINE-ASEPTIC-A130",
+    "takt_time_sec": 17.57,
+    "actual_cycle_sec": 19.01,
+    "operators_assigned": 1,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 1
+  },
+  {
+    "station_id": "STN-AUS-PACK-139",
+    "plant_id": "Bengaluru-Hosur",
+    "line_id": "LINE-ASEPTIC-A137",
+    "takt_time_sec": 35.75,
+    "actual_cycle_sec": 46.92,
+    "operators_assigned": 3,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 69
+  },
+  {
+    "station_id": "STN-AUS-PAL-147",
+    "plant_id": "Pune-Chakan",
+    "line_id": "LINE-ASEPTIC-A144",
+    "takt_time_sec": 32.88,
+    "actual_cycle_sec": 22.84,
+    "operators_assigned": 3,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 1
+  },
+  {
+    "station_id": "STN-STU-WELD-151",
+    "plant_id": "Hyderabad-Shamshabad",
+    "line_id": "LINE-LASER-B152",
+    "takt_time_sec": 41.81,
+    "actual_cycle_sec": 53.38,
+    "operators_assigned": 2,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 36
+  },
+  {
+    "station_id": "STN-STU-TEST-159",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "line_id": "LINE-LASER-B159",
+    "takt_time_sec": 67.27,
+    "actual_cycle_sec": 57.9,
+    "operators_assigned": 3,
+    "bottleneck_flag": true,
+    "hourly_cases_lost": 1
+  },
+  {
+    "station_id": "STN-BLR-SMT-165",
+    "plant_id": "Kolkata-Haringhata",
+    "line_id": "LINE-IOT-C165",
+    "takt_time_sec": 21.27,
+    "actual_cycle_sec": 26.15,
+    "operators_assigned": 1,
+    "bottleneck_flag": true,
+    "hourly_cases_lost": 72
+  },
+  {
+    "station_id": "STN-BLR-BOX-173",
+    "plant_id": "Hyderabad-Shamshabad",
+    "line_id": "LINE-IOT-C172",
+    "takt_time_sec": 17.07,
+    "actual_cycle_sec": 15.21,
+    "operators_assigned": 1,
+    "bottleneck_flag": true,
+    "hourly_cases_lost": 1
+  },
+  {
+    "station_id": "STN-AUS-FILL-179",
+    "plant_id": "Bengaluru-Hosur",
+    "line_id": "LINE-ASEPTIC-A179",
+    "takt_time_sec": 47.68,
+    "actual_cycle_sec": 55.54,
+    "operators_assigned": 3,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 168
+  },
+  {
+    "station_id": "STN-AUS-CAP-187",
+    "plant_id": "Bengaluru-Hosur",
+    "line_id": "LINE-ASEPTIC-A186",
+    "takt_time_sec": 45.55,
+    "actual_cycle_sec": 42.5,
+    "operators_assigned": 2,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 1
+  },
+  {
+    "station_id": "STN-AUS-PACK-195",
+    "plant_id": "Chennai-Port",
+    "line_id": "LINE-ASEPTIC-A193",
+    "takt_time_sec": 40.19,
+    "actual_cycle_sec": 58.86,
+    "operators_assigned": 3,
+    "bottleneck_flag": true,
+    "hourly_cases_lost": 109
+  },
+  {
+    "station_id": "STN-AUS-PAL-203",
+    "plant_id": "Pune-Chakan",
+    "line_id": "LINE-ASEPTIC-A200",
+    "takt_time_sec": 64.13,
+    "actual_cycle_sec": 44.14,
+    "operators_assigned": 4,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 1
+  },
+  {
+    "station_id": "STN-STU-WELD-207",
+    "plant_id": "Delhi-NCR",
+    "line_id": "LINE-LASER-B208",
+    "takt_time_sec": 48.79,
+    "actual_cycle_sec": 51.87,
+    "operators_assigned": 1,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 32
+  },
+  {
+    "station_id": "STN-STU-TEST-215",
+    "plant_id": "Kolkata-Haringhata",
+    "line_id": "LINE-LASER-B215",
+    "takt_time_sec": 24.54,
+    "actual_cycle_sec": 25.73,
+    "operators_assigned": 1,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 1
+  },
+  {
+    "station_id": "STN-BLR-SMT-221",
+    "plant_id": "Delhi-NCR",
+    "line_id": "LINE-IOT-C221",
+    "takt_time_sec": 32.06,
+    "actual_cycle_sec": 41.54,
+    "operators_assigned": 2,
+    "bottleneck_flag": false,
+    "hourly_cases_lost": 95
+  },
+  {
+    "station_id": "STN-BLR-BOX-229",
+    "plant_id": "PLANT-XYZ-STUTTGART",
+    "line_id": "LINE-IOT-C228",
+    "takt_time_sec": 28.45,
+    "actual_cycle_sec": 20.13,
+    "operators_assigned": 2,
+    "bottleneck_flag": true,
+    "hourly_cases_lost": 1
   }
 ]

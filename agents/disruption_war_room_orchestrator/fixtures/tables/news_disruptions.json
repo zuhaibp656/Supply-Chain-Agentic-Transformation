@@ -158,5 +158,485 @@
       "risk_category": "NATURAL_DISASTER",
       "severity_score": 0.95
     }
+  },
+  {
+    "signal_id": "NEWS-9080",
+    "timestamp": "2026-10-13T18:30:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Mundra Sea Port (Adani Ports) docks, freezing customs release and crane shifts.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9095",
+    "timestamp": "2026-10-15T04:15:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  },
+  {
+    "signal_id": "NEWS-9109",
+    "timestamp": "2026-10-15T18:30:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Mundra Sea Port (Adani Ports) docks, freezing customs release and crane shifts.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9131",
+    "timestamp": "2026-10-17T04:15:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  },
+  {
+    "signal_id": "NEWS-9137",
+    "timestamp": "2026-10-17T18:30:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9159",
+    "timestamp": "2026-10-19T04:15:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  },
+  {
+    "signal_id": "NEWS-9165",
+    "timestamp": "2026-10-19T18:30:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9187",
+    "timestamp": "2026-10-21T04:15:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Mundra Sea Port (Adani Ports) docks, freezing customs release and crane shifts.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  },
+  {
+    "signal_id": "NEWS-9136",
+    "timestamp": "2026-10-21T18:30:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9151",
+    "timestamp": "2026-10-23T04:15:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Mundra Sea Port (Adani Ports) docks, freezing customs release and crane shifts.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  },
+  {
+    "signal_id": "NEWS-9165",
+    "timestamp": "2026-10-23T18:30:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Mundra Sea Port (Adani Ports) docks, freezing customs release and crane shifts.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9187",
+    "timestamp": "2026-10-25T04:15:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  },
+  {
+    "signal_id": "NEWS-9193",
+    "timestamp": "2026-10-25T18:30:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9215",
+    "timestamp": "2026-10-06T04:15:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  },
+  {
+    "signal_id": "NEWS-9221",
+    "timestamp": "2026-10-06T18:30:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Mundra Sea Port (Adani Ports) docks, freezing customs release and crane shifts.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9243",
+    "timestamp": "2026-10-08T04:15:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  },
+  {
+    "signal_id": "NEWS-9192",
+    "timestamp": "2026-10-08T18:30:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9207",
+    "timestamp": "2026-10-10T04:15:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Belgian transport unions initiate an unannounced 72-hour wildcat strike across Mundra Sea Port (Adani Ports) docks, freezing customs release and crane shifts.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  },
+  {
+    "signal_id": "NEWS-9221",
+    "timestamp": "2026-10-10T18:30:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9243",
+    "timestamp": "2026-10-12T04:15:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  },
+  {
+    "signal_id": "NEWS-9249",
+    "timestamp": "2026-10-12T18:30:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9271",
+    "timestamp": "2026-10-14T04:15:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
+  },
+  {
+    "signal_id": "NEWS-9277",
+    "timestamp": "2026-10-14T18:30:00Z",
+    "source": "Reuters Global Logistics Wire",
+    "headline": "Dockworker Union Strikes Paralyze Antwerp Container Terminal Operations",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "ports": [
+        "Mundra Sea Port (Adani Ports)",
+        "BEANR"
+      ],
+      "carriers": [
+        "Maersk",
+        "MSC",
+        "Hapag-Lloyd"
+      ],
+      "risk_category": "LABOR_STRIKE",
+      "severity_score": 0.88
+    }
+  },
+  {
+    "signal_id": "NEWS-9299",
+    "timestamp": "2026-10-16T04:15:00Z",
+    "source": "Bloomberg Technology Supply Chain",
+    "headline": "Super Typhoon Gaemi Forces Evacuation of Northern Taiwan Industrial Parks",
+    "summary": "Authorities mandate shutdown of non-essential wafer fabrication support and secondary chemical processing facilities across Hsinchu and Taoyuan.",
+    "entities_extracted": {
+      "locations": [
+        "Hsinchu Science Park",
+        "Taoyuan Airport Cargo Center"
+      ],
+      "commodities": [
+        "Semiconductor Packaging",
+        "Automotive MCUs",
+        "SiC Wafers"
+      ],
+      "risk_category": "NATURAL_DISASTER",
+      "severity_score": 0.95
+    }
   }
 ]

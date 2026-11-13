@@ -78,5 +78,245 @@
     "debit_memo_variance_usd": 0.0,
     "early_pay_discount_saved_usd": 1824.0,
     "match_status": "CLEAN_POSTED"
+  },
+  {
+    "dispute_id": "DSP-3WM-67",
+    "invoice_id": "INV-AP-90477",
+    "po_number": "PO-XYZ-880285",
+    "discrepancy_type": "QTY_SHORT_80_PLUS_PRICE_VARIANCE",
+    "verified_payable_usd": 90665.03,
+    "debit_memo_variance_usd": 9861.29,
+    "early_pay_discount_saved_usd": 1444.42,
+    "match_status": "HOLD_PENDING_QM_CREDIT"
+  },
+  {
+    "dispute_id": "DSP-3WM-75",
+    "invoice_id": "INV-AP-90485",
+    "po_number": "PO-XYZ-880215",
+    "discrepancy_type": "GRN_SHORT_SHIPMENT_150_CASES",
+    "verified_payable_usd": 200977.93,
+    "debit_memo_variance_usd": 8696.13,
+    "early_pay_discount_saved_usd": 5176.64,
+    "match_status": "HOLD_PENDING_QM_CREDIT"
+  },
+  {
+    "dispute_id": "DSP-3WM-83",
+    "invoice_id": "INV-AP-90493",
+    "po_number": "PO-XYZ-880490",
+    "discrepancy_type": "QM_DAMAGED_REJECT_30_EA",
+    "verified_payable_usd": 151435.89,
+    "debit_memo_variance_usd": 2465.28,
+    "early_pay_discount_saved_usd": 3754.79,
+    "match_status": "CLEAN_POSTED"
+  },
+  {
+    "dispute_id": "DSP-3WM-91",
+    "invoice_id": "INV-AP-90501",
+    "po_number": "PO-XYZ-880579",
+    "discrepancy_type": "UNAUTHORIZED_DDP_FREIGHT_ADDON",
+    "verified_payable_usd": 102111.57,
+    "debit_memo_variance_usd": 2563.66,
+    "early_pay_discount_saved_usd": 1234.94,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-99",
+    "invoice_id": "INV-AP-90509",
+    "po_number": "PO-XYZ-880449",
+    "discrepancy_type": "GRN_SHORT_SHIPMENT_150_CASES",
+    "verified_payable_usd": 688616.37,
+    "debit_memo_variance_usd": 6899.95,
+    "early_pay_discount_saved_usd": 0.1,
+    "match_status": "CLEAN_POSTED"
+  },
+  {
+    "dispute_id": "DSP-3WM-107",
+    "invoice_id": "INV-AP-90517",
+    "po_number": "PO-XYZ-880631",
+    "discrepancy_type": "QTY_SHORT_80_PLUS_PRICE_VARIANCE",
+    "verified_payable_usd": 340594.78,
+    "debit_memo_variance_usd": 0.1,
+    "early_pay_discount_saved_usd": 8220.27,
+    "match_status": "CLEAN_POSTED"
+  },
+  {
+    "dispute_id": "DSP-3WM-115",
+    "invoice_id": "INV-AP-90525",
+    "po_number": "PO-XYZ-880720",
+    "discrepancy_type": "GRN_SHORT_SHIPMENT_150_CASES",
+    "verified_payable_usd": 124360.25,
+    "debit_memo_variance_usd": 11793.35,
+    "early_pay_discount_saved_usd": 0.1,
+    "match_status": "HOLD_PENDING_QM_CREDIT"
+  },
+  {
+    "dispute_id": "DSP-3WM-123",
+    "invoice_id": "INV-AP-90533",
+    "po_number": "PO-XYZ-880803",
+    "discrepancy_type": "UNAPPROVED_UNIT_PRICE_HIKE",
+    "verified_payable_usd": 97767.01,
+    "debit_memo_variance_usd": 0.1,
+    "early_pay_discount_saved_usd": 1636.49,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-123",
+    "invoice_id": "INV-AP-90533",
+    "po_number": "PO-XYZ-880341",
+    "discrepancy_type": "GRN_SHORT_SHIPMENT_150_CASES",
+    "verified_payable_usd": 149609.21,
+    "debit_memo_variance_usd": 16145.68,
+    "early_pay_discount_saved_usd": 2992.21,
+    "match_status": "HOLD_PENDING_QM_CREDIT"
+  },
+  {
+    "dispute_id": "DSP-3WM-131",
+    "invoice_id": "INV-AP-90541",
+    "po_number": "PO-XYZ-880271",
+    "discrepancy_type": "QTY_SHORT_PLUS_PRICE_AND_DDP_FREIGHT",
+    "verified_payable_usd": 730729.63,
+    "debit_memo_variance_usd": 36548.97,
+    "early_pay_discount_saved_usd": 12298.31,
+    "match_status": "HOLD_PENDING_QM_CREDIT"
+  },
+  {
+    "dispute_id": "DSP-3WM-139",
+    "invoice_id": "INV-AP-90549",
+    "po_number": "PO-XYZ-880546",
+    "discrepancy_type": "QM_DAMAGED_REJECT_30_EA",
+    "verified_payable_usd": 178802.87,
+    "debit_memo_variance_usd": 1932.34,
+    "early_pay_discount_saved_usd": 3411.37,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-147",
+    "invoice_id": "INV-AP-90557",
+    "po_number": "PO-XYZ-880635",
+    "discrepancy_type": "QM_DAMAGED_REJECT_30_EA",
+    "verified_payable_usd": 83543.42,
+    "debit_memo_variance_usd": 2696.91,
+    "early_pay_discount_saved_usd": 1285.5,
+    "match_status": "CLEAN_POSTED"
+  },
+  {
+    "dispute_id": "DSP-3WM-155",
+    "invoice_id": "INV-AP-90565",
+    "po_number": "PO-XYZ-880505",
+    "discrepancy_type": "UNAPPROVED_UNIT_PRICE_HIKE",
+    "verified_payable_usd": 206975.21,
+    "debit_memo_variance_usd": 2391.78,
+    "early_pay_discount_saved_usd": 0.1,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-163",
+    "invoice_id": "INV-AP-90573",
+    "po_number": "PO-XYZ-880687",
+    "discrepancy_type": "UNAUTHORIZED_DDP_FREIGHT_ADDON",
+    "verified_payable_usd": 492681.36,
+    "debit_memo_variance_usd": 0.1,
+    "early_pay_discount_saved_usd": 7789.87,
+    "match_status": "HOLD_PENDING_QM_CREDIT"
+  },
+  {
+    "dispute_id": "DSP-3WM-171",
+    "invoice_id": "INV-AP-90581",
+    "po_number": "PO-XYZ-880776",
+    "discrepancy_type": "QM_DAMAGED_REJECT_30_EA",
+    "verified_payable_usd": 74479.64,
+    "debit_memo_variance_usd": 8327.51,
+    "early_pay_discount_saved_usd": 0.1,
+    "match_status": "CLEAN_POSTED"
+  },
+  {
+    "dispute_id": "DSP-3WM-179",
+    "invoice_id": "INV-AP-90589",
+    "po_number": "PO-XYZ-880859",
+    "discrepancy_type": "UNAPPROVED_UNIT_PRICE_HIKE",
+    "verified_payable_usd": 133975.57,
+    "debit_memo_variance_usd": 0.1,
+    "early_pay_discount_saved_usd": 2572.73,
+    "match_status": "HOLD_PENDING_QM_CREDIT"
+  },
+  {
+    "dispute_id": "DSP-3WM-179",
+    "invoice_id": "INV-AP-90589",
+    "po_number": "PO-XYZ-880397",
+    "discrepancy_type": "CLEAN_3WAY_EXACT_MATCH",
+    "verified_payable_usd": 131818.3,
+    "debit_memo_variance_usd": 14288.07,
+    "early_pay_discount_saved_usd": 2215.45,
+    "match_status": "CLEAN_POSTED"
+  },
+  {
+    "dispute_id": "DSP-3WM-187",
+    "invoice_id": "INV-AP-90597",
+    "po_number": "PO-XYZ-880327",
+    "discrepancy_type": "QTY_SHORT_80_PLUS_PRICE_VARIANCE",
+    "verified_payable_usd": 696509.96,
+    "debit_memo_variance_usd": 30881.87,
+    "early_pay_discount_saved_usd": 16354.36,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-195",
+    "invoice_id": "INV-AP-90605",
+    "po_number": "PO-XYZ-880602",
+    "discrepancy_type": "UNAUTHORIZED_DDP_FREIGHT_ADDON",
+    "verified_payable_usd": 145008.87,
+    "debit_memo_variance_usd": 2035.59,
+    "early_pay_discount_saved_usd": 2826.7,
+    "match_status": "CLEAN_POSTED"
+  },
+  {
+    "dispute_id": "DSP-3WM-203",
+    "invoice_id": "INV-AP-90613",
+    "po_number": "PO-XYZ-880691",
+    "discrepancy_type": "QTY_SHORT_80_PLUS_PRICE_VARIANCE",
+    "verified_payable_usd": 81621.25,
+    "debit_memo_variance_usd": 2362.12,
+    "early_pay_discount_saved_usd": 1077.89,
+    "match_status": "HOLD_PENDING_QM_CREDIT"
+  },
+  {
+    "dispute_id": "DSP-3WM-211",
+    "invoice_id": "INV-AP-90621",
+    "po_number": "PO-XYZ-880561",
+    "discrepancy_type": "CLEAN_3WAY_EXACT_MATCH",
+    "verified_payable_usd": 590911.47,
+    "debit_memo_variance_usd": 5889.6,
+    "early_pay_discount_saved_usd": 0.1,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-219",
+    "invoice_id": "INV-AP-90629",
+    "po_number": "PO-XYZ-880743",
+    "discrepancy_type": "CLEAN_3WAY_EXACT_MATCH",
+    "verified_payable_usd": 456954.22,
+    "debit_memo_variance_usd": 0.1,
+    "early_pay_discount_saved_usd": 7112.15,
+    "match_status": "AUTO_DEBIT_AND_RELEASE"
+  },
+  {
+    "dispute_id": "DSP-3WM-227",
+    "invoice_id": "INV-AP-90637",
+    "po_number": "PO-XYZ-880832",
+    "discrepancy_type": "QM_DAMAGED_REJECT_30_EA",
+    "verified_payable_usd": 81845.03,
+    "debit_memo_variance_usd": 8367.91,
+    "early_pay_discount_saved_usd": 0.1,
+    "match_status": "CLEAN_POSTED"
+  },
+  {
+    "dispute_id": "DSP-3WM-235",
+    "invoice_id": "INV-AP-90645",
+    "po_number": "PO-XYZ-880915",
+    "discrepancy_type": "QTY_SHORT_80_PLUS_PRICE_VARIANCE",
+    "verified_payable_usd": 87357.54,
+    "debit_memo_variance_usd": 0.1,
+    "early_pay_discount_saved_usd": 1779.32,
+    "match_status": "HOLD_PENDING_QM_CREDIT"
   }
 ]

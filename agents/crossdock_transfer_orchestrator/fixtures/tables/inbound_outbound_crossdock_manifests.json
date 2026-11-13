@@ -142,5 +142,437 @@
       "PLT-OAT-9921-04"
     ],
     "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-107",
+    "inbound_trailer_id": "TRL-INB-SWIFT-9987",
+    "supplier_id": "Omni Wholesale Club",
+    "carrier_name": "Summit Stores",
+    "inbound_door_id": "DOOR-INBOUND-70",
+    "total_pallets_count": 22,
+    "eligible_flowthrough_pallets": 17,
+    "staging_required_pallets": 5,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-122",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10002",
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "carrier_name": "Summit Stores",
+    "inbound_door_id": "DOOR-INBOUND-85",
+    "total_pallets_count": 21,
+    "eligible_flowthrough_pallets": 13,
+    "staging_required_pallets": 6,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-136",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10016",
+    "supplier_id": "Cymbal Retail",
+    "carrier_name": "Cymbal Retail",
+    "inbound_door_id": "DOOR-INBOUND-99",
+    "total_pallets_count": 11,
+    "eligible_flowthrough_pallets": 6,
+    "staging_required_pallets": 4,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-150",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10030",
+    "supplier_id": "SUP-XYZ-T1-ASEPTIPACK",
+    "carrier_name": "TCI Freight Express",
+    "inbound_door_id": "DOOR-INBOUND-113",
+    "total_pallets_count": 14,
+    "eligible_flowthrough_pallets": 9,
+    "staging_required_pallets": 7,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-164",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10044",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "carrier_name": "TCI Freight Express",
+    "inbound_door_id": "DOOR-INBOUND-127",
+    "total_pallets_count": 27,
+    "eligible_flowthrough_pallets": 23,
+    "staging_required_pallets": 5,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-178",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10058",
+    "supplier_id": "SUP-XYZ-T1-ALUWELD",
+    "carrier_name": "Reliance Retail",
+    "inbound_door_id": "DOOR-INBOUND-141",
+    "total_pallets_count": 12,
+    "eligible_flowthrough_pallets": 18,
+    "staging_required_pallets": 4,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-192",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10072",
+    "supplier_id": "SUP-OATLY-PLANT-01",
+    "carrier_name": "Summit Stores",
+    "inbound_door_id": "DOOR-INBOUND-155",
+    "total_pallets_count": 33,
+    "eligible_flowthrough_pallets": 20,
+    "staging_required_pallets": 8,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-206",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10086",
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "carrier_name": "Apex Hypermarket",
+    "inbound_door_id": "DOOR-INBOUND-169",
+    "total_pallets_count": 20,
+    "eligible_flowthrough_pallets": 18,
+    "staging_required_pallets": 5,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-163",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10043",
+    "supplier_id": "DMart Avenue",
+    "carrier_name": "Summit Stores",
+    "inbound_door_id": "DOOR-INBOUND-126",
+    "total_pallets_count": 10,
+    "eligible_flowthrough_pallets": 9,
+    "staging_required_pallets": 2,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-178",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10058",
+    "supplier_id": "Cymbal Retail",
+    "carrier_name": "Apex Hypermarket",
+    "inbound_door_id": "DOOR-INBOUND-141",
+    "total_pallets_count": 26,
+    "eligible_flowthrough_pallets": 22,
+    "staging_required_pallets": 9,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-192",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10072",
+    "supplier_id": "DMart Avenue",
+    "carrier_name": "DMart Avenue",
+    "inbound_door_id": "DOOR-INBOUND-155",
+    "total_pallets_count": 18,
+    "eligible_flowthrough_pallets": 14,
+    "staging_required_pallets": 7,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-206",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10086",
+    "supplier_id": "SUP-XYZ-T1-PRAIRIEOAT",
+    "carrier_name": "Summit Stores",
+    "inbound_door_id": "DOOR-INBOUND-169",
+    "total_pallets_count": 13,
+    "eligible_flowthrough_pallets": 12,
+    "staging_required_pallets": 6,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-220",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10100",
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "carrier_name": "Omni Wholesale Club",
+    "inbound_door_id": "DOOR-INBOUND-183",
+    "total_pallets_count": 14,
+    "eligible_flowthrough_pallets": 11,
+    "staging_required_pallets": 2,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-234",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10114",
+    "supplier_id": "Reliance Retail",
+    "carrier_name": "TCI Freight Express",
+    "inbound_door_id": "DOOR-INBOUND-197",
+    "total_pallets_count": 17,
+    "eligible_flowthrough_pallets": 18,
+    "staging_required_pallets": 6,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-248",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10128",
+    "supplier_id": "Omni Wholesale Club",
+    "carrier_name": "Apex Hypermarket",
+    "inbound_door_id": "DOOR-INBOUND-211",
+    "total_pallets_count": 30,
+    "eligible_flowthrough_pallets": 15,
+    "staging_required_pallets": 6,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-262",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10142",
+    "supplier_id": "SUP-OATLY-PLANT-01",
+    "carrier_name": "DMart Avenue",
+    "inbound_door_id": "DOOR-INBOUND-225",
+    "total_pallets_count": 17,
+    "eligible_flowthrough_pallets": 15,
+    "staging_required_pallets": 5,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-219",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10099",
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "carrier_name": "Apex Hypermarket",
+    "inbound_door_id": "DOOR-INBOUND-182",
+    "total_pallets_count": 9,
+    "eligible_flowthrough_pallets": 9,
+    "staging_required_pallets": 2,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-234",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10114",
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "carrier_name": "Apex Hypermarket",
+    "inbound_door_id": "DOOR-INBOUND-197",
+    "total_pallets_count": 19,
+    "eligible_flowthrough_pallets": 14,
+    "staging_required_pallets": 5,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-248",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10128",
+    "supplier_id": "DMart Avenue",
+    "carrier_name": "Apex Hypermarket",
+    "inbound_door_id": "DOOR-INBOUND-211",
+    "total_pallets_count": 30,
+    "eligible_flowthrough_pallets": 20,
+    "staging_required_pallets": 10,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-262",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10142",
+    "supplier_id": "SUP-XYZ-T1-ECORESIN",
+    "carrier_name": "Cymbal Retail",
+    "inbound_door_id": "DOOR-INBOUND-225",
+    "total_pallets_count": 30,
+    "eligible_flowthrough_pallets": 18,
+    "staging_required_pallets": 9,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-276",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10156",
+    "supplier_id": "SUP-OATLY-PLANT-01",
+    "carrier_name": "TCI Freight Express",
+    "inbound_door_id": "DOOR-INBOUND-239",
+    "total_pallets_count": 9,
+    "eligible_flowthrough_pallets": 11,
+    "staging_required_pallets": 2,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-290",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10170",
+    "supplier_id": "SUP-XYZ-T1-SILICONCORE",
+    "carrier_name": "Apex Hypermarket",
+    "inbound_door_id": "DOOR-INBOUND-253",
+    "total_pallets_count": 16,
+    "eligible_flowthrough_pallets": 21,
+    "staging_required_pallets": 6,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-304",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10184",
+    "supplier_id": "DMart Avenue",
+    "carrier_name": "Reliance Retail",
+    "inbound_door_id": "DOOR-INBOUND-267",
+    "total_pallets_count": 22,
+    "eligible_flowthrough_pallets": 15,
+    "staging_required_pallets": 6,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
+  },
+  {
+    "manifest_id": "XDOCK-MNF-20261022-318",
+    "inbound_trailer_id": "TRL-INB-SWIFT-10198",
+    "supplier_id": "SUP-XYZ-T1-SUMATRARUBBER",
+    "carrier_name": "Apex Hypermarket",
+    "inbound_door_id": "DOOR-INBOUND-281",
+    "total_pallets_count": 21,
+    "eligible_flowthrough_pallets": 18,
+    "staging_required_pallets": 4,
+    "destination_route": "OUTBOUND-RETAIL-HOUSTON-AUSTIN",
+    "pallet_ids": [
+      "PLT-OAT-9921-01",
+      "PLT-OAT-9921-02",
+      "PLT-OAT-9921-03",
+      "PLT-OAT-9921-04"
+    ],
+    "status": "AT_DOCK_UNLOADING"
   }
 ]

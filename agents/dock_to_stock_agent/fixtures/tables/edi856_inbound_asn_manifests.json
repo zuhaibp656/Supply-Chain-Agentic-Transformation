@@ -78,5 +78,245 @@
     "expected_cases": 1176,
     "temp_requirement": "CHILLED_2_6C",
     "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-8867",
+    "po_number": "PO-XYZ-880285",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "sku_id": "SKU-XYZ-101",
+    "expected_pallets": 33,
+    "expected_cases": 1803,
+    "temp_requirement": "HAZMAT_UN3480",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8875",
+    "po_number": "PO-XYZ-880565",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "sku_id": "SKU-XYZ-412",
+    "expected_pallets": 12,
+    "expected_cases": 687,
+    "temp_requirement": "CHILLED_2_6C",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8883",
+    "po_number": "PO-XYZ-880610",
+    "facility_id": "Chennai-Port",
+    "sku_id": "SKU-XYZ-412",
+    "expected_pallets": 11,
+    "expected_cases": 353,
+    "temp_requirement": "VALIDATED_2_8C",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8891",
+    "po_number": "PO-XYZ-880229",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "expected_pallets": 12,
+    "expected_cases": 148,
+    "temp_requirement": "COOL_DRY",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8899",
+    "po_number": "PO-XYZ-880782",
+    "facility_id": "Kolkata-Haringhata",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "expected_pallets": 13,
+    "expected_cases": 674,
+    "temp_requirement": "VALIDATED_2_8C",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8907",
+    "po_number": "PO-XYZ-880456",
+    "facility_id": "Ahmedabad-Sanand",
+    "sku_id": "SKU-XYZ-204",
+    "expected_pallets": 7,
+    "expected_cases": 581,
+    "temp_requirement": "AMBIENT",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8915",
+    "po_number": "PO-XYZ-880518",
+    "facility_id": "Mumbai-Bhiwandi",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "expected_pallets": 21,
+    "expected_cases": 2102,
+    "temp_requirement": "CHILLED_2_8C",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8923",
+    "po_number": "PO-XYZ-880727",
+    "facility_id": "Kolkata-Haringhata",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "expected_pallets": 7,
+    "expected_cases": 496,
+    "temp_requirement": "COOL_DRY",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8923",
+    "po_number": "PO-XYZ-880341",
+    "facility_id": "Delhi-NCR",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "expected_pallets": 14,
+    "expected_cases": 706,
+    "temp_requirement": "CHILLED_2_8C",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8931",
+    "po_number": "PO-XYZ-880621",
+    "facility_id": "Mumbai-Bhiwandi",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "expected_pallets": 17,
+    "expected_cases": 1013,
+    "temp_requirement": "VALIDATED_2_8C",
+    "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-8939",
+    "po_number": "PO-XYZ-880666",
+    "facility_id": "Delhi-NCR",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "expected_pallets": 6,
+    "expected_cases": 198,
+    "temp_requirement": "AMBIENT",
+    "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-8947",
+    "po_number": "PO-XYZ-880285",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "sku_id": "SKU-BEV-ELECTROLYTE-500ML",
+    "expected_pallets": 9,
+    "expected_cases": 120,
+    "temp_requirement": "LITHIUM_DRY",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8955",
+    "po_number": "PO-XYZ-880838",
+    "facility_id": "Delhi-NCR",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "expected_pallets": 13,
+    "expected_cases": 488,
+    "temp_requirement": "VALIDATED_2_8C",
+    "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-8963",
+    "po_number": "PO-XYZ-880512",
+    "facility_id": "Chennai-Port",
+    "sku_id": "SKU-XYZ-412",
+    "expected_pallets": 8,
+    "expected_cases": 453,
+    "temp_requirement": "CHILLED_2_6C",
+    "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-8971",
+    "po_number": "PO-XYZ-880574",
+    "facility_id": "Delhi-NCR",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "expected_pallets": 17,
+    "expected_cases": 1665,
+    "temp_requirement": "CHILLED_2_6C",
+    "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-8979",
+    "po_number": "PO-XYZ-880783",
+    "facility_id": "Chennai-Port",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "expected_pallets": 15,
+    "expected_cases": 1239,
+    "temp_requirement": "CHILLED_2_8C",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8979",
+    "po_number": "PO-XYZ-880397",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "expected_pallets": 15,
+    "expected_cases": 1149,
+    "temp_requirement": "CHILLED_2_6C",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8987",
+    "po_number": "PO-XYZ-880677",
+    "facility_id": "FDC-XYZ-MUMBAI",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "expected_pallets": 10,
+    "expected_cases": 631,
+    "temp_requirement": "CHILLED_2_6C",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-8995",
+    "po_number": "PO-XYZ-880722",
+    "facility_id": "Kolkata-Haringhata",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "expected_pallets": 4,
+    "expected_cases": 164,
+    "temp_requirement": "HAZMAT_UN3480",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-9003",
+    "po_number": "PO-XYZ-880341",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "expected_pallets": 7,
+    "expected_cases": 98,
+    "temp_requirement": "LITHIUM_DRY",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-9011",
+    "po_number": "PO-XYZ-880894",
+    "facility_id": "Delhi-NCR",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "expected_pallets": 43,
+    "expected_cases": 1687,
+    "temp_requirement": "LITHIUM_DRY",
+    "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-9019",
+    "po_number": "PO-XYZ-880568",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "expected_pallets": 11,
+    "expected_cases": 465,
+    "temp_requirement": "AMBIENT",
+    "urgent_backorder_flag": true
+  },
+  {
+    "asn_id": "ASN-2026-9027",
+    "po_number": "PO-XYZ-880630",
+    "facility_id": "Delhi-NCR",
+    "sku_id": "SKU-XYZ-412",
+    "expected_pallets": 24,
+    "expected_cases": 2251,
+    "temp_requirement": "COOL_DRY",
+    "urgent_backorder_flag": false
+  },
+  {
+    "asn_id": "ASN-2026-9035",
+    "po_number": "PO-XYZ-880839",
+    "facility_id": "Bengaluru-Hosur",
+    "sku_id": "SKU-XYZ-101",
+    "expected_pallets": 20,
+    "expected_cases": 1659,
+    "temp_requirement": "HAZMAT_UN3480",
+    "urgent_backorder_flag": false
   }
 ]

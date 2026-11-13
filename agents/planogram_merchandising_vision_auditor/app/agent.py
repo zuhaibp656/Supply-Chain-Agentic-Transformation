@@ -42,7 +42,7 @@ VISUAL A2UI v0.9 DUAL-SURFACE & ACTUAL DATA-SOURCE TOOL MANDATE (CRITICAL):
 - BUILD TIER: **Hybrid** · Connected Data-Source Tools: `inspect_gemini_38_planogram_merchandising_vision_auditor_data_sources, query_sap_s4hana_master_data_backbone, query_trade_planogram_contracted_planogram_templates, query_sfa_instore_merchandising_corrective_tasks, query_sos_compliance_shelf_compliance_scoring_ledger, query_gemini_38_store_shelf_vision_audit_captures, query_store_shelf_vision_audit_captures, query_contracted_planogram_templates`.
 - On EVERY analytical, chart, variance, comparison, forecast, audit, scenario, or cockpit request, proactively execute your data-source-specific `query_*` / `fetch_*` tools, deterministic solver (`run_*` / `analyze_*`), and `render_planogram_merchandising_vision_auditor_a2ui_chart_and_canvas` so Gemini Enterprise renders BOTH:
   1. **Inline A2UI `Card` (`VegaChart` ONLY)**: A 2-Panel Executive Vega-Lite v5 Infographic (Top: Baseline vs. Target/Verified Actual with Mean Reference Rule; Bottom: Signed `Δ` Variance Strip). Keep ONLY the `VegaChart` inside the inline card!
-  2. **Side-Panel A2UI `Canvas` (`RichTable` + Action Buttons + Expansion Panels)**: Automatically attached in the side panel so business users can sort/filter live source rows in Looker Studio and click quick-action buttons.
+  2. **Side-Panel A2UI `Canvas` (Multi-Chart Visual Studio: KPI Index `VegaChart` + Pareto Breakdown `VegaChart` + Action Buttons + Looker `RichTable`)**: Automatically attached in the side panel so business users can sort/filter live source rows in Looker Studio and click quick-action buttons.
 - Outside the card in Markdown, present: (a) a warm 3–4 sentence Plain-English Executive Summary (spelling out every abbreviation on first use), (b) a clean `<= 5`-column Markdown summary table ready to copy into Google Sheets, (c) 3–4 concise driver & action bullets, and (d) headed Cloud Storage links (`### Interactive Cockpit & Live Visual Application` via `publish_planogram_merchandising_vision_auditor_interactive_cockpit_to_gcs` / `### Downloadable Data Export`) when requested.
 - NEVER invent numbers, SKUs, POs, or invoice IDs, and NEVER paste raw HTML (`<!DOCTYPE html>`), Vega-Lite JSON, or `snake_case` internal filenames in user-facing prose.
 """
@@ -281,13 +281,95 @@ try:
             pass
         return llm_response
 
+    def _ensure_interactive_links_callback(
+        callback_context: Optional[CallbackContext] = None,
+        llm_response: Optional[LlmResponse] = None,
+        **_: Any,
+    ) -> Optional[LlmResponse]:
+        """FleetFlow-pattern `after_model_callback`:
+        1. Scrubs any stray `<a2a_datapart_json>` text from model turns.
+        2. On the final text turn of any analytical/operational query, deterministically
+           compiles & publishes the live-data Interactive HTML5 Cockpit + Verified CSV Schedule
+           to Google Cloud Storage and appends clickable headed links if not already present.
+        """
+        import logging as _logging
+        try:
+            if llm_response is None or getattr(llm_response, "content", None) is None:
+                return None
+            if getattr(llm_response, "partial", False):
+                return None
+            parts = list(llm_response.content.parts or [])
+            has_call = any(getattr(p, "function_call", None) is not None for p in parts)
+            cleaned: List[types.Part] = []
+            for p in parts:
+                t = getattr(p, "text", None)
+                if t and A2A_DATA_PART_OPEN_TAG in t:
+                    t_clean = t.split(A2A_DATA_PART_OPEN_TAG)[0].strip()
+                    if t_clean:
+                        cleaned.append(types.Part(text=t_clean))
+                else:
+                    cleaned.append(p)
+            if has_call:
+                llm_response.content.parts = cleaned
+                return llm_response
+
+            idx = max((i for i, p in enumerate(cleaned) if getattr(p, "text", None)), default=-1)
+            existing_txt = (cleaned[idx].text or "") if idx >= 0 else ""
+            low_txt = existing_txt.lower()
+
+            # Skip attaching cockpit/export links on pure safety-guardrail blocks when no data tools ran
+            has_activity = bool(getattr(tools, "has_turn_activity", lambda: False)())
+            has_md_table = ("| ---" in existing_txt or "|:---" in existing_txt or "| :---" in existing_txt)
+            is_pure_refusal = (not has_activity and not has_md_table and any(k in low_txt for k in ("safety guardrail", "cannot bypass", "blocked the unsafe")))
+            if is_pure_refusal or (not has_activity and not has_md_table):
+                llm_response.content.parts = cleaned
+                return llm_response
+
+            art = tools.ensure_turn_gcs_artifacts()
+            html_url = art.get("html_url", "")
+            csv_url = art.get("csv_url", "")
+
+            missing_bullets: List[str] = []
+            if html_url and ("cockpits/" not in existing_txt and html_url not in existing_txt):
+                missing_bullets.append(
+                    f"- 🌐 **[Open Interactive Visual Cockpit & Simulator (Full-Screen HTML) ↗]({html_url})** — "
+                    f"Interactive multi-tab web application with live KPI charts, What-If scenario sliders, and searchable enterprise ledger."
+                )
+            if csv_url and ("exports/" not in existing_txt and csv_url not in existing_txt):
+                missing_bullets.append(
+                    f"- 📥 **[Download Verified Data Schedule (CSV) ↗]({csv_url})** — "
+                    f"Atomic copy-ready data export for Google Sheets or Excel."
+                )
+
+            if missing_bullets:
+                nl = chr(10)
+                footer_block = (
+                    f"{nl}{nl}### 🌐 Interactive Visual Cockpit & Data Exports{nl}{nl}"
+                    + nl.join(missing_bullets)
+                    + nl
+                )
+                if idx >= 0:
+                    cleaned[idx] = types.Part(text=existing_txt.rstrip() + footer_block)
+                else:
+                    cleaned.append(types.Part(text=footer_block.lstrip()))
+
+            llm_response.content.parts = cleaned
+            return llm_response
+        except Exception as exc:
+            _logging.getLogger(__name__).exception("after_model_callback link injection degraded cleanly: %s", exc)
+            return None
+
     def _emit_a2ui_surface(
         callback_context: Optional[CallbackContext] = None,
         **_: Any,
     ) -> Optional[types.Content]:
         import logging as _logging
         try:
+            has_activity = bool(getattr(tools, "has_turn_activity", lambda: True)())
             getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
+            if not has_activity:
+                getattr(tools, "finalize_turn_gcs_state", lambda timeout=12.0: None)(timeout=2.0)
+                return None
             surface_id = f"surface-{uuid.uuid4().hex[:8]}"
             chart_spec = None
             getter = getattr(tools, "get_latest_chart_spec", None)
@@ -301,11 +383,18 @@ try:
             if callable(ctx_getter):
                 canvas_ctx = ctx_getter(consume=True)
             a2ui_parts = build_planogram_merchandising_vision_auditor_surface(surface_id, spec=chart_spec, canvas_context=canvas_ctx, include_canvas=True)
+            getattr(tools, "finalize_turn_gcs_state", lambda timeout=12.0: None)(timeout=12.0)
             if a2ui_parts:
                 return types.Content(role="model", parts=a2ui_parts)
         except Exception as exc:
             _logging.getLogger(__name__).exception("Failed to emit A2UI surfaces for planogram_merchandising_vision_auditor: %s", exc)
+            try:
+                getattr(tools, "finalize_turn_gcs_state", lambda timeout=2.0: None)(timeout=2.0)
+            except Exception:
+                pass
         return None
+
+
 
     root_agent = Agent(
         name="planogram_merchandising_vision_auditor",
@@ -322,6 +411,7 @@ try:
         instruction=_INSTRUCTION,
         tools=_AVAILABLE_TOOLS,
         before_model_callback=_sanitize_llm_request,
+        after_model_callback=_ensure_interactive_links_callback,
         after_agent_callback=_emit_a2ui_surface,
     )
 

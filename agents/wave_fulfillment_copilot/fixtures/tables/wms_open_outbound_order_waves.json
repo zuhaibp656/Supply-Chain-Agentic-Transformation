@@ -78,5 +78,245 @@
     "hours_to_cutoff": 4.9,
     "otif_revenue_usd": 92000.0,
     "cutoff_risk": "SURPLUS_CAPACITY"
+  },
+  {
+    "wave_id": "WAVE-CHI-1466",
+    "facility_id": "Ahmedabad-Sanand",
+    "zone_id": "ZONE-CHILL-68",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "remaining_lines": 883,
+    "hours_to_cutoff": 1.13,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "WARNING_TIGHT"
+  },
+  {
+    "wave_id": "WAVE-CHI-1603",
+    "facility_id": "Ahmedabad-Sanand",
+    "zone_id": "ZONE-DRY-74",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "remaining_lines": 1609,
+    "hours_to_cutoff": 3.59,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "ON_TRACK"
+  },
+  {
+    "wave_id": "WAVE-CHI-1780",
+    "facility_id": "Kolkata-Haringhata",
+    "zone_id": "ZONE-BULK-84",
+    "carrier_id": "CAR-XPO-LTL",
+    "remaining_lines": 557,
+    "hours_to_cutoff": 4.74,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "CRITICAL_MISS_RISK"
+  },
+  {
+    "wave_id": "WAVE-DAL-1517",
+    "facility_id": "RDC-XYZ-CHICAGO",
+    "zone_id": "ZONE-EACH-90",
+    "carrier_id": "CAR-XPO-LTL",
+    "remaining_lines": 2341,
+    "hours_to_cutoff": 2.75,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "ON_TRACK"
+  },
+  {
+    "wave_id": "WAVE-DAL-1894",
+    "facility_id": "Kolkata-Haringhata",
+    "zone_id": "ZONE-RESERVE-99",
+    "carrier_id": "CAR-LH-AIRCARGO",
+    "remaining_lines": 793,
+    "hours_to_cutoff": 7.33,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "SURPLUS_CAPACITY"
+  },
+  {
+    "wave_id": "WAVE-ATL-1601",
+    "facility_id": "Delhi-NCR",
+    "zone_id": "ZONE-FAST-102",
+    "carrier_id": "DMart Avenue",
+    "remaining_lines": 1536,
+    "hours_to_cutoff": 3.24,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "CRITICAL_MISS_RISK"
+  },
+  {
+    "wave_id": "WAVE-FRA-1708",
+    "facility_id": "Ahmedabad-Sanand",
+    "zone_id": "ZONE-GDP-109",
+    "carrier_id": "CAR-MAERSK-OCEAN",
+    "remaining_lines": 655,
+    "hours_to_cutoff": 2.78,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "SURPLUS_CAPACITY"
+  },
+  {
+    "wave_id": "WAVE-FRA-2015",
+    "facility_id": "Delhi-NCR",
+    "zone_id": "ZONE-AMBIENT-118",
+    "carrier_id": "CAR-LH-AIRCARGO",
+    "remaining_lines": 298,
+    "hours_to_cutoff": 3.64,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "CRITICAL_MISS_RISK"
+  },
+  {
+    "wave_id": "WAVE-CHI-1522",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "zone_id": "ZONE-CHILL-124",
+    "carrier_id": "CAR-BNSF-RAIL",
+    "remaining_lines": 1577,
+    "hours_to_cutoff": 2.07,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "ON_TRACK"
+  },
+  {
+    "wave_id": "WAVE-CHI-1659",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "zone_id": "ZONE-DRY-130",
+    "carrier_id": "DMart Avenue",
+    "remaining_lines": 1787,
+    "hours_to_cutoff": 4.0,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "ON_TRACK"
+  },
+  {
+    "wave_id": "WAVE-CHI-1836",
+    "facility_id": "FDC-XYZ-DALLAS",
+    "zone_id": "ZONE-BULK-140",
+    "carrier_id": "Omni Wholesale Club",
+    "remaining_lines": 1001,
+    "hours_to_cutoff": 6.25,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "CRITICAL_MISS_RISK"
+  },
+  {
+    "wave_id": "WAVE-DAL-1573",
+    "facility_id": "Ahmedabad-Sanand",
+    "zone_id": "ZONE-EACH-146",
+    "carrier_id": "CAR-JBHT-FTL",
+    "remaining_lines": 1276,
+    "hours_to_cutoff": 1.58,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "CRITICAL_MISS_RISK"
+  },
+  {
+    "wave_id": "WAVE-DAL-1950",
+    "facility_id": "Ahmedabad-Sanand",
+    "zone_id": "ZONE-RESERVE-155",
+    "carrier_id": "Summit Stores",
+    "remaining_lines": 432,
+    "hours_to_cutoff": 5.38,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "ON_TRACK"
+  },
+  {
+    "wave_id": "WAVE-ATL-1657",
+    "facility_id": "Hyderabad-Shamshabad",
+    "zone_id": "ZONE-FAST-158",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "remaining_lines": 1176,
+    "hours_to_cutoff": 2.55,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "SURPLUS_CAPACITY"
+  },
+  {
+    "wave_id": "WAVE-FRA-1764",
+    "facility_id": "Pune-Chakan",
+    "zone_id": "ZONE-GDP-165",
+    "carrier_id": "Omni Wholesale Club",
+    "remaining_lines": 209,
+    "hours_to_cutoff": 1.0,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "WARNING_TIGHT"
+  },
+  {
+    "wave_id": "WAVE-FRA-2071",
+    "facility_id": "Hyderabad-Shamshabad",
+    "zone_id": "ZONE-AMBIENT-174",
+    "carrier_id": "DMart Avenue",
+    "remaining_lines": 362,
+    "hours_to_cutoff": 4.18,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "CRITICAL_MISS_RISK"
+  },
+  {
+    "wave_id": "WAVE-CHI-1578",
+    "facility_id": "Hyderabad-Shamshabad",
+    "zone_id": "ZONE-CHILL-180",
+    "carrier_id": "Reliance Retail",
+    "remaining_lines": 1170,
+    "hours_to_cutoff": 1.09,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "CRITICAL_MISS_RISK"
+  },
+  {
+    "wave_id": "WAVE-CHI-1715",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "zone_id": "ZONE-DRY-186",
+    "carrier_id": "Apex Hypermarket",
+    "remaining_lines": 1380,
+    "hours_to_cutoff": 3.99,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "WARNING_TIGHT"
+  },
+  {
+    "wave_id": "WAVE-CHI-1892",
+    "facility_id": "Chennai-Port",
+    "zone_id": "ZONE-BULK-196",
+    "carrier_id": "Apex Hypermarket",
+    "remaining_lines": 393,
+    "hours_to_cutoff": 3.37,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "CRITICAL_MISS_RISK"
+  },
+  {
+    "wave_id": "WAVE-DAL-1629",
+    "facility_id": "Mumbai-Bhiwandi",
+    "zone_id": "ZONE-EACH-202",
+    "carrier_id": "Summit Stores",
+    "remaining_lines": 2105,
+    "hours_to_cutoff": 1.91,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "ON_TRACK"
+  },
+  {
+    "wave_id": "WAVE-DAL-2006",
+    "facility_id": "Delhi-NCR",
+    "zone_id": "ZONE-RESERVE-211",
+    "carrier_id": "CAR-XPO-LTL",
+    "remaining_lines": 625,
+    "hours_to_cutoff": 7.59,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "SURPLUS_CAPACITY"
+  },
+  {
+    "wave_id": "WAVE-ATL-1713",
+    "facility_id": "RDC-XYZ-FRANKFURT",
+    "zone_id": "ZONE-FAST-214",
+    "carrier_id": "Cymbal Retail",
+    "remaining_lines": 2747,
+    "hours_to_cutoff": 4.12,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "SURPLUS_CAPACITY"
+  },
+  {
+    "wave_id": "WAVE-FRA-1820",
+    "facility_id": "Kolkata-Haringhata",
+    "zone_id": "ZONE-GDP-221",
+    "carrier_id": "DMart Avenue",
+    "remaining_lines": 786,
+    "hours_to_cutoff": 3.1,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "SURPLUS_CAPACITY"
+  },
+  {
+    "wave_id": "WAVE-FRA-2127",
+    "facility_id": "FDC-XYZ-ATLANTA",
+    "zone_id": "ZONE-AMBIENT-230",
+    "carrier_id": "CAR-CRYOEXP-REEFER",
+    "remaining_lines": 629,
+    "hours_to_cutoff": 6.32,
+    "otif_revenue_usd": 99.8,
+    "cutoff_risk": "WARNING_TIGHT"
   }
 ]

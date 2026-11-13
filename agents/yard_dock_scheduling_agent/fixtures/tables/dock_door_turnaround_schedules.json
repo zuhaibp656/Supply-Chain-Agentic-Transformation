@@ -78,5 +78,245 @@
     "scheduled_unload_duration_minutes": 30,
     "forklift_crew_assigned": "CREW-ALPHA-01",
     "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-74",
+    "facility_zone": "CROSSDOCK_NORTH_QUADRANT",
+    "assigned_trailer_id": "TRL-SWIFT-7807",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-20T05:50:00Z",
+    "scheduled_unload_duration_minutes": 17,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-87",
+    "facility_zone": "Chennai-Port",
+    "assigned_trailer_id": "TRL-JB-HUNT-1277",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-21T06:15:00Z",
+    "scheduled_unload_duration_minutes": 17,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-103",
+    "facility_zone": "Delhi-NCR",
+    "assigned_trailer_id": "TRL-SWIFT-7836",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-22T05:50:00Z",
+    "scheduled_unload_duration_minutes": 37,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-123",
+    "facility_zone": "Hyderabad-Shamshabad",
+    "assigned_trailer_id": "TRL-JB-HUNT-1313",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-23T06:15:00Z",
+    "scheduled_unload_duration_minutes": 26,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-131",
+    "facility_zone": "CROSSDOCK_NORTH_QUADRANT",
+    "assigned_trailer_id": "TRL-SWIFT-7864",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-24T05:50:00Z",
+    "scheduled_unload_duration_minutes": 27,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-151",
+    "facility_zone": "Chennai-Port",
+    "assigned_trailer_id": "TRL-JB-HUNT-1341",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-25T06:15:00Z",
+    "scheduled_unload_duration_minutes": 42,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-159",
+    "facility_zone": "Pune-Chakan",
+    "assigned_trailer_id": "TRL-SWIFT-7892",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-26T05:50:00Z",
+    "scheduled_unload_duration_minutes": 19,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-179",
+    "facility_zone": "Kolkata-Haringhata",
+    "assigned_trailer_id": "TRL-JB-HUNT-1369",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-27T06:15:00Z",
+    "scheduled_unload_duration_minutes": 23,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-130",
+    "facility_zone": "CROSSDOCK_NORTH_QUADRANT",
+    "assigned_trailer_id": "TRL-SWIFT-7863",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-28T05:50:00Z",
+    "scheduled_unload_duration_minutes": 21,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-143",
+    "facility_zone": "Hyderabad-Shamshabad",
+    "assigned_trailer_id": "TRL-JB-HUNT-1333",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-29T06:15:00Z",
+    "scheduled_unload_duration_minutes": 32,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-159",
+    "facility_zone": "OUTBOUND_SOUTH_BAY",
+    "assigned_trailer_id": "TRL-SWIFT-7892",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-30T05:50:00Z",
+    "scheduled_unload_duration_minutes": 18,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-179",
+    "facility_zone": "Kolkata-Haringhata",
+    "assigned_trailer_id": "TRL-JB-HUNT-1369",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-31T06:15:00Z",
+    "scheduled_unload_duration_minutes": 16,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-187",
+    "facility_zone": "Ahmedabad-Sanand",
+    "assigned_trailer_id": "TRL-SWIFT-7920",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-11-01T05:50:00Z",
+    "scheduled_unload_duration_minutes": 35,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-207",
+    "facility_zone": "Chennai-Port",
+    "assigned_trailer_id": "TRL-JB-HUNT-1397",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-12T06:15:00Z",
+    "scheduled_unload_duration_minutes": 24,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-215",
+    "facility_zone": "CROSSDOCK_NORTH_QUADRANT",
+    "assigned_trailer_id": "TRL-SWIFT-7948",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-13T05:50:00Z",
+    "scheduled_unload_duration_minutes": 20,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-235",
+    "facility_zone": "Chennai-Port",
+    "assigned_trailer_id": "TRL-JB-HUNT-1425",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-14T06:15:00Z",
+    "scheduled_unload_duration_minutes": 18,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-186",
+    "facility_zone": "OUTBOUND_SOUTH_BAY",
+    "assigned_trailer_id": "TRL-SWIFT-7919",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-15T05:50:00Z",
+    "scheduled_unload_duration_minutes": 17,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-199",
+    "facility_zone": "CROSSDOCK_NORTH_QUADRANT",
+    "assigned_trailer_id": "TRL-JB-HUNT-1389",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-16T06:15:00Z",
+    "scheduled_unload_duration_minutes": 19,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-215",
+    "facility_zone": "Ahmedabad-Sanand",
+    "assigned_trailer_id": "TRL-SWIFT-7948",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-17T05:50:00Z",
+    "scheduled_unload_duration_minutes": 22,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-235",
+    "facility_zone": "Kolkata-Haringhata",
+    "assigned_trailer_id": "TRL-JB-HUNT-1425",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-18T06:15:00Z",
+    "scheduled_unload_duration_minutes": 37,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "LOADING_IN_PROGRESS"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-243",
+    "facility_zone": "Chennai-Port",
+    "assigned_trailer_id": "TRL-SWIFT-7976",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-19T05:50:00Z",
+    "scheduled_unload_duration_minutes": 18,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-263",
+    "facility_zone": "CROSSDOCK_NORTH_QUADRANT",
+    "assigned_trailer_id": "TRL-JB-HUNT-1453",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-20T06:15:00Z",
+    "scheduled_unload_duration_minutes": 17,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-CROSSDOCK-271",
+    "facility_zone": "Ahmedabad-Sanand",
+    "assigned_trailer_id": "TRL-SWIFT-8004",
+    "door_status": "READY_FOR_DOCKING",
+    "target_dock_time": "2026-10-21T05:50:00Z",
+    "scheduled_unload_duration_minutes": 32,
+    "forklift_crew_assigned": "CREW-DELTA-02",
+    "door_clearance_status": "DOOR_EMPTY_READY"
+  },
+  {
+    "door_id": "DOOR-OUTBOUND-291",
+    "facility_zone": "Delhi-NCR",
+    "assigned_trailer_id": "TRL-JB-HUNT-1481",
+    "door_status": "OCCUPIED_LOADING",
+    "target_dock_time": "2026-10-22T06:15:00Z",
+    "scheduled_unload_duration_minutes": 18,
+    "forklift_crew_assigned": "CREW-ALPHA-01",
+    "door_clearance_status": "DOOR_EMPTY_READY"
   }
 ]

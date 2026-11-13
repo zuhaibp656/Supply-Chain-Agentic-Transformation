@@ -27,7 +27,7 @@
     "constrained_supply_units": 1800000,
     "gap_units": 0,
     "unmet_revenue_usd": 0.0,
-    "primary_bottleneck": "None \u2014 Fully Buffered"
+    "primary_bottleneck": "None — Fully Buffered"
   },
   {
     "plan_month": "2026-33",
@@ -57,7 +57,7 @@
     "constrained_supply_units": 1926000,
     "gap_units": 2,
     "unmet_revenue_usd": 2.5,
-    "primary_bottleneck": "None \u2014 Fully Buffered"
+    "primary_bottleneck": "None — Fully Buffered"
   },
   {
     "plan_month": "2026-54",
@@ -78,5 +78,245 @@
     "gap_units": 156000,
     "unmet_revenue_usd": 1356000.0,
     "primary_bottleneck": "Extruder Line 1 Die Cleanout & Shift Staffing"
+  },
+  {
+    "plan_month": "2026-77",
+    "business_unit": "Consumer Packaged Goods",
+    "product_family": "Active Nutrition Bars",
+    "unconstrained_demand_units": 4687322,
+    "constrained_supply_units": 3683286,
+    "gap_units": 609080,
+    "unmet_revenue_usd": 2325427.64,
+    "primary_bottleneck": "Extruder Line 1 Die Cleanout & Shift Staffing"
+  },
+  {
+    "plan_month": "2026-84",
+    "business_unit": "Consumer Packaged Goods",
+    "product_family": "Eco Cleansers",
+    "unconstrained_demand_units": 1828633,
+    "constrained_supply_units": 1939176,
+    "gap_units": 166323,
+    "unmet_revenue_usd": 998550.43,
+    "primary_bottleneck": "Extruder Line 1 Die Cleanout & Shift Staffing"
+  },
+  {
+    "plan_month": "2026-91",
+    "business_unit": "Consumer Packaged Goods",
+    "product_family": "Hydration RTD",
+    "unconstrained_demand_units": 1170145,
+    "constrained_supply_units": 1395397,
+    "gap_units": 1,
+    "unmet_revenue_usd": 0.1,
+    "primary_bottleneck": "Extruder Line 1 Die Cleanout & Shift Staffing"
+  },
+  {
+    "plan_month": "2026-120",
+    "business_unit": "Consumer Packaged Goods",
+    "product_family": "Active Nutrition Bars",
+    "unconstrained_demand_units": 4210044,
+    "constrained_supply_units": 3985245,
+    "gap_units": 460466,
+    "unmet_revenue_usd": 4138158.14,
+    "primary_bottleneck": "None — Fully Buffered"
+  },
+  {
+    "plan_month": "2026-134",
+    "business_unit": "Consumer Packaged Goods",
+    "product_family": "Eco Cleansers",
+    "unconstrained_demand_units": 2242875,
+    "constrained_supply_units": 2062368,
+    "gap_units": 189523,
+    "unmet_revenue_usd": 1218679.32,
+    "primary_bottleneck": "Packaging Line 3 Autoclave at Plant Cincinnati"
+  },
+  {
+    "plan_month": "2026-148",
+    "business_unit": "Personal Care",
+    "product_family": "Hydration RTD",
+    "unconstrained_demand_units": 717993,
+    "constrained_supply_units": 1162964,
+    "gap_units": 1,
+    "unmet_revenue_usd": 1.65,
+    "primary_bottleneck": "None — Fully Buffered"
+  },
+  {
+    "plan_month": "2026-162",
+    "business_unit": "Personal Care",
+    "product_family": "Eco Cleansers",
+    "unconstrained_demand_units": 2509676,
+    "constrained_supply_units": 2809661,
+    "gap_units": 463739,
+    "unmet_revenue_usd": 2178157.73,
+    "primary_bottleneck": "Extruder Line 1 Die Cleanout & Shift Staffing"
+  },
+  {
+    "plan_month": "2026-176",
+    "business_unit": "Consumer Packaged Goods",
+    "product_family": "Hydration RTD",
+    "unconstrained_demand_units": 2487874,
+    "constrained_supply_units": 2407521,
+    "gap_units": 162884,
+    "unmet_revenue_usd": 1443353.25,
+    "primary_bottleneck": "Packaging Line 3 Autoclave at Plant Cincinnati"
+  },
+  {
+    "plan_month": "2026-133",
+    "business_unit": "Personal Care",
+    "product_family": "Hydration RTD",
+    "unconstrained_demand_units": 2690061,
+    "constrained_supply_units": 2444067,
+    "gap_units": 396610,
+    "unmet_revenue_usd": 1882338.11,
+    "primary_bottleneck": "Packaging Line 3 Autoclave at Plant Cincinnati"
+  },
+  {
+    "plan_month": "2026-140",
+    "business_unit": "Personal Care",
+    "product_family": "Hydration RTD",
+    "unconstrained_demand_units": 1686246,
+    "constrained_supply_units": 1587847,
+    "gap_units": 129799,
+    "unmet_revenue_usd": 894014.22,
+    "primary_bottleneck": "Packaging Line 3 Autoclave at Plant Cincinnati"
+  },
+  {
+    "plan_month": "2026-147",
+    "business_unit": "Consumer Packaged Goods",
+    "product_family": "Hydration RTD",
+    "unconstrained_demand_units": 853168,
+    "constrained_supply_units": 780251,
+    "gap_units": 1,
+    "unmet_revenue_usd": 0.1,
+    "primary_bottleneck": "Extruder Line 1 Die Cleanout & Shift Staffing"
+  },
+  {
+    "plan_month": "2026-176",
+    "business_unit": "Consumer Packaged Goods",
+    "product_family": "Eco Cleansers",
+    "unconstrained_demand_units": 3079836,
+    "constrained_supply_units": 3550764,
+    "gap_units": 383055,
+    "unmet_revenue_usd": 2577535.85,
+    "primary_bottleneck": "Packaging Line 3 Autoclave at Plant Cincinnati"
+  },
+  {
+    "plan_month": "2026-190",
+    "business_unit": "Consumer Packaged Goods",
+    "product_family": "Active Nutrition Bars",
+    "unconstrained_demand_units": 1622101,
+    "constrained_supply_units": 1700596,
+    "gap_units": 129303,
+    "unmet_revenue_usd": 785368.39,
+    "primary_bottleneck": "Packaging Line 3 Autoclave at Plant Cincinnati"
+  },
+  {
+    "plan_month": "2026-204",
+    "business_unit": "Personal Care",
+    "product_family": "Active Nutrition Bars",
+    "unconstrained_demand_units": 1109568,
+    "constrained_supply_units": 1145662,
+    "gap_units": 1,
+    "unmet_revenue_usd": 1.62,
+    "primary_bottleneck": "None — Fully Buffered"
+  },
+  {
+    "plan_month": "2026-218",
+    "business_unit": "Personal Care",
+    "product_family": "Active Nutrition Bars",
+    "unconstrained_demand_units": 3076959,
+    "constrained_supply_units": 3457462,
+    "gap_units": 480682,
+    "unmet_revenue_usd": 2968785.97,
+    "primary_bottleneck": "None — Fully Buffered"
+  },
+  {
+    "plan_month": "2026-232",
+    "business_unit": "Personal Care",
+    "product_family": "Eco Cleansers",
+    "unconstrained_demand_units": 2294324,
+    "constrained_supply_units": 2113704,
+    "gap_units": 124650,
+    "unmet_revenue_usd": 1450273.36,
+    "primary_bottleneck": "Packaging Line 3 Autoclave at Plant Cincinnati"
+  },
+  {
+    "plan_month": "2026-189",
+    "business_unit": "Nutrition & Wellness",
+    "product_family": "Hydration RTD",
+    "unconstrained_demand_units": 3173958,
+    "constrained_supply_units": 3154561,
+    "gap_units": 449444,
+    "unmet_revenue_usd": 2659533.14,
+    "primary_bottleneck": "None — Fully Buffered"
+  },
+  {
+    "plan_month": "2026-196",
+    "business_unit": "Consumer Packaged Goods",
+    "product_family": "Hydration RTD",
+    "unconstrained_demand_units": 2683629,
+    "constrained_supply_units": 3182989,
+    "gap_units": 208507,
+    "unmet_revenue_usd": 1600882.35,
+    "primary_bottleneck": "Packaging Line 3 Autoclave at Plant Cincinnati"
+  },
+  {
+    "plan_month": "2026-203",
+    "business_unit": "Nutrition & Wellness",
+    "product_family": "Eco Cleansers",
+    "unconstrained_demand_units": 1384360,
+    "constrained_supply_units": 1673468,
+    "gap_units": 1,
+    "unmet_revenue_usd": 0.1,
+    "primary_bottleneck": "None — Fully Buffered"
+  },
+  {
+    "plan_month": "2026-232",
+    "business_unit": "Nutrition & Wellness",
+    "product_family": "Active Nutrition Bars",
+    "unconstrained_demand_units": 2364347,
+    "constrained_supply_units": 2522864,
+    "gap_units": 337287,
+    "unmet_revenue_usd": 2221877.5,
+    "primary_bottleneck": "None — Fully Buffered"
+  },
+  {
+    "plan_month": "2026-246",
+    "business_unit": "Personal Care",
+    "product_family": "Hydration RTD",
+    "unconstrained_demand_units": 3247068,
+    "constrained_supply_units": 2947763,
+    "gap_units": 206860,
+    "unmet_revenue_usd": 1751140.64,
+    "primary_bottleneck": "Packaging Line 3 Autoclave at Plant Cincinnati"
+  },
+  {
+    "plan_month": "2026-260",
+    "business_unit": "Personal Care",
+    "product_family": "Eco Cleansers",
+    "unconstrained_demand_units": 1250706,
+    "constrained_supply_units": 1844062,
+    "gap_units": 2,
+    "unmet_revenue_usd": 2.27,
+    "primary_bottleneck": "None — Fully Buffered"
+  },
+  {
+    "plan_month": "2026-274",
+    "business_unit": "Nutrition & Wellness",
+    "product_family": "Eco Cleansers",
+    "unconstrained_demand_units": 1685097,
+    "constrained_supply_units": 1849997,
+    "gap_units": 239476,
+    "unmet_revenue_usd": 1805359.92,
+    "primary_bottleneck": "None — Fully Buffered"
+  },
+  {
+    "plan_month": "2026-288",
+    "business_unit": "Nutrition & Wellness",
+    "product_family": "Eco Cleansers",
+    "unconstrained_demand_units": 1165574,
+    "constrained_supply_units": 1310922,
+    "gap_units": 92452,
+    "unmet_revenue_usd": 704909.98,
+    "primary_bottleneck": "Packaging Line 3 Autoclave at Plant Cincinnati"
   }
 ]

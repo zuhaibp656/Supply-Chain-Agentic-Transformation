@@ -70,5 +70,221 @@
     "max_excursion_minutes": 300,
     "activation_energy_kj_mol": 83.144,
     "cargo_lot_value_usd": 64800.0
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-1L-18",
+    "temp_band_label": "2C_TO_6C_STRICT",
+    "max_continuous_temp_c": 5.56,
+    "max_mkt_allowed_c": 6.72,
+    "max_excursion_minutes": 82,
+    "activation_energy_kj_mol": 58.27,
+    "cargo_lot_value_usd": 32604.42
+  },
+  {
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK-19",
+    "temp_band_label": "2C_TO_8C_CHILLED",
+    "max_continuous_temp_c": 5.98,
+    "max_mkt_allowed_c": 6.87,
+    "max_excursion_minutes": 84,
+    "activation_energy_kj_mol": 75.52,
+    "cargo_lot_value_usd": 43771.94
+  },
+  {
+    "sku_id": "SKU-CRYO-4410-BIO-20",
+    "temp_band_label": "10C_TO_30C_ELECTRONICS",
+    "max_continuous_temp_c": 8.73,
+    "max_mkt_allowed_c": 9.58,
+    "max_excursion_minutes": 122,
+    "activation_energy_kj_mol": 115.99,
+    "cargo_lot_value_usd": 171653.45
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR-21",
+    "temp_band_label": "2C_TO_8C_CHILLED",
+    "max_continuous_temp_c": 25.87,
+    "max_mkt_allowed_c": 33.72,
+    "max_excursion_minutes": 168,
+    "activation_energy_kj_mol": 113.51,
+    "cargo_lot_value_usd": 33343.75
+  },
+  {
+    "sku_id": "SKU-XYZ-298",
+    "temp_band_label": "15C_TO_30C_DRY_CELL",
+    "max_continuous_temp_c": 31.25,
+    "max_mkt_allowed_c": 36.72,
+    "max_excursion_minutes": 393,
+    "activation_energy_kj_mol": 86.68,
+    "cargo_lot_value_usd": 27763.81
+  },
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ-23",
+    "temp_band_label": "15C_TO_24C_CHOC_COATED",
+    "max_continuous_temp_c": 29.1,
+    "max_mkt_allowed_c": 33.97,
+    "max_excursion_minutes": 306,
+    "activation_energy_kj_mol": 80.33,
+    "cargo_lot_value_usd": 21128.0
+  },
+  {
+    "sku_id": "SKU-XYZ-209",
+    "temp_band_label": "2C_TO_6C_STRICT",
+    "max_continuous_temp_c": 19.56,
+    "max_mkt_allowed_c": 14.96,
+    "max_excursion_minutes": 151,
+    "activation_energy_kj_mol": 55.0,
+    "cargo_lot_value_usd": 63427.36
+  },
+  {
+    "sku_id": "SKU-XYZ-527",
+    "temp_band_label": "AMBIENT_MAX_32C",
+    "max_continuous_temp_c": 12.99,
+    "max_mkt_allowed_c": 12.36,
+    "max_excursion_minutes": 130,
+    "activation_energy_kj_mol": 33.25,
+    "cargo_lot_value_usd": 31743.97
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-1L-26",
+    "temp_band_label": "10C_TO_30C_ELECTRONICS",
+    "max_continuous_temp_c": 3.06,
+    "max_mkt_allowed_c": 4.23,
+    "max_excursion_minutes": 58,
+    "activation_energy_kj_mol": 41.77,
+    "cargo_lot_value_usd": 14990.41
+  },
+  {
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK-27",
+    "temp_band_label": "15C_TO_24C_CHOC_COATED",
+    "max_continuous_temp_c": 6.28,
+    "max_mkt_allowed_c": 9.18,
+    "max_excursion_minutes": 99,
+    "activation_energy_kj_mol": 112.33,
+    "cargo_lot_value_usd": 63889.56
+  },
+  {
+    "sku_id": "SKU-CRYO-4410-BIO-28",
+    "temp_band_label": "2C_TO_6C_STRICT",
+    "max_continuous_temp_c": 13.08,
+    "max_mkt_allowed_c": 10.42,
+    "max_excursion_minutes": 116,
+    "activation_energy_kj_mol": 109.96,
+    "cargo_lot_value_usd": 209740.48
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR-29",
+    "temp_band_label": "2C_TO_8C_CHILLED",
+    "max_continuous_temp_c": 24.6,
+    "max_mkt_allowed_c": 21.6,
+    "max_excursion_minutes": 132,
+    "activation_energy_kj_mol": 75.93,
+    "cargo_lot_value_usd": 25209.19
+  },
+  {
+    "sku_id": "SKU-XYZ-354",
+    "temp_band_label": "2C_TO_8C_CHILLED",
+    "max_continuous_temp_c": 21.66,
+    "max_mkt_allowed_c": 19.98,
+    "max_excursion_minutes": 173,
+    "activation_energy_kj_mol": 54.14,
+    "cargo_lot_value_usd": 15970.6
+  },
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ-31",
+    "temp_band_label": "15C_TO_24C_CHOC_COATED",
+    "max_continuous_temp_c": 28.31,
+    "max_mkt_allowed_c": 22.62,
+    "max_excursion_minutes": 304,
+    "activation_energy_kj_mol": 62.06,
+    "cargo_lot_value_usd": 17692.41
+  },
+  {
+    "sku_id": "SKU-XYZ-265",
+    "temp_band_label": "15C_TO_30C_DRY_CELL",
+    "max_continuous_temp_c": 18.44,
+    "max_mkt_allowed_c": 22.84,
+    "max_excursion_minutes": 203,
+    "activation_energy_kj_mol": 68.62,
+    "cargo_lot_value_usd": 77206.38
+  },
+  {
+    "sku_id": "SKU-XYZ-583",
+    "temp_band_label": "2C_TO_8C_CHILLED",
+    "max_continuous_temp_c": 15.8,
+    "max_mkt_allowed_c": 15.13,
+    "max_excursion_minutes": 152,
+    "activation_energy_kj_mol": 38.37,
+    "cargo_lot_value_usd": 30470.38
+  },
+  {
+    "sku_id": "SKU-BEV-OATMILK-1L-34",
+    "temp_band_label": "AMBIENT_MAX_32C",
+    "max_continuous_temp_c": 7.65,
+    "max_mkt_allowed_c": 7.08,
+    "max_excursion_minutes": 126,
+    "activation_energy_kj_mol": 74.42,
+    "cargo_lot_value_usd": 39044.77
+  },
+  {
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK-35",
+    "temp_band_label": "10C_TO_30C_ELECTRONICS",
+    "max_continuous_temp_c": 7.22,
+    "max_mkt_allowed_c": 9.24,
+    "max_excursion_minutes": 154,
+    "activation_energy_kj_mol": 129.75,
+    "cargo_lot_value_usd": 65050.26
+  },
+  {
+    "sku_id": "SKU-CRYO-4410-BIO-36",
+    "temp_band_label": "AMBIENT_MAX_32C",
+    "max_continuous_temp_c": 11.11,
+    "max_mkt_allowed_c": 9.0,
+    "max_excursion_minutes": 101,
+    "activation_energy_kj_mol": 94.88,
+    "cargo_lot_value_usd": 148113.1
+  },
+  {
+    "sku_id": "SKU-SNACK-PROTEIN-BAR-37",
+    "temp_band_label": "AMBIENT_MAX_32C",
+    "max_continuous_temp_c": 30.56,
+    "max_mkt_allowed_c": 29.83,
+    "max_excursion_minutes": 213,
+    "activation_energy_kj_mol": 101.77,
+    "cargo_lot_value_usd": 38611.27
+  },
+  {
+    "sku_id": "SKU-XYZ-410",
+    "temp_band_label": "10C_TO_30C_ELECTRONICS",
+    "max_continuous_temp_c": 47.69,
+    "max_mkt_allowed_c": 42.89,
+    "max_excursion_minutes": 526,
+    "activation_energy_kj_mol": 126.35,
+    "cargo_lot_value_usd": 38307.09
+  },
+  {
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ-39",
+    "temp_band_label": "10C_TO_30C_ELECTRONICS",
+    "max_continuous_temp_c": 44.8,
+    "max_mkt_allowed_c": 47.3,
+    "max_excursion_minutes": 581,
+    "activation_energy_kj_mol": 128.8,
+    "cargo_lot_value_usd": 38869.66
+  },
+  {
+    "sku_id": "SKU-XYZ-321",
+    "temp_band_label": "15C_TO_30C_DRY_CELL",
+    "max_continuous_temp_c": 39.94,
+    "max_mkt_allowed_c": 51.22,
+    "max_excursion_minutes": 376,
+    "activation_energy_kj_mol": 133.1,
+    "cargo_lot_value_usd": 163129.49
+  },
+  {
+    "sku_id": "SKU-XYZ-639",
+    "temp_band_label": "15C_TO_24C_CHOC_COATED",
+    "max_continuous_temp_c": 29.45,
+    "max_mkt_allowed_c": 29.14,
+    "max_excursion_minutes": 357,
+    "activation_energy_kj_mol": 94.99,
+    "cargo_lot_value_usd": 59795.73
   }
 ]

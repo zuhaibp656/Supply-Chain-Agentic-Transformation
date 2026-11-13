@@ -62,5 +62,197 @@
     "fraud_abuse_score": 0.05,
     "keep_it_claims_12m": 0,
     "eligibility_gate": "ELIGIBLE_LOW_RISK"
+  },
+  {
+    "rma_req_id": "KPR-3067",
+    "customer_ltv_usd": 922.62,
+    "return_rate_12m_pct": 2.73,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_LOW_RISK"
+  },
+  {
+    "rma_req_id": "KPR-3075",
+    "customer_ltv_usd": 1142.97,
+    "return_rate_12m_pct": 3.67,
+    "fraud_abuse_score": 0.18,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "HIGH_VALUE_PHYSICAL_RMA"
+  },
+  {
+    "rma_req_id": "KPR-3083",
+    "customer_ltv_usd": 25703.35,
+    "return_rate_12m_pct": 2.55,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "BLOCKED_ABUSE_REQUIRE_DROP_SCAN"
+  },
+  {
+    "rma_req_id": "KPR-3091",
+    "customer_ltv_usd": 521.45,
+    "return_rate_12m_pct": 4.39,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_LOW_RISK"
+  },
+  {
+    "rma_req_id": "KPR-3099",
+    "customer_ltv_usd": 554.65,
+    "return_rate_12m_pct": 4.56,
+    "fraud_abuse_score": 0.13,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "BLOCKED_ABUSE_REQUIRE_DROP_SCAN"
+  },
+  {
+    "rma_req_id": "KPR-3107",
+    "customer_ltv_usd": 47.52,
+    "return_rate_12m_pct": 54.69,
+    "fraud_abuse_score": 0.71,
+    "keep_it_claims_12m": 3,
+    "eligibility_gate": "ELIGIBLE_PERISHABLE_SAFE"
+  },
+  {
+    "rma_req_id": "KPR-3115",
+    "customer_ltv_usd": 6632.74,
+    "return_rate_12m_pct": 2.41,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "BLOCKED_ABUSE_REQUIRE_DROP_SCAN"
+  },
+  {
+    "rma_req_id": "KPR-3123",
+    "customer_ltv_usd": 1511.2,
+    "return_rate_12m_pct": 2.16,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_DONATE_DROP"
+  },
+  {
+    "rma_req_id": "KPR-3123",
+    "customer_ltv_usd": 617.96,
+    "return_rate_12m_pct": 2.82,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_DONATE_DROP"
+  },
+  {
+    "rma_req_id": "KPR-3131",
+    "customer_ltv_usd": 710.23,
+    "return_rate_12m_pct": 3.47,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_PERISHABLE_SAFE"
+  },
+  {
+    "rma_req_id": "KPR-3139",
+    "customer_ltv_usd": 8935.44,
+    "return_rate_12m_pct": 2.71,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_DONATE_DROP"
+  },
+  {
+    "rma_req_id": "KPR-3147",
+    "customer_ltv_usd": 538.45,
+    "return_rate_12m_pct": 3.94,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "HIGH_VALUE_PHYSICAL_RMA"
+  },
+  {
+    "rma_req_id": "KPR-3155",
+    "customer_ltv_usd": 839.41,
+    "return_rate_12m_pct": 5.41,
+    "fraud_abuse_score": 0.19,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_PERISHABLE_SAFE"
+  },
+  {
+    "rma_req_id": "KPR-3163",
+    "customer_ltv_usd": 30.37,
+    "return_rate_12m_pct": 55.58,
+    "fraud_abuse_score": 0.43,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "BLOCKED_ABUSE_REQUIRE_DROP_SCAN"
+  },
+  {
+    "rma_req_id": "KPR-3171",
+    "customer_ltv_usd": 8753.08,
+    "return_rate_12m_pct": 2.1,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_PERISHABLE_SAFE"
+  },
+  {
+    "rma_req_id": "KPR-3179",
+    "customer_ltv_usd": 2125.9,
+    "return_rate_12m_pct": 2.0,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_PERISHABLE_SAFE"
+  },
+  {
+    "rma_req_id": "KPR-3179",
+    "customer_ltv_usd": 1134.19,
+    "return_rate_12m_pct": 2.65,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "BLOCKED_ABUSE_REQUIRE_DROP_SCAN"
+  },
+  {
+    "rma_req_id": "KPR-3187",
+    "customer_ltv_usd": 1037.83,
+    "return_rate_12m_pct": 4.62,
+    "fraud_abuse_score": 0.16,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "HIGH_VALUE_PHYSICAL_RMA"
+  },
+  {
+    "rma_req_id": "KPR-3195",
+    "customer_ltv_usd": 11216.32,
+    "return_rate_12m_pct": 3.12,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_LOW_RISK"
+  },
+  {
+    "rma_req_id": "KPR-3203",
+    "customer_ltv_usd": 302.04,
+    "return_rate_12m_pct": 4.24,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_PERISHABLE_SAFE"
+  },
+  {
+    "rma_req_id": "KPR-3211",
+    "customer_ltv_usd": 739.02,
+    "return_rate_12m_pct": 6.0,
+    "fraud_abuse_score": 0.15,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_PERISHABLE_SAFE"
+  },
+  {
+    "rma_req_id": "KPR-3219",
+    "customer_ltv_usd": 69.3,
+    "return_rate_12m_pct": 56.25,
+    "fraud_abuse_score": 0.98,
+    "keep_it_claims_12m": 3,
+    "eligibility_gate": "ELIGIBLE_LOW_RISK"
+  },
+  {
+    "rma_req_id": "KPR-3227",
+    "customer_ltv_usd": 7287.66,
+    "return_rate_12m_pct": 1.94,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "ELIGIBLE_DONATE_DROP"
+  },
+  {
+    "rma_req_id": "KPR-3235",
+    "customer_ltv_usd": 1532.11,
+    "return_rate_12m_pct": 2.04,
+    "fraud_abuse_score": 0.1,
+    "keep_it_claims_12m": 1,
+    "eligibility_gate": "HIGH_VALUE_PHYSICAL_RMA"
   }
 ]

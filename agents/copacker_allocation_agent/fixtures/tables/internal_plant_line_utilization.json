@@ -78,5 +78,245 @@
     "utilization_pct": 95.4,
     "regular_conv_cost_case_usd": 6.8,
     "overtime_conv_cost_case_usd": 10.4
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-18",
+    "line_id": "LINE-ASEPTIC-A67",
+    "sku_id": "SKU-XYZ-204",
+    "weekly_demand_cases": 47268,
+    "internal_max_regular_cases": 32309,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 1.08,
+    "overtime_conv_cost_case_usd": 1.61
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-19",
+    "line_id": "LINE-CHILL-A75",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "weekly_demand_cases": 65963,
+    "internal_max_regular_cases": 61907,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 3.36,
+    "overtime_conv_cost_case_usd": 4.88
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-20",
+    "line_id": "LINE-BOTTLE-A83",
+    "sku_id": "SKU-XYZ-518",
+    "weekly_demand_cases": 99740,
+    "internal_max_regular_cases": 87107,
+    "utilization_pct": 90.77,
+    "regular_conv_cost_case_usd": 2.14,
+    "overtime_conv_cost_case_usd": 3.47
+  },
+  {
+    "plant_id": "PLANT-XYZ-BENGALURU-21",
+    "line_id": "LINE-POUCH-IN88",
+    "sku_id": "SKU-XYZ-204",
+    "weekly_demand_cases": 17971,
+    "internal_max_regular_cases": 15597,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 0.62,
+    "overtime_conv_cost_case_usd": 1.16
+  },
+  {
+    "plant_id": "PLANT-XYZ-STUTTGART-22",
+    "line_id": "LINE-FILL-EU95",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "weekly_demand_cases": 5879,
+    "internal_max_regular_cases": 4804,
+    "utilization_pct": 95.9,
+    "regular_conv_cost_case_usd": 34.6,
+    "overtime_conv_cost_case_usd": 57.31
+  },
+  {
+    "plant_id": "PLANT-XYZ-MONTERREY-23",
+    "line_id": "LINE-BRAZE-MX102",
+    "sku_id": "SKU-CRYO-4410-BIO",
+    "weekly_demand_cases": 11098,
+    "internal_max_regular_cases": 9084,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 12.8,
+    "overtime_conv_cost_case_usd": 25.85
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-24",
+    "line_id": "LINE-KEFIR-A112",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "weekly_demand_cases": 31441,
+    "internal_max_regular_cases": 24210,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 2.17,
+    "overtime_conv_cost_case_usd": 2.79
+  },
+  {
+    "plant_id": "PLANT-XYZ-BENGALURU-25",
+    "line_id": "LINE-ELAST-IN117",
+    "sku_id": "SKU-XYZ-204",
+    "weekly_demand_cases": 3418,
+    "internal_max_regular_cases": 3894,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 3.36,
+    "overtime_conv_cost_case_usd": 6.32
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-26",
+    "line_id": "LINE-ASEPTIC-A123",
+    "sku_id": "SKU-XYZ-518",
+    "weekly_demand_cases": 73322,
+    "internal_max_regular_cases": 70234,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 1.91,
+    "overtime_conv_cost_case_usd": 3.81
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-27",
+    "line_id": "LINE-CHILL-A131",
+    "sku_id": "SKU-XYZ-625",
+    "weekly_demand_cases": 41335,
+    "internal_max_regular_cases": 30947,
+    "utilization_pct": 94.53,
+    "regular_conv_cost_case_usd": 1.49,
+    "overtime_conv_cost_case_usd": 2.91
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-28",
+    "line_id": "LINE-BOTTLE-A139",
+    "sku_id": "SKU-XYZ-518",
+    "weekly_demand_cases": 88729,
+    "internal_max_regular_cases": 78107,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 2.05,
+    "overtime_conv_cost_case_usd": 2.88
+  },
+  {
+    "plant_id": "PLANT-XYZ-BENGALURU-29",
+    "line_id": "LINE-POUCH-IN144",
+    "sku_id": "SKU-XYZ-625",
+    "weekly_demand_cases": 54060,
+    "internal_max_regular_cases": 35733,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 1.46,
+    "overtime_conv_cost_case_usd": 2.96
+  },
+  {
+    "plant_id": "PLANT-XYZ-STUTTGART-30",
+    "line_id": "LINE-FILL-EU151",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "weekly_demand_cases": 3333,
+    "internal_max_regular_cases": 4299,
+    "utilization_pct": 80.64,
+    "regular_conv_cost_case_usd": 21.84,
+    "overtime_conv_cost_case_usd": 39.73
+  },
+  {
+    "plant_id": "PLANT-XYZ-MONTERREY-31",
+    "line_id": "LINE-BRAZE-MX158",
+    "sku_id": "SKU-XYZ-518",
+    "weekly_demand_cases": 10082,
+    "internal_max_regular_cases": 8546,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 14.86,
+    "overtime_conv_cost_case_usd": 16.88
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-32",
+    "line_id": "LINE-KEFIR-A168",
+    "sku_id": "SKU-DAIRY-PROBIOTIC-6PK",
+    "weekly_demand_cases": 29919,
+    "internal_max_regular_cases": 30971,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 1.86,
+    "overtime_conv_cost_case_usd": 3.42
+  },
+  {
+    "plant_id": "PLANT-XYZ-BENGALURU-33",
+    "line_id": "LINE-ELAST-IN173",
+    "sku_id": "SKU-XYZ-518",
+    "weekly_demand_cases": 4872,
+    "internal_max_regular_cases": 6462,
+    "utilization_pct": 81.98,
+    "regular_conv_cost_case_usd": 6.81,
+    "overtime_conv_cost_case_usd": 9.91
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-34",
+    "line_id": "LINE-ASEPTIC-A179",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "weekly_demand_cases": 42441,
+    "internal_max_regular_cases": 31174,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 0.72,
+    "overtime_conv_cost_case_usd": 1.45
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-35",
+    "line_id": "LINE-CHILL-A187",
+    "sku_id": "SKU-BEV-ISOTONIC-32OZ",
+    "weekly_demand_cases": 71249,
+    "internal_max_regular_cases": 45202,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 3.04,
+    "overtime_conv_cost_case_usd": 4.08
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-36",
+    "line_id": "LINE-BOTTLE-A195",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "weekly_demand_cases": 36020,
+    "internal_max_regular_cases": 28097,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 0.88,
+    "overtime_conv_cost_case_usd": 1.3
+  },
+  {
+    "plant_id": "PLANT-XYZ-BENGALURU-37",
+    "line_id": "LINE-POUCH-IN200",
+    "sku_id": "SKU-XYZ-625",
+    "weekly_demand_cases": 58873,
+    "internal_max_regular_cases": 40702,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 2.01,
+    "overtime_conv_cost_case_usd": 4.27
+  },
+  {
+    "plant_id": "PLANT-XYZ-STUTTGART-38",
+    "line_id": "LINE-FILL-EU207",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "weekly_demand_cases": 3045,
+    "internal_max_regular_cases": 3351,
+    "utilization_pct": 77.36,
+    "regular_conv_cost_case_usd": 23.7,
+    "overtime_conv_cost_case_usd": 38.12
+  },
+  {
+    "plant_id": "PLANT-XYZ-MONTERREY-39",
+    "line_id": "LINE-BRAZE-MX214",
+    "sku_id": "SKU-BEV-OATMILK-1L",
+    "weekly_demand_cases": 8572,
+    "internal_max_regular_cases": 8393,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 16.48,
+    "overtime_conv_cost_case_usd": 23.14
+  },
+  {
+    "plant_id": "PLANT-XYZ-AUSTIN-40",
+    "line_id": "LINE-KEFIR-A224",
+    "sku_id": "SKU-SNACK-PROTEIN-BAR",
+    "weekly_demand_cases": 48486,
+    "internal_max_regular_cases": 45655,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 3.34,
+    "overtime_conv_cost_case_usd": 4.55
+  },
+  {
+    "plant_id": "PLANT-XYZ-BENGALURU-41",
+    "line_id": "LINE-ELAST-IN229",
+    "sku_id": "SKU-XYZ-204",
+    "weekly_demand_cases": 2418,
+    "internal_max_regular_cases": 2434,
+    "utilization_pct": 99.8,
+    "regular_conv_cost_case_usd": 3.09,
+    "overtime_conv_cost_case_usd": 5.48
   }
 ]
