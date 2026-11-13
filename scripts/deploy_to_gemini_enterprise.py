@@ -191,7 +191,36 @@ AGENT_ICONS: Dict[str, str] = {
     "reverse_rma_optimizer": "assignment_return",
     "dynamic_markdown_agent": "loyalty",
     "rti_balance_reconciler": "inventory",
+    "yard_dock_sequencer": "rv_hookup",
+    "aisle_aligned_pallet_agent": "pallet",
+    "store_capacity_agent": "storefront",
+    "multimodal_mode_shift_agent": "swap_horiz",
+    "otif_penalty_shield": "gpp_good",
+    "freight_control_tower": "alt_route",
+    "keep_it_routing_advisor": "rule",
+    "osd_freight_claims_agent": "report_problem",
+    "short_dated_redistributor": "event_available",
+    "food_waste_esg_copilot": "compost",
+    "intermodal_rail_linehaul_agent": "train",
+    "sanitation_health_agent": "health_and_safety",
 }
+
+PILLARS_5_6_NEW_12_IDS: List[str] = [
+    # Pillar 05 · Distribution & Logistics (remaining 6)
+    "yard_dock_sequencer",
+    "aisle_aligned_pallet_agent",
+    "store_capacity_agent",
+    "multimodal_mode_shift_agent",
+    "otif_penalty_shield",
+    "freight_control_tower",
+    # Pillar 06 · Returns & Reverse Logistics (remaining 6)
+    "keep_it_routing_advisor",
+    "osd_freight_claims_agent",
+    "short_dated_redistributor",
+    "food_waste_esg_copilot",
+    "intermodal_rail_linehaul_agent",
+    "sanitation_health_agent",
+]
 
 # 14 Canonical Website IDs corresponding to the 14 previously deployed Reasoning Engines
 EXISTING_14_CANONICAL_IDS: List[str] = [
@@ -864,6 +893,7 @@ def main() -> None:
         help="Deploy/update the 25 curated showcase agents (all 14 existing REs updated in-place + 11 sub-pillar leaders across all 20 sub-pillars)",
     )
     parser.add_argument("--all-flagship", action="store_true", help="Deploy/update the 14 previously provisioned flagship agents in-place")
+    parser.add_argument("--pillars-5-6", action="store_true", help="Deploy/update the 12 remaining agents in Pillars 05 & 06")
     parser.add_argument("--all-60", action="store_true", help="Deploy/update all 60 catalog agents")
     parser.add_argument("--project", default=os.environ.get("GOOGLE_CLOUD_PROJECT", "zuhaibp-ai"))
     parser.add_argument("--region", default="us-central1")
@@ -883,13 +913,15 @@ def main() -> None:
     else:
         sync_gcloud_db_to_argolis_adc(args.project)
 
-    if not (args.agent or args.curated_showcase or args.all_flagship or args.all_60):
-        parser.error("Specify --agent <agent_id>, --curated-showcase, --all-flagship, or --all-60")
+    if not (args.agent or args.curated_showcase or args.all_flagship or args.pillars_5_6 or args.all_60):
+        parser.error("Specify --agent <agent_id>, --curated-showcase, --all-flagship, --pillars-5-6, or --all-60")
 
     if args.all_60:
         targets = list(ALL_AGENTS_CONFIG.keys())
     elif args.curated_showcase:
         targets = list(CURATED_SHOWCASE_25_IDS)
+    elif args.pillars_5_6:
+        targets = list(PILLARS_5_6_NEW_12_IDS)
     elif args.all_flagship:
         targets = list(EXISTING_14_CANONICAL_IDS)
     else:

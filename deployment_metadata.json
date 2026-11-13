@@ -2,7 +2,7 @@
   "project_id": "zuhaibp-ai",
   "region": "us-central1",
   "gemini_app_id": "gemini-enterprise-zuhaibp_1784012666241",
-  "deployed_count": 25,
+  "deployed_count": 37,
   "agents_deployed": [
     {
       "agent_id": "demand_sensing_agent",
@@ -243,6 +243,20 @@
       "deployed_at": "2026-11-13T07:59:17Z"
     },
     {
+      "agent_id": "yard_dock_sequencer",
+      "website_name": "Yard Disruption Agent",
+      "bracket_label": "05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile",
+      "category": "05 \u00b7 Distribution & Logistics | First & Mid-Mile",
+      "section": "05 \u00b7 Distribution & Logistics | First & Mid-Mile",
+      "display_name": "Yard Disruption Agent (05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile)",
+      "ge_display_name": "Yard Disruption Agent (05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile)",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile] Yard Disruption Agent \u2014 Parses GPS & gate feeds to flag delays and reassign dock staging doors dynamically. Outcome: Synchronizes live carrier GPS ETAs, yard jockey moves, and dock door crew capacity to eliminate gate queues, detention fees, and plant starvation.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2295192314953334784",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/13894952638038502510",
+      "deployed_at": "2026-11-13T13:37:11Z"
+    },
+    {
       "agent_id": "cold_chain_auditor",
       "website_name": "Cold-Chain Auditor",
       "bracket_label": "05 \u00b7 Distribution & Logistics \u00b7 First & Mid-Mile",
@@ -255,6 +269,34 @@
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8706771171468640256",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/5823400487531018226",
       "deployed_at": "2026-11-13T07:59:37Z"
+    },
+    {
+      "agent_id": "aisle_aligned_pallet_agent",
+      "website_name": "Aisle-Aligned Pallet",
+      "bracket_label": "05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment",
+      "category": "05 \u00b7 Distribution & Logistics | Store Replenishment",
+      "section": "05 \u00b7 Distribution & Logistics | Store Replenishment",
+      "display_name": "Aisle-Aligned Pallet (05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment)",
+      "ge_display_name": "Aisle-Aligned Pallet (05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment)",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment] Aisle-Aligned Pallet \u2014 Sequences DC pick waves to match individual store planograms and shelf layouts. Outcome: Builds DC pallets sequenced to each store's exact planogram aisle layout and case crush physics\u2014slashing in-store restocking labor by 20%\u201335%.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/942986526835343360",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/4425840194449317295",
+      "deployed_at": "2026-11-13T13:37:31Z"
+    },
+    {
+      "agent_id": "store_capacity_agent",
+      "website_name": "Store Capacity Agent",
+      "bracket_label": "05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment",
+      "category": "05 \u00b7 Distribution & Logistics | Store Replenishment",
+      "section": "05 \u00b7 Distribution & Logistics | Store Replenishment",
+      "display_name": "Store Capacity Agent (05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment)",
+      "ge_display_name": "Store Capacity Agent (05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment)",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Store Replenishment] Store Capacity Agent \u2014 Throttles push replenishment based on store backroom limits and live POS velocity. Outcome: Caps and paces DC replenishment dispatches against each store's live backroom cubic capacity and receiving labor\u2014preventing overflow and damage.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/7365119595465670656",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9877222810170171439",
+      "deployed_at": "2026-11-13T13:37:33Z"
     },
     {
       "agent_id": "port_drayage_orchestrator",
@@ -285,6 +327,34 @@
       "deployed_at": "2026-11-13T07:59:33Z"
     },
     {
+      "agent_id": "multimodal_mode_shift_agent",
+      "website_name": "Courier Allocation",
+      "bracket_label": "05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery",
+      "category": "05 \u00b7 Distribution & Logistics | Last-Mile Delivery",
+      "section": "05 \u00b7 Distribution & Logistics | Last-Mile Delivery",
+      "display_name": "Courier Allocation (05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery)",
+      "ge_display_name": "Courier Allocation (05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery)",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery] Courier Allocation \u2014 Routes parcels dynamically across internal fleet, 3PL, and gig couriers by rate card. Outcome: Dynamically selects the lowest-cost parcel, regional courier, crowdsourced, or LTL mode per order that still hits the promised customer delivery date.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6545464463284240384",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9650827414407796887",
+      "deployed_at": "2026-11-13T13:37:44Z"
+    },
+    {
+      "agent_id": "otif_penalty_shield",
+      "website_name": "Delivery Exception Copilot",
+      "bracket_label": "05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery",
+      "category": "05 \u00b7 Distribution & Logistics | Last-Mile Delivery",
+      "section": "05 \u00b7 Distribution & Logistics | Last-Mile Delivery",
+      "display_name": "Delivery Exception Copilot (05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery)",
+      "ge_display_name": "Delivery Exception Copilot (05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery)",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Last-Mile Delivery] Delivery Exception Copilot \u2014 Detects en-route exceptions and updates customers proactively with reschedule links. Outcome: Detects mid-route parcel and retail-delivery delays early, triggers carrier rescue or proactive customer self-rescheduling, and cuts WISMO cost.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/3448113819560181760",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/3661643723290218713",
+      "deployed_at": "2026-11-13T13:37:40Z"
+    },
+    {
       "agent_id": "fleetflow_dispatch",
       "website_name": "Dynamic Rerouter",
       "bracket_label": "05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier",
@@ -297,6 +367,20 @@
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1064147210658119680",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/9502278280664039255",
       "deployed_at": "2026-11-13T08:01:58Z"
+    },
+    {
+      "agent_id": "freight_control_tower",
+      "website_name": "Routing Guide Compliance",
+      "bracket_label": "05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier",
+      "category": "05 \u00b7 Distribution & Logistics | Route & Carrier",
+      "section": "05 \u00b7 Distribution & Logistics | Route & Carrier",
+      "display_name": "Routing Guide Compliance (05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier)",
+      "ge_display_name": "Routing Guide Compliance (05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier)",
+      "description": "[05 \u00b7 Distribution & Logistics \u00b7 Route & Carrier] Routing Guide Compliance \u2014 Tracks carrier tender acceptance & OTIF to reprioritize waterfall routing guides. Outcome: Predicts primary carrier tender rejections by lane and cascades early to contracted Tier-2/3 carriers before loads leak onto expensive spot markets.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1933778444856852480",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/10313484596104664959",
+      "deployed_at": "2026-11-13T13:37:24Z"
     },
     {
       "agent_id": "freight_bill_audit_agent",
@@ -327,6 +411,34 @@
       "deployed_at": "2026-11-13T08:02:43Z"
     },
     {
+      "agent_id": "keep_it_routing_advisor",
+      "website_name": "Keep-It & Routing Advisor",
+      "bracket_label": "06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt",
+      "category": "06 \u00b7 Returns & Reverse Logistics | Returns & Claims Mgmt",
+      "section": "06 \u00b7 Returns & Reverse Logistics | Returns & Claims Mgmt",
+      "display_name": "Keep-It & Routing Advisor (06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt)",
+      "ge_display_name": "Keep-It & Routing Advisor (06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt)",
+      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt] Keep-It & Routing Advisor \u2014 Evaluates salvage margins vs reverse freight to determine keep-it instant refunds. Outcome: Calculates reverse shipping + grading cost vs. resale recovery in real time\u2014routing items to store, refurb hub, outlet, or Keep-It credit.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/1240224102241796096",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/3851887269918555105",
+      "deployed_at": "2026-11-13T13:40:34Z"
+    },
+    {
+      "agent_id": "osd_freight_claims_agent",
+      "website_name": "OS&D Freight Claims",
+      "bracket_label": "06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt",
+      "category": "06 \u00b7 Returns & Reverse Logistics | Returns & Claims Mgmt",
+      "section": "06 \u00b7 Returns & Reverse Logistics | Returns & Claims Mgmt",
+      "display_name": "OS&D Freight Claims (06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt)",
+      "ge_display_name": "OS&D Freight Claims (06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt)",
+      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Returns & Claims Mgmt] OS&D Freight Claims \u2014 Reconciles eBOLs, dock damage logs, and carrier contracts to auto-file disputes. Outcome: Assembles dock damage photos, signed BOL exceptions, and SKU invoice values into compliant carrier claim packets within hours of unloading.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5496125750106914816",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/11604346230811147054",
+      "deployed_at": "2026-11-13T13:41:06Z"
+    },
+    {
       "agent_id": "dynamic_markdown_agent",
       "website_name": "Dynamic Markdown Agent",
       "bracket_label": "06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns",
@@ -341,6 +453,34 @@
       "deployed_at": "2026-11-13T08:03:16Z"
     },
     {
+      "agent_id": "short_dated_redistributor",
+      "website_name": "Short-Dated Redistributor",
+      "bracket_label": "06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns",
+      "category": "06 \u00b7 Returns & Reverse Logistics | Expiry & Markdowns",
+      "section": "06 \u00b7 Returns & Reverse Logistics | Expiry & Markdowns",
+      "display_name": "Short-Dated Redistributor (06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns)",
+      "ge_display_name": "Short-Dated Redistributor (06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns)",
+      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns] Short-Dated Redistributor \u2014 Matches near-date DC lots with discounters or food banks before acceptance cutoffs. Outcome: Matches short-dated DC lots at risk of customer shelf-life rejection to fast-turning stores, foodservice channels, or tax-advantaged donations.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/2262541217654898688",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/374272156355245468",
+      "deployed_at": "2026-11-13T13:41:23Z"
+    },
+    {
+      "agent_id": "food_waste_esg_copilot",
+      "website_name": "Food Waste & ESG Copilot",
+      "bracket_label": "06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns",
+      "category": "06 \u00b7 Returns & Reverse Logistics | Expiry & Markdowns",
+      "section": "06 \u00b7 Returns & Reverse Logistics | Expiry & Markdowns",
+      "display_name": "Food Waste & ESG Copilot (06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns)",
+      "ge_display_name": "Food Waste & ESG Copilot (06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns)",
+      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Expiry & Markdowns] Food Waste & ESG Copilot \u2014 Aggregates store shrink and organic haul logs to generate audited GHG diversion filings. Outcome: Routes unsellable organics to highest circular tier (donation tax credits, upcycling, feed, digester) and automates Scope 3 waste reporting.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/8563077096346222592",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/10037702925741270884",
+      "deployed_at": "2026-11-13T13:41:06Z"
+    },
+    {
       "agent_id": "rti_balance_reconciler",
       "website_name": "RTI Balance Reconciler",
       "bracket_label": "06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation",
@@ -353,7 +493,35 @@
       "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/6794993129649864704",
       "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/16699165381032264857",
       "deployed_at": "2026-11-13T08:03:18Z"
+    },
+    {
+      "agent_id": "intermodal_rail_linehaul_agent",
+      "website_name": "Milk-Run Consolidation",
+      "bracket_label": "06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation",
+      "category": "06 \u00b7 Returns & Reverse Logistics | Pallet & Tote Reclamation",
+      "section": "06 \u00b7 Returns & Reverse Logistics | Pallet & Tote Reclamation",
+      "display_name": "Milk-Run Consolidation (06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation)",
+      "ge_display_name": "Milk-Run Consolidation (06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation)",
+      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation] Milk-Run Consolidation \u2014 Schedules dynamic backhauls to collect empty roll cages and RPCs from retail stores. Outcome: Pairs empty outbound store/DC return legs with pallet stacks, collapsible totes, and consolidated RMAs\u2014eliminating dedicated reverse freight.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/5851910120669184000",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/13844457953454901577",
+      "deployed_at": "2026-11-13T13:41:21Z"
+    },
+    {
+      "agent_id": "sanitation_health_agent",
+      "website_name": "Sanitation & Health Agent",
+      "bracket_label": "06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation",
+      "category": "06 \u00b7 Returns & Reverse Logistics | Pallet & Tote Reclamation",
+      "section": "06 \u00b7 Returns & Reverse Logistics | Pallet & Tote Reclamation",
+      "display_name": "Sanitation & Health Agent (06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation)",
+      "ge_display_name": "Sanitation & Health Agent (06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation)",
+      "description": "[06 \u00b7 Returns & Reverse Logistics \u00b7 Pallet & Tote Reclamation] Sanitation & Health Agent \u2014 Inspects return photos and wash logs for structural fatigue and chemical compliance. Outcome: Enforces wash-temperature, allergen segregation, and structural cycle limits on every reusable container\u2014extending asset life while guaranteeing safety.",
+      "model": "gemini-3.1-pro-preview",
+      "reasoning_engine": "projects/632239123109/locations/us-central1/reasoningEngines/4401751040655884288",
+      "gemini_enterprise_agent": "projects/632239123109/locations/global/collections/default_collection/engines/gemini-enterprise-zuhaibp_1784012666241/assistants/default_assistant/agents/11114379190038719987",
+      "deployed_at": "2026-11-13T13:41:01Z"
     }
   ],
-  "updated_at": "2026-11-13T08:04:53Z"
+  "updated_at": "2026-11-13T13:42:09Z"
 }
