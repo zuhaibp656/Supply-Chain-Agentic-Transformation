@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where People Meet the Agent | Supply Chain Agentic Transformation</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/aurora.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
+  <script>
+    (function() { if ((localStorage.getItem('deck-theme') || 'light') === 'dark') document.documentElement.classList.add('theme-dark'); })();
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('theme-dark');
+      localStorage.setItem('deck-theme', isDark ? 'dark' : 'light');
+      updateThemeButtons(!isDark);
+    }
+    function updateThemeButtons(isLight) {
+      document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+        btn.innerHTML = isLight ? '<span style="font-size:13px">🌙</span><span>Dark Mode</span>' : '<span style="font-size:13px">☀️</span><span>Light Mode</span>';
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => updateThemeButtons(!document.documentElement.classList.contains('theme-dark')));
+  </script>
+</head>
+<body style="background: var(--canvas); color: var(--text); font-family: var(--font-body); margin: 0;">
+
+  <header class="executive-top-nav" style="backdrop-filter: blur(20px); background: color-mix(in srgb, var(--surface) 88%, transparent); border-bottom: 1px solid var(--border-subtle); padding: 14px max(24px, 4vw); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center;">
+    <a href="../index.html" style="display: flex; align-items: center; gap: 14px; text-decoration: none;">
+      <img src="../assets/media/wip/image25.png" alt="Google Cloud" style="height: 32px; width: auto;">
+      <div style="width: 1px; height: 20px; background: var(--border-subtle);"></div>
+      <span style="font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; color: var(--text); letter-spacing: 1.5px; text-transform: uppercase;">BUILD 10 // FOUR SURFACES</span>
+    </a>
+    <nav style="display: flex; align-items: center; gap: 16px;">
+      <button class="theme-toggle-btn" onclick="toggleTheme()" type="button"></button>
+      <a href="09_agent_architecture.html" style="font-family: var(--font-display); font-size: 13.5px; font-weight: 700; color: var(--text-dim); text-decoration: none; padding: 4px 10px; border-radius: 6px; background: var(--surface-sunk);">&larr; Prev Page</a>
+      <span style="font-family: var(--font-mono); font-size: 13px; color: var(--g-blue); font-weight: 700;">10 / 15</span>
+      <a href="13_proof_and_cases.html" style="font-family: var(--font-display); font-size: 13.5px; font-weight: 700; color: var(--blue-ink); text-decoration: none; padding: 4px 10px; border-radius: 6px; background: rgba(49, 134, 255, 0.10);">Next Page &rarr;</a>
+      <a href="../index.html" style="font-family: var(--font-display); font-size: 12.5px; font-weight: 700; color: #000; background: #FFF; padding: 6px 14px; border-radius: 20px; text-decoration: none; border: 1px solid var(--border-subtle); margin-left: 8px;">All Slides &#8599;</a>
+    </nav>
+  </header>
+
+  <main style="padding: 90px max(24px, 4vw) 110px; max-width: 1520px; margin: 0 auto;">
+    <div style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--text-muted)">
+      <span style="width:28px;height:3px;border-radius:2px;background:var(--gemini-spark)"></span>
+      From personas to production &middot; Built once, used on every surface
+    </div>
+    <h1 style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,2.5vw,38px);margin:10px 0 8px">Where people meet the Supply Chain agent</h1>
+    <p style="font-size:16px;color:var(--text-muted);margin:0 0 22px;max-width:74ch">Same 60 Vertex AI Reasoning Engines, same BigQuery Cortex v7 data mesh &mdash; delivered onto whichever surface each operator already uses.</p>
+
+    <div style="display:grid;grid-template-columns:360px minmax(0,1fr);gap:22px;align-items:start;">
+      <div id="sfList" style="display:flex;flex-direction:column;gap:10px;">
+        <button type="button" class="sf-btn on" data-sf="ge" style="text-align:left;padding:16px;border-radius:16px;border:1px solid var(--g-blue);background:var(--surface);box-shadow:var(--shadow-sm);cursor:pointer;color:var(--text);">
+          <small style="display:block;font:600 10.5px var(--font-mono);color:var(--blue-ink);text-transform:uppercase;margin-bottom:4px">01 &middot; Live Today (37 Agents)</small>
+          <b style="display:block;font:600 15.5px var(--font-display);margin-bottom:3px">Gemini Enterprise + HTML Cockpit</b>
+          <span style="display:block;font-size:12.5px;color:var(--text-muted);line-height:1.4">Plain-English business queries paired with A2UI cards &amp; What-If sliders.</span>
+        </button>
+        <button type="button" class="sf-btn" data-sf="ct" style="text-align:left;padding:16px;border-radius:16px;border:1px solid var(--border-subtle);background:var(--surface-sunk);cursor:pointer;color:var(--text);">
+          <small style="display:block;font:600 10.5px var(--font-mono);color:var(--purple-ink);text-transform:uppercase;margin-bottom:4px">02 &middot; Executive Workbench</small>
+          <b style="display:block;font:600 15.5px var(--font-display);margin-bottom:3px">Custom Control Tower App</b>
+          <span style="display:block;font-size:12.5px;color:var(--text-muted);line-height:1.4">Cross-pillar S&amp;OP consensus &amp; disruption war-room on Cloud Run.</span>
+        </button>
+        <button type="button" class="sf-btn" data-sf="erp" style="text-align:left;padding:16px;border-radius:16px;border:1px solid var(--border-subtle);background:var(--surface-sunk);cursor:pointer;color:var(--text);">
+          <small style="display:block;font:600 10.5px var(--font-mono);color:var(--green-ink);text-transform:uppercase;margin-bottom:4px">03 &middot; Zero Context Switch</small>
+          <b style="display:block;font:600 15.5px var(--font-display);margin-bottom:3px">Inside SAP, WMS &amp; TMS</b>
+          <span style="display:block;font-size:12.5px;color:var(--text-muted);line-height:1.4">Embedded side-drawer staging POs &amp; load tenders via MCP.</span>
+        </button>
+        <button type="button" class="sf-btn" data-sf="auto" style="text-align:left;padding:16px;border-radius:16px;border:1px solid var(--border-subtle);background:var(--surface-sunk);cursor:pointer;color:var(--text);">
+          <small style="display:block;font:600 10.5px var(--font-mono);color:var(--amber-ink);text-transform:uppercase;margin-bottom:4px">04 &middot; 24/7 Event Driven</small>
+          <b style="display:block;font:600 15.5px var(--font-display);margin-bottom:3px">Autonomous Background Flows</b>
+          <span style="display:block;font-size:12.5px;color:var(--text-muted);line-height:1.4">Pub/Sub watches IoT reefers, port AIS &amp; EDI 214 continuously.</span>
+        </button>
+      </div>
+      <div id="sfStage" style="background:var(--surface);border:1px solid var(--border-subtle);border-radius:20px;padding:24px;box-shadow:var(--shadow-md);min-height:420px;"></div>
+    </div>
+  </main>
+
+  <aside class="floating-dock" style="display: flex; align-items: center; gap: 12px; padding: 10px 18px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 30px; backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(18,19,23,.14); position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 1000;">
+    <a href="09_agent_architecture.html" style="background: var(--surface-sunk); border: 1px solid var(--border-subtle); color: var(--text-muted); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; text-decoration: none;">&#9664;</a>
+    <div style="font-family: var(--font-mono); font-size: 13.5px; font-weight: 700; color: var(--text-muted); white-space: nowrap;">BUILD 10 // 4 SURFACES</div>
+    <a href="13_proof_and_cases.html" style="background: var(--g-blue); border: none; color: #FFF; padding: 7px 16px; border-radius: 20px; font-family: var(--font-display); font-size: 14px; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 6px;"><span>Proof &amp; Cases</span><span>&#9654;</span></a>
+  </aside>
+
+  <script>
+    const VIEWS = {
+      ge: { title: 'Gemini Enterprise + Interactive HTML Cockpit', sub: 'Planners ask natural business questions—never raw table names or technical syntax.', body: '<div style="padding:14px;border-radius:12px;background:rgba(49,134,255,.10);border:1px solid rgba(49,134,255,.28);margin-bottom:12px;font-size:14px"><b>Demand Planner:</b> Which Southeast beverage SKUs face stockout risk over the next 14 days from the heatwave?</div><div style="padding:16px;border-radius:12px;background:var(--surface-sunk);border:1px solid var(--border-subtle);font-size:13.5px;line-height:1.55"><b>Demand Sensing Agent (Live in GE):</b> Fused WeatherNext 3 anomalies + POS velocity. <b>3 SKU clusters</b> show +26% lift.<br><br><table style="width:100%;border-collapse:collapse;font-size:12.5px"><tr style="border-bottom:1px solid var(--border-subtle);text-align:left"><th style="padding:6px">SKU Cluster</th><th style="padding:6px">Hub</th><th style="padding:6px">Forecast Lift</th><th style="padding:6px">Buffer Shift</th><th style="padding:6px">Margin Protected</th></tr><tr style="border-bottom:1px solid var(--border-subtle)"><td style="padding:6px">Sparkling Citrus 12pk</td><td style="padding:6px">Atlanta DC</td><td style="padding:6px">+29.4%</td><td style="padding:6px">+4,200 cases</td><td style="padding:6px">$118,400</td></tr><tr><td style="padding:6px">Electrolyte 20oz</td><td style="padding:6px">Orlando DC</td><td style="padding:6px">+24.1%</td><td style="padding:6px">+3,100 cases</td><td style="padding:6px">$89,200</td></tr></table></div>' },
+      ct: { title: 'Custom Supply Chain Control Tower', sub: 'Executive scenario comparison across S&OP, Manufacturing & Logistics.', body: '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px"><div style="padding:14px;border-radius:12px;background:var(--surface-sunk);border:1px solid var(--border-subtle)"><b style="font:700 11px var(--font-mono);color:var(--blue-ink)">OPTION A &middot; RAIL + BARGE</b><div style="font:700 20px var(--font-display);margin:6px 0">+$42K</div><span style="font-size:12.5px;color:var(--text-muted)">99.1% On-Time In-Full (OTIF)</span></div><div style="padding:14px;border-radius:12px;background:rgba(0,175,87,.09);border:1px solid rgba(0,175,87,.35)"><b style="font:700 11px var(--font-mono);color:var(--green-ink)">OPTION B &middot; RECOMMENDED</b><div style="font:700 20px var(--font-display);margin:6px 0">+$18K</div><span style="font-size:12.5px;color:var(--text-muted)">98.4% OTIF &middot; Co-packer shift</span></div><div style="padding:14px;border-radius:12px;background:var(--surface-sunk);border:1px solid var(--border-subtle)"><b style="font:700 11px var(--font-mono);color:var(--red-ink)">OPTION C &middot; SPOT AIR</b><div style="font:700 20px var(--font-display);margin:6px 0">+$164K</div><span style="font-size:12.5px;color:var(--text-muted)">99.8% OTIF &middot; Margin negative</span></div></div>' },
+      erp: { title: 'Inside SAP S/4HANA, WMS & TMS', sub: 'Zero context switching — staged write-backs via Model Context Protocol (MCP).', body: '<div style="padding:16px;border-radius:12px;background:var(--surface-sunk);border:1px solid var(--border-subtle);font-size:14px;line-height:1.55"><b>SAP ME21N / MD04 Embedded Drawer:</b> Material <code>MAT-40921 (HDPE Resin)</code> faces a 6-day Tier-2 delay. <em>Onboarding &amp; Risk Agent</em> verified alternate vendor <b>VND-882</b> (BRCGS AA+ active).<br><br><span style="font:600 12px var(--font-mono);color:var(--amber-ink)">Staged for Human Sign-Off: Split PO #45009182 (40% to VND-882) &middot; Protects 3 bottling lines</span></div>' },
+      auto: { title: 'Autonomous Background Flows (24/7)', sub: 'Pub/Sub event streams monitor cold-chain IoT, yard gates & return fraud around the clock.', body: '<ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.75;color:var(--text-muted)"><li><b style="color:var(--text)">02:14 UTC &middot; Cold-Chain Auditor:</b> Detected +4.2&deg;C excursion on Reefer #TR-918; auto-assembled carrier claim packet.</li><li><b style="color:var(--text)">04:40 UTC &middot; Yard Disruption Agent:</b> Inbound FTL delayed 95 mins; reassigned Dock Door 14 dynamically.</li><li><b style="color:var(--text)">06:00 UTC &middot; Return Fraud Sentinel:</b> Flagged 3 mismatched serial-weight RMAs prior to refund release.</li></ul>' }
+    };
+    function show(k) {
+      document.querySelectorAll('.sf-btn').forEach(b => {
+        const on = b.dataset.sf === k;
+        b.style.borderColor = on ? 'var(--g-blue)' : 'var(--border-subtle)';
+        b.style.background = on ? 'var(--surface)' : 'var(--surface-sunk)';
+      });
+      const v = VIEWS[k];
+      document.getElementById('sfStage').innerHTML = `<h2 style="font-family:var(--font-display);font-size:24px;margin:0 0 6px">${v.title}</h2><p style="font-size:14.5px;color:var(--text-muted);margin:0 0 18px">${v.sub}</p>${v.body}`;
+    }
+    document.querySelectorAll('.sf-btn').forEach(b => b.addEventListener('click', () => show(b.dataset.sf)));
+    show('ge');
+  </script>
+</body>
+</html>

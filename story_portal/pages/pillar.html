@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pillar Journey | Supply Chain Agentic Transformation</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/aurora.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    (function() { if ((localStorage.getItem('deck-theme') || 'light') === 'dark') document.documentElement.classList.add('theme-dark'); })();
+    function toggleTheme() {
+      var isDark = document.documentElement.classList.toggle('theme-dark');
+      localStorage.setItem('deck-theme', isDark ? 'dark' : 'light');
+      paintBtns(!isDark);
+    }
+    function paintBtns(isLight) {
+      document.querySelectorAll('.theme-toggle-btn').forEach(function(btn) {
+        btn.innerHTML = isLight ? '<span style="font-size:13px">🌙</span><span>Dark Mode</span>' : '<span style="font-size:13px">☀️</span><span>Light Mode</span>';
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function() { paintBtns(!document.documentElement.classList.contains('theme-dark')); });
+  </script>
+  <style>
+    body { margin: 0; background: var(--canvas); color: var(--text); font-family: var(--font-body); }
+    .wrap { max-width: 1460px; margin: 0 auto; padding: 84px max(24px, 4vw) 106px; }
+
+    .bc { display: flex; align-items: center; gap: 8px; font: 600 12px var(--font-mono); color: var(--text-dim); margin-bottom: 14px; flex-wrap: wrap; }
+    .bc a { color: var(--blue-ink); text-decoration: none; }
+
+    .p-hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: center; margin-bottom: 24px; }
+    @media (max-width: 980px) { .p-hero { grid-template-columns: 1fr; } }
+
+    .kick { display: flex; align-items: center; gap: 10px; font: 700 11.5px var(--font-mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--pink, var(--blue-ink)); margin-bottom: 8px; }
+    .kick i { width: 28px; height: 3.5px; border-radius: 2px; background: var(--pcol, var(--g-blue)); }
+    .p-hero h1 { font: 700 clamp(30px, 3.1vw, 44px)/1.1 var(--font-display); letter-spacing: -0.8px; margin: 0 0 10px; }
+    .p-hero p.q { font-size: 16.5px; line-height: 1.5; color: var(--text-muted); margin: 0 0 16px; max-width: 66ch; }
+
+    .meta-pills { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .m-pill { font: 600 11.5px var(--font-mono); padding: 6px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border-subtle); color: var(--text); }
+    .proof-pill { font: 600 12px var(--font-display); padding: 6px 14px; border-radius: 999px;
+                  background: linear-gradient(135deg, color-mix(in srgb, var(--pcol, #3186FF) 12%, var(--surface)), color-mix(in srgb, #4B31E3 10%, var(--surface)));
+                  border: 1px solid color-mix(in srgb, var(--pcol, #3186FF) 38%, transparent); color: var(--pink, var(--blue-ink)); text-decoration: none; transition: transform .15s; }
+    .proof-pill:hover { transform: translateY(-1px); }
+
+    .anim-stage {
+      background: var(--surface); border: 1px solid color-mix(in srgb, var(--pcol, #3186FF) 30%, var(--border-subtle));
+      border-top: 3px solid var(--pcol, #3186FF); border-radius: 20px; padding: 16px;
+      box-shadow: var(--shadow-md); position: relative; overflow: hidden;
+    }
+    .anim-stage svg { width: 100%; height: 210px; display: block; }
+    .anim-cap { display: flex; justify-content: space-between; font: 600 11px var(--font-mono); color: var(--text-dim); margin-top: 8px; }
+
+    /* Sub-Pillar Colorful Tabs */
+    .sp-tabs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 18px; }
+    .sp-tab {
+      text-align: left; cursor: pointer; padding: 14px 16px; border-radius: 16px;
+      background: var(--surface); border: 1px solid var(--border-subtle); border-top: 3px solid color-mix(in srgb, var(--sc, var(--pcol)) 45%, transparent);
+      color: var(--text); transition: all .16s ease; box-shadow: var(--shadow-sm);
+    }
+    .sp-tab:hover { border-color: var(--sc, var(--pcol)); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .sp-tab[aria-selected="true"] {
+      border-color: var(--sc, var(--pcol));
+      border-top: 4px solid var(--sc, var(--pcol));
+      background: linear-gradient(180deg, color-mix(in srgb, var(--sc, var(--pcol)) 10%, var(--surface)) 0%, var(--surface) 100%);
+      box-shadow: var(--shadow-md);
+    }
+    .sp-tab small { display: block; font: 700 10.5px var(--font-mono); color: var(--si, var(--pink)); text-transform: uppercase; margin-bottom: 4px; }
+    .sp-tab b { display: block; font: 700 15.5px var(--font-display); }
+
+    /* Sub-Pillar Expanded Story + Full-Tile Clickable Persona Cards */
+    .sp-panel {
+      background: var(--surface); border: 1px solid var(--border-subtle); border-top: 4px solid var(--sp-active, var(--pcol));
+      border-radius: 20px; padding: 22px 24px; box-shadow: var(--shadow-md);
+      animation: fadeSlide .2s ease;
+    }
+    @keyframes fadeSlide { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .sp-story-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; padding-bottom: 16px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 18px; }
+    .sp-story-head h2 { margin: 0 0 6px; font: 700 22px var(--font-display); }
+    .sp-story-head p { margin: 0; font-size: 14.5px; color: var(--text-muted); max-width: 78ch; line-height: 1.5; }
+
+    .per-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    @media (max-width: 980px) { .per-grid { grid-template-columns: 1fr; } }
+
+    .per-card {
+      text-decoration: none; color: inherit; cursor: pointer;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--tc, var(--pcol)) 5%, var(--surface)) 0%, var(--surface-sunk) 100%);
+      border: 1px solid color-mix(in srgb, var(--tc, var(--pcol)) 22%, var(--border-subtle));
+      border-left: 4px solid var(--tc, var(--pcol));
+      border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .per-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--tc, var(--pcol));
+      background: linear-gradient(180deg, color-mix(in srgb, var(--tc, var(--pcol)) 11%, var(--surface)) 0%, var(--surface) 100%);
+      box-shadow: 0 12px 26px color-mix(in srgb, var(--tc, var(--pcol)) 16%, rgba(18,19,23,.08));
+    }
+    .per-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .per-code { font: 700 11px var(--font-mono); padding: 3px 8px; border-radius: 6px; background: color-mix(in srgb, var(--tc, var(--pcol)) 14%, transparent); color: var(--ti, var(--pink)); }
+    .per-role { font: 700 17px var(--font-display); display: flex; align-items: center; gap: 8px; margin: 0; color: var(--text); }
+    .per-desc { font-size: 13px; color: var(--text-muted); line-height: 1.48; margin: 0; }
+    .per-ag {
+      padding: 10px 12px; border-radius: 12px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--tc, var(--pcol)) 10%, var(--surface)), rgba(0,175,87,.07));
+      border: 1px solid color-mix(in srgb, var(--tc, var(--pcol)) 28%, transparent); font-size: 12.5px;
+    }
+    .per-ag b { display: block; color: var(--ti, var(--blue-ink)); margin-bottom: 2px; }
+    .per-foot {
+      margin-top: auto; padding-top: 6px; display: flex; align-items: center; justify-content: space-between;
+      font: 700 12px var(--font-display); color: var(--ti, var(--blue-ink));
+    }
+  </style>
+</head>
+<body>
+
+  <header class="executive-top-nav" style="backdrop-filter: blur(20px); background: color-mix(in srgb, var(--surface) 88%, transparent); border-bottom: 1px solid var(--border-subtle); padding: 14px max(24px, 4vw); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center;">
+    <a href="../index.html" style="display: flex; align-items: center; gap: 14px; text-decoration: none;">
+      <img src="../assets/media/wip/image25.png" alt="Google Cloud" style="height: 32px; width: auto;">
+      <div style="width: 1px; height: 20px; background: var(--border-subtle);"></div>
+      <span id="navPillarLabel" style="font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; color: var(--text); letter-spacing: 1.5px; text-transform: uppercase;">PILLAR JOURNEY</span>
+    </a>
+    <nav style="display: flex; align-items: center; gap: 14px;">
+      <button class="theme-toggle-btn" onclick="toggleTheme()" type="button"></button>
+      <a href="../index.html" style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--text-dim); text-decoration: none; padding: 5px 11px; border-radius: 8px; background: var(--surface-sunk);">&larr; Briefing Map</a>
+      <a href="../personas/index.html" id="navChessLink" style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--blue-ink); text-decoration: none; padding: 5px 12px; border-radius: 8px; background: rgba(49, 134, 255, 0.10);">Chessboard Matrix &#8599;</a>
+    </nav>
+  </header>
+
+  <main class="wrap" id="mainWrap"></main>
+
+  <aside class="floating-dock" style="display: flex; align-items: center; gap: 12px; padding: 10px 18px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 30px; backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(18,19,23,.14); position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 1000;">
+    <a id="dockPrev" href="../index.html" style="background: var(--surface-sunk); border: 1px solid var(--border-subtle); color: var(--text-muted); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; text-decoration: none;">&#9664;</a>
+    <div id="dockLabel" style="font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--text-muted); white-space: nowrap;">PILLAR 01 // SUB-PILLARS</div>
+    <a id="dockNext" href="../personas/index.html" style="background: var(--g-blue); border: none; color: #FFF; padding: 7px 16px; border-radius: 20px; font-family: var(--font-display); font-size: 13.5px; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 6px;"><span>Next Pillar</span><span>&#9654;</span></a>
+  </aside>
+
+<script src="../data/sc_story_data.js"></script>
+<script>
+(function () {
+  var DATA = window.SC_DATA;
+  var q = new URLSearchParams(location.search);
+  var deptId = q.get('dept') || 'demand_sop';
+  var dIdx = Math.max(0, DATA.departments.findIndex(function (d) { return d.id === deptId; }));
+  var d = DATA.departments[dIdx];
+  var subId = q.get('sub') || (d.subPillars[0] && d.subPillars[0].id);
+  var personaById = Object.fromEntries(DATA.personas.map(function (p) { return [p.id, p]; }));
+
+  var PALETTE = [
+    { c: '#3186FF', i: '#286DD1' },
+    { c: '#4B31E3', i: '#4B31E3' },
+    { c: '#0A7684', i: '#0A7684' },
+    { c: '#00AF57', i: '#007F3F' }
+  ];
+
+  document.title = 'Pillar ' + d.num + ' · ' + d.title + ' | Supply Chain';
+  document.getElementById('navPillarLabel').textContent = 'PILLAR ' + d.num + ' // ' + d.title;
+  document.getElementById('navChessLink').href = '../personas/index.html?dept=' + d.id;
+
+  var prevD = DATA.departments[(dIdx - 1 + DATA.departments.length) % DATA.departments.length];
+  var nextD = DATA.departments[(dIdx + 1) % DATA.departments.length];
+  document.getElementById('dockPrev').href = '?dept=' + prevD.id;
+  document.getElementById('dockNext').href = '?dept=' + nextD.id;
+  document.getElementById('dockLabel').textContent = 'PILLAR ' + d.num + ' // ' + d.subPillars.length + ' SUB-PILLARS';
+
+  function renderPillarSvg(dept) {
+    var c = dept.color;
+    if (dept.svgType === 'demand_wave') {
+      return '<svg viewBox="0 0 460 210">' +
+        '<line x1="28" y1="175" x2="432" y2="175" stroke="var(--border-strong)" stroke-width="1.5"/>' +
+        '<path d="M 30 135 Q 95 60, 165 105 T 300 70 T 430 55" fill="none" stroke="' + c + '" stroke-width="3" stroke-dasharray="6 4"><animate attributeName="stroke-dashoffset" from="0" to="-40" dur="2.2s" repeatCount="indefinite"/></path>' +
+        '<path d="M 30 150 Q 110 115, 180 130 T 315 103 T 430 90" fill="none" stroke="var(--g-green)" stroke-width="2.5" opacity="0.85"/>' +
+        '<circle r="6" fill="' + c + '"><animateMotion dur="3.4s" repeatCount="indefinite" path="M 30 135 Q 95 60, 165 105 T 300 70 T 430 55"/></circle>' +
+        '<rect x="40" y="22" width="136" height="30" rx="8" fill="var(--surface-sunk)" stroke="' + c + '"/><text x="52" y="41" fill="var(--text)" font-family="Roboto Mono" font-size="11">POS + WeatherNext 3</text>' +
+        '<rect x="284" y="22" width="146" height="30" rx="8" fill="var(--surface-sunk)" stroke="var(--g-green)"/><text x="296" y="41" fill="var(--text)" font-family="Roboto Mono" font-size="11">P50 S&amp;OP Consensus</text>' +
+      '</svg>';
+    }
+    if (dept.svgType === 'circular_loop') {
+      return '<svg viewBox="0 0 460 210">' +
+        '<circle cx="230" cy="105" r="72" fill="none" stroke="var(--border-strong)" stroke-width="10"/>' +
+        '<circle cx="230" cy="105" r="72" fill="none" stroke="' + c + '" stroke-width="4" stroke-dasharray="14 10"><animate attributeName="stroke-dashoffset" from="0" to="-48" dur="2.4s" repeatCount="indefinite"/></circle>' +
+        '<circle r="7" fill="' + c + '"><animateMotion dur="4s" repeatCount="indefinite" path="M 230 33 A 72 72 0 1 1 229.9 33 Z"/></circle>' +
+        '<text x="230" y="102" text-anchor="middle" fill="var(--text)" font-family="Google Sans" font-size="14" font-weight="700">Circular Recovery</text>' +
+        '<text x="230" y="120" text-anchor="middle" fill="var(--text-muted)" font-family="Roboto Mono" font-size="11">RMA &rarr; Markdown &rarr; ESG</text>' +
+      '</svg>';
+    }
+    return '<svg viewBox="0 0 460 210">' +
+      '<path d="M 48 110 C 125 40, 200 40, 230 110 C 260 180, 335 180, 412 110" fill="none" stroke="' + c + '" stroke-width="3" stroke-dasharray="6 6"><animate attributeName="stroke-dashoffset" from="0" to="-48" dur="2.2s" repeatCount="indefinite"/></path>' +
+      '<line x1="48" y1="110" x2="412" y2="110" stroke="var(--border-strong)" stroke-width="1.5"/>' +
+      '<circle cx="48" cy="110" r="22" fill="var(--surface-sunk)" stroke="' + c + '" stroke-width="2"/><text x="48" y="114" text-anchor="middle" fill="var(--text)" font-family="Roboto Mono" font-size="10">SIGNAL</text>' +
+      '<circle cx="230" cy="110" r="26" fill="var(--surface)" stroke="' + c + '" stroke-width="2.5"/><text x="230" y="114" text-anchor="middle" fill="var(--text)" font-family="Roboto Mono" font-size="10">SOLVER</text>' +
+      '<circle cx="412" cy="110" r="22" fill="var(--surface-sunk)" stroke="var(--g-green)" stroke-width="2"/><text x="412" y="114" text-anchor="middle" fill="var(--text)" font-family="Roboto Mono" font-size="10">ACTION</text>' +
+      '<circle r="6" fill="' + c + '"><animateMotion dur="3s" repeatCount="indefinite" path="M 48 110 C 125 40, 200 40, 230 110 C 260 180, 335 180, 412 110"/></circle>' +
+      '<circle r="5" fill="var(--g-green)"><animateMotion dur="2.2s" repeatCount="indefinite" path="M 48 110 L 412 110"/></circle>' +
+    '</svg>';
+  }
+
+  var wrap = document.getElementById('mainWrap');
+  wrap.style.setProperty('--pcol', d.color);
+  wrap.style.setProperty('--pink', d.ink);
+
+  wrap.innerHTML =
+    '<div class="bc"><a href="../index.html">Briefing Map</a> <span>/</span> <span>Pillar ' + d.num + ' · ' + d.title + '</span> <span>/</span> <span id="bcSub"></span></div>' +
+    '<section class="p-hero">' +
+      '<div>' +
+        '<div class="kick"><i></i>Pillar ' + d.num + ' &middot; ' + d.liveCount + ' of ' + d.agentCount + ' Agents Live in GE</div>' +
+        '<h1>' + d.title + '</h1>' +
+        '<p class="q">' + (d.coreQuestion || d.shortFor) + '</p>' +
+        '<div class="meta-pills">' +
+          '<span class="m-pill">' + d.subPillars.length + ' Sub-Pillars</span>' +
+          '<span class="m-pill">' + d.personaCount + ' Personas</span>' +
+          '<span class="m-pill" style="color:var(--green-ink);border-color:rgba(0,175,87,.35);background:rgba(0,175,87,.08)">' + (d.impactMetric || 'Measured ROI') + '</span>' +
+          '<a class="proof-pill" target="_blank" rel="noopener" href="' + d.proofUrl + '">' + d.proofLabel + ' &#8599;</a>' +
+        '</div>' +
+      '</div>' +
+      '<div class="anim-stage">' +
+        renderPillarSvg(d) +
+        '<div class="anim-cap"><span>Live Signal &rarr; Solver &rarr; Approval Telemetry</span><span>Click any role card to view journey &rarr;</span></div>' +
+      '</div>' +
+    '</section>' +
+    '<div class="sp-tabs" id="spTabs"></div>' +
+    '<section class="sp-panel" id="spPanel"></section>';
+
+  function selectSub(id) {
+    subId = id;
+    var spIdx = Math.max(0, d.subPillars.findIndex(function (x) { return x.id === id; }));
+    var sp = d.subPillars[spIdx];
+    var spHue = PALETTE[spIdx % PALETTE.length];
+    document.getElementById('bcSub').textContent = sp.name;
+
+    document.getElementById('spTabs').innerHTML = d.subPillars.map(function (x, i) {
+      var h = PALETTE[i % PALETTE.length];
+      return '<button type="button" class="sp-tab" data-sub="' + x.id + '" aria-selected="' + (x.id === sp.id) + '" style="--sc:' + h.c + ';--si:' + h.i + '">' +
+        '<small>Sub-Pillar 0' + (i + 1) + ' &middot; ' + x.items.length + ' Personas</small>' +
+        '<b>' + x.name + '</b>' +
+      '</button>';
+    }).join('');
+
+    document.querySelectorAll('.sp-tab').forEach(function (b) {
+      b.addEventListener('click', function () { selectSub(b.dataset.sub); });
+    });
+
+    var panel = document.getElementById('spPanel');
+    panel.style.setProperty('--sp-active', spHue.c);
+    panel.innerHTML =
+      '<div class="sp-story-head">' +
+        '<div>' +
+          '<span style="font:700 11px var(--font-mono);color:' + spHue.i + ';text-transform:uppercase">SUB-PILLAR STORY &middot; ' + sp.name + '</span>' +
+          '<h2>' + sp.name + '</h2>' +
+          '<p>' + (sp.story || 'Specialized AI agents coordinate real-time telemetry and optimization for this workflow.') + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="per-grid">' +
+        sp.items.map(function (it, idx) {
+          var p = personaById[it.personaId] || {};
+          var tileHue = PALETTE[(idx + spIdx) % PALETTE.length];
+          return '<a class="per-card" href="../personas/dossier.html?id=' + encodeURIComponent(it.personaId) + '" style="--tc:' + tileHue.c + ';--ti:' + tileHue.i + '">' +
+            '<div class="per-top">' +
+              '<span class="per-code">' + (p.code || 'ROLE') + '</span>' +
+              (it.liveInGE ? '<span style="font:700 10px var(--font-mono);padding:3px 8px;border-radius:999px;background:rgba(0,175,87,.14);color:var(--green-ink)">&#9679; LIVE IN GE</span>' : '<span style="font:600 10px var(--font-mono);color:var(--text-dim)">CATALOG</span>') +
+            '</div>' +
+            '<h3 class="per-role"><span>' + it.personaIcon + '</span><span>' + it.personaName + '</span></h3>' +
+            '<p class="per-desc">' + it.desc + '</p>' +
+            '<div class="per-ag"><b>Agent: ' + it.agentName + '</b><span style="color:var(--green-ink);font-weight:600">' + it.outcome + '</span></div>' +
+            '<div class="per-foot">' +
+              '<span style="font:500 11.5px var(--font-mono);color:var(--text-dim)">' + (p.toilHoursBefore || 24) + 'h &rarr; ' + (p.toilHoursAfter || 5) + 'h/wk toil</span>' +
+              '<span>Open Journey &rarr;</span>' +
+            '</div>' +
+          '</a>';
+        }).join('') +
+      '</div>';
+  }
+
+  selectSub(subId);
+})();
+</script>
+</body>
+</html>

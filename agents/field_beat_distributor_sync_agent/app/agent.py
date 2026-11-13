@@ -23,14 +23,14 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
    - Whenever a user asks an analytical or operational question, proactively call your connected `query_*` tools, `query_sap_s4hana_master_data_backbone`, and deterministic Python solver (`analyze_operational_metrics`) behind the scenes to pull the relevant data and compute exact numbers—never estimate math mentally.
    - Never mention internal JSON filenames, `snake_case` table/column names, or Python function names in your user-facing answer; refer to data sources in natural business terms (e.g., "store checkout scans", "warehouse receiving logs", "refrigerated trailer sensors", "carrier freight contracts").
-2. CLEAR, BALANCED MEDIUM-LENGTH PLAIN-ENGLISH EXPLANATION:
-   - Write in warm, natural, easy-to-follow business English with a balanced medium-length explanation—neither cryptic 1–2 sentence shorthand nor overly long walls of text—because readers may not know domain shorthand.
-   - Open with a **3–4 sentence Plain-English Executive Summary** explaining what is happening right now, what the numbers show, why it matters to the business, and your main recommendation.
-   - **Spell out every abbreviation on first use**—for example, Point of Sale (POS), Weighted Absolute Percentage Error (WAPE), Forecast Value Added (FVA), Planned Independent Requirements (PIR), On-Time In-Full (OTIF), Mean Kinetic Temperature (MKT), Purchase Order (PO), Goods Receipt Note (GRN), Overall Equipment Effectiveness (OEE), Days Inventory Outstanding (DIO), Stock Keeping Unit (SKU), or Return Merchandise Authorization (RMA)—and briefly explain specialized terms in everyday words.
-   - Include a **clean Markdown summary table (`<= 5` columns)** outside the chart card using human-friendly English column headers (so anyone can read it immediately or copy it cleanly into Google Sheets).
-   - Follow the table with **3–4 concise bullet points** walking through *what drives these findings* (the plain-English story behind the calculations) and *practical recommended next steps*.
-3. INTERACTIVE VISUAL CHART (`VegaChart` CARD SEPARATION):
-   - Call `render_visual_chart` whenever visual comparison helps illustrate trends, gaps, or rankings. An interactive A2UI `VegaChart` card renders automatically—keep ONLY the chart inside the card and never paste raw Vega-Lite JSON or base64 strings in text.
+2. ARCHETYPE OUTPUT STYLE — SCENARIO & OPTIMIZATION STUDIO (160–240 words, Trade-Off Focused):
+   - Open with a **2–3 sentence Executive Decision Summary** stating the optimal plan, key trade-offs, and margin/service impact (spell out every domain abbreviation on first use).
+   - When comparing >=2 scenarios, time horizons, or nodes, provide a **clean Scenario Comparison Markdown table (`<= 4` columns)** with plain-English headers (ready for Google Sheets). For quick single-SKU or yes/no questions, skip the table and answer directly in 2–3 crisp sentences.
+   - Follow with **2–3 concise sensitivity & execution bullets** quantifying upside/downside risk.
+3. INTELLIGENT HTML COCKPIT & A2UI VISUAL SELECTION (CRITICAL):
+   - **VegaChart (`render_*_a2ui_chart_and_canvas`)**: Call ONLY when the question asks for comparisons, forecasts, trends, or rankings across multiple items/regions. Skip charts on simple single-value lookups or confirmation turns.
+   - **Interactive HTML Cockpit (`publish_*_interactive_cockpit_to_gcs`)**: Call ONLY when the user asks to *simulate scenarios*, compare *what-if variables*, or explicitly asks for an *interactive cockpit / dashboard / web view / HTML*. NEVER generate HTML links on simple factual lookups, yes/no checks, or guardrail refusals.
+   - **CSV Export (`export_*`)**: Call when multi-row operational plans (`>= 3` rows) are requested for execution or spreadsheet download.
 4. STAKEHOLDER BRIEFINGS & SAFE ACTION GOVERNANCE:
    - Call `draft_operational_brief` when the user asks for a briefing note, memo, claim, or leadership summary, and present the result in clear, accessible business English with abbreviations spelled out.
    - Never invoke `action_*` write-back tools on read-only questions.
@@ -40,10 +40,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 VISUAL A2UI v0.9 DUAL-SURFACE & ACTUAL DATA-SOURCE TOOL MANDATE (CRITICAL):
 - CORTEX DATA FOUNDATION: Harmonized via **Google Cloud Cortex Framework (v7)** (`query_cortex_field_beat_distributor_sync_agent_data_products` -> `bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_distributor_dms_live_inventory`), standardizing raw ERP/WMS Change Data Capture (CDC) tables, currency scaling, and K9 external signals via Dataform & Dataplex Knowledge Catalog.
 - BUILD TIER: **Low-Code** · Connected Data-Source Tools: `inspect_dms_distributor_field_beat_distributor_sync_data_sources, query_sap_s4hana_master_data_backbone, query_dms_distributor_distributor_dms_live_inventory, query_google_maps_fso_daily_beat_store_outlets, query_pitch_stock_pitch_to_stock_substitution_rules, query_sap_s4hana_primary_replenishment_auto_orders, query_distributor_dms_live_inventory, query_fso_daily_beat_store_outlets`.
-- On EVERY analytical, chart, variance, comparison, forecast, audit, scenario, or cockpit request, proactively execute your data-source-specific `query_*` / `fetch_*` tools, deterministic solver (`run_*` / `analyze_*`), and `render_field_beat_distributor_sync_a2ui_chart_and_canvas` so Gemini Enterprise renders BOTH:
-  1. **Inline A2UI `Card` (`VegaChart` ONLY)**: A 2-Panel Executive Vega-Lite v5 Infographic (Top: Baseline vs. Target/Verified Actual with Mean Reference Rule; Bottom: Signed `Δ` Variance Strip). Keep ONLY the `VegaChart` inside the inline card!
-  2. **Side-Panel A2UI `Canvas` (Multi-Chart Visual Studio: KPI Index `VegaChart` + Pareto Breakdown `VegaChart` + Action Buttons + Looker `RichTable`)**: Automatically attached in the side panel so business users can sort/filter live source rows in Looker Studio and click quick-action buttons.
-- Outside the card in Markdown, present: (a) a warm 3–4 sentence Plain-English Executive Summary (spelling out every abbreviation on first use), (b) a clean `<= 5`-column Markdown summary table ready to copy into Google Sheets, (c) 3–4 concise driver & action bullets, and (d) headed Cloud Storage links (`### Interactive Cockpit & Live Visual Application` via `publish_field_beat_distributor_sync_interactive_cockpit_to_gcs` / `### Downloadable Data Export`) when requested.
+- ARCHETYPE & SMART UI RULE (SIMULATOR): Intelligently choose ONLY the output depth and UI elements warranted by the user's request. Execute `query_*` / `fetch_*` + deterministic `run_*` / `analyze_*` math tools when data is needed. Emit inline `VegaChart` + side-panel `Canvas` (`render_*_a2ui_chart_and_canvas`) for multi-entity comparisons/trends, CSV exports (`export_*`) for downloadable multi-row schedules, and full-screen HTML cockpits (`publish_*_interactive_cockpit_to_gcs`) ONLY when interactive exploration, multi-variable simulation, or HTML is genuinely useful or requested—never spam HTML links on quick factual checks.
 - NEVER invent numbers, SKUs, POs, or invoice IDs, and NEVER paste raw HTML (`<!DOCTYPE html>`), Vega-Lite JSON, or `snake_case` internal filenames in user-facing prose.
 """
 
@@ -87,7 +84,7 @@ class FieldBeatDistributorSyncAgent:
         self.model = model
         self.system_instruction = _INSTRUCTION
         self.tools: List[Callable] = list(_AVAILABLE_TOOLS)
-        self.tool_map = {t.__name__: t for t in self.tools}
+        self.tool_map = {t.__name__: t for t in list(getattr(tools, 'LEGACY_COMPAT_TOOLS', [])) + self.tools}
 
     def select_orchestrated_model(self, query: str = "") -> Dict[str, str]:
         """Agent Orchestrator dynamically decides whether to use Gemini 3.8 Flash or Gemini 3.1 Pro / 4 Argon."""
@@ -247,10 +244,21 @@ try:
         llm_request: Optional[LlmRequest] = None,
         **_: Any,
     ) -> None:
-        """Sanitizes prior A2UI wire parts and intercepts synthetic Canvas button clicks."""
+        """Sanitizes prior A2UI wire parts, captures plain-English turn intent, and intercepts Canvas button clicks."""
         if llm_request is None:
             return None
-        from .render.a2ui_builder import sanitize_history_and_intercept_actions
+        from .render.a2ui_builder import find_a2ui_action, sanitize_history_and_intercept_actions
+        contents = getattr(llm_request, "contents", None) or []
+        if contents:
+            last_c = contents[-1]
+            if getattr(last_c, "role", "") == "user":
+                parts = getattr(last_c, "parts", None) or []
+                act = find_a2ui_action(parts)
+                if act:
+                    getattr(tools, "mark_canvas_action", lambda *_: None)(str(act.get("name", "")))
+                user_texts = [getattr(p, "text", "") or "" for p in parts if getattr(p, "text", None)]
+                if user_texts:
+                    getattr(tools, "set_turn_user_query", lambda *_: None)(" ".join(user_texts))
         sanitize_history_and_intercept_actions(llm_request)
         return None
 
@@ -325,7 +333,9 @@ try:
                 llm_response.content.parts = cleaned
                 return llm_response
 
-            art = tools.ensure_turn_gcs_artifacts()
+            want_html = bool(getattr(tools, 'should_emit_html_cockpit', lambda: False)())
+            want_csv = bool(getattr(tools, 'should_emit_csv_export', lambda: False)())
+            art = tools.ensure_turn_gcs_artifacts(include_html=want_html, include_csv=want_csv)
             html_url = art.get("html_url", "")
             csv_url = art.get("csv_url", "")
 
@@ -345,6 +355,8 @@ try:
                 nl = chr(10)
                 footer_block = (
                     f"{nl}{nl}### 🌐 Interactive Visual Cockpit & Data Exports{nl}{nl}"
+                    if html_url
+                    else f"{nl}{nl}### 📥 Verified Data Export{nl}{nl}"
                     + nl.join(missing_bullets)
                     + nl
                 )
@@ -365,7 +377,9 @@ try:
     ) -> Optional[types.Content]:
         import logging as _logging
         try:
-            has_activity = bool(getattr(tools, "has_turn_activity", lambda: True)())
+            has_activity = bool(
+                getattr(tools, "should_emit_a2ui_surface", getattr(tools, "has_turn_activity", lambda: True))()
+            )
             getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
             if not has_activity:
                 getattr(tools, "finalize_turn_gcs_state", lambda timeout=12.0: None)(timeout=2.0)

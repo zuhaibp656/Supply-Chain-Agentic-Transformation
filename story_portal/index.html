@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supply Chain Agentic Transformation | Briefing Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/aurora.css">
+<script>
+  (function () {
+    try {
+      if ((localStorage.getItem('deck-theme') || 'light') === 'dark') {
+        document.documentElement.classList.add('theme-dark');
+        document.documentElement.classList.remove('theme-light');
+      }
+    } catch (e) {}
+  })();
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: var(--canvas); color: var(--text); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── masthead ─────────────────────────────────────────────────────────── */
+  .mast { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 14px;
+          padding: 12px max(24px, 3vw); background: color-mix(in srgb, var(--surface) 88%, transparent);
+          backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-subtle); }
+  .mast img { height: 26px; display: block; }
+  .mast-rule { width: 1px; height: 18px; background: var(--border-subtle); }
+  .mast-tag { font: 500 11px var(--font-mono); letter-spacing: 1.3px; text-transform: uppercase; color: var(--text-muted); }
+  .mast-sp { flex: 1; }
+  .btn-ghost { font: 500 13px var(--font-display); padding: 7px 14px; border-radius: 999px; cursor: pointer;
+               border: 1px solid var(--border-subtle); background: var(--surface); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--g-blue); color: var(--blue-ink); }
+  .btn-cta { font: 600 13px var(--font-display); padding: 8px 16px; border-radius: 999px; background: var(--g-blue); color: #FFF; }
+  .btn-cta:hover { filter: brightness(1.06); }
+
+  .wrap { max-width: 1640px; margin: 0 auto; padding: 0 max(20px, 2.5vw) 56px; }
+
+  /* ── hero ─────────────────────────────────────────────────────────────── */
+  .hero { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 32px; align-items: end; padding: 28px 0 22px; }
+  .kick { display: flex; align-items: center; gap: 10px; font: 500 11.5px var(--font-mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-muted); }
+  .kick i { width: 28px; height: 3px; border-radius: 2px; background: var(--gemini-spark); }
+  h1 { font: 600 clamp(28px, 2.8vw, 42px)/1.1 var(--font-display); letter-spacing: -0.8px; margin: 10px 0 8px; }
+  .lede { font-size: 16px; line-height: 1.45; color: var(--text-muted); margin: 0; max-width: 720px; }
+  .lede b { color: var(--text); font-weight: 500; }
+  .glance { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--surface); border: 1px solid var(--border-subtle);
+            border-radius: 18px; box-shadow: var(--shadow-sm); overflow: hidden; }
+  .glance div { padding: 13px 15px; border-left: 1px solid var(--border-subtle); }
+  .glance div:first-child { border-left: 0; }
+  .glance b { display: block; font: 600 26px/1 var(--font-mono); color: var(--text); }
+  .glance span { display: block; margin-top: 5px; font-size: 12px; line-height: 1.3; color: var(--text-muted); }
+
+  /* ── the flow ─────────────────────────────────────────────────────────── */
+  .flow { position: relative; }
+  .flow > svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: visible; }
+  .stage { position: relative; z-index: 1; display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 20px; }
+  .gap { height: 74px; position: relative; z-index: 1; display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 20px; }
+  .gap .note { align-self: center; justify-self: center; font: 500 12px var(--font-display); color: var(--text-muted);
+               background: var(--canvas); border: 1px solid var(--border-subtle); border-radius: 999px; padding: 5px 14px; }
+  .gap .note b { color: var(--text); font-weight: 600; }
+
+  .sl { padding-top: 6px; }
+  .sl .n { font: 600 11.5px var(--font-mono); color: var(--blue-ink); letter-spacing: 1.2px; }
+  .sl h2 { font: 600 19px/1.2 var(--font-display); margin: 5px 0 4px; }
+  .sl p { margin: 0; font-size: 12.5px; line-height: 1.45; color: var(--text-muted); }
+
+  /* stage 1: common start */
+  .start { justify-self: center; width: min(640px, 100%); display: flex; align-items: center; gap: 18px; padding: 16px 22px;
+           background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px; box-shadow: var(--shadow-md);
+           position: relative; transition: transform .18s, box-shadow .18s; }
+  .start::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; border-radius: 18px 18px 0 0; background: var(--gemini-spark); }
+  .start:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .num { font: 600 12.5px var(--font-mono); min-width: 38px; height: 30px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center;
+         background: var(--surface-sunk); color: var(--text); flex-shrink: 0; }
+  .start h3 { margin: 0; font: 600 17.5px var(--font-display); }
+  .start p { margin: 3px 0 0; font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+  .start .go { margin-left: auto; font: 600 13px var(--font-display); color: var(--blue-ink); white-space: nowrap; }
+
+  /* stage 2: ALL 6 PILLAR TRACKS */
+  .tracks { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+  .track { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 16px; box-shadow: var(--shadow-sm);
+           overflow: hidden; display: flex; flex-direction: column; transition: opacity .2s, transform .2s, box-shadow .2s, border-color .2s; }
+  .track:hover { border-color: var(--tc); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .flow.hl .track { opacity: .42; }
+  .flow.hl .track.on { opacity: 1; }
+  .t-photo { position: relative; height: 102px; display: block; overflow: hidden; }
+  .t-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+  .track:hover .t-photo img { transform: scale(1.04); }
+  .t-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,19,23,.18) 0%, rgba(18,19,23,.68) 100%); }
+  .t-photo .lbl { position: absolute; left: 13px; bottom: 10px; right: 13px; z-index: 1; color: #FFF; }
+  .t-photo .lbl small { display: block; font: 500 10px var(--font-mono); letter-spacing: 1.1px; text-transform: uppercase; opacity: .92; }
+  .t-photo .lbl strong { display: block; font: 600 17px/1.15 var(--font-display); margin-top: 2px; }
+  .t-photo .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--tc); z-index: 1; }
+  .t-for { padding: 10px 13px 4px; font-size: 12px; color: var(--text-muted); }
+  .t-for b { color: var(--ti); font-weight: 600; }
+  .steps { list-style: none; margin: 0; padding: 4px 9px 10px; position: relative; flex: 1; display: flex; flex-direction: column; }
+  .steps a { display: flex; align-items: center; gap: 8px; padding: 6px; border-radius: 9px; position: relative; }
+  .steps a:hover { background: var(--surface-sunk); }
+  .steps li:not(:last-child) a::after { content: ""; position: absolute; left: 17px; top: 27px; height: 12px; width: 2px;
+                                         background: color-mix(in srgb, var(--tc) 30%, transparent); }
+  .dot { width: 24px; height: 22px; border-radius: 6px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+         font: 600 10px var(--font-mono); color: var(--ti); background: color-mix(in srgb, var(--tc) 10%, var(--surface));
+         border: 1px solid color-mix(in srgb, var(--tc) 35%, transparent); }
+  .steps .nm { font: 500 12.5px/1.25 var(--font-display); color: var(--text); }
+  .steps .demo { margin-top: auto; }
+  .steps .demo a { margin-top: 6px; background: color-mix(in srgb, var(--tc) 9%, var(--surface)); border: 1px solid color-mix(in srgb, var(--tc) 40%, transparent); padding: 8px; flex-wrap: wrap; }
+  .steps .demo a:hover { background: color-mix(in srgb, var(--tc) 15%, var(--surface)); }
+  .steps .demo .dot { background: var(--tc); color: #FFF; border-color: var(--tc); }
+  .steps .demo .nm { font-weight: 600; font-size: 12px; }
+  .badge { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; gap: 4px; font: 600 9.5px var(--font-mono);
+           letter-spacing: .6px; text-transform: uppercase; padding: 3px 7px; border-radius: 999px; background: var(--tc); color: #FFF; }
+  .badge.soft { background: var(--surface-sunk); color: var(--text-muted); border: 1px solid var(--border-subtle); }
+
+  /* stage 3: converged */
+  .shared { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 20px; box-shadow: var(--shadow-md);
+            padding: 20px; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 2.6fr); gap: 20px; position: relative; }
+  .shared::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; border-radius: 20px 20px 0 0; background: var(--gemini-spark); }
+  .grp-h { font: 500 11px var(--font-mono); letter-spacing: 1.3px; text-transform: uppercase; color: var(--text-muted); margin: 2px 0 10px; }
+  .col-a { display: flex; flex-direction: column; gap: 12px; }
+  .grid-b { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .tile { display: flex; flex-direction: column; gap: 8px; padding: 14px; border-radius: 14px; background: var(--surface-sunk);
+          border: 1px solid transparent; transition: border-color .16s, transform .16s, background .16s; min-height: 112px; }
+  .tile:hover { border-color: var(--g-blue); background: var(--surface); transform: translateY(-2px); }
+  .tile .top { display: flex; align-items: center; gap: 10px; }
+  .tile .top img { width: 25px; height: 25px; }
+  .tile .num { min-width: 34px; height: 25px; font-size: 11px; background: var(--surface); }
+  .tile h4 { margin: 0; font: 600 14.5px/1.3 var(--font-display); color: var(--text); }
+  .tile p { margin: 0; font-size: 12.2px; line-height: 1.38; color: var(--text-muted); }
+  .tile > .badge { margin: auto 0 0; align-self: flex-start; }
+  .tile.feature { flex: 1; }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .pill { font: 500 11.5px var(--font-display); padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border-subtle); color: var(--text); }
+  .pill:hover { border-color: var(--tc, var(--g-blue)); color: var(--ti, var(--blue-ink)); }
+
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 22px; font-size: 12.5px; color: var(--text-muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .legend .badge { margin: 0; }
+  footer { margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--border-subtle); text-align: center; font-size: 12.5px; color: var(--text-muted); }
+
+  /* connector lines */
+  .ln-base { fill: none; stroke-width: 2.6; opacity: .28; transition: opacity .2s; }
+  .ln-flow { fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-dasharray: 1 11; animation: flow 1.1s linear infinite; transition: opacity .2s; }
+  .ln-end { transition: opacity .2s; }
+  @keyframes flow { to { stroke-dashoffset: -12; } }
+  .flow.hl [data-ln]:not(.on) { opacity: .08; }
+
+  @media (prefers-reduced-motion: reduce) { .ln-flow { animation: none; } * { transition: none !important; } }
+  @media (max-width: 1340px) { .tracks { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 1180px) {
+    .stage, .gap { grid-template-columns: 1fr; }
+    .sl { padding: 0 0 10px; } .gap .sp { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .shared { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 900px) { .tracks { grid-template-columns: 1fr; } .grid-b { grid-template-columns: repeat(2, 1fr); } .flow > svg { display: none; } }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+    <img src="assets/media/wip/image25.png" alt="Google Cloud">
+    <span class="mast-rule"></span>
+    <span class="mast-tag">Executive briefing &middot; Global Supply Chain</span>
+  </a>
+  <span class="mast-sp"></span>
+  <button class="btn-ghost" id="themeToggle" type="button">Dark</button>
+  <a class="btn-cta" href="pages/00_executive_story.html">Start the briefing &rarr;</a>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div>
+      <div class="kick"><i></i>Briefing map &middot; how the Supply Chain story flows</div>
+      <h1>Agentic Transformation for Global Supply Chains</h1>
+      <p class="lede">One executive briefing grounded in verified 2025&ndash;2026 benchmarks. <b>Everyone starts together</b>, the story spans all <b>6 Supply Chain Operations Reference (SCOR) pillars</b>, and every journey <b>converges</b> on our 60-persona chessboard and Google Cloud architecture.</p>
+    </div>
+    <div class="glance">
+      <div><b>1</b><span>shared opening</span></div>
+      <div><b>6</b><span>SCOR pillar tracks</span></div>
+      <div><b>37</b><span>live agents in GE</span></div>
+      <div><b>60</b><span>personas mapped</span></div>
+    </div>
+  </section>
+
+  <div class="flow" id="flow">
+    <svg id="lines" aria-hidden="true"></svg>
+
+    <!-- ── 1 · COMMON START ─────────────────────────────────────────────── -->
+    <div class="stage">
+      <div class="sl"><div class="n">STAGE 1</div><h2>Everyone starts here</h2><p>The capital &amp; disruption thesis across every industry.</p></div>
+      <a class="start" id="nStart" href="pages/00_executive_story.html">
+        <span class="num">00</span>
+        <div><h3>Executive Overview</h3><p>Why major disruptions every 3.7 years erase 45% of annual EBITDA (McKinsey), and how 60 specialized agents restore flow.</p></div>
+        <span class="go">Open &rarr;</span>
+      </a>
+    </div>
+
+    <div class="gap"><span class="sp"></span><span class="note"><b>The journey forks</b> &middot; all 6 ASCM SCOR Pillars in one operating view</span></div>
+
+    <!-- ── 2 · ALL 6 PILLAR TRACKS ──────────────────────────────────────── -->
+    <div class="stage">
+      <div class="sl"><div class="n">STAGE 2</div><h2>All 6 SCOR Pillars</h2><p>Every sub-pillar mapped to a persona, an agent, and a measurable ROI.</p></div>
+      <div class="tracks" id="tracksHost"></div>
+    </div>
+
+    <div class="gap"><span class="sp"></span><span class="note"><b>All 6 pillars converge</b> &middot; from one workflow to a 60-role agentic workforce</span></div>
+
+    <!-- ── 3 · CONVERGED CLOSE ──────────────────────────────────────────── -->
+    <div class="stage">
+      <div class="sl"><div class="n">STAGE 3</div><h2>Everyone converges here</h2><p>The 60-role chessboard, then how we build, run, govern and prove it.</p></div>
+      <div class="shared" id="nShared">
+        <div class="col-a">
+          <div class="grp-h">Agentic workflows &amp; workforce</div>
+          <a class="tile" href="pages/00_executive_story.html#shift">
+            <div class="top"><span class="num">06</span><img src="assets/media/gcp/Agents.svg" alt=""></div>
+            <h4>From one alert to coordinated flow</h4>
+            <p>World Economic Forum (2026): -62% disruption response cycle (11 days &rarr; 4 days).</p>
+          </a>
+          <div class="tile feature">
+            <a href="personas/index.html" style="display:flex;flex-direction:column;gap:8px;">
+              <div class="top"><span class="num">07</span><span class="badge soft">Interactive</span></div>
+              <h4>Persona chessboard: 60 roles, mapped</h4>
+              <p>480 workflow tiles &mdash; click any square to compare Today vs. With Agent and see what stays human.</p>
+            </a>
+            <div class="pills">
+              <a class="pill" href="personas/index.html?dept=demand_sop">Planning &amp; Strategy (12)</a>
+              <a class="pill" href="personas/index.html?dept=sourcing_procurement">Sourcing &amp; Procurement (9)</a>
+              <a class="pill" href="personas/index.html?dept=manufacturing_prod">Manufacturing &amp; Production (9)</a>
+              <a class="pill" href="personas/index.html?dept=inventory_warehouse">Inventory &amp; Warehousing (9)</a>
+              <a class="pill" href="personas/index.html?dept=logistics_fleet">Distribution &amp; Logistics (12)</a>
+              <a class="pill" href="personas/index.html?dept=circular_enable">Returns &amp; Reverse Logistics (9)</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="grp-h">From personas to production</div>
+          <div class="grid-b">
+            <a class="tile" href="pages/09_agent_architecture.html"><div class="top"><span class="num">08</span><img src="assets/media/gcp/HybridMulticloud.svg" alt=""></div><h4>Google Cloud Architecture</h4><p>5-lane governed topology with live request tracing.</p><span class="badge soft">Interactive</span></a>
+            <a class="tile" href="pages/10_surfaces.html"><div class="top"><span class="num">09</span><img src="assets/media/gcp/CloudRun.svg" alt=""></div><h4>Where people meet the agent</h4><p>Gemini Enterprise, Cockpit, SAP/WMS &amp; background flows.</p><span class="badge soft">Interactive</span></a>
+            <a class="tile" href="pages/09_agent_architecture.html#models"><div class="top"><span class="num">10</span><img src="assets/media/gcp/VertexAI.svg" alt=""></div><h4>Model choice &amp; OR-Tools</h4><p>Gemini 3.1 Pro reasons; deterministic solvers compute.</p></a>
+            <a class="tile" href="pages/09_agent_architecture.html#gov"><div class="top"><span class="num">11</span><img src="assets/media/gcp/SecurityIdentity.svg" alt=""></div><h4>Governance &amp; MCP</h4><p>Identity, Model Armor, VPC-SC &amp; human approval gates.</p></a>
+            <a class="tile" href="pages/13_proof_and_cases.html"><div class="top"><span class="num">12</span><img src="assets/media/gcp/AIMachineLearning.svg" alt=""></div><h4>Unilever (Feb 2026)</h4><p>104-week ML forecast &amp; 40+ plant digital twins.</p><span class="badge" style="--tc:var(--g-green)">Verified</span></a>
+            <a class="tile" href="pages/13_proof_and_cases.html"><div class="top"><span class="num">13</span><img src="assets/media/gcp/Compute.svg" alt=""></div><h4>GE Appliances &amp; Home Depot</h4><p>800+ Gemini agents &amp; 2,300+ stores grounded.</p><span class="badge" style="--tc:var(--g-green)">Verified</span></a>
+            <a class="tile" href="pages/13_proof_and_cases.html#benchmarks"><div class="top"><span class="num">14</span><img src="assets/media/gcp/Observability.svg" alt=""></div><h4>Gartner, McKinsey &amp; BCG</h4><p>Primary 2025&ndash;2026 citations with direct links.</p></a>
+            <a class="tile" href="pages/13_proof_and_cases.html#plan100"><div class="top"><span class="num">15</span><img src="assets/media/gcp/Marketplace.svg" alt=""></div><h4>100 days to proof of value</h4><p>Start with 1 high-variance pillar, then scale.</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><span class="badge" style="--tc:var(--g-blue)">&#9654; Live in GE</span> deployed on Vertex AI Agent Engine</span>
+    <span><span class="badge" style="--tc:var(--g-green)">Verified</span> direct 2025&ndash;2026 source URL</span>
+    <span><span class="badge soft">Interactive</span> click any square or node</span>
+  </div>
+
+  <footer>Google Cloud &middot; Executive briefing for Supply Chain leaders &middot; Grounded in Gartner, McKinsey, BCG, Capgemini &amp; World Economic Forum</footer>
+</main>
+
+<script src="data/sc_story_data.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('themeToggle');
+  function paint() { btn.textContent = document.documentElement.classList.contains('theme-dark') ? 'Light' : 'Dark'; }
+  paint();
+  btn.addEventListener('click', function () {
+    var el = document.documentElement, dark = el.classList.toggle('theme-dark');
+    el.classList.toggle('theme-light', !dark);
+    try { localStorage.setItem('deck-theme', dark ? 'dark' : 'light'); } catch (e) {}
+    paint();
+  });
+
+  var host = document.getElementById('tracksHost');
+  var depts = window.SC_DATA.departments;
+  depts.forEach(function (d) {
+    var firstItem = (d.subPillars[0] && d.subPillars[0].items[0]) || {};
+    var sec = document.createElement('section');
+    sec.className = 'track';
+    sec.dataset.track = d.id;
+    sec.style.setProperty('--tc', d.color);
+    sec.style.setProperty('--ti', d.ink);
+
+    var stepsHtml = d.subPillars.map(function (sp, idx) {
+      var n = '0' + (idx + 1);
+      return '<li><a href="pages/pillar.html?dept=' + d.id + '&sub=' + encodeURIComponent(sp.id) + '"><span class="dot">' + n + '</span><span class="nm">' + sp.name + '</span></a></li>';
+    }).join('');
+
+    var demoHtml = '<li class="demo"><a href="pages/pillar.html?dept=' + d.id + '">' +
+      '<span class="dot">0' + (d.subPillars.length + 1) + '</span>' +
+      '<span class="nm">Explore ' + d.subPillars.length + ' Sub-Pillars</span>' +
+      '<span class="badge">&#9654; ' + d.liveCount + '/' + d.agentCount + ' Live</span></a></li>';
+
+    sec.innerHTML =
+      '<a class="t-photo" href="pages/pillar.html?dept=' + d.id + '">' +
+        '<img src="assets/media/photos/' + d.photo + '" alt="' + d.title + '">' +
+        '<span class="lbl"><small>Pillar ' + d.num + '</small><strong>' + d.title + '</strong></span><span class="bar"></span>' +
+      '</a>' +
+      '<div class="t-for"><b>' + d.shortFor + '</b></div>' +
+      '<ol class="steps">' + stepsHtml + demoHtml + '</ol>';
+    host.appendChild(sec);
+  });
+
+  var flow = document.getElementById('flow'), svg = document.getElementById('lines');
+  var start = document.getElementById('nStart'), shared = document.getElementById('nShared');
+  var tracks = [].slice.call(document.querySelectorAll('.track'));
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  function curve(x1, y1, x2, y2) { var m = (y1 + y2) / 2; return 'M' + x1 + ',' + y1 + ' C' + x1 + ',' + m + ' ' + x2 + ',' + m + ' ' + x2 + ',' + y2; }
+
+  function draw() {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    if (getComputedStyle(svg).display === 'none') return;
+    var f = flow.getBoundingClientRect(), s = start.getBoundingClientRect(), h = shared.getBoundingClientRect();
+    var sx = s.left + s.width / 2 - f.left, sy = s.bottom - f.top;
+    var hx = h.left + h.width / 2 - f.left, hy = h.top - f.top;
+    tracks.forEach(function (t, i) {
+      var r = t.getBoundingClientRect(), c = getComputedStyle(t).getPropertyValue('--tc').trim() || '#3186FF';
+      var tx = r.left + r.width / 2 - f.left, top = r.top - f.top, bot = r.bottom - f.top;
+      var off = (i - 2.5) * 10;
+      [[sx + off, sy, tx, top], [tx, bot, hx + off, hy]].forEach(function (p) {
+        var g = el('g', { 'data-ln': t.dataset.track });
+        var d = curve(p[0], p[1], p[2], p[3]);
+        g.appendChild(el('path', { d: d, stroke: c, class: 'ln-base' }));
+        g.appendChild(el('path', { d: d, stroke: c, class: 'ln-flow' }));
+        g.appendChild(el('circle', { cx: p[0], cy: p[1], r: 3.5, fill: c, class: 'ln-end' }));
+        g.appendChild(el('circle', { cx: p[2], cy: p[3], r: 3.5, fill: c, class: 'ln-end' }));
+        svg.appendChild(g);
+      });
+    });
+  }
+
+  tracks.forEach(function (t) {
+    t.addEventListener('mouseenter', function () {
+      flow.classList.add('hl'); t.classList.add('on');
+      svg.querySelectorAll('[data-ln="' + t.dataset.track + '"]').forEach(function (g) { g.classList.add('on'); });
+    });
+    t.addEventListener('mouseleave', function () {
+      flow.classList.remove('hl'); t.classList.remove('on');
+      svg.querySelectorAll('.on').forEach(function (g) { g.classList.remove('on'); });
+    });
+  });
+
+  draw();
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+})();
+</script>
+</body>
+</html>

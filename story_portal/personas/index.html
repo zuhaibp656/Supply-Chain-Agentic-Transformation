@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Persona Map | Supply Chain Agentic Workforce &amp; Workflow Matrix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+  (function () {
+    try {
+      if ((localStorage.getItem('deck-theme') || 'light') === 'dark') {
+        document.documentElement.classList.add('theme-dark');
+      }
+    } catch (e) {}
+  })();
+</script>
+<style>
+  :root {
+    --g-blue:   #3186FF;
+    --g-purple: #4B31E3;
+    --g-cyan:   #12B5CB;
+    --g-green:  #00AF57;
+    --g-yellow: #FEC700;
+    --g-red:    #FC413D;
+
+    --blue-ink:   #286DD1;
+    --green-ink:  #007F3F;
+    --red-ink:    #C62A27;
+    --amber-ink:  #8A6200;
+    --dim-ink:    #686E7E;
+
+    --canvas:        #F0F5FE;
+    --surface:       #FFFFFF;
+    --surface-sunk:  #F1F3F9;
+    --border:        #E1E5EE;
+    --border-strong: #CBD2E0;
+    --text:          #1F2430;
+    --text-muted:    #5A6275;
+    --text-dim:      #8A92A6;
+    --accent:        var(--g-blue);
+    --accent-soft:   rgba(49, 134, 255, 0.10);
+
+    --crit-bg:   rgba(252, 65, 61, 0.13);
+    --fric-bg:   rgba(254, 199, 0, 0.20);
+    --hatch:     rgba(90, 98, 117, 0.17);
+    --dotcol:    rgba(90, 98, 117, 0.42);
+
+    --shadow-sm: 0 1px 2px rgba(18, 19, 23, 0.06);
+    --shadow-md: 0 2px 8px rgba(18, 19, 23, 0.08);
+    --shadow-lg: 0 8px 28px rgba(18, 19, 23, 0.12);
+    --ring:      0 0 0 3px rgba(49, 134, 255, 0.28);
+
+    --font: "Google Sans", "Google Sans Text", -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: "Roboto Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+
+    --radius:   14px;
+    --radius-s: 10px;
+    --rowlabel-w: 350px;
+    --cell-w:     64px;
+    --cell-h:     42px;
+  }
+
+  html.theme-dark {
+    --canvas:        #121317;
+    --surface:       #1A1C22;
+    --surface-sunk:  #15171C;
+    --border:        #2A2D36;
+    --border-strong: #3A3E4A;
+    --text:          #ECEEF3;
+    --text-muted:    #A8AFC0;
+    --text-dim:      #757D91;
+    --blue-ink:      #7FB0FF;
+    --green-ink:     #35D68A;
+    --red-ink:       #FF8A87;
+    --amber-ink:     #FFD84D;
+    --dim-ink:       #9AA2B4;
+    --hatch:         rgba(168, 175, 192, 0.15);
+    --dotcol:        rgba(168, 175, 192, 0.40);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--canvas); color: var(--text); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+
+  /* ── masthead ── */
+  .masthead { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--surface) 90%, transparent);
+              backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+  .masthead-in { max-width: 1680px; margin: 0 auto; padding: 12px clamp(16px, 3vw, 40px); display: flex; align-items: center; gap: 14px; }
+  .mast-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .mast-logo { height: 26px; width: auto; display: block; }
+  .mast-div { width: 1px; height: 18px; background: var(--border-strong); }
+  .mast-kicker { font: 600 11px var(--mono); letter-spacing: 1.3px; text-transform: uppercase; color: var(--dim-ink); }
+  .mast-spacer { flex: 1; }
+  .mast-nav { display: flex; align-items: center; gap: 10px; }
+  .mast-btn { font: 600 12.5px var(--font); padding: 7px 13px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-muted); text-decoration: none; cursor: pointer; }
+  .mast-btn:hover { border-color: var(--accent); color: var(--text); }
+  .mast-count { font: 700 12px var(--mono); color: var(--blue-ink); }
+  .mast-cta { font: 700 12.5px var(--font); padding: 8px 15px; border-radius: 999px; background: var(--g-blue); color: #FFF; text-decoration: none; }
+
+  .wrap { max-width: 1680px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 40px) 60px; }
+
+  /* ── head & estate ── */
+  .page-head { padding: 20px 0 18px; }
+  .kicker { font: 600 11.5px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim-ink); margin-bottom: 10px; }
+  h1 { font-size: clamp(28px, 3vw, 40px); line-height: 1.14; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 10px; }
+  .sub { font-size: 18px; line-height: 1.45; color: var(--text-muted); margin: 0; max-width: 78ch; font-weight: 400; }
+
+  .estate { margin-top: 20px; display: flex; flex-wrap: wrap; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); overflow: hidden; box-shadow: var(--shadow-sm); }
+  .est-cell { flex: 1 1 180px; padding: 14px 20px; border-right: 1px solid var(--border); border-top: 3px solid transparent; }
+  .est-cell:last-child { border-right: 0; }
+  .est-cell.lv-prod  { border-top-color: var(--g-blue);   background: rgba(49,134,255,.06); }
+  .est-cell.lv-up    { border-top-color: var(--g-green);  background: rgba(0,175,87,.06); }
+  .est-cell.lv-integ { border-top-color: var(--g-purple); background: rgba(75,49,227,.06); }
+  .est-cell.lv-recov { border-top-color: var(--g-cyan);   background: rgba(18,181,203,.07); }
+  .est-k { font: 600 10.5px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim-ink); margin-bottom: 5px; }
+  .est-v { font-size: 20px; font-weight: 600; color: var(--text); }
+  .est-v.is-money { color: var(--green-ink); }
+  .count-note { font: 500 12px var(--mono); color: var(--dim-ink); margin-top: 10px; }
+
+  /* ── controls ── */
+  .controls { position: sticky; top: 57px; z-index: 40; background: var(--canvas); padding: 14px 0 12px; border-bottom: 1px solid var(--border); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .chip { font: 500 13px/1 var(--font); padding: 9px 14px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-muted); cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+  .chip:hover { border-color: var(--accent); color: var(--text); }
+  .chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--blue-ink); font-weight: 600; }
+  .chip .n { font: 600 11px var(--mono); color: var(--dim-ink); }
+  .chip[aria-pressed="true"] .n { color: var(--blue-ink); }
+
+  .viewtoggle { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 8px; overflow: hidden; margin-left: auto; }
+  .vt-btn { font: 600 12px var(--font); padding: 7px 14px; border: 0; background: var(--surface); color: var(--text-muted); cursor: pointer; }
+  .vt-btn + .vt-btn { border-left: 1px solid var(--border-strong); }
+  .vt-btn[aria-pressed="true"] { background: var(--g-blue); color: #FFF; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border); font-size: 12px; color: var(--text-muted); align-items: center; }
+  .legend[hidden] { display: none; }
+  .lg-item { display: inline-flex; align-items: center; gap: 7px; }
+  .lg-sw { width: 26px; height: 17px; border-radius: 4px; border: 1px solid var(--border-strong); flex: none; }
+  .lg-sw.own-agentic { background: var(--surface); border: 1px solid rgba(49,134,255,.38); border-left: 4px solid var(--g-blue); }
+  .lg-sw.own-system  { background: repeating-linear-gradient(135deg, transparent 0 3px, var(--hatch) 3px 4px), var(--surface-sunk); }
+  .lg-sw.own-human   { background: radial-gradient(circle at 50% 50%, var(--dotcol) 0 1.5px, transparent 2px); border: 1.5px dashed var(--text-dim); }
+  .lg-sw.prio-first  { background: repeating-linear-gradient(45deg, rgba(252,65,61,0) 0 4px, rgba(252,65,61,.40) 4px 6px), var(--surface); border: 1px solid rgba(49,134,255,.38); border-left: 4px solid var(--g-red); }
+  .lg-sw.prio-next   { background: repeating-linear-gradient(45deg, rgba(254,199,0,0) 0 4px, rgba(254,199,0,.40) 4px 6px), var(--surface); border: 1px solid rgba(49,134,255,.38); border-left: 4px solid var(--g-yellow); }
+
+  /* ── board + sticky drawer ── */
+  .stage { display: flex; gap: 18px; align-items: flex-start; margin: 20px 0 0; }
+  @media (max-width: 1100px) { .stage { flex-direction: column; } }
+  .board-shell { flex: 1; min-width: 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); overflow: hidden; box-shadow: var(--shadow-sm); }
+  .board-scroll { max-height: 620px; overflow: auto; }
+  .board { display: table; min-width: 100%; }
+
+  .bhead { display: flex; align-items: stretch; position: sticky; top: 0; z-index: 20; background: var(--surface-sunk); border-bottom: 1px solid var(--border-strong); }
+  .bhead .rowlabel { background: var(--surface-sunk); height: 38px; font: 700 11px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); padding: 0 14px; }
+  .colaxis { flex: 1; display: flex; align-items: center; gap: 10px; padding: 0 14px; height: 38px; font: 700 11px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+  .colaxis .flow { flex: 1; height: 1px; background: var(--border-strong); }
+
+  .brow { display: flex; align-items: stretch; border-bottom: 1px solid var(--border); }
+  .brow:last-child { border-bottom: 0; }
+  .brow.is-active { background: var(--accent-soft); }
+
+  .rowlabel { width: var(--rowlabel-w); flex: none; position: sticky; left: 0; z-index: 10; background: var(--surface); border-right: 1px solid var(--border-strong);
+              padding: 8px 14px; display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer; }
+  .rowlabel:hover { background: var(--surface-sunk); }
+  .pavatar { width: 28px; height: 28px; border-radius: 50%; flex: none; display: inline-flex; align-items: center; justify-content: center;
+             font: 700 12px var(--font); color: #FFF; }
+  .pmeta { min-width: 0; flex: 1; }
+  .pname { display: block; font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .psub { display: block; font-size: 11px; color: var(--dim-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px; }
+  .pcode { font: 700 11px var(--mono); color: var(--blue-ink); }
+  .plive { flex: none; display: inline-flex; align-items: center; gap: 5px; font: 700 9.5px/1 var(--mono); color: #FFF; background: var(--g-green); border-radius: 999px; padding: 4px 7px; }
+  .plive::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #FFF; }
+
+  .cells { display: flex; flex: 1; min-width: 0; }
+  .bcell { flex: 1 1 0; min-width: var(--cell-w); height: var(--cell-h); border: 0; padding: 0; margin: 0; background: transparent; cursor: pointer; position: relative; }
+  .bcell i { position: absolute; inset: 2px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font: 600 10.5px var(--mono); color: var(--text-muted); text-shadow: 0 0 2px rgba(255,255,255,.85); transition: all .1s; }
+  .bcell.own-agentic i { background: var(--surface); border: 1px solid rgba(49,134,255,.38); border-left: 4px solid var(--g-blue); }
+  .bcell.prio-first i { background: repeating-linear-gradient(45deg, rgba(252,65,61,0) 0 4px, rgba(252,65,61,.38) 4px 6px), var(--surface); border: 1px solid rgba(49,134,255,.38); border-left: 4px solid var(--g-red); }
+  .bcell.prio-next i  { background: repeating-linear-gradient(45deg, rgba(254,199,0,0) 0 4px, rgba(254,199,0,.40) 4px 6px), var(--surface); border: 1px solid rgba(49,134,255,.38); border-left: 4px solid var(--g-yellow); }
+  .bcell.own-system i { background: repeating-linear-gradient(135deg, transparent 0 3px, var(--hatch) 3px 4px), var(--surface-sunk); border: 1px solid var(--border-strong); }
+  .bcell.own-human i  { background: transparent; border: 1.5px dashed var(--text-dim); }
+  .bcell.is-open i    { border: 2px solid var(--accent); box-shadow: 0 0 0 2px rgba(49,134,255,.28); }
+
+  /* Value map mode */
+  .board.mode-value .bcell i { background-image: none; background-color: var(--heat, var(--surface-sunk)); color: var(--heat-ink, var(--text-muted)); border-color: transparent; text-shadow: none; }
+  .board.mode-value .bcell.own-system i, .board.mode-value .bcell.own-human i { background-color: var(--surface-sunk); color: var(--dim-ink); opacity: .55; }
+
+  /* Drawer */
+  .drawer { width: 420px; flex: none; position: sticky; top: 185px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-md); overflow: hidden; }
+  @media (max-width: 1100px) { .drawer { width: 100%; position: static; } }
+  .dw-hint { padding: 22px; font-size: 13.5px; line-height: 1.6; color: var(--text-muted); }
+  .dw-hint b { color: var(--text); }
+  .d-head { display: flex; align-items: flex-start; gap: 12px; padding: 18px 20px 14px; border-bottom: 1px solid var(--border); background: var(--surface-sunk); }
+  .d-code { font: 700 11px var(--mono); padding: 4px 8px; border-radius: 6px; background: var(--surface); border: 1px solid var(--border-strong); color: var(--dim-ink); }
+  .d-action { font-size: 16px; font-weight: 600; line-height: 1.3; display: block; }
+  .d-who { font-size: 12px; color: var(--text-muted); margin-top: 3px; display: block; }
+  .d-tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 20px 0; }
+  .tag { font: 600 10.5px var(--mono); text-transform: uppercase; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--border-strong); color: var(--text-muted); background: var(--surface-sunk); }
+  .tag.prio-first { color: var(--red-ink); border-color: rgba(252,65,61,.45); background: var(--crit-bg); }
+  .tag.prio-next { color: var(--amber-ink); border-color: rgba(254,199,0,.55); background: var(--fric-bg); }
+  .tag.agent { color: var(--green-ink); border-color: rgba(0,175,87,.45); background: rgba(0,175,87,.10); }
+  .d-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 14px; }
+  .d-block { border-left: 3px solid var(--border-strong); padding-left: 12px; }
+  .d-block.plug { border-left-color: var(--g-green); }
+  .d-block.vuln { border-left-color: var(--g-red); }
+  .d-k { font: 600 10px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim-ink); margin-bottom: 4px; }
+  .d-v { font-size: 13.5px; line-height: 1.5; color: var(--text); }
+  .d-foot { padding: 0 20px 18px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .btn-ge { font: 600 13px var(--font); padding: 10px 16px; border-radius: 999px; background: var(--g-blue); color: #FFF; text-decoration: none; }
+  .btn-ge:hover { background: var(--blue-ink); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="mast-brand" href="../index.html">
+      <img class="mast-logo" src="../assets/media/wip/image25.png" alt="Google Cloud">
+      <span class="mast-div"></span>
+      <span class="mast-kicker">Persona Map &nbsp;//&nbsp; Workforce &amp; Workflow Chessboard</span>
+    </a>
+    <span class="mast-spacer"></span>
+    <nav class="mast-nav">
+      <button class="mast-btn" id="themeToggle" type="button">Dark</button>
+      <a class="mast-btn" href="../pages/00_executive_story.html">&larr; Prev Page</a>
+      <span class="mast-count">07 / 15</span>
+      <a class="mast-btn" href="../pages/09_agent_architecture.html">Next Page &rarr;</a>
+      <a class="mast-cta" href="../index.html">All Slides &#8599;</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <header class="page-head">
+    <div class="kicker">Workforce &amp; workflow map &middot; 60 personas &times; 8 workflow gates</div>
+    <h1>Agentic Transformation Across <span style="background: linear-gradient(90deg, #217BFE 0%, #078EFB 33%, #AC87EB 67%, #EE4D5D 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Supply Chain Roles</span></h1>
+    <p class="sub">Mapping 60 Supply Chain personas and 480 operational workflows to show where AI agents eliminate firefighting &mdash; and where humans retain sign-off.</p>
+
+    <div class="estate">
+      <div class="est-cell lv-prod"><div class="est-k">Personas &amp; Workflows</div><div class="est-v" id="estPersonas">60 roles &middot; 480 tiles</div></div>
+      <div class="est-cell lv-up"><div class="est-k">Toil Reclaimed</div><div class="est-v is-money" id="estToil">1,100+ hrs/wk</div></div>
+      <div class="est-cell lv-integ"><div class="est-k">Live Deployment</div><div class="est-v" id="estLive">37 agents live in GE</div></div>
+      <div class="est-cell lv-recov"><div class="est-k">Governance Model</div><div class="est-v">Read &rarr; Simulate &rarr; Approve</div></div>
+    </div>
+    <div class="count-note" id="countNote"></div>
+  </header>
+
+  <div class="controls">
+    <div class="chips" id="chips"></div>
+    <div class="legend" id="legend">
+      <span class="lg-item"><span class="lg-sw prio-first"></span>Priority 1 &middot; High-stakes judgment &amp; risk</span>
+      <span class="lg-item"><span class="lg-sw prio-next"></span>Priority 2 &middot; Synthesis &amp; math friction</span>
+      <span class="lg-item"><span class="lg-sw own-agentic"></span>Continuous AI monitoring</span>
+      <span class="lg-item"><span class="lg-sw own-system"></span>Incumbent ERP / WMS / TMS ledger</span>
+      <span class="lg-item"><span class="lg-sw own-human"></span>Human-only safety &amp; contract gate</span>
+    </div>
+    <div class="legend" id="legendValue" hidden>
+      <span class="lg-item">Darker blue tiles represent highest weekly toil &amp; margin protection value per workflow.</span>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="board-shell">
+      <div class="board-scroll">
+        <div class="board" id="board"></div>
+      </div>
+    </div>
+    <aside class="drawer" id="drawer" aria-live="polite">
+      <div class="dw-hint">
+        <p><b>Click or hover any square</b> to inspect its Today vs. With-Agent workflow here.</p>
+        <p>Each row is one Supply Chain persona sorted left to right: <b>AI Agent prepares</b> (Priority 1 &rarr; Priority 2 &rarr; Continuous), then <b>Incumbent ERP/WMS/TMS</b> keeps the ledger, then <b>Human-only Sign-Off</b> closes the loop.</p>
+        <p>Click any persona name on the left to open their full executive dossier.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script src="../data/sc_story_data.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('themeToggle');
+  function paintTheme() { btn.textContent = document.documentElement.classList.contains('theme-dark') ? 'Light' : 'Dark'; }
+  paintTheme();
+  btn.addEventListener('click', function () {
+    var d = document.documentElement.classList.toggle('theme-dark');
+    try { localStorage.setItem('deck-theme', d ? 'dark' : 'light'); } catch (e) {}
+    paintTheme();
+  });
+
+  var DATA = window.SC_DATA;
+  var deptFilter = new URLSearchParams(location.search).get('dept') || 'all';
+  var viewMode = 'priority';
+  var pinned = null;
+
+  var chipsEl = document.getElementById('chips');
+  function renderChips() {
+    var html = '<button class="chip" data-dept="all" aria-pressed="' + (deptFilter === 'all') + '">Full Value Chain <span class="n">' + DATA.personas.length + '</span></button>';
+    DATA.departments.forEach(function (d) {
+      html += '<button class="chip" data-dept="' + d.id + '" aria-pressed="' + (deptFilter === d.id) + '">' + d.num + ' &middot; ' + d.scor + ' <span class="n">' + d.personaCount + '</span></button>';
+    });
+    html += '<span class="viewtoggle"><button class="vt-btn" data-vt="priority" aria-pressed="' + (viewMode === 'priority') + '">Build priority</button><button class="vt-btn" data-vt="value" aria-pressed="' + (viewMode === 'value') + '">Value map</button></span>';
+    chipsEl.innerHTML = html;
+
+    chipsEl.querySelectorAll('.chip').forEach(function (c) {
+      c.addEventListener('click', function () { deptFilter = c.dataset.dept; renderChips(); renderBoard(); });
+    });
+    chipsEl.querySelectorAll('.vt-btn').forEach(function (v) {
+      v.addEventListener('click', function () {
+        viewMode = v.dataset.vt;
+        document.getElementById('legend').hidden = (viewMode === 'value');
+        document.getElementById('legendValue').hidden = (viewMode !== 'value');
+        renderChips(); renderBoard();
+      });
+    });
+  }
+
+  function heatStyle(score) {
+    if (!score) return '';
+    if (score >= 90) return '--heat:#1D5FD6;--heat-ink:#FFFFFF;';
+    if (score >= 80) return '--heat:#3186FF;--heat-ink:#FFFFFF;';
+    if (score >= 70) return '--heat:#6BA8FF;--heat-ink:#121317;';
+    if (score >= 60) return '--heat:#A6CBFF;--heat-ink:#121317;';
+    return '--heat:#D9E9FF;--heat-ink:#121317;';
+  }
+
+  function showDrawer(p, a) {
+    var dEl = document.getElementById('drawer');
+    var ownTag = a.own === 'agentic' ? (a.prio === 'first' ? '<span class="tag prio-first">Priority 1 &middot; Agentic</span>' : (a.prio === 'next' ? '<span class="tag prio-next">Priority 2 &middot; Agentic</span>' : '<span class="tag">Continuous AI</span>'))
+      : (a.own === 'system' ? '<span class="tag">System of Record</span>' : '<span class="tag">Human Sign-Off Gate</span>');
+    var liveTag = a.liveInGE ? '<span class="tag agent">&#9679; Live in Gemini Enterprise</span>' : '';
+
+    var ag = DATA.agents.find(function (x) { return x.id === (a.agentId || p.primaryAgentId); }) || {};
+    var bodyHtml = a.own === 'agentic'
+      ? '<div class="d-block vuln"><div class="d-k">Today (Manual Friction)</div><div class="d-v">' + a.today + '</div></div>' +
+        '<div class="d-block plug"><div class="d-k">With ' + a.agentName + '</div><div class="d-v">' + a.withAgent + '</div></div>'
+      : '<div class="d-block"><div class="d-k">Retained Owner: ' + a.holder + '</div><div class="d-v">' + a.reason + '</div></div>';
+
+    dEl.innerHTML =
+      '<div class="d-head"><span class="d-code">' + a.code + '</span><div class="d-title"><span class="d-action">' + a.title + '</span><span class="d-who">' + p.name + ' &middot; ' + p.scor + '</span></div></div>' +
+      '<div class="d-tags">' + ownTag + liveTag + '<span class="tag">' + a.cadence + '</span></div>' +
+      '<div class="d-body">' + bodyHtml +
+        '<div style="display:flex;justify-content:space-between;font:600 12px var(--mono);color:var(--green-ink);padding-top:8px;border-top:1px solid var(--border)">' +
+          '<span>Role Impact: ' + (p.headlineStat || p.timeSaved) + '</span><span>Toil: ' + p.toilHoursBefore + 'h &rarr; ' + p.toilHoursAfter + 'h/wk</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="d-foot">' +
+        '<a class="btn-ge" style="background:var(--g-green);border-color:var(--g-green)" href="../pages/agent.html?id=' + encodeURIComponent(ag.id || p.primaryAgentId) + '">&#9654; Video &amp; Agent</a>' +
+        '<a class="btn-ge" target="_blank" rel="noopener noreferrer" href="' + (ag.geUrl || '#') + '">Run on GE &#8599;</a>' +
+        '<a class="mast-btn" href="dossier.html?id=' + encodeURIComponent(p.id) + '">Persona Record &rarr;</a>' +
+      '</div>';
+  }
+
+  function renderBoard() {
+    var rows = DATA.personas.filter(function (p) { return deptFilter === 'all' || p.deptId === deptFilter; });
+    var totalCells = rows.length * 8;
+    var savedSum = rows.reduce(function (s, p) { return s + p.savedHrs; }, 0);
+    var liveCount = rows.filter(function (p) { return p.liveInGE; }).length;
+    document.getElementById('estPersonas').textContent = rows.length + ' roles · ' + totalCells + ' tiles';
+    document.getElementById('estToil').textContent = savedSum.toLocaleString() + ' hrs/wk saved';
+    document.getElementById('estLive').textContent = liveCount + ' of ' + rows.length + ' live in GE';
+    document.getElementById('countNote').textContent = 'Showing ' + rows.length + ' Supply Chain personas across ' + (deptFilter === 'all' ? 'all 6 ASCM SCOR Pillars' : rows[0].deptTitle);
+
+    var board = document.getElementById('board');
+    board.className = 'board' + (viewMode === 'value' ? ' mode-value' : '');
+
+    var html = '<div class="bhead"><div class="rowlabel"><span>Persona &amp; Role</span></div><div class="colaxis"><span>Agent Prepares</span><span class="flow"></span><span>ERP / WMS</span><span class="flow"></span><span>Human Gate</span></div></div>';
+    rows.forEach(function (p) {
+      var initials = p.name.split(/\s+/).slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase();
+      html += '<div class="brow" data-pid="' + p.id + '">';
+      html += '<a class="rowlabel" href="dossier.html?id=' + encodeURIComponent(p.id) + '">' +
+                '<span class="pavatar" style="background:' + p.deptColor + '">' + initials + '</span>' +
+                '<span class="pmeta"><span class="pname">' + p.name + '</span><span class="psub"><span class="pcode">' + p.code + '</span> &middot; ' + p.subPillarName + '</span></span>' +
+                (p.liveInGE ? '<span class="plive">LIVE</span>' : '') +
+              '</a>';
+      html += '<div class="cells">';
+      p.actions.forEach(function (a, idx) {
+        var cls = 'bcell own-' + a.own + (a.prio ? ' prio-' + a.prio : '');
+        html += '<button type="button" class="' + cls + '" data-pid="' + p.id + '" data-idx="' + idx + '" title="' + a.code + ': ' + a.title + '"><i style="' + (viewMode === 'value' ? heatStyle(a.valueScore) : '') + '">' + a.code + '</i></button>';
+      });
+      html += '</div></div>';
+    });
+    board.innerHTML = html;
+
+    var personaById = Object.fromEntries(DATA.personas.map(function (p) { return [p.id, p]; }));
+    board.querySelectorAll('.bcell').forEach(function (btnEl) {
+      btnEl.addEventListener('mouseenter', function () {
+        if (pinned) return;
+        var p = personaById[btnEl.dataset.pid];
+        showDrawer(p, p.actions[Number(btnEl.dataset.idx)]);
+      });
+      btnEl.addEventListener('click', function () {
+        board.querySelectorAll('.bcell.is-open').forEach(function (x) { x.classList.remove('is-open'); });
+        board.querySelectorAll('.brow.is-active').forEach(function (x) { x.classList.remove('is-active'); });
+        btnEl.classList.add('is-open');
+        btnEl.closest('.brow').classList.add('is-active');
+        var p = personaById[btnEl.dataset.pid];
+        pinned = true;
+        showDrawer(p, p.actions[Number(btnEl.dataset.idx)]);
+      });
+    });
+
+    if (rows[0]) showDrawer(rows[0], rows[0].actions[0]);
+  }
+
+  renderChips();
+  renderBoard();
+})();
+</script>
+</body>
+</html>

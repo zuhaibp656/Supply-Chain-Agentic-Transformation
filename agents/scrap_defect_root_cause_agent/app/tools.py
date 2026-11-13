@@ -976,6 +976,7 @@ def query_cortex_scrap_defect_root_cause_agent_data_products(record_filter: str 
 # --- END GOOGLE CLOUD CORTEX FRAMEWORK V7 DATA PRODUCT TOOL ---
 
 # --- BEGIN FLEETFLOW SMART CHART & AUTO-GCS ARTIFACT HOOKS ---
+import re as _re_smart
 from .render.a2ui_builder import (
     build_smart_2panel_vegalite as _ff_build_smart_2panel_vegalite,
     humanize_col as _ff_humanize_col,
@@ -985,8 +986,32 @@ from .render.a2ui_builder import (
 _TURN_DATA_ACTIVE: bool = False
 _TURN_HTML_URL: str = ""
 _TURN_CSV_URL: str = ""
+_TURN_USER_QUERY: str = ""
+_TURN_HTML_EXPLICIT: bool = False
+_TURN_CSV_EXPLICIT: bool = False
+_TURN_CHART_EXPLICIT: bool = False
+_TURN_CANVAS_ACTION: str = ""
 _AGENT_HUMAN_TITLE: str = 'RCA & CAPA Copilot'
 _AGENT_ID_CONST: str = 'scrap_defect_root_cause_agent'
+_AGENT_ARCHETYPE: str = 'simulator'
+
+
+def set_turn_user_query(query_text: str = "") -> None:
+    """Records the current user prompt text so intelligent UI gating decides whether HTML/Chart/CSV is needed."""
+    global _TURN_USER_QUERY
+    _TURN_USER_QUERY = str(query_text or "").strip()
+
+
+def mark_canvas_action(action_name: str = "") -> None:
+    """Records a synthetic Canvas button click from Gemini Enterprise."""
+    global _TURN_CANVAS_ACTION
+    _TURN_CANVAS_ACTION = str(action_name or "").strip()
+
+
+def mark_html_requested() -> None:
+    """Explicitly marks HTML cockpit generation as requested for this turn."""
+    global _TURN_HTML_EXPLICIT
+    _TURN_HTML_EXPLICIT = True
 
 
 def _infer_chart_columns(rows: List[Dict[str, Any]]) -> Any:
@@ -1026,6 +1051,73 @@ def has_turn_activity() -> bool:
     return bool(_TURN_DATA_ACTIVE or (_LAST_CHART_SPEC is not None) or (_LAST_CANVAS_CONTEXT and _LAST_CANVAS_CONTEXT.get("rows")))
 
 
+def _is_simple_fact_or_refusal_query() -> bool:
+    q = (_TURN_USER_QUERY or "").lower()
+    if not q:
+        return False
+    refusal_hints = ("bypass", "skip all", "ignore policy", "without checking", "force-lock", "arbitrary", "override every", "zero across")
+    if any(h in q for h in refusal_hints):
+        return True
+    return False
+
+
+def should_emit_html_cockpit() -> bool:
+    """Determines intelligently whether an Interactive HTML Cockpit link should be built & returned this turn.
+
+    HTML is emitted ONLY when:
+      1. The agent explicitly called its HTML cockpit generator tool (`_TURN_HTML_EXPLICIT`), OR
+      2. User clicked `simulate_what_if_scenario` on an A2UI Canvas, OR
+      3. User's query explicitly requests interactive UI, cockpit, HTML, dashboard, web app, or what-if simulation.
+    Returns False on routine single-item lookups, brief tactical dispatches, or guardrail blocks!
+    """
+    if _TURN_HTML_EXPLICIT:
+        return True
+    if _is_simple_fact_or_refusal_query():
+        return False
+    if "simulate" in (_TURN_CANVAS_ACTION or "").lower():
+        return True
+    q = (_TURN_USER_QUERY or "").lower()
+    if not q:
+        return False
+    if _re_smart.search(r"\b(html|cockpit|interactive|dashboard|web[\s-]app|simulator|simulate|what[\s-]if)\b", q):
+        return True
+    if _AGENT_ARCHETYPE == "simulator" and _re_smart.search(r"\b(scenario\s+(view|studio|explorer|model|comparison)|sensitivity\s+analysis)\b", q):
+        return True
+    return False
+
+
+def should_emit_csv_export() -> bool:
+    """Emits downloadable CSV link ONLY when explicitly exported, HTML cockpit ran, or user asks for schedule/export on multi-row data."""
+    if _TURN_CSV_EXPLICIT:
+        return True
+    if should_emit_html_cockpit():
+        return True
+    q = (_TURN_USER_QUERY or "").lower()
+    ctx = globals().get("_LAST_CANVAS_CONTEXT") or {}
+    row_count = len(ctx.get("rows") or [])
+    if row_count >= 2 and q and _re_smart.search(r"\b(csv|export|download|spreadsheet|schedule|manifest|ledger)\b", q):
+        return True
+    return False
+
+
+def should_emit_a2ui_surface() -> bool:
+    """Emits inline VegaChart + Canvas cleanly ONLY for visual/multi-entity turns, skipping clutter on pure refusals or single confirmations."""
+    if not has_turn_activity():
+        return False
+    if _TURN_CHART_EXPLICIT or _TURN_HTML_EXPLICIT or bool(_TURN_CANVAS_ACTION):
+        return True
+    if _is_simple_fact_or_refusal_query():
+        return False
+    ctx = globals().get("_LAST_CANVAS_CONTEXT") or {}
+    rows = ctx.get("rows") or []
+    q = (_TURN_USER_QUERY or "").lower()
+    if q and _re_smart.search(r"\b(chart|graph|plot|visual|compare|comparison|trend|breakdown|pareto|top\s+\d+|ranking|scenario|audit)\b", q):
+        return len(rows) >= 2
+    if _AGENT_ARCHETYPE == "dispatcher" and not q:
+        return False
+    return len(rows) >= 2
+
+
 _orig_record_canvas_rows = globals().get("_record_canvas_rows")
 def _record_canvas_rows(table_name: str, rows: Optional[List[Dict[str, Any]]]) -> None:
     global _TURN_DATA_ACTIVE, _LAST_CHART_SPEC
@@ -1046,10 +1138,12 @@ def _record_canvas_solver(solver_result: Any) -> None:
         _LAST_CHART_SPEC = _ff_build_smart_2panel_vegalite(_LAST_CANVAS_CONTEXT["rows"], agent_title=_AGENT_HUMAN_TITLE)
 
 
-def generate_interactive_html_dashboard(title: str = "") -> Dict[str, Any]:
+def generate_interactive_html_dashboard(title: str = "", _internal_auto: bool = False) -> Dict[str, Any]:
     """Generate a live-data interactive HTML5 visual cockpit & simulator and publish to Google Cloud Storage."""
-    global _LATEST_INTERACTIVE_HTML, _TURN_HTML_URL, _TURN_DATA_ACTIVE
+    global _LATEST_INTERACTIVE_HTML, _TURN_HTML_URL, _TURN_DATA_ACTIVE, _TURN_HTML_EXPLICIT
     _TURN_DATA_ACTIVE = True
+    if not _internal_auto:
+        _TURN_HTML_EXPLICIT = True
     ctx = _ensure_canvas_populated()
     _queue_chart_if_needed()
     resolved_title = title or f"{_AGENT_HUMAN_TITLE} — Interactive Visual Cockpit & Simulator"
@@ -1086,9 +1180,11 @@ def generate_interactive_html_dashboard(title: str = "") -> Dict[str, Any]:
 
 
 _orig_build_real_csv_export = globals().get("_build_real_csv_export")
-def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Dict[str, Any]:
-    global _TURN_CSV_URL, _TURN_DATA_ACTIVE
+def _build_real_csv_export(agent_id: str, title: str, target_id: str = "", _internal_auto: bool = False) -> Dict[str, Any]:
+    global _TURN_CSV_URL, _TURN_DATA_ACTIVE, _TURN_CSV_EXPLICIT
     _TURN_DATA_ACTIVE = True
+    if not _internal_auto:
+        _TURN_CSV_EXPLICIT = True
     import csv as _csv
     import io as _io
 
@@ -1145,24 +1241,37 @@ def _build_real_csv_export(agent_id: str, title: str, target_id: str = "") -> Di
     }
 
 
-def ensure_turn_gcs_artifacts() -> Dict[str, str]:
-    """Deterministically ensures both the dynamic live-data HTML cockpit and verified CSV export
-    are published to GCS for the active analytical turn (FleetFlow `append_report` pattern).
-    """
+def ensure_turn_gcs_artifacts(include_html: Optional[bool] = None, include_csv: Optional[bool] = None) -> Dict[str, str]:
+    """Publishes ONLY the artifacts warranted by smart turn gating (HTML only when requested/simulated)."""
     global _TURN_HTML_URL, _TURN_CSV_URL
+    want_html = should_emit_html_cockpit() if include_html is None else bool(include_html)
+    want_csv = should_emit_csv_export() if include_csv is None else bool(include_csv)
+    if not want_html and not want_csv:
+        return {"html_url": "", "csv_url": ""}
     _ensure_canvas_populated()
-    if not _TURN_HTML_URL:
-        res_h = generate_interactive_html_dashboard(title=f"{_AGENT_HUMAN_TITLE} — Interactive Visual Cockpit & Simulator")
+    if want_html and not _TURN_HTML_URL:
+        res_h = generate_interactive_html_dashboard(
+            title=f"{_AGENT_HUMAN_TITLE} — Interactive Visual Cockpit & Simulator",
+            _internal_auto=True,
+        )
         _TURN_HTML_URL = str(res_h.get("view_url") or "")
-    if not _TURN_CSV_URL:
-        res_c = _build_real_csv_export(_AGENT_ID_CONST, f"{_AGENT_HUMAN_TITLE} — Verified Data Schedule")
+    if want_csv and not _TURN_CSV_URL:
+        res_c = _build_real_csv_export(
+            _AGENT_ID_CONST,
+            f"{_AGENT_HUMAN_TITLE} — Verified Data Schedule",
+            _internal_auto=True,
+        )
         _TURN_CSV_URL = str(res_c.get("download_url") or "")
-    return {"html_url": _TURN_HTML_URL, "csv_url": _TURN_CSV_URL}
+    return {
+        "html_url": _TURN_HTML_URL if want_html else "",
+        "csv_url": _TURN_CSV_URL if want_csv else "",
+    }
 
 
 def finalize_turn_gcs_state(timeout: float = 12.0) -> None:
-    """Waits for background GCS uploads to complete and resets turn-scoped flags."""
+    """Waits for background GCS uploads to complete and resets all turn-scoped flags."""
     global _TURN_DATA_ACTIVE, _TURN_HTML_URL, _TURN_CSV_URL
+    global _TURN_USER_QUERY, _TURN_HTML_EXPLICIT, _TURN_CSV_EXPLICIT, _TURN_CHART_EXPLICIT, _TURN_CANVAS_ACTION
     try:
         from .render.publish import wait_for_uploads
         wait_for_uploads(timeout=timeout)
@@ -1171,9 +1280,13 @@ def finalize_turn_gcs_state(timeout: float = 12.0) -> None:
     _TURN_DATA_ACTIVE = False
     _TURN_HTML_URL = ""
     _TURN_CSV_URL = ""
+    _TURN_USER_QUERY = ""
+    _TURN_HTML_EXPLICIT = False
+    _TURN_CSV_EXPLICIT = False
+    _TURN_CHART_EXPLICIT = False
+    _TURN_CANVAS_ACTION = ""
 
 
-# Wrap direct query_*/fetch_*/audit_*/analyze_*/run_*/render_* functions so ANY tool call captures live rows!
 def _wrap_for_live_capture(_fn_obj: Any, _fn_name: str) -> Any:
     import functools as _ft
     if getattr(_fn_obj, "__ff_wrapped__", False):
@@ -1181,8 +1294,14 @@ def _wrap_for_live_capture(_fn_obj: Any, _fn_name: str) -> Any:
 
     @_ft.wraps(_fn_obj)
     def _wrapped(*args: Any, **kwargs: Any) -> Any:
-        global _TURN_DATA_ACTIVE
+        global _TURN_DATA_ACTIVE, _TURN_HTML_EXPLICIT, _TURN_CSV_EXPLICIT, _TURN_CHART_EXPLICIT
         _TURN_DATA_ACTIVE = True
+        if _fn_name.startswith("publish_") or "interactive_cockpit" in _fn_name or _fn_name == "generate_interactive_html_dashboard":
+            _TURN_HTML_EXPLICIT = True
+        elif _fn_name.startswith("export_"):
+            _TURN_CSV_EXPLICIT = True
+        elif _fn_name.startswith("render_"):
+            _TURN_CHART_EXPLICIT = True
         out = _fn_obj(*args, **kwargs)
         if isinstance(out, dict):
             if isinstance(out.get("rows"), list) and out.get("rows"):
@@ -1200,7 +1319,7 @@ for _gname, _gobj in list(globals().items()):
     if (
         callable(_gobj)
         and not isinstance(_gobj, type)
-        and _gname.startswith(("query_", "fetch_", "audit_", "analyze_", "run_", "render_", "inspect_"))
+        and _gname.startswith(("query_", "fetch_", "audit_", "analyze_", "run_", "render_", "inspect_", "publish_", "export_"))
         and not _gname.startswith("_")
     ):
         globals()[_gname] = _wrap_for_live_capture(_gobj, _gname)

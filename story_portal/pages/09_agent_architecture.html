@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Architecture | Supply Chain Agentic Transformation</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/aurora.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    .ar-ge-mark { display: inline-flex; align-items: center; background: #121317; border-radius: 10px; padding: 9px 12px; }
+    .ar-ge-mark img { width: auto !important; height: 18px !important; }
+    .ar-lane { grid-template-columns: 200px minmax(0, 1fr) !important; gap: 14px !important; }
+    .ar-nodes { gap: 4px 6px !important; }
+    .ar-monos { display: flex; flex: none; }
+    .ar-monos .ar-mono { width: 32px !important; height: 32px !important; margin-left: -10px; font-size: 12px; }
+    .ar-monos .ar-mono:first-child { margin-left: 0; }
+    .ar-node { padding: 6px !important; gap: 8px !important; }
+    .ar-node img, .ar-mono { width: 38px !important; height: 38px !important; }
+    .ar-node b { font-size: 14px !important; }
+    .ar-node small { font-size: 12px !important; }
+    .ar-node .ar-ge-mark img { width: auto !important; height: 20px !important; }
+    .ar-node.ar-ge .ar-ge-mark { padding: 11px 14px; }
+  </style>
+  <script>
+    (function() {
+      const saved = localStorage.getItem('deck-theme') || 'light';
+      if (saved === 'dark') {
+        document.documentElement.classList.add('theme-dark');
+      }
+    })();
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('theme-dark');
+      if (document.body) document.body.classList.toggle('theme-dark', isDark);
+      localStorage.setItem('deck-theme', isDark ? 'dark' : 'light');
+      updateThemeButtons(!isDark);
+    }
+    function updateThemeButtons(isLight) {
+      document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+        btn.innerHTML = isLight
+          ? '<span style="font-size: 13px; line-height: 1;">🌙</span><span>Dark Mode</span>'
+          : '<span style="font-size: 13px; line-height: 1;">☀️</span><span>Light Mode</span>';
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      updateThemeButtons(!document.documentElement.classList.contains('theme-dark'));
+    });
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap">
+</head>
+<body style="background: var(--canvas); color: var(--text-muted); font-family: var(--font-display); margin: 0; padding: 0; overflow-x: hidden;">
+
+  <!-- Single-Page Executive Top Navigation Bar -->
+  <header class="executive-top-nav" style="backdrop-filter: blur(20px); background: color-mix(in srgb, var(--surface) 88%, transparent); border-bottom: 1px solid var(--border-subtle); padding: 14px max(24px, 4vw); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center;">
+    <a href="../index.html" style="display: flex; align-items: center; gap: 14px; text-decoration: none;">
+      <img src="../assets/media/wip/image25.png" alt="Google Cloud" style="height: 32px; width: auto;">
+      <div style="width: 1px; height: 20px; background: var(--border-subtle);"></div>
+      <span style="font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; color: var(--text); letter-spacing: 1.5px; text-transform: uppercase;">BUILD 09 // SUPPLY CHAIN ARCHITECTURE</span>
+    </a>
+    <nav style="display: flex; align-items: center; gap: 16px;">
+      <button class="theme-toggle-btn" onclick="toggleTheme()" type="button">
+        <span style="font-size: 13px; line-height: 1;">🌙</span>
+        <span>Dark Mode</span>
+      </button>
+      <a href="../personas/index.html" style="font-family: var(--font-display); font-size: 13.5px; font-weight: 700; color: var(--text-dim); text-decoration: none; padding: 4px 10px; border-radius: 6px; background: var(--surface-sunk);">&larr; Prev Page</a>
+      <span style="font-family: var(--font-mono); font-size: 13px; color: var(--g-blue); font-weight: 700;">09 / 15</span>
+      <a href="10_surfaces.html" style="font-family: var(--font-display); font-size: 13.5px; font-weight: 700; color: var(--blue-ink); text-decoration: none; padding: 4px 10px; border-radius: 6px; background: rgba(49, 134, 255, 0.10);">Next Page &rarr;</a>
+      <a href="../index.html" style="font-family: var(--font-display); font-size: 12.5px; font-weight: 700; color: #000; background: #FFF; padding: 6px 14px; border-radius: 20px; text-decoration: none; border: 1px solid var(--border-subtle); margin-left: 8px;">
+        All Slides &#8599;
+      </a>
+    </nav>
+  </header>
+
+  <main id="viewport-scaler" style="padding-top: 60px;">
+  <section class="ar" aria-label="Agent architecture">
+  <style>
+    .ar { min-height: 100vh; box-sizing: border-box; padding: 26px max(20px, 2vw) 104px; background: var(--canvas); font-family: var(--font-body); color: var(--text); }
+    .ar * { box-sizing: border-box; }
+    .ar-in { max-width: 1680px; margin: 0 auto; }
+    .ar-kick { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-muted); }
+    .ar-kick i { width: 28px; height: 3px; border-radius: 2px; background: var(--gemini-spark); }
+    .ar h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 2.4vw, 36px); line-height: 1.12; letter-spacing: -0.6px; margin: 10px 0 6px; color: var(--text); }
+    .ar-sub { font-size: 16px; line-height: 1.5; color: var(--text-muted); margin: 0 0 18px; }
+    .ar-sub b { color: var(--text); font-weight: 500; }
+    .ar-bar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; }
+    .ar-seg { display: inline-flex; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 999px; padding: 4px; box-shadow: var(--shadow-sm); }
+    .ar-seg button { font: 500 13.5px var(--font-display); color: var(--text-muted); background: none; border: 0; border-radius: 999px; padding: 8px 16px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .ar-seg button img { width: 20px; height: 20px; }
+    .ar-seg button[aria-pressed="true"] { background: var(--g-blue); color: #FFF; }
+    .ar-lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-dim); }
+    .ar-trace { font: 500 13.5px var(--font-display); color: var(--blue-ink); background: var(--surface); border: 1px solid var(--g-blue); border-radius: 999px; padding: 8px 16px; cursor: pointer; }
+    .ar-trace:hover { background: var(--g-blue); color: #FFF; }
+    .ar-grid { display: grid; grid-template-columns: minmax(0, 1fr) 460px; gap: 22px; align-items: start; }
+
+    .ar-env { position: relative; border-radius: 22px; padding: 2px; background: var(--boundary-grad); }
+    .ar-env-in { border-radius: 20px; background: var(--surface); padding: 6px 22px 10px; }
+    .ar-env-tag { position: absolute; top: -12px; right: 22px; font: 500 11px var(--font-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--red-ink); background: var(--canvas); padding: 3px 10px; border-radius: 999px; border: 1px solid var(--border-subtle); }
+
+    .ar-lane { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 18px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border-subtle); }
+    .ar-lane:last-child { border-bottom: 0; }
+    .ar-ln { font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--lc); letter-spacing: 1px; }
+    .ar-lt { font-family: var(--font-display); font-size: 16px; line-height: 1.25; font-weight: 600; color: var(--text); margin-top: 2px; }
+    .ar-ls { font-size: 12.5px; color: var(--text-muted); line-height: 1.4; margin-top: 2px; }
+    .ar-nodes { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .ar-node { display: inline-flex; align-items: center; gap: 10px; padding: 8px 12px 8px 8px; border-radius: 14px; border: 1px solid transparent; cursor: pointer; transition: background .2s, border-color .2s, box-shadow .2s, transform .2s; background: transparent; font: inherit; color: inherit; text-align: left; }
+    .ar-node img { width: 36px; height: 36px; flex: none; }
+    .ar-mg-logos { display: flex; align-items: center; gap: 6px; margin-top: 3px; }
+    .ar-node .ar-mg-logos img { width: 17px !important; height: 17px !important; }
+    .ar-node b { display: block; font: 500 14px var(--font-display); color: var(--text); line-height: 1.2; }
+    .ar-node small { display: block; font-size: 11.5px; color: var(--text-muted); }
+    .ar-node:hover, .ar-node.sel { background: var(--surface-sunk); border-color: var(--border-subtle); }
+    .ar-node.hot { border-color: var(--g-blue); box-shadow: 0 0 0 4px rgba(49,134,255,.16); background: var(--surface); transform: translateY(-1px); }
+    .ar-mono { width: 36px; height: 36px; border-radius: 10px; flex: none; display: flex; align-items: center; justify-content: center; font: 500 12px var(--font-mono); color: var(--purple-ink); border: 1.5px solid var(--g-purple); background: var(--surface); }
+    .ar-run { transition: opacity .25s; }
+    .ar-run.fade { opacity: 0; }
+
+    .ar-side { align-self: start; position: sticky; top: 84px; display: flex; flex-direction: column; gap: 14px; }
+    .ar-card { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 16px 18px; box-shadow: var(--shadow-sm); }
+    .ar-card h3 { margin: 0 0 4px; font: 600 16px var(--font-display); color: var(--text); display: flex; align-items: center; gap: 10px; }
+    .ar-card h3 img { width: 28px; height: 28px; }
+    .ar-card p { margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--text-muted); }
+    .ar-card .why { margin-top: 10px; padding-left: 12px; border-left: 3px solid var(--g-green); font-size: 13.5px; color: var(--text); line-height: 1.45; }
+    .ar-card .prod { display: inline-block; margin-top: 10px; font: 500 11.5px var(--font-mono); color: var(--blue-ink); }
+    .ar-gov { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+    .ar-gov li { display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: start; font-size: 13px; line-height: 1.4; color: var(--text-muted); }
+    .ar-gov li img { width: 24px; height: 24px; }
+    .ar-gov li b { color: var(--text); font-weight: 500; }
+    .ar-gov-ic { width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--g-green); color: var(--green-ink); font: 600 12px/21px var(--font-display); text-align: center; }
+    .ar-steps { counter-reset: s; list-style: none; margin: 8px 0 0; padding: 0; font-size: 13px; color: var(--text-dim); }
+    .ar-steps li { padding: 4px 0 4px 28px; position: relative; transition: color .2s; }
+    .ar-steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 0; top: 3px; width: 19px; height: 19px; border-radius: 50%; border: 1px solid var(--border-strong); font: 500 11px/19px var(--font-mono); text-align: center; }
+    .ar-steps li.on { color: var(--text); font-weight: 500; }
+    .ar-steps li.on::before { background: var(--g-blue); border-color: var(--g-blue); color: #FFF; }
+    @media (max-width: 1200px) { .ar-grid { grid-template-columns: 1fr; } .ar-lane { grid-template-columns: 1fr; } .ar-side { position: static; } }
+    @media (prefers-reduced-motion: reduce) { .ar * { transition: none !important; } }
+  </style>
+  <div class="ar-in">
+    <div class="ar-kick"><i></i>From personas to production &middot; Supply Chain agent architecture</div>
+    <h1>A Supply Chain agentic architecture is flexible, deterministic, and governed end to end.</h1>
+    <p class="ar-sub">Agents connect to SAP S/4HANA, Warehouse Management Systems (WMS), and Transportation Management Systems (TMS) where data already lives &mdash; <b>in Google Cloud, on-premises at the plant, or across clouds</b>. <b>Identity, policy, guardrails and audit cover every step.</b> <span style="color:var(--text-dim)">Click any component, switch where it runs, or trace a live request.</span></p>
+    <div class="ar-bar">
+      <span class="ar-lbl">Runs on</span>
+      <div class="ar-seg" role="group" aria-label="Where the agents run">
+        <button data-rt="gc" aria-pressed="true"><img src="../assets/media/gcp/VertexAI.svg" alt="">Google Cloud</button>
+        <button data-rt="op" aria-pressed="false"><img src="../assets/media/gcp/DistributedCloud.svg" alt="">On-premises &amp; plant edge</button>
+        <button data-rt="mc" aria-pressed="false"><img src="../assets/media/gcp/HybridMulticloud.svg" alt="">Other clouds</button>
+      </div>
+      <button class="ar-trace" id="arTrace">&#9654; Trace a request</button>
+    </div>
+    <div class="ar-grid">
+      <div class="ar-env"><span class="ar-env-tag">Governed end to end</span><div class="ar-env-in">
+        <div class="ar-lane" style="--lc: var(--blue-ink)">
+          <div><div class="ar-ln">01 · EXPERIENCE</div><div class="ar-lt">Where people decide</div><div class="ar-ls">Ask, simulate, approve</div></div>
+          <div class="ar-nodes">
+            <button class="ar-node ar-ge" data-k="ge"><span class="ar-ge-mark"><img src="../assets/media/gemini_enterprise_logo.svg" alt="Gemini Enterprise"></span></button>
+            <button class="ar-node" data-k="voice"><img src="../assets/media/brand/gemini_spark_fullcolor_768.png" alt=""><span><b>Interactive Cockpit</b><small>What-If &amp; A2UI</small></span></button>
+            <button class="ar-node" data-k="apps"><img src="../assets/media/gcp/CloudRun.svg" alt=""><span><b>Control Tower</b><small>Cloud Run</small></span></button>
+            <button class="ar-node" data-k="systems"><img src="../assets/media/gcp/IntegrationServices.svg" alt=""><span><b>Inside ERP / WMS / TMS</b><small>SAP, Blue Yonder, Manhattan</small></span></button>
+          </div>
+        </div>
+        <div class="ar-lane" style="--lc: var(--purple-ink)">
+          <div><div class="ar-ln">02 · AGENTS</div><div class="ar-lt">60 SCOR specialists</div><div class="ar-ls">37 live on Vertex AI Agent Engine</div></div>
+          <div class="ar-nodes">
+            <button class="ar-node" data-k="orch"><img src="../assets/media/gcp/Agents.svg" alt=""><span><b>Orchestrator</b><small>Plans, routes, ranks</small></span></button>
+            <button class="ar-node" data-k="agentA"><span class="ar-monos"><span class="ar-mono">P</span><span class="ar-mono">M</span><span class="ar-mono">D</span></span><span><b>SCOR Specialists</b><small>Plan &middot; Make &middot; Deliver</small></span></button>
+            <button class="ar-node ar-mg" data-k="model"><img src="../assets/media/brand/gemini_spark_fullcolor_768.png" alt=""><span><b>Model Garden</b><span class="ar-mg-logos"><img src="../assets/media/models/gemini-color.svg" alt="Gemini"><img src="../assets/media/models/claude-color.svg" alt="Claude"><img src="../assets/media/models/openai.svg" alt="OpenAI"></span></span></button>
+            <button class="ar-node" data-k="memory"><img src="../assets/media/gcp/VertexAI.svg" alt=""><span><b>Memory Bank</b><small>Agent Engine</small></span></button>
+          </div>
+        </div>
+        <div class="ar-lane" style="--lc: var(--green-ink)">
+          <div><div class="ar-ln">03 · TOOLS &amp; SOLVERS</div><div class="ar-lt">Solvers compute</div><div class="ar-ls">Agents never guess the math</div></div>
+          <div class="ar-nodes">
+            <button class="ar-node" data-k="physics"><img src="../assets/media/gcp/AIMachineLearning.svg" alt=""><span><b>TimesFM &amp; BigQuery ML</b><small>WAPE &amp; stockout models</small></span></button>
+            <button class="ar-node" data-k="calc"><img src="../assets/media/gcp/Compute.svg" alt=""><span><b>OR-Tools &amp; WeatherNext</b><small>MILP routing &amp; storm risk</small></span></button>
+            <button class="ar-node" data-k="apis"><img src="../assets/media/gcp/Apigee.svg" alt=""><span><b>Enterprise APIs</b><small>Apigee</small></span></button>
+            <button class="ar-node" data-k="mcp"><img src="../assets/media/gcp/IntegrationServices.svg" alt=""><span><b>MCP Toolbox &middot; A2A</b><small>Staged ERP write-backs</small></span></button>
+          </div>
+        </div>
+        <div class="ar-lane" style="--lc: var(--cyan-ink)">
+          <div><div class="ar-ln">04 · DATA, WHERE IT LIVES</div><div class="ar-lt">Cortex v7 &amp; live feeds</div><div class="ar-ls">Every recommendation cites its source</div></div>
+          <div class="ar-nodes ar-run" id="arData"></div>
+        </div>
+        <div class="ar-lane" style="--lc: var(--blue-ink)">
+          <div><div class="ar-ln">05 · RUNTIME</div><div class="ar-lt" id="arRtTitle">Google Cloud</div><div class="ar-ls">Same agent, same governance</div></div>
+          <div class="ar-nodes ar-run" id="arRun"></div>
+        </div>
+      </div></div>
+      <aside class="ar-side">
+        <div class="ar-card" id="arDetail"></div>
+        <div class="ar-card" id="gov"><h3>Governance on every layer</h3>
+          <ul class="ar-gov">
+            <li><img src="../assets/media/gcp/SecurityIdentity.svg" alt=""><span><b>Identity per agent</b> &mdash; IAM agent identity, least privilege per plant &amp; region</span></li>
+            <li><img src="../assets/media/gcp/Agents.svg" alt=""><span><b>Agent registry</b> &mdash; all 60 agents listed, owned, and switchable off</span></li>
+            <li><img src="../assets/media/gcp/SecurityCommandCenter.svg" alt=""><span><b>Prompt &amp; response safety</b> &mdash; Model Armor + DLP</span></li>
+            <li><img src="../assets/media/gcp/Networking.svg" alt=""><span><b>Perimeter &amp; keys</b> &mdash; VPC Service Controls, customer-managed keys</span></li>
+            <li><img src="../assets/media/gcp/Databases.svg" alt=""><span><b>Data governance</b> &mdash; Dataplex catalogue, lineage, Cortex v7 quality</span></li>
+            <li><span class="ar-gov-ic" aria-hidden="true">&#10003;</span><span><b>Human approval</b> &mdash; a named planner approves before any PO, STO, or tender executes</span></li>
+            <li><img src="../assets/media/gcp/Observability.svg" alt=""><span><b>Audit &amp; trace</b> &mdash; Cloud Audit Logs, OpenTelemetry trace</span></li>
+            <li id="arGovRt" class="ar-run" hidden></li>
+          </ul></div>
+      </aside>
+    </div>
+  </div>
+  <script>
+  (function () {
+    var G = "../assets/media/gcp/", M = "../assets/media/";
+    var RT = {
+      gc: { t: "Google Cloud",
+            d: [["Databases.svg","SAP / WMS / TMS","On-premises · Apigee MCP","plant"],["Cloud_Storage.svg","Cloud Storage","Signed HTML cockpits","gcs"],["BigQuery.svg","BigQuery & Cortex v7","POS, EDI 852/214, ATP","bq"],["VertexAI.svg","RAG Engine","Supplier audits & SOPs","rag"]],
+            g: "",
+            n: [["VertexAI.svg","Agent Engine","37 live Reasoning Engines","rt_ae"],["CloudRun.svg","Cloud Run","MCP & Cockpit hosts","rt_cr"],["GKE.svg","GKE","Kubernetes","rt_gke"]] },
+      op: { t: "On-premises & plant edge",
+            d: [["Databases.svg","MES / PLC / Yard Gate","On-site · sub-50ms","plant_op"],["Cloud_Storage.svg","GDC object storage","Quality vision & logs","objstore"],["AlloyDB.svg","AlloyDB Omni","Sanitation & SOP vectors","alloy"],["brand/gemini_spark_fullcolor_768.png","On-site grounding","Gemini on GDC, cited","rag_op"]],
+            g: "<b>On GDC</b> &mdash; GDC identity, audit logs and monitoring run inside the plant or cold-storage site; summaries sync to Cloud Control Tower.",
+            n: [["DistributedCloud.svg","Distributed Cloud","Plant or DC edge","rt_gdc"],["GKE.svg","GKE on GDC","Agents as containers","rt_gke"],["#gemma","Models on-site","Gemini & Gemma, local","rt_local"]] },
+      mc: { t: "Other clouds",
+            d: [["Databases.svg","SAP / WMS / TMS","Stays where it runs","plant"],["HybridMulticloud.svg","Data in AWS / Azure","No migration needed","mc_data"],["BigQuery.svg","BigQuery Omni","Queries it in place","bqomni"],["VertexAI.svg","RAG Engine","Contracts & audits","rag"]],
+            g: "<b>Other clouds</b> &mdash; same identity, policy and audit apply across tables BigQuery Omni reads in AWS and Azure.",
+            n: [["HybridMulticloud.svg","GKE Enterprise","One fleet across clouds","rt_mc"],["GKE.svg","Containers","Same agent image","rt_gke"],["Marketplace.svg","Model Garden","Models, one catalogue","model"]] }
+    };
+    var D = {
+      intro: { img: M + "brand/gemini_spark_fullcolor_768.png", t: "The rule behind every Supply Chain agent", p: "Deterministic solvers compute the numbers. Agents reason over trade-offs. A named planner decides.", why: "Nothing in this picture can commit a purchase order or re-route a ship without human sign-off above policy limits.", prod: "Click any component for detail" },
+      ge: { img: M + "gemini_enterprise_logo.svg", dark: 1, t: "Gemini Enterprise", p: "Front door for 37 live Supply Chain agents across Plan, Source, Make, Fulfill, Deliver, and Circular Returns.", why: "Planners ask plain-English business questions without knowing BigQuery table names.", prod: "Gemini Enterprise" },
+      voice: { img: M + "brand/gemini_spark_fullcolor_768.png", t: "Interactive HTML Cockpit & A2UI", p: "Visual What-If studio launched directly from agent answers with sensitivity sliders, Pareto charts, and CSV export.", why: "Executives test +15% demand or port delays live before approving.", prod: "A2UI + Cloud Storage Signed URLs" },
+      apps: { img: G + "CloudRun.svg", t: "Control Tower Workbench", p: "Purpose-built cross-pillar screens for Sales & Operations Planning (S&OP) consensus and disruption war-rooms.", why: "Keeps full multi-echelon context visible in one place.", prod: "Cloud Run" },
+      systems: { img: G + "IntegrationServices.svg", t: "Inside SAP, WMS & TMS", p: "Agents embedded directly inside SAP S/4HANA, Manhattan/Blue Yonder WMS, and Oracle OTM.", why: "Planners stay in their system of record with 1-click staged approvals.", prod: "Application Integration · Apigee" },
+      orch: { img: G + "Agents.svg", t: "Orchestrator", p: "Breaks a disruption or S&OP query into parallel tasks, routes to SCOR specialists, and ranks margin-optimal plans.", why: "Prevents local optimization that breaks downstream plants or warehouses.", prod: "Agent Development Kit · A2A" },
+      agentA: { img: G + "Agents.svg", t: "SCOR Specialist Fleet (60)", p: "Focused agents across Plan, Source, Make, Fulfill, Deliver, and Return & Enable — each bound to clear KPIs.", why: "Clear scope makes every agent testable, evaluable, and auditable.", prod: "Vertex AI Agent Engine" },
+      model: { img: M + "brand/gemini_spark_fullcolor_768.png", t: "Model Garden", p: "Gemini 3.1 Pro for complex multi-constraint planning, Gemini Flash for high-throughput EDI/IoT triage, plus partner models.", why: "Right-sizing models per task keeps a 60-agent fleet economical.", prod: "Gemini on Vertex AI · Model Garden" },
+      memory: { img: G + "VertexAI.svg", t: "Memory Bank", p: "Retains active disruption context, plant constraints, and prior executive decisions across S&OP cycles.", why: "Agents remember yesterday's carrier bottleneck instead of starting cold.", prod: "Agent Engine Sessions · Memory Bank" },
+      mcp: { img: G + "IntegrationServices.svg", t: "MCP Toolbox & A2A", p: "Model Context Protocol connects agents to SAP BAPIs and WMS APIs; Agent2Agent coordinates across pillars.", why: "Open protocols keep every integration modular and vendor-neutral.", prod: "MCP · A2A" },
+      physics: { img: G + "AIMachineLearning.svg", t: "TimesFM & BigQuery ML", p: "Time-series forecasting and hierarchical Bayesian stockout imputation cut short-term WAPE by 20%–35%.", why: "No LLM guesses demand numbers — certified ML pipelines compute them.", prod: "Vertex AI · BigQuery ML" },
+      calc: { img: G + "Compute.svg", t: "OR-Tools & WeatherNext 3", p: "Mixed-Integer Linear Programming for 3D trailer cube & multi-stop routing, enriched with WeatherNext 3 storm tracks.", why: "Deterministic operations research guarantees feasible load & route plans.", prod: "Google OR-Tools · WeatherNext 3" },
+      apis: { img: G + "Apigee.svg", t: "Enterprise APIs", p: "Rate-limited, OAuth-scoped API gateway governing every ERP, carrier EDI, and customs call.", why: "Single policy enforcement point for all external write-backs.", prod: "Apigee" },
+      plant: { img: G + "Databases.svg", t: "SAP S/4HANA / WMS / TMS", p: "Transactional systems of record remain authoritative; agents read deltas and propose staged updates.", why: "Zero rip-and-replace of core enterprise systems.", prod: "Cortex Framework v7 · MCP" },
+      gcs: { img: G + "Cloud_Storage.svg", t: "Cloud Storage", p: "Hosts supplier quality evidence, carrier POD photos, and signed interactive HTML What-If cockpits.", why: "Unified object floor for multimodal inspection and reporting.", prod: "Cloud Storage" },
+      bq: { img: G + "BigQuery.svg", t: "BigQuery & Cortex v7", p: "Harmonizes SAP tables, EDI 852 POS sell-through, EDI 214 transit status, and inventory snapshots.", why: "Single governed source of truth for all 60 agents.", prod: "BigQuery · Cortex v7" },
+      rag: { img: G + "VertexAI.svg", t: "Grounding & Citations", p: "BRC/ISO audits, carrier rate cards, and CBAM compliance rules retrieved with exact clause citations.", why: "Every compliance recommendation points to its exact document.", prod: "Vertex AI RAG Engine" },
+      plant_op: { img: G + "Databases.svg", t: "MES / PLC / Yard Gate", p: "High-frequency line telemetry and gate cameras processed locally on site.", why: "Keeps plant-floor control loops resilient even if WAN drops.", prod: "GDC Edge Connectors" },
+      objstore: { img: G + "Cloud_Storage.svg", t: "GDC Object Storage", p: "Stores high-speed inline quality frames and packaging audit logs locally.", why: "Same lakehouse interface inside the factory.", prod: "GDC Object Storage" },
+      alloy: { img: G + "AlloyDB.svg", t: "AlloyDB Omni", p: "Sub-millisecond relational + pgvector lookup for allergen changeover matrices and SOPs.", why: "Line reallocation finishes in under 3 minutes.", prod: "AlloyDB Omni" },
+      rag_op: { img: M + "brand/gemini_spark_fullcolor_768.png", t: "On-site Grounding", p: "Local Gemini inference grounded in site SOPs and sanitation clearances.", why: "Full compliance offline.", prod: "Gemini on GDC" },
+      mc_data: { img: G + "HybridMulticloud.svg", t: "Data in AWS or Azure", p: "Reads existing supply chain lakehouses in place with zero cross-cloud copying.", why: "Start delivering value in 100 days without a migration project.", prod: "BigQuery Omni" },
+      bqomni: { img: G + "BigQuery.svg", t: "BigQuery Omni", p: "Executes SQL & feature joins directly where S3/ADLS data resides.", why: "One governance and SQL plane across clouds.", prod: "BigQuery Omni" },
+      rt_ae: { img: G + "VertexAI.svg", t: "Agent Engine", p: "Managed serverless runtime hosting 37 live Supply Chain Reasoning Engines in us-central1.", why: "Built-in session state, memory, and evaluation.", prod: "Vertex AI Agent Engine" },
+      rt_cr: { img: G + "CloudRun.svg", t: "Cloud Run", p: "Hosts MCP tool servers and interactive cockpit APIs with zero idle cost.", why: "Scales automatically during peak seasonal surges.", prod: "Cloud Run" },
+      rt_gke: { img: G + "GKE.svg", t: "GKE", p: "Portable Kubernetes runtime for heavy optimization solvers and multi-region workloads.", why: "Same container runs in cloud or on-premises.", prod: "GKE" },
+      rt_gdc: { img: G + "DistributedCloud.svg", t: "Google Distributed Cloud", p: "Brings Vertex AI & Kubernetes directly into factories and cold-storage hubs.", why: "Air-gapped resilience.", prod: "Google Distributed Cloud" },
+      rt_local: { img: G + "DistributedCloud.svg", t: "Models on-site", p: "Local Gemini & Gemma models running on GDC hardware.", why: "Plant IP never leaves the fence.", prod: "Gemini on GDC · Gemma" },
+      rt_mc: { img: G + "HybridMulticloud.svg", t: "GKE Enterprise", p: "Unified multi-cloud fleet management.", why: "One rollout pipeline across clouds.", prod: "GKE Enterprise" }
+    };
+    var detail = document.getElementById("arDetail");
+    function show(k) {
+      var d = D[k] || D.intro;
+      detail.innerHTML = '<h3><img src="' + d.img + '" alt=""' + (d.dark ? ' style="background:#121317;border-radius:8px;padding:5px"' : '') + '>' + d.t + '</h3><p>' + d.p + '</p><div class="why">' + d.why + '</div><span class="prod">' + d.prod + '</span>';
+      document.querySelectorAll(".ar-node.sel").forEach(function (n) { n.classList.remove("sel"); });
+      document.querySelectorAll('[data-k="' + k + '"]').forEach(function (n) { n.classList.add("sel"); });
+    }
+    function bind(root) {
+      root.querySelectorAll("[data-k]").forEach(function (n) {
+        n.addEventListener("click", function () { show(n.dataset.k); });
+        n.addEventListener("mouseenter", function () { show(n.dataset.k); });
+      });
+    }
+    var run = document.getElementById("arRun"), data = document.getElementById("arData"), govRt = document.getElementById("arGovRt");
+    function nodes(list) {
+      return list.map(function (n) {
+        var src = n[0] === "#gemma" ? M + "models/gemma-color.svg" : (n[0].indexOf("/") > -1 ? M + n[0] : G + n[0]);
+        return '<button class="ar-node" data-k="' + n[3] + '"><img src="' + src + '" alt=""><span><b>' + n[1] + '</b><small>' + n[2] + '</small></span></button>';
+      }).join("");
+    }
+    function setRt(key) {
+      document.querySelectorAll(".ar-seg button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.rt === key)); });
+      run.classList.add("fade"); data.classList.add("fade"); govRt.classList.add("fade");
+      setTimeout(function () {
+        document.getElementById("arRtTitle").textContent = RT[key].t;
+        run.innerHTML = nodes(RT[key].n); data.innerHTML = nodes(RT[key].d);
+        govRt.innerHTML = RT[key].g ? '<span class="ar-gov-ic" aria-hidden="true">&#8635;</span><span>' + RT[key].g + '</span>' : "";
+        govRt.hidden = !RT[key].g;
+        bind(run); bind(data); run.classList.remove("fade"); data.classList.remove("fade"); govRt.classList.remove("fade");
+      }, 220);
+    }
+    document.querySelectorAll(".ar-seg button").forEach(function (b) { b.addEventListener("click", function () { setRt(b.dataset.rt); }); });
+    bind(document);
+    setRt("gc"); show("intro");
+
+    var STEPS = [
+      ["ge","Planner asks in Gemini Enterprise: port delay impact on On-Time In-Full (OTIF)"],
+      ["orch","Orchestrator decomposes across Plan, Make & Deliver"],
+      ["agentA","Disruption Sensing, Consensus & Dynamic Routing agents engage"],
+      ["calc","OR-Tools & WeatherNext 3 compute margin-optimal re-routes"],
+      ["bq|objstore|bqomni","Cortex v7 checks SAP ATP, carrier rates & plant capacity"],
+      ["rag|rag_op","Every trade-off cited against contracts & SOPs"],
+      ["mcp","Staged PO & load tender prepared behind Apigee MCP"],
+      ["ge","Supply Chain Director reviews & approves with 1 click"]
+    ];
+    document.getElementById("arTrace").addEventListener("click", function () {
+      var list = '<h3><img src="' + G + 'Agents.svg" alt="">One disruption request, end to end</h3><ol class="ar-steps">' + STEPS.map(function (s) { return "<li>" + s[1] + "</li>"; }).join("") + "</ol>";
+      detail.innerHTML = list;
+      var lis = detail.querySelectorAll("li");
+      STEPS.forEach(function (s, i) {
+        setTimeout(function () {
+          document.querySelectorAll(".ar-node.hot").forEach(function (n) { n.classList.remove("hot"); });
+          s[0].split("|").some(function (k) { var n = document.querySelector('.ar-node[data-k="' + k + '"]'); if (n) n.classList.add("hot"); return !!n; });
+          lis.forEach(function (l, j) { l.classList.toggle("on", j <= i); });
+          if (i === STEPS.length - 1) setTimeout(function () { document.querySelectorAll(".ar-node.hot").forEach(function (x) { x.classList.remove("hot"); }); }, 1400);
+        }, 200 + i * 900);
+      });
+    });
+  })();
+  </script>
+  </section>
+  </main>
+
+  <aside class="floating-dock" style="display: flex; align-items: center; gap: 12px; padding: 10px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 30px; backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(18,19,23,.14); position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 1000;">
+    <a href="../personas/index.html" style="background: var(--surface-sunk); border: 1px solid var(--border); color: var(--text-muted); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; text-decoration: none;">&#9664;</a>
+    <div style="font-family: var(--font-mono); font-size: 13.5px; font-weight: 700; color: var(--text-muted); white-space: nowrap;">BUILD 09 // ARCHITECTURE</div>
+    <a href="10_surfaces.html" style="background: var(--g-blue); border: none; color: #FFF; padding: 7px 16px; border-radius: 20px; font-family: var(--font-display); font-size: 14px; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 6px;"><span>Next Page</span><span>&#9654;</span></a>
+  </aside>
+</body>
+</html>

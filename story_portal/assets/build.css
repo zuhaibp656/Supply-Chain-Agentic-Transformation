@@ -1,0 +1,48 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   build.css — shared Aurora styles for the "From Personas to Production"
+   pages (working_deck/build/). Loaded after assets/aurora.css.
+
+   Rules (GEMINI_ENTERPRISE_BRAND_GUIDELINES.md):
+   - Aurora 500 hues only: --g-blue #3186FF · --g-purple #4B31E3 ·
+     --g-green #00AF57 · --g-yellow #FEC700 · --g-red #FC413D
+   - coloured TEXT uses the --*-ink tokens (contrast-safe)
+   - flat surfaces only; gradients only as thin accents, approved pairs
+   - Google Sans (display) · Google Sans Text (body) · Roboto Mono (labels)
+   ───────────────────────────────────────────────────────────────────────── */
+
+.bx { min-height: 100vh; box-sizing: border-box; padding: 26px max(24px, 4vw) 104px;
+      background: var(--canvas); font-family: var(--font-body); color: var(--text); }
+.bx *, .bx *::before, .bx *::after { box-sizing: border-box; }
+.bx-in { max-width: 1520px; margin: 0 auto; }
+
+.bx-kick { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono);
+           font-size: 11.5px; font-weight: 500; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-muted); }
+.bx-kick i { width: 28px; height: 3px; border-radius: 2px; background: var(--gemini-spark); }
+.bx h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 2.4vw, 36px);
+         line-height: 1.12; letter-spacing: -0.6px; margin: 10px 0 6px; color: var(--text); }
+.bx-sub { font-size: 16px; line-height: 1.5; color: var(--text-muted); margin: 0 0 18px; max-width: none; }
+.bx-sub b { color: var(--text); font-weight: 500; }
+
+/* segmented control (Architecture "Runs on" pattern) */
+.bx-seg { display: inline-flex; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--border-subtle);
+          border-radius: 999px; padding: 4px; box-shadow: var(--shadow-sm); gap: 2px; }
+.bx-seg button { font: 500 13.5px var(--font-display); color: var(--text-muted); background: none; border: 0;
+                 border-radius: 999px; padding: 8px 16px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.bx-seg button img { width: 20px; height: 20px; }
+.bx-seg button:hover { color: var(--text); }
+.bx-seg button[aria-pressed="true"] { background: var(--g-blue); color: #FFF; }
+.bx-lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-dim); }
+
+.bx-card { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 16px 18px; box-shadow: var(--shadow-sm); }
+.bx-card h3 { margin: 0 0 4px; font: 600 16px var(--font-display); color: var(--text); display: flex; align-items: center; gap: 10px; }
+.bx-card h3 img { width: 28px; height: 28px; }
+.bx-card p { margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--text-muted); }
+.bx-why { margin-top: 10px; padding-left: 12px; border-left: 3px solid var(--g-green); font-size: 13.5px; color: var(--text); line-height: 1.45; }
+.bx-prod { display: inline-block; font: 500 11.5px var(--font-mono); color: var(--blue-ink); }
+
+.bx-ge { display: inline-flex; align-items: center; background: var(--g-grey-1200); border-radius: 10px; padding: 8px 12px; }
+.bx-ge img { height: 18px; width: auto; display: block; }
+
+.bx-chip { font: 500 11.5px var(--font-mono); color: var(--text-muted); border: 1px dashed var(--border-strong); border-radius: 999px; padding: 4px 10px; }
+
+@media (prefers-reduced-motion: reduce) { .bx *, .bx *::before, .bx *::after { transition: none !important; animation: none !important; } }

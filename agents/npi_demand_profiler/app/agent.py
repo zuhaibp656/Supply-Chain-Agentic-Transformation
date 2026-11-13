@@ -18,7 +18,7 @@ _WRITE_TOOLS = {'action_commit_npi_ibp_launch_curve': ['npi_sku_id',
                                         'rationale'],
  'action_stage_initial_dc_pipefill': ['npi_sku_id', 'customer_id', 'pipefill_cases', 'rationale']}
 
-_INSTRUCTION = """You are [01 · Plan | Demand Forecasting] NPI Demand Profiler, operating for XYZ Global Industries Corp. (XYZ-CORP-01).
+_INSTRUCTION = """You are [01 · Plan | Demand Forecasting] NPI Demand Profiler, operating across multi-industry global supply chain networks (Consumer Packaged Goods, Retail, Automotive & EV, Pharma Cold-Chain, and Industrial Manufacturing).
 Category: 01 · Planning & Strategy — Demand Forecasting
 Persona Owner: NPI Launch Forecaster
 Mission: [Category: 01 · Planning & Strategy — Demand Forecasting] NPI Demand Profiler (NPI Launch Forecaster): Predicts 90-day new product launch velocity using lookalike SKU cosine similarity, Bass diffusion curves, and retail door pipe-fill schedules. Outcome: Cuts NPI launch forecast error by 34%.
@@ -28,14 +28,14 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
    - Users ask everyday business questions in plain English—they will never know or mention internal table names, column names, Python tool names, or `idempotency_key` parameters.
    - Whenever a user asks an analytical or operational question, proactively call your connected `query_*` tools, `query_sap_s4hana_master_data_backbone`, and deterministic Python solver (`analyze_npi_bass_diffusion_ramp`) behind the scenes to pull the relevant data and compute exact numbers—never estimate math mentally.
    - Never mention internal JSON filenames, `snake_case` table/column names, or Python function names in your user-facing answer; refer to data sources in natural business terms (e.g., "store checkout scans", "warehouse receiving logs", "refrigerated trailer sensors", "carrier freight contracts").
-2. CLEAR, BALANCED MEDIUM-LENGTH PLAIN-ENGLISH EXPLANATION:
-   - Write in warm, natural, easy-to-follow business English with a balanced medium-length explanation—neither cryptic 1–2 sentence shorthand nor overly long walls of text—because readers may not know domain shorthand.
-   - Open with a **3–4 sentence Plain-English Executive Summary** explaining what is happening right now, what the numbers show, why it matters to the business, and your main recommendation.
-   - **Spell out every abbreviation on first use**—for example, Point of Sale (POS), Weighted Absolute Percentage Error (WAPE), Forecast Value Added (FVA), Planned Independent Requirements (PIR), On-Time In-Full (OTIF), Mean Kinetic Temperature (MKT), Purchase Order (PO), Goods Receipt Note (GRN), Overall Equipment Effectiveness (OEE), Days Inventory Outstanding (DIO), Stock Keeping Unit (SKU), or Return Merchandise Authorization (RMA)—and briefly explain specialized terms in everyday words.
-   - Include a **clean Markdown summary table (`<= 5` columns)** outside the chart card using human-friendly English column headers (so anyone can read it immediately or copy it cleanly into Google Sheets).
-   - Follow the table with **3–4 concise bullet points** walking through *what drives these findings* (the plain-English story behind the calculations) and *practical recommended next steps*.
-3. INTERACTIVE VISUAL CHART (`VegaChart` CARD SEPARATION):
-   - Call `render_visual_chart` whenever visual comparison helps illustrate trends, gaps, or rankings. An interactive A2UI `VegaChart` card renders automatically—keep ONLY the chart inside the card and never paste raw Vega-Lite JSON or base64 strings in text.
+2. ARCHETYPE OUTPUT STYLE — FORENSIC AUDIT & RECOVERY LEDGER (120–190 words, Dollar-Exact):
+   - Open with a **2-sentence Exposure & Recovery Headline** quantifying exact billing/compliance variance, blocked dollars, and priority recovery target (spell out domain abbreviations on first use).
+   - Provide an **Exception-First Discrepancy Table (`<= 5` columns)** showing Document/Entity ID, Billed/Baseline, Verified/Target, Variance, and Recommended Action—strictly sorted by highest dollar impact. For single-document status checks, reply cleanly in 2–3 lines without padding.
+   - End with **2–3 grounded evidence & next-step bullets** citing exact matching rules or policy thresholds.
+3. INTELLIGENT HTML COCKPIT & A2UI VISUAL SELECTION (CRITICAL):
+   - **CSV Reconciliation Manifest (`export_*`)**: Proactively generate downloadable CSV manifests when auditing multi-record ledgers (`>= 3` rows) or requested for ERP posting.
+   - **VegaChart (`render_*_a2ui_chart_and_canvas`)**: Call ONLY when illustrating variance concentration across `>= 3` vendors, invoices, or lanes.
+   - **Interactive HTML Cockpit (`publish_*_interactive_cockpit_to_gcs`)**: DO NOT generate HTML by default on standard audit queries; ONLY call it if the user explicitly asks for an interactive audit dashboard, cockpit, or multi-vendor visual explorer.
 4. STAKEHOLDER BRIEFINGS & SAFE ACTION GOVERNANCE:
    - Call `draft_npi_consensus_launch_brief` when the user asks for a briefing note, memo, claim, or leadership summary, and present the result in clear, accessible business English with abbreviations spelled out.
    - Never invoke `action_*` write-back tools on read-only questions.
@@ -45,10 +45,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 VISUAL A2UI v0.9 DUAL-SURFACE & ACTUAL DATA-SOURCE TOOL MANDATE (CRITICAL):
 - CORTEX DATA FOUNDATION: Harmonized via **Google Cloud Cortex Framework (v7)** (`query_cortex_npi_demand_profiler_data_products` -> `bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_historical_lookalike_analog_skus`), standardizing raw ERP/WMS Change Data Capture (CDC) tables, currency scaling, and K9 external signals via Dataform & Dataplex Knowledge Catalog.
 - BUILD TIER: **Hybrid** · Connected Data-Source Tools: `inspect_plm_npi_demand_profiler_data_sources, query_sap_s4hana_master_data_backbone, query_bigquery_historical_lookalike_analog_skus, query_sap_ibp_npi_90day_forecast_allocations, query_plm_npi_launch_sku_catalog, query_retail_door_retail_distribution_door_ramps, query_npi_launch_sku_catalog, query_historical_lookalike_analogs`.
-- On EVERY analytical, chart, variance, comparison, forecast, audit, scenario, or cockpit request, proactively execute your data-source-specific `query_*` / `fetch_*` tools, deterministic solver (`run_*` / `analyze_*`), and `render_npi_demand_profiler_a2ui_chart_and_canvas` so Gemini Enterprise renders BOTH:
-  1. **Inline A2UI `Card` (`VegaChart` ONLY)**: A 2-Panel Executive Vega-Lite v5 Infographic (Top: Baseline vs. Target/Verified Actual with Mean Reference Rule; Bottom: Signed `Δ` Variance Strip). Keep ONLY the `VegaChart` inside the inline card!
-  2. **Side-Panel A2UI `Canvas` (Multi-Chart Visual Studio: KPI Index `VegaChart` + Pareto Breakdown `VegaChart` + Action Buttons + Looker `RichTable`)**: Automatically attached in the side panel so business users can sort/filter live source rows in Looker Studio and click quick-action buttons.
-- Outside the card in Markdown, present: (a) a warm 3–4 sentence Plain-English Executive Summary (spelling out every abbreviation on first use), (b) a clean `<= 5`-column Markdown summary table ready to copy into Google Sheets, (c) 3–4 concise driver & action bullets, and (d) headed Cloud Storage links (`### Interactive Cockpit & Live Visual Application` via `publish_npi_demand_profiler_interactive_cockpit_to_gcs` / `### Downloadable Data Export`) when requested.
+- ARCHETYPE & SMART UI RULE (AUDITOR): Intelligently choose ONLY the output depth and UI elements warranted by the user's request. Execute `query_*` / `fetch_*` + deterministic `run_*` / `analyze_*` math tools when data is needed. Emit inline `VegaChart` + side-panel `Canvas` (`render_*_a2ui_chart_and_canvas`) for multi-entity comparisons/trends, CSV exports (`export_*`) for downloadable multi-row schedules, and full-screen HTML cockpits (`publish_*_interactive_cockpit_to_gcs`) ONLY when interactive exploration, multi-variable simulation, or HTML is genuinely useful or requested—never spam HTML links on quick factual checks.
 - NEVER invent numbers, SKUs, POs, or invoice IDs, and NEVER paste raw HTML (`<!DOCTYPE html>`), Vega-Lite JSON, or `snake_case` internal filenames in user-facing prose.
 """
 
@@ -201,10 +198,21 @@ try:
         llm_request: Optional[LlmRequest] = None,
         **_: Any,
     ) -> None:
-        """Sanitizes prior A2UI wire parts and intercepts synthetic Canvas button clicks."""
+        """Sanitizes prior A2UI wire parts, captures plain-English turn intent, and intercepts Canvas button clicks."""
         if llm_request is None:
             return None
-        from .render.a2ui_builder import sanitize_history_and_intercept_actions
+        from .render.a2ui_builder import find_a2ui_action, sanitize_history_and_intercept_actions
+        contents = getattr(llm_request, "contents", None) or []
+        if contents:
+            last_c = contents[-1]
+            if getattr(last_c, "role", "") == "user":
+                parts = getattr(last_c, "parts", None) or []
+                act = find_a2ui_action(parts)
+                if act:
+                    getattr(tools, "mark_canvas_action", lambda *_: None)(str(act.get("name", "")))
+                user_texts = [getattr(p, "text", "") or "" for p in parts if getattr(p, "text", None)]
+                if user_texts:
+                    getattr(tools, "set_turn_user_query", lambda *_: None)(" ".join(user_texts))
         sanitize_history_and_intercept_actions(llm_request)
         return None
 
@@ -252,7 +260,9 @@ try:
                 llm_response.content.parts = cleaned
                 return llm_response
 
-            art = tools.ensure_turn_gcs_artifacts()
+            want_html = bool(getattr(tools, 'should_emit_html_cockpit', lambda: False)())
+            want_csv = bool(getattr(tools, 'should_emit_csv_export', lambda: False)())
+            art = tools.ensure_turn_gcs_artifacts(include_html=want_html, include_csv=want_csv)
             html_url = art.get("html_url", "")
             csv_url = art.get("csv_url", "")
 
@@ -272,6 +282,8 @@ try:
                 nl = chr(10)
                 footer_block = (
                     f"{nl}{nl}### 🌐 Interactive Visual Cockpit & Data Exports{nl}{nl}"
+                    if html_url
+                    else f"{nl}{nl}### 📥 Verified Data Export{nl}{nl}"
                     + nl.join(missing_bullets)
                     + nl
                 )
@@ -292,7 +304,9 @@ try:
     ) -> Optional[types.Content]:
         import logging as _logging
         try:
-            has_activity = bool(getattr(tools, "has_turn_activity", lambda: True)())
+            has_activity = bool(
+                getattr(tools, "should_emit_a2ui_surface", getattr(tools, "has_turn_activity", lambda: True))()
+            )
             getattr(tools, "get_latest_interactive_html", lambda consume=False: None)(consume=True)
             if not has_activity:
                 getattr(tools, "finalize_turn_gcs_state", lambda timeout=12.0: None)(timeout=2.0)

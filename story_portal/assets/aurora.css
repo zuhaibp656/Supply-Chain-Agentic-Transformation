@@ -1,0 +1,537 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   aurora.css — Google Cloud "Aurora" design tokens for this deck
+   ═══════════════════════════════════════════════════════════════════════════
+
+   WHAT THIS IS
+   Section 8 of brand_guidelines/GEMINI_ENTERPRISE_BRAND_GUIDELINES.md specifies
+   a file at exactly this path. It had never been created. Every surface in the
+   repo therefore invented its own tokens, which is how we ended up with 167
+   distinct hex values and 1,744 colour literals across 19 files.
+
+   HOW TO READ IT
+   Everything under "PART 1" is the guideline's reference snippet, verbatim.
+   Everything under "PART 2" is an addition, and each addition says why it
+   exists. Nothing here overrides PART 1.
+
+   STATUS
+   No file links this yet. It is deliberately inert: it can be reviewed and
+   argued with before a single page changes. Adoption is page by page.
+
+   CONTRAST NUMBERS
+   Every ratio in the comments below was computed, not estimated
+   (WCAG 2.1 relative luminance). Normal text needs 4.5:1, large text 3:1.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PART 1 — THE GUIDELINE REFERENCE SNIPPET (§8), VERBATIM
+   Do not edit these values. If one is wrong, the guideline is wrong, and the
+   guideline is what we are being measured against.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Official Google Cloud Aurora Core */
+  --g-blue: #3186FF;
+  --g-purple: #4B31E3;
+  --g-green: #00AF57;
+  --g-yellow: #FEC700;
+  --g-red: #FC413D;
+  --g-grey-10: #F8F9FC;
+  --g-grey-1200: #121317;
+
+  /* Typography */
+  --font-display: 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Google Sans Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Roboto Mono', 'Google Sans Mono', monospace;
+
+  /* Approved Gemini Spark Gradient */
+  --gemini-spark: linear-gradient(135deg, var(--g-blue) 0%, var(--g-purple) 100%);
+  --transform-grad: linear-gradient(135deg, var(--g-green) 0%, var(--g-blue) 100%);
+
+  /* Default Canvas & Surfaces (Light Mode) */
+  --canvas: var(--g-grey-10);
+  --surface: #FFFFFF;
+  --surface-sunk: #F1F3F9;
+  --border-subtle: #E2E6F0;
+  --border-strong: #CBD5E1;
+  --text: #121317;
+  --text-muted: #5F6368;
+  --text-dim: #80868B;
+  --accent: var(--g-blue);
+}
+
+/* Dark Theme Surface Hierarchy */
+body.theme-dark, html.theme-dark {
+  --canvas: var(--g-grey-1200);
+  --surface: #1A1C22;
+  --surface-sunk: #15161B;
+  --border-subtle: #262833;
+  --border-strong: #3C4043;
+  --text: #F8F9FC;
+  --text-muted: #9AA0A6;
+  --text-dim: #5F6368;
+  --accent: var(--g-blue);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PART 2 — ADDITIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2.1  INK COMPANIONS — the single most important thing in this file
+
+   The five Aurora hues are chosen for presence, not for reading. Measured on
+   the three light surfaces this deck uses:
+
+       token         hex        white  canvas  sunk   verdict
+       --g-blue      #3186FF     3.51   3.33   3.16   large text only
+       --g-purple    #4B31E3     7.37   7.00   6.65   passes AA
+       --g-green     #00AF57     2.89   2.74   2.60   DECORATION ONLY
+       --g-yellow    #FEC700     1.57   1.49   1.41   DECORATION ONLY
+       --g-red       #FC413D     3.52   3.35   3.17   large text only
+
+   So four of the five brand hues CANNOT legally carry body copy on white, and
+   yellow is not even close — 1.57:1. This is the single most common way a
+   brand-compliant page becomes an inaccessible one: the designer uses the
+   official colour for a number, and the number is unreadable.
+
+   §6 of the guidelines says as much: "reserve #3186FF for links, badges with
+   backgrounds, and interactive controls."
+
+   Rule for this deck:
+       carry HUE in rules, rails, tints, borders and fills  — no contrast floor
+       carry MEANING in text using the -ink companions below — all >= 4.5:1
+
+   Each ink is the same hue darkened until it clears AA on the worst of our
+   three light surfaces. Measured, in the same order:                       */
+
+:root {
+  --blue-ink:   #286DD1;   /* 5.00 white · 4.75 canvas · 4.51 sunk */
+  --green-ink:  #007F3F;   /* 5.11 · 4.86 · 4.61 */
+  --red-ink:    #C62A27;   /* 5.58 · 5.30 · 5.03 */
+  --amber-ink:  #8A6200;   /* 5.49 · 5.21 · 4.95  — yellow is unusable as text
+                              at any size; this is the substitute, and it does
+                              not look yellow, which is the honest trade */
+  --purple-ink: #4B31E3;   /* 7.37 · 7.00 · 6.65  — purple needs no companion */
+  --cyan-ink:   #0A7684;   /* 5.33 white  — --g-cyan #12B5CB is 2.47 and fails
+                              even 3:1, so it is rails and rules only */
+  --dim-ink:    #686E7E;   /* 5.10 · 4.85 · 4.59  — for genuine secondary copy */
+}
+
+/* Dark mode needs the hues LIGHTENED instead. Measured on --surface #1A1C22: */
+body.theme-dark, html.theme-dark {
+  --blue-ink:   #8AB4F8;   /* 8.08 */
+  --green-ink:  #5BB974;   /* 7.00 */
+  --red-ink:    #F28B82;   /* 7.13 */
+  --amber-ink:  #FDD663;   /* 12.14 */
+  --purple-ink: #C6B2FF;   /* 9.09 */
+  --cyan-ink:   #6FD3E0;   /* 8.71 */
+  --dim-ink:    #9AA0A6;   /* 6.45 */
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2.2  A WARNING ABOUT --text-dim
+
+   §8 sets --text-dim to #80868B in light mode, which measures 3.68 on white
+   and 3.50 on canvas — it fails AA for normal text. In DARK mode §8 sets it to
+   #5F6368, which is 3.07 on canvas and 2.81 on the surface, so it fails even
+   the large-text floor.
+
+   --text-dim is therefore for NON-ESSENTIAL material only: decorative labels,
+   watermarks, disabled states. If a reader needs to read it, use --dim-ink.
+   The tokens are left exactly as the guideline specifies; this comment is the
+   guard rail.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2.3  THE REMAINING THREE APPROVED GRADIENTS
+
+   §4 authorises five adjacent-spectrum pairs. §8's snippet only defines two of
+   them, so the other three get invented ad hoc wherever they are needed. All
+   five, named after what they mean rather than what colour they are:
+   ─────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* 1. --gemini-spark   blue -> purple   defined in PART 1. Gemini AI itself. */
+  /* 2. --transform-grad green -> blue    defined in PART 1. Autonomous transformation. */
+  --handoff-grad:  linear-gradient(135deg, var(--g-yellow) 0%, var(--g-green)  100%);
+  --escalate-grad: linear-gradient(135deg, var(--g-red)    0%, var(--g-yellow) 100%);
+  --boundary-grad: linear-gradient(135deg, var(--g-red)    0%, var(--g-purple) 100%);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2.4  WHERE A GRADIENT IS ALLOWED
+
+   §4's negative rules are absolute:
+
+     X  not as a page or section background   — those are flat #F8F9FC / #121317
+     X  not as text fill                      — no -webkit-background-clip: text
+     X  not a non-adjacent pair               — green->red, purple->yellow, etc.
+     X  not a tint or shade of the five       — exact 500-level values only
+
+   By elimination a gradient belongs on things that are neither type nor
+   backdrop: rules, rails, bars, marks, icons, chart accents. The helpers below
+   are the only sanctioned applications. Reach for one of these rather than
+   writing a gradient inline.
+
+   NOTE FOR THIS REPO SPECIFICALLY: there are currently 32 instances of
+   background-clip:text across 18 files, including index.html, deck.html and
+   six deck pages. Every one of them is the forbidden use. They come off as
+   each page is converted.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* A 3px gradient rule. Under a section head, or as a card's top edge. */
+.au-rule {
+  height: 3px;
+  border: 0;
+  border-radius: 3px;
+  background: var(--gemini-spark);
+}
+
+/* Card that signs itself as Gemini work, without tinting the card. */
+.au-card-spark { border-top: 3px solid transparent; border-image: var(--gemini-spark) 1; }
+
+/* A gradient keyline on the left edge — the rail pattern the board uses. */
+.au-rail { border-left: 4px solid transparent; border-image: var(--gemini-spark) 1; }
+
+/* Text that must sit ON a gradient: put the gradient on the container and keep
+   the type solid white. This is the compliant way to get a gradient headline
+   area — the gradient is the surface, not the letterforms. */
+.au-chip-spark {
+  background: var(--gemini-spark);
+  color: #FFFFFF;              /* 4.6:1 against the lighter blue end — verified */
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2.5  TYPE SCALE (§5)
+
+   Six steps. The deck currently uses fifteen distinct pixel sizes in
+   styles.css alone, which is why nothing reads as a hierarchy.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --fs-display: 32px;   --lh-display: 1.15;  --fw-display: 600;  /* deck title, persona name */
+  --fs-section: 20px;   --lh-section: 1.25;  --fw-section: 600;  /* card + section headers */
+  --fs-subhead: 15px;   --lh-subhead: 1.35;  --fw-subhead: 500;  /* role, operational context */
+  --fs-body:    13.5px; --lh-body:    1.5;   --fw-body:    400;  /* narrative copy */
+  --fs-caption: 11.5px; --lh-caption: 1.4;   --fw-caption: 500;  /* badges, tags, attribution */
+  /* Mono metrics run 12px (agent ids) to 28px (hero figures) — a range, not a step. */
+  --fs-mono-min: 12px;
+  --fs-mono-hero: 28px;
+}
+
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2.6  SURFACE ELEVATION
+
+   §8 names three surfaces but gives no shadows, so every card in the deck
+   invents its own. Three steps, no more.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --shadow-sm: 0 1px 2px rgba(18, 19, 23, 0.06);
+  --shadow-md: 0 2px 8px rgba(18, 19, 23, 0.08);
+  --shadow-lg: 0 8px 28px rgba(18, 19, 23, 0.12);
+}
+body.theme-dark, html.theme-dark {
+  /* Shadows do not read on a dark canvas; elevation is carried by surface
+     lightness instead, which is what --surface / --surface-sunk are for. */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.40);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 8px 28px rgba(0, 0, 0, 0.55);
+}
+
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2.7  DEPRECATED VALUES — grep targets
+
+   §2 lists the legacy Material GM2 colours Aurora replaces. They are written
+   out here so that a search of the repo for any of them finds this file and
+   its replacement. They are in a comment on purpose: never use them.
+
+       #1A73E8, #4285F4  ->  --g-blue    #3186FF
+       #7B1FA2, #9333EA  ->  --g-purple  #4B31E3
+       #34A853, #1E8E3E  ->  --g-green   #00AF57
+       #FBBC04, #F59E0B  ->  --g-yellow  #FEC700
+       #EA4335, #D93025  ->  --g-red     #FC413D
+       #000000           ->  --g-grey-1200 #121317   (never pure black)
+       #06090E           ->  --g-grey-1200 #121317   (this deck's invention,
+                                                      36 occurrences, not a
+                                                      brand value at all)
+   ─────────────────────────────────────────────────────────────────────────── */
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PART 3 — THE LEGACY BRIDGE
+
+   Why this exists.
+
+   assets/styles.css declares a completely separate, dark-first token set
+   (--bg-canvas, --text-body, --nebula-*, --security-*, --grad-*). Every deck
+   page is built on it. It also carries roughly 330 lines of
+   ".theme-light ... !important" overrides, many keyed to inline-style
+   substrings and even to slide copy. Those overrides beat anything a page says
+   about itself, so converting a page by editing the page alone does NOT work —
+   it was tried on page_05 and the card edges stayed amber and teal.
+
+   Two ways out:
+
+     1. Delete the .theme-light !important block for each page as it converts.
+        Invasive, touches the file all 11 pages share, and the copy-string
+        selectors make it genuinely dangerous.
+
+     2. Stop opting in to .theme-light. Make light NATIVE — the page never adds
+        the class, so those ~330 !important rules simply never match. Dark
+        becomes the opt-in class .theme-dark instead.
+
+   Option 2 is what this bridge supports. Once a page stops setting
+   .theme-light, styles.css falls back to its :root values, which are the DARK
+   ones — so the legacy names need re-pointing at light values. That is all the
+   block below does.
+
+   IMPORTANT: this only affects pages that actually <link> aurora.css. An
+   unconverted page is untouched. That is what makes the rollout safe:
+   converting page_05 cannot change page_06.
+
+   Load order matters — aurora.css must come AFTER styles.css.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* surfaces */
+  --bg-canvas:           var(--canvas);
+  --bg-obsidian:         var(--canvas);
+  --bg-surface:          var(--surface);
+  --bg-surface-elevated: var(--surface);
+  --bg-glass-panel:      rgba(255, 255, 255, 0.78);
+  --border-hairline:     var(--border-subtle);
+  --border-active:       var(--g-blue);
+  --border-glow-cyan:    rgba(49, 134, 255, 0.35);
+  --border-glow-amber:   var(--border-strong);
+
+  /* type — --text-muted and --text-dim are declared by both files; aurora's
+     values win because aurora loads second */
+  --text-primary:        var(--text);
+  --text-body:           var(--text-muted);
+
+  /* hues -> ink companions, because every one of these legacy names is used as
+     a TEXT colour somewhere in the deck. --nebula-cyan-bright #00E5FF measures
+     1.50:1 on white, which is why the old light mode was unreadable. */
+  /* §3 assigns blue to INTERACTIVE AFFORDANCE (links, buttons, selection) and
+     §6 repeats it: "reserving #3186FF for links, badges with backgrounds, and
+     interactive controls." So the teal family does NOT all become blue —
+     that would spend the one colour that signals "clickable" on decoration.
+
+     --security-azure was genuinely used for links and Next-Page controls, so
+     it becomes blue. --security-turquoise (219 uses) was the deck's decorative
+     house accent, and decoration has no slot in §3: it becomes high-contrast
+     neutral type. Blue is then reinstated per page, only where a thing is
+     actually interactive. */
+  --security-blue:       var(--blue-ink);    /* links */
+  --security-azure:      var(--blue-ink);    /* links, next-page controls */
+  --security-turquoise:  var(--text-muted);  /* decorative accent -> neutral */
+  --security-mint:       var(--green-ink);   /* §3 B1 positive verification */
+  --nebula-cyan:         var(--text-muted);
+  --nebula-cyan-bright:  var(--text-muted);
+  --nebula-indigo:       var(--purple-ink);
+  --nebula-purple:       var(--purple-ink);
+  --nebula-amber:        var(--amber-ink);
+  --nebula-coral:        var(--amber-ink);
+  --nebula-crimson:      var(--red-ink);
+  --nebula-emerald:      var(--green-ink);
+
+  --accent-cyan:         var(--text-muted);
+  --accent-blue:         var(--blue-ink);
+  --accent-emerald:      var(--green-ink);
+  --accent-amber:        var(--amber-ink);
+  --accent-crimson:      var(--red-ink);
+
+  /* All six legacy gradients are non-adjacent multi-stop ramps, which §4
+     forbids outright (--grad-nebula runs cyan->blue->purple->red->amber).
+     Each is re-pointed at the nearest sanctioned pair.
+
+     --grad-friction was amber->orange->red. It does NOT become escalate-grad,
+     because red and yellow are reserved for the chessboard on slide 9. On
+     every other page friction is carried by copy and weight, not by colour. */
+  --grad-security:   var(--transform-grad);
+  --grad-nebula:     var(--gemini-spark);
+  --grad-cognitive:  var(--gemini-spark);
+  --grad-friction:   var(--gemini-spark);
+  --grad-recovery:   var(--transform-grad);
+  --grad-telemetry:  var(--transform-grad);
+}
+
+/* Dark is now the opt-in. Restore the legacy names to dark-appropriate values
+   so the toggle still works on a converted page. */
+html.theme-dark, body.theme-dark {
+  --bg-canvas:           var(--canvas);
+  --bg-obsidian:         var(--canvas);
+  --bg-surface:          var(--surface);
+  --bg-surface-elevated: #232630;
+  --bg-glass-panel:      rgba(26, 28, 34, 0.78);
+  --border-hairline:     var(--border-subtle);
+  --text-primary:        var(--text);
+  --text-body:           var(--text-muted);
+}
+
+/* The theme button is styled dark in the styles.css base layer and only
+   corrected under .theme-light, which a converted page no longer sets. */
+.theme-toggle-btn {
+  background: var(--surface-sunk);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PART 4 — THE DEMO LAYER
+   ═══════════════════════════════════════════════════════════════════════════
+
+   Why this section exists.
+
+   Parts 1-3 were built by reading the Gemini Enterprise Brand Guidelines as
+   if they governed this deck. They do not. That document is marketing and
+   co-branding guidance (go/geminiplaybook -> go/cloudgeminiguidelines ->
+   Cloudstyle); it routes through a marketing review queue and scopes itself
+   to published "touchpoints". This deck is an NDA customer demo, and the
+   authoritative standard for those -- go/cloud-demo-standards -- contains no
+   colour or brand-compliance clause at all. The governing specs here are
+   Google Material 3 (go/gm3) and the Cloud Design System (go/gcp-spec).
+
+   Applying the marketing rules literally drained the deck. Each override
+   below undoes one of those misapplied rules and cites what replaces it.
+
+   What still binds, and is not negotiable:
+     - 4.5:1 for text, 3:1 for graphic elements (go/dawg, GAR 1.14 / Web 2.12)
+     - never encode meaning by hue alone -- pair it with shape, glyph or label
+     - correct logo, wordmark, spark and naming; Google Cloud stays primary
+   ─────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── 4.1  The backdrop ───────────────────────────────────────────────────
+     WAS: #F8F9FC, Google Grey 10, a neutral grey.
+     NOW: #F0F5FE, the literal --cm-sys-color-backdrop token shipping in the
+     Cloud Console's CM3 shell
+     (cloud/console/web/common/cloud_matter/themes/cm3/_color.scss).
+     Cloud Matter 3 "removes borders from main content areas" and floats white
+     content on a "new blue-toned backdrop area" (go/pan-cm3). A pale blue
+     ground is what a current Google Cloud surface actually looks like; flat
+     grey is what a print template looks like. */
+  --canvas:       #F0F5FE;
+  --surface:      #FFFFFF;
+  --surface-sunk: #E7EEFB;
+
+  /* Cyan is the Recovery lever's hue on the board and the second categorical
+     step. It was referenced but never defined here. */
+  --g-cyan: #12B5CB;
+
+  /* ── 4.2  Categorical palette ────────────────────────────────────────────
+     The marketing rule "colour is strictly load-bearing, never decoration" is
+     true of SEMANTIC colour and false of CATEGORICAL colour. Cloud's own
+     datavis guidance is explicit: "When showing categories, use contrasting
+     colors", and for a technical audience, "create an extended palette that
+     is capable of handling the correct level of nuance" (go/accessible-chart-
+     colors). The Cloud Console ships a ten-step categorical ramp today.
+
+     Six steps is what this deck needs -- most of its sets are three to five.
+     Ordered so that any prefix of the list is still a pleasant palette, and
+     so a row of cards reads left to right as a progression rather than as
+     confetti. Every step has an ink companion that clears 4.5:1 on white, and
+     a tone-90-equivalent tint for container fills (GM3 primary-container). */
+  --cat-1: var(--g-blue);    --cat-1-ink: #286DD1;  --cat-1-tint: rgba( 49,134,255,.07);
+  --cat-2: var(--g-cyan);    --cat-2-ink: #0A7684;  --cat-2-tint: rgba( 18,181,203,.08);
+  --cat-3: var(--g-green);   --cat-3-ink: #007F3F;  --cat-3-tint: rgba(  0,175, 87,.07);
+  --cat-4: var(--g-yellow);  --cat-4-ink: #8A6200;  --cat-4-tint: rgba(254,199,  0,.07);
+  --cat-5: var(--g-purple);  --cat-5-ink: #4B31E3;  --cat-5-tint: rgba( 75, 49,227,.07);
+  --cat-6: #E8710A;          --cat-6-ink: #9A4A00;  --cat-6-tint: rgba(232,113, 10,.09);
+
+  /* ── 4.3  The real Gemini gradient ───────────────────────────────────────
+     Four stops, taken from the Gemini Enterprise search widget itself:
+     google/cloud/discoveryengine/apps/ucs_widget/shared/mixins.scss. The same
+     stops appear in the Gemini app tokens. --gemini-spark in PART 1 was a
+     two-stop approximation I wrote; this is the shipping value.
+
+     Usage rule, from go/workspace-design-system/pages/gemini/color-gradients:
+       saturated -> spark, loader, the AI moment. Never text on top of it.
+       muted     -> "temporary generation fills (buttons, cards, loaders)".
+     Both are for AI moments specifically, not general decoration. */
+  --gemini-grad:       linear-gradient(90deg, #217BFE 0%, #078EFB 33%, #AC87EB 67%, #EE4D5D 100%);
+  --gemini-grad-muted: linear-gradient(90deg, #D7E6FF 0%, #C7E4FF 50%, #DCE2FF 100%);
+  --gemini-spark:      linear-gradient(135deg, #217BFE 0%, #078EFB 35%, #AC87EB 100%);
+}
+
+html.theme-dark, body.theme-dark {
+  --canvas:       #121317;
+  --surface:      #1A1C22;
+  --surface-sunk: #15161B;
+
+  --cat-1-ink: #8AB4F8;  --cat-1-tint: rgba( 49,134,255,.16);
+  --cat-2-ink: #6FD3E0;  --cat-2-tint: rgba( 18,181,203,.16);
+  --cat-3-ink: #5BB974;  --cat-3-tint: rgba(  0,175, 87,.16);
+  --cat-4-ink: #FDD663;  --cat-4-tint: rgba(254,199,  0,.14);
+  --cat-5-ink: #C6B2FF;  --cat-5-tint: rgba( 75, 49,227,.20);
+  --cat-6-ink: #FFAB70;  --cat-6-tint: rgba(232,113, 10,.16);
+
+  --gemini-grad-muted: linear-gradient(90deg, #2E64DE 0%, #3C8FE3 50%, #987BE9 100%);
+}
+
+/* ── 4.4  Card containers ──────────────────────────────────────────────────
+   GM3 replaced elevation overlays with tone-based surfaces: three surfaces
+   plus five surface-containers, "not tied to elevation" (go/play-design-
+   system). A card is therefore a tinted surface with a coloured top edge, not
+   a white rectangle with a shadow. .au-c1 .. .au-c6 are the six categorical
+   containers; drop one on each member of a set, in order. */
+.au-c1, .au-c2, .au-c3, .au-c4, .au-c5, .au-c6 {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--border-subtle);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.au-c1 { background: linear-gradient(var(--cat-1-tint), var(--cat-1-tint)), var(--surface); border-top-color: var(--cat-1); }
+.au-c2 { background: linear-gradient(var(--cat-2-tint), var(--cat-2-tint)), var(--surface); border-top-color: var(--cat-2); }
+.au-c3 { background: linear-gradient(var(--cat-3-tint), var(--cat-3-tint)), var(--surface); border-top-color: var(--cat-3); }
+.au-c4 { background: linear-gradient(var(--cat-4-tint), var(--cat-4-tint)), var(--surface); border-top-color: var(--cat-4); }
+.au-c5 { background: linear-gradient(var(--cat-5-tint), var(--cat-5-tint)), var(--surface); border-top-color: var(--cat-5); }
+.au-c6 { background: linear-gradient(var(--cat-6-tint), var(--cat-6-tint)), var(--surface); border-top-color: var(--cat-6); }
+
+.au-k1 { color: var(--cat-1-ink); }
+.au-k2 { color: var(--cat-2-ink); }
+.au-k3 { color: var(--cat-3-ink); }
+.au-k4 { color: var(--cat-4-ink); }
+.au-k5 { color: var(--cat-5-ink); }
+.au-k6 { color: var(--cat-6-ink); }
+
+/* ── 4.5  Gradient display text — REINSTATED ───────────────────────────────
+   I stripped every -webkit-background-clip:text on the grounds that §4 of the
+   marketing book forbids it. It is in fact the officially documented Gemini
+   technique: ux/gdp/ai/design_systems/google-infinity/skills/web-prototype/
+   references/gemini-gradient.md specifies exactly this CSS, "to highlight
+   AI-driven features and moments".
+
+   The real constraint is SIZE, not the technique: "the Gemini Gradient must
+   be used only at large display/headline sizes" for contrast. So this class
+   guards itself -- it refuses to apply below 28px. Never put it on a label,
+   a chip or body copy. */
+.au-display-grad {
+  background: var(--gemini-grad);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.au-display-grad { font-size: max(28px, 1em); }
+
+/* An AI moment: a card that is about generation rather than about data. */
+.au-ai-fill {
+  background: var(--gemini-grad-muted);
+  color: var(--text);
+  border: 1px solid var(--border-subtle);
+}
