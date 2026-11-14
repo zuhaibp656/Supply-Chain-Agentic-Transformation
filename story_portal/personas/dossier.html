@@ -119,15 +119,19 @@
 </main>
 
 <script src="../data/sc_story_data.js"></script>
+<script src="../data/sc_value_model.js"></script>
 <script>
 (function () {
   var list = window.SC_DATA.personas;
   var agents = window.SC_DATA.agents;
   var agentById = Object.fromEntries(agents.map(function (a) { return [a.id, a]; }));
+  var valMap = window.SC_VALUES.computeForPersonas(list).byPersonaId;
   var pid = new URLSearchParams(location.search).get('id');
   var idx = Math.max(0, list.findIndex(function (x) { return x.id === pid; }));
   var p = list[idx];
   var ag = agentById[p.primaryAgentId] || {};
+  var pv = valMap[p.id] || { tier: 'next', paybackDays: 90, total: 5.0, prod: 0.5, flow: 1.5, shield: 1.5, recov: 1.5, why: '' };
+  var tierLabel = pv.tier === 'first' ? 'Priority 1 · Build First (<90d)' : (pv.tier === 'next' ? 'Priority 2 · Build Next' : 'Priority 3 · Enabler');
 
   document.title = p.name + ' | Persona Journey';
   document.getElementById('personaCounter').textContent = p.code + ' / ' + list.length;
@@ -188,12 +192,21 @@
     '<section class="persona-id-card">' +
       '<div>' +
         '<div class="p-portrait">' + initials + '</div>' +
-        '<div class="p-fig">' + (p.headlineStat || p.timeSaved) + '<small>' + p.toilHoursBefore + 'h &rarr; ' + p.toilHoursAfter + 'h weekly toil</small></div>' +
+        '<div class="p-fig">$' + pv.total.toFixed(1) + 'M/yr<small>' + (p.headlineStat || p.timeSaved) + ' · ' + p.toilHoursBefore + 'h &rarr; ' + p.toilHoursAfter + 'h/wk</small></div>' +
       '</div>' +
       '<div>' +
-        '<div style="font:700 11px var(--font-mono);color:' + p.deptInk + ';text-transform:uppercase;margin-bottom:4px">' + p.code + ' &middot; ' + p.deptTitle + ' &middot; ' + p.subPillarName + '</div>' +
+        '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">' +
+          '<span style="font:700 11px var(--font-mono);color:' + p.deptInk + ';text-transform:uppercase">' + p.code + ' &middot; ' + p.deptTitle + ' &middot; ' + p.subPillarName + '</span>' +
+          '<span style="font:700 10.5px var(--font-mono);padding:3px 9px;border-radius:999px;background:rgba(49,134,255,.12);color:var(--blue-ink)">' + tierLabel + '</span>' +
+        '</div>' +
         '<h1 style="font-family:var(--font-display);font-size:clamp(24px,2.6vw,34px);margin:0 0 8px">' + p.name + '</h1>' +
-        '<p style="margin:0;font-size:15px;line-height:1.58;color:var(--text-muted)">' + (p.summary || p.mandate) + '</p>' +
+        '<p style="margin:0 0 12px;font-size:15px;line-height:1.58;color:var(--text-muted)">' + (p.summary || p.mandate) + '</p>' +
+        '<div style="display:flex;gap:14px;flex-wrap:wrap;font:600 12px var(--font-mono);color:var(--text-muted);padding-top:10px;border-top:1px dashed var(--border-subtle)">' +
+          '<span>Productivity: <b>$' + pv.prod.toFixed(1) + 'M</b></span>' +
+          '<span>Flow &amp; Capital: <b>$' + pv.flow.toFixed(1) + 'M</b></span>' +
+          '<span>Leakage &amp; Risk: <b>$' + pv.shield.toFixed(1) + 'M</b></span>' +
+          '<span>Revenue &amp; Salvage: <b>$' + pv.recov.toFixed(1) + 'M</b></span>' +
+        '</div>' +
       '</div>' +
     '</section>' +
 

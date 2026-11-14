@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>05 · Live Demo Stage | Agentic Supply Chain Transformation</title>
+<link rel="icon" href="../assets/media/brand/gemini_spark_fullcolor_768.png" type="image/png">
+<link rel="stylesheet" href="../assets/aurora.css">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/story_extra.css">
+<script>
+try {
+  var t = localStorage.getItem('deck-theme');
+  document.documentElement.className = (t === 'dark') ? 'theme-dark' : 'theme-light';
+} catch (e) {}
+</script>
+<style>
+  :root {
+    --font-display: 'Google Sans', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-sans: 'Google Sans Text', 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  body { margin: 0; font-family: var(--font-sans); background: var(--s-bg); color: var(--s-ink); min-height: 100vh; }
+  .mast {
+    position: sticky; top: 0; z-index: 40; min-height: 56px;
+    background: color-mix(in srgb, var(--s-card) 90%, transparent);
+    backdrop-filter: blur(16px); border-bottom: 1px solid var(--s-line);
+    display: flex; align-items: center; padding: 8px max(18px, 3vw); gap: 12px; flex-wrap: wrap;
+  }
+  .mast-brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--s-ink); font: 700 13.5px var(--font-display); }
+  .mast-spacer { flex: 1; }
+  .mast-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .mast-btn {
+    padding: 6px 12px; border-radius: 999px; border: 1px solid var(--s-line);
+    background: var(--s-glass2); color: var(--s-ink); font: 600 12px var(--font-sans);
+    text-decoration: none; cursor: pointer;
+  }
+  .mast-count { font: 700 12px var(--font-mono); color: var(--s-ink3); }
+  .mast-cta { padding: 6px 14px; border-radius: 999px; background: var(--g-blue); color: #fff; font: 700 12px var(--font-display); text-decoration: none; }
+
+  .wrap { max-width: 1220px; margin: 20px auto 96px; padding: 0 max(18px, 3vw); display: grid; gap: 18px; }
+  .top-strip {
+    background: var(--s-card); border: 1px solid var(--s-line); border-radius: 20px;
+    padding: 20px 24px; display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; flex-wrap: wrap;
+    box-shadow: var(--shadow-sm);
+  }
+  .eyebrow { font: 700 11px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--blue-ink); margin-bottom: 6px; }
+  .h1 { font: 700 clamp(24px, 2.8vw, 36px)/1.12 var(--font-display); letter-spacing: -.02em; margin: 0 0 8px; }
+  .sub { margin: 0; font-size: 14.5px; color: var(--s-ink2); max-width: 66ch; }
+  .sel-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .demo-select {
+    padding: 8px 12px; border-radius: 12px; border: 1px solid var(--s-line);
+    background: var(--s-glass2); color: var(--s-ink); font: 600 13px var(--font-display); max-width: 320px;
+  }
+
+  .stage-grid { display: grid; grid-template-columns: 1.45fr .55fr; gap: 18px; align-items: stretch; }
+  @media (max-width: 960px) { .stage-grid { grid-template-columns: 1fr; } }
+
+  .video-card {
+    background: var(--s-card); border: 1px solid var(--s-line); border-radius: 22px;
+    padding: 16px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 12px;
+  }
+  .video-frame {
+    position: relative; border-radius: 16px; overflow: hidden; background: #0d111a; aspect-ratio: 16 / 9;
+    border: 1px solid var(--s-line);
+  }
+  .video-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .upload-bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+    padding: 10px 14px; border-radius: 12px; background: var(--s-glass2); border: 1px dashed var(--s-line);
+  }
+  .up-label {
+    display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 10px;
+    background: var(--g-blue); color: #fff; font: 700 12.5px var(--font-display); cursor: pointer;
+  }
+  .up-reset {
+    padding: 6px 12px; border-radius: 10px; border: 1px solid var(--s-line);
+    background: var(--s-card); color: var(--s-ink2); font: 600 12px var(--font-sans); cursor: pointer;
+  }
+  .up-status { font: 600 12px var(--font-mono); color: var(--s-ink2); }
+
+  .launch-panel {
+    background: var(--s-card); border: 1px solid var(--s-line); border-radius: 22px;
+    padding: 20px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+  }
+  .ge-big-btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 14px 18px; border-radius: 14px; background: linear-gradient(135deg, #217BFE, #4B31E3);
+    color: #fff; font: 700 15px var(--font-display); text-decoration: none;
+    box-shadow: 0 8px 22px rgba(49,134,255,.28); transition: transform .15s;
+  }
+  .ge-big-btn:hover { transform: translateY(-2px); }
+  .telem-list { display: grid; gap: 9px; }
+  .t-row {
+    padding: 9px 12px; border-radius: 12px; background: var(--s-glass2); border: 1px solid var(--s-line);
+    display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 12.5px;
+  }
+  .t-row span:first-child { color: var(--s-ink3); font: 700 11px var(--font-mono); text-transform: uppercase; }
+  .t-row b { font: 700 12.5px var(--font-display); text-align: right; }
+
+  .prompt-box {
+    background: var(--s-card); border: 1px solid var(--s-line); border-radius: 16px;
+    padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  .prompt-copy {
+    padding: 7px 14px; border-radius: 999px; border: 1px solid var(--s-line);
+    background: var(--s-glass2); color: var(--s-ink); font: 700 12px var(--font-display); cursor: pointer;
+  }
+
+  .dock {
+    position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); z-index: 900;
+    display: flex; align-items: center; gap: 12px; padding: 8px 16px;
+    background: color-mix(in srgb, var(--s-card) 94%, transparent);
+    border: 1px solid var(--s-line); border-radius: 999px;
+    backdrop-filter: blur(12px); box-shadow: 0 10px 28px rgba(18,19,23,.14);
+  }
+  .dock a { text-decoration: none; font: 700 13px var(--font-display); }
+  .dock-btn { padding: 6px 14px; border-radius: 999px; background: var(--g-blue); color: #fff; }
+</style>
+</head>
+<body>
+<header class="mast">
+  <a class="mast-brand" href="../index.html">
+    <img src="../assets/media/brand/gemini_spark_fullcolor_768.png" alt="Gemini" style="height:22px;width:22px;">
+    <span>Briefing Map</span>
+  </a>
+  <span class="mast-spacer"></span>
+  <nav class="mast-nav">
+    <button class="mast-btn" id="themeToggle" type="button">Dark</button>
+    <a class="mast-btn" id="hdrPrev" href="#">&larr; Beat 04</a>
+    <span class="mast-count">05 / 15</span>
+    <a class="mast-btn" id="hdrNext" href="#">Next: One to Many &rarr;</a>
+    <a class="mast-cta" href="../personas/index.html">Persona Map &#8599;</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="top-strip">
+    <div>
+      <div class="eyebrow" id="stageKicker">STAGE 05 · COMMON LIVE DEMO STAGE</div>
+      <h1 class="h1" id="agentTitle">Demand Sensing Agent</h1>
+      <p class="sub" id="agentDesc"></p>
+    </div>
+    <div class="sel-row">
+      <select class="demo-select" id="pillarQuickSel" aria-label="Filter by Pillar"></select>
+      <select class="demo-select" id="agentQuickSel" aria-label="Choose Live Agent Demo"></select>
+    </div>
+  </section>
+
+  <section class="stage-grid">
+    <div class="video-card">
+      <div class="video-frame">
+        <video id="demoPlayer" controls playsinline preload="metadata"></video>
+      </div>
+      <div class="upload-bar">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <label class="up-label">
+            <span>&#128228; Upload Your Demo Video (.mp4 / .webm)</span>
+            <input type="file" id="videoUpload" accept="video/*" hidden>
+          </label>
+          <button type="button" class="up-reset" id="resetVideoBtn" hidden>Revert to Built-In Video</button>
+        </div>
+        <span class="up-status" id="videoStatus">Loading bundled recording...</span>
+      </div>
+    </div>
+
+    <aside class="launch-panel">
+      <div>
+        <div class="eyebrow" style="color:var(--green-ink)">&#9679; LIVE IN GEMINI ENTERPRISE</div>
+        <h2 style="font:700 18px var(--font-display);margin:0 0 8px">Run This Agent Live</h2>
+        <p style="font-size:13px;line-height:1.5;color:var(--s-ink2);margin:0 0 14px">Open the deployed Gemini Enterprise reasoning workspace directly in your browser to run live natural-language scenarios.</p>
+        <a class="ge-big-btn" id="launchGeBtn" target="_blank" rel="noopener noreferrer" href="#">
+          <img src="../assets/media/brand/gemini_spark_fullcolor_768.png" alt="" style="width:20px;height:20px;filter:brightness(0) invert(1);">
+          <span>Launch Live Demo &#8599;</span>
+        </a>
+      </div>
+      <div class="telem-list" id="telemList"></div>
+      <a class="mast-btn" id="agentArchLink" style="text-align:center" href="#">Inspect Full Agent Architecture &rarr;</a>
+    </aside>
+  </section>
+
+  <section class="prompt-box">
+    <div>
+      <div style="font:700 10.5px var(--font-mono);color:var(--blue-ink);text-transform:uppercase;margin-bottom:4px">Starter Business Question (Try in Gemini Enterprise)</div>
+      <div style="font:600 14.5px var(--font-display)" id="starterPrompt"></div>
+    </div>
+    <button type="button" class="prompt-copy" id="copyPromptBtn">Copy Prompt</button>
+  </section>
+</main>
+
+<aside class="dock">
+  <a id="dockPrev" href="#" style="color:var(--s-ink2)">&larr; Beat 04</a>
+  <span style="font:700 12px var(--font-mono);color:var(--s-ink3)">STAGE 05 // COMMON LIVE DEMO</span>
+  <a class="dock-btn" id="dockNext" href="#">06 · One Agent to Many &rarr;</a>
+</aside>
+
+<script src="../data/sc_story_data.js"></script>
+<script src="../data/sc_value_model.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('themeToggle');
+  function paintTheme() { btn.textContent = document.documentElement.classList.contains('theme-dark') ? 'Light' : 'Dark'; }
+  paintTheme();
+  btn.addEventListener('click', function () {
+    var dark = document.documentElement.classList.toggle('theme-dark');
+    document.documentElement.classList.toggle('theme-light', !dark);
+    try { localStorage.setItem('deck-theme', dark ? 'dark' : 'light'); } catch (e) {}
+    paintTheme();
+  });
+
+  var DATA = window.SC_DATA;
+  var qs = new URLSearchParams(location.search);
+  var pillarId = qs.get('pillar') || DATA.departments[0].id;
+  var dept = DATA.departments.find(function (d) { return d.id === pillarId; }) || DATA.departments[0];
+  var reqAgentId = qs.get('agent') || dept.flagshipAgentId;
+  var liveAgents = DATA.agents.filter(function (a) { return a.liveInGE; });
+  var ag = DATA.agents.find(function (a) { return a.id === reqAgentId; }) || DATA.agents.find(function (a) { return a.id === dept.flagshipAgentId; }) || liveAgents[0];
+
+  // IndexedDB persistence for user-uploaded demo videos per agentId
+  var DB_NAME = 'sc_demo_stage_videos_v1';
+  function openDb() {
+    return new Promise(function (resolve, reject) {
+      if (!window.indexedDB) return reject(new Error('IndexedDB unavailable'));
+      var req = indexedDB.open(DB_NAME, 1);
+      req.onupgradeneeded = function (e) { e.target.result.createObjectStore('videos'); };
+      req.onsuccess = function (e) { resolve(e.target.result); };
+      req.onerror = function (e) { reject(e.target.error); };
+    });
+  }
+  function getSavedVideo(key) {
+    return openDb().then(function (db) {
+      return new Promise(function (resolve) {
+        var tx = db.transaction('videos', 'readonly').objectStore('videos').get(key);
+        tx.onsuccess = function () { resolve(tx.result || null); };
+        tx.onerror = function () { resolve(null); };
+      });
+    }).catch(function () { return null; });
+  }
+  function saveVideo(key, rec) {
+    return openDb().then(function (db) {
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction('videos', 'readwrite');
+        tx.objectStore('videos').put(rec, key);
+        tx.oncomplete = resolve;
+        tx.onerror = reject;
+      });
+    });
+  }
+  function deleteSavedVideo(key) {
+    return openDb().then(function (db) {
+      return new Promise(function (resolve) {
+        var tx = db.transaction('videos', 'readwrite');
+        tx.objectStore('videos').delete(key);
+        tx.oncomplete = resolve;
+      });
+    });
+  }
+
+  var pSel = document.getElementById('pillarQuickSel');
+  pSel.innerHTML = DATA.departments.map(function (d) {
+    return '<option value="' + d.id + '"' + (d.id === dept.id ? ' selected' : '') + '>' + d.num + ' · ' + d.title + '</option>';
+  }).join('');
+  pSel.addEventListener('change', function () {
+    location.search = '?pillar=' + encodeURIComponent(pSel.value);
+  });
+
+  var aSel = document.getElementById('agentQuickSel');
+  aSel.innerHTML = liveAgents.map(function (a) {
+    return '<option value="' + a.id + '"' + (a.id === ag.id ? ' selected' : '') + '>' + a.name + ' (' + a.subPillarName + ')</option>';
+  }).join('');
+  aSel.addEventListener('change', function () {
+    location.search = '?pillar=' + encodeURIComponent(dept.id) + '&agent=' + encodeURIComponent(aSel.value);
+  });
+
+  var prevHref = 'pillar_story.html?pillar=' + encodeURIComponent(dept.id) + '&beat=4';
+  var nextHref = '06_one_to_many.html?pillar=' + encodeURIComponent(dept.id);
+  document.getElementById('hdrPrev').href = prevHref;
+  document.getElementById('dockPrev').href = prevHref;
+  document.getElementById('hdrNext').href = nextHref;
+  document.getElementById('dockNext').href = nextHref;
+
+  var valMeta = window.SC_VALUES.BY_AGENT[ag.id] || { tier: 'next', paybackDays: 90, prod: 0.5, flow: 2, shield: 2, recov: 1 };
+  var totalVal = (valMeta.prod + valMeta.flow + valMeta.shield + valMeta.recov).toFixed(1);
+  var tierLabel = valMeta.tier === 'first' ? 'Priority 1 · Build First' : (valMeta.tier === 'next' ? 'Priority 2 · Build Next' : 'Priority 3 · Enabler');
+
+  document.getElementById('stageKicker').textContent = 'STAGE 05 · ' + dept.num + ' ' + dept.title.toUpperCase() + ' · FLAGSHIP DEMO';
+  document.getElementById('agentTitle').textContent = ag.name;
+  document.getElementById('agentDesc').textContent = ag.outcome || ag.shortDesc;
+  document.getElementById('launchGeBtn').href = ag.geUrl;
+  document.getElementById('agentArchLink').href = 'agent.html?id=' + encodeURIComponent(ag.id);
+  document.getElementById('starterPrompt').textContent = '"' + ag.samplePrompt + '"';
+
+  document.getElementById('telemList').innerHTML = [
+    ['Value Impact', '$' + totalVal + 'M / yr modeled'],
+    ['Build Priority', tierLabel + ' (' + valMeta.paybackDays + 'd payback)'],
+    ['Runtime Model', ag.model || 'gemini-3.1-pro-preview'],
+    ['Persona Owner', ag.primaryPersonaName || 'Supply Chain Specialist'],
+    ['Write-Back Gate', 'Apigee MCP · 1-Click Human Approval']
+  ].map(function (r) {
+    return '<div class="t-row"><span>' + r[0] + '</span><b>' + r[1] + '</b></div>';
+  }).join('');
+
+  var player = document.getElementById('demoPlayer');
+  var statusEl = document.getElementById('videoStatus');
+  var resetBtn = document.getElementById('resetVideoBtn');
+  var activeBlobUrl = null;
+
+  function loadVideo() {
+    if (activeBlobUrl) { URL.revokeObjectURL(activeBlobUrl); activeBlobUrl = null; }
+    getSavedVideo(ag.id).then(function (rec) {
+      if (rec && rec.blob) {
+        activeBlobUrl = URL.createObjectURL(rec.blob);
+        player.src = activeBlobUrl;
+        statusEl.textContent = 'Custom uploaded video saved locally: ' + rec.name + ' (' + (rec.blob.size / 1e6).toFixed(1) + ' MB)';
+        resetBtn.hidden = false;
+      } else {
+        player.src = '../' + (ag.videoSrc || 'assets/media/video/demand_sensing_demo.mp4');
+        statusEl.textContent = 'Bundled recording: ' + (ag.videoSrc || 'demand_sensing_demo.mp4').split('/').pop();
+        resetBtn.hidden = true;
+      }
+    });
+  }
+  loadVideo();
+
+  document.getElementById('videoUpload').addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    saveVideo(ag.id, { name: file.name, type: file.type, blob: file }).then(loadVideo);
+  });
+
+  resetBtn.addEventListener('click', function () {
+    deleteSavedVideo(ag.id).then(loadVideo);
+  });
+
+  document.getElementById('copyPromptBtn').addEventListener('click', function () {
+    var cp = document.getElementById('copyPromptBtn');
+    navigator.clipboard && navigator.clipboard.writeText(ag.samplePrompt);
+    cp.textContent = 'Copied!';
+    setTimeout(function () { cp.textContent = 'Copy Prompt'; }, 1400);
+  });
+})();
+</script>
+</body>
+</html>

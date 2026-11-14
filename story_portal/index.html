@@ -175,7 +175,7 @@
 
   <section class="hero">
     <div>
-      <div class="kick"><i></i>Briefing map &middot; how the Supply Chain story flows</div>
+      <div class="kick"><i></i>Briefing map &middot; how the Supply Chain story flows <span style="color:var(--red-ink);font-weight:600;margin-left:6px">&middot; (This page is internal)</span></div>
       <h1>Agentic Transformation for Global Supply Chains</h1>
       <p class="lede">One executive briefing grounded in verified 2025&ndash;2026 benchmarks. <b>Everyone starts together</b>, the story spans all <b>6 Supply Chain Operations Reference (SCOR) pillars</b>, and every journey <b>converges</b> on our 60-persona chessboard and Google Cloud architecture.</p>
     </div>
@@ -216,10 +216,10 @@
       <div class="shared" id="nShared">
         <div class="col-a">
           <div class="grp-h">Agentic workflows &amp; workforce</div>
-          <a class="tile" href="pages/00_executive_story.html#shift">
+          <a class="tile" href="pages/06_one_to_many.html">
             <div class="top"><span class="num">06</span><img src="assets/media/gcp/Agents.svg" alt=""></div>
-            <h4>From one alert to coordinated flow</h4>
-            <p>World Economic Forum (2026): -62% disruption response cycle (11 days &rarr; 4 days).</p>
+            <h4>"One" Agent &rarr; 60 Personas</h4>
+            <p>World Economic Forum (2026): -62% disruption response cycle (11 days &rarr; 4 days) scaled across the estate.</p>
           </a>
           <div class="tile feature">
             <a href="personas/index.html" style="display:flex;flex-direction:column;gap:8px;">
@@ -278,26 +278,32 @@
 
   var host = document.getElementById('tracksHost');
   var depts = window.SC_DATA.departments;
+  var BEATS = [
+    { b: 1, num: '01', name: 'Capital & Margin Reality' },
+    { b: 2, num: '02', name: 'Swiss Cheese Barriers' },
+    { b: 3, num: '03', name: 'Talent & Complexity Gap' },
+    { b: 4, num: '04', name: 'AI Plug & Coexistence' }
+  ];
   depts.forEach(function (d) {
-    var firstItem = (d.subPillars[0] && d.subPillars[0].items[0]) || {};
     var sec = document.createElement('section');
     sec.className = 'track';
     sec.dataset.track = d.id;
     sec.style.setProperty('--tc', d.color);
     sec.style.setProperty('--ti', d.ink);
 
-    var stepsHtml = d.subPillars.map(function (sp, idx) {
-      var n = '0' + (idx + 1);
-      return '<li><a href="pages/pillar.html?dept=' + d.id + '&sub=' + encodeURIComponent(sp.id) + '"><span class="dot">' + n + '</span><span class="nm">' + sp.name + '</span></a></li>';
+    var stepsHtml = BEATS.map(function (st) {
+      return '<li><a href="pages/pillar_story.html?pillar=' + d.id + '&beat=' + st.b + '"><span class="dot">' + st.num + '</span><span class="nm">' + st.name + '</span></a></li>';
     }).join('');
 
-    var demoHtml = '<li class="demo"><a href="pages/pillar.html?dept=' + d.id + '">' +
-      '<span class="dot">0' + (d.subPillars.length + 1) + '</span>' +
-      '<span class="nm">Explore ' + d.subPillars.length + ' Sub-Pillars</span>' +
-      '<span class="badge">&#9654; ' + d.liveCount + '/' + d.agentCount + ' Live</span></a></li>';
+    var demoHtml = '<li class="demo"><a href="pages/demo_stage.html?pillar=' + d.id + '">' +
+      '<span class="dot">05</span>' +
+      '<span class="nm">Live demo &middot; flagship agent</span>' +
+      '<span class="badge">&#9654; Live demo</span></a></li>' +
+      '<li style="border-top:1px dashed var(--s-line);margin-top:4px;padding-top:4px"><a href="pages/pillar.html?dept=' + d.id + '">' +
+      '<span class="dot">&#9733;</span><span class="nm">' + d.subPillars.length + ' Sub-Pillars &amp; ' + d.liveCount + ' Live Agents</span></a></li>';
 
     sec.innerHTML =
-      '<a class="t-photo" href="pages/pillar.html?dept=' + d.id + '">' +
+      '<a class="t-photo" href="pages/pillar_story.html?pillar=' + d.id + '&beat=1">' +
         '<img src="assets/media/photos/' + d.photo + '" alt="' + d.title + '">' +
         '<span class="lbl"><small>Pillar ' + d.num + '</small><strong>' + d.title + '</strong></span><span class="bar"></span>' +
       '</a>' +

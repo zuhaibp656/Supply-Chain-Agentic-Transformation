@@ -108,15 +108,17 @@
   .sub { font-size: 18px; line-height: 1.45; color: var(--text-muted); margin: 0; max-width: 78ch; font-weight: 400; }
 
   .estate { margin-top: 20px; display: flex; flex-wrap: wrap; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); overflow: hidden; box-shadow: var(--shadow-sm); }
-  .est-cell { flex: 1 1 180px; padding: 14px 20px; border-right: 1px solid var(--border); border-top: 3px solid transparent; }
+  .est-cell { flex: 1 1 165px; padding: 14px 18px; border-right: 1px solid var(--border); border-top: 3px solid transparent; }
   .est-cell:last-child { border-right: 0; }
+  .est-cell.lv-total { border-top-color: var(--ink); background: var(--surface-sunk); flex: 1.25 1 200px; }
   .est-cell.lv-prod  { border-top-color: var(--g-blue);   background: rgba(49,134,255,.06); }
   .est-cell.lv-up    { border-top-color: var(--g-green);  background: rgba(0,175,87,.06); }
   .est-cell.lv-integ { border-top-color: var(--g-purple); background: rgba(75,49,227,.06); }
   .est-cell.lv-recov { border-top-color: var(--g-cyan);   background: rgba(18,181,203,.07); }
-  .est-k { font: 600 10.5px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim-ink); margin-bottom: 5px; }
-  .est-v { font-size: 20px; font-weight: 600; color: var(--text); }
+  .est-k { font: 600 10.5px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim-ink); margin-bottom: 5px; }
+  .est-v { font-size: 21px; font-weight: 700; color: var(--text); }
   .est-v.is-money { color: var(--green-ink); }
+  .est-sub { font: 500 11.5px var(--font); color: var(--text-muted); margin-top: 3px; }
   .count-note { font: 500 12px var(--mono); color: var(--dim-ink); margin-top: 10px; }
 
   /* ── controls ── */
@@ -168,8 +170,27 @@
   .pname { display: block; font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .psub { display: block; font-size: 11px; color: var(--dim-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px; }
   .pcode { font: 700 11px var(--mono); color: var(--blue-ink); }
+  .rowval { flex: none; font: 700 11.5px/1 var(--mono); color: var(--green-ink); background: rgba(0,175,87,.10); border: 1px solid rgba(0,175,87,.25); border-radius: 999px; padding: 4px 8px; }
   .plive { flex: none; display: inline-flex; align-items: center; gap: 5px; font: 700 9.5px/1 var(--mono); color: #FFF; background: var(--g-green); border-radius: 999px; padding: 4px 7px; }
   .plive::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #FFF; }
+
+  .prio-why { margin: 28px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 900px) { .prio-why { grid-template-columns: 1fr; } }
+  .pw-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; border-top: 3px solid transparent; box-shadow: var(--shadow-sm); }
+  .pw-card.p1 { border-top-color: var(--g-red); }
+  .pw-card.p2 { border-top-color: var(--g-yellow); }
+  .pw-card.pu { border-top-color: var(--text-dim); }
+  .pw-k { font: 700 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+  .pw-t { font: 700 15px var(--font); margin-bottom: 6px; }
+  .pw-d { font-size: 13px; line-height: 1.55; color: var(--text-muted); margin: 0; }
+
+  .lever-foot { margin: 22px 0 40px; padding: 20px 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+  .lf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 12px; }
+  @media (max-width: 980px) { .lf-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .lf-grid { grid-template-columns: 1fr; } }
+  .lf-item { padding: 12px 14px; border-radius: 10px; background: var(--surface-sunk); border-left: 3px solid var(--lc, var(--g-blue)); }
+  .lf-item b { display: block; font-size: 12.5px; margin-bottom: 4px; }
+  .lf-item span { display: block; font-size: 12px; line-height: 1.48; color: var(--text-muted); }
 
   .cells { display: flex; flex: 1; min-width: 0; }
   .bcell { flex: 1 1 0; min-width: var(--cell-w); height: var(--cell-h); border: 0; padding: 0; margin: 0; background: transparent; cursor: pointer; position: relative; }
@@ -222,7 +243,7 @@
     <span class="mast-spacer"></span>
     <nav class="mast-nav">
       <button class="mast-btn" id="themeToggle" type="button">Dark</button>
-      <a class="mast-btn" href="../pages/00_executive_story.html">&larr; Prev Page</a>
+      <a class="mast-btn" href="../pages/06_one_to_many.html">&larr; Prev Page</a>
       <span class="mast-count">07 / 15</span>
       <a class="mast-btn" href="../pages/09_agent_architecture.html">Next Page &rarr;</a>
       <a class="mast-cta" href="../index.html">All Slides &#8599;</a>
@@ -236,11 +257,12 @@
     <h1>Agentic Transformation Across <span style="background: linear-gradient(90deg, #217BFE 0%, #078EFB 33%, #AC87EB 67%, #EE4D5D 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Supply Chain Roles</span></h1>
     <p class="sub">Mapping 60 Supply Chain personas and 480 operational workflows to show where AI agents eliminate firefighting &mdash; and where humans retain sign-off.</p>
 
-    <div class="estate">
-      <div class="est-cell lv-prod"><div class="est-k">Personas &amp; Workflows</div><div class="est-v" id="estPersonas">60 roles &middot; 480 tiles</div></div>
-      <div class="est-cell lv-up"><div class="est-k">Toil Reclaimed</div><div class="est-v is-money" id="estToil">1,100+ hrs/wk</div></div>
-      <div class="est-cell lv-integ"><div class="est-k">Live Deployment</div><div class="est-v" id="estLive">37 agents live in GE</div></div>
-      <div class="est-cell lv-recov"><div class="est-k">Governance Model</div><div class="est-v">Read &rarr; Simulate &rarr; Approve</div></div>
+    <div class="estate" id="estateStrip">
+      <div class="est-cell lv-total"><div class="est-k">Modeled Annual Value</div><div class="est-v is-money" id="estTotal">$507.5M/yr</div><div class="est-sub" id="estPersonas">60 roles &middot; 821 hrs/wk saved</div></div>
+      <div class="est-cell lv-prod"><div class="est-k">Productivity &amp; Toil</div><div class="est-v" id="estProd">$33.9M</div><div class="est-sub">Expert hours redeployed</div></div>
+      <div class="est-cell lv-up"><div class="est-k">Flow &amp; Capital</div><div class="est-v" id="estFlow">$158.6M</div><div class="est-sub">22% carry cost + OEE + miles</div></div>
+      <div class="est-cell lv-integ"><div class="est-k">Leakage &amp; Risk</div><div class="est-v" id="estShield">$203.7M</div><div class="est-sub">Invoice, promo &amp; Tier-2 shield</div></div>
+      <div class="est-cell lv-recov"><div class="est-k">Revenue &amp; Salvage</div><div class="est-v" id="estRecov">$111.3M</div><div class="est-sub">Stockouts &amp; returns margin</div></div>
     </div>
     <div class="count-note" id="countNote"></div>
   </header>
@@ -248,14 +270,14 @@
   <div class="controls">
     <div class="chips" id="chips"></div>
     <div class="legend" id="legend">
-      <span class="lg-item"><span class="lg-sw prio-first"></span>Priority 1 &middot; High-stakes judgment &amp; risk</span>
-      <span class="lg-item"><span class="lg-sw prio-next"></span>Priority 2 &middot; Synthesis &amp; math friction</span>
-      <span class="lg-item"><span class="lg-sw own-agentic"></span>Continuous AI monitoring</span>
+      <span class="lg-item"><span class="lg-sw prio-first"></span>Priority 1 &middot; Build First (&lt;90d cash/risk)</span>
+      <span class="lg-item"><span class="lg-sw prio-next"></span>Priority 2 &middot; Build Next (flow &amp; math)</span>
+      <span class="lg-item"><span class="lg-sw own-agentic"></span>Priority 3 / Continuous Enabler</span>
       <span class="lg-item"><span class="lg-sw own-system"></span>Incumbent ERP / WMS / TMS ledger</span>
       <span class="lg-item"><span class="lg-sw own-human"></span>Human-only safety &amp; contract gate</span>
     </div>
     <div class="legend" id="legendValue" hidden>
-      <span class="lg-item">Darker blue tiles represent highest weekly toil &amp; margin protection value per workflow.</span>
+      <span class="lg-item">Log-scaled green tiles represent higher annual EBITDA, carrying-cost &amp; salvage recovery per workflow square ($M/yr).</span>
     </div>
   </div>
 
@@ -267,15 +289,36 @@
     </div>
     <aside class="drawer" id="drawer" aria-live="polite">
       <div class="dw-hint">
-        <p><b>Click or hover any square</b> to inspect its Today vs. With-Agent workflow here.</p>
-        <p>Each row is one Supply Chain persona sorted left to right: <b>AI Agent prepares</b> (Priority 1 &rarr; Priority 2 &rarr; Continuous), then <b>Incumbent ERP/WMS/TMS</b> keeps the ledger, then <b>Human-only Sign-Off</b> closes the loop.</p>
+        <p><b>Click or hover any square</b> to inspect its Today vs. With-Agent workflow and dollar attribution here.</p>
+        <p>Each row is one Supply Chain persona sorted left to right: <b>AI Agent prepares</b> (Priority 1 &rarr; Priority 2 &rarr; Enabler), then <b>Incumbent ERP/WMS/TMS</b> keeps the ledger, then <b>Human-only Sign-Off</b> closes the loop.</p>
         <p>Click any persona name on the left to open their full executive dossier.</p>
       </div>
     </aside>
   </div>
+
+  <section class="prio-why" aria-label="Priority rationale">
+    <article class="pw-card p1">
+      <div class="pw-k" style="color:var(--red-ink)">Priority 1 &middot; Build First (18 Agents)</div>
+      <div class="pw-t">Immediate hard cash &amp; risk shield (&lt;90-day payback)</div>
+      <p class="pw-d">Direct invoice/freight/rebate clawbacks (5&ndash;15% billing error recovery), stopping 25&ndash;50% negative-ROI trade spend, Multi-Echelon safety-stock release, Tier-2+ shutdown avoidance, and Return Fraud triage.</p>
+    </article>
+    <article class="pw-card p2">
+      <div class="pw-k" style="color:var(--amber-ink)">Priority 2 &middot; Build Next (36 Agents)</div>
+      <div class="pw-t">Cross-functional flow, slotting &amp; orchestration</div>
+      <p class="pw-d">High-leverage planning &amp; execution choreography across Sales &amp; Operations Planning (S&amp;OP), allergen changeovers, dynamic Fulfillment Center (FC) slotting, Ship-from-Store routing, and carrier consolidation.</p>
+    </article>
+    <article class="pw-card pu">
+      <div class="pw-k" style="color:var(--dim-ink)">Productivity Enablers &amp; Unmarked Gates</div>
+      <div class="pw-t">Zero rip-and-replace &amp; strict Human Sign-Off</div>
+      <p class="pw-d">Soft-blue Enablers (6 agents) unify executive storytelling and Environmental, Social &amp; Governance (ESG) ledgers. Grey-hatched ERP/WMS squares and dashed Human Gate squares stay completely unmarked by AI priority.</p>
+    </article>
+  </section>
+
+  <section class="lever-foot" id="leverFoot"></section>
 </div>
 
 <script src="../data/sc_story_data.js"></script>
+<script src="../data/sc_value_model.js"></script>
 <script>
 (function () {
   var btn = document.getElementById('themeToggle');
@@ -283,14 +326,27 @@
   paintTheme();
   btn.addEventListener('click', function () {
     var d = document.documentElement.classList.toggle('theme-dark');
+    document.documentElement.classList.toggle('theme-light', !d);
     try { localStorage.setItem('deck-theme', d ? 'dark' : 'light'); } catch (e) {}
     paintTheme();
   });
 
   var DATA = window.SC_DATA;
+  var VAL = window.SC_VALUES.computeForPersonas(DATA.personas);
   var deptFilter = new URLSearchParams(location.search).get('dept') || 'all';
   var viewMode = 'priority';
   var pinned = null;
+
+  document.getElementById('leverFoot').innerHTML =
+    '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px">' +
+      '<b style="font-size:14px">4-Lever Supply Chain Value Methodology (Zero Double-Counting)</b>' +
+      '<span style="font:500 11.5px var(--mono);color:var(--dim-ink)">' + window.SC_VALUES.ESTATE_BASELINE.label + '</span>' +
+    '</div>' +
+    '<div class="lf-grid">' +
+      window.SC_VALUES.LEVERS.map(function (lv) {
+        return '<div class="lf-item" style="--lc:' + lv.color + '"><b>' + lv.name + '</b><span>' + lv.def + '</span></div>';
+      }).join('') +
+    '</div>';
 
   var chipsEl = document.getElementById('chips');
   function renderChips() {
@@ -314,18 +370,20 @@
     });
   }
 
-  function heatStyle(score) {
-    if (!score) return '';
-    if (score >= 90) return '--heat:#1D5FD6;--heat-ink:#FFFFFF;';
-    if (score >= 80) return '--heat:#3186FF;--heat-ink:#FFFFFF;';
-    if (score >= 70) return '--heat:#6BA8FF;--heat-ink:#121317;';
-    if (score >= 60) return '--heat:#A6CBFF;--heat-ink:#121317;';
-    return '--heat:#D9E9FF;--heat-ink:#121317;';
+  function heatStyle(valM) {
+    if (!valM || valM <= 0) return '';
+    if (valM >= 4.5) return '--heat:#046E33;--heat-ink:#FFFFFF;';
+    if (valM >= 2.8) return '--heat:#0B9F4D;--heat-ink:#FFFFFF;';
+    if (valM >= 1.6) return '--heat:#4CC87E;--heat-ink:#092E18;';
+    if (valM >= 0.9) return '--heat:#9CE0B6;--heat-ink:#092E18;';
+    if (valM >= 0.4) return '--heat:#D2F1DE;--heat-ink:#121317;';
+    return '--heat:#EFFAF3;--heat-ink:#121317;';
   }
 
   function showDrawer(p, a) {
     var dEl = document.getElementById('drawer');
-    var ownTag = a.own === 'agentic' ? (a.prio === 'first' ? '<span class="tag prio-first">Priority 1 &middot; Agentic</span>' : (a.prio === 'next' ? '<span class="tag prio-next">Priority 2 &middot; Agentic</span>' : '<span class="tag">Continuous AI</span>'))
+    var pv = VAL.byPersonaId[p.id] || { tier: 'next', paybackDays: 90, total: 5.0, prod: 0.5, flow: 1.5, shield: 1.5, recov: 1.5, why: '' };
+    var ownTag = a.own === 'agentic' ? (a.prio === 'first' ? '<span class="tag prio-first">Priority 1 &middot; Build First</span>' : (a.prio === 'next' ? '<span class="tag prio-next">Priority 2 &middot; Build Next</span>' : '<span class="tag">Enabler &middot; Routine AI</span>'))
       : (a.own === 'system' ? '<span class="tag">System of Record</span>' : '<span class="tag">Human Sign-Off Gate</span>');
     var liveTag = a.liveInGE ? '<span class="tag agent">&#9679; Live in Gemini Enterprise</span>' : '';
 
@@ -335,16 +393,27 @@
         '<div class="d-block plug"><div class="d-k">With ' + a.agentName + '</div><div class="d-v">' + a.withAgent + '</div></div>'
       : '<div class="d-block"><div class="d-k">Retained Owner: ' + a.holder + '</div><div class="d-v">' + a.reason + '</div></div>';
 
+    var roleValHtml =
+      '<div style="background:var(--surface-sunk);border:1px solid var(--border);border-radius:10px;padding:10px 12px">' +
+        '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">' +
+          '<span style="font:700 11px var(--mono);color:var(--green-ink)">ROLE IMPACT: $' + pv.total.toFixed(1) + 'M/yr &middot; ' + pv.paybackDays + 'd payback</span>' +
+          '<span style="font:600 11px var(--mono);color:var(--dim-ink)">' + p.toilHoursBefore + 'h&rarr;' + p.toilHoursAfter + 'h/wk</span>' +
+        '</div>' +
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;font:500 11.5px var(--font);color:var(--text-muted)">' +
+          '<span>Productivity: <b>$' + pv.prod.toFixed(1) + 'M</b></span>' +
+          '<span>Flow &amp; Capital: <b>$' + pv.flow.toFixed(1) + 'M</b></span>' +
+          '<span>Leakage &amp; Risk: <b>$' + pv.shield.toFixed(1) + 'M</b></span>' +
+          '<span>Rev &amp; Salvage: <b>$' + pv.recov.toFixed(1) + 'M</b></span>' +
+        '</div>' +
+        (pv.why ? '<div style="margin-top:6px;padding-top:6px;border-top:1px dashed var(--border);font-size:11.5px;line-height:1.45;color:var(--text-muted)"><b>Why this priority:</b> ' + pv.why + '</div>' : '') +
+      '</div>';
+
     dEl.innerHTML =
       '<div class="d-head"><span class="d-code">' + a.code + '</span><div class="d-title"><span class="d-action">' + a.title + '</span><span class="d-who">' + p.name + ' &middot; ' + p.scor + '</span></div></div>' +
       '<div class="d-tags">' + ownTag + liveTag + '<span class="tag">' + a.cadence + '</span></div>' +
-      '<div class="d-body">' + bodyHtml +
-        '<div style="display:flex;justify-content:space-between;font:600 12px var(--mono);color:var(--green-ink);padding-top:8px;border-top:1px solid var(--border)">' +
-          '<span>Role Impact: ' + (p.headlineStat || p.timeSaved) + '</span><span>Toil: ' + p.toilHoursBefore + 'h &rarr; ' + p.toilHoursAfter + 'h/wk</span>' +
-        '</div>' +
-      '</div>' +
+      '<div class="d-body">' + bodyHtml + roleValHtml + '</div>' +
       '<div class="d-foot">' +
-        '<a class="btn-ge" style="background:var(--g-green);border-color:var(--g-green)" href="../pages/agent.html?id=' + encodeURIComponent(ag.id || p.primaryAgentId) + '">&#9654; Video &amp; Agent</a>' +
+        '<a class="btn-ge" style="background:var(--g-green);border-color:var(--g-green)" href="../pages/demo_stage.html?pillar=' + encodeURIComponent(p.deptId) + '&agent=' + encodeURIComponent(ag.id || p.primaryAgentId) + '">&#9654; Live Demo</a>' +
         '<a class="btn-ge" target="_blank" rel="noopener noreferrer" href="' + (ag.geUrl || '#') + '">Run on GE &#8599;</a>' +
         '<a class="mast-btn" href="dossier.html?id=' + encodeURIComponent(p.id) + '">Persona Record &rarr;</a>' +
       '</div>';
@@ -352,30 +421,33 @@
 
   function renderBoard() {
     var rows = DATA.personas.filter(function (p) { return deptFilter === 'all' || p.deptId === deptFilter; });
-    var totalCells = rows.length * 8;
-    var savedSum = rows.reduce(function (s, p) { return s + p.savedHrs; }, 0);
+    var subVal = window.SC_VALUES.computeForPersonas(rows).estateTotals;
     var liveCount = rows.filter(function (p) { return p.liveInGE; }).length;
-    document.getElementById('estPersonas').textContent = rows.length + ' roles · ' + totalCells + ' tiles';
-    document.getElementById('estToil').textContent = savedSum.toLocaleString() + ' hrs/wk saved';
-    document.getElementById('estLive').textContent = liveCount + ' of ' + rows.length + ' live in GE';
-    document.getElementById('countNote').textContent = 'Showing ' + rows.length + ' Supply Chain personas across ' + (deptFilter === 'all' ? 'all 6 ASCM SCOR Pillars' : rows[0].deptTitle);
+    document.getElementById('estTotal').textContent = '$' + subVal.total.toFixed(1) + 'M/yr';
+    document.getElementById('estPersonas').textContent = rows.length + ' roles · ' + subVal.savedHrsWk + ' hrs/wk saved · ' + liveCount + ' live GE';
+    document.getElementById('estProd').textContent = '$' + subVal.prod.toFixed(1) + 'M';
+    document.getElementById('estFlow').textContent = '$' + subVal.flow.toFixed(1) + 'M';
+    document.getElementById('estShield').textContent = '$' + subVal.shield.toFixed(1) + 'M';
+    document.getElementById('estRecov').textContent = '$' + subVal.recov.toFixed(1) + 'M';
+    document.getElementById('countNote').textContent = 'Showing ' + rows.length + ' Supply Chain personas (' + subVal.firstCount + ' Build First, ' + subVal.nextCount + ' Build Next, ' + subVal.routineCount + ' Enablers) across ' + (deptFilter === 'all' ? 'all 6 ASCM SCOR Pillars' : rows[0].deptTitle);
 
     var board = document.getElementById('board');
     board.className = 'board' + (viewMode === 'value' ? ' mode-value' : '');
 
-    var html = '<div class="bhead"><div class="rowlabel"><span>Persona &amp; Role</span></div><div class="colaxis"><span>Agent Prepares</span><span class="flow"></span><span>ERP / WMS</span><span class="flow"></span><span>Human Gate</span></div></div>';
+    var html = '<div class="bhead"><div class="rowlabel"><span>Persona &amp; Role</span><span style="margin-left:auto">$M / yr</span></div><div class="colaxis"><span>Agent Prepares</span><span class="flow"></span><span>ERP / WMS</span><span class="flow"></span><span>Human Gate</span></div></div>';
     rows.forEach(function (p) {
+      var pv = VAL.byPersonaId[p.id] || { total: p.annualValueM || 5.0 };
       var initials = p.name.split(/\s+/).slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase();
       html += '<div class="brow" data-pid="' + p.id + '">';
       html += '<a class="rowlabel" href="dossier.html?id=' + encodeURIComponent(p.id) + '">' +
                 '<span class="pavatar" style="background:' + p.deptColor + '">' + initials + '</span>' +
                 '<span class="pmeta"><span class="pname">' + p.name + '</span><span class="psub"><span class="pcode">' + p.code + '</span> &middot; ' + p.subPillarName + '</span></span>' +
-                (p.liveInGE ? '<span class="plive">LIVE</span>' : '') +
+                '<span class="rowval">$' + pv.total.toFixed(1) + 'M</span>' +
               '</a>';
       html += '<div class="cells">';
       p.actions.forEach(function (a, idx) {
         var cls = 'bcell own-' + a.own + (a.prio ? ' prio-' + a.prio : '');
-        html += '<button type="button" class="' + cls + '" data-pid="' + p.id + '" data-idx="' + idx + '" title="' + a.code + ': ' + a.title + '"><i style="' + (viewMode === 'value' ? heatStyle(a.valueScore) : '') + '">' + a.code + '</i></button>';
+        html += '<button type="button" class="' + cls + '" data-pid="' + p.id + '" data-idx="' + idx + '" title="' + a.code + ': ' + a.title + (a.valueM ? ' ($' + a.valueM.toFixed(2) + 'M/yr)' : '') + '"><i style="' + (viewMode === 'value' ? heatStyle(a.valueM) : '') + '">' + a.code + '</i></button>';
       });
       html += '</div></div>';
     });
