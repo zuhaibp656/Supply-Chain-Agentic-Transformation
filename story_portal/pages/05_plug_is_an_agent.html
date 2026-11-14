@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>05 · The Plug Is an Agent &amp; Coexistence | Agentic Supply Chain Transformation</title>
+<link rel="icon" href="../assets/media/brand/gemini_spark_fullcolor_768.png" type="image/png">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/aurora.css">
+<link rel="stylesheet" href="../assets/story_extra.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700;800&family=Google+Sans+Text:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>
+(function(){var s=localStorage.getItem('deck-theme')||'light';if(s==='dark')document.documentElement.classList.add('theme-dark');})();
+function toggleTheme(){var d=document.documentElement.classList.toggle('theme-dark');localStorage.setItem('deck-theme',d?'dark':'light');paintTheme(!d);}
+function paintTheme(isLight){document.querySelectorAll('.theme-toggle-btn').forEach(function(b){b.innerHTML=isLight?'<span>&#127769;</span><span>Dark Mode</span>':'<span>&#9728;&#65039;</span><span>Light Mode</span>';});}
+document.addEventListener('DOMContentLoaded',function(){paintTheme(!document.documentElement.classList.contains('theme-dark'));});
+</script>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: var(--canvas); color: var(--text); font-family: var(--font-display); }
+  @media (min-width: 1024px) and (min-height: 700px) { body { overflow: hidden; } }
+  .slide-viewport {
+    height: 100vh; box-sizing: border-box; padding: 66px max(28px, 4vw) 74px;
+    display: flex; align-items: center; justify-content: center; background: var(--canvas);
+  }
+  .container { max-width: 1400px; width: 100%; }
+  .kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .kicker-bar { width: 24px; height: 3px; border-radius: 2px; background: var(--gemini-spark); }
+  .headline { font: 800 clamp(26px, 3vw, 42px)/1.12 var(--font-display); letter-spacing: -1px; margin: 0 0 14px; color: var(--text); }
+  .crit-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; margin-bottom: 16px; }
+  @media (max-width: 1020px) { .slide-viewport { height: auto; min-height: 100vh; } .crit-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 540px) { .crit-grid { grid-template-columns: 1fr; } }
+  .criteria-card {
+    background: var(--surface); border: 1px solid var(--border-subtle); border-top: 3px solid var(--cc);
+    border-radius: 12px; padding: 14px 15px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+  }
+  .cc-top { display: flex; justify-content: space-between; font: 800 10.5px var(--font-mono); color: var(--ci); margin-bottom: 6px; }
+  .cc-title { font: 800 18px var(--font-display); color: var(--text); margin-bottom: 6px; }
+  .cc-desc { font: 400 12.5px/1.45 var(--font-body); color: var(--text-muted); margin: 0; }
+
+  .payoff {
+    background: var(--surface); border: 1px solid var(--border-strong); border-radius: 14px;
+    padding: 16px 20px; box-shadow: var(--shadow-md);
+  }
+  .coex-row { display: grid; grid-template-columns: 1fr 34px 1.25fr 34px 1fr; align-items: center; gap: 10px; margin-top: 10px; }
+  @media (max-width: 820px) { .coex-row { grid-template-columns: 1fr; } }
+  .coex-box {
+    background: var(--surface-sunk); border: 1px solid var(--border-strong); border-radius: 10px;
+    padding: 12px 14px; text-align: center;
+  }
+  .coex-box.agent { background: rgba(0,175,87,.08); border: 2px solid var(--g-green); }
+  .coex-box.outcome { background: rgba(49,134,255,.08); border: 1.5px solid var(--g-blue); }
+  .thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+  @media (max-width: 720px) { .thumbs { display: none; } }
+  .thumb {
+    position: relative; height: clamp(68px, 10vh, 92px); border-radius: 10px; overflow: hidden;
+    border: 1px solid var(--border-subtle);
+  }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb span {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 4px 10px;
+    background: rgba(12,16,24,.78); color: #fff; font: 700 10.5px var(--font-mono);
+  }
+</style>
+</head>
+<body>
+<header class="executive-top-nav" style="backdrop-filter:blur(20px);background:color-mix(in srgb,var(--surface) 88%,transparent);border-bottom:1px solid var(--border-subtle);padding:12px max(24px,4vw);position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;">
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud" style="height:28px;width:auto;">
+    <div style="width:1px;height:18px;background:var(--border-strong);"></div>
+    <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--text);letter-spacing:1.4px;text-transform:uppercase;">STAGE 05 // THE PLUG IS AN AGENT</span>
+  </a>
+  <nav style="display:flex;align-items:center;gap:12px;">
+    <button class="theme-toggle-btn" onclick="toggleTheme()" type="button"></button>
+    <a href="04_talent_velocity_squeeze.html" style="font:700 12.5px var(--font-display);color:var(--text-dim);text-decoration:none;padding:5px 11px;border-radius:6px;background:var(--surface-sunk);">&larr; Prev Page</a>
+    <span style="font:700 12.5px var(--font-mono);color:var(--g-blue);">05 / 15</span>
+    <a href="demo_stage.html" style="font:700 12.5px var(--font-display);color:var(--blue-ink);text-decoration:none;padding:5px 12px;border-radius:6px;background:rgba(49,134,255,.11);">Next Page &rarr;</a>
+    <a href="../index.html" style="font:700 12px var(--font-display);color:#000;background:#FFF;padding:5px 13px;border-radius:20px;text-decoration:none;border:1px solid var(--border-subtle);">All Slides &#8599;</a>
+  </nav>
+</header>
+
+<main class="slide-viewport">
+  <div class="container">
+    <div class="kicker">
+      <span class="kicker-bar"></span>
+      <span style="font:800 12px var(--font-display);letter-spacing:1.8px;text-transform:uppercase;color:var(--purple-ink);">ARCHITECTURAL REQUISITES</span>
+      <span style="color:var(--border-strong)">//</span>
+      <span style="font:600 12px var(--font-mono);color:var(--text-dim);">HOW WE SEAL THE SWISS CHEESE HOLES</span>
+    </div>
+    <h1 class="headline"><span class="au-display-grad">AI Agents</span> seal the gaps&mdash;without ripping out SAP, Oracle, or Manhattan.</h1>
+
+    <div class="crit-grid">
+      <div class="criteria-card" style="--cc:#3186FF;--ci:var(--blue-ink);">
+        <div class="cc-top"><span>01 // FOCUS</span><span>01</span></div>
+        <div class="cc-title">Surgical</div>
+        <p class="cc-desc">Targets exact forecast lag, Tier-2 shock, or invoice leakage seams.</p>
+      </div>
+      <div class="criteria-card" style="--cc:#12B5CB;--ci:var(--cyan-ink);">
+        <div class="cc-top"><span>02 // TRIGGER</span><span>02</span></div>
+        <div class="cc-title">Autonomous</div>
+        <p class="cc-desc">Runs 24/7 on POS, GPS &amp; EDI events without human inbox polling.</p>
+      </div>
+      <div class="criteria-card" style="--cc:#00AF57;--ci:var(--green-ink);">
+        <div class="cc-top"><span>03 // CONTEXT</span><span>03</span></div>
+        <div class="cc-title">Intelligent</div>
+        <p class="cc-desc">Correlates weather, contracts, vision scans &amp; inventory in Cortex v7.</p>
+      </div>
+      <div class="criteria-card" style="--cc:#FEC700;--ci:var(--amber-ink);">
+        <div class="cc-top"><span>04 // CONTROL</span><span>04</span></div>
+        <div class="cc-title">Governed</div>
+        <p class="cc-desc">Model Armor + Apigee MCP require 1-click Human Sign-Off before write-back.</p>
+      </div>
+      <div class="criteria-card" style="--cc:#4B31E3;--ci:var(--purple-ink);">
+        <div class="cc-top"><span>05 // MATH</span><span>05</span></div>
+        <div class="cc-title">Deterministic</div>
+        <p class="cc-desc">Exact math runs in OR-Tools &amp; BigQuery ML&mdash;zero hallucinated quantities.</p>
+      </div>
+    </div>
+
+    <div class="payoff">
+      <div style="font:800 11px var(--font-mono);color:var(--g-purple);letter-spacing:1.3px;text-transform:uppercase;">THE COEXISTENCE PARADIGM // ADDITIVE INTELLIGENCE</div>
+      <div class="coex-row">
+        <div class="coex-box">
+          <div style="font:700 10px var(--font-mono);color:var(--text-dim);">SYSTEMS OF RECORD</div>
+          <div style="font:800 17px var(--font-display);margin:3px 0;">SAP / Oracle / Manhattan</div>
+          <div style="font:500 11.5px var(--font-mono);color:var(--text-dim);">Ledgers, POs &amp; Inventory Truth</div>
+        </div>
+        <div style="text-align:center;font:800 24px var(--font-display);color:var(--text-dim)">+</div>
+        <div class="coex-box agent">
+          <div style="font:700 10px var(--font-mono);color:var(--green-ink);">GOOGLE CLOUD &amp; GEMINI ENTERPRISE</div>
+          <div style="font:800 17px var(--font-display);margin:3px 0;">Autonomous Supply Chain Agents</div>
+          <div style="font:500 11.5px var(--font-mono);color:var(--green-ink);">Vertex AI TimesFM &middot; OR-Tools &middot; Cortex v7</div>
+        </div>
+        <div style="text-align:center;font:800 24px var(--font-display);color:var(--text-dim)">=</div>
+        <div class="coex-box outcome">
+          <div style="font:700 10px var(--font-mono);color:var(--blue-ink);">MEASURED ENTERPRISE OUTCOME</div>
+          <div style="font:800 17px var(--font-display);margin:3px 0;">Agentic Supply Chain</div>
+          <div style="font:500 11.5px var(--font-mono);color:var(--blue-ink);">-62% Recovery &middot; $507.5M/yr Pool</div>
+        </div>
+      </div>
+
+      <div class="thumbs">
+        <div class="thumb"><img src="../assets/media/photos/sc_storm_radar.png" alt="Maritime Disruption Radar"><span>TIER-N &amp; MARITIME SENSING</span></div>
+        <div class="thumb"><img src="../assets/media/photos/sc_factory_vision.png" alt="Inline Vision QA"><span>HIGH-SPEED QUALITY VISION</span></div>
+        <div class="thumb"><img src="../assets/media/photos/sc_load_plan.png" alt="3D Load Optimization"><span>OR-TOOLS 3D LIFO PACKING</span></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<aside class="floating-dock" style="display:flex;align-items:center;gap:12px;padding:8px 16px;background:var(--surface);border:1px solid var(--border-strong);border-radius:30px;backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(18,19,23,.14);position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:1000;">
+  <a href="04_talent_velocity_squeeze.html" style="background:var(--surface-sunk);border:1px solid var(--border-subtle);color:var(--text-muted);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;text-decoration:none;">&#9664;</a>
+  <div style="font:700 12.5px var(--font-mono);color:var(--text-muted);white-space:nowrap;">PAGE 05 // THE PLUG IS AN AGENT</div>
+  <a href="demo_stage.html" style="background:var(--g-blue);color:#FFF;padding:6px 15px;border-radius:20px;font:700 13px var(--font-display);text-decoration:none;white-space:nowrap;">06 · Watch Live Demo &#9654;</a>
+</aside>
+</body>
+</html>

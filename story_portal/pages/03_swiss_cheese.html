@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>03 · Swiss Cheese Barriers | Agentic Supply Chain Transformation</title>
+<link rel="icon" href="../assets/media/brand/gemini_spark_fullcolor_768.png" type="image/png">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/aurora.css">
+<link rel="stylesheet" href="../assets/story_extra.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700;800&family=Google+Sans+Text:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>
+(function(){var s=localStorage.getItem('deck-theme')||'light';if(s==='dark')document.documentElement.classList.add('theme-dark');})();
+function toggleTheme(){var d=document.documentElement.classList.toggle('theme-dark');localStorage.setItem('deck-theme',d?'dark':'light');paintTheme(!d);}
+function paintTheme(isLight){document.querySelectorAll('.theme-toggle-btn').forEach(function(b){b.innerHTML=isLight?'<span>&#127769;</span><span>Dark Mode</span>':'<span>&#9728;&#65039;</span><span>Light Mode</span>';});}
+document.addEventListener('DOMContentLoaded',function(){paintTheme(!document.documentElement.classList.contains('theme-dark'));});
+</script>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: var(--canvas); color: var(--text); font-family: var(--font-display); }
+  @media (min-width: 1024px) and (min-height: 700px) { body { overflow: hidden; } }
+  .slide-viewport {
+    height: 100vh; box-sizing: border-box; padding: 66px max(28px, 4vw) 74px;
+    display: flex; align-items: center; justify-content: center; background: var(--canvas);
+  }
+  .container { max-width: 1400px; width: 100%; }
+  .top-bar { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; }
+  .kicker { display: flex; align-items: center; gap: 10px; }
+  .kicker-bar { width: 24px; height: 3px; border-radius: 2px; background: var(--gemini-spark); }
+  .pill-toggle { display: inline-flex; background: var(--surface-sunk); padding: 4px; border-radius: 30px; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm); }
+  .pt-btn { font: 700 12px var(--font-display); padding: 6px 15px; border-radius: 20px; border: 0; background: transparent; color: var(--text-dim); cursor: pointer; transition: all .2s; }
+  .pt-btn.active.bad { background: var(--g-red); color: #fff; }
+  .pt-btn.active.good { background: var(--g-green); color: #fff; }
+  .headline { font: 800 clamp(26px, 2.9vw, 42px)/1.1 var(--font-display); letter-spacing: -1px; margin: 0 0 6px; color: var(--text); }
+  .lead { font: 500 clamp(14px, 1.1vw, 16px)/1.45 var(--font-body); color: var(--text-dim); margin: 0 0 18px; max-width: 82ch; }
+  .cheese-layout { display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 22px; align-items: center; }
+  @media (max-width: 960px) { .slide-viewport { height: auto; min-height: 100vh; } .cheese-layout { grid-template-columns: 1fr; } }
+  .cheese-canvas {
+    position: relative; width: 100%; height: clamp(270px, 47vh, 415px); border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border-subtle); background: var(--surface); box-shadow: var(--shadow-md);
+  }
+  .cheese-canvas img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .4s ease; }
+  .slices { display: grid; gap: 10px; }
+  .slice-card {
+    background: var(--surface); border: 1px solid var(--border-subtle); border-left: 4px solid var(--g-red);
+    border-radius: 10px; padding: 12px 15px; box-shadow: var(--shadow-sm); transition: border-color .25s ease;
+  }
+  .slice-card.is-good { border-left-color: var(--g-green); }
+  .sl-k { font: 700 10.5px var(--font-mono); color: var(--text-dim); letter-spacing: .8px; text-transform: uppercase; margin-bottom: 3px; }
+  .sl-v { font: 600 13.5px/1.38 var(--font-body); color: var(--text); margin: 0; }
+</style>
+</head>
+<body>
+<header class="executive-top-nav" style="backdrop-filter:blur(20px);background:color-mix(in srgb,var(--surface) 88%,transparent);border-bottom:1px solid var(--border-subtle);padding:12px max(24px,4vw);position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;">
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud" style="height:28px;width:auto;">
+    <div style="width:1px;height:18px;background:var(--border-strong);"></div>
+    <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--text);letter-spacing:1.4px;text-transform:uppercase;">STAGE 03 // SWISS CHEESE MODEL</span>
+  </a>
+  <nav style="display:flex;align-items:center;gap:12px;">
+    <button class="theme-toggle-btn" onclick="toggleTheme()" type="button"></button>
+    <a href="02_value_chain_flows.html" style="font:700 12.5px var(--font-display);color:var(--text-dim);text-decoration:none;padding:5px 11px;border-radius:6px;background:var(--surface-sunk);">&larr; Prev Page</a>
+    <span style="font:700 12.5px var(--font-mono);color:var(--g-blue);">03 / 15</span>
+    <a href="04_talent_velocity_squeeze.html" style="font:700 12.5px var(--font-display);color:var(--blue-ink);text-decoration:none;padding:5px 12px;border-radius:6px;background:rgba(49,134,255,.11);">Next Page &rarr;</a>
+    <a href="../index.html" style="font:700 12px var(--font-display);color:#000;background:#FFF;padding:5px 13px;border-radius:20px;text-decoration:none;border:1px solid var(--border-subtle);">All Slides &#8599;</a>
+  </nav>
+</header>
+
+<main class="slide-viewport">
+  <div class="container">
+    <div class="top-bar">
+      <div class="kicker">
+        <span class="kicker-bar"></span>
+        <span style="font:800 12px var(--font-display);letter-spacing:1.8px;text-transform:uppercase;color:var(--text);">JAMES REASON'S SWISS CHEESE MODEL</span>
+        <span style="color:var(--border-strong)">//</span>
+        <span style="font:600 12px var(--font-mono);color:var(--text-dim);">SYSTEMIC LATENT VULNERABILITIES</span>
+      </div>
+      <div class="pill-toggle">
+        <button type="button" id="btnLegacy" class="pt-btn active bad" onclick="setMode('legacy')">&#9888; Baseline: 4 Aligned Gaps</button>
+        <button type="button" id="btnAgent" class="pt-btn" onclick="setMode('agentic')">&#128737; Fortified: Autonomous Agents</button>
+      </div>
+    </div>
+
+    <h1 class="headline">A supply chain failure is <span class="au-display-grad">never a single miss.</span></h1>
+    <p class="lead" id="modeLead">It is the quiet alignment of holes across disconnected Plan, Source, Make, and Deliver silos&mdash;turning a localized port or heatwave event into enterprise margin loss.</p>
+
+    <div class="cheese-layout">
+      <div class="cheese-canvas">
+        <img id="imgBaseDark" class="cheese-img-dark" src="../assets/media/photos/swiss_cheese_clean_baseline.jpg" alt="Baseline Vulnerability Vector">
+        <img id="imgBaseLight" class="cheese-img-light" src="../assets/media/photos/swiss_cheese_clean_baseline_light.jpg" alt="Baseline Vulnerability Vector">
+        <img id="imgFortDark" class="cheese-img-dark" src="../assets/media/photos/swiss_cheese_clean_fortified.jpg" alt="Fortified Agent Plugs" style="opacity:0;pointer-events:none;">
+        <img id="imgFortLight" class="cheese-img-light" src="../assets/media/photos/swiss_cheese_clean_fortified_light.jpg" alt="Fortified Agent Plugs" style="opacity:0;pointer-events:none;">
+      </div>
+
+      <div class="slices" id="slicesHost"></div>
+    </div>
+  </div>
+</main>
+
+<aside class="floating-dock" style="display:flex;align-items:center;gap:12px;padding:8px 16px;background:var(--surface);border:1px solid var(--border-strong);border-radius:30px;backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(18,19,23,.14);position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:1000;">
+  <a href="02_value_chain_flows.html" style="background:var(--surface-sunk);border:1px solid var(--border-subtle);color:var(--text-muted);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;text-decoration:none;">&#9664;</a>
+  <div style="font:700 12.5px var(--font-mono);color:var(--text-muted);white-space:nowrap;">PAGE 03 // SWISS CHEESE BARRIERS</div>
+  <a href="04_talent_velocity_squeeze.html" style="background:var(--g-blue);color:#FFF;padding:6px 15px;border-radius:20px;font:700 13px var(--font-display);text-decoration:none;white-space:nowrap;">04 · Velocity Squeeze &#9654;</a>
+</aside>
+
+<script>
+var SLICES = [
+  { layer: 'SLICE 01 · PLAN & FORECAST', bad: '2-4 week lagged POS exports miss sudden demand spikes and cannibalization.', good: 'Demand Sensing & Promo ROI agents ingest daily POS & WeatherNext 3 continuously.' },
+  { layer: 'SLICE 02 · SOURCE & TIER-N RISK', bad: 'ERP stops at Tier-1; Tier-2 resin/port halts hit production unannounced.', good: 'Disruption Sensing traces Tier-2-4 shipping feeds and stages alternate PO splits.' },
+  { layer: 'SLICE 03 · MAKE & INVENTORY', bad: 'Static allergen schedules & siloed safety stock trap capital in slow SKUs.', good: 'Changeover Optimizer & MEIO Safety Stock balance capacity and working capital.' },
+  { layer: 'SLICE 04 · DELIVER & RETURNS', bad: 'Empty LTL miles, OTIF fines & 5-15% freight billing errors clear AP unchecked.', good: 'FleetFlow, Freight Bill Audit & Return Fraud agents recover cash pre-settlement.' }
+];
+function setMode(m) {
+  var good = (m === 'agentic');
+  document.getElementById('btnLegacy').className = 'pt-btn' + (!good ? ' active bad' : '');
+  document.getElementById('btnAgent').className = 'pt-btn' + (good ? ' active good' : '');
+  ['imgBaseDark','imgBaseLight'].forEach(function(id){ document.getElementById(id).style.opacity = good ? '0' : '1'; });
+  ['imgFortDark','imgFortLight'].forEach(function(id){ document.getElementById(id).style.opacity = good ? '1' : '0'; });
+  document.getElementById('modeLead').textContent = good
+    ? 'Autonomous Gemini Enterprise agents continuously monitor and seal each layer before an anomaly compounds—while humans keep final sign-off.'
+    : 'It is the quiet alignment of holes across disconnected Plan, Source, Make, and Deliver silos—turning a localized port or heatwave event into enterprise margin loss.';
+  document.getElementById('slicesHost').innerHTML = SLICES.map(function(s){
+    return '<div class="slice-card' + (good ? ' is-good' : '') + '">' +
+      '<div class="sl-k">' + s.layer + (good ? ' · SEALED' : ' · VULNERABLE') + '</div>' +
+      '<p class="sl-v">' + (good ? s.good : s.bad) + '</p>' +
+    '</div>';
+  }).join('');
+}
+setMode('legacy');
+</script>
+</body>
+</html>

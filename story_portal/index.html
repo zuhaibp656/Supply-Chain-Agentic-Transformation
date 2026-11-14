@@ -190,42 +190,52 @@
   <div class="flow" id="flow">
     <svg id="lines" aria-hidden="true"></svg>
 
-    <!-- ── 1 · COMMON START ─────────────────────────────────────────────── -->
+    <!-- ── 1 · COMMON EXECUTIVE BRIEFING SPINE ───────────────────────────── -->
     <div class="stage">
-      <div class="sl"><div class="n">STAGE 1</div><h2>Everyone starts here</h2><p>The capital &amp; disruption thesis across every industry.</p></div>
-      <a class="start" id="nStart" href="pages/00_executive_story.html">
-        <span class="num">00</span>
-        <div><h3>Executive Overview</h3><p>Why major disruptions every 3.7 years erase 45% of annual EBITDA (McKinsey), and how 60 specialized agents restore flow.</p></div>
-        <span class="go">Open &rarr;</span>
-      </a>
+      <div class="sl"><div class="n">STAGE 1</div><h2>25-Min Briefing Spine</h2><p>One continuous Supply Chain story from Capital Reality to Live Demo.</p></div>
+      <div style="display:grid;gap:12px;">
+        <a class="start" id="nStart" href="pages/00_executive_story.html">
+          <span class="num">00</span>
+          <div><h3>Executive Overview &middot; Start Briefing</h3><p>Do more with the Supply Chain you already own &mdash; walk straight through Slides 00 &rarr; 07.</p></div>
+          <span class="go">Start &rarr;</span>
+        </a>
+        <div class="pills" style="display:flex;flex-wrap:wrap;gap:8px;">
+          <a class="pill" href="pages/01_capital_reality.html"><b>01</b> &middot; Capital Reality</a>
+          <a class="pill" href="pages/02_value_chain_flows.html"><b>02</b> &middot; Six Value Flows</a>
+          <a class="pill" href="pages/03_swiss_cheese.html"><b>03</b> &middot; Swiss Cheese Barriers</a>
+          <a class="pill" href="pages/04_talent_velocity_squeeze.html"><b>04</b> &middot; Velocity Squeeze</a>
+          <a class="pill" href="pages/05_plug_is_an_agent.html"><b>05</b> &middot; The Plug Is an Agent</a>
+          <a class="pill" href="pages/demo_stage.html" style="border-color:var(--g-green);color:var(--green-ink);font-weight:700;">&#9654; 06 &middot; Live Demo Stage</a>
+        </div>
+      </div>
     </div>
 
-    <div class="gap"><span class="sp"></span><span class="note"><b>The journey forks</b> &middot; all 6 ASCM SCOR Pillars in one operating view</span></div>
+    <div class="gap"><span class="sp"></span><span class="note"><b>Drill into any Pillar</b> &middot; explore Sub-Pillars, 60 Personas &amp; deployed Gemini Enterprise Agents</span></div>
 
-    <!-- ── 2 · ALL 6 PILLAR TRACKS ──────────────────────────────────────── -->
+    <!-- ── 2 · ALL 6 PILLAR CATALOGUES ───────────────────────────────────── -->
     <div class="stage">
-      <div class="sl"><div class="n">STAGE 2</div><h2>All 6 SCOR Pillars</h2><p>Every sub-pillar mapped to a persona, an agent, and a measurable ROI.</p></div>
+      <div class="sl"><div class="n">STAGE 2</div><h2>6 SCOR Pillars</h2><p>Click any Sub-Pillar to inspect its Personas &amp; deployed Agents.</p></div>
       <div class="tracks" id="tracksHost"></div>
     </div>
 
-    <div class="gap"><span class="sp"></span><span class="note"><b>All 6 pillars converge</b> &middot; from one workflow to a 60-role agentic workforce</span></div>
+    <div class="gap"><span class="sp"></span><span class="note"><b>All flows converge</b> &middot; from one flagship demo to the 60-persona workforce &amp; architecture</span></div>
 
     <!-- ── 3 · CONVERGED CLOSE ──────────────────────────────────────────── -->
     <div class="stage">
-      <div class="sl"><div class="n">STAGE 3</div><h2>Everyone converges here</h2><p>The 60-role chessboard, then how we build, run, govern and prove it.</p></div>
+      <div class="sl"><div class="n">STAGE 3</div><h2>Everyone converges here</h2><p>The 60-role Value Map, then Google Cloud Architecture, Governance &amp; Proof.</p></div>
       <div class="shared" id="nShared">
         <div class="col-a">
           <div class="grp-h">Agentic workflows &amp; workforce</div>
           <a class="tile" href="pages/06_one_to_many.html">
-            <div class="top"><span class="num">06</span><img src="assets/media/gcp/Agents.svg" alt=""></div>
+            <div class="top"><span class="num">07</span><img src="assets/media/gcp/Agents.svg" alt=""></div>
             <h4>"One" Agent &rarr; 60 Personas</h4>
-            <p>World Economic Forum (2026): -62% disruption response cycle (11 days &rarr; 4 days) scaled across the estate.</p>
+            <p>World Economic Forum (2026): -62% disruption response scaled across $507.5M/yr estate impact.</p>
           </a>
           <div class="tile feature">
             <a href="personas/index.html" style="display:flex;flex-direction:column;gap:8px;">
-              <div class="top"><span class="num">07</span><span class="badge soft">Interactive</span></div>
-              <h4>Persona chessboard: 60 roles, mapped</h4>
-              <p>480 workflow tiles &mdash; click any square to compare Today vs. With Agent and see what stays human.</p>
+              <div class="top"><span class="num">08</span><span class="badge soft">Interactive</span></div>
+              <h4>Persona Map &amp; Value Board: 60 roles</h4>
+              <p>480 workflow tiles quantified across 4 financial levers &amp; Priority 1&ndash;3 build tiers.</p>
             </a>
             <div class="pills">
               <a class="pill" href="personas/index.html?dept=demand_sop">Planning &amp; Strategy (12)</a>
@@ -278,12 +288,6 @@
 
   var host = document.getElementById('tracksHost');
   var depts = window.SC_DATA.departments;
-  var BEATS = [
-    { b: 1, num: '01', name: 'Capital & Margin Reality' },
-    { b: 2, num: '02', name: 'Swiss Cheese Barriers' },
-    { b: 3, num: '03', name: 'Talent & Complexity Gap' },
-    { b: 4, num: '04', name: 'AI Plug & Coexistence' }
-  ];
   depts.forEach(function (d) {
     var sec = document.createElement('section');
     sec.className = 'track';
@@ -291,19 +295,18 @@
     sec.style.setProperty('--tc', d.color);
     sec.style.setProperty('--ti', d.ink);
 
-    var stepsHtml = BEATS.map(function (st) {
-      return '<li><a href="pages/pillar_story.html?pillar=' + d.id + '&beat=' + st.b + '"><span class="dot">' + st.num + '</span><span class="nm">' + st.name + '</span></a></li>';
+    var stepsHtml = d.subPillars.map(function (sp, idx) {
+      var n = '0' + (idx + 1);
+      return '<li><a href="pages/pillar.html?dept=' + d.id + '&sub=' + encodeURIComponent(sp.id) + '"><span class="dot">' + n + '</span><span class="nm">' + sp.name + '</span></a></li>';
     }).join('');
 
-    var demoHtml = '<li class="demo"><a href="pages/demo_stage.html?pillar=' + d.id + '">' +
-      '<span class="dot">05</span>' +
-      '<span class="nm">Live demo &middot; flagship agent</span>' +
-      '<span class="badge">&#9654; Live demo</span></a></li>' +
-      '<li style="border-top:1px dashed var(--s-line);margin-top:4px;padding-top:4px"><a href="pages/pillar.html?dept=' + d.id + '">' +
-      '<span class="dot">&#9733;</span><span class="nm">' + d.subPillars.length + ' Sub-Pillars &amp; ' + d.liveCount + ' Live Agents</span></a></li>';
+    var demoHtml = '<li class="demo"><a href="pages/pillar.html?dept=' + d.id + '">' +
+      '<span class="dot">&#9733;</span>' +
+      '<span class="nm">' + d.personaCount + ' Personas &middot; ' + d.agentCount + ' Agents</span>' +
+      '<span class="badge">&#9654; ' + d.liveCount + ' Live</span></a></li>';
 
     sec.innerHTML =
-      '<a class="t-photo" href="pages/pillar_story.html?pillar=' + d.id + '&beat=1">' +
+      '<a class="t-photo" href="pages/pillar.html?dept=' + d.id + '">' +
         '<img src="assets/media/photos/' + d.photo + '" alt="' + d.title + '">' +
         '<span class="lbl"><small>Pillar ' + d.num + '</small><strong>' + d.title + '</strong></span><span class="bar"></span>' +
       '</a>' +

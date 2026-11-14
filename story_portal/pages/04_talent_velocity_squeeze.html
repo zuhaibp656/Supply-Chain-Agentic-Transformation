@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>04 · Velocity vs. Bandwidth Squeeze | Agentic Supply Chain Transformation</title>
+<link rel="icon" href="../assets/media/brand/gemini_spark_fullcolor_768.png" type="image/png">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/aurora.css">
+<link rel="stylesheet" href="../assets/story_extra.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700;800&family=Google+Sans+Text:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>
+(function(){var s=localStorage.getItem('deck-theme')||'light';if(s==='dark')document.documentElement.classList.add('theme-dark');})();
+function toggleTheme(){var d=document.documentElement.classList.toggle('theme-dark');localStorage.setItem('deck-theme',d?'dark':'light');paintTheme(!d);}
+function paintTheme(isLight){document.querySelectorAll('.theme-toggle-btn').forEach(function(b){b.innerHTML=isLight?'<span>&#127769;</span><span>Dark Mode</span>':'<span>&#9728;&#65039;</span><span>Light Mode</span>';});}
+document.addEventListener('DOMContentLoaded',function(){paintTheme(!document.documentElement.classList.contains('theme-dark'));});
+</script>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: var(--canvas); color: var(--text); font-family: var(--font-display); }
+  @media (min-width: 1024px) and (min-height: 700px) { body { overflow: hidden; } }
+  .slide-viewport {
+    height: 100vh; box-sizing: border-box; padding: 66px max(28px, 4vw) 74px;
+    display: flex; align-items: center; justify-content: center; background: var(--canvas);
+  }
+  .container { max-width: 1400px; width: 100%; }
+  .kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .kicker-bar { width: 24px; height: 3px; border-radius: 2px; background: var(--grad-security, var(--gemini-spark)); }
+  .headline { font: 800 clamp(26px, 2.9vw, 42px)/1.12 var(--font-display); letter-spacing: -1px; margin: 0 0 8px; color: var(--text); }
+  .lead { font: 400 clamp(14px, 1.1vw, 16px)/1.45 var(--font-body); color: var(--text-dim); margin: 0 0 20px; max-width: 78ch; }
+  .squeeze-grid { display: grid; grid-template-columns: 1.45fr 0.75fr; gap: 20px; align-items: stretch; }
+  @media (max-width: 960px) { .slide-viewport { height: auto; min-height: 100vh; } .squeeze-grid { grid-template-columns: 1fr; } }
+  .chart-card {
+    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 14px;
+    padding: 18px 20px; box-shadow: var(--shadow-md); display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .side-col { display: flex; flex-direction: column; gap: 12px; }
+  .photo-mini {
+    position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--border-subtle);
+    height: clamp(130px, 20vh, 175px); box-shadow: var(--shadow-sm);
+  }
+  .photo-mini img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-mini-cap {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 12px;
+    background: linear-gradient(180deg, transparent 0%, rgba(12,16,24,.88) 100%);
+    font: 700 11.5px var(--font-mono); color: #fff;
+  }
+  .kpi-stack { display: grid; gap: 10px; flex: 1; }
+  .k-card {
+    background: var(--surface); border: 1px solid var(--border-subtle); border-left: 3px solid var(--kc, var(--g-blue));
+    border-radius: 12px; padding: 12px 15px; box-shadow: var(--shadow-sm);
+  }
+  .k-val { font: 800 22px/1.1 var(--font-display); color: var(--ki, var(--blue-ink)); margin-bottom: 3px; }
+  .k-lbl { font: 700 13px var(--font-display); color: var(--text); margin-bottom: 2px; }
+  .k-sub { font: 400 12px/1.38 var(--font-body); color: var(--text-dim); margin: 0; }
+</style>
+</head>
+<body>
+<header class="executive-top-nav" style="backdrop-filter:blur(20px);background:color-mix(in srgb,var(--surface) 88%,transparent);border-bottom:1px solid var(--border-subtle);padding:12px max(24px,4vw);position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;">
+  <a href="../index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+    <img src="../assets/media/wip/image25.png" alt="Google Cloud" style="height:28px;width:auto;">
+    <div style="width:1px;height:18px;background:var(--border-strong);"></div>
+    <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--text);letter-spacing:1.4px;text-transform:uppercase;">STAGE 04 // VELOCITY VS. BANDWIDTH SQUEEZE</span>
+  </a>
+  <nav style="display:flex;align-items:center;gap:12px;">
+    <button class="theme-toggle-btn" onclick="toggleTheme()" type="button"></button>
+    <a href="03_swiss_cheese.html" style="font:700 12.5px var(--font-display);color:var(--text-dim);text-decoration:none;padding:5px 11px;border-radius:6px;background:var(--surface-sunk);">&larr; Prev Page</a>
+    <span style="font:700 12.5px var(--font-mono);color:var(--g-blue);">04 / 15</span>
+    <a href="05_plug_is_an_agent.html" style="font:700 12.5px var(--font-display);color:var(--blue-ink);text-decoration:none;padding:5px 12px;border-radius:6px;background:rgba(49,134,255,.11);">Next Page &rarr;</a>
+    <a href="../index.html" style="font:700 12px var(--font-display);color:#000;background:#FFF;padding:5px 13px;border-radius:20px;text-decoration:none;border:1px solid var(--border-subtle);">All Slides &#8599;</a>
+  </nav>
+</header>
+
+<main class="slide-viewport">
+  <div class="container">
+    <div class="kicker">
+      <span class="kicker-bar"></span>
+      <span style="font:800 12px var(--font-display);letter-spacing:1.8px;text-transform:uppercase;color:var(--cyan-ink);">THE EXECUTION SQUEEZE</span>
+      <span style="color:var(--border-strong)">//</span>
+      <span style="font:600 12px var(--font-mono);color:var(--text-dim);">WHY MANUAL TRIAGE CANNOT KEEP PACE</span>
+    </div>
+    <h1 class="headline"><span class="au-display-grad">Complexity compounds</span> faster than planners &amp; dispatchers can reconcile.</h1>
+    <p class="lead">SKU proliferation, tighter On-Time In-Full (OTIF) retail fines, and sub-tier volatility keep rising&mdash;while senior planners still lose most of their week stitching spreadsheets across disconnected Enterprise Resource Planning (ERP) tabs.</p>
+
+    <div class="squeeze-grid">
+      <div class="chart-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+          <div style="font:700 13px var(--font-mono);color:var(--text);text-transform:uppercase;letter-spacing:.6px;">SIGNAL COMPLEXITY VS. MANUAL CAPACITY (INDEX 2018 = 100)</div>
+          <div style="display:flex;gap:14px;font:700 11.5px var(--font-mono);">
+            <span style="color:var(--g-blue)">&#9679; SKU / Channel / Risk Velocity</span>
+            <span style="color:var(--g-red)">&#9679; Manual Reconciliation Bandwidth</span>
+          </div>
+        </div>
+        <svg viewBox="0 0 820 295" style="width:100%;height:clamp(220px,36vh,310px);display:block;">
+          <defs>
+            <linearGradient id="sqFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3186FF" stop-opacity=".22"/>
+              <stop offset="100%" stop-color="#FC413D" stop-opacity=".14"/>
+            </linearGradient>
+          </defs>
+          <line x1="56" y1="245" x2="788" y2="245" stroke="var(--border-strong)" stroke-width="1"/>
+          <line x1="56" y1="186" x2="788" y2="186" stroke="var(--border-subtle)" stroke-dasharray="4 4"/>
+          <line x1="56" y1="128" x2="788" y2="128" stroke="var(--border-subtle)" stroke-dasharray="4 4"/>
+          <line x1="56" y1="70" x2="788" y2="70" stroke="var(--border-subtle)" stroke-dasharray="4 4"/>
+          <text x="46" y="249" text-anchor="end" fill="var(--text-dim)" font-size="11" font-family="JetBrains Mono">20</text>
+          <text x="46" y="190" text-anchor="end" fill="var(--text-dim)" font-size="11" font-family="JetBrains Mono">45</text>
+          <text x="46" y="132" text-anchor="end" fill="var(--text-dim)" font-size="11" font-family="JetBrains Mono">70</text>
+          <text x="46" y="74" text-anchor="end" fill="var(--text-dim)" font-size="11" font-family="JetBrains Mono">100</text>
+
+          <line x1="544" y1="24" x2="544" y2="245" stroke="#00AF57" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="552" y="38" fill="var(--green-ink)" font-size="11.5" font-weight="700" font-family="JetBrains Mono">TODAY &middot; GROWING EXPOSURE GAP</text>
+
+          <polygon points="56,214 178,186 300,152 422,120 544,92 666,74 788,58 788,182 666,166 544,148 422,130 300,112 178,90 56,70" fill="url(#sqFill)"/>
+          <polyline points="56,214 178,186 300,152 422,120 544,92 666,74 788,58" fill="none" stroke="#3186FF" stroke-width="3.5" stroke-linecap="round"/>
+          <polyline points="56,70 178,90 300,112 422,130 544,148 666,166 788,182" fill="none" stroke="#FC413D" stroke-width="3.5" stroke-dasharray="7 5" stroke-linecap="round"/>
+
+          <circle cx="56" cy="214" r="4.5" fill="#3186FF"/><circle cx="178" cy="186" r="4.5" fill="#3186FF"/><circle cx="300" cy="152" r="4.5" fill="#3186FF"/>
+          <circle cx="422" cy="120" r="4.5" fill="#3186FF"/><circle cx="544" cy="92" r="5.5" fill="#3186FF"/><circle cx="666" cy="74" r="4.5" fill="#3186FF"/><circle cx="788" cy="58" r="4.5" fill="#3186FF"/>
+          <circle cx="56" cy="70" r="4.5" fill="#FC413D"/><circle cx="178" cy="90" r="4.5" fill="#FC413D"/><circle cx="300" cy="112" r="4.5" fill="#FC413D"/>
+          <circle cx="422" cy="130" r="4.5" fill="#FC413D"/><circle cx="544" cy="148" r="5.5" fill="#FC413D"/><circle cx="666" cy="166" r="4.5" fill="#FC413D"/><circle cx="788" cy="182" r="4.5" fill="#FC413D"/>
+
+          <text x="56" y="269" text-anchor="middle" fill="var(--text-muted)" font-size="11.5" font-family="JetBrains Mono">2018</text>
+          <text x="178" y="269" text-anchor="middle" fill="var(--text-muted)" font-size="11.5" font-family="JetBrains Mono">2020</text>
+          <text x="300" y="269" text-anchor="middle" fill="var(--text-muted)" font-size="11.5" font-family="JetBrains Mono">2022</text>
+          <text x="422" y="269" text-anchor="middle" fill="var(--text-muted)" font-size="11.5" font-family="JetBrains Mono">2024</text>
+          <text x="544" y="269" text-anchor="middle" fill="var(--text)" font-weight="700" font-size="12" font-family="JetBrains Mono">2026</text>
+          <text x="666" y="269" text-anchor="middle" fill="var(--text-muted)" font-size="11.5" font-family="JetBrains Mono">2028</text>
+          <text x="788" y="269" text-anchor="middle" fill="var(--text-muted)" font-size="11.5" font-family="JetBrains Mono">2030</text>
+        </svg>
+      </div>
+
+      <div class="side-col">
+        <div class="photo-mini">
+          <img src="../assets/media/photos/sc_planning_warroom.jpg" alt="Supply Chain Control Tower Team">
+          <div class="photo-mini-cap">HUMAN JUDGMENT REMAINS ESSENTIAL</div>
+        </div>
+        <div class="kpi-stack">
+          <div class="k-card" style="--kc:#FC413D;--ki:var(--red-ink);">
+            <div class="k-val">18&ndash;38 hrs / wk</div>
+            <div class="k-lbl">Lost to Manual Swivel-Chair Work</div>
+            <p class="k-sub">Exporting CSVs, chasing EDI 855/856 delays &amp; rebuilding S&amp;OP decks.</p>
+          </div>
+          <div class="k-card" style="--kc:#3186FF;--ki:var(--blue-ink);">
+            <div class="k-val">4 &rarr; 11 Days</div>
+            <div class="k-lbl">Disruption Response Lag (WEF)</div>
+            <p class="k-sub">Autonomous coordination cuts crisis cycle time by 62%.</p>
+          </div>
+          <div class="k-card" style="--kc:#00AF57;--ki:var(--green-ink);">
+            <div class="k-val">821 hrs / wk</div>
+            <div class="k-lbl">Expert Capacity Reclaimed</div>
+            <p class="k-sub">Planners &amp; buyers shift from data janitors to exception owners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<aside class="floating-dock" style="display:flex;align-items:center;gap:12px;padding:8px 16px;background:var(--surface);border:1px solid var(--border-strong);border-radius:30px;backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(18,19,23,.14);position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:1000;">
+  <a href="03_swiss_cheese.html" style="background:var(--surface-sunk);border:1px solid var(--border-subtle);color:var(--text-muted);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;text-decoration:none;">&#9664;</a>
+  <div style="font:700 12.5px var(--font-mono);color:var(--text-muted);white-space:nowrap;">PAGE 04 // VELOCITY SQUEEZE</div>
+  <a href="05_plug_is_an_agent.html" style="background:var(--g-blue);color:#FFF;padding:6px 15px;border-radius:20px;font:700 13px var(--font-display);text-decoration:none;white-space:nowrap;">05 · The Plug Is an Agent &#9654;</a>
+</aside>
+</body>
+</html>
