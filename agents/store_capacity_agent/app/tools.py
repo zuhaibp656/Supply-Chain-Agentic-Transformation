@@ -92,6 +92,25 @@ def _read_json(table_filename: str) -> List[Dict[str, Any]]:
     if best_path is not None and best_score >= 1:
         return _copy_mod.deepcopy(json.loads(best_path.read_text(encoding="utf-8")))
     return []
+
+def _smart_col_filter(rows_in: List[Dict[str, Any]], col: str, val: Any) -> List[Dict[str, Any]]:
+    """Matches exact keys first, then falls back cleanly to case-insensitive substring or token matching."""
+    target = str(val).strip().lower()
+    if not target:
+        return rows_in
+    exact = [r for r in rows_in if str(r.get(col, "")).strip().lower() == target]
+    if exact:
+        return exact
+    sub = [r for r in rows_in if target in str(r.get(col, "")).lower()]
+    if sub:
+        return sub
+    toks = [t for t in target.replace("-", " ").split() if len(t) >= 3]
+    if toks:
+        tok_hits = [r for r in rows_in if any(t in str(r.get(col, "")).lower() for t in toks)]
+        if tok_hits:
+            return tok_hits
+    return []
+
 # --- END CONTAINER-SAFE DYNAMIC FIXTURE RESOLVERS ---
 
 
@@ -224,11 +243,11 @@ def query_store_backroom_capacities(store_id: str = '', customer_id: str = '', s
     """Query store backroom ambient/cooler max pallet bays, current occupancy, and scheduled inbound pallets."""
     rows = _read_json("store_backroom_bay_capacities.json")
     if store_id:
-        rows = [r for r in rows if str(r.get('store_id', '')).lower() == str(store_id).lower()]
+        rows = _smart_col_filter(rows, 'store_id', store_id)
     if customer_id:
-        rows = [r for r in rows if str(r.get('customer_id', '')).lower() == str(customer_id).lower()]
+        rows = _smart_col_filter(rows, 'customer_id', customer_id)
     if storage_zone:
-        rows = [r for r in rows if str(r.get('storage_zone', '')).lower() == str(storage_zone).lower()]
+        rows = _smart_col_filter(rows, 'storage_zone', storage_zone)
     return {
         "status": "SUCCESS",
         "source_system": 'retail_backroom_iot_twins',
@@ -241,11 +260,11 @@ def query_live_store_pos_and_osa(store_id: str = '', sku_id: str = '', abc_tier:
     """Query live store shelf Days-of-Supply (DoS), daily POS velocity, and On-Shelf Availability (OSA %)."""
     rows = _read_json("live_store_pos_and_onhand_stock.json")
     if store_id:
-        rows = [r for r in rows if str(r.get('store_id', '')).lower() == str(store_id).lower()]
+        rows = _smart_col_filter(rows, 'store_id', store_id)
     if sku_id:
-        rows = [r for r in rows if str(r.get('sku_id', '')).lower() == str(sku_id).lower()]
+        rows = _smart_col_filter(rows, 'sku_id', sku_id)
     if abc_tier:
-        rows = [r for r in rows if str(r.get('abc_tier', '')).lower() == str(abc_tier).lower()]
+        rows = _smart_col_filter(rows, 'abc_tier', abc_tier)
     return {
         "status": "SUCCESS",
         "source_system": 'pos_perpetual_inventory',
@@ -258,11 +277,11 @@ def query_scheduled_dc_drops(drop_id: str = '', store_id: str = '', origin_dc_id
     """Query unthrottled DC replenishment pallets split by priority A-tier vs. promo push B/C-tier."""
     rows = _read_json("scheduled_dc_replenishment_drops.json")
     if drop_id:
-        rows = [r for r in rows if str(r.get('drop_id', '')).lower() == str(drop_id).lower()]
+        rows = _smart_col_filter(rows, 'drop_id', drop_id)
     if store_id:
-        rows = [r for r in rows if str(r.get('store_id', '')).lower() == str(store_id).lower()]
+        rows = _smart_col_filter(rows, 'store_id', store_id)
     if origin_dc_id:
-        rows = [r for r in rows if str(r.get('origin_dc_id', '')).lower() == str(origin_dc_id).lower()]
+        rows = _smart_col_filter(rows, 'origin_dc_id', origin_dc_id)
     return {
         "status": "SUCCESS",
         "source_system": 'drp_replenishment_push',
@@ -275,7 +294,7 @@ def query_throttled_store_releases(store_id: str = '') -> Dict[str, Any]:
     """Query backroom overflow bays vs. max bay capacity, throttled pallet releases, and post-throttle OSA %."""
     rows = _read_json("throttled_store_delivery_releases.json")
     if store_id:
-        rows = [r for r in rows if str(r.get('store_id', '')).lower() == str(store_id).lower()]
+        rows = _smart_col_filter(rows, 'store_id', store_id)
     return {
         "status": "SUCCESS",
         "source_system": 'throttled_release_ledger',
@@ -957,7 +976,7 @@ def should_emit_html_cockpit() -> bool:
     q = (_TURN_USER_QUERY or "").lower()
     if not q:
         return False
-    if _re_smart.search(r"\b(html|cockpit|interactive|dashboard|web[\s-]app|simulator|simulate|what[\s-]if)\b", q):
+    if _re_smart.search(r"\b(html|cockpit|interactive|dashboard|web[\s-]app|simulator|simulate|what[\s-]if|report|briefing|scorecard|waterfall|executive\s+summary|forecast\s+review)\b", q):
         return True
     if _AGENT_ARCHETYPE == "simulator" and _re_smart.search(r"\b(scenario\s+(view|studio|explorer|model|comparison)|sensitivity\s+analysis)\b", q):
         return True
@@ -1165,6 +1184,69 @@ def finalize_turn_gcs_state(timeout: float = 12.0) -> None:
     _TURN_CANVAS_ACTION = ""
 
 
+
+def simulate_what_if_scenario(scenario_adjustment_pct: int = 120, focus_filter: str = "") -> Dict[str, Any]:
+    """Run a deterministic What-If stress simulation on this agent's enterprise table and refresh the A2UI chart + HTML cockpit."""
+    global _LAST_CHART_SPEC, _TURN_DATA_ACTIVE, _TURN_HTML_EXPLICIT
+    _TURN_DATA_ACTIVE = True
+    _TURN_HTML_EXPLICIT = True
+    tables = _discover_table_files()
+    raw_rows: List[Dict[str, Any]] = []
+    chosen_table = "enterprise_records"
+    if tables:
+        # Prefer largest non-master JSON table
+        best_f = max(tables, key=lambda p: p.stat().st_size if p.is_file() else 0)
+        chosen_table = best_f.stem
+        raw_rows = _read_json(best_f.name)
+    if focus_filter and raw_rows:
+        flt = focus_filter.strip().lower()
+        sub = [r for r in raw_rows if flt in json.dumps(r).lower()]
+        if sub:
+            raw_rows = sub
+    if -50 <= scenario_adjustment_pct <= 50 and scenario_adjustment_pct != 0:
+        factor = round(1.0 + (scenario_adjustment_pct / 100.0), 4)
+        delta_pct = float(scenario_adjustment_pct)
+    else:
+        factor = round(max(0.25, scenario_adjustment_pct / 100.0), 4)
+        delta_pct = round((factor - 1.0) * 100.0, 1)
+
+    sim_rows: List[Dict[str, Any]] = []
+    base_total = 0.0
+    sim_total = 0.0
+    for r in raw_rows[:25]:
+        rc = dict(r)
+        picked = False
+        for k, v in list(rc.items()):
+            kl = k.lower()
+            if isinstance(v, (int, float)) and not isinstance(v, bool) and not any(s in kl for s in ("id", "year", "code", "zip")):
+                bv = float(v)
+                sv = round(bv * factor, 2)
+                if not picked:
+                    base_total += bv
+                    sim_total += sv
+                    rc["baseline_reference_val"] = round(bv, 2)
+                    rc["simulated_scenario_val"] = sv
+                    picked = True
+                rc[k] = sv
+        sim_rows.append(rc)
+
+    if sim_rows:
+        _record_canvas_rows(chosen_table, sim_rows)
+        _LAST_CHART_SPEC = _ff_build_smart_2panel_vegalite(sim_rows, agent_title=f"{_AGENT_HUMAN_TITLE} (Scenario {delta_pct:+.1f}%)")
+    return {
+        "status": "SUCCESS",
+        "source_table": chosen_table,
+        "scenario_delta_pct": delta_pct,
+        "adjustment_factor": factor,
+        "focus_filter": focus_filter or "FULL_PORTFOLIO",
+        "baseline_total": round(base_total, 2),
+        "simulated_total": round(sim_total, 2),
+        "net_variance": round(sim_total - base_total, 2),
+        "rows_simulated": len(sim_rows),
+        "rows": sim_rows[:10],
+    }
+
+
 def _wrap_for_live_capture(_fn_obj: Any, _fn_name: str) -> Any:
     import functools as _ft
     if getattr(_fn_obj, "__ff_wrapped__", False):
@@ -1197,7 +1279,7 @@ for _gname, _gobj in list(globals().items()):
     if (
         callable(_gobj)
         and not isinstance(_gobj, type)
-        and _gname.startswith(("query_", "fetch_", "audit_", "analyze_", "run_", "render_", "inspect_", "publish_", "export_"))
+        and _gname.startswith(("query_", "fetch_", "audit_", "analyze_", "run_", "render_", "inspect_", "publish_", "export_", "simulate_"))
         and not _gname.startswith("_")
     ):
         globals()[_gname] = _wrap_for_live_capture(_gobj, _gname)
@@ -1235,6 +1317,6 @@ ALL_TOOLS = [
     publish_store_capacity_interactive_cockpit_to_gcs,
     action_throttle_dc_store_wave_release,
     action_rebalance_store_delivery_window,
-
+    simulate_what_if_scenario,
 ]
 # --- END DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---

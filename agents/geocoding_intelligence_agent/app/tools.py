@@ -90,6 +90,25 @@ def _read_json(table_filename: str) -> List[Dict[str, Any]]:
     if best_path is not None and best_score >= 1:
         return _copy_mod.deepcopy(json.loads(best_path.read_text(encoding="utf-8")))
     return []
+
+def _smart_col_filter(rows_in: List[Dict[str, Any]], col: str, val: Any) -> List[Dict[str, Any]]:
+    """Matches exact keys first, then falls back cleanly to case-insensitive substring or token matching."""
+    target = str(val).strip().lower()
+    if not target:
+        return rows_in
+    exact = [r for r in rows_in if str(r.get(col, "")).strip().lower() == target]
+    if exact:
+        return exact
+    sub = [r for r in rows_in if target in str(r.get(col, "")).lower()]
+    if sub:
+        return sub
+    toks = [t for t in target.replace("-", " ").split() if len(t) >= 3]
+    if toks:
+        tok_hits = [r for r in rows_in if any(t in str(r.get(col, "")).lower() for t in toks)]
+        if tok_hits:
+            return tok_hits
+    return []
+
 # --- END CONTAINER-SAFE DYNAMIC FIXTURE RESOLVERS ---
 
 
@@ -222,9 +241,9 @@ def query_commercial_rooftop_addresses(stop_id: str = '', customer_id: str = '')
     """Query commercial stop postal rooftop lat/lon, truck clearance rules, and 90-day failed delivery attempts."""
     rows = _read_json("commercial_stop_rooftop_addresses.json")
     if stop_id:
-        rows = [r for r in rows if str(r.get('stop_id', '')).lower() == str(stop_id).lower()]
+        rows = _smart_col_filter(rows, 'stop_id', stop_id)
     if customer_id:
-        rows = [r for r in rows if str(r.get('customer_id', '')).lower() == str(customer_id).lower()]
+        rows = _smart_col_filter(rows, 'customer_id', customer_id)
     return {
         "status": "SUCCESS",
         "source_system": 'oms_address_master',
@@ -237,7 +256,7 @@ def query_driver_gps_dwell_clusters(stop_id: str = '') -> Dict[str, Any]:
     """Query DBSCAN-clustered actual ePOD scan coordinates, rooftop-to-dock meter offset, and driver search dwell minutes."""
     rows = _read_json("driver_gps_dwell_and_entry_logs.json")
     if stop_id:
-        rows = [r for r in rows if str(r.get('stop_id', '')).lower() == str(stop_id).lower()]
+        rows = _smart_col_filter(rows, 'stop_id', stop_id)
     return {
         "status": "SUCCESS",
         "source_system": 'telematics_driver_breadcrumbs',
@@ -250,9 +269,9 @@ def query_verified_dock_geofences(stop_id: str = '', geofence_id: str = '') -> D
     """Query verified truck entry street, gate/elevator instructions, and dock polygon radius."""
     rows = _read_json("verified_dock_pin_geofences.json")
     if stop_id:
-        rows = [r for r in rows if str(r.get('stop_id', '')).lower() == str(stop_id).lower()]
+        rows = _smart_col_filter(rows, 'stop_id', stop_id)
     if geofence_id:
-        rows = [r for r in rows if str(r.get('geofence_id', '')).lower() == str(geofence_id).lower()]
+        rows = _smart_col_filter(rows, 'geofence_id', geofence_id)
     return {
         "status": "SUCCESS",
         "source_system": 'spatial_dock_pin_registry',
@@ -265,7 +284,7 @@ def query_fadr_dwell_improvements(stop_id: str = '') -> Dict[str, Any]:
     """Query legacy vs. pin-corrected stop dwell minutes, FADR %, and annual redelivery savings ($)."""
     rows = _read_json("first_attempt_delivery_improvements.json")
     if stop_id:
-        rows = [r for r in rows if str(r.get('stop_id', '')).lower() == str(stop_id).lower()]
+        rows = _smart_col_filter(rows, 'stop_id', stop_id)
     return {
         "status": "SUCCESS",
         "source_system": 'last_mile_fadr_scorecard',
@@ -1000,7 +1019,7 @@ def should_emit_html_cockpit() -> bool:
     q = (_TURN_USER_QUERY or "").lower()
     if not q:
         return False
-    if _re_smart.search(r"\b(html|cockpit|interactive|dashboard|web[\s-]app|simulator|simulate|what[\s-]if)\b", q):
+    if _re_smart.search(r"\b(html|cockpit|interactive|dashboard|web[\s-]app|simulator|simulate|what[\s-]if|report|briefing|scorecard|waterfall|executive\s+summary|forecast\s+review)\b", q):
         return True
     if _AGENT_ARCHETYPE == "simulator" and _re_smart.search(r"\b(scenario\s+(view|studio|explorer|model|comparison)|sensitivity\s+analysis)\b", q):
         return True
@@ -1208,6 +1227,69 @@ def finalize_turn_gcs_state(timeout: float = 12.0) -> None:
     _TURN_CANVAS_ACTION = ""
 
 
+
+def simulate_what_if_scenario(scenario_adjustment_pct: int = 120, focus_filter: str = "") -> Dict[str, Any]:
+    """Run a deterministic What-If stress simulation on this agent's enterprise table and refresh the A2UI chart + HTML cockpit."""
+    global _LAST_CHART_SPEC, _TURN_DATA_ACTIVE, _TURN_HTML_EXPLICIT
+    _TURN_DATA_ACTIVE = True
+    _TURN_HTML_EXPLICIT = True
+    tables = _discover_table_files()
+    raw_rows: List[Dict[str, Any]] = []
+    chosen_table = "enterprise_records"
+    if tables:
+        # Prefer largest non-master JSON table
+        best_f = max(tables, key=lambda p: p.stat().st_size if p.is_file() else 0)
+        chosen_table = best_f.stem
+        raw_rows = _read_json(best_f.name)
+    if focus_filter and raw_rows:
+        flt = focus_filter.strip().lower()
+        sub = [r for r in raw_rows if flt in json.dumps(r).lower()]
+        if sub:
+            raw_rows = sub
+    if -50 <= scenario_adjustment_pct <= 50 and scenario_adjustment_pct != 0:
+        factor = round(1.0 + (scenario_adjustment_pct / 100.0), 4)
+        delta_pct = float(scenario_adjustment_pct)
+    else:
+        factor = round(max(0.25, scenario_adjustment_pct / 100.0), 4)
+        delta_pct = round((factor - 1.0) * 100.0, 1)
+
+    sim_rows: List[Dict[str, Any]] = []
+    base_total = 0.0
+    sim_total = 0.0
+    for r in raw_rows[:25]:
+        rc = dict(r)
+        picked = False
+        for k, v in list(rc.items()):
+            kl = k.lower()
+            if isinstance(v, (int, float)) and not isinstance(v, bool) and not any(s in kl for s in ("id", "year", "code", "zip")):
+                bv = float(v)
+                sv = round(bv * factor, 2)
+                if not picked:
+                    base_total += bv
+                    sim_total += sv
+                    rc["baseline_reference_val"] = round(bv, 2)
+                    rc["simulated_scenario_val"] = sv
+                    picked = True
+                rc[k] = sv
+        sim_rows.append(rc)
+
+    if sim_rows:
+        _record_canvas_rows(chosen_table, sim_rows)
+        _LAST_CHART_SPEC = _ff_build_smart_2panel_vegalite(sim_rows, agent_title=f"{_AGENT_HUMAN_TITLE} (Scenario {delta_pct:+.1f}%)")
+    return {
+        "status": "SUCCESS",
+        "source_table": chosen_table,
+        "scenario_delta_pct": delta_pct,
+        "adjustment_factor": factor,
+        "focus_filter": focus_filter or "FULL_PORTFOLIO",
+        "baseline_total": round(base_total, 2),
+        "simulated_total": round(sim_total, 2),
+        "net_variance": round(sim_total - base_total, 2),
+        "rows_simulated": len(sim_rows),
+        "rows": sim_rows[:10],
+    }
+
+
 def _wrap_for_live_capture(_fn_obj: Any, _fn_name: str) -> Any:
     import functools as _ft
     if getattr(_fn_obj, "__ff_wrapped__", False):
@@ -1240,7 +1322,7 @@ for _gname, _gobj in list(globals().items()):
     if (
         callable(_gobj)
         and not isinstance(_gobj, type)
-        and _gname.startswith(("query_", "fetch_", "audit_", "analyze_", "run_", "render_", "inspect_", "publish_", "export_"))
+        and _gname.startswith(("query_", "fetch_", "audit_", "analyze_", "run_", "render_", "inspect_", "publish_", "export_", "simulate_"))
         and not _gname.startswith("_")
     ):
         globals()[_gname] = _wrap_for_live_capture(_gobj, _gname)
@@ -1283,6 +1365,6 @@ ALL_TOOLS = [
     action_publish_verified_dock_pin_to_tms,
     action_attach_stop_equipment_restriction,
     commit_rooftop_pin_and_time_window_to_salesforce,
-
+    simulate_what_if_scenario,
 ]
 # --- END DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---

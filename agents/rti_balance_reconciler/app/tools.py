@@ -90,6 +90,25 @@ def _read_json(table_filename: str) -> List[Dict[str, Any]]:
     if best_path is not None and best_score >= 1:
         return _copy_mod.deepcopy(json.loads(best_path.read_text(encoding="utf-8")))
     return []
+
+def _smart_col_filter(rows_in: List[Dict[str, Any]], col: str, val: Any) -> List[Dict[str, Any]]:
+    """Matches exact keys first, then falls back cleanly to case-insensitive substring or token matching."""
+    target = str(val).strip().lower()
+    if not target:
+        return rows_in
+    exact = [r for r in rows_in if str(r.get(col, "")).strip().lower() == target]
+    if exact:
+        return exact
+    sub = [r for r in rows_in if target in str(r.get(col, "")).lower()]
+    if sub:
+        return sub
+    toks = [t for t in target.replace("-", " ").split() if len(t) >= 3]
+    if toks:
+        tok_hits = [r for r in rows_in if any(t in str(r.get(col, "")).lower() for t in toks)]
+        if tok_hits:
+            return tok_hits
+    return []
+
 # --- END CONTAINER-SAFE DYNAMIC FIXTURE RESOLVERS ---
 
 
@@ -222,11 +241,11 @@ def query_rti_dispatch_return_scans(ledger_id: str = '', asset_type: str = '', c
     """Query 90-day RFID/EPCIS outbound vs. returned RTI quantities and average dwell days."""
     rows = _read_json("rti_pool_dispatch_and_return_scans.json")
     if ledger_id:
-        rows = [r for r in rows if str(r.get('ledger_id', '')).lower() == str(ledger_id).lower()]
+        rows = _smart_col_filter(rows, 'ledger_id', ledger_id)
     if asset_type:
-        rows = [r for r in rows if str(r.get('asset_type', '')).lower() == str(asset_type).lower()]
+        rows = _smart_col_filter(rows, 'asset_type', asset_type)
     if custodian_id:
-        rows = [r for r in rows if str(r.get('custodian_id', '')).lower() == str(custodian_id).lower()]
+        rows = _smart_col_filter(rows, 'custodian_id', custodian_id)
     return {
         "status": "SUCCESS",
         "source_system": 'rfid_ble_rti_portal',
@@ -239,9 +258,9 @@ def query_retailer_rti_custody_balances(custodian_id: str = '', asset_type: str 
     """Query net unreturned RTI custody balances, contractual grace days, and overdue units."""
     rows = _read_json("retailer_distributor_rti_balances.json")
     if custodian_id:
-        rows = [r for r in rows if str(r.get('custodian_id', '')).lower() == str(custodian_id).lower()]
+        rows = _smart_col_filter(rows, 'custodian_id', custodian_id)
     if asset_type:
-        rows = [r for r in rows if str(r.get('asset_type', '')).lower() == str(asset_type).lower()]
+        rows = _smart_col_filter(rows, 'asset_type', asset_type)
     return {
         "status": "SUCCESS",
         "source_system": 'partner_rti_custody_ledger',
@@ -254,7 +273,7 @@ def query_rti_demurrage_and_lost_tariffs(asset_type: str = '') -> Dict[str, Any]
     """Query daily rental/demurrage rates ($), lost-asset replacement penalties ($), and units per 53ft backhaul."""
     rows = _read_json("chep_peco_rental_and_lost_fee_tariffs.json")
     if asset_type:
-        rows = [r for r in rows if str(r.get('asset_type', '')).lower() == str(asset_type).lower()]
+        rows = _smart_col_filter(rows, 'asset_type', asset_type)
     return {
         "status": "SUCCESS",
         "source_system": 'chep_ifco_tariff_contracts',
@@ -267,11 +286,11 @@ def query_rti_reclamation_sweep_orders(sweep_id: str = '', custodian_id: str = '
     """Query lost-asset penalty exposure ($) vs. empty backhaul sweep cost ($) and reclamation plan."""
     rows = _read_json("rti_reclamation_and_sweep_orders.json")
     if sweep_id:
-        rows = [r for r in rows if str(r.get('sweep_id', '')).lower() == str(sweep_id).lower()]
+        rows = _smart_col_filter(rows, 'sweep_id', sweep_id)
     if custodian_id:
-        rows = [r for r in rows if str(r.get('custodian_id', '')).lower() == str(custodian_id).lower()]
+        rows = _smart_col_filter(rows, 'custodian_id', custodian_id)
     if reclamation_action:
-        rows = [r for r in rows if str(r.get('reclamation_action', '')).lower() == str(reclamation_action).lower()]
+        rows = _smart_col_filter(rows, 'reclamation_action', reclamation_action)
     return {
         "status": "SUCCESS",
         "source_system": 'tms_backhaul_sweep_planner',
@@ -995,7 +1014,7 @@ def should_emit_html_cockpit() -> bool:
     q = (_TURN_USER_QUERY or "").lower()
     if not q:
         return False
-    if _re_smart.search(r"\b(html|cockpit|interactive|dashboard|web[\s-]app|simulator|simulate|what[\s-]if)\b", q):
+    if _re_smart.search(r"\b(html|cockpit|interactive|dashboard|web[\s-]app|simulator|simulate|what[\s-]if|report|briefing|scorecard|waterfall|executive\s+summary|forecast\s+review)\b", q):
         return True
     if _AGENT_ARCHETYPE == "simulator" and _re_smart.search(r"\b(scenario\s+(view|studio|explorer|model|comparison)|sensitivity\s+analysis)\b", q):
         return True
@@ -1203,6 +1222,69 @@ def finalize_turn_gcs_state(timeout: float = 12.0) -> None:
     _TURN_CANVAS_ACTION = ""
 
 
+
+def simulate_what_if_scenario(scenario_adjustment_pct: int = 120, focus_filter: str = "") -> Dict[str, Any]:
+    """Run a deterministic What-If stress simulation on this agent's enterprise table and refresh the A2UI chart + HTML cockpit."""
+    global _LAST_CHART_SPEC, _TURN_DATA_ACTIVE, _TURN_HTML_EXPLICIT
+    _TURN_DATA_ACTIVE = True
+    _TURN_HTML_EXPLICIT = True
+    tables = _discover_table_files()
+    raw_rows: List[Dict[str, Any]] = []
+    chosen_table = "enterprise_records"
+    if tables:
+        # Prefer largest non-master JSON table
+        best_f = max(tables, key=lambda p: p.stat().st_size if p.is_file() else 0)
+        chosen_table = best_f.stem
+        raw_rows = _read_json(best_f.name)
+    if focus_filter and raw_rows:
+        flt = focus_filter.strip().lower()
+        sub = [r for r in raw_rows if flt in json.dumps(r).lower()]
+        if sub:
+            raw_rows = sub
+    if -50 <= scenario_adjustment_pct <= 50 and scenario_adjustment_pct != 0:
+        factor = round(1.0 + (scenario_adjustment_pct / 100.0), 4)
+        delta_pct = float(scenario_adjustment_pct)
+    else:
+        factor = round(max(0.25, scenario_adjustment_pct / 100.0), 4)
+        delta_pct = round((factor - 1.0) * 100.0, 1)
+
+    sim_rows: List[Dict[str, Any]] = []
+    base_total = 0.0
+    sim_total = 0.0
+    for r in raw_rows[:25]:
+        rc = dict(r)
+        picked = False
+        for k, v in list(rc.items()):
+            kl = k.lower()
+            if isinstance(v, (int, float)) and not isinstance(v, bool) and not any(s in kl for s in ("id", "year", "code", "zip")):
+                bv = float(v)
+                sv = round(bv * factor, 2)
+                if not picked:
+                    base_total += bv
+                    sim_total += sv
+                    rc["baseline_reference_val"] = round(bv, 2)
+                    rc["simulated_scenario_val"] = sv
+                    picked = True
+                rc[k] = sv
+        sim_rows.append(rc)
+
+    if sim_rows:
+        _record_canvas_rows(chosen_table, sim_rows)
+        _LAST_CHART_SPEC = _ff_build_smart_2panel_vegalite(sim_rows, agent_title=f"{_AGENT_HUMAN_TITLE} (Scenario {delta_pct:+.1f}%)")
+    return {
+        "status": "SUCCESS",
+        "source_table": chosen_table,
+        "scenario_delta_pct": delta_pct,
+        "adjustment_factor": factor,
+        "focus_filter": focus_filter or "FULL_PORTFOLIO",
+        "baseline_total": round(base_total, 2),
+        "simulated_total": round(sim_total, 2),
+        "net_variance": round(sim_total - base_total, 2),
+        "rows_simulated": len(sim_rows),
+        "rows": sim_rows[:10],
+    }
+
+
 def _wrap_for_live_capture(_fn_obj: Any, _fn_name: str) -> Any:
     import functools as _ft
     if getattr(_fn_obj, "__ff_wrapped__", False):
@@ -1235,7 +1317,7 @@ for _gname, _gobj in list(globals().items()):
     if (
         callable(_gobj)
         and not isinstance(_gobj, type)
-        and _gname.startswith(("query_", "fetch_", "audit_", "analyze_", "run_", "render_", "inspect_", "publish_", "export_"))
+        and _gname.startswith(("query_", "fetch_", "audit_", "analyze_", "run_", "render_", "inspect_", "publish_", "export_", "simulate_"))
         and not _gname.startswith("_")
     ):
         globals()[_gname] = _wrap_for_live_capture(_gobj, _gname)
@@ -1278,6 +1360,6 @@ ALL_TOOLS = [
     action_book_tms_empty_rti_backhaul_sweep,
     action_issue_unreturned_rti_deposit_debit,
     commit_unreturned_pallet_chargeback_to_sap_billing,
-
+    simulate_what_if_scenario,
 ]
 # --- END DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---

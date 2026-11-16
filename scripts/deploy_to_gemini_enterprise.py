@@ -312,7 +312,12 @@ def _build_playbook_starter_prompts(agent_id: str, website_name: str, sub_pillar
         sub_pillar=sub_pillar,
         persona_name=persona_name,
     )
-    return [hp["q1"], hp["q2"], hp["q3"]]
+    return [
+        hp["q1"],
+        hp["q2"],
+        hp["q3"],
+        f"Run a what-if scenario simulation for a 20% volume or disruption shift in {website_name} and show the before-and-after impact report.",
+    ]
 
 
 def _expand_domain_abbreviations(text: str) -> str:
@@ -345,6 +350,22 @@ def _expand_domain_abbreviations(text: str) -> str:
     for old, new in subs:
         if old in res and new not in res:
             res = res.replace(old, new)
+    word_subs = [
+        ("WAPE", "Weighted Absolute Percentage Error (WAPE)"),
+        ("POS", "Point-of-Sale (POS)"),
+        ("LTLs", "Less-Than-Truckload (LTL) shipments"),
+        ("LTL", "Less-Than-Truckload (LTL)"),
+        ("FTL", "Full Truckload (FTL)"),
+        ("OEE", "Overall Equipment Effectiveness (OEE)"),
+        ("BOPIS", "Buy Online, Pick Up In Store (BOPIS)"),
+        ("CBAM", "Carbon Border Adjustment Mechanism (CBAM)"),
+        ("OTIF", "On-Time In-Full (OTIF)"),
+        ("RMA", "Return Merchandise Authorization (RMA)"),
+        ("RTI", "Returnable Transport Item (RTI)"),
+    ]
+    for abbr, full in word_subs:
+        if f"({abbr})" not in res and re.search(rf"\b{abbr}\b", res):
+            res = re.sub(rf"\b{abbr}\b", full, res, count=1)
     return res
 
 
@@ -436,14 +457,16 @@ def sync_gcloud_db_to_argolis_adc(project: str) -> None:
     adc_existing = GCLOUD_DIR / "argolis_admin_adc.json"
     if adc_existing.exists():
         try:
-            import google.oauth2.credentials
-            from google.auth.transport.requests import Request
-            c_chk = google.oauth2.credentials.Credentials.from_authorized_user_file(
-                str(adc_existing), scopes=["https://www.googleapis.com/auth/cloud-platform"]
-            )
-            c_chk.refresh(Request())
-            if c_chk.token:
-                return
+            existing_data = json.loads(adc_existing.read_text(encoding="utf-8"))
+            if "zuhaibp.altostrat.com" in str(existing_data.get("account", "")) and not str(existing_data.get("client_id", "")).startswith("681255809395"):
+                import google.oauth2.credentials
+                from google.auth.transport.requests import Request
+                c_chk = google.oauth2.credentials.Credentials.from_authorized_user_file(
+                    str(adc_existing), scopes=["https://www.googleapis.com/auth/cloud-platform"]
+                )
+                c_chk.refresh(Request())
+                if c_chk.token:
+                    return
         except Exception:
             pass
     db_path = GCLOUD_DIR / "credentials.db"

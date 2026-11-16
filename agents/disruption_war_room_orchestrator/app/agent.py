@@ -1,4 +1,4 @@
-"""Disruption War Room Orchestrator — High-Code Google ADK Agent.
+"""Disruption War Room Orchestrator — Google ADK Multi-Agent Orchestrator.
 
 Operating as the Universal Core Crisis Orchestrator across multi-tier supplier
 networks, meteorological hazard zones, and maritime transit corridors.
@@ -71,6 +71,8 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 3. INTELLIGENT HTML COCKPIT & A2UI VISUAL SELECTION (CRITICAL):
    - **VegaChart (`render_*_a2ui_chart_and_canvas`)**: Use for multi-node risk rankings, temperature excursion curves, or OEE loss Pareto visuals; skip charts on single-lot health checks or safety refusals.
    - **Interactive HTML Cockpit (`publish_*_interactive_cockpit_to_gcs`)**: Reserve HTML cockpits strictly for portfolio-wide risk war-room simulations or explicit requests for an interactive dashboard/HTML explorer—never on quick alerts or guardrail blocks.
+4. MULTI-AGENT SCENARIO SIMULATION & SAFE ACTION GOVERNANCE:
+   - For multi-variable what-if stress tests, consult `simulate_what_if_scenario` or delegate to your `disruption_war_room_orchestrator_deep_analyst` specialist sub-agent.
 4. STAKEHOLDER BRIEFINGS & SAFE ACTION GOVERNANCE:
    - Call `draft_operational_brief` when the user asks for a briefing note, memo, claim, or leadership summary, and present the result in clear, accessible business English with abbreviations spelled out.
    - Never invoke `action_*` write-back tools on read-only questions.
@@ -79,7 +81,7 @@ HUMAN-FRIENDLY PLAIN-ENGLISH & AUTOMATIC TOOL-ROUTING PROTOCOL:
 
 VISUAL A2UI v0.9 DUAL-SURFACE & ACTUAL DATA-SOURCE TOOL MANDATE (CRITICAL):
 - CORTEX DATA FOUNDATION: Harmonized via **Google Cloud Cortex Framework (v7)** (`query_cortex_disruption_war_room_orchestrator_data_products` -> `bq://zuhaibp-ai.cortex_supply_chain_dataproducts.cortex_dp_incident_war_rooms`), standardizing raw ERP/WMS Change Data Capture (CDC) tables, currency scaling, and K9 external signals via Dataform & Dataplex Knowledge Catalog.
-- BUILD TIER: **Hybrid** · Connected Data-Source Tools: `inspect_weathernext_disruption_war_room_data_sources, query_sap_s4hana_master_data_backbone, query_servicenow_warroom_incident_war_rooms, query_google_news_news_disruptions, query_weather_alerts, query_maritime_ais_vessels, query_resilinc_supplier_facilities, query_news_disruptions`.
+- Connected Data-Source Tools: `inspect_weathernext_disruption_war_room_data_sources, query_sap_s4hana_master_data_backbone, query_servicenow_warroom_incident_war_rooms, query_google_news_news_disruptions, query_weather_alerts, query_maritime_ais_vessels, query_resilinc_supplier_facilities, query_news_disruptions`.
 - ARCHETYPE & SMART UI RULE (SENTINEL): Intelligently choose ONLY the output depth and UI elements warranted by the user's request. Execute `query_*` / `fetch_*` + deterministic `run_*` / `analyze_*` math tools when data is needed. Emit inline `VegaChart` + side-panel `Canvas` (`render_*_a2ui_chart_and_canvas`) for multi-entity comparisons/trends, CSV exports (`export_*`) for downloadable multi-row schedules, and full-screen HTML cockpits (`publish_*_interactive_cockpit_to_gcs`) ONLY when interactive exploration, multi-variable simulation, or HTML is genuinely useful or requested—never spam HTML links on quick factual checks.
 - NEVER invent numbers, SKUs, POs, or invoice IDs, and NEVER paste raw HTML (`<!DOCTYPE html>`), Vega-Lite JSON, or `snake_case` internal filenames in user-facing prose.
 """
@@ -265,6 +267,7 @@ try:
     from google.adk.agents.callback_context import CallbackContext
     from google.adk.apps import App
     from google.adk.models import Gemini
+    from google.adk.tools.agent_tool import AgentTool
     from google.adk.models.llm_request import LlmRequest
     from google.adk.models.llm_response import LlmResponse
     from google.genai import Client, types
@@ -400,13 +403,12 @@ try:
 
             if missing_bullets:
                 nl = chr(10)
-                footer_block = (
+                hdr_line = (
                     f"{nl}{nl}### 🌐 Interactive Visual Cockpit & Data Exports{nl}{nl}"
                     if html_url
                     else f"{nl}{nl}### 📥 Verified Data Export{nl}{nl}"
-                    + nl.join(missing_bullets)
-                    + nl
                 )
+                footer_block = hdr_line + nl.join(missing_bullets) + nl
                 if idx >= 0:
                     cleaned[idx] = types.Part(text=existing_txt.rstrip() + footer_block)
                 else:
@@ -460,6 +462,31 @@ try:
 
 
     
+    _base_agent_tools = list(_AVAILABLE_TOOLS) if "_AVAILABLE_TOOLS" in globals() else list(tools.ALL_TOOLS)
+    _read_only_sub_tools = [
+        fn for fn in _base_agent_tools
+        if callable(fn) and not getattr(fn, "__name__", "").startswith(("action_", "commit_", "publish_", "export_", "generate_"))
+    ][:8]
+
+    _deep_analyst_agent = Agent(
+        name="disruption_war_room_orchestrator_deep_analyst",
+        description="Specialist Data & Scenario Simulation sub-agent — queries multi-table metrics and runs sensitivity analyses.",
+        model=GlobalGemini(
+            model="gemini-3.8-flash",
+            retry_options=types.HttpRetryOptions(attempts=3),
+        ),
+        generate_content_config=types.GenerateContentConfig(
+            max_output_tokens=8192,
+            temperature=0.0,
+            thinking_config=types.ThinkingConfig(thinking_level="LOW"),
+        ),
+        instruction=(
+            "You are the specialist analytical & scenario sub-agent for disruption_war_room_orchestrator. "
+            "Query verified tables and execute `simulate_what_if_scenario` to return concise quantitative findings."
+        ),
+        tools=_read_only_sub_tools,
+    )
+
     root_agent = Agent(
         name="disruption_war_room_orchestrator",
         description="[Category: 01 · Planning & Strategy — S&OP / IBP] Digital War-Room Agent (Supply Chain VP / COO): Evaluates co-packer shifts and allocation trade-offs during supply outages. Outcome: Rapid OTIF impact scenario brief.",
@@ -473,7 +500,7 @@ try:
             thinking_config=types.ThinkingConfig(thinking_level="LOW"),
         ),
         instruction=_INSTRUCTION,
-        tools=_AVAILABLE_TOOLS,
+        tools=list(_AVAILABLE_TOOLS) + [AgentTool(agent=_deep_analyst_agent)],
         before_model_callback=_sanitize_llm_request,
         after_model_callback=_ensure_interactive_links_callback,
         after_agent_callback=_emit_a2ui_surface,

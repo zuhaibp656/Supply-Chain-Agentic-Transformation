@@ -92,6 +92,25 @@ def _read_json(table_filename: str) -> List[Dict[str, Any]]:
     if best_path is not None and best_score >= 1:
         return _copy_mod.deepcopy(json.loads(best_path.read_text(encoding="utf-8")))
     return []
+
+def _smart_col_filter(rows_in: List[Dict[str, Any]], col: str, val: Any) -> List[Dict[str, Any]]:
+    """Matches exact keys first, then falls back cleanly to case-insensitive substring or token matching."""
+    target = str(val).strip().lower()
+    if not target:
+        return rows_in
+    exact = [r for r in rows_in if str(r.get(col, "")).strip().lower() == target]
+    if exact:
+        return exact
+    sub = [r for r in rows_in if target in str(r.get(col, "")).lower()]
+    if sub:
+        return sub
+    toks = [t for t in target.replace("-", " ").split() if len(t) >= 3]
+    if toks:
+        tok_hits = [r for r in rows_in if any(t in str(r.get(col, "")).lower() for t in toks)]
+        if tok_hits:
+            return tok_hits
+    return []
+
 # --- END CONTAINER-SAFE DYNAMIC FIXTURE RESOLVERS ---
 
 
@@ -224,11 +243,11 @@ def query_mes_ebhr_ccps(batch_id: str = '', plant_id: str = '', ccp_status: str 
     """Query MES eBHR pasteurization/sterile CCP temperatures, hold times, and 21 CFR Part 11 e-signature status."""
     rows = _read_json("mes_ebhr_critical_control_points.json")
     if batch_id:
-        rows = [r for r in rows if str(r.get('batch_id', '')).lower() == str(batch_id).lower()]
+        rows = _smart_col_filter(rows, 'batch_id', batch_id)
     if plant_id:
-        rows = [r for r in rows if str(r.get('plant_id', '')).lower() == str(plant_id).lower()]
+        rows = _smart_col_filter(rows, 'plant_id', plant_id)
     if ccp_status:
-        rows = [r for r in rows if str(r.get('ccp_status', '')).lower() == str(ccp_status).lower()]
+        rows = _smart_col_filter(rows, 'ccp_status', ccp_status)
     return {
         "status": "SUCCESS",
         "source_system": 'mes_ebhr_ccp',
@@ -241,9 +260,9 @@ def query_lims_coa_assays(batch_id: str = '', coa_assay_status: str = '') -> Dic
     """Query LIMS pH, bioburden CFU/mL, Brix %, and sterility COA assay results."""
     rows = _read_json("lims_coa_micro_and_chem_assays.json")
     if batch_id:
-        rows = [r for r in rows if str(r.get('batch_id', '')).lower() == str(batch_id).lower()]
+        rows = _smart_col_filter(rows, 'batch_id', batch_id)
     if coa_assay_status:
-        rows = [r for r in rows if str(r.get('coa_assay_status', '')).lower() == str(coa_assay_status).lower()]
+        rows = _smart_col_filter(rows, 'coa_assay_status', coa_assay_status)
     return {
         "status": "SUCCESS",
         "source_system": 'lims_micro_coa',
@@ -256,9 +275,9 @@ def query_batch_deviation_capas(batch_id: str = '', severity: str = '') -> Dict[
     """Query QMS batch deviations, root causes, CAPA requirements, and lot value at risk."""
     rows = _read_json("batch_deviation_capa_records.json")
     if batch_id:
-        rows = [r for r in rows if str(r.get('batch_id', '')).lower() == str(batch_id).lower()]
+        rows = _smart_col_filter(rows, 'batch_id', batch_id)
     if severity:
-        rows = [r for r in rows if str(r.get('severity', '')).lower() == str(severity).lower()]
+        rows = _smart_col_filter(rows, 'severity', severity)
     return {
         "status": "SUCCESS",
         "source_system": 'veeva_qms_capa',
@@ -271,9 +290,9 @@ def query_fda_release_signoffs(batch_id: str = '', usage_decision: str = '') -> 
     """Query review-by-exception QA release readiness, hours saved, and working capital unlocked."""
     rows = _read_json("fda_21cfr11_release_signoffs.json")
     if batch_id:
-        rows = [r for r in rows if str(r.get('batch_id', '')).lower() == str(batch_id).lower()]
+        rows = _smart_col_filter(rows, 'batch_id', batch_id)
     if usage_decision:
-        rows = [r for r in rows if str(r.get('usage_decision', '')).lower() == str(usage_decision).lower()]
+        rows = _smart_col_filter(rows, 'usage_decision', usage_decision)
     return {
         "status": "SUCCESS",
         "source_system": 'qa_batch_release_gate',
@@ -955,7 +974,7 @@ def should_emit_html_cockpit() -> bool:
     q = (_TURN_USER_QUERY or "").lower()
     if not q:
         return False
-    if _re_smart.search(r"\b(html|cockpit|interactive|dashboard|web[\s-]app|simulator|simulate|what[\s-]if)\b", q):
+    if _re_smart.search(r"\b(html|cockpit|interactive|dashboard|web[\s-]app|simulator|simulate|what[\s-]if|report|briefing|scorecard|waterfall|executive\s+summary|forecast\s+review)\b", q):
         return True
     if _AGENT_ARCHETYPE == "simulator" and _re_smart.search(r"\b(scenario\s+(view|studio|explorer|model|comparison)|sensitivity\s+analysis)\b", q):
         return True
@@ -1163,6 +1182,69 @@ def finalize_turn_gcs_state(timeout: float = 12.0) -> None:
     _TURN_CANVAS_ACTION = ""
 
 
+
+def simulate_what_if_scenario(scenario_adjustment_pct: int = 120, focus_filter: str = "") -> Dict[str, Any]:
+    """Run a deterministic What-If stress simulation on this agent's enterprise table and refresh the A2UI chart + HTML cockpit."""
+    global _LAST_CHART_SPEC, _TURN_DATA_ACTIVE, _TURN_HTML_EXPLICIT
+    _TURN_DATA_ACTIVE = True
+    _TURN_HTML_EXPLICIT = True
+    tables = _discover_table_files()
+    raw_rows: List[Dict[str, Any]] = []
+    chosen_table = "enterprise_records"
+    if tables:
+        # Prefer largest non-master JSON table
+        best_f = max(tables, key=lambda p: p.stat().st_size if p.is_file() else 0)
+        chosen_table = best_f.stem
+        raw_rows = _read_json(best_f.name)
+    if focus_filter and raw_rows:
+        flt = focus_filter.strip().lower()
+        sub = [r for r in raw_rows if flt in json.dumps(r).lower()]
+        if sub:
+            raw_rows = sub
+    if -50 <= scenario_adjustment_pct <= 50 and scenario_adjustment_pct != 0:
+        factor = round(1.0 + (scenario_adjustment_pct / 100.0), 4)
+        delta_pct = float(scenario_adjustment_pct)
+    else:
+        factor = round(max(0.25, scenario_adjustment_pct / 100.0), 4)
+        delta_pct = round((factor - 1.0) * 100.0, 1)
+
+    sim_rows: List[Dict[str, Any]] = []
+    base_total = 0.0
+    sim_total = 0.0
+    for r in raw_rows[:25]:
+        rc = dict(r)
+        picked = False
+        for k, v in list(rc.items()):
+            kl = k.lower()
+            if isinstance(v, (int, float)) and not isinstance(v, bool) and not any(s in kl for s in ("id", "year", "code", "zip")):
+                bv = float(v)
+                sv = round(bv * factor, 2)
+                if not picked:
+                    base_total += bv
+                    sim_total += sv
+                    rc["baseline_reference_val"] = round(bv, 2)
+                    rc["simulated_scenario_val"] = sv
+                    picked = True
+                rc[k] = sv
+        sim_rows.append(rc)
+
+    if sim_rows:
+        _record_canvas_rows(chosen_table, sim_rows)
+        _LAST_CHART_SPEC = _ff_build_smart_2panel_vegalite(sim_rows, agent_title=f"{_AGENT_HUMAN_TITLE} (Scenario {delta_pct:+.1f}%)")
+    return {
+        "status": "SUCCESS",
+        "source_table": chosen_table,
+        "scenario_delta_pct": delta_pct,
+        "adjustment_factor": factor,
+        "focus_filter": focus_filter or "FULL_PORTFOLIO",
+        "baseline_total": round(base_total, 2),
+        "simulated_total": round(sim_total, 2),
+        "net_variance": round(sim_total - base_total, 2),
+        "rows_simulated": len(sim_rows),
+        "rows": sim_rows[:10],
+    }
+
+
 def _wrap_for_live_capture(_fn_obj: Any, _fn_name: str) -> Any:
     import functools as _ft
     if getattr(_fn_obj, "__ff_wrapped__", False):
@@ -1195,7 +1277,7 @@ for _gname, _gobj in list(globals().items()):
     if (
         callable(_gobj)
         and not isinstance(_gobj, type)
-        and _gname.startswith(("query_", "fetch_", "audit_", "analyze_", "run_", "render_", "inspect_", "publish_", "export_"))
+        and _gname.startswith(("query_", "fetch_", "audit_", "analyze_", "run_", "render_", "inspect_", "publish_", "export_", "simulate_"))
         and not _gname.startswith("_")
     ):
         globals()[_gname] = _wrap_for_live_capture(_gobj, _gname)
@@ -1233,6 +1315,6 @@ ALL_TOOLS = [
     publish_batch_record_auditor_interactive_cockpit_to_gcs,
     action_post_sap_qm_usage_decision,
     action_open_veeva_capa_investigation,
-
+    simulate_what_if_scenario,
 ]
 # --- END DATA-SOURCE-NAMED ENTERPRISE TOOL LAYER ---
